@@ -1,0 +1,51 @@
+{
+  "add_core": [
+    "LAT",
+    "SOV"
+  ],
+  "owner": "SOV",
+  "controller": "SOV",
+  "grain": 43.47,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 89770,
+      "template": 56
+    }
+  },
+  "1991.08.21": {
+    "owner": "LAT",
+    "controller": "LAT",
+    "remove_core": "SOV"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 90367,
+      "template": 56
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 90969,
+      "template": 56
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 101964,
+      "template": 156
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 116792,
+      "template": 256
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 123480,
+      "template": 356
+    }
+  }
+}

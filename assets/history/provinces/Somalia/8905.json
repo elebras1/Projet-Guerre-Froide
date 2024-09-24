@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "SOM"
+  ],
+  "meat": 0.24,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 989,
+      "template": 1
+    }
+  },
+  "1960.07.01": {
+    "owner": "SOM",
+    "controller": "SOM",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1010,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1032,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1345,
+      "template": 101
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 2777,
+      "template": 201
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 3001,
+      "template": 301
+    }
+  }
+}

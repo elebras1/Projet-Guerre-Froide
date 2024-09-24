@@ -1,0 +1,80 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "SRL"
+  ],
+  "grain": 22.79,
+  "infra": 4,
+  "naval_base": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 420266,
+      "template": 15
+    }
+  },
+  "1948.02.04": {
+    "owner": "SRL",
+    "controller": "SRL",
+    "remove_core": "ENG"
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 2
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 782886,
+        "template": 215
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 925625,
+        "template": 315
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 427474,
+      "template": 15
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 434805,
+      "template": 15
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 552988,
+      "template": 115
+    }
+  }
+}

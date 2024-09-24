@@ -1,0 +1,63 @@
+{
+  "owner": "IRQ",
+  "controller": "IRQ",
+  "add_core": "IRQ",
+  "grain": 37.41,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 295883,
+      "template": 33
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 2
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 729966,
+        "template": 233
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 304020,
+      "template": 33
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 312381,
+      "template": 33
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 424570,
+      "template": 133
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 976143,
+      "template": 333
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "SEN"
+  ],
+  "grain": 10.76,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 64553,
+      "template": 5
+    }
+  },
+  "1960.04.04": {
+    "owner": "SEN",
+    "controller": "SEN",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 65909,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 67294,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 89595,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 147032,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 207807,
+      "template": 305
+    }
+  }
+}

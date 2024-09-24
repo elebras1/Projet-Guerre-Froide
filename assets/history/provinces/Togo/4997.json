@@ -1,0 +1,51 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "TOG"
+  ],
+  "fruits": 33.11,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 147450,
+      "template": 5
+    }
+  },
+  "1960.04.27": {
+    "owner": "TOG",
+    "controller": "TOG",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 149080,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 150727,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 173656,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 280283,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 404804,
+      "template": 305
+    }
+  }
+}

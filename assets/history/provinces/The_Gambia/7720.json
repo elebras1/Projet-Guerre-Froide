@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "GAM"
+  ],
+  "vegetables": 7.4,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 123325,
+      "template": 5
+    }
+  },
+  "1965.02.18": {
+    "owner": "GAM",
+    "controller": "GAM",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 126297,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 129341,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 185770,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 290107,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 477214,
+      "template": 305
+    }
+  }
+}

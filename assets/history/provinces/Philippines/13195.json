@@ -1,0 +1,65 @@
+{
+  "owner": "PHI",
+  "controller": "PHI",
+  "add_core": "PHI",
+  "vegetables": 678.4,
+  "infra": 5,
+  "naval_base": 8,
+  "air_base": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 2498423,
+      "template": 25
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 2678442,
+        "template": 25
+      }
+    }
+  ],
+  "1953.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 2
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 7
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 2586867,
+      "template": 25
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 4047638,
+      "template": 125
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 6662902,
+      "template": 225
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 9193872,
+      "template": 325
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "add_core": [
+    "LAT",
+    "SOV"
+  ],
+  "owner": "SOV",
+  "controller": "SOV",
+  "meat": 49.09,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 144528,
+      "template": 56
+    }
+  },
+  "1991.08.21": {
+    "owner": "LAT",
+    "controller": "LAT",
+    "remove_core": "SOV"
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 146460,
+        "template": 56
+      }
+    }
+  ],
+  "1953.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 2
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 3
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 188034,
+        "template": 256
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 145491,
+      "template": 56
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 164162,
+      "template": 156
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 198802,
+      "template": 356
+    }
+  }
+}

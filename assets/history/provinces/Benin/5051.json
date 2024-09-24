@@ -1,0 +1,68 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "BEN"
+  ],
+  "grain": 25,
+  "infra": 4,
+  "1946.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 819228,
+      "template": 5
+    }
+  },
+  "1960.08.01": {
+    "owner": "BEN",
+    "controller": "BEN",
+    "remove_core": "FRA"
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 2
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 3
+    },
+    {
+      "population_total": {
+        "amount": 1288124,
+        "template": 205
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 1807180,
+        "template": 305
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 822612,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 826009,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 910260,
+      "template": 105
+    }
+  }
+}

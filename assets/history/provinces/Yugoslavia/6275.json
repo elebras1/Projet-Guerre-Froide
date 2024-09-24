@@ -1,0 +1,80 @@
+{
+  "add_core": [
+    "YUG",
+    "SER"
+  ],
+  "owner": "YUG",
+  "controller": "YUG",
+  "grain": 250,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 684170,
+      "template": 62
+    },
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 1
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 692985,
+        "template": 62
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 701931,
+        "template": 62
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 4
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 913284,
+        "template": 262
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 797349,
+      "template": 162
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 982156,
+      "template": 362
+    }
+  }
+}

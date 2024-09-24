@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "KEN"
+  ],
+  "fruits": 0.98,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 3572,
+      "template": 1
+    }
+  },
+  "1963.12.12": {
+    "owner": "KEN",
+    "controller": "KEN",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 3670,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 3772,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 5356,
+      "template": 101
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 9722,
+      "template": 201
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 15047,
+      "template": 301
+    }
+  }
+}

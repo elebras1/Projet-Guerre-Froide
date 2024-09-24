@@ -1,0 +1,57 @@
+{
+  "owner": "USA",
+  "controller": "USA",
+  "add_core": [
+    "USA",
+    "PRC"
+  ],
+  "vegetables": 8,
+  "infra": 6,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 482448,
+      "template": 75
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 2
+    },
+    {
+      "population_total": {
+        "amount": 717526,
+        "template": 275
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 3
+    },
+    {
+      "population_total": {
+        "amount": 811846,
+        "template": 375
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 493815,
+      "template": 75
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 505449,
+      "template": 75
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 557380,
+      "template": 175
+    }
+  }
+}

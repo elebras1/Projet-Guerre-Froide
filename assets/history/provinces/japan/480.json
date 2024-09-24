@@ -1,0 +1,61 @@
+{
+  "owner": "JAP",
+  "controller": "JAP",
+  "add_core": "JAP",
+  "grain": 50.1,
+  "infra": 7,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1352240,
+      "template": 8
+    },
+    "economy_building": {
+      "name": "powerplant",
+      "size": 7
+    }
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 8
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 10
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1947104,
+        "template": 208
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1371875,
+      "template": 8
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1391794,
+      "template": 8
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1596067,
+      "template": 108
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2077597,
+      "template": 308
+    }
+  }
+}

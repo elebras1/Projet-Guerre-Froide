@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "SWA"
+  ],
+  "grain": 4.5,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 35345,
+      "template": 4
+    }
+  },
+  "1968.09.06": {
+    "owner": "SWA",
+    "controller": "SWA",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 36180,
+      "template": 4
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 37035,
+      "template": 4
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 49603,
+      "template": 104
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 79405,
+      "template": 204
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 120393,
+      "template": 304
+    }
+  }
+}

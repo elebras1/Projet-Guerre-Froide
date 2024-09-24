@@ -1,0 +1,84 @@
+{
+  "add_core": [
+    "FRG",
+    "DDR"
+  ],
+  "owner": "FRA",
+  "controller": "FRA",
+  "wood": 7.5,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1230462,
+      "template": 71
+    },
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
+    }
+  },
+  "1949.05.23": {
+    "owner": "FRG",
+    "controller": "FRG"
+  },
+  "1990.10.3": {
+    "owner": "GER",
+    "controller": "GER",
+    "remove_core": [
+      "DDR",
+      "FRG"
+    ]
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1286560,
+        "template": 71
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 8
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 10
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1636584,
+        "template": 271
+      }
+    }
+  ],
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1331498,
+      "template": 71
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1516921,
+      "template": 171
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1706765,
+      "template": 371
+    }
+  }
+}

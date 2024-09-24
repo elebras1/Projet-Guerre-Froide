@@ -1,0 +1,70 @@
+{
+  "add_core": "GRE",
+  "owner": "GRE",
+  "controller": "GRE",
+  "fish": 31.39,
+  "infra": 5,
+  "naval_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 327487,
+      "template": 63
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 3
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 330860,
+        "template": 63
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "naval_base": 2,
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 421245,
+        "template": 263
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 3
+    },
+    {
+      "population_total": {
+        "amount": 452722,
+        "template": 363
+      }
+    }
+  ],
+  "1950.1.1": {
+    "population_total": {
+      "amount": 334268,
+      "template": 63
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 372489,
+      "template": 163
+    }
+  }
+}

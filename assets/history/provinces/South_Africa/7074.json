@@ -1,0 +1,61 @@
+{
+    "owner": "SAF",
+    "controller": "SAF",
+    "add_core": "SAF",
+    "precious_metals": 19,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 132265,
+            "template": 4
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "light_industry",
+                "size": 8
+            }
+        },
+        {
+            "population_total": {
+                "amount": 287146,
+                "template": 204
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 135365,
+            "template": 4
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 138538,
+            "template": 4
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 185510,
+            "template": 104
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 381611,
+            "template": 304
+        }
+    }
+}

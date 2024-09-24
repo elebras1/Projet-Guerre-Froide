@@ -1,0 +1,68 @@
+{
+  "owner": "POR",
+  "controller": "POR",
+  "add_core": [
+    "POR",
+    "ANG"
+  ],
+  "grain": 75.82,
+  "infra": 4,
+  "naval_base": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 921164,
+      "template": 2
+    }
+  },
+  "1961.1.1": {
+    "naval_base": 4,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 2
+    }
+  },
+  "1975.11.11": {
+    "owner": "ANG",
+    "controller": "ANG",
+    "remove_core": "POR"
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 3,
+      "economy_building": {
+        "name": "powerplant",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1703799,
+        "template": 202
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 937883,
+      "template": 2
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 954906,
+      "template": 2
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1185044,
+      "template": 102
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2452822,
+      "template": 302
+    }
+  }
+}

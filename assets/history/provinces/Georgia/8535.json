@@ -1,0 +1,63 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "GEO"
+  ],
+  "rare_metals": 3.48,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1066780,
+      "template": 30
+    },
+    "economy_building": {
+      "name": "refinery",
+      "size": 1
+    }
+  },
+  "1991.4.9": {
+    "owner": "GEO",
+    "controller": "GEO",
+    "remove_core": "SOV"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1575667,
+        "template": 230
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1084894,
+      "template": 30
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1103316,
+      "template": 30
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1342610,
+      "template": 130
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1695019,
+      "template": 330
+    }
+  }
+}

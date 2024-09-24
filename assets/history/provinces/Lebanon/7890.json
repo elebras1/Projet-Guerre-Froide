@@ -1,0 +1,86 @@
+{
+  "owner": "LEB",
+  "controller": "LEB",
+  "add_core": [
+    "LEB",
+    "SYR"
+  ],
+  "vegetables": 35.55,
+  "infra": 5,
+  "naval_base": 3,
+  "economy_building": {
+    "name": "financial_district",
+    "size": 1
+  },
+  "1946.1.1": {
+    "population_total": {
+      "amount": 118135,
+      "template": 37
+    },
+    "economy_building": {
+      "name": "refinery",
+      "size": 3
+    }
+  },
+  "1961.1.1": {
+    "naval_base": 4,
+    "economy_building": {
+      "name": "refinery",
+      "size": 4
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 5,
+      "economy_building": {
+        "name": "refinery",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 239961,
+        "template": 237
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 4
+    }
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 6,
+      "economy_building": {
+        "name": "refinery",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 260142,
+        "template": 337
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 121049,
+      "template": 37
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 124036,
+      "template": 37
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 174345,
+      "template": 137
+    }
+  }
+}

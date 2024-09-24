@@ -1,0 +1,87 @@
+{
+    "owner": "BEL",
+    "controller": "BEL",
+    "add_core": [
+        "BEL",
+        "DRC",
+        "KON"
+    ],
+    "oil": 8,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 490728,
+            "template": 2
+        },
+        "naval_base": 1
+    },
+    "1960.06.30": {
+        "owner": "DRC",
+        "controller": "DRC",
+        "remove_core": "BEL"
+    },
+    "1948.1.1": [
+        {
+            "economy_building": {
+                "name": "heavy_industry",
+                "size": 1
+            }
+        },
+        {
+            "population_total": {
+                "amount": 501377,
+                "template": 2
+            }
+        }
+    ],
+    "1953.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 2
+        }
+    },
+    "1960.09.14": {
+        "owner": "KON",
+        "controller": "KON"
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 1
+        }
+    },
+    "1979.1.1": [
+        {
+            "naval_base": 2
+        },
+        {
+            "population_total": {
+                "amount": 1103916,
+                "template": 202
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "naval_base": 3
+        },
+        {
+            "population_total": {
+                "amount": 1591648,
+                "template": 302
+            }
+        }
+    ],
+    "1950.1.1": {
+        "population_total": {
+            "amount": 512257,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 680332,
+            "template": 102
+        }
+    }
+}

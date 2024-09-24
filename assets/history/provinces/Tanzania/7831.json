@@ -1,0 +1,57 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "TNZ",
+    "TNG"
+  ],
+  "precious_metals": 2,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 48033,
+      "template": 1
+    }
+  },
+  "1961.12.09": {
+    "owner": "TNG",
+    "controller": "TNG",
+    "remove_core": "ENG"
+  },
+  "1964.04.26": {
+    "owner": "TNZ",
+    "controller": "TNZ",
+    "remove_core": "TNG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 49314,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 50629,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 70708,
+      "template": 101
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 119866,
+      "template": 201
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 174272,
+      "template": 301
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "owner": "ITA",
+  "controller": "ITA",
+  "add_core": "ITA",
+  "fruits": 29.05,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 148105,
+      "template": 64
+    },
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 150326,
+        "template": 64
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 7
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 9
+      }
+    },
+    {
+      "population_total": {
+        "amount": 181707,
+        "template": 264
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 149211,
+      "template": 64
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 162901,
+      "template": 164
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 184333,
+      "template": 364
+    }
+  }
+}

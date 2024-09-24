@@ -1,0 +1,52 @@
+{
+  "owner": "DRV",
+  "controller": "DRV",
+  "add_core": [
+    "IDC",
+    "DRV"
+  ],
+  "vegetables": 100.5,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 320422,
+      "template": 28
+    }
+  },
+  "1976.7.2": {
+    "owner": "VIE",
+    "controller": "VIE",
+    "add_core": "VIE",
+    "remove_core": "IDC"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 327020,
+      "template": 28
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 333753,
+      "template": 28
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 436621,
+      "template": 128
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 626745,
+      "template": 228
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 809286,
+      "template": 328
+    }
+  }
+}

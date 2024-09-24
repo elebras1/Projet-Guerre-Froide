@@ -1,0 +1,26 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "VNT",
+    "FRA"
+  ],
+  "fish": 2.7,
+  "infra": 4,
+  "naval_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 23848,
+      "template": 188
+    }
+  },
+  "1980.07.30": {
+    "owner": "VNT",
+    "controller": "VNT",
+    "remove_core": [
+      "ENG",
+      "FRA"
+    ]
+  }
+}

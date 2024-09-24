@@ -1,0 +1,57 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "ETH",
+    "ERI"
+  ],
+  "meat": 1.86,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 110853,
+      "template": 1
+    }
+  },
+  "1952.9.15": {
+    "owner": "ETH",
+    "controller": "ETH",
+    "remove_core": "ENG"
+  },
+  "1991.5.24": {
+    "owner": "ERI",
+    "controller": "ERI",
+    "remove_core": "ETH"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 113115,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 115424,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 151483,
+      "template": 101
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 242456,
+      "template": 201
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 321648,
+      "template": 301
+    }
+  }
+}

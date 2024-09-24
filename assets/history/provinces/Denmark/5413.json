@@ -1,0 +1,68 @@
+{
+  "owner": "DEN",
+  "controller": "DEN",
+  "add_core": "DEN",
+  "vegetables": 322,
+  "infra": 4,
+  "naval_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 189674,
+      "template": 51
+    },
+    "economy_building": {
+      "name": "refinery",
+      "size": 8
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 9
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 2,
+      "economy_building": {
+        "name": "refinery",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 230992,
+        "template": 251
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 3
+    },
+    {
+      "population_total": {
+        "amount": 232686,
+        "template": 351
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 191161,
+      "template": 51
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 192660,
+      "template": 51
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 209807,
+      "template": 151
+    }
+  }
+}

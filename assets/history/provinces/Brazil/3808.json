@@ -1,0 +1,55 @@
+{
+  "owner": "BRA",
+  "controller": "BRA",
+  "add_core": "BRA",
+  "wood": 0.1,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 529850,
+      "template": 77
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 3
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 562707,
+        "template": 77
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 546031,
+      "template": 77
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 805672,
+      "template": 177
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1239535,
+      "template": 277
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1586190,
+      "template": 381
+    }
+  }
+}

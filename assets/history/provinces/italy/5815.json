@@ -1,0 +1,58 @@
+{
+  "owner": "ITA",
+  "controller": "ITA",
+  "add_core": "ITA",
+  "grain": 50.45,
+  "infra": 5,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 455244,
+      "template": 64
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 2,
+      "economy_building": {
+        "name": "light_industry",
+        "size": 9
+      }
+    },
+    {
+      "population_total": {
+        "amount": 558530,
+        "template": 264
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 3
+    },
+    {
+      "population_total": {
+        "amount": 566602,
+        "template": 364
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 458645,
+      "template": 64
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 462071,
+      "template": 64
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 500725,
+      "template": 164
+    }
+  }
+}

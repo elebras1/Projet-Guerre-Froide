@@ -1,0 +1,70 @@
+{
+  "owner": "CHI",
+  "controller": "CHI",
+  "add_core": [
+    "CHI",
+    "CHC"
+  ],
+  "grain": 692.11,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 4990401,
+      "template": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC"
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 2
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 4
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 10940268,
+        "template": 306
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 5089660,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 5190894,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 6367764,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 9143715,
+      "template": 206
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+	"unit_attack": {
+		"up": "unit_attack_button",
+		"down": "unit_attack_button_down"
+	},
+	"unit_support": {
+		"up": "unit_support_button",
+		"down": "unit_support_button_down"
+	},
+	"confirm": {
+		"up": "unit_confirm_button",
+		"down": "unit_confirm_button_down"
+	},
+	"return": {
+		"up": "unit_return_button",
+		"down": "unit_return_button_down"
+	}
+}
+}

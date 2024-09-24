@@ -1,0 +1,61 @@
+{
+    "add_core": "GRE",
+    "owner": "GRE",
+    "controller": "GRE",
+    "coal": 3,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 911737,
+            "template": 63
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "light_industry",
+                "size": 6
+            }
+        },
+        {
+            "population_total": {
+                "amount": 1172762,
+                "template": 263
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 921128,
+            "template": 63
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 930616,
+            "template": 63
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1037023,
+            "template": 163
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1260394,
+            "template": 363
+        }
+    }
+}

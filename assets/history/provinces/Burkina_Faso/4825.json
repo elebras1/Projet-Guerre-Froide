@@ -1,0 +1,75 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "BKN"
+  ],
+  "meat": 15.24,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 402712,
+      "template": 5
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 407283,
+        "template": 5
+      }
+    }
+  ],
+  "1953.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
+    }
+  },
+  "1960.08.05": {
+    "owner": "BKN",
+    "controller": "BKN",
+    "remove_core": "FRA"
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 4
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 411905,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 483898,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 677115,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 921019,
+      "template": 305
+    }
+  }
+}

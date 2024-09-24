@@ -1,0 +1,57 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "KEN"
+  ],
+  "grain": 3.26,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 13670,
+      "template": 1
+    }
+  },
+  "1963.12.12": {
+    "owner": "KEN",
+    "controller": "KEN",
+    "remove_core": "ENG"
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 14049,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 14439,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 20503,
+      "template": 101
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 37212,
+      "template": 201
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 57595,
+      "template": 301
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+    "add_core": [
+        "DDR",
+        "FRG"
+    ],
+    "owner": "SOV",
+    "controller": "SOV",
+    "grain": 235.48,
+    "infra": 1,
+    "naval_base": 3,
+    "1946.1.1": {
+        "air_base": 6,
+        "population_total": {
+            "amount": 373850,
+            "template": 71
+        },
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 7
+        }
+    },
+    "1949.10.07": {
+        "owner": "DDR",
+        "controller": "DDR"
+    },
+    "1950.1.1": [
+        {
+            "air_base": 10,
+            "economy_building": {
+                "name": "naval_yards",
+                "size": 8
+            }
+        },
+        {
+            "population_total": {
+                "amount": 380707,
+                "template": 71
+            }
+        }
+    ],
+    "1970.1.1": {
+        "economy_building": {
+            "name": "rocket_test_site",
+            "size": 1
+        }
+    },
+    "1990.10.3": {
+        "owner": "GER",
+        "controller": "GER"
+    },
+    "1948.1.1": [
+        {
+            "air_base": 8
+        },
+        {
+            "population_total": {
+                "amount": 394740,
+                "template": 71
+            }
+        }
+    ],
+    "1961.1.1": {
+        "naval_base": 5
+    },
+    "1979.1.1": [
+        {
+            "naval_base": 5
+        },
+        {
+            "population_total": {
+                "amount": 346686,
+                "template": 271
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "naval_base": 6
+        },
+        {
+            "population_total": {
+                "amount": 329399,
+                "template": 371
+            }
+        }
+    ],
+    "1961.12.30": {
+        "population_total": {
+            "amount": 356956,
+            "template": 171
+        }
+    }
+}

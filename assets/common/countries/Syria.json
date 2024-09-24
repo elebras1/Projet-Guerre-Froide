@@ -1,0 +1,603 @@
+{
+  "color": [
+    209,
+    229,
+    221
+  ],
+  "graphical_culture": "Generic",
+  "default_templates": {
+    "FRA_light_aviation_division": [
+      "air_cav_brigade",
+      "air_cav_brigade",
+      "air_cav_brigade",
+      "air_cav_brigade"
+    ],
+    "FRA_armoured_division": [
+      "armor_brigade",
+      "armor_brigade",
+      "heavy_mechanized_brigade",
+      "light_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "FRA_cavalry_division": [
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "sp_artillery_brigade"
+    ],
+    "FRA_heavy_mechanized_division": [
+      "heavy_mechanized_brigade",
+      "heavy_mechanized_brigade",
+      "light_mechanized_brigade",
+      "armor_brigade",
+      "sp_artillery_brigade"
+    ],
+    "FRA_light_mechanized_division": [
+      "light_mechanized_brigade",
+      "light_mechanized_brigade",
+      "heavy_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "FRA_motorized_division": [
+      "motorized_brigade",
+      "motorized_brigade",
+      "heavy_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "FRA_infantry_division": [
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "artillery_brigade"
+    ],
+    "FRA_marine_inf_division": [
+      "marine_brigade",
+      "marine_brigade",
+      "marine_brigade",
+      "marine_brigade"
+    ],
+    "FRA_chasseurs_alpins_division": [
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade"
+    ],
+    "FRA_gendarmerie_division": [
+      "police_brigade",
+      "infantry_brigade",
+      "militia_brigade"
+    ]
+  },
+  "unit_names": {
+    "infantry_brigade": [
+      "1st Division",
+      "2nd Division",
+      "3rd Division",
+      "4th Division",
+      "5th Division",
+      "6th Division"
+    ],
+    "militia_brigade": {}
+  },
+  "ministers": {
+    "1335000": {
+      "name": "Shukri al-Quwatli",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Quwatli_Shukri",
+      "head_of_state": "autocrat_type",
+      "start_date": "1943-08-17",
+      "death_date": "1958-02-22"
+    },
+    "1335001": {
+      "name": "Fawzi Selu",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_Selu-Fawzi",
+      "head_of_state": "autocrat_type",
+      "head_of_government": "autocrat_type",
+      "start_date": "1951-12-03",
+      "death_date": "1953-08-19"
+    },
+    "1335002": {
+      "name": "Adib ash-Shishakli",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Shishakli_Adib",
+      "head_of_state": "autocrat_type",
+      "head_of_government": "autocrat_type",
+      "start_date": "1953-07-11",
+      "death_date": "1954-03-01"
+    },
+    "1335003": {
+      "name": "Maamun Shafiq al-Kuzbar",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Kuzbari_Maamun_S",
+      "head_of_state": "autocrat_type",
+      "head_of_government": "autocrat_type",
+      "start_date": "1954-02-26",
+      "death_date": "1961-11-20"
+    },
+    "1335004": {
+      "name": "Hashim Bay Khalid al-Atassi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Atassi_Hashim_B_K",
+      "head_of_state": "autocrat_type",
+      "head_of_government": "autocrat_type",
+      "start_date": "1949-08-15",
+      "death_date": "1955-09-06"
+    },
+    "1335005": {
+      "name": "Nazim al-Qudsi",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Kudsi_Nazim",
+      "head_of_state": "reformer_type",
+      "head_of_government": "reformer_type",
+      "start_date": "1949-12-24",
+      "death_date": "1963-03-08"
+    },
+    "1335006": {
+      "name": "Nur ad-Din Mustafa al-Atassi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_Al-Atassi_Noureddin_M_A",
+      "head_of_state": "courteous_figure",
+      "head_of_government": "courteous_figure",
+      "start_date": "1966-02-25",
+      "death_date": "1970-11-21"
+    },
+    "1335007": {
+      "name": "Ahmad al-Hasan al-Khatib",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Khatib_Ahmad_H",
+      "head_of_state": "autocrat_type",
+      "start_date": "1970-11-18",
+      "death_date": "1971-02-22"
+    },
+    "1335008": {
+      "name": "Abu Sulayman Hafiz al-Assad",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Assad_Abu_S_H",
+      "head_of_state": "autocrat_type",
+      "head_of_government": "autocrat_type",
+      "start_date": "1970-11-21",
+      "death_date": "2000-06-10"
+    },
+    "1335009": {
+      "name": "Saadallah al-Jabiri",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Jabiri_Saadallah",
+      "head_of_government": "autocrat_type",
+      "start_date": "1945-10-01",
+      "death_date": "1946-12-16"
+    },
+    "1335010": {
+      "name": "Khalid al-Azm",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Azm_Khalid",
+      "head_of_government": "autocrat_type",
+      "start_date": "1946-12-16",
+      "death_date": "1963-03-09"
+    },
+    "1335011": {
+      "name": "Jamil Mardam Bey",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_Bey_Jamil_M",
+      "head_of_government": "autocrat_type",
+      "start_date": "1946-12-29",
+      "death_date": "1948-12-17"
+    },
+    "1335012": {
+      "name": "Husni al-Zaim",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Za'im_Husni",
+      "head_of_government": "autocrat_type",
+      "start_date": "1946-04-17",
+      "death_date": "1949-06-26"
+    },
+    "1335013": {
+      "name": "Muhsin al-Berazi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Barazi_Muhsin",
+      "head_of_government": "autocrat_type",
+      "start_date": "1949-06-26",
+      "death_date": "1949-08-14"
+    },
+    "1335014": {
+      "name": "Hassan al-Hakim",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Hakim_Hassan",
+      "head_of_government": "autocrat_type",
+      "start_date": "1951-08-09",
+      "death_date": "1951-11-13"
+    },
+    "1335015": {
+      "name": "Zaki al-Khatib",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Khatib_Zaki",
+      "head_of_government": "autocrat_type",
+      "start_date": "1951-11-13",
+      "death_date": "1951-11-28"
+    },
+    "1335016": {
+      "name": "Maaruf ad-Dawalibi",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Dawalibi_Maarouf",
+      "head_of_government": "reformer_type",
+      "start_date": "1951-11-28",
+      "death_date": "1962-03-28"
+    },
+    "1335017": {
+      "name": "Sabri al-Assali",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Asali_Sabri",
+      "head_of_government": "autocrat_type",
+      "start_date": "1954-03-01",
+      "death_date": "1958-03-06"
+    },
+    "1335018": {
+      "name": "Said al-Ghazzi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Ghazzi_Said",
+      "head_of_government": "administrator_type",
+      "start_date": "1954-06-18",
+      "death_date": "1956-06-14"
+    },
+    "1335019": {
+      "name": "Faris al-Khouri",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Khoury_Faris",
+      "head_of_government": "reformer_type",
+      "start_date": "1944-10-14",
+      "death_date": "1955-02-13"
+    },
+    "1335020": {
+      "name": "Abdul Hamid Sarraj",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Sarraj_Abdel_H",
+      "head_of_government": "autocrat_type",
+      "start_date": "1960-09-20",
+      "death_date": "1961-08-16"
+    },
+    "1335021": {
+      "name": "Salah ad-Din Bitar",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Bitar_Salah_a_D",
+      "head_of_government": "autocrat_type",
+      "start_date": "1963-03-09",
+      "death_date": "1966-02-23"
+    },
+    "1335022": {
+      "name": "Yussuf Zuaiyin",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Zu'ayyin_Yusuf",
+      "head_of_government": "autocrat_type",
+      "start_date": "1965-09-23",
+      "death_date": "1968-10-29"
+    },
+    "1335023": {
+      "name": "Abdul Rahman Khleifawi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_Kleifawi_Abdul_R",
+      "head_of_government": "autocrat_type",
+      "start_date": "1971-04-03",
+      "death_date": "1978-03-27"
+    },
+    "1335024": {
+      "name": "Mahmoud al-Ayyubi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Ayyubi_Mahmoud",
+      "head_of_government": "autocrat_type",
+      "start_date": "1972-12-21",
+      "death_date": "1976-08-07"
+    },
+    "1335025": {
+      "name": "Muhammad Ali al-Halabi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Halabi_Muhammad_A",
+      "head_of_government": "autocrat_type",
+      "start_date": "1978-03-27",
+      "death_date": "1980-01-09"
+    },
+    "1335026": {
+      "name": "Abdul Rauf al-Kasm",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Kasm_Abdul_R",
+      "head_of_government": "autocrat_type",
+      "start_date": "1980-01-09",
+      "death_date": "1987-11-01"
+    },
+    "1335027": {
+      "name": "Mahmoud al-Zuabi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_Zuabi_Mahmoud",
+      "head_of_government": "autocrat_type",
+      "start_date": "1987-11-01",
+      "death_date": "2000-03-01"
+    },
+    "1335028": {
+      "name": "Louai al-Atassi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Atassi_Louai",
+      "head_of_state": "courteous_figure",
+      "start_date": "1963-03-09",
+      "death_date": "1963-07-27"
+    },
+    "1335029": {
+      "name": "Muhammad Amin al-Hafiz",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Hafez_Amin",
+      "head_of_state": "autocrat_type",
+      "head_of_government": "autocrat_type",
+      "start_date": "1963-03-09",
+      "death_date": "1966-02-25"
+    },
+    "1335030": {
+      "name": "Muhammad Sami Hilmi al-Hinnawi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_al-Hinnawi_Sami_H",
+      "head_of_state": "autocrat_type",
+      "start_date": "1949-08-14",
+      "death_date": "1949-08-15"
+    },
+    "1335031": {
+      "name": "Nur ad-Din Kuhala",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "SYR_M_Kuhala_Nureddin",
+      "head_of_government": "autocrat_type",
+      "start_date": "1958-10-07",
+      "death_date": "1960-09-20"
+    },
+    "1335032": {
+      "name": "Pasha al-Atrash",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 1,
+      "picture": "SYR_M_al-Atrash_Pasha",
+      "head_of_state": "autocrat_type",
+      "start_date": "1927-01-01",
+      "death_date": "1982-03-26"
+    },
+    "1335033": {
+      "name": "Michel Aflaq",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.7,
+      "picture": "SYR_M_Aflaq_Michel",
+      "head_of_state": "liberal_type",
+      "head_of_government": "liberal_type",
+      "start_date": "1932-01-01",
+      "death_date": "1968-01-01",
+      "base": 1335033
+    },
+    "1335034": {
+      "name": "Salah al-Din al-Bitar",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.7,
+      "picture": "SYR_M_al-Bitar_Salah_D",
+      "head_of_state": "traditionalist_type",
+      "head_of_government": "traditionalist_type",
+      "start_date": "1936-01-01",
+      "death_date": "1980-07-21"
+    },
+    "1335035": {
+      "name": "Zaki al-Arsuzi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.7,
+      "picture": "SYR_M_al-Arsuzi_Zaki",
+      "head_of_state": "ambitious_type",
+      "head_of_government": "ambitious_type",
+      "start_date": "1930-01-01",
+      "death_date": "1968-07-02"
+    },
+    "1335036": {
+      "name": "Akram al-Hawrani",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.7,
+      "picture": "SYR_M_al-Hawrani_Akram",
+      "head_of_state": "reformer_type",
+      "head_of_government": "reformer_type",
+      "start_date": "1943-01-01",
+      "death_date": "1991-01-01"
+    },
+    "1335101": {
+      "name": "Khalid Bakdash",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_Bakdash_Khalid",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1936-08-01",
+      "death_date": "1995-05-15"
+    },
+    "1335102": {
+      "name": "Bassel al-Assad",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_al-Assad_Bassel",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1982-01-01",
+      "death_date": "1994-01-01"
+    },
+    "1335103": {
+      "name": "Antun Saadeh",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_Saadeh_Antun",
+      "head_of_state": "dictator_type",
+      "head_of_government": "dictator_type",
+      "start_date": "1932-11-16",
+      "death_date": "1949-07-08"
+    },
+    "1335104": {
+      "name": "Adib Bin Hassan Shishakli",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_Shishakli_Adib_H",
+      "head_of_state": "autocrat_type",
+      "head_of_government": "autocrat_type",
+      "start_date": "1946-01-01",
+      "death_date": "1964-09-27"
+    },
+    "1335105": {
+      "name": "Sami al-Hinnawi",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_al-Hinnawi_Sami",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1946-01-01",
+      "death_date": "1950-10-31"
+    },
+    "1335106": {
+      "name": "Riyad al-Turk",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_al-Turk_Riyad",
+      "head_of_state": "democrat_type",
+      "head_of_government": "democrat_type",
+      "start_date": "1973-01-01",
+      "death_date": "2005-03-01"
+    },
+    "1335107": {
+      "name": "Dr. Mustafa al-Siba'i",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_al-Sibai_Mustafa",
+      "head_of_state": "controversial_figure",
+      "head_of_government": "controversial_figure",
+      "start_date": "1946-01-01",
+      "death_date": "1961-01-01"
+    },
+    "1335108": {
+      "name": "Issam al-Attar",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_al-Attar_Issam",
+      "head_of_state": "religious_type",
+      "head_of_government": "religious_type",
+      "start_date": "1961-01-01",
+      "death_date": "1980-01-01"
+    },
+    "1335109": {
+      "name": "Abd al-Fattah Abu Ghudda",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_Ghudda_Abd_F_A",
+      "head_of_state": "liberal_type",
+      "head_of_government": "liberal_type",
+      "start_date": "1973-01-01",
+      "death_date": "1991-01-01"
+    },
+    "1335110": {
+      "name": "Adnan Saad al-Din",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_al-Din_Adnan_S",
+      "head_of_state": "traditionalist_type",
+      "head_of_government": "traditionalist_type",
+      "start_date": "1976-01-01",
+      "death_date": "1981-01-01"
+    },
+    "1335111": {
+      "name": "Dr. Hasan al-Huwaidi",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_al-Huwaidi_Hasan",
+      "head_of_state": "ambitious_type",
+      "head_of_government": "ambitious_type",
+      "start_date": "1981-01-01",
+      "death_date": "1996-01-01"
+    },
+    "1335112": {
+      "name": "Adib Gaja",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_Gaja_Adib",
+      "head_of_state": "bureaucrat_type",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1985-01-01",
+      "death_date": "1986-01-01"
+    },
+    "1335113": {
+      "name": "Fateh Jamous",
+      "ideology": "maoist_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_Jamous_Fateh",
+      "head_of_state": "moral_type",
+      "head_of_government": "moral_type",
+      "start_date": "1981-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1335114": {
+      "name": "Afif al-Bizri",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_al-Bizri_Afif",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1946-01-01",
+      "death_date": "1994-01-28"
+    },
+    "1335115": {
+      "name": "Maurice Salibi",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_Salibi_Maurice",
+      "head_of_state": "administrator_type",
+      "head_of_government": "administrator_type",
+      "start_date": "1946-01-01",
+      "death_date": "1992-01-01"
+    },
+    "1335116": {
+      "name": "Zakariyya al-Dimashqi",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 0.25,
+      "picture": "SYR_M_al-Dimashqi_Zakariyya",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1949-11-07",
+      "death_date": "1988-03-30"
+    },
+    "1335117": {
+      "name": "Rifaat al-Assad",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "SYR_M_al-Assad_Rifaat",
+      "head_of_state": "ambitious_type",
+      "head_of_government": "ambitious_type",
+      "start_date": "1975-04-15",
+      "death_date": "2300-01-01"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "NIG"
+  ],
+  "grain": 20.28,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 109731,
+      "template": 5
+    }
+  },
+  "1960.10.01": {
+    "owner": "NIG",
+    "controller": "NIG",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 111746,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 113797,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 144084,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 220697,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 300534,
+      "template": 305
+    }
+  }
+}

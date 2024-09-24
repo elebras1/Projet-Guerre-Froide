@@ -1,0 +1,84 @@
+{
+  "owner": "HOL",
+  "controller": "HOL",
+  "add_core": [
+    "INO",
+    "HOL"
+  ],
+  "grain": 1245.84,
+  "infra": 6,
+  "naval_base": 6,
+  "1946.1.1": {
+    "air_base": 3,
+    "population_total": {
+      "amount": 10052900,
+      "template": 21
+    }
+  },
+  "1949.12.27": {
+    "owner": "INO",
+    "controller": "INO",
+    "remove_core": "HOL"
+  },
+  "1950.1.1": [
+    {
+      "air_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 10418880,
+        "template": 21
+      }
+    }
+  ],
+  "1961.1.1": {
+    "air_base": 5
+  },
+  "1979.1.1": [
+    {
+      "air_base": 6,
+      "economy_building": {
+        "name": "light_industry",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 20521600,
+        "template": 221
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 8
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 9
+      }
+    },
+    {
+      "population_total": {
+        "amount": 26097115,
+        "template": 321
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 10234254,
+      "template": 21
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 13446218,
+      "template": 121
+    }
+  }
+}

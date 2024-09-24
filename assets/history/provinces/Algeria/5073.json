@@ -1,0 +1,51 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "ALG"
+  ],
+  "infra": 2,
+  "air_base": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 65603,
+      "template": 3
+    }
+  },
+  "1962.07.05": {
+    "owner": "ALG",
+    "controller": "ALG",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 66972,
+      "template": 3
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 68369,
+      "template": 3
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 87559,
+      "template": 103
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 142201,
+      "template": 203
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 202540,
+      "template": 303
+    }
+  }
+}

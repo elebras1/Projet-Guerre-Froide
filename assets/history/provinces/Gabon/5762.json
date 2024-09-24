@@ -1,0 +1,51 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "GAB"
+  ],
+  "meat": 1.97,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1976,
+      "template": 2
+    }
+  },
+  "1965.02.17": {
+    "owner": "GAB",
+    "controller": "GAB",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1982,
+      "template": 2
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1987,
+      "template": 2
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 2082,
+      "template": 102
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 2811,
+      "template": 202
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 4066,
+      "template": 302
+    }
+  }
+}

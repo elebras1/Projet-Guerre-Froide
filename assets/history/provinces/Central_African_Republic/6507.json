@@ -1,0 +1,50 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "CAR"
+  ],
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 12894,
+      "template": 2
+    }
+  },
+  "1960.08.13": {
+    "owner": "CAR",
+    "controller": "CAR",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 13032,
+      "template": 2
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 13171,
+      "template": 2
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 15454,
+      "template": 102
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 21975,
+      "template": 202
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 29856,
+      "template": 302
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "owner": "AST",
+  "controller": "AST",
+  "add_core": [
+    "AST",
+    "PAG"
+  ],
+  "oil": 16,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 13624,
+      "template": 96
+    }
+  },
+  "1975.09.16": {
+    "owner": "PAG",
+    "controller": "PAG",
+    "remove_core": "AST"
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 34867,
+        "template": 396
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 13799,
+      "template": 96
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 13976,
+      "template": 96
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 16668,
+      "template": 196
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 25609,
+      "template": 296
+    }
+  }
+}

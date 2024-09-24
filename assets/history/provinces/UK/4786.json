@@ -1,0 +1,58 @@
+{
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": "ENG",
+    "oil": 188,
+    "infra": 6,
+    "naval_base": 10,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 800987,
+            "template": 60
+        },
+        "naval_base": 2
+    },
+    "1961.1.1": {
+        "naval_base": 3
+    },
+    "1979.1.1": [
+        {
+            "naval_base": 4
+        },
+        {
+            "population_total": {
+                "amount": 894856,
+                "template": 260
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "naval_base": 5
+        },
+        {
+            "population_total": {
+                "amount": 911916,
+                "template": 360
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 802774,
+            "template": 60
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 804564,
+            "template": 60
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 846668,
+            "template": 160
+        }
+    }
+}

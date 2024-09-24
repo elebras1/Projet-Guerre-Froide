@@ -1,0 +1,75 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "IND"
+  ],
+  "wood": 0.3,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1451014,
+      "template": 15
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 4
+    }
+  },
+  "1947.08.15": {
+    "owner": "IND",
+    "controller": "IND",
+    "remove_core": "ENG"
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 2764038,
+        "template": 215
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 10
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1476770,
+      "template": 15
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1502982,
+      "template": 15
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1884857,
+      "template": 115
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 3604953,
+      "template": 315
+    }
+  }
+}

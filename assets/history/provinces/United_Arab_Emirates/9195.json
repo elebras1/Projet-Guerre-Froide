@@ -1,0 +1,65 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "UAE"
+  ],
+  "oil": 101,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 4258,
+      "template": 43
+    }
+  },
+  "1971.12.2": {
+    "owner": "UAE",
+    "controller": "UAE",
+    "remove_core": "ENG"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 59544,
+        "template": 243
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 4362,
+      "template": 43
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 4468,
+      "template": 43
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 6994,
+      "template": 143
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 122619,
+      "template": 343
+    }
+  }
+}

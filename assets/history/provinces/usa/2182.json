@@ -1,0 +1,86 @@
+{
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": "USA",
+    "grain": 322.8,
+    "infra": 8,
+    "1946.1.1": {
+        "air_base": 10,
+        "population_total": {
+            "amount": 403329,
+            "template": 93
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 9
+        }
+    },
+    "1948.1.1": [
+        {
+            "economy_building": {
+                "name": "military_goods",
+                "size": 9
+            }
+        },
+        {
+            "population_total": {
+                "amount": 409875,
+                "template": 93
+            }
+        }
+    ],
+    "1950.1.1": [
+        {
+            "economy_building": {
+                "name": "military_goods",
+                "size": 9
+            }
+        },
+        {
+            "population_total": {
+                "amount": 416527,
+                "template": 93
+            }
+        }
+    ],
+    "1961.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 9
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "military_goods",
+                "size": 9
+            }
+        },
+        {
+            "population_total": {
+                "amount": 600784,
+                "template": 293
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "economy_building": {
+                "name": "military_goods",
+                "size": 9
+            }
+        },
+        {
+            "population_total": {
+                "amount": 675170,
+                "template": 393
+            }
+        }
+    ],
+    "1961.12.30": {
+        "population_total": {
+            "amount": 506637,
+            "template": 193
+        }
+    }
+}

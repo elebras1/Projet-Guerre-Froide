@@ -1,0 +1,73 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "ALG"
+  ],
+  "grain": 46.91,
+  "infra": 5,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 477192,
+      "template": 3
+    }
+  },
+  "1962.07.05": {
+    "owner": "ALG",
+    "controller": "ALG",
+    "remove_core": "FRA"
+  },
+  "1954.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 2
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 2,
+      "economy_building": {
+        "name": "military_goods",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1034357,
+        "template": 203
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 487146,
+      "template": 3
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 497308,
+      "template": 3
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 636896,
+      "template": 103
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1473264,
+      "template": 303
+    }
+  }
+}

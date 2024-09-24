@@ -1,0 +1,49 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": "ENG",
+  "meat": 0.4,
+  "infra": 2,
+  "naval_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 2064,
+      "template": 60
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 2
+    },
+    {
+      "population_total": {
+        "amount": 2306,
+        "template": 260
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 2069,
+      "template": 60
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 2074,
+      "template": 60
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 2182,
+      "template": 160
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2350,
+      "template": 360
+    }
+  }
+}

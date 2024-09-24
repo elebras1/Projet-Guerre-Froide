@@ -1,0 +1,63 @@
+{
+  "owner": "HOL",
+  "controller": "HOL",
+  "add_core": "HOL",
+  "grain": 298.2,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 771562,
+      "template": 73
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 781314,
+        "template": 73
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1104971,
+        "template": 273
+      }
+    }
+  ],
+  "1950.1.1": {
+    "population_total": {
+      "amount": 791190,
+      "template": 73
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 925950,
+      "template": 173
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1183165,
+      "template": 373
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "add_core": [
+    "UKR",
+    "SOV"
+  ],
+  "owner": "SOV",
+  "controller": "SOV",
+  "air_base": 4,
+  "vegetables": 109.16,
+  "infra": 4,
+  "naval_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 242134,
+      "template": 45
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 249197,
+        "template": 45
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "naval_base": 2,
+      "economy_building": {
+        "name": "powerplant",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 333133,
+        "template": 245
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 245640,
+      "template": 45
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 292956,
+      "template": 145
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 345197,
+      "template": 345
+    }
+  }
+}

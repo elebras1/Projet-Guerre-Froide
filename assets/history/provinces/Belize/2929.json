@@ -1,0 +1,61 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "BLZ"
+  ],
+  "vegetables": 2,
+  "infra": 5,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 19068,
+      "template": 76
+    }
+  },
+  "1981.09.21": {
+    "owner": "BLZ",
+    "controller": "BLZ",
+    "remove_core": "ENG"
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 2,
+      "economy_building": {
+        "name": "powerplant",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 41359,
+        "template": 276
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 19632,
+      "template": 76
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 20213,
+      "template": 76
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 28735,
+      "template": 176
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 57455,
+      "template": 376
+    }
+  }
+}

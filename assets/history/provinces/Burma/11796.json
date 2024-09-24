@@ -1,0 +1,60 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "BUR"
+  ],
+  "grain": 9.68,
+  "infra": 1,
+  "1946.1.1": {
+    "air_base": 1,
+    "population_total": {
+      "amount": 76951,
+      "template": 24
+    }
+  },
+  "1948.01.04": {
+    "owner": "BUR",
+    "controller": "BUR",
+    "remove_core": "ENG"
+  },
+  "1961.1.1": {
+    "air_base": 2
+  },
+  "1979.1.1": [
+    {
+      "air_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 149960,
+        "template": 224
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 78409,
+      "template": 24
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 79894,
+      "template": 24
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 101819,
+      "template": 124
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 185589,
+      "template": 324
+    }
+  }
+}

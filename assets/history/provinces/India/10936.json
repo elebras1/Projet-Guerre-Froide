@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "IND"
+  ],
+  "vegetables": 75.83,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1011716,
+      "template": 15
+    }
+  },
+  "1947.08.15": {
+    "owner": "IND",
+    "controller": "IND",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1029674,
+      "template": 15
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1047951,
+      "template": 15
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1314212,
+      "template": 115
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1927219,
+      "template": 215
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2513545,
+      "template": 315
+    }
+  }
+}

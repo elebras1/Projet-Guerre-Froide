@@ -1,0 +1,91 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "RUS"
+  ],
+  "renewable_energy": 257,
+  "infra": 6,
+  "1946.1.1": {
+    "air_base": 8,
+    "population_total": {
+      "amount": 52295,
+      "template": 45
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1948.1.1": [
+    {
+      "air_base": 10,
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 53146,
+        "template": 45
+      }
+    }
+  ],
+  "1961.1.1": {
+    "renewable_energy": 257,
+    "economy_building": {
+      "name": "military_goods",
+      "size": 6
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 54010,
+        "template": 45
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 72422,
+        "template": 245
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 78186,
+        "template": 345
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 64669,
+      "template": 145
+    }
+  }
+}

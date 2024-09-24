@@ -1,0 +1,81 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "CYP",
+    "GRE",
+    "TUR"
+  ],
+  "meat": 35.39,
+  "infra": 6,
+  "air_base": 2,
+  "1946.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 220288,
+      "template": 32
+    }
+  },
+  "1960.08.16": {
+    "owner": "CYP",
+    "controller": "CYP",
+    "remove_core": "ENG"
+  },
+  "1962.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 2
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 3,
+      "economy_building": {
+        "name": "powerplant",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 311868,
+        "template": 232
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
+    }
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 359125,
+        "template": 332
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 223385,
+      "template": 32
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 226526,
+      "template": 32
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 264931,
+      "template": 132
+    }
+  }
+}

@@ -1,0 +1,767 @@
+{
+  "color": [
+    195,
+    186,
+    44
+  ],
+  "graphical_culture": "Generic",
+  "default_templates": {
+    "USA_air_cavalry_division": [
+      "air_cav_brigade",
+      "air_cav_brigade",
+      "air_cav_brigade",
+      "air_cav_brigade"
+    ],
+    "USA_armored_division": [
+      "armor_brigade",
+      "armor_brigade",
+      "heavy_mechanized_brigade",
+      "light_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_cavalry_division": [
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_heavy_mechanized_division": [
+      "heavy_mechanized_brigade",
+      "heavy_mechanized_brigade",
+      "light_mechanized_brigade",
+      "armor_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_light_mechanized_division": [
+      "light_mechanized_brigade",
+      "light_mechanized_brigade",
+      "heavy_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_motorized_division": [
+      "motorized_brigade",
+      "motorized_brigade",
+      "heavy_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_infantry_division": [
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "artillery_brigade"
+    ],
+    "USA_marine_division": [
+      "marine_brigade",
+      "marine_brigade",
+      "marine_brigade",
+      "marine_brigade"
+    ],
+    "USA_mountain_division": [
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade"
+    ],
+    "USA_national_guard_division": [
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "artillery_brigade"
+    ]
+  },
+  "unit_names": {},
+  "ministers": {
+    "1114000": {
+      "name": "Faisal II",
+      "ideology": "social_cons_idolg",
+      "moral_leader": true,
+      "loyalty": 1,
+      "picture": "IRQ_M_Faisal_II",
+      "head_of_state": "courageous_type",
+      "start_date": "1939-04-04",
+      "death_date": "1958-07-14",
+      "base": 1221000
+    },
+    "1114001": {
+      "name": "Muhammad Najib ar-Rubai'i",
+      "ideology": "fascistic_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_ar-Rubai'i_Muhammad_N",
+      "head_of_state": "extremist_type",
+      "start_date": "1958-07-14",
+      "death_date": "1963-02-08",
+      "base": 1221001
+    },
+    "1114002": {
+      "name": "Saddam Hussein",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 0.8,
+      "picture": "IRQ_M_Hussein_Saddam",
+      "head_of_state": "dictator_type",
+      "head_of_government": "dictator_type",
+      "start_date": "1959-10-07",
+      "death_date": "2003-04-09",
+      "base": 1221002
+    },
+    "1114004": {
+      "name": "Abdul Salam Arif",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_Arif_Abdul_S",
+      "head_of_state": "controversial_figure",
+      "start_date": "1963-02-08",
+      "death_date": "1966-04-13",
+      "base": 1221004
+    },
+    "1114005": {
+      "name": "Abd ar-Rahman al-Bazzaz",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.9,
+      "picture": "IRQ_M_al-Bazzaz_Abd_Ar-Rahman",
+      "head_of_state": "reformer_type",
+      "head_of_government": "reformer_type",
+      "start_date": "1965-09-21",
+      "death_date": "1966-08-09",
+      "base": 1221005
+    },
+    "1114006": {
+      "name": "Abdul Rahman Arif",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_Arif_Abdul_Rahman",
+      "head_of_state": "lethargic_type",
+      "head_of_government": "lethargic_type",
+      "start_date": "1966-04-16",
+      "death_date": "1968-07-17",
+      "base": 1221006
+    },
+    "1114007": {
+      "name": "Ahmed Hassan al-Bakr",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 0.9,
+      "picture": "IRQ_M_al-Bakr_Ahmed_H",
+      "head_of_state": "traditionalist_type",
+      "head_of_government": "traditionalist_type",
+      "start_date": "1963-02-08",
+      "death_date": "1979-07-16",
+      "base": 1221007
+    },
+    "1114008": {
+      "name": "Hamdi al-Pachachi",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_al-Pachachi_Hamdi",
+      "head_of_government": "hardliner_type",
+      "start_date": "1944-06-04",
+      "death_date": "1946-02-23",
+      "base": 1221008
+    },
+    "1114009": {
+      "name": "Tawfiq al-Suwaidi",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_al-Suwaidi_Tawfiq",
+      "head_of_government": "liberal_type",
+      "start_date": "1946-02-23",
+      "death_date": "1950-09-15",
+      "base": 1221009
+    },
+    "1114010": {
+      "name": "Arshad al-Umrai",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.8,
+      "picture": "IRQ_M_al-Umrai_Arshad",
+      "head_of_government": "reputable_type",
+      "start_date": "1946-06-01",
+      "death_date": "1954-08-04",
+      "base": 1221010
+    },
+    "1114011": {
+      "name": "Nuri as-Said",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 0.9,
+      "picture": "IRQ_M_as-Said_Nuri",
+      "head_of_government": "controversial_figure",
+      "start_date": "1946-11-21",
+      "death_date": "1958-05-18",
+      "base": 1221011
+    },
+    "1114012": {
+      "name": "Sayyid Salih Jabr",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_Jabr_Sayyid_S",
+      "head_of_government": "liberal_type",
+      "start_date": "1947-03-29",
+      "death_date": "1948-01-29",
+      "base": 1221012
+    },
+    "1114013": {
+      "name": "Sayyid Muhammad as-Sadr",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_as-Sadr_Sayyid_M",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1948-01-29",
+      "death_date": "1948-06-26",
+      "base": 1221013
+    },
+    "1114014": {
+      "name": "Muzahim al-Pachachi",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_al-Pachachi_Muzahim_A",
+      "head_of_government": "zealous_type",
+      "start_date": "1948-06-26",
+      "death_date": "1949-01-06",
+      "base": 1221014
+    },
+    "1114015": {
+      "name": "Ali Jawdat al-Ayubi",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.9,
+      "picture": "IRQ_M_al-Ayubi_Ali_J",
+      "head_of_government": "hardliner_type",
+      "start_date": "1949-12-10",
+      "death_date": "1957-12-15",
+      "base": 1221015
+    },
+    "1114016": {
+      "name": "Mustafa Mahmud al-Umari",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_al-Umari_Mustafa_M",
+      "head_of_government": "traditionalist_type",
+      "start_date": "1952-07-12",
+      "death_date": "1952-11-23",
+      "base": 1221016
+    },
+    "1114017": {
+      "name": "Nureddin Mahmud",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_Mahmud_Nureddin",
+      "head_of_government": "hardliner_type",
+      "start_date": "1952-11-23",
+      "death_date": "1953-01-29",
+      "base": 1221017
+    },
+    "1114018": {
+      "name": "Jamil al-Midfai",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_al-Midfai_Jamil",
+      "head_of_government": "reputable_type",
+      "start_date": "1953-01-29",
+      "death_date": "1953-09-17",
+      "base": 1221018
+    },
+    "1114019": {
+      "name": "Muhammad Fadhel al-Jamali",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_al-Jamali_Muhammad_F",
+      "head_of_government": "religious_type",
+      "start_date": "1953-09-17",
+      "death_date": "1954-04-29",
+      "base": 1221019
+    },
+    "1114020": {
+      "name": "Abdul-Wahab Mirjan",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_Mirjan_Abdul-Wahab",
+      "head_of_government": "honest_type",
+      "start_date": "1957-12-15",
+      "death_date": "1958-03-03",
+      "base": 1221020
+    },
+    "1114021": {
+      "name": "Ahmad Mukhtar Baban",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_Baban_Ahmad_M",
+      "head_of_government": "administrator_type",
+      "start_date": "1958-05-18",
+      "death_date": "1958-07-14",
+      "base": 1221021
+    },
+    "1114022": {
+      "name": "Abd al-Karim Qasim",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_Qasim_Abd_K",
+      "head_of_government": "autocrat_type",
+      "start_date": "1958-07-14",
+      "death_date": "1963-02-08",
+      "base": 1221022
+    },
+    "1114023": {
+      "name": "Tahir Yahya",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.9,
+      "picture": "IRQ_M_Yahya_Tahir",
+      "head_of_government": "zealous_type",
+      "start_date": "1963-11-20",
+      "death_date": "1968-06-17"
+    },
+    "1114024": {
+      "name": "Arif Abd ar-Razzaq",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_ar-Razza_Arif_A",
+      "head_of_government": "loyal_type",
+      "start_date": "1965-09-06",
+      "death_date": "1965-09-21",
+      "base": 1221024
+    },
+    "1114025": {
+      "name": "Naji Talib",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_Talib_Naji",
+      "head_of_government": "loyal_type",
+      "start_date": "1966-08-09",
+      "death_date": "1967-05-10",
+      "base": 1221025
+    },
+    "1114026": {
+      "name": "Abd ar-Razzaq an-Naif",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_an-Naif_Abd_A",
+      "head_of_government": "honest_type",
+      "start_date": "1968-07-17",
+      "death_date": "1968-07-30",
+      "base": 1221026
+    },
+    "1114027": {
+      "name": "Sa'dun Hammadi",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_Hammadi_Sa'dun",
+      "head_of_government": "reformer_type",
+      "start_date": "1991-03-23",
+      "death_date": "1991-09-13",
+      "base": 1221027
+    },
+    "1114028": {
+      "name": "Mohammad Hamza al-Zubaidi",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 1,
+      "picture": "IRQ_M_al-Zubaidi_Mohammad_H",
+      "head_of_government": "controversial_figure",
+      "start_date": "1991-09-16",
+      "death_date": "1993-09-05",
+      "base": 1221028
+    },
+    "1114029": {
+      "name": "Abdullah I bin al-Hussein",
+      "ideology": "social_cons_idolg",
+      "moral_leader": true,
+      "loyalty": 1,
+      "picture": "JOR_M_al-Hussein_Abdullah_i",
+      "head_of_state": "autocrat_type",
+      "start_date": "1946-01-01",
+      "death_date": "1951-07-20",
+      "base": 1226000
+    },
+    "1114030": {
+      "name": "Talal I bin Abdullah",
+      "ideology": "social_cons_idolg",
+      "moral_leader": true,
+      "loyalty": 1,
+      "picture": "JOR_M_Abdullah_Talal_i",
+      "head_of_state": "controversial_figure",
+      "start_date": "1951-07-20",
+      "death_date": "1952-08-11",
+      "base": 1226001
+    },
+    "1114031": {
+      "name": "Hussein bin Talal",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 1,
+      "picture": "JOR_M_Talal_Hussein_i",
+      "head_of_state": "bureaucrat_type",
+      "start_date": "1952-08-11",
+      "death_date": "1999-02-07",
+      "base": 1226002
+    },
+    "1114034": {
+      "name": "Ibrahim Hashem",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.9,
+      "picture": "JOR_M_Hashem_Ibrahim",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1946-01-01",
+      "death_date": "1958-05-18",
+      "base": 1226005
+    },
+    "1114035": {
+      "name": "Samir al-Rifai",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.95,
+      "picture": "JOR_M_al-Rifai_Samir",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1947-02-04",
+      "death_date": "1963-04-21",
+      "base": 1226006
+    },
+    "1114036": {
+      "name": "Tawfik Abu al-Huda",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.96,
+      "picture": "JOR_M_al-Huda_Tawfik_A",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1947-12-28",
+      "death_date": "1955-05-30",
+      "base": 1226007
+    },
+    "1114037": {
+      "name": "Said P. al-Mufti",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.97,
+      "picture": "JOR_M_al-Mufti_Said_P",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1950-04-12",
+      "death_date": "1956-07-01",
+      "base": 1226008
+    },
+    "1114040": {
+      "name": "Fawzi al-Mulki",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_al-Mulki_Fawzi",
+      "head_of_government": "reformer_type",
+      "start_date": "1953-05-05",
+      "death_date": "1954-05-04",
+      "base": 1226011
+    },
+    "1114043": {
+      "name": "Hazza' B. al-Majali",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.98,
+      "picture": "JOR_M_al-Majali_Hazza_B",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1955-12-15",
+      "death_date": "1960-08-29",
+      "base": 1226014
+    },
+    "1114046": {
+      "name": "Sulayman al-Nabulsi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_al-Nabulsi_Sulayman",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1956-10-29",
+      "death_date": "1957-04-13",
+      "base": 1226019
+    },
+    "1114047": {
+      "name": "Husayin F. al-Khalidi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_al-Khalidi_Husayn_F",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1957-04-13",
+      "death_date": "1957-04-24",
+      "base": 1226020
+    },
+    "1114049": {
+      "name": "Bahjat Talhouni",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.96,
+      "picture": "JOR_M_Talhouni_Bahjat",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1960-08-29",
+      "death_date": "1970-06-27",
+      "base": 1226024
+    },
+    "1114050": {
+      "name": "Wasfi al-Tal",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.8,
+      "picture": "JOR_M_al-Tal_Wasfi",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1962-01-28",
+      "death_date": "1971-11-28",
+      "base": 1226025
+    },
+    "1114051": {
+      "name": "S. Hussein ibn Nasser",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.9,
+      "picture": "JOR_M_Nasser_H_i_Sharif",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1963-04-21",
+      "death_date": "1967-04-23",
+      "base": 1226027
+    },
+    "1114054": {
+      "name": "Saad M. Jumaa",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_Jumaa_Saad_M",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1967-04-23",
+      "death_date": "1967-10-07",
+      "base": 1226031
+    },
+    "1114056": {
+      "name": "Abdelmunim al-Rifai",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_al-Rifai_Abdelmunim",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1969-03-24",
+      "death_date": "1970-09-16",
+      "base": 1226033
+    },
+    "1114057": {
+      "name": "Mohammad D. Al-Abbasi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_Al-Abbasi_Mohammad_D",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1970-09-16",
+      "death_date": "1970-09-26",
+      "base": 1226036
+    },
+    "1114058": {
+      "name": "Ahmad Toukan",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_Toukan_Ahmad",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1970-09-26",
+      "death_date": "1970-10-28",
+      "base": 1226037
+    },
+    "1114060": {
+      "name": "Ahmad al-Lawzi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_al-Lawzi_Ahmad",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1971-11-28",
+      "death_date": "1973-05-26",
+      "base": 1226039
+    },
+    "1114061": {
+      "name": "Zaid al-Rifai",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.9,
+      "picture": "JOR_M_al-Rifai_Zaid",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1973-05-26",
+      "death_date": "1989-04-27",
+      "base": 1226040
+    },
+    "1114062": {
+      "name": "Mudar S. M. Badran",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.8,
+      "picture": "JOR_M_Badran_Mudar_S_M",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1976-07-13",
+      "death_date": "1991-06-19",
+      "base": 1226041
+    },
+    "1114063": {
+      "name": "Abdelhamid Sharaf",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_Sharaf_Abdelhamid",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1979-12-19",
+      "death_date": "1980-07-03",
+      "base": 1226042
+    },
+    "1114064": {
+      "name": "Kassim al-Rimawi",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_al-Rimawi_Kassim",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1980-07-03",
+      "death_date": "1980-08-28",
+      "base": 1226043
+    },
+    "1114066": {
+      "name": "Ahmad Obeidat",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_Obeidat_Ahmad",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1984-01-10",
+      "death_date": "1985-04-04",
+      "base": 1226045
+    },
+    "1114067": {
+      "name": "Zaid ibn Shaker",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.9,
+      "picture": "JOR_M_Shaker_Zaid_i",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1989-04-27",
+      "death_date": "1993-05-29",
+      "base": 1226047
+    },
+    "1114069": {
+      "name": "Taher N. al-Masri",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "JOR_M_al-Masri_Taher_N",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1991-06-19",
+      "death_date": "1991-11-21",
+      "base": 1226049
+    },
+    "1114070": {
+      "name": "Abdullah II ibn al-Hussein",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 0.99,
+      "picture": "JOR_M_al-Hussein_Abdullah_II",
+      "head_of_state": "traditionalist_type",
+      "start_date": "1980-01-30",
+      "death_date": "2300-01-01",
+      "base": 1226058
+    },
+    "1114071": {
+      "name": "Faisal bin al-Hussein",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 0.98,
+      "picture": "JOR_M_al-Hussein_Faisal",
+      "head_of_state": "traditionalist_type",
+      "start_date": "1981-10-11",
+      "death_date": "2300-01-01",
+      "base": 1226059
+    },
+    "1114072": {
+      "name": "Muhammad bin Talal",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 0.97,
+      "picture": "JOR_M_Talal_Muhammad",
+      "head_of_state": "traditionalist_type",
+      "start_date": "1958-10-02",
+      "death_date": "2300-01-01",
+      "base": 1226060
+    },
+    "1114073": {
+      "name": "Talal bin Muhammad",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 0.96,
+      "picture": "JOR_M_Muhammad_Talal",
+      "head_of_state": "traditionalist_type",
+      "start_date": "1983-07-26",
+      "death_date": "2300-01-01",
+      "base": 1226061
+    },
+    "1114074": {
+      "name": "Ghazi bin Muhammad",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 0.95,
+      "picture": "JOR_M_Muhammad_Ghazi",
+      "head_of_state": "traditionalist_type",
+      "start_date": "1984-10-15",
+      "death_date": "2300-01-01",
+      "base": 1226062
+    },
+    "1114075": {
+      "name": "Hassan bin Talal",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 0.94,
+      "picture": "JOR_M_Talal_Hassan",
+      "head_of_state": "traditionalist_type",
+      "start_date": "1965-03-20",
+      "death_date": "2300-01-01",
+      "base": 1226063
+    },
+    "1114076": {
+      "name": "Naif bin Abdullah",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 0.93,
+      "picture": "JOR_M_Abdullah_Naif",
+      "head_of_state": "traditionalist_type",
+      "start_date": "1946-01-01",
+      "death_date": "1983-10-12",
+      "base": 1226064
+    },
+    "1114077": {
+      "name": "Abd al-llah",
+      "ideology": "social_cons_idolg",
+      "moral_leader": true,
+      "loyalty": 0.99,
+      "picture": "IRQ_M_al-llah_Abd",
+      "head_of_state": "courteous_figure",
+      "start_date": "1946-01-01",
+      "death_date": "1958-07-14",
+      "base": 1221029
+    },
+    "1114078": {
+      "name": "Zeid I bin Hussein",
+      "ideology": "social_cons_idolg",
+      "moral_leader": true,
+      "loyalty": 0.98,
+      "picture": "IRQ_M_Hussein_Zeid",
+      "head_of_state": "autocrat_type",
+      "start_date": "1958-07-14",
+      "death_date": "1970-10-18",
+      "base": 1221100
+    },
+    "1114079": {
+      "name": "Ra'ad I bin Zeid",
+      "ideology": "social_cons_idolg",
+      "moral_leader": true,
+      "loyalty": 0.97,
+      "picture": "IRQ_M_Zeid_Raad",
+      "head_of_state": "visionary_type",
+      "start_date": "1970-10-18",
+      "death_date": "1999-12-31",
+      "base": 1221101
+    },
+    "1114080": {
+      "name": "Zeid bin Ra'ad",
+      "ideology": "social_cons_idolg",
+      "moral_leader": true,
+      "loyalty": 0.96,
+      "picture": "IRQ_M_Zeid_Raad",
+      "head_of_state": "courteous_figure",
+      "start_date": "1979-01-26",
+      "death_date": "2300-01-01",
+      "base": 1221030
+    },
+    "1114081": {
+      "name": "Mired bin Ra'ad",
+      "ideology": "social_cons_idolg",
+      "moral_leader": true,
+      "loyalty": 0.95,
+      "picture": "IRQ_M_Mired",
+      "head_of_state": "courteous_figure",
+      "start_date": "1980-06-11",
+      "death_date": "2300-01-01",
+      "base": 1221031
+    },
+    "1114082": {
+      "name": "Firas bin Ra'ad",
+      "ideology": "social_cons_idolg",
+      "moral_leader": true,
+      "loyalty": 0.94,
+      "picture": "IRQ_M_Firas",
+      "head_of_state": "courteous_figure",
+      "start_date": "1984-10-12",
+      "death_date": "2300-01-01",
+      "base": 1221032
+    }
+  }
+}

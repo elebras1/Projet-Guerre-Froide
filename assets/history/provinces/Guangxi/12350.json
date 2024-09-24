@@ -1,0 +1,55 @@
+{
+  "owner": "CGX",
+  "controller": "CGX",
+  "add_core": [
+    "CGX",
+    "CHI",
+    "CHC"
+  ],
+  "renewable_energy": 0.01212,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1781924,
+      "template": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "remove_core": "CGX"
+  },
+  "1995.1.1": {
+    "renewable_energy": 121
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1817366,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1853513,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 2273739,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 3264948,
+      "template": 206
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 3906444,
+      "template": 306
+    }
+  }
+}

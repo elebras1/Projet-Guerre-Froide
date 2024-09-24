@@ -1,0 +1,72 @@
+{
+  "owner": "SWE",
+  "controller": "SWE",
+  "add_core": "SWE",
+  "grain": 35.94,
+  "infra": 6,
+  "air_base": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 144425,
+      "template": 59
+    }
+  },
+  "1972.2.6": {
+    "economy_building": {
+      "name": "nuclear_plant",
+      "size": 6
+    }
+  },
+  "1975.1.10": {
+    "economy_building": {
+      "name": "nuclear_plant",
+      "size": 7
+    }
+  },
+  "1985.8.15": {
+    "economy_building": {
+      "name": "nuclear_plant",
+      "size": 8
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 1
+    },
+    {
+      "population_total": {
+        "amount": 173176,
+        "template": 259
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 2
+    },
+    {
+      "population_total": {
+        "amount": 179901,
+        "template": 359
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 145428,
+      "template": 59
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 146439,
+      "template": 59
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 158122,
+      "template": 159
+    }
+  }
+}

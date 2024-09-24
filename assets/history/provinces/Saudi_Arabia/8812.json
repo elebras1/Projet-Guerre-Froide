@@ -1,0 +1,61 @@
+{
+    "owner": "SAU",
+    "controller": "SAU",
+    "add_core": "SAU",
+    "oil": 171,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 27420,
+            "template": 40
+        },
+        "economy_building": {
+            "name": "refinery",
+            "size": 6
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": [
+                {
+                    "name": "refinery",
+                    "size": 7
+                },
+                {
+                    "name": "refinery",
+                    "size": 9
+                }
+            ]
+        },
+        {
+            "population_total": {
+                "amount": 85049,
+                "template": 240
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 28102,
+            "template": 40
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 28802,
+            "template": 40
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 39789,
+            "template": 140
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 153819,
+            "template": 340
+        }
+    }
+}

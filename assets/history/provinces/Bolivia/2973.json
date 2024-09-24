@@ -1,0 +1,57 @@
+{
+  "owner": "BOL",
+  "controller": "BOL",
+  "add_core": "BOL",
+  "vegetables": 7.83,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 63248,
+      "template": 80
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 127056,
+        "template": 280
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 64550,
+      "template": 80
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 65878,
+      "template": 80
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 85149,
+      "template": 180
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 165418,
+      "template": 380
+    }
+  }
+}

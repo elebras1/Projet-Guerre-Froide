@@ -1,0 +1,56 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "YEM",
+    "SYA",
+    "ENG"
+  ],
+  "oil": 44,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 22548,
+      "template": 44
+    }
+  },
+  "1967.11.30": {
+    "owner": "SYA",
+    "controller": "SYA",
+    "remove_core": "ENG"
+  },
+  "1990.5.22": {
+    "owner": "YEM",
+    "controller": "YEM"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 22918,
+      "template": 44
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 23294,
+      "template": 44
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 28697,
+      "template": 144
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 41246,
+      "template": 244
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 67680,
+      "template": 344
+    }
+  }
+}

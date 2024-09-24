@@ -1,0 +1,102 @@
+{
+  "add_core": [
+    "FRG",
+    "DDR"
+  ],
+  "owner": "ENG",
+  "controller": "ENG",
+  "fish": 518.59,
+  "infra": 4,
+  "naval_base": 3,
+  "1946.1.1": {
+    "air_base": 5,
+    "population_total": {
+      "amount": 771847,
+      "template": 71
+    }
+  },
+  "1949.05.23": {
+    "owner": "FRG",
+    "controller": "FRG"
+  },
+  "1990.10.3": {
+    "owner": "GER",
+    "controller": "GER",
+    "remove_core": [
+      "DDR",
+      "FRG"
+    ]
+  },
+  "1948.1.1": [
+    {
+      "air_base": 7,
+      "economy_building": {
+        "name": "naval_yards",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 807036,
+        "template": 71
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "air_base": 9,
+      "economy_building": {
+        "name": "naval_yards",
+        "size": 10
+      }
+    },
+    {
+      "population_total": {
+        "amount": 835225,
+        "template": 71
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "naval_base": 5,
+      "economy_building": {
+        "name": "naval_yards",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1026600,
+        "template": 271
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 7,
+      "economy_building": {
+        "name": "naval_yards",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1070623,
+        "template": 371
+      }
+    }
+  ],
+  "1961.1.1": {
+    "naval_base": 4
+  },
+  "1985.1.1": {
+    "naval_base": 6
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 951537,
+      "template": 171
+    }
+  }
+}

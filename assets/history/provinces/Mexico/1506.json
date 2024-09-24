@@ -1,0 +1,85 @@
+{
+  "owner": "MEX",
+  "controller": "MEX",
+  "add_core": "MEX",
+  "vegetables": 47.75,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 233274,
+      "template": 81
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 3
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 240424,
+        "template": 81
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 247793,
+        "template": 81
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 5
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 597145,
+        "template": 281
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 764065,
+        "template": 381
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 364291,
+      "template": 181
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "ZIM",
+    "RHO"
+  ],
+  "grain": 12.94,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 65677,
+      "template": 1
+    }
+  },
+  "1953.8.1": {
+    "owner": "RHO",
+    "controller": "RHO",
+    "remove_core": "ENG"
+  },
+  "1979.06.01": {
+    "owner": "ZIM",
+    "controller": "ZIM",
+    "remove_core": "RHO"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 67697,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 69781,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 101774,
+      "template": 101
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 178640,
+      "template": 201
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 273046,
+      "template": 301
+    }
+  }
+}

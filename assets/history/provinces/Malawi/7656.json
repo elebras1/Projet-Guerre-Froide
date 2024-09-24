@@ -1,0 +1,57 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "MLW",
+    "RHO"
+  ],
+  "vegetables": 26.31,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 296363,
+      "template": 1
+    }
+  },
+  "1953.8.1": {
+    "owner": "RHO",
+    "controller": "RHO",
+    "remove_core": "ENG"
+  },
+  "1964.07.06": {
+    "owner": "MLW",
+    "controller": "MLW",
+    "remove_core": "RHO"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 301965,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 307672,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 394538,
+      "template": 101
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 646706,
+      "template": 201
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1023582,
+      "template": 301
+    }
+  }
+}

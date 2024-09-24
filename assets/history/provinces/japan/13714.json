@@ -1,0 +1,69 @@
+{
+    "owner": "JAP",
+    "controller": "JAP",
+    "add_core": "JAP",
+    "coal": 2,
+    "infra": 4,
+    "naval_base": 4,
+    "air_base": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1066168,
+            "template": 8
+        },
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 9
+        }
+    },
+    "1985.1.1": {
+        "naval_base": 7,
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 10
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 5
+    },
+    "1979.1.1": [
+        {
+            "naval_base": 6
+        },
+        {
+            "population_total": {
+                "amount": 1535185,
+                "template": 208
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "naval_base": 8
+        },
+        {
+            "population_total": {
+                "amount": 1638072,
+                "template": 308
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1081649,
+            "template": 8
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1097354,
+            "template": 8
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1258412,
+            "template": 108
+        }
+    }
+}

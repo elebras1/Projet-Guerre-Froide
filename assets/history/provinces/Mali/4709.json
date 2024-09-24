@@ -1,0 +1,55 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FSU",
+    "FRA",
+    "MAL"
+  ],
+  "grain": 11.76,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 197443,
+      "template": 5
+    }
+  },
+  "1960.09.22": {
+    "owner": "MAL",
+    "controller": "MAL",
+    "remove_core": [
+      "FSU",
+      "FRA"
+    ]
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 199844,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 202274,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 234718,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 309945,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 386495,
+      "template": 305
+    }
+  }
+}

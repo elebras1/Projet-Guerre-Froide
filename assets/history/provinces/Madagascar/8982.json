@@ -1,0 +1,59 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "MAD"
+  ],
+  "grain": 20.4,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 65819,
+      "template": 1
+    }
+  },
+  "1960.06.26": {
+    "owner": "MAD",
+    "controller": "MAD",
+    "remove_core": "FRA"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 141000,
+        "template": 201
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 67236,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 68684,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 90061,
+      "template": 101
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 195455,
+      "template": 301
+    }
+  }
+}

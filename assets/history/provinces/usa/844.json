@@ -1,0 +1,61 @@
+{
+  "owner": "USA",
+  "controller": "USA",
+  "add_core": "USA",
+  "grain": 21.28,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1545,
+      "template": 93
+    }
+  },
+  "1965.1.1": {
+    "economy_building": {
+      "name": "nuclear_silo",
+      "size": 2,
+      "model": 0,
+      "ammo_store": 30
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "nuclear_silo",
+        "size": 2,
+        "model": 2,
+        "ammo_store": 30
+      }
+    },
+    {
+      "population_total": {
+        "amount": 2301,
+        "template": 293
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1570,
+      "template": 93
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1596,
+      "template": 93
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1941,
+      "template": 193
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2586,
+      "template": 393
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "GHN"
+  ],
+  "vegetables": 7,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 109717,
+      "template": 5
+    }
+  },
+  "1957.3.6.0": [
+    {
+      "owner": "GHN",
+      "controller": "GHN"
+    },
+    {
+      "remove_core": "ENG"
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 112883,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 116139,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 167407,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 248661,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 354795,
+      "template": 305
+    }
+  }
+}

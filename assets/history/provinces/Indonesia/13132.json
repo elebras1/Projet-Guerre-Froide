@@ -1,0 +1,53 @@
+{
+  "owner": "HOL",
+  "controller": "HOL",
+  "add_core": [
+    "INO",
+    "HOL"
+  ],
+  "fruits": 11.76,
+  "infra": 5,
+  "naval_base": 2,
+  "1946.1.1": {
+    "air_base": 2,
+    "population_total": {
+      "amount": 950159,
+      "template": 21
+    }
+  },
+  "1949.12.27": {
+    "owner": "INO",
+    "controller": "INO",
+    "remove_core": "HOL"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 967299,
+      "template": 21
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 984749,
+      "template": 21
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1270881,
+      "template": 121
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1939617,
+      "template": 221
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2466591,
+      "template": 321
+    }
+  }
+}

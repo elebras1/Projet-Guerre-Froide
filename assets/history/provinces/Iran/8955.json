@@ -1,0 +1,55 @@
+{
+  "owner": "PER",
+  "controller": "PER",
+  "add_core": "PER",
+  "meat": 9.81,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 85259,
+      "template": 16
+    },
+    "economy_building": {
+      "name": "refinery",
+      "size": 5
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 286702,
+        "template": 316
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 87130,
+      "template": 16
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 89041,
+      "template": 16
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 118440,
+      "template": 116
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 190400,
+      "template": 216
+    }
+  }
+}

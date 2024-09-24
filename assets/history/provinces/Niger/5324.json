@@ -1,0 +1,65 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "NGR"
+  ],
+  "grain": 45.09,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 293248,
+      "template": 5
+    }
+  },
+  "1958.08.03": {
+    "owner": "NGR",
+    "controller": "NGR",
+    "remove_core": "FRA"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 718558,
+        "template": 205
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 2
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 301518,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 310021,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 433706,
+      "template": 105
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1012067,
+      "template": 305
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+    "owner": "ROM",
+    "controller": "ROM",
+    "add_core": "ROM",
+    "wood": 0.8,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 316260,
+            "template": 50
+        },
+        "economy_building": {
+            "name": "powerplant",
+            "size": 3
+        }
+    },
+    "1950.1.1": [
+        {
+            "economy_building": {
+                "name": "powerplant",
+                "size": 4
+            }
+        },
+        {
+            "population_total": {
+                "amount": 325119,
+                "template": 50
+            }
+        }
+    ],
+    "1953.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 6
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "powerplant",
+                "size": 9
+            }
+        },
+        {
+            "population_total": {
+                "amount": 439307,
+                "template": 250
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 320659,
+            "template": 50
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 371551,
+            "template": 150
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 461828,
+            "template": 350
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "owner": "MEX",
+    "controller": "MEX",
+    "add_core": "MEX",
+    "oil": 321,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 285802,
+            "template": 81
+        },
+        "economy_building": {
+            "name": "refinery",
+            "size": 5
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 6
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "refinery",
+                "size": 8
+            }
+        },
+        {
+            "population_total": {
+                "amount": 731608,
+                "template": 281
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 294562,
+            "template": 81
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 303590,
+            "template": 81
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 446321,
+            "template": 181
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 936116,
+            "template": 381
+        }
+    }
+}

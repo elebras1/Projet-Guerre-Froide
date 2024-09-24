@@ -1,0 +1,54 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "GHN"
+  ],
+  "renewable_energy": 102,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 227953,
+      "template": 5
+    }
+  },
+  "1957.03.06": {
+    "owner": "GHN",
+    "controller": "GHN",
+    "remove_core": "ENG"
+  },
+  "1965.1.1": {
+    "renewable_energy": 102
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 234530,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 241296,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 347811,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 516628,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 737138,
+      "template": 305
+    }
+  }
+}

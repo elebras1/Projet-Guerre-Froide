@@ -1,0 +1,86 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "MOR"
+  ],
+  "fish": 49.54,
+  "infra": 6,
+  "naval_base": 1,
+  "air_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 475271,
+      "template": 3
+    },
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
+    }
+  },
+  "1956.03.02": {
+    "owner": "MOR",
+    "controller": "MOR",
+    "remove_core": "FRA"
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 499088,
+        "template": 3
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "naval_base": 3,
+      "economy_building": {
+        "name": "powerplant",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1063242,
+        "template": 203
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 4,
+      "economy_building": {
+        "name": "powerplant",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1406898,
+        "template": 303
+      }
+    }
+  ],
+  "1961.1.1": {
+    "naval_base": 2
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 487034,
+      "template": 3
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 684277,
+      "template": 103
+    }
+  }
+}

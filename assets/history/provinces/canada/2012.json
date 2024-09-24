@@ -1,0 +1,61 @@
+{
+  "owner": "CAN",
+  "controller": "CAN",
+  "add_core": "CAN",
+  "vegetables": 147.25,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 331380,
+      "template": 92
+    },
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 3
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 4
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 617224,
+        "template": 292
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 340384,
+      "template": 92
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 349632,
+      "template": 92
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 474192,
+      "template": 192
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 713968,
+      "template": 392
+    }
+  }
+}

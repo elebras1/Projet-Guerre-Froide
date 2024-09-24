@@ -1,0 +1,76 @@
+{
+  "owner": "CHC",
+  "controller": "CHC",
+  "add_core": [
+    "CHI",
+    "CHC"
+  ],
+  "wood": 1,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 4761950,
+      "template": 6
+    }
+  },
+  "1949.10.1.0": {
+    "owner": "CHC",
+    "controller": "CHC"
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 7
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 10439442,
+        "template": 306
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 4856665,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 4953264,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 6076259,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 8725132,
+      "template": 206
+    }
+  }
+}

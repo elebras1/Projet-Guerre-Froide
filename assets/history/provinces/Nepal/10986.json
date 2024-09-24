@@ -1,0 +1,61 @@
+{
+  "owner": "NEP",
+  "controller": "NEP",
+  "add_core": "NEP",
+  "vegetables": 118.48,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 955417,
+      "template": 17
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 2
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 2345605,
+        "template": 317
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 971248,
+      "template": 17
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 987342,
+      "template": 17
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1211784,
+      "template": 117
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1762599,
+      "template": 217
+    }
+  }
+}

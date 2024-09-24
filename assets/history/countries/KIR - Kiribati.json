@@ -1,0 +1,112 @@
+{
+  "capital": 14807,
+  "government": "republic_gov",
+  "ideology": "market_liberal_idolg",
+  "alignment": {
+    "x": 0,
+    "y": 0
+  },
+  "neutrality": 75,
+  "national_unity": 100,
+  "national_culture": "cul_pacific",
+  "national_religion": "christianity",
+  "national_identity": "state_building_focus",
+  "national_attitude": "defensive",
+  "organized_religions_law": "secular_state",
+  "civil_liberties": "fully_granted_liberties",
+  "freedom_of_the_press": "limited_restrictions",
+  "elections_and_voting": "proportional",
+  "military_service": "abbreviated_volunteer_army",
+  "rule_of_law": "moderately_defined",
+  "human_rights": "cultural_relativism",
+  "public_oversight": "non-systematic_oversight",
+  "foreign_policy": "detente_pol",
+  "intelligence_policy": "intelligence_gathering_pol",
+  "armaments_policy": "conventional_warfare_focus_pol",
+  "military_policy": "two_y_service_pol",
+  "nuclear_policy": "civilian_nuclear_focus_pol",
+  "domestic_policy": "agricultural_focus_pol",
+  "internal_policy": "oppressive_aff_pol",
+  "economic_policy": "resource_based_policy_pol",
+  "fiscal_policy": "reduced_taxation_pol",
+  "education_policy": "high_funding_edu_pol",
+  "popularity": {
+    "fascistic_idolg": 0,
+    "paternal_auto_idolg": 0,
+    "social_cons_idolg": 30,
+    "market_liberal_idolg": 40,
+    "social_liberal_idolg": 0,
+    "social_democrat_idolg": 30,
+    "left_wing_radical_idolg": 0,
+    "maoist_idolg": 0,
+    "communist_idolg": 0
+  },
+  "oob": "empty.txt",
+  "1946.1.1": {
+    "oob": "empty.txt"
+  },
+  "1948.5.14": {},
+  "1950.6.25": {},
+  "1961.12.11": {
+    "small_arms": 2,
+    "crew_served_weapons": 2,
+    "light_engine": 2,
+    "light_artillery": 2,
+    "industry_modern_science": 1,
+    "industry_heavy_mechanical_parts": 1,
+    "centralized_command_and_control": 1,
+    "industry_physics": 1,
+    "industry_chemistry": 1,
+    "explosives": 1,
+    "mass_firepower": 1,
+    "industry_heavy_mechanical_engineering": 3
+  },
+  "1979.12.24": {
+    "neutrality": 70,
+    "head_of_state": 1231003,
+    "head_of_government": 1231003,
+    "small_arms": 3,
+    "crew_served_weapons": 3,
+    "light_engine": 3,
+    "light_artillery": 3,
+    "industry_modern_science": 1,
+    "industry_heavy_mechanical_parts": 1,
+    "industry_chemistry": 3,
+    "industry_light_massproduction": 2,
+    "centralized_command_and_control": 1,
+    "industry_physics": 1,
+    "explosives": 1,
+    "mass_firepower": 1,
+    "industry_light_plastics": 4,
+    "industry_heavy_mechanical_engineering": 5
+  },
+  "1982.1.1": {
+    "head_of_state": 1231003,
+    "head_of_government": 1231003
+  },
+  "1989.01.05": {
+    "add_country_modifier": {
+      "name": "signed_the_geneva_convention",
+      "duration": -1
+    }
+  },
+  "1991.1.16": {
+    "neutrality": 70,
+    "head_of_state": 1231003,
+    "head_of_government": 1231003,
+    "small_arms": 3,
+    "crew_served_weapons": 3,
+    "light_engine": 3,
+    "light_artillery": 3,
+    "industry_modern_science": 1,
+    "industry_heavy_mechanical_parts": 1,
+    "industry_chemistry": 3,
+    "industry_light_massproduction": 2,
+    "centralized_command_and_control": 1,
+    "industry_physics": 1,
+    "explosives": 1,
+    "mass_firepower": 1,
+    "industry_light_plastics": 4,
+    "industry_heavy_mechanical_engineering": 5
+  }
+}

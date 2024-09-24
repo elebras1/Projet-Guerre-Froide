@@ -1,0 +1,55 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": "ENG",
+  "wood": 0.4,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 178152,
+      "template": 60
+    },
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 6
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 202824,
+        "template": 360
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 178549,
+      "template": 60
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 178947,
+      "template": 60
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 188312,
+      "template": 160
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 199030,
+      "template": 260
+    }
+  }
+}

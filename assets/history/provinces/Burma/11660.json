@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "BUR"
+  ],
+  "vegetables": 11.04,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 150978,
+      "template": 24
+    }
+  },
+  "1948.01.04": {
+    "owner": "BUR",
+    "controller": "BUR",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 153838,
+      "template": 24
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 156752,
+      "template": 24
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 199769,
+      "template": 124
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 294222,
+      "template": 224
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 364125,
+      "template": 324
+    }
+  }
+}

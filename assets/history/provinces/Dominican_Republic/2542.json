@@ -1,0 +1,90 @@
+{
+    "owner": "DOM",
+    "controller": "DOM",
+    "add_core": "DOM",
+    "fruits": 8.66,
+    "infra": 6,
+    "naval_base": 2,
+    "1946.1.1": {
+        "air_base": 2,
+        "population_total": {
+            "amount": 649573,
+            "template": 75
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 3
+        }
+    },
+    "1950.1.1": [
+        {
+            "economy_building": {
+                "name": "light_industry",
+                "size": 3
+            }
+        },
+        {
+            "population_total": {
+                "amount": 668705,
+                "template": 75
+            }
+        }
+    ],
+    "1953.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        }
+    },
+    "1979.1.1": [
+        {
+            "naval_base": 4,
+            "economy_building": [
+                {
+                    "name": "light_industry",
+                    "size": 7
+                },
+                {
+                    "name": "light_industry",
+                    "size": 6
+                }
+            ]
+        },
+        {
+            "population_total": {
+                "amount": 1590718,
+                "template": 275
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "naval_base": 5,
+            "economy_building": {
+                "name": "light_industry",
+                "size": 4
+            }
+        },
+        {
+            "population_total": {
+                "amount": 2062160,
+                "template": 375
+            }
+        }
+    ],
+    "1961.1.1": {
+        "naval_base": 3
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 659070,
+            "template": 75
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 993589,
+            "template": 175
+        }
+    }
+}

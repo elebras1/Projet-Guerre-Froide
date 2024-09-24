@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "IND",
+    "PAK"
+  ],
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 253946,
+      "template": 18
+    }
+  },
+  "1947.08.17": {
+    "owner": "PAK",
+    "controller": "PAK",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 258555,
+      "template": 18
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 263248,
+      "template": 18
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 337968,
+      "template": 118
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 545766,
+      "template": 218
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 806173,
+      "template": 318
+    }
+  }
+}

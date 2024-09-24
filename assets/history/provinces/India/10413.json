@@ -1,0 +1,63 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "IND"
+  ],
+  "vegetables": 94.22,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 805379,
+      "template": 15
+    }
+  },
+  "1947.08.15": {
+    "owner": "IND",
+    "controller": "IND",
+    "remove_core": "ENG"
+  },
+  "1973.12.16": {
+    "economy_building": {
+      "name": "nuclear_plant",
+      "size": 4
+    }
+  },
+  "1981.4.1": {
+    "economy_building": {
+      "name": "nuclear_plant",
+      "size": 6
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 819675,
+      "template": 15
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 834224,
+      "template": 15
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1046182,
+      "template": 115
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1534168,
+      "template": 215
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2000914,
+      "template": 315
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "NIG"
+    ],
+    "oil": 240,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 582699,
+            "template": 5
+        },
+        "naval_base": 1
+    },
+    "1960.10.01": {
+        "owner": "NIG",
+        "controller": "NIG",
+        "remove_core": "ENG"
+    },
+    "1979.1.1": [
+        {
+            "naval_base": 2,
+            "economy_building": {
+                "name": "heavy_industry",
+                "size": 3
+            }
+        },
+        {
+            "population_total": {
+                "amount": 1171959,
+                "template": 205
+            }
+        }
+    ],
+    "1985.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 4
+        }
+    },
+    "1991.1.1": [
+        {
+            "naval_base": 3,
+            "economy_building": {
+                "name": "heavy_industry",
+                "size": 2
+            }
+        },
+        {
+            "population_total": {
+                "amount": 1595913,
+                "template": 305
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 593397,
+            "template": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 604292,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 765121,
+            "template": 105
+        }
+    }
+}

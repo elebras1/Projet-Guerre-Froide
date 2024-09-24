@@ -1,0 +1,55 @@
+{
+  "owner": "CAN",
+  "controller": "CAN",
+  "add_core": "CAN",
+  "grain": 9.7,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 39373,
+      "template": 92
+    },
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 73335,
+        "template": 292
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 40443,
+      "template": 92
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 41541,
+      "template": 92
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 56341,
+      "template": 192
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 84830,
+      "template": 392
+    }
+  }
+}

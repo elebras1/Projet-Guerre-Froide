@@ -1,0 +1,101 @@
+{
+  "capital": 5044,
+  "government": "authoritarian_gov",
+  "ideology": "paternal_auto_idolg",
+  "alignment": {
+    "x": 0,
+    "y": 0
+  },
+  "neutrality": 65,
+  "national_unity": 100,
+  "national_culture": "cul_sub_saharan_africa",
+  "national_religion": "islam",
+  "national_identity": "state_building_focus",
+  "national_attitude": "defensive",
+  "organized_religions_law": "secular_state",
+  "civil_liberties": "suspended_indefinitely",
+  "freedom_of_the_press": "propaganda_press",
+  "elections_and_voting": "single_party_system",
+  "military_service": "conventional_drafted_army",
+  "rule_of_law": "narrowly_defined",
+  "human_rights": "not_recognized",
+  "public_oversight": "moral_code_of_conduct",
+  "foreign_policy": "detente_pol",
+  "intelligence_policy": "intelligence_gathering_pol",
+  "armaments_policy": "conventional_warfare_focus_pol",
+  "military_policy": "two_y_service_pol",
+  "nuclear_policy": "civilian_nuclear_focus_pol",
+  "domestic_policy": "agricultural_focus_pol",
+  "internal_policy": "oppressive_aff_pol",
+  "economic_policy": "resource_based_policy_pol",
+  "fiscal_policy": "reduced_taxation_pol",
+  "education_policy": "high_funding_edu_pol",
+  "popularity": {
+    "fascistic_idolg": 0,
+    "paternal_auto_idolg": 70,
+    "social_cons_idolg": 30,
+    "market_liberal_idolg": 0,
+    "social_liberal_idolg": 0,
+    "social_democrat_idolg": 0,
+    "left_wing_radical_idolg": 0,
+    "maoist_idolg": 0,
+    "communist_idolg": 0
+  },
+  "oob": "empty.txt",
+  "1946.1.1": {
+    "oob": "empty.txt"
+  },
+  "1948.5.14": {},
+  "1950.6.25": {},
+  "1961.12.11": {
+    "oob": "NGR_1961.txt",
+    "neutrality": 60,
+    "head_of_state": 1272001,
+    "head_of_government": 1272001,
+    "alignment": {
+      "x": -5,
+      "y": 0
+    }
+  },
+  "1964.04.21": {
+    "add_country_modifier": {
+      "name": "signed_the_geneva_convention",
+      "duration": -1
+    }
+  },
+  "1979.12.24": {
+    "oob": "NGR_1979.txt",
+    "neutrality": 60,
+    "head_of_state": 1272002,
+    "head_of_government": 1272002,
+    "alignment": {
+      "x": -25,
+      "y": 0
+    },
+    "small_arms": 1,
+    "crew_served_weapons": 1,
+    "centralized_command_and_control": 1,
+    "mass_firepower": 1
+  },
+  "1982.1.1": {
+    "head_of_state": 1272002,
+    "head_of_government": 1272002
+  },
+  "1991.1.16": {
+    "oob": "NGR_1991.txt",
+    "neutrality": 60,
+    "head_of_state": 1272003,
+    "head_of_government": 1272006,
+    "small_arms": 1,
+    "crew_served_weapons": 1,
+    "centralized_command_and_control": 1,
+    "mass_firepower": 1
+  },
+  "1960.9.20": {
+    "join_organisation": "XUN",
+    "add_country_modifier": {
+      "name": "mod_united_nations_member_state",
+      "duration": -1
+    }
+  }
+}

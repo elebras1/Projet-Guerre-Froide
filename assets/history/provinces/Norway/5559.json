@@ -1,0 +1,77 @@
+{
+  "owner": "NOR",
+  "controller": "NOR",
+  "add_core": "NOR",
+  "grain": 28.25,
+  "infra": 6,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 172818,
+      "template": 58
+    },
+    "economy_building": {
+      "name": "powerplant",
+      "size": 6
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 176183,
+        "template": 58
+      }
+    }
+  ],
+  "1961.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 8
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 3,
+      "economy_building": {
+        "name": "powerplant",
+        "size": 9
+      }
+    },
+    {
+      "population_total": {
+        "amount": 219744,
+        "template": 258
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 230033,
+        "template": 358
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 174492,
+      "template": 58
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 196296,
+      "template": 158
+    }
+  }
+}

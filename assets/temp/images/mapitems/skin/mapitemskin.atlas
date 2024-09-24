@@ -1,0 +1,41 @@
+
+mapitemskin.png
+size: 512, 512
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+counterbackground
+  rotate: false
+  xy: 1, 197
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+counterbackground_checked
+  rotate: false
+  xy: 1, 67
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+counterbackground_small
+  rotate: false
+  xy: 131, 261
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+counterbackground_small_checked
+  rotate: false
+  xy: 1, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+infantry_regiment
+  rotate: false
+  xy: 131, 227
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1

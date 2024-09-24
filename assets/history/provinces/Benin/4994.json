@@ -1,0 +1,51 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "BEN"
+  ],
+  "vegetables": 33,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 95355,
+      "template": 5
+    }
+  },
+  "1960.08.01": {
+    "owner": "BEN",
+    "controller": "BEN",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 95749,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 96144,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 105951,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 149932,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 210348,
+      "template": 305
+    }
+  }
+}

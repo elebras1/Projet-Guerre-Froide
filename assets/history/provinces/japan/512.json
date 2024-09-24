@@ -1,0 +1,64 @@
+{
+  "owner": "JAP",
+  "controller": "JAP",
+  "add_core": "JAP",
+  "grain": 40.1,
+  "infra": 7,
+  "1946.1.1": {
+    "naval_base": 3,
+    "population_total": {
+      "amount": 767629,
+      "template": 8
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 5,
+      "economy_building": {
+        "name": "high_tech",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1105317,
+        "template": 208
+      }
+    }
+  ],
+  "1961.1.1": {
+    "naval_base": 4
+  },
+  "1985.1.1": {
+    "naval_base": 6
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 7
+    },
+    {
+      "population_total": {
+        "amount": 1179394,
+        "template": 308
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 778775,
+      "template": 8
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 790083,
+      "template": 8
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 906043,
+      "template": 108
+    }
+  }
+}

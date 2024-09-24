@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "SUD"
+  ],
+  "fruits": 3.56,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 76243,
+      "template": 3
+    }
+  },
+  "1956.01.01": {
+    "owner": "SUD",
+    "controller": "SUD",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 77945,
+      "template": 3
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 79685,
+      "template": 3
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 105110,
+      "template": 103
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 168451,
+      "template": 203
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 235498,
+      "template": 303
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "BGL",
+    "PAK",
+    "IND"
+  ],
+  "vegetables": 379.8,
+  "infra": 4,
+  "1946.1.1": {
+    "air_base": 4,
+    "population_total": {
+      "amount": 2123654,
+      "template": 13
+    }
+  },
+  "1947.08.14": {
+    "owner": "PAK",
+    "controller": "PAK",
+    "remove_core": [
+      "IND",
+      "ENG"
+    ]
+  },
+  "1971.12.16": {
+    "owner": "BGL",
+    "controller": "BGL",
+    "remove_core": "PAK",
+    "economy_building": {
+      "name": "financial_district",
+      "size": 1
+    }
+  },
+  "1983.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "air_base": 5
+    },
+    {
+      "population_total": {
+        "amount": 4633661,
+        "template": 213
+      }
+    }
+  ],
+  "1985.1.1": {
+    "air_base": 6
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 2181694,
+      "template": 13
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 2241319,
+      "template": 13
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 3133394,
+      "template": 113
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 6374092,
+      "template": 313
+    }
+  }
+}

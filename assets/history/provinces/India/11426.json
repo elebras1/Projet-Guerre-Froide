@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "IND"
+  ],
+  "grain": 4.41,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 71663,
+      "template": 15
+    }
+  },
+  "1947.08.15": {
+    "owner": "IND",
+    "controller": "IND",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 72935,
+      "template": 15
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 74230,
+      "template": 15
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 93090,
+      "template": 115
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 136511,
+      "template": 215
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 178043,
+      "template": 315
+    }
+  }
+}

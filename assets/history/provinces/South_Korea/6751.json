@@ -1,0 +1,84 @@
+{
+  "owner": "USA",
+  "controller": "USA",
+  "add_core": [
+    "PRK",
+    "KOR"
+  ],
+  "grain": 10,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 71815,
+      "template": 10
+    }
+  },
+  "1948.8.1": {
+    "owner": "KOR",
+    "controller": "KOR"
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 2
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 143334,
+        "template": 210
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 168484,
+        "template": 310
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 73208,
+      "template": 10
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 74628,
+      "template": 10
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 102926,
+      "template": 110
+    }
+  }
+}

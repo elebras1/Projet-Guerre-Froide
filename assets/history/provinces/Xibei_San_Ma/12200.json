@@ -1,0 +1,52 @@
+{
+  "owner": "CXB",
+  "controller": "CXB",
+  "add_core": [
+    "CXB",
+    "CHI",
+    "CHC"
+  ],
+  "rare_metals": 210,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 15406008,
+      "template": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "remove_core": "CXB"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 15712434,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 16024954,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 19658105,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 28227821,
+      "template": 206
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 33774008,
+      "template": 306
+    }
+  }
+}

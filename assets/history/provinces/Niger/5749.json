@@ -1,0 +1,50 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "NGR"
+  ],
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 886,
+      "template": 5
+    }
+  },
+  "1958.08.03": {
+    "owner": "NGR",
+    "controller": "NGR",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 911,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 937,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1310,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 2171,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 3057,
+      "template": 305
+    }
+  }
+}

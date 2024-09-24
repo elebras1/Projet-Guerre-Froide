@@ -1,0 +1,52 @@
+{
+  "owner": "CYN",
+  "controller": "CYN",
+  "add_core": [
+    "CYN",
+    "CHI",
+    "CHC"
+  ],
+  "iron": 80,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 529247,
+      "template": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "remove_core": "CYN"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 539773,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 550509,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 675320,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 969718,
+      "template": 206
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1160247,
+      "template": 306
+    }
+  }
+}

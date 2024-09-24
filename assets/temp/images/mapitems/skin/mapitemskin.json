@@ -1,0 +1,14 @@
+{
+"com.badlogic.gdx.scenes.scene2d.ui.ImageButton$ImageButtonStyle": {
+	"regiments": {
+		"imageUp": "counterbackground_small",
+		"imageChecked": "counterbackground_small_checked",
+		"imageCheckedDown": "counterbackground_small"
+	},
+	"regiment": {
+		"imageUp": "counterbackground",
+		"imageChecked": "counterbackground_checked",
+		"imageCheckedDown": "counterbackground"
+	}
+}
+}

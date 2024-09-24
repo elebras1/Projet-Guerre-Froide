@@ -1,0 +1,83 @@
+{
+  "owner": "JAP",
+  "controller": "JAP",
+  "add_core": "JAP",
+  "grain": 266.81,
+  "infra": 4,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 1076003,
+      "template": 8
+    },
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 2
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1107477,
+        "template": 8
+      }
+    }
+  ],
+  "1953.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
+    }
+  },
+  "1961.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 7
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 3,
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 10
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1549348,
+        "template": 208
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 1653184,
+        "template": 308
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1091627,
+      "template": 8
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1270021,
+      "template": 108
+    }
+  }
+}

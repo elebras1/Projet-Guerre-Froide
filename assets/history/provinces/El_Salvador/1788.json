@@ -1,0 +1,53 @@
+{
+  "owner": "SAL",
+  "controller": "SAL",
+  "add_core": "SAL",
+  "grain": 19.321,
+  "infra": 6,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 446418,
+      "template": 76
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 2,
+      "economy_building": {
+        "name": "refinery",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 966726,
+        "template": 276
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 455347,
+      "template": 76
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 464454,
+      "template": 76
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 623112,
+      "template": 176
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1142878,
+      "template": 378
+    }
+  }
+}

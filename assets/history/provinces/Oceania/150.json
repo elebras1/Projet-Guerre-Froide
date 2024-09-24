@@ -1,0 +1,23 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "FPO"
+  ],
+  "fruits": 3.15,
+  "infra": 4,
+  "naval_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 60696,
+      "template": 60
+    }
+  },
+  "1966.7.2": {
+    "economy_building": {
+      "name": "nuclear_test_site",
+      "size": 1
+    }
+  }
+}

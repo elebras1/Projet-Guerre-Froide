@@ -1,0 +1,56 @@
+{
+  "owner": "BEL",
+  "controller": "BEL",
+  "add_core": [
+    "BEL",
+    "DRC",
+    "KON"
+  ],
+  "grain": 51.68,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 94262,
+      "template": 2
+    }
+  },
+  "1960.06.30": {
+    "owner": "DRC",
+    "controller": "DRC",
+    "remove_core": "BEL"
+  },
+  "1960.09.14": {
+    "owner": "KON",
+    "controller": "KON"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 96308,
+      "template": 2
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 98398,
+      "template": 2
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 130683,
+      "template": 102
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 212047,
+      "template": 202
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 305734,
+      "template": 302
+    }
+  }
+}

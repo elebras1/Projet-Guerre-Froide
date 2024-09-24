@@ -1,0 +1,68 @@
+{
+  "owner": "CAN",
+  "controller": "CAN",
+  "add_core": "CAN",
+  "fruits": 49.41,
+  "infra": 7,
+  "naval_base": 10,
+  "economy_building": {
+    "name": "financial_district",
+    "size": 1
+  },
+  "1946.1.1": {
+    "population_total": {
+      "amount": 86632,
+      "template": 92
+    },
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 3
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 91403,
+        "template": 92
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 161359,
+        "template": 292
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 88985,
+      "template": 92
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 123967,
+      "template": 192
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 186651,
+      "template": 392
+    }
+  }
+}

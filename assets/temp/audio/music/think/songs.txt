@@ -1,0 +1,817 @@
+song = {
+	name = "allies_battle1.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			faction = allies
+			war = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { faction = allies }			
+			war = no
+		}		
+	}
+}
+
+song = {
+	name = "allies_peace1.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			faction = allies
+			war = no
+		}
+		modifier = {
+			factor = 0
+			NOT = { faction = allies }
+			war = yes
+		}		
+	}
+}
+
+song = {
+	name = "allies_peace2.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			faction = allies
+			war = no
+		}
+		modifier = {
+			factor = 0
+			NOT = { faction = allies }
+			war = yes
+		}		
+	}
+}
+
+song = {
+	name = "allies_peace3.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			faction = allies
+			war = no
+		}
+		modifier = {
+			factor = 0
+			NOT = { faction = allies }
+			war = yes
+		}		
+	}
+}
+
+song = {
+	name = "desertatdusk.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			national_culture = cul_middle_east
+		}
+		modifier = {
+			factor = 0
+			NOT = { national_culture = cul_middle_east}
+		}
+		modifier = {
+			factor = 0
+			war = yes
+		}
+
+	}
+}
+
+song = {
+	name = "gradient.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { dissent = 3 }
+		}		
+
+		modifier = {
+			factor = 2
+			dissent = 15
+		}
+	}
+}
+
+song = {
+	name = "apathofdanger.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { dissent = 15 }
+		}		
+
+		modifier = {
+			factor = 2
+			dissent = 50
+		}
+	}
+}
+
+song = {
+	name = "astateofpanic.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { dissent = 50 }
+		}		
+
+		modifier = {
+			factor = 2
+			dissent = 100
+		}
+	}
+}
+
+song = {
+	name = "superpowers.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { faction = comintern }
+		}
+		modifier = {
+			factor = 2
+			faction = comintern
+		}
+	}
+}
+
+song = {
+	name = "gen_war_worldatwar.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			war = no
+		}
+		modifier = {
+			factor = 2
+			war = yes
+		}
+	}
+}
+
+song = {
+	name = "general_battle1.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			NOT = {
+				faction = allies
+				faction = comintern
+			}
+			war = yes
+		}
+		modifier = {
+			factor = 0
+			faction = allies
+			faction = comintern			
+			war = no
+		}		
+	}
+}
+
+# 
+# 
+#song = { #Song for the nation leading the UN
+#	name = "gen_unitednations.mp3"
+#	
+#	chance = {
+#		modifier = {
+#			factor = 0
+#			NOT = { #UN leader }
+#		}
+#		modifier = {
+#			factor = 2
+#			# UN LEADER
+#		}
+#	}
+#}
+
+
+song = {
+	name = "MEO.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			war = yes
+		}
+		modifier = {
+			factor = 2
+			war = no
+		}
+	}
+}
+
+song = {
+	name = "Beacon.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			war = yes
+		}
+		modifier = {
+			factor = 2
+			war = no
+		}
+	}
+}
+
+song = {
+	name = "Float.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			war = yes
+		}
+		modifier = {
+			factor = 2
+			war = no
+		}
+	}
+}
+
+song = {
+	name = "Waveform.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			war = yes
+		}
+		modifier = {
+			factor = 2
+			war = no
+		}
+	}
+}
+
+song = {
+	name = "neutral1_savedbychoppers.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			war = no
+		}
+		modifier = {
+			factor = 2
+			war = yes
+		}
+	}
+}
+
+
+song = {
+	name = "Orient.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			national_culture = cul_east_asia
+		}		
+		modifier = {
+			factor = 0
+			NOT = {national_culture = cul_east_asia}
+		}
+	}
+}
+
+song = {
+	name = "watervapour.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			national_culture = cul_east_asia
+		}		
+		modifier = {
+			factor = 0
+			NOT = {national_culture = cul_east_asia}
+		}
+	}
+}
+
+
+song = {
+	name = "spanish_heart.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			national_culture = cul_latin_america 
+		}	
+		modifier = {
+			factor = 2
+			tag = SPA 
+		}		
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					national_culture = cul_latin_america
+					tag = SPA
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			war = yes
+		}		
+	}
+}
+
+song = {
+	name = "latin_battle.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			national_culture = cul_latin_america 
+			war = yes
+		}	
+		modifier = {
+			factor = 2
+			tag = SPA 
+			war = yes			
+		}		
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					national_culture = cul_latin_america
+					tag = SPA
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}		
+	}
+}
+
+song = {
+	name = "sandstruggle.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			national_culture = cul_middle_east
+			war = yes			
+		}
+		modifier = {
+			factor = 0
+			NOT = { national_culture = cul_middle_east}
+		}
+		modifier = {
+			factor = 0
+			war = no
+		}
+
+	}
+}
+
+song = {
+	name = "tranquillite.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			tag = FRA
+		}
+		modifier = {
+			factor = 2
+			vassal_of = FRA
+		}		
+		modifier = {
+			factor = 0
+			NOT = { 
+				OR = {
+					tag = FRA
+					vassal_of = FRA
+				}
+			}
+		}					
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+}
+
+song = {
+	name = "voicesthroughlights.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			national_culture = cul_western_europe
+		}
+		modifier = {
+			factor = 2
+			national_culture = cul_north_america
+		}		
+		modifier = {
+			factor = 2
+			tag = AST
+		}	
+		modifier = {
+			factor = 2
+			tag = NZL
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					national_culture = cul_western_europe
+					national_culture = cul_north_america
+					tag = AST
+					tag = NZL
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			war = yes
+		}
+	}
+}
+
+song = {
+	name = "russianbattle1.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			faction = comintern
+			war = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { faction = comintern }
+			war = no
+		}		
+	}
+}
+
+song = {
+	name = "russianbattle2.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			faction = comintern
+			war = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { faction = comintern }
+			war = no
+		}		
+	}
+}
+
+song = {
+	name = "russia_peace1.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			faction = comintern
+			war = no
+		}
+		modifier = {
+			factor = 0
+			NOT = { faction = comintern }
+			war = yes
+		}		
+	}
+}
+
+song = {
+	name = "russianpeace2_notfinished.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			faction = comintern
+			war = no
+		}
+		modifier = {
+			factor = 0
+			NOT = { faction = comintern }
+			war = yes
+		}		
+	}
+}
+
+song = {
+	name = "russianpeace3.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			faction = comintern
+			war = no
+		}
+		modifier = {
+			factor = 0
+			NOT = { faction = comintern }
+			war = yes
+		}		
+	}
+}
+
+# DEFCON 
+song = {
+	name = "defcon1.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			defcon = 1
+		}
+		modifier = {
+			factor = 0
+			NOT = { defcon = 1 }
+		}		
+	}
+}
+
+song = {
+	name = "defcon2.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			defcon = 2
+			NOT = { defcon = 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { defcon = 2 }
+		}		
+	}
+}
+
+song = {
+	name = "defcon3.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			defcon = 3
+			NOT = { defcon = 4 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { defcon = 3 }
+		}		
+	}
+}
+
+# Doomsday Clock
+song = {
+	name = "nukeatmosphere.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			doomsday_clock = 2
+		}
+		modifier = {
+			factor = 0
+			NOT = {doomsday_clock = 2}
+		}		
+	}
+}
+
+song = {
+	name = "Gridlock.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			doomsday_clock = 4
+			NOT = { doomsday_clock = 2 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { doomsday_clock = 4 }
+		}		
+	}
+}
+
+song = {
+	name = "nonplus.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			doomsday_clock = 6
+			NOT = { doomsday_clock = 4 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { doomsday_clock = 6 }
+		}		
+	}
+}
+
+#song = {	#Low on unity
+#	name = "unitylow.mp3"
+#	
+#	chance = {
+#		modifier = {
+#			factor = 0
+#			national_unity = 70
+#		}
+#		modifier = {
+#			factor = 2
+#			NOT = { national_unity = 50 }
+#		}
+#	}
+#}
+
+song = { #Played for countries that have decolonized and broken free from their colonial master
+	name = "anuncertainfuture.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			# TODO Add flag for decolonization
+			war = no
+		}
+		modifier = {
+			factor = 0
+			# TODO Add flag for being a colony
+			war = yes
+		}		
+	}
+}
+
+song = { #Played for countries that lost one of its colonial puppets to indepence
+	name = "tiesarebroken.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			# TODO Add flag for decolonization
+			war = no
+		}
+		modifier = {
+			factor = 0
+			# TODO Add flag for being a colony
+			war = yes
+		}		
+	}
+}
+
+song = { #Played for countries that lost one of its colonial puppets to indepence
+	name = "tiesarebroken.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			# TODO Add flag for decolonization
+			war = no
+		}
+		modifier = {
+			factor = 0
+			# TODO Add flag for being a colony
+			war = yes
+		}		
+	}
+}
+
+song = { #Democratic rebels force change of gov from totalitarian to democratic
+	name = "democraticrebellion.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			# TODO Add flag for change to democracy
+			war = yes
+		}
+		modifier = {
+			factor = 0
+			# TODO Add flag for being a dictatorship
+			war = no
+		}		
+	}
+}
+
+song = { #Non-Democratic rebels force change of gov to totalitarian from democratic
+#TODO Add guerrilla flag for revolts by non-democratic guerrilla 
+
+	name = "non-democraticrebellion.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			has_country_flag = signed_suspended_elections
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_country_flag = signed_suspended_elections }
+		}		
+	}
+}
+
+song = { #Played for nation that is forced to relinquish land or puppets 
+
+	name = "diminishment.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			# TODO add flag for losses and relinquishing land
+			war = yes
+		}
+		modifier = {
+			factor = 0
+			# TODO add flag for losses and relinquishing land
+			war = no
+		}		
+	}
+}
+
+song = { #Played for nations that are at peace and have signed the Geneva convention
+
+	name = "delightfulpoetry.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			has_country_modifier = signed_the_geneva_convention
+			war = no
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				has_country_modifier = signed_the_geneva_convention
+			}
+			war = yes
+		}		
+	}
+}
+
+song = { #Played for nations that have lost the pride of the fleet or lost more then 2 naval units in a battle
+
+	name = "dilemma.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			has_country_modifier = pride_of_the_fleet_dead
+		}
+		modifier = {
+			factor = 2
+			last_naval_battle_loser_losses = 1
+		}		
+		modifier = {
+			factor = 0
+			NOT = {
+				has_country_modifier = pride_of_the_fleet_dead
+			}
+		}		
+	}
+}
+
+song = { #Played UN leader
+
+	name = "responsibilities.mp3"
+	
+	chance = {
+		modifier = {
+			factor = 2
+			is_org_leader = xun
+			war = no
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				is_org_leader = xun
+			}
+		}		
+	}
+}
+

@@ -1,0 +1,63 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "IND"
+  ],
+  "vegetables": 353.82,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 3903317,
+      "template": 15
+    }
+  },
+  "1947.08.15": {
+    "owner": "IND",
+    "controller": "IND",
+    "remove_core": "ENG"
+  },
+  "1963.11.21": {
+    "economy_building": {
+      "name": "rocket_test_site",
+      "size": 1
+    }
+  },
+  "1974.1.1": {
+    "economy_building": {
+      "name": "satellites_factory",
+      "size": 2
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 3972601,
+      "template": 15
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 4043114,
+      "template": 15
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 5070381,
+      "template": 115
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 7435431,
+      "template": 215
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 9697544,
+      "template": 315
+    }
+  }
+}

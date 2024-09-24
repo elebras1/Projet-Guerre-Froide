@@ -1,0 +1,67 @@
+{
+    "add_core": "HUN",
+    "owner": "HUN",
+    "controller": "HUN",
+    "grain": 473.1,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 678735,
+            "template": 48
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        }
+    },
+    "economy_building": {
+        "name": "university",
+        "size": 1
+    },
+    "1950.1.1": [
+        {
+            "economy_building": {
+                "name": "light_industry",
+                "size": 6
+            }
+        },
+        {
+            "population_total": {
+                "amount": 692569,
+                "template": 48
+            }
+        }
+    ],
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "light_industry",
+                "size": 8
+            }
+        },
+        {
+            "population_total": {
+                "amount": 792606,
+                "template": 248
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 685617,
+            "template": 48
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 744716,
+            "template": 148
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 768452,
+            "template": 348
+        }
+    }
+}

@@ -1,0 +1,68 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": "ENG",
+  "meat": 186.22,
+  "infra": 5,
+  "economy_building": {
+    "name": "military_academy",
+    "size": 1
+  },
+  "1946.1.1": {
+    "air_base": 8,
+    "naval_base": 1,
+    "population_total": {
+      "amount": 870505,
+      "template": 60
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "high_tech",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 972520,
+        "template": 260
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "high_tech",
+      "size": 5
+    }
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 2
+    },
+    {
+      "population_total": {
+        "amount": 991060,
+        "template": 360
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 872446,
+      "template": 60
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 874392,
+      "template": 60
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 920150,
+      "template": 160
+    }
+  }
+}

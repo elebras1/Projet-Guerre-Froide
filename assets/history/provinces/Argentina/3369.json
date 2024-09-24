@@ -1,0 +1,69 @@
+{
+  "owner": "ARG",
+  "controller": "ARG",
+  "add_core": "ARG",
+  "grain": 78.76,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 246882,
+      "template": 79
+    },
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 2
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 256730,
+        "template": 79
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 4
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 414829,
+        "template": 279
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 251758,
+      "template": 79
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 318808,
+      "template": 179
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 495391,
+      "template": 379
+    }
+  }
+}

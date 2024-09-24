@@ -1,0 +1,501 @@
+{
+  "color": [
+    219,
+    129,
+    122
+  ],
+  "graphical_culture": "Generic",
+  "default_templates": {
+    "SOV_guards_airborne_division": [
+      "air_cav_brigade",
+      "air_cav_brigade",
+      "air_cav_brigade",
+      "air_cav_brigade"
+    ],
+    "SOV_tank_division": [
+      "armor_brigade",
+      "armor_brigade",
+      "armor_brigade",
+      "heavy_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "SOV_cavalry_division": [
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "sp_artillery_brigade"
+    ],
+    "SOV_guards_mechanized_division": [
+      "heavy_mechanized_brigade",
+      "heavy_mechanized_brigade",
+      "light_mechanized_brigade",
+      "armor_brigade",
+      "sp_artillery_brigade"
+    ],
+    "SOV_mechanized_division": [
+      "light_mechanized_brigade",
+      "light_mechanized_brigade",
+      "heavy_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "SOV_motor_rifle_division": [
+      "motorized_brigade",
+      "light_mechanized_brigade",
+      "heavy_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "SOV_guards_rifle_division": [
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "artillery_brigade"
+    ],
+    "SOV_marine_division": [
+      "marine_brigade",
+      "marine_brigade",
+      "marine_brigade",
+      "marine_brigade"
+    ],
+    "SOV_mountain_division": [
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade"
+    ],
+    "SOV_rifle_division": [
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "artillery_brigade"
+    ]
+  },
+  "unit_names": {},
+  "ministers": {
+    "1164000": {
+      "name": "Ram�n Grau",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Grau_San_Martin_Ramon",
+      "head_of_state": "bureaucrat_type",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1944-10-10",
+      "death_date": "1969-07-28"
+    },
+    "1164001": {
+      "name": "Carlos Pr�o Socarr�s",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Prio_Socarras_Carlos",
+      "head_of_state": "reformer_type",
+      "head_of_government": "reformer_type",
+      "start_date": "1945-10-13",
+      "death_date": "1977-04-05"
+    },
+    "1164002": {
+      "name": "Fulgencio Batista",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Batista_y_Zaldivar_Fulgencio",
+      "head_of_state": "dictator_type",
+      "head_of_government": "dictator_type",
+      "start_date": "1952-10-03",
+      "death_date": "1960-10-10"
+    },
+    "1164003": {
+      "name": "Manuel Urrutia Lle�",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Urritia_Lleo_Manuel",
+      "head_of_state": "democrat_type",
+      "head_of_government": "democrat_type",
+      "start_date": "1959-10-03",
+      "death_date": "1960-10-10"
+    },
+    "1164004": {
+      "name": "Osvaldo Dortic�s Torrado",
+      "ideology": "communist_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Dorticos_Torado_Osvaldo",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1959-01-01",
+      "death_date": "1976-10-02"
+    },
+    "1164005": {
+      "name": "Fidel Castro",
+      "ideology": "communist_idolg",
+      "loyalty": 0.9,
+      "picture": "CUB_Fidel_Castro",
+      "head_of_state": "dictator_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1959-02-10",
+      "death_date": "2008-02-24"
+    },
+    "1164006": {
+      "name": "Camilo Cienfuegos",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 0.9,
+      "picture": "CUB_M_Cienfuegos_Camilo",
+      "head_of_state": "loyal_type",
+      "head_of_government": "loyal_type",
+      "start_date": "1948-01-01",
+      "death_date": "1959-10-28"
+    },
+    "1164007": {
+      "name": "Huber Matos Ben�tez",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 0.9,
+      "picture": "CUB_M_Benitez_Huber_M",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1927-01-01",
+      "death_date": "1992-01-01"
+    },
+    "1164008": {
+      "name": "Ricardo Nunez",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Nunez_Portuondo_Ricardo",
+      "head_of_state": "democrat_type",
+      "start_date": "1948-01-01",
+      "death_date": "1973-11-15"
+    },
+    "1164009": {
+      "name": "Eduardo Chib�s",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Chibas_Ribas_Eduardo_R",
+      "head_of_state": "reformer_type",
+      "start_date": "1947-01-01",
+      "death_date": "1951-08-16"
+    },
+    "1164010": {
+      "name": "Raul Lopez del Castillo",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Lopez_del_Castillo_Raul_dummy",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1947-05-01",
+      "death_date": "1963-07-24"
+    },
+    "1164011": {
+      "name": "Manuel Antonio de Verona",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Antonio_de_Verona_Manuel",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1948-10-10",
+      "death_date": "1992-10-29"
+    },
+    "1164012": {
+      "name": "Felix Lancis",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Lancis_Sanchez_Felix",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1950-10-06",
+      "death_date": "1976-11-20"
+    },
+    "1164013": {
+      "name": "Oscar Gans",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Gans_y_Lopez_Martinez_Oscar",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1951-10-01",
+      "death_date": "1965-12-07"
+    },
+    "1164014": {
+      "name": "Jos� A. F. de Castro",
+      "ideology": "fascistic_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Castro_Jose_A_F",
+      "head_of_state": "loyal_type",
+      "head_of_government": "loyal_type",
+      "start_date": "1927-01-01",
+      "death_date": "1951-07-30"
+    },
+    "1164015": {
+      "name": "Emilio Roig de Leuchsenring",
+      "ideology": "fascistic_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Leuchsenring_Emilio_R",
+      "head_of_state": "bureaucrat_type",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1917-01-01",
+      "death_date": "1964-08-08"
+    },
+    "1164016": {
+      "name": "Ricardo N��ez Portuondo",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Portuondo_Ricardo_N",
+      "head_of_state": "traditionalist_type",
+      "head_of_government": "traditionalist_type",
+      "start_date": "1948-06-01",
+      "death_date": "1954-11-01"
+    },
+    "1164017": {
+      "name": "Jorge Valls",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "CUB_M_Valls_Jorge",
+      "head_of_state": "reputable_type",
+      "head_of_government": "reputable_type",
+      "start_date": "1964-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1164018": {
+      "name": "Roberto Agramonte",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 0.9,
+      "picture": "CUB_M_Agramonte_Roberto",
+      "head_of_state": "liberal_type",
+      "head_of_government": "liberal_type",
+      "start_date": "1947-01-01",
+      "death_date": "1975-12-12"
+    },
+    "1164019": {
+      "name": "Carlos Hevia",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.9,
+      "picture": "CUB_M_Hevia_Carlos",
+      "head_of_state": "lethargic_type",
+      "head_of_government": "lethargic_type",
+      "start_date": "1934-01-15",
+      "death_date": "1964-04-02"
+    },
+    "1164020": {
+      "name": "Juan Marinello",
+      "ideology": "maoist_idolg",
+      "loyalty": 0.8,
+      "picture": "CUB_M_Marinello_Juan",
+      "head_of_state": "administrator_type",
+      "head_of_government": "administrator_type",
+      "start_date": "1948-06-01",
+      "death_date": "1965-12-07"
+    },
+    "1164021": {
+      "name": "Blas Roca Calderio",
+      "ideology": "maoist_idolg",
+      "loyalty": 0.9,
+      "picture": "CUB_M_Calderio_Blas_R",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1929-01-01",
+      "death_date": "1977-04-25"
+    },
+    "1164023": {
+      "name": "Juan Almeida",
+      "ideology": "communist_idolg",
+      "loyalty": 0.8,
+      "picture": "CUB_M_Almeida_Juan",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1953-01-01",
+      "death_date": "2009-09-11"
+    },
+    "1164024": {
+      "name": "Ra�l Castro",
+      "ideology": "communist_idolg",
+      "loyalty": 0.8,
+      "picture": "CUB_M_Castro_Raul",
+      "head_of_state": "loyal_type",
+      "head_of_government": "loyal_type",
+      "start_date": "1950-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1164100": {
+      "name": "Ernesto Guevara",
+      "ideology": "maoist_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Guevara_Ernesto",
+      "head_of_state": "controversial_figure",
+      "head_of_government": "controversial_figure",
+      "start_date": "1959-02-10",
+      "death_date": "1967-10-09",
+      "base": 1115119
+    },
+    "1164101": {
+      "name": "Jos� Ignacio Rasco",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Rasco_Jose_I",
+      "head_of_state": "moral_type",
+      "head_of_government": "moral_type",
+      "start_date": "1959-02-10",
+      "death_date": "1999-11-12"
+    },
+    "1164102": {
+      "name": "Pedro Luis Boitel",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Boitel_Pedro_L",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1957-08-01",
+      "death_date": "1972-05-25"
+    },
+    "1164103": {
+      "name": "Alfonso Rafael Garc�a",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Garcia_Alfonso_R",
+      "head_of_state": "supreme_leader",
+      "head_of_government": "supreme_leader",
+      "start_date": "1946-01-01",
+      "death_date": "1991-01-01"
+    },
+    "1164104": {
+      "name": "Carlos M�rquez Sterling",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Sterling_Carlos_M",
+      "head_of_state": "courteous_figure",
+      "head_of_government": "courteous_figure",
+      "start_date": "1958-11-01",
+      "death_date": "1991-05-03"
+    },
+    "1164105": {
+      "name": "Jos� Mir� Cardona",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Cardona_Jose_M",
+      "head_of_government": "liberal_type",
+      "start_date": "1959-01-05",
+      "death_date": "1974-08-10"
+    },
+    "1164106": {
+      "name": "Andr�s Domingo",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Domingo_Andres",
+      "head_of_state": "loyal_type",
+      "head_of_government": "loyal_type",
+      "start_date": "1954-07-14",
+      "death_date": "1979-06-01"
+    },
+    "1164107": {
+      "name": "Jorge Garc�a Montes",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Montes_Jorge_G",
+      "head_of_state": "administrator_type",
+      "head_of_government": "administrator_type",
+      "start_date": "1955-02-24",
+      "death_date": "1982-01-01"
+    },
+    "1164108": {
+      "name": "Andr�s Rivero Ag�ero",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Aguero_Andres_R",
+      "head_of_state": "ambitious_type",
+      "head_of_government": "ambitious_type",
+      "start_date": "1957-03-26",
+      "death_date": "1996-11-08"
+    },
+    "1164109": {
+      "name": "Gonzalo G�ell",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Guell_Gonzalo",
+      "head_of_state": "loyal_type",
+      "head_of_government": "loyal_type",
+      "start_date": "1958-03-12",
+      "death_date": "1959-01-01"
+    },
+    "1164110": {
+      "name": "Marcelino Miyares Sotolongo",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Sotolongo_Marcelino_M",
+      "head_of_state": "reputable_type",
+      "head_of_government": "reputable_type",
+      "start_date": "1981-01-01",
+      "death_date": "2013-10-15"
+    },
+    "1164111": {
+      "name": "Oswaldo Pay�",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Paya_Oswaldo",
+      "head_of_state": "reformer_type",
+      "head_of_government": "reformer_type",
+      "start_date": "1987-01-01",
+      "death_date": "2012-07-22"
+    },
+    "1164112": {
+      "name": "Manuel Francisco Artime Buesa",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Buesa_Manuel_F_A",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1959-01-01",
+      "death_date": "1977-11-18"
+    },
+    "1164113": {
+      "name": "Jos� Alfredo P�rez San Rom�n",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Roman_Jose_A_P",
+      "head_of_state": "parental_type",
+      "head_of_government": "parental_type",
+      "start_date": "1959-11-01",
+      "death_date": "1988-10-09"
+    },
+    "1164114": {
+      "name": "Antonio Veciana",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Veciana_Antonio",
+      "head_of_state": "extremist_type",
+      "head_of_government": "extremist_type",
+      "start_date": "1960-01-01",
+      "death_date": "1979-09-01"
+    },
+    "1164115": {
+      "name": "Orlando Bosch �vila",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Avila_Orlando_B",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1959-01-01",
+      "death_date": "2011-04-27"
+    },
+    "1164116": {
+      "name": "Abelardo Colom� Ibarra",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Ibarra_Abelardo_C",
+      "head_of_state": "reformer_type",
+      "head_of_government": "reformer_type",
+      "start_date": "1959-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1164117": {
+      "name": "Jos� Ram�n Machado Ventura",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Ventura_Jose_R_M",
+      "head_of_state": "administrator_type",
+      "head_of_government": "administrator_type",
+      "start_date": "1959-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1164118": {
+      "name": "Celia S�nchez Manduley",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "CUB_M_Manduley_Celia_S",
+      "head_of_state": "loyal_type",
+      "head_of_government": "loyal_type",
+      "start_date": "1959-01-01",
+      "death_date": "1980-01-11"
+    }
+  }
+}

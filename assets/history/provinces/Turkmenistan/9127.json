@@ -1,0 +1,51 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "TRK"
+  ],
+  "oil": 35,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 3661,
+      "template": 11
+    }
+  },
+  "1991.12.25": {
+    "owner": "TRK",
+    "controller": "TRK",
+    "remove_core": "SOV"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 3744,
+      "template": 11
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 3828,
+      "template": 11
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 5401,
+      "template": 111
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 8824,
+      "template": 211
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 11925,
+      "template": 311
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "CNG"
+  ],
+  "grain": 1.3,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 860,
+      "template": 2
+    }
+  },
+  "1960.08.15": {
+    "owner": "CNG",
+    "controller": "CNG",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 878,
+      "template": 2
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 897,
+      "template": 2
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1185,
+      "template": 102
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1939,
+      "template": 202
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2724,
+      "template": 302
+    }
+  }
+}

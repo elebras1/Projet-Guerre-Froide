@@ -1,0 +1,69 @@
+{
+  "owner": "CUB",
+  "controller": "CUB",
+  "add_core": "CUB",
+  "vegetables": 41.14,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 852135,
+      "template": 75
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 891348,
+        "template": 75
+      }
+    }
+  ],
+  "1953.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1468669,
+        "template": 275
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 871521,
+      "template": 75
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1120496,
+      "template": 175
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1604145,
+      "template": 375
+    }
+  }
+}

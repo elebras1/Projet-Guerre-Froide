@@ -1,0 +1,53 @@
+{
+    "owner": "HON",
+    "controller": "HON",
+    "add_core": "HON",
+    "fruits": 7,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 344750,
+            "template": 76
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 2
+        },
+        "naval_base": 1
+    },
+    "1991.1.1": [
+        {
+            "naval_base": 2
+        },
+        {
+            "population_total": {
+                "amount": 1232859,
+                "template": 380
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 354610,
+            "template": 76
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 364752,
+            "template": 76
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 523889,
+            "template": 176
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 862252,
+            "template": 276
+        }
+    }
+}

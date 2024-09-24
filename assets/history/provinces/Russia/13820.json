@@ -1,0 +1,77 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "RUS"
+  ],
+  "vegetables": 68.36,
+  "infra": 8,
+  "naval_base": 10,
+  "1946.1.1": {
+    "air_base": 6,
+    "population_total": {
+      "amount": 135164,
+      "template": 45
+    },
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 9
+    }
+  },
+  "1948.1.1": [
+    {
+      "air_base": 7,
+      "economy_building": {
+        "name": "naval_research_center",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 137362,
+        "template": 45
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "air_base": 8
+    },
+    {
+      "population_total": {
+        "amount": 139596,
+        "template": 45
+      }
+    }
+  ],
+  "1961.1.1": {
+    "air_base": 10
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "naval_yards",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 202081,
+        "template": 345
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 167145,
+      "template": 145
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 187183,
+      "template": 245
+    }
+  }
+}

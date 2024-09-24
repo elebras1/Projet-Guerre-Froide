@@ -1,0 +1,82 @@
+{
+  "owner": "CHI",
+  "controller": "CHI",
+  "add_core": [
+    "IDC",
+    "DRV"
+  ],
+  "rare_metals": 2.55,
+  "infra": 5,
+  "1946.1.1": {
+    "air_base": 1,
+    "population_total": {
+      "amount": 3234759,
+      "template": 28
+    }
+  },
+  "1946.2.28": {
+    "owner": "IDC",
+    "controller": "IDC"
+  },
+  "1950.1.1": [
+    {
+      "air_base": 3
+    },
+    {
+      "population_total": {
+        "amount": 3369338,
+        "template": 28
+      }
+    }
+  ],
+  "1961.1.1": {
+    "air_base": 4,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
+    }
+  },
+  "1976.7.2": {
+    "owner": "VIE",
+    "controller": "VIE",
+    "add_core": "VIE",
+    "remove_core": "IDC"
+  },
+  "1979.1.1": [
+    {
+      "air_base": 5
+    },
+    {
+      "population_total": {
+        "amount": 6327180,
+        "template": 228
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 8169986,
+        "template": 328
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 3301363,
+      "template": 28
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 4407825,
+      "template": 128
+    }
+  }
+}

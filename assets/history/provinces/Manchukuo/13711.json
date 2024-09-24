@@ -1,0 +1,52 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "CHC",
+    "CHI"
+  ],
+  "coal": 11,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 2585809,
+      "template": 6
+    }
+  },
+  "1948.1.1": [
+    {
+      "owner": "CHC",
+      "controller": "CHC"
+    },
+    {
+      "population_total": {
+        "amount": 2637241,
+        "template": 6
+      }
+    }
+  ],
+  "1950.1.1": {
+    "population_total": {
+      "amount": 2689696,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 3299499,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 4737876,
+      "template": 206
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 5668771,
+      "template": 306
+    }
+  }
+}

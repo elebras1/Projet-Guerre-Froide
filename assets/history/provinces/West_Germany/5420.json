@@ -1,0 +1,90 @@
+{
+  "add_core": [
+    "FRG",
+    "DDR"
+  ],
+  "owner": "USA",
+  "controller": "USA",
+  "vegetables": 462.26,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1111717,
+      "template": 71
+    },
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
+    }
+  },
+  "1949.05.23": {
+    "owner": "FRG",
+    "controller": "FRG"
+  },
+  "1990.10.3": {
+    "owner": "GER",
+    "controller": "GER",
+    "remove_core": [
+      "DDR",
+      "FRG"
+    ]
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1162402,
+        "template": 71
+      }
+    }
+  ],
+  "1953.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 8
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 9
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 10
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1478647,
+        "template": 271
+      }
+    }
+  ],
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1203003,
+      "template": 71
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1370531,
+      "template": 171
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1542055,
+      "template": 371
+    }
+  }
+}

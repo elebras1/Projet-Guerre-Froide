@@ -1,0 +1,68 @@
+{
+  "owner": "SIK",
+  "controller": "SIK",
+  "add_core": [
+    "CHI",
+    "CHC",
+    "SIK"
+  ],
+  "infra": 2,
+  "1946.1.1": {
+    "air_base": 1,
+    "population_total": {
+      "amount": 11570,
+      "template": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "remove_core": "SIK"
+  },
+  "1950.1.1": [
+    {
+      "air_base": 2
+    },
+    {
+      "population_total": {
+        "amount": 12035,
+        "template": 6
+      }
+    }
+  ],
+  "1961.1.1": {
+    "air_base": 3
+  },
+  "1979.1.1": [
+    {
+      "air_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 21199,
+        "template": 206
+      }
+    }
+  ],
+  "1985.1.1": {
+    "air_base": 6
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 11800,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 14763,
+      "template": 106
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 25364,
+      "template": 306
+    }
+  }
+}

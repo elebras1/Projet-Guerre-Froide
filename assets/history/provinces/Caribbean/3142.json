@@ -1,0 +1,38 @@
+{
+  "owner": "HOL",
+  "controller": "HOL",
+  "add_core": "HOL",
+  "wood": 0.2,
+  "infra": 9,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 111701,
+      "template": 121
+    },
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
+    }
+  },
+  "1979.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
+    }
+  },
+  "1991.1.1": {
+    "naval_base": 3,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
+    }
+  }
+}

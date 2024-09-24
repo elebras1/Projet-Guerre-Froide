@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "NIG"
+  ],
+  "coal": 1,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 898942,
+      "template": 5
+    }
+  },
+  "1960.10.01": {
+    "owner": "NIG",
+    "controller": "NIG",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 915447,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 932255,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1180368,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1808007,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2462049,
+      "template": 305
+    }
+  }
+}

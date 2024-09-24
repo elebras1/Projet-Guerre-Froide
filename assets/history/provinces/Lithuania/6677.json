@@ -1,0 +1,89 @@
+{
+  "add_core": [
+    "LIT",
+    "SOV"
+  ],
+  "owner": "SOV",
+  "controller": "SOV",
+  "meat": 164,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 55940,
+      "template": 57
+    },
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
+    }
+  },
+  "1990.3.11": {
+    "remove_core": "SOV",
+    "owner": "LIT",
+    "controller": "LIT"
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 74883,
+        "template": 257
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 6
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 81338,
+        "template": 357
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 56204,
+      "template": 57
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 56469,
+      "template": 57
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 62607,
+      "template": 157
+    }
+  }
+}

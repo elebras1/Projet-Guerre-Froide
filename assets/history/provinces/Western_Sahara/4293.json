@@ -1,0 +1,62 @@
+{
+  "owner": "SPA",
+  "controller": "SPA",
+  "add_core": [
+    "SPA",
+    "SDR",
+    "MOR",
+    "MRA"
+  ],
+  "meat": 0.68,
+  "infra": 4,
+  "air_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 4539,
+      "template": 3
+    }
+  },
+  "1975.11.14": {
+    "owner": "MOR",
+    "controller": "MOR",
+    "remove_core": "SPA"
+  },
+  "1961.1.1": {
+    "naval_base": 1
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 2
+    },
+    {
+      "population_total": {
+        "amount": 88765,
+        "template": 303
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 4931,
+      "template": 3
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 5356,
+      "template": 3
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 15128,
+      "template": 103
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 52947,
+      "template": 203
+    }
+  }
+}

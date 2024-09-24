@@ -1,0 +1,105 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "ZIM",
+    "RHO"
+  ],
+  "meat": 11.97,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 82325,
+      "template": 1
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1953.8.1": {
+    "owner": "RHO",
+    "controller": "RHO",
+    "remove_core": "ENG"
+  },
+  "1979.06.01": {
+    "owner": "ZIM",
+    "controller": "ZIM",
+    "remove_core": "RHO"
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 84858,
+        "template": 1
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 87469,
+        "template": 1
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 223923,
+        "template": 201
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 3
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 342259,
+        "template": 301
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 127572,
+      "template": 101
+    }
+  }
+}

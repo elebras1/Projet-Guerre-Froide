@@ -1,0 +1,58 @@
+{
+  "owner": "BEL",
+  "controller": "BEL",
+  "add_core": [
+    "BEL",
+    "FLA"
+  ],
+  "meat": 49.3,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1088732,
+      "template": 69
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 5
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "high_tech",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1255666,
+        "template": 269
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1094665,
+      "template": 69
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1100631,
+      "template": 69
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1182672,
+      "template": 169
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1272558,
+      "template": 369
+    }
+  }
+}

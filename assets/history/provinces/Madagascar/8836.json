@@ -1,0 +1,99 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "MAD"
+  ],
+  "grain": 37.31,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 243907,
+      "template": 1
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1960.06.26": {
+    "owner": "MAD",
+    "controller": "MAD",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 249159,
+        "template": 1
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 254523,
+        "template": 1
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 522510,
+        "template": 201
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 2
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 724305,
+        "template": 301
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 333743,
+      "template": 101
+    }
+  }
+}

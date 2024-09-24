@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "SRL"
+  ],
+  "vegetables": 20,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1045106,
+      "template": 15
+    }
+  },
+  "1948.02.04": {
+    "owner": "SRL",
+    "controller": "SRL",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1063030,
+      "template": 15
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1081261,
+      "template": 15
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1375155,
+      "template": 115
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1946860,
+      "template": 215
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2301818,
+      "template": 315
+    }
+  }
+}

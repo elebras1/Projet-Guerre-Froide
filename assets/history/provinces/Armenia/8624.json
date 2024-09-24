@@ -1,0 +1,80 @@
+{
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "ARM"
+    ],
+    "precious_metals": 2,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 253914,
+            "template": 30
+        },
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 1
+        }
+    },
+    "1950.1.1": [
+        {
+            "economy_building": {
+                "name": "heavy_industry",
+                "size": 2
+            }
+        },
+        {
+            "population_total": {
+                "amount": 268776,
+                "template": 30
+            }
+        }
+    ],
+    "1961.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 3
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "heavy_industry",
+                "size": 5
+            }
+        },
+        {
+            "population_total": {
+                "amount": 604583,
+                "template": 230
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "economy_building": {
+                "name": "heavy_industry",
+                "size": 4
+            }
+        },
+        {
+            "population_total": {
+                "amount": 697415,
+                "template": 330
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 261240,
+            "template": 30
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 397587,
+            "template": 130
+        }
+    }
+}

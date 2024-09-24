@@ -1,0 +1,58 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "ALG"
+  ],
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 55680,
+      "template": 3
+    }
+  },
+  "1962.07.05": {
+    "owner": "ALG",
+    "controller": "ALG",
+    "remove_core": "FRA"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 120691,
+        "template": 203
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 56841,
+      "template": 3
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 58027,
+      "template": 3
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 74314,
+      "template": 103
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 171903,
+      "template": 303
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+    "owner": "NZL",
+    "controller": "NZL",
+    "add_core": "NZL",
+    "meat": 48.7,
+    "infra": 8,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 32373,
+            "template": 95
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 4
+        }
+    },
+    "1948.1.1": [
+        {
+            "economy_building": {
+                "name": "military_goods",
+                "size": 4
+            }
+        },
+        {
+            "population_total": {
+                "amount": 33104,
+                "template": 95
+            }
+        }
+    ],
+    "1950.1.1": [
+        {
+            "economy_building": {
+                "name": "military_goods",
+                "size": 4
+            }
+        },
+        {
+            "population_total": {
+                "amount": 33851,
+                "template": 95
+            }
+        }
+    ],
+    "1961.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 5
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "military_goods",
+                "size": 5
+            }
+        },
+        {
+            "population_total": {
+                "amount": 55635,
+                "template": 295
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "economy_building": {
+                "name": "military_goods",
+                "size": 5
+            }
+        },
+        {
+            "population_total": {
+                "amount": 61138,
+                "template": 395
+            }
+        }
+    ],
+    "1961.12.30": {
+        "population_total": {
+            "amount": 43952,
+            "template": 195
+        }
+    }
+}

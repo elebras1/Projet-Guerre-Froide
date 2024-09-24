@@ -1,0 +1,542 @@
+{
+  "color": [
+    112,
+    90,
+    87
+  ],
+  "graphical_culture": "Generic",
+  "default_templates": {
+    "USA_air_cavalry_division": [
+      "air_cav_brigade",
+      "air_cav_brigade",
+      "air_cav_brigade",
+      "air_cav_brigade"
+    ],
+    "USA_armored_division": [
+      "armor_brigade",
+      "armor_brigade",
+      "heavy_mechanized_brigade",
+      "light_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_cavalry_division": [
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_heavy_mechanized_division": [
+      "heavy_mechanized_brigade",
+      "heavy_mechanized_brigade",
+      "light_mechanized_brigade",
+      "armor_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_light_mechanized_division": [
+      "light_mechanized_brigade",
+      "light_mechanized_brigade",
+      "heavy_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_motorized_division": [
+      "motorized_brigade",
+      "motorized_brigade",
+      "heavy_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_infantry_division": [
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "artillery_brigade"
+    ],
+    "USA_marine_division": [
+      "marine_brigade",
+      "marine_brigade",
+      "marine_brigade",
+      "marine_brigade"
+    ],
+    "USA_mountain_division": [
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade"
+    ],
+    "USA_national_guard_division": [
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "artillery_brigade"
+    ]
+  },
+  "unit_names": {},
+  "ministers": {
+    "1501001": {
+      "name": "Arvids Pel�e",
+      "ideology": "communist_idolg",
+      "loyalty": 1,
+      "picture": "LAT_M_Pel�e_A",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1946-01-01",
+      "death_date": "1983-05-29"
+    },
+    "1501002": {
+      "name": "Augusts Voss",
+      "ideology": "communist_idolg",
+      "loyalty": 1,
+      "picture": "LAT_M_Voss_A",
+      "head_of_state": "dictator_type",
+      "head_of_government": "dictator_type",
+      "start_date": "1969-01-01",
+      "death_date": "1994-01-01"
+    },
+    "1501003": {
+      "name": "Boris Pugo",
+      "ideology": "communist_idolg",
+      "loyalty": 1,
+      "picture": "LAT_M_Pugo_B",
+      "head_of_state": "controversial_figure",
+      "head_of_government": "controversial_figure",
+      "start_date": "1984-10-04",
+      "death_date": "1991-08-01",
+      "base": 1501003
+    },
+    "1501100": {
+      "name": "Eduards Berklavs",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Berklavs_Eduards",
+      "head_of_state": "democrat_type",
+      "head_of_government": "democrat_type",
+      "start_date": "1959-04-18",
+      "death_date": "1994-11-01"
+    },
+    "1501101": {
+      "name": "Karlis I Birons",
+      "ideology": "social_cons_idolg",
+      "moral_leader": true,
+      "loyalty": 0.5,
+      "picture": "LAT_M_Karlis_I",
+      "head_of_state": "controversial_figure",
+      "head_of_government": "controversial_figure",
+      "start_date": "1941-01-01",
+      "death_date": "1982-02-28"
+    },
+    "1501102": {
+      "name": "Ernsts Johans II Birons",
+      "ideology": "social_cons_idolg",
+      "moral_leader": true,
+      "loyalty": 0.5,
+      "picture": "LAT_M_Ernsts_Johans_II",
+      "head_of_state": "moral_type",
+      "head_of_government": "moral_type",
+      "start_date": "1982-02-28",
+      "death_date": "2300-01-01"
+    },
+    "1501103": {
+      "name": "Gustavs Celmin�",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Celmins_Gustavs",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1933-01-01",
+      "death_date": "1968-04-10"
+    },
+    "1501104": {
+      "name": "Herberts Cukurs",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Cukurs_Herberts",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1941-01-01",
+      "death_date": "1965-02-23"
+    },
+    "1501105": {
+      "name": "Igors �i�kins",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Siskins_Igors",
+      "head_of_state": "controversial_figure",
+      "head_of_government": "controversial_figure",
+      "start_date": "1980-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501106": {
+      "name": "Boleslavs Maikovskis",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Maikovskis_Boleslavs",
+      "head_of_state": "loyal_type",
+      "head_of_government": "loyal_type",
+      "start_date": "1940-01-01",
+      "death_date": "1996-04-19"
+    },
+    "1501107": {
+      "name": "Karlis Lobe",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Lobe_Karlis",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1946-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501108": {
+      "name": "Konrads Kalejs",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Kalejs_Konrads",
+      "head_of_state": "autocrat_type",
+      "head_of_government": "autocrat_type",
+      "start_date": "1940-01-01",
+      "death_date": "2001-11-08"
+    },
+    "1501109": {
+      "name": "Viktors Arajs",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Arajs_Viktors",
+      "head_of_state": "extremist_type",
+      "head_of_government": "extremist_type",
+      "start_date": "1940-01-01",
+      "death_date": "1988-01-13"
+    },
+    "1501110": {
+      "name": "Bruno Kalnin�",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Kalnins_Bruno",
+      "head_of_state": "visionary_type",
+      "head_of_government": "visionary_type",
+      "start_date": "1941-01-01",
+      "death_date": "1990-03-26"
+    },
+    "1501111": {
+      "name": "Karlis Reinholds Zarin�",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Zarins_Karlis_R",
+      "head_of_state": "visionary_type",
+      "head_of_government": "visionary_type",
+      "start_date": "1941-01-01",
+      "death_date": "1963-04-29"
+    },
+    "1501112": {
+      "name": "Anatols Dinbergs",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Dinbergs_Anatols",
+      "head_of_state": "visionary_type",
+      "head_of_government": "visionary_type",
+      "start_date": "1941-01-01",
+      "death_date": "1993-01-01"
+    },
+    "1501113": {
+      "name": "Felikss Cielens",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Cielens_Felikss",
+      "head_of_state": "visionary_type",
+      "head_of_government": "visionary_type",
+      "start_date": "1941-01-01",
+      "death_date": "1964-07-10"
+    },
+    "1501114": {
+      "name": "Janis Kurelis",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Kurelis_Janis",
+      "head_of_state": "visionary_type",
+      "head_of_government": "visionary_type",
+      "start_date": "1941-01-01",
+      "death_date": "1954-12-05"
+    },
+    "1501115": {
+      "name": "Martin� Penikis",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Penikis_Martins",
+      "head_of_state": "visionary_type",
+      "head_of_government": "visionary_type",
+      "start_date": "1941-01-01",
+      "death_date": "1964-02-28"
+    },
+    "1501116": {
+      "name": "Arnolds Spekke",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Spekke_Arnolds",
+      "head_of_state": "visionary_type",
+      "head_of_government": "visionary_type",
+      "start_date": "1941-01-01",
+      "death_date": "1972-07-27"
+    },
+    "1501117": {
+      "name": "Eduards Berklavs",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Berklavs_Eduards",
+      "head_of_state": "visionary_type",
+      "head_of_government": "visionary_type",
+      "start_date": "1946-01-01",
+      "death_date": "1991-12-31"
+    },
+    "1501118": {
+      "name": "Karlis Musin�",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Musins_Karlis",
+      "head_of_state": "zealous_type",
+      "head_of_government": "zealous_type",
+      "start_date": "1946-01-01",
+      "death_date": "1955-06-02"
+    },
+    "1501119": {
+      "name": "Gunars Astra",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Astra_Gunars",
+      "head_of_state": "democrat_type",
+      "head_of_government": "democrat_type",
+      "start_date": "1956-01-01",
+      "death_date": "1988-04-06"
+    },
+    "1501120": {
+      "name": "Adolfs Blodnieks",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Blodnieks_Adolfs",
+      "head_of_state": "traditionalist_type",
+      "head_of_government": "traditionalist_type",
+      "start_date": "1934-03-24",
+      "death_date": "1962-03-21"
+    },
+    "1501121": {
+      "name": "Ivars Godmanis",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Godmanis_Ivars",
+      "head_of_state": "reformer_type",
+      "head_of_government": "reformer_type",
+      "start_date": "1988-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501122": {
+      "name": "Valdis Birkavs",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Birkavs_Valdis",
+      "head_of_state": "ambitious_type",
+      "head_of_government": "ambitious_type",
+      "start_date": "1990-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501123": {
+      "name": "Guntars Krasts",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Krasts_Guntars",
+      "head_of_state": "controversial_figure",
+      "head_of_government": "controversial_figure",
+      "start_date": "1990-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501124": {
+      "name": "Janis Urbanovics",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Urbanovics_Janis",
+      "head_of_state": "courteous_figure",
+      "head_of_government": "courteous_figure",
+      "start_date": "1988-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501125": {
+      "name": "Andris �kele",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Skele_Andris",
+      "head_of_state": "fortunate_type",
+      "head_of_government": "fortunate_type",
+      "start_date": "1990-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501126": {
+      "name": "Guntis Ulmanis",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Ulmanis_Guntis",
+      "head_of_state": "bureaucrat_type",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1989-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501127": {
+      "name": "Tatjana �danoka",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Zdanoka_Tatjana",
+      "head_of_state": "traditionalist_type",
+      "head_of_government": "traditionalist_type",
+      "start_date": "1989-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501128": {
+      "name": "Alfreds Rubiks",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Rubiks_Alfreds",
+      "head_of_state": "extremist_type",
+      "head_of_government": "extremist_type",
+      "start_date": "1980-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501129": {
+      "name": "Augusts Kirchensteins",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Kirchensteins_Augusts",
+      "head_of_state": "bureaucrat_type",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1940-01-01",
+      "death_date": "1963-11-02"
+    },
+    "1501130": {
+      "name": "Vilis Lacis",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Lacis_Vilis",
+      "head_of_state": "lethargic_type",
+      "head_of_government": "lethargic_type",
+      "start_date": "1940-01-01",
+      "death_date": "1966-02-06"
+    },
+    "1501131": {
+      "name": "Nikolajs Neilands",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Neilands_Nikolajs",
+      "head_of_state": "visionary_type",
+      "head_of_government": "loyal_type",
+      "start_date": "1940-01-01",
+      "death_date": "2003-01-01"
+    },
+    "1501132": {
+      "name": "Adolf Friedrich",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 0.5,
+      "picture": "LAT_M_Friedrich_Adolf",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1918-01-01",
+      "death_date": "1969-08-05"
+    },
+    "1501133": {
+      "name": "Woizlawa Feodora",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 0.5,
+      "picture": "LAT_M_Feodora_Woizlawa",
+      "head_of_state": "courteous_figure",
+      "head_of_government": "courteous_figure",
+      "start_date": "1969-08-05",
+      "death_date": "2300-01-01"
+    },
+    "1501134": {
+      "name": "Voldemars Johans Skaistlauks",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Skaistlauks_Voldemars_J",
+      "head_of_state": "controversial_figure",
+      "head_of_government": "controversial_figure",
+      "start_date": "1946-01-01",
+      "death_date": "1972-10-09"
+    },
+    "1501135": {
+      "name": "Janis Balodis",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Balodis_Janis",
+      "head_of_state": "traditionalist_type",
+      "head_of_government": "traditionalist_type",
+      "start_date": "1946-01-01",
+      "death_date": "1965-08-08"
+    },
+    "1501136": {
+      "name": "Roberts Dambitis",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Dambitis_Roberts",
+      "head_of_state": "lethargic_type",
+      "head_of_government": "lethargic_type",
+      "start_date": "1946-01-01",
+      "death_date": "1965-08-08"
+    },
+    "1501137": {
+      "name": "Oskars Dankers",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Dankers_Oskars",
+      "head_of_state": "controversial_figure",
+      "head_of_government": "controversial_figure",
+      "start_date": "1946-01-01",
+      "death_date": "1965-04-11"
+    },
+    "1501138": {
+      "name": "Janis Lavenieks",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Lavenieks_Janis",
+      "head_of_state": "visionary_type",
+      "head_of_government": "visionary_type",
+      "start_date": "1946-01-01",
+      "death_date": "1969-02-17"
+    },
+    "1501139": {
+      "name": "Maris Grinblats",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Grinblats_Maris",
+      "head_of_state": "visionary_type",
+      "head_of_government": "visionary_type",
+      "start_date": "1980-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501140": {
+      "name": "Janis Straume",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Straume_Janis",
+      "head_of_state": "traditionalist_type",
+      "head_of_government": "traditionalist_type",
+      "start_date": "1985-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501141": {
+      "name": "Guntars Krasts",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Krasts_Guntars",
+      "head_of_state": "reformer_type",
+      "head_of_government": "reformer_type",
+      "start_date": "1980-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1501142": {
+      "name": "Eduards Kalnin�",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "LAT_M_Kalnins_Eduards",
+      "head_of_state": "reformer_type",
+      "head_of_government": "reformer_type",
+      "start_date": "1946-01-01",
+      "death_date": "1964-06-28"
+    }
+  }
+}

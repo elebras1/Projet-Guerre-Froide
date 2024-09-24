@@ -1,0 +1,72 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "UKR"
+  ],
+  "vegetables": 529.85,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 187663,
+      "template": 45
+    },
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 4
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 190380,
+        "template": 45
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 193137,
+        "template": 45
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 7
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 227052,
+      "template": 145
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 258191,
+      "template": 245
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 267541,
+      "template": 345
+    }
+  }
+}

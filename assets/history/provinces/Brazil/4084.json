@@ -1,0 +1,65 @@
+{
+  "owner": "BRA",
+  "controller": "BRA",
+  "add_core": "BRA",
+  "vegetables": 188.23,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 636336,
+      "template": 77
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "naval_yards",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1488650,
+        "template": 277
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 5
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "naval_yards",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1904974,
+        "template": 381
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 655770,
+      "template": 77
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 675797,
+      "template": 77
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 967592,
+      "template": 177
+    }
+  }
+}

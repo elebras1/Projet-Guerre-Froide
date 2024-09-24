@@ -1,0 +1,63 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "JMC"
+  ],
+  "fruits": 7,
+  "infra": 5,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 449054,
+      "template": 75
+    }
+  },
+  "1962.08.06": {
+    "owner": "JMC",
+    "controller": "JMC",
+    "remove_core": "ENG"
+  },
+  "1964.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 4
+    }
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 2
+    },
+    {
+      "population_total": {
+        "amount": 782037,
+        "template": 375
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 454932,
+      "template": 75
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 460887,
+      "template": 75
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 551556,
+      "template": 175
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 691488,
+      "template": 275
+    }
+  }
+}

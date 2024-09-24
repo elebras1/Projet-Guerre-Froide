@@ -1,0 +1,57 @@
+{
+  "owner": "POR",
+  "controller": "POR",
+  "add_core": [
+    "POR",
+    "ANG"
+  ],
+  "oil": 220,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 75808,
+      "template": 2
+    }
+  },
+  "1975.11.11": {
+    "owner": "ANG",
+    "controller": "ANG",
+    "remove_core": "POR"
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 3
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 77184,
+      "template": 2
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 78585,
+      "template": 2
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 97524,
+      "template": 102
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 140215,
+      "template": 202
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 201857,
+      "template": 302
+    }
+  }
+}

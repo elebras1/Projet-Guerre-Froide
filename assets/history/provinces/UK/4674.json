@@ -1,0 +1,68 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": "ENG",
+  "rare_metals": 1.41,
+  "infra": 5,
+  "naval_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 433589,
+      "template": 60
+    },
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 10
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 9
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 2,
+      "economy_building": {
+        "name": "naval_yards",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 484402,
+        "template": 260
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 3
+    },
+    {
+      "population_total": {
+        "amount": 493637,
+        "template": 360
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 434556,
+      "template": 60
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 435525,
+      "template": 60
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 458317,
+      "template": 160
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "IND",
+    "PAK"
+  ],
+  "coal": 3,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 772543,
+      "template": 15
+    }
+  },
+  "1947.8.15.0": {
+    "owner": "IND",
+    "controller": "IND",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 786256,
+      "template": 15
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 800212,
+      "template": 15
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1003528,
+      "template": 115
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1471618,
+      "template": 215
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1919334,
+      "template": 315
+    }
+  }
+}

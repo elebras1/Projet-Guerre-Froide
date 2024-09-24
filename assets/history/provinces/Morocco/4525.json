@@ -1,0 +1,50 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "MOR"
+  ],
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 47037,
+      "template": 3
+    }
+  },
+  "1956.03.02": {
+    "owner": "MOR",
+    "controller": "MOR",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 48201,
+      "template": 3
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 49394,
+      "template": 3
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 67722,
+      "template": 103
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 105228,
+      "template": 203
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 139239,
+      "template": 303
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "BRU",
+    "ENG"
+  ],
+  "oil": 160,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 43127,
+      "template": 19
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 182986,
+        "template": 219
+      }
+    }
+  ],
+  "1984.1.1": {
+    "owner": "BRU",
+    "controller": "BRU",
+    "remove_core": "ENG"
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 3
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 259357,
+        "template": 319
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 45499,
+      "template": 19
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 48001,
+      "template": 19
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 87192,
+      "template": 119
+    }
+  }
+}

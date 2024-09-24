@@ -1,0 +1,59 @@
+{
+  "owner": "POR",
+  "controller": "POR",
+  "add_core": [
+    "POR",
+    "MOZ"
+  ],
+  "meat": 4.47,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 39714,
+      "template": 1
+    }
+  },
+  "1975.06.25": {
+    "owner": "MOZ",
+    "controller": "MOZ",
+    "remove_core": "POR"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 75338,
+        "template": 201
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 40342,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 40980,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 50634,
+      "template": 101
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 88213,
+      "template": 301
+    }
+  }
+}

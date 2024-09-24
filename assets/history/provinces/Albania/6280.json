@@ -1,0 +1,62 @@
+{
+  "owner": "ALB",
+  "controller": "ALB",
+  "add_core": "ALB",
+  "meat": 55.5,
+  "infra": 5,
+  "naval_base": 1,
+  "air_base": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 380738,
+      "template": 61
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 861972,
+        "template": 261
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 1,
+      "economy_building": {
+        "name": "light_industry",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1084394,
+        "template": 361
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 390378,
+      "template": 61
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 400262,
+      "template": 61
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 564175,
+      "template": 161
+    }
+  }
+}

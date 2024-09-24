@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "PAK"
+  ],
+  "wood": 0.2,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 418026,
+      "template": 18
+    }
+  },
+  "1947.08.17": {
+    "owner": "PAK",
+    "controller": "PAK",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 425613,
+      "template": 18
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 433338,
+      "template": 18
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 556336,
+      "template": 118
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 898397,
+      "template": 218
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1327058,
+      "template": 318
+    }
+  }
+}

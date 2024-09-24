@@ -1,0 +1,690 @@
+{
+  "color": [
+    84,
+    119,
+    168
+  ],
+  "graphical_culture": "Us",
+  "default_templates": {
+    "USA_air_cavalry_division": [
+      "air_cav_brigade",
+      "air_cav_brigade",
+      "air_cav_brigade",
+      "air_cav_brigade"
+    ],
+    "USA_armored_division": [
+      "armor_brigade",
+      "armor_brigade",
+      "heavy_mechanized_brigade",
+      "light_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_cavalry_division": [
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "cavalry_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_heavy_mechanized_division": [
+      "heavy_mechanized_brigade",
+      "heavy_mechanized_brigade",
+      "light_mechanized_brigade",
+      "armor_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_light_mechanized_division": [
+      "light_mechanized_brigade",
+      "light_mechanized_brigade",
+      "heavy_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_motorized_division": [
+      "motorized_brigade",
+      "motorized_brigade",
+      "heavy_mechanized_brigade",
+      "sp_artillery_brigade"
+    ],
+    "USA_infantry_division": [
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "artillery_brigade"
+    ],
+    "USA_marine_division": [
+      "marine_brigade",
+      "marine_brigade",
+      "marine_brigade",
+      "marine_brigade"
+    ],
+    "ISR_alpinist_division": [
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade",
+      "bergsjaeger_brigade"
+    ],
+    "ISR_reserve_division": [
+      "infantry_brigade",
+      "infantry_brigade",
+      "infantry_brigade",
+      "artillery_brigade"
+    ]
+  },
+  "unit_names": {
+    "infantry_brigade": [
+      "1st Division",
+      "2nd Division",
+      "3rd Division",
+      "4th Division",
+      "5th Division",
+      "6th Division"
+    ],
+    "militia_brigade": {}
+  },
+  "ministers": {
+    "1222000": {
+      "name": "Chaim A. Weizmann",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Weizmann_Chaim_A",
+      "head_of_state": "bureaucrat_type",
+      "start_date": "1946-01-01",
+      "death_date": "1952-11-09"
+    },
+    "1222001": {
+      "name": "Yitzhak Ben-Zvi",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Ben-Zvi_Yitzhak",
+      "head_of_state": "administrator_type",
+      "start_date": "1952-11-09",
+      "death_date": "1963-04-23"
+    },
+    "1222002": {
+      "name": "Zalman Shazar",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Shazar_Zalman",
+      "head_of_state": "bureaucrat_type",
+      "start_date": "1963-04-23",
+      "death_date": "1973-05-24"
+    },
+    "1222003": {
+      "name": "Ephraim Katzir",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Katzir_Ephraim",
+      "head_of_state": "democrat_type",
+      "start_date": "1973-05-24",
+      "death_date": "1978-05-29"
+    },
+    "1222004": {
+      "name": "Yitzhak Navon",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Navon_Yitzhak",
+      "head_of_state": "bureaucrat_type",
+      "start_date": "1978-05-29",
+      "death_date": "1983-05-05"
+    },
+    "1222005": {
+      "name": "Chaim Herzog",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Herzog_Chaim",
+      "head_of_state": "administrator_type",
+      "start_date": "1983-05-05",
+      "death_date": "1993-05-13"
+    },
+    "1222006": {
+      "name": "David Ben-Gurion",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.99,
+      "picture": "ISR_M_Ben-Gurion_David",
+      "head_of_government": "administrator_type",
+      "start_date": "1946-01-01",
+      "death_date": "1973-12-01"
+    },
+    "1222008": {
+      "name": "Meir Ya'ari",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Ya'ari_Meir",
+      "head_of_government": "autocrat_type",
+      "start_date": "1949-03-10",
+      "death_date": "1969-02-25"
+    },
+    "1222009": {
+      "name": "Yehuda L. Maimon",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Maimon_Yehuda_L",
+      "head_of_government": "autocrat_type",
+      "start_date": "1949-03-10",
+      "death_date": "1951-10-08"
+    },
+    "1222010": {
+      "name": "Israel Rokach",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Rokach_Israel",
+      "head_of_government": "administrator_type",
+      "start_date": "1949-03-10",
+      "death_date": "1959-09-13"
+    },
+    "1222011": {
+      "name": "Moshe Sharett",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Sharett_Moshe",
+      "head_of_government": "bureaucrat_type",
+      "start_date": "1954-01-26",
+      "death_date": "1955-11-03"
+    },
+    "1222013": {
+      "name": "Menachem Begin",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.8,
+      "picture": "ISR_M_Begin_Menachem",
+      "head_of_government": "autocrat_type",
+      "start_date": "1949-03-10",
+      "death_date": "1983-10-10"
+    },
+    "1222016": {
+      "name": "Haim-Moshe Shapira",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Shapira_Haim-Moshe",
+      "head_of_government": "autocrat_type",
+      "start_date": "1951-10-08",
+      "death_date": "1973-12-31"
+    },
+    "1222017": {
+      "name": "Peretz Bernstein",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Bernstein_Peretz",
+      "head_of_government": "autocrat_type",
+      "start_date": "1961-08-15",
+      "death_date": "1965-11-01"
+    },
+    "1222018": {
+      "name": "Levi Eshkol",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Eshkol_Levi",
+      "head_of_government": "administrator_type",
+      "start_date": "1963-06-26",
+      "death_date": "1969-02-26"
+    },
+    "1222019": {
+      "name": "Yigal Allon",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Allon_Yigal",
+      "head_of_government": "administrator_type",
+      "start_date": "1969-02-26",
+      "death_date": "1969-03-17"
+    },
+    "1222020": {
+      "name": "Golda Meir",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Meir_Golda",
+      "head_of_government": "iron_lady",
+      "start_date": "1969-03-17",
+      "death_date": "1974-06-03"
+    },
+    "1222022": {
+      "name": "Yitzhak Rabin",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Rabin_Yitzhak",
+      "head_of_government": "democrat_type",
+      "start_date": "1974-06-03",
+      "death_date": "1977-06-20"
+    },
+    "1222023": {
+      "name": "Zevulun Hammer",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Hammer_Zevulun",
+      "head_of_government": "autocrat_type",
+      "start_date": "1973-12-31",
+      "death_date": "1981-06-30"
+    },
+    "1222024": {
+      "name": "Shimon Peres",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.8,
+      "picture": "ISR_M_Peres_Shimon",
+      "head_of_government": "democrat_type",
+      "start_date": "1977-06-20",
+      "death_date": "1992-06-23"
+    },
+    "1222026": {
+      "name": "Yigael Yadin",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Yadin_Yigael",
+      "head_of_government": "democrat_type",
+      "start_date": "1977-06-20",
+      "death_date": "1981-06-30"
+    },
+    "1222027": {
+      "name": "Shlomo Yosef Burg",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Burg_Yosef",
+      "head_of_government": "autocrat_type",
+      "start_date": "1981-06-30",
+      "death_date": "1988-11-01"
+    },
+    "1222028": {
+      "name": "Yitzhak Shamir",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Shamir_Yitzhak",
+      "head_of_government": "hardliner_type",
+      "start_date": "1983-10-10",
+      "death_date": "1996-05-29"
+    },
+    "1222029": {
+      "name": "Yuval Ne'eman",
+      "ideology": "social_cons_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Ne'eman_Yuval",
+      "head_of_government": "hardliner_type",
+      "start_date": "1981-06-30",
+      "death_date": "1988-11-01"
+    },
+    "1222030": {
+      "name": "Yitzhak Haim Peretz",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Peretz_Yitzhak_H",
+      "head_of_government": "autocrat_type",
+      "start_date": "1988-11-01",
+      "death_date": "1992-06-23"
+    },
+    "1222031": {
+      "name": "Shulamit Aloni",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 1,
+      "picture": "ISR_M_Aloni_Shulamit",
+      "head_of_government": "administrator_type",
+      "start_date": "1973-12-01",
+      "death_date": "1992-06-23"
+    },
+    "1222100": {
+      "name": "Yosef Dayan",
+      "ideology": "paternal_auto_idolg",
+      "moral_leader": true,
+      "loyalty": 0.5,
+      "picture": "ISR_M_Dayan_Yosef",
+      "head_of_state": "extremist_type",
+      "start_date": "1968-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1222101": {
+      "name": "Moshe Dayan",
+      "ideology": "social_democrat_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Dayan_Moshe",
+      "head_of_state": "zealous_type",
+      "head_of_government": "zealous_type",
+      "start_date": "1959-12-17",
+      "death_date": "1981-10-16"
+    },
+    "1222102": {
+      "name": "Moshe Sneh",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Sneh_Moshe",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1954-05-01",
+      "death_date": "1972-03-01"
+    },
+    "1222103": {
+      "name": "Abba Ahimeir",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Ahimeir_Abba",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1945-01-01",
+      "death_date": "1962-06-06"
+    },
+    "1222104": {
+      "name": "Uri Zvi Grinberg",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Grinberg_Uri_Z",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1945-01-01",
+      "death_date": "1981-05-08"
+    },
+    "1222105": {
+      "name": "Yehoshua Yevin",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Yevin_Yehoshua",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1945-01-01",
+      "death_date": "1970-01-01"
+    },
+    "1222106": {
+      "name": "Ovadia Yosef",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Yosef_Ovadia",
+      "head_of_state": "controversial_figure",
+      "head_of_government": "controversial_figure",
+      "start_date": "1973-01-01",
+      "death_date": "2013-10-07"
+    },
+    "1222107": {
+      "name": "Saadia Marciano",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Marciano_Saadia",
+      "head_of_state": "honest_type",
+      "head_of_government": "honest_type",
+      "start_date": "1971-01-01",
+      "death_date": "2007-12-21"
+    },
+    "1222108": {
+      "name": "Emile Habibi",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Habibi_Emile",
+      "head_of_state": "reputable_type",
+      "head_of_government": "reputable_type",
+      "start_date": "1945-01-01",
+      "death_date": "1996-05-02"
+    },
+    "1222109": {
+      "name": "Tawfik Toubi",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Toubi_Tawfik",
+      "head_of_state": "reputable_type",
+      "head_of_government": "reputable_type",
+      "start_date": "1945-01-01",
+      "death_date": "2011-03-11"
+    },
+    "1222110": {
+      "name": "Meir Vilner",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Vilner_Meir",
+      "head_of_state": "administrator_type",
+      "head_of_government": "administrator_type",
+      "start_date": "1945-01-01",
+      "death_date": "2011-03-11"
+    },
+    "1222111": {
+      "name": "Esther Vilenska",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Vilenska_Esther",
+      "head_of_state": "administrator_type",
+      "head_of_government": "administrator_type",
+      "start_date": "1945-01-01",
+      "death_date": "1975-11-08"
+    },
+    "1222112": {
+      "name": "Adolf Berman",
+      "ideology": "communist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Berman_Adolf",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1950-01-01",
+      "death_date": "1978-02-03"
+    },
+    "1222113": {
+      "name": "Charlie Biton",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Biton_Charlie",
+      "head_of_state": "honest_type",
+      "head_of_government": "honest_type",
+      "start_date": "1971-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1222114": {
+      "name": "Meir Kahane",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Kahane_Meir",
+      "head_of_state": "extremist_type",
+      "head_of_government": "extremist_type",
+      "start_date": "1968-01-01",
+      "death_date": "1990-11-05"
+    },
+    "1222115": {
+      "name": "Dr. Elimelekh Rimalt",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Rimalt_Elimelekh",
+      "head_of_state": "religious_type",
+      "head_of_government": "religious_type",
+      "start_date": "1965-11-01",
+      "death_date": "1975-01-01"
+    },
+    "1222116": {
+      "name": "Simha Erlich",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Erlich_Simha",
+      "head_of_state": "administrator_type",
+      "head_of_government": "administrator_type",
+      "start_date": "1975-01-01",
+      "death_date": "1983-06-19"
+    },
+    "1222117": {
+      "name": "Geulah Cohen",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Cohen_Geulah",
+      "head_of_state": "iron_lady",
+      "head_of_government": "iron_lady",
+      "start_date": "1979-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1222118": {
+      "name": "Moshe Shamir",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Shamir_Moshe",
+      "head_of_state": "hardliner_type",
+      "head_of_government": "hardliner_type",
+      "start_date": "1979-01-01",
+      "death_date": "2004-08-20"
+    },
+    "1222119": {
+      "name": "Baruch Marzel",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Marzel_Baruch",
+      "head_of_state": "extremist_type",
+      "head_of_government": "extremist_type",
+      "start_date": "1990-11-05",
+      "death_date": "2300-01-01"
+    },
+    "1222120": {
+      "name": "Avraham Toledano",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Toledano_Avraham",
+      "head_of_state": "religious_type",
+      "head_of_government": "religious_type",
+      "start_date": "1979-01-01",
+      "death_date": "1999-12-31"
+    },
+    "1222121": {
+      "name": "Shmuel Sackett",
+      "ideology": "fascistic_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Sackett_Shmuel",
+      "head_of_state": "zealous_type",
+      "head_of_government": "zealous_type",
+      "start_date": "1981-01-01",
+      "death_date": "2005-01-01"
+    },
+    "1222122": {
+      "name": "Amnon Rubinstein",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Rubinstein_Amnon",
+      "head_of_state": "ambitious_type",
+      "head_of_government": "ambitious_type",
+      "start_date": "1977-05-15",
+      "death_date": "2002-01-15"
+    },
+    "1222123": {
+      "name": "Yigal Hurvitz",
+      "ideology": "social_cons_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Hurvitz_Yigal",
+      "head_of_state": "fortunate_type",
+      "head_of_government": "fortunate_type",
+      "start_date": "1979-08-15",
+      "death_date": "1994-01-10"
+    },
+    "1222124": {
+      "name": "Ariel Sharon",
+      "ideology": "market_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Sharon_Ariel",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1983-08-05",
+      "death_date": "2006-04-14"
+    },
+    "1222125": {
+      "name": "Ehud Adiv",
+      "ideology": "maoist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Adiv_Ehud",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1970-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1222126": {
+      "name": "Ilan Halevi",
+      "ideology": "maoist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Halevi_Ilan",
+      "head_of_state": "reformer_type",
+      "head_of_government": "reformer_type",
+      "start_date": "1970-01-01",
+      "death_date": "2013-07-10"
+    },
+    "1222127": {
+      "name": "Daud Turki",
+      "ideology": "maoist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Turki_Daud",
+      "head_of_state": "visionary_type",
+      "head_of_government": "visionary_type",
+      "start_date": "1963-01-01",
+      "death_date": "2009-03-08"
+    },
+    "1222128": {
+      "name": "Mahmoud Masarwah",
+      "ideology": "maoist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Masarwah_Mahmoud",
+      "head_of_state": "controversial_figure",
+      "head_of_government": "controversial_figure",
+      "start_date": "1968-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1222129": {
+      "name": "Marius Schattner",
+      "ideology": "maoist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Schattner_Marius",
+      "head_of_state": "honest_type",
+      "head_of_government": "honest_type",
+      "start_date": "1968-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1222130": {
+      "name": "Dan Vered",
+      "ideology": "maoist_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Vered_Dan",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1970-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1222131": {
+      "name": "Pinchas Rosen",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Rosen_Pinchas",
+      "head_of_state": "honest_type",
+      "head_of_government": "honest_type",
+      "start_date": "1942-01-01",
+      "death_date": "1968-12-23"
+    },
+    "1222132": {
+      "name": "Moshe Kol",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Kol_Moshe",
+      "head_of_state": "ambitious_type",
+      "head_of_government": "ambitious_type",
+      "start_date": "1968-12-23",
+      "death_date": "1977-05-17"
+    },
+    "1222133": {
+      "name": "Gideon Hausner",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Hausner_Gideon",
+      "head_of_state": "reputable_type",
+      "head_of_government": "reputable_type",
+      "start_date": "1977-05-17",
+      "death_date": "1981-06-30"
+    },
+    "1222134": {
+      "name": "Yitzhak Artzi",
+      "ideology": "social_liberal_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Artzi_Yitzhak",
+      "head_of_state": "courageous_type",
+      "head_of_government": "courageous_type",
+      "start_date": "1981-06-30",
+      "death_date": "1988-11-01"
+    },
+    "1222135": {
+      "name": "Aryeh Deri",
+      "ideology": "paternal_auto_idolg",
+      "loyalty": 0.5,
+      "picture": "ISR_M_Deri_Aryeh",
+      "head_of_state": "religious_type",
+      "head_of_government": "religious_type",
+      "start_date": "1985-01-01",
+      "death_date": "2300-01-01"
+    },
+    "1222136": {
+      "name": "Albert Einstein",
+      "ideology": "left_wing_radical_idolg",
+      "loyalty": 0.01,
+      "picture": "ISR_M_Einstein_Albert",
+      "head_of_state": "reputable_type",
+      "start_date": "1952-11-10",
+      "death_date": "1955-04-18"
+    }
+  }
+}

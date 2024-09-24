@@ -1,0 +1,52 @@
+{
+  "owner": "CSX",
+  "controller": "CSX",
+  "add_core": [
+    "CSX",
+    "CHI",
+    "CHC"
+  ],
+  "vegetables": 186.23,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1342789,
+      "template": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "remove_core": "CSX"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1369497,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1396736,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1713402,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 2460338,
+      "template": 206
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2943744,
+      "template": 306
+    }
+  }
+}

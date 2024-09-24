@@ -1,0 +1,51 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "CDI"
+  ],
+  "grain": 15,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 44752,
+      "template": 5
+    }
+  },
+  "1960.08.07": {
+    "owner": "CDI",
+    "controller": "CDI",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 46141,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 47573,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 71029,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 147019,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 234163,
+      "template": 305
+    }
+  }
+}

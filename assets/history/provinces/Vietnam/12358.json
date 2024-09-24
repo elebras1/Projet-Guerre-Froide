@@ -1,0 +1,69 @@
+{
+  "owner": "IDC",
+  "controller": "IDC",
+  "add_core": [
+    "IDC",
+    "SVI"
+  ],
+  "grain": 49.18,
+  "infra": 2,
+  "naval_base": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 287294,
+      "template": 28
+    }
+  },
+  "1948.1.1.0": {
+    "population_total": {
+      "amount": 293209,
+      "template": 28
+    }
+  },
+  "1949.6.14.0": [
+    {
+      "owner": "SVI"
+    },
+    {
+      "controller": "SVI"
+    },
+    {
+      "remove_core": "IDC"
+    }
+  ],
+  "1950.1.1.0": {
+    "population_total": {
+      "amount": 299246,
+      "template": 28
+    }
+  },
+  "1961.12.30.0": {
+    "population_total": {
+      "amount": 391479,
+      "template": 128
+    }
+  },
+  "1976.7.2.0": [
+    {
+      "owner": "VIE"
+    },
+    {
+      "controller": "VIE"
+    },
+    {
+      "add_core": "VIE"
+    }
+  ],
+  "1979.1.1.0": {
+    "population_total": {
+      "amount": 561946,
+      "template": 228
+    }
+  },
+  "1991.1.1.0": {
+    "population_total": {
+      "amount": 725614,
+      "template": 328
+    }
+  }
+}

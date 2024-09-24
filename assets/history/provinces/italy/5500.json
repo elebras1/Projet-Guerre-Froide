@@ -1,0 +1,67 @@
+{
+  "owner": "ITA",
+  "controller": "ITA",
+  "add_core": "ITA",
+  "fruits": 151.02,
+  "infra": 5,
+  "economy_building": {
+    "name": "military_academy",
+    "size": 1
+  },
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1214072,
+      "template": 64
+    }
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 5
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 6
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1489523,
+        "template": 264
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1223141,
+      "template": 64
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1232278,
+      "template": 64
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1335363,
+      "template": 164
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1511049,
+      "template": 364
+    }
+  }
+}

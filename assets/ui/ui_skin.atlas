@@ -1,0 +1,67 @@
+
+ui_skin.png
+size: 512, 512
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+flag_alpha
+  rotate: false
+  xy: 1, 197
+  size: 109, 77
+  orig: 109, 77
+  offset: 0, 0
+  index: -1
+flag_alpha2
+  rotate: false
+  xy: 147, 277
+  size: 93, 64
+  orig: 93, 64
+  offset: 0, 0
+  index: -1
+flag_overlay
+  rotate: false
+  xy: 147, 343
+  size: 109, 77
+  orig: 109, 77
+  offset: 0, 0
+  index: -1
+flag_overlay2
+  rotate: false
+  xy: 258, 356
+  size: 93, 64
+  orig: 93, 64
+  offset: 0, 0
+  index: -1
+small_tiles_dialog
+  rotate: false
+  xy: 112, 242
+  size: 32, 32
+  split: 10, 10, 10, 10
+  pad: 9, 9, 9, 9
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+tiles_dialog
+  rotate: false
+  xy: 1, 1
+  size: 95, 96
+  split: 12, 12, 12, 12
+  orig: 95, 96
+  offset: 0, 0
+  index: -1
+tiles_dialog_type3
+  rotate: false
+  xy: 1, 99
+  size: 96, 96
+  split: 27, 28, 26, 27
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+tiles_dialog_type4
+  rotate: false
+  xy: 1, 276
+  size: 144, 144
+  split: 25, 25, 25, 25
+  orig: 144, 144
+  offset: 0, 0
+  index: -1

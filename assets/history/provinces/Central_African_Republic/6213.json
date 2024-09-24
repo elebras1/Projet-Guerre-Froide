@@ -1,0 +1,69 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "CAR"
+  ],
+  "fruits": 10.84,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 44897,
+      "template": 2
+    },
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 3
+    }
+  },
+  "1960.08.13": {
+    "owner": "CAR",
+    "controller": "CAR",
+    "remove_core": "FRA"
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 45862,
+        "template": 2
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 45377,
+      "template": 2
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 53813,
+      "template": 102
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 76519,
+      "template": 202
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 103962,
+      "template": 302
+    }
+  }
+}

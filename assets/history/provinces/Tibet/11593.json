@@ -1,0 +1,54 @@
+{
+  "owner": "TIB",
+  "controller": "TIB",
+  "add_core": [
+    "TIB",
+    "CHC"
+  ],
+  "meat": 1.81,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 9966,
+      "template": 17
+    }
+  },
+  "1952.1.1": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "add_core": [
+      "CHC",
+      "TIB"
+    ]
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 10265,
+      "template": 17
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 10573,
+      "template": 17
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 14219,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 18775,
+      "template": 206
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 22258,
+      "template": 306
+    }
+  }
+}

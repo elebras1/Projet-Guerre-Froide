@@ -1,0 +1,71 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "ETH",
+    "ERI"
+  ],
+  "meat": 13.56,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 235682,
+      "template": 1
+    }
+  },
+  "1952.9.15": {
+    "owner": "ETH",
+    "controller": "ETH",
+    "remove_core": "ENG"
+  },
+  "1991.5.24": {
+    "owner": "ERI",
+    "controller": "ERI",
+    "remove_core": "ETH"
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 515483,
+        "template": 201
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 240492,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 245401,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 322067,
+      "template": 101
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 683851,
+      "template": 301
+    }
+  }
+}

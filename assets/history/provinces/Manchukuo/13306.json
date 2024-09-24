@@ -1,0 +1,79 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "CHC",
+    "CHI"
+  ],
+  "grain": 441.46,
+  "infra": 5,
+  "1946.1.1": {
+    "air_base": 3,
+    "population_total": {
+      "amount": 27881381,
+      "template": 6
+    }
+  },
+  "1946.6.26": {
+    "owner": "CHC",
+    "controller": "CHC"
+  },
+  "1950.1.1": [
+    {
+      "air_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 29001532,
+        "template": 6
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "air_base": 5,
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 51085954,
+        "template": 206
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 4
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 61123295,
+        "template": 306
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 28435942,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 35576711,
+      "template": 106
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "owner": "SAF",
+  "controller": "SAF",
+  "add_core": [
+    "SAF",
+    "NAM"
+  ],
+  "vegetables": 0.84,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 13924,
+      "template": 4
+    }
+  },
+  "1975.11.11": {
+    "owner": "NAM",
+    "controller": "NAM",
+    "remove_core": "SAF"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 14208,
+      "template": 4
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 14499,
+      "template": 4
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 18902,
+      "template": 104
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 29619,
+      "template": 204
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 43777,
+      "template": 304
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "owner": "USA",
+  "controller": "USA",
+  "add_core": [
+    "USA",
+    "VGI"
+  ],
+  "fruits": 0.16,
+  "infra": 5,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 19400,
+      "template": 75
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 3,
+      "economy_building": {
+        "name": "refinery",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 71411,
+        "template": 275
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
+    }
+  },
+  "1961.1.1": {
+    "naval_base": 2
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 76680,
+        "template": 375
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 19613,
+      "template": 75
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 19829,
+      "template": 75
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 28501,
+      "template": 175
+    }
+  }
+}

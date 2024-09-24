@@ -1,0 +1,60 @@
+{
+  "owner": "NZL",
+  "controller": "NZL",
+  "add_core": "NZL",
+  "rare_metals": 22.91,
+  "infra": 6,
+  "naval_base": 4,
+  "1946.1.1": {
+    "air_base": 4,
+    "population_total": {
+      "amount": 239966,
+      "template": 95
+    }
+  },
+  "1961.1.1": {
+    "air_base": 5,
+    "naval_base": 5
+  },
+  "1979.1.1": [
+    {
+      "air_base": 6,
+      "naval_base": 6
+    },
+    {
+      "population_total": {
+        "amount": 412399,
+        "template": 295
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 7
+    },
+    {
+      "population_total": {
+        "amount": 453191,
+        "template": 395
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 245384,
+      "template": 95
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 250925,
+      "template": 95
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 325798,
+      "template": 195
+    }
+  }
+}

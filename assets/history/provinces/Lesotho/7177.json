@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "LST"
+  ],
+  "meat": 31,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 242599,
+      "template": 4
+    }
+  },
+  "1966.10.04": {
+    "owner": "LST",
+    "controller": "LST",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 246036,
+      "template": 4
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 249523,
+      "template": 4
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 299914,
+      "template": 104
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 433613,
+      "template": 204
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 567485,
+      "template": 304
+    }
+  }
+}

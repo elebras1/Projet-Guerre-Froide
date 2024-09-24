@@ -1,0 +1,63 @@
+{
+  "owner": "ARG",
+  "controller": "ARG",
+  "add_core": "ARG",
+  "grain": 18.01,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 50563,
+      "template": 79
+    },
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 52580,
+        "template": 79
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 84960,
+        "template": 279
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 51562,
+      "template": 79
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 65295,
+      "template": 179
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 101460,
+      "template": 379
+    }
+  }
+}

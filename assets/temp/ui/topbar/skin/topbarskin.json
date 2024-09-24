@@ -1,0 +1,59 @@
+{
+	"com.badlogic.gdx.graphics.g2d.BitmapFont": {
+		"sitka_16": {
+			"file": "sitka_16.fnt",
+			"scaledSize": -1,
+			"markupEnabled": false,
+			"flip": false
+		},
+		"sitka_18_blue": {
+			"file": "sitka_18_blue.fnt",
+			"scaledSize": -1,
+			"markupEnabled": false,
+			"flip": false
+		},
+		"sitka_18_green": {
+			"file": "sitka_18_green.fnt",
+			"scaledSize": -1,
+			"markupEnabled": false,
+			"flip": false
+		},
+		"sitka_18_red": {
+			"file": "sitka_18_red.fnt",
+			"scaledSize": -1,
+			"markupEnabled": false,
+			"flip": false
+		}
+	},
+	"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+		"minus_speed": {
+			"up": "minus_speed",
+			"down": "minus_speed_down"
+		},
+		"plus_speed": {
+			"up": "plus_speed",
+			"down": "plus_speed_down"
+		}
+	},
+	"com.badlogic.gdx.scenes.scene2d.ui.CheckBox$CheckBoxStyle": {
+		"default": {
+			"checkboxOn": "resume_pause_state2",
+			"checkboxOff": "resume_pause_state1",
+			"font": "sitka_16"
+		}
+	},
+	"com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
+		"default": {
+			"font": "sitka_16"
+		},
+		"blue": {
+			"font": "sitka_18_blue"
+		},
+		"green": {
+			"font": "sitka_18_green"
+		},
+		"red": {
+			"font": "sitka_18_red"
+		}
+	}
+}

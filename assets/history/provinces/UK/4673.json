@@ -1,0 +1,58 @@
+{
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": "ENG",
+    "grain": 14.6,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 107396,
+            "template": 60
+        },
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 8
+        },
+        "naval_base": 1
+    },
+    "1979.1.1": [
+        {
+            "naval_base": 2
+        },
+        {
+            "population_total": {
+                "amount": 119982,
+                "template": 260
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "naval_base": 3
+        },
+        {
+            "population_total": {
+                "amount": 122269,
+                "template": 360
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 107635,
+            "template": 60
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 107875,
+            "template": 60
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 113521,
+            "template": 160
+        }
+    }
+}

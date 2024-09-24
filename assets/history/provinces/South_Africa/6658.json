@@ -1,0 +1,63 @@
+{
+  "owner": "SAF",
+  "controller": "SAF",
+  "add_core": "SAF",
+  "vegetables": 10.08,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 52574,
+      "template": 4
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 4
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 55068,
+        "template": 4
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 114137,
+        "template": 204
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 53806,
+      "template": 4
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 73738,
+      "template": 104
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 151686,
+      "template": 304
+    }
+  }
+}

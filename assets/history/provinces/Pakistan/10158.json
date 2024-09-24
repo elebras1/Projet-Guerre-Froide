@@ -1,0 +1,80 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "PAK"
+  ],
+  "meat": 89.45,
+  "infra": 2,
+  "1946.1.1": {
+    "air_base": 1,
+    "population_total": {
+      "amount": 1950174,
+      "template": 18
+    }
+  },
+  "1947.08.17": {
+    "owner": "PAK",
+    "controller": "PAK",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": [
+    {
+      "air_base": 2
+    },
+    {
+      "population_total": {
+        "amount": 1985570,
+        "template": 18
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "air_base": 3
+    },
+    {
+      "population_total": {
+        "amount": 2021608,
+        "template": 18
+      }
+    }
+  ],
+  "1961.1.1": {
+    "air_base": 4,
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "air_base": 5
+    },
+    {
+      "population_total": {
+        "amount": 4191200,
+        "template": 218
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 4
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 2595417,
+      "template": 118
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 6190988,
+      "template": 318
+    }
+  }
+}

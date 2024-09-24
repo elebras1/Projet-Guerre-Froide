@@ -1,0 +1,73 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": "FRA",
+  "fruits": 0.7,
+  "infra": 4,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 18172,
+      "template": 85
+    }
+  },
+  "1968.4.9": {
+    "economy_building": {
+      "name": "spaceport",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 48545,
+        "template": 285
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 2
+    }
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 2,
+      "economy_building": {
+        "name": "powerplant",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 90997,
+        "template": 385
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 18585,
+      "template": 85
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 19008,
+      "template": 85
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 25942,
+      "template": 185
+    }
+  }
+}

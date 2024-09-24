@@ -1,0 +1,57 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "TNZ",
+    "TNG"
+  ],
+  "meat": 7.27,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 35980,
+      "template": 1
+    }
+  },
+  "1961.12.09": {
+    "owner": "TNG",
+    "controller": "TNG",
+    "remove_core": "ENG"
+  },
+  "1964.04.26": {
+    "owner": "TNZ",
+    "controller": "TNZ",
+    "remove_core": "TNG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 36940,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 37925,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 52966,
+      "template": 101
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 89789,
+      "template": 201
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 130543,
+      "template": 301
+    }
+  }
+}

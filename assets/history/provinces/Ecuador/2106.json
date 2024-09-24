@@ -1,0 +1,71 @@
+{
+  "owner": "ECU",
+  "controller": "ECU",
+  "add_core": "ECU",
+  "meat": 4,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 203318,
+      "template": 84
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 489249,
+        "template": 284
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 2
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 663309,
+        "template": 384
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 208649,
+      "template": 84
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 214120,
+      "template": 84
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 297509,
+      "template": 184
+    }
+  }
+}

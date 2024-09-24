@@ -1,0 +1,65 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "NIG"
+  ],
+  "wood": 0.1,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 178406,
+      "template": 5
+    }
+  },
+  "1960.10.01": {
+    "owner": "NIG",
+    "controller": "NIG",
+    "remove_core": "ENG"
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 185017,
+        "template": 5
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 181681,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 234258,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 358820,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 488622,
+      "template": 305
+    }
+  }
+}

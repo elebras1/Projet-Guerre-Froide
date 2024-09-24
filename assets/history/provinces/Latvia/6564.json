@@ -1,0 +1,65 @@
+{
+  "add_core": [
+    "LAT",
+    "SOV"
+  ],
+  "owner": "SOV",
+  "controller": "SOV",
+  "wood": 6.2,
+  "infra": 5,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 71336,
+      "template": 56
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "nuclear_silo",
+      "size": 1,
+      "model": 0,
+      "ammo_store": 4
+    }
+  },
+  "1991.08.21": {
+    "owner": "LAT",
+    "controller": "LAT",
+    "remove_core": "SOV"
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 2
+    },
+    {
+      "population_total": {
+        "amount": 98124,
+        "template": 356
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 71811,
+      "template": 56
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 72289,
+      "template": 56
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 81026,
+      "template": 156
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 92809,
+      "template": 256
+    }
+  }
+}

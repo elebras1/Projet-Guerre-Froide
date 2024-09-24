@@ -1,0 +1,66 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "SLC"
+  ],
+  "fruits": 1.96,
+  "infra": 5,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 79968,
+      "template": 75
+    }
+  },
+  "1979.02.22": {
+    "owner": "SLC",
+    "controller": "SLC",
+    "remove_core": "ENG"
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 2,
+      "economy_building": {
+        "name": "powerplant",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 115915,
+        "template": 275
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 3
+    },
+    {
+      "population_total": {
+        "amount": 140056,
+        "template": 375
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 81363,
+      "template": 75
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 82783,
+      "template": 75
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 92480,
+      "template": 175
+    }
+  }
+}

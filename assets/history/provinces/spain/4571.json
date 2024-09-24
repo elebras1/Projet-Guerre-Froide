@@ -1,0 +1,77 @@
+{
+  "owner": "SPA",
+  "controller": "SPA",
+  "add_core": "SPA",
+  "uranium": 5.9,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 147570,
+      "template": 67
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 4
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 148624,
+        "template": 67
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 149685,
+        "template": 67
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 7
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 198353,
+        "template": 267
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 165672,
+      "template": 167
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 207861,
+      "template": 367
+    }
+  }
+}

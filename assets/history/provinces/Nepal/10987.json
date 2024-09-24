@@ -1,0 +1,59 @@
+{
+  "owner": "NEP",
+  "controller": "NEP",
+  "add_core": "NEP",
+  "grain": 143.88,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 807708,
+      "template": 17
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1490098,
+        "template": 217
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1982970,
+        "template": 317
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 821092,
+      "template": 17
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 834697,
+      "template": 17
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1024440,
+      "template": 117
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+    "owner": "BEL",
+    "controller": "BEL",
+    "add_core": [
+        "BEL",
+        "DRC",
+        "KAT"
+    ],
+    "infra": 4,
+    "1946.1.1": {
+        "fuel": 1,
+        "population_total": {
+            "amount": 24561,
+            "template": 2
+        },
+        "rare_metals": 31
+    },
+    "1960.06.30": {
+        "owner": "DRC",
+        "controller": "DRC",
+        "remove_core": "BEL"
+    },
+    "1960.07.11": {
+        "owner": "KAT",
+        "controller": "KAT"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 25094,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 25639,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 34051,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 55252,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 79663,
+            "template": 302
+        }
+    }
+}

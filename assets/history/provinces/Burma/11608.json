@@ -1,0 +1,68 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "BUR"
+  ],
+  "grain": 400.09,
+  "infra": 6,
+  "1946.1.1": {
+    "air_base": 2,
+    "population_total": {
+      "amount": 1709019,
+      "template": 24
+    }
+  },
+  "1948.01.04": {
+    "owner": "BUR",
+    "controller": "BUR",
+    "remove_core": "ENG"
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "naval_yards",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1774369,
+        "template": 24
+      }
+    }
+  ],
+  "1961.1.1": {
+    "air_base": 3
+  },
+  "1979.1.1": [
+    {
+      "air_base": 5
+    },
+    {
+      "population_total": {
+        "amount": 3330475,
+        "template": 224
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1741387,
+      "template": 24
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 2261310,
+      "template": 124
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 4121756,
+      "template": 324
+    }
+  }
+}

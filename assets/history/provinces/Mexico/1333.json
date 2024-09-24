@@ -1,0 +1,83 @@
+{
+  "owner": "MEX",
+  "controller": "MEX",
+  "add_core": "MEX",
+  "grain": 65.03,
+  "infra": 8,
+  "economy_building": {
+    "name": "financial_district",
+    "size": 1
+  },
+  "1946.1.1": {
+    "population_total": {
+      "amount": 6358207,
+      "template": 81
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
+    }
+  },
+  "1950.1.1": [
+    {
+      "air_base": 1
+    },
+    {
+      "population_total": {
+        "amount": 6753938,
+        "template": 81
+      }
+    }
+  ],
+  "1961.1.1": {
+    "air_base": 2,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 2
+    }
+  },
+  "1979.1.1": [
+    {
+      "air_base": 6,
+      "economy_building": {
+        "name": "light_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 16276007,
+        "template": 281
+      }
+    }
+  ],
+  "1985.1.1": {
+    "air_base": 10
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 20825661,
+        "template": 381
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 6553086,
+      "template": 81
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 9929259,
+      "template": 181
+    }
+  }
+}

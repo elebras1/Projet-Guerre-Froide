@@ -1,0 +1,51 @@
+{
+  "owner": "CXB",
+  "controller": "CXB",
+  "add_core": [
+    "CXB",
+    "CHI",
+    "CHC"
+  ],
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 39589,
+      "template": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "remove_core": "CXB"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 40376,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 41179,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 50515,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 72536,
+      "template": 206
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 86788,
+      "template": 306
+    }
+  }
+}

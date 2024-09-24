@@ -1,0 +1,58 @@
+{
+  "owner": "ALB",
+  "controller": "ALB",
+  "add_core": "ALB",
+  "vegetables": 10,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 191458,
+      "template": 61
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 2
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 3
+    }
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 1
+    },
+    {
+      "population_total": {
+        "amount": 545300,
+        "template": 361
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 196306,
+      "template": 61
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 201276,
+      "template": 61
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 283702,
+      "template": 161
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 433452,
+      "template": 261
+    }
+  }
+}

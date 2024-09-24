@@ -1,0 +1,66 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "GUI"
+  ],
+  "grain": 76.17,
+  "infra": 4,
+  "naval_base": 2,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 836442,
+      "template": 5
+    }
+  },
+  "1958.10.02": {
+    "owner": "GUI",
+    "controller": "GUI",
+    "remove_core": "FRA"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1209266,
+        "template": 205
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 2
+    },
+    {
+      "population_total": {
+        "amount": 1687710,
+        "template": 305
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 847257,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 858212,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1011404,
+      "template": 105
+    }
+  }
+}

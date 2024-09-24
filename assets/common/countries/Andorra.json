@@ -1,0 +1,127 @@
+{
+    "color": [
+        219,
+        175,
+        55
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1109000": {
+            "name": "Ramon Iglesias i Navarri",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 1.0,
+            "picture": "ADN_M_Navarri_Ramon_I",
+            "head_of_state": "religious_type",
+            "head_of_government": "religious_type",
+            "start_date": "1943-04-04",
+            "death_date": "1969-04-29"
+        },
+        "1109001": {
+            "name": "Ramon Malla Call",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 1.0,
+            "picture": "ADN_M_Call_Ramon_M",
+            "head_of_state": "religious_type",
+            "head_of_government": "religious_type",
+            "start_date": "1969-04-29",
+            "death_date": "1971-01-01"
+        },
+        "1109002": {
+            "name": "Joan Mart\u00ed i Alanis",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.9,
+            "picture": "ADN_M_Alanis_Joan_M",
+            "head_of_state": "religious_type",
+            "head_of_government": "religious_type",
+            "start_date": "1971-01-01",
+            "death_date": "2003-01-01"
+        },
+        "1109003": {
+            "name": "\u00d2scar Ribas Reig",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ADN_M_Reig_Oscar_R",
+            "head_of_government": "reformer_type",
+            "start_date": "1982-01-08",
+            "death_date": "1994-12-07"
+        },
+        "1109004": {
+            "name": "Josep Pintat-Solans",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "ADN_M_Pintat-Solans_Josep",
+            "head_of_government": "bureaucrat_type",
+            "start_date": "1984-05-21",
+            "death_date": "1990-01-12"
+        }
+    }
+}

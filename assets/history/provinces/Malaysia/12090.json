@@ -1,0 +1,81 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "MLY"
+  ],
+  "coal": 1,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 162010,
+      "template": 23
+    }
+  },
+  "1957.8.31.0": {
+    "remove_core": "ENG",
+    "owner": "MLY",
+    "controller": "MLY"
+  },
+  "1948.1.1": [
+    {
+      "economy_building": [
+        {
+          "name": "powerplant",
+          "size": 2
+        },
+        {
+          "name": "powerplant",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "population_total": {
+        "amount": 166490,
+        "template": 23
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 378136,
+        "template": 223
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 523866,
+        "template": 323
+      }
+    }
+  ],
+  "1950.1.1": {
+    "population_total": {
+      "amount": 171093,
+      "template": 23
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 243900,
+      "template": 123
+    }
+  }
+}

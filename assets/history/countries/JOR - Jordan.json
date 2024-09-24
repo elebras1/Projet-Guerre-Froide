@@ -1,0 +1,243 @@
+{
+  "capital": 7893,
+  "government": "absolute_monarchy_gov",
+  "ideology": "paternal_auto_idolg",
+  "alignment": {
+    "x": 0,
+    "y": 0
+  },
+  "neutrality": 35,
+  "national_unity": 65,
+  "national_culture": "cul_middle_east",
+  "national_identity": "territorial_focus",
+  "national_religion": "islam",
+  "national_attitude": "balance_of_power",
+  "organized_religions_law": "state_religion",
+  "civil_liberties": "suspended_indefinitely",
+  "freedom_of_the_press": "state_press",
+  "elections_and_voting": "hereditary_rule",
+  "military_service": "conventional_drafted_army",
+  "rule_of_law": "thinly_defined",
+  "human_rights": "not_recognized",
+  "public_oversight": "moral_code_of_conduct",
+  "foreign_policy": "containment_pol",
+  "intelligence_policy": "intelligence_gathering_pol",
+  "armaments_policy": "conventional_warfare_focus_pol",
+  "military_policy": "two_y_service_pol",
+  "nuclear_policy": "nuclear_free_focus_pol",
+  "domestic_policy": "defence_focus_pol",
+  "internal_policy": "repressive_aff_pol",
+  "economic_policy": "industrial_policy_pol",
+  "fiscal_policy": "increased_taxation_pol",
+  "education_policy": "low_funding_edu_pol",
+  "popularity": {
+    "fascistic_idolg": 0,
+    "paternal_auto_idolg": 70,
+    "social_cons_idolg": 30,
+    "market_liberal_idolg": 0,
+    "social_liberal_idolg": 0,
+    "social_democrat_idolg": 0,
+    "left_wing_radical_idolg": 0,
+    "maoist_idolg": 0,
+    "communist_idolg": 0
+  },
+  "oob": "empty.txt",
+  "1946.1.1": {
+    "oob": "empty.txt",
+    "neutrality": 35,
+    "national_unity": 65,
+    "head_of_state": 1226000,
+    "head_of_government": 1226005,
+    "maneuver_warfare": 1,
+    "shock_attacks": 1,
+    "centralized_command_and_control": 1,
+    "linear_fire_and_movement": 1,
+    "infiltration_tactics": 1
+  },
+  "1946.5.25": {
+    "oob": "JOR_1946.txt",
+    "head_of_state": 1226000,
+    "head_of_government": 1226005
+  },
+  "1948.5.14": {
+    "oob": "JOR_1948.txt",
+    "neutrality": 25,
+    "national_unity": 70,
+    "head_of_state": 1226000,
+    "head_of_government": 1226007,
+    "set_global_flag": "1948_palestine_war_JOR_joins",
+    "maneuver_warfare": 1,
+    "shock_attacks": 1,
+    "centralized_command_and_control": 1,
+    "linear_fire_and_movement": 1,
+    "infiltration_tactics": 1
+  },
+  "1950.6.25": {
+    "oob": "JOR_1950.txt",
+    "neutrality": [
+      25,
+      15
+    ],
+    "national_unity": 70,
+    "alignment": {
+      "x": -20,
+      "y": 0
+    },
+    "head_of_state": 1226000,
+    "head_of_government": 1226008,
+    "set_country_flag": [
+      "1948_war_JOR_done",
+      "JOR226001triggered",
+      "JOR226002triggered"
+    ],
+    "set_global_flag": "1948_palestine_war_JOR_joins",
+    "maneuver_warfare": 1,
+    "small_arms": 1,
+    "crew_served_weapons": 1,
+    "light_artillery": 1,
+    "shock_attacks": 1,
+    "centralized_command_and_control": 1,
+    "mass_firepower": 1,
+    "linear_fire_and_movement": 1,
+    "infiltration_tactics": 1
+  },
+  "1951.05.29": {
+    "add_country_modifier": {
+      "name": "signed_the_geneva_convention",
+      "duration": -1
+    }
+  },
+  "1955.12.14": {
+    "join_organisation": "XUN",
+    "add_country_modifier": {
+      "name": "mod_united_nations_member_state",
+      "duration": -1
+    }
+  },
+  "1961.12.11": {
+    "oob": "JOR_1961.txt",
+    "neutrality": 20,
+    "national_unity": 40,
+    "alignment": {
+      "x": -30,
+      "y": 0
+    },
+    "head_of_state": 1226002,
+    "head_of_government": 1226024,
+    "set_country_flag": [
+      "1948_war_JOR_done",
+      "JOR226001triggered",
+      "JOR226002triggered"
+    ],
+    "set_global_flag": "1948_palestine_war_JOR_joins",
+    "mass_firepower": 1,
+    "maneuver_warfare": 1,
+    "small_arms": 2,
+    "crew_served_weapons": 2,
+    "light_engine": 2,
+    "light_artillery": 2,
+    "medium_artillery": 1,
+    "heavy_artillery": 1,
+    "industry_modern_science": 1,
+    "shock_attacks": 1,
+    "industry_heavy_mechanical_parts": 1,
+    "industry_physics": 1,
+    "industry_chemistry": 1,
+    "elastic_defense": 1,
+    "indirect_artillery_fire": 1,
+    "explosives": 1,
+    "industry_heavy_mechanical_engineering": 3,
+    "linear_fire_and_movement": 1,
+    "infiltration_tactics": 1,
+    "centralized_command_and_control": 1
+  },
+  "1979.12.24": {
+    "oob": "JOR_1979.txt",
+    "neutrality": 20,
+    "national_unity": 65,
+    "alignment": {
+      "x": -35,
+      "y": 0
+    },
+    "head_of_state": 1226002,
+    "head_of_government": 1226042,
+    "set_country_flag": [
+      "1948_war_JOR_done",
+      "JOR226001triggered",
+      "JOR226002triggered"
+    ],
+    "set_global_flag": "1948_palestine_war_JOR_joins",
+    "mass_firepower": 1,
+    "maneuver_warfare": 1,
+    "small_arms": 3,
+    "crew_served_weapons": 3,
+    "light_engine": 3,
+    "light_artillery": 3,
+    "medium_artillery": 1,
+    "heavy_artillery": 1,
+    "industry_modern_science": 1,
+    "shock_attacks": 1,
+    "industry_heavy_mechanical_parts": 1,
+    "industry_chemistry": 3,
+    "industry_light_massproduction": 2,
+    "industry_physics": 1,
+    "elastic_defense": 1,
+    "indirect_artillery_fire": 1,
+    "explosives": 1,
+    "industry_light_plastics": 4,
+    "industry_heavy_mechanical_engineering": 5,
+    "linear_fire_and_movement": 1,
+    "infiltration_tactics": 1,
+    "centralized_command_and_control": 1
+  },
+  "1982.1.1": {
+    "oob": "empty.txt",
+    "head_of_state": 1226002,
+    "head_of_government": 1226041
+  },
+  "1991.1.16": {
+    "oob": "JOR_1991.txt",
+    "neutrality": [
+      20,
+      25
+    ],
+    "head_of_state": 1226002,
+    "head_of_government": 1226041,
+    "set_country_flag": [
+      "1948_war_JOR_done",
+      "JOR226001triggered",
+      "JOR226002triggered"
+    ],
+    "set_global_flag": "1948_palestine_war_JOR_joins",
+    "mass_firepower": 1,
+    "maneuver_warfare": 1,
+    "small_arms": 3,
+    "crew_served_weapons": 3,
+    "light_engine": 3,
+    "medium_engine": 1,
+    "light_armor": 1,
+    "light_artillery": 3,
+    "medium_artillery": 1,
+    "heavy_artillery": 1,
+    "industry_modern_science": 1,
+    "shock_attacks": 1,
+    "industry_heavy_mechanical_parts": 1,
+    "industry_chemistry": 3,
+    "industry_light_massproduction": 2,
+    "industry_physics": 1,
+    "elastic_defense": 1,
+    "indirect_artillery_fire": 1,
+    "explosives": 1,
+    "industry_light_plastics": 4,
+    "industry_heavy_mechanical_engineering": 5,
+    "linear_fire_and_movement": 1,
+    "infiltration_tactics": 1,
+    "centralized_command_and_control": 1
+  },
+  "1960.01.01": {
+    "minister_image_change": 1226002
+  },
+  "1980.01.01": {
+    "minister_image_change": 1226002
+  }
+}

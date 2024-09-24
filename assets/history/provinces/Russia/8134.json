@@ -1,0 +1,64 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "RUS"
+  ],
+  "grain": 269.09,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 425863,
+      "template": 45
+    },
+    "economy_building": {
+      "name": "refinery",
+      "size": 6
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 9
+      }
+    },
+    {
+      "population_total": {
+        "amount": 589759,
+        "template": 245
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 432788,
+      "template": 45
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 439825,
+      "template": 45
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 526624,
+      "template": 145
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 636698,
+      "template": 345
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "add_core": "POL",
+  "owner": "POL",
+  "controller": "POL",
+  "vegetables": 602.23,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 573131,
+      "template": 49
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 583952,
+        "template": 49
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 594977,
+        "template": 49
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 844667,
+        "template": 249
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 914628,
+        "template": 349
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 715964,
+      "template": 149
+    }
+  }
+}

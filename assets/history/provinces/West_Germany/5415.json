@@ -1,0 +1,89 @@
+{
+    "add_core": [
+        "FRG",
+        "DDR"
+    ],
+    "owner": "ENG",
+    "controller": "ENG",
+    "oil": 98,
+    "infra": 5,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 433206,
+            "template": 71
+        },
+        "economy_building": {
+            "name": "refinery",
+            "size": 5
+        }
+    },
+    "1949.05.23": {
+        "owner": "FRG",
+        "controller": "FRG"
+    },
+    "1990.10.3": {
+        "owner": "GER",
+        "controller": "GER",
+        "remove_core": [
+            "DDR",
+            "FRG"
+        ]
+    },
+    "1953.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 6
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 8
+        }
+    },
+    "1979.1.1": [
+        {
+            "naval_base": 2,
+            "economy_building": {
+                "name": "refinery",
+                "size": 10
+            }
+        },
+        {
+            "population_total": {
+                "amount": 576189,
+                "template": 271
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "naval_base": 3
+        },
+        {
+            "population_total": {
+                "amount": 600897,
+                "template": 371
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 452957,
+            "template": 71
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 468778,
+            "template": 71
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 534059,
+            "template": 171
+        }
+    }
+}

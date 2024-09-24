@@ -1,0 +1,53 @@
+{
+  "owner": "ROM",
+  "controller": "ROM",
+  "add_core": "ROM",
+  "wood": 1.25,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 680513,
+      "template": 50
+    },
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 3
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 4
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 689979,
+      "template": 50
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 699577,
+      "template": 50
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 799487,
+      "template": 150
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 945280,
+      "template": 250
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 993739,
+      "template": 350
+    }
+  }
+}

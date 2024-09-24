@@ -1,0 +1,67 @@
+{
+  "owner": "HOL",
+  "controller": "HOL",
+  "add_core": "HOL",
+  "wood": 0.3,
+  "infra": 9,
+  "naval_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 141050,
+      "template": 73
+    },
+    "economy_building": {
+      "name": "refinery",
+      "size": 8
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
+    }
+  },
+  "1961.1.1": {
+    "naval_base": 2
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 3
+    },
+    {
+      "population_total": {
+        "amount": 202001,
+        "template": 273
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 216295,
+        "template": 373
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 142833,
+      "template": 73
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 144638,
+      "template": 73
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 169274,
+      "template": 173
+    }
+  }
+}

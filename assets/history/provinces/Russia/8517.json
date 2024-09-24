@@ -1,0 +1,80 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "RUS"
+  ],
+  "wood": 1,
+  "infra": 8,
+  "air_base": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 526607,
+      "template": 45
+    }
+  },
+  "economy_building": {
+    "name": "air_research_center",
+    "size": 1
+  },
+  "1948.1.1": [
+    {
+      "air_base": 5
+    },
+    {
+      "population_total": {
+        "amount": 535169,
+        "template": 45
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "air_base": 6,
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 543871,
+        "template": 45
+      }
+    }
+  ],
+  "1961.1.1": {
+    "air_base": 7,
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 7
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 729274,
+        "template": 245
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 651203,
+      "template": 145
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 787317,
+      "template": 345
+    }
+  }
+}

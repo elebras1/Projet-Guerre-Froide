@@ -1,0 +1,71 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "BUR"
+  ],
+  "fruits": 6.22,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 336770,
+      "template": 24
+    }
+  },
+  "1948.01.04": {
+    "owner": "BUR",
+    "controller": "BUR",
+    "remove_core": "ENG"
+  },
+  "1962.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 656286,
+        "template": 224
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 343149,
+      "template": 24
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 349648,
+      "template": 24
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 445602,
+      "template": 124
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 812211,
+      "template": 324
+    }
+  }
+}

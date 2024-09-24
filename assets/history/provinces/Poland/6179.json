@@ -1,0 +1,83 @@
+{
+  "owner": "POL",
+  "controller": "POL",
+  "add_core": "POL",
+  "rare_metals": 79.1,
+  "infra": 7,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 2079413,
+      "template": 49
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 2
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 2118672,
+        "template": 49
+      }
+    }
+  ],
+  "1953.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 6
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 7
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 9
+      }
+    },
+    {
+      "population_total": {
+        "amount": 3064588,
+        "template": 249
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 3318420,
+        "template": 349
+      }
+    }
+  ],
+  "1950.1.1": {
+    "population_total": {
+      "amount": 2158673,
+      "template": 49
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 2597635,
+      "template": 149
+    }
+  }
+}

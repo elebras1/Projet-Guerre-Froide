@@ -1,0 +1,64 @@
+{
+  "owner": "MEX",
+  "controller": "MEX",
+  "add_core": "MEX",
+  "renewable_energy": 112,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 46266,
+      "template": 81
+    },
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 118434,
+        "template": 281
+      }
+    }
+  ],
+  "1965.1.1": {
+    "renewable_energy": 112
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 47684,
+      "template": 81
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 49146,
+      "template": 81
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 72251,
+      "template": 181
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 151540,
+      "template": 381
+    }
+  }
+}

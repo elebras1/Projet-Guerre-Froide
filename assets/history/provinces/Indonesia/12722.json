@@ -1,0 +1,57 @@
+{
+  "owner": "HOL",
+  "controller": "HOL",
+  "add_core": [
+    "INO",
+    "HOL"
+  ],
+  "vegetables": 366.6,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1876306,
+      "template": 21
+    }
+  },
+  "1949.12.27": {
+    "owner": "INO",
+    "controller": "INO",
+    "remove_core": "HOL"
+  },
+  "1976.1.1": {
+    "economy_building": {
+      "name": "satellites_factory",
+      "size": 1
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1910154,
+      "template": 21
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1944613,
+      "template": 21
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 2509646,
+      "template": 121
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 3830218,
+      "template": 221
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 4870850,
+      "template": 321
+    }
+  }
+}

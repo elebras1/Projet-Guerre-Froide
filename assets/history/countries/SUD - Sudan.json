@@ -1,0 +1,179 @@
+{
+  "capital": 7630,
+  "government": "republic_gov",
+  "ideology": "social_cons_idolg",
+  "alignment": {
+    "x": 0,
+    "y": 0
+  },
+  "neutrality": 50,
+  "national_unity": 100,
+  "national_culture": "cul_sub_saharan_africa",
+  "national_religion": "islam",
+  "national_identity": "cultural_bias_focus",
+  "national_attitude": "defensive",
+  "organized_religions_law": "secular_state",
+  "civil_liberties": "fully_granted_liberties",
+  "freedom_of_the_press": "censored_press",
+  "elections_and_voting": "gerrymandering",
+  "military_service": "conventional_drafted_army",
+  "rule_of_law": "narrowly_defined",
+  "human_rights": "cultural_relativism",
+  "public_oversight": "limited_oversight",
+  "foreign_policy": "detente_pol",
+  "intelligence_policy": "intelligence_gathering_pol",
+  "armaments_policy": "conventional_warfare_focus_pol",
+  "military_policy": "two_y_service_pol",
+  "nuclear_policy": "civilian_nuclear_focus_pol",
+  "domestic_policy": "agricultural_focus_pol",
+  "internal_policy": "oppressive_aff_pol",
+  "economic_policy": "resource_based_policy_pol",
+  "fiscal_policy": "reduced_taxation_pol",
+  "education_policy": "high_funding_edu_pol",
+  "popularity": {
+    "fascistic_idolg": 0,
+    "paternal_auto_idolg": 10,
+    "social_cons_idolg": 50,
+    "market_liberal_idolg": 0,
+    "social_liberal_idolg": 20,
+    "social_democrat_idolg": 20,
+    "left_wing_radical_idolg": 0,
+    "maoist_idolg": 0,
+    "communist_idolg": 0
+  },
+  "oob": "empty.txt",
+  "1946.1.1": {
+    "oob": "empty.txt"
+  },
+  "1948.5.14": {
+    "popularity": {
+      "fascistic_idolg": 0,
+      "paternal_auto_idolg": 10,
+      "social_cons_idolg": 45,
+      "market_liberal_idolg": 0,
+      "social_liberal_idolg": 20,
+      "social_democrat_idolg": 20,
+      "left_wing_radical_idolg": 0,
+      "maoist_idolg": 0,
+      "communist_idolg": 5
+    }
+  },
+  "1950.6.25": {
+    "popularity": {
+      "fascistic_idolg": 0,
+      "paternal_auto_idolg": 10,
+      "social_cons_idolg": 40,
+      "market_liberal_idolg": 0,
+      "social_liberal_idolg": 15,
+      "social_democrat_idolg": 20,
+      "left_wing_radical_idolg": 0,
+      "maoist_idolg": 0,
+      "communist_idolg": 15
+    },
+    "set_country_flag": "1948_war_arab_minors_done"
+  },
+  "1956.11.12": {
+    "join_organisation": "XUN",
+    "add_country_modifier": {
+      "name": "mod_united_nations_member_state",
+      "duration": -1
+    }
+  },
+  "1957.09.23": {
+    "add_country_modifier": {
+      "name": "signed_the_geneva_convention",
+      "duration": -1
+    }
+  },
+  "1961.12.11": {
+    "oob": "SUD_1961.txt",
+    "neutrality": 45,
+    "head_of_state": 1329006,
+    "head_of_government": 1329006,
+    "alignment": {
+      "x": -30,
+      "y": 0
+    },
+    "popularity": {
+      "fascistic_idolg": 0,
+      "paternal_auto_idolg": 10,
+      "social_cons_idolg": 40,
+      "market_liberal_idolg": 0,
+      "social_liberal_idolg": 15,
+      "social_democrat_idolg": 10,
+      "left_wing_radical_idolg": 0,
+      "maoist_idolg": 0,
+      "communist_idolg": 25
+    },
+    "set_country_flag": "1948_war_arab_minors_done",
+    "small_arms": 1,
+    "crew_served_weapons": 1,
+    "light_artillery": 1,
+    "centralized_command_and_control": 1,
+    "mass_firepower": 1
+  },
+  "1979.12.24": {
+    "neutrality": 45,
+    "head_of_state": 1329016,
+    "head_of_government": 1329016,
+    "alignment": {
+      "x": 25,
+      "y": 0
+    },
+    "oob": "SUD_1979.txt",
+    "government": "authoritarian_gov",
+    "ideology": "paternal_auto_idolg",
+    "civil_liberties": "martial_law",
+    "elections_and_voting": "single_party_system",
+    "popularity": {
+      "fascistic_idolg": 0,
+      "paternal_auto_idolg": 50,
+      "social_cons_idolg": 10,
+      "market_liberal_idolg": 0,
+      "social_liberal_idolg": 0,
+      "social_democrat_idolg": 10,
+      "left_wing_radical_idolg": 0,
+      "maoist_idolg": 0,
+      "communist_idolg": 30
+    },
+    "set_country_flag": "1948_war_arab_minors_done",
+    "small_arms": 1,
+    "crew_served_weapons": 1,
+    "light_artillery": 1,
+    "centralized_command_and_control": 1,
+    "mass_firepower": 1
+  },
+  "1982.1.1": {
+    "head_of_state": 1329016,
+    "head_of_government": 1329016,
+    "set_country_flag": "1948_war_arab_minors_done"
+  },
+  "1991.1.16": {
+    "oob": "SUD_1991.txt",
+    "neutrality": 45,
+    "head_of_state": 1329019,
+    "head_of_government": 1329019,
+    "alignment": {
+      "x": -20,
+      "y": 0
+    },
+    "set_country_flag": "1948_war_arab_minors_done",
+    "mass_firepower": 1,
+    "small_arms": 1,
+    "crew_served_weapons": 1,
+    "light_artillery": 1,
+    "medium_artillery": 1,
+    "heavy_artillery": 1,
+    "linear_fire_and_movement": 1,
+    "shock_attacks": 1,
+    "industry_modern_science": 1,
+    "industry_physics": 1,
+    "industry_chemistry": 1,
+    "infiltration_tactics": 1,
+    "maneuver_warfare": 1,
+    "elastic_defense": 1,
+    "indirect_artillery_fire": 1,
+    "explosives": 1,
+    "centralized_command_and_control": 1
+  }
+}

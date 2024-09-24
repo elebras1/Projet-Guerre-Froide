@@ -1,0 +1,98 @@
+{
+  "owner": "USA",
+  "controller": "USA",
+  "add_core": [
+    "PRK",
+    "KOR"
+  ],
+  "grain": 521.41,
+  "infra": 6,
+  "naval_base": 4,
+  "air_base": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1747574,
+      "template": 10
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 2
+    }
+  },
+  "1948.8.1": {
+    "owner": "KOR",
+    "controller": "KOR"
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1781477,
+        "template": 10
+      }
+    }
+  ],
+  "1953.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 4
+    }
+  },
+  "1961.1.1": {
+    "naval_base": 5,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 6
+    }
+  },
+  "1985.1.1": {
+    "naval_base": 7,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 8
+    }
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 8,
+      "economy_building": {
+        "name": "light_industry",
+        "size": 9
+      }
+    },
+    {
+      "population_total": {
+        "amount": 4099973,
+        "template": 310
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "naval_base": 6
+    },
+    {
+      "population_total": {
+        "amount": 3487957,
+        "template": 210
+      }
+    }
+  ],
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1816037,
+      "template": 10
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 2504640,
+      "template": 110
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "KOR",
+    "PRK"
+  ],
+  "grain": 43.51,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 393692,
+      "template": 7
+    }
+  },
+  "1948.11.11": {
+    "owner": "PRK",
+    "controller": "PRK"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 684396,
+        "template": 207
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 5
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 823927,
+        "template": 307
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 392837,
+      "template": 7
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 391985,
+      "template": 7
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 462083,
+      "template": 107
+    }
+  }
+}

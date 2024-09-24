@@ -1,0 +1,64 @@
+{
+    "owner": "HOL",
+    "controller": "HOL",
+    "add_core": [
+        "INO",
+        "HOL"
+    ],
+    "oil": 115,
+    "infra": 4,
+    "naval_base": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 2282193,
+            "template": 21
+        },
+        "economy_building": {
+            "name": "refinery",
+            "size": 7
+        }
+    },
+    "1949.12.27": {
+        "owner": "INO",
+        "controller": "INO",
+        "remove_core": "HOL"
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "refinery",
+                "size": 8
+            }
+        },
+        {
+            "population_total": {
+                "amount": 4658781,
+                "template": 221
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 2323364,
+            "template": 21
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 2365278,
+            "template": 21
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 3052539,
+            "template": 121
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 5924526,
+            "template": 321
+        }
+    }
+}

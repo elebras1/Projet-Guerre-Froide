@@ -1,0 +1,92 @@
+{
+  "add_core": [
+    "FRG",
+    "DDR"
+  ],
+  "owner": "USA",
+  "controller": "USA",
+  "coal": 4,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 2617231,
+      "template": 71
+    }
+  },
+  "economy_building": {
+    "name": "university",
+    "size": 1
+  },
+  "1949.5.23.0": {
+    "owner": "FRG",
+    "controller": "FRG"
+  },
+  "1966.10.11": {
+    "economy_building": {
+      "name": "nuclear_plant",
+      "size": 4
+    }
+  },
+  "1975.2.26": {
+    "economy_building": {
+      "name": "nuclear_plant",
+      "size": 7
+    }
+  },
+  "1976.12.1": {
+    "economy_building": {
+      "name": "nuclear_plant",
+      "size": 8
+    }
+  },
+  "1985.4.18": {
+    "economy_building": {
+      "name": "nuclear_plant",
+      "size": 9
+    }
+  },
+  "1989.4.15": {
+    "economy_building": {
+      "name": "nuclear_plant",
+      "size": 10
+    }
+  },
+  "1990.10.3": {
+    "owner": "GER",
+    "controller": "GER",
+    "remove_core": [
+      "DDR",
+      "FRG"
+    ]
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 2736554,
+      "template": 71
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 2832137,
+      "template": 71
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 3226537,
+      "template": 171
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 3481065,
+      "template": 271
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 3630343,
+      "template": 371
+    }
+  }
+}

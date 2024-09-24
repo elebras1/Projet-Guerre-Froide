@@ -1,0 +1,61 @@
+{
+    "owner": "BUL",
+    "controller": "BUL",
+    "add_core": "BUL",
+    "coal": 2,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 416943,
+            "template": 46
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 1
+        }
+    },
+    "1948.1.1": [
+        {
+            "economy_building": {
+                "name": "military_goods",
+                "size": 2
+            }
+        },
+        {
+            "population_total": {
+                "amount": 419749,
+                "template": 46
+            }
+        }
+    ],
+    "1961.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 3
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 422574,
+            "template": 46
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 466729,
+            "template": 146
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 514922,
+            "template": 246
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 509527,
+            "template": 346
+        }
+    }
+}

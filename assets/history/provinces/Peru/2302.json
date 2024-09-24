@@ -1,0 +1,69 @@
+{
+    "owner": "PRU",
+    "controller": "PRU",
+    "add_core": "PRU",
+    "oil": 62,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1076,
+            "template": 88
+        },
+        "economy_building": {
+            "name": "refinery",
+            "size": 4
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 5
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "refinery",
+                "size": 6
+            }
+        },
+        {
+            "population_total": {
+                "amount": 2498,
+                "template": 288
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "economy_building": {
+                "name": "refinery",
+                "size": 5
+            }
+        },
+        {
+            "population_total": {
+                "amount": 3279,
+                "template": 388
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1103,
+            "template": 88
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1131,
+            "template": 88
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1559,
+            "template": 188
+        }
+    }
+}

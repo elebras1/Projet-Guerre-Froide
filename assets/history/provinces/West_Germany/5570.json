@@ -1,0 +1,81 @@
+{
+  "add_core": [
+    "FRG",
+    "DDR"
+  ],
+  "owner": "USA",
+  "controller": "USA",
+  "wood": 3.2,
+  "infra": 2,
+  "1946.1.1": {
+    "air_base": 6,
+    "population_total": {
+      "amount": 788804,
+      "template": 71
+    }
+  },
+  "1948.1.1": [
+    {
+      "air_base": 8
+    },
+    {
+      "population_total": {
+        "amount": 824767,
+        "template": 71
+      }
+    }
+  ],
+  "1949.05.23": {
+    "owner": "FRG",
+    "controller": "FRG"
+  },
+  "1950.1.1": [
+    {
+      "air_base": 10
+    },
+    {
+      "population_total": {
+        "amount": 853575,
+        "template": 71
+      }
+    }
+  ],
+  "1956.1.1": {
+    "economy_building": {
+      "name": "military_academy",
+      "size": 1
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "high_tech",
+      "size": 3
+    }
+  },
+  "1990.10.3": {
+    "owner": "GER",
+    "controller": "GER",
+    "remove_core": [
+      "DDR",
+      "FRG"
+    ]
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 972442,
+      "template": 171
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1049154,
+      "template": 271
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1094145,
+      "template": 371
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "add_core": "POL",
+  "owner": "POL",
+  "controller": "POL",
+  "meat": 406.18,
+  "infra": 5,
+  "1946.1.1": {
+    "air_base": 6,
+    "population_total": {
+      "amount": 431540,
+      "template": 49
+    }
+  },
+  "1948.1.1": [
+    {
+      "air_base": 7
+    },
+    {
+      "population_total": {
+        "amount": 439687,
+        "template": 49
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "air_base": 8
+    },
+    {
+      "population_total": {
+        "amount": 447989,
+        "template": 49
+      }
+    }
+  ],
+  "1961.1.1": {
+    "air_base": 10
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "high_tech",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 635993,
+        "template": 249
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 539086,
+      "template": 149
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 688670,
+      "template": 349
+    }
+  }
+}

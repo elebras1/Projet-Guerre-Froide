@@ -1,0 +1,52 @@
+{
+  "owner": "CGX",
+  "controller": "CGX",
+  "add_core": [
+    "CGX",
+    "CHI",
+    "CHC"
+  ],
+  "vegetables": 81.67,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 588898,
+      "template": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "remove_core": "CGX"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 600611,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 612557,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 751435,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1079014,
+      "template": 206
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1291018,
+      "template": 306
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "owner": "SWE",
+  "controller": "SWE",
+  "add_core": "SWE",
+  "grain": 1,
+  "infra": 4,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 128075,
+      "template": 59
+    },
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 3,
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 153571,
+        "template": 259
+      }
+    }
+  ],
+  "1961.1.1": {
+    "naval_base": 2
+  },
+  "1991.1.1": [
+    {
+      "naval_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 159535,
+        "template": 359
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 128965,
+      "template": 59
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 129861,
+      "template": 59
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 140221,
+      "template": 159
+    }
+  }
+}

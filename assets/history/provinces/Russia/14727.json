@@ -1,0 +1,62 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "RUS"
+  ],
+  "vegetables": 11.69,
+  "infra": 4,
+  "air_base": 7,
+  "naval_base": 8,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 925,
+      "template": 45
+    }
+  },
+  "1948.1.1": [
+    {
+      "air_base": 9,
+      "naval_base": 9,
+      "infra": 6
+    },
+    {
+      "population_total": {
+        "amount": 940,
+        "template": 45
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "air_base": 10,
+      "naval_base": 10,
+      "infra": 8
+    },
+    {
+      "population_total": {
+        "amount": 956,
+        "template": 45
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1144,
+      "template": 145
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1281,
+      "template": 245
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1383,
+      "template": 345
+    }
+  }
+}

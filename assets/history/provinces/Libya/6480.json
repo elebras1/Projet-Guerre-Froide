@@ -1,0 +1,75 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "LBY",
+    "ITA"
+  ],
+  "grain": 6.55,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 50645,
+      "template": 3
+    }
+  },
+  "1951.12.24": {
+    "owner": "LBY",
+    "controller": "LBY",
+    "remove_core": [
+      "ITA",
+      "FRA"
+    ]
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 149150,
+        "template": 203
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 7
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 51558,
+      "template": 3
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 52487,
+      "template": 3
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 74022,
+      "template": 103
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 225549,
+      "template": 303
+    }
+  }
+}

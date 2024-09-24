@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "MLY"
+  ],
+  "vegetables": 1.28,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 155301,
+      "template": 23
+    }
+  },
+  "1957.08.31": {
+    "owner": "MLY",
+    "controller": "MLY",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 159595,
+      "template": 23
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 164007,
+      "template": 23
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 233799,
+      "template": 123
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 362476,
+      "template": 223
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 502170,
+      "template": 323
+    }
+  }
+}

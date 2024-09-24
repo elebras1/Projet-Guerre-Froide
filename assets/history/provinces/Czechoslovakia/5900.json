@@ -1,0 +1,74 @@
+{
+  "add_core": [
+    "CZE",
+    "CZR"
+  ],
+  "owner": "CZE",
+  "controller": "CZE",
+  "wood": 5.5,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 671748,
+      "template": 47
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": [
+        {
+          "name": "refinery",
+          "size": 3
+        },
+        {
+          "name": "refinery",
+          "size": 7
+        }
+      ]
+    },
+    {
+      "population_total": {
+        "amount": 844259,
+        "template": 247
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 686710,
+        "template": 47
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 5
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 679181,
+      "template": 47
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 769936,
+      "template": 147
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 870037,
+      "template": 347
+    }
+  }
+}

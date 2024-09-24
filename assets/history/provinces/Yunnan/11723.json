@@ -1,0 +1,52 @@
+{
+  "owner": "CYN",
+  "controller": "CYN",
+  "add_core": [
+    "CYN",
+    "CHI",
+    "CHC"
+  ],
+  "uranium": 1,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 581283,
+      "template": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "remove_core": "CYN"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 592844,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 604636,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 741718,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1065061,
+      "template": 206
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1274324,
+      "template": 306
+    }
+  }
+}

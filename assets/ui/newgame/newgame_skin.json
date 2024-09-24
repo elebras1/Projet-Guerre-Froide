@@ -1,0 +1,19 @@
+{
+"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+	"play": {
+		"up": "play_button",
+		"down": "play_button_down",
+		"over": "play_button_over"
+	},
+	"gen": {
+		"up": "gen_button",
+		"down": "gen_button_down",
+		"over": "gen_button_over"
+	},
+	"tab": {
+		"up": "tab_button",
+		"down": "tab_button_down",
+		"over": "tab_button_over"
+	}
+}
+}

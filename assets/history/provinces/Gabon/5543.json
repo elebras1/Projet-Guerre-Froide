@@ -1,0 +1,57 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "GAB"
+  ],
+  "fish": 1.78,
+  "infra": 4,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 1933,
+      "template": 2
+    }
+  },
+  "1965.02.17": {
+    "owner": "GAB",
+    "controller": "GAB",
+    "remove_core": "FRA"
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 2
+    },
+    {
+      "population_total": {
+        "amount": 2749,
+        "template": 202
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1938,
+      "template": 2
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1944,
+      "template": 2
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 2036,
+      "template": 102
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 3977,
+      "template": 302
+    }
+  }
+}

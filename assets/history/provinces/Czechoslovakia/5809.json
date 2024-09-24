@@ -1,0 +1,54 @@
+{
+  "add_core": [
+    "CZE",
+    "CZR"
+  ],
+  "owner": "CZE",
+  "controller": "CZE",
+  "uranium": 8.2,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 318696,
+      "template": 47
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "high_tech",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 400540,
+        "template": 247
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 322222,
+      "template": 47
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 325794,
+      "template": 47
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 365279,
+      "template": 147
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 412769,
+      "template": 347
+    }
+  }
+}

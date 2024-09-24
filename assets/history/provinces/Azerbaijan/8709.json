@@ -1,0 +1,84 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "AZB"
+  ],
+  "vegetables": 59,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 237866,
+      "template": 30
+    },
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 244453,
+        "template": 30
+      }
+    }
+  ],
+  "1953.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 6
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 526118,
+        "template": 230
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 8
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 251222,
+      "template": 30
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 361166,
+      "template": 130
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 635652,
+      "template": 330
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "RUS"
+  ],
+  "wood": 1,
+  "infra": 6,
+  "1946.1.1": {
+    "air_base": 5,
+    "population_total": {
+      "amount": 184818,
+      "template": 45
+    }
+  },
+  "1974.02.01": {
+    "infra": 7
+  },
+  "1948.1.1": [
+    {
+      "air_base": 6
+    },
+    {
+      "population_total": {
+        "amount": 187823,
+        "template": 45
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "air_base": 7
+    },
+    {
+      "population_total": {
+        "amount": 190877,
+        "template": 45
+      }
+    }
+  ],
+  "1961.1.1": {
+    "air_base": 8
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 228546,
+      "template": 145
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 255946,
+      "template": 245
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 276316,
+      "template": 345
+    }
+  }
+}

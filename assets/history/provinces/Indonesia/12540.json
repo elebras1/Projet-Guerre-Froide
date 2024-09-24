@@ -1,0 +1,69 @@
+{
+  "owner": "HOL",
+  "controller": "REB",
+  "add_core": [
+    "INO",
+    "HOL"
+  ],
+  "fruits": 114.41,
+  "infra": 6,
+  "economy_building": {
+    "name": "military_academy",
+    "size": 1
+  },
+  "1946.1.1": {
+    "population_total": {
+      "amount": 4615873,
+      "template": 21
+    }
+  },
+  "1949.12.27": {
+    "owner": "INO",
+    "controller": "INO",
+    "remove_core": "HOL"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 9422663,
+        "template": 221
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 8
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 4699143,
+      "template": 21
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 4783916,
+      "template": 21
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 6173943,
+      "template": 121
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 11982708,
+      "template": 321
+    }
+  }
+}

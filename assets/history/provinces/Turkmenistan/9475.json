@@ -1,0 +1,67 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "TRK"
+  ],
+  "grain": 8.31,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 36708,
+      "template": 11
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 88477,
+        "template": 211
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 119561,
+        "template": 311
+      }
+    }
+  ],
+  "1991.12.25": {
+    "owner": "TRK",
+    "controller": "TRK",
+    "remove_core": "SOV"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 37536,
+      "template": 11
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 38382,
+      "template": 11
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 54156,
+      "template": 111
+    }
+  }
+}

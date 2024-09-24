@@ -1,0 +1,85 @@
+{
+  "add_core": "ROM",
+  "owner": "ROM",
+  "controller": "ROM",
+  "grain": 400,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 324860,
+      "template": 50
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 3
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 329379,
+        "template": 50
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 333960,
+        "template": 50
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 451253,
+        "template": 250
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 474386,
+        "template": 350
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 381655,
+      "template": 150
+    }
+  }
+}

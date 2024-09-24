@@ -1,0 +1,56 @@
+{
+    "owner": "PER",
+    "controller": "PER",
+    "add_core": "PER",
+    "oil": 427,
+    "infra": 6,
+    "naval_base": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 87533,
+            "template": 16
+        },
+        "economy_building": {
+            "name": "refinery",
+            "size": 5
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "refinery",
+                "size": 6
+            }
+        },
+        {
+            "population_total": {
+                "amount": 195477,
+                "template": 216
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 89453,
+            "template": 16
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 91416,
+            "template": 16
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 121599,
+            "template": 116
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 294347,
+            "template": 316
+        }
+    }
+}

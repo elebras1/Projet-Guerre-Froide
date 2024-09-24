@@ -1,0 +1,67 @@
+{
+  "owner": "ARG",
+  "controller": "ARG",
+  "add_core": "ARG",
+  "meat": 10.41,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 39767,
+      "template": 79
+    },
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 2
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 3
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "naval_yards",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 66820,
+        "template": 279
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 5
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 40553,
+      "template": 79
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 41354,
+      "template": 79
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 51353,
+      "template": 179
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 79796,
+      "template": 379
+    }
+  }
+}

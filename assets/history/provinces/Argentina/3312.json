@@ -1,0 +1,86 @@
+{
+  "owner": "ARG",
+  "controller": "ARG",
+  "add_core": "ARG",
+  "vegetables": 21.86,
+  "infra": 6,
+  "air_base": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 62727,
+      "template": 79
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 63966,
+        "template": 79
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 65229,
+        "template": 79
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 105398,
+        "template": 279
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 125867,
+        "template": 379
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 81002,
+      "template": 179
+    }
+  }
+}

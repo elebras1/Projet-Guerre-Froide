@@ -1,0 +1,62 @@
+{
+  "owner": "ECU",
+  "controller": "ECU",
+  "add_core": "ECU",
+  "grain": 42,
+  "infra": 6,
+  "naval_base": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 835518,
+      "template": 84
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 2
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 2010531,
+        "template": 284
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 857425,
+      "template": 84
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 879907,
+      "template": 84
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1222587,
+      "template": 184
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2725813,
+      "template": 384
+    }
+  }
+}

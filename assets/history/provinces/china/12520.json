@@ -1,0 +1,64 @@
+{
+  "owner": "CHI",
+  "controller": "CHI",
+  "add_core": [
+    "CHI",
+    "CHC"
+  ],
+  "oil": 275,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 395983,
+      "template": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 725544,
+        "template": 206
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 6
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 403859,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 411892,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 505275,
+      "template": 106
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 868099,
+      "template": 306
+    }
+  }
+}

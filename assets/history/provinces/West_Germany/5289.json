@@ -1,0 +1,69 @@
+{
+  "add_core": [
+    "FRG",
+    "DDR"
+  ],
+  "owner": "ENG",
+  "controller": "ENG",
+  "fish": 238.33,
+  "infra": 6,
+  "naval_base": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 529208,
+      "template": 71
+    }
+  },
+  "1949.05.23": {
+    "owner": "FRG",
+    "controller": "FRG"
+  },
+  "1990.10.3": {
+    "owner": "GER",
+    "controller": "GER",
+    "remove_core": [
+      "DDR",
+      "FRG"
+    ]
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 3
+    },
+    {
+      "population_total": {
+        "amount": 703876,
+        "template": 271
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 734060,
+        "template": 371
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 553335,
+      "template": 71
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 572662,
+      "template": 71
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 652410,
+      "template": 171
+    }
+  }
+}

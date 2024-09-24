@@ -1,0 +1,86 @@
+{
+  "add_core": [
+    "UKR",
+    "SOV"
+  ],
+  "owner": "SOV",
+  "controller": "SOV",
+  "grain": 454.98,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 156765,
+      "template": 45
+    },
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 3
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 159035,
+        "template": 45
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 161338,
+        "template": 45
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 6
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 215681,
+        "template": 245
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 189669,
+      "template": 145
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 223492,
+      "template": 345
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "add_core": [
+    "DDR",
+    "FRG"
+  ],
+  "owner": "SOV",
+  "controller": "SOV",
+  "grain": 299.4,
+  "infra": 2,
+  "1946.1.1": {
+    "air_base": 6,
+    "population_total": {
+      "amount": 495203,
+      "template": 71
+    }
+  },
+  "1949.10.07": {
+    "owner": "DDR",
+    "controller": "DDR"
+  },
+  "1990.10.3": {
+    "owner": "GER",
+    "controller": "GER"
+  },
+  "1948.1.1": [
+    {
+      "air_base": 8
+    },
+    {
+      "population_total": {
+        "amount": 522874,
+        "template": 71
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "air_base": 10
+    },
+    {
+      "population_total": {
+        "amount": 504286,
+        "template": 71
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 472825,
+      "template": 171
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 459222,
+      "template": 271
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 436323,
+      "template": 371
+    }
+  }
+}

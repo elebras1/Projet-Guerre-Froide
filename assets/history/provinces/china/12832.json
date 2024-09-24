@@ -1,0 +1,78 @@
+{
+  "owner": "CHC",
+  "controller": "CHC",
+  "add_core": [
+    "CHI",
+    "CHC"
+  ],
+  "grain": 505.88,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 3647613,
+      "template": 6
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC"
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 3720164,
+        "template": 6
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 6683377,
+        "template": 206
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 9
+      }
+    },
+    {
+      "population_total": {
+        "amount": 7996523,
+        "template": 306
+      }
+    }
+  ],
+  "1950.1.1": {
+    "population_total": {
+      "amount": 3794158,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 4654363,
+      "template": 106
+    }
+  }
+}

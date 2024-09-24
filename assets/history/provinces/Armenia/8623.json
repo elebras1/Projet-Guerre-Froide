@@ -1,0 +1,88 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "ARM"
+  ],
+  "meat": 34.48,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 217873,
+      "template": 30
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 224159,
+        "template": 30
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 230626,
+        "template": 30
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 518768,
+        "template": 230
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 598424,
+        "template": 330
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 341153,
+      "template": 130
+    }
+  }
+}

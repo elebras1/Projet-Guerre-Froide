@@ -1,0 +1,63 @@
+{
+  "owner": "CAN",
+  "controller": "CAN",
+  "add_core": "CAN",
+  "grain": 77.14,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 131092,
+      "template": 92
+    },
+    "economy_building": {
+      "name": "refinery",
+      "size": 6
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 138312,
+        "template": 92
+      }
+    }
+  ],
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 244169,
+        "template": 292
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 134653,
+      "template": 92
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 187587,
+      "template": 192
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 282441,
+      "template": 392
+    }
+  }
+}

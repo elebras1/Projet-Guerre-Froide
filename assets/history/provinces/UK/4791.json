@@ -1,0 +1,54 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": "ENG",
+  "meat": 168.59,
+  "infra": 6,
+  "naval_base": 10,
+  "1946.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 735545,
+      "template": 60
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 2,
+      "economy_building": {
+        "name": "high_tech",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 821745,
+        "template": 260
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 737186,
+      "template": 60
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 738830,
+      "template": 60
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 777494,
+      "template": 160
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 837410,
+      "template": 360
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "owner": "POR",
+  "controller": "POR",
+  "add_core": [
+    "POR",
+    "ANG"
+  ],
+  "fruits": 0.44,
+  "infra": 3,
+  "naval_base": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 59016,
+      "template": 2
+    }
+  },
+  "1975.11.11": {
+    "owner": "ANG",
+    "controller": "ANG",
+    "remove_core": "POR"
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 1
+    },
+    {
+      "population_total": {
+        "amount": 109157,
+        "template": 202
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 60087,
+      "template": 2
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 61178,
+      "template": 2
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 75922,
+      "template": 102
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 157145,
+      "template": 302
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "BUR"
+  ],
+  "fish": 24,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 149588,
+      "template": 24
+    }
+  },
+  "1948.01.04": {
+    "owner": "BUR",
+    "controller": "BUR",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 152421,
+      "template": 24
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 155308,
+      "template": 24
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 197930,
+      "template": 124
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 291512,
+      "template": 224
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 360772,
+      "template": 324
+    }
+  }
+}

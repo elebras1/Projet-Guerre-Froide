@@ -1,0 +1,71 @@
+{
+  "owner": "PER",
+  "controller": "PER",
+  "add_core": "PER",
+  "vegetables": 45.71,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 322850,
+      "template": 16
+    }
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 720985,
+        "template": 216
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 4
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1085652,
+        "template": 316
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 329934,
+      "template": 16
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 337172,
+      "template": 16
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 448498,
+      "template": 116
+    }
+  }
+}

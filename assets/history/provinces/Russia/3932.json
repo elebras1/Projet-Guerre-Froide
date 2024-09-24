@@ -1,0 +1,50 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "RUS"
+  ],
+  "infra": 6,
+  "naval_base": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 609780,
+      "template": 45
+    },
+    "economy_building": {
+      "name": "centrifuges",
+      "size": 1
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 619695,
+      "template": 45
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 629771,
+      "template": 45
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 754055,
+      "template": 145
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 844457,
+      "template": 245
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 911668,
+      "template": 345
+    }
+  }
+}

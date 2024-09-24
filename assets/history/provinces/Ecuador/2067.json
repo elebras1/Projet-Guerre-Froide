@@ -1,0 +1,67 @@
+{
+    "owner": "ECU",
+    "controller": "ECU",
+    "add_core": "ECU",
+    "oil": 58,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 162914,
+            "template": 84
+        },
+        "economy_building": {
+            "name": "refinery",
+            "size": 2
+        }
+    },
+    "1953.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 3
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 4
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "refinery",
+                "size": 6
+            }
+        },
+        {
+            "population_total": {
+                "amount": 392025,
+                "template": 284
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 167186,
+            "template": 84
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 171569,
+            "template": 84
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 238387,
+            "template": 184
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 531495,
+            "template": 384
+        }
+    }
+}

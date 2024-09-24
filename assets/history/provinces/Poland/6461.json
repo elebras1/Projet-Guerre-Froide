@@ -1,0 +1,85 @@
+{
+  "owner": "POL",
+  "controller": "POL",
+  "add_core": "POL",
+  "meat": 331.87,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 312903,
+      "template": 49
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 2
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 318810,
+        "template": 49
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 324829,
+        "template": 49
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 461148,
+        "template": 249
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 499344,
+        "template": 349
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 390883,
+      "template": 149
+    }
+  }
+}

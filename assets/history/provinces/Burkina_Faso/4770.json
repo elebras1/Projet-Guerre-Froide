@@ -1,0 +1,57 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "BKN"
+  ],
+  "vegetables": 11.11,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 74933,
+      "template": 5
+    }
+  },
+  "1960.08.05": {
+    "owner": "BKN",
+    "controller": "BKN",
+    "remove_core": "FRA"
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 2
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 75783,
+      "template": 5
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 76643,
+      "template": 5
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 90039,
+      "template": 105
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 125991,
+      "template": 205
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 171374,
+      "template": 305
+    }
+  }
+}

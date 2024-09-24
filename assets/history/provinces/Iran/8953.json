@@ -1,0 +1,89 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": "PER",
+  "grain": 25.12,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 71618,
+      "template": 16
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 2
+    }
+  },
+  "1946.12.15": {
+    "owner": "PER",
+    "controller": "PER"
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 73189,
+        "template": 16
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 74795,
+        "template": 16
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 159936,
+        "template": 216
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 240829,
+        "template": 316
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 99490,
+      "template": 116
+    }
+  }
+}

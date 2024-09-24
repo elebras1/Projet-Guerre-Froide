@@ -1,0 +1,51 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "CAM"
+  ],
+  "fruits": 4.49,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 7055,
+      "template": 2
+    }
+  },
+  "1960.01.01": {
+    "owner": "CAM",
+    "controller": "CAM",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 7186,
+      "template": 2
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 7319,
+      "template": 2
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 9255,
+      "template": 102
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 14490,
+      "template": 202
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 20533,
+      "template": 302
+    }
+  }
+}

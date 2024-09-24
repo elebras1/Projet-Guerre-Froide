@@ -1,0 +1,61 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "BGL",
+    "PAK",
+    "IND"
+  ],
+  "fruits": 223.04,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 2649982,
+      "template": 13
+    }
+  },
+  "1947.08.14": {
+    "owner": "PAK",
+    "controller": "PAK",
+    "remove_core": [
+      "IND",
+      "ENG"
+    ]
+  },
+  "1971.12.16": {
+    "owner": "BGL",
+    "controller": "BGL",
+    "remove_core": "PAK"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 2722406,
+      "template": 13
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 2796809,
+      "template": 13
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 3909976,
+      "template": 113
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 5782070,
+      "template": 213
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 7953851,
+      "template": 313
+    }
+  }
+}

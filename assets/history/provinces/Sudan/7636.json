@@ -1,0 +1,59 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "SUD"
+  ],
+  "grain": 5.81,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 41307,
+      "template": 3
+    }
+  },
+  "1956.01.01": {
+    "owner": "SUD",
+    "controller": "SUD",
+    "remove_core": "ENG"
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 43171,
+        "template": 3
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 42229,
+      "template": 3
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 56947,
+      "template": 103
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 91263,
+      "template": 203
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 127588,
+      "template": 303
+    }
+  }
+}

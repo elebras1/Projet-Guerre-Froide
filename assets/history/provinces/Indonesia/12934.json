@@ -1,0 +1,79 @@
+{
+  "owner": "HOL",
+  "controller": "HOL",
+  "add_core": [
+    "INO",
+    "HOL"
+  ],
+  "rare_metals": 15.34,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 145967,
+      "template": 21
+    }
+  },
+  "1949.12.27": {
+    "owner": "INO",
+    "controller": "INO",
+    "remove_core": "HOL"
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 2
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 297970,
+        "template": 221
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 7
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 378926,
+        "template": 321
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 148600,
+      "template": 21
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 151281,
+      "template": 21
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 195237,
+      "template": 121
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "GAB"
+  ],
+  "vegetables": 4.08,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 6483,
+      "template": 2
+    }
+  },
+  "1965.02.17": {
+    "owner": "GAB",
+    "controller": "GAB",
+    "remove_core": "FRA"
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 6502,
+      "template": 2
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 6520,
+      "template": 2
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 6831,
+      "template": 102
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 9222,
+      "template": 202
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 13341,
+      "template": 302
+    }
+  }
+}

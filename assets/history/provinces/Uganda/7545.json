@@ -1,0 +1,99 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "UGD"
+  ],
+  "fruits": 68.21,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 248796,
+      "template": 1
+    },
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1962.10.09": {
+    "owner": "UGD",
+    "controller": "UGD",
+    "remove_core": "ENG"
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 255471,
+        "template": 1
+      }
+    }
+  ],
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 262326,
+        "template": 1
+      }
+    }
+  ],
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 624732,
+        "template": 201
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 3
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "military_goods",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 931414,
+        "template": 301
+      }
+    }
+  ],
+  "1961.12.30": {
+    "population_total": {
+      "amount": 368237,
+      "template": 101
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "MRT"
+  ],
+  "vegetables": 1.71,
+  "infra": 4,
+  "naval_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 465834,
+      "template": 1
+    }
+  },
+  "1961.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
+    }
+  },
+  "1966.8.25": {
+    "economy_building": {
+      "name": "financial_district",
+      "size": 1
+    }
+  },
+  "1968.03.12": {
+    "owner": "MRT",
+    "controller": "MRT",
+    "remove_core": "ENG"
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 3,
+      "economy_building": {
+        "name": "powerplant",
+        "size": 3
+      }
+    },
+    {
+      "population_total": {
+        "amount": 950931,
+        "template": 201
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 4,
+      "economy_building": {
+        "name": "powerplant",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1073250,
+        "template": 301
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 479348,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 493254,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 697738,
+      "template": 101
+    }
+  }
+}

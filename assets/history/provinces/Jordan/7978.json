@@ -1,0 +1,65 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "JOR"
+  ],
+  "meat": 0.52,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 314,
+      "template": 35
+    }
+  },
+  "1946.05.25": {
+    "owner": "JOR",
+    "controller": "JOR",
+    "remove_core": "ENG"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "refinery",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1796,
+        "template": 235
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 4
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 337,
+      "template": 35
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 362,
+      "template": 35
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 783,
+      "template": 135
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2903,
+      "template": 335
+    }
+  }
+}

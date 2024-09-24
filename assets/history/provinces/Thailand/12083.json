@@ -1,0 +1,65 @@
+{
+  "owner": "SIA",
+  "controller": "SIA",
+  "add_core": "SIA",
+  "grain": 189.88,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 467383,
+      "template": 27
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 2
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1112217,
+        "template": 227
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1380611,
+        "template": 327
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 480011,
+      "template": 27
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 492981,
+      "template": 27
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 694161,
+      "template": 127
+    }
+  }
+}

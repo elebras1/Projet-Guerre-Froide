@@ -1,0 +1,65 @@
+{
+  "owner": "PAR",
+  "controller": "PAR",
+  "add_core": "PAR",
+  "vegetables": 22,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 18129,
+      "template": 87
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 40217,
+        "template": 287
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 56358,
+        "template": 387
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 18593,
+      "template": 87
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 19068,
+      "template": 87
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 26004,
+      "template": 187
+    }
+  }
+}

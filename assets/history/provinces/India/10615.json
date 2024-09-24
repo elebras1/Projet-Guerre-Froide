@@ -1,0 +1,69 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "IND"
+  ],
+  "grain": 425.67,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 5557784,
+      "template": 15
+    },
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 4
+    }
+  },
+  "1947.08.15": {
+    "owner": "IND",
+    "controller": "IND",
+    "remove_core": "ENG"
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "heavy_industry",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 10587026,
+        "template": 215
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 7
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 5656434,
+      "template": 15
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 5756836,
+      "template": 15
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 7219521,
+      "template": 115
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 13807963,
+      "template": 315
+    }
+  }
+}

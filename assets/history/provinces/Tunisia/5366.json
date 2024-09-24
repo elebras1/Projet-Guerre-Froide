@@ -1,0 +1,51 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": [
+    "FRA",
+    "TUN"
+  ],
+  "fruits": 0.95,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 61412,
+      "template": 3
+    }
+  },
+  "1956.03.20": {
+    "owner": "TUN",
+    "controller": "TUN",
+    "remove_core": "FRA"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 62512,
+      "template": 3
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 63631,
+      "template": 3
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 78888,
+      "template": 103
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 113345,
+      "template": 203
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 150992,
+      "template": 303
+    }
+  }
+}

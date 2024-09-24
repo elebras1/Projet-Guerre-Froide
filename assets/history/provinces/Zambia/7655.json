@@ -1,0 +1,57 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "ZMB",
+    "RHO"
+  ],
+  "grain": 3.18,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 54146,
+      "template": 1
+    }
+  },
+  "1953.8.1": {
+    "owner": "RHO",
+    "controller": "RHO",
+    "remove_core": "ENG"
+  },
+  "1964.10.24": {
+    "owner": "ZMB",
+    "controller": "ZMB",
+    "remove_core": "RHO"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 55506,
+      "template": 1
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 56900,
+      "template": 1
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 78513,
+      "template": 101
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 135887,
+      "template": 201
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 196153,
+      "template": 301
+    }
+  }
+}

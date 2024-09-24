@@ -1,0 +1,64 @@
+{
+  "owner": "AST",
+  "controller": "AST",
+  "add_core": "AST",
+  "fruits": 19.77,
+  "infra": 6,
+  "naval_base": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 46702,
+      "template": 94
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 87015,
+        "template": 294
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 103678,
+        "template": 394
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 47812,
+      "template": 94
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 48948,
+      "template": 94
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 64031,
+      "template": 194
+    }
+  }
+}

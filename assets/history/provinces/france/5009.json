@@ -1,0 +1,60 @@
+{
+  "owner": "FRA",
+  "controller": "FRA",
+  "add_core": "FRA",
+  "fish": 131.29,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 296749,
+      "template": 70
+    },
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 5
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 386309,
+        "template": 270
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 1
+    },
+    {
+      "population_total": {
+        "amount": 410138,
+        "template": 370
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 298981,
+      "template": 70
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 301229,
+      "template": 70
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 337864,
+      "template": 170
+    }
+  }
+}

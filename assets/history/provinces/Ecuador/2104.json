@@ -1,0 +1,65 @@
+{
+  "owner": "ECU",
+  "controller": "ECU",
+  "add_core": "ECU",
+  "precious_metals": 2,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 522653,
+      "template": 84
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1257676,
+        "template": 284
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "powerplant",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1705116,
+        "template": 384
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 536357,
+      "template": 84
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 550421,
+      "template": 84
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 764782,
+      "template": 184
+    }
+  }
+}

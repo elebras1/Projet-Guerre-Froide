@@ -1,0 +1,69 @@
+{
+    "owner": "MEX",
+    "controller": "MEX",
+    "add_core": "MEX",
+    "precious_metals": 17,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 249490,
+            "template": 81
+        },
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 4
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 5
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "heavy_industry",
+                "size": 7
+            }
+        },
+        {
+            "population_total": {
+                "amount": 638654,
+                "template": 281
+            }
+        }
+    ],
+    "1991.1.1": [
+        {
+            "economy_building": {
+                "name": "heavy_industry",
+                "size": 8
+            }
+        },
+        {
+            "population_total": {
+                "amount": 817178,
+                "template": 381
+            }
+        }
+    ],
+    "1948.1.1": {
+        "population_total": {
+            "amount": 257136,
+            "template": 81
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 265018,
+            "template": 81
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 389614,
+            "template": 181
+        }
+    }
+}

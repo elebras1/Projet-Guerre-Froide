@@ -1,0 +1,51 @@
+{
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "GEO"
+  ],
+  "grain": 25.79,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 742112,
+      "template": 30
+    }
+  },
+  "1991.4.9": {
+    "owner": "GEO",
+    "controller": "GEO",
+    "remove_core": "SOV"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 754713,
+      "template": 30
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 767528,
+      "template": 30
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 933994,
+      "template": 130
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 1096122,
+      "template": 230
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1179150,
+      "template": 330
+    }
+  }
+}

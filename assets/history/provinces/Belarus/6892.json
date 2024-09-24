@@ -1,0 +1,78 @@
+{
+  "add_core": [
+    "BLR",
+    "SOV"
+  ],
+  "owner": "SOV",
+  "controller": "SOV",
+  "wood": 1,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 393494,
+      "template": 45
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 4
+    }
+  },
+  "1948.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 394084,
+        "template": 45
+      }
+    }
+  ],
+  "1953.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 6
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 7
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 8
+      }
+    },
+    {
+      "population_total": {
+        "amount": 489030,
+        "template": 245
+      }
+    }
+  ],
+  "1950.1.1": {
+    "population_total": {
+      "amount": 394675,
+      "template": 45
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 425859,
+      "template": 145
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 524086,
+      "template": 345
+    }
+  }
+}

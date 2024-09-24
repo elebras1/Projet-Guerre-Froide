@@ -1,0 +1,55 @@
+{
+  "owner": "ROM",
+  "controller": "ROM",
+  "add_core": "ROM",
+  "wood": 3,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 254672,
+      "template": 50
+    },
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 1
+    }
+  },
+  "1950.1.1": [
+    {
+      "economy_building": {
+        "name": "aviation_industry",
+        "size": 2
+      }
+    },
+    {
+      "population_total": {
+        "amount": 261807,
+        "template": 50
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 258215,
+      "template": 50
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 299197,
+      "template": 150
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 353757,
+      "template": 250
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 371893,
+      "template": 350
+    }
+  }
+}

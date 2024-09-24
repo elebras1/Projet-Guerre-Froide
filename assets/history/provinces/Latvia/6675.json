@@ -1,0 +1,81 @@
+{
+  "add_core": [
+    "LAT",
+    "SOV"
+  ],
+  "owner": "SOV",
+  "controller": "SOV",
+  "grain": 292.42,
+  "infra": 7,
+  "naval_base": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 822968,
+      "template": 56
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
+    }
+  },
+  "1991.08.21": {
+    "owner": "LAT",
+    "controller": "LAT",
+    "remove_core": "SOV"
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 4
+    }
+  },
+  "1961.1.1": {
+    "naval_base": 4,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
+    }
+  },
+  "1979.1.1": [
+    {
+      "naval_base": 5,
+      "economy_building": {
+        "name": "light_industry",
+        "size": 7
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1070698,
+        "template": 256
+      }
+    }
+  ],
+  "1985.1.1": {
+    "naval_base": 6
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 828449,
+      "template": 56
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 833967,
+      "template": 56
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 934766,
+      "template": 156
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1132012,
+      "template": 356
+    }
+  }
+}

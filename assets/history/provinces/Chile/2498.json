@@ -1,0 +1,69 @@
+{
+    "owner": "CHL",
+    "controller": "CHL",
+    "add_core": "CHL",
+    "iron": 6,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 50844,
+            "template": 82
+        },
+        "economy_building": {
+            "name": "powerplant",
+            "size": 3
+        }
+    },
+    "1948.1.1": [
+        {
+            "economy_building": {
+                "name": "powerplant",
+                "size": 4
+            }
+        },
+        {
+            "population_total": {
+                "amount": 51931,
+                "template": 82
+            }
+        }
+    ],
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        }
+    },
+    "1979.1.1": [
+        {
+            "economy_building": {
+                "name": "powerplant",
+                "size": 6
+            }
+        },
+        {
+            "population_total": {
+                "amount": 96096,
+                "template": 282
+            }
+        }
+    ],
+    "1950.1.1": {
+        "population_total": {
+            "amount": 53040,
+            "template": 82
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 70206,
+            "template": 182
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 117117,
+            "template": 382
+        }
+    }
+}

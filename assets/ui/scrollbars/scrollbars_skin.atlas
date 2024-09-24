@@ -1,0 +1,90 @@
+
+scrollbars_skin.png
+size: 256, 256
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+gen_slider_bg
+  rotate: false
+  xy: 151, 217
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+gen_slider_standard
+  rotate: false
+  xy: 1, 163
+  size: 96, 52
+  orig: 96, 52
+  offset: 0, 0
+  index: -1
+gen_slider_standard2
+  rotate: false
+  xy: 1, 128
+  size: 96, 33
+  orig: 96, 33
+  offset: 0, 0
+  index: -1
+scroller_outliner_bg
+  rotate: false
+  xy: 99, 186
+  size: 44, 29
+  orig: 44, 29
+  offset: 0, 0
+  index: -1
+scroller_outliner_bottom
+  rotate: false
+  xy: 79, 114
+  size: 11, 12
+  orig: 11, 12
+  offset: 0, 0
+  index: -1
+scroller_outliner_btn_up_down
+  rotate: false
+  xy: 1, 37
+  size: 44, 29
+  orig: 44, 29
+  offset: 0, 0
+  index: -1
+scroller_outliner_standard
+  rotate: false
+  xy: 99, 172
+  size: 11, 12
+  orig: 11, 12
+  offset: 0, 0
+  index: -1
+scroller_outliner_top
+  rotate: false
+  xy: 145, 203
+  size: 11, 12
+  orig: 11, 12
+  offset: 0, 0
+  index: -1
+scroller_vertical_btn
+  rotate: false
+  xy: 151, 231
+  size: 96, 14
+  orig: 96, 14
+  offset: 0, 0
+  index: -1
+slider_btn_minus
+  rotate: false
+  xy: 1, 98
+  size: 76, 28
+  orig: 76, 28
+  offset: 0, 0
+  index: -1
+slider_btn_plus
+  rotate: false
+  xy: 1, 68
+  size: 76, 28
+  orig: 76, 28
+  offset: 0, 0
+  index: -1
+slider_horizontal_btn
+  rotate: false
+  xy: 1, 217
+  size: 148, 28
+  orig: 148, 28
+  offset: 0, 0
+  index: -1

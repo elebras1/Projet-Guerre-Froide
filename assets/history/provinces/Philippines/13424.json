@@ -1,0 +1,67 @@
+{
+  "owner": "PHI",
+  "controller": "PHI",
+  "add_core": "PHI",
+  "rare_metals": 1,
+  "infra": 4,
+  "naval_base": 1,
+  "air_base": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 687512,
+      "template": 25
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 1
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1833487,
+        "template": 225
+      }
+    }
+  ],
+  "1985.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
+    }
+  },
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 5
+      }
+    },
+    {
+      "population_total": {
+        "amount": 2529955,
+        "template": 325
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 711850,
+      "template": 25
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 737049,
+      "template": 25
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1113822,
+      "template": 125
+    }
+  }
+}

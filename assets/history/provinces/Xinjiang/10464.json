@@ -1,0 +1,52 @@
+{
+  "owner": "CHI",
+  "controller": "CHI",
+  "add_core": [
+    "SIK",
+    "CHI",
+    "CHC"
+  ],
+  "grain": 6.12,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 41421,
+      "template": 6
+    }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "remove_core": "SIK"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 42245,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 43085,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 52853,
+      "template": 106
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 75894,
+      "template": 206
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 90805,
+      "template": 306
+    }
+  }
+}

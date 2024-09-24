@@ -1,0 +1,52 @@
+{
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "MLY"
+  ],
+  "grain": 12.99,
+  "infra": 4,
+  "naval_base": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 167927,
+      "template": 23
+    }
+  },
+  "1957.08.31": {
+    "remove_core": "ENG",
+    "owner": "MLY",
+    "controller": "MLY"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 172571,
+      "template": 23
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 177342,
+      "template": 23
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 252809,
+      "template": 123
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 391948,
+      "template": 223
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 543000,
+      "template": 323
+    }
+  }
+}

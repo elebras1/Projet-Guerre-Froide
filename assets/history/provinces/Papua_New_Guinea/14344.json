@@ -1,0 +1,51 @@
+{
+  "owner": "AST",
+  "controller": "AST",
+  "add_core": [
+    "AST",
+    "PAG"
+  ],
+  "fruits": 12.52,
+  "infra": 1,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 85273,
+      "template": 96
+    }
+  },
+  "1975.09.16": {
+    "owner": "PAG",
+    "controller": "PAG",
+    "remove_core": "AST"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 86369,
+      "template": 96
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 87479,
+      "template": 96
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 104326,
+      "template": 196
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 160291,
+      "template": 296
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 218239,
+      "template": 396
+    }
+  }
+}

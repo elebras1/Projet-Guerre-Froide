@@ -1,0 +1,82 @@
+{
+  "owner": "POR",
+  "controller": "POR",
+  "add_core": "POR",
+  "grain": 201.63,
+  "infra": 10,
+  "naval_base": 2,
+  "economy_building": {
+    "name": "military_academy",
+    "size": 1
+  },
+  "1946.1.1": {
+    "air_base": 7,
+    "population_total": {
+      "amount": 1562007,
+      "template": 66
+    },
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
+    }
+  },
+  "1961.1.1": {
+    "air_base": 8,
+    "naval_base": 3,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 6
+    }
+  },
+  "1979.1.1": [
+    {
+      "air_base": 9,
+      "economy_building": {
+        "name": "light_industry",
+        "size": 8
+      }
+    },
+    {
+      "naval_base": 4
+    },
+    {
+      "population_total": {
+        "amount": 1820218,
+        "template": 266
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "naval_base": 5,
+      "economy_building": {
+        "name": "light_industry",
+        "size": 9
+      }
+    },
+    {
+      "population_total": {
+        "amount": 1867372,
+        "template": 366
+      }
+    }
+  ],
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1571098,
+      "template": 66
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1580242,
+      "template": 66
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1675808,
+      "template": 166
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "owner": "COL",
+  "controller": "COL",
+  "add_core": "COL",
+  "renewable_energy": 124,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1690259,
+      "template": 83
+    }
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
+    }
+  },
+  "1979.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 4
+      }
+    },
+    {
+      "population_total": {
+        "amount": 3913224,
+        "template": 283
+      }
+    }
+  ],
+  "1991.1.1": [
+    {
+      "economy_building": {
+        "name": "light_industry",
+        "size": 6
+      }
+    },
+    {
+      "population_total": {
+        "amount": 5042081,
+        "template": 383
+      }
+    }
+  ],
+  "1984.1.1": {
+    "renewable_energy": 124
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1738144,
+      "template": 83
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1787386,
+      "template": 83
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 2529928,
+      "template": 183
+    }
+  }
+}

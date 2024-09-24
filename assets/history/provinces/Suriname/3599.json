@@ -1,0 +1,51 @@
+{
+  "owner": "HOL",
+  "controller": "HOL",
+  "add_core": [
+    "HOL",
+    "SUR"
+  ],
+  "grain": 6.5,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 2337,
+      "template": 89
+    }
+  },
+  "1975.11.25": {
+    "owner": "SUR",
+    "controller": "SUR",
+    "remove_core": "HOL"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 2408,
+      "template": 89
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 2481,
+      "template": 89
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 3536,
+      "template": 189
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 4208,
+      "template": 289
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 4765,
+      "template": 389
+    }
+  }
+}
