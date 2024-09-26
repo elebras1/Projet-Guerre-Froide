@@ -1,5 +1,5 @@
 /*This shader is derived from the map shader of the "Project Alice" : https://github.com/schombert/Project-Alice,
-Licensed under the GNU General Public License v3.0. You can redistribute it and/or modify it under the terms of the GPL v3.0.
+Licensed under the GNU GPL v3.0. You can redistribute it and/or modify it under the terms of the GPL v3.0.
 A copy of the GNU GPL v3.0 should have been included with this project. If not, see <https://www.gnu.org/licenses/>.*/
 #version 420
 
