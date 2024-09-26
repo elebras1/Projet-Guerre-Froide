@@ -1,5 +1,5 @@
 /*This shader is derived from the map shader of the "Project Alice" : https://github.com/schombert/Project-Alice,
-Licensed under the GNU GPL v3.0. You can redistribute it and/or modify it under the terms of the GPL v3.0.
+Licensed under the GNU General Public License v3.0. You can redistribute it and/or modify it under the terms of the GPL v3.0.
 A copy of the GNU GPL v3.0 should have been included with this project. If not, see <https://www.gnu.org/licenses/>.*/
 #version 420
 
@@ -212,7 +212,8 @@ vec4 getBorder(vec4 filteredColorProvince, vec4 filteredColorCountry, vec2 ip) {
 }
 
 
-vec4 getLandClose(vec4 colorProvince, vec4 colorCountry, vec2 texCoord, vec2 ip) {
+vec4 getLandClose(vec4 colorCountry, vec2 texCoord, vec2 ip) {
+    vec4 colorProvince = hqxFilter(ip, u_textureProvinces);
     vec4 terrain = getTerrainMix(texCoord);
     vec3 political = colorCountry.rgb;
 
@@ -248,7 +249,8 @@ vec4 getLandClose(vec4 colorProvince, vec4 colorCountry, vec2 texCoord, vec2 ip)
     return terrain;
 }
 
-vec4 getLandFar(vec4 colorProvince, vec4 colorCountry, vec2 texCoord) {
+vec4 getLandFar(vec4 colorCountry, vec2 texCoord, vec2 ip) {
+    vec4 colorProvince = hqxFilter(ip, u_textureProvinces);
     vec4 political = colorCountry;
 
     if(colorProvince.rgb == u_colorProvinceSelected.rgb) {
@@ -283,22 +285,20 @@ vec4 getLandFar(vec4 colorProvince, vec4 colorCountry, vec2 texCoord) {
 void main()
 {
     vec2 texCoord = getCorrectedTexCoord();
-    vec2 ip = texCoord * textureSize(u_textureProvinces, 0);
+    vec2 ip = texCoord * mapSize;
     vec4 colorCountry = hqxFilter(ip, u_textureCountries);
     vec4 terrain;
     vec4 water;
 
     if(u_zoom > .8) {
         if(colorCountry.r > 0) {
-            vec4 colorProvince = hqxFilter(ip, u_textureProvinces);
-            terrain = getLandFar(colorProvince, colorCountry, texCoord);
+            terrain = getLandFar(colorCountry, texCoord, ip);
         } else {
             water = getWaterFar(texCoord);
         }
     } else {
         if(colorCountry.r > 0) {
-            vec4 colorProvince = hqxFilter(ip, u_textureProvinces);
-            terrain = getLandClose(colorProvince, colorCountry, texCoord, ip);
+            terrain = getLandClose(colorCountry, texCoord, ip);
         } else {
             water = getWaterClose(texCoord);
         }
