@@ -1,1 +1,117 @@
-{"color": [0, 84, 255], "graphical_culture": "Us", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1660000": {"name": "Allied Control Council", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "WBR_Berlin", "head_of_state": "supreme_leader", "head_of_government": "supreme_leader", "start_date": "1945-09-13", "death_date": "1946-12-31"}, "1660001": {"name": "Allied Control Council", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "WBR_Berlin", "head_of_state": "supreme_leader", "head_of_government": "supreme_leader", "start_date": "1945-09-13", "death_date": "1946-12-31"}, "1660002": {"name": "Administrative Command", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "WBR_Berlin", "head_of_state": "supreme_leader", "head_of_government": "supreme_leader", "start_date": "1947-01-01", "death_date": "1991-12-31"}, "1660003": {"name": "Administrative Command", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "WBR_Berlin", "head_of_state": "supreme_leader", "head_of_government": "supreme_leader", "start_date": "1947-01-01", "death_date": "1991-12-31"}}}
+{
+    "color": [
+        5,
+        84,
+        255
+    ],
+    "graphical_culture": "Us",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1660000": {
+            "name": "Allied Control Council",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "WBR_Berlin",
+            "head_of_state": "supreme_leader",
+            "head_of_government": "supreme_leader",
+            "start_date": "1945-09-13",
+            "death_date": "1946-12-31"
+        },
+        "1660001": {
+            "name": "Allied Control Council",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "WBR_Berlin",
+            "head_of_state": "supreme_leader",
+            "head_of_government": "supreme_leader",
+            "start_date": "1945-09-13",
+            "death_date": "1946-12-31"
+        },
+        "1660002": {
+            "name": "Administrative Command",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "WBR_Berlin",
+            "head_of_state": "supreme_leader",
+            "head_of_government": "supreme_leader",
+            "start_date": "1947-01-01",
+            "death_date": "1991-12-31"
+        },
+        "1660003": {
+            "name": "Administrative Command",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "WBR_Berlin",
+            "head_of_state": "supreme_leader",
+            "head_of_government": "supreme_leader",
+            "start_date": "1947-01-01",
+            "death_date": "1991-12-31"
+        }
+    }
+}

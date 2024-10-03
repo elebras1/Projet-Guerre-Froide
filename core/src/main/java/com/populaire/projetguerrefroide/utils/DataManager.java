@@ -189,10 +189,10 @@ public class DataManager {
                     LandProvince province = (LandProvince) provinces.get(provinceId.shortValue());
                     if(province != null) {
                         province.setRegion(region);
-                    } else {
+                    } /*else {
                         WaterProvince waterProvince = new WaterProvince(provinceId.shortValue());
                         provinces.put(provinceId.shortValue(), waterProvince);
-                    }
+                    }*/
                 });
             });
         } catch (IOException e) {
@@ -208,9 +208,11 @@ public class DataManager {
                 if (!values[0].isEmpty()) {
                     short provinceId = Short.parseShort(values[0]);
                     Province province = provinces.get(provinceId);
-                    Color color = new Color(Float.parseFloat(values[1]) / 255, Float.parseFloat(values[2]) / 255, Float.parseFloat(values[3]) / 255, 1);
-                    province.setColor(color);
-                    provincesByColor.put(color, province);
+                    if(province != null) {
+                        Color color = new Color(Float.parseFloat(values[1]) / 255, Float.parseFloat(values[2]) / 255, Float.parseFloat(values[3]) / 255, 1);
+                        province.setColor(color);
+                        provincesByColor.put(color, province);
+                    }
                 }
             }
         } catch (IOException e) {
@@ -237,7 +239,9 @@ public class DataManager {
                 Continent continent = new Continent(entry.getKey());
                 entry.getValue().forEach(provinceId -> {
                     LandProvince province = (LandProvince) provinces.get(provinceId.shortValue());
-                    province.setContinent(continent);
+                    if(province != null) {
+                        province.setContinent(continent);
+                    }
                 });
             });
         } catch (IOException e) {
@@ -279,7 +283,7 @@ public class DataManager {
             for (short x = 0; x < bitmap.getWidth(); x++) {
                 Color color = new Color(bitmap.getPixel(x, y));
                 Province province = provincesByColor.get(color);
-                if(province instanceof LandProvince) {
+                if(province != null) {
                     province.addPixel(x, y);
                 }
             }
@@ -301,8 +305,10 @@ public class DataManager {
                 if (values.length > localisationIndex && !values[0].isEmpty()) {
                     short provinceId = Short.parseShort(values[0]);
                     Province province = provinces.get(provinceId);
-                    String provinceName = values[localisationIndex];
-                    province.setName(provinceName);
+                    if(province != null) {
+                        String provinceName = values[localisationIndex];
+                        province.setName(provinceName);
+                    }
                 }
             }
         } catch (IOException e) {

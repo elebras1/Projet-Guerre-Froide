@@ -90,10 +90,6 @@ public class LandProvince implements Province {
     public boolean isPixelBorder(short x, short y) {
         return !this.pixels.contains(new Pixel((short) (x + 1), y))
                 || !this.pixels.contains(new Pixel((short) (x - 1), y))
-                || !this.pixels.contains(new Pixel((short) (x + 1), (short) (y - 1)))
-                || !this.pixels.contains(new Pixel((short) (x - 1), (short) (y - 1)))
-                || !this.pixels.contains(new Pixel((short) (x + 1), (short) (y + 1)))
-                || !this.pixels.contains(new Pixel((short) (x - 1), (short) (y + 1)))
                 || !this.pixels.contains(new Pixel(x, (short) (y + 1)))
                 || !this.pixels.contains(new Pixel(x, (short) (y - 1)));
     }

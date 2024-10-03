@@ -1,1 +1,570 @@
-{"color": [0, 135, 81], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1274001": {"name": "George VI", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_George", "head_of_state": "parental_type", "start_date": "1936-09-11", "death_date": "1952-02-06", "base": 1181001}, "1274002": {"name": "Elizabeth II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_Elizabeth", "head_of_state": "traditionalist_type", "start_date": "1952-02-06", "death_date": "2300-05-12", "base": 1181002}, "1274300": {"name": "George VII", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.99, "picture": "ENG_M_George_VII", "head_of_state": "parental_type", "start_date": "1966-11-14", "death_date": "2300-01-01", "base": 1181196}, "1274301": {"name": "Andrew I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.98, "picture": "ENG_M_Andrew_I", "head_of_state": "fortunate_type", "start_date": "1978-02-19", "death_date": "2300-01-01", "base": 1181197}, "1274302": {"name": "Edward IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.97, "picture": "ENG_M_Edward_IX", "head_of_state": "courteous_figure", "start_date": "1982-03-10", "death_date": "2300-01-01", "base": 1181198}, "1274304": {"name": "Anne II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.96, "picture": "ENG_M_Anne_II", "head_of_state": "courteous_figure", "start_date": "1968-08-15", "death_date": "2300-01-01", "base": 1181209}, "1274305": {"name": "Margaret I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.95, "picture": "ENG_M_Margaret_I", "head_of_state": "controversial_figure", "start_date": "1952-03-01", "death_date": "2002-02-09", "base": 1181210}, "1274306": {"name": "David III", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.94, "picture": "ENG_M_David_III", "head_of_state": "courteous_figure", "start_date": "1979-11-03", "death_date": "2300-01-01", "base": 1181211}, "1274307": {"name": "Sarah I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.93, "picture": "ENG_M_Sarah_I", "head_of_state": "courteous_figure", "start_date": "1982-05-01", "death_date": "2300-01-01", "base": 1181212}, "1274308": {"name": "Henry IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.92, "picture": "ENG_M_Henry_IX", "head_of_state": "courteous_figure", "start_date": "1946-01-01", "death_date": "1974-06-10", "base": 1181213}, "1274309": {"name": "William V", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.91, "picture": "ENG_M_William_V", "head_of_state": "courteous_figure", "start_date": "1959-12-18", "death_date": "1972-08-28", "base": 1181214}, "1274310": {"name": "Richard IV", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "ENG_M_Richard_IV", "head_of_state": "courteous_figure", "start_date": "1962-08-26", "death_date": "2300-01-01", "base": 1181215}, "1274311": {"name": "Robert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Robert_I_Bayern", "head_of_state": "traditionalist_type", "start_date": "1919-02-03", "death_date": "1955-08-02", "base": 1181199}, "1274312": {"name": "Albert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Albert_I_Bayern", "head_of_state": "fortunate_type", "start_date": "1955-08-02", "death_date": "1996-07-08", "base": 1181200}, "1274003": {"name": "Nnamdi Azikiwe", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "NIG_M_Azikiwe_Nnamdi", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1946-05-07", "death_date": "1993-08-26"}, "1274004": {"name": "Abubakar Tafawa Balewa", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NIG_M_Balewa_Abubakar_T", "head_of_government": "administrator_type", "start_date": "1960-10-01", "death_date": "1966-01-16"}, "1274005": {"name": "Johnson Aguiyi-Ironsi", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIG_M_Aguiyi-Ironsi_Johnson", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1966-01-16", "death_date": "1966-07-29"}, "1274006": {"name": "Yakubu Gowon", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIG_M_Gowon_Yakubu", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1966-07-29", "death_date": "1975-07-29"}, "1274007": {"name": "Murtala Mohammed", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIG_M_Mohammed_Murtala", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1975-07-29", "death_date": "1976-02-13"}, "1274008": {"name": "Olusegun Obasanjo", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIG_M_Obasanjo_Olusegun", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1976-02-13", "death_date": "1979-10-01"}, "1274009": {"name": "Shehu Shagari", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIG_M_Shagari_Shehu", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1979-10-01", "death_date": "1983-12-31"}, "1274010": {"name": "Muhammadu Buhari", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIG_M_Buhari_Muhammadu", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1983-12-31", "death_date": "1985-08-27"}, "1274011": {"name": "Ibrahim Babangida", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIG_M_Babangida_Ibrahim", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1985-08-27", "death_date": "1993-08-26"}, "1274012": {"name": "Obafemi Awolowo", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "NIG_M_Awolowo_Obafemi", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1979-10-01", "death_date": "1987-01-01"}, "1274013": {"name": "Aminu Kano", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "NIG_M_Kano_Aminu", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1979-10-01", "death_date": "1983-04-17"}, "1274100": {"name": "Tunji Otegbeye", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NIG_M_Otegbeye_Tunji", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1963-05-01", "death_date": "1987-11-18"}, "1274101": {"name": "Herbert Macaulay", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "NIG_M_Macaulay_Herbert", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1944-01-01", "death_date": "1946-05-07"}, "1274102": {"name": "Ahmadu Bello", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "NIG_M_Bello_Ahmadu", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1945-11-01", "death_date": "1966-01-15"}, "1274103": {"name": "Siddiq Abubakar III", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.5, "picture": "NIG_M_Abubakar_III", "head_of_state": "administrator_type", "start_date": "1938-01-01", "death_date": "1988-11-01"}, "1274104": {"name": "Ibrahim Dasuki I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.5, "picture": "NIG_M_Dasuki_I", "head_of_state": "religious_type", "start_date": "1988-11-01", "death_date": "1996-04-20"}, "1274105": {"name": "Ogunsheye", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NIG_M_Ogunsheye", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1952-07-01", "death_date": "1952-12-01"}, "1274106": {"name": "Uche Omo", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NIG_M_Omo_Uche", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1952-07-01", "death_date": "1953-01-01"}, "1274107": {"name": "Chukwudolue Orhakamalu", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NIG_M_Orhakamalu_Chukwudolue", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1953-01-01", "death_date": "1966-01-01"}, "1274108": {"name": "Domkat Bali", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NIG_M_Bali_Domkat", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1984-09-14", "death_date": "1990-01-10"}, "1274109": {"name": "Akanbi Oniyangi", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NIG_M_Oniyangi_Akanbi", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1981-09-14", "death_date": "1983-01-16"}, "1274110": {"name": "Iya Abubakar", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NIG_M_Abubakar_Iya", "head_of_state": "courteous_figure", "head_of_government": "courteous_figure", "start_date": "1979-09-12", "death_date": "1981-09-13"}, "1274111": {"name": "Bolaji Akinyemi", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NIG_M_Akinyemi_Bolaji", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1975-12-23", "death_date": "1987-03-29"}, "1274112": {"name": "Chinua Achebe", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "NIG_M_Achebe_Chinua", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1982-01-01", "death_date": "2300-01-01"}, "1274113": {"name": "Ken Saro-Wiwa", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "NIG_M_Saro-Wiwa_Ken", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1970-01-01", "death_date": "1995-11-10"}, "1274114": {"name": "Victor Chibundu", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "NIG_M_Chibundu_Victor", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1961-01-01", "death_date": "2300-01-01"}, "1274115": {"name": "Michael Imoudu", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NIG_M_Imoudu_Michael", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1947-01-01", "death_date": "2005-07-22"}, "1274116": {"name": "Wahab Goodluck", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NIG_M_Goodluck_Wahab", "head_of_state": "fortunate_type", "head_of_government": "fortunate_type", "start_date": "1944-01-01", "death_date": "1991-09-10"}, "1274117": {"name": "Mohammed Marwa", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "NIG_M_Marwa_Mohammed", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1945-01-01", "death_date": "1980-12-01"}, "1274118": {"name": "Abdullahi Bayero", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NIG_M_Bayero_Abdullahi", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1927-02-14", "death_date": "1953-12-03"}, "1274119": {"name": "Muhammadu Sanusi", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "NIG_M_Sanusi_Muhammadu", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1953-12-03", "death_date": "1963-07-01"}, "1274120": {"name": "Ado Bayero", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NIG_M_Bayero_Ado", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1963-10-22", "death_date": "2300-01-01"}, "1274121": {"name": "Yakubu Theophilus Danjuma", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NIG_M_Danjuma_Yakubu_T", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1975-07-01", "death_date": "2300-01-01"}, "1274122": {"name": "Moshood Kashimawo Olawale Abiola", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NIG_M_Abiola_Moshood_K_O", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1979-01-01", "death_date": "1998-07-07"}}}
+{
+    "color": [
+        5,
+        135,
+        81
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1274001": {
+            "name": "George VI",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "head_of_state": "parental_type",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "base": 1181001
+        },
+        "1274002": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "head_of_state": "traditionalist_type",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "base": 1181002
+        },
+        "1274300": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "head_of_state": "parental_type",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "base": 1181196
+        },
+        "1274301": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "head_of_state": "fortunate_type",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "base": 1181197
+        },
+        "1274302": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "head_of_state": "courteous_figure",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "base": 1181198
+        },
+        "1274304": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "head_of_state": "courteous_figure",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "base": 1181209
+        },
+        "1274305": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "head_of_state": "controversial_figure",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "base": 1181210
+        },
+        "1274306": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "head_of_state": "courteous_figure",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "base": 1181211
+        },
+        "1274307": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "head_of_state": "courteous_figure",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "base": 1181212
+        },
+        "1274308": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "head_of_state": "courteous_figure",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "base": 1181213
+        },
+        "1274309": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "head_of_state": "courteous_figure",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "base": 1181214
+        },
+        "1274310": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "head_of_state": "courteous_figure",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "base": 1181215
+        },
+        "1274311": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "head_of_state": "traditionalist_type",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "base": 1181199
+        },
+        "1274312": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "head_of_state": "fortunate_type",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "base": 1181200
+        },
+        "1274003": {
+            "name": "Nnamdi Azikiwe",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "NIG_M_Azikiwe_Nnamdi",
+            "head_of_state": "democrat_type",
+            "head_of_government": "democrat_type",
+            "start_date": "1946-05-07",
+            "death_date": "1993-08-26"
+        },
+        "1274004": {
+            "name": "Abubakar Tafawa Balewa",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NIG_M_Balewa_Abubakar_T",
+            "head_of_government": "administrator_type",
+            "start_date": "1960-10-01",
+            "death_date": "1966-01-16"
+        },
+        "1274005": {
+            "name": "Johnson Aguiyi-Ironsi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIG_M_Aguiyi-Ironsi_Johnson",
+            "head_of_state": "autocrat_type",
+            "head_of_government": "autocrat_type",
+            "start_date": "1966-01-16",
+            "death_date": "1966-07-29"
+        },
+        "1274006": {
+            "name": "Yakubu Gowon",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIG_M_Gowon_Yakubu",
+            "head_of_state": "dictator_type",
+            "head_of_government": "dictator_type",
+            "start_date": "1966-07-29",
+            "death_date": "1975-07-29"
+        },
+        "1274007": {
+            "name": "Murtala Mohammed",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIG_M_Mohammed_Murtala",
+            "head_of_state": "reformer_type",
+            "head_of_government": "reformer_type",
+            "start_date": "1975-07-29",
+            "death_date": "1976-02-13"
+        },
+        "1274008": {
+            "name": "Olusegun Obasanjo",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIG_M_Obasanjo_Olusegun",
+            "head_of_state": "democrat_type",
+            "head_of_government": "democrat_type",
+            "start_date": "1976-02-13",
+            "death_date": "1979-10-01"
+        },
+        "1274009": {
+            "name": "Shehu Shagari",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIG_M_Shagari_Shehu",
+            "head_of_state": "administrator_type",
+            "head_of_government": "administrator_type",
+            "start_date": "1979-10-01",
+            "death_date": "1983-12-31"
+        },
+        "1274010": {
+            "name": "Muhammadu Buhari",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIG_M_Buhari_Muhammadu",
+            "head_of_state": "autocrat_type",
+            "head_of_government": "autocrat_type",
+            "start_date": "1983-12-31",
+            "death_date": "1985-08-27"
+        },
+        "1274011": {
+            "name": "Ibrahim Babangida",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIG_M_Babangida_Ibrahim",
+            "head_of_state": "dictator_type",
+            "head_of_government": "dictator_type",
+            "start_date": "1985-08-27",
+            "death_date": "1993-08-26"
+        },
+        "1274012": {
+            "name": "Obafemi Awolowo",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "NIG_M_Awolowo_Obafemi",
+            "head_of_state": "administrator_type",
+            "head_of_government": "administrator_type",
+            "start_date": "1979-10-01",
+            "death_date": "1987-01-01"
+        },
+        "1274013": {
+            "name": "Aminu Kano",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "NIG_M_Kano_Aminu",
+            "head_of_state": "reformer_type",
+            "head_of_government": "reformer_type",
+            "start_date": "1979-10-01",
+            "death_date": "1983-04-17"
+        },
+        "1274100": {
+            "name": "Tunji Otegbeye",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Otegbeye_Tunji",
+            "head_of_state": "hardliner_type",
+            "head_of_government": "hardliner_type",
+            "start_date": "1963-05-01",
+            "death_date": "1987-11-18"
+        },
+        "1274101": {
+            "name": "Herbert Macaulay",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Macaulay_Herbert",
+            "head_of_state": "parental_type",
+            "head_of_government": "parental_type",
+            "start_date": "1944-01-01",
+            "death_date": "1946-05-07"
+        },
+        "1274102": {
+            "name": "Ahmadu Bello",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Bello_Ahmadu",
+            "head_of_state": "religious_type",
+            "head_of_government": "religious_type",
+            "start_date": "1945-11-01",
+            "death_date": "1966-01-15"
+        },
+        "1274103": {
+            "name": "Siddiq Abubakar III",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.5,
+            "picture": "NIG_M_Abubakar_III",
+            "head_of_state": "administrator_type",
+            "start_date": "1938-01-01",
+            "death_date": "1988-11-01"
+        },
+        "1274104": {
+            "name": "Ibrahim Dasuki I",
+            "ideology": "social_cons_idolg",
+            "moral_leader": true,
+            "loyalty": 0.5,
+            "picture": "NIG_M_Dasuki_I",
+            "head_of_state": "religious_type",
+            "start_date": "1988-11-01",
+            "death_date": "1996-04-20"
+        },
+        "1274105": {
+            "name": "Ogunsheye",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Ogunsheye",
+            "head_of_state": "courageous_type",
+            "head_of_government": "courageous_type",
+            "start_date": "1952-07-01",
+            "death_date": "1952-12-01"
+        },
+        "1274106": {
+            "name": "Uche Omo",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Omo_Uche",
+            "head_of_state": "bureaucrat_type",
+            "head_of_government": "bureaucrat_type",
+            "start_date": "1952-07-01",
+            "death_date": "1953-01-01"
+        },
+        "1274107": {
+            "name": "Chukwudolue Orhakamalu",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Orhakamalu_Chukwudolue",
+            "head_of_state": "bureaucrat_type",
+            "head_of_government": "bureaucrat_type",
+            "start_date": "1953-01-01",
+            "death_date": "1966-01-01"
+        },
+        "1274108": {
+            "name": "Domkat Bali",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Bali_Domkat",
+            "head_of_state": "courageous_type",
+            "head_of_government": "courageous_type",
+            "start_date": "1984-09-14",
+            "death_date": "1990-01-10"
+        },
+        "1274109": {
+            "name": "Akanbi Oniyangi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Oniyangi_Akanbi",
+            "head_of_state": "traditionalist_type",
+            "head_of_government": "traditionalist_type",
+            "start_date": "1981-09-14",
+            "death_date": "1983-01-16"
+        },
+        "1274110": {
+            "name": "Iya Abubakar",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Abubakar_Iya",
+            "head_of_state": "courteous_figure",
+            "head_of_government": "courteous_figure",
+            "start_date": "1979-09-12",
+            "death_date": "1981-09-13"
+        },
+        "1274111": {
+            "name": "Bolaji Akinyemi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Akinyemi_Bolaji",
+            "head_of_state": "administrator_type",
+            "head_of_government": "administrator_type",
+            "start_date": "1975-12-23",
+            "death_date": "1987-03-29"
+        },
+        "1274112": {
+            "name": "Chinua Achebe",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Achebe_Chinua",
+            "head_of_state": "administrator_type",
+            "head_of_government": "administrator_type",
+            "start_date": "1982-01-01",
+            "death_date": "2300-01-01"
+        },
+        "1274113": {
+            "name": "Ken Saro-Wiwa",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Saro-Wiwa_Ken",
+            "head_of_state": "courageous_type",
+            "head_of_government": "courageous_type",
+            "start_date": "1970-01-01",
+            "death_date": "1995-11-10"
+        },
+        "1274114": {
+            "name": "Victor Chibundu",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Chibundu_Victor",
+            "head_of_state": "ambitious_type",
+            "head_of_government": "ambitious_type",
+            "start_date": "1961-01-01",
+            "death_date": "2300-01-01"
+        },
+        "1274115": {
+            "name": "Michael Imoudu",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Imoudu_Michael",
+            "head_of_state": "hardliner_type",
+            "head_of_government": "hardliner_type",
+            "start_date": "1947-01-01",
+            "death_date": "2005-07-22"
+        },
+        "1274116": {
+            "name": "Wahab Goodluck",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Goodluck_Wahab",
+            "head_of_state": "fortunate_type",
+            "head_of_government": "fortunate_type",
+            "start_date": "1944-01-01",
+            "death_date": "1991-09-10"
+        },
+        "1274117": {
+            "name": "Mohammed Marwa",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Marwa_Mohammed",
+            "head_of_state": "religious_type",
+            "head_of_government": "religious_type",
+            "start_date": "1945-01-01",
+            "death_date": "1980-12-01"
+        },
+        "1274118": {
+            "name": "Abdullahi Bayero",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Bayero_Abdullahi",
+            "head_of_state": "zealous_type",
+            "head_of_government": "zealous_type",
+            "start_date": "1927-02-14",
+            "death_date": "1953-12-03"
+        },
+        "1274119": {
+            "name": "Muhammadu Sanusi",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Sanusi_Muhammadu",
+            "head_of_state": "traditionalist_type",
+            "head_of_government": "traditionalist_type",
+            "start_date": "1953-12-03",
+            "death_date": "1963-07-01"
+        },
+        "1274120": {
+            "name": "Ado Bayero",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Bayero_Ado",
+            "head_of_state": "traditionalist_type",
+            "head_of_government": "traditionalist_type",
+            "start_date": "1963-10-22",
+            "death_date": "2300-01-01"
+        },
+        "1274121": {
+            "name": "Yakubu Theophilus Danjuma",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Danjuma_Yakubu_T",
+            "head_of_state": "democrat_type",
+            "head_of_government": "democrat_type",
+            "start_date": "1975-07-01",
+            "death_date": "2300-01-01"
+        },
+        "1274122": {
+            "name": "Moshood Kashimawo Olawale Abiola",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NIG_M_Abiola_Moshood_K_O",
+            "head_of_state": "visionary_type",
+            "head_of_government": "visionary_type",
+            "start_date": "1979-01-01",
+            "death_date": "1998-07-07"
+        }
+    }
+}

@@ -131,14 +131,13 @@ public class World {
     }
 
     public void createCountriesColorTexture() {
-
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
         pixmap.setColor(Color.BLACK);
         pixmap.fill();
-        for(Country country : this.countries) {
-            for(LandProvince province : country.getProvinces()) {
+        for(Province province : provinces.values()) {
+            if(province instanceof LandProvince) {
                 for(Pixel pixel : province.getPixels()) {
-                    pixmap.drawPixel(pixel.getX(), pixel.getY(), Color.rgba8888(country.getColor()));
+                    pixmap.drawPixel(pixel.getX(), pixel.getY(), Color.rgba8888(((LandProvince) province).getCountryOwner().getColor()));
                 }
             }
         }
