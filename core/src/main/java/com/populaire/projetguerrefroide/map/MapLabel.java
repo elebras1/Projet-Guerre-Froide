@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MapLabel {
-
+    private String label;
     private Pixel centroid;
     private Pixel[] farthestPoints;
-    //attribute convexHull is temporar to test the convexHull method
-    private List<Pixel> convexHull;
-    public MapLabel(List<Pixel> borderPixels) {
+    public MapLabel(String label, List<Pixel> borderPixels) {
+        this.label = label;
         List<Pixel> convexHull = getConvexHull(borderPixels);
-        this.convexHull = convexHull;
         this.centroid = getCentroid(convexHull);
         this.farthestPoints = findFarthestPoints(convexHull);
         System.out.println("Centroid: " + centroid);
@@ -25,11 +23,6 @@ public class MapLabel {
     public Pixel[] getFarthestPoints() {
         return farthestPoints;
     }
-
-    public List<Pixel> getConvexHull() {
-        return convexHull;
-    }
-
 
     public List<Pixel> getConvexHull(List<Pixel> borderPixels) {
         List<Pixel> approximateBorder = new ArrayList<>();

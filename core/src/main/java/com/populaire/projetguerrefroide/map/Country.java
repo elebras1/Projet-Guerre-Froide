@@ -2,6 +2,7 @@ package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.graphics.Color;
 import com.populaire.projetguerrefroide.entities.Minister;
+import com.populaire.projetguerrefroide.entities.Population;
 
 import java.util.*;
 import java.util.List;
@@ -138,26 +139,30 @@ public class Country {
 
     public void createLabels() {
         this.labels = new ArrayList<>();
-        Map<Continent, List<LandProvince>> provincesContinent = new HashMap<>();
-        for(LandProvince province : this.provinces) {
-            if(provincesContinent.containsKey(province.getContinent())) {
-                provincesContinent.get(province.getContinent()).add(province);
-            } else {
-                List<LandProvince> provinces = new ArrayList<>();
-                provinces.add(province);
-                provincesContinent.put(province.getContinent(), provinces);
+        Set<LandProvince> visitedProvinces = new HashSet<>();
+
+        for (LandProvince province : this.provinces) {
+            if (!visitedProvinces.contains(province)) {
+                List<LandProvince> connectedProvinces = new ArrayList<>();
+                this.getConnectedProvinces(province, visitedProvinces, connectedProvinces);
+                if(connectedProvinces.size() > 5 || (connectedProvinces.size() == this.provinces.size() && connectedProvinces.size() > 1)) {
+                    MapLabel label = new MapLabel(this.getName(), this.getPixelsBorder(connectedProvinces));
+                    this.labels.add(label);
+                }
             }
         }
-        System.out.println("Country " + this.name + " :");
-        for(List<LandProvince> provinces : provincesContinent.values()) {
-            MapLabel label = new MapLabel(this.getPixelsBorder(provinces));
-            this.labels.add(label);
+    }
+
+    public void getConnectedProvinces(LandProvince province, Set<LandProvince> visitedProvinces, List<LandProvince> connectedProvinces) {
+        visitedProvinces.add(province);
+        connectedProvinces.add(province);
+        for(Province adjacentProvince : province.getAdjacentProvinces()) {
+            if(adjacentProvince instanceof LandProvince adjacentLandProvince) {
+                if(!visitedProvinces.contains(adjacentProvince) && adjacentLandProvince.getCountryOwner().equals(this)) {
+                    this.getConnectedProvinces(adjacentLandProvince, visitedProvinces, connectedProvinces);
+                }
+            }
         }
-        System.out.println("Number labels : " + this.labels.size());
-        for(Continent continent : provincesContinent.keySet()) {
-            System.out.println(continent.getName() + " number provinces : " + provincesContinent.get(continent).size());
-        }
-        System.out.println("\n");
     }
 
     public List<MapLabel> getLabels() {

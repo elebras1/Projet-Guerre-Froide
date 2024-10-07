@@ -142,7 +142,7 @@ public class World {
             }
         }
 
-        /*for (Country country : this.countries) {
+        for (Country country : this.countries) {
             country.createLabels();
             for (MapLabel label : country.getLabels()) {
                 Pixel centroid = label.getCentroid();
@@ -158,7 +158,7 @@ public class World {
                 pixmap.drawLine(farthestPoints[0].getX(), farthestPoints[0].getY(), centroid.getX(), centroid.getY());
                 pixmap.drawLine(farthestPoints[1].getX(), farthestPoints[1].getY(), centroid.getX(), centroid.getY());
             }
-        }*/
+        }
 
         this.countriesColorTexture = new Texture(pixmap);
         pixmap.dispose();
@@ -194,7 +194,7 @@ public class World {
 
 
     public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
-        this.mapShader.bind();
+        /*this.mapShader.bind();
         this.provincesColorTexture.bind(0);
         this.countriesColorTexture.bind(1);
         this.colorMapWaterTexture.bind(2);
@@ -228,7 +228,7 @@ public class World {
         }
         this.mapShader.setUniformMatrix("u_projTrans", cam.combined);
 
-        batch.setShader(this.mapShader);
+        batch.setShader(this.mapShader);*/
         batch.begin();
         batch.draw(this.countriesColorTexture, -WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.draw(this.countriesColorTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
