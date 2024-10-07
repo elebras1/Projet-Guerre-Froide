@@ -6,6 +6,7 @@ import com.populaire.projetguerrefroide.entities.Population;
 import java.util.*;
 
 public class LandProvince implements Province {
+    private List<Province> adjacentProvinces;
     private final Set<Pixel> pixels;
     private Color color;
     private short id;
@@ -21,6 +22,7 @@ public class LandProvince implements Province {
         this.countryOwner = countryOwner;
         this.countryController = countryController;
         this.population = population;
+        this.adjacentProvinces = new ArrayList<>();
         this.pixels = new HashSet<>();
     }
 
@@ -76,6 +78,14 @@ public class LandProvince implements Province {
         this.continent = continent;
     }
 
+    public void addAllAdjacentProvince(List<Province> provinces) {
+        this.adjacentProvinces.addAll(provinces);
+    }
+
+    public List<Province> getAdjacentProvinces() {
+        return this.adjacentProvinces;
+    }
+
     public Continent getContinent() {
         return this.continent;
     }
@@ -89,9 +99,9 @@ public class LandProvince implements Province {
 
     public boolean isPixelBorder(short x, short y) {
         return !this.pixels.contains(new Pixel((short) (x + 1), y))
-                || !this.pixels.contains(new Pixel((short) (x - 1), y))
-                || !this.pixels.contains(new Pixel(x, (short) (y + 1)))
-                || !this.pixels.contains(new Pixel(x, (short) (y - 1)));
+            || !this.pixels.contains(new Pixel((short) (x - 1), y))
+            || !this.pixels.contains(new Pixel(x, (short) (y + 1)))
+            || !this.pixels.contains(new Pixel(x, (short) (y - 1)));
     }
 
     public List<Pixel> getPixelsBorder() {
@@ -121,6 +131,7 @@ public class LandProvince implements Province {
                 ", number_pixels=" + this.pixels.size() +
                 ", owner=" + this.countryOwner.getName() +
                 ", controller=" + this.countryController.getName() +
+                ", number_adjacentProvinces=" + this.adjacentProvinces.size() +
                 '}';
     }
 }

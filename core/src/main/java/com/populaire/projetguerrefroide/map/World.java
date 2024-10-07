@@ -136,40 +136,62 @@ public class World {
         pixmap.fill();
         for(Province province : provinces.values()) {
             if(province instanceof LandProvince) {
-                for(Pixel pixel : province.getPixels()) {
+                for(Pixel pixel : ((LandProvince) province).getPixels()) {
                     pixmap.drawPixel(pixel.getX(), pixel.getY(), Color.rgba8888(((LandProvince) province).getCountryOwner().getColor()));
                 }
             }
         }
 
+        /*for (Country country : this.countries) {
+            country.createLabels();
+            for (MapLabel label : country.getLabels()) {
+                Pixel centroid = label.getCentroid();
+                Pixel[] farthestPoints = label.getFarthestPoints();
+                pixmap.setColor(Color.GREEN);
+                pixmap.drawCircle(farthestPoints[0].getX(), farthestPoints[0].getY(), 10);
+                pixmap.drawCircle(farthestPoints[1].getX(), farthestPoints[1].getY(), 10);
+
+                pixmap.setColor(Color.RED);
+                pixmap.drawCircle(centroid.getX(), centroid.getY(), 10);
+
+                pixmap.setColor(Color.BLUE);
+                pixmap.drawLine(farthestPoints[0].getX(), farthestPoints[0].getY(), centroid.getX(), centroid.getY());
+                pixmap.drawLine(farthestPoints[1].getX(), farthestPoints[1].getY(), centroid.getX(), centroid.getY());
+            }
+        }*/
 
         this.countriesColorTexture = new Texture(pixmap);
         pixmap.dispose();
     }
 
+
+
     public void createProvincesColorStripesTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
         for(Province province : this.provinces.values()) {
             if(province instanceof LandProvince && !((LandProvince) province).getCountryOwner().equals(((LandProvince) province).getCountryController())) {
-                for(Pixel pixel : province.getPixels()) {
+                for(Pixel pixel : ((LandProvince) province).getPixels()) {
                     pixmap.drawPixel(pixel.getX(), pixel.getY(), Color.rgba8888(((LandProvince) province).getCountryController().getColor()));
                 }
             }
         }
 
         this.provincesColorStripesTexture = new Texture(pixmap);
+        pixmap.dispose();
     }
 
     public void createBordersTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
         for(Country country : this.countries) {
-            for(Pixel pixel : country.getPixelsBorder()) {
+            for(Pixel pixel : country.getProvincesPixelsBorder()) {
                 pixmap.drawPixel(pixel.getX(), pixel.getY(), Color.rgba8888(Color.BLACK));
             }
         }
+
         this.bordersTexture = new Texture(pixmap);
         pixmap.dispose();
     }
+
 
     public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
         this.mapShader.bind();
@@ -208,9 +230,9 @@ public class World {
 
         batch.setShader(this.mapShader);
         batch.begin();
-        batch.draw(this.defaultTexture, -WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
-        batch.draw(this.defaultTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
-        batch.draw(this.defaultTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        batch.draw(this.countriesColorTexture, -WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        batch.draw(this.countriesColorTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        batch.draw(this.countriesColorTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.end();
         batch.setShader(null);
 

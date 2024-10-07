@@ -2,10 +2,13 @@ package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.graphics.Color;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class WaterProvince implements Province{
+    private List<Province> adjacentProvinces;
     private final Set<Pixel> pixels;
     private Color color;
     private short id;
@@ -13,6 +16,7 @@ public class WaterProvince implements Province{
 
     public WaterProvince(short id) {
         this.id = id;
+        this.adjacentProvinces = new ArrayList<>();
         this.pixels = new HashSet<>();
     }
     @Override
@@ -23,16 +27,6 @@ public class WaterProvince implements Province{
     @Override
     public void setColor(Color color) {
         this.color = color;
-    }
-
-    @Override
-    public Set<Pixel> getPixels() {
-        return this.pixels;
-    }
-
-    @Override
-    public void addPixel(short x, short y) {
-        this.pixels.add(new Pixel(x, y));
     }
 
     @Override
@@ -56,7 +50,12 @@ public class WaterProvince implements Province{
     }
 
     @Override
-    public boolean isPixelProvince(short x, short y) {
-        return this.pixels.contains(new Pixel(x, y));
+    public void addAllAdjacentProvince(List<Province> provinces) {
+        this.adjacentProvinces.addAll(provinces);
+    }
+
+    @Override
+    public List<Province> getAdjacentProvinces() {
+        return this.adjacentProvinces;
     }
 }

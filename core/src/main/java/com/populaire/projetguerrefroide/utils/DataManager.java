@@ -11,14 +11,12 @@ import com.populaire.projetguerrefroide.entities.Minister;
 import com.populaire.projetguerrefroide.entities.Population;
 import com.populaire.projetguerrefroide.map.*;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.StringReader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.*;
 
 public class DataManager {
     private static final String basePath = "common/";
@@ -32,6 +30,7 @@ public class DataManager {
     private static final String definitionCsvFile = mapPath + "definition.csv";
     private static final String continentJsonFile = mapPath + "continent.json";
     private static final String positionsJsonFile = mapPath + "positions.json";
+    private static final String adjenciesJsonFile = mapPath + "adjacencies.json";
     private static final String provinceNamesCsvFile = localisationPath + "province_names.csv";
     private static final String newgameCsvFile = localisationPath + "newgame.csv";
     private static final String bookmarkJsonFile = basePath + "bookmark.json";
@@ -60,6 +59,7 @@ public class DataManager {
         this.readProvinceNamesCsv(provinces);
         this.readCountriesHistoryJson(provinces);
         this.readContinentJsonFile(provinces);
+        this.readAdjenciesJson(provinces);
 
         return provincesByColor;
     }
@@ -189,10 +189,10 @@ public class DataManager {
                     LandProvince province = (LandProvince) provinces.get(provinceId.shortValue());
                     if(province != null) {
                         province.setRegion(region);
-                    } /*else {
+                    } else {
                         WaterProvince waterProvince = new WaterProvince(provinceId.shortValue());
                         provinces.put(provinceId.shortValue(), waterProvince);
-                    }*/
+                    }
                 });
             });
         } catch (IOException e) {
@@ -208,7 +208,7 @@ public class DataManager {
                 if (!values[0].isEmpty()) {
                     short provinceId = Short.parseShort(values[0]);
                     Province province = provinces.get(provinceId);
-                    if(province != null) {
+                    if(province instanceof LandProvince) {
                         Color color = new Color(Float.parseFloat(values[1]) / 255, Float.parseFloat(values[2]) / 255, Float.parseFloat(values[3]) / 255, 1);
                         province.setColor(color);
                         provincesByColor.put(color, province);
@@ -239,9 +239,7 @@ public class DataManager {
                 Continent continent = new Continent(entry.getKey());
                 entry.getValue().forEach(provinceId -> {
                     LandProvince province = (LandProvince) provinces.get(provinceId.shortValue());
-                    if(province != null) {
-                        province.setContinent(continent);
-                    }
+                    province.setContinent(continent);
                 });
             });
         } catch (IOException e) {
@@ -283,8 +281,8 @@ public class DataManager {
             for (short x = 0; x < bitmap.getWidth(); x++) {
                 Color color = new Color(bitmap.getPixel(x, y));
                 Province province = provincesByColor.get(color);
-                if(province != null) {
-                    province.addPixel(x, y);
+                if(province instanceof LandProvince) {
+                    ((LandProvince) province).addPixel(x, y);
                 }
             }
         }
@@ -305,10 +303,8 @@ public class DataManager {
                 if (values.length > localisationIndex && !values[0].isEmpty()) {
                     short provinceId = Short.parseShort(values[0]);
                     Province province = provinces.get(provinceId);
-                    if(province != null) {
-                        String provinceName = values[localisationIndex];
-                        province.setName(provinceName);
-                    }
+                    String provinceName = values[localisationIndex];
+                    province.setName(provinceName);
                 }
             }
         } catch (IOException e) {
@@ -392,5 +388,75 @@ public class DataManager {
         return localisation;
     }
 
+    private void readAdjenciesJson(Map<Short, Province> provinces) {
+        try {
+            JsonNode adjenciesJson = openJson(adjenciesJsonFile);
+            adjenciesJson.fields().forEachRemaining(entry -> {
+                short provinceId = Short.parseShort(entry.getKey());
+                Province province = provinces.get(provinceId);
+                List<Province> adjacencies = new ArrayList<>();
+                entry.getValue().forEach(adjacency -> adjacencies.add(provinces.get(adjacency.shortValue())));
+                province.addAllAdjacentProvince(adjacencies);
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*private void adjenciesJsonMaker(Set<Province> provinces) throws InterruptedException, ExecutionException {
+        String adjenciesFileToCreate = Gdx.files.getLocalStoragePath() + "adjacencies.json";
+        Map<Short, List<Short>> adjacencyMap = new ConcurrentHashMap<>();
+        ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        List<Future<?>> futures = new ArrayList<>();
+        int count = 0;
+        int countFuture = 0;
+
+        for (Province province : provinces) {
+            futures.add(executor.submit(() -> {
+                Short provinceId = province.getId();
+                adjacencyMap.put(provinceId, new ArrayList<>());
+
+                for (Province otherProvince : provinces) {
+                    if (!province.equals(otherProvince)) {
+                        for (Pixel pixel : province.getPixelsBorder()) {
+                            if (otherProvince.isPixelBorder(pixel.getX(), pixel.getY())) {
+                                adjacencyMap.get(provinceId).add(otherProvince.getId());
+                                break;
+                            }
+                        }
+                    }
+                }
+            }));
+            count++;
+            System.out.println(count + " / " + provinces.size());
+        }
+
+        for (Future<?> future : futures) {
+            future.get();
+            countFuture++;
+            System.out.println("Future : " + countFuture + " / " + futures.size());
+        }
+
+        System.out.println("adjencyMap : " + adjacencyMap);
+
+        executor.shutdown();
+
+        StringBuilder jsonBuilder = new StringBuilder();
+        jsonBuilder.append("{\n");
+        for (Map.Entry<Short, List<Short>> entry : adjacencyMap.entrySet()) {
+            jsonBuilder.append("  \"").append(entry.getKey()).append("\": ").append(entry.getValue()).append(",\n");
+        }
+        if (jsonBuilder.length() > 2) {
+            jsonBuilder.setLength(jsonBuilder.length() - 2);
+        }
+        jsonBuilder.append("\n}");
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(adjenciesFileToCreate))) {
+            writer.write(jsonBuilder.toString());
+            System.out.println("File " + adjenciesFileToCreate + " created.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }*/
 
 }

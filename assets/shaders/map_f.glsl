@@ -261,12 +261,12 @@ vec4 getLandFar(vec4 colorCountry, vec2 texCoord, vec2 ip) {
         political.rgb = mix(political.rgb, vec3(grey), 0.5);
     }
 
-    /*vec4 stripeColor = texture(u_textureProvincesStripes, texCoord);
+    vec4 stripeColor = texture(u_textureProvincesStripes, texCoord);
     if(stripeColor.a > 0.0) {
         vec2 stripeCoord = fract(texCoord * vec2(512.0, 512.0 * mapSize.y / mapSize.x));
         float stripeFactor = texture(u_textureStripes, stripeCoord).a;
         political.rgb = clamp(mix(political.rgb, stripeColor.rgb, stripeFactor), 0.0, 1.0).rgb;
-    }*/
+    }
 
     vec4 overlayColor = texture(u_textureOverlayTile, v_texCoords * vec2(11., 11. * mapSize.y / mapSize.x));
     if (overlayColor.r < 0.5) {
@@ -281,11 +281,6 @@ vec4 getLandFar(vec4 colorCountry, vec2 texCoord, vec2 ip) {
     return colorCountry;
 }
 
-bool isNonZeroColor(vec4 color) {
-    return (color.r > 0.0 || color.g > 0.0 || color.b > 0.0);
-}
-
-
 void main()
 {
     vec2 texCoord = getCorrectedTexCoord();
@@ -293,15 +288,16 @@ void main()
     vec4 colorCountry = hqxFilter(ip, u_textureCountries);
     vec4 terrain;
     vec4 water;
+    int redColorWater = 0;
 
     if(u_zoom > .8) {
-        if(colorCountry.r > 0.0) {
+        if(colorCountry.r > redColorWater) {
             terrain = getLandFar(colorCountry, texCoord, ip);
         } else {
             water = getWaterFar(texCoord);
         }
     } else {
-        if(colorCountry.r > 0.0) {
+        if(colorCountry.r > redColorWater) {
             terrain = getLandClose(colorCountry, texCoord, ip);
         } else {
             water = getWaterClose(texCoord);

@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.populaire.projetguerrefroide.entities.Minister;
 
 import java.util.*;
+import java.util.List;
 
 public class Country {
     private final String id;
@@ -16,6 +17,7 @@ public class Country {
     private String ideology;
     private Integer headOfGovernment;
     private Integer headOfState;
+    private List<MapLabel> labels;
 
     public Country(String id, String name, Color color) {
         this.id = id;
@@ -103,13 +105,63 @@ public class Country {
         return population;
     }
 
-    public List<Pixel> getPixelsBorder() {
+    public List<Pixel> getProvincesPixelsBorder() {
         List<Pixel> pixelsBorder = new ArrayList<>();
         for(LandProvince province : this.provinces) {
             pixelsBorder.addAll(province.getPixelsBorder());
         }
 
         return pixelsBorder;
+    }
+
+    public List<Pixel> getPixelsBorder(List<LandProvince> provinces) {
+        List<Pixel> pixelsBorder = new ArrayList<>();
+        Set<Pixel> provincesPixels = new HashSet<>();
+        for(LandProvince province : provinces) {
+            provincesPixels.addAll(province.getPixels());
+        }
+        for(Pixel pixel : provincesPixels) {
+            if(this.isPixelBorder(pixel.getX(), pixel.getY(), provincesPixels)) {
+                pixelsBorder.add(pixel);
+            }
+        }
+
+        return pixelsBorder;
+    }
+
+    public boolean isPixelBorder(short x, short y, Set<Pixel> pixels) {
+        return !pixels.contains(new Pixel((short) (x + 1), y))
+            || !pixels.contains(new Pixel((short) (x - 1), y))
+            || !pixels.contains(new Pixel(x, (short) (y + 1)))
+            || !pixels.contains(new Pixel(x, (short) (y - 1)));
+    }
+
+    public void createLabels() {
+        this.labels = new ArrayList<>();
+        Map<Continent, List<LandProvince>> provincesContinent = new HashMap<>();
+        for(LandProvince province : this.provinces) {
+            if(provincesContinent.containsKey(province.getContinent())) {
+                provincesContinent.get(province.getContinent()).add(province);
+            } else {
+                List<LandProvince> provinces = new ArrayList<>();
+                provinces.add(province);
+                provincesContinent.put(province.getContinent(), provinces);
+            }
+        }
+        System.out.println("Country " + this.name + " :");
+        for(List<LandProvince> provinces : provincesContinent.values()) {
+            MapLabel label = new MapLabel(this.getPixelsBorder(provinces));
+            this.labels.add(label);
+        }
+        System.out.println("Number labels : " + this.labels.size());
+        for(Continent continent : provincesContinent.keySet()) {
+            System.out.println(continent.getName() + " number provinces : " + provincesContinent.get(continent).size());
+        }
+        System.out.println("\n");
+    }
+
+    public List<MapLabel> getLabels() {
+        return this.labels;
     }
 
     @Override
