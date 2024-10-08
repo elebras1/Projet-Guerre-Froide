@@ -145,18 +145,10 @@ public class World {
         for (Country country : this.countries) {
             country.createLabels();
             for (MapLabel label : country.getLabels()) {
-                Pixel centroid = label.getCentroid();
-                Pixel[] farthestPoints = label.getFarthestPoints();
-                pixmap.setColor(Color.GREEN);
-                pixmap.drawCircle(farthestPoints[0].getX(), farthestPoints[0].getY(), 10);
-                pixmap.drawCircle(farthestPoints[1].getX(), farthestPoints[1].getY(), 10);
-
-                pixmap.setColor(Color.RED);
-                pixmap.drawCircle(centroid.getX(), centroid.getY(), 10);
-
                 pixmap.setColor(Color.BLUE);
-                pixmap.drawLine(farthestPoints[0].getX(), farthestPoints[0].getY(), centroid.getX(), centroid.getY());
-                pixmap.drawLine(farthestPoints[1].getX(), farthestPoints[1].getY(), centroid.getX(), centroid.getY());
+                for(Pixel pixel : label.calculateQuadraticBezierCurve()) {
+                    pixmap.drawPixel(pixel.getX(), pixel.getY());
+                }
             }
         }
 
