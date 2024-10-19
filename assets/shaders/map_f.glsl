@@ -184,26 +184,26 @@ vec4 getTerrainMix(vec2 texCoord) {
 }
 
 vec4 getBorder(vec4 filteredColorProvince, vec4 filteredColorCountry, vec2 ip) {
-    vec4 colorProvinceRight = texelFetch(u_textureProvinces, ivec2(ip + vec2(0.2, 0)), 0);
-    vec4 filteredColorProvinceRight = hqxFilter(ip + vec2(0.2, 0), u_textureProvinces);
+    vec4 colorProvinceRight = texelFetch(u_textureProvinces, ivec2(ip + vec2(0.1, 0)), 0);
+    vec4 filteredColorProvinceRight = hqxFilter(ip + vec2(0.1, 0), u_textureProvinces);
     if (distance(filteredColorProvince.rgb, filteredColorProvinceRight.rgb) > threshold) {
         return vec4(0.0, 0.0, 0.0, 1.0);
     }
 
-    vec4 colorProvinceLeft = texelFetch(u_textureProvinces, ivec2(ip + vec2(-0.2, 0)), 0);
-    vec4 filteredColorProvinceLeft = hqxFilter(ip + vec2(-0.2, 0), u_textureProvinces);
+    vec4 colorProvinceLeft = texelFetch(u_textureProvinces, ivec2(ip + vec2(-0.1, 0)), 0);
+    vec4 filteredColorProvinceLeft = hqxFilter(ip + vec2(-0.1, 0), u_textureProvinces);
     if (distance(filteredColorProvince.rgb, filteredColorProvinceLeft.rgb) > threshold) {
         return vec4(0.0, 0.0, 0.0, 1.0);
     }
 
-    vec4 colorProvinceUp = texelFetch(u_textureProvinces, ivec2(ip + vec2(0, 0.2)), 0);
-    vec4 filteredColorProvinceUp = hqxFilter(ip + vec2(0, 0.2), u_textureProvinces);
+    vec4 colorProvinceUp = texelFetch(u_textureProvinces, ivec2(ip + vec2(0, 0.1)), 0);
+    vec4 filteredColorProvinceUp = hqxFilter(ip + vec2(0, 0.1), u_textureProvinces);
     if (distance(filteredColorProvince.rgb, filteredColorProvinceUp.rgb) > threshold) {
         return vec4(0.0, 0.0, 0.0, 1.0);
     }
 
-    vec4 colorProvinceDown = texelFetch(u_textureProvinces, ivec2(ip + vec2(0, -0.2)), 0);
-    vec4 filteredColorProvinceDown = hqxFilter(ip + vec2(0, -0.2), u_textureProvinces);
+    vec4 colorProvinceDown = texelFetch(u_textureProvinces, ivec2(ip + vec2(0, -0.1)), 0);
+    vec4 filteredColorProvinceDown = hqxFilter(ip + vec2(0, -0.1), u_textureProvinces);
     if (distance(filteredColorProvince.rgb, filteredColorProvinceDown.rgb) > threshold) {
         return vec4(0.0, 0.0, 0.0, 1.0);
     }

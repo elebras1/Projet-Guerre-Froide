@@ -98,10 +98,17 @@ public class LandProvince implements Province {
     }
 
     public boolean isPixelBorder(short x, short y) {
-        return !this.pixels.contains(new Pixel((short) (x + 1), y))
-            || !this.pixels.contains(new Pixel((short) (x - 1), y))
-            || !this.pixels.contains(new Pixel(x, (short) (y + 1)))
-            || !this.pixels.contains(new Pixel(x, (short) (y - 1)));
+        for (Province adjacentProvince : this.adjacentProvinces) {
+            if(adjacentProvince instanceof LandProvince adjacentLandProvince) {
+                if(adjacentLandProvince.isPixelProvince((short) (x + 1), y)
+                    || adjacentLandProvince.isPixelProvince((short) (x - 1), y)
+                    || adjacentLandProvince.isPixelProvince(x, (short) (y + 1))
+                    || adjacentLandProvince.isPixelProvince(x, (short) (y - 1))) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public List<Pixel> getPixelsBorder() {
@@ -111,6 +118,7 @@ public class LandProvince implements Province {
                 pixelsBorder.add(pixel);
             }
         }
+
         return pixelsBorder;
     }
 

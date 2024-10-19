@@ -2,7 +2,6 @@ package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.util.ArrayList;
@@ -12,38 +11,38 @@ public class MapLabel {
     private String label;
     private Pixel centroid;
     private Pixel[] farthestPoints;
+    private List<Pixel> bezierPoints;
+    private static final BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/tahoma_60.fnt"), false);
+
     public MapLabel(String label, List<Pixel> borderPixels) {
         this.label = label;
-        List<Pixel> convexHull = getConvexHull(borderPixels);
-        this.centroid = getCentroid(convexHull);
-        this.farthestPoints = findFarthestPoints(convexHull);
-        System.out.println("Centroid: " + centroid);
-        System.out.println("Farthest points: " + farthestPoints[0] + " " + farthestPoints[1]);
+        List<Pixel> convexHull = this.getConvexHull(borderPixels);
+        this.centroid = this.getCentroid(convexHull);
+        this.farthestPoints = this.findFarthestPoints(convexHull);
+        this.bezierPoints = this.calculateQuadraticBezierCurve();
     }
 
-    public Pixel getCentroid() {
-        return centroid;
-    }
-
-    public Pixel[] getFarthestPoints() {
-        return farthestPoints;
+    public Pixel getTexturePosition() {
+        return new Pixel((short) Math.min(farthestPoints[0].getX(), farthestPoints[1].getX()), (short) Math.min(farthestPoints[0].getY(), farthestPoints[1].getY()));
     }
 
     private List<Pixel> getConvexHull(List<Pixel> borderPixels) {
         List<Pixel> approximateBorder = new ArrayList<>();
         int step = 5;
+        Pixel minPixel = this.getMinPixel(borderPixels);
+        Pixel maxPixel = this.getMaxPixel(borderPixels);
 
-        for (int x = getMinX(borderPixels); x <= getMaxX(borderPixels); x += step) {
-            Pixel minYPoint = getMinYPointInRange(borderPixels, x, x + step);
-            Pixel maxYPoint = getMaxYPointInRange(borderPixels, x, x + step);
+        for (int x = minPixel.getX(); x <= maxPixel.getX(); x += step) {
+            Pixel minYPoint = this.getMinYPointInRange(borderPixels, x, x + step);
+            Pixel maxYPoint = this.getMaxYPointInRange(borderPixels, x, x + step);
 
             if (minYPoint != null) approximateBorder.add(minYPoint);
             if (maxYPoint != null) approximateBorder.add(maxYPoint);
         }
 
-        for (int y = getMinY(borderPixels); y <= getMaxY(borderPixels); y += step) {
-            Pixel minXPoint = getMinXPointInRange(borderPixels, y, y + step);
-            Pixel maxXPoint = getMaxXPointInRange(borderPixels, y, y + step);
+        for (int y = minPixel.getY(); y <= maxPixel.getY(); y += step) {
+            Pixel minXPoint = this.getMinXPointInRange(borderPixels, y, y + step);
+            Pixel maxXPoint = this.getMaxXPointInRange(borderPixels, y, y + step);
 
             if (minXPoint != null) approximateBorder.add(minXPoint);
             if (maxXPoint != null) approximateBorder.add(maxXPoint);
@@ -100,21 +99,34 @@ public class MapLabel {
         return maxXPoint;
     }
 
+    private Pixel getMinPixel(List<Pixel> pixels) {
+        short xMin = Short.MAX_VALUE;
+        short yMin = Short.MAX_VALUE;
+        for(Pixel pixel : pixels) {
+            if(pixel.getX() < xMin) {
+                xMin = pixel.getX();
+            }
+            if(pixel.getY() < yMin) {
+                yMin = pixel.getY();
+            }
+        }
 
-    private int getMinX(List<Pixel> pixels) {
-        return pixels.stream().mapToInt(Pixel::getX).min().orElse(0);
+        return new Pixel(xMin, yMin);
     }
 
-    private int getMaxX(List<Pixel> pixels) {
-        return pixels.stream().mapToInt(Pixel::getX).max().orElse(0);
-    }
+    private Pixel getMaxPixel(List<Pixel> pixels) {
+        short xMax = 0;
+        short yMax = 0;
+        for(Pixel pixel : pixels) {
+            if(pixel.getX() > xMax) {
+                xMax = pixel.getX();
+            }
+            if(pixel.getY() > yMax) {
+                yMax = pixel.getY();
+            }
+        }
 
-    private int getMinY(List<Pixel> pixels) {
-        return pixels.stream().mapToInt(Pixel::getY).min().orElse(0);
-    }
-
-    private int getMaxY(List<Pixel> pixels) {
-        return pixels.stream().mapToInt(Pixel::getY).max().orElse(0);
+        return new Pixel(xMax, yMax);
     }
 
     private Pixel getCentroid(List<Pixel> pixels) {
@@ -163,13 +175,10 @@ public class MapLabel {
         };
     }
 
-    public List<Pixel> calculateQuadraticBezierCurve() {
+    private List<Pixel> calculateQuadraticBezierCurve() {
         List<Pixel> points = new ArrayList<>();
 
-        double distance = Math.sqrt(Math.pow(farthestPoints[1].getX() - farthestPoints[0].getX(), 2) + Math.pow(farthestPoints[1].getY() - farthestPoints[0].getY(), 2));
-
-        int numberOfPoints = (int) distance / 10;
-        numberOfPoints = Math.max(numberOfPoints, 10);
+        int numberOfPoints = this.label.length();
 
         for (int i = 0; i < numberOfPoints; i++) {
             float t = i / (float) numberOfPoints;
@@ -181,10 +190,4 @@ public class MapLabel {
 
         return points;
     }
-
-    public void draw(SpriteBatch batch) {
-        BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/tahoma_60.fnt"), false);
-    }
-
-
 }

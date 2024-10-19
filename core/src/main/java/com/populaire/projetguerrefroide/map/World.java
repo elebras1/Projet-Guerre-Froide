@@ -62,6 +62,9 @@ public class World {
         this.overlayTileTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         this.defaultTexture = new Texture(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGB888);
         this.createBordersTexture();
+        for(Country country : this.countries) {
+            country.createLabels();
+        }
 
         String[] terrainTexturePaths = new String[64];
         String pathBase = "map/terrain/textures/";
@@ -72,9 +75,9 @@ public class World {
         long endTimeTextures = System.currentTimeMillis();
         LOGGER.info("Textures loaded in " + (endTimeTextures - startTimeTextures) + "ms");
 
-        String vertexShader = Gdx.files.internal("shaders/map_v.glsl").readString();
-        String fragmentShader = Gdx.files.internal("shaders/map_f.glsl").readString();
-        this.mapShader = new ShaderProgram(vertexShader, fragmentShader);
+        String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
+        String fragmentMapShader = Gdx.files.internal("shaders/map_f.glsl").readString();
+        this.mapShader = new ShaderProgram(vertexMapShader, fragmentMapShader);
         ShaderProgram.pedantic = false;
 
         long endTime = System.currentTimeMillis();
@@ -104,7 +107,6 @@ public class World {
 
         return null;
     }
-
 
     public void selectProvince(short x, short y) {
         this.selectedProvince = this.getProvinceByPixel(x, y);
@@ -142,16 +144,6 @@ public class World {
             }
         }
 
-        for (Country country : this.countries) {
-            country.createLabels();
-            for (MapLabel label : country.getLabels()) {
-                pixmap.setColor(Color.BLUE);
-                for(Pixel pixel : label.calculateQuadraticBezierCurve()) {
-                    pixmap.drawPixel(pixel.getX(), pixel.getY());
-                }
-            }
-        }
-
         this.countriesColorTexture = new Texture(pixmap);
         pixmap.dispose();
     }
@@ -184,9 +176,8 @@ public class World {
         pixmap.dispose();
     }
 
-
     public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
-        /*this.mapShader.bind();
+        this.mapShader.bind();
         this.provincesColorTexture.bind(0);
         this.countriesColorTexture.bind(1);
         this.colorMapWaterTexture.bind(2);
@@ -220,13 +211,13 @@ public class World {
         }
         this.mapShader.setUniformMatrix("u_projTrans", cam.combined);
 
-        batch.setShader(this.mapShader);*/
+        batch.setShader(this.mapShader);
         batch.begin();
         batch.draw(this.countriesColorTexture, -WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.draw(this.countriesColorTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.draw(this.countriesColorTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
-        batch.end();
         batch.setShader(null);
+        batch.end();
 
         Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
         Gdx.gl.glBindTexture(GL32.GL_TEXTURE_2D, 0);
