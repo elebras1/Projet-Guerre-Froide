@@ -2,6 +2,7 @@ package com.populaire.projetguerrefroide.ui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -72,7 +73,7 @@ public class FlagImage extends Image {
         super.draw(batch, parentAlpha);
 
         batch.setShader(null);
-        Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
+        Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
     }
 
     public void dispose() {

@@ -1,25 +1,42 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class MapLabel {
     private String label;
     private Pixel centroid;
     private Pixel[] farthestPoints;
-    private List<Pixel> bezierPoints;
-    private static final BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/tahoma_60.fnt"), false);
+    private List<CurvePoint> points;
+    private static final BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/trebuchet_45.fnt"), false);
+    private float fontScale;
+    private static class CurvePoint {
+        Pixel center;
+        Pixel origin;
+        float angle;
+
+        public CurvePoint() {
+        }
+
+    }
 
     public MapLabel(String label, List<Pixel> borderPixels) {
         this.label = label;
         List<Pixel> convexHull = this.getConvexHull(borderPixels);
-        this.centroid = this.getCentroid(convexHull);
-        this.farthestPoints = this.findFarthestPoints(convexHull);
-        this.bezierPoints = this.calculateQuadraticBezierCurve();
+        this.setCentroid(convexHull);
+        this.findFarthestPoints(convexHull);
+        this.calculateQuadraticBezierCurve();
+        GlyphLayout layout = new GlyphLayout();
+        this.setFontScale(layout);
+        this.setPointsOrigin(layout);
     }
 
     public Pixel getTexturePosition() {
@@ -129,11 +146,7 @@ public class MapLabel {
         return new Pixel(xMax, yMax);
     }
 
-    private Pixel getCentroid(List<Pixel> pixels) {
-        if (pixels.isEmpty()) {
-            return null;
-        }
-
+    private void setCentroid(List<Pixel> pixels) {
         int sumX = 0;
         int sumY = 0;
         for (Pixel pixel : pixels) {
@@ -142,10 +155,10 @@ public class MapLabel {
         }
         int centerX = sumX / pixels.size();
         int centerY = sumY / pixels.size();
-        return new Pixel((short) centerX, (short) centerY);
+        this.centroid = new Pixel((short) centerX, (short) centerY);
     }
 
-    private Pixel[] findFarthestPoints(List<Pixel> pixels) {
+    private void findFarthestPoints(List<Pixel> pixels) {
         double maxDistance = 0;
         Pixel farthestPoint1 = null;
         Pixel farthestPoint2 = null;
@@ -165,29 +178,81 @@ public class MapLabel {
             }
         }
 
-        if(farthestPoint1 == null) {
-            return null;
-        }
-
-        return new Pixel[]{
+        this.farthestPoints = new Pixel[] {
             new Pixel(farthestPoint1.getX(), farthestPoint1.getY()),
             new Pixel(farthestPoint2.getX(), farthestPoint2.getY())
         };
     }
 
-    private List<Pixel> calculateQuadraticBezierCurve() {
-        List<Pixel> points = new ArrayList<>();
+    private void setFontScale(GlyphLayout layout) {
+        layout.setText(font, label);
+        float textLength = layout.width;
+        float curveLength = this.approximateCurveLength();
+        this.fontScale = (curveLength / textLength) * 0.66f;
+    }
 
-        int numberOfPoints = this.label.length();
+    private void calculateQuadraticBezierCurve() {
+        this.points = new ArrayList<>();
+
+        int numberOfPoints = this.label.length() + 2;
 
         for (int i = 0; i < numberOfPoints; i++) {
             float t = i / (float) numberOfPoints;
             float x = (1 - t) * (1 - t) * this.farthestPoints[0].getX() + 2 * (1 - t) * t * centroid.getX() + t * t * this.farthestPoints[1].getX();
             float y = (1 - t) * (1 - t) * this.farthestPoints[0].getY() + 2 * (1 - t) * t * centroid.getY() + t * t * this.farthestPoints[1].getY();
 
-            points.add(new Pixel((short) x, (short) y));
+            CurvePoint curvePoint = new CurvePoint();
+            curvePoint.center = new Pixel((short) x, (short) y);
+            this.points.add(curvePoint);
         }
 
-        return points;
+        this.points.sort(Comparator.comparingInt(point -> point.center.getX()));
+
+        for (int i = 1; i < this.points.size() - 1; i++) {
+            CurvePoint previous = this.points.get(i - 1);
+            CurvePoint point = this.points.get(i);
+            CurvePoint next = this.points.get(i + 1);
+
+            float dx = (next.center.getX() - previous.center.getX()) / 2f;
+            float dy = (next.center.getY() - previous.center.getY()) / 2f;
+            point.angle = (float) Math.atan2(dy, dx);
+        }
+        this.points.remove(0);
+        this.points.remove(this.points.size() - 1);
     }
+
+    private float approximateCurveLength() {
+        float distance1 = (float) Math.sqrt(Math.pow(this.farthestPoints[0].getX() - this.centroid.getX(), 2) + Math.pow(this.farthestPoints[0].getY() - this.centroid.getY(), 2));
+        float distance2 = (float) Math.sqrt(Math.pow(this.farthestPoints[1].getX() - this.centroid.getX(), 2) + Math.pow(this.farthestPoints[1].getY() - this.centroid.getY(), 2));
+
+        return distance1 + distance2;
+    }
+
+    private void setPointsOrigin(GlyphLayout layout) {
+        layout.setText(font, this.label);
+
+        for (int i = 0; i < this.points.size(); i++) {
+            BitmapFont.Glyph glyph = layout.runs.first().glyphs.get(i);
+            float charWidth = glyph.width * this.fontScale;
+            float charHeight = glyph.height;
+
+            short x = (short) (this.points.get(i).center.getX() - (charWidth / 2));
+            short y = (short) (this.points.get(i).center.getY());
+
+            this.points.get(i).origin = new Pixel(x, y);
+        }
+    }
+
+    public void draw(SpriteBatch batch, ShaderProgram fontShader) {
+        font.getData().setScale(this.fontScale);
+        for (int i = 0; i < this.label.length(); i++) {
+            fontShader.setUniformf("u_angle", this.points.get(i).angle);
+            fontShader.setUniformf("u_center", this.points.get(i).center.getX(), this.points.get(i).center.getY());
+
+            font.draw(batch, String.valueOf(this.label.charAt(i)), this.points.get(i).origin.getX(), this.points.get(i).origin.getY());
+            batch.flush();
+        }
+        Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
+    }
+
 }

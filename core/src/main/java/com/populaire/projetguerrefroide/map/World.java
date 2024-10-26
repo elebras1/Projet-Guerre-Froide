@@ -33,6 +33,7 @@ public class World {
     private Texture defaultTexture;
     private TextureArray terrainSheetArray;
     private ShaderProgram mapShader;
+    private ShaderProgram fontShader;
     private static final Logger LOGGER = Logging.getLogger(World.class.getName());
 
     public World() {
@@ -78,6 +79,9 @@ public class World {
         String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
         String fragmentMapShader = Gdx.files.internal("shaders/map_f.glsl").readString();
         this.mapShader = new ShaderProgram(vertexMapShader, fragmentMapShader);
+        String vertexFontShader = Gdx.files.internal("shaders/font_v.glsl").readString();
+        String fragmentFontShader = Gdx.files.internal("shaders/font_f.glsl").readString();
+        this.fontShader = new ShaderProgram(vertexFontShader, fragmentFontShader);
         ShaderProgram.pedantic = false;
 
         long endTime = System.currentTimeMillis();
@@ -217,10 +221,14 @@ public class World {
         batch.draw(this.countriesColorTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.draw(this.countriesColorTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.setShader(null);
+        batch.setShader(this.fontShader);
+        for(Country country : this.countries) {
+            for(MapLabel label : country.getLabels()) {
+                label.draw(batch, this.fontShader);
+            }
+        }
+        batch.setShader(null);
         batch.end();
-
-        Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
-        Gdx.gl.glBindTexture(GL32.GL_TEXTURE_2D, 0);
     }
 
     public void dispose() {
