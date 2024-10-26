@@ -229,6 +229,7 @@ public class World {
         }
         batch.setShader(null);
         batch.end();
+        Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
     }
 
     public void dispose() {
