@@ -2,18 +2,23 @@ package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
+import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.badlogic.gdx.utils.TimeUtils;
 import com.populaire.projetguerrefroide.utils.DataManager;
 import com.populaire.projetguerrefroide.utils.Logging;
 
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.logging.Logger;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class World {
+    private long lastLabelCreationTime = TimeUtils.millis();
     private final DataManager dataManager;
     private final List<Country> countries;
     private final Map<Color, Province> provinces;
@@ -35,6 +40,7 @@ public class World {
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
     private static final Logger LOGGER = Logging.getLogger(World.class.getName());
+    private final ExecutorService executor = Executors.newFixedThreadPool(1);
 
     public World() {
         Runtime runtime = Runtime.getRuntime();
@@ -82,6 +88,9 @@ public class World {
         String vertexFontShader = Gdx.files.internal("shaders/font_v.glsl").readString();
         String fragmentFontShader = Gdx.files.internal("shaders/font_f.glsl").readString();
         this.fontShader = new ShaderProgram(vertexFontShader, fragmentFontShader);
+        if (!fontShader.isCompiled()) {
+            Gdx.app.error("Shader", "Compilation failed: " + fontShader.getLog());
+        }
         ShaderProgram.pedantic = false;
 
         long endTime = System.currentTimeMillis();
@@ -180,7 +189,7 @@ public class World {
         pixmap.dispose();
     }
 
-    public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
+    public void render(CpuSpriteBatch batch, OrthographicCamera cam, float time) {
         this.mapShader.bind();
         this.provincesColorTexture.bind(0);
         this.countriesColorTexture.bind(1);
@@ -224,7 +233,7 @@ public class World {
         batch.setShader(this.fontShader);
         for(Country country : this.countries) {
             for(MapLabel label : country.getLabels()) {
-                label.draw(batch, this.fontShader);
+                label.render(batch);
             }
         }
         batch.setShader(null);

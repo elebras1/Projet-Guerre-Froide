@@ -7,6 +7,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -33,7 +34,7 @@ public class NewGameScreen implements Screen {
     private final World world;
     private final Game game;
     private final OrthographicCamera cam;
-    private final SpriteBatch batch;
+    private final CpuSpriteBatch batch;
     private final NewGameInputHandler<NewGameScreen> inputHandler;
     private final AssetManager assetManager;
     private final Skin skin;
@@ -56,7 +57,7 @@ public class NewGameScreen implements Screen {
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 2f, 0);
         this.cam.update();
-        this.batch = new SpriteBatch();
+        this.batch = new CpuSpriteBatch();
         this.inputHandler = new NewGameInputHandler<>(this.cam, world, this);
         this.assetManager = new AssetManager();
         this.assetManager.load("ui/newgame/newgame_skin.json", Skin.class);

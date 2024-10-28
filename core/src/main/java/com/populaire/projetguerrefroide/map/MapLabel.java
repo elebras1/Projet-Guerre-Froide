@@ -3,9 +3,9 @@ package com.populaire.projetguerrefroide.map;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -18,7 +18,7 @@ public class MapLabel {
     private Pixel centroid;
     private Pixel[] farthestPoints;
     private List<CurvePoint> points;
-    private static final BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/trebuchet_45.fnt"), false);
+    private static final BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/trebuchet_45.fnt"), true);
     private float fontScale;
     private static class CurvePoint {
         Pixel center;
@@ -27,7 +27,6 @@ public class MapLabel {
 
         public CurvePoint() {
         }
-
     }
 
     public MapLabel(String label, List<Pixel> borderPixels) {
@@ -36,8 +35,9 @@ public class MapLabel {
         this.setCentroid(convexHull);
         this.findFarthestPoints(convexHull);
         GlyphLayout layout = new GlyphLayout();
+        layout.setText(font, this.label);
         this.setFontScale(layout);
-        this.calculateQuadraticBezierCurve(layout);
+        this.calculateQuadraticBezierCurve();
         this.setPointsOrigin(layout);
     }
 
@@ -183,13 +183,12 @@ public class MapLabel {
     }
 
     private void setFontScale(GlyphLayout layout) {
-        layout.setText(font, this.label);
         float textLength = layout.width;
         float curveLength = this.approximateCurveLength();
         this.fontScale = (curveLength / textLength) * 0.4f;
     }
 
-    private void calculateQuadraticBezierCurve(GlyphLayout layout) {
+    private void calculateQuadraticBezierCurve() {
         this.points = new ArrayList<>();
 
         int numberOfPoints = this.label.length() + 2;
@@ -213,7 +212,7 @@ public class MapLabel {
 
             float dx = (next.center.getX() - previous.center.getX()) / 2f;
             float dy = (next.center.getY() - previous.center.getY()) / 2f;
-            point.angle = (float) Math.atan2(dy, dx);
+            point.angle = (float) Math.atan2(dy, dx) * (180f / (float) Math.PI);
         }
         this.points.remove(0);
         this.points.remove(this.points.size() - 1);
@@ -227,57 +226,67 @@ public class MapLabel {
     }
 
     private void setPointsOrigin(GlyphLayout layout) {
-        layout.setText(font, this.label);
-
-        float height = layout.height;
+        float glyphHeight = layout.height * this.fontScale;
         for (int i = 0; i < this.points.size(); i++) {
             BitmapFont.Glyph glyph = layout.runs.first().glyphs.get(i);
-            float charWidth = glyph.width * this.fontScale;
+            float glyphWidth = glyph.width * this.fontScale;
 
-            short x = (short) (this.points.get(i).center.getX() - (charWidth / 2));
-            short y = (short) (this.points.get(i).center.getY() + (height / 2));
+            short x = (short) (this.points.get(i).center.getX() - (glyphWidth / 2));
+            short y = (short) (this.points.get(i).center.getY() - (glyphHeight / 2));
 
             this.points.get(i).origin = new Pixel(x, y);
         }
     }
 
-    public void draw(SpriteBatch batch, ShaderProgram fontShader) {
-        font.getData().setScale(this.fontScale);
+    public void render(CpuSpriteBatch batch) {
+        TextureRegion textureRegionFont = font.getRegion();
         for (int i = 0; i < this.label.length(); i++) {
             CurvePoint curvePoint = this.points.get(i);
+            BitmapFont.Glyph glyph = font.getData().getGlyph(this.label.charAt(i));
+            textureRegionFont.setRegion(glyph.u, glyph.v, glyph.u2, glyph.v2);
+            float glyphWidth = glyph.width * this.fontScale;
+            float glyphHeight = glyph.height * this.fontScale;
 
-            fontShader.setUniformf("u_angle", curvePoint.angle);
-            fontShader.setUniformf("u_center", this.points.get(i).center.getX(), this.points.get(i).center.getY());
+            batch.draw(
+                textureRegionFont,
+                curvePoint.origin.getX() - WORLD_WIDTH,
+                curvePoint.origin.getY(),
+                glyphWidth / 2,
+                glyphHeight / 2,
+                glyphWidth,
+                glyphHeight,
+                1,
+                1,
+                curvePoint.angle
+            );
 
-            font.draw(batch, String.valueOf(this.label.charAt(i)), curvePoint.origin.getX(), curvePoint.origin.getY());
-            batch.flush();
+            batch.draw(
+                textureRegionFont,
+                curvePoint.origin.getX(),
+                curvePoint.origin.getY(),
+                glyphWidth / 2,
+                glyphHeight / 2,
+                glyphWidth,
+                glyphHeight,
+                1,
+                1,
+                curvePoint.angle
+            );
+
+            batch.draw(
+                textureRegionFont,
+                curvePoint.origin.getX() + WORLD_WIDTH,
+                curvePoint.origin.getY(),
+                glyphWidth / 2,
+                glyphHeight / 2,
+                glyphWidth,
+                glyphHeight,
+                1,
+                1,
+                curvePoint.angle
+            );
         }
+
         Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
     }
-
-    /*public void draw(SpriteBatch batch, ShaderProgram fontShader) {
-        font.getData().setScale(this.fontScale);
-        for (int i = 0; i < this.label.length(); i++) {
-            CurvePoint curvePoint = this.points.get(i);
-
-            fontShader.setUniformf("u_angle", curvePoint.angle);
-
-            fontShader.setUniformf("u_center", this.points.get(i).center.getX() - WORLD_WIDTH, this.points.get(i).center.getY());
-            font.draw(batch, String.valueOf(this.label.charAt(i)), curvePoint.origin.getX() - WORLD_WIDTH, curvePoint.origin.getY());
-
-            batch.flush();
-
-            fontShader.setUniformf("u_center", this.points.get(i).center.getX(), this.points.get(i).center.getY());
-            font.draw(batch, String.valueOf(this.label.charAt(i)), curvePoint.origin.getX(), curvePoint.origin.getY());
-
-            batch.flush();
-
-            fontShader.setUniformf("u_center", this.points.get(i).center.getX() + WORLD_WIDTH, this.points.get(i).center.getY());
-            font.draw(batch, String.valueOf(this.label.charAt(i)), curvePoint.origin.getX() + WORLD_WIDTH, curvePoint.origin.getY());
-
-            batch.flush();
-        }
-        Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
-    }*/
-
 }
