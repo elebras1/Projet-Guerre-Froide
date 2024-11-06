@@ -18,7 +18,6 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class World {
-    private long lastLabelCreationTime = TimeUtils.millis();
     private final DataManager dataManager;
     private final List<Country> countries;
     private final Map<Color, Province> provinces;
@@ -40,7 +39,6 @@ public class World {
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
     private static final Logger LOGGER = Logging.getLogger(World.class.getName());
-    private final ExecutorService executor = Executors.newFixedThreadPool(1);
 
     public World() {
         Runtime runtime = Runtime.getRuntime();
@@ -230,15 +228,17 @@ public class World {
         batch.draw(this.countriesColorTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.draw(this.countriesColorTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.setShader(null);
+
+        this.fontShader.bind();
+        this.fontShader.setUniformf("u_zoom", cam.zoom);
         batch.setShader(this.fontShader);
         for(Country country : this.countries) {
             for(MapLabel label : country.getLabels()) {
-                label.render(batch);
+                label.render(batch, this.fontShader);
             }
         }
         batch.setShader(null);
         batch.end();
-        Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
     }
 
     public void dispose() {

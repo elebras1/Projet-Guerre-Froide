@@ -2,10 +2,12 @@ package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL32;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -27,6 +29,10 @@ public class MapLabel {
 
         public CurvePoint() {
         }
+    }
+
+    static {
+        font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
     }
 
     public MapLabel(String label, List<Pixel> borderPixels) {
@@ -238,7 +244,7 @@ public class MapLabel {
         }
     }
 
-    public void render(CpuSpriteBatch batch) {
+    public void render(CpuSpriteBatch batch, ShaderProgram fontShader) {
         TextureRegion textureRegionFont = font.getRegion();
         for (int i = 0; i < this.label.length(); i++) {
             CurvePoint curvePoint = this.points.get(i);
