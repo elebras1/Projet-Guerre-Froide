@@ -150,15 +150,15 @@ public class MapLabel {
         return new Pixel(xMax, yMax);
     }
 
-    private void setCentroid(List<Pixel> pixels) {
-        int sumX = 0;
-        int sumY = 0;
-        for (Pixel pixel : pixels) {
-            sumX += pixel.getX();
-            sumY += pixel.getY();
+    private void setCentroid(List<Pixel> convexHull) {
+        int centerX = 0;
+        int centerY = 0;
+        for (Pixel pixel : convexHull) {
+            centerX += pixel.getX();
+            centerY += pixel.getY();
         }
-        int centerX = sumX / pixels.size();
-        int centerY = sumY / pixels.size();
+        centerX /= convexHull.size();
+        centerY /= convexHull.size();
         this.centroid = new Pixel((short) centerX, (short) centerY);
     }
 

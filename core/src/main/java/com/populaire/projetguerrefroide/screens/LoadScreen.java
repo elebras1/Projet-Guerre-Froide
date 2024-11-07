@@ -28,7 +28,7 @@ public class LoadScreen implements Screen {
         this.showImage();
         CompletableFuture.runAsync(() -> {
             Gdx.app.postRunnable(() -> {
-                World world = new World();
+                World world = World.getInstance();
                 game.setScreen(new NewGameScreen(world, game));
                 this.dispose();
             });
