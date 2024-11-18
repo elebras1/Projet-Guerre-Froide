@@ -18,7 +18,6 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class World {
-    private static World world;
     private final DataManager dataManager;
     private final List<Country> countries;
     private final Map<Color, Province> provinces;
@@ -41,7 +40,7 @@ public class World {
     private ShaderProgram fontShader;
     private static final Logger LOGGER = Logging.getLogger(World.class.getName());
 
-    private World() {
+    public World() {
         Runtime runtime = Runtime.getRuntime();
         long maxMemory = runtime.maxMemory();
         LOGGER.info("Max memory: " + maxMemory / 1024 / 1024 + "MB");
@@ -94,14 +93,6 @@ public class World {
 
         long endTime = System.currentTimeMillis();
         LOGGER.info("World loaded in " + (endTime - startTime) + "ms");
-    }
-
-    public static World getInstance() {
-        if(world == null) {
-            world = new World();
-        }
-
-        return world;
     }
 
     public DataManager getDataManager() {

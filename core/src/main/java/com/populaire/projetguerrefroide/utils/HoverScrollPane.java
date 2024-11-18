@@ -7,25 +7,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class HoverScrollPane extends ScrollPane {
-    public HoverScrollPane(Actor actor) {
-        super(actor);
-    }
-
     public HoverScrollPane(Actor actor, Skin skin) {
         super(actor, skin);
     }
 
-    public HoverScrollPane(Actor actor, Skin skin, String styleName) {
-        super(actor, skin, styleName);
-    }
-
-    public HoverScrollPane(Actor actor, ScrollPaneStyle style) {
-        super(actor, style);
-    }
-
     @Override
     protected void addScrollListener() {
-        addListener(new InputListener() {
+        this.addListener(new InputListener() {
             @Override
             public boolean scrolled(InputEvent event, float x, float y, float amountX, float amountY) {
                 if (isOver(x, y)) {
