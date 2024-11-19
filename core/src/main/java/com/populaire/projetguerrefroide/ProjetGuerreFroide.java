@@ -8,7 +8,6 @@ import com.populaire.projetguerrefroide.ui.CursorManager;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class ProjetGuerreFroide extends Game {
-    private ScreenManager screenManager;
     public static final int WORLD_WIDTH = 5616;
     public static final int WORLD_HEIGHT = 2160;
 
@@ -18,8 +17,8 @@ public class ProjetGuerreFroide extends Game {
         CursorManager cursorManager = new CursorManager();
         cursorManager.defaultCursor();
         this.loadAssets(assetManager);
-        this.screenManager = new ScreenManager(this, assetManager, cursorManager);
-        this.screenManager.showMainMenuScreen();
+        ScreenManager screenManager = new ScreenManager(this, assetManager, cursorManager);
+        screenManager.showMainMenuScreen();
     }
 
     private void loadAssets(AssetManager assetManager) {

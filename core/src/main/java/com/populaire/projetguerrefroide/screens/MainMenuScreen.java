@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL30;
+import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -12,55 +13,26 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.populaire.projetguerrefroide.ui.CursorManager;
+import com.populaire.projetguerrefroide.ui.MainMenu;
 
 
-public class MainMenuScreen implements Screen {
+public class MainMenuScreen implements Screen, MainMenuListener {
     private final Stage stage;
-    private final Skin skin;
+    private final ScreenManager screenManager;
 
     public MainMenuScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
         this.stage = new Stage(new ScreenViewport());
+        this.screenManager = screenManager;
         Gdx.input.setInputProcessor(this.stage);
-        this.skin = new Skin(Gdx.files.internal("temp/ui/mainmenu/skin/mainmenuskin.json"));
+        assetManager.load("ui/mainmenu/mainmenu_skin.json", Skin.class);
+        assetManager.finishLoading();
+        Skin skin = assetManager.get("ui/mainmenu/mainmenu_skin.json");
+        Skin skinFonts = assetManager.get("ui/fonts/fonts_skin.json");
         Table rootTable = new Table();
         rootTable.setFillParent(true);
-        rootTable.setBackground(this.skin.getDrawable("frontend_main_bg"));
-        Table menuTable = new Table();
-        menuTable.setBackground(this.skin.getDrawable("frontend_mainmenu_bg"));
-        menuTable.padBottom(35);
-        TextButton playButton = new TextButton("Play", this.skin, "frontend_button_big");
-        playButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                screenManager.showLoadScreen();
-            }
-        });
-        menuTable.add(playButton).expandY().bottom().spaceBottom(83);
-        menuTable.row();
-        TextButton optionsButton = new TextButton("Options", this.skin, "frontend_button_small");
-        menuTable.add(optionsButton).spaceBottom(10);
-        menuTable.row();
-        TextButton creditButton = new TextButton("Credit", this.skin, "frontend_button_small");
-        creditButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                dispose();
-            }
-        });
-        menuTable.add(creditButton).spaceBottom(10);
-        menuTable.row();
-        TextButton helpButton = new TextButton("Help", this.skin, "frontend_button_small");
-        menuTable.add(helpButton).spaceBottom(58);
-        menuTable.row();
-        TextButton exitButton = new TextButton("Exit", this.skin, "frontend_button_exit");
-        exitButton.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                Gdx.app.exit();
-            }
-        });
-        menuTable.add(exitButton);
-        rootTable.add(menuTable).expand().center();
+        rootTable.setBackground(skin.getDrawable("frontend_main_bg"));
+        MainMenu menu = new MainMenu(skin, skinFonts, this);
+        rootTable.add(menu).center().padLeft(menu.getWidth() / 3);
         this.stage.addActor(rootTable);
     }
 
@@ -71,7 +43,7 @@ public class MainMenuScreen implements Screen {
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(1, 1, 1, 1);
-        Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClear(GL32.GL_COLOR_BUFFER_BIT);
 
         this.stage.act();
         this.stage.draw();
@@ -97,6 +69,20 @@ public class MainMenuScreen implements Screen {
     @Override
     public void dispose() {
         this.stage.dispose();
-        this.skin.dispose();
+    }
+
+    @Override
+    public void onSinglePlayerClicked() {
+        this.screenManager.showNewGameScreen();
+    }
+
+    @Override
+    public void onMultiplayerClicked() {
+
+    }
+
+    @Override
+    public void onExitClicked() {
+        Gdx.app.exit();
     }
 }

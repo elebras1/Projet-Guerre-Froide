@@ -1,0 +1,19 @@
+{
+"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+	"frontend_big": {
+		"up": "frontend_button_big",
+		"down": "frontend_button_big_down",
+		"over": "frontend_button_big_over"
+	},
+	"frontend_big_exit": {
+		"up": "frontend_button_exit",
+		"down": "frontend_button_exit_down",
+		"over": "frontend_button_exit_over"
+	},
+	"frontend_small": {
+		"up": "frontend_button_small",
+		"down": "frontend_button_small_down",
+		"over": "frontend_button_small_over"
+	}
+}
+}

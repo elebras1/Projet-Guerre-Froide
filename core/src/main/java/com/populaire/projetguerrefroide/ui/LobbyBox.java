@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class LobbyBox extends Table {
 
-    public LobbyBox(Skin skin, Skin skinScrollbars, Skin skinFonts, Map<String, String> introduction) {
+    public LobbyBox(Skin skin, Skin skinScrollbars, Skin skinFonts, Map<String, String> localisation) {
         Drawable background = skin.getDrawable("bottom_bg");
 
         Label.LabelStyle labelStyleJockey24GlowBlue = new Label.LabelStyle();
@@ -21,17 +21,17 @@ public class LobbyBox extends Table {
         Label.LabelStyle labelStyleArial172 = new Label.LabelStyle();
         labelStyleArial172.font = skinFonts.getFont("Arial_17_2");
 
-        Button playButton = new Button(skin.get("play", Button.ButtonStyle.class));
-        playButton.add(new Label(introduction.get("PLAY"), labelStyleJockey24GlowBlue));
-        Button backButton = new Button(skin.get("gen", Button.ButtonStyle.class));
-        backButton.add(new Label(introduction.get("BACK"), labelStyleArial172));
+        Button playButton = new Button(skin, "play");
+        playButton.add(new Label(localisation.get("PLAY"), labelStyleJockey24GlowBlue));
+        Button backButton = new Button(skin, "gen");
+        backButton.add(new Label(localisation.get("BACK"), labelStyleArial172));
 
         Table buttonsTable = new Table();
         buttonsTable.add(playButton).expand().padRight(37).padBottom(10);
         buttonsTable.row();
         buttonsTable.add(backButton).padRight(32).padBottom(20);
 
-        Label introLabel = new Label(introduction.get("INTRODUCTION"), labelStyleJockey16GlowBlue);
+        Label introLabel = new Label(localisation.get("INTRODUCTION"), labelStyleJockey16GlowBlue);
         introLabel.setWrap(true);
         introLabel.setSize(722, 120);
         HoverScrollPane scrollPane = new HoverScrollPane(introLabel, skinScrollbars);

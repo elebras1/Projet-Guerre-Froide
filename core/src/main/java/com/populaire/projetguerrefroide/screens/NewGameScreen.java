@@ -1,6 +1,5 @@
 package com.populaire.projetguerrefroide.screens;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
@@ -42,11 +41,11 @@ public class NewGameScreen implements Screen {
     private final Skin skinScrollbars;
     private Stage stage;
     private List<Table> uiTables;
-    private CursorManager cursorChanger;
     private Debug debug;
     private float time;
     private HoverBox hoverBox;
     private CountrySelected countrySelectedUi;
+    private CursorManager cursorManager;
 
     public NewGameScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
         this.world = new World();
@@ -66,6 +65,8 @@ public class NewGameScreen implements Screen {
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.uiTables = new ArrayList<>();
+        this.cursorManager = cursorManager;
+        this.cursorManager.defaultCursor();
         this.initializeUi();
     }
 
@@ -73,8 +74,6 @@ public class NewGameScreen implements Screen {
         this.stage = new Stage(new ScreenViewport());
         //this.stage.setDebugAll(true);
 
-        this.cursorChanger = new CursorManager();
-        this.cursorChanger.defaultCursor();
         InputMultiplexer multiplexer = new InputMultiplexer();
         multiplexer.addProcessor(this.stage);
         multiplexer.addProcessor(this.inputHandler);
@@ -134,8 +133,8 @@ public class NewGameScreen implements Screen {
         Vector2 screenPosition = new Vector2(Gdx.input.getX(), (Gdx.graphics.getHeight() - Gdx.input.getY()));
         this.hoverBox.update(province.getName() + " (" + province.getCountryOwner().getName() + ")",
                 this.skinFlags.getDrawable(province.getCountryOwner().getId()));
-        this.hoverBox.setPosition(screenPosition.x + (float) this.cursorChanger.getWidth(),
-                screenPosition.y - this.cursorChanger.getHeight() * 1.5f);
+        this.hoverBox.setPosition(screenPosition.x + (float) this.cursorManager.getWidth(),
+                screenPosition.y - this.cursorManager.getHeight() * 1.5f);
         this.hoverBox.setVisible(true);
     }
 

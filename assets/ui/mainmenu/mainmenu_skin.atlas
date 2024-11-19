@@ -1,0 +1,152 @@
+
+mainmenu_skin.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+frontend_main_bg
+  rotate: false
+  xy: 1, 839
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+frontend_settings_audio_bg
+  rotate: false
+  xy: 1, 237
+  size: 560, 600
+  orig: 560, 600
+  offset: 0, 0
+  index: -1
+frontend_settings_controls_bg
+  rotate: false
+  xy: 563, 237
+  size: 560, 600
+  orig: 560, 600
+  offset: 0, 0
+  index: -1
+frontend_settings_game_bg
+  rotate: false
+  xy: 1125, 237
+  size: 560, 600
+  orig: 560, 600
+  offset: 0, 0
+  index: -1
+
+mainmenu_skin2.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+frontend_button_big
+  rotate: false
+  xy: 563, 1320
+  size: 266, 83
+  orig: 266, 83
+  offset: 0, 0
+  index: -1
+frontend_button_big_down
+  rotate: false
+  xy: 1, 118
+  size: 266, 83
+  orig: 266, 83
+  offset: 0, 0
+  index: -1
+frontend_button_big_over
+  rotate: false
+  xy: 563, 1235
+  size: 266, 83
+  orig: 266, 83
+  offset: 0, 0
+  index: -1
+frontend_button_exit
+  rotate: false
+  xy: 831, 1320
+  size: 266, 83
+  orig: 266, 83
+  offset: 0, 0
+  index: -1
+frontend_button_exit_down
+  rotate: false
+  xy: 1, 33
+  size: 266, 83
+  orig: 266, 83
+  offset: 0, 0
+  index: -1
+frontend_button_exit_over
+  rotate: false
+  xy: 269, 118
+  size: 266, 83
+  orig: 266, 83
+  offset: 0, 0
+  index: -1
+frontend_button_small
+  rotate: false
+  xy: 563, 1183
+  size: 266, 50
+  orig: 266, 50
+  offset: 0, 0
+  index: -1
+frontend_button_small_down
+  rotate: false
+  xy: 831, 1268
+  size: 266, 50
+  orig: 266, 50
+  offset: 0, 0
+  index: -1
+frontend_button_small_over
+  rotate: false
+  xy: 1099, 1353
+  size: 266, 50
+  orig: 266, 50
+  offset: 0, 0
+  index: -1
+frontend_checkbutton
+  rotate: false
+  xy: 563, 1150
+  size: 60, 31
+  orig: 60, 31
+  offset: 0, 0
+  index: -1
+frontend_mainmenu_bg
+  rotate: false
+  xy: 1, 203
+  size: 557, 598
+  orig: 557, 598
+  offset: 0, 0
+  index: -1
+frontend_settings_video_bg
+  rotate: false
+  xy: 1, 803
+  size: 560, 600
+  orig: 560, 600
+  offset: 0, 0
+  index: -1
+settings_less
+  rotate: false
+  xy: 831, 1229
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+settings_more
+  rotate: false
+  xy: 1099, 1314
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+settings_tab_1
+  rotate: false
+  xy: 1, 1
+  size: 164, 30
+  orig: 164, 30
+  offset: 0, 0
+  index: -1
+settings_tab_2
+  rotate: false
+  xy: 269, 90
+  size: 158, 26
+  orig: 158, 26
+  offset: 0, 0
+  index: -1
