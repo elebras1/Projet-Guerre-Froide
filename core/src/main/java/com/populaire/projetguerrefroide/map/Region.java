@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.map;
 
 public class Region {
-    String id;
+    private String id;
 
     public Region(String id) {
         this.id = id;

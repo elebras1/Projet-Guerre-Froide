@@ -78,8 +78,8 @@ public class LandProvince implements Province {
         this.continent = continent;
     }
 
-    public void addAllAdjacentProvince(List<Province> provinces) {
-        this.adjacentProvinces.addAll(provinces);
+    public void setAdjacentProvinces(List<Province> provinces) {
+        this.adjacentProvinces = provinces;
     }
 
     public List<Province> getAdjacentProvinces() {

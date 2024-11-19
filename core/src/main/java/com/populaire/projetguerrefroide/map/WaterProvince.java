@@ -9,7 +9,6 @@ import java.util.Set;
 
 public class WaterProvince implements Province{
     private List<Province> adjacentProvinces;
-    private final Set<Pixel> pixels;
     private Color color;
     private short id;
     private String name;
@@ -17,8 +16,8 @@ public class WaterProvince implements Province{
     public WaterProvince(short id) {
         this.id = id;
         this.adjacentProvinces = new ArrayList<>();
-        this.pixels = new HashSet<>();
     }
+
     @Override
     public Color getColor() {
         return this.color;
@@ -50,7 +49,7 @@ public class WaterProvince implements Province{
     }
 
     @Override
-    public void addAllAdjacentProvince(List<Province> provinces) {
+    public void setAdjacentProvinces(List<Province> provinces) {
         this.adjacentProvinces.addAll(provinces);
     }
 

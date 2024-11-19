@@ -16,7 +16,6 @@ import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.*;
 
 public class DataManager {
     private static final String basePath = "common/";
@@ -396,7 +395,7 @@ public class DataManager {
                 Province province = provinces.get(provinceId);
                 List<Province> adjacencies = new ArrayList<>();
                 entry.getValue().forEach(adjacency -> adjacencies.add(provinces.get(adjacency.shortValue())));
-                province.addAllAdjacentProvince(adjacencies);
+                province.setAdjacentProvinces(adjacencies);
             });
         } catch (IOException e) {
             e.printStackTrace();
