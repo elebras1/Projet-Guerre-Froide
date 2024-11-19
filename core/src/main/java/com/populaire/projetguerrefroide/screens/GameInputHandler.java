@@ -17,15 +17,14 @@ import java.util.List;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class InputHandler<T extends Screen> implements InputProcessor {
+public class GameInputHandler<T extends Screen> implements InputProcessor {
     final OrthographicCamera cam;
     final World world;
     private float delta = 0;
     final T screen;
     private final int edgeSize = 50;
 
-    public InputHandler(OrthographicCamera cam, World world, T screen) {
-
+    public GameInputHandler(OrthographicCamera cam, World world, T screen) {
         this.cam = cam;
         this.world = world;
         this.screen = screen;

@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector3;
 import com.populaire.projetguerrefroide.map.World;
 
-public class NewGameInputHandler<T extends Screen> extends InputHandler<T> {
+public class NewGameInputHandler<T extends Screen> extends GameInputHandler<T> {
     public NewGameInputHandler(OrthographicCamera cam, World world, T screen) {
         super(cam, world, screen);
     }

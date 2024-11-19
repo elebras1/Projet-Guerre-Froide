@@ -1,14 +1,13 @@
 package com.populaire.projetguerrefroide.screens;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.populaire.projetguerrefroide.map.World;
-import com.populaire.projetguerrefroide.ui.AnimatedCursor;
+import com.populaire.projetguerrefroide.ui.CursorManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,19 +18,14 @@ import java.util.concurrent.CompletableFuture;
 public class LoadScreen implements Screen {
     private final SpriteBatch batch;
     private Image image;
-    private final AnimatedCursor animatedCursor;
     private final List<String> images = new ArrayList<>(Arrays.asList("load_1.png", "load_2.png", "load_3.png", "load_4.png", "load_5.png", "load_6.png", "load_7.png", "load_8.png", "load_9.png"));
 
-    public LoadScreen(Game game) {
+    public LoadScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
         this.batch = new SpriteBatch();
-        this.animatedCursor = new AnimatedCursor("busy");
+        cursorManager.animatedCursor("busy");
         this.showImage();
         CompletableFuture.runAsync(() -> {
-            Gdx.app.postRunnable(() -> {
-                World world = new World();
-                game.setScreen(new NewGameScreen(world, game));
-                this.dispose();
-            });
+            Gdx.app.postRunnable(screenManager::showNewGameScreen);
         });
     }
 
@@ -47,8 +41,6 @@ public class LoadScreen implements Screen {
         this.batch.begin();
         this.image.draw(batch, 1);
         this.batch.end();
-
-        this.animatedCursor.update(Gdx.graphics.getDeltaTime());
     }
 
     private void showImage() {

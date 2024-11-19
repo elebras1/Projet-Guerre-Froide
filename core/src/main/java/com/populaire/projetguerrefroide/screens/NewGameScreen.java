@@ -8,7 +8,6 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -32,11 +31,9 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class NewGameScreen implements Screen {
     private final World world;
-    private final Game game;
     private final OrthographicCamera cam;
     private final CpuSpriteBatch batch;
     private final NewGameInputHandler<NewGameScreen> inputHandler;
-    private final AssetManager assetManager;
     private final Skin skin;
     private final Skin skinUi;
     private final Skin skinFonts;
@@ -51,28 +48,23 @@ public class NewGameScreen implements Screen {
     private HoverBox hoverBox;
     private CountrySelected countrySelectedUi;
 
-    public NewGameScreen(World world, Game game) {
-        this.world = world;
-        this.game = game;
+    public NewGameScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
+        this.world = new World();
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 2f, 0);
         this.cam.update();
         this.batch = new CpuSpriteBatch();
         this.inputHandler = new NewGameInputHandler<>(this.cam, world, this);
-        this.assetManager = new AssetManager();
-        this.assetManager.load("ui/newgame/newgame_skin.json", Skin.class);
-        this.assetManager.load("ui/ui_skin.json", Skin.class);
-        this.assetManager.load("ui/fonts/fonts_skin.json", Skin.class);
-        this.assetManager.load("flags/flags_skin.json", Skin.class);
-        this.assetManager.load("portraits/portraits_skin.json", Skin.class);
-        this.assetManager.load("ui/scrollbars/scrollbars_skin.json", Skin.class);
-        this.assetManager.finishLoading();
-        this.skin = this.assetManager.get("ui/newgame/newgame_skin.json");
-        this.skinUi = this.assetManager.get("ui/ui_skin.json");
-        this.skinFonts = this.assetManager.get("ui/fonts/fonts_skin.json");
-        this.skinFlags = this.assetManager.get("flags/flags_skin.json");
-        this.skinPortraits = this.assetManager.get("portraits/portraits_skin.json");
-        this.skinScrollbars = this.assetManager.get("ui/scrollbars/scrollbars_skin.json");
+        assetManager.load("ui/newgame/newgame_skin.json", Skin.class);
+        assetManager.load("flags/flags_skin.json", Skin.class);
+        assetManager.load("portraits/portraits_skin.json", Skin.class);
+        assetManager.finishLoading();
+        this.skin = assetManager.get("ui/newgame/newgame_skin.json");
+        this.skinUi = assetManager.get("ui/ui_skin.json");
+        this.skinFonts = assetManager.get("ui/fonts/fonts_skin.json");
+        this.skinFlags = assetManager.get("flags/flags_skin.json");
+        this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
+        this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.uiTables = new ArrayList<>();
         this.initializeUi();
     }
@@ -151,11 +143,6 @@ public class NewGameScreen implements Screen {
         this.hoverBox.setVisible(false);
     }
 
-
-    public Game getGame() {
-        return this.game;
-    }
-
     @Override
     public void show() {
 
@@ -216,6 +203,5 @@ public class NewGameScreen implements Screen {
     public void dispose() {
         this.stage.dispose();
         this.batch.dispose();
-        this.assetManager.dispose();
     }
 }
