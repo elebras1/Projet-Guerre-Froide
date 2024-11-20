@@ -17,8 +17,8 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class MapLabel {
     private String label;
-    public int centroid;
-    public int[] farthestPoints;
+    private int centroid;
+    private int[] farthestPoints;
     private List<CurvePoint> points;
     private static final BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/trebuchet_45.fnt"), true);
     private float fontScale;
@@ -26,9 +26,6 @@ public class MapLabel {
         int center;
         int origin;
         float angle;
-
-        public CurvePoint() {
-        }
     }
 
     static {
@@ -226,7 +223,11 @@ public class MapLabel {
             }
         }
 
-        this.farthestPoints = new int[] {farthestPoint1, farthestPoint2};
+        if((farthestPoint1 >> 16) < (farthestPoint2 >> 16)) {
+            this.farthestPoints = new int[] {farthestPoint1, farthestPoint2};
+        } else {
+            this.farthestPoints = new int[] {farthestPoint2, farthestPoint1};
+        }
     }
 
     private void setFontScale(GlyphLayout layout) {

@@ -31,7 +31,6 @@ public class World {
     private Texture overlayTileTexture;
     private Texture bordersTexture;
     private Texture defaultTexture;
-    private Texture debugTexture;
     private TextureArray terrainSheetArray;
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
@@ -60,7 +59,6 @@ public class World {
         for(Country country : this.countries) {
             country.createLabels();
         }
-        this.createDebugLabelTexture();
 
         String[] terrainTexturePaths = new String[64];
         String pathBase = "map/terrain/textures/";
@@ -184,38 +182,6 @@ public class World {
         pixmap.dispose();
     }
 
-    public void createDebugLabelTexture() {
-        Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
-
-        for(Country country : this.countries) {
-            for(MapLabel label : country.getLabels()) {
-                pixmap.setColor(Color.RED);
-                pixmap.drawCircle(label.centroid >> 16, label.centroid & 0xFFFF, 10);
-                pixmap.drawCircle(label.farthestPoints[0] >> 16, label.farthestPoints[0] & 0xFFFF, 10);
-                pixmap.drawCircle(label.farthestPoints[1] >> 16, label.farthestPoints[1] & 0xFFFF, 10);
-
-                pixmap.setColor(Color.GREEN);
-                pixmap.drawLine(label.centroid >> 16, label.centroid & 0xFFFF, label.farthestPoints[0] >> 16, label.farthestPoints[0] & 0xFFFF);
-                pixmap.drawLine(label.centroid >> 16, label.centroid & 0xFFFF, label.farthestPoints[1] >> 16, label.farthestPoints[1] & 0xFFFF);
-            }
-        }
-
-        Pixmap flippedPixmap = new Pixmap(pixmap.getWidth(), pixmap.getHeight(), pixmap.getFormat());
-
-        for (int y = 0; y < pixmap.getHeight(); y++) {
-            for (int x = 0; x < pixmap.getWidth(); x++) {
-                int color = pixmap.getPixel(x, pixmap.getHeight() - y - 1);
-                flippedPixmap.drawPixel(x, y, color);
-            }
-        }
-
-        this.debugTexture = new Texture(flippedPixmap);
-
-        flippedPixmap.dispose();
-        pixmap.dispose();
-    }
-
-
     public void render(CpuSpriteBatch batch, OrthographicCamera cam, float time) {
         this.mapShader.bind();
         this.provincesColorTexture.bind(0);
@@ -266,7 +232,6 @@ public class World {
                 label.render(batch);
             }
         }
-        batch.draw(this.debugTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.setShader(null);
         batch.end();
     }
