@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.github.tommyettinger.ds.IntList;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -17,14 +17,14 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class MapLabel {
     private String label;
-    private Pixel centroid;
-    private Pixel[] farthestPoints;
+    public int centroid;
+    public int[] farthestPoints;
     private List<CurvePoint> points;
     private static final BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/trebuchet_45.fnt"), true);
     private float fontScale;
     private static class CurvePoint {
-        Pixel center;
-        Pixel origin;
+        int center;
+        int origin;
         float angle;
 
         public CurvePoint() {
@@ -35,9 +35,9 @@ public class MapLabel {
         font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
     }
 
-    public MapLabel(String label, List<Pixel> borderPixels) {
+    public MapLabel(String label, IntList borderPixels) {
         this.label = label;
-        List<Pixel> convexHull = this.getConvexHull(borderPixels);
+        IntList convexHull = this.getConvexHull(borderPixels);
         this.setCentroid(convexHull);
         this.findFarthestPoints(convexHull);
         GlyphLayout layout = new GlyphLayout();
@@ -47,145 +47,186 @@ public class MapLabel {
         this.setPointsOrigin(layout);
     }
 
-    private List<Pixel> getConvexHull(List<Pixel> borderPixels) {
-        List<Pixel> approximateBorder = new ArrayList<>();
+    private IntList getConvexHull(IntList borderPixels) {
+        IntList approximateBorder = new IntList();
         int step = 5;
-        Pixel minPixel = this.getMinPixel(borderPixels);
-        Pixel maxPixel = this.getMaxPixel(borderPixels);
 
-        for (int x = minPixel.getX(); x <= maxPixel.getX(); x += step) {
-            Pixel minYPoint = this.getMinYPointInRange(borderPixels, x, x + step);
-            Pixel maxYPoint = this.getMaxYPointInRange(borderPixels, x, x + step);
+        int minPixelInt = this.getMinPixel(borderPixels);
+        short minPixelX = (short) (minPixelInt >> 16);
+        short minPixelY = (short) (minPixelInt & 0xFFFF);
 
-            if (minYPoint != null) approximateBorder.add(minYPoint);
-            if (maxYPoint != null) approximateBorder.add(maxYPoint);
+        int maxPixelInt = this.getMaxPixel(borderPixels);
+        short maxPixelX = (short) (maxPixelInt >> 16);
+        short maxPixelY = (short) (maxPixelInt & 0xFFFF);
+
+        for (int x = minPixelX; x <= maxPixelX; x += step) {
+            int minYPoint = this.getMinYPointInRange(borderPixels, x, x + step);
+            int maxYPoint = this.getMaxYPointInRange(borderPixels, x, x + step);
+
+            if (minYPoint != -1) approximateBorder.add(minYPoint);
+            if (maxYPoint != -1) approximateBorder.add(maxYPoint);
         }
 
-        for (int y = minPixel.getY(); y <= maxPixel.getY(); y += step) {
-            Pixel minXPoint = this.getMinXPointInRange(borderPixels, y, y + step);
-            Pixel maxXPoint = this.getMaxXPointInRange(borderPixels, y, y + step);
+        for (int y = minPixelY; y <= maxPixelY; y += step) {
+            int minXPoint = this.getMinXPointInRange(borderPixels, y, y + step);
+            int maxXPoint = this.getMaxXPointInRange(borderPixels, y, y + step);
 
-            if (minXPoint != null) approximateBorder.add(minXPoint);
-            if (maxXPoint != null) approximateBorder.add(maxXPoint);
+            if (minXPoint != -1) approximateBorder.add(minXPoint);
+            if (maxXPoint != -1) approximateBorder.add(maxXPoint);
         }
 
         return approximateBorder;
     }
 
-    private Pixel getMinYPointInRange(List<Pixel> pixels, int xStart, int xEnd) {
-        Pixel minYPoint = null;
-        for (Pixel pixel : pixels) {
-            if (pixel.getX() >= xStart && pixel.getX() < xEnd) {
-                if (minYPoint == null || pixel.getY() < minYPoint.getY()) {
-                    minYPoint = pixel;
+    private int getMinYPointInRange(IntList pixels, int xStart, int xEnd) {
+        int minYPoint = -1;
+        int minYPointY = Integer.MAX_VALUE;
+        for (int i = 0; i < pixels.size(); i++) {
+            int pixelInt = pixels.get(i);
+            short pixelX = (short) (pixelInt >> 16);
+            short pixelY = (short) (pixelInt & 0xFFFF);
+
+            if (pixelX >= xStart && pixelX < xEnd) {
+                if (pixelY < minYPointY) {
+                    minYPoint = pixelInt;
+                    minYPointY = pixelY;
                 }
             }
         }
         return minYPoint;
     }
 
-    private Pixel getMaxYPointInRange(List<Pixel> pixels, int xStart, int xEnd) {
-        Pixel maxYPoint = null;
-        for (Pixel pixel : pixels) {
-            if (pixel.getX() >= xStart && pixel.getX() < xEnd) {
-                if (maxYPoint == null || pixel.getY() > maxYPoint.getY()) {
-                    maxYPoint = pixel;
+    private int getMaxYPointInRange(IntList pixels, int xStart, int xEnd) {
+        int maxYPoint = -1;
+        int maxYPointY = -1;
+        for (int i = 0; i < pixels.size(); i++) {
+            int pixelInt = pixels.get(i);
+            short pixelX = (short) (pixelInt >> 16);
+            short pixelY = (short) (pixelInt & 0xFFFF);
+
+            if (pixelX >= xStart && pixelX < xEnd) {
+                if (pixelY > maxYPointY) {
+                    maxYPoint = pixelInt;
+                    maxYPointY = pixelY;
                 }
             }
         }
         return maxYPoint;
     }
 
-    private Pixel getMinXPointInRange(List<Pixel> pixels, int yStart, int yEnd) {
-        Pixel minXPoint = null;
-        for (Pixel pixel : pixels) {
-            if (pixel.getY() >= yStart && pixel.getY() < yEnd) {
-                if (minXPoint == null || pixel.getX() < minXPoint.getX()) {
-                    minXPoint = pixel;
+    private int getMinXPointInRange(IntList pixels, int yStart, int yEnd) {
+        int minXPoint = -1;
+        int minXPointX = Integer.MAX_VALUE;
+        for (int i = 0; i < pixels.size(); i++) {
+            int pixelInt = pixels.get(i);
+            short pixelX = (short) (pixelInt >> 16);
+            short pixelY = (short) (pixelInt & 0xFFFF);
+
+            if (pixelY >= yStart && pixelY < yEnd) {
+                if (pixelX < minXPointX) {
+                    minXPoint = pixelInt;
+                    minXPointX = pixelX;
                 }
             }
         }
         return minXPoint;
     }
 
-    private Pixel getMaxXPointInRange(List<Pixel> pixels, int yStart, int yEnd) {
-        Pixel maxXPoint = null;
-        for (Pixel pixel : pixels) {
-            if (pixel.getY() >= yStart && pixel.getY() < yEnd) {
-                if (maxXPoint == null || pixel.getX() > maxXPoint.getX()) {
-                    maxXPoint = pixel;
+    private int getMaxXPointInRange(IntList pixels, int yStart, int yEnd) {
+        int maxXPoint = -1;
+        int maxXPointX = -1;
+        for (int i = 0; i < pixels.size(); i++) {
+            int pixelInt = pixels.get(i);
+            short pixelX = (short) (pixelInt >> 16);
+            short pixelY = (short) (pixelInt & 0xFFFF);
+
+            if (pixelY >= yStart && pixelY < yEnd) {
+                if (pixelX > maxXPointX) {
+                    maxXPoint = pixelInt;
+                    maxXPointX = pixelX;
                 }
             }
         }
         return maxXPoint;
     }
 
-    private Pixel getMinPixel(List<Pixel> pixels) {
+    private int getMinPixel(IntList pixels) {
         short xMin = Short.MAX_VALUE;
         short yMin = Short.MAX_VALUE;
-        for(Pixel pixel : pixels) {
-            if(pixel.getX() < xMin) {
-                xMin = pixel.getX();
+        for(int i = 0; i < pixels.size(); i++) {
+            int pixelInt = pixels.get(i);
+            short pixelX = (short) (pixelInt >> 16);
+            short pixelY = (short) (pixelInt & 0xFFFF);
+
+            if(pixelX < xMin) {
+                xMin = pixelX;
             }
-            if(pixel.getY() < yMin) {
-                yMin = pixel.getY();
+            if(pixelY < yMin) {
+                yMin = pixelY;
             }
         }
 
-        return new Pixel(xMin, yMin);
+        return (xMin << 16) | (yMin & 0xFFFF);
     }
 
-    private Pixel getMaxPixel(List<Pixel> pixels) {
+    private int getMaxPixel(IntList pixels) {
         short xMax = 0;
         short yMax = 0;
-        for(Pixel pixel : pixels) {
-            if(pixel.getX() > xMax) {
-                xMax = pixel.getX();
+        for(int i = 0; i < pixels.size(); i++) {
+            int pixelInt = pixels.get(i);
+            short pixelX = (short) (pixelInt >> 16);
+            short pixelY = (short) (pixelInt & 0xFFFF);
+
+            if(pixelX > xMax) {
+                xMax = pixelX;
             }
-            if(pixel.getY() > yMax) {
-                yMax = pixel.getY();
+            if(pixelY > yMax) {
+                yMax = pixelY;
             }
         }
 
-        return new Pixel(xMax, yMax);
+        return (xMax << 16) | (yMax & 0xFFFF);
     }
 
-    private void setCentroid(List<Pixel> convexHull) {
+    private void setCentroid(IntList convexHull) {
         int centerX = 0;
         int centerY = 0;
-        for (Pixel pixel : convexHull) {
-            centerX += pixel.getX();
-            centerY += pixel.getY();
+        for (int i = 0; i < convexHull.size(); i++) {
+            int pixelInt = convexHull.get(i);
+            centerX += (short) (pixelInt >> 16);
+            centerY += (short) (pixelInt & 0xFFFF);
         }
         centerX /= convexHull.size();
         centerY /= convexHull.size();
-        this.centroid = new Pixel((short) centerX, (short) centerY);
+        this.centroid = (centerX << 16) | (centerY & 0xFFFF);
     }
 
-    private void findFarthestPoints(List<Pixel> pixels) {
+    private void findFarthestPoints(IntList pixels) {
         double maxDistance = 0;
-        Pixel farthestPoint1 = null;
-        Pixel farthestPoint2 = null;
+        int farthestPoint1 = -1;
+        int farthestPoint2 = -1;
 
         for (int i = 0; i < pixels.size(); i++) {
             for (int j = i + 1; j < pixels.size(); j++) {
-                Pixel p1 = pixels.get(i);
-                Pixel p2 = pixels.get(j);
+                int pixelInt1 = pixels.get(i);
+                short pixelX1 = (short) (pixelInt1 >> 16);
+                short pixelY1 = (short) (pixelInt1 & 0xFFFF);
 
-                double distance = Math.sqrt(Math.pow(p2.getX() - p1.getX(), 2) + Math.pow(p2.getY() - p1.getY(), 2));
+                int pixelInt2 = pixels.get(j);
+                short pixelX2 = (short) (pixelInt2 >> 16);
+                short pixelY2 = (short) (pixelInt2 & 0xFFFF);
+
+                double distance = Math.sqrt(Math.pow(pixelX2 - pixelX1, 2) + Math.pow(pixelY2 - pixelY1, 2));
 
                 if (distance > maxDistance) {
                     maxDistance = distance;
-                    farthestPoint1 = p1;
-                    farthestPoint2 = p2;
+                    farthestPoint1 = pixelInt1;
+                    farthestPoint2 = pixelInt2;
                 }
             }
         }
 
-        this.farthestPoints = new Pixel[] {
-            new Pixel(farthestPoint1.getX(), farthestPoint1.getY()),
-            new Pixel(farthestPoint2.getX(), farthestPoint2.getY())
-        };
+        this.farthestPoints = new int[] {farthestPoint1, farthestPoint2};
     }
 
     private void setFontScale(GlyphLayout layout) {
@@ -199,25 +240,42 @@ public class MapLabel {
 
         int numberOfPoints = this.label.length() + 2;
 
+        int farthestPoint1 = this.farthestPoints[0];
+        short farthestPointX1 = (short) (farthestPoint1 >> 16);
+        short farthestPointY1 = (short) (farthestPoint1 & 0xFFFF);
+
+        int farthestPoint2 = this.farthestPoints[1];
+        short farthestPointX2 = (short) (farthestPoint2 >> 16);
+        short farthestPointY2 = (short) (farthestPoint2 & 0xFFFF);
+
+        short centroidX = (short) (this.centroid >> 16);
+        short centroidY = (short) (this.centroid & 0xFFFF);
+
         for (int i = 0; i < numberOfPoints; i++) {
             float t = i / (float) numberOfPoints;
-            float x = (1 - t) * (1 - t) * this.farthestPoints[0].getX() + 2 * (1 - t) * t * this.centroid.getX() + t * t * this.farthestPoints[1].getX();
-            float y = (1 - t) * (1 - t) * this.farthestPoints[0].getY() + 2 * (1 - t) * t * this.centroid.getY() + t * t * this.farthestPoints[1].getY();
+            float x = (1 - t) * (1 - t) * farthestPointX1 + 2 * (1 - t) * t * centroidX + t * t * farthestPointX2;
+            float y = (1 - t) * (1 - t) * farthestPointY1 + 2 * (1 - t) * t * centroidY + t * t * farthestPointY2;
 
             CurvePoint curvePoint = new CurvePoint();
-            curvePoint.center = new Pixel((short) x, (short) y);
+            curvePoint.center = ((int) x << 16) | ((int) y & 0xFFFF);
             this.points.add(curvePoint);
         }
 
-        this.points.sort(Comparator.comparingInt(point -> point.center.getX()));
+        this.points.sort(Comparator.comparingInt(point -> point.center >> 16));
 
         for (int i = 1; i < this.points.size() - 1; i++) {
             CurvePoint previous = this.points.get(i - 1);
             CurvePoint point = this.points.get(i);
             CurvePoint next = this.points.get(i + 1);
 
-            float dx = (next.center.getX() - previous.center.getX()) / 2f;
-            float dy = (next.center.getY() - previous.center.getY()) / 2f;
+            short nextCenterX = (short) (next.center >> 16);
+            short nextCenterY = (short) (next.center & 0xFFFF);
+
+            short previousCenterX = (short) (previous.center >> 16);
+            short previousCenterY = (short) (previous.center & 0xFFFF);
+
+            float dx = (nextCenterX - previousCenterX) / 2f;
+            float dy = (nextCenterY - previousCenterY) / 2f;
             point.angle = (float) Math.atan2(dy, dx) * (180f / (float) Math.PI);
         }
         this.points.remove(0);
@@ -225,8 +283,19 @@ public class MapLabel {
     }
 
     private float approximateCurveLength() {
-        float distance1 = (float) Math.sqrt(Math.pow(this.farthestPoints[0].getX() - this.centroid.getX(), 2) + Math.pow(this.farthestPoints[0].getY() - this.centroid.getY(), 2));
-        float distance2 = (float) Math.sqrt(Math.pow(this.farthestPoints[1].getX() - this.centroid.getX(), 2) + Math.pow(this.farthestPoints[1].getY() - this.centroid.getY(), 2));
+        int farthestPoint1 = this.farthestPoints[0];
+        short farthestPointX1 = (short) (farthestPoint1 >> 16);
+        short farthestPointY1 = (short) (farthestPoint1 & 0xFFFF);
+
+        int farthestPoint2 = this.farthestPoints[1];
+        short farthestPointX2 = (short) (farthestPoint2 >> 16);
+        short farthestPointY2 = (short) (farthestPoint2 & 0xFFFF);
+
+        short centroidX = (short) (this.centroid >> 16);
+        short centroidY = (short) (this.centroid & 0xFFFF);
+
+        float distance1 = (float) Math.sqrt(Math.pow(farthestPointX1 - centroidX, 2) + Math.pow(farthestPointY1 - centroidY, 2));
+        float distance2 = (float) Math.sqrt(Math.pow(farthestPointX2 - centroidX, 2) + Math.pow(farthestPointY2 - centroidY, 2));
 
         return distance1 + distance2;
     }
@@ -237,14 +306,17 @@ public class MapLabel {
             BitmapFont.Glyph glyph = layout.runs.first().glyphs.get(i);
             float glyphWidth = glyph.width * this.fontScale;
 
-            short x = (short) (this.points.get(i).center.getX() - (glyphWidth / 2));
-            short y = (short) (this.points.get(i).center.getY() - (glyphHeight / 2));
+            short centerX = (short) (this.points.get(i).center >> 16);
+            short centerY = (short) (this.points.get(i).center & 0xFFFF);
 
-            this.points.get(i).origin = new Pixel(x, y);
+            short x = (short) (centerX - (glyphWidth / 2));
+            short y = (short) (centerY - (glyphHeight / 2));
+
+            this.points.get(i).origin = (x << 16) | (y & 0xFFFF);
         }
     }
 
-    public void render(CpuSpriteBatch batch, ShaderProgram fontShader) {
+    public void render(CpuSpriteBatch batch) {
         TextureRegion textureRegionFont = font.getRegion();
         for (int i = 0; i < this.label.length(); i++) {
             CurvePoint curvePoint = this.points.get(i);
@@ -253,10 +325,13 @@ public class MapLabel {
             float glyphWidth = glyph.width * this.fontScale;
             float glyphHeight = glyph.height * this.fontScale;
 
+            short originX = (short) (curvePoint.origin >> 16);
+            short originY = (short) (curvePoint.origin & 0xFFFF);
+
             batch.draw(
                 textureRegionFont,
-                curvePoint.origin.getX() - WORLD_WIDTH,
-                curvePoint.origin.getY(),
+                originX - WORLD_WIDTH,
+                originY,
                 glyphWidth / 2,
                 glyphHeight / 2,
                 glyphWidth,
@@ -268,8 +343,8 @@ public class MapLabel {
 
             batch.draw(
                 textureRegionFont,
-                curvePoint.origin.getX(),
-                curvePoint.origin.getY(),
+                originX,
+                originY,
                 glyphWidth / 2,
                 glyphHeight / 2,
                 glyphWidth,
@@ -281,8 +356,8 @@ public class MapLabel {
 
             batch.draw(
                 textureRegionFont,
-                curvePoint.origin.getX() + WORLD_WIDTH,
-                curvePoint.origin.getY(),
+                originX + WORLD_WIDTH,
+                originY,
                 glyphWidth / 2,
                 glyphHeight / 2,
                 glyphWidth,

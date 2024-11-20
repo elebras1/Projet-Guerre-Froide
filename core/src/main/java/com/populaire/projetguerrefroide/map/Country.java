@@ -1,6 +1,8 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.graphics.Color;
+import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.IntSet;
 import com.populaire.projetguerrefroide.entities.Minister;
 import com.populaire.projetguerrefroide.entities.Population;
 
@@ -106,8 +108,8 @@ public class Country {
         return population;
     }
 
-    public List<Pixel> getProvincesPixelsBorder() {
-        List<Pixel> pixelsBorder = new ArrayList<>();
+    public IntList getProvincesPixelsBorder() {
+        IntList pixelsBorder = new IntList();
         for(LandProvince province : this.provinces) {
             pixelsBorder.addAll(province.getPixelsBorder());
         }
@@ -115,26 +117,27 @@ public class Country {
         return pixelsBorder;
     }
 
-    public List<Pixel> getPixelsBorder(List<LandProvince> provinces) {
-        List<Pixel> pixelsBorder = new ArrayList<>();
-        Set<Pixel> provincesPixels = new HashSet<>();
+    public IntList getPixelsBorder(List<LandProvince> provinces) {
+        IntList pixelsBorder = new IntList();
+        IntSet provincesPixels = new IntSet();
         for(LandProvince province : provinces) {
             provincesPixels.addAll(province.getPixels());
         }
-        for(Pixel pixel : provincesPixels) {
-            if(this.isPixelBorder(pixel.getX(), pixel.getY(), provincesPixels)) {
-                pixelsBorder.add(pixel);
+        for(IntSet.IntSetIterator iterator = provincesPixels.iterator(); iterator.hasNext();) {
+            int pixelInt = iterator.nextInt();
+            if(this.isPixelBorder((short)(pixelInt >> 16), (short) (pixelInt & 0xFFFF), provincesPixels)) {
+                pixelsBorder.add(pixelInt);
             }
         }
 
         return pixelsBorder;
     }
 
-    public boolean isPixelBorder(short x, short y, Set<Pixel> pixels) {
-        return !pixels.contains(new Pixel((short) (x + 1), y))
-            || !pixels.contains(new Pixel((short) (x - 1), y))
-            || !pixels.contains(new Pixel(x, (short) (y + 1)))
-            || !pixels.contains(new Pixel(x, (short) (y - 1)));
+    public boolean isPixelBorder(short x, short y, IntSet pixels) {
+        return !pixels.contains((x + 1 << 16) | (y & 0xFFFF))
+            || !pixels.contains((x - 1 << 16) | (y & 0xFFFF))
+            || !pixels.contains((x << 16) | (y + 1 & 0xFFFF))
+            || !pixels.contains((x << 16) | (y - 1 & 0xFFFF));
     }
 
     public void createLabels() {

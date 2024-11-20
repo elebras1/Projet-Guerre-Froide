@@ -1,13 +1,15 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.graphics.Color;
+import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.IntSet;
 import com.populaire.projetguerrefroide.entities.Population;
 
 import java.util.*;
 
 public class LandProvince implements Province {
     private List<Province> adjacentProvinces;
-    private final Set<Pixel> pixels;
+    private final IntSet pixels;
     private Color color;
     private short id;
     private String name;
@@ -23,7 +25,7 @@ public class LandProvince implements Province {
         this.countryController = countryController;
         this.population = population;
         this.adjacentProvinces = new ArrayList<>();
-        this.pixels = new HashSet<>();
+        this.pixels = new IntSet();
     }
 
     public Color getColor() {
@@ -42,12 +44,12 @@ public class LandProvince implements Province {
         return this.countryController;
     }
 
-    public Set<Pixel> getPixels() {
+    public IntSet getPixels() {
         return this.pixels;
     }
 
     public void addPixel(short x, short y) {
-        pixels.add(new Pixel(x, y));
+        this.pixels.add((x << 16) | (y & 0xFFFF));
     }
 
     public short getId() {
@@ -94,7 +96,7 @@ public class LandProvince implements Province {
     }
 
     public boolean isPixelProvince(short x, short y) {
-        return this.pixels.contains(new Pixel(x, y));
+        return this.pixels.contains((x << 16) | (y & 0xFFFF));
     }
 
     public boolean isPixelBorder(short x, short y) {
@@ -111,11 +113,12 @@ public class LandProvince implements Province {
         return false;
     }
 
-    public List<Pixel> getPixelsBorder() {
-        List<Pixel> pixelsBorder = new ArrayList<>();
-        for(Pixel pixel : this.pixels) {
-            if(this.isPixelBorder(pixel.getX(), pixel.getY())) {
-                pixelsBorder.add(pixel);
+    public IntList getPixelsBorder() {
+        IntList pixelsBorder = new IntList();
+        for(IntSet.IntSetIterator iterator = this.pixels.iterator(); iterator.hasNext();) {
+            int pixelInt = iterator.nextInt();
+            if(this.isPixelBorder((short)(pixelInt >> 16), (short) (pixelInt & 0xFFFF))) {
+                pixelsBorder.add(pixelInt);
             }
         }
 
@@ -128,6 +131,11 @@ public class LandProvince implements Province {
         if (o == null || getClass() != o.getClass()) return false;
         LandProvince province = (LandProvince) o;
         return this.id == province.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id;
     }
 
     @Override

@@ -4,6 +4,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.IntSet;
 import com.populaire.projetguerrefroide.utils.Logging;
 
 import java.util.*;
@@ -29,6 +31,7 @@ public class World {
     private Texture overlayTileTexture;
     private Texture bordersTexture;
     private Texture defaultTexture;
+    private Texture debugTexture;
     private TextureArray terrainSheetArray;
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
@@ -57,6 +60,7 @@ public class World {
         for(Country country : this.countries) {
             country.createLabels();
         }
+        this.createDebugLabelTexture();
 
         String[] terrainTexturePaths = new String[64];
         String pathBase = "map/terrain/textures/";
@@ -131,9 +135,12 @@ public class World {
         pixmap.setColor(Color.BLACK);
         pixmap.fill();
         for(Province province : provinces.values()) {
-            if(province instanceof LandProvince) {
-                for(Pixel pixel : ((LandProvince) province).getPixels()) {
-                    pixmap.drawPixel(pixel.getX(), pixel.getY(), Color.rgba8888(((LandProvince) province).getCountryOwner().getColor()));
+            if(province instanceof LandProvince landProvince) {
+                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
+                    int pixelInt = iterator.nextInt();
+                    int pixelX = (pixelInt >> 16);
+                    int pixelY = (pixelInt & 0xFFFF);
+                    pixmap.drawPixel(pixelX, pixelY, Color.rgba8888(((LandProvince) province).getCountryOwner().getColor()));
                 }
             }
         }
@@ -147,9 +154,12 @@ public class World {
     public void createProvincesColorStripesTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
         for(Province province : this.provinces.values()) {
-            if(province instanceof LandProvince && !((LandProvince) province).getCountryOwner().equals(((LandProvince) province).getCountryController())) {
-                for(Pixel pixel : ((LandProvince) province).getPixels()) {
-                    pixmap.drawPixel(pixel.getX(), pixel.getY(), Color.rgba8888(((LandProvince) province).getCountryController().getColor()));
+            if(province instanceof LandProvince landProvince && !landProvince.getCountryOwner().equals(landProvince.getCountryController())) {
+                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
+                    int pixelInt = iterator.nextInt();
+                    short pixelX = (short) (pixelInt >> 16);
+                    short pixelY = (short) (pixelInt & 0xFFFF);
+                    pixmap.drawPixel(pixelX, pixelY, Color.rgba8888(landProvince.getCountryController().getColor()));
                 }
             }
         }
@@ -161,14 +171,50 @@ public class World {
     public void createBordersTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
         for(Country country : this.countries) {
-            for(Pixel pixel : country.getProvincesPixelsBorder()) {
-                pixmap.drawPixel(pixel.getX(), pixel.getY(), Color.rgba8888(Color.BLACK));
+            IntList provincesPixelsBorder = country.getProvincesPixelsBorder();
+            for(int i = 0; i < provincesPixelsBorder.size(); i++) {
+                int pixelInt = provincesPixelsBorder.get(i);
+                int pixelX = (pixelInt >> 16);
+                int pixelY = (pixelInt & 0xFFFF);
+                pixmap.drawPixel(pixelX, pixelY, Color.rgba8888(Color.BLACK));
             }
         }
 
         this.bordersTexture = new Texture(pixmap);
         pixmap.dispose();
     }
+
+    public void createDebugLabelTexture() {
+        Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
+
+        for(Country country : this.countries) {
+            for(MapLabel label : country.getLabels()) {
+                pixmap.setColor(Color.RED);
+                pixmap.drawCircle(label.centroid >> 16, label.centroid & 0xFFFF, 10);
+                pixmap.drawCircle(label.farthestPoints[0] >> 16, label.farthestPoints[0] & 0xFFFF, 10);
+                pixmap.drawCircle(label.farthestPoints[1] >> 16, label.farthestPoints[1] & 0xFFFF, 10);
+
+                pixmap.setColor(Color.GREEN);
+                pixmap.drawLine(label.centroid >> 16, label.centroid & 0xFFFF, label.farthestPoints[0] >> 16, label.farthestPoints[0] & 0xFFFF);
+                pixmap.drawLine(label.centroid >> 16, label.centroid & 0xFFFF, label.farthestPoints[1] >> 16, label.farthestPoints[1] & 0xFFFF);
+            }
+        }
+
+        Pixmap flippedPixmap = new Pixmap(pixmap.getWidth(), pixmap.getHeight(), pixmap.getFormat());
+
+        for (int y = 0; y < pixmap.getHeight(); y++) {
+            for (int x = 0; x < pixmap.getWidth(); x++) {
+                int color = pixmap.getPixel(x, pixmap.getHeight() - y - 1);
+                flippedPixmap.drawPixel(x, y, color);
+            }
+        }
+
+        this.debugTexture = new Texture(flippedPixmap);
+
+        flippedPixmap.dispose();
+        pixmap.dispose();
+    }
+
 
     public void render(CpuSpriteBatch batch, OrthographicCamera cam, float time) {
         this.mapShader.bind();
@@ -217,9 +263,10 @@ public class World {
         batch.setShader(this.fontShader);
         for(Country country : this.countries) {
             for(MapLabel label : country.getLabels()) {
-                label.render(batch, this.fontShader);
+                label.render(batch);
             }
         }
+        batch.draw(this.debugTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.setShader(null);
         batch.end();
     }
