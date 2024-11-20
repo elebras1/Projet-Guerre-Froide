@@ -19,6 +19,7 @@ import com.populaire.projetguerrefroide.map.Country;
 import com.populaire.projetguerrefroide.map.LandProvince;
 import com.populaire.projetguerrefroide.map.World;
 import com.populaire.projetguerrefroide.ui.*;
+import com.populaire.projetguerrefroide.utils.DataManager;
 import com.populaire.projetguerrefroide.utils.ValueFormatter;
 
 import java.util.ArrayList;
@@ -29,7 +30,8 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class NewGameScreen implements Screen {
-    private final World world;
+    private final DataManager dataManager;
+    private final World world; //temporaire
     private final OrthographicCamera cam;
     private final CpuSpriteBatch batch;
     private final NewGameInputHandler<NewGameScreen> inputHandler;
@@ -48,12 +50,13 @@ public class NewGameScreen implements Screen {
     private CursorManager cursorManager;
 
     public NewGameScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
-        this.world = new World();
+        this.dataManager = new DataManager();
+        this.world = this.dataManager.createWorld();
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 2f, 0);
         this.cam.update();
         this.batch = new CpuSpriteBatch();
-        this.inputHandler = new NewGameInputHandler<>(this.cam, world, this);
+        this.inputHandler = new NewGameInputHandler<>(this.cam, this.world, this);
         assetManager.load("ui/newgame/newgame_skin.json", Skin.class);
         assetManager.load("flags/flags_skin.json", Skin.class);
         assetManager.load("portraits/portraits_skin.json", Skin.class);
@@ -86,9 +89,9 @@ public class NewGameScreen implements Screen {
         Table topTable = new Table();
         topTable.setFillParent(true);
         topTable.top();
-        Map<String, String> localisation = this.world.getDataManager().readNewgameLocalisationCsv();
-        localisation.putAll(this.world.getDataManager().readBookmarkLocalisationCsv());
-        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.skinFonts, this.world.getDataManager().readBookmarkJson(), localisation);
+        Map<String, String> localisation = this.dataManager.readNewgameLocalisationCsv();
+        localisation.putAll(this.dataManager.readBookmarkLocalisationCsv());
+        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.skinFonts, this.dataManager.readBookmarkJson(), localisation);
         this.uiTables.add(scenarioSavegameSelector);
         TitleBar titleBar = new TitleBar(this.skin, this.skinFonts, localisation);
         this.uiTables.add(titleBar);

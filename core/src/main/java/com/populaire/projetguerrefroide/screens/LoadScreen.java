@@ -3,11 +3,11 @@ package com.populaire.projetguerrefroide.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.GL32;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.populaire.projetguerrefroide.ui.CursorManager;
 
 import java.util.ArrayList;
@@ -17,14 +17,22 @@ import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 
 public class LoadScreen implements Screen {
-    private final SpriteBatch batch;
-    private Image image;
-    private final List<String> images = new ArrayList<>(Arrays.asList("load_1.png", "load_2.png", "load_3.png", "load_4.png", "load_5.png", "load_6.png", "load_7.png", "load_8.png", "load_9.png"));
+    private final Stage stage;
+    private Skin skin;
+    private final List<String> loadingImageNames;
 
     public LoadScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
-        this.batch = new SpriteBatch();
+        this.stage = new Stage();
+        this.loadingImageNames = new ArrayList<>(Arrays.asList("load_1", "load_2", "load_3", "load_4", "load_5", "load_6", "load_7", "load_8", "load_9"));
+        Gdx.input.setInputProcessor(this.stage);
+        this.skin = new Skin(Gdx.files.internal("loadingscreens/loadingscreens_skin.json"));
+        Random random = new Random();
+        Drawable background = skin.getDrawable(this.loadingImageNames.get(random.nextInt(this.loadingImageNames.size())));
+        Table rootTable = new Table();
+        rootTable.setFillParent(true);
+        rootTable.setBackground(background);
+        this.stage.addActor(rootTable);
         cursorManager.animatedCursor("busy");
-        this.showImage();
         CompletableFuture.runAsync(() -> {
             Gdx.app.postRunnable(screenManager::showNewGameScreen);
         });
@@ -36,24 +44,16 @@ public class LoadScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL32.GL_COLOR_BUFFER_BIT);
 
-        this.batch.begin();
-        this.image.draw(batch, 1);
-        this.batch.end();
-    }
-
-    private void showImage() {
-        Random rand = new Random();
-        String imageNameFile = this.images.get(rand.nextInt(this.images.size()));
-        this.image = new Image(new Texture(Gdx.files.internal("loadingscreens/" + imageNameFile)));
+        this.stage.act();
+        this.stage.draw();
     }
 
     @Override
     public void resize(int width, int height) {
-        this.image.setSize(width, height);
-        this.batch.getProjectionMatrix().setToOrtho2D(0, 0, width, height);
+        this.stage.getViewport().update(width, height, true);
     }
 
     @Override
@@ -73,7 +73,8 @@ public class LoadScreen implements Screen {
 
     @Override
     public void dispose() {
-        batch.dispose();
+        this.stage.dispose();
+        this.skin.dispose();
     }
 }
 

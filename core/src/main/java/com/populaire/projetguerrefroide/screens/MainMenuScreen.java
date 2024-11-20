@@ -3,17 +3,14 @@ package com.populaire.projetguerrefroide.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.GL32;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.populaire.projetguerrefroide.ui.CursorManager;
 import com.populaire.projetguerrefroide.ui.MainMenu;
+import com.populaire.projetguerrefroide.utils.DataManager;
 
 
 public class MainMenuScreen implements Screen, MainMenuListener {
@@ -24,6 +21,7 @@ public class MainMenuScreen implements Screen, MainMenuListener {
         this.stage = new Stage(new ScreenViewport());
         this.screenManager = screenManager;
         Gdx.input.setInputProcessor(this.stage);
+        DataManager dataManager = new DataManager();
         assetManager.load("ui/mainmenu/mainmenu_skin.json", Skin.class);
         assetManager.finishLoading();
         Skin skin = assetManager.get("ui/mainmenu/mainmenu_skin.json");
@@ -31,7 +29,7 @@ public class MainMenuScreen implements Screen, MainMenuListener {
         Table rootTable = new Table();
         rootTable.setFillParent(true);
         rootTable.setBackground(skin.getDrawable("frontend_main_bg"));
-        MainMenu menu = new MainMenu(skin, skinFonts, this);
+        MainMenu menu = new MainMenu(skin, skinFonts, dataManager.readMainMenuLocalisationCsv(), this);
         rootTable.add(menu).center().padLeft(menu.getWidth() / 3);
         this.stage.addActor(rootTable);
     }
@@ -73,7 +71,7 @@ public class MainMenuScreen implements Screen, MainMenuListener {
 
     @Override
     public void onSinglePlayerClicked() {
-        this.screenManager.showNewGameScreen();
+        this.screenManager.showLoadScreen();
     }
 
     @Override

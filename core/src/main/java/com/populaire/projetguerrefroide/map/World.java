@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
-import com.populaire.projetguerrefroide.utils.DataManager;
 import com.populaire.projetguerrefroide.utils.Logging;
 
 import java.util.*;
@@ -14,7 +13,6 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class World {
-    private final DataManager dataManager;
     private final List<Country> countries;
     private final Map<Color, Province> provinces;
     private LandProvince selectedProvince;
@@ -36,17 +34,10 @@ public class World {
     private ShaderProgram fontShader;
     private static final Logger LOGGER = Logging.getLogger(World.class.getName());
 
-    public World() {
-        Runtime runtime = Runtime.getRuntime();
-        long maxMemory = runtime.maxMemory();
-        LOGGER.info("Max memory: " + maxMemory / 1024 / 1024 + "MB");
+    public World(List<Country> countries, Map<Color, Province> provinces) {
         long startTime = System.currentTimeMillis();
-        long startTimeDataManager = System.currentTimeMillis();
-        this.dataManager = new DataManager();
-        this.countries = this.dataManager.loadCountries();
-        this.provinces = this.dataManager.loadProvinces();
-        long endTimeDataManager = System.currentTimeMillis();
-        LOGGER.info("DataManager loaded in " + (endTimeDataManager - startTimeDataManager) + "ms");
+        this.countries = countries;
+        this.provinces = provinces;
         long startTimeTextures = System.currentTimeMillis();
         this.createCountriesColorTexture();
         this.createProvincesColorStripesTexture();
@@ -89,10 +80,6 @@ public class World {
 
         long endTime = System.currentTimeMillis();
         LOGGER.info("World loaded in " + (endTime - startTime) + "ms");
-    }
-
-    public DataManager getDataManager() {
-        return this.dataManager;
     }
 
     public LandProvince getProvinceByPixel(short x, short y) {

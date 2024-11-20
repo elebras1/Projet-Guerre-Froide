@@ -18,45 +18,49 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class DataManager {
-    private static final String basePath = "common/";
-    private static final String mapPath = "map/";
-    private static final String historyPath = "history/";
-    private static final String localisationPath = "localisation/";
-    private static final String countriesJsonFiles = basePath + "countries.json";
-    private static final String countriesHistoryJsonFiles = historyPath + "countries.json";
-    private static final String regionJsonFiles = mapPath + "region.json";
-    private static final String provincesJsonFile = historyPath + "provinces.json";
-    private static final String definitionCsvFile = mapPath + "definition.csv";
-    private static final String continentJsonFile = mapPath + "continent.json";
-    private static final String positionsJsonFile = mapPath + "positions.json";
-    private static final String adjenciesJsonFile = mapPath + "adjacencies.json";
-    private static final String provinceNamesCsvFile = localisationPath + "province_names.csv";
-    private static final String newgameCsvFile = localisationPath + "newgame.csv";
-    private static final String bookmarkJsonFile = basePath + "bookmark.json";
-    private static final String bookmarkCsvFile = localisationPath + "bookmark.csv";
-    private static final ObjectMapper mapper = new ObjectMapper();
-    private final Map<String, Country> countries = new HashMap<>(300);
+    private final String basePath = "common/";
+    private final String mapPath = "map/";
+    private final String historyPath = "history/";
+    private final String localisationPath = "localisation/";
+    private final String countriesJsonFiles = this.basePath + "countries.json";
+    private final String countriesHistoryJsonFiles = this.historyPath + "countries.json";
+    private final String regionJsonFiles = this.mapPath + "region.json";
+    private final String provincesJsonFile = this.historyPath + "provinces.json";
+    private final String definitionCsvFile = this.mapPath + "definition.csv";
+    private final String continentJsonFile = this.mapPath + "continent.json";
+    private final String positionsJsonFile = this.mapPath + "positions.json";
+    private final String adjenciesJsonFile = this.mapPath + "adjacencies.json";
+    private final String provinceNamesCsvFile = this.localisationPath + "province_names.csv";
+    private final String mainmenuCsvFile = this.localisationPath + "mainmenu.csv";
+    private final String newgameCsvFile = this.localisationPath + "newgame.csv";
+    private final String bookmarkJsonFile = this.basePath + "bookmark.json";
+    private final String bookmarkCsvFile = this.localisationPath + "bookmark.csv";
+    private final ObjectMapper mapper = new ObjectMapper();
     private final String defaultDate = "1946.1.1";
     private String localisation = "ENGLISH";
-
-    public DataManager() { }
 
     public void setLocalisation(String localisation) {
         this.localisation = localisation;
     }
 
-    public List<Country> loadCountries() {
-        return new ArrayList<>(this.readCountriesJson().values());
+    public World createWorld() {
+        Map<String, Country> countries = this.loadCountries();
+        Map<Color, Province> provinces = this.loadProvinces(countries);
+        return new World(new ArrayList<>(countries.values()), provinces);
     }
 
-    public Map<Color, Province> loadProvinces() {
+    private Map<String, Country> loadCountries() {
+        return this.readCountriesJson();
+    }
+
+    private Map<Color, Province> loadProvinces(Map<String, Country> countries) {
         Map<Color, Province> provincesByColor = new HashMap<>(20000);
-        Map<Short, Province> provinces = this.readProvincesJson();
+        Map<Short, Province> provinces = this.readProvincesJson(countries);
         this.readRegionJson(provinces);
         this.readDefinitionCsv(provinces, provincesByColor);
         this.readProvinceBitmap(provincesByColor);
         this.readProvinceNamesCsv(provinces);
-        this.readCountriesHistoryJson(provinces);
+        this.readCountriesHistoryJson(countries, provinces);
         this.readContinentJsonFile(provinces);
         this.readAdjenciesJson(provinces);
 
@@ -69,16 +73,17 @@ public class DataManager {
     }
 
     private Map<String, Country> readCountriesJson() {
+        Map<String, Country> countries = new HashMap<>();
         try {
-            JsonNode countriesJson = openJson(countriesJsonFiles);
+            JsonNode countriesJson = openJson(this.countriesJsonFiles);
             countriesJson.fields().forEachRemaining(entry -> {
-                String countryFileName = basePath + entry.getValue().asText();
-                this.countries.put(entry.getKey(), readCountryJson(countryFileName, entry.getKey(), parseFileName(countryFileName)));
+                String countryFileName = this.basePath + entry.getValue().asText();
+                countries.put(entry.getKey(), readCountryJson(countryFileName, entry.getKey(), parseFileName(countryFileName)));
             });
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return this.countries;
+        return countries;
     }
 
     private String parseFileName(String path) {
@@ -141,14 +146,14 @@ public class DataManager {
         );
     }
 
-    private Map<Short, Province> readProvincesJson() {
+    private Map<Short, Province> readProvincesJson(Map<String, Country> countries) {
         Map<Short, Province> provinces = new HashMap<>(20000);
         try {
-            JsonNode provincesJson = openJson(provincesJsonFile);
+            JsonNode provincesJson = openJson(this.provincesJsonFile);
             provincesJson.fields().forEachRemaining(entry -> {
-                String provinceFileName = historyPath + entry.getValue().asText();
+                String provinceFileName = this.historyPath + entry.getValue().asText();
                 short provinceId = Short.parseShort(entry.getKey());
-                Province province = readProvinceJson(provinceFileName, provinceId);
+                Province province = readProvinceJson(countries, provinceFileName, provinceId);
                 provinces.put(provinceId, province);
             });
         } catch (IOException e) {
@@ -158,13 +163,13 @@ public class DataManager {
         return provinces;
     }
 
-    private LandProvince readProvinceJson(String provinceFileName, short provinceId) {
+    private LandProvince readProvinceJson(Map<String, Country> countries, String provinceFileName, short provinceId) {
         try {
             JsonNode rootNode = openJson(provinceFileName);
             String owner = rootNode.path("owner").asText();
             String controller = rootNode.path("controller").asText();
-            Country countryOwner = this.countries.get(owner);
-            Country countryController = this.countries.get(controller);
+            Country countryOwner = countries.get(owner);
+            Country countryController = countries.get(controller);
             JsonNode dateNode = rootNode.path(this.defaultDate);
             JsonNode populationNode = dateNode.path("population_total");
             int amount = populationNode.get("amount").asInt();
@@ -181,7 +186,7 @@ public class DataManager {
 
     private void readRegionJson(Map<Short, Province> provinces) {
         try {
-            JsonNode rootNode = openJson(regionJsonFiles);
+            JsonNode rootNode = openJson(this.regionJsonFiles);
             rootNode.fields().forEachRemaining(regionData -> {
                 Region region = new Region(regionData.getKey());
                 regionData.getValue().forEach(provinceId -> {
@@ -200,7 +205,7 @@ public class DataManager {
     }
 
     private void readDefinitionCsv(Map<Short, Province> provinces, Map<Color, Province> provincesByColor) {
-        try (BufferedReader br = new BufferedReader(new StringReader(Gdx.files.internal(definitionCsvFile).readString()))) {
+        try (BufferedReader br = new BufferedReader(new StringReader(Gdx.files.internal(this.definitionCsvFile).readString()))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(";");
@@ -219,12 +224,12 @@ public class DataManager {
         }
     }
 
-    private void readCountriesHistoryJson(Map<Short, Province> provinces) {
+    private void readCountriesHistoryJson(Map<String, Country> countries, Map<Short, Province> provinces) {
         try {
-            JsonNode countriesJson = openJson(countriesHistoryJsonFiles);
+            JsonNode countriesJson = openJson(this.countriesHistoryJsonFiles);
             countriesJson.fields().forEachRemaining(entry -> {
-                String countryFileName = historyPath + entry.getValue().textValue();
-                this.readCountryHistoryJson(countryFileName, entry.getKey(), provinces);
+                String countryFileName = this.historyPath + entry.getValue().textValue();
+                this.readCountryHistoryJson(countries, countryFileName, entry.getKey(), provinces);
             });
         } catch (IOException e) {
             e.printStackTrace();
@@ -233,7 +238,7 @@ public class DataManager {
 
     private void readContinentJsonFile(Map<Short, Province> provinces) {
         try {
-            JsonNode continentJson = openJson(continentJsonFile);
+            JsonNode continentJson = openJson(this.continentJsonFile);
             continentJson.fields().forEachRemaining(entry -> {
                 Continent continent = new Continent(entry.getKey());
                 entry.getValue().forEach(provinceId -> {
@@ -246,14 +251,14 @@ public class DataManager {
         }
     }
 
-    private void readCountryHistoryJson(String countryFileName, String idCountry, Map<Short, Province> provinces) {
+    private void readCountryHistoryJson(Map<String, Country> countries, String countryFileName, String idCountry, Map<Short, Province> provinces) {
         try {
             if(countryFileName.equals("history/countries/REB - Rebels.json")) {
                 return;
             }
             JsonNode countryJson = openJson(countryFileName);
             short idCapital = countryJson.get("capital").shortValue();
-            Country country = this.countries.get(idCountry);
+            Country country = countries.get(idCountry);
             LandProvince capital = (LandProvince) provinces.get(idCapital);
             country.setCapital(capital);
             String government = countryJson.get("government").textValue();
@@ -275,7 +280,7 @@ public class DataManager {
     }
 
     private void readProvinceBitmap(Map<Color, Province> provincesByColor) {
-        Pixmap bitmap = new Pixmap(Gdx.files.internal(mapPath + "provinces.bmp"));
+        Pixmap bitmap = new Pixmap(Gdx.files.internal(this.mapPath + "provinces.bmp"));
         for (short y = 0; y < bitmap.getHeight(); y++) {
             for (short x = 0; x < bitmap.getWidth(); x++) {
                 Color color = new Color(bitmap.getPixel(x, y));
@@ -289,7 +294,7 @@ public class DataManager {
     }
 
     private void readProvinceNamesCsv(Map<Short, Province> provinces) {
-        try (BufferedReader br = new BufferedReader(new StringReader(Gdx.files.internal(provinceNamesCsvFile).readString()))) {
+        try (BufferedReader br = new BufferedReader(new StringReader(Gdx.files.internal(this.provinceNamesCsvFile).readString()))) {
             String[] headers = br.readLine().split(";");
             int localisationIndex = Arrays.asList(headers).indexOf(this.localisation);
             if (localisationIndex == -1) {
@@ -314,7 +319,7 @@ public class DataManager {
     private Map<Integer, Vector2> readPositionsJson() {
         Map<Integer, Vector2> unitPositions = new HashMap<>();
         try {
-            JsonNode positionsJson = openJson(positionsJsonFile);
+            JsonNode positionsJson = openJson(this.positionsJsonFile);
             positionsJson.fields().forEachRemaining(entry -> {
                 JsonNode buildingNode = entry.getValue().path("building_construction");
                 unitPositions.put(Integer.parseInt(entry.getKey()), new Vector2(buildingNode.get("x").asInt(), buildingNode.get("y").asInt()));
@@ -329,7 +334,7 @@ public class DataManager {
         Bookmark bookmark = null;
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
-            JsonNode rootNode = openJson(bookmarkJsonFile);
+            JsonNode rootNode = openJson(this.bookmarkJsonFile);
             JsonNode bookmarkNode = rootNode.get("bookmark");
             String iconNameFile = bookmarkNode.get("icon").asText();
             String nameId = bookmarkNode.get("name").asText();
@@ -354,12 +359,16 @@ public class DataManager {
         return bookmark;
     }
 
-    public Map<String, String> readBookmarkLocalisationCsv() {
-        return readLocalisationCsv(bookmarkCsvFile);
+    public Map<String, String> readMainMenuLocalisationCsv() {
+        return readLocalisationCsv(this.mainmenuCsvFile);
     }
 
     public Map<String, String> readNewgameLocalisationCsv() {
-        return readLocalisationCsv(newgameCsvFile);
+        return readLocalisationCsv(this.newgameCsvFile);
+    }
+
+    public Map<String, String> readBookmarkLocalisationCsv() {
+        return readLocalisationCsv(this.bookmarkCsvFile);
     }
 
     private Map<String, String> readLocalisationCsv(String filename) {
@@ -389,7 +398,7 @@ public class DataManager {
 
     private void readAdjenciesJson(Map<Short, Province> provinces) {
         try {
-            JsonNode adjenciesJson = openJson(adjenciesJsonFile);
+            JsonNode adjenciesJson = openJson(this.adjenciesJsonFile);
             adjenciesJson.fields().forEachRemaining(entry -> {
                 short provinceId = Short.parseShort(entry.getKey());
                 Province province = provinces.get(provinceId);
@@ -401,61 +410,4 @@ public class DataManager {
             e.printStackTrace();
         }
     }
-
-    /*private void adjenciesJsonMaker(Set<Province> provinces) throws InterruptedException, ExecutionException {
-        String adjenciesFileToCreate = Gdx.files.getLocalStoragePath() + "adjacencies.json";
-        Map<Short, List<Short>> adjacencyMap = new ConcurrentHashMap<>();
-        ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-        List<Future<?>> futures = new ArrayList<>();
-        int count = 0;
-        int countFuture = 0;
-
-        for (Province province : provinces) {
-            futures.add(executor.submit(() -> {
-                Short provinceId = province.getId();
-                adjacencyMap.put(provinceId, new ArrayList<>());
-
-                for (Province otherProvince : provinces) {
-                    if (!province.equals(otherProvince)) {
-                        for (Pixel pixel : province.getPixelsBorder()) {
-                            if (otherProvince.isPixelBorder(pixel.getX(), pixel.getY())) {
-                                adjacencyMap.get(provinceId).add(otherProvince.getId());
-                                break;
-                            }
-                        }
-                    }
-                }
-            }));
-            count++;
-            System.out.println(count + " / " + provinces.size());
-        }
-
-        for (Future<?> future : futures) {
-            future.get();
-            countFuture++;
-            System.out.println("Future : " + countFuture + " / " + futures.size());
-        }
-
-        System.out.println("adjencyMap : " + adjacencyMap);
-
-        executor.shutdown();
-
-        StringBuilder jsonBuilder = new StringBuilder();
-        jsonBuilder.append("{\n");
-        for (Map.Entry<Short, List<Short>> entry : adjacencyMap.entrySet()) {
-            jsonBuilder.append("  \"").append(entry.getKey()).append("\": ").append(entry.getValue()).append(",\n");
-        }
-        if (jsonBuilder.length() > 2) {
-            jsonBuilder.setLength(jsonBuilder.length() - 2);
-        }
-        jsonBuilder.append("\n}");
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(adjenciesFileToCreate))) {
-            writer.write(jsonBuilder.toString());
-            System.out.println("File " + adjenciesFileToCreate + " created.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
-
 }

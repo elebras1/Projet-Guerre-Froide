@@ -9,10 +9,11 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.populaire.projetguerrefroide.screens.MainMenuListener;
 
+import java.util.Map;
+
 public class MainMenu extends Table {
 
-    public MainMenu(Skin skin, Skin skinFonts, MainMenuListener listener) {
-        // ne pas oublier localisation
+    public MainMenu(Skin skin, Skin skinFonts, Map<String, String> localisation, MainMenuListener listener) {
         Label.LabelStyle labelStyleJockey24GlowBlue = new Label.LabelStyle();
         labelStyleJockey24GlowBlue.font = skinFonts.getFont("jockey_24_glow_blue");
 
@@ -25,7 +26,7 @@ public class MainMenu extends Table {
         Drawable background = skin.getDrawable("frontend_mainmenu_bg");
 
         Button playButton = new Button(skin, "frontend_big");
-        playButton.add(new Label("SINGLE PLAYER", labelStyleJockey24GlowBlue)).padBottom(5);
+        playButton.add(new Label(localisation.get("SINGLEPLAYER"), labelStyleJockey24GlowBlue)).padBottom(5);
         playButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -36,7 +37,7 @@ public class MainMenu extends Table {
         playButton.setY(375);
 
         Button multiplayerButton = new Button(skin, "frontend_big");
-        multiplayerButton.add(new Label("MULTI PLAYER", labelStyleJockey24GlowBlue)).padBottom(5);
+        multiplayerButton.add(new Label(localisation.get("MULTIPLAYER"), labelStyleJockey24GlowBlue)).padBottom(5);
         multiplayerButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -47,7 +48,7 @@ public class MainMenu extends Table {
         multiplayerButton.setY(295);
 
         Button optionsButton = new Button(skin, "frontend_small");
-        optionsButton.add(new Label("OPTIONS", labelStyleJockey20GlowBlue)).padBottom(5);
+        optionsButton.add(new Label(localisation.get("OPTIONS"), labelStyleJockey20GlowBlue)).padBottom(5);
         optionsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -57,7 +58,7 @@ public class MainMenu extends Table {
         optionsButton.setY(252);
 
         Button tutorialButton = new Button(skin, "frontend_small");
-        tutorialButton.add(new Label("TUTORIAL", labelStyleJockey20GlowBlue)).padBottom(5);
+        tutorialButton.add(new Label(localisation.get("TUTORIAL"), labelStyleJockey20GlowBlue)).padBottom(5);
         tutorialButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -67,7 +68,7 @@ public class MainMenu extends Table {
         tutorialButton.setY(210);
 
         Button creditsButton = new Button(skin, "frontend_small");
-        creditsButton.add(new Label("CREDITS", labelStyleJockey20GlowBlue)).padBottom(5);
+        creditsButton.add(new Label(localisation.get("CREDITS"), labelStyleJockey20GlowBlue)).padBottom(5);
         creditsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -77,7 +78,7 @@ public class MainMenu extends Table {
         creditsButton.setY(168);
 
         Button exitButton = new Button(skin, "frontend_big_exit");
-        exitButton.add(new Label("EXIT", labelStyleJockey24GlowRed)).padBottom(5);
+        exitButton.add(new Label(localisation.get("EXIT"), labelStyleJockey24GlowRed)).padBottom(5);
         exitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
