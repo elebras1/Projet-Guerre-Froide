@@ -4,10 +4,12 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.IntMap;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectList;
+import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.entities.Minister;
 import com.populaire.projetguerrefroide.entities.Population;
 import com.populaire.projetguerrefroide.map.*;
@@ -56,7 +58,7 @@ public class DataManager {
 
     private IntObjectMap<Province> loadProvinces(Map<String, Country> countries) {
         IntObjectMap<Province> provincesByColor = new IntObjectMap<>(20000);
-        Map<Short, Province> provinces = this.readProvincesJson(countries);
+        IntMap<Province> provinces = this.readProvincesJson(countries);
         this.readRegionJson(provinces);
         this.readDefinitionCsv(provinces, provincesByColor);
         this.readProvinceBitmap(provincesByColor);
@@ -74,7 +76,7 @@ public class DataManager {
     }
 
     private Map<String, Country> readCountriesJson() {
-        Map<String, Country> countries = new HashMap<>();
+        Map<String, Country> countries = new ObjectObjectMap<>();
         try {
             JsonNode countriesJson = openJson(this.countriesJsonFiles);
             countriesJson.fields().forEachRemaining(entry -> {
@@ -147,8 +149,8 @@ public class DataManager {
         return (red << 24) | (green << 16) | (blue << 8) | alpha;
     }
 
-    private Map<Short, Province> readProvincesJson(Map<String, Country> countries) {
-        Map<Short, Province> provinces = new HashMap<>(20000);
+    private IntMap<Province> readProvincesJson(Map<String, Country> countries) {
+        IntMap<Province> provinces = new IntMap<>(20000);
         try {
             JsonNode provincesJson = openJson(this.provincesJsonFile);
             provincesJson.fields().forEachRemaining(entry -> {
@@ -185,7 +187,7 @@ public class DataManager {
         return null;
     }
 
-    private void readRegionJson(Map<Short, Province> provinces) {
+    private void readRegionJson(IntMap<Province> provinces) {
         try {
             JsonNode rootNode = openJson(this.regionJsonFiles);
             rootNode.fields().forEachRemaining(regionData -> {
@@ -205,7 +207,7 @@ public class DataManager {
         }
     }
 
-    private void readDefinitionCsv(Map<Short, Province> provinces, IntObjectMap<Province> provincesByColor) {
+    private void readDefinitionCsv(IntMap<Province> provinces, IntObjectMap<Province> provincesByColor) {
         try (BufferedReader br = new BufferedReader(new StringReader(Gdx.files.internal(this.definitionCsvFile).readString()))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -230,7 +232,7 @@ public class DataManager {
         }
     }
 
-    private void readCountriesHistoryJson(Map<String, Country> countries, Map<Short, Province> provinces) {
+    private void readCountriesHistoryJson(Map<String, Country> countries, IntMap<Province> provinces) {
         try {
             JsonNode countriesJson = openJson(this.countriesHistoryJsonFiles);
             countriesJson.fields().forEachRemaining(entry -> {
@@ -242,7 +244,7 @@ public class DataManager {
         }
     }
 
-    private void readContinentJsonFile(Map<Short, Province> provinces) {
+    private void readContinentJsonFile(IntMap<Province> provinces) {
         try {
             JsonNode continentJson = openJson(this.continentJsonFile);
             continentJson.fields().forEachRemaining(entry -> {
@@ -257,7 +259,7 @@ public class DataManager {
         }
     }
 
-    private void readCountryHistoryJson(Map<String, Country> countries, String countryFileName, String idCountry, Map<Short, Province> provinces) {
+    private void readCountryHistoryJson(Map<String, Country> countries, String countryFileName, String idCountry, IntMap<Province> provinces) {
         try {
             if(countryFileName.equals("history/countries/REB - Rebels.json")) {
                 return;
@@ -299,7 +301,7 @@ public class DataManager {
         bitmap.dispose();
     }
 
-    private void readProvinceNamesCsv(Map<Short, Province> provinces) {
+    private void readProvinceNamesCsv(IntMap<Province> provinces) {
         try (BufferedReader br = new BufferedReader(new StringReader(Gdx.files.internal(this.provinceNamesCsvFile).readString()))) {
             String[] headers = br.readLine().split(";");
             int localisationIndex = Arrays.asList(headers).indexOf(this.localisation);
@@ -323,7 +325,7 @@ public class DataManager {
     }
 
     private Map<Integer, Vector2> readPositionsJson() {
-        Map<Integer, Vector2> unitPositions = new HashMap<>();
+        Map<Integer, Vector2> unitPositions = new ObjectObjectMap<>();
         try {
             JsonNode positionsJson = openJson(this.positionsJsonFile);
             positionsJson.fields().forEachRemaining(entry -> {
@@ -378,7 +380,7 @@ public class DataManager {
     }
 
     private Map<String, String> readLocalisationCsv(String filename) {
-        Map<String, String> localisation = new HashMap<>();
+        Map<String, String> localisation = new ObjectObjectMap<>();
         try (BufferedReader br = new BufferedReader(
                 new InputStreamReader(
                         Gdx.files.internal(filename).read(), StandardCharsets.UTF_8))) {
@@ -402,7 +404,7 @@ public class DataManager {
         return localisation;
     }
 
-    private void readAdjenciesJson(Map<Short, Province> provinces) {
+    private void readAdjenciesJson(IntMap<Province> provinces) {
         try {
             JsonNode adjenciesJson = openJson(this.adjenciesJsonFile);
             adjenciesJson.fields().forEachRemaining(entry -> {

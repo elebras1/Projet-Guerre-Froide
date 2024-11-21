@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.entities.Minister;
@@ -13,12 +14,12 @@ public class Country {
     private final String name;
     private final int color;
     private List<LandProvince> provinces;
-    private Map<Integer, Minister> ministers;
+    private IntObjectMap<Minister> ministers;
     private LandProvince capital;
     private String government;
     private String ideology;
-    private Integer headOfGovernment;
-    private Integer headOfState;
+    private int headOfGovernment;
+    private int headOfState;
     private List<MapLabel> labels;
 
     public Country(String id, String name, int color) {
@@ -26,7 +27,7 @@ public class Country {
         this.name = name;
         this.color = color;
         this.provinces = new ObjectList<>();
-        this.ministers = new HashMap<>();
+        this.ministers = new IntObjectMap<>();
         this.capital = null;
         this.government = "";
         this.ideology = "";
@@ -51,11 +52,11 @@ public class Country {
         return this.provinces;
     }
 
-    public void addMinister(Integer ministerId, Minister minister) {
+    public void addMinister(int ministerId, Minister minister) {
         this.ministers.put(ministerId, minister);
     }
 
-    public Map<Integer, Minister> getMinisters() {
+    public IntObjectMap<Minister> getMinisters() {
         return this.ministers;
     }
 
