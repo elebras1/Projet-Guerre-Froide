@@ -8,8 +8,8 @@ import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.ObjectList;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -237,7 +237,7 @@ public class MapLabel {
     }
 
     private void calculateQuadraticBezierCurve() {
-        this.points = new ArrayList<>();
+        this.points = new ObjectList<>();
 
         int numberOfPoints = this.label.length() + 2;
 

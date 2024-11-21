@@ -2,6 +2,7 @@ package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntSet;
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.entities.Population;
 
 import java.util.*;
@@ -23,7 +24,7 @@ public class LandProvince implements Province {
         this.countryOwner = countryOwner;
         this.countryController = countryController;
         this.population = population;
-        this.adjacentProvinces = new ArrayList<>();
+        this.adjacentProvinces = new ObjectList<>();
         this.pixels = new IntSet();
     }
 

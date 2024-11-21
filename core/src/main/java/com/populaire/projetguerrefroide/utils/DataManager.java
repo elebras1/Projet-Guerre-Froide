@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tommyettinger.ds.IntObjectMap;
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.entities.Minister;
 import com.populaire.projetguerrefroide.entities.Population;
 import com.populaire.projetguerrefroide.map.*;
@@ -46,7 +47,7 @@ public class DataManager {
     public World createWorld() {
         Map<String, Country> countries = this.loadCountries();
         IntObjectMap<Province> provinces = this.loadProvinces(countries);
-        return new World(new ArrayList<>(countries.values()), provinces);
+        return new World(new ObjectList<>(countries.values()), provinces);
     }
 
     private Map<String, Country> loadCountries() {
@@ -54,7 +55,7 @@ public class DataManager {
     }
 
     private IntObjectMap<Province> loadProvinces(Map<String, Country> countries) {
-        IntObjectMap<Province> provincesByColor = new IntObjectMap<>();
+        IntObjectMap<Province> provincesByColor = new IntObjectMap<>(20000);
         Map<Short, Province> provinces = this.readProvincesJson(countries);
         this.readRegionJson(provinces);
         this.readDefinitionCsv(provinces, provincesByColor);
@@ -351,7 +352,7 @@ public class DataManager {
                 e.printStackTrace();
             }
 
-            List<String> countriesId = new ArrayList<>();
+            List<String> countriesId = new ObjectList<>();
             JsonNode countriesNode = bookmarkNode.get("country");
             if (countriesNode != null && countriesNode.isArray()) {
                 countriesNode.forEach(countryId -> countriesId.add(countryId.asText()));
@@ -407,7 +408,7 @@ public class DataManager {
             adjenciesJson.fields().forEachRemaining(entry -> {
                 short provinceId = Short.parseShort(entry.getKey());
                 Province province = provinces.get(provinceId);
-                List<Province> adjacencies = new ArrayList<>();
+                List<Province> adjacencies = new ObjectList<>();
                 entry.getValue().forEach(adjacency -> adjacencies.add(provinces.get(adjacency.shortValue())));
                 province.setAdjacentProvinces(adjacencies);
             });

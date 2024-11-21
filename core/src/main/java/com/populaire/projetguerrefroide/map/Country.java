@@ -2,6 +2,7 @@ package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntSet;
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.entities.Minister;
 
 import java.util.*;
@@ -24,7 +25,7 @@ public class Country {
         this.id = id;
         this.name = name;
         this.color = color;
-        this.provinces = new ArrayList<>();
+        this.provinces = new ObjectList<>();
         this.ministers = new HashMap<>();
         this.capital = null;
         this.government = "";
@@ -139,12 +140,12 @@ public class Country {
     }
 
     public void createLabels() {
-        this.labels = new ArrayList<>();
+        this.labels = new ObjectList<>();
         Set<LandProvince> visitedProvinces = new HashSet<>();
 
         for (LandProvince province : this.provinces) {
             if (!visitedProvinces.contains(province)) {
-                List<LandProvince> connectedProvinces = new ArrayList<>();
+                List<LandProvince> connectedProvinces = new ObjectList<>();
                 this.getConnectedProvinces(province, visitedProvinces, connectedProvinces);
                 if(connectedProvinces.size() > 5 || (connectedProvinces.size() == this.provinces.size() && connectedProvinces.size() > 1)) {
                     MapLabel label = new MapLabel(this.getName(), this.getPixelsBorder(connectedProvinces));

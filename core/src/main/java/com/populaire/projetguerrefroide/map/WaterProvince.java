@@ -1,11 +1,8 @@
 package com.populaire.projetguerrefroide.map;
 
-import com.badlogic.gdx.graphics.Color;
+import com.github.tommyettinger.ds.ObjectList;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class WaterProvince implements Province{
     private List<Province> adjacentProvinces;
@@ -15,7 +12,7 @@ public class WaterProvince implements Province{
 
     public WaterProvince(short id) {
         this.id = id;
-        this.adjacentProvinces = new ArrayList<>();
+        this.adjacentProvinces = new ObjectList<>();
     }
 
     @Override
