@@ -2,11 +2,11 @@ package com.populaire.projetguerrefroide.utils;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Vector2;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.tommyettinger.ds.IntObjectMap;
 import com.populaire.projetguerrefroide.entities.Minister;
 import com.populaire.projetguerrefroide.entities.Population;
 import com.populaire.projetguerrefroide.map.*;
@@ -45,7 +45,7 @@ public class DataManager {
 
     public World createWorld() {
         Map<String, Country> countries = this.loadCountries();
-        Map<Color, Province> provinces = this.loadProvinces(countries);
+        IntObjectMap<Province> provinces = this.loadProvinces(countries);
         return new World(new ArrayList<>(countries.values()), provinces);
     }
 
@@ -53,8 +53,8 @@ public class DataManager {
         return this.readCountriesJson();
     }
 
-    private Map<Color, Province> loadProvinces(Map<String, Country> countries) {
-        Map<Color, Province> provincesByColor = new HashMap<>(20000);
+    private IntObjectMap<Province> loadProvinces(Map<String, Country> countries) {
+        IntObjectMap<Province> provincesByColor = new IntObjectMap<>();
         Map<Short, Province> provinces = this.readProvincesJson(countries);
         this.readRegionJson(provinces);
         this.readDefinitionCsv(provinces, provincesByColor);
@@ -137,13 +137,13 @@ public class DataManager {
         return null;
     }
 
-    private Color parseColor(JsonNode colorNode) {
-        return new Color(
-                colorNode.get(0).floatValue() / 255,
-                colorNode.get(1).floatValue() / 255,
-                colorNode.get(2).floatValue() / 255,
-                1
-        );
+    private int parseColor(JsonNode colorNode) {
+        int red = colorNode.get(0).intValue();
+        int green = colorNode.get(1).intValue();
+        int blue = colorNode.get(2).intValue();
+        int alpha = 255;
+
+        return (red << 24) | (green << 16) | (blue << 8) | alpha;
     }
 
     private Map<Short, Province> readProvincesJson(Map<String, Country> countries) {
@@ -204,7 +204,7 @@ public class DataManager {
         }
     }
 
-    private void readDefinitionCsv(Map<Short, Province> provinces, Map<Color, Province> provincesByColor) {
+    private void readDefinitionCsv(Map<Short, Province> provinces, IntObjectMap<Province> provincesByColor) {
         try (BufferedReader br = new BufferedReader(new StringReader(Gdx.files.internal(this.definitionCsvFile).readString()))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -213,7 +213,12 @@ public class DataManager {
                     short provinceId = Short.parseShort(values[0]);
                     Province province = provinces.get(provinceId);
                     if(province instanceof LandProvince) {
-                        Color color = new Color(Float.parseFloat(values[1]) / 255, Float.parseFloat(values[2]) / 255, Float.parseFloat(values[3]) / 255, 1);
+                        int red = Integer.parseInt(values[1]);
+                        int green = Integer.parseInt(values[2]);
+                        int blue = Integer.parseInt(values[3]);
+                        int alpha = 255;
+
+                        int color =  (red << 24) | (green << 16) | (blue << 8) | alpha;
                         province.setColor(color);
                         provincesByColor.put(color, province);
                     }
@@ -279,14 +284,14 @@ public class DataManager {
         }
     }
 
-    private void readProvinceBitmap(Map<Color, Province> provincesByColor) {
+    private void readProvinceBitmap(IntObjectMap<Province> provincesByColor) {
         Pixmap bitmap = new Pixmap(Gdx.files.internal(this.mapPath + "provinces.bmp"));
         for (short y = 0; y < bitmap.getHeight(); y++) {
             for (short x = 0; x < bitmap.getWidth(); x++) {
-                Color color = new Color(bitmap.getPixel(x, y));
+                int color = bitmap.getPixel(x, y);
                 Province province = provincesByColor.get(color);
-                if(province instanceof LandProvince) {
-                    ((LandProvince) province).addPixel(x, y);
+                if(province instanceof LandProvince landProvince) {
+                    landProvince.addPixel(x, y);
                 }
             }
         }

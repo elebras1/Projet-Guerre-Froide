@@ -1,6 +1,5 @@
 package com.populaire.projetguerrefroide.map;
 
-import com.badlogic.gdx.graphics.Color;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntSet;
 import com.populaire.projetguerrefroide.entities.Population;
@@ -10,7 +9,7 @@ import java.util.*;
 public class LandProvince implements Province {
     private List<Province> adjacentProvinces;
     private final IntSet pixels;
-    private Color color;
+    private int color;
     private short id;
     private String name;
     private Country countryOwner;
@@ -28,11 +27,11 @@ public class LandProvince implements Province {
         this.pixels = new IntSet();
     }
 
-    public Color getColor() {
+    public int getColor() {
         return this.color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(int color) {
         this.color = color;
     }
 

@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class WaterProvince implements Province{
     private List<Province> adjacentProvinces;
-    private Color color;
+    private int color;
     private short id;
     private String name;
 
@@ -19,12 +19,12 @@ public class WaterProvince implements Province{
     }
 
     @Override
-    public Color getColor() {
+    public int getColor() {
         return this.color;
     }
 
     @Override
-    public void setColor(Color color) {
+    public void setColor(int color) {
         this.color = color;
     }
 

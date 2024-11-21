@@ -5,18 +5,18 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
 import com.populaire.projetguerrefroide.utils.Logging;
 
 import java.util.*;
-import java.util.logging.Logger;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class World {
     private final List<Country> countries;
-    private final Map<Color, Province> provinces;
+    private final IntObjectMap<Province> provinces;
     private LandProvince selectedProvince;
     private Country selectedCountry;
     private Pixmap provincesColorPixmap;
@@ -34,13 +34,10 @@ public class World {
     private TextureArray terrainSheetArray;
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
-    private static final Logger LOGGER = Logging.getLogger(World.class.getName());
 
-    public World(List<Country> countries, Map<Color, Province> provinces) {
-        long startTime = System.currentTimeMillis();
+    public World(List<Country> countries, IntObjectMap<Province> provinces) {
         this.countries = countries;
         this.provinces = provinces;
-        long startTimeTextures = System.currentTimeMillis();
         this.createCountriesColorTexture();
         this.createProvincesColorStripesTexture();
         this.provincesColorPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
@@ -66,8 +63,6 @@ public class World {
             terrainTexturePaths[i] = pathBase + "text_" + i + ".png";
         }
         this.terrainSheetArray = new TextureArray(terrainTexturePaths);
-        long endTimeTextures = System.currentTimeMillis();
-        LOGGER.info("Textures loaded in " + (endTimeTextures - startTimeTextures) + "ms");
 
         String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
         String fragmentMapShader = Gdx.files.internal("shaders/map_f.glsl").readString();
@@ -79,9 +74,6 @@ public class World {
             Gdx.app.error("Shader", "Compilation failed: " + fontShader.getLog());
         }
         ShaderProgram.pedantic = false;
-
-        long endTime = System.currentTimeMillis();
-        LOGGER.info("World loaded in " + (endTime - startTime) + "ms");
     }
 
     public LandProvince getProvinceByPixel(short x, short y) {
@@ -92,9 +84,7 @@ public class World {
             adjustedX -= WORLD_WIDTH;
         }
 
-        Color provinceColor = new Color();
-        Color.rgba8888ToColor(provinceColor, this.provincesColorPixmap.getPixel(adjustedX, y));
-
+        int provinceColor = this.provincesColorPixmap.getPixel(adjustedX, y);
         Province province = this.provinces.get(provinceColor);
 
         if(province instanceof LandProvince) {
@@ -138,7 +128,7 @@ public class World {
                     int pixelInt = iterator.nextInt();
                     int pixelX = (pixelInt >> 16);
                     int pixelY = (pixelInt & 0xFFFF);
-                    pixmap.drawPixel(pixelX, pixelY, Color.rgba8888(((LandProvince) province).getCountryOwner().getColor()));
+                    pixmap.drawPixel(pixelX, pixelY, ((LandProvince) province).getCountryOwner().getColor());
                 }
             }
         }
@@ -157,7 +147,7 @@ public class World {
                     int pixelInt = iterator.nextInt();
                     short pixelX = (short) (pixelInt >> 16);
                     short pixelY = (short) (pixelInt & 0xFFFF);
-                    pixmap.drawPixel(pixelX, pixelY, Color.rgba8888(landProvince.getCountryController().getColor()));
+                    pixmap.drawPixel(pixelX, pixelY, landProvince.getCountryController().getColor());
                 }
             }
         }
@@ -168,13 +158,14 @@ public class World {
 
     public void createBordersTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
+        Color blackColor = Color.BLACK;
         for(Country country : this.countries) {
             IntList provincesPixelsBorder = country.getProvincesPixelsBorder();
             for(int i = 0; i < provincesPixelsBorder.size(); i++) {
                 int pixelInt = provincesPixelsBorder.get(i);
                 int pixelX = (pixelInt >> 16);
                 int pixelY = (pixelInt & 0xFFFF);
-                pixmap.drawPixel(pixelX, pixelY, Color.rgba8888(Color.BLACK));
+                pixmap.drawPixel(pixelX, pixelY, Color.rgba8888(blackColor));
             }
         }
 
@@ -211,9 +202,14 @@ public class World {
         this.mapShader.setUniformf("u_zoom", cam.zoom);
         this.mapShader.setUniformf("u_time", time);
         if(this.selectedProvince != null) {
-            this.mapShader.setUniformf("u_colorProvinceSelected", this.selectedProvince.getColor());
+            int color = this.selectedProvince.getColor();
+            float r = ((color >> 24) & 0xFF) / 255f;
+            float g = ((color >> 16) & 0xFF) / 255f;
+            float b = ((color >> 8) & 0xFF) / 255f;
+            float a = (color & 0xFF) / 255f;
+            this.mapShader.setUniformf("u_colorProvinceSelected", r, g, b, a);
         } else {
-            this.mapShader.setUniformf("u_colorProvinceSelected", new Color(0, 0, 0, 0));
+            this.mapShader.setUniformf("u_colorProvinceSelected", 0f, 0f, 0f, 0f);
         }
         this.mapShader.setUniformMatrix("u_projTrans", cam.combined);
 

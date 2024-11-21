@@ -10,7 +10,7 @@ public class Logging {
     public static Logger getLogger(String className) {
         Logger logger = Logger.getLogger(className);
         try {
-            FileHandler fileHandler = new FileHandler("world.log", true);
+            FileHandler fileHandler = new FileHandler("projet-guerre-froide.log", true);
             fileHandler.setFormatter(new SimpleFormatter());
             logger.addHandler(fileHandler);
             logger.setLevel(Level.INFO);

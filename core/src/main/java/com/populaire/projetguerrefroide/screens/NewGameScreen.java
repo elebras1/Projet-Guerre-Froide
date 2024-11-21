@@ -20,11 +20,13 @@ import com.populaire.projetguerrefroide.map.LandProvince;
 import com.populaire.projetguerrefroide.map.World;
 import com.populaire.projetguerrefroide.ui.*;
 import com.populaire.projetguerrefroide.utils.DataManager;
+import com.populaire.projetguerrefroide.utils.Logging;
 import com.populaire.projetguerrefroide.utils.ValueFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
@@ -48,10 +50,14 @@ public class NewGameScreen implements Screen {
     private HoverBox hoverBox;
     private CountrySelected countrySelectedUi;
     private CursorManager cursorManager;
+    private static final Logger LOGGER = Logging.getLogger(NewGameScreen.class.getName());
 
     public NewGameScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
+        long startTime = System.currentTimeMillis();
         this.dataManager = new DataManager();
         this.world = this.dataManager.createWorld();
+        long endTime = System.currentTimeMillis();
+        LOGGER.info("World created in " + (endTime - startTime) + "ms");
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 2f, 0);
         this.cam.update();

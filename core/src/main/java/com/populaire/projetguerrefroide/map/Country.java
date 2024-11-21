@@ -1,10 +1,8 @@
 package com.populaire.projetguerrefroide.map;
 
-import com.badlogic.gdx.graphics.Color;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntSet;
 import com.populaire.projetguerrefroide.entities.Minister;
-import com.populaire.projetguerrefroide.entities.Population;
 
 import java.util.*;
 import java.util.List;
@@ -12,7 +10,7 @@ import java.util.List;
 public class Country {
     private final String id;
     private final String name;
-    private final Color color;
+    private final int color;
     private List<LandProvince> provinces;
     private Map<Integer, Minister> ministers;
     private LandProvince capital;
@@ -22,7 +20,7 @@ public class Country {
     private Integer headOfState;
     private List<MapLabel> labels;
 
-    public Country(String id, String name, Color color) {
+    public Country(String id, String name, int color) {
         this.id = id;
         this.name = name;
         this.color = color;
@@ -41,7 +39,7 @@ public class Country {
         return this.name;
     }
 
-    public Color getColor() {
+    public int getColor() {
         return this.color;
     }
     public void addProvince(LandProvince province) {
