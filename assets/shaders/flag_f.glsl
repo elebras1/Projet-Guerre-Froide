@@ -5,7 +5,6 @@ uniform sampler2D u_textureFlag;
 uniform sampler2D u_textureOverlay;
 uniform sampler2D u_textureAlpha;
 
-uniform vec2 u_flagSize;
 uniform vec4 u_uvFlag;
 uniform vec4 u_uvOverlay;
 uniform vec4 u_uvAlpha;
@@ -26,6 +25,5 @@ void main() {
 
     if (fragColor.a > 0.0) {
         fragColor.a = 1.0;
-        fragColor.a = step(0.0, fragColor.a);
     }
 }

@@ -9,7 +9,6 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.populaire.projetguerrefroide.utils.TextureRegionOperations;
 
 public class FlagImage extends Image {
     private TextureRegion flagTexture;
@@ -45,8 +44,6 @@ public class FlagImage extends Image {
         this.shader.setUniformi("u_textureFlag", 0);
         this.shader.setUniformi("u_textureOverlay", 1);
         this.shader.setUniformi("u_textureAlpha", 2);
-        this.shader.setUniformf("u_flagSize", this.flagTexture.getRegionWidth(), this.flagTexture.getRegionHeight());
-        this.shader.setUniformf("u_overlaySize", this.overlayTexture.getRegionWidth(), this.overlayTexture.getRegionHeight());
         this.shader.setUniformf(
             "u_uvFlag",
             this.flagTexture.getU(),
