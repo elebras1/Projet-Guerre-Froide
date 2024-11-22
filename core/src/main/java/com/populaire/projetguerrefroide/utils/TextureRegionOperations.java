@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.TextureData;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-public class TextureOperations {
+public class TextureRegionOperations {
 
     /**
      * Extract a pixmap from a texture region

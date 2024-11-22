@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.populaire.projetguerrefroide.utils.TextureOperations;
+import com.populaire.projetguerrefroide.utils.TextureRegionOperations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class AnimatedCursor {
 
         this.cursors = new ArrayList<>();
         for (TextureRegion region : this.animation.getKeyFrames()) {
-            Pixmap pixmap = TextureOperations.extractPixmapFromTextureRegion(region);
+            Pixmap pixmap = TextureRegionOperations.extractPixmapFromTextureRegion(region);
             this.cursors.add(Gdx.graphics.newCursor(pixmap, 0, 0));
             pixmap.dispose();
         }
