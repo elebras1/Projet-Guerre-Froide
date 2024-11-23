@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.screens;
+package com.populaire.projetguerrefroide.screen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
@@ -14,14 +14,15 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.populaire.projetguerrefroide.entities.Minister;
+import com.populaire.projetguerrefroide.entity.Minister;
+import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.map.Country;
 import com.populaire.projetguerrefroide.map.LandProvince;
 import com.populaire.projetguerrefroide.map.World;
 import com.populaire.projetguerrefroide.ui.*;
-import com.populaire.projetguerrefroide.utils.DataManager;
-import com.populaire.projetguerrefroide.utils.Logging;
-import com.populaire.projetguerrefroide.utils.ValueFormatter;
+import com.populaire.projetguerrefroide.data.DataManager;
+import com.populaire.projetguerrefroide.util.Logging;
+import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,12 +32,12 @@ import java.util.logging.Logger;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class NewGameScreen implements Screen {
+public class NewGameScreen implements Screen, GameInputListener {
     private final DataManager dataManager;
     private final World world; //temporaire
     private final OrthographicCamera cam;
     private final CpuSpriteBatch batch;
-    private final NewGameInputHandler<NewGameScreen> inputHandler;
+    private final GameInputHandler inputHandler;
     private final Skin skin;
     private final Skin skinUi;
     private final Skin skinFonts;
@@ -62,7 +63,7 @@ public class NewGameScreen implements Screen {
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 2f, 0);
         this.cam.update();
         this.batch = new CpuSpriteBatch();
-        this.inputHandler = new NewGameInputHandler<>(this.cam, this.world, this);
+        this.inputHandler = new GameInputHandler(this.cam, this);
         assetManager.load("ui/newgame/newgame_skin.json", Skin.class);
         assetManager.load("flags/flags_skin.json", Skin.class);
         assetManager.load("portraits/portraits_skin.json", Skin.class);
@@ -121,6 +122,22 @@ public class NewGameScreen implements Screen {
         this.stage.addActor(this.debug);
     }
 
+    @Override
+    public void onClick(short x, short y) {
+        this.world.selectProvince(x, y);
+        this.updateCountrySelected();
+    }
+
+    @Override
+    public void onHover(short x, short y) {
+        LandProvince province = this.world.getProvince(x, y);
+        if(province != null) {
+            this.updateHoverBox(province);
+        } else {
+            this.hideHoverBox();
+        }
+    }
+
     public void updateCountrySelected() {
         Country country = this.world.getSelectedCountry();
         if(country != null) {
@@ -132,7 +149,7 @@ public class NewGameScreen implements Screen {
                 portrait = this.skinPortraits.getDrawable("admin_type");
             }
             this.countrySelectedUi.update(country.getName(), this.skinFlags.getRegion(country.getId()),
-                    ValueFormatter.formatValue(country.getPopulationSize()), country.getGovernment(), portrait, headOfState.getName());
+                ValueFormatter.formatValue(country.getPopulationSize()), country.getGovernment(), portrait, headOfState.getName());
         } else {
             this.countrySelectedUi.hide();
         }
@@ -141,9 +158,9 @@ public class NewGameScreen implements Screen {
     public void updateHoverBox(LandProvince province) {
         Vector2 screenPosition = new Vector2(Gdx.input.getX(), (Gdx.graphics.getHeight() - Gdx.input.getY()));
         this.hoverBox.update(province.getName() + " (" + province.getCountryOwner().getName() + ")",
-                this.skinFlags.getDrawable(province.getCountryOwner().getId()));
+            this.skinFlags.getDrawable(province.getCountryOwner().getId()));
         this.hoverBox.setPosition(screenPosition.x + (float) this.cursorManager.getWidth(),
-                screenPosition.y - this.cursorManager.getHeight() * 1.5f);
+            screenPosition.y - this.cursorManager.getHeight() * 1.5f);
         this.hoverBox.setVisible(true);
     }
 

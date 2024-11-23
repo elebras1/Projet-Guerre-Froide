@@ -1,45 +1,40 @@
-package com.populaire.projetguerrefroide.screens;
+package com.populaire.projetguerrefroide.input;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.populaire.projetguerrefroide.map.LandProvince;
-import com.populaire.projetguerrefroide.map.World;
+import com.populaire.projetguerrefroide.screen.GameInputListener;
 
 import java.util.List;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class GameInputHandler<T extends Screen> implements InputProcessor {
+public class GameInputHandler implements InputProcessor {
     final OrthographicCamera cam;
-    final World world;
     private float delta = 0;
-    final T screen;
-    private final int edgeSize = 50;
+    final GameInputListener gameInputListener;
 
-    public GameInputHandler(OrthographicCamera cam, World world, T screen) {
+    public GameInputHandler(OrthographicCamera cam, GameInputListener gameInputListener) {
         this.cam = cam;
-        this.world = world;
-        this.screen = screen;
+        this.gameInputListener = gameInputListener;
     }
 
     public void setDelta(float delta) {
         this.delta = delta;
     }
 
-    public LandProvince getProvinceHover(int screenX, int screenY) {
-        Vector3 worldPosition = new Vector3(screenX, screenY, 0);
-        this.cam.unproject(worldPosition);
-        short x = (short) Math.round(worldPosition.x);
-        short y = (short) Math.round(worldPosition.y);
-        return this.world.getProvinceByPixel(x, y);
+    public int getWorldPositions(int screenX, int screenY) {
+        Vector3 worldCoordinates = new Vector3(screenX, screenY, 0);
+        this.cam.unproject(worldCoordinates);
+        short x = (short) Math.round(worldCoordinates.x);
+        short y = (short) Math.round(worldCoordinates.y);
+        return (x << 16) | (y & 0xFFFF);
     }
 
     public void handleInput(List<Table> uiTables) {
@@ -59,28 +54,24 @@ public class GameInputHandler<T extends Screen> implements InputProcessor {
             }
         }
 
-        if (screenX < this.edgeSize || Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+        int edgeSize = 50;
+        if (screenX < edgeSize || Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             this.cam.translate(-speed * this.cam.zoom, 0, 0);
-        } else if (screenX > screenWidth - this.edgeSize || Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+        } else if (screenX > screenWidth - edgeSize || Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
             this.cam.translate(speed * this.cam.zoom, 0, 0);
         }
 
-        if (screenY < this.edgeSize || Gdx.input.isKeyPressed(Input.Keys.UP)) {
+        if (screenY < edgeSize || Gdx.input.isKeyPressed(Input.Keys.UP)) {
             this.cam.translate(0, speed * this.cam.zoom, 0);
-        } else if (screenY > screenHeight - this.edgeSize || Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+        } else if (screenY > screenHeight - edgeSize || Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
             this.cam.translate(0, -speed * this.cam.zoom, 0);
         }
 
         this.cam.position.y = MathUtils.clamp(this.cam.position.y, -50, WORLD_HEIGHT + 50);
         this.cam.zoom = MathUtils.clamp(this.cam.zoom, 0f, WORLD_WIDTH / this.cam.viewportWidth);
 
-        LandProvince provinceHover = this.getProvinceHover(screenX, screenY);
-
-        if (provinceHover != null) {
-            ((NewGameScreen) this.screen).updateHoverBox(provinceHover);
-        } else {
-            ((NewGameScreen) this.screen).hideHoverBox();
-        }
+        int position = this.getWorldPositions(screenX, screenY);
+        this.gameInputListener.onHover((short) (position >> 16), (short) (position & 0xFFFF));
     }
 
     @Override
@@ -106,12 +97,8 @@ public class GameInputHandler<T extends Screen> implements InputProcessor {
     @Override
     public boolean touchUp (int screenX, int screenY, int pointer, int button) {
         if (button == Input.Buttons.LEFT) {
-            Vector3 worldCoordinates = new Vector3(screenX, screenY, 0);
-            this.cam.unproject(worldCoordinates);
-            short x = (short) Math.round(worldCoordinates.x);
-            short y = (short) Math.round(worldCoordinates.y);
-            this.world.selectProvince(x, y);
-
+            int position = this.getWorldPositions(screenX, screenY);
+            this.gameInputListener.onClick((short) (position >> 16), (short) (position & 0xFFFF));
             return true;
         }
 
@@ -125,27 +112,15 @@ public class GameInputHandler<T extends Screen> implements InputProcessor {
 
     @Override
     public boolean touchDragged (int screenX, int screenY, int pointer) {
-        LandProvince provinceHover = this.getProvinceHover(screenX, screenY);
-
-        if (provinceHover != null) {
-            ((NewGameScreen) this.screen).updateHoverBox(provinceHover);
-        } else {
-            ((NewGameScreen) this.screen).hideHoverBox();
-        }
-
+        int position = this.getWorldPositions(screenX, screenY);
+        this.gameInputListener.onHover((short) (position >> 16), (short) (position & 0xFFFF));
         return true;
     }
 
     @Override
     public boolean mouseMoved(int screenX, int screenY) {
-        LandProvince provinceHover = this.getProvinceHover(screenX, screenY);
-
-        if (provinceHover != null) {
-            ((NewGameScreen) this.screen).updateHoverBox(provinceHover);
-        } else {
-            ((NewGameScreen) this.screen).hideHoverBox();
-        }
-
+        int position = this.getWorldPositions(screenX, screenY);
+        this.gameInputListener.onHover((short) (position >> 16), (short) (position & 0xFFFF));
         return true;
     }
 
@@ -164,15 +139,8 @@ public class GameInputHandler<T extends Screen> implements InputProcessor {
             this.cam.zoom += zoom;
         }
 
-        LandProvince provinceHover = this.getProvinceHover(Gdx.input.getX(), Gdx.input.getY());
-
-        if (provinceHover != null) {
-            ((NewGameScreen) this.screen).updateHoverBox(provinceHover);
-        } else {
-            ((NewGameScreen) this.screen).hideHoverBox();
-        }
-
+        int position = this.getWorldPositions(Gdx.input.getX(), Gdx.input.getY());
+        this.gameInputListener.onHover((short) (position >> 16), (short) (position & 0xFFFF));
         return true;
     }
-
 }

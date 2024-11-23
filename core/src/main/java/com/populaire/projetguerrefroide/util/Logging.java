@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.utils;
+package com.populaire.projetguerrefroide.util;
 
 import java.util.logging.Logger;
 import java.util.logging.FileHandler;

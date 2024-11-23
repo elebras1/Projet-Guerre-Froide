@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.entities;
+package com.populaire.projetguerrefroide.entity;
 
 import java.util.Date;
 

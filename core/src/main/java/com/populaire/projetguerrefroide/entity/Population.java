@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.entities;
+package com.populaire.projetguerrefroide.entity;
 
 public class Population {
     private int size;

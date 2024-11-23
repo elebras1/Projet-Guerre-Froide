@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.screens;
+package com.populaire.projetguerrefroide.screen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -10,7 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.populaire.projetguerrefroide.ui.CursorManager;
 import com.populaire.projetguerrefroide.ui.MainMenu;
-import com.populaire.projetguerrefroide.utils.DataManager;
+import com.populaire.projetguerrefroide.data.DataManager;
 
 
 public class MainMenuScreen implements Screen, MainMenuListener {

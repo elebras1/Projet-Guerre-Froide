@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.utils;
+package com.populaire.projetguerrefroide.util;
 
 public class ValueFormatter {
     public static String formatValue(int value) {

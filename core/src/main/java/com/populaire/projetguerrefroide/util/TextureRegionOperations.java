@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.utils;
+package com.populaire.projetguerrefroide.util;
 
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;

@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.populaire.projetguerrefroide.utils.TextureRegionOperations;
+import com.populaire.projetguerrefroide.util.TextureRegionOperations;
 
 import java.util.ArrayList;
 import java.util.List;

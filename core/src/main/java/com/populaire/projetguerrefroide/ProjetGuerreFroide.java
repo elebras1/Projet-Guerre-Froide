@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.populaire.projetguerrefroide.screens.ScreenManager;
+import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.ui.CursorManager;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */

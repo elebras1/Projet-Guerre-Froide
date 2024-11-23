@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.utils;
+package com.populaire.projetguerrefroide.ui;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;

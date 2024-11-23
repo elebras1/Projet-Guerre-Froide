@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.screens;
+package com.populaire.projetguerrefroide.screen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;

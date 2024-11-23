@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.utils;
+package com.populaire.projetguerrefroide.data;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -10,8 +10,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.github.tommyettinger.ds.ObjectObjectMap;
-import com.populaire.projetguerrefroide.entities.Minister;
-import com.populaire.projetguerrefroide.entities.Population;
+import com.populaire.projetguerrefroide.entity.Bookmark;
+import com.populaire.projetguerrefroide.entity.Minister;
+import com.populaire.projetguerrefroide.entity.Population;
 import com.populaire.projetguerrefroide.map.*;
 
 import java.io.*;

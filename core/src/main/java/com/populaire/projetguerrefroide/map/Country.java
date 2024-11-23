@@ -4,7 +4,7 @@ import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.entities.Minister;
+import com.populaire.projetguerrefroide.entity.Minister;
 
 import java.util.*;
 import java.util.List;

@@ -75,7 +75,7 @@ public class World {
         ShaderProgram.pedantic = false;
     }
 
-    public LandProvince getProvinceByPixel(short x, short y) {
+    public LandProvince getProvince(short x, short y) {
         short adjustedX = x;
         if (x < 0) {
             adjustedX += WORLD_WIDTH;
@@ -94,7 +94,7 @@ public class World {
     }
 
     public void selectProvince(short x, short y) {
-        this.selectedProvince = this.getProvinceByPixel(x, y);
+        this.selectedProvince = this.getProvince(x, y);
         if(this.selectedProvince != null) {
             this.selectedCountry = this.selectedProvince.getCountryOwner();
         } else {
