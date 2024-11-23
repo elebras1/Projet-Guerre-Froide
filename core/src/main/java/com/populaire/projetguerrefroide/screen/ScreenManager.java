@@ -17,15 +17,15 @@ public class ScreenManager {
     }
 
     public void showMainMenuScreen() {
-        this.showScreen(new MainMenuScreen(this, assetManager, this.cursorManager));
+        this.showScreen(new MainMenuScreen(this, this.assetManager, this.cursorManager));
     }
 
     public void showLoadScreen() {
-        this.showScreen(new LoadScreen(this, assetManager, this.cursorManager));
+        this.showScreen(new LoadScreen(this, this.assetManager, this.cursorManager));
     }
 
     public void showNewGameScreen() {
-        this.showScreen(new NewGameScreen(this, assetManager, this.cursorManager));
+        this.showScreen(new NewGameScreen(this, this.assetManager, this.cursorManager));
     }
 
     public void showScreen(Screen newScreen) {

@@ -20,6 +20,7 @@ public class LoadScreen implements Screen {
     private final Stage stage;
     private Skin skin;
     private final List<String> loadingImageNames;
+    private final CursorManager cursorManager;
 
     public LoadScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
         this.stage = new Stage();
@@ -32,7 +33,8 @@ public class LoadScreen implements Screen {
         rootTable.setFillParent(true);
         rootTable.setBackground(background);
         this.stage.addActor(rootTable);
-        cursorManager.animatedCursor("busy");
+        this.cursorManager = cursorManager;
+        this.cursorManager.animatedCursor("busy");
         CompletableFuture.runAsync(() -> {
             Gdx.app.postRunnable(screenManager::showNewGameScreen);
         });
@@ -49,6 +51,8 @@ public class LoadScreen implements Screen {
 
         this.stage.act();
         this.stage.draw();
+
+        this.cursorManager.update(delta);
     }
 
     @Override

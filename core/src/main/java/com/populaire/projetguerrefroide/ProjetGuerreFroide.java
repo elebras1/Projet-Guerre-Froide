@@ -15,7 +15,6 @@ public class ProjetGuerreFroide extends Game {
     public void create() {
         AssetManager assetManager = new AssetManager();
         CursorManager cursorManager = new CursorManager();
-        cursorManager.defaultCursor();
         this.loadAssets(assetManager);
         ScreenManager screenManager = new ScreenManager(this, assetManager, cursorManager);
         screenManager.showMainMenuScreen();

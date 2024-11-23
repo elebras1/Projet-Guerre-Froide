@@ -32,7 +32,7 @@ public class AnimatedCursor {
     }
 
     public void update(float deltaTime) {
-        elapsedTime += deltaTime;
+        this.elapsedTime += deltaTime;
         int frameIndex = this.animation.getKeyFrameIndex(this.elapsedTime % this.animation.getAnimationDuration());
         if (frameIndex != this.currentCursorIndex) {
             this.currentCursorIndex = frameIndex;

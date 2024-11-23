@@ -9,6 +9,10 @@ public class CursorManager {
     private int width;
     private int height;
 
+    public CursorManager() {
+        this.defaultCursor();
+    }
+
     public void defaultCursor() {
         if(this.animatedCursor != null) {
             this.animatedCursor.dispose();
@@ -20,7 +24,7 @@ public class CursorManager {
         this.width = pixmap.getWidth();
         this.height = pixmap.getHeight();
         pixmap.dispose();
-        Gdx.graphics.setCursor(cursor);
+        Gdx.graphics.setCursor(this.cursor);
     }
 
     public void animatedCursor(String name) {
@@ -30,12 +34,10 @@ public class CursorManager {
         }
     }
 
-    public AnimatedCursor getAnimatedCursor() {
-        return this.animatedCursor;
-    }
-
-    public Cursor getCursor() {
-        return this.cursor;
+    public void update(float deltaTime) {
+        if(this.animatedCursor != null) {
+            this.animatedCursor.update(deltaTime);
+        }
     }
 
     public int getWidth() {
@@ -50,5 +52,6 @@ public class CursorManager {
         if(this.animatedCursor != null) {
             this.animatedCursor.dispose();
         }
+        this.cursor.dispose();
     }
 }
