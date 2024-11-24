@@ -11,20 +11,6 @@ flag_alpha
   orig: 109, 77
   offset: 0, 0
   index: -1
-flag_alpha2
-  rotate: false
-  xy: 147, 277
-  size: 93, 64
-  orig: 93, 64
-  offset: 0, 0
-  index: -1
-flag_overlay2
-  rotate: false
-  xy: 258, 356
-  size: 93, 64
-  orig: 93, 64
-  offset: 0, 0
-  index: -1
 small_tiles_dialog
   rotate: false
   xy: 112, 242
@@ -56,6 +42,13 @@ tiles_dialog_type4
   size: 144, 144
   split: 25, 25, 25, 25
   orig: 144, 144
+  offset: 0, 0
+  index: -1
+flag_alpha2
+  rotate: false
+  xy: 147, 277
+  size: 93, 64
+  orig: 93, 64
   offset: 0, 0
   index: -1
 flag_overlay

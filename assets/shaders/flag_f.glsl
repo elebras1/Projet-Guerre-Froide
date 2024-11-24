@@ -21,9 +21,12 @@ void main() {
     vec4 alphaColor = texture(u_textureAlpha, uvAlpha);
 
     vec4 color = mix(flagColor, overlayColor, overlayColor.a);
-    fragColor = mix(alphaColor, color, alphaColor.a);
-
-    if (fragColor.a > 0.0) {
-        fragColor.a = 1.0;
+    if(alphaColor.a < 1) {
+        fragColor = overlayColor;
+    } else {
+        fragColor = mix(alphaColor, color, alphaColor.a);
+        if (fragColor.a > 0.0) {
+            fragColor.a = 1.0;
+        }
     }
 }

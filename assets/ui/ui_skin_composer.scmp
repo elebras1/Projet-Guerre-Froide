@@ -103,46 +103,6 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Desktop/DEV/openEastVsWest/assets/ui/flag_alpha2.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: flag_alpha2
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Desktop/DEV/openEastVsWest/assets/ui/flag_overlay2.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: flag_overlay2
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
 			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/flag_overlay.png
 			bgColor: {
 				r: 1
@@ -153,6 +113,26 @@ atlasData: {
 			tint: null
 			tintName: null
 			name: flag_overlay
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/flag_alpha2.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: flag_alpha2
 			tiled: false
 			minWidth: -1
 			minHeight: -1
