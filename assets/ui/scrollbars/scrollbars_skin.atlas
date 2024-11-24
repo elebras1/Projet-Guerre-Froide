@@ -1,90 +1,118 @@
 
 scrollbars_skin.png
-size: 256, 256
+size: 128, 128
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
+evw_slider
+  rotate: false
+  xy: 40, 36
+  size: 6, 14
+  orig: 6, 14
+  offset: 0, 0
+  index: -1
+evw_slider_button
+  rotate: false
+  xy: 1, 107
+  size: 37, 20
+  orig: 37, 20
+  offset: 0, 0
+  index: -1
+evw_slider_down
+  rotate: false
+  xy: 40, 80
+  size: 16, 12
+  orig: 16, 12
+  offset: 0, 0
+  index: -1
+evw_slider_up
+  rotate: false
+  xy: 108, 115
+  size: 16, 12
+  orig: 16, 12
+  offset: 0, 0
+  index: -1
 gen_slider_bg
   rotate: false
-  xy: 151, 217
+  xy: 108, 101
   size: 12, 12
   orig: 12, 12
   offset: 0, 0
   index: -1
 gen_slider_standard
   rotate: false
-  xy: 1, 163
-  size: 96, 52
-  orig: 96, 52
+  xy: 1, 23
+  size: 24, 52
+  orig: 24, 52
   offset: 0, 0
   index: -1
 gen_slider_standard2
   rotate: false
-  xy: 1, 128
-  size: 96, 33
-  orig: 96, 33
+  xy: 40, 94
+  size: 24, 33
+  orig: 24, 33
   offset: 0, 0
   index: -1
 scroller_outliner_bg
   rotate: false
-  xy: 99, 186
-  size: 44, 29
-  orig: 44, 29
+  xy: 27, 46
+  size: 11, 29
+  orig: 11, 29
   offset: 0, 0
   index: -1
 scroller_outliner_bottom
   rotate: false
-  xy: 79, 114
+  xy: 40, 66
   size: 11, 12
   orig: 11, 12
   offset: 0, 0
   index: -1
 scroller_outliner_btn_up_down
   rotate: false
-  xy: 1, 37
-  size: 44, 29
-  orig: 44, 29
+  xy: 27, 15
+  size: 11, 29
+  orig: 11, 29
   offset: 0, 0
   index: -1
 scroller_outliner_standard
   rotate: false
-  xy: 99, 172
+  xy: 27, 1
   size: 11, 12
   orig: 11, 12
   offset: 0, 0
   index: -1
 scroller_outliner_top
   rotate: false
-  xy: 145, 203
+  xy: 40, 52
   size: 11, 12
   orig: 11, 12
   offset: 0, 0
   index: -1
 scroller_vertical_btn
   rotate: false
-  xy: 151, 231
-  size: 96, 14
-  orig: 96, 14
+  xy: 1, 7
+  size: 24, 14
+  orig: 24, 14
   offset: 0, 0
   index: -1
 slider_btn_minus
   rotate: false
-  xy: 1, 98
-  size: 76, 28
-  orig: 76, 28
+  xy: 66, 99
+  size: 19, 28
+  orig: 19, 28
   offset: 0, 0
   index: -1
 slider_btn_plus
   rotate: false
-  xy: 1, 68
-  size: 76, 28
-  orig: 76, 28
+  xy: 87, 99
+  size: 19, 28
+  orig: 19, 28
   offset: 0, 0
   index: -1
 slider_horizontal_btn
   rotate: false
-  xy: 1, 217
-  size: 148, 28
-  orig: 148, 28
+  xy: 1, 77
+  size: 37, 28
+  orig: 37, 28
   offset: 0, 0
   index: -1

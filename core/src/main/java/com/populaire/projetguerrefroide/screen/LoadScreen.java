@@ -20,21 +20,25 @@ public class LoadScreen implements Screen {
     private final Stage stage;
     private Skin skin;
     private final List<String> loadingImageNames;
+    private final AssetManager assetManager;
     private final CursorManager cursorManager;
 
     public LoadScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
+        this.assetManager = assetManager;
+        this.assetManager.load("loadingscreens/loadingscreens_skin.json", Skin.class);
         this.stage = new Stage();
-        this.loadingImageNames = new ArrayList<>(Arrays.asList("load_1", "load_2", "load_3", "load_4", "load_5", "load_6", "load_7", "load_8", "load_9"));
         Gdx.input.setInputProcessor(this.stage);
-        this.skin = new Skin(Gdx.files.internal("loadingscreens/loadingscreens_skin.json"));
-        Random random = new Random();
-        Drawable background = skin.getDrawable(this.loadingImageNames.get(random.nextInt(this.loadingImageNames.size())));
-        Table rootTable = new Table();
-        rootTable.setFillParent(true);
-        rootTable.setBackground(background);
-        this.stage.addActor(rootTable);
+        this.loadingImageNames = new ArrayList<>(Arrays.asList("load_1", "load_2", "load_3", "load_4", "load_5", "load_6", "load_7", "load_8", "load_9"));
         this.cursorManager = cursorManager;
         this.cursorManager.animatedCursor("busy");
+        Random random = new Random();
+        Table rootTable = new Table();
+        this.assetManager.finishLoading();
+        this.skin = this.assetManager.get("loadingscreens/loadingscreens_skin.json", Skin.class);
+        rootTable.setFillParent(true);
+        Drawable background = this.skin.getDrawable(this.loadingImageNames.get(random.nextInt(this.loadingImageNames.size())));
+        rootTable.setBackground(background);
+        this.stage.addActor(rootTable);
         CompletableFuture.runAsync(() -> {
             Gdx.app.postRunnable(screenManager::showNewGameScreen);
         });
@@ -79,6 +83,8 @@ public class LoadScreen implements Screen {
     public void dispose() {
         this.stage.dispose();
         this.skin.dispose();
+        this.assetManager.unload("loadingscreens/loadingscreens_skin.json");
+
     }
 }
 

@@ -9,6 +9,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 public class HoverScrollPane extends ScrollPane {
     public HoverScrollPane(Actor actor, Skin skin) {
         super(actor, skin);
+        this.setVariableSizeKnobs(false);
+        this.setFadeScrollBars(false);
+    }
+
+    public HoverScrollPane(Actor actor, Skin skin, String styleName) {
+        super(actor, skin, styleName);
+        this.setVariableSizeKnobs(false);
+        this.setFadeScrollBars(false);
     }
 
     @Override

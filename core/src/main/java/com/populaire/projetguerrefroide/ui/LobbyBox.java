@@ -33,7 +33,7 @@ public class LobbyBox extends Table {
         Label introLabel = new Label(localisation.get("INTRODUCTION"), labelStyleJockey16GlowBlue);
         introLabel.setWrap(true);
         introLabel.setSize(722, 120);
-        HoverScrollPane scrollPane = new HoverScrollPane(introLabel, skinScrollbars);
+        HoverScrollPane scrollPane = new HoverScrollPane(introLabel, skinScrollbars, "default");
         Table scrollTable = new Table();
         scrollTable.add(scrollPane).width(722).height(120);
 
