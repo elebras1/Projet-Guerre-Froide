@@ -28,7 +28,7 @@ public class LoadScreen implements Screen {
         this.assetManager.load("loadingscreens/loadingscreens_skin.json", Skin.class);
         this.stage = new Stage();
         Gdx.input.setInputProcessor(this.stage);
-        this.loadingImageNames = new ArrayList<>(Arrays.asList("load_1", "load_2", "load_3", "load_4", "load_5", "load_6", "load_7", "load_8", "load_9"));
+        this.loadingImageNames = new ArrayList<>(Arrays.asList("load_1", "load_2", "load_3", "load_4", "load_5", "load_6", "load_7", "load_8", "load_9", "load_10", "load_11", "load_12"));
         this.cursorManager = cursorManager;
         this.cursorManager.animatedCursor("busy");
         Random random = new Random();

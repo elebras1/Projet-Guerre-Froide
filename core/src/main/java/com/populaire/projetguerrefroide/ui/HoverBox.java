@@ -16,7 +16,7 @@ public class HoverBox extends Table {
     private float heightWidth;
 
     public HoverBox(Skin skinUi, Skin skinFonts) {
-        NinePatch ninePatch = skinUi.getPatch("small_tiles_dialog");
+        NinePatch ninePatch = skinUi.getPatch("tiles_dialog");
         this.marginWidth = ninePatch.getLeftWidth() + ninePatch.getRightWidth();
         this.heightWidth = ninePatch.getTopHeight() + ninePatch.getBottomHeight();
         NinePatchDrawable ninePatchDrawable = new NinePatchDrawable(ninePatch);
