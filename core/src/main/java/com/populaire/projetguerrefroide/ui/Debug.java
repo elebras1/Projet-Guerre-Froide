@@ -12,8 +12,7 @@ public class Debug extends Table {
     private Label memoryUsage;
     private Label delta;
 
-    public Debug(int x, int y) {
-        this.setPosition(x, y);
+    public Debug() {
         this.fps = this.createLabel();
         this.mousePosition = this.createLabel();
         this.memoryUsage = this.createLabel();

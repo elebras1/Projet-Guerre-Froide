@@ -87,7 +87,8 @@ public class NewGameScreen implements Screen, GameInputListener {
         multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(multiplexer);
 
-        this.debug = new Debug(100, 40);
+        this.debug = new Debug();
+        this.debug.setPosition(100, 40);
         this.hoverBox = new HoverBox(this.skinUi, this.skinFonts);
         this.stage.addActor(this.hoverBox);
 
