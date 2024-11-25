@@ -18,10 +18,10 @@ public class MainMenu extends Table {
         labelStyleJockey24GlowBlue.font = skinFonts.getFont("jockey_24_glow_blue");
 
         Label.LabelStyle labelStyleJockey24GlowRed = new Label.LabelStyle();
-        labelStyleJockey24GlowRed.font = skinFonts.getFont("Jockey_24_glow_red");
+        labelStyleJockey24GlowRed.font = skinFonts.getFont("jockey_24_glow_red");
 
         Label.LabelStyle labelStyleJockey20GlowBlue = new Label.LabelStyle();
-        labelStyleJockey20GlowBlue.font = skinFonts.getFont("Jockey_20_glow_blue");
+        labelStyleJockey20GlowBlue.font = skinFonts.getFont("jockey_20_glow_blue");
 
         Drawable background = skin.getDrawable("frontend_mainmenu_bg");
 

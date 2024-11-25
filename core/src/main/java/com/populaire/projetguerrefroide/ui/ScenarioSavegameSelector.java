@@ -31,7 +31,7 @@ public class ScenarioSavegameSelector extends Table {
     private Table createButtonsTable(Skin skinUi, Skin skinFonts, Map<String, String> localisation) {
         Image tabBg = new Image(skinUi.getDrawable("tab_bg"));
         Label.LabelStyle labelStyleArial172 = new Label.LabelStyle();
-        labelStyleArial172.font = skinFonts.getFont("Arial_17_2");
+        labelStyleArial172.font = skinFonts.getFont("arial_17_2");
 
         Label scenarioLabel = new Label(localisation.get("HISTORICAL_START"), labelStyleArial172);
         Label savegameLabel = new Label(localisation.get("SAVED_GAMES"), labelStyleArial172);
@@ -69,7 +69,7 @@ public class ScenarioSavegameSelector extends Table {
         Label.LabelStyle labelStyleImpactSmall = new Label.LabelStyle();
         labelStyleImpactSmall.font = skinFonts.getFont("impact_small");
         Label.LabelStyle labelStyleJockey14 = new Label.LabelStyle();
-        labelStyleJockey14.font = skinFonts.getFont("Jockey_14");
+        labelStyleJockey14.font = skinFonts.getFont("jockey_14");
         Label nameLabel = new Label(localisation.get(bookmark.getNameId()), labelStyleImpactSmall);
         Label descriptionLabel = new Label(localisation.get(bookmark.getDescriptionId()), labelStyleJockey14);
         nameLabel.setPosition(15, 35);

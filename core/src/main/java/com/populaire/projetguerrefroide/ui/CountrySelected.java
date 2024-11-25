@@ -34,16 +34,16 @@ public class CountrySelected extends Table {
         this.flagImage.setPosition(6, 85);
 
         Label.LabelStyle labelStyleJockey24 = new Label.LabelStyle();
-        labelStyleJockey24.font = skinFonts.getFont("Jockey_24");
+        labelStyleJockey24.font = skinFonts.getFont("jockey_24");
         Label.LabelStyle labelStyleJockey14Dark = new Label.LabelStyle();
-        labelStyleJockey14Dark.font = skinFonts.getFont("Jockey_14_dark");
+        labelStyleJockey14Dark.font = skinFonts.getFont("jockey_14_dark");
         Label.LabelStyle labelStyleJockey14 = new Label.LabelStyle();
-        labelStyleJockey14.font = skinFonts.getFont("Jockey_14");
+        labelStyleJockey14.font = skinFonts.getFont("jockey_14");
         Label.LabelStyle labelStyleJockey14Yellow = new Label.LabelStyle();
-        labelStyleJockey14Yellow.font = skinFonts.getFont("Jockey_14");
-        labelStyleJockey14Yellow.fontColor = new Color(1, 0.76f, 0, 1);
+        labelStyleJockey14Yellow.font = skinFonts.getFont("jockey_14");
+        labelStyleJockey14Yellow.fontColor = skinFonts.getColor("yellow");
         Label.LabelStyle labelStyleJockey14GlowBlue = new Label.LabelStyle();
-        labelStyleJockey14GlowBlue.font = skinFonts.getFont("Jockey_14_glow_blue");
+        labelStyleJockey14GlowBlue.font = skinFonts.getFont("jockey_14_glow_blue");
 
         this.countryName = new Label("", labelStyleJockey24);
         this.countryName.setBounds(0, 168, background.getMinWidth(), 20);

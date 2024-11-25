@@ -15,7 +15,7 @@ public class TitleBar extends Table {
         Drawable drawable = skinUi.getDrawable("selected_scenario_bg");
 
         Label.LabelStyle labelStyleTitle = new Label.LabelStyle();
-        labelStyleTitle.font = skinFonts.getFont("Jockey_18_black");
+        labelStyleTitle.font = skinFonts.getFont("jockey_18_black");
         this.titleScenario = new Label(localisation.get("TITLE_SELECT_NATION"), labelStyleTitle);
 
         Label.LabelStyle labelStyleOrder = new Label.LabelStyle();

@@ -16,9 +16,9 @@ public class LobbyBox extends Table {
         Label.LabelStyle labelStyleJockey24GlowBlue = new Label.LabelStyle();
         labelStyleJockey24GlowBlue.font = skinFonts.getFont("jockey_24_glow_blue");
         Label.LabelStyle labelStyleJockey16GlowBlue = new Label.LabelStyle();
-        labelStyleJockey16GlowBlue.font = skinFonts.getFont("Jockey_16_glow_blue");
+        labelStyleJockey16GlowBlue.font = skinFonts.getFont("jockey_16_glow_blue");
         Label.LabelStyle labelStyleArial172 = new Label.LabelStyle();
-        labelStyleArial172.font = skinFonts.getFont("Arial_17_2");
+        labelStyleArial172.font = skinFonts.getFont("arial_17_2");
 
         Button playButton = new Button(skin, "play");
         playButton.add(new Label(localisation.get("PLAY"), labelStyleJockey24GlowBlue));

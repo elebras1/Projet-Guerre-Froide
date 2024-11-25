@@ -4,27 +4,6 @@ size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
-Danger_14
-  rotate: false
-  xy: 1, 1
-  size: 512, 256
-  orig: 512, 256
-  offset: 0, 0
-  index: -1
-Danger_20
-  rotate: false
-  xy: 1029, 515
-  size: 512, 256
-  orig: 512, 256
-  offset: 0, 0
-  index: -1
-Danger_20_dark
-  rotate: false
-  xy: 515, 1
-  size: 512, 256
-  orig: 512, 256
-  offset: 0, 0
-  index: -1
 arabic_18
   rotate: false
   xy: 1, 1287
@@ -81,6 +60,27 @@ cyrillic_14
   orig: 512, 512
   offset: 0, 0
   index: -1
+danger_14
+  rotate: false
+  xy: 1, 1
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+danger_20
+  rotate: false
+  xy: 1029, 515
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+danger_20_dark
+  rotate: false
+  xy: 515, 1
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
 f25_executive_17
   rotate: false
   xy: 1029, 1
@@ -94,114 +94,114 @@ size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
-Garamond_40
+garamond_40
   rotate: false
   xy: 1, 1547
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
-Jockey_14_dark
+jockey_14_dark
   rotate: false
-  xy: 1, 775
+  xy: 1, 1289
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
-Jockey_14_glow_blue
+jockey_14_glow_blue
   rotate: false
-  xy: 515, 1033
+  xy: 515, 1547
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
-Jockey_14_glow_red
+jockey_14_glow_red
+  rotate: false
+  xy: 1, 1031
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+jockey_16
+  rotate: false
+  xy: 515, 1289
+  size: 512, 256
+  orig: 512, 256
+  offset: 0, 0
+  index: -1
+jockey_16_dark
   rotate: false
   xy: 1029, 1547
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
-Jockey_16
+jockey_16_glow_blue
   rotate: false
-  xy: 1, 517
+  xy: 1, 773
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
-Jockey_16_dark
+jockey_16_glow_red
   rotate: false
-  xy: 515, 775
+  xy: 515, 1031
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
-Jockey_16_glow_blue
+jockey_16_paper
   rotate: false
   xy: 1029, 1289
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
-Jockey_16_glow_red
+jockey_18
   rotate: false
-  xy: 1, 259
+  xy: 1, 515
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
-Jockey_16_paper
+jockey_18_black
   rotate: false
-  xy: 515, 517
+  xy: 515, 773
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
-Jockey_18
+jockey_20_glow_blue
   rotate: false
   xy: 1029, 1031
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
-Jockey_18_black
+jockey_24_glow_blue
   rotate: false
   xy: 1, 1
-  size: 512, 256
-  orig: 512, 256
+  size: 512, 512
+  orig: 512, 512
   offset: 0, 0
   index: -1
-Jockey_20_glow_blue
+jockey_24_glow_red
   rotate: false
   xy: 515, 259
-  size: 512, 256
-  orig: 512, 256
-  offset: 0, 0
-  index: -1
-Jockey_24_glow_red
-  rotate: false
-  xy: 1029, 3
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
-Kyril
-  rotate: false
-  xy: 1, 1033
-  size: 512, 512
-  orig: 512, 512
-  offset: 0, 0
-  index: -1
-jockey_24_glow_blue
+jockey_30_glow_blue
   rotate: false
   xy: 1029, 517
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
-old_english
+jockey_30_glow_green
   rotate: false
-  xy: 515, 1291
+  xy: 1029, 3
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
@@ -212,55 +212,6 @@ size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
-Arial_17
-  rotate: false
-  xy: 1543, 1291
-  size: 256, 256
-  orig: 256, 256
-  offset: 0, 0
-  index: -1
-Arial_17_2
-  rotate: false
-  xy: 773, 7
-  size: 256, 256
-  orig: 256, 256
-  offset: 0, 0
-  index: -1
-Arial_20
-  rotate: false
-  xy: 1031, 7
-  size: 256, 256
-  orig: 256, 256
-  offset: 0, 0
-  index: -1
-Courier
-  rotate: false
-  xy: 1543, 775
-  size: 256, 256
-  orig: 256, 256
-  offset: 0, 0
-  index: -1
-Jockey_30_glow_blue
-  rotate: false
-  xy: 1, 1293
-  size: 512, 512
-  orig: 512, 512
-  offset: 0, 0
-  index: -1
-Jockey_30_glow_green
-  rotate: false
-  xy: 1, 779
-  size: 512, 512
-  orig: 512, 512
-  offset: 0, 0
-  index: -1
-Jockey_30_glow_red
-  rotate: false
-  xy: 515, 1293
-  size: 512, 512
-  orig: 512, 512
-  offset: 0, 0
-  index: -1
 arial_14_bold_glow
   rotate: false
   xy: 1543, 1549
@@ -275,9 +226,37 @@ arial_14_glow
   orig: 256, 256
   offset: 0, 0
   index: -1
+arial_17
+  rotate: false
+  xy: 1543, 1291
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+arial_17_2
+  rotate: false
+  xy: 773, 7
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
 arial_18
   rotate: false
   xy: 1543, 1033
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+arial_20
+  rotate: false
+  xy: 1031, 7
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+courier
+  rotate: false
+  xy: 1543, 775
   size: 256, 256
   orig: 256, 256
   offset: 0, 0
@@ -310,7 +289,28 @@ garamond_16
   orig: 256, 256
   offset: 0, 0
   index: -1
+jockey_30_glow_red
+  rotate: false
+  xy: 1, 1293
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
 kart_font
+  rotate: false
+  xy: 1, 779
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+kyril
+  rotate: false
+  xy: 515, 1293
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+old_english
   rotate: false
   xy: 1, 265
   size: 512, 512
@@ -365,79 +365,58 @@ size: 1024, 1024
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
-Arial12
+arial12
   rotate: false
   xy: 1, 5
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
-Arial12_alpha
+arial12_alpha
   rotate: false
   xy: 775, 779
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
-Arial12_bold
+arial12_bold
   rotate: false
   xy: 131, 5
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
-Arial12_headline
+arial12_headline
   rotate: false
   xy: 775, 649
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
-Arial14
+arial14
   rotate: false
   xy: 261, 5
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
-Arial16
+arial16
   rotate: false
   xy: 775, 519
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
-Eurostile16
+courier_new12
   rotate: false
-  xy: 775, 389
+  xy: 391, 5
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: -1
-Jockey_14
+eurostile16
   rotate: false
-  xy: 517, 651
-  size: 256, 256
-  orig: 256, 256
-  offset: 0, 0
-  index: -1
-Jockey_14_tight
-  rotate: false
-  xy: 517, 651
-  size: 256, 256
-  orig: 256, 256
-  offset: 0, 0
-  index: -1
-Jockey_24
-  rotate: false
-  xy: 259, 135
-  size: 256, 256
-  orig: 256, 256
-  offset: 0, 0
-  index: -1
-courier_new12
-  rotate: false
-  xy: 391, 5
+  xy: 775, 389
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
@@ -487,6 +466,27 @@ impact_black
 impact_small
   rotate: false
   xy: 259, 393
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+jockey_14
+  rotate: false
+  xy: 517, 651
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+jockey_14_tight
+  rotate: false
+  xy: 517, 651
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+jockey_24
+  rotate: false
+  xy: 259, 135
   size: 256, 256
   orig: 256, 256
   offset: 0, 0
