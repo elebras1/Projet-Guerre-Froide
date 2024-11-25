@@ -23,20 +23,16 @@
     "owner": "KON",
     "controller": "KON"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 3
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 4064365,
-        "template": 202
-      }
+    "population_total": {
+      "amount": 4064365,
+      "template": 202
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 1845956,

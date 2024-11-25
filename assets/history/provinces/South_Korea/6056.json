@@ -22,34 +22,26 @@
     "owner": "KOR",
     "controller": "KOR"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "military_goods",
-        "size": 4
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 270350,
-        "template": 10
-      }
+    "population_total": {
+      "amount": 270350,
+      "template": 10
     }
-  ],
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "military_goods",
-        "size": 5
-      }
+  },
+  "1950.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 275594,
-        "template": 10
-      }
+    "population_total": {
+      "amount": 275594,
+      "template": 10
     }
-  ],
+  },
   "1961.1.1": {
     "naval_base": 3,
     "economy_building": {
@@ -57,36 +49,28 @@
       "size": 7
     }
   },
-  "1979.1.1": [
-    {
-      "naval_base": 6,
-      "economy_building": {
-        "name": "military_goods",
-        "size": 8
-      }
+  "1979.1.1": {
+    "naval_base": 6,
+    "economy_building": {
+      "name": "military_goods",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 529318,
-        "template": 210
-      }
+    "population_total": {
+      "amount": 529318,
+      "template": 210
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 8,
-      "economy_building": {
-        "name": "military_goods",
-        "size": 9
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 8,
+    "economy_building": {
+      "name": "military_goods",
+      "size": 9
     },
-    {
-      "population_total": {
-        "amount": 622195,
-        "template": 310
-      }
+    "population_total": {
+      "amount": 622195,
+      "template": 310
     }
-  ],
+  },
   "1985.1.1": {
     "naval_base": 7
   },

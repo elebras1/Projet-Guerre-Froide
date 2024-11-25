@@ -22,70 +22,54 @@
     "controller": "EST",
     "remove_core": "SOV"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "military_goods",
-        "size": 1
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 145522,
-        "template": 52
-      }
+    "population_total": {
+      "amount": 145522,
+      "template": 52
     }
-  ],
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "military_goods",
-        "size": 1
-      }
+  },
+  "1950.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 147042,
-        "template": 52
-      }
+    "population_total": {
+      "amount": 147042,
+      "template": 52
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "military_goods",
       "size": 1
     }
   },
-  "1979.1.1": [
-    {
-      "naval_base": 1,
-      "economy_building": {
-        "name": "military_goods",
-        "size": 1
-      }
+  "1979.1.1": {
+    "naval_base": 1,
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 195577,
-        "template": 252
-      }
+    "population_total": {
+      "amount": 195577,
+      "template": 252
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 2,
-      "economy_building": {
-        "name": "military_goods",
-        "size": 1
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 207324,
-        "template": 352
-      }
+    "population_total": {
+      "amount": 207324,
+      "template": 352
     }
-  ],
+  },
   "1961.12.30": {
     "population_total": {
       "amount": 166192,

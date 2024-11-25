@@ -31,21 +31,17 @@
       "size": 2
     }
   },
-  "1979.1.1": [
-    {
-      "naval_base": 2,
-      "economy_building": {
-        "name": "military_goods",
-        "size": 4
-      }
+  "1979.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 1034357,
-        "template": 203
-      }
+    "population_total": {
+      "amount": 1034357,
+      "template": 203
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 487146,

@@ -18,20 +18,16 @@
     "controller": "GAB",
     "remove_core": "FRA"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 3
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 10402,
-        "template": 202
-      }
+    "population_total": {
+      "amount": 10402,
+      "template": 202
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "powerplant",

@@ -14,20 +14,16 @@
       "template": 30
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 1
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 785448,
-        "template": 330
-      }
+    "population_total": {
+      "amount": 785448,
+      "template": 330
     }
-  ],
+  },
   "1991.4.9": {
     "owner": "GEO",
     "controller": "GEO",

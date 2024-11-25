@@ -18,20 +18,16 @@
     "controller": "PAK",
     "remove_core": "ENG"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "intelligence_center",
-        "size": 1
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "intelligence_center",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 941974,
-        "template": 18
-      }
+    "population_total": {
+      "amount": 941974,
+      "template": 18
     }
-  ],
+  },
   "1983.1.1": {
     "economy_building": {
       "name": "centrifuges",

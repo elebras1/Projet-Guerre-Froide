@@ -24,50 +24,38 @@
     "controller": "MOR",
     "remove_core": "FRA"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 2
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 499088,
-        "template": 3
-      }
+    "population_total": {
+      "amount": 499088,
+      "template": 3
     }
-  ],
-  "1979.1.1": [
-    {
-      "naval_base": 3,
-      "economy_building": {
-        "name": "powerplant",
-        "size": 4
-      }
+  },
+  "1979.1.1": {
+    "naval_base": 3,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 1063242,
-        "template": 203
-      }
+    "population_total": {
+      "amount": 1063242,
+      "template": 203
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 4,
-      "economy_building": {
-        "name": "powerplant",
-        "size": 3
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 4,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 1406898,
-        "template": 303
-      }
+    "population_total": {
+      "amount": 1406898,
+      "template": 303
     }
-  ],
+  },
   "1961.1.1": {
     "naval_base": 2
   },

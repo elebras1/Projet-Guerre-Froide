@@ -10,54 +10,42 @@
       "template": 87
     }
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 1
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 60692,
-        "template": 87
-      }
+    "population_total": {
+      "amount": 60692,
+      "template": 87
     }
-  ],
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 3
-      }
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 128008,
-        "template": 287
-      }
+    "population_total": {
+      "amount": 128008,
+      "template": 287
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "powerplant",
       "size": 4
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 8
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 179383,
-        "template": 387
-      }
+    "population_total": {
+      "amount": 179383,
+      "template": 387
     }
-  ],
+  },
   "1998.1.1": {
     "renewable_energy": 202
   },

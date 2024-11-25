@@ -22,40 +22,32 @@
     "controller": "ALG",
     "remove_core": "FRA"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 3
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 451444,
-        "template": 3
-      }
+    "population_total": {
+      "amount": 451444,
+      "template": 3
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "light_industry",
       "size": 4
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 7
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 938964,
-        "template": 203
-      }
+    "population_total": {
+      "amount": 938964,
+      "template": 203
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 442219,

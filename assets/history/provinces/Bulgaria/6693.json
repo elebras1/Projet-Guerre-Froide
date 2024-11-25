@@ -1,74 +1,66 @@
 {
-    "owner": "BUL",
-    "controller": "BUL",
-    "add_core": "BUL",
-    "uranium": 17.8,
-    "infra": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1869081,
-            "template": 46
-        },
-        "air_base": 5,
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
-        }
+  "owner": "BUL",
+  "controller": "BUL",
+  "add_core": "BUL",
+  "uranium": 17.8,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1869081,
+      "template": 46
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        }
-    },
-    "1961.1.1": {
-        "air_base": 7,
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
-        }
-    },
-    "1979.1.1": [
-        {
-            "economy_building": {
-                "name": "heavy_industry",
-                "size": 5
-            }
-        },
-        {
-            "population_total": {
-                "amount": 2308304,
-                "template": 246
-            }
-        }
-    ],
-    "1948.1.1": [
-        {
-            "air_base": 6
-        },
-        {
-            "population_total": {
-                "amount": 1881660,
-                "template": 46
-            }
-        }
-    ],
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1894323,
-            "template": 46
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2092260,
-            "template": 146
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2284117,
-            "template": 346
-        }
+    "air_base": 5,
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 1
     }
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 2
+    }
+  },
+  "1961.1.1": {
+    "air_base": 7,
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 3
+    }
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
+    },
+    "population_total": {
+      "amount": 2308304,
+      "template": 246
+    }
+  },
+  "1948.1.1": {
+    "air_base": 6,
+    "population_total": {
+      "amount": 1881660,
+      "template": 46
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1894323,
+      "template": 46
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 2092260,
+      "template": 146
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 2284117,
+      "template": 346
+    }
+  }
 }

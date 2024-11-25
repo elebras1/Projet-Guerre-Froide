@@ -18,20 +18,16 @@
     "controller": "SUD",
     "remove_core": "ENG"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 4
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 283325,
-        "template": 203
-      }
+    "population_total": {
+      "amount": 283325,
+      "template": 203
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 131099,

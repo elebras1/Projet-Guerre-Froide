@@ -1,65 +1,65 @@
 {
-    "add_core": [
-        "FRG",
-        "DDR"
-    ],
-    "owner": "ENG",
-    "controller": "ENG",
-    "grain": 400,
-    "infra": 9,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 592512,
-            "template": 71
-        },
-        "air_base": 2
+  "add_core": [
+    "FRG",
+    "DDR"
+  ],
+  "owner": "ENG",
+  "controller": "ENG",
+  "grain": 400,
+  "infra": 9,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 592512,
+      "template": 71
     },
-    "1949.5.23.0": {
-        "owner": "FRG",
-        "controller": "FRG"
-    },
-    "1990.10.3": {
-        "owner": "GER",
-        "controller": "GER",
-        "remove_core": [
-            "DDR",
-            "FRG"
-        ]
-    },
-    "1955.1.1": {
-        "air_base": 5
-    },
-    "1960.1.1": {
-        "air_base": 6
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 619525,
-            "template": 71
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 641164,
-            "template": 71
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 730452,
-            "template": 171
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 788074,
-            "template": 271
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 821869,
-            "template": 371
-        }
+    "air_base": 2
+  },
+  "1949.5.23.0": {
+    "owner": "FRG",
+    "controller": "FRG"
+  },
+  "1990.10.3": {
+    "owner": "GER",
+    "controller": "GER",
+    "remove_core": [
+      "DDR",
+      "FRG"
+    ]
+  },
+  "1955.1.1": {
+    "air_base": 5
+  },
+  "1960.1.1": {
+    "air_base": 6
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 619525,
+      "template": 71
     }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 641164,
+      "template": 71
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 730452,
+      "template": 171
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 788074,
+      "template": 271
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 821869,
+      "template": 371
+    }
+  }
 }

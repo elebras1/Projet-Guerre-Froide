@@ -19,28 +19,20 @@
     "controller": "MOZ",
     "remove_core": "POR"
   },
-  "1979.1.1": [
-    {
-      "naval_base": 1
-    },
-    {
-      "population_total": {
-        "amount": 258503,
-        "template": 201
-      }
+  "1979.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 258503,
+      "template": 201
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 302681,
-        "template": 301
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 302681,
+      "template": 301
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 138423,

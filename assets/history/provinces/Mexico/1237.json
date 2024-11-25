@@ -20,20 +20,16 @@
       "size": 5
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 8
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 118434,
-        "template": 281
-      }
+    "population_total": {
+      "amount": 118434,
+      "template": 281
     }
-  ],
+  },
   "1965.1.1": {
     "renewable_energy": 112
   },

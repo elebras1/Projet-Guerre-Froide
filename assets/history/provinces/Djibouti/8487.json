@@ -18,20 +18,16 @@
     "controller": "DJI",
     "remove_core": "FRA"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 1
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 18889,
-        "template": 201
-      }
+    "population_total": {
+      "amount": 18889,
+      "template": 201
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "powerplant",

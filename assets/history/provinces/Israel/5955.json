@@ -1,93 +1,85 @@
 {
-    "owner": "ENG",
-    "controller": "ENG",
-    "add_core": [
-        "ENG",
-        "ISR"
-    ],
-    "grain": 18.36,
-    "infra": 6,
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "ISR"
+  ],
+  "grain": 18.36,
+  "infra": 6,
+  "economy_building": {
+    "name": "financial_district",
+    "size": 1
+  },
+  "1946.1.1": {
+    "population_total": {
+      "amount": 30586,
+      "template": 34
+    },
     "economy_building": {
-        "name": "financial_district",
-        "size": 1
-    },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 30586,
-            "template": 34
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
-        }
-    },
-    "1948.05.14": {
-        "owner": "ISR",
-        "controller": "ISR",
-        "remove_core": "ENG"
-    },
-    "1950.1.1": [
-        {
-            "economy_building": {
-                "name": "powerplant",
-                "size": 3
-            }
-        },
-        {
-            "population_total": {
-                "amount": 34526,
-                "template": 34
-            }
-        }
-    ],
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1979.1.1": [
-        {
-            "economy_building": {
-                "name": "powerplant",
-                "size": 7
-            }
-        },
-        {
-            "population_total": {
-                "amount": 141135,
-                "template": 234
-            }
-        }
-    ],
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 9
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 32497,
-            "template": 34
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 93108,
-            "template": 134
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 127413,
-            "template": 334
-        }
+      "name": "powerplant",
+      "size": 2
     }
+  },
+  "1948.05.14": {
+    "owner": "ISR",
+    "controller": "ISR",
+    "remove_core": "ENG"
+  },
+  "1950.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
+    },
+    "population_total": {
+      "amount": 34526,
+      "template": 34
+    }
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
+    }
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 7
+    },
+    "population_total": {
+      "amount": 141135,
+      "template": 234
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 9
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 32497,
+      "template": 34
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 93108,
+      "template": 134
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 127413,
+      "template": 334
+    }
+  }
 }

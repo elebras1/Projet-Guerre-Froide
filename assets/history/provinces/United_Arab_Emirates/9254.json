@@ -1,100 +1,84 @@
 {
-    "owner": "ENG",
-    "controller": "ENG",
-    "add_core": [
-        "ENG",
-        "UAE"
-    ],
-    "oil": 621,
-    "infra": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 6337,
-            "template": 43
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        }
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "UAE"
+  ],
+  "oil": 621,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 6337,
+      "template": 43
     },
-    "1971.12.2": {
-        "owner": "UAE",
-        "controller": "UAE",
-        "remove_core": "ENG"
-    },
-    "1979.1.1": [
-        {
-            "air_base": 3,
-            "economy_building": {
-                "name": "military_goods",
-                "size": 3
-            }
-        },
-        {
-            "population_total": {
-                "amount": 88623,
-                "template": 243
-            }
-        }
-    ],
-    "1948.1.1": [
-        {
-            "economy_building": {
-                "name": "military_goods",
-                "size": 1
-            }
-        },
-        {
-            "population_total": {
-                "amount": 6492,
-                "template": 43
-            }
-        }
-    ],
-    "1950.1.1": [
-        {
-            "economy_building": {
-                "name": "military_goods",
-                "size": 1
-            }
-        },
-        {
-            "population_total": {
-                "amount": 6650,
-                "template": 43
-            }
-        }
-    ],
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        }
-    },
-    "1991.1.1": [
-        {
-            "economy_building": {
-                "name": "military_goods",
-                "size": 4
-            }
-        },
-        {
-            "population_total": {
-                "amount": 182500,
-                "template": 343
-            }
-        }
-    ],
-    "1961.12.30": {
-        "population_total": {
-            "amount": 10409,
-            "template": 143
-        }
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
     }
+  },
+  "1971.12.2": {
+    "owner": "UAE",
+    "controller": "UAE",
+    "remove_core": "ENG"
+  },
+  "1979.1.1": {
+    "air_base": 3,
+    "economy_building": {
+      "name": "military_goods",
+      "size": 3
+    },
+    "population_total": {
+      "amount": 88623,
+      "template": 243
+    }
+  },
+  "1948.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    },
+    "population_total": {
+      "amount": 6492,
+      "template": 43
+    }
+  },
+  "1950.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 1
+    },
+    "population_total": {
+      "amount": 6650,
+      "template": 43
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 2
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
+    }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
+    },
+    "population_total": {
+      "amount": 182500,
+      "template": 343
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 10409,
+      "template": 143
+    }
+  }
 }

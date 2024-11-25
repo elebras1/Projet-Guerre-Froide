@@ -23,20 +23,16 @@
     "owner": "KOR",
     "controller": "KOR"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 3
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 1781477,
-        "template": 10
-      }
+    "population_total": {
+      "amount": 1781477,
+      "template": 10
     }
-  ],
+  },
   "1953.1.1": {
     "economy_building": {
       "name": "light_industry",
@@ -57,32 +53,24 @@
       "size": 8
     }
   },
-  "1991.1.1": [
-    {
-      "naval_base": 8,
-      "economy_building": {
-        "name": "light_industry",
-        "size": 9
-      }
+  "1991.1.1": {
+    "naval_base": 8,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 9
     },
-    {
-      "population_total": {
-        "amount": 4099973,
-        "template": 310
-      }
+    "population_total": {
+      "amount": 4099973,
+      "template": 310
     }
-  ],
-  "1979.1.1": [
-    {
-      "naval_base": 6
-    },
-    {
-      "population_total": {
-        "amount": 3487957,
-        "template": 210
-      }
+  },
+  "1979.1.1": {
+    "naval_base": 6,
+    "population_total": {
+      "amount": 3487957,
+      "template": 210
     }
-  ],
+  },
   "1950.1.1": {
     "population_total": {
       "amount": 1816037,

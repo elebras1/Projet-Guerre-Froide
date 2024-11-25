@@ -18,17 +18,13 @@
     "controller": "CHC",
     "remove_core": "POR"
   },
-  "1991.1.1": [
-    {
-      "naval_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 718932,
-        "template": 384
-      }
+  "1991.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 718932,
+      "template": 384
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 226146,

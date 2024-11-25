@@ -18,54 +18,42 @@
     "owner": "MLY",
     "controller": "MLY"
   },
-  "1948.1.1": [
-    {
-      "economy_building": [
-        {
-          "name": "powerplant",
-          "size": 2
-        },
-        {
-          "name": "powerplant",
-          "size": 2
-        }
-      ]
-    },
-    {
-      "population_total": {
-        "amount": 166490,
-        "template": 23
-      }
-    }
-  ],
-  "1979.1.1": [
-    {
-      "economy_building": {
+  "1948.1.1": {
+    "economy_building": [
+      {
         "name": "powerplant",
-        "size": 5
-      }
-    },
-    {
-      "population_total": {
-        "amount": 378136,
-        "template": 223
-      }
-    }
-  ],
-  "1991.1.1": [
-    {
-      "economy_building": {
+        "size": 2
+      },
+      {
         "name": "powerplant",
-        "size": 7
+        "size": 2
       }
-    },
-    {
-      "population_total": {
-        "amount": 523866,
-        "template": 323
-      }
+    ],
+    "population_total": {
+      "amount": 166490,
+      "template": 23
     }
-  ],
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
+    },
+    "population_total": {
+      "amount": 378136,
+      "template": 223
+    }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 7
+    },
+    "population_total": {
+      "amount": 523866,
+      "template": 323
+    }
+  },
   "1950.1.1": {
     "population_total": {
       "amount": 171093,

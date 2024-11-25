@@ -1,82 +1,74 @@
 {
-    "owner": "SOV",
-    "controller": "SOV",
-    "add_core": [
-        "KOR",
-        "PRK"
-    ],
-    "vegetables": 10,
-    "infra": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 292393,
-            "template": 7
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "KOR",
+    "PRK"
+  ],
+  "vegetables": 10,
+  "infra": 5,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 292393,
+      "template": 7
     },
-    "1948.11.11": {
-        "owner": "PRK",
-        "controller": "PRK"
-    },
-    "1948.1.1": [
-        {
-            "economy_building": {
-                "name": "powerplant",
-                "size": 4
-            }
-        },
-        {
-            "population_total": {
-                "amount": 291758,
-                "template": 7
-            }
-        }
-    ],
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        }
-    },
-    "1979.1.1": [
-        {
-            "economy_building": {
-                "name": "powerplant",
-                "size": 7
-            }
-        },
-        {
-            "population_total": {
-                "amount": 508297,
-                "template": 207
-            }
-        }
-    ],
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 291125,
-            "template": 7
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 343186,
-            "template": 107
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 611926,
-            "template": 307
-        }
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
     }
+  },
+  "1948.11.11": {
+    "owner": "PRK",
+    "controller": "PRK"
+  },
+  "1948.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
+    },
+    "population_total": {
+      "amount": 291758,
+      "template": 7
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 6
+    }
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 7
+    },
+    "population_total": {
+      "amount": 508297,
+      "template": 207
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 8
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 291125,
+      "template": 7
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 343186,
+      "template": 107
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 611926,
+      "template": 307
+    }
+  }
 }

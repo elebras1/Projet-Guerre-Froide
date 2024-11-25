@@ -19,20 +19,16 @@
       "size": 5
     }
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 6
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 6
     },
-    {
-      "population_total": {
-        "amount": 379133,
-        "template": 62
-      }
+    "population_total": {
+      "amount": 379133,
+      "template": 62
     }
-  ],
+  },
   "1961.1.1": {
     "naval_base": 3,
     "economy_building": {
@@ -40,32 +36,24 @@
       "size": 7
     }
   },
-  "1979.1.1": [
-    {
-      "naval_base": 4,
-      "economy_building": {
-        "name": "light_industry",
-        "size": 9
-      }
+  "1979.1.1": {
+    "naval_base": 4,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 9
     },
-    {
-      "population_total": {
-        "amount": 499660,
-        "template": 262
-      }
+    "population_total": {
+      "amount": 499660,
+      "template": 262
     }
-  ],
-  "1950.1.1": [
-    {
-      "naval_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 384028,
-        "template": 62
-      }
+  },
+  "1950.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 384028,
+      "template": 62
     }
-  ],
+  },
   "1985.1.1": {
     "naval_base": 5
   },

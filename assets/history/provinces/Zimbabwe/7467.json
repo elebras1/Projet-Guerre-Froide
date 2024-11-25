@@ -28,20 +28,16 @@
     "controller": "ZIM",
     "remove_core": "RHO"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 3
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 109701,
-        "template": 1
-      }
+    "population_total": {
+      "amount": 109701,
+      "template": 1
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "powerplant",

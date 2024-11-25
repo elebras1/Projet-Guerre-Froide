@@ -13,16 +13,10 @@
       "amount": 357633,
       "template": 1
     },
-    "economy_building": [
-      {
-        "name": "light_industry",
-        "size": 4
-      },
-      {
-        "name": "light_industry",
-        "size": 5
-      }
-    ]
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
+    }
   },
   "1961.12.09": {
     "owner": "TNG",

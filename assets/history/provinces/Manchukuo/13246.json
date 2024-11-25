@@ -13,38 +13,30 @@
       "template": 6
     }
   },
-  "1948.1.1": [
-    {
-      "owner": "CHC",
-      "controller": "CHC"
-    },
-    {
-      "population_total": {
-        "amount": 8753009,
-        "template": 6
-      }
+  "1948.1.1": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "population_total": {
+      "amount": 8753009,
+      "template": 6
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "heavy_industry",
       "size": 4
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 6
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 6
     },
-    {
-      "population_total": {
-        "amount": 15725022,
-        "template": 206
-      }
+    "population_total": {
+      "amount": 15725022,
+      "template": 206
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "heavy_industry",

@@ -22,40 +22,32 @@
     "controller": "MOL",
     "remove_core": "SOV"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 5
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 892879,
-        "template": 50
-      }
+    "population_total": {
+      "amount": 892879,
+      "template": 50
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "light_industry",
       "size": 6
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 8
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 1515968,
-        "template": 250
-      }
+    "population_total": {
+      "amount": 1515968,
+      "template": 250
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 872762,

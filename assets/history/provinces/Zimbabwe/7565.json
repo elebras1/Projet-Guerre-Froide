@@ -28,20 +28,16 @@
     "controller": "ZIM",
     "remove_core": "RHO"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 2
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 270318,
-        "template": 1
-      }
+    "population_total": {
+      "amount": 270318,
+      "template": 1
     }
-  ],
+  },
   "1953.1.1": {
     "economy_building": {
       "name": "powerplant",
@@ -54,40 +50,32 @@
       "size": 4
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 5
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 713312,
-        "template": 201
-      }
+    "population_total": {
+      "amount": 713312,
+      "template": 201
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "powerplant",
       "size": 4
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 6
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 6
     },
-    {
-      "population_total": {
-        "amount": 1090277,
-        "template": 301
-      }
+    "population_total": {
+      "amount": 1090277,
+      "template": 301
     }
-  ],
+  },
   "1950.1.1": {
     "population_total": {
       "amount": 278635,

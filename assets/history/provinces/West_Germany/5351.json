@@ -27,66 +27,50 @@
       "FRG"
     ]
   },
-  "1948.1.1": [
-    {
-      "air_base": 7,
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 8
-      }
+  "1948.1.1": {
+    "air_base": 7,
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 807036,
-        "template": 71
-      }
+    "population_total": {
+      "amount": 807036,
+      "template": 71
     }
-  ],
-  "1950.1.1": [
-    {
-      "air_base": 9,
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 10
-      }
+  },
+  "1950.1.1": {
+    "air_base": 9,
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 10
     },
-    {
-      "population_total": {
-        "amount": 835225,
-        "template": 71
-      }
+    "population_total": {
+      "amount": 835225,
+      "template": 71
     }
-  ],
-  "1979.1.1": [
-    {
-      "naval_base": 5,
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 7
-      }
+  },
+  "1979.1.1": {
+    "naval_base": 5,
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 1026600,
-        "template": 271
-      }
+    "population_total": {
+      "amount": 1026600,
+      "template": 271
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 7,
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 8
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 7,
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 1070623,
-        "template": 371
-      }
+    "population_total": {
+      "amount": 1070623,
+      "template": 371
     }
-  ],
+  },
   "1961.1.1": {
     "naval_base": 4
   },

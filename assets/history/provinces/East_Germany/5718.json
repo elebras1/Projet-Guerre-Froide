@@ -17,20 +17,16 @@
     "owner": "DDR",
     "controller": "DDR"
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "high_tech",
-        "size": 2
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "high_tech",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 461762,
-        "template": 371
-      }
+    "population_total": {
+      "amount": 461762,
+      "template": 371
     }
-  ],
+  },
   "1990.10.3": {
     "owner": "GER",
     "controller": "GER"

@@ -28,20 +28,16 @@
     "controller": "BGL",
     "remove_core": "PAK"
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 1
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 11545366,
-        "template": 313
-      }
+    "population_total": {
+      "amount": 11545366,
+      "template": 313
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 3951692,

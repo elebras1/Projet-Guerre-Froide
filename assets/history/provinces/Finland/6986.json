@@ -17,21 +17,17 @@
   "1961.1.1": {
     "infra": 9
   },
-  "1979.1.1": [
-    {
-      "infra": 10,
-      "economy_building": {
-        "name": "powerplant",
-        "size": 7
-      }
+  "1979.1.1": {
+    "infra": 10,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 113435,
-        "template": 253
-      }
+    "population_total": {
+      "amount": 113435,
+      "template": 253
     }
-  ],
+  },
   "1953.1.1": {
     "economy_building": {
       "name": "powerplant",

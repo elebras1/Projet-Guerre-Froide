@@ -15,31 +15,23 @@
       "size": 4
     }
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "military_goods",
-        "size": 5
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 162826,
-        "template": 55
-      }
+    "population_total": {
+      "amount": 162826,
+      "template": 55
     }
-  ],
-  "1979.1.1": [
-    {
-      "naval_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 188794,
-        "template": 255
-      }
+  },
+  "1979.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 188794,
+      "template": 255
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 162959,

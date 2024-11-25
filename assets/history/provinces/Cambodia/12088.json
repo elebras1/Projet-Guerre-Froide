@@ -19,15 +19,11 @@
   "1950.6.25.0": {
     "controller": "REB"
   },
-  "1953.11.9.0": [
-    {
-      "owner": "CMB",
-      "controller": "CMB"
-    },
-    {
-      "remove_core": "IDC"
-    }
-  ],
+  "1953.11.9.0": {
+    "owner": "CMB",
+    "controller": "CMB",
+    "remove_core": "IDC"
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 53408,

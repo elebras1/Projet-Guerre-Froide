@@ -20,40 +20,32 @@
     "controller": "NIG",
     "remove_core": "ENG"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 5
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 1719016,
-        "template": 205
-      }
+    "population_total": {
+      "amount": 1719016,
+      "template": 205
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "refinery",
       "size": 6
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 7
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 2340865,
-        "template": 305
-      }
+    "population_total": {
+      "amount": 2340865,
+      "template": 305
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 870388,

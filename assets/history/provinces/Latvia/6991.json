@@ -18,20 +18,16 @@
     "controller": "LAT",
     "remove_core": "SOV"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 1
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 146460,
-        "template": 56
-      }
+    "population_total": {
+      "amount": 146460,
+      "template": 56
     }
-  ],
+  },
   "1953.1.1": {
     "economy_building": {
       "name": "heavy_industry",
@@ -44,20 +40,16 @@
       "size": 3
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 4
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 188034,
-        "template": 256
-      }
+    "population_total": {
+      "amount": 188034,
+      "template": 256
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "heavy_industry",

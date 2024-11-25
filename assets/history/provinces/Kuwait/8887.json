@@ -1,87 +1,79 @@
 {
-    "owner": "ENG",
-    "controller": "ENG",
-    "add_core": [
-        "ENG",
-        "KWT"
-    ],
-    "oil": 780,
-    "infra": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 34169,
-            "template": 36
-        },
-        "naval_base": 1
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "KWT"
+  ],
+  "oil": 780,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 34169,
+      "template": 36
     },
-    "1961.06.19": {
-        "owner": "KWT",
-        "controller": "KWT",
-        "remove_core": "ENG"
-    },
-    "1961.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        }
-    },
-    "1979.1.1": [
-        {
-            "naval_base": 3,
-            "economy_building": {
-                "name": "powerplant",
-                "size": 7
-            }
-        },
-        {
-            "population_total": {
-                "amount": 324127,
-                "template": 236
-            }
-        }
-    ],
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        }
-    },
-    "1991.1.1": [
-        {
-            "naval_base": 4,
-            "economy_building": {
-                "name": "powerplant",
-                "size": 9
-            }
-        },
-        {
-            "population_total": {
-                "amount": 503014,
-                "template": 336
-            }
-        }
-    ],
-    "1991.1.15": {
-        "owner": "IRQ",
-        "controller": "IRQ"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 35895,
-            "template": 36
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 37708,
-            "template": 36
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 83462,
-            "template": 136
-        }
+    "naval_base": 1
+  },
+  "1961.06.19": {
+    "owner": "KWT",
+    "controller": "KWT",
+    "remove_core": "ENG"
+  },
+  "1961.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
     }
+  },
+  "1979.1.1": {
+    "naval_base": 3,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 7
+    },
+    "population_total": {
+      "amount": 324127,
+      "template": 236
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 8
+    }
+  },
+  "1991.1.1": {
+    "naval_base": 4,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 9
+    },
+    "population_total": {
+      "amount": 503014,
+      "template": 336
+    }
+  },
+  "1991.1.15": {
+    "owner": "IRQ",
+    "controller": "IRQ"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 35895,
+      "template": 36
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 37708,
+      "template": 36
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 83462,
+      "template": 136
+    }
+  }
 }

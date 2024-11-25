@@ -21,20 +21,16 @@
     "controller": "CAR",
     "remove_core": "FRA"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 5
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 76551,
-        "template": 2
-      }
+    "population_total": {
+      "amount": 76551,
+      "template": 2
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "heavy_industry",

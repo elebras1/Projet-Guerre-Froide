@@ -31,40 +31,32 @@
   "1980.5.1": {
     "naval_base": 10
   },
-  "1979.1.1": [
-    {
-      "economy_building": [
-        {
-          "name": "land_research_center",
-          "size": 1
-        },
-        {
-          "name": "light_industry",
-          "size": 8
-        }
-      ]
-    },
-    {
-      "population_total": {
-        "amount": 6822905,
-        "template": 206
-      }
-    }
-  ],
-  "1950.1.1": [
-    {
-      "economy_building": {
+  "1979.1.1": {
+    "economy_building": [
+      {
+        "name": "land_research_center",
+        "size": 1
+      },
+      {
         "name": "light_industry",
-        "size": 6
+        "size": 8
       }
-    },
-    {
-      "population_total": {
-        "amount": 3873368,
-        "template": 6
-      }
+    ],
+    "population_total": {
+      "amount": 6822905,
+      "template": 206
     }
-  ],
+  },
+  "1950.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 6
+    },
+    "population_total": {
+      "amount": 3873368,
+      "template": 6
+    }
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "light_industry",

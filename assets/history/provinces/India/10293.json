@@ -23,16 +23,10 @@
     "remove_core": "ENG"
   },
   "1953.1.1": {
-    "economy_building": [
-      {
-        "name": "military_academy",
-        "size": 1
-      },
-      {
-        "name": "powerplant",
-        "size": 5
-      }
-    ]
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
+    }
   },
   "1961.1.1": {
     "economy_building": {
@@ -40,20 +34,16 @@
       "size": 6
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 8
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 3896702,
-        "template": 215
-      }
+    "population_total": {
+      "amount": 3896702,
+      "template": 215
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "powerplant",

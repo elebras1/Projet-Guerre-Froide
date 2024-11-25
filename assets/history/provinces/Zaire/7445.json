@@ -18,40 +18,32 @@
     "controller": "DRC",
     "remove_core": "BEL"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 1
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 283067,
-        "template": 2
-      }
+    "population_total": {
+      "amount": 283067,
+      "template": 2
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "powerplant",
       "size": 3
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 4
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 610009,
-        "template": 202
-      }
+    "population_total": {
+      "amount": 610009,
+      "template": 202
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 277054,

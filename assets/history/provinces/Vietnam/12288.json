@@ -22,20 +22,16 @@
     "owner": "DRV",
     "controller": "DRV"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "military_goods",
-        "size": 3
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 1238471,
-        "template": 28
-      }
+    "population_total": {
+      "amount": 1238471,
+      "template": 28
     }
-  ],
+  },
   "1950.6.25": {
     "controller": "IDC"
   },
@@ -51,36 +47,28 @@
     "add_core": "VIE",
     "remove_core": "IDC"
   },
-  "1979.1.1": [
-    {
-      "naval_base": 2,
-      "economy_building": {
-        "name": "military_goods",
-        "size": 6
-      }
+  "1979.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "military_goods",
+      "size": 6
     },
-    {
-      "population_total": {
-        "amount": 2325689,
-        "template": 228
-      }
+    "population_total": {
+      "amount": 2325689,
+      "template": 228
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 3,
-      "economy_building": {
-        "name": "military_goods",
-        "size": 6
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 3,
+    "economy_building": {
+      "name": "military_goods",
+      "size": 6
     },
-    {
-      "population_total": {
-        "amount": 3003051,
-        "template": 328
-      }
+    "population_total": {
+      "amount": 3003051,
+      "template": 328
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 1213486,

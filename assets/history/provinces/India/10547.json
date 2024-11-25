@@ -18,20 +18,16 @@
     "controller": "IND",
     "remove_core": "ENG"
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "nuclear_plant",
-        "size": 5
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "nuclear_plant",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 11123540,
-        "template": 315
-      }
+    "population_total": {
+      "amount": 11123540,
+      "template": 315
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 4556760,

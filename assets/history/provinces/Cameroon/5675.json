@@ -18,20 +18,16 @@
     "controller": "CAM",
     "remove_core": "FRA"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 2
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 33533,
-        "template": 2
-      }
+    "population_total": {
+      "amount": 33533,
+      "template": 2
     }
-  ],
+  },
   "1950.1.1": {
     "population_total": {
       "amount": 34155,

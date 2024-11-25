@@ -14,40 +14,32 @@
       "size": 6
     }
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
+  "1950.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 7
+    },
+    "population_total": {
+      "amount": 134982,
+      "template": 59
+    }
+  },
+  "1979.1.1": {
+    "economy_building": [
+      {
         "name": "powerplant",
-        "size": 7
+        "size": 8
+      },
+      {
+        "name": "powerplant",
+        "size": 10
       }
-    },
-    {
-      "population_total": {
-        "amount": 134982,
-        "template": 59
-      }
+    ],
+    "population_total": {
+      "amount": 159627,
+      "template": 259
     }
-  ],
-  "1979.1.1": [
-    {
-      "economy_building": [
-        {
-          "name": "powerplant",
-          "size": 8
-        },
-        {
-          "name": "powerplant",
-          "size": 10
-        }
-      ]
-    },
-    {
-      "population_total": {
-        "amount": 159627,
-        "template": 259
-      }
-    }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 134050,

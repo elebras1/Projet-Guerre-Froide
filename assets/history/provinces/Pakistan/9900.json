@@ -20,18 +20,14 @@
     "controller": "PAK",
     "remove_core": "ENG"
   },
-  "1948.1.1": [
-    {
-      "naval_base": 4,
-      "air_base": 3
-    },
-    {
-      "population_total": {
-        "amount": 1589592,
-        "template": 18
-      }
+  "1948.1.1": {
+    "naval_base": 4,
+    "air_base": 3,
+    "population_total": {
+      "amount": 1589592,
+      "template": 18
     }
-  ],
+  },
   "1961.1.1": {
     "naval_base": 6,
     "air_base": 5
@@ -42,33 +38,25 @@
       "size": 1
     }
   },
-  "1979.1.1": [
-    {
-      "naval_base": 8,
-      "air_base": 6,
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 3
-      }
+  "1979.1.1": {
+    "naval_base": 8,
+    "air_base": 6,
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 3355359,
-        "template": 218
-      }
+    "population_total": {
+      "amount": 3355359,
+      "template": 218
     }
-  ],
-  "1950.1.1": [
-    {
-      "air_base": 4
-    },
-    {
-      "population_total": {
-        "amount": 1618443,
-        "template": 18
-      }
+  },
+  "1950.1.1": {
+    "air_base": 4,
+    "population_total": {
+      "amount": 1618443,
+      "template": 18
     }
-  ],
+  },
   "1961.12.30": {
     "population_total": {
       "amount": 2077819,

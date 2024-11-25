@@ -1,86 +1,78 @@
 {
-    "owner": "CHI",
-    "controller": "CHI",
-    "add_core": [
-        "CHI",
-        "CHC",
-        "TWN"
-    ],
-    "oil": 44,
-    "infra": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 396211,
-            "template": 6
-        },
-        "naval_base": 1,
-        "economy_building": {
-            "name": "refinery",
-            "size": 1
-        }
+  "owner": "CHI",
+  "controller": "CHI",
+  "add_core": [
+    "CHI",
+    "CHC",
+    "TWN"
+  ],
+  "oil": 44,
+  "infra": 3,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 396211,
+      "template": 6
     },
-    "1971.1.1.0": {
-        "owner": "TWN",
-        "controller": "TWN"
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 2
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
-        }
-    },
-    "1979.1.1": [
-        {
-            "naval_base": 2,
-            "economy_building": {
-                "name": "refinery",
-                "size": 7
-            }
-        },
-        {
-            "population_total": {
-                "amount": 971331,
-                "template": 206
-            }
-        }
-    ],
-    "1991.1.1": [
-        {
-            "naval_base": 3,
-            "economy_building": {
-                "name": "refinery",
-                "size": 8
-            }
-        },
-        {
-            "population_total": {
-                "amount": 1135201,
-                "template": 306
-            }
-        }
-    ],
-    "1948.1.1": {
-        "population_total": {
-            "amount": 408097,
-            "template": 6
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 420340,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 624914,
-            "template": 106
-        }
+    "naval_base": 1,
+    "economy_building": {
+      "name": "refinery",
+      "size": 1
     }
+  },
+  "1971.1.1.0": {
+    "owner": "TWN",
+    "controller": "TWN"
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 2
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 4
+    }
+  },
+  "1979.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
+    },
+    "population_total": {
+      "amount": 971331,
+      "template": 206
+    }
+  },
+  "1991.1.1": {
+    "naval_base": 3,
+    "economy_building": {
+      "name": "refinery",
+      "size": 8
+    },
+    "population_total": {
+      "amount": 1135201,
+      "template": 306
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 408097,
+      "template": 6
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 420340,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 624914,
+      "template": 106
+    }
+  }
 }

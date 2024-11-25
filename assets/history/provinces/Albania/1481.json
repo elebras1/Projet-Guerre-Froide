@@ -20,17 +20,13 @@
       "size": 3
     }
   },
-  "1991.1.1": [
-    {
-      "naval_base": 1
-    },
-    {
-      "population_total": {
-        "amount": 545300,
-        "template": 361
-      }
+  "1991.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 545300,
+      "template": 361
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 196306,

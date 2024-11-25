@@ -28,20 +28,16 @@
     "controller": "BGL",
     "remove_core": "PAK"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "military_goods",
-        "size": 4
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 5618891,
-        "template": 213
-      }
+    "population_total": {
+      "amount": 5618891,
+      "template": 213
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 2645575,

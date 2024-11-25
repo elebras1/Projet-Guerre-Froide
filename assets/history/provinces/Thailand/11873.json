@@ -19,57 +19,45 @@
   "1961.1.1": {
     "air_base": 4
   },
-  "1979.1.1": [
-    {
-      "air_base": 6,
-      "naval_base": 3,
-      "economy_building": {
-        "name": "light_industry",
-        "size": 3
-      }
+  "1979.1.1": {
+    "air_base": 6,
+    "naval_base": 3,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 7048474,
-        "template": 227
-      }
+    "population_total": {
+      "amount": 7048474,
+      "template": 227
     }
-  ],
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 1
-      }
+  },
+  "1948.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 3041984,
-        "template": 27
-      }
+    "population_total": {
+      "amount": 3041984,
+      "template": 27
     }
-  ],
+  },
   "1953.1.1": {
     "economy_building": {
       "name": "light_industry",
       "size": 2
     }
   },
-  "1991.1.1": [
-    {
-      "naval_base": 4,
-      "economy_building": {
-        "name": "light_industry",
-        "size": 5
-      }
+  "1991.1.1": {
+    "naval_base": 4,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 8749370,
-        "template": 327
-      }
+    "population_total": {
+      "amount": 8749370,
+      "template": 327
     }
-  ],
+  },
   "1950.1.1": {
     "population_total": {
       "amount": 3124178,

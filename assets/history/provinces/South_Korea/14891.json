@@ -22,21 +22,17 @@
     "owner": "KOR",
     "controller": "KOR"
   },
-  "1979.1.1": [
-    {
-      "naval_base": 2,
-      "economy_building": {
-        "name": "refinery",
-        "size": 7
-      }
+  "1979.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 465244,
-        "template": 210
-      }
+    "population_total": {
+      "amount": 465244,
+      "template": 210
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 237623,

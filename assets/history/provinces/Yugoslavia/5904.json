@@ -23,26 +23,22 @@
       "size": 7
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": [
-        {
-          "name": "light_industry",
-          "size": 8
-        },
-        {
-          "name": "light_industry",
-          "size": 9
-        }
-      ]
-    },
-    {
-      "population_total": {
-        "amount": 1552928,
-        "template": 262
+  "1979.1.1": {
+    "economy_building": [
+      {
+        "name": "light_industry",
+        "size": 8
+      },
+      {
+        "name": "light_industry",
+        "size": 9
       }
+    ],
+    "population_total": {
+      "amount": 1552928,
+      "template": 262
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 1178336,

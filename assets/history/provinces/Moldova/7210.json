@@ -22,20 +22,16 @@
     "controller": "MOL",
     "remove_core": "SOV"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 2
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 460970,
-        "template": 50
-      }
+    "population_total": {
+      "amount": 460970,
+      "template": 50
     }
-  ],
+  },
   "1953.1.1": {
     "economy_building": {
       "name": "heavy_industry",
@@ -48,34 +44,26 @@
       "size": 4
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 6
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 6
     },
-    {
-      "population_total": {
-        "amount": 800695,
-        "template": 250
-      }
+    "population_total": {
+      "amount": 800695,
+      "template": 250
     }
-  ],
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 5
-      }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 881393,
-        "template": 350
-      }
+    "population_total": {
+      "amount": 881393,
+      "template": 350
     }
-  ],
+  },
   "1950.1.1": {
     "population_total": {
       "amount": 471595,

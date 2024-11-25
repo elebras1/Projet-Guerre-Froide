@@ -24,20 +24,16 @@
     "controller": "TNZ",
     "remove_core": "TNG"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 3
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 142835,
-        "template": 201
-      }
+    "population_total": {
+      "amount": 142835,
+      "template": 201
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 58763,

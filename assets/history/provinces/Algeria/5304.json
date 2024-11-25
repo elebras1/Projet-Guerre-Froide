@@ -18,20 +18,16 @@
     "controller": "ALG",
     "remove_core": "FRA"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 7
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 87733,
-        "template": 203
-      }
+    "population_total": {
+      "amount": 87733,
+      "template": 203
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "refinery",

@@ -19,17 +19,13 @@
     "controller": "ALG",
     "remove_core": "FRA"
   },
-  "1979.1.1": [
-    {
-      "naval_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 972642,
-        "template": 203
-      }
+  "1979.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 972642,
+      "template": 203
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 458080,

@@ -17,20 +17,16 @@
     "owner": "CHC",
     "controller": "CHC"
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 3
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 30951589,
-        "template": 306
-      }
+    "population_total": {
+      "amount": 30951589,
+      "template": 306
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 14399380,

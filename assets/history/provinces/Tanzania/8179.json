@@ -35,21 +35,17 @@
     "controller": "TNZ",
     "remove_core": "TNG"
   },
-  "1979.1.1": [
-    {
-      "naval_base": 2,
-      "economy_building": {
-        "name": "light_industry",
-        "size": 4
-      }
+  "1979.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 864068,
-        "template": 201
-      }
+    "population_total": {
+      "amount": 864068,
+      "template": 201
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "light_industry",

@@ -14,40 +14,32 @@
       "size": 5
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": [
-        {
-          "name": "rocket_test_site",
-          "size": 1
-        },
-        {
-          "name": "refinery",
-          "size": 7
-        }
-      ]
-    },
-    {
-      "population_total": {
-        "amount": 1281476,
-        "template": 316
-      }
-    }
-  ],
-  "1979.1.1": [
-    {
-      "economy_building": {
+  "1991.1.1": {
+    "economy_building": [
+      {
+        "name": "rocket_test_site",
+        "size": 1
+      },
+      {
         "name": "refinery",
-        "size": 6
+        "size": 7
       }
-    },
-    {
-      "population_total": {
-        "amount": 851033,
-        "template": 216
-      }
+    ],
+    "population_total": {
+      "amount": 1281476,
+      "template": 316
     }
-  ],
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 6
+    },
+    "population_total": {
+      "amount": 851033,
+      "template": 216
+    }
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 389445,

@@ -18,34 +18,26 @@
     "controller": "MOZ",
     "remove_core": "POR"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 1
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 69705,
-        "template": 1
-      }
+    "population_total": {
+      "amount": 69705,
+      "template": 1
     }
-  ],
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 2
-      }
+  },
+  "1950.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 70807,
-        "template": 1
-      }
+    "population_total": {
+      "amount": 70807,
+      "template": 1
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "light_industry",

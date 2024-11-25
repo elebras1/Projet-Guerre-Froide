@@ -18,34 +18,26 @@
     "controller": "KEN",
     "remove_core": "ENG"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 3
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 697300,
-        "template": 201
-      }
+    "population_total": {
+      "amount": 697300,
+      "template": 201
     }
-  ],
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 4
-      }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 1079240,
-        "template": 301
-      }
+    "population_total": {
+      "amount": 1079240,
+      "template": 301
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 263260,

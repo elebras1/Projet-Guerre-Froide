@@ -20,31 +20,23 @@
     "controller": "GUI",
     "remove_core": "FRA"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 2
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 1209266,
-        "template": 205
-      }
+    "population_total": {
+      "amount": 1209266,
+      "template": 205
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 1687710,
-        "template": 305
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 1687710,
+      "template": 305
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 847257,

@@ -18,21 +18,17 @@
       "size": 1
     }
   },
-  "1979.1.1": [
-    {
-      "naval_base": 4,
-      "economy_building": {
-        "name": "refinery",
-        "size": 7
-      }
+  "1979.1.1": {
+    "naval_base": 4,
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 299889,
-        "template": 246
-      }
+    "population_total": {
+      "amount": 299889,
+      "template": 246
     }
-  ],
+  },
   "1985.1.1": {
     "naval_base": 5
   },

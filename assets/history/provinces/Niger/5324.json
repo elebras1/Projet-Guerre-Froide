@@ -18,20 +18,16 @@
     "controller": "NGR",
     "remove_core": "FRA"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 1
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 718558,
-        "template": 205
-      }
+    "population_total": {
+      "amount": 718558,
+      "template": 205
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "powerplant",

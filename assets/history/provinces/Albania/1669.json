@@ -16,31 +16,23 @@
       "size": 2
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 4
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 465686,
-        "template": 261
-      }
+    "population_total": {
+      "amount": 465686,
+      "template": 261
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 1
-    },
-    {
-      "population_total": {
-        "amount": 585850,
-        "template": 361
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 585850,
+      "template": 361
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 210904,

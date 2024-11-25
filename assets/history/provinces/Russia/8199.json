@@ -21,22 +21,18 @@
       "ammo_store": 6
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "nuclear_silo",
-        "size": 2,
-        "model": 4,
-        "ammo_store": 20
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "nuclear_silo",
+      "size": 2,
+      "model": 4,
+      "ammo_store": 20
     },
-    {
-      "population_total": {
-        "amount": 2453,
-        "template": 245
-      }
+    "population_total": {
+      "amount": 2453,
+      "template": 245
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 1800,

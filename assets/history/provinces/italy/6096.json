@@ -1,62 +1,54 @@
 {
-    "owner": "ITA",
-    "controller": "ITA",
-    "add_core": "ITA",
-    "grain": 107.24,
-    "infra": 3,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1045341,
-            "template": 64
-        },
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 7
-        },
-        "naval_base": 2
+  "owner": "ITA",
+  "controller": "ITA",
+  "add_core": "ITA",
+  "grain": 107.24,
+  "infra": 3,
+  "naval_base": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1045341,
+      "template": 64
     },
-    "1979.1.1": [
-        {
-            "naval_base": 3
-        },
-        {
-            "population_total": {
-                "amount": 1282510,
-                "template": 264
-            }
-        }
-    ],
-    "1985.1.1": {
-        "naval_base": 4
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 7
     },
-    "1991.1.1": [
-        {
-            "naval_base": 5
-        },
-        {
-            "population_total": {
-                "amount": 1301045,
-                "template": 364
-            }
-        }
-    ],
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1053150,
-            "template": 64
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1061017,
-            "template": 64
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1149775,
-            "template": 164
-        }
+    "naval_base": 2
+  },
+  "1979.1.1": {
+    "naval_base": 3,
+    "population_total": {
+      "amount": 1282510,
+      "template": 264
     }
+  },
+  "1985.1.1": {
+    "naval_base": 4
+  },
+  "1991.1.1": {
+    "naval_base": 5,
+    "population_total": {
+      "amount": 1301045,
+      "template": 364
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1053150,
+      "template": 64
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1061017,
+      "template": 64
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1149775,
+      "template": 164
+    }
+  }
 }

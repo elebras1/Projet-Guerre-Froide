@@ -18,52 +18,40 @@
     "owner": "CHC",
     "controller": "CHC"
   },
-  "1950.1.1": [
-    {
-      "air_base": 4
-    },
-    {
-      "population_total": {
-        "amount": 29001532,
-        "template": 6
-      }
+  "1950.1.1": {
+    "air_base": 4,
+    "population_total": {
+      "amount": 29001532,
+      "template": 6
     }
-  ],
-  "1979.1.1": [
-    {
-      "air_base": 5,
-      "economy_building": {
-        "name": "aviation_industry",
-        "size": 6
-      }
+  },
+  "1979.1.1": {
+    "air_base": 5,
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 6
     },
-    {
-      "population_total": {
-        "amount": 51085954,
-        "template": 206
-      }
+    "population_total": {
+      "amount": 51085954,
+      "template": 206
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "aviation_industry",
       "size": 4
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "aviation_industry",
-        "size": 8
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 61123295,
-        "template": 306
-      }
+    "population_total": {
+      "amount": 61123295,
+      "template": 306
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 28435942,

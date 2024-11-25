@@ -18,20 +18,16 @@
     "controller": "ALG",
     "remove_core": "FRA"
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 4
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 1185538,
-        "template": 303
-      }
+    "population_total": {
+      "amount": 1185538,
+      "template": 303
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 392007,

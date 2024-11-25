@@ -17,20 +17,16 @@
       "size": 1
     }
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 3
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 40191,
-        "template": 5
-      }
+    "population_total": {
+      "amount": 40191,
+      "template": 5
     }
-  ],
+  },
   "1960.08.07": {
     "owner": "CDI",
     "controller": "CDI",

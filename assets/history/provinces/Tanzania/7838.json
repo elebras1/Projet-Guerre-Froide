@@ -24,34 +24,26 @@
     "controller": "TNZ",
     "remove_core": "TNG"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 1
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 250156,
-        "template": 201
-      }
+    "population_total": {
+      "amount": 250156,
+      "template": 201
     }
-  ],
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 2
-      }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 363698,
-        "template": 301
-      }
+    "population_total": {
+      "amount": 363698,
+      "template": 301
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 102916,

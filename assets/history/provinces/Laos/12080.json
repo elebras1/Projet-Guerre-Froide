@@ -17,15 +17,11 @@
     "owner": "DRV",
     "controller": "DRV"
   },
-  "1949.7.19.0": [
-    {
-      "owner": "LAO",
-      "controller": "LAO"
-    },
-    {
-      "remove_core": "IDC"
-    }
-  ],
+  "1949.7.19.0": {
+    "owner": "LAO",
+    "controller": "LAO",
+    "remove_core": "IDC"
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 66970,

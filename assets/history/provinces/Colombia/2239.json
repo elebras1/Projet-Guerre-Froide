@@ -16,34 +16,26 @@
       "size": 3
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 4
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 3913224,
-        "template": 283
-      }
+    "population_total": {
+      "amount": 3913224,
+      "template": 283
     }
-  ],
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 6
-      }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 6
     },
-    {
-      "population_total": {
-        "amount": 5042081,
-        "template": 383
-      }
+    "population_total": {
+      "amount": 5042081,
+      "template": 383
     }
-  ],
+  },
   "1984.1.1": {
     "renewable_energy": 124
   },

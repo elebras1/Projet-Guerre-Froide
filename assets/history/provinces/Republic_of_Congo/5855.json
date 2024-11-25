@@ -18,40 +18,32 @@
     "controller": "CNG",
     "remove_core": "FRA"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 1
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 200705,
-        "template": 202
-      }
+    "population_total": {
+      "amount": 200705,
+      "template": 202
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "powerplant",
       "size": 2
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 3
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 281975,
-        "template": 302
-      }
+    "population_total": {
+      "amount": 281975,
+      "template": 302
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 90871,

@@ -22,20 +22,16 @@
     "controller": "CAM",
     "remove_core": "ENG"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 4
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 528127,
-        "template": 2
-      }
+    "population_total": {
+      "amount": 528127,
+      "template": 2
     }
-  ],
+  },
   "1953.1.1": {
     "economy_building": {
       "name": "light_industry",

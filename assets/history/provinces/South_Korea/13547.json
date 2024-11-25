@@ -17,20 +17,16 @@
     "owner": "KOR",
     "controller": "KOR"
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "high_tech",
-        "size": 7
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "high_tech",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 1270819,
-        "template": 310
-      }
+    "population_total": {
+      "amount": 1270819,
+      "template": 310
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 552183,

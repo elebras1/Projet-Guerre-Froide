@@ -1,75 +1,71 @@
 {
-    "owner": "SOV",
-    "controller": "SOV",
-    "add_core": [
-        "SOV",
-        "TRK"
-    ],
-    "oil": 11,
-    "infra": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 51951,
-            "template": 11
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
-        }
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": [
+    "SOV",
+    "TRK"
+  ],
+  "oil": 11,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 51951,
+      "template": 11
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1979.1.1": [
-        {
-            "economy_building": {
-                "name": "powerplant",
-                "size": 6
-            }
-        },
-        {
-            "population_total": {
-                "amount": 125216,
-                "template": 211
-            }
-        }
-    ],
-    "1991.12.25": {
-        "owner": "TRK",
-        "controller": "TRK",
-        "remove_core": "SOV"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 53122,
-            "template": 11
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 54319,
-            "template": 11
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 76644,
-            "template": 111
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 169209,
-            "template": 311
-        }
+    "economy_building": {
+      "name": "powerplant",
+      "size": 2
     }
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
+    }
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 6
+    },
+    "population_total": {
+      "amount": 125216,
+      "template": 211
+    }
+  },
+  "1991.12.25": {
+    "owner": "TRK",
+    "controller": "TRK",
+    "remove_core": "SOV"
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 53122,
+      "template": 11
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 54319,
+      "template": 11
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 76644,
+      "template": 111
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 169209,
+      "template": 311
+    }
+  }
 }

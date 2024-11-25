@@ -17,20 +17,16 @@
     "owner": "CHC",
     "controller": "CHC"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 7
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 1742236,
-        "template": 206
-      }
+    "population_total": {
+      "amount": 1742236,
+      "template": 206
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 969780,

@@ -28,20 +28,16 @@
     "controller": "BGL",
     "remove_core": "PAK"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 3
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 7025923,
-        "template": 213
-      }
+    "population_total": {
+      "amount": 7025923,
+      "template": 213
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "powerplant",

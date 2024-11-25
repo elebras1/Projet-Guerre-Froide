@@ -18,20 +18,16 @@
       "size": 7
     }
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 8
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 291212,
-        "template": 62
-      }
+    "population_total": {
+      "amount": 291212,
+      "template": 62
     }
-  ],
+  },
   "1985.1.1": {
     "naval_base": 2
   },

@@ -29,21 +29,17 @@
       "size": 2
     }
   },
-  "1979.1.1": [
-    {
-      "naval_base": 2,
-      "economy_building": {
-        "name": "light_industry",
-        "size": 3
-      }
+  "1979.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 557340,
-        "template": 203
-      }
+    "population_total": {
+      "amount": 557340,
+      "template": 203
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "light_industry",

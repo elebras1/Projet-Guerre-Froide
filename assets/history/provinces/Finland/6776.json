@@ -21,17 +21,13 @@
       "size": 6
     }
   },
-  "1979.1.1": [
-    {
-      "infra": 10
-    },
-    {
-      "population_total": {
-        "amount": 232951,
-        "template": 253
-      }
+  "1979.1.1": {
+    "infra": 10,
+    "population_total": {
+      "amount": 232951,
+      "template": 253
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "naval_yards",

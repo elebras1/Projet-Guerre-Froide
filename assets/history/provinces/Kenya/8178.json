@@ -19,41 +19,33 @@
     "controller": "KEN",
     "remove_core": "ENG"
   },
-  "1979.1.1": [
-    {
-      "naval_base": 3,
-      "economy_building": [
-        {
-          "name": "refinery",
-          "size": 1
-        },
-        {
-          "name": "refinery",
-          "size": 5
-        }
-      ]
-    },
-    {
-      "population_total": {
-        "amount": 899497,
-        "template": 201
+  "1979.1.1": {
+    "naval_base": 3,
+    "economy_building": [
+      {
+        "name": "refinery",
+        "size": 1
+      },
+      {
+        "name": "refinery",
+        "size": 5
       }
+    ],
+    "population_total": {
+      "amount": 899497,
+      "template": 201
     }
-  ],
+  },
   "1961.1.1": {
     "naval_base": 2
   },
-  "1991.1.1": [
-    {
-      "naval_base": 4
-    },
-    {
-      "population_total": {
-        "amount": 1392189,
-        "template": 301
-      }
+  "1991.1.1": {
+    "naval_base": 4,
+    "population_total": {
+      "amount": 1392189,
+      "template": 301
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 339598,

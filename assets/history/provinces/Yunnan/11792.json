@@ -1,86 +1,70 @@
 {
-    "owner": "CYN",
-    "controller": "CYN",
-    "add_core": [
-        "CYN",
-        "CHI",
-        "CHC"
-    ],
-    "iron": 50,
-    "infra": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 789935,
-            "template": 6
-        },
-        "air_base": 1,
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        }
+  "owner": "CYN",
+  "controller": "CYN",
+  "add_core": [
+    "CYN",
+    "CHI",
+    "CHC"
+  ],
+  "iron": 50,
+  "infra": 2,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 789935,
+      "template": 6
     },
-    "1949.10.01": {
-        "owner": "CHC",
-        "controller": "CHC",
-        "remove_core": "CYN"
-    },
-    "1950.1.1": [
-        {
-            "air_base": 2
-        },
-        {
-            "population_total": {
-                "amount": 821671,
-                "template": 6
-            }
-        }
-    ],
-    "1961.1.1": {
-        "air_base": 3
-    },
-    "1979.1.1": [
-        {
-            "air_base": 4
-        },
-        {
-            "population_total": {
-                "amount": 1447367,
-                "template": 206
-            }
-        }
-    ],
-    "1985.1.1": {
-        "air_base": 5
-    },
-    "1991.1.1": [
-        {
-            "air_base": 6
-        },
-        {
-            "population_total": {
-                "amount": 1731745,
-                "template": 306
-            }
-        }
-    ],
-    "1948.1.1": [
-        {
-            "economy_building": {
-                "name": "military_goods",
-                "size": 5
-            }
-        },
-        {
-            "population_total": {
-                "amount": 805647,
-                "template": 6
-            }
-        }
-    ],
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1007959,
-            "template": 106
-        }
+    "air_base": 1,
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
     }
+  },
+  "1949.10.01": {
+    "owner": "CHC",
+    "controller": "CHC",
+    "remove_core": "CYN"
+  },
+  "1950.1.1": {
+    "air_base": 2,
+    "population_total": {
+      "amount": 821671,
+      "template": 6
+    }
+  },
+  "1961.1.1": {
+    "air_base": 3
+  },
+  "1979.1.1": {
+    "air_base": 4,
+    "population_total": {
+      "amount": 1447367,
+      "template": 206
+    }
+  },
+  "1985.1.1": {
+    "air_base": 5
+  },
+  "1991.1.1": {
+    "air_base": 6,
+    "population_total": {
+      "amount": 1731745,
+      "template": 306
+    }
+  },
+  "1948.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 5
+    },
+    "population_total": {
+      "amount": 805647,
+      "template": 6
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1007959,
+      "template": 106
+    }
+  }
 }

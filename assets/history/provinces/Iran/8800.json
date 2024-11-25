@@ -1,55 +1,51 @@
 {
-    "owner": "PER",
-    "controller": "PER",
-    "add_core": "PER",
-    "oil": 41,
-    "infra": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 137678,
-            "template": 16
-        },
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
-        }
+  "owner": "PER",
+  "controller": "PER",
+  "add_core": "PER",
+  "oil": 41,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 137678,
+      "template": 16
     },
-    "1979.1.1": [
-        {
-            "economy_building": {
-                "name": "refinery",
-                "size": 6
-            }
-        },
-        {
-            "population_total": {
-                "amount": 307460,
-                "template": 216
-            }
-        }
-    ],
-    "1948.1.1": {
-        "population_total": {
-            "amount": 140698,
-            "template": 16
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 143785,
-            "template": 16
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 191259,
-            "template": 116
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 462970,
-            "template": 316
-        }
+    "economy_building": {
+      "name": "refinery",
+      "size": 5
     }
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 6
+    },
+    "population_total": {
+      "amount": 307460,
+      "template": 216
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 140698,
+      "template": 16
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 143785,
+      "template": 16
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 191259,
+      "template": 116
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 462970,
+      "template": 316
+    }
+  }
 }

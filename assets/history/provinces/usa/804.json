@@ -10,28 +10,24 @@
       "template": 93
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": [
-        {
-          "name": "refinery",
-          "size": 10
-        },
-        {
-          "name": "nuclear_silo",
-          "size": 2,
-          "model": 2,
-          "ammo_store": 30
-        }
-      ]
-    },
-    {
-      "population_total": {
-        "amount": 12350,
-        "template": 293
+  "1979.1.1": {
+    "economy_building": [
+      {
+        "name": "refinery",
+        "size": 10
+      },
+      {
+        "name": "nuclear_silo",
+        "size": 2,
+        "model": 2,
+        "ammo_store": 30
       }
+    ],
+    "population_total": {
+      "amount": 12350,
+      "template": 293
     }
-  ],
+  },
   "1965.1.1": {
     "economy_building": {
       "name": "nuclear_silo",

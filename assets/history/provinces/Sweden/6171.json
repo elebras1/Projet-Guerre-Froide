@@ -19,69 +19,53 @@
     "name": "military_academy",
     "size": 1
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "military_goods",
-        "size": 4
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 288363,
-        "template": 59
-      }
+    "population_total": {
+      "amount": 288363,
+      "template": 59
     }
-  ],
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "military_goods",
-        "size": 4
-      }
+  },
+  "1950.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 290367,
-        "template": 59
-      }
+    "population_total": {
+      "amount": 290367,
+      "template": 59
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "military_goods",
       "size": 4
     }
   },
-  "1979.1.1": [
-    {
-      "naval_base": 2,
-      "economy_building": {
-        "name": "military_goods",
-        "size": 5
-      }
+  "1979.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "military_goods",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 343381,
-        "template": 259
-      }
+    "population_total": {
+      "amount": 343381,
+      "template": 259
     }
-  ],
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "military_goods",
-        "size": 5
-      }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 356717,
-        "template": 359
-      }
+    "population_total": {
+      "amount": 356717,
+      "template": 359
     }
-  ],
+  },
   "1961.12.30": {
     "population_total": {
       "amount": 313531,

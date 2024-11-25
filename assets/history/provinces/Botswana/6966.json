@@ -18,20 +18,16 @@
     "controller": "BOT",
     "remove_core": "ENG"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "military_goods",
-        "size": 2
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "military_goods",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 87941,
-        "template": 204
-      }
+    "population_total": {
+      "amount": 87941,
+      "template": 204
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 36851,

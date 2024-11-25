@@ -18,40 +18,32 @@
     "controller": "LAT",
     "remove_core": "SOV"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 1
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 75981,
-        "template": 56
-      }
+    "population_total": {
+      "amount": 75981,
+      "template": 56
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "powerplant",
       "size": 1
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 4
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 98199,
-        "template": 256
-      }
+    "population_total": {
+      "amount": 98199,
+      "template": 256
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "powerplant",

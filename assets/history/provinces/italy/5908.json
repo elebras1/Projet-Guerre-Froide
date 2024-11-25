@@ -15,28 +15,20 @@
     "name": "naval_research_center",
     "size": 1
   },
-  "1979.1.1": [
-    {
-      "naval_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 794731,
-        "template": 264
-      }
+  "1979.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 794731,
+      "template": 264
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 3
-    },
-    {
-      "population_total": {
-        "amount": 806216,
-        "template": 364
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 3,
+    "population_total": {
+      "amount": 806216,
+      "template": 364
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 652604,

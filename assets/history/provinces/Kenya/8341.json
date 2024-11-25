@@ -19,20 +19,16 @@
     "controller": "KEN",
     "remove_core": "ENG"
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 1
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 86562,
-        "template": 301
-      }
+    "population_total": {
+      "amount": 86562,
+      "template": 301
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 21115,

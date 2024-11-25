@@ -14,17 +14,13 @@
       "size": 2
     }
   },
-  "1979.1.1": [
-    {
-      "infra": 6
-    },
-    {
-      "population_total": {
-        "amount": 7233,
-        "template": 253
-      }
+  "1979.1.1": {
+    "infra": 6,
+    "population_total": {
+      "amount": 7233,
+      "template": 253
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "powerplant",

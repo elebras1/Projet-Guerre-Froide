@@ -22,42 +22,30 @@
       "size": 1
     }
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 4
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 762981,
-        "template": 64
-      }
+    "population_total": {
+      "amount": 762981,
+      "template": 64
     }
-  ],
-  "1979.1.1": [
-    {
-      "naval_base": 4
-    },
-    {
-      "population_total": {
-        "amount": 929147,
-        "template": 264
-      }
+  },
+  "1979.1.1": {
+    "naval_base": 4,
+    "population_total": {
+      "amount": 929147,
+      "template": 264
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 5
-    },
-    {
-      "population_total": {
-        "amount": 942575,
-        "template": 364
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 5,
+    "population_total": {
+      "amount": 942575,
+      "template": 364
     }
-  ],
+  },
   "1950.1.1": {
     "population_total": {
       "amount": 768680,

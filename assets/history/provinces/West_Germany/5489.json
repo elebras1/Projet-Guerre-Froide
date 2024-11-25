@@ -26,21 +26,17 @@
     "owner": "GER",
     "controller": "GER"
   },
-  "1979.1.1": [
-    {
-      "naval_base": 5,
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 7
-      }
+  "1979.1.1": {
+    "naval_base": 5,
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 1268365,
-        "template": 271
-      }
+    "population_total": {
+      "amount": 1268365,
+      "template": 271
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "naval_yards",
@@ -50,17 +46,13 @@
   "1961.1.1": {
     "naval_base": 4
   },
-  "1991.1.1": [
-    {
-      "naval_base": 6
-    },
-    {
-      "population_total": {
-        "amount": 1322756,
-        "template": 371
-      }
+  "1991.1.1": {
+    "naval_base": 6,
+    "population_total": {
+      "amount": 1322756,
+      "template": 371
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 997094,

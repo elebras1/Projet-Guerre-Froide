@@ -18,20 +18,16 @@
     "controller": "KEN",
     "remove_core": "ENG"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 1
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 32540,
-        "template": 1
-      }
+    "population_total": {
+      "amount": 32540,
+      "template": 1
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "light_industry",

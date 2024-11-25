@@ -1,61 +1,57 @@
 {
-    "owner": "ROM",
-    "controller": "ROM",
-    "add_core": "ROM",
-    "oil": 23,
-    "infra": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1342239,
-            "template": 50
-        },
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        }
+  "owner": "ROM",
+  "controller": "ROM",
+  "add_core": "ROM",
+  "oil": 23,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1342239,
+      "template": 50
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        }
-    },
-    "1979.1.1": [
-        {
-            "economy_building": {
-                "name": "refinery",
-                "size": 8
-            }
-        },
-        {
-            "population_total": {
-                "amount": 1864464,
-                "template": 250
-            }
-        }
-    ],
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1360910,
-            "template": 50
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1379840,
-            "template": 50
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1576903,
-            "template": 150
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1960045,
-            "template": 350
-        }
+    "economy_building": {
+      "name": "refinery",
+      "size": 6
     }
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
+    }
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 8
+    },
+    "population_total": {
+      "amount": 1864464,
+      "template": 250
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 1360910,
+      "template": 50
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 1379840,
+      "template": 50
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1576903,
+      "template": 150
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1960045,
+      "template": 350
+    }
+  }
 }

@@ -24,40 +24,32 @@
     "controller": "TNZ",
     "remove_core": "TNG"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 1
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 127408,
-        "template": 201
-      }
+    "population_total": {
+      "amount": 127408,
+      "template": 201
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "heavy_industry",
       "size": 2
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 1
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 185237,
-        "template": 301
-      }
+    "population_total": {
+      "amount": 185237,
+      "template": 301
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 52417,

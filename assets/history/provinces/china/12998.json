@@ -18,40 +18,32 @@
     "owner": "CHC",
     "controller": "CHC"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 1
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 4567672,
-        "template": 206
-      }
+    "population_total": {
+      "amount": 4567672,
+      "template": 206
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "naval_yards",
       "size": 2
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 5
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 5465126,
-        "template": 306
-      }
+    "population_total": {
+      "amount": 5465126,
+      "template": 306
     }
-  ],
+  },
   "1996.1.1": {
     "renewable_energy": 140
   },

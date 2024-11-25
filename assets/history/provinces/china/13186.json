@@ -26,35 +26,27 @@
     "owner": "CHC",
     "controller": "CHC"
   },
-  "1950.1.1": [
-    {
-      "naval_base": 5
-    },
-    {
-      "population_total": {
-        "amount": 7609972,
-        "template": 6
-      }
+  "1950.1.1": {
+    "naval_base": 5,
+    "population_total": {
+      "amount": 7609972,
+      "template": 6
     }
-  ],
+  },
   "1961.1.1": {
     "naval_base": 6
   },
-  "1979.1.1": [
-    {
-      "naval_base": 8,
-      "economy_building": {
-        "name": "light_industry",
-        "size": 8
-      }
+  "1979.1.1": {
+    "naval_base": 8,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 13404901,
-        "template": 206
-      }
+    "population_total": {
+      "amount": 13404901,
+      "template": 206
     }
-  ],
+  },
   "1953.1.1": {
     "economy_building": {
       "name": "light_industry",

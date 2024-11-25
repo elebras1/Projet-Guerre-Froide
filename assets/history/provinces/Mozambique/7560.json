@@ -18,20 +18,16 @@
     "controller": "MOZ",
     "remove_core": "POR"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 7
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 85481,
-        "template": 201
-      }
+    "population_total": {
+      "amount": 85481,
+      "template": 201
     }
-  ],
+  },
   "1975.1.1": {
     "renewable_energy": 207
   },

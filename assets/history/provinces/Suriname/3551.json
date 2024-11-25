@@ -19,28 +19,20 @@
     "controller": "SUR",
     "remove_core": "HOL"
   },
-  "1979.1.1": [
-    {
-      "naval_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 287443,
-        "template": 289
-      }
+  "1979.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 287443,
+      "template": 289
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 3
-    },
-    {
-      "population_total": {
-        "amount": 325474,
-        "template": 389
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 3,
+    "population_total": {
+      "amount": 325474,
+      "template": 389
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 164468,

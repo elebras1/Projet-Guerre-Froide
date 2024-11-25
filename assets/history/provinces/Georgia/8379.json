@@ -22,40 +22,32 @@
     "controller": "GEO",
     "remove_core": "SOV"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 4
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 160593,
-        "template": 30
-      }
+    "population_total": {
+      "amount": 160593,
+      "template": 30
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "powerplant",
       "size": 5
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 7
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 229346,
-        "template": 230
-      }
+    "population_total": {
+      "amount": 229346,
+      "template": 230
     }
-  ],
+  },
   "1987.1.1": {
     "renewable_energy": 130
   },

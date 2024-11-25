@@ -18,40 +18,32 @@
     "controller": "INO",
     "remove_core": "HOL"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 1
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 340237,
-        "template": 221
-      }
+    "population_total": {
+      "amount": 340237,
+      "template": 221
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "light_industry",
       "size": 6
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 7
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 432676,
-        "template": 321
-      }
+    "population_total": {
+      "amount": 432676,
+      "template": 321
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 169679,

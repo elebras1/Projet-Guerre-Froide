@@ -20,17 +20,11 @@
       "template": 28
     }
   },
-  "1949.6.14.0": [
-    {
-      "owner": "SVI"
-    },
-    {
-      "controller": "REB"
-    },
-    {
-      "remove_core": "IDC"
-    }
-  ],
+  "1949.6.14.0": {
+    "owner": "SVI",
+    "controller": "REB",
+    "remove_core": "IDC"
+  },
   "1950.1.1.0": {
     "population_total": {
       "amount": 442385,
@@ -43,17 +37,11 @@
       "template": 128
     }
   },
-  "1976.7.2.0": [
-    {
-      "owner": "VIE"
-    },
-    {
-      "controller": "VIE"
-    },
-    {
-      "add_core": "VIE"
-    }
-  ],
+  "1976.7.2.0": {
+    "owner": "VIE",
+    "controller": "VIE",
+    "add_core": "VIE"
+  },
   "1979.1.1.0": {
     "population_total": {
       "amount": 830742,

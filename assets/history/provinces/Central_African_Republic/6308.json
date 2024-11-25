@@ -17,20 +17,16 @@
     "controller": "CAR",
     "remove_core": "FRA"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 1
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 86838,
-        "template": 202
-      }
+    "population_total": {
+      "amount": 86838,
+      "template": 202
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 51496,

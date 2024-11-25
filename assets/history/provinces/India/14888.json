@@ -29,17 +29,13 @@
       "size": 1
     }
   },
-  "1948.1.1": [
-    {
-      "air_base": 4
-    },
-    {
-      "population_total": {
-        "amount": 2416122,
-        "template": 15
-      }
+  "1948.1.1": {
+    "air_base": 4,
+    "population_total": {
+      "amount": 2416122,
+      "template": 15
     }
-  ],
+  },
   "1961.1.1": {
     "air_base": 6,
     "economy_building": {
@@ -47,17 +43,13 @@
       "size": 5
     }
   },
-  "1979.1.1": [
-    {
-      "air_base": 8
-    },
-    {
-      "population_total": {
-        "amount": 4522203,
-        "template": 215
-      }
+  "1979.1.1": {
+    "air_base": 8,
+    "population_total": {
+      "amount": 4522203,
+      "template": 215
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "light_industry",

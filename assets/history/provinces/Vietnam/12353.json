@@ -20,17 +20,13 @@
     "controller": "SVI",
     "remove_core": "IDC"
   },
-  "1950.1.1": [
-    {
-      "air_base": 3
-    },
-    {
-      "population_total": {
-        "amount": 360353,
-        "template": 28
-      }
+  "1950.1.1": {
+    "air_base": 3,
+    "population_total": {
+      "amount": 360353,
+      "template": 28
     }
-  ],
+  },
   "1961.1.1": {
     "air_base": 4,
     "naval_base": 2
@@ -40,29 +36,21 @@
     "controller": "VIE",
     "add_core": "VIE"
   },
-  "1979.1.1": [
-    {
-      "air_base": 5,
-      "naval_base": 3
-    },
-    {
-      "population_total": {
-        "amount": 676697,
-        "template": 228
-      }
+  "1979.1.1": {
+    "air_base": 5,
+    "naval_base": 3,
+    "population_total": {
+      "amount": 676697,
+      "template": 228
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 4
-    },
-    {
-      "population_total": {
-        "amount": 873786,
-        "template": 328
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 4,
+    "population_total": {
+      "amount": 873786,
+      "template": 328
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 353083,

@@ -18,20 +18,16 @@
     "controller": "CNG",
     "remove_core": "FRA"
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 1
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 313059,
-        "template": 302
-      }
+    "population_total": {
+      "amount": 313059,
+      "template": 302
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 100889,

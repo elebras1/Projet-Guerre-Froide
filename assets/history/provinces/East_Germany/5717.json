@@ -31,20 +31,16 @@
       "size": 8
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 9
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 9
     },
-    {
-      "population_total": {
-        "amount": 420683,
-        "template": 271
-      }
+    "population_total": {
+      "amount": 420683,
+      "template": 271
     }
-  ],
+  },
   "1995.1.1": {
     "economy_building": {
       "name": "nuclear_plant",

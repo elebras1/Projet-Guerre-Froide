@@ -19,17 +19,13 @@
     "controller": "MOR",
     "remove_core": "FRA"
   },
-  "1991.1.1": [
-    {
-      "naval_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 1169883,
-        "template": 303
-      }
+  "1991.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 1169883,
+      "template": 303
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 404985,

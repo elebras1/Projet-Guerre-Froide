@@ -10,26 +10,22 @@
       "template": 94
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": [
-        {
-          "name": "high_tech",
-          "size": 3
-        },
-        {
-          "name": "high_tech",
-          "size": 4
-        }
-      ]
-    },
-    {
-      "population_total": {
-        "amount": 3121,
-        "template": 294
+  "1979.1.1": {
+    "economy_building": [
+      {
+        "name": "high_tech",
+        "size": 3
+      },
+      {
+        "name": "high_tech",
+        "size": 4
       }
+    ],
+    "population_total": {
+      "amount": 3121,
+      "template": 294
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 1715,

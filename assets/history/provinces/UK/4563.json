@@ -22,32 +22,24 @@
       "size": 8
     }
   },
-  "1991.1.1": [
-    {
-      "naval_base": 5,
-      "economy_building": {
-        "name": "powerplant",
-        "size": 6
-      }
+  "1991.1.1": {
+    "naval_base": 5,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 6
     },
-    {
-      "population_total": {
-        "amount": 984540,
-        "template": 360
-      }
+    "population_total": {
+      "amount": 984540,
+      "template": 360
     }
-  ],
-  "1979.1.1": [
-    {
-      "naval_base": 4
-    },
-    {
-      "population_total": {
-        "amount": 966122,
-        "template": 260
-      }
+  },
+  "1979.1.1": {
+    "naval_base": 4,
+    "population_total": {
+      "amount": 966122,
+      "template": 260
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 866706,

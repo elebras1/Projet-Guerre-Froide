@@ -22,20 +22,16 @@
     "controller": "IND",
     "remove_core": "ENG"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 5
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 10587026,
-        "template": 215
-      }
+    "population_total": {
+      "amount": 10587026,
+      "template": 215
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "heavy_industry",

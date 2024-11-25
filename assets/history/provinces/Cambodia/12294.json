@@ -25,17 +25,11 @@
       "template": 20
     }
   },
-  "1953.11.9.0": [
-    {
-      "owner": "CMB"
-    },
-    {
-      "controller": "CMB"
-    },
-    {
-      "remove_core": "IDC"
-    }
-  ],
+  "1953.11.9.0": {
+    "owner": "CMB",
+    "controller": "CMB",
+    "remove_core": "IDC"
+  },
   "1961.12.30.0": {
     "population_total": {
       "amount": 60253,

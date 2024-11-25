@@ -15,45 +15,33 @@
       "size": 3
     }
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "aviation_industry",
-        "size": 4
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 1738513,
-        "template": 8
-      }
+    "population_total": {
+      "amount": 1738513,
+      "template": 8
     }
-  ],
+  },
   "1961.1.1": {
     "naval_base": 2
   },
-  "1979.1.1": [
-    {
-      "naval_base": 3
-    },
-    {
-      "population_total": {
-        "amount": 2432160,
-        "template": 208
-      }
+  "1979.1.1": {
+    "naval_base": 3,
+    "population_total": {
+      "amount": 2432160,
+      "template": 208
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 4
-    },
-    {
-      "population_total": {
-        "amount": 2595161,
-        "template": 308
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 4,
+    "population_total": {
+      "amount": 2595161,
+      "template": 308
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 1713631,

@@ -24,57 +24,39 @@
   },
   "1985.1.1": {
     "air_base": 6,
-    "economy_building": [
-      {
-        "name": "military_academy",
-        "size": 1
-      },
-      {
-        "name": "light_industry",
-        "size": 10
-      }
-    ]
-  },
-  "1950.1.1": [
-    {
-      "air_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 5837775,
-        "template": 6
-      }
+    "economy_building": {
+      "name": "light_industry",
+      "size": 10
     }
-  ],
+  },
+  "1950.1.1": {
+    "air_base": 2,
+    "population_total": {
+      "amount": 5837775,
+      "template": 6
+    }
+  },
   "1961.1.1": {
     "air_base": 3
   },
-  "1979.1.1": [
-    {
-      "air_base": 4,
-      "economy_building": {
-        "name": "light_industry",
-        "size": 8
-      }
+  "1979.1.1": {
+    "air_base": 4,
+    "economy_building": {
+      "name": "light_industry",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 10283192,
-        "template": 206
-      }
+    "population_total": {
+      "amount": 10283192,
+      "template": 206
     }
-  ],
-  "1991.1.1": [
-    {
-      "air_base": 10
-    },
-    {
-      "population_total": {
-        "amount": 12303628,
-        "template": 306
-      }
+  },
+  "1991.1.1": {
+    "air_base": 10,
+    "population_total": {
+      "amount": 12303628,
+      "template": 306
     }
-  ],
+  },
   "1953.1.1": {
     "economy_building": {
       "name": "light_industry",

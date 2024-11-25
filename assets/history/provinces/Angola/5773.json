@@ -26,21 +26,17 @@
     "controller": "ANG",
     "remove_core": "POR"
   },
-  "1979.1.1": [
-    {
-      "naval_base": 3,
-      "economy_building": {
-        "name": "powerplant",
-        "size": 5
-      }
+  "1979.1.1": {
+    "naval_base": 3,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 1703799,
-        "template": 202
-      }
+    "population_total": {
+      "amount": 1703799,
+      "template": 202
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 937883,

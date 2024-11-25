@@ -10,21 +10,17 @@
       "template": 38
     }
   },
-  "1979.1.1": [
-    {
-      "naval_base": 1,
-      "economy_building": {
-        "name": "powerplant",
-        "size": 3
-      }
+  "1979.1.1": {
+    "naval_base": 1,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 333216,
-        "template": 238
-      }
+    "population_total": {
+      "amount": 333216,
+      "template": 238
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "powerplant",

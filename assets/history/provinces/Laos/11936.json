@@ -22,17 +22,11 @@
   "1948.5.14.0": {
     "controller": "REB"
   },
-  "1949.7.19.0": [
-    {
-      "owner": "LAO"
-    },
-    {
-      "controller": "LAO"
-    },
-    {
-      "remove_core": "IDC"
-    }
-  ],
+  "1949.7.19.0": {
+    "owner": "LAO",
+    "controller": "LAO",
+    "remove_core": "IDC"
+  },
   "1950.1.1.0": {
     "population_total": {
       "amount": 70025,

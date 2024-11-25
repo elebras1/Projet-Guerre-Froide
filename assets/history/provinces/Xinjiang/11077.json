@@ -19,31 +19,23 @@
     "controller": "CHC",
     "remove_core": "SIK"
   },
-  "1950.1.1": [
-    {
-      "air_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 12035,
-        "template": 6
-      }
+  "1950.1.1": {
+    "air_base": 2,
+    "population_total": {
+      "amount": 12035,
+      "template": 6
     }
-  ],
+  },
   "1961.1.1": {
     "air_base": 3
   },
-  "1979.1.1": [
-    {
-      "air_base": 4
-    },
-    {
-      "population_total": {
-        "amount": 21199,
-        "template": 206
-      }
+  "1979.1.1": {
+    "air_base": 4,
+    "population_total": {
+      "amount": 21199,
+      "template": 206
     }
-  ],
+  },
   "1985.1.1": {
     "air_base": 6
   },

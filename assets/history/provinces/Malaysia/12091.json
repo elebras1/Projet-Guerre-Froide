@@ -18,20 +18,16 @@
     "owner": "MLY",
     "controller": "MLY"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 1
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 777984,
-        "template": 223
-      }
+    "population_total": {
+      "amount": 777984,
+      "template": 223
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "naval_yards",

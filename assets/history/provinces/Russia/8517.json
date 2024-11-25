@@ -18,32 +18,24 @@
     "name": "air_research_center",
     "size": 1
   },
-  "1948.1.1": [
-    {
-      "air_base": 5
-    },
-    {
-      "population_total": {
-        "amount": 535169,
-        "template": 45
-      }
+  "1948.1.1": {
+    "air_base": 5,
+    "population_total": {
+      "amount": 535169,
+      "template": 45
     }
-  ],
-  "1950.1.1": [
-    {
-      "air_base": 6,
-      "economy_building": {
-        "name": "aviation_industry",
-        "size": 6
-      }
+  },
+  "1950.1.1": {
+    "air_base": 6,
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 6
     },
-    {
-      "population_total": {
-        "amount": 543871,
-        "template": 45
-      }
+    "population_total": {
+      "amount": 543871,
+      "template": 45
     }
-  ],
+  },
   "1961.1.1": {
     "air_base": 7,
     "economy_building": {
@@ -51,20 +43,16 @@
       "size": 7
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "aviation_industry",
-        "size": 8
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 729274,
-        "template": 245
-      }
+    "population_total": {
+      "amount": 729274,
+      "template": 245
     }
-  ],
+  },
   "1961.12.30": {
     "population_total": {
       "amount": 651203,

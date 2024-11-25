@@ -18,20 +18,16 @@
     "controller": "PAK",
     "remove_core": "ENG"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "aviation_industry",
-        "size": 7
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 7
     },
-    {
-      "population_total": {
-        "amount": 121113,
-        "template": 218
-      }
+    "population_total": {
+      "amount": 121113,
+      "template": 218
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "aviation_industry",

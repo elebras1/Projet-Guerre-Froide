@@ -18,20 +18,16 @@
     "controller": "MOZ",
     "remove_core": "POR"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 1
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 348270,
-        "template": 201
-      }
+    "population_total": {
+      "amount": 348270,
+      "template": 201
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 186491,

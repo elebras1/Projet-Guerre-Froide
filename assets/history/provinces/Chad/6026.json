@@ -18,20 +18,16 @@
     "controller": "CHA",
     "remove_core": "FRA"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 1
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 177720,
-        "template": 202
-      }
+    "population_total": {
+      "amount": 177720,
+      "template": 202
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 95027,

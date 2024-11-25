@@ -1,67 +1,59 @@
 {
-    "owner": "SOV",
-    "controller": "SOV",
-    "add_core": "PER",
-    "coal": 1,
-    "infra": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 334847,
-            "template": 16
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        }
+  "owner": "SOV",
+  "controller": "SOV",
+  "add_core": "PER",
+  "coal": 1,
+  "infra": 4,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 334847,
+      "template": 16
     },
-    "1946.12.15": {
-        "owner": "PER",
-        "controller": "PER"
-    },
-    "1979.1.1": [
-        {
-            "economy_building": {
-                "name": "heavy_industry",
-                "size": 4
-            }
-        },
-        {
-            "population_total": {
-                "amount": 747777,
-                "template": 216
-            }
-        }
-    ],
-    "1991.1.1": [
-        {
-            "economy_building": {
-                "name": "heavy_industry",
-                "size": 5
-            }
-        },
-        {
-            "population_total": {
-                "amount": 1125994,
-                "template": 316
-            }
-        }
-    ],
-    "1948.1.1": {
-        "population_total": {
-            "amount": 342194,
-            "template": 16
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 349702,
-            "template": 16
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 465164,
-            "template": 116
-        }
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 2
     }
+  },
+  "1946.12.15": {
+    "owner": "PER",
+    "controller": "PER"
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 4
+    },
+    "population_total": {
+      "amount": 747777,
+      "template": 216
+    }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
+    },
+    "population_total": {
+      "amount": 1125994,
+      "template": 316
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 342194,
+      "template": 16
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 349702,
+      "template": 16
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 465164,
+      "template": 116
+    }
+  }
 }

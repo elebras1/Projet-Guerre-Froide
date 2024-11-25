@@ -19,34 +19,26 @@
     "controller": "ALG",
     "remove_core": "FRA"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 1
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 379950,
-        "template": 3
-      }
+    "population_total": {
+      "amount": 379950,
+      "template": 3
     }
-  ],
+  },
   "1961.1.1": {
     "naval_base": 3
   },
-  "1979.1.1": [
-    {
-      "naval_base": 4
-    },
-    {
-      "population_total": {
-        "amount": 790264,
-        "template": 203
-      }
+  "1979.1.1": {
+    "naval_base": 4,
+    "population_total": {
+      "amount": 790264,
+      "template": 203
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 372187,

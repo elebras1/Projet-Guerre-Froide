@@ -10,20 +10,16 @@
       "template": 77
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 3
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 1330232,
-        "template": 381
-      }
+    "population_total": {
+      "amount": 1330232,
+      "template": 381
     }
-  ],
+  },
   "1994.1.1": {
     "renewable_energy": 344
   },

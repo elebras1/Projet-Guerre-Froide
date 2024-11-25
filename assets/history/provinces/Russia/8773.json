@@ -13,38 +13,30 @@
       "template": 45
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "nuclear_silo",
-        "size": 2,
-        "model": 4,
-        "ammo_store": 20
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "nuclear_silo",
+      "size": 2,
+      "model": 4,
+      "ammo_store": 20
     },
-    {
-      "population_total": {
-        "amount": 31144,
-        "template": 245
-      }
+    "population_total": {
+      "amount": 31144,
+      "template": 245
     }
-  ],
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "nuclear_silo",
-        "size": 2,
-        "model": 6,
-        "ammo_store": 27
-      }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "nuclear_silo",
+      "size": 2,
+      "model": 6,
+      "ammo_store": 27
     },
-    {
-      "population_total": {
-        "amount": 33623,
-        "template": 345
-      }
+    "population_total": {
+      "amount": 33623,
+      "template": 345
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 22855,

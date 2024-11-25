@@ -22,48 +22,36 @@
     "controller": "MOR",
     "remove_core": "FRA"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 2
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 309468,
-        "template": 3
-      }
+    "population_total": {
+      "amount": 309468,
+      "template": 3
     }
-  ],
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 3
-      }
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 659281,
-        "template": 203
-      }
+    "population_total": {
+      "amount": 659281,
+      "template": 203
     }
-  ],
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 5
-      }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 872370,
-        "template": 303
-      }
+    "population_total": {
+      "amount": 872370,
+      "template": 303
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 301993,

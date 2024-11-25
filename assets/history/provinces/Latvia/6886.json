@@ -18,34 +18,26 @@
     "controller": "LAT",
     "remove_core": "SOV"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 2
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 93202,
-        "template": 56
-      }
+    "population_total": {
+      "amount": 93202,
+      "template": 56
     }
-  ],
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 3
-      }
+  },
+  "1950.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 93822,
-        "template": 56
-      }
+    "population_total": {
+      "amount": 93822,
+      "template": 56
     }
-  ],
+  },
   "1953.1.1": {
     "economy_building": {
       "name": "light_industry",
@@ -53,16 +45,10 @@
     }
   },
   "1961.1.1": {
-    "economy_building": [
-      {
-        "name": "light_industry",
-        "size": 5
-      },
-      {
-        "name": "light_industry",
-        "size": 6
-      }
-    ]
+    "economy_building": {
+      "name": "light_industry",
+      "size": 6
+    }
   },
   "1961.12.30": {
     "population_total": {

@@ -19,20 +19,16 @@
     "owner": "KOR",
     "controller": "KOR"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 6
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 6
     },
-    {
-      "population_total": {
-        "amount": 540599,
-        "template": 210
-      }
+    "population_total": {
+      "amount": 540599,
+      "template": 210
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "naval_yards",

@@ -22,20 +22,16 @@
     "controller": "GEO",
     "remove_core": "SOV"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "refinery",
-        "size": 3
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 1575667,
-        "template": 230
-      }
+    "population_total": {
+      "amount": 1575667,
+      "template": 230
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 1084894,

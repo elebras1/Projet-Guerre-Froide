@@ -1,87 +1,75 @@
 {
-    "add_core": "AUS",
-    "owner": "SOV",
-    "controller": "SOV",
-    "oil": 21,
-    "infra": 6,
+  "add_core": "AUS",
+  "owner": "SOV",
+  "controller": "SOV",
+  "oil": 21,
+  "infra": 6,
+  "economy_building": {
+    "name": "military_academy",
+    "size": 1
+  },
+  "1946.1.1": {
+    "population_total": {
+      "amount": 1698466,
+      "template": 68
+    },
+    "air_base": 6,
     "economy_building": {
-        "name": "military_academy",
-        "size": 1
-    },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1698466,
-            "template": 68
-        },
-        "air_base": 6,
-        "economy_building": {
-            "name": "refinery",
-            "size": 3
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
-        }
-    },
-    "1955.5.15": {
-        "owner": "AUS",
-        "controller": "AUS"
-    },
-    "1961.1.1": {
-        "air_base": 9,
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
-        }
-    },
-    "1979.1.1": [
-        {
-            "economy_building": {
-                "name": "refinery",
-                "size": 7
-            }
-        },
-        {
-            "population_total": {
-                "amount": 1851121,
-                "template": 268
-            }
-        }
-    ],
-    "1948.1.1": [
-        {
-            "air_base": 7
-        },
-        {
-            "population_total": {
-                "amount": 1698840,
-                "template": 68
-            }
-        }
-    ],
-    "1950.1.1": [
-        {
-            "air_base": 8
-        },
-        {
-            "population_total": {
-                "amount": 1699214,
-                "template": 68
-            }
-        }
-    ],
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1745265,
-            "template": 168
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1891057,
-            "template": 368
-        }
+      "name": "refinery",
+      "size": 3
     }
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 4
+    }
+  },
+  "1955.5.15": {
+    "owner": "AUS",
+    "controller": "AUS"
+  },
+  "1961.1.1": {
+    "air_base": 9,
+    "economy_building": {
+      "name": "refinery",
+      "size": 5
+    }
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
+    },
+    "population_total": {
+      "amount": 1851121,
+      "template": 268
+    }
+  },
+  "1948.1.1": {
+    "air_base": 7,
+    "population_total": {
+      "amount": 1698840,
+      "template": 68
+    }
+  },
+  "1950.1.1": {
+    "air_base": 8,
+    "population_total": {
+      "amount": 1699214,
+      "template": 68
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 1745265,
+      "template": 168
+    }
+  },
+  "1991.1.1": {
+    "population_total": {
+      "amount": 1891057,
+      "template": 368
+    }
+  }
 }

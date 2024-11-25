@@ -10,17 +10,13 @@
       "template": 12
     }
   },
-  "1950.1.1": [
-    {
-      "air_base": 3
-    },
-    {
-      "population_total": {
-        "amount": 269923,
-        "template": 12
-      }
+  "1950.1.1": {
+    "air_base": 3,
+    "population_total": {
+      "amount": 269923,
+      "template": 12
     }
-  ],
+  },
   "1961.1.1": {
     "air_base": 4,
     "economy_building": {
@@ -31,20 +27,16 @@
   "1976.4.1": {
     "air_base": 6
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 4
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 471850,
-        "template": 212
-      }
+    "population_total": {
+      "amount": 471850,
+      "template": 212
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 265662,

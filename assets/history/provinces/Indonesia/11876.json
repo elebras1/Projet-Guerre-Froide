@@ -1,91 +1,83 @@
 {
-    "owner": "HOL",
-    "controller": "REB",
-    "add_core": [
-        "INO",
-        "HOL"
-    ],
-    "grain": 32.75,
-    "infra": 2,
-    "naval_base": 4,
-    "1946.1.1": {
-        "air_base": 3,
-        "population_total": {
-            "amount": 111213,
-            "template": 21
-        },
-        "economy_building": {
-            "name": "refinery",
-            "size": 1
-        }
+  "owner": "HOL",
+  "controller": "REB",
+  "add_core": [
+    "INO",
+    "HOL"
+  ],
+  "grain": 32.75,
+  "infra": 2,
+  "naval_base": 4,
+  "1946.1.1": {
+    "air_base": 3,
+    "population_total": {
+      "amount": 111213,
+      "template": 21
     },
-    "1949.12.27": {
-        "owner": "INO",
-        "controller": "INO",
-        "remove_core": "HOL"
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 2
-        }
-    },
-    "1979.1.1": [
-        {
-            "economy_building": {
-                "name": "refinery",
-                "size": 4
-            }
-        },
-        {
-            "population_total": {
-                "amount": 227025,
-                "template": 221
-            }
-        }
-    ],
-    "1985.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        }
-    },
-    "1991.1.1": [
-        {
-            "economy_building": {
-                "name": "refinery",
-                "size": 7
-            }
-        },
-        {
-            "population_total": {
-                "amount": 288706,
-                "template": 321
-            }
-        }
-    ],
-    "1948.1.1": {
-        "population_total": {
-            "amount": 113219,
-            "template": 21
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 115261,
-            "template": 21
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 148752,
-            "template": 121
-        }
+    "economy_building": {
+      "name": "refinery",
+      "size": 1
     }
+  },
+  "1949.12.27": {
+    "owner": "INO",
+    "controller": "INO",
+    "remove_core": "HOL"
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 5
+    }
+  },
+  "1961.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 2
+    }
+  },
+  "1979.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 4
+    },
+    "population_total": {
+      "amount": 227025,
+      "template": 221
+    }
+  },
+  "1985.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 6
+    }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "refinery",
+      "size": 7
+    },
+    "population_total": {
+      "amount": 288706,
+      "template": 321
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 113219,
+      "template": 21
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 115261,
+      "template": 21
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 148752,
+      "template": 121
+    }
+  }
 }

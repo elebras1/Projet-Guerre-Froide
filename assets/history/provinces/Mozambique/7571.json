@@ -32,32 +32,24 @@
     "controller": "MOZ",
     "remove_core": "POR"
   },
-  "1979.1.1": [
-    {
-      "naval_base": 3,
-      "economy_building": {
-        "name": "powerplant",
-        "size": 5
-      }
+  "1979.1.1": {
+    "naval_base": 3,
+    "economy_building": {
+      "name": "powerplant",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 1035668,
-        "template": 201
-      }
+    "population_total": {
+      "amount": 1035668,
+      "template": 201
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 4
-    },
-    {
-      "population_total": {
-        "amount": 1212664,
-        "template": 301
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 4,
+    "population_total": {
+      "amount": 1212664,
+      "template": 301
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 554577,

@@ -18,20 +18,16 @@
     "controller": "BOT",
     "remove_core": "ENG"
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 1
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 175844,
-        "template": 304
-      }
+    "population_total": {
+      "amount": 175844,
+      "template": 304
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 49669,

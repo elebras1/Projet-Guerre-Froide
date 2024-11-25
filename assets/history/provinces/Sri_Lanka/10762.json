@@ -18,20 +18,16 @@
     "controller": "SRL",
     "remove_core": "ENG"
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 1
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 1229269,
-        "template": 315
-      }
+    "population_total": {
+      "amount": 1229269,
+      "template": 315
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 567703,

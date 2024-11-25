@@ -17,17 +17,13 @@
     "owner": "SIE",
     "controller": "SIE"
   },
-  "1991.1.1": [
-    {
-      "naval_base": 1
-    },
-    {
-      "population_total": {
-        "amount": 315542,
-        "template": 305
-      }
+  "1991.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 315542,
+      "template": 305
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 147682,

@@ -11,35 +11,27 @@
       "template": 42
     }
   },
-  "1979.1.1": [
-    {
-      "naval_base": 2,
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 4
-      }
+  "1979.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 550327,
-        "template": 242
-      }
+    "population_total": {
+      "amount": 550327,
+      "template": 242
     }
-  ],
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "naval_yards",
-        "size": 5
-      }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "naval_yards",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 702622,
-        "template": 342
-      }
+    "population_total": {
+      "amount": 702622,
+      "template": 342
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 263275,

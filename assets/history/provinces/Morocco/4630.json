@@ -18,40 +18,32 @@
     "controller": "MOR",
     "remove_core": "FRA"
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 1
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 483879,
-        "template": 3
-      }
+    "population_total": {
+      "amount": 483879,
+      "template": 3
     }
-  ],
+  },
   "1953.1.1": {
     "economy_building": {
       "name": "light_industry",
       "size": 2
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 3
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 1030840,
-        "template": 203
-      }
+    "population_total": {
+      "amount": 1030840,
+      "template": 203
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "light_industry",

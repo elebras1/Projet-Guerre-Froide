@@ -1,78 +1,66 @@
 {
-    "owner": "SPA",
-    "controller": "SPA",
-    "add_core": "SPA",
-    "fruits": 37.77,
-    "infra": 4,
-    "1946.1.1": {
-        "air_base": 5,
-        "naval_base": 1,
-        "population_total": {
-            "amount": 340589,
-            "template": 67
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
-        }
+  "owner": "SPA",
+  "controller": "SPA",
+  "add_core": "SPA",
+  "fruits": 37.77,
+  "infra": 4,
+  "1946.1.1": {
+    "air_base": 5,
+    "naval_base": 1,
+    "population_total": {
+      "amount": 340589,
+      "template": 67
     },
-    "1948.1.1": [
-        {
-            "economy_building": {
-                "name": "heavy_industry",
-                "size": 2
-            }
-        },
-        {
-            "population_total": {
-                "amount": 343021,
-                "template": 67
-            }
-        }
-    ],
-    "1961.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        }
-    },
-    "1979.1.1": [
-        {
-            "naval_base": 3,
-            "economy_building": {
-                "name": "heavy_industry",
-                "size": 6
-            }
-        },
-        {
-            "population_total": {
-                "amount": 457795,
-                "template": 267
-            }
-        }
-    ],
-    "1991.1.1": [
-        {
-            "naval_base": 4
-        },
-        {
-            "population_total": {
-                "amount": 479740,
-                "template": 367
-            }
-        }
-    ],
-    "1950.1.1": {
-        "population_total": {
-            "amount": 345470,
-            "template": 67
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 382368,
-            "template": 167
-        }
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 1
     }
+  },
+  "1948.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 2
+    },
+    "population_total": {
+      "amount": 343021,
+      "template": 67
+    }
+  },
+  "1961.1.1": {
+    "naval_base": 2,
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
+    }
+  },
+  "1979.1.1": {
+    "naval_base": 3,
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 6
+    },
+    "population_total": {
+      "amount": 457795,
+      "template": 267
+    }
+  },
+  "1991.1.1": {
+    "naval_base": 4,
+    "population_total": {
+      "amount": 479740,
+      "template": 367
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 345470,
+      "template": 67
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 382368,
+      "template": 167
+    }
+  }
 }

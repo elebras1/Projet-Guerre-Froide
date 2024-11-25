@@ -13,20 +13,16 @@
       "template": 28
     }
   },
-  "1950.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 1
-      }
+  "1950.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 1
     },
-    {
-      "population_total": {
-        "amount": 789284,
-        "template": 28
-      }
+    "population_total": {
+      "amount": 789284,
+      "template": 28
     }
-  ],
+  },
   "1962.1.1": {
     "economy_building": {
       "name": "powerplant",
@@ -39,26 +35,22 @@
     "add_core": "VIE",
     "remove_core": "IDC"
   },
-  "1979.1.1": [
-    {
-      "economy_building": [
-        {
-          "name": "powerplant",
-          "size": 5
-        },
-        {
-          "name": "powerplant",
-          "size": 1
-        }
-      ]
-    },
-    {
-      "population_total": {
-        "amount": 1482173,
-        "template": 228
+  "1979.1.1": {
+    "economy_building": [
+      {
+        "name": "powerplant",
+        "size": 5
+      },
+      {
+        "name": "powerplant",
+        "size": 1
       }
+    ],
+    "population_total": {
+      "amount": 1482173,
+      "template": 228
     }
-  ],
+  },
   "1994.1.1": {
     "renewable_energy": 196
   },

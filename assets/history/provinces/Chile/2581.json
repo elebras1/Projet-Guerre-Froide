@@ -1,61 +1,57 @@
 {
-    "owner": "CHL",
-    "controller": "CHL",
-    "add_core": "CHL",
-    "iron": 8,
-    "infra": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 66734,
-            "template": 82
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
-        }
+  "owner": "CHL",
+  "controller": "CHL",
+  "add_core": "CHL",
+  "iron": 8,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 66734,
+      "template": 82
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        }
-    },
-    "1991.1.1": [
-        {
-            "economy_building": {
-                "name": "heavy_industry",
-                "size": 3
-            }
-        },
-        {
-            "population_total": {
-                "amount": 153718,
-                "template": 382
-            }
-        }
-    ],
-    "1948.1.1": {
-        "population_total": {
-            "amount": 68160,
-            "template": 82
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 69617,
-            "template": 82
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 92147,
-            "template": 182
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 126128,
-            "template": 282
-        }
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 1
     }
+  },
+  "1953.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 2
+    }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 3
+    },
+    "population_total": {
+      "amount": 153718,
+      "template": 382
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 68160,
+      "template": 82
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 69617,
+      "template": 82
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 92147,
+      "template": 182
+    }
+  },
+  "1979.1.1": {
+    "population_total": {
+      "amount": 126128,
+      "template": 282
+    }
+  }
 }

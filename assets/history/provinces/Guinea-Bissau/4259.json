@@ -19,17 +19,13 @@
     "controller": "GUB",
     "remove_core": "POR"
   },
-  "1991.1.1": [
-    {
-      "naval_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 425892,
-        "template": 305
-      }
+  "1991.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 425892,
+      "template": 305
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 209025,

@@ -18,17 +18,13 @@
     "controller": "GUY",
     "remove_core": "ENG"
   },
-  "1991.1.1": [
-    {
-      "naval_base": 1
-    },
-    {
-      "population_total": {
-        "amount": 15789,
-        "template": 386
-      }
+  "1991.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 15789,
+      "template": 386
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 8576,

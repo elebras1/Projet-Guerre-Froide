@@ -22,54 +22,42 @@
     "controller": "IND",
     "remove_core": "ENG"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 3
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 2594960,
-        "template": 15
-      }
+    "population_total": {
+      "amount": 2594960,
+      "template": 15
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "powerplant",
       "size": 4
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 8
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 8
     },
-    {
-      "population_total": {
-        "amount": 4856930,
-        "template": 215
-      }
+    "population_total": {
+      "amount": 4856930,
+      "template": 215
     }
-  ],
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 9
-      }
+  },
+  "1991.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 9
     },
-    {
-      "population_total": {
-        "amount": 6334575,
-        "template": 315
-      }
+    "population_total": {
+      "amount": 6334575,
+      "template": 315
     }
-  ],
+  },
   "1950.1.1": {
     "population_total": {
       "amount": 2641020,

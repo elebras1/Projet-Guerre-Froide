@@ -1,69 +1,61 @@
 {
-    "owner": "ENG",
-    "controller": "ENG",
-    "add_core": [
-        "ENG",
-        "PAL"
-    ],
-    "meat": 7,
-    "infra": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 12051,
-            "template": 34
-        },
-        "naval_base": 1
+  "owner": "ENG",
+  "controller": "ENG",
+  "add_core": [
+    "ENG",
+    "PAL"
+  ],
+  "meat": 7,
+  "infra": 6,
+  "1946.1.1": {
+    "population_total": {
+      "amount": 12051,
+      "template": 34
     },
-    "1948.05.14": {
-        "owner": "PAL",
-        "controller": "PAL",
-        "remove_core": "ENG"
-    },
-    "1950.6.24": {
-        "owner": "ISR",
-        "controller": "ISR"
-    },
-    "1961.1.1": {
-        "naval_base": 2
-    },
-    "1979.1.1": [
-        {
-            "naval_base": 3
-        },
-        {
-            "population_total": {
-                "amount": 55609,
-                "template": 234
-            }
-        }
-    ],
-    "1991.1.1": [
-        {
-            "naval_base": 4
-        },
-        {
-            "population_total": {
-                "amount": 50202,
-                "template": 334
-            }
-        }
-    ],
-    "1948.1.1": {
-        "population_total": {
-            "amount": 12804,
-            "template": 34
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 13604,
-            "template": 34
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 36686,
-            "template": 134
-        }
+    "naval_base": 1
+  },
+  "1948.05.14": {
+    "owner": "PAL",
+    "controller": "PAL",
+    "remove_core": "ENG"
+  },
+  "1950.6.24": {
+    "owner": "ISR",
+    "controller": "ISR"
+  },
+  "1961.1.1": {
+    "naval_base": 2
+  },
+  "1979.1.1": {
+    "naval_base": 3,
+    "population_total": {
+      "amount": 55609,
+      "template": 234
     }
+  },
+  "1991.1.1": {
+    "naval_base": 4,
+    "population_total": {
+      "amount": 50202,
+      "template": 334
+    }
+  },
+  "1948.1.1": {
+    "population_total": {
+      "amount": 12804,
+      "template": 34
+    }
+  },
+  "1950.1.1": {
+    "population_total": {
+      "amount": 13604,
+      "template": 34
+    }
+  },
+  "1961.12.30": {
+    "population_total": {
+      "amount": 36686,
+      "template": 134
+    }
+  }
 }

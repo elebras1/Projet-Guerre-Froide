@@ -22,40 +22,32 @@
     "controller": "SUD",
     "remove_core": "ENG"
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 5
-      }
+  "1948.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 508638,
-        "template": 3
-      }
+    "population_total": {
+      "amount": 508638,
+      "template": 3
     }
-  ],
+  },
   "1961.1.1": {
     "economy_building": {
       "name": "light_industry",
       "size": 6
     }
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "light_industry",
-        "size": 5
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 1536769,
-        "template": 303
-      }
+    "population_total": {
+      "amount": 1536769,
+      "template": 303
     }
-  ],
+  },
   "1950.1.1": {
     "population_total": {
       "amount": 519991,

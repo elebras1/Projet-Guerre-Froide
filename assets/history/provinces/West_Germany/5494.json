@@ -33,40 +33,32 @@
       "FRG"
     ]
   },
-  "1948.1.1": [
-    {
-      "economy_building": {
+  "1948.1.1": {
+    "economy_building": {
+      "name": "light_industry",
+      "size": 3
+    },
+    "population_total": {
+      "amount": 1254887,
+      "template": 71
+    }
+  },
+  "1950.1.1": {
+    "economy_building": [
+      {
         "name": "light_industry",
-        "size": 3
+        "size": 5
+      },
+      {
+        "name": "light_industry",
+        "size": 7
       }
-    },
-    {
-      "population_total": {
-        "amount": 1254887,
-        "template": 71
-      }
+    ],
+    "population_total": {
+      "amount": 1298718,
+      "template": 71
     }
-  ],
-  "1950.1.1": [
-    {
-      "economy_building": [
-        {
-          "name": "light_industry",
-          "size": 5
-        },
-        {
-          "name": "light_industry",
-          "size": 7
-        }
-      ]
-    },
-    {
-      "population_total": {
-        "amount": 1298718,
-        "template": 71
-      }
-    }
-  ],
+  },
   "1961.12.30": {
     "population_total": {
       "amount": 1479576,

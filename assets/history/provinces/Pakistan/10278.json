@@ -18,20 +18,16 @@
     "controller": "PAK",
     "remove_core": "ENG"
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 2
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 2
     },
-    {
-      "population_total": {
-        "amount": 5062685,
-        "template": 218
-      }
+    "population_total": {
+      "amount": 5062685,
+      "template": 218
     }
-  ],
+  },
   "1985.1.1": {
     "economy_building": {
       "name": "powerplant",

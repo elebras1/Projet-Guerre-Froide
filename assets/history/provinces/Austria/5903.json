@@ -15,21 +15,17 @@
       "size": 2
     }
   },
-  "1950.1.1": [
-    {
-      "air_base": 6,
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 3
-      }
+  "1950.1.1": {
+    "air_base": 6,
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 1155299,
-        "template": 68
-      }
+    "population_total": {
+      "amount": 1155299,
+      "template": 68
     }
-  ],
+  },
   "1955.05.15": {
     "owner": "AUS",
     "controller": "AUS"
@@ -40,31 +36,23 @@
       "size": 4
     }
   },
-  "1979.1.1": [
-    {
-      "economy_building": {
-        "name": "heavy_industry",
-        "size": 5
-      }
+  "1979.1.1": {
+    "economy_building": {
+      "name": "heavy_industry",
+      "size": 5
     },
-    {
-      "population_total": {
-        "amount": 1258581,
-        "template": 268
-      }
+    "population_total": {
+      "amount": 1258581,
+      "template": 268
     }
-  ],
-  "1948.1.1": [
-    {
-      "air_base": 5
-    },
-    {
-      "population_total": {
-        "amount": 1155045,
-        "template": 68
-      }
+  },
+  "1948.1.1": {
+    "air_base": 5,
+    "population_total": {
+      "amount": 1155045,
+      "template": 68
     }
-  ],
+  },
   "1961.12.30": {
     "population_total": {
       "amount": 1186609,

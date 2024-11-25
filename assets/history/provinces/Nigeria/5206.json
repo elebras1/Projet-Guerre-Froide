@@ -18,20 +18,16 @@
     "controller": "NIG",
     "remove_core": "ENG"
   },
-  "1991.1.1": [
-    {
-      "economy_building": {
-        "name": "powerplant",
-        "size": 3
-      }
+  "1991.1.1": {
+    "economy_building": {
+      "name": "powerplant",
+      "size": 3
     },
-    {
-      "population_total": {
-        "amount": 1881258,
-        "template": 305
-      }
+    "population_total": {
+      "amount": 1881258,
+      "template": 305
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 699495,

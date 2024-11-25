@@ -18,28 +18,20 @@
     "controller": "PAG",
     "remove_core": "AST"
   },
-  "1979.1.1": [
-    {
-      "naval_base": 1
-    },
-    {
-      "population_total": {
-        "amount": 2338,
-        "template": 296
-      }
+  "1979.1.1": {
+    "naval_base": 1,
+    "population_total": {
+      "amount": 2338,
+      "template": 296
     }
-  ],
-  "1991.1.1": [
-    {
-      "naval_base": 2
-    },
-    {
-      "population_total": {
-        "amount": 3184,
-        "template": 396
-      }
+  },
+  "1991.1.1": {
+    "naval_base": 2,
+    "population_total": {
+      "amount": 3184,
+      "template": 396
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 1260,

@@ -21,21 +21,17 @@
       "size": 3
     }
   },
-  "1979.1.1": [
-    {
-      "infra": 10,
-      "economy_building": {
-        "name": "aviation_industry",
-        "size": 4
-      }
+  "1979.1.1": {
+    "infra": 10,
+    "economy_building": {
+      "name": "aviation_industry",
+      "size": 4
     },
-    {
-      "population_total": {
-        "amount": 142521,
-        "template": 253
-      }
+    "population_total": {
+      "amount": 142521,
+      "template": 253
     }
-  ],
+  },
   "1948.1.1": {
     "population_total": {
       "amount": 118663,
