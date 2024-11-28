@@ -16,9 +16,9 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class GameInputHandler implements InputProcessor {
-    final OrthographicCamera cam;
+    private final OrthographicCamera cam;
     private float delta = 0;
-    final GameInputListener gameInputListener;
+    private final GameInputListener gameInputListener;
 
     public GameInputHandler(OrthographicCamera cam, GameInputListener gameInputListener) {
         this.cam = cam;
@@ -29,7 +29,7 @@ public class GameInputHandler implements InputProcessor {
         this.delta = delta;
     }
 
-    public int getWorldPositions(int screenX, int screenY) {
+    private int getWorldPositions(int screenX, int screenY) {
         Vector3 worldCoordinates = new Vector3(screenX, screenY, 0);
         this.cam.unproject(worldCoordinates);
         short x = (short) Math.round(worldCoordinates.x);
