@@ -1,9 +1,6 @@
 package com.populaire.projetguerrefroide.map;
 
-import com.github.tommyettinger.ds.IntList;
-import com.github.tommyettinger.ds.IntObjectMap;
-import com.github.tommyettinger.ds.IntSet;
-import com.github.tommyettinger.ds.ObjectList;
+import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.entity.Minister;
 
 import java.util.*;
@@ -142,7 +139,7 @@ public class Country {
 
     public void createLabels() {
         this.labels = new ObjectList<>();
-        Set<LandProvince> visitedProvinces = new HashSet<>();
+        Set<LandProvince> visitedProvinces = new ObjectSet<>();
 
         for (LandProvince province : this.provinces) {
             if (!visitedProvinces.contains(province)) {

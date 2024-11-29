@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.map;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntObjectMap;
@@ -172,7 +173,7 @@ public class World {
         pixmap.dispose();
     }
 
-    public void render(CpuSpriteBatch batch, OrthographicCamera cam, float time) {
+    public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
         this.mapShader.bind();
         this.provincesColorTexture.bind(0);
         this.countriesColorTexture.bind(1);

@@ -3,10 +3,7 @@ package com.populaire.projetguerrefroide.map;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
-import com.badlogic.gdx.graphics.g2d.GlyphLayout;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.g2d.*;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectList;
 
@@ -20,7 +17,7 @@ public class MapLabel {
     private int centroid;
     private int[] farthestPoints;
     private List<CurvePoint> points;
-    private static final BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/trebuchet_45.fnt"), true);
+    private static final BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/kart_font.fnt"), true);
     private float fontScale;
     private static class CurvePoint {
         int center;
@@ -253,7 +250,8 @@ public class MapLabel {
         short centroidY = (short) (this.centroid & 0xFFFF);
 
         for (int i = 0; i < numberOfPoints; i++) {
-            float t = i / (float) numberOfPoints;
+            float t = (float) i / (numberOfPoints - 1);
+
             float x = (1 - t) * (1 - t) * farthestPointX1 + 2 * (1 - t) * t * centroidX + t * t * farthestPointX2;
             float y = (1 - t) * (1 - t) * farthestPointY1 + 2 * (1 - t) * t * centroidY + t * t * farthestPointY2;
 
@@ -279,6 +277,7 @@ public class MapLabel {
             float dy = (nextCenterY - previousCenterY) / 2f;
             point.angle = (float) Math.atan2(dy, dx) * (180f / (float) Math.PI);
         }
+
         this.points.remove(0);
         this.points.remove(this.points.size() - 1);
     }
@@ -317,11 +316,13 @@ public class MapLabel {
         }
     }
 
-    public void render(CpuSpriteBatch batch) {
+    public void render(SpriteBatch batch) {
         TextureRegion textureRegionFont = font.getRegion();
+        CurvePoint curvePoint;
+        BitmapFont.Glyph glyph;
         for (int i = 0; i < this.label.length(); i++) {
-            CurvePoint curvePoint = this.points.get(i);
-            BitmapFont.Glyph glyph = font.getData().getGlyph(this.label.charAt(i));
+            curvePoint = this.points.get(i);
+            glyph = font.getData().getGlyph(this.label.charAt(i));
             textureRegionFont.setRegion(glyph.u, glyph.v, glyph.u2, glyph.v2);
             float glyphWidth = glyph.width * this.fontScale;
             float glyphHeight = glyph.height * this.fontScale;
