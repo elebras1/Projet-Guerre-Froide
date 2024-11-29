@@ -249,12 +249,18 @@ public class MapLabel {
         short centroidX = (short) (this.centroid >> 16);
         short centroidY = (short) (this.centroid & 0xFFFF);
 
+        float compressionFactor = 0.7f;
+
         for (int i = 0; i < numberOfPoints; i++) {
-            float t = (float) i / (numberOfPoints - 1);
+            float progressionFactor = (float) i / (numberOfPoints - 1);
 
-            float x = (1 - t) * (1 - t) * farthestPointX1 + 2 * (1 - t) * t * centroidX + t * t * farthestPointX2;
-            float y = (1 - t) * (1 - t) * farthestPointY1 + 2 * (1 - t) * t * centroidY + t * t * farthestPointY2;
+            float x = (1 - progressionFactor) * (1 - progressionFactor) * farthestPointX1 + 2 * (1 - progressionFactor) * progressionFactor * centroidX + progressionFactor * progressionFactor * farthestPointX2;
+            float y = (1 - progressionFactor) * (1 - progressionFactor) * farthestPointY1 + 2 * (1 - progressionFactor) * progressionFactor * centroidY + progressionFactor * progressionFactor * farthestPointY2;
 
+            x = centroidX + (x - centroidX) * compressionFactor;
+            y = centroidY + (y - centroidY) * compressionFactor;
+
+            // Ajouter le point comprimé
             CurvePoint curvePoint = new CurvePoint();
             curvePoint.center = ((int) x << 16) | ((int) y & 0xFFFF);
             this.points.add(curvePoint);
@@ -294,8 +300,13 @@ public class MapLabel {
         short centroidX = (short) (this.centroid >> 16);
         short centroidY = (short) (this.centroid & 0xFFFF);
 
-        float distance1 = (float) Math.sqrt(Math.pow(farthestPointX1 - centroidX, 2) + Math.pow(farthestPointY1 - centroidY, 2));
-        float distance2 = (float) Math.sqrt(Math.pow(farthestPointX2 - centroidX, 2) + Math.pow(farthestPointY2 - centroidY, 2));
+        int dx1 = farthestPointX1 - centroidX;
+        int dy1 = farthestPointY1 - centroidY;
+        int dx2 = farthestPointX2 - centroidX;
+        int dy2 = farthestPointY2 - centroidY;
+
+        float distance1 = (float) Math.sqrt(dx1 * dx1 + dy1 * dy1);
+        float distance2 = (float) Math.sqrt(dx2 * dx2 + dy2 * dy2);
 
         return distance1 + distance2;
     }
