@@ -1,58 +1,71 @@
 {
   "totalitarian_gov": {
-    "fascistic_idolg": true,
-    "maoist_idolg": true,
-    "communist_idolg": true,
-    "head_of_state": false,
-    "head_of_government": false,
-    "election": false
+    "ideologies_acceptance": [
+      "fascistic_idolg",
+      "maoist_idolg",
+      "communist_idolg"
+    ],
+    "election": {}
   },
   "authoritarian_gov": {
-    "fascistic_idolg": true,
-    "paternal_auto_idolg": true,
-    "head_of_state": false,
-    "head_of_government": false,
-    "election": false
+    "ideologies_acceptance": [
+      "fascistic_idolg",
+      "paternal_auto_idolg"
+    ],
+    "election": {}
   },
   "theocracy_gov": {
-    "paternal_auto_idolg": true,
-    "social_cons_idolg": true,
-    "head_of_state": false,
-    "head_of_government": true,
-    "election": true,
-    "duration": 48
+    "ideologies_acceptance": [
+      "paternal_auto_idolg",
+      "social_cons_idolg"
+    ],
+    "election": {
+      "head_of_state": false,
+      "head_of_government": true,
+      "duration": 48
+    }
   },
   "absolute_monarchy_gov": {
-    "paternal_auto_idolg": true,
-    "social_cons_idolg": true,
-    "head_of_state": false,
-    "head_of_government": false,
-    "election": false
+    "ideologies_acceptance": [
+      "paternal_auto_idolg",
+      "market_liberal_idolg",
+      "social_cons_idolg"
+    ],
+    "election": {}
   },
   "constitutional_monarchy_gov": {
-    "social_cons_idolg": true,
-    "market_liberal_idolg": true,
-    "head_of_state": false,
-    "head_of_government": true,
-    "election": true,
-    "duration": 48
+    "ideologies_acceptance": [
+      "social_cons_idolg",
+      "market_liberal_idolg"
+    ],
+    "election": {
+      "head_of_state": false,
+      "head_of_government": true,
+      "duration": 48
+    }
   },
   "republic_gov": {
-    "market_liberal_idolg": true,
-    "social_liberal_idolg": true,
-    "social_democrat_idolg": true,
-    "left_wing_radical_idolg": true,
-    "head_of_state": true,
-    "head_of_government": true,
-    "election": true,
-    "duration": 48
+    "ideologies_acceptance": [
+      "market_liberal_idolg",
+      "social_liberal_idolg",
+      "social_democrat_idolg",
+      "left_wing_radical_idolg"
+    ],
+    "election": {
+      "head_of_state": true,
+      "head_of_government": true,
+      "duration": 48
+    }
   },
   "constitutional_republic_gov": {
-    "market_liberal_idolg": true,
-    "social_liberal_idolg": true,
-    "head_of_state": true,
-    "head_of_government": true,
-    "election": true,
-    "duration": 48
+    "ideologies_acceptance": [
+      "market_liberal_idolg",
+      "social_liberal_idolg"
+    ],
+    "election": {
+      "head_of_state": true,
+      "head_of_government": true,
+      "duration": 48
+    }
   }
 }

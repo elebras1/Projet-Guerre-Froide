@@ -1,151 +1,74 @@
 {
-  "allies": {
-    "fascistic_idolg": {
-      "color": [
-        67,
-        67,
-        67
-      ],
-      "flexible_modifier": {
-        "drifting_speed_allies": {
-          "name": "drifting_speed_allies",
-          "value": 1
-        }
-      }
-    },
-    "paternal_auto_idolg": {
-      "color": [
-        45,
-        104,
-        255
-      ],
-      "flexible_modifier": {
-        "drifting_speed_allies": {
-          "name": "drifting_speed_allies",
-          "value": 1
-        }
-      }
-    },
-    "social_cons_idolg": {
-      "color": [
-        57,
-        178,
-        255
-      ],
-      "flexible_modifier": {
-        "drifting_speed_allies": {
-          "name": "drifting_speed_allies",
-          "value": 4
-        }
-      }
-    },
-    "market_liberal_idolg": {
-      "color": [
-        207,
-        166,
-        0
-      ],
-      "flexible_modifier": {
-        "drifting_speed_allies": {
-          "name": "drifting_speed_allies",
-          "value": 5
-        }
-      }
-    },
-    "social_liberal_idolg": {
-      "color": [
-        255,
-        226,
-        24
-      ],
-      "flexible_modifier": {
-        "drifting_speed_allies": {
-          "name": "drifting_speed_allies",
-          "value": 4
-        }
-      }
-    },
-    "social_democrat_idolg": {
-      "color": [
-        255,
-        90,
-        90
-      ],
-      "flexible_modifier": {
-        "drifting_speed_allies": {
-          "name": "drifting_speed_allies",
-          "value": 4
-        }
-      }
-    },
-    "left_wing_radical_idolg": {
-      "color": [
-        225,
-        41,
-        41
-      ],
-      "flexible_modifier": {
-        "drifting_speed_allies": {
-          "name": "drifting_speed_allies",
-          "value": 1
-        }
-      }
-    },
-    "faction": {
-      "tag": "allies",
-      "icon": 3,
-      "rule": {
-        "allience_wide_guarantee": true,
-        "limited_war": true
-      },
-      "modifier": {},
-      "influence": "align_towards_allies"
-    },
-    "position": {
-      "x": -200,
-      "y": 0
-    }
+  "fascistic_idolg": {
+    "color": [
+      67,
+      67,
+      67
+    ],
+    "faction_drifting_speed": 1
   },
-  "comintern": {
-    "maoist_idolg": {
-      "color": [
-        185,
-        0,
-        0
-      ],
-      "flexible_modifier": {
-        "drifting_speed_comintern": {
-          "name": "drifting_speed_comintern",
-          "value": 2
-        }
-      }
-    },
-    "communist_idolg": {
-      "color": [
-        255,
-        0,
-        0
-      ],
-      "flexible_modifier": {
-        "drifting_speed_comintern": {
-          "name": "drifting_speed_comintern",
-          "value": 4
-        }
-      }
-    },
-    "faction": {
-      "tag": "comintern",
-      "icon": 1,
-      "rule": {
-        "allience_wide_guarantee": true,
-        "limited_war": true
-      },
-      "modifier": {},
-      "influence": "align_towards_comintern"
-    },
-    "position": {
-      "x": 200,
-      "y": 0
-    }
+  "paternal_auto_idolg": {
+    "color": [
+      45,
+      104,
+      255
+    ],
+    "faction_drifting_speed": 1
+  },
+  "social_cons_idolg": {
+    "color": [
+      57,
+      178,
+      255
+    ],
+    "faction_drifting_speed": 4
+  },
+  "market_liberal_idolg": {
+    "color": [
+      207,
+      166,
+      0
+    ],
+    "faction_drifting_speed": 5
+  },
+  "social_liberal_idolg": {
+    "color": [
+      255,
+      226,
+      24
+    ],
+    "faction_drifting_speed": 4
+  },
+  "social_democrat_idolg": {
+    "color": [
+      255,
+      90,
+      90
+    ],
+    "faction_drifting_speed": 4
+  },
+  "left_wing_radical_idolg": {
+    "color": [
+      225,
+      41,
+      41
+    ],
+    "faction_drifting_speed": 1
+  },
+  "maoist_idolg": {
+    "color": [
+      185,
+      0,
+      0
+    ],
+    "faction_drifting_speed": 2
+  },
+  "communist_idolg": {
+    "color": [
+      255,
+      0,
+      0
+    ],
+    "faction_drifting_speed": 4
   }
 }

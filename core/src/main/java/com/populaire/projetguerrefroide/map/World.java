@@ -2,12 +2,13 @@ package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
-import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
+import com.populaire.projetguerrefroide.entity.Government;
+import com.populaire.projetguerrefroide.entity.Ideology;
 
 import java.util.*;
 
@@ -17,6 +18,8 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 public class World {
     private final List<Country> countries;
     private final IntObjectMap<Province> provinces;
+    private final Map<String, Government> governments;
+    private final Map<String, Ideology> ideologies;
     private LandProvince selectedProvince;
     private Country selectedCountry;
     private Pixmap provincesColorPixmap;
@@ -35,9 +38,11 @@ public class World {
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
 
-    public World(List<Country> countries, IntObjectMap<Province> provinces) {
+    public World(List<Country> countries, IntObjectMap<Province> provinces, Map<String, Government> governments, Map<String, Ideology> ideologies) {
         this.countries = countries;
         this.provinces = provinces;
+        this.governments = governments;
+        this.ideologies = ideologies;
         this.createCountriesColorTexture();
         this.createProvincesColorStripesTexture();
         this.provincesColorPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
@@ -136,8 +141,6 @@ public class World {
         this.countriesColorTexture = new Texture(pixmap);
         pixmap.dispose();
     }
-
-
 
     public void createProvincesColorStripesTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);

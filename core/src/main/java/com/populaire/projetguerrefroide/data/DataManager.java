@@ -10,9 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.github.tommyettinger.ds.ObjectObjectMap;
-import com.populaire.projetguerrefroide.entity.Bookmark;
-import com.populaire.projetguerrefroide.entity.Minister;
-import com.populaire.projetguerrefroide.entity.Population;
+import com.populaire.projetguerrefroide.entity.*;
 import com.populaire.projetguerrefroide.map.*;
 
 import java.io.*;
@@ -22,11 +20,11 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class DataManager {
-    private final String basePath = "common/";
+    private final String commonPath = "common/";
     private final String mapPath = "map/";
     private final String historyPath = "history/";
     private final String localisationPath = "localisation/";
-    private final String countriesJsonFiles = this.basePath + "countries.json";
+    private final String countriesJsonFiles = this.commonPath + "countries.json";
     private final String countriesHistoryJsonFiles = this.historyPath + "countries.json";
     private final String regionJsonFiles = this.mapPath + "region.json";
     private final String provincesJsonFile = this.historyPath + "provinces.json";
@@ -34,11 +32,14 @@ public class DataManager {
     private final String continentJsonFile = this.mapPath + "continent.json";
     private final String positionsJsonFile = this.mapPath + "positions.json";
     private final String adjenciesJsonFile = this.mapPath + "adjacencies.json";
+    private final String governmentJsonFile = this.commonPath + "governments.json";
+    private final String ideologiesJsonFile = this.commonPath + "ideologies.json";
+    private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
     private final String provinceNamesCsvFile = this.localisationPath + "province_names.csv";
     private final String mainmenuCsvFile = this.localisationPath + "mainmenu.csv";
     private final String newgameCsvFile = this.localisationPath + "newgame.csv";
-    private final String bookmarkJsonFile = this.basePath + "bookmark.json";
     private final String bookmarkCsvFile = this.localisationPath + "bookmark.csv";
+    private final String politicsCsvFile = this.localisationPath + "politics.csv";
     private final ObjectMapper mapper = new ObjectMapper();
     private final String defaultDate = "1946.1.1";
     private String localisation = "ENGLISH";
@@ -50,7 +51,9 @@ public class DataManager {
     public World createWorld() {
         Map<String, Country> countries = this.loadCountries();
         IntObjectMap<Province> provinces = this.loadProvinces(countries);
-        return new World(new ObjectList<>(countries.values()), provinces);
+        Map<String, Government> governments = this.readGovernmentsJson();
+        Map<String, Ideology> ideologies = this.readIdeologiesJson();
+        return new World(new ObjectList<>(countries.values()), provinces, governments, ideologies);
     }
 
     private Map<String, Country> loadCountries() {
@@ -79,9 +82,9 @@ public class DataManager {
     private Map<String, Country> readCountriesJson() {
         Map<String, Country> countries = new ObjectObjectMap<>();
         try {
-            JsonNode countriesJson = openJson(this.countriesJsonFiles);
+            JsonNode countriesJson = this.openJson(this.countriesJsonFiles);
             countriesJson.fields().forEachRemaining(entry -> {
-                String countryFileName = this.basePath + entry.getValue().asText();
+                String countryFileName = this.commonPath + entry.getValue().asText();
                 countries.put(entry.getKey(), readCountryJson(countryFileName, entry.getKey(), parseFileName(countryFileName)));
             });
         } catch (IOException e) {
@@ -96,7 +99,7 @@ public class DataManager {
 
     private Country readCountryJson(String countryFileName, String countryId, String countryName) {
         try {
-            JsonNode countryJson = openJson(countryFileName);
+            JsonNode countryJson = this.openJson(countryFileName);
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Country country = new Country(countryId, countryName.replace("common/", ""), this.parseColor(countryJson.get("color")));
 
@@ -153,7 +156,7 @@ public class DataManager {
     private IntMap<Province> readProvincesJson(Map<String, Country> countries) {
         IntMap<Province> provinces = new IntMap<>(20000);
         try {
-            JsonNode provincesJson = openJson(this.provincesJsonFile);
+            JsonNode provincesJson = this.openJson(this.provincesJsonFile);
             provincesJson.fields().forEachRemaining(entry -> {
                 String provinceFileName = this.historyPath + entry.getValue().asText();
                 short provinceId = Short.parseShort(entry.getKey());
@@ -169,7 +172,7 @@ public class DataManager {
 
     private LandProvince readProvinceJson(Map<String, Country> countries, String provinceFileName, short provinceId) {
         try {
-            JsonNode rootNode = openJson(provinceFileName);
+            JsonNode rootNode = this.openJson(provinceFileName);
             String owner = rootNode.path("owner").asText();
             String controller = rootNode.path("controller").asText();
             Country countryOwner = countries.get(owner);
@@ -190,7 +193,7 @@ public class DataManager {
 
     private void readRegionJson(IntMap<Province> provinces) {
         try {
-            JsonNode rootNode = openJson(this.regionJsonFiles);
+            JsonNode rootNode = this.openJson(this.regionJsonFiles);
             rootNode.fields().forEachRemaining(regionData -> {
                 Region region = new Region(regionData.getKey());
                 regionData.getValue().forEach(provinceId -> {
@@ -235,7 +238,7 @@ public class DataManager {
 
     private void readCountriesHistoryJson(Map<String, Country> countries, IntMap<Province> provinces) {
         try {
-            JsonNode countriesJson = openJson(this.countriesHistoryJsonFiles);
+            JsonNode countriesJson = this.openJson(this.countriesHistoryJsonFiles);
             countriesJson.fields().forEachRemaining(entry -> {
                 String countryFileName = this.historyPath + entry.getValue().textValue();
                 this.readCountryHistoryJson(countries, countryFileName, entry.getKey(), provinces);
@@ -247,7 +250,7 @@ public class DataManager {
 
     private void readContinentJsonFile(IntMap<Province> provinces) {
         try {
-            JsonNode continentJson = openJson(this.continentJsonFile);
+            JsonNode continentJson = this.openJson(this.continentJsonFile);
             continentJson.fields().forEachRemaining(entry -> {
                 Continent continent = new Continent(entry.getKey());
                 entry.getValue().forEach(provinceId -> {
@@ -265,7 +268,7 @@ public class DataManager {
             if(countryFileName.equals("history/countries/REB - Rebels.json")) {
                 return;
             }
-            JsonNode countryJson = openJson(countryFileName);
+            JsonNode countryJson = this.openJson(countryFileName);
             short idCapital = countryJson.get("capital").shortValue();
             Country country = countries.get(idCountry);
             LandProvince capital = (LandProvince) provinces.get(idCapital);
@@ -325,10 +328,55 @@ public class DataManager {
         }
     }
 
+    private Map<String, Government> readGovernmentsJson() {
+        Map<String, Government> governments = new ObjectObjectMap<>();
+        try {
+            JsonNode governmentsJson = this.openJson(this.governmentJsonFile);
+            governmentsJson.fields().forEachRemaining(entry -> {
+                String governmentName = entry.getKey();
+                List<String> ideologiesAcceptance = new ObjectList<>();
+                entry.getValue().get("ideologies_acceptance").forEach(ideology -> ideologiesAcceptance.add(ideology.asText()));
+
+                JsonNode electionNode = entry.getValue().path("election");
+                if(!electionNode.isEmpty()) {
+                    boolean headOfState = electionNode.get("head_of_state").asBoolean();
+                    boolean headOfGovernment = electionNode.get("head_of_government").asBoolean();
+                    short duration = (short) electionNode.get("duration").asInt();
+                    Election election = new Election(headOfState, headOfGovernment, duration);
+                    governments.put(governmentName, new Government(governmentName, ideologiesAcceptance, election));
+                } else {
+                    governments.put(governmentName, new Government(governmentName, ideologiesAcceptance));
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return governments;
+    }
+
+    private Map<String, Ideology> readIdeologiesJson() {
+        Map<String, Ideology> ideologies = new ObjectObjectMap<>();
+        try {
+            JsonNode ideologiesJson = this.openJson(this.ideologiesJsonFile);
+            ideologiesJson.fields().forEachRemaining(entry -> {
+                String ideologyName = entry.getKey();
+                JsonNode ideologyNode = entry.getValue();
+                int color = this.parseColor(ideologyNode.get("color"));
+                short factionDriftingSpeed = (short) ideologyNode.get("faction_drifting_speed").asInt();
+                ideologies.put(ideologyName, new Ideology(ideologyName, color, factionDriftingSpeed));
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return ideologies;
+    }
+
     private Map<Integer, Vector2> readPositionsJson() {
         Map<Integer, Vector2> unitPositions = new ObjectObjectMap<>();
         try {
-            JsonNode positionsJson = openJson(this.positionsJsonFile);
+            JsonNode positionsJson = this.openJson(this.positionsJsonFile);
             positionsJson.fields().forEachRemaining(entry -> {
                 JsonNode buildingNode = entry.getValue().path("building_construction");
                 unitPositions.put(Integer.parseInt(entry.getKey()), new Vector2(buildingNode.get("x").asInt(), buildingNode.get("y").asInt()));
@@ -343,7 +391,7 @@ public class DataManager {
         Bookmark bookmark = null;
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
-            JsonNode rootNode = openJson(this.bookmarkJsonFile);
+            JsonNode rootNode = this.openJson(this.bookmarkJsonFile);
             JsonNode bookmarkNode = rootNode.get("bookmark");
             String iconNameFile = bookmarkNode.get("icon").asText();
             String nameId = bookmarkNode.get("name").asText();
@@ -380,6 +428,10 @@ public class DataManager {
         return readLocalisationCsv(this.bookmarkCsvFile);
     }
 
+    public Map<String, String> readPoliticsLocalisationCsv() {
+        return readLocalisationCsv(this.politicsCsvFile);
+    }
+
     private Map<String, String> readLocalisationCsv(String filename) {
         Map<String, String> localisation = new ObjectObjectMap<>();
         try (BufferedReader br = new BufferedReader(
@@ -407,7 +459,7 @@ public class DataManager {
 
     private void readAdjenciesJson(IntMap<Province> provinces) {
         try {
-            JsonNode adjenciesJson = openJson(this.adjenciesJsonFile);
+            JsonNode adjenciesJson = this.openJson(this.adjenciesJsonFile);
             adjenciesJson.fields().forEachRemaining(entry -> {
                 short provinceId = Short.parseShort(entry.getKey());
                 Province province = provinces.get(provinceId);

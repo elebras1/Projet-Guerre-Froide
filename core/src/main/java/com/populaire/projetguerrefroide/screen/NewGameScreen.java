@@ -6,8 +6,6 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.CpuSpriteBatch;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -45,6 +43,7 @@ public class NewGameScreen implements Screen, GameInputListener {
     private final Skin skinFlags;
     private final Skin skinPortraits;
     private final Skin skinScrollbars;
+    private final Map<String, String> localisation;
     private Stage stage;
     private List<Table> uiTables;
     private Debug debug;
@@ -77,6 +76,9 @@ public class NewGameScreen implements Screen, GameInputListener {
         this.uiTables = new ArrayList<>();
         this.cursorManager = cursorManager;
         this.cursorManager.defaultCursor();
+        this.localisation = this.dataManager.readNewgameLocalisationCsv();
+        this.localisation.putAll(this.dataManager.readBookmarkLocalisationCsv());
+        this.localisation.putAll(this.dataManager.readPoliticsLocalisationCsv());
         this.initializeUi();
     }
 
@@ -97,15 +99,13 @@ public class NewGameScreen implements Screen, GameInputListener {
         Table topTable = new Table();
         topTable.setFillParent(true);
         topTable.top();
-        Map<String, String> localisation = this.dataManager.readNewgameLocalisationCsv();
-        localisation.putAll(this.dataManager.readBookmarkLocalisationCsv());
-        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.skinFonts, this.dataManager.readBookmarkJson(), localisation);
+        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.skinFonts, this.dataManager.readBookmarkJson(), this.localisation);
         this.uiTables.add(scenarioSavegameSelector);
-        TitleBar titleBar = new TitleBar(this.skin, this.skinFonts, localisation);
+        TitleBar titleBar = new TitleBar(this.skin, this.skinFonts, this.localisation);
         this.uiTables.add(titleBar);
-        LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.skinFonts, localisation);
+        LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.skinFonts, this.localisation);
         this.uiTables.add(lobbyBox);
-        this.countrySelectedUi = new CountrySelected(this.skin, this.skinUi, this.skinFonts, localisation);
+        this.countrySelectedUi = new CountrySelected(this.skin, this.skinUi, this.skinFonts, this.localisation);
         this.uiTables.add(this.countrySelectedUi);
         topTable.add(scenarioSavegameSelector).align(Align.topLeft).expandX();
         topTable.add(titleBar).align(Align.top);
@@ -150,7 +150,7 @@ public class NewGameScreen implements Screen, GameInputListener {
                 portrait = this.skinPortraits.getDrawable("admin_type");
             }
             this.countrySelectedUi.update(country.getName(), this.skinFlags.getRegion(country.getId()),
-                ValueFormatter.formatValue(country.getPopulationSize()), country.getGovernment(), portrait, headOfState.getName());
+                ValueFormatter.formatValue(country.getPopulationSize()), country.getGovernment(), portrait, headOfState.getName(), this.localisation);
         } else {
             this.countrySelectedUi.hide();
         }

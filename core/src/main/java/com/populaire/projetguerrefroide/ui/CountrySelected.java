@@ -97,10 +97,10 @@ public class CountrySelected extends Table {
         this.setVisible(false);
     }
 
-    public void update(String name, TextureRegion flag, String population, String government, Drawable portrait, String leaderFullName) {
+    public void update(String name, TextureRegion flag, String population, String government, Drawable portrait, String leaderFullName, Map<String, String> localisation) {
         this.countryName.setText(name);
         this.flagImage.setFlag(flag);
-        this.government.setText(government);
+        this.government.setText(localisation.get(government));
         this.countryPopulation.setText(population);
         this.portrait.setDrawable(portrait);
         this.leaderFullName.setText(leaderFullName);
