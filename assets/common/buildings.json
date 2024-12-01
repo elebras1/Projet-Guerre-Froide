@@ -1,0 +1,98 @@
+{
+  "air_base": {
+    "completion_size": 0.13,
+    "air_capacity": 1,
+    "capital": true,
+    "onmap": true,
+    "cost": 2,
+    "time": 180,
+    "max_level": 10,
+    "visibility": true
+  },
+  "naval_base": {
+    "completion_size": 0.33,
+    "naval_capacity": 1,
+    "capital": true,
+    "onmap": true,
+    "port": true,
+    "cost": 5,
+    "time": 180,
+    "max_level": 10,
+    "visibility": true
+  },
+  "industry": {
+    "completion_size": 0.67,
+    "ic": 1,
+    "capital": true,
+    "onmap": false,
+    "cost": 5,
+    "time": 365,
+    "max_level": 10
+  },
+  "coastal_fort": {
+    "completion_size": 0.33,
+    "coastal_fort_level": 1,
+    "onmap": true,
+    "visibility": true,
+    "port": true,
+    "orientation": true,
+    "cost": 5,
+    "time": 180,
+    "max_level": 10
+  },
+  "land_fort": {
+    "completion_size": 0.33,
+    "fort_level": 1,
+    "onmap": true,
+    "visibility": true,
+    "cost": 5,
+    "time": 180,
+    "max_level": 10
+  },
+  "anti_air": {
+    "completion_size": 0.25,
+    "local_anti_air": 1,
+    "capital": true,
+    "onmap": true,
+    "visibility": true,
+    "cost": 3,
+    "time": 60,
+    "max_level": 10
+  },
+  "infra": {
+    "completion_size": 0.13,
+    "infrastructure": 0.1,
+    "onmap": false,
+    "cost": 1000,
+    "time": 365,
+    "max_level": 10
+  },
+  "radar_station": {
+    "completion_size": 0.5,
+    "radar_level": 1,
+    "capital": true,
+    "onmap": true,
+    "visibility": true,
+    "cost": 2,
+    "time": 180,
+    "max_level": 10
+  },
+  "nuclear_reactor": {
+    "completion_size": 6,
+    "capital": true,
+    "onmap": true,
+    "visibility": true,
+    "cost": 50,
+    "time": 180,
+    "max_level": 10
+  },
+  "rocket_test": {
+    "completion_size": 6,
+    "capital": true,
+    "onmap": true,
+    "visibility": true,
+    "cost": 20,
+    "time": 180,
+    "max_level": 10
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "food": {
+    "fish": {
+      "base_production": 0.1,
+      "infra_production": 0.9,
+      "base_pop": 3000,
+      "infra_pop": -2900,
+      "cost": 2,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "grain": {
+      "base_production": 0.04,
+      "infra_production": 0.16,
+      "base_pop": 3000,
+      "infra_pop": -2900,
+      "cost": 0.5,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "vegetables": {
+      "base_production": 0.008,
+      "infra_production": 0.064,
+      "base_pop": 3000,
+      "infra_pop": -2900,
+      "cost": 1,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "fruits": {
+      "base_production": 0.02,
+      "infra_production": 0.08,
+      "base_pop": 3000,
+      "infra_pop": -2900,
+      "cost": 2,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "meat": {
+      "base_production": 0.004,
+      "infra_production": 0.016,
+      "base_pop": 5000,
+      "infra_pop": -4900,
+      "cost": 3,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    }
+  },
+  "natural_resources": {
+    "oil": {
+      "base_production": 0.2,
+      "infra_production": 0.8,
+      "base_pop": 200,
+      "infra_pop": -50,
+      "cost": 1,
+      "color": [
+        222,
+        221,
+        220
+      ],
+      "priority": 100
+    },
+    "coal": {
+      "base_production": 1,
+      "infra_production": 2,
+      "base_pop": 1000,
+      "infra_pop": -500,
+      "cost": 1,
+      "color": [
+        222,
+        221,
+        220
+      ],
+      "priority": 50
+    },
+    "wood": {
+      "base_production": 10,
+      "infra_production": 2,
+      "base_pop": 1000,
+      "infra_pop": -900,
+      "cost": 2,
+      "color": [
+        222,
+        221,
+        220
+      ],
+      "priority": 40
+    },
+    "renewable_energy": {
+      "base_production": 0.6,
+      "infra_production": 0.4,
+      "base_pop": 100,
+      "infra_pop": -100,
+      "cost": 1,
+      "color": [
+        222,
+        221,
+        220
+      ],
+      "priority": 20
+    },
+    "uranium": {
+      "base_production": 0.5,
+      "infra_production": 0.8,
+      "base_pop": 5000,
+      "infra_pop": -3000,
+      "cost": 10,
+      "color": [
+        222,
+        221,
+        220
+      ],
+      "priority": 75
+    },
+    "iron": {
+      "base_production": 0.6,
+      "infra_production": 1.4,
+      "base_pop": 3000,
+      "infra_pop": -2900,
+      "cost": 2,
+      "color": [
+        222,
+        221,
+        220
+      ],
+      "priority": 10
+    },
+    "precious_metals": {
+      "base_production": 0.126,
+      "infra_production": 0.08,
+      "base_pop": 5000,
+      "infra_pop": -4900,
+      "cost": 10,
+      "color": [
+        222,
+        221,
+        220
+      ],
+      "priority": 20
+    },
+    "rare_metals": {
+      "base_production": 0.02,
+      "infra_production": 0.08,
+      "base_pop": 5000,
+      "infra_pop": -4900,
+      "cost": 5,
+      "color": [
+        222,
+        221,
+        220
+      ],
+      "priority": 20
+    }
+  },
+  "energy": {
+    "fuel": {
+      "cost": 2,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "electricity": {
+      "cost": 4,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    }
+  },
+  "advanced_goods": {
+    "light_products": {
+      "cost": 10,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "heavy_components": {
+      "cost": 20,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "aerospace_parts": {
+      "cost": 30,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "ship_parts": {
+      "cost": 30,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "high_tech": {
+      "cost": 50,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "services": {
+      "cost": 30,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    }
+  },
+  "military_goods": {
+    "military_products": {
+      "cost": 1.25,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "refined_uranium": {
+      "cost": 2500,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    },
+    "military_satellites": {
+      "cost": 1000,
+      "color": [
+        222,
+        221,
+        220
+      ]
+    }
+  }
+}

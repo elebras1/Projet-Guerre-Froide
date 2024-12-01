@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.github.tommyettinger.ds.ObjectObjectMap;
+import com.populaire.projetguerrefroide.economy.*;
 import com.populaire.projetguerrefroide.entity.*;
 import com.populaire.projetguerrefroide.map.*;
 
@@ -34,6 +35,7 @@ public class DataManager {
     private final String adjenciesJsonFile = this.mapPath + "adjacencies.json";
     private final String governmentJsonFile = this.commonPath + "governments.json";
     private final String ideologiesJsonFile = this.commonPath + "ideologies.json";
+    private final String goodsJsonFile = this.commonPath + "goods.json";
     private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
     private final String provinceNamesCsvFile = this.localisationPath + "province_names.csv";
     private final String mainmenuCsvFile = this.localisationPath + "mainmenu.csv";
@@ -53,6 +55,7 @@ public class DataManager {
         IntObjectMap<Province> provinces = this.loadProvinces(countries);
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
+        System.out.println(this.readGoodsJson());
         return new World(new ObjectList<>(countries.values()), provinces, governments, ideologies);
     }
 
@@ -371,6 +374,69 @@ public class DataManager {
         }
 
         return ideologies;
+    }
+
+    private Map<String, Good> readGoodsJson() {
+        Map<String, Good> goods = new ObjectObjectMap<>();
+        try {
+            JsonNode goodsJson = this.openJson(this.goodsJsonFile);
+            JsonNode foodJson = goodsJson.get("food");
+            foodJson.fields().forEachRemaining(entry -> {
+                String goodName = entry.getKey();
+                JsonNode goodNode = entry.getValue();
+                float production = goodNode.get("base_production").floatValue();
+                float infraProduction = goodNode.get("infra_production").floatValue();
+                short basePopulation = (short) goodNode.get("base_pop").asInt();
+                short infraPopulation = (short) goodNode.get("infra_pop").asInt();
+                float cost = goodNode.get("cost").floatValue();
+                int color = this.parseColor(goodNode.get("color"));
+                goods.put(goodName, new Food(goodName, production, infraProduction, basePopulation, infraPopulation, cost, color));
+            });
+            JsonNode naturalResourcesJson = goodsJson.get("natural_resources");
+            naturalResourcesJson.fields().forEachRemaining(entry -> {
+                String naturalResourcesName = entry.getKey();
+                JsonNode naturalResourcesNode = entry.getValue();
+                float production = naturalResourcesNode.get("base_production").floatValue();
+                float infraProduction = naturalResourcesNode.get("infra_production").floatValue();
+                short basePopulation = (short) naturalResourcesNode.get("base_pop").asInt();
+                short infraPopulation = (short) naturalResourcesNode.get("infra_pop").asInt();
+                float cost = naturalResourcesNode.get("cost").floatValue();
+                int color = this.parseColor(naturalResourcesNode.get("color"));
+                short priority = (short) naturalResourcesNode.get("priority").asInt();
+                goods.put(naturalResourcesName, new NaturalResource(naturalResourcesName, production, infraProduction, basePopulation, infraPopulation, cost, color, priority));
+            });
+
+            JsonNode energyJson = goodsJson.get("energy");
+            energyJson.fields().forEachRemaining(entry -> {
+                String energyName = entry.getKey();
+                JsonNode energyNode = entry.getValue();
+                float cost = energyNode.get("cost").floatValue();
+                int color = this.parseColor(energyNode.get("color"));
+                goods.put(energyName, new Energy(energyName, cost, color));
+            });
+
+            JsonNode advancedGoodsJson = goodsJson.get("advanced_goods");
+            advancedGoodsJson.fields().forEachRemaining(entry -> {
+                String advancedGoodsName = entry.getKey();
+                JsonNode advancedGoodsNode = entry.getValue();
+                float cost = advancedGoodsNode.get("cost").floatValue();
+                int color = this.parseColor(advancedGoodsNode.get("color"));
+                goods.put(advancedGoodsName, new AdvancedGood(advancedGoodsName, cost, color));
+            });
+
+            JsonNode militaryGoodsJson = goodsJson.get("military_goods");
+            militaryGoodsJson.fields().forEachRemaining(entry -> {
+                String militaryGoodsName = entry.getKey();
+                JsonNode militaryGoodsNode = entry.getValue();
+                float cost = militaryGoodsNode.get("cost").floatValue();
+                int color = this.parseColor(militaryGoodsNode.get("color"));
+                goods.put(militaryGoodsName, new MilitaryGood(militaryGoodsName, cost, color));
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return goods;
     }
 
     private Map<Integer, Vector2> readPositionsJson() {
