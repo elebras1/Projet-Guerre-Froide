@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.economy;
+package com.populaire.projetguerrefroide.economy.good;
 
 public class Food extends Resource {
     public Food(String name, float production, float infraProduction, short basePopulation, short infraPopulation, float cost, int color) {

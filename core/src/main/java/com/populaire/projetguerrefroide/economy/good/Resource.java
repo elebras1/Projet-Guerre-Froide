@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.economy;
+package com.populaire.projetguerrefroide.economy.good;
 
 public abstract class Resource extends Good {
     private final float production;

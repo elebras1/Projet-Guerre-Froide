@@ -2,9 +2,7 @@
   "economy_building": {
     "refinery": {
       "workforce": 10000,
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "input_goods": {
         "oil": 1
       },
@@ -19,15 +17,11 @@
         255,
         165,
         0
-      ],
-      "on_occupy_destroy": false,
-      "upkeep": 0
+      ]
     },
     "powerplant": {
       "workforce": 1000,
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "input_goods": {
         "coal": 4,
         "renewable_energy": 4
@@ -43,15 +37,11 @@
         0,
         0,
         255
-      ],
-      "on_occupy_destroy": false,
-      "upkeep": 0
+      ]
     },
     "nuclear_plant": {
       "workforce": 2000,
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "input_goods": {
         "uranium": 2
       },
@@ -66,15 +56,11 @@
         255,
         0,
         0
-      ],
-      "on_occupy_destroy": false,
-      "upkeep": 0
+      ]
     },
     "light_industry": {
       "workforce": 50000,
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "input_goods": {
         "electricity": 0.5,
         "wood": 2.5,
@@ -92,15 +78,11 @@
         255,
         255,
         0
-      ],
-      "on_occupy_destroy": false,
-      "upkeep": 0
+      ]
     },
     "heavy_industry": {
       "workforce": 20000,
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "input_goods": {
         "electricity": 3,
         "iron": 3,
@@ -117,15 +99,11 @@
         139,
         69,
         19
-      ],
-      "on_occupy_destroy": false,
-      "upkeep": 0
+      ]
     },
     "aviation_industry": {
       "workforce": 10000,
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "input_goods": {
         "electricity": 2,
         "fuel": 2,
@@ -143,15 +121,11 @@
         0,
         255,
         255
-      ],
-      "on_occupy_destroy": false,
-      "upkeep": 0
+      ]
     },
     "naval_yards": {
       "workforce": 10000,
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "input_goods": {
         "electricity": 3,
         "heavy_components": 0.75,
@@ -169,15 +143,11 @@
         0,
         0,
         139
-      ],
-      "on_occupy_destroy": false,
-      "upkeep": 0
+      ]
     },
     "high_tech_industry": {
       "workforce": 5000,
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "input_goods": {
         "electricity": 5,
         "fuel": 4,
@@ -195,15 +165,11 @@
         0,
         255,
         0
-      ],
-      "on_occupy_destroy": false,
-      "upkeep": 0
+      ]
     },
     "military_industry": {
       "workforce": 10000,
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "input_goods": {
         "light_products": 0.5,
         "heavy_components": 0.5
@@ -219,15 +185,11 @@
         169,
         169,
         169
-      ],
-      "on_occupy_destroy": false,
-      "upkeep": 0
+      ]
     },
     "centrifuges": {
       "workforce": 1000,
-      "initial_cost": {
-        "money": 20000
-      },
+      "initial_cost": 20000,
       "input_goods": {
         "heavy_components": 0.2,
         "uranium": 7
@@ -243,15 +205,11 @@
         128,
         0,
         128
-      ],
-      "on_occupy_destroy": false,
-      "upkeep": 100
+      ]
     },
     "satellites_factory": {
       "workforce": 1000,
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "input_goods": {
         "high_tech": 1.5,
         "electricity": 3,
@@ -269,268 +227,179 @@
         128,
         0,
         128
-      ],
-      "on_occupy_destroy": false,
-      "upkeep": 100
+      ]
     }
   },
   "special_building": {
     "military_academy": {
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "time": 730,
       "visibility": true,
-      "onmap": false,
-      "on_occupy_destroy": true,
-      "upkeep": 500
+      "onmap": false
     },
     "nuclear_test_site": {
-      "initial_cost": {
-        "money": 1500,
-        "uranium": 20
-      },
+      "initial_cost": 1500,
       "time": 3,
       "visibility": true,
-      "onmap": false,
-      "on_occupy_destroy": false,
-      "upkeep": 10
+      "onmap": false
     },
     "rocket_test_site": {
-      "initial_cost": {
-        "money": 750
-      },
+      "initial_cost": 750,
       "time": 3,
       "visibility": true,
-      "onmap": false,
-      "on_occupy_destroy": false,
-      "upkeep": 20
+      "onmap": false
     },
     "financial_district": {
-      "initial_cost": {
-        "money": 1000
-      },
+      "initial_cost": 1000,
       "time": 3,
       "visibility": true,
       "onmap": false
     },
     "strategical_storage": {
-      "initial_cost": {
-        "money": 250
-      },
+      "initial_cost": 250,
       "time": 3,
       "visibility": true,
-      "onmap": false,
-      "on_occupy_destroy": false,
-      "upkeep": 10
+      "onmap": false
     },
     "intelligence_center": {
-      "initial_cost": {
-        "spies": 10,
-        "money": 500
-      },
+      "initial_cost": 500,
       "time": 3,
       "visibility": true,
-      "onmap": false,
-      "on_occupy_destroy": false,
-      "upkeep": 200
+      "onmap": false
     },
     "sdi_site": {
-      "initial_cost": {
-        "money": 3000
-      },
+      "initial_cost": 3000,
       "time": 3,
       "visibility": true,
       "onmap": false,
       "modifier": {
         "sdi_missile_defense": 5
-      },
-      "on_occupy_destroy": false,
-      "upkeep": 1000
+      }
     },
     "nuclear_silo": {
-      "initial_cost": {
-        "uranium": 20,
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "time": 1,
       "visibility": true,
       "onmap": false,
-      "slotdata": "icbm_complex",
-      "ammo_store": 4,
-      "on_occupy_destroy": false,
-      "upkeep": 50
+      "modifier": {
+        "ammo_store": 4
+      }
     },
     "spaceport": {
-      "initial_cost": {
-        "money": 2500
-      },
+      "initial_cost": 2500,
       "time": 3,
       "visibility": true,
-      "onmap": false,
-      "on_occupy_destroy": true,
-      "upkeep": 1000
+      "onmap": false
     },
     "national_monument": {
-      "initial_cost": {
-        "money": 5000
-      },
+      "initial_cost": 5000,
       "time": 3,
       "visibility": true,
-      "onmap": false,
-      "on_occupy_destroy": true,
-      "upkeep": 100
+      "onmap": false
     },
     "university": {
-      "initial_cost": {
-        "money": 10000
-      },
+      "initial_cost": 10000,
       "time": 3,
       "visibility": true,
       "onmap": false,
       "modifier": {
-        "flexible_modifier": {
-          "industry_physics_cost": {
-            "name": "name_university",
-            "value": -0.01,
-            "type": "technology_cost"
-          },
-          "industry_electronics_cost": {
-            "name": "name_university",
-            "value": -0.01,
-            "type": "technology_cost"
-          },
-          "industry_chemistry_cost": {
-            "name": "name_university",
-            "value": -0.01,
-            "type": "technology_cost"
-          },
-          "industry_biology_cost": {
-            "name": "name_university",
-            "value": -0.01,
-            "type": "technology_cost"
-          },
-          "industry_mathematics_cost": {
-            "name": "name_university",
-            "value": -0.01,
-            "type": "technology_cost"
-          },
-          "industry_softwareengineering_cost": {
-            "name": "name_university",
-            "value": -0.01,
-            "type": "technology_cost"
-          },
-          "industry_medicine_cost": {
-            "name": "name_university",
-            "value": -0.01,
-            "type": "technology_cost"
-          }
+        "industry_physics_cost": {
+          "value": -0.01,
+          "type": "technology_cost"
+        },
+        "industry_electronics_cost": {
+          "value": -0.01,
+          "type": "technology_cost"
+        },
+        "industry_chemistry_cost": {
+          "value": -0.01,
+          "type": "technology_cost"
+        },
+        "industry_biology_cost": {
+          "value": -0.01,
+          "type": "technology_cost"
+        },
+        "industry_mathematics_cost": {
+          "value": -0.01,
+          "type": "technology_cost"
+        },
+        "industry_softwareengineering_cost": {
+          "value": -0.01,
+          "type": "technology_cost"
+        },
+        "industry_medicine_cost": {
+          "value": -0.01,
+          "type": "technology_cost"
         }
-      },
-      "on_occupy_destroy": false,
-      "upkeep": 100
+      }
     },
     "agriculture_research_center": {
-      "initial_cost": {
-        "money": 10000
-      },
+      "initial_cost": 10000,
       "time": 3,
       "visibility": true,
       "onmap": false,
       "modifier": {
-        "flexible_modifier": {
-          "industry_agriculture_mechanized_cost": {
-            "name": "name_agriculture_research_center",
-            "value": -0.2,
-            "type": "technology_cost"
-          },
-          "industry_agriculture_fertilizer_cost": {
-            "name": "name_agriculture_research_center",
-            "value": -0.2,
-            "type": "technology_cost"
-          }
+        "industry_agriculture_mechanized_cost": {
+          "value": -0.2,
+          "type": "technology_cost"
+        },
+        "industry_agriculture_fertilizer_cost": {
+          "value": -0.2,
+          "type": "technology_cost"
         }
-      },
-      "on_occupy_destroy": false,
-      "upkeep": 100
+      }
     },
     "naval_research_center": {
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "time": 3,
       "visibility": true,
-      "onmap": false,
-      "on_occupy_destroy": false,
-      "upkeep": 100
+      "onmap": false
     },
     "land_research_center": {
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "time": 3,
       "visibility": true,
       "onmap": false,
       "modifier": {
-        "flexible_modifier": {
-          "small_arms_cost": {
-            "name": "name_land_research_center",
-            "value": -0.1,
-            "type": "technology_cost"
-          },
-          "light_artillery_cost": {
-            "name": "name_land_research_center",
-            "value": -0.1,
-            "type": "technology_cost"
-          },
-          "anti_tank_cost": {
-            "name": "name_land_research_center",
-            "value": -0.1,
-            "type": "technology_cost"
-          }
+        "small_arms_cost": {
+          "value": -0.1,
+          "type": "technology_cost"
+        },
+        "light_artillery_cost": {
+          "value": -0.1,
+          "type": "technology_cost"
+        },
+        "anti_tank_cost": {
+          "value": -0.1,
+          "type": "technology_cost"
         }
-      },
-      "on_occupy_destroy": false,
-      "upkeep": 100
+      }
     },
     "air_research_center": {
-      "initial_cost": {
-        "money": 2000
-      },
+      "initial_cost": 2000,
       "time": 3,
       "visibility": true,
       "onmap": false,
       "modifier": {
-        "flexible_modifier": {
-          "aircraftavionics_cost": {
-            "name": "name_air_research_center",
-            "value": -0.1,
-            "type": "technology_cost"
-          },
-          "airframewing_speed_cost": {
-            "name": "name_air_research_center",
-            "value": -0.1,
-            "type": "technology_cost"
-          },
-          "aircraftweapons_guns_cost": {
-            "name": "name_air_research_center",
-            "value": -0.2,
-            "type": "technology_cost"
-          }
+        "aircraftavionics_cost": {
+          "value": -0.1,
+          "type": "technology_cost"
+        },
+        "airframewing_speed_cost": {
+          "value": -0.1,
+          "type": "technology_cost"
+        },
+        "aircraftweapons_guns_cost": {
+          "value": -0.2,
+          "type": "technology_cost"
         }
-      },
-      "on_occupy_destroy": false,
-      "upkeep": 100
+      }
     },
     "early_warning_site": {
-      "initial_cost": {
-        "money": 3000
-      },
+      "initial_cost": 3000,
       "time": 3,
       "visibility": true,
-      "onmap": false,
-      "on_occupy_destroy": false,
-      "upkeep": 1000
+      "onmap": false
     }
   }
 }

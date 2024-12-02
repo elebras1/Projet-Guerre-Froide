@@ -10,7 +10,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.github.tommyettinger.ds.ObjectObjectMap;
-import com.populaire.projetguerrefroide.economy.*;
+import com.populaire.projetguerrefroide.economy.building.Building;
+import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
+import com.populaire.projetguerrefroide.economy.building.SpecialBuilding;
+import com.populaire.projetguerrefroide.economy.good.*;
 import com.populaire.projetguerrefroide.entity.*;
 import com.populaire.projetguerrefroide.map.*;
 
@@ -36,6 +39,7 @@ public class DataManager {
     private final String governmentJsonFile = this.commonPath + "governments.json";
     private final String ideologiesJsonFile = this.commonPath + "ideologies.json";
     private final String goodsJsonFile = this.commonPath + "goods.json";
+    private final String economyBuildingsJsonFile = this.commonPath + "economy_buildings.json";
     private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
     private final String provinceNamesCsvFile = this.localisationPath + "province_names.csv";
     private final String mainmenuCsvFile = this.localisationPath + "mainmenu.csv";
@@ -55,7 +59,8 @@ public class DataManager {
         IntObjectMap<Province> provinces = this.loadProvinces(countries);
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
-        System.out.println(this.readGoodsJson());
+        Map<String, Good> goods = this.readGoodsJson();
+        Map<String, Building> buildings = this.readEconomyBuildingsJson(goods);
         return new World(new ObjectList<>(countries.values()), provinces, governments, ideologies);
     }
 
@@ -344,7 +349,7 @@ public class DataManager {
                 if(!electionNode.isEmpty()) {
                     boolean headOfState = electionNode.get("head_of_state").asBoolean();
                     boolean headOfGovernment = electionNode.get("head_of_government").asBoolean();
-                    short duration = (short) electionNode.get("duration").asInt();
+                    short duration = electionNode.get("duration").shortValue();
                     Election election = new Election(headOfState, headOfGovernment, duration);
                     governments.put(governmentName, new Government(governmentName, ideologiesAcceptance, election));
                 } else {
@@ -366,7 +371,7 @@ public class DataManager {
                 String ideologyName = entry.getKey();
                 JsonNode ideologyNode = entry.getValue();
                 int color = this.parseColor(ideologyNode.get("color"));
-                short factionDriftingSpeed = (short) ideologyNode.get("faction_drifting_speed").asInt();
+                short factionDriftingSpeed = ideologyNode.get("faction_drifting_speed").shortValue();
                 ideologies.put(ideologyName, new Ideology(ideologyName, color, factionDriftingSpeed));
             });
         } catch (IOException e) {
@@ -386,8 +391,8 @@ public class DataManager {
                 JsonNode goodNode = entry.getValue();
                 float production = goodNode.get("base_production").floatValue();
                 float infraProduction = goodNode.get("infra_production").floatValue();
-                short basePopulation = (short) goodNode.get("base_pop").asInt();
-                short infraPopulation = (short) goodNode.get("infra_pop").asInt();
+                short basePopulation = goodNode.get("base_pop").shortValue();
+                short infraPopulation = goodNode.get("infra_pop").shortValue();
                 float cost = goodNode.get("cost").floatValue();
                 int color = this.parseColor(goodNode.get("color"));
                 goods.put(goodName, new Food(goodName, production, infraProduction, basePopulation, infraPopulation, cost, color));
@@ -398,11 +403,11 @@ public class DataManager {
                 JsonNode naturalResourcesNode = entry.getValue();
                 float production = naturalResourcesNode.get("base_production").floatValue();
                 float infraProduction = naturalResourcesNode.get("infra_production").floatValue();
-                short basePopulation = (short) naturalResourcesNode.get("base_pop").asInt();
-                short infraPopulation = (short) naturalResourcesNode.get("infra_pop").asInt();
+                short basePopulation = naturalResourcesNode.get("base_pop").shortValue();
+                short infraPopulation = naturalResourcesNode.get("infra_pop").shortValue();
                 float cost = naturalResourcesNode.get("cost").floatValue();
                 int color = this.parseColor(naturalResourcesNode.get("color"));
-                short priority = (short) naturalResourcesNode.get("priority").asInt();
+                short priority = naturalResourcesNode.get("priority").shortValue();
                 goods.put(naturalResourcesName, new NaturalResource(naturalResourcesName, production, infraProduction, basePopulation, infraPopulation, cost, color, priority));
             });
 
@@ -437,6 +442,68 @@ public class DataManager {
         }
 
         return goods;
+    }
+
+    private Map<String, Building> readEconomyBuildingsJson(Map<String, Good> goods) {
+        Map<String, Building> buildings = new ObjectObjectMap<>();
+        try {
+            JsonNode buildingsJson = this.openJson(this.economyBuildingsJsonFile);
+            JsonNode economyBuilding = buildingsJson.get("economy_building");
+            economyBuilding.fields().forEachRemaining(entry -> {
+                String buildingName = entry.getKey();
+                int initialCost = entry.getValue().get("initial_cost").asInt();
+                short time = entry.getValue().get("time").shortValue();
+                boolean onMap = entry.getValue().get("onmap").asBoolean();
+                boolean visibility = entry.getValue().get("visibility").asBoolean();
+                int workforce = entry.getValue().get("workforce").asInt();
+                int color = this.parseColor(entry.getValue().get("color"));
+                short maxLevel = entry.getValue().get("max_level").shortValue();
+                JsonNode inputGoodsNode = entry.getValue().get("input_goods");
+                Map<Good, Integer> inputGoods = new ObjectObjectMap<>();
+                inputGoodsNode.fields().forEachRemaining(inputGood -> {
+                    Good good = goods.get(inputGood.getKey());
+                    inputGoods.put(good, inputGood.getValue().asInt());
+                });
+                JsonNode outputGoodsNode = entry.getValue().get("output_goods");
+                Map<Good, Integer> outputGoods = new ObjectObjectMap<>();
+                outputGoodsNode.fields().forEachRemaining(outputGood -> {
+                    Good good = goods.get(outputGood.getKey());
+                    outputGoods.put(good, outputGood.getValue().asInt());
+                });
+                buildings.put(buildingName, new EconomyBuilding(buildingName, initialCost, time, onMap, visibility, workforce, inputGoods, outputGoods, maxLevel, color));
+            });
+
+            JsonNode specialBuilding = buildingsJson.get("special_building");
+            specialBuilding.fields().forEachRemaining(entry -> {
+                String buildingName = entry.getKey();
+                int initialCost = entry.getValue().get("initial_cost").asInt();
+                short time = entry.getValue().get("time").shortValue();
+                boolean onMap = entry.getValue().get("onmap").asBoolean();
+                boolean visibility = entry.getValue().get("visibility").asBoolean();
+                JsonNode modifiersNode = entry.getValue().get("modifier");
+                if(modifiersNode == null) {
+                    buildings.put(buildingName, new SpecialBuilding(buildingName, initialCost, time, onMap, visibility));
+                } else {
+                    List<Modifier> modifiers = new ObjectList<>();
+                    modifiersNode.fields().forEachRemaining(modifierEntry -> {
+                        String modifierName = modifierEntry.getKey();
+                        JsonNode modifierValue = modifierEntry.getValue();
+                        if (modifierValue.isNumber()) {
+                            modifiers.add(new Modifier(modifierName, modifierValue.floatValue(), "default")); // "default" ou tout autre type par défaut
+                        } else {
+                            float value = modifierValue.get("value").floatValue();
+                            String modifierType = modifierValue.get("type").asText();
+                            modifiers.add(new Modifier(modifierName, value, modifierType));
+                        }
+                    });
+                    buildings.put(buildingName, new SpecialBuilding(buildingName, initialCost, time, onMap, visibility, modifiers));
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return buildings;
     }
 
     private Map<Integer, Vector2> readPositionsJson() {

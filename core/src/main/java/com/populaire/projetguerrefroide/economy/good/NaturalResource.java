@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.economy;
+package com.populaire.projetguerrefroide.economy.good;
 
 public class NaturalResource extends Resource {
     private final short priority;
