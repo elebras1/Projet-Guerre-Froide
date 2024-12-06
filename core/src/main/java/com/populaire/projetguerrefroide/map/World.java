@@ -18,8 +18,6 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 public class World {
     private final List<Country> countries;
     private final IntObjectMap<Province> provinces;
-    private final Map<String, Government> governments;
-    private final Map<String, Ideology> ideologies;
     private LandProvince selectedProvince;
     private Country selectedCountry;
     private Pixmap provincesColorPixmap;
@@ -38,11 +36,9 @@ public class World {
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
 
-    public World(List<Country> countries, IntObjectMap<Province> provinces, Map<String, Government> governments, Map<String, Ideology> ideologies) {
+    public World(List<Country> countries, IntObjectMap<Province> provinces) {
         this.countries = countries;
         this.provinces = provinces;
-        this.governments = governments;
-        this.ideologies = ideologies;
         this.createCountriesColorTexture();
         this.createProvincesColorStripesTexture();
         this.provincesColorPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
@@ -92,8 +88,8 @@ public class World {
         int provinceColor = this.provincesColorPixmap.getPixel(adjustedX, y);
         Province province = this.provinces.get(provinceColor);
 
-        if(province instanceof LandProvince) {
-            return (LandProvince) province;
+        if(province instanceof LandProvince landProvince) {
+            return landProvince;
         }
 
         return null;
@@ -112,17 +108,6 @@ public class World {
         return this.selectedCountry;
     }
 
-    private List<WaterProvince> getWaterProvinces() {
-        List<WaterProvince> waterProvinces = new ArrayList<>();
-        for(Province province : this.provinces.values()) {
-            if(province instanceof WaterProvince) {
-                waterProvinces.add((WaterProvince) province);
-            }
-        }
-
-        return waterProvinces;
-    }
-
     public void createCountriesColorTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
         pixmap.setColor(Color.BLACK);
@@ -133,7 +118,7 @@ public class World {
                     int pixelInt = iterator.nextInt();
                     int pixelX = (pixelInt >> 16);
                     int pixelY = (pixelInt & 0xFFFF);
-                    pixmap.drawPixel(pixelX, pixelY, ((LandProvince) province).getCountryOwner().getColor());
+                    pixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getColor());
                 }
             }
         }

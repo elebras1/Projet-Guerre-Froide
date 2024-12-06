@@ -105,6 +105,10 @@ public class Country {
         return population;
     }
 
+    public List<MapLabel> getLabels() {
+        return this.labels;
+    }
+
     public IntList getProvincesPixelsBorder() {
         IntList pixelsBorder = new IntList();
         for(LandProvince province : this.provinces) {
@@ -163,10 +167,6 @@ public class Country {
                 }
             }
         }
-    }
-
-    public List<MapLabel> getLabels() {
-        return this.labels;
     }
 
     @Override

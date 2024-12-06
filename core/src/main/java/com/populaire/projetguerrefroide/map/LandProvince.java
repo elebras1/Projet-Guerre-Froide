@@ -95,19 +95,18 @@ public class LandProvince implements Province {
         return this.population;
     }
 
+    @Override
     public boolean isPixelProvince(short x, short y) {
         return this.pixels.contains((x << 16) | (y & 0xFFFF));
     }
 
     public boolean isPixelBorder(short x, short y) {
         for (Province adjacentProvince : this.adjacentProvinces) {
-            if(adjacentProvince instanceof LandProvince adjacentLandProvince) {
-                if(adjacentLandProvince.isPixelProvince((short) (x + 1), y)
-                    || adjacentLandProvince.isPixelProvince((short) (x - 1), y)
-                    || adjacentLandProvince.isPixelProvince(x, (short) (y + 1))
-                    || adjacentLandProvince.isPixelProvince(x, (short) (y - 1))) {
-                    return true;
-                }
+            if(adjacentProvince.isPixelProvince((short) (x + 1), y)
+                || adjacentProvince.isPixelProvince((short) (x - 1), y)
+                || adjacentProvince.isPixelProvince(x, (short) (y + 1))
+                || adjacentProvince.isPixelProvince(x, (short) (y - 1))) {
+                return true;
             }
         }
         return false;

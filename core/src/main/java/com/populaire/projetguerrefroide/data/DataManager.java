@@ -63,7 +63,7 @@ public class DataManager {
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
         Map<String, Good> goods = this.readGoodsJson();
         Map<String, Building> buildings = this.readBuildingsJson(goods);
-        return new World(new ObjectList<>(countries.values()), provinces, governments, ideologies);
+        return new World(new ObjectList<>(countries.values()), provinces);
     }
 
     private Map<String, Country> loadCountries() {
@@ -210,6 +210,7 @@ public class DataManager {
                     LandProvince province = (LandProvince) provinces.get(provinceId.shortValue());
                     if(province != null) {
                         province.setRegion(region);
+                        region.addProvince(province);
                     } else {
                         WaterProvince waterProvince = new WaterProvince(provinceId.shortValue());
                         provinces.put(provinceId.shortValue(), waterProvince);

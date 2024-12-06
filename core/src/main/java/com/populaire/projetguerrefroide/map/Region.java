@@ -1,9 +1,31 @@
 package com.populaire.projetguerrefroide.map;
 
+import com.github.tommyettinger.ds.ObjectList;
+
+import java.util.List;
+
 public class Region {
-    private String id;
+    private final String id;
+    private final List<LandProvince> provinces;
 
     public Region(String id) {
         this.id = id;
+        this.provinces = new ObjectList<>();
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void addProvince(LandProvince province) {
+        this.provinces.add(province);
+    }
+
+    @Override
+    public String toString() {
+        return "Region{" +
+            "id='" + this.id + '\'' +
+            ", provinces=" + this.provinces +
+            '}';
     }
 }

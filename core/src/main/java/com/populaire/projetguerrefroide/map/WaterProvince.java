@@ -5,7 +5,7 @@ import com.github.tommyettinger.ds.ObjectList;
 import java.util.List;
 
 public class WaterProvince implements Province{
-    private List<Province> adjacentProvinces;
+    private final List<Province> adjacentProvinces;
     private int color;
     private short id;
     private String name;
@@ -53,5 +53,10 @@ public class WaterProvince implements Province{
     @Override
     public List<Province> getAdjacentProvinces() {
         return this.adjacentProvinces;
+    }
+
+    @Override
+    public boolean isPixelProvince(short x, short y) {
+        return false;
     }
 }

@@ -11,5 +11,6 @@ public interface Province {
     void setName(String name);
     void setAdjacentProvinces(List<Province> provinces);
     List<Province> getAdjacentProvinces();
+    boolean isPixelProvince(short x, short y);
 
 }
