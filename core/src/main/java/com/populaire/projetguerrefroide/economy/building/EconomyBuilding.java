@@ -11,8 +11,8 @@ public class EconomyBuilding extends Building {
     private final short maxLevel;
     private final int color;
 
-    public EconomyBuilding(String name, int initialCost, short time, boolean onMap, boolean visibility, int workforce, Map<Good, Integer> inputGoods, Map<Good, Integer> outputGoods, short maxLevel, int color) {
-        super(name, initialCost, time, onMap, visibility);
+    public EconomyBuilding(String name, int cost, short time, boolean onMap, boolean visibility, int workforce, Map<Good, Integer> inputGoods, Map<Good, Integer> outputGoods, short maxLevel, int color) {
+        super(name, cost, time, onMap, visibility);
         this.workforce = workforce;
         this.inputGoods = inputGoods;
         this.outputGoods = outputGoods;
@@ -44,7 +44,7 @@ public class EconomyBuilding extends Building {
     public String toString() {
         return "EconomyBuilding{" +
             "name='" + this.getName() + '\'' +
-            ", initialCost=" + this.getInitialCost() +
+            ", cost=" + this.getCost() +
             ", time=" + this.getTime() +
             ", onMap=" + this.isOnMap() +
             ", visibility=" + this.isVisible() +

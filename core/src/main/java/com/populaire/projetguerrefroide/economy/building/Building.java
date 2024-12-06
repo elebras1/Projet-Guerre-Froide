@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public abstract class Building {
     private final String name;
-    private final int initialCost;
+    private final int cost;
     private final short time;
     private final boolean onMap;
     private final boolean visibility;
 
-    public Building(String name, int initialCost, short time, boolean onMap, boolean visibility) {
+    public Building(String name, int cost, short time, boolean onMap, boolean visibility) {
         this.name = name;
-        this.initialCost = initialCost;
+        this.cost = cost;
         this.time = time;
         this.onMap = onMap;
         this.visibility = visibility;
@@ -21,8 +21,8 @@ public abstract class Building {
         return this.name;
     }
 
-    public int getInitialCost() {
-        return this.initialCost;
+    public int getCost() {
+        return this.cost;
     }
 
     public short getTime() {

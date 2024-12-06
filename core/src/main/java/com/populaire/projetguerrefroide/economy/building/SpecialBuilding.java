@@ -7,13 +7,13 @@ import java.util.List;
 public class SpecialBuilding extends Building{
     private final List<Modifier> modifiers;
 
-    public SpecialBuilding(String name, int initialCost, short time, boolean onMap, boolean visibility, List<Modifier> modifiers) {
-        super(name, initialCost, time, onMap, visibility);
+    public SpecialBuilding(String name, int cost, short time, boolean onMap, boolean visibility, List<Modifier> modifiers) {
+        super(name, cost, time, onMap, visibility);
         this.modifiers = modifiers;
     }
 
-    public SpecialBuilding(String name, int initialCost, short time, boolean onMap, boolean visibility) {
-        super(name, initialCost, time, onMap, visibility);
+    public SpecialBuilding(String name, int cost, short time, boolean onMap, boolean visibility) {
+        super(name, cost, time, onMap, visibility);
         this.modifiers = null;
     }
 
@@ -25,7 +25,7 @@ public class SpecialBuilding extends Building{
     public String toString() {
         return "SpecialBuilding{" +
             "name='" + this.getName() + '\'' +
-            ", initialCost=" + this.getInitialCost() +
+            ", cost=" + this.getCost() +
             ", time=" + this.getTime() +
             ", onMap=" + this.isOnMap() +
             ", visibility=" + this.isVisible() +
