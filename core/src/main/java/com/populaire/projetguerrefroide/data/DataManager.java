@@ -8,9 +8,11 @@ import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.Json;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.github.tommyettinger.ds.ObjectObjectMap;
+import com.populaire.projetguerrefroide.economy.PopulationDemands;
 import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.economy.building.DevelopmentBuilding;
 import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
@@ -41,6 +43,7 @@ public class DataManager {
     private final String governmentJsonFile = this.commonPath + "governments.json";
     private final String ideologiesJsonFile = this.commonPath + "ideologies.json";
     private final String goodsJsonFile = this.commonPath + "goods.json";
+    private final String populationDemandsJsonFile = this.commonPath + "population_demands.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
     private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
     private final String provinceNamesCsvFile = this.localisationPath + "province_names.csv";
@@ -62,6 +65,7 @@ public class DataManager {
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
         Map<String, Good> goods = this.readGoodsJson();
+        PopulationDemands populationDemands = this.readPopulationDemandsJson(goods);
         Map<String, Building> buildings = this.readBuildingsJson(goods);
         return new World(new ObjectList<>(countries.values()), provinces);
     }
@@ -445,6 +449,25 @@ public class DataManager {
         }
 
         return goods;
+    }
+
+    private PopulationDemands readPopulationDemandsJson(Map<String, Good> goods) {
+        Map<Good, Float> populationDemands = new ObjectObjectMap<>();
+        try {
+            JsonNode populationDemandsJson = this.openJson(this.populationDemandsJsonFile);
+            short amount = populationDemandsJson.get("amount").shortValue();
+            ((ObjectNode) populationDemandsJson).remove("amount");
+            populationDemandsJson.fields().forEachRemaining(entry -> {
+                Good good = goods.get(entry.getKey());
+                populationDemands.put(good, entry.getValue().floatValue());
+            });
+
+            return new PopulationDemands(amount, populationDemands);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     private Map<String, Building> readBuildingsJson(Map<String, Good> goods) {
