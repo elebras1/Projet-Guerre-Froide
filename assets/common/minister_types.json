@@ -1,0 +1,112 @@
+{
+  "extremist_type": {
+    "dissent_increase": 0.01,
+    "neutrality": -0.02,
+    "global_revolt_risk": 0.01
+  },
+  "hardliner_type": {
+    "neutrality": -0.02,
+    "threat_impact": 0.02
+  },
+  "bureaucrat_type": {
+    "global_money": 0.01
+  },
+  "administrator_type": {
+    "supply_consumption": -0.05,
+    "global_money": 0.01,
+    "global_resources": 0.01
+  },
+  "reformer_type": {
+    "global_resources": -0.01,
+    "ruling_party_support": 0.02
+  },
+  "ambitious_type": {
+    "neutrality": -0.02,
+    "threat_impact": 0.01,
+    "suseptibility": 0.01
+  },
+  "lethargic_type": {
+    "dissent_increase": 0.01,
+    "global_money": -0.01
+  },
+  "visionary_type": {
+    "national_unity": 0.2,
+    "ruling_party_support": 0.01
+  },
+  "traditionalist_type": {
+    "war_exhaustion": -0.02,
+    "research_efficiency": -0.05
+  },
+  "dictator_type": {
+    "local_manpower_modifier": 0.01,
+    "ruling_party_support": 0.02,
+    "territorial_pride": 0.01
+  },
+  "autocrat_type": {
+    "war_exhaustion": -0.02,
+    "espionage_bonus": 0.02
+  },
+  "democrat_type": {
+    "global_revolt_risk": -0.02,
+    "global_money": 0.01
+  },
+  "zealous_type": {
+    "global_revolt_risk": -0.02,
+    "global_manpower_modifier": 0.02
+  },
+  "religious_type": {
+    "global_revolt_risk": -0.01,
+    "population_growth": 0.02
+  },
+  "moral_type": {
+    "dissent_decrease": -0.05,
+    "global_money": -0.01
+  },
+  "parental_type": {
+    "territorial_pride": 0.02,
+    "global_manpower_modifier": 0.01
+  },
+  "liberal_type": {
+    "global_manpower_modifier": -0.01,
+    "global_money": 0.1,
+    "dissent_decrease": 0.01
+  },
+  "courageous_type": {
+    "national_unity": 0.01,
+    "prestige": 0.02
+  },
+  "fortunate_type": {
+    "global_money": 0.05
+  },
+  "honest_type": {
+    "espionage_bonus": -0.02,
+    "national_unity": 0.2,
+    "ruling_party_support": 0.02
+  },
+  "loyal_type": {
+    "national_unity": 0.2
+  },
+  "reputable_type": {
+    "dissent_decrease": 0.05,
+    "ruling_party_support": 0.01
+  },
+  "iron_lady": {
+    "dissent_increase": 0.01,
+    "global_resources": 0.01,
+    "threat_impact": 0.01
+  },
+  "controversial_figure": {
+    "dissent_increase": 0.02,
+    "espionage_bonus": 0.05
+  },
+  "courteous_figure": {
+    "diplomatic_point": 0.02,
+    "threat_impact": -0.01
+  },
+  "supreme_leader": {
+    "dissent_decrease": 0.05,
+    "local_manpower_modifier": 0.1,
+    "territorial_pride": 0.05,
+    "national_unity": 0.5
+  }
+}

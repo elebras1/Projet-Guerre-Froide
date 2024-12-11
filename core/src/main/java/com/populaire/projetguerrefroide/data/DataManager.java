@@ -44,6 +44,7 @@ public class DataManager {
     private final String ideologiesJsonFile = this.commonPath + "ideologies.json";
     private final String goodsJsonFile = this.commonPath + "goods.json";
     private final String populationDemandsJsonFile = this.commonPath + "population_demands.json";
+    private final String ministerTypesJsonFile = this.commonPath + "minister_types.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
     private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
     private final String provinceNamesCsvFile = this.localisationPath + "province_names.csv";
@@ -67,6 +68,7 @@ public class DataManager {
         Map<String, Good> goods = this.readGoodsJson();
         PopulationDemands populationDemands = this.readPopulationDemandsJson(goods);
         Map<String, Building> buildings = this.readBuildingsJson(goods);
+        Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
         return new World(new ObjectList<>(countries.values()), provinces);
     }
 
@@ -469,6 +471,28 @@ public class DataManager {
 
         return null;
     }
+
+    private Map<String, MinisterType> readMinisterTypesJson() {
+        Map<String, MinisterType> ministerTypes = new ObjectObjectMap<>();
+        try {
+            JsonNode ministerTypesJson = this.openJson(this.ministerTypesJsonFile);
+            ministerTypesJson.fields().forEachRemaining(entry -> {
+                String ministerTypeName = entry.getKey();
+                List<Modifier> modifiers = new ObjectList<>();
+                entry.getValue().fields().forEachRemaining(modifierEntry -> {
+                    String modifierName = modifierEntry.getKey();
+                    float modifierValue = modifierEntry.getValue().floatValue();
+                    modifiers.add(new Modifier(modifierName, modifierValue));
+                });
+                ministerTypes.put(ministerTypeName, new MinisterType(ministerTypeName, modifiers));
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return ministerTypes;
+    }
+
 
     private Map<String, Building> readBuildingsJson(Map<String, Good> goods) {
         Map<String, Building> buildings = new ObjectObjectMap<>();
