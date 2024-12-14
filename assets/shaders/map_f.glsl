@@ -37,8 +37,24 @@ const float yy = 1.0 / mapSize.y;
 const vec2 pix = vec2(xx, yy);
 
 // border variables
-const vec2 offsets[4] = vec2[](vec2(0.1, 0), vec2(-0.1, 0), vec2(0, 0.1), vec2(0, -0.1));
+struct BorderType {
+    vec3 color;          // Border color
+    vec2 offsets[4];     // Array of offsets
+    sampler2D texture;   // Texture to determine the border
+};
 
+const vec2 offsetsCountry[4] = vec2[](vec2(0.3, 0), vec2(-0.3, 0), vec2(0, 0.3), vec2(0, -0.3));
+const vec2 offsetsRegion[4] = vec2[](vec2(0.2, 0), vec2(-0.2, 0), vec2(0, 0.2), vec2(0, -0.2));
+const vec2 offsetsProvince[4] = vec2[](vec2(0.1, 0), vec2(-0.1, 0), vec2(0, 0.1), vec2(0, -0.1));
+
+// There is three types of borders: country, region and province
+BorderType borderTypes[3] = BorderType[](
+    BorderType(vec3(1.0, 0.0, 0.0), offsetsCountry, u_textureCountries),
+    BorderType(vec3(0.0, 0.0, 0.0), offsetsRegion, u_textureProvinces),
+    BorderType(vec3(0.0, 0.0, 0.0), offsetsProvince, u_textureProvinces)
+);
+
+// Greyify
 const vec3 GREYIFY = vec3( 0.212671, 0.715160, 0.072169 );
 
 vec2 getCorrectedTexCoord() {
@@ -180,11 +196,11 @@ vec4 getTerrainMix(vec2 texCoord) {
     return terrain;
 }
 
-vec4 getBorder(vec4 filteredColorProvince, vec4 filteredColorCountry, vec2 uv) {
+vec4 getBorder(vec4 filteredColor, BorderType borderType, vec2 uv) {
     for (int i = 0; i < 4; i++) {
-        vec4 filteredNeighbor = hqxFilter(uv + offsets[i], u_textureProvinces);
-        if (distance(filteredColorProvince.rgb, filteredNeighbor.rgb) > threshold) {
-            return vec4(0.0, 0.0, 0.0, 1.0);
+        vec4 filteredNeighbor = hqxFilter(uv + borderType.offsets[i], borderType.texture);
+        if (distance(filteredColor.rgb, filteredNeighbor.rgb) > threshold) {
+            return vec4(borderType.color, 1.0);
         }
     }
 
@@ -213,9 +229,10 @@ vec4 getLandClose(vec4 colorCountry, vec2 texCoord, vec2 uv) {
         political.rgb = clamp(mix(political.rgb, stripeColor.rgb, stripeFactor), 0.0, 1.0).rgb;
     }
 
-    float colorBorder = texture(u_textureBorders, texCoord).a;
-    if(colorBorder > 0.0) {
-        vec4 border = getBorder(colorProvince, colorCountry, uv);
+    float colorBorder = texture(u_textureBorders, texCoord).r;
+    if(colorBorder == 1.0) {
+        int index = int(round(colorBorder * 255.0));
+        vec4 border = getBorder(colorProvince, borderTypes[index], uv);
         if(border.a > 0.0) {
             political.rgb = border.rgb;
         }

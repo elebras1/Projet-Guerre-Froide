@@ -7,8 +7,6 @@ import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
-import com.populaire.projetguerrefroide.entity.Government;
-import com.populaire.projetguerrefroide.entity.Ideology;
 
 import java.util.*;
 
@@ -129,6 +127,8 @@ public class World {
 
     public void createProvincesColorStripesTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
+        pixmap.setColor(Color.WHITE);
+        pixmap.fill();
         for(Province province : this.provinces.values()) {
             if(province instanceof LandProvince landProvince && !landProvince.getCountryOwner().equals(landProvince.getCountryController())) {
                 for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
@@ -146,14 +146,17 @@ public class World {
 
     public void createBordersTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
-        Color blackColor = Color.BLACK;
+        // indice of border types in the map shader
+        short countryBorderType = 0;
+        short regionBorderType = 1;
+        short provinceBorderType = 2;
         for(Country country : this.countries) {
             IntList provincesPixelsBorder = country.getProvincesPixelsBorder();
             for(int i = 0; i < provincesPixelsBorder.size(); i++) {
                 int pixelInt = provincesPixelsBorder.get(i);
-                int pixelX = (pixelInt >> 16);
-                int pixelY = (pixelInt & 0xFFFF);
-                pixmap.drawPixel(pixelX, pixelY, Color.rgba8888(blackColor));
+                short pixelX = (short) (pixelInt >> 16);
+                short pixelY = (short) (pixelInt & 0xFFFF);
+                pixmap.drawPixel(pixelX, pixelY, provinceBorderType << 16);
             }
         }
 
