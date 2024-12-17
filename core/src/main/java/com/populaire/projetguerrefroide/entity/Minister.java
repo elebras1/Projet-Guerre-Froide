@@ -3,15 +3,15 @@ package com.populaire.projetguerrefroide.entity;
 import java.util.Date;
 
 public class Minister {
-    private String name;
-    private String ideology;
-    private String imageNameFile;
-    private float loyalty;
-    private String headOfState;
-    private String headOfGovernment;
-    private Date startDate;
-    private Date deathDate;
-    private int base;
+    private final String name;
+    private final String ideology;
+    private final String imageNameFile;
+    private final float loyalty;
+    private final String headOfState;
+    private final String headOfGovernment;
+    private final Date startDate;
+    private final Date deathDate;
+    private final int base;
 
     public Minister(String name, String ideology, String imageNameFile, float loyalty, String headOfState, String headOfGovernment, Date startDate, Date deathDate, int base) {
         this.name = name;

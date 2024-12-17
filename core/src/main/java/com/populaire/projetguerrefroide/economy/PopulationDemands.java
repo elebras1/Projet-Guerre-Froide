@@ -5,8 +5,8 @@ import com.populaire.projetguerrefroide.economy.good.Good;
 import java.util.Map;
 
 public class PopulationDemands {
-    private short amount;
-    private Map<Good, Float> demands;
+    private final short amount;
+    private final Map<Good, Float> demands;
 
     public PopulationDemands(short amount, Map<Good, Float> demands) {
         this.amount = amount;
