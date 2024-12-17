@@ -10,6 +10,7 @@ public class Country {
     private final String id;
     private final String name;
     private final int color;
+    private Set<Region> regions;
     private List<LandProvince> provinces;
     private IntObjectMap<Minister> ministers;
     private LandProvince capital;
@@ -23,6 +24,7 @@ public class Country {
         this.id = id;
         this.name = name;
         this.color = color;
+        this.regions = new ObjectSet<>();
         this.provinces = new ObjectList<>();
         this.ministers = new IntObjectMap<>();
         this.capital = null;
@@ -41,6 +43,15 @@ public class Country {
     public int getColor() {
         return this.color;
     }
+
+    public void addRegion(Region region) {
+        this.regions.add(region);
+    }
+
+    public Set<Region> getRegions() {
+        return this.regions;
+    }
+
     public void addProvince(LandProvince province) {
         this.provinces.add(province);
     }
@@ -109,10 +120,28 @@ public class Country {
         return this.labels;
     }
 
+    public IntSet getPixels() {
+        IntSet pixels = new IntSet();
+        for(LandProvince province : this.provinces) {
+            pixels.addAll(province.getPixels());
+        }
+
+        return pixels;
+    }
+
     public IntList getProvincesPixelsBorder() {
         IntList pixelsBorder = new IntList();
         for(LandProvince province : this.provinces) {
             pixelsBorder.addAll(province.getPixelsBorder());
+        }
+
+        return pixelsBorder;
+    }
+
+    public IntSet getRegionsPixelsBorder() {
+        IntSet pixelsBorder = new IntSet();
+        for(Region region : this.regions) {
+            pixelsBorder.addAll(region.getPixelsBorder());
         }
 
         return pixelsBorder;

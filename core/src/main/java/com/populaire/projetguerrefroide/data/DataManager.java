@@ -215,6 +215,7 @@ public class DataManager {
                 regionData.getValue().forEach(provinceId -> {
                     LandProvince province = (LandProvince) provinces.get(provinceId.shortValue());
                     if(province != null) {
+                        province.getCountryController().addRegion(region);
                         province.setRegion(region);
                         region.addProvince(province);
                     } else {

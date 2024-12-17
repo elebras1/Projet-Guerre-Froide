@@ -1,5 +1,7 @@
 package com.populaire.projetguerrefroide.map;
 
+import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectList;
 
 import java.util.List;
@@ -19,6 +21,30 @@ public class Region {
 
     public void addProvince(LandProvince province) {
         this.provinces.add(province);
+    }
+
+    public IntList getPixelsBorder() {
+        IntSet pixels = new IntSet();
+        IntList pixelsBorder = new IntList();
+        for(LandProvince province : this.provinces) {
+            pixels.addAll(province.getPixels());
+        }
+
+        for(IntSet.IntSetIterator iterator = pixels.iterator(); iterator.hasNext();) {
+            int pixelInt = iterator.nextInt();
+            if(this.isPixelBorder((short)(pixelInt >> 16), (short) (pixelInt & 0xFFFF), pixels)) {
+                pixelsBorder.add(pixelInt);
+            }
+        }
+
+        return pixelsBorder;
+    }
+
+    public boolean isPixelBorder(short x, short y, IntSet pixels) {
+        return !pixels.contains((x + 1 << 16) | (y & 0xFFFF))
+            || !pixels.contains((x - 1 << 16) | (y & 0xFFFF))
+            || !pixels.contains((x << 16) | (y + 1 & 0xFFFF))
+            || !pixels.contains((x << 16) | (y - 1 & 0xFFFF));
     }
 
     @Override

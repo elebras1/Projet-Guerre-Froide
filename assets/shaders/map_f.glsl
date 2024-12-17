@@ -37,7 +37,9 @@ const float yy = 1.0 / mapSize.y;
 const vec2 pix = vec2(xx, yy);
 
 // border variables
-const vec2 offsets[4] = vec2[](vec2(0.1, 0), vec2(-0.1, 0), vec2(0, 0.1), vec2(0, -0.1));
+const vec2 offsetsProvince[4] = vec2[](vec2(0.1, 0), vec2(-0.1, 0), vec2(0, 0.1), vec2(0, -0.1));
+const vec2 offsetsRegion[4] = vec2[](vec2(0.2, 0), vec2(-0.25, 0), vec2(0, 0.25), vec2(0, -0.25));
+const vec2 offsetsCountry[4] = vec2[](vec2(0.35, 0), vec2(-0.35, 0), vec2(0, 0.35), vec2(0, -0.35));
 
 const vec3 GREYIFY = vec3( 0.212671, 0.715160, 0.072169 );
 
@@ -180,11 +182,13 @@ vec4 getTerrainMix(vec2 texCoord) {
     return terrain;
 }
 
-vec4 getBorder(vec4 filteredColorProvince, vec4 filteredColorCountry, vec2 uv) {
+vec4 getBorder(vec4 filteredColor, vec2[4] offsets, vec3 color, vec2 uv) {
+    float thresholdSquared = threshold * threshold;
     for (int i = 0; i < 4; i++) {
         vec4 filteredNeighbor = hqxFilter(uv + offsets[i], u_textureProvinces);
-        if (distance(filteredColorProvince.rgb, filteredNeighbor.rgb) > threshold) {
-            return vec4(0.0, 0.0, 0.0, 1.0);
+        vec3 deltaColor = filteredColor.rgb - filteredNeighbor.rgb;
+        if (dot(deltaColor, deltaColor) > thresholdSquared) {
+            return vec4(color, 1.0);
         }
     }
 
@@ -214,11 +218,17 @@ vec4 getLandClose(vec4 colorCountry, vec2 texCoord, vec2 uv) {
         political.rgb = clamp(mix(political.rgb, stripeColor.rgb, stripeFactor), 0.0, 1.0).rgb;
     }
 
-    float colorBorder = texture(u_textureBorders, texCoord).a;
-    if(colorBorder > 0.0) {
-        vec4 border = getBorder(colorProvince, colorCountry, uv);
-        if(border.a > 0.0) {
-            political.rgb = border.rgb;
+    vec4 colorBorder = texture(u_textureBorders, texCoord);
+    if(colorBorder.a > 0.0) {
+        if(colorBorder.r > 0.0) {
+            vec4 border = getBorder(colorProvince, offsetsCountry, vec3(1.0, 0.0, 0.0), uv);
+            political.rgb = mix(political.rgb, border.rgb, step(0.01, border.a));
+        } else if(colorBorder.g > 0.0) {
+            vec4 border = getBorder(colorProvince, offsetsRegion, vec3(0.0, 0.0, 0.0), uv);
+            political.rgb = mix(political.rgb, border.rgb, step(0.01, border.a));
+        } else if(colorBorder.b > 0.0 && u_zoom < 0.5) {
+            vec4 border = getBorder(colorProvince, offsetsProvince, vec3(0.0), uv);
+            political.rgb = mix(political.rgb, border.rgb, step(0.01, border.a));
         }
     }
 

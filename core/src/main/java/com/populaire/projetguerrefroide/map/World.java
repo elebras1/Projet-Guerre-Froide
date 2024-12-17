@@ -146,14 +146,27 @@ public class World {
 
     public void createBordersTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
-        Color blackColor = Color.BLACK;
+        short redBorderCountry = 255;
+        short greenBorderRegion = 255;
+        short blueBorderProvince = 255;
+        short alphaBorder = 255;
+
         for(Country country : this.countries) {
+            IntSet countryPixels = country.getPixels();
+            IntSet regionsPixelsBorder = country.getRegionsPixelsBorder();
             IntList provincesPixelsBorder = country.getProvincesPixelsBorder();
             for(int i = 0; i < provincesPixelsBorder.size(); i++) {
                 int pixelInt = provincesPixelsBorder.get(i);
                 int pixelX = (pixelInt >> 16);
                 int pixelY = (pixelInt & 0xFFFF);
-                pixmap.drawPixel(pixelX, pixelY, Color.rgba8888(blackColor));
+
+                if(country.isPixelBorder((short) pixelX, (short) pixelY, countryPixels)) {
+                    pixmap.drawPixel(pixelX, pixelY, redBorderCountry << 24 | greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);
+                } else if(regionsPixelsBorder.contains(pixelInt)) {
+                    pixmap.drawPixel(pixelX, pixelY, greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);
+                } else {
+                    pixmap.drawPixel(pixelX, pixelY, blueBorderProvince << 8 | alphaBorder);
+                }
             }
         }
 
