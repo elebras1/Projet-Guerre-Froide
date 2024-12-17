@@ -199,7 +199,8 @@ vec4 getLandClose(vec4 colorCountry, vec2 texCoord, vec2 uv) {
     float grey = dot(terrain.rgb, GREYIFY);
     terrain.rgb = vec3(grey);
 
-    if(colorProvince.rgb == u_colorProvinceSelected.rgb) {
+    vec3 deltaColor = colorProvince.rgb - u_colorProvinceSelected.rgb;
+    if (dot(deltaColor, deltaColor) < 0.0001) {
         political.rgb += 0.20;
         political.rgb = clamp(political.rgb, 0.0, 1.0);
         political.rgb *= 1.3;
@@ -232,7 +233,8 @@ vec4 getLandFar(vec4 colorCountry, vec2 texCoord, vec2 uv) {
     vec4 colorProvince = hqxFilter(uv, u_textureProvinces);
     vec4 political = colorCountry;
 
-    if(colorProvince.rgb == u_colorProvinceSelected.rgb) {
+    vec3 deltaColor = colorProvince.rgb - u_colorProvinceSelected.rgb;
+    if (dot(deltaColor, deltaColor) < 0.0001) {
         political.rgb += 0.20;
         political.rgb = clamp(political.rgb, 0.0, 1.0);
         political.rgb *= 1.3;
