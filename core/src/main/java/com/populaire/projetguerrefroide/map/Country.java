@@ -120,13 +120,23 @@ public class Country {
         return this.labels;
     }
 
-    public IntSet getPixels() {
+    public IntSet getPixelsBorder() {
+        IntSet pixelsBorder = new IntSet();
         IntSet pixels = new IntSet();
         for(LandProvince province : this.provinces) {
             pixels.addAll(province.getPixels());
         }
 
-        return pixels;
+        for(IntSet.IntSetIterator iterator = pixels.iterator(); iterator.hasNext();) {
+            int pixelInt = iterator.nextInt();
+            short x = (short)(pixelInt >> 16);
+            short y = (short)(pixelInt & 0xFFFF);
+            if(this.isPixelBorder(x, y, pixels)) {
+                pixelsBorder.add(pixelInt);
+            }
+        }
+
+        return pixelsBorder;
     }
 
     public IntList getProvincesPixelsBorder() {

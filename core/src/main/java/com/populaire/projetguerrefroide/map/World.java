@@ -152,7 +152,7 @@ public class World {
         short alphaBorder = 255;
 
         for(Country country : this.countries) {
-            IntSet countryPixels = country.getPixels();
+            IntSet countryPixelsBorder = country.getPixelsBorder();
             IntSet regionsPixelsBorder = country.getRegionsPixelsBorder();
             IntList provincesPixelsBorder = country.getProvincesPixelsBorder();
             for(int i = 0; i < provincesPixelsBorder.size(); i++) {
@@ -160,7 +160,7 @@ public class World {
                 int pixelX = (pixelInt >> 16);
                 int pixelY = (pixelInt & 0xFFFF);
 
-                if(country.isPixelBorder((short) pixelX, (short) pixelY, countryPixels)) {
+                if(countryPixelsBorder.contains(pixelInt)) {
                     pixmap.drawPixel(pixelX, pixelY, redBorderCountry << 24 | greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);
                 } else if(regionsPixelsBorder.contains(pixelInt)) {
                     pixmap.drawPixel(pixelX, pixelY, greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);

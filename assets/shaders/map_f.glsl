@@ -220,16 +220,16 @@ vec4 getLandClose(vec4 colorCountry, vec2 texCoord, vec2 uv) {
 
     vec4 colorBorder = texture(u_textureBorders, texCoord);
     if(colorBorder.a > 0.0) {
+        vec4 border;
         if(colorBorder.r > 0.0) {
-            vec4 border = getBorder(colorProvince, offsetsCountry, vec3(1.0, 0.0, 0.0), uv);
-            political.rgb = mix(political.rgb, border.rgb, step(0.01, border.a));
+            border = getBorder(colorProvince, offsetsCountry, vec3(1.0, 0.0, 0.0), uv);
         } else if(colorBorder.g > 0.0) {
-            vec4 border = getBorder(colorProvince, offsetsRegion, vec3(0.0, 0.0, 0.0), uv);
-            political.rgb = mix(political.rgb, border.rgb, step(0.01, border.a));
+            border = getBorder(colorProvince, offsetsRegion, vec3(0.0, 0.0, 0.0), uv);
         } else if(colorBorder.b > 0.0 && u_zoom < 0.5) {
-            vec4 border = getBorder(colorProvince, offsetsProvince, vec3(0.0), uv);
-            political.rgb = mix(political.rgb, border.rgb, step(0.01, border.a));
+            border = getBorder(colorProvince, offsetsProvince, vec3(0.0), uv);
         }
+
+        political.rgb = mix(political.rgb, border.rgb, step(0.01, border.a));
     }
 
     political = political - 0.7;
@@ -272,8 +272,7 @@ vec4 getLandFar(vec4 colorCountry, vec2 texCoord, vec2 uv) {
     return colorCountry;
 }
 
-void main()
-{
+void main() {
     vec2 texCoord = getCorrectedTexCoord();
     vec2 uv = texCoord * mapSize;
     vec4 colorCountry = hqxFilter(uv, u_textureCountries);
