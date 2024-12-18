@@ -5,7 +5,6 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.IntMap;
-import com.badlogic.gdx.utils.Json;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -63,14 +62,8 @@ public class DataManager {
     }
 
     public World createWorldAsync() {
-        long startTime = System.currentTimeMillis();
         Map<String, Country> countries = this.loadCountries();
-        long endTime = System.currentTimeMillis();
-        Gdx.app.log("DataManager", "Countries load: " + (endTime - startTime) + "ms");
-        long startTimeProvinces = System.currentTimeMillis();
         IntObjectMap<Province> provinces = this.loadProvinces(countries);
-        long endTimeProvinces = System.currentTimeMillis();
-        Gdx.app.log("DataManager", "Provinces load: " + (endTimeProvinces - startTimeProvinces) + "ms");
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
         Map<String, Good> goods = this.readGoodsJson();
