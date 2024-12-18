@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.screen;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
+import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.CursorManager;
 
 public class ScreenManager {
@@ -24,8 +25,8 @@ public class ScreenManager {
         this.showScreen(new LoadScreen(this, this.assetManager, this.cursorManager));
     }
 
-    public void showNewGameScreen() {
-        this.showScreen(new NewGameScreen(this, this.assetManager, this.cursorManager));
+    public void showNewGameScreen(WorldService worldService) {
+        this.showScreen(new NewGameScreen(this, this.assetManager, this.cursorManager, worldService));
     }
 
     public void showScreen(Screen newScreen) {

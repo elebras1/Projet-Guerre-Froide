@@ -8,7 +8,9 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.CursorManager;
+import com.populaire.projetguerrefroide.util.Logging;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,10 +22,12 @@ public class LoadScreen implements Screen {
     private final Stage stage;
     private Skin skin;
     private final List<String> loadingImageNames;
+    private final ScreenManager screenManager;
     private final AssetManager assetManager;
     private final CursorManager cursorManager;
 
     public LoadScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
+        this.screenManager = screenManager;
         this.assetManager = assetManager;
         this.assetManager.load("loadingscreens/loadingscreens_skin.json", Skin.class);
         this.stage = new Stage();
@@ -39,13 +43,20 @@ public class LoadScreen implements Screen {
         Drawable background = this.skin.getDrawable(this.loadingImageNames.get(random.nextInt(this.loadingImageNames.size())));
         rootTable.setBackground(background);
         this.stage.addActor(rootTable);
-        CompletableFuture.runAsync(() -> {
-            Gdx.app.postRunnable(screenManager::showNewGameScreen);
-        });
     }
 
     @Override
     public void show() {
+        CompletableFuture.runAsync(() -> {
+            long startTime = System.currentTimeMillis();
+            WorldService worldService = new WorldService();
+            worldService.createWorldAsync();
+            Gdx.app.postRunnable(() -> {
+                this.screenManager.showNewGameScreen(worldService);
+            });
+            long endTime = System.currentTimeMillis();
+            Logging.getLogger("LoadScreen").info("World load: " + (endTime - startTime) + "ms");
+        });
     }
 
     @Override
