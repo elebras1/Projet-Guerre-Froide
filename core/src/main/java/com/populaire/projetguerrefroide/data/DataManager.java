@@ -5,7 +5,6 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.IntMap;
-import com.badlogic.gdx.utils.Json;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -26,6 +25,8 @@ import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class DataManager {
     private final String commonPath = "common/";
@@ -60,7 +61,7 @@ public class DataManager {
         this.localisation = localisation;
     }
 
-    public World createWorld() {
+    public World createWorldAsync() {
         Map<String, Country> countries = this.loadCountries();
         IntObjectMap<Province> provinces = this.loadProvinces(countries);
         Map<String, Government> governments = this.readGovernmentsJson();
@@ -69,7 +70,22 @@ public class DataManager {
         PopulationDemands populationDemands = this.readPopulationDemandsJson(goods);
         Map<String, Building> buildings = this.readBuildingsJson(goods);
         Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
-        return new World(new ObjectList<>(countries.values()), provinces);
+
+        AtomicReference<World> worldRef = new AtomicReference<>();
+        final CountDownLatch latch = new CountDownLatch(1);
+
+        Gdx.app.postRunnable(() -> {
+            worldRef.set(new World(new ObjectList<>(countries.values()), provinces));
+            latch.countDown();
+        });
+
+        try {
+            latch.await();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        return worldRef.get();
     }
 
     private Map<String, Country> loadCountries() {

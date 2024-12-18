@@ -18,10 +18,9 @@ import com.populaire.projetguerrefroide.entity.Minister;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.map.Country;
 import com.populaire.projetguerrefroide.map.LandProvince;
-import com.populaire.projetguerrefroide.map.World;
+import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
 import com.populaire.projetguerrefroide.data.DataManager;
-import com.populaire.projetguerrefroide.util.Logging;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.ArrayList;
@@ -33,7 +32,7 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class NewGameScreen implements Screen, GameInputListener {
     private final DataManager dataManager;
-    private final World world; //temporaire
+    private final WorldService worldService;
     private final OrthographicCamera cam;
     private final SpriteBatch batch;
     private final GameInputHandler inputHandler;
@@ -52,12 +51,9 @@ public class NewGameScreen implements Screen, GameInputListener {
     private CountrySelected countrySelectedUi;
     private CursorManager cursorManager;
 
-    public NewGameScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
-        long startTime = System.currentTimeMillis();
+    public NewGameScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager, WorldService worldService) {
         this.dataManager = new DataManager();
-        this.world = this.dataManager.createWorld();
-        long endTime = System.currentTimeMillis();
-        Logging.getLogger("NewGameScreen").info("World created in " + (endTime - startTime) + "ms");
+        this.worldService = worldService;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 2f, 0);
         this.cam.update();
@@ -125,13 +121,13 @@ public class NewGameScreen implements Screen, GameInputListener {
 
     @Override
     public void onClick(short x, short y) {
-        this.world.selectProvince(x, y);
+        this.worldService.getWorld().selectProvince(x, y);
         this.updateCountrySelected();
     }
 
     @Override
     public void onHover(short x, short y) {
-        LandProvince province = this.world.getProvince(x, y);
+        LandProvince province = this.worldService.getWorld().getProvince(x, y);
         if(province != null) {
             this.updateHoverBox(province);
         } else {
@@ -140,7 +136,7 @@ public class NewGameScreen implements Screen, GameInputListener {
     }
 
     public void updateCountrySelected() {
-        Country country = this.world.getSelectedCountry();
+        Country country = this.worldService.getWorld().getSelectedCountry();
         if(country != null) {
             Minister headOfState = country.getHeadOfState();
             Drawable portrait;
@@ -189,7 +185,7 @@ public class NewGameScreen implements Screen, GameInputListener {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL32.GL_COLOR_BUFFER_BIT);
 
-        this.world.render(this.batch, this.cam, time);
+        this.worldService.getWorld().render(this.batch, this.cam, time);
 
         this.inputHandler.setDelta(delta);
         this.inputHandler.handleInput(this.uiTables);
