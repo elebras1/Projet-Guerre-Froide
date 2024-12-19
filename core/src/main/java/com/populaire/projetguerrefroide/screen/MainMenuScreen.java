@@ -8,7 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.populaire.projetguerrefroide.ui.CursorManager;
+import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.ui.MainMenu;
 import com.populaire.projetguerrefroide.data.DataManager;
 
@@ -17,11 +17,12 @@ public class MainMenuScreen implements Screen, MainMenuListener {
     private final Stage stage;
     private final ScreenManager screenManager;
 
-    public MainMenuScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
+    public MainMenuScreen(ScreenManager screenManager, GameContext gameContext) {
         this.stage = new Stage(new ScreenViewport());
         this.screenManager = screenManager;
         Gdx.input.setInputProcessor(this.stage);
         DataManager dataManager = new DataManager();
+        AssetManager assetManager = gameContext.getAssetManager();
         assetManager.load("ui/mainmenu/mainmenu_skin.json", Skin.class);
         assetManager.finishLoading();
         Skin skin = assetManager.get("ui/mainmenu/mainmenu_skin.json");

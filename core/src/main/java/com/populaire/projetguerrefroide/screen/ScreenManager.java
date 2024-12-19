@@ -2,31 +2,28 @@ package com.populaire.projetguerrefroide.screen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.assets.AssetManager;
+import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
-import com.populaire.projetguerrefroide.ui.CursorManager;
 
 public class ScreenManager {
-    private Game game;
-    private AssetManager assetManager;
-    private CursorManager cursorManager;
+    private final Game game;
+    private final GameContext gameContext;
 
-    public ScreenManager(Game game, AssetManager assetManager, CursorManager cursorManager) {
+    public ScreenManager(Game game, GameContext gameContext) {
         this.game = game;
-        this.assetManager = assetManager;
-        this.cursorManager = cursorManager;
+        this.gameContext = gameContext;
     }
 
     public void showMainMenuScreen() {
-        this.showScreen(new MainMenuScreen(this, this.assetManager, this.cursorManager));
+        this.showScreen(new MainMenuScreen(this, this.gameContext));
     }
 
     public void showLoadScreen() {
-        this.showScreen(new LoadScreen(this, this.assetManager, this.cursorManager));
+        this.showScreen(new LoadScreen(this, this.gameContext));
     }
 
     public void showNewGameScreen(WorldService worldService) {
-        this.showScreen(new NewGameScreen(this, this.assetManager, this.cursorManager, worldService));
+        this.showScreen(new NewGameScreen(this, this.gameContext, worldService));
     }
 
     public void showScreen(Screen newScreen) {
@@ -38,7 +35,7 @@ public class ScreenManager {
     }
 
     public void dispose() {
-        this.assetManager.dispose();
-        this.cursorManager.dispose();
+        this.game.dispose();
+        this.gameContext.dispose();
     }
 }

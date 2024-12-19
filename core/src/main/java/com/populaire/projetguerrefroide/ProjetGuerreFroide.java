@@ -4,6 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
+import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.ui.CursorManager;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
@@ -13,10 +14,9 @@ public class ProjetGuerreFroide extends Game {
 
     @Override
     public void create() {
-        AssetManager assetManager = new AssetManager();
-        CursorManager cursorManager = new CursorManager();
-        this.loadAssets(assetManager);
-        ScreenManager screenManager = new ScreenManager(this, assetManager, cursorManager);
+        GameContext gameContext = new GameContext();
+        this.loadAssets(gameContext.getAssetManager());
+        ScreenManager screenManager = new ScreenManager(this, gameContext);
         screenManager.showMainMenuScreen();
     }
 

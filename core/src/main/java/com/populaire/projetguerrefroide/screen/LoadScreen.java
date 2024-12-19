@@ -7,8 +7,8 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
-import com.populaire.projetguerrefroide.ui.CursorManager;
 import com.populaire.projetguerrefroide.util.Logging;
 
 import java.util.ArrayList;
@@ -21,22 +21,21 @@ public class LoadScreen implements Screen {
     private final Stage stage;
     private final Skin skin;
     private final ScreenManager screenManager;
-    private final AssetManager assetManager;
-    private final CursorManager cursorManager;
+    private final GameContext gameContext;
 
-    public LoadScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager) {
+    public LoadScreen(ScreenManager screenManager, GameContext gameContext) {
         this.screenManager = screenManager;
-        this.assetManager = assetManager;
-        this.assetManager.load("loadingscreens/loadingscreens_skin.json", Skin.class);
+        this.gameContext = gameContext;
+        AssetManager assetManager = this.gameContext.getAssetManager();
+        assetManager.load("loadingscreens/loadingscreens_skin.json", Skin.class);
         this.stage = new Stage();
         Gdx.input.setInputProcessor(this.stage);
         List<String> loadingImageNames = new ArrayList<>(Arrays.asList("load_1", "load_2", "load_3", "load_4", "load_5", "load_6", "load_7", "load_8", "load_9", "load_10", "load_11", "load_12"));
-        this.cursorManager = cursorManager;
-        this.cursorManager.animatedCursor("busy");
+        this.gameContext.getCursorManager().animatedCursor("busy");
         Random random = new Random();
         Table rootTable = new Table();
-        this.assetManager.finishLoading();
-        this.skin = this.assetManager.get("loadingscreens/loadingscreens_skin.json", Skin.class);
+        assetManager.finishLoading();
+        this.skin = assetManager.get("loadingscreens/loadingscreens_skin.json", Skin.class);
         rootTable.setFillParent(true);
         Drawable background = this.skin.getDrawable(loadingImageNames.get(random.nextInt(loadingImageNames.size())));
         rootTable.setBackground(background);
@@ -64,7 +63,7 @@ public class LoadScreen implements Screen {
         this.stage.act();
         this.stage.draw();
 
-        this.cursorManager.update(delta);
+        this.gameContext.getCursorManager().update(delta);
     }
 
     @Override
@@ -91,7 +90,7 @@ public class LoadScreen implements Screen {
     public void dispose() {
         this.stage.dispose();
         this.skin.dispose();
-        this.assetManager.unload("loadingscreens/loadingscreens_skin.json");
+        this.gameContext.getAssetManager().unload("loadingscreens/loadingscreens_skin.json");
 
     }
 }

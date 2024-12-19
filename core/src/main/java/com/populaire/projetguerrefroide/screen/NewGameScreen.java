@@ -16,6 +16,7 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.populaire.projetguerrefroide.entity.Minister;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
+import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
 import com.populaire.projetguerrefroide.data.DataManager;
@@ -30,6 +31,7 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class NewGameScreen implements Screen, GameInputListener {
     private final DataManager dataManager;
+    private final GameContext gameContext;
     private final WorldService worldService;
     private final OrthographicCamera cam;
     private final SpriteBatch batch;
@@ -42,21 +44,22 @@ public class NewGameScreen implements Screen, GameInputListener {
     private final Skin skinScrollbars;
     private final Map<String, String> localisation;
     private Stage stage;
-    private List<Table> uiTables;
+    private final List<Table> uiTables;
     private Debug debug;
-    private float time;
     private HoverBox hoverBox;
     private CountrySelected countrySelectedUi;
-    private CursorManager cursorManager;
+    private float time;
 
-    public NewGameScreen(ScreenManager screenManager, AssetManager assetManager, CursorManager cursorManager, WorldService worldService) {
+    public NewGameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService) {
         this.dataManager = new DataManager();
+        this.gameContext = gameContext;
         this.worldService = worldService;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 2f, 0);
         this.cam.update();
         this.batch = new SpriteBatch();
         this.inputHandler = new GameInputHandler(this.cam, this);
+        AssetManager assetManager = gameContext.getAssetManager();
         assetManager.load("ui/newgame/newgame_skin.json", Skin.class);
         assetManager.load("flags/flags_skin.json", Skin.class);
         assetManager.load("portraits/portraits_skin.json", Skin.class);
@@ -68,7 +71,6 @@ public class NewGameScreen implements Screen, GameInputListener {
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.uiTables = new ArrayList<>();
-        this.cursorManager = cursorManager;
         this.localisation = this.dataManager.readNewgameLocalisationCsv();
         this.localisation.putAll(this.dataManager.readBookmarkLocalisationCsv());
         this.localisation.putAll(this.dataManager.readPoliticsLocalisationCsv());
@@ -155,8 +157,8 @@ public class NewGameScreen implements Screen, GameInputListener {
     public void updateHoverBox(String provinceName, String countryName, String countryId) {
         Vector2 screenPosition = new Vector2(Gdx.input.getX(), (Gdx.graphics.getHeight() - Gdx.input.getY()));
         this.hoverBox.update(provinceName + " (" + countryName + ")", this.skinFlags.getDrawable(countryId));
-        this.hoverBox.setPosition(screenPosition.x + (float) this.cursorManager.getWidth(),
-            screenPosition.y - this.cursorManager.getHeight() * 1.5f);
+        this.hoverBox.setPosition(screenPosition.x + (float) this.gameContext.getCursorManager().getWidth(),
+            screenPosition.y - this.gameContext.getCursorManager().getHeight() * 1.5f);
         this.hoverBox.setVisible(true);
     }
 
@@ -166,7 +168,7 @@ public class NewGameScreen implements Screen, GameInputListener {
 
     @Override
     public void show() {
-        this.cursorManager.defaultCursor();
+        this.gameContext.getCursorManager().defaultCursor();
     }
 
     @Override
