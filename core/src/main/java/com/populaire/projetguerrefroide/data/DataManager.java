@@ -55,11 +55,6 @@ public class DataManager {
     private final String politicsCsvFile = this.localisationPath + "politics.csv";
     private final ObjectMapper mapper = new ObjectMapper();
     private final String defaultDate = "1946.1.1";
-    private String localisation = "ENGLISH";
-
-    public void setLocalisation(String localisation) {
-        this.localisation = localisation;
-    }
 
     public World createWorldAsync() {
         Map<String, Country> countries = this.loadCountries();
@@ -108,7 +103,7 @@ public class DataManager {
 
     private JsonNode openJson(String fileName) throws IOException {
         FileHandle fileHandle = Gdx.files.internal(fileName);
-        return mapper.readTree(fileHandle.readString());
+        return this.mapper.readTree(fileHandle.readString());
     }
 
     private Map<String, Country> readCountriesJson() {
@@ -342,9 +337,9 @@ public class DataManager {
     private void readProvinceNamesCsv(IntMap<Province> provinces) {
         try (BufferedReader br = new BufferedReader(new StringReader(Gdx.files.internal(this.provinceNamesCsvFile).readString()))) {
             String[] headers = br.readLine().split(";");
-            int localisationIndex = Arrays.asList(headers).indexOf(this.localisation);
+            int localisationIndex = Arrays.asList(headers).indexOf("ENGLISH");
             if (localisationIndex == -1) {
-                throw new IllegalArgumentException("Localisation " + this.localisation + " not found in CSV headers.");
+                throw new IllegalArgumentException("Localisation " + "ENGLISH" + " not found in CSV headers.");
             }
 
             String line;
@@ -656,7 +651,7 @@ public class DataManager {
                 new InputStreamReader(
                         Gdx.files.internal(filename).read(), StandardCharsets.UTF_8))) {
             String[] headers = br.readLine().split(";");
-            int localisationIndex = Arrays.asList(headers).indexOf(this.localisation);
+            int localisationIndex = Arrays.asList(headers).indexOf("ENGLISH");
             if (localisationIndex == -1) {
                 throw new IllegalArgumentException("Localisation not found in CSV headers.");
             }
