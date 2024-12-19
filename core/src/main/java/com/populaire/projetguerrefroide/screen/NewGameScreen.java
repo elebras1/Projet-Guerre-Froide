@@ -16,8 +16,6 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.populaire.projetguerrefroide.entity.Minister;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
-import com.populaire.projetguerrefroide.map.Country;
-import com.populaire.projetguerrefroide.map.LandProvince;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
 import com.populaire.projetguerrefroide.data.DataManager;
@@ -71,7 +69,6 @@ public class NewGameScreen implements Screen, GameInputListener {
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.uiTables = new ArrayList<>();
         this.cursorManager = cursorManager;
-        this.cursorManager.defaultCursor();
         this.localisation = this.dataManager.readNewgameLocalisationCsv();
         this.localisation.putAll(this.dataManager.readBookmarkLocalisationCsv());
         this.localisation.putAll(this.dataManager.readPoliticsLocalisationCsv());
@@ -121,41 +118,43 @@ public class NewGameScreen implements Screen, GameInputListener {
 
     @Override
     public void onClick(short x, short y) {
-        this.worldService.getWorld().selectProvince(x, y);
+        this.worldService.selectProvince(x, y);
         this.updateCountrySelected();
     }
 
     @Override
     public void onHover(short x, short y) {
-        LandProvince province = this.worldService.getWorld().getProvince(x, y);
-        if(province != null) {
-            this.updateHoverBox(province);
+        if(this.worldService.hoverProvince(x, y)) {
+            this.updateHoverBox(this.worldService.getNameOfHoveredProvince(x, y),
+                this.worldService.getCountryNameOfHoveredProvince(x, y),
+                this.worldService.getCountryIdOfHoveredProvince(x, y));
         } else {
             this.hideHoverBox();
         }
     }
 
     public void updateCountrySelected() {
-        Country country = this.worldService.getWorld().getSelectedCountry();
-        if(country != null) {
-            Minister headOfState = country.getHeadOfState();
+        if(this.worldService.isProvinceSelected()) {
+            Minister headOfState = this.worldService.getHeadOfStateOfSelectedCountry();
             Drawable portrait;
             try {
                 portrait = this.skinPortraits.getDrawable(headOfState.getImageNameFile());
             } catch (com.badlogic.gdx.utils.GdxRuntimeException e) {
                 portrait = this.skinPortraits.getDrawable("admin_type");
             }
-            this.countrySelectedUi.update(country.getName(), this.skinFlags.getRegion(country.getId()),
-                ValueFormatter.formatValue(country.getPopulationSize()), country.getGovernment(), portrait, headOfState.getName(), this.localisation);
+            this.countrySelectedUi.update(
+                this.worldService.getNameOfSelectedCountry(),
+                this.skinFlags.getRegion(this.worldService.getIdOfSelectedCountry()),
+                ValueFormatter.formatValue(this.worldService.getPopulationSizeOfSelectedCountry()),
+                this.worldService.getGovernmentOfSelectedCountry(), portrait, headOfState.getName(), this.localisation);
         } else {
             this.countrySelectedUi.hide();
         }
     }
 
-    public void updateHoverBox(LandProvince province) {
+    public void updateHoverBox(String provinceName, String countryName, String countryId) {
         Vector2 screenPosition = new Vector2(Gdx.input.getX(), (Gdx.graphics.getHeight() - Gdx.input.getY()));
-        this.hoverBox.update(province.getName() + " (" + province.getCountryOwner().getName() + ")",
-            this.skinFlags.getDrawable(province.getCountryOwner().getId()));
+        this.hoverBox.update(provinceName + " (" + countryName + ")", this.skinFlags.getDrawable(countryId));
         this.hoverBox.setPosition(screenPosition.x + (float) this.cursorManager.getWidth(),
             screenPosition.y - this.cursorManager.getHeight() * 1.5f);
         this.hoverBox.setVisible(true);
@@ -167,7 +166,7 @@ public class NewGameScreen implements Screen, GameInputListener {
 
     @Override
     public void show() {
-
+        this.cursorManager.defaultCursor();
     }
 
     @Override
@@ -185,7 +184,7 @@ public class NewGameScreen implements Screen, GameInputListener {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL32.GL_COLOR_BUFFER_BIT);
 
-        this.worldService.getWorld().render(this.batch, this.cam, time);
+        this.worldService.renderWorld(this.batch, this.cam, time);
 
         this.inputHandler.setDelta(delta);
         this.inputHandler.handleInput(this.uiTables);

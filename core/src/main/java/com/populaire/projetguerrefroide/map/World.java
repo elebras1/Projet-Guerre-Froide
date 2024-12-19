@@ -7,8 +7,6 @@ import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
-import com.populaire.projetguerrefroide.entity.Government;
-import com.populaire.projetguerrefroide.entity.Ideology;
 
 import java.util.*;
 
@@ -19,7 +17,6 @@ public class World {
     private final List<Country> countries;
     private final IntObjectMap<Province> provinces;
     private LandProvince selectedProvince;
-    private Country selectedCountry;
     private Pixmap provincesColorPixmap;
     private Texture provincesColorTexture;
     private Texture countriesColorTexture;
@@ -97,15 +94,10 @@ public class World {
 
     public void selectProvince(short x, short y) {
         this.selectedProvince = this.getProvince(x, y);
-        if(this.selectedProvince != null) {
-            this.selectedCountry = this.selectedProvince.getCountryOwner();
-        } else {
-            this.selectedCountry = null;
-        }
     }
 
-    public Country getSelectedCountry() {
-        return this.selectedCountry;
+    public LandProvince getSelectedProvince() {
+        return this.selectedProvince;
     }
 
     public void createCountriesColorTexture() {
