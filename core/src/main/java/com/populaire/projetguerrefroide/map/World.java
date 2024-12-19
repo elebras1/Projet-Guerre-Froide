@@ -18,6 +18,7 @@ public class World {
     private final IntObjectMap<Province> provinces;
     private LandProvince selectedProvince;
     private Pixmap provincesColorPixmap;
+    private Pixmap countriesColorPixmap;
     private Texture provincesColorTexture;
     private Texture countriesColorTexture;
     private Texture waterTexture;
@@ -101,22 +102,21 @@ public class World {
     }
 
     public void createCountriesColorTexture() {
-        Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
-        pixmap.setColor(Color.BLACK);
-        pixmap.fill();
+        this.countriesColorPixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
+        this.countriesColorPixmap.setColor(Color.BLACK);
+        this.countriesColorPixmap.fill();
         for(Province province : provinces.values()) {
             if(province instanceof LandProvince landProvince) {
                 for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
                     int pixelInt = iterator.nextInt();
                     int pixelX = (pixelInt >> 16);
                     int pixelY = (pixelInt & 0xFFFF);
-                    pixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getColor());
+                    this.countriesColorPixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getColor());
                 }
             }
         }
 
-        this.countriesColorTexture = new Texture(pixmap);
-        pixmap.dispose();
+        this.countriesColorTexture = new Texture(this.countriesColorPixmap);
     }
 
     public void createProvincesColorStripesTexture() {
@@ -152,7 +152,7 @@ public class World {
                 int pixelX = (pixelInt >> 16);
                 int pixelY = (pixelInt & 0xFFFF);
 
-                if(countryPixelsBorder.contains(pixelInt)) {
+                if(countryPixelsBorder.contains(pixelInt) && !this.isPixelBorderWater((short) pixelX, (short) pixelY)) {
                     pixmap.drawPixel(pixelX, pixelY, redBorderCountry << 24 | greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);
                 } else if(regionsPixelsBorder.contains(pixelInt)) {
                     pixmap.drawPixel(pixelX, pixelY, greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);
@@ -164,6 +164,15 @@ public class World {
 
         this.bordersTexture = new Texture(pixmap);
         pixmap.dispose();
+    }
+
+    public boolean isPixelBorderWater(short x, short y) {
+        int blackColor = 0x000000FF;
+        System.out.println(this.countriesColorPixmap.getPixel(x + 1, y));
+        return this.countriesColorPixmap.getPixel(x + 1, y) == blackColor
+            || this.countriesColorPixmap.getPixel(x - 1, y) == blackColor
+            || this.countriesColorPixmap.getPixel(x, y + 1) == blackColor
+            || this.countriesColorPixmap.getPixel(x, y - 1) == blackColor;
     }
 
     public void render(SpriteBatch batch, OrthographicCamera cam, float time) {

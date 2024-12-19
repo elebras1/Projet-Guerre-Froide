@@ -3,7 +3,6 @@ package com.populaire.projetguerrefroide.service;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.populaire.projetguerrefroide.data.DataManager;
-import com.populaire.projetguerrefroide.entity.Government;
 import com.populaire.projetguerrefroide.entity.Minister;
 import com.populaire.projetguerrefroide.map.World;
 
