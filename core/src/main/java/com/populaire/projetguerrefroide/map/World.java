@@ -168,7 +168,6 @@ public class World {
 
     public boolean isPixelBorderWater(short x, short y) {
         int blackColor = 0x000000FF;
-        System.out.println(this.countriesColorPixmap.getPixel(x + 1, y));
         return this.countriesColorPixmap.getPixel(x + 1, y) == blackColor
             || this.countriesColorPixmap.getPixel(x - 1, y) == blackColor
             || this.countriesColorPixmap.getPixel(x, y + 1) == blackColor

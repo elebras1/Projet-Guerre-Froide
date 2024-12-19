@@ -266,8 +266,6 @@ public class MapLabel {
             this.points.add(curvePoint);
         }
 
-        this.points.sort(Comparator.comparingInt(point -> point.center >> 16));
-
         for (int i = 1; i < this.points.size() - 1; i++) {
             CurvePoint previous = this.points.get(i - 1);
             CurvePoint point = this.points.get(i);
