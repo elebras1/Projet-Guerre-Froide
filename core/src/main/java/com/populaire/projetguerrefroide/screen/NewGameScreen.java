@@ -204,7 +204,7 @@ public class NewGameScreen implements Screen, GameInputListener {
         this.cam.viewportHeight = height / 2f;
         this.cam.update();
 
-        this.stage.getViewport().update(width, height);
+        this.stage.getViewport().update(width, height, true);
     }
 
     @Override
