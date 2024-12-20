@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.populaire.projetguerrefroide.entity.Settings;
+import com.populaire.projetguerrefroide.util.Settings;
 
 import java.io.IOException;
 
@@ -35,12 +35,12 @@ public class SettingsManager {
         try {
             JsonNode settingsNode = this.openJson(this.settingsJsonFile);
             String language = settingsNode.get("language").asText();
-            short musicVolume = (short) settingsNode.get("music_volume").asInt();
-            short effectsVolume = (short) settingsNode.get("effects_volume").asInt();
+            short musicVolume = (short) settingsNode.get("musicVolume").asInt();
+            short effectsVolume = (short) settingsNode.get("effectsVolume").asInt();
             boolean vsync = settingsNode.get("vsync").asBoolean();
-            short capFrameRate = (short) settingsNode.get("cap_frame_rate").asInt();
+            short capFrameRate = (short) settingsNode.get("capFrameRate").asInt();
             boolean fullscreen = settingsNode.get("fullscreen").asBoolean();
-            boolean debugMode = settingsNode.get("debug_mode").asBoolean();
+            boolean debugMode = settingsNode.get("debugMode").asBoolean();
             settings = new Settings(language, musicVolume, effectsVolume, vsync, capFrameRate, fullscreen, debugMode);
         } catch(IOException | NullPointerException e) {
             settings = new Settings();

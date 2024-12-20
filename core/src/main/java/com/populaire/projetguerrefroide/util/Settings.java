@@ -1,4 +1,6 @@
-package com.populaire.projetguerrefroide.entity;
+package com.populaire.projetguerrefroide.util;
+
+import com.badlogic.gdx.Gdx;
 
 public class Settings {
     private String language;
@@ -27,6 +29,16 @@ public class Settings {
         this.capFrameRate = 60;
         this.fullscreen = true;
         this.debugMode = false;
+    }
+
+    public void applyGraphicsSettings() {
+        Gdx.graphics.setVSync(this.vsync);
+        Gdx.graphics.setForegroundFPS(this.capFrameRate);
+        if(this.fullscreen) {
+            Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
+        } else {
+            Gdx.graphics.setWindowedMode(Gdx.graphics.getDisplayMode().width, Gdx.graphics.getDisplayMode().height - 50);
+        }
     }
 
     public String getLanguage() {

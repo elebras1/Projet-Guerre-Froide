@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.populaire.projetguerrefroide.data.SettingsManager;
-import com.populaire.projetguerrefroide.entity.Settings;
+import com.populaire.projetguerrefroide.util.Settings;
 import com.populaire.projetguerrefroide.ui.CursorManager;
 
 public class GameContext {

@@ -20,6 +20,7 @@ public class MainMenuScreen implements Screen, MainMenuListener {
     public MainMenuScreen(ScreenManager screenManager, GameContext gameContext) {
         this.stage = new Stage(new ScreenViewport());
         this.screenManager = screenManager;
+        gameContext.getSettings().applyGraphicsSettings();
         Gdx.input.setInputProcessor(this.stage);
         DataManager dataManager = new DataManager();
         AssetManager assetManager = gameContext.getAssetManager();
