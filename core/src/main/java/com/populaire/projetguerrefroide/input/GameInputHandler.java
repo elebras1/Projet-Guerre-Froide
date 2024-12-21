@@ -72,6 +72,10 @@ public class GameInputHandler implements InputProcessor {
 
         int position = this.getWorldPositions(screenX, screenY);
         this.gameInputListener.onHover((short) (position >> 16), (short) (position & 0xFFFF));
+
+        if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
+            this.gameInputListener.onEscape();
+        }
     }
 
     @Override

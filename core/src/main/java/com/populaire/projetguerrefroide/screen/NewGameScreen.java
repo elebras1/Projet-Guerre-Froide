@@ -35,6 +35,7 @@ public class NewGameScreen implements Screen, GameInputListener {
     private final WorldService worldService;
     private final OrthographicCamera cam;
     private final SpriteBatch batch;
+    private final InputMultiplexer multiplexer;
     private final GameInputHandler inputHandler;
     private final Skin skin;
     private final Skin skinUi;
@@ -42,13 +43,16 @@ public class NewGameScreen implements Screen, GameInputListener {
     private final Skin skinFlags;
     private final Skin skinPortraits;
     private final Skin skinScrollbars;
+    private final Skin skinMainMenuInGame;
     private final Map<String, String> localisation;
     private Stage stage;
     private final List<Table> uiTables;
     private Debug debug;
     private HoverBox hoverBox;
     private CountrySelected countrySelectedUi;
+    private MainMenuInGame mainMenuInGame;
     private float time;
+    private boolean paused;
 
     public NewGameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService) {
         this.dataManager = new DataManager();
@@ -58,11 +62,13 @@ public class NewGameScreen implements Screen, GameInputListener {
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 2f, 0);
         this.cam.update();
         this.batch = new SpriteBatch();
+        this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
         AssetManager assetManager = gameContext.getAssetManager();
         assetManager.load("ui/newgame/newgame_skin.json", Skin.class);
         assetManager.load("flags/flags_skin.json", Skin.class);
         assetManager.load("portraits/portraits_skin.json", Skin.class);
+        assetManager.load("ui/mainmenu_ig/mainmenu_ig_skin.json", Skin.class);
         assetManager.finishLoading();
         this.skin = assetManager.get("ui/newgame/newgame_skin.json");
         this.skinUi = assetManager.get("ui/ui_skin.json");
@@ -70,26 +76,32 @@ public class NewGameScreen implements Screen, GameInputListener {
         this.skinFlags = assetManager.get("flags/flags_skin.json");
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
+        this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
         this.uiTables = new ArrayList<>();
         this.localisation = this.dataManager.readNewgameLocalisationCsv();
         this.localisation.putAll(this.dataManager.readBookmarkLocalisationCsv());
         this.localisation.putAll(this.dataManager.readPoliticsLocalisationCsv());
         this.initializeUi();
+        this.paused = false;
     }
 
     private void initializeUi() {
         this.stage = new Stage(new ScreenViewport());
         //this.stage.setDebugAll(true);
 
-        InputMultiplexer multiplexer = new InputMultiplexer();
-        multiplexer.addProcessor(this.stage);
-        multiplexer.addProcessor(this.inputHandler);
-        Gdx.input.setInputProcessor(multiplexer);
+        this.multiplexer.addProcessor(this.stage);
+        this.multiplexer.addProcessor(this.inputHandler);
+        Gdx.input.setInputProcessor(this.multiplexer);
 
         this.debug = new Debug();
         this.debug.setPosition(100, 40);
         this.hoverBox = new HoverBox(this.skinUi, this.skinFonts);
         this.stage.addActor(this.hoverBox);
+
+        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinFonts, this.localisation);
+        this.mainMenuInGame.setPosition(Gdx.graphics.getWidth() / 2f - this.mainMenuInGame.getWidth() / 2,
+            Gdx.graphics.getHeight() / 2f - this.mainMenuInGame.getHeight() / 2);
+        this.mainMenuInGame.setVisible(false);
 
         Table topTable = new Table();
         topTable.setFillParent(true);
@@ -114,6 +126,7 @@ public class NewGameScreen implements Screen, GameInputListener {
         bottomTable.pad(5);
 
         this.stage.addActor(topTable);
+        this.stage.addActor(this.mainMenuInGame);
         this.stage.addActor(bottomTable);
         this.stage.addActor(this.debug);
     }
@@ -133,6 +146,16 @@ public class NewGameScreen implements Screen, GameInputListener {
         } else {
             this.hideHoverBox();
         }
+    }
+
+    @Override
+    public void onEscape() {
+        this.paused = !this.paused;
+        this.mainMenuInGame.setVisible(this.paused);
+        if(this.paused) {
+            this.multiplexer.removeProcessor(this.inputHandler);
+        }
+
     }
 
     public void updateCountrySelected() {
@@ -188,15 +211,16 @@ public class NewGameScreen implements Screen, GameInputListener {
 
         this.worldService.renderWorld(this.batch, this.cam, time);
 
-        this.inputHandler.setDelta(delta);
-        this.inputHandler.handleInput(this.uiTables);
+        if(!this.paused) {
+            this.inputHandler.setDelta(delta);
+            this.inputHandler.handleInput(this.uiTables);
+        }
 
         this.debug.actualize(renderTimeMs);
 
         this.stage.act();
         this.stage.draw();
     }
-
 
     @Override
     public void resize(int width, int height) {

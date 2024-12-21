@@ -1,0 +1,44 @@
+{
+"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+	"menu_button": {
+		"up": "menu_button",
+		"down": "menu_button_down",
+		"over": "menu_button_over"
+	},
+	"menu_button_cancel": {
+		"up": "menu_button_cancel",
+		"down": "menu_button_cancel_down",
+		"over": "menu_button_cancel_over"
+	},
+	"menu_button_quit": {
+		"up": "menu_button_quit",
+		"down": "menu_button_quit_down",
+		"over": "menu_button_quit_over"
+	},
+	"savegame_button": {
+		"up": "savegame_button",
+		"down": "savegame_button_down",
+		"over": "savegame_button_over"
+	},
+	"settings_cancel_btn": {
+		"up": "settings_cancel_btn",
+		"down": "settings_cancel_btn_down",
+		"over": "settings_cancel_btn_over"
+	},
+	"settings_ok_btn": {
+		"up": "settings_ok_btn",
+		"down": "settings_ok_btn_down",
+		"over": "settings_ok_btn_over"
+	},
+	"settings_tab_btn_1": {
+		"up": "settings_tab_btn_1",
+		"down": "settings_tab_btn_1_down",
+		"over": "settings_tab_btn_1_over"
+	},
+	"settings_tab_btn_2": {
+		"up": "settings_tab_btn_2",
+		"down": "settings_tab_btn_2_down",
+		"over": "settings_tab_btn_2_over"
+	}
+}
+}
