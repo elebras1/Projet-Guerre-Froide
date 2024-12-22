@@ -21,7 +21,6 @@ import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
-import com.populaire.projetguerrefroide.data.DataManager;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.ArrayList;
@@ -32,7 +31,6 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameListener {
-    private final DataManager dataManager;
     private final GameContext gameContext;
     private final WorldService worldService;
     private final OrthographicCamera cam;
@@ -56,7 +54,6 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     private boolean paused;
 
     public NewGameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService) {
-        this.dataManager = new DataManager();
         this.gameContext = gameContext;
         this.worldService = worldService;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
@@ -78,10 +75,10 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
         this.uiTables = new ArrayList<>();
-        this.localisation = this.dataManager.readNewgameLocalisationCsv();
-        this.localisation.putAll(this.dataManager.readBookmarkLocalisationCsv());
-        this.localisation.putAll(this.dataManager.readPoliticsLocalisationCsv());
-        this.localisation.putAll(this.dataManager.readMainMenuInGameCsv());
+        this.localisation = this.gameContext.getLocalisationManager().readNewgameLocalisationCsv();
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readBookmarkLocalisationCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readPoliticsLocalisationCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
         this.initializeUi();
         this.paused = false;
     }
@@ -107,7 +104,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         Table topTable = new Table();
         topTable.setFillParent(true);
         topTable.top();
-        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.dataManager.readBookmarkJson(), this.localisation);
+        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getConfigurationManager().loadBookmark(), this.localisation);
         this.uiTables.add(scenarioSavegameSelector);
         TitleBar titleBar = new TitleBar(this.skin, this.gameContext.getLabelStylePool(), this.localisation);
         this.uiTables.add(titleBar);

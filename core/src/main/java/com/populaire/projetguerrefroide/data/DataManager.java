@@ -32,7 +32,6 @@ public class DataManager {
     private final String commonPath = "common/";
     private final String mapPath = "map/";
     private final String historyPath = "history/";
-    private final String localisationPath = "localisation/";
     private final String countriesJsonFiles = this.commonPath + "countries.json";
     private final String countriesHistoryJsonFiles = this.historyPath + "countries.json";
     private final String regionJsonFiles = this.mapPath + "region.json";
@@ -47,13 +46,6 @@ public class DataManager {
     private final String populationDemandsJsonFile = this.commonPath + "population_demands.json";
     private final String ministerTypesJsonFile = this.commonPath + "minister_types.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
-    private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
-    private final String provinceNamesCsvFile = this.localisationPath + "province_names.csv";
-    private final String mainmenuCsvFile = this.localisationPath + "mainmenu.csv";
-    private final String mainemenuInGameCsvFile = this.localisationPath + "mainmenu_ig.csv";
-    private final String newgameCsvFile = this.localisationPath + "newgame.csv";
-    private final String bookmarkCsvFile = this.localisationPath + "bookmark.csv";
-    private final String politicsCsvFile = this.localisationPath + "politics.csv";
     private final ObjectMapper mapper = new ObjectMapper();
     private final String defaultDate = "1946.1.1";
 
@@ -94,7 +86,6 @@ public class DataManager {
         this.readRegionJson(provinces);
         this.readDefinitionCsv(provinces, provincesByColor);
         this.readProvinceBitmap(provincesByColor);
-        this.readProvinceNamesCsv(provinces);
         this.readCountriesHistoryJson(countries, provinces);
         this.readContinentJsonFile(provinces);
         this.readAdjenciesJson(provinces);
@@ -333,29 +324,6 @@ public class DataManager {
             }
         }
         bitmap.dispose();
-    }
-
-    private void readProvinceNamesCsv(IntMap<Province> provinces) {
-        try (BufferedReader br = new BufferedReader(new StringReader(Gdx.files.internal(this.provinceNamesCsvFile).readString()))) {
-            String[] headers = br.readLine().split(";");
-            int localisationIndex = Arrays.asList(headers).indexOf("ENGLISH");
-            if (localisationIndex == -1) {
-                throw new IllegalArgumentException("Localisation " + "ENGLISH" + " not found in CSV headers.");
-            }
-
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(";");
-                if (values.length > localisationIndex && !values[0].isEmpty()) {
-                    short provinceId = Short.parseShort(values[0]);
-                    Province province = provinces.get(provinceId);
-                    String provinceName = values[localisationIndex];
-                    province.setName(provinceName);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private Map<String, Government> readGovernmentsJson() {
@@ -599,78 +567,6 @@ public class DataManager {
             e.printStackTrace();
         }
         return unitPositions;
-    }
-
-    public Bookmark readBookmarkJson() {
-        Bookmark bookmark = null;
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            JsonNode rootNode = this.openJson(this.bookmarkJsonFile);
-            JsonNode bookmarkNode = rootNode.get("bookmark");
-            String iconNameFile = bookmarkNode.get("icon").asText();
-            String nameId = bookmarkNode.get("name").asText();
-            String descriptionId = bookmarkNode.get("desc").asText();
-            Date date = null;
-            try {
-                date = dateFormat.parse(bookmarkNode.get("date").asText());
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
-            List<String> countriesId = new ObjectList<>();
-            JsonNode countriesNode = bookmarkNode.get("country");
-            if (countriesNode != null && countriesNode.isArray()) {
-                countriesNode.forEach(countryId -> countriesId.add(countryId.asText()));
-            }
-
-            bookmark = new Bookmark(iconNameFile, nameId, descriptionId, date, countriesId);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return bookmark;
-    }
-
-    public Map<String, String> readMainMenuLocalisationCsv() {
-        return readLocalisationCsv(this.mainmenuCsvFile);
-    }
-
-    public Map<String, String> readNewgameLocalisationCsv() {
-        return readLocalisationCsv(this.newgameCsvFile);
-    }
-
-    public Map<String, String> readBookmarkLocalisationCsv() {
-        return readLocalisationCsv(this.bookmarkCsvFile);
-    }
-
-    public Map<String, String> readPoliticsLocalisationCsv() {
-        return readLocalisationCsv(this.politicsCsvFile);
-    }
-
-    public Map<String, String> readMainMenuInGameCsv() { return readLocalisationCsv(this.mainemenuInGameCsvFile); }
-
-    private Map<String, String> readLocalisationCsv(String filename) {
-        Map<String, String> localisation = new ObjectObjectMap<>();
-        try (BufferedReader br = new BufferedReader(
-                new InputStreamReader(
-                        Gdx.files.internal(filename).read(), StandardCharsets.UTF_8))) {
-            String[] headers = br.readLine().split(";");
-            int localisationIndex = Arrays.asList(headers).indexOf("ENGLISH");
-            if (localisationIndex == -1) {
-                throw new IllegalArgumentException("Localisation not found in CSV headers.");
-            }
-
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(";");
-                String code = values[0];
-                String translation = values[localisationIndex];
-                localisation.put(code, translation);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return localisation;
     }
 
     private void readAdjenciesJson(IntMap<Province> provinces) {
