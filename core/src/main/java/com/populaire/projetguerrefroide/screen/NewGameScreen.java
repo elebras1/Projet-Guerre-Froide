@@ -31,7 +31,7 @@ import java.util.Map;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class NewGameScreen implements Screen, GameInputListener {
+public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameListener {
     private final DataManager dataManager;
     private final GameContext gameContext;
     private final WorldService worldService;
@@ -99,7 +99,7 @@ public class NewGameScreen implements Screen, GameInputListener {
         this.hoverBox = new HoverBox(this.skinUi, this.gameContext.getLabelStylePool());
         this.stage.addActor(this.hoverBox);
 
-        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.gameContext.getLabelStylePool(), this.localisation);
+        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.gameContext.getLabelStylePool(), this.localisation, this);
         this.mainMenuInGame.setPosition(Gdx.graphics.getWidth() / 2f - this.mainMenuInGame.getWidth() / 2,
             Gdx.graphics.getHeight() / 2f - this.mainMenuInGame.getHeight() / 2);
         this.mainMenuInGame.setVisible(false);
@@ -157,6 +157,14 @@ public class NewGameScreen implements Screen, GameInputListener {
             this.multiplexer.removeProcessor(this.inputHandler);
             this.setActorsTouchable(false);
         }
+    }
+
+    @Override
+    public void onCloseClicked() {
+        this.paused = false;
+        this.mainMenuInGame.setVisible(false);
+        this.multiplexer.addProcessor(this.inputHandler);
+        this.setActorsTouchable(true);
     }
 
     public void setActorsTouchable(boolean touchable) {
