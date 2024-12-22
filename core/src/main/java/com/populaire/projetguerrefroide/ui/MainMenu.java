@@ -8,20 +8,16 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.populaire.projetguerrefroide.screen.MainMenuListener;
+import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
 
 public class MainMenu extends Table {
 
-    public MainMenu(Skin skin, Skin skinFonts, Map<String, String> localisation, MainMenuListener listener) {
-        Label.LabelStyle labelStyleJockey24GlowBlue = new Label.LabelStyle();
-        labelStyleJockey24GlowBlue.font = skinFonts.getFont("jockey_24_glow_blue");
-
-        Label.LabelStyle labelStyleJockey24GlowRed = new Label.LabelStyle();
-        labelStyleJockey24GlowRed.font = skinFonts.getFont("jockey_24_glow_red");
-
-        Label.LabelStyle labelStyleJockey20GlowBlue = new Label.LabelStyle();
-        labelStyleJockey20GlowBlue.font = skinFonts.getFont("jockey_20_glow_blue");
+    public MainMenu(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuListener listener) {
+        Label.LabelStyle labelStyleJockey24GlowBlue = labelStylePool.getLabelStyle("jockey_24_glow_blue");
+        Label.LabelStyle labelStyleJockey24GlowRed = labelStylePool.getLabelStyle("jockey_24_glow_red");
+        Label.LabelStyle labelStyleJockey20GlowBlue = labelStylePool.getLabelStyle("jockey_20_glow_blue");
 
         Drawable background = skin.getDrawable("frontend_mainmenu_bg");
 

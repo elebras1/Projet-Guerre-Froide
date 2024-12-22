@@ -27,11 +27,10 @@ public class MainMenuScreen implements Screen, MainMenuListener {
         assetManager.load("ui/mainmenu/mainmenu_skin.json", Skin.class);
         assetManager.finishLoading();
         Skin skin = assetManager.get("ui/mainmenu/mainmenu_skin.json");
-        Skin skinFonts = assetManager.get("ui/fonts/fonts_skin.json");
         Table rootTable = new Table();
         rootTable.setFillParent(true);
         rootTable.setBackground(skin.getDrawable("frontend_main_bg"));
-        MainMenu menu = new MainMenu(skin, skinFonts, dataManager.readMainMenuLocalisationCsv(), this);
+        MainMenu menu = new MainMenu(skin, gameContext.getLabelStylePool(), dataManager.readMainMenuLocalisationCsv(), this);
         rootTable.add(menu).center().padLeft(menu.getWidth() / 3);
         this.stage.addActor(rootTable);
     }

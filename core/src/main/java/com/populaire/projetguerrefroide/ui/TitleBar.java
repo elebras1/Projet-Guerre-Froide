@@ -4,6 +4,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
 
@@ -11,16 +12,14 @@ public class TitleBar extends Table {
     private Label titleScenario;
     private Label order;
 
-    public TitleBar(Skin skinUi, Skin skinFonts, Map<String, String> localisation) {
+    public TitleBar(Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation) {
         Drawable drawable = skinUi.getDrawable("selected_scenario_bg");
 
-        Label.LabelStyle labelStyleTitle = new Label.LabelStyle();
-        labelStyleTitle.font = skinFonts.getFont("jockey_18_black");
-        this.titleScenario = new Label(localisation.get("TITLE_SELECT_NATION"), labelStyleTitle);
+        Label.LabelStyle labelStyleJocker18Black = labelStylePool.getLabelStyle("jockey_18_black");
+        this.titleScenario = new Label(localisation.get("TITLE_SELECT_NATION"), labelStyleJocker18Black);
 
-        Label.LabelStyle labelStyleOrder = new Label.LabelStyle();
-        labelStyleOrder.font = skinFonts.getFont("f25_executive_17");
-        this.order = new Label(localisation.get("NATION_TO_PLAY"), labelStyleOrder);
+        Label.LabelStyle labelStyleF25Executive17 = labelStylePool.getLabelStyle("f25_executive_17");
+        this.order = new Label(localisation.get("NATION_TO_PLAY"), labelStyleF25Executive17);
 
 
         this.setBackground(drawable);

@@ -7,18 +7,19 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
+import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
 
 public class CountrySelected extends Table {
-    private Label countryName;
-    private Label government;
-    private Label countryPopulation;
-    private Label leaderFullName;
-    private FlagImage flagImage;
-    private Image portrait;
+    private final Label countryName;
+    private final Label government;
+    private final Label countryPopulation;
+    private final Label leaderFullName;
+    private final FlagImage flagImage;
+    private final Image portrait;
 
-    public CountrySelected(Skin skin, Skin skinUi, Skin skinFonts, Map<String, String> localisation) {
+    public CountrySelected(Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation) {
         Drawable background = skin.getDrawable("selected_bg");
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
@@ -32,17 +33,11 @@ public class CountrySelected extends Table {
         this.flagImage = new FlagImage(defaultFlag, overlayFlag, alphaFlag);
         this.flagImage.setPosition(6, 85);
 
-        Label.LabelStyle labelStyleJockey24 = new Label.LabelStyle();
-        labelStyleJockey24.font = skinFonts.getFont("jockey_24");
-        Label.LabelStyle labelStyleJockey14Dark = new Label.LabelStyle();
-        labelStyleJockey14Dark.font = skinFonts.getFont("jockey_14_dark");
-        Label.LabelStyle labelStyleJockey14 = new Label.LabelStyle();
-        labelStyleJockey14.font = skinFonts.getFont("jockey_14");
-        Label.LabelStyle labelStyleJockey14Yellow = new Label.LabelStyle();
-        labelStyleJockey14Yellow.font = skinFonts.getFont("jockey_14");
-        labelStyleJockey14Yellow.fontColor = skinFonts.getColor("yellow");
-        Label.LabelStyle labelStyleJockey14GlowBlue = new Label.LabelStyle();
-        labelStyleJockey14GlowBlue.font = skinFonts.getFont("jockey_14_glow_blue");
+        Label.LabelStyle labelStyleJockey24 = labelStylePool.getLabelStyle("jockey_24");
+        Label.LabelStyle labelStyleJockey14Dark = labelStylePool.getLabelStyle("jockey_14_dark");
+        Label.LabelStyle labelStyleJockey14 = labelStylePool.getLabelStyle("jockey_14");
+        Label.LabelStyle labelStyleJockey14Yellow = labelStylePool.getLabelStyle("jockey_14", "yellow");
+        Label.LabelStyle labelStyleJockey14GlowBlue = labelStylePool.getLabelStyle("jockey_14_glow_blue");
 
         this.countryName = new Label("", labelStyleJockey24);
         this.countryName.setBounds(0, 168, background.getMinWidth(), 20);

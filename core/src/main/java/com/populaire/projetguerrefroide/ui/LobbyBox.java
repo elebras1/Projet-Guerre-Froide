@@ -5,20 +5,18 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
 
 public class LobbyBox extends Table {
 
-    public LobbyBox(Skin skin, Skin skinScrollbars, Skin skinFonts, Map<String, String> localisation) {
+    public LobbyBox(Skin skin, Skin skinScrollbars, LabelStylePool labelStylePool, Map<String, String> localisation) {
         Drawable background = skin.getDrawable("bottom_bg");
 
-        Label.LabelStyle labelStyleJockey24GlowBlue = new Label.LabelStyle();
-        labelStyleJockey24GlowBlue.font = skinFonts.getFont("jockey_24_glow_blue");
-        Label.LabelStyle labelStyleJockey16GlowBlue = new Label.LabelStyle();
-        labelStyleJockey16GlowBlue.font = skinFonts.getFont("jockey_16_glow_blue");
-        Label.LabelStyle labelStyleArial172 = new Label.LabelStyle();
-        labelStyleArial172.font = skinFonts.getFont("arial_17_2");
+        Label.LabelStyle labelStyleJockey24GlowBlue = labelStylePool.getLabelStyle("jockey_24_glow_blue");
+        Label.LabelStyle labelStyleJockey16GlowBlue = labelStylePool.getLabelStyle("jockey_16_glow_blue");
+        Label.LabelStyle labelStyleArial172 = labelStylePool.getLabelStyle("arial_17_2");
 
         Button playButton = new Button(skin, "play");
         playButton.add(new Label(localisation.get("PLAY"), labelStyleJockey24GlowBlue));

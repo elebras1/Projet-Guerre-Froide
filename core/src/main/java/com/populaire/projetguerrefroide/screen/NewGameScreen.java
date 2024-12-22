@@ -41,7 +41,6 @@ public class NewGameScreen implements Screen, GameInputListener {
     private final GameInputHandler inputHandler;
     private final Skin skin;
     private final Skin skinUi;
-    private final Skin skinFonts;
     private final Skin skinFlags;
     private final Skin skinPortraits;
     private final Skin skinScrollbars;
@@ -74,7 +73,6 @@ public class NewGameScreen implements Screen, GameInputListener {
         assetManager.finishLoading();
         this.skin = assetManager.get("ui/newgame/newgame_skin.json");
         this.skinUi = assetManager.get("ui/ui_skin.json");
-        this.skinFonts = assetManager.get("ui/fonts/fonts_skin.json");
         this.skinFlags = assetManager.get("flags/flags_skin.json");
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
@@ -98,10 +96,10 @@ public class NewGameScreen implements Screen, GameInputListener {
 
         this.debug = new Debug();
         this.debug.setPosition(100, 40);
-        this.hoverBox = new HoverBox(this.skinUi, this.skinFonts);
+        this.hoverBox = new HoverBox(this.skinUi, this.gameContext.getLabelStylePool());
         this.stage.addActor(this.hoverBox);
 
-        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, gameContext.getLabelStylePool(), this.localisation);
+        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.gameContext.getLabelStylePool(), this.localisation);
         this.mainMenuInGame.setPosition(Gdx.graphics.getWidth() / 2f - this.mainMenuInGame.getWidth() / 2,
             Gdx.graphics.getHeight() / 2f - this.mainMenuInGame.getHeight() / 2);
         this.mainMenuInGame.setVisible(false);
@@ -109,13 +107,13 @@ public class NewGameScreen implements Screen, GameInputListener {
         Table topTable = new Table();
         topTable.setFillParent(true);
         topTable.top();
-        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.skinFonts, this.dataManager.readBookmarkJson(), this.localisation);
+        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.dataManager.readBookmarkJson(), this.localisation);
         this.uiTables.add(scenarioSavegameSelector);
-        TitleBar titleBar = new TitleBar(this.skin, this.skinFonts, this.localisation);
+        TitleBar titleBar = new TitleBar(this.skin, this.gameContext.getLabelStylePool(), this.localisation);
         this.uiTables.add(titleBar);
-        LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.skinFonts, this.localisation);
+        LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.localisation);
         this.uiTables.add(lobbyBox);
-        this.countrySelectedUi = new CountrySelected(this.skin, this.skinUi, this.skinFonts, this.localisation);
+        this.countrySelectedUi = new CountrySelected(this.skin, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation);
         this.uiTables.add(this.countrySelectedUi);
         topTable.add(scenarioSavegameSelector).align(Align.topLeft).expandX();
         topTable.add(titleBar).align(Align.top);
