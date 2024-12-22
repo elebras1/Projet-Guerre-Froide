@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.populaire.projetguerrefroide.util.Settings;
+import com.populaire.projetguerrefroide.service.Settings;
 
 import java.io.IOException;
 

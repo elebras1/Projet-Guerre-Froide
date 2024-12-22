@@ -50,6 +50,7 @@ public class DataManager {
     private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
     private final String provinceNamesCsvFile = this.localisationPath + "province_names.csv";
     private final String mainmenuCsvFile = this.localisationPath + "mainmenu.csv";
+    private final String mainemenuInGameCsvFile = this.localisationPath + "mainmenu_ig.csv";
     private final String newgameCsvFile = this.localisationPath + "newgame.csv";
     private final String bookmarkCsvFile = this.localisationPath + "bookmark.csv";
     private final String politicsCsvFile = this.localisationPath + "politics.csv";
@@ -644,6 +645,8 @@ public class DataManager {
     public Map<String, String> readPoliticsLocalisationCsv() {
         return readLocalisationCsv(this.politicsCsvFile);
     }
+
+    public Map<String, String> readMainMenuInGameCsv() { return readLocalisationCsv(this.mainemenuInGameCsvFile); }
 
     private Map<String, String> readLocalisationCsv(String filename) {
         Map<String, String> localisation = new ObjectObjectMap<>();

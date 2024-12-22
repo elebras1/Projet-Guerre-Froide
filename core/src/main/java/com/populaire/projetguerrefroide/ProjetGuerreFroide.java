@@ -14,8 +14,9 @@ public class ProjetGuerreFroide extends Game {
 
     @Override
     public void create() {
-        GameContext gameContext = new GameContext();
-        this.loadAssets(gameContext.getAssetManager());
+        AssetManager assetManager = new AssetManager();
+        this.loadAssets(assetManager);
+        GameContext gameContext = new GameContext(assetManager);
         ScreenManager screenManager = new ScreenManager(this, gameContext);
         screenManager.showMainMenuScreen();
     }

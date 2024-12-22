@@ -8,7 +8,9 @@ import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
@@ -81,6 +83,7 @@ public class NewGameScreen implements Screen, GameInputListener {
         this.localisation = this.dataManager.readNewgameLocalisationCsv();
         this.localisation.putAll(this.dataManager.readBookmarkLocalisationCsv());
         this.localisation.putAll(this.dataManager.readPoliticsLocalisationCsv());
+        this.localisation.putAll(this.dataManager.readMainMenuInGameCsv());
         this.initializeUi();
         this.paused = false;
     }
@@ -98,7 +101,7 @@ public class NewGameScreen implements Screen, GameInputListener {
         this.hoverBox = new HoverBox(this.skinUi, this.skinFonts);
         this.stage.addActor(this.hoverBox);
 
-        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinFonts, this.localisation);
+        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, gameContext.getLabelStylePool(), this.localisation);
         this.mainMenuInGame.setPosition(Gdx.graphics.getWidth() / 2f - this.mainMenuInGame.getWidth() / 2,
             Gdx.graphics.getHeight() / 2f - this.mainMenuInGame.getHeight() / 2);
         this.mainMenuInGame.setVisible(false);
@@ -154,8 +157,17 @@ public class NewGameScreen implements Screen, GameInputListener {
         this.mainMenuInGame.setVisible(this.paused);
         if(this.paused) {
             this.multiplexer.removeProcessor(this.inputHandler);
+            this.setActorsTouchable(false);
         }
+    }
 
+    public void setActorsTouchable(boolean touchable) {
+        for (int i = 0; i < this.stage.getActors().size; i++) {
+            Actor actor = this.stage.getActors().get(i);
+            if(actor != this.mainMenuInGame) {
+                actor.setTouchable(touchable ? Touchable.enabled : Touchable.disabled);
+            }
+        }
     }
 
     public void updateCountrySelected() {

@@ -2,22 +2,30 @@ package com.populaire.projetguerrefroide.ui;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
 
 public class MainMenuInGame extends Table {
-    public MainMenuInGame(Skin skin, Skin skinFonts, Map<String, String> localisation) {
-        this.setMenu(skin);
+    public MainMenuInGame(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation) {
+        this.setMenu(skin, labelStylePool, localisation);
     }
 
-    public void setMenu(Skin skin) {
+    public void setMenu(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation) {
         Drawable background = skin.getDrawable("menu_background");
 
+        LabelStyle labelStyleJockey20GlowBlue = labelStylePool.getLabelStyle("jockey_20_glow_blue");
+        LabelStyle labelStyleJockey16GlowRed = labelStylePool.getLabelStyle("jockey_16_glow_red");
+        LabelStyle labelStyleJockey24GlowRed = labelStylePool.getLabelStyle("jockey_24_glow_red");
+
         Button savegameButton = new Button(skin, "menu_button");
+        savegameButton.add(new Label(localisation.get("SAVE_GAME"), labelStyleJockey20GlowBlue)).padBottom(5);
         savegameButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -27,6 +35,7 @@ public class MainMenuInGame extends Table {
         savegameButton.setY(360);
 
         Button gameOptionsButton = new Button(skin, "menu_button");
+        gameOptionsButton.add(new Label(localisation.get("GAME_OPTIONS"), labelStyleJockey20GlowBlue)).padBottom(5);
         gameOptionsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -36,6 +45,7 @@ public class MainMenuInGame extends Table {
         gameOptionsButton.setY(318);
 
         Button resignButton = new Button(skin, "menu_button");
+        resignButton.add(new Label(localisation.get("GAME_RESIGN"), labelStyleJockey20GlowBlue)).padBottom(5);
         resignButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -45,6 +55,7 @@ public class MainMenuInGame extends Table {
         resignButton.setY(276);
 
         Button messageSettingsButton = new Button(skin, "menu_button");
+        messageSettingsButton.add(new Label(localisation.get("MESSAGE_SETTINGS"), labelStyleJockey20GlowBlue)).padBottom(5);
         messageSettingsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -54,6 +65,7 @@ public class MainMenuInGame extends Table {
         messageSettingsButton.setY(234);
 
         Button quitButton = new Button(skin, "menu_button_quit");
+        quitButton.add(new Label(localisation.get("QUIT"), labelStyleJockey24GlowRed)).padBottom(5);
         quitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -63,6 +75,7 @@ public class MainMenuInGame extends Table {
         quitButton.setY(103);
 
         Button cancelButton = new Button(skin, "menu_button_cancel");
+        cancelButton.add(new Label(localisation.get("CLOSE"), labelStyleJockey16GlowRed)).padBottom(10);
         cancelButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {

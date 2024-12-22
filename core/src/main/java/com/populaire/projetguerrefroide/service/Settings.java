@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.util;
+package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.Gdx;
 
