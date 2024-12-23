@@ -18,7 +18,7 @@ public class MainMenuInGame extends Table {
         this.setMenu(skin, labelStylePool, localisation, listener);
     }
 
-    public void setMenu(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
+    private void setMenu(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
         Drawable background = skin.getDrawable("menu_background");
 
         LabelStyle labelStyleJockey20GlowBlue = labelStylePool.getLabelStyle("jockey_20_glow_blue");
@@ -75,7 +75,6 @@ public class MainMenuInGame extends Table {
         quitButton.setX(55);
         quitButton.setY(103);
 
-
         Button cancelButton = new Button(skin, "menu_button_cancel");
         cancelButton.add(new Label(localisation.get("CLOSE"), labelStyleJockey16GlowRed)).padBottom(10);
         cancelButton.addListener(new ClickListener() {
@@ -97,25 +96,25 @@ public class MainMenuInGame extends Table {
         this.addActor(cancelButton);
     }
 
-    public void setSettingsAudio(Skin skin) {
+    private void setSettingsAudio(Skin skin) {
         Drawable background = skin.getDrawable("ingame_settings_audio_naked");
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
     }
 
-    public void setSettingsControls(Skin skin) {
+    private void setSettingsControls(Skin skin) {
         Drawable background = skin.getDrawable("ingame_settings_controls_naked");
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
     }
 
-    public void settingsGame(Skin skin) {
+    private void settingsGame(Skin skin) {
         Drawable background = skin.getDrawable("ingame_settings_game_naked");
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
     }
 
-    public void setSettingsVideo(Skin skin) {
+    private void setSettingsVideo(Skin skin) {
         Drawable background = skin.getDrawable("ingame_settings_video_naked");
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());

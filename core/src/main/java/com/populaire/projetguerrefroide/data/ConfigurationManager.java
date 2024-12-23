@@ -27,7 +27,6 @@ public class ConfigurationManager {
 
     private JsonNode openJson(String fileName) throws IOException {
         FileHandle fileHandle = Gdx.files.internal(fileName);
-        System.out.println(fileHandle.file().getAbsolutePath());
         return this.mapper.readTree(fileHandle.readString());
     }
 
@@ -47,7 +46,6 @@ public class ConfigurationManager {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
             JsonNode rootNode = this.openJson(this.bookmarkJsonFile);
-            System.out.println(rootNode);
             JsonNode bookmarkNode = rootNode.get("bookmark");
             String iconNameFile = bookmarkNode.get("icon").asText();
             String nameId = bookmarkNode.get("name").asText();

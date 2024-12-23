@@ -18,24 +18,31 @@ public class LocalisationManager {
     private final String newgameCsvFile = this.localisationPath + "newgame.csv";
     private final String bookmarkCsvFile = this.localisationPath + "bookmark.csv";
     private final String politicsCsvFile = this.localisationPath + "politics.csv";
+    private final String popupCsvFile = this.localisationPath + "popup.csv";
 
-    public Map<String, String> readMainMenuLocalisationCsv() {
+    public Map<String, String> readMainMenuCsv() {
         return readLocalisationCsv(this.mainmenuCsvFile);
     }
 
-    public Map<String, String> readNewgameLocalisationCsv() {
+    public Map<String, String> readNewgameCsv() {
         return readLocalisationCsv(this.newgameCsvFile);
     }
 
-    public Map<String, String> readBookmarkLocalisationCsv() {
+    public Map<String, String> readBookmarkCsv() {
         return readLocalisationCsv(this.bookmarkCsvFile);
     }
 
-    public Map<String, String> readPoliticsLocalisationCsv() {
+    public Map<String, String> readPoliticsCsv() {
         return readLocalisationCsv(this.politicsCsvFile);
     }
 
-    public Map<String, String> readMainMenuInGameCsv() { return readLocalisationCsv(this.mainemenuInGameCsvFile); }
+    public Map<String, String> readMainMenuInGameCsv() {
+        return readLocalisationCsv(this.mainemenuInGameCsvFile);
+    }
+
+    public Map<String, String> readPopupCsv() {
+        return readLocalisationCsv(this.popupCsvFile);
+    }
 
     private Map<String, String> readLocalisationCsv(String filename) {
         Map<String, String> localisation = new ObjectObjectMap<>();

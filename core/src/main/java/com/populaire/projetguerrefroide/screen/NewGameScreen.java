@@ -40,6 +40,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     private final Skin skin;
     private final Skin skinUi;
     private final Skin skinFlags;
+    private final Skin skinPopup;
     private final Skin skinPortraits;
     private final Skin skinScrollbars;
     private final Skin skinMainMenuInGame;
@@ -67,18 +68,21 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         assetManager.load("flags/flags_skin.json", Skin.class);
         assetManager.load("portraits/portraits_skin.json", Skin.class);
         assetManager.load("ui/mainmenu_ig/mainmenu_ig_skin.json", Skin.class);
+        assetManager.load("ui/popup/popup_skin.json", Skin.class);
         assetManager.finishLoading();
         this.skin = assetManager.get("ui/newgame/newgame_skin.json");
         this.skinUi = assetManager.get("ui/ui_skin.json");
         this.skinFlags = assetManager.get("flags/flags_skin.json");
+        this.skinPopup = assetManager.get("ui/popup/popup_skin.json");
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
         this.uiTables = new ArrayList<>();
-        this.localisation = this.gameContext.getLocalisationManager().readNewgameLocalisationCsv();
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readBookmarkLocalisationCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readPoliticsLocalisationCsv());
+        this.localisation = this.gameContext.getLocalisationManager().readNewgameCsv();
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readBookmarkCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readPoliticsCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readPopupCsv());
         this.initializeUi();
         this.paused = false;
     }
@@ -148,8 +152,8 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     @Override
     public void onEscape() {
-        this.paused = !this.paused;
-        this.mainMenuInGame.setVisible(this.paused);
+        this.paused = true;
+        this.mainMenuInGame.setVisible(true);
         if(this.paused) {
             this.multiplexer.removeProcessor(this.inputHandler);
             this.setActorsTouchable(false);
@@ -168,7 +172,11 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         for (int i = 0; i < this.stage.getActors().size; i++) {
             Actor actor = this.stage.getActors().get(i);
             if(actor != this.mainMenuInGame) {
-                actor.setTouchable(touchable ? Touchable.enabled : Touchable.disabled);
+                if(actor instanceof Popup) {
+                    actor.setTouchable(touchable ? Touchable.enabled : Touchable.disabled);
+                } else {
+                    actor.setTouchable(touchable ? Touchable.childrenOnly : Touchable.disabled);
+                }
             }
         }
     }

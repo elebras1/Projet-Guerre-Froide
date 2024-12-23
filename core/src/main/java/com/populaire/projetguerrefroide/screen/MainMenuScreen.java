@@ -27,7 +27,7 @@ public class MainMenuScreen implements Screen, MainMenuListener {
         Table rootTable = new Table();
         rootTable.setFillParent(true);
         rootTable.setBackground(skin.getDrawable("frontend_main_bg"));
-        MainMenu menu = new MainMenu(skin, gameContext.getLabelStylePool(), gameContext.getLocalisationManager().readMainMenuLocalisationCsv(), this);
+        MainMenu menu = new MainMenu(skin, gameContext.getLabelStylePool(), gameContext.getLocalisationManager().readMainMenuCsv(), this);
         rootTable.add(menu).center().padLeft(menu.getWidth() / 3);
         this.stage.addActor(rootTable);
     }
