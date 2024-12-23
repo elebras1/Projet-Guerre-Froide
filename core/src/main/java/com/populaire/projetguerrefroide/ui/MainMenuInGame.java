@@ -13,12 +13,15 @@ import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
 
-public class MainMenuInGame extends Table {
+public class MainMenuInGame extends Table implements PopupListener {
+    private final MainMenuInGameListener listener;
+
     public MainMenuInGame(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
-        this.setMenu(skin, labelStylePool, localisation, listener);
+        this.listener = listener;
+        this.setMenu(skin, labelStylePool, localisation);
     }
 
-    private void setMenu(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
+    private void setMenu(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation) {
         Drawable background = skin.getDrawable("menu_background");
 
         LabelStyle labelStyleJockey20GlowBlue = labelStylePool.getLabelStyle("jockey_20_glow_blue");
@@ -70,6 +73,7 @@ public class MainMenuInGame extends Table {
         quitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                listener.onQuitClicked(MainMenuInGame.this);
             }
         });
         quitButton.setX(55);
@@ -118,5 +122,15 @@ public class MainMenuInGame extends Table {
         Drawable background = skin.getDrawable("ingame_settings_video_naked");
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
+    }
+
+    @Override
+    public void onCancelClicked() {
+        this.listener.onCancelPopupClicked();
+    }
+
+    @Override
+    public void onOkClicked() {
+        this.listener.onOkPopupClicked();
     }
 }

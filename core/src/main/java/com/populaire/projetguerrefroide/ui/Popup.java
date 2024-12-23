@@ -17,14 +17,17 @@ import com.populaire.projetguerrefroide.service.LabelStylePool;
 import java.util.Map;
 
 public class Popup extends Table {
-    public Popup(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, boolean doubleButton, boolean big) {
+    private final PopupListener listener;
+
+    public Popup(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, boolean doubleButton, boolean big, PopupListener listener) {
+        this.listener = listener;
         this.setPopup(skin, labelStylePool, localisation, title, description, doubleButton, big, this.getIdButton(doubleButton, big));
         this.setTouchable(Touchable.enabled);
         this.addDragListener();
     }
 
-    public Popup(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description) {
-        this(skin, labelStylePool, localisation, title, description, false, false);
+    public Popup(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, PopupListener listener) {
+        this(skin, labelStylePool, localisation, title, description, false, false, listener);
     }
 
     private String getIdButton(boolean doubleButton, boolean big) {
@@ -46,9 +49,9 @@ public class Popup extends Table {
 
         Actor button = configureButton(skin, labelStylePool, localisation, doubleButton, big, background);
 
-        Label titleLabel = createLabel(localisation.get(title), labelStylePool.getLabelStyle("jockey_20_glow_blue"),
+        Label titleLabel = createLabel(title, labelStylePool.getLabelStyle("jockey_20_glow_blue"),
             background.getMinWidth() / 2, background.getMinHeight() - 42);
-        Label descriptionLabel = createWrappedLabel(localisation.get(description), labelStylePool.getLabelStyle("arial_18"),
+        Label descriptionLabel = createWrappedLabel(description, labelStylePool.getLabelStyle("arial_18"),
             background.getMinWidth(), background.getMinHeight());
 
         this.addActor(titleLabel);
@@ -91,6 +94,7 @@ public class Popup extends Table {
         button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                listener.onOkClicked();
             }
         });
 
@@ -106,6 +110,7 @@ public class Popup extends Table {
         cancelButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                listener.onCancelClicked();
             }
         });
 
@@ -114,6 +119,7 @@ public class Popup extends Table {
         okButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                listener.onOkClicked();
             }
         });
 

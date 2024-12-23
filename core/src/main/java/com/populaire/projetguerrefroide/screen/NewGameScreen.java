@@ -89,7 +89,6 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     private void initializeUi() {
         this.stage = new Stage(new ScreenViewport());
-        //this.stage.setDebugAll(true);
 
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
@@ -167,6 +166,28 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.multiplexer.addProcessor(this.inputHandler);
         this.setActorsTouchable(true);
     }
+
+    @Override
+    public void onQuitClicked(PopupListener listener) {
+        Popup popup = new Popup(this.skinPopup, this.gameContext.getLabelStylePool(), this.localisation,
+            this.localisation.get("QUIT_TITLE"), this.localisation.get("QUIT_DESC"), true, false, listener);
+        popup.setPosition(Gdx.graphics.getWidth() / 2f - popup.getWidth() / 2,
+            Gdx.graphics.getHeight() / 2f - popup.getHeight() / 2);
+        this.stage.addActor(popup);
+        this.mainMenuInGame.setTouchable(Touchable.disabled);
+    }
+
+    @Override
+    public void onOkPopupClicked() {
+        Gdx.app.exit();
+    }
+
+    @Override
+    public void onCancelPopupClicked() {
+        this.stage.getActors().removeValue(this.stage.getActors().peek(), true);
+        this.mainMenuInGame.setTouchable(Touchable.enabled);
+    }
+
 
     public void setActorsTouchable(boolean touchable) {
         for (int i = 0; i < this.stage.getActors().size; i++) {
