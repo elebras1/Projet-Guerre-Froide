@@ -73,72 +73,67 @@
     "unit_names": "",
     "ministers": {
         "1113001": {
-            "name": "Ant\u00f3nio Agostinho Neto",
+            "name": "António Agostinho Neto",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.95,
             "picture": "ANG_M_Neto_Antonio_A",
-            "head_of_state": "autocrat_type",
-            "head_of_government": "autocrat_type",
             "start_date": "1975-11-11",
-            "death_date": "1979-09-10"
+            "death_date": "1979-09-10",
+            "type": "autocrat_type"
         },
         "1113002": {
-            "name": "Jos\u00e9 Eduardo dos Santos",
+            "name": "José Eduardo dos Santos",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.95,
             "picture": "ANG_M_Santos_Jose_E",
-            "head_of_state": "parental_type",
-            "head_of_government": "parental_type",
             "start_date": "1979-09-10",
-            "death_date": "1992-08-27"
+            "death_date": "1992-08-27",
+            "type": "parental_type"
         },
         "1113003": {
             "name": "Lopo F. F. do Nascimento",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
             "picture": "ANG_M_Nascimento_Lopo_F_F",
-            "head_of_government": "administrator_type",
             "start_date": "1975-11-14",
-            "death_date": "1978-12-09"
+            "death_date": "1978-12-09",
+            "type": "administrator_type"
         },
         "1113004": {
-            "name": "Dr. Fernando J.F.D. Van-D\u00fanem",
+            "name": "Dr. Fernando J.F.D. Van-Dúnem",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
             "picture": "ANG_M_Van-Dunem_Fernando_J_F_D",
-            "head_of_government": "administrator_type",
             "start_date": "1991-07-19",
-            "death_date": "1992-08-27"
+            "death_date": "1992-08-27",
+            "type": "administrator_type"
         },
         "1113005": {
             "name": "Jonas Savimbi",
             "ideology": "fascistic_idolg",
             "loyalty": 1.0,
             "picture": "ANG_M_Savimbi_Jonas",
-            "head_of_state": "dictator_type",
-            "head_of_government": "dictator_type",
             "start_date": "1966-01-01",
-            "death_date": "2002-02-22"
+            "death_date": "2002-02-22",
+            "type": "dictator_type"
         },
         "1113006": {
             "name": "Holden Roberto",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
             "picture": "ANG_M_Roberto_Holden",
-            "head_of_state": "parental_type",
-            "head_of_government": "parental_type",
             "start_date": "1962-01-01",
-            "death_date": "1999-01-01"
+            "death_date": "1999-01-01",
+            "type": "parental_type"
         },
         "1113007": {
-            "name": "An\u00e1lia de Vict\u00f3ria Pereira",
+            "name": "Anália de Victória Pereira",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
             "picture": "ANG_M_Pereira_Analia_V",
-            "head_of_state": "courageous_type",
-            "head_of_government": "courageous_type",
             "start_date": "1983-01-01",
-            "death_date": "2009-01-07"
+            "death_date": "2009-01-07",
+            "type": "courageous_type"
         }
     }
 }

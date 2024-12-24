@@ -1,1 +1,365 @@
-{"color": [62, 129, 155], "graphical_culture": "Us", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1216000": {"name": "Sveinn Bj\u00f6rnsson", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ICL_M_Bjornsson_S", "head_of_state": "courageous_type", "start_date": "1946-01-01", "death_date": "1952-01-25"}, "1216001": {"name": "Asgeir Asgeirsson", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ICL_M_Asgeirsson_A", "head_of_state": "traditionalist_type", "start_date": "1946-01-01", "death_date": "1968-06-30"}, "1216002": {"name": "Kristjan Eldjarn", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ICL_M_Eldjarn_K", "head_of_state": "traditionalist_type", "start_date": "1968-06-30", "death_date": "1980-07-31"}, "1216003": {"name": "Vigdis Finnbogadottir", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ICL_M_Finnbogadottir_V", "head_of_state": "traditionalist_type", "start_date": "1980-07-30", "death_date": "1996-07-31"}, "1216004": {"name": "Olafur Thors", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ICL_M_Thors_O", "head_of_government": "democrat_type", "start_date": "1946-01-01", "death_date": "1964-12-31"}, "1216005": {"name": "Stefan Johann Stefansson", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ICL_M_Stefansson_S_J", "head_of_government": "democrat_type", "start_date": "1946-01-01", "death_date": "1980-10-20"}, "1216006": {"name": "Steingrimur Steinporsson", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "ICL_M_Steinporsson_S", "head_of_government": "democrat_type", "start_date": "1946-01-01", "death_date": "1966-11-14"}, "1216007": {"name": "Hermann Jonasson", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "ICL_M_Jonasson_H", "head_of_government": "democrat_type", "start_date": "1946-01-01", "death_date": "1976-01-22"}, "1216008": {"name": "Emil Jonsson", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ICL_M_Jonsson_E", "head_of_government": "democrat_type", "start_date": "1958-12-23", "death_date": "1986-11-30"}, "1216009": {"name": "Bjarni Benediktsson", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ICL_M_Benediktsson_B", "head_of_government": "democrat_type", "start_date": "1964-12-31", "death_date": "1970-07-10"}, "1216010": {"name": "Johann Hafstein", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ICL_M_Hafstein_J", "head_of_government": "democrat_type", "start_date": "1965-04-24", "death_date": "1980-05-15"}, "1216011": {"name": "Olafur Johannesson", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "ICL_M_Johannesson_O", "head_of_government": "democrat_type", "start_date": "1959-01-01", "death_date": "1984-05-20"}, "1216012": {"name": "Geir Hallgrimsson", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ICL_M_Hallgrimsson_G", "head_of_government": "democrat_type", "start_date": "1974-01-01", "death_date": "1990-09-01"}, "1216013": {"name": "Benedikt Gr\u00f6ndal", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ICL_M_Grondal_B", "head_of_government": "democrat_type", "start_date": "1979-10-15", "death_date": "1991-12-31"}, "1216014": {"name": "Gunnar Thoroddsen", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ICL_M_Thoroddsen_G", "head_of_government": "democrat_type", "start_date": "1974-08-28", "death_date": "1983-09-27"}, "1216015": {"name": "Steingrimur Hermannsson", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "ICL_M_Hermannsson_S", "head_of_government": "democrat_type", "start_date": "1979-01-01", "death_date": "1998-06-22"}, "1216016": {"name": "Thorsteinn Palsson", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ICL_M_Palsson_T", "head_of_government": "democrat_type", "start_date": "1983-01-01", "death_date": "1999-05-11"}, "1216017": {"name": "David Oddsson", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ICL_M_Oddsson_D", "head_of_government": "democrat_type", "start_date": "1982-05-27", "death_date": "2004-01-01"}, "1216019": {"name": "\u00c1sgeir \u00c1sgeirsson", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "ICL_M_Asgeirsson_Asgeir", "head_of_government": "ambitious_type", "start_date": "1952-08-01", "death_date": "1972-09-15"}, "1216020": {"name": "\u00d3lafur Thors", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "ICL_M_Thors_Olafur", "head_of_government": "fortunate_type", "start_date": "1946-01-01", "death_date": "1964-12-31"}, "1216021": {"name": "Stef\u00e1n J\u00f3hann Stef\u00e1nsson", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ICL_M_Stefansson_Stefan_J", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1947-02-04", "death_date": "1980-10-20"}, "1216100": {"name": "Hannibal Valdimarsson", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "ICL_M_Valdimarsson_Hannibal", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1965-11-01", "death_date": "1973-01-13"}, "1216101": {"name": "Einar Olgeirsson", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "ICL_M_Olgeirsson_Einar", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1940-11-01", "death_date": "1968-05-01"}, "1216102": {"name": "Bjorn Eriksson", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "ICL_M_Eriksson_Bjorn", "head_of_state": "supreme_leader", "head_of_government": "supreme_leader", "start_date": "1961-02-17", "death_date": "1991-12-31"}, "1216103": {"name": "Ragnar Arnalds", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "ICL_M_Arnalds_Ragnar", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1975-04-13", "death_date": "1999-11-09"}, "1216104": {"name": "Brynj\u00f3lfur Bjarnason", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "ICL_M_Bjarnason_Brynjolfur", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1930-11-01", "death_date": "1989-04-16"}, "1216105": {"name": "Gunnar Andresson", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "ICL_M_Andresson_Gunnar", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1976-04-01", "death_date": "1979-01-01"}, "1216106": {"name": "Arti T. Gudmundssen", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "ICL_M_Gudmundssen_Arti_T", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1979-01-01", "death_date": "1988-01-01"}, "1216107": {"name": "Agnar Kofoed-Hansen", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "ICL_M_Kofoed-Hansen_Agnar", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1944-06-27", "death_date": "1982-12-23"}, "1216108": {"name": "Helgi S. Jonnson", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "ICL_M_Jonnson_Helgi_S", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1935-01-01", "death_date": "1975-01-01"}, "1216109": {"name": "J\u00f3n H. \u00deorbergsson", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "ICL_M_Porbergsson_Jon_H", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1935-01-01", "death_date": "1982-01-01"}, "1216110": {"name": "Bergur Sigurbj\u00f6rnsson", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "ICL_M_Sigurbjornsson_Bergur", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1953-03-15", "death_date": "2005-07-28"}}}
+{
+    "color": [
+        62,
+        129,
+        155
+    ],
+    "graphical_culture": "Us",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1216000": {
+            "name": "Sveinn Björnsson",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Bjornsson_S",
+            "start_date": "1946-01-01",
+            "death_date": "1952-01-25",
+            "type": "courageous_type"
+        },
+        "1216001": {
+            "name": "Asgeir Asgeirsson",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Asgeirsson_A",
+            "start_date": "1946-01-01",
+            "death_date": "1968-06-30",
+            "type": "traditionalist_type"
+        },
+        "1216002": {
+            "name": "Kristjan Eldjarn",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Eldjarn_K",
+            "start_date": "1968-06-30",
+            "death_date": "1980-07-31",
+            "type": "traditionalist_type"
+        },
+        "1216003": {
+            "name": "Vigdis Finnbogadottir",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Finnbogadottir_V",
+            "start_date": "1980-07-30",
+            "death_date": "1996-07-31",
+            "type": "traditionalist_type"
+        },
+        "1216004": {
+            "name": "Olafur Thors",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Thors_O",
+            "start_date": "1946-01-01",
+            "death_date": "1964-12-31",
+            "type": "democrat_type"
+        },
+        "1216005": {
+            "name": "Stefan Johann Stefansson",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Stefansson_S_J",
+            "start_date": "1946-01-01",
+            "death_date": "1980-10-20",
+            "type": "democrat_type"
+        },
+        "1216006": {
+            "name": "Steingrimur Steinporsson",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Steinporsson_S",
+            "start_date": "1946-01-01",
+            "death_date": "1966-11-14",
+            "type": "democrat_type"
+        },
+        "1216007": {
+            "name": "Hermann Jonasson",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Jonasson_H",
+            "start_date": "1946-01-01",
+            "death_date": "1976-01-22",
+            "type": "democrat_type"
+        },
+        "1216008": {
+            "name": "Emil Jonsson",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Jonsson_E",
+            "start_date": "1958-12-23",
+            "death_date": "1986-11-30",
+            "type": "democrat_type"
+        },
+        "1216009": {
+            "name": "Bjarni Benediktsson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Benediktsson_B",
+            "start_date": "1964-12-31",
+            "death_date": "1970-07-10",
+            "type": "democrat_type"
+        },
+        "1216010": {
+            "name": "Johann Hafstein",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Hafstein_J",
+            "start_date": "1965-04-24",
+            "death_date": "1980-05-15",
+            "type": "democrat_type"
+        },
+        "1216011": {
+            "name": "Olafur Johannesson",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Johannesson_O",
+            "start_date": "1959-01-01",
+            "death_date": "1984-05-20",
+            "type": "democrat_type"
+        },
+        "1216012": {
+            "name": "Geir Hallgrimsson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Hallgrimsson_G",
+            "start_date": "1974-01-01",
+            "death_date": "1990-09-01",
+            "type": "democrat_type"
+        },
+        "1216013": {
+            "name": "Benedikt Gröndal",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Grondal_B",
+            "start_date": "1979-10-15",
+            "death_date": "1991-12-31",
+            "type": "democrat_type"
+        },
+        "1216014": {
+            "name": "Gunnar Thoroddsen",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Thoroddsen_G",
+            "start_date": "1974-08-28",
+            "death_date": "1983-09-27",
+            "type": "democrat_type"
+        },
+        "1216015": {
+            "name": "Steingrimur Hermannsson",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Hermannsson_S",
+            "start_date": "1979-01-01",
+            "death_date": "1998-06-22",
+            "type": "democrat_type"
+        },
+        "1216016": {
+            "name": "Thorsteinn Palsson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Palsson_T",
+            "start_date": "1983-01-01",
+            "death_date": "1999-05-11",
+            "type": "democrat_type"
+        },
+        "1216017": {
+            "name": "David Oddsson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Oddsson_D",
+            "start_date": "1982-05-27",
+            "death_date": "2004-01-01",
+            "type": "democrat_type"
+        },
+        "1216019": {
+            "name": "Ásgeir Ásgeirsson",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Asgeirsson_Asgeir",
+            "start_date": "1952-08-01",
+            "death_date": "1972-09-15",
+            "type": "ambitious_type"
+        },
+        "1216020": {
+            "name": "Ólafur Thors",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Thors_Olafur",
+            "start_date": "1946-01-01",
+            "death_date": "1964-12-31",
+            "type": "fortunate_type"
+        },
+        "1216021": {
+            "name": "Stefán Jóhann Stefánsson",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ICL_M_Stefansson_Stefan_J",
+            "start_date": "1947-02-04",
+            "death_date": "1980-10-20",
+            "type": "honest_type"
+        },
+        "1216100": {
+            "name": "Hannibal Valdimarsson",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ICL_M_Valdimarsson_Hannibal",
+            "start_date": "1965-11-01",
+            "death_date": "1973-01-13",
+            "type": "democrat_type"
+        },
+        "1216101": {
+            "name": "Einar Olgeirsson",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ICL_M_Olgeirsson_Einar",
+            "start_date": "1940-11-01",
+            "death_date": "1968-05-01",
+            "type": "democrat_type"
+        },
+        "1216102": {
+            "name": "Bjorn Eriksson",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ICL_M_Eriksson_Bjorn",
+            "start_date": "1961-02-17",
+            "death_date": "1991-12-31",
+            "type": "supreme_leader"
+        },
+        "1216103": {
+            "name": "Ragnar Arnalds",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ICL_M_Arnalds_Ragnar",
+            "start_date": "1975-04-13",
+            "death_date": "1999-11-09",
+            "type": "democrat_type"
+        },
+        "1216104": {
+            "name": "Brynjólfur Bjarnason",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ICL_M_Bjarnason_Brynjolfur",
+            "start_date": "1930-11-01",
+            "death_date": "1989-04-16",
+            "type": "bureaucrat_type"
+        },
+        "1216105": {
+            "name": "Gunnar Andresson",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "ICL_M_Andresson_Gunnar",
+            "start_date": "1976-04-01",
+            "death_date": "1979-01-01",
+            "type": "controversial_figure"
+        },
+        "1216106": {
+            "name": "Arti T. Gudmundssen",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "ICL_M_Gudmundssen_Arti_T",
+            "start_date": "1979-01-01",
+            "death_date": "1988-01-01",
+            "type": "controversial_figure"
+        },
+        "1216107": {
+            "name": "Agnar Kofoed-Hansen",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ICL_M_Kofoed-Hansen_Agnar",
+            "start_date": "1944-06-27",
+            "death_date": "1982-12-23",
+            "type": "controversial_figure"
+        },
+        "1216108": {
+            "name": "Helgi S. Jonnson",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ICL_M_Jonnson_Helgi_S",
+            "start_date": "1935-01-01",
+            "death_date": "1975-01-01",
+            "type": "controversial_figure"
+        },
+        "1216109": {
+            "name": "Jón H. Þorbergsson",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ICL_M_Porbergsson_Jon_H",
+            "start_date": "1935-01-01",
+            "death_date": "1982-01-01",
+            "type": "controversial_figure"
+        },
+        "1216110": {
+            "name": "Bergur Sigurbjörnsson",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ICL_M_Sigurbjornsson_Bergur",
+            "start_date": "1953-03-15",
+            "death_date": "2005-07-28",
+            "type": "ambitious_type"
+        }
+    }
+}

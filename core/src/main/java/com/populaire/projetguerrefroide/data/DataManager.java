@@ -131,14 +131,7 @@ public class DataManager {
                     String ideology = ministerNode.get("ideology").asText();
                     float loyalty = (float) ministerNode.get("loyalty").asDouble();
                     String imageNameFile = ministerNode.get("picture").asText();
-                    String headOfState = null;
-                    if(ministerNode.has("head_of_state") && !ministerNode.get("head_of_state").isNull()) {
-                        headOfState = ministerNode.get("head_of_state").asText();
-                    }
-                    String headOfGovernment = null;
-                    if(ministerNode.has("head_of_government") && !ministerNode.get("head_of_government").isNull()) {
-                        headOfGovernment = ministerNode.get("head_of_government").asText();
-                    }
+                    String type = ministerNode.get("type").asText();
                     Date startDate = null;
                     Date deathDate = null;
                     try {
@@ -147,12 +140,8 @@ public class DataManager {
                     } catch(ParseException e) {
                         e.printStackTrace();
                     }
-                    int base = -1;
-                    if(ministerNode.has("base") && !ministerNode.get("base").isNull()) {
-                        base = ministerNode.get("base").asInt();
-                    }
 
-                    Minister minister = new Minister(name, ideology, imageNameFile, loyalty, headOfState, headOfGovernment, startDate, deathDate, base);
+                    Minister minister = new Minister(name, ideology, imageNameFile, loyalty, type, startDate, deathDate);
                     country.addMinister(ministerId, minister);
                 });
             }

@@ -1,1 +1,292 @@
-{"color": [102, 127, 231], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1270001": {"name": "Jacques V. F. Tallec", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Tallec_Jacques_V_F", "head_of_state": "reformer_type", "start_date": "1944-02-14", "death_date": "1947-01-28"}, "1270002": {"name": "Georges Hubert Parisot", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Parisot_Georges_H", "head_of_state": "traditionalist_type", "start_date": "1947-01-28", "death_date": "1948-05-10"}, "1270003": {"name": "Pierre Charles Cournarie", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Cournarie_Pierre_C", "head_of_state": "bureaucrat_type", "start_date": "1948-05-10", "death_date": "1951-07-05"}, "1270004": {"name": "Bordarier", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Bordarier", "head_of_state": "administrator_type", "start_date": "1951-07-05", "death_date": "1951-10-21"}, "1270005": {"name": "Raoul Eug\u00e8ne Angammare", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Angammare_Raoul_E", "head_of_state": "reformer_type", "start_date": "1951-10-21", "death_date": "1954-07-24"}, "1270006": {"name": "Ren\u00e9 Hoffherr", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Hoffherr_Rene", "head_of_state": "hardliner_type", "start_date": "1954-07-24", "death_date": "1956-02-03", "base": 1143015}, "1270007": {"name": "Aim\u00e9 Grimald", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Grimald_Aime", "head_of_state": "administrator_type", "start_date": "1956-02-03", "death_date": "1958-12-01"}, "1270008": {"name": "Laurent Elis\u00e9e P\u00e9choux", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Pechoux_Laurent_E", "head_of_state": "traditionalist_type", "start_date": "1958-12-01", "death_date": "1963-01-09", "base": 1182003}, "1270009": {"name": "Georges Poulet", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Poulet_Georges", "head_of_state": "democrat_type", "start_date": "1961-03-18", "death_date": "1961-07-20"}, "1270010": {"name": "Marc Casimir Biros", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Biros_Marc_C", "head_of_state": "reputable_type", "start_date": "1963-01-09", "death_date": "1965-02-14"}, "1270011": {"name": "Jean Risterucci", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Risterucci_Jean", "head_of_state": "fortunate_type", "start_date": "1965-02-14", "death_date": "1969-10-16"}, "1270012": {"name": "Louis Verger", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Verger_Louis", "head_of_state": "bureaucrat_type", "start_date": "1969-10-16", "death_date": "1973-12-01"}, "1270013": {"name": "Jean Gabriel \u00c9riau", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Eriau_Jean_G", "head_of_state": "visionary_type", "start_date": "1973-12-01", "death_date": "1978-12-16"}, "1270014": {"name": "Claude Charbonniaud", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Charbonniaud_Claude", "head_of_state": "loyal_type", "start_date": "1978-12-16", "death_date": "1981-12-11"}, "1270015": {"name": "Christian L. C. Nucci", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Nucci_Christian_L_C", "head_of_state": "administrator_type", "start_date": "1981-12-11", "death_date": "1982-10-22"}, "1270016": {"name": "Jacques Roynette", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Roynette_Jacques", "head_of_state": "fortunate_type", "start_date": "1982-10-22", "death_date": "1984-12-05"}, "1270017": {"name": "Edgard Pisani", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Pisani_Edgard", "head_of_state": "ambitious_type", "start_date": "1984-12-05", "death_date": "1985-05-22"}, "1270018": {"name": "Fernand Wibaux", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Wibaux_Fernand", "head_of_state": "democrat_type", "start_date": "1985-05-22", "death_date": "1986-08-01"}, "1270019": {"name": "Bernard Lemaire", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Lemaire_Bernard", "head_of_state": "visionary_type", "start_date": "1986-08-01", "death_date": "1986-08-12"}, "1270020": {"name": "Jean Montpezat", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Montpezat_Jean", "head_of_state": "loyal_type", "start_date": "1986-08-12", "death_date": "1987-11-28"}, "1270021": {"name": "Cl\u00e9ment Bouhin", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Bouhin_Clement", "head_of_state": "reputable_type", "start_date": "1987-11-28", "death_date": "1988-07-15"}, "1270022": {"name": "Bernard Grasset", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Grasset_Bernard", "head_of_state": "bureaucrat_type", "start_date": "1988-07-15", "death_date": "1991-01-11"}, "1270023": {"name": "Alain Christnacht", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Christnacht_Alain", "head_of_state": "courteous_figure", "start_date": "1991-01-11", "death_date": "1994-07-29"}, "1270024": {"name": "Jean L\u00e8ques", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NEW_M_Leques_Jean", "head_of_government": "courteous_figure", "start_date": "1986-01-01", "death_date": "2300-01-01"}}}
+{
+    "color": [
+        102,
+        127,
+        231
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1270001": {
+            "name": "Jacques V. F. Tallec",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Tallec_Jacques_V_F",
+            "start_date": "1944-02-14",
+            "death_date": "1947-01-28",
+            "type": "reformer_type"
+        },
+        "1270002": {
+            "name": "Georges Hubert Parisot",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Parisot_Georges_H",
+            "start_date": "1947-01-28",
+            "death_date": "1948-05-10",
+            "type": "traditionalist_type"
+        },
+        "1270003": {
+            "name": "Pierre Charles Cournarie",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Cournarie_Pierre_C",
+            "start_date": "1948-05-10",
+            "death_date": "1951-07-05",
+            "type": "bureaucrat_type"
+        },
+        "1270004": {
+            "name": "Bordarier",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Bordarier",
+            "start_date": "1951-07-05",
+            "death_date": "1951-10-21",
+            "type": "administrator_type"
+        },
+        "1270005": {
+            "name": "Raoul Eugène Angammare",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Angammare_Raoul_E",
+            "start_date": "1951-10-21",
+            "death_date": "1954-07-24",
+            "type": "reformer_type"
+        },
+        "1270006": {
+            "name": "René Hoffherr",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Hoffherr_Rene",
+            "start_date": "1954-07-24",
+            "death_date": "1956-02-03",
+            "type": "hardliner_type"
+        },
+        "1270007": {
+            "name": "Aimé Grimald",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Grimald_Aime",
+            "start_date": "1956-02-03",
+            "death_date": "1958-12-01",
+            "type": "administrator_type"
+        },
+        "1270008": {
+            "name": "Laurent Elisée Péchoux",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Pechoux_Laurent_E",
+            "start_date": "1958-12-01",
+            "death_date": "1963-01-09",
+            "type": "traditionalist_type"
+        },
+        "1270009": {
+            "name": "Georges Poulet",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Poulet_Georges",
+            "start_date": "1961-03-18",
+            "death_date": "1961-07-20",
+            "type": "democrat_type"
+        },
+        "1270010": {
+            "name": "Marc Casimir Biros",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Biros_Marc_C",
+            "start_date": "1963-01-09",
+            "death_date": "1965-02-14",
+            "type": "reputable_type"
+        },
+        "1270011": {
+            "name": "Jean Risterucci",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Risterucci_Jean",
+            "start_date": "1965-02-14",
+            "death_date": "1969-10-16",
+            "type": "fortunate_type"
+        },
+        "1270012": {
+            "name": "Louis Verger",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Verger_Louis",
+            "start_date": "1969-10-16",
+            "death_date": "1973-12-01",
+            "type": "bureaucrat_type"
+        },
+        "1270013": {
+            "name": "Jean Gabriel Ériau",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Eriau_Jean_G",
+            "start_date": "1973-12-01",
+            "death_date": "1978-12-16",
+            "type": "visionary_type"
+        },
+        "1270014": {
+            "name": "Claude Charbonniaud",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Charbonniaud_Claude",
+            "start_date": "1978-12-16",
+            "death_date": "1981-12-11",
+            "type": "loyal_type"
+        },
+        "1270015": {
+            "name": "Christian L. C. Nucci",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Nucci_Christian_L_C",
+            "start_date": "1981-12-11",
+            "death_date": "1982-10-22",
+            "type": "administrator_type"
+        },
+        "1270016": {
+            "name": "Jacques Roynette",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Roynette_Jacques",
+            "start_date": "1982-10-22",
+            "death_date": "1984-12-05",
+            "type": "fortunate_type"
+        },
+        "1270017": {
+            "name": "Edgard Pisani",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Pisani_Edgard",
+            "start_date": "1984-12-05",
+            "death_date": "1985-05-22",
+            "type": "ambitious_type"
+        },
+        "1270018": {
+            "name": "Fernand Wibaux",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Wibaux_Fernand",
+            "start_date": "1985-05-22",
+            "death_date": "1986-08-01",
+            "type": "democrat_type"
+        },
+        "1270019": {
+            "name": "Bernard Lemaire",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Lemaire_Bernard",
+            "start_date": "1986-08-01",
+            "death_date": "1986-08-12",
+            "type": "visionary_type"
+        },
+        "1270020": {
+            "name": "Jean Montpezat",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Montpezat_Jean",
+            "start_date": "1986-08-12",
+            "death_date": "1987-11-28",
+            "type": "loyal_type"
+        },
+        "1270021": {
+            "name": "Clément Bouhin",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Bouhin_Clement",
+            "start_date": "1987-11-28",
+            "death_date": "1988-07-15",
+            "type": "reputable_type"
+        },
+        "1270022": {
+            "name": "Bernard Grasset",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Grasset_Bernard",
+            "start_date": "1988-07-15",
+            "death_date": "1991-01-11",
+            "type": "bureaucrat_type"
+        },
+        "1270023": {
+            "name": "Alain Christnacht",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Christnacht_Alain",
+            "start_date": "1991-01-11",
+            "death_date": "1994-07-29",
+            "type": "courteous_figure"
+        },
+        "1270024": {
+            "name": "Jean Lèques",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NEW_M_Leques_Jean",
+            "start_date": "1986-01-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        }
+    }
+}

@@ -1,1 +1,104 @@
-{"color": [44, 88, 24], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1301001": {"name": "Dominique Mbonyumutwa", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RWD_M_Mbonyumutwa_Dominique", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1961-01-28", "death_date": "1961-10-26", "base": 1301001}, "1301002": {"name": "Gr\u00e9goire Kayibanda", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RWD_M_Kayibanda_Gregoire", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1961-10-26", "death_date": "1973-07-05", "base": 1301002}, "1301003": {"name": "Juv\u00e9nal Habyarimana", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RWD_M_Habyarimana_Juvenal", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1973-07-05", "death_date": "1994-04-06", "base": 1301003}}}
+{
+    "color": [
+        44,
+        88,
+        24
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1301001": {
+            "name": "Dominique Mbonyumutwa",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RWD_M_Mbonyumutwa_Dominique",
+            "start_date": "1961-01-28",
+            "death_date": "1961-10-26",
+            "type": "lethargic_type"
+        },
+        "1301002": {
+            "name": "Grégoire Kayibanda",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RWD_M_Kayibanda_Gregoire",
+            "start_date": "1961-10-26",
+            "death_date": "1973-07-05",
+            "type": "reformer_type"
+        },
+        "1301003": {
+            "name": "Juvénal Habyarimana",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RWD_M_Habyarimana_Juvenal",
+            "start_date": "1973-07-05",
+            "death_date": "1994-04-06",
+            "type": "dictator_type"
+        }
+    }
+}

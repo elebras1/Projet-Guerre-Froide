@@ -1,1 +1,265 @@
-{"color": [61, 185, 38], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1232001": {"name": "Joseph Kasa-Vubu", "ideology": "paternal_auto_idolg", "loyalty": 0.4, "picture": "KON_M_Kasavubu_Joseph", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1960-07-01", "death_date": "1965-11-24", "base": 1176001}, "1232002": {"name": "Antoine Gizenga", "ideology": "left_wing_radical_idolg", "loyalty": 0.7, "picture": "KON_M_Gizenga_Antoine", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1961-03-31", "death_date": "1961-08-05", "base": 1176003}, "1232003": {"name": "Joseph-D\u00e9sir\u00e9 Mobutu", "ideology": "fascistic_idolg", "loyalty": 1.0, "picture": "KON_M_Mobutu_Joseph-Desire", "head_of_state": "autocrat_type", "start_date": "1965-11-24", "death_date": "1997-05-16"}, "1232004": {"name": "Patrice Lumumba", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "KON_M_Lumumba_Patrice", "head_of_government": "parental_type", "start_date": "1960-06-24", "death_date": "1960-09-05", "base": 1176002}, "1232005": {"name": "Joseph Il\u00e9o", "ideology": "left_wing_radical_idolg", "loyalty": 0.9, "picture": "KON_M_Ileo_Joseph", "head_of_government": "visionary_type", "start_date": "1960-09-05", "death_date": "1961-08-02", "base": 1176004}, "1232006": {"name": "Justin Marie Bomboko", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "KON_M_Bomboko_Justin_M", "head_of_government": "parental_type", "start_date": "1960-09-20", "death_date": "1960-10-03"}, "1232007": {"name": "Cyrille Adoula", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "KON_M_Adoula_Cyrille", "head_of_government": "reformer_type", "start_date": "1961-08-02", "death_date": "1964-06-30", "base": 1176005}, "1232008": {"name": "Moise Tshombe", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "KAT_M_Tshombe_Moise_K", "head_of_government": "ambitious_type", "start_date": "1964-07-10", "death_date": "1965-10-13"}, "1232009": {"name": "\u00c9variste Kimba", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "KON_M_Kimba_Evariste", "head_of_government": "administrator_type", "start_date": "1965-10-13", "death_date": "1965-11-14"}, "1232010": {"name": "L\u00e9onard Mulumba", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "KON_M_Mulumba_Leonard", "head_of_government": "administrator_type", "start_date": "1965-11-14", "death_date": "1966-10-26"}, "1232011": {"name": "Mpinga Kasenda", "ideology": "fascistic_idolg", "loyalty": 1.0, "picture": "KON_M_Kasenda_Mpinga", "head_of_government": "administrator_type", "start_date": "1977-07-06", "death_date": "1979-03-06"}, "1232012": {"name": "Bo-Boliko Mihambo", "ideology": "fascistic_idolg", "loyalty": 1.0, "picture": "KON_M_Mihambo_Bo-Boliko_L_M", "head_of_government": "bureaucrat_type", "start_date": "1979-03-06", "death_date": "1980-08-27"}, "1232013": {"name": "Jean Nguza Karl-i-Bond", "ideology": "fascistic_idolg", "loyalty": 0.8, "picture": "KON_M_Karl-i-Bond_Jean_N", "head_of_government": "visionary_type", "start_date": "1980-08-27", "death_date": "1992-04-23"}, "1232014": {"name": "N'singa Udjuu Untubu", "ideology": "fascistic_idolg", "loyalty": 1.0, "picture": "KON_M_Untubu_Nsinga_O_U", "head_of_government": "bureaucrat_type", "start_date": "1981-04-23", "death_date": "1982-11-05"}, "1232015": {"name": "Kengo Wa Dondo", "ideology": "fascistic_idolg", "loyalty": 0.9, "picture": "KON_M_Dondo_Kengo_W", "head_of_government": "reformer_type", "start_date": "1982-11-05", "death_date": "1990-05-04"}, "1232016": {"name": "Mabi Mulumba", "ideology": "fascistic_idolg", "loyalty": 1.0, "picture": "KON_M_Mulumba_Mabi", "head_of_government": "administrator_type", "start_date": "1986-10-31", "death_date": "1988-03-07"}, "1232017": {"name": "Sambwa Pida Nbagui", "ideology": "fascistic_idolg", "loyalty": 1.0, "picture": "KON_M_Nbagui_Sambwa_P", "head_of_government": "bureaucrat_type", "start_date": "1988-03-07", "death_date": "1988-11-26"}, "1232018": {"name": "Lunda Bululu", "ideology": "fascistic_idolg", "loyalty": 1.0, "picture": "KON_M_Bululu_Lunda", "head_of_government": "bureaucrat_type", "start_date": "1990-05-04", "death_date": "1991-04-01"}, "1232019": {"name": "Mulumba Lukoji", "ideology": "fascistic_idolg", "loyalty": 1.0, "picture": "KON_M_Lukoji_Mulumba", "head_of_government": "administrator_type", "start_date": "1991-04-01", "death_date": "1991-09-29"}, "1232020": {"name": "\u00c9tienne Tshisekedi", "ideology": "paternal_auto_idolg", "loyalty": 0.6, "picture": "KON_M_Tshisekedi_Etienne", "head_of_government": "controversial_figure", "start_date": "1960-07-01", "death_date": "2012-11-01"}, "1232021": {"name": "Bernardin Mungul Diaka", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "KON_M_Diaka_Bernardin_M", "head_of_government": "administrator_type", "start_date": "1991-11-01", "death_date": "1992-08-15"}}}
+{
+    "color": [
+        61,
+        185,
+        38
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1232001": {
+            "name": "Joseph Kasa-Vubu",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.4,
+            "picture": "KON_M_Kasavubu_Joseph",
+            "start_date": "1960-07-01",
+            "death_date": "1965-11-24",
+            "type": "lethargic_type"
+        },
+        "1232002": {
+            "name": "Antoine Gizenga",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.7,
+            "picture": "KON_M_Gizenga_Antoine",
+            "start_date": "1961-03-31",
+            "death_date": "1961-08-05",
+            "type": "ambitious_type"
+        },
+        "1232003": {
+            "name": "Joseph-Désiré Mobutu",
+            "ideology": "fascistic_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Mobutu_Joseph-Desire",
+            "start_date": "1965-11-24",
+            "death_date": "1997-05-16",
+            "type": "autocrat_type"
+        },
+        "1232004": {
+            "name": "Patrice Lumumba",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Lumumba_Patrice",
+            "start_date": "1960-06-24",
+            "death_date": "1960-09-05",
+            "type": "parental_type"
+        },
+        "1232005": {
+            "name": "Joseph Iléo",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.9,
+            "picture": "KON_M_Ileo_Joseph",
+            "start_date": "1960-09-05",
+            "death_date": "1961-08-02",
+            "type": "visionary_type"
+        },
+        "1232006": {
+            "name": "Justin Marie Bomboko",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Bomboko_Justin_M",
+            "start_date": "1960-09-20",
+            "death_date": "1960-10-03",
+            "type": "parental_type"
+        },
+        "1232007": {
+            "name": "Cyrille Adoula",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Adoula_Cyrille",
+            "start_date": "1961-08-02",
+            "death_date": "1964-06-30",
+            "type": "reformer_type"
+        },
+        "1232008": {
+            "name": "Moise Tshombe",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "KAT_M_Tshombe_Moise_K",
+            "start_date": "1964-07-10",
+            "death_date": "1965-10-13",
+            "type": "ambitious_type"
+        },
+        "1232009": {
+            "name": "Évariste Kimba",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Kimba_Evariste",
+            "start_date": "1965-10-13",
+            "death_date": "1965-11-14",
+            "type": "administrator_type"
+        },
+        "1232010": {
+            "name": "Léonard Mulumba",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Mulumba_Leonard",
+            "start_date": "1965-11-14",
+            "death_date": "1966-10-26",
+            "type": "administrator_type"
+        },
+        "1232011": {
+            "name": "Mpinga Kasenda",
+            "ideology": "fascistic_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Kasenda_Mpinga",
+            "start_date": "1977-07-06",
+            "death_date": "1979-03-06",
+            "type": "administrator_type"
+        },
+        "1232012": {
+            "name": "Bo-Boliko Mihambo",
+            "ideology": "fascistic_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Mihambo_Bo-Boliko_L_M",
+            "start_date": "1979-03-06",
+            "death_date": "1980-08-27",
+            "type": "bureaucrat_type"
+        },
+        "1232013": {
+            "name": "Jean Nguza Karl-i-Bond",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.8,
+            "picture": "KON_M_Karl-i-Bond_Jean_N",
+            "start_date": "1980-08-27",
+            "death_date": "1992-04-23",
+            "type": "visionary_type"
+        },
+        "1232014": {
+            "name": "N'singa Udjuu Untubu",
+            "ideology": "fascistic_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Untubu_Nsinga_O_U",
+            "start_date": "1981-04-23",
+            "death_date": "1982-11-05",
+            "type": "bureaucrat_type"
+        },
+        "1232015": {
+            "name": "Kengo Wa Dondo",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.9,
+            "picture": "KON_M_Dondo_Kengo_W",
+            "start_date": "1982-11-05",
+            "death_date": "1990-05-04",
+            "type": "reformer_type"
+        },
+        "1232016": {
+            "name": "Mabi Mulumba",
+            "ideology": "fascistic_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Mulumba_Mabi",
+            "start_date": "1986-10-31",
+            "death_date": "1988-03-07",
+            "type": "administrator_type"
+        },
+        "1232017": {
+            "name": "Sambwa Pida Nbagui",
+            "ideology": "fascistic_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Nbagui_Sambwa_P",
+            "start_date": "1988-03-07",
+            "death_date": "1988-11-26",
+            "type": "bureaucrat_type"
+        },
+        "1232018": {
+            "name": "Lunda Bululu",
+            "ideology": "fascistic_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Bululu_Lunda",
+            "start_date": "1990-05-04",
+            "death_date": "1991-04-01",
+            "type": "bureaucrat_type"
+        },
+        "1232019": {
+            "name": "Mulumba Lukoji",
+            "ideology": "fascistic_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Lukoji_Mulumba",
+            "start_date": "1991-04-01",
+            "death_date": "1991-09-29",
+            "type": "administrator_type"
+        },
+        "1232020": {
+            "name": "Étienne Tshisekedi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.6,
+            "picture": "KON_M_Tshisekedi_Etienne",
+            "start_date": "1960-07-01",
+            "death_date": "2012-11-01",
+            "type": "controversial_figure"
+        },
+        "1232021": {
+            "name": "Bernardin Mungul Diaka",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Diaka_Bernardin_M",
+            "start_date": "1991-11-01",
+            "death_date": "1992-08-15",
+            "type": "administrator_type"
+        }
+    }
+}

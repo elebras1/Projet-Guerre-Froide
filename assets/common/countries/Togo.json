@@ -1,1 +1,130 @@
-{"color": [65, 120, 128], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1341001": {"name": "Sylvanus Olympio", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "TOG_M_Olympio_Sylvanus", "head_of_state": "fortunate_type", "head_of_government": "fortunate_type", "start_date": "1960-04-27", "death_date": "1963-01-13"}, "1341002": {"name": "Emmanuel Bodjoll\u00e9", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "TOG_M_Bodjolle_Emmanuel", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1963-01-13", "death_date": "1963-01-15"}, "1341003": {"name": "Nicolas Grunitzky", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "TOG_M_Grunitzky_Nicolas", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1963-01-15", "death_date": "1967-01-13"}, "1341004": {"name": "Kl\u00e9ber Dadjo", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "TOG_M_Dadjo_Kleber", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1967-01-13", "death_date": "1967-04-14"}, "1341005": {"name": "\u00c9tienne Eyad\u00e9ma", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "TOG_M_Eyadema_Etienne", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1967-04-14", "death_date": "2005-02-05"}, "1341006": {"name": "Joseph Kokou Koffigoh", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "TOG_M_Koffigoh_Joseph_K", "head_of_government": "democrat_type", "start_date": "1991-08-27", "death_date": "1994-04-23"}}}
+{
+    "color": [
+        65,
+        120,
+        128
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1341001": {
+            "name": "Sylvanus Olympio",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "TOG_M_Olympio_Sylvanus",
+            "start_date": "1960-04-27",
+            "death_date": "1963-01-13",
+            "type": "fortunate_type"
+        },
+        "1341002": {
+            "name": "Emmanuel Bodjollé",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "TOG_M_Bodjolle_Emmanuel",
+            "start_date": "1963-01-13",
+            "death_date": "1963-01-15",
+            "type": "ambitious_type"
+        },
+        "1341003": {
+            "name": "Nicolas Grunitzky",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "TOG_M_Grunitzky_Nicolas",
+            "start_date": "1963-01-15",
+            "death_date": "1967-01-13",
+            "type": "visionary_type"
+        },
+        "1341004": {
+            "name": "Kléber Dadjo",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "TOG_M_Dadjo_Kleber",
+            "start_date": "1967-01-13",
+            "death_date": "1967-04-14",
+            "type": "bureaucrat_type"
+        },
+        "1341005": {
+            "name": "Étienne Eyadéma",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "TOG_M_Eyadema_Etienne",
+            "start_date": "1967-04-14",
+            "death_date": "2005-02-05",
+            "type": "extremist_type"
+        },
+        "1341006": {
+            "name": "Joseph Kokou Koffigoh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "TOG_M_Koffigoh_Joseph_K",
+            "start_date": "1991-08-27",
+            "death_date": "1994-04-23",
+            "type": "democrat_type"
+        }
+    }
+}

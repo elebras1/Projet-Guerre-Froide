@@ -1,1 +1,167 @@
-{"color": [157, 239, 179], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1362000": {"name": "Wilhelmina", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "HOL_M_Wilhelmina", "head_of_state": "autocrat_type", "start_date": "1946-01-01", "death_date": "1948-09-04", "base": 1213000}, "1362001": {"name": "Juliana", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "HOL_M_Juliana", "head_of_state": "courteous_figure", "start_date": "1948-09-04", "death_date": "1980-04-30", "base": 1213001}, "1362004": {"name": "Beatrix", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "HOL_M_Beatrix", "head_of_state": "administrator_type", "start_date": "1980-04-30", "death_date": "1999-12-31", "base": 1213004}, "1362005": {"name": "Benny Wenda", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "WPA_M_Wenda_Benny", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1983-01-01", "death_date": "2300-01-01"}, "1362006": {"name": "John Ondawame", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "WPA_M_", "head_of_state": "reputable_type", "head_of_government": "reputable_type", "start_date": "1976-01-01", "death_date": "2300-01-01"}, "1362007": {"name": "Filep Karma", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "WPA_M_Karma_Filep", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1980-08-15", "death_date": "2300-01-01"}, "1362008": {"name": "Kelly Kwalik", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "WPA_M_Kwalik_Kelly", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1990-01-01", "death_date": "2009-12-16"}, "1362009": {"name": "Nicolaas Jouwe", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "WPA_M_Jouwe_Nicolaas", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1962-01-01", "death_date": "2300-01-01"}, "1362010": {"name": "Jacob Hendrik Prai", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "WPA_M_Prai_Jacob_H", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1971-07-01", "death_date": "2300-01-01"}, "1362011": {"name": "Seth Jafeth Roemkorem", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "WPA_M_Roemkorem_Seth_J", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1971-07-01", "death_date": "2300-01-01"}}}
+{
+    "color": [
+        157,
+        239,
+        179
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1362000": {
+            "name": "Wilhelmina",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Wilhelmina",
+            "start_date": "1946-01-01",
+            "death_date": "1948-09-04",
+            "type": "autocrat_type"
+        },
+        "1362001": {
+            "name": "Juliana",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Juliana",
+            "start_date": "1948-09-04",
+            "death_date": "1980-04-30",
+            "type": "courteous_figure"
+        },
+        "1362004": {
+            "name": "Beatrix",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Beatrix",
+            "start_date": "1980-04-30",
+            "death_date": "1999-12-31",
+            "type": "administrator_type"
+        },
+        "1362005": {
+            "name": "Benny Wenda",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "WPA_M_Wenda_Benny",
+            "start_date": "1983-01-01",
+            "death_date": "2300-01-01",
+            "type": "courageous_type"
+        },
+        "1362006": {
+            "name": "John Ondawame",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "WPA_M_",
+            "start_date": "1976-01-01",
+            "death_date": "2300-01-01",
+            "type": "reputable_type"
+        },
+        "1362007": {
+            "name": "Filep Karma",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "WPA_M_Karma_Filep",
+            "start_date": "1980-08-15",
+            "death_date": "2300-01-01",
+            "type": "courageous_type"
+        },
+        "1362008": {
+            "name": "Kelly Kwalik",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "WPA_M_Kwalik_Kelly",
+            "start_date": "1990-01-01",
+            "death_date": "2009-12-16",
+            "type": "extremist_type"
+        },
+        "1362009": {
+            "name": "Nicolaas Jouwe",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "WPA_M_Jouwe_Nicolaas",
+            "start_date": "1962-01-01",
+            "death_date": "2300-01-01",
+            "type": "hardliner_type"
+        },
+        "1362010": {
+            "name": "Jacob Hendrik Prai",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "WPA_M_Prai_Jacob_H",
+            "start_date": "1971-07-01",
+            "death_date": "2300-01-01",
+            "type": "ambitious_type"
+        },
+        "1362011": {
+            "name": "Seth Jafeth Roemkorem",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "WPA_M_Roemkorem_Seth_J",
+            "start_date": "1971-07-01",
+            "death_date": "2300-01-01",
+            "type": "visionary_type"
+        }
+    }
+}

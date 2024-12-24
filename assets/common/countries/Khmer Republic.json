@@ -1,1 +1,138 @@
-{"color": [79, 127, 128], "graphical_culture": "Asian", "default_templates": {"CHC_airborne_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "CHC_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "CHC_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "CHC_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "CHC_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "CHC_motorized_division": ["motorized_brigade", "motorized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "CHC_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "CHC_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "CHC_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "CHC_volunteer_division": ["militia_brigade", "militia_brigade", "militia_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1230001": {"name": "Khieu Samphan", "ideology": "maoist_idolg", "loyalty": 0.9, "picture": "CMB_M_Samphan_Khieu", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1976-04-04", "death_date": "1979-01-07", "base": 1230001}, "1230002": {"name": "Pol Pot", "ideology": "maoist_idolg", "loyalty": 0.95, "picture": "CMB_M_Pot_Pol", "head_of_government": "controversial_figure", "start_date": "1976-04-14", "death_date": "1979-01-07", "base": 1230002}, "1230003": {"name": "Nuon Chea", "ideology": "maoist_idolg", "loyalty": 1.0, "picture": "CMB_M_Chea_Nuon", "head_of_government": "controversial_figure", "start_date": "1976-09-27", "death_date": "1976-10-25", "base": 1230003}, "1230004": {"name": "Heng Samrin", "ideology": "communist_idolg", "loyalty": 0.8, "picture": "CMB_M_Samrin_Heng", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1979-01-07", "death_date": "1992-04-06", "base": 1230004}, "1230005": {"name": "Pen Sovann", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CMB_M_Sovann_Pen", "head_of_government": "bureaucrat_type", "start_date": "1981-06-27", "death_date": "1981-12-05", "base": 1230005}, "1230006": {"name": "Chan Si", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CMB_M_Si_Chan_dummy", "head_of_government": "bureaucrat_type", "start_date": "1981-12-05", "death_date": "1984-12-26", "base": 1230006}, "1230007": {"name": "Hun Sen", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CMB_M_Sen_Hun", "head_of_government": "bureaucrat_type", "start_date": "1984-12-26", "death_date": "1993-09-24", "base": 1230007}}}
+{
+    "color": [
+        79,
+        127,
+        128
+    ],
+    "graphical_culture": "Asian",
+    "default_templates": {
+        "CHC_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "CHC_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "CHC_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "CHC_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "CHC_volunteer_division": [
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1230001": {
+            "name": "Khieu Samphan",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.9,
+            "picture": "CMB_M_Samphan_Khieu",
+            "start_date": "1976-04-04",
+            "death_date": "1979-01-07",
+            "type": "controversial_figure"
+        },
+        "1230002": {
+            "name": "Pol Pot",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.95,
+            "picture": "CMB_M_Pot_Pol",
+            "start_date": "1976-04-14",
+            "death_date": "1979-01-07",
+            "type": "controversial_figure"
+        },
+        "1230003": {
+            "name": "Nuon Chea",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Chea_Nuon",
+            "start_date": "1976-09-27",
+            "death_date": "1976-10-25",
+            "type": "controversial_figure"
+        },
+        "1230004": {
+            "name": "Heng Samrin",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "CMB_M_Samrin_Heng",
+            "start_date": "1979-01-07",
+            "death_date": "1992-04-06",
+            "type": "reformer_type"
+        },
+        "1230005": {
+            "name": "Pen Sovann",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Sovann_Pen",
+            "start_date": "1981-06-27",
+            "death_date": "1981-12-05",
+            "type": "bureaucrat_type"
+        },
+        "1230006": {
+            "name": "Chan Si",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Si_Chan_dummy",
+            "start_date": "1981-12-05",
+            "death_date": "1984-12-26",
+            "type": "bureaucrat_type"
+        },
+        "1230007": {
+            "name": "Hun Sen",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Sen_Hun",
+            "start_date": "1984-12-26",
+            "death_date": "1993-09-24",
+            "type": "bureaucrat_type"
+        }
+    }
+}

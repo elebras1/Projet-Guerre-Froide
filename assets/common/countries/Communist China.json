@@ -941,407 +941,369 @@
             "ideology": "maoist_idolg",
             "loyalty": 0.9,
             "picture": "CHC_M_Zedong_Mao",
-            "head_of_state": "dictator_type",
-            "head_of_government": "dictator_type",
             "start_date": "1945-01-01",
-            "death_date": "1976-09-09"
+            "death_date": "1976-09-09",
+            "type": "dictator_type"
         },
         "1151003": {
             "name": "Liu Shaoqi",
             "ideology": "maoist_idolg",
             "loyalty": 1.0,
             "picture": "CHC_M_Shaoqi_Liu",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1959-04-27",
-            "death_date": "1968-10-31"
+            "death_date": "1968-10-31",
+            "type": "reformer_type"
         },
         "1151105": {
             "name": "Song Qingling",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Qingling_Song",
-            "head_of_state": "courteous_figure",
-            "head_of_government": "courteous_figure",
             "start_date": "1968-10-31",
-            "death_date": "1981-05-29"
+            "death_date": "1981-05-29",
+            "type": "courteous_figure"
         },
         "1151004": {
             "name": "Hua Guofeng",
             "ideology": "maoist_idolg",
             "loyalty": 0.8,
             "picture": "CHC_M_Guofeng_Hua",
-            "head_of_state": "autocrat_type",
-            "head_of_government": "autocrat_type",
             "start_date": "1976-01-08",
-            "death_date": "1981-06-29"
+            "death_date": "1981-06-29",
+            "type": "autocrat_type"
         },
         "1151006": {
             "name": "Zhao Ziyang",
             "ideology": "maoist_idolg",
             "loyalty": 0.8,
             "picture": "CHC_M_Ziyang_Zhao",
-            "head_of_government": "liberal_type",
             "start_date": "1980-09-10",
-            "death_date": "1989-06-23"
+            "death_date": "1989-06-23",
+            "type": "liberal_type"
         },
         "1151007": {
             "name": "Hu Yaobang",
             "ideology": "maoist_idolg",
             "loyalty": 0.9,
             "picture": "CHC_M_Yaobang_Hu",
-            "head_of_state": "reformer_type",
             "start_date": "1981-06-29",
-            "death_date": "1989-04-15"
+            "death_date": "1989-04-15",
+            "type": "reformer_type"
         },
         "1151009": {
             "name": "Li Peng",
             "ideology": "maoist_idolg",
             "loyalty": 1.0,
             "picture": "CHC_M_Peng_Li",
-            "head_of_government": "bureaucrat_type",
             "start_date": "1987-11-24",
-            "death_date": "1998-03-17"
+            "death_date": "1998-03-17",
+            "type": "bureaucrat_type"
         },
         "1151010": {
             "name": "Jiang Zemin",
             "ideology": "maoist_idolg",
             "loyalty": 1.0,
             "picture": "CHC_M_Zemin_Jiang",
-            "head_of_state": "autocrat_type",
             "start_date": "1989-06-23",
-            "death_date": "1999-12-31"
+            "death_date": "1999-12-31",
+            "type": "autocrat_type"
         },
         "1151100": {
             "name": "Mao Yuanxin",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Yuanxin_Mao",
-            "head_of_state": "extremist_type",
-            "head_of_government": "extremist_type",
             "start_date": "1976-09-09",
-            "death_date": "2300-01-01"
+            "death_date": "2300-01-01",
+            "type": "extremist_type"
         },
         "1151102": {
             "name": "Lin Biao",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Biao_Lin",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1945-01-01",
-            "death_date": "1971-04-27"
+            "death_date": "1971-04-27",
+            "type": "hardliner_type"
         },
         "1151103": {
             "name": "Zhou Enlai",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Enlai_Zhou",
-            "head_of_state": "courteous_figure",
-            "head_of_government": "courteous_figure",
             "start_date": "1946-01-01",
-            "death_date": "1976-01-08"
+            "death_date": "1976-01-08",
+            "type": "courteous_figure"
         },
         "1151104": {
             "name": "Zhang Guotao",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Guotao_Zhang",
-            "head_of_state": "ambitious_type",
-            "head_of_government": "ambitious_type",
             "start_date": "1938-01-01",
-            "death_date": "1979-12-03"
+            "death_date": "1979-12-03",
+            "type": "ambitious_type"
         },
         "1151106": {
             "name": "Dong Biwu",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Biwu_Dong",
-            "head_of_state": "administrator_type",
-            "head_of_government": "administrator_type",
             "start_date": "1946-01-01",
-            "death_date": "1975-04-02"
+            "death_date": "1975-04-02",
+            "type": "administrator_type"
         },
         "1151107": {
             "name": "Zhu De",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_De_Zhu",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1946-01-01",
-            "death_date": "1976-07-06"
+            "death_date": "1976-07-06",
+            "type": "hardliner_type"
         },
         "1151108": {
             "name": "Chen Yun",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Yun_Chen",
-            "head_of_state": "honest_type",
-            "head_of_government": "honest_type",
             "start_date": "1946-01-01",
-            "death_date": "1995-04-10"
+            "death_date": "1995-04-10",
+            "type": "honest_type"
         },
         "1151109": {
             "name": "Deng Xiaopeng",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Xiaopeng_Deng",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1959-04-18",
-            "death_date": "1997-02-19"
+            "death_date": "1997-02-19",
+            "type": "reformer_type"
         },
         "1151110": {
             "name": "Jiang Qing",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Qing_Jiang",
-            "head_of_state": "extremist_type",
-            "head_of_government": "extremist_type",
             "start_date": "1949-10-01",
-            "death_date": "1976-09-09"
+            "death_date": "1976-09-09",
+            "type": "extremist_type"
         },
         "1151111": {
             "name": "Zhang Chunqiao",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Chunqiao_Zhang",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1946-01-01",
-            "death_date": "2005-04-21"
+            "death_date": "2005-04-21",
+            "type": "hardliner_type"
         },
         "1151112": {
             "name": "Yao Wenyuan",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Wenyuan_Yao",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1957-01-01",
-            "death_date": "2005-09-23"
+            "death_date": "2005-09-23",
+            "type": "hardliner_type"
         },
         "1151113": {
             "name": "Wang Hongwen",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Hongwen_Wang",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1967-01-01",
-            "death_date": "1992-08-03"
+            "death_date": "1992-08-03",
+            "type": "hardliner_type"
         },
         "1151114": {
             "name": "Guo Moruo",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Moruo_Guo",
-            "head_of_state": "reputable_type",
-            "head_of_government": "reputable_type",
             "start_date": "1949-10-01",
-            "death_date": "1978-07-12"
+            "death_date": "1978-07-12",
+            "type": "reputable_type"
         },
         "1151115": {
             "name": "Peng Dehuai",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Dehuai_Peng",
-            "head_of_state": "courageous_type",
-            "head_of_government": "courageous_type",
             "start_date": "1934-01-01",
-            "death_date": "1974-11-29"
+            "death_date": "1974-11-29",
+            "type": "courageous_type"
         },
         "1151116": {
             "name": "He Long",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Long_He",
-            "head_of_state": "loyal_type",
-            "head_of_government": "loyal_type",
             "start_date": "1945-01-01",
-            "death_date": "1969-06-08"
+            "death_date": "1969-06-08",
+            "type": "loyal_type"
         },
         "1151117": {
             "name": "Chen Yi",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Yi_Chen",
-            "head_of_state": "courteous_figure",
-            "head_of_government": "courteous_figure",
             "start_date": "1955-01-01",
-            "death_date": "1972-01-06"
+            "death_date": "1972-01-06",
+            "type": "courteous_figure"
         },
         "1151118": {
             "name": "Ulanhu",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Ulanhu",
-            "head_of_state": "controversial_figure",
-            "head_of_government": "controversial_figure",
             "start_date": "1947-01-01",
-            "death_date": "1988-12-08"
+            "death_date": "1988-12-08",
+            "type": "controversial_figure"
         },
         "1151119": {
             "name": "Li Fuchun",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Fuchun_Li",
-            "head_of_state": "administrator_type",
-            "head_of_government": "administrator_type",
             "start_date": "1945-01-01",
-            "death_date": "1975-01-09"
+            "death_date": "1975-01-09",
+            "type": "administrator_type"
         },
         "1151120": {
             "name": "Li Xiannian",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Xiannian_Li",
-            "head_of_state": "fortunate_type",
-            "head_of_government": "fortunate_type",
             "start_date": "1949-01-01",
-            "death_date": "1992-06-21"
+            "death_date": "1992-06-21",
+            "type": "fortunate_type"
         },
         "1151121": {
             "name": "Nie Rongzhen",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Rongzhen_Nie",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1955-01-01",
-            "death_date": "1992-05-14"
+            "death_date": "1992-05-14",
+            "type": "hardliner_type"
         },
         "1151122": {
             "name": "Bo Yibo",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Yibo_Bo",
-            "head_of_state": "courageous_type",
-            "head_of_government": "courageous_type",
             "start_date": "1946-01-01",
             "death_date": "2007-01-15",
-            "base": 1424009
+            "type": "courageous_type"
         },
         "1151123": {
             "name": "Lu Dingyi",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Dingyi_Lu",
-            "head_of_state": "traditionalist_type",
-            "head_of_government": "traditionalist_type",
             "start_date": "1945-01-01",
-            "death_date": "1996-05-09"
+            "death_date": "1996-05-09",
+            "type": "traditionalist_type"
         },
         "1151124": {
             "name": "Luo Ruiqing",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Ruiqing_Luo",
-            "head_of_state": "dictator_type",
-            "head_of_government": "dictator_type",
             "start_date": "1945-01-01",
-            "death_date": "1978-08-03"
+            "death_date": "1978-08-03",
+            "type": "dictator_type"
         },
         "1151125": {
             "name": "Xi Zhongxun",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Zhongxun_Xi",
-            "head_of_state": "liberal_type",
-            "head_of_government": "liberal_type",
             "start_date": "1945-01-01",
-            "death_date": "1988-04-01"
+            "death_date": "1988-04-01",
+            "type": "liberal_type"
         },
         "1151126": {
             "name": "Xie Fuzhi",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Fuzhi_Xie",
-            "head_of_state": "extremist_type",
-            "head_of_government": "extremist_type",
             "start_date": "1959-09-01",
-            "death_date": "1976-06-06"
+            "death_date": "1976-06-06",
+            "type": "extremist_type"
         },
         "1151127": {
             "name": "Tao Zhu",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Zhu_Tao",
-            "head_of_state": "honest_type",
-            "head_of_government": "honest_type",
             "start_date": "1965-01-01",
-            "death_date": "1969-11-30"
+            "death_date": "1969-11-30",
+            "type": "honest_type"
         },
         "1151128": {
             "name": "Yang Shangkun",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Shangkun_Yang",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1956-01-01",
-            "death_date": "1993-03-27"
+            "death_date": "1993-03-27",
+            "type": "reformer_type"
         },
         "1151129": {
             "name": "Ye Jianying",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Jianying_Ye",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1945-01-01",
-            "death_date": "1985-01-01"
+            "death_date": "1985-01-01",
+            "type": "reformer_type"
         },
         "1151130": {
             "name": "Luo Ronghuan",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Ronghuan_Luo",
-            "head_of_state": "parental_type",
-            "head_of_government": "parental_type",
             "start_date": "1945-01-01",
-            "death_date": "1963-12-16"
+            "death_date": "1963-12-16",
+            "type": "parental_type"
         },
         "1151131": {
             "name": "Xu Xiangqian",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Xiangqian_Xu",
-            "head_of_state": "reputable_type",
-            "head_of_government": "reputable_type",
             "start_date": "1945-01-01",
-            "death_date": "1990-09-21"
+            "death_date": "1990-09-21",
+            "type": "reputable_type"
         },
         "1151132": {
             "name": "Wang Zhen",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Zhen_Wang",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1982-04-15",
-            "death_date": "1993-03-12"
+            "death_date": "1993-03-12",
+            "type": "hardliner_type"
         },
         "1151133": {
             "name": "Gao Gang",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Gang_Gao",
-            "head_of_state": "ambitious_type",
-            "head_of_government": "ambitious_type",
             "start_date": "1945-01-01",
-            "death_date": "1954-08-01"
+            "death_date": "1954-08-01",
+            "type": "ambitious_type"
         },
         "1151134": {
             "name": "Ngapoi Ngawang Jigme",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "CHC_M_Jigme_Ngapoi_N",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1951-05-23",
-            "death_date": "2009-12-23"
+            "death_date": "2009-12-23",
+            "type": "reformer_type"
         }
     }
 }

@@ -1,1 +1,210 @@
-{"color": [136, 91, 112], "graphical_culture": "Asian", "default_templates": {"CHC_airborne_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "CHC_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "CHC_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "CHC_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "CHC_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "CHC_motorized_division": ["motorized_brigade", "motorized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "CHC_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "CHC_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "CHC_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "CHC_volunteer_division": ["militia_brigade", "militia_brigade", "militia_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1426000": {"name": "Ma Hongkui", "ideology": "paternal_auto_idolg", "loyalty": 1, "picture": "CXB_M_Ma_Hongkui", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1931-01-01", "death_date": "1970-01-01"}, "1426001": {"name": "Ma Hongbin", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "CXB_M_Ma_Hongbin", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1930-01-01", "death_date": "1960-10-21"}, "1426002": {"name": "Ma Dunjing", "ideology": "maoist_idolg", "loyalty": 0.8, "picture": "CXB_M_Ma_Dunjing", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1949-01-01", "death_date": "2003-09-03"}, "1426100": {"name": "Ma Hushan", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "CXB_M_Hushan_Ma", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1936-01-01", "death_date": "1954-06-12"}, "1426101": {"name": "Ma Bufang", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "CXB_M_Bufang_Ma", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1936-01-01", "death_date": "1975-01-01"}, "1426102": {"name": "Ma Buqing", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "CXB_M_Buqing_Ma", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1936-01-01", "death_date": "1977-01-01"}, "1426103": {"name": "Ma Chengxiang", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "CXB_M_Chengxiang_Ma", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1945-01-01", "death_date": "1991-01-01"}, "1426104": {"name": "Li Chengyu", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "CXB_M_Chengyu_Li", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1971-01-01", "death_date": "2300-01-01"}, "1426105": {"name": "Liu Weiping", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "CXB_M_Weiping_Liu", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1980-01-01", "death_date": "2300-01-01"}, "1426106": {"name": "Cai Wu", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "CXB_M_Wu_Cai", "head_of_state": "reputable_type", "head_of_government": "reputable_type", "start_date": "1970-01-01", "death_date": "2300-01-01"}, "1426107": {"name": "Pan Zili", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "CXB_M_Zili_Pan", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1946-01-01", "death_date": "1972-05-22"}, "1426108": {"name": "Ma Jiyuan", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "CXB_M_Jiyuan_Ma", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1945-01-01", "death_date": "2012-02-27"}, "1426110": {"name": "Vend Vahindra", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "CXB_M_Vahindra_Vend", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1946-01-01", "death_date": "1962-05-05"}, "1426111": {"name": "Uku Ma-sing", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "CXB_M_Ma-sing_Uku", "head_of_state": "fortunate_type", "head_of_government": "fortunate_type", "start_date": "1946-01-01", "death_date": "1985-04-25"}, "1426112": {"name": "Viktor Ma-sing", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "CXB_M_Ma-sing_Viktor", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1951-01-01", "death_date": "2001-03-18"}}}
+{
+    "color": [
+        136,
+        91,
+        112
+    ],
+    "graphical_culture": "Asian",
+    "default_templates": {
+        "CHC_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "CHC_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "CHC_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "CHC_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "CHC_volunteer_division": [
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1426000": {
+            "name": "Ma Hongkui",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1,
+            "picture": "CXB_M_Ma_Hongkui",
+            "start_date": "1931-01-01",
+            "death_date": "1970-01-01",
+            "type": "extremist_type"
+        },
+        "1426001": {
+            "name": "Ma Hongbin",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "CXB_M_Ma_Hongbin",
+            "start_date": "1930-01-01",
+            "death_date": "1960-10-21",
+            "type": "autocrat_type"
+        },
+        "1426002": {
+            "name": "Ma Dunjing",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.8,
+            "picture": "CXB_M_Ma_Dunjing",
+            "start_date": "1949-01-01",
+            "death_date": "2003-09-03",
+            "type": "autocrat_type"
+        },
+        "1426100": {
+            "name": "Ma Hushan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Hushan_Ma",
+            "start_date": "1936-01-01",
+            "death_date": "1954-06-12",
+            "type": "autocrat_type"
+        },
+        "1426101": {
+            "name": "Ma Bufang",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Bufang_Ma",
+            "start_date": "1936-01-01",
+            "death_date": "1975-01-01",
+            "type": "visionary_type"
+        },
+        "1426102": {
+            "name": "Ma Buqing",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Buqing_Ma",
+            "start_date": "1936-01-01",
+            "death_date": "1977-01-01",
+            "type": "courageous_type"
+        },
+        "1426103": {
+            "name": "Ma Chengxiang",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Chengxiang_Ma",
+            "start_date": "1945-01-01",
+            "death_date": "1991-01-01",
+            "type": "courageous_type"
+        },
+        "1426104": {
+            "name": "Li Chengyu",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Chengyu_Li",
+            "start_date": "1971-01-01",
+            "death_date": "2300-01-01",
+            "type": "bureaucrat_type"
+        },
+        "1426105": {
+            "name": "Liu Weiping",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Weiping_Liu",
+            "start_date": "1980-01-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "1426106": {
+            "name": "Cai Wu",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Wu_Cai",
+            "start_date": "1970-01-01",
+            "death_date": "2300-01-01",
+            "type": "reputable_type"
+        },
+        "1426107": {
+            "name": "Pan Zili",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Zili_Pan",
+            "start_date": "1946-01-01",
+            "death_date": "1972-05-22",
+            "type": "ambitious_type"
+        },
+        "1426108": {
+            "name": "Ma Jiyuan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Jiyuan_Ma",
+            "start_date": "1945-01-01",
+            "death_date": "2012-02-27",
+            "type": "courageous_type"
+        },
+        "1426110": {
+            "name": "Vend Vahindra",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Vahindra_Vend",
+            "start_date": "1946-01-01",
+            "death_date": "1962-05-05",
+            "type": "ambitious_type"
+        },
+        "1426111": {
+            "name": "Uku Ma-sing",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Ma-sing_Uku",
+            "start_date": "1946-01-01",
+            "death_date": "1985-04-25",
+            "type": "fortunate_type"
+        },
+        "1426112": {
+            "name": "Viktor Ma-sing",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "CXB_M_Ma-sing_Viktor",
+            "start_date": "1951-01-01",
+            "death_date": "2001-03-18",
+            "type": "traditionalist_type"
+        }
+    }
+}

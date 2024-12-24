@@ -1,1 +1,293 @@
-{"color": [113, 138, 183], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1214001": {"name": "Tiburcio Car\u00edas Andino", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "HON_M_Andino_Tiburcio_C", "head_of_government": "parental_type", "head_of_state": "parental_type", "start_date": "1933-02-01", "death_date": "1956-10-21"}, "1214002": {"name": "Juan Manuel G\u00e1lvez", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "HON_M_Galvez_Juan_M", "head_of_government": "reformer_type", "head_of_state": "reformer_type", "start_date": "1949-01-01", "death_date": "1954-12-05"}, "1214003": {"name": "Julio Lozano D\u00edaz", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "HON_M_Diaz_Julio_L", "head_of_government": "lethargic_type", "head_of_state": "lethargic_type", "start_date": "1954-12-05", "death_date": "1956-10-21"}, "1214004": {"name": "Ram\u00f3n Villeda Morales", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "HON_M_Morales_Ramon_V", "head_of_government": "democrat_type", "head_of_state": "democrat_type", "start_date": "1956-10-21", "death_date": "1963-10-03"}, "1214005": {"name": "Oswaldo L\u00f3pez Arellano", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "HON_M_Arellano_Oswaldo_L", "head_of_government": "autocrat_type", "head_of_state": "autocrat_type", "start_date": "1963-10-03", "death_date": "1975-04-22"}, "1214006": {"name": "Ram\u00f3n Ernesto Cruz Ucl\u00e9s", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "HON_M_Ucles_Ramon_E_C", "head_of_state": "traditionalist_type", "start_date": "1971-06-07", "death_date": "1972-12-04"}, "1214007": {"name": "Juan Alberto Melgar Castro", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "HON_M_Castro_Juan_A_M", "head_of_government": "lethargic_type", "head_of_state": "lethargic_type", "start_date": "1975-04-22", "death_date": "1978-08-07"}, "1214008": {"name": "Policarpo Paz Garc\u00eda", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "HON_M_Garcia_Policarpo_Paz", "head_of_government": "dictator_type", "head_of_state": "dictator_type", "start_date": "1978-08-07", "death_date": "1982-01-27"}, "1214009": {"name": "Roberto Suazo C\u00f3rdova", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "HON_M_Cordova_Roberto_S", "head_of_government": "ambitious_type", "head_of_state": "ambitious_type", "start_date": "1982-01-27", "death_date": "1986-01-27"}, "1214010": {"name": "Jos\u00e9 Azcona del Hoyo", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "HON_M_Hoyo_Jose_A", "head_of_government": "bureaucrat_type", "head_of_state": "bureaucrat_type", "start_date": "1986-01-27", "death_date": "1990-01-27"}, "1214011": {"name": "Rafael Leonardo Callejas Romero", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "HON_M_Romero_Rafael_L_C", "head_of_government": "reformer_type", "head_of_state": "reformer_type", "start_date": "1986-01-27", "death_date": "1994-01-27"}, "1214012": {"name": "Carlos Roberto Flores Facuss\u00e9", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "HON_M_Facusse_Carlos_R_F", "head_of_government": "traditionalist_type", "head_of_state": "traditionalist_type", "start_date": "1990-01-27", "death_date": "1994-01-27"}, "1214013": {"name": "Dionisio Ramos Bejarano", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "HON_M_Bejarano_Dionisio_R", "head_of_government": "supreme_leader", "head_of_state": "supreme_leader", "start_date": "1948-01-01", "death_date": "1992-01-01"}, "1214014": {"name": "Dr. Miguel A. Fern\u00e1ndez", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "HON_M_Fernandez_Miguel_A", "head_of_government": "reformer_type", "head_of_state": "reformer_type", "start_date": "1982-01-27", "death_date": "1986-01-27"}, "1214015": {"name": "Dr. Enrique A. C. Paz", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "HON_M_Paz_Enrique", "head_of_government": "moral_type", "head_of_state": "moral_type", "start_date": "1986-01-27", "death_date": "1990-01-27"}, "1214016": {"name": "Ramos Dionisio Bejarano", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "HON_M_Bejarano_Ramos_D", "head_of_government": "zealous_type", "head_of_state": "zealous_type", "start_date": "1946-01-01", "death_date": "1992-01-01"}, "1214017": {"name": "Rigoberto Padilla Rush", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "HON_M_Rush_Rigoberto_P", "head_of_government": "zealous_type", "head_of_state": "zealous_type", "start_date": "1954-01-01", "death_date": "1998-10-24"}, "1214018": {"name": "Mario Virgilio Caras", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "HON_M_Caras_Mario_V", "head_of_government": "courageous_type", "head_of_state": "courageous_type", "start_date": "1975-01-01", "death_date": "1992-01-01"}, "1214019": {"name": "Rogelio Martinez Reina", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "HON_M_Reina_Rogelio_M", "head_of_government": "courageous_type", "head_of_state": "courageous_type", "start_date": "1975-01-01", "death_date": "1992-01-01"}, "1214020": {"name": "Roque J. Rodriguez", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "HON_M_Rodriguez_Roque_J", "head_of_government": "ambitious_type", "head_of_state": "ambitious_type", "start_date": "1946-01-01", "death_date": "1976-01-01"}, "1214021": {"name": "Hector Caraccioli", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "HON_M_Caraccioli_Hector", "head_of_government": "ambitious_type", "head_of_state": "ambitious_type", "start_date": "1952-01-01", "death_date": "1992-01-01"}, "1214022": {"name": "Roberto Galvez", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "HON_M_Galvez_Roberto", "head_of_government": "ambitious_type", "head_of_state": "ambitious_type", "start_date": "1955-01-01", "death_date": "1995-01-01"}, "1214023": {"name": "Ram\u00f3n Amaya Amador", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "HON_M_Amador_Ramon_A", "head_of_government": "liberal_type", "head_of_state": "liberal_type", "start_date": "1946-01-01", "death_date": "1966-11-24"}, "1214024": {"name": "Angel Z\u00fa\u00f1iga Huete", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "HON_M_Huete_Angel_Z", "head_of_government": "reformer_type", "head_of_state": "reformer_type", "start_date": "1932-11-01", "death_date": "1953-06-17"}}}
+{
+    "color": [
+        113,
+        138,
+        183
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1214001": {
+            "name": "Tiburcio Carías Andino",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "HON_M_Andino_Tiburcio_C",
+            "start_date": "1933-02-01",
+            "death_date": "1956-10-21",
+            "type": "parental_type"
+        },
+        "1214002": {
+            "name": "Juan Manuel Gálvez",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HON_M_Galvez_Juan_M",
+            "start_date": "1949-01-01",
+            "death_date": "1954-12-05",
+            "type": "reformer_type"
+        },
+        "1214003": {
+            "name": "Julio Lozano Díaz",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "HON_M_Diaz_Julio_L",
+            "start_date": "1954-12-05",
+            "death_date": "1956-10-21",
+            "type": "lethargic_type"
+        },
+        "1214004": {
+            "name": "Ramón Villeda Morales",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "HON_M_Morales_Ramon_V",
+            "start_date": "1956-10-21",
+            "death_date": "1963-10-03",
+            "type": "democrat_type"
+        },
+        "1214005": {
+            "name": "Oswaldo López Arellano",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "HON_M_Arellano_Oswaldo_L",
+            "start_date": "1963-10-03",
+            "death_date": "1975-04-22",
+            "type": "autocrat_type"
+        },
+        "1214006": {
+            "name": "Ramón Ernesto Cruz Uclés",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HON_M_Ucles_Ramon_E_C",
+            "start_date": "1971-06-07",
+            "death_date": "1972-12-04",
+            "type": "traditionalist_type"
+        },
+        "1214007": {
+            "name": "Juan Alberto Melgar Castro",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HON_M_Castro_Juan_A_M",
+            "start_date": "1975-04-22",
+            "death_date": "1978-08-07",
+            "type": "lethargic_type"
+        },
+        "1214008": {
+            "name": "Policarpo Paz García",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HON_M_Garcia_Policarpo_Paz",
+            "start_date": "1978-08-07",
+            "death_date": "1982-01-27",
+            "type": "dictator_type"
+        },
+        "1214009": {
+            "name": "Roberto Suazo Córdova",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "HON_M_Cordova_Roberto_S",
+            "start_date": "1982-01-27",
+            "death_date": "1986-01-27",
+            "type": "ambitious_type"
+        },
+        "1214010": {
+            "name": "José Azcona del Hoyo",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "HON_M_Hoyo_Jose_A",
+            "start_date": "1986-01-27",
+            "death_date": "1990-01-27",
+            "type": "bureaucrat_type"
+        },
+        "1214011": {
+            "name": "Rafael Leonardo Callejas Romero",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HON_M_Romero_Rafael_L_C",
+            "start_date": "1986-01-27",
+            "death_date": "1994-01-27",
+            "type": "reformer_type"
+        },
+        "1214012": {
+            "name": "Carlos Roberto Flores Facussé",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "HON_M_Facusse_Carlos_R_F",
+            "start_date": "1990-01-27",
+            "death_date": "1994-01-27",
+            "type": "traditionalist_type"
+        },
+        "1214013": {
+            "name": "Dionisio Ramos Bejarano",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Bejarano_Dionisio_R",
+            "start_date": "1948-01-01",
+            "death_date": "1992-01-01",
+            "type": "supreme_leader"
+        },
+        "1214014": {
+            "name": "Dr. Miguel A. Fernández",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Fernandez_Miguel_A",
+            "start_date": "1982-01-27",
+            "death_date": "1986-01-27",
+            "type": "reformer_type"
+        },
+        "1214015": {
+            "name": "Dr. Enrique A. C. Paz",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Paz_Enrique",
+            "start_date": "1986-01-27",
+            "death_date": "1990-01-27",
+            "type": "moral_type"
+        },
+        "1214016": {
+            "name": "Ramos Dionisio Bejarano",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Bejarano_Ramos_D",
+            "start_date": "1946-01-01",
+            "death_date": "1992-01-01",
+            "type": "zealous_type"
+        },
+        "1214017": {
+            "name": "Rigoberto Padilla Rush",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Rush_Rigoberto_P",
+            "start_date": "1954-01-01",
+            "death_date": "1998-10-24",
+            "type": "zealous_type"
+        },
+        "1214018": {
+            "name": "Mario Virgilio Caras",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Caras_Mario_V",
+            "start_date": "1975-01-01",
+            "death_date": "1992-01-01",
+            "type": "courageous_type"
+        },
+        "1214019": {
+            "name": "Rogelio Martinez Reina",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Reina_Rogelio_M",
+            "start_date": "1975-01-01",
+            "death_date": "1992-01-01",
+            "type": "courageous_type"
+        },
+        "1214020": {
+            "name": "Roque J. Rodriguez",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Rodriguez_Roque_J",
+            "start_date": "1946-01-01",
+            "death_date": "1976-01-01",
+            "type": "ambitious_type"
+        },
+        "1214021": {
+            "name": "Hector Caraccioli",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Caraccioli_Hector",
+            "start_date": "1952-01-01",
+            "death_date": "1992-01-01",
+            "type": "ambitious_type"
+        },
+        "1214022": {
+            "name": "Roberto Galvez",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Galvez_Roberto",
+            "start_date": "1955-01-01",
+            "death_date": "1995-01-01",
+            "type": "ambitious_type"
+        },
+        "1214023": {
+            "name": "Ramón Amaya Amador",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Amador_Ramon_A",
+            "start_date": "1946-01-01",
+            "death_date": "1966-11-24",
+            "type": "liberal_type"
+        },
+        "1214024": {
+            "name": "Angel Zúñiga Huete",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "HON_M_Huete_Angel_Z",
+            "start_date": "1932-11-01",
+            "death_date": "1953-06-17",
+            "type": "reformer_type"
+        }
+    }
+}

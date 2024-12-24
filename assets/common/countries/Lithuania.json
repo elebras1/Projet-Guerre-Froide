@@ -1,407 +1,374 @@
 {
-  "color": [
-    219,
-    219,
-    119
-  ],
-  "graphical_culture": "Generic",
-  "default_templates": {
-    "USA_air_cavalry_division": [
-      "air_cav_brigade",
-      "air_cav_brigade",
-      "air_cav_brigade",
-      "air_cav_brigade"
+    "color": [
+        219,
+        219,
+        119
     ],
-    "USA_armored_division": [
-      "armor_brigade",
-      "armor_brigade",
-      "heavy_mechanized_brigade",
-      "light_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "USA_cavalry_division": [
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "sp_artillery_brigade"
-    ],
-    "USA_heavy_mechanized_division": [
-      "heavy_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "light_mechanized_brigade",
-      "armor_brigade",
-      "sp_artillery_brigade"
-    ],
-    "USA_light_mechanized_division": [
-      "light_mechanized_brigade",
-      "light_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "USA_motorized_division": [
-      "motorized_brigade",
-      "motorized_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "USA_infantry_division": [
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "artillery_brigade"
-    ],
-    "USA_marine_division": [
-      "marine_brigade",
-      "marine_brigade",
-      "marine_brigade",
-      "marine_brigade"
-    ],
-    "USA_mountain_division": [
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade"
-    ],
-    "USA_national_guard_division": [
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "artillery_brigade"
-    ]
-  },
-  "unit_names": {},
-  "ministers": {
-    "1505001": {
-      "name": "Antanas Snieckus",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "LIT_M_Snieckus_A",
-      "head_of_government": "dictator_type",
-      "head_of_state": "dictator_type",
-      "start_date": "1946-01-01",
-      "death_date": "1974-01-22"
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
     },
-    "1505002": {
-      "name": "Petras Gri�kevicius",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "LIT_M_Gri�kevicius_P",
-      "head_of_government": "autocrat_type",
-      "head_of_state": "autocrat_type",
-      "start_date": "1964-01-01",
-      "death_date": "1987-11-14"
-    },
-    "1505003": {
-      "name": "Ringaudas Songaila",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "LIT_M_Songaila_R",
-      "head_of_government": "bureaucrat_type",
-      "head_of_state": "bureaucrat_type",
-      "start_date": "1979-01-01",
-      "death_date": "1992-03-01"
-    },
-    "1505100": {
-      "name": "Karolis I fon Urachas",
-      "ideology": "social_cons_idolg",
-      "moral_leader": true,
-      "loyalty": 0.5,
-      "picture": "LIT_M_Karolis_I",
-      "head_of_state": "parental_type",
-      "start_date": "1928-03-24",
-      "death_date": "1981-08-15"
-    },
-    "1505101": {
-      "name": "Karolis II fon Urachas",
-      "ideology": "social_cons_idolg",
-      "moral_leader": true,
-      "loyalty": 0.49,
-      "picture": "LIT_M_Karolis_II",
-      "head_of_state": "traditionalist_type",
-      "start_date": "1981-08-15",
-      "death_date": "2300-01-01"
-    },
-    "1505102": {
-      "name": "Vilhelmas I fon Urachas",
-      "ideology": "social_cons_idolg",
-      "moral_leader": true,
-      "loyalty": 0.48,
-      "picture": "LIT_M_Vilhelmas_I",
-      "head_of_state": "ambitious_type",
-      "start_date": "1991-02-09",
-      "death_date": "2300-01-01"
-    },
-    "1505103": {
-      "name": "Antanas Terleckas",
-      "ideology": "social_cons_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Terleckas_Antanas",
-      "head_of_state": "moral_type",
-      "head_of_government": "moral_type",
-      "start_date": "1958-06-15",
-      "death_date": "2012-01-01"
-    },
-    "1505104": {
-      "name": "Kazys �kirpa",
-      "ideology": "fascistic_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Skirpa_Kazys",
-      "head_of_state": "courageous_type",
-      "head_of_government": "courageous_type",
-      "start_date": "1946-01-01",
-      "death_date": "1979-08-18"
-    },
-    "1505105": {
-      "name": "Juozas Ambrazevicius",
-      "ideology": "fascistic_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Ambrazevicius_Juozas",
-      "head_of_state": "traditionalist_type",
-      "head_of_government": "traditionalist_type",
-      "start_date": "1946-01-01",
-      "death_date": "1974-10-28"
-    },
-    "1505106": {
-      "name": "Aleksandras Stulginskis",
-      "ideology": "market_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Stulginskis_Aleksandras",
-      "head_of_state": "religious_type",
-      "head_of_government": "religious_type",
-      "start_date": "1920-06-19",
-      "death_date": "1969-09-22"
-    },
-    "1505107": {
-      "name": "Kazys Grinius",
-      "ideology": "social_democrat_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Grinius_Kazys",
-      "head_of_state": "courageous_type",
-      "head_of_government": "courageous_type",
-      "start_date": "1926-06-07",
-      "death_date": "1950-06-04"
-    },
-    "1505108": {
-      "name": "Antanas Merkys",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Merkys_Antanas",
-      "head_of_state": "controversial_figure",
-      "head_of_government": "controversial_figure",
-      "start_date": "1939-11-21",
-      "death_date": "1955-03-05"
-    },
-    "1505109": {
-      "name": "Justas Paleckis",
-      "ideology": "communist_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Paleckis_Justas",
-      "head_of_state": "controversial_figure",
-      "head_of_government": "controversial_figure",
-      "start_date": "1940-06-17",
-      "death_date": "1980-01-26"
-    },
-    "1505110": {
-      "name": "Vidmantas Bri�ka",
-      "ideology": "fascistic_idolg",
-      "loyalty": 0.25,
-      "picture": "LIT_M_Briska_Vidmantas",
-      "head_of_state": "autocrat_type",
-      "head_of_government": "autocrat_type",
-      "start_date": "1946-01-01",
-      "death_date": "1980-12-21"
-    },
-    "1505111": {
-      "name": "Povilas Plechavicius",
-      "ideology": "fascistic_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Plechavicius_Povilas",
-      "head_of_state": "parental_type",
-      "head_of_government": "parental_type",
-      "start_date": "1946-01-01",
-      "death_date": "1973-12-19"
-    },
-    "1505112": {
-      "name": "Jonas Cernius",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Cernius_Jonas",
-      "head_of_state": "traditionalist_type",
-      "head_of_government": "traditionalist_type",
-      "start_date": "1946-01-01",
-      "death_date": "1977-07-03"
-    },
-    "1505113": {
-      "name": "Teodoras Daukantas",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Daukantas_Teodoras",
-      "head_of_state": "courageous_type",
-      "head_of_government": "courageous_type",
-      "start_date": "1946-01-01",
-      "death_date": "1960-03-10"
-    },
-    "1505114": {
-      "name": "Petras Kubiliunas",
-      "ideology": "fascistic_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Kubiliunas_Petras",
-      "head_of_state": "courageous_type",
-      "head_of_government": "courageous_type",
-      "start_date": "1946-01-01",
-      "death_date": "1946-08-22"
-    },
-    "1505115": {
-      "name": "Stasys Ra�tikis",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Rastikis_Stasys",
-      "head_of_state": "administrator_type",
-      "head_of_government": "administrator_type",
-      "start_date": "1946-01-01",
-      "death_date": "1985-05-03"
-    },
-    "1505116": {
-      "name": "Jonas �emaitis",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Zemaitis_Jonas",
-      "head_of_state": "supreme_leader",
-      "head_of_government": "supreme_leader",
-      "start_date": "1946-01-01",
-      "death_date": "1954-11-26"
-    },
-    "1505117": {
-      "name": "Visvaldas Ma�onas",
-      "ideology": "fascistic_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Mazonas_Visvaldas",
-      "head_of_state": "controversial_figure",
-      "head_of_government": "controversial_figure",
-      "start_date": "1973-01-01",
-      "death_date": "2300-01-01"
-    },
-    "1505118": {
-      "name": "Vytautas Landsbergis",
-      "ideology": "social_cons_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Landsbergis_Vytautas",
-      "head_of_state": "zealous_type",
-      "head_of_government": "zealous_type",
-      "start_date": "1979-01-01",
-      "death_date": "2300-01-01"
-    },
-    "1505119": {
-      "name": "Algirdas Brazauskas",
-      "ideology": "communist_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Brazauskas_Algirdas",
-      "head_of_state": "fortunate_type",
-      "head_of_government": "fortunate_type",
-      "start_date": "1965-01-01",
-      "death_date": "1989-01-01"
-    },
-    "1505120": {
-      "name": "Algirdas Brazauskas",
-      "ideology": "social_democrat_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Brazauskas_Algirdas",
-      "head_of_state": "fortunate_type",
-      "head_of_government": "fortunate_type",
-      "start_date": "1989-01-01",
-      "death_date": "2010-06-26"
-    },
-    "1505121": {
-      "name": "Arturas Paulauskas",
-      "ideology": "communist_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Paulauskas_Arturas",
-      "head_of_state": "administrator_type",
-      "head_of_government": "administrator_type",
-      "start_date": "1977-01-01",
-      "death_date": "1989-01-01"
-    },
-    "1505122": {
-      "name": "Arturas Paulauskas",
-      "ideology": "social_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Paulauskas_Arturas",
-      "head_of_state": "administrator_type",
-      "head_of_government": "administrator_type",
-      "start_date": "1989-01-01",
-      "death_date": "2300-01-01"
-    },
-    "1505123": {
-      "name": "Viktoras Muntianas",
-      "ideology": "social_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Muntianas_Viktoras",
-      "head_of_state": "bureaucrat_type",
-      "head_of_government": "bureaucrat_type",
-      "start_date": "1986-01-01",
-      "death_date": "2300-01-01"
-    },
-    "1505124": {
-      "name": "Valentinas Mazuronis",
-      "ideology": "market_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Mazuronis_Valentinas",
-      "head_of_state": "ambitious_type",
-      "head_of_government": "ambitious_type",
-      "start_date": "1984-01-01",
-      "death_date": "2300-01-01"
-    },
-    "1505125": {
-      "name": "Ceslovas Jur�enas",
-      "ideology": "communist_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Jursenas_Ceslovas",
-      "head_of_state": "reputable_type",
-      "head_of_government": "reputable_type",
-      "start_date": "1966-01-01",
-      "death_date": "1989-01-01"
-    },
-    "1505126": {
-      "name": "Ceslovas Jur�enas",
-      "ideology": "social_democrat_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Jursenas_Ceslovas",
-      "head_of_state": "reputable_type",
-      "head_of_government": "reputable_type",
-      "start_date": "1989-01-01",
-      "death_date": "2300-01-01"
-    },
-    "1505127": {
-      "name": "Mykolas Burokevicius",
-      "ideology": "communist_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Burokevicius_Mykolas",
-      "head_of_state": "hardliner_type",
-      "head_of_government": "hardliner_type",
-      "start_date": "1944-01-01",
-      "death_date": "2300-01-01"
-    },
-    "1505128": {
-      "name": "Giedrius Petru�is",
-      "ideology": "left_wing_radical_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Petruzis_Giedrius",
-      "head_of_state": "administrator_type",
-      "head_of_government": "administrator_type",
-      "start_date": "1980-01-01",
-      "death_date": "2300-01-01"
-    },
-    "1505129": {
-      "name": "Kazimieras Uoka",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.5,
-      "picture": "LIT_M_Uoka_Kazimieras",
-      "head_of_state": "reformer_type",
-      "head_of_government": "reformer_type",
-      "start_date": "1976-01-01",
-      "death_date": "2300-01-01"
+    "unit_names": {},
+    "ministers": {
+        "1505001": {
+            "name": "Antanas Snieckus",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "LIT_M_Snieckus_A",
+            "start_date": "1946-01-01",
+            "death_date": "1974-01-22",
+            "type": "dictator_type"
+        },
+        "1505002": {
+            "name": "Petras Gri�kevicius",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "LIT_M_Gri�kevicius_P",
+            "start_date": "1964-01-01",
+            "death_date": "1987-11-14",
+            "type": "autocrat_type"
+        },
+        "1505003": {
+            "name": "Ringaudas Songaila",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "LIT_M_Songaila_R",
+            "start_date": "1979-01-01",
+            "death_date": "1992-03-01",
+            "type": "bureaucrat_type"
+        },
+        "1505100": {
+            "name": "Karolis I fon Urachas",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Karolis_I",
+            "start_date": "1928-03-24",
+            "death_date": "1981-08-15",
+            "type": "parental_type"
+        },
+        "1505101": {
+            "name": "Karolis II fon Urachas",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.49,
+            "picture": "LIT_M_Karolis_II",
+            "start_date": "1981-08-15",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1505102": {
+            "name": "Vilhelmas I fon Urachas",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.48,
+            "picture": "LIT_M_Vilhelmas_I",
+            "start_date": "1991-02-09",
+            "death_date": "2300-01-01",
+            "type": "ambitious_type"
+        },
+        "1505103": {
+            "name": "Antanas Terleckas",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Terleckas_Antanas",
+            "start_date": "1958-06-15",
+            "death_date": "2012-01-01",
+            "type": "moral_type"
+        },
+        "1505104": {
+            "name": "Kazys �kirpa",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Skirpa_Kazys",
+            "start_date": "1946-01-01",
+            "death_date": "1979-08-18",
+            "type": "courageous_type"
+        },
+        "1505105": {
+            "name": "Juozas Ambrazevicius",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Ambrazevicius_Juozas",
+            "start_date": "1946-01-01",
+            "death_date": "1974-10-28",
+            "type": "traditionalist_type"
+        },
+        "1505106": {
+            "name": "Aleksandras Stulginskis",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Stulginskis_Aleksandras",
+            "start_date": "1920-06-19",
+            "death_date": "1969-09-22",
+            "type": "religious_type"
+        },
+        "1505107": {
+            "name": "Kazys Grinius",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Grinius_Kazys",
+            "start_date": "1926-06-07",
+            "death_date": "1950-06-04",
+            "type": "courageous_type"
+        },
+        "1505108": {
+            "name": "Antanas Merkys",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Merkys_Antanas",
+            "start_date": "1939-11-21",
+            "death_date": "1955-03-05",
+            "type": "controversial_figure"
+        },
+        "1505109": {
+            "name": "Justas Paleckis",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Paleckis_Justas",
+            "start_date": "1940-06-17",
+            "death_date": "1980-01-26",
+            "type": "controversial_figure"
+        },
+        "1505110": {
+            "name": "Vidmantas Bri�ka",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.25,
+            "picture": "LIT_M_Briska_Vidmantas",
+            "start_date": "1946-01-01",
+            "death_date": "1980-12-21",
+            "type": "autocrat_type"
+        },
+        "1505111": {
+            "name": "Povilas Plechavicius",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Plechavicius_Povilas",
+            "start_date": "1946-01-01",
+            "death_date": "1973-12-19",
+            "type": "parental_type"
+        },
+        "1505112": {
+            "name": "Jonas Cernius",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Cernius_Jonas",
+            "start_date": "1946-01-01",
+            "death_date": "1977-07-03",
+            "type": "traditionalist_type"
+        },
+        "1505113": {
+            "name": "Teodoras Daukantas",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Daukantas_Teodoras",
+            "start_date": "1946-01-01",
+            "death_date": "1960-03-10",
+            "type": "courageous_type"
+        },
+        "1505114": {
+            "name": "Petras Kubiliunas",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Kubiliunas_Petras",
+            "start_date": "1946-01-01",
+            "death_date": "1946-08-22",
+            "type": "courageous_type"
+        },
+        "1505115": {
+            "name": "Stasys Ra�tikis",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Rastikis_Stasys",
+            "start_date": "1946-01-01",
+            "death_date": "1985-05-03",
+            "type": "administrator_type"
+        },
+        "1505116": {
+            "name": "Jonas �emaitis",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Zemaitis_Jonas",
+            "start_date": "1946-01-01",
+            "death_date": "1954-11-26",
+            "type": "supreme_leader"
+        },
+        "1505117": {
+            "name": "Visvaldas Ma�onas",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Mazonas_Visvaldas",
+            "start_date": "1973-01-01",
+            "death_date": "2300-01-01",
+            "type": "controversial_figure"
+        },
+        "1505118": {
+            "name": "Vytautas Landsbergis",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Landsbergis_Vytautas",
+            "start_date": "1979-01-01",
+            "death_date": "2300-01-01",
+            "type": "zealous_type"
+        },
+        "1505119": {
+            "name": "Algirdas Brazauskas",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Brazauskas_Algirdas",
+            "start_date": "1965-01-01",
+            "death_date": "1989-01-01",
+            "type": "fortunate_type"
+        },
+        "1505120": {
+            "name": "Algirdas Brazauskas",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Brazauskas_Algirdas",
+            "start_date": "1989-01-01",
+            "death_date": "2010-06-26",
+            "type": "fortunate_type"
+        },
+        "1505121": {
+            "name": "Arturas Paulauskas",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Paulauskas_Arturas",
+            "start_date": "1977-01-01",
+            "death_date": "1989-01-01",
+            "type": "administrator_type"
+        },
+        "1505122": {
+            "name": "Arturas Paulauskas",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Paulauskas_Arturas",
+            "start_date": "1989-01-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "1505123": {
+            "name": "Viktoras Muntianas",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Muntianas_Viktoras",
+            "start_date": "1986-01-01",
+            "death_date": "2300-01-01",
+            "type": "bureaucrat_type"
+        },
+        "1505124": {
+            "name": "Valentinas Mazuronis",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Mazuronis_Valentinas",
+            "start_date": "1984-01-01",
+            "death_date": "2300-01-01",
+            "type": "ambitious_type"
+        },
+        "1505125": {
+            "name": "Ceslovas Jur�enas",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Jursenas_Ceslovas",
+            "start_date": "1966-01-01",
+            "death_date": "1989-01-01",
+            "type": "reputable_type"
+        },
+        "1505126": {
+            "name": "Ceslovas Jur�enas",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Jursenas_Ceslovas",
+            "start_date": "1989-01-01",
+            "death_date": "2300-01-01",
+            "type": "reputable_type"
+        },
+        "1505127": {
+            "name": "Mykolas Burokevicius",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Burokevicius_Mykolas",
+            "start_date": "1944-01-01",
+            "death_date": "2300-01-01",
+            "type": "hardliner_type"
+        },
+        "1505128": {
+            "name": "Giedrius Petru�is",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Petruzis_Giedrius",
+            "start_date": "1980-01-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "1505129": {
+            "name": "Kazimieras Uoka",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LIT_M_Uoka_Kazimieras",
+            "start_date": "1976-01-01",
+            "death_date": "2300-01-01",
+            "type": "reformer_type"
+        }
     }
-  }
 }

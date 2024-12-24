@@ -1,1 +1,193 @@
-{"color": [125, 85, 40], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1272001": {"name": "Hamani Diori", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "NGR_M_Diori_Hamani", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1960-11-10", "death_date": "1974-04-15"}, "1272002": {"name": "Seyni Kountch\u00e9", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "NGR_M_Kountche_Seyni", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1974-04-15", "death_date": "1987-11-10"}, "1272003": {"name": "Ali Saibou", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NGR_M_Saibou_Ali", "head_of_state": "bureaucrat_type", "start_date": "1987-11-10", "death_date": "1993-04-16"}, "1272004": {"name": "Mamane Oumarou", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NGR_M_Oumarou_Mamane", "head_of_government": "administrator_type", "start_date": "1983-01-24", "death_date": "1989-12-20"}, "1272005": {"name": "Hamid Algabid", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NGR_M_Algabid_Hamid", "head_of_government": "administrator_type", "start_date": "1983-11-14", "death_date": "1988-07-15"}, "1272006": {"name": "Aliou Mahamidou", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NGR_M_Mahamidou_Aliou", "head_of_government": "bureaucrat_type", "start_date": "1990-03-02", "death_date": "1991-10-27"}, "1272007": {"name": "Amadou Cheiffou", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NGR_M_Cheiffou_Amadou", "head_of_government": "bureaucrat_type", "start_date": "1991-10-27", "death_date": "1993-04-17"}, "1272008": {"name": "Djibo Bakary", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "NGR_M_Bakary_Djibo", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1957-03-31", "death_date": "1998-04-16"}, "1272009": {"name": "Boubou Hama", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NGR_M_Hama_Boubou", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1960-11-10", "death_date": "1974-04-15"}, "1272010": {"name": "Abdul Sanusi Rabiu", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NGR_M_Rabiu_Abdul_S", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1963-02-01", "death_date": "1988-07-19"}, "1272011": {"name": "Abdoul Okotie-Eboh", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NGR_M_Obotie-Eboh_Abdoul", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1949-10-20", "death_date": "1981-07-12"}, "1272012": {"name": "Sanusi Diallo", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "NGR_M_Diallo_Sanusi", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1953-01-01", "death_date": "1991-01-01"}, "1272013": {"name": "Mohamadou Djibrilla Maiga", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "NGR_M_Maiga_Mohamadou_M", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1947-01-13", "death_date": "1975-11-23"}}}
+{
+    "color": [
+        125,
+        85,
+        40
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1272001": {
+            "name": "Hamani Diori",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "NGR_M_Diori_Hamani",
+            "start_date": "1960-11-10",
+            "death_date": "1974-04-15",
+            "type": "lethargic_type"
+        },
+        "1272002": {
+            "name": "Seyni Kountché",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "NGR_M_Kountche_Seyni",
+            "start_date": "1974-04-15",
+            "death_date": "1987-11-10",
+            "type": "parental_type"
+        },
+        "1272003": {
+            "name": "Ali Saibou",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NGR_M_Saibou_Ali",
+            "start_date": "1987-11-10",
+            "death_date": "1993-04-16",
+            "type": "bureaucrat_type"
+        },
+        "1272004": {
+            "name": "Mamane Oumarou",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NGR_M_Oumarou_Mamane",
+            "start_date": "1983-01-24",
+            "death_date": "1989-12-20",
+            "type": "administrator_type"
+        },
+        "1272005": {
+            "name": "Hamid Algabid",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NGR_M_Algabid_Hamid",
+            "start_date": "1983-11-14",
+            "death_date": "1988-07-15",
+            "type": "administrator_type"
+        },
+        "1272006": {
+            "name": "Aliou Mahamidou",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NGR_M_Mahamidou_Aliou",
+            "start_date": "1990-03-02",
+            "death_date": "1991-10-27",
+            "type": "bureaucrat_type"
+        },
+        "1272007": {
+            "name": "Amadou Cheiffou",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NGR_M_Cheiffou_Amadou",
+            "start_date": "1991-10-27",
+            "death_date": "1993-04-17",
+            "type": "bureaucrat_type"
+        },
+        "1272008": {
+            "name": "Djibo Bakary",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "NGR_M_Bakary_Djibo",
+            "start_date": "1957-03-31",
+            "death_date": "1998-04-16",
+            "type": "ambitious_type"
+        },
+        "1272009": {
+            "name": "Boubou Hama",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NGR_M_Hama_Boubou",
+            "start_date": "1960-11-10",
+            "death_date": "1974-04-15",
+            "type": "reformer_type"
+        },
+        "1272010": {
+            "name": "Abdul Sanusi Rabiu",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NGR_M_Rabiu_Abdul_S",
+            "start_date": "1963-02-01",
+            "death_date": "1988-07-19",
+            "type": "zealous_type"
+        },
+        "1272011": {
+            "name": "Abdoul Okotie-Eboh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NGR_M_Obotie-Eboh_Abdoul",
+            "start_date": "1949-10-20",
+            "death_date": "1981-07-12",
+            "type": "zealous_type"
+        },
+        "1272012": {
+            "name": "Sanusi Diallo",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "NGR_M_Diallo_Sanusi",
+            "start_date": "1953-01-01",
+            "death_date": "1991-01-01",
+            "type": "autocrat_type"
+        },
+        "1272013": {
+            "name": "Mohamadou Djibrilla Maiga",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "NGR_M_Maiga_Mohamadou_M",
+            "start_date": "1947-01-13",
+            "death_date": "1975-11-23",
+            "type": "ambitious_type"
+        }
+    }
+}

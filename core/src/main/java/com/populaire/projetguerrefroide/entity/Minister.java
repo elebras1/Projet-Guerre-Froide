@@ -7,22 +7,18 @@ public class Minister {
     private final String ideology;
     private final String imageNameFile;
     private final float loyalty;
-    private final String headOfState;
-    private final String headOfGovernment;
+    private final String type;
     private final Date startDate;
     private final Date deathDate;
-    private final int base;
 
-    public Minister(String name, String ideology, String imageNameFile, float loyalty, String headOfState, String headOfGovernment, Date startDate, Date deathDate, int base) {
+    public Minister(String name, String ideology, String imageNameFile, float loyalty, String type, Date startDate, Date deathDate) {
         this.name = name;
         this.ideology = ideology;
         this.imageNameFile = imageNameFile;
         this.loyalty = loyalty;
-        this.headOfState = headOfState;
-        this.headOfGovernment = headOfGovernment;
+        this.type = type;
         this.startDate = startDate;
         this.deathDate = deathDate;
-        this.base = base;
     }
 
     public String getName() {
@@ -41,12 +37,8 @@ public class Minister {
         return this.loyalty;
     }
 
-    public String getHeadOfState() {
-        return this.headOfState;
-    }
-
-    public String getHeadOfGovernment() {
-        return this.headOfGovernment;
+    public String getType() {
+        return this.type;
     }
 
     public Date getStartDate() {
@@ -57,21 +49,15 @@ public class Minister {
         return this.deathDate;
     }
 
-    public int getBase() {
-        return this.base;
-    }
-
     public String toString() {
         return "Minister{" +
                 " name='" + this.name + '\'' +
                 ", ideology='" + this.ideology + '\'' +
                 ", imageNameFile='" + this.imageNameFile + '\'' +
                 ", loyalty=" + this.loyalty +
-                ", headOfState='" + this.headOfState + '\'' +
-                ", headOfGovernment='" + this.headOfGovernment + '\'' +
+                ", type='" + this.type + '\'' +
                 ", startDate=" + this.startDate +
                 ", deathDate=" + this.deathDate +
-                ", base=" + this.base +
                 '}';
     }
 }

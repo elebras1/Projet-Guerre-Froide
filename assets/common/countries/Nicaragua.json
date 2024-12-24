@@ -1,1 +1,428 @@
-{"color": [141, 168, 188], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1273001": {"name": "Anastasio Somoza Garc\u00eda", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "NIC_M_Garcia_Anastasio_S", "head_of_government": "dictator_type", "head_of_state": "dictator_type", "start_date": "1937-01-01", "death_date": "1957-02-03"}, "1273002": {"name": "Leonardo Arg\u00fcello Barreto", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIC_M_Barreto_Leonardo_A", "head_of_government": "reformer_type", "head_of_state": "reformer_type", "start_date": "1947-05-01", "death_date": "1947-05-26"}, "1273003": {"name": "Enoc Aguado", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "NIC_M_Aguado_Enoc", "head_of_government": "liberal_type", "head_of_state": "liberal_type", "start_date": "1947-05-01", "death_date": "1947-05-26"}, "1273004": {"name": "Benjam\u00edn Lacayo Sacasa", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIC_M_Sacasa_Benjamin_L", "head_of_state": "lethargic_type", "start_date": "1947-05-26", "death_date": "1947-08-15"}, "1273005": {"name": "V\u00edctor Manuel Rom\u00e1n y Reyes", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIC_M_Reyes_Victor_M_R", "head_of_state": "loyal_type", "start_date": "1947-08-15", "death_date": "1950-05-06"}, "1273006": {"name": "Emiliano Chamorro Benard", "ideology": "social_cons_idolg", "loyalty": 0.8, "picture": "NIC_M_Benard_Emiliano_C", "head_of_government": "democrat_type", "head_of_state": "democrat_type", "start_date": "1950-05-06", "death_date": "1957-02-03"}, "1273007": {"name": "Luis Somoza Debayle", "ideology": "paternal_auto_idolg", "loyalty": 0.8, "picture": "NIC_M_Debayle_Luis_S", "head_of_government": "dictator_type", "head_of_state": "dictator_type", "start_date": "1957-02-03", "death_date": "1967-02-05"}, "1273008": {"name": "Ren\u00e9 Schick Guti\u00e9rrez", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIC_M_Gutierrez_Rene_S", "head_of_state": "loyal_type", "start_date": "1963-02-03", "death_date": "1967-02-05"}, "1273009": {"name": "Diego Manuel Chamorro Bola\u00f1os", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "NIC_M_Bolanos_Diego_M_C", "head_of_state": "lethargic_type", "start_date": "1963-02-03", "death_date": "1967-02-05"}, "1273010": {"name": "Anastasio Somoza Debayle", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NIC_M_Debayle_Anastasio_S", "head_of_government": "autocrat_type", "head_of_state": "autocrat_type", "start_date": "1967-02-05", "death_date": "1980-09-27"}, "1273011": {"name": "Fernando Bernab\u00e9 Ag\u00fcero Rocha", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "NIC_M_Rocha_Fernando_B_A", "head_of_government": "parental_type", "head_of_state": "parental_type", "start_date": "1967-02-05", "death_date": "1974-09-01"}, "1273012": {"name": "Jos\u00e9 Daniel Ortega Saaveda", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "NIC_M_Saaveda_Jose_D_O", "head_of_government": "democrat_type", "head_of_state": "democrat_type", "start_date": "1979-07-18", "death_date": "1996-10-20"}, "1273013": {"name": "Violeta Barrios de Chamorro", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NIC_M_Chamorro_Violeta_B", "head_of_government": "democrat_type", "head_of_state": "democrat_type", "start_date": "1990-02-25", "death_date": "1996-10-20"}, "1273100": {"name": "Adolfo Calero", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NIC_M_Calero_Adolfo", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1983-02-01", "death_date": "1995-11-01"}, "1273101": {"name": "Arturo Cruz", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NIC_M_Cruz_Arturo", "head_of_state": "fortunate_type", "head_of_government": "fortunate_type", "start_date": "1977-10-18", "death_date": "2013-07-09"}, "1273102": {"name": "Aristides S\u00e1nchez", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NIC_M_Sanchez_Aristides", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1981-08-01", "death_date": "1993-09-06"}, "1273103": {"name": "Enrique Bermudez", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NIC_M_Bermudez_Enrique", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1979-01-01", "death_date": "1991-02-16"}, "1273104": {"name": "Carlos Fonseca", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "NIC_M_Fonseca_Carlos", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1961-01-01", "death_date": "1976-09-08"}, "1273105": {"name": "Anastasio Somoza Portocarrero", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NIC_M_Portocarrero_Anastasio_S", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1980-09-27", "death_date": "2300-01-01"}, "1273106": {"name": "Marvin Ortega", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "NIC_M_Ortega_Marvin", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1972-01-01", "death_date": "1991-01-01"}, "1273107": {"name": "Isidro Tellez", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "NIC_M_Tellez_Isidro", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1984-01-01", "death_date": "1991-01-01"}, "1273108": {"name": "El\u00ed Altamirano", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NIC_M_Altamirano_Eli", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1960-01-01", "death_date": "2005-09-04"}, "1273109": {"name": "Tom\u00e1s Borge", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NIC_M_Borge_Tomas", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1956-01-01", "death_date": "2012-04-30"}, "1273110": {"name": "Sergio Ram\u00edrez Mercado", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "NIC_M_Mercado_Sergio_R", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1979-07-18", "death_date": "1984-11-08", "base": 1273110}, "1273111": {"name": "Sergio Ram\u00edrez Mercado", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NIC_M_Mercado_Sergio_R", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1984-11-08", "death_date": "1990-02-25", "base": 1273110}, "1273112": {"name": "Mois\u00e9s Hassan Morales", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "NIC_M_Morales_Moises_H", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1979-07-18", "death_date": "1988-05-08"}, "1273113": {"name": "Alfonso Robelo Callejas", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NIC_M_Callejas_Alfonso_R", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1979-07-18", "death_date": "2300-01-01"}, "1273114": {"name": "Pedro Joaquin Chamorro", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "NIC_M_Chamorro_Pedro_J", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1959-01-01", "death_date": "1978-01-10"}, "1273115": {"name": "Fabio Gadea Mantilla", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "NIC_M_Mantilla_Fabio_G", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1958-01-01", "death_date": "2300-01-01"}, "1273116": {"name": "Ernesto Cardenal", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "NIC_M_Cardenal_Ernesto", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1951-01-01", "death_date": "2300-01-01"}, "1273117": {"name": "Eduardo Montealegre", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "NIC_M_Montealegre_Eduardo", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1981-01-01", "death_date": "2300-01-01"}, "1273118": {"name": "Fernando Ag\u00fcero", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "NIC_M_Aguero_Fernando", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1965-01-01", "death_date": "2011-09-28"}, "1273119": {"name": "Ed\u00e9n Pastora", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "NIC_M_Pastora_Eden", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1960-01-01", "death_date": "2300-01-01"}, "1273120": {"name": "Pablo Antonio Cuadra", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "NIC_M_Cuadra_Pablo_A", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1945-01-01", "death_date": "2002-01-02"}, "1273121": {"name": "Juan Alberto Henr\u00edque", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "NIC_M_Henrique_Juan_A", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1984-01-01", "death_date": "1991-01-01"}, "1273122": {"name": "Miguel d'Escoto Brockmann", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "NIC_M_Brockmann_Miguel_E", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1970-01-01", "death_date": "2300-01-01"}, "1273123": {"name": "Fernando Cardenal", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "NIC_M_Cardenal_Fernando", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1980-01-01", "death_date": "2300-01-01"}, "1273124": {"name": "Edgar Chamorro", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "NIC_M_Chamorro_Edgar", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1977-01-01", "death_date": "2300-01-01"}, "1273125": {"name": "Fernando Chamorro", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "NIC_M_Chamorro_Fernando", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1954-01-01", "death_date": "1994-09-06"}}}
+{
+    "color": [
+        141,
+        168,
+        188
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1273001": {
+            "name": "Anastasio Somoza García",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "NIC_M_Garcia_Anastasio_S",
+            "start_date": "1937-01-01",
+            "death_date": "1957-02-03",
+            "type": "dictator_type"
+        },
+        "1273002": {
+            "name": "Leonardo Argüello Barreto",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIC_M_Barreto_Leonardo_A",
+            "start_date": "1947-05-01",
+            "death_date": "1947-05-26",
+            "type": "reformer_type"
+        },
+        "1273003": {
+            "name": "Enoc Aguado",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "NIC_M_Aguado_Enoc",
+            "start_date": "1947-05-01",
+            "death_date": "1947-05-26",
+            "type": "liberal_type"
+        },
+        "1273004": {
+            "name": "Benjamín Lacayo Sacasa",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIC_M_Sacasa_Benjamin_L",
+            "start_date": "1947-05-26",
+            "death_date": "1947-08-15",
+            "type": "lethargic_type"
+        },
+        "1273005": {
+            "name": "Víctor Manuel Román y Reyes",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIC_M_Reyes_Victor_M_R",
+            "start_date": "1947-08-15",
+            "death_date": "1950-05-06",
+            "type": "loyal_type"
+        },
+        "1273006": {
+            "name": "Emiliano Chamorro Benard",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.8,
+            "picture": "NIC_M_Benard_Emiliano_C",
+            "start_date": "1950-05-06",
+            "death_date": "1957-02-03",
+            "type": "democrat_type"
+        },
+        "1273007": {
+            "name": "Luis Somoza Debayle",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "NIC_M_Debayle_Luis_S",
+            "start_date": "1957-02-03",
+            "death_date": "1967-02-05",
+            "type": "dictator_type"
+        },
+        "1273008": {
+            "name": "René Schick Gutiérrez",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIC_M_Gutierrez_Rene_S",
+            "start_date": "1963-02-03",
+            "death_date": "1967-02-05",
+            "type": "loyal_type"
+        },
+        "1273009": {
+            "name": "Diego Manuel Chamorro Bolaños",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "NIC_M_Bolanos_Diego_M_C",
+            "start_date": "1963-02-03",
+            "death_date": "1967-02-05",
+            "type": "lethargic_type"
+        },
+        "1273010": {
+            "name": "Anastasio Somoza Debayle",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NIC_M_Debayle_Anastasio_S",
+            "start_date": "1967-02-05",
+            "death_date": "1980-09-27",
+            "type": "autocrat_type"
+        },
+        "1273011": {
+            "name": "Fernando Bernabé Agüero Rocha",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "NIC_M_Rocha_Fernando_B_A",
+            "start_date": "1967-02-05",
+            "death_date": "1974-09-01",
+            "type": "parental_type"
+        },
+        "1273012": {
+            "name": "José Daniel Ortega Saaveda",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "NIC_M_Saaveda_Jose_D_O",
+            "start_date": "1979-07-18",
+            "death_date": "1996-10-20",
+            "type": "democrat_type"
+        },
+        "1273013": {
+            "name": "Violeta Barrios de Chamorro",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NIC_M_Chamorro_Violeta_B",
+            "start_date": "1990-02-25",
+            "death_date": "1996-10-20",
+            "type": "democrat_type"
+        },
+        "1273100": {
+            "name": "Adolfo Calero",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Calero_Adolfo",
+            "start_date": "1983-02-01",
+            "death_date": "1995-11-01",
+            "type": "dictator_type"
+        },
+        "1273101": {
+            "name": "Arturo Cruz",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Cruz_Arturo",
+            "start_date": "1977-10-18",
+            "death_date": "2013-07-09",
+            "type": "fortunate_type"
+        },
+        "1273102": {
+            "name": "Aristides Sánchez",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Sanchez_Aristides",
+            "start_date": "1981-08-01",
+            "death_date": "1993-09-06",
+            "type": "autocrat_type"
+        },
+        "1273103": {
+            "name": "Enrique Bermudez",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Bermudez_Enrique",
+            "start_date": "1979-01-01",
+            "death_date": "1991-02-16",
+            "type": "autocrat_type"
+        },
+        "1273104": {
+            "name": "Carlos Fonseca",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Fonseca_Carlos",
+            "start_date": "1961-01-01",
+            "death_date": "1976-09-08",
+            "type": "courageous_type"
+        },
+        "1273105": {
+            "name": "Anastasio Somoza Portocarrero",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Portocarrero_Anastasio_S",
+            "start_date": "1980-09-27",
+            "death_date": "2300-01-01",
+            "type": "controversial_figure"
+        },
+        "1273106": {
+            "name": "Marvin Ortega",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Ortega_Marvin",
+            "start_date": "1972-01-01",
+            "death_date": "1991-01-01",
+            "type": "administrator_type"
+        },
+        "1273107": {
+            "name": "Isidro Tellez",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Tellez_Isidro",
+            "start_date": "1984-01-01",
+            "death_date": "1991-01-01",
+            "type": "administrator_type"
+        },
+        "1273108": {
+            "name": "Elí Altamirano",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Altamirano_Eli",
+            "start_date": "1960-01-01",
+            "death_date": "2005-09-04",
+            "type": "visionary_type"
+        },
+        "1273109": {
+            "name": "Tomás Borge",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Borge_Tomas",
+            "start_date": "1956-01-01",
+            "death_date": "2012-04-30",
+            "type": "hardliner_type"
+        },
+        "1273110": {
+            "name": "Sergio Ramírez Mercado",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Mercado_Sergio_R",
+            "start_date": "1979-07-18",
+            "death_date": "1984-11-08",
+            "type": "loyal_type"
+        },
+        "1273111": {
+            "name": "Sergio Ramírez Mercado",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Mercado_Sergio_R",
+            "start_date": "1984-11-08",
+            "death_date": "1990-02-25",
+            "type": "loyal_type"
+        },
+        "1273112": {
+            "name": "Moisés Hassan Morales",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Morales_Moises_H",
+            "start_date": "1979-07-18",
+            "death_date": "1988-05-08",
+            "type": "bureaucrat_type"
+        },
+        "1273113": {
+            "name": "Alfonso Robelo Callejas",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Callejas_Alfonso_R",
+            "start_date": "1979-07-18",
+            "death_date": "2300-01-01",
+            "type": "honest_type"
+        },
+        "1273114": {
+            "name": "Pedro Joaquin Chamorro",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Chamorro_Pedro_J",
+            "start_date": "1959-01-01",
+            "death_date": "1978-01-10",
+            "type": "courageous_type"
+        },
+        "1273115": {
+            "name": "Fabio Gadea Mantilla",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Mantilla_Fabio_G",
+            "start_date": "1958-01-01",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1273116": {
+            "name": "Ernesto Cardenal",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Cardenal_Ernesto",
+            "start_date": "1951-01-01",
+            "death_date": "2300-01-01",
+            "type": "religious_type"
+        },
+        "1273117": {
+            "name": "Eduardo Montealegre",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Montealegre_Eduardo",
+            "start_date": "1981-01-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "1273118": {
+            "name": "Fernando Agüero",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Aguero_Fernando",
+            "start_date": "1965-01-01",
+            "death_date": "2011-09-28",
+            "type": "zealous_type"
+        },
+        "1273119": {
+            "name": "Edén Pastora",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Pastora_Eden",
+            "start_date": "1960-01-01",
+            "death_date": "2300-01-01",
+            "type": "extremist_type"
+        },
+        "1273120": {
+            "name": "Pablo Antonio Cuadra",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Cuadra_Pablo_A",
+            "start_date": "1945-01-01",
+            "death_date": "2002-01-02",
+            "type": "parental_type"
+        },
+        "1273121": {
+            "name": "Juan Alberto Henríque",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Henrique_Juan_A",
+            "start_date": "1984-01-01",
+            "death_date": "1991-01-01",
+            "type": "extremist_type"
+        },
+        "1273122": {
+            "name": "Miguel d'Escoto Brockmann",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Brockmann_Miguel_E",
+            "start_date": "1970-01-01",
+            "death_date": "2300-01-01",
+            "type": "religious_type"
+        },
+        "1273123": {
+            "name": "Fernando Cardenal",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Cardenal_Fernando",
+            "start_date": "1980-01-01",
+            "death_date": "2300-01-01",
+            "type": "religious_type"
+        },
+        "1273124": {
+            "name": "Edgar Chamorro",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Chamorro_Edgar",
+            "start_date": "1977-01-01",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1273125": {
+            "name": "Fernando Chamorro",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "NIC_M_Chamorro_Fernando",
+            "start_date": "1954-01-01",
+            "death_date": "1994-09-06",
+            "type": "zealous_type"
+        }
+    }
+}

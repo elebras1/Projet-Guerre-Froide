@@ -1,1 +1,338 @@
-{"color": [243, 254, 186], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1329001": {"name": "Abdel F.M. al-Maghrabi", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_al-Maghrabi_Abdel_F_M", "head_of_state": "parental_type", "start_date": "1956-01-01", "death_date": "1958-11-17"}, "1329002": {"name": "Muhammad Ahmad Yasin", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_Yasin_Muhammad_A", "head_of_state": "reformer_type", "start_date": "1956-01-01", "death_date": "1958-11-17"}, "1329003": {"name": "Ahmad Muhammad Salih", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_Salih_Ahmad_M", "head_of_state": "bureaucrat_type", "start_date": "1956-01-01", "death_date": "1958-11-17"}, "1329004": {"name": "Muhammad Othman al-Dardiri", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_al-Dardiri_Muhammad_O", "head_of_state": "hardliner_type", "start_date": "1956-01-01", "death_date": "1958-11-17"}, "1329005": {"name": "Siricio Iro Wani", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_Wani_Siricio_I", "head_of_state": "visionary_type", "start_date": "1956-01-01", "death_date": "1958-11-17"}, "1329006": {"name": "Ibrahim Abboud", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_Abboud_Ibrahim", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1958-11-17", "death_date": "1964-11-16"}, "1329007": {"name": "Sirr Al-Khatim Al-Khalifa", "ideology": "social_cons_idolg", "loyalty": 0.7, "picture": "SUD_M_Al-Khalifa_Sirr_K", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1964-10-30", "death_date": "1965-06-02"}, "1329008": {"name": "Abdel Halim Muhammad", "ideology": "social_cons_idolg", "loyalty": 0.95, "picture": "SUD_M_Muhammad_Abdel_H", "head_of_state": "reformer_type", "start_date": "1964-12-03", "death_date": "1965-07-08"}, "1329009": {"name": "Tijani al-Mahi", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_al-Mahi_Tijani", "head_of_state": "honest_type", "start_date": "1964-12-03", "death_date": "1965-06-10"}, "1329010": {"name": "Mubarak Shaddad", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_Shaddad_Mubarak", "head_of_state": "visionary_type", "start_date": "1964-12-03", "death_date": "1965-06-10"}, "1329011": {"name": "Ibrahim Yusuf Sulayman", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_Sulayman_Ibrahim_Y", "head_of_state": "administrator_type", "start_date": "1964-12-03", "death_date": "1965-06-10"}, "1329012": {"name": "Luigi Adwok Bong Gicomeho", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_Gicomeho_Luigi_A_B", "head_of_state": "democrat_type", "start_date": "1964-12-03", "death_date": "1965-07-08"}, "1329013": {"name": "Ismail al-Azhari", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_al-Azhari_Ismail", "head_of_state": "ambitious_type", "start_date": "1965-06-10", "death_date": "1969-05-25"}, "1329014": {"name": "Abdullah al-Fadil al-Mahdi", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_al-Mahdi_Abdullah_F", "head_of_state": "administrator_type", "start_date": "1965-06-10", "death_date": "1965-07-08"}, "1329015": {"name": "Khidr Hamad", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_Hamad_Khidr", "head_of_state": "parental_type", "start_date": "1965-06-10", "death_date": "1965-07-08"}, "1329016": {"name": "Gaafar Nimeiry", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "SUD_M_Nimeiry_Gaafar", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1969-05-25", "death_date": "1985-04-06"}, "1329017": {"name": "Abdel Rahman Swar al-Dahab", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "SUD_M_al-Dahab_Abdel_R_S", "head_of_state": "democrat_type", "start_date": "1985-04-06", "death_date": "1986-05-06"}, "1329018": {"name": "Ahmed al-Mirghani", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_al-Mirghani_Ahmed", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1986-05-06", "death_date": "1989-06-30"}, "1329019": {"name": "Omar al-Bashir", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "SUD_M_al-Bashir_Omar", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1989-06-30", "death_date": "2300-01-01"}, "1329020": {"name": "Abd-el-Rahman el-Mahdi", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_el-Mahdi_Abd-el-Rahman", "head_of_government": "religious_type", "start_date": "1952-10-22", "death_date": "1953-11-01"}, "1329021": {"name": "Abdallah Khalil", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_Khalil_Abdallah", "head_of_government": "hardliner_type", "start_date": "1956-07-05", "death_date": "1958-11-17"}, "1329022": {"name": "Muhammad Ahmad Mahgoub", "ideology": "social_cons_idolg", "loyalty": 0.8, "picture": "SUD_M_Mahgoub_Muhammad_A", "head_of_government": "bureaucrat_type", "start_date": "1965-06-02", "death_date": "1969-05-25"}, "1329023": {"name": "Sadiq al-Mahdi", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "SUD_M_al-Mahdi_Sadiq", "head_of_government": "zealous_type", "start_date": "1966-07-27", "death_date": "1989-06-30"}, "1329024": {"name": "Babiker Awadalla", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_Awadalla_Babiker", "head_of_government": "administrator_type", "start_date": "1967-05-18", "death_date": "1969-10-27"}, "1329025": {"name": "Rashid Bakr", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "SUD_M_Bakr_Rashid", "head_of_government": "liberal_type", "start_date": "1976-08-11", "death_date": "1977-09-10"}, "1329026": {"name": "Al-Jazuli Daf'allah", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SUD_M_Daf-allah_Al-Jazuli", "head_of_government": "hardliner_type", "start_date": "1985-04-06", "death_date": "1986-05-06"}, "1329027": {"name": "Abdel Khaliq Mahjub", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "SUD_M_Mahjub_Abdel_K", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1957-01-01", "death_date": "1971-07-28"}, "1329028": {"name": "Joseph Garang", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "SUD_M_Garang_Joseph", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1960-01-01", "death_date": "1971-07-28"}, "1329029": {"name": "Muhammad Ibrahim Nugud", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "SUD_M_Nugud_Muhammad_I", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1971-07-28", "death_date": "2012-03-22"}}}
+{
+    "color": [
+        243,
+        254,
+        186
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1329001": {
+            "name": "Abdel F.M. al-Maghrabi",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_al-Maghrabi_Abdel_F_M",
+            "start_date": "1956-01-01",
+            "death_date": "1958-11-17",
+            "type": "parental_type"
+        },
+        "1329002": {
+            "name": "Muhammad Ahmad Yasin",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Yasin_Muhammad_A",
+            "start_date": "1956-01-01",
+            "death_date": "1958-11-17",
+            "type": "reformer_type"
+        },
+        "1329003": {
+            "name": "Ahmad Muhammad Salih",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Salih_Ahmad_M",
+            "start_date": "1956-01-01",
+            "death_date": "1958-11-17",
+            "type": "bureaucrat_type"
+        },
+        "1329004": {
+            "name": "Muhammad Othman al-Dardiri",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_al-Dardiri_Muhammad_O",
+            "start_date": "1956-01-01",
+            "death_date": "1958-11-17",
+            "type": "hardliner_type"
+        },
+        "1329005": {
+            "name": "Siricio Iro Wani",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Wani_Siricio_I",
+            "start_date": "1956-01-01",
+            "death_date": "1958-11-17",
+            "type": "visionary_type"
+        },
+        "1329006": {
+            "name": "Ibrahim Abboud",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Abboud_Ibrahim",
+            "start_date": "1958-11-17",
+            "death_date": "1964-11-16",
+            "type": "courageous_type"
+        },
+        "1329007": {
+            "name": "Sirr Al-Khatim Al-Khalifa",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.7,
+            "picture": "SUD_M_Al-Khalifa_Sirr_K",
+            "start_date": "1964-10-30",
+            "death_date": "1965-06-02",
+            "type": "democrat_type"
+        },
+        "1329008": {
+            "name": "Abdel Halim Muhammad",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "SUD_M_Muhammad_Abdel_H",
+            "start_date": "1964-12-03",
+            "death_date": "1965-07-08",
+            "type": "reformer_type"
+        },
+        "1329009": {
+            "name": "Tijani al-Mahi",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_al-Mahi_Tijani",
+            "start_date": "1964-12-03",
+            "death_date": "1965-06-10",
+            "type": "honest_type"
+        },
+        "1329010": {
+            "name": "Mubarak Shaddad",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Shaddad_Mubarak",
+            "start_date": "1964-12-03",
+            "death_date": "1965-06-10",
+            "type": "visionary_type"
+        },
+        "1329011": {
+            "name": "Ibrahim Yusuf Sulayman",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Sulayman_Ibrahim_Y",
+            "start_date": "1964-12-03",
+            "death_date": "1965-06-10",
+            "type": "administrator_type"
+        },
+        "1329012": {
+            "name": "Luigi Adwok Bong Gicomeho",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Gicomeho_Luigi_A_B",
+            "start_date": "1964-12-03",
+            "death_date": "1965-07-08",
+            "type": "democrat_type"
+        },
+        "1329013": {
+            "name": "Ismail al-Azhari",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_al-Azhari_Ismail",
+            "start_date": "1965-06-10",
+            "death_date": "1969-05-25",
+            "type": "ambitious_type"
+        },
+        "1329014": {
+            "name": "Abdullah al-Fadil al-Mahdi",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_al-Mahdi_Abdullah_F",
+            "start_date": "1965-06-10",
+            "death_date": "1965-07-08",
+            "type": "administrator_type"
+        },
+        "1329015": {
+            "name": "Khidr Hamad",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Hamad_Khidr",
+            "start_date": "1965-06-10",
+            "death_date": "1965-07-08",
+            "type": "parental_type"
+        },
+        "1329016": {
+            "name": "Gaafar Nimeiry",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "SUD_M_Nimeiry_Gaafar",
+            "start_date": "1969-05-25",
+            "death_date": "1985-04-06",
+            "type": "liberal_type"
+        },
+        "1329017": {
+            "name": "Abdel Rahman Swar al-Dahab",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_al-Dahab_Abdel_R_S",
+            "start_date": "1985-04-06",
+            "death_date": "1986-05-06",
+            "type": "democrat_type"
+        },
+        "1329018": {
+            "name": "Ahmed al-Mirghani",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_al-Mirghani_Ahmed",
+            "start_date": "1986-05-06",
+            "death_date": "1989-06-30",
+            "type": "traditionalist_type"
+        },
+        "1329019": {
+            "name": "Omar al-Bashir",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_al-Bashir_Omar",
+            "start_date": "1989-06-30",
+            "death_date": "2300-01-01",
+            "type": "dictator_type"
+        },
+        "1329020": {
+            "name": "Abd-el-Rahman el-Mahdi",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_el-Mahdi_Abd-el-Rahman",
+            "start_date": "1952-10-22",
+            "death_date": "1953-11-01",
+            "type": "religious_type"
+        },
+        "1329021": {
+            "name": "Abdallah Khalil",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Khalil_Abdallah",
+            "start_date": "1956-07-05",
+            "death_date": "1958-11-17",
+            "type": "hardliner_type"
+        },
+        "1329022": {
+            "name": "Muhammad Ahmad Mahgoub",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.8,
+            "picture": "SUD_M_Mahgoub_Muhammad_A",
+            "start_date": "1965-06-02",
+            "death_date": "1969-05-25",
+            "type": "bureaucrat_type"
+        },
+        "1329023": {
+            "name": "Sadiq al-Mahdi",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "SUD_M_al-Mahdi_Sadiq",
+            "start_date": "1966-07-27",
+            "death_date": "1989-06-30",
+            "type": "zealous_type"
+        },
+        "1329024": {
+            "name": "Babiker Awadalla",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Awadalla_Babiker",
+            "start_date": "1967-05-18",
+            "death_date": "1969-10-27",
+            "type": "administrator_type"
+        },
+        "1329025": {
+            "name": "Rashid Bakr",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Bakr_Rashid",
+            "start_date": "1976-08-11",
+            "death_date": "1977-09-10",
+            "type": "liberal_type"
+        },
+        "1329026": {
+            "name": "Al-Jazuli Daf'allah",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Daf-allah_Al-Jazuli",
+            "start_date": "1985-04-06",
+            "death_date": "1986-05-06",
+            "type": "hardliner_type"
+        },
+        "1329027": {
+            "name": "Abdel Khaliq Mahjub",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Mahjub_Abdel_K",
+            "start_date": "1957-01-01",
+            "death_date": "1971-07-28",
+            "type": "ambitious_type"
+        },
+        "1329028": {
+            "name": "Joseph Garang",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Garang_Joseph",
+            "start_date": "1960-01-01",
+            "death_date": "1971-07-28",
+            "type": "visionary_type"
+        },
+        "1329029": {
+            "name": "Muhammad Ibrahim Nugud",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SUD_M_Nugud_Muhammad_I",
+            "start_date": "1971-07-28",
+            "death_date": "2012-03-22",
+            "type": "lethargic_type"
+        }
+    }
+}

@@ -1,1 +1,257 @@
-{"color": [145, 151, 157], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1231001": {"name": "George VI", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_George", "head_of_state": "parental_type", "start_date": "1936-09-11", "death_date": "1952-02-06", "base": 1181001}, "1231002": {"name": "Elizabeth II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_Elizabeth", "head_of_state": "traditionalist_type", "start_date": "1952-02-06", "death_date": "2300-05-12", "base": 1181002}, "1231300": {"name": "George VII", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.99, "picture": "ENG_M_George_VII", "head_of_state": "parental_type", "start_date": "1966-11-14", "death_date": "2300-01-01", "base": 1181196}, "1231301": {"name": "Andrew I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.98, "picture": "ENG_M_Andrew_I", "head_of_state": "fortunate_type", "start_date": "1978-02-19", "death_date": "2300-01-01", "base": 1181197}, "1231302": {"name": "Edward IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.97, "picture": "ENG_M_Edward_IX", "head_of_state": "courteous_figure", "start_date": "1982-03-10", "death_date": "2300-01-01", "base": 1181198}, "1231304": {"name": "Anne II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.96, "picture": "ENG_M_Anne_II", "head_of_state": "courteous_figure", "start_date": "1968-08-15", "death_date": "2300-01-01", "base": 1181209}, "1231305": {"name": "Margaret I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.95, "picture": "ENG_M_Margaret_I", "head_of_state": "controversial_figure", "start_date": "1952-03-01", "death_date": "2002-02-09", "base": 1181210}, "1231306": {"name": "David III", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.94, "picture": "ENG_M_David_III", "head_of_state": "courteous_figure", "start_date": "1979-11-03", "death_date": "2300-01-01", "base": 1181211}, "1231307": {"name": "Sarah I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.93, "picture": "ENG_M_Sarah_I", "head_of_state": "courteous_figure", "start_date": "1982-05-01", "death_date": "2300-01-01", "base": 1181212}, "1231308": {"name": "Henry IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.92, "picture": "ENG_M_Henry_IX", "head_of_state": "courteous_figure", "start_date": "1946-01-01", "death_date": "1974-06-10", "base": 1181213}, "1231309": {"name": "William V", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.91, "picture": "ENG_M_William_V", "head_of_state": "courteous_figure", "start_date": "1959-12-18", "death_date": "1972-08-28", "base": 1181214}, "1231310": {"name": "Richard IV", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "ENG_M_Richard_IV", "head_of_state": "courteous_figure", "start_date": "1962-08-26", "death_date": "2300-01-01", "base": 1181215}, "1231311": {"name": "Robert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Robert_I_Bayern", "head_of_state": "traditionalist_type", "start_date": "1919-02-03", "death_date": "1955-08-02", "base": 1181199}, "1231312": {"name": "Albert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Albert_I_Bayern", "head_of_state": "fortunate_type", "start_date": "1955-08-02", "death_date": "1996-07-08", "base": 1181200}, "1231003": {"name": "Ieremia Tabai", "ideology": "market_liberal_idolg", "loyalty": 0.95, "picture": "KIR_M_Tabai_Ieremia", "head_of_state": "reputable_type", "head_of_government": "reputable_type", "start_date": "1976-01-01", "death_date": "1991-07-04"}, "1231004": {"name": "Rota Onorio", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "KIR_M_Onorio_Rota", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1982-12-10", "death_date": "1983-02-18"}, "1231005": {"name": "Teatao Teannaki", "ideology": "market_liberal_idolg", "loyalty": 0.95, "picture": "KIR_M_Teannaki_Teatao", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1979-01-01", "death_date": "2300-01-01"}, "1231006": {"name": "Taomati Iuta", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "KIR_M_Iuta_Taomati", "head_of_state": "courteous_figure", "head_of_government": "courteous_figure", "start_date": "1970-01-01", "death_date": "2300-01-01"}, "1231007": {"name": "Teburoro Tito", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "KIR_M_Tito_Teburoro", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1987-05-12", "death_date": "2300-01-01"}, "1231008": {"name": "Harry Tong", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "KIR_M_Tong_Harry", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1983-02-17", "death_date": "2300-01-01"}}}
+{
+    "color": [
+        145,
+        151,
+        157
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1231001": {
+            "name": "George VI",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
+        },
+        "1231002": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "1231300": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "1231301": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "1231302": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1231304": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1231305": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "1231306": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1231307": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1231308": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "1231309": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "1231310": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1231311": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
+        "1231312": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "1231003": {
+            "name": "Ieremia Tabai",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "KIR_M_Tabai_Ieremia",
+            "start_date": "1976-01-01",
+            "death_date": "1991-07-04",
+            "type": "reputable_type"
+        },
+        "1231004": {
+            "name": "Rota Onorio",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "KIR_M_Onorio_Rota",
+            "start_date": "1982-12-10",
+            "death_date": "1983-02-18",
+            "type": "bureaucrat_type"
+        },
+        "1231005": {
+            "name": "Teatao Teannaki",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "KIR_M_Teannaki_Teatao",
+            "start_date": "1979-01-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "1231006": {
+            "name": "Taomati Iuta",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "KIR_M_Iuta_Taomati",
+            "start_date": "1970-01-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1231007": {
+            "name": "Teburoro Tito",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "KIR_M_Tito_Teburoro",
+            "start_date": "1987-05-12",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "1231008": {
+            "name": "Harry Tong",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "KIR_M_Tong_Harry",
+            "start_date": "1983-02-17",
+            "death_date": "2300-01-01",
+            "type": "controversial_figure"
+        }
+    }
+}

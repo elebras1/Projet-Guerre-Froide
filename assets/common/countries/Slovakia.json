@@ -1,1 +1,338 @@
-{"color": [158, 161, 188], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1322000": {"name": "Michal Kov\u00e1c", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "SLO_M_Kovac_Michal", "head_of_state": "democrat_type", "start_date": "1989-12-08", "death_date": "1991-05-29"}, "1322100": {"name": "Gust\u00e1v Hus\u00e1k", "ideology": "communist_idolg", "loyalty": 0.8, "picture": "CZE_M_Husak_Gustav", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1939-01-01", "death_date": "1990-02-01", "base": 1169012}, "1322101": {"name": "Karol Bac\u00edlek", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "SLO_M_Bacilek_Karol", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1950-01-01", "death_date": "1951-09-01"}, "1322102": {"name": "Julius Duris", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "SLO_M_Duris_Julius", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1951-01-01", "death_date": "1953-01-01"}, "1322103": {"name": "Rudolf Strechaj", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "SLO_M_Strechaj_Rudolf", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1953-09-01", "death_date": "1962-07-28"}, "1322104": {"name": "Jozef Lenart", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "SLO_M_Lenart_Jozef", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1962-10-31", "death_date": "1963-03-20"}, "1322105": {"name": "Michal Chudik", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "SLO_M_Chudik_Michal", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1963-03-23", "death_date": "1968-12-29"}, "1322106": {"name": "Stefan Sadovsky", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "SLO_M_Sadovsky_Stefan", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1969-01-02", "death_date": "1969-05-04"}, "1322107": {"name": "Peter Colotka", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "SLO_M_Colotka_Peter", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1969-05-04", "death_date": "1988-10-12"}, "1322108": {"name": "Ivan Knotek", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "SLO_M_Knotek_Ivan", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1988-10-12", "death_date": "1989-06-22"}, "1322109": {"name": "Pavel Hrivnak", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "SLO_M_Hrivnak_Pavel", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1989-06-22", "death_date": "1989-12-08"}, "1322110": {"name": "Milan Cic", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "SLO_M_Cic_Milan", "head_of_state": "autocrat_type", "head_of_government": "democrat_type", "start_date": "1989-12-10", "death_date": "1990-06-27"}, "1322111": {"name": "Vladimir Meciar", "ideology": "social_liberal_idolg", "loyalty": 0.9, "picture": "SLO_M_Meciar_Vladimir", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1990-06-27", "death_date": "1991-05-06"}, "1322112": {"name": "Jan Carnogursky", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "SLO_M_Carnogursky_Jan", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1991-05-06", "death_date": "1992-06-24"}, "1322200": {"name": "Jozef Mjartan", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "SLO_M_Mjartan_Jozef", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1945-05-01", "death_date": "1983-02-25"}, "1322201": {"name": "Jozef Tiso", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "SLO_M_Tiso_Jozef", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1939-10-26", "death_date": "1947-04-18"}, "1322202": {"name": "Ferdinand Durcansk\u00fd", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "SLO_M_Durcansky_Ferdinand", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1925-01-01", "death_date": "1974-03-15"}, "1322203": {"name": "Alexander Mach", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "SLO_M_Mach_Alexander", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1938-01-01", "death_date": "1980-10-15"}, "1322204": {"name": "Karol Sidor", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "SLO_M_Sidor_Karol", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1930-01-01", "death_date": "1953-10-20"}, "1322205": {"name": "J\u00e1n \u008aevc\u00edk", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "SLO_M_Sevcik_Jan", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1920-01-01", "death_date": "1965-03-06"}, "1322206": {"name": "Eduard Kukan", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "SLO_M_Kukan_Eduard", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1965-01-01", "death_date": "2300-01-01"}, "1322207": {"name": "B\u00e9la Bug\u00e1r", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "SLO_M_Bugar_Bela", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1985-01-01", "death_date": "2300-01-01"}, "1322208": {"name": "Franti\u009aek Miklo\u009ako", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "SLO_M_Miklosko_Frantisek", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1978-01-01", "death_date": "2300-01-01"}, "1322209": {"name": "Mikul\u00e1\u009a Dzurinda", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "SLO_M_Dzurinda_Mikulas", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1980-01-01", "death_date": "2300-01-01"}, "1322210": {"name": "Du\u009aan Caplovic", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "SLO_M_Caplovic_Dusan", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1971-01-01", "death_date": "2300-01-01"}, "1322211": {"name": "Peter Tat\u00e1r", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "SLO_M_Tatar_Peter", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1980-01-01", "death_date": "2300-01-01"}, "1322212": {"name": "Peter Weiss", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "SLO_M_Weiss_Peter", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1973-03-10", "death_date": "1996-01-01"}, "1322213": {"name": "Ivan D\u00e9rer", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "SLO_M_Derer_Ivan", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1920-05-25", "death_date": "1973-03-10"}, "1322214": {"name": "J\u00e1n Lupt\u00e1k", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "SLO_M_Luptak_Jan", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1969-01-01", "death_date": "2300-01-01"}}}
+{
+    "color": [
+        158,
+        161,
+        188
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1322000": {
+            "name": "Michal Kovác",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SLO_M_Kovac_Michal",
+            "start_date": "1989-12-08",
+            "death_date": "1991-05-29",
+            "type": "democrat_type"
+        },
+        "1322100": {
+            "name": "Gustáv Husák",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "CZE_M_Husak_Gustav",
+            "start_date": "1939-01-01",
+            "death_date": "1990-02-01",
+            "type": "hardliner_type"
+        },
+        "1322101": {
+            "name": "Karol Bacílek",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Bacilek_Karol",
+            "start_date": "1950-01-01",
+            "death_date": "1951-09-01",
+            "type": "autocrat_type"
+        },
+        "1322102": {
+            "name": "Julius Duris",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Duris_Julius",
+            "start_date": "1951-01-01",
+            "death_date": "1953-01-01",
+            "type": "autocrat_type"
+        },
+        "1322103": {
+            "name": "Rudolf Strechaj",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Strechaj_Rudolf",
+            "start_date": "1953-09-01",
+            "death_date": "1962-07-28",
+            "type": "autocrat_type"
+        },
+        "1322104": {
+            "name": "Jozef Lenart",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Lenart_Jozef",
+            "start_date": "1962-10-31",
+            "death_date": "1963-03-20",
+            "type": "autocrat_type"
+        },
+        "1322105": {
+            "name": "Michal Chudik",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Chudik_Michal",
+            "start_date": "1963-03-23",
+            "death_date": "1968-12-29",
+            "type": "autocrat_type"
+        },
+        "1322106": {
+            "name": "Stefan Sadovsky",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Sadovsky_Stefan",
+            "start_date": "1969-01-02",
+            "death_date": "1969-05-04",
+            "type": "autocrat_type"
+        },
+        "1322107": {
+            "name": "Peter Colotka",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Colotka_Peter",
+            "start_date": "1969-05-04",
+            "death_date": "1988-10-12",
+            "type": "autocrat_type"
+        },
+        "1322108": {
+            "name": "Ivan Knotek",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Knotek_Ivan",
+            "start_date": "1988-10-12",
+            "death_date": "1989-06-22",
+            "type": "autocrat_type"
+        },
+        "1322109": {
+            "name": "Pavel Hrivnak",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Hrivnak_Pavel",
+            "start_date": "1989-06-22",
+            "death_date": "1989-12-08",
+            "type": "autocrat_type"
+        },
+        "1322110": {
+            "name": "Milan Cic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Cic_Milan",
+            "start_date": "1989-12-10",
+            "death_date": "1990-06-27",
+            "type": "democrat_type"
+        },
+        "1322111": {
+            "name": "Vladimir Meciar",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Meciar_Vladimir",
+            "start_date": "1990-06-27",
+            "death_date": "1991-05-06",
+            "type": "democrat_type"
+        },
+        "1322112": {
+            "name": "Jan Carnogursky",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "SLO_M_Carnogursky_Jan",
+            "start_date": "1991-05-06",
+            "death_date": "1992-06-24",
+            "type": "democrat_type"
+        },
+        "1322200": {
+            "name": "Jozef Mjartan",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Mjartan_Jozef",
+            "start_date": "1945-05-01",
+            "death_date": "1983-02-25",
+            "type": "bureaucrat_type"
+        },
+        "1322201": {
+            "name": "Jozef Tiso",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Tiso_Jozef",
+            "start_date": "1939-10-26",
+            "death_date": "1947-04-18",
+            "type": "controversial_figure"
+        },
+        "1322202": {
+            "name": "Ferdinand Durcanský",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Durcansky_Ferdinand",
+            "start_date": "1925-01-01",
+            "death_date": "1974-03-15",
+            "type": "zealous_type"
+        },
+        "1322203": {
+            "name": "Alexander Mach",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Mach_Alexander",
+            "start_date": "1938-01-01",
+            "death_date": "1980-10-15",
+            "type": "extremist_type"
+        },
+        "1322204": {
+            "name": "Karol Sidor",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Sidor_Karol",
+            "start_date": "1930-01-01",
+            "death_date": "1953-10-20",
+            "type": "religious_type"
+        },
+        "1322205": {
+            "name": "Ján evcík",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Sevcik_Jan",
+            "start_date": "1920-01-01",
+            "death_date": "1965-03-06",
+            "type": "courageous_type"
+        },
+        "1322206": {
+            "name": "Eduard Kukan",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Kukan_Eduard",
+            "start_date": "1965-01-01",
+            "death_date": "2300-01-01",
+            "type": "ambitious_type"
+        },
+        "1322207": {
+            "name": "Béla Bugár",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Bugar_Bela",
+            "start_date": "1985-01-01",
+            "death_date": "2300-01-01",
+            "type": "reformer_type"
+        },
+        "1322208": {
+            "name": "Frantiek Mikloko",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Miklosko_Frantisek",
+            "start_date": "1978-01-01",
+            "death_date": "2300-01-01",
+            "type": "democrat_type"
+        },
+        "1322209": {
+            "name": "Mikulá Dzurinda",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Dzurinda_Mikulas",
+            "start_date": "1980-01-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "1322210": {
+            "name": "Duan Caplovic",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Caplovic_Dusan",
+            "start_date": "1971-01-01",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1322211": {
+            "name": "Peter Tatár",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Tatar_Peter",
+            "start_date": "1980-01-01",
+            "death_date": "2300-01-01",
+            "type": "democrat_type"
+        },
+        "1322212": {
+            "name": "Peter Weiss",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Weiss_Peter",
+            "start_date": "1973-03-10",
+            "death_date": "1996-01-01",
+            "type": "moral_type"
+        },
+        "1322213": {
+            "name": "Ivan Dérer",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Derer_Ivan",
+            "start_date": "1920-05-25",
+            "death_date": "1973-03-10",
+            "type": "visionary_type"
+        },
+        "1322214": {
+            "name": "Ján Lupták",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "SLO_M_Luptak_Jan",
+            "start_date": "1969-01-01",
+            "death_date": "2300-01-01",
+            "type": "lethargic_type"
+        }
+    }
+}

@@ -1,1 +1,122 @@
-{"color": [4, 4, 147], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1160001": {"name": "Aristides Maria Pereira", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CPV_M_Pereira_Aristides_M", "head_of_state": "democrat_type", "start_date": "1975-07-08", "death_date": "1991-03-22"}, "1160002": {"name": "Ant\u00f3nio Mascarenhas Monteiro", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CPV_M_Monteiro_Antonio_M", "head_of_state": "traditionalist_type", "start_date": "1991-03-22", "death_date": "2001-03-22"}, "1160003": {"name": "Pedro V.R. Pires", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CPV_M_Pires_Pedro_V_R", "head_of_government": "democrat_type", "start_date": "1975-07-08", "death_date": "1991-04-04"}, "1160004": {"name": "Carlos A.W.C Veiga", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CPV_M_Veiga_Carlos_A_W_C", "head_of_government": "administrator_type", "start_date": "1991-04-04", "death_date": "2000-10-05"}, "1160005": {"name": "Am\u00edlcar Cabral", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "CPV_M_Cabral_Amilcar", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1956-01-01", "death_date": "1973-01-20"}}}
+{
+    "color": [
+        4,
+        4,
+        147
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1160001": {
+            "name": "Aristides Maria Pereira",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CPV_M_Pereira_Aristides_M",
+            "start_date": "1975-07-08",
+            "death_date": "1991-03-22",
+            "type": "democrat_type"
+        },
+        "1160002": {
+            "name": "António Mascarenhas Monteiro",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CPV_M_Monteiro_Antonio_M",
+            "start_date": "1991-03-22",
+            "death_date": "2001-03-22",
+            "type": "traditionalist_type"
+        },
+        "1160003": {
+            "name": "Pedro V.R. Pires",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CPV_M_Pires_Pedro_V_R",
+            "start_date": "1975-07-08",
+            "death_date": "1991-04-04",
+            "type": "democrat_type"
+        },
+        "1160004": {
+            "name": "Carlos A.W.C Veiga",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CPV_M_Veiga_Carlos_A_W_C",
+            "start_date": "1991-04-04",
+            "death_date": "2000-10-05",
+            "type": "administrator_type"
+        },
+        "1160005": {
+            "name": "Amílcar Cabral",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CPV_M_Cabral_Amilcar",
+            "start_date": "1956-01-01",
+            "death_date": "1973-01-20",
+            "type": "hardliner_type"
+        }
+    }
+}

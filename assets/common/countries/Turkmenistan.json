@@ -1,1 +1,212 @@
-{"color": [143, 50, 154], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1344000": {"name": "Mikhail Fonin", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "TRK_M_Fonin_Mikhail", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1939-11-01", "death_date": "1947-03-01"}, "1344001": {"name": "Shadzha Batyrov", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "TRK_M_Batyrov_Shadzha", "head_of_state": "reputable_type", "head_of_government": "reputable_type", "start_date": "1947-03-01", "death_date": "1951-07-01"}, "1344002": {"name": "Sykhan Babayev", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "TRK_M_Babayev_Sykhan", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1951-07-01", "death_date": "1958-12-14"}, "1344003": {"name": "Dzhuma Karayev", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "TRK_M_Karayev_Dzhuma", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1958-12-14", "death_date": "1960-05-13"}, "1344004": {"name": "Balysh Ovyezov", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "TRK_M_Ovyezov_Balysh", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1960-05-13", "death_date": "1969-12-24"}, "1344005": {"name": "Mukhamednazar Gapurov", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "TRK_M_Gapurov_Mukhamednazar", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1969-12-24", "death_date": "1985-12-21"}, "1344006": {"name": "Saparmurat Niyazov", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "TRK_M_Niyazov_Saparmurat", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1985-12-21", "death_date": "1991-12-16", "base": 1344006}, "1344007": {"name": "Saparmurat Niyazov", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "TRK_M_Niyazov_Saparmurat", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1991-12-16", "death_date": "2006-12-21", "base": 1344006}, "1344100": {"name": "Orazgeldy Ovezgeldyev", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "TRK_M_Ovezgeldyev_Orazgeldy", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1980-03-21", "death_date": "1990-01-18"}, "1344101": {"name": "Yakov Chubin", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "TRK_M_Chubin_Yakov", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1937-01-01", "death_date": "1956-11-01"}, "1344102": {"name": "Han Ahmedow", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "TRK_M_Ahmedow_Han", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1989-01-01", "death_date": "2006-12-06"}, "1344103": {"name": "Sayyid Abdullah Khan", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "TRK_M_Khan_Sayyid_A", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1946-01-01", "death_date": "1963-08-12"}, "1344104": {"name": "Murad Quli Khan", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "TRK_M_Khan_Murad_Q", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1960-01-01", "death_date": "1996-10-24"}, "1344105": {"name": "Junaid Khan", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "TRK_M_Khan_Junaid", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1946-01-01", "death_date": "1957-04-30"}, "1344106": {"name": "Abdullah Bek", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "TRK_M_Bek_Abdullah", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1957-01-01", "death_date": "1994-11-15"}}}
+{
+    "color": [
+        143,
+        50,
+        154
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1344000": {
+            "name": "Mikhail Fonin",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "TRK_M_Fonin_Mikhail",
+            "start_date": "1939-11-01",
+            "death_date": "1947-03-01",
+            "type": "bureaucrat_type"
+        },
+        "1344001": {
+            "name": "Shadzha Batyrov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "TRK_M_Batyrov_Shadzha",
+            "start_date": "1947-03-01",
+            "death_date": "1951-07-01",
+            "type": "reputable_type"
+        },
+        "1344002": {
+            "name": "Sykhan Babayev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "TRK_M_Babayev_Sykhan",
+            "start_date": "1951-07-01",
+            "death_date": "1958-12-14",
+            "type": "hardliner_type"
+        },
+        "1344003": {
+            "name": "Dzhuma Karayev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "TRK_M_Karayev_Dzhuma",
+            "start_date": "1958-12-14",
+            "death_date": "1960-05-13",
+            "type": "administrator_type"
+        },
+        "1344004": {
+            "name": "Balysh Ovyezov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "TRK_M_Ovyezov_Balysh",
+            "start_date": "1960-05-13",
+            "death_date": "1969-12-24",
+            "type": "reformer_type"
+        },
+        "1344005": {
+            "name": "Mukhamednazar Gapurov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "TRK_M_Gapurov_Mukhamednazar",
+            "start_date": "1969-12-24",
+            "death_date": "1985-12-21",
+            "type": "loyal_type"
+        },
+        "1344006": {
+            "name": "Saparmurat Niyazov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "TRK_M_Niyazov_Saparmurat",
+            "start_date": "1985-12-21",
+            "death_date": "1991-12-16",
+            "type": "dictator_type"
+        },
+        "1344007": {
+            "name": "Saparmurat Niyazov",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "TRK_M_Niyazov_Saparmurat",
+            "start_date": "1991-12-16",
+            "death_date": "2006-12-21",
+            "type": "dictator_type"
+        },
+        "1344100": {
+            "name": "Orazgeldy Ovezgeldyev",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "TRK_M_Ovezgeldyev_Orazgeldy",
+            "start_date": "1980-03-21",
+            "death_date": "1990-01-18",
+            "type": "bureaucrat_type"
+        },
+        "1344101": {
+            "name": "Yakov Chubin",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "TRK_M_Chubin_Yakov",
+            "start_date": "1937-01-01",
+            "death_date": "1956-11-01",
+            "type": "bureaucrat_type"
+        },
+        "1344102": {
+            "name": "Han Ahmedow",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "TRK_M_Ahmedow_Han",
+            "start_date": "1989-01-01",
+            "death_date": "2006-12-06",
+            "type": "administrator_type"
+        },
+        "1344103": {
+            "name": "Sayyid Abdullah Khan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "TRK_M_Khan_Sayyid_A",
+            "start_date": "1946-01-01",
+            "death_date": "1963-08-12",
+            "type": "moral_type"
+        },
+        "1344104": {
+            "name": "Murad Quli Khan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "TRK_M_Khan_Murad_Q",
+            "start_date": "1960-01-01",
+            "death_date": "1996-10-24",
+            "type": "zealous_type"
+        },
+        "1344105": {
+            "name": "Junaid Khan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "TRK_M_Khan_Junaid",
+            "start_date": "1946-01-01",
+            "death_date": "1957-04-30",
+            "type": "controversial_figure"
+        },
+        "1344106": {
+            "name": "Abdullah Bek",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "TRK_M_Bek_Abdullah",
+            "start_date": "1957-01-01",
+            "death_date": "1994-11-15",
+            "type": "lethargic_type"
+        }
+    }
+}

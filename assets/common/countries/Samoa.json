@@ -1,1 +1,140 @@
-{"color": [78, 102, 37], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1324001": {"name": "Malietoa Tanumafili II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "SMO_M_Malietoa_II", "head_of_state": "courteous_figure", "start_date": "1962-01-01", "death_date": "2007-05-11"}, "1324002": {"name": "Tupua Tamasese Mea'ole", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "SMO_M_Mea-ole_Tupua_T", "head_of_state": "courteous_figure", "start_date": "1929-01-01", "death_date": "1963-04-05"}, "1324003": {"name": "Mata'afa Mulinu'u II", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "SMO_M_Mulinu-u_II", "head_of_government": "reputable_type", "start_date": "1959-10-01", "death_date": "1975-05-20"}, "1324004": {"name": "Tupua Tamasese Lealofi IV", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "SMO_M_Lealofi_IV", "head_of_government": "bureaucrat_type", "start_date": "1970-02-25", "death_date": "1976-03-24"}, "1324005": {"name": "Tufuga Efi", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "SMO_M_Efi_Tufuga", "head_of_government": "traditionalist_type", "start_date": "1976-03-24", "death_date": "1982-12-31"}, "1324006": {"name": "Va'ai Kolone", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "SMO_M_Kolone_Va-ai", "head_of_government": "controversial_figure", "start_date": "1982-04-13", "death_date": "1988-04-08"}, "1324007": {"name": "Tofilau Eti Alesana", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "SMO_M_Alesana_Tofilau_E", "head_of_government": "ambitious_type", "start_date": "1982-12-31", "death_date": "1998-11-23"}}}
+{
+    "color": [
+        78,
+        102,
+        37
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1324001": {
+            "name": "Malietoa Tanumafili II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SMO_M_Malietoa_II",
+            "start_date": "1962-01-01",
+            "death_date": "2007-05-11",
+            "type": "courteous_figure"
+        },
+        "1324002": {
+            "name": "Tupua Tamasese Mea'ole",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SMO_M_Mea-ole_Tupua_T",
+            "start_date": "1929-01-01",
+            "death_date": "1963-04-05",
+            "type": "courteous_figure"
+        },
+        "1324003": {
+            "name": "Mata'afa Mulinu'u II",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "SMO_M_Mulinu-u_II",
+            "start_date": "1959-10-01",
+            "death_date": "1975-05-20",
+            "type": "reputable_type"
+        },
+        "1324004": {
+            "name": "Tupua Tamasese Lealofi IV",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "SMO_M_Lealofi_IV",
+            "start_date": "1970-02-25",
+            "death_date": "1976-03-24",
+            "type": "bureaucrat_type"
+        },
+        "1324005": {
+            "name": "Tufuga Efi",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SMO_M_Efi_Tufuga",
+            "start_date": "1976-03-24",
+            "death_date": "1982-12-31",
+            "type": "traditionalist_type"
+        },
+        "1324006": {
+            "name": "Va'ai Kolone",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "SMO_M_Kolone_Va-ai",
+            "start_date": "1982-04-13",
+            "death_date": "1988-04-08",
+            "type": "controversial_figure"
+        },
+        "1324007": {
+            "name": "Tofilau Eti Alesana",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "SMO_M_Alesana_Tofilau_E",
+            "start_date": "1982-12-31",
+            "death_date": "1998-11-23",
+            "type": "ambitious_type"
+        }
+    }
+}

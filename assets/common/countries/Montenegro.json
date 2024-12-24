@@ -1,1 +1,500 @@
-{"color": [179, 76, 88], "graphical_culture": "Generic", "default_templates": {"SOV_guards_airborne_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "SOV_tank_division": ["armor_brigade", "armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "SOV_guards_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "SOV_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_motor_rifle_division": ["motorized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_guards_rifle_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "SOV_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "SOV_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "SOV_rifle_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1266000": {"name": "Nikola Miljanic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Miljanic_Nikola", "head_of_state": "administrator_type", "start_date": "1944-07-13", "death_date": "1946-11-21"}, "1266001": {"name": "Milos Rasovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Rasovic_Milos", "head_of_state": "bureaucrat_type", "start_date": "1946-11-21", "death_date": "1950-11-06"}, "1266002": {"name": "Nikola Kovacevic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Kovacevic_Nikola", "head_of_state": "dictator_type", "start_date": "1950-11-06", "death_date": "1953-12-15"}, "1266003": {"name": "Blazo Jovanovic", "ideology": "communist_idolg", "loyalty": 0.8, "picture": "MTN_M_Jovanovic_Blazo", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1945-04-17", "death_date": "1962-07-12"}, "1266004": {"name": "Filip Bajkovic", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "MTN_M_Bajkovic_Filip", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1953-12-16", "death_date": "1963-05-05"}, "1266005": {"name": "Andrija Mugosa", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Mugosa_Andrija", "head_of_state": "reputable_type", "start_date": "1963-05-05", "death_date": "1967-05-05"}, "1266006": {"name": "Veljko Milatovic", "ideology": "communist_idolg", "loyalty": 0.8, "picture": "MTN_M_Milatovic_Veljko", "head_of_state": "extremist_type", "start_date": "1967-05-05", "death_date": "1982-05-07"}, "1266007": {"name": "Vidoje Zarkovic", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "MTN_M_Zarkovic_Vidjoe", "head_of_state": "bureaucrat_type", "start_date": "1969-10-06", "death_date": "1974-04-05"}, "1266008": {"name": "Veselin Duranovic", "ideology": "communist_idolg", "loyalty": 0.7, "picture": "YUG_M_Duranovic_Veselin", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1963-06-25", "death_date": "1983-05-07", "base": 1266008}, "1266009": {"name": "Marko Orlandic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Orlandic_Marko", "head_of_state": "reformer_type", "start_date": "1983-05-07", "death_date": "1984-05-07"}, "1266010": {"name": "Miodrag Vlahovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Vlahovic_Miodrag", "head_of_state": "bureaucrat_type", "start_date": "1984-05-07", "death_date": "1985-05-07"}, "1266011": {"name": "Branislav Soskic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Soskic_Branislav", "head_of_state": "reformer_type", "start_date": "1985-05-07", "death_date": "1986-05-07"}, "1266012": {"name": "Radivoje Brajovic", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "MTN_M_Brajovic_Radivoje", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1982-05-07", "death_date": "1988-05-07"}, "1266013": {"name": "Bozina Ivanovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Ivanovic_Bozina", "head_of_state": "controversial_figure", "start_date": "1988-05-07", "death_date": "1989-01-13"}, "1266014": {"name": "Slobodan Simovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Simovic_Slobodan", "head_of_state": "lethargic_type", "start_date": "1989-01-03", "death_date": "1989-03-17"}, "1266015": {"name": "Branko Kostic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Kostic_Branko", "head_of_state": "reformer_type", "start_date": "1989-03-17", "death_date": "1990-12-23"}, "1266016": {"name": "Momir Bulatovic", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "MTN_M_Bulatovic_Momir", "head_of_state": "hardliner_type", "start_date": "1990-12-23", "death_date": "1998-01-15"}, "1266017": {"name": "Dordje Pajkovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Pajkovic_Dordje", "head_of_government": "courageous_type", "start_date": "1962-07-12", "death_date": "1963-06-25"}, "1266018": {"name": "Mijusko Sibalic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Sibalic_Mijusko", "head_of_government": "lethargic_type", "start_date": "1966-12-08", "death_date": "1967-05-05"}, "1266019": {"name": "Vidoje Zarkovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Zarkovic_Vidjoe", "head_of_government": "bureaucrat_type", "start_date": "1967-05-05", "death_date": "1969-10-07"}, "1266020": {"name": "Zarko Bulajic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Bulajic_Zarko", "head_of_government": "administrator_type", "start_date": "1969-10-07", "death_date": "1974-05-06"}, "1266021": {"name": "Marko Olandic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Olandic_Marko", "head_of_government": "liberal_type", "start_date": "1974-05-06", "death_date": "1978-04-28"}, "1266022": {"name": "Momcilo Cemovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Cemovic_Momcilo", "head_of_government": "reformer_type", "start_date": "1978-04-28", "death_date": "1982-05-07"}, "1266023": {"name": "Vuko Vukadinovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Vukadinovic_Vuko", "head_of_government": "administrator_type", "start_date": "1986-06-06", "death_date": "1989-03-29"}, "1266024": {"name": "Radoje Kontic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MTN_M_Kontic_Radoje", "head_of_government": "reputable_type", "start_date": "1989-03-29", "death_date": "1991-02-15"}, "1266025": {"name": "Milo Dukanovic", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "MTN_M_Dukanovic_Milo", "head_of_government": "traditionalist_type", "start_date": "1991-02-15", "death_date": "1998-02-05"}, "1266100": {"name": "Svetozar Vukmanovic", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MTN_M_Vukmanovic_Svetozar", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1944-11-01", "death_date": "1993-01-10"}, "1266101": {"name": "Vojislav Srzentic", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MTN_M_Srzentic_Vojislav", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1960-01-01", "death_date": "1991-01-01"}, "1266102": {"name": "Mihailo I Petrovic-Njego\u009a", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.5, "picture": "MTN_M_Mihailo_I", "head_of_state": "courageous_type", "start_date": "1921-03-07", "death_date": "1986-03-24"}, "1266103": {"name": "Nikola II Petrovic-Njego\u009a", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.5, "picture": "MTN_M_Petrovic-Njegos_Nikola_II", "head_of_state": "traditionalist_type", "start_date": "1986-03-24", "death_date": "2300-01-01"}, "1266104": {"name": "Roman I Petrovic Romanov", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.5, "picture": "MTN_M_Romanov_Roman_I", "head_of_state": "visionary_type", "start_date": "1941-01-01", "death_date": "1978-10-23"}, "1266105": {"name": "Nikola II Romanovic Romanov", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.5, "picture": "MTN_M_Romanov_Nikola_II", "head_of_state": "autocrat_type", "start_date": "1941-01-01", "death_date": "2300-01-01"}, "1266106": {"name": "Milovan \u00d0ilas", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "MTN_M_Dilas_Milovan", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1933-01-01", "death_date": "1995-04-20"}, "1266107": {"name": "Krsto Popovic", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MTN_M_Popovic_Krsto", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1918-12-24", "death_date": "1947-03-14"}, "1266108": {"name": "Jovo Kapicic", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MTN_M_Kapicic_Jovo", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1941-07-01", "death_date": "2300-01-01"}, "1266109": {"name": "Slavko Perovic", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "MTN_M_Perovic_Slavko", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1980-01-01", "death_date": "2005-01-01"}, "1266110": {"name": "Savic Markovic", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MTN_M_Markovic_Savic", "head_of_state": "courteous_figure", "head_of_government": "courteous_figure", "start_date": "1933-01-01", "death_date": "1976-01-25"}, "1266111": {"name": "Milan Rakocevic", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "MTN_M_Rakocevic_Milan", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1942-01-01", "death_date": "1983-01-01"}, "1266112": {"name": "Vladimir Dapcevic", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "MTN_M_Dapcevic_Vladimir", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1941-07-01", "death_date": "2001-01-01"}, "1266113": {"name": "Novak Kilibarda", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MTN_M_Kilibarda_Novak", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1955-01-01", "death_date": "2300-01-01"}, "1266114": {"name": "Jevrem Brkovic", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "MTN_M_Brkovic_Jevrem", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1961-01-01", "death_date": "2300-01-01"}, "1266115": {"name": "Metropolitan Amfilohije", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MTN_M_Amfilohije_Metropolitan", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1985-01-01", "death_date": "2300-01-01"}, "1266116": {"name": "Peko Dapcevic", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MTN_M_Dapcevic_Peko", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1944-01-01", "death_date": "1999-02-13"}, "1266117": {"name": "Nikola Kavaja", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "MTN_M_Kavaja_Nikola", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1953-06-01", "death_date": "2008-11-10"}, "1266118": {"name": "\u008eeljko Ra\u009enatovic", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "MTN_M_Raznatovic_Zeljko", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1983-01-01", "death_date": "2000-01-15"}, "1266119": {"name": "Boro Miranovic", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "MTN_M_Miranovic_Boro", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1988-01-01", "death_date": "2300-01-01"}, "1266120": {"name": "Vlado Dapcevic", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "YUG_M_Dapcevic_Vlado", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1933-01-01", "death_date": "2001-07-12", "base": 1266120}}}
+{
+    "color": [
+        179,
+        76,
+        88
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "SOV_guards_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "SOV_tank_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_motor_rifle_division": [
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "SOV_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "SOV_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "SOV_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1266000": {
+            "name": "Nikola Miljanic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Miljanic_Nikola",
+            "start_date": "1944-07-13",
+            "death_date": "1946-11-21",
+            "type": "administrator_type"
+        },
+        "1266001": {
+            "name": "Milos Rasovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Rasovic_Milos",
+            "start_date": "1946-11-21",
+            "death_date": "1950-11-06",
+            "type": "bureaucrat_type"
+        },
+        "1266002": {
+            "name": "Nikola Kovacevic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Kovacevic_Nikola",
+            "start_date": "1950-11-06",
+            "death_date": "1953-12-15",
+            "type": "dictator_type"
+        },
+        "1266003": {
+            "name": "Blazo Jovanovic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "MTN_M_Jovanovic_Blazo",
+            "start_date": "1945-04-17",
+            "death_date": "1962-07-12",
+            "type": "courageous_type"
+        },
+        "1266004": {
+            "name": "Filip Bajkovic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "MTN_M_Bajkovic_Filip",
+            "start_date": "1953-12-16",
+            "death_date": "1963-05-05",
+            "type": "loyal_type"
+        },
+        "1266005": {
+            "name": "Andrija Mugosa",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Mugosa_Andrija",
+            "start_date": "1963-05-05",
+            "death_date": "1967-05-05",
+            "type": "reputable_type"
+        },
+        "1266006": {
+            "name": "Veljko Milatovic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "MTN_M_Milatovic_Veljko",
+            "start_date": "1967-05-05",
+            "death_date": "1982-05-07",
+            "type": "extremist_type"
+        },
+        "1266007": {
+            "name": "Vidoje Zarkovic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "MTN_M_Zarkovic_Vidjoe",
+            "start_date": "1969-10-06",
+            "death_date": "1974-04-05",
+            "type": "bureaucrat_type"
+        },
+        "1266008": {
+            "name": "Veselin Duranovic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.7,
+            "picture": "YUG_M_Duranovic_Veselin",
+            "start_date": "1963-06-25",
+            "death_date": "1983-05-07",
+            "type": "administrator_type"
+        },
+        "1266009": {
+            "name": "Marko Orlandic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Orlandic_Marko",
+            "start_date": "1983-05-07",
+            "death_date": "1984-05-07",
+            "type": "reformer_type"
+        },
+        "1266010": {
+            "name": "Miodrag Vlahovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Vlahovic_Miodrag",
+            "start_date": "1984-05-07",
+            "death_date": "1985-05-07",
+            "type": "bureaucrat_type"
+        },
+        "1266011": {
+            "name": "Branislav Soskic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Soskic_Branislav",
+            "start_date": "1985-05-07",
+            "death_date": "1986-05-07",
+            "type": "reformer_type"
+        },
+        "1266012": {
+            "name": "Radivoje Brajovic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "MTN_M_Brajovic_Radivoje",
+            "start_date": "1982-05-07",
+            "death_date": "1988-05-07",
+            "type": "loyal_type"
+        },
+        "1266013": {
+            "name": "Bozina Ivanovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Ivanovic_Bozina",
+            "start_date": "1988-05-07",
+            "death_date": "1989-01-13",
+            "type": "controversial_figure"
+        },
+        "1266014": {
+            "name": "Slobodan Simovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Simovic_Slobodan",
+            "start_date": "1989-01-03",
+            "death_date": "1989-03-17",
+            "type": "lethargic_type"
+        },
+        "1266015": {
+            "name": "Branko Kostic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Kostic_Branko",
+            "start_date": "1989-03-17",
+            "death_date": "1990-12-23",
+            "type": "reformer_type"
+        },
+        "1266016": {
+            "name": "Momir Bulatovic",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Bulatovic_Momir",
+            "start_date": "1990-12-23",
+            "death_date": "1998-01-15",
+            "type": "hardliner_type"
+        },
+        "1266017": {
+            "name": "Dordje Pajkovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Pajkovic_Dordje",
+            "start_date": "1962-07-12",
+            "death_date": "1963-06-25",
+            "type": "courageous_type"
+        },
+        "1266018": {
+            "name": "Mijusko Sibalic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Sibalic_Mijusko",
+            "start_date": "1966-12-08",
+            "death_date": "1967-05-05",
+            "type": "lethargic_type"
+        },
+        "1266019": {
+            "name": "Vidoje Zarkovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Zarkovic_Vidjoe",
+            "start_date": "1967-05-05",
+            "death_date": "1969-10-07",
+            "type": "bureaucrat_type"
+        },
+        "1266020": {
+            "name": "Zarko Bulajic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Bulajic_Zarko",
+            "start_date": "1969-10-07",
+            "death_date": "1974-05-06",
+            "type": "administrator_type"
+        },
+        "1266021": {
+            "name": "Marko Olandic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Olandic_Marko",
+            "start_date": "1974-05-06",
+            "death_date": "1978-04-28",
+            "type": "liberal_type"
+        },
+        "1266022": {
+            "name": "Momcilo Cemovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Cemovic_Momcilo",
+            "start_date": "1978-04-28",
+            "death_date": "1982-05-07",
+            "type": "reformer_type"
+        },
+        "1266023": {
+            "name": "Vuko Vukadinovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Vukadinovic_Vuko",
+            "start_date": "1986-06-06",
+            "death_date": "1989-03-29",
+            "type": "administrator_type"
+        },
+        "1266024": {
+            "name": "Radoje Kontic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Kontic_Radoje",
+            "start_date": "1989-03-29",
+            "death_date": "1991-02-15",
+            "type": "reputable_type"
+        },
+        "1266025": {
+            "name": "Milo Dukanovic",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "MTN_M_Dukanovic_Milo",
+            "start_date": "1991-02-15",
+            "death_date": "1998-02-05",
+            "type": "traditionalist_type"
+        },
+        "1266100": {
+            "name": "Svetozar Vukmanovic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Vukmanovic_Svetozar",
+            "start_date": "1944-11-01",
+            "death_date": "1993-01-10",
+            "type": "hardliner_type"
+        },
+        "1266101": {
+            "name": "Vojislav Srzentic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Srzentic_Vojislav",
+            "start_date": "1960-01-01",
+            "death_date": "1991-01-01",
+            "type": "administrator_type"
+        },
+        "1266102": {
+            "name": "Mihailo I Petrovic-Njego",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Mihailo_I",
+            "start_date": "1921-03-07",
+            "death_date": "1986-03-24",
+            "type": "courageous_type"
+        },
+        "1266103": {
+            "name": "Nikola II Petrovic-Njego",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Petrovic-Njegos_Nikola_II",
+            "start_date": "1986-03-24",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1266104": {
+            "name": "Roman I Petrovic Romanov",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Romanov_Roman_I",
+            "start_date": "1941-01-01",
+            "death_date": "1978-10-23",
+            "type": "visionary_type"
+        },
+        "1266105": {
+            "name": "Nikola II Romanovic Romanov",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Romanov_Nikola_II",
+            "start_date": "1941-01-01",
+            "death_date": "2300-01-01",
+            "type": "autocrat_type"
+        },
+        "1266106": {
+            "name": "Milovan Ðilas",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Dilas_Milovan",
+            "start_date": "1933-01-01",
+            "death_date": "1995-04-20",
+            "type": "democrat_type"
+        },
+        "1266107": {
+            "name": "Krsto Popovic",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Popovic_Krsto",
+            "start_date": "1918-12-24",
+            "death_date": "1947-03-14",
+            "type": "visionary_type"
+        },
+        "1266108": {
+            "name": "Jovo Kapicic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Kapicic_Jovo",
+            "start_date": "1941-07-01",
+            "death_date": "2300-01-01",
+            "type": "courageous_type"
+        },
+        "1266109": {
+            "name": "Slavko Perovic",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Perovic_Slavko",
+            "start_date": "1980-01-01",
+            "death_date": "2005-01-01",
+            "type": "controversial_figure"
+        },
+        "1266110": {
+            "name": "Savic Markovic",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Markovic_Savic",
+            "start_date": "1933-01-01",
+            "death_date": "1976-01-25",
+            "type": "courteous_figure"
+        },
+        "1266111": {
+            "name": "Milan Rakocevic",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Rakocevic_Milan",
+            "start_date": "1942-01-01",
+            "death_date": "1983-01-01",
+            "type": "administrator_type"
+        },
+        "1266112": {
+            "name": "Vladimir Dapcevic",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Dapcevic_Vladimir",
+            "start_date": "1941-07-01",
+            "death_date": "2001-01-01",
+            "type": "hardliner_type"
+        },
+        "1266113": {
+            "name": "Novak Kilibarda",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Kilibarda_Novak",
+            "start_date": "1955-01-01",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1266114": {
+            "name": "Jevrem Brkovic",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Brkovic_Jevrem",
+            "start_date": "1961-01-01",
+            "death_date": "2300-01-01",
+            "type": "controversial_figure"
+        },
+        "1266115": {
+            "name": "Metropolitan Amfilohije",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Amfilohije_Metropolitan",
+            "start_date": "1985-01-01",
+            "death_date": "2300-01-01",
+            "type": "religious_type"
+        },
+        "1266116": {
+            "name": "Peko Dapcevic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Dapcevic_Peko",
+            "start_date": "1944-01-01",
+            "death_date": "1999-02-13",
+            "type": "courageous_type"
+        },
+        "1266117": {
+            "name": "Nikola Kavaja",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Kavaja_Nikola",
+            "start_date": "1953-06-01",
+            "death_date": "2008-11-10",
+            "type": "hardliner_type"
+        },
+        "1266118": {
+            "name": "eljko Ranatovic",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Raznatovic_Zeljko",
+            "start_date": "1983-01-01",
+            "death_date": "2000-01-15",
+            "type": "extremist_type"
+        },
+        "1266119": {
+            "name": "Boro Miranovic",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "MTN_M_Miranovic_Boro",
+            "start_date": "1988-01-01",
+            "death_date": "2300-01-01",
+            "type": "visionary_type"
+        },
+        "1266120": {
+            "name": "Vlado Dapcevic",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Dapcevic_Vlado",
+            "start_date": "1933-01-01",
+            "death_date": "2001-07-12",
+            "type": "dictator_type"
+        }
+    }
+}

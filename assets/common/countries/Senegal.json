@@ -1,246 +1,229 @@
 {
-  "color": [
-    164,
-    249,
-    193
-  ],
-  "graphical_culture": "Generic",
-  "default_templates": {
-    "FRA_light_aviation_division": [
-      "air_cav_brigade",
-      "air_cav_brigade",
-      "air_cav_brigade",
-      "air_cav_brigade"
+    "color": [
+        164,
+        249,
+        193
     ],
-    "FRA_armoured_division": [
-      "armor_brigade",
-      "armor_brigade",
-      "heavy_mechanized_brigade",
-      "light_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "FRA_cavalry_division": [
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "sp_artillery_brigade"
-    ],
-    "FRA_heavy_mechanized_division": [
-      "heavy_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "light_mechanized_brigade",
-      "armor_brigade",
-      "sp_artillery_brigade"
-    ],
-    "FRA_light_mechanized_division": [
-      "light_mechanized_brigade",
-      "light_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "FRA_motorized_division": [
-      "motorized_brigade",
-      "motorized_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "FRA_infantry_division": [
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "artillery_brigade"
-    ],
-    "FRA_marine_inf_division": [
-      "marine_brigade",
-      "marine_brigade",
-      "marine_brigade",
-      "marine_brigade"
-    ],
-    "FRA_chasseurs_alpins_division": [
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade"
-    ],
-    "FRA_gendarmerie_division": [
-      "police_brigade",
-      "infantry_brigade",
-      "militia_brigade"
-    ]
-  },
-  "unit_names": {},
-  "ministers": {
-    "1310001": {
-      "name": "L�opold S�dar Senghor",
-      "ideology": "social_democrat_idolg",
-      "loyalty": 0.9,
-      "picture": "SEN_M_Senghor_Leopold_S",
-      "head_of_state": "parental_type",
-      "head_of_government": "parental_type",
-      "start_date": "1960-09-06",
-      "death_date": "1980-12-31",
-      "base": 1310001
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
     },
-    "1310002": {
-      "name": "Abdou Diouf",
-      "ideology": "social_democrat_idolg",
-      "loyalty": 0.7,
-      "picture": "SEN_M_Diouf_Abdou",
-      "head_of_state": "democrat_type",
-      "head_of_government": "democrat_type",
-      "start_date": "1981-01-01",
-      "death_date": "2000-04-01",
-      "base": 1310002
-    },
-    "1310003": {
-      "name": "Mamadou Dia",
-      "ideology": "social_democrat_idolg",
-      "loyalty": 0.8,
-      "picture": "SEN_M_Dia_Mamadou",
-      "head_of_government": "autocrat_type",
-      "start_date": "1957-05-18",
-      "death_date": "1988-02-28"
-    },
-    "1310004": {
-      "name": "Habib Thiam",
-      "ideology": "social_democrat_idolg",
-      "loyalty": 0.9,
-      "picture": "SEN_M_Thiam_Habib",
-      "head_of_government": "administrator_type",
-      "start_date": "1981-01-01",
-      "death_date": "1998-07-03"
-    },
-    "1310005": {
-      "name": "Moustapha Niasse",
-      "ideology": "market_liberal_idolg",
-      "loyalty": 0.9,
-      "picture": "SEN_M_Niasse_Moustapha",
-      "head_of_government": "courageous_type",
-      "start_date": "1979-01-01",
-      "death_date": "2001-03-03"
-    },
-    "1310006": {
-      "name": "Abdoulaye Wade",
-      "ideology": "social_liberal_idolg",
-      "loyalty": 1,
-      "picture": "SEN_M_Wade_Abdoulaye",
-      "head_of_government": "parental_type",
-      "start_date": "1978-02-26",
-      "death_date": "1993-02-21",
-      "base": 1310006
-    },
-    "1310007": {
-      "name": "Landing Savan�",
-      "ideology": "maoist_idolg",
-      "loyalty": 1,
-      "picture": "SEN_M_Savane_Landing",
-      "head_of_state": "democrat_type",
-      "head_of_government": "democrat_type",
-      "start_date": "1965-01-01",
-      "death_date": "1999-12-31",
-      "base": 1310007
-    },
-    "1310100": {
-      "name": "Ibrahim Niass",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.5,
-      "picture": "SEN_M_Niass_Ibrahim",
-      "head_of_state": "religious_type",
-      "head_of_government": "religious_type",
-      "start_date": "1930-01-01",
-      "death_date": "1975-01-01"
-    },
-    "1310101": {
-      "name": "Abbas Gueye",
-      "ideology": "left_wing_radical_idolg",
-      "loyalty": 0.5,
-      "picture": "SEN_M_Gueye_Abbas",
-      "head_of_state": "reformer_type",
-      "head_of_government": "reformer_type",
-      "start_date": "1952-01-01",
-      "death_date": "1999-08-02"
-    },
-    "1310102": {
-      "name": "Hassan Cisse",
-      "ideology": "social_cons_idolg",
-      "loyalty": 0.5,
-      "picture": "SEN_M_Cisse_Hassan",
-      "head_of_state": "religious_type",
-      "head_of_government": "religious_type",
-      "start_date": "1983-01-01",
-      "death_date": "2008-08-14"
-    },
-    "1310103": {
-      "name": "Lamine Gu�ye",
-      "ideology": "communist_idolg",
-      "loyalty": 0.5,
-      "picture": "SEN_M_Gueye_Lamine",
-      "head_of_state": "bureaucrat_type",
-      "head_of_government": "bureaucrat_type",
-      "start_date": "1945-01-01",
-      "death_date": "1968-06-10"
-    },
-    "1310104": {
-      "name": "Majhmoud Diop",
-      "ideology": "communist_idolg",
-      "loyalty": 0.5,
-      "picture": "SEN_M_Diop_Majhmoud",
-      "head_of_state": "zealous_type",
-      "head_of_government": "zealous_type",
-      "start_date": "1960-01-01",
-      "death_date": "1985-12-31"
-    },
-    "1310105": {
-      "name": "Amath Dansokho",
-      "ideology": "communist_idolg",
-      "loyalty": 0.5,
-      "picture": "SEN_M_Dansokho_Amath",
-      "head_of_state": "administrator_type",
-      "head_of_government": "administrator_type",
-      "start_date": "1983-02-27",
-      "death_date": "2300-01-01"
-    },
-    "1310106": {
-      "name": "Aly Niane",
-      "ideology": "fascistic_idolg",
-      "loyalty": 0.5,
-      "picture": "SEN_M_Niane_Aly",
-      "head_of_state": "lethargic_type",
-      "head_of_government": "lethargic_type",
-      "start_date": "1982-07-21",
-      "death_date": "2300-01-01"
-    },
-    "1310107": {
-      "name": "Cheikh Anta Diop",
-      "ideology": "market_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "SEN_M_Diop_Cheikh_A",
-      "head_of_state": "visionary_type",
-      "head_of_government": "visionary_type",
-      "start_date": "1950-01-01",
-      "death_date": "1986-02-07"
-    },
-    "1310109": {
-      "name": "Boubacar Gueye",
-      "ideology": "social_cons_idolg",
-      "loyalty": 0.5,
-      "picture": "SEN_M_Gueye_Boubacar",
-      "head_of_state": "administrator_type",
-      "head_of_government": "administrator_type",
-      "start_date": "1961-01-01",
-      "death_date": "1989-11-22"
-    },
-    "1310110": {
-      "name": "Ousmane Ngom",
-      "ideology": "market_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "SEN_M_Ngom_Ousmane",
-      "head_of_state": "democrat_type",
-      "head_of_government": "democrat_type",
-      "start_date": "1975-01-01",
-      "death_date": "2300-01-01"
+    "unit_names": {},
+    "ministers": {
+        "1310001": {
+            "name": "L�opold S�dar Senghor",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "SEN_M_Senghor_Leopold_S",
+            "start_date": "1960-09-06",
+            "death_date": "1980-12-31",
+            "type": "parental_type"
+        },
+        "1310002": {
+            "name": "Abdou Diouf",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.7,
+            "picture": "SEN_M_Diouf_Abdou",
+            "start_date": "1981-01-01",
+            "death_date": "2000-04-01",
+            "type": "democrat_type"
+        },
+        "1310003": {
+            "name": "Mamadou Dia",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.8,
+            "picture": "SEN_M_Dia_Mamadou",
+            "start_date": "1957-05-18",
+            "death_date": "1988-02-28",
+            "type": "autocrat_type"
+        },
+        "1310004": {
+            "name": "Habib Thiam",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "SEN_M_Thiam_Habib",
+            "start_date": "1981-01-01",
+            "death_date": "1998-07-03",
+            "type": "administrator_type"
+        },
+        "1310005": {
+            "name": "Moustapha Niasse",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "SEN_M_Niasse_Moustapha",
+            "start_date": "1979-01-01",
+            "death_date": "2001-03-03",
+            "type": "courageous_type"
+        },
+        "1310006": {
+            "name": "Abdoulaye Wade",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1,
+            "picture": "SEN_M_Wade_Abdoulaye",
+            "start_date": "1978-02-26",
+            "death_date": "1993-02-21",
+            "type": "parental_type"
+        },
+        "1310007": {
+            "name": "Landing Savan�",
+            "ideology": "maoist_idolg",
+            "loyalty": 1,
+            "picture": "SEN_M_Savane_Landing",
+            "start_date": "1965-01-01",
+            "death_date": "1999-12-31",
+            "type": "democrat_type"
+        },
+        "1310100": {
+            "name": "Ibrahim Niass",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Niass_Ibrahim",
+            "start_date": "1930-01-01",
+            "death_date": "1975-01-01",
+            "type": "religious_type"
+        },
+        "1310101": {
+            "name": "Abbas Gueye",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Gueye_Abbas",
+            "start_date": "1952-01-01",
+            "death_date": "1999-08-02",
+            "type": "reformer_type"
+        },
+        "1310102": {
+            "name": "Hassan Cisse",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Cisse_Hassan",
+            "start_date": "1983-01-01",
+            "death_date": "2008-08-14",
+            "type": "religious_type"
+        },
+        "1310103": {
+            "name": "Lamine Gu�ye",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Gueye_Lamine",
+            "start_date": "1945-01-01",
+            "death_date": "1968-06-10",
+            "type": "bureaucrat_type"
+        },
+        "1310104": {
+            "name": "Majhmoud Diop",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Diop_Majhmoud",
+            "start_date": "1960-01-01",
+            "death_date": "1985-12-31",
+            "type": "zealous_type"
+        },
+        "1310105": {
+            "name": "Amath Dansokho",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Dansokho_Amath",
+            "start_date": "1983-02-27",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "1310106": {
+            "name": "Aly Niane",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Niane_Aly",
+            "start_date": "1982-07-21",
+            "death_date": "2300-01-01",
+            "type": "lethargic_type"
+        },
+        "1310107": {
+            "name": "Cheikh Anta Diop",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Diop_Cheikh_A",
+            "start_date": "1950-01-01",
+            "death_date": "1986-02-07",
+            "type": "visionary_type"
+        },
+        "1310109": {
+            "name": "Boubacar Gueye",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Gueye_Boubacar",
+            "start_date": "1961-01-01",
+            "death_date": "1989-11-22",
+            "type": "administrator_type"
+        },
+        "1310110": {
+            "name": "Ousmane Ngom",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Ngom_Ousmane",
+            "start_date": "1975-01-01",
+            "death_date": "2300-01-01",
+            "type": "democrat_type"
+        }
     }
-  }
 }

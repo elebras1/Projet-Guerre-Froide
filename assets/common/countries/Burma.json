@@ -1,1 +1,201 @@
-{"color": [18, 181, 52], "graphical_culture": "Asian", "default_templates": {"CHC_airborne_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "CHC_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "CHC_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "CHC_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "CHC_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "CHC_motorized_division": ["motorized_brigade", "motorized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "CHC_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "CHC_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "CHC_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "CHC_volunteer_division": ["militia_brigade", "militia_brigade", "militia_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1140000": {"name": "Sao Shwe Thaik", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BUR_M_Thaik_Sao_S", "head_of_state": "courageous_type", "start_date": "1946-01-01", "death_date": "1952-03-16"}, "1140001": {"name": "Ba U", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BUR_M_U_Ba", "head_of_state": "administrator_type", "start_date": "1952-03-16", "death_date": "1957-03-13"}, "1140002": {"name": "Win Maung", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BUR_M_Maung_Win", "head_of_state": "bureaucrat_type", "start_date": "1957-03-13", "death_date": "1962-03-02"}, "1140003": {"name": "Ne Win", "ideology": "maoist_idolg", "loyalty": 0.9, "picture": "BUR_M_Win_Ne", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1958-10-29", "death_date": "1981-11-09"}, "1140004": {"name": "San Yu", "ideology": "maoist_idolg", "loyalty": 1.0, "picture": "BUR_M_Yu_San", "head_of_state": "loyal_type", "start_date": "1981-11-09", "death_date": "1988-07-27"}, "1140005": {"name": "Sein Lwin", "ideology": "maoist_idolg", "loyalty": 1.0, "picture": "BUR_M_Lwin_Sein", "head_of_state": "controversial_figure", "start_date": "1988-07-27", "death_date": "1988-08-12"}, "1140006": {"name": "Aye Ko", "ideology": "maoist_idolg", "loyalty": 1.0, "picture": "BUR_M_Ko_Aye", "head_of_state": "loyal_type", "start_date": "1988-08-12", "death_date": "1988-08-19"}, "1140007": {"name": "Maung Maung", "ideology": "maoist_idolg", "loyalty": 1.0, "picture": "BUR_M_Maung_Maung", "head_of_state": "lethargic_type", "start_date": "1988-08-19", "death_date": "1988-09-18"}, "1140008": {"name": "Saw Maung", "ideology": "maoist_idolg", "loyalty": 1.0, "picture": "BUR_M_Maung_Saw", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1988-09-18", "death_date": "1992-04-23"}, "1140009": {"name": "U Nu", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "BUR_M_Nu_U", "head_of_government": "religious_type", "start_date": "1946-01-01", "death_date": "1962-03-02"}, "1140010": {"name": "Ba Swe", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BUR_M_Swe_Ba", "head_of_government": "traditionalist_type", "start_date": "1956-06-12", "death_date": "1957-03-01"}, "1140011": {"name": "Sein Win", "ideology": "maoist_idolg", "loyalty": 1.0, "picture": "BUR_M_Win_Sein", "head_of_government": "loyal_type", "start_date": "1974-03-04", "death_date": "1977-03-29"}, "1140012": {"name": "Maung Maung Kha", "ideology": "maoist_idolg", "loyalty": 1.0, "picture": "BUR_M_Kha_Maung_M", "head_of_government": "bureaucrat_type", "start_date": "1977-03-29", "death_date": "1988-07-26"}, "1140013": {"name": "Tun Tin", "ideology": "maoist_idolg", "loyalty": 1.0, "picture": "BUR_M_Tin_Tun", "head_of_government": "lethargic_type", "start_date": "1988-07-26", "death_date": "1988-09-18"}}}
+{
+    "color": [
+        18,
+        181,
+        52
+    ],
+    "graphical_culture": "Asian",
+    "default_templates": {
+        "CHC_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "CHC_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "CHC_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "CHC_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "CHC_volunteer_division": [
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1140000": {
+            "name": "Sao Shwe Thaik",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_Thaik_Sao_S",
+            "start_date": "1946-01-01",
+            "death_date": "1952-03-16",
+            "type": "courageous_type"
+        },
+        "1140001": {
+            "name": "Ba U",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_U_Ba",
+            "start_date": "1952-03-16",
+            "death_date": "1957-03-13",
+            "type": "administrator_type"
+        },
+        "1140002": {
+            "name": "Win Maung",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_Maung_Win",
+            "start_date": "1957-03-13",
+            "death_date": "1962-03-02",
+            "type": "bureaucrat_type"
+        },
+        "1140003": {
+            "name": "Ne Win",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.9,
+            "picture": "BUR_M_Win_Ne",
+            "start_date": "1958-10-29",
+            "death_date": "1981-11-09",
+            "type": "dictator_type"
+        },
+        "1140004": {
+            "name": "San Yu",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_Yu_San",
+            "start_date": "1981-11-09",
+            "death_date": "1988-07-27",
+            "type": "loyal_type"
+        },
+        "1140005": {
+            "name": "Sein Lwin",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_Lwin_Sein",
+            "start_date": "1988-07-27",
+            "death_date": "1988-08-12",
+            "type": "controversial_figure"
+        },
+        "1140006": {
+            "name": "Aye Ko",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_Ko_Aye",
+            "start_date": "1988-08-12",
+            "death_date": "1988-08-19",
+            "type": "loyal_type"
+        },
+        "1140007": {
+            "name": "Maung Maung",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_Maung_Maung",
+            "start_date": "1988-08-19",
+            "death_date": "1988-09-18",
+            "type": "lethargic_type"
+        },
+        "1140008": {
+            "name": "Saw Maung",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_Maung_Saw",
+            "start_date": "1988-09-18",
+            "death_date": "1992-04-23",
+            "type": "liberal_type"
+        },
+        "1140009": {
+            "name": "U Nu",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "BUR_M_Nu_U",
+            "start_date": "1946-01-01",
+            "death_date": "1962-03-02",
+            "type": "religious_type"
+        },
+        "1140010": {
+            "name": "Ba Swe",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_Swe_Ba",
+            "start_date": "1956-06-12",
+            "death_date": "1957-03-01",
+            "type": "traditionalist_type"
+        },
+        "1140011": {
+            "name": "Sein Win",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_Win_Sein",
+            "start_date": "1974-03-04",
+            "death_date": "1977-03-29",
+            "type": "loyal_type"
+        },
+        "1140012": {
+            "name": "Maung Maung Kha",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_Kha_Maung_M",
+            "start_date": "1977-03-29",
+            "death_date": "1988-07-26",
+            "type": "bureaucrat_type"
+        },
+        "1140013": {
+            "name": "Tun Tin",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "BUR_M_Tin_Tun",
+            "start_date": "1988-07-26",
+            "death_date": "1988-09-18",
+            "type": "lethargic_type"
+        }
+    }
+}

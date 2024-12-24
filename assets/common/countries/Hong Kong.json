@@ -1,1 +1,257 @@
-{"color": [60, 36, 205], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1212000": {"name": "Cecil Harcourt", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Harcourt_Cecil", "head_of_state": "loyal_type", "start_date": "1945-09-01", "death_date": "1946-05-01"}, "1212001": {"name": "Mark Young", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Young_Mark", "head_of_state": "democrat_type", "start_date": "1946-05-01", "death_date": "1947-03-15"}, "1212002": {"name": "Alexander Grantham", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Grantham_Alexander", "head_of_state": "moral_type", "start_date": "1947-03-15", "death_date": "1958-01-23"}, "1212003": {"name": "Robert Black", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "HNK_M_Black_Robert", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1952-01-01", "death_date": "1964-04-14"}, "1212004": {"name": "David Trench", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Trench_David", "head_of_state": "administrator_type", "start_date": "1964-04-14", "death_date": "1971-11-19"}, "1212005": {"name": "Crawford MacLehose", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_MacLehose_Crawford", "head_of_state": "reformer_type", "start_date": "1971-11-19", "death_date": "1982-05-20"}, "1212006": {"name": "Edward Youde", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Youde_Edward", "head_of_state": "courteous_figure", "start_date": "1982-05-20", "death_date": "1987-04-09"}, "1212007": {"name": "David Wilson", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Wilson_David", "head_of_state": "democrat_type", "start_date": "1987-04-09", "death_date": "1992-07-09"}, "1212008": {"name": "David M. MacDougall", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_MacDougall_David_M", "head_of_government": "courageous_type", "start_date": "1945-01-01", "death_date": "1949-01-01"}, "1212009": {"name": "John Nicoll", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Nicoll_John", "head_of_government": "bureaucrat_type", "start_date": "1949-01-01", "death_date": "1952-01-01"}, "1212010": {"name": "Edgeworth David", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_David_Edgeworth", "head_of_government": "administrator_type", "start_date": "1955-01-01", "death_date": "1957-12-31"}, "1212011": {"name": "Claude Burgess", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Burgess_Claude", "head_of_government": "traditionalist_type", "start_date": "1958-01-01", "death_date": "1963-01-01"}, "1212012": {"name": "Edmund Teesdale", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Teesdale_Edmund", "head_of_government": "bureaucrat_type", "start_date": "1963-01-01", "death_date": "1965-01-01"}, "1212013": {"name": "Michael Gass", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Gass_Michael", "head_of_government": "reputable_type", "start_date": "1965-01-01", "death_date": "1969-03-29"}, "1212014": {"name": "Hugh Norman-Walker", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Norman-Walker_Hugh", "head_of_government": "reformer_type", "start_date": "1969-03-29", "death_date": "1973-09-30"}, "1212015": {"name": "Denys Roberts", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Roberts_Denys", "head_of_government": "honest_type", "start_date": "1973-09-30", "death_date": "1978-01-01"}, "1212016": {"name": "Jack Cater", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Cater_Jack", "head_of_government": "zealous_type", "start_date": "1978-01-01", "death_date": "1981-01-01"}, "1212017": {"name": "Philip Haddon-Cave", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Haddon-Cave_Philip", "head_of_government": "lethargic_type", "start_date": "1981-01-01", "death_date": "1985-06-10"}, "1212018": {"name": "David Akers-Jones", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Akers-Jones_David", "head_of_government": "moral_type", "start_date": "1985-06-10", "death_date": "1986-12-06"}, "1212019": {"name": "David Robert Ford", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "HNK_M_Ford_David_R", "head_of_government": "loyal_type", "start_date": "1986-12-06", "death_date": "1993-11-29"}}}
+{
+    "color": [
+        60,
+        36,
+        205
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1212000": {
+            "name": "Cecil Harcourt",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Harcourt_Cecil",
+            "start_date": "1945-09-01",
+            "death_date": "1946-05-01",
+            "type": "loyal_type"
+        },
+        "1212001": {
+            "name": "Mark Young",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Young_Mark",
+            "start_date": "1946-05-01",
+            "death_date": "1947-03-15",
+            "type": "democrat_type"
+        },
+        "1212002": {
+            "name": "Alexander Grantham",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Grantham_Alexander",
+            "start_date": "1947-03-15",
+            "death_date": "1958-01-23",
+            "type": "moral_type"
+        },
+        "1212003": {
+            "name": "Robert Black",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "HNK_M_Black_Robert",
+            "start_date": "1952-01-01",
+            "death_date": "1964-04-14",
+            "type": "liberal_type"
+        },
+        "1212004": {
+            "name": "David Trench",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Trench_David",
+            "start_date": "1964-04-14",
+            "death_date": "1971-11-19",
+            "type": "administrator_type"
+        },
+        "1212005": {
+            "name": "Crawford MacLehose",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_MacLehose_Crawford",
+            "start_date": "1971-11-19",
+            "death_date": "1982-05-20",
+            "type": "reformer_type"
+        },
+        "1212006": {
+            "name": "Edward Youde",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Youde_Edward",
+            "start_date": "1982-05-20",
+            "death_date": "1987-04-09",
+            "type": "courteous_figure"
+        },
+        "1212007": {
+            "name": "David Wilson",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Wilson_David",
+            "start_date": "1987-04-09",
+            "death_date": "1992-07-09",
+            "type": "democrat_type"
+        },
+        "1212008": {
+            "name": "David M. MacDougall",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_MacDougall_David_M",
+            "start_date": "1945-01-01",
+            "death_date": "1949-01-01",
+            "type": "courageous_type"
+        },
+        "1212009": {
+            "name": "John Nicoll",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Nicoll_John",
+            "start_date": "1949-01-01",
+            "death_date": "1952-01-01",
+            "type": "bureaucrat_type"
+        },
+        "1212010": {
+            "name": "Edgeworth David",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_David_Edgeworth",
+            "start_date": "1955-01-01",
+            "death_date": "1957-12-31",
+            "type": "administrator_type"
+        },
+        "1212011": {
+            "name": "Claude Burgess",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Burgess_Claude",
+            "start_date": "1958-01-01",
+            "death_date": "1963-01-01",
+            "type": "traditionalist_type"
+        },
+        "1212012": {
+            "name": "Edmund Teesdale",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Teesdale_Edmund",
+            "start_date": "1963-01-01",
+            "death_date": "1965-01-01",
+            "type": "bureaucrat_type"
+        },
+        "1212013": {
+            "name": "Michael Gass",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Gass_Michael",
+            "start_date": "1965-01-01",
+            "death_date": "1969-03-29",
+            "type": "reputable_type"
+        },
+        "1212014": {
+            "name": "Hugh Norman-Walker",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Norman-Walker_Hugh",
+            "start_date": "1969-03-29",
+            "death_date": "1973-09-30",
+            "type": "reformer_type"
+        },
+        "1212015": {
+            "name": "Denys Roberts",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Roberts_Denys",
+            "start_date": "1973-09-30",
+            "death_date": "1978-01-01",
+            "type": "honest_type"
+        },
+        "1212016": {
+            "name": "Jack Cater",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Cater_Jack",
+            "start_date": "1978-01-01",
+            "death_date": "1981-01-01",
+            "type": "zealous_type"
+        },
+        "1212017": {
+            "name": "Philip Haddon-Cave",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Haddon-Cave_Philip",
+            "start_date": "1981-01-01",
+            "death_date": "1985-06-10",
+            "type": "lethargic_type"
+        },
+        "1212018": {
+            "name": "David Akers-Jones",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Akers-Jones_David",
+            "start_date": "1985-06-10",
+            "death_date": "1986-12-06",
+            "type": "moral_type"
+        },
+        "1212019": {
+            "name": "David Robert Ford",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "HNK_M_Ford_David_R",
+            "start_date": "1986-12-06",
+            "death_date": "1993-11-29",
+            "type": "loyal_type"
+        }
+    }
+}

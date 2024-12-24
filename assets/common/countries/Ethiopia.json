@@ -1,1 +1,374 @@
-{"color": [67, 162, 145], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1186001": {"name": "Haile Selassie I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "ETH_M_Selassie_I_Haile", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1930-01-01", "death_date": "1975-08-27"}, "1186002": {"name": "Amha Selassie I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.8, "picture": "ETH_M_Selassie_Amha", "head_of_state": "fortunate_type", "head_of_government": "fortunate_type", "start_date": "1934-07-27", "death_date": "1997-02-17"}, "1186016": {"name": "Zera Yacob II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.79, "picture": "ETH_M_Yacob_II", "head_of_state": "courteous_figure", "start_date": "1968-08-17", "death_date": "2300-01-01"}, "1186017": {"name": "Makonnen I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.78, "picture": "ETH_M_Makonnen_I", "head_of_state": "courteous_figure", "start_date": "1938-10-16", "death_date": "1957-05-13"}, "1186018": {"name": "Wossen Seged I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.77, "picture": "ETH_M_Seged_I", "head_of_state": "courteous_figure", "start_date": "1962-01-01", "death_date": "2300-01-01"}, "1186019": {"name": "Mikael I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.76, "picture": "ETH_M_Mikael_I", "head_of_state": "courteous_figure", "start_date": "1965-01-01", "death_date": "2300-01-01"}, "1186020": {"name": "Tafari I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.75, "picture": "ETH_M_Tafari_I", "head_of_state": "courteous_figure", "start_date": "1934-07-27", "death_date": "2300-01-01"}, "1186021": {"name": "Beede Mariam I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.74, "picture": "ETH_M_Mariam_I", "head_of_state": "courteous_figure", "start_date": "1972-01-01", "death_date": "2300-01-01"}, "1186022": {"name": "Sahle Selassie I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.73, "picture": "ETH_M_Selassie_I_Sahle", "head_of_state": "courteous_figure", "start_date": "1962-04-24", "death_date": "2300-01-01"}, "1186023": {"name": "Sahle Selassie II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.72, "picture": "ETH_M_Selassie_II_Sahle", "head_of_state": "courteous_figure", "start_date": "1975-06-14", "death_date": "2300-01-01"}, "1186003": {"name": "Aman Andom", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "ETH_M_Andom_Aman", "head_of_state": "ambitious_type", "start_date": "1974-09-12", "death_date": "1974-11-17"}, "1186004": {"name": "Mengistu Haile Mariam", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "ETH_M_Mariam_Mengistu_H", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1974-11-17", "death_date": "1991-05-21"}, "1186005": {"name": "Tafari Benti", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "ETH_M_Benti_Tafari", "head_of_state": "ambitious_type", "start_date": "1974-11-28", "death_date": "1977-02-03"}, "1186006": {"name": "Meles Zenawi", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "ETH_M_Zenawi_Meles", "head_of_state": "reformer_type", "start_date": "1991-05-21", "death_date": "1995-08-22"}, "1186007": {"name": "Makonnen Endelkachew", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ETH_M_Endelkachew_Makonnen", "head_of_government": "courteous_figure", "start_date": "1942-01-01", "death_date": "1957-11-01"}, "1186008": {"name": "Abebe Aregai", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ETH_M_Aregai_Abebe", "head_of_government": "loyal_type", "start_date": "1957-11-01", "death_date": "1960-12-15"}, "1186009": {"name": "Aklilu Habte-Wold", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ETH_M_Habte-Wold_Aklilu", "head_of_government": "lethargic_type", "start_date": "1960-12-15", "death_date": "1974-03-01"}, "1186010": {"name": "Endelkachew Makonnen", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ETH_M_Makonnen_Endelkachew", "head_of_government": "democrat_type", "start_date": "1974-02-28", "death_date": "1974-07-22"}, "1186011": {"name": "Mikael Imru", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "ETH_M_Imru_Mikael", "head_of_government": "liberal_type", "start_date": "1974-07-22", "death_date": "1974-09-12"}, "1186012": {"name": "Fikre Selassie Wogderess", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "ETH_M_Wogderess_Fikre_S", "head_of_government": "lethargic_type", "start_date": "1987-09-10", "death_date": "1989-11-08"}, "1186013": {"name": "Hailu Yimenu", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "ETH_M_Yimenu_Hailu", "head_of_government": "bureaucrat_type", "start_date": "1989-11-08", "death_date": "1991-04-26"}, "1186014": {"name": "Tesfaye Dinka", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "ETH_M_Dinka_Tesfaye", "head_of_government": "administrator_type", "start_date": "1991-04-26", "death_date": "1991-06-06"}, "1186015": {"name": "Tamirat Layne", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "ETH_M_Layne_Tamirat", "head_of_government": "lethargic_type", "start_date": "1991-06-06", "death_date": "1995-08-22"}, "1186100": {"name": "Berhane Meskel Reda", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "ETH_M_Reda_Berhane_M", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1975-01-08", "death_date": "1992-01-01"}, "1186101": {"name": "Hamid Idris Awate", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "ETH_M_Awate_Hamid_I", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1941-01-01", "death_date": "1964-05-28", "base": 1186101}, "1186102": {"name": "Hailu Tekle Haymanot", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "ETH_M_Haymanot_Hailu_T", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1923-01-01", "death_date": "1950-12-31"}, "1186103": {"name": "Teferra Wolde-Semait", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "ETH_M_Wolde-Semait_Teferra", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1964-01-01", "death_date": "2013-06-25"}, "1186104": {"name": "Meles Disannda", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "ETH_M_Disannda_Meles", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1969-12-01", "death_date": "1985-12-17"}, "1186105": {"name": "Mulugeta Buli", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "ETH_M_Buli_Mulugeta", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1944-01-08", "death_date": "1960-12-18"}, "1186106": {"name": "Mengistu Neway", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "ETH_M_Neway_Mengistu", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1954-04-03", "death_date": "1961-03-30"}, "1186107": {"name": "Germame Neway", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "ETH_M_Neway_Germame", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1955-03-11", "death_date": "1960-12-24"}, "1186108": {"name": "Medhin Kassa", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "ETH_M_Kassa_Medhin", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1964-01-01", "death_date": "1974-11-23"}, "1186109": {"name": "Ali Atto", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "ETH_M_Atto_Ali", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1956-07-08", "death_date": "1986-02-11"}}}
+{
+    "color": [
+        67,
+        162,
+        145
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1186001": {
+            "name": "Haile Selassie I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "ETH_M_Selassie_I_Haile",
+            "start_date": "1930-01-01",
+            "death_date": "1975-08-27",
+            "type": "parental_type"
+        },
+        "1186002": {
+            "name": "Amha Selassie I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.8,
+            "picture": "ETH_M_Selassie_Amha",
+            "start_date": "1934-07-27",
+            "death_date": "1997-02-17",
+            "type": "fortunate_type"
+        },
+        "1186016": {
+            "name": "Zera Yacob II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.79,
+            "picture": "ETH_M_Yacob_II",
+            "start_date": "1968-08-17",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1186017": {
+            "name": "Makonnen I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.78,
+            "picture": "ETH_M_Makonnen_I",
+            "start_date": "1938-10-16",
+            "death_date": "1957-05-13",
+            "type": "courteous_figure"
+        },
+        "1186018": {
+            "name": "Wossen Seged I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.77,
+            "picture": "ETH_M_Seged_I",
+            "start_date": "1962-01-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1186019": {
+            "name": "Mikael I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.76,
+            "picture": "ETH_M_Mikael_I",
+            "start_date": "1965-01-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1186020": {
+            "name": "Tafari I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.75,
+            "picture": "ETH_M_Tafari_I",
+            "start_date": "1934-07-27",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1186021": {
+            "name": "Beede Mariam I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.74,
+            "picture": "ETH_M_Mariam_I",
+            "start_date": "1972-01-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1186022": {
+            "name": "Sahle Selassie I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.73,
+            "picture": "ETH_M_Selassie_I_Sahle",
+            "start_date": "1962-04-24",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1186023": {
+            "name": "Sahle Selassie II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.72,
+            "picture": "ETH_M_Selassie_II_Sahle",
+            "start_date": "1975-06-14",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1186003": {
+            "name": "Aman Andom",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Andom_Aman",
+            "start_date": "1974-09-12",
+            "death_date": "1974-11-17",
+            "type": "ambitious_type"
+        },
+        "1186004": {
+            "name": "Mengistu Haile Mariam",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "ETH_M_Mariam_Mengistu_H",
+            "start_date": "1974-11-17",
+            "death_date": "1991-05-21",
+            "type": "dictator_type"
+        },
+        "1186005": {
+            "name": "Tafari Benti",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Benti_Tafari",
+            "start_date": "1974-11-28",
+            "death_date": "1977-02-03",
+            "type": "ambitious_type"
+        },
+        "1186006": {
+            "name": "Meles Zenawi",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Zenawi_Meles",
+            "start_date": "1991-05-21",
+            "death_date": "1995-08-22",
+            "type": "reformer_type"
+        },
+        "1186007": {
+            "name": "Makonnen Endelkachew",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Endelkachew_Makonnen",
+            "start_date": "1942-01-01",
+            "death_date": "1957-11-01",
+            "type": "courteous_figure"
+        },
+        "1186008": {
+            "name": "Abebe Aregai",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Aregai_Abebe",
+            "start_date": "1957-11-01",
+            "death_date": "1960-12-15",
+            "type": "loyal_type"
+        },
+        "1186009": {
+            "name": "Aklilu Habte-Wold",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Habte-Wold_Aklilu",
+            "start_date": "1960-12-15",
+            "death_date": "1974-03-01",
+            "type": "lethargic_type"
+        },
+        "1186010": {
+            "name": "Endelkachew Makonnen",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Makonnen_Endelkachew",
+            "start_date": "1974-02-28",
+            "death_date": "1974-07-22",
+            "type": "democrat_type"
+        },
+        "1186011": {
+            "name": "Mikael Imru",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Imru_Mikael",
+            "start_date": "1974-07-22",
+            "death_date": "1974-09-12",
+            "type": "liberal_type"
+        },
+        "1186012": {
+            "name": "Fikre Selassie Wogderess",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Wogderess_Fikre_S",
+            "start_date": "1987-09-10",
+            "death_date": "1989-11-08",
+            "type": "lethargic_type"
+        },
+        "1186013": {
+            "name": "Hailu Yimenu",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Yimenu_Hailu",
+            "start_date": "1989-11-08",
+            "death_date": "1991-04-26",
+            "type": "bureaucrat_type"
+        },
+        "1186014": {
+            "name": "Tesfaye Dinka",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Dinka_Tesfaye",
+            "start_date": "1991-04-26",
+            "death_date": "1991-06-06",
+            "type": "administrator_type"
+        },
+        "1186015": {
+            "name": "Tamirat Layne",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Layne_Tamirat",
+            "start_date": "1991-06-06",
+            "death_date": "1995-08-22",
+            "type": "lethargic_type"
+        },
+        "1186100": {
+            "name": "Berhane Meskel Reda",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Reda_Berhane_M",
+            "start_date": "1975-01-08",
+            "death_date": "1992-01-01",
+            "type": "ambitious_type"
+        },
+        "1186101": {
+            "name": "Hamid Idris Awate",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Awate_Hamid_I",
+            "start_date": "1941-01-01",
+            "death_date": "1964-05-28",
+            "type": "hardliner_type"
+        },
+        "1186102": {
+            "name": "Hailu Tekle Haymanot",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Haymanot_Hailu_T",
+            "start_date": "1923-01-01",
+            "death_date": "1950-12-31",
+            "type": "lethargic_type"
+        },
+        "1186103": {
+            "name": "Teferra Wolde-Semait",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Wolde-Semait_Teferra",
+            "start_date": "1964-01-01",
+            "death_date": "2013-06-25",
+            "type": "reformer_type"
+        },
+        "1186104": {
+            "name": "Meles Disannda",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Disannda_Meles",
+            "start_date": "1969-12-01",
+            "death_date": "1985-12-17",
+            "type": "autocrat_type"
+        },
+        "1186105": {
+            "name": "Mulugeta Buli",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Buli_Mulugeta",
+            "start_date": "1944-01-08",
+            "death_date": "1960-12-18",
+            "type": "loyal_type"
+        },
+        "1186106": {
+            "name": "Mengistu Neway",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Neway_Mengistu",
+            "start_date": "1954-04-03",
+            "death_date": "1961-03-30",
+            "type": "parental_type"
+        },
+        "1186107": {
+            "name": "Germame Neway",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Neway_Germame",
+            "start_date": "1955-03-11",
+            "death_date": "1960-12-24",
+            "type": "ambitious_type"
+        },
+        "1186108": {
+            "name": "Medhin Kassa",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Kassa_Medhin",
+            "start_date": "1964-01-01",
+            "death_date": "1974-11-23",
+            "type": "lethargic_type"
+        },
+        "1186109": {
+            "name": "Ali Atto",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Atto_Ali",
+            "start_date": "1956-07-08",
+            "death_date": "1986-02-11",
+            "type": "visionary_type"
+        }
+    }
+}

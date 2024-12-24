@@ -1,1 +1,238 @@
-{"color": [240, 49, 15], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1136001": {"name": "Ntare V", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.95, "picture": "BRD_M_Ntare_V", "head_of_state": "courteous_figure", "start_date": "1966-06-01", "death_date": "1972-04-29", "base": 1136001}, "1136002": {"name": "Mwambutsa IV", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.94, "picture": "BRD_M_Mwambutsa_IV", "head_of_state": "courteous_figure", "start_date": "1915-11-30", "death_date": "1977-04-26", "base": 1136002}, "1136003": {"name": "Louis Rwagasore", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.93, "picture": "BRD_M_Rwagasore_Louis", "head_of_state": "courteous_figure", "head_of_government": "courteous_figure", "start_date": "1958-01-01", "death_date": "1961-10-13", "base": 1136003}, "1136004": {"name": "Regina Kanyange", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.92, "picture": "BRD_M_Kanyange_Regina", "head_of_state": "courteous_figure", "start_date": "1966-06-01", "death_date": "1987-01-01", "base": 1136004}, "1136005": {"name": "Rose Paula Iribagiza", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.91, "picture": "BRD_M_Iribagiza_Rose_P", "head_of_state": "courteous_figure", "start_date": "1966-06-01", "death_date": "2013-01-01", "base": 1136005}, "1136006": {"name": "Joseph Cimpaye", "ideology": "social_cons_idolg", "loyalty": 0.96, "picture": "BRD_M_Cimpaye_Joseph", "head_of_government": "bureaucrat_type", "start_date": "1961-01-26", "death_date": "1972-01-01", "base": 1136006}, "1136007": {"name": "Andr\u00e9 Muhirwa", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Muhirwa_Andre", "head_of_government": "bureaucrat_type", "start_date": "1961-10-13", "death_date": "1963-06-10", "base": 1136007}, "1136008": {"name": "Pierre Ngendandumwe", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Ngendandumwe_Pierre", "head_of_government": "administrator_type", "start_date": "1963-06-10", "death_date": "1965-01-15", "base": 1136008}, "1136009": {"name": "Albin Nyamoya", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Nyamoya_Albin", "head_of_government": "traditionalist_type", "start_date": "1964-04-06", "death_date": "1973-06-05", "base": 1136009}, "1136010": {"name": "Pi\u00e9 Masumbuko", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Masumbuko_Pie", "head_of_government": "moral_type", "start_date": "1965-01-07", "death_date": "1965-01-26", "base": 1136010}, "1136011": {"name": "Joseph Bamina", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Bamina_Joseph", "head_of_government": "loyal_type", "start_date": "1965-01-26", "death_date": "1965-09-30", "base": 1136011}, "1136012": {"name": "L\u00e9opold Biha", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Biha_Leopold", "head_of_government": "ambitious_type", "start_date": "1965-09-30", "death_date": "1966-07-08", "base": 1136012}, "1136013": {"name": "Michel Micombero", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "BRD_M_Micombero_Michel", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1966-11-28", "death_date": "1976-11-01", "base": 1136013}, "1136014": {"name": "Jean-Baptiste Bagaza", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "BRD_M_Bagaza_Jean-Baptiste", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1976-11-01", "death_date": "1987-09-03", "base": 1136014}, "1136015": {"name": "Pierre Buyoya", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "BRD_M_Buyoya_Pierre", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1987-09-03", "death_date": "1993-07-10", "base": 1136015}, "1136017": {"name": "\u00c9douard Nzambimana", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "BRD_M_Nzambimana_Edouard", "head_of_government": "administrator_type", "start_date": "1976-11-12", "death_date": "1978-10-13"}, "1136018": {"name": "Adrien Sibomana", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "BRD_M_Sibomana_Adrien", "head_of_government": "loyal_type", "start_date": "1988-10-19", "death_date": "1993-07-10"}, "1136019": {"name": "Melchior Ndadaye", "ideology": "maoist_idolg", "loyalty": 1.0, "picture": "BRD_M_Ndadaye_Melchior", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1979-08-01", "death_date": "1993-10-21", "base": 1136019}}}
+{
+    "color": [
+        240,
+        49,
+        15
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1136001": {
+            "name": "Ntare V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "BRD_M_Ntare_V",
+            "start_date": "1966-06-01",
+            "death_date": "1972-04-29",
+            "type": "courteous_figure"
+        },
+        "1136002": {
+            "name": "Mwambutsa IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "BRD_M_Mwambutsa_IV",
+            "start_date": "1915-11-30",
+            "death_date": "1977-04-26",
+            "type": "courteous_figure"
+        },
+        "1136003": {
+            "name": "Louis Rwagasore",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "BRD_M_Rwagasore_Louis",
+            "start_date": "1958-01-01",
+            "death_date": "1961-10-13",
+            "type": "courteous_figure"
+        },
+        "1136004": {
+            "name": "Regina Kanyange",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "BRD_M_Kanyange_Regina",
+            "start_date": "1966-06-01",
+            "death_date": "1987-01-01",
+            "type": "courteous_figure"
+        },
+        "1136005": {
+            "name": "Rose Paula Iribagiza",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "BRD_M_Iribagiza_Rose_P",
+            "start_date": "1966-06-01",
+            "death_date": "2013-01-01",
+            "type": "courteous_figure"
+        },
+        "1136006": {
+            "name": "Joseph Cimpaye",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "BRD_M_Cimpaye_Joseph",
+            "start_date": "1961-01-26",
+            "death_date": "1972-01-01",
+            "type": "bureaucrat_type"
+        },
+        "1136007": {
+            "name": "André Muhirwa",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Muhirwa_Andre",
+            "start_date": "1961-10-13",
+            "death_date": "1963-06-10",
+            "type": "bureaucrat_type"
+        },
+        "1136008": {
+            "name": "Pierre Ngendandumwe",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Ngendandumwe_Pierre",
+            "start_date": "1963-06-10",
+            "death_date": "1965-01-15",
+            "type": "administrator_type"
+        },
+        "1136009": {
+            "name": "Albin Nyamoya",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Nyamoya_Albin",
+            "start_date": "1964-04-06",
+            "death_date": "1973-06-05",
+            "type": "traditionalist_type"
+        },
+        "1136010": {
+            "name": "Pié Masumbuko",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Masumbuko_Pie",
+            "start_date": "1965-01-07",
+            "death_date": "1965-01-26",
+            "type": "moral_type"
+        },
+        "1136011": {
+            "name": "Joseph Bamina",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Bamina_Joseph",
+            "start_date": "1965-01-26",
+            "death_date": "1965-09-30",
+            "type": "loyal_type"
+        },
+        "1136012": {
+            "name": "Léopold Biha",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Biha_Leopold",
+            "start_date": "1965-09-30",
+            "death_date": "1966-07-08",
+            "type": "ambitious_type"
+        },
+        "1136013": {
+            "name": "Michel Micombero",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "BRD_M_Micombero_Michel",
+            "start_date": "1966-11-28",
+            "death_date": "1976-11-01",
+            "type": "autocrat_type"
+        },
+        "1136014": {
+            "name": "Jean-Baptiste Bagaza",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "BRD_M_Bagaza_Jean-Baptiste",
+            "start_date": "1976-11-01",
+            "death_date": "1987-09-03",
+            "type": "hardliner_type"
+        },
+        "1136015": {
+            "name": "Pierre Buyoya",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "BRD_M_Buyoya_Pierre",
+            "start_date": "1987-09-03",
+            "death_date": "1993-07-10",
+            "type": "democrat_type"
+        },
+        "1136017": {
+            "name": "Édouard Nzambimana",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Nzambimana_Edouard",
+            "start_date": "1976-11-12",
+            "death_date": "1978-10-13",
+            "type": "administrator_type"
+        },
+        "1136018": {
+            "name": "Adrien Sibomana",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Sibomana_Adrien",
+            "start_date": "1988-10-19",
+            "death_date": "1993-07-10",
+            "type": "loyal_type"
+        },
+        "1136019": {
+            "name": "Melchior Ndadaye",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Ndadaye_Melchior",
+            "start_date": "1979-08-01",
+            "death_date": "1993-10-21",
+            "type": "visionary_type"
+        }
+    }
+}

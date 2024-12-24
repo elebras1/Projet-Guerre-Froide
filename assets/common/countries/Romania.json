@@ -434,7 +434,7 @@
             "NMS Viza",
             "NMS Cega",
             "NMS Pastruga",
-            "NMS \u00c5\u009eip",
+            "NMS Åip",
             "NMS Beldita",
             "NMS Oblet mare",
             "NMS Rizeafca"
@@ -451,7 +451,7 @@
             "NMS Viza",
             "NMS Cega",
             "NMS Pastruga",
-            "NMS \u00c5\u009eip",
+            "NMS Åip",
             "NMS Beldita",
             "NMS Oblet mare",
             "NMS Rizeafca"
@@ -468,7 +468,7 @@
             "NMS Viza",
             "NMS Cega",
             "NMS Pastruga",
-            "NMS \u00c5\u009eip",
+            "NMS Åip",
             "NMS Beldita",
             "NMS Oblet mare",
             "NMS Rizeafca"
@@ -485,7 +485,7 @@
             "NMS Viza",
             "NMS Cega",
             "NMS Pastruga",
-            "NMS \u00c5\u009eip",
+            "NMS Åip",
             "NMS Beldita",
             "NMS Oblet mare",
             "NMS Rizeafca"
@@ -502,7 +502,7 @@
             "NMS Viza",
             "NMS Cega",
             "NMS Pastruga",
-            "NMS \u00c5\u009eip",
+            "NMS Åip",
             "NMS Beldita",
             "NMS Oblet mare",
             "NMS Rizeafca"
@@ -564,522 +564,497 @@
         "1298001": {
             "name": "Michael I",
             "ideology": "social_liberal_idolg",
-            "moral_leader": true,
             "loyalty": 1.0,
             "picture": "ROM_M_Michael_I",
-            "head_of_state": "courageous_type",
             "start_date": "1945-01-01",
-            "death_date": "1947-12-30"
+            "death_date": "1947-12-30",
+            "type": "courageous_type"
         },
         "1928050": {
             "name": "Mihai I",
             "ideology": "social_cons_idolg",
-            "moral_leader": true,
             "loyalty": 1.0,
             "picture": "ROM_M_Mihai",
-            "head_of_state": "reputable_type",
             "start_date": "1947-12-30",
-            "death_date": "2300-01-01"
+            "death_date": "2300-01-01",
+            "type": "reputable_type"
         },
         "1298002": {
             "name": "Constantin I. Parhon",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "ROM_M_Parhon_Constantin_I",
-            "head_of_state": "hardliner_type",
             "start_date": "1947-12-30",
-            "death_date": "1952-06-12"
+            "death_date": "1952-06-12",
+            "type": "hardliner_type"
         },
         "1298003": {
             "name": "Petru Groza",
             "ideology": "communist_idolg",
             "loyalty": 0.9,
             "picture": "ROM_M_Groza_Petru",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1946-01-01",
-            "death_date": "1958-01-07"
+            "death_date": "1958-01-07",
+            "type": "reformer_type"
         },
         "1298004": {
             "name": "Ion G. Maurer",
             "ideology": "communist_idolg",
             "loyalty": 0.7,
             "picture": "ROM_M_Maurer_Ion_G",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1958-01-07",
-            "death_date": "1974-02-27"
+            "death_date": "1974-02-27",
+            "type": "hardliner_type"
         },
         "1298005": {
             "name": "Gheorghe Gheorghiu-Dej",
             "ideology": "communist_idolg",
             "loyalty": 0.8,
             "picture": "ROM_M_Gheorghiu-Dej_Gheorghe",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1952-06-02",
-            "death_date": "1965-03-19"
+            "death_date": "1965-03-19",
+            "type": "hardliner_type"
         },
         "1298006": {
             "name": "Chivu Stoica",
             "ideology": "communist_idolg",
             "loyalty": 0.75,
             "picture": "ROM_M_Stoica_Chivu",
-            "head_of_state": "bureaucrat_type",
-            "head_of_government": "bureaucrat_type",
             "start_date": "1955-10-04",
-            "death_date": "1967-12-09"
+            "death_date": "1967-12-09",
+            "type": "bureaucrat_type"
         },
         "1298007": {
             "name": "Nicolae Ceaucescu",
             "ideology": "communist_idolg",
             "loyalty": 0.9,
             "picture": "ROM_M_Ceausescu_Nicolae",
-            "head_of_state": "reformer_type",
             "start_date": "1967-12-09",
-            "death_date": "1991-12-31"
+            "death_date": "1991-12-31",
+            "type": "reformer_type"
         },
         "1298014": {
             "name": "Manea Manescu",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "ROM_M_Manescu_Manea",
-            "head_of_state": "bureaucrat_type",
             "start_date": "1974-02-27",
-            "death_date": "1979-03-30"
+            "death_date": "1979-03-30",
+            "type": "bureaucrat_type"
         },
         "1298015": {
             "name": "Ilie Verdet",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "ROM_M_Verdet_Ilie",
-            "head_of_state": "bureaucrat_type",
             "start_date": "1979-03-30",
-            "death_date": "1982-05-20"
+            "death_date": "1982-05-20",
+            "type": "bureaucrat_type"
         },
         "1298016": {
             "name": "Constantin Dascalescu",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "ROM_M_Dascalescu_Constantin",
-            "head_of_state": "hardliner_type",
             "start_date": "1982-05-20",
-            "death_date": "1992-01-01"
+            "death_date": "1992-01-01",
+            "type": "hardliner_type"
         },
         "1298017": {
             "name": "Petre Roman",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
             "picture": "ROM_M_Roman_Petre",
-            "head_of_state": "bureaucrat_type",
             "start_date": "1982-05-20",
-            "death_date": "1992-01-01"
+            "death_date": "1992-01-01",
+            "type": "bureaucrat_type"
         },
         "1298018": {
             "name": "Ion Iliescu",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
             "picture": "ROM_M_Iliescu_Ion",
-            "head_of_state": "dictator_type",
             "start_date": "1982-01-01",
-            "death_date": "1991-12-31"
+            "death_date": "1991-12-31",
+            "type": "dictator_type"
         },
         "1298019": {
             "name": "Constantin I. C. Bratianu",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Bratianu_Constantin_I_C",
-            "head_of_government": "administrator_type",
             "start_date": "1946-01-01",
-            "death_date": "1950-05-05"
+            "death_date": "1950-05-05",
+            "type": "administrator_type"
         },
         "1298020": {
             "name": "Gheorghe Tatarascu",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Tatarascu_Gheorghe",
-            "head_of_government": "visionary_type",
             "start_date": "1934-01-03",
-            "death_date": "1957-03-28"
+            "death_date": "1957-03-28",
+            "type": "visionary_type"
         },
         "1298021": {
             "name": "Radu Campaneau",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Campaneau_Radu",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1982-05-20",
-            "death_date": "1992-09-27"
+            "death_date": "1992-09-27",
+            "type": "reformer_type"
         },
         "1298022": {
             "name": "Mircea Ionescu-Quintus",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Ionescu-Quintus_Mircea",
-            "head_of_government": "bureaucrat_type",
             "start_date": "1982-05-20",
-            "death_date": "1992-09-27"
+            "death_date": "1992-09-27",
+            "type": "bureaucrat_type"
         },
         "1928023": {
             "name": "Paul Goma",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Goma_Paul",
-            "head_of_government": "traditionalist_type",
             "start_date": "1968-08-26",
-            "death_date": "2010-01-01"
+            "death_date": "2010-01-01",
+            "type": "traditionalist_type"
         },
         "1928024": {
             "name": "Iuliu Maniu",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Maniu_Iuliu",
-            "head_of_government": "courageous_type",
             "start_date": "1928-11-10",
-            "death_date": "1953-02-05"
+            "death_date": "1953-02-05",
+            "type": "courageous_type"
         },
         "1928025": {
             "name": "Ion Mihalache",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Mihalache_Ion",
-            "head_of_government": "traditionalist_type",
             "start_date": "1946-01-01",
-            "death_date": "1963-03-06"
+            "death_date": "1963-03-06",
+            "type": "traditionalist_type"
         },
         "1928026": {
             "name": "Ion Ratiu",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Ratiu_Ion",
-            "head_of_state": "democrat_type",
             "start_date": "1982-01-01",
-            "death_date": "1992-11-19"
+            "death_date": "1992-11-19",
+            "type": "democrat_type"
         },
         "1928027": {
             "name": "Corneliu Coposu",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Coposu_Corneliu",
-            "head_of_government": "moral_type",
             "start_date": "1963-03-06",
-            "death_date": "1992-11-19"
+            "death_date": "1992-11-19",
+            "type": "moral_type"
         },
         "1928028": {
             "name": "Theodor Stolojan",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 1.0,
             "picture": "ROM_M_Stolojan_Theodor",
-            "head_of_government": "bureaucrat_type",
             "start_date": "1991-10-16",
-            "death_date": "1992-11-19"
+            "death_date": "1992-11-19",
+            "type": "bureaucrat_type"
         },
         "1928029": {
             "name": "Margareta I",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Margareta_I",
-            "head_of_state": "iron_lady",
             "start_date": "1967-03-26",
-            "death_date": "2049-01-01"
+            "death_date": "2049-01-01",
+            "type": "iron_lady"
         },
         "1928030": {
             "name": "Mihai David",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_David_Mihai",
-            "head_of_government": "reformer_type",
             "start_date": "1965-01-01",
-            "death_date": "2000-01-01"
+            "death_date": "2000-01-01",
+            "type": "reformer_type"
         },
         "1928031": {
             "name": "Ion Gavrila Ogoranu",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Ogoranu_Ion_G",
-            "head_of_state": "religious_type",
-            "head_of_government": "religious_type",
             "start_date": "1945-01-01",
-            "death_date": "2006-05-01"
+            "death_date": "2006-05-01",
+            "type": "religious_type"
         },
         "1928032": {
             "name": "Teodor Susman",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Susman_Teodor",
-            "head_of_state": "zealous_type",
-            "head_of_government": "zealous_type",
             "start_date": "1945-01-01",
-            "death_date": "1951-01-12"
+            "death_date": "1951-01-12",
+            "type": "zealous_type"
         },
         "1928033": {
             "name": "Major Nicolae Dabija",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Dabija_Nicolae",
-            "head_of_state": "traditionalist_type",
-            "head_of_government": "traditionalist_type",
             "start_date": "1945-01-01",
-            "death_date": "1949-10-28"
+            "death_date": "1949-10-28",
+            "type": "traditionalist_type"
         },
         "1928034": {
             "name": "Colonel Gheorghe Arsenescu",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Arsenescu_Gheorghe",
-            "head_of_state": "loyal_type",
-            "head_of_government": "loyal_type",
             "start_date": "1945-01-01",
-            "death_date": "1962-02-28"
+            "death_date": "1962-02-28",
+            "type": "loyal_type"
         },
         "1928035": {
             "name": "Horia Sima",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Sima_Horia",
-            "head_of_state": "extremist_type",
-            "head_of_government": "extremist_type",
             "start_date": "1938-01-01",
-            "death_date": "1993-05-25"
+            "death_date": "1993-05-25",
+            "type": "extremist_type"
         },
         "1928036": {
             "name": "Romulus Zaroni",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Zaroni_Romulus",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1945-03-06",
-            "death_date": "1962-10-25"
+            "death_date": "1962-10-25",
+            "type": "hardliner_type"
         },
         "1928037": {
             "name": "Octav Livezeanu",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Livezeanu_Octav",
-            "head_of_state": "bureaucrat_type",
-            "head_of_government": "bureaucrat_type",
             "start_date": "1946-08-19",
-            "death_date": "1975-01-01"
+            "death_date": "1975-01-01",
+            "type": "bureaucrat_type"
         },
         "1928038": {
             "name": "Gheorghe Apostol",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Apostol_Gheorghe",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1975-01-01",
-            "death_date": "2010-08-21"
+            "death_date": "2010-08-21",
+            "type": "reformer_type"
         },
         "1928039": {
             "name": "Silviu Brucan",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Brucan_Silviu",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1946-01-01",
-            "death_date": "1992-09-27"
+            "death_date": "1992-09-27",
+            "type": "hardliner_type"
         },
         "1928040": {
-            "name": "Alexandru B\u00eerladeanu",
+            "name": "Alexandru Bîrladeanu",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Birladeanu_Alexandru",
-            "head_of_state": "ambitious_type",
-            "head_of_government": "ambitious_type",
             "start_date": "1968-01-01",
-            "death_date": "1992-09-27"
+            "death_date": "1992-09-27",
+            "type": "ambitious_type"
         },
         "1928041": {
             "name": "Constantin Titel Petrescu",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Petrescu_Constantin_T",
-            "head_of_state": "courageous_type",
-            "head_of_government": "courageous_type",
             "start_date": "1944-08-23",
-            "death_date": "1957-09-02"
+            "death_date": "1957-09-02",
+            "type": "courageous_type"
         },
         "1928042": {
             "name": "Sergiu Cunescu",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Cunescu_Sergiu",
-            "head_of_state": "ambitious_type",
-            "head_of_government": "ambitious_type",
             "start_date": "1957-09-02",
-            "death_date": "1992-09-27"
+            "death_date": "1992-09-27",
+            "type": "ambitious_type"
         },
         "1928043": {
             "name": "Cornel Nica",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Nica_Cornel",
-            "head_of_state": "lethargic_type",
-            "head_of_government": "lethargic_type",
             "start_date": "1982-01-01",
-            "death_date": "1992-09-27"
+            "death_date": "1992-09-27",
+            "type": "lethargic_type"
         },
         "1928044": {
             "name": "Petre Metanie",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Metanie_Petre",
-            "head_of_state": "visionary_type",
             "start_date": "1978-01-01",
-            "death_date": "1990-01-16"
+            "death_date": "1990-01-16",
+            "type": "visionary_type"
         },
         "1928045": {
             "name": "Adrian Manolache",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Manolache_Adrian",
-            "head_of_state": "lethargic_type",
             "start_date": "1982-01-01",
-            "death_date": "1992-09-27"
+            "death_date": "1992-09-27",
+            "type": "lethargic_type"
         },
         "1928046": {
             "name": "Otto-Ernest Weber",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Weber_Otto-Ernest",
-            "head_of_government": "lethargic_type",
             "start_date": "1982-01-01",
-            "death_date": "2001-08-02"
+            "death_date": "2001-08-02",
+            "type": "lethargic_type"
         },
         "1928047": {
             "name": "Gheorghe Funar",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Funar_Gheorghe",
-            "head_of_state": "extremist_type",
             "start_date": "1982-01-01",
-            "death_date": "2000-12-20"
+            "death_date": "2000-12-20",
+            "type": "extremist_type"
         },
         "1928048": {
             "name": "Valeriu Tabara",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Tabara_Valeriu",
-            "head_of_government": "bureaucrat_type",
             "start_date": "1982-01-01",
-            "death_date": "2000-12-20"
+            "death_date": "2000-12-20",
+            "type": "bureaucrat_type"
         },
         "1928049": {
             "name": "Iosif Capota",
             "ideology": "social_cons_idolg",
             "loyalty": 0.45,
             "picture": "ROM_M_Capota_Iosif",
-            "head_of_state": "religious_type",
-            "head_of_government": "religious_type",
             "start_date": "1945-01-01",
-            "death_date": "1958-09-02"
+            "death_date": "1958-09-02",
+            "type": "religious_type"
         },
         "1928051": {
             "name": "Nicu Ceausescu",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Ceausescu_Nicu",
-            "head_of_state": "fortunate_type",
-            "head_of_government": "fortunate_type",
             "start_date": "1982-06-20",
-            "death_date": "1996-09-26"
+            "death_date": "1996-09-26",
+            "type": "fortunate_type"
         },
         "1928052": {
             "name": "Dumitru Alimanisteanu",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Alimanisteanu_Dumitru",
-            "head_of_government": "bureaucrat_type",
             "start_date": "1945-03-06",
-            "death_date": "1973-01-01"
+            "death_date": "1973-01-01",
+            "type": "bureaucrat_type"
         },
         "1928053": {
             "name": "Alexandru Alexandrini",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Alexandrini_Alexandru",
-            "head_of_government": "democrat_type",
             "start_date": "1945-08-23",
-            "death_date": "1957-08-10"
+            "death_date": "1957-08-10",
+            "type": "democrat_type"
         },
         "1928054": {
             "name": "Nicolae Penescu",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Penescu_Nicolae",
-            "head_of_government": "administrator_type",
             "start_date": "1944-11-04",
-            "death_date": "1981-02-28"
+            "death_date": "1981-02-28",
+            "type": "administrator_type"
         },
         "1928055": {
             "name": "Nicolae Carandino",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Carandino_Nicolae",
-            "head_of_government": "traditionalist_type",
             "start_date": "1947-07-14",
-            "death_date": "1982-01-01"
+            "death_date": "1982-01-01",
+            "type": "traditionalist_type"
         },
         "1928056": {
             "name": "Ilie Lazar",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Lazar_Ilie",
-            "head_of_government": "loyal_type",
             "start_date": "1947-07-14",
-            "death_date": "1976-11-06"
+            "death_date": "1976-11-06",
+            "type": "loyal_type"
         },
         "1928057": {
             "name": "Nicolae Radescu",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Radescu_Nicolae",
-            "head_of_government": "autocrat_type",
             "start_date": "1944-12-06",
-            "death_date": "1953-05-16"
+            "death_date": "1953-05-16",
+            "type": "autocrat_type"
         },
         "1928058": {
             "name": "Constantin Argetoianu",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Argetoianu_Constantin",
-            "head_of_government": "ambitious_type",
             "start_date": "1939-09-28",
-            "death_date": "1955-02-06"
+            "death_date": "1955-02-06",
+            "type": "ambitious_type"
         },
         "1928059": {
             "name": "Eugen Barbu",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Barbu_Eugen",
-            "head_of_state": "controversial_figure",
-            "head_of_government": "controversial_figure",
             "start_date": "1955-11-28",
-            "death_date": "1982-01-01"
+            "death_date": "1982-01-01",
+            "type": "controversial_figure"
         },
         "1928060": {
             "name": "Corneliu Vadim Tudor",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Tudor_Corneliu_V",
-            "head_of_state": "extremist_type",
-            "head_of_government": "extremist_type",
             "start_date": "1974-01-01",
-            "death_date": "1982-01-01"
+            "death_date": "1982-01-01",
+            "type": "extremist_type"
         },
         "1928061": {
             "name": "Ana Pauker",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
             "picture": "ROM_M_Pauker_Ana",
-            "head_of_state": "extremist_type",
-            "head_of_government": "extremist_type",
             "start_date": "1944-08-23",
-            "death_date": "1960-06-03"
+            "death_date": "1960-06-03",
+            "type": "extremist_type"
         }
     }
 }

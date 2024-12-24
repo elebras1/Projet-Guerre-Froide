@@ -1,1 +1,146 @@
-{"color": [55, 183, 106], "graphical_culture": "Soviet", "default_templates": {"SOV_guards_airborne_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "SOV_tank_division": ["armor_brigade", "armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "SOV_guards_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "SOV_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_motor_rifle_division": ["motorized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_guards_rifle_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "SOV_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "SOV_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "SOV_rifle_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "SOV_volunteer_division": ["militia_brigade", "militia_brigade", "militia_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1238000": {"name": "Nikolai Bogolyubov", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KYG_M_Bogolyubov_Nikolai", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1945-07-26", "death_date": "1950-07-07"}, "1238001": {"name": "Iskhak Razzakov", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KYG_M_Razzakov_Iskhak", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1950-07-07", "death_date": "1961-05-09"}, "1238002": {"name": "Turdakun Usubaliev", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KYG_M_Usubaliev_Turdakun", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1961-05-09", "death_date": "1985-11-02"}, "1238003": {"name": "Absamat Masaliyev", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KYG_M_Masaliyev_Absamat", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1985-11-02", "death_date": "1990-10-27"}, "1238004": {"name": "Askar Akayev", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "KYG_M_Akayev_Askar", "head_of_state": "controversial_figure", "start_date": "1990-10-27", "death_date": "2005-03-24"}, "1238005": {"name": "Nasirdin Isanov", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "KYG_M_Isanov_Nasirdin", "head_of_government": "administrator_type", "start_date": "1990-10-27", "death_date": "1991-11-28"}, "1238006": {"name": "Andrey Iordan", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "KYG_M_Iordan_Andrey", "head_of_government": "lethargic_type", "start_date": "1991-11-28", "death_date": "1992-02-10"}}}
+{
+    "color": [
+        55,
+        183,
+        106
+    ],
+    "graphical_culture": "Soviet",
+    "default_templates": {
+        "SOV_guards_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "SOV_tank_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_motor_rifle_division": [
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "SOV_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "SOV_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "SOV_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "SOV_volunteer_division": [
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1238000": {
+            "name": "Nikolai Bogolyubov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KYG_M_Bogolyubov_Nikolai",
+            "start_date": "1945-07-26",
+            "death_date": "1950-07-07",
+            "type": "bureaucrat_type"
+        },
+        "1238001": {
+            "name": "Iskhak Razzakov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KYG_M_Razzakov_Iskhak",
+            "start_date": "1950-07-07",
+            "death_date": "1961-05-09",
+            "type": "reformer_type"
+        },
+        "1238002": {
+            "name": "Turdakun Usubaliev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KYG_M_Usubaliev_Turdakun",
+            "start_date": "1961-05-09",
+            "death_date": "1985-11-02",
+            "type": "traditionalist_type"
+        },
+        "1238003": {
+            "name": "Absamat Masaliyev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KYG_M_Masaliyev_Absamat",
+            "start_date": "1985-11-02",
+            "death_date": "1990-10-27",
+            "type": "hardliner_type"
+        },
+        "1238004": {
+            "name": "Askar Akayev",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "KYG_M_Akayev_Askar",
+            "start_date": "1990-10-27",
+            "death_date": "2005-03-24",
+            "type": "controversial_figure"
+        },
+        "1238005": {
+            "name": "Nasirdin Isanov",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "KYG_M_Isanov_Nasirdin",
+            "start_date": "1990-10-27",
+            "death_date": "1991-11-28",
+            "type": "administrator_type"
+        },
+        "1238006": {
+            "name": "Andrey Iordan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "KYG_M_Iordan_Andrey",
+            "start_date": "1991-11-28",
+            "death_date": "1992-02-10",
+            "type": "lethargic_type"
+        }
+    }
+}

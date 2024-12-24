@@ -1,1 +1,220 @@
-{"color": [248, 236, 16], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1263001": {"name": "Samora Mois\u00e9s Machel", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MOZ_M_Machel_Samora_M", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1975-06-25", "death_date": "1986-10-19"}, "1263002": {"name": "Joaquim Chissano", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "MOZ_M_Chissan_Joaquim", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1986-10-19", "death_date": "2005-02-02"}, "1263003": {"name": "Armando Guebuza", "ideology": "communist_idolg", "loyalty": 0.85, "picture": "MOZ_M_Guebuza_Armando", "head_of_state": "fortunate_type", "head_of_government": "fortunate_type", "start_date": "1975-06-25", "death_date": "2005-02-02"}, "1263004": {"name": "Marcelino dos Santos", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "MOZ_M_Santos_Marcelino", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1986-10-19", "death_date": "2005-02-02"}, "1263100": {"name": "Uria Simango", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MOZ_M_Simango_Uria", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1960-01-01", "death_date": "1977-06-01"}, "1263101": {"name": "Adelino Gwambe", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MOZ_M_Gwambe_Adelino", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1960-02-01", "death_date": "1972-11-01"}, "1263102": {"name": "Andr\u00e9 Matsangaissa", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MOZ_M_Matsangaissa_Andre", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1977-01-01", "death_date": "1979-10-17"}, "1263103": {"name": "Afonso Dhlakama", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MOZ_M_Dhlakama_Afonso", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1979-01-01", "death_date": "2005-02-02"}, "1263104": {"name": "Raul Domingos", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "MOZ_M_Domingos_Raul", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1970-01-01", "death_date": "2300-01-01"}, "1263105": {"name": "Daviz Simango", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "MOZ_M_Simango_Daviz", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1984-01-01", "death_date": "2300-01-01"}, "1263106": {"name": "Wehia Ripua", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "MOZ_M_Ripua_Wehia", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1965-01-01", "death_date": "2300-01-01"}, "1263107": {"name": "Eduardo Mondlane", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MOZ_M_Mondlane_Eduardo", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1962-01-01", "death_date": "1969-02-03"}, "1263109": {"name": "Lutero Simango", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "MOZ_M_Simango_Lutero", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1984-01-01", "death_date": "2300-01-01"}, "1263110": {"name": "Yaqub Sibindy", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "MOZ_M_Sibindy_Yaqub", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1984-01-01", "death_date": "2300-01-01"}, "1263111": {"name": "Carlos Reis", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "MOZ_M_Reis_Carlos", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1984-01-01", "death_date": "2300-01-01"}, "1263112": {"name": "Neves Serrano", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "MOZ_M_Serrano_Neves", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1984-01-01", "death_date": "2300-01-01"}}}
+{
+    "color": [
+        248,
+        236,
+        16
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1263001": {
+            "name": "Samora Moisés Machel",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MOZ_M_Machel_Samora_M",
+            "start_date": "1975-06-25",
+            "death_date": "1986-10-19",
+            "type": "ambitious_type"
+        },
+        "1263002": {
+            "name": "Joaquim Chissano",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "MOZ_M_Chissan_Joaquim",
+            "start_date": "1986-10-19",
+            "death_date": "2005-02-02",
+            "type": "liberal_type"
+        },
+        "1263003": {
+            "name": "Armando Guebuza",
+            "ideology": "communist_idolg",
+            "loyalty": 0.85,
+            "picture": "MOZ_M_Guebuza_Armando",
+            "start_date": "1975-06-25",
+            "death_date": "2005-02-02",
+            "type": "fortunate_type"
+        },
+        "1263004": {
+            "name": "Marcelino dos Santos",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "MOZ_M_Santos_Marcelino",
+            "start_date": "1986-10-19",
+            "death_date": "2005-02-02",
+            "type": "traditionalist_type"
+        },
+        "1263100": {
+            "name": "Uria Simango",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Simango_Uria",
+            "start_date": "1960-01-01",
+            "death_date": "1977-06-01",
+            "type": "honest_type"
+        },
+        "1263101": {
+            "name": "Adelino Gwambe",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Gwambe_Adelino",
+            "start_date": "1960-02-01",
+            "death_date": "1972-11-01",
+            "type": "hardliner_type"
+        },
+        "1263102": {
+            "name": "André Matsangaissa",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Matsangaissa_Andre",
+            "start_date": "1977-01-01",
+            "death_date": "1979-10-17",
+            "type": "ambitious_type"
+        },
+        "1263103": {
+            "name": "Afonso Dhlakama",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Dhlakama_Afonso",
+            "start_date": "1979-01-01",
+            "death_date": "2005-02-02",
+            "type": "autocrat_type"
+        },
+        "1263104": {
+            "name": "Raul Domingos",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Domingos_Raul",
+            "start_date": "1970-01-01",
+            "death_date": "2300-01-01",
+            "type": "moral_type"
+        },
+        "1263105": {
+            "name": "Daviz Simango",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Simango_Daviz",
+            "start_date": "1984-01-01",
+            "death_date": "2300-01-01",
+            "type": "ambitious_type"
+        },
+        "1263106": {
+            "name": "Wehia Ripua",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Ripua_Wehia",
+            "start_date": "1965-01-01",
+            "death_date": "2300-01-01",
+            "type": "honest_type"
+        },
+        "1263107": {
+            "name": "Eduardo Mondlane",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Mondlane_Eduardo",
+            "start_date": "1962-01-01",
+            "death_date": "1969-02-03",
+            "type": "ambitious_type"
+        },
+        "1263109": {
+            "name": "Lutero Simango",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Simango_Lutero",
+            "start_date": "1984-01-01",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1263110": {
+            "name": "Yaqub Sibindy",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Sibindy_Yaqub",
+            "start_date": "1984-01-01",
+            "death_date": "2300-01-01",
+            "type": "religious_type"
+        },
+        "1263111": {
+            "name": "Carlos Reis",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Reis_Carlos",
+            "start_date": "1984-01-01",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1263112": {
+            "name": "Neves Serrano",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "MOZ_M_Serrano_Neves",
+            "start_date": "1984-01-01",
+            "death_date": "2300-01-01",
+            "type": "liberal_type"
+        }
+    }
+}

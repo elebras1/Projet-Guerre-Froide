@@ -1,1 +1,184 @@
-{"color": [143, 51, 35], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1145001": {"name": "David Dacko", "ideology": "paternal_auto_idolg", "loyalty": 0.85, "picture": "CAR_M_Dacko_David", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1960-08-14", "death_date": "1981-09-01"}, "1145002": {"name": "Jean-B\u00e9del Bokassa", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "CAR_M_Bokassa_Jean-Bedel", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1966-01-01", "death_date": "1979-09-21"}, "1145003": {"name": "Andr\u00e9 Kolingba", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "CAR_M_Kolingba_Andre", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1981-09-01", "death_date": "1993-10-22"}, "1145004": {"name": "Barth\u00e9lemy Boganda", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CAR_M_Boganda_Barthelemy", "head_of_government": "moral_type", "start_date": "1958-12-08", "death_date": "1959-03-29"}, "1145005": {"name": "Abel Goumba", "ideology": "paternal_auto_idolg", "loyalty": 0.95, "picture": "CAR_M_Goumba_Abel", "head_of_government": "ambitious_type", "start_date": "1959-03-29", "death_date": "2009-05-11"}, "1145006": {"name": "Elisabeth Domitien", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CAR_M_Domitien_Elisabeth", "head_of_government": "democrat_type", "start_date": "1975-01-02", "death_date": "1976-04-07"}, "1145007": {"name": "Ange-F\u00e9lix Patass\u00e9", "ideology": "paternal_auto_idolg", "loyalty": 0.96, "picture": "CAR_M_Patasse_Ange-Felix", "head_of_government": "hardliner_type", "start_date": "1976-09-05", "death_date": "2011-04-05"}, "1145008": {"name": "Henri Ma\u00efdou", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CAR_M_Maidou_Henri", "head_of_government": "administrator_type", "start_date": "1978-07-14", "death_date": "1979-09-26"}, "1145009": {"name": "Bernard Ayandho", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CAR_M_Ayandho_Bernard", "head_of_government": "traditionalist_type", "start_date": "1979-09-26", "death_date": "1980-08-22"}, "1145010": {"name": "Jean-Pierre Lebouder", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CAR_M_Lebouder_Jean-Pierre", "head_of_government": "bureaucrat_type", "start_date": "1980-11-12", "death_date": "1981-04-04"}, "1145011": {"name": "Simon Narcisse Bozanga", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CAR_M_Bozanga_Simon_N", "head_of_government": "loyal_type", "start_date": "1981-04-04", "death_date": "1981-09-01"}, "1145012": {"name": "\u00c9douard Frank", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CAR_M_Frank_Edouard", "head_of_government": "reputable_type", "start_date": "1991-03-15", "death_date": "1992-12-04"}}}
+{
+    "color": [
+        143,
+        51,
+        35
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1145001": {
+            "name": "David Dacko",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.85,
+            "picture": "CAR_M_Dacko_David",
+            "start_date": "1960-08-14",
+            "death_date": "1981-09-01",
+            "type": "parental_type"
+        },
+        "1145002": {
+            "name": "Jean-Bédel Bokassa",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "CAR_M_Bokassa_Jean-Bedel",
+            "start_date": "1966-01-01",
+            "death_date": "1979-09-21",
+            "type": "extremist_type"
+        },
+        "1145003": {
+            "name": "André Kolingba",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "CAR_M_Kolingba_Andre",
+            "start_date": "1981-09-01",
+            "death_date": "1993-10-22",
+            "type": "dictator_type"
+        },
+        "1145004": {
+            "name": "Barthélemy Boganda",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CAR_M_Boganda_Barthelemy",
+            "start_date": "1958-12-08",
+            "death_date": "1959-03-29",
+            "type": "moral_type"
+        },
+        "1145005": {
+            "name": "Abel Goumba",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.95,
+            "picture": "CAR_M_Goumba_Abel",
+            "start_date": "1959-03-29",
+            "death_date": "2009-05-11",
+            "type": "ambitious_type"
+        },
+        "1145006": {
+            "name": "Elisabeth Domitien",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CAR_M_Domitien_Elisabeth",
+            "start_date": "1975-01-02",
+            "death_date": "1976-04-07",
+            "type": "democrat_type"
+        },
+        "1145007": {
+            "name": "Ange-Félix Patassé",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.96,
+            "picture": "CAR_M_Patasse_Ange-Felix",
+            "start_date": "1976-09-05",
+            "death_date": "2011-04-05",
+            "type": "hardliner_type"
+        },
+        "1145008": {
+            "name": "Henri Maïdou",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CAR_M_Maidou_Henri",
+            "start_date": "1978-07-14",
+            "death_date": "1979-09-26",
+            "type": "administrator_type"
+        },
+        "1145009": {
+            "name": "Bernard Ayandho",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CAR_M_Ayandho_Bernard",
+            "start_date": "1979-09-26",
+            "death_date": "1980-08-22",
+            "type": "traditionalist_type"
+        },
+        "1145010": {
+            "name": "Jean-Pierre Lebouder",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CAR_M_Lebouder_Jean-Pierre",
+            "start_date": "1980-11-12",
+            "death_date": "1981-04-04",
+            "type": "bureaucrat_type"
+        },
+        "1145011": {
+            "name": "Simon Narcisse Bozanga",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CAR_M_Bozanga_Simon_N",
+            "start_date": "1981-04-04",
+            "death_date": "1981-09-01",
+            "type": "loyal_type"
+        },
+        "1145012": {
+            "name": "Édouard Frank",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CAR_M_Frank_Edouard",
+            "start_date": "1991-03-15",
+            "death_date": "1992-12-04",
+            "type": "reputable_type"
+        }
+    }
+}

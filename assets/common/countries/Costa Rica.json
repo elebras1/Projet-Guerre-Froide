@@ -1,1 +1,203 @@
-{"color": [183, 129, 124], "graphical_culture": "Us", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1159001": {"name": "Rafael Calder\u00f3n Guardia", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "COS_M_Guardia_Rafael_C", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1940-05-08", "death_date": "1966-05-08"}, "1159002": {"name": "Teodoro Picado Michalski", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "COS_M_Michalski_Teodoro_P", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1944-05-08", "death_date": "1948-05-08"}, "1159003": {"name": "Jos\u00e9 Figueres Ferrer", "ideology": "social_liberal_idolg", "loyalty": 0.9, "picture": "COS_M_Ferrer_Jose_F", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1948-05-08", "death_date": "1974-05-08"}, "1159004": {"name": "Otilio Ulate Blanco", "ideology": "social_liberal_idolg", "loyalty": 0.95, "picture": "COS_M_Blanco_Otilio_U", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1949-11-08", "death_date": "1966-05-08"}, "1159005": {"name": "Mario Echandi Jim\u00e9nez", "ideology": "paternal_auto_idolg", "loyalty": 0.95, "picture": "COS_M_Jimenez_Mario_E", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1958-05-08", "death_date": "1986-05-08"}, "1159006": {"name": "Francisco Orlich Bolmarcich", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "COS_M_Bolmarcich_Francisco", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1958-05-08", "death_date": "1966-05-08"}, "1159007": {"name": "Jos\u00e9 Trejos Fern\u00e1ndez", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "COS_M_Fernandez_Jose_T", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1966-05-08", "death_date": "1970-05-08"}, "1159008": {"name": "Daniel Oduber Quir\u00f3s", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "COS_M_Quiros_Daniel_O", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1974-05-08", "death_date": "1978-05-08"}, "1159009": {"name": "Rodrigo Carazo Odio", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "COS_M_Odio_Rodrigo_C", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1974-05-08", "death_date": "1982-05-08"}, "1159010": {"name": "Luis Monge \u00c1lvarez", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "COS_M_Alvarez_Luis_M", "head_of_state": "reputable_type", "head_of_government": "reputable_type", "start_date": "1982-05-08", "death_date": "1986-05-08"}, "1159011": {"name": "\u00d3scar Arias", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "COS_M_Arias_Oscar", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1986-05-08", "death_date": "1990-05-08"}, "1159012": {"name": "Rafael Calder\u00f3n Fournier", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "COS_M_Fournier_Rafael_C", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1982-05-08", "death_date": "1994-05-08"}, "1159013": {"name": "Jorge Rossi Chavarr\u00eda", "ideology": "social_liberal_idolg", "loyalty": 0.8, "picture": "COS_M_Chavarr\u00eda_Jorge_R", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1958-05-08", "death_date": "1962-05-08"}, "1159014": {"name": "Manuel Mora", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "COS_M_Mora_Manuel", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1931-01-01", "death_date": "1994-12-29"}}}
+{
+    "color": [
+        183,
+        129,
+        124
+    ],
+    "graphical_culture": "Us",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1159001": {
+            "name": "Rafael Calderón Guardia",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "COS_M_Guardia_Rafael_C",
+            "start_date": "1940-05-08",
+            "death_date": "1966-05-08",
+            "type": "liberal_type"
+        },
+        "1159002": {
+            "name": "Teodoro Picado Michalski",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "COS_M_Michalski_Teodoro_P",
+            "start_date": "1944-05-08",
+            "death_date": "1948-05-08",
+            "type": "reformer_type"
+        },
+        "1159003": {
+            "name": "José Figueres Ferrer",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "COS_M_Ferrer_Jose_F",
+            "start_date": "1948-05-08",
+            "death_date": "1974-05-08",
+            "type": "visionary_type"
+        },
+        "1159004": {
+            "name": "Otilio Ulate Blanco",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "COS_M_Blanco_Otilio_U",
+            "start_date": "1949-11-08",
+            "death_date": "1966-05-08",
+            "type": "administrator_type"
+        },
+        "1159005": {
+            "name": "Mario Echandi Jiménez",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.95,
+            "picture": "COS_M_Jimenez_Mario_E",
+            "start_date": "1958-05-08",
+            "death_date": "1986-05-08",
+            "type": "administrator_type"
+        },
+        "1159006": {
+            "name": "Francisco Orlich Bolmarcich",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "COS_M_Bolmarcich_Francisco",
+            "start_date": "1958-05-08",
+            "death_date": "1966-05-08",
+            "type": "democrat_type"
+        },
+        "1159007": {
+            "name": "José Trejos Fernández",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "COS_M_Fernandez_Jose_T",
+            "start_date": "1966-05-08",
+            "death_date": "1970-05-08",
+            "type": "administrator_type"
+        },
+        "1159008": {
+            "name": "Daniel Oduber Quirós",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "COS_M_Quiros_Daniel_O",
+            "start_date": "1974-05-08",
+            "death_date": "1978-05-08",
+            "type": "democrat_type"
+        },
+        "1159009": {
+            "name": "Rodrigo Carazo Odio",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "COS_M_Odio_Rodrigo_C",
+            "start_date": "1974-05-08",
+            "death_date": "1982-05-08",
+            "type": "bureaucrat_type"
+        },
+        "1159010": {
+            "name": "Luis Monge Álvarez",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "COS_M_Alvarez_Luis_M",
+            "start_date": "1982-05-08",
+            "death_date": "1986-05-08",
+            "type": "reputable_type"
+        },
+        "1159011": {
+            "name": "Óscar Arias",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "COS_M_Arias_Oscar",
+            "start_date": "1986-05-08",
+            "death_date": "1990-05-08",
+            "type": "democrat_type"
+        },
+        "1159012": {
+            "name": "Rafael Calderón Fournier",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "COS_M_Fournier_Rafael_C",
+            "start_date": "1982-05-08",
+            "death_date": "1994-05-08",
+            "type": "democrat_type"
+        },
+        "1159013": {
+            "name": "Jorge Rossi Chavarría",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "COS_M_Chavarría_Jorge_R",
+            "start_date": "1958-05-08",
+            "death_date": "1962-05-08",
+            "type": "liberal_type"
+        },
+        "1159014": {
+            "name": "Manuel Mora",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "COS_M_Mora_Manuel",
+            "start_date": "1931-01-01",
+            "death_date": "1994-12-29",
+            "type": "visionary_type"
+        }
+    }
+}

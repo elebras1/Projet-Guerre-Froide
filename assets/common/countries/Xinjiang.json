@@ -1,1 +1,102 @@
-{"color": [183, 182, 138], "graphical_culture": "Asian", "default_templates": {"CHC_airborne_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "CHC_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "CHC_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "CHC_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "CHC_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "CHC_motorized_division": ["motorized_brigade", "motorized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "CHC_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "CHC_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "CHC_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "CHC_volunteer_division": ["militia_brigade", "militia_brigade", "militia_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1317000": {"name": "Alikhan Tora", "ideology": "paternal_auto_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "SIK_M_Tora_Alikhan", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1944-11-12", "death_date": "1946-06-12"}, "1317001": {"name": "Ehmetjan Qasim", "ideology": "paternal_auto_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "SIK_M_Qasim_Ehmetjan", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1946-06-12", "death_date": "1949-08-27"}, "1317002": {"name": "Saifuddin Azizi", "ideology": "maoist_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "SIK_M_Azizi_Saifuddin", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1949-08-27", "death_date": "1978-12-30"}}}
+{
+    "color": [
+        183,
+        182,
+        138
+    ],
+    "graphical_culture": "Asian",
+    "default_templates": {
+        "CHC_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "CHC_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "CHC_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "CHC_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "CHC_volunteer_division": [
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1317000": {
+            "name": "Alikhan Tora",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SIK_M_Tora_Alikhan",
+            "start_date": "1944-11-12",
+            "death_date": "1946-06-12",
+            "type": "zealous_type"
+        },
+        "1317001": {
+            "name": "Ehmetjan Qasim",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SIK_M_Qasim_Ehmetjan",
+            "start_date": "1946-06-12",
+            "death_date": "1949-08-27",
+            "type": "reformer_type"
+        },
+        "1317002": {
+            "name": "Saifuddin Azizi",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "SIK_M_Azizi_Saifuddin",
+            "start_date": "1949-08-27",
+            "death_date": "1978-12-30",
+            "type": "reformer_type"
+        }
+    }
+}

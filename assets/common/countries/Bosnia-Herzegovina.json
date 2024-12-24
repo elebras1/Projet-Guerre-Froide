@@ -1,1 +1,311 @@
-{"color": [165, 172, 166], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1133000": {"name": "Vojislav Kecmanovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Kecmanovic_Vojislav", "head_of_state": "bureaucrat_type", "start_date": "1945-04-26", "death_date": "1946-11-01"}, "1133001": {"name": "\u00d0uro Pucar", "ideology": "communist_idolg", "loyalty": 0.95, "picture": "BOS_M_Pucar_Duro", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1946-11-01", "death_date": "1963-06-01"}, "1133002": {"name": "Vlado \u008aegrt", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Segrt_Vlado", "head_of_state": "bureaucrat_type", "start_date": "1948-09-01", "death_date": "1953-03-01"}, "1133003": {"name": "Ratomir Dugonjic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Dugonjic_Ratomir", "head_of_state": "loyal_type", "start_date": "1953-03-01", "death_date": "1978-04-01"}, "1133004": {"name": "D\u009eemal Bijedic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Bijedic_Dzemal", "head_of_state": "reformer_type", "start_date": "1967-01-01", "death_date": "1971-01-01"}, "1133005": {"name": "Hamdija Pozderac", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Pozderac_Hamdija", "head_of_state": "reformer_type", "start_date": "1971-01-01", "death_date": "1974-05-01"}, "1133006": {"name": "Raif Dizdarevic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "YUG_M_Dizdarevic_Raif", "head_of_state": "courageous_type", "start_date": "1978-04-01", "death_date": "1982-04-01", "base": 1133006}, "1133007": {"name": "Branko Mikulic", "ideology": "communist_idolg", "loyalty": 0.95, "picture": "BOS_M_Mikulic_Branko", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1967-01-01", "death_date": "1984-04-26", "base": 1133007}, "1133008": {"name": "Milanko Renovica", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "BOS_M_Renovica_Milanko", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1974-04-01", "death_date": "1985-04-26"}, "1133009": {"name": "Munir Mesihovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Mesihovic_Munir", "head_of_state": "administrator_type", "start_date": "1985-04-26", "death_date": "1987-04-01"}, "1133010": {"name": "Mato Andric", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Andric_Mato", "head_of_state": "lethargic_type", "start_date": "1987-04-01", "death_date": "1988-04-01"}, "1133011": {"name": "Nikola Filipovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Filipovic_Nikola", "head_of_state": "administrator_type", "start_date": "1988-04-01", "death_date": "1989-04-01"}, "1133012": {"name": "Obrad Piljak", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Piljak_Obrad", "head_of_state": "liberal_type", "start_date": "1989-04-01", "death_date": "2300-01-01"}, "1133013": {"name": "Alija Izetbegovic", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "BOS_M_Izetbegovic_Alija", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1946-01-01", "death_date": "2000-10-14"}, "1133014": {"name": "Rodoljub Colakovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Colakovic_Rodoljub", "head_of_government": "extremist_type", "start_date": "1945-04-27", "death_date": "1948-09-01"}, "1133015": {"name": "Avdo Humo", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Humo_Avdo", "head_of_government": "reputable_type", "start_date": "1953-12-01", "death_date": "1956-01-01"}, "1133016": {"name": "Osman Karabegovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Karabegovic_Osman", "head_of_government": "reformer_type", "start_date": "1956-01-01", "death_date": "1963-01-01"}, "1133017": {"name": "Hasan Brkic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Brkic_Hasan", "head_of_government": "administrator_type", "start_date": "1963-01-01", "death_date": "1965-01-01"}, "1133018": {"name": "Rudi Kolak", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Kolak_Rudi", "head_of_government": "bureaucrat_type", "start_date": "1965-01-01", "death_date": "1967-01-01"}, "1133019": {"name": "Dragutin Kosovac", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Kosovac_Dragutin", "head_of_government": "traditionalist_type", "start_date": "1969-01-01", "death_date": "1974-04-01"}, "1133020": {"name": "Seid Maglajlija", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Maglajlija_Seid", "head_of_government": "administrator_type", "start_date": "1982-04-28", "death_date": "1984-04-28"}, "1133021": {"name": "Gojko Ubiparip", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Ubiparip_Gojko", "head_of_government": "loyal_type", "start_date": "1984-04-28", "death_date": "1986-04-01"}, "1133022": {"name": "Josip Lovrenovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Lovrenovic_Josip", "head_of_government": "traditionalist_type", "start_date": "1986-04-01", "death_date": "1988-04-01"}, "1133023": {"name": "Marko Ceranic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BOS_M_Ceranic_Marko", "head_of_government": "administrator_type", "start_date": "1988-04-01", "death_date": "1990-12-20"}, "1133024": {"name": "Jure Pelivan", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "BOS_M_Pelivan_Jure", "head_of_government": "administrator_type", "start_date": "1990-12-20", "death_date": "1992-03-03"}, "1133100": {"name": "Danko Grlic", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "YUG_M_Grlic_Danko", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1931-01-01", "death_date": "1984-03-01", "base": 1133100}}}
+{
+    "color": [
+        165,
+        172,
+        166
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1133000": {
+            "name": "Vojislav Kecmanovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Kecmanovic_Vojislav",
+            "start_date": "1945-04-26",
+            "death_date": "1946-11-01",
+            "type": "bureaucrat_type"
+        },
+        "1133001": {
+            "name": "Ðuro Pucar",
+            "ideology": "communist_idolg",
+            "loyalty": 0.95,
+            "picture": "BOS_M_Pucar_Duro",
+            "start_date": "1946-11-01",
+            "death_date": "1963-06-01",
+            "type": "courageous_type"
+        },
+        "1133002": {
+            "name": "Vlado egrt",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Segrt_Vlado",
+            "start_date": "1948-09-01",
+            "death_date": "1953-03-01",
+            "type": "bureaucrat_type"
+        },
+        "1133003": {
+            "name": "Ratomir Dugonjic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Dugonjic_Ratomir",
+            "start_date": "1953-03-01",
+            "death_date": "1978-04-01",
+            "type": "loyal_type"
+        },
+        "1133004": {
+            "name": "Demal Bijedic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Bijedic_Dzemal",
+            "start_date": "1967-01-01",
+            "death_date": "1971-01-01",
+            "type": "reformer_type"
+        },
+        "1133005": {
+            "name": "Hamdija Pozderac",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Pozderac_Hamdija",
+            "start_date": "1971-01-01",
+            "death_date": "1974-05-01",
+            "type": "reformer_type"
+        },
+        "1133006": {
+            "name": "Raif Dizdarevic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Dizdarevic_Raif",
+            "start_date": "1978-04-01",
+            "death_date": "1982-04-01",
+            "type": "courageous_type"
+        },
+        "1133007": {
+            "name": "Branko Mikulic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.95,
+            "picture": "BOS_M_Mikulic_Branko",
+            "start_date": "1967-01-01",
+            "death_date": "1984-04-26",
+            "type": "ambitious_type"
+        },
+        "1133008": {
+            "name": "Milanko Renovica",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "BOS_M_Renovica_Milanko",
+            "start_date": "1974-04-01",
+            "death_date": "1985-04-26",
+            "type": "bureaucrat_type"
+        },
+        "1133009": {
+            "name": "Munir Mesihovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Mesihovic_Munir",
+            "start_date": "1985-04-26",
+            "death_date": "1987-04-01",
+            "type": "administrator_type"
+        },
+        "1133010": {
+            "name": "Mato Andric",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Andric_Mato",
+            "start_date": "1987-04-01",
+            "death_date": "1988-04-01",
+            "type": "lethargic_type"
+        },
+        "1133011": {
+            "name": "Nikola Filipovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Filipovic_Nikola",
+            "start_date": "1988-04-01",
+            "death_date": "1989-04-01",
+            "type": "administrator_type"
+        },
+        "1133012": {
+            "name": "Obrad Piljak",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Piljak_Obrad",
+            "start_date": "1989-04-01",
+            "death_date": "2300-01-01",
+            "type": "liberal_type"
+        },
+        "1133013": {
+            "name": "Alija Izetbegovic",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Izetbegovic_Alija",
+            "start_date": "1946-01-01",
+            "death_date": "2000-10-14",
+            "type": "controversial_figure"
+        },
+        "1133014": {
+            "name": "Rodoljub Colakovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Colakovic_Rodoljub",
+            "start_date": "1945-04-27",
+            "death_date": "1948-09-01",
+            "type": "extremist_type"
+        },
+        "1133015": {
+            "name": "Avdo Humo",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Humo_Avdo",
+            "start_date": "1953-12-01",
+            "death_date": "1956-01-01",
+            "type": "reputable_type"
+        },
+        "1133016": {
+            "name": "Osman Karabegovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Karabegovic_Osman",
+            "start_date": "1956-01-01",
+            "death_date": "1963-01-01",
+            "type": "reformer_type"
+        },
+        "1133017": {
+            "name": "Hasan Brkic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Brkic_Hasan",
+            "start_date": "1963-01-01",
+            "death_date": "1965-01-01",
+            "type": "administrator_type"
+        },
+        "1133018": {
+            "name": "Rudi Kolak",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Kolak_Rudi",
+            "start_date": "1965-01-01",
+            "death_date": "1967-01-01",
+            "type": "bureaucrat_type"
+        },
+        "1133019": {
+            "name": "Dragutin Kosovac",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Kosovac_Dragutin",
+            "start_date": "1969-01-01",
+            "death_date": "1974-04-01",
+            "type": "traditionalist_type"
+        },
+        "1133020": {
+            "name": "Seid Maglajlija",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Maglajlija_Seid",
+            "start_date": "1982-04-28",
+            "death_date": "1984-04-28",
+            "type": "administrator_type"
+        },
+        "1133021": {
+            "name": "Gojko Ubiparip",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Ubiparip_Gojko",
+            "start_date": "1984-04-28",
+            "death_date": "1986-04-01",
+            "type": "loyal_type"
+        },
+        "1133022": {
+            "name": "Josip Lovrenovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Lovrenovic_Josip",
+            "start_date": "1986-04-01",
+            "death_date": "1988-04-01",
+            "type": "traditionalist_type"
+        },
+        "1133023": {
+            "name": "Marko Ceranic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Ceranic_Marko",
+            "start_date": "1988-04-01",
+            "death_date": "1990-12-20",
+            "type": "administrator_type"
+        },
+        "1133024": {
+            "name": "Jure Pelivan",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Pelivan_Jure",
+            "start_date": "1990-12-20",
+            "death_date": "1992-03-03",
+            "type": "administrator_type"
+        },
+        "1133100": {
+            "name": "Danko Grlic",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Grlic_Danko",
+            "start_date": "1931-01-01",
+            "death_date": "1984-03-01",
+            "type": "liberal_type"
+        }
+    }
+}

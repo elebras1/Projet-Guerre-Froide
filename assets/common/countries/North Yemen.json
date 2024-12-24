@@ -1,1 +1,230 @@
-{"color": [51, 103, 148], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1278000": {"name": "Abdullah as-Sallal", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "NYE_M_as-Sallal_Abdullah", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1946-01-01", "death_date": "1967-11-05", "base": 1278000}, "1278001": {"name": "Abdul Rahman", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "NYE_M_Rahman_Abdul", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1963-11-05", "death_date": "1974-06-13", "base": 1278001}, "1278002": {"name": "Ibrahim al-Hamdi", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NYE_M_al-Hamdi_Ibrahim", "head_of_state": "controversial_figure", "start_date": "1974-06-13", "death_date": "1977-10-11", "base": 1278002}, "1278003": {"name": "Ahmad al-Ghashmi", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NYE_M_al-Ghashmi_Ahmad", "head_of_state": "controversial_figure", "start_date": "1977-10-11", "death_date": "1978-06-24", "base": 1278003}, "1278004": {"name": "Abdul Karim Abdullah", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NYE_M_Abdullah_Abdul_K", "head_of_state": "loyal_type", "start_date": "1978-06-24", "death_date": "1978-07-18", "base": 1278004}, "1278005": {"name": "Ali Abdullah Saleh", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NYE_M_Saleh_Ali_A", "head_of_state": "bureaucrat_type", "start_date": "1978-07-18", "death_date": "1991-12-31", "base": 1278005}, "1278006": {"name": "Abdul Latif Dayfallah", "ideology": "paternal_auto_idolg", "loyalty": 0.8, "picture": "NYE_M_Dayfallah_Abdul_L", "head_of_government": "honest_type", "start_date": "1963-04-26", "death_date": "1975-01-25", "base": 1278006}, "1278007": {"name": "Hassan al-Amri", "ideology": "paternal_auto_idolg", "loyalty": 0.8, "picture": "NYE_M_al-Amri_Hassan", "head_of_government": "loyal_type", "start_date": "1964-02-10", "death_date": "1971-09-05", "base": 1278007}, "1278008": {"name": "Mahmoud al-Gayifi", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NYE_M_al-Gayifi_Hamoud", "head_of_government": "courageous_type", "start_date": "1964-04-29", "death_date": "1965-01-06", "base": 1278008}, "1278009": {"name": "Ahmad Muhammad Numan", "ideology": "paternal_auto_idolg", "loyalty": 0.8, "picture": "NYE_Numan_Ahmad_M", "head_of_government": "bureaucrat_type", "start_date": "1965-04-20", "death_date": "1971-08-24", "base": 1278009}, "1278011": {"name": "Mohsin Ahmad al-Aini", "ideology": "paternal_auto_idolg", "loyalty": 0.8, "picture": "NYE_M_al-Aini_Mohsin_A", "head_of_government": "fortunate_type", "start_date": "1967-11-05", "death_date": "1975-01-16", "base": 1278011}, "1278013": {"name": "Abdul Salam Sabrah", "ideology": "paternal_auto_idolg", "loyalty": 0.8, "picture": "NYE_M_Sabrah_Abdul_S", "head_of_government": "traditionalist_type", "start_date": "1969-07-09", "death_date": "1971-09-18", "base": 1278013}, "1278014": {"name": "Abdullah Kurshumi", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NYE_M_Kurshumi_Abdullah", "head_of_government": "bureaucrat_type", "start_date": "1969-09-02", "death_date": "1970-02-05", "base": 1278014}, "1278021": {"name": "Kadhi Abdullah al-Hagri", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NYE_M_al-Hagri_Kadhi_A", "head_of_government": "ambitious_type", "start_date": "1972-12-30", "death_date": "1974-02-10", "base": 1278021}, "1278022": {"name": "Hassan Muhammad Makki", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NYE_M_Makki_Hassan_M", "head_of_government": "traditionalist_type", "start_date": "1974-02-10", "death_date": "1974-06-22", "base": 1278022}, "1278025": {"name": "Abdul Aziz Abdul Ghani", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "NYE_M_Ghani_Abdul_A_A", "head_of_government": "reputable_type", "start_date": "1975-01-25", "death_date": "1991-12-31", "base": 1278025}, "1278026": {"name": "Abd Al-Karim Al-Iryani", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "NYE_M_Al-Iryani_Abd_A", "head_of_government": "administrator_type", "start_date": "1980-10-15", "death_date": "1983-11-13", "base": 1278026}}}
+{
+    "color": [
+        51,
+        103,
+        148
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1278000": {
+            "name": "Abdullah as-Sallal",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "NYE_M_as-Sallal_Abdullah",
+            "start_date": "1946-01-01",
+            "death_date": "1967-11-05",
+            "type": "zealous_type"
+        },
+        "1278001": {
+            "name": "Abdul Rahman",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "NYE_M_Rahman_Abdul",
+            "start_date": "1963-11-05",
+            "death_date": "1974-06-13",
+            "type": "democrat_type"
+        },
+        "1278002": {
+            "name": "Ibrahim al-Hamdi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NYE_M_al-Hamdi_Ibrahim",
+            "start_date": "1974-06-13",
+            "death_date": "1977-10-11",
+            "type": "controversial_figure"
+        },
+        "1278003": {
+            "name": "Ahmad al-Ghashmi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NYE_M_al-Ghashmi_Ahmad",
+            "start_date": "1977-10-11",
+            "death_date": "1978-06-24",
+            "type": "controversial_figure"
+        },
+        "1278004": {
+            "name": "Abdul Karim Abdullah",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NYE_M_Abdullah_Abdul_K",
+            "start_date": "1978-06-24",
+            "death_date": "1978-07-18",
+            "type": "loyal_type"
+        },
+        "1278005": {
+            "name": "Ali Abdullah Saleh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NYE_M_Saleh_Ali_A",
+            "start_date": "1978-07-18",
+            "death_date": "1991-12-31",
+            "type": "bureaucrat_type"
+        },
+        "1278006": {
+            "name": "Abdul Latif Dayfallah",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "NYE_M_Dayfallah_Abdul_L",
+            "start_date": "1963-04-26",
+            "death_date": "1975-01-25",
+            "type": "honest_type"
+        },
+        "1278007": {
+            "name": "Hassan al-Amri",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "NYE_M_al-Amri_Hassan",
+            "start_date": "1964-02-10",
+            "death_date": "1971-09-05",
+            "type": "loyal_type"
+        },
+        "1278008": {
+            "name": "Mahmoud al-Gayifi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NYE_M_al-Gayifi_Hamoud",
+            "start_date": "1964-04-29",
+            "death_date": "1965-01-06",
+            "type": "courageous_type"
+        },
+        "1278009": {
+            "name": "Ahmad Muhammad Numan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "NYE_Numan_Ahmad_M",
+            "start_date": "1965-04-20",
+            "death_date": "1971-08-24",
+            "type": "bureaucrat_type"
+        },
+        "1278011": {
+            "name": "Mohsin Ahmad al-Aini",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "NYE_M_al-Aini_Mohsin_A",
+            "start_date": "1967-11-05",
+            "death_date": "1975-01-16",
+            "type": "fortunate_type"
+        },
+        "1278013": {
+            "name": "Abdul Salam Sabrah",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "NYE_M_Sabrah_Abdul_S",
+            "start_date": "1969-07-09",
+            "death_date": "1971-09-18",
+            "type": "traditionalist_type"
+        },
+        "1278014": {
+            "name": "Abdullah Kurshumi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NYE_M_Kurshumi_Abdullah",
+            "start_date": "1969-09-02",
+            "death_date": "1970-02-05",
+            "type": "bureaucrat_type"
+        },
+        "1278021": {
+            "name": "Kadhi Abdullah al-Hagri",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NYE_M_al-Hagri_Kadhi_A",
+            "start_date": "1972-12-30",
+            "death_date": "1974-02-10",
+            "type": "ambitious_type"
+        },
+        "1278022": {
+            "name": "Hassan Muhammad Makki",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NYE_M_Makki_Hassan_M",
+            "start_date": "1974-02-10",
+            "death_date": "1974-06-22",
+            "type": "traditionalist_type"
+        },
+        "1278025": {
+            "name": "Abdul Aziz Abdul Ghani",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "NYE_M_Ghani_Abdul_A_A",
+            "start_date": "1975-01-25",
+            "death_date": "1991-12-31",
+            "type": "reputable_type"
+        },
+        "1278026": {
+            "name": "Abd Al-Karim Al-Iryani",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "NYE_M_Al-Iryani_Abd_A",
+            "start_date": "1980-10-15",
+            "death_date": "1983-11-13",
+            "type": "administrator_type"
+        }
+    }
+}

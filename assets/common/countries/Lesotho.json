@@ -1,1 +1,212 @@
-{"color": [37, 27, 235], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1245001": {"name": "Moshoeshoe II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "LST_M_Moshoeshoe_II", "head_of_state": "courteous_figure", "start_date": "1960-03-12", "death_date": "1996-01-15"}, "1245002": {"name": "Letsie III", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "LST_M_Letsie_III", "head_of_state": "courteous_figure", "start_date": "1990-11-12", "death_date": "1995-01-25"}, "1245003": {"name": "Leabua Jonathan", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "LST_M_Jonathan_Leabua", "head_of_government": "bureaucrat_type", "start_date": "1965-07-07", "death_date": "1986-01-20"}, "1245004": {"name": "Justin Lekhanya", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "LST_M_Lekhanya_Justin", "head_of_government": "ambitious_type", "start_date": "1986-01-20", "death_date": "1991-05-02"}, "1245005": {"name": "Elias Phisoana Ramaema", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "LST_M_Ramaema_Elias_P", "head_of_government": "administrator_type", "start_date": "1991-05-02", "death_date": "1993-04-02"}, "1245006": {"name": "Seeiso I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.99, "picture": "LST_M_Seeiso_I", "head_of_state": "courteous_figure", "start_date": "1987-04-16", "death_date": "2300-01-01"}, "1245100": {"name": "Ntsu Mokhehle", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "LST_M_Mokhehle_Ntsu", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1952-04-18", "death_date": "1997-08-01"}, "1245101": {"name": "'Mantsebo", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "LST_M_Mantsebo", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1941-01-28", "death_date": "1964-01-01"}, "1245102": {"name": "Mokhafisi Kena", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "LST_M_Kena_Mokhafisi", "head_of_state": "courteous_figure", "head_of_government": "courteous_figure", "start_date": "1961-01-01", "death_date": "2300-01-01"}, "1245103": {"name": "John Motloheloa", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "LST_M_Motloheloa_John", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1961-01-01", "death_date": "1992-12-31"}, "1245104": {"name": "Sefali Malefane", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "LST_M_Malefane_Sefali", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1970-01-01", "death_date": "1992-12-31"}, "1245105": {"name": "Mathias Gareau", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "LST_M_Gareau_Mathias", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1960-01-01", "death_date": "1996-10-28"}, "1245106": {"name": "Anthony Manyeli", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "LST_M_Manyeli_Anthony", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1975-01-01", "death_date": "2010-02-09"}, "1245107": {"name": "Patrick Katleho", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "LST_M_Katleho_Patrick", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1946-01-01", "death_date": "1966-09-06"}, "1245108": {"name": "Potlako Leballo", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "LST_M_Leballo_Potlako", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1952-04-18", "death_date": "1986-01-18", "base": 1245108}}}
+{
+    "color": [
+        37,
+        27,
+        235
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1245001": {
+            "name": "Moshoeshoe II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "LST_M_Moshoeshoe_II",
+            "start_date": "1960-03-12",
+            "death_date": "1996-01-15",
+            "type": "courteous_figure"
+        },
+        "1245002": {
+            "name": "Letsie III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "LST_M_Letsie_III",
+            "start_date": "1990-11-12",
+            "death_date": "1995-01-25",
+            "type": "courteous_figure"
+        },
+        "1245003": {
+            "name": "Leabua Jonathan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "LST_M_Jonathan_Leabua",
+            "start_date": "1965-07-07",
+            "death_date": "1986-01-20",
+            "type": "bureaucrat_type"
+        },
+        "1245004": {
+            "name": "Justin Lekhanya",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "LST_M_Lekhanya_Justin",
+            "start_date": "1986-01-20",
+            "death_date": "1991-05-02",
+            "type": "ambitious_type"
+        },
+        "1245005": {
+            "name": "Elias Phisoana Ramaema",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "LST_M_Ramaema_Elias_P",
+            "start_date": "1991-05-02",
+            "death_date": "1993-04-02",
+            "type": "administrator_type"
+        },
+        "1245006": {
+            "name": "Seeiso I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "LST_M_Seeiso_I",
+            "start_date": "1987-04-16",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1245100": {
+            "name": "Ntsu Mokhehle",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "LST_M_Mokhehle_Ntsu",
+            "start_date": "1952-04-18",
+            "death_date": "1997-08-01",
+            "type": "moral_type"
+        },
+        "1245101": {
+            "name": "'Mantsebo",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "LST_M_Mantsebo",
+            "start_date": "1941-01-28",
+            "death_date": "1964-01-01",
+            "type": "reformer_type"
+        },
+        "1245102": {
+            "name": "Mokhafisi Kena",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "LST_M_Kena_Mokhafisi",
+            "start_date": "1961-01-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1245103": {
+            "name": "John Motloheloa",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "LST_M_Motloheloa_John",
+            "start_date": "1961-01-01",
+            "death_date": "1992-12-31",
+            "type": "lethargic_type"
+        },
+        "1245104": {
+            "name": "Sefali Malefane",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "LST_M_Malefane_Sefali",
+            "start_date": "1970-01-01",
+            "death_date": "1992-12-31",
+            "type": "bureaucrat_type"
+        },
+        "1245105": {
+            "name": "Mathias Gareau",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LST_M_Gareau_Mathias",
+            "start_date": "1960-01-01",
+            "death_date": "1996-10-28",
+            "type": "religious_type"
+        },
+        "1245106": {
+            "name": "Anthony Manyeli",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "LST_M_Manyeli_Anthony",
+            "start_date": "1975-01-01",
+            "death_date": "2010-02-09",
+            "type": "traditionalist_type"
+        },
+        "1245107": {
+            "name": "Patrick Katleho",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "LST_M_Katleho_Patrick",
+            "start_date": "1946-01-01",
+            "death_date": "1966-09-06",
+            "type": "visionary_type"
+        },
+        "1245108": {
+            "name": "Potlako Leballo",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "LST_M_Leballo_Potlako",
+            "start_date": "1952-04-18",
+            "death_date": "1986-01-18",
+            "type": "visionary_type"
+        }
+    }
+}

@@ -1,1 +1,164 @@
-{"color": [52, 181, 208], "graphical_culture": "Soviet", "default_templates": {"SOV_guards_airborne_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "SOV_tank_division": ["armor_brigade", "armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "SOV_guards_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "SOV_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_motor_rifle_division": ["motorized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_guards_rifle_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "SOV_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "SOV_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "SOV_rifle_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "SOV_volunteer_division": ["militia_brigade", "militia_brigade", "militia_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1228000": {"name": "Zhumabay Shayakhmetov", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KAZ_M_Shayakhmetov_Zhumabay", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1945-09-14", "death_date": "1954-03-06"}, "1228001": {"name": "Panteleimon Ponomarenko", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "BLR_M_Ponomarenko_Panteleimon", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1954-03-06", "death_date": "1955-05-08", "base": 1391123}, "1228002": {"name": "Leonid I. Brezhnev", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "SOV_M_Brezhnev_Leonid_I", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1955-05-08", "death_date": "1956-03-08", "base": 1300006}, "1228003": {"name": "Ivan Yakovlev", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KAZ_M_Yakovlev_Ivan", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1956-03-06", "death_date": "1957-12-26"}, "1228004": {"name": "Nikolai Belyaev", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KAZ_M_Belyaev_Nikolai", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1957-12-26", "death_date": "1960-01-19"}, "1228005": {"name": "Dinmukhamed Kunaeyev", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "KAZ_M_Kunaeyev_Dinmukhamed", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1960-01-19", "death_date": "1986-12-16"}, "1228006": {"name": "Ismail Yusupov", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KAZ_M_Yusupov_Ismail", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1962-12-26", "death_date": "1964-12-07"}, "1228007": {"name": "Gennady Kolbin", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KAZ_M_Kolbin_Gennady", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1986-12-16", "death_date": "1989-06-22"}, "1228008": {"name": "Nursultan Nazarbayev", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KAZ_M_Nazarbayev_Nursultan", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1989-06-22", "death_date": "2013-08-01"}}}
+{
+    "color": [
+        52,
+        181,
+        208
+    ],
+    "graphical_culture": "Soviet",
+    "default_templates": {
+        "SOV_guards_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "SOV_tank_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_motor_rifle_division": [
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "SOV_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "SOV_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "SOV_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "SOV_volunteer_division": [
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1228000": {
+            "name": "Zhumabay Shayakhmetov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KAZ_M_Shayakhmetov_Zhumabay",
+            "start_date": "1945-09-14",
+            "death_date": "1954-03-06",
+            "type": "ambitious_type"
+        },
+        "1228001": {
+            "name": "Panteleimon Ponomarenko",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BLR_M_Ponomarenko_Panteleimon",
+            "start_date": "1954-03-06",
+            "death_date": "1955-05-08",
+            "type": "controversial_figure"
+        },
+        "1228002": {
+            "name": "Leonid I. Brezhnev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Brezhnev_Leonid_I",
+            "start_date": "1955-05-08",
+            "death_date": "1956-03-08",
+            "type": "hardliner_type"
+        },
+        "1228003": {
+            "name": "Ivan Yakovlev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KAZ_M_Yakovlev_Ivan",
+            "start_date": "1956-03-06",
+            "death_date": "1957-12-26",
+            "type": "bureaucrat_type"
+        },
+        "1228004": {
+            "name": "Nikolai Belyaev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KAZ_M_Belyaev_Nikolai",
+            "start_date": "1957-12-26",
+            "death_date": "1960-01-19",
+            "type": "extremist_type"
+        },
+        "1228005": {
+            "name": "Dinmukhamed Kunaeyev",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "KAZ_M_Kunaeyev_Dinmukhamed",
+            "start_date": "1960-01-19",
+            "death_date": "1986-12-16",
+            "type": "loyal_type"
+        },
+        "1228006": {
+            "name": "Ismail Yusupov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KAZ_M_Yusupov_Ismail",
+            "start_date": "1962-12-26",
+            "death_date": "1964-12-07",
+            "type": "lethargic_type"
+        },
+        "1228007": {
+            "name": "Gennady Kolbin",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KAZ_M_Kolbin_Gennady",
+            "start_date": "1986-12-16",
+            "death_date": "1989-06-22",
+            "type": "controversial_figure"
+        },
+        "1228008": {
+            "name": "Nursultan Nazarbayev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KAZ_M_Nazarbayev_Nursultan",
+            "start_date": "1989-06-22",
+            "death_date": "2013-08-01",
+            "type": "traditionalist_type"
+        }
+    }
+}

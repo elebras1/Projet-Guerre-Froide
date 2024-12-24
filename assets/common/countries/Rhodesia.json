@@ -1,1 +1,509 @@
-{"color": [121, 98, 64], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1297001": {"name": "George VI", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_George", "head_of_state": "parental_type", "start_date": "1936-09-11", "death_date": "1952-02-06", "base": 1181001}, "1297002": {"name": "Elizabeth II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_Elizabeth", "head_of_state": "traditionalist_type", "start_date": "1952-02-06", "death_date": "2300-05-12", "base": 1181002}, "1297300": {"name": "George VII", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.99, "picture": "ENG_M_George_VII", "head_of_state": "parental_type", "start_date": "1966-11-14", "death_date": "2300-01-01", "base": 1181196}, "1297301": {"name": "Andrew I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.98, "picture": "ENG_M_Andrew_I", "head_of_state": "fortunate_type", "start_date": "1978-02-19", "death_date": "2300-01-01", "base": 1181197}, "1297302": {"name": "Edward IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.97, "picture": "ENG_M_Edward_IX", "head_of_state": "courteous_figure", "start_date": "1982-03-10", "death_date": "2300-01-01", "base": 1181198}, "1297304": {"name": "Anne II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.96, "picture": "ENG_M_Anne_II", "head_of_state": "courteous_figure", "start_date": "1968-08-15", "death_date": "2300-01-01", "base": 1181209}, "1297305": {"name": "Margaret I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.95, "picture": "ENG_M_Margaret_I", "head_of_state": "controversial_figure", "start_date": "1952-03-01", "death_date": "2002-02-09", "base": 1181210}, "1297306": {"name": "David III", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.94, "picture": "ENG_M_David_III", "head_of_state": "courteous_figure", "start_date": "1979-11-03", "death_date": "2300-01-01", "base": 1181211}, "1297307": {"name": "Sarah I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.93, "picture": "ENG_M_Sarah_I", "head_of_state": "courteous_figure", "start_date": "1982-05-01", "death_date": "2300-01-01", "base": 1181212}, "1297308": {"name": "Henry IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.92, "picture": "ENG_M_Henry_IX", "head_of_state": "courteous_figure", "start_date": "1946-01-01", "death_date": "1974-06-10", "base": 1181213}, "1297309": {"name": "William V", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.91, "picture": "ENG_M_William_V", "head_of_state": "courteous_figure", "start_date": "1959-12-18", "death_date": "1972-08-28", "base": 1181214}, "1297310": {"name": "Richard IV", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "ENG_M_Richard_IV", "head_of_state": "courteous_figure", "start_date": "1962-08-26", "death_date": "2300-01-01", "base": 1181215}, "1297311": {"name": "Robert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Robert_I_Bayern", "head_of_state": "traditionalist_type", "start_date": "1919-02-03", "death_date": "1955-08-02", "base": 1181199}, "1297312": {"name": "Albert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Albert_I_Bayern", "head_of_state": "fortunate_type", "start_date": "1955-08-02", "death_date": "1996-07-08", "base": 1181200}, "1297003": {"name": "Clifford Dupont", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RHO_M_Dupont_Clifford", "head_of_state": "ambitious_type", "start_date": "1965-11-11", "death_date": "1975-12-31"}, "1297004": {"name": "Henry Everard", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "RHO_M_Everard_Henry", "head_of_state": "administrator_type", "start_date": "1975-12-31", "death_date": "1979-06-01"}, "1297005": {"name": "John Wrathall", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RHO_M_Wrathall_John", "head_of_state": "administrator_type", "start_date": "1976-01-14", "death_date": "1978-08-31"}, "1297006": {"name": "Jack William Pithey", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RHO_M_Pithey_Jack_W", "head_of_state": "bureaucrat_type", "start_date": "1978-08-31", "death_date": "1987-03-05"}, "1297007": {"name": "Godfrey Huggins", "ideology": "market_liberal_idolg", "loyalty": 0.9, "picture": "RHO_M_Huggins_Godfrey", "head_of_government": "administrator_type", "start_date": "1933-09-12", "death_date": "1956-11-02"}, "1297008": {"name": "Garfield Todd", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "RHO_M_Todd_Garfield", "head_of_government": "reformer_type", "start_date": "1953-09-07", "death_date": "1958-02-17"}, "1297010": {"name": "Edgar Whitehead", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "RHO_M_Whitehead_Edgar", "head_of_government": "liberal_type", "start_date": "1958-02-17", "death_date": "1962-12-17"}, "1297011": {"name": "Winston Field", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RHO_M_Field_Winston", "head_of_government": "honest_type", "start_date": "1962-12-17", "death_date": "1964-04-13"}, "1297012": {"name": "Ian Smith", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RHO_M_Smith_Ian", "head_of_government": "ambitious_type", "start_date": "1964-04-13", "death_date": "1987-01-01"}, "1297013": {"name": "Roy Welensky", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RHO_M_Welensky_Roy", "head_of_government": "traditionalist_type", "start_date": "1956-11-02", "death_date": "1963-12-31"}, "1297014": {"name": "John Llewellin", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RHO_M_Llewellin_John", "head_of_state": "administrator_type", "start_date": "1953-01-01", "death_date": "1957-01-01"}, "1297015": {"name": "Simon Ramsay", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RHO_M_Ramsay_Simon", "head_of_state": "administrator_type", "start_date": "1957-01-01", "death_date": "1963-01-01"}, "1297016": {"name": "Humphrey Gibbs", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RHO_M_Gibbs_Humphrey", "head_of_state": "loyal_type", "start_date": "1963-01-01", "death_date": "1969-01-01"}, "1297100": {"name": "Peter Walls", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "RHO_M_Walls_Peter", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1972-04-14", "death_date": "1980-07-29"}, "1297101": {"name": "P. K. van der Byl", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "RHO_M_Byl_P_K", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1974-08-11", "death_date": "1980-01-01"}, "1297102": {"name": "Harry Davies", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "RHO_M_Davies_Harry", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1945-01-01", "death_date": "1951-01-01"}, "1297103": {"name": "Jacob Smit", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "RHO_M_Smit_Jacob", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1945-01-01", "death_date": "1959-01-01"}, "1297104": {"name": "Abel Muzorewa", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "ZRH_M_Muzorewa_Abel", "head_of_government": "religious_type", "start_date": "1946-01-01", "death_date": "2010-04-08", "base": 1365006}, "1297105": {"name": "Ina Antoinette Bursey", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "RHO_M_Bursey_Ina_A", "head_of_state": "iron_lady", "head_of_government": "iron_lady", "start_date": "1970-01-01", "death_date": "1992-01-01"}, "1297106": {"name": "Guy Ferdinand Larch\u00e9", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "RHO_M_Larche_Guy_F", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1977-08-31", "death_date": "2300-01-01"}, "1297107": {"name": "Henry Hamilton Beamish", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "RHO_M_Beamish_Henry_H", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1918-01-01", "death_date": "1948-03-27"}, "1297108": {"name": "Ahrn Palley", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "RHO_M_Palley_Ahrn", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1958-06-05", "death_date": "1993-05-06", "base": 1365110}, "1297109": {"name": "Allan Savory", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "RHO_M_Savory_Allan", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1970-04-10", "death_date": "2300-01-01"}, "1297110": {"name": "Desmond Lardner-Burke", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "RHO_M_Lardner-Burke_Desmond", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1962-12-14", "death_date": "1984-12-31"}, "1297111": {"name": "William John Harper", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "RHO_M_Harper_William_J", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1958-06-05", "death_date": "2300-01-01"}, "1297112": {"name": "James Graham", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "RHO_M_Graham_James", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1962-12-16", "death_date": "1992-02-11"}, "1297113": {"name": "Louis Mierzwa", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "RHO_M_Mierzwa_Louis", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1953-08-01", "death_date": "1987-08-15"}, "1297114": {"name": "Jeremiah Chirau", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "RHO_M_Chirau_Jeremiah", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1970-01-01", "death_date": "1985-01-01", "base": 1365107}, "1297115": {"name": "Kayisa Ndiweni", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "RHO_M_Ndiweni_Kayisa", "head_of_state": "reputable_type", "head_of_government": "reputable_type", "start_date": "1975-01-01", "death_date": "2010-01-01", "base": 1365108}, "1297116": {"name": "Josiah Gondo", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "RHO_M_Gondo_Josiah", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1962-01-01", "death_date": "1972-01-01", "base": 1365109}, "1297117": {"name": "Th\u00e9odore Texel", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "RHO_M_Texel_Theodore", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1970-01-01", "death_date": "2002-12-31"}, "1297118": {"name": "Peveril William-Powlett", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "RHO_M_William-Powlett_Peveril", "head_of_government": "traditionalist_type", "start_date": "1954-01-01", "death_date": "1959-01-01"}, "1297119": {"name": "Gottfried Lessing", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "RHO_M_Lessing_Gottfried", "head_of_state": "courteous_figure", "head_of_government": "courteous_figure", "start_date": "1941-01-01", "death_date": "1979-04-11"}, "1297120": {"name": "Doris Lessing", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "RHO_M_Lessing_Doris", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1941-01-01", "death_date": "2013-11-17"}}}
+{
+    "color": [
+        121,
+        98,
+        64
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1297001": {
+            "name": "George VI",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
+        },
+        "1297002": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "1297300": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "1297301": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "1297302": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1297304": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1297305": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "1297306": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1297307": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1297308": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "1297309": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "1297310": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1297311": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
+        "1297312": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "1297003": {
+            "name": "Clifford Dupont",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RHO_M_Dupont_Clifford",
+            "start_date": "1965-11-11",
+            "death_date": "1975-12-31",
+            "type": "ambitious_type"
+        },
+        "1297004": {
+            "name": "Henry Everard",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "RHO_M_Everard_Henry",
+            "start_date": "1975-12-31",
+            "death_date": "1979-06-01",
+            "type": "administrator_type"
+        },
+        "1297005": {
+            "name": "John Wrathall",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RHO_M_Wrathall_John",
+            "start_date": "1976-01-14",
+            "death_date": "1978-08-31",
+            "type": "administrator_type"
+        },
+        "1297006": {
+            "name": "Jack William Pithey",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RHO_M_Pithey_Jack_W",
+            "start_date": "1978-08-31",
+            "death_date": "1987-03-05",
+            "type": "bureaucrat_type"
+        },
+        "1297007": {
+            "name": "Godfrey Huggins",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "RHO_M_Huggins_Godfrey",
+            "start_date": "1933-09-12",
+            "death_date": "1956-11-02",
+            "type": "administrator_type"
+        },
+        "1297008": {
+            "name": "Garfield Todd",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "RHO_M_Todd_Garfield",
+            "start_date": "1953-09-07",
+            "death_date": "1958-02-17",
+            "type": "reformer_type"
+        },
+        "1297010": {
+            "name": "Edgar Whitehead",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "RHO_M_Whitehead_Edgar",
+            "start_date": "1958-02-17",
+            "death_date": "1962-12-17",
+            "type": "liberal_type"
+        },
+        "1297011": {
+            "name": "Winston Field",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RHO_M_Field_Winston",
+            "start_date": "1962-12-17",
+            "death_date": "1964-04-13",
+            "type": "honest_type"
+        },
+        "1297012": {
+            "name": "Ian Smith",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RHO_M_Smith_Ian",
+            "start_date": "1964-04-13",
+            "death_date": "1987-01-01",
+            "type": "ambitious_type"
+        },
+        "1297013": {
+            "name": "Roy Welensky",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RHO_M_Welensky_Roy",
+            "start_date": "1956-11-02",
+            "death_date": "1963-12-31",
+            "type": "traditionalist_type"
+        },
+        "1297014": {
+            "name": "John Llewellin",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RHO_M_Llewellin_John",
+            "start_date": "1953-01-01",
+            "death_date": "1957-01-01",
+            "type": "administrator_type"
+        },
+        "1297015": {
+            "name": "Simon Ramsay",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RHO_M_Ramsay_Simon",
+            "start_date": "1957-01-01",
+            "death_date": "1963-01-01",
+            "type": "administrator_type"
+        },
+        "1297016": {
+            "name": "Humphrey Gibbs",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RHO_M_Gibbs_Humphrey",
+            "start_date": "1963-01-01",
+            "death_date": "1969-01-01",
+            "type": "loyal_type"
+        },
+        "1297100": {
+            "name": "Peter Walls",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Walls_Peter",
+            "start_date": "1972-04-14",
+            "death_date": "1980-07-29",
+            "type": "courageous_type"
+        },
+        "1297101": {
+            "name": "P. K. van der Byl",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Byl_P_K",
+            "start_date": "1974-08-11",
+            "death_date": "1980-01-01",
+            "type": "moral_type"
+        },
+        "1297102": {
+            "name": "Harry Davies",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Davies_Harry",
+            "start_date": "1945-01-01",
+            "death_date": "1951-01-01",
+            "type": "controversial_figure"
+        },
+        "1297103": {
+            "name": "Jacob Smit",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Smit_Jacob",
+            "start_date": "1945-01-01",
+            "death_date": "1959-01-01",
+            "type": "administrator_type"
+        },
+        "1297104": {
+            "name": "Abel Muzorewa",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ZRH_M_Muzorewa_Abel",
+            "start_date": "1946-01-01",
+            "death_date": "2010-04-08",
+            "type": "religious_type"
+        },
+        "1297105": {
+            "name": "Ina Antoinette Bursey",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Bursey_Ina_A",
+            "start_date": "1970-01-01",
+            "death_date": "1992-01-01",
+            "type": "iron_lady"
+        },
+        "1297106": {
+            "name": "Guy Ferdinand Larché",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Larche_Guy_F",
+            "start_date": "1977-08-31",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1297107": {
+            "name": "Henry Hamilton Beamish",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Beamish_Henry_H",
+            "start_date": "1918-01-01",
+            "death_date": "1948-03-27",
+            "type": "extremist_type"
+        },
+        "1297108": {
+            "name": "Ahrn Palley",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Palley_Ahrn",
+            "start_date": "1958-06-05",
+            "death_date": "1993-05-06",
+            "type": "liberal_type"
+        },
+        "1297109": {
+            "name": "Allan Savory",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Savory_Allan",
+            "start_date": "1970-04-10",
+            "death_date": "2300-01-01",
+            "type": "reformer_type"
+        },
+        "1297110": {
+            "name": "Desmond Lardner-Burke",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Lardner-Burke_Desmond",
+            "start_date": "1962-12-14",
+            "death_date": "1984-12-31",
+            "type": "hardliner_type"
+        },
+        "1297111": {
+            "name": "William John Harper",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Harper_William_J",
+            "start_date": "1958-06-05",
+            "death_date": "2300-01-01",
+            "type": "extremist_type"
+        },
+        "1297112": {
+            "name": "James Graham",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Graham_James",
+            "start_date": "1962-12-16",
+            "death_date": "1992-02-11",
+            "type": "traditionalist_type"
+        },
+        "1297113": {
+            "name": "Louis Mierzwa",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Mierzwa_Louis",
+            "start_date": "1953-08-01",
+            "death_date": "1987-08-15",
+            "type": "ambitious_type"
+        },
+        "1297114": {
+            "name": "Jeremiah Chirau",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Chirau_Jeremiah",
+            "start_date": "1970-01-01",
+            "death_date": "1985-01-01",
+            "type": "courageous_type"
+        },
+        "1297115": {
+            "name": "Kayisa Ndiweni",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Ndiweni_Kayisa",
+            "start_date": "1975-01-01",
+            "death_date": "2010-01-01",
+            "type": "reputable_type"
+        },
+        "1297116": {
+            "name": "Josiah Gondo",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Gondo_Josiah",
+            "start_date": "1962-01-01",
+            "death_date": "1972-01-01",
+            "type": "honest_type"
+        },
+        "1297117": {
+            "name": "Théodore Texel",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Texel_Theodore",
+            "start_date": "1970-01-01",
+            "death_date": "2002-12-31",
+            "type": "visionary_type"
+        },
+        "1297118": {
+            "name": "Peveril William-Powlett",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_William-Powlett_Peveril",
+            "start_date": "1954-01-01",
+            "death_date": "1959-01-01",
+            "type": "traditionalist_type"
+        },
+        "1297119": {
+            "name": "Gottfried Lessing",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Lessing_Gottfried",
+            "start_date": "1941-01-01",
+            "death_date": "1979-04-11",
+            "type": "courteous_figure"
+        },
+        "1297120": {
+            "name": "Doris Lessing",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Lessing_Doris",
+            "start_date": "1941-01-01",
+            "death_date": "2013-11-17",
+            "type": "moral_type"
+        }
+    }
+}

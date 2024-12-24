@@ -1,1 +1,131 @@
-{"color": [205, 207, 37], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1342001": {"name": "Salote Tupou III", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "TON_M_Tupou_III", "head_of_state": "courteous_figure", "start_date": "1918-01-01", "death_date": "1965-12-16"}, "1342002": {"name": "Taufa'ahau Tupou IV", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.8, "picture": "TON_M_Tupou_IV", "head_of_state": "courteous_figure", "head_of_government": "courteous_figure", "start_date": "1949-12-12", "death_date": "2006-09-10"}, "1342003": {"name": "Viliami Tungi Mailefihi", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "TON_M_Mailefihi_Viliami_T", "head_of_government": "bureaucrat_type", "start_date": "1923-06-30", "death_date": "1941-07-20"}, "1342004": {"name": "Solomone Ula Ata", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "TON_M_Ata_Solomone_U", "head_of_government": "traditionalist_type", "start_date": "1941-07-20", "death_date": "1949-12-12"}, "1342006": {"name": "Tu'i Pelehake", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "TON_M_Pelehake_Tui", "head_of_government": "reputable_type", "start_date": "1965-12-16", "death_date": "1991-08-22"}, "1342007": {"name": "Siaosi T. A. V. Tupou", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "TON_M_Tupou_Siaosi_T_A_V", "head_of_government": "administrator_type", "start_date": "1991-08-22", "death_date": "2000-01-03"}}}
+{
+    "color": [
+        205,
+        207,
+        37
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1342001": {
+            "name": "Salote Tupou III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "TON_M_Tupou_III",
+            "start_date": "1918-01-01",
+            "death_date": "1965-12-16",
+            "type": "courteous_figure"
+        },
+        "1342002": {
+            "name": "Taufa'ahau Tupou IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.8,
+            "picture": "TON_M_Tupou_IV",
+            "start_date": "1949-12-12",
+            "death_date": "2006-09-10",
+            "type": "courteous_figure"
+        },
+        "1342003": {
+            "name": "Viliami Tungi Mailefihi",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "TON_M_Mailefihi_Viliami_T",
+            "start_date": "1923-06-30",
+            "death_date": "1941-07-20",
+            "type": "bureaucrat_type"
+        },
+        "1342004": {
+            "name": "Solomone Ula Ata",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "TON_M_Ata_Solomone_U",
+            "start_date": "1941-07-20",
+            "death_date": "1949-12-12",
+            "type": "traditionalist_type"
+        },
+        "1342006": {
+            "name": "Tu'i Pelehake",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "TON_M_Pelehake_Tui",
+            "start_date": "1965-12-16",
+            "death_date": "1991-08-22",
+            "type": "reputable_type"
+        },
+        "1342007": {
+            "name": "Siaosi T. A. V. Tupou",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "TON_M_Tupou_Siaosi_T_A_V",
+            "start_date": "1991-08-22",
+            "death_date": "2000-01-03",
+            "type": "administrator_type"
+        }
+    }
+}

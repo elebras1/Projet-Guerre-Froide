@@ -1,1 +1,175 @@
-{"color": [203, 210, 193], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1124001": {"name": "Sourou-Migan Apithy", "ideology": "paternal_auto_idolg", "loyalty": 0.8, "picture": "BEN_M_Apithy_Sourou-Migan", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1957-05-25", "death_date": "1965-11-27"}, "1124002": {"name": "Coutoucou Hubert Maga", "ideology": "paternal_auto_idolg", "loyalty": 0.81, "picture": "BEN_M_Maga_Coutoucou_H", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1959-05-22", "death_date": "1972-05-07"}, "1124003": {"name": "Christophe Soglo", "ideology": "paternal_auto_idolg", "loyalty": 0.82, "picture": "BEN_M_Soglo_Christophe", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1963-10-28", "death_date": "1967-12-19"}, "1124004": {"name": "Justin Ahomadegb\u00e9-Tom\u00eatin", "ideology": "paternal_auto_idolg", "loyalty": 0.83, "picture": "BEN_M_Ahomadegbe-Tometin_Justin", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1963-10-27", "death_date": "1972-10-26"}, "1124005": {"name": "Tahirou Congacou", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "BEN_M_Congacou_Tahirou", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1965-11-29", "death_date": "1965-12-22"}, "1124006": {"name": "Iropa Maurice Kouand\u00e9t\u00e9", "ideology": "paternal_auto_idolg", "loyalty": 0.85, "picture": "BEN_M_Kouandete_Iropa_M", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1967-12-20", "death_date": "1969-12-13"}, "1124007": {"name": "Alphonse Amadou Alley", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "BEN_M_Alley_Alphonse_A", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1967-12-21", "death_date": "1968-07-17"}, "1124008": {"name": "\u00c9mile Derlin Henri Zinsou", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "BEN_M_Zinsou_Emile_D_H", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1968-07-17", "death_date": "1969-12-10"}, "1124009": {"name": "Paul-\u00c9mile de Souza", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "BEN_M_Souza_Paul-Emile", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1969-12-13", "death_date": "1970-05-07"}, "1124010": {"name": "Mathieu K\u00e9r\u00e9kou", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "BEN_M_Kerekou_Mathieu", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1972-10-26", "death_date": "2006-04-06"}, "1124011": {"name": "Nic\u00e9phore Dieudonn\u00e9 Soglo", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "BEN_M_Soglo_Nicephore_D", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1991-04-04", "death_date": "1996-04-04"}}}
+{
+    "color": [
+        203,
+        210,
+        193
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1124001": {
+            "name": "Sourou-Migan Apithy",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "BEN_M_Apithy_Sourou-Migan",
+            "start_date": "1957-05-25",
+            "death_date": "1965-11-27",
+            "type": "administrator_type"
+        },
+        "1124002": {
+            "name": "Coutoucou Hubert Maga",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.81,
+            "picture": "BEN_M_Maga_Coutoucou_H",
+            "start_date": "1959-05-22",
+            "death_date": "1972-05-07",
+            "type": "lethargic_type"
+        },
+        "1124003": {
+            "name": "Christophe Soglo",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.82,
+            "picture": "BEN_M_Soglo_Christophe",
+            "start_date": "1963-10-28",
+            "death_date": "1967-12-19",
+            "type": "visionary_type"
+        },
+        "1124004": {
+            "name": "Justin Ahomadegbé-Tomêtin",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.83,
+            "picture": "BEN_M_Ahomadegbe-Tometin_Justin",
+            "start_date": "1963-10-27",
+            "death_date": "1972-10-26",
+            "type": "ambitious_type"
+        },
+        "1124005": {
+            "name": "Tahirou Congacou",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "BEN_M_Congacou_Tahirou",
+            "start_date": "1965-11-29",
+            "death_date": "1965-12-22",
+            "type": "parental_type"
+        },
+        "1124006": {
+            "name": "Iropa Maurice Kouandété",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.85,
+            "picture": "BEN_M_Kouandete_Iropa_M",
+            "start_date": "1967-12-20",
+            "death_date": "1969-12-13",
+            "type": "ambitious_type"
+        },
+        "1124007": {
+            "name": "Alphonse Amadou Alley",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "BEN_M_Alley_Alphonse_A",
+            "start_date": "1967-12-21",
+            "death_date": "1968-07-17",
+            "type": "democrat_type"
+        },
+        "1124008": {
+            "name": "Émile Derlin Henri Zinsou",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "BEN_M_Zinsou_Emile_D_H",
+            "start_date": "1968-07-17",
+            "death_date": "1969-12-10",
+            "type": "traditionalist_type"
+        },
+        "1124009": {
+            "name": "Paul-Émile de Souza",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "BEN_M_Souza_Paul-Emile",
+            "start_date": "1969-12-13",
+            "death_date": "1970-05-07",
+            "type": "parental_type"
+        },
+        "1124010": {
+            "name": "Mathieu Kérékou",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "BEN_M_Kerekou_Mathieu",
+            "start_date": "1972-10-26",
+            "death_date": "2006-04-06",
+            "type": "visionary_type"
+        },
+        "1124011": {
+            "name": "Nicéphore Dieudonné Soglo",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "BEN_M_Soglo_Nicephore_D",
+            "start_date": "1991-04-04",
+            "death_date": "1996-04-04",
+            "type": "democrat_type"
+        }
+    }
+}

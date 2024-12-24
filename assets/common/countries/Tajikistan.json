@@ -1,137 +1,131 @@
 {
-  "color": [
-    234,
-    239,
-    210
-  ],
-  "graphical_culture": "Generic",
-  "default_templates": {
-    "SOV_guards_airborne_division": [
-      "air_cav_brigade",
-      "air_cav_brigade",
-      "air_cav_brigade",
-      "air_cav_brigade"
+    "color": [
+        234,
+        239,
+        210
     ],
-    "SOV_tank_division": [
-      "armor_brigade",
-      "armor_brigade",
-      "armor_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "SOV_cavalry_division": [
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "sp_artillery_brigade"
-    ],
-    "SOV_guards_mechanized_division": [
-      "heavy_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "light_mechanized_brigade",
-      "armor_brigade",
-      "sp_artillery_brigade"
-    ],
-    "SOV_mechanized_division": [
-      "light_mechanized_brigade",
-      "light_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "SOV_motor_rifle_division": [
-      "motorized_brigade",
-      "light_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "SOV_guards_rifle_division": [
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "artillery_brigade"
-    ],
-    "SOV_marine_division": [
-      "marine_brigade",
-      "marine_brigade",
-      "marine_brigade",
-      "marine_brigade"
-    ],
-    "SOV_mountain_division": [
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade"
-    ],
-    "SOV_rifle_division": [
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "artillery_brigade"
-    ]
-  },
-  "unit_names": {},
-  "ministers": {
-    "1336000": {
-      "name": "Dmitri Protopopov",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "TAJ_M_Protopopov_Dmitri",
-      "head_of_state": "bureaucrat_type",
-      "head_of_government": "bureaucrat_type",
-      "start_date": "1946-01-01",
-      "death_date": "1946-08-16"
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "SOV_guards_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "SOV_tank_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_motor_rifle_division": [
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "SOV_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "SOV_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "SOV_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
     },
-    "1336001": {
-      "name": "Bobojon Ghafurov",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "TAJ_M_Ghafurov_Bobojon",
-      "head_of_state": "reputable_type",
-      "head_of_government": "reputable_type",
-      "start_date": "1946-08-16",
-      "death_date": "1956-05-24"
-    },
-    "1336002": {
-      "name": "Turcun Ul'jabayev",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "TAJ_M_Ul'dzhabayev_Turcun",
-      "head_of_state": "administrator_type",
-      "head_of_government": "administrator_type",
-      "start_date": "1956-05-24",
-      "death_date": "1961-04-12"
-    },
-    "1336003": {
-      "name": "Jabar Rasulov",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "TAJ_M_Rasulov_Jabar",
-      "head_of_state": "loyal_type",
-      "head_of_government": "loyal_type",
-      "start_date": "1961-04-12",
-      "death_date": "1982-04-20"
-    },
-    "1336004": {
-      "name": "Rahmon Nabiyev",
-      "ideology": "communist_idolg",
-      "loyalty": 0.9,
-      "picture": "TAJ_M_Nabiyev_Rahmon",
-      "head_of_state": "controversial_figure",
-      "head_of_government": "controversial_figure",
-      "start_date": "1982-04-20",
-      "death_date": "1992-09-07"
-    },
-    "1336005": {
-      "name": "Qahhor Makhamov",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "TAJ_M_Makhamov_Qahhor",
-      "head_of_state": "hardliner_type",
-      "head_of_government": "hardliner_type",
-      "start_date": "1985-12-14",
-      "death_date": "1991-08-31"
+    "unit_names": {},
+    "ministers": {
+        "1336000": {
+            "name": "Dmitri Protopopov",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "TAJ_M_Protopopov_Dmitri",
+            "start_date": "1946-01-01",
+            "death_date": "1946-08-16",
+            "type": "bureaucrat_type"
+        },
+        "1336001": {
+            "name": "Bobojon Ghafurov",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "TAJ_M_Ghafurov_Bobojon",
+            "start_date": "1946-08-16",
+            "death_date": "1956-05-24",
+            "type": "reputable_type"
+        },
+        "1336002": {
+            "name": "Turcun Ul'jabayev",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "TAJ_M_Ul'dzhabayev_Turcun",
+            "start_date": "1956-05-24",
+            "death_date": "1961-04-12",
+            "type": "administrator_type"
+        },
+        "1336003": {
+            "name": "Jabar Rasulov",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "TAJ_M_Rasulov_Jabar",
+            "start_date": "1961-04-12",
+            "death_date": "1982-04-20",
+            "type": "loyal_type"
+        },
+        "1336004": {
+            "name": "Rahmon Nabiyev",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "TAJ_M_Nabiyev_Rahmon",
+            "start_date": "1982-04-20",
+            "death_date": "1992-09-07",
+            "type": "controversial_figure"
+        },
+        "1336005": {
+            "name": "Qahhor Makhamov",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "TAJ_M_Makhamov_Qahhor",
+            "start_date": "1985-12-14",
+            "death_date": "1991-08-31",
+            "type": "hardliner_type"
+        }
     }
-  }
 }

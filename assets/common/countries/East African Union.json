@@ -1,1 +1,383 @@
-{"color": [47, 50, 187], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1178001": {"name": "Milton Obote", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "UGD_M_Obote_Milton", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1966-03-02", "death_date": "1985-07-27", "base": 1351009}, "1178002": {"name": "Idi Amin Dada", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "UGD_M_Dada_Idi_A", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1971-01-25", "death_date": "1979-04-11", "base": 1351010}, "1178003": {"name": "Yusuf Kironde Lule", "ideology": "paternal_auto_idolg", "loyalty": 0.7, "picture": "UGD_M_Lule_Yusuf_K", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1979-04-11", "death_date": "1985-01-21", "base": 1351011}, "1178004": {"name": "Godfrey Lukongwa Binaisa", "ideology": "paternal_auto_idolg", "loyalty": 0.75, "picture": "UGD_M_Binaisa_Godfrey_L", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1979-06-20", "death_date": "1992-01-01", "base": 1351012}, "1178005": {"name": "Paulo Muwanga", "ideology": "paternal_auto_idolg", "loyalty": 0.8, "picture": "UGD_M_Muwanga_Paulo", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1980-05-12", "death_date": "1991-04-01", "base": 1351013}, "1178006": {"name": "Saulo Musoke", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "UGD_M_Musoke_Saulo", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1980-05-22", "death_date": "1980-12-15", "base": 1351014}, "1178007": {"name": "Polycarp Nyamuchoncho", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "UGD_M_Nyamuchoncho_Polycarp", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1980-05-22", "death_date": "1980-12-15", "base": 1351015}, "1178008": {"name": "Joel Hunter Wacha-Olwol", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "UGD_M_Wacha-Olwol_Joel_H", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1980-05-22", "death_date": "1980-12-15", "base": 1351016}, "1178009": {"name": "Bazilio Olara-Okello", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "UGD_M_Olara-Okello_Bazilio", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1985-07-27", "death_date": "1990-01-09", "base": 1351017}, "1178010": {"name": "Tito Okello", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "UGD_M_Okello_Tito", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1985-07-29", "death_date": "1996-06-03", "base": 1351018}, "1178011": {"name": "Yoweri Kaguta Museveni", "ideology": "fascistic_idolg", "loyalty": 1.0, "picture": "UGD_M_Museveni_Yoweri_K", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1986-01-26", "death_date": "2300-01-01", "base": 1351019}, "1178012": {"name": "Jomo Kenyatta", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "KEN_M_Kenyatta_Jomo", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1964-12-12", "death_date": "1978-08-22", "base": 1229003}, "1178013": {"name": "Daniel arap Moi", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "KEN_M_Moi_Daniel", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1978-08-22", "death_date": "2002-12-30", "base": 1229004}, "1178014": {"name": "Julius Nyerere", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "TNZ_M_Nyerere_Julius", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1954-01-01", "death_date": "1985-11-05", "base": 1340001}, "1178015": {"name": "Ali Hassan Mwinyi", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "TNZ_M_Mwinyi_Ali_H", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1984-01-30", "death_date": "1995-11-23", "base": 1369003}, "1178016": {"name": "Dominique Mbonyumutwa", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RWD_M_Mbonyumutwa_Dominique", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1961-01-28", "death_date": "1961-10-26", "base": 1301001}, "1178017": {"name": "Gr\u00e9goire Kayibanda", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RWD_M_Kayibanda_Gregoire", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1961-10-26", "death_date": "1973-07-05", "base": 1301002}, "1178018": {"name": "Juv\u00e9nal Habyarimana", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "RWD_M_Habyarimana_Juvenal", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1973-07-05", "death_date": "1994-04-06", "base": 1301003}, "1178019": {"name": "Ntare V", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.95, "picture": "BRD_M_Ntare_V", "head_of_state": "courteous_figure", "start_date": "1966-06-01", "death_date": "1972-04-29", "base": 1136001}, "1178020": {"name": "Mwambutsa IV", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.94, "picture": "BRD_M_Mwambutsa_IV", "head_of_state": "courteous_figure", "start_date": "1915-11-30", "death_date": "1977-04-26", "base": 1136002}, "1178021": {"name": "Louis Rwagasore", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.93, "picture": "BRD_M_Rwagasore_Louis", "head_of_state": "courteous_figure", "head_of_government": "courteous_figure", "start_date": "1958-01-01", "death_date": "1961-10-13", "base": 1136003}, "1178022": {"name": "Regina Kanyange", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.92, "picture": "BRD_M_Kanyange_Regina", "head_of_state": "courteous_figure", "start_date": "1966-06-01", "death_date": "1987-01-01", "base": 1136004}, "1178023": {"name": "Rose Paula Iribagiza", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.91, "picture": "BRD_M_Iribagiza_Rose_P", "head_of_state": "courteous_figure", "start_date": "1966-06-01", "death_date": "2013-01-01", "base": 1136005}, "1178024": {"name": "Joseph Cimpaye", "ideology": "social_cons_idolg", "loyalty": 0.96, "picture": "BRD_M_Cimpaye_Joseph", "head_of_government": "bureaucrat_type", "start_date": "1961-01-26", "death_date": "1972-01-01", "base": 1136006}, "1178025": {"name": "Andr\u00e9 Muhirwa", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Muhirwa_Andre", "head_of_government": "bureaucrat_type", "start_date": "1961-10-13", "death_date": "1963-06-10", "base": 1136007}, "1178026": {"name": "Pierre Ngendandumwe", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Ngendandumwe_Pierre", "head_of_government": "administrator_type", "start_date": "1963-06-10", "death_date": "1965-01-15", "base": 1136008}, "1178027": {"name": "Albin Nyamoya", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Nyamoya_Albin", "head_of_government": "traditionalist_type", "start_date": "1964-04-06", "death_date": "1973-06-05", "base": 1136009}, "1178028": {"name": "Pi\u00e9 Masumbuko", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Masumbuko_Pie", "head_of_government": "moral_type", "start_date": "1965-01-07", "death_date": "1965-01-26", "base": 1136010}, "1178029": {"name": "Joseph Bamina", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Bamina_Joseph", "head_of_government": "loyal_type", "start_date": "1965-01-26", "death_date": "1965-09-30", "base": 1136011}, "1178030": {"name": "L\u00e9opold Biha", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "BRD_M_Biha_Leopold", "head_of_government": "ambitious_type", "start_date": "1965-09-30", "death_date": "1966-07-08", "base": 1136012}, "1178031": {"name": "Michel Micombero", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "BRD_M_Micombero_Michel", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1966-11-28", "death_date": "1976-11-01", "base": 1136013}, "1178032": {"name": "Jean-Baptiste Bagaza", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "BRD_M_Bagaza_Jean-Baptiste", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1976-11-01", "death_date": "1987-09-03", "base": 1136014}, "1178033": {"name": "Pierre Buyoya", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "BRD_M_Buyoya_Pierre", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1987-09-03", "death_date": "1993-07-10", "base": 1136015}, "1178034": {"name": "Melchior Ndadaye", "ideology": "maoist_idolg", "loyalty": 1.0, "picture": "BRD_M_Ndadaye_Melchior", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1979-08-01", "death_date": "1993-10-21", "base": 1136019}}}
+{
+    "color": [
+        47,
+        50,
+        187
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1178001": {
+            "name": "Milton Obote",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "UGD_M_Obote_Milton",
+            "start_date": "1966-03-02",
+            "death_date": "1985-07-27",
+            "type": "autocrat_type"
+        },
+        "1178002": {
+            "name": "Idi Amin Dada",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "UGD_M_Dada_Idi_A",
+            "start_date": "1971-01-25",
+            "death_date": "1979-04-11",
+            "type": "autocrat_type"
+        },
+        "1178003": {
+            "name": "Yusuf Kironde Lule",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.7,
+            "picture": "UGD_M_Lule_Yusuf_K",
+            "start_date": "1979-04-11",
+            "death_date": "1985-01-21",
+            "type": "ambitious_type"
+        },
+        "1178004": {
+            "name": "Godfrey Lukongwa Binaisa",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.75,
+            "picture": "UGD_M_Binaisa_Godfrey_L",
+            "start_date": "1979-06-20",
+            "death_date": "1992-01-01",
+            "type": "parental_type"
+        },
+        "1178005": {
+            "name": "Paulo Muwanga",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "UGD_M_Muwanga_Paulo",
+            "start_date": "1980-05-12",
+            "death_date": "1991-04-01",
+            "type": "zealous_type"
+        },
+        "1178006": {
+            "name": "Saulo Musoke",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "UGD_M_Musoke_Saulo",
+            "start_date": "1980-05-22",
+            "death_date": "1980-12-15",
+            "type": "bureaucrat_type"
+        },
+        "1178007": {
+            "name": "Polycarp Nyamuchoncho",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "UGD_M_Nyamuchoncho_Polycarp",
+            "start_date": "1980-05-22",
+            "death_date": "1980-12-15",
+            "type": "courageous_type"
+        },
+        "1178008": {
+            "name": "Joel Hunter Wacha-Olwol",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "UGD_M_Wacha-Olwol_Joel_H",
+            "start_date": "1980-05-22",
+            "death_date": "1980-12-15",
+            "type": "traditionalist_type"
+        },
+        "1178009": {
+            "name": "Bazilio Olara-Okello",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "UGD_M_Olara-Okello_Bazilio",
+            "start_date": "1985-07-27",
+            "death_date": "1990-01-09",
+            "type": "ambitious_type"
+        },
+        "1178010": {
+            "name": "Tito Okello",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "UGD_M_Okello_Tito",
+            "start_date": "1985-07-29",
+            "death_date": "1996-06-03",
+            "type": "courageous_type"
+        },
+        "1178011": {
+            "name": "Yoweri Kaguta Museveni",
+            "ideology": "fascistic_idolg",
+            "loyalty": 1.0,
+            "picture": "UGD_M_Museveni_Yoweri_K",
+            "start_date": "1986-01-26",
+            "death_date": "2300-01-01",
+            "type": "reformer_type"
+        },
+        "1178012": {
+            "name": "Jomo Kenyatta",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "KEN_M_Kenyatta_Jomo",
+            "start_date": "1964-12-12",
+            "death_date": "1978-08-22",
+            "type": "administrator_type"
+        },
+        "1178013": {
+            "name": "Daniel arap Moi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "KEN_M_Moi_Daniel",
+            "start_date": "1978-08-22",
+            "death_date": "2002-12-30",
+            "type": "autocrat_type"
+        },
+        "1178014": {
+            "name": "Julius Nyerere",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "TNZ_M_Nyerere_Julius",
+            "start_date": "1954-01-01",
+            "death_date": "1985-11-05",
+            "type": "controversial_figure"
+        },
+        "1178015": {
+            "name": "Ali Hassan Mwinyi",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "TNZ_M_Mwinyi_Ali_H",
+            "start_date": "1984-01-30",
+            "death_date": "1995-11-23",
+            "type": "democrat_type"
+        },
+        "1178016": {
+            "name": "Dominique Mbonyumutwa",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RWD_M_Mbonyumutwa_Dominique",
+            "start_date": "1961-01-28",
+            "death_date": "1961-10-26",
+            "type": "lethargic_type"
+        },
+        "1178017": {
+            "name": "Grégoire Kayibanda",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RWD_M_Kayibanda_Gregoire",
+            "start_date": "1961-10-26",
+            "death_date": "1973-07-05",
+            "type": "reformer_type"
+        },
+        "1178018": {
+            "name": "Juvénal Habyarimana",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "RWD_M_Habyarimana_Juvenal",
+            "start_date": "1973-07-05",
+            "death_date": "1994-04-06",
+            "type": "dictator_type"
+        },
+        "1178019": {
+            "name": "Ntare V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "BRD_M_Ntare_V",
+            "start_date": "1966-06-01",
+            "death_date": "1972-04-29",
+            "type": "courteous_figure"
+        },
+        "1178020": {
+            "name": "Mwambutsa IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "BRD_M_Mwambutsa_IV",
+            "start_date": "1915-11-30",
+            "death_date": "1977-04-26",
+            "type": "courteous_figure"
+        },
+        "1178021": {
+            "name": "Louis Rwagasore",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "BRD_M_Rwagasore_Louis",
+            "start_date": "1958-01-01",
+            "death_date": "1961-10-13",
+            "type": "courteous_figure"
+        },
+        "1178022": {
+            "name": "Regina Kanyange",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "BRD_M_Kanyange_Regina",
+            "start_date": "1966-06-01",
+            "death_date": "1987-01-01",
+            "type": "courteous_figure"
+        },
+        "1178023": {
+            "name": "Rose Paula Iribagiza",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "BRD_M_Iribagiza_Rose_P",
+            "start_date": "1966-06-01",
+            "death_date": "2013-01-01",
+            "type": "courteous_figure"
+        },
+        "1178024": {
+            "name": "Joseph Cimpaye",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "BRD_M_Cimpaye_Joseph",
+            "start_date": "1961-01-26",
+            "death_date": "1972-01-01",
+            "type": "bureaucrat_type"
+        },
+        "1178025": {
+            "name": "André Muhirwa",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Muhirwa_Andre",
+            "start_date": "1961-10-13",
+            "death_date": "1963-06-10",
+            "type": "bureaucrat_type"
+        },
+        "1178026": {
+            "name": "Pierre Ngendandumwe",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Ngendandumwe_Pierre",
+            "start_date": "1963-06-10",
+            "death_date": "1965-01-15",
+            "type": "administrator_type"
+        },
+        "1178027": {
+            "name": "Albin Nyamoya",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Nyamoya_Albin",
+            "start_date": "1964-04-06",
+            "death_date": "1973-06-05",
+            "type": "traditionalist_type"
+        },
+        "1178028": {
+            "name": "Pié Masumbuko",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Masumbuko_Pie",
+            "start_date": "1965-01-07",
+            "death_date": "1965-01-26",
+            "type": "moral_type"
+        },
+        "1178029": {
+            "name": "Joseph Bamina",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Bamina_Joseph",
+            "start_date": "1965-01-26",
+            "death_date": "1965-09-30",
+            "type": "loyal_type"
+        },
+        "1178030": {
+            "name": "Léopold Biha",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Biha_Leopold",
+            "start_date": "1965-09-30",
+            "death_date": "1966-07-08",
+            "type": "ambitious_type"
+        },
+        "1178031": {
+            "name": "Michel Micombero",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "BRD_M_Micombero_Michel",
+            "start_date": "1966-11-28",
+            "death_date": "1976-11-01",
+            "type": "autocrat_type"
+        },
+        "1178032": {
+            "name": "Jean-Baptiste Bagaza",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "BRD_M_Bagaza_Jean-Baptiste",
+            "start_date": "1976-11-01",
+            "death_date": "1987-09-03",
+            "type": "hardliner_type"
+        },
+        "1178033": {
+            "name": "Pierre Buyoya",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "BRD_M_Buyoya_Pierre",
+            "start_date": "1987-09-03",
+            "death_date": "1993-07-10",
+            "type": "democrat_type"
+        },
+        "1178034": {
+            "name": "Melchior Ndadaye",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Ndadaye_Melchior",
+            "start_date": "1979-08-01",
+            "death_date": "1993-10-21",
+            "type": "visionary_type"
+        }
+    }
+}

@@ -1,1 +1,356 @@
-{"color": [48, 106, 179], "graphical_culture": "Us", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1204000": {"name": "George VI", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "ENG_George", "head_of_state": "parental_type", "start_date": "1936-09-11", "death_date": "1952-02-06", "base": 1181001}, "1204001": {"name": "Elizabeth II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "ENG_Elizabeth", "head_of_state": "traditionalist_type", "start_date": "1952-02-06", "death_date": "2300-05-12", "base": 1181002}, "1204002": {"name": "George VII", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.99, "picture": "ENG_M_George_VII", "head_of_state": "parental_type", "start_date": "1966-11-14", "death_date": "2300-01-01", "base": 1181196}, "1204003": {"name": "Andrew I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.98, "picture": "ENG_M_Andrew_I", "head_of_state": "fortunate_type", "start_date": "1978-02-19", "death_date": "2300-01-01", "base": 1181197}, "1204004": {"name": "Edward IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.97, "picture": "ENG_M_Edward_IX", "head_of_state": "courteous_figure", "start_date": "1982-03-10", "death_date": "2300-01-01", "base": 1181198}, "1204005": {"name": "Anne II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.96, "picture": "ENG_M_Anne_II", "head_of_state": "courteous_figure", "start_date": "1968-08-15", "death_date": "2300-01-01", "base": 1181209}, "1204006": {"name": "Margaret I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.95, "picture": "ENG_M_Margaret_I", "head_of_state": "controversial_figure", "start_date": "1952-03-01", "death_date": "2002-02-09", "base": 1181210}, "1204007": {"name": "David III", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.94, "picture": "ENG_M_David_III", "head_of_state": "courteous_figure", "start_date": "1979-11-03", "death_date": "2300-01-01", "base": 1181211}, "1204008": {"name": "Sarah I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.93, "picture": "ENG_M_Sarah_I", "head_of_state": "courteous_figure", "start_date": "1982-05-01", "death_date": "2300-01-01", "base": 1181212}, "1204009": {"name": "Henry IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.92, "picture": "ENG_M_Henry_IX", "head_of_state": "courteous_figure", "start_date": "1946-01-01", "death_date": "1974-06-10", "base": 1181213}, "1204010": {"name": "William V", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.91, "picture": "ENG_M_William_V", "head_of_state": "courteous_figure", "start_date": "1959-12-18", "death_date": "1972-08-28", "base": 1181214}, "1204011": {"name": "Richard IV", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "ENG_M_Richard_IV", "head_of_state": "courteous_figure", "start_date": "1962-08-26", "death_date": "2300-01-01", "base": 1181215}, "1204012": {"name": "Robert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Robert_I_Bayern", "head_of_state": "traditionalist_type", "start_date": "1919-02-03", "death_date": "1955-08-02", "base": 1181199}, "1204013": {"name": "Albert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Albert_I_Bayern", "head_of_state": "fortunate_type", "start_date": "1955-08-02", "death_date": "1996-07-08", "base": 1181200}, "1204014": {"name": "Sir Ralph Eastwood", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Eastwood_Ralph", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1944-02-14", "death_date": "1947-02-08"}, "1204015": {"name": "Sir Kenneth Anderson", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Anderson_Kenneth", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1947-02-08", "death_date": "1952-04-23"}, "1204016": {"name": "Sir Gordon MacMillan", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_MacMillan_Gordon", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1952-04-23", "death_date": "1955-05-06"}, "1204017": {"name": "Sir Harold Redman", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Redman_Harold", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1955-05-06", "death_date": "1958-04-16"}, "1204018": {"name": "Sir Charles Keightley", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Keightley_Charles", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1958-04-16", "death_date": "1962-06-08"}, "1204019": {"name": "Sir Alfred Ward", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Ward_Alfred", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1962-06-08", "death_date": "1965-08-05"}, "1204020": {"name": "Sir Gerald Lathbury", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Lathbury_Gerald", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1965-08-05", "death_date": "1969-03-01"}, "1204021": {"name": "Sir Varyl Begg", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Begg_Varyl", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1969-03-01", "death_date": "1973-10-03"}, "1204022": {"name": "Sir John Grandy", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Grandy_John", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1973-10-03", "death_date": "1978-05-30"}, "1204023": {"name": "Sir William Jackson", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Jackson_William", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1978-05-30", "death_date": "1982-10-26"}, "1204024": {"name": "Sir David Williams", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Williams_David", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1982-10-26", "death_date": "1985-11-19"}, "1204025": {"name": "Sir Peter Terry", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Terry_Peter", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1985-11-19", "death_date": "1989-12-01"}, "1204026": {"name": "Sir Derek Reffell", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.85, "picture": "GRT_M_Reffell_Derek", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1989-12-01", "death_date": "1993-04-01"}, "1204027": {"name": "Sir Joshua Hassan", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "GRT_M_Hassan_Joshua", "head_of_government": "ambitious_type", "start_date": "1964-08-11", "death_date": "1987-12-08"}, "1204028": {"name": "Sir Robert Peliza", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "GRT_M_Peliza_Robert", "head_of_government": "administrator_type", "start_date": "1969-08-06", "death_date": "1972-06-25"}, "1204029": {"name": "Adolfo Canepa", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "GRT_M_Canepa_Adolfo", "head_of_government": "liberal_type", "start_date": "1987-12-08", "death_date": "1988-03-25"}, "1204030": {"name": "Joe Bossano", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "GRT_M_Bossano_Joe", "head_of_government": "ambitious_type", "start_date": "1988-03-25", "death_date": "1996-05-17"}}}
+{
+    "color": [
+        48,
+        106,
+        179
+    ],
+    "graphical_culture": "Us",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1204000": {
+            "name": "George VI",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
+        },
+        "1204001": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "1204002": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "1204003": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "1204004": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1204005": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1204006": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "1204007": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1204008": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1204009": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "1204010": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "1204011": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1204012": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
+        "1204013": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "1204014": {
+            "name": "Sir Ralph Eastwood",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Eastwood_Ralph",
+            "start_date": "1944-02-14",
+            "death_date": "1947-02-08",
+            "type": "bureaucrat_type"
+        },
+        "1204015": {
+            "name": "Sir Kenneth Anderson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Anderson_Kenneth",
+            "start_date": "1947-02-08",
+            "death_date": "1952-04-23",
+            "type": "administrator_type"
+        },
+        "1204016": {
+            "name": "Sir Gordon MacMillan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_MacMillan_Gordon",
+            "start_date": "1952-04-23",
+            "death_date": "1955-05-06",
+            "type": "courageous_type"
+        },
+        "1204017": {
+            "name": "Sir Harold Redman",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Redman_Harold",
+            "start_date": "1955-05-06",
+            "death_date": "1958-04-16",
+            "type": "traditionalist_type"
+        },
+        "1204018": {
+            "name": "Sir Charles Keightley",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Keightley_Charles",
+            "start_date": "1958-04-16",
+            "death_date": "1962-06-08",
+            "type": "courageous_type"
+        },
+        "1204019": {
+            "name": "Sir Alfred Ward",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Ward_Alfred",
+            "start_date": "1962-06-08",
+            "death_date": "1965-08-05",
+            "type": "traditionalist_type"
+        },
+        "1204020": {
+            "name": "Sir Gerald Lathbury",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Lathbury_Gerald",
+            "start_date": "1965-08-05",
+            "death_date": "1969-03-01",
+            "type": "bureaucrat_type"
+        },
+        "1204021": {
+            "name": "Sir Varyl Begg",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Begg_Varyl",
+            "start_date": "1969-03-01",
+            "death_date": "1973-10-03",
+            "type": "courageous_type"
+        },
+        "1204022": {
+            "name": "Sir John Grandy",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Grandy_John",
+            "start_date": "1973-10-03",
+            "death_date": "1978-05-30",
+            "type": "honest_type"
+        },
+        "1204023": {
+            "name": "Sir William Jackson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Jackson_William",
+            "start_date": "1978-05-30",
+            "death_date": "1982-10-26",
+            "type": "loyal_type"
+        },
+        "1204024": {
+            "name": "Sir David Williams",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Williams_David",
+            "start_date": "1982-10-26",
+            "death_date": "1985-11-19",
+            "type": "administrator_type"
+        },
+        "1204025": {
+            "name": "Sir Peter Terry",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Terry_Peter",
+            "start_date": "1985-11-19",
+            "death_date": "1989-12-01",
+            "type": "loyal_type"
+        },
+        "1204026": {
+            "name": "Sir Derek Reffell",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Reffell_Derek",
+            "start_date": "1989-12-01",
+            "death_date": "1993-04-01",
+            "type": "administrator_type"
+        },
+        "1204027": {
+            "name": "Sir Joshua Hassan",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "GRT_M_Hassan_Joshua",
+            "start_date": "1964-08-11",
+            "death_date": "1987-12-08",
+            "type": "ambitious_type"
+        },
+        "1204028": {
+            "name": "Sir Robert Peliza",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "GRT_M_Peliza_Robert",
+            "start_date": "1969-08-06",
+            "death_date": "1972-06-25",
+            "type": "administrator_type"
+        },
+        "1204029": {
+            "name": "Adolfo Canepa",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "GRT_M_Canepa_Adolfo",
+            "start_date": "1987-12-08",
+            "death_date": "1988-03-25",
+            "type": "liberal_type"
+        },
+        "1204030": {
+            "name": "Joe Bossano",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "GRT_M_Bossano_Joe",
+            "start_date": "1988-03-25",
+            "death_date": "1996-05-17",
+            "type": "ambitious_type"
+        }
+    }
+}

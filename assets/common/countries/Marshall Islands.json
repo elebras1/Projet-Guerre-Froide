@@ -1,1 +1,113 @@
-{"color": [88, 94, 80], "graphical_culture": "Us", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1256001": {"name": "Amata Kabua", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "MAR_M_Kabua_Amata", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1979-11-17", "death_date": "1996-12-20"}, "1256002": {"name": "Litokwa Tomeing", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "MAR_M_Tomeing_Litokwa", "head_of_state": "courteous_figure", "head_of_government": "courteous_figure", "start_date": "1978-01-01", "death_date": "2300-01-01"}, "1256003": {"name": "Jurelang Zedkaia", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "MAR_M_Zedkaia_Jurelang", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1981-01-01", "death_date": "2300-01-01"}, "1256004": {"name": "Kessai Note", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "MAR_M_Note_Kessai", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1988-01-01", "death_date": "2300-01-01"}}}
+{
+    "color": [
+        88,
+        94,
+        80
+    ],
+    "graphical_culture": "Us",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1256001": {
+            "name": "Amata Kabua",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "MAR_M_Kabua_Amata",
+            "start_date": "1979-11-17",
+            "death_date": "1996-12-20",
+            "type": "administrator_type"
+        },
+        "1256002": {
+            "name": "Litokwa Tomeing",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MAR_M_Tomeing_Litokwa",
+            "start_date": "1978-01-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1256003": {
+            "name": "Jurelang Zedkaia",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MAR_M_Zedkaia_Jurelang",
+            "start_date": "1981-01-01",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1256004": {
+            "name": "Kessai Note",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "MAR_M_Note_Kessai",
+            "start_date": "1988-01-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        }
+    }
+}

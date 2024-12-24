@@ -1,1 +1,428 @@
-{"color": [130, 129, 128], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1253001": {"name": "George VI", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_George", "head_of_state": "parental_type", "start_date": "1936-09-11", "death_date": "1952-02-06", "base": 1181001}, "1253002": {"name": "Elizabeth II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_Elizabeth", "head_of_state": "traditionalist_type", "start_date": "1952-02-06", "death_date": "2300-05-12", "base": 1181002}, "1253300": {"name": "George VII", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.99, "picture": "ENG_M_George_VII", "head_of_state": "parental_type", "start_date": "1966-11-14", "death_date": "2300-01-01", "base": 1181196}, "1253301": {"name": "Andrew I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.98, "picture": "ENG_M_Andrew_I", "head_of_state": "fortunate_type", "start_date": "1978-02-19", "death_date": "2300-01-01", "base": 1181197}, "1253302": {"name": "Edward IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.97, "picture": "ENG_M_Edward_IX", "head_of_state": "courteous_figure", "start_date": "1982-03-10", "death_date": "2300-01-01", "base": 1181198}, "1253304": {"name": "Anne II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.96, "picture": "ENG_M_Anne_II", "head_of_state": "courteous_figure", "start_date": "1968-08-15", "death_date": "2300-01-01", "base": 1181209}, "1253305": {"name": "Margaret I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.95, "picture": "ENG_M_Margaret_I", "head_of_state": "controversial_figure", "start_date": "1952-03-01", "death_date": "2002-02-09", "base": 1181210}, "1253306": {"name": "David III", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.94, "picture": "ENG_M_David_III", "head_of_state": "courteous_figure", "start_date": "1979-11-03", "death_date": "2300-01-01", "base": 1181211}, "1253307": {"name": "Sarah I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.93, "picture": "ENG_M_Sarah_I", "head_of_state": "courteous_figure", "start_date": "1982-05-01", "death_date": "2300-01-01", "base": 1181212}, "1253308": {"name": "Henry IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.92, "picture": "ENG_M_Henry_IX", "head_of_state": "courteous_figure", "start_date": "1946-01-01", "death_date": "1974-06-10", "base": 1181213}, "1253309": {"name": "William V", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.91, "picture": "ENG_M_William_V", "head_of_state": "courteous_figure", "start_date": "1959-12-18", "death_date": "1972-08-28", "base": 1181214}, "1253310": {"name": "Richard IV", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "ENG_M_Richard_IV", "head_of_state": "courteous_figure", "start_date": "1962-08-26", "death_date": "2300-01-01", "base": 1181215}, "1253311": {"name": "Robert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Robert_I_Bayern", "head_of_state": "traditionalist_type", "start_date": "1919-02-03", "death_date": "1955-08-02", "base": 1181199}, "1253312": {"name": "Albert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Albert_I_Bayern", "head_of_state": "fortunate_type", "start_date": "1955-08-02", "death_date": "1996-07-08", "base": 1181200}, "1253010": {"name": "Maurice Henry Dorman", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MLT_M_Dorman_Maurice_h", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1964-09-21", "death_date": "1971-07-04"}, "1253011": {"name": "Anthony Mamo", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MLT_M_Mamo_Anthony", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1971-06-04", "death_date": "1976-12-27"}, "1253020": {"name": "Anton Buttigieg", "ideology": "social_democrat_idolg", "loyalty": 0.9, "picture": "MLT_M_Buttigieg_Anton", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1959-05-04", "death_date": "1981-12-27"}, "1253021": {"name": "Albert Hyzler", "ideology": "social_democrat_idolg", "loyalty": 0.8, "picture": "MLT_M_Hyzler", "head_of_state": "democrat_type", "start_date": "1981-12-27", "death_date": "1982-02-15"}, "1253022": {"name": "Agatha Barbara", "ideology": "social_democrat_idolg", "loyalty": 0.9, "picture": "MLT_M_Barbara_Agatha", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1982-02-15", "death_date": "1987-02-15"}, "1253023": {"name": "Pawlu Xuereb", "ideology": "social_democrat_idolg", "loyalty": 0.9, "picture": "MLT_M_Paul_Xuereb", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1987-02-15", "death_date": "1989-04-04"}, "1253024": {"name": "Censu Tabone", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "MLT_M_Tabone_censu", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1989-04-04", "death_date": "1994-04-04"}, "1253100": {"name": "Paul Boffa", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "MLT_M_Boffa_paul", "head_of_government": "democrat_type", "start_date": "1932-01-01", "death_date": "1955-02-25"}, "1253101": {"name": "Enrico Mizzi", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "MLT_M_Mizzi_Enrico", "head_of_government": "democrat_type", "start_date": "1933-11-02", "death_date": "1950-09-20"}, "1253102": {"name": "Giorgio Oliver", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "MLT_M_Oliver_Giorgio", "head_of_government": "democrat_type", "start_date": "1947-01-01", "death_date": "1977-01-01"}, "1253103": {"name": "Dom Mintoff", "ideology": "social_democrat_idolg", "loyalty": 0.8, "picture": "MLT_M_Mintoff_dom", "head_of_government": "democrat_type", "start_date": "1949-10-16", "death_date": "1998-01-01"}, "1253104": {"name": "Karmenu Mifsud Bonnici", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "MLT_M_Bonnici_Karmenu", "head_of_government": "democrat_type", "start_date": "1984-12-22", "death_date": "1992-03-26"}, "1253105": {"name": "Eddie Fenech Adami", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "MLT_M_Adami_eddie", "head_of_government": "democrat_type", "start_date": "1977-01-01", "death_date": "2004-01-01"}, "1253200": {"name": "Francis Douglas", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MLT_M_Douglas_Francis", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1946-06-01", "death_date": "1949-08-11"}, "1253201": {"name": "Anthony Vassallo", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MLT_M_Vassallo_Anthony", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1968-01-01", "death_date": "2006-05-28"}, "1253202": {"name": "Antonio Hercolani Fava Simonetti", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MLT_M_Simonetti_Antonio_H_F", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1946-01-01", "death_date": "1962-06-18"}, "1253203": {"name": "Ernesto Patern\u00f2 Castello di Carcaci", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MLT_M_Carcaci_Ernesto_P_C", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1955-01-01", "death_date": "1971-01-01"}, "1253204": {"name": "Angelo de Mojana di Cologna", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MLT_M_Cologna_Angelo_M", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1962-01-01", "death_date": "1988-01-18"}, "1253205": {"name": "Andrew Willoughby Ninian Bertie", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "MLT_M_Bertie_Andrew_W_N", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1988-01-18", "death_date": "2008-02-07"}, "1253206": {"name": "L. Scerri Taylor", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "MLT_M_Taylor_L_Scerri", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1969-08-24", "death_date": "2300-01-01"}, "1253207": {"name": "Emanuel Bezzina", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "MLT_M_Bezzina_Emanuel", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1971-01-01", "death_date": "2300-01-01"}, "1253208": {"name": "John Zammit", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "MLT_M_Zammit_John", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1972-01-01", "death_date": "2300-01-01"}, "1253209": {"name": "William Kerr", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MLT_M_Kerr_William", "head_of_state": "fortunate_type", "head_of_government": "fortunate_type", "start_date": "1963-10-10", "death_date": "1987-02-07"}, "1253210": {"name": "Josie Muscat", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "MLT_M_Muscat_Josie", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1966-01-01", "death_date": "2010-01-01"}, "1253211": {"name": "Maximilian Stracquadanio", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "MLT_M_Stracquadanio_Maximilian", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1982-01-01", "death_date": "1992-01-01"}}}
+{
+    "color": [
+        130,
+        129,
+        128
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1253001": {
+            "name": "George VI",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
+        },
+        "1253002": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "1253300": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "1253301": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "1253302": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1253304": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1253305": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "1253306": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1253307": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1253308": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "1253309": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "1253310": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1253311": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
+        "1253312": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "1253010": {
+            "name": "Maurice Henry Dorman",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Dorman_Maurice_h",
+            "start_date": "1964-09-21",
+            "death_date": "1971-07-04",
+            "type": "democrat_type"
+        },
+        "1253011": {
+            "name": "Anthony Mamo",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Mamo_Anthony",
+            "start_date": "1971-06-04",
+            "death_date": "1976-12-27",
+            "type": "democrat_type"
+        },
+        "1253020": {
+            "name": "Anton Buttigieg",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "MLT_M_Buttigieg_Anton",
+            "start_date": "1959-05-04",
+            "death_date": "1981-12-27",
+            "type": "democrat_type"
+        },
+        "1253021": {
+            "name": "Albert Hyzler",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.8,
+            "picture": "MLT_M_Hyzler",
+            "start_date": "1981-12-27",
+            "death_date": "1982-02-15",
+            "type": "democrat_type"
+        },
+        "1253022": {
+            "name": "Agatha Barbara",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "MLT_M_Barbara_Agatha",
+            "start_date": "1982-02-15",
+            "death_date": "1987-02-15",
+            "type": "democrat_type"
+        },
+        "1253023": {
+            "name": "Pawlu Xuereb",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "MLT_M_Paul_Xuereb",
+            "start_date": "1987-02-15",
+            "death_date": "1989-04-04",
+            "type": "democrat_type"
+        },
+        "1253024": {
+            "name": "Censu Tabone",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "MLT_M_Tabone_censu",
+            "start_date": "1989-04-04",
+            "death_date": "1994-04-04",
+            "type": "democrat_type"
+        },
+        "1253100": {
+            "name": "Paul Boffa",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "MLT_M_Boffa_paul",
+            "start_date": "1932-01-01",
+            "death_date": "1955-02-25",
+            "type": "democrat_type"
+        },
+        "1253101": {
+            "name": "Enrico Mizzi",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "MLT_M_Mizzi_Enrico",
+            "start_date": "1933-11-02",
+            "death_date": "1950-09-20",
+            "type": "democrat_type"
+        },
+        "1253102": {
+            "name": "Giorgio Oliver",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MLT_M_Oliver_Giorgio",
+            "start_date": "1947-01-01",
+            "death_date": "1977-01-01",
+            "type": "democrat_type"
+        },
+        "1253103": {
+            "name": "Dom Mintoff",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.8,
+            "picture": "MLT_M_Mintoff_dom",
+            "start_date": "1949-10-16",
+            "death_date": "1998-01-01",
+            "type": "democrat_type"
+        },
+        "1253104": {
+            "name": "Karmenu Mifsud Bonnici",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "MLT_M_Bonnici_Karmenu",
+            "start_date": "1984-12-22",
+            "death_date": "1992-03-26",
+            "type": "democrat_type"
+        },
+        "1253105": {
+            "name": "Eddie Fenech Adami",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "MLT_M_Adami_eddie",
+            "start_date": "1977-01-01",
+            "death_date": "2004-01-01",
+            "type": "democrat_type"
+        },
+        "1253200": {
+            "name": "Francis Douglas",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Douglas_Francis",
+            "start_date": "1946-06-01",
+            "death_date": "1949-08-11",
+            "type": "administrator_type"
+        },
+        "1253201": {
+            "name": "Anthony Vassallo",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Vassallo_Anthony",
+            "start_date": "1968-01-01",
+            "death_date": "2006-05-28",
+            "type": "hardliner_type"
+        },
+        "1253202": {
+            "name": "Antonio Hercolani Fava Simonetti",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Simonetti_Antonio_H_F",
+            "start_date": "1946-01-01",
+            "death_date": "1962-06-18",
+            "type": "moral_type"
+        },
+        "1253203": {
+            "name": "Ernesto Paternò Castello di Carcaci",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Carcaci_Ernesto_P_C",
+            "start_date": "1955-01-01",
+            "death_date": "1971-01-01",
+            "type": "moral_type"
+        },
+        "1253204": {
+            "name": "Angelo de Mojana di Cologna",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Cologna_Angelo_M",
+            "start_date": "1962-01-01",
+            "death_date": "1988-01-18",
+            "type": "moral_type"
+        },
+        "1253205": {
+            "name": "Andrew Willoughby Ninian Bertie",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Bertie_Andrew_W_N",
+            "start_date": "1988-01-18",
+            "death_date": "2008-02-07",
+            "type": "moral_type"
+        },
+        "1253206": {
+            "name": "L. Scerri Taylor",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Taylor_L_Scerri",
+            "start_date": "1969-08-24",
+            "death_date": "2300-01-01",
+            "type": "hardliner_type"
+        },
+        "1253207": {
+            "name": "Emanuel Bezzina",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Bezzina_Emanuel",
+            "start_date": "1971-01-01",
+            "death_date": "2300-01-01",
+            "type": "liberal_type"
+        },
+        "1253208": {
+            "name": "John Zammit",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Zammit_John",
+            "start_date": "1972-01-01",
+            "death_date": "2300-01-01",
+            "type": "honest_type"
+        },
+        "1253209": {
+            "name": "William Kerr",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Kerr_William",
+            "start_date": "1963-10-10",
+            "death_date": "1987-02-07",
+            "type": "fortunate_type"
+        },
+        "1253210": {
+            "name": "Josie Muscat",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Muscat_Josie",
+            "start_date": "1966-01-01",
+            "death_date": "2010-01-01",
+            "type": "controversial_figure"
+        },
+        "1253211": {
+            "name": "Maximilian Stracquadanio",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "MLT_M_Stracquadanio_Maximilian",
+            "start_date": "1982-01-01",
+            "death_date": "1992-01-01",
+            "type": "controversial_figure"
+        }
+    }
+}

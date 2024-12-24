@@ -76,61 +76,56 @@
         "1127000": {
             "name": "Jigme",
             "ideology": "social_cons_idolg",
-            "moral_leader": true,
             "loyalty": 1.0,
             "picture": "BHU_M_Jigme",
-            "head_of_state": "traditionalist_type",
             "start_date": "1926-08-21",
-            "death_date": "1952-03-24"
+            "death_date": "1952-03-24",
+            "type": "traditionalist_type"
         },
         "1127001": {
             "name": "Jigme Dorji",
             "ideology": "social_cons_idolg",
-            "moral_leader": true,
             "loyalty": 0.9,
             "picture": "BHU_M_Dorji_Jigme",
-            "head_of_state": "democrat_type",
-            "head_of_government": "democrat_type",
             "start_date": "1952-03-24",
-            "death_date": "1972-07-21"
+            "death_date": "1972-07-21",
+            "type": "democrat_type"
         },
         "1127002": {
             "name": "Jigme Singye",
             "ideology": "social_cons_idolg",
-            "moral_leader": true,
             "loyalty": 1.0,
             "picture": "BHU_M_Singye_Jigme",
-            "head_of_state": "controversial_figure",
-            "head_of_government": "controversial_figure",
             "start_date": "1972-07-21",
-            "death_date": "2006-12-14"
+            "death_date": "2006-12-14",
+            "type": "controversial_figure"
         },
         "1127003": {
             "name": "Sonam Topgay Dorji",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
             "picture": "BHU_M_Dorji_Sonam_T",
-            "head_of_government": "fortunate_type",
             "start_date": "1917-01-01",
-            "death_date": "1952-01-01"
+            "death_date": "1952-01-01",
+            "type": "fortunate_type"
         },
         "1127004": {
             "name": "Jigme Palden Dorji",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
             "picture": "BHU_M_Dorji_Jigme_P",
-            "head_of_government": "liberal_type",
             "start_date": "1952-01-01",
-            "death_date": "1964-04-06"
+            "death_date": "1964-04-06",
+            "type": "liberal_type"
         },
         "1127005": {
             "name": "Lhendup Dorji",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
             "picture": "BHU_M_Dorji_Lhendup",
-            "head_of_government": "visionary_type",
             "start_date": "1964-07-25",
-            "death_date": "1964-11-27"
+            "death_date": "1964-11-27",
+            "type": "visionary_type"
         }
     }
 }

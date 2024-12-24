@@ -1,1 +1,131 @@
-{"color": [138, 57, 28], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1117000": {"name": "Wilhelmina", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "HOL_M_Wilhelmina", "head_of_state": "autocrat_type", "start_date": "1946-01-01", "death_date": "1948-09-04", "base": 1213000}, "1117001": {"name": "Juliana", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "HOL_M_Juliana", "head_of_state": "courteous_figure", "start_date": "1948-09-04", "death_date": "1980-04-30", "base": 1213001}, "1117004": {"name": "Beatrix", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "HOL_M_Beatrix", "head_of_state": "administrator_type", "start_date": "1980-04-30", "death_date": "1999-12-31", "base": 1213004}, "1117005": {"name": "Felipe Tromp", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "ARU_M_Tromp_Felipe", "head_of_state": "courteous_figure", "start_date": "1986-01-01", "death_date": "1992-01-28"}, "1117006": {"name": "Henny Eman", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "ARU_M_Eman_Henny", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1979-04-01", "death_date": "1989-02-09"}, "1117007": {"name": "Nelson Oduber", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ARU_M_Oduber_Nelson", "head_of_government": "administrator_type", "start_date": "1989-02-09", "death_date": "1994-07-29"}}}
+{
+    "color": [
+        138,
+        57,
+        28
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1117000": {
+            "name": "Wilhelmina",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Wilhelmina",
+            "start_date": "1946-01-01",
+            "death_date": "1948-09-04",
+            "type": "autocrat_type"
+        },
+        "1117001": {
+            "name": "Juliana",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Juliana",
+            "start_date": "1948-09-04",
+            "death_date": "1980-04-30",
+            "type": "courteous_figure"
+        },
+        "1117004": {
+            "name": "Beatrix",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Beatrix",
+            "start_date": "1980-04-30",
+            "death_date": "1999-12-31",
+            "type": "administrator_type"
+        },
+        "1117005": {
+            "name": "Felipe Tromp",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ARU_M_Tromp_Felipe",
+            "start_date": "1986-01-01",
+            "death_date": "1992-01-28",
+            "type": "courteous_figure"
+        },
+        "1117006": {
+            "name": "Henny Eman",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ARU_M_Eman_Henny",
+            "start_date": "1979-04-01",
+            "death_date": "1989-02-09",
+            "type": "ambitious_type"
+        },
+        "1117007": {
+            "name": "Nelson Oduber",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ARU_M_Oduber_Nelson",
+            "start_date": "1989-02-09",
+            "death_date": "1994-07-29",
+            "type": "administrator_type"
+        }
+    }
+}

@@ -73,201 +73,193 @@
     "unit_names": "",
     "ministers": {
         "1150001": {
-            "name": "Fran\u00e7ois Tombalbaye",
+            "name": "François Tombalbaye",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
             "picture": "CHA_M_Tombalbaye_Francois",
-            "head_of_state": "parental_type",
-            "head_of_government": "parental_type",
             "start_date": "1959-03-26",
-            "death_date": "1975-04-13"
+            "death_date": "1975-04-13",
+            "type": "parental_type"
         },
         "1150002": {
-            "name": "No\u00ebl Milarew Odingar",
+            "name": "Noël Milarew Odingar",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
             "picture": "CHA_M_Odingar_Noel_M",
-            "head_of_state": "autocrat_type",
-            "head_of_government": "autocrat_type",
             "start_date": "1975-04-13",
-            "death_date": "1975-04-15"
+            "death_date": "1975-04-15",
+            "type": "autocrat_type"
         },
         "1150003": {
-            "name": "F\u00e9lix Malloum N'Gakoutou",
+            "name": "Félix Malloum N'Gakoutou",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
             "picture": "CHA_M_NGakoutou_Felix_M",
-            "head_of_state": "bureaucrat_type",
-            "head_of_government": "bureaucrat_type",
             "start_date": "1975-04-15",
-            "death_date": "1979-03-23"
+            "death_date": "1979-03-23",
+            "type": "bureaucrat_type"
         },
         "1150004": {
             "name": "Goukouni Oueddei",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
             "picture": "CHA_M_Oueddei_Goukouni",
-            "head_of_state": "ambitious_type",
-            "head_of_government": "ambitious_type",
             "start_date": "1979-03-23",
-            "death_date": "1982-06-07"
+            "death_date": "1982-06-07",
+            "type": "ambitious_type"
         },
         "1150005": {
             "name": "Lol Mahamat Choua",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.91,
             "picture": "CHA_M_Choua_Lol_M",
-            "head_of_state": "parental_type",
-            "head_of_government": "parental_type",
             "start_date": "1979-04-29",
-            "death_date": "1979-09-03"
+            "death_date": "1979-09-03",
+            "type": "parental_type"
         },
         "1150006": {
-            "name": "Hiss\u00e8ne Habr\u00e9",
+            "name": "Hissène Habré",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.85,
             "picture": "CHA_M_Habre_Hissene",
-            "head_of_state": "autocrat_type",
-            "head_of_government": "autocrat_type",
             "start_date": "1978-08-29",
-            "death_date": "1990-12-02"
+            "death_date": "1990-12-02",
+            "type": "autocrat_type"
         },
         "1150007": {
-            "name": "Idriss D\u00e9by",
+            "name": "Idriss Déby",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.85,
             "picture": "CHA_M_Deby_Idriss",
-            "head_of_state": "dictator_type",
-            "head_of_government": "dictator_type",
             "start_date": "1990-12-02",
-            "death_date": "2013-01-01"
+            "death_date": "2013-01-01",
+            "type": "dictator_type"
         },
         "1150008": {
             "name": "Gabriel Lisette",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "CHA_M_Lisette_Gabriel",
-            "head_of_government": "ambitious_type",
             "start_date": "1957-05-14",
-            "death_date": "1959-02-11"
+            "death_date": "1959-02-11",
+            "type": "ambitious_type"
         },
         "1150009": {
-            "name": "Gontchom\u00e9 Sahoulba",
+            "name": "Gontchomé Sahoulba",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "CHA_M_Sahoulba_Gontchome",
-            "head_of_government": "extremist_type",
             "start_date": "1959-02-11",
-            "death_date": "1959-03-12"
+            "death_date": "1959-03-12",
+            "type": "extremist_type"
         },
         "1150010": {
             "name": "Ahmed Koulamallah",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "CHA_M_Koulamallah_Ahmed",
-            "head_of_government": "religious_type",
             "start_date": "1959-03-12",
-            "death_date": "1959-03-26"
+            "death_date": "1959-03-26",
+            "type": "religious_type"
         },
         "1150011": {
             "name": "Djidingar Dono Ngardoum",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
             "picture": "CHA_M_Ngardoum_Djidingar_D",
-            "head_of_government": "administrator_type",
             "start_date": "1982-05-19",
-            "death_date": "1982-06-19"
+            "death_date": "1982-06-19",
+            "type": "administrator_type"
         },
         "1150012": {
-            "name": "Jean Alingu\u00e9 Bawoyeu",
+            "name": "Jean Alingué Bawoyeu",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
             "picture": "CHA_M_Bawoyeu_Jean_A",
-            "head_of_government": "democrat_type",
             "start_date": "1991-03-04",
-            "death_date": "1992-05-20"
+            "death_date": "1992-05-20",
+            "type": "democrat_type"
         },
         "1150013": {
-            "name": "Jacques Rogu\u00e9",
+            "name": "Jacques Rogué",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
             "picture": "CHA_M_Rogue_Jacques",
-            "head_of_state": "bureaucrat_type",
             "start_date": "1943-11-05",
-            "death_date": "1948-11-24"
+            "death_date": "1948-11-24",
+            "type": "bureaucrat_type"
         },
         "1150014": {
             "name": "Paul Le Layec",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
             "picture": "CHA_M_Layec_Paul",
-            "head_of_state": "reputable_type",
             "start_date": "1948-11-24",
-            "death_date": "1949-07-07"
+            "death_date": "1949-07-07",
+            "type": "reputable_type"
         },
         "1150015": {
             "name": "Henry de Mauduit",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
             "picture": "CHA_M_Mauduit_Henry",
-            "head_of_state": "traditionalist_type",
             "start_date": "1949-07-07",
-            "death_date": "1951-01-27"
+            "death_date": "1951-01-27",
+            "type": "traditionalist_type"
         },
         "1150016": {
             "name": "Charles Hanin",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
             "picture": "CHA_M_Hanin_Charles",
-            "head_of_state": "parental_type",
             "start_date": "1951-01-27",
-            "death_date": "1951-10-19"
+            "death_date": "1951-10-19",
+            "type": "parental_type"
         },
         "1150017": {
-            "name": "Fran\u00e7ois Casamatta",
+            "name": "François Casamatta",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
             "picture": "CHA_M_Casamatta_Francois",
-            "head_of_state": "administrator_type",
             "start_date": "1951-10-19",
-            "death_date": "1951-12-19"
+            "death_date": "1951-12-19",
+            "type": "administrator_type"
         },
         "1150018": {
             "name": "Ignace Colombani",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
             "picture": "CHA_M_Colombani_Ignace",
-            "head_of_state": "bureaucrat_type",
             "start_date": "1951-12-19",
-            "death_date": "1956-11-03"
+            "death_date": "1956-11-03",
+            "type": "bureaucrat_type"
         },
         "1150019": {
-            "name": "Ren\u00e9 Troadec",
+            "name": "René Troadec",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
             "picture": "CHA_M_Troadec_Rene",
-            "head_of_state": "traditionalist_type",
             "start_date": "1956-11-03",
-            "death_date": "1959-01-22"
+            "death_date": "1959-01-22",
+            "type": "traditionalist_type"
         },
         "1150020": {
             "name": "Daniel Doustin",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
             "picture": "CHA_M_Doustin_Daniel",
-            "head_of_state": "administrator_type",
             "start_date": "1959-01-22",
-            "death_date": "1960-08-11"
+            "death_date": "1960-08-11",
+            "type": "administrator_type"
         },
         "1150021": {
             "name": "Aboubakar Abdel Rahmane",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 1.0,
             "picture": "CHA_M_Rahmane_Aboubakar_A",
-            "head_of_state": "courageous_type",
-            "head_of_government": "courageous_type",
             "start_date": "1977-01-01",
-            "death_date": "1979-01-01"
+            "death_date": "1979-01-01",
+            "type": "courageous_type"
         }
     }
 }

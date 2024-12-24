@@ -1,1 +1,347 @@
-{"color": [10, 81, 87], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1234000": {"name": "Fadil Hoxha", "ideology": "communist_idolg", "loyalty": 0.9, "picture": "KOS_M_Hoxha_Fadil", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1945-07-11", "death_date": "1991-01-01"}, "1234001": {"name": "Ismet Saqiri", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Saqiri_Ismet", "head_of_state": "bureaucrat_type", "start_date": "1953-02-20", "death_date": "1953-12-12"}, "1234002": {"name": "\u00d0ordije Pajkovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Pajkovic_Dordije", "head_of_state": "hardliner_type", "start_date": "1953-12-12", "death_date": "1956-05-05"}, "1234003": {"name": "Pavle Jovicevic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Jovicevic_Pavle", "head_of_state": "loyal_type", "start_date": "1956-05-05", "death_date": "1960-04-04"}, "1234004": {"name": "Du\u009aan Mugo\u009aa", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Mugosa_Dusan", "head_of_state": "traditionalist_type", "start_date": "1960-04-04", "death_date": "1963-06-18"}, "1234005": {"name": "Stanoje Ak\u009aic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Aksic_Stanoje", "head_of_state": "loyal_type", "start_date": "1963-06-18", "death_date": "1967-06-24"}, "1234006": {"name": "Ilaz Kurteshi", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Kurteshi_Ilaz", "head_of_state": "hardliner_type", "start_date": "1969-05-07", "death_date": "1974-05-01"}, "1234007": {"name": "Xhavid Nimani", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Nimani_Xhavid", "head_of_state": "bureaucrat_type", "start_date": "1974-05-01", "death_date": "1981-08-01"}, "1234008": {"name": "Ali Shukrija", "ideology": "communist_idolg", "loyalty": 0.95, "picture": "KOS_M_Shukrija_Ali", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1963-01-01", "death_date": "1982-01-01"}, "1234009": {"name": "Kol\u00eb Shiroka", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Shiroka_Kole", "head_of_state": "administrator_type", "start_date": "1982-01-01", "death_date": "1983-05-01"}, "1234010": {"name": "Shefqet Nebih Gashi", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Gashi_Shefqet_N", "head_of_state": "traditionalist_type", "start_date": "1983-05-01", "death_date": "1985-05-01"}, "1234011": {"name": "Branislav Skembarevic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Skembarevic_Branislav", "head_of_state": "hardliner_type", "start_date": "1985-05-01", "death_date": "1986-05-01"}, "1234012": {"name": "Bajram Selani", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Selani_Bajram", "head_of_state": "administrator_type", "start_date": "1986-05-01", "death_date": "1988-05-01"}, "1234013": {"name": "Remzi Kolgeci", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Kolgeci_Remzi", "head_of_state": "bureaucrat_type", "start_date": "1988-05-01", "death_date": "1989-06-27"}, "1234014": {"name": "Hysen Kajdom\u00e7aj", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Kajdomcaj_Hysen", "head_of_state": "administrator_type", "start_date": "1989-06-27", "death_date": "1990-04-11"}, "1234015": {"name": "Ibrahim Rugova", "ideology": "market_liberal_idolg", "loyalty": 0.95, "picture": "KOS_M_Rugova_Ibrahim", "head_of_state": "courteous_figure", "head_of_government": "courteous_figure", "start_date": "1989-01-01", "death_date": "2006-01-21"}, "1234016": {"name": "Fatmir Sejdiu", "ideology": "market_liberal_idolg", "loyalty": 0.9, "picture": "KOS_M_Sejdiu_Fatmir", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1974-01-01", "death_date": "2010-09-27"}, "1234017": {"name": "Ilija Vakic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Vakic_Ilija", "head_of_government": "hardliner_type", "start_date": "1967-05-01", "death_date": "1974-05-01"}, "1234018": {"name": "Bogoljub Nedeljkovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Nedeljkovic_Bogoljub", "head_of_government": "loyal_type", "start_date": "1974-05-01", "death_date": "1978-05-01"}, "1234019": {"name": "Bahri Oru\u00e7i", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Oruci_Bahri", "head_of_government": "bureaucrat_type", "start_date": "1978-05-01", "death_date": "1980-05-01"}, "1234020": {"name": "Riza Sapunxhiu", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Sapunxhiu_Riza", "head_of_government": "administrator_type", "start_date": "1980-05-01", "death_date": "1982-05-01"}, "1234021": {"name": "Imer Pula", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Pula_Imer", "head_of_government": "lethargic_type", "start_date": "1982-05-01", "death_date": "1984-05-05"}, "1234022": {"name": "Ljubomir Nedo Borkovic", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Borkovic_Ljubomir_N", "head_of_government": "loyal_type", "start_date": "1984-05-05", "death_date": "1986-05-01"}, "1234023": {"name": "Namzi Mustafa", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Mustafa_Namzi", "head_of_government": "traditionalist_type", "start_date": "1986-05-01", "death_date": "1987-01-01"}, "1234024": {"name": "Kaqusha Jashari", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Jashari_Kaqusha", "head_of_government": "hardliner_type", "start_date": "1987-01-01", "death_date": "1989-05-01"}, "1234025": {"name": "Nikolla Shkreli", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Shkreli_Nikolla", "head_of_government": "loyal_type", "start_date": "1989-05-01", "death_date": "1989-07-01"}, "1234026": {"name": "Daut Jashanica", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Jashanica_Daut", "head_of_government": "administrator_type", "start_date": "1989-07-01", "death_date": "1989-12-04"}, "1234027": {"name": "Jusuf Zejnullahu", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "KOS_M_Zejnullahu_Jusuf", "head_of_government": "liberal_type", "start_date": "1989-12-04", "death_date": "1990-07-05", "base": 1234027}, "1234028": {"name": "Jusuf Zejnullahu", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "KOS_M_Zejnullahu_Jusuf", "head_of_government": "liberal_type", "start_date": "1990-07-05", "death_date": "1991-10-05", "base": 1234027}, "1234029": {"name": "Bujar Bukoshi", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "KOS_M_Bukoshi_Bujar", "head_of_government": "administrator_type", "start_date": "1991-10-05", "death_date": "2000-02-01"}}}
+{
+    "color": [
+        10,
+        81,
+        87
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1234000": {
+            "name": "Fadil Hoxha",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "KOS_M_Hoxha_Fadil",
+            "start_date": "1945-07-11",
+            "death_date": "1991-01-01",
+            "type": "hardliner_type"
+        },
+        "1234001": {
+            "name": "Ismet Saqiri",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Saqiri_Ismet",
+            "start_date": "1953-02-20",
+            "death_date": "1953-12-12",
+            "type": "bureaucrat_type"
+        },
+        "1234002": {
+            "name": "Ðordije Pajkovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Pajkovic_Dordije",
+            "start_date": "1953-12-12",
+            "death_date": "1956-05-05",
+            "type": "hardliner_type"
+        },
+        "1234003": {
+            "name": "Pavle Jovicevic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Jovicevic_Pavle",
+            "start_date": "1956-05-05",
+            "death_date": "1960-04-04",
+            "type": "loyal_type"
+        },
+        "1234004": {
+            "name": "Duan Mugoa",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Mugosa_Dusan",
+            "start_date": "1960-04-04",
+            "death_date": "1963-06-18",
+            "type": "traditionalist_type"
+        },
+        "1234005": {
+            "name": "Stanoje Akic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Aksic_Stanoje",
+            "start_date": "1963-06-18",
+            "death_date": "1967-06-24",
+            "type": "loyal_type"
+        },
+        "1234006": {
+            "name": "Ilaz Kurteshi",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Kurteshi_Ilaz",
+            "start_date": "1969-05-07",
+            "death_date": "1974-05-01",
+            "type": "hardliner_type"
+        },
+        "1234007": {
+            "name": "Xhavid Nimani",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Nimani_Xhavid",
+            "start_date": "1974-05-01",
+            "death_date": "1981-08-01",
+            "type": "bureaucrat_type"
+        },
+        "1234008": {
+            "name": "Ali Shukrija",
+            "ideology": "communist_idolg",
+            "loyalty": 0.95,
+            "picture": "KOS_M_Shukrija_Ali",
+            "start_date": "1963-01-01",
+            "death_date": "1982-01-01",
+            "type": "lethargic_type"
+        },
+        "1234009": {
+            "name": "Kolë Shiroka",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Shiroka_Kole",
+            "start_date": "1982-01-01",
+            "death_date": "1983-05-01",
+            "type": "administrator_type"
+        },
+        "1234010": {
+            "name": "Shefqet Nebih Gashi",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Gashi_Shefqet_N",
+            "start_date": "1983-05-01",
+            "death_date": "1985-05-01",
+            "type": "traditionalist_type"
+        },
+        "1234011": {
+            "name": "Branislav Skembarevic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Skembarevic_Branislav",
+            "start_date": "1985-05-01",
+            "death_date": "1986-05-01",
+            "type": "hardliner_type"
+        },
+        "1234012": {
+            "name": "Bajram Selani",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Selani_Bajram",
+            "start_date": "1986-05-01",
+            "death_date": "1988-05-01",
+            "type": "administrator_type"
+        },
+        "1234013": {
+            "name": "Remzi Kolgeci",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Kolgeci_Remzi",
+            "start_date": "1988-05-01",
+            "death_date": "1989-06-27",
+            "type": "bureaucrat_type"
+        },
+        "1234014": {
+            "name": "Hysen Kajdomçaj",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Kajdomcaj_Hysen",
+            "start_date": "1989-06-27",
+            "death_date": "1990-04-11",
+            "type": "administrator_type"
+        },
+        "1234015": {
+            "name": "Ibrahim Rugova",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "KOS_M_Rugova_Ibrahim",
+            "start_date": "1989-01-01",
+            "death_date": "2006-01-21",
+            "type": "courteous_figure"
+        },
+        "1234016": {
+            "name": "Fatmir Sejdiu",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "KOS_M_Sejdiu_Fatmir",
+            "start_date": "1974-01-01",
+            "death_date": "2010-09-27",
+            "type": "honest_type"
+        },
+        "1234017": {
+            "name": "Ilija Vakic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Vakic_Ilija",
+            "start_date": "1967-05-01",
+            "death_date": "1974-05-01",
+            "type": "hardliner_type"
+        },
+        "1234018": {
+            "name": "Bogoljub Nedeljkovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Nedeljkovic_Bogoljub",
+            "start_date": "1974-05-01",
+            "death_date": "1978-05-01",
+            "type": "loyal_type"
+        },
+        "1234019": {
+            "name": "Bahri Oruçi",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Oruci_Bahri",
+            "start_date": "1978-05-01",
+            "death_date": "1980-05-01",
+            "type": "bureaucrat_type"
+        },
+        "1234020": {
+            "name": "Riza Sapunxhiu",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Sapunxhiu_Riza",
+            "start_date": "1980-05-01",
+            "death_date": "1982-05-01",
+            "type": "administrator_type"
+        },
+        "1234021": {
+            "name": "Imer Pula",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Pula_Imer",
+            "start_date": "1982-05-01",
+            "death_date": "1984-05-05",
+            "type": "lethargic_type"
+        },
+        "1234022": {
+            "name": "Ljubomir Nedo Borkovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Borkovic_Ljubomir_N",
+            "start_date": "1984-05-05",
+            "death_date": "1986-05-01",
+            "type": "loyal_type"
+        },
+        "1234023": {
+            "name": "Namzi Mustafa",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Mustafa_Namzi",
+            "start_date": "1986-05-01",
+            "death_date": "1987-01-01",
+            "type": "traditionalist_type"
+        },
+        "1234024": {
+            "name": "Kaqusha Jashari",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Jashari_Kaqusha",
+            "start_date": "1987-01-01",
+            "death_date": "1989-05-01",
+            "type": "hardliner_type"
+        },
+        "1234025": {
+            "name": "Nikolla Shkreli",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Shkreli_Nikolla",
+            "start_date": "1989-05-01",
+            "death_date": "1989-07-01",
+            "type": "loyal_type"
+        },
+        "1234026": {
+            "name": "Daut Jashanica",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Jashanica_Daut",
+            "start_date": "1989-07-01",
+            "death_date": "1989-12-04",
+            "type": "administrator_type"
+        },
+        "1234027": {
+            "name": "Jusuf Zejnullahu",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Zejnullahu_Jusuf",
+            "start_date": "1989-12-04",
+            "death_date": "1990-07-05",
+            "type": "liberal_type"
+        },
+        "1234028": {
+            "name": "Jusuf Zejnullahu",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Zejnullahu_Jusuf",
+            "start_date": "1990-07-05",
+            "death_date": "1991-10-05",
+            "type": "liberal_type"
+        },
+        "1234029": {
+            "name": "Bujar Bukoshi",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "KOS_M_Bukoshi_Bujar",
+            "start_date": "1991-10-05",
+            "death_date": "2000-02-01",
+            "type": "administrator_type"
+        }
+    }
+}

@@ -1,1 +1,230 @@
-{"color": [179, 207, 219], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1283000": {"name": "Mohammed A. el-Husseini", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "PAL_M_el-Husseini_Mohammed_A", "head_of_state": "hardliner_type", "start_date": "1946-01-01", "death_date": "1974-07-04", "base": 1210000}, "1283001": {"name": "Ahmed Hilmi Pasha", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "PAL_M_Hilmi_Pasha_Ahmad", "head_of_state": "bureaucrat_type", "start_date": "1946-01-01", "death_date": "1964-01-01", "base": 1210001}, "1283002": {"name": "Ahmad al-Shukeiri", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "PAL_M_Shukeiri_Ahmad", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1964-01-01", "death_date": "1969-02-04", "base": 1210002}, "1283003": {"name": "Yahya Hammuda", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "PAL_M_Hammuda_Yahya", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1964-01-01", "death_date": "1969-02-04", "base": 1210003}, "1283004": {"name": "M. Yasser Arafat al-Qudwa al-Husseini", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "PAL_M_Arafat_Mohammed_Y", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1969-02-04", "death_date": "1999-12-31", "base": 1210004}, "1283006": {"name": "Salah M. Khalaf", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "PAL_M_Khalaf_Salah_M", "head_of_government": "hardliner_type", "start_date": "1969-02-04", "death_date": "1991-01-14", "base": 1210006}, "1283007": {"name": "Farouk al-Kaddoumi", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "PAL_M_Kaddoumi_Farouk", "head_of_government": "hardliner_type", "start_date": "1969-02-04", "death_date": "1991-01-14", "base": 1210007}, "1283008": {"name": "Khalil I. al-Wazir", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "PAL_M_al-Wazir_Khalil_I", "head_of_government": "hardliner_type", "start_date": "1969-02-04", "death_date": "1988-04-16", "base": 1210008}, "1283100": {"name": "Bashir Barghouti", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "PAL_M_Barghouti_Bashir", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1965-01-08", "death_date": "1997-08-01", "base": 1226052}, "1283101": {"name": "George Habash", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "PAL_M_Habash_George", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1951-01-01", "death_date": "2009-01-26"}, "1283102": {"name": "Nayef Hawatmeh", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "PAL_M_Hawatmeh_Nayef", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1969-02-01", "death_date": "2300-01-01"}, "1283103": {"name": "Yusuf I al-Umar", "ideology": "social_cons_idolg", "loyalty": 0.25, "picture": "PAL_M_al-Umar_I_Yusuf", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1955-02-04", "death_date": "1972-06-17"}, "1283104": {"name": "Taqiuddin al-Nabhani", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "PAL_M_al-Nabhani_Taqiuddin", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1953-01-01", "death_date": "1977-12-11"}, "1283105": {"name": "Ibrahim Tarek", "ideology": "communist_idolg", "loyalty": 0.25, "picture": "PAL_M_Tarek_Ibrahim", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1978-08-20", "death_date": "2000-05-01"}, "1283106": {"name": "Mounir Chafiq", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "PAL_M_Chafiq_Mounir", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1973-01-01", "death_date": "2300-01-01"}, "1283107": {"name": "Mahmoud Darwish", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "PAL_M_Darwish_Mahmoud", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1971-01-01", "death_date": "2008-08-09"}, "1283108": {"name": "Muhammad 'Izzat Darwaza", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "PAL_M_Darwaza_Muhammad_I", "head_of_state": "reputable_type", "head_of_government": "reputable_type", "start_date": "1921-05-01", "death_date": "1960-01-01"}}}
+{
+    "color": [
+        179,
+        207,
+        219
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1283000": {
+            "name": "Mohammed A. el-Husseini",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "PAL_M_el-Husseini_Mohammed_A",
+            "start_date": "1946-01-01",
+            "death_date": "1974-07-04",
+            "type": "hardliner_type"
+        },
+        "1283001": {
+            "name": "Ahmed Hilmi Pasha",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "PAL_M_Hilmi_Pasha_Ahmad",
+            "start_date": "1946-01-01",
+            "death_date": "1964-01-01",
+            "type": "bureaucrat_type"
+        },
+        "1283002": {
+            "name": "Ahmad al-Shukeiri",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "PAL_M_Shukeiri_Ahmad",
+            "start_date": "1964-01-01",
+            "death_date": "1969-02-04",
+            "type": "hardliner_type"
+        },
+        "1283003": {
+            "name": "Yahya Hammuda",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "PAL_M_Hammuda_Yahya",
+            "start_date": "1964-01-01",
+            "death_date": "1969-02-04",
+            "type": "hardliner_type"
+        },
+        "1283004": {
+            "name": "M. Yasser Arafat al-Qudwa al-Husseini",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "PAL_M_Arafat_Mohammed_Y",
+            "start_date": "1969-02-04",
+            "death_date": "1999-12-31",
+            "type": "hardliner_type"
+        },
+        "1283006": {
+            "name": "Salah M. Khalaf",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "PAL_M_Khalaf_Salah_M",
+            "start_date": "1969-02-04",
+            "death_date": "1991-01-14",
+            "type": "hardliner_type"
+        },
+        "1283007": {
+            "name": "Farouk al-Kaddoumi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "PAL_M_Kaddoumi_Farouk",
+            "start_date": "1969-02-04",
+            "death_date": "1991-01-14",
+            "type": "hardliner_type"
+        },
+        "1283008": {
+            "name": "Khalil I. al-Wazir",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "PAL_M_al-Wazir_Khalil_I",
+            "start_date": "1969-02-04",
+            "death_date": "1988-04-16",
+            "type": "hardliner_type"
+        },
+        "1283100": {
+            "name": "Bashir Barghouti",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "PAL_M_Barghouti_Bashir",
+            "start_date": "1965-01-08",
+            "death_date": "1997-08-01",
+            "type": "zealous_type"
+        },
+        "1283101": {
+            "name": "George Habash",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "PAL_M_Habash_George",
+            "start_date": "1951-01-01",
+            "death_date": "2009-01-26",
+            "type": "hardliner_type"
+        },
+        "1283102": {
+            "name": "Nayef Hawatmeh",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "PAL_M_Hawatmeh_Nayef",
+            "start_date": "1969-02-01",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1283103": {
+            "name": "Yusuf I al-Umar",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.25,
+            "picture": "PAL_M_al-Umar_I_Yusuf",
+            "start_date": "1955-02-04",
+            "death_date": "1972-06-17",
+            "type": "visionary_type"
+        },
+        "1283104": {
+            "name": "Taqiuddin al-Nabhani",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "PAL_M_al-Nabhani_Taqiuddin",
+            "start_date": "1953-01-01",
+            "death_date": "1977-12-11",
+            "type": "zealous_type"
+        },
+        "1283105": {
+            "name": "Ibrahim Tarek",
+            "ideology": "communist_idolg",
+            "loyalty": 0.25,
+            "picture": "PAL_M_Tarek_Ibrahim",
+            "start_date": "1978-08-20",
+            "death_date": "2000-05-01",
+            "type": "visionary_type"
+        },
+        "1283106": {
+            "name": "Mounir Chafiq",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "PAL_M_Chafiq_Mounir",
+            "start_date": "1973-01-01",
+            "death_date": "2300-01-01",
+            "type": "religious_type"
+        },
+        "1283107": {
+            "name": "Mahmoud Darwish",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "PAL_M_Darwish_Mahmoud",
+            "start_date": "1971-01-01",
+            "death_date": "2008-08-09",
+            "type": "honest_type"
+        },
+        "1283108": {
+            "name": "Muhammad 'Izzat Darwaza",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "PAL_M_Darwaza_Muhammad_I",
+            "start_date": "1921-05-01",
+            "death_date": "1960-01-01",
+            "type": "reputable_type"
+        }
+    }
+}

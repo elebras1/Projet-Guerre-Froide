@@ -1,1 +1,104 @@
-{"color": [177, 125, 5], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1184001": {"name": "Isaias Afewerki", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "ERI_M_Afewerki_Isaias", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1975-01-01", "death_date": "1993-05-24"}, "1184002": {"name": "Petros Solomon ", "ideology": "left_wing_radical_idolg", "loyalty": 0.9, "picture": "ERI_M_Solomon_Petros", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1972-01-01", "death_date": "1994-01-01"}, "1184100": {"name": "Hamid Idris Awate", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "ETH_M_Awate_Hamid_I", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1941-01-01", "death_date": "1964-05-28", "base": 1186101}}}
+{
+    "color": [
+        177,
+        125,
+        5
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1184001": {
+            "name": "Isaias Afewerki",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "ERI_M_Afewerki_Isaias",
+            "start_date": "1975-01-01",
+            "death_date": "1993-05-24",
+            "type": "ambitious_type"
+        },
+        "1184002": {
+            "name": "Petros Solomon ",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.9,
+            "picture": "ERI_M_Solomon_Petros",
+            "start_date": "1972-01-01",
+            "death_date": "1994-01-01",
+            "type": "administrator_type"
+        },
+        "1184100": {
+            "name": "Hamid Idris Awate",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Awate_Hamid_I",
+            "start_date": "1941-01-01",
+            "death_date": "1964-05-28",
+            "type": "hardliner_type"
+        }
+    }
+}

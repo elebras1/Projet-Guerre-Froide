@@ -1,1 +1,194 @@
-{"color": [188, 168, 163], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1349000": {"name": "Zayed bin Sultan Al Nahyan", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "UAE_M_Sultan_Zayed", "head_of_state": "parental_type", "start_date": "1946-01-01", "death_date": "2004-11-02"}, "1349005": {"name": "Shakbut bin Sultan Al-Nahyan", "ideology": "paternal_auto_idolg", "loyalty": 0.99, "picture": "UAE_M_bin_Sultan_al-Nahyan_Shakbut", "head_of_state": "traditionalist_type", "start_date": "1928-01-01", "death_date": "1966-08-08"}, "1349009": {"name": "Khalifa bin Zayed Al Nahyan", "ideology": "paternal_auto_idolg", "loyalty": 0.98, "picture": "UAE_M_Al_Nahyan_Khalifa", "head_of_state": "traditionalist_type", "start_date": "1969-01-25", "death_date": "2300-01-01"}, "1349010": {"name": "Sultan bin Khalifa Al Nahyan", "ideology": "paternal_auto_idolg", "loyalty": 0.97, "picture": "UAE_M_Al_Nahyan_Sultan", "head_of_state": "traditionalist_type", "start_date": "1986-01-01", "death_date": "2300-01-01"}, "1349001": {"name": "Maktoum bin Rashid", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "UAE_M_Rashid_Maktoum", "head_of_government": "traditionalist_type", "start_date": "1971-12-09", "death_date": "2006-01-04"}, "1349002": {"name": "Rashid bin Saeed", "ideology": "paternal_auto_idolg", "loyalty": 0.8, "picture": "UAE_M_Saeed_Rashid", "head_of_government": "reformer_type", "start_date": "1946-01-01", "death_date": "1990-10-07"}, "1349004": {"name": "John Fieldhouse", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "UAE_M_Fieldhouse_John", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1946-01-01", "death_date": "1992-02-17"}, "1349006": {"name": "Khalifa bin Yousef", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "UAE_M_bin_Yousef_Khalifa", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1928-01-01", "death_date": "1971-08-13"}, "1349007": {"name": "Amjad Hakim Nagi el-Amin", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "UAE_M_Nagi_el-Amin_Amjad_H", "head_of_state": "supreme_leader", "head_of_government": "supreme_leader", "start_date": "1961-02-02", "death_date": "1992-08-16"}, "1349008": {"name": "Ahmed Ibrahim", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "UAE_M_Ibrahim_Ahmed", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1968-05-03", "death_date": "1996-08-16"}, "1349011": {"name": "Saeed bin Maktoum bin Hasher Al Maktoum", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "UAE_M_Al_Maktoum_Saeed_M_H", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1946-01-01", "death_date": "1958-09-09"}, "1349012": {"name": "Rashid bin Saeed Al Maktoum", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "UAE_M_Al_Maktoum_Rashid_S", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1946-01-01", "death_date": "1990-10-07"}, "1349013": {"name": "Maktoum bin Rashid Al Maktoum", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "UAE_M_Al_Maktoum_Maktoum_R", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1943-08-15", "death_date": "2006-01-04"}}}
+{
+    "color": [
+        188,
+        168,
+        163
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1349000": {
+            "name": "Zayed bin Sultan Al Nahyan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "UAE_M_Sultan_Zayed",
+            "start_date": "1946-01-01",
+            "death_date": "2004-11-02",
+            "type": "parental_type"
+        },
+        "1349005": {
+            "name": "Shakbut bin Sultan Al-Nahyan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.99,
+            "picture": "UAE_M_bin_Sultan_al-Nahyan_Shakbut",
+            "start_date": "1928-01-01",
+            "death_date": "1966-08-08",
+            "type": "traditionalist_type"
+        },
+        "1349009": {
+            "name": "Khalifa bin Zayed Al Nahyan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.98,
+            "picture": "UAE_M_Al_Nahyan_Khalifa",
+            "start_date": "1969-01-25",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1349010": {
+            "name": "Sultan bin Khalifa Al Nahyan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.97,
+            "picture": "UAE_M_Al_Nahyan_Sultan",
+            "start_date": "1986-01-01",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1349001": {
+            "name": "Maktoum bin Rashid",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "UAE_M_Rashid_Maktoum",
+            "start_date": "1971-12-09",
+            "death_date": "2006-01-04",
+            "type": "traditionalist_type"
+        },
+        "1349002": {
+            "name": "Rashid bin Saeed",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "UAE_M_Saeed_Rashid",
+            "start_date": "1946-01-01",
+            "death_date": "1990-10-07",
+            "type": "reformer_type"
+        },
+        "1349004": {
+            "name": "John Fieldhouse",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "UAE_M_Fieldhouse_John",
+            "start_date": "1946-01-01",
+            "death_date": "1992-02-17",
+            "type": "traditionalist_type"
+        },
+        "1349006": {
+            "name": "Khalifa bin Yousef",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "UAE_M_bin_Yousef_Khalifa",
+            "start_date": "1928-01-01",
+            "death_date": "1971-08-13",
+            "type": "visionary_type"
+        },
+        "1349007": {
+            "name": "Amjad Hakim Nagi el-Amin",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "UAE_M_Nagi_el-Amin_Amjad_H",
+            "start_date": "1961-02-02",
+            "death_date": "1992-08-16",
+            "type": "supreme_leader"
+        },
+        "1349008": {
+            "name": "Ahmed Ibrahim",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "UAE_M_Ibrahim_Ahmed",
+            "start_date": "1968-05-03",
+            "death_date": "1996-08-16",
+            "type": "visionary_type"
+        },
+        "1349011": {
+            "name": "Saeed bin Maktoum bin Hasher Al Maktoum",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "UAE_M_Al_Maktoum_Saeed_M_H",
+            "start_date": "1946-01-01",
+            "death_date": "1958-09-09",
+            "type": "traditionalist_type"
+        },
+        "1349012": {
+            "name": "Rashid bin Saeed Al Maktoum",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "UAE_M_Al_Maktoum_Rashid_S",
+            "start_date": "1946-01-01",
+            "death_date": "1990-10-07",
+            "type": "ambitious_type"
+        },
+        "1349013": {
+            "name": "Maktoum bin Rashid Al Maktoum",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "UAE_M_Al_Maktoum_Maktoum_R",
+            "start_date": "1943-08-15",
+            "death_date": "2006-01-04",
+            "type": "ambitious_type"
+        }
+    }
+}

@@ -1,1 +1,292 @@
-{"color": [184, 199, 232], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1174001": {"name": "George VI", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_George", "head_of_state": "parental_type", "start_date": "1936-09-11", "death_date": "1952-02-06", "base": 1181001}, "1174002": {"name": "Elizabeth II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_Elizabeth", "head_of_state": "traditionalist_type", "start_date": "1952-02-06", "death_date": "2300-05-12", "base": 1181002}, "1174300": {"name": "George VII", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.99, "picture": "ENG_M_George_VII", "head_of_state": "parental_type", "start_date": "1966-11-14", "death_date": "2300-01-01", "base": 1181196}, "1174301": {"name": "Andrew I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.98, "picture": "ENG_M_Andrew_I", "head_of_state": "fortunate_type", "start_date": "1978-02-19", "death_date": "2300-01-01", "base": 1181197}, "1174302": {"name": "Edward IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.97, "picture": "ENG_M_Edward_IX", "head_of_state": "courteous_figure", "start_date": "1982-03-10", "death_date": "2300-01-01", "base": 1181198}, "1174304": {"name": "Anne II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.96, "picture": "ENG_M_Anne_II", "head_of_state": "courteous_figure", "start_date": "1968-08-15", "death_date": "2300-01-01", "base": 1181209}, "1174305": {"name": "Margaret I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.95, "picture": "ENG_M_Margaret_I", "head_of_state": "controversial_figure", "start_date": "1952-03-01", "death_date": "2002-02-09", "base": 1181210}, "1174306": {"name": "David III", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.94, "picture": "ENG_M_David_III", "head_of_state": "courteous_figure", "start_date": "1979-11-03", "death_date": "2300-01-01", "base": 1181211}, "1174307": {"name": "Sarah I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.93, "picture": "ENG_M_Sarah_I", "head_of_state": "courteous_figure", "start_date": "1982-05-01", "death_date": "2300-01-01", "base": 1181212}, "1174308": {"name": "Henry IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.92, "picture": "ENG_M_Henry_IX", "head_of_state": "courteous_figure", "start_date": "1946-01-01", "death_date": "1974-06-10", "base": 1181213}, "1174309": {"name": "William V", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.91, "picture": "ENG_M_William_V", "head_of_state": "courteous_figure", "start_date": "1959-12-18", "death_date": "1972-08-28", "base": 1181214}, "1174310": {"name": "Richard IV", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "ENG_M_Richard_IV", "head_of_state": "courteous_figure", "start_date": "1962-08-26", "death_date": "2300-01-01", "base": 1181215}, "1174311": {"name": "Robert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Robert_I_Bayern", "head_of_state": "traditionalist_type", "start_date": "1919-02-03", "death_date": "1955-08-02", "base": 1181199}, "1174312": {"name": "Albert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Albert_I_Bayern", "head_of_state": "fortunate_type", "start_date": "1955-08-02", "death_date": "1996-07-08", "base": 1181200}, "1174003": {"name": "Sir Louis Cools-Lartigue", "ideology": "social_democrat_idolg", "loyalty": 0.9, "picture": "DMN_M_Cools-Lartigue_Louis", "head_of_state": "traditionalist_type", "start_date": "1978-11-03", "death_date": "1979-06-16"}, "1174004": {"name": "Fred Degazon", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "DMN_M_Degazon_Fred", "head_of_state": "lethargic_type", "start_date": "1979-01-16", "death_date": "1980-01-29"}, "1174005": {"name": "Jenner B. M. Armour", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "DMN_M_Armour_Jenner", "head_of_state": "administrator_type", "start_date": "1980-01-29", "death_date": "1980-02-25"}, "1174006": {"name": "Aurelius Marie", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "DMN_M_Marie_Aurelius", "head_of_state": "bureaucrat_type", "start_date": "1980-02-25", "death_date": "1983-12-19"}, "1174007": {"name": "Sir Clarence Seignoret", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "DMN_M_Seignoret_Clarence", "head_of_state": "reputable_type", "start_date": "1983-12-19", "death_date": "1993-10-25"}, "1174008": {"name": "Frank Baron", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "DMN_M_Baron_Frank", "head_of_government": "bureaucrat_type", "start_date": "1957-01-01", "death_date": "1961-01-21"}, "1174009": {"name": "Edward Oliver LeBlanc", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "DMN_M_LeBlanc_Edward_O", "head_of_government": "moral_type", "start_date": "1961-01-21", "death_date": "1974-07-27"}, "1174010": {"name": "Patrick John", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "DMN_M_John_Patrick", "head_of_government": "ambitious_type", "start_date": "1974-07-27", "death_date": "1979-06-25"}, "1174011": {"name": "Oliver Seraphin", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "DMN_M_Seraphin_Oliver", "head_of_government": "administrator_type", "start_date": "1979-06-25", "death_date": "1980-07-21"}, "1174012": {"name": "Eugenia Charles", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "DMN_M_Charles_Eugenia", "head_of_government": "iron_lady", "start_date": "1980-07-21", "death_date": "1995-06-14"}}}
+{
+    "color": [
+        184,
+        199,
+        232
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1174001": {
+            "name": "George VI",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
+        },
+        "1174002": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "1174300": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "1174301": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "1174302": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1174304": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1174305": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "1174306": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1174307": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1174308": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "1174309": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "1174310": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1174311": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
+        "1174312": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "1174003": {
+            "name": "Sir Louis Cools-Lartigue",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "DMN_M_Cools-Lartigue_Louis",
+            "start_date": "1978-11-03",
+            "death_date": "1979-06-16",
+            "type": "traditionalist_type"
+        },
+        "1174004": {
+            "name": "Fred Degazon",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_Degazon_Fred",
+            "start_date": "1979-01-16",
+            "death_date": "1980-01-29",
+            "type": "lethargic_type"
+        },
+        "1174005": {
+            "name": "Jenner B. M. Armour",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_Armour_Jenner",
+            "start_date": "1980-01-29",
+            "death_date": "1980-02-25",
+            "type": "administrator_type"
+        },
+        "1174006": {
+            "name": "Aurelius Marie",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_Marie_Aurelius",
+            "start_date": "1980-02-25",
+            "death_date": "1983-12-19",
+            "type": "bureaucrat_type"
+        },
+        "1174007": {
+            "name": "Sir Clarence Seignoret",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_Seignoret_Clarence",
+            "start_date": "1983-12-19",
+            "death_date": "1993-10-25",
+            "type": "reputable_type"
+        },
+        "1174008": {
+            "name": "Frank Baron",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_Baron_Frank",
+            "start_date": "1957-01-01",
+            "death_date": "1961-01-21",
+            "type": "bureaucrat_type"
+        },
+        "1174009": {
+            "name": "Edward Oliver LeBlanc",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_LeBlanc_Edward_O",
+            "start_date": "1961-01-21",
+            "death_date": "1974-07-27",
+            "type": "moral_type"
+        },
+        "1174010": {
+            "name": "Patrick John",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_John_Patrick",
+            "start_date": "1974-07-27",
+            "death_date": "1979-06-25",
+            "type": "ambitious_type"
+        },
+        "1174011": {
+            "name": "Oliver Seraphin",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_Seraphin_Oliver",
+            "start_date": "1979-06-25",
+            "death_date": "1980-07-21",
+            "type": "administrator_type"
+        },
+        "1174012": {
+            "name": "Eugenia Charles",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_Charles_Eugenia",
+            "start_date": "1980-07-21",
+            "death_date": "1995-06-14",
+            "type": "iron_lady"
+        }
+    }
+}

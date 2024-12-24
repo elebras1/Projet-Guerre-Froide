@@ -1,361 +1,347 @@
 {
-  "color": [
-    196,
-    122,
-    77
-  ],
-  "graphical_culture": "Generic",
-  "default_templates": {
-    "SOV_guards_airborne_division": [
-      "air_cav_brigade",
-      "air_cav_brigade",
-      "air_cav_brigade",
-      "air_cav_brigade"
+    "color": [
+        196,
+        122,
+        77
     ],
-    "SOV_tank_division": [
-      "armor_brigade",
-      "armor_brigade",
-      "armor_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "SOV_cavalry_division": [
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "sp_artillery_brigade"
-    ],
-    "SOV_guards_mechanized_division": [
-      "heavy_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "light_mechanized_brigade",
-      "armor_brigade",
-      "sp_artillery_brigade"
-    ],
-    "SOV_mechanized_division": [
-      "light_mechanized_brigade",
-      "light_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "SOV_motor_rifle_division": [
-      "motorized_brigade",
-      "light_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "SOV_guards_rifle_division": [
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "artillery_brigade"
-    ],
-    "SOV_marine_division": [
-      "marine_brigade",
-      "marine_brigade",
-      "marine_brigade",
-      "marine_brigade"
-    ],
-    "SOV_mountain_division": [
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade"
-    ],
-    "SOV_rifle_division": [
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "artillery_brigade"
-    ]
-  },
-  "unit_names": {},
-  "ministers": {
-    "1249000": {
-      "name": "Metodija Andonov-Cento",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Andonov-Cento_M",
-      "head_of_state": "democrat_type",
-      "start_date": "1945-01-01",
-      "death_date": "1946-03-15"
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "SOV_guards_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "SOV_tank_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_motor_rifle_division": [
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "SOV_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "SOV_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "SOV_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
     },
-    "1249001": {
-      "name": "Dimitar Nestorov",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Nestorov_D",
-      "head_of_state": "democrat_type",
-      "start_date": "1945-01-01",
-      "death_date": "1946-12-30"
-    },
-    "1249002": {
-      "name": "Blagoja Fotev",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Fotev_B",
-      "head_of_state": "democrat_type",
-      "start_date": "1947-01-01",
-      "death_date": "1951-01-04"
-    },
-    "1249003": {
-      "name": "Vidoe Smilevski",
-      "ideology": "communist_idolg",
-      "loyalty": 0.9,
-      "picture": "MCD_M_Smilevski_V",
-      "head_of_state": "democrat_type",
-      "start_date": "1951-01-04",
-      "death_date": "1979-10-31"
-    },
-    "1249004": {
-      "name": "Dime Stojanov",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Stojanov_D",
-      "head_of_state": "democrat_type",
-      "start_date": "1953-01-01",
-      "death_date": "1953-12-19"
-    },
-    "1249005": {
-      "name": "Mito Had�ivasiliev",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Had�ivasiliev_M",
-      "head_of_state": "democrat_type",
-      "start_date": "1967-05-12",
-      "death_date": "1968-08-01"
-    },
-    "1249006": {
-      "name": "Nikola Mincev",
-      "ideology": "communist_idolg",
-      "loyalty": 0.8,
-      "picture": "MCD_M_Mincev_N",
-      "head_of_state": "democrat_type",
-      "head_of_government": "democrat_type",
-      "start_date": "1965-01-01",
-      "death_date": "1974-05-06"
-    },
-    "1249007": {
-      "name": "Angel Cemerski",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Cemerski_A",
-      "head_of_state": "democrat_type",
-      "start_date": "1982-04-29",
-      "death_date": "1983-04-29"
-    },
-    "1249008": {
-      "name": "Blagoja Taleski",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Taleski_B",
-      "head_of_state": "democrat_type",
-      "start_date": "1983-04-29",
-      "death_date": "1984-04-29"
-    },
-    "1249009": {
-      "name": "Tome Bukleski",
-      "ideology": "communist_idolg",
-      "loyalty": 0.9,
-      "picture": "MCD_M_Bukleski_T",
-      "head_of_state": "democrat_type",
-      "start_date": "1984-04-29",
-      "death_date": "1985-04-26"
-    },
-    "1249010": {
-      "name": "Vanco Apostolski",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Apostolski_V",
-      "head_of_state": "democrat_type",
-      "start_date": "1985-04-26",
-      "death_date": "1986-06-01"
-    },
-    "1249011": {
-      "name": "Dragoljub Stavrev",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Stavrev_D",
-      "head_of_state": "democrat_type",
-      "head_of_government": "democrat_type",
-      "start_date": "1982-04-29",
-      "death_date": "1988-05-01"
-    },
-    "1249012": {
-      "name": "Jezdimir Bogdanski",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Bogdanski_J",
-      "head_of_state": "democrat_type",
-      "start_date": "1988-05-01",
-      "death_date": "1990-04-28"
-    },
-    "1249013": {
-      "name": "Vladimir Mitkov",
-      "ideology": "communist_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Mitkov_Vladimir",
-      "head_of_state": "democrat_type",
-      "start_date": "1990-04-28",
-      "death_date": "1991-01-27"
-    },
-    "1249014": {
-      "name": "Kiro Gligorov",
-      "ideology": "social_democrat_idolg",
-      "loyalty": 1,
-      "picture": "MCD_M_Gligorov_K",
-      "head_of_state": "democrat_type",
-      "start_date": "1991-01-27",
-      "death_date": "1999-11-19"
-    },
-    "1249100": {
-      "name": "Lazar Kolisevski",
-      "ideology": "communist_idolg",
-      "loyalty": 0.8,
-      "picture": "MCD_M_Kolisevski_lazar",
-      "head_of_state": "democrat_type",
-      "head_of_government": "democrat_type",
-      "start_date": "1945-01-01",
-      "death_date": "1980-05-15"
-    },
-    "1249101": {
-      "name": "Ljupco Arsov",
-      "ideology": "communist_idolg",
-      "loyalty": 0.9,
-      "picture": "MCD_M_Arsov_Ljupco",
-      "head_of_state": "democrat_type",
-      "head_of_government": "democrat_type",
-      "start_date": "1953-12-19",
-      "death_date": "1961-06-26"
-    },
-    "1249102": {
-      "name": "Aleksandar Grlickov",
-      "ideology": "communist_idolg",
-      "loyalty": 0.9,
-      "picture": "MCD_M_Grlickov_A",
-      "head_of_government": "democrat_type",
-      "start_date": "1961-06-26",
-      "death_date": "1965-01-01"
-    },
-    "1249104": {
-      "name": "Ksente Bogoev",
-      "ideology": "communist_idolg",
-      "loyalty": 0.9,
-      "picture": "MCD_M_Bogoev_Ksente",
-      "head_of_government": "democrat_type",
-      "start_date": "1968-01-01",
-      "death_date": "1974-03-01"
-    },
-    "1249105": {
-      "name": "Blagoja Popov",
-      "ideology": "communist_idolg",
-      "loyalty": 0.9,
-      "picture": "MCD_M_Popov_B",
-      "head_of_government": "democrat_type",
-      "start_date": "1974-03-01",
-      "death_date": "1982-04-29"
-    },
-    "1249106": {
-      "name": "Gligorije Gogovski",
-      "ideology": "communist_idolg",
-      "loyalty": 0.9,
-      "picture": "MCD_M_Gogovski_G",
-      "head_of_government": "democrat_type",
-      "start_date": "1986-06-01",
-      "death_date": "1991-01-27"
-    },
-    "1249107": {
-      "name": "Nikola Kljusev",
-      "ideology": "social_cons_idolg",
-      "loyalty": 0.9,
-      "picture": "MCD_M_Kljusev_Nikola",
-      "head_of_government": "democrat_type",
-      "start_date": "1988-01-01",
-      "death_date": "1992-08-17"
-    },
-    "1249200": {
-      "name": "Vanco Mihailov",
-      "ideology": "fascistic_idolg",
-      "loyalty": 0.5,
-      "picture": "MCD_M_Mihailov_Vanco",
-      "head_of_state": "hardliner_type",
-      "head_of_government": "hardliner_type",
-      "start_date": "1924-08-31",
-      "death_date": "1990-09-05"
-    },
-    "1249201": {
-      "name": "Gula I Cesneki",
-      "ideology": "social_cons_idolg",
-      "moral_leader": true,
-      "loyalty": 0.5,
-      "picture": "MCD_M_Cesneki_Gula_I",
-      "head_of_state": "fortunate_type",
-      "start_date": "1943-08-01",
-      "death_date": "1970-01-01"
-    },
-    "1249202": {
-      "name": "Mihail I Cesneki",
-      "ideology": "social_cons_idolg",
-      "moral_leader": true,
-      "loyalty": 0.5,
-      "picture": "MCD_M_Cesneki_Mihail_I",
-      "head_of_state": "reputable_type",
-      "start_date": "1970-01-01",
-      "death_date": "1975-01-01"
-    },
-    "1249203": {
-      "name": "Ladislav I Cesneki",
-      "ideology": "social_cons_idolg",
-      "moral_leader": true,
-      "loyalty": 0.5,
-      "picture": "MCD_M_Cesneki_Ladislav_I",
-      "head_of_state": "controversial_figure",
-      "start_date": "1975-01-01",
-      "death_date": "2300-01-01"
-    },
-    "1249204": {
-      "name": "Dragan Bogdanovski",
-      "ideology": "social_cons_idolg",
-      "loyalty": 0.5,
-      "picture": "MCD_M_Bogdanovski_Dragan",
-      "head_of_state": "ambitious_type",
-      "head_of_government": "ambitious_type",
-      "start_date": "1950-01-01",
-      "death_date": "1998-01-01"
-    },
-    "1249205": {
-      "name": "Mihajlo Apostolski",
-      "ideology": "communist_idolg",
-      "loyalty": 0.5,
-      "picture": "MCD_M_Apostolski_Mihajlo",
-      "head_of_state": "administrator_type",
-      "head_of_government": "administrator_type",
-      "start_date": "1944-08-01",
-      "death_date": "1987-08-07"
-    },
-    "1249206": {
-      "name": "Panko Brashnarov",
-      "ideology": "maoist_idolg",
-      "loyalty": 0.5,
-      "picture": "YUG_M_Brashnarov_Panko",
-      "head_of_state": "dictator_type",
-      "head_of_government": "dictator_type",
-      "start_date": "1919-01-01",
-      "death_date": "1951-05-05",
-      "base": 1249206
-    },
-    "1249207": {
-      "name": "Venko Markovski",
-      "ideology": "maoist_idolg",
-      "loyalty": 0.5,
-      "picture": "YUG_M_Markovski_Venko",
-      "head_of_state": "dictator_type",
-      "head_of_government": "dictator_type",
-      "start_date": "1943-01-01",
-      "death_date": "1988-01-07",
-      "base": 1139114
+    "unit_names": {},
+    "ministers": {
+        "1249000": {
+            "name": "Metodija Andonov-Cento",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Andonov-Cento_M",
+            "start_date": "1945-01-01",
+            "death_date": "1946-03-15",
+            "type": "democrat_type"
+        },
+        "1249001": {
+            "name": "Dimitar Nestorov",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Nestorov_D",
+            "start_date": "1945-01-01",
+            "death_date": "1946-12-30",
+            "type": "democrat_type"
+        },
+        "1249002": {
+            "name": "Blagoja Fotev",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Fotev_B",
+            "start_date": "1947-01-01",
+            "death_date": "1951-01-04",
+            "type": "democrat_type"
+        },
+        "1249003": {
+            "name": "Vidoe Smilevski",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "MCD_M_Smilevski_V",
+            "start_date": "1951-01-04",
+            "death_date": "1979-10-31",
+            "type": "democrat_type"
+        },
+        "1249004": {
+            "name": "Dime Stojanov",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Stojanov_D",
+            "start_date": "1953-01-01",
+            "death_date": "1953-12-19",
+            "type": "democrat_type"
+        },
+        "1249005": {
+            "name": "Mito Had�ivasiliev",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Had�ivasiliev_M",
+            "start_date": "1967-05-12",
+            "death_date": "1968-08-01",
+            "type": "democrat_type"
+        },
+        "1249006": {
+            "name": "Nikola Mincev",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "MCD_M_Mincev_N",
+            "start_date": "1965-01-01",
+            "death_date": "1974-05-06",
+            "type": "democrat_type"
+        },
+        "1249007": {
+            "name": "Angel Cemerski",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Cemerski_A",
+            "start_date": "1982-04-29",
+            "death_date": "1983-04-29",
+            "type": "democrat_type"
+        },
+        "1249008": {
+            "name": "Blagoja Taleski",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Taleski_B",
+            "start_date": "1983-04-29",
+            "death_date": "1984-04-29",
+            "type": "democrat_type"
+        },
+        "1249009": {
+            "name": "Tome Bukleski",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "MCD_M_Bukleski_T",
+            "start_date": "1984-04-29",
+            "death_date": "1985-04-26",
+            "type": "democrat_type"
+        },
+        "1249010": {
+            "name": "Vanco Apostolski",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Apostolski_V",
+            "start_date": "1985-04-26",
+            "death_date": "1986-06-01",
+            "type": "democrat_type"
+        },
+        "1249011": {
+            "name": "Dragoljub Stavrev",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Stavrev_D",
+            "start_date": "1982-04-29",
+            "death_date": "1988-05-01",
+            "type": "democrat_type"
+        },
+        "1249012": {
+            "name": "Jezdimir Bogdanski",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Bogdanski_J",
+            "start_date": "1988-05-01",
+            "death_date": "1990-04-28",
+            "type": "democrat_type"
+        },
+        "1249013": {
+            "name": "Vladimir Mitkov",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Mitkov_Vladimir",
+            "start_date": "1990-04-28",
+            "death_date": "1991-01-27",
+            "type": "democrat_type"
+        },
+        "1249014": {
+            "name": "Kiro Gligorov",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1,
+            "picture": "MCD_M_Gligorov_K",
+            "start_date": "1991-01-27",
+            "death_date": "1999-11-19",
+            "type": "democrat_type"
+        },
+        "1249100": {
+            "name": "Lazar Kolisevski",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "MCD_M_Kolisevski_lazar",
+            "start_date": "1945-01-01",
+            "death_date": "1980-05-15",
+            "type": "democrat_type"
+        },
+        "1249101": {
+            "name": "Ljupco Arsov",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "MCD_M_Arsov_Ljupco",
+            "start_date": "1953-12-19",
+            "death_date": "1961-06-26",
+            "type": "democrat_type"
+        },
+        "1249102": {
+            "name": "Aleksandar Grlickov",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "MCD_M_Grlickov_A",
+            "start_date": "1961-06-26",
+            "death_date": "1965-01-01",
+            "type": "democrat_type"
+        },
+        "1249104": {
+            "name": "Ksente Bogoev",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "MCD_M_Bogoev_Ksente",
+            "start_date": "1968-01-01",
+            "death_date": "1974-03-01",
+            "type": "democrat_type"
+        },
+        "1249105": {
+            "name": "Blagoja Popov",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "MCD_M_Popov_B",
+            "start_date": "1974-03-01",
+            "death_date": "1982-04-29",
+            "type": "democrat_type"
+        },
+        "1249106": {
+            "name": "Gligorije Gogovski",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "MCD_M_Gogovski_G",
+            "start_date": "1986-06-01",
+            "death_date": "1991-01-27",
+            "type": "democrat_type"
+        },
+        "1249107": {
+            "name": "Nikola Kljusev",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MCD_M_Kljusev_Nikola",
+            "start_date": "1988-01-01",
+            "death_date": "1992-08-17",
+            "type": "democrat_type"
+        },
+        "1249200": {
+            "name": "Vanco Mihailov",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "MCD_M_Mihailov_Vanco",
+            "start_date": "1924-08-31",
+            "death_date": "1990-09-05",
+            "type": "hardliner_type"
+        },
+        "1249201": {
+            "name": "Gula I Cesneki",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MCD_M_Cesneki_Gula_I",
+            "start_date": "1943-08-01",
+            "death_date": "1970-01-01",
+            "type": "fortunate_type"
+        },
+        "1249202": {
+            "name": "Mihail I Cesneki",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MCD_M_Cesneki_Mihail_I",
+            "start_date": "1970-01-01",
+            "death_date": "1975-01-01",
+            "type": "reputable_type"
+        },
+        "1249203": {
+            "name": "Ladislav I Cesneki",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MCD_M_Cesneki_Ladislav_I",
+            "start_date": "1975-01-01",
+            "death_date": "2300-01-01",
+            "type": "controversial_figure"
+        },
+        "1249204": {
+            "name": "Dragan Bogdanovski",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "MCD_M_Bogdanovski_Dragan",
+            "start_date": "1950-01-01",
+            "death_date": "1998-01-01",
+            "type": "ambitious_type"
+        },
+        "1249205": {
+            "name": "Mihajlo Apostolski",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MCD_M_Apostolski_Mihajlo",
+            "start_date": "1944-08-01",
+            "death_date": "1987-08-07",
+            "type": "administrator_type"
+        },
+        "1249206": {
+            "name": "Panko Brashnarov",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Brashnarov_Panko",
+            "start_date": "1919-01-01",
+            "death_date": "1951-05-05",
+            "type": "dictator_type"
+        },
+        "1249207": {
+            "name": "Venko Markovski",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Markovski_Venko",
+            "start_date": "1943-01-01",
+            "death_date": "1988-01-07",
+            "type": "dictator_type"
+        }
     }
-  }
 }

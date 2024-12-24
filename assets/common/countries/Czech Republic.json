@@ -1,1 +1,239 @@
-{"color": [76, 97, 121], "graphical_culture": "Generic", "default_templates": {"SOV_guards_airborne_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "SOV_tank_division": ["armor_brigade", "armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "SOV_guards_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "SOV_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_motor_rifle_division": ["motorized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_guards_rifle_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "SOV_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "SOV_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "SOV_rifle_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1169001": {"name": "Edvard Benes", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "CZE_M_Benes_Edvard", "head_of_state": "administrator_type", "start_date": "1945-01-01", "death_date": "1948-06-15", "base": 1169001}, "1169002": {"name": "Zdenek Fierlinger", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "CZE_M_Fierlinger_Zdenek", "head_of_government": "bureaucrat_type", "start_date": "1945-01-01", "death_date": "1946-07-02", "base": 1169002}, "1169003": {"name": "Klement Gottwald", "ideology": "social_democrat_idolg", "loyalty": 0.9, "picture": "CZE_M_Gottwald_Klement", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1946-07-02", "death_date": "1948-06-15", "base": 1168003}, "1169020": {"name": "Klement Gottwald", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CZE_M_Gottwald_Klement", "head_of_state": "hardliner_type", "start_date": "1948-06-15", "death_date": "1953-03-14", "base": 1168003}, "1169005": {"name": "Anton\u00edn Z\u00e1potock\u00fd", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CZE_M_Zapotocky_Antonin", "head_of_government": "bureaucrat_type", "start_date": "1948-06-14", "death_date": "1957-11-13", "base": 1169005}, "1169007": {"name": "Viliam Sirok\u00fd", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CZE_M_Siroky_Viliam", "head_of_government": "bureaucrat_type", "start_date": "1953-03-14", "death_date": "1963-09-20", "base": 1169007}, "1169008": {"name": "Anton\u00edn Novotn\u00fd", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CZE_M_Novotny_Antonin", "head_of_state": "hardliner_type", "start_date": "1957-11-13", "death_date": "1968-03-22", "base": 1169008}, "1169009": {"name": "Jozef Len\u00e1rt", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CZE_M_Lenart_Jozef", "head_of_government": "bureaucrat_type", "start_date": "1963-09-20", "death_date": "1968-04-08", "base": 1169009}, "1169010": {"name": "Alexander Dubcek", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CZE_M_Dubcek_Alexander", "head_of_state": "reformer_type", "start_date": "1968-01-05", "death_date": "1969-04-17", "base": 1169010}, "1169011": {"name": "Oldrich Cern\u00edk", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CZE_M_Cernik_Oldrich", "head_of_government": "reformer_type", "start_date": "1968-04-08", "death_date": "1970-01-28", "base": 1169011}, "1169012": {"name": "Gust\u00e1v Hus\u00e1k", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CZE_M_Husak_Gustav", "head_of_state": "hardliner_type", "start_date": "1969-04-17", "death_date": "1987-12-13", "base": 1169012}, "1169013": {"name": "Lubom\u00edr Strougal", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CZE_M_Strougal_Lubomir", "head_of_government": "autocrat_type", "start_date": "1970-01-28", "death_date": "1988-10-12", "base": 1169013}, "1169014": {"name": "Milos Jakes", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CZE_M_Jakes_Milos", "head_of_state": "reformer_type", "start_date": "1987-12-13", "death_date": "1991-12-31", "base": 1169014}, "1169015": {"name": "Ladislav Adamec", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "CZE_M_Adamec_Ladislav", "head_of_government": "democrat_type", "start_date": "1988-10-12", "death_date": "1991-12-31", "base": 1169015}, "1169016": {"name": "V\u00e1clav Havel", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "CZE_M_Havel_Vaclav", "head_of_state": "reformer_type", "start_date": "1987-12-01", "death_date": "1991-12-31", "base": 1169016}, "1169017": {"name": "Mari\u00e1n Calfa", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "CZE_M_Calfa_Marian", "head_of_government": "reformer_type", "start_date": "1987-12-01", "death_date": "1991-12-31", "base": 1169017}, "1169018": {"name": "Karel IV ze Schwarzenberga", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "CZE_M_Karel_IV", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1918-01-01", "death_date": "1986-04-09", "base": 1169018}, "1169019": {"name": "Karel V ze Schwarzenberga", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "CZE_M_Karel_V", "head_of_state": "courteous_figure", "head_of_government": "courteous_figure", "start_date": "1986-04-09", "death_date": "2300-01-01", "base": 1169019}}}
+{
+    "color": [
+        76,
+        97,
+        121
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "SOV_guards_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "SOV_tank_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_motor_rifle_division": [
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "SOV_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "SOV_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "SOV_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1169001": {
+            "name": "Edvard Benes",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Benes_Edvard",
+            "start_date": "1945-01-01",
+            "death_date": "1948-06-15",
+            "type": "administrator_type"
+        },
+        "1169002": {
+            "name": "Zdenek Fierlinger",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Fierlinger_Zdenek",
+            "start_date": "1945-01-01",
+            "death_date": "1946-07-02",
+            "type": "bureaucrat_type"
+        },
+        "1169003": {
+            "name": "Klement Gottwald",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "CZE_M_Gottwald_Klement",
+            "start_date": "1946-07-02",
+            "death_date": "1948-06-15",
+            "type": "hardliner_type"
+        },
+        "1169020": {
+            "name": "Klement Gottwald",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Gottwald_Klement",
+            "start_date": "1948-06-15",
+            "death_date": "1953-03-14",
+            "type": "hardliner_type"
+        },
+        "1169005": {
+            "name": "Antonín Zápotocký",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Zapotocky_Antonin",
+            "start_date": "1948-06-14",
+            "death_date": "1957-11-13",
+            "type": "bureaucrat_type"
+        },
+        "1169007": {
+            "name": "Viliam Siroký",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Siroky_Viliam",
+            "start_date": "1953-03-14",
+            "death_date": "1963-09-20",
+            "type": "bureaucrat_type"
+        },
+        "1169008": {
+            "name": "Antonín Novotný",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Novotny_Antonin",
+            "start_date": "1957-11-13",
+            "death_date": "1968-03-22",
+            "type": "hardliner_type"
+        },
+        "1169009": {
+            "name": "Jozef Lenárt",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Lenart_Jozef",
+            "start_date": "1963-09-20",
+            "death_date": "1968-04-08",
+            "type": "bureaucrat_type"
+        },
+        "1169010": {
+            "name": "Alexander Dubcek",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Dubcek_Alexander",
+            "start_date": "1968-01-05",
+            "death_date": "1969-04-17",
+            "type": "reformer_type"
+        },
+        "1169011": {
+            "name": "Oldrich Cerník",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Cernik_Oldrich",
+            "start_date": "1968-04-08",
+            "death_date": "1970-01-28",
+            "type": "reformer_type"
+        },
+        "1169012": {
+            "name": "Gustáv Husák",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Husak_Gustav",
+            "start_date": "1969-04-17",
+            "death_date": "1987-12-13",
+            "type": "hardliner_type"
+        },
+        "1169013": {
+            "name": "Lubomír Strougal",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Strougal_Lubomir",
+            "start_date": "1970-01-28",
+            "death_date": "1988-10-12",
+            "type": "autocrat_type"
+        },
+        "1169014": {
+            "name": "Milos Jakes",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Jakes_Milos",
+            "start_date": "1987-12-13",
+            "death_date": "1991-12-31",
+            "type": "reformer_type"
+        },
+        "1169015": {
+            "name": "Ladislav Adamec",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Adamec_Ladislav",
+            "start_date": "1988-10-12",
+            "death_date": "1991-12-31",
+            "type": "democrat_type"
+        },
+        "1169016": {
+            "name": "Václav Havel",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Havel_Vaclav",
+            "start_date": "1987-12-01",
+            "death_date": "1991-12-31",
+            "type": "reformer_type"
+        },
+        "1169017": {
+            "name": "Marián Calfa",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Calfa_Marian",
+            "start_date": "1987-12-01",
+            "death_date": "1991-12-31",
+            "type": "reformer_type"
+        },
+        "1169018": {
+            "name": "Karel IV ze Schwarzenberga",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Karel_IV",
+            "start_date": "1918-01-01",
+            "death_date": "1986-04-09",
+            "type": "courageous_type"
+        },
+        "1169019": {
+            "name": "Karel V ze Schwarzenberga",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Karel_V",
+            "start_date": "1986-04-09",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        }
+    }
+}

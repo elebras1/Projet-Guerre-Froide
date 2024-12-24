@@ -1,1 +1,248 @@
-{"color": [69, 69, 69], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1356000": {"name": "Pius XII", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "VAT_M_Pius_XII", "head_of_state": "controversial_figure", "start_date": "1939-03-02", "death_date": "1958-10-09"}, "1356001": {"name": "John XXIII", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "VAT_M_John_XXIII", "head_of_state": "moral_type", "start_date": "1958-10-09", "death_date": "1963-06-03"}, "1356002": {"name": "Paul VI", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "VAT_M_Paul_VI", "head_of_state": "reformer_type", "start_date": "1963-06-03", "death_date": "1978-08-06"}, "1356003": {"name": "John Paul I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "VAT_M_Paul_I", "head_of_state": "lethargic_type", "start_date": "1978-08-06", "death_date": "1978-09-28"}, "1356004": {"name": "John Paul II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "VAT_M_Paul_II", "head_of_state": "controversial_figure", "start_date": "1978-09-28", "death_date": "2005-04-02"}, "1356005": {"name": "Nicola Canali", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "VAT_M_Canali_Nicola", "head_of_government": "moral_type", "start_date": "1939-03-20", "death_date": "1961-08-03"}, "1356006": {"name": "Amleto Giovanni Cicognani", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "VAT_M_Cicognani_Amleto_G", "head_of_government": "controversial_figure", "start_date": "1961-08-03", "death_date": "1969-04-30"}, "1356007": {"name": "Jean-Marie Villot", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "VAT_M_Villot_Jean-Marie", "head_of_government": "loyal_type", "start_date": "1969-04-30", "death_date": "1979-03-09"}, "1356008": {"name": "Agostino Casaroli", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "VAT_M_Casaroli_Agostino", "head_of_government": "courteous_figure", "start_date": "1979-03-09", "death_date": "1984-04-08"}, "1356009": {"name": "Sebastiano Baggio", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "VAT_M_Baggio_Sebastiano", "head_of_government": "moral_type", "start_date": "1984-04-08", "death_date": "1990-10-31"}, "1356010": {"name": "Rosalio Jos\u00e9 Castillo Lara", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "VAT_M_Lara_Rosalio_J_C", "head_of_government": "religious_type", "start_date": "1990-10-31", "death_date": "1997-10-14"}, "1356011": {"name": "Valerio Valeri", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "VAT_M_Valeri_Valerio", "head_of_state": "controversial_figure", "start_date": "1958-10-09", "death_date": "1963-07-22"}, "1356012": {"name": "Alfredo Ottaviani", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "VAT_M_Ottaviani_Alfredo", "head_of_state": "hardliner_type", "start_date": "1958-10-09", "death_date": "1979-08-03"}, "1356013": {"name": "Ernesto Ruffini", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "VAT_M_Ruffini_Ernesto", "head_of_state": "extremist_type", "start_date": "1958-10-09", "death_date": "1967-06-11"}, "1356014": {"name": "Giuseppe Siri", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "VAT_M_Siri_Giuseppe", "head_of_state": "traditionalist_type", "start_date": "1958-10-09", "death_date": "1989-05-02"}, "1356015": {"name": "Leo Joseph Suenens", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "VAT_M_Suenens_Leo_J", "head_of_state": "liberal_type", "start_date": "1963-06-03", "death_date": "1996-05-06"}, "1356016": {"name": "Franz K\u00f6nig", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "VAT_M_Konig_Franz", "head_of_state": "liberal_type", "start_date": "1963-06-03", "death_date": "2004-03-13"}, "1356017": {"name": "Corrado Ursi", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "VAT_M_Ursi_Corrado", "head_of_state": "religious_type", "start_date": "1978-08-06", "death_date": "2003-08-29"}, "1356018": {"name": "Giovanni Benelli", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "VAT_M_Benelli_Giovanni", "head_of_state": "autocrat_type", "start_date": "1978-08-06", "death_date": "1982-10-26"}}}
+{
+    "color": [
+        69,
+        69,
+        69
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1356000": {
+            "name": "Pius XII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "VAT_M_Pius_XII",
+            "start_date": "1939-03-02",
+            "death_date": "1958-10-09",
+            "type": "controversial_figure"
+        },
+        "1356001": {
+            "name": "John XXIII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "VAT_M_John_XXIII",
+            "start_date": "1958-10-09",
+            "death_date": "1963-06-03",
+            "type": "moral_type"
+        },
+        "1356002": {
+            "name": "Paul VI",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "VAT_M_Paul_VI",
+            "start_date": "1963-06-03",
+            "death_date": "1978-08-06",
+            "type": "reformer_type"
+        },
+        "1356003": {
+            "name": "John Paul I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "VAT_M_Paul_I",
+            "start_date": "1978-08-06",
+            "death_date": "1978-09-28",
+            "type": "lethargic_type"
+        },
+        "1356004": {
+            "name": "John Paul II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "VAT_M_Paul_II",
+            "start_date": "1978-09-28",
+            "death_date": "2005-04-02",
+            "type": "controversial_figure"
+        },
+        "1356005": {
+            "name": "Nicola Canali",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "VAT_M_Canali_Nicola",
+            "start_date": "1939-03-20",
+            "death_date": "1961-08-03",
+            "type": "moral_type"
+        },
+        "1356006": {
+            "name": "Amleto Giovanni Cicognani",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "VAT_M_Cicognani_Amleto_G",
+            "start_date": "1961-08-03",
+            "death_date": "1969-04-30",
+            "type": "controversial_figure"
+        },
+        "1356007": {
+            "name": "Jean-Marie Villot",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "VAT_M_Villot_Jean-Marie",
+            "start_date": "1969-04-30",
+            "death_date": "1979-03-09",
+            "type": "loyal_type"
+        },
+        "1356008": {
+            "name": "Agostino Casaroli",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "VAT_M_Casaroli_Agostino",
+            "start_date": "1979-03-09",
+            "death_date": "1984-04-08",
+            "type": "courteous_figure"
+        },
+        "1356009": {
+            "name": "Sebastiano Baggio",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "VAT_M_Baggio_Sebastiano",
+            "start_date": "1984-04-08",
+            "death_date": "1990-10-31",
+            "type": "moral_type"
+        },
+        "1356010": {
+            "name": "Rosalio José Castillo Lara",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "VAT_M_Lara_Rosalio_J_C",
+            "start_date": "1990-10-31",
+            "death_date": "1997-10-14",
+            "type": "religious_type"
+        },
+        "1356011": {
+            "name": "Valerio Valeri",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "VAT_M_Valeri_Valerio",
+            "start_date": "1958-10-09",
+            "death_date": "1963-07-22",
+            "type": "controversial_figure"
+        },
+        "1356012": {
+            "name": "Alfredo Ottaviani",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "VAT_M_Ottaviani_Alfredo",
+            "start_date": "1958-10-09",
+            "death_date": "1979-08-03",
+            "type": "hardliner_type"
+        },
+        "1356013": {
+            "name": "Ernesto Ruffini",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "VAT_M_Ruffini_Ernesto",
+            "start_date": "1958-10-09",
+            "death_date": "1967-06-11",
+            "type": "extremist_type"
+        },
+        "1356014": {
+            "name": "Giuseppe Siri",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "VAT_M_Siri_Giuseppe",
+            "start_date": "1958-10-09",
+            "death_date": "1989-05-02",
+            "type": "traditionalist_type"
+        },
+        "1356015": {
+            "name": "Leo Joseph Suenens",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "VAT_M_Suenens_Leo_J",
+            "start_date": "1963-06-03",
+            "death_date": "1996-05-06",
+            "type": "liberal_type"
+        },
+        "1356016": {
+            "name": "Franz König",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "VAT_M_Konig_Franz",
+            "start_date": "1963-06-03",
+            "death_date": "2004-03-13",
+            "type": "liberal_type"
+        },
+        "1356017": {
+            "name": "Corrado Ursi",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "VAT_M_Ursi_Corrado",
+            "start_date": "1978-08-06",
+            "death_date": "2003-08-29",
+            "type": "religious_type"
+        },
+        "1356018": {
+            "name": "Giovanni Benelli",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "VAT_M_Benelli_Giovanni",
+            "start_date": "1978-08-06",
+            "death_date": "1982-10-26",
+            "type": "autocrat_type"
+        }
+    }
+}

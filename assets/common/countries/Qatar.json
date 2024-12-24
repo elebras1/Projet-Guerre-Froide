@@ -76,67 +76,56 @@
         "1294000": {
             "name": "Ahmad bin Ali",
             "ideology": "paternal_auto_idolg",
-            "moral_leader": true,
             "loyalty": 1.0,
             "picture": "QTR_M_Ali_Ahmad",
-            "head_of_state": "administrator_type",
             "start_date": "1946-01-01",
-            "death_date": "1972-02-22"
+            "death_date": "1972-02-22",
+            "type": "administrator_type"
         },
         "1294001": {
             "name": "Khalifa bin Hamad",
             "ideology": "paternal_auto_idolg",
-            "moral_leader": true,
             "loyalty": 0.99,
             "picture": "QTR_M_Hamad_Khalifa",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1946-01-01",
-            "death_date": "1995-06-27"
+            "death_date": "1995-06-27",
+            "type": "reformer_type"
         },
         "1294002": {
             "name": "Ali bin Adbullah",
             "ideology": "paternal_auto_idolg",
-            "moral_leader": true,
             "loyalty": 0.97,
             "picture": "QTR_M_Adbullah_Ali",
-            "head_of_state": "courteous_figure",
-            "head_of_government": "courteous_figure",
             "start_date": "1913-06-05",
-            "death_date": "1960-10-24"
+            "death_date": "1960-10-24",
+            "type": "courteous_figure"
         },
         "1294003": {
             "name": "Abdullah bin Jassim",
             "ideology": "paternal_auto_idolg",
-            "moral_leader": true,
             "loyalty": 0.98,
             "picture": "QTR_M_Jassim_Abdullah",
-            "head_of_state": "administrator_type",
-            "head_of_government": "administrator_type",
             "start_date": "1913-07-17",
-            "death_date": "1949-08-20"
+            "death_date": "1949-08-20",
+            "type": "administrator_type"
         },
         "1294004": {
             "name": "Hamad bin Khalifa",
             "ideology": "paternal_auto_idolg",
-            "moral_leader": true,
             "loyalty": 0.96,
             "picture": "QTR_M_Khalifa_Hamad",
-            "head_of_state": "courteous_figure",
-            "head_of_government": "courteous_figure",
             "start_date": "1970-01-01",
-            "death_date": "2013-06-25"
+            "death_date": "2013-06-25",
+            "type": "courteous_figure"
         },
         "1294005": {
             "name": "Mishaal bin Hamad",
             "ideology": "paternal_auto_idolg",
-            "moral_leader": true,
             "loyalty": 0.95,
             "picture": "QTR_M_Hamad_Mishaal",
-            "head_of_state": "courteous_figure",
-            "head_of_government": "courteous_figure",
             "start_date": "1990-07-02",
-            "death_date": "2300-01-01"
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         }
     }
 }

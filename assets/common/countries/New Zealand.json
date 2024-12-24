@@ -1,1 +1,716 @@
-{"color": [193, 185, 158], "graphical_culture": "Us", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1279000": {"name": "George VI", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_George", "head_of_state": "parental_type", "start_date": "1936-09-11", "death_date": "1952-02-06", "base": 1181001}, "1279001": {"name": "Elizabeth II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_Elizabeth", "head_of_state": "traditionalist_type", "start_date": "1952-02-06", "death_date": "2300-05-12", "base": 1181002}, "1279300": {"name": "George VII", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.99, "picture": "ENG_M_George_VII", "head_of_state": "parental_type", "start_date": "1966-11-14", "death_date": "2300-01-01", "base": 1181196}, "1279301": {"name": "Andrew I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.98, "picture": "ENG_M_Andrew_I", "head_of_state": "fortunate_type", "start_date": "1978-02-19", "death_date": "2300-01-01", "base": 1181197}, "1279302": {"name": "Edward IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.97, "picture": "ENG_M_Edward_IX", "head_of_state": "courteous_figure", "start_date": "1982-03-10", "death_date": "2300-01-01", "base": 1181198}, "1279304": {"name": "Anne II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.96, "picture": "ENG_M_Anne_II", "head_of_state": "courteous_figure", "start_date": "1968-08-15", "death_date": "2300-01-01", "base": 1181209}, "1279305": {"name": "Margaret I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.95, "picture": "ENG_M_Margaret_I", "head_of_state": "controversial_figure", "start_date": "1952-03-01", "death_date": "2002-02-09", "base": 1181210}, "1279306": {"name": "David III", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.94, "picture": "ENG_M_David_III", "head_of_state": "courteous_figure", "start_date": "1979-11-03", "death_date": "2300-01-01", "base": 1181211}, "1279307": {"name": "Sarah I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.93, "picture": "ENG_M_Sarah_I", "head_of_state": "courteous_figure", "start_date": "1982-05-01", "death_date": "2300-01-01", "base": 1181212}, "1279308": {"name": "Henry IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.92, "picture": "ENG_M_Henry_IX", "head_of_state": "courteous_figure", "start_date": "1946-01-01", "death_date": "1974-06-10", "base": 1181213}, "1279309": {"name": "William V", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.91, "picture": "ENG_M_William_V", "head_of_state": "courteous_figure", "start_date": "1959-12-18", "death_date": "1972-08-28", "base": 1181214}, "1279310": {"name": "Richard IV", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "ENG_M_Richard_IV", "head_of_state": "courteous_figure", "start_date": "1962-08-26", "death_date": "2300-01-01", "base": 1181215}, "1279311": {"name": "Robert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Robert_I_Bayern", "head_of_state": "traditionalist_type", "start_date": "1919-02-03", "death_date": "1955-08-02", "base": 1181199}, "1279312": {"name": "Albert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Albert_I_Bayern", "head_of_state": "fortunate_type", "start_date": "1955-08-02", "death_date": "1996-07-08", "base": 1181200}, "1279002": {"name": "Peter Fraser", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "NZL_M_Fraser_Peter", "head_of_government": "zealous_type", "start_date": "1946-01-01", "death_date": "1950-01-01"}, "1279003": {"name": "Sidney Holland", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NZL_M_Holland_Sidney", "head_of_government": "traditionalist_type", "start_date": "1946-01-01", "death_date": "1957-01-01"}, "1279004": {"name": "Keith Holyoake", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NZL_M_Holyoake_Keith", "head_of_government": "administrator_type", "start_date": "1957-01-01", "death_date": "1972-02-07"}, "1279005": {"name": "Walter Nash", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "NZL_M_Nash_Walter", "head_of_government": "lethargic_type", "start_date": "1950-01-01", "death_date": "1963-01-01"}, "1279006": {"name": "Jack Marshall", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NZL_M_Marshall_Jack", "head_of_government": "reformer_type", "start_date": "1972-02-07", "death_date": "1974-01-01"}, "1279007": {"name": "Norman Kirk", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "NZL_M_Kirk_Norman", "head_of_government": "honest_type", "start_date": "1965-01-01", "death_date": "1974-08-31"}, "1279008": {"name": "Hugh Watt", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "NZL_M_Watt_Hugh", "head_of_government": "bureaucrat_type", "start_date": "1974-08-31", "death_date": "1974-09-06"}, "1279009": {"name": "Bill Rowling", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "NZL_M_Rowling_Bill", "head_of_government": "reformer_type", "start_date": "1974-09-06", "death_date": "1983-01-01"}, "1279010": {"name": "Robert Muldoon", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NZL_M_Muldoon_Robert", "head_of_government": "controversial_figure", "start_date": "1974-01-01", "death_date": "1984-07-26"}, "1279011": {"name": "David Lange", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "NZL_M_Lange_David", "head_of_government": "ambitious_type", "start_date": "1983-01-01", "death_date": "1989-08-08"}, "1279012": {"name": "Geoffrey Palmer", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "NZL_M_Palmer_Geoffrey", "head_of_government": "administrator_type", "start_date": "1989-08-08", "death_date": "1990-09-04"}, "1279013": {"name": "Mike Moore", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "NZL_M_Moore_Mike", "head_of_government": "bureaucrat_type", "start_date": "1990-09-04", "death_date": "1993-01-01"}, "1279014": {"name": "Jim Bolger", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NZL_M_Bolger_Jim", "head_of_government": "democrat_type", "start_date": "1986-01-01", "death_date": "1997-01-01"}, "1279015": {"name": "Arnold Nordmeyer", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "NZL_M_Nordmeyer_Arnold", "head_of_government": "religious_type", "start_date": "1963-01-01", "death_date": "1965-01-01"}, "1279016": {"name": "Jim McLay", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "NZL_M_McLay_Jim", "head_of_government": "liberal_type", "start_date": "1984-07-26", "death_date": "1986-01-01"}, "1279017": {"name": "Gen. Keith Lindsay Stewart", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NZL_M_Stewart_Keith_L", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1946-01-01", "death_date": "1972-11-13"}, "1279018": {"name": "Wilfrid Owen", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_Owen_Wilfrid", "head_of_government": "administrator_type", "start_date": "1953-01-10", "death_date": "1958-01-01"}, "1279019": {"name": "Vernon Cracknell", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_Cracknell_Vernon", "head_of_government": "reputable_type", "start_date": "1953-11-26", "death_date": "1970-01-01"}, "1279020": {"name": "Bruce Beetham", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_Beetham_Bruce", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1972-11-26", "death_date": "1986-10-12"}, "1279021": {"name": "Victor George Wilcox", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "NZL_M_Wilcox_Victor_G", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1946-11-27", "death_date": "1963-11-30"}, "1279022": {"name": "Colin King-Ansell", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "NZL_M_King-Ansell_Colin", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1969-01-01", "death_date": "1980-01-01"}, "1279023": {"name": "A. N. Field", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "NZL_M_Field_A_N", "head_of_state": "supreme_leader", "head_of_government": "supreme_leader", "start_date": "1944-01-18", "death_date": "1963-01-03"}, "1279024": {"name": "P. H. Matthews", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_Matthews_P_H", "head_of_government": "loyal_type", "start_date": "1960-01-01", "death_date": "1963-11-26"}, "1279025": {"name": "John O'Brien", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_OBrien_John", "head_of_government": "extremist_type", "start_date": "1970-01-01", "death_date": "1972-11-26"}, "1279026": {"name": "Neil Morrison", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_Morrison_Neil", "head_of_government": "liberal_type", "start_date": "1986-10-12", "death_date": "1991-01-01"}, "1279027": {"name": "John A.A. Lee", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_Lee_John_A_A", "head_of_government": "autocrat_type", "start_date": "1953-01-10", "death_date": "1982-06-13"}, "1279028": {"name": "Bruce Jesson", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NZL_M_Jesson_Bruce", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1966-01-01", "death_date": "1999-01-01"}, "1279029": {"name": "Walter McKinnon", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NZL_M_McKinnon_Walter", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1953-01-01", "death_date": "1998-05-31"}, "1279030": {"name": "Stevan Eldred-Grigg", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NZL_M_Eldred-Grigg_Stevan", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1973-01-01", "death_date": "2013-01-01"}, "1279031": {"name": "Hugh Eldred-Grigg", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NZL_M_Eldred-Grigg_Hugh", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1980-04-26", "death_date": "2013-01-01"}, "1279032": {"name": "Constance Alice Rawcliffe", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NZL_M_Rawcliffe_Constance_A", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1935-01-01", "death_date": "1957-01-01"}, "1279033": {"name": "Lillian Rita Smith", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NZL_M_Smith_Lillian_R", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1949-11-30", "death_date": "1992-11-01"}, "1279034": {"name": "Tony Kunowski", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_Kunowski_Tony", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1975-01-01", "death_date": "1978-01-01"}, "1279035": {"name": "Margaret Crozier", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_Crozier_Margaret", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1978-01-01", "death_date": "1984-07-14"}, "1279036": {"name": "Bill Andersen", "ideology": "communist_idolg", "loyalty": 0.45, "picture": "NZL_M_Andersen_Bill", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1944-01-01", "death_date": "2005-01-19"}, "1279037": {"name": "Ken Douglas", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NZL_M_Douglas_Ken", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1966-01-01", "death_date": "1995-01-01"}, "1279038": {"name": "Gerald Williams", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "NZL_M_Williams_Gerald", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1965-01-01", "death_date": "1975-01-01"}, "1279039": {"name": "S.W. Scott", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NZL_M_Scott_S_W", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1957-01-01", "death_date": "1961-01-01"}, "1279040": {"name": "Roger Douglas", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_Douglas_Roger", "head_of_government": "reformer_type", "start_date": "1984-07-27", "death_date": "1996-01-01"}, "1279041": {"name": "Bob Jones", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_Jones_Bob", "head_of_government": "controversial_figure", "start_date": "1983-01-01", "death_date": "1996-01-01"}, "1279042": {"name": "Tim Shadbolt", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "NZL_M_Shadbolt_Tim", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1969-01-01", "death_date": "2013-01-01"}, "1279043": {"name": "John Minto", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "NZL_M_Minto_John", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1969-01-01", "death_date": "2013-01-01"}, "1279044": {"name": "Blain Crighton", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "NZL_M_Crighton_Blain", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1948-01-01", "death_date": "1982-07-14"}, "1279045": {"name": "John Dalhoff", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "NZL_M_Dalhoff_John", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1975-01-01", "death_date": "2013-01-01"}, "1279046": {"name": "Trevor Loudon", "ideology": "fascistic_idolg", "loyalty": 0.5, "picture": "NZL_M_Loudon_Trevor", "head_of_state": "extremist_type", "head_of_government": "extremist_type", "start_date": "1983-01-01", "death_date": "2013-01-01"}, "1279047": {"name": "Keith Hay", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "NZL_M_Hay_Keith", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1987-01-01", "death_date": "1997-01-01"}, "1279048": {"name": "R. J. 'Bob' Tizard", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "NZL_M_", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1974-09-10", "death_date": "1984-07-26"}, "1279049": {"name": "Brian Talboys", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "NZL_M_Talboys_Brian", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1975-12-12", "death_date": "1984-07-26"}, "1279050": {"name": "Duncan MacIntyre", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "NZL_M_MacIntyre_Duncan", "head_of_state": "reputable_type", "head_of_government": "reputable_type", "start_date": "1981-03-04", "death_date": "1984-03-15"}, "1279051": {"name": "Helen Clark", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "NZL_M_Clark_Helen", "head_of_state": "iron_lady", "head_of_government": "iron_lady", "start_date": "1987-01-01", "death_date": "2013-01-01"}, "1279052": {"name": "George Jackson", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "NZL_M_Jackson_George", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1939-01-01", "death_date": "1985-01-01"}, "1279053": {"name": "Victor C. Wilcox", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "NZL_M_Wilcox_George_C", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1951-01-01", "death_date": "1977-03-01"}, "1279054": {"name": "Harry Crook", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "NZL_M_Crook_Harry", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1966-01-01", "death_date": "1981-01-01"}, "1279055": {"name": "Grant Morgan", "ideology": "maoist_idolg", "loyalty": 0.45, "picture": "NZL_M_Morgan_Grant", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1976-01-01", "death_date": "2013-01-01"}, "1279056": {"name": "Rewi Alley", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "NZL_M_Alley_Rewi", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1932-01-01", "death_date": "1987-12-27"}, "1279057": {"name": "Koroki Mahuta", "ideology": "social_cons_idolg", "loyalty": 0.5, "moral_leader": true, "picture": "NZL_M_Mahuta_Koroki", "head_of_state": "courteous_figure", "start_date": "1933-08-10", "death_date": "1966-05-18"}, "1279058": {"name": "Te Atairangikaahu", "ideology": "social_cons_idolg", "loyalty": 0.5, "moral_leader": true, "picture": "NZL_M_Atairangikaahu_Te", "head_of_state": "iron_lady", "start_date": "1966-05-18", "death_date": "2006-08-15"}}}
+{
+    "color": [
+        193,
+        185,
+        158
+    ],
+    "graphical_culture": "Us",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1279000": {
+            "name": "George VI",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
+        },
+        "1279001": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "1279300": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "1279301": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "1279302": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1279304": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1279305": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "1279306": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1279307": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1279308": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "1279309": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "1279310": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1279311": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
+        "1279312": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "1279002": {
+            "name": "Peter Fraser",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Fraser_Peter",
+            "start_date": "1946-01-01",
+            "death_date": "1950-01-01",
+            "type": "zealous_type"
+        },
+        "1279003": {
+            "name": "Sidney Holland",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Holland_Sidney",
+            "start_date": "1946-01-01",
+            "death_date": "1957-01-01",
+            "type": "traditionalist_type"
+        },
+        "1279004": {
+            "name": "Keith Holyoake",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Holyoake_Keith",
+            "start_date": "1957-01-01",
+            "death_date": "1972-02-07",
+            "type": "administrator_type"
+        },
+        "1279005": {
+            "name": "Walter Nash",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Nash_Walter",
+            "start_date": "1950-01-01",
+            "death_date": "1963-01-01",
+            "type": "lethargic_type"
+        },
+        "1279006": {
+            "name": "Jack Marshall",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Marshall_Jack",
+            "start_date": "1972-02-07",
+            "death_date": "1974-01-01",
+            "type": "reformer_type"
+        },
+        "1279007": {
+            "name": "Norman Kirk",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Kirk_Norman",
+            "start_date": "1965-01-01",
+            "death_date": "1974-08-31",
+            "type": "honest_type"
+        },
+        "1279008": {
+            "name": "Hugh Watt",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Watt_Hugh",
+            "start_date": "1974-08-31",
+            "death_date": "1974-09-06",
+            "type": "bureaucrat_type"
+        },
+        "1279009": {
+            "name": "Bill Rowling",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Rowling_Bill",
+            "start_date": "1974-09-06",
+            "death_date": "1983-01-01",
+            "type": "reformer_type"
+        },
+        "1279010": {
+            "name": "Robert Muldoon",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Muldoon_Robert",
+            "start_date": "1974-01-01",
+            "death_date": "1984-07-26",
+            "type": "controversial_figure"
+        },
+        "1279011": {
+            "name": "David Lange",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Lange_David",
+            "start_date": "1983-01-01",
+            "death_date": "1989-08-08",
+            "type": "ambitious_type"
+        },
+        "1279012": {
+            "name": "Geoffrey Palmer",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Palmer_Geoffrey",
+            "start_date": "1989-08-08",
+            "death_date": "1990-09-04",
+            "type": "administrator_type"
+        },
+        "1279013": {
+            "name": "Mike Moore",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Moore_Mike",
+            "start_date": "1990-09-04",
+            "death_date": "1993-01-01",
+            "type": "bureaucrat_type"
+        },
+        "1279014": {
+            "name": "Jim Bolger",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Bolger_Jim",
+            "start_date": "1986-01-01",
+            "death_date": "1997-01-01",
+            "type": "democrat_type"
+        },
+        "1279015": {
+            "name": "Arnold Nordmeyer",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_Nordmeyer_Arnold",
+            "start_date": "1963-01-01",
+            "death_date": "1965-01-01",
+            "type": "religious_type"
+        },
+        "1279016": {
+            "name": "Jim McLay",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "NZL_M_McLay_Jim",
+            "start_date": "1984-07-26",
+            "death_date": "1986-01-01",
+            "type": "liberal_type"
+        },
+        "1279017": {
+            "name": "Gen. Keith Lindsay Stewart",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Stewart_Keith_L",
+            "start_date": "1946-01-01",
+            "death_date": "1972-11-13",
+            "type": "zealous_type"
+        },
+        "1279018": {
+            "name": "Wilfrid Owen",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Owen_Wilfrid",
+            "start_date": "1953-01-10",
+            "death_date": "1958-01-01",
+            "type": "administrator_type"
+        },
+        "1279019": {
+            "name": "Vernon Cracknell",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Cracknell_Vernon",
+            "start_date": "1953-11-26",
+            "death_date": "1970-01-01",
+            "type": "reputable_type"
+        },
+        "1279020": {
+            "name": "Bruce Beetham",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Beetham_Bruce",
+            "start_date": "1972-11-26",
+            "death_date": "1986-10-12",
+            "type": "moral_type"
+        },
+        "1279021": {
+            "name": "Victor George Wilcox",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Wilcox_Victor_G",
+            "start_date": "1946-11-27",
+            "death_date": "1963-11-30",
+            "type": "extremist_type"
+        },
+        "1279022": {
+            "name": "Colin King-Ansell",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_King-Ansell_Colin",
+            "start_date": "1969-01-01",
+            "death_date": "1980-01-01",
+            "type": "controversial_figure"
+        },
+        "1279023": {
+            "name": "A. N. Field",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Field_A_N",
+            "start_date": "1944-01-18",
+            "death_date": "1963-01-03",
+            "type": "supreme_leader"
+        },
+        "1279024": {
+            "name": "P. H. Matthews",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Matthews_P_H",
+            "start_date": "1960-01-01",
+            "death_date": "1963-11-26",
+            "type": "loyal_type"
+        },
+        "1279025": {
+            "name": "John O'Brien",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_OBrien_John",
+            "start_date": "1970-01-01",
+            "death_date": "1972-11-26",
+            "type": "extremist_type"
+        },
+        "1279026": {
+            "name": "Neil Morrison",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Morrison_Neil",
+            "start_date": "1986-10-12",
+            "death_date": "1991-01-01",
+            "type": "liberal_type"
+        },
+        "1279027": {
+            "name": "John A.A. Lee",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Lee_John_A_A",
+            "start_date": "1953-01-10",
+            "death_date": "1982-06-13",
+            "type": "autocrat_type"
+        },
+        "1279028": {
+            "name": "Bruce Jesson",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Jesson_Bruce",
+            "start_date": "1966-01-01",
+            "death_date": "1999-01-01",
+            "type": "visionary_type"
+        },
+        "1279029": {
+            "name": "Walter McKinnon",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_McKinnon_Walter",
+            "start_date": "1953-01-01",
+            "death_date": "1998-05-31",
+            "type": "loyal_type"
+        },
+        "1279030": {
+            "name": "Stevan Eldred-Grigg",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Eldred-Grigg_Stevan",
+            "start_date": "1973-01-01",
+            "death_date": "2013-01-01",
+            "type": "visionary_type"
+        },
+        "1279031": {
+            "name": "Hugh Eldred-Grigg",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Eldred-Grigg_Hugh",
+            "start_date": "1980-04-26",
+            "death_date": "2013-01-01",
+            "type": "bureaucrat_type"
+        },
+        "1279032": {
+            "name": "Constance Alice Rawcliffe",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Rawcliffe_Constance_A",
+            "start_date": "1935-01-01",
+            "death_date": "1957-01-01",
+            "type": "zealous_type"
+        },
+        "1279033": {
+            "name": "Lillian Rita Smith",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Smith_Lillian_R",
+            "start_date": "1949-11-30",
+            "death_date": "1992-11-01",
+            "type": "loyal_type"
+        },
+        "1279034": {
+            "name": "Tony Kunowski",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Kunowski_Tony",
+            "start_date": "1975-01-01",
+            "death_date": "1978-01-01",
+            "type": "ambitious_type"
+        },
+        "1279035": {
+            "name": "Margaret Crozier",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Crozier_Margaret",
+            "start_date": "1978-01-01",
+            "death_date": "1984-07-14",
+            "type": "bureaucrat_type"
+        },
+        "1279036": {
+            "name": "Bill Andersen",
+            "ideology": "communist_idolg",
+            "loyalty": 0.45,
+            "picture": "NZL_M_Andersen_Bill",
+            "start_date": "1944-01-01",
+            "death_date": "2005-01-19",
+            "type": "courageous_type"
+        },
+        "1279037": {
+            "name": "Ken Douglas",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Douglas_Ken",
+            "start_date": "1966-01-01",
+            "death_date": "1995-01-01",
+            "type": "democrat_type"
+        },
+        "1279038": {
+            "name": "Gerald Williams",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Williams_Gerald",
+            "start_date": "1965-01-01",
+            "death_date": "1975-01-01",
+            "type": "democrat_type"
+        },
+        "1279039": {
+            "name": "S.W. Scott",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Scott_S_W",
+            "start_date": "1957-01-01",
+            "death_date": "1961-01-01",
+            "type": "reformer_type"
+        },
+        "1279040": {
+            "name": "Roger Douglas",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Douglas_Roger",
+            "start_date": "1984-07-27",
+            "death_date": "1996-01-01",
+            "type": "reformer_type"
+        },
+        "1279041": {
+            "name": "Bob Jones",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Jones_Bob",
+            "start_date": "1983-01-01",
+            "death_date": "1996-01-01",
+            "type": "controversial_figure"
+        },
+        "1279042": {
+            "name": "Tim Shadbolt",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Shadbolt_Tim",
+            "start_date": "1969-01-01",
+            "death_date": "2013-01-01",
+            "type": "democrat_type"
+        },
+        "1279043": {
+            "name": "John Minto",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Minto_John",
+            "start_date": "1969-01-01",
+            "death_date": "2013-01-01",
+            "type": "courageous_type"
+        },
+        "1279044": {
+            "name": "Blain Crighton",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Crighton_Blain",
+            "start_date": "1948-01-01",
+            "death_date": "1982-07-14",
+            "type": "parental_type"
+        },
+        "1279045": {
+            "name": "John Dalhoff",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Dalhoff_John",
+            "start_date": "1975-01-01",
+            "death_date": "2013-01-01",
+            "type": "zealous_type"
+        },
+        "1279046": {
+            "name": "Trevor Loudon",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Loudon_Trevor",
+            "start_date": "1983-01-01",
+            "death_date": "2013-01-01",
+            "type": "extremist_type"
+        },
+        "1279047": {
+            "name": "Keith Hay",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Hay_Keith",
+            "start_date": "1987-01-01",
+            "death_date": "1997-01-01",
+            "type": "religious_type"
+        },
+        "1279048": {
+            "name": "R. J. 'Bob' Tizard",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_",
+            "start_date": "1974-09-10",
+            "death_date": "1984-07-26",
+            "type": "administrator_type"
+        },
+        "1279049": {
+            "name": "Brian Talboys",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Talboys_Brian",
+            "start_date": "1975-12-12",
+            "death_date": "1984-07-26",
+            "type": "ambitious_type"
+        },
+        "1279050": {
+            "name": "Duncan MacIntyre",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_MacIntyre_Duncan",
+            "start_date": "1981-03-04",
+            "death_date": "1984-03-15",
+            "type": "reputable_type"
+        },
+        "1279051": {
+            "name": "Helen Clark",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Clark_Helen",
+            "start_date": "1987-01-01",
+            "death_date": "2013-01-01",
+            "type": "iron_lady"
+        },
+        "1279052": {
+            "name": "George Jackson",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Jackson_George",
+            "start_date": "1939-01-01",
+            "death_date": "1985-01-01",
+            "type": "hardliner_type"
+        },
+        "1279053": {
+            "name": "Victor C. Wilcox",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Wilcox_George_C",
+            "start_date": "1951-01-01",
+            "death_date": "1977-03-01",
+            "type": "dictator_type"
+        },
+        "1279054": {
+            "name": "Harry Crook",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Crook_Harry",
+            "start_date": "1966-01-01",
+            "death_date": "1981-01-01",
+            "type": "hardliner_type"
+        },
+        "1279055": {
+            "name": "Grant Morgan",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.45,
+            "picture": "NZL_M_Morgan_Grant",
+            "start_date": "1976-01-01",
+            "death_date": "2013-01-01",
+            "type": "reformer_type"
+        },
+        "1279056": {
+            "name": "Rewi Alley",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Alley_Rewi",
+            "start_date": "1932-01-01",
+            "death_date": "1987-12-27",
+            "type": "visionary_type"
+        },
+        "1279057": {
+            "name": "Koroki Mahuta",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Mahuta_Koroki",
+            "start_date": "1933-08-10",
+            "death_date": "1966-05-18",
+            "type": "courteous_figure"
+        },
+        "1279058": {
+            "name": "Te Atairangikaahu",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "NZL_M_Atairangikaahu_Te",
+            "start_date": "1966-05-18",
+            "death_date": "2006-08-15",
+            "type": "iron_lady"
+        }
+    }
+}

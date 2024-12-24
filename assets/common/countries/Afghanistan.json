@@ -1425,414 +1425,389 @@
         "1110001": {
             "name": "Mohammed Zahir Shah",
             "ideology": "social_cons_idolg",
-            "moral_leader": true,
             "loyalty": 0.9,
             "picture": "AFG_M_Shah_Mohammed_Z",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1933-11-08",
-            "death_date": "2007-07-23"
+            "death_date": "2007-07-23",
+            "type": "reformer_type"
         },
         "1110002": {
             "name": "Mohammad Hashim Khan",
             "ideology": "social_cons_idolg",
-            "moral_leader": true,
             "loyalty": 1.0,
             "picture": "AFG_M_Khan_Mohammad_H",
-            "head_of_government": "administrator_type",
             "start_date": "1929-11-01",
-            "death_date": "1946-05-01"
+            "death_date": "1946-05-01",
+            "type": "administrator_type"
         },
         "1110003": {
             "name": "Mohammed Daoud Khan",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Daoud_Mohammed_K",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1953-09-07",
-            "death_date": "1978-04-27"
+            "death_date": "1978-04-27",
+            "type": "reformer_type"
         },
         "1110004": {
             "name": "Nur Muhammad Taraki",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Taraki_Nur_M",
-            "head_of_state": "extremist_type",
-            "head_of_government": "extremist_type",
             "start_date": "1978-04-27",
-            "death_date": "1979-09-14"
+            "death_date": "1979-09-14",
+            "type": "extremist_type"
         },
         "1110005": {
             "name": "Hafizullah Amin",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Amin_Hafizullah",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1979-09-14",
-            "death_date": "1979-12-27"
+            "death_date": "1979-12-27",
+            "type": "reformer_type"
         },
         "1110006": {
             "name": "Babrak Karmal",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Karmal_Babrak",
-            "head_of_state": "democrat_type",
-            "head_of_government": "democrat_type",
             "start_date": "1979-12-27",
-            "death_date": "1986-11-24"
+            "death_date": "1986-11-24",
+            "type": "democrat_type"
         },
         "1110007": {
             "name": "Mohammad Najibullah",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Najibullah_Mohammad",
-            "head_of_state": "reformer_type",
             "start_date": "1986-11-24",
-            "death_date": "1992-04-16"
+            "death_date": "1992-04-16",
+            "type": "reformer_type"
         },
         "1110008": {
             "name": "Shah Mahmud Khan",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Khan_Shah_M",
-            "head_of_government": "bureaucrat_type",
             "start_date": "1946-05-01",
-            "death_date": "1953-09-07"
+            "death_date": "1953-09-07",
+            "type": "bureaucrat_type"
         },
         "1110009": {
             "name": "Mohammad Yusuf",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Yusuf_Mohammad",
-            "head_of_government": "ambitious_type",
             "start_date": "1953-09-07",
-            "death_date": "1965-11-02"
+            "death_date": "1965-11-02",
+            "type": "ambitious_type"
         },
         "1110010": {
             "name": "Mohammad Hashim Maiwandwal",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Maiwandwal_Mohammad_H",
-            "head_of_government": "liberal_type",
             "start_date": "1965-11-02",
-            "death_date": "1967-10-11"
+            "death_date": "1967-10-11",
+            "type": "liberal_type"
         },
         "1110011": {
             "name": "Mohammad Nur Ahmad Etemadi",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Etemadi_Mohammad_N_A",
-            "head_of_government": "lethargic_type",
             "start_date": "1967-10-11",
-            "death_date": "1971-06-09"
+            "death_date": "1971-06-09",
+            "type": "lethargic_type"
         },
         "1110012": {
             "name": "Abdul Zahir",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Zahir_Abdul",
-            "head_of_government": "democrat_type",
             "start_date": "1971-06-09",
-            "death_date": "1972-11-12"
+            "death_date": "1972-11-12",
+            "type": "democrat_type"
         },
         "1110013": {
             "name": "Mohammad Musa Shafiq",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Shafiq_Mohammad_M",
-            "head_of_government": "administrator_type",
             "start_date": "1972-11-12",
-            "death_date": "1973-07-17"
+            "death_date": "1973-07-17",
+            "type": "administrator_type"
         },
         "1110014": {
             "name": "Sultan Ali Keshtmand",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Keshtmand_Sultan_A",
-            "head_of_government": "ambitious_type",
             "start_date": "1981-06-11",
-            "death_date": "1990-05-08"
+            "death_date": "1990-05-08",
+            "type": "ambitious_type"
         },
         "1110015": {
             "name": "Mohammad Hasan Sharq",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Sharq_Mohammad_H",
-            "head_of_government": "loyal_type",
             "start_date": "1988-05-26",
-            "death_date": "1989-02-21"
+            "death_date": "1989-02-21",
+            "type": "loyal_type"
         },
         "1110016": {
             "name": "Fazal Haq Khaliqyar",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Khaliqyar_Fazal_H",
-            "head_of_government": "loyal_type",
             "start_date": "1989-02-21",
-            "death_date": "1992-04-15"
+            "death_date": "1992-04-15",
+            "type": "loyal_type"
         },
         "1110017": {
             "name": "Dr. Rehman Mahmmodi",
             "ideology": "maoist_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Mahmmodi_Rehman",
-            "head_of_state": "bureaucrat_type",
-            "head_of_government": "bureaucrat_type",
             "start_date": "1956-01-01",
-            "death_date": "1961-10-06"
+            "death_date": "1961-10-06",
+            "type": "bureaucrat_type"
         },
         "1110018": {
             "name": "Akram Yari",
             "ideology": "maoist_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Yari_Akram",
-            "head_of_state": "visionary_type",
-            "head_of_government": "visionary_type",
             "start_date": "1961-10-06",
-            "death_date": "1978-05-05"
+            "death_date": "1978-05-05",
+            "type": "visionary_type"
         },
         "1110019": {
             "name": "Faiz Amad",
             "ideology": "maoist_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Amad_Faiz",
-            "head_of_state": "administrator_type",
-            "head_of_government": "administrator_type",
             "start_date": "1978-05-05",
-            "death_date": "1986-11-12"
+            "death_date": "1986-11-12",
+            "type": "administrator_type"
         },
         "1110020": {
             "name": "Qayum Rahbar",
             "ideology": "maoist_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Rahbar_Qayum",
-            "head_of_state": "bureaucrat_type",
-            "head_of_government": "bureaucrat_type",
             "start_date": "1986-11-12",
-            "death_date": "1992-01-01"
+            "death_date": "1992-01-01",
+            "type": "bureaucrat_type"
         },
         "1110022": {
             "name": "Burhanuddin Rabbani",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Rabbani_Burhanuddin",
-            "head_of_state": "administrator_type",
-            "head_of_government": "administrator_type",
             "start_date": "1968-01-01",
-            "death_date": "2013-01-01"
+            "death_date": "2013-01-01",
+            "type": "administrator_type"
         },
         "1110023": {
             "name": "Gulbuddin Hekmatyar",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
             "picture": "AFG_M_Hekmatyar_Gulbuddin",
-            "head_of_state": "zealous_type",
-            "head_of_government": "zealous_type",
             "start_date": "1975-01-01",
-            "death_date": "1996-09-01"
+            "death_date": "1996-09-01",
+            "type": "zealous_type"
         },
         "1110024": {
             "name": "Mohammad Yunus Khalis",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.8,
             "picture": "AFG_M_Khalis_Mohammad_Y",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1975-01-01",
-            "death_date": "1996-09-01"
+            "death_date": "1996-09-01",
+            "type": "hardliner_type"
         },
         "1110025": {
             "name": "Abdul Rasul Sayyaf",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.7,
             "picture": "AFG_M_Sayyaf_Abdul_R",
-            "head_of_state": "extremist_type",
-            "head_of_government": "extremist_type",
             "start_date": "1980-01-01",
-            "death_date": "2013-01-01"
+            "death_date": "2013-01-01",
+            "type": "extremist_type"
         },
         "1110021": {
             "name": "Maulana Nabi Mohammadi",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
             "picture": "AFG_M_Mohammadi_Maulana_N",
-            "head_of_state": "moral_type",
-            "head_of_government": "moral_type",
             "start_date": "1958-01-01",
-            "death_date": "1996-09-01"
+            "death_date": "1996-09-01",
+            "type": "moral_type"
         },
         "1110026": {
             "name": "Ahmed Gailani",
             "ideology": "social_cons_idolg",
             "loyalty": 0.7,
             "picture": "AFG_M_Gailani_Ahmed",
-            "head_of_state": "democrat_type",
-            "head_of_government": "democrat_type",
             "start_date": "1979-01-01",
-            "death_date": "2013-01-01"
+            "death_date": "2013-01-01",
+            "type": "democrat_type"
         },
         "1110027": {
             "name": "Sibghatullah Mojaddedi",
             "ideology": "social_cons_idolg",
             "loyalty": 0.6,
             "picture": "AFG_M_Mojaddedi_Sibghatullah",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1989-01-01",
-            "death_date": "2013-01-01"
+            "death_date": "2013-01-01",
+            "type": "reformer_type"
         },
         "1110028": {
             "name": "Ghulam Mohammad Farhad",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Farhad_Ghulam_M",
-            "head_of_state": "administrator_type",
-            "head_of_government": "administrator_type",
             "start_date": "1966-03-08",
-            "death_date": "1984-01-01"
+            "death_date": "1984-01-01",
+            "type": "administrator_type"
         },
         "1110029": {
             "name": "Mohammad Amin Wakman",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
             "picture": "AFG_M_Wakman_Mohammad_A",
-            "head_of_state": "liberal_type",
-            "head_of_government": "liberal_type",
             "start_date": "1984-01-01",
-            "death_date": "1995-01-01"
+            "death_date": "1995-01-01",
+            "type": "liberal_type"
         },
         "1110030": {
             "name": "Shams-ul-Huda Shams",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.9,
             "picture": "AFG_M_Shams_Shams-ul-Huda",
-            "head_of_state": "hardliner_type",
-            "head_of_government": "hardliner_type",
             "start_date": "1987-01-01",
-            "death_date": "2013-01-01"
+            "death_date": "2013-01-01",
+            "type": "hardliner_type"
         },
         "1110031": {
             "name": "Mohammad Ismail Khan",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
             "picture": "AFG_M_Khan_Mohammad_I",
-            "head_of_state": "controversial_figure",
-            "head_of_government": "controversial_figure",
             "start_date": "1981-01-01",
-            "death_date": "2013-01-01"
+            "death_date": "2013-01-01",
+            "type": "controversial_figure"
         },
         "1110032": {
             "name": "Ahmad Shah Massoud",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
             "picture": "AFG_M_Massoud_Ahmad_S",
-            "head_of_state": "supreme_leader",
-            "head_of_government": "supreme_leader",
             "start_date": "1979-01-01",
-            "death_date": "1992-01-01"
+            "death_date": "1992-01-01",
+            "type": "supreme_leader"
         },
         "1110033": {
             "name": "Mohammed RAS Omar",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
             "picture": "AFG_M_RAS_Omar_Mohammed",
-            "head_of_state": "religious_type",
-            "head_of_government": "religious_type",
             "start_date": "1980-01-01",
-            "death_date": "2050-01-01"
+            "death_date": "2050-01-01",
+            "type": "religious_type"
         },
         "1110034": {
             "name": "Mohammad Rabbani",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
             "picture": "AFG_M_Rabbani_Mohammad",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1979-12-24",
-            "death_date": "2001-04-15"
+            "death_date": "2001-04-15",
+            "type": "reformer_type"
         },
         "1110035": {
             "name": "Ahmad Shah",
             "ideology": "social_cons_idolg",
             "loyalty": 0.99,
             "picture": "AFG_M_Shah_Ahmad",
-            "head_of_state": "courteous_figure",
             "start_date": "1952-09-23",
-            "death_date": "2300-01-01"
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "1110036": {
             "name": "Muhammad Zahir Khan",
             "ideology": "social_cons_idolg",
             "loyalty": 0.98,
             "picture": "AFG_M_Khan_Muhammad_Z",
-            "head_of_state": "courteous_figure",
             "start_date": "1980-01-01",
-            "death_date": "2300-01-01"
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "1110037": {
             "name": "Muhammad Emel Khan",
             "ideology": "social_cons_idolg",
             "loyalty": 0.97,
             "picture": "AFG_M_Khan_Muhammad_E",
-            "head_of_state": "courteous_figure",
             "start_date": "1987-01-01",
-            "death_date": "2300-01-01"
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "1110038": {
             "name": "Muhammad Nadir Khan",
             "ideology": "social_cons_idolg",
             "loyalty": 0.96,
             "picture": "AFG_M_Khan_Muhammad_N",
-            "head_of_state": "courteous_figure",
             "start_date": "1959-05-21",
-            "death_date": "2300-01-01"
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "1110039": {
             "name": "Mustapha Zahir Khan",
             "ideology": "social_cons_idolg",
             "loyalty": 0.95,
             "picture": "AFG_M_Khan_Mustapha_Z",
-            "head_of_state": "courteous_figure",
             "start_date": "1982-05-02",
-            "death_date": "2300-01-01"
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "1110040": {
             "name": "Muhammad Daud Jan",
             "ideology": "social_cons_idolg",
             "loyalty": 0.94,
             "picture": "AFG_M_Jan_Muhammad_D",
-            "head_of_state": "courteous_figure",
             "start_date": "1984-01-16",
-            "death_date": "2300-01-01"
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "1110041": {
             "name": "Shah Mahmoud Khan",
             "ideology": "social_cons_idolg",
             "loyalty": 0.93,
             "picture": "AFG_M_Khan_Shah_M",
-            "head_of_state": "courteous_figure",
             "start_date": "1961-11-15",
-            "death_date": "2002-12-07"
+            "death_date": "2002-12-07",
+            "type": "courteous_figure"
         },
         "1110042": {
             "name": "Muhammed Daoud Pashtunyar",
             "ideology": "social_cons_idolg",
             "loyalty": 0.92,
             "picture": "AFG_M_Pashtunyar_Muhammed_D",
-            "head_of_state": "courteous_figure",
             "start_date": "1967-04-14",
-            "death_date": "2300-01-01"
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "1110043": {
             "name": "Mir Wais Khan",
             "ideology": "social_cons_idolg",
             "loyalty": 0.91,
             "picture": "AFG_M_Khan_Mir_W",
-            "head_of_state": "courteous_figure",
             "start_date": "1975-01-07",
-            "death_date": "2300-01-01"
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         }
     }
 }

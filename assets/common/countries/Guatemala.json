@@ -1,1 +1,338 @@
-{"color": [174, 206, 203], "graphical_culture": "Generic", "default_templates": {"USA_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "USA_armored_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "USA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "USA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "USA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "USA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "USA_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "USA_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "USA_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1205001": {"name": "Juan Jos\u00e9 Ar\u00e9valo Bermejo", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "GUA_M_Bermejo_Juan_J_A", "head_of_government": "reformer_type", "head_of_state": "reformer_type", "start_date": "1944-12-19", "death_date": "1950-11-12"}, "1205002": {"name": "Jacobo Arbenz Guzm\u00e1n", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "GUA_M_Guzman_Jacobo_A", "head_of_government": "autocrat_type", "head_of_state": "autocrat_type", "start_date": "1950-11-12", "death_date": "1971-01-27"}, "1205003": {"name": "Miguel Yd\u00edgoras Fuentes", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "GUA_M_Fuentes_Miguel_Y", "head_of_government": "zealous_type", "head_of_state": "zealous_type", "start_date": "1950-11-12", "death_date": "1966-03-06"}, "1205004": {"name": "Carlos Castillo Armas", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "GUA_M_Armas_Carlos_C", "head_of_government": "dictator_type", "head_of_state": "dictator_type", "start_date": "1954-07-08", "death_date": "1957-07-26"}, "1205005": {"name": "Miguel Ortiz Passarelli", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "GUA_M_Passarelli_Miguel_O", "head_of_government": "administrator_type", "head_of_state": "administrator_type", "start_date": "1957-10-20", "death_date": "1958-02-12"}, "1205006": {"name": "Jos\u00e9 Luis Cruz Salazar", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "GUA_M_Salazar_Jose_L_C", "head_of_government": "bureaucrat_type", "head_of_state": "bureaucrat_type", "start_date": "1958-02-12", "death_date": "1966-03-06"}, "1205007": {"name": "Enrique Peralta Azurdia", "ideology": "social_cons_idolg", "loyalty": 0.6, "picture": "GUA_M_Azurdia_Enrique_P", "head_of_government": "ambitious_type", "head_of_state": "ambitious_type", "start_date": "1963-03-31", "death_date": "1982-03-07"}, "1205008": {"name": "Julio C\u00e9sar M\u00e9ndez Montenegro", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "GUA_M_Montenegro_Julio_C_M", "head_of_government": "reformer_type", "head_of_state": "reformer_type", "start_date": "1966-03-06", "death_date": "1970-03-01"}, "1205009": {"name": "Carlos Manuel Arana Osorio", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "GUA_M_Osorio_Carlos_M_A", "head_of_government": "reformer_type", "head_of_state": "reformer_type", "start_date": "1970-03-01", "death_date": "1974-03-03"}, "1205010": {"name": "Kjell Eugenio Laugerud Garc\u00eda", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "GUA_M_Garcia_Kjell_E_L", "head_of_government": "parental_type", "head_of_state": "parental_type", "start_date": "1974-03-03", "death_date": "1978-03-05"}, "1205011": {"name": "Jos\u00e9 Efra\u00edn R\u00edos Montt", "ideology": "paternal_auto_idolg", "loyalty": 0.8, "picture": "GUA_M_Montt_Jose_E_R", "head_of_government": "dictator_type", "head_of_state": "dictator_type", "start_date": "1974-03-03", "death_date": "1983-08-08"}, "1205012": {"name": "Ernesto Pa\u00edz Novales", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "GUA_M_Novales_Ernesto_P", "head_of_government": "administrator_type", "head_of_state": "administrator_type", "start_date": "1974-03-03", "death_date": "1978-03-05"}, "1205013": {"name": "Fernando Romeo Lucas Garc\u00eda", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "GUA_M_Garcia_Fernando_R_L", "head_of_government": "dictator_type", "head_of_state": "dictator_type", "start_date": "1978-03-05", "death_date": "1982-03-07"}, "1205014": {"name": "\u00c1ngel An\u00edbal Guevara", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "GUA_M_Guevara_Angel_A", "head_of_government": "controversial_figure", "head_of_state": "controversial_figure", "start_date": "1982-03-07", "death_date": "1985-11-03"}, "1205015": {"name": "Mario Sandoval Alarc\u00f3n", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "GUA_M_Alarcon_Mario_S", "head_of_government": "dictator_type", "head_of_state": "dictator_type", "start_date": "1982-03-07", "death_date": "1990-11-11"}, "1205016": {"name": "Alejandro Maldonado Aguirre", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "GUA_M_Aguirre_Alejandro_M", "head_of_government": "administrator_type", "head_of_state": "administrator_type", "start_date": "1982-03-07", "death_date": "1985-11-03"}, "1205017": {"name": "Vinicio Cerezo", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "GUA_M_Cerezo_Vinicio", "head_of_government": "reformer_type", "head_of_state": "reformer_type", "start_date": "1985-11-03", "death_date": "1990-11-11"}, "1205018": {"name": "Jorge Carpio Nicolle", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "GUA_M_Nicolle_Jorge_C", "head_of_government": "reformer_type", "head_of_state": "reformer_type", "start_date": "1985-11-03", "death_date": "1993-06-05"}, "1205019": {"name": "Jorge Antonio Serrano El\u00edas", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "GUA_M_Elias_Jorge_A_S", "head_of_government": "parental_type", "head_of_state": "parental_type", "start_date": "1985-11-03", "death_date": "1993-06-05"}, "1205020": {"name": "\u00c1lvaro Arz\u00fa", "ideology": "market_liberal_idolg", "loyalty": 1.0, "picture": "GUA_M_Arzu_Alvaro", "head_of_government": "reformer_type", "head_of_state": "reformer_type", "start_date": "1990-11-11", "death_date": "2000-01-14"}, "1205100": {"name": "V\u00edctor Manuel Guti\u00e9rrez", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "GUA_M_Gutierrez_Victor_M", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1949-01-01", "death_date": "1966-03-06"}, "1205101": {"name": "Bernardo Alvarado Monz\u00f3n", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "GUA_M_Monzon_Bernardo_A", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1954-01-01", "death_date": "1972-09-26"}, "1205102": {"name": "Rolando Mor\u00e1n", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "GUA_M_Moran_Rolando", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1962-01-01", "death_date": "1998-09-11"}, "1205103": {"name": "Rodrigo Asturias", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "GUA_M_Asturias_Rodrigo", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1971-01-01", "death_date": "2005-06-15"}, "1205104": {"name": "Ricardo Rosales", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "GUA_M_Rosales_Ricardo", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1974-01-01", "death_date": "2300-01-01"}, "1205105": {"name": "Marco Antonio Yon Sosa", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "GUA_M_Sosa_Marco_A_Y", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1960-01-01", "death_date": "1970-05-20"}, "1205106": {"name": "Francisco Villagr\u00e1n Kramer", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "GUA_M_Kramer_Francisco_V", "head_of_state": "moral_type", "head_of_government": "moral_type", "start_date": "1952-01-01", "death_date": "2011-07-12"}, "1205107": {"name": "Jorge Briz Abularach", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "GUA_M_Abularach_Jorge_B", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1980-01-01", "death_date": "2300-01-01"}, "1205108": {"name": "Jose Manuel Fortuny", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "GUA_M_Fortuny_Jose_M", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1946-01-01", "death_date": "2300-01-01"}}}
+{
+    "color": [
+        174,
+        206,
+        203
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "USA_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "USA_armored_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "USA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "USA_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "USA_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "USA_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1205001": {
+            "name": "Juan José Arévalo Bermejo",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Bermejo_Juan_J_A",
+            "start_date": "1944-12-19",
+            "death_date": "1950-11-12",
+            "type": "reformer_type"
+        },
+        "1205002": {
+            "name": "Jacobo Arbenz Guzmán",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Guzman_Jacobo_A",
+            "start_date": "1950-11-12",
+            "death_date": "1971-01-27",
+            "type": "autocrat_type"
+        },
+        "1205003": {
+            "name": "Miguel Ydígoras Fuentes",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "GUA_M_Fuentes_Miguel_Y",
+            "start_date": "1950-11-12",
+            "death_date": "1966-03-06",
+            "type": "zealous_type"
+        },
+        "1205004": {
+            "name": "Carlos Castillo Armas",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Armas_Carlos_C",
+            "start_date": "1954-07-08",
+            "death_date": "1957-07-26",
+            "type": "dictator_type"
+        },
+        "1205005": {
+            "name": "Miguel Ortiz Passarelli",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Passarelli_Miguel_O",
+            "start_date": "1957-10-20",
+            "death_date": "1958-02-12",
+            "type": "administrator_type"
+        },
+        "1205006": {
+            "name": "José Luis Cruz Salazar",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Salazar_Jose_L_C",
+            "start_date": "1958-02-12",
+            "death_date": "1966-03-06",
+            "type": "bureaucrat_type"
+        },
+        "1205007": {
+            "name": "Enrique Peralta Azurdia",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.6,
+            "picture": "GUA_M_Azurdia_Enrique_P",
+            "start_date": "1963-03-31",
+            "death_date": "1982-03-07",
+            "type": "ambitious_type"
+        },
+        "1205008": {
+            "name": "Julio César Méndez Montenegro",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Montenegro_Julio_C_M",
+            "start_date": "1966-03-06",
+            "death_date": "1970-03-01",
+            "type": "reformer_type"
+        },
+        "1205009": {
+            "name": "Carlos Manuel Arana Osorio",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Osorio_Carlos_M_A",
+            "start_date": "1970-03-01",
+            "death_date": "1974-03-03",
+            "type": "reformer_type"
+        },
+        "1205010": {
+            "name": "Kjell Eugenio Laugerud García",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Garcia_Kjell_E_L",
+            "start_date": "1974-03-03",
+            "death_date": "1978-03-05",
+            "type": "parental_type"
+        },
+        "1205011": {
+            "name": "José Efraín Ríos Montt",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "GUA_M_Montt_Jose_E_R",
+            "start_date": "1974-03-03",
+            "death_date": "1983-08-08",
+            "type": "dictator_type"
+        },
+        "1205012": {
+            "name": "Ernesto Paíz Novales",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Novales_Ernesto_P",
+            "start_date": "1974-03-03",
+            "death_date": "1978-03-05",
+            "type": "administrator_type"
+        },
+        "1205013": {
+            "name": "Fernando Romeo Lucas García",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Garcia_Fernando_R_L",
+            "start_date": "1978-03-05",
+            "death_date": "1982-03-07",
+            "type": "dictator_type"
+        },
+        "1205014": {
+            "name": "Ángel Aníbal Guevara",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Guevara_Angel_A",
+            "start_date": "1982-03-07",
+            "death_date": "1985-11-03",
+            "type": "controversial_figure"
+        },
+        "1205015": {
+            "name": "Mario Sandoval Alarcón",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "GUA_M_Alarcon_Mario_S",
+            "start_date": "1982-03-07",
+            "death_date": "1990-11-11",
+            "type": "dictator_type"
+        },
+        "1205016": {
+            "name": "Alejandro Maldonado Aguirre",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Aguirre_Alejandro_M",
+            "start_date": "1982-03-07",
+            "death_date": "1985-11-03",
+            "type": "administrator_type"
+        },
+        "1205017": {
+            "name": "Vinicio Cerezo",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Cerezo_Vinicio",
+            "start_date": "1985-11-03",
+            "death_date": "1990-11-11",
+            "type": "reformer_type"
+        },
+        "1205018": {
+            "name": "Jorge Carpio Nicolle",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Nicolle_Jorge_C",
+            "start_date": "1985-11-03",
+            "death_date": "1993-06-05",
+            "type": "reformer_type"
+        },
+        "1205019": {
+            "name": "Jorge Antonio Serrano Elías",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Elias_Jorge_A_S",
+            "start_date": "1985-11-03",
+            "death_date": "1993-06-05",
+            "type": "parental_type"
+        },
+        "1205020": {
+            "name": "Álvaro Arzú",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "GUA_M_Arzu_Alvaro",
+            "start_date": "1990-11-11",
+            "death_date": "2000-01-14",
+            "type": "reformer_type"
+        },
+        "1205100": {
+            "name": "Víctor Manuel Gutiérrez",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "GUA_M_Gutierrez_Victor_M",
+            "start_date": "1949-01-01",
+            "death_date": "1966-03-06",
+            "type": "hardliner_type"
+        },
+        "1205101": {
+            "name": "Bernardo Alvarado Monzón",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "GUA_M_Monzon_Bernardo_A",
+            "start_date": "1954-01-01",
+            "death_date": "1972-09-26",
+            "type": "administrator_type"
+        },
+        "1205102": {
+            "name": "Rolando Morán",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "GUA_M_Moran_Rolando",
+            "start_date": "1962-01-01",
+            "death_date": "1998-09-11",
+            "type": "courageous_type"
+        },
+        "1205103": {
+            "name": "Rodrigo Asturias",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "GUA_M_Asturias_Rodrigo",
+            "start_date": "1971-01-01",
+            "death_date": "2005-06-15",
+            "type": "courageous_type"
+        },
+        "1205104": {
+            "name": "Ricardo Rosales",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "GUA_M_Rosales_Ricardo",
+            "start_date": "1974-01-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "1205105": {
+            "name": "Marco Antonio Yon Sosa",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "GUA_M_Sosa_Marco_A_Y",
+            "start_date": "1960-01-01",
+            "death_date": "1970-05-20",
+            "type": "parental_type"
+        },
+        "1205106": {
+            "name": "Francisco Villagrán Kramer",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "GUA_M_Kramer_Francisco_V",
+            "start_date": "1952-01-01",
+            "death_date": "2011-07-12",
+            "type": "moral_type"
+        },
+        "1205107": {
+            "name": "Jorge Briz Abularach",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "GUA_M_Abularach_Jorge_B",
+            "start_date": "1980-01-01",
+            "death_date": "2300-01-01",
+            "type": "ambitious_type"
+        },
+        "1205108": {
+            "name": "Jose Manuel Fortuny",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "GUA_M_Fortuny_Jose_M",
+            "start_date": "1946-01-01",
+            "death_date": "2300-01-01",
+            "type": "visionary_type"
+        }
+    }
+}

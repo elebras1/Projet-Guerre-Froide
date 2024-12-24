@@ -1,1 +1,119 @@
-{"color": [136, 85, 94], "graphical_culture": "Soviet", "default_templates": {"SOV_guards_airborne_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "SOV_tank_division": ["armor_brigade", "armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "SOV_guards_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "SOV_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_motor_rifle_division": ["motorized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "SOV_guards_rifle_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "SOV_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "SOV_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "SOV_rifle_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "SOV_volunteer_division": ["militia_brigade", "militia_brigade", "militia_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1345000": {"name": "Igor Smirnov", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "TSN_M_Smirnov_Igor", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1989-08-16", "death_date": "2011-12-30"}, "1345001": {"name": "Andrey Manoylov", "ideology": "left_wing_radical_idolg", "loyalty": 0.95, "picture": "TSN_M_Manoylov_Andrey", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1989-08-16", "death_date": "1991-10-01"}, "1345002": {"name": "Vladimir Gavrilchenko", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "TSN_M_Gavrilchenko_Vladimir", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1991-01-01", "death_date": "1992-01-01"}, "1345003": {"name": "Oleg Khorzhan", "ideology": "communist_idolg", "loyalty": 1.0, "picture": "TSN_M_Khorzhan_Oleg", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1991-01-01", "death_date": "1992-01-01"}}}
+{
+    "color": [
+        136,
+        85,
+        94
+    ],
+    "graphical_culture": "Soviet",
+    "default_templates": {
+        "SOV_guards_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "SOV_tank_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_motor_rifle_division": [
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "SOV_guards_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "SOV_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "SOV_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "SOV_rifle_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "SOV_volunteer_division": [
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1345000": {
+            "name": "Igor Smirnov",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "TSN_M_Smirnov_Igor",
+            "start_date": "1989-08-16",
+            "death_date": "2011-12-30",
+            "type": "ambitious_type"
+        },
+        "1345001": {
+            "name": "Andrey Manoylov",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.95,
+            "picture": "TSN_M_Manoylov_Andrey",
+            "start_date": "1989-08-16",
+            "death_date": "1991-10-01",
+            "type": "courageous_type"
+        },
+        "1345002": {
+            "name": "Vladimir Gavrilchenko",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "TSN_M_Gavrilchenko_Vladimir",
+            "start_date": "1991-01-01",
+            "death_date": "1992-01-01",
+            "type": "traditionalist_type"
+        },
+        "1345003": {
+            "name": "Oleg Khorzhan",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "TSN_M_Khorzhan_Oleg",
+            "start_date": "1991-01-01",
+            "death_date": "1992-01-01",
+            "type": "liberal_type"
+        }
+    }
+}

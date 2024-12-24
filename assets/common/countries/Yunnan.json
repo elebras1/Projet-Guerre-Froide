@@ -1,1 +1,120 @@
-{"color": [155, 124, 89], "graphical_culture": "Asian", "default_templates": {"CHC_airborne_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "CHC_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "CHC_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "CHC_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "CHC_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "CHC_motorized_division": ["motorized_brigade", "motorized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "CHC_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "CHC_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "CHC_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "CHC_volunteer_division": ["militia_brigade", "militia_brigade", "militia_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1166000": {"name": "Du Yuming", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "CYN_M_Du_Yuming", "head_of_state": "loyal_type", "head_of_government": "loyal_type", "start_date": "1945-11-01", "death_date": "1981-05-07"}, "1166001": {"name": "Long Yun", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "CYN_M_Yun_Long", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1927-11-01", "death_date": "1962-06-27"}, "1166002": {"name": "Zhou Baozhong", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "CYN_M_Baozhong_Zhou", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1934-01-01", "death_date": "1964-02-22"}, "1166003": {"name": "Zhu Qi", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "CYN_M_Qi_Zhu", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1961-08-01", "death_date": "2300-01-01"}, "1166004": {"name": "Lu Han", "ideology": "social_cons_idolg", "loyalty": 0.5, "picture": "CYN_M_Han_Lu", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1930-01-01", "death_date": "1974-05-05"}}}
+{
+    "color": [
+        155,
+        124,
+        89
+    ],
+    "graphical_culture": "Asian",
+    "default_templates": {
+        "CHC_airborne_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "CHC_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "CHC_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "CHC_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "CHC_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "CHC_volunteer_division": [
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1166000": {
+            "name": "Du Yuming",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CYN_M_Du_Yuming",
+            "start_date": "1945-11-01",
+            "death_date": "1981-05-07",
+            "type": "loyal_type"
+        },
+        "1166001": {
+            "name": "Long Yun",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "CYN_M_Yun_Long",
+            "start_date": "1927-11-01",
+            "death_date": "1962-06-27",
+            "type": "autocrat_type"
+        },
+        "1166002": {
+            "name": "Zhou Baozhong",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CYN_M_Baozhong_Zhou",
+            "start_date": "1934-01-01",
+            "death_date": "1964-02-22",
+            "type": "parental_type"
+        },
+        "1166003": {
+            "name": "Zhu Qi",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CYN_M_Qi_Zhu",
+            "start_date": "1961-08-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "1166004": {
+            "name": "Lu Han",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CYN_M_Han_Lu",
+            "start_date": "1930-01-01",
+            "death_date": "1974-05-05",
+            "type": "dictator_type"
+        }
+    }
+}

@@ -72,93 +72,81 @@
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AZB_M_Baghirov_Mir_J",
-            "head_of_state": "loyal_type",
-            "head_of_government": "loyal_type",
             "start_date": "1933-12-10",
-            "death_date": "1953-04-06"
+            "death_date": "1953-04-06",
+            "type": "loyal_type"
         },
         "1120001": {
             "name": "Mir Teymur Yaqubov",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AZB_M_Yaqubov_Mir_T",
-            "head_of_state": "administrator_type",
-            "head_of_government": "administrator_type",
             "start_date": "1953-04-06",
-            "death_date": "1954-02-17"
+            "death_date": "1954-02-17",
+            "type": "administrator_type"
         },
         "1120002": {
             "name": "Imam Mustafayev",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AZB_M_Mustafayev_Imam",
-            "head_of_state": "ambitious_type",
-            "head_of_government": "ambitious_type",
             "start_date": "1954-02-17",
-            "death_date": "1959-07-10"
+            "death_date": "1959-07-10",
+            "type": "ambitious_type"
         },
         "1120003": {
             "name": "Vali Akhundov",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AZB_M_Akhundov_Vali",
-            "head_of_state": "lethargic_type",
-            "head_of_government": "lethargic_type",
             "start_date": "1959-07-10",
-            "death_date": "1969-07-14"
+            "death_date": "1969-07-14",
+            "type": "lethargic_type"
         },
         "1120004": {
             "name": "Heydar Aliyev",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AZB_M_Aliyev_Heydar",
-            "head_of_state": "autocrat_type",
-            "head_of_government": "autocrat_type",
             "start_date": "1969-07-14",
             "death_date": "1982-12-03",
-            "base": 1120004
+            "type": "autocrat_type"
         },
         "1120005": {
             "name": "Kamran Baghirov",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AZB_M_Baghirov_Kamran",
-            "head_of_state": "lethargic_type",
-            "head_of_government": "lethargic_type",
             "start_date": "1982-12-03",
-            "death_date": "1988-05-21"
+            "death_date": "1988-05-21",
+            "type": "lethargic_type"
         },
         "1120006": {
             "name": "Abdurrahman Vazirov",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AZB_M_Vazirov_Abdurrahman",
-            "head_of_state": "reformer_type",
-            "head_of_government": "reformer_type",
             "start_date": "1988-05-21",
-            "death_date": "1990-01-25"
+            "death_date": "1990-01-25",
+            "type": "reformer_type"
         },
         "1120007": {
             "name": "Ayaz Mutalibov",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
             "picture": "AZB_M_Mutalibov_Ayaz",
-            "head_of_state": "controversial_figure",
-            "head_of_government": "controversial_figure",
             "start_date": "1990-01-25",
             "death_date": "1991-09-14",
-            "base": 1120007
+            "type": "controversial_figure"
         },
         "1120008": {
             "name": "Ayaz Mutalibov",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 1.0,
             "picture": "AZB_M_Mutalibov_Ayaz",
-            "head_of_state": "controversial_figure",
-            "head_of_government": "controversial_figure",
             "start_date": "1991-09-14",
             "death_date": "1992-05-18",
-            "base": 1120007
+            "type": "controversial_figure"
         }
     }
 }

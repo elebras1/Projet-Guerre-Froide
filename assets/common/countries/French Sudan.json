@@ -1,1 +1,211 @@
-{"color": [181, 75, 21], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1195001": {"name": "Auguste Calvel", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "FSU_M_Calvel_Auguste", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1942-04-17", "death_date": "1946-05-15"}, "1195002": {"name": "Edmond Louveau", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "FSU_M_Louveau_Edmond", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1946-05-15", "death_date": "1952-04-01"}, "1195003": {"name": "Camille Victor Bailly", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "FSU_M_Bailly_Camille_V", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1952-04-01", "death_date": "1952-07-10"}, "1195004": {"name": "Salvador Jean Etch\u00e9ber", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "FSU_M_Etcheber_Salvador_J", "head_of_state": "reputable_type", "head_of_government": "reputable_type", "start_date": "1952-07-10", "death_date": "1953-02-23"}, "1195005": {"name": "Albert Jean Mouragues", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "FSU_M_Mouragues_Albert_J", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1953-02-23", "death_date": "1953-12-02"}, "1195006": {"name": "Lucien Eug\u00e8ne Geay", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "FSU_M_", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1953-12-02", "death_date": "1956-11-03"}, "1195007": {"name": "Henri Victor Gipoulon", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "FSU_M_Gipoulon_Henri_V", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1956-11-03", "death_date": "1958-11-24"}, "1195008": {"name": "Jean Charles Sicurani", "ideology": "social_cons_idolg", "loyalty": 1.0, "picture": "FSU_M_Sicurani_Jean_C", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1958-11-24", "death_date": "1959-04-04"}, "1195009": {"name": "Modibo Ke\u00efta", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "MAL_M_Keita_Modibo", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1960-06-20", "death_date": "1968-11-19", "base": 1248001}, "1195010": {"name": "Moussa Traor\u00e9", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "MAL_M_Traore_Moussa", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1968-11-19", "death_date": "1991-03-26", "base": 1248002}, "1195011": {"name": "Amadou Toumani Tour\u00e9", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "MAL_M_Toure_Amadou_T", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1991-03-26", "death_date": "1992-06-08", "base": 1248003}, "1195012": {"name": "L\u00e9opold S\u00e9dar Senghor", "ideology": "social_democrat_idolg", "loyalty": 0.9, "picture": "SEN_M_Senghor_Leopold_S", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1960-09-06", "death_date": "1980-12-31", "base": 1310001}, "1195013": {"name": "Abdou Diouf", "ideology": "social_democrat_idolg", "loyalty": 0.7, "picture": "SEN_M_Diouf_Abdou", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1981-01-01", "death_date": "2000-04-01", "base": 1310002}, "1195014": {"name": "Abdoulaye Wade", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "SEN_M_Wade_Abdoulaye", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1978-02-26", "death_date": "1993-02-21", "base": 1310006}, "1195015": {"name": "Landing Savan\u00e9", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "SEN_M_Savane_Landing", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1988-02-28", "death_date": "1993-02-21", "base": 1310007}}}
+{
+    "color": [
+        181,
+        75,
+        21
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1195001": {
+            "name": "Auguste Calvel",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FSU_M_Calvel_Auguste",
+            "start_date": "1942-04-17",
+            "death_date": "1946-05-15",
+            "type": "traditionalist_type"
+        },
+        "1195002": {
+            "name": "Edmond Louveau",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FSU_M_Louveau_Edmond",
+            "start_date": "1946-05-15",
+            "death_date": "1952-04-01",
+            "type": "honest_type"
+        },
+        "1195003": {
+            "name": "Camille Victor Bailly",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FSU_M_Bailly_Camille_V",
+            "start_date": "1952-04-01",
+            "death_date": "1952-07-10",
+            "type": "lethargic_type"
+        },
+        "1195004": {
+            "name": "Salvador Jean Etchéber",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FSU_M_Etcheber_Salvador_J",
+            "start_date": "1952-07-10",
+            "death_date": "1953-02-23",
+            "type": "reputable_type"
+        },
+        "1195005": {
+            "name": "Albert Jean Mouragues",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FSU_M_Mouragues_Albert_J",
+            "start_date": "1953-02-23",
+            "death_date": "1953-12-02",
+            "type": "bureaucrat_type"
+        },
+        "1195006": {
+            "name": "Lucien Eugène Geay",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FSU_M_",
+            "start_date": "1953-12-02",
+            "death_date": "1956-11-03",
+            "type": "traditionalist_type"
+        },
+        "1195007": {
+            "name": "Henri Victor Gipoulon",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FSU_M_Gipoulon_Henri_V",
+            "start_date": "1956-11-03",
+            "death_date": "1958-11-24",
+            "type": "reformer_type"
+        },
+        "1195008": {
+            "name": "Jean Charles Sicurani",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FSU_M_Sicurani_Jean_C",
+            "start_date": "1958-11-24",
+            "death_date": "1959-04-04",
+            "type": "bureaucrat_type"
+        },
+        "1195009": {
+            "name": "Modibo Keïta",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "MAL_M_Keita_Modibo",
+            "start_date": "1960-06-20",
+            "death_date": "1968-11-19",
+            "type": "liberal_type"
+        },
+        "1195010": {
+            "name": "Moussa Traoré",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "MAL_M_Traore_Moussa",
+            "start_date": "1968-11-19",
+            "death_date": "1991-03-26",
+            "type": "liberal_type"
+        },
+        "1195011": {
+            "name": "Amadou Toumani Touré",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "MAL_M_Toure_Amadou_T",
+            "start_date": "1991-03-26",
+            "death_date": "1992-06-08",
+            "type": "reformer_type"
+        },
+        "1195012": {
+            "name": "Léopold Sédar Senghor",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "SEN_M_Senghor_Leopold_S",
+            "start_date": "1960-09-06",
+            "death_date": "1980-12-31",
+            "type": "parental_type"
+        },
+        "1195013": {
+            "name": "Abdou Diouf",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.7,
+            "picture": "SEN_M_Diouf_Abdou",
+            "start_date": "1981-01-01",
+            "death_date": "2000-04-01",
+            "type": "democrat_type"
+        },
+        "1195014": {
+            "name": "Abdoulaye Wade",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "SEN_M_Wade_Abdoulaye",
+            "start_date": "1978-02-26",
+            "death_date": "1993-02-21",
+            "type": "parental_type"
+        },
+        "1195015": {
+            "name": "Landing Savané",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "SEN_M_Savane_Landing",
+            "start_date": "1988-02-28",
+            "death_date": "1993-02-21",
+            "type": "democrat_type"
+        }
+    }
+}

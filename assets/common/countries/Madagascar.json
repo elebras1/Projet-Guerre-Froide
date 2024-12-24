@@ -1,1 +1,229 @@
-{"color": [238, 45, 23], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1247001": {"name": "Philibert Tsiranana", "ideology": "social_democrat_idolg", "loyalty": 0.9, "picture": "MAD_M_Tsiranana_Philibert", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1959-05-01", "death_date": "1972-10-11"}, "1247002": {"name": "Gabriel Ramanantsoa", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "MAD_M_Ramanantsoa_Gabriel", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1972-10-11", "death_date": "1975-02-05"}, "1247003": {"name": "Richard Ratsimandrava", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "MAD_M_Ratsimandrava_Richard", "head_of_state": "autocrat_type", "start_date": "1975-02-05", "death_date": "1975-02-11"}, "1247004": {"name": "Gilles Andriamahazo", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "MAD_M_Andriamahazo_Gilles", "head_of_state": "parental_type", "start_date": "1975-02-11", "death_date": "1975-06-15"}, "1247005": {"name": "Didier Ratsiraka", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "MAD_M_Ratsiraka_Didier", "head_of_state": "dictator_type", "start_date": "1975-06-15", "death_date": "1993-03-27"}, "1247006": {"name": "Joel Rakotomalala", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "MAD_M_Rakotomalala_Joel", "head_of_government": "administrator_type", "start_date": "1976-01-11", "death_date": "1976-08-12"}, "1247007": {"name": "Justin Rakotoniaina", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "MAD_M_Rakotoniaina_Justin", "head_of_government": "loyal_type", "start_date": "1976-08-12", "death_date": "1977-08-01"}, "1247008": {"name": "D\u00e9sir\u00e9 Rakotoarijaona", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "MAD_M_Rakotoarijaona_Desire", "head_of_government": "ambitious_type", "start_date": "1977-08-01", "death_date": "1988-02-12"}, "1247009": {"name": "Victor Ramahatra", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "MAD_M_Ramahatra_Victor", "head_of_government": "autocrat_type", "start_date": "1988-02-12", "death_date": "1991-08-08"}, "1247010": {"name": "Guy Razanamasy", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "MAD_M_Razanamasy_Guy", "head_of_government": "administrator_type", "start_date": "1991-08-08", "death_date": "1992-09-12"}, "1247011": {"name": "Manandafy Rakotonirina", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "MAD_M_Rakotonirina_Manandafy", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1972-12-27", "death_date": "1992-11-25"}, "1247012": {"name": "Richard Mahitsison Andriamanjato", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MAD_M_Andriamanjato_Richard_M", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1958-11-08", "death_date": "1989-03-15"}, "1247013": {"name": "Ny Hasina Andriamanjato", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MAD_M_Andriamanjato_Ny_H", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1980-01-01", "death_date": "1992-01-01"}, "1247014": {"name": "Francis Sautron", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MAD_M_Sautron_Francis", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1945-01-01", "death_date": "2003-01-01"}, "1247015": {"name": "Giselle Rabesahala", "ideology": "communist_idolg", "loyalty": 0.5, "picture": "MAD_M_Rabesahala_Giselle", "head_of_state": "supreme_leader", "head_of_government": "supreme_leader", "start_date": "1960-01-01", "death_date": "1990-01-01"}, "1247016": {"name": "Ren\u00e9 Anselme Randrianja", "ideology": "maoist_idolg", "loyalty": 0.5, "picture": "MAD_M_Randrianja_Rene_A", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1958-01-01", "death_date": "1992-01-01"}, "1247017": {"name": "Monja Jaona", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "MAD_M_Jaona_Monja", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1946-01-01", "death_date": "1992-01-01"}}}
+{
+    "color": [
+        238,
+        45,
+        23
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1247001": {
+            "name": "Philibert Tsiranana",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "MAD_M_Tsiranana_Philibert",
+            "start_date": "1959-05-01",
+            "death_date": "1972-10-11",
+            "type": "autocrat_type"
+        },
+        "1247002": {
+            "name": "Gabriel Ramanantsoa",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "MAD_M_Ramanantsoa_Gabriel",
+            "start_date": "1972-10-11",
+            "death_date": "1975-02-05",
+            "type": "ambitious_type"
+        },
+        "1247003": {
+            "name": "Richard Ratsimandrava",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MAD_M_Ratsimandrava_Richard",
+            "start_date": "1975-02-05",
+            "death_date": "1975-02-11",
+            "type": "autocrat_type"
+        },
+        "1247004": {
+            "name": "Gilles Andriamahazo",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MAD_M_Andriamahazo_Gilles",
+            "start_date": "1975-02-11",
+            "death_date": "1975-06-15",
+            "type": "parental_type"
+        },
+        "1247005": {
+            "name": "Didier Ratsiraka",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MAD_M_Ratsiraka_Didier",
+            "start_date": "1975-06-15",
+            "death_date": "1993-03-27",
+            "type": "dictator_type"
+        },
+        "1247006": {
+            "name": "Joel Rakotomalala",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MAD_M_Rakotomalala_Joel",
+            "start_date": "1976-01-11",
+            "death_date": "1976-08-12",
+            "type": "administrator_type"
+        },
+        "1247007": {
+            "name": "Justin Rakotoniaina",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MAD_M_Rakotoniaina_Justin",
+            "start_date": "1976-08-12",
+            "death_date": "1977-08-01",
+            "type": "loyal_type"
+        },
+        "1247008": {
+            "name": "Désiré Rakotoarijaona",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MAD_M_Rakotoarijaona_Desire",
+            "start_date": "1977-08-01",
+            "death_date": "1988-02-12",
+            "type": "ambitious_type"
+        },
+        "1247009": {
+            "name": "Victor Ramahatra",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MAD_M_Ramahatra_Victor",
+            "start_date": "1988-02-12",
+            "death_date": "1991-08-08",
+            "type": "autocrat_type"
+        },
+        "1247010": {
+            "name": "Guy Razanamasy",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MAD_M_Razanamasy_Guy",
+            "start_date": "1991-08-08",
+            "death_date": "1992-09-12",
+            "type": "administrator_type"
+        },
+        "1247011": {
+            "name": "Manandafy Rakotonirina",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "MAD_M_Rakotonirina_Manandafy",
+            "start_date": "1972-12-27",
+            "death_date": "1992-11-25",
+            "type": "ambitious_type"
+        },
+        "1247012": {
+            "name": "Richard Mahitsison Andriamanjato",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MAD_M_Andriamanjato_Richard_M",
+            "start_date": "1958-11-08",
+            "death_date": "1989-03-15",
+            "type": "religious_type"
+        },
+        "1247013": {
+            "name": "Ny Hasina Andriamanjato",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MAD_M_Andriamanjato_Ny_H",
+            "start_date": "1980-01-01",
+            "death_date": "1992-01-01",
+            "type": "reformer_type"
+        },
+        "1247014": {
+            "name": "Francis Sautron",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MAD_M_Sautron_Francis",
+            "start_date": "1945-01-01",
+            "death_date": "2003-01-01",
+            "type": "democrat_type"
+        },
+        "1247015": {
+            "name": "Giselle Rabesahala",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MAD_M_Rabesahala_Giselle",
+            "start_date": "1960-01-01",
+            "death_date": "1990-01-01",
+            "type": "supreme_leader"
+        },
+        "1247016": {
+            "name": "René Anselme Randrianja",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "MAD_M_Randrianja_Rene_A",
+            "start_date": "1958-01-01",
+            "death_date": "1992-01-01",
+            "type": "visionary_type"
+        },
+        "1247017": {
+            "name": "Monja Jaona",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "MAD_M_Jaona_Monja",
+            "start_date": "1946-01-01",
+            "death_date": "1992-01-01",
+            "type": "visionary_type"
+        }
+    }
+}

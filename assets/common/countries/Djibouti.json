@@ -1,1 +1,139 @@
-{"color": [40, 122, 5], "graphical_culture": "Generic", "default_templates": {"FRA_light_aviation_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "FRA_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "FRA_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "FRA_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "FRA_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "FRA_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "FRA_marine_inf_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "FRA_chasseurs_alpins_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "FRA_gendarmerie_division": ["police_brigade", "infantry_brigade", "militia_brigade"]}, "unit_names": "", "ministers": {"1173001": {"name": "Hassan Gouled Aptidon", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "DJI_M_Aptidon_Hassan_G", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1977-06-27", "death_date": "1999-05-08"}, "1173002": {"name": "Mahamoud Harbi Farah", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "DJI_M_Farah_Mahamoud_H", "head_of_government": "administrator_type", "start_date": "1957-01-01", "death_date": "1958-12-01"}, "1173003": {"name": "Ahmed Dini Ahmed", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "DJI_M_Ahmed_Ahmed_D", "head_of_government": "hardliner_type", "start_date": "1959-04-01", "death_date": "1978-02-05"}, "1173004": {"name": "Ali Aref Bourhan", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "DJI_M_Bourhan_Ali_A", "head_of_government": "administrator_type", "start_date": "1960-06-01", "death_date": "1976-07-29"}, "1173005": {"name": "Abdallah Mohamed Kamil", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "DJI_M_Kamil_Abdallah_M", "head_of_government": "bureaucrat_type", "start_date": "1966-01-01", "death_date": "1978-10-02"}, "1173006": {"name": "Barkat Gourad Hamadou", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "DJI_M_Hamadou_Barkat_G", "head_of_government": "democrat_type", "start_date": "1978-10-02", "death_date": "2001-03-07"}, "1173007": {"name": "Isma\u00efl Omar Guelleh", "ideology": "paternal_auto_idolg", "loyalty": 0.8, "picture": "DJI_M_Guelleh_Ismail_O", "head_of_state": "dictator_type", "head_of_government": "dictator_type", "start_date": "1968-01-01", "death_date": "2300-01-01"}}}
+{
+    "color": [
+        40,
+        122,
+        5
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "FRA_light_aviation_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "FRA_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "FRA_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "FRA_marine_inf_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "FRA_chasseurs_alpins_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "FRA_gendarmerie_division": [
+            "police_brigade",
+            "infantry_brigade",
+            "militia_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1173001": {
+            "name": "Hassan Gouled Aptidon",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "DJI_M_Aptidon_Hassan_G",
+            "start_date": "1977-06-27",
+            "death_date": "1999-05-08",
+            "type": "autocrat_type"
+        },
+        "1173002": {
+            "name": "Mahamoud Harbi Farah",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "DJI_M_Farah_Mahamoud_H",
+            "start_date": "1957-01-01",
+            "death_date": "1958-12-01",
+            "type": "administrator_type"
+        },
+        "1173003": {
+            "name": "Ahmed Dini Ahmed",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "DJI_M_Ahmed_Ahmed_D",
+            "start_date": "1959-04-01",
+            "death_date": "1978-02-05",
+            "type": "hardliner_type"
+        },
+        "1173004": {
+            "name": "Ali Aref Bourhan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "DJI_M_Bourhan_Ali_A",
+            "start_date": "1960-06-01",
+            "death_date": "1976-07-29",
+            "type": "administrator_type"
+        },
+        "1173005": {
+            "name": "Abdallah Mohamed Kamil",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "DJI_M_Kamil_Abdallah_M",
+            "start_date": "1966-01-01",
+            "death_date": "1978-10-02",
+            "type": "bureaucrat_type"
+        },
+        "1173006": {
+            "name": "Barkat Gourad Hamadou",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "DJI_M_Hamadou_Barkat_G",
+            "start_date": "1978-10-02",
+            "death_date": "2001-03-07",
+            "type": "democrat_type"
+        },
+        "1173007": {
+            "name": "Ismaïl Omar Guelleh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "DJI_M_Guelleh_Ismail_O",
+            "start_date": "1968-01-01",
+            "death_date": "2300-01-01",
+            "type": "dictator_type"
+        }
+    }
+}

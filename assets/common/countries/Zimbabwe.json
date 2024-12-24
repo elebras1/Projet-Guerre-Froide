@@ -1,1 +1,257 @@
-{"color": [72, 148, 22], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1365001": {"name": "Canaan Banana", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "ZIM_M_Banana_Canaan", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1980-04-18", "death_date": "1987-12-31"}, "1365002": {"name": "Robert Mugabe", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "ZIM_M_Mugabe_Robert", "head_of_state": "controversial_figure", "head_of_government": "controversial_figure", "start_date": "1987-12-31", "death_date": "2013-01-01"}, "1365003": {"name": "Edgar Tekere", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ZIM_M_Tekere_Edgar", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1990-03-23", "death_date": "2011-06-01"}, "1365004": {"name": "Joshua Nkomo", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ZIM_M_Nkomo_Joshua", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1960-01-01", "death_date": "1999-07-01"}, "1365005": {"name": "Josiah Zion Gumede", "ideology": "social_liberal_idolg", "loyalty": 1.0, "picture": "ZRH_M_Gumede_Josiah_Z", "head_of_state": "moral_type", "start_date": "1946-01-01", "death_date": "1989-03-28", "base": 1365005}, "1365006": {"name": "Abel Muzorewa", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "ZRH_M_Muzorewa_Abel", "head_of_government": "religious_type", "start_date": "1946-01-01", "death_date": "2010-04-08", "base": 1365006}, "1365100": {"name": "Sidojiwa I Khumalo", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.5, "picture": "ZRH_M_Sidojiwa_I", "head_of_state": "reputable_type", "start_date": "1894-01-01", "death_date": "1960-07-13"}, "1365101": {"name": "Cephas I Khumalo", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.5, "picture": "ZRH_M_Cephas_I", "head_of_state": "traditionalist_type", "start_date": "1960-07-13", "death_date": "2300-01-01"}, "1365102": {"name": "Josiah Tongogara", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "ZRH_M_Tongogara_Josiah", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1973-06-15", "death_date": "1979-12-26"}, "1365103": {"name": "Herbert Chitepo", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "ZRH_M_Chitepo_Herbert", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1963-01-01", "death_date": "1975-03-18"}, "1365104": {"name": "Solomon Mujuru", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "ZRH_M_Mujuru_Solomon", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1974-03-01", "death_date": "2011-08-15"}, "1365105": {"name": "Ndabaningi Sithole", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "ZRH_M_Sithole_Ndabaningi", "head_of_state": "zealous_type", "head_of_government": "zealous_type", "start_date": "1963-07-01", "death_date": "1999-12-31"}, "1365106": {"name": "James Chikerema", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "ZRH_M_Chikerema_James", "head_of_state": "reformer_type", "head_of_government": "reformer_type", "start_date": "1957-08-15", "death_date": "1999-12-31"}, "1365107": {"name": "Jeremiah Chirau", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "RHO_M_Chirau_Jeremiah", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1970-01-01", "death_date": "1985-01-01", "base": 1365107}, "1365108": {"name": "Kayisa Ndiweni", "ideology": "market_liberal_idolg", "loyalty": 0.5, "picture": "RHO_M_Ndiweni_Kayisa", "head_of_state": "reputable_type", "head_of_government": "reputable_type", "start_date": "1975-01-01", "death_date": "2010-01-01", "base": 1365108}, "1365109": {"name": "Josiah Gondo", "ideology": "social_democrat_idolg", "loyalty": 0.5, "picture": "RHO_M_Gondo_Josiah", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1962-01-01", "death_date": "1972-01-01", "base": 1365109}, "1365110": {"name": "Ahrn Palley", "ideology": "social_liberal_idolg", "loyalty": 0.5, "picture": "RHO_M_Palley_Ahrn", "head_of_state": "liberal_type", "head_of_government": "liberal_type", "start_date": "1958-06-05", "death_date": "1993-05-06", "base": 1365110}, "1365111": {"name": "Nathan Shamuyarira", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "RHO_M_Shamuyarira_Nathan", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1963-07-01", "death_date": "2300-01-01"}, "1365112": {"name": "Edson Zvobgo", "ideology": "left_wing_radical_idolg", "loyalty": 0.5, "picture": "RHO_M_Zvobgo_Edson", "head_of_state": "honest_type", "head_of_government": "honest_type", "start_date": "1963-07-01", "death_date": "2004-08-22"}, "1365114": {"name": "W. Denis Walker", "ideology": "paternal_auto_idolg", "loyalty": 0.5, "picture": "RHO_M_Walker_W_D", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1974-07-30", "death_date": "1982-02-10"}}}
+{
+    "color": [
+        72,
+        148,
+        22
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1365001": {
+            "name": "Canaan Banana",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "ZIM_M_Banana_Canaan",
+            "start_date": "1980-04-18",
+            "death_date": "1987-12-31",
+            "type": "parental_type"
+        },
+        "1365002": {
+            "name": "Robert Mugabe",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "ZIM_M_Mugabe_Robert",
+            "start_date": "1987-12-31",
+            "death_date": "2013-01-01",
+            "type": "controversial_figure"
+        },
+        "1365003": {
+            "name": "Edgar Tekere",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ZIM_M_Tekere_Edgar",
+            "start_date": "1990-03-23",
+            "death_date": "2011-06-01",
+            "type": "democrat_type"
+        },
+        "1365004": {
+            "name": "Joshua Nkomo",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ZIM_M_Nkomo_Joshua",
+            "start_date": "1960-01-01",
+            "death_date": "1999-07-01",
+            "type": "honest_type"
+        },
+        "1365005": {
+            "name": "Josiah Zion Gumede",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "ZRH_M_Gumede_Josiah_Z",
+            "start_date": "1946-01-01",
+            "death_date": "1989-03-28",
+            "type": "moral_type"
+        },
+        "1365006": {
+            "name": "Abel Muzorewa",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "ZRH_M_Muzorewa_Abel",
+            "start_date": "1946-01-01",
+            "death_date": "2010-04-08",
+            "type": "religious_type"
+        },
+        "1365100": {
+            "name": "Sidojiwa I Khumalo",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ZRH_M_Sidojiwa_I",
+            "start_date": "1894-01-01",
+            "death_date": "1960-07-13",
+            "type": "reputable_type"
+        },
+        "1365101": {
+            "name": "Cephas I Khumalo",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ZRH_M_Cephas_I",
+            "start_date": "1960-07-13",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "1365102": {
+            "name": "Josiah Tongogara",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ZRH_M_Tongogara_Josiah",
+            "start_date": "1973-06-15",
+            "death_date": "1979-12-26",
+            "type": "hardliner_type"
+        },
+        "1365103": {
+            "name": "Herbert Chitepo",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ZRH_M_Chitepo_Herbert",
+            "start_date": "1963-01-01",
+            "death_date": "1975-03-18",
+            "type": "zealous_type"
+        },
+        "1365104": {
+            "name": "Solomon Mujuru",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ZRH_M_Mujuru_Solomon",
+            "start_date": "1974-03-01",
+            "death_date": "2011-08-15",
+            "type": "autocrat_type"
+        },
+        "1365105": {
+            "name": "Ndabaningi Sithole",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ZRH_M_Sithole_Ndabaningi",
+            "start_date": "1963-07-01",
+            "death_date": "1999-12-31",
+            "type": "zealous_type"
+        },
+        "1365106": {
+            "name": "James Chikerema",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ZRH_M_Chikerema_James",
+            "start_date": "1957-08-15",
+            "death_date": "1999-12-31",
+            "type": "reformer_type"
+        },
+        "1365107": {
+            "name": "Jeremiah Chirau",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Chirau_Jeremiah",
+            "start_date": "1970-01-01",
+            "death_date": "1985-01-01",
+            "type": "courageous_type"
+        },
+        "1365108": {
+            "name": "Kayisa Ndiweni",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Ndiweni_Kayisa",
+            "start_date": "1975-01-01",
+            "death_date": "2010-01-01",
+            "type": "reputable_type"
+        },
+        "1365109": {
+            "name": "Josiah Gondo",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Gondo_Josiah",
+            "start_date": "1962-01-01",
+            "death_date": "1972-01-01",
+            "type": "honest_type"
+        },
+        "1365110": {
+            "name": "Ahrn Palley",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Palley_Ahrn",
+            "start_date": "1958-06-05",
+            "death_date": "1993-05-06",
+            "type": "liberal_type"
+        },
+        "1365111": {
+            "name": "Nathan Shamuyarira",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Shamuyarira_Nathan",
+            "start_date": "1963-07-01",
+            "death_date": "2300-01-01",
+            "type": "hardliner_type"
+        },
+        "1365112": {
+            "name": "Edson Zvobgo",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Zvobgo_Edson",
+            "start_date": "1963-07-01",
+            "death_date": "2004-08-22",
+            "type": "honest_type"
+        },
+        "1365114": {
+            "name": "W. Denis Walker",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "RHO_M_Walker_W_D",
+            "start_date": "1974-07-30",
+            "death_date": "1982-02-10",
+            "type": "hardliner_type"
+        }
+    }
+}

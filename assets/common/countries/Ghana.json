@@ -1,1 +1,374 @@
-{"color": [169, 48, 51], "graphical_culture": "Generic", "default_templates": {"ENG_air_cavalry_division": ["air_cav_brigade", "air_cav_brigade", "air_cav_brigade", "air_cav_brigade"], "ENG_armoured_division": ["armor_brigade", "armor_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "sp_artillery_brigade"], "ENG_cavalry_division": ["cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "cavalry_brigade", "sp_artillery_brigade"], "ENG_heavy_mechanized_division": ["heavy_mechanized_brigade", "heavy_mechanized_brigade", "light_mechanized_brigade", "armor_brigade", "sp_artillery_brigade"], "ENG_light_mechanized_division": ["light_mechanized_brigade", "light_mechanized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_motorized_division": ["motorized_brigade", "motorized_brigade", "heavy_mechanized_brigade", "sp_artillery_brigade"], "ENG_infantry_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"], "ENG_marine_division": ["marine_brigade", "marine_brigade", "marine_brigade", "marine_brigade"], "ENG_mountain_division": ["bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade", "bergsjaeger_brigade"], "ENG_national_guard_division": ["infantry_brigade", "infantry_brigade", "infantry_brigade", "artillery_brigade"]}, "unit_names": "", "ministers": {"1200001": {"name": "George VI", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_George", "head_of_state": "parental_type", "start_date": "1936-09-11", "death_date": "1952-02-06", "base": 1181001}, "1200002": {"name": "Elizabeth II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 1.0, "picture": "ENG_Elizabeth", "head_of_state": "traditionalist_type", "start_date": "1952-02-06", "death_date": "2300-05-12", "base": 1181002}, "1200300": {"name": "George VII", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.99, "picture": "ENG_M_George_VII", "head_of_state": "parental_type", "start_date": "1966-11-14", "death_date": "2300-01-01", "base": 1181196}, "1200301": {"name": "Andrew I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.98, "picture": "ENG_M_Andrew_I", "head_of_state": "fortunate_type", "start_date": "1978-02-19", "death_date": "2300-01-01", "base": 1181197}, "1200302": {"name": "Edward IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.97, "picture": "ENG_M_Edward_IX", "head_of_state": "courteous_figure", "start_date": "1982-03-10", "death_date": "2300-01-01", "base": 1181198}, "1200304": {"name": "Anne II", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.96, "picture": "ENG_M_Anne_II", "head_of_state": "courteous_figure", "start_date": "1968-08-15", "death_date": "2300-01-01", "base": 1181209}, "1200305": {"name": "Margaret I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.95, "picture": "ENG_M_Margaret_I", "head_of_state": "controversial_figure", "start_date": "1952-03-01", "death_date": "2002-02-09", "base": 1181210}, "1200306": {"name": "David III", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.94, "picture": "ENG_M_David_III", "head_of_state": "courteous_figure", "start_date": "1979-11-03", "death_date": "2300-01-01", "base": 1181211}, "1200307": {"name": "Sarah I", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.93, "picture": "ENG_M_Sarah_I", "head_of_state": "courteous_figure", "start_date": "1982-05-01", "death_date": "2300-01-01", "base": 1181212}, "1200308": {"name": "Henry IX", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.92, "picture": "ENG_M_Henry_IX", "head_of_state": "courteous_figure", "start_date": "1946-01-01", "death_date": "1974-06-10", "base": 1181213}, "1200309": {"name": "William V", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.91, "picture": "ENG_M_William_V", "head_of_state": "courteous_figure", "start_date": "1959-12-18", "death_date": "1972-08-28", "base": 1181214}, "1200310": {"name": "Richard IV", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.9, "picture": "ENG_M_Richard_IV", "head_of_state": "courteous_figure", "start_date": "1962-08-26", "death_date": "2300-01-01", "base": 1181215}, "1200311": {"name": "Robert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Robert_I_Bayern", "head_of_state": "traditionalist_type", "start_date": "1919-02-03", "death_date": "1955-08-02", "base": 1181199}, "1200312": {"name": "Albert I von Bayern", "ideology": "social_cons_idolg", "moral_leader": true, "loyalty": 0.4, "picture": "ENG_M_Albert_I_Bayern", "head_of_state": "fortunate_type", "start_date": "1955-08-02", "death_date": "1996-07-08", "base": 1181200}, "1200003": {"name": "Sir Charles Noble Arden-Clarke", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "GHN_M_Arden-Clarke_Charles_N", "head_of_state": "administrator_type", "start_date": "1957-03-06", "death_date": "1957-06-24"}, "1200004": {"name": "William Francis Hare", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "GHN_M_Hare_William_H", "head_of_state": "administrator_type", "start_date": "1957-06-24", "death_date": "1960-07-01"}, "1200005": {"name": "Dr.h.c. Kwame Nkrumah", "ideology": "market_liberal_idolg", "loyalty": 0.9, "picture": "GHN_M_Nkrumah_H_C_K", "head_of_state": "parental_type", "head_of_government": "parental_type", "start_date": "1957-03-06", "death_date": "1972-04-27"}, "1200006": {"name": "Joseph Arthur Ankrah", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "GHN_M_Ankrah_Joseph_A", "head_of_state": "courageous_type", "head_of_government": "courageous_type", "start_date": "1966-02-24", "death_date": "1969-04-02"}, "1200007": {"name": "Akwasi Amankwa Afrifa", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "GHN_M_Afrifa_Akwasi_A", "head_of_state": "autocrat_type", "head_of_government": "autocrat_type", "start_date": "1969-04-02", "death_date": "1970-08-07"}, "1200008": {"name": "Nii Amaa Ollennu", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "GHN_M_Ollennu_Nii_A", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1970-08-07", "death_date": "1970-08-31"}, "1200009": {"name": "Edward Akufo-Addo", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "GHN_M_Akufo-Addo_Edward", "head_of_state": "lethargic_type", "head_of_government": "lethargic_type", "start_date": "1970-08-31", "death_date": "1972-01-13"}, "1200010": {"name": "Ignatius Kutu Acheampong", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "GHN_M_Acheampong_Ignatius_K", "head_of_state": "hardliner_type", "head_of_government": "hardliner_type", "start_date": "1972-01-13", "death_date": "1978-07-05"}, "1200011": {"name": "Frederick F.W.K. Akuffo", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "GHN_M_Akuffo_Frederick_F_W_K", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1978-07-05", "death_date": "1979-06-26"}, "1200012": {"name": "Jerry John Rawlings", "ideology": "social_cons_idolg", "loyalty": 0.9, "picture": "GHN_M_Rawlings_Jerry_J", "head_of_state": "democrat_type", "head_of_government": "democrat_type", "start_date": "1979-06-26", "death_date": "2001-01-07"}, "1200013": {"name": "Dr. Hilla Limann", "ideology": "market_liberal_idolg", "loyalty": 0.9, "picture": "GHN_M_Limann_Hilla", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1979-09-24", "death_date": "1992-01-01"}, "1200014": {"name": "Kofi Abrefa Busia", "ideology": "paternal_auto_idolg", "loyalty": 1.0, "picture": "GHN_M_Busia_Kofi_A", "head_of_government": "ambitious_type", "start_date": "1969-10-01", "death_date": "1972-01-13"}, "1200015": {"name": "Emmanuel Kwasi Kotoka", "ideology": "paternal_auto_idolg", "loyalty": 0.9, "picture": "GHN_M_Kotoka_Emmanuel_K", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1966-02-24", "death_date": "1967-04-17"}, "1200016": {"name": "J. B. Danquah", "ideology": "social_cons_idolg", "loyalty": 0.85, "picture": "GHN_M_Danquah_J_B", "head_of_state": "traditionalist_type", "head_of_government": "traditionalist_type", "start_date": "1946-01-01", "death_date": "1965-02-04"}, "1200017": {"name": "Imoru Egala", "ideology": "social_democrat_idolg", "loyalty": 1.0, "picture": "GHN_M_Egala_Imoru", "head_of_state": "visionary_type", "head_of_government": "visionary_type", "start_date": "1960-01-01", "death_date": "1981-04-02"}, "1200018": {"name": "Imoru Ayarna", "ideology": "left_wing_radical_idolg", "loyalty": 1.0, "picture": "GHN_M_Ayarna_Imoru", "head_of_state": "bureaucrat_type", "head_of_government": "bureaucrat_type", "start_date": "1969-01-01", "death_date": "1979-01-01"}, "1200019": {"name": "William Ofori Atta", "ideology": "market_liberal_idolg", "loyalty": 0.85, "picture": "GHN_M_Atta_William_O", "head_of_state": "religious_type", "head_of_government": "religious_type", "start_date": "1956-01-01", "death_date": "1988-07-14"}, "1200020": {"name": "Emmanuel Obetsebi-Lamptey", "ideology": "market_liberal_idolg", "loyalty": 0.85, "picture": "GHN_M_Obetsebi-Lamptey_Emmanuel", "head_of_state": "administrator_type", "head_of_government": "administrator_type", "start_date": "1946-01-01", "death_date": "1963-01-01"}, "1200021": {"name": "Ebenezer Ako-Adjei", "ideology": "market_liberal_idolg", "loyalty": 0.8, "picture": "GHN_M_Ako-Adjei_Ebenezer", "head_of_state": "ambitious_type", "head_of_government": "ambitious_type", "start_date": "1946-01-01", "death_date": "2002-01-14"}}}
+{
+    "color": [
+        169,
+        48,
+        51
+    ],
+    "graphical_culture": "Generic",
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
+    },
+    "unit_names": "",
+    "ministers": {
+        "1200001": {
+            "name": "George VI",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
+        },
+        "1200002": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "1200300": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "1200301": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "1200302": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1200304": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1200305": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "1200306": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1200307": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1200308": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "1200309": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "1200310": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1200311": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
+        "1200312": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "1200003": {
+            "name": "Sir Charles Noble Arden-Clarke",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Arden-Clarke_Charles_N",
+            "start_date": "1957-03-06",
+            "death_date": "1957-06-24",
+            "type": "administrator_type"
+        },
+        "1200004": {
+            "name": "William Francis Hare",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Hare_William_H",
+            "start_date": "1957-06-24",
+            "death_date": "1960-07-01",
+            "type": "administrator_type"
+        },
+        "1200005": {
+            "name": "Dr.h.c. Kwame Nkrumah",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Nkrumah_H_C_K",
+            "start_date": "1957-03-06",
+            "death_date": "1972-04-27",
+            "type": "parental_type"
+        },
+        "1200006": {
+            "name": "Joseph Arthur Ankrah",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Ankrah_Joseph_A",
+            "start_date": "1966-02-24",
+            "death_date": "1969-04-02",
+            "type": "courageous_type"
+        },
+        "1200007": {
+            "name": "Akwasi Amankwa Afrifa",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Afrifa_Akwasi_A",
+            "start_date": "1969-04-02",
+            "death_date": "1970-08-07",
+            "type": "autocrat_type"
+        },
+        "1200008": {
+            "name": "Nii Amaa Ollennu",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Ollennu_Nii_A",
+            "start_date": "1970-08-07",
+            "death_date": "1970-08-31",
+            "type": "administrator_type"
+        },
+        "1200009": {
+            "name": "Edward Akufo-Addo",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Akufo-Addo_Edward",
+            "start_date": "1970-08-31",
+            "death_date": "1972-01-13",
+            "type": "lethargic_type"
+        },
+        "1200010": {
+            "name": "Ignatius Kutu Acheampong",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Acheampong_Ignatius_K",
+            "start_date": "1972-01-13",
+            "death_date": "1978-07-05",
+            "type": "hardliner_type"
+        },
+        "1200011": {
+            "name": "Frederick F.W.K. Akuffo",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Akuffo_Frederick_F_W_K",
+            "start_date": "1978-07-05",
+            "death_date": "1979-06-26",
+            "type": "ambitious_type"
+        },
+        "1200012": {
+            "name": "Jerry John Rawlings",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Rawlings_Jerry_J",
+            "start_date": "1979-06-26",
+            "death_date": "2001-01-07",
+            "type": "democrat_type"
+        },
+        "1200013": {
+            "name": "Dr. Hilla Limann",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Limann_Hilla",
+            "start_date": "1979-09-24",
+            "death_date": "1992-01-01",
+            "type": "visionary_type"
+        },
+        "1200014": {
+            "name": "Kofi Abrefa Busia",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "GHN_M_Busia_Kofi_A",
+            "start_date": "1969-10-01",
+            "death_date": "1972-01-13",
+            "type": "ambitious_type"
+        },
+        "1200015": {
+            "name": "Emmanuel Kwasi Kotoka",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "GHN_M_Kotoka_Emmanuel_K",
+            "start_date": "1966-02-24",
+            "death_date": "1967-04-17",
+            "type": "ambitious_type"
+        },
+        "1200016": {
+            "name": "J. B. Danquah",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GHN_M_Danquah_J_B",
+            "start_date": "1946-01-01",
+            "death_date": "1965-02-04",
+            "type": "traditionalist_type"
+        },
+        "1200017": {
+            "name": "Imoru Egala",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "GHN_M_Egala_Imoru",
+            "start_date": "1960-01-01",
+            "death_date": "1981-04-02",
+            "type": "visionary_type"
+        },
+        "1200018": {
+            "name": "Imoru Ayarna",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "GHN_M_Ayarna_Imoru",
+            "start_date": "1969-01-01",
+            "death_date": "1979-01-01",
+            "type": "bureaucrat_type"
+        },
+        "1200019": {
+            "name": "William Ofori Atta",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.85,
+            "picture": "GHN_M_Atta_William_O",
+            "start_date": "1956-01-01",
+            "death_date": "1988-07-14",
+            "type": "religious_type"
+        },
+        "1200020": {
+            "name": "Emmanuel Obetsebi-Lamptey",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.85,
+            "picture": "GHN_M_Obetsebi-Lamptey_Emmanuel",
+            "start_date": "1946-01-01",
+            "death_date": "1963-01-01",
+            "type": "administrator_type"
+        },
+        "1200021": {
+            "name": "Ebenezer Ako-Adjei",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "GHN_M_Ako-Adjei_Ebenezer",
+            "start_date": "1946-01-01",
+            "death_date": "2002-01-14",
+            "type": "ambitious_type"
+        }
+    }
+}
