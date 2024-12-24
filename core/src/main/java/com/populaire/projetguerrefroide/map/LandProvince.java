@@ -12,7 +12,6 @@ public class LandProvince implements Province {
     private final IntSet pixels;
     private int color;
     private short id;
-    private String name;
     private Country countryOwner;
     private Country countryController;
     private Region region;
@@ -58,14 +57,6 @@ public class LandProvince implements Province {
 
     public void setId(short id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public void setRegion(Region region) {
@@ -142,7 +133,6 @@ public class LandProvince implements Province {
         return "Province{" +
                 "id=" + this.id +
                 ", color='" + this.color + '\'' +
-                ", name='" + this.name + '\'' +
                 ", number_pixels=" + this.pixels.size() +
                 ", owner=" + this.countryOwner.getName() +
                 ", controller=" + this.countryController.getName() +

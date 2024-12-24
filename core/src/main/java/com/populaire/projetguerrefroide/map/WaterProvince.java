@@ -8,7 +8,6 @@ public class WaterProvince implements Province{
     private final List<Province> adjacentProvinces;
     private int color;
     private short id;
-    private String name;
 
     public WaterProvince(short id) {
         this.id = id;
@@ -33,16 +32,6 @@ public class WaterProvince implements Province{
     @Override
     public void setId(short id) {
         this.id = id;
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override

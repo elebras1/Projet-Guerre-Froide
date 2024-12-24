@@ -83,6 +83,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.localisation.putAll(this.gameContext.getLocalisationManager().readPoliticsCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readPopupCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readProvinceNamesCsv());
         this.initializeUi();
         this.paused = false;
     }
@@ -141,7 +142,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     @Override
     public void onHover(short x, short y) {
         if(this.worldService.hoverProvince(x, y)) {
-            this.updateHoverBox(this.worldService.getNameOfHoveredProvince(x, y),
+            this.updateHoverBox(this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))),
                 this.worldService.getCountryNameOfHoveredProvince(x, y),
                 this.worldService.getCountryIdOfHoveredProvince(x, y));
         } else {

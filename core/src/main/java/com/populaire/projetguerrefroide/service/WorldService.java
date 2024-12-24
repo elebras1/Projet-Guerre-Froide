@@ -34,8 +34,8 @@ public class WorldService {
         return this.world.getProvince(x, y) != null;
     }
 
-    public String getNameOfHoveredProvince(short x, short y) {
-        return this.world.getProvince(x, y).getName();
+    public short getProvinceId(short x, short y) {
+        return this.world.getProvince(x, y).getId();
     }
 
     public String getCountryIdOfHoveredProvince(short x, short y) {

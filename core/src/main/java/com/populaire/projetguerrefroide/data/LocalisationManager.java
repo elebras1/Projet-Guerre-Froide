@@ -44,6 +44,10 @@ public class LocalisationManager {
         return readLocalisationCsv(this.popupCsvFile);
     }
 
+    public Map<String, String> readProvinceNamesCsv() {
+        return readLocalisationCsv(this.provinceNamesCsvFile);
+    }
+
     private Map<String, String> readLocalisationCsv(String filename) {
         Map<String, String> localisation = new ObjectObjectMap<>();
         try (BufferedReader br = new BufferedReader(
