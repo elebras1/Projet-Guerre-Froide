@@ -1,1 +1,28 @@
-{}
+{
+"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+	"settings_tab_btn_1": {
+		"up": "settings_tab_btn_1",
+		"down": "settings_tab_btn_1_down",
+		"over": "settings_tab_btn_1_over"
+	},
+	"settings_tab_btn_2": {
+		"up": "settings_tab_btn_2",
+		"down": "settings_tab_btn_2_down",
+		"over": "settings_tab_btn_2_over"
+	},
+	"checkbox": {
+		"up": "checkbutton_off",
+		"checked": "checkbutton_on"
+	},
+	"settings_less": {
+		"up": "settings_less",
+		"down": "settings_less_down",
+		"over": "settings_less_over"
+	},
+	"settings_more": {
+		"up": "settings_more",
+		"down": "settings_more_down",
+		"over": "settings_more_over"
+	}
+}
+}

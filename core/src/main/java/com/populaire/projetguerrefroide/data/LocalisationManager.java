@@ -19,42 +19,47 @@ public class LocalisationManager {
     private final String bookmarkCsvFile = this.localisationPath + "bookmark.csv";
     private final String politicsCsvFile = this.localisationPath + "politics.csv";
     private final String popupCsvFile = this.localisationPath + "popup.csv";
+    private String language = "ENGLISH";
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
 
     public Map<String, String> readMainMenuCsv() {
-        return readLocalisationCsv(this.mainmenuCsvFile);
+        return readLocalisationCsv(this.language, this.mainmenuCsvFile);
     }
 
     public Map<String, String> readNewgameCsv() {
-        return readLocalisationCsv(this.newgameCsvFile);
+        return readLocalisationCsv(this.language, this.newgameCsvFile);
     }
 
     public Map<String, String> readBookmarkCsv() {
-        return readLocalisationCsv(this.bookmarkCsvFile);
+        return readLocalisationCsv(this.language, this.bookmarkCsvFile);
     }
 
     public Map<String, String> readPoliticsCsv() {
-        return readLocalisationCsv(this.politicsCsvFile);
+        return readLocalisationCsv(this.language, this.politicsCsvFile);
     }
 
     public Map<String, String> readMainMenuInGameCsv() {
-        return readLocalisationCsv(this.mainemenuInGameCsvFile);
+        return readLocalisationCsv(this.language, this.mainemenuInGameCsvFile);
     }
 
     public Map<String, String> readPopupCsv() {
-        return readLocalisationCsv(this.popupCsvFile);
+        return readLocalisationCsv(this.language, this.popupCsvFile);
     }
 
     public Map<String, String> readProvinceNamesCsv() {
-        return readLocalisationCsv(this.provinceNamesCsvFile);
+        return readLocalisationCsv("ENGLISH", this.provinceNamesCsvFile);
     }
 
-    private Map<String, String> readLocalisationCsv(String filename) {
+    private Map<String, String> readLocalisationCsv(String language, String filename) {
         Map<String, String> localisation = new ObjectObjectMap<>();
         try (BufferedReader br = new BufferedReader(
             new InputStreamReader(
                 Gdx.files.internal(filename).read(), StandardCharsets.UTF_8))) {
             String[] headers = br.readLine().split(";");
-            int localisationIndex = Arrays.asList(headers).indexOf("ENGLISH");
+            int localisationIndex = Arrays.asList(headers).indexOf(language);
             if (localisationIndex == -1) {
                 throw new IllegalArgumentException("Localisation not found in CSV headers.");
             }

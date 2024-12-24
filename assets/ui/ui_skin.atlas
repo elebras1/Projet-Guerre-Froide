@@ -4,57 +4,151 @@ size: 512, 512
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
+checkbutton_off
+  rotate: false
+  xy: 274, 409
+  size: 30, 31
+  orig: 30, 31
+  offset: 0, 0
+  index: -1
+checkbutton_on
+  rotate: false
+  xy: 274, 376
+  size: 30, 31
+  orig: 30, 31
+  offset: 0, 0
+  index: -1
 flag_alpha
   rotate: false
-  xy: 1, 197
+  xy: 1, 281
   size: 109, 77
   orig: 109, 77
   offset: 0, 0
   index: -1
-small_tiles_dialog
-  rotate: false
-  xy: 112, 242
-  size: 32, 32
-  split: 10, 10, 10, 10
-  pad: 9, 9, 9, 9
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-tiles_dialog
-  rotate: false
-  xy: 1, 1
-  size: 95, 96
-  split: 12, 12, 12, 12
-  orig: 95, 96
-  offset: 0, 0
-  index: -1
-tiles_dialog_type3
-  rotate: false
-  xy: 1, 99
-  size: 96, 96
-  split: 27, 28, 26, 27
-  orig: 96, 96
-  offset: 0, 0
-  index: -1
-tiles_dialog_type4
-  rotate: false
-  xy: 1, 276
-  size: 144, 144
-  split: 25, 25, 25, 25
-  orig: 144, 144
-  offset: 0, 0
-  index: -1
 flag_alpha2
   rotate: false
-  xy: 147, 277
+  xy: 147, 361
   size: 93, 64
   orig: 93, 64
   offset: 0, 0
   index: -1
 flag_overlay
   rotate: false
-  xy: 147, 343
+  xy: 147, 427
   size: 109, 77
   orig: 109, 77
+  offset: 0, 0
+  index: -1
+settings_less
+  rotate: false
+  xy: 412, 467
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+settings_less_down
+  rotate: false
+  xy: 112, 287
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+settings_less_over
+  rotate: false
+  xy: 444, 467
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+settings_more
+  rotate: false
+  xy: 476, 467
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+settings_more_down
+  rotate: false
+  xy: 242, 388
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+settings_more_over
+  rotate: false
+  xy: 242, 349
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+settings_tab_btn_1
+  rotate: false
+  xy: 258, 474
+  size: 82, 30
+  orig: 82, 30
+  offset: 0, 0
+  index: -1
+settings_tab_btn_1_down
+  rotate: false
+  xy: 1, 53
+  size: 82, 30
+  orig: 82, 30
+  offset: 0, 0
+  index: -1
+settings_tab_btn_1_over
+  rotate: false
+  xy: 258, 442
+  size: 82, 30
+  orig: 82, 30
+  offset: 0, 0
+  index: -1
+settings_tab_btn_2
+  rotate: false
+  xy: 342, 478
+  size: 68, 26
+  orig: 68, 26
+  offset: 0, 0
+  index: -1
+settings_tab_btn_2_down
+  rotate: false
+  xy: 1, 25
+  size: 68, 26
+  orig: 68, 26
+  offset: 0, 0
+  index: -1
+settings_tab_btn_2_over
+  rotate: false
+  xy: 342, 450
+  size: 68, 26
+  orig: 68, 26
+  offset: 0, 0
+  index: -1
+small_tiles_dialog
+  rotate: false
+  xy: 112, 326
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+tiles_dialog
+  rotate: false
+  xy: 1, 85
+  size: 95, 96
+  split: 11, 11, 11, 10
+  orig: 95, 96
+  offset: 0, 0
+  index: -1
+tiles_dialog_type3
+  rotate: false
+  xy: 1, 183
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+tiles_dialog_type4
+  rotate: false
+  xy: 1, 360
+  size: 144, 144
+  orig: 144, 144
   offset: 0, 0
   index: -1

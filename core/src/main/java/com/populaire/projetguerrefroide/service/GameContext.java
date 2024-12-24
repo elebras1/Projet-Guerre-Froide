@@ -23,6 +23,7 @@ public class GameContext {
         Skin skinFonts = this.assetManager.get("ui/fonts/fonts_skin.json");
         this.labelStylePool = new LabelStylePool(skinFonts);
         this.settings = this.configurationManager.loadSettings();
+        this.localisationManager.setLanguage(this.settings.getLanguage());
     }
 
     public ConfigurationManager getConfigurationManager() {

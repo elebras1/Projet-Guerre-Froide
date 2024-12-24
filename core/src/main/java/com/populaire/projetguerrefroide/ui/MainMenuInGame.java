@@ -16,7 +16,7 @@ import java.util.Map;
 public class MainMenuInGame extends Table implements PopupListener {
     private final MainMenuInGameListener listener;
 
-    public MainMenuInGame(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
+    public MainMenuInGame(Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
         this.listener = listener;
         this.setMenu(skin, labelStylePool, localisation);
     }
