@@ -50,7 +50,7 @@ public class LoadScreen implements Screen {
             WorldService worldService = new WorldService();
             worldService.createWorldAsync();
             Gdx.app.postRunnable(() -> {
-                Gdx.graphics.setForegroundFPS(1000);
+                this.gameContext.getSettings().applyGraphicsSettings();
                 this.screenManager.showNewGameScreen(worldService);
             });
             long endTime = System.currentTimeMillis();

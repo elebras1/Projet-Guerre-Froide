@@ -19,6 +19,7 @@ public class LocalisationManager {
     private final String bookmarkCsvFile = this.localisationPath + "bookmark.csv";
     private final String politicsCsvFile = this.localisationPath + "politics.csv";
     private final String popupCsvFile = this.localisationPath + "popup.csv";
+    private final String languageCsvFile = this.localisationPath + "language.csv";
     private String language = "ENGLISH";
 
     public void setLanguage(String language) {
@@ -47,6 +48,10 @@ public class LocalisationManager {
 
     public Map<String, String> readPopupCsv() {
         return readLocalisationCsv(this.language, this.popupCsvFile);
+    }
+
+    public Map<String, String> readLanguageCsv() {
+        return readLocalisationCsv(this.language, this.languageCsvFile);
     }
 
     public Map<String, String> readProvinceNamesCsv() {

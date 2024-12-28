@@ -85,13 +85,14 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.localisation.putAll(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readPopupCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readProvinceNamesCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readLanguageCsv());
         this.initializeUi();
         this.paused = false;
     }
 
     private void initializeUi() {
         this.stage = new Stage(new ScreenViewport());
-        this.stage.setDebugAll(true);
+        //this.stage.setDebugAll(true);
 
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
@@ -99,9 +100,11 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
         this.debug = new Debug();
         this.debug.setPosition(100, 40);
+        this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
+
         this.hoverBox = new HoverBox(this.skinUi, this.gameContext.getLabelStylePool());
 
-        this.mainMenuInGame = new MainMenuInGame(this.gameContext.getSettings().clone(), this.skinMainMenuInGame, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation, this);
+        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation, this);
         this.mainMenuInGame.setVisible(false);
         Table centerTable = new Table();
         centerTable.setFillParent(true);
@@ -164,7 +167,12 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     }
 
     @Override
-    public void onApplySettings(Settings settings) {
+    public Settings onShowSettingsClicked() {
+        return this.gameContext.getSettings().clone();
+    }
+
+    @Override
+    public void onApplySettingsClicked(Settings settings) {
         this.gameContext.setSettings(settings);
         this.gameContext.getConfigurationManager().saveSettings(settings);
     }

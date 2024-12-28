@@ -8,29 +8,37 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.utils.Align;
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.screen.MainMenuInGameListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 public class MainMenuInGame extends Table implements PopupListener {
-    private final Settings settings;
+    private final List<String> languages;
+    private final List<String> framerates;
+    private Settings settings;
     private final Skin skin;
     private final Skin skinUi;
     private final LabelStylePool labelStylePool;
     private final Map<String, String> localisation;
     private final MainMenuInGameListener listener;
 
-    public MainMenuInGame(Settings settings, Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
-        this.settings = settings;
+    public MainMenuInGame(Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
+        this.languages = new ObjectList<>();
+        this.languages.addAll(Arrays.asList("ENGLISH", "FRENCH", "GERMAN", "POLSKI", "SPANISH", "ITALIAN", "SWEDISH", "CZECH", "HUNGARIAN", "DUTCH", "PORTUGUESE", "RUSSIAN", "FINNISH"));
+        this.framerates = new ObjectList<>();
+        this.framerates.addAll(Arrays.asList("30", "60", "120", "144", "240", "300", "360", "420", "480", "540", "600"));
         this.skin = skin;
         this.skinUi = skinUi;
         this.labelStylePool = labelStylePool;
         this.localisation = localisation;
         this.listener = listener;
         this.setMenu();
-        System.out.println(settings);
     }
 
     private void setMenu() {
@@ -114,25 +122,36 @@ public class MainMenuInGame extends Table implements PopupListener {
     }
 
     private void settingsGame() {
+        this.settings = this.listener.onShowSettingsClicked();
         this.setupSettings("ingame_settings_game_naked");
 
         LabelStyle labelStyleJockey14GlowBlue = this.labelStylePool.getLabelStyle("jockey_14_glow_blue");
         LabelStyle labelStyleJockey18Yellow = this.labelStylePool.getLabelStyle("jockey_18", "yellow");
         LabelStyle labelStyleJockey18Black = this.labelStylePool.getLabelStyle("jockey_18_black");
 
+        Label valueLabel = new Label(this.localisation.get(settings.getLanguage()), labelStyleJockey18Yellow);
+
         ClickListener lessListener = new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                int currentIndex = languages.indexOf(settings.getLanguage());
+                int nextIndex = (currentIndex - 1 + languages.size()) % languages.size();
+                settings.setLanguage(languages.get(nextIndex));
+                valueLabel.setText(localisation.get(settings.getLanguage()));
             }
         };
 
         ClickListener moreListener = new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                int currentIndex = languages.indexOf(settings.getLanguage());
+                int nextIndex = (currentIndex + 1) % languages.size();
+                settings.setLanguage(languages.get(nextIndex));
+                valueLabel.setText(localisation.get(settings.getLanguage()));
             }
         };
 
-        this.addStepperSettings(labelStyleJockey14GlowBlue, labelStyleJockey18Yellow, lessListener, moreListener, this.localisation.get("AUTOSAVE_INTERVAL"), "Yearly", 441);
+        this.addStepperSettings(valueLabel, labelStyleJockey14GlowBlue, lessListener, moreListener, this.localisation.get("LANGUAGE"), 441);
 
         ClickListener checkListener = new ClickListener() {
             @Override
@@ -145,6 +164,52 @@ public class MainMenuInGame extends Table implements PopupListener {
 
     private void setSettingsVideo() {
         this.setupSettings("ingame_settings_video_naked");
+
+        LabelStyle labelStyleJockey14GlowBlue = this.labelStylePool.getLabelStyle("jockey_14_glow_blue");
+        LabelStyle labelStyleJockey18Yellow = this.labelStylePool.getLabelStyle("jockey_18", "yellow");
+        LabelStyle labelStyleJockey18Black = this.labelStylePool.getLabelStyle("jockey_18_black");
+
+        Label valueLabel = new Label(String.valueOf(this.settings.getCapFrameRate()), labelStyleJockey18Yellow);
+
+        ClickListener lessListener = new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                int currentIndex = framerates.indexOf(String.valueOf(settings.getCapFrameRate()));
+                int nextIndex = (currentIndex - 1 + framerates.size()) % framerates.size();
+                settings.setCapFrameRate(Short.parseShort(framerates.get(nextIndex)));
+                valueLabel.setText(String.valueOf(settings.getCapFrameRate()));
+            }
+        };
+
+        ClickListener moreListener = new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                int currentIndex = framerates.indexOf(String.valueOf(settings.getCapFrameRate()));
+                int nextIndex = (currentIndex + 1) % framerates.size();
+                settings.setCapFrameRate(Short.parseShort(framerates.get(nextIndex)));
+                valueLabel.setText(String.valueOf(settings.getCapFrameRate()));
+            }
+        };
+
+        this.addStepperSettings(valueLabel, labelStyleJockey14GlowBlue, lessListener, moreListener, this.localisation.get("FRAMERATE"), 473);
+
+        ClickListener checkVsyncListener = new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                settings.setVsync(!settings.isVsync());
+            }
+        };
+
+        this.addCheckboxSettings(labelStyleJockey18Black, "VSync", checkVsyncListener, this.settings.isVsync(), 171);
+
+        ClickListener checkFullscreenListener = new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                settings.setFullscreen(!settings.isFullscreen());
+            }
+        };
+
+        this.addCheckboxSettings(labelStyleJockey18Black, this.localisation.get("FULLSCREEN"), checkFullscreenListener, this.settings.isFullscreen(), 139);
     }
 
     private void setSettingsAudio() {
@@ -244,6 +309,7 @@ public class MainMenuInGame extends Table implements PopupListener {
         okButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                listener.onApplySettingsClicked(settings);
             }
         });
 
@@ -255,7 +321,7 @@ public class MainMenuInGame extends Table implements PopupListener {
         this.addActor(table);
     }
 
-    public void addStepperSettings(LabelStyle labelStyle, LabelStyle labelStyleOfValue, ClickListener lessListener, ClickListener moreListener, String textLabel, String valueTextLabel, int y) {
+    public void addStepperSettings(Label valueLabel, LabelStyle labelStyle, ClickListener lessListener, ClickListener moreListener, String textLabel, int y) {
         Label label = new Label(textLabel, labelStyle);
         label.setPosition(82, y);
 
@@ -263,8 +329,9 @@ public class MainMenuInGame extends Table implements PopupListener {
         lessButton.addListener(lessListener);
         lessButton.setPosition(194, y - 7);
 
-        Label valueLabel = new Label(valueTextLabel, labelStyleOfValue);
-        valueLabel.setPosition(233, y - 4);
+        valueLabel.setPosition(225, y - 4);
+        valueLabel.setWidth(82);
+        valueLabel.setAlignment(Align.center);
 
         Button moreButton = new Button(this.skinUi, "settings_more");
         moreButton.addListener(moreListener);

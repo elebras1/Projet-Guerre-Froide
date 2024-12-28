@@ -4,7 +4,8 @@ import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.ui.PopupListener;
 
 public interface MainMenuInGameListener {
-    void onApplySettings(Settings settings);
+    Settings onShowSettingsClicked();
+    void onApplySettingsClicked(Settings settings);
     void onCloseClicked();
     void onQuitClicked(PopupListener listener);
     void onOkPopupClicked();
