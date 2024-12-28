@@ -8,86 +8,99 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.screen.MainMenuInGameListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
 
 public class MainMenuInGame extends Table implements PopupListener {
+    private final Settings settings;
+    private final Skin skin;
+    private final Skin skinUi;
+    private final LabelStylePool labelStylePool;
+    private final Map<String, String> localisation;
     private final MainMenuInGameListener listener;
 
-    public MainMenuInGame(Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
+    public MainMenuInGame(Settings settings, Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
+        this.settings = settings;
+        this.skin = skin;
+        this.skinUi = skinUi;
+        this.labelStylePool = labelStylePool;
+        this.localisation = localisation;
         this.listener = listener;
-        this.setMenu(skin, labelStylePool, localisation);
+        this.setMenu();
+        System.out.println(settings);
     }
 
-    private void setMenu(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation) {
-        Drawable background = skin.getDrawable("menu_background");
+    private void setMenu() {
+        Drawable background = this.skin.getDrawable("menu_background");
 
-        LabelStyle labelStyleJockey20GlowBlue = labelStylePool.getLabelStyle("jockey_20_glow_blue");
-        LabelStyle labelStyleJockey16GlowRed = labelStylePool.getLabelStyle("jockey_16_glow_red");
-        LabelStyle labelStyleJockey24GlowRed = labelStylePool.getLabelStyle("jockey_24_glow_red");
+        LabelStyle labelStyleJockey20GlowBlue = this.labelStylePool.getLabelStyle("jockey_20_glow_blue");
+        LabelStyle labelStyleJockey16GlowRed = this.labelStylePool.getLabelStyle("jockey_16_glow_red");
+        LabelStyle labelStyleJockey24GlowRed = this.labelStylePool.getLabelStyle("jockey_24_glow_red");
 
-        Button savegameButton = new Button(skin, "menu_button");
-        savegameButton.add(new Label(localisation.get("SAVE_GAME"), labelStyleJockey20GlowBlue)).padBottom(5);
+        Button savegameButton = new Button(this.skin, "menu_button");
+        savegameButton.add(new Label(this.localisation.get("SAVE_GAME"), labelStyleJockey20GlowBlue)).padBottom(5);
         savegameButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
             }
         });
-        savegameButton.setX(55);
+        savegameButton.setX(56);
         savegameButton.setY(360);
 
-        Button gameOptionsButton = new Button(skin, "menu_button");
-        gameOptionsButton.add(new Label(localisation.get("GAME_OPTIONS"), labelStyleJockey20GlowBlue)).padBottom(5);
+        Button gameOptionsButton = new Button(this.skin, "menu_button");
+        gameOptionsButton.add(new Label(this.localisation.get("GAME_OPTIONS"), labelStyleJockey20GlowBlue)).padBottom(5);
         gameOptionsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                settingsGame();
             }
         });
-        gameOptionsButton.setX(55);
+        gameOptionsButton.setX(56);
         gameOptionsButton.setY(318);
 
-        Button resignButton = new Button(skin, "menu_button");
-        resignButton.add(new Label(localisation.get("GAME_RESIGN"), labelStyleJockey20GlowBlue)).padBottom(5);
+        Button resignButton = new Button(this.skin, "menu_button");
+        resignButton.add(new Label(this.localisation.get("GAME_RESIGN"), labelStyleJockey20GlowBlue)).padBottom(5);
         resignButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
             }
         });
-        resignButton.setX(55);
+        resignButton.setX(56);
         resignButton.setY(276);
 
-        Button messageSettingsButton = new Button(skin, "menu_button");
-        messageSettingsButton.add(new Label(localisation.get("MESSAGE_SETTINGS"), labelStyleJockey20GlowBlue)).padBottom(5);
+        Button messageSettingsButton = new Button(this.skin, "menu_button");
+        messageSettingsButton.add(new Label(this.localisation.get("MESSAGE_SETTINGS"), labelStyleJockey20GlowBlue)).padBottom(5);
         messageSettingsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
             }
         });
-        messageSettingsButton.setX(55);
+        messageSettingsButton.setX(56);
         messageSettingsButton.setY(234);
 
-        Button quitButton = new Button(skin, "menu_button_quit");
-        quitButton.add(new Label(localisation.get("QUIT"), labelStyleJockey24GlowRed)).padBottom(5);
+        Button quitButton = new Button(this.skin, "menu_button_quit");
+        quitButton.add(new Label(this.localisation.get("QUIT"), labelStyleJockey24GlowRed)).padBottom(5);
         quitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 listener.onQuitClicked(MainMenuInGame.this);
             }
         });
-        quitButton.setX(55);
+        quitButton.setX(56);
         quitButton.setY(103);
 
-        Button cancelButton = new Button(skin, "menu_button_cancel");
-        cancelButton.add(new Label(localisation.get("CLOSE"), labelStyleJockey16GlowRed)).padBottom(10);
+        Button cancelButton = new Button(this.skin, "menu_button_cancel");
+        cancelButton.add(new Label(this.localisation.get("CLOSE"), labelStyleJockey16GlowRed)).padBottom(10);
         cancelButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 listener.onCloseClicked();
             }
         });
-        cancelButton.setX(107);
+        cancelButton.setX(108);
         cancelButton.setY(39);
 
         this.setBackground(background);
@@ -100,28 +113,180 @@ public class MainMenuInGame extends Table implements PopupListener {
         this.addActor(cancelButton);
     }
 
-    private void setSettingsAudio(Skin skin) {
-        Drawable background = skin.getDrawable("ingame_settings_audio_naked");
-        this.setBackground(background);
-        this.setSize(background.getMinWidth(), background.getMinHeight());
+    private void settingsGame() {
+        this.setupSettings("ingame_settings_game_naked");
+
+        LabelStyle labelStyleJockey14GlowBlue = this.labelStylePool.getLabelStyle("jockey_14_glow_blue");
+        LabelStyle labelStyleJockey18Yellow = this.labelStylePool.getLabelStyle("jockey_18", "yellow");
+        LabelStyle labelStyleJockey18Black = this.labelStylePool.getLabelStyle("jockey_18_black");
+
+        ClickListener lessListener = new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+            }
+        };
+
+        ClickListener moreListener = new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+            }
+        };
+
+        this.addStepperSettings(labelStyleJockey14GlowBlue, labelStyleJockey18Yellow, lessListener, moreListener, this.localisation.get("AUTOSAVE_INTERVAL"), "Yearly", 441);
+
+        ClickListener checkListener = new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                settings.setDebugMode(!settings.isDebugMode());
+            }
+        };
+        this.addCheckboxSettings(labelStyleJockey18Black, this.localisation.get("DEBUG_MODE"), checkListener, this.settings.isDebugMode(), 107);
     }
 
-    private void setSettingsControls(Skin skin) {
-        Drawable background = skin.getDrawable("ingame_settings_controls_naked");
-        this.setBackground(background);
-        this.setSize(background.getMinWidth(), background.getMinHeight());
+    private void setSettingsVideo() {
+        this.setupSettings("ingame_settings_video_naked");
     }
 
-    private void settingsGame(Skin skin) {
-        Drawable background = skin.getDrawable("ingame_settings_game_naked");
-        this.setBackground(background);
-        this.setSize(background.getMinWidth(), background.getMinHeight());
+    private void setSettingsAudio() {
+        this.setupSettings("ingame_settings_audio_naked");
     }
 
-    private void setSettingsVideo(Skin skin) {
-        Drawable background = skin.getDrawable("ingame_settings_video_naked");
+    private void setSettingsControls() {
+        this.setupSettings("ingame_settings_controls_naked");
+    }
+
+    public void setupSettings(String backgroundName) {
+        this.clearChildren();
+
+        Drawable background = this.skin.getDrawable(backgroundName);
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
+
+        this.addTitle();
+        this.addTopButtonSettings();
+        this.addBottomButtonSettings();
+    }
+
+    private void addTitle() {
+        LabelStyle labelStyleJockey24 = this.labelStylePool.getLabelStyle("jockey_24");
+        Label title = new Label(this.localisation.get("SETTINGS"), labelStyleJockey24);
+
+        title.setPosition(this.getWidth() / 2 - title.getWidth() / 2, 536);
+        this.addActor(title);
+    }
+
+    private void addTopButtonSettings() {
+        LabelStyle labelStyleArial11BoldBlack = this.labelStylePool.getLabelStyle("arial_11_bold_black");
+        short yPosition = 504;
+
+        Button gameButton = new Button(this.skinUi, "settings_tab_btn_1");
+        gameButton.add(new Label(this.localisation.get("GAME"), labelStyleArial11BoldBlack)).padBottom(3);
+        gameButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                settingsGame();
+            }
+        });
+        gameButton.setPosition(47, yPosition);
+
+        Button videoButton = new Button(this.skinUi, "settings_tab_btn_1");
+        videoButton.add(new Label(this.localisation.get("VIDEO"), labelStyleArial11BoldBlack)).padBottom(3);
+        videoButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                setSettingsVideo();
+            }
+        });
+        videoButton.setPosition(125, yPosition);
+
+        Button audioButton = new Button(this.skinUi, "settings_tab_btn_1");
+        audioButton.add(new Label(this.localisation.get("AUDIO"), labelStyleArial11BoldBlack)).padBottom(3);
+        audioButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                setSettingsAudio();
+            }
+        });
+        audioButton.setPosition(203, yPosition);
+
+        Button controlsButton = new Button(this.skinUi, "settings_tab_btn_1");
+        controlsButton.add(new Label(this.localisation.get("CONTROLS"), labelStyleArial11BoldBlack)).padBottom(3);
+        controlsButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                setSettingsControls();
+            }
+        });
+        controlsButton.setPosition(281, yPosition);
+
+        this.addActor(gameButton);
+        this.addActor(videoButton);
+        this.addActor(audioButton);
+        this.addActor(controlsButton);
+    }
+
+    private void addBottomButtonSettings() {
+        LabelStyle labelStyleJockey16GlowRed = this.labelStylePool.getLabelStyle("jockey_16_glow_red");
+        LabelStyle labelStyleJockey16GlowBlue = this.labelStylePool.getLabelStyle("jockey_16_glow_blue");
+
+        Button cancelButton = new Button(this.skin, "settings_cancel_btn");
+        cancelButton.add(new Label(this.localisation.get("BACK"), labelStyleJockey16GlowRed)).padBottom(10);
+        cancelButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                clearChildren();
+                setMenu();
+            }
+        });
+
+        Button okButton = new Button(this.skin, "settings_ok_btn");
+        okButton.add(new Label(this.localisation.get("APPLY"), labelStyleJockey16GlowBlue)).padBottom(10);
+        okButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+            }
+        });
+
+        Table table = new Table();
+        table.add(cancelButton).padRight(3);
+        table.add(okButton);
+        table.setPosition(205, 47);
+
+        this.addActor(table);
+    }
+
+    public void addStepperSettings(LabelStyle labelStyle, LabelStyle labelStyleOfValue, ClickListener lessListener, ClickListener moreListener, String textLabel, String valueTextLabel, int y) {
+        Label label = new Label(textLabel, labelStyle);
+        label.setPosition(82, y);
+
+        Button lessButton = new Button(this.skinUi, "settings_less");
+        lessButton.addListener(lessListener);
+        lessButton.setPosition(194, y - 7);
+
+        Label valueLabel = new Label(valueTextLabel, labelStyleOfValue);
+        valueLabel.setPosition(233, y - 4);
+
+        Button moreButton = new Button(this.skinUi, "settings_more");
+        moreButton.addListener(moreListener);
+        moreButton.setPosition(304, y - 7);
+
+        this.addActor(label);
+        this.addActor(lessButton);
+        this.addActor(valueLabel);
+        this.addActor(moreButton);
+    }
+
+    public void addCheckboxSettings(LabelStyle labelStyle, String textLabel, ClickListener listener , boolean isChecked, int y) {
+        Label debugLabel = new Label(textLabel, labelStyle);
+        debugLabel.setPosition(75, y);
+
+        Button checkButton = new Button(this.skinUi, "checkbox");
+        checkButton.setChecked(isChecked);
+        checkButton.addListener(listener);
+        checkButton.setPosition(302, y - 1);
+
+        this.addActor(debugLabel);
+        this.addActor(checkButton);
     }
 
     @Override

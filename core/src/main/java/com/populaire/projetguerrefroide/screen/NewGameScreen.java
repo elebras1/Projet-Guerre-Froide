@@ -16,6 +16,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.entity.Minister;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -90,6 +91,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     private void initializeUi() {
         this.stage = new Stage(new ScreenViewport());
+        this.stage.setDebugAll(true);
 
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
@@ -98,12 +100,12 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.debug = new Debug();
         this.debug.setPosition(100, 40);
         this.hoverBox = new HoverBox(this.skinUi, this.gameContext.getLabelStylePool());
-        this.stage.addActor(this.hoverBox);
 
-        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation, this);
-        this.mainMenuInGame.setPosition(Gdx.graphics.getWidth() / 2f - this.mainMenuInGame.getWidth() / 2,
-            Gdx.graphics.getHeight() / 2f - this.mainMenuInGame.getHeight() / 2);
+        this.mainMenuInGame = new MainMenuInGame(this.gameContext.getSettings().clone(), this.skinMainMenuInGame, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation, this);
         this.mainMenuInGame.setVisible(false);
+        Table centerTable = new Table();
+        centerTable.setFillParent(true);
+        centerTable.add(this.mainMenuInGame).center();
 
         Table topTable = new Table();
         topTable.setFillParent(true);
@@ -127,9 +129,10 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         bottomTable.add(lobbyBox).align(Align.bottom);
         bottomTable.pad(5);
 
+        this.stage.addActor(this.hoverBox);
         this.stage.addActor(topTable);
-        this.stage.addActor(this.mainMenuInGame);
         this.stage.addActor(bottomTable);
+        this.stage.addActor(centerTable);
         this.stage.addActor(this.debug);
     }
 
@@ -161,6 +164,12 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     }
 
     @Override
+    public void onApplySettings(Settings settings) {
+        this.gameContext.setSettings(settings);
+        this.gameContext.getConfigurationManager().saveSettings(settings);
+    }
+
+    @Override
     public void onCloseClicked() {
         this.paused = false;
         this.mainMenuInGame.setVisible(false);
@@ -172,9 +181,10 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     public void onQuitClicked(PopupListener listener) {
         Popup popup = new Popup(this.skinPopup, this.gameContext.getLabelStylePool(), this.localisation,
             this.localisation.get("QUIT_TITLE"), this.localisation.get("QUIT_DESC"), true, false, listener);
-        popup.setPosition(Gdx.graphics.getWidth() / 2f - popup.getWidth() / 2,
-            Gdx.graphics.getHeight() / 2f - popup.getHeight() / 2);
-        this.stage.addActor(popup);
+        Table centerTable = new Table();
+        centerTable.setFillParent(true);
+        centerTable.add(popup).center();
+        this.stage.addActor(centerTable);
         this.mainMenuInGame.setTouchable(Touchable.disabled);
     }
 
@@ -189,16 +199,25 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.mainMenuInGame.setTouchable(Touchable.enabled);
     }
 
-
     public void setActorsTouchable(boolean touchable) {
         for (int i = 0; i < this.stage.getActors().size; i++) {
             Actor actor = this.stage.getActors().get(i);
-            if(actor != this.mainMenuInGame) {
-                if(actor instanceof Popup) {
-                    actor.setTouchable(touchable ? Touchable.enabled : Touchable.disabled);
-                } else {
+
+            if (actor instanceof Table table) {
+                boolean containsMainMenu = false;
+
+                for (Actor child : table.getChildren()) {
+                    if (child instanceof MainMenuInGame) {
+                        containsMainMenu = true;
+                        break;
+                    }
+                }
+
+                if (!containsMainMenu) {
                     actor.setTouchable(touchable ? Touchable.childrenOnly : Touchable.disabled);
                 }
+            } else {
+                actor.setTouchable(touchable ? Touchable.childrenOnly : Touchable.disabled);
             }
         }
     }

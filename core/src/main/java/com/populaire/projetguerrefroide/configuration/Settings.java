@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide.configuration;
 
 import com.badlogic.gdx.Gdx;
 
-public class Settings {
+public class Settings implements Cloneable{
     private String language;
     private short musicVolume;
     private short effectsVolume;
@@ -22,13 +22,7 @@ public class Settings {
     }
 
     public Settings() {
-        this.language = "ENGLISH";
-        this.musicVolume = 100;
-        this.effectsVolume = 100;
-        this.vsync = true;
-        this.capFrameRate = 60;
-        this.fullscreen = true;
-        this.debugMode = false;
+        this("ENGLISH", (short) 100, (short) 100, true, (short) 60, true, false);
     }
 
     public void applyGraphicsSettings() {
@@ -108,5 +102,14 @@ public class Settings {
                 ", fullscreen=" + this.fullscreen +
                 ", debugMode=" + this.debugMode +
                 '}';
+    }
+
+    @Override
+    public Settings clone() {
+        try {
+            return (Settings) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

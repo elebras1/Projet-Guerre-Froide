@@ -3,106 +3,6 @@ atlasData: {
 	atlasCurrent: true
 	drawables: [
 		{
-			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/mainmenu_ig/ingame_settings_audio_naked.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: ingame_settings_audio_naked
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/mainmenu_ig/ingame_settings_controls_naked.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: ingame_settings_controls_naked
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/mainmenu_ig/ingame_settings_game_naked.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: ingame_settings_game_naked
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/mainmenu_ig/ingame_settings_video_naked.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: ingame_settings_video_naked
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/mainmenu_ig/menu_background.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: menu_background
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
 			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/mainmenu_ig/menu_button.png
 			bgColor: {
 				r: 1
@@ -473,6 +373,106 @@ atlasData: {
 			tint: null
 			tintName: null
 			name: settings_ok_btn_over
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/mainmenu_ig/ingame_settings_audio_naked.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ingame_settings_audio_naked
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/mainmenu_ig/ingame_settings_controls_naked.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ingame_settings_controls_naked
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/mainmenu_ig/ingame_settings_video_naked.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ingame_settings_video_naked
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/mainmenu_ig/ingame_settings_game_naked.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ingame_settings_game_naked
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/mainmenu_ig/menu_background.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: menu_background
 			tiled: false
 			minWidth: -1
 			minHeight: -1

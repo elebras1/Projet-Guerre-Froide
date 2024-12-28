@@ -13,7 +13,7 @@ public class GameContext {
     private final AssetManager assetManager;
     private final CursorManager cursorManager;
     private final LabelStylePool labelStylePool;
-    private final Settings settings;
+    private Settings settings;
 
     public GameContext(AssetManager assetManager) {
         this.configurationManager = new ConfigurationManager();
@@ -30,10 +30,6 @@ public class GameContext {
         return this.configurationManager;
     }
 
-    public Settings getSettings() {
-        return this.settings;
-    }
-
     public LocalisationManager getLocalisationManager() {
         return this.localisationManager;
     }
@@ -48,6 +44,14 @@ public class GameContext {
 
     public LabelStylePool getLabelStylePool() {
         return this.labelStylePool;
+    }
+
+    public Settings getSettings() {
+        return this.settings;
+    }
+
+    public void setSettings(Settings settings) {
+        this.settings = settings;
     }
 
     public void dispose() {
