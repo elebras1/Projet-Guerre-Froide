@@ -104,7 +104,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
         this.hoverBox = new HoverBox(this.skinUi, this.gameContext.getLabelStylePool());
 
-        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation, this);
+        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.localisation, this);
         this.mainMenuInGame.setVisible(false);
         Table centerTable = new Table();
         centerTable.setFillParent(true);

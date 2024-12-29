@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 
 public class Settings implements Cloneable{
     private String language;
+    private short masterVolume;
     private short musicVolume;
     private short effectsVolume;
     private boolean vsync;
@@ -11,8 +12,9 @@ public class Settings implements Cloneable{
     private boolean fullscreen;
     private boolean debugMode;
 
-    public Settings(String language, short musicVolume, short effectsVolume, boolean vsync, short capFrameRate, boolean fullscreen, boolean debugMode) {
+    public Settings(String language, short masterVolume, short musicVolume, short effectsVolume, boolean vsync, short capFrameRate, boolean fullscreen, boolean debugMode) {
         this.language = language;
+        this.masterVolume = masterVolume;
         this.musicVolume = musicVolume;
         this.effectsVolume = effectsVolume;
         this.vsync = vsync;
@@ -22,7 +24,7 @@ public class Settings implements Cloneable{
     }
 
     public Settings() {
-        this("ENGLISH", (short) 100, (short) 100, true, (short) 60, true, false);
+        this("ENGLISH", (short) 100, (short) 100, (short) 100, true, (short) 144, true, false);
     }
 
     public void applyGraphicsSettings() {
@@ -41,6 +43,14 @@ public class Settings implements Cloneable{
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public short getMasterVolume() {
+        return this.masterVolume;
+    }
+
+    public void setMasterVolume(short masterVolume) {
+        this.masterVolume = masterVolume;
     }
 
     public short getMusicVolume() {
@@ -95,6 +105,7 @@ public class Settings implements Cloneable{
     public String toString() {
         return "Settings{" +
                 "language='" + this.language + '\'' +
+                ", masterVolume=" + this.masterVolume +
                 ", musicVolume=" + this.musicVolume +
                 ", effectsVolume=" + this.effectsVolume +
                 ", vsync=" + this.vsync +

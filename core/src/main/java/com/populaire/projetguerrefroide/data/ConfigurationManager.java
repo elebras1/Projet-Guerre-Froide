@@ -76,13 +76,14 @@ public class ConfigurationManager {
         try {
             JsonNode settingsNode = this.openJsonSettings(this.settingsJsonFile);
             String language = settingsNode.get("language").asText();
+            short masterVolume = (short) settingsNode.get("masterVolume").asInt();
             short musicVolume = (short) settingsNode.get("musicVolume").asInt();
             short effectsVolume = (short) settingsNode.get("effectsVolume").asInt();
             boolean vsync = settingsNode.get("vsync").asBoolean();
             short capFrameRate = (short) settingsNode.get("capFrameRate").asInt();
             boolean fullscreen = settingsNode.get("fullscreen").asBoolean();
             boolean debugMode = settingsNode.get("debugMode").asBoolean();
-            settings = new Settings(language, musicVolume, effectsVolume, vsync, capFrameRate, fullscreen, debugMode);
+            settings = new Settings(language, masterVolume, musicVolume, effectsVolume, vsync, capFrameRate, fullscreen, debugMode);
         } catch(IOException | NullPointerException e) {
             settings = new Settings();
             this.saveSettings(settings);

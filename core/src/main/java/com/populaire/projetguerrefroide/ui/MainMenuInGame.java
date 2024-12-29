@@ -1,11 +1,10 @@
 package com.populaire.projetguerrefroide.ui;
 
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
@@ -24,17 +23,19 @@ public class MainMenuInGame extends Table implements PopupListener {
     private Settings settings;
     private final Skin skin;
     private final Skin skinUi;
+    private final Skin skinScrollbars;
     private final LabelStylePool labelStylePool;
     private final Map<String, String> localisation;
     private final MainMenuInGameListener listener;
 
-    public MainMenuInGame(Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
+    public MainMenuInGame(Skin skin, Skin skinUi, Skin skinScrollbars, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
         this.languages = new ObjectList<>();
         this.languages.addAll(Arrays.asList("ENGLISH", "FRENCH", "GERMAN", "POLSKI", "SPANISH", "ITALIAN", "SWEDISH", "CZECH", "HUNGARIAN", "DUTCH", "PORTUGUESE", "RUSSIAN", "FINNISH"));
         this.framerates = new ObjectList<>();
         this.framerates.addAll(Arrays.asList("30", "60", "120", "144", "240", "300", "360", "420", "480", "540", "600"));
         this.skin = skin;
         this.skinUi = skinUi;
+        this.skinScrollbars = skinScrollbars;
         this.labelStylePool = labelStylePool;
         this.localisation = localisation;
         this.listener = listener;
@@ -63,6 +64,7 @@ public class MainMenuInGame extends Table implements PopupListener {
         gameOptionsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                settings = listener.onShowSettingsClicked();
                 settingsGame();
             }
         });
@@ -122,7 +124,6 @@ public class MainMenuInGame extends Table implements PopupListener {
     }
 
     private void settingsGame() {
-        this.settings = this.listener.onShowSettingsClicked();
         this.setupSettings("ingame_settings_game_naked");
 
         LabelStyle labelStyleJockey14GlowBlue = this.labelStylePool.getLabelStyle("jockey_14_glow_blue");
@@ -214,6 +215,35 @@ public class MainMenuInGame extends Table implements PopupListener {
 
     private void setSettingsAudio() {
         this.setupSettings("ingame_settings_audio_naked");
+
+        LabelStyle labelStyleJockey14GlowBlue = this.labelStylePool.getLabelStyle("jockey_14_glow_blue");
+
+        ChangeListener masterVolumeListener = new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                Slider slider = (Slider) actor;
+                settings.setMasterVolume((short) slider.getValue());
+            }
+        };
+        this.addSliderSettings(labelStyleJockey14GlowBlue, this.localisation.get("MASTER_VOLUME"), masterVolumeListener, this.settings.getMasterVolume(), 476);
+
+        ChangeListener musicVolumeListener = new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                Slider slider = (Slider) actor;
+                settings.setMusicVolume((short) slider.getValue());
+            }
+        };
+        this.addSliderSettings(labelStyleJockey14GlowBlue, this.localisation.get("MUSIC_VOLUME"), musicVolumeListener, this.settings.getMusicVolume(), 415);
+
+        ChangeListener effectsVolumeListener = new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                Slider slider = (Slider) actor;
+                settings.setEffectsVolume((short) slider.getValue());
+            }
+        };
+        this.addSliderSettings(labelStyleJockey14GlowBlue, this.localisation.get("EFFECT_VOLUME"), effectsVolumeListener, this.settings.getEffectsVolume(), 355);
     }
 
     private void setSettingsControls() {
@@ -354,6 +384,20 @@ public class MainMenuInGame extends Table implements PopupListener {
 
         this.addActor(debugLabel);
         this.addActor(checkButton);
+    }
+
+    public void addSliderSettings(LabelStyle labelStyle, String textSlider, ChangeListener listener, int value, int y) {
+        Label sliderLabel = new Label(textSlider, labelStyle);
+        sliderLabel.setPosition(this.getWidth() / 2 - sliderLabel.getWidth() / 2, y);
+
+        Slider slider = new Slider(0, 100, 1, false, this.skinScrollbars, "default-horizontal");
+        slider.setPosition(62, y - 35);
+        slider.setWidth(284);
+        slider.setValue(value);
+        slider.addListener(listener);
+
+        this.addActor(sliderLabel);
+        this.addActor(slider);
     }
 
     @Override
