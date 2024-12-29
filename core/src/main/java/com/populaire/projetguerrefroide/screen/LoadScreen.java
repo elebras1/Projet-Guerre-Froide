@@ -26,12 +26,12 @@ public class LoadScreen implements Screen {
     public LoadScreen(ScreenManager screenManager, GameContext gameContext) {
         this.screenManager = screenManager;
         this.gameContext = gameContext;
+        this.gameContext.getCursorManager().animatedCursor("busy");
         AssetManager assetManager = this.gameContext.getAssetManager();
         assetManager.load("loadingscreens/loadingscreens_skin.json", Skin.class);
         this.stage = new Stage();
         Gdx.input.setInputProcessor(this.stage);
         List<String> loadingImageNames = new ArrayList<>(Arrays.asList("load_1", "load_2", "load_3", "load_4", "load_5", "load_6", "load_7", "load_8", "load_9", "load_10", "load_11", "load_12"));
-        this.gameContext.getCursorManager().animatedCursor("busy");
         Random random = new Random();
         Table rootTable = new Table();
         assetManager.finishLoading();

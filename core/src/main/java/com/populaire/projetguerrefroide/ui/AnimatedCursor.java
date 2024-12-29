@@ -12,16 +12,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AnimatedCursor {
-    private static final float frameDuration = 1 / 11f;
+    private static final float frameDuration = 1f;
     private float elapsedTime;
-    private Animation<TextureRegion> animation;
-    private List<Cursor> cursors;
+    private final Animation<TextureRegion> animation;
+    private final List<Cursor> cursors;
     private int currentCursorIndex;
 
     public AnimatedCursor(String name) {
         TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("ui/cursor/" + name + "/" + name + ".atlas"));
         this.animation = new Animation<>(frameDuration, atlas.findRegions(name));
         this.animation.setFrameDuration(frameDuration);
+        this.animation.setPlayMode(Animation.PlayMode.LOOP);
 
         this.cursors = new ArrayList<>();
         for (TextureRegion region : this.animation.getKeyFrames()) {
@@ -33,12 +34,14 @@ public class AnimatedCursor {
 
     public void update(float deltaTime) {
         this.elapsedTime += deltaTime;
-        int frameIndex = this.animation.getKeyFrameIndex(this.elapsedTime % this.animation.getAnimationDuration());
+        int frameIndex = this.animation.getKeyFrameIndex(this.elapsedTime);
+
         if (frameIndex != this.currentCursorIndex) {
             this.currentCursorIndex = frameIndex;
             Gdx.graphics.setCursor(this.cursors.get(this.currentCursorIndex));
         }
     }
+
 
     public void dispose() {
         for (Cursor cursor : this.cursors) {
