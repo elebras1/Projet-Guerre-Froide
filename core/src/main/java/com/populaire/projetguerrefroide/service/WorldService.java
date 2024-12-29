@@ -69,4 +69,8 @@ public class WorldService {
     public Minister getHeadOfGovernmentOfSelectedCountry() {
         return this.world.getSelectedProvince().getCountryOwner().getHeadOfGovernment();
     }
+
+    public short getNumberOfProvinces() {
+        return this.world.getNumberOfProvinces();
+    }
 }

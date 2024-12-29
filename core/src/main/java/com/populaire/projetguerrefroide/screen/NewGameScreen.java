@@ -98,8 +98,8 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(this.multiplexer);
 
-        this.debug = new Debug();
-        this.debug.setPosition(100, 40);
+        this.debug = new Debug(this.worldService.getNumberOfProvinces());
+        this.debug.setPosition(100, 90);
         this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
 
         this.hoverBox = new HoverBox(this.skinUi, this.gameContext.getLabelStylePool());

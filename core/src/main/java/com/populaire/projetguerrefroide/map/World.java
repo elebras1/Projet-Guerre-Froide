@@ -101,6 +101,10 @@ public class World {
         return this.selectedProvince;
     }
 
+    public short getNumberOfProvinces() {
+        return (short) this.provinces.size();
+    }
+
     public void createCountriesColorTexture() {
         this.countriesColorPixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
         this.countriesColorPixmap.setColor(Color.BLACK);
