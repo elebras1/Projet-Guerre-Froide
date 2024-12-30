@@ -1,20 +1,20 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "ARG"
-  ],
-  "fish": 0.13,
-  "infra": 3,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1000,
-      "template": 5
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "ARG"
+    ],
+    "fish": 0.13,
+    "infra": 3,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 968,
+            "template": 5
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 2
     }
-  },
-  "1979.1.1": {
-    "naval_base": 2
-  }
 }

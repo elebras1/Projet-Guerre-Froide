@@ -1,51 +1,51 @@
 {
-  "owner": "BEL",
-  "controller": "BEL",
-  "add_core": [
-    "BEL",
-    "DRC"
-  ],
-  "fruits": 7.68,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 47131,
-      "template": 2
+    "owner": "BEL",
+    "controller": "BEL",
+    "add_core": [
+        "BEL",
+        "DRC"
+    ],
+    "fruits": 7.68,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 47131,
+            "template": 2
+        }
+    },
+    "1960.06.30": {
+        "owner": "DRC",
+        "controller": "DRC",
+        "remove_core": "BEL"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 48154,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 49199,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 65341,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 106024,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 152867,
+            "template": 302
+        }
     }
-  },
-  "1960.06.30": {
-    "owner": "DRC",
-    "controller": "DRC",
-    "remove_core": "BEL"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 48154,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 49199,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 65341,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 106024,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 152867,
-      "template": 302
-    }
-  }
 }

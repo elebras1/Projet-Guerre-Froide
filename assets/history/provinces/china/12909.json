@@ -1,90 +1,90 @@
 {
-  "owner": "CHI",
-  "controller": "CHI",
-  "add_core": [
-    "CHI",
-    "CHC"
-  ],
-  "grain": 516.44,
-  "infra": 6,
-  "naval_base": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 3723763,
-      "template": 6
-    },
-    "economy_building": {
-      "name": "light_industry",
-      "size": 6
-    }
-  },
-  "1949.9.17": {
-    "owner": "CHC",
-    "controller": "CHC"
-  },
-  "1956.10.1": {
-    "naval_base": 6
-  },
-  "1973.9.1": {
-    "naval_base": 8
-  },
-  "1980.5.1": {
-    "naval_base": 10
-  },
-  "1979.1.1": {
-    "economy_building": [
-      {
-        "name": "land_research_center",
-        "size": 1
-      },
-      {
-        "name": "light_industry",
-        "size": 8
-      }
+    "owner": "CHI",
+    "controller": "CHI",
+    "add_core": [
+        "CHI",
+        "CHC"
     ],
-    "population_total": {
-      "amount": 6822905,
-      "template": 206
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 6
+    "grain": 516.44,
+    "infra": 6,
+    "naval_base": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 3723763,
+            "template": 6
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 6
+        }
     },
-    "population_total": {
-      "amount": 3873368,
-      "template": 6
+    "1949.9.17": {
+        "owner": "CHC",
+        "controller": "CHC"
+    },
+    "1956.10.1": {
+        "naval_base": 6
+    },
+    "1973.9.1": {
+        "naval_base": 8
+    },
+    "1980.5.1": {
+        "naval_base": 10
+    },
+    "1979.1.1": {
+        "economy_building": [
+            {
+                "name": "land_research_center",
+                "size": 1
+            },
+            {
+                "name": "light_industry",
+                "size": 8
+            }
+        ],
+        "population_total": {
+            "amount": 6822905,
+            "template": 206
+        }
+    },
+    "1950.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 3873368,
+            "template": 6
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 7
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 10
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 3797829,
+            "template": 6
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 4751531,
+            "template": 106
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 8163465,
+            "template": 306
+        }
     }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 7
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 10
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 3797829,
-      "template": 6
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 4751531,
-      "template": 106
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 8163465,
-      "template": 306
-    }
-  }
 }

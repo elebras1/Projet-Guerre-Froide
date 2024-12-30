@@ -1,53 +1,53 @@
 {
-  "owner": "IRE",
-  "controller": "IRE",
-  "add_core": "IRE",
-  "grain": 61.68,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 96308,
-      "template": 55
+    "owner": "IRE",
+    "controller": "IRE",
+    "add_core": "IRE",
+    "grain": 61.68,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 96308,
+            "template": 55
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 3
+        }
     },
-    "economy_building": {
-      "name": "light_industry",
-      "size": 3
+    "1961.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 96229,
+            "template": 55
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 96150,
+            "template": 55
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 93580,
+            "template": 155
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 111485,
+            "template": 255
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 116763,
+            "template": 355
+        }
     }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 4
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 96229,
-      "template": 55
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 96150,
-      "template": 55
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 93580,
-      "template": 155
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 111485,
-      "template": 255
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 116763,
-      "template": 355
-    }
-  }
 }

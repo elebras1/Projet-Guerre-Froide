@@ -1,55 +1,55 @@
 {
-  "owner": "HOL",
-  "controller": "HOL",
-  "add_core": "HOL",
-  "grain": 298.2,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 785850,
-      "template": 73
+    "owner": "HOL",
+    "controller": "HOL",
+    "add_core": "HOL",
+    "grain": 298.2,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 785850,
+            "template": 73
+        },
+        "economy_building": {
+            "name": "aviation_industry",
+            "size": 4
+        }
     },
-    "economy_building": {
-      "name": "aviation_industry",
-      "size": 4
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "aviation_industry",
-      "size": 5
+    "1950.1.1": {
+        "economy_building": {
+            "name": "aviation_industry",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 805842,
+            "template": 73
+        }
     },
-    "population_total": {
-      "amount": 805842,
-      "template": 73
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "aviation_industry",
-      "size": 6
+    "1979.1.1": {
+        "economy_building": {
+            "name": "aviation_industry",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 1125433,
+            "template": 273
+        }
     },
-    "population_total": {
-      "amount": 1125433,
-      "template": 273
+    "1948.1.1": {
+        "population_total": {
+            "amount": 795783,
+            "template": 73
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 943097,
+            "template": 173
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1205076,
+            "template": 373
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 795783,
-      "template": 73
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 943097,
-      "template": 173
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1205076,
-      "template": 373
-    }
-  }
 }

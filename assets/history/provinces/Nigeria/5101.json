@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "NIG"
-  ],
-  "rare_metals": 1.1,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 491191,
-      "template": 5
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "NIG"
+    ],
+    "rare_metals": 1.1,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 491191,
+            "template": 5
+        }
+    },
+    "1960.10.01": {
+        "owner": "NIG",
+        "controller": "NIG",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 500210,
+            "template": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 509394,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 644965,
+            "template": 105
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 987913,
+            "template": 205
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1345289,
+            "template": 305
+        }
     }
-  },
-  "1960.10.01": {
-    "owner": "NIG",
-    "controller": "NIG",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 500210,
-      "template": 5
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 509394,
-      "template": 5
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 644965,
-      "template": 105
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 987913,
-      "template": 205
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1345289,
-      "template": 305
-    }
-  }
 }

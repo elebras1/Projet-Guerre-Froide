@@ -1,49 +1,49 @@
 {
-  "owner": "MEX",
-  "controller": "MEX",
-  "add_core": "MEX",
-  "meat": 27.83,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 272134,
-      "template": 81
+    "owner": "MEX",
+    "controller": "MEX",
+    "add_core": "MEX",
+    "meat": 27.83,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 272134,
+            "template": 81
+        }
+    },
+    "1982.1.1": {
+        "economy_building": {
+            "name": "satellites_factory",
+            "size": 5
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 280475,
+            "template": 81
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 289072,
+            "template": 81
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 424977,
+            "template": 181
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 696621,
+            "template": 281
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 891348,
+            "template": 381
+        }
     }
-  },
-  "1982.1.1": {
-    "economy_building": {
-      "name": "satellites_factory",
-      "size": 5
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 280475,
-      "template": 81
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 289072,
-      "template": 81
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 424977,
-      "template": 181
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 696621,
-      "template": 281
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 891348,
-      "template": 381
-    }
-  }
 }

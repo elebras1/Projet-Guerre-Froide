@@ -1,51 +1,51 @@
 {
-  "owner": "ARG",
-  "controller": "ARG",
-  "add_core": "ARG",
-  "fruits": 3.85,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 120409,
-      "template": 79
-    }
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 1
+    "owner": "ARG",
+    "controller": "ARG",
+    "add_core": "ARG",
+    "fruits": 3.85,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 120409,
+            "template": 79
+        }
     },
-    "population_total": {
-      "amount": 122788,
-      "template": 79
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 4
+    "1948.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 122788,
+            "template": 79
+        }
     },
-    "population_total": {
-      "amount": 202321,
-      "template": 279
+    "1979.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 202321,
+            "template": 279
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 125213,
+            "template": 79
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 155489,
+            "template": 179
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 241612,
+            "template": 379
+        }
     }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 125213,
-      "template": 79
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 155489,
-      "template": 179
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 241612,
-      "template": 379
-    }
-  }
 }

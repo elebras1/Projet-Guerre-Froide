@@ -1,51 +1,51 @@
 {
-  "owner": "HOL",
-  "controller": "HOL",
-  "add_core": [
-    "INO",
-    "HOL"
-  ],
-  "wood": 0.25,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 45580,
-      "template": 21
+    "owner": "HOL",
+    "controller": "HOL",
+    "add_core": [
+        "INO",
+        "HOL"
+    ],
+    "wood": 0.25,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 44169,
+            "template": 21
+        }
+    },
+    "1949.12.27.0": {
+        "owner": "INO",
+        "controller": "INO",
+        "remove_core": "HOL"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 46402,
+            "template": 21
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 47239,
+            "template": 21
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 60965,
+            "template": 121
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 93045,
+            "template": 221
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 118324,
+            "template": 321
+        }
     }
-  },
-  "1949.12.27.0": {
-    "owner": "INO",
-    "controller": "INO",
-    "remove_core": "HOL"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 46402,
-      "template": 21
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 47239,
-      "template": 21
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 60965,
-      "template": 121
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 93045,
-      "template": 221
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 118324,
-      "template": 321
-    }
-  }
 }

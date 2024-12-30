@@ -1,58 +1,58 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "PAL"
-  ],
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 3163,
-      "template": 34
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "PAL"
+    ],
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 3163,
+            "template": 34
+        }
+    },
+    "1948.05.14": {
+        "owner": "PAL",
+        "controller": "PAL",
+        "remove_core": "ENG"
+    },
+    "1950.6.24": {
+        "owner": "EGY",
+        "controller": "EGY"
+    },
+    "1967.9.1": {
+        "owner": "ISR",
+        "controller": "ISR"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 3361,
+            "template": 34
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 3571,
+            "template": 34
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 9630,
+            "template": 134
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 14597,
+            "template": 234
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 13178,
+            "template": 334
+        }
     }
-  },
-  "1948.05.14": {
-    "owner": "PAL",
-    "controller": "PAL",
-    "remove_core": "ENG"
-  },
-  "1950.6.24": {
-    "owner": "EGY",
-    "controller": "EGY"
-  },
-  "1967.9.1": {
-    "owner": "ISR",
-    "controller": "ISR"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 3361,
-      "template": 34
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 3571,
-      "template": 34
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 9630,
-      "template": 134
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 14597,
-      "template": 234
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 13178,
-      "template": 334
-    }
-  }
 }

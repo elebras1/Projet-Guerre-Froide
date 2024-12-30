@@ -1,46 +1,46 @@
 {
-  "owner": "IRE",
-  "controller": "IRE",
-  "add_core": "IRE",
-  "grain": 13.69,
-  "infra": 4,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 89752,
-      "template": 55
+    "owner": "IRE",
+    "controller": "IRE",
+    "add_core": "IRE",
+    "grain": 13.69,
+    "infra": 4,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 89752,
+            "template": 55
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 103896,
+            "template": 255
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 108816,
+            "template": 355
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 89679,
+            "template": 55
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 89605,
+            "template": 55
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 87210,
+            "template": 155
+        }
     }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 103896,
-      "template": 255
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 108816,
-      "template": 355
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 89679,
-      "template": 55
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 89605,
-      "template": 55
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 87210,
-      "template": 155
-    }
-  }
 }

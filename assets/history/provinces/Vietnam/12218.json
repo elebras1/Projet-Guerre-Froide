@@ -1,82 +1,82 @@
 {
-  "owner": "CHI",
-  "controller": "CHI",
-  "add_core": [
-    "IDC",
-    "DRV"
-  ],
-  "coal": 3,
-  "infra": 3,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 345986,
-      "template": 28
+    "owner": "CHI",
+    "controller": "CHI",
+    "add_core": [
+        "IDC",
+        "DRV"
+    ],
+    "coal": 3,
+    "infra": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 345986,
+            "template": 28
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 2
+        }
     },
-    "economy_building": {
-      "name": "military_goods",
-      "size": 2
-    }
-  },
-  "1946.2.28": {
-    "owner": "DRV",
-    "controller": "DRV"
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 3
+    "1946.2.28": {
+        "owner": "DRV",
+        "controller": "DRV"
     },
-    "population_total": {
-      "amount": 360381,
-      "template": 28
-    }
-  },
-  "1954.6.17": {
-    "owner": "DRV",
-    "controller": "DRV",
-    "remove_core": "IDC"
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 5
-    }
-  },
-  "1976.7.2": {
-    "owner": "VIE",
-    "controller": "VIE",
-    "add_core": "VIE"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 6
+    "1950.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 360381,
+            "template": 28
+        }
     },
-    "population_total": {
-      "amount": 676748,
-      "template": 228
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 6
+    "1954.6.17": {
+        "owner": "DRV",
+        "controller": "DRV",
+        "remove_core": "IDC"
     },
-    "population_total": {
-      "amount": 873852,
-      "template": 328
+    "1961.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 5
+        }
+    },
+    "1976.7.2": {
+        "owner": "VIE",
+        "controller": "VIE",
+        "add_core": "VIE"
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 676748,
+            "template": 228
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 873852,
+            "template": 328
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 353110,
+            "template": 28
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 471456,
+            "template": 128
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 353110,
-      "template": 28
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 471456,
-      "template": 128
-    }
-  }
 }

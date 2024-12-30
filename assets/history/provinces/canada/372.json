@@ -1,47 +1,47 @@
 {
-  "owner": "CAN",
-  "controller": "CAN",
-  "add_core": "CAN",
-  "wood": 1,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 29245,
-      "template": 92
+    "owner": "CAN",
+    "controller": "CAN",
+    "add_core": "CAN",
+    "wood": 1,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 29245,
+            "template": 92
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 4
+        }
     },
-    "economy_building": {
-      "name": "military_goods",
-      "size": 4
+    "1948.1.1": {
+        "population_total": {
+            "amount": 30039,
+            "template": 92
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 30855,
+            "template": 92
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 41848,
+            "template": 192
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 54471,
+            "template": 292
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 63008,
+            "template": 392
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 30039,
-      "template": 92
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 30855,
-      "template": 92
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 41848,
-      "template": 192
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 54471,
-      "template": 292
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 63008,
-      "template": 392
-    }
-  }
 }

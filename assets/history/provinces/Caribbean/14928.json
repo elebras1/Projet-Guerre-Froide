@@ -1,25 +1,25 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "GRN"
-  ],
-  "vegetables": 10.1,
-  "infra": 5,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 67000,
-      "template": 148
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "GRN"
+    ],
+    "vegetables": 10.1,
+    "infra": 5,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 67000,
+            "template": 148
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 2
+    },
+    "1974.2.7": {
+        "remove_core": "ENG",
+        "owner": "GRN",
+        "controller": "GRN"
     }
-  },
-  "1991.1.1": {
-    "naval_base": 2
-  },
-  "1974.2.7": {
-    "remove_core": "ENG",
-    "owner": "GRN",
-    "controller": "GRN"
-  }
 }

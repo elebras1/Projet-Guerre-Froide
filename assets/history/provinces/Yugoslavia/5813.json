@@ -1,56 +1,56 @@
 {
-  "add_core": [
-    "SLV",
-    "YUG"
-  ],
-  "owner": "YUG",
-  "controller": "YUG",
-  "meat": 100,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 599578,
-      "template": 62
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "high_tech",
-      "size": 1
+    "add_core": [
+        "SLV",
+        "YUG"
+    ],
+    "owner": "YUG",
+    "controller": "YUG",
+    "meat": 100,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 599578,
+            "template": 62
+        }
     },
-    "population_total": {
-      "amount": 800365,
-      "template": 262
+    "1979.1.1": {
+        "economy_building": {
+            "name": "high_tech",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 800365,
+            "template": 262
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "high_tech",
+            "size": 2
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 607303,
+            "template": 62
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 615143,
+            "template": 62
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 698764,
+            "template": 162
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 860721,
+            "template": 362
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "high_tech",
-      "size": 2
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 607303,
-      "template": 62
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 615143,
-      "template": 62
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 698764,
-      "template": 162
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 860721,
-      "template": 362
-    }
-  }
 }

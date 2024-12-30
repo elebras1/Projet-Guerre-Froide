@@ -1,53 +1,53 @@
 {
-  "owner": "TUR",
-  "controller": "TUR",
-  "add_core": "TUR",
-  "wood": 0.2,
-  "naval_base": 1,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 255788,
-      "template": 42
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 4
+    "owner": "TUR",
+    "controller": "TUR",
+    "add_core": "TUR",
+    "wood": 0.2,
+    "naval_base": 1,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 255788,
+            "template": 42
+        }
     },
-    "population_total": {
-      "amount": 550327,
-      "template": 242
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 5
+    "1979.1.1": {
+        "naval_base": 2,
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 550327,
+            "template": 242
+        }
     },
-    "population_total": {
-      "amount": 702622,
-      "template": 342
+    "1991.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 702622,
+            "template": 342
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 263275,
+            "template": 42
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 270981,
+            "template": 42
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 378094,
+            "template": 142
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 263275,
-      "template": 42
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 270981,
-      "template": 42
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 378094,
-      "template": 142
-    }
-  }
 }

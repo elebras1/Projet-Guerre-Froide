@@ -1,61 +1,61 @@
 {
-  "owner": "FIN",
-  "controller": "FIN",
-  "add_core": "FIN",
-  "grain": 44.53,
-  "infra": 5,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 92919,
-      "template": 53
+    "owner": "FIN",
+    "controller": "FIN",
+    "add_core": "FIN",
+    "grain": 44.53,
+    "infra": 5,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 92919,
+            "template": 53
+        }
+    },
+    "1977.5.9": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 6
+        }
+    },
+    "1981.1.5": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 7
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 2
+    },
+    "1979.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 112826,
+            "template": 253
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 118661,
+            "template": 353
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 93938,
+            "template": 53
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 94969,
+            "template": 53
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 106464,
+            "template": 153
+        }
     }
-  },
-  "1977.5.9": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 6
-    }
-  },
-  "1981.1.5": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 7
-    }
-  },
-  "1961.1.1": {
-    "naval_base": 2
-  },
-  "1979.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 112826,
-      "template": 253
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 118661,
-      "template": 353
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 93938,
-      "template": 53
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 94969,
-      "template": 53
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 106464,
-      "template": 153
-    }
-  }
 }

@@ -1,77 +1,77 @@
 {
-  "owner": "CHI",
-  "controller": "CHI",
-  "add_core": [
-    "CHI",
-    "CHC",
-    "TWN"
-  ],
-  "grain": 423.94,
-  "infra": 5,
-  "naval_base": 3,
-  "1946.1.1": {
-    "air_base": 1,
-    "population_total": {
-      "amount": 2157281,
-      "template": 6
+    "owner": "CHI",
+    "controller": "CHI",
+    "add_core": [
+        "CHI",
+        "CHC",
+        "TWN"
+    ],
+    "grain": 423.94,
+    "infra": 5,
+    "naval_base": 3,
+    "1946.1.1": {
+        "air_base": 1,
+        "population_total": {
+            "amount": 2157281,
+            "template": 6
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 6
+        }
     },
-    "economy_building": {
-      "name": "military_goods",
-      "size": 6
-    }
-  },
-  "1971.1.1.0": {
-    "owner": "TWN",
-    "controller": "TWN"
-  },
-  "1948.1.1": {
-    "air_base": 2,
-    "population_total": {
-      "amount": 2221999,
-      "template": 6
-    }
-  },
-  "1961.1.1": {
-    "air_base": 4,
-    "economy_building": {
-      "name": "military_goods",
-      "size": 7
+    "1971.1.1.0": {
+        "owner": "TWN",
+        "controller": "TWN"
     },
-    "naval_base": 4
-  },
-  "1979.1.1": {
-    "air_base": 8,
-    "naval_base": 5,
-    "population_total": {
-      "amount": 5288683,
-      "template": 206
-    }
-  },
-  "1991.1.1": {
-    "air_base": 10,
-    "naval_base": 7,
-    "population_total": {
-      "amount": 6180923,
-      "template": 306
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 6
+    "1948.1.1": {
+        "air_base": 2,
+        "population_total": {
+            "amount": 2221999,
+            "template": 6
+        }
     },
-    "population_total": {
-      "amount": 2288659,
-      "template": 6
+    "1961.1.1": {
+        "air_base": 4,
+        "economy_building": {
+            "name": "military_goods",
+            "size": 7
+        },
+        "naval_base": 4
+    },
+    "1979.1.1": {
+        "air_base": 8,
+        "naval_base": 5,
+        "population_total": {
+            "amount": 5288683,
+            "template": 206
+        }
+    },
+    "1991.1.1": {
+        "air_base": 10,
+        "naval_base": 7,
+        "population_total": {
+            "amount": 6180923,
+            "template": 306
+        }
+    },
+    "1950.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 2288659,
+            "template": 6
+        }
+    },
+    "1985.1.1": {
+        "naval_base": 6
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 3402519,
+            "template": 106
+        }
     }
-  },
-  "1985.1.1": {
-    "naval_base": 6
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 3402519,
-      "template": 106
-    }
-  }
 }

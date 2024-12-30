@@ -1,44 +1,44 @@
 {
-  "owner": "FIN",
-  "controller": "FIN",
-  "add_core": "FIN",
-  "meat": 0.53,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1421,
-      "template": 53
+    "owner": "FIN",
+    "controller": "FIN",
+    "add_core": "FIN",
+    "meat": 0.53,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1421,
+            "template": 53
+        }
+    },
+    "1979.1.1": {
+        "infra": 6,
+        "population_total": {
+            "amount": 1725,
+            "template": 253
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1436,
+            "template": 53
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1452,
+            "template": 53
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1628,
+            "template": 153
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1814,
+            "template": 353
+        }
     }
-  },
-  "1979.1.1": {
-    "infra": 6,
-    "population_total": {
-      "amount": 1725,
-      "template": 253
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1436,
-      "template": 53
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1452,
-      "template": 53
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1628,
-      "template": 153
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1814,
-      "template": 353
-    }
-  }
 }

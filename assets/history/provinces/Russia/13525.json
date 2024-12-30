@@ -1,46 +1,46 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "RUS"
-  ],
-  "vegetables": 24.45,
-  "infra": 3,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 2277,
-      "template": 45
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "RUS"
+    ],
+    "vegetables": 24.45,
+    "infra": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 2277,
+            "template": 45
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 2314,
+            "template": 45
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 2352,
+            "template": 45
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 2816,
+            "template": 145
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 3153,
+            "template": 245
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 3404,
+            "template": 345
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 2314,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 2352,
-      "template": 45
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 2816,
-      "template": 145
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 3153,
-      "template": 245
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 3404,
-      "template": 345
-    }
-  }
 }

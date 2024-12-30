@@ -1,65 +1,65 @@
 {
-  "owner": "IRQ",
-  "controller": "IRQ",
-  "add_core": "IRQ",
-  "oil": 178,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 17317,
-      "template": 33
-    }
-  },
-  "1953.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 1
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 2
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 4
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 5
+    "owner": "IRQ",
+    "controller": "IRQ",
+    "add_core": "IRQ",
+    "oil": 178,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 17317,
+            "template": 33
+        }
     },
-    "population_total": {
-      "amount": 57131,
-      "template": 333
+    "1953.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 1
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 2
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 4
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 57131,
+            "template": 333
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 17793,
+            "template": 33
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 18283,
+            "template": 33
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 24849,
+            "template": 133
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 42723,
+            "template": 233
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 17793,
-      "template": 33
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 18283,
-      "template": 33
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 24849,
-      "template": 133
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 42723,
-      "template": 233
-    }
-  }
 }

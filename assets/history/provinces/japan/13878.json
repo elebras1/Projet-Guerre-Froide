@@ -1,65 +1,65 @@
 {
-  "owner": "JAP",
-  "controller": "JAP",
-  "add_core": "JAP",
-  "meat": 136.71,
-  "infra": 5,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 1160395,
-      "template": 8
+    "owner": "JAP",
+    "controller": "JAP",
+    "add_core": "JAP",
+    "meat": 136.71,
+    "infra": 5,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 1160395,
+            "template": 8
+        },
+        "economy_building": {
+            "name": "powerplant",
+            "size": 6
+        }
     },
-    "economy_building": {
-      "name": "powerplant",
-      "size": 6
-    }
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 7
+    "1948.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 1177244,
+            "template": 8
+        }
     },
-    "population_total": {
-      "amount": 1177244,
-      "template": 8
-    }
-  },
-  "1961.1.1": {
-    "naval_base": 2,
-    "economy_building": {
-      "name": "powerplant",
-      "size": 8
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 3,
-    "economy_building": {
-      "name": "powerplant",
-      "size": 10
+    "1961.1.1": {
+        "naval_base": 2,
+        "economy_building": {
+            "name": "powerplant",
+            "size": 8
+        }
     },
-    "population_total": {
-      "amount": 1670864,
-      "template": 208
+    "1979.1.1": {
+        "naval_base": 3,
+        "economy_building": {
+            "name": "powerplant",
+            "size": 10
+        },
+        "population_total": {
+            "amount": 1670864,
+            "template": 208
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 1782844,
+            "template": 308
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1194338,
+            "template": 8
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1369630,
+            "template": 108
+        }
     }
-  },
-  "1991.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 1782844,
-      "template": 308
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1194338,
-      "template": 8
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1369630,
-      "template": 108
-    }
-  }
 }

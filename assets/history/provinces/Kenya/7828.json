@@ -1,59 +1,59 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "KEN"
-  ],
-  "wood": 0.3,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 301695,
-      "template": 1
-    }
-  },
-  "1963.12.12": {
-    "owner": "KEN",
-    "controller": "KEN",
-    "remove_core": "ENG"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "KEN"
+    ],
+    "wood": 0.3,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 301695,
+            "template": 1
+        }
     },
-    "population_total": {
-      "amount": 821247,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 2
+    "1963.12.12": {
+        "owner": "KEN",
+        "controller": "KEN",
+        "remove_core": "ENG"
     },
-    "population_total": {
-      "amount": 1271078,
-      "template": 301
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 821247,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 1271078,
+            "template": 301
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 310055,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 318647,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 452476,
+            "template": 101
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 310055,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 318647,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 452476,
-      "template": 101
-    }
-  }
 }

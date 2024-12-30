@@ -1,60 +1,60 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "KOR",
-    "PRK"
-  ],
-  "grain": 44.32,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 259281,
-      "template": 7
-    }
-  },
-  "1948.11.11": {
-    "owner": "PRK",
-    "controller": "PRK"
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 1
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 3
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "KOR",
+        "PRK"
+    ],
+    "grain": 44.32,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 259281,
+            "template": 7
+        }
     },
-    "population_total": {
-      "amount": 450736,
-      "template": 207
+    "1948.11.11": {
+        "owner": "PRK",
+        "controller": "PRK"
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 1
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 450736,
+            "template": 207
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 258718,
+            "template": 7
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 258157,
+            "template": 7
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 304323,
+            "template": 107
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 542629,
+            "template": 307
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 258718,
-      "template": 7
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 258157,
-      "template": 7
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 304323,
-      "template": 107
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 542629,
-      "template": 307
-    }
-  }
 }

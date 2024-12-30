@@ -1,47 +1,47 @@
 {
-  "owner": "NIC",
-  "controller": "NIC",
-  "add_core": "NIC",
-  "fruits": 2,
-  "infra": 3,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 102524,
-      "template": 76
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 4
+    "owner": "NIC",
+    "controller": "NIC",
+    "add_core": "NIC",
+    "fruits": 2,
+    "infra": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 102524,
+            "template": 76
+        }
     },
-    "population_total": {
-      "amount": 264736,
-      "template": 276
+    "1979.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 264736,
+            "template": 276
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 105623,
+            "template": 76
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 108815,
+            "template": 76
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 158399,
+            "template": 176
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 354526,
+            "template": 382
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 105623,
-      "template": 76
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 108815,
-      "template": 76
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 158399,
-      "template": 176
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 354526,
-      "template": 382
-    }
-  }
 }

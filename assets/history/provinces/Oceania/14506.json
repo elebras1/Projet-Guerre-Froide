@@ -1,23 +1,23 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": [
-    "USA",
-    "MIC"
-  ],
-  "grain": 44.09,
-  "infra": 4,
-  "1946.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 32000,
-      "template": 111
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": [
+        "USA",
+        "MIC"
+    ],
+    "grain": 44.09,
+    "infra": 4,
+    "1946.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 32000,
+            "template": 111
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 3
+    },
+    "1991.1.1": {
+        "naval_base": 4
     }
-  },
-  "1979.1.1": {
-    "naval_base": 3
-  },
-  "1991.1.1": {
-    "naval_base": 4
-  }
 }

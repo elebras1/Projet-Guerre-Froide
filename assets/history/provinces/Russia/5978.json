@@ -1,70 +1,70 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "RUS"
-  ],
-  "infra": 7,
-  "naval_base": 3,
-  "1946.1.1": {
-    "air_base": 5,
-    "population_total": {
-      "amount": 98911,
-      "template": 45
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "RUS"
+    ],
+    "infra": 7,
+    "naval_base": 3,
+    "1946.1.1": {
+        "air_base": 5,
+        "population_total": {
+            "amount": 98911,
+            "template": 45
+        },
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 9
+        }
     },
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 9
-    }
-  },
-  "1948.1.1": {
-    "air_base": 6,
-    "population_total": {
-      "amount": 100519,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "air_base": 7,
-    "population_total": {
-      "amount": 102153,
-      "template": 45
-    }
-  },
-  "1961.1.1": {
-    "air_base": 8,
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 10
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 9
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 8
+    "1948.1.1": {
+        "air_base": 6,
+        "population_total": {
+            "amount": 100519,
+            "template": 45
+        }
     },
-    "population_total": {
-      "amount": 147879,
-      "template": 345
+    "1950.1.1": {
+        "air_base": 7,
+        "population_total": {
+            "amount": 102153,
+            "template": 45
+        }
+    },
+    "1961.1.1": {
+        "air_base": 8,
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 10
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 9
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 8
+        },
+        "population_total": {
+            "amount": 147879,
+            "template": 345
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 122313,
+            "template": 145
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 136977,
+            "template": 245
+        }
     }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 122313,
-      "template": 145
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 136977,
-      "template": 245
-    }
-  }
 }

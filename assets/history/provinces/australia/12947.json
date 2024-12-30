@@ -1,71 +1,71 @@
 {
-  "owner": "AST",
-  "controller": "AST",
-  "add_core": "AST",
-  "grain": 5.3,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 6562,
-      "template": 94
+    "owner": "AST",
+    "controller": "AST",
+    "add_core": "AST",
+    "grain": 5.3,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 6562,
+            "template": 94
+        },
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 1
+        }
     },
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 1
-    }
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 3
+    "1948.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 6718,
+            "template": 94
+        }
     },
-    "population_total": {
-      "amount": 6718,
-      "template": 94
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 4
+    "1950.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 6878,
+            "template": 94
+        }
     },
-    "population_total": {
-      "amount": 6878,
-      "template": 94
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 5
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 4
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 5
+    "1961.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 5
+        }
     },
-    "population_total": {
-      "amount": 14568,
-      "template": 394
+    "1985.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 4
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 14568,
+            "template": 394
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 8997,
+            "template": 194
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 12227,
+            "template": 294
+        }
     }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 8997,
-      "template": 194
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 12227,
-      "template": 294
-    }
-  }
 }

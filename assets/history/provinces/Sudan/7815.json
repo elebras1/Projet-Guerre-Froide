@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "SUD"
-  ],
-  "grain": 2.86,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 54870,
-      "template": 3
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "SUD"
+    ],
+    "grain": 2.86,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 54870,
+            "template": 3
+        }
+    },
+    "1956.01.01": {
+        "owner": "SUD",
+        "controller": "SUD",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 56095,
+            "template": 3
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 57347,
+            "template": 3
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 75646,
+            "template": 103
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 121230,
+            "template": 203
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 169483,
+            "template": 303
+        }
     }
-  },
-  "1956.01.01": {
-    "owner": "SUD",
-    "controller": "SUD",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 56095,
-      "template": 3
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 57347,
-      "template": 3
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 75646,
-      "template": 103
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 121230,
-      "template": 203
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 169483,
-      "template": 303
-    }
-  }
 }

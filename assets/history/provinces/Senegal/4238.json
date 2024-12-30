@@ -1,77 +1,77 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "SEN"
-  ],
-  "fruits": 32.98,
-  "infra": 4,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 407285,
-      "template": 5
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "SEN"
+    ],
+    "fruits": 32.98,
+    "infra": 4,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 407285,
+            "template": 5
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
     },
-    "economy_building": {
-      "name": "light_industry",
-      "size": 5
-    }
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 6
+    "1948.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 415842,
+            "template": 5
+        }
     },
-    "population_total": {
-      "amount": 415842,
-      "template": 5
-    }
-  },
-  "1953.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 7
-    }
-  },
-  "1960.04.04": {
-    "owner": "SEN",
-    "controller": "SEN",
-    "remove_core": "FRA"
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 4
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 2,
-    "economy_building": {
-      "name": "light_industry",
-      "size": 1
+    "1953.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 7
+        }
     },
-    "population_total": {
-      "amount": 1311124,
-      "template": 305
+    "1960.04.04": {
+        "owner": "SEN",
+        "controller": "SEN",
+        "remove_core": "FRA"
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 2,
+        "economy_building": {
+            "name": "light_industry",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 1311124,
+            "template": 305
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 424579,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 565289,
+            "template": 105
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 927677,
+            "template": 205
+        }
     }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 424579,
-      "template": 5
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 565289,
-      "template": 105
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 927677,
-      "template": 205
-    }
-  }
 }

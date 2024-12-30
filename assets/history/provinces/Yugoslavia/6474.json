@@ -1,52 +1,52 @@
 {
-  "add_core": [
-    "SER",
-    "YUG",
-    "MCD"
-  ],
-  "owner": "YUG",
-  "controller": "YUG",
-  "wood": 2,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 222168,
-      "template": 62
+    "add_core": [
+        "SER",
+        "YUG",
+        "MCD"
+    ],
+    "owner": "YUG",
+    "controller": "YUG",
+    "wood": 2,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 222168,
+            "template": 62
+        }
+    },
+    "1991.9.8": {
+        "remove_core": "YUG",
+        "owner": "MCD",
+        "controller": "MCD"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 225031,
+            "template": 62
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 227936,
+            "template": 62
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 258920,
+            "template": 162
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 296568,
+            "template": 262
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 318932,
+            "template": 362
+        }
     }
-  },
-  "1991.9.8": {
-    "remove_core": "YUG",
-    "owner": "MCD",
-    "controller": "MCD"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 225031,
-      "template": 62
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 227936,
-      "template": 62
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 258920,
-      "template": 162
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 296568,
-      "template": 262
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 318932,
-      "template": 362
-    }
-  }
 }

@@ -1,43 +1,43 @@
 {
-  "add_core": "ROM",
-  "owner": "ROM",
-  "controller": "ROM",
-  "grain": 500,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 251621,
-      "template": 50
+    "add_core": "ROM",
+    "owner": "ROM",
+    "controller": "ROM",
+    "grain": 500,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 251621,
+            "template": 50
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 255121,
+            "template": 50
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 258669,
+            "template": 50
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 295611,
+            "template": 150
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 349519,
+            "template": 250
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 367436,
+            "template": 350
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 255121,
-      "template": 50
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 258669,
-      "template": 50
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 295611,
-      "template": 150
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 349519,
-      "template": 250
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 367436,
-      "template": 350
-    }
-  }
 }

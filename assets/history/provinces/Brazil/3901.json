@@ -1,53 +1,53 @@
 {
-  "owner": "BRA",
-  "controller": "BRA",
-  "add_core": "BRA",
-  "meat": 787.08,
-  "infra": 6,
-  "economy_building": {
-    "name": "financial_district",
-    "size": 1
-  },
-  "1946.1.1": {
-    "population_total": {
-      "amount": 2662374,
-      "template": 77
-    }
-  },
-  "1958.1.25": {
+    "owner": "BRA",
+    "controller": "BRA",
+    "add_core": "BRA",
+    "meat": 787.08,
+    "infra": 6,
     "economy_building": {
-      "name": "centrifuges",
-      "size": 1
+        "name": "financial_district",
+        "size": 1
+    },
+    "1946.1.1": {
+        "population_total": {
+            "amount": 2504653,
+            "template": 77
+        }
+    },
+    "1958.1.25": {
+        "economy_building": {
+            "name": "centrifuges",
+            "size": 1
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 2743683,
+            "template": 77
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 2827475,
+            "template": 77
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 4048318,
+            "template": 177
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 6228379,
+            "template": 277
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 7970239,
+            "template": 381
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 2743683,
-      "template": 77
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 2827475,
-      "template": 77
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 4048318,
-      "template": 177
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 6228379,
-      "template": 277
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 7970239,
-      "template": 381
-    }
-  }
 }

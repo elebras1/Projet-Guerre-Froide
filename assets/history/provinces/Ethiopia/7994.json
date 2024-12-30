@@ -1,53 +1,53 @@
 {
-  "owner": "ETH",
-  "controller": "ETH",
-  "add_core": "ETH",
-  "vegetables": 63.67,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 285344,
-      "template": 1
+    "owner": "ETH",
+    "controller": "ETH",
+    "add_core": "ETH",
+    "vegetables": 63.67,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 285344,
+            "template": 1
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 2
+        }
     },
-    "economy_building": {
-      "name": "military_goods",
-      "size": 2
+    "1961.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 3
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 290840,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 296441,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 380252,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 559207,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 804049,
+            "template": 301
+        }
     }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 3
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 290840,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 296441,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 380252,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 559207,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 804049,
-      "template": 301
-    }
-  }
 }

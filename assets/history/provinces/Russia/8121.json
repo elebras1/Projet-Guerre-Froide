@@ -1,60 +1,60 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "RUS"
-  ],
-  "wood": 1,
-  "infra": 8,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 280350,
-      "template": 45
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "high_tech",
-      "size": 3
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "RUS"
+    ],
+    "wood": 1,
+    "infra": 8,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 280350,
+            "template": 45
+        }
     },
-    "population_total": {
-      "amount": 388243,
-      "template": 245
-    }
-  },
-  "1985.1.1": {
+    "1979.1.1": {
+        "economy_building": {
+            "name": "high_tech",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 388243,
+            "template": 245
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "high_tech",
+            "size": 5
+        }
+    },
     "economy_building": {
-      "name": "high_tech",
-      "size": 5
+        "name": "land_research_center",
+        "size": 1
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 284908,
+            "template": 45
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 289541,
+            "template": 45
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 346681,
+            "template": 145
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 419144,
+            "template": 345
+        }
     }
-  },
-  "economy_building": {
-    "name": "land_research_center",
-    "size": 1
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 284908,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 289541,
-      "template": 45
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 346681,
-      "template": 145
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 419144,
-      "template": 345
-    }
-  }
 }

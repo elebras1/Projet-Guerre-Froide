@@ -1,51 +1,51 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "CAM"
-  ],
-  "fruits": 3.6,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 86238,
-      "template": 2
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "CAM"
+    ],
+    "fruits": 3.6,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 86238,
+            "template": 2
+        }
+    },
+    "1960.01.01": {
+        "owner": "CAM",
+        "controller": "CAM",
+        "remove_core": "FRA"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 87838,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 89467,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 113128,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 177118,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 250983,
+            "template": 302
+        }
     }
-  },
-  "1960.01.01": {
-    "owner": "CAM",
-    "controller": "CAM",
-    "remove_core": "FRA"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 87838,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 89467,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 113128,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 177118,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 250983,
-      "template": 302
-    }
-  }
 }

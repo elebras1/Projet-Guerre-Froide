@@ -1,45 +1,45 @@
 {
-  "owner": "URU",
-  "controller": "URU",
-  "add_core": "URU",
-  "grain": 5.03,
-  "infra": 6,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 13839,
-      "template": 90
+    "owner": "URU",
+    "controller": "URU",
+    "add_core": "URU",
+    "grain": 5.03,
+    "infra": 6,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 13839,
+            "template": 90
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 19808,
+            "template": 390
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 13999,
+            "template": 90
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 14161,
+            "template": 90
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 16469,
+            "template": 190
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 18314,
+            "template": 290
+        }
     }
-  },
-  "1991.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 19808,
-      "template": 390
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 13999,
-      "template": 90
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 14161,
-      "template": 90
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 16469,
-      "template": 190
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 18314,
-      "template": 290
-    }
-  }
 }

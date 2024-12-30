@@ -1,53 +1,53 @@
 {
-  "owner": "TUR",
-  "controller": "TUR",
-  "add_core": "TUR",
-  "coal": 3,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 171630,
-      "template": 42
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 3
+    "owner": "TUR",
+    "controller": "TUR",
+    "add_core": "TUR",
+    "coal": 3,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 171630,
+            "template": 42
+        }
     },
-    "population_total": {
-      "amount": 369261,
-      "template": 242
+    "1979.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 369261,
+            "template": 242
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 6
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 176653,
+            "template": 42
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 181824,
+            "template": 42
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 253695,
+            "template": 142
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 471448,
+            "template": 342
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 6
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 176653,
-      "template": 42
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 181824,
-      "template": 42
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 253695,
-      "template": 142
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 471448,
-      "template": 342
-    }
-  }
 }

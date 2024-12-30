@@ -1,46 +1,46 @@
 {
-  "owner": "MON",
-  "controller": "MON",
-  "add_core": "MON",
-  "meat": 0.2,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 626,
-      "template": 9
+    "owner": "MON",
+    "controller": "MON",
+    "add_core": "MON",
+    "meat": 0.2,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 626,
+            "template": 9
+        }
+    },
+    "1955.1.1.0": {
+        "infra": 5
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 638,
+            "template": 9
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 650,
+            "template": 9
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 844,
+            "template": 109
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1374,
+            "template": 209
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1854,
+            "template": 309
+        }
     }
-  },
-  "1955.1.1.0": {
-    "infra": 5
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 638,
-      "template": 9
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 650,
-      "template": 9
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 844,
-      "template": 109
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1374,
-      "template": 209
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1854,
-      "template": 309
-    }
-  }
 }

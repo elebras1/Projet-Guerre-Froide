@@ -1,50 +1,50 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "RUS"
-  ],
-  "grain": 104.38,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 162542,
-      "template": 45
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "RUS"
+    ],
+    "grain": 104.38,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 162542,
+            "template": 45
+        },
+        "economy_building": {
+            "name": "aviation_industry",
+            "size": 9
+        }
     },
-    "economy_building": {
-      "name": "aviation_industry",
-      "size": 9
+    "1948.1.1": {
+        "population_total": {
+            "amount": 165185,
+            "template": 45
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 167871,
+            "template": 45
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 201000,
+            "template": 145
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 225097,
+            "template": 245
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 243012,
+            "template": 345
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 165185,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 167871,
-      "template": 45
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 201000,
-      "template": 145
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 225097,
-      "template": 245
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 243012,
-      "template": 345
-    }
-  }
 }

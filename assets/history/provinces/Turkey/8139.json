@@ -1,46 +1,46 @@
 {
-  "owner": "TUR",
-  "controller": "TUR",
-  "add_core": "TUR",
-  "renewable_energy": 180,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 275205,
-      "template": 42
+    "owner": "TUR",
+    "controller": "TUR",
+    "add_core": "TUR",
+    "renewable_energy": 180,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 275205,
+            "template": 42
+        }
+    },
+    "1987.1.1": {
+        "renewable_energy": 180
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 283261,
+            "template": 42
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 291552,
+            "template": 42
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 406795,
+            "template": 142
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 592103,
+            "template": 242
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 755958,
+            "template": 342
+        }
     }
-  },
-  "1987.1.1": {
-    "renewable_energy": 180
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 283261,
-      "template": 42
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 291552,
-      "template": 42
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 406795,
-      "template": 142
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 592103,
-      "template": 242
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 755958,
-      "template": 342
-    }
-  }
 }

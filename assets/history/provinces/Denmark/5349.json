@@ -1,56 +1,56 @@
 {
-  "owner": "DEN",
-  "controller": "DEN",
-  "add_core": "DEN",
-  "oil": 103,
-  "infra": 5,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 326476,
-      "template": 51
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 2
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "economy_building": {
-      "name": "refinery",
-      "size": 7
+    "owner": "DEN",
+    "controller": "DEN",
+    "add_core": "DEN",
+    "oil": 103,
+    "infra": 5,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 326476,
+            "template": 51
+        }
     },
-    "population_total": {
-      "amount": 397596,
-      "template": 251
+    "1961.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 2
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 2,
+        "economy_building": {
+            "name": "refinery",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 397596,
+            "template": 251
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 400511,
+            "template": 351
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 329036,
+            "template": 51
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 331615,
+            "template": 51
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 361130,
+            "template": 151
+        }
     }
-  },
-  "1991.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 400511,
-      "template": 351
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 329036,
-      "template": 51
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 331615,
-      "template": 51
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 361130,
-      "template": 151
-    }
-  }
 }

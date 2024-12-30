@@ -1,51 +1,51 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "MAD"
-  ],
-  "vegetables": 8.2,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 38272,
-      "template": 1
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "MAD"
+    ],
+    "vegetables": 8.2,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 38272,
+            "template": 1
+        }
+    },
+    "1960.06.26": {
+        "owner": "MAD",
+        "controller": "MAD",
+        "remove_core": "FRA"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 39096,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 39938,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 52369,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 81989,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 113653,
+            "template": 301
+        }
     }
-  },
-  "1960.06.26": {
-    "owner": "MAD",
-    "controller": "MAD",
-    "remove_core": "FRA"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 39096,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 39938,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 52369,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 81989,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 113653,
-      "template": 301
-    }
-  }
 }

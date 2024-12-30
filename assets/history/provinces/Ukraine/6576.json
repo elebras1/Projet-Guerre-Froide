@@ -1,54 +1,54 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "UKR"
-  ],
-  "meat": 128.22,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 652755,
-      "template": 45
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "UKR"
+    ],
+    "meat": 128.22,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 652755,
+            "template": 45
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "nuclear_silo",
+            "size": 1,
+            "model": 0,
+            "ammo_store": 4
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 662207,
+            "template": 45
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 671796,
+            "template": 45
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 789764,
+            "template": 145
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 898074,
+            "template": 245
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 930596,
+            "template": 345
+        }
     }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "nuclear_silo",
-      "size": 1,
-      "model": 0,
-      "ammo_store": 4
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 662207,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 671796,
-      "template": 45
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 789764,
-      "template": 145
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 898074,
-      "template": 245
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 930596,
-      "template": 345
-    }
-  }
 }

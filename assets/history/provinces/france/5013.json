@@ -1,51 +1,51 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": "FRA",
-  "wood": 1,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 322580,
-      "template": 70
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": "FRA",
+    "wood": 1,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 313564,
+            "template": 70
+        },
+        "economy_building": {
+            "name": "aviation_industry",
+            "size": 6
+        }
     },
-    "economy_building": {
-      "name": "aviation_industry",
-      "size": 6
-    }
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "aviation_industry",
-      "size": 7
+    "1948.1.1": {
+        "economy_building": {
+            "name": "aviation_industry",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 325006,
+            "template": 70
+        }
     },
-    "population_total": {
-      "amount": 325006,
-      "template": 70
+    "1950.1.1": {
+        "population_total": {
+            "amount": 327450,
+            "template": 70
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 367274,
+            "template": 170
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 419936,
+            "template": 270
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 445839,
+            "template": 370
+        }
     }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 327450,
-      "template": 70
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 367274,
-      "template": 170
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 419936,
-      "template": 270
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 445839,
-      "template": 370
-    }
-  }
 }

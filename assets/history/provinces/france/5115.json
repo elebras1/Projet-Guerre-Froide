@@ -1,51 +1,51 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": "FRA",
-  "coal": 2,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 209134,
-      "template": 70
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": "FRA",
+    "coal": 2,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 203288,
+            "template": 70
+        },
+        "air_base": 6
     },
-    "air_base": 6
-  },
-  "1948.1.1": {
-    "air_base": 8,
-    "population_total": {
-      "amount": 210707,
-      "template": 70
+    "1948.1.1": {
+        "air_base": 8,
+        "population_total": {
+            "amount": 210707,
+            "template": 70
+        }
+    },
+    "1967.4.15": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 212291,
+            "template": 70
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 238110,
+            "template": 170
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 272252,
+            "template": 270
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 289045,
+            "template": 370
+        }
     }
-  },
-  "1967.4.15": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 5
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 212291,
-      "template": 70
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 238110,
-      "template": 170
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 272252,
-      "template": 270
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 289045,
-      "template": 370
-    }
-  }
 }

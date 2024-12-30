@@ -1,76 +1,76 @@
 {
-  "owner": "CHI",
-  "controller": "CHI",
-  "add_core": [
-    "IDC",
-    "DRV"
-  ],
-  "grain": 650.49,
-  "infra": 4,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 3200296,
-      "template": 28
+    "owner": "CHI",
+    "controller": "CHI",
+    "add_core": [
+        "IDC",
+        "DRV"
+    ],
+    "grain": 650.49,
+    "infra": 4,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 3200296,
+            "template": 28
+        },
+        "economy_building": {
+            "name": "powerplant",
+            "size": 1
+        }
     },
-    "economy_building": {
-      "name": "powerplant",
-      "size": 1
-    }
-  },
-  "1946.2.28": {
-    "owner": "IDC",
-    "controller": "IDC"
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 3
-    }
-  },
-  "1976.7.2": {
-    "owner": "VIE",
-    "controller": "VIE",
-    "add_core": "VIE",
-    "remove_core": "IDC"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 5
+    "1946.2.28": {
+        "owner": "IDC",
+        "controller": "IDC"
     },
-    "population_total": {
-      "amount": 6259769,
-      "template": 228
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 2,
-    "economy_building": {
-      "name": "powerplant",
-      "size": 6
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 3
+        }
     },
-    "population_total": {
-      "amount": 8082942,
-      "template": 328
+    "1976.7.2": {
+        "owner": "VIE",
+        "controller": "VIE",
+        "add_core": "VIE",
+        "remove_core": "IDC"
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 6259769,
+            "template": 228
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 2,
+        "economy_building": {
+            "name": "powerplant",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 8082942,
+            "template": 328
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 3266190,
+            "template": 28
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 3333441,
+            "template": 28
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 4360864,
+            "template": 128
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 3266190,
-      "template": 28
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 3333441,
-      "template": 28
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 4360864,
-      "template": 128
-    }
-  }
 }

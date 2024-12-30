@@ -1,47 +1,47 @@
 {
-  "owner": "ITA",
-  "controller": "ITA",
-  "add_core": "ITA",
-  "wood": 0.2,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 491506,
-      "template": 64
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 10
+    "owner": "ITA",
+    "controller": "ITA",
+    "add_core": "ITA",
+    "wood": 0.2,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 485294,
+            "template": 64
+        }
     },
-    "population_total": {
-      "amount": 603020,
-      "template": 264
+    "1979.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 10
+        },
+        "population_total": {
+            "amount": 603020,
+            "template": 264
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 495178,
+            "template": 64
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 498877,
+            "template": 64
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 540610,
+            "template": 164
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 611735,
+            "template": 364
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 495178,
-      "template": 64
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 498877,
-      "template": 64
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 540610,
-      "template": 164
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 611735,
-      "template": 364
-    }
-  }
 }

@@ -1,63 +1,63 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "CNG"
-  ],
-  "vegetables": 23.85,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 300065,
-      "template": 2
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "CNG"
+    ],
+    "vegetables": 23.85,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 300065,
+            "template": 2
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 2
+        }
     },
-    "economy_building": {
-      "name": "light_industry",
-      "size": 2
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 3
+    "1950.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 313027,
+            "template": 2
+        }
     },
-    "population_total": {
-      "amount": 313027,
-      "template": 2
-    }
-  },
-  "1960.08.15": {
-    "owner": "CNG",
-    "controller": "CNG",
-    "remove_core": "FRA"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 4
+    "1960.08.15": {
+        "owner": "CNG",
+        "controller": "CNG",
+        "remove_core": "FRA"
     },
-    "population_total": {
-      "amount": 676908,
-      "template": 202
+    "1979.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 676908,
+            "template": 202
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 306477,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 413737,
+            "template": 102
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 951001,
+            "template": 302
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 306477,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 413737,
-      "template": 102
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 951001,
-      "template": 302
-    }
-  }
 }

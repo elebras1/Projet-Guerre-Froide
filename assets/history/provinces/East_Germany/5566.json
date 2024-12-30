@@ -1,76 +1,76 @@
 {
-  "add_core": [
-    "DDR",
-    "FRG"
-  ],
-  "owner": "SOV",
-  "controller": "SOV",
-  "meat": 887.49,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1548603,
-      "template": 71
-    }
-  },
-  "1949.10.07": {
-    "owner": "DDR",
-    "controller": "DDR"
-  },
-  "1990.10.3": {
-    "owner": "GER",
-    "controller": "GER"
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 1
+    "add_core": [
+        "DDR",
+        "FRG"
+    ],
+    "owner": "SOV",
+    "controller": "SOV",
+    "meat": 887.49,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1548603,
+            "template": 71
+        }
     },
-    "population_total": {
-      "amount": 1635137,
-      "template": 71
+    "1949.10.07": {
+        "owner": "DDR",
+        "controller": "DDR"
+    },
+    "1990.10.3": {
+        "owner": "GER",
+        "controller": "GER"
+    },
+    "1948.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 1635137,
+            "template": 71
+        }
+    },
+    "1953.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 4
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 4
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 7
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1577007,
+            "template": 71
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1478621,
+            "template": 171
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1436083,
+            "template": 271
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1364472,
+            "template": 371
+        }
     }
-  },
-  "1953.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 4
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 4
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 7
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1577007,
-      "template": 71
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1478621,
-      "template": 171
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1436083,
-      "template": 271
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1364472,
-      "template": 371
-    }
-  }
 }

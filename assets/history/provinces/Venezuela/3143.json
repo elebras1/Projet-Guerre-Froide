@@ -1,47 +1,47 @@
 {
-  "owner": "VEN",
-  "controller": "VEN",
-  "add_core": "VEN",
-  "meat": 3.96,
-  "infra": 6,
-  "naval_base": 1,
-  "1946.1.1": {
+    "owner": "VEN",
+    "controller": "VEN",
+    "add_core": "VEN",
+    "meat": 3.96,
+    "infra": 6,
     "naval_base": 1,
-    "population_total": {
-      "amount": 52053,
-      "template": 91
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 52053,
+            "template": 91
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 161011,
+            "template": 291
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 222851,
+            "template": 391
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 54135,
+            "template": 91
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 56299,
+            "template": 91
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 90085,
+            "template": 191
+        }
     }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 161011,
-      "template": 291
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 222851,
-      "template": 391
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 54135,
-      "template": 91
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 56299,
-      "template": 91
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 90085,
-      "template": 191
-    }
-  }
 }

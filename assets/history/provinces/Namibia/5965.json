@@ -1,53 +1,53 @@
 {
-  "owner": "SAF",
-  "controller": "SAF",
-  "add_core": [
-    "SAF",
-    "NAM"
-  ],
-  "vegetables": 0.28,
-  "infra": 4,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 5325,
-      "template": 4
+    "owner": "SAF",
+    "controller": "SAF",
+    "add_core": [
+        "SAF",
+        "NAM"
+    ],
+    "vegetables": 0.28,
+    "infra": 4,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 5325,
+            "template": 4
+        }
+    },
+    "1975.11.11": {
+        "owner": "NAM",
+        "controller": "NAM",
+        "remove_core": "SAF"
+    },
+    "1991.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 16743,
+            "template": 304
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 5434,
+            "template": 4
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 5545,
+            "template": 4
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 7230,
+            "template": 104
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 11329,
+            "template": 204
+        }
     }
-  },
-  "1975.11.11": {
-    "owner": "NAM",
-    "controller": "NAM",
-    "remove_core": "SAF"
-  },
-  "1991.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 16743,
-      "template": 304
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 5434,
-      "template": 4
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 5545,
-      "template": 4
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 7230,
-      "template": 104
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 11329,
-      "template": 204
-    }
-  }
 }

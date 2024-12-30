@@ -1,71 +1,71 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "TRK"
-  ],
-  "meat": 5.61,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 20661,
-      "template": 11
-    }
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 2
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "TRK"
+    ],
+    "meat": 5.61,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 20661,
+            "template": 11
+        }
     },
-    "population_total": {
-      "amount": 21126,
-      "template": 11
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 4
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 5
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 6
+    "1948.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 21126,
+            "template": 11
+        }
     },
-    "population_total": {
-      "amount": 67294,
-      "template": 311
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 4
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 67294,
+            "template": 311
+        }
+    },
+    "1991.12.25": {
+        "owner": "TRK",
+        "controller": "TRK",
+        "remove_core": "SOV"
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 21603,
+            "template": 11
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 30481,
+            "template": 111
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 49798,
+            "template": 211
+        }
     }
-  },
-  "1991.12.25": {
-    "owner": "TRK",
-    "controller": "TRK",
-    "remove_core": "SOV"
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 21603,
-      "template": 11
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 30481,
-      "template": 111
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 49798,
-      "template": 211
-    }
-  }
 }

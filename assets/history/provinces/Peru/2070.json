@@ -1,51 +1,51 @@
 {
-  "owner": "PRU",
-  "controller": "PRU",
-  "add_core": "PRU",
-  "grain": 64.98,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 279273,
-      "template": 88
+    "owner": "PRU",
+    "controller": "PRU",
+    "add_core": "PRU",
+    "grain": 64.98,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 279273,
+            "template": 88
+        },
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 4
+        }
     },
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 4
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 3
+    "1979.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 648464,
+            "template": 288
+        }
     },
-    "population_total": {
-      "amount": 648464,
-      "template": 288
+    "1948.1.1": {
+        "population_total": {
+            "amount": 286389,
+            "template": 88
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 293686,
+            "template": 88
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 404628,
+            "template": 188
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 851224,
+            "template": 388
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 286389,
-      "template": 88
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 293686,
-      "template": 88
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 404628,
-      "template": 188
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 851224,
-      "template": 388
-    }
-  }
 }

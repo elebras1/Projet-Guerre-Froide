@@ -1,71 +1,71 @@
 {
-  "add_core": [
-    "LIT",
-    "SOV"
-  ],
-  "owner": "SOV",
-  "controller": "SOV",
-  "meat": 288,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 231750,
-      "template": 57
-    }
-  },
-  "1990.3.11": {
-    "remove_core": "SOV",
-    "owner": "LIT",
-    "controller": "LIT"
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 2
+    "add_core": [
+        "LIT",
+        "SOV"
+    ],
+    "owner": "SOV",
+    "controller": "SOV",
+    "meat": 288,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 231750,
+            "template": 57
+        }
     },
-    "population_total": {
-      "amount": 232844,
-      "template": 57
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 5
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 6
+    "1990.3.11": {
+        "remove_core": "SOV",
+        "owner": "LIT",
+        "controller": "LIT"
     },
-    "population_total": {
-      "amount": 310231,
-      "template": 257
+    "1948.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 232844,
+            "template": 57
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 310231,
+            "template": 257
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 7
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 233943,
+            "template": 57
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 259372,
+            "template": 157
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 336972,
+            "template": 357
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 7
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 233943,
-      "template": 57
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 259372,
-      "template": 157
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 336972,
-      "template": 357
-    }
-  }
 }

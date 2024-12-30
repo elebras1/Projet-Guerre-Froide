@@ -1,55 +1,55 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "YEM",
-    "SYA",
-    "ENG"
-  ],
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1159,
-      "template": 44
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "YEM",
+        "SYA",
+        "ENG"
+    ],
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1159,
+            "template": 44
+        }
+    },
+    "1967.11.30": {
+        "owner": "SYA",
+        "controller": "SYA",
+        "remove_core": "ENG"
+    },
+    "1990.5.22": {
+        "owner": "YEM",
+        "controller": "YEM"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1178,
+            "template": 44
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1198,
+            "template": 44
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1476,
+            "template": 144
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 2121,
+            "template": 244
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 3480,
+            "template": 344
+        }
     }
-  },
-  "1967.11.30": {
-    "owner": "SYA",
-    "controller": "SYA",
-    "remove_core": "ENG"
-  },
-  "1990.5.22": {
-    "owner": "YEM",
-    "controller": "YEM"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1178,
-      "template": 44
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1198,
-      "template": 44
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1476,
-      "template": 144
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 2121,
-      "template": 244
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 3480,
-      "template": 344
-    }
-  }
 }

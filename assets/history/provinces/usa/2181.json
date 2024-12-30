@@ -1,49 +1,49 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": "USA",
-  "vegetables": 502.42,
-  "infra": 8,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1884498,
-      "template": 93
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": "USA",
+    "vegetables": 502.42,
+    "infra": 8,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1884498,
+            "template": 93
+        }
+    },
+    "1958.1.1": {
+        "economy_building": {
+            "name": "satellites_factory",
+            "size": 1
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1915083,
+            "template": 93
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1946165,
+            "template": 93
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 2367194,
+            "template": 193
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 2807083,
+            "template": 293
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 3154639,
+            "template": 393
+        }
     }
-  },
-  "1958.1.1": {
-    "economy_building": {
-      "name": "satellites_factory",
-      "size": 1
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1915083,
-      "template": 93
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1946165,
-      "template": 93
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 2367194,
-      "template": 193
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 2807083,
-      "template": 293
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 3154639,
-      "template": 393
-    }
-  }
 }

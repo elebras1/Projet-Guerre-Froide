@@ -1,55 +1,55 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "TAJ"
-  ],
-  "rare_metals": 10.35,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 108605,
-      "template": 11
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 1
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "TAJ"
+    ],
+    "rare_metals": 10.35,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 108605,
+            "template": 11
+        }
     },
-    "population_total": {
-      "amount": 289451,
-      "template": 211
+    "1979.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 289451,
+            "template": 211
+        }
+    },
+    "1991.12.25": {
+        "owner": "TAJ",
+        "controller": "TAJ",
+        "remove_core": "SOV"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 111901,
+            "template": 11
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 115297,
+            "template": 11
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 169019,
+            "template": 111
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 407946,
+            "template": 311
+        }
     }
-  },
-  "1991.12.25": {
-    "owner": "TAJ",
-    "controller": "TAJ",
-    "remove_core": "SOV"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 111901,
-      "template": 11
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 115297,
-      "template": 11
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 169019,
-      "template": 111
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 407946,
-      "template": 311
-    }
-  }
 }

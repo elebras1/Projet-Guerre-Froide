@@ -1,53 +1,53 @@
 {
-  "owner": "IRE",
-  "controller": "IRE",
-  "add_core": "IRE",
-  "meat": 108.05,
-  "infra": 5,
-  "1946.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 378524,
-      "template": 55
+    "owner": "IRE",
+    "controller": "IRE",
+    "add_core": "IRE",
+    "meat": 108.05,
+    "infra": 5,
+    "1946.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 378524,
+            "template": 55
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 3,
+        "economy_building": {
+            "name": "refinery",
+            "size": 5
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 438175,
+            "template": 255
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 5,
+        "population_total": {
+            "amount": 458922,
+            "template": 355
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 378214,
+            "template": 55
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 377904,
+            "template": 55
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 367802,
+            "template": 155
+        }
     }
-  },
-  "1961.1.1": {
-    "naval_base": 3,
-    "economy_building": {
-      "name": "refinery",
-      "size": 5
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 438175,
-      "template": 255
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 5,
-    "population_total": {
-      "amount": 458922,
-      "template": 355
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 378214,
-      "template": 55
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 377904,
-      "template": 55
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 367802,
-      "template": 155
-    }
-  }
 }

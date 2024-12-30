@@ -1,49 +1,49 @@
 {
-  "owner": "HOL",
-  "controller": "HOL",
-  "add_core": "HOL",
-  "grain": 298.2,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 360062,
-      "template": 73
+    "owner": "HOL",
+    "controller": "HOL",
+    "add_core": "HOL",
+    "grain": 298.2,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 360062,
+            "template": 73
+        }
+    },
+    "1974.1.1": {
+        "economy_building": {
+            "name": "satellites_factory",
+            "size": 1
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 364613,
+            "template": 73
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 369222,
+            "template": 73
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 432110,
+            "template": 173
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 515653,
+            "template": 273
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 552144,
+            "template": 373
+        }
     }
-  },
-  "1974.1.1": {
-    "economy_building": {
-      "name": "satellites_factory",
-      "size": 1
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 364613,
-      "template": 73
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 369222,
-      "template": 73
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 432110,
-      "template": 173
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 515653,
-      "template": 273
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 552144,
-      "template": 373
-    }
-  }
 }

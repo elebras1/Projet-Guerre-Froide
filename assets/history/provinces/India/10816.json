@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "IND"
-  ],
-  "grain": 84.27,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 708201,
-      "template": 15
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "IND"
+    ],
+    "grain": 84.27,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 690446,
+            "template": 15
+        }
+    },
+    "1947.08.15": {
+        "owner": "IND",
+        "controller": "IND",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 720772,
+            "template": 15
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 733566,
+            "template": 15
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 919949,
+            "template": 115
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1349053,
+            "template": 215
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1759482,
+            "template": 315
+        }
     }
-  },
-  "1947.08.15": {
-    "owner": "IND",
-    "controller": "IND",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 720772,
-      "template": 15
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 733566,
-      "template": 15
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 919949,
-      "template": 115
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1349053,
-      "template": 215
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1759482,
-      "template": 315
-    }
-  }
 }

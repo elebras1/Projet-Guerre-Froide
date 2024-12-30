@@ -1,51 +1,51 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "MRA"
-  ],
-  "meat": 0.4,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1231,
-      "template": 5
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "MRA"
+    ],
+    "meat": 0.4,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1231,
+            "template": 5
+        }
+    },
+    "1960.11.28": {
+        "owner": "MRA",
+        "controller": "MRA",
+        "remove_core": "FRA"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1261,
+            "template": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1293,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1778,
+            "template": 105
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 2900,
+            "template": 205
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 4033,
+            "template": 305
+        }
     }
-  },
-  "1960.11.28": {
-    "owner": "MRA",
-    "controller": "MRA",
-    "remove_core": "FRA"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1261,
-      "template": 5
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1293,
-      "template": 5
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1778,
-      "template": 105
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 2900,
-      "template": 205
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 4033,
-      "template": 305
-    }
-  }
 }

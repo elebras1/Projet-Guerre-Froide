@@ -1,50 +1,50 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "CHC",
-    "CHI"
-  ],
-  "grain": 10.91,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 679203,
-      "template": 6
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "CHC",
+        "CHI"
+    ],
+    "grain": 10.91,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 53231,
+            "template": 6
+        }
+    },
+    "1946.6.26": {
+        "owner": "CHC",
+        "controller": "CHC"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 692712,
+            "template": 6
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 706490,
+            "template": 6
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 866665,
+            "template": 106
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1244477,
+            "template": 206
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1488991,
+            "template": 306
+        }
     }
-  },
-  "1946.6.26": {
-    "owner": "CHC",
-    "controller": "CHC"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 692712,
-      "template": 6
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 706490,
-      "template": 6
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 866665,
-      "template": 106
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1244477,
-      "template": 206
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1488991,
-      "template": 306
-    }
-  }
 }

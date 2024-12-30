@@ -1,55 +1,55 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "BOT"
-  ],
-  "grain": 2.39,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 35919,
-      "template": 4
-    }
-  },
-  "1966.09.30": {
-    "owner": "BOT",
-    "controller": "BOT",
-    "remove_core": "ENG"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 2
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "BOT"
+    ],
+    "grain": 2.39,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 35919,
+            "template": 4
+        }
     },
-    "population_total": {
-      "amount": 87941,
-      "template": 204
+    "1966.09.30": {
+        "owner": "BOT",
+        "controller": "BOT",
+        "remove_core": "ENG"
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 87941,
+            "template": 204
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 36851,
+            "template": 4
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 37807,
+            "template": 4
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 50401,
+            "template": 104
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 130463,
+            "template": 304
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 36851,
-      "template": 4
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 37807,
-      "template": 4
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 50401,
-      "template": 104
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 130463,
-      "template": 304
-    }
-  }
 }

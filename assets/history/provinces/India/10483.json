@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "IND"
-  ],
-  "uranium": 1,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 973999,
-      "template": 15
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "IND"
+    ],
+    "uranium": 1,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 949581,
+            "template": 15
+        }
+    },
+    "1947.08.15": {
+        "owner": "IND",
+        "controller": "IND",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 991287,
+            "template": 15
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1008883,
+            "template": 15
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1265217,
+            "template": 115
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1855371,
+            "template": 215
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 2419839,
+            "template": 315
+        }
     }
-  },
-  "1947.08.15": {
-    "owner": "IND",
-    "controller": "IND",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 991287,
-      "template": 15
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1008883,
-      "template": 15
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1265217,
-      "template": 115
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1855371,
-      "template": 215
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 2419839,
-      "template": 315
-    }
-  }
 }

@@ -1,67 +1,67 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": "ENG",
-  "wood": 0.1,
-  "infra": 5,
-  "1946.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 98068,
-      "template": 60
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": "ENG",
+    "wood": 0.1,
+    "infra": 5,
+    "1946.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 94961,
+            "template": 60
+        },
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 7
+        }
     },
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 7
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 8
+    "1950.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 8
+        },
+        "population_total": {
+            "amount": 98505,
+            "template": 60
+        }
     },
-    "population_total": {
-      "amount": 98505,
-      "template": 60
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 4,
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 9
+    "1979.1.1": {
+        "naval_base": 4,
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 9
+        },
+        "population_total": {
+            "amount": 109560,
+            "template": 260
+        }
     },
-    "population_total": {
-      "amount": 109560,
-      "template": 260
+    "1985.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 8
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 3
+    },
+    "1991.1.1": {
+        "naval_base": 5,
+        "population_total": {
+            "amount": 111649,
+            "template": 360
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 98286,
+            "template": 60
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 103660,
+            "template": 160
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 8
-    }
-  },
-  "1961.1.1": {
-    "naval_base": 3
-  },
-  "1991.1.1": {
-    "naval_base": 5,
-    "population_total": {
-      "amount": 111649,
-      "template": 360
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 98286,
-      "template": 60
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 103660,
-      "template": 160
-    }
-  }
 }

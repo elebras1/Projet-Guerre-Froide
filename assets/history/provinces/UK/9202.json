@@ -1,25 +1,25 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "SCL"
-  ],
-  "fruits": 0.16,
-  "infra": 5,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 34000,
-      "template": 103
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "SCL"
+    ],
+    "fruits": 0.16,
+    "infra": 5,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 32923,
+            "template": 103
+        }
+    },
+    "1976.6.29": {
+        "owner": "SCL",
+        "controller": "SCL",
+        "remove_core": "ENG"
+    },
+    "1991.1.1": {
+        "naval_base": 2
     }
-  },
-  "1976.6.29": {
-    "owner": "SCL",
-    "controller": "SCL",
-    "remove_core": "ENG"
-  },
-  "1991.1.1": {
-    "naval_base": 2
-  }
 }

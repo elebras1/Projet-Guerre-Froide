@@ -1,49 +1,49 @@
 {
-  "owner": "NZL",
-  "controller": "NZL",
-  "add_core": "NZL",
-  "wood": 0.8,
-  "infra": 8,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1016,
-      "template": 95
+    "owner": "NZL",
+    "controller": "NZL",
+    "add_core": "NZL",
+    "wood": 0.8,
+    "infra": 8,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1016,
+            "template": 95
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 2
+    },
+    "1979.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 1746,
+            "template": 295
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 1919,
+            "template": 395
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1039,
+            "template": 95
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1062,
+            "template": 95
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1379,
+            "template": 195
+        }
     }
-  },
-  "1961.1.1": {
-    "naval_base": 2
-  },
-  "1979.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 1746,
-      "template": 295
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 1919,
-      "template": 395
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1039,
-      "template": 95
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1062,
-      "template": 95
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1379,
-      "template": 195
-    }
-  }
 }

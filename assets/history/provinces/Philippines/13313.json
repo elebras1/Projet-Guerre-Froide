@@ -1,43 +1,43 @@
 {
-  "owner": "PHI",
-  "controller": "PHI",
-  "add_core": "PHI",
-  "grain": 70.37,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 83801,
-      "template": 25
+    "owner": "PHI",
+    "controller": "PHI",
+    "add_core": "PHI",
+    "grain": 70.37,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 83801,
+            "template": 25
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 86767,
+            "template": 25
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 89839,
+            "template": 25
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 135764,
+            "template": 125
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 223484,
+            "template": 225
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 308376,
+            "template": 325
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 86767,
-      "template": 25
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 89839,
-      "template": 25
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 135764,
-      "template": 125
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 223484,
-      "template": 225
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 308376,
-      "template": 325
-    }
-  }
 }

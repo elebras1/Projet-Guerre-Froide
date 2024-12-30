@@ -1,57 +1,57 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "ZMB",
-    "RHO"
-  ],
-  "grain": 2.47,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 36449,
-      "template": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "ZMB",
+        "RHO"
+    ],
+    "grain": 2.47,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 36449,
+            "template": 1
+        }
+    },
+    "1953.8.1": {
+        "owner": "RHO",
+        "controller": "RHO",
+        "remove_core": "ENG"
+    },
+    "1964.10.24": {
+        "owner": "ZMB",
+        "controller": "ZMB",
+        "remove_core": "RHO"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 37364,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 38302,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 52852,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 91473,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 132041,
+            "template": 301
+        }
     }
-  },
-  "1953.8.1": {
-    "owner": "RHO",
-    "controller": "RHO",
-    "remove_core": "ENG"
-  },
-  "1964.10.24": {
-    "owner": "ZMB",
-    "controller": "ZMB",
-    "remove_core": "RHO"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 37364,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 38302,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 52852,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 91473,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 132041,
-      "template": 301
-    }
-  }
 }

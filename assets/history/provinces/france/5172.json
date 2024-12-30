@@ -1,53 +1,53 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": "FRA",
-  "vegetables": 113.28,
-  "infra": 7,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 340440,
-      "template": 70
-    }
-  },
-  "economy_building": {
-    "name": "university",
-    "size": 1
-  },
-  "1956.1.1": {
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": "FRA",
+    "vegetables": 113.28,
+    "infra": 7,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 330924,
+            "template": 70
+        }
+    },
     "economy_building": {
-      "name": "centrifuges",
-      "size": 7
+        "name": "university",
+        "size": 1
+    },
+    "1956.1.1": {
+        "economy_building": {
+            "name": "centrifuges",
+            "size": 7
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 343000,
+            "template": 70
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 345579,
+            "template": 70
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 387608,
+            "template": 170
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 443186,
+            "template": 270
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 470523,
+            "template": 370
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 343000,
-      "template": 70
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 345579,
-      "template": 70
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 387608,
-      "template": 170
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 443186,
-      "template": 270
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 470523,
-      "template": 370
-    }
-  }
 }

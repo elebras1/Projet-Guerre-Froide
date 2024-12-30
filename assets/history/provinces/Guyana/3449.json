@@ -1,59 +1,59 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "GUY"
-  ],
-  "grain": 10,
-  "infra": 6,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 4873,
-      "template": 86
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "GUY"
+    ],
+    "grain": 10,
+    "infra": 6,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 4873,
+            "template": 86
+        }
+    },
+    "1966.05.26": {
+        "owner": "GUY",
+        "controller": "GUY",
+        "remove_core": "ENG"
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 1
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 9939,
+            "template": 286
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 5041,
+            "template": 86
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 5216,
+            "template": 86
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 7589,
+            "template": 186
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 9281,
+            "template": 386
+        }
     }
-  },
-  "1966.05.26": {
-    "owner": "GUY",
-    "controller": "GUY",
-    "remove_core": "ENG"
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 1
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 9939,
-      "template": 286
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 5041,
-      "template": 86
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 5216,
-      "template": 86
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 7589,
-      "template": 186
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 9281,
-      "template": 386
-    }
-  }
 }

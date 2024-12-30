@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "SIE"
-  ],
-  "vegetables": 7.95,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 145695,
-      "template": 5
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "SIE"
+    ],
+    "vegetables": 7.95,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 145695,
+            "template": 5
+        }
+    },
+    "1961.04.17": {
+        "owner": "SIE",
+        "controller": "SIE"
+    },
+    "1991.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 315542,
+            "template": 305
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 147682,
+            "template": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 149697,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 178329,
+            "template": 105
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 244308,
+            "template": 205
+        }
     }
-  },
-  "1961.04.17": {
-    "owner": "SIE",
-    "controller": "SIE"
-  },
-  "1991.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 315542,
-      "template": 305
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 147682,
-      "template": 5
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 149697,
-      "template": 5
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 178329,
-      "template": 105
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 244308,
-      "template": 205
-    }
-  }
 }

@@ -1,46 +1,46 @@
 {
-  "owner": "BRA",
-  "controller": "BRA",
-  "add_core": "BRA",
-  "renewable_energy": 109,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 82056,
-      "template": 77
+    "owner": "BRA",
+    "controller": "BRA",
+    "add_core": "BRA",
+    "renewable_energy": 109,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 77194,
+            "template": 77
+        }
+    },
+    "1969.1.1": {
+        "renewable_energy": 109
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 84562,
+            "template": 77
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 87145,
+            "template": 77
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 124772,
+            "template": 177
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 191963,
+            "template": 277
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 245649,
+            "template": 381
+        }
     }
-  },
-  "1969.1.1": {
-    "renewable_energy": 109
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 84562,
-      "template": 77
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 87145,
-      "template": 77
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 124772,
-      "template": 177
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 191963,
-      "template": 277
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 245649,
-      "template": 381
-    }
-  }
 }

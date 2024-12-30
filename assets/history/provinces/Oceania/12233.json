@@ -1,44 +1,44 @@
 {
-  "owner": "AST",
-  "controller": "AST",
-  "add_core": "AST",
-  "infra": 1,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 246,
-      "template": 94
+    "owner": "AST",
+    "controller": "AST",
+    "add_core": "AST",
+    "infra": 1,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 246,
+            "template": 94
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 546,
+            "template": 394
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 252,
+            "template": 94
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 258,
+            "template": 94
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 337,
+            "template": 194
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 458,
+            "template": 294
+        }
     }
-  },
-  "1991.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 546,
-      "template": 394
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 252,
-      "template": 94
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 258,
-      "template": 94
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 337,
-      "template": 194
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 458,
-      "template": 294
-    }
-  }
 }

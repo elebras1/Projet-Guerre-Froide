@@ -1,47 +1,47 @@
 {
-  "owner": "PHI",
-  "controller": "PHI",
-  "add_core": "PHI",
-  "wood": 2.1,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 2007275,
-      "template": 25
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "aviation_industry",
-      "size": 1
+    "owner": "PHI",
+    "controller": "PHI",
+    "add_core": "PHI",
+    "wood": 2.1,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 2007275,
+            "template": 25
+        }
     },
-    "population_total": {
-      "amount": 5353087,
-      "template": 225
+    "1979.1.1": {
+        "economy_building": {
+            "name": "aviation_industry",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 5353087,
+            "template": 225
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 2078332,
+            "template": 25
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 2151905,
+            "template": 25
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 3251940,
+            "template": 125
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 7386511,
+            "template": 325
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 2078332,
-      "template": 25
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 2151905,
-      "template": 25
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 3251940,
-      "template": 125
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 7386511,
-      "template": 325
-    }
-  }
 }

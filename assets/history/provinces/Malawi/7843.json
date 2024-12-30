@@ -1,57 +1,57 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "MLW",
-    "RHO"
-  ],
-  "grain": 48.14,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 454376,
-      "template": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "MLW",
+        "RHO"
+    ],
+    "grain": 48.14,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 454376,
+            "template": 1
+        }
+    },
+    "1953.8.1": {
+        "owner": "RHO",
+        "controller": "RHO",
+        "remove_core": "ENG"
+    },
+    "1964.07.06": {
+        "owner": "MLW",
+        "controller": "MLW",
+        "remove_core": "RHO"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 462963,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 471713,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 604894,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 991511,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1569326,
+            "template": 301
+        }
     }
-  },
-  "1953.8.1": {
-    "owner": "RHO",
-    "controller": "RHO",
-    "remove_core": "ENG"
-  },
-  "1964.07.06": {
-    "owner": "MLW",
-    "controller": "MLW",
-    "remove_core": "RHO"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 462963,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 471713,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 604894,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 991511,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1569326,
-      "template": 301
-    }
-  }
 }

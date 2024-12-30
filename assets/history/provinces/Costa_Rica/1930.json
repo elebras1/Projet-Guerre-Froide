@@ -1,50 +1,50 @@
 {
-  "owner": "COS",
-  "controller": "COS",
-  "add_core": "COS",
-  "meat": 8,
-  "infra": 6,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 328062,
-      "template": 76
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "economy_building": {
-      "name": "refinery",
-      "size": 3
+    "owner": "COS",
+    "controller": "COS",
+    "add_core": "COS",
+    "meat": 8,
+    "infra": 6,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 328062,
+            "template": 76
+        }
     },
-    "population_total": {
-      "amount": 823216,
-      "template": 276
+    "1979.1.1": {
+        "naval_base": 2,
+        "economy_building": {
+            "name": "refinery",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 823216,
+            "template": 276
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 1136735,
+            "template": 377
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 338314,
+            "template": 76
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 348886,
+            "template": 76
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 516777,
+            "template": 176
+        }
     }
-  },
-  "1991.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 1136735,
-      "template": 377
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 338314,
-      "template": 76
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 348886,
-      "template": 76
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 516777,
-      "template": 176
-    }
-  }
 }

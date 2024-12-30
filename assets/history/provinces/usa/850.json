@@ -1,43 +1,43 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": "USA",
-  "coal": 10,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 4112,
-      "template": 93
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": "USA",
+    "coal": 10,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 4112,
+            "template": 93
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 4179,
+            "template": 93
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 4247,
+            "template": 93
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 5165,
+            "template": 193
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 6125,
+            "template": 293
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 6884,
+            "template": 393
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 4179,
-      "template": 93
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 4247,
-      "template": 93
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 5165,
-      "template": 193
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 6125,
-      "template": 293
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 6884,
-      "template": 393
-    }
-  }
 }

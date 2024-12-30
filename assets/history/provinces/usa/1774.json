@@ -1,55 +1,55 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": "USA",
-  "vegetables": 127.08,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 134883,
-      "template": 93
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": "USA",
+    "vegetables": 127.08,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 134883,
+            "template": 93
+        }
+    },
+    "1952.9.1": {
+        "economy_building": {
+            "name": "centrifuges",
+            "size": 7
+        }
+    },
+    "1958.1.1": {
+        "economy_building": {
+            "name": "centrifuges",
+            "size": 8
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 137072,
+            "template": 93
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 139297,
+            "template": 93
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 169432,
+            "template": 193
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 200917,
+            "template": 293
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 225793,
+            "template": 393
+        }
     }
-  },
-  "1952.9.1": {
-    "economy_building": {
-      "name": "centrifuges",
-      "size": 7
-    }
-  },
-  "1958.1.1": {
-    "economy_building": {
-      "name": "centrifuges",
-      "size": 8
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 137072,
-      "template": 93
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 139297,
-      "template": 93
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 169432,
-      "template": 193
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 200917,
-      "template": 293
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 225793,
-      "template": 393
-    }
-  }
 }

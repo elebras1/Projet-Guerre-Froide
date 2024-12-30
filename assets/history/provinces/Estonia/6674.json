@@ -1,57 +1,57 @@
 {
-  "add_core": [
-    "EST",
-    "SOV"
-  ],
-  "owner": "SOV",
-  "controller": "SOV",
-  "vegetables": 36.5,
-  "infra": 6,
-  "air_base": 3,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 162512,
-      "template": 52
+    "add_core": [
+        "EST",
+        "SOV"
+    ],
+    "owner": "SOV",
+    "controller": "SOV",
+    "vegetables": 36.5,
+    "infra": 6,
+    "air_base": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 162512,
+            "template": 52
+        }
+    },
+    "1991.08.20": {
+        "owner": "EST",
+        "controller": "EST",
+        "remove_core": "SOV"
+    },
+    "1948.1.1": {
+        "air_base": 5,
+        "population_total": {
+            "amount": 164209,
+            "template": 52
+        }
+    },
+    "1950.1.1": {
+        "air_base": 6,
+        "population_total": {
+            "amount": 165923,
+            "template": 52
+        }
+    },
+    "1961.1.1": {
+        "air_base": 7
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 187532,
+            "template": 152
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 220692,
+            "template": 252
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 233946,
+            "template": 352
+        }
     }
-  },
-  "1991.08.20": {
-    "owner": "EST",
-    "controller": "EST",
-    "remove_core": "SOV"
-  },
-  "1948.1.1": {
-    "air_base": 5,
-    "population_total": {
-      "amount": 164209,
-      "template": 52
-    }
-  },
-  "1950.1.1": {
-    "air_base": 6,
-    "population_total": {
-      "amount": 165923,
-      "template": 52
-    }
-  },
-  "1961.1.1": {
-    "air_base": 7
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 187532,
-      "template": 152
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 220692,
-      "template": 252
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 233946,
-      "template": 352
-    }
-  }
 }

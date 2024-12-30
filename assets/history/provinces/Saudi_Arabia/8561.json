@@ -1,43 +1,43 @@
 {
-  "owner": "SAU",
-  "controller": "SAU",
-  "add_core": "SAU",
-  "grain": 0.59,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 2728,
-      "template": 40
+    "owner": "SAU",
+    "controller": "SAU",
+    "add_core": "SAU",
+    "grain": 0.59,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 2728,
+            "template": 40
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 2796,
+            "template": 40
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 2866,
+            "template": 40
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 3959,
+            "template": 140
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 8462,
+            "template": 240
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 15304,
+            "template": 340
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 2796,
-      "template": 40
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 2866,
-      "template": 40
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 3959,
-      "template": 140
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 8462,
-      "template": 240
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 15304,
-      "template": 340
-    }
-  }
 }

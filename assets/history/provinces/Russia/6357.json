@@ -1,52 +1,52 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "RUS"
-  ],
-  "air_base": 4,
-  "meat": 184.29,
-  "infra": 9,
-  "naval_base": 8,
-  "economy_building": {
-    "name": "military_academy",
-    "size": 1
-  },
-  "1946.1.1": {
-    "population_total": {
-      "amount": 288915,
-      "template": 45
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "RUS"
+    ],
+    "air_base": 4,
+    "meat": 184.29,
+    "infra": 9,
+    "naval_base": 8,
+    "economy_building": {
+        "name": "military_academy",
+        "size": 1
+    },
+    "1946.1.1": {
+        "population_total": {
+            "amount": 288915,
+            "template": 45
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 293613,
+            "template": 45
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 298387,
+            "template": 45
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 357273,
+            "template": 145
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 400106,
+            "template": 245
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 431950,
+            "template": 345
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 293613,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 298387,
-      "template": 45
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 357273,
-      "template": 145
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 400106,
-      "template": 245
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 431950,
-      "template": 345
-    }
-  }
 }

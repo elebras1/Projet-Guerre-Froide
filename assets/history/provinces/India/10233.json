@@ -1,67 +1,67 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "IND"
-  ],
-  "vegetables": 89.98,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 710198,
-      "template": 15
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "IND"
+    ],
+    "vegetables": 89.98,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 692393,
+            "template": 15
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 1
+        }
     },
-    "economy_building": {
-      "name": "military_goods",
-      "size": 1
-    }
-  },
-  "1947.08.15": {
-    "owner": "IND",
-    "controller": "IND",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 2
+    "1947.08.15": {
+        "owner": "IND",
+        "controller": "IND",
+        "remove_core": "ENG"
     },
-    "population_total": {
-      "amount": 722804,
-      "template": 15
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 6
+    "1948.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 722804,
+            "template": 15
+        }
     },
-    "population_total": {
-      "amount": 735634,
-      "template": 15
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 7
+    "1950.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 735634,
+            "template": 15
+        }
     },
-    "population_total": {
-      "amount": 1764443,
-      "template": 315
+    "1991.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 1764443,
+            "template": 315
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 922542,
+            "template": 115
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1352857,
+            "template": 215
+        }
     }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 922542,
-      "template": 115
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1352857,
-      "template": 215
-    }
-  }
 }

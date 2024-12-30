@@ -1,52 +1,52 @@
 {
-  "owner": "CYN",
-  "controller": "CYN",
-  "add_core": [
-    "CYN",
-    "CHI",
-    "CHC"
-  ],
-  "vegetables": 36.34,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 261963,
-      "template": 6
+    "owner": "CYN",
+    "controller": "CYN",
+    "add_core": [
+        "CYN",
+        "CHI",
+        "CHC"
+    ],
+    "vegetables": 36.34,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 129700,
+            "template": 6
+        }
+    },
+    "1949.10.01": {
+        "owner": "CHC",
+        "controller": "CHC",
+        "remove_core": "CYN"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 267174,
+            "template": 6
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 272488,
+            "template": 6
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 334266,
+            "template": 106
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 479985,
+            "template": 206
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 574292,
+            "template": 306
+        }
     }
-  },
-  "1949.10.01": {
-    "owner": "CHC",
-    "controller": "CHC",
-    "remove_core": "CYN"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 267174,
-      "template": 6
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 272488,
-      "template": 6
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 334266,
-      "template": 106
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 479985,
-      "template": 206
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 574292,
-      "template": 306
-    }
-  }
 }

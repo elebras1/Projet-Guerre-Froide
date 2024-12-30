@@ -1,58 +1,58 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "RUS"
-  ],
-  "vegetables": 20.03,
-  "infra": 8,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 10209,
-      "template": 45
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "nuclear_silo",
-      "size": 2,
-      "model": 3,
-      "ammo_store": 30
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "RUS"
+    ],
+    "vegetables": 20.03,
+    "infra": 8,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 10209,
+            "template": 45
+        }
     },
-    "population_total": {
-      "amount": 14139,
-      "template": 245
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "nuclear_silo",
-      "size": 2,
-      "model": 4,
-      "ammo_store": 50
+    "1979.1.1": {
+        "economy_building": {
+            "name": "nuclear_silo",
+            "size": 2,
+            "model": 3,
+            "ammo_store": 30
+        },
+        "population_total": {
+            "amount": 14139,
+            "template": 245
+        }
     },
-    "population_total": {
-      "amount": 15264,
-      "template": 345
+    "1991.1.1": {
+        "economy_building": {
+            "name": "nuclear_silo",
+            "size": 2,
+            "model": 4,
+            "ammo_store": 50
+        },
+        "population_total": {
+            "amount": 15264,
+            "template": 345
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 10375,
+            "template": 45
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 10544,
+            "template": 45
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 12625,
+            "template": 145
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 10375,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 10544,
-      "template": 45
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 12625,
-      "template": 145
-    }
-  }
 }

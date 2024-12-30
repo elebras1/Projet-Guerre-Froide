@@ -1,46 +1,46 @@
 {
-  "owner": "VEN",
-  "controller": "VEN",
-  "add_core": "VEN",
-  "renewable_energy": 1020,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 30414,
-      "template": 91
+    "owner": "VEN",
+    "controller": "VEN",
+    "add_core": "VEN",
+    "renewable_energy": 1020,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 30414,
+            "template": 91
+        }
+    },
+    "1986.1.1": {
+        "renewable_energy": 1020
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 31630,
+            "template": 91
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 32894,
+            "template": 91
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 52635,
+            "template": 191
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 94075,
+            "template": 291
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 130207,
+            "template": 391
+        }
     }
-  },
-  "1986.1.1": {
-    "renewable_energy": 1020
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 31630,
-      "template": 91
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 32894,
-      "template": 91
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 52635,
-      "template": 191
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 94075,
-      "template": 291
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 130207,
-      "template": 391
-    }
-  }
 }

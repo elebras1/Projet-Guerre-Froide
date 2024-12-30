@@ -1,70 +1,70 @@
 {
-  "add_core": [
-    "SER",
-    "YUG",
-    "MCD"
-  ],
-  "owner": "YUG",
-  "controller": "YUG",
-  "fruits": 159.31,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 618922,
-      "template": 62
+    "add_core": [
+        "SER",
+        "YUG",
+        "MCD"
+    ],
+    "owner": "YUG",
+    "controller": "YUG",
+    "fruits": 159.31,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 618922,
+            "template": 62
+        },
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 1
+        }
     },
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 1
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 2
+    "1950.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 634989,
+            "template": 62
+        }
     },
-    "population_total": {
-      "amount": 634989,
-      "template": 62
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 3
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 5
+    "1961.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 3
+        }
     },
-    "population_total": {
-      "amount": 826187,
-      "template": 262
+    "1979.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 826187,
+            "template": 262
+        }
+    },
+    "1991.9.8": {
+        "remove_core": "YUG",
+        "owner": "MCD",
+        "controller": "MCD"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 626896,
+            "template": 62
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 721308,
+            "template": 162
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 888490,
+            "template": 362
+        }
     }
-  },
-  "1991.9.8": {
-    "remove_core": "YUG",
-    "owner": "MCD",
-    "controller": "MCD"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 626896,
-      "template": 62
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 721308,
-      "template": 162
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 888490,
-      "template": 362
-    }
-  }
 }

@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "BUR"
-  ],
-  "wood": 0.9,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 90365,
-      "template": 24
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "BUR"
+    ],
+    "wood": 0.9,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 90365,
+            "template": 24
+        }
+    },
+    "1948.01.04": {
+        "owner": "BUR",
+        "controller": "BUR",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 92076,
+            "template": 24
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 93820,
+            "template": 24
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 119567,
+            "template": 124
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 176099,
+            "template": 224
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 217939,
+            "template": 324
+        }
     }
-  },
-  "1948.01.04": {
-    "owner": "BUR",
-    "controller": "BUR",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 92076,
-      "template": 24
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 93820,
-      "template": 24
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 119567,
-      "template": 124
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 176099,
-      "template": 224
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 217939,
-      "template": 324
-    }
-  }
 }

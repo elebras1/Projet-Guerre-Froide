@@ -1,49 +1,49 @@
 {
-  "owner": "MON",
-  "controller": "MON",
-  "add_core": "MON",
-  "precious_metals": 10,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 20640,
-      "template": 9
+    "owner": "MON",
+    "controller": "MON",
+    "add_core": "MON",
+    "precious_metals": 10,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 20640,
+            "template": 9
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 3
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 21024,
+            "template": 9
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 21414,
+            "template": 9
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 27807,
+            "template": 109
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 45280,
+            "template": 209
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 61111,
+            "template": 309
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 3
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 21024,
-      "template": 9
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 21414,
-      "template": 9
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 27807,
-      "template": 109
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 45280,
-      "template": 209
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 61111,
-      "template": 309
-    }
-  }
 }

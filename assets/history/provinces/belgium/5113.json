@@ -1,61 +1,61 @@
 {
-  "owner": "BEL",
-  "controller": "BEL",
-  "add_core": [
-    "BEL",
-    "FLA"
-  ],
-  "grain": 300,
-  "infra": 8,
-  "air_base": 8,
-  "economy_building": {
-    "name": "military_academy",
-    "size": 1
-  },
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1595294,
-      "template": 69
+    "owner": "BEL",
+    "controller": "BEL",
+    "add_core": [
+        "BEL",
+        "FLA"
+    ],
+    "grain": 300,
+    "infra": 8,
+    "air_base": 8,
+    "economy_building": {
+        "name": "military_academy",
+        "size": 1
     },
-    "economy_building": {
-      "name": "light_industry",
-      "size": 5
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1595294,
+            "template": 69
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 6
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1603989,
+            "template": 69
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1612730,
+            "template": 69
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1732943,
+            "template": 169
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1839899,
+            "template": 269
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1864651,
+            "template": 369
+        }
     }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 6
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1603989,
-      "template": 69
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1612730,
-      "template": 69
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1732943,
-      "template": 169
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1839899,
-      "template": 269
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1864651,
-      "template": 369
-    }
-  }
 }

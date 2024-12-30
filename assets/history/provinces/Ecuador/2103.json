@@ -1,51 +1,51 @@
 {
-  "owner": "ECU",
-  "controller": "ECU",
-  "add_core": "ECU",
-  "grain": 45,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 72599,
-      "template": 84
+    "owner": "ECU",
+    "controller": "ECU",
+    "add_core": "ECU",
+    "grain": 45,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 72599,
+            "template": 84
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 3
+        }
     },
-    "economy_building": {
-      "name": "military_goods",
-      "size": 3
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 4
+    "1979.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 174698,
+            "template": 284
+        }
     },
-    "population_total": {
-      "amount": 174698,
-      "template": 284
+    "1948.1.1": {
+        "population_total": {
+            "amount": 74503,
+            "template": 84
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 76456,
+            "template": 84
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 106232,
+            "template": 184
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 236850,
+            "template": 384
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 74503,
-      "template": 84
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 76456,
-      "template": 84
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 106232,
-      "template": 184
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 236850,
-      "template": 384
-    }
-  }
 }

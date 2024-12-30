@@ -1,53 +1,53 @@
 {
-  "owner": "ARG",
-  "controller": "ARG",
-  "add_core": "ARG",
-  "precious_metals": 16,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 160766,
-      "template": 79
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 2
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 4
+    "owner": "ARG",
+    "controller": "ARG",
+    "add_core": "ARG",
+    "precious_metals": 16,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 160766,
+            "template": 79
+        }
     },
-    "population_total": {
-      "amount": 270131,
-      "template": 279
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 2
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 270131,
+            "template": 279
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 163941,
+            "template": 79
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 167179,
+            "template": 79
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 207603,
+            "template": 179
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 322591,
+            "template": 379
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 163941,
-      "template": 79
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 167179,
-      "template": 79
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 207603,
-      "template": 179
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 322591,
-      "template": 379
-    }
-  }
 }

@@ -1,64 +1,64 @@
 {
-  "owner": "CHC",
-  "controller": "CHC",
-  "add_core": [
-    "CHI",
-    "CHC"
-  ],
-  "grain": 582.98,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 4203512,
-      "template": 6
-    }
-  },
-  "1949.10.01": {
     "owner": "CHC",
-    "controller": "CHC"
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 2
+    "controller": "CHC",
+    "add_core": [
+        "CHI",
+        "CHC"
+    ],
+    "grain": 582.98,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 4203512,
+            "template": 6
+        }
     },
-    "population_total": {
-      "amount": 4287120,
-      "template": 6
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 5
+    "1949.10.01": {
+        "owner": "CHC",
+        "controller": "CHC"
     },
-    "population_total": {
-      "amount": 4372391,
-      "template": 6
+    "1948.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 4287120,
+            "template": 6
+        }
+    },
+    "1950.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 4372391,
+            "template": 6
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 10
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 5363692,
+            "template": 106
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 7701929,
+            "template": 206
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 9215200,
+            "template": 306
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 10
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 5363692,
-      "template": 106
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 7701929,
-      "template": 206
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 9215200,
-      "template": 306
-    }
-  }
 }

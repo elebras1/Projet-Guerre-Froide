@@ -1,61 +1,61 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "SWA"
-  ],
-  "grain": 11.52,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 189098,
-      "template": 4
-    }
-  },
-  "1968.09.06": {
-    "owner": "SWA",
-    "controller": "SWA",
-    "remove_core": "ENG"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 2
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "SWA"
+    ],
+    "grain": 11.52,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 189098,
+            "template": 4
+        }
     },
-    "population_total": {
-      "amount": 424816,
-      "template": 204
+    "1968.09.06": {
+        "owner": "SWA",
+        "controller": "SWA",
+        "remove_core": "ENG"
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 424816,
+            "template": 204
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 3
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 193565,
+            "template": 4
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 198137,
+            "template": 4
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 265376,
+            "template": 104
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 644102,
+            "template": 304
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 3
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 193565,
-      "template": 4
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 198137,
-      "template": 4
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 265376,
-      "template": 104
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 644102,
-      "template": 304
-    }
-  }
 }

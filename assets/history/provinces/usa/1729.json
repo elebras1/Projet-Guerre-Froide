@@ -1,51 +1,51 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": "USA",
-  "wood": 1,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 176101,
-      "template": 93
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": "USA",
+    "wood": 1,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 176101,
+            "template": 93
+        },
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 9
+        }
     },
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 9
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 10
+    "1979.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 10
+        },
+        "population_total": {
+            "amount": 262314,
+            "template": 293
+        }
     },
-    "population_total": {
-      "amount": 262314,
-      "template": 293
+    "1948.1.1": {
+        "population_total": {
+            "amount": 178959,
+            "template": 93
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 181863,
+            "template": 93
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 221207,
+            "template": 193
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 294792,
+            "template": 393
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 178959,
-      "template": 93
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 181863,
-      "template": 93
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 221207,
-      "template": 193
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 294792,
-      "template": 393
-    }
-  }
 }

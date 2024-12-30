@@ -1,46 +1,46 @@
 {
-  "owner": "JAP",
-  "controller": "JAP",
-  "add_core": "JAP",
-  "renewable_energy": 112,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1014871,
-      "template": 8
+    "owner": "JAP",
+    "controller": "JAP",
+    "add_core": "JAP",
+    "renewable_energy": 112,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1014871,
+            "template": 8
+        }
+    },
+    "1972.1.1": {
+        "renewable_energy": 112
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1029607,
+            "template": 8
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1044557,
+            "template": 8
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1197866,
+            "template": 108
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1461322,
+            "template": 208
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1559259,
+            "template": 308
+        }
     }
-  },
-  "1972.1.1": {
-    "renewable_energy": 112
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1029607,
-      "template": 8
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1044557,
-      "template": 8
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1197866,
-      "template": 108
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1461322,
-      "template": 208
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1559259,
-      "template": 308
-    }
-  }
 }

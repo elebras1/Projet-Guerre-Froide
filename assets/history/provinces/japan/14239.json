@@ -1,49 +1,49 @@
 {
-  "owner": "JAP",
-  "controller": "JAP",
-  "add_core": "JAP",
-  "vegetables": 520.87,
-  "infra": 4,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1050801,
-      "template": 8
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 10
+    "owner": "JAP",
+    "controller": "JAP",
+    "add_core": "JAP",
+    "vegetables": 520.87,
+    "infra": 4,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1050801,
+            "template": 8
+        }
     },
-    "population_total": {
-      "amount": 1513058,
-      "template": 208
+    "1979.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 10
+        },
+        "population_total": {
+            "amount": 1513058,
+            "template": 208
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 1614462,
+            "template": 308
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1066058,
+            "template": 8
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1081537,
+            "template": 8
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1240274,
+            "template": 108
+        }
     }
-  },
-  "1991.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 1614462,
-      "template": 308
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1066058,
-      "template": 8
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1081537,
-      "template": 8
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1240274,
-      "template": 108
-    }
-  }
 }

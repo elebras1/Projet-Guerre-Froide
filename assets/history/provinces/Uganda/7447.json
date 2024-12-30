@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "UGD"
-  ],
-  "grain": 24.43,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 161475,
-      "template": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "UGD"
+    ],
+    "grain": 24.43,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 161475,
+            "template": 1
+        }
+    },
+    "1962.10.09": {
+        "owner": "UGD",
+        "controller": "UGD",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 165808,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 170256,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 238996,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 405468,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 604512,
+            "template": 301
+        }
     }
-  },
-  "1962.10.09": {
-    "owner": "UGD",
-    "controller": "UGD",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 165808,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 170256,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 238996,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 405468,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 604512,
-      "template": 301
-    }
-  }
 }

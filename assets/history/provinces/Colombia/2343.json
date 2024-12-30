@@ -1,70 +1,70 @@
 {
-  "owner": "COL",
-  "controller": "COL",
-  "add_core": "COL",
-  "renewable_energy": 215,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 436144,
-      "template": 83
+    "owner": "COL",
+    "controller": "COL",
+    "add_core": "COL",
+    "renewable_energy": 215,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 436144,
+            "template": 83
+        },
+        "economy_building": {
+            "name": "powerplant",
+            "size": 3
+        }
     },
-    "economy_building": {
-      "name": "powerplant",
-      "size": 3
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 4
+    "1950.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 461206,
+            "template": 83
+        }
     },
-    "population_total": {
-      "amount": 461206,
-      "template": 83
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 5
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 7
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        }
     },
-    "population_total": {
-      "amount": 1009743,
-      "template": 283
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 1009743,
+            "template": 283
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 8
+        }
+    },
+    "1989.1.1": {
+        "renewable_energy": 215
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 448500,
+            "template": 83
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 652806,
+            "template": 183
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1301026,
+            "template": 383
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 8
-    }
-  },
-  "1989.1.1": {
-    "renewable_energy": 215
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 448500,
-      "template": 83
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 652806,
-      "template": 183
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1301026,
-      "template": 383
-    }
-  }
 }

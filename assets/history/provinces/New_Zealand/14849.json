@@ -1,48 +1,48 @@
 {
-  "owner": "NZL",
-  "controller": "NZL",
-  "add_core": "NZL",
-  "wood": 1.2,
-  "infra": 6,
-  "1946.1.1": {
-    "air_base": 4,
-    "population_total": {
-      "amount": 125782,
-      "template": 95
+    "owner": "NZL",
+    "controller": "NZL",
+    "add_core": "NZL",
+    "wood": 1.2,
+    "infra": 6,
+    "1946.1.1": {
+        "air_base": 4,
+        "population_total": {
+            "amount": 125782,
+            "template": 95
+        }
+    },
+    "1961.1.1": {
+        "air_base": 5
+    },
+    "1979.1.1": {
+        "air_base": 6,
+        "population_total": {
+            "amount": 216166,
+            "template": 295
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 128622,
+            "template": 95
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 131527,
+            "template": 95
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 170773,
+            "template": 195
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 237548,
+            "template": 395
+        }
     }
-  },
-  "1961.1.1": {
-    "air_base": 5
-  },
-  "1979.1.1": {
-    "air_base": 6,
-    "population_total": {
-      "amount": 216166,
-      "template": 295
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 128622,
-      "template": 95
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 131527,
-      "template": 95
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 170773,
-      "template": 195
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 237548,
-      "template": 395
-    }
-  }
 }

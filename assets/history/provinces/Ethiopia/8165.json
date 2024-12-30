@@ -1,59 +1,59 @@
 {
-  "owner": "ETH",
-  "controller": "ETH",
-  "add_core": "ETH",
-  "fruits": 86.11,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 716217,
-      "template": 1
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 2
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 3
+    "owner": "ETH",
+    "controller": "ETH",
+    "add_core": "ETH",
+    "fruits": 86.11,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 716217,
+            "template": 1
+        }
     },
-    "population_total": {
-      "amount": 1403617,
-      "template": 201
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 2
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 1403617,
+            "template": 201
+        }
+    },
+    "1995.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 4
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 730012,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 744072,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 954436,
+            "template": 101
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 2018173,
+            "template": 301
+        }
     }
-  },
-  "1995.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 4
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 730012,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 744072,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 954436,
-      "template": 101
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 2018173,
-      "template": 301
-    }
-  }
 }

@@ -1,51 +1,51 @@
 {
-  "owner": "IDC",
-  "controller": "IDC",
-  "add_core": [
-    "IDC",
-    "CMB"
-  ],
-  "grain": 73.32,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 285802,
-      "template": 20
+    "owner": "IDC",
+    "controller": "IDC",
+    "add_core": [
+        "IDC",
+        "CMB"
+    ],
+    "grain": 73.32,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 285802,
+            "template": 20
+        }
+    },
+    "1953.11.09": {
+        "owner": "CMB",
+        "controller": "CMB",
+        "remove_core": "IDC"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 291958,
+            "template": 20
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 298246,
+            "template": 20
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 391019,
+            "template": 120
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 446512,
+            "template": 220
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 677243,
+            "template": 320
+        }
     }
-  },
-  "1953.11.09": {
-    "owner": "CMB",
-    "controller": "CMB",
-    "remove_core": "IDC"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 291958,
-      "template": 20
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 298246,
-      "template": 20
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 391019,
-      "template": 120
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 446512,
-      "template": 220
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 677243,
-      "template": 320
-    }
-  }
 }

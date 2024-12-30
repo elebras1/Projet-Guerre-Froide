@@ -1,56 +1,56 @@
 {
-  "owner": "BEL",
-  "controller": "BEL",
-  "add_core": [
-    "BEL",
-    "DRC",
-    "KAT"
-  ],
-  "fruits": 7.02,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 50122,
-      "template": 2
+    "owner": "BEL",
+    "controller": "BEL",
+    "add_core": [
+        "BEL",
+        "DRC",
+        "KAT"
+    ],
+    "fruits": 7.02,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 50122,
+            "template": 2
+        }
+    },
+    "1960.06.30": {
+        "owner": "DRC",
+        "controller": "DRC",
+        "remove_core": "BEL"
+    },
+    "1960.07.11": {
+        "owner": "KAT",
+        "controller": "KAT"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 51209,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 52321,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 69487,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 112751,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 162567,
+            "template": 302
+        }
     }
-  },
-  "1960.06.30": {
-    "owner": "DRC",
-    "controller": "DRC",
-    "remove_core": "BEL"
-  },
-  "1960.07.11": {
-    "owner": "KAT",
-    "controller": "KAT"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 51209,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 52321,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 69487,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 112751,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 162567,
-      "template": 302
-    }
-  }
 }

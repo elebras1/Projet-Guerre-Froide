@@ -1,51 +1,51 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": "USA",
-  "vegetables": 244.32,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 402982,
-      "template": 93
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": "USA",
+    "vegetables": 244.32,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 402982,
+            "template": 93
+        }
+    },
+    "1965.1.1": {
+        "economy_building": {
+            "name": "nuclear_silo",
+            "size": 2,
+            "model": 0,
+            "ammo_store": 30
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 409522,
+            "template": 93
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 416169,
+            "template": 93
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 506202,
+            "template": 193
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 600268,
+            "template": 293
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 674590,
+            "template": 393
+        }
     }
-  },
-  "1965.1.1": {
-    "economy_building": {
-      "name": "nuclear_silo",
-      "size": 2,
-      "model": 0,
-      "ammo_store": 30
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 409522,
-      "template": 93
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 416169,
-      "template": 93
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 506202,
-      "template": 193
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 600268,
-      "template": 293
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 674590,
-      "template": 393
-    }
-  }
 }

@@ -1,47 +1,47 @@
 {
-  "owner": "COS",
-  "controller": "COS",
-  "add_core": "COS",
-  "meat": 5,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 125635,
-      "template": 76
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 1
+    "owner": "COS",
+    "controller": "COS",
+    "add_core": "COS",
+    "meat": 5,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 125635,
+            "template": 76
+        }
     },
-    "population_total": {
-      "amount": 315260,
-      "template": 276
+    "1979.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 315260,
+            "template": 276
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 129562,
+            "template": 76
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 133610,
+            "template": 76
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 197906,
+            "template": 176
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 435326,
+            "template": 377
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 129562,
-      "template": 76
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 133610,
-      "template": 76
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 197906,
-      "template": 176
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 435326,
-      "template": 377
-    }
-  }
 }

@@ -1,53 +1,53 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": "USA",
-  "grain": 464.07,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1582474,
-      "template": 93
-    }
-  },
-  "1958.1.1": {
-    "economy_building": {
-      "name": "satellites_factory",
-      "size": 1
-    }
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "land_research_center",
-      "size": 1
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": "USA",
+    "grain": 464.07,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1582474,
+            "template": 93
+        }
     },
-    "population_total": {
-      "amount": 1608158,
-      "template": 93
+    "1958.1.1": {
+        "economy_building": {
+            "name": "satellites_factory",
+            "size": 1
+        }
+    },
+    "1948.1.1": {
+        "economy_building": {
+            "name": "land_research_center",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 1608158,
+            "template": 93
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1634258,
+            "template": 93
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1987810,
+            "template": 193
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 2357199,
+            "template": 293
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 2649054,
+            "template": 393
+        }
     }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1634258,
-      "template": 93
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1987810,
-      "template": 193
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 2357199,
-      "template": 293
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 2649054,
-      "template": 393
-    }
-  }
 }

@@ -1,51 +1,51 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "TAJ"
-  ],
-  "vegetables": 17.3,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 117111,
-      "template": 11
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "TAJ"
+    ],
+    "vegetables": 17.3,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 117111,
+            "template": 11
+        }
+    },
+    "1991.12.25": {
+        "owner": "TAJ",
+        "controller": "TAJ",
+        "remove_core": "SOV"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 120666,
+            "template": 11
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 124328,
+            "template": 11
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 182258,
+            "template": 111
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 312123,
+            "template": 211
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 439899,
+            "template": 311
+        }
     }
-  },
-  "1991.12.25": {
-    "owner": "TAJ",
-    "controller": "TAJ",
-    "remove_core": "SOV"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 120666,
-      "template": 11
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 124328,
-      "template": 11
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 182258,
-      "template": 111
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 312123,
-      "template": 211
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 439899,
-      "template": 311
-    }
-  }
 }

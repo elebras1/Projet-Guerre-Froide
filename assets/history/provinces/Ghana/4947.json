@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "GHN"
-  ],
-  "fruits": 220,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 284774,
-      "template": 5
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "GHN"
+    ],
+    "fruits": 220,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 284774,
+            "template": 5
+        }
+    },
+    "1957.3.6.0": {
+        "owner": "GHN",
+        "controller": "GHN",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 292990,
+            "template": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 301442,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 434507,
+            "template": 105
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 645405,
+            "template": 205
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 920879,
+            "template": 305
+        }
     }
-  },
-  "1957.3.6.0": {
-    "owner": "GHN",
-    "controller": "GHN",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 292990,
-      "template": 5
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 301442,
-      "template": 5
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 434507,
-      "template": 105
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 645405,
-      "template": 205
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 920879,
-      "template": 305
-    }
-  }
 }

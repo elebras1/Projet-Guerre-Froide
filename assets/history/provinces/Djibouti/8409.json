@@ -1,61 +1,61 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "DJI",
-    "SOM"
-  ],
-  "meat": 0.68,
-  "infra": 4,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 33711,
-      "template": 1
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "DJI",
+        "SOM"
+    ],
+    "meat": 0.68,
+    "infra": 4,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 33711,
+            "template": 1
+        }
+    },
+    "1977.1.1": {
+        "remove_core": "SOM"
+    },
+    "1977.06.27": {
+        "owner": "DJI",
+        "controller": "DJI",
+        "remove_core": "FRA"
+    },
+    "1961.1.1": {
+        "naval_base": 2
+    },
+    "1979.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 182910,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 332118,
+            "template": 301
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 34547,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 35403,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 54617,
+            "template": 101
+        }
     }
-  },
-  "1977.1.1": {
-    "remove_core": "SOM"
-  },
-  "1977.06.27": {
-    "owner": "DJI",
-    "controller": "DJI",
-    "remove_core": "FRA"
-  },
-  "1961.1.1": {
-    "naval_base": 2
-  },
-  "1979.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 182910,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 332118,
-      "template": 301
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 34547,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 35403,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 54617,
-      "template": 101
-    }
-  }
 }

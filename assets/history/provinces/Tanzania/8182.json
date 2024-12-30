@@ -1,75 +1,75 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "TNZ",
-    "TNG"
-  ],
-  "fruits": 19.62,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 415201,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "TNZ",
+        "TNG"
+    ],
+    "fruits": 19.62,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 415201,
+            "template": 1
+        }
     },
-    "population_total": {
-      "amount": 437644,
-      "template": 1
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 2
-    }
-  },
-  "1961.12.09": {
-    "owner": "TNG",
-    "controller": "TNG",
-    "remove_core": "ENG"
-  },
-  "1964.04.26": {
-    "owner": "TNZ",
-    "controller": "TNZ",
-    "remove_core": "TNG"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 4
+    "1950.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 437644,
+            "template": 1
+        }
     },
-    "population_total": {
-      "amount": 1036137,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 5
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 2
+        }
     },
-    "population_total": {
-      "amount": 1506427,
-      "template": 301
+    "1961.12.09": {
+        "owner": "TNG",
+        "controller": "TNG",
+        "remove_core": "ENG"
+    },
+    "1964.04.26": {
+        "owner": "TNZ",
+        "controller": "TNZ",
+        "remove_core": "TNG"
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 1036137,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 1506427,
+            "template": 301
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 426275,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 611212,
+            "template": 101
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 426275,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 611212,
-      "template": 101
-    }
-  }
 }

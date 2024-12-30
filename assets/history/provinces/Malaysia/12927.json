@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "MLY"
-  ],
-  "vegetables": 5.35,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 127053,
-      "template": 23
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "MLY"
+    ],
+    "vegetables": 5.35,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 127053,
+            "template": 23
+        }
+    },
+    "1957.08.31": {
+        "owner": "MLY",
+        "controller": "MLY",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 130566,
+            "template": 23
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 134176,
+            "template": 23
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 191274,
+            "template": 123
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 296545,
+            "template": 223
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 410831,
+            "template": 323
+        }
     }
-  },
-  "1957.08.31": {
-    "owner": "MLY",
-    "controller": "MLY",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 130566,
-      "template": 23
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 134176,
-      "template": 23
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 191274,
-      "template": 123
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 296545,
-      "template": 223
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 410831,
-      "template": 323
-    }
-  }
 }

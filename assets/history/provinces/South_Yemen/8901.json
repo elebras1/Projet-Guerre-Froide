@@ -1,56 +1,56 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "YEM",
-    "SYA",
-    "ENG"
-  ],
-  "grain": 6.66,
-  "infra": 3,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 68082,
-      "template": 44
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "YEM",
+        "SYA",
+        "ENG"
+    ],
+    "grain": 6.66,
+    "infra": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 68082,
+            "template": 44
+        }
+    },
+    "1967.11.30": {
+        "owner": "SYA",
+        "controller": "SYA",
+        "remove_core": "ENG"
+    },
+    "1990.5.22": {
+        "owner": "YEM",
+        "controller": "YEM"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 69199,
+            "template": 44
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 70334,
+            "template": 44
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 86648,
+            "template": 144
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 124540,
+            "template": 244
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 204356,
+            "template": 344
+        }
     }
-  },
-  "1967.11.30": {
-    "owner": "SYA",
-    "controller": "SYA",
-    "remove_core": "ENG"
-  },
-  "1990.5.22": {
-    "owner": "YEM",
-    "controller": "YEM"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 69199,
-      "template": 44
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 70334,
-      "template": 44
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 86648,
-      "template": 144
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 124540,
-      "template": 244
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 204356,
-      "template": 344
-    }
-  }
 }

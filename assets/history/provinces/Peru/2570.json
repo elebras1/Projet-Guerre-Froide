@@ -1,43 +1,43 @@
 {
-  "owner": "PRU",
-  "controller": "PRU",
-  "add_core": "PRU",
-  "grain": 25.8,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 54303,
-      "template": 88
+    "owner": "PRU",
+    "controller": "PRU",
+    "add_core": "PRU",
+    "grain": 25.8,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 54303,
+            "template": 88
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 55686,
+            "template": 88
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 57105,
+            "template": 88
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 78677,
+            "template": 188
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 126090,
+            "template": 288
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 165515,
+            "template": 388
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 55686,
-      "template": 88
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 57105,
-      "template": 88
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 78677,
-      "template": 188
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 126090,
-      "template": 288
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 165515,
-      "template": 388
-    }
-  }
 }

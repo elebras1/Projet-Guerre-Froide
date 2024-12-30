@@ -1,49 +1,49 @@
 {
-  "owner": "TUR",
-  "controller": "TUR",
-  "add_core": "TUR",
-  "fruits": 13.08,
-  "infra": 6,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 36026,
-      "template": 42
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "economy_building": {
-      "name": "powerplant",
-      "size": 2
+    "owner": "TUR",
+    "controller": "TUR",
+    "add_core": "TUR",
+    "fruits": 13.08,
+    "infra": 6,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 36026,
+            "template": 42
+        }
     },
-    "population_total": {
-      "amount": 77509,
-      "template": 242
+    "1979.1.1": {
+        "naval_base": 2,
+        "economy_building": {
+            "name": "powerplant",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 77509,
+            "template": 242
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 37080,
+            "template": 42
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 38165,
+            "template": 42
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 53251,
+            "template": 142
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 98959,
+            "template": 342
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 37080,
-      "template": 42
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 38165,
-      "template": 42
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 53251,
-      "template": 142
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 98959,
-      "template": 342
-    }
-  }
 }

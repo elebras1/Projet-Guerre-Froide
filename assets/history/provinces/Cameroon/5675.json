@@ -1,55 +1,55 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "CAM"
-  ],
-  "fruits": 25.13,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 32922,
-      "template": 2
-    }
-  },
-  "1960.01.01": {
-    "owner": "CAM",
-    "controller": "CAM",
-    "remove_core": "FRA"
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 2
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "CAM"
+    ],
+    "fruits": 25.13,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 32922,
+            "template": 2
+        }
     },
-    "population_total": {
-      "amount": 33533,
-      "template": 2
+    "1960.01.01": {
+        "owner": "CAM",
+        "controller": "CAM",
+        "remove_core": "FRA"
+    },
+    "1948.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 33533,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 34155,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 43187,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 67616,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 95814,
+            "template": 302
+        }
     }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 34155,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 43187,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 67616,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 95814,
-      "template": 302
-    }
-  }
 }

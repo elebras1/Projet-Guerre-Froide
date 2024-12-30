@@ -1,55 +1,55 @@
 {
-  "owner": "CAN",
-  "controller": "CAN",
-  "add_core": "CAN",
-  "grain": 12.35,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 16256,
-      "template": 92
+    "owner": "CAN",
+    "controller": "CAN",
+    "add_core": "CAN",
+    "grain": 12.35,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 16256,
+            "template": 92
+        },
+        "economy_building": {
+            "name": "refinery",
+            "size": 6
+        }
     },
-    "economy_building": {
-      "name": "refinery",
-      "size": 6
-    }
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 7
+    "1948.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 16698,
+            "template": 92
+        }
     },
-    "population_total": {
-      "amount": 16698,
-      "template": 92
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 9
+    "1979.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 9
+        },
+        "population_total": {
+            "amount": 30279,
+            "template": 292
+        }
     },
-    "population_total": {
-      "amount": 30279,
-      "template": 292
+    "1950.1.1": {
+        "population_total": {
+            "amount": 17152,
+            "template": 92
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 23262,
+            "template": 192
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 35025,
+            "template": 392
+        }
     }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 17152,
-      "template": 92
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 23262,
-      "template": 192
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 35025,
-      "template": 392
-    }
-  }
 }

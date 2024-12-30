@@ -1,53 +1,53 @@
 {
-  "owner": "NYE",
-  "controller": "NYE",
-  "add_core": [
-    "YEM",
-    "NYE"
-  ],
-  "grain": 9.82,
-  "infra": 2,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 312650,
-      "template": 44
+    "owner": "NYE",
+    "controller": "NYE",
+    "add_core": [
+        "YEM",
+        "NYE"
+    ],
+    "grain": 9.82,
+    "infra": 2,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 312650,
+            "template": 44
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 571915,
+            "template": 244
+        }
+    },
+    "1990.5.22": {
+        "owner": "YEM",
+        "controller": "YEM"
+    },
+    "1991.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 938451,
+            "template": 344
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 317777,
+            "template": 44
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 322989,
+            "template": 44
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 397906,
+            "template": 144
+        }
     }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 571915,
-      "template": 244
-    }
-  },
-  "1990.5.22": {
-    "owner": "YEM",
-    "controller": "YEM"
-  },
-  "1991.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 938451,
-      "template": 344
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 317777,
-      "template": 44
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 322989,
-      "template": 44
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 397906,
-      "template": 144
-    }
-  }
 }

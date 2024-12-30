@@ -1,42 +1,42 @@
 {
-  "owner": "IRQ",
-  "controller": "IRQ",
-  "add_core": "IRQ",
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 20188,
-      "template": 33
+    "owner": "IRQ",
+    "controller": "IRQ",
+    "add_core": "IRQ",
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 20188,
+            "template": 33
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 20743,
+            "template": 33
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 21314,
+            "template": 33
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 28969,
+            "template": 133
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 49806,
+            "template": 233
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 66603,
+            "template": 333
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 20743,
-      "template": 33
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 21314,
-      "template": 33
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 28969,
-      "template": 133
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 49806,
-      "template": 233
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 66603,
-      "template": 333
-    }
-  }
 }

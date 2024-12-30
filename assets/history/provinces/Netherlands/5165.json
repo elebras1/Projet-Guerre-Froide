@@ -1,47 +1,47 @@
 {
-  "owner": "HOL",
-  "controller": "HOL",
-  "add_core": "HOL",
-  "meat": 556.1,
-  "infra": 8,
-  "economy_building": {
-    "name": "military_academy",
-    "size": 1
-  },
-  "1946.1.1": {
-    "population_total": {
-      "amount": 746129,
-      "template": 73
+    "owner": "HOL",
+    "controller": "HOL",
+    "add_core": "HOL",
+    "meat": 556.1,
+    "infra": 8,
+    "economy_building": {
+        "name": "military_academy",
+        "size": 1
+    },
+    "1946.1.1": {
+        "population_total": {
+            "amount": 746129,
+            "template": 73
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 755560,
+            "template": 73
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 765110,
+            "template": 73
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 895427,
+            "template": 173
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1068548,
+            "template": 273
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1144165,
+            "template": 373
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 755560,
-      "template": 73
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 765110,
-      "template": 73
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 895427,
-      "template": 173
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1068548,
-      "template": 273
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1144165,
-      "template": 373
-    }
-  }
 }

@@ -1,69 +1,69 @@
 {
-  "owner": "VEN",
-  "controller": "VEN",
-  "add_core": "VEN",
-  "oil": 165,
-  "infra": 6,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 148184,
-      "template": 91
+    "owner": "VEN",
+    "controller": "VEN",
+    "add_core": "VEN",
+    "oil": 165,
+    "infra": 6,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 148184,
+            "template": 91
+        },
+        "economy_building": {
+            "name": "refinery",
+            "size": 6
+        }
     },
-    "economy_building": {
-      "name": "refinery",
-      "size": 6
+    "1953.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 7
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 2,
+        "economy_building": {
+            "name": "refinery",
+            "size": 8
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 9
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 458361,
+            "template": 291
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 634406,
+            "template": 391
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 154109,
+            "template": 91
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 160270,
+            "template": 91
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 256451,
+            "template": 191
+        }
     }
-  },
-  "1953.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 7
-    }
-  },
-  "1961.1.1": {
-    "naval_base": 2,
-    "economy_building": {
-      "name": "refinery",
-      "size": 8
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 9
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 458361,
-      "template": 291
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 634406,
-      "template": 391
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 154109,
-      "template": 91
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 160270,
-      "template": 91
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 256451,
-      "template": 191
-    }
-  }
 }

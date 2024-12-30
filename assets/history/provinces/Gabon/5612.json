@@ -1,51 +1,51 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "GAB"
-  ],
-  "wood": 0.9,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 2503,
-      "template": 2
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "GAB"
+    ],
+    "wood": 0.9,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 2503,
+            "template": 2
+        }
+    },
+    "1965.02.17": {
+        "owner": "GAB",
+        "controller": "GAB",
+        "remove_core": "FRA"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 2510,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 2517,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 2637,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 3560,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 5149,
+            "template": 302
+        }
     }
-  },
-  "1965.02.17": {
-    "owner": "GAB",
-    "controller": "GAB",
-    "remove_core": "FRA"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 2510,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 2517,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 2637,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 3560,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 5149,
-      "template": 302
-    }
-  }
 }

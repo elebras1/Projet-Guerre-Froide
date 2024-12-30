@@ -1,58 +1,58 @@
 {
-  "owner": "CHI",
-  "controller": "CHI",
-  "add_core": [
-    "CHI",
-    "CHC"
-  ],
-  "precious_metals": 29,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1751463,
-      "template": 6
-    }
-  },
-  "1949.10.01": {
-    "owner": "CHC",
-    "controller": "CHC"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 4
+    "owner": "CHI",
+    "controller": "CHI",
+    "add_core": [
+        "CHI",
+        "CHC"
+    ],
+    "precious_metals": 29,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1751463,
+            "template": 6
+        }
     },
-    "population_total": {
-      "amount": 3209137,
-      "template": 206
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 6
+    "1949.10.01": {
+        "owner": "CHC",
+        "controller": "CHC"
     },
-    "population_total": {
-      "amount": 3839667,
-      "template": 306
+    "1979.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 3209137,
+            "template": 206
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 3839667,
+            "template": 306
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1786300,
+            "template": 6
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1821829,
+            "template": 6
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 2234872,
+            "template": 106
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1786300,
-      "template": 6
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1821829,
-      "template": 6
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 2234872,
-      "template": 106
-    }
-  }
 }

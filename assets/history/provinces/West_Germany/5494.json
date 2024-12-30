@@ -1,80 +1,80 @@
 {
-  "add_core": [
-    "FRG",
-    "DDR"
-  ],
-  "owner": "USA",
-  "controller": "USA",
-  "grain": 585.9,
-  "infra": 5,
-  "economy_building": {
-    "name": "financial_district",
-    "size": 1
-  },
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1200170,
-      "template": 71
-    },
-    "economy_building": {
-      "name": "light_industry",
-      "size": 2
-    }
-  },
-  "1949.05.23": {
-    "owner": "FRG",
-    "controller": "FRG"
-  },
-  "1990.10.3": {
-    "owner": "GER",
-    "controller": "GER",
-    "remove_core": [
-      "DDR",
-      "FRG"
-    ]
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 3
-    },
-    "population_total": {
-      "amount": 1254887,
-      "template": 71
-    }
-  },
-  "1950.1.1": {
-    "economy_building": [
-      {
-        "name": "light_industry",
-        "size": 5
-      },
-      {
-        "name": "light_industry",
-        "size": 7
-      }
+    "add_core": [
+        "FRG",
+        "DDR"
     ],
-    "population_total": {
-      "amount": 1298718,
-      "template": 71
+    "owner": "USA",
+    "controller": "USA",
+    "grain": 585.9,
+    "infra": 5,
+    "economy_building": {
+        "name": "financial_district",
+        "size": 1
+    },
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1200170,
+            "template": 71
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 2
+        }
+    },
+    "1949.05.23": {
+        "owner": "FRG",
+        "controller": "FRG"
+    },
+    "1990.10.3": {
+        "owner": "GER",
+        "controller": "GER",
+        "remove_core": [
+            "DDR",
+            "FRG"
+        ]
+    },
+    "1948.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 1254887,
+            "template": 71
+        }
+    },
+    "1950.1.1": {
+        "economy_building": [
+            {
+                "name": "light_industry",
+                "size": 5
+            },
+            {
+                "name": "light_industry",
+                "size": 7
+            }
+        ],
+        "population_total": {
+            "amount": 1298718,
+            "template": 71
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1479576,
+            "template": 171
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1596294,
+            "template": 271
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1664748,
+            "template": 371
+        }
     }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1479576,
-      "template": 171
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1596294,
-      "template": 271
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1664748,
-      "template": 371
-    }
-  }
 }

@@ -1,51 +1,51 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "CNG"
-  ],
-  "grain": 1.21,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1596,
-      "template": 2
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "CNG"
+    ],
+    "grain": 1.21,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1596,
+            "template": 2
+        }
+    },
+    "1960.08.15": {
+        "owner": "CNG",
+        "controller": "CNG",
+        "remove_core": "FRA"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1630,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1665,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 2200,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 3600,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 5058,
+            "template": 302
+        }
     }
-  },
-  "1960.08.15": {
-    "owner": "CNG",
-    "controller": "CNG",
-    "remove_core": "FRA"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1630,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1665,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 2200,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 3600,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 5058,
-      "template": 302
-    }
-  }
 }

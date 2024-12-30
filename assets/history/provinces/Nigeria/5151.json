@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "NIG"
-  ],
-  "vegetables": 283.11,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1385293,
-      "template": 5
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "NIG"
+    ],
+    "vegetables": 283.11,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1385293,
+            "template": 5
+        }
+    },
+    "1960.10.01": {
+        "owner": "NIG",
+        "controller": "NIG",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1410727,
+            "template": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1436628,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1818978,
+            "template": 105
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 2786185,
+            "template": 205
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 3794080,
+            "template": 305
+        }
     }
-  },
-  "1960.10.01": {
-    "owner": "NIG",
-    "controller": "NIG",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1410727,
-      "template": 5
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1436628,
-      "template": 5
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1818978,
-      "template": 105
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 2786185,
-      "template": 205
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 3794080,
-      "template": 305
-    }
-  }
 }

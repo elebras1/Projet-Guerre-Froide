@@ -1,57 +1,57 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "ETH",
-    "ERI"
-  ],
-  "meat": 1.65,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 180657,
-      "template": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "ETH",
+        "ERI"
+    ],
+    "meat": 1.65,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 180657,
+            "template": 1
+        }
+    },
+    "1952.9.15": {
+        "owner": "ETH",
+        "controller": "ETH",
+        "remove_core": "ENG"
+    },
+    "1991.5.24": {
+        "owner": "ERI",
+        "controller": "ERI",
+        "remove_core": "ETH"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 184344,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 188107,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 246873,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 395133,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 524192,
+            "template": 301
+        }
     }
-  },
-  "1952.9.15": {
-    "owner": "ETH",
-    "controller": "ETH",
-    "remove_core": "ENG"
-  },
-  "1991.5.24": {
-    "owner": "ERI",
-    "controller": "ERI",
-    "remove_core": "ETH"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 184344,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 188107,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 246873,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 395133,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 524192,
-      "template": 301
-    }
-  }
 }

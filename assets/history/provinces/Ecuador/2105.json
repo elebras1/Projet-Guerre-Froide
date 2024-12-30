@@ -1,53 +1,53 @@
 {
-  "owner": "ECU",
-  "controller": "ECU",
-  "add_core": "ECU",
-  "meat": 5,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 222347,
-      "template": 84
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 1
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 4
+    "owner": "ECU",
+    "controller": "ECU",
+    "add_core": "ECU",
+    "meat": 5,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 222347,
+            "template": 84
+        }
     },
-    "population_total": {
-      "amount": 535040,
-      "template": 284
+    "1961.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 1
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 535040,
+            "template": 284
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 228177,
+            "template": 84
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 234160,
+            "template": 84
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 325354,
+            "template": 184
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 725390,
+            "template": 384
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 228177,
-      "template": 84
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 234160,
-      "template": 84
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 325354,
-      "template": 184
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 725390,
-      "template": 384
-    }
-  }
 }

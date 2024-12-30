@@ -1,63 +1,63 @@
 {
-  "owner": "PRU",
-  "controller": "PRU",
-  "add_core": "PRU",
-  "precious_metals": 22,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 183093,
-      "template": 88
+    "owner": "PRU",
+    "controller": "PRU",
+    "add_core": "PRU",
+    "precious_metals": 22,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 183093,
+            "template": 88
+        },
+        "economy_building": {
+            "name": "powerplant",
+            "size": 2
+        }
     },
-    "economy_building": {
-      "name": "powerplant",
-      "size": 2
-    }
-  },
-  "1953.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 4
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 5
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 6
+    "1953.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 4
+        }
     },
-    "population_total": {
-      "amount": 425138,
-      "template": 288
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 425138,
+            "template": 288
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 187759,
+            "template": 88
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 192543,
+            "template": 88
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 265278,
+            "template": 188
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 558069,
+            "template": 388
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 187759,
-      "template": 88
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 192543,
-      "template": 88
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 265278,
-      "template": 188
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 558069,
-      "template": 388
-    }
-  }
 }

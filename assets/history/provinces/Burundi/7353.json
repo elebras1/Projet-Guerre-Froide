@@ -1,55 +1,55 @@
 {
-  "owner": "BEL",
-  "controller": "BEL",
-  "add_core": [
-    "BEL",
-    "BRD"
-  ],
-  "precious_metals": 2,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 947765,
-      "template": 1
-    }
-  },
-  "1962.07.01": {
-    "owner": "BRD",
-    "controller": "BRD",
-    "remove_core": "BEL"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 2
+    "owner": "BEL",
+    "controller": "BEL",
+    "add_core": [
+        "BEL",
+        "BRD"
+    ],
+    "precious_metals": 2,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 947765,
+            "template": 1
+        }
     },
-    "population_total": {
-      "amount": 1604888,
-      "template": 201
+    "1962.07.01": {
+        "owner": "BRD",
+        "controller": "BRD",
+        "remove_core": "BEL"
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 1604888,
+            "template": 201
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 964749,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 982038,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1217559,
+            "template": 101
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 2288488,
+            "template": 301
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 964749,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 982038,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1217559,
-      "template": 101
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 2288488,
-      "template": 301
-    }
-  }
 }

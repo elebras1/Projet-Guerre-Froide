@@ -1,65 +1,65 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "TRK"
-  ],
-  "oil": 9,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 11291,
-      "template": 11
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "TRK"
+    ],
+    "oil": 9,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 11291,
+            "template": 11
+        },
+        "economy_building": {
+            "name": "refinery",
+            "size": 3
+        }
     },
-    "economy_building": {
-      "name": "refinery",
-      "size": 3
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 5
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 6
+    "1961.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 5
+        }
     },
-    "population_total": {
-      "amount": 27214,
-      "template": 211
+    "1979.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 27214,
+            "template": 211
+        }
+    },
+    "1991.12.25": {
+        "owner": "TRK",
+        "controller": "TRK",
+        "remove_core": "SOV"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 11545,
+            "template": 11
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 11806,
+            "template": 11
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 16658,
+            "template": 111
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 36775,
+            "template": 311
+        }
     }
-  },
-  "1991.12.25": {
-    "owner": "TRK",
-    "controller": "TRK",
-    "remove_core": "SOV"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 11545,
-      "template": 11
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 11806,
-      "template": 11
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 16658,
-      "template": 111
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 36775,
-      "template": 311
-    }
-  }
 }

@@ -1,71 +1,71 @@
 {
-  "add_core": [
-    "LAT",
-    "SOV"
-  ],
-  "owner": "SOV",
-  "controller": "SOV",
-  "wood": 3.7,
-  "infra": 5,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 109162,
-      "template": 56
+    "add_core": [
+        "LAT",
+        "SOV"
+    ],
+    "owner": "SOV",
+    "controller": "SOV",
+    "wood": 3.7,
+    "infra": 5,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 109162,
+            "template": 56
+        },
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 1
+        }
     },
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 1
-    }
-  },
-  "1991.08.21": {
-    "owner": "LAT",
-    "controller": "LAT",
-    "remove_core": "SOV"
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 2
+    "1991.08.21": {
+        "owner": "LAT",
+        "controller": "LAT",
+        "remove_core": "SOV"
     },
-    "population_total": {
-      "amount": 109889,
-      "template": 56
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 3
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 5
+    "1948.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 109889,
+            "template": 56
+        }
     },
-    "population_total": {
-      "amount": 142022,
-      "template": 256
+    "1961.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 3
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 142022,
+            "template": 256
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 150155,
+            "template": 356
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 110621,
+            "template": 56
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 123991,
+            "template": 156
+        }
     }
-  },
-  "1991.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 150155,
-      "template": 356
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 110621,
-      "template": 56
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 123991,
-      "template": 156
-    }
-  }
 }

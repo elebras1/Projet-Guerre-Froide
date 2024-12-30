@@ -1,60 +1,60 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "YEM",
-    "SYA",
-    "ENG"
-  ],
-  "grain": 16.22,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 70192,
-      "template": 44
-    }
-  },
-  "1967.11.30": {
-    "owner": "SYA",
-    "controller": "SYA",
-    "remove_core": "ENG"
-  },
-  "1990.5.22": {
-    "owner": "YEM",
-    "controller": "YEM"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 2
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "YEM",
+        "SYA",
+        "ENG"
+    ],
+    "grain": 16.22,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 70192,
+            "template": 44
+        }
     },
-    "population_total": {
-      "amount": 128399,
-      "template": 244
+    "1967.11.30": {
+        "owner": "SYA",
+        "controller": "SYA",
+        "remove_core": "ENG"
+    },
+    "1990.5.22": {
+        "owner": "YEM",
+        "controller": "YEM"
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 128399,
+            "template": 244
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 71343,
+            "template": 44
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 72513,
+            "template": 44
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 89333,
+            "template": 144
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 210689,
+            "template": 344
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 71343,
-      "template": 44
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 72513,
-      "template": 44
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 89333,
-      "template": 144
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 210689,
-      "template": 344
-    }
-  }
 }

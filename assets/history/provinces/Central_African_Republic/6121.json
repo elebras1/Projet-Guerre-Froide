@@ -1,51 +1,51 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "CAR"
-  ],
-  "grain": 6.81,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 32076,
-      "template": 2
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "CAR"
+    ],
+    "grain": 6.81,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 32076,
+            "template": 2
+        }
+    },
+    "1960.08.13": {
+        "owner": "CAR",
+        "controller": "CAR",
+        "remove_core": "FRA"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 32419,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 32765,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 38446,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 54668,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 74274,
+            "template": 302
+        }
     }
-  },
-  "1960.08.13": {
-    "owner": "CAR",
-    "controller": "CAR",
-    "remove_core": "FRA"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 32419,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 32765,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 38446,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 54668,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 74274,
-      "template": 302
-    }
-  }
 }

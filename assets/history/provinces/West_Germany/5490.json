@@ -1,77 +1,77 @@
 {
-  "add_core": [
-    "FRG",
-    "DDR"
-  ],
-  "owner": "ENG",
-  "controller": "ENG",
-  "meat": 177.45,
-  "infra": 2,
-  "naval_base": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1304677,
-      "template": 71
+    "add_core": [
+        "FRG",
+        "DDR"
+    ],
+    "owner": "ENG",
+    "controller": "ENG",
+    "meat": 177.45,
+    "infra": 2,
+    "naval_base": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1304677,
+            "template": 71
+        }
+    },
+    "1949.05.23": {
+        "owner": "FRG",
+        "controller": "FRG"
+    },
+    "1957.1.1": {
+        "economy_building": {
+            "name": "military_academy",
+            "size": 1
+        }
+    },
+    "1969.1.1": {
+        "economy_building": {
+            "name": "satellites_factory",
+            "size": 5
+        }
+    },
+    "1950.1.1": {
+        "naval_base": 7,
+        "population_total": {
+            "amount": 1411807,
+            "template": 71
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 8
+    },
+    "1979.1.1": {
+        "naval_base": 9,
+        "population_total": {
+            "amount": 1735295,
+            "template": 271
+        }
+    },
+    "1990.10.3": {
+        "owner": "GER",
+        "controller": "GER",
+        "remove_core": [
+            "DDR",
+            "FRG"
+        ]
+    },
+    "1991.1.1": {
+        "naval_base": 10,
+        "population_total": {
+            "amount": 1809709,
+            "template": 371
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1364159,
+            "template": 71
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1608414,
+            "template": 171
+        }
     }
-  },
-  "1949.05.23": {
-    "owner": "FRG",
-    "controller": "FRG"
-  },
-  "1957.1.1": {
-    "economy_building": {
-      "name": "military_academy",
-      "size": 1
-    }
-  },
-  "1969.1.1": {
-    "economy_building": {
-      "name": "satellites_factory",
-      "size": 5
-    }
-  },
-  "1950.1.1": {
-    "naval_base": 7,
-    "population_total": {
-      "amount": 1411807,
-      "template": 71
-    }
-  },
-  "1961.1.1": {
-    "naval_base": 8
-  },
-  "1979.1.1": {
-    "naval_base": 9,
-    "population_total": {
-      "amount": 1735295,
-      "template": 271
-    }
-  },
-  "1990.10.3": {
-    "owner": "GER",
-    "controller": "GER",
-    "remove_core": [
-      "DDR",
-      "FRG"
-    ]
-  },
-  "1991.1.1": {
-    "naval_base": 10,
-    "population_total": {
-      "amount": 1809709,
-      "template": 371
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1364159,
-      "template": 71
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1608414,
-      "template": 171
-    }
-  }
 }

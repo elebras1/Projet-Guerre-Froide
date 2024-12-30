@@ -1,53 +1,53 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": "ENG",
-  "grain": 2.25,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1750,
-      "template": 92
-    }
-  },
-  "1949.3.31": {
-    "owner": "CAN",
-    "controller": "CAN",
-    "add_core": "CAN",
-    "remove_core": "ENG"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "centrifuges",
-      "size": 7
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": "ENG",
+    "grain": 2.25,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1750,
+            "template": 92
+        }
     },
-    "population_total": {
-      "amount": 3260,
-      "template": 292
+    "1949.3.31": {
+        "owner": "CAN",
+        "controller": "CAN",
+        "add_core": "CAN",
+        "remove_core": "ENG"
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "centrifuges",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 3260,
+            "template": 292
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1798,
+            "template": 92
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1847,
+            "template": 92
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 2505,
+            "template": 192
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 3771,
+            "template": 392
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1798,
-      "template": 92
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1847,
-      "template": 92
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 2505,
-      "template": 192
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 3771,
-      "template": 392
-    }
-  }
 }

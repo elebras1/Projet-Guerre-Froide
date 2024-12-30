@@ -1,69 +1,69 @@
 {
-  "owner": "ITA",
-  "controller": "ITA",
-  "add_core": "ITA",
-  "fruits": 53.82,
-  "infra": 4,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 583074,
-      "template": 64
+    "owner": "ITA",
+    "controller": "ITA",
+    "add_core": "ITA",
+    "fruits": 53.82,
+    "infra": 4,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 575704,
+            "template": 64
+        }
+    },
+    "1964.1.1": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 4
+        }
+    },
+    "1964.7.1": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 5
+        }
+    },
+    "1965.1.1": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 6
+        }
+    },
+    "1981.12.1": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 7
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 715363,
+            "template": 264
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 587430,
+            "template": 64
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 591818,
+            "template": 64
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 641326,
+            "template": 164
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 725701,
+            "template": 364
+        }
     }
-  },
-  "1964.1.1": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 4
-    }
-  },
-  "1964.7.1": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 5
-    }
-  },
-  "1965.1.1": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 6
-    }
-  },
-  "1981.12.1": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 7
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 715363,
-      "template": 264
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 587430,
-      "template": 64
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 591818,
-      "template": 64
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 641326,
-      "template": 164
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 725701,
-      "template": 364
-    }
-  }
 }

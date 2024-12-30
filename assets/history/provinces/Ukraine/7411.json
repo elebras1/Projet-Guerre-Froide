@@ -1,52 +1,52 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "UKR"
-  ],
-  "grain": 176.65,
-  "infra": 5,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 76112,
-      "template": 45
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "UKR"
+    ],
+    "grain": 176.65,
+    "infra": 5,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 76112,
+            "template": 45
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 2
+    },
+    "1979.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 104717,
+            "template": 245
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 108509,
+            "template": 345
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 77215,
+            "template": 45
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 78333,
+            "template": 45
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 92088,
+            "template": 145
+        }
     }
-  },
-  "1961.1.1": {
-    "naval_base": 2
-  },
-  "1979.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 104717,
-      "template": 245
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 108509,
-      "template": 345
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 77215,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 78333,
-      "template": 45
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 92088,
-      "template": 145
-    }
-  }
 }

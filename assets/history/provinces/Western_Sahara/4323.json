@@ -1,52 +1,52 @@
 {
-  "owner": "SPA",
-  "controller": "SPA",
-  "add_core": [
-    "SPA",
-    "SDR",
-    "MOR",
-    "MRA"
-  ],
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 123,
-      "template": 3
+    "owner": "SPA",
+    "controller": "SPA",
+    "add_core": [
+        "SPA",
+        "SDR",
+        "MOR",
+        "MRA"
+    ],
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 123,
+            "template": 3
+        }
+    },
+    "1975.11.14": {
+        "owner": "MOR",
+        "controller": "MOR",
+        "remove_core": "SPA"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 134,
+            "template": 3
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 146,
+            "template": 3
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 411,
+            "template": 103
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1439,
+            "template": 203
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 2412,
+            "template": 303
+        }
     }
-  },
-  "1975.11.14": {
-    "owner": "MOR",
-    "controller": "MOR",
-    "remove_core": "SPA"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 134,
-      "template": 3
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 146,
-      "template": 3
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 411,
-      "template": 103
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1439,
-      "template": 203
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 2412,
-      "template": 303
-    }
-  }
 }

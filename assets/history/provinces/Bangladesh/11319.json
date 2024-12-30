@@ -1,65 +1,65 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "BGL",
-    "PAK",
-    "IND"
-  ],
-  "fruits": 248.41,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 2575195,
-      "template": 13
-    }
-  },
-  "1947.08.14": {
-    "owner": "PAK",
-    "controller": "PAK",
-    "remove_core": [
-      "IND",
-      "ENG"
-    ]
-  },
-  "1971.12.16": {
-    "owner": "BGL",
-    "controller": "BGL",
-    "remove_core": "PAK"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 4
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "BGL",
+        "PAK",
+        "IND"
+    ],
+    "fruits": 248.41,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 2575195,
+            "template": 13
+        }
     },
-    "population_total": {
-      "amount": 5618891,
-      "template": 213
+    "1947.08.14": {
+        "owner": "PAK",
+        "controller": "PAK",
+        "remove_core": [
+            "IND",
+            "ENG"
+        ]
+    },
+    "1971.12.16": {
+        "owner": "BGL",
+        "controller": "BGL",
+        "remove_core": "PAK"
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 5618891,
+            "template": 213
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 2645575,
+            "template": 13
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 2717879,
+            "template": 13
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 3799630,
+            "template": 113
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 7729381,
+            "template": 313
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 2645575,
-      "template": 13
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 2717879,
-      "template": 13
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 3799630,
-      "template": 113
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 7729381,
-      "template": 313
-    }
-  }
 }

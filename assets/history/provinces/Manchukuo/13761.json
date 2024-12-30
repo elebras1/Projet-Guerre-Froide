@@ -1,58 +1,58 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "CHC",
-    "CHI"
-  ],
-  "grain": 63.16,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 3988772,
-      "template": 6
-    }
-  },
-  "1946.6.26": {
-    "owner": "CHC",
-    "controller": "CHC"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 7
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "CHC",
+        "CHI"
+    ],
+    "grain": 63.16,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 312612,
+            "template": 6
+        }
     },
-    "population_total": {
-      "amount": 7308469,
-      "template": 206
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 8
+    "1946.6.26": {
+        "owner": "CHC",
+        "controller": "CHC"
     },
-    "population_total": {
-      "amount": 8744433,
-      "template": 306
+    "1979.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 7308469,
+            "template": 206
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 8
+        },
+        "population_total": {
+            "amount": 8744433,
+            "template": 306
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 4068108,
+            "template": 6
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 4149023,
+            "template": 6
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 5089683,
+            "template": 106
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 4068108,
-      "template": 6
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 4149023,
-      "template": 6
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 5089683,
-      "template": 106
-    }
-  }
 }

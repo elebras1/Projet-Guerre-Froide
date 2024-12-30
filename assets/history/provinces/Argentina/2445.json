@@ -1,46 +1,46 @@
 {
-  "owner": "ARG",
-  "controller": "ARG",
-  "add_core": [
-    "ARG",
-    "CHL"
-  ],
-  "meat": 0.98,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1032,
-      "template": 79
+    "owner": "ARG",
+    "controller": "ARG",
+    "add_core": [
+        "ARG",
+        "CHL"
+    ],
+    "meat": 0.98,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1032,
+            "template": 79
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1053,
+            "template": 79
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1074,
+            "template": 79
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1333,
+            "template": 179
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1735,
+            "template": 279
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 2072,
+            "template": 379
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1053,
-      "template": 79
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1074,
-      "template": 79
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1333,
-      "template": 179
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1735,
-      "template": 279
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 2072,
-      "template": 379
-    }
-  }
 }

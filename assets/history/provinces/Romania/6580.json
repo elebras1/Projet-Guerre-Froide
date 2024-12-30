@@ -1,46 +1,46 @@
 {
-  "owner": "ROM",
-  "controller": "ROM",
-  "add_core": "ROM",
-  "renewable_energy": 109,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 238304,
-      "template": 50
+    "owner": "ROM",
+    "controller": "ROM",
+    "add_core": "ROM",
+    "renewable_energy": 109,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 238304,
+            "template": 50
+        }
+    },
+    "1970.1.1": {
+        "renewable_energy": 109
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 241619,
+            "template": 50
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 244980,
+            "template": 50
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 279967,
+            "template": 150
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 331021,
+            "template": 250
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 347991,
+            "template": 350
+        }
     }
-  },
-  "1970.1.1": {
-    "renewable_energy": 109
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 241619,
-      "template": 50
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 244980,
-      "template": 50
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 279967,
-      "template": 150
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 331021,
-      "template": 250
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 347991,
-      "template": 350
-    }
-  }
 }

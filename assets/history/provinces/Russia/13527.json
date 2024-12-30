@@ -1,49 +1,49 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "RUS"
-  ],
-  "renewable_energy": 133,
-  "infra": 3,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 35207,
-      "template": 45
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "RUS"
+    ],
+    "renewable_energy": 133,
+    "infra": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 35207,
+            "template": 45
+        }
+    },
+    "1975.1.1": {
+        "renewable_energy": 133
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 35779,
+            "template": 45
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 36361,
+            "template": 45
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 43536,
+            "template": 145
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 48756,
+            "template": 245
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 52636,
+            "template": 345
+        }
     }
-  },
-  "1975.1.1": {
-    "renewable_energy": 133
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 35779,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 36361,
-      "template": 45
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 43536,
-      "template": 145
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 48756,
-      "template": 245
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 52636,
-      "template": 345
-    }
-  }
 }

@@ -1,49 +1,49 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": "USA",
-  "coal": 7,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 219648,
-      "template": 93
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": "USA",
+    "coal": 7,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 219648,
+            "template": 93
+        }
+    },
+    "1956.3.1": {
+        "economy_building": {
+            "name": "centrifuges",
+            "size": 9
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 223213,
+            "template": 93
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 226836,
+            "template": 93
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 275909,
+            "template": 193
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 327181,
+            "template": 293
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 367690,
+            "template": 393
+        }
     }
-  },
-  "1956.3.1": {
-    "economy_building": {
-      "name": "centrifuges",
-      "size": 9
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 223213,
-      "template": 93
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 226836,
-      "template": 93
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 275909,
-      "template": 193
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 327181,
-      "template": 293
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 367690,
-      "template": 393
-    }
-  }
 }

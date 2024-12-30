@@ -1,56 +1,56 @@
 {
-  "owner": "BEL",
-  "controller": "BEL",
-  "add_core": [
-    "BEL",
-    "DRC",
-    "KAT"
-  ],
-  "wood": 0.3,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 8381,
-      "template": 2
+    "owner": "BEL",
+    "controller": "BEL",
+    "add_core": [
+        "BEL",
+        "DRC",
+        "KAT"
+    ],
+    "wood": 0.3,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 8381,
+            "template": 2
+        }
+    },
+    "1960.06.30": {
+        "owner": "DRC",
+        "controller": "DRC",
+        "remove_core": "BEL"
+    },
+    "1960.07.11": {
+        "owner": "KAT",
+        "controller": "KAT"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 8563,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 8748,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 11619,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 18853,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 27182,
+            "template": 302
+        }
     }
-  },
-  "1960.06.30": {
-    "owner": "DRC",
-    "controller": "DRC",
-    "remove_core": "BEL"
-  },
-  "1960.07.11": {
-    "owner": "KAT",
-    "controller": "KAT"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 8563,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 8748,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 11619,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 18853,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 27182,
-      "template": 302
-    }
-  }
 }

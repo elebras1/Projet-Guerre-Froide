@@ -1,49 +1,49 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": "USA",
-  "wood": 1,
-  "infra": 8,
-  "naval_base": 10,
-  "1946.1.1": {
-    "air_base": 9,
-    "population_total": {
-      "amount": 917306,
-      "template": 93
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": "USA",
+    "wood": 1,
+    "infra": 8,
+    "naval_base": 10,
+    "1946.1.1": {
+        "air_base": 9,
+        "population_total": {
+            "amount": 917306,
+            "template": 93
+        }
+    },
+    "economy_building": {
+        "name": "university",
+        "size": 1
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 932194,
+            "template": 93
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 947323,
+            "template": 93
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1152265,
+            "template": 193
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1366387,
+            "template": 293
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1535565,
+            "template": 393
+        }
     }
-  },
-  "economy_building": {
-    "name": "university",
-    "size": 1
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 932194,
-      "template": 93
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 947323,
-      "template": 93
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1152265,
-      "template": 193
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1366387,
-      "template": 293
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1535565,
-      "template": 393
-    }
-  }
 }

@@ -1,57 +1,57 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "NIG"
-  ],
-  "grain": 233.55,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 962099,
-      "template": 5
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "NIG"
+    ],
+    "grain": 233.55,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 962099,
+            "template": 5
+        }
+    },
+    "1960.10.01": {
+        "owner": "NIG",
+        "controller": "NIG",
+        "remove_core": "ENG"
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 979763,
+            "template": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 997752,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1263297,
+            "template": 105
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1935031,
+            "template": 205
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 2635023,
+            "template": 305
+        }
     }
-  },
-  "1960.10.01": {
-    "owner": "NIG",
-    "controller": "NIG",
-    "remove_core": "ENG"
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 5
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 979763,
-      "template": 5
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 997752,
-      "template": 5
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1263297,
-      "template": 105
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1935031,
-      "template": 205
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 2635023,
-      "template": 305
-    }
-  }
 }

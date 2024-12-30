@@ -1,61 +1,61 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "MLY"
-  ],
-  "vegetables": 40.13,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 333322,
-      "template": 23
-    }
-  },
-  "1957.08.31": {
-    "remove_core": "ENG",
-    "owner": "MLY",
-    "controller": "MLY"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "MLY"
+    ],
+    "vegetables": 40.13,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 333322,
+            "template": 23
+        }
     },
-    "population_total": {
-      "amount": 777984,
-      "template": 223
+    "1957.08.31": {
+        "remove_core": "ENG",
+        "owner": "MLY",
+        "controller": "MLY"
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 777984,
+            "template": 223
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 3
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 342538,
+            "template": 23
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 352010,
+            "template": 23
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 501804,
+            "template": 123
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1077810,
+            "template": 323
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 3
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 342538,
-      "template": 23
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 352010,
-      "template": 23
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 501804,
-      "template": 123
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1077810,
-      "template": 323
-    }
-  }
 }

@@ -1,57 +1,57 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": "FRA",
-  "meat": 71.61,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 257584,
-      "template": 70
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": "FRA",
+    "meat": 71.61,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 250384,
+            "template": 70
+        },
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 6
+        }
     },
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 6
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 5
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 4
+    "1985.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 5
+        }
     },
-    "population_total": {
-      "amount": 356008,
-      "template": 370
+    "1991.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 356008,
+            "template": 370
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 259521,
+            "template": 70
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 261472,
+            "template": 70
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 293273,
+            "template": 170
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 335324,
+            "template": 270
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 259521,
-      "template": 70
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 261472,
-      "template": 70
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 293273,
-      "template": 170
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 335324,
-      "template": 270
-    }
-  }
 }

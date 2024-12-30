@@ -1,47 +1,47 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": "FRA",
-  "rare_metals": 2.32,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 262026,
-      "template": 70
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": "FRA",
+    "rare_metals": 2.32,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 254702,
+            "template": 70
+        },
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 6
+        }
     },
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 6
+    "1948.1.1": {
+        "population_total": {
+            "amount": 263997,
+            "template": 70
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 265982,
+            "template": 70
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 298331,
+            "template": 170
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 341107,
+            "template": 270
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 362148,
+            "template": 370
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 263997,
-      "template": 70
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 265982,
-      "template": 70
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 298331,
-      "template": 170
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 341107,
-      "template": 270
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 362148,
-      "template": 370
-    }
-  }
 }

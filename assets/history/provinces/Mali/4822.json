@@ -1,55 +1,55 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FSU",
-    "FRA",
-    "MAL"
-  ],
-  "meat": 1.87,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 8015,
-      "template": 5
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FSU",
+        "FRA",
+        "MAL"
+    ],
+    "meat": 1.87,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 8015,
+            "template": 5
+        }
+    },
+    "1960.09.22": {
+        "owner": "MAL",
+        "controller": "MAL",
+        "remove_core": [
+            "FSU",
+            "FRA"
+        ]
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 8112,
+            "template": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 8211,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 9528,
+            "template": 105
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 12582,
+            "template": 205
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 15689,
+            "template": 305
+        }
     }
-  },
-  "1960.09.22": {
-    "owner": "MAL",
-    "controller": "MAL",
-    "remove_core": [
-      "FSU",
-      "FRA"
-    ]
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 8112,
-      "template": 5
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 8211,
-      "template": 5
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 9528,
-      "template": 105
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 12582,
-      "template": 205
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 15689,
-      "template": 305
-    }
-  }
 }

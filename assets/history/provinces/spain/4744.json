@@ -1,47 +1,47 @@
 {
-  "owner": "SPA",
-  "controller": "SPA",
-  "add_core": "SPA",
-  "fruits": 0.74,
-  "infra": 4,
-  "naval_base": 1,
-  "1946.1.1": {
+    "owner": "SPA",
+    "controller": "SPA",
+    "add_core": "SPA",
+    "fruits": 0.74,
+    "infra": 4,
     "naval_base": 1,
-    "population_total": {
-      "amount": 223758,
-      "template": 67
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 223758,
+            "template": 67
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 300760,
+            "template": 267
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 315176,
+            "template": 367
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 225356,
+            "template": 67
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 226965,
+            "template": 67
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 251206,
+            "template": 167
+        }
     }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 300760,
-      "template": 267
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 315176,
-      "template": 367
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 225356,
-      "template": 67
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 226965,
-      "template": 67
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 251206,
-      "template": 167
-    }
-  }
 }

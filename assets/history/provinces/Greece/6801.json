@@ -1,43 +1,43 @@
 {
-  "add_core": "GRE",
-  "owner": "GRE",
-  "controller": "GRE",
-  "grain": 25,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 100023,
-      "template": 63
+    "add_core": "GRE",
+    "owner": "GRE",
+    "controller": "GRE",
+    "grain": 25,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 100023,
+            "template": 63
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 101053,
+            "template": 63
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 102094,
+            "template": 63
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 113767,
+            "template": 163
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 128659,
+            "template": 263
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 138272,
+            "template": 363
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 101053,
-      "template": 63
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 102094,
-      "template": 63
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 113767,
-      "template": 163
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 128659,
-      "template": 263
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 138272,
-      "template": 363
-    }
-  }
 }

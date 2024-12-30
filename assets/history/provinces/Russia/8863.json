@@ -1,76 +1,76 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "RUS"
-  ],
-  "vegetables": 51.15,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 76586,
-      "template": 45
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "RUS"
+    ],
+    "vegetables": 51.15,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 76586,
+            "template": 45
+        }
+    },
+    "1964.4.26": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 4
+        }
+    },
+    "1967.12.29": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 5
+        }
+    },
+    "1981.1.1": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 6
+        }
+    },
+    "1986.1.1": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 7
+        }
+    },
+    "1988.1.1": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 8
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 77832,
+            "template": 45
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 79097,
+            "template": 45
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 94707,
+            "template": 145
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 106061,
+            "template": 245
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 114502,
+            "template": 345
+        }
     }
-  },
-  "1964.4.26": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 4
-    }
-  },
-  "1967.12.29": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 5
-    }
-  },
-  "1981.1.1": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 6
-    }
-  },
-  "1986.1.1": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 7
-    }
-  },
-  "1988.1.1": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 8
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 77832,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 79097,
-      "template": 45
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 94707,
-      "template": 145
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 106061,
-      "template": 245
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 114502,
-      "template": 345
-    }
-  }
 }

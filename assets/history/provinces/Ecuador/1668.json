@@ -1,43 +1,43 @@
 {
-  "owner": "ECU",
-  "controller": "ECU",
-  "add_core": "ECU",
-  "fish": 20,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 470,
-      "template": 84
+    "owner": "ECU",
+    "controller": "ECU",
+    "add_core": "ECU",
+    "fish": 20,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 470,
+            "template": 84
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 483,
+            "template": 84
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 495,
+            "template": 84
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 688,
+            "template": 184
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1132,
+            "template": 284
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1535,
+            "template": 384
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 483,
-      "template": 84
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 495,
-      "template": 84
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 688,
-      "template": 184
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1132,
-      "template": 284
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1535,
-      "template": 384
-    }
-  }
 }

@@ -1,55 +1,55 @@
 {
-  "owner": "BUL",
-  "controller": "BUL",
-  "add_core": "BUL",
-  "fruits": 175,
-  "infra": 5,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 250967,
-      "template": 46
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 5
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 7
+    "owner": "BUL",
+    "controller": "BUL",
+    "add_core": "BUL",
+    "fruits": 175,
+    "infra": 5,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 250967,
+            "template": 46
+        }
     },
-    "population_total": {
-      "amount": 309942,
-      "template": 246
+    "1961.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 5
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 2,
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 309942,
+            "template": 246
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 252656,
+            "template": 46
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 254356,
+            "template": 46
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 280934,
+            "template": 146
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 306695,
+            "template": 346
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 252656,
-      "template": 46
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 254356,
-      "template": 46
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 280934,
-      "template": 146
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 306695,
-      "template": 346
-    }
-  }
 }

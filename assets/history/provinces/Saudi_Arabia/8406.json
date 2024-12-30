@@ -1,57 +1,57 @@
 {
-  "owner": "SAU",
-  "controller": "SAU",
-  "add_core": "SAU",
-  "grain": 10.94,
-  "infra": 4,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 162286,
-      "template": 40
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 4
+    "owner": "SAU",
+    "controller": "SAU",
+    "add_core": "SAU",
+    "grain": 10.94,
+    "infra": 4,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 162286,
+            "template": 40
+        }
     },
-    "population_total": {
-      "amount": 170465,
-      "template": 40
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 5
+    "1950.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 170465,
+            "template": 40
+        }
     },
-    "population_total": {
-      "amount": 503367,
-      "template": 240
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 2,
-    "economy_building": {
-      "name": "refinery",
-      "size": 8
+    "1979.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 503367,
+            "template": 240
+        }
     },
-    "population_total": {
-      "amount": 910381,
-      "template": 340
+    "1991.1.1": {
+        "naval_base": 2,
+        "economy_building": {
+            "name": "refinery",
+            "size": 8
+        },
+        "population_total": {
+            "amount": 910381,
+            "template": 340
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 166325,
+            "template": 40
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 235490,
+            "template": 140
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 166325,
-      "template": 40
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 235490,
-      "template": 140
-    }
-  }
 }

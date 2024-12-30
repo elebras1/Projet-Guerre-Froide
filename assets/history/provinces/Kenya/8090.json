@@ -1,67 +1,67 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "KEN"
-  ],
-  "fruits": 5.09,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 30808,
-      "template": 1
-    }
-  },
-  "1963.12.12": {
-    "owner": "KEN",
-    "controller": "KEN",
-    "remove_core": "ENG"
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "KEN"
+    ],
+    "fruits": 5.09,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 30808,
+            "template": 1
+        }
     },
-    "population_total": {
-      "amount": 32540,
-      "template": 1
+    "1963.12.12": {
+        "owner": "KEN",
+        "controller": "KEN",
+        "remove_core": "ENG"
+    },
+    "1950.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 32540,
+            "template": 1
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 2
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 31662,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 46206,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 83864,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 129800,
+            "template": 301
+        }
     }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 2
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 4
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 31662,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 46206,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 83864,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 129800,
-      "template": 301
-    }
-  }
 }

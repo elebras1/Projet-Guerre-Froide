@@ -1,52 +1,52 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "RUS"
-  ],
-  "wood": 1,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 94667,
-      "template": 45
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "RUS"
+    ],
+    "wood": 1,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 94667,
+            "template": 45
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "high_tech",
+            "size": 3
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 96207,
+            "template": 45
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 97771,
+            "template": 45
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 117066,
+            "template": 145
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 131101,
+            "template": 245
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 141535,
+            "template": 345
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "high_tech",
-      "size": 3
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 96207,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 97771,
-      "template": 45
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 117066,
-      "template": 145
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 131101,
-      "template": 245
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 141535,
-      "template": 345
-    }
-  }
 }

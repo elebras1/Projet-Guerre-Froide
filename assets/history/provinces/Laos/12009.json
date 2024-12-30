@@ -1,51 +1,51 @@
 {
-  "owner": "IDC",
-  "controller": "IDC",
-  "add_core": [
-    "IDC",
-    "LAO"
-  ],
-  "grain": 4.62,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 51173,
-      "template": 22
+    "owner": "IDC",
+    "controller": "IDC",
+    "add_core": [
+        "IDC",
+        "LAO"
+    ],
+    "grain": 4.62,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 51173,
+            "template": 22
+        }
+    },
+    "1948.1.1.0": {
+        "population_total": {
+            "amount": 52396,
+            "template": 22
+        }
+    },
+    "1949.7.19.0": {
+        "owner": "LAO",
+        "controller": "LAO",
+        "remove_core": "IDC"
+    },
+    "1950.1.1.0": {
+        "population_total": {
+            "amount": 53648,
+            "template": 22
+        }
+    },
+    "1961.12.30.0": {
+        "population_total": {
+            "amount": 71104,
+            "template": 122
+        }
+    },
+    "1979.1.1.0": {
+        "population_total": {
+            "amount": 101583,
+            "template": 222
+        }
+    },
+    "1991.1.1.0": {
+        "population_total": {
+            "amount": 137470,
+            "template": 322
+        }
     }
-  },
-  "1948.1.1.0": {
-    "population_total": {
-      "amount": 52396,
-      "template": 22
-    }
-  },
-  "1949.7.19.0": {
-    "owner": "LAO",
-    "controller": "LAO",
-    "remove_core": "IDC"
-  },
-  "1950.1.1.0": {
-    "population_total": {
-      "amount": 53648,
-      "template": 22
-    }
-  },
-  "1961.12.30.0": {
-    "population_total": {
-      "amount": 71104,
-      "template": 122
-    }
-  },
-  "1979.1.1.0": {
-    "population_total": {
-      "amount": 101583,
-      "template": 222
-    }
-  },
-  "1991.1.1.0": {
-    "population_total": {
-      "amount": 137470,
-      "template": 322
-    }
-  }
 }

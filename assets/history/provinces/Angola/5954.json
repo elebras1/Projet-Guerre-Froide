@@ -1,55 +1,55 @@
 {
-  "owner": "POR",
-  "controller": "POR",
-  "add_core": [
-    "POR",
-    "ANG"
-  ],
-  "grain": 22.14,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 154924,
-      "template": 2
-    }
-  },
-  "1975.11.11": {
-    "owner": "ANG",
-    "controller": "ANG",
-    "remove_core": "POR"
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 2
+    "owner": "POR",
+    "controller": "POR",
+    "add_core": [
+        "POR",
+        "ANG"
+    ],
+    "grain": 22.14,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 154924,
+            "template": 2
+        }
     },
-    "population_total": {
-      "amount": 412523,
-      "template": 302
+    "1975.11.11": {
+        "owner": "ANG",
+        "controller": "ANG",
+        "remove_core": "POR"
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 412523,
+            "template": 302
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 157736,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 160599,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 199304,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 286550,
+            "template": 202
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 157736,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 160599,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 199304,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 286550,
-      "template": 202
-    }
-  }
 }

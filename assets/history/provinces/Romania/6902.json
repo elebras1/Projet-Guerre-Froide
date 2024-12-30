@@ -1,71 +1,71 @@
 {
-  "owner": "ROM",
-  "controller": "ROM",
-  "add_core": "ROM",
-  "vegetables": 400,
-  "infra": 7,
-  "economy_building": {
-    "name": "military_academy",
-    "size": 1
-  },
-  "1946.1.1": {
-    "air_base": 5,
-    "population_total": {
-      "amount": 2304257,
-      "template": 50
+    "owner": "ROM",
+    "controller": "ROM",
+    "add_core": "ROM",
+    "vegetables": 400,
+    "infra": 7,
+    "economy_building": {
+        "name": "military_academy",
+        "size": 1
     },
-    "economy_building": {
-      "name": "light_industry",
-      "size": 3
-    }
-  },
-  "1948.1.1": {
-    "air_base": 6,
-    "population_total": {
-      "amount": 2336309,
-      "template": 50
-    }
-  },
-  "1950.1.1": {
-    "air_base": 7,
-    "population_total": {
-      "amount": 2368807,
-      "template": 50
-    }
-  },
-  "1961.1.1": {
-    "air_base": 8,
-    "economy_building": {
-      "name": "light_industry",
-      "size": 6
-    }
-  },
-  "1953.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 5
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 9
+    "1946.1.1": {
+        "air_base": 5,
+        "population_total": {
+            "amount": 2304257,
+            "template": 50
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 3
+        }
     },
-    "population_total": {
-      "amount": 3200773,
-      "template": 250
+    "1948.1.1": {
+        "air_base": 6,
+        "population_total": {
+            "amount": 2336309,
+            "template": 50
+        }
+    },
+    "1950.1.1": {
+        "air_base": 7,
+        "population_total": {
+            "amount": 2368807,
+            "template": 50
+        }
+    },
+    "1961.1.1": {
+        "air_base": 8,
+        "economy_building": {
+            "name": "light_industry",
+            "size": 6
+        }
+    },
+    "1953.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 9
+        },
+        "population_total": {
+            "amount": 3200773,
+            "template": 250
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 2707110,
+            "template": 150
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 3364859,
+            "template": 350
+        }
     }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 2707110,
-      "template": 150
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 3364859,
-      "template": 350
-    }
-  }
 }

@@ -1,52 +1,52 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "ALG"
-  ],
-  "fruits": 8.38,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 242479,
-      "template": 3
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "ALG"
+    ],
+    "fruits": 8.38,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 242479,
+            "template": 3
+        }
+    },
+    "1962.07.05": {
+        "owner": "ALG",
+        "controller": "ALG",
+        "remove_core": "FRA"
+    },
+    "1985.1.1": {},
+    "1948.1.1": {
+        "population_total": {
+            "amount": 247537,
+            "template": 3
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 252701,
+            "template": 3
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 323630,
+            "template": 103
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 525595,
+            "template": 203
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 748620,
+            "template": 303
+        }
     }
-  },
-  "1962.07.05": {
-    "owner": "ALG",
-    "controller": "ALG",
-    "remove_core": "FRA"
-  },
-  "1985.1.1": {},
-  "1948.1.1": {
-    "population_total": {
-      "amount": 247537,
-      "template": 3
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 252701,
-      "template": 3
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 323630,
-      "template": 103
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 525595,
-      "template": 203
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 748620,
-      "template": 303
-    }
-  }
 }

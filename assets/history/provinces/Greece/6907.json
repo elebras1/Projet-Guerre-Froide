@@ -1,46 +1,46 @@
 {
-  "add_core": "GRE",
-  "owner": "GRE",
-  "controller": "GRE",
-  "fish": 50,
-  "infra": 3,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 72713,
-      "template": 63
+    "add_core": "GRE",
+    "owner": "GRE",
+    "controller": "GRE",
+    "fish": 50,
+    "infra": 3,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 72713,
+            "template": 63
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 93530,
+            "template": 263
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 100518,
+            "template": 363
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 73461,
+            "template": 63
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 74218,
+            "template": 63
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 82704,
+            "template": 163
+        }
     }
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 93530,
-      "template": 263
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 100518,
-      "template": 363
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 73461,
-      "template": 63
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 74218,
-      "template": 63
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 82704,
-      "template": 163
-    }
-  }
 }

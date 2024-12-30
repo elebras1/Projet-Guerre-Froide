@@ -1,51 +1,51 @@
 {
-  "owner": "AST",
-  "controller": "AST",
-  "add_core": [
-    "AST",
-    "PAG"
-  ],
-  "rare_metals": 44.97,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 53438,
-      "template": 96
+    "owner": "AST",
+    "controller": "AST",
+    "add_core": [
+        "AST",
+        "PAG"
+    ],
+    "rare_metals": 44.97,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 53438,
+            "template": 96
+        }
+    },
+    "1975.09.16": {
+        "owner": "PAG",
+        "controller": "PAG",
+        "remove_core": "AST"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 54125,
+            "template": 96
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 54820,
+            "template": 96
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 65378,
+            "template": 196
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 100449,
+            "template": 296
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 136763,
+            "template": 396
+        }
     }
-  },
-  "1975.09.16": {
-    "owner": "PAG",
-    "controller": "PAG",
-    "remove_core": "AST"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 54125,
-      "template": 96
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 54820,
-      "template": 96
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 65378,
-      "template": 196
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 100449,
-      "template": 296
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 136763,
-      "template": 396
-    }
-  }
 }

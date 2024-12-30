@@ -1,47 +1,47 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": "USA",
-  "coal": 2,
-  "infra": 6,
-  "economy_building": {
-    "name": "military_academy",
-    "size": 1
-  },
-  "1946.1.1": {
-    "population_total": {
-      "amount": 43037,
-      "template": 93
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": "USA",
+    "coal": 2,
+    "infra": 6,
+    "economy_building": {
+        "name": "military_academy",
+        "size": 1
+    },
+    "1946.1.1": {
+        "population_total": {
+            "amount": 43037,
+            "template": 93
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 43735,
+            "template": 93
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 44445,
+            "template": 93
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 54060,
+            "template": 193
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 64106,
+            "template": 293
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 72043,
+            "template": 393
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 43735,
-      "template": 93
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 44445,
-      "template": 93
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 54060,
-      "template": 193
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 64106,
-      "template": 293
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 72043,
-      "template": 393
-    }
-  }
 }

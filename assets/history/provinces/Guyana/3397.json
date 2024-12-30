@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "GUY"
-  ],
-  "rare_metals": 2,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1054,
-      "template": 86
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "GUY"
+    ],
+    "rare_metals": 2,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1054,
+            "template": 86
+        }
+    },
+    "1966.05.26": {
+        "owner": "GUY",
+        "controller": "GUY",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1090,
+            "template": 86
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1128,
+            "template": 86
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1641,
+            "template": 186
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 2149,
+            "template": 286
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 2007,
+            "template": 386
+        }
     }
-  },
-  "1966.05.26": {
-    "owner": "GUY",
-    "controller": "GUY",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1090,
-      "template": 86
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1128,
-      "template": 86
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1641,
-      "template": 186
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 2149,
-      "template": 286
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 2007,
-      "template": 386
-    }
-  }
 }

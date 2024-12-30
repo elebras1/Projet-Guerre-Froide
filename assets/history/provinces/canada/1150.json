@@ -1,51 +1,51 @@
 {
-  "owner": "CAN",
-  "controller": "CAN",
-  "add_core": "CAN",
-  "grain": 14.4,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 12203,
-      "template": 92
+    "owner": "CAN",
+    "controller": "CAN",
+    "add_core": "CAN",
+    "grain": 14.4,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 12203,
+            "template": 92
+        },
+        "economy_building": {
+            "name": "powerplant",
+            "size": 1
+        }
     },
-    "economy_building": {
-      "name": "powerplant",
-      "size": 1
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 5
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 22729,
+            "template": 292
+        }
     },
-    "population_total": {
-      "amount": 22729,
-      "template": 292
+    "1948.1.1": {
+        "population_total": {
+            "amount": 12534,
+            "template": 92
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 12875,
+            "template": 92
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 17462,
+            "template": 192
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 26291,
+            "template": 392
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 12534,
-      "template": 92
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 12875,
-      "template": 92
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 17462,
-      "template": 192
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 26291,
-      "template": 392
-    }
-  }
 }

@@ -1,70 +1,70 @@
 {
-  "owner": "SAL",
-  "controller": "SAL",
-  "add_core": "SAL",
-  "meat": 30,
-  "infra": 6,
-  "naval_base": 2,
-  "economy_building": {
-    "name": "military_academy",
-    "size": 1
-  },
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1365803,
-      "template": 76
-    }
-  },
-  "1948.1.1": {
+    "owner": "SAL",
+    "controller": "SAL",
+    "add_core": "SAL",
+    "meat": 30,
+    "infra": 6,
+    "naval_base": 2,
     "economy_building": {
-      "name": "light_industry",
-      "size": 3
+        "name": "military_academy",
+        "size": 1
     },
-    "population_total": {
-      "amount": 1393119,
-      "template": 76
-    }
-  },
-  "1953.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 4
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 5
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 3,
-    "economy_building": {
-      "name": "light_industry",
-      "size": 6
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1365803,
+            "template": 76
+        }
     },
-    "population_total": {
-      "amount": 2957667,
-      "template": 276
+    "1948.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 1393119,
+            "template": 76
+        }
+    },
+    "1953.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 3,
+        "economy_building": {
+            "name": "light_industry",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 2957667,
+            "template": 276
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 3496597,
+            "template": 378
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1420981,
+            "template": 76
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1906392,
+            "template": 176
+        }
     }
-  },
-  "1991.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 3496597,
-      "template": 378
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1420981,
-      "template": 76
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1906392,
-      "template": 176
-    }
-  }
 }

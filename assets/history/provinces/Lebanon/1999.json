@@ -1,46 +1,46 @@
 {
-  "owner": "LEB",
-  "controller": "LEB",
-  "add_core": [
-    "LEB",
-    "SYR"
-  ],
-  "vegetables": 5,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 284914,
-      "template": 37
+    "owner": "LEB",
+    "controller": "LEB",
+    "add_core": [
+        "LEB",
+        "SYR"
+    ],
+    "vegetables": 5,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 284914,
+            "template": 37
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 291942,
+            "template": 37
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 299145,
+            "template": 37
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 420479,
+            "template": 137
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 578729,
+            "template": 237
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 627401,
+            "template": 337
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 291942,
-      "template": 37
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 299145,
-      "template": 37
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 420479,
-      "template": 137
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 578729,
-      "template": 237
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 627401,
-      "template": 337
-    }
-  }
 }

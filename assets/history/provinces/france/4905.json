@@ -1,53 +1,53 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": "FRA",
-  "fruits": 151.4,
-  "infra": 6,
-  "naval_base": 3,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 266490,
-      "template": 70
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": "FRA",
+    "fruits": 151.4,
+    "infra": 6,
+    "naval_base": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 259041,
+            "template": 70
+        },
+        "economy_building": {
+            "name": "aviation_industry",
+            "size": 6
+        }
     },
-    "economy_building": {
-      "name": "aviation_industry",
-      "size": 6
+    "1961.1.1": {
+        "naval_base": 4
+    },
+    "1979.1.1": {
+        "naval_base": 5,
+        "population_total": {
+            "amount": 346918,
+            "template": 270
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 6,
+        "population_total": {
+            "amount": 368316,
+            "template": 370
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 268494,
+            "template": 70
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 270513,
+            "template": 70
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 303412,
+            "template": 170
+        }
     }
-  },
-  "1961.1.1": {
-    "naval_base": 4
-  },
-  "1979.1.1": {
-    "naval_base": 5,
-    "population_total": {
-      "amount": 346918,
-      "template": 270
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 6,
-    "population_total": {
-      "amount": 368316,
-      "template": 370
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 268494,
-      "template": 70
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 270513,
-      "template": 70
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 303412,
-      "template": 170
-    }
-  }
 }

@@ -1,71 +1,71 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": [
-    "PRK",
-    "KOR"
-  ],
-  "grain": 10,
-  "infra": 3,
-  "1946.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 397064,
-      "template": 10
-    }
-  },
-  "1948.8.1": {
-    "owner": "KOR",
-    "controller": "KOR"
-  },
-  "1979.1.1": {
-    "naval_base": 6,
-    "economy_building": {
-      "name": "high_tech",
-      "size": 6
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": [
+        "PRK",
+        "KOR"
+    ],
+    "grain": 10,
+    "infra": 3,
+    "1946.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 397064,
+            "template": 10
+        }
     },
-    "population_total": {
-      "amount": 792495,
-      "template": 210
-    }
-  },
-  "1985.1.1": {
-    "naval_base": 7,
-    "economy_building": {
-      "name": "high_tech",
-      "size": 7
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 8,
-    "economy_building": {
-      "name": "high_tech",
-      "size": 8
+    "1948.8.1": {
+        "owner": "KOR",
+        "controller": "KOR"
     },
-    "population_total": {
-      "amount": 931551,
-      "template": 310
+    "1979.1.1": {
+        "naval_base": 6,
+        "economy_building": {
+            "name": "high_tech",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 792495,
+            "template": 210
+        }
+    },
+    "1985.1.1": {
+        "naval_base": 7,
+        "economy_building": {
+            "name": "high_tech",
+            "size": 7
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 8,
+        "economy_building": {
+            "name": "high_tech",
+            "size": 8
+        },
+        "population_total": {
+            "amount": 931551,
+            "template": 310
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 3
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 404767,
+            "template": 10
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 412620,
+            "template": 10
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 569077,
+            "template": 110
+        }
     }
-  },
-  "1961.1.1": {
-    "naval_base": 3
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 404767,
-      "template": 10
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 412620,
-      "template": 10
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 569077,
-      "template": 110
-    }
-  }
 }

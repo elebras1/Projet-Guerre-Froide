@@ -1,47 +1,47 @@
 {
-  "owner": "AFG",
-  "controller": "AFG",
-  "add_core": "AFG",
-  "grain": 29.86,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 311499,
-      "template": 12
+    "owner": "AFG",
+    "controller": "AFG",
+    "add_core": "AFG",
+    "grain": 29.86,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 311499,
+            "template": 12
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 3
+        }
     },
-    "economy_building": {
-      "name": "military_goods",
-      "size": 3
+    "1948.1.1": {
+        "population_total": {
+            "amount": 316496,
+            "template": 12
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 321572,
+            "template": 12
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 396725,
+            "template": 112
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 562138,
+            "template": 212
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 555051,
+            "template": 312
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 316496,
-      "template": 12
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 321572,
-      "template": 12
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 396725,
-      "template": 112
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 562138,
-      "template": 212
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 555051,
-      "template": 312
-    }
-  }
 }

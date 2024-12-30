@@ -1,63 +1,63 @@
 {
-  "owner": "AST",
-  "controller": "AST",
-  "add_core": "AST",
-  "grain": 139.44,
-  "infra": 8,
-  "naval_base": 5,
-  "air_base": 7,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 476925,
-      "template": 94
+    "owner": "AST",
+    "controller": "AST",
+    "add_core": "AST",
+    "grain": 139.44,
+    "infra": 8,
+    "naval_base": 5,
+    "air_base": 7,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 476925,
+            "template": 94
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
     },
-    "economy_building": {
-      "name": "light_industry",
-      "size": 5
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 6
+    "1979.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 888595,
+            "template": 294
+        }
     },
-    "population_total": {
-      "amount": 888595,
-      "template": 294
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 7
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 4
+    "1985.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 7
+        }
     },
-    "population_total": {
-      "amount": 1058761,
-      "template": 394
+    "1991.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 1058761,
+            "template": 394
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 488257,
+            "template": 94
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 499858,
+            "template": 94
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 653884,
+            "template": 194
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 488257,
-      "template": 94
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 499858,
-      "template": 94
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 653884,
-      "template": 194
-    }
-  }
 }

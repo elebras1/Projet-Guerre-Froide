@@ -1,73 +1,73 @@
 {
-  "owner": "JAP",
-  "controller": "JAP",
-  "add_core": "JAP",
-  "grain": 611.69,
-  "infra": 9,
-  "naval_base": 6,
-  "air_base": 8,
-  "economy_building": {
-    "name": "financial_district",
-    "size": 1
-  },
-  "1946.1.1": {
-    "population_total": {
-      "amount": 15432232,
-      "template": 8
+    "owner": "JAP",
+    "controller": "JAP",
+    "add_core": "JAP",
+    "grain": 611.69,
+    "infra": 9,
+    "naval_base": 6,
+    "air_base": 8,
+    "economy_building": {
+        "name": "financial_district",
+        "size": 1
     },
-    "economy_building": {
-      "name": "light_industry",
-      "size": 5
-    }
-  },
-  "1961.1.1": {
-    "naval_base": 7,
-    "economy_building": {
-      "name": "light_industry",
-      "size": 8
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 8,
-    "economy_building": {
-      "name": "light_industry",
-      "size": 10
+    "1946.1.1": {
+        "population_total": {
+            "amount": 15432232,
+            "template": 8
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
     },
-    "population_total": {
-      "amount": 22221022,
-      "template": 208
-    }
-  },
-  "1985.1.1": {
-    "naval_base": 9
-  },
-  "1991.1.1": {
-    "naval_base": 10,
-    "population_total": {
-      "amount": 23710254,
-      "template": 308
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 6
+    "1961.1.1": {
+        "naval_base": 7,
+        "economy_building": {
+            "name": "light_industry",
+            "size": 8
+        }
     },
-    "population_total": {
-      "amount": 15883638,
-      "template": 8
+    "1979.1.1": {
+        "naval_base": 8,
+        "economy_building": {
+            "name": "light_industry",
+            "size": 10
+        },
+        "population_total": {
+            "amount": 22221022,
+            "template": 208
+        }
+    },
+    "1985.1.1": {
+        "naval_base": 9
+    },
+    "1991.1.1": {
+        "naval_base": 10,
+        "population_total": {
+            "amount": 23710254,
+            "template": 308
+        }
+    },
+    "1950.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 15883638,
+            "template": 8
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 15656308,
+            "template": 8
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 18214872,
+            "template": 108
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 15656308,
-      "template": 8
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 18214872,
-      "template": 108
-    }
-  }
 }

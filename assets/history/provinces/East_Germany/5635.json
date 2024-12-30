@@ -1,72 +1,72 @@
 {
-  "add_core": [
-    "DDR",
-    "FRG"
-  ],
-  "owner": "SOV",
-  "controller": "SOV",
-  "grain": 478.13,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 466331,
-      "template": 71
+    "add_core": [
+        "DDR",
+        "FRG"
+    ],
+    "owner": "SOV",
+    "controller": "SOV",
+    "grain": 478.13,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 466331,
+            "template": 71
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 6
+        }
     },
-    "economy_building": {
-      "name": "light_industry",
-      "size": 6
-    }
-  },
-  "1949.10.07": {
-    "owner": "DDR",
-    "controller": "DDR"
-  },
-  "1990.10.3": {
-    "owner": "GER",
-    "controller": "GER"
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 7
+    "1949.10.07": {
+        "owner": "DDR",
+        "controller": "DDR"
     },
-    "population_total": {
-      "amount": 474884,
-      "template": 71
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 8
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "light_industry",
-      "size": 9
+    "1990.10.3": {
+        "owner": "GER",
+        "controller": "GER"
     },
-    "population_total": {
-      "amount": 432448,
-      "template": 271
+    "1950.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 474884,
+            "template": 71
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 8
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "light_industry",
+            "size": 9
+        },
+        "population_total": {
+            "amount": 432448,
+            "template": 271
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 492389,
+            "template": 71
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 445257,
+            "template": 171
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 410883,
+            "template": 371
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 492389,
-      "template": 71
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 445257,
-      "template": 171
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 410883,
-      "template": 371
-    }
-  }
 }

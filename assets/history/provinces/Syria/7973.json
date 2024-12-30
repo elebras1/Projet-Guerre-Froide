@@ -1,60 +1,60 @@
 {
-  "owner": "SYR",
-  "controller": "SYR",
-  "add_core": "SYR",
-  "fruits": 35.6,
-  "infra": 6,
-  "1946.1.1": {
-    "air_base": 2,
-    "population_total": {
-      "amount": 216073,
-      "template": 41
-    }
-  },
-  "1948.1.1": {
-    "air_base": 3,
-    "population_total": {
-      "amount": 221875,
-      "template": 41
-    }
-  },
-  "1950.1.1": {
-    "air_base": 4,
-    "population_total": {
-      "amount": 227832,
-      "template": 41
-    }
-  },
-  "1961.1.1": {
-    "air_base": 5
-  },
-  "1979.1.1": {
-    "air_base": 6,
-    "population_total": {
-      "amount": 574693,
-      "template": 241
-    }
-  },
-  "1958.2.22": {
-    "owner": "UAR",
-    "controller": "UAR",
-    "add_core": "UAR"
-  },
-  "1961.9.2": {
     "owner": "SYR",
     "controller": "SYR",
-    "remove_core": "UAR"
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 325229,
-      "template": 141
+    "add_core": "SYR",
+    "fruits": 35.6,
+    "infra": 6,
+    "1946.1.1": {
+        "air_base": 2,
+        "population_total": {
+            "amount": 216073,
+            "template": 41
+        }
+    },
+    "1948.1.1": {
+        "air_base": 3,
+        "population_total": {
+            "amount": 221875,
+            "template": 41
+        }
+    },
+    "1950.1.1": {
+        "air_base": 4,
+        "population_total": {
+            "amount": 227832,
+            "template": 41
+        }
+    },
+    "1961.1.1": {
+        "air_base": 5
+    },
+    "1979.1.1": {
+        "air_base": 6,
+        "population_total": {
+            "amount": 574693,
+            "template": 241
+        }
+    },
+    "1958.2.22": {
+        "owner": "UAR",
+        "controller": "UAR",
+        "add_core": "UAR"
+    },
+    "1961.9.2": {
+        "owner": "SYR",
+        "controller": "SYR",
+        "remove_core": "UAR"
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 325229,
+            "template": 141
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 847042,
+            "template": 341
+        }
     }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 847042,
-      "template": 341
-    }
-  }
 }

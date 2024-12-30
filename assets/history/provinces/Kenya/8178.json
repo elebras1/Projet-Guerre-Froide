@@ -1,67 +1,67 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "KEN"
-  ],
-  "grain": 49.95,
-  "infra": 4,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 330441,
-      "template": 1
-    }
-  },
-  "1963.12.12": {
-    "owner": "KEN",
-    "controller": "KEN",
-    "remove_core": "ENG"
-  },
-  "1979.1.1": {
-    "naval_base": 3,
-    "economy_building": [
-      {
-        "name": "refinery",
-        "size": 1
-      },
-      {
-        "name": "refinery",
-        "size": 5
-      }
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "KEN"
     ],
-    "population_total": {
-      "amount": 899497,
-      "template": 201
+    "grain": 49.95,
+    "infra": 4,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 330441,
+            "template": 1
+        }
+    },
+    "1963.12.12": {
+        "owner": "KEN",
+        "controller": "KEN",
+        "remove_core": "ENG"
+    },
+    "1979.1.1": {
+        "naval_base": 3,
+        "economy_building": [
+            {
+                "name": "refinery",
+                "size": 1
+            },
+            {
+                "name": "refinery",
+                "size": 5
+            }
+        ],
+        "population_total": {
+            "amount": 899497,
+            "template": 201
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 2
+    },
+    "1991.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 1392189,
+            "template": 301
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 339598,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 349008,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 495589,
+            "template": 101
+        }
     }
-  },
-  "1961.1.1": {
-    "naval_base": 2
-  },
-  "1991.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 1392189,
-      "template": 301
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 339598,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 349008,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 495589,
-      "template": 101
-    }
-  }
 }

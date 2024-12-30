@@ -1,58 +1,58 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "PAK"
-  ],
-  "renewable_energy": 360,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 714511,
-      "template": 18
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "PAK"
+    ],
+    "renewable_energy": 360,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 714511,
+            "template": 18
+        }
+    },
+    "1947.08.17": {
+        "owner": "PAK",
+        "controller": "PAK",
+        "remove_core": "ENG",
+        "economy_building": {
+            "name": "military_academy",
+            "size": 1
+        }
+    },
+    "1967.1.1": {
+        "renewable_energy": 360
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 727480,
+            "template": 18
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 740683,
+            "template": 18
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 950918,
+            "template": 118
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1535586,
+            "template": 218
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 2268275,
+            "template": 318
+        }
     }
-  },
-  "1947.08.17": {
-    "owner": "PAK",
-    "controller": "PAK",
-    "remove_core": "ENG",
-    "economy_building": {
-      "name": "military_academy",
-      "size": 1
-    }
-  },
-  "1967.1.1": {
-    "renewable_energy": 360
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 727480,
-      "template": 18
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 740683,
-      "template": 18
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 950918,
-      "template": 118
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1535586,
-      "template": 218
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 2268275,
-      "template": 318
-    }
-  }
 }

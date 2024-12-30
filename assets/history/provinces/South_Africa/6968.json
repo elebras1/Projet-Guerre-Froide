@@ -1,53 +1,53 @@
 {
-  "owner": "SAF",
-  "controller": "SAF",
-  "add_core": "SAF",
-  "grain": 35.86,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 104245,
-      "template": 4
+    "owner": "SAF",
+    "controller": "SAF",
+    "add_core": "SAF",
+    "grain": 35.86,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 104245,
+            "template": 4
+        },
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 3
+        }
     },
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 3
+    "1953.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 4
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 106688,
+            "template": 4
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 109189,
+            "template": 4
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 146209,
+            "template": 104
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 226313,
+            "template": 204
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 300766,
+            "template": 304
+        }
     }
-  },
-  "1953.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 4
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 106688,
-      "template": 4
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 109189,
-      "template": 4
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 146209,
-      "template": 104
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 226313,
-      "template": 204
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 300766,
-      "template": 304
-    }
-  }
 }

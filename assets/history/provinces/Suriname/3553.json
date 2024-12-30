@@ -1,51 +1,51 @@
 {
-  "owner": "HOL",
-  "controller": "HOL",
-  "add_core": [
-    "HOL",
-    "SUR"
-  ],
-  "fruits": 1.2,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 2593,
-      "template": 89
+    "owner": "HOL",
+    "controller": "HOL",
+    "add_core": [
+        "HOL",
+        "SUR"
+    ],
+    "fruits": 1.2,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 2593,
+            "template": 89
+        }
+    },
+    "1975.11.25": {
+        "owner": "SUR",
+        "controller": "SUR",
+        "remove_core": "HOL"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 2672,
+            "template": 89
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 2752,
+            "template": 89
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 3923,
+            "template": 189
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 4669,
+            "template": 289
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 5287,
+            "template": 389
+        }
     }
-  },
-  "1975.11.25": {
-    "owner": "SUR",
-    "controller": "SUR",
-    "remove_core": "HOL"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 2672,
-      "template": 89
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 2752,
-      "template": 89
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 3923,
-      "template": 189
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 4669,
-      "template": 289
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 5287,
-      "template": 389
-    }
-  }
 }

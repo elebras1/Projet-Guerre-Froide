@@ -1,56 +1,56 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "CAM"
-  ],
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 66604,
-      "template": 2
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "CAM"
+    ],
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 66604,
+            "template": 2
+        }
+    },
+    "1960.01.01": {
+        "owner": "CAM",
+        "controller": "CAM",
+        "remove_core": "FRA"
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 3
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 67839,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 69098,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 87371,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 136793,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 193840,
+            "template": 302
+        }
     }
-  },
-  "1960.01.01": {
-    "owner": "CAM",
-    "controller": "CAM",
-    "remove_core": "FRA"
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 3
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 67839,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 69098,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 87371,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 136793,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 193840,
-      "template": 302
-    }
-  }
 }

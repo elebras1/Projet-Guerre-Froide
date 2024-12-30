@@ -1,53 +1,53 @@
 {
-  "owner": "BRA",
-  "controller": "BRA",
-  "add_core": "BRA",
-  "oil": 26,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 225992,
-      "template": 77
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 6
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 5
+    "owner": "BRA",
+    "controller": "BRA",
+    "add_core": "BRA",
+    "oil": 26,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 212604,
+            "template": 77
+        }
     },
-    "population_total": {
-      "amount": 676544,
-      "template": 381
+    "1985.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 6
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 676544,
+            "template": 381
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 232894,
+            "template": 77
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 240007,
+            "template": 77
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 343636,
+            "template": 177
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 528688,
+            "template": 277
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 232894,
-      "template": 77
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 240007,
-      "template": 77
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 343636,
-      "template": 177
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 528688,
-      "template": 277
-    }
-  }
 }

@@ -1,51 +1,51 @@
 {
-  "add_core": "HUN",
-  "owner": "HUN",
-  "controller": "HUN",
-  "grain": 288.2,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 778524,
-      "template": 48
+    "add_core": "HUN",
+    "owner": "HUN",
+    "controller": "HUN",
+    "grain": 288.2,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 778524,
+            "template": 48
+        },
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 3
+        }
     },
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 3
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 1
+    "1979.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 909137,
+            "template": 248
+        }
     },
-    "population_total": {
-      "amount": 909137,
-      "template": 248
+    "1948.1.1": {
+        "population_total": {
+            "amount": 786419,
+            "template": 48
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 794393,
+            "template": 48
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 854206,
+            "template": 148
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 881432,
+            "template": 348
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 786419,
-      "template": 48
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 794393,
-      "template": 48
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 854206,
-      "template": 148
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 881432,
-      "template": 348
-    }
-  }
 }

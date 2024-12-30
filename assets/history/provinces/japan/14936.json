@@ -1,63 +1,63 @@
 {
-  "owner": "JAP",
-  "controller": "JAP",
-  "add_core": "JAP",
-  "precious_metals": 2,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 941199,
-      "template": 8
+    "owner": "JAP",
+    "controller": "JAP",
+    "add_core": "JAP",
+    "precious_metals": 2,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 941199,
+            "template": 8
+        },
+        "naval_base": 1
     },
-    "naval_base": 1
-  },
-  "1979.1.1": {
-    "naval_base": 3,
-    "economy_building": {
-      "name": "refinery",
-      "size": 8
+    "1979.1.1": {
+        "naval_base": 3,
+        "economy_building": {
+            "name": "refinery",
+            "size": 8
+        },
+        "population_total": {
+            "amount": 1355241,
+            "template": 208
+        }
     },
-    "population_total": {
-      "amount": 1355241,
-      "template": 208
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 6
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 4,
-    "economy_building": {
-      "name": "refinery",
-      "size": 9
+    "1985.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 6
+        }
     },
-    "population_total": {
-      "amount": 1446068,
-      "template": 308
+    "1991.1.1": {
+        "naval_base": 4,
+        "economy_building": {
+            "name": "refinery",
+            "size": 9
+        },
+        "population_total": {
+            "amount": 1446068,
+            "template": 308
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 2
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 954865,
+            "template": 8
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 968730,
+            "template": 8
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1110910,
+            "template": 108
+        }
     }
-  },
-  "1961.1.1": {
-    "naval_base": 2
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 954865,
-      "template": 8
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 968730,
-      "template": 8
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1110910,
-      "template": 108
-    }
-  }
 }

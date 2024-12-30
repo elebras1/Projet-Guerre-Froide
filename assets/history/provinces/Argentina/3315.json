@@ -1,49 +1,49 @@
 {
-  "owner": "ARG",
-  "controller": "ARG",
-  "add_core": "ARG",
-  "grain": 45.67,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 144317,
-      "template": 79
+    "owner": "ARG",
+    "controller": "ARG",
+    "add_core": "ARG",
+    "grain": 45.67,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 144317,
+            "template": 79
+        }
+    },
+    "1974.6.24": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 5
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 147167,
+            "template": 79
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 150074,
+            "template": 79
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 186362,
+            "template": 179
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 242492,
+            "template": 279
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 289585,
+            "template": 379
+        }
     }
-  },
-  "1974.6.24": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 5
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 147167,
-      "template": 79
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 150074,
-      "template": 79
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 186362,
-      "template": 179
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 242492,
-      "template": 279
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 289585,
-      "template": 379
-    }
-  }
 }

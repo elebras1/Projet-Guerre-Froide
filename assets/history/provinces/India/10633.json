@@ -1,73 +1,73 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "IND"
-  ],
-  "coal": 1,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 2482699,
-      "template": 15
-    }
-  },
-  "1947.8.15.0": {
-    "owner": "IND",
-    "controller": "IND",
-    "remove_core": "ENG"
-  },
-  "1971.10.1": {
-    "economy_building": {
-      "name": "rocket_test_site",
-      "size": 1
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 1
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 4
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "IND"
+    ],
+    "coal": 1,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 2420458,
+            "template": 15
+        }
     },
-    "population_total": {
-      "amount": 4729294,
-      "template": 215
+    "1947.8.15.0": {
+        "owner": "IND",
+        "controller": "IND",
+        "remove_core": "ENG"
+    },
+    "1971.10.1": {
+        "economy_building": {
+            "name": "rocket_test_site",
+            "size": 1
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 1
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 4729294,
+            "template": 215
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 6
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 2526766,
+            "template": 15
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 2571617,
+            "template": 15
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 3225008,
+            "template": 115
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 6168108,
+            "template": 315
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 6
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 2526766,
-      "template": 15
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 2571617,
-      "template": 15
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 3225008,
-      "template": 115
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 6168108,
-      "template": 315
-    }
-  }
 }

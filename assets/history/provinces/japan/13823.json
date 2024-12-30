@@ -1,78 +1,78 @@
 {
-  "owner": "JAP",
-  "controller": "JAP",
-  "add_core": "JAP",
-  "meat": 198.2,
-  "infra": 4,
-  "1946.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 776033,
-      "template": 8
-    }
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 5
+    "owner": "JAP",
+    "controller": "JAP",
+    "add_core": "JAP",
+    "meat": 198.2,
+    "infra": 4,
+    "1946.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 776033,
+            "template": 8
+        }
     },
-    "population_total": {
-      "amount": 787301,
-      "template": 8
-    }
-  },
-  "1953.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 6
-    }
-  },
-  "1961.1.1": {
-    "naval_base": 4,
-    "economy_building": {
-      "name": "powerplant",
-      "size": 3
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 5,
-    "economy_building": {
-      "name": "powerplant",
-      "size": 5
+    "1948.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 787301,
+            "template": 8
+        }
     },
-    "population_total": {
-      "amount": 1117417,
-      "template": 208
-    }
-  },
-  "1985.1.1": {
-    "naval_base": 6,
-    "economy_building": {
-      "name": "powerplant",
-      "size": 6
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 7,
-    "economy_building": {
-      "name": "powerplant",
-      "size": 5
+    "1953.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 6
+        }
     },
-    "population_total": {
-      "amount": 1192305,
-      "template": 308
+    "1961.1.1": {
+        "naval_base": 4,
+        "economy_building": {
+            "name": "powerplant",
+            "size": 3
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 5,
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 1117417,
+            "template": 208
+        }
+    },
+    "1985.1.1": {
+        "naval_base": 6,
+        "economy_building": {
+            "name": "powerplant",
+            "size": 6
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 7,
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 1192305,
+            "template": 308
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 798732,
+            "template": 8
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 915962,
+            "template": 108
+        }
     }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 798732,
-      "template": 8
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 915962,
-      "template": 108
-    }
-  }
 }

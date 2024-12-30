@@ -1,46 +1,46 @@
 {
-  "add_core": [
-    "BOS",
-    "YUG"
-  ],
-  "owner": "YUG",
-  "controller": "YUG",
-  "coal": 2,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 589199,
-      "template": 62
+    "add_core": [
+        "BOS",
+        "YUG"
+    ],
+    "owner": "YUG",
+    "controller": "YUG",
+    "coal": 2,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 589199,
+            "template": 62
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 596790,
+            "template": 62
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 604494,
+            "template": 62
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 686667,
+            "template": 162
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 786509,
+            "template": 262
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 845821,
+            "template": 362
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 596790,
-      "template": 62
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 604494,
-      "template": 62
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 686667,
-      "template": 162
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 786509,
-      "template": 262
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 845821,
-      "template": 362
-    }
-  }
 }

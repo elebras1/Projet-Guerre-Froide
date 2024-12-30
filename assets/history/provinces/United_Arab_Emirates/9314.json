@@ -1,52 +1,52 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "UAE"
-  ],
-  "oil": 62,
-  "infra": 4,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 32946,
-      "template": 43
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "UAE"
+    ],
+    "oil": 62,
+    "infra": 4,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 32946,
+            "template": 43
+        }
+    },
+    "1971.12.2": {
+        "owner": "UAE",
+        "controller": "UAE",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 33749,
+            "template": 43
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 34570,
+            "template": 43
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 54113,
+            "template": 143
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 460720,
+            "template": 243
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 948758,
+            "template": 343
+        }
     }
-  },
-  "1971.12.2": {
-    "owner": "UAE",
-    "controller": "UAE",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 33749,
-      "template": 43
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 34570,
-      "template": 43
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 54113,
-      "template": 143
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 460720,
-      "template": 243
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 948758,
-      "template": 343
-    }
-  }
 }

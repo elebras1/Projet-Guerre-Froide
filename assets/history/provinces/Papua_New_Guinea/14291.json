@@ -1,51 +1,51 @@
 {
-  "owner": "AST",
-  "controller": "AST",
-  "add_core": [
-    "AST",
-    "PAG"
-  ],
-  "wood": 0.07,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 30170,
-      "template": 96
+    "owner": "AST",
+    "controller": "AST",
+    "add_core": [
+        "AST",
+        "PAG"
+    ],
+    "wood": 0.07,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 30170,
+            "template": 96
+        }
+    },
+    "1975.09.16": {
+        "owner": "PAG",
+        "controller": "PAG",
+        "remove_core": "AST"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 30558,
+            "template": 96
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 30950,
+            "template": 96
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 36911,
+            "template": 196
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 56712,
+            "template": 296
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 77214,
+            "template": 396
+        }
     }
-  },
-  "1975.09.16": {
-    "owner": "PAG",
-    "controller": "PAG",
-    "remove_core": "AST"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 30558,
-      "template": 96
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 30950,
-      "template": 96
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 36911,
-      "template": 196
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 56712,
-      "template": 296
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 77214,
-      "template": 396
-    }
-  }
 }

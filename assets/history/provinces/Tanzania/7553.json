@@ -1,57 +1,57 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "TNZ",
-    "TNG"
-  ],
-  "grain": 10.98,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 73651,
-      "template": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "TNZ",
+        "TNG"
+    ],
+    "grain": 10.98,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 73651,
+            "template": 1
+        }
+    },
+    "1961.12.09": {
+        "owner": "TNG",
+        "controller": "TNG",
+        "remove_core": "ENG"
+    },
+    "1964.04.26": {
+        "owner": "TNZ",
+        "controller": "TNZ",
+        "remove_core": "TNG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 75615,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 77632,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 108420,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 183795,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 267218,
+            "template": 301
+        }
     }
-  },
-  "1961.12.09": {
-    "owner": "TNG",
-    "controller": "TNG",
-    "remove_core": "ENG"
-  },
-  "1964.04.26": {
-    "owner": "TNZ",
-    "controller": "TNZ",
-    "remove_core": "TNG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 75615,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 77632,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 108420,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 183795,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 267218,
-      "template": 301
-    }
-  }
 }

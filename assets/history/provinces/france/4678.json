@@ -1,64 +1,64 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": "FRA",
-  "vegetables": 149.63,
-  "infra": 5,
-  "naval_base": 3,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 631715,
-      "template": 70
-    }
-  },
-  "economy_building": {
-    "name": "military_academy",
-    "size": 1
-  },
-  "1979.1.1": {
-    "naval_base": 5,
-    "economy_building": {
-      "name": "high_tech",
-      "size": 3
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": "FRA",
+    "vegetables": 149.63,
+    "infra": 5,
+    "naval_base": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 614058,
+            "template": 70
+        }
     },
-    "population_total": {
-      "amount": 822369,
-      "template": 270
-    }
-  },
-  "1985.1.1": {
-    "naval_base": 6,
     "economy_building": {
-      "name": "high_tech",
-      "size": 5
+        "name": "military_academy",
+        "size": 1
+    },
+    "1979.1.1": {
+        "naval_base": 5,
+        "economy_building": {
+            "name": "high_tech",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 822369,
+            "template": 270
+        }
+    },
+    "1985.1.1": {
+        "naval_base": 6,
+        "economy_building": {
+            "name": "high_tech",
+            "size": 5
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 4
+    },
+    "1991.1.1": {
+        "naval_base": 7,
+        "population_total": {
+            "amount": 873095,
+            "template": 370
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 636465,
+            "template": 70
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 641251,
+            "template": 70
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 719240,
+            "template": 170
+        }
     }
-  },
-  "1961.1.1": {
-    "naval_base": 4
-  },
-  "1991.1.1": {
-    "naval_base": 7,
-    "population_total": {
-      "amount": 873095,
-      "template": 370
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 636465,
-      "template": 70
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 641251,
-      "template": 70
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 719240,
-      "template": 170
-    }
-  }
 }

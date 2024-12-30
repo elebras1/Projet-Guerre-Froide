@@ -1,56 +1,56 @@
 {
-  "owner": "BEL",
-  "controller": "BEL",
-  "add_core": [
-    "BEL",
-    "DRC",
-    "KAT"
-  ],
-  "grain": 25.48,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 3376,
-      "template": 2
+    "owner": "BEL",
+    "controller": "BEL",
+    "add_core": [
+        "BEL",
+        "DRC",
+        "KAT"
+    ],
+    "grain": 25.48,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 3376,
+            "template": 2
+        }
+    },
+    "1960.06.30": {
+        "owner": "DRC",
+        "controller": "DRC",
+        "remove_core": "BEL"
+    },
+    "1960.07.11": {
+        "owner": "KAT",
+        "controller": "KAT"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 3449,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 3524,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 4680,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 7593,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 10948,
+            "template": 302
+        }
     }
-  },
-  "1960.06.30": {
-    "owner": "DRC",
-    "controller": "DRC",
-    "remove_core": "BEL"
-  },
-  "1960.07.11": {
-    "owner": "KAT",
-    "controller": "KAT"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 3449,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 3524,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 4680,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 7593,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 10948,
-      "template": 302
-    }
-  }
 }

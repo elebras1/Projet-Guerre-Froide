@@ -1,55 +1,55 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "TUN"
-  ],
-  "fruits": 1.25,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 76400,
-      "template": 3
-    }
-  },
-  "1956.03.20": {
-    "owner": "TUN",
-    "controller": "TUN",
-    "remove_core": "FRA"
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 2
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "TUN"
+    ],
+    "fruits": 1.25,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 76400,
+            "template": 3
+        }
     },
-    "population_total": {
-      "amount": 187842,
-      "template": 303
+    "1956.03.20": {
+        "owner": "TUN",
+        "controller": "TUN",
+        "remove_core": "FRA"
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 187842,
+            "template": 303
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 77768,
+            "template": 3
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 79160,
+            "template": 3
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 98141,
+            "template": 103
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 141007,
+            "template": 203
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 77768,
-      "template": 3
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 79160,
-      "template": 3
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 98141,
-      "template": 103
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 141007,
-      "template": 203
-    }
-  }
 }

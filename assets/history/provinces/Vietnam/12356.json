@@ -1,56 +1,56 @@
 {
-  "owner": "IDC",
-  "controller": "IDC",
-  "add_core": [
-    "IDC",
-    "SVI"
-  ],
-  "fruits": 7.03,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 497629,
-      "template": 28
+    "owner": "IDC",
+    "controller": "IDC",
+    "add_core": [
+        "IDC",
+        "SVI"
+    ],
+    "fruits": 7.03,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 497629,
+            "template": 28
+        }
+    },
+    "1948.1.1.0": {
+        "population_total": {
+            "amount": 507876,
+            "template": 28
+        }
+    },
+    "1949.6.14.0": {
+        "owner": "SVI",
+        "controller": "SVI",
+        "remove_core": "IDC"
+    },
+    "1950.1.1.0": {
+        "population_total": {
+            "amount": 518333,
+            "template": 28
+        }
+    },
+    "1961.12.30.0": {
+        "population_total": {
+            "amount": 678092,
+            "template": 128
+        }
+    },
+    "1976.7.2.0": {
+        "owner": "VIE",
+        "controller": "VIE",
+        "add_core": "VIE"
+    },
+    "1979.1.1.0": {
+        "population_total": {
+            "amount": 973362,
+            "template": 228
+        }
+    },
+    "1991.1.1.0": {
+        "population_total": {
+            "amount": 1256856,
+            "template": 328
+        }
     }
-  },
-  "1948.1.1.0": {
-    "population_total": {
-      "amount": 507876,
-      "template": 28
-    }
-  },
-  "1949.6.14.0": {
-    "owner": "SVI",
-    "controller": "SVI",
-    "remove_core": "IDC"
-  },
-  "1950.1.1.0": {
-    "population_total": {
-      "amount": 518333,
-      "template": 28
-    }
-  },
-  "1961.12.30.0": {
-    "population_total": {
-      "amount": 678092,
-      "template": 128
-    }
-  },
-  "1976.7.2.0": {
-    "owner": "VIE",
-    "controller": "VIE",
-    "add_core": "VIE"
-  },
-  "1979.1.1.0": {
-    "population_total": {
-      "amount": 973362,
-      "template": 228
-    }
-  },
-  "1991.1.1.0": {
-    "population_total": {
-      "amount": 1256856,
-      "template": 328
-    }
-  }
 }

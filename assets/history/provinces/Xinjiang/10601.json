@@ -1,55 +1,55 @@
 {
-  "owner": "CHI",
-  "controller": "REB",
-  "add_core": [
-    "SIK",
-    "CHI",
-    "CHC"
-  ],
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 27191,
-      "template": 6
-    }
-  },
-  "1946.6.01": {
     "owner": "CHI",
-    "controller": "CHI"
-  },
-  "1949.10.01": {
-    "owner": "CHC",
-    "controller": "CHC",
-    "remove_core": "SIK"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 27732,
-      "template": 6
+    "controller": "REB",
+    "add_core": [
+        "SIK",
+        "CHI",
+        "CHC"
+    ],
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 14570,
+            "template": 6
+        }
+    },
+    "1946.6.01": {
+        "owner": "CHI",
+        "controller": "CHI"
+    },
+    "1949.10.01": {
+        "owner": "CHC",
+        "controller": "CHC",
+        "remove_core": "SIK"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 27732,
+            "template": 6
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 28283,
+            "template": 6
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 34696,
+            "template": 106
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 49821,
+            "template": 206
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 59609,
+            "template": 306
+        }
     }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 28283,
-      "template": 6
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 34696,
-      "template": 106
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 49821,
-      "template": 206
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 59609,
-      "template": 306
-    }
-  }
 }

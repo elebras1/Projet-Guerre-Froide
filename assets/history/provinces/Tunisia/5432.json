@@ -1,68 +1,68 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "TUN"
-  ],
-  "fruits": 87.91,
-  "infra": 4,
-  "1946.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 869332,
-      "template": 3
-    },
-    "economy_building": {
-      "name": "light_industry",
-      "size": 5
-    }
-  },
-  "1956.03.20": {
-    "owner": "TUN",
-    "controller": "TUN",
-    "remove_core": "FRA"
-  },
-  "1948.1.1": {
-    "economy_building": [
-      {
-        "name": "light_industry",
-        "size": 6
-      },
-      {
-        "name": "light_industry",
-        "size": 7
-      }
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "TUN"
     ],
-    "population_total": {
-      "amount": 884893,
-      "template": 3
+    "fruits": 87.91,
+    "infra": 4,
+    "1946.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 869332,
+            "template": 3
+        },
+        "economy_building": {
+            "name": "light_industry",
+            "size": 5
+        }
+    },
+    "1956.03.20": {
+        "owner": "TUN",
+        "controller": "TUN",
+        "remove_core": "FRA"
+    },
+    "1948.1.1": {
+        "economy_building": [
+            {
+                "name": "light_industry",
+                "size": 6
+            },
+            {
+                "name": "light_industry",
+                "size": 7
+            }
+        ],
+        "population_total": {
+            "amount": 884893,
+            "template": 3
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 1604474,
+            "template": 203
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 2137395,
+            "template": 303
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 900733,
+            "template": 3
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1116716,
+            "template": 103
+        }
     }
-  },
-  "1979.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 1604474,
-      "template": 203
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 2137395,
-      "template": 303
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 900733,
-      "template": 3
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1116716,
-      "template": 103
-    }
-  }
 }

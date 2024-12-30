@@ -1,49 +1,49 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": "ENG",
-  "grain": 2.19,
-  "infra": 3,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1464,
-      "template": 92
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": "ENG",
+    "grain": 2.19,
+    "infra": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1464,
+            "template": 92
+        }
+    },
+    "1949.3.31": {
+        "owner": "CAN",
+        "controller": "CAN",
+        "add_core": "CAN",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1504,
+            "template": 92
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1545,
+            "template": 92
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 2095,
+            "template": 192
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 2727,
+            "template": 292
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 3155,
+            "template": 392
+        }
     }
-  },
-  "1949.3.31": {
-    "owner": "CAN",
-    "controller": "CAN",
-    "add_core": "CAN",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1504,
-      "template": 92
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1545,
-      "template": 92
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 2095,
-      "template": 192
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 2727,
-      "template": 292
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 3155,
-      "template": 392
-    }
-  }
 }

@@ -1,65 +1,65 @@
 {
-  "owner": "IRQ",
-  "controller": "IRQ",
-  "add_core": "IRQ",
-  "fruits": 29.63,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 190660,
-      "template": 33
-    }
-  },
-  "1953.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 2
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 3
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 6
+    "owner": "IRQ",
+    "controller": "IRQ",
+    "add_core": "IRQ",
+    "fruits": 29.63,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 190660,
+            "template": 33
+        }
     },
-    "population_total": {
-      "amount": 470373,
-      "template": 233
+    "1953.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 2
+        }
+    },
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 3
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 470373,
+            "template": 233
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 7
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 195903,
+            "template": 33
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 201291,
+            "template": 33
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 273583,
+            "template": 133
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 629004,
+            "template": 333
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 7
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 195903,
-      "template": 33
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 201291,
-      "template": 33
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 273583,
-      "template": 133
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 629004,
-      "template": 333
-    }
-  }
 }

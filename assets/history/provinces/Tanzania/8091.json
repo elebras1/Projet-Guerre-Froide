@@ -1,59 +1,59 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "TNZ",
-    "TNG"
-  ],
-  "fruits": 35.37,
-  "infra": 1,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 153473,
-      "template": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "TNZ",
+        "TNG"
+    ],
+    "fruits": 35.37,
+    "infra": 1,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 153473,
+            "template": 1
+        }
+    },
+    "1961.12.09": {
+        "owner": "TNG",
+        "controller": "TNG",
+        "remove_core": "ENG"
+    },
+    "1964.04.26": {
+        "owner": "TNZ",
+        "controller": "TNZ",
+        "remove_core": "TNG"
+    },
+    "1991.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 556829,
+            "template": 301
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 157566,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 161769,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 225925,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 382993,
+            "template": 201
+        }
     }
-  },
-  "1961.12.09": {
-    "owner": "TNG",
-    "controller": "TNG",
-    "remove_core": "ENG"
-  },
-  "1964.04.26": {
-    "owner": "TNZ",
-    "controller": "TNZ",
-    "remove_core": "TNG"
-  },
-  "1991.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 556829,
-      "template": 301
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 157566,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 161769,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 225925,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 382993,
-      "template": 201
-    }
-  }
 }

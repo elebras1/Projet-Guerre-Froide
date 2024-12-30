@@ -1,56 +1,56 @@
 {
-  "owner": "IDC",
-  "controller": "REB",
-  "add_core": [
-    "IDC",
-    "SVI"
-  ],
-  "vegetables": 20,
-  "infra": 3,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1389459,
-      "template": 28
+    "owner": "IDC",
+    "controller": "REB",
+    "add_core": [
+        "IDC",
+        "SVI"
+    ],
+    "vegetables": 20,
+    "infra": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1389459,
+            "template": 28
+        }
+    },
+    "1949.6.14": {
+        "owner": "SVI",
+        "controller": "SVI",
+        "remove_core": "IDC"
+    },
+    "1976.7.2": {
+        "owner": "VIE",
+        "controller": "VIE",
+        "add_core": "VIE"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1418068,
+            "template": 28
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1447266,
+            "template": 28
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1893338,
+            "template": 128
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 2717777,
+            "template": 228
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 3509337,
+            "template": 328
+        }
     }
-  },
-  "1949.6.14": {
-    "owner": "SVI",
-    "controller": "SVI",
-    "remove_core": "IDC"
-  },
-  "1976.7.2": {
-    "owner": "VIE",
-    "controller": "VIE",
-    "add_core": "VIE"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1418068,
-      "template": 28
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1447266,
-      "template": 28
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1893338,
-      "template": 128
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 2717777,
-      "template": 228
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 3509337,
-      "template": 328
-    }
-  }
 }

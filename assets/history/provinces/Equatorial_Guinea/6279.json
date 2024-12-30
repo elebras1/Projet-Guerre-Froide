@@ -1,54 +1,54 @@
 {
-  "owner": "SPA",
-  "controller": "SPA",
-  "add_core": [
-    "SPA",
-    "EQG"
-  ],
-  "fruits": 8.31,
-  "infra": 4,
-  "1946.1.1": {
-    "naval_base": 1,
-    "population_total": {
-      "amount": 39571,
-      "template": 2
+    "owner": "SPA",
+    "controller": "SPA",
+    "add_core": [
+        "SPA",
+        "EQG"
+    ],
+    "fruits": 8.31,
+    "infra": 4,
+    "1946.1.1": {
+        "naval_base": 1,
+        "population_total": {
+            "amount": 39571,
+            "template": 2
+        }
+    },
+    "1968.11.12": {
+        "owner": "EQG",
+        "controller": "EQG",
+        "remove_core": "SPA"
+    },
+    "1979.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 38539,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 69250,
+            "template": 302
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 39986,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 40406,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 46211,
+            "template": 102
+        }
     }
-  },
-  "1968.11.12": {
-    "owner": "EQG",
-    "controller": "EQG",
-    "remove_core": "SPA"
-  },
-  "1979.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 38539,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 69250,
-      "template": 302
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 39986,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 40406,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 46211,
-      "template": 102
-    }
-  }
 }

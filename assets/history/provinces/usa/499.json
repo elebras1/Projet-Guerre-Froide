@@ -1,49 +1,49 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": "USA",
-  "grain": 330.08,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 612928,
-      "template": 93
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": "USA",
+    "grain": 330.08,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 612928,
+            "template": 93
+        }
+    },
+    "1983.1.1": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 9
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 622876,
+            "template": 93
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 632985,
+            "template": 93
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 769924,
+            "template": 193
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 912997,
+            "template": 293
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1026039,
+            "template": 393
+        }
     }
-  },
-  "1983.1.1": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 9
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 622876,
-      "template": 93
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 632985,
-      "template": 93
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 769924,
-      "template": 193
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 912997,
-      "template": 293
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1026039,
-      "template": 393
-    }
-  }
 }

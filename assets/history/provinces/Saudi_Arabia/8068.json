@@ -1,69 +1,69 @@
 {
-  "owner": "SAU",
-  "controller": "SAU",
-  "add_core": "SAU",
-  "fruits": 0.59,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 42623,
-      "template": 40
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 1
-    }
-  },
-  "1962.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 3
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 7
+    "owner": "SAU",
+    "controller": "SAU",
+    "add_core": "SAU",
+    "fruits": 0.59,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 42623,
+            "template": 40
+        }
     },
-    "population_total": {
-      "amount": 132205,
-      "template": 240
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 8
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 9
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 1
+        }
     },
-    "population_total": {
-      "amount": 239103,
-      "template": 340
+    "1962.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 3
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 132205,
+            "template": 240
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 8
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 9
+        },
+        "population_total": {
+            "amount": 239103,
+            "template": 340
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 43684,
+            "template": 40
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 44771,
+            "template": 40
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 61849,
+            "template": 140
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 43684,
-      "template": 40
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 44771,
-      "template": 40
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 61849,
-      "template": 140
-    }
-  }
 }

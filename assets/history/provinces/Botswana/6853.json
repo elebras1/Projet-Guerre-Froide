@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "BOT"
-  ],
-  "vegetables": 0.41,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1242,
-      "template": 4
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "BOT"
+    ],
+    "vegetables": 0.41,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1242,
+            "template": 4
+        }
+    },
+    "1966.09.30": {
+        "owner": "BOT",
+        "controller": "BOT",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1275,
+            "template": 4
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1308,
+            "template": 4
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1743,
+            "template": 104
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 3042,
+            "template": 204
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 4513,
+            "template": 304
+        }
     }
-  },
-  "1966.09.30": {
-    "owner": "BOT",
-    "controller": "BOT",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1275,
-      "template": 4
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1308,
-      "template": 4
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1743,
-      "template": 104
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 3042,
-      "template": 204
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 4513,
-      "template": 304
-    }
-  }
 }

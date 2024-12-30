@@ -1,43 +1,43 @@
 {
-  "owner": "BOL",
-  "controller": "BOL",
-  "add_core": "BOL",
-  "grain": 6.73,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 20148,
-      "template": 80
+    "owner": "BOL",
+    "controller": "BOL",
+    "add_core": "BOL",
+    "grain": 6.73,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 20148,
+            "template": 80
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 20563,
+            "template": 80
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 20986,
+            "template": 80
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 27125,
+            "template": 180
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 40475,
+            "template": 280
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 52695,
+            "template": 380
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 20563,
-      "template": 80
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 20986,
-      "template": 80
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 27125,
-      "template": 180
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 40475,
-      "template": 280
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 52695,
-      "template": 380
-    }
-  }
 }

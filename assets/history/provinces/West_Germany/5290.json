@@ -1,88 +1,88 @@
 {
-  "add_core": [
-    "FRG",
-    "DDR"
-  ],
-  "owner": "ENG",
-  "controller": "ENG",
-  "grain": 222.16,
-  "infra": 3,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 521023,
-      "template": 71
+    "add_core": [
+        "FRG",
+        "DDR"
+    ],
+    "owner": "ENG",
+    "controller": "ENG",
+    "grain": 222.16,
+    "infra": 3,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 521023,
+            "template": 71
+        }
+    },
+    "1949.05.23": {
+        "owner": "FRG",
+        "controller": "FRG"
+    },
+    "1990.10.3": {
+        "owner": "GER",
+        "controller": "GER",
+        "remove_core": [
+            "DDR",
+            "FRG"
+        ]
+    },
+    "1968.10.1": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 5
+        }
+    },
+    "1975.11.11": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 7
+        }
+    },
+    "1977.2.9": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 8
+        }
+    },
+    "1986.12.22": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 9
+        }
+    },
+    "1988.6.20": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 10
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 544777,
+            "template": 71
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 563805,
+            "template": 71
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 642320,
+            "template": 171
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 692990,
+            "template": 271
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 722707,
+            "template": 371
+        }
     }
-  },
-  "1949.05.23": {
-    "owner": "FRG",
-    "controller": "FRG"
-  },
-  "1990.10.3": {
-    "owner": "GER",
-    "controller": "GER",
-    "remove_core": [
-      "DDR",
-      "FRG"
-    ]
-  },
-  "1968.10.1": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 5
-    }
-  },
-  "1975.11.11": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 7
-    }
-  },
-  "1977.2.9": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 8
-    }
-  },
-  "1986.12.22": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 9
-    }
-  },
-  "1988.6.20": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 10
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 544777,
-      "template": 71
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 563805,
-      "template": 71
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 642320,
-      "template": 171
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 692990,
-      "template": 271
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 722707,
-      "template": 371
-    }
-  }
 }

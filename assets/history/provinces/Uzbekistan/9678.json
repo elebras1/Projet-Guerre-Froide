@@ -1,56 +1,56 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "UZB"
-  ],
-  "vegetables": 10.54,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 66759,
-      "template": 11
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 5
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 6
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "UZB"
+    ],
+    "vegetables": 10.54,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 66759,
+            "template": 11
+        }
     },
-    "population_total": {
-      "amount": 234613,
-      "template": 311
+    "1985.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 5
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 234613,
+            "template": 311
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 68615,
+            "template": 11
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 70522,
+            "template": 11
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 102770,
+            "template": 111
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 173608,
+            "template": 211
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 68615,
-      "template": 11
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 70522,
-      "template": 11
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 102770,
-      "template": 111
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 173608,
-      "template": 211
-    }
-  }
 }

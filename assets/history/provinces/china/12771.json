@@ -1,56 +1,56 @@
 {
-  "owner": "CHI",
-  "controller": "CHI",
-  "add_core": [
-    "CHI",
-    "CHC"
-  ],
-  "vegetables": 554.31,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 4995986,
-      "template": 6
+    "owner": "CHI",
+    "controller": "CHI",
+    "add_core": [
+        "CHI",
+        "CHC"
+    ],
+    "vegetables": 554.31,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 4995986,
+            "template": 6
+        }
+    },
+    "1949.10.1.0": {
+        "owner": "CHC",
+        "controller": "CHC"
+    },
+    "1970.1.1": {
+        "economy_building": {
+            "name": "satellites_factory",
+            "size": 1
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 5095356,
+            "template": 6
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 5196702,
+            "template": 6
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 6374890,
+            "template": 106
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 9153947,
+            "template": 206
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 10952510,
+            "template": 306
+        }
     }
-  },
-  "1949.10.1.0": {
-    "owner": "CHC",
-    "controller": "CHC"
-  },
-  "1970.1.1": {
-    "economy_building": {
-      "name": "satellites_factory",
-      "size": 1
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 5095356,
-      "template": 6
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 5196702,
-      "template": 6
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 6374890,
-      "template": 106
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 9153947,
-      "template": 206
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 10952510,
-      "template": 306
-    }
-  }
 }

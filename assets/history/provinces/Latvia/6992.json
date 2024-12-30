@@ -1,55 +1,55 @@
 {
-  "add_core": [
-    "LAT",
-    "SOV"
-  ],
-  "owner": "SOV",
-  "controller": "SOV",
-  "wood": 2.8,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 123768,
-      "template": 56
+    "add_core": [
+        "LAT",
+        "SOV"
+    ],
+    "owner": "SOV",
+    "controller": "SOV",
+    "wood": 2.8,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 123768,
+            "template": 56
+        },
+        "economy_building": {
+            "name": "aviation_industry",
+            "size": 2
+        }
     },
-    "economy_building": {
-      "name": "aviation_industry",
-      "size": 2
+    "1991.08.21": {
+        "owner": "LAT",
+        "controller": "LAT",
+        "remove_core": "SOV"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 124593,
+            "template": 56
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 125422,
+            "template": 56
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 140582,
+            "template": 156
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 161025,
+            "template": 256
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 170246,
+            "template": 356
+        }
     }
-  },
-  "1991.08.21": {
-    "owner": "LAT",
-    "controller": "LAT",
-    "remove_core": "SOV"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 124593,
-      "template": 56
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 125422,
-      "template": 56
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 140582,
-      "template": 156
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 161025,
-      "template": 256
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 170246,
-      "template": 356
-    }
-  }
 }

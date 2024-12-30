@@ -1,51 +1,51 @@
 {
-  "owner": "SAF",
-  "controller": "SAF",
-  "add_core": [
-    "SAF",
-    "NAM"
-  ],
-  "meat": 1.49,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 12238,
-      "template": 4
+    "owner": "SAF",
+    "controller": "SAF",
+    "add_core": [
+        "SAF",
+        "NAM"
+    ],
+    "meat": 1.49,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 12238,
+            "template": 4
+        }
+    },
+    "1975.11.11": {
+        "owner": "NAM",
+        "controller": "NAM",
+        "remove_core": "SAF"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 12488,
+            "template": 4
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 12744,
+            "template": 4
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 16614,
+            "template": 104
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 26034,
+            "template": 204
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 38478,
+            "template": 304
+        }
     }
-  },
-  "1975.11.11": {
-    "owner": "NAM",
-    "controller": "NAM",
-    "remove_core": "SAF"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 12488,
-      "template": 4
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 12744,
-      "template": 4
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 16614,
-      "template": 104
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 26034,
-      "template": 204
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 38478,
-      "template": 304
-    }
-  }
 }

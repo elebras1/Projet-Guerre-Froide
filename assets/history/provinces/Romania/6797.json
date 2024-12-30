@@ -1,63 +1,63 @@
 {
-  "owner": "ROM",
-  "controller": "ROM",
-  "add_core": "ROM",
-  "coal": 14,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 330131,
-      "template": 50
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 1
+    "owner": "ROM",
+    "controller": "ROM",
+    "add_core": "ROM",
+    "coal": 14,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 330131,
+            "template": 50
+        }
     },
-    "population_total": {
-      "amount": 339379,
-      "template": 50
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 2
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 4
+    "1950.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 339379,
+            "template": 50
+        }
     },
-    "population_total": {
-      "amount": 458574,
-      "template": 250
+    "1961.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 2
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 458574,
+            "template": 250
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 5
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 334723,
+            "template": 50
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 387847,
+            "template": 150
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 482083,
+            "template": 350
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 5
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 334723,
-      "template": 50
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 387847,
-      "template": 150
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 482083,
-      "template": 350
-    }
-  }
 }

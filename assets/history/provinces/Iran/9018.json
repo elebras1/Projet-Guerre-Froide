@@ -1,52 +1,52 @@
 {
-  "owner": "PER",
-  "controller": "PER",
-  "add_core": "PER",
-  "renewable_energy": 200,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 320574,
-      "template": 16
+    "owner": "PER",
+    "controller": "PER",
+    "add_core": "PER",
+    "renewable_energy": 200,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 320574,
+            "template": 16
+        }
+    },
+    "2009.1.1": {
+        "economy_building": {
+            "name": "centrifuges",
+            "size": 2
+        }
+    },
+    "1976.1.1": {
+        "renewable_energy": 200
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 327608,
+            "template": 16
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 334795,
+            "template": 16
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 445336,
+            "template": 116
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 715902,
+            "template": 216
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1077998,
+            "template": 316
+        }
     }
-  },
-  "2009.1.1": {
-    "economy_building": {
-      "name": "centrifuges",
-      "size": 2
-    }
-  },
-  "1976.1.1": {
-    "renewable_energy": 200
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 327608,
-      "template": 16
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 334795,
-      "template": 16
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 445336,
-      "template": 116
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 715902,
-      "template": 216
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1077998,
-      "template": 316
-    }
-  }
 }

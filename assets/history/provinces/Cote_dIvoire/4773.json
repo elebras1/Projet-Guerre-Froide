@@ -1,51 +1,51 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "CDI"
-  ],
-  "wood": 0.5,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 71215,
-      "template": 5
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "CDI"
+    ],
+    "wood": 0.5,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 71215,
+            "template": 5
+        }
+    },
+    "1960.08.07": {
+        "owner": "CDI",
+        "controller": "CDI",
+        "remove_core": "FRA"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 73426,
+            "template": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 75705,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 113031,
+            "template": 105
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 233954,
+            "template": 205
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 372630,
+            "template": 305
+        }
     }
-  },
-  "1960.08.07": {
-    "owner": "CDI",
-    "controller": "CDI",
-    "remove_core": "FRA"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 73426,
-      "template": 5
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 75705,
-      "template": 5
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 113031,
-      "template": 105
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 233954,
-      "template": 205
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 372630,
-      "template": 305
-    }
-  }
 }

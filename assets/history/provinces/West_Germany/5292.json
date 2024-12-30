@@ -1,87 +1,87 @@
 {
-  "add_core": [
-    "FRG",
-    "DDR"
-  ],
-  "owner": "ENG",
-  "controller": "ENG",
-  "coal": 31,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1505211,
-      "template": 71
+    "add_core": [
+        "FRG",
+        "DDR"
+    ],
+    "owner": "ENG",
+    "controller": "ENG",
+    "coal": 31,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1505211,
+            "template": 71
+        },
+        "air_base": 5,
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 3
+        }
     },
-    "air_base": 5,
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 3
-    }
-  },
-  "1949.5.23.0": {
-    "owner": "FRG",
-    "controller": "FRG"
-  },
-  "1990.10.3": {
-    "owner": "GER",
-    "controller": "GER",
-    "remove_core": [
-      "DDR",
-      "FRG"
-    ]
-  },
-  "1948.1.1": {
-    "air_base": 7,
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 4
+    "1949.5.23.0": {
+        "owner": "FRG",
+        "controller": "FRG"
     },
-    "population_total": {
-      "amount": 1573835,
-      "template": 71
-    }
-  },
-  "1950.1.1": {
-    "air_base": 9,
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 4
+    "1990.10.3": {
+        "owner": "GER",
+        "controller": "GER",
+        "remove_core": [
+            "DDR",
+            "FRG"
+        ]
     },
-    "population_total": {
-      "amount": 1628806,
-      "template": 71
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 5
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 8
+    "1948.1.1": {
+        "air_base": 7,
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 1573835,
+            "template": 71
+        }
     },
-    "population_total": {
-      "amount": 2002015,
-      "template": 271
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 7
+    "1950.1.1": {
+        "air_base": 9,
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 4
+        },
+        "population_total": {
+            "amount": 1628806,
+            "template": 71
+        }
     },
-    "population_total": {
-      "amount": 2087867,
-      "template": 371
+    "1961.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 5
+        }
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 8
+        },
+        "population_total": {
+            "amount": 2002015,
+            "template": 271
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 7
+        },
+        "population_total": {
+            "amount": 2087867,
+            "template": 371
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1855632,
+            "template": 171
+        }
     }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1855632,
-      "template": 171
-    }
-  }
 }

@@ -1,50 +1,50 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "KOR",
-    "PRK"
-  ],
-  "vegetables": 10,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 174512,
-      "template": 10
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "KOR",
+        "PRK"
+    ],
+    "vegetables": 10,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 174512,
+            "template": 10
+        }
+    },
+    "1948.11.11": {
+        "owner": "PRK",
+        "controller": "PRK"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 177898,
+            "template": 10
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 181349,
+            "template": 10
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 250113,
+            "template": 110
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 348307,
+            "template": 210
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 409422,
+            "template": 310
+        }
     }
-  },
-  "1948.11.11": {
-    "owner": "PRK",
-    "controller": "PRK"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 177898,
-      "template": 10
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 181349,
-      "template": 10
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 250113,
-      "template": 110
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 348307,
-      "template": 210
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 409422,
-      "template": 310
-    }
-  }
 }

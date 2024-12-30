@@ -1,53 +1,53 @@
 {
-  "owner": "BRA",
-  "controller": "BRA",
-  "add_core": "BRA",
-  "oil": 202,
-  "infra": 6,
-  "economy_building": {
-    "name": "financial_district",
-    "size": 1
-  },
-  "1946.1.1": {
-    "population_total": {
-      "amount": 149505,
-      "template": 77
-    }
-  },
-  "1982.4.1": {
+    "owner": "BRA",
+    "controller": "BRA",
+    "add_core": "BRA",
+    "oil": 202,
+    "infra": 6,
     "economy_building": {
-      "name": "nuclear_plant",
-      "size": 6
+        "name": "financial_district",
+        "size": 1
+    },
+    "1946.1.1": {
+        "population_total": {
+            "amount": 140648,
+            "template": 77
+        }
+    },
+    "1982.4.1": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 6
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 154070,
+            "template": 77
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 158776,
+            "template": 77
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 227332,
+            "template": 177
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 349752,
+            "template": 277
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 447566,
+            "template": 381
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 154070,
-      "template": 77
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 158776,
-      "template": 77
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 227332,
-      "template": 177
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 349752,
-      "template": 277
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 447566,
-      "template": 381
-    }
-  }
 }

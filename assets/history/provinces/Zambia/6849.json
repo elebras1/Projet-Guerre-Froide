@@ -1,57 +1,57 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "ZMB",
-    "RHO"
-  ],
-  "vegetables": 4.63,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 39999,
-      "template": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "ZMB",
+        "RHO"
+    ],
+    "vegetables": 4.63,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 39999,
+            "template": 1
+        }
+    },
+    "1953.8.1": {
+        "owner": "RHO",
+        "controller": "RHO",
+        "remove_core": "ENG"
+    },
+    "1964.10.24": {
+        "owner": "ZMB",
+        "controller": "ZMB",
+        "remove_core": "RHO"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 41004,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 42033,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 57999,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 100383,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 144902,
+            "template": 301
+        }
     }
-  },
-  "1953.8.1": {
-    "owner": "RHO",
-    "controller": "RHO",
-    "remove_core": "ENG"
-  },
-  "1964.10.24": {
-    "owner": "ZMB",
-    "controller": "ZMB",
-    "remove_core": "RHO"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 41004,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 42033,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 57999,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 100383,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 144902,
-      "template": 301
-    }
-  }
 }

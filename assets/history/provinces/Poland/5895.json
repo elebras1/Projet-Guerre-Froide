@@ -1,49 +1,49 @@
 {
-  "owner": "POL",
-  "controller": "POL",
-  "add_core": "POL",
-  "wood": 1.4,
-  "infra": 4,
-  "1946.1.1": {
-    "air_base": 4,
-    "population_total": {
-      "amount": 141350,
-      "template": 49
+    "owner": "POL",
+    "controller": "POL",
+    "add_core": "POL",
+    "wood": 1.4,
+    "infra": 4,
+    "1946.1.1": {
+        "air_base": 4,
+        "population_total": {
+            "amount": 141350,
+            "template": 49
+        }
+    },
+    "1948.1.1": {
+        "air_base": 5,
+        "population_total": {
+            "amount": 144018,
+            "template": 49
+        }
+    },
+    "1950.1.1": {
+        "air_base": 6,
+        "population_total": {
+            "amount": 146738,
+            "template": 49
+        }
+    },
+    "1961.1.1": {
+        "air_base": 8
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 176576,
+            "template": 149
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 208318,
+            "template": 249
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 225572,
+            "template": 349
+        }
     }
-  },
-  "1948.1.1": {
-    "air_base": 5,
-    "population_total": {
-      "amount": 144018,
-      "template": 49
-    }
-  },
-  "1950.1.1": {
-    "air_base": 6,
-    "population_total": {
-      "amount": 146738,
-      "template": 49
-    }
-  },
-  "1961.1.1": {
-    "air_base": 8
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 176576,
-      "template": 149
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 208318,
-      "template": 249
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 225572,
-      "template": 349
-    }
-  }
 }

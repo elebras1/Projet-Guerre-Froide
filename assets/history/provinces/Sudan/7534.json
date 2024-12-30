@@ -1,55 +1,55 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "SUD"
-  ],
-  "oil": 83,
-  "infra": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 67135,
-      "template": 3
-    }
-  },
-  "1956.01.01": {
-    "owner": "SUD",
-    "controller": "SUD",
-    "remove_core": "ENG"
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 3
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "SUD"
+    ],
+    "oil": 83,
+    "infra": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 67135,
+            "template": 3
+        }
     },
-    "population_total": {
-      "amount": 148328,
-      "template": 203
+    "1956.01.01": {
+        "owner": "SUD",
+        "controller": "SUD",
+        "remove_core": "ENG"
+    },
+    "1979.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 148328,
+            "template": 203
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 68634,
+            "template": 3
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 70165,
+            "template": 3
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 92554,
+            "template": 103
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 207365,
+            "template": 303
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 68634,
-      "template": 3
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 70165,
-      "template": 3
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 92554,
-      "template": 103
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 207365,
-      "template": 303
-    }
-  }
 }

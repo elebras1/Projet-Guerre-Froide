@@ -1,46 +1,46 @@
 {
-  "owner": "ETH",
-  "controller": "ETH",
-  "add_core": [
-    "ETH",
-    "SOM"
-  ],
-  "grain": 3.95,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 291440,
-      "template": 1
+    "owner": "ETH",
+    "controller": "ETH",
+    "add_core": [
+        "ETH",
+        "SOM"
+    ],
+    "grain": 3.95,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 291440,
+            "template": 1
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 297053,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 302774,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 388374,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 571153,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 821225,
+            "template": 301
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 297053,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 302774,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 388374,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 571153,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 821225,
-      "template": 301
-    }
-  }
 }

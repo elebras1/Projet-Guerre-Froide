@@ -1,51 +1,51 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "GEO"
-  ],
-  "precious_metals": 2,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 347655,
-      "template": 30
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "GEO"
+    ],
+    "precious_metals": 2,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 347655,
+            "template": 30
+        }
+    },
+    "1991.4.9": {
+        "owner": "GEO",
+        "controller": "GEO",
+        "remove_core": "SOV"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 353558,
+            "template": 30
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 359562,
+            "template": 30
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 437546,
+            "template": 130
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 513497,
+            "template": 230
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 552393,
+            "template": 330
+        }
     }
-  },
-  "1991.4.9": {
-    "owner": "GEO",
-    "controller": "GEO",
-    "remove_core": "SOV"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 353558,
-      "template": 30
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 359562,
-      "template": 30
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 437546,
-      "template": 130
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 513497,
-      "template": 230
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 552393,
-      "template": 330
-    }
-  }
 }

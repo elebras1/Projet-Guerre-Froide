@@ -1,56 +1,56 @@
 {
-  "owner": "BEL",
-  "controller": "BEL",
-  "add_core": [
-    "BEL",
-    "DRC",
-    "KON"
-  ],
-  "fruits": 1.93,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 4876,
-      "template": 2
+    "owner": "BEL",
+    "controller": "BEL",
+    "add_core": [
+        "BEL",
+        "DRC",
+        "KON"
+    ],
+    "fruits": 1.93,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 4876,
+            "template": 2
+        }
+    },
+    "1960.06.30": {
+        "owner": "DRC",
+        "controller": "DRC",
+        "remove_core": "BEL"
+    },
+    "1960.09.14": {
+        "owner": "KON",
+        "controller": "KON"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 4982,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 5090,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 6760,
+            "template": 102
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 10968,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 15814,
+            "template": 302
+        }
     }
-  },
-  "1960.06.30": {
-    "owner": "DRC",
-    "controller": "DRC",
-    "remove_core": "BEL"
-  },
-  "1960.09.14": {
-    "owner": "KON",
-    "controller": "KON"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 4982,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 5090,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 6760,
-      "template": 102
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 10968,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 15814,
-      "template": 302
-    }
-  }
 }

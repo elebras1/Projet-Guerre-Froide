@@ -1,79 +1,79 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "IND"
-  ],
-  "vegetables": 178.61,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1382235,
-      "template": 15
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "IND"
+    ],
+    "vegetables": 178.61,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1347582,
+            "template": 15
+        },
+        "economy_building": {
+            "name": "powerplant",
+            "size": 2
+        }
     },
-    "economy_building": {
-      "name": "powerplant",
-      "size": 2
-    }
-  },
-  "1947.08.15": {
-    "owner": "IND",
-    "controller": "IND",
-    "remove_core": "ENG"
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 3
+    "1947.08.15": {
+        "owner": "IND",
+        "controller": "IND",
+        "remove_core": "ENG"
     },
-    "population_total": {
-      "amount": 1431740,
-      "template": 15
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 4
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 6
+    "1950.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 1431740,
+            "template": 15
+        }
     },
-    "population_total": {
-      "amount": 2633021,
-      "template": 215
-    }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 8
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 9
+    "1961.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 4
+        }
     },
-    "population_total": {
-      "amount": 3434076,
-      "template": 315
+    "1979.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 2633021,
+            "template": 215
+        }
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 8
+        }
+    },
+    "1991.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 9
+        },
+        "population_total": {
+            "amount": 3434076,
+            "template": 315
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1406770,
+            "template": 15
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1795514,
+            "template": 115
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1406770,
-      "template": 15
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1795514,
-      "template": 115
-    }
-  }
 }

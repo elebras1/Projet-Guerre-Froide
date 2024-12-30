@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "SIE"
-  ],
-  "grain": 15.58,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 196627,
-      "template": 5
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "SIE"
+    ],
+    "grain": 15.58,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 196627,
+            "template": 5
+        }
+    },
+    "1961.04.17": {
+        "owner": "SIE",
+        "controller": "SIE",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 199309,
+            "template": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 202027,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 240669,
+            "template": 105
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 329712,
+            "template": 205
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 425848,
+            "template": 305
+        }
     }
-  },
-  "1961.04.17": {
-    "owner": "SIE",
-    "controller": "SIE",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 199309,
-      "template": 5
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 202027,
-      "template": 5
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 240669,
-      "template": 105
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 329712,
-      "template": 205
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 425848,
-      "template": 305
-    }
-  }
 }

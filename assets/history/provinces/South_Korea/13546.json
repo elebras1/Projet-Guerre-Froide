@@ -1,56 +1,56 @@
 {
-  "owner": "USA",
-  "controller": "USA",
-  "add_core": [
-    "PRK",
-    "KOR"
-  ],
-  "wood": 1,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 4595653,
-      "template": 10
+    "owner": "USA",
+    "controller": "USA",
+    "add_core": [
+        "PRK",
+        "KOR"
+    ],
+    "wood": 1,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 4595653,
+            "template": 10
+        }
+    },
+    "1946.5.1": {
+        "economy_building": {
+            "name": "military_academy",
+            "size": 1
+        }
+    },
+    "1948.8.1": {
+        "owner": "KOR",
+        "controller": "KOR"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 4684809,
+            "template": 10
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 4775694,
+            "template": 10
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 6586536,
+            "template": 110
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 9172397,
+            "template": 210
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 10781835,
+            "template": 310
+        }
     }
-  },
-  "1946.5.1": {
-    "economy_building": {
-      "name": "military_academy",
-      "size": 1
-    }
-  },
-  "1948.8.1": {
-    "owner": "KOR",
-    "controller": "KOR"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 4684809,
-      "template": 10
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 4775694,
-      "template": 10
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 6586536,
-      "template": 110
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 9172397,
-      "template": 210
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 10781835,
-      "template": 310
-    }
-  }
 }

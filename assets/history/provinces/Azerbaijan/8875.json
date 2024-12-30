@@ -1,72 +1,72 @@
 {
-  "owner": "SOV",
-  "controller": "SOV",
-  "add_core": [
-    "SOV",
-    "AZB"
-  ],
-  "oil": 51,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 190417,
-      "template": 30
+    "owner": "SOV",
+    "controller": "SOV",
+    "add_core": [
+        "SOV",
+        "AZB"
+    ],
+    "oil": 51,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 190417,
+            "template": 30
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 1
+        }
     },
-    "economy_building": {
-      "name": "military_goods",
-      "size": 1
-    }
-  },
-  "1948.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 1
+    "1948.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 195690,
+            "template": 30
+        }
     },
-    "population_total": {
-      "amount": 195690,
-      "template": 30
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 1
+    "1950.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 201108,
+            "template": 30
+        }
     },
-    "population_total": {
-      "amount": 201108,
-      "template": 30
-    }
-  },
-  "1961.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 1
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 1
+    "1961.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 1
+        }
     },
-    "population_total": {
-      "amount": 421168,
-      "template": 230
-    }
-  },
-  "1991.1.1": {
-    "economy_building": {
-      "name": "military_goods",
-      "size": 1
+    "1979.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 421168,
+            "template": 230
+        }
     },
-    "population_total": {
-      "amount": 508852,
-      "template": 330
+    "1991.1.1": {
+        "economy_building": {
+            "name": "military_goods",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 508852,
+            "template": 330
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 289121,
+            "template": 130
+        }
     }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 289121,
-      "template": 130
-    }
-  }
 }

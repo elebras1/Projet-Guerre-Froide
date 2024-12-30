@@ -1,50 +1,50 @@
 {
-  "owner": "PRU",
-  "controller": "PRU",
-  "add_core": "PRU",
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 20590,
-      "template": 88
+    "owner": "PRU",
+    "controller": "PRU",
+    "add_core": "PRU",
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 20590,
+            "template": 88
+        },
+        "economy_building": {
+            "name": "refinery",
+            "size": 1
+        }
     },
-    "economy_building": {
-      "name": "refinery",
-      "size": 1
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 6
+    "1979.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 6
+        },
+        "population_total": {
+            "amount": 47810,
+            "template": 288
+        }
     },
-    "population_total": {
-      "amount": 47810,
-      "template": 288
+    "1948.1.1": {
+        "population_total": {
+            "amount": 21115,
+            "template": 88
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 21653,
+            "template": 88
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 29832,
+            "template": 188
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 62759,
+            "template": 388
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 21115,
-      "template": 88
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 21653,
-      "template": 88
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 29832,
-      "template": 188
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 62759,
-      "template": 388
-    }
-  }
 }

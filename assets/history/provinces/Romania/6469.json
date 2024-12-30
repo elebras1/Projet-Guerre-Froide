@@ -1,57 +1,57 @@
 {
-  "owner": "ROM",
-  "controller": "ROM",
-  "add_core": "ROM",
-  "vegetables": 250,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 637003,
-      "template": 50
+    "owner": "ROM",
+    "controller": "ROM",
+    "add_core": "ROM",
+    "vegetables": 250,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 637003,
+            "template": 50
+        },
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 1
+        }
     },
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 1
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 5
+    "1979.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 5
+        },
+        "population_total": {
+            "amount": 884841,
+            "template": 250
+        }
     },
-    "population_total": {
-      "amount": 884841,
-      "template": 250
+    "1985.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 6
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 645863,
+            "template": 50
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 654847,
+            "template": 50
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 748370,
+            "template": 150
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 930202,
+            "template": 350
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 6
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 645863,
-      "template": 50
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 654847,
-      "template": 50
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 748370,
-      "template": 150
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 930202,
-      "template": 350
-    }
-  }
 }

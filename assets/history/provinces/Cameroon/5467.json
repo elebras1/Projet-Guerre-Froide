@@ -1,60 +1,60 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "CAM"
-  ],
-  "oil": 31,
-  "infra": 4,
-  "naval_base": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 394693,
-      "template": 2
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "CAM"
+    ],
+    "oil": 31,
+    "infra": 4,
+    "naval_base": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 394693,
+            "template": 2
+        }
+    },
+    "1960.01.01": {
+        "owner": "CAM",
+        "controller": "CAM",
+        "remove_core": "FRA"
+    },
+    "1985.1.1": {
+        "economy_building": {
+            "name": "refinery",
+            "size": 5
+        }
+    },
+    "1979.1.1": {
+        "naval_base": 3,
+        "population_total": {
+            "amount": 810634,
+            "template": 202
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 1148695,
+            "template": 302
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 402014,
+            "template": 2
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 409472,
+            "template": 2
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 517762,
+            "template": 102
+        }
     }
-  },
-  "1960.01.01": {
-    "owner": "CAM",
-    "controller": "CAM",
-    "remove_core": "FRA"
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "refinery",
-      "size": 5
-    }
-  },
-  "1979.1.1": {
-    "naval_base": 3,
-    "population_total": {
-      "amount": 810634,
-      "template": 202
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 1148695,
-      "template": 302
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 402014,
-      "template": 2
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 409472,
-      "template": 2
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 517762,
-      "template": 102
-    }
-  }
 }

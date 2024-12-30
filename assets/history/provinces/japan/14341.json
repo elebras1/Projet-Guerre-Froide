@@ -1,43 +1,43 @@
 {
-  "owner": "JAP",
-  "controller": "JAP",
-  "add_core": "JAP",
-  "grain": 132.65,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 109025,
-      "template": 8
+    "owner": "JAP",
+    "controller": "JAP",
+    "add_core": "JAP",
+    "grain": 132.65,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 109025,
+            "template": 8
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 110608,
+            "template": 8
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 112214,
+            "template": 8
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 128683,
+            "template": 108
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 156985,
+            "template": 208
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 167507,
+            "template": 308
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 110608,
-      "template": 8
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 112214,
-      "template": 8
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 128683,
-      "template": 108
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 156985,
-      "template": 208
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 167507,
-      "template": 308
-    }
-  }
 }

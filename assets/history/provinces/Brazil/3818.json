@@ -1,51 +1,51 @@
 {
-  "owner": "BRA",
-  "controller": "BRA",
-  "add_core": "BRA",
-  "grain": 126.68,
-  "infra": 6,
-  "1946.1.1": {
-    "air_base": 3,
-    "population_total": {
-      "amount": 428501,
-      "template": 77
+    "owner": "BRA",
+    "controller": "BRA",
+    "add_core": "BRA",
+    "grain": 126.68,
+    "infra": 6,
+    "1946.1.1": {
+        "air_base": 3,
+        "population_total": {
+            "amount": 403116,
+            "template": 77
+        }
+    },
+    "1961.1.1": {
+        "air_base": 4
+    },
+    "1979.1.1": {
+        "air_base": 5,
+        "population_total": {
+            "amount": 1002440,
+            "template": 277
+        }
+    },
+    "1985.1.1": {
+        "air_base": 6
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 441588,
+            "template": 77
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 455074,
+            "template": 77
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 651565,
+            "template": 177
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1282787,
+            "template": 381
+        }
     }
-  },
-  "1961.1.1": {
-    "air_base": 4
-  },
-  "1979.1.1": {
-    "air_base": 5,
-    "population_total": {
-      "amount": 1002440,
-      "template": 277
-    }
-  },
-  "1985.1.1": {
-    "air_base": 6
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 441588,
-      "template": 77
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 455074,
-      "template": 77
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 651565,
-      "template": 177
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1282787,
-      "template": 381
-    }
-  }
 }

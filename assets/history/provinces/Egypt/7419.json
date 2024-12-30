@@ -1,51 +1,51 @@
 {
-  "owner": "EGY",
-  "controller": "EGY",
-  "add_core": "EGY",
-  "grain": 1476.1,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 6495276,
-      "template": 3
+    "owner": "EGY",
+    "controller": "EGY",
+    "add_core": "EGY",
+    "grain": 1476.1,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 6495276,
+            "template": 3
+        },
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 1
+        }
     },
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 1
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "naval_yards",
-      "size": 2
+    "1979.1.1": {
+        "economy_building": {
+            "name": "naval_yards",
+            "size": 2
+        },
+        "population_total": {
+            "amount": 13942025,
+            "template": 203
+        }
     },
-    "population_total": {
-      "amount": 13942025,
-      "template": 203
+    "1948.1.1": {
+        "population_total": {
+            "amount": 6660450,
+            "template": 3
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 6829826,
+            "template": 3
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 9336063,
+            "template": 103
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 18397521,
+            "template": 303
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 6660450,
-      "template": 3
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 6829826,
-      "template": 3
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 9336063,
-      "template": 103
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 18397521,
-      "template": 303
-    }
-  }
 }

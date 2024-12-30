@@ -1,56 +1,56 @@
 {
-  "owner": "CGX",
-  "controller": "CGX",
-  "add_core": [
-    "CGX",
-    "CHI",
-    "CHC"
-  ],
-  "grain": 73.34,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 755414,
-      "template": 6
+    "owner": "CGX",
+    "controller": "CGX",
+    "add_core": [
+        "CGX",
+        "CHI",
+        "CHC"
+    ],
+    "grain": 73.34,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 552717,
+            "template": 6
+        },
+        "economy_building": {
+            "name": "military_goods",
+            "size": 5
+        }
     },
-    "economy_building": {
-      "name": "military_goods",
-      "size": 5
+    "1949.10.01": {
+        "owner": "CHC",
+        "controller": "CHC",
+        "remove_core": "CGX"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 770439,
+            "template": 6
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 785763,
+            "template": 6
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 963910,
+            "template": 106
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1384115,
+            "template": 206
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1656065,
+            "template": 306
+        }
     }
-  },
-  "1949.10.01": {
-    "owner": "CHC",
-    "controller": "CHC",
-    "remove_core": "CGX"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 770439,
-      "template": 6
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 785763,
-      "template": 6
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 963910,
-      "template": 106
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1384115,
-      "template": 206
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1656065,
-      "template": 306
-    }
-  }
 }

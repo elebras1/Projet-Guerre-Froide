@@ -1,49 +1,49 @@
 {
-  "owner": "SPA",
-  "controller": "SPA",
-  "add_core": "SPA",
-  "meat": 35.39,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 165109,
-      "template": 67
+    "owner": "SPA",
+    "controller": "SPA",
+    "add_core": "SPA",
+    "meat": 35.39,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 165109,
+            "template": 67
+        }
+    },
+    "1984.7.1": {
+        "economy_building": {
+            "name": "nuclear_plant",
+            "size": 8
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 166288,
+            "template": 67
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 167476,
+            "template": 67
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 185363,
+            "template": 167
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 221928,
+            "template": 267
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 232566,
+            "template": 367
+        }
     }
-  },
-  "1984.7.1": {
-    "economy_building": {
-      "name": "nuclear_plant",
-      "size": 8
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 166288,
-      "template": 67
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 167476,
-      "template": 67
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 185363,
-      "template": 167
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 221928,
-      "template": 267
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 232566,
-      "template": 367
-    }
-  }
 }

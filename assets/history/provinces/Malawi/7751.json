@@ -1,57 +1,57 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "MLW",
-    "RHO"
-  ],
-  "vegetables": 16.87,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 218183,
-      "template": 1
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "MLW",
+        "RHO"
+    ],
+    "vegetables": 16.87,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 218183,
+            "template": 1
+        }
+    },
+    "1953.8.1": {
+        "owner": "RHO",
+        "controller": "RHO",
+        "remove_core": "ENG"
+    },
+    "1964.07.06": {
+        "owner": "MLW",
+        "controller": "MLW",
+        "remove_core": "RHO"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 222307,
+            "template": 1
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 226509,
+            "template": 1
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 290460,
+            "template": 101
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 476106,
+            "template": 201
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 753563,
+            "template": 301
+        }
     }
-  },
-  "1953.8.1": {
-    "owner": "RHO",
-    "controller": "RHO",
-    "remove_core": "ENG"
-  },
-  "1964.07.06": {
-    "owner": "MLW",
-    "controller": "MLW",
-    "remove_core": "RHO"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 222307,
-      "template": 1
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 226509,
-      "template": 1
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 290460,
-      "template": 101
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 476106,
-      "template": 201
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 753563,
-      "template": 301
-    }
-  }
 }

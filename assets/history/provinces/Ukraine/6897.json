@@ -1,50 +1,50 @@
 {
-  "add_core": [
-    "UKR",
-    "SOV"
-  ],
-  "owner": "SOV",
-  "controller": "SOV",
-  "vegetables": 175.85,
-  "infra": 5,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 742196,
-      "template": 45
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "satellites_factory",
-      "size": 1
+    "add_core": [
+        "UKR",
+        "SOV"
+    ],
+    "owner": "SOV",
+    "controller": "SOV",
+    "vegetables": 175.85,
+    "infra": 5,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 742196,
+            "template": 45
+        }
     },
-    "population_total": {
-      "amount": 1021128,
-      "template": 245
+    "1979.1.1": {
+        "economy_building": {
+            "name": "satellites_factory",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 1021128,
+            "template": 245
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 752943,
+            "template": 45
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 763845,
+            "template": 45
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 897978,
+            "template": 145
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1058107,
+            "template": 345
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 752943,
-      "template": 45
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 763845,
-      "template": 45
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 897978,
-      "template": 145
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1058107,
-      "template": 345
-    }
-  }
 }

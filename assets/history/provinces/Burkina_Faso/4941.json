@@ -1,51 +1,51 @@
 {
-  "owner": "FRA",
-  "controller": "FRA",
-  "add_core": [
-    "FRA",
-    "BKN"
-  ],
-  "meat": 6.81,
-  "infra": 2,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 141886,
-      "template": 5
+    "owner": "FRA",
+    "controller": "FRA",
+    "add_core": [
+        "FRA",
+        "BKN"
+    ],
+    "meat": 6.81,
+    "infra": 2,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 141886,
+            "template": 5
+        }
+    },
+    "1960.08.05": {
+        "owner": "BKN",
+        "controller": "BKN",
+        "remove_core": "FRA"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 143496,
+            "template": 5
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 145125,
+            "template": 5
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 170490,
+            "template": 105
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 238565,
+            "template": 205
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 324499,
+            "template": 305
+        }
     }
-  },
-  "1960.08.05": {
-    "owner": "BKN",
-    "controller": "BKN",
-    "remove_core": "FRA"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 143496,
-      "template": 5
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 145125,
-      "template": 5
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 170490,
-      "template": 105
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 238565,
-      "template": 205
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 324499,
-      "template": 305
-    }
-  }
 }

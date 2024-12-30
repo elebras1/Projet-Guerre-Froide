@@ -1,51 +1,51 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "SRL"
-  ],
-  "vegetables": 20,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 1318613,
-      "template": 15
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "SRL"
+    ],
+    "vegetables": 20,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 1318613,
+            "template": 15
+        }
+    },
+    "1948.02.04": {
+        "owner": "SRL",
+        "controller": "SRL",
+        "remove_core": "ENG"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 1341227,
+            "template": 15
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 1364229,
+            "template": 15
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 1735037,
+            "template": 115
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 2456357,
+            "template": 215
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 2904209,
+            "template": 315
+        }
     }
-  },
-  "1948.02.04": {
-    "owner": "SRL",
-    "controller": "SRL",
-    "remove_core": "ENG"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 1341227,
-      "template": 15
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 1364229,
-      "template": 15
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 1735037,
-      "template": 115
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 2456357,
-      "template": 215
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 2904209,
-      "template": 315
-    }
-  }
 }

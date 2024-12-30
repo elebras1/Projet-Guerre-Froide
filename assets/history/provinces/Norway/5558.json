@@ -1,47 +1,47 @@
 {
-  "owner": "NOR",
-  "controller": "NOR",
-  "add_core": "NOR",
-  "meat": 32.71,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 217702,
-      "template": 58
-    }
-  },
-  "1979.1.1": {
-    "economy_building": {
-      "name": "heavy_industry",
-      "size": 1
+    "owner": "NOR",
+    "controller": "NOR",
+    "add_core": "NOR",
+    "meat": 32.71,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 217702,
+            "template": 58
+        }
     },
-    "population_total": {
-      "amount": 276816,
-      "template": 258
+    "1979.1.1": {
+        "economy_building": {
+            "name": "heavy_industry",
+            "size": 1
+        },
+        "population_total": {
+            "amount": 276816,
+            "template": 258
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 219812,
+            "template": 58
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 221942,
+            "template": 58
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 247278,
+            "template": 158
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 289777,
+            "template": 358
+        }
     }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 219812,
-      "template": 58
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 221942,
-      "template": 58
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 247278,
-      "template": 158
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 289777,
-      "template": 358
-    }
-  }
 }

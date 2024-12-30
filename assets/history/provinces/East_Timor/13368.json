@@ -1,54 +1,54 @@
 {
-  "owner": "POR",
-  "controller": "POR",
-  "add_core": [
-    "POR",
-    "TIL"
-  ],
-  "meat": 31.42,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 3007,
-      "template": 21
+    "owner": "POR",
+    "controller": "POR",
+    "add_core": [
+        "POR",
+        "TIL"
+    ],
+    "meat": 31.42,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 3007,
+            "template": 21
+        }
+    },
+    "1975.11.25": {
+        "owner": "TIL",
+        "controller": "TIL",
+        "remove_core": "POR"
+    },
+    "1976.07.17": {
+        "controller": "IND"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 3045,
+            "template": 21
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 3083,
+            "template": 21
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 3683,
+            "template": 121
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 4196,
+            "template": 221
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 5459,
+            "template": 321
+        }
     }
-  },
-  "1975.11.25": {
-    "owner": "TIL",
-    "controller": "TIL",
-    "remove_core": "POR"
-  },
-  "1976.07.17": {
-    "controller": "IND"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 3045,
-      "template": 21
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 3083,
-      "template": 21
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 3683,
-      "template": 121
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 4196,
-      "template": 221
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 5459,
-      "template": 321
-    }
-  }
 }

@@ -1,52 +1,52 @@
 {
-  "owner": "CSX",
-  "controller": "CSX",
-  "add_core": [
-    "CSX",
-    "CHI",
-    "CHC"
-  ],
-  "grain": 89.07,
-  "infra": 4,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 642203,
-      "template": 6
+    "owner": "CSX",
+    "controller": "CSX",
+    "add_core": [
+        "CSX",
+        "CHI",
+        "CHC"
+    ],
+    "grain": 89.07,
+    "infra": 4,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 426302,
+            "template": 6
+        }
+    },
+    "1949.10.01": {
+        "owner": "CHC",
+        "controller": "CHC",
+        "remove_core": "CSX"
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 654977,
+            "template": 6
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 668004,
+            "template": 6
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 819453,
+            "template": 106
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 1176684,
+            "template": 206
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1407878,
+            "template": 306
+        }
     }
-  },
-  "1949.10.01": {
-    "owner": "CHC",
-    "controller": "CHC",
-    "remove_core": "CSX"
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 654977,
-      "template": 6
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 668004,
-      "template": 6
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 819453,
-      "template": 106
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 1176684,
-      "template": 206
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1407878,
-      "template": 306
-    }
-  }
 }

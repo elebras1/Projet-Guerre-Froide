@@ -1,28 +1,28 @@
 {
-  "owner": "ENG",
-  "controller": "ENG",
-  "add_core": [
-    "ENG",
-    "TON"
-  ],
-  "fruits": 20.14,
-  "infra": 5,
-  "naval_base": 1,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 47220,
-      "template": 175
+    "owner": "ENG",
+    "controller": "ENG",
+    "add_core": [
+        "ENG",
+        "TON"
+    ],
+    "fruits": 20.14,
+    "infra": 5,
+    "naval_base": 1,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 47220,
+            "template": 175
+        }
+    },
+    "1970.06.04": {
+        "owner": "TON",
+        "controller": "TON",
+        "remove_core": "ENG"
+    },
+    "1979.1.1": {
+        "naval_base": 2
+    },
+    "1991.1.1": {
+        "naval_base": 3
     }
-  },
-  "1970.06.04": {
-    "owner": "TON",
-    "controller": "TON",
-    "remove_core": "ENG"
-  },
-  "1979.1.1": {
-    "naval_base": 2
-  },
-  "1991.1.1": {
-    "naval_base": 3
-  }
 }

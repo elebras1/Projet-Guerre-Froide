@@ -1,50 +1,50 @@
 {
-  "owner": "NOR",
-  "controller": "NOR",
-  "add_core": "NOR",
-  "meat": 190.77,
-  "infra": 6,
-  "air_base": 8,
-  "1946.1.1": {
-    "naval_base": 2,
-    "population_total": {
-      "amount": 802105,
-      "template": 58
+    "owner": "NOR",
+    "controller": "NOR",
+    "add_core": "NOR",
+    "meat": 190.77,
+    "infra": 6,
+    "air_base": 8,
+    "1946.1.1": {
+        "naval_base": 2,
+        "population_total": {
+            "amount": 802105,
+            "template": 58
+        }
+    },
+    "1961.1.1": {
+        "naval_base": 3
+    },
+    "1979.1.1": {
+        "naval_base": 4,
+        "population_total": {
+            "amount": 1019904,
+            "template": 258
+        }
+    },
+    "1991.1.1": {
+        "naval_base": 5,
+        "population_total": {
+            "amount": 1067659,
+            "template": 358
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 809878,
+            "template": 58
+        }
+    },
+    "1950.1.1": {
+        "population_total": {
+            "amount": 817725,
+            "template": 58
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 911076,
+            "template": 158
+        }
     }
-  },
-  "1961.1.1": {
-    "naval_base": 3
-  },
-  "1979.1.1": {
-    "naval_base": 4,
-    "population_total": {
-      "amount": 1019904,
-      "template": 258
-    }
-  },
-  "1991.1.1": {
-    "naval_base": 5,
-    "population_total": {
-      "amount": 1067659,
-      "template": 358
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 809878,
-      "template": 58
-    }
-  },
-  "1950.1.1": {
-    "population_total": {
-      "amount": 817725,
-      "template": 58
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 911076,
-      "template": 158
-    }
-  }
 }

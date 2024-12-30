@@ -1,57 +1,57 @@
 {
-  "owner": "MEX",
-  "controller": "MEX",
-  "add_core": "MEX",
-  "grain": 31.6,
-  "infra": 6,
-  "1946.1.1": {
-    "population_total": {
-      "amount": 308922,
-      "template": 81
+    "owner": "MEX",
+    "controller": "MEX",
+    "add_core": "MEX",
+    "grain": 31.6,
+    "infra": 6,
+    "1946.1.1": {
+        "population_total": {
+            "amount": 308922,
+            "template": 81
+        },
+        "economy_building": {
+            "name": "powerplant",
+            "size": 1
+        }
     },
-    "economy_building": {
-      "name": "powerplant",
-      "size": 1
-    }
-  },
-  "1950.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 3
+    "1950.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 3
+        },
+        "population_total": {
+            "amount": 328149,
+            "template": 81
+        }
     },
-    "population_total": {
-      "amount": 328149,
-      "template": 81
+    "1985.1.1": {
+        "economy_building": {
+            "name": "powerplant",
+            "size": 6
+        }
+    },
+    "1948.1.1": {
+        "population_total": {
+            "amount": 318391,
+            "template": 81
+        }
+    },
+    "1961.12.30": {
+        "population_total": {
+            "amount": 482427,
+            "template": 181
+        }
+    },
+    "1979.1.1": {
+        "population_total": {
+            "amount": 790792,
+            "template": 281
+        }
+    },
+    "1991.1.1": {
+        "population_total": {
+            "amount": 1011843,
+            "template": 381
+        }
     }
-  },
-  "1985.1.1": {
-    "economy_building": {
-      "name": "powerplant",
-      "size": 6
-    }
-  },
-  "1948.1.1": {
-    "population_total": {
-      "amount": 318391,
-      "template": 81
-    }
-  },
-  "1961.12.30": {
-    "population_total": {
-      "amount": 482427,
-      "template": 181
-    }
-  },
-  "1979.1.1": {
-    "population_total": {
-      "amount": 790792,
-      "template": 281
-    }
-  },
-  "1991.1.1": {
-    "population_total": {
-      "amount": 1011843,
-      "template": 381
-    }
-  }
 }
