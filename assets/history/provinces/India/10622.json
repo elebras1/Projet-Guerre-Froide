@@ -6,46 +6,11 @@
         "IND"
     ],
     "meat": 58.67,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 452078,
             "template": 15
         }
     },
-    "1947.08.15": {
-        "owner": "IND",
-        "controller": "IND",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 471934,
-            "template": 15
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 480311,
-            "template": 15
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 602347,
-            "template": 115
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 883309,
-            "template": 215
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1152042,
-            "template": 315
-        }
-    }
+    "infrastructure": 4
 }

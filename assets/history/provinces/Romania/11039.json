@@ -3,41 +3,11 @@
     "controller": "ROM",
     "add_core": "ROM",
     "vegetables": 50,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 137323,
             "template": 50
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 139233,
-            "template": 50
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 141170,
-            "template": 50
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 161331,
-            "template": 150
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 190752,
-            "template": 250
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 200530,
-            "template": 350
-        }
-    }
+    "infrastructure": 3
 }

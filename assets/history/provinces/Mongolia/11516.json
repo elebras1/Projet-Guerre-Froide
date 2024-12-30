@@ -3,41 +3,11 @@
     "controller": "MON",
     "add_core": "MON",
     "meat": 0.38,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1571,
             "template": 9
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1600,
-            "template": 9
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1630,
-            "template": 9
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2116,
-            "template": 109
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3446,
-            "template": 209
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4650,
-            "template": 309
-        }
-    }
+    "infrastructure": 1
 }

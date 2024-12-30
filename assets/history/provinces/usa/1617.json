@@ -3,65 +3,15 @@
     "controller": "USA",
     "add_core": "USA",
     "meat": 214.04,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 226595,
             "template": 93
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 230273,
-            "template": 93
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 9
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 10
-        },
-        "population_total": {
-            "amount": 337528,
-            "template": 293
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 234010,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 284635,
-            "template": 193
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 379319,
-            "template": 393
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 4
     }
 }

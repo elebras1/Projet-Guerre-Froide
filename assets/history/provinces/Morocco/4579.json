@@ -6,62 +6,15 @@
         "MOR"
     ],
     "grain": 35.23,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 294699,
             "template": 3
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
         }
     },
-    "1956.03.02": {
-        "owner": "MOR",
-        "controller": "MOR",
-        "remove_core": "FRA"
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 309468,
-            "template": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 659281,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 872370,
-            "template": 303
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 301993,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 424297,
-            "template": 103
-        }
+    "infrastructure": 3,
+    "economy_building": {
+        "name": "heavy_industry",
+        "size": 1
     }
 }

@@ -6,62 +6,15 @@
         "TUN"
     ],
     "fruits": 3.28,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 258094,
             "template": 3
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
         }
     },
-    "1956.03.20": {
-        "owner": "TUN",
-        "controller": "TUN",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 262714,
-            "template": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 476349,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 634566,
-            "template": 303
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 267416,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 331539,
-            "template": 103
-        }
+    "infrastructure": 3,
+    "economy_building": {
+        "name": "heavy_industry",
+        "size": 2
     }
 }

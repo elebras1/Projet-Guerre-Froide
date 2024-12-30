@@ -6,46 +6,11 @@
         "TAJ"
     ],
     "rare_metals": 20,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 245060,
             "template": 11
         }
     },
-    "1991.12.25": {
-        "owner": "TAJ",
-        "controller": "TAJ",
-        "remove_core": "SOV"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 252497,
-            "template": 11
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 260161,
-            "template": 11
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 381381,
-            "template": 111
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 653129,
-            "template": 211
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 920505,
-            "template": 311
-        }
-    }
+    "infrastructure": 4
 }

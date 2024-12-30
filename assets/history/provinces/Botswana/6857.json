@@ -6,46 +6,11 @@
         "BOT"
     ],
     "meat": 0.35,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 1293,
             "template": 4
         }
     },
-    "1966.09.30": {
-        "owner": "BOT",
-        "controller": "BOT",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1326,
-            "template": 4
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1361,
-            "template": 4
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1814,
-            "template": 104
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3165,
-            "template": 204
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4696,
-            "template": 304
-        }
-    }
+    "infrastructure": 2
 }

@@ -3,55 +3,11 @@
     "controller": "SAF",
     "add_core": "SAF",
     "grain": 25.93,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 103677,
             "template": 4
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 1
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 225081,
-            "template": 204
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 299128,
-            "template": 304
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 106107,
-            "template": 4
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 108594,
-            "template": 4
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 145413,
-            "template": 104
-        }
-    }
+    "infrastructure": 6
 }

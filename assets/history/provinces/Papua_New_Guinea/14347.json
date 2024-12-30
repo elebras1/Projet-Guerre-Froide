@@ -6,46 +6,11 @@
         "PAG"
     ],
     "grain": 4.49,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1772,
             "template": 96
         }
     },
-    "1975.09.16": {
-        "owner": "PAG",
-        "controller": "PAG",
-        "remove_core": "AST"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1795,
-            "template": 96
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1818,
-            "template": 96
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2168,
-            "template": 196
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3332,
-            "template": 296
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4536,
-            "template": 396
-        }
-    }
+    "infrastructure": 1
 }

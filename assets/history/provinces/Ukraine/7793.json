@@ -6,47 +6,12 @@
         "UKR"
     ],
     "meat": 242.42,
-    "infra": 5,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 300664,
             "template": 45
         }
     },
-    "1961.1.1": {
-        "naval_base": 2
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 413660,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 428640,
-            "template": 345
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 305018,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 309434,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 363772,
-            "template": 145
-        }
-    }
+    "infrastructure": 5,
+    "naval_base": 1
 }

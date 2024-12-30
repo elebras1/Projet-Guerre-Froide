@@ -6,65 +6,15 @@
         "UKR"
     ],
     "meat": 56.47,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 248483,
             "template": 45
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 341868,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 354248,
-            "template": 345
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 252081,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 255731,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 300638,
-            "template": 145
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 4
     }
 }

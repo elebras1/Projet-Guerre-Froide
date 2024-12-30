@@ -3,47 +3,12 @@
     "owner": "GRE",
     "controller": "GRE",
     "grain": 15,
-    "infra": 4,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 450014,
             "template": 63
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 578850,
-            "template": 263
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 622104,
-            "template": 363
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 454649,
-            "template": 63
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 459332,
-            "template": 63
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 511852,
-            "template": 163
-        }
-    }
+    "infrastructure": 4,
+    "naval_base": 1
 }

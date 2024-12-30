@@ -3,57 +3,13 @@
     "controller": "ENG",
     "add_core": "ENG",
     "meat": 1.57,
-    "infra": 2,
     "air_base": 2,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 71824,
             "template": 60
         }
     },
-    "1947.1.1": {
-        "economy_building": {
-            "name": "rocket_test_site",
-            "size": 1
-        }
-    },
-    "1963.1.1": {
-        "air_base": 0
-    },
-    "1961.1.1": {
-        "naval_base": 2
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 82866,
-            "template": 260
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 84446,
-            "template": 360
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 74339,
-            "template": 60
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 74505,
-            "template": 60
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 78404,
-            "template": 160
-        }
-    }
+    "infrastructure": 2,
+    "naval_base": 1
 }

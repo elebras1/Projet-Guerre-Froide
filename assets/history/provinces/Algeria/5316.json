@@ -6,46 +6,11 @@
         "ALG"
     ],
     "fruits": 0.4,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1212,
             "template": 3
         }
     },
-    "1962.07.05": {
-        "owner": "ALG",
-        "controller": "ALG",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1238,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1264,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1618,
-            "template": 103
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2628,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3743,
-            "template": 303
-        }
-    }
+    "infrastructure": 1
 }

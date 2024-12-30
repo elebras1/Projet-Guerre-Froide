@@ -3,41 +3,11 @@
     "controller": "CAN",
     "add_core": "CAN",
     "meat": 6.59,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 1701,
             "template": 92
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1747,
-            "template": 92
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1794,
-            "template": 92
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2434,
-            "template": 192
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3168,
-            "template": 292
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3664,
-            "template": 392
-        }
-    }
+    "infrastructure": 3
 }

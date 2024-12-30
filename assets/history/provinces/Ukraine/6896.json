@@ -6,41 +6,11 @@
     "owner": "SOV",
     "controller": "SOV",
     "meat": 30.5,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 325239,
             "template": 45
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 329949,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 334726,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 393505,
-            "template": 145
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 447471,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 463675,
-            "template": 345
-        }
-    }
+    "infrastructure": 5
 }

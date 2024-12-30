@@ -6,7 +6,6 @@
         "CNG"
     ],
     "oil": 45,
-    "infra": 4,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
@@ -14,52 +13,5 @@
             "template": 2
         }
     },
-    "1960.08.15": {
-        "owner": "CNG",
-        "controller": "CNG",
-        "remove_core": "FRA"
-    },
-    "1976.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 1
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 3
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 416774,
-            "template": 302
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 134313,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 137183,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 181319,
-            "template": 102
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 296653,
-            "template": 202
-        }
-    }
+    "infrastructure": 4
 }

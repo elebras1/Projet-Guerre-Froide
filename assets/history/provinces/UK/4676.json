@@ -3,63 +3,16 @@
     "controller": "ENG",
     "add_core": "ENG",
     "coal": 9,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 143278,
             "template": 60
-        },
-        "naval_base": 1,
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        }
+    "infrastructure": 3,
+    "economy_building": {
+        "name": "refinery",
+        "size": 5
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 8
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "refinery",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 168457,
-            "template": 360
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 148295,
-            "template": 60
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 148626,
-            "template": 60
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 156404,
-            "template": 160
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 165306,
-            "template": 260
-        }
-    }
+    "naval_base": 1
 }

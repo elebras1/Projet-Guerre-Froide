@@ -3,44 +3,11 @@
     "controller": "ECU",
     "add_core": "ECU",
     "renewable_energy": 120,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 10427,
             "template": 84
         }
     },
-    "1983.1.1": {
-        "renewable_energy": 120
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 10700,
-            "template": 84
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 10981,
-            "template": 84
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 15257,
-            "template": 184
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 25090,
-            "template": 284
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 34016,
-            "template": 384
-        }
-    }
+    "infrastructure": 2
 }

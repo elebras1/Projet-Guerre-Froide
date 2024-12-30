@@ -6,46 +6,11 @@
         "IND"
     ],
     "vegetables": 154.93,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 1607149,
             "template": 15
         }
     },
-    "1947.08.15": {
-        "owner": "IND",
-        "controller": "IND",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1677737,
-            "template": 15
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1707517,
-            "template": 15
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2141359,
-            "template": 115
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3140184,
-            "template": 215
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4095535,
-            "template": 315
-        }
-    }
+    "infrastructure": 4
 }

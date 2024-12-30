@@ -3,43 +3,12 @@
     "controller": "LIB",
     "add_core": "LIB",
     "vegetables": 19.09,
-    "infra": 4,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 68604,
             "template": 5
         }
     },
-    "1991.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 163184,
-            "template": 305
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 69838,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 71094,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 91348,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 145327,
-            "template": 205
-        }
-    }
+    "infrastructure": 4,
+    "naval_base": 1
 }

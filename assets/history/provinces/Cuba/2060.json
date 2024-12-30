@@ -3,47 +3,11 @@
     "controller": "CUB",
     "add_core": "CUB",
     "vegetables": 30.24,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 750274,
             "template": 75
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 767342,
-            "template": 75
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 784799,
-            "template": 75
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 986555,
-            "template": 175
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1293109,
-            "template": 275
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1412390,
-            "template": 375
-        }
-    }
+    "infrastructure": 6
 }

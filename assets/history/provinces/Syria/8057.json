@@ -3,77 +3,15 @@
     "controller": "SYR",
     "add_core": "SYR",
     "grain": 52.91,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 486317,
             "template": 41
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 499375,
-            "template": 41
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 512783,
-            "template": 41
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 1293464,
-            "template": 241
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 1906440,
-            "template": 341
-        }
-    },
-    "1958.2.22": {
-        "owner": "UAR",
-        "controller": "UAR",
-        "add_core": "UAR"
-    },
-    "1961.9.2": {
-        "owner": "SYR",
-        "controller": "SYR",
-        "remove_core": "UAR"
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 731994,
-            "template": 141
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 2
     }
 }

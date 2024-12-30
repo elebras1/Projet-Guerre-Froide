@@ -3,47 +3,11 @@
     "controller": "MEX",
     "add_core": "MEX",
     "meat": 9.94,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 43320,
             "template": 81
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "aviation_industry",
-            "size": 6
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 44648,
-            "template": 81
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 46016,
-            "template": 81
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 67650,
-            "template": 181
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 110892,
-            "template": 281
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 141890,
-            "template": 381
-        }
-    }
+    "infrastructure": 4
 }

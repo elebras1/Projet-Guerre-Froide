@@ -6,49 +6,11 @@
         "JOR"
     ],
     "grain": 1.19,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 4841,
             "template": 35
         }
     },
-    "1946.05.25": {
-        "owner": "JOR",
-        "controller": "JOR",
-        "remove_core": "ENG"
-    },
-    "1957.2.14": {
-        "naval_base": 1
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 5198,
-            "template": 35
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 5582,
-            "template": 35
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 12070,
-            "template": 135
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 27687,
-            "template": 235
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 44760,
-            "template": 335
-        }
-    }
+    "infrastructure": 2
 }

@@ -6,46 +6,11 @@
         "CDI"
     ],
     "grain": 35,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 189270,
             "template": 5
         }
     },
-    "1960.8.7.0": {
-        "owner": "CDI",
-        "controller": "CDI",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 195145,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 201202,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 300404,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 621786,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 990346,
-            "template": 305
-        }
-    }
+    "infrastructure": 4
 }

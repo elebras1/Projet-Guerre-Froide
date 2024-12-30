@@ -3,41 +3,11 @@
     "controller": "PAR",
     "add_core": "PAR",
     "meat": 4,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 1257,
             "template": 87
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1290,
-            "template": 87
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1323,
-            "template": 87
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1804,
-            "template": 187
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2789,
-            "template": 287
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3909,
-            "template": 387
-        }
-    }
+    "infrastructure": 4
 }

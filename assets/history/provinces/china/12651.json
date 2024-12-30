@@ -6,7 +6,6 @@
         "CHC"
     ],
     "vegetables": 227.7,
-    "infra": 5,
     "naval_base": 5,
     "1946.1.1": {
         "population_total": {
@@ -14,38 +13,5 @@
             "template": 6
         }
     },
-    "1949.10.01": {
-        "owner": "CHC",
-        "controller": "CHC"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2392089,
-            "template": 6
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2439667,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2992785,
-            "template": 106
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 4297453,
-            "template": 206
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 5141815,
-            "template": 306
-        }
-    }
+    "infrastructure": 5
 }

@@ -7,51 +7,12 @@
         "ITA"
     ],
     "oil": 68,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 765,
             "template": 3
-        },
-        "naval_base": 1
-    },
-    "1951.12.24": {
-        "owner": "LBY",
-        "controller": "LBY",
-        "remove_core": [
-            "ITA",
-            "FRA"
-        ]
-    },
-    "1979.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 2252,
-            "template": 203
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 778,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 792,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1117,
-            "template": 103
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3405,
-            "template": 303
-        }
-    }
+    "infrastructure": 4,
+    "naval_base": 1
 }

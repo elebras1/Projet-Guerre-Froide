@@ -6,46 +6,11 @@
         "MLD"
     ],
     "fruits": 1.26,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 71490,
             "template": 15
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 72596,
-            "template": 15
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 73718,
-            "template": 15
-        }
-    },
-    "1965.7.26": {
-        "owner": "MLD",
-        "controller": "MLD",
-        "remove_core": "ENG"
-    },
-    "1961.1.1": {
-        "population_total": {
-            "amount": 95115,
-            "template": 15
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 119308,
-            "template": 15
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 225709,
-            "template": 15
-        }
-    }
+    "infrastructure": 1
 }

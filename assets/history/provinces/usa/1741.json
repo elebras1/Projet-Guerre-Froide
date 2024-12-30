@@ -3,7 +3,6 @@
     "controller": "USA",
     "add_core": "USA",
     "wood": 1,
-    "infra": 5,
     "naval_base": 8,
     "1946.1.1": {
         "population_total": {
@@ -11,37 +10,5 @@
             "template": 93
         }
     },
-    "1961.1.1": {
-        "naval_base": 10
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 277612,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 282118,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 343150,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 406917,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 457299,
-            "template": 393
-        }
-    }
+    "infrastructure": 5
 }

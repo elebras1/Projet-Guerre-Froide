@@ -3,51 +3,15 @@
     "controller": "USA",
     "add_core": "USA",
     "grain": 687.76,
-    "infra": 8,
     "1946.1.1": {
         "population_total": {
             "amount": 2579770,
             "template": 93
-        },
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 10
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2621640,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2664189,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 3240554,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3842737,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4318523,
-            "template": 393
-        }
+    "infrastructure": 8,
+    "economy_building": {
+        "name": "refinery",
+        "size": 7
     }
 }

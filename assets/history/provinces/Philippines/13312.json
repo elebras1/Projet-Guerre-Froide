@@ -3,67 +3,11 @@
     "controller": "PHI",
     "add_core": "PHI",
     "fruits": 89.89,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 600547,
             "template": 25
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 643818,
-            "template": 25
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 4
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 1601564,
-            "template": 225
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 621806,
-            "template": 25
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 972932,
-            "template": 125
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2209934,
-            "template": 325
-        }
-    }
+    "infrastructure": 4
 }

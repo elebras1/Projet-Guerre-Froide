@@ -3,68 +3,16 @@
     "controller": "DOM",
     "add_core": "DOM",
     "vegetables": 75,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 587769,
             "template": 75
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 4
     },
-    "1979.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 1439369,
-            "template": 275
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 1865955,
-            "template": 375
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 596362,
-            "template": 75
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 605081,
-            "template": 75
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 899054,
-            "template": 175
-        }
-    }
+    "naval_base": 1
 }

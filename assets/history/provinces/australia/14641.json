@@ -3,59 +3,15 @@
     "controller": "AST",
     "add_core": "AST",
     "coal": 6,
-    "infra": 8,
     "1946.1.1": {
         "population_total": {
             "amount": 1474317,
             "template": 94
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 6
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 2746912,
-            "template": 294
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 6
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 3272944,
-            "template": 394
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1509346,
-            "template": 94
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1545208,
-            "template": 94
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2021349,
-            "template": 194
-        }
+    "infrastructure": 8,
+    "economy_building": {
+        "name": "heavy_industry",
+        "size": 6
     }
 }

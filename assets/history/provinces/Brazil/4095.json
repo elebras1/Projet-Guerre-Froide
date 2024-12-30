@@ -3,51 +3,15 @@
     "controller": "BRA",
     "add_core": "BRA",
     "vegetables": 153.68,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 489073,
             "template": 77
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 5
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 535748,
-            "template": 77
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 552110,
-            "template": 77
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 790499,
-            "template": 177
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1216191,
-            "template": 277
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1556317,
-            "template": 381
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 4
     }
 }

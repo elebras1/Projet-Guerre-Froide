@@ -3,41 +3,11 @@
     "controller": "POL",
     "add_core": "POL",
     "rare_metals": 40.07,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 584729,
             "template": 49
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 595769,
-            "template": 49
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 607017,
-            "template": 49
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 730453,
-            "template": 149
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 861760,
-            "template": 249
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 933137,
-            "template": 349
-        }
-    }
+    "infrastructure": 4
 }

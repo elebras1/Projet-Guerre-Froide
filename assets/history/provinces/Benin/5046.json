@@ -6,46 +6,11 @@
         "BEN"
     ],
     "vegetables": 31,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 63559,
             "template": 5
         }
     },
-    "1960.08.01": {
-        "owner": "BEN",
-        "controller": "BEN",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 63821,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 64085,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 70621,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 99938,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 140208,
-            "template": 305
-        }
-    }
+    "infrastructure": 2
 }

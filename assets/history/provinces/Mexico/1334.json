@@ -3,7 +3,6 @@
     "controller": "MEX",
     "add_core": "MEX",
     "grain": 42.45,
-    "infra": 5,
     "economy_building": {
         "name": "military_academy",
         "size": 1
@@ -14,34 +13,5 @@
             "template": 81
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 213764,
-            "template": 81
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 220316,
-            "template": 81
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 323896,
-            "template": 181
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 530929,
-            "template": 281
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 679340,
-            "template": 381
-        }
-    }
+    "infrastructure": 5
 }

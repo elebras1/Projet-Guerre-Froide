@@ -3,66 +3,16 @@
     "controller": "FIN",
     "add_core": "FIN",
     "rare_metals": 0.7,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 170188,
             "template": 53
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
         }
     },
-    "1961.1.1": {
-        "infra": 9
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 4
     },
-    "1979.1.1": {
-        "infra": 10,
-        "naval_base": 2,
-        "economy_building": {
-            "name": "military_goods",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 206648,
-            "template": 253
-        }
-    },
-    "1970.1.1": {
-        "economy_building": {
-            "name": "university",
-            "size": 1
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 217337,
-            "template": 353
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 172055,
-            "template": 53
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 173942,
-            "template": 53
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 194997,
-            "template": 153
-        }
-    }
+    "naval_base": 1
 }

@@ -3,41 +3,11 @@
     "controller": "USA",
     "add_core": "USA",
     "meat": 344.75,
-    "infra": 8,
     "1946.1.1": {
         "population_total": {
             "amount": 636627,
             "template": 93
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 646960,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 657460,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 799693,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 948298,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1065711,
-            "template": 393
-        }
-    }
+    "infrastructure": 8
 }

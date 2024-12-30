@@ -3,41 +3,11 @@
     "controller": "AFG",
     "add_core": "AFG",
     "grain": 1.59,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 11784,
             "template": 12
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 11973,
-            "template": 12
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 12165,
-            "template": 12
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 15008,
-            "template": 112
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 21266,
-            "template": 212
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 20998,
-            "template": 312
-        }
-    }
+    "infrastructure": 2
 }

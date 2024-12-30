@@ -3,61 +3,15 @@
     "controller": "ROM",
     "add_core": "ROM",
     "grain": 125.68,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 316815,
             "template": 50
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 440077,
-            "template": 250
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 321221,
-            "template": 50
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 325690,
-            "template": 50
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 372203,
-            "template": 150
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 462638,
-            "template": 350
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "heavy_industry",
+        "size": 1
     }
 }

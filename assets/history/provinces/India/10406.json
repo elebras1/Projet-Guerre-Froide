@@ -6,73 +6,15 @@
         "IND"
     ],
     "renewable_energy": 132,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 975979,
             "template": 15
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
         }
     },
-    "1947.08.15": {
-        "owner": "IND",
-        "controller": "IND",
-        "remove_core": "ENG"
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 1906950,
-            "template": 215
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 2487109,
-            "template": 315
-        }
-    },
-    "1963.1.1": {
-        "renewable_energy": 132
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1018845,
-            "template": 15
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1036929,
-            "template": 15
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1300390,
-            "template": 115
-        }
+    "infrastructure": 4,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 4
     }
 }

@@ -6,7 +6,6 @@
         "SYA",
         "ENG"
     ],
-    "infra": 6,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
@@ -14,57 +13,5 @@
             "template": 44
         }
     },
-    "1967.11.30": {
-        "owner": "SYA",
-        "controller": "SYA",
-        "remove_core": "ENG"
-    },
-    "1990.5.22": {
-        "owner": "YEM",
-        "controller": "YEM"
-    },
-    "1954.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 576459,
-            "template": 244
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 945907,
-            "template": 344
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 320302,
-            "template": 44
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 325555,
-            "template": 44
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 401067,
-            "template": 144
-        }
-    }
+    "infrastructure": 6
 }

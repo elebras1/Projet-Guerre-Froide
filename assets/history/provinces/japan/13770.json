@@ -3,60 +3,12 @@
     "controller": "JAP",
     "add_core": "JAP",
     "fish": 206.91,
-    "infra": 4,
     "1946.1.1": {
-        "naval_base": 6,
         "population_total": {
             "amount": 3089516,
             "template": 8
         }
     },
-    "1962.2.1": {
-        "economy_building": {
-            "name": "rocket_test_site",
-            "size": 1
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 8,
-        "economy_building": {
-            "name": "satellites_factory",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 4448624,
-            "template": 208
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 7
-    },
-    "1985.1.1": {
-        "naval_base": 9
-    },
-    "1991.1.1": {
-        "naval_base": 10,
-        "population_total": {
-            "amount": 4746766,
-            "template": 308
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 3134375,
-            "template": 8
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 3179886,
-            "template": 8
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 3646597,
-            "template": 108
-        }
-    }
+    "infrastructure": 4,
+    "naval_base": 6
 }

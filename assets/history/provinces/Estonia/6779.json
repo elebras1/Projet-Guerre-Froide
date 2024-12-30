@@ -6,56 +6,13 @@
     "owner": "SOV",
     "controller": "SOV",
     "grain": 56.62,
-    "infra": 6,
     "naval_base": 1,
     "1946.1.1": {
-        "air_base": 2,
         "population_total": {
             "amount": 30586,
             "template": 52
         }
     },
-    "1991.08.20": {
-        "owner": "EST",
-        "controller": "EST",
-        "remove_core": "SOV"
-    },
-    "1948.1.1": {
-        "air_base": 4,
-        "population_total": {
-            "amount": 30905,
-            "template": 52
-        }
-    },
-    "1950.1.1": {
-        "air_base": 6,
-        "population_total": {
-            "amount": 31228,
-            "template": 52
-        }
-    },
-    "1961.1.1": {
-        "air_base": 7,
-        "naval_base": 2
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 41535,
-            "template": 252
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 44030,
-            "template": 352
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 35295,
-            "template": 152
-        }
-    }
+    "infrastructure": 6,
+    "air_base": 2
 }

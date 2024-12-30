@@ -3,41 +3,11 @@
     "owner": "ROM",
     "controller": "ROM",
     "wood": 1.7,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 98484,
             "template": 50
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 99854,
-            "template": 50
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 101243,
-            "template": 50
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 115702,
-            "template": 150
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 136802,
-            "template": 250
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 143815,
-            "template": 350
-        }
-    }
+    "infrastructure": 3
 }

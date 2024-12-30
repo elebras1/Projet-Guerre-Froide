@@ -3,47 +3,12 @@
     "controller": "JAP",
     "add_core": "JAP",
     "wood": 2.1,
-    "infra": 4,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 812218,
             "template": 8
         }
     },
-    "1961.1.1": {
-        "naval_base": 2
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 1169521,
-            "template": 208
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 1247901,
-            "template": 308
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 824012,
-            "template": 8
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 835976,
-            "template": 8
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 958672,
-            "template": 108
-        }
-    }
+    "infrastructure": 4,
+    "naval_base": 1
 }

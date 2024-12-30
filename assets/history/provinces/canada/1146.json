@@ -3,41 +3,11 @@
     "controller": "CAN",
     "add_core": "CAN",
     "precious_metals": 3,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 1563,
             "template": 92
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1606,
-            "template": 92
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1650,
-            "template": 92
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2237,
-            "template": 192
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2912,
-            "template": 292
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3369,
-            "template": 392
-        }
-    }
+    "infrastructure": 6
 }

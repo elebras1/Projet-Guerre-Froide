@@ -7,51 +7,11 @@
         "RHO"
     ],
     "grain": 2.49,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 10171,
             "template": 1
         }
     },
-    "1953.8.1": {
-        "owner": "RHO",
-        "controller": "RHO",
-        "remove_core": "ENG"
-    },
-    "1964.10.24": {
-        "owner": "ZMB",
-        "controller": "ZMB",
-        "remove_core": "RHO"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 10426,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 10688,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 14748,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 25525,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 36846,
-            "template": 301
-        }
-    }
+    "infrastructure": 4
 }

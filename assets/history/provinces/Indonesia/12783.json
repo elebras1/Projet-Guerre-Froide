@@ -6,46 +6,11 @@
         "HOL"
     ],
     "wood": 0.25,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 855,
             "template": 21
         }
     },
-    "1949.12.27.0": {
-        "owner": "INO",
-        "controller": "INO",
-        "remove_core": "HOL"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 899,
-            "template": 21
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 915,
-            "template": 21
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1181,
-            "template": 121
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1802,
-            "template": 221
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2292,
-            "template": 321
-        }
-    }
+    "infrastructure": 1
 }

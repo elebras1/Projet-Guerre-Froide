@@ -3,41 +3,11 @@
     "controller": "OMN",
     "add_core": "OMN",
     "oil": 55,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 1150,
             "template": 38
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1171,
-            "template": 38
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1193,
-            "template": 38
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1527,
-            "template": 138
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2918,
-            "template": 238
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 5088,
-            "template": 338
-        }
-    }
+    "infrastructure": 2
 }

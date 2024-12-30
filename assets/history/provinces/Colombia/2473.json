@@ -3,55 +3,15 @@
     "controller": "COL",
     "add_core": "COL",
     "oil": 48,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 34140,
             "template": 83
-        },
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 79039,
-            "template": 283
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 35107,
-            "template": 83
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 36101,
-            "template": 83
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 51099,
-            "template": 183
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 101840,
-            "template": 383
-        }
+    "infrastructure": 1,
+    "economy_building": {
+        "name": "refinery",
+        "size": 4
     }
 }

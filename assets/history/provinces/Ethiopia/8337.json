@@ -3,41 +3,11 @@
     "controller": "ETH",
     "add_core": "ETH",
     "grain": 4.93,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 12400,
             "template": 1
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 12639,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 12883,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 16525,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 24302,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 34942,
-            "template": 301
-        }
-    }
+    "infrastructure": 2
 }

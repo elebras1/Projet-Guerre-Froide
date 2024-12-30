@@ -6,55 +6,15 @@
         "UKR"
     ],
     "grain": 362.42,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 186694,
             "template": 45
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 189397,
-            "template": 45
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 192140,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 225880,
-            "template": 145
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 256857,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 266159,
-            "template": 345
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 4
     }
 }

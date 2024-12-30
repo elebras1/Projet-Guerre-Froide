@@ -2,41 +2,11 @@
     "owner": "BOL",
     "controller": "BOL",
     "add_core": "BOL",
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 63117,
             "template": 80
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 64416,
-            "template": 80
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 65742,
-            "template": 80
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 84972,
-            "template": 180
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 126793,
-            "template": 280
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 165076,
-            "template": 380
-        }
-    }
+    "infrastructure": 1
 }

@@ -7,50 +7,11 @@
         "KAT"
     ],
     "vegetables": 28.1,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 25842,
             "template": 2
         }
     },
-    "1960.06.30": {
-        "owner": "DRC",
-        "controller": "DRC",
-        "remove_core": "BEL"
-    },
-    "1960.07.11": {
-        "owner": "KAT",
-        "controller": "KAT"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 26403,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 26976,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 35827,
-            "template": 102
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 58134,
-            "template": 202
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 83819,
-            "template": 302
-        }
-    }
+    "infrastructure": 4
 }

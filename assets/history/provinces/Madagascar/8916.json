@@ -6,76 +6,15 @@
         "MAD"
     ],
     "grain": 38.32,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 125037,
             "template": 1
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
         }
     },
-    "1960.06.26": {
-        "owner": "MAD",
-        "controller": "MAD",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 127729,
-            "template": 1
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 371310,
-            "template": 301
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 130479,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 171091,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 267861,
-            "template": 201
-        }
+    "infrastructure": 2,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 1
     }
 }

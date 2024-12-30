@@ -6,49 +6,11 @@
         "CHC"
     ],
     "meat": 1.4,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 3803,
             "template": 17
         }
     },
-    "1952.1.1": {
-        "owner": "CHC",
-        "controller": "CHC",
-        "add_core": [
-            "CHC",
-            "TIB"
-        ]
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 3917,
-            "template": 17
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 4035,
-            "template": 17
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 5426,
-            "template": 106
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 7165,
-            "template": 206
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 8494,
-            "template": 306
-        }
-    }
+    "infrastructure": 1
 }

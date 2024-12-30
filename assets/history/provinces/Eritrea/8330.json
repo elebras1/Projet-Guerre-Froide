@@ -7,51 +7,11 @@
         "ERI"
     ],
     "fish": 1.38,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 37598,
             "template": 1
         }
     },
-    "1952.9.15": {
-        "owner": "ETH",
-        "controller": "ETH",
-        "remove_core": "ENG"
-    },
-    "1991.5.24": {
-        "owner": "ERI",
-        "controller": "ERI",
-        "remove_core": "ETH"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 38322,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 39060,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 50103,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 73682,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 105943,
-            "template": 301
-        }
-    }
+    "infrastructure": 4
 }

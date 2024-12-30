@@ -3,7 +3,6 @@
     "controller": "COL",
     "add_core": "COL",
     "vegetables": 45.78,
-    "infra": 6,
     "naval_base": 5,
     "1946.1.1": {
         "population_total": {
@@ -11,34 +10,5 @@
             "template": 83
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 200114,
-            "template": 83
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 205783,
-            "template": 83
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 291273,
-            "template": 183
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 450533,
-            "template": 283
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 580499,
-            "template": 383
-        }
-    }
+    "infrastructure": 6
 }

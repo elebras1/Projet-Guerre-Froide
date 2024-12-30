@@ -3,63 +3,17 @@
     "controller": "PRU",
     "add_core": "PRU",
     "rare_metals": 26,
-    "infra": 6,
     "naval_base": 6,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
     "1946.1.1": {
-        "air_base": 5,
         "population_total": {
             "amount": 2216970,
             "template": 88
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 5147746,
-            "template": 288
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2273459,
-            "template": 88
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2331386,
-            "template": 88
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 3212090,
-            "template": 188
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 6757333,
-            "template": 388
-        }
-    }
+    "infrastructure": 6,
+    "air_base": 5
 }

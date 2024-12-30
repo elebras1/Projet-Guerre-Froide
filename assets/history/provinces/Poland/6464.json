@@ -3,41 +3,11 @@
     "owner": "POL",
     "controller": "POL",
     "wood": 1.3,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 261683,
             "template": 49
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 266624,
-            "template": 49
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 271658,
-            "template": 49
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 326899,
-            "template": 149
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 385662,
-            "template": 249
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 417606,
-            "template": 349
-        }
-    }
+    "infrastructure": 4
 }

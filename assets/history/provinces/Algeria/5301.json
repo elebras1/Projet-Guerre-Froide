@@ -6,60 +6,15 @@
         "ALG"
     ],
     "fruits": 12.6,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 401255,
             "template": 3
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
         }
     },
-    "1962.07.05": {
-        "owner": "ALG",
-        "controller": "ALG",
-        "remove_core": "FRA"
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 869758,
-            "template": 203
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 409626,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 418170,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 535545,
-            "template": 103
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1238820,
-            "template": 303
-        }
+    "infrastructure": 3,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 2
     }
 }

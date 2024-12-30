@@ -6,57 +6,15 @@
         "CHC"
     ],
     "iron": 30,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 5051322,
             "template": 6
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 6
         }
     },
-    "1949.10.01": {
-        "owner": "CHC",
-        "controller": "CHC"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 9255338,
-            "template": 206
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 11073821,
-            "template": 306
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 5151793,
-            "template": 6
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 5254262,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 6445499,
-            "template": 106
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 6
     }
 }

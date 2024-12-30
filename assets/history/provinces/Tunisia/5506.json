@@ -6,49 +6,12 @@
         "TUN"
     ],
     "vegetables": 10.32,
-    "infra": 4,
     "naval_base": 1,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 32401,
             "template": 3
         }
     },
-    "1956.03.20": {
-        "owner": "TUN",
-        "controller": "TUN",
-        "remove_core": "FRA"
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 79663,
-            "template": 303
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 32981,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 33571,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 41621,
-            "template": 103
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 59801,
-            "template": 203
-        }
-    }
+    "infrastructure": 4
 }

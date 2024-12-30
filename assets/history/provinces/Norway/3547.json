@@ -3,60 +3,16 @@
     "controller": "NOR",
     "add_core": "NOR",
     "fish": 17.66,
-    "infra": 1,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 41320,
             "template": 58
-        },
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 7
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 6
-        }
+    "infrastructure": 1,
+    "economy_building": {
+        "name": "naval_yards",
+        "size": 7
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 52540,
-            "template": 258
-        }
-    },
-    "1954.1.1": {
-        "air_base": 6
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 55000,
-            "template": 358
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 41720,
-            "template": 58
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 42125,
-            "template": 58
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 46933,
-            "template": 158
-        }
-    }
+    "naval_base": 1
 }

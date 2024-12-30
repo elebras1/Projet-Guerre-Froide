@@ -3,7 +3,6 @@
     "controller": "FRA",
     "add_core": "FRA",
     "meat": 607.42,
-    "infra": 6,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
@@ -11,39 +10,5 @@
             "template": 70
         }
     },
-    "1961.1.1": {
-        "naval_base": 2
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 1558685,
-            "template": 270
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 1654829,
-            "template": 370
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1206330,
-            "template": 70
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1215402,
-            "template": 70
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1363218,
-            "template": 170
-        }
-    }
+    "infrastructure": 6
 }

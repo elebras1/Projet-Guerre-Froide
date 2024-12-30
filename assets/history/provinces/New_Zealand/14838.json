@@ -3,7 +3,6 @@
     "controller": "NZL",
     "add_core": "NZL",
     "oil": 48,
-    "infra": 8,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
@@ -11,45 +10,5 @@
             "template": 95
         }
     },
-    "1964.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 90141,
-            "template": 395
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 82027,
-            "template": 295
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 48808,
-            "template": 95
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 49910,
-            "template": 95
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 64802,
-            "template": 195
-        }
-    }
+    "infrastructure": 8
 }

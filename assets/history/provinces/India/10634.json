@@ -6,76 +6,15 @@
         "IND"
     ],
     "grain": 261.4,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 2176032,
             "template": 15
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
         }
     },
-    "1947.08.15": {
-        "owner": "IND",
-        "controller": "IND",
-        "remove_core": "ENG"
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 4
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 4251716,
-            "template": 215
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 6
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 5545234,
-            "template": 315
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2271606,
-            "template": 15
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2311927,
-            "template": 15
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2899337,
-            "template": 115
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "heavy_industry",
+        "size": 1
     }
 }

@@ -3,51 +3,11 @@
     "controller": "SAF",
     "add_core": "SAF",
     "wood": 1.16,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 251293,
             "template": 4
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 257183,
-            "template": 4
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 4
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 263212,
-            "template": 4
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 352453,
-            "template": 104
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 545553,
-            "template": 204
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 725029,
-            "template": 304
-        }
-    }
+    "infrastructure": 4
 }

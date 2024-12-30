@@ -8,57 +8,11 @@
     "oil": 231,
     "air_base": 3,
     "naval_base": 2,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 1523362,
             "template": 5
         }
     },
-    "1960.10.01": {
-        "owner": "NIG",
-        "controller": "NIG",
-        "remove_core": "ENG"
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 3
-    },
-    "1979.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 3063876,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 5,
-        "population_total": {
-            "amount": 4172226,
-            "template": 305
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1551331,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1579813,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2000270,
-            "template": 105
-        }
-    }
+    "infrastructure": 4
 }

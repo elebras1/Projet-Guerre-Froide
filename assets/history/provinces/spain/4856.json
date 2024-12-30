@@ -3,41 +3,11 @@
     "controller": "SPA",
     "add_core": "SPA",
     "grain": 64.8,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 342682,
             "template": 67
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 345129,
-            "template": 67
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 347593,
-            "template": 67
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 384717,
-            "template": 167
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 460609,
-            "template": 267
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 482688,
-            "template": 367
-        }
-    }
+    "infrastructure": 4
 }

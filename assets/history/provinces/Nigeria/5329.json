@@ -6,46 +6,11 @@
         "NIG"
     ],
     "wood": 0.2,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 236261,
             "template": 5
         }
     },
-    "1960.10.01": {
-        "owner": "NIG",
-        "controller": "NIG",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 240598,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 245016,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 310225,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 475181,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 647077,
-            "template": 305
-        }
-    }
+    "infrastructure": 4
 }

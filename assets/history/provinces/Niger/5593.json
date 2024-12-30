@@ -5,46 +5,11 @@
         "FRA",
         "NGR"
     ],
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 877,
             "template": 5
         }
     },
-    "1958.08.03": {
-        "owner": "NGR",
-        "controller": "NGR",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 901,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 927,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1297,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2148,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3026,
-            "template": 305
-        }
-    }
+    "infrastructure": 1
 }

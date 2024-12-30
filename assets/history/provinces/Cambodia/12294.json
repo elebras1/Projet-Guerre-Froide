@@ -6,46 +6,11 @@
         "CMB"
     ],
     "grain": 4.51,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 44039,
             "template": 20
         }
     },
-    "1948.1.1.0": {
-        "population_total": {
-            "amount": 44988,
-            "template": 20
-        }
-    },
-    "1950.1.1.0": {
-        "population_total": {
-            "amount": 45957,
-            "template": 20
-        }
-    },
-    "1953.11.9.0": {
-        "owner": "CMB",
-        "controller": "CMB",
-        "remove_core": "IDC"
-    },
-    "1961.12.30.0": {
-        "population_total": {
-            "amount": 60253,
-            "template": 120
-        }
-    },
-    "1979.1.1.0": {
-        "population_total": {
-            "amount": 68804,
-            "template": 220
-        }
-    },
-    "1991.1.1.0": {
-        "population_total": {
-            "amount": 104357,
-            "template": 320
-        }
-    }
+    "infrastructure": 1
 }

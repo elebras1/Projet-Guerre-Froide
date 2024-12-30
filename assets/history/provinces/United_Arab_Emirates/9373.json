@@ -6,50 +6,11 @@
         "UAE"
     ],
     "rare_metals": 118.36,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 4958,
             "template": 43
         }
     },
-    "1971.12.2": {
-        "owner": "UAE",
-        "controller": "UAE",
-        "remove_core": "ENG"
-    },
-    "1983.1.1": {
-        "naval_base": 1
-    },
-    "1991.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 142779,
-            "template": 343
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 5079,
-            "template": 43
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 5203,
-            "template": 43
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 8143,
-            "template": 143
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 69334,
-            "template": 243
-        }
-    }
+    "infrastructure": 4
 }

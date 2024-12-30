@@ -3,53 +3,11 @@
     "controller": "AFG",
     "add_core": "AFG",
     "meat": 0.34,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 145928,
             "template": 12
         }
     },
-    "1965.5.7": {
-        "air_base": 4
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
-        }
-    },
-    "1991.3.1": {
-        "air_base": 1
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 148269,
-            "template": 12
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 150647,
-            "template": 12
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 185854,
-            "template": 112
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 263345,
-            "template": 212
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 260025,
-            "template": 312
-        }
-    }
+    "infrastructure": 4
 }

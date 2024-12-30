@@ -3,58 +3,16 @@
     "owner": "FRA",
     "controller": "FRA",
     "wood": 2.5,
-    "infra": 6,
     "1946.1.1": {
-        "air_base": 7,
         "population_total": {
             "amount": 780821,
             "template": 70
-        },
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
         }
     },
-    "1948.1.1": {
-        "air_base": 8,
-        "population_total": {
-            "amount": 809313,
-            "template": 70
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "refinery",
+        "size": 6
     },
-    "1950.1.1": {
-        "air_base": 10,
-        "population_total": {
-            "amount": 815399,
-            "template": 70
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 1045704,
-            "template": 270
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 914567,
-            "template": 170
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1110206,
-            "template": 370
-        }
-    }
+    "air_base": 7
 }

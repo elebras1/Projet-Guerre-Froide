@@ -6,53 +6,15 @@
     "owner": "CZE",
     "controller": "CZE",
     "rare_metals": 12.68,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 458097,
             "template": 47
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 463166,
-            "template": 47
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 468301,
-            "template": 47
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 525056,
-            "template": 147
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 575741,
-            "template": 247
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 593320,
-            "template": 347
-        }
+    "infrastructure": 4,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 3
     }
 }

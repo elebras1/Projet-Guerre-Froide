@@ -3,65 +3,15 @@
     "controller": "PHI",
     "add_core": "PHI",
     "rare_metals": 1.5,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 1128418,
             "template": 25
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 1168364,
-            "template": 25
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 3009313,
-            "template": 225
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1209724,
-            "template": 25
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1828124,
-            "template": 125
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4152431,
-            "template": 325
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 2
     }
 }

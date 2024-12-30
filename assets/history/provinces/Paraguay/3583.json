@@ -3,49 +3,11 @@
     "controller": "PAR",
     "add_core": "PAR",
     "wood": 0.1,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 77546,
             "template": 87
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 172025,
-            "template": 287
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 241066,
-            "template": 387
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 79529,
-            "template": 87
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 81562,
-            "template": 87
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 111232,
-            "template": 187
-        }
-    }
+    "infrastructure": 4
 }

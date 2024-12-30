@@ -6,59 +6,11 @@
         "KOR"
     ],
     "grain": 10,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 257847,
             "template": 10
         }
     },
-    "1948.8.1": {
-        "owner": "KOR",
-        "controller": "KOR"
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 514633,
-            "template": 210
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 604933,
-            "template": 310
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 262849,
-            "template": 10
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 267948,
-            "template": 10
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 369549,
-            "template": 110
-        }
-    }
+    "infrastructure": 3
 }

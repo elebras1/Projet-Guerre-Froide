@@ -4,41 +4,11 @@
     "add_core": "BRA",
     "precious_metals": 3,
     "rare_metals": 20.67,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 57109,
             "template": 77
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 62560,
-            "template": 77
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 64470,
-            "template": 77
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 92307,
-            "template": 177
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 142016,
-            "template": 277
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 181732,
-            "template": 381
-        }
-    }
+    "infrastructure": 1
 }

@@ -3,59 +3,12 @@
     "controller": "FIN",
     "add_core": "FIN",
     "grain": 41.01,
-    "infra": 3,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 145167,
             "template": 53
         }
     },
-    "1979.10.10": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 7
-        }
-    },
-    "1982.7.10": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 8
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 2
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 176267,
-            "template": 253
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 185384,
-            "template": 353
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 146759,
-            "template": 53
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 148369,
-            "template": 53
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 166328,
-            "template": 153
-        }
-    }
+    "infrastructure": 3,
+    "naval_base": 1
 }

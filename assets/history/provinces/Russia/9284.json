@@ -6,51 +6,11 @@
         "RUS"
     ],
     "vegetables": 455.65,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 717951,
             "template": 45
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 994257,
-            "template": 245
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 729624,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 741488,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 887819,
-            "template": 145
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1073391,
-            "template": 345
-        }
-    }
+    "infrastructure": 6
 }

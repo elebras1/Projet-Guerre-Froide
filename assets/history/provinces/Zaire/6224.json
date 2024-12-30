@@ -7,76 +7,15 @@
         "KON"
     ],
     "fruits": 55.74,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 295572,
             "template": 2
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
         }
     },
-    "1960.06.30": {
-        "owner": "DRC",
-        "controller": "DRC",
-        "remove_core": "BEL"
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        }
-    },
-    "1960.09.14": {
-        "owner": "KON",
-        "controller": "KON"
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 664903,
-            "template": 202
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 301986,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 308539,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 409773,
-            "template": 102
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 958671,
-            "template": 302
-        }
+    "infrastructure": 2,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 3
     }
 }

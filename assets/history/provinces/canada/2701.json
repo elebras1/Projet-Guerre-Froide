@@ -3,44 +3,11 @@
     "controller": "CAN",
     "add_core": "CAN",
     "renewable_energy": 103,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 7459,
             "template": 92
         }
     },
-    "1972.1.1": {
-        "renewable_energy": 103
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 7662,
-            "template": 92
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 7870,
-            "template": 92
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 10673,
-            "template": 192
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 13893,
-            "template": 292
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 16070,
-            "template": 392
-        }
-    }
+    "infrastructure": 4
 }

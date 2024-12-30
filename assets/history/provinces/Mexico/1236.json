@@ -3,71 +3,15 @@
     "controller": "MEX",
     "add_core": "MEX",
     "wood": 0.4,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 326593,
             "template": 81
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 336603,
-            "template": 81
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 1069723,
-            "template": 381
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 346920,
-            "template": 81
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 510023,
-            "template": 181
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 836027,
-            "template": 281
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 2
     }
 }

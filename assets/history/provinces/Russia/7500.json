@@ -6,7 +6,6 @@
         "RUS"
     ],
     "wood": 1,
-    "infra": 6,
     "air_base": 7,
     "1946.1.1": {
         "population_total": {
@@ -14,51 +13,5 @@
             "template": 45
         }
     },
-    "1948.1.1": {
-        "air_base": 8,
-        "population_total": {
-            "amount": 65891,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "air_base": 9,
-        "population_total": {
-            "amount": 66962,
-            "template": 45
-        }
-    },
-    "1961.1.1": {
-        "air_base": 10
-    },
-    "1982.12.02": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 6
-        }
-    },
-    "1985.05.31": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 7
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 80177,
-            "template": 145
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 89789,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 96936,
-            "template": 345
-        }
-    }
+    "infrastructure": 6
 }

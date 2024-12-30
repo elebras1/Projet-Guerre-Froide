@@ -3,43 +3,12 @@
     "controller": "FRA",
     "add_core": "FRA",
     "meat": 33.35,
-    "infra": 7,
     "1946.1.1": {
-        "air_base": 6,
         "population_total": {
             "amount": 432094,
             "template": 70
         }
     },
-    "1948.1.1": {
-        "air_base": 8,
-        "population_total": {
-            "amount": 447861,
-            "template": 70
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 451229,
-            "template": 70
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 506108,
-            "template": 170
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 578676,
-            "template": 270
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 614371,
-            "template": 370
-        }
-    }
+    "infrastructure": 7,
+    "air_base": 6
 }

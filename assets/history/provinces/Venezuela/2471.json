@@ -3,67 +3,15 @@
     "controller": "VEN",
     "add_core": "VEN",
     "fruits": 8.87,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 128575,
             "template": 91
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 5
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 133716,
-            "template": 91
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 139062,
-            "template": 91
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 6
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 397707,
-            "template": 291
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 550456,
-            "template": 391
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 222515,
-            "template": 191
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 5
     }
 }

@@ -7,49 +7,11 @@
         "PAK"
     ],
     "renewable_energy": 100,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 269967,
             "template": 18
         }
     },
-    "1947.08.17": {
-        "owner": "PAK",
-        "controller": "PAK",
-        "remove_core": "ENG"
-    },
-    "1967.1.1": {
-        "renewable_energy": 100
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 274867,
-            "template": 18
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 279856,
-            "template": 18
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 359290,
-            "template": 118
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 580198,
-            "template": 218
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 857034,
-            "template": 318
-        }
-    }
+    "infrastructure": 2
 }

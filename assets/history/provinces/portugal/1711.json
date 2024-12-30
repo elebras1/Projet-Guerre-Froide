@@ -2,7 +2,6 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "infra": 6,
     "fruits": 1,
     "1946.1.1": {
         "population_total": {
@@ -10,48 +9,5 @@
             "template": 66
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "high_tech",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 169375,
-            "template": 266
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "high_tech",
-            "size": 2
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "high_tech",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 173763,
-            "template": 366
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 146194,
-            "template": 66
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 147045,
-            "template": 66
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 155937,
-            "template": 166
-        }
-    }
+    "infrastructure": 6
 }

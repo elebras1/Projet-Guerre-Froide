@@ -3,41 +3,11 @@
     "controller": "TUR",
     "add_core": "TUR",
     "meat": 25.77,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 37181,
             "template": 42
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 38269,
-            "template": 42
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 39389,
-            "template": 42
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 54959,
-            "template": 142
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 79995,
-            "template": 242
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 102132,
-            "template": 342
-        }
-    }
+    "infrastructure": 4
 }

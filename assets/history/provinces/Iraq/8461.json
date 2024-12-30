@@ -3,41 +3,11 @@
     "controller": "IRQ",
     "add_core": "IRQ",
     "meat": 4.69,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 59776,
             "template": 33
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 61420,
-            "template": 33
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 63109,
-            "template": 33
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 85774,
-            "template": 133
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 147471,
-            "template": 233
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 197205,
-            "template": 333
-        }
-    }
+    "infrastructure": 4
 }

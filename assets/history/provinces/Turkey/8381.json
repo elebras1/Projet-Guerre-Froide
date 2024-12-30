@@ -2,44 +2,13 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "infra": 6,
     "1946.1.1": {
-        "rare_metals": 3.73,
-        "naval_base": 1,
         "population_total": {
             "amount": 67888,
             "template": 42
         }
     },
-    "1979.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 146062,
-            "template": 242
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 69875,
-            "template": 42
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 71921,
-            "template": 42
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 100349,
-            "template": 142
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 186482,
-            "template": 342
-        }
-    }
+    "infrastructure": 6,
+    "rare_metals": 3.73,
+    "naval_base": 1
 }

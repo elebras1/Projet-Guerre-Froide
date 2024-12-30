@@ -3,59 +3,11 @@
     "controller": "SCH",
     "add_core": "SCH",
     "meat": 350,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 1198955,
             "template": 74
         }
     },
-    "1969.9.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 6
-        }
-    },
-    "1971.12.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 7
-        }
-    },
-    "1979.11.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 8
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1214026,
-            "template": 74
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1229286,
-            "template": 74
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1449128,
-            "template": 174
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1660697,
-            "template": 274
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1774928,
-            "template": 374
-        }
-    }
+    "infrastructure": 6
 }

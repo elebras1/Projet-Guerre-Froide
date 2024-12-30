@@ -6,46 +6,11 @@
         "GHN"
     ],
     "meat": 14,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 110045,
             "template": 5
         }
     },
-    "1957.3.6.0": {
-        "owner": "GHN",
-        "controller": "GHN",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 113220,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 116486,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 167906,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 249403,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 355854,
-            "template": 305
-        }
-    }
+    "infrastructure": 3
 }

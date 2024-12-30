@@ -6,46 +6,11 @@
         "NAM"
     ],
     "grain": 0.22,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 1502,
             "template": 4
         }
     },
-    "1975.11.11": {
-        "owner": "NAM",
-        "controller": "NAM",
-        "remove_core": "SAF"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1532,
-            "template": 4
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1564,
-            "template": 4
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2039,
-            "template": 104
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3195,
-            "template": 204
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4722,
-            "template": 304
-        }
-    }
+    "infrastructure": 4
 }

@@ -7,70 +7,15 @@
         "SKA"
     ],
     "precious_metals": 6,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 80958,
             "template": 2
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 82715,
-            "template": 2
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        }
-    },
-    "1960.06.30": {
-        "owner": "DRC",
-        "controller": "DRC",
-        "remove_core": "BEL"
-    },
-    "1960.07.11": {
-        "owner": "SKA",
-        "controller": "SKA"
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 84510,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 112238,
-            "template": 102
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 182118,
-            "template": 202
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 262582,
-            "template": 302
-        }
+    "infrastructure": 2,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 2
     }
 }

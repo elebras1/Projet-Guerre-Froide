@@ -6,21 +6,12 @@
         "ARG"
     ],
     "fish": 0.13,
-    "infra": 3,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 968,
             "template": 5
         }
     },
-    "1985.1.1": {
-        "air_base": 4
-    },
-    "1979.1.1": {
-        "naval_base": 2
-    },
-    "1991.1.1": {
-        "naval_base": 3
-    }
+    "infrastructure": 3,
+    "naval_base": 1
 }

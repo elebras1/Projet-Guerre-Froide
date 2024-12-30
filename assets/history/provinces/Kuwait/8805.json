@@ -6,77 +6,17 @@
         "KWT"
     ],
     "oil": 119,
-    "infra": 4,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 85155,
             "template": 36
-        },
-        "air_base": 1,
-        "economy_building": {
-            "name": "refinery",
-            "size": 3
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
-        }
+    "infrastructure": 4,
+    "economy_building": {
+        "name": "refinery",
+        "size": 3
     },
-    "1961.1.1": {
-        "air_base": 2,
-        "naval_base": 2,
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        }
-    },
-    "1961.06.19": {
-        "owner": "KWT",
-        "controller": "KWT",
-        "remove_core": "ENG"
-    },
-    "1979.1.1": {
-        "air_base": 3,
-        "naval_base": 3,
-        "economy_building": {
-            "name": "refinery",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 807772,
-            "template": 236
-        }
-    },
-    "1991.1.15": {
-        "owner": "IRQ",
-        "controller": "IRQ"
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 1253584,
-            "template": 336
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 89455,
-            "template": 36
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 93973,
-            "template": 36
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 207999,
-            "template": 136
-        }
-    }
+    "air_base": 1
 }

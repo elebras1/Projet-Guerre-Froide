@@ -3,41 +3,11 @@
     "controller": "SIA",
     "add_core": "SIA",
     "grain": 20.92,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 193806,
             "template": 27
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 199043,
-            "template": 27
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 204421,
-            "template": 27
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 287843,
-            "template": 127
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 461195,
-            "template": 227
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 572488,
-            "template": 327
-        }
-    }
+    "infrastructure": 1
 }

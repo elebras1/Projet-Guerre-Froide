@@ -3,54 +3,16 @@
     "controller": "ITA",
     "add_core": "ITA",
     "grain": 185.68,
-    "infra": 6,
     "naval_base": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 1430415,
             "template": 64
-        },
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 7
         }
     },
-    "1961.1.1": {
-        "naval_base": 4
-    },
-    "1979.1.1": {
-        "naval_base": 5,
-        "population_total": {
-            "amount": 1777414,
-            "template": 264
-        }
-    },
-    "1985.1.1": {
-        "naval_base": 6
-    },
-    "1991.1.1": {
-        "naval_base": 7,
-        "population_total": {
-            "amount": 1803101,
-            "template": 364
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1459547,
-            "template": 64
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1470450,
-            "template": 64
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1593459,
-            "template": 164
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "naval_yards",
+        "size": 7
     }
 }

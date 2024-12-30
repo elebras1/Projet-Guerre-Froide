@@ -3,7 +3,6 @@
     "controller": "CAN",
     "add_core": "CAN",
     "grain": 4.3,
-    "infra": 4,
     "naval_base": 10,
     "1946.1.1": {
         "population_total": {
@@ -11,34 +10,5 @@
             "template": 92
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 4144,
-            "template": 92
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 4257,
-            "template": 92
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 5773,
-            "template": 192
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 7515,
-            "template": 292
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 8693,
-            "template": 392
-        }
-    }
+    "infrastructure": 4
 }

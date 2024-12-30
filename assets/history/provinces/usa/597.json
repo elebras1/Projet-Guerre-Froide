@@ -3,41 +3,11 @@
     "controller": "USA",
     "add_core": "USA",
     "precious_metals": 5,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 2403,
             "template": 93
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2442,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2481,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 3018,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3579,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4022,
-            "template": 393
-        }
-    }
+    "infrastructure": 5
 }

@@ -3,41 +3,11 @@
     "controller": "BRA",
     "add_core": "BRA",
     "wood": 0.1,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 15561,
             "template": 77
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 17046,
-            "template": 77
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 17567,
-            "template": 77
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 25152,
-            "template": 177
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 38697,
-            "template": 277
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 49519,
-            "template": 381
-        }
-    }
+    "infrastructure": 1
 }

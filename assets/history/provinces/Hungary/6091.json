@@ -3,49 +3,15 @@
     "owner": "HUN",
     "controller": "HUN",
     "grain": 282.3,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 680114,
             "template": 48
-        },
-        "economy_building": {
-            "name": "university",
-            "size": 1
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "high_tech",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 794217,
-            "template": 248
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 687011,
-            "template": 48
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 693977,
-            "template": 48
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 746230,
-            "template": 148
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 770014,
-            "template": 348
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "university",
+        "size": 1
     }
 }

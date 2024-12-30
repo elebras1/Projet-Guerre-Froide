@@ -3,61 +3,11 @@
     "owner": "GRE",
     "controller": "GRE",
     "coal": 8,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 373720,
             "template": 63
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 381458,
-            "template": 63
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 480714,
-            "template": 263
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 377569,
-            "template": 63
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 425074,
-            "template": 163
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 516634,
-            "template": 363
-        }
-    }
+    "infrastructure": 5
 }

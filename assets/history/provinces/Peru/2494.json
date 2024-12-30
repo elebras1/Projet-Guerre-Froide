@@ -3,41 +3,11 @@
     "controller": "PRU",
     "add_core": "PRU",
     "grain": 4.6,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 39839,
             "template": 88
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 40854,
-            "template": 88
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 41895,
-            "template": 88
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 57722,
-            "template": 188
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 92506,
-            "template": 288
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 121430,
-            "template": 388
-        }
-    }
+    "infrastructure": 6
 }

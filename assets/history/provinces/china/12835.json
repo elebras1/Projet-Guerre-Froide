@@ -6,65 +6,11 @@
         "CHC"
     ],
     "vegetables": 754.08,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 5437162,
             "template": 6
         }
     },
-    "1949.10.01": {
-        "owner": "CHC",
-        "controller": "CHC"
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 5655603,
-            "template": 6
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 10
-        },
-        "population_total": {
-            "amount": 11919683,
-            "template": 306
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 5545307,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 6937832,
-            "template": 106
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 9962296,
-            "template": 206
-        }
-    }
+    "infrastructure": 4
 }

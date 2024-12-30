@@ -6,59 +6,15 @@
     "owner": "CZE",
     "controller": "CZE",
     "grain": 200.43,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 492447,
             "template": 47
-        },
-        "economy_building": {
-            "name": "aviation_industry",
-            "size": 2
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "aviation_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 497896,
-            "template": 47
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "aviation_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 503415,
-            "template": 47
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "aviation_industry",
-            "size": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 564427,
-            "template": 147
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 618912,
-            "template": 247
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 637809,
-            "template": 347
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "aviation_industry",
+        "size": 2
     }
 }

@@ -6,46 +6,11 @@
         "IND"
     ],
     "uranium": 1,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 367719,
             "template": 15
         }
     },
-    "1947.08.15": {
-        "owner": "IND",
-        "controller": "IND",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 383870,
-            "template": 15
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 390683,
-            "template": 15
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 489948,
-            "template": 115
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 718481,
-            "template": 215
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 937067,
-            "template": 315
-        }
-    }
+    "infrastructure": 5
 }

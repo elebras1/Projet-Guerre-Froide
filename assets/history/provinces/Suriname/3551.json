@@ -6,7 +6,6 @@
         "SUR"
     ],
     "rare_metals": 3,
-    "infra": 5,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
@@ -14,41 +13,5 @@
             "template": 89
         }
     },
-    "1975.11.25": {
-        "owner": "SUR",
-        "controller": "SUR",
-        "remove_core": "HOL"
-    },
-    "1979.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 287443,
-            "template": 289
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 325474,
-            "template": 389
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 164468,
-            "template": 89
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 169431,
-            "template": 89
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 241518,
-            "template": 189
-        }
-    }
+    "infrastructure": 5
 }

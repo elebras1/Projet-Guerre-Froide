@@ -3,57 +3,11 @@
     "controller": "ARG",
     "add_core": "ARG",
     "oil": 66,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 23299,
             "template": 79
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 2
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 46752,
-            "template": 379
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 23759,
-            "template": 79
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 24229,
-            "template": 79
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 30087,
-            "template": 179
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 39149,
-            "template": 279
-        }
-    }
+    "infrastructure": 3
 }

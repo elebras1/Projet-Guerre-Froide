@@ -6,54 +6,12 @@
         "KOR"
     ],
     "grain": 10,
-    "infra": 3,
     "1946.1.1": {
-        "naval_base": 2,
         "population_total": {
             "amount": 346338,
             "template": 10
         }
     },
-    "1948.8.1": {
-        "owner": "KOR",
-        "controller": "KOR"
-    },
-    "1961.1.1": {
-        "naval_base": 3
-    },
-    "1979.1.1": {
-        "naval_base": 6,
-        "population_total": {
-            "amount": 691251,
-            "template": 210
-        }
-    },
-    "1985.1.1": {
-        "naval_base": 7
-    },
-    "1991.1.1": {
-        "naval_base": 8,
-        "population_total": {
-            "amount": 812542,
-            "template": 310
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 353057,
-            "template": 10
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 359906,
-            "template": 10
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 496375,
-            "template": 110
-        }
-    }
+    "infrastructure": 3,
+    "naval_base": 2
 }

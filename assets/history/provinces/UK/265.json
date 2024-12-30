@@ -3,41 +3,11 @@
     "controller": "ENG",
     "add_core": "ENG",
     "vegetables": 10.1,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 567873,
             "template": 60
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 587756,
-            "template": 60
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 589067,
-            "template": 60
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 619894,
-            "template": 160
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 655175,
-            "template": 260
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 667665,
-            "template": 360
-        }
-    }
+    "infrastructure": 6
 }

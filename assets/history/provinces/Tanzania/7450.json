@@ -7,61 +7,15 @@
         "TNG"
     ],
     "grain": 38.58,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 357633,
             "template": 1
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
         }
     },
-    "1961.12.09": {
-        "owner": "TNG",
-        "controller": "TNG",
-        "remove_core": "ENG"
-    },
-    "1964.04.26": {
-        "owner": "TNZ",
-        "controller": "TNZ",
-        "remove_core": "TNG"
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 367171,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 376964,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 526466,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 892475,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1297559,
-            "template": 301
-        }
+    "infrastructure": 1,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 5
     }
 }

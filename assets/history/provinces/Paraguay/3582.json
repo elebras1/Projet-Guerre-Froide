@@ -3,45 +3,11 @@
     "controller": "PAR",
     "add_core": "PAR",
     "renewable_energy": 700,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 162575,
             "template": 87
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 360650,
-            "template": 287
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 166732,
-            "template": 87
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 170995,
-            "template": 87
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 233198,
-            "template": 187
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 505394,
-            "template": 387
-        }
-    }
+    "infrastructure": 4
 }

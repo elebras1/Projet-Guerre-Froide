@@ -6,46 +6,11 @@
         "BKN"
     ],
     "grain": 5.85,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 161797,
             "template": 5
         }
     },
-    "1960.08.05": {
-        "owner": "BKN",
-        "controller": "BKN",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 163633,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 165490,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 194415,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 272043,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 370036,
-            "template": 305
-        }
-    }
+    "infrastructure": 2
 }

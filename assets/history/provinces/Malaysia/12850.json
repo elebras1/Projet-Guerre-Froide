@@ -6,52 +6,11 @@
         "MLY"
     ],
     "vegetables": 16.49,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 102473,
             "template": 23
         }
     },
-    "1957.08.31": {
-        "owner": "MLY",
-        "controller": "MLY",
-        "remove_core": "ENG"
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 105306,
-            "template": 23
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 108218,
-            "template": 23
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 154269,
-            "template": 123
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 239174,
-            "template": 223
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 331349,
-            "template": 323
-        }
-    }
+    "infrastructure": 1
 }

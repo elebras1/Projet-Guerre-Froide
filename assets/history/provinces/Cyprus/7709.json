@@ -8,76 +8,16 @@
         "TUR"
     ],
     "fruits": 25,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 260122,
             "template": 32
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 267488,
-            "template": 32
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 3
     },
-    "1960.08.16": {
-        "owner": "CYP",
-        "controller": "CYP",
-        "remove_core": "ENG"
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        }
-    },
-    "1975.2.13": {
-        "owner": "TUR",
-        "controller": "TUR"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 368262,
-            "template": 232
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 8
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 424064,
-            "template": 332
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 263779,
-            "template": 32
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 312837,
-            "template": 132
-        }
-    }
+    "naval_base": 1
 }

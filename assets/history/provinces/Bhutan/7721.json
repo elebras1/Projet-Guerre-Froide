@@ -3,41 +3,11 @@
     "controller": "BHU",
     "add_core": "BHU",
     "fruits": 0.25,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 28013,
             "template": 14
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 28904,
-            "template": 14
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 29824,
-            "template": 14
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 42192,
-            "template": 114
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 73993,
-            "template": 214
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 98439,
-            "template": 314
-        }
-    }
+    "infrastructure": 4
 }

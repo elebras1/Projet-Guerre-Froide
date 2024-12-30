@@ -3,59 +3,15 @@
     "controller": "PER",
     "add_core": "PER",
     "grain": 48.75,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 381084,
             "template": 16
-        },
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
         }
     },
-    "1991.1.1": {
-        "economy_building": [
-            {
-                "name": "rocket_test_site",
-                "size": 1
-            },
-            {
-                "name": "refinery",
-                "size": 7
-            }
-        ],
-        "population_total": {
-            "amount": 1281476,
-            "template": 316
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 851033,
-            "template": 216
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 389445,
-            "template": 16
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 397990,
-            "template": 16
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 529395,
-            "template": 116
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "refinery",
+        "size": 5
     }
 }

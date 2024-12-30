@@ -3,7 +3,6 @@
     "controller": "AST",
     "add_core": "AST",
     "fruits": 10.57,
-    "infra": 4,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
@@ -11,34 +10,5 @@
             "template": 94
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 35000,
-            "template": 94
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 35832,
-            "template": 94
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 46873,
-            "template": 194
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 63698,
-            "template": 294
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 75897,
-            "template": 394
-        }
-    }
+    "infrastructure": 4
 }

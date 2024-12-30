@@ -3,41 +3,11 @@
     "controller": "PAN",
     "add_core": "PAN",
     "fruits": 7.5,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 54030,
             "template": 76
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 55419,
-            "template": 76
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 56843,
-            "template": 76
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 79044,
-            "template": 176
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 126076,
-            "template": 276
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 162983,
-            "template": 383
-        }
-    }
+    "infrastructure": 4
 }

@@ -6,46 +6,11 @@
         "SUD"
     ],
     "meat": 4.36,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 16593,
             "template": 3
         }
     },
-    "1956.01.01": {
-        "owner": "SUD",
-        "controller": "SUD",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 16963,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 17342,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 22875,
-            "template": 103
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 36660,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 51251,
-            "template": 303
-        }
-    }
+    "infrastructure": 1
 }

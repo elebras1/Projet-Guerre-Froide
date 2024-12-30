@@ -3,7 +3,6 @@
     "controller": "SIA",
     "add_core": "SIA",
     "grain": 199.09,
-    "infra": 1,
     "economy_building": {
         "name": "financial_district",
         "size": 1
@@ -14,60 +13,5 @@
             "template": 27
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 829673,
-            "template": 27
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 1922407,
-            "template": 227
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 852091,
-            "template": 27
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1199820,
-            "template": 127
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2386311,
-            "template": 327
-        }
-    }
+    "infrastructure": 1
 }

@@ -2,41 +2,11 @@
     "owner": "EGY",
     "controller": "EGY",
     "add_core": "EGY",
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1215,
             "template": 3
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1246,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1277,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1746,
-            "template": 103
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2607,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3441,
-            "template": 303
-        }
-    }
+    "infrastructure": 1
 }

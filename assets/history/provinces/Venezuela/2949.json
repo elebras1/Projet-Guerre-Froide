@@ -3,41 +3,11 @@
     "controller": "VEN",
     "add_core": "VEN",
     "vegetables": 0.67,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 780,
             "template": 91
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 811,
-            "template": 91
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 844,
-            "template": 91
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1350,
-            "template": 191
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2412,
-            "template": 291
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3339,
-            "template": 391
-        }
-    }
+    "infrastructure": 4
 }

@@ -6,69 +6,16 @@
     "owner": "ENG",
     "controller": "ENG",
     "meat": 714.47,
-    "infra": 8,
     "naval_base": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 953617,
             "template": 71
-        },
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 9
         }
     },
-    "1949.05.23": {
-        "owner": "FRG",
-        "controller": "FRG"
-    },
-    "1990.10.3": {
-        "owner": "GER",
-        "controller": "GER"
-    },
-    "1979.1.1": {
-        "naval_base": 5,
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 1268365,
-            "template": 271
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 8
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 4
-    },
-    "1991.1.1": {
-        "naval_base": 6,
-        "population_total": {
-            "amount": 1322756,
-            "template": 371
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 997094,
-            "template": 71
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1031920,
-            "template": 71
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1175625,
-            "template": 171
-        }
+    "infrastructure": 8,
+    "economy_building": {
+        "name": "naval_yards",
+        "size": 9
     }
 }

@@ -7,69 +7,15 @@
     ],
     "uranium": 4,
     "naval_base": 2,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 2678475,
             "template": 6
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
         }
     },
-    "1949.10.01": {
-        "owner": "CHC",
-        "controller": "CHC"
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 4907664,
-            "template": 206
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 10
-        },
-        "population_total": {
-            "amount": 5871919,
-            "template": 306
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2731750,
-            "template": 6
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2786084,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 3417740,
-            "template": 106
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 4
     }
 }

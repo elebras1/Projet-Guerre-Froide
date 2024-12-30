@@ -3,59 +3,15 @@
     "controller": "ARG",
     "add_core": "ARG",
     "wood": 0.1,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 323927,
             "template": 79
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 336848,
-            "template": 79
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 544286,
-            "template": 279
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 330325,
-            "template": 79
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 418299,
-            "template": 179
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 649988,
-            "template": 379
-        }
+    "infrastructure": 2,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 2
     }
 }

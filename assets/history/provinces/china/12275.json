@@ -6,49 +6,11 @@
         "CHC"
     ],
     "oil": 192,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 950867,
             "template": 6
         }
     },
-    "1949.10.01": {
-        "owner": "CHC",
-        "controller": "CHC"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 1742236,
-            "template": 206
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 969780,
-            "template": 6
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 989069,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1213309,
-            "template": 106
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2084549,
-            "template": 306
-        }
-    }
+    "infrastructure": 3
 }

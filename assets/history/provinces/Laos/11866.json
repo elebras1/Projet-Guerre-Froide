@@ -3,46 +3,11 @@
     "controller": "IDC",
     "add_core": "IDC",
     "fruits": 2.14,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 63324,
             "template": 22
         }
     },
-    "1948.1.1.0": {
-        "population_total": {
-            "amount": 64838,
-            "template": 22
-        }
-    },
-    "1949.7.19.0": {
-        "owner": "LAO",
-        "controller": "LAO",
-        "remove_core": "IDC"
-    },
-    "1950.1.1.0": {
-        "population_total": {
-            "amount": 66387,
-            "template": 22
-        }
-    },
-    "1961.12.30.0": {
-        "population_total": {
-            "amount": 87988,
-            "template": 122
-        }
-    },
-    "1979.1.1.0": {
-        "population_total": {
-            "amount": 125705,
-            "template": 222
-        }
-    },
-    "1991.1.1.0": {
-        "population_total": {
-            "amount": 170113,
-            "template": 322
-        }
-    }
+    "infrastructure": 1
 }

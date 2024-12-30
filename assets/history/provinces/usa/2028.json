@@ -3,69 +3,17 @@
     "controller": "USA",
     "add_core": "USA",
     "fruits": 253.52,
-    "infra": 7,
     "naval_base": 10,
     "1946.1.1": {
-        "air_base": 10,
         "population_total": {
             "amount": 619072,
             "template": 93
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
         }
     },
-    "1980.1.1": {
-        "economy_building": {
-            "name": "financial_district",
-            "size": 1
-        }
+    "infrastructure": 7,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 7
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 8
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 922148,
-            "template": 293
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 629119,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 639330,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 777641,
-            "template": 193
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1036323,
-            "template": 393
-        }
-    }
+    "air_base": 10
 }

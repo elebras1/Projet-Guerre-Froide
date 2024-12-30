@@ -6,50 +6,11 @@
         "ANG"
     ],
     "grain": 13.32,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 4038,
             "template": 2
         }
     },
-    "1975.11.11": {
-        "owner": "ANG",
-        "controller": "ANG",
-        "remove_core": "POR"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 7469,
-            "template": 202
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 4111,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 4186,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 5195,
-            "template": 102
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 10752,
-            "template": 302
-        }
-    }
+    "infrastructure": 4
 }

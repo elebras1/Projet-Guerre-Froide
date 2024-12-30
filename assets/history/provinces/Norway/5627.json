@@ -3,41 +3,11 @@
     "controller": "NOR",
     "add_core": "NOR",
     "iron": 3,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 48818,
             "template": 58
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 49291,
-            "template": 58
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 49769,
-            "template": 58
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 55450,
-            "template": 158
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 62074,
-            "template": 258
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 64980,
-            "template": 358
-        }
-    }
+    "infrastructure": 6
 }

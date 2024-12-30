@@ -5,46 +5,11 @@
         "FRA",
         "CHA"
     ],
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1191,
             "template": 2
         }
     },
-    "1960.08.11": {
-        "owner": "CHA",
-        "controller": "CHA",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1213,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1236,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1569,
-            "template": 102
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2269,
-            "template": 202
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3154,
-            "template": 302
-        }
-    }
+    "infrastructure": 1
 }

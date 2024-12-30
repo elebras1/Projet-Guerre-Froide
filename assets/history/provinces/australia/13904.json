@@ -2,41 +2,11 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1523,
             "template": 94
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1560,
-            "template": 94
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1597,
-            "template": 94
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2089,
-            "template": 194
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2838,
-            "template": 294
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3382,
-            "template": 394
-        }
-    }
+    "infrastructure": 1
 }

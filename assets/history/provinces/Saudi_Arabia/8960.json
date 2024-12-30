@@ -3,57 +3,16 @@
     "controller": "SAU",
     "add_core": "SAU",
     "oil": 158,
-    "infra": 2,
     "naval_base": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 653,
             "template": 40
-        },
-        "economy_building": {
-            "name": "refinery",
-            "size": 1
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 686,
-            "template": 40
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 2027,
-            "template": 240
-        }
-    },
-    "1990.1.1": {
-        "air_base": 2
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3665,
-            "template": 340
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 670,
-            "template": 40
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 948,
-            "template": 140
-        }
+    "infrastructure": 2,
+    "economy_building": {
+        "name": "refinery",
+        "size": 1
     }
 }

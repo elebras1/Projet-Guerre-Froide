@@ -6,53 +6,16 @@
     "owner": "YUG",
     "controller": "YUG",
     "rare_metals": 3.41,
-    "infra": 4,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 283843,
             "template": 62
-        },
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 7
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 291212,
-            "template": 62
-        }
-    },
-    "1985.1.1": {
-        "naval_base": 2
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 287500,
-            "template": 62
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 330798,
-            "template": 162
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 378896,
-            "template": 262
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 407469,
-            "template": 362
-        }
+    "infrastructure": 4,
+    "economy_building": {
+        "name": "naval_yards",
+        "size": 7
     }
 }

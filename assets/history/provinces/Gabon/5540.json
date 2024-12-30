@@ -6,52 +6,12 @@
         "GAB"
     ],
     "oil": 41,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 220913,
             "template": 2
-        },
-        "naval_base": 1
-    },
-    "1965.02.17": {
-        "owner": "GAB",
-        "controller": "GAB",
-        "remove_core": "FRA"
-    },
-    "1979.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 314234,
-            "template": 202
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 221534,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 222156,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 232760,
-            "template": 102
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 454559,
-            "template": 302
-        }
-    }
+    "infrastructure": 4,
+    "naval_base": 1
 }

@@ -6,46 +6,11 @@
         "NIG"
     ],
     "grain": 76.36,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 555961,
             "template": 5
         }
     },
-    "1960.10.01": {
-        "owner": "NIG",
-        "controller": "NIG",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 566169,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 576564,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 730012,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1118183,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1522682,
-            "template": 305
-        }
-    }
+    "infrastructure": 3
 }

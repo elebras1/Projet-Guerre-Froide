@@ -2,41 +2,11 @@
     "owner": "ETH",
     "controller": "ETH",
     "add_core": "ETH",
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 8621,
             "template": 1
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 8787,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 8957,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 11489,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 16896,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 24293,
-            "template": 301
-        }
-    }
+    "infrastructure": 2
 }

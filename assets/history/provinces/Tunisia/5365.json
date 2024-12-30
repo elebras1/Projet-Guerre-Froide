@@ -6,46 +6,11 @@
         "TUN"
     ],
     "fruits": 1.25,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 122086,
             "template": 3
         }
     },
-    "1956.03.20": {
-        "owner": "TUN",
-        "controller": "TUN",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 124271,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 126496,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 156828,
-            "template": 103
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 225327,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 300168,
-            "template": 303
-        }
-    }
+    "infrastructure": 2
 }

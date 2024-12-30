@@ -3,69 +3,15 @@
     "owner": "USA",
     "controller": "USA",
     "wood": 3.2,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 285618,
             "template": 68
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
         }
     },
-    "1955.05.15": {
-        "owner": "AUS",
-        "controller": "AUS"
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 311289,
-            "template": 268
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 8
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 318005,
-            "template": 368
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 285681,
-            "template": 68
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 285744,
-            "template": 68
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 293488,
-            "template": 168
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 5
     }
 }

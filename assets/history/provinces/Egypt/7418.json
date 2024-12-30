@@ -3,55 +3,16 @@
     "controller": "EGY",
     "add_core": "EGY",
     "oil": 141,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 2912506,
             "template": 3
-        },
-        "naval_base": 1,
-        "economy_building": {
-            "name": "refinery",
-            "size": 2
         }
     },
-    "1961.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "refinery",
+        "size": 2
     },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 6251657,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 8249518,
-            "template": 303
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2986571,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 3062520,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 4186326,
-            "template": 103
-        }
-    }
+    "naval_base": 1
 }

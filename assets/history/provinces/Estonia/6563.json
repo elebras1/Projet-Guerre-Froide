@@ -6,51 +6,11 @@
     "owner": "SOV",
     "controller": "SOV",
     "meat": 81.09,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 21054,
             "template": 52
         }
     },
-    "1991.08.20": {
-        "owner": "EST",
-        "controller": "EST",
-        "remove_core": "SOV"
-    },
-    "1961.1.1": {
-        "naval_base": 1
-    },
-    "1979.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 28591,
-            "template": 252
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 30309,
-            "template": 352
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 21274,
-            "template": 52
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 21496,
-            "template": 52
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 24296,
-            "template": 152
-        }
-    }
+    "infrastructure": 5
 }

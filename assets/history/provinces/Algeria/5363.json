@@ -6,7 +6,6 @@
         "ALG"
     ],
     "grain": 47.02,
-    "infra": 4,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
@@ -14,47 +13,5 @@
             "template": 3
         }
     },
-    "1962.07.05": {
-        "owner": "ALG",
-        "controller": "ALG",
-        "remove_core": "FRA"
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 379950,
-            "template": 3
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 3
-    },
-    "1979.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 790264,
-            "template": 203
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 372187,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 486597,
-            "template": 103
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1125595,
-            "template": 303
-        }
-    }
+    "infrastructure": 4
 }

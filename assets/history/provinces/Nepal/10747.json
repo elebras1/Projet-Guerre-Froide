@@ -3,41 +3,11 @@
     "controller": "NEP",
     "add_core": "NEP",
     "grain": 113.29,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 613107,
             "template": 17
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 623266,
-            "template": 17
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 633594,
-            "template": 17
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 777622,
-            "template": 117
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1131089,
-            "template": 217
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1505214,
-            "template": 317
-        }
-    }
+    "infrastructure": 2
 }

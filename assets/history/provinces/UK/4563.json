@@ -3,59 +3,16 @@
     "controller": "ENG",
     "add_core": "ENG",
     "meat": 114.17,
-    "infra": 5,
     "naval_base": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 837388,
             "template": 60
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
         }
     },
-    "1961.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 5,
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 984540,
-            "template": 360
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 966122,
-            "template": 260
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 866706,
-            "template": 60
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 868639,
-            "template": 60
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 914097,
-            "template": 160
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 6
     }
 }

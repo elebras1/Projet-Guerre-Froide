@@ -3,7 +3,6 @@
     "controller": "USA",
     "add_core": "USA",
     "vegetables": 103.81,
-    "infra": 5,
     "economy_building": {
         "name": "military_academy",
         "size": 1
@@ -14,34 +13,5 @@
             "template": 93
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 98653,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 100254,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 121943,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 144603,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 162507,
-            "template": 393
-        }
-    }
+    "infrastructure": 5
 }

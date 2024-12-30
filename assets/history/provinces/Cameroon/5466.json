@@ -5,46 +5,11 @@
         "ENG",
         "CAM"
     ],
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 169299,
             "template": 2
         }
     },
-    "1960.01.01": {
-        "owner": "CAM",
-        "controller": "CAM",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 172439,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 175638,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 222088,
-            "template": 102
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 347711,
-            "template": 202
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 492718,
-            "template": 302
-        }
-    }
+    "infrastructure": 4
 }

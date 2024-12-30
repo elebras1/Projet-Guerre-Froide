@@ -3,41 +3,11 @@
     "controller": "SAU",
     "add_core": "SAU",
     "grain": 5.83,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 33956,
             "template": 40
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 34801,
-            "template": 40
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 35667,
-            "template": 40
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 49273,
-            "template": 140
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 105322,
-            "template": 240
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 190484,
-            "template": 340
-        }
-    }
+    "infrastructure": 4
 }

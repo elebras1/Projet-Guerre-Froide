@@ -6,46 +6,11 @@
         "CAM"
     ],
     "rare_metals": 6.17,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 206303,
             "template": 2
         }
     },
-    "1960.01.01": {
-        "owner": "CAM",
-        "controller": "CAM",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 210130,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 214028,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 270631,
-            "template": 102
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 423713,
-            "template": 202
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 600415,
-            "template": 302
-        }
-    }
+    "infrastructure": 3
 }

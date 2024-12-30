@@ -3,63 +3,16 @@
     "controller": "FRA",
     "add_core": "FRA",
     "rare_metals": 5.62,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 2,
         "population_total": {
             "amount": 454128,
             "template": 70
-        },
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 6
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 474239,
-            "template": 70
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "naval_yards",
+        "size": 6
     },
-    "1985.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 5
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 5,
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 645699,
-            "template": 370
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 608185,
-            "template": 270
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 470699,
-            "template": 70
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 531915,
-            "template": 170
-        }
-    }
+    "naval_base": 2
 }

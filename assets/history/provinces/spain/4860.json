@@ -3,59 +3,16 @@
     "controller": "SPA",
     "add_core": "SPA",
     "fish": 110.04,
-    "infra": 6,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 691031,
             "template": 67
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
         }
     },
-    "1961.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 928834,
-            "template": 267
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 973357,
-            "template": 367
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 695965,
-            "template": 67
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 700935,
-            "template": 67
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 775796,
-            "template": 167
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 6
     }
 }

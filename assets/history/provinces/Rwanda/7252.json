@@ -6,50 +6,11 @@
         "RWD"
     ],
     "grain": 132,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 593219,
             "template": 1
         }
     },
-    "1962.07.01": {
-        "owner": "RWD",
-        "controller": "RWD",
-        "remove_core": "BEL"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 1516549,
-            "template": 201
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 609924,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 627100,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 890600,
-            "template": 101
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2079401,
-            "template": 301
-        }
-    }
+    "infrastructure": 4
 }

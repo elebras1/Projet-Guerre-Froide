@@ -6,72 +6,15 @@
         "PAK"
     ],
     "vegetables": 3.37,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 430917,
             "template": 18
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
         }
     },
-    "1947.08.17": {
-        "owner": "PAK",
-        "controller": "PAK",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 438738,
-            "template": 18
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 446701,
-            "template": 18
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 926101,
-            "template": 218
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 1367980,
-            "template": 318
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 573492,
-            "template": 118
-        }
+    "infrastructure": 2,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 3
     }
 }

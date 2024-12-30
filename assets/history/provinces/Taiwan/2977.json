@@ -7,75 +7,12 @@
         "TWN"
     ],
     "grain": 100,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 597515,
             "template": 6
-        },
-        "naval_base": 1
-    },
-    "1971.1.1.0": {
-        "owner": "TWN",
-        "controller": "TWN"
-    },
-    "1978.12.10": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
         }
     },
-    "1979.7.15": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1981.12.28": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 8
-        }
-    },
-    "1985.5.18": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 9
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 2
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 1464838,
-            "template": 206
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 1711967,
-            "template": 306
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 615440,
-            "template": 6
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 633903,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 942416,
-            "template": 106
-        }
-    }
+    "infrastructure": 3,
+    "naval_base": 1
 }

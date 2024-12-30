@@ -3,41 +3,11 @@
     "controller": "PER",
     "add_core": "PER",
     "grain": 3.84,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 29935,
             "template": 16
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 30592,
-            "template": 16
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 31263,
-            "template": 16
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 41586,
-            "template": 116
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 66851,
-            "template": 216
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 100664,
-            "template": 316
-        }
-    }
+    "infrastructure": 4
 }

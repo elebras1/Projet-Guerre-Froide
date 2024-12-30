@@ -7,7 +7,6 @@
         "FRA"
     ],
     "fruits": 4.2,
-    "infra": 4,
     "air_base": 1,
     "naval_base": 2,
     "1946.1.1": {
@@ -16,19 +15,5 @@
             "template": 188
         }
     },
-    "1980.07.30": {
-        "owner": "VNT",
-        "controller": "VNT",
-        "remove_core": [
-            "ENG",
-            "FRA"
-        ]
-    },
-    "1979.1.1": {
-        "naval_base": 2,
-        "air_base": 2
-    },
-    "1985.1.1": {
-        "naval_base": 3
-    }
+    "infrastructure": 4
 }

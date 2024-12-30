@@ -6,72 +6,15 @@
         "NIG"
     ],
     "wood": 0.05,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 458691,
             "template": 5
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
         }
     },
-    "1960.10.01": {
-        "owner": "NIG",
-        "controller": "NIG",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 467113,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 475689,
-            "template": 5
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 922547,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 1256276,
-            "template": 305
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 602291,
-            "template": 105
-        }
+    "infrastructure": 3,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 1
     }
 }

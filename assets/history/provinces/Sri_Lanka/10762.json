@@ -6,50 +6,11 @@
         "SRL"
     ],
     "fruits": 95,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 558131,
             "template": 15
         }
     },
-    "1948.02.04": {
-        "owner": "SRL",
-        "controller": "SRL",
-        "remove_core": "ENG"
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 1229269,
-            "template": 315
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 567703,
-            "template": 15
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 577439,
-            "template": 15
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 734392,
-            "template": 115
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1039706,
-            "template": 215
-        }
-    }
+    "infrastructure": 4
 }

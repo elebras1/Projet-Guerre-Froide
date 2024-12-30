@@ -6,82 +6,16 @@
         "JOR"
     ],
     "vegetables": 2.69,
-    "infra": 2,
     "air_base": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 883,
             "template": 35
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
         }
     },
-    "1946.05.25": {
-        "owner": "JOR",
-        "controller": "JOR",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 948,
-            "template": 35
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 1018,
-            "template": 35
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 5049,
-            "template": 235
-        }
-    },
-    "1983.9.23": {
-        "air_base": 4
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 8162,
-            "template": 335
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2201,
-            "template": 135
-        }
+    "infrastructure": 2,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 2
     }
 }

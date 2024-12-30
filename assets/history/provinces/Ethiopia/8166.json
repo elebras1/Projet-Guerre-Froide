@@ -3,59 +3,15 @@
     "controller": "ETH",
     "add_core": "ETH",
     "fruits": 114.72,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 1048622,
             "template": 1
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 1068819,
-            "template": 1
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 2954830,
-            "template": 301
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1089404,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1397402,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2055052,
-            "template": 201
-        }
+    "infrastructure": 4,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 4
     }
 }

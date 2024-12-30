@@ -6,68 +6,11 @@
         "SEN"
     ],
     "fruits": 24.05,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 204791,
             "template": 5
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1960.04.04": {
-        "owner": "SEN",
-        "controller": "SEN",
-        "remove_core": "FRA"
-    },
-    "1962.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 466455,
-            "template": 205
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 209094,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 213487,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 284239,
-            "template": 105
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 659260,
-            "template": 305
-        }
-    }
+    "infrastructure": 4
 }

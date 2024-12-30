@@ -3,43 +3,12 @@
     "controller": "VEN",
     "add_core": "VEN",
     "fish": 1.47,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 1206,
             "template": 91
         }
     },
-    "1979.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 3730,
-            "template": 291
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1254,
-            "template": 91
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1304,
-            "template": 91
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2087,
-            "template": 191
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 5163,
-            "template": 391
-        }
-    }
+    "infrastructure": 6,
+    "naval_base": 1
 }

@@ -3,49 +3,21 @@
     "controller": "ENG",
     "add_core": "ENG",
     "grain": 211.4,
-    "infra": 6,
-    "economy_building": {
-        "name": "military_academy",
-        "size": 1
-    },
+    "economy_building": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "naval_yards",
+            "size": 6
+        }
+    ],
     "1946.1.1": {
         "population_total": {
             "amount": 946210,
             "template": 60
-        },
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 6
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 979338,
-            "template": 60
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 981522,
-            "template": 60
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1032887,
-            "template": 160
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1091673,
-            "template": 260
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1112485,
-            "template": 360
-        }
-    }
+    "infrastructure": 6
 }

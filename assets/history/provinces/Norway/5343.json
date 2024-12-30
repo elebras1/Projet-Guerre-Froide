@@ -3,41 +3,11 @@
     "controller": "NOR",
     "add_core": "NOR",
     "rare_metals": 15.37,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 2416,
             "template": 58
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2440,
-            "template": 58
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2463,
-            "template": 58
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2745,
-            "template": 158
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3073,
-            "template": 258
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3216,
-            "template": 358
-        }
-    }
+    "infrastructure": 1
 }

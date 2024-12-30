@@ -6,53 +6,11 @@
         "KAZ"
     ],
     "meat": 685.02,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 409906,
             "template": 11
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 439255,
-            "template": 11
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 967338,
-            "template": 211
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 1082146,
-            "template": 311
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 424327,
-            "template": 11
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 709014,
-            "template": 111
-        }
-    }
+    "infrastructure": 4
 }

@@ -6,7 +6,6 @@
         "GEO"
     ],
     "fruits": 91.44,
-    "infra": 6,
     "naval_base": 5,
     "1946.1.1": {
         "population_total": {
@@ -14,43 +13,5 @@
             "template": 30
         }
     },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 785448,
-            "template": 330
-        }
-    },
-    "1991.4.9": {
-        "owner": "GEO",
-        "controller": "GEO",
-        "remove_core": "SOV"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 502724,
-            "template": 30
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 511261,
-            "template": 30
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 622146,
-            "template": 130
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 730142,
-            "template": 230
-        }
-    }
+    "infrastructure": 6
 }

@@ -5,46 +5,11 @@
         "FRA",
         "MRA"
     ],
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1663,
             "template": 5
         }
     },
-    "1960.11.28": {
-        "owner": "MRA",
-        "controller": "MRA",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1704,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1746,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2402,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3918,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 5449,
-            "template": 305
-        }
-    }
+    "infrastructure": 1
 }

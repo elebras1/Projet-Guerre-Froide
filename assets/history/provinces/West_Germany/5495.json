@@ -6,77 +6,11 @@
     "owner": "USA",
     "controller": "USA",
     "grain": 338.35,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 1322550,
             "template": 71
         }
     },
-    "1949.05.23": {
-        "owner": "FRG",
-        "controller": "FRG"
-    },
-    "1990.10.3": {
-        "owner": "GER",
-        "controller": "GER",
-        "remove_core": [
-            "DDR",
-            "FRG"
-        ]
-    },
-    "1967.4.12": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 5
-        }
-    },
-    "1979.3.21": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 7
-        }
-    },
-    "1982.6.17": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 8
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 9
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1382846,
-            "template": 71
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1431147,
-            "template": 71
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1630447,
-            "template": 171
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1759066,
-            "template": 271
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1834500,
-            "template": 371
-        }
-    }
+    "infrastructure": 6
 }

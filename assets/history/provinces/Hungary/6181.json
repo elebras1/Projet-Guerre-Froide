@@ -3,69 +3,21 @@
     "owner": "HUN",
     "controller": "HUN",
     "vegetables": 248.2,
-    "infra": 7,
-    "economy_building": {
-        "name": "military_academy",
-        "size": 1
-    },
+    "economy_building": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "light_industry",
+            "size": 5
+        }
+    ],
     "1946.1.1": {
         "population_total": {
             "amount": 2130348,
             "template": 48
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 2151950,
-            "template": 48
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 8
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 2487756,
-            "template": 248
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2173771,
-            "template": 48
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2337444,
-            "template": 148
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2411945,
-            "template": 348
-        }
-    }
+    "infrastructure": 7
 }

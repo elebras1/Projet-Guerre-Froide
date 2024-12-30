@@ -3,41 +3,11 @@
     "controller": "PER",
     "add_core": "PER",
     "meat": 27.66,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 243778,
             "template": 16
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 249126,
-            "template": 16
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 254592,
-            "template": 16
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 338652,
-            "template": 116
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 544402,
-            "template": 216
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 819754,
-            "template": 316
-        }
-    }
+    "infrastructure": 5
 }

@@ -7,51 +7,11 @@
         "RHO"
     ],
     "vegetables": 17.29,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 154159,
             "template": 1
         }
     },
-    "1953.8.1": {
-        "owner": "RHO",
-        "controller": "RHO",
-        "remove_core": "ENG"
-    },
-    "1964.07.06": {
-        "owner": "MLW",
-        "controller": "MLW",
-        "remove_core": "RHO"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 157073,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 160041,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 205227,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 336397,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 532436,
-            "template": 301
-        }
-    }
+    "infrastructure": 2
 }

@@ -3,49 +3,11 @@
     "controller": "VEN",
     "add_core": "VEN",
     "vegetables": 7.06,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 40685,
             "template": 91
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 125845,
-            "template": 291
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 174179,
-            "template": 391
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 42311,
-            "template": 91
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 44003,
-            "template": 91
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 70410,
-            "template": 191
-        }
-    }
+    "infrastructure": 6
 }

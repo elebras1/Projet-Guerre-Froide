@@ -3,44 +3,11 @@
     "controller": "MEX",
     "add_core": "MEX",
     "renewable_energy": 108,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 205797,
             "template": 81
         }
     },
-    "1966.1.1": {
-        "renewable_energy": 108
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 212105,
-            "template": 81
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 218606,
-            "template": 81
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 321382,
-            "template": 181
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 526808,
-            "template": 281
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 674068,
-            "template": 381
-        }
-    }
+    "infrastructure": 6
 }

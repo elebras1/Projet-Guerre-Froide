@@ -6,46 +6,11 @@
         "IND"
     ],
     "grain": 140.8,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 1384355,
             "template": 15
         }
     },
-    "1947.08.15": {
-        "owner": "IND",
-        "controller": "IND",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1445157,
-            "template": 15
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1470808,
-            "template": 15
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1844508,
-            "template": 115
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2704869,
-            "template": 215
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3527783,
-            "template": 315
-        }
-    }
+    "infrastructure": 5
 }

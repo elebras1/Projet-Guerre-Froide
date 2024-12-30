@@ -3,55 +3,11 @@
     "controller": "PRU",
     "add_core": "PRU",
     "precious_metals": 35,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 140101,
             "template": 88
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 147331,
-            "template": 88
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 325310,
-            "template": 288
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 143670,
-            "template": 88
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 202987,
-            "template": 188
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 427027,
-            "template": 388
-        }
-    }
+    "infrastructure": 3
 }

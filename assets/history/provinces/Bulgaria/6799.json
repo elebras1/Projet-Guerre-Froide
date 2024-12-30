@@ -3,51 +3,11 @@
     "controller": "BUL",
     "add_core": "BUL",
     "coal": 6,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 483434,
             "template": 46
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "high_tech",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 597038,
-            "template": 246
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "high_tech",
-            "size": 3
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 486687,
-            "template": 46
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 489963,
-            "template": 46
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 541158,
-            "template": 146
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 590782,
-            "template": 346
-        }
-    }
+    "infrastructure": 4
 }

@@ -3,66 +3,13 @@
     "controller": "FRA",
     "add_core": "FRA",
     "meat": 171.14,
-    "infra": 6,
     "naval_base": 3,
     "1946.1.1": {
-        "air_base": 4,
         "population_total": {
             "amount": 848045,
             "template": 70
         }
     },
-    "1948.1.1": {
-        "air_base": 6,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 878990,
-            "template": 70
-        }
-    },
-    "1950.1.1": {
-        "air_base": 8,
-        "population_total": {
-            "amount": 885600,
-            "template": 70
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 4,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 5,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 1135732,
-            "template": 270
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 6,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 1205787,
-            "template": 370
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 993306,
-            "template": 170
-        }
-    }
+    "infrastructure": 6,
+    "air_base": 4
 }

@@ -6,7 +6,6 @@
         "CHC"
     ],
     "renewable_energy": 140,
-    "infra": 4,
     "naval_base": 5,
     "1946.1.1": {
         "population_total": {
@@ -14,55 +13,5 @@
             "template": 6
         }
     },
-    "1949.10.01": {
-        "owner": "CHC",
-        "controller": "CHC"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 4567672,
-            "template": 206
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 2
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 5465126,
-            "template": 306
-        }
-    },
-    "1996.1.1": {
-        "renewable_energy": 140
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2542500,
-            "template": 6
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2593071,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 3180967,
-            "template": 106
-        }
-    }
+    "infrastructure": 4
 }

@@ -3,7 +3,6 @@
     "controller": "TUR",
     "add_core": "TUR",
     "grain": 13.7,
-    "infra": 4,
     "air_base": 5,
     "1946.1.1": {
         "population_total": {
@@ -11,34 +10,5 @@
             "template": 42
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 293686,
-            "template": 42
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 302282,
-            "template": 42
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 421767,
-            "template": 142
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 613895,
-            "template": 242
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 783780,
-            "template": 342
-        }
-    }
+    "infrastructure": 4
 }

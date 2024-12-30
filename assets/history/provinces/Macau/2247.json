@@ -2,7 +2,6 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "infra": 6,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
@@ -10,43 +9,5 @@
             "template": 84
         }
     },
-    "1949.10.01": {
-        "add_core": "CHC"
-    },
-    "1999.12.20": {
-        "owner": "CHC",
-        "controller": "CHC",
-        "remove_core": "POR"
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 718932,
-            "template": 384
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 226146,
-            "template": 84
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 232075,
-            "template": 84
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 322457,
-            "template": 184
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 530277,
-            "template": 284
-        }
-    }
+    "infrastructure": 6
 }

@@ -3,41 +3,11 @@
     "controller": "SAF",
     "add_core": "SAF",
     "coal": 6,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 43957,
             "template": 4
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 44988,
-            "template": 4
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 46042,
-            "template": 4
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 61653,
-            "template": 104
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 95431,
-            "template": 204
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 126826,
-            "template": 304
-        }
-    }
+    "infrastructure": 6
 }

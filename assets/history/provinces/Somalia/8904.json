@@ -6,46 +6,11 @@
         "SOM"
     ],
     "meat": 0.32,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 48434,
             "template": 1
         }
     },
-    "1960.07.01": {
-        "owner": "SOM",
-        "controller": "SOM",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 49479,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 50545,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 65905,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 136043,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 147011,
-            "template": 301
-        }
-    }
+    "infrastructure": 4
 }

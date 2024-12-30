@@ -6,46 +6,11 @@
         "DRC"
     ],
     "fruits": 4.68,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 22082,
             "template": 2
         }
     },
-    "1960.06.30": {
-        "owner": "DRC",
-        "controller": "DRC",
-        "remove_core": "BEL"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 22561,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 23051,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 30614,
-            "template": 102
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 49674,
-            "template": 202
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 71621,
-            "template": 302
-        }
-    }
+    "infrastructure": 2
 }

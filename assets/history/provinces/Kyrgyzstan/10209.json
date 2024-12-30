@@ -6,61 +6,11 @@
         "KYG"
     ],
     "meat": 71.93,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 215349,
             "template": 11
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 219196,
-            "template": 11
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 456196,
-            "template": 211
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 223110,
-            "template": 11
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 297948,
-            "template": 111
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 569519,
-            "template": 311
-        }
-    }
+    "infrastructure": 4
 }

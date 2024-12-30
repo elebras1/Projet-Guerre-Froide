@@ -3,41 +3,11 @@
     "controller": "SAF",
     "add_core": "SAF",
     "precious_metals": 3,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 128601,
             "template": 4
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 131616,
-            "template": 4
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 134701,
-            "template": 4
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 180371,
-            "template": 104
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 279192,
-            "template": 204
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 371040,
-            "template": 304
-        }
-    }
+    "infrastructure": 4
 }

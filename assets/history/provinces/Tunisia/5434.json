@@ -6,72 +6,15 @@
         "TUN"
     ],
     "fruits": 1.38,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 356084,
             "template": 3
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
         }
     },
-    "1956.03.20": {
-        "owner": "TUN",
-        "controller": "TUN",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 362458,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 368946,
-            "template": 3
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 657203,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 875490,
-            "template": 303
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 457414,
-            "template": 103
-        }
+    "infrastructure": 2,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 3
     }
 }

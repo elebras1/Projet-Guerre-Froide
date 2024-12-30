@@ -6,46 +6,11 @@
         "LAO"
     ],
     "grain": 7.05,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 24299,
             "template": 22
         }
     },
-    "1949.07.19": {
-        "owner": "LAO",
-        "controller": "LAO",
-        "remove_core": "IDC"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 24880,
-            "template": 22
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 25475,
-            "template": 22
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 33763,
-            "template": 122
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 48236,
-            "template": 222
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 65277,
-            "template": 322
-        }
-    }
+    "infrastructure": 2
 }

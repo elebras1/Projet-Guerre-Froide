@@ -3,63 +3,11 @@
     "controller": "HOL",
     "add_core": "HOL",
     "grain": 298.2,
-    "infra": 7,
     "1946.1.1": {
         "population_total": {
             "amount": 1080187,
             "template": 73
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 1093840,
-            "template": 73
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 1107666,
-            "template": 73
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 1546959,
-            "template": 273
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 10
-        },
-        "population_total": {
-            "amount": 1656431,
-            "template": 373
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1296329,
-            "template": 173
-        }
-    }
+    "infrastructure": 7
 }

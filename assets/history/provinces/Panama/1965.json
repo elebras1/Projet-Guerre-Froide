@@ -3,54 +3,12 @@
     "controller": "PAN",
     "add_core": "PAN",
     "fish": 8,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 153229,
             "template": 76
         }
     },
-    "1979.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 357547,
-            "template": 276
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 462214,
-            "template": 383
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 157167,
-            "template": 76
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 161206,
-            "template": 76
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 224167,
-            "template": 176
-        }
-    }
+    "infrastructure": 6,
+    "naval_base": 1
 }

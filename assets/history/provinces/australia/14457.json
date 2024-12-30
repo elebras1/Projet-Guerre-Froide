@@ -3,60 +3,16 @@
     "controller": "AST",
     "add_core": "AST",
     "grain": 262.54,
-    "infra": 10,
     "naval_base": 8,
     "1946.1.1": {
         "population_total": {
             "amount": 721862,
             "template": 94
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 4
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 1344957,
-            "template": 294
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 1602515,
-            "template": 394
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 739014,
-            "template": 94
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 756573,
-            "template": 94
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 989703,
-            "template": 194
-        }
+    "infrastructure": 10,
+    "economy_building": {
+        "name": "heavy_industry",
+        "size": 4
     }
 }

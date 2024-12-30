@@ -6,46 +6,11 @@
         "SEN"
     ],
     "fruits": 4.71,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 56539,
             "template": 5
         }
     },
-    "1960.04.04": {
-        "owner": "SEN",
-        "controller": "SEN",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 57726,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 58939,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 78472,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 128779,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 182008,
-            "template": 305
-        }
-    }
+    "infrastructure": 4
 }

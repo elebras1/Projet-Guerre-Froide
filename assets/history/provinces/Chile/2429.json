@@ -3,57 +3,11 @@
     "controller": "CHL",
     "add_core": "CHL",
     "fruits": 73.53,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 423289,
             "template": 82
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 800019,
-            "template": 282
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 432334,
-            "template": 82
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 441573,
-            "template": 82
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 584480,
-            "template": 182
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 975024,
-            "template": 382
-        }
-    }
+    "infrastructure": 6
 }

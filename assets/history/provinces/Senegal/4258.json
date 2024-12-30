@@ -6,70 +6,16 @@
         "SEN"
     ],
     "grain": 12.7,
-    "infra": 4,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 138032,
             "template": 5
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 143893,
-            "template": 5
-        }
+    "infrastructure": 4,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 5
     },
-    "1960.04.04": {
-        "owner": "SEN",
-        "controller": "SEN",
-        "remove_core": "FRA"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 314397,
-            "template": 205
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 444350,
-            "template": 305
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 140932,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 191581,
-            "template": 105
-        }
-    }
+    "naval_base": 1
 }

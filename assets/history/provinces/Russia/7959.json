@@ -6,59 +6,15 @@
         "RUS"
     ],
     "wood": 1,
-    "infra": 7,
     "1946.1.1": {
         "population_total": {
             "amount": 138196,
             "template": 45
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 142727,
-            "template": 45
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 191382,
-            "template": 245
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 140443,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 170894,
-            "template": 145
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 206614,
-            "template": 345
-        }
+    "infrastructure": 7,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 5
     }
 }

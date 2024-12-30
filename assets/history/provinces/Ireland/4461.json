@@ -3,51 +3,16 @@
     "controller": "IRE",
     "add_core": "IRE",
     "coal": 2,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 80795,
             "template": 55
-        },
-        "naval_base": 1,
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 4
         }
     },
-    "1979.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 93527,
-            "template": 255
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "naval_yards",
+        "size": 4
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 80728,
-            "template": 55
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 80662,
-            "template": 55
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 78506,
-            "template": 155
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 97955,
-            "template": 355
-        }
-    }
+    "naval_base": 1
 }

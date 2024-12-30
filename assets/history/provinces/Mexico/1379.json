@@ -3,7 +3,6 @@
     "controller": "MEX",
     "add_core": "MEX",
     "oil": 206,
-    "infra": 5,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
@@ -11,34 +10,5 @@
             "template": 81
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 210962,
-            "template": 81
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 217428,
-            "template": 81
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 319651,
-            "template": 181
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 523971,
-            "template": 281
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 670437,
-            "template": 381
-        }
-    }
+    "infrastructure": 5
 }

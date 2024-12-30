@@ -3,44 +3,11 @@
     "controller": "ARG",
     "add_core": "ARG",
     "renewable_energy": 203,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 12154,
             "template": 79
         }
     },
-    "1998.1.1": {
-        "renewable_energy": 203
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 12394,
-            "template": 79
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 12639,
-            "template": 79
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 15695,
-            "template": 179
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 20422,
-            "template": 279
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 24388,
-            "template": 379
-        }
-    }
+    "infrastructure": 6
 }

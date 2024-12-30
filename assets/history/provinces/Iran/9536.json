@@ -2,41 +2,11 @@
     "owner": "PER",
     "controller": "PER",
     "add_core": "PER",
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 8741,
             "template": 16
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 8932,
-            "template": 16
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 9128,
-            "template": 16
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 12142,
-            "template": 116
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 19519,
-            "template": 216
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 29392,
-            "template": 316
-        }
-    }
+    "infrastructure": 3
 }

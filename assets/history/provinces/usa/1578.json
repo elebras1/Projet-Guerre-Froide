@@ -3,46 +3,16 @@
     "controller": "USA",
     "add_core": "USA",
     "oil": 367,
-    "infra": 5,
     "air_base": 8,
     "1946.1.1": {
         "population_total": {
             "amount": 407854,
             "template": 93
-        },
-        "economy_building": {
-            "name": "refinery",
-            "size": 10
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 414474,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 421201,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 512322,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 607526,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 682746,
-            "template": 393
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "refinery",
+        "size": 10
     }
 }

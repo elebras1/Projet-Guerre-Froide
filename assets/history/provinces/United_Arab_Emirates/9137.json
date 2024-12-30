@@ -6,60 +6,11 @@
         "UAE"
     ],
     "fruits": 1.5,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 3468,
             "template": 43
         }
     },
-    "1971.12.2": {
-        "owner": "UAE",
-        "controller": "UAE",
-        "remove_core": "ENG"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 48502,
-            "template": 243
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 99880,
-            "template": 343
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 3553,
-            "template": 43
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 3639,
-            "template": 43
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 5697,
-            "template": 143
-        }
-    }
+    "infrastructure": 4
 }

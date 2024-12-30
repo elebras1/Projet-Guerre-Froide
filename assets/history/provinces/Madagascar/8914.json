@@ -6,46 +6,11 @@
         "MAD"
     ],
     "grain": 12.36,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 80077,
             "template": 1
         }
     },
-    "1960.06.26": {
-        "owner": "MAD",
-        "controller": "MAD",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 81801,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 83562,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 109571,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 171545,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 237796,
-            "template": 301
-        }
-    }
+    "infrastructure": 2
 }

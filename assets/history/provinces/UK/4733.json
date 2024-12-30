@@ -3,58 +3,16 @@
     "controller": "ENG",
     "add_core": "ENG",
     "coal": 14,
-    "infra": 5,
     "naval_base": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 1561469,
             "template": 60
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
         }
     },
-    "1961.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 1801518,
-            "template": 260
-        }
-    },
-    "1985.1.1": {
-        "naval_base": 5
-    },
-    "1991.1.1": {
-        "naval_base": 6,
-        "population_total": {
-            "amount": 1835861,
-            "template": 360
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1616138,
-            "template": 60
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1619742,
-            "template": 60
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1704506,
-            "template": 160
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 7
     }
 }

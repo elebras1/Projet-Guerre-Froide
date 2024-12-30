@@ -6,52 +6,11 @@
         "PAK"
     ],
     "grain": 3.41,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 44580,
             "template": 18
         }
     },
-    "1947.08.17": {
-        "owner": "PAK",
-        "controller": "PAK",
-        "remove_core": "ENG"
-    },
-    "1961.11.21": {
-        "economy_building": {
-            "name": "rocket_test_site",
-            "size": 1
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 45389,
-            "template": 18
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 46213,
-            "template": 18
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 59329,
-            "template": 118
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 95808,
-            "template": 218
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 141522,
-            "template": 318
-        }
-    }
+    "infrastructure": 4
 }

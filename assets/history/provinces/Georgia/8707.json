@@ -6,46 +6,11 @@
         "GEO"
     ],
     "meat": 42.2,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 283398,
             "template": 30
         }
     },
-    "1991.4.9": {
-        "owner": "GEO",
-        "controller": "GEO",
-        "remove_core": "SOV"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 288210,
-            "template": 30
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 293103,
-            "template": 30
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 356674,
-            "template": 130
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 418587,
-            "template": 230
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 450294,
-            "template": 330
-        }
-    }
+    "infrastructure": 4
 }

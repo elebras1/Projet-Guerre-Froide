@@ -6,46 +6,11 @@
         "MOZ"
     ],
     "grain": 5.86,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 98182,
             "template": 1
         }
     },
-    "1975.06.25": {
-        "owner": "MOZ",
-        "controller": "MOZ",
-        "remove_core": "POR"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 99734,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 101311,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 125180,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 186253,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 218084,
-            "template": 301
-        }
-    }
+    "infrastructure": 2
 }

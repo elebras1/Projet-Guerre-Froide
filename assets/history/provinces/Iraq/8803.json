@@ -3,59 +3,11 @@
     "controller": "IRQ",
     "add_core": "IRQ",
     "oil": 258,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 137667,
             "template": 33
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 2
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 3
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 141452,
-            "template": 33
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 145342,
-            "template": 33
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 197541,
-            "template": 133
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 339633,
-            "template": 233
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 454173,
-            "template": 333
-        }
-    }
+    "infrastructure": 6
 }

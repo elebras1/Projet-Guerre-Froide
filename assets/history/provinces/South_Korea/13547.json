@@ -6,49 +6,11 @@
         "KOR"
     ],
     "coal": 4,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 541674,
             "template": 10
         }
     },
-    "1948.8.1": {
-        "owner": "KOR",
-        "controller": "KOR"
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "high_tech",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 1270819,
-            "template": 310
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 552183,
-            "template": 10
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 562895,
-            "template": 10
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 776333,
-            "template": 110
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1081120,
-            "template": 210
-        }
-    }
+    "infrastructure": 5
 }

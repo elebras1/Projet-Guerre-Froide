@@ -6,23 +6,12 @@
         "DMN"
     ],
     "fruits": 4.2,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 51000,
             "template": 45
         }
     },
-    "1978.11.03": {
-        "owner": "DMN",
-        "controller": "DMN",
-        "remove_core": "ENG"
-    },
-    "1979.1.1": {
-        "naval_base": 2
-    },
-    "1991.1.1": {
-        "naval_base": 3
-    }
+    "infrastructure": 6,
+    "naval_base": 1
 }

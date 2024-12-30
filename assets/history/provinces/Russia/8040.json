@@ -6,47 +6,12 @@
         "RUS"
     ],
     "coal": 3,
-    "infra": 7,
     "1946.1.1": {
         "population_total": {
             "amount": 235603,
             "template": 45
-        },
-        "air_base": 3
-    },
-    "1948.1.1": {
-        "air_base": 4,
-        "population_total": {
-            "amount": 239434,
-            "template": 45
         }
     },
-    "1950.1.1": {
-        "air_base": 4,
-        "population_total": {
-            "amount": 243327,
-            "template": 45
-        }
-    },
-    "1961.1.1": {
-        "air_base": 5
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 291347,
-            "template": 145
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 326276,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 352245,
-            "template": 345
-        }
-    }
+    "infrastructure": 7,
+    "air_base": 3
 }

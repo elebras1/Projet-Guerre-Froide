@@ -4,45 +4,11 @@
     "controller": "ENG",
     "wood": 1.9,
     "grain": 610,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 221793,
             "template": 68
         }
     },
-    "1955.05.15": {
-        "owner": "AUS",
-        "controller": "AUS"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 221842,
-            "template": 68
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 221891,
-            "template": 68
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 227904,
-            "template": 168
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 241727,
-            "template": 268
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 246942,
-            "template": 368
-        }
-    }
+    "infrastructure": 5
 }

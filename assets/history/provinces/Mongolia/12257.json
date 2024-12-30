@@ -3,73 +3,15 @@
     "controller": "MON",
     "add_core": "MON",
     "grain": 1.34,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 32367,
             "template": 9
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 32968,
-            "template": 9
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 33581,
-            "template": 9
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 71006,
-            "template": 209
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 5
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 95831,
-            "template": 309
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 43606,
-            "template": 109
-        }
+    "infrastructure": 2,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 2
     }
 }

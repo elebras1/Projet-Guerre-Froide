@@ -6,64 +6,15 @@
         "SUD"
     ],
     "meat": 41.52,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 497533,
             "template": 3
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
         }
     },
-    "1956.01.01": {
-        "owner": "SUD",
-        "controller": "SUD",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 508638,
-            "template": 3
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 1536769,
-            "template": 303
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 519991,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 685910,
-            "template": 103
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1099247,
-            "template": 203
-        }
+    "infrastructure": 2,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 4
     }
 }

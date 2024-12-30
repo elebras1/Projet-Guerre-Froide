@@ -6,46 +6,11 @@
         "IND"
     ],
     "coal": 4,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 744523,
             "template": 15
         }
     },
-    "1947.8.15.0": {
-        "owner": "IND",
-        "controller": "IND",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 777223,
-            "template": 15
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 791019,
-            "template": 15
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 992000,
-            "template": 115
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1454712,
-            "template": 215
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1897286,
-            "template": 315
-        }
-    }
+    "infrastructure": 5
 }

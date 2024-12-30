@@ -2,15 +2,12 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "infra": 3,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 300,
             "template": 186
         }
     },
-    "1991.1.1": {
-        "naval_base": 2
-    }
+    "infrastructure": 3,
+    "naval_base": 1
 }

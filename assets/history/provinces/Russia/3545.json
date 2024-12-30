@@ -5,47 +5,11 @@
         "SOV",
         "RUS"
     ],
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 3482,
             "template": 45
         }
     },
-    "1956.1.1": {
-        "economy_building": {
-            "name": "rocket_test_site",
-            "size": 1
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 3539,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 3596,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 4306,
-            "template": 145
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 4822,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 5206,
-            "template": 345
-        }
-    }
+    "infrastructure": 1
 }

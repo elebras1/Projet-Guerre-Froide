@@ -3,64 +3,16 @@
     "controller": "BUL",
     "add_core": "BUL",
     "rare_metals": 15,
-    "infra": 5,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
     "1946.1.1": {
-        "air_base": 4,
         "population_total": {
             "amount": 601721,
             "template": 46
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 743121,
-            "template": 246
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 735335,
-            "template": 346
-        }
-    },
-    "1948.1.1": {
-        "air_base": 5,
-        "population_total": {
-            "amount": 605770,
-            "template": 46
-        }
-    },
-    "1961.1.1": {
-        "air_base": 6
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 609847,
-            "template": 46
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 673570,
-            "template": 146
-        }
-    }
+    "infrastructure": 5,
+    "air_base": 4
 }

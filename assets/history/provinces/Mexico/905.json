@@ -2,41 +2,11 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 4405,
             "template": 81
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 4540,
-            "template": 81
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 4679,
-            "template": 81
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 6879,
-            "template": 181
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 11276,
-            "template": 281
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 14428,
-            "template": 381
-        }
-    }
+    "infrastructure": 3
 }

@@ -3,41 +3,11 @@
     "controller": "USA",
     "add_core": "USA",
     "renewable_energy": 208,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 16071,
             "template": 93
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 16332,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 16597,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 20188,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 23939,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 26903,
-            "template": 393
-        }
-    }
+    "infrastructure": 6
 }

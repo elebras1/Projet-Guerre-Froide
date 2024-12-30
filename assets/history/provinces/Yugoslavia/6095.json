@@ -6,68 +6,15 @@
     "owner": "YUG",
     "controller": "YUG",
     "rare_metals": 3,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 689551,
             "template": 62
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 1
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 698435,
-            "template": 62
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        }
-    },
-    "1962.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 920467,
-            "template": 262
-        }
-    },
-    "1992.1.1": {
-        "naval_base": 1
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 707451,
-            "template": 62
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 803620,
-            "template": 162
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 989881,
-            "template": 362
-        }
+    "infrastructure": 4,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 1
     }
 }

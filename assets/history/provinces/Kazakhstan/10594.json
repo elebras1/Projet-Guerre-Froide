@@ -6,41 +6,11 @@
         "KAZ"
     ],
     "grain": 8.14,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 710,
             "template": 11
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 735,
-            "template": 11
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 761,
-            "template": 11
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1229,
-            "template": 111
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1676,
-            "template": 211
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1875,
-            "template": 311
-        }
-    }
+    "infrastructure": 4
 }

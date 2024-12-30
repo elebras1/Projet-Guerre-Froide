@@ -3,65 +3,15 @@
     "controller": "POR",
     "add_core": "POR",
     "vegetables": 191.57,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 147556,
             "template": 66
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 171948,
-            "template": 266
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 176402,
-            "template": 366
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 148415,
-            "template": 66
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 149278,
-            "template": 66
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 158306,
-            "template": 166
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 3
     }
 }

@@ -3,67 +3,15 @@
     "controller": "USA",
     "add_core": "USA",
     "wood": 1,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 397221,
             "template": 93
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 8
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 403668,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 410220,
-            "template": 93
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 8
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 591687,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 664947,
-            "template": 393
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 498966,
-            "template": 193
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 8
     }
 }

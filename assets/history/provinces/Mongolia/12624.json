@@ -3,45 +3,11 @@
     "controller": "MON",
     "add_core": "MON",
     "grain": 0.52,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 1619,
             "template": 9
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 1680,
-            "template": 9
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1649,
-            "template": 9
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2181,
-            "template": 109
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3551,
-            "template": 209
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4793,
-            "template": 309
-        }
-    }
+    "infrastructure": 4
 }

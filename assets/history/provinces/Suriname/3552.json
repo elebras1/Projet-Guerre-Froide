@@ -6,46 +6,11 @@
         "SUR"
     ],
     "precious_metals": 5,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 1971,
             "template": 89
         }
     },
-    "1975.11.25": {
-        "owner": "SUR",
-        "controller": "SUR",
-        "remove_core": "HOL"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2030,
-            "template": 89
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2092,
-            "template": 89
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2982,
-            "template": 189
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3549,
-            "template": 289
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4018,
-            "template": 389
-        }
-    }
+    "infrastructure": 3
 }

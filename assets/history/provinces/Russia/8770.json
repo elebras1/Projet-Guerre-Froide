@@ -6,41 +6,11 @@
         "RUS"
     ],
     "meat": 15.45,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 1747,
             "template": 45
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1776,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1805,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2161,
-            "template": 145
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2420,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2612,
-            "template": 345
-        }
-    }
+    "infrastructure": 4
 }

@@ -7,46 +7,11 @@
         "CHC"
     ],
     "vegetables": 44.71,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 213993,
             "template": 6
         }
     },
-    "1949.10.01": {
-        "owner": "CHC",
-        "controller": "CHC",
-        "remove_core": "CSX"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 328783,
-            "template": 6
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 335322,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 411346,
-            "template": 106
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 590667,
-            "template": 206
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 706721,
-            "template": 306
-        }
-    }
+    "infrastructure": 5
 }

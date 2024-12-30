@@ -6,71 +6,15 @@
         "ARM"
     ],
     "vegetables": 68.96,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 264193,
             "template": 30
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 1
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 271815,
-            "template": 30
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 629058,
-            "template": 230
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 279657,
-            "template": 30
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 413682,
-            "template": 130
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 725648,
-            "template": 330
-        }
+    "infrastructure": 4,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 1
     }
 }

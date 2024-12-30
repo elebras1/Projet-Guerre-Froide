@@ -3,41 +3,11 @@
     "controller": "FRA",
     "add_core": "FRA",
     "grain": 10,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 311565,
             "template": 70
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 322934,
-            "template": 70
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 325362,
-            "template": 70
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 364933,
-            "template": 170
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 417259,
-            "template": 270
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 442997,
-            "template": 370
-        }
-    }
+    "infrastructure": 5
 }

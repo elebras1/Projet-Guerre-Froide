@@ -3,61 +3,11 @@
     "controller": "COL",
     "add_core": "COL",
     "coal": 2,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 205572,
             "template": 83
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 211396,
-            "template": 83
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 475933,
-            "template": 283
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 217385,
-            "template": 83
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 307694,
-            "template": 183
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 613226,
-            "template": 383
-        }
-    }
+    "infrastructure": 6
 }

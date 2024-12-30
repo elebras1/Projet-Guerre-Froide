@@ -3,59 +3,16 @@
     "controller": "NOR",
     "add_core": "NOR",
     "oil": 88,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 85450,
             "template": 58
-        },
-        "naval_base": 2
-    },
-    "1979.1.1": {
-        "naval_base": 4,
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 108652,
-            "template": 258
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 5,
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 113739,
-            "template": 358
         }
     },
     "economy_building": {
         "name": "naval_research_center",
         "size": 1
     },
-    "1961.1.1": {
-        "naval_base": 3
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 86278,
-            "template": 58
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 87114,
-            "template": 58
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 97058,
-            "template": 158
-        }
-    }
+    "infrastructure": 2,
+    "naval_base": 2
 }

@@ -8,60 +8,11 @@
     "oil": 154,
     "air_base": 1,
     "naval_base": 1,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 854696,
             "template": 5
         }
     },
-    "1960.10.01": {
-        "owner": "NIG",
-        "controller": "NIG",
-        "remove_core": "ENG"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 1719016,
-            "template": 205
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 6
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 2340865,
-            "template": 305
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 870388,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 886369,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1122270,
-            "template": 105
-        }
-    }
+    "infrastructure": 4
 }

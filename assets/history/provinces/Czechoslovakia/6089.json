@@ -6,45 +6,15 @@
     "owner": "CZE",
     "controller": "CZE",
     "oil": 5,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 690418,
             "template": 47
-        },
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 5
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 698058,
-            "template": 47
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 705796,
-            "template": 47
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 791335,
-            "template": 147
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 867724,
-            "template": 247
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 894218,
-            "template": 347
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "naval_yards",
+        "size": 5
     }
 }

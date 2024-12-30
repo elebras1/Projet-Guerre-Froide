@@ -6,51 +6,12 @@
         "BUR"
     ],
     "grain": 19.64,
-    "infra": 1,
     "1946.1.1": {
-        "air_base": 1,
         "population_total": {
             "amount": 201832,
             "template": 24
         }
     },
-    "1948.01.04": {
-        "owner": "BUR",
-        "controller": "BUR",
-        "remove_core": "ENG"
-    },
-    "1961.1.1": {
-        "air_base": 2
-    },
-    "1979.1.1": {
-        "air_base": 4,
-        "population_total": {
-            "amount": 393323,
-            "template": 224
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 205655,
-            "template": 24
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 209550,
-            "template": 24
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 267057,
-            "template": 124
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 486772,
-            "template": 324
-        }
-    }
+    "infrastructure": 1,
+    "air_base": 1
 }

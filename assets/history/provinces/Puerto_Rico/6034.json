@@ -6,44 +6,12 @@
         "PRC"
     ],
     "grain": 8,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 2,
         "population_total": {
             "amount": 1176100,
             "template": 75
         }
     },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 1749167,
-            "template": 275
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 1979096,
-            "template": 375
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1203809,
-            "template": 75
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1232170,
-            "template": 75
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1358767,
-            "template": 175
-        }
-    }
+    "infrastructure": 6,
+    "naval_base": 2
 }

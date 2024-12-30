@@ -6,64 +6,11 @@
         "IND"
     ],
     "grain": 199.26,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 2013803,
             "template": 15
         }
     },
-    "1947.08.15": {
-        "owner": "IND",
-        "controller": "IND",
-        "remove_core": "ENG"
-    },
-    "1963.1.1": {
-        "economy_building": {
-            "name": "military_academy",
-            "size": 1
-        }
-    },
-    "1984.1.27": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 4
-        }
-    },
-    "1986.3.21": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 5
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2102252,
-            "template": 15
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2139567,
-            "template": 15
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2683183,
-            "template": 115
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3934739,
-            "template": 215
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 5131822,
-            "template": 315
-        }
-    }
+    "infrastructure": 5
 }

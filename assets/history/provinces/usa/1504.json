@@ -3,53 +3,11 @@
     "controller": "USA",
     "add_core": "USA",
     "grain": 300.9,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 511447,
             "template": 93
         }
     },
-    "1988.1.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 7
-        }
-    },
-    "1989.1.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 8
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 519747,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 528183,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 642449,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 761833,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 856159,
-            "template": 393
-        }
-    }
+    "infrastructure": 6
 }

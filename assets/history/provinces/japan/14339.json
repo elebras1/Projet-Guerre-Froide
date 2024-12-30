@@ -3,61 +3,11 @@
     "controller": "JAP",
     "add_core": "JAP",
     "coal": 3,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 170267,
             "template": 8
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 172739,
-            "template": 8
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 245169,
-            "template": 208
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 175247,
-            "template": 8
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 200968,
-            "template": 108
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 261600,
-            "template": 308
-        }
-    }
+    "infrastructure": 4
 }

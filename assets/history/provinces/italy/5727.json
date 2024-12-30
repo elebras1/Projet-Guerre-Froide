@@ -3,66 +3,16 @@
     "controller": "ITA",
     "add_core": "ITA",
     "grain": 108.88,
-    "infra": 5,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 548382,
             "template": 64
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 559551,
-            "template": 64
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 6
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 563731,
-            "template": 64
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 9
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 10
-        },
-        "population_total": {
-            "amount": 681412,
-            "template": 264
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 691260,
-            "template": 364
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 610889,
-            "template": 164
-        }
-    }
+    "naval_base": 1
 }

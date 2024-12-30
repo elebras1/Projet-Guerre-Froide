@@ -2,41 +2,11 @@
     "owner": "DEN",
     "controller": "DEN",
     "add_core": "DEN",
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 313,
             "template": 51
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 328,
-            "template": 51
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 343,
-            "template": 51
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 522,
-            "template": 151
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 746,
-            "template": 251
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 835,
-            "template": 351
-        }
-    }
+    "infrastructure": 2
 }

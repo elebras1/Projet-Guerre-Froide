@@ -6,7 +6,6 @@
     "owner": "YUG",
     "controller": "YUG",
     "fruits": 50,
-    "infra": 5,
     "naval_base": 2,
     "1946.1.1": {
         "population_total": {
@@ -14,60 +13,5 @@
             "template": 62
         }
     },
-    "1979.1.1": {
-        "naval_base": 5,
-        "economy_building": [
-            {
-                "name": "refinery",
-                "size": 3
-            },
-            {
-                "name": "refinery",
-                "size": 8
-            }
-        ],
-        "population_total": {
-            "amount": 93526,
-            "template": 262
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 4,
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 100579,
-            "template": 362
-        }
-    },
-    "1950.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 71882,
-            "template": 62
-        }
-    },
-    "1985.1.1": {
-        "naval_base": 6
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 70966,
-            "template": 62
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 81654,
-            "template": 162
-        }
-    }
+    "infrastructure": 5
 }

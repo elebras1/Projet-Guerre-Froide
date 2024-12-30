@@ -6,61 +6,11 @@
         "PRK"
     ],
     "iron": 4,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 473104,
             "template": 7
         }
     },
-    "1948.11.11": {
-        "owner": "PRK",
-        "controller": "PRK"
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 822446,
-            "template": 207
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 472077,
-            "template": 7
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 471052,
-            "template": 7
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 555290,
-            "template": 107
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 990122,
-            "template": 307
-        }
-    }
+    "infrastructure": 3
 }

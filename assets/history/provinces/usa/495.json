@@ -2,41 +2,11 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 115563,
             "template": 93
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 117439,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 119345,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 145164,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 172139,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 193453,
-            "template": 393
-        }
-    }
+    "infrastructure": 5
 }

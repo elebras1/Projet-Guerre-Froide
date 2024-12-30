@@ -6,46 +6,11 @@
         "GAB"
     ],
     "grain": 3.96,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 18960,
             "template": 2
         }
     },
-    "1965.02.17": {
-        "owner": "GAB",
-        "controller": "GAB",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 19013,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 19067,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 19977,
-            "template": 102
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 26969,
-            "template": 202
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 39013,
-            "template": 302
-        }
-    }
+    "infrastructure": 2
 }

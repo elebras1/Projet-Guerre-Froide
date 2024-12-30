@@ -6,69 +6,15 @@
         "PRK"
     ],
     "vegetables": 10,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 353004,
             "template": 7
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
         }
     },
-    "1948.11.11": {
-        "owner": "PRK",
-        "controller": "PRK"
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 351473,
-            "template": 7
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 613664,
-            "template": 207
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 352238,
-            "template": 7
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 414327,
-            "template": 107
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 738775,
-            "template": 307
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 1
     }
 }

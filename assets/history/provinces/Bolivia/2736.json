@@ -3,55 +3,15 @@
     "controller": "BOL",
     "add_core": "BOL",
     "vegetables": 21.38,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 286625,
             "template": 80
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 575785,
-            "template": 280
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 292524,
-            "template": 80
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 298544,
-            "template": 80
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 385872,
-            "template": 180
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 749634,
-            "template": 380
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 1
     }
 }

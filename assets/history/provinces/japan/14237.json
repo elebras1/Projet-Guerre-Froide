@@ -3,7 +3,6 @@
     "controller": "JAP",
     "add_core": "JAP",
     "grain": 577.77,
-    "infra": 4,
     "naval_base": 2,
     "1946.1.1": {
         "population_total": {
@@ -11,45 +10,5 @@
             "template": 8
         }
     },
-    "1992.3.27": {
-        "economy_building": {
-            "name": "centrifuges",
-            "size": 4
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 3
-    },
-    "1979.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 988125,
-            "template": 208
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 5,
-        "population_total": {
-            "amount": 1054348,
-            "template": 308
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 696205,
-            "template": 8
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 706314,
-            "template": 8
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 809979,
-            "template": 108
-        }
-    }
+    "infrastructure": 4
 }

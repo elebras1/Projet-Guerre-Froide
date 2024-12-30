@@ -3,50 +3,22 @@
     "controller": "USA",
     "add_core": "USA",
     "wood": 1,
-    "infra": 7,
     "naval_base": 10,
     "1946.1.1": {
         "population_total": {
             "amount": 41808,
             "template": 93
+        }
+    },
+    "economy_building": [
+        {
+            "name": "air_research_center",
+            "size": 1
         },
-        "economy_building": {
+        {
             "name": "aviation_industry",
             "size": 10
         }
-    },
-    "economy_building": {
-        "name": "air_research_center",
-        "size": 1
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 42487,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 43176,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 52517,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 62276,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 69986,
-            "template": 393
-        }
-    }
+    ],
+    "infrastructure": 7
 }

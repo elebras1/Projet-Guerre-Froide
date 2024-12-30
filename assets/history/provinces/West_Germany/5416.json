@@ -6,68 +6,13 @@
     "owner": "ENG",
     "controller": "ENG",
     "meat": 178.17,
-    "infra": 2,
     "naval_base": 2,
     "1946.1.1": {
-        "air_base": 5,
         "population_total": {
             "amount": 934509,
             "template": 71
         }
     },
-    "1949.05.23": {
-        "owner": "FRG",
-        "controller": "FRG"
-    },
-    "1990.10.3": {
-        "owner": "GER",
-        "controller": "GER",
-        "remove_core": [
-            "DDR",
-            "FRG"
-        ]
-    },
-    "1948.1.1": {
-        "air_base": 7,
-        "population_total": {
-            "amount": 977114,
-            "template": 71
-        }
-    },
-    "1950.1.1": {
-        "air_base": 9,
-        "population_total": {
-            "amount": 1011243,
-            "template": 71
-        }
-    },
-    "1984.3.28": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 7
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 3
-    },
-    "1979.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 1242950,
-            "template": 271
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 5,
-        "population_total": {
-            "amount": 1296251,
-            "template": 371
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1152068,
-            "template": 171
-        }
-    }
+    "infrastructure": 2,
+    "air_base": 5
 }

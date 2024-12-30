@@ -6,50 +6,11 @@
         "SYA",
         "ENG"
     ],
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 60148,
             "template": 44
         }
     },
-    "1967.11.30": {
-        "owner": "SYA",
-        "controller": "SYA",
-        "remove_core": "ENG"
-    },
-    "1990.5.22": {
-        "owner": "YEM",
-        "controller": "YEM"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 61135,
-            "template": 44
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 62137,
-            "template": 44
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 76550,
-            "template": 144
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 110027,
-            "template": 244
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 180542,
-            "template": 344
-        }
-    }
+    "infrastructure": 2
 }

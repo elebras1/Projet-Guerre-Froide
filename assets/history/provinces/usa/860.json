@@ -3,7 +3,6 @@
     "controller": "USA",
     "add_core": "USA",
     "rare_metals": 110.14,
-    "infra": 3,
     "air_base": 5,
     "1946.1.1": {
         "population_total": {
@@ -11,34 +10,5 @@
             "template": 93
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 15145,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 15391,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 18720,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 22199,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 24948,
-            "template": 393
-        }
-    }
+    "infrastructure": 3
 }

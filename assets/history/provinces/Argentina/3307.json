@@ -3,55 +3,15 @@
     "controller": "ARG",
     "add_core": "ARG",
     "grain": 30.47,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 93673,
             "template": 79
-        },
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 3
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 157397,
-            "template": 279
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 5
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 95523,
-            "template": 79
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 97410,
-            "template": 79
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 120964,
-            "template": 179
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 187964,
-            "template": 379
-        }
+    "infrastructure": 4,
+    "economy_building": {
+        "name": "naval_yards",
+        "size": 3
     }
 }

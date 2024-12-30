@@ -6,46 +6,11 @@
         "JOR"
     ],
     "meat": 0.51,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 1920,
             "template": 35
         }
     },
-    "1946.05.25": {
-        "owner": "JOR",
-        "controller": "JOR",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2062,
-            "template": 35
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2214,
-            "template": 35
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 4787,
-            "template": 135
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 10981,
-            "template": 235
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 17752,
-            "template": 335
-        }
-    }
+    "infrastructure": 2
 }

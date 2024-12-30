@@ -3,7 +3,6 @@
     "controller": "COL",
     "add_core": "COL",
     "fish": 14.39,
-    "infra": 6,
     "naval_base": 3,
     "1946.1.1": {
         "population_total": {
@@ -11,54 +10,5 @@
             "template": 83
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 1
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 101716,
-            "template": 283
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 131058,
-            "template": 383
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 45179,
-            "template": 83
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 46459,
-            "template": 83
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 65760,
-            "template": 183
-        }
-    }
+    "infrastructure": 6
 }

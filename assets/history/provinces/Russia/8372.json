@@ -6,41 +6,11 @@
         "RUS"
     ],
     "grain": 35.92,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 51985,
             "template": 45
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 52830,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 53689,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 64285,
-            "template": 145
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 71992,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 77721,
-            "template": 345
-        }
-    }
+    "infrastructure": 5
 }

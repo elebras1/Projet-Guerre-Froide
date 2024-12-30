@@ -6,46 +6,11 @@
         "TOG"
     ],
     "fruits": 20,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 212705,
             "template": 5
         }
     },
-    "1960.04.27": {
-        "owner": "TOG",
-        "controller": "TOG",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 215055,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 217432,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 250507,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 404323,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 583951,
-            "template": 305
-        }
-    }
+    "infrastructure": 2
 }

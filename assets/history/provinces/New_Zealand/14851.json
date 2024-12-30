@@ -3,41 +3,11 @@
     "controller": "NZL",
     "add_core": "NZL",
     "meat": 25,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 10650,
             "template": 95
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 10891,
-            "template": 95
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 11137,
-            "template": 95
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 14460,
-            "template": 195
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 18303,
-            "template": 295
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 20114,
-            "template": 395
-        }
-    }
+    "infrastructure": 6
 }

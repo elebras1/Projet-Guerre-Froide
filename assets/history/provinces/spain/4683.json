@@ -3,56 +3,16 @@
     "controller": "SPA",
     "add_core": "SPA",
     "vegetables": 496.85,
-    "infra": 8,
     "1946.1.1": {
-        "air_base": 8,
         "population_total": {
             "amount": 2712645,
             "template": 67
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
+    "infrastructure": 8,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 6
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 3646140,
-            "template": 267
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2732014,
-            "template": 67
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2751520,
-            "template": 67
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 3045390,
-            "template": 167
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3820916,
-            "template": 367
-        }
-    }
+    "air_base": 8
 }

@@ -6,46 +6,11 @@
         "NAM"
     ],
     "vegetables": 0.73,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 1424,
             "template": 4
         }
     },
-    "1975.11.11": {
-        "owner": "NAM",
-        "controller": "NAM",
-        "remove_core": "SAF"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1453,
-            "template": 4
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1483,
-            "template": 4
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1933,
-            "template": 104
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3030,
-            "template": 204
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4478,
-            "template": 304
-        }
-    }
+    "infrastructure": 2
 }

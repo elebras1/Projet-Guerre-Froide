@@ -2,68 +2,16 @@
     "add_core": "ROM",
     "owner": "ROM",
     "controller": "ROM",
-    "infra": 5,
     "1946.1.1": {
-        "rare_metals": 4.14,
         "population_total": {
             "amount": 590906,
             "template": 50
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 3
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 820810,
-            "template": 250
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 9
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 599126,
-            "template": 50
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 607460,
-            "template": 50
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 694214,
-            "template": 150
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 862888,
-            "template": 350
-        }
-    }
+    "rare_metals": 4.14
 }

@@ -3,45 +3,11 @@
     "controller": "COL",
     "add_core": "COL",
     "vegetables": 86.39,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 885776,
             "template": 83
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "aviation_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 2050716,
-            "template": 283
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 910870,
-            "template": 83
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 936675,
-            "template": 83
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1325803,
-            "template": 183
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2642291,
-            "template": 383
-        }
-    }
+    "infrastructure": 6
 }

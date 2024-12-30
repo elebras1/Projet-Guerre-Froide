@@ -6,56 +6,11 @@
         "MAD"
     ],
     "grain": 68,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 444523,
             "template": 1
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 1
-        }
-    },
-    "1960.06.26": {
-        "owner": "MAD",
-        "controller": "MAD",
-        "remove_core": "FRA"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 952279,
-            "template": 201
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 454094,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 463870,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 608250,
-            "template": 101
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1320052,
-            "template": 301
-        }
-    }
+    "infrastructure": 2
 }

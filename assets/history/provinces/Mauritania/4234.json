@@ -6,56 +6,12 @@
         "MRA"
     ],
     "meat": 7.05,
-    "infra": 4,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 151597,
             "template": 5
         }
     },
-    "1960.11.28": {
-        "owner": "MRA",
-        "controller": "MRA",
-        "remove_core": "FRA"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 357244,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 496754,
-            "template": 305
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 155358,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 159212,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 218953,
-            "template": 105
-        }
-    }
+    "infrastructure": 4,
+    "naval_base": 1
 }

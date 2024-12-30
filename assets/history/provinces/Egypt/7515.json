@@ -3,49 +3,12 @@
     "controller": "ENG",
     "add_core": "EGY",
     "fish": 260.19,
-    "infra": 6,
     "naval_base": 5,
     "1946.1.1": {
-        "naval_base": 2,
         "population_total": {
             "amount": 837780,
             "template": 3
         }
     },
-    "1956.12.23": {
-        "owner": "EGY",
-        "controller": "EGY"
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 1798284,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 2372967,
-            "template": 303
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 859085,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 880931,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1204193,
-            "template": 103
-        }
-    }
+    "infrastructure": 6
 }

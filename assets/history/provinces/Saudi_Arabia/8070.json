@@ -3,47 +3,12 @@
     "controller": "SAU",
     "add_core": "SAU",
     "meat": 1.24,
-    "infra": 4,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 25062,
             "template": 40
         }
     },
-    "1961.1.1": {
-        "naval_base": 2
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 77735,
-            "template": 240
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 140590,
-            "template": 340
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 25686,
-            "template": 40
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 26325,
-            "template": 40
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 36367,
-            "template": 140
-        }
-    }
+    "infrastructure": 4,
+    "naval_base": 1
 }

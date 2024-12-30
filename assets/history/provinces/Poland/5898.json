@@ -3,67 +3,15 @@
     "controller": "POL",
     "add_core": "POL",
     "grain": 523.3,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 459810,
             "template": 49
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 468491,
-            "template": 49
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 477336,
-            "template": 49
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 677656,
-            "template": 249
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 733785,
-            "template": 349
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 574401,
-            "template": 149
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 2
     }
 }

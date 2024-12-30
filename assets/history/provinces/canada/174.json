@@ -2,41 +2,11 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 2944,
             "template": 92
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 3024,
-            "template": 92
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 3106,
-            "template": 92
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 4213,
-            "template": 192
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 5483,
-            "template": 292
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 6343,
-            "template": 392
-        }
-    }
+    "infrastructure": 1
 }

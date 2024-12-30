@@ -2,41 +2,11 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 716,
             "template": 83
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 736,
-            "template": 83
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 757,
-            "template": 83
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1071,
-            "template": 183
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1657,
-            "template": 283
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2135,
-            "template": 383
-        }
-    }
+    "infrastructure": 1
 }

@@ -6,53 +6,11 @@
     "owner": "USA",
     "controller": "USA",
     "rare_metals": 10.42,
-    "infra": 7,
     "1946.1.1": {
         "population_total": {
             "amount": 707622,
             "template": 71
         }
     },
-    "1949.05.23": {
-        "owner": "FRG",
-        "controller": "FRG"
-    },
-    "1990.10.3": {
-        "owner": "GER",
-        "controller": "GER",
-        "remove_core": [
-            "DDR",
-            "FRG"
-        ]
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 739883,
-            "template": 71
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 765726,
-            "template": 71
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 872360,
-            "template": 171
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 941177,
-            "template": 271
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 981537,
-            "template": 371
-        }
-    }
+    "infrastructure": 7
 }

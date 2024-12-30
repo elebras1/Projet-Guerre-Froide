@@ -3,43 +3,11 @@
     "controller": "NOR",
     "add_core": "NOR",
     "fish": 6.95,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 12588,
             "template": 58
         }
     },
-    "1979.1.1": {
-        "naval_base": 1,
-        "population_total": {
-            "amount": 16006,
-            "template": 258
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 16755,
-            "template": 358
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 12710,
-            "template": 58
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 12833,
-            "template": 58
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 14298,
-            "template": 158
-        }
-    }
+    "infrastructure": 2
 }

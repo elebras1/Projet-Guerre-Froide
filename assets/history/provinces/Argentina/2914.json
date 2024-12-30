@@ -3,41 +3,11 @@
     "controller": "ARG",
     "add_core": "ARG",
     "vegetables": 9.83,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 29211,
             "template": 79
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 29788,
-            "template": 79
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 30377,
-            "template": 79
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 37722,
-            "template": 179
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 49083,
-            "template": 279
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 58615,
-            "template": 379
-        }
-    }
+    "infrastructure": 4
 }

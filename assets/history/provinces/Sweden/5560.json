@@ -3,59 +3,16 @@
     "controller": "SWE",
     "add_core": "SWE",
     "fish": 31.21,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 167233,
             "template": 59
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 4
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "heavy_industry",
+        "size": 4
     },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 6
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 200524,
-            "template": 259
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 168395,
-            "template": 59
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 169565,
-            "template": 59
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 183093,
-            "template": 159
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 208312,
-            "template": 359
-        }
-    }
+    "naval_base": 1
 }

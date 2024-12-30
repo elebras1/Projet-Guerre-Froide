@@ -3,44 +3,12 @@
     "controller": "JAP",
     "add_core": "JAP",
     "fish": 113.41,
-    "infra": 4,
     "1946.1.1": {
-        "naval_base": 2,
         "population_total": {
             "amount": 44487,
             "template": 8
         }
     },
-    "1979.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 64057,
-            "template": 208
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 68350,
-            "template": 308
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 45133,
-            "template": 8
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 45788,
-            "template": 8
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 52508,
-            "template": 108
-        }
-    }
+    "infrastructure": 4,
+    "naval_base": 2
 }

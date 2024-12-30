@@ -3,41 +3,11 @@
     "controller": "USA",
     "add_core": "USA",
     "coal": 9,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 43025,
             "template": 93
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 43723,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 44432,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 54045,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 64088,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 72023,
-            "template": 393
-        }
-    }
+    "infrastructure": 5
 }

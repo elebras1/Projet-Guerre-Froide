@@ -3,57 +3,12 @@
     "controller": "POR",
     "add_core": "POR",
     "fish": 56.01,
-    "infra": 7,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 422383,
             "template": 66
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 453156,
-            "template": 166
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 4
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 504957,
-            "template": 366
-        }
-    },
-    "1985.1.1": {
-        "naval_base": 3
-    },
-    "1991.1.1": {
-        "naval_base": 4
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 427314,
-            "template": 66
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 492206,
-            "template": 266
-        }
-    }
+    "infrastructure": 7,
+    "naval_base": 1
 }

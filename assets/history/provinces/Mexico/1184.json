@@ -3,41 +3,11 @@
     "controller": "MEX",
     "add_core": "MEX",
     "grain": 27.92,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 272941,
             "template": 81
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 281306,
-            "template": 81
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 289928,
-            "template": 81
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 426236,
-            "template": 181
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 698685,
-            "template": 281
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 893990,
-            "template": 381
-        }
-    }
+    "infrastructure": 4
 }

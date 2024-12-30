@@ -5,46 +5,11 @@
         "FRA",
         "DJI"
     ],
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 11037,
             "template": 1
         }
     },
-    "1977.06.27": {
-        "owner": "DJI",
-        "controller": "DJI",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 11311,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 11591,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 17882,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 59886,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 108737,
-            "template": 301
-        }
-    }
+    "infrastructure": 4
 }

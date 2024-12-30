@@ -3,44 +3,12 @@
     "controller": "SPA",
     "add_core": "SPA",
     "fish": 4.41,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 593081,
             "template": 67
         }
     },
-    "1979.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 797177,
-            "template": 267
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 835389,
-            "template": 367
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 597316,
-            "template": 67
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 601581,
-            "template": 67
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 665831,
-            "template": 167
-        }
-    }
+    "infrastructure": 6,
+    "naval_base": 1
 }

@@ -3,45 +3,15 @@
     "controller": "COL",
     "add_core": "COL",
     "grain": 17.22,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 117469,
             "template": 83
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 4
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 120797,
-            "template": 83
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 124219,
-            "template": 83
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 175824,
-            "template": 183
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 271960,
-            "template": 283
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 350413,
-            "template": 383
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 4
     }
 }

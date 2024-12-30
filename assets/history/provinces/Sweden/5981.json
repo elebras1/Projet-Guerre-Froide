@@ -3,45 +3,11 @@
     "controller": "SWE",
     "add_core": "SWE",
     "wood": 1.3,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 16977,
             "template": 59
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "naval_yards",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 17214,
-            "template": 59
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 17095,
-            "template": 59
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 18588,
-            "template": 159
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 20357,
-            "template": 259
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 21148,
-            "template": 359
-        }
-    }
+    "infrastructure": 2
 }

@@ -3,59 +3,22 @@
     "controller": "SPA",
     "add_core": "SPA",
     "grain": 197.7,
-    "infra": 8,
     "naval_base": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 1248750,
             "template": 67
+        }
+    },
+    "economy_building": [
+        {
+            "name": "naval_research_center",
+            "size": 1
         },
-        "economy_building": {
+        {
             "name": "heavy_industry",
             "size": 5
         }
-    },
-    "1979.1.1": {
-        "naval_base": 4,
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 1678479,
-            "template": 267
-        }
-    },
-    "economy_building": {
-        "name": "naval_research_center",
-        "size": 1
-    },
-    "1961.1.1": {
-        "naval_base": 3
-    },
-    "1991.1.1": {
-        "naval_base": 5,
-        "population_total": {
-            "amount": 1758936,
-            "template": 367
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1257666,
-            "template": 67
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1266646,
-            "template": 67
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1401927,
-            "template": 167
-        }
-    }
+    ],
+    "infrastructure": 8
 }

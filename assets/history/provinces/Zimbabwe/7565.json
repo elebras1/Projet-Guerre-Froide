@@ -7,85 +7,15 @@
         "RHO"
     ],
     "grain": 25.82,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 262248,
             "template": 1
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 1
         }
     },
-    "1953.8.1": {
-        "owner": "RHO",
-        "controller": "RHO",
-        "remove_core": "ENG"
-    },
-    "1979.06.01": {
-        "owner": "ZIM",
-        "controller": "ZIM",
-        "remove_core": "RHO"
-    },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 270318,
-            "template": 1
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 713312,
-            "template": 201
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 1090277,
-            "template": 301
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 278635,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 406384,
-            "template": 101
-        }
+    "infrastructure": 4,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 1
     }
 }

@@ -3,65 +3,15 @@
     "owner": "POL",
     "controller": "POL",
     "vegetables": 438.47,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 403511,
             "template": 49
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 594685,
-            "template": 249
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 643942,
-            "template": 349
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 411130,
-            "template": 49
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 418892,
-            "template": 49
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 504073,
-            "template": 149
-        }
+    "infrastructure": 4,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 5
     }
 }

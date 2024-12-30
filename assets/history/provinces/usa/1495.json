@@ -3,61 +3,11 @@
     "controller": "USA",
     "add_core": "USA",
     "meat": 57.8,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 50914,
             "template": 93
         }
     },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 7
-        }
-    },
-    "1965.1.1": {
-        "economy_building": {
-            "name": "nuclear_silo",
-            "size": 2,
-            "model": 0,
-            "ammo_store": 30
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "nuclear_silo",
-            "size": 2,
-            "model": 2,
-            "ammo_store": 30
-        },
-        "population_total": {
-            "amount": 75840,
-            "template": 293
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 51740,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 52580,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 63955,
-            "template": 193
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 85230,
-            "template": 393
-        }
-    }
+    "infrastructure": 6
 }

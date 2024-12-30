@@ -3,59 +3,15 @@
     "controller": "USA",
     "add_core": "USA",
     "coal": 5,
-    "infra": 7,
     "1946.1.1": {
         "population_total": {
             "amount": 200682,
             "template": 93
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 203939,
-            "template": 93
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 10
-        },
-        "population_total": {
-            "amount": 298929,
-            "template": 293
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 207249,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 252085,
-            "template": 193
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 335941,
-            "template": 393
-        }
+    "infrastructure": 7,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 3
     }
 }

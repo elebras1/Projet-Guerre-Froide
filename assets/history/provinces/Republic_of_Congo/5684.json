@@ -6,52 +6,11 @@
         "CNG"
     ],
     "grain": 5.39,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 55162,
             "template": 2
         }
     },
-    "1960.08.15": {
-        "owner": "CNG",
-        "controller": "CNG",
-        "remove_core": "FRA"
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 56340,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 57544,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 76058,
-            "template": 102
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 124438,
-            "template": 202
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 174825,
-            "template": 302
-        }
-    }
+    "infrastructure": 4
 }

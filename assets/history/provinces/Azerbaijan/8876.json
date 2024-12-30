@@ -6,51 +6,11 @@
         "AZB"
     ],
     "oil": 135,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 356940,
             "template": 30
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 789487,
-            "template": 230
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 366824,
-            "template": 30
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 376981,
-            "template": 30
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 541962,
-            "template": 130
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 953852,
-            "template": 330
-        }
-    }
+    "infrastructure": 4
 }

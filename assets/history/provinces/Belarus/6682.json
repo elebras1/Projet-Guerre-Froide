@@ -6,71 +6,16 @@
     "owner": "SOV",
     "controller": "SOV",
     "grain": 117.54,
-    "infra": 5,
     "air_base": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 170702,
             "template": 45
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
         }
     },
-    "1948.1.1": {
-        "air_base": 5,
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 170958,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "air_base": 6,
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 171214,
-            "template": 45
-        }
-    },
-    "1961.1.1": {
-        "air_base": 7,
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 212146,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 227354,
-            "template": 345
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 184742,
-            "template": 145
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 1
     }
 }

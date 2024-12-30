@@ -3,49 +3,15 @@
     "controller": "FRA",
     "add_core": "FRA",
     "meat": 114.01,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 475646,
             "template": 70
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 637003,
-            "template": 270
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 493003,
-            "template": 70
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 496710,
-            "template": 70
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 557120,
-            "template": 170
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 676296,
-            "template": 370
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 5
     }
 }

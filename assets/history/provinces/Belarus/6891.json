@@ -6,41 +6,11 @@
     "owner": "SOV",
     "controller": "SOV",
     "wood": 1,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 142193,
             "template": 45
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 142406,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 142620,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 153888,
-            "template": 145
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 176716,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 189383,
-            "template": 345
-        }
-    }
+    "infrastructure": 5
 }

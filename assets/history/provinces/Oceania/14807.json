@@ -3,7 +3,6 @@
     "controller": "USA",
     "add_core": "USA",
     "grain": 25.08,
-    "infra": 2,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
@@ -11,7 +10,5 @@
             "template": 155
         }
     },
-    "1961.1.1": {
-        "naval_base": 2
-    }
+    "infrastructure": 2
 }

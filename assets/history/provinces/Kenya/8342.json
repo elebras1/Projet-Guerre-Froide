@@ -7,46 +7,11 @@
         "SOM"
     ],
     "grain": 0.64,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 3213,
             "template": 1
         }
     },
-    "1963.12.12": {
-        "owner": "KEN",
-        "controller": "KEN",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 3302,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 3394,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 4819,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 8746,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 13537,
-            "template": 301
-        }
-    }
+    "infrastructure": 3
 }

@@ -6,46 +6,11 @@
         "MRA"
     ],
     "meat": 0.61,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1047,
             "template": 5
         }
     },
-    "1960.11.28": {
-        "owner": "MRA",
-        "controller": "MRA",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1073,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1100,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1513,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2468,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3432,
-            "template": 305
-        }
-    }
+    "infrastructure": 1
 }

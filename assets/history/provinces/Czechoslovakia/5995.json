@@ -6,47 +6,11 @@
     "owner": "CZE",
     "controller": "CZE",
     "grain": 355,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 364184,
             "template": 47
         }
     },
-    "1987.7.19": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 8
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 368213,
-            "template": 47
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 372295,
-            "template": 47
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 417415,
-            "template": 147
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 457709,
-            "template": 247
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 471684,
-            "template": 347
-        }
-    }
+    "infrastructure": 6
 }

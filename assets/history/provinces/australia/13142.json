@@ -3,41 +3,11 @@
     "controller": "AST",
     "add_core": "AST",
     "precious_metals": 3,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1173,
             "template": 94
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1201,
-            "template": 94
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1230,
-            "template": 94
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1609,
-            "template": 194
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2186,
-            "template": 294
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2605,
-            "template": 394
-        }
-    }
+    "infrastructure": 1
 }

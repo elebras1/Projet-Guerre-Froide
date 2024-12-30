@@ -3,41 +3,11 @@
     "controller": "COL",
     "add_core": "COL",
     "grain": 7.08,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 384346,
             "template": 83
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 395235,
-            "template": 83
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 406431,
-            "template": 83
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 575277,
-            "template": 183
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 889823,
-            "template": 283
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1146513,
-            "template": 383
-        }
-    }
+    "infrastructure": 4
 }

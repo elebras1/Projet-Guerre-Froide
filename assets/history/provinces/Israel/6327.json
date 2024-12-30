@@ -5,50 +5,11 @@
         "ENG",
         "PAL"
     ],
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 9044,
             "template": 34
         }
     },
-    "1948.05.14": {
-        "owner": "PAL",
-        "controller": "PAL",
-        "remove_core": "ENG"
-    },
-    "1950.6.24": {
-        "owner": "ISR",
-        "controller": "ISR"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 9609,
-            "template": 34
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 10210,
-            "template": 34
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 27532,
-            "template": 134
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 41734,
-            "template": 234
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 37677,
-            "template": 334
-        }
-    }
+    "infrastructure": 2
 }

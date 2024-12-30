@@ -2,7 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "JAP",
-    "infra": 3,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
@@ -10,38 +9,5 @@
             "template": 8
         }
     },
-    "1968.1.1": {
-        "owner": "JAP",
-        "controller": "JAP"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 0,
-            "template": 8
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 0,
-            "template": 8
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 0,
-            "template": 108
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 0,
-            "template": 208
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 0,
-            "template": 308
-        }
-    }
+    "infrastructure": 3
 }

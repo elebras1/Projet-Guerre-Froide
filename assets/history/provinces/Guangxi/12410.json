@@ -7,56 +7,13 @@
         "CHC"
     ],
     "wood": 1,
-    "infra": 4,
     "naval_base": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 1654809,
             "template": 6
-        },
-        "air_base": 1
-    },
-    "1949.10.1.0": {
-        "owner": "CHC",
-        "controller": "CHC",
-        "remove_core": "CGX"
-    },
-    "1950.1.1": {
-        "air_base": 2,
-        "population_total": {
-            "amount": 2352536,
-            "template": 6
         }
     },
-    "1961.1.1": {
-        "air_base": 3
-    },
-    "1979.1.1": {
-        "air_base": 4,
-        "population_total": {
-            "amount": 4143973,
-            "template": 206
-        }
-    },
-    "1985.1.1": {
-        "air_base": 6
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2306657,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2885899,
-            "template": 106
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4958178,
-            "template": 306
-        }
-    }
+    "infrastructure": 4,
+    "air_base": 1
 }

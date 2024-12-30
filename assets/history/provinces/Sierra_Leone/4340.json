@@ -6,52 +6,12 @@
         "SIE"
     ],
     "grain": 50.65,
-    "infra": 4,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 664995,
             "template": 5
         }
     },
-    "1961.04.17": {
-        "owner": "SIE",
-        "controller": "SIE",
-        "remove_core": "ENG"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 1115093,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 1440229,
-            "template": 305
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 674066,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 683260,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 813948,
-            "template": 105
-        }
-    }
+    "infrastructure": 4,
+    "naval_base": 1
 }

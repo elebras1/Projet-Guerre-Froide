@@ -6,61 +6,15 @@
     "owner": "CZE",
     "controller": "CZE",
     "coal": 6,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 190930,
             "template": 47
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 6
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 239962,
-            "template": 247
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 193042,
-            "template": 47
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 195182,
-            "template": 47
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 218837,
-            "template": 147
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 247289,
-            "template": 347
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 6
     }
 }

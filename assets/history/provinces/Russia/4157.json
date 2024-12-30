@@ -5,41 +5,11 @@
         "SOV",
         "RUS"
     ],
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 11177,
             "template": 45
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 11359,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 11544,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 13822,
-            "template": 145
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 15479,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 16711,
-            "template": 345
-        }
-    }
+    "infrastructure": 1
 }

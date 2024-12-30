@@ -6,77 +6,15 @@
     "owner": "FRA",
     "controller": "FRA",
     "coal": 26,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 1035987,
             "template": 71
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 6
         }
     },
-    "1949.5.23.0": {
-        "owner": "FRG",
-        "controller": "FRG"
-    },
-    "1990.10.3": {
-        "owner": "GER",
-        "controller": "GER",
-        "remove_core": [
-            "DDR",
-            "FRG"
-        ]
-    },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 1083219,
-            "template": 71
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 8
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 9
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 10
-        },
-        "population_total": {
-            "amount": 1377921,
-            "template": 271
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1121054,
-            "template": 71
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1277171,
-            "template": 171
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1437011,
-            "template": 371
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "heavy_industry",
+        "size": 6
     }
 }

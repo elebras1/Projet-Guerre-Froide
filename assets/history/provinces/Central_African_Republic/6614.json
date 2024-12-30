@@ -6,46 +6,11 @@
         "CAR"
     ],
     "vegetables": 4.56,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 2448,
             "template": 2
         }
     },
-    "1960.08.13": {
-        "owner": "CAR",
-        "controller": "CAR",
-        "remove_core": "FRA"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2474,
-            "template": 2
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2500,
-            "template": 2
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2934,
-            "template": 102
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 4172,
-            "template": 202
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 5668,
-            "template": 302
-        }
-    }
+    "infrastructure": 1
 }

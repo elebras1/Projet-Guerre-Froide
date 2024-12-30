@@ -3,7 +3,6 @@
     "controller": "USA",
     "add_core": "USA",
     "grain": 288.09,
-    "infra": 6,
     "economy_building": {
         "name": "intelligence_center",
         "size": 1
@@ -14,34 +13,5 @@
             "template": 93
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 499169,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 507270,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 617012,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 731669,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 822261,
-            "template": 393
-        }
-    }
+    "infrastructure": 6
 }

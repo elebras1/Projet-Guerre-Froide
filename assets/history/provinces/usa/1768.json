@@ -3,49 +3,21 @@
     "controller": "USA",
     "add_core": "USA",
     "wood": 1,
-    "infra": 9,
-    "economy_building": {
-        "name": "financial_district",
-        "size": 1
-    },
+    "economy_building": [
+        {
+            "name": "financial_district",
+            "size": 1
+        },
+        {
+            "name": "aviation_industry",
+            "size": 10
+        }
+    ],
     "1946.1.1": {
         "population_total": {
             "amount": 1651521,
             "template": 93
-        },
-        "economy_building": {
-            "name": "aviation_industry",
-            "size": 10
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1678326,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1705565,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2074543,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2460049,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2764639,
-            "template": 393
-        }
-    }
+    "infrastructure": 9
 }

@@ -6,68 +6,16 @@
         "SLV"
     ],
     "meat": 66.2,
-    "infra": 5,
     "1946.1.1": {
-        "naval_base": 2,
         "population_total": {
             "amount": 332895,
             "template": 62
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 2
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 341536,
-            "template": 62
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 2
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1962.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 444374,
-            "template": 262
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 477885,
-            "template": 362
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 337184,
-            "template": 62
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 387964,
-            "template": 162
-        }
-    }
+    "naval_base": 2
 }

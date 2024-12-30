@@ -3,41 +3,11 @@
     "controller": "SAF",
     "add_core": "SAF",
     "meat": 1.71,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 6378,
             "template": 4
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 6527,
-            "template": 4
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 6680,
-            "template": 4
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 8945,
-            "template": 104
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 13846,
-            "template": 204
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 18401,
-            "template": 304
-        }
-    }
+    "infrastructure": 6
 }

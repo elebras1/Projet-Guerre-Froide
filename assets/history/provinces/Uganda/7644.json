@@ -6,58 +6,11 @@
         "UGD"
     ],
     "fruits": 75.22,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 635409,
             "template": 1
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 1
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        }
-    },
-    "1962.10.09": {
-        "owner": "UGD",
-        "controller": "UGD",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 652457,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 669963,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 940454,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1595526,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2378772,
-            "template": 301
-        }
-    }
+    "infrastructure": 2
 }

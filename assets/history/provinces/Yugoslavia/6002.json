@@ -6,67 +6,17 @@
     "owner": "YUG",
     "controller": "YUG",
     "fish": 60,
-    "infra": 5,
     "air_base": 2,
     "naval_base": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 374311,
             "template": 62
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 379133,
-            "template": 62
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 4,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 499660,
-            "template": 262
-        }
-    },
-    "1950.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 384028,
-            "template": 62
-        }
-    },
-    "1985.1.1": {
-        "naval_base": 5
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 436231,
-            "template": 162
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 537340,
-            "template": 362
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 5
     }
 }

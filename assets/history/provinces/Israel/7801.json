@@ -5,76 +5,11 @@
         "ENG",
         "ISR"
     ],
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 26543,
             "template": 34
         }
     },
-    "1948.05.14": {
-        "owner": "ISR",
-        "controller": "ISR",
-        "remove_core": "ENG"
-    },
-    "1988.10.19": {
-        "economy_building": {
-            "name": "rocket_test_site",
-            "size": 1
-        }
-    },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 28201,
-            "template": 34
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 29962,
-            "template": 34
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 122479,
-            "template": 234
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 80800,
-            "template": 134
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 110570,
-            "template": 334
-        }
-    }
+    "infrastructure": 4
 }

@@ -6,44 +6,12 @@
         "VGI"
     ],
     "vegetables": 0.05,
-    "infra": 5,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 6815,
             "template": 75
         }
     },
-    "1979.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 25087,
-            "template": 275
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 3,
-        "population_total": {
-            "amount": 26938,
-            "template": 375
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 6890,
-            "template": 75
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 6966,
-            "template": 75
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 10012,
-            "template": 175
-        }
-    }
+    "infrastructure": 5,
+    "naval_base": 1
 }

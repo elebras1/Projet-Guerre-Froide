@@ -6,47 +6,11 @@
     "owner": "CZE",
     "controller": "CZE",
     "grain": 450,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 301681,
             "template": 47
         }
     },
-    "1978.1.1": {
-        "economy_building": {
-            "name": "satellites_factory",
-            "size": 3
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 305019,
-            "template": 47
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 308401,
-            "template": 47
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 345777,
-            "template": 147
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 379156,
-            "template": 247
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 390732,
-            "template": 347
-        }
-    }
+    "infrastructure": 6
 }

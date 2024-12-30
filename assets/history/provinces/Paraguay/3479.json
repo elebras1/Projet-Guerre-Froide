@@ -3,61 +3,15 @@
     "controller": "PAR",
     "add_core": "PAR",
     "grain": 122,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 388750,
             "template": 87
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 862390,
-            "template": 287
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 398691,
-            "template": 87
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 408885,
-            "template": 87
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 557624,
-            "template": 187
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1208503,
-            "template": 387
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 2
     }
 }

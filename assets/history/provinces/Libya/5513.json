@@ -6,49 +6,11 @@
         "LBY",
         "ITA"
     ],
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1398,
             "template": 3
         }
     },
-    "1951.12.24": {
-        "owner": "LBY",
-        "controller": "LBY",
-        "remove_core": [
-            "ITA",
-            "FRA"
-        ]
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1424,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1449,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2044,
-            "template": 103
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 4118,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 6228,
-            "template": 303
-        }
-    }
+    "infrastructure": 1
 }

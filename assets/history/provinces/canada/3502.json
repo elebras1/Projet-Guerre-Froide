@@ -2,47 +2,11 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 233,
             "template": 92
         }
     },
-    "1949.3.31": {
-        "owner": "CAN",
-        "controller": "CAN",
-        "add_core": "CAN",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 239,
-            "template": 92
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 245,
-            "template": 92
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 333,
-            "template": 192
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 433,
-            "template": 292
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 501,
-            "template": 392
-        }
-    }
+    "infrastructure": 4
 }

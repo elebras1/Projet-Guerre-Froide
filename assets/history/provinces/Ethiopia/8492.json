@@ -6,41 +6,11 @@
         "SOM"
     ],
     "grain": 5.56,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 24336,
             "template": 1
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 24805,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 25283,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 32431,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 47693,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 68575,
-            "template": 301
-        }
-    }
+    "infrastructure": 3
 }

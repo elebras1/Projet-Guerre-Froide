@@ -6,46 +6,11 @@
         "UGD"
     ],
     "meat": 13.43,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 60014,
             "template": 1
         }
     },
-    "1962.10.09": {
-        "owner": "UGD",
-        "controller": "UGD",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 61624,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 63277,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 88825,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 150696,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 224672,
-            "template": 301
-        }
-    }
+    "infrastructure": 1
 }

@@ -3,59 +3,11 @@
     "controller": "JAP",
     "add_core": "JAP",
     "grain": 20,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 758181,
             "template": 8
         }
     },
-    "1978.1.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 7
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 8
-        }
-    },
-    "1990.1.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 9
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 769190,
-            "template": 8
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 780358,
-            "template": 8
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 894891,
-            "template": 108
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1091712,
-            "template": 208
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1164878,
-            "template": 308
-        }
-    }
+    "infrastructure": 4
 }

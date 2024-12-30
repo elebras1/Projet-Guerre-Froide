@@ -3,41 +3,11 @@
     "controller": "JAP",
     "add_core": "JAP",
     "coal": 2,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 270208,
             "template": 8
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 274132,
-            "template": 8
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 278112,
-            "template": 8
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 318931,
-            "template": 108
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 389076,
-            "template": 208
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 415151,
-            "template": 308
-        }
-    }
+    "infrastructure": 4
 }

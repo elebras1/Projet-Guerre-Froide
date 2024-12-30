@@ -6,46 +6,11 @@
         "TRK"
     ],
     "vegetables": 1.96,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 1091,
             "template": 11
         }
     },
-    "1991.12.25": {
-        "owner": "TRK",
-        "controller": "TRK",
-        "remove_core": "SOV"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1115,
-            "template": 11
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1140,
-            "template": 11
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1609,
-            "template": 111
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2629,
-            "template": 211
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3552,
-            "template": 311
-        }
-    }
+    "infrastructure": 4
 }

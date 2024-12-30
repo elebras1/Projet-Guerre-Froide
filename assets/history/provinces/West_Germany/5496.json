@@ -6,53 +6,11 @@
     "owner": "USA",
     "controller": "USA",
     "fruits": 263.7,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 969345,
             "template": 71
         }
     },
-    "1949.05.23": {
-        "owner": "FRG",
-        "controller": "FRG"
-    },
-    "1990.10.3": {
-        "owner": "GER",
-        "controller": "GER",
-        "remove_core": [
-            "DDR",
-            "FRG"
-        ]
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1013538,
-            "template": 71
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1048940,
-            "template": 71
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1195014,
-            "template": 171
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1289283,
-            "template": 271
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1344571,
-            "template": 371
-        }
-    }
+    "infrastructure": 5
 }

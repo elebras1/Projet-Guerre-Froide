@@ -3,41 +3,11 @@
     "controller": "ICL",
     "add_core": "ICL",
     "fish": 0.1,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 629,
             "template": 54
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 642,
-            "template": 54
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 655,
-            "template": 54
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 837,
-            "template": 154
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1035,
-            "template": 254
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1178,
-            "template": 354
-        }
-    }
+    "infrastructure": 2
 }

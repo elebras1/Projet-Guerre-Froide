@@ -6,65 +6,11 @@
     "owner": "SOV",
     "controller": "SOV",
     "uranium": 33,
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 2266472,
             "template": 71
         }
     },
-    "1949.10.07": {
-        "owner": "DDR",
-        "controller": "DDR"
-    },
-    "1956.1.1": {
-        "economy_building": {
-            "name": "military_academy",
-            "size": 1
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "high_tech",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 2101793,
-            "template": 271
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "high_tech",
-            "size": 4
-        }
-    },
-    "1990.10.3": {
-        "owner": "GER",
-        "controller": "GER"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2393120,
-            "template": 71
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2308044,
-            "template": 71
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 2164050,
-            "template": 171
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1996986,
-            "template": 371
-        }
-    }
+    "infrastructure": 3
 }

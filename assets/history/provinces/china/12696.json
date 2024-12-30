@@ -6,45 +6,11 @@
         "CHC"
     ],
     "grain": 81.95,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 738661,
             "template": 6
         }
     },
-    "1949.10.01": {
-        "owner": "CHC",
-        "controller": "CHC"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 753353,
-            "template": 6
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 768337,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 942533,
-            "template": 106
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1353419,
-            "template": 206
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1619338,
-            "template": 306
-        }
-    }
+    "infrastructure": 5
 }

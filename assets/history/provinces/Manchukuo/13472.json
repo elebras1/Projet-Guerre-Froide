@@ -6,45 +6,11 @@
         "CHI"
     ],
     "grain": 8.73,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 43215,
             "template": 6
         }
     },
-    "1946.6.26": {
-        "owner": "CHC",
-        "controller": "CHC"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 562369,
-            "template": 6
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 573555,
-            "template": 6
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 703590,
-            "template": 106
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1010312,
-            "template": 206
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1208818,
-            "template": 306
-        }
-    }
+    "infrastructure": 2
 }

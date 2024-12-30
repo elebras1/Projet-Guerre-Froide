@@ -6,46 +6,11 @@
         "HOL"
     ],
     "precious_metals": 5,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 268171,
             "template": 21
         }
     },
-    "1949.12.27": {
-        "owner": "INO",
-        "controller": "INO",
-        "remove_core": "HOL"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 281729,
-            "template": 21
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 286811,
-            "template": 21
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 370148,
-            "template": 121
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 564919,
-            "template": 221
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 718402,
-            "template": 321
-        }
-    }
+    "infrastructure": 1
 }

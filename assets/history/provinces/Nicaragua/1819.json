@@ -3,70 +3,16 @@
     "controller": "NIC",
     "add_core": "NIC",
     "fruits": 13,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 1,
         "population_total": {
             "amount": 190751,
             "template": 76
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 196516,
-            "template": 76
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 2
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 202455,
-            "template": 76
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 2,
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 492553,
-            "template": 276
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 659611,
-            "template": 382
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 294709,
-            "template": 176
-        }
-    }
+    "naval_base": 1
 }

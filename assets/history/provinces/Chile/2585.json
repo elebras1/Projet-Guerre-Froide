@@ -3,41 +3,11 @@
     "controller": "CHL",
     "add_core": "CHL",
     "wood": 0.5,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 104561,
             "template": 82
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 106795,
-            "template": 82
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 109078,
-            "template": 82
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 144379,
-            "template": 182
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 197621,
-            "template": 282
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 240851,
-            "template": 382
-        }
-    }
+    "infrastructure": 2
 }

@@ -3,76 +3,22 @@
     "controller": "ITA",
     "add_core": "ITA",
     "meat": 515.45,
-    "infra": 6,
     "naval_base": 3,
-    "economy_building": {
-        "name": "military_academy",
-        "size": 1
-    },
+    "economy_building": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "light_industry",
+            "size": 4
+        }
+    ],
     "1946.1.1": {
         "population_total": {
             "amount": 3275633,
             "template": 64
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 4
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 3342344,
-            "template": 64
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 3367311,
-            "template": 64
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 5,
-        "economy_building": {
-            "name": "light_industry",
-            "size": 10
-        },
-        "population_total": {
-            "amount": 4070256,
-            "template": 264
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 4
-    },
-    "1985.1.1": {
-        "naval_base": 6
-    },
-    "1991.1.1": {
-        "naval_base": 7,
-        "population_total": {
-            "amount": 4129079,
-            "template": 364
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 3649000,
-            "template": 164
-        }
-    }
+    "infrastructure": 6
 }

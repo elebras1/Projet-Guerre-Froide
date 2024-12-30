@@ -7,51 +7,11 @@
         "TNG"
     ],
     "fruits": 3.48,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 34809,
             "template": 1
         }
     },
-    "1961.12.09": {
-        "owner": "TNG",
-        "controller": "TNG",
-        "remove_core": "ENG"
-    },
-    "1964.04.26": {
-        "owner": "TNZ",
-        "controller": "TNZ",
-        "remove_core": "TNG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 35737,
-            "template": 1
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 36690,
-            "template": 1
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 51241,
-            "template": 101
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 86865,
-            "template": 201
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 126293,
-            "template": 301
-        }
-    }
+    "infrastructure": 2
 }

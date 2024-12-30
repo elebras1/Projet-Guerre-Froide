@@ -3,58 +3,11 @@
     "controller": "SIA",
     "add_core": "SIA",
     "wood": 0.8,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 427869,
             "template": 27
         }
     },
-    "1955.1.1": {
-        "air_base": 2
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 1018187,
-            "template": 227
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
-        },
-        "population_total": {
-            "amount": 1263890,
-            "template": 327
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 439430,
-            "template": 27
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 451303,
-            "template": 27
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 635475,
-            "template": 127
-        }
-    }
+    "infrastructure": 1
 }

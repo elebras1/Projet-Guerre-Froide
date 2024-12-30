@@ -3,41 +3,11 @@
     "controller": "FRA",
     "add_core": "FRA",
     "rare_metals": 6,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 209145,
             "template": 70
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 216777,
-            "template": 70
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 218407,
-            "template": 70
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 244969,
-            "template": 170
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 280095,
-            "template": 270
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 297372,
-            "template": 370
-        }
-    }
+    "infrastructure": 4
 }

@@ -3,83 +3,11 @@
     "controller": "FRA",
     "add_core": "FRA",
     "grain": 196.45,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 276790,
             "template": 70
         }
     },
-    "1964.2.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 3
-        }
-    },
-    "1965.2.24": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 5
-        }
-    },
-    "1966.8.4": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 6
-        }
-    },
-    "1969.6.1": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 7
-        }
-    },
-    "1980.9.10": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 8
-        }
-    },
-    "1981.5.27": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 9
-        }
-    },
-    "1987.3.4": {
-        "economy_building": {
-            "name": "nuclear_plant",
-            "size": 10
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 286890,
-            "template": 70
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 289047,
-            "template": 70
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 324201,
-            "template": 170
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 370687,
-            "template": 270
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 393552,
-            "template": 370
-        }
-    }
+    "infrastructure": 5
 }

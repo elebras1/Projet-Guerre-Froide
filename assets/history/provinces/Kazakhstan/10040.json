@@ -6,47 +6,11 @@
         "KAZ"
     ],
     "uranium": 25,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 355898,
             "template": 11
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 368418,
-            "template": 11
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 381379,
-            "template": 11
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 615595,
-            "template": 111
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 839883,
-            "template": 211
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 939565,
-            "template": 311
-        }
-    }
+    "infrastructure": 4
 }

@@ -3,41 +3,11 @@
     "controller": "MEX",
     "add_core": "MEX",
     "precious_metals": 20,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 68933,
             "template": 81
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 71046,
-            "template": 81
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 73224,
-            "template": 81
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 107649,
-            "template": 181
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 176458,
-            "template": 281
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 225784,
-            "template": 381
-        }
-    }
+    "infrastructure": 4
 }

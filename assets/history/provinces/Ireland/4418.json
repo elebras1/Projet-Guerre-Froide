@@ -3,56 +3,16 @@
     "controller": "IRE",
     "add_core": "IRE",
     "grain": 24.67,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 2,
         "population_total": {
             "amount": 81686,
             "template": 55
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 1
         }
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 81552,
-            "template": 55
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "heavy_industry",
+        "size": 1
     },
-    "1979.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 94558,
-            "template": 255
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 99036,
-            "template": 355
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 81619,
-            "template": 55
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 79372,
-            "template": 155
-        }
-    }
+    "naval_base": 2
 }

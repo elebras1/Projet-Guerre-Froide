@@ -6,53 +6,11 @@
         "RUS"
     ],
     "grain": 21.54,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 47334,
             "template": 45
         }
     },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "nuclear_silo",
-            "size": 2,
-            "model": 3,
-            "ammo_store": 30
-        },
-        "population_total": {
-            "amount": 65550,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "nuclear_silo",
-            "size": 2,
-            "model": 4,
-            "ammo_store": 54
-        },
-        "population_total": {
-            "amount": 70768,
-            "template": 345
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 48103,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 48886,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 58533,
-            "template": 145
-        }
-    }
+    "infrastructure": 4
 }

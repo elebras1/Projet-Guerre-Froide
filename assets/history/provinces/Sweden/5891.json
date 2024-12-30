@@ -4,49 +4,21 @@
     "add_core": "SWE",
     "grain": 51.69,
     "air_base": 6,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 137355,
             "template": 59
+        }
+    },
+    "economy_building": [
+        {
+            "name": "air_research_center",
+            "size": 1
         },
-        "economy_building": {
+        {
             "name": "aviation_industry",
             "size": 7
         }
-    },
-    "economy_building": {
-        "name": "air_research_center",
-        "size": 1
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 138310,
-            "template": 59
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 139271,
-            "template": 59
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 150382,
-            "template": 159
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 164699,
-            "template": 259
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 171095,
-            "template": 359
-        }
-    }
+    ],
+    "infrastructure": 6
 }

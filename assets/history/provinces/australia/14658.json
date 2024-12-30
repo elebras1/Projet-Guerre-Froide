@@ -3,41 +3,11 @@
     "controller": "AST",
     "add_core": "AST",
     "coal": 3,
-    "infra": 8,
     "1946.1.1": {
         "population_total": {
             "amount": 26523,
             "template": 94
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 27154,
-            "template": 94
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 27799,
-            "template": 94
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 36365,
-            "template": 194
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 49418,
-            "template": 294
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 58881,
-            "template": 394
-        }
-    }
+    "infrastructure": 8
 }

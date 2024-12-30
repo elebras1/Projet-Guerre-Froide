@@ -6,69 +6,15 @@
     "owner": "SOV",
     "controller": "SOV",
     "oil": 75,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 399932,
             "template": 71
-        },
-        "economy_building": {
-            "name": "refinery",
-            "size": 2
         }
     },
-    "1949.10.07": {
-        "owner": "DDR",
-        "controller": "DDR"
-    },
-    "1990.10.3": {
-        "owner": "GER",
-        "controller": "GER"
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 3
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 370873,
-            "template": 271
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 422280,
-            "template": 71
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 407268,
-            "template": 71
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 381859,
-            "template": 171
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 352380,
-            "template": 371
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "refinery",
+        "size": 2
     }
 }

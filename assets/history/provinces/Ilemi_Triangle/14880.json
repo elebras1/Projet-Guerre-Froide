@@ -7,20 +7,11 @@
         "KEN",
         "ETH"
     ],
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 9991,
             "template": 162
         }
     },
-    "1956.01.01": {
-        "owner": "SUD",
-        "controller": "SUD",
-        "remove_core": "ENG"
-    },
-    "1967.01.01": {
-        "owner": "KEN",
-        "controller": "KEN"
-    }
+    "infrastructure": 2
 }

@@ -3,51 +3,11 @@
     "controller": "SYR",
     "add_core": "SYR",
     "meat": 0.38,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 29489,
             "template": 41
         }
     },
-    "1958.2.22": {
-        "owner": "UAR",
-        "controller": "UAR",
-        "add_core": "UAR"
-    },
-    "1961.9.2": {
-        "owner": "SYR",
-        "controller": "SYR",
-        "remove_core": "UAR"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 30281,
-            "template": 41
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 31094,
-            "template": 41
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 44386,
-            "template": 141
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 78433,
-            "template": 241
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 115602,
-            "template": 341
-        }
-    }
+    "infrastructure": 4
 }

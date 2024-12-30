@@ -7,51 +7,11 @@
         "MOR",
         "MRA"
     ],
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 110,
             "template": 3
         }
     },
-    "1975.11.14": {
-        "owner": "MOR",
-        "controller": "MOR",
-        "remove_core": "SPA"
-    },
-    "1961.1.1": {
-        "naval_base": 1
-    },
-    "1979.1.1": {
-        "air_base": 1,
-        "population_total": {
-            "amount": 1285,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 2,
-        "population_total": {
-            "amount": 2155,
-            "template": 303
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 120,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 130,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 367,
-            "template": 103
-        }
-    }
+    "infrastructure": 4
 }

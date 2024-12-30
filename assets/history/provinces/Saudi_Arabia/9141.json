@@ -2,41 +2,11 @@
     "owner": "SAU",
     "controller": "SAU",
     "add_core": "SAU",
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 520,
             "template": 40
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 533,
-            "template": 40
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 546,
-            "template": 40
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 754,
-            "template": 140
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1613,
-            "template": 240
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2916,
-            "template": 340
-        }
-    }
+    "infrastructure": 2
 }

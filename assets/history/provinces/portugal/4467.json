@@ -3,59 +3,16 @@
     "controller": "POR",
     "add_core": "POR",
     "fruits": 108.04,
-    "infra": 7,
     "naval_base": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 2851057,
             "template": 66
-        },
-        "economy_building": {
-            "name": "refinery",
-            "size": 3
         }
     },
-    "1961.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 4,
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 3322358,
-            "template": 266
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 5,
-        "population_total": {
-            "amount": 3408425,
-            "template": 366
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 2867650,
-            "template": 66
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 2884340,
-            "template": 66
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 3058772,
-            "template": 166
-        }
+    "infrastructure": 7,
+    "economy_building": {
+        "name": "refinery",
+        "size": 3
     }
 }

@@ -3,41 +3,11 @@
     "controller": "PHI",
     "add_core": "PHI",
     "meat": 5.52,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 67196,
             "template": 25
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 69575,
-            "template": 25
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 72038,
-            "template": 25
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 108863,
-            "template": 125
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 179202,
-            "template": 225
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 247274,
-            "template": 325
-        }
-    }
+    "infrastructure": 5
 }

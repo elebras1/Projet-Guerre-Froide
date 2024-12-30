@@ -6,50 +6,12 @@
         "RUS"
     ],
     "renewable_energy": 136,
-    "infra": 6,
     "1946.1.1": {
-        "air_base": 4,
         "population_total": {
             "amount": 574586,
             "template": 45
         }
     },
-    "1948.1.1": {
-        "air_base": 5,
-        "population_total": {
-            "amount": 583928,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "air_base": 6,
-        "population_total": {
-            "amount": 593423,
-            "template": 45
-        }
-    },
-    "1961.1.1": {
-        "air_base": 7
-    },
-    "1971.1.1": {
-        "renewable_energy": 136
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 710534,
-            "template": 145
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 795718,
-            "template": 245
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 859049,
-            "template": 345
-        }
-    }
+    "infrastructure": 6,
+    "air_base": 4
 }

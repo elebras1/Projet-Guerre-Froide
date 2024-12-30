@@ -3,71 +3,15 @@
     "controller": "SAF",
     "add_core": "SAF",
     "grain": 32.36,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 203740,
             "template": 4
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 208515,
-            "template": 4
-        }
-    },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 2
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 587829,
-            "template": 304
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 213403,
-            "template": 4
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 285757,
-            "template": 104
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 442316,
-            "template": 204
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 1
     }
 }

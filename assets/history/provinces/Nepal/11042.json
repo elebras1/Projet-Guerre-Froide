@@ -3,73 +3,15 @@
     "controller": "NEP",
     "add_core": "NEP",
     "vegetables": 28.05,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 890514,
             "template": 17
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 905270,
-            "template": 17
-        }
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 920270,
-            "template": 17
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 1642862,
-            "template": 217
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 1
-        },
-        "population_total": {
-            "amount": 2186264,
-            "template": 317
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1129466,
-            "template": 117
-        }
+    "infrastructure": 2,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 1
     }
 }

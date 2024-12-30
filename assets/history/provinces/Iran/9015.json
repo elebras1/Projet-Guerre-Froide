@@ -3,45 +3,11 @@
     "controller": "SOV",
     "add_core": "PER",
     "grain": 8.76,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 36630,
             "template": 16
         }
     },
-    "1946.12.15": {
-        "owner": "PER",
-        "controller": "PER"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 37434,
-            "template": 16
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 38255,
-            "template": 16
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 50886,
-            "template": 116
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 81801,
-            "template": 216
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 123176,
-            "template": 316
-        }
-    }
+    "infrastructure": 5
 }

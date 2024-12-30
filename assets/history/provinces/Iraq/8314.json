@@ -2,41 +2,11 @@
     "owner": "IRQ",
     "controller": "IRQ",
     "add_core": "IRQ",
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 34566,
             "template": 33
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 35516,
-            "template": 33
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 36493,
-            "template": 33
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 49599,
-            "template": 133
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 85276,
-            "template": 233
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 114034,
-            "template": 333
-        }
-    }
+    "infrastructure": 2
 }

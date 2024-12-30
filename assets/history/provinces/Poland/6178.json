@@ -3,55 +3,15 @@
     "controller": "POL",
     "add_core": "POL",
     "coal": 12,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 712548,
             "template": 49
-        },
-        "economy_building": {
-            "name": "powerplant",
-            "size": 5
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 7
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 1050136,
-            "template": 249
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 726001,
-            "template": 49
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 739708,
-            "template": 49
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 890126,
-            "template": 149
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1137116,
-            "template": 349
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "powerplant",
+        "size": 5
     }
 }

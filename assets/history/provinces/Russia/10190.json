@@ -6,57 +6,11 @@
         "RUS"
     ],
     "grain": 18.52,
-    "infra": 8,
     "1946.1.1": {
         "population_total": {
             "amount": 33228,
             "template": 45
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 4
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 46016,
-            "template": 245
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 33768,
-            "template": 45
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 34317,
-            "template": 45
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 41090,
-            "template": 145
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 49678,
-            "template": 345
-        }
-    }
+    "infrastructure": 8
 }

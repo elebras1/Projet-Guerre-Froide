@@ -3,47 +3,11 @@
     "controller": "USA",
     "add_core": "USA",
     "uranium": 20,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 14879,
             "template": 93
         }
     },
-    "1947.1.1": {
-        "economy_building": {
-            "name": "rocket_test_site",
-            "size": 1
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 15120,
-            "template": 93
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 15366,
-            "template": 93
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 18690,
-            "template": 193
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 22163,
-            "template": 293
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 24907,
-            "template": 393
-        }
-    }
+    "infrastructure": 6
 }

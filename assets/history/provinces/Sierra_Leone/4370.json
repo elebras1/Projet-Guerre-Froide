@@ -6,46 +6,11 @@
         "SIE"
     ],
     "grain": 2.01,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 79984,
             "template": 5
         }
     },
-    "1961.04.17": {
-        "owner": "SIE",
-        "controller": "SIE",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 81075,
-            "template": 5
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 82181,
-            "template": 5
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 97899,
-            "template": 105
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 134120,
-            "template": 205
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 173227,
-            "template": 305
-        }
-    }
+    "infrastructure": 4
 }

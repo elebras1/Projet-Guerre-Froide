@@ -3,41 +3,11 @@
     "controller": "AST",
     "add_core": "AST",
     "grain": 3.89,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 1344,
             "template": 94
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1376,
-            "template": 94
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1408,
-            "template": 94
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1842,
-            "template": 194
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2504,
-            "template": 294
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2983,
-            "template": 394
-        }
-    }
+    "infrastructure": 5
 }

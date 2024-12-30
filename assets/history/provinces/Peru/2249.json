@@ -2,41 +2,11 @@
     "owner": "PRU",
     "controller": "PRU",
     "add_core": "PRU",
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1087,
             "template": 88
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1114,
-            "template": 88
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1143,
-            "template": 88
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1575,
-            "template": 188
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2524,
-            "template": 288
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 3313,
-            "template": 388
-        }
-    }
+    "infrastructure": 1
 }

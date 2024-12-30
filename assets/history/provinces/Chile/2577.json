@@ -3,41 +3,11 @@
     "controller": "CHL",
     "add_core": "CHL",
     "rare_metals": 70,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 805,
             "template": 82
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 822,
-            "template": 82
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 839,
-            "template": 82
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1111,
-            "template": 182
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 1521,
-            "template": 282
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1853,
-            "template": 382
-        }
-    }
+    "infrastructure": 6
 }

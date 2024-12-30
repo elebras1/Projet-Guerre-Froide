@@ -3,41 +3,11 @@
     "controller": "CAN",
     "add_core": "CAN",
     "wood": 1,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 14495,
             "template": 92
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 14888,
-            "template": 92
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 15293,
-            "template": 92
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 20741,
-            "template": 192
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 26997,
-            "template": 292
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 31229,
-            "template": 392
-        }
-    }
+    "infrastructure": 6
 }

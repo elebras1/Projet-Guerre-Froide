@@ -3,59 +3,15 @@
     "controller": "POL",
     "add_core": "POL",
     "precious_metals": 12,
-    "infra": 5,
     "1946.1.1": {
         "population_total": {
             "amount": 585937,
             "template": 49
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
         }
     },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 863540,
-            "template": 249
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 935065,
-            "template": 349
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 597000,
-            "template": 49
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 608271,
-            "template": 49
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 731962,
-            "template": 149
-        }
+    "infrastructure": 5,
+    "economy_building": {
+        "name": "heavy_industry",
+        "size": 3
     }
 }

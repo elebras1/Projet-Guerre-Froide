@@ -3,65 +3,15 @@
     "controller": "POL",
     "add_core": "POL",
     "grain": 519.47,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 611549,
             "template": 49
-        },
-        "economy_building": {
-            "name": "light_industry",
-            "size": 5
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 6
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 7
-        }
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 9
-        },
-        "population_total": {
-            "amount": 901287,
-            "template": 249
-        }
-    },
-    "1991.1.1": {
-        "economy_building": {
-            "name": "light_industry",
-            "size": 8
-        },
-        "population_total": {
-            "amount": 975938,
-            "template": 349
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 623095,
-            "template": 49
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 634859,
-            "template": 49
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 763957,
-            "template": 149
-        }
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "light_industry",
+        "size": 5
     }
 }

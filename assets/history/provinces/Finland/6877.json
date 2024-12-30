@@ -3,45 +3,11 @@
     "controller": "FIN",
     "add_core": "FIN",
     "wood": 0.7,
-    "infra": 1,
     "1946.1.1": {
         "population_total": {
             "amount": 1483,
             "template": 53
         }
     },
-    "1961.1.1": {
-        "infra": 6
-    },
-    "1979.1.1": {
-        "infra": 8,
-        "population_total": {
-            "amount": 1801,
-            "template": 253
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1500,
-            "template": 53
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1516,
-            "template": 53
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1700,
-            "template": 153
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 1894,
-            "template": 353
-        }
-    }
+    "infrastructure": 1
 }

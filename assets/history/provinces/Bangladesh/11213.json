@@ -8,64 +8,11 @@
         "IND"
     ],
     "fruits": 372.36,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 3220052,
             "template": 13
         }
     },
-    "1947.08.14": {
-        "owner": "PAK",
-        "controller": "PAK",
-        "remove_core": [
-            "IND",
-            "ENG"
-        ]
-    },
-    "1971.12.16": {
-        "owner": "BGL",
-        "controller": "BGL",
-        "remove_core": "PAK"
-    },
-    "1979.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 3
-        },
-        "population_total": {
-            "amount": 7025923,
-            "template": 213
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "powerplant",
-            "size": 4
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 3308056,
-            "template": 13
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 3398466,
-            "template": 13
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 4751099,
-            "template": 113
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 9664903,
-            "template": 313
-        }
-    }
+    "infrastructure": 4
 }

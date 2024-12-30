@@ -3,42 +3,12 @@
     "controller": "PRU",
     "add_core": "PRU",
     "vegetables": 30,
-    "infra": 6,
     "1946.1.1": {
-        "air_base": 3,
         "population_total": {
             "amount": 74108,
             "template": 88
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 75997,
-            "template": 88
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 77933,
-            "template": 88
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 107373,
-            "template": 188
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 172077,
-            "template": 288
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 225882,
-            "template": 388
-        }
-    }
+    "infrastructure": 6,
+    "air_base": 3
 }

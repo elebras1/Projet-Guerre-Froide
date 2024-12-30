@@ -6,58 +6,12 @@
         "ALG"
     ],
     "grain": 38.46,
-    "infra": 4,
     "1946.1.1": {
-        "naval_base": 3,
         "population_total": {
             "amount": 285625,
             "template": 3
         }
     },
-    "1962.07.05": {
-        "owner": "ALG",
-        "controller": "ALG",
-        "remove_core": "FRA"
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 4
-    },
-    "1979.1.1": {
-        "naval_base": 5,
-        "population_total": {
-            "amount": 619118,
-            "template": 203
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 6,
-        "population_total": {
-            "amount": 881827,
-            "template": 303
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 291583,
-            "template": 3
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 297665,
-            "template": 3
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 381216,
-            "template": 103
-        }
-    }
+    "infrastructure": 4,
+    "naval_base": 3
 }

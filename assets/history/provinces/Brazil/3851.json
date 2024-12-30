@@ -3,41 +3,11 @@
     "controller": "BRA",
     "add_core": "BRA",
     "rare_metals": 35.69,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 90581,
             "template": 77
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 99225,
-            "template": 77
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 102256,
-            "template": 77
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 146407,
-            "template": 177
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 225249,
-            "template": 277
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 288244,
-            "template": 381
-        }
-    }
+    "infrastructure": 6
 }

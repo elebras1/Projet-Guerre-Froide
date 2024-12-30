@@ -2,41 +2,11 @@
     "owner": "AFG",
     "controller": "AFG",
     "add_core": "AFG",
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 7642,
             "template": 12
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 7765,
-            "template": 12
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 7890,
-            "template": 12
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 9733,
-            "template": 112
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 13792,
-            "template": 212
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 13618,
-            "template": 312
-        }
-    }
+    "infrastructure": 2
 }

@@ -5,46 +5,11 @@
         "ENG",
         "PAK"
     ],
-    "infra": 3,
     "1946.1.1": {
         "population_total": {
             "amount": 57382,
             "template": 18
         }
     },
-    "1947.08.17": {
-        "owner": "PAK",
-        "controller": "PAK",
-        "remove_core": "ENG"
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 58423,
-            "template": 18
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 59484,
-            "template": 18
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 76368,
-            "template": 118
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 123322,
-            "template": 218
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 182164,
-            "template": 318
-        }
-    }
+    "infrastructure": 3
 }

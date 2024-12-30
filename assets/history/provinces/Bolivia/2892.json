@@ -3,41 +3,11 @@
     "controller": "BOL",
     "add_core": "BOL",
     "fruits": 0.33,
-    "infra": 2,
     "1946.1.1": {
         "population_total": {
             "amount": 1023,
             "template": 80
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1044,
-            "template": 80
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1066,
-            "template": 80
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1378,
-            "template": 180
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 2056,
-            "template": 280
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 2677,
-            "template": 380
-        }
-    }
+    "infrastructure": 2
 }

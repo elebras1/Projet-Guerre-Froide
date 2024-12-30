@@ -3,41 +3,11 @@
     "controller": "VEN",
     "add_core": "VEN",
     "precious_metals": 2,
-    "infra": 4,
     "1946.1.1": {
         "population_total": {
             "amount": 1101,
             "template": 91
         }
     },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 1145,
-            "template": 91
-        }
-    },
-    "1950.1.1": {
-        "population_total": {
-            "amount": 1191,
-            "template": 91
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 1905,
-            "template": 191
-        }
-    },
-    "1979.1.1": {
-        "population_total": {
-            "amount": 3405,
-            "template": 291
-        }
-    },
-    "1991.1.1": {
-        "population_total": {
-            "amount": 4713,
-            "template": 391
-        }
-    }
+    "infrastructure": 4
 }

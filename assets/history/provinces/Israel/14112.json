@@ -6,75 +6,13 @@
         "ISR"
     ],
     "oil": 8,
-    "infra": 6,
     "1946.1.1": {
         "population_total": {
             "amount": 72308,
             "template": 34
-        },
-        "air_base": 2,
-        "naval_base": 2
-    },
-    "1948.05.14": {
-        "owner": "ISR",
-        "controller": "ISR",
-        "remove_core": "ENG"
-    },
-    "1950.1.1": {
-        "air_base": 4,
-        "economy_building": {
-            "name": "refinery",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 81622,
-            "template": 34
         }
     },
-    "1953.1.1": {
-        "economy_building": {
-            "name": "refinery",
-            "size": 3
-        }
-    },
-    "1961.1.1": {
-        "air_base": 5,
-        "naval_base": 3,
-        "economy_building": {
-            "name": "refinery",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "air_base": 6,
-        "naval_base": 4,
-        "economy_building": {
-            "name": "refinery",
-            "size": 7
-        },
-        "population_total": {
-            "amount": 333653,
-            "template": 234
-        }
-    },
-    "1948.1.1": {
-        "air_base": 3,
-        "population_total": {
-            "amount": 76824,
-            "template": 34
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 5,
-        "population_total": {
-            "amount": 301213,
-            "template": 334
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 220113,
-            "template": 134
-        }
-    }
+    "infrastructure": 6,
+    "air_base": 2,
+    "naval_base": 2
 }

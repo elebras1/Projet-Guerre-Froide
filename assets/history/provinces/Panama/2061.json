@@ -6,78 +6,17 @@
         "USA"
     ],
     "fruits": 6,
-    "infra": 7,
     "naval_base": 2,
     "1946.1.1": {
-        "air_base": 4,
         "population_total": {
             "amount": 172995,
             "template": 76
-        },
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
         }
     },
-    "1948.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 177441,
-            "template": 76
-        }
+    "infrastructure": 7,
+    "economy_building": {
+        "name": "military_industry",
+        "size": 2
     },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 182001,
-            "template": 76
-        }
-    },
-    "1961.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 4,
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 403671,
-            "template": 276
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 5,
-        "economy_building": {
-            "name": "military_goods",
-            "size": 2
-        },
-        "population_total": {
-            "amount": 521840,
-            "template": 383
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 253085,
-            "template": 176
-        }
-    }
+    "air_base": 4
 }

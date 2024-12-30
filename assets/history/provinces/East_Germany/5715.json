@@ -6,76 +6,16 @@
     "owner": "SOV",
     "controller": "SOV",
     "vegetables": 150.77,
-    "infra": 6,
     "1946.1.1": {
-        "naval_base": 2,
         "population_total": {
             "amount": 188038,
             "template": 71
-        },
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 3
         }
     },
-    "1949.10.07": {
-        "owner": "DDR",
-        "controller": "DDR"
+    "infrastructure": 6,
+    "economy_building": {
+        "name": "heavy_industry",
+        "size": 3
     },
-    "1990.10.3": {
-        "owner": "GER",
-        "controller": "GER"
-    },
-    "1950.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 4
-        },
-        "population_total": {
-            "amount": 191487,
-            "template": 71
-        }
-    },
-    "1961.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 5
-        }
-    },
-    "1979.1.1": {
-        "naval_base": 3,
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 6
-        },
-        "population_total": {
-            "amount": 174376,
-            "template": 271
-        }
-    },
-    "1985.1.1": {
-        "economy_building": {
-            "name": "heavy_industry",
-            "size": 7
-        }
-    },
-    "1991.1.1": {
-        "naval_base": 4,
-        "population_total": {
-            "amount": 165680,
-            "template": 371
-        }
-    },
-    "1948.1.1": {
-        "population_total": {
-            "amount": 198546,
-            "template": 71
-        }
-    },
-    "1961.12.30": {
-        "population_total": {
-            "amount": 179541,
-            "template": 171
-        }
-    }
+    "naval_base": 2
 }
