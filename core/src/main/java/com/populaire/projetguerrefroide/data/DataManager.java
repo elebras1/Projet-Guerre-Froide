@@ -21,6 +21,7 @@ import com.populaire.projetguerrefroide.economy.good.*;
 import com.populaire.projetguerrefroide.economy.population.PopulationType;
 import com.populaire.projetguerrefroide.entity.*;
 import com.populaire.projetguerrefroide.map.*;
+import com.populaire.projetguerrefroide.national.*;
 
 import java.io.*;
 import java.text.ParseException;
@@ -43,6 +44,7 @@ public class DataManager {
     private final String adjenciesJsonFile = this.mapPath + "adjacencies.json";
     private final String governmentJsonFile = this.commonPath + "governments.json";
     private final String ideologiesJsonFile = this.commonPath + "ideologies.json";
+    private final String nationalIdeasJsonFile = this.commonPath + "national_ideas.json";
     private final String goodsJsonFile = this.commonPath + "goods.json";
     private final String populationTypesJsonFile = this.commonPath + "population_types.json";
     private final String populationDemandsJsonFile = this.commonPath + "population_demands.json";
@@ -57,6 +59,7 @@ public class DataManager {
         IntObjectMap<Province> provinces = this.loadProvinces(countries, populationTypes);
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
+        NationalIdeas nationalIdeas = this.readNationalIdeasJson();
         Map<String, Good> goods = this.readGoodsJson();
         PopulationDemands populationDemands = this.readPopulationDemandsJson(goods);
         Map<String, Building> buildings = this.readBuildingsJson(goods);
@@ -361,6 +364,67 @@ public class DataManager {
         }
 
         return ideologies;
+    }
+
+    private NationalIdeas readNationalIdeasJson() {
+        try {
+            JsonNode nationalIdeasJson = this.openJson(this.nationalIdeasJsonFile);
+
+            Map<String, Culture> cultures = new ObjectObjectMap<>();
+            nationalIdeasJson.get("national_culture").fields().forEachRemaining(culture -> {
+                String name = culture.getKey();
+                JsonNode cultureValue = culture.getValue();
+                int color = this.parseColor(cultureValue.get("color"));
+                cultures.put(name, new Culture(name, color));
+            });
+
+            Map<String, Religion> religions = new ObjectObjectMap<>();
+            nationalIdeasJson.get("national_religion").fields().forEachRemaining(religion -> {
+                String name = religion.getKey();
+                JsonNode religionValue = religion.getValue();
+                int color = this.parseColor(religionValue.get("color"));
+                religionValue = ((ObjectNode) religionValue).remove("color");
+                List<Modifier> modifiers = new ObjectList<>();
+                religionValue.fields().forEachRemaining(modifier -> {
+                    String modifierName = modifier.getKey();
+                    float modifierValue = modifier.getValue().floatValue();
+                    modifiers.add(new Modifier(modifierName, modifierValue));
+                });
+                religions.put(name, new Religion(name, color, modifiers));
+            });
+
+            Map<String, Identity> identities = new ObjectObjectMap<>();
+            nationalIdeasJson.get("national_identity").fields().forEachRemaining(identity -> {
+                String name = identity.getKey();
+                JsonNode identityValue = identity.getValue();
+                List<Modifier> modifiers = new ObjectList<>();
+                identityValue.fields().forEachRemaining(modifier -> {
+                    String modifierName = modifier.getKey();
+                    float modifierValue = modifier.getValue().floatValue();
+                    modifiers.add(new Modifier(modifierName, modifierValue));
+                });
+                identities.put(name, new Identity(name, modifiers));
+            });
+
+            Map<String, Attitude> attitudes = new ObjectObjectMap<>();
+            nationalIdeasJson.get("national_attitude").fields().forEachRemaining(attitude -> {
+                String name = attitude.getKey();
+                JsonNode attitudeValue = attitude.getValue();
+                List<Modifier> modifiers = new ObjectList<>();
+                attitudeValue.fields().forEachRemaining(modifier -> {
+                    String modifierName = modifier.getKey();
+                    float modifierValue = modifier.getValue().floatValue();
+                    modifiers.add(new Modifier(modifierName, modifierValue));
+                });
+                attitudes.put(name, new Attitude(name, modifiers));
+            });
+
+            return new NationalIdeas(cultures, religions, identities, attitudes);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     private Map<String, Good> readGoodsJson() {

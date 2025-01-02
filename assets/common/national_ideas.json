@@ -1,0 +1,231 @@
+{
+  "national_culture": {
+    "cul_north_america": {
+      "color": [
+        135,
+        206,
+        235
+      ]
+    },
+    "cul_latin_america": {
+      "color": [
+        34,
+        139,
+        34
+      ]
+    },
+    "cul_western_europe": {
+      "color": [
+        255,
+        215,
+        0
+      ]
+    },
+    "cul_pacific": {
+      "color": [
+        70,
+        130,
+        180
+      ]
+    },
+    "cul_east_europe": {
+      "color": [
+        139,
+        69,
+        19
+      ]
+    },
+    "cul_middle_east": {
+      "color": [
+        210,
+        105,
+        30
+      ]
+    },
+    "cul_sub_saharan_africa": {
+      "color": [
+        85,
+        107,
+        47
+      ]
+    },
+    "cul_east_asia": {
+      "color": [
+        255,
+        69,
+        0
+      ]
+    },
+    "cul_south_asia": {
+      "color": [
+        255,
+        99,
+        71
+      ]
+    }
+  },
+  "national_religion": {
+    "hinduism": {
+      "supply_consumption": -0.005,
+      "peace_consumer_goods_demand": -0.005,
+      "war_exhaustion": -0.05,
+      "color": [
+        255,
+        165,
+        0
+      ]
+    },
+    "confucianism": {
+      "supply_consumption": -0.005,
+      "peace_consumer_goods_demand": -0.005,
+      "war_exhaustion": -0.05,
+      "color": [
+        70,
+        130,
+        180
+      ]
+    },
+    "buddhism": {
+      "supply_consumption": -0.005,
+      "peace_consumer_goods_demand": -0.005,
+      "color": [
+        255,
+        215,
+        0
+      ]
+    },
+    "shintoism": {
+      "supply_consumption": -0.005,
+      "peace_consumer_goods_demand": -0.005,
+      "war_exhaustion": -0.05,
+      "color": [
+        255,
+        69,
+        0
+      ]
+    },
+    "judaism": {
+      "dissent_decrease": 0.004,
+      "territorial_pride": 0.005,
+      "research_efficiency": 0.002,
+      "supply_consumption": -0.005,
+      "peace_consumer_goods_demand": -0.005,
+      "war_exhaustion": -0.0025,
+      "national_unity": 0.02,
+      "prestige": 0.01,
+      "unit_recruitment_time": -0.001,
+      "color": [
+        0,
+        0,
+        255
+      ]
+    },
+    "christianity": {
+      "dissent_decrease": 0.004,
+      "global_revolt_risk": -0.2,
+      "espionage_bonus": 0.002,
+      "suseptibility": 0.001,
+      "neutrality_change": 0.02,
+      "prestige": 0.01,
+      "color": [
+        255,
+        255,
+        255
+      ]
+    },
+    "islam": {
+      "supply_consumption": -0.005,
+      "peace_consumer_goods_demand": -0.005,
+      "war_exhaustion": -0.05,
+      "color": [
+        34,
+        139,
+        34
+      ]
+    },
+    "folk_religions": {
+      "supply_consumption": -0.005,
+      "peace_consumer_goods_demand": -0.005,
+      "war_exhaustion": -0.05,
+      "color": [
+        139,
+        69,
+        19
+      ]
+    },
+    "atheism_religion": {
+      "dissent_increase": 0.005,
+      "color": [
+        128,
+        128,
+        128
+      ]
+    }
+  },
+  "national_identity": {
+    "territorial_focus": {
+      "supply_consumption": -0.05,
+      "peace_consumer_goods_demand": -0.05,
+      "war_exhaustion": -0.5
+    },
+    "cultural_bias_focus": {
+      "supply_consumption": -0.025,
+      "peace_consumer_goods_demand": -0.05,
+      "war_exhaustion": -0.025,
+      "national_unity": 0.2,
+      "prestige": 0.01,
+      "unit_recruitment_time": -0.01
+    },
+    "state_building_focus": {
+      "dissent_decrease": 0.04,
+      "research_efficiency": 0.02,
+      "supply_consumption": -0.05
+    },
+    "corporate_focus": {
+      "global_resources": 0.01,
+      "research_efficiency": 0.01
+    },
+    "civic_focus": {
+      "dissent_decrease": 0.04,
+      "global_revolt_risk": -0.02
+    },
+    "equality_focus": {
+      "dissent_decrease": 0.04,
+      "global_revolt_risk": -0.02,
+      "prestige": 0.01,
+      "espionage_bonus": 0.02
+    },
+    "humanitarian_focus": {
+      "spy_daily": 0.01,
+      "national_unity": 0.3,
+      "prestige": 0.03
+    }
+  },
+  "national_attitude": {
+    "permanent_revolution": {
+      "neutrality_change": -0.1,
+      "threat_impact": 0.05
+    },
+    "imperialism": {
+      "neutrality_change": -0.05,
+      "threat_impact": 0.01
+    },
+    "colonialism": {
+      "neutrality_change": -0.03,
+      "threat_impact": 0.01
+    },
+    "hegemony": {
+      "neutrality_change": -0.01,
+      "threat_impact": 0.01
+    },
+    "balance_of_power": {},
+    "defensive": {
+      "neutrality_change": 0.01,
+      "threat_impact": -0.01
+    },
+    "non-interventionism": {
+      "neutrality_change": 0.03,
+      "threat_impact": -0.01
+    }
+  }
+}
