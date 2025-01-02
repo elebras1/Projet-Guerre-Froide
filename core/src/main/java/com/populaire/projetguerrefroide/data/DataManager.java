@@ -11,17 +11,18 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.github.tommyettinger.ds.ObjectObjectMap;
-import com.populaire.projetguerrefroide.economy.PopulationDemands;
+import com.populaire.projetguerrefroide.economy.population.Population;
+import com.populaire.projetguerrefroide.economy.population.PopulationDemands;
 import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.economy.building.DevelopmentBuilding;
 import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
 import com.populaire.projetguerrefroide.economy.building.SpecialBuilding;
 import com.populaire.projetguerrefroide.economy.good.*;
+import com.populaire.projetguerrefroide.economy.population.PopulationType;
 import com.populaire.projetguerrefroide.entity.*;
 import com.populaire.projetguerrefroide.map.*;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -43,6 +44,7 @@ public class DataManager {
     private final String governmentJsonFile = this.commonPath + "governments.json";
     private final String ideologiesJsonFile = this.commonPath + "ideologies.json";
     private final String goodsJsonFile = this.commonPath + "goods.json";
+    private final String populationTypesJsonFile = this.commonPath + "population_types.json";
     private final String populationDemandsJsonFile = this.commonPath + "population_demands.json";
     private final String ministerTypesJsonFile = this.commonPath + "minister_types.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
@@ -51,7 +53,8 @@ public class DataManager {
 
     public World createWorldAsync() {
         Map<String, Country> countries = this.loadCountries();
-        IntObjectMap<Province> provinces = this.loadProvinces(countries);
+        IntObjectMap<PopulationType> populationTypes = this.readPopulationTypesJson();
+        IntObjectMap<Province> provinces = this.loadProvinces(countries, populationTypes);
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
         Map<String, Good> goods = this.readGoodsJson();
@@ -80,9 +83,9 @@ public class DataManager {
         return this.readCountriesJson();
     }
 
-    private IntObjectMap<Province> loadProvinces(Map<String, Country> countries) {
+    private IntObjectMap<Province> loadProvinces(Map<String, Country> countries, IntObjectMap<PopulationType> populationTypes ) {
         IntObjectMap<Province> provincesByColor = new IntObjectMap<>(20000);
-        IntMap<Province> provinces = this.readProvincesJson(countries);
+        IntMap<Province> provinces = this.readProvincesJson(countries, populationTypes);
         this.readRegionJson(provinces);
         this.readDefinitionCsv(provinces, provincesByColor);
         this.readProvinceBitmap(provincesByColor);
@@ -161,14 +164,14 @@ public class DataManager {
         return (red << 24) | (green << 16) | (blue << 8) | alpha;
     }
 
-    private IntMap<Province> readProvincesJson(Map<String, Country> countries) {
+    private IntMap<Province> readProvincesJson(Map<String, Country> countries, IntObjectMap<PopulationType> populationTypes) {
         IntMap<Province> provinces = new IntMap<>(20000);
         try {
             JsonNode provincesJson = this.openJson(this.provincesJsonFile);
             provincesJson.fields().forEachRemaining(entry -> {
                 String provinceFileName = this.historyPath + entry.getValue().asText();
                 short provinceId = Short.parseShort(entry.getKey());
-                Province province = readProvinceJson(countries, provinceFileName, provinceId);
+                Province province = this.readProvinceJson(countries, provinceFileName, provinceId, populationTypes);
                 provinces.put(provinceId, province);
             });
         } catch (IOException e) {
@@ -178,7 +181,7 @@ public class DataManager {
         return provinces;
     }
 
-    private LandProvince readProvinceJson(Map<String, Country> countries, String provinceFileName, short provinceId) {
+    private LandProvince readProvinceJson(Map<String, Country> countries, String provinceFileName, short provinceId, IntObjectMap<PopulationType> populationTypes) {
         try {
             JsonNode rootNode = this.openJson(provinceFileName);
             String owner = rootNode.path("owner").asText();
@@ -187,11 +190,12 @@ public class DataManager {
             Country countryController = countries.get(controller);
             JsonNode dateNode = rootNode.path(this.defaultDate);
             JsonNode populationNode = dateNode.path("population_total");
-            int amount = populationNode.get("amount").asInt();
-            int template = populationNode.get("template").asInt();
-            Population population = new Population(amount, template);
+            int amount = populationNode.get("amount").intValue();
+            short template = populationNode.get("template").shortValue();
+            Population population = new Population(amount, populationTypes.get(template));
             LandProvince province = new LandProvince(provinceId, countryOwner, countryController, population);
             countryOwner.addProvince(province);
+            System.out.println(province.getPopulation());
             return province;
         } catch (IOException e) {
             e.printStackTrace();
@@ -423,6 +427,25 @@ public class DataManager {
         return goods;
     }
 
+    private IntObjectMap<PopulationType> readPopulationTypesJson() {
+        IntObjectMap<PopulationType> populationTypes = new IntObjectMap<>();
+        try {
+            JsonNode populationTypesJson = this.openJson(this.populationTypesJsonFile);
+            populationTypesJson.fields().forEachRemaining(entry -> {
+                short template = Short.parseShort(entry.getKey());
+                JsonNode populationValuesTypeNode = entry.getValue().get("value");
+                float children = populationValuesTypeNode.get(0).floatValue();
+                float adults = populationValuesTypeNode.get(1).floatValue();
+                float seniors = populationValuesTypeNode.get(2).floatValue();
+                populationTypes.put(template, new PopulationType(template, children, adults, seniors));
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return populationTypes;
+    }
+
     private PopulationDemands readPopulationDemandsJson(Map<String, Good> goods) {
         Map<Good, Float> populationDemands = new ObjectObjectMap<>();
         try {
@@ -471,11 +494,11 @@ public class DataManager {
             JsonNode economyBuilding = buildingsJson.get("economy_building");
             economyBuilding.fields().forEachRemaining(entry -> {
                 String buildingName = entry.getKey();
-                int cost = entry.getValue().get("cost").asInt();
+                int cost = entry.getValue().get("cost").intValue();
                 short time = entry.getValue().get("time").shortValue();
-                boolean onMap = entry.getValue().get("onmap").asBoolean();
-                boolean visibility = entry.getValue().get("visibility").asBoolean();
-                int workforce = entry.getValue().get("workforce").asInt();
+                boolean onMap = entry.getValue().get("onmap").booleanValue();
+                boolean visibility = entry.getValue().get("visibility").booleanValue();
+                int workforce = entry.getValue().get("workforce").intValue();
                 int color = this.parseColor(entry.getValue().get("color"));
                 short maxLevel = entry.getValue().get("max_level").shortValue();
                 JsonNode inputGoodsNode = entry.getValue().get("input_goods");
@@ -496,10 +519,10 @@ public class DataManager {
             JsonNode specialBuilding = buildingsJson.get("special_building");
             specialBuilding.fields().forEachRemaining(entry -> {
                 String buildingName = entry.getKey();
-                int cost = entry.getValue().get("cost").asInt();
+                int cost = entry.getValue().get("cost").intValue();
                 short time = entry.getValue().get("time").shortValue();
-                boolean onMap = entry.getValue().get("onmap").asBoolean();
-                boolean visibility = entry.getValue().get("visibility").asBoolean();
+                boolean onMap = entry.getValue().get("onmap").booleanValue();
+                boolean visibility = entry.getValue().get("visibility").booleanValue();
                 JsonNode modifiersNode = entry.getValue().get("modifier");
                 if(modifiersNode == null) {
                     buildings.put(buildingName, new SpecialBuilding(buildingName, cost, time, onMap, visibility));
@@ -523,10 +546,10 @@ public class DataManager {
             JsonNode developmentBuilding = buildingsJson.get("development_building");
             developmentBuilding.fields().forEachRemaining(entry -> {
                 String buildingName = entry.getKey();
-                int cost = entry.getValue().get("cost").asInt();
+                int cost = entry.getValue().get("cost").intValue();
                 short time = entry.getValue().get("time").shortValue();
-                boolean onMap = entry.getValue().get("onmap").asBoolean();
-                boolean visibility = entry.getValue().get("visibility").asBoolean();
+                boolean onMap = entry.getValue().get("onmap").booleanValue();
+                boolean visibility = entry.getValue().get("visibility").booleanValue();
                 short maxLevel = entry.getValue().get("max_level").shortValue();
                 JsonNode modifierNode = entry.getValue().get("modifier");
                 if(modifierNode == null) {

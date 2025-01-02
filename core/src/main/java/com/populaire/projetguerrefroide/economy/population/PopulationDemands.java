@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.economy;
+package com.populaire.projetguerrefroide.economy.population;
 
 import com.populaire.projetguerrefroide.economy.good.Good;
 

@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide.map;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.entity.Population;
+import com.populaire.projetguerrefroide.economy.population.Population;
 
 import java.util.*;
 
