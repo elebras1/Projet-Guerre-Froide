@@ -195,7 +195,6 @@ public class DataManager {
             Population population = new Population(amount, populationTypes.get(template));
             LandProvince province = new LandProvince(provinceId, countryOwner, countryController, population);
             countryOwner.addProvince(province);
-            System.out.println(province.getPopulation());
             return province;
         } catch (IOException e) {
             e.printStackTrace();
