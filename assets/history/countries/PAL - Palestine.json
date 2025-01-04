@@ -8,22 +8,10 @@
   },
   "neutrality": 25,
   "national_unity": 100,
-  "national_culture": [
-    "cul_middle_east",
-    "cul_middle_east"
-  ],
-  "national_religion": [
-    "islam",
-    "islam"
-  ],
-  "national_identity": [
-    "state_building_focus",
-    "territorial_focus"
-  ],
-  "national_attitude": [
-    "defensive",
-    "defensive"
-  ],
+  "national_culture": "cul_middle_east",
+  "national_religion": "islam",
+  "national_identity": "territorial_focus",
+  "national_attitude": "defensive",
   "organized_religions_law": "secular_state",
   "civil_liberties": "emergency_law",
   "freedom_of_the_press": "censored_press",

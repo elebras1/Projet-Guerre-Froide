@@ -54,12 +54,12 @@ public class DataManager {
     private final String defaultDate = "1946.1.1";
 
     public World createWorldAsync() {
+        NationalIdeas nationalIdeas = this.readNationalIdeasJson();
         Map<String, Country> countries = this.loadCountries();
         IntObjectMap<PopulationType> populationTypes = this.readPopulationTypesJson();
-        IntObjectMap<Province> provinces = this.loadProvinces(countries, populationTypes);
+        IntObjectMap<Province> provinces = this.loadProvinces(countries, populationTypes, nationalIdeas);
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
-        NationalIdeas nationalIdeas = this.readNationalIdeasJson();
         Map<String, Good> goods = this.readGoodsJson();
         PopulationDemands populationDemands = this.readPopulationDemandsJson(goods);
         Map<String, Building> buildings = this.readBuildingsJson(goods);
@@ -86,13 +86,13 @@ public class DataManager {
         return this.readCountriesJson();
     }
 
-    private IntObjectMap<Province> loadProvinces(Map<String, Country> countries, IntObjectMap<PopulationType> populationTypes ) {
+    private IntObjectMap<Province> loadProvinces(Map<String, Country> countries, IntObjectMap<PopulationType> populationTypes, NationalIdeas nationalIdeas) {
         IntObjectMap<Province> provincesByColor = new IntObjectMap<>(20000);
         IntMap<Province> provinces = this.readProvincesJson(countries, populationTypes);
         this.readRegionJson(provinces);
         this.readDefinitionCsv(provinces, provincesByColor);
         this.readProvinceBitmap(provincesByColor);
-        this.readCountriesHistoryJson(countries, provinces);
+        this.readCountriesHistoryJson(countries, provinces, nationalIdeas);
         this.readContinentJsonFile(provinces);
         this.readAdjenciesJson(provinces);
 
@@ -252,12 +252,12 @@ public class DataManager {
         }
     }
 
-    private void readCountriesHistoryJson(Map<String, Country> countries, IntMap<Province> provinces) {
+    private void readCountriesHistoryJson(Map<String, Country> countries, IntMap<Province> provinces, NationalIdeas nationalIdeas) {
         try {
             JsonNode countriesJson = this.openJson(this.countriesHistoryJsonFiles);
             countriesJson.fields().forEachRemaining(entry -> {
                 String countryFileName = this.historyPath + entry.getValue().textValue();
-                this.readCountryHistoryJson(countries, countryFileName, entry.getKey(), provinces);
+                this.readCountryHistoryJson(countries, countryFileName, entry.getKey(), provinces, nationalIdeas);
             });
         } catch (IOException e) {
             e.printStackTrace();
@@ -279,11 +279,12 @@ public class DataManager {
         }
     }
 
-    private void readCountryHistoryJson(Map<String, Country> countries, String countryFileName, String idCountry, IntMap<Province> provinces) {
+    private void readCountryHistoryJson(Map<String, Country> countries, String countryFileName, String idCountry, IntMap<Province> provinces, NationalIdeas nationalIdeas) {
         try {
             if(countryFileName.equals("history/countries/REB - Rebels.json")) {
                 return;
             }
+            System.out.println(countryFileName);
             JsonNode countryJson = this.openJson(countryFileName);
             short idCapital = countryJson.get("capital").shortValue();
             Country country = countries.get(idCountry);
@@ -293,10 +294,17 @@ public class DataManager {
             country.setGovernment(government);
             String ideology = countryJson.get("ideology").textValue();
             country.setIdeology(ideology);
+            String culture = countryJson.get("national_culture").textValue();
+            country.setCulture(nationalIdeas.getCultures().get(culture));
+            String identity = countryJson.get("national_identity").textValue();
+            country.setIdentity(nationalIdeas.getIdentities().get(identity));
+            String religion = countryJson.get("national_religion").textValue();
+            country.setReligion(nationalIdeas.getReligions().get(religion));
+            String attitude = countryJson.get("national_attitude").textValue();
+            country.setAttitude(nationalIdeas.getAttitudes().get(attitude));
             JsonNode setupNode = countryJson.get(this.defaultDate);
             if (setupNode.has("head_of_state") && setupNode.get("head_of_state") != null &&
                     setupNode.has("head_of_government") && setupNode.get("head_of_government") != null) {
-
                 int idMinisterHeadOfState = setupNode.get("head_of_state").intValue();
                 int idMinisterHeadOfGovernment = setupNode.get("head_of_government").intValue();
                 country.setHeadOfState(idMinisterHeadOfState);

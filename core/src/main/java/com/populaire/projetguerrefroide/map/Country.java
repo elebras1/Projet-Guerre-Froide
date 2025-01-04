@@ -2,6 +2,10 @@ package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.entity.Minister;
+import com.populaire.projetguerrefroide.national.Attitude;
+import com.populaire.projetguerrefroide.national.Culture;
+import com.populaire.projetguerrefroide.national.Identity;
+import com.populaire.projetguerrefroide.national.Religion;
 
 import java.util.*;
 import java.util.List;
@@ -19,6 +23,10 @@ public class Country {
     private int headOfGovernment;
     private int headOfState;
     private List<MapLabel> labels;
+    private Culture culture;
+    private Identity identity;
+    private Religion religion;
+    private Attitude attitude;
 
     public Country(String id, String name, int color) {
         this.id = id;
@@ -106,6 +114,38 @@ public class Country {
 
     public Minister getHeadOfGovernment() {
         return this.ministers.get(this.headOfGovernment);
+    }
+
+    public void setCulture(Culture culture) {
+        this.culture = culture;
+    }
+
+    public Culture getCulture() {
+        return this.culture;
+    }
+
+    public void setIdentity(Identity identity) {
+        this.identity = identity;
+    }
+
+    public Identity getIdentity() {
+        return this.identity;
+    }
+
+    public void setReligion(Religion religion) {
+        this.religion = religion;
+    }
+
+    public Religion getReligion() {
+        return this.religion;
+    }
+
+    public void setAttitude(Attitude attitude) {
+        this.attitude = attitude;
+    }
+
+    public Attitude getAttitude() {
+        return this.attitude;
     }
 
     public int getPopulationSize() {

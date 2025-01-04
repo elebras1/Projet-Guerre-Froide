@@ -1,150 +1,47 @@
 {
-  "capital": [
-    5540,
-    4280
-  ],
-  "government": [
-    "republic_gov",
-    "republic_gov"
-  ],
-  "ideology": [
-    "social_cons_idolg",
-    "social_cons_idolg"
-  ],
-  "alignment": [
-    {
-      "x": 0,
-      "y": 0
-    },
-    {
-      "x": 0,
-      "y": 0
-    }
-  ],
-  "neutrality": [
-    65,
-    70
-  ],
-  "national_unity": [
-    100,
-    100
-  ],
-  "national_culture": [
-    "cul_sub_saharan_africa",
-    "cul_sub_saharan_africa"
-  ],
-  "national_religion": [
-    "christianity",
-    "islam"
-  ],
-  "national_identity": [
-    "corporate_focus",
-    "state_building_focus"
-  ],
-  "national_attitude": [
-    "defensive",
-    "defensive"
-  ],
-  "organized_religions_law": [
-    "secular_state",
-    "secular_state"
-  ],
-  "civil_liberties": [
-    "emergency_law",
-    "emergency_law"
-  ],
-  "freedom_of_the_press": [
-    "censored_press",
-    "censored_press"
-  ],
-  "elections_and_voting": [
-    "winner_takes_it_all",
-    "winner_takes_it_all"
-  ],
-  "military_service": [
-    "expanded_volunteer_army",
-    "conventional_volunteer_army"
-  ],
-  "rule_of_law": [
-    "moderately_defined",
-    "narrowly_defined"
-  ],
-  "human_rights": [
-    "cultural_relativism",
-    "cultural_relativism"
-  ],
-  "public_oversight": [
-    "limited_oversight",
-    "limited_oversight"
-  ],
-  "foreign_policy": [
-    "detente_pol",
-    "detente_pol"
-  ],
-  "intelligence_policy": [
-    "intelligence_gathering_pol",
-    "intelligence_gathering_pol"
-  ],
-  "armaments_policy": [
-    "conventional_warfare_focus_pol",
-    "conventional_warfare_focus_pol"
-  ],
-  "military_policy": [
-    "two_y_service_pol",
-    "two_y_service_pol"
-  ],
-  "nuclear_policy": [
-    "civilian_nuclear_focus_pol",
-    "civilian_nuclear_focus_pol"
-  ],
-  "domestic_policy": [
-    "agricultural_focus_pol",
-    "agricultural_focus_pol"
-  ],
-  "internal_policy": [
-    "oppressive_aff_pol",
-    "oppressive_aff_pol"
-  ],
-  "economic_policy": [
-    "resource_based_policy_pol",
-    "resource_based_policy_pol"
-  ],
-  "fiscal_policy": [
-    "reduced_taxation_pol",
-    "reduced_taxation_pol"
-  ],
-  "education_policy": [
-    "high_funding_edu_pol",
-    "high_funding_edu_pol"
-  ],
-  "popularity": [
-    {
-      "fascistic_idolg": 0,
-      "paternal_auto_idolg": 0,
-      "social_cons_idolg": 40,
-      "market_liberal_idolg": 0,
-      "social_liberal_idolg": 30,
-      "social_democrat_idolg": 10,
-      "left_wing_radical_idolg": 10,
-      "maoist_idolg": 0,
-      "communist_idolg": 10
-    },
-    {
-      "fascistic_idolg": 0,
-      "paternal_auto_idolg": 30,
-      "social_cons_idolg": 70,
-      "market_liberal_idolg": 0,
-      "social_liberal_idolg": 0,
-      "social_democrat_idolg": 0,
-      "left_wing_radical_idolg": 0,
-      "maoist_idolg": 0,
-      "communist_idolg": 0
-    }
-  ],
-  "oob": [
-    "empty.txt",
-    "empty.txt"
-  ],
+  "capital": 5540,
+  "government": "republic_gov",
+  "ideology": "social_cons_idolg",
+  "alignment": {
+    "x": 0,
+    "y": 0
+  },
+  "neutrality": 65,
+  "national_unity": 100,
+  "national_culture": "cul_sub_saharan_africa",
+  "national_religion": "christianity",
+  "national_identity": "corporate_focus",
+  "national_attitude": "defensive",
+  "organized_religions_law": "secular_state",
+  "civil_liberties": "emergency_law",
+  "freedom_of_the_press": "censored_press",
+  "elections_and_voting": "winner_takes_it_all",
+  "military_service": "expanded_volunteer_army",
+  "rule_of_law": "moderately_defined",
+  "human_rights": "cultural_relativism",
+  "public_oversight": "limited_oversight",
+  "foreign_policy": "detente_pol",
+  "intelligence_policy": "intelligence_gathering_pol",
+  "armaments_policy": "conventional_warfare_focus_pol",
+  "military_policy": "two_y_service_pol",
+  "nuclear_policy": "civilian_nuclear_focus_pol",
+  "domestic_policy": "agricultural_focus_pol",
+  "internal_policy": "oppressive_aff_pol",
+  "economic_policy": "resource_based_policy_pol",
+  "fiscal_policy": "reduced_taxation_pol",
+  "education_policy": "high_funding_edu_pol",
+  "popularity": {
+    "fascistic_idolg": 0,
+    "paternal_auto_idolg": 0,
+    "social_cons_idolg": 40,
+    "market_liberal_idolg": 0,
+    "social_liberal_idolg": 30,
+    "social_democrat_idolg": 10,
+    "left_wing_radical_idolg": 10,
+    "maoist_idolg": 0,
+    "communist_idolg": 10
+  },
+  "oob": "empty.txt",
   "1946.1.1": {
     "oob": "empty.txt",
     "head_of_state": 1196001,
