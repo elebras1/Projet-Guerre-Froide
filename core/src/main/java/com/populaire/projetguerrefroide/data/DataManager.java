@@ -55,15 +55,15 @@ public class DataManager {
 
     public World createWorldAsync() {
         NationalIdeas nationalIdeas = this.readNationalIdeasJson();
-        Map<String, Country> countries = this.loadCountries();
-        IntObjectMap<PopulationType> populationTypes = this.readPopulationTypesJson();
-        IntObjectMap<Province> provinces = this.loadProvinces(countries, populationTypes, nationalIdeas);
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
         Map<String, Good> goods = this.readGoodsJson();
         PopulationDemands populationDemands = this.readPopulationDemandsJson(goods);
         Map<String, Building> buildings = this.readBuildingsJson(goods);
         Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
+        Map<String, Country> countries = this.loadCountries(ministerTypes, ideologies);
+        IntObjectMap<PopulationType> populationTypes = this.readPopulationTypesJson();
+        IntObjectMap<Province> provinces = this.loadProvinces(countries, populationTypes, nationalIdeas, governments, ideologies);
 
         AtomicReference<World> worldRef = new AtomicReference<>();
         final CountDownLatch latch = new CountDownLatch(1);
@@ -82,17 +82,17 @@ public class DataManager {
         return worldRef.get();
     }
 
-    private Map<String, Country> loadCountries() {
-        return this.readCountriesJson();
+    private Map<String, Country> loadCountries(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
+        return this.readCountriesJson(ministerTypes, ideologies);
     }
 
-    private IntObjectMap<Province> loadProvinces(Map<String, Country> countries, IntObjectMap<PopulationType> populationTypes, NationalIdeas nationalIdeas) {
+    private IntObjectMap<Province> loadProvinces(Map<String, Country> countries, IntObjectMap<PopulationType> populationTypes, NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies) {
         IntObjectMap<Province> provincesByColor = new IntObjectMap<>(20000);
         IntMap<Province> provinces = this.readProvincesJson(countries, populationTypes);
         this.readRegionJson(provinces);
         this.readDefinitionCsv(provinces, provincesByColor);
         this.readProvinceBitmap(provincesByColor);
-        this.readCountriesHistoryJson(countries, provinces, nationalIdeas);
+        this.readCountriesHistoryJson(countries, provinces, nationalIdeas, governments, ideologies);
         this.readContinentJsonFile(provinces);
         this.readAdjenciesJson(provinces);
 
@@ -104,13 +104,13 @@ public class DataManager {
         return this.mapper.readTree(fileHandle.readString());
     }
 
-    private Map<String, Country> readCountriesJson() {
+    private Map<String, Country> readCountriesJson(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
         Map<String, Country> countries = new ObjectObjectMap<>();
         try {
             JsonNode countriesJson = this.openJson(this.countriesJsonFiles);
             countriesJson.fields().forEachRemaining(entry -> {
                 String countryFileName = this.commonPath + entry.getValue().asText();
-                countries.put(entry.getKey(), readCountryJson(countryFileName, entry.getKey(), parseFileName(countryFileName)));
+                countries.put(entry.getKey(), this.readCountryJson(countryFileName, entry.getKey(), parseFileName(countryFileName), ministerTypes, ideologies));
             });
         } catch (IOException e) {
             e.printStackTrace();
@@ -122,7 +122,7 @@ public class DataManager {
         return path.replace("countries/", "").replace(".json", "");
     }
 
-    private Country readCountryJson(String countryFileName, String countryId, String countryName) {
+    private Country readCountryJson(String countryFileName, String countryId, String countryName, Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
         try {
             JsonNode countryJson = this.openJson(countryFileName);
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -147,7 +147,7 @@ public class DataManager {
                         e.printStackTrace();
                     }
 
-                    Minister minister = new Minister(name, ideology, imageNameFile, loyalty, type, startDate, deathDate);
+                    Minister minister = new Minister(name, ideologies.get(ideology), imageNameFile, loyalty, ministerTypes.get(type), startDate, deathDate);
                     country.addMinister(ministerId, minister);
                 });
             }
@@ -252,12 +252,12 @@ public class DataManager {
         }
     }
 
-    private void readCountriesHistoryJson(Map<String, Country> countries, IntMap<Province> provinces, NationalIdeas nationalIdeas) {
+    private void readCountriesHistoryJson(Map<String, Country> countries, IntMap<Province> provinces, NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies) {
         try {
             JsonNode countriesJson = this.openJson(this.countriesHistoryJsonFiles);
             countriesJson.fields().forEachRemaining(entry -> {
                 String countryFileName = this.historyPath + entry.getValue().textValue();
-                this.readCountryHistoryJson(countries, countryFileName, entry.getKey(), provinces, nationalIdeas);
+                this.readCountryHistoryJson(countries, countryFileName, entry.getKey(), provinces, nationalIdeas, governments, ideologies);
             });
         } catch (IOException e) {
             e.printStackTrace();
@@ -279,21 +279,20 @@ public class DataManager {
         }
     }
 
-    private void readCountryHistoryJson(Map<String, Country> countries, String countryFileName, String idCountry, IntMap<Province> provinces, NationalIdeas nationalIdeas) {
+    private void readCountryHistoryJson(Map<String, Country> countries, String countryFileName, String idCountry, IntMap<Province> provinces, NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies) {
         try {
             if(countryFileName.equals("history/countries/REB - Rebels.json")) {
                 return;
             }
-            System.out.println(countryFileName);
             JsonNode countryJson = this.openJson(countryFileName);
             short idCapital = countryJson.get("capital").shortValue();
             Country country = countries.get(idCountry);
             LandProvince capital = (LandProvince) provinces.get(idCapital);
             country.setCapital(capital);
             String government = countryJson.get("government").textValue();
-            country.setGovernment(government);
+            country.setGovernment(governments.get(government));
             String ideology = countryJson.get("ideology").textValue();
-            country.setIdeology(ideology);
+            country.setIdeology(ideologies.get(ideology));
             String culture = countryJson.get("national_culture").textValue();
             country.setCulture(nationalIdeas.getCultures().get(culture));
             String identity = countryJson.get("national_identity").textValue();

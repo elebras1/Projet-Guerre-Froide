@@ -243,7 +243,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
                 this.worldService.getNameOfSelectedCountry(),
                 this.skinFlags.getRegion(this.worldService.getIdOfSelectedCountry()),
                 ValueFormatter.formatValue(this.worldService.getPopulationSizeOfSelectedCountry()),
-                this.worldService.getGovernmentOfSelectedCountry(), portrait, headOfState.getName(), this.localisation);
+                this.worldService.getGovernmentOfSelectedCountry().getName(), portrait, headOfState.getName(), this.localisation);
         } else {
             this.countrySelectedUi.hide();
         }

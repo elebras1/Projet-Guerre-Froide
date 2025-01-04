@@ -1,6 +1,8 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.*;
+import com.populaire.projetguerrefroide.entity.Government;
+import com.populaire.projetguerrefroide.entity.Ideology;
 import com.populaire.projetguerrefroide.entity.Minister;
 import com.populaire.projetguerrefroide.national.Attitude;
 import com.populaire.projetguerrefroide.national.Culture;
@@ -18,15 +20,15 @@ public class Country {
     private List<LandProvince> provinces;
     private IntObjectMap<Minister> ministers;
     private LandProvince capital;
-    private String government;
-    private String ideology;
+    private Government government;
+    private Ideology ideology;
     private int headOfGovernment;
     private int headOfState;
-    private List<MapLabel> labels;
     private Culture culture;
     private Identity identity;
     private Religion religion;
     private Attitude attitude;
+    private List<MapLabel> labels;
 
     public Country(String id, String name, int color) {
         this.id = id;
@@ -36,8 +38,15 @@ public class Country {
         this.provinces = new ObjectList<>();
         this.ministers = new IntObjectMap<>();
         this.capital = null;
-        this.government = "";
-        this.ideology = "";
+        this.government = null;
+        this.ideology = null;
+        this.headOfGovernment = -1;
+        this.headOfState = -1;
+        this.culture = null;
+        this.identity = null;
+        this.religion = null;
+        this.attitude = null;
+        this.labels = null;
     }
 
     public String getId() {
@@ -84,19 +93,19 @@ public class Country {
         return this.capital;
     }
 
-    public void setGovernment(String government) {
+    public void setGovernment(Government government) {
         this.government = government;
     }
 
-    public String getGovernment() {
+    public Government getGovernment() {
         return this.government;
     }
 
-    public void setIdeology(String ideology) {
+    public void setIdeology(Ideology ideology) {
         this.ideology = ideology;
     }
 
-    public String getIdeology() {
+    public Ideology getIdeology() {
         return this.ideology;
     }
 

@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class Minister {
     private final String name;
-    private final String ideology;
+    private final Ideology ideology;
     private final String imageNameFile;
     private final float loyalty;
-    private final String type;
+    private final MinisterType type;
     private final Date startDate;
     private final Date deathDate;
 
-    public Minister(String name, String ideology, String imageNameFile, float loyalty, String type, Date startDate, Date deathDate) {
+    public Minister(String name, Ideology ideology, String imageNameFile, float loyalty, MinisterType type, Date startDate, Date deathDate) {
         this.name = name;
         this.ideology = ideology;
         this.imageNameFile = imageNameFile;
@@ -25,7 +25,7 @@ public class Minister {
         return this.name;
     }
 
-    public String getIdeology() {
+    public Ideology getIdeology() {
         return this.ideology;
     }
 
@@ -37,7 +37,7 @@ public class Minister {
         return this.loyalty;
     }
 
-    public String getType() {
+    public MinisterType getType() {
         return this.type;
     }
 
