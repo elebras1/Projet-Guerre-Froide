@@ -18,9 +18,9 @@ public class World {
     private final IntObjectMap<Province> provinces;
     private LandProvince selectedProvince;
     private Pixmap provincesColorPixmap;
-    private Pixmap countriesColorPixmap;
+    private Pixmap mapColorPixmap;
     private Texture provincesColorTexture;
-    private Texture countriesColorTexture;
+    private Texture mapColorTexture;
     private Texture waterTexture;
     private Texture colorMapWaterTexture;
     private Texture provincesColorStripesTexture;
@@ -33,10 +33,16 @@ public class World {
     private TextureArray terrainSheetArray;
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
+    private short politicalTexture;
 
     public World(List<Country> countries, IntObjectMap<Province> provinces) {
+        this.politicalTexture = 0;
         this.countries = countries;
         this.provinces = provinces;
+        this.mapColorPixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
+        this.mapColorPixmap.setBlending(Pixmap.Blending.None);
+        this.mapColorPixmap.setColor(Color.BLACK);
+        this.mapColorPixmap.fill();
         this.createCountriesColorTexture();
         this.createProvincesColorStripesTexture();
         this.provincesColorPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
@@ -105,24 +111,6 @@ public class World {
         return (short) this.provinces.size();
     }
 
-    public void createCountriesColorTexture() {
-        this.countriesColorPixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
-        this.countriesColorPixmap.setColor(Color.BLACK);
-        this.countriesColorPixmap.fill();
-        for(Province province : provinces.values()) {
-            if(province instanceof LandProvince landProvince) {
-                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
-                    int pixelInt = iterator.nextInt();
-                    int pixelX = (pixelInt >> 16);
-                    int pixelY = (pixelInt & 0xFFFF);
-                    this.countriesColorPixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getColor());
-                }
-            }
-        }
-
-        this.countriesColorTexture = new Texture(this.countriesColorPixmap);
-    }
-
     public void createProvincesColorStripesTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
         for(Province province : this.provinces.values()) {
@@ -138,6 +126,72 @@ public class World {
 
         this.provincesColorStripesTexture = new Texture(pixmap);
         pixmap.dispose();
+    }
+
+    public void createCountriesColorTexture() {
+        for(Province province : provinces.values()) {
+            if(province instanceof LandProvince landProvince) {
+                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
+                    int pixelInt = iterator.nextInt();
+                    int pixelX = (pixelInt >> 16);
+                    int pixelY = (pixelInt & 0xFFFF);
+                    this.mapColorPixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getColor());
+                }
+            }
+        }
+
+        if (this.mapColorTexture != null) {
+            this.mapColorTexture.dispose();
+        }
+        this.mapColorTexture = new Texture(this.mapColorPixmap);
+    }
+
+    public void createIdeologiesColorTexture() {
+        for(Province province : this.provinces.values()) {
+            if(province instanceof LandProvince landProvince) {
+                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
+                    int pixelInt = iterator.nextInt();
+                    short pixelX = (short) (pixelInt >> 16);
+                    short pixelY = (short) (pixelInt & 0xFFFF);
+                    this.mapColorPixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getIdeology().getColor());
+                }
+            }
+        }
+
+        this.mapColorTexture.dispose();
+        this.mapColorTexture = new Texture(this.mapColorPixmap);
+    }
+
+    public void createCulturesColorTexture() {
+        for(Province province : this.provinces.values()) {
+            if(province instanceof LandProvince landProvince) {
+                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
+                    int pixelInt = iterator.nextInt();
+                    short pixelX = (short) (pixelInt >> 16);
+                    short pixelY = (short) (pixelInt & 0xFFFF);
+                    this.mapColorPixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getCulture().getColor());
+                }
+            }
+        }
+
+        this.mapColorTexture.dispose();
+        this.mapColorTexture = new Texture(this.mapColorPixmap);
+    }
+
+    public void createReligionsColorTexture() {
+        for(Province province : this.provinces.values()) {
+            if(province instanceof LandProvince landProvince) {
+                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
+                    int pixelInt = iterator.nextInt();
+                    short pixelX = (short) (pixelInt >> 16);
+                    short pixelY = (short) (pixelInt & 0xFFFF);
+                    this.mapColorPixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getReligion().getColor());
+                }
+            }
+        }
+
+        this.mapColorTexture.dispose();
+        this.mapColorTexture = new Texture(this.mapColorPixmap);
     }
 
     public void createBordersTexture() {
@@ -166,22 +220,35 @@ public class World {
             }
         }
 
+        if(this.bordersTexture != null) {
+            this.bordersTexture.dispose();
+        }
         this.bordersTexture = new Texture(pixmap);
         pixmap.dispose();
     }
 
     public boolean isPixelBorderWater(short x, short y) {
         int blackColor = 0x000000FF;
-        return this.countriesColorPixmap.getPixel(x + 1, y) == blackColor
-            || this.countriesColorPixmap.getPixel(x - 1, y) == blackColor
-            || this.countriesColorPixmap.getPixel(x, y + 1) == blackColor
-            || this.countriesColorPixmap.getPixel(x, y - 1) == blackColor;
+        return this.mapColorPixmap.getPixel(x + 1, y) == blackColor
+            || this.mapColorPixmap.getPixel(x - 1, y) == blackColor
+            || this.mapColorPixmap.getPixel(x, y + 1) == blackColor
+            || this.mapColorPixmap.getPixel(x, y - 1) == blackColor;
+    }
+
+    public void nextMapColorTexture() {
+        this.politicalTexture = (short) ((this.politicalTexture + 1) % 4);
+        switch(this.politicalTexture) {
+            case 0 -> this.createIdeologiesColorTexture();
+            case 1 -> this.createCulturesColorTexture();
+            case 2 -> this.createReligionsColorTexture();
+            case 3 -> this.createCountriesColorTexture();
+        }
     }
 
     public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
         this.mapShader.bind();
         this.provincesColorTexture.bind(0);
-        this.countriesColorTexture.bind(1);
+        this.mapColorTexture.bind(1);
         this.colorMapWaterTexture.bind(2);
         this.waterTexture.bind(3);
         this.terrainTexture.bind(4);
@@ -220,9 +287,9 @@ public class World {
 
         batch.setShader(this.mapShader);
         batch.begin();
-        batch.draw(this.countriesColorTexture, -WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
-        batch.draw(this.countriesColorTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
-        batch.draw(this.countriesColorTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        batch.draw(this.mapColorTexture, -WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        batch.draw(this.mapColorTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        batch.draw(this.mapColorTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.setShader(null);
 
         this.fontShader.bind();
@@ -241,7 +308,7 @@ public class World {
         this.waterTexture.dispose();
         this.colorMapWaterTexture.dispose();
         this.provincesColorTexture.dispose();
-        this.countriesColorTexture.dispose();
+        this.mapColorTexture.dispose();
         this.provincesColorStripesTexture.dispose();
         this.terrainTexture.dispose();
         this.stripesTexture.dispose();

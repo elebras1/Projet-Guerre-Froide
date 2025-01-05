@@ -167,6 +167,11 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     }
 
     @Override
+    public void onSpace() {
+        this.worldService.nextMapColorTexture();
+    }
+
+    @Override
     public Settings onShowSettingsClicked() {
         return this.gameContext.getSettings().clone();
     }
