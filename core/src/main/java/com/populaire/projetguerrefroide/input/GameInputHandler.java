@@ -76,10 +76,6 @@ public class GameInputHandler implements InputProcessor {
         if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
             this.gameInputListener.onEscape();
         }
-
-        if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
-            this.gameInputListener.onSpace();
-        }
     }
 
     @Override

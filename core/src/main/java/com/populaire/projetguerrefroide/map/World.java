@@ -33,10 +33,8 @@ public class World {
     private TextureArray terrainSheetArray;
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
-    private short politicalTexture;
 
     public World(List<Country> countries, IntObjectMap<Province> provinces) {
-        this.politicalTexture = 0;
         this.countries = countries;
         this.provinces = provinces;
         this.mapColorPixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
@@ -235,16 +233,6 @@ public class World {
             || this.mapColorPixmap.getPixel(x, y - 1) == blackColor;
     }
 
-    public void nextMapColorTexture() {
-        this.politicalTexture = (short) ((this.politicalTexture + 1) % 4);
-        switch(this.politicalTexture) {
-            case 0 -> this.createIdeologiesColorTexture();
-            case 1 -> this.createCulturesColorTexture();
-            case 2 -> this.createReligionsColorTexture();
-            case 3 -> this.createCountriesColorTexture();
-        }
-    }
-
     public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
         this.mapShader.bind();
         this.provincesColorTexture.bind(0);
@@ -316,5 +304,6 @@ public class World {
         this.colormapTexture.dispose();
         this.defaultTexture.dispose();
         this.terrainSheetArray.dispose();
+        this.mapColorPixmap.dispose();
     }
 }

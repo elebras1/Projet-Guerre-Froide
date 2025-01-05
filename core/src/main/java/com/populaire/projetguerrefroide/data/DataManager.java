@@ -53,7 +53,7 @@ public class DataManager {
     private final ObjectMapper mapper = new ObjectMapper();
     private final String defaultDate = "1946.1.1";
 
-    public World createWorldAsync() {
+    public World createWorldThreadSafe() {
         NationalIdeas nationalIdeas = this.readNationalIdeasJson();
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
