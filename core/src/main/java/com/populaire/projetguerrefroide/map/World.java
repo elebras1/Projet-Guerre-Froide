@@ -210,7 +210,7 @@ public class World {
 
                 if(countryPixelsBorder.contains(pixelInt) && !this.isPixelBorderWater((short) pixelX, (short) pixelY)) {
                     pixmap.drawPixel(pixelX, pixelY, redBorderCountry << 24 | greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);
-                } else if(regionsPixelsBorder.contains(pixelInt)) {
+                } else if(regionsPixelsBorder.contains(pixelInt) && !this.isPixelBorderWater((short) pixelX, (short) pixelY)) {
                     pixmap.drawPixel(pixelX, pixelY, greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);
                 } else {
                     pixmap.drawPixel(pixelX, pixelY, blueBorderProvince << 8 | alphaBorder);

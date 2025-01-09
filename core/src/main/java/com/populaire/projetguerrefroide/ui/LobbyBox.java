@@ -13,10 +13,8 @@ import com.populaire.projetguerrefroide.service.LabelStylePool;
 import java.util.Map;
 
 public class LobbyBox extends Table {
-    private LobbyBoxListener listener;
 
     public LobbyBox(Skin skin, Skin skinScrollbars, LabelStylePool labelStylePool, Map<String, String> localisation, LobbyBoxListener listener) {
-        this.listener = listener;
         Drawable background = skin.getDrawable("bottom_bg");
 
         Label.LabelStyle labelStyleJockey24GlowBlue = labelStylePool.getLabelStyle("jockey_24_glow_blue");
