@@ -1,17 +1,22 @@
 package com.populaire.projetguerrefroide.ui;
 
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.populaire.projetguerrefroide.screen.LobbyBoxListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
 
 public class LobbyBox extends Table {
+    private LobbyBoxListener listener;
 
-    public LobbyBox(Skin skin, Skin skinScrollbars, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public LobbyBox(Skin skin, Skin skinScrollbars, LabelStylePool labelStylePool, Map<String, String> localisation, LobbyBoxListener listener) {
+        this.listener = listener;
         Drawable background = skin.getDrawable("bottom_bg");
 
         Label.LabelStyle labelStyleJockey24GlowBlue = labelStylePool.getLabelStyle("jockey_24_glow_blue");
@@ -20,8 +25,20 @@ public class LobbyBox extends Table {
 
         Button playButton = new Button(skin, "play");
         playButton.add(new Label(localisation.get("PLAY"), labelStyleJockey24GlowBlue));
+        playButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                listener.onPlayClicked();
+            }
+        });
         Button backButton = new Button(skin, "gen");
         backButton.add(new Label(localisation.get("BACK"), labelStyleArial172));
+        backButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                listener.onBackClicked();
+            }
+        });
 
         Table buttonsTable = new Table();
         buttonsTable.add(playButton).expand().padRight(37).padBottom(10);
