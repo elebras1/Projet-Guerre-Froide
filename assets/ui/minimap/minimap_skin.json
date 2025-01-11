@@ -1,0 +1,102 @@
+{
+"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+	"map_zoom_in": {
+		"up": "map_zoom_in",
+		"down": "map_zoom_in_down",
+		"over": "map_zoom_in_over"
+	},
+	"map_zoom_out": {
+		"up": "map_zoom_out",
+		"down": "map_zoom_out_down",
+		"over": "map_zoom_out_over"
+	},
+	"mapmode_air": {
+		"up": "mapmode_air_off",
+		"checked": "mapmode_air_on"
+	},
+	"mapmode_diplomatic": {
+		"up": "mapmode_diplomatic_off",
+		"checked": "mapmode_diplomatic_on"
+	},
+	"mapmode_economical": {
+		"up": "mapmode_economical_off",
+		"checked": "mapmode_economical_on"
+	},
+	"mapmode_infra": {
+		"up": "mapmode_infra_off",
+		"checked": "mapmode_infra_on"
+	},
+	"mapmode_intel": {
+		"up": "mapmode_intel_off",
+		"checked": "mapmode_intel_on"
+	},
+	"mapmode_naval": {
+		"up": "mapmode_naval_off",
+		"checked": "mapmode_naval_on"
+	},
+	"mapmode_political": {
+		"up": "mapmode_political_off",
+		"checked": "mapmode_political_on"
+	},
+	"mapmode_region": {
+		"up": "mapmode_region_off",
+		"checked": "mapmode_region_on"
+	},
+	"mapmode_resources": {
+		"up": "mapmode_resources_off",
+		"checked": "mapmode_resources_on"
+	},
+	"mapmode_revolt": {
+		"up": "mapmode_revolt_off",
+		"checked": "mapmode_revolt_on"
+	},
+	"mapmode_strength": {
+		"up": "mapmode_strength_off",
+		"checked": "mapmode_strength_on"
+	},
+	"mapmode_supply": {
+		"up": "mapmode_supply_off",
+		"checked": "mapmode_supply_on"
+	},
+	"mapmode_terrain_2": {
+		"up": "mapmode_terrain_2_off",
+		"checked": "mapmode_terrain_2_on"
+	},
+	"mapmode_terrain": {
+		"up": "mapmode_terrain_off",
+		"checked": "mapmode_terrain_on"
+	},
+	"mapmode_theatre": {
+		"up": "mapmode_theatre_off",
+		"checked": "mapmode_theatre_on"
+	},
+	"mapmode_weather": {
+		"up": "mapmode_weather_off",
+		"checked": "mapmode_weather_on"
+	},
+	"minimap_find_prov_btn": {
+		"up": "minimap_find_prov_btn_off",
+		"checked": "minimap_find_prov_btn_on"
+	},
+	"minimap_mission_btn": {
+		"up": "minimap_mission_btn_off",
+		"checked": "minimap_mission_btn_on"
+	},
+	"minimap_nuke_btn": {
+		"up": "minimap_nuke_btn_off",
+		"checked": "minimap_nuke_btn_on"
+	},
+	"minimap_spy_btn": {
+		"up": "minimap_spy_btn_off",
+		"checked": "minimap_spy_btn_on"
+	},
+	"minimap_strategic_btn": {
+		"up": "minimap_strategic_btn_off",
+		"checked": "minimap_strategic_btn_on"
+	},
+	"minimap_victory_btn": {
+		"up": "minimap_victory_btn_off",
+		"checked": "minimap_victory_btn_on"
+	}
+}
+}

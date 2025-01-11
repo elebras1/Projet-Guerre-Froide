@@ -37,24 +37,14 @@ public class GameInputHandler implements InputProcessor {
         return (x << 16) | (y & 0xFFFF);
     }
 
-    public void handleInput(List<Table> uiTables) {
+    public void handleInput() {
         float speed = 1000f * this.delta;
         int screenX = Gdx.input.getX();
         int screenY = Gdx.input.getY();
         int screenWidth = Gdx.graphics.getWidth();
         int screenHeight = Gdx.graphics.getHeight();
 
-        for(Table table : uiTables) {
-            Vector2 tablePos = table.localToStageCoordinates(new Vector2(0, 0));
-            Vector2 tableDim = new Vector2(table.getWidth(), table.getHeight());
-            Vector2 tableOver = new Vector2(screenX, screenHeight - screenY);
-            if (tablePos.x < tableOver.x && tableOver.x < tablePos.x + tableDim.x && tablePos.y < tableOver.y
-                    && tableOver.y < tablePos.y + tableDim.y && table.isVisible()) {
-                return;
-            }
-        }
-
-        int edgeSize = 50;
+        int edgeSize = 5;
         if (screenX < edgeSize || Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             this.cam.translate(-speed * this.cam.zoom, 0, 0);
         } else if (screenX > screenWidth - edgeSize || Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
@@ -146,5 +136,20 @@ public class GameInputHandler implements InputProcessor {
         int position = this.getWorldPositions(Gdx.input.getX(), Gdx.input.getY());
         this.gameInputListener.onHover((short) (position >> 16), (short) (position & 0xFFFF));
         return true;
+    }
+
+    public void moveCamera(short x, short y) {
+        this.cam.position.x = x;
+        this.cam.position.y = y;
+    }
+
+    public void zoomIn() {
+        if(this.cam.zoom - 0.15f > 0f)
+            this.cam.zoom -= 0.15f;
+    }
+
+    public void zoomOut() {
+        if((this.cam.zoom + 0.15f) <= WORLD_WIDTH / this.cam.viewportWidth)
+            this.cam.zoom += 0.15f;
     }
 }

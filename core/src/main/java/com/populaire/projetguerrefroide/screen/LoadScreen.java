@@ -48,7 +48,7 @@ public class LoadScreen implements Screen {
         CompletableFuture.runAsync(() -> {
             long startTime = System.currentTimeMillis();
             WorldService worldService = new WorldService();
-            worldService.createWorldAsync();
+            worldService.createWorld();
             Gdx.app.postRunnable(() -> {
                 this.gameContext.getSettings().applyGraphicsSettings();
                 this.screenManager.showNewGameScreen(worldService);

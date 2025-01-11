@@ -1,0 +1,391 @@
+
+minimap_skin.png
+size: 1024, 1024
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+map_zoom_in
+  rotate: false
+  xy: 153, 628
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+map_zoom_in_down
+  rotate: false
+  xy: 375, 887
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+map_zoom_in_over
+  rotate: false
+  xy: 413, 925
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+map_zoom_out
+  rotate: false
+  xy: 191, 666
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+map_zoom_out_down
+  rotate: false
+  xy: 451, 963
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+map_zoom_out_over
+  rotate: false
+  xy: 323, 715
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+mapmode_air_off
+  rotate: false
+  xy: 39, 11
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_air_on
+  rotate: false
+  xy: 77, 285
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_diplomatic_off
+  rotate: false
+  xy: 115, 323
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_diplomatic_on
+  rotate: false
+  xy: 153, 600
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_economical_off
+  rotate: false
+  xy: 224, 673
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_economical_on
+  rotate: false
+  xy: 375, 859
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_infra_off
+  rotate: false
+  xy: 484, 970
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_infra_on
+  rotate: false
+  xy: 77, 257
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_intel_off
+  rotate: false
+  xy: 153, 572
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_intel_on
+  rotate: false
+  xy: 253, 673
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_naval_off
+  rotate: false
+  xy: 375, 831
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_naval_on
+  rotate: false
+  xy: 513, 970
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_political_off
+  rotate: false
+  xy: 77, 229
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_political_on
+  rotate: false
+  xy: 153, 544
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_region_off
+  rotate: false
+  xy: 282, 673
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_region_on
+  rotate: false
+  xy: 542, 970
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_resources_off
+  rotate: false
+  xy: 77, 201
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_resources_on
+  rotate: false
+  xy: 153, 516
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_revolt_off
+  rotate: false
+  xy: 571, 970
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_revolt_on
+  rotate: false
+  xy: 77, 173
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_strength_off
+  rotate: false
+  xy: 153, 488
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_strength_on
+  rotate: false
+  xy: 600, 970
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_supply_off
+  rotate: false
+  xy: 77, 145
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_supply_on
+  rotate: false
+  xy: 153, 460
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_terrain_2_off
+  rotate: false
+  xy: 629, 970
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_terrain_2_on
+  rotate: false
+  xy: 77, 117
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_terrain_off
+  rotate: false
+  xy: 153, 432
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_terrain_on
+  rotate: false
+  xy: 658, 970
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_theatre_off
+  rotate: false
+  xy: 77, 89
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_theatre_on
+  rotate: false
+  xy: 153, 404
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_weather_off
+  rotate: false
+  xy: 687, 970
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+mapmode_weather_on
+  rotate: false
+  xy: 77, 61
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+menubar_panel_bg
+  rotate: false
+  xy: 1, 389
+  size: 74, 310
+  orig: 74, 310
+  offset: 0, 0
+  index: -1
+menubar_panel_bg_nato
+  rotate: false
+  xy: 1, 77
+  size: 74, 310
+  orig: 74, 310
+  offset: 0, 0
+  index: -1
+menubar_panel_bg_wp
+  rotate: false
+  xy: 77, 389
+  size: 74, 310
+  orig: 74, 310
+  offset: 0, 0
+  index: -1
+minimap
+  rotate: false
+  xy: 1, 701
+  size: 320, 123
+  orig: 320, 123
+  offset: 0, 0
+  index: -1
+minimap_bg
+  rotate: false
+  xy: 1, 826
+  size: 372, 170
+  orig: 372, 170
+  offset: 0, 0
+  index: -1
+minimap_find_prov_btn_off
+  rotate: false
+  xy: 375, 960
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+minimap_find_prov_btn_on
+  rotate: false
+  xy: 323, 788
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+minimap_mission_btn_off
+  rotate: false
+  xy: 1, 39
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+minimap_mission_btn_on
+  rotate: false
+  xy: 77, 351
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+minimap_nuke_btn_off
+  rotate: false
+  xy: 153, 663
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+minimap_nuke_btn_on
+  rotate: false
+  xy: 375, 922
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+minimap_spy_btn_off
+  rotate: false
+  xy: 413, 960
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+minimap_spy_btn_on
+  rotate: false
+  xy: 323, 750
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+minimap_strategic_btn_off
+  rotate: false
+  xy: 1, 1
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+minimap_strategic_btn_on
+  rotate: false
+  xy: 39, 39
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+minimap_victory_btn_off
+  rotate: false
+  xy: 77, 313
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+minimap_victory_btn_on
+  rotate: false
+  xy: 115, 351
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1

@@ -15,8 +15,8 @@ public class WorldService {
         this.dataManager = new DataManager();
     }
 
-    public void createWorldAsync() {
-        this.world = this.dataManager.createWorldAsync();
+    public void createWorld() {
+        this.world = this.dataManager.createWorldThreadSafe();
     }
 
     public void renderWorld(SpriteBatch batch, OrthographicCamera cam, float time) {
@@ -73,5 +73,9 @@ public class WorldService {
 
     public short getNumberOfProvinces() {
         return this.world.getNumberOfProvinces();
+    }
+
+    public void changeMapMode(String mapMode) {
+        this.world.changeMapMode(mapMode);
     }
 }

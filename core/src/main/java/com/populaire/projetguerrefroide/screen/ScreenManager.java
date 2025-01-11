@@ -26,6 +26,10 @@ public class ScreenManager {
         this.showScreen(new NewGameScreen(this, this.gameContext, worldService));
     }
 
+    public void showGameScreen(WorldService worldService) {
+        this.showScreen(new GameScreen(this, this.gameContext, worldService));
+    }
+
     public void showScreen(Screen newScreen) {
         Screen screen = this.game.getScreen();
         this.game.setScreen(newScreen);
