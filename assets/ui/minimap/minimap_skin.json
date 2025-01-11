@@ -64,7 +64,7 @@
 	},
 	"mapmode_terrain": {
 		"up": "mapmode_terrain_off",
-		"down": "mapmode_terrain_on"
+		"checked": "mapmode_terrain_on"
 	},
 	"mapmode_theatre": {
 		"up": "mapmode_theatre_off",
@@ -87,8 +87,8 @@
 		"checked": "minimap_nuke_btn_on"
 	},
 	"minimap_spy_btn": {
-		"up": "minimap_strategic_btn_off",
-		"checked": "minimap_strategic_btn_on"
+		"up": "minimap_spy_btn_off",
+		"checked": "minimap_spy_btn_on"
 	},
 	"minimap_strategic_btn": {
 		"up": "minimap_strategic_btn_off",

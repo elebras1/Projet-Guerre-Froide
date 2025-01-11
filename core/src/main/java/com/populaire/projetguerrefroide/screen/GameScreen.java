@@ -82,7 +82,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
     private void initializeUi() {
         this.stage = new Stage(new ScreenViewport());
-        this.stage.setDebugAll(true);
+        //this.stage.setDebugAll(true);
 
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);

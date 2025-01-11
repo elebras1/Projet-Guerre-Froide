@@ -64,11 +64,39 @@ public class Minimap extends Table {
             }
         });
 
+        this.setMapMode(minimap, skin, listener);
+
         minimap.addActor(map);
         minimap.addActor(zoomInButton);
         minimap.addActor(zoomOutButton);
 
         return minimap;
+    }
+
+    private void setMapMode(Table minimap, Skin skin, MinimapListener listener) {
+        int y = 134;
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_political", 10, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_terrain", 32, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_terrain_2", 54, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_economical", 76, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_strength", 98, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_diplomatic", 120, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_intel", 142, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_region", 164, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_infra", 186, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_resources", 208, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_revolt", 230, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_supply", 252, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_weather", 274, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_theatre", 296, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_air", 318, y);
+        this.setButtonMapMode(minimap, skin, listener, "mapmode_naval", 340, y);
+    }
+
+    private void setButtonMapMode(Table minimap, Skin skin, MinimapListener listener, String buttonName, int x, int y) {
+        Button button = new Button(skin, buttonName);
+        button.setPosition(x, y);
+        minimap.addActor(button);
     }
 
     private Table getMenuBarPanel(Skin skin) {
@@ -78,6 +106,20 @@ public class Minimap extends Table {
         menuBarPanel.setBackground(background);
         menuBarPanel.setSize(background.getMinWidth(), background.getMinHeight());
 
+        int x = 20;
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_find_prov_btn", x, 12);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_strategic_btn", x, 50);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_victory_btn", x, 88);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_spy_btn", x, 126);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_nuke_btn", x, 164);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_mission_btn", x, 202);
+
         return menuBarPanel;
+    }
+
+    private void setButtonMenuBarPanel(Table menuBarPanel, Skin skin, String buttonName, int x, int y) {
+        Button button = new Button(skin, buttonName);
+        button.setPosition(x, y);
+        menuBarPanel.addActor(button);
     }
 }

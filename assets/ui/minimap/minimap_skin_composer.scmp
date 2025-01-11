@@ -3326,7 +3326,7 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: mapmode_terrain_on
+						value: null
 					}
 					over: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
@@ -3350,7 +3350,7 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: checked
 						optional: true
-						value: null
+						value: mapmode_terrain_on
 					}
 					checkedOver: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
@@ -3914,7 +3914,7 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: minimap_strategic_btn_off
+						value: minimap_spy_btn_off
 					}
 					down: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
@@ -3944,7 +3944,7 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: checked
 						optional: true
-						value: minimap_strategic_btn_on
+						value: minimap_spy_btn_on
 					}
 					checkedOver: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
