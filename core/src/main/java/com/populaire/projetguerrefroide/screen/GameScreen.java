@@ -43,7 +43,6 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     private final Skin skinMinimap;
     private final Map<String, String> localisation;
     private Stage stage;
-    private final List<Table> uiTables;
     private Debug debug;
     private HoverBox hoverBox;
     private MainMenuInGame mainMenuInGame;
@@ -69,7 +68,6 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
-        this.uiTables = new ArrayList<>();
 
         this.localisation = this.gameContext.getLocalisationManager().readPoliticsCsv();
         this.localisation.putAll(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
@@ -107,7 +105,6 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
         Minimap minimap = new Minimap(this.skinMinimap, this.gameContext.getLabelStylePool(), this.localisation, this);
         minimap.setPosition(Gdx.graphics.getWidth() - minimap.getWidth(), 0);
-        this.uiTables.add(minimap);
 
         this.stage.addActor(this.hoverBox);
         this.stage.addActor(topTable);
@@ -262,7 +259,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
         if(!this.paused) {
             this.inputHandler.setDelta(delta);
-            this.inputHandler.handleInput(this.uiTables);
+            this.inputHandler.handleInput();
         }
 
         this.debug.actualize(renderTimeMs);

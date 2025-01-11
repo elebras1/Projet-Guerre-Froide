@@ -48,7 +48,6 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     private final Skin skinMainMenuInGame;
     private final Map<String, String> localisation;
     private Stage stage;
-    private final List<Table> uiTables;
     private Debug debug;
     private HoverBox hoverBox;
     private CountrySelected countrySelectedUi;
@@ -80,7 +79,6 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
-        this.uiTables = new ArrayList<>();
         this.localisation = this.gameContext.getLocalisationManager().readNewgameCsv();
         this.localisation.putAll(this.gameContext.getLocalisationManager().readBookmarkCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readPoliticsCsv());
@@ -115,13 +113,9 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         topTable.setFillParent(true);
         topTable.top();
         ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getConfigurationManager().loadBookmark(), this.localisation);
-        this.uiTables.add(scenarioSavegameSelector);
         TitleBar titleBar = new TitleBar(this.skin, this.gameContext.getLabelStylePool(), this.localisation);
-        this.uiTables.add(titleBar);
         LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.localisation, this);
-        this.uiTables.add(lobbyBox);
         this.countrySelectedUi = new CountrySelected(this.skin, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation);
-        this.uiTables.add(this.countrySelectedUi);
         topTable.add(scenarioSavegameSelector).align(Align.topLeft).expandX();
         topTable.add(titleBar).align(Align.top);
         topTable.add(this.countrySelectedUi).align(Align.topRight).expandX();
@@ -298,7 +292,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
         if(!this.paused) {
             this.inputHandler.setDelta(delta);
-            this.inputHandler.handleInput(this.uiTables);
+            this.inputHandler.handleInput();
         }
 
         this.debug.actualize(renderTimeMs);
