@@ -9,7 +9,6 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.populaire.projetguerrefroide.screen.GameInputListener;
-import com.populaire.projetguerrefroide.ui.Minimap;
 
 import java.util.List;
 
@@ -46,9 +45,6 @@ public class GameInputHandler implements InputProcessor {
         int screenHeight = Gdx.graphics.getHeight();
 
         for(Table table : uiTables) {
-            if(table instanceof Minimap minimap) {
-                System.out.println("Minimap, width, height, x, y : " + minimap.getMinWidth() + " " + minimap.getMinHeight() + " " + minimap.getX() + " " + minimap.getY());
-            }
             Vector2 tablePos = table.localToStageCoordinates(new Vector2(0, 0));
             Vector2 tableDim = new Vector2(table.getWidth(), table.getHeight());
             Vector2 tableOver = new Vector2(screenX, screenHeight - screenY);
@@ -150,5 +146,20 @@ public class GameInputHandler implements InputProcessor {
         int position = this.getWorldPositions(Gdx.input.getX(), Gdx.input.getY());
         this.gameInputListener.onHover((short) (position >> 16), (short) (position & 0xFFFF));
         return true;
+    }
+
+    public void moveCamera(short x, short y) {
+        this.cam.position.x = x;
+        this.cam.position.y = y;
+    }
+
+    public void zoomIn() {
+        if(this.cam.zoom - 0.15f > 0f)
+            this.cam.zoom -= 0.15f;
+    }
+
+    public void zoomOut() {
+        if((this.cam.zoom + 0.15f) <= WORLD_WIDTH / this.cam.viewportWidth)
+            this.cam.zoom += 0.15f;
     }
 }

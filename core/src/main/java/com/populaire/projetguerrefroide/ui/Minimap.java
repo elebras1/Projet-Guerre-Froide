@@ -4,15 +4,19 @@ import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.populaire.projetguerrefroide.screen.MinimapListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
 
+import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
+import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
+
 public class Minimap extends Table {
     public Minimap(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, MinimapListener listener) {
-        Table minimap = this.getMinimap(skin);
+        Table minimap = this.getMinimap(skin, listener);
         Table menuBarPanel = this.getMenuBarPanel(skin);
 
         this.setSize(minimap.getWidth() + menuBarPanel.getWidth(), menuBarPanel.getHeight());
@@ -23,7 +27,7 @@ public class Minimap extends Table {
         this.addActor(menuBarPanel);
     }
 
-    private Table getMinimap(Skin skin) {
+    private Table getMinimap(Skin skin, MinimapListener listener) {
         Table minimap = new Table();
 
         Drawable background = skin.getDrawable("minimap_bg");
@@ -32,13 +36,33 @@ public class Minimap extends Table {
 
         Drawable mapDrawable = skin.getDrawable("minimap");
         Image map = new Image(mapDrawable);
+        map.addListener(new ClickListener() {
+            @Override
+            public void clicked(com.badlogic.gdx.scenes.scene2d.InputEvent event, float x, float y) {
+                short worldX = (short) ((x / map.getWidth()) * WORLD_WIDTH);
+                short worldY = (short) ((y / map.getHeight()) * WORLD_HEIGHT);
+                listener.moveCamera(worldX, worldY);
+            }
+        });
         map.setPosition(11, 11);
 
         Button zoomInButton = new Button(skin, "map_zoom_in");
         zoomInButton.setPosition(332, 103);
+        zoomInButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(com.badlogic.gdx.scenes.scene2d.InputEvent event, float x, float y) {
+                listener.zoomIn();
+            }
+        });
 
         Button zoomOutButton = new Button(skin, "map_zoom_out");
         zoomOutButton.setPosition(332, 10);
+        zoomOutButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(com.badlogic.gdx.scenes.scene2d.InputEvent event, float x, float y) {
+                listener.zoomOut();
+            }
+        });
 
         minimap.addActor(map);
         minimap.addActor(zoomInButton);

@@ -117,6 +117,21 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     }
 
     @Override
+    public void moveCamera(short x, short y) {
+        this.inputHandler.moveCamera(x, y);
+    }
+
+    @Override
+    public void zoomIn() {
+        this.inputHandler.zoomIn();
+    }
+
+    @Override
+    public void zoomOut() {
+        this.inputHandler.zoomOut();
+    }
+
+    @Override
     public void onClick(short x, short y) {
         this.worldService.selectProvince(x, y);
     }
