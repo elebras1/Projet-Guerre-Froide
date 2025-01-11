@@ -27,7 +27,7 @@ import java.util.Map;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class GameScreen implements Screen, GameInputListener, MainMenuInGameListener {
+public class GameScreen implements Screen, GameInputListener, MainMenuInGameListener, MinimapListener {
     private final GameContext gameContext;
     private final WorldService worldService;
     private final OrthographicCamera cam;
@@ -40,6 +40,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     private final Skin skinPortraits;
     private final Skin skinScrollbars;
     private final Skin skinMainMenuInGame;
+    private final Skin skinMinimap;
     private final Map<String, String> localisation;
     private Stage stage;
     private final List<Table> uiTables;
@@ -59,22 +60,29 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
         AssetManager assetManager = gameContext.getAssetManager();
+        assetManager.load("ui/minimap/minimap_skin.json", Skin.class);
         assetManager.finishLoading();
         this.skinUi = assetManager.get("ui/ui_skin.json");
         this.skinFlags = assetManager.get("flags/flags_skin.json");
         this.skinPopup = assetManager.get("ui/popup/popup_skin.json");
+        this.skinMinimap = assetManager.get("ui/minimap/minimap_skin.json");
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
         this.uiTables = new ArrayList<>();
-        this.localisation = this.gameContext.getLocalisationManager().readNewgameCsv();
+
+        this.localisation = this.gameContext.getLocalisationManager().readPoliticsCsv();
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readPopupCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readProvinceNamesCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readLanguageCsv());
         this.initializeUi();
         this.paused = false;
     }
 
     private void initializeUi() {
         this.stage = new Stage(new ScreenViewport());
-        //this.stage.setDebugAll(true);
+        this.stage.setDebugAll(true);
 
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
@@ -86,10 +94,10 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
         this.hoverBox = new HoverBox(this.skinUi, this.gameContext.getLabelStylePool());
 
-        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.localisation, this);
-        this.mainMenuInGame.setVisible(false);
         Table centerTable = new Table();
         centerTable.setFillParent(true);
+        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.localisation, this);
+        this.mainMenuInGame.setVisible(false);
         centerTable.add(this.mainMenuInGame).center();
 
         Table topTable = new Table();
@@ -97,14 +105,13 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         topTable.top();
         topTable.pad(5);
 
-        Table bottomTable = new Table();
-        bottomTable.setFillParent(true);
-        bottomTable.bottom();
-        bottomTable.pad(5);
+        Minimap minimap = new Minimap(this.skinMinimap, this.gameContext.getLabelStylePool(), this.localisation, this);
+        minimap.setPosition(Gdx.graphics.getWidth() - minimap.getWidth(), 0);
+        this.uiTables.add(minimap);
 
         this.stage.addActor(this.hoverBox);
         this.stage.addActor(topTable);
-        this.stage.addActor(bottomTable);
+        this.stage.addActor(minimap);
         this.stage.addActor(centerTable);
         this.stage.addActor(this.debug);
     }

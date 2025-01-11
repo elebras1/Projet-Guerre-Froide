@@ -170,7 +170,9 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     @Override
     public void onPlayClicked() {
-        this.screenManager.showGameScreen(this.worldService);
+        if(this.worldService.isProvinceSelected()) {
+            this.screenManager.showGameScreen(this.worldService);
+        }
     }
 
     @Override
