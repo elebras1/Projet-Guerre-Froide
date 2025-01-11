@@ -132,6 +132,11 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     }
 
     @Override
+    public void changeMapMode(String mapMode) {
+        this.worldService.changeMapMode(mapMode);
+    }
+
+    @Override
     public void onClick(short x, short y) {
         this.worldService.selectProvince(x, y);
     }

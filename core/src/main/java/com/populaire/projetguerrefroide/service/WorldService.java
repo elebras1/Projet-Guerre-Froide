@@ -74,4 +74,8 @@ public class WorldService {
     public short getNumberOfProvinces() {
         return this.world.getNumberOfProvinces();
     }
+
+    public void changeMapMode(String mapMode) {
+        this.world.changeMapMode(mapMode);
+    }
 }

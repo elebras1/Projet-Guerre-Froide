@@ -192,6 +192,23 @@ public class World {
         this.mapColorTexture = new Texture(this.mapColorPixmap);
     }
 
+    public void createTerrainColorTexture() {
+        int whiteColor = 0xFFFFFFFF;
+        for(Province province : this.provinces.values()) {
+            if (province instanceof LandProvince landProvince) {
+                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
+                    int pixelInt = iterator.nextInt();
+                    short pixelX = (short) (pixelInt >> 16);
+                    short pixelY = (short) (pixelInt & 0xFFFF);
+                    this.mapColorPixmap.drawPixel(pixelX, pixelY, whiteColor);
+                }
+            }
+        }
+
+        this.mapColorTexture.dispose();
+        this.mapColorTexture = new Texture(this.mapColorPixmap);
+    }
+
     public void createBordersTexture() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
         short redBorderCountry = 255;
@@ -208,9 +225,9 @@ public class World {
                 int pixelX = (pixelInt >> 16);
                 int pixelY = (pixelInt & 0xFFFF);
 
-                if(countryPixelsBorder.contains(pixelInt) && !this.isPixelBorderWater((short) pixelX, (short) pixelY)) {
+                if(countryPixelsBorder.contains(pixelInt) && this.isPixelBorderWater((short) pixelX, (short) pixelY)) {
                     pixmap.drawPixel(pixelX, pixelY, redBorderCountry << 24 | greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);
-                } else if(regionsPixelsBorder.contains(pixelInt) && !this.isPixelBorderWater((short) pixelX, (short) pixelY)) {
+                } else if(regionsPixelsBorder.contains(pixelInt) && this.isPixelBorderWater((short) pixelX, (short) pixelY)) {
                     pixmap.drawPixel(pixelX, pixelY, greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);
                 } else {
                     pixmap.drawPixel(pixelX, pixelY, blueBorderProvince << 8 | alphaBorder);
@@ -227,10 +244,30 @@ public class World {
 
     public boolean isPixelBorderWater(short x, short y) {
         int blackColor = 0x000000FF;
-        return this.mapColorPixmap.getPixel(x + 1, y) == blackColor
-            || this.mapColorPixmap.getPixel(x - 1, y) == blackColor
-            || this.mapColorPixmap.getPixel(x, y + 1) == blackColor
-            || this.mapColorPixmap.getPixel(x, y - 1) == blackColor;
+        return this.mapColorPixmap.getPixel(x + 1, y) != blackColor
+            && this.mapColorPixmap.getPixel(x - 1, y) != blackColor
+            && this.mapColorPixmap.getPixel(x, y + 1) != blackColor
+            && this.mapColorPixmap.getPixel(x, y - 1) != blackColor;
+    }
+
+    public void changeMapMode(String mapMode) {
+        switch(mapMode) {
+            case "mapmode_political":
+                this.createCountriesColorTexture();
+                break;
+            case "mapmode_strength":
+                this.createIdeologiesColorTexture();
+                break;
+            case "mapmode_diplomatic":
+                this.createCulturesColorTexture();
+                break;
+            case "mapmode_intel":
+                this.createReligionsColorTexture();
+                break;
+            case "mapmode_terrain":
+                this.createTerrainColorTexture();
+                break;
+        }
     }
 
     public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
