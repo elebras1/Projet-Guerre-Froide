@@ -1,6 +1,8 @@
 package com.populaire.projetguerrefroide.ui;
 
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
@@ -17,7 +19,7 @@ public class Minimap extends Table {
 
     public Minimap(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, MinimapListener listener) {
         this.currentMapMode = "mapmode_political";
-        Table minimap = this.getMinimap(skin, listener);
+        Table minimap = this.getMinimap(skin, localisation, listener);
         Table menuBarPanel = this.getMenuBarPanel(skin);
 
         this.setSize(minimap.getWidth() + menuBarPanel.getWidth(), menuBarPanel.getHeight());
@@ -28,7 +30,7 @@ public class Minimap extends Table {
         this.addActor(menuBarPanel);
     }
 
-    private Table getMinimap(Skin skin, MinimapListener listener) {
+    private Table getMinimap(Skin skin, Map<String, String> localisation, MinimapListener listener) {
         Table minimap = new Table();
 
         Drawable background = skin.getDrawable("minimap_bg");
@@ -65,7 +67,7 @@ public class Minimap extends Table {
             }
         });
 
-        this.setMapMode(minimap, skin, listener);
+        this.setMapMode(minimap, skin, localisation, listener);
 
         minimap.addActor(map);
         minimap.addActor(zoomInButton);
@@ -74,30 +76,30 @@ public class Minimap extends Table {
         return minimap;
     }
 
-    private void setMapMode(Table minimap, Skin skin, MinimapListener listener) {
+    private void setMapMode(Table minimap, Skin skin, Map<String, String> localisation, MinimapListener listener) {
         int y = 134;
         ButtonGroup<Button> buttonGroup = new ButtonGroup<>();
         buttonGroup.setMaxCheckCount(1);
         buttonGroup.setMinCheckCount(1);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_political", 10, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_terrain", 32, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_terrain_2", 54, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_economical", 76, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_strength", 98, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_diplomatic", 120, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_intel", 142, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_region", 164, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_infra", 186, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_resources", 208, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_revolt", 230, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_supply", 252, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_weather", 274, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_theatre", 296, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_air", 318, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, listener, "mapmode_naval", 340, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_political", 10, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_terrain", 32, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_terrain_2", 54, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_economical", 76, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_strength", 98, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_diplomatic", 120, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_intel", 142, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_region", 164, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_infra", 186, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_resources", 208, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_revolt", 230, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_supply", 252, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_weather", 274, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_theatre", 296, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_air", 318, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, localisation, listener, "mapmode_naval", 340, y);
     }
 
-    private void setButtonMapMode(Table minimap, ButtonGroup<Button> buttonGroup, Skin skin, MinimapListener listener, String buttonName, int x, int y) {
+    private void setButtonMapMode(Table minimap, ButtonGroup<Button> buttonGroup, Skin skin, Map<String, String> localisation,  MinimapListener listener, String buttonName, int x, int y) {
         Button button = new Button(skin, buttonName);
         button.setPosition(x, y);
         button.setChecked(this.currentMapMode.equals(buttonName));
@@ -109,6 +111,19 @@ public class Minimap extends Table {
                     listener.changeMapMode(buttonName);
                     currentMapMode = buttonName;
                 }
+            }
+        });
+
+        button.addListener(new InputListener() {
+            @Override
+            public boolean mouseMoved(InputEvent event, float x, float y) {
+                listener.updateHoverBox(localisation.get(buttonName.toUpperCase()));
+                return true;
+            }
+
+            @Override
+            public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
+                listener.hideHoverBox();
             }
         });
         minimap.addActor(button);

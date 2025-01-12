@@ -20,6 +20,7 @@ public class LocalisationManager {
     private final String politicsCsvFile = this.localisationPath + "politics.csv";
     private final String popupCsvFile = this.localisationPath + "popup.csv";
     private final String languageCsvFile = this.localisationPath + "language.csv";
+    private final String interfaceFile = this.localisationPath + "interface.csv";
     private String language = "ENGLISH";
 
     public void setLanguage(String language) {
@@ -27,35 +28,39 @@ public class LocalisationManager {
     }
 
     public Map<String, String> readMainMenuCsv() {
-        return readLocalisationCsv(this.language, this.mainmenuCsvFile);
+        return this.readLocalisationCsv(this.language, this.mainmenuCsvFile);
     }
 
     public Map<String, String> readNewgameCsv() {
-        return readLocalisationCsv(this.language, this.newgameCsvFile);
+        return this.readLocalisationCsv(this.language, this.newgameCsvFile);
     }
 
     public Map<String, String> readBookmarkCsv() {
-        return readLocalisationCsv(this.language, this.bookmarkCsvFile);
+        return this.readLocalisationCsv(this.language, this.bookmarkCsvFile);
     }
 
     public Map<String, String> readPoliticsCsv() {
-        return readLocalisationCsv(this.language, this.politicsCsvFile);
+        return this.readLocalisationCsv(this.language, this.politicsCsvFile);
     }
 
     public Map<String, String> readMainMenuInGameCsv() {
-        return readLocalisationCsv(this.language, this.mainemenuInGameCsvFile);
+        return this.readLocalisationCsv(this.language, this.mainemenuInGameCsvFile);
     }
 
     public Map<String, String> readPopupCsv() {
-        return readLocalisationCsv(this.language, this.popupCsvFile);
+        return this.readLocalisationCsv(this.language, this.popupCsvFile);
     }
 
     public Map<String, String> readLanguageCsv() {
-        return readLocalisationCsv(this.language, this.languageCsvFile);
+        return this.readLocalisationCsv(this.language, this.languageCsvFile);
     }
 
     public Map<String, String> readProvinceNamesCsv() {
-        return readLocalisationCsv("ENGLISH", this.provinceNamesCsvFile);
+        return this.readLocalisationCsv("ENGLISH", this.provinceNamesCsvFile);
+    }
+
+    public Map<String, String> readInterfaceCsv() {
+        return this.readLocalisationCsv(this.language, this.interfaceFile);
     }
 
     private Map<String, String> readLocalisationCsv(String language, String filename) {

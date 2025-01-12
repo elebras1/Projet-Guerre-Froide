@@ -5,4 +5,6 @@ public interface MinimapListener {
     void zoomIn();
     void zoomOut();
     void changeMapMode(String mapMode);
+    void updateHoverBox(String text);
+    void hideHoverBox();
 }

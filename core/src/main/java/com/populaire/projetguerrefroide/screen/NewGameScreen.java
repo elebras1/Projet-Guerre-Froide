@@ -142,7 +142,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     @Override
     public void onHover(short x, short y) {
-        if(this.worldService.hoverProvince(x, y)) {
+        if(this.worldService.hoverProvince(x, y) && !this.isMouseOverUI()) {
             this.updateHoverBox(this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))),
                 this.worldService.getCountryNameOfHoveredProvince(x, y),
                 this.worldService.getCountryIdOfHoveredProvince(x, y));
@@ -237,6 +237,12 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         }
     }
 
+    private boolean isMouseOverUI() {
+        int mouseX = Gdx.input.getX();
+        int mouseY = Gdx.graphics.getHeight() - Gdx.input.getY();
+        return this.stage.hit(mouseX, mouseY, true) != null;
+    }
+
     public void updateCountrySelected() {
         if(this.worldService.isProvinceSelected()) {
             Minister headOfState = this.worldService.getHeadOfStateOfSelectedCountry();
@@ -257,10 +263,11 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     }
 
     public void updateHoverBox(String provinceName, String countryName, String countryId) {
-        Vector2 screenPosition = new Vector2(Gdx.input.getX(), (Gdx.graphics.getHeight() - Gdx.input.getY()));
+        int x = Gdx.input.getX();
+        int y = Gdx.graphics.getHeight() - Gdx.input.getY();
         this.hoverBox.update(provinceName + " (" + countryName + ")", this.skinFlags.getDrawable(countryId));
-        this.hoverBox.setPosition(screenPosition.x + (float) this.gameContext.getCursorManager().getWidth(),
-            screenPosition.y - this.gameContext.getCursorManager().getHeight() * 1.5f);
+        this.hoverBox.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
+            y - this.gameContext.getCursorManager().getHeight() * 1.5f);
         this.hoverBox.setVisible(true);
     }
 

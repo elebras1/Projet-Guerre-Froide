@@ -12,7 +12,7 @@ import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 public class HoverBox extends Table {
     private final Label label;
-    private final Image flag;
+    private final Image image;
     private final float marginWidth;
     private final float heightWidth;
 
@@ -25,28 +25,40 @@ public class HoverBox extends Table {
         Label.LabelStyle labelStyleArial14Glow = labelStylePool.getLabelStyle("arial_14_glow");
 
         this.label = new Label("", labelStyleArial14Glow);
-        this.flag = new Image();
-        this.flag.setScaling(Scaling.fit);
+        this.image = new Image();
+        this.image.setScaling(Scaling.fit);
 
         this.setBackground(ninePatchDrawable);
         this.add(this.label);
-        this.add(this.flag);
+        this.add(this.image);
         this.setVisible(false);
     }
 
     public void update(String text, Drawable flag) {
         if(!text.equals(this.label.getText().toString())) {
             this.label.setText(text);
-            this.flag.setDrawable(flag);
+            this.image.setDrawable(flag);
+            this.resize();
+        }
+    }
+
+    public void update(String text) {
+        if(!text.equals(this.label.getText().toString())) {
+            this.label.setText(text);
+            this.image.setDrawable(null);
             this.resize();
         }
     }
 
     private void resize() {
         this.pack();
-        float flagFitWidth = this.flag.getWidth() * (this.label.getHeight() / this.flag.getHeight());
+        float flagFitWidth = 0;
+        if(this.image.getDrawable() != null) {
+            flagFitWidth = this.image.getWidth() * (this.label.getHeight() / this.image.getHeight());
+        }
         float marginBetween = this.marginWidth / 2f;
-        this.setSize(this.label.getWidth() + marginBetween + flagFitWidth + this.marginWidth,
-                this.label.getHeight() + this.heightWidth);
+        float width = this.label.getWidth() + marginBetween + flagFitWidth + this.marginWidth;
+        float height = this.label.getHeight() + this.heightWidth;
+        this.setSize(width, height);
     }
 }

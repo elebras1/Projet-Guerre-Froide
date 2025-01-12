@@ -74,6 +74,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.localisation.putAll(this.gameContext.getLocalisationManager().readPopupCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readProvinceNamesCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readLanguageCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readInterfaceCsv());
         this.initializeUi();
         this.paused = false;
     }
@@ -140,11 +141,11 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
     @Override
     public void onHover(short x, short y) {
-        if(this.worldService.hoverProvince(x, y)) {
+        if(this.worldService.hoverProvince(x, y) && !this.isMouseOverUI()) {
             this.updateHoverBox(this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))),
                 this.worldService.getCountryNameOfHoveredProvince(x, y),
                 this.worldService.getCountryIdOfHoveredProvince(x, y));
-        } else {
+        } else if(!this.isMouseOverUI()) {
             this.hideHoverBox();
         }
     }
@@ -223,14 +224,34 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         }
     }
 
-    public void updateHoverBox(String provinceName, String countryName, String countryId) {
-        Vector2 screenPosition = new Vector2(Gdx.input.getX(), (Gdx.graphics.getHeight() - Gdx.input.getY()));
-        this.hoverBox.update(provinceName + " (" + countryName + ")", this.skinFlags.getDrawable(countryId));
-        this.hoverBox.setPosition(screenPosition.x + (float) this.gameContext.getCursorManager().getWidth(),
-            screenPosition.y - this.gameContext.getCursorManager().getHeight() * 1.5f);
-        this.hoverBox.setVisible(true);
+    private boolean isMouseOverUI() {
+        int mouseX = Gdx.input.getX();
+        int mouseY = Gdx.graphics.getHeight() - Gdx.input.getY();
+        return this.stage.hit(mouseX, mouseY, true) != null;
     }
 
+    @Override
+    public void updateHoverBox(String text) {
+        int x = Gdx.input.getX();
+        int y = Gdx.graphics.getHeight() - Gdx.input.getY();
+        this.hoverBox.update(text);
+        this.hoverBox.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
+                y - this.gameContext.getCursorManager().getHeight() * 1.5f);
+        this.hoverBox.setVisible(true);
+        this.hoverBox.toFront();
+    }
+
+    public void updateHoverBox(String provinceName, String countryName, String countryId) {
+        int x = Gdx.input.getX();
+        int y = Gdx.graphics.getHeight() - Gdx.input.getY();
+        this.hoverBox.update(provinceName + " (" + countryName + ")", this.skinFlags.getDrawable(countryId));
+        this.hoverBox.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
+                y - this.gameContext.getCursorManager().getHeight() * 1.5f);
+        this.hoverBox.setVisible(true);
+        this.hoverBox.toBack();
+    }
+
+    @Override
     public void hideHoverBox() {
         this.hoverBox.setVisible(false);
     }
