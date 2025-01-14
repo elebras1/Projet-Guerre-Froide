@@ -1,14 +1,17 @@
 package com.populaire.projetguerrefroide.service;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.populaire.projetguerrefroide.data.DataManager;
+import com.populaire.projetguerrefroide.entity.GameEntities;
 import com.populaire.projetguerrefroide.entity.Government;
 import com.populaire.projetguerrefroide.entity.Minister;
 import com.populaire.projetguerrefroide.map.World;
 
 public class WorldService {
     private final DataManager dataManager;
+    private GameEntities gameEntities;
     private World world;
 
     public WorldService() {
@@ -16,7 +19,15 @@ public class WorldService {
     }
 
     public void createWorld() {
-        this.world = this.dataManager.createWorldThreadSafe();
+        this.world = this.dataManager.createWorldThreadSafe(this.getGameEntities());
+    }
+
+    public GameEntities getGameEntities() {
+        if(this.gameEntities == null) {
+            this.gameEntities = this.dataManager.createGameEntities();
+        }
+
+        return this.gameEntities;
     }
 
     public void renderWorld(SpriteBatch batch, OrthographicCamera cam, float time) {

@@ -53,7 +53,7 @@ public class DataManager {
     private final ObjectMapper mapper = new ObjectMapper();
     private final String defaultDate = "1946.1.1";
 
-    public World createWorldThreadSafe() {
+    public GameEntities createGameEntities() {
         NationalIdeas nationalIdeas = this.readNationalIdeasJson();
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
@@ -61,9 +61,12 @@ public class DataManager {
         PopulationDemands populationDemands = this.readPopulationDemandsJson(goods);
         Map<String, Building> buildings = this.readBuildingsJson(goods);
         Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
-        Map<String, Country> countries = this.loadCountries(ministerTypes, ideologies);
-        IntObjectMap<PopulationType> populationTypes = this.readPopulationTypesJson();
-        IntObjectMap<Province> provinces = this.loadProvinces(countries, populationTypes, nationalIdeas, governments, ideologies);
+        return new GameEntities(nationalIdeas, governments, ideologies, goods, populationDemands, buildings, ministerTypes, this.readPopulationTypesJson());
+    }
+
+    public World createWorldThreadSafe(GameEntities gameEntities) {
+        Map<String, Country> countries = this.loadCountries(gameEntities.getMinisterTypes(), gameEntities.getIdeologies());
+        IntObjectMap<Province> provinces = this.loadProvinces(countries, gameEntities.getPopulationTypes(), gameEntities.getNationalIdeas(), gameEntities.getGovernments(), gameEntities.getIdeologies());
 
         AtomicReference<World> worldRef = new AtomicReference<>();
         final CountDownLatch latch = new CountDownLatch(1);

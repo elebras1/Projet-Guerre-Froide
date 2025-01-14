@@ -14,8 +14,12 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.github.tommyettinger.ds.IntObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
+import com.populaire.projetguerrefroide.entity.Ideology;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
+import com.populaire.projetguerrefroide.national.Culture;
+import com.populaire.projetguerrefroide.national.Religion;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
@@ -104,7 +108,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         topTable.top();
         topTable.pad(5);
 
-        Minimap minimap = new Minimap(this.skinMinimap, this.gameContext.getLabelStylePool(), this.localisation, this);
+        Minimap minimap = new Minimap(this.skinMinimap, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation, this);
         minimap.setPosition(Gdx.graphics.getWidth() - minimap.getWidth(), 0);
 
         this.stage.addActor(this.hoverBox);
@@ -132,6 +136,32 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     @Override
     public void changeMapMode(String mapMode) {
         this.worldService.changeMapMode(mapMode);
+    }
+
+    @Override
+    public IntObjectMap<String> getInformationsMapMode(String mapMode) {
+        IntObjectMap<String> informations = new IntObjectMap<>();
+        return switch (mapMode) {
+            case "mapmode_strength" -> {
+                for (Ideology ideology : this.worldService.getGameEntities().getIdeologies().values()) {
+                    informations.put(ideology.getColor(), String.valueOf(ideology.getName()));
+                }
+                yield informations;
+            }
+            case "mapmode_diplomatic" -> {
+                for (Culture culture : this.worldService.getGameEntities().getNationalIdeas().getCultures().values()) {
+                    informations.put(culture.getColor(), String.valueOf(culture.getName()));
+                }
+                yield informations;
+            }
+            case "mapmode_intel" -> {
+                for (Religion religion : this.worldService.getGameEntities().getNationalIdeas().getReligions().values()) {
+                    informations.put(religion.getColor(), String.valueOf(religion.getName()));
+                }
+                yield informations;
+            }
+            default -> null;
+        };
     }
 
     @Override
