@@ -114,7 +114,7 @@ public class Minimap extends Table {
                 if(button.isChecked() && !currentMapMode.equals(mapMode)) {
                     listener.changeMapMode(mapMode);
                     currentMapMode = mapMode;
-                    setInformationsMapMode(skinUi,  labelStylePool, listener.getInformationsMapMode(mapMode));
+                    setInformationsMapMode(skinUi,  labelStylePool, listener.getInformationsMapMode(mapMode), localisation);
                 }
             }
         });
@@ -158,12 +158,11 @@ public class Minimap extends Table {
         menuBarPanel.addActor(button);
     }
 
-    private void setInformationsMapMode(Skin skinUi, LabelStylePool labelStylePool, IntObjectMap<String> informations) {
+    private void setInformationsMapMode(Skin skinUi, LabelStylePool labelStylePool, IntObjectMap<String> informations, Map<String, String> localisation) {
         if(this.informationsMapMode != null) {
             for (Actor child : this.informationsMapMode.getChildren()) {
                 if (child instanceof ColorRectangle colorRectangle) {
                     colorRectangle.dispose();
-                    System.out.println("dispose");
                 }
             }
             this.informationsMapMode.clearChildren();
@@ -185,8 +184,8 @@ public class Minimap extends Table {
 
         for(IntObjectMap.Entry<String> entry : informations) {
             int color = entry.key;
-            String text = entry.value;
-            Label label = new Label(text, labelStyleArial14Glow);
+            Label label = new Label(localisation.get(entry.value), labelStyleArial14Glow);
+            System.out.println("value : " + entry.value + ", localisation : " + localisation.get(entry.value));
 
             ColorRectangle colorRectangle = new ColorRectangle(color);
             colorRectangle.setSize(label.getHeight() * 1.2f, label.getHeight() * 0.85f);
