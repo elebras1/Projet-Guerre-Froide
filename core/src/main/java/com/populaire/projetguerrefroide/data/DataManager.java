@@ -3,7 +3,6 @@ package com.populaire.projetguerrefroide.data;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.IntMap;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -97,6 +96,7 @@ public class DataManager {
         this.readProvinceBitmap(provincesByColor);
         this.readCountriesHistoryJson(countries, provinces, nationalIdeas, governments, ideologies);
         this.readContinentJsonFile(provinces);
+        this.readPositionsJson(provinces);
         this.readAdjenciesJson(provinces);
 
         return provincesByColor;
@@ -640,18 +640,23 @@ public class DataManager {
         return buildings;
     }
 
-    private Map<Integer, Vector2> readPositionsJson() {
-        Map<Integer, Vector2> unitPositions = new ObjectObjectMap<>();
+    private void readPositionsJson(IntMap<Province> provinces) {
         try {
             JsonNode positionsJson = this.openJson(this.positionsJsonFile);
             positionsJson.fields().forEachRemaining(entry -> {
-                JsonNode buildingNode = entry.getValue().path("building_construction");
-                unitPositions.put(Integer.parseInt(entry.getKey()), new Vector2(buildingNode.get("x").asInt(), buildingNode.get("y").asInt()));
+                short provinceId = Short.parseShort(entry.getKey());
+                Province province = provinces.get(provinceId);
+                entry.getValue().fields().forEachRemaining(position -> {
+                    String name = position.getKey();
+                    JsonNode positionNode = position.getValue();
+                    short x = positionNode.get("x").shortValue();
+                    short y = positionNode.get("y").shortValue();
+                    province.addPosition(name, (x << 16) | (y & 0xFFFF));
+                });
             });
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return unitPositions;
     }
 
     private void readAdjenciesJson(IntMap<Province> provinces) {
@@ -660,9 +665,7 @@ public class DataManager {
             adjenciesJson.fields().forEachRemaining(entry -> {
                 short provinceId = Short.parseShort(entry.getKey());
                 Province province = provinces.get(provinceId);
-                List<Province> adjacencies = new ObjectList<>();
-                entry.getValue().forEach(adjacency -> adjacencies.add(provinces.get(adjacency.shortValue())));
-                province.setAdjacentProvinces(adjacencies);
+                entry.getValue().forEach(adjacency -> province.addAdjacentProvinces(provinces.get(adjacency.shortValue())));
             });
         } catch (IOException e) {
             e.printStackTrace();

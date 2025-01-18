@@ -185,7 +185,6 @@ public class Minimap extends Table {
         for(IntObjectMap.Entry<String> entry : informations) {
             int color = entry.key;
             Label label = new Label(localisation.get(entry.value), labelStyleArial14Glow);
-            System.out.println("value : " + entry.value + ", localisation : " + localisation.get(entry.value));
 
             ColorRectangle colorRectangle = new ColorRectangle(color);
             colorRectangle.setSize(label.getHeight() * 1.2f, label.getHeight() * 0.85f);

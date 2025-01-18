@@ -2,13 +2,15 @@ package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntSet;
+import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.economy.population.Population;
 
 import java.util.*;
 
 public class LandProvince implements Province {
-    private List<Province> adjacentProvinces;
+    private final List<Province> adjacentProvinces;
+    private final ObjectIntMap<String> positions;
     private final IntSet pixels;
     private int color;
     private short id;
@@ -24,6 +26,7 @@ public class LandProvince implements Province {
         this.countryController = countryController;
         this.population = population;
         this.adjacentProvinces = new ObjectList<>();
+        this.positions = new ObjectIntMap<>();
         this.pixels = new IntSet();
     }
 
@@ -71,8 +74,19 @@ public class LandProvince implements Province {
         this.continent = continent;
     }
 
-    public void setAdjacentProvinces(List<Province> provinces) {
-        this.adjacentProvinces = provinces;
+    @Override
+    public void addPosition(String name, int position) {
+        this.positions.put(name, position);
+    }
+
+    @Override
+    public int getPosition(String name) {
+        return this.positions.get(name);
+    }
+
+    @Override
+    public void addAdjacentProvinces(Province province) {
+        this.adjacentProvinces.add(province);
     }
 
     public List<Province> getAdjacentProvinces() {
