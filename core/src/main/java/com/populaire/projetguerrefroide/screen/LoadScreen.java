@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.util.Logging;
@@ -22,10 +23,12 @@ public class LoadScreen implements Screen {
     private final Skin skin;
     private final ScreenManager screenManager;
     private final GameContext gameContext;
+    private final WorldService worldService;
 
     public LoadScreen(ScreenManager screenManager, GameContext gameContext) {
         this.screenManager = screenManager;
         this.gameContext = gameContext;
+        this.worldService = new WorldService();
         this.gameContext.getCursorManager().animatedCursor("busy");
         AssetManager assetManager = this.gameContext.getAssetManager();
         assetManager.load("loadingscreens/loadingscreens_skin.json", Skin.class);
@@ -45,16 +48,19 @@ public class LoadScreen implements Screen {
 
     @Override
     public void show() {
-        CompletableFuture.runAsync(() -> {
+        this.worldService.getAsyncExecutor().submit(() -> {
             long startTime = System.currentTimeMillis();
-            WorldService worldService = new WorldService();
-            worldService.createWorld();
+            this.worldService.createWorld();
+
             Gdx.app.postRunnable(() -> {
                 this.gameContext.getSettings().applyGraphicsSettings();
-                this.screenManager.showNewGameScreen(worldService);
+                this.screenManager.showNewGameScreen(this.worldService);
             });
+
             long endTime = System.currentTimeMillis();
             Logging.getLogger("LoadScreen").info("World load: " + (endTime - startTime) + "ms");
+
+            return null;
         });
     }
 

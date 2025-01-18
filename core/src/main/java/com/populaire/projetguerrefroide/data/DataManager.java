@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.utils.IntMap;
+import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -63,7 +64,7 @@ public class DataManager {
         return new GameEntities(nationalIdeas, governments, ideologies, goods, populationDemands, buildings, ministerTypes, this.readPopulationTypesJson());
     }
 
-    public World createWorldThreadSafe(GameEntities gameEntities) {
+    public World createWorldThreadSafe(GameEntities gameEntities, AsyncExecutor asyncExecutor) {
         Map<String, Country> countries = this.loadCountries(gameEntities.getMinisterTypes(), gameEntities.getIdeologies());
         IntObjectMap<Province> provinces = this.loadProvinces(countries, gameEntities.getPopulationTypes(), gameEntities.getNationalIdeas(), gameEntities.getGovernments(), gameEntities.getIdeologies());
 
@@ -71,7 +72,7 @@ public class DataManager {
         final CountDownLatch latch = new CountDownLatch(1);
 
         Gdx.app.postRunnable(() -> {
-            worldRef.set(new World(new ObjectList<>(countries.values()), provinces));
+            worldRef.set(new World(new ObjectList<>(countries.values()), provinces, asyncExecutor));
             latch.countDown();
         });
 
