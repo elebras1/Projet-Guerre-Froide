@@ -70,10 +70,10 @@ subprojects {
   }
 
   dependencies {
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.2'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.2'
-    implementation 'com.github.tommyettinger:jdkgdxds:1.6.5'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.18.2'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.2'
+    implementation 'com.github.tommyettinger:jdkgdxds:1.7.2'
   }
 }
 
