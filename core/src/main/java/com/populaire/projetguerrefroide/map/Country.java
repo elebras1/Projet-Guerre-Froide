@@ -238,7 +238,11 @@ public class Country {
                 List<LandProvince> connectedProvinces = new ObjectList<>();
                 this.getConnectedProvinces(province, visitedProvinces, connectedProvinces);
                 if(connectedProvinces.size() > 5 || (connectedProvinces.size() == this.provinces.size() && connectedProvinces.size() > 1)) {
-                    MapLabel label = new MapLabel(this.getName(), this.getPixelsBorder(connectedProvinces));
+                    IntList positionsProvinces = new IntList();
+                    for(LandProvince connectedProvince : connectedProvinces) {
+                        positionsProvinces.add(connectedProvince.getPosition("default"));
+                    }
+                    MapLabel label = new MapLabel(this.getName(), this.getPixelsBorder(connectedProvinces), positionsProvinces);
                     this.labels.add(label);
                 }
             }

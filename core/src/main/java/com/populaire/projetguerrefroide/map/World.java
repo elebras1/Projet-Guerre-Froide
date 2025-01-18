@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
-import com.populaire.projetguerrefroide.entity.GameEntities;
 
 import java.util.*;
 
@@ -38,6 +37,9 @@ public class World {
     public World(List<Country> countries, IntObjectMap<Province> provinces) {
         this.countries = countries;
         this.provinces = provinces;
+        for(Country country : this.countries) {
+            country.createLabels();
+        }
         this.mapColorPixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
         this.mapColorPixmap.setBlending(Pixmap.Blending.None);
         this.mapColorPixmap.setColor(Color.BLACK);
@@ -57,9 +59,6 @@ public class World {
         this.overlayTileTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         this.defaultTexture = new Texture(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGB888);
         this.createBordersTexture();
-        for(Country country : this.countries) {
-            country.createLabels();
-        }
 
         String[] terrainTexturePaths = new String[64];
         String pathBase = "map/terrain/textures/";

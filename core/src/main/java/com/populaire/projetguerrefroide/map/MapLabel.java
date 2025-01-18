@@ -7,14 +7,13 @@ import com.badlogic.gdx.graphics.g2d.*;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectList;
 
-import java.util.Comparator;
 import java.util.List;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class MapLabel {
-    private String label;
-    private int centroid;
+    private final String label;
+    public int centroid;
     private int[] farthestPoints;
     private List<CurvePoint> points;
     private static final BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/kart_font.fnt"), true);
@@ -29,10 +28,10 @@ public class MapLabel {
         font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
     }
 
-    public MapLabel(String label, IntList borderPixels) {
+    public MapLabel(String label, IntList borderPixels, IntList positionsProvinces) {
         this.label = label;
         IntList convexHull = this.getConvexHull(borderPixels);
-        this.setCentroid(convexHull);
+        this.setCentroid(convexHull, positionsProvinces);
         this.findFarthestPoints(convexHull);
         GlyphLayout layout = new GlyphLayout();
         layout.setText(font, this.label);
@@ -182,17 +181,36 @@ public class MapLabel {
         return (xMax << 16) | (yMax & 0xFFFF);
     }
 
-    private void setCentroid(IntList convexHull) {
+    private void setCentroid(IntList convexHull, IntList positionsProvinces) {
         int centerX = 0;
         int centerY = 0;
+
         for (int i = 0; i < convexHull.size(); i++) {
             int pixelInt = convexHull.get(i);
             centerX += (short) (pixelInt >> 16);
             centerY += (short) (pixelInt & 0xFFFF);
         }
+
         centerX /= convexHull.size();
         centerY /= convexHull.size();
-        this.centroid = (centerX << 16) | (centerY & 0xFFFF);
+
+        int closestPosition = -1;
+        int minDistanceSquared = Integer.MAX_VALUE;
+
+        for (int i = 0; i < positionsProvinces.size(); i++) {
+            int positionInt = positionsProvinces.get(i);
+            int px = (short) (positionInt >> 16);
+            int py = (short) (positionInt & 0xFFFF);
+
+            int distanceSquared = (px - centerX) * (px - centerX) + (py - centerY) * (py - centerY);
+
+            if (distanceSquared < minDistanceSquared) {
+                minDistanceSquared = distanceSquared;
+                closestPosition = positionInt;
+            }
+        }
+
+        this.centroid = closestPosition;
     }
 
     private void findFarthestPoints(IntList pixels) {
@@ -260,7 +278,6 @@ public class MapLabel {
             x = centroidX + (x - centroidX) * compressionFactor;
             y = centroidY + (y - centroidY) * compressionFactor;
 
-            // Ajouter le point comprimé
             CurvePoint curvePoint = new CurvePoint();
             curvePoint.center = ((int) x << 16) | ((int) y & 0xFFFF);
             this.points.add(curvePoint);
