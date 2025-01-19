@@ -16,7 +16,7 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class World {
     private final List<Country> countries;
-    private final IntObjectMap<Province> provinces;
+    private final IntObjectMap<LandProvince> provinces;
     private final AsyncExecutor asyncExecutor;
     private LandProvince selectedProvince;
     private Pixmap provincesColorPixmap;
@@ -36,13 +36,13 @@ public class World {
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
 
-    public World(List<Country> countries, IntObjectMap<Province> provinces, AsyncExecutor asyncExecutor) {
+    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, AsyncExecutor asyncExecutor) {
         this.countries = countries;
         this.provinces = provinces;
         this.asyncExecutor = asyncExecutor;
         this.mapColorPixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
         this.mapColorPixmap.setBlending(Pixmap.Blending.None);
-        this.mapColorPixmap.setColor(Color.BLACK);
+        this.mapColorPixmap.setColor(0, 0, 0, 0);
         this.mapColorPixmap.fill();
         this.updatePixmapCountriesColor();
         this.provincesColorPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
@@ -88,13 +88,8 @@ public class World {
         }
 
         int provinceColor = this.provincesColorPixmap.getPixel(adjustedX, y);
-        Province province = this.provinces.get(provinceColor);
 
-        if(province instanceof LandProvince landProvince) {
-            return landProvince;
-        }
-
-        return null;
+        return this.provinces.get(provinceColor);
     }
 
     public void selectProvince(short x, short y) {
@@ -120,66 +115,71 @@ public class World {
     }
 
     public void updatePixmapCountriesColor() {
-        AsyncExecutor asyncExecutor = new AsyncExecutor(1);
-        for(Province province : provinces.values()) {
-            if(province instanceof LandProvince landProvince) {
-                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
-                    int pixelInt = iterator.nextInt();
-                    int pixelX = (pixelInt >> 16);
-                    int pixelY = (pixelInt & 0xFFFF);
-                    this.mapColorPixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getColor());
-                }
+        for(LandProvince province : this.provinces.values()) {
+            for (IntSet.IntSetIterator iterator = province.getPixels().iterator(); iterator.hasNext(); ) {
+                int pixelInt = iterator.nextInt();
+                int pixelX = (pixelInt >> 16);
+                int pixelY = (pixelInt & 0xFFFF);
+                this.mapColorPixmap.drawPixel(pixelX, pixelY, province.getCountryOwner().getColor());
             }
         }
     }
 
     public void updatePixmapIdeologiesColor() {
-        for(Province province : this.provinces.values()) {
-            if(province instanceof LandProvince landProvince) {
-                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
-                    int pixelInt = iterator.nextInt();
-                    short pixelX = (short) (pixelInt >> 16);
-                    short pixelY = (short) (pixelInt & 0xFFFF);
-                    this.mapColorPixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getIdeology().getColor());
-                }
+        for(LandProvince province : this.provinces.values()) {
+            for(IntSet.IntSetIterator iterator = province.getPixels().iterator(); iterator.hasNext();) {
+                int pixelInt = iterator.nextInt();
+                short pixelX = (short) (pixelInt >> 16);
+                short pixelY = (short) (pixelInt & 0xFFFF);
+                this.mapColorPixmap.drawPixel(pixelX, pixelY, province.getCountryOwner().getIdeology().getColor());
             }
         }
     }
 
     public void updatePixmapCulturesColor() {
-        for(Province province : this.provinces.values()) {
-            if(province instanceof LandProvince landProvince) {
-                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
-                    int pixelInt = iterator.nextInt();
-                    short pixelX = (short) (pixelInt >> 16);
-                    short pixelY = (short) (pixelInt & 0xFFFF);
-                    this.mapColorPixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getCulture().getColor());
-                }
+        for(LandProvince province : this.provinces.values()) {
+            for(IntSet.IntSetIterator iterator = province.getPixels().iterator(); iterator.hasNext();) {
+                int pixelInt = iterator.nextInt();
+                short pixelX = (short) (pixelInt >> 16);
+                short pixelY = (short) (pixelInt & 0xFFFF);
+                this.mapColorPixmap.drawPixel(pixelX, pixelY, province.getCountryOwner().getCulture().getColor());
             }
         }
     }
 
     public void updatePixmapReligionsColor() {
-        for(Province province : this.provinces.values()) {
-            if(province instanceof LandProvince landProvince) {
-                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
-                    int pixelInt = iterator.nextInt();
-                    short pixelX = (short) (pixelInt >> 16);
-                    short pixelY = (short) (pixelInt & 0xFFFF);
-                    this.mapColorPixmap.drawPixel(pixelX, pixelY, landProvince.getCountryOwner().getReligion().getColor());
-                }
+        for(LandProvince province : this.provinces.values()) {
+            for(IntSet.IntSetIterator iterator = province.getPixels().iterator(); iterator.hasNext();) {
+                int pixelInt = iterator.nextInt();
+                short pixelX = (short) (pixelInt >> 16);
+                short pixelY = (short) (pixelInt & 0xFFFF);
+                this.mapColorPixmap.drawPixel(pixelX, pixelY, province.getCountryOwner().getReligion().getColor());
             }
         }
     }
 
     public void updatePixmapTerrainColor() {
         int whiteColor = 0xFFFFFFFF;
-        for(Province province : this.provinces.values()) {
-            if (province instanceof LandProvince landProvince) {
-                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
-                    int pixelInt = iterator.nextInt();
-                    short pixelX = (short) (pixelInt >> 16);
-                    short pixelY = (short) (pixelInt & 0xFFFF);
+        for(LandProvince province : this.provinces.values()) {
+            for(IntSet.IntSetIterator iterator = province.getPixels().iterator(); iterator.hasNext();) {
+                int pixelInt = iterator.nextInt();
+                short pixelX = (short) (pixelInt >> 16);
+                short pixelY = (short) (pixelInt & 0xFFFF);
+                this.mapColorPixmap.drawPixel(pixelX, pixelY, whiteColor);
+            }
+        }
+    }
+
+    public void updatePixmapResourcesColor() {
+        int whiteColor = 0xFFFFFFFF;
+        for(LandProvince province : this.provinces.values()) {
+            for(IntSet.IntSetIterator iterator = province.getPixels().iterator(); iterator.hasNext();) {
+                int pixelInt = iterator.nextInt();
+                short pixelX = (short) (pixelInt >> 16);
+                short pixelY = (short) (pixelInt & 0xFFFF);
+                if(province.getGood() != null) {
+                    this.mapColorPixmap.drawPixel(pixelX, pixelY, province.getGood().getColor());
+                } else {
                     this.mapColorPixmap.drawPixel(pixelX, pixelY, whiteColor);
                 }
             }
@@ -188,13 +188,13 @@ public class World {
 
     public Pixmap createProvincesColorStripesPixmap() {
         Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
-        for(Province province : this.provinces.values()) {
-            if(province instanceof LandProvince landProvince && !landProvince.getCountryOwner().equals(landProvince.getCountryController())) {
-                for(IntSet.IntSetIterator iterator = landProvince.getPixels().iterator(); iterator.hasNext();) {
+        for(LandProvince province : this.provinces.values()) {
+            if(!province.getCountryOwner().equals(province.getCountryController())) {
+                for(IntSet.IntSetIterator iterator = province.getPixels().iterator(); iterator.hasNext();) {
                     int pixelInt = iterator.nextInt();
                     short pixelX = (short) (pixelInt >> 16);
                     short pixelY = (short) (pixelInt & 0xFFFF);
-                    pixmap.drawPixel(pixelX, pixelY, landProvince.getCountryController().getColor());
+                    pixmap.drawPixel(pixelX, pixelY, province.getCountryController().getColor());
                 }
             }
         }
@@ -256,6 +256,9 @@ public class World {
                     break;
                 case "mapmode_terrain":
                     this.updatePixmapTerrainColor();
+                    break;
+                case "mapmode_resources":
+                    this.updatePixmapResourcesColor();
                     break;
             }
 

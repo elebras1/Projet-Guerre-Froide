@@ -278,16 +278,16 @@ void main() {
     vec4 colorCountry = hqxFilter(uv, u_textureCountries);
     vec4 terrain;
     vec4 water;
-    int redColorWater = 0;
+    int alphaColorWater = 0;
 
     if(u_zoom > .8) {
-        if(colorCountry.r > redColorWater) {
+        if(colorCountry.a > alphaColorWater) {
             terrain = getLandFar(colorCountry, texCoord, uv);
         } else {
             water = getWaterFar(texCoord);
         }
     } else {
-        if(colorCountry.r > redColorWater) {
+        if(colorCountry.a > alphaColorWater) {
             terrain = getLandClose(colorCountry, texCoord, uv);
         } else {
             water = getWaterClose(texCoord);
