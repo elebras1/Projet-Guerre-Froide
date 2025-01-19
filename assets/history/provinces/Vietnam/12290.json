@@ -5,12 +5,18 @@
         "IDC",
         "DRV"
     ],
-    "fruits": 8.77,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 311706,
-            "template": 28
-        }
+    "population_total": {
+        "amount": 311706,
+        "template": 28
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 8.77
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

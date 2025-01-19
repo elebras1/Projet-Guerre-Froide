@@ -5,13 +5,22 @@
         "POR",
         "CPV"
     ],
-    "fish": 6.34,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 171880,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 171880,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 6.34
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

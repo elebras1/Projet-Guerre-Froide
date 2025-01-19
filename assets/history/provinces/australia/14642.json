@@ -2,8 +2,6 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "grain": 66.63,
-    "naval_base": 10,
     "economy_building": [
         {
             "name": "financial_district",
@@ -14,11 +12,22 @@
             "size": 5
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 229944,
-            "template": 94
-        }
+    "population_total": {
+        "amount": 229944,
+        "template": 94
     },
-    "infrastructure": 10
+    "good": {
+        "name": "grain",
+        "value": 66.63
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 10
+        },
+        {
+            "name": "naval_base",
+            "size": 10
+        }
+    ]
 }

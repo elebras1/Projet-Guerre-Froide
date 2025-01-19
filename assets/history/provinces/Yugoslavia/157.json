@@ -6,16 +6,22 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "iron": 9,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 368586,
-            "template": 62
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "military_industry",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 368586,
+        "template": 62
+    },
+    "good": {
+        "name": "iron",
+        "value": 9
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

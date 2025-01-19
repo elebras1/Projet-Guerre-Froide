@@ -5,13 +5,22 @@
         "ENG",
         "DMN"
     ],
-    "fruits": 4.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 51000,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 51000,
+        "template": 45
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "fruits",
+        "value": 4.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "grain": 26.86,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 108646,
-            "template": 83
-        }
+    "population_total": {
+        "amount": 108646,
+        "template": 83
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 26.86
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

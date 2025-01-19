@@ -5,16 +5,22 @@
         "SOV",
         "UKR"
     ],
-    "rare_metals": 3.23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1202734,
-            "template": 45
-        }
-    },
-    "infrastructure": 8,
     "economy_building": {
         "name": "powerplant",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 1202734,
+        "template": 45
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 3.23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

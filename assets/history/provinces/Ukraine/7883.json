@@ -5,13 +5,22 @@
         "SOV",
         "UKR"
     ],
-    "fish": 68.29,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 134987,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 134987,
+        "template": 45
     },
-    "infrastructure": 5,
-    "naval_base": 1
+    "good": {
+        "name": "fish",
+        "value": 68.29
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

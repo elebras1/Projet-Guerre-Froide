@@ -5,12 +5,18 @@
         "FRA",
         "MRA"
     ],
-    "oil": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 42626,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 42626,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

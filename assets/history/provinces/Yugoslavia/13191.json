@@ -5,17 +5,26 @@
         "YUG",
         "SLV"
     ],
-    "meat": 66.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 332895,
-            "template": 62
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "powerplant",
         "size": 2
     },
-    "naval_base": 2
+    "population_total": {
+        "amount": 332895,
+        "template": 62
+    },
+    "good": {
+        "name": "meat",
+        "value": 66.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

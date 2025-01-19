@@ -2,17 +2,26 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "grain": 52.32,
-    "naval_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 255748,
-            "template": 81
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "military_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 255748,
+        "template": 81
+    },
+    "good": {
+        "name": "grain",
+        "value": 52.32
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 4
+        }
+    ]
 }

@@ -5,13 +5,22 @@
         "ENG",
         "BAR"
     ],
-    "oil": 1,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 210995,
-            "template": 14
-        }
+    "population_total": {
+        "amount": 210995,
+        "template": 14
     },
-    "infrastructure": 5
+    "good": {
+        "name": "oil",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

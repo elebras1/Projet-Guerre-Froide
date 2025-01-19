@@ -5,12 +5,18 @@
         "FRA",
         "CAR"
     ],
-    "grain": 13.82,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1190,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 1190,
+        "template": 2
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 13.82
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

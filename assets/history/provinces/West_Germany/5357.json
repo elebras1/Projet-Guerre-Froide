@@ -5,16 +5,22 @@
     ],
     "owner": "FRA",
     "controller": "FRA",
-    "grain": 364.29,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1338907,
-            "template": 71
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "military_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 1338907,
+        "template": 71
+    },
+    "good": {
+        "name": "grain",
+        "value": 364.29
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

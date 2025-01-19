@@ -5,12 +5,18 @@
         "ENG",
         "SUD"
     ],
-    "oil": 83,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 67135,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 67135,
+        "template": 3
     },
-    "infrastructure": 1
+    "good": {
+        "name": "oil",
+        "value": 83
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "add_core": "GRE",
     "owner": "GRE",
     "controller": "GRE",
-    "grain": 25,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 100023,
-            "template": 63
-        }
+    "population_total": {
+        "amount": 100023,
+        "template": 63
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

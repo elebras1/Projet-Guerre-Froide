@@ -5,12 +5,18 @@
         "SOV",
         "GEO"
     ],
-    "grain": 25.79,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 742112,
-            "template": 30
-        }
+    "population_total": {
+        "amount": 742112,
+        "template": 30
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 25.79
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

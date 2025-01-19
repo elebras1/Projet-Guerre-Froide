@@ -2,12 +2,18 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "grain": 150,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 177627,
-            "template": 50
-        }
+    "population_total": {
+        "amount": 177627,
+        "template": 50
     },
-    "infrastructure": 3
+    "good": {
+        "name": "grain",
+        "value": 150
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

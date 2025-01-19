@@ -2,16 +2,22 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "oil": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 42580,
-            "template": 92
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "light_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 42580,
+        "template": 92
+    },
+    "good": {
+        "name": "oil",
+        "value": 6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

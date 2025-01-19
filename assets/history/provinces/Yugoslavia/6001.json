@@ -5,12 +5,18 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "rare_metals": 5.11,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 376942,
-            "template": 62
-        }
+    "population_total": {
+        "amount": 376942,
+        "template": 62
     },
-    "infrastructure": 2
+    "good": {
+        "name": "rare_metals",
+        "value": 5.11
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

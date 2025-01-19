@@ -5,12 +5,18 @@
         "ENG",
         "PAK"
     ],
-    "coal": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 504578,
-            "template": 18
-        }
+    "population_total": {
+        "amount": 504578,
+        "template": 18
     },
-    "infrastructure": 2
+    "good": {
+        "name": "coal",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

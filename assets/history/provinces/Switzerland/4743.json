@@ -2,11 +2,14 @@
     "owner": "SCH",
     "controller": "SCH",
     "add_core": "SCH",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 112781,
-            "template": 74
-        }
+    "population_total": {
+        "amount": 112781,
+        "template": 74
     },
-    "infrastructure": 6
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

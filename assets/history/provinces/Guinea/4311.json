@@ -5,13 +5,22 @@
         "FRA",
         "GUI"
     ],
-    "grain": 76.17,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 836442,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 836442,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 76.17
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

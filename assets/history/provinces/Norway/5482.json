@@ -2,12 +2,18 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "meat": 0.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1260,
-            "template": 58
-        }
+    "population_total": {
+        "amount": 1260,
+        "template": 58
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 0.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

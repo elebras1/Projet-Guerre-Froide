@@ -2,12 +2,18 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "vegetables": 170.59,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1031343,
-            "template": 25
-        }
+    "population_total": {
+        "amount": 1031343,
+        "template": 25
     },
-    "infrastructure": 5
+    "good": {
+        "name": "vegetables",
+        "value": 170.59
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

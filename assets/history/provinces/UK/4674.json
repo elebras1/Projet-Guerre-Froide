@@ -2,17 +2,26 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "rare_metals": 1.41,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 419856,
-            "template": 60
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "naval_yards",
         "size": 10
-    }
+    },
+    "population_total": {
+        "amount": 419856,
+        "template": 60
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 1.41
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

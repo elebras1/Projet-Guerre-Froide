@@ -5,14 +5,26 @@
         "INO",
         "HOL"
     ],
-    "fruits": 8.51,
-    "naval_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 307676,
-            "template": 21
-        }
+    "population_total": {
+        "amount": 307676,
+        "template": 21
     },
-    "infrastructure": 3,
-    "air_base": 2
+    "good": {
+        "name": "fruits",
+        "value": 8.51
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 4
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "PAK"
     ],
-    "grain": 2.84,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 53404,
-            "template": 18
-        }
+    "population_total": {
+        "amount": 53404,
+        "template": 18
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 2.84
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

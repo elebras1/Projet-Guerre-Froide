@@ -2,12 +2,18 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "meat": 5.52,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 67196,
-            "template": 25
-        }
+    "population_total": {
+        "amount": 67196,
+        "template": 25
     },
-    "infrastructure": 5
+    "good": {
+        "name": "meat",
+        "value": 5.52
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

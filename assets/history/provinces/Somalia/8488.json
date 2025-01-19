@@ -5,12 +5,18 @@
         "ENG",
         "SOM"
     ],
-    "meat": 1.66,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 44310,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 44310,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 1.66
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

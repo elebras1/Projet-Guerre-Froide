@@ -2,14 +2,26 @@
     "owner": "ALB",
     "controller": "ALB",
     "add_core": "ALB",
-    "meat": 55.5,
-    "naval_base": 1,
-    "air_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 380738,
-            "template": 61
-        }
+    "population_total": {
+        "amount": 380738,
+        "template": 61
     },
-    "infrastructure": 5
+    "good": {
+        "name": "meat",
+        "value": 55.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

@@ -2,16 +2,22 @@
     "owner": "SAF",
     "controller": "SAF",
     "add_core": "SAF",
-    "uranium": 168,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1795396,
-            "template": 4
-        }
-    },
-    "infrastructure": 7,
     "economy_building": {
         "name": "light_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 1795396,
+        "template": 4
+    },
+    "good": {
+        "name": "uranium",
+        "value": 168
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        }
+    ]
 }

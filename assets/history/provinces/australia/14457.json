@@ -2,17 +2,26 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "grain": 262.54,
-    "naval_base": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 721862,
-            "template": 94
-        }
-    },
-    "infrastructure": 10,
     "economy_building": {
         "name": "heavy_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 721862,
+        "template": 94
+    },
+    "good": {
+        "name": "grain",
+        "value": 262.54
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 10
+        },
+        {
+            "name": "naval_base",
+            "size": 8
+        }
+    ]
 }

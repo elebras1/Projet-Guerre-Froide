@@ -5,14 +5,26 @@
     ],
     "owner": "ENG",
     "controller": "ENG",
-    "fish": 518.59,
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 771847,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 771847,
+        "template": 71
     },
-    "infrastructure": 4,
-    "air_base": 5
+    "good": {
+        "name": "fish",
+        "value": 518.59
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

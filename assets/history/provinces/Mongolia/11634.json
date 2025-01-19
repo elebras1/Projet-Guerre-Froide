@@ -2,12 +2,18 @@
     "owner": "MON",
     "controller": "MON",
     "add_core": "MON",
-    "uranium": 0.9,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1556,
-            "template": 9
-        }
+    "population_total": {
+        "amount": 1556,
+        "template": 9
     },
-    "infrastructure": 2
+    "good": {
+        "name": "uranium",
+        "value": 0.9
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

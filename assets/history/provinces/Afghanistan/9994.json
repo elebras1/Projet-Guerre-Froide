@@ -2,16 +2,22 @@
     "owner": "AFG",
     "controller": "AFG",
     "add_core": "AFG",
-    "grain": 249.74,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 764245,
-            "template": 12
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "military_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 764245,
+        "template": 12
+    },
+    "good": {
+        "name": "grain",
+        "value": 249.74
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

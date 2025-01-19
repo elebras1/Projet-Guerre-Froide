@@ -5,12 +5,18 @@
         "HOL",
         "SUR"
     ],
-    "meat": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2199,
-            "template": 89
-        }
+    "population_total": {
+        "amount": 2199,
+        "template": 89
     },
-    "infrastructure": 3
+    "good": {
+        "name": "meat",
+        "value": 6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

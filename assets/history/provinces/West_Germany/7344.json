@@ -5,13 +5,22 @@
     ],
     "owner": "ENG",
     "controller": "ENG",
-    "grain": 400,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 592512,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 592512,
+        "template": 71
     },
-    "infrastructure": 9,
-    "air_base": 2
+    "good": {
+        "name": "grain",
+        "value": 400
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 9
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

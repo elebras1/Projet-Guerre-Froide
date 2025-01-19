@@ -5,12 +5,18 @@
         "KOR",
         "PRK"
     ],
-    "rare_metals": 2.78,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 471981,
-            "template": 7
-        }
+    "population_total": {
+        "amount": 471981,
+        "template": 7
     },
-    "infrastructure": 3
+    "good": {
+        "name": "rare_metals",
+        "value": 2.78
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

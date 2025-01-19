@@ -2,12 +2,18 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "fruits": 49.43,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 322022,
-            "template": 25
-        }
+    "population_total": {
+        "amount": 322022,
+        "template": 25
     },
-    "infrastructure": 5
+    "good": {
+        "name": "fruits",
+        "value": 49.43
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

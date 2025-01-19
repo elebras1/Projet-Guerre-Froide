@@ -2,16 +2,22 @@
     "add_core": "AUS",
     "owner": "USA",
     "controller": "USA",
-    "wood": 3.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 285618,
-            "template": 68
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 285618,
+        "template": 68
+    },
+    "good": {
+        "name": "wood",
+        "value": 3.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

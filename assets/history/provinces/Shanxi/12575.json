@@ -6,13 +6,22 @@
         "CHI",
         "CHC"
     ],
-    "vegetables": 89,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 425965,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 425965,
+        "template": 6
     },
-    "infrastructure": 5,
-    "air_base": 1
+    "good": {
+        "name": "vegetables",
+        "value": 89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

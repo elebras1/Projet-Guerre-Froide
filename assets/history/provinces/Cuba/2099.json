@@ -2,12 +2,18 @@
     "owner": "CUB",
     "controller": "CUB",
     "add_core": "CUB",
-    "vegetables": 2.78,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 58006,
-            "template": 75
-        }
+    "population_total": {
+        "amount": 58006,
+        "template": 75
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 2.78
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

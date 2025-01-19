@@ -2,12 +2,18 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "grain": 492.69,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 591349,
-            "template": 70
-        }
+    "population_total": {
+        "amount": 591349,
+        "template": 70
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 492.69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

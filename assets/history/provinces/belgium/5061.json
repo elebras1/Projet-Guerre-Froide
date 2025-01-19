@@ -5,17 +5,26 @@
         "BEL",
         "FLA"
     ],
-    "vegetables": 563.4,
-    "naval_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1337476,
-            "template": 69
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "heavy_industry",
         "size": 8
-    }
+    },
+    "population_total": {
+        "amount": 1337476,
+        "template": 69
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 563.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 4
+        }
+    ]
 }

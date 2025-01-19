@@ -5,16 +5,22 @@
         "SOV",
         "UKR"
     ],
-    "coal": 13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 824488,
-            "template": 45
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "refinery",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 824488,
+        "template": 45
+    },
+    "good": {
+        "name": "coal",
+        "value": 13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

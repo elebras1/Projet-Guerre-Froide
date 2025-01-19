@@ -5,16 +5,22 @@
         "FRA",
         "CAR"
     ],
-    "fruits": 10.84,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 44897,
-            "template": 2
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "heavy_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 44897,
+        "template": 2
+    },
+    "good": {
+        "name": "fruits",
+        "value": 10.84
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "GHN"
     ],
-    "meat": 55,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 247441,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 247441,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 55
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

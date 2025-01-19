@@ -2,16 +2,22 @@
     "owner": "EGY",
     "controller": "EGY",
     "add_core": "EGY",
-    "fruits": 462.84,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1381478,
-            "template": 3
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "military_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 1381478,
+        "template": 3
+    },
+    "good": {
+        "name": "fruits",
+        "value": 462.84
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,8 +2,6 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "oil": 103,
-    "naval_base": 2,
     "economy_building": [
         {
             "name": "military_academy",
@@ -14,11 +12,22 @@
             "size": 7
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 142472,
-            "template": 58
-        }
+    "population_total": {
+        "amount": 142472,
+        "template": 58
     },
-    "infrastructure": 5
+    "good": {
+        "name": "oil",
+        "value": 103
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "SOV",
         "UKR"
     ],
-    "grain": 291.94,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 108649,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 108649,
+        "template": 45
     },
-    "infrastructure": 5
+    "good": {
+        "name": "grain",
+        "value": 291.94
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

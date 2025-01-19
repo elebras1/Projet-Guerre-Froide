@@ -5,14 +5,26 @@
         "ENG",
         "ISR"
     ],
-    "oil": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 72308,
-            "template": 34
-        }
+    "population_total": {
+        "amount": 72308,
+        "template": 34
     },
-    "infrastructure": 6,
-    "air_base": 2,
-    "naval_base": 2
+    "good": {
+        "name": "oil",
+        "value": 8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

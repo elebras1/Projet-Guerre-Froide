@@ -2,13 +2,22 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "fish": 14.39,
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 43935,
-            "template": 83
-        }
+    "population_total": {
+        "amount": 43935,
+        "template": 83
     },
-    "infrastructure": 6
+    "good": {
+        "name": "fish",
+        "value": 14.39
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

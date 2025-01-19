@@ -6,12 +6,18 @@
         "TNZ",
         "TNG"
     ],
-    "grain": 10.06,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 62964,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 62964,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 10.06
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

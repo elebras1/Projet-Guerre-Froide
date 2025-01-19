@@ -5,12 +5,18 @@
         "INO",
         "HOL"
     ],
-    "precious_metals": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4606097,
-            "template": 21
-        }
+    "population_total": {
+        "amount": 4606097,
+        "template": 21
     },
-    "infrastructure": 6
+    "good": {
+        "name": "precious_metals",
+        "value": 6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "BOT"
     ],
-    "rare_metals": 4.28,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 11844,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 11844,
+        "template": 4
     },
-    "infrastructure": 2
+    "good": {
+        "name": "rare_metals",
+        "value": 4.28
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

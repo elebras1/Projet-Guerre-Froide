@@ -2,12 +2,18 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "fish": 10.01,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 27577,
-            "template": 59
-        }
+    "population_total": {
+        "amount": 27577,
+        "template": 59
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fish",
+        "value": 10.01
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

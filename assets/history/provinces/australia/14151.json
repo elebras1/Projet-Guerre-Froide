@@ -2,12 +2,18 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "fish": 2.18,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 601,
-            "template": 94
-        }
+    "population_total": {
+        "amount": 601,
+        "template": 94
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 2.18
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

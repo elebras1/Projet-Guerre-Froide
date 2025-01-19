@@ -5,16 +5,22 @@
     ],
     "owner": "FRA",
     "controller": "FRA",
-    "wood": 7.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1230462,
-            "template": 71
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "powerplant",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 1230462,
+        "template": 71
+    },
+    "good": {
+        "name": "wood",
+        "value": 7.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

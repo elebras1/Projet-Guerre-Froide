@@ -2,7 +2,6 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "fruits": 400.61,
     "economy_building": [
         {
             "name": "national_monument",
@@ -13,12 +12,22 @@
             "size": 9
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2882720,
-            "template": 64
-        }
+    "population_total": {
+        "amount": 2882720,
+        "template": 64
     },
-    "infrastructure": 8,
-    "naval_base": 1
+    "good": {
+        "name": "fruits",
+        "value": 400.61
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

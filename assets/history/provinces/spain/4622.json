@@ -2,16 +2,22 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "grain": 106.58,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 227850,
-            "template": 67
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 227850,
+        "template": 67
+    },
+    "good": {
+        "name": "grain",
+        "value": 106.58
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

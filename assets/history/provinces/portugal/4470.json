@@ -2,17 +2,26 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "coal": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 439126,
-            "template": 66
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "military_industry",
         "size": 3
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 439126,
+        "template": 66
+    },
+    "good": {
+        "name": "coal",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

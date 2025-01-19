@@ -6,12 +6,18 @@
         "ETH",
         "ERI"
     ],
-    "grain": 18.13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 504829,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 504829,
+        "template": 1
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 18.13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

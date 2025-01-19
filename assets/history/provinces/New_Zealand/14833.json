@@ -2,12 +2,18 @@
     "owner": "NZL",
     "controller": "NZL",
     "add_core": "NZL",
-    "wood": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 32446,
-            "template": 95
-        }
+    "population_total": {
+        "amount": 32446,
+        "template": 95
     },
-    "infrastructure": 6
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "INO",
         "HOL"
     ],
-    "fruits": 116.81,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 451111,
-            "template": 21
-        }
+    "population_total": {
+        "amount": 451111,
+        "template": 21
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 116.81
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "BUR"
     ],
-    "vegetables": 11.04,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 150978,
-            "template": 24
-        }
+    "population_total": {
+        "amount": 150978,
+        "template": 24
     },
-    "infrastructure": 1
+    "good": {
+        "name": "vegetables",
+        "value": 11.04
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "coal": 13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1899083,
-            "template": 60
-        }
+    "population_total": {
+        "amount": 1899083,
+        "template": 60
     },
-    "infrastructure": 9
+    "good": {
+        "name": "coal",
+        "value": 13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 9
+        }
+    ]
 }

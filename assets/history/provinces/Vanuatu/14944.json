@@ -6,13 +6,22 @@
         "VNT",
         "FRA"
     ],
-    "fish": 2.7,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 23848,
-            "template": 188
-        }
+    "population_total": {
+        "amount": 23848,
+        "template": 188
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 2.7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

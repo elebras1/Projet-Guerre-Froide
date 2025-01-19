@@ -2,13 +2,22 @@
     "owner": "DEN",
     "controller": "DEN",
     "add_core": "DEN",
-    "oil": 69,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 454057,
-            "template": 51
-        }
+    "population_total": {
+        "amount": 454057,
+        "template": 51
     },
-    "infrastructure": 6
+    "good": {
+        "name": "oil",
+        "value": 69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

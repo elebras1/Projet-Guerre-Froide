@@ -2,17 +2,26 @@
     "owner": "ECU",
     "controller": "ECU",
     "add_core": "ECU",
-    "grain": 42,
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 835518,
-            "template": 84
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 835518,
+        "template": 84
+    },
+    "good": {
+        "name": "grain",
+        "value": 42
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

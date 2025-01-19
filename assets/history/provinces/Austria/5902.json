@@ -2,16 +2,22 @@
     "add_core": "AUS",
     "owner": "SOV",
     "controller": "SOV",
-    "grain": 350,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 346085,
-            "template": 68
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "light_industry",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 346085,
+        "template": 68
+    },
+    "good": {
+        "name": "grain",
+        "value": 350
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "rare_metals": 5.22,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 502096,
-            "template": 64
-        }
+    "population_total": {
+        "amount": 502096,
+        "template": 64
     },
-    "infrastructure": 3
+    "good": {
+        "name": "rare_metals",
+        "value": 5.22
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

@@ -2,8 +2,6 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "fruits": 49.41,
-    "naval_base": 10,
     "economy_building": [
         {
             "name": "financial_district",
@@ -14,11 +12,22 @@
             "size": 3
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 86632,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 86632,
+        "template": 92
     },
-    "infrastructure": 7
+    "good": {
+        "name": "fruits",
+        "value": 49.41
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "naval_base",
+            "size": 10
+        }
+    ]
 }

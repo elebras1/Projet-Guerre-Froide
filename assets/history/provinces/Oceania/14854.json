@@ -2,12 +2,18 @@
     "owner": "NZL",
     "controller": "NZL",
     "add_core": "NZL",
-    "fish": 0.34,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3000,
-            "template": 175
-        }
+    "population_total": {
+        "amount": 3000,
+        "template": 175
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 0.34
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "wood": 0.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 544153,
-            "template": 70
-        }
+    "population_total": {
+        "amount": 544153,
+        "template": 70
     },
-    "infrastructure": 6
+    "good": {
+        "name": "wood",
+        "value": 0.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

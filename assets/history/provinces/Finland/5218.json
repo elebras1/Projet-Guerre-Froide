@@ -2,12 +2,18 @@
     "owner": "FIN",
     "controller": "FIN",
     "add_core": "FIN",
-    "wood": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2441,
-            "template": 53
-        }
+    "population_total": {
+        "amount": 2441,
+        "template": 53
     },
-    "infrastructure": 1
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -2,17 +2,26 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "renewable_energy": 155,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1725247,
-            "template": 8
-        }
+    "population_total": {
+        "amount": 1725247,
+        "template": 8
     },
-    "infrastructure": 8,
-    "naval_base": 2
+    "good": {
+        "name": "renewable_energy",
+        "value": 155
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

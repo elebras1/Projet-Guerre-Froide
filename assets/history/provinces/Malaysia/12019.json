@@ -5,12 +5,18 @@
         "ENG",
         "MLY"
     ],
-    "precious_metals": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 195491,
-            "template": 23
-        }
+    "population_total": {
+        "amount": 195491,
+        "template": 23
     },
-    "infrastructure": 4
+    "good": {
+        "name": "precious_metals",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

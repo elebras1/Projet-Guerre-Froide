@@ -2,9 +2,6 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "grain": 611.69,
-    "naval_base": 6,
-    "air_base": 8,
     "economy_building": [
         {
             "name": "financial_district",
@@ -15,11 +12,26 @@
             "size": 5
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 15432232,
-            "template": 8
-        }
+    "population_total": {
+        "amount": 15432232,
+        "template": 8
     },
-    "infrastructure": 9
+    "good": {
+        "name": "grain",
+        "value": 611.69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 9
+        },
+        {
+            "name": "naval_base",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 8
+        }
+    ]
 }

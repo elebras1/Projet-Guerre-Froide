@@ -5,12 +5,18 @@
         "ENG",
         "KEN"
     ],
-    "wood": 0.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 401326,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 401326,
+        "template": 1
     },
-    "infrastructure": 1
+    "good": {
+        "name": "wood",
+        "value": 0.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

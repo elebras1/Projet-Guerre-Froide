@@ -2,11 +2,14 @@
     "owner": "SOV",
     "controller": "SOV",
     "add_core": "PER",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1816,
-            "template": 16
-        }
+    "population_total": {
+        "amount": 1816,
+        "template": 16
     },
-    "infrastructure": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

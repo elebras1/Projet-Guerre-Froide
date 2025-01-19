@@ -2,11 +2,14 @@
     "owner": "DEN",
     "controller": "DEN",
     "add_core": "DEN",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 0,
-            "template": 51
-        }
+    "population_total": {
+        "amount": 0,
+        "template": 51
     },
-    "infrastructure": 1
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

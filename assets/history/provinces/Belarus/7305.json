@@ -5,12 +5,18 @@
         "SOV",
         "BLR"
     ],
-    "wood": 1.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 147120,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 147120,
+        "template": 45
     },
-    "infrastructure": 5
+    "good": {
+        "name": "wood",
+        "value": 1.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

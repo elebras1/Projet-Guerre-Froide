@@ -5,13 +5,22 @@
         "PRK",
         "KOR"
     ],
-    "fish": 42.5,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 111521,
-            "template": 10
-        }
+    "population_total": {
+        "amount": 111521,
+        "template": 10
     },
-    "infrastructure": 3
+    "good": {
+        "name": "fish",
+        "value": 42.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

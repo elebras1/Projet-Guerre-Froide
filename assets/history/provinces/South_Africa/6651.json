@@ -2,12 +2,18 @@
     "owner": "SAF",
     "controller": "SAF",
     "add_core": "SAF",
-    "iron": 20,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 7131,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 7131,
+        "template": 4
     },
-    "infrastructure": 4
+    "good": {
+        "name": "iron",
+        "value": 20
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

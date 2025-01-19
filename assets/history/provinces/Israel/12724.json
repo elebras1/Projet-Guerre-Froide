@@ -5,11 +5,14 @@
         "ENG",
         "PAL"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 144314,
-            "template": 34
-        }
+    "population_total": {
+        "amount": 144314,
+        "template": 34
     },
-    "infrastructure": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

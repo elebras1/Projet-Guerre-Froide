@@ -5,12 +5,18 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "uranium": 8.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 318696,
-            "template": 47
-        }
+    "population_total": {
+        "amount": 318696,
+        "template": 47
     },
-    "infrastructure": 5
+    "good": {
+        "name": "uranium",
+        "value": 8.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

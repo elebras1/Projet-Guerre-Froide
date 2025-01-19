@@ -5,16 +5,22 @@
         "LEB",
         "SYR"
     ],
-    "grain": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 720536,
-            "template": 37
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 720536,
+        "template": 37
+    },
+    "good": {
+        "name": "grain",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

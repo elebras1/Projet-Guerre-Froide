@@ -5,16 +5,22 @@
         "SOV",
         "BLR"
     ],
-    "grain": 72.27,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 138321,
-            "template": 45
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "powerplant",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 138321,
+        "template": 45
+    },
+    "good": {
+        "name": "grain",
+        "value": 72.27
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

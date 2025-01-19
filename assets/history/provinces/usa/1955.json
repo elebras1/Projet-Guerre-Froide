@@ -2,16 +2,22 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "meat": 323.53,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 404515,
-            "template": 93
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "aviation_industry",
         "size": 10
-    }
+    },
+    "population_total": {
+        "amount": 404515,
+        "template": 93
+    },
+    "good": {
+        "name": "meat",
+        "value": 323.53
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

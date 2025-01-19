@@ -5,13 +5,22 @@
         "ENG",
         "NRU"
     ],
-    "fish": 0.006,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3000,
-            "template": 118
-        }
+    "population_total": {
+        "amount": 3000,
+        "template": 118
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 0.006
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

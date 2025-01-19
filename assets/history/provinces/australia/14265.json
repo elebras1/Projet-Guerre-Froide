@@ -2,12 +2,18 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "uranium": 100,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1098,
-            "template": 94
-        }
+    "population_total": {
+        "amount": 1098,
+        "template": 94
     },
-    "infrastructure": 6
+    "good": {
+        "name": "uranium",
+        "value": 100
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

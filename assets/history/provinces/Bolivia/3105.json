@@ -2,16 +2,22 @@
     "owner": "BOL",
     "controller": "BOL",
     "add_core": "BOL",
-    "vegetables": 2.17,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 674,
-            "template": 80
-        }
+    "population_total": {
+        "amount": 674,
+        "template": 80
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 2.17
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

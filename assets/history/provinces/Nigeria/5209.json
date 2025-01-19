@@ -5,13 +5,22 @@
         "ENG",
         "NIG"
     ],
-    "oil": 240,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 582699,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 582699,
+        "template": 5
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "oil",
+        "value": 240
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

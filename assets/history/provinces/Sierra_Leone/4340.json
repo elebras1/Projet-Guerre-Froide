@@ -5,13 +5,22 @@
         "ENG",
         "SIE"
     ],
-    "grain": 50.65,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 664995,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 664995,
+        "template": 5
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "grain",
+        "value": 50.65
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -7,13 +7,22 @@
         "PAK",
         "IND"
     ],
-    "grain": 241.69,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2482488,
-            "template": 13
-        }
+    "population_total": {
+        "amount": 2482488,
+        "template": 13
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 241.69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

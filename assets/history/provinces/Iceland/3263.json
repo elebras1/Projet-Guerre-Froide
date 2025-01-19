@@ -2,12 +2,18 @@
     "owner": "ICL",
     "controller": "ICL",
     "add_core": "ICL",
-    "meat": 0.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1673,
-            "template": 54
-        }
+    "population_total": {
+        "amount": 1673,
+        "template": 54
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 0.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

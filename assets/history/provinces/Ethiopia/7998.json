@@ -2,12 +2,18 @@
     "owner": "ETH",
     "controller": "ETH",
     "add_core": "ETH",
-    "fruits": 51.01,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 587832,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 587832,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 51.01
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -2,24 +2,28 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "grain": 616.06,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2029391,
-            "template": 60
-        }
-    },
     "economy_building": [
         {
             "name": "nuclear_silo",
-            "size": 1,
-            "model": 0,
-            "ammo_store": 4
+            "size": 1
         },
         {
             "name": "heavy_industry",
             "size": 7
         }
     ],
-    "infrastructure": 6
+    "population_total": {
+        "amount": 2029391,
+        "template": 60
+    },
+    "good": {
+        "name": "grain",
+        "value": 616.06
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

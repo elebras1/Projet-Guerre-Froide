@@ -2,16 +2,22 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "meat": 10.41,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 39767,
-            "template": 79
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "naval_yards",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 39767,
+        "template": 79
+    },
+    "good": {
+        "name": "meat",
+        "value": 10.41
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

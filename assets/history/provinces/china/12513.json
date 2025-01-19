@@ -5,12 +5,18 @@
         "CHI",
         "CHC"
     ],
-    "renewable_energy": 108,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 133010,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 133010,
+        "template": 6
     },
-    "infrastructure": 1
+    "good": {
+        "name": "renewable_energy",
+        "value": 108
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -2,16 +2,22 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "wood": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 29435,
-            "template": 92
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "aviation_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 29435,
+        "template": 92
+    },
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

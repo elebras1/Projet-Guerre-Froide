@@ -2,13 +2,22 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "rare_metals": 0.5,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 168651,
-            "template": 60
-        }
+    "population_total": {
+        "amount": 168651,
+        "template": 60
     },
-    "infrastructure": 3
+    "good": {
+        "name": "rare_metals",
+        "value": 0.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

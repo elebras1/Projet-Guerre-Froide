@@ -5,13 +5,22 @@
         "FRA",
         "CDI"
     ],
-    "fruits": 50,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 53589,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 53589,
+        "template": 5
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "fruits",
+        "value": 50
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

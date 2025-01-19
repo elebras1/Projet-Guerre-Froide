@@ -5,12 +5,18 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "oil": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 791248,
-            "template": 62
-        }
+    "population_total": {
+        "amount": 791248,
+        "template": 62
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

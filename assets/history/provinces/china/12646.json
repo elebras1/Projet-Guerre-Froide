@@ -5,12 +5,18 @@
         "CHI",
         "CHC"
     ],
-    "grain": 341.13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2459664,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 2459664,
+        "template": 6
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 341.13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -6,12 +6,18 @@
         "LBY",
         "ITA"
     ],
-    "oil": 67,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1169,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 1169,
+        "template": 3
     },
-    "infrastructure": 2
+    "good": {
+        "name": "oil",
+        "value": 67
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

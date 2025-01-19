@@ -2,16 +2,22 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "oil": 48,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 34140,
-            "template": 83
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "refinery",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 34140,
+        "template": 83
+    },
+    "good": {
+        "name": "oil",
+        "value": 48
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

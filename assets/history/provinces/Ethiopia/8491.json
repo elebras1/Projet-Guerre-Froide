@@ -5,12 +5,18 @@
         "ETH",
         "SOM"
     ],
-    "grain": 8.92,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 59202,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 59202,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 8.92
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

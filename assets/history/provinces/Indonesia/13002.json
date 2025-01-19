@@ -5,12 +5,18 @@
         "INO",
         "HOL"
     ],
-    "oil": 241,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 25250,
-            "template": 21
-        }
+    "population_total": {
+        "amount": 25250,
+        "template": 21
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 241
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

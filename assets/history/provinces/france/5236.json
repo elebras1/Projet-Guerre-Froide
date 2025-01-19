@@ -2,16 +2,22 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "rare_metals": 5.06,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 87954,
-            "template": 70
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "heavy_industry",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 87954,
+        "template": 70
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 5.06
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

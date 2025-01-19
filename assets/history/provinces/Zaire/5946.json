@@ -6,12 +6,18 @@
         "DRC",
         "KON"
     ],
-    "oil": 93,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1806749,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 1806749,
+        "template": 2
     },
-    "infrastructure": 2
+    "good": {
+        "name": "oil",
+        "value": 93
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

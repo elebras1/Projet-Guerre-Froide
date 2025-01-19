@@ -6,12 +6,18 @@
         "FRA",
         "MAL"
     ],
-    "vegetables": 1.93,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 103262,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 103262,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 1.93
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

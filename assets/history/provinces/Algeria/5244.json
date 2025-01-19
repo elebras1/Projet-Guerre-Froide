@@ -5,12 +5,18 @@
         "FRA",
         "ALG"
     ],
-    "oil": 512,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1432,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 1432,
+        "template": 3
     },
-    "infrastructure": 1
+    "good": {
+        "name": "oil",
+        "value": 512
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

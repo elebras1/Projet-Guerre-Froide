@@ -2,12 +2,18 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "wood": 2.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2007275,
-            "template": 25
-        }
+    "population_total": {
+        "amount": 2007275,
+        "template": 25
     },
-    "infrastructure": 5
+    "good": {
+        "name": "wood",
+        "value": 2.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

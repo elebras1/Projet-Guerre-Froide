@@ -6,17 +6,26 @@
         "CHC",
         "TWN"
     ],
-    "rare_metals": 163.24,
-    "naval_base": 3,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1136597,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 1136597,
+        "template": 6
     },
-    "infrastructure": 5
+    "good": {
+        "name": "rare_metals",
+        "value": 163.24
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

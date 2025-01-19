@@ -5,12 +5,18 @@
         "ENG",
         "JOR"
     ],
-    "grain": 43.77,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 302014,
-            "template": 35
-        }
+    "population_total": {
+        "amount": 302014,
+        "template": 35
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 43.77
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

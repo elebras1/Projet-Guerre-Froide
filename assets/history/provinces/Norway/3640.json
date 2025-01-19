@@ -2,14 +2,26 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "meat": 12.35,
-    "naval_base": 2,
-    "air_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 7675,
-            "template": 58
-        }
+    "population_total": {
+        "amount": 7675,
+        "template": 58
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 12.35
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

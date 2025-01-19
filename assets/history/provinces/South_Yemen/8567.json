@@ -6,12 +6,18 @@
         "SYA",
         "ENG"
     ],
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 315134,
-            "template": 44
-        }
+    "population_total": {
+        "amount": 315134,
+        "template": 44
     },
-    "infrastructure": 6
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "PRK",
         "KOR"
     ],
-    "oil": 12,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 301475,
-            "template": 10
-        }
+    "population_total": {
+        "amount": 301475,
+        "template": 10
     },
-    "infrastructure": 5
+    "good": {
+        "name": "oil",
+        "value": 12
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

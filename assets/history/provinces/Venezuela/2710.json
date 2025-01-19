@@ -2,16 +2,22 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "grain": 9.17,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 27159,
-            "template": 91
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 27159,
+        "template": 91
+    },
+    "good": {
+        "name": "grain",
+        "value": 9.17
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -5,13 +5,22 @@
         "ENG",
         "GRN"
     ],
-    "fruits": 1.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 76676,
-            "template": 66
-        }
+    "population_total": {
+        "amount": 76676,
+        "template": 66
     },
-    "infrastructure": 5,
-    "naval_base": 1
+    "good": {
+        "name": "fruits",
+        "value": 1.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

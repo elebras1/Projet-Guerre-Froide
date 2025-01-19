@@ -2,16 +2,22 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "grain": 188.78,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 201716,
-            "template": 93
-        }
-    },
-    "infrastructure": 8,
     "economy_building": {
         "name": "powerplant",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 201716,
+        "template": 93
+    },
+    "good": {
+        "name": "grain",
+        "value": 188.78
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

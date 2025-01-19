@@ -5,16 +5,22 @@
         "SOV",
         "GEO"
     ],
-    "rare_metals": 3.48,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1066780,
-            "template": 30
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "refinery",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 1066780,
+        "template": 30
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 3.48
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

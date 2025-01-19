@@ -6,12 +6,18 @@
         "ZMB",
         "RHO"
     ],
-    "rare_metals": 30.03,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 124520,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 124520,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 30.03
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

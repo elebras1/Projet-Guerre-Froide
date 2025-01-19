@@ -5,13 +5,22 @@
         "FRA",
         "GAB"
     ],
-    "uranium": 33.6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 48593,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 48593,
+        "template": 2
     },
-    "infrastructure": 4,
-    "naval_base": 2
+    "good": {
+        "name": "uranium",
+        "value": 33.6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

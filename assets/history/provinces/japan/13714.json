@@ -2,18 +2,30 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "coal": 2,
-    "naval_base": 4,
-    "air_base": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1066168,
-            "template": 8
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "naval_yards",
         "size": 9
-    }
+    },
+    "population_total": {
+        "amount": 1066168,
+        "template": 8
+    },
+    "good": {
+        "name": "coal",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 4
+        },
+        {
+            "name": "air_base",
+            "size": 6
+        }
+    ]
 }

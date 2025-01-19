@@ -2,12 +2,18 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "renewable_energy": 120,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 369680,
-            "template": 67
-        }
+    "population_total": {
+        "amount": 369680,
+        "template": 67
     },
-    "infrastructure": 6
+    "good": {
+        "name": "renewable_energy",
+        "value": 120
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -2,17 +2,26 @@
     "owner": "NIC",
     "controller": "NIC",
     "add_core": "NIC",
-    "fruits": 13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 190751,
-            "template": 76
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "military_industry",
         "size": 2
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 190751,
+        "template": 76
+    },
+    "good": {
+        "name": "fruits",
+        "value": 13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

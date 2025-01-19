@@ -6,12 +6,18 @@
         "KEN",
         "SOM"
     ],
-    "meat": 1.08,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4546,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 4546,
+        "template": 1
     },
-    "infrastructure": 3
+    "good": {
+        "name": "meat",
+        "value": 1.08
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

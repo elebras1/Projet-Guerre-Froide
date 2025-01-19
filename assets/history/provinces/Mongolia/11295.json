@@ -2,12 +2,18 @@
     "owner": "MON",
     "controller": "MON",
     "add_core": "MON",
-    "grain": 0.52,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1296,
-            "template": 9
-        }
+    "population_total": {
+        "amount": 1296,
+        "template": 9
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 0.52
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

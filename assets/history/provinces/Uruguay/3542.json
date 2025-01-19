@@ -2,12 +2,18 @@
     "owner": "URU",
     "controller": "URU",
     "add_core": "URU",
-    "meat": 4.56,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 12124,
-            "template": 90
-        }
+    "population_total": {
+        "amount": 12124,
+        "template": 90
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 4.56
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

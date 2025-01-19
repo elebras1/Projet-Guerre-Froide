@@ -5,12 +5,18 @@
         "ENG",
         "MLY"
     ],
-    "grain": 2.9,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 31063,
-            "template": 23
-        }
+    "population_total": {
+        "amount": 31063,
+        "template": 23
     },
-    "infrastructure": 1
+    "good": {
+        "name": "grain",
+        "value": 2.9
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

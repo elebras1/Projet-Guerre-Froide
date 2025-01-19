@@ -5,12 +5,18 @@
         "SOV",
         "TAJ"
     ],
-    "meat": 40.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 132377,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 132377,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 40.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

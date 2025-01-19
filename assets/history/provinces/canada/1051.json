@@ -2,16 +2,22 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "grain": 77.14,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 131092,
-            "template": 92
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "refinery",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 131092,
+        "template": 92
+    },
+    "good": {
+        "name": "grain",
+        "value": 77.14
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

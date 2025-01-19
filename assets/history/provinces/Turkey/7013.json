@@ -2,14 +2,26 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "precious_metals": 8,
-    "naval_base": 2,
-    "air_base": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 336959,
-            "template": 42
-        }
+    "population_total": {
+        "amount": 336959,
+        "template": 42
     },
-    "infrastructure": 6
+    "good": {
+        "name": "precious_metals",
+        "value": 8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "BOT"
     ],
-    "meat": 0.18,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1273,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 1273,
+        "template": 4
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 0.18
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

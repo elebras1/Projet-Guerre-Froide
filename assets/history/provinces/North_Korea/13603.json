@@ -5,13 +5,22 @@
         "KOR",
         "PRK"
     ],
-    "iron": 4,
-    "air_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 225327,
-            "template": 7
-        }
+    "population_total": {
+        "amount": 225327,
+        "template": 7
     },
-    "infrastructure": 3
+    "good": {
+        "name": "iron",
+        "value": 4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

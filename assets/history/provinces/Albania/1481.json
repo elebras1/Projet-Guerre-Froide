@@ -2,16 +2,22 @@
     "owner": "ALB",
     "controller": "ALB",
     "add_core": "ALB",
-    "vegetables": 10,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 191458,
-            "template": 61
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "military_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 191458,
+        "template": 61
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 10
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

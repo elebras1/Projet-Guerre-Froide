@@ -6,12 +6,18 @@
         "TNZ",
         "TNG"
     ],
-    "meat": 7.98,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 35645,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 35645,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 7.98
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

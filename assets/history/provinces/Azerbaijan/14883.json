@@ -6,12 +6,18 @@
         "AZB",
         "NGK"
     ],
-    "grain": 40.13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 203620,
-            "template": 30
-        }
+    "population_total": {
+        "amount": 203620,
+        "template": 30
     },
-    "infrastructure": 3
+    "good": {
+        "name": "grain",
+        "value": 40.13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "SAF",
     "controller": "SAF",
     "add_core": "SAF",
-    "vegetables": 20.11,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 98267,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 98267,
+        "template": 4
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 20.11
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

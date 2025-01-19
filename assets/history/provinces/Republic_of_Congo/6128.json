@@ -5,12 +5,18 @@
         "FRA",
         "CNG"
     ],
-    "wood": 0.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1523,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 1523,
+        "template": 2
     },
-    "infrastructure": 2
+    "good": {
+        "name": "wood",
+        "value": 0.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

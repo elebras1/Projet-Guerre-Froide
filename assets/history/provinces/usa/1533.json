@@ -2,16 +2,22 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "coal": 2,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 43037,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 43037,
+        "template": 93
     },
-    "infrastructure": 6
+    "good": {
+        "name": "coal",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

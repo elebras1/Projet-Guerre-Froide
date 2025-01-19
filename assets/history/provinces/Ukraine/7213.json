@@ -5,14 +5,26 @@
     ],
     "owner": "SOV",
     "controller": "SOV",
-    "air_base": 4,
-    "vegetables": 109.16,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 242134,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 242134,
+        "template": 45
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 109.16
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

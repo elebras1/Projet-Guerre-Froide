@@ -5,12 +5,18 @@
         "SOV",
         "GEO"
     ],
-    "coal": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 115762,
-            "template": 30
-        }
+    "population_total": {
+        "amount": 115762,
+        "template": 30
     },
-    "infrastructure": 4
+    "good": {
+        "name": "coal",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -6,12 +6,18 @@
         "ZMB",
         "RHO"
     ],
-    "meat": 1.84,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 7586,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 7586,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 1.84
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

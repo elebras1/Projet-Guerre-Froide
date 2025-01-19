@@ -2,12 +2,18 @@
     "owner": "ETH",
     "controller": "ETH",
     "add_core": "ETH",
-    "grain": 4.17,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 33072,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 33072,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 4.17
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

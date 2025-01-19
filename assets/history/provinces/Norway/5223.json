@@ -2,17 +2,26 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "oil": 88,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 85450,
-            "template": 58
-        }
-    },
     "economy_building": {
         "name": "naval_research_center",
         "size": 1
     },
-    "infrastructure": 2,
-    "naval_base": 2
+    "population_total": {
+        "amount": 85450,
+        "template": 58
+    },
+    "good": {
+        "name": "oil",
+        "value": 88
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

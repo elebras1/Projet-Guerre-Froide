@@ -2,12 +2,18 @@
     "owner": "SIA",
     "controller": "SIA",
     "add_core": "SIA",
-    "vegetables": 6.22,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 45537,
-            "template": 27
-        }
+    "population_total": {
+        "amount": 45537,
+        "template": 27
     },
-    "infrastructure": 1
+    "good": {
+        "name": "vegetables",
+        "value": 6.22
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

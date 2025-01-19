@@ -2,12 +2,18 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "wood": 0.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 274647,
-            "template": 50
-        }
+    "population_total": {
+        "amount": 274647,
+        "template": 50
     },
-    "infrastructure": 4
+    "good": {
+        "name": "wood",
+        "value": 0.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

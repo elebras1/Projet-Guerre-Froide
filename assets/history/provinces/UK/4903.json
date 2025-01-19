@@ -2,7 +2,6 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "grain": 527.84,
     "economy_building": [
         {
             "name": "national_monument",
@@ -13,11 +12,18 @@
             "size": 7
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4793984,
-            "template": 60
-        }
+    "population_total": {
+        "amount": 4793984,
+        "template": 60
     },
-    "infrastructure": 8
+    "good": {
+        "name": "grain",
+        "value": 527.84
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

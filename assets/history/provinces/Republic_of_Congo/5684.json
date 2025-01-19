@@ -5,12 +5,18 @@
         "FRA",
         "CNG"
     ],
-    "grain": 5.39,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 55162,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 55162,
+        "template": 2
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 5.39
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

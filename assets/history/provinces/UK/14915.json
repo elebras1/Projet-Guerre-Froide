@@ -2,16 +2,22 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "grain": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 5367,
-            "template": 60
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "light_industry",
         "size": 7
-    }
+    },
+    "population_total": {
+        "amount": 5367,
+        "template": 60
+    },
+    "good": {
+        "name": "grain",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

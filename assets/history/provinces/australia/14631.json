@@ -2,12 +2,18 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "grain": 7.59,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 10607,
-            "template": 94
-        }
+    "population_total": {
+        "amount": 10607,
+        "template": 94
     },
-    "infrastructure": 5
+    "good": {
+        "name": "grain",
+        "value": 7.59
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

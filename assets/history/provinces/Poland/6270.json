@@ -2,13 +2,6 @@
     "add_core": "POL",
     "owner": "POL",
     "controller": "POL",
-    "coal": 36,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 776578,
-            "template": 49
-        }
-    },
     "economy_building": [
         {
             "name": "university",
@@ -19,6 +12,22 @@
             "size": 2
         }
     ],
-    "infrastructure": 7,
-    "air_base": 5
+    "population_total": {
+        "amount": 776578,
+        "template": 49
+    },
+    "good": {
+        "name": "coal",
+        "value": 36
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

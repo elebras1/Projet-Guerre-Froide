@@ -2,12 +2,18 @@
     "owner": "PAN",
     "controller": "PAN",
     "add_core": "PAN",
-    "fruits": 7.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 54030,
-            "template": 76
-        }
+    "population_total": {
+        "amount": 54030,
+        "template": 76
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 7.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

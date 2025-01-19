@@ -2,12 +2,18 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "oil": 57,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1916,
-            "template": 94
-        }
+    "population_total": {
+        "amount": 1916,
+        "template": 94
     },
-    "infrastructure": 1
+    "good": {
+        "name": "oil",
+        "value": 57
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

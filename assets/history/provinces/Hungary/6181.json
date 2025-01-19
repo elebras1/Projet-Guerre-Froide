@@ -2,7 +2,6 @@
     "add_core": "HUN",
     "owner": "HUN",
     "controller": "HUN",
-    "vegetables": 248.2,
     "economy_building": [
         {
             "name": "military_academy",
@@ -13,11 +12,18 @@
             "size": 5
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2130348,
-            "template": 48
-        }
+    "population_total": {
+        "amount": 2130348,
+        "template": 48
     },
-    "infrastructure": 7
+    "good": {
+        "name": "vegetables",
+        "value": 248.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        }
+    ]
 }

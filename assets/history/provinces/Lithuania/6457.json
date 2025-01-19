@@ -5,13 +5,22 @@
     ],
     "owner": "SOV",
     "controller": "SOV",
-    "oil": 3,
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 52277,
-            "template": 57
-        }
+    "population_total": {
+        "amount": 52277,
+        "template": 57
     },
-    "infrastructure": 6
+    "good": {
+        "name": "oil",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

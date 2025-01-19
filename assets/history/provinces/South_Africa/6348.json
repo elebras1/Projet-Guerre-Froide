@@ -2,16 +2,22 @@
     "owner": "SAF",
     "controller": "SAF",
     "add_core": "SAF",
-    "oil": 89,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 50774,
-            "template": 4
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "refinery",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 50774,
+        "template": 4
+    },
+    "good": {
+        "name": "oil",
+        "value": 89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

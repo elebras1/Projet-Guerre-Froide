@@ -2,12 +2,18 @@
     "owner": "CHL",
     "controller": "CHL",
     "add_core": "CHL",
-    "fish": 0.13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1116,
-            "template": 82
-        }
+    "population_total": {
+        "amount": 1116,
+        "template": 82
     },
-    "infrastructure": 3
+    "good": {
+        "name": "fish",
+        "value": 0.13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

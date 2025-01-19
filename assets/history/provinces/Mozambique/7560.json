@@ -5,12 +5,18 @@
         "POR",
         "MOZ"
     ],
-    "renewable_energy": 207,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 45061,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 45061,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "renewable_energy",
+        "value": 207
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,13 +2,22 @@
     "owner": "COS",
     "controller": "COS",
     "add_core": "COS",
-    "meat": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 328062,
-            "template": 76
-        }
+    "population_total": {
+        "amount": 328062,
+        "template": 76
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "meat",
+        "value": 8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

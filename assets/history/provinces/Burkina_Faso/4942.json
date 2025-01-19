@@ -5,12 +5,18 @@
         "FRA",
         "BKN"
     ],
-    "vegetables": 12.05,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 68367,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 68367,
+        "template": 5
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 12.05
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

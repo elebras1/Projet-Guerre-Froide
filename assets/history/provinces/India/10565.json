@@ -5,13 +5,22 @@
         "ENG",
         "IND"
     ],
-    "grain": 202.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1511975,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 1511975,
+        "template": 15
     },
-    "infrastructure": 5,
-    "air_base": 2
+    "good": {
+        "name": "grain",
+        "value": 202.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

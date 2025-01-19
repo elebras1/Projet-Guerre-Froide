@@ -7,12 +7,18 @@
         "PAK",
         "IND"
     ],
-    "grain": 243.62,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2145808,
-            "template": 13
-        }
+    "population_total": {
+        "amount": 2145808,
+        "template": 13
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 243.62
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

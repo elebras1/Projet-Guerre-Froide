@@ -5,12 +5,18 @@
         "FRA",
         "GAB"
     ],
-    "fish": 2.58,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 5827,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 5827,
+        "template": 2
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 2.58
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

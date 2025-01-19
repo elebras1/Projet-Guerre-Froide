@@ -2,12 +2,18 @@
     "owner": "OMN",
     "controller": "OMN",
     "add_core": "OMN",
-    "rare_metals": 11.67,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 131301,
-            "template": 38
-        }
+    "population_total": {
+        "amount": 131301,
+        "template": 38
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 11.67
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -5,16 +5,22 @@
     ],
     "owner": "SOV",
     "controller": "SOV",
-    "oil": 75,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 399932,
-            "template": 71
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "refinery",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 399932,
+        "template": 71
+    },
+    "good": {
+        "name": "oil",
+        "value": 75
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

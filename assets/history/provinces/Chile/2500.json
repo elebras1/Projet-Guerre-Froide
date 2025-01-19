@@ -2,13 +2,22 @@
     "owner": "CHL",
     "controller": "CHL",
     "add_core": "CHL",
-    "vegetables": 84.89,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 146386,
-            "template": 82
-        }
+    "population_total": {
+        "amount": 146386,
+        "template": 82
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 84.89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

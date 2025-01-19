@@ -2,8 +2,6 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "grain": 201.63,
-    "naval_base": 2,
     "economy_building": [
         {
             "name": "military_academy",
@@ -14,12 +12,26 @@
             "size": 5
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1562007,
-            "template": 66
-        }
+    "population_total": {
+        "amount": 1562007,
+        "template": 66
     },
-    "infrastructure": 10,
-    "air_base": 7
+    "good": {
+        "name": "grain",
+        "value": 201.63
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 10
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 7
+        }
+    ]
 }

@@ -2,13 +2,6 @@
     "add_core": "HUN",
     "owner": "HUN",
     "controller": "HUN",
-    "grain": 473.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 678735,
-            "template": 48
-        }
-    },
     "economy_building": [
         {
             "name": "university",
@@ -19,5 +12,18 @@
             "size": 4
         }
     ],
-    "infrastructure": 6
+    "population_total": {
+        "amount": 678735,
+        "template": 48
+    },
+    "good": {
+        "name": "grain",
+        "value": 473.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

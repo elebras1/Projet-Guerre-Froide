@@ -2,16 +2,22 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "grain": 55.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 144384,
-            "template": 59
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 7
-    }
+    },
+    "population_total": {
+        "amount": 144384,
+        "template": 59
+    },
+    "good": {
+        "name": "grain",
+        "value": 55.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

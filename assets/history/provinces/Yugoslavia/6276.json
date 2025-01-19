@@ -5,16 +5,22 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "meat": 40,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 492344,
-            "template": 62
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "military_industry",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 492344,
+        "template": 62
+    },
+    "good": {
+        "name": "meat",
+        "value": 40
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

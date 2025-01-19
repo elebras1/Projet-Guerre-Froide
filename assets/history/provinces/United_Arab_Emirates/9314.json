@@ -5,13 +5,22 @@
         "ENG",
         "UAE"
     ],
-    "oil": 62,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 32946,
-            "template": 43
-        }
+    "population_total": {
+        "amount": 32946,
+        "template": 43
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 62
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

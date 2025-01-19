@@ -5,13 +5,6 @@
         "CAN",
         "QUE"
     ],
-    "vegetables": 148.23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 332288,
-            "template": 92
-        }
-    },
     "economy_building": [
         {
             "name": "air_research_center",
@@ -22,5 +15,18 @@
             "size": 7
         }
     ],
-    "infrastructure": 5
+    "population_total": {
+        "amount": 332288,
+        "template": 92
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 148.23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

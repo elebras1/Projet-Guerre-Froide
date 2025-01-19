@@ -2,12 +2,18 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "coal": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 847,
-            "template": 94
-        }
+    "population_total": {
+        "amount": 847,
+        "template": 94
     },
-    "infrastructure": 5
+    "good": {
+        "name": "coal",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

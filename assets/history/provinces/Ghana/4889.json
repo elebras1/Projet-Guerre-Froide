@@ -5,12 +5,18 @@
         "ENG",
         "GHN"
     ],
-    "vegetables": 7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 109717,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 109717,
+        "template": 5
     },
-    "infrastructure": 3
+    "good": {
+        "name": "vegetables",
+        "value": 7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

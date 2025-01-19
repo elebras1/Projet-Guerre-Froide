@@ -2,13 +2,22 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "coal": 5,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1741552,
-            "template": 60
-        }
+    "population_total": {
+        "amount": 1741552,
+        "template": 60
     },
-    "infrastructure": 3
+    "good": {
+        "name": "coal",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

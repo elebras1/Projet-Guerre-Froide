@@ -5,16 +5,22 @@
     ],
     "owner": "ENG",
     "controller": "ENG",
-    "coal": 43,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2517267,
-            "template": 71
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "powerplant",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 2517267,
+        "template": 71
+    },
+    "good": {
+        "name": "coal",
+        "value": 43
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "SOV",
         "TRK"
     ],
-    "meat": 4.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 11478,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 11478,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 4.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

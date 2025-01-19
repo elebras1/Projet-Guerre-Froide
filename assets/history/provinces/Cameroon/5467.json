@@ -5,13 +5,22 @@
         "FRA",
         "CAM"
     ],
-    "oil": 31,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 394693,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 394693,
+        "template": 2
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 31
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

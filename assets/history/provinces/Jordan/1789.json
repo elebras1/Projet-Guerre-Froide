@@ -5,11 +5,14 @@
         "ENG",
         "JOR"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 546,
-            "template": 35
-        }
+    "population_total": {
+        "amount": 546,
+        "template": 35
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

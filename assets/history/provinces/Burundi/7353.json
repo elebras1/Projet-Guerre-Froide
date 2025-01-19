@@ -5,12 +5,18 @@
         "BEL",
         "BRD"
     ],
-    "precious_metals": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 947765,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 947765,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "precious_metals",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

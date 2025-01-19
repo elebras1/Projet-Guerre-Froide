@@ -6,14 +6,26 @@
         "LBY",
         "ITA"
     ],
-    "vegetables": 0.89,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1038,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 1038,
+        "template": 3
     },
-    "infrastructure": 4,
-    "air_base": 1,
-    "naval_base": 1
+    "good": {
+        "name": "vegetables",
+        "value": 0.89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

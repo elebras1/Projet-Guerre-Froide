@@ -5,16 +5,22 @@
         "SOV",
         "RUS"
     ],
-    "grain": 61.15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 96798,
-            "template": 45
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "refinery",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 96798,
+        "template": 45
+    },
+    "good": {
+        "name": "grain",
+        "value": 61.15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "SOV",
         "RUS"
     ],
-    "precious_metals": 7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2192,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 2192,
+        "template": 45
     },
-    "infrastructure": 1
+    "good": {
+        "name": "precious_metals",
+        "value": 7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

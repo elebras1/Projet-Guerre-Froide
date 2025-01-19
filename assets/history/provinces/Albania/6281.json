@@ -2,12 +2,18 @@
     "owner": "ALB",
     "controller": "ALB",
     "add_core": "ALB",
-    "vegetables": 13.039,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 377843,
-            "template": 61
-        }
+    "population_total": {
+        "amount": 377843,
+        "template": 61
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 13.039
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "SOV",
     "controller": "SOV",
     "add_core": "PER",
-    "vegetables": 19.66,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 114184,
-            "template": 16
-        }
+    "population_total": {
+        "amount": 114184,
+        "template": 16
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 19.66
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

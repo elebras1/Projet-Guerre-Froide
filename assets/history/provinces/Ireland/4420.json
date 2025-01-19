@@ -2,13 +2,22 @@
     "owner": "IRE",
     "controller": "IRE",
     "add_core": "IRE",
-    "meat": 23.49,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 196911,
-            "template": 55
-        }
+    "population_total": {
+        "amount": 196911,
+        "template": 55
     },
-    "infrastructure": 6,
-    "naval_base": 2
+    "good": {
+        "name": "meat",
+        "value": 23.49
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

@@ -6,12 +6,18 @@
         "LBY",
         "ITA"
     ],
-    "fruits": 1.81,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 17957,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 17957,
+        "template": 3
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 1.81
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

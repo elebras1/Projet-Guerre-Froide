@@ -5,13 +5,22 @@
         "SPA",
         "MOR"
     ],
-    "vegetables": 21.54,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 217192,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 217192,
+        "template": 3
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "vegetables",
+        "value": 21.54
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

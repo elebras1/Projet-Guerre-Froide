@@ -2,12 +2,18 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "vegetables": 27.13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1454,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 1454,
+        "template": 93
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 27.13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

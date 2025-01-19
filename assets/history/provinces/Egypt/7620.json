@@ -2,12 +2,18 @@
     "owner": "EGY",
     "controller": "EGY",
     "add_core": "EGY",
-    "oil": 99,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 21950,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 21950,
+        "template": 3
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 99
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

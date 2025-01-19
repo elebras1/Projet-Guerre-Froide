@@ -5,12 +5,18 @@
         "FRA",
         "TUN"
     ],
-    "fruits": 1.25,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 76400,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 76400,
+        "template": 3
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 1.25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

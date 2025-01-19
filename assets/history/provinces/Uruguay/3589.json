@@ -2,16 +2,22 @@
     "owner": "URU",
     "controller": "URU",
     "add_core": "URU",
-    "precious_metals": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 116622,
-            "template": 90
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 116622,
+        "template": 90
+    },
+    "good": {
+        "name": "precious_metals",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

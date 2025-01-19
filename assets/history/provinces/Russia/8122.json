@@ -5,16 +5,22 @@
         "SOV",
         "RUS"
     ],
-    "coal": 4,
     "economy_building": {
         "name": "intelligence_center",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 183247,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 183247,
+        "template": 45
     },
-    "infrastructure": 8
+    "good": {
+        "name": "coal",
+        "value": 4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

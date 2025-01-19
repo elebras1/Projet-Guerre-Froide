@@ -2,17 +2,26 @@
     "owner": "HON",
     "controller": "HON",
     "add_core": "HON",
-    "fruits": 7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 344750,
-            "template": 76
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "military_industry",
         "size": 2
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 344750,
+        "template": 76
+    },
+    "good": {
+        "name": "fruits",
+        "value": 7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

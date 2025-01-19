@@ -2,12 +2,18 @@
     "owner": "SAF",
     "controller": "SAF",
     "add_core": "SAF",
-    "coal": 7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 41158,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 41158,
+        "template": 4
     },
-    "infrastructure": 6
+    "good": {
+        "name": "coal",
+        "value": 7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

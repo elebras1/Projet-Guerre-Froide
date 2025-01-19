@@ -5,12 +5,18 @@
         "ENG",
         "GAM"
     ],
-    "vegetables": 7.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 123325,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 123325,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 7.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

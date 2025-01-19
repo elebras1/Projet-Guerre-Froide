@@ -5,13 +5,22 @@
         "HOL",
         "SUR"
     ],
-    "oil": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 27821,
-            "template": 89
-        }
+    "population_total": {
+        "amount": 27821,
+        "template": 89
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "oil",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

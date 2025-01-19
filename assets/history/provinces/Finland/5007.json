@@ -2,16 +2,22 @@
     "owner": "FIN",
     "controller": "FIN",
     "add_core": "FIN",
-    "wood": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 20053,
-            "template": 53
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "naval_yards",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 20053,
+        "template": 53
+    },
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

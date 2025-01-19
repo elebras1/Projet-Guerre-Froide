@@ -5,12 +5,18 @@
         "SOV",
         "RUS"
     ],
-    "grain": 42.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 66967,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 66967,
+        "template": 45
     },
-    "infrastructure": 5
+    "good": {
+        "name": "grain",
+        "value": 42.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

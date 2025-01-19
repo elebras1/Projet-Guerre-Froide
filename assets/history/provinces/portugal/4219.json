@@ -2,14 +2,26 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "fruits": 68,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 0,
-            "template": 66
-        }
+    "population_total": {
+        "amount": 0,
+        "template": 66
     },
-    "infrastructure": 6,
-    "air_base": 4
+    "good": {
+        "name": "fruits",
+        "value": 68
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

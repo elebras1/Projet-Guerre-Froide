@@ -5,17 +5,26 @@
         "SOV",
         "RUS"
     ],
-    "renewable_energy": 257,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 52295,
-            "template": 45
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "military_industry",
         "size": 1
     },
-    "air_base": 8
+    "population_total": {
+        "amount": 52295,
+        "template": 45
+    },
+    "good": {
+        "name": "renewable_energy",
+        "value": 257
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 8
+        }
+    ]
 }

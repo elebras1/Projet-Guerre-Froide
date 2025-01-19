@@ -2,17 +2,26 @@
     "owner": "SAL",
     "controller": "SAL",
     "add_core": "SAL",
-    "meat": 30,
-    "naval_base": 2,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1365803,
-            "template": 76
-        }
+    "population_total": {
+        "amount": 1365803,
+        "template": 76
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 30
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

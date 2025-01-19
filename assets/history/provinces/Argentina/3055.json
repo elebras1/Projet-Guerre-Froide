@@ -2,16 +2,22 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "fruits": 34.42,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 132446,
-            "template": 79
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "heavy_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 132446,
+        "template": 79
+    },
+    "good": {
+        "name": "fruits",
+        "value": 34.42
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

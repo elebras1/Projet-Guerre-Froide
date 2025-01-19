@@ -2,18 +2,30 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "meat": 186.22,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 842934,
-            "template": 60
-        }
+    "population_total": {
+        "amount": 842934,
+        "template": 60
     },
-    "infrastructure": 5,
-    "air_base": 8,
-    "naval_base": 1
+    "good": {
+        "name": "meat",
+        "value": 186.22
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 8
+        }
+    ]
 }

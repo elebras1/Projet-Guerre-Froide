@@ -2,14 +2,6 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "oil": 223,
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 471646,
-            "template": 60
-        }
-    },
     "economy_building": [
         {
             "name": "air_research_center",
@@ -20,5 +12,22 @@
             "size": 6
         }
     ],
-    "infrastructure": 5
+    "population_total": {
+        "amount": 471646,
+        "template": 60
+    },
+    "good": {
+        "name": "oil",
+        "value": 223
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

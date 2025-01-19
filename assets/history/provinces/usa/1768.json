@@ -2,7 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "wood": 1,
     "economy_building": [
         {
             "name": "financial_district",
@@ -13,11 +12,18 @@
             "size": 10
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1651521,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 1651521,
+        "template": 93
     },
-    "infrastructure": 9
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 9
+        }
+    ]
 }

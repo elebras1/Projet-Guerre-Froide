@@ -2,12 +2,18 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "wood": 0.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1339,
-            "template": 94
-        }
+    "population_total": {
+        "amount": 1339,
+        "template": 94
     },
-    "infrastructure": 5
+    "good": {
+        "name": "wood",
+        "value": 0.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

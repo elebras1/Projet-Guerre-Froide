@@ -5,12 +5,18 @@
         "FRA",
         "GUI"
     ],
-    "precious_metals": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 83697,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 83697,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "precious_metals",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

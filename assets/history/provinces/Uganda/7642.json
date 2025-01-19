@@ -5,12 +5,18 @@
         "ENG",
         "UGD"
     ],
-    "meat": 11.74,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 106709,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 106709,
+        "template": 1
     },
-    "infrastructure": 1
+    "good": {
+        "name": "meat",
+        "value": 11.74
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

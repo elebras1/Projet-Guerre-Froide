@@ -5,12 +5,18 @@
         "POR",
         "MOZ"
     ],
-    "vegetables": 8.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 55010,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 55010,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 8.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

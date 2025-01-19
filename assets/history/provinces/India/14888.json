@@ -5,17 +5,26 @@
         "ENG",
         "IND"
     ],
-    "wood": 0.26,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2314467,
-            "template": 15
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 4
     },
-    "air_base": 3
+    "population_total": {
+        "amount": 2314467,
+        "template": 15
+    },
+    "good": {
+        "name": "wood",
+        "value": 0.26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

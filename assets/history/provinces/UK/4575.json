@@ -2,13 +2,22 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 13704,
-            "template": 60
-        }
+    "population_total": {
+        "amount": 13704,
+        "template": 60
     },
-    "infrastructure": 5,
-    "air_base": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

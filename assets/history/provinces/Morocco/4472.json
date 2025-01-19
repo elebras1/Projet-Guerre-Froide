@@ -5,17 +5,26 @@
         "FRA",
         "MOR"
     ],
-    "fruits": 60.54,
-    "air_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 594083,
-            "template": 3
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 594083,
+        "template": 3
+    },
+    "good": {
+        "name": "fruits",
+        "value": 60.54
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

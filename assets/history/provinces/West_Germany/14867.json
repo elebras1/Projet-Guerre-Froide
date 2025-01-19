@@ -6,17 +6,26 @@
     ],
     "owner": "WBR",
     "controller": "WBR",
-    "grain": 7.72,
     "economy_building": {
         "name": "national_monument",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2502263,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 2502263,
+        "template": 71
     },
-    "infrastructure": 2,
-    "air_base": 6
+    "good": {
+        "name": "grain",
+        "value": 7.72
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 6
+        }
+    ]
 }

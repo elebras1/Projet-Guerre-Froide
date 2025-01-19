@@ -5,18 +5,30 @@
         "SOV",
         "RUS"
     ],
-    "air_base": 4,
-    "meat": 184.29,
-    "naval_base": 8,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 288915,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 288915,
+        "template": 45
     },
-    "infrastructure": 9
+    "good": {
+        "name": "meat",
+        "value": 184.29
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 9
+        },
+        {
+            "name": "naval_base",
+            "size": 8
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

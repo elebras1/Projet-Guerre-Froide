@@ -2,7 +2,6 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "grain": 88.07,
     "economy_building": [
         {
             "name": "financial_district",
@@ -13,11 +12,18 @@
             "size": 4
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 279111,
-            "template": 79
-        }
+    "population_total": {
+        "amount": 279111,
+        "template": 79
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 88.07
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "SOV",
         "UZB"
     ],
-    "grain": 9.96,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 56103,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 56103,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 9.96
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

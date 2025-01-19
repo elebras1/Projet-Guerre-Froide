@@ -5,12 +5,18 @@
         "AST",
         "PAG"
     ],
-    "meat": 1.29,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1391,
-            "template": 96
-        }
+    "population_total": {
+        "amount": 1391,
+        "template": 96
     },
-    "infrastructure": 1
+    "good": {
+        "name": "meat",
+        "value": 1.29
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

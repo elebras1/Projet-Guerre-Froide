@@ -2,16 +2,22 @@
     "owner": "SAL",
     "controller": "SAL",
     "add_core": "SAL",
-    "fruits": 38,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 302251,
-            "template": 76
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "powerplant",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 302251,
+        "template": 76
+    },
+    "good": {
+        "name": "fruits",
+        "value": 38
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

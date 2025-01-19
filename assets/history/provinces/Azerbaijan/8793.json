@@ -5,12 +5,18 @@
         "SOV",
         "AZB"
     ],
-    "fruits": 39.62,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 155964,
-            "template": 30
-        }
+    "population_total": {
+        "amount": 155964,
+        "template": 30
     },
-    "infrastructure": 5
+    "good": {
+        "name": "fruits",
+        "value": 39.62
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

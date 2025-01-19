@@ -2,12 +2,18 @@
     "owner": "SOV",
     "controller": "SOV",
     "add_core": "PER",
-    "rare_metals": 10.46,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 69597,
-            "template": 16
-        }
+    "population_total": {
+        "amount": 69597,
+        "template": 16
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 10.46
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

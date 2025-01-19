@@ -6,12 +6,18 @@
         "FRA",
         "MOR"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 43145,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 43145,
+        "template": 3
     },
-    "infrastructure": 2,
-    "naval_base": 1
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

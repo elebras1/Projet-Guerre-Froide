@@ -2,11 +2,14 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 6619,
-            "template": 79
-        }
+    "population_total": {
+        "amount": 6619,
+        "template": 79
     },
-    "infrastructure": 3
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

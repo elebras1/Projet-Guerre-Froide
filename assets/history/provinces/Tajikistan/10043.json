@@ -5,12 +5,18 @@
         "SOV",
         "TAJ"
     ],
-    "grain": 4.55,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 39860,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 39860,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 4.55
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

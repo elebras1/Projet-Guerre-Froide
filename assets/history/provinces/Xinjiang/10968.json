@@ -6,12 +6,18 @@
         "CHC",
         "SIK"
     ],
-    "vegetables": 5.47,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 21088,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 21088,
+        "template": 6
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 5.47
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "SOV",
         "KAZ"
     ],
-    "coal": 19,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1319,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 1319,
+        "template": 11
     },
-    "infrastructure": 6
+    "good": {
+        "name": "coal",
+        "value": 19
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

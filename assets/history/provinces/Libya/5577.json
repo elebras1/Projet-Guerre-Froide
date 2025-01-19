@@ -6,17 +6,26 @@
         "LBY",
         "ITA"
     ],
-    "fruits": 2.15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 64839,
-            "template": 3
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "military_industry",
         "size": 1
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 64839,
+        "template": 3
+    },
+    "good": {
+        "name": "fruits",
+        "value": 2.15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "wood": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1064,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 1064,
+        "template": 92
     },
-    "infrastructure": 4
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

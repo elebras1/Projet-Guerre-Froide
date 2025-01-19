@@ -2,16 +2,22 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "grain": 77.99,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 73506,
-            "template": 93
-        }
-    },
     "economy_building": {
         "name": "strategical_storage",
         "size": 1
     },
-    "infrastructure": 6
+    "population_total": {
+        "amount": 73506,
+        "template": 93
+    },
+    "good": {
+        "name": "grain",
+        "value": 77.99
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

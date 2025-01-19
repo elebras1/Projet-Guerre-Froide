@@ -2,12 +2,18 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "rare_metals": 27.17,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 719,
-            "template": 94
-        }
+    "population_total": {
+        "amount": 719,
+        "template": 94
     },
-    "infrastructure": 1
+    "good": {
+        "name": "rare_metals",
+        "value": 27.17
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

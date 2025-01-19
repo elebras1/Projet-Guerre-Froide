@@ -2,8 +2,6 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "meat": 515.45,
-    "naval_base": 3,
     "economy_building": [
         {
             "name": "military_academy",
@@ -14,11 +12,22 @@
             "size": 4
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3275633,
-            "template": 64
-        }
+    "population_total": {
+        "amount": 3275633,
+        "template": 64
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 515.45
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

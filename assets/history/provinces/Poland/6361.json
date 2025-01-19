@@ -2,7 +2,6 @@
     "owner": "POL",
     "controller": "POL",
     "add_core": "POL",
-    "grain": 534.57,
     "economy_building": [
         {
             "name": "military_academy",
@@ -13,12 +12,22 @@
             "size": 5
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 503544,
-            "template": 49
-        }
+    "population_total": {
+        "amount": 503544,
+        "template": 49
     },
-    "infrastructure": 6,
-    "air_base": 5
+    "good": {
+        "name": "grain",
+        "value": 534.57
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "SAF",
         "NAM"
     ],
-    "meat": 0.89,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1563,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 1563,
+        "template": 4
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 0.89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

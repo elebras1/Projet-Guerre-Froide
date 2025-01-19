@@ -2,16 +2,22 @@
     "owner": "CHL",
     "controller": "CHL",
     "add_core": "CHL",
-    "iron": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 50844,
-            "template": 82
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 50844,
+        "template": 82
+    },
+    "good": {
+        "name": "iron",
+        "value": 6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

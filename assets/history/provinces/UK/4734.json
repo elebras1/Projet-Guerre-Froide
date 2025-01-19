@@ -2,14 +2,26 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "wood": 0.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 883285,
-            "template": 60
-        }
+    "population_total": {
+        "amount": 883285,
+        "template": 60
     },
-    "infrastructure": 6,
-    "air_base": 9,
-    "naval_base": 1
+    "good": {
+        "name": "wood",
+        "value": 0.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 9
+        }
+    ]
 }

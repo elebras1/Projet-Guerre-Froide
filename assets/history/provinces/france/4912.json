@@ -2,12 +2,18 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "vegetables": 25.81,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 115649,
-            "template": 70
-        }
+    "population_total": {
+        "amount": 115649,
+        "template": 70
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 25.81
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

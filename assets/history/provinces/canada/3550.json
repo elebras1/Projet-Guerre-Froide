@@ -2,12 +2,18 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "grain": 6.27,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 9194,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 9194,
+        "template": 92
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 6.27
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ITA",
         "SOM"
     ],
-    "meat": 1.99,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 33189,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 33189,
+        "template": 1
     },
-    "infrastructure": 3
+    "good": {
+        "name": "meat",
+        "value": 1.99
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

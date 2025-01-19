@@ -2,16 +2,22 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "meat": 150,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 304331,
-            "template": 50
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "military_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 304331,
+        "template": 50
+    },
+    "good": {
+        "name": "meat",
+        "value": 150
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

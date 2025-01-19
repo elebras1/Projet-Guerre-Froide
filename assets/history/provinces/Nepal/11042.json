@@ -2,16 +2,22 @@
     "owner": "NEP",
     "controller": "NEP",
     "add_core": "NEP",
-    "vegetables": 28.05,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 890514,
-            "template": 17
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 890514,
+        "template": 17
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 28.05
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

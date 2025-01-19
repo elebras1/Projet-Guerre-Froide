@@ -5,17 +5,26 @@
     ],
     "owner": "SOV",
     "controller": "SOV",
-    "grain": 117.54,
-    "air_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 170702,
-            "template": 45
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 170702,
+        "template": 45
+    },
+    "good": {
+        "name": "grain",
+        "value": 117.54
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

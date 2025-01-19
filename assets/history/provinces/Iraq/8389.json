@@ -2,12 +2,18 @@
     "owner": "IRQ",
     "controller": "IRQ",
     "add_core": "IRQ",
-    "meat": 5.19,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 30123,
-            "template": 33
-        }
+    "population_total": {
+        "amount": 30123,
+        "template": 33
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 5.19
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,13 +2,22 @@
     "owner": "PAN",
     "controller": "PAN",
     "add_core": "PAN",
-    "fish": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 153229,
-            "template": 76
-        }
+    "population_total": {
+        "amount": 153229,
+        "template": 76
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "fish",
+        "value": 8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

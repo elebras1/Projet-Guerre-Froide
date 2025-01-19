@@ -2,13 +2,22 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "EGY",
-    "fish": 260.19,
-    "naval_base": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 837780,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 837780,
+        "template": 3
     },
-    "infrastructure": 6
+    "good": {
+        "name": "fish",
+        "value": 260.19
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 5
+        }
+    ]
 }

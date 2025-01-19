@@ -2,12 +2,18 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "precious_metals": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 813,
-            "template": 91
-        }
+    "population_total": {
+        "amount": 813,
+        "template": 91
     },
-    "infrastructure": 4
+    "good": {
+        "name": "precious_metals",
+        "value": 4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

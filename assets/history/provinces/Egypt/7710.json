@@ -2,12 +2,18 @@
     "owner": "EGY",
     "controller": "EGY",
     "add_core": "EGY",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3535,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 3535,
+        "template": 3
     },
-    "infrastructure": 1,
-    "naval_base": 1
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "POR",
         "ANG"
     ],
-    "vegetables": 2.26,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1379,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 1379,
+        "template": 2
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 2.26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

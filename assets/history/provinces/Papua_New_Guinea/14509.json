@@ -5,12 +5,18 @@
         "AST",
         "PAG"
     ],
-    "fruits": 11.11,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 77268,
-            "template": 96
-        }
+    "population_total": {
+        "amount": 77268,
+        "template": 96
     },
-    "infrastructure": 1
+    "good": {
+        "name": "fruits",
+        "value": 11.11
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

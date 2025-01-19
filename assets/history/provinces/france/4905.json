@@ -2,17 +2,26 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "fruits": 151.4,
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 259041,
-            "template": 70
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "aviation_industry",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 259041,
+        "template": 70
+    },
+    "good": {
+        "name": "fruits",
+        "value": 151.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

@@ -2,13 +2,22 @@
     "add_core": "AUS",
     "owner": "SOV",
     "controller": "SOV",
-    "fruits": 211,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 711212,
-            "template": 68
-        }
+    "population_total": {
+        "amount": 711212,
+        "template": 68
     },
-    "infrastructure": 6,
-    "air_base": 5
+    "good": {
+        "name": "fruits",
+        "value": 211
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

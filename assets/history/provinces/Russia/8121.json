@@ -5,16 +5,22 @@
         "SOV",
         "RUS"
     ],
-    "wood": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 280350,
-            "template": 45
-        }
-    },
     "economy_building": {
         "name": "land_research_center",
         "size": 1
     },
-    "infrastructure": 8
+    "population_total": {
+        "amount": 280350,
+        "template": 45
+    },
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

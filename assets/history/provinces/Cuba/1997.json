@@ -2,18 +2,30 @@
     "owner": "CUB",
     "controller": "CUB",
     "add_core": "CUB",
-    "vegetables": 60.63,
-    "naval_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1257904,
-            "template": 75
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 5
     },
-    "air_base": 4
+    "population_total": {
+        "amount": 1257904,
+        "template": 75
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 60.63
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 4
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

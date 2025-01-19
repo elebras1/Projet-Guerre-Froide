@@ -5,13 +5,22 @@
         "KOR",
         "PRK"
     ],
-    "vegetables": 60.51,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 470017,
-            "template": 7
-        }
+    "population_total": {
+        "amount": 470017,
+        "template": 7
     },
-    "infrastructure": 5,
-    "naval_base": 2
+    "good": {
+        "name": "vegetables",
+        "value": 60.51
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

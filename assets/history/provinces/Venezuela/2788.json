@@ -2,13 +2,22 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "vegetables": 79.89,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 622922,
-            "template": 91
-        }
+    "population_total": {
+        "amount": 622922,
+        "template": 91
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 79.89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -5,8 +5,6 @@
         "CHI",
         "CHC"
     ],
-    "vegetables": 913.19,
-    "naval_base": 10,
     "economy_building": [
         {
             "name": "financial_district",
@@ -17,11 +15,22 @@
             "size": 6
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 7316045,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 7316045,
+        "template": 6
     },
-    "infrastructure": 7
+    "good": {
+        "name": "vegetables",
+        "value": 913.19
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "naval_base",
+            "size": 10
+        }
+    ]
 }

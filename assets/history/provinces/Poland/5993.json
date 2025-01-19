@@ -2,12 +2,18 @@
     "add_core": "POL",
     "owner": "POL",
     "controller": "POL",
-    "precious_metals": 29,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 471166,
-            "template": 49
-        }
+    "population_total": {
+        "amount": 471166,
+        "template": 49
     },
-    "infrastructure": 4
+    "good": {
+        "name": "precious_metals",
+        "value": 29
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

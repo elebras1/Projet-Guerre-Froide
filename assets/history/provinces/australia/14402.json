@@ -2,12 +2,18 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "fruits": 4.33,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1197,
-            "template": 94
-        }
+    "population_total": {
+        "amount": 1197,
+        "template": 94
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 4.33
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

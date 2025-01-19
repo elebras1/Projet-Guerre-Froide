@@ -5,13 +5,22 @@
         "ENG",
         "SCL"
     ],
-    "fruits": 0.16,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 32923,
-            "template": 103
-        }
+    "population_total": {
+        "amount": 32923,
+        "template": 103
     },
-    "infrastructure": 5
+    "good": {
+        "name": "fruits",
+        "value": 0.16
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -6,11 +6,14 @@
         "CHI",
         "CHC"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 13271,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 13271,
+        "template": 6
     },
-    "infrastructure": 1
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

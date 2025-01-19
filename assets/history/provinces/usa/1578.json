@@ -2,17 +2,26 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "oil": 367,
-    "air_base": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 407854,
-            "template": 93
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "refinery",
         "size": 10
-    }
+    },
+    "population_total": {
+        "amount": 407854,
+        "template": 93
+    },
+    "good": {
+        "name": "oil",
+        "value": 367
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 8
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "PAK"
     ],
-    "wood": 0.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 713591,
-            "template": 18
-        }
+    "population_total": {
+        "amount": 713591,
+        "template": 18
     },
-    "infrastructure": 4
+    "good": {
+        "name": "wood",
+        "value": 0.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -6,16 +6,22 @@
         "ZIM",
         "RHO"
     ],
-    "meat": 47.33,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 103250,
-            "template": 1
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "powerplant",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 103250,
+        "template": 1
+    },
+    "good": {
+        "name": "meat",
+        "value": 47.33
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

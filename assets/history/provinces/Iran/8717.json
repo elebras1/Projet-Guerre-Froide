@@ -2,12 +2,18 @@
     "owner": "PER",
     "controller": "PER",
     "add_core": "PER",
-    "vegetables": 14.77,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 92711,
-            "template": 16
-        }
+    "population_total": {
+        "amount": 92711,
+        "template": 16
     },
-    "infrastructure": 5
+    "good": {
+        "name": "vegetables",
+        "value": 14.77
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

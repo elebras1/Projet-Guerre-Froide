@@ -5,12 +5,18 @@
         "SOV",
         "KAZ"
     ],
-    "grain": 22.79,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 10654,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 10654,
+        "template": 11
     },
-    "infrastructure": 5
+    "good": {
+        "name": "grain",
+        "value": 22.79
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

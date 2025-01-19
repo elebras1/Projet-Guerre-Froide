@@ -2,13 +2,22 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "uranium": 50,
-    "air_base": 10,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1346499,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 1346499,
+        "template": 93
     },
-    "infrastructure": 5
+    "good": {
+        "name": "uranium",
+        "value": 50
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 10
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "KEN"
     ],
-    "grain": 3.26,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 13670,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 13670,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 3.26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "rare_metals": 22.72,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1537,
-            "template": 79
-        }
+    "population_total": {
+        "amount": 1537,
+        "template": 79
     },
-    "infrastructure": 2
+    "good": {
+        "name": "rare_metals",
+        "value": 22.72
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

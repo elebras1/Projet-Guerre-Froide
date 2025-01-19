@@ -2,14 +2,26 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "oil": 72,
-    "naval_base": 5,
-    "air_base": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3494704,
-            "template": 8
-        }
+    "population_total": {
+        "amount": 3494704,
+        "template": 8
     },
-    "infrastructure": 5
+    "good": {
+        "name": "oil",
+        "value": 72
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 8
+        }
+    ]
 }

@@ -2,13 +2,22 @@
     "owner": "SAL",
     "controller": "SAL",
     "add_core": "SAL",
-    "grain": 19.321,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 446418,
-            "template": 76
-        }
+    "population_total": {
+        "amount": 446418,
+        "template": 76
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "grain",
+        "value": 19.321
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

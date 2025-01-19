@@ -5,12 +5,18 @@
         "SOV",
         "KAZ"
     ],
-    "uranium": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1560,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 1560,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "uranium",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

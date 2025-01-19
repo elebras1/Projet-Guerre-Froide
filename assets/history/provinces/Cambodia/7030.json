@@ -5,12 +5,18 @@
         "IDC",
         "CMB"
     ],
-    "grain": 10.44,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 281186,
-            "template": 20
-        }
+    "population_total": {
+        "amount": 281186,
+        "template": 20
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 10.44
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

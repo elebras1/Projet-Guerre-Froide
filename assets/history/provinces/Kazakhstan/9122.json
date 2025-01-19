@@ -5,16 +5,22 @@
         "SOV",
         "KAZ"
     ],
-    "grain": 84.43,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 66497,
-            "template": 11
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "refinery",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 66497,
+        "template": 11
+    },
+    "good": {
+        "name": "grain",
+        "value": 84.43
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

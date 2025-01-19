@@ -2,12 +2,18 @@
     "owner": "MON",
     "controller": "MON",
     "add_core": "MON",
-    "precious_metals": 10,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 20640,
-            "template": 9
-        }
+    "population_total": {
+        "amount": 20640,
+        "template": 9
     },
-    "infrastructure": 2
+    "good": {
+        "name": "precious_metals",
+        "value": 10
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

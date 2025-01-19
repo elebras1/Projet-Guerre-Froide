@@ -5,12 +5,18 @@
         "FRA",
         "SEN"
     ],
-    "fruits": 6.34,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 46994,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 46994,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 6.34
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

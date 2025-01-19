@@ -5,12 +5,18 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "meat": 100,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1010750,
-            "template": 47
-        }
+    "population_total": {
+        "amount": 1010750,
+        "template": 47
     },
-    "infrastructure": 5
+    "good": {
+        "name": "meat",
+        "value": 100
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

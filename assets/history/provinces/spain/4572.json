@@ -2,16 +2,22 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "wood": 0.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 144245,
-            "template": 67
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "refinery",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 144245,
+        "template": 67
+    },
+    "good": {
+        "name": "wood",
+        "value": 0.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

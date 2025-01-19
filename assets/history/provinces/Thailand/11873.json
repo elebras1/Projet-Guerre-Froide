@@ -2,18 +2,30 @@
     "owner": "SIA",
     "controller": "SIA",
     "add_core": "SIA",
-    "grain": 747.91,
-    "naval_base": 2,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2961952,
-            "template": 27
-        }
+    "population_total": {
+        "amount": 2961952,
+        "template": 27
     },
-    "infrastructure": 6,
-    "air_base": 3
+    "good": {
+        "name": "grain",
+        "value": 747.91
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

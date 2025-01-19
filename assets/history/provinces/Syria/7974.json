@@ -2,12 +2,18 @@
     "owner": "SYR",
     "controller": "SYR",
     "add_core": "SYR",
-    "fruits": 12.27,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 46471,
-            "template": 41
-        }
+    "population_total": {
+        "amount": 46471,
+        "template": 41
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 12.27
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

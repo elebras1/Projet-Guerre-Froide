@@ -2,15 +2,18 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 7113,
-            "template": 58
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "powerplant",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 7113,
+        "template": 58
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

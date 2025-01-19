@@ -2,12 +2,18 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "grain": 298.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1080187,
-            "template": 73
-        }
+    "population_total": {
+        "amount": 1080187,
+        "template": 73
     },
-    "infrastructure": 7
+    "good": {
+        "name": "grain",
+        "value": 298.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        }
+    ]
 }

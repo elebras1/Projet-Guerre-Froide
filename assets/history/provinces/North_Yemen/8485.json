@@ -5,13 +5,22 @@
         "YEM",
         "NYE"
     ],
-    "grain": 9.82,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 312650,
-            "template": 44
-        }
+    "population_total": {
+        "amount": 312650,
+        "template": 44
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 9.82
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

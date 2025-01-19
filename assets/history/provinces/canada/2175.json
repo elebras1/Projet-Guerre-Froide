@@ -2,7 +2,6 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "grain": 38.8,
     "economy_building": [
         {
             "name": "military_academy",
@@ -13,11 +12,18 @@
             "size": 7
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 68762,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 68762,
+        "template": 92
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 38.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

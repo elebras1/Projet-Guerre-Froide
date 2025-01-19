@@ -2,12 +2,18 @@
     "owner": "SAU",
     "controller": "SAU",
     "add_core": "SAU",
-    "meat": 5.76,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 51168,
-            "template": 40
-        }
+    "population_total": {
+        "amount": 51168,
+        "template": 40
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 5.76
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

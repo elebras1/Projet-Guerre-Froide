@@ -2,17 +2,26 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "grain": 176.11,
-    "air_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 391757,
-            "template": 92
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 391757,
+        "template": 92
+    },
+    "good": {
+        "name": "grain",
+        "value": 176.11
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "SAF",
         "NAM"
     ],
-    "uranium": 108.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1192,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 1192,
+        "template": 4
     },
-    "infrastructure": 4
+    "good": {
+        "name": "uranium",
+        "value": 108.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,16 +2,22 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "oil": 57,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 127391,
-            "template": 77
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 127391,
+        "template": 77
+    },
+    "good": {
+        "name": "oil",
+        "value": 57
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

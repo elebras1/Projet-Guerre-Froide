@@ -5,12 +5,18 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "renewable_energy": 109,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 514675,
-            "template": 62
-        }
+    "population_total": {
+        "amount": 514675,
+        "template": 62
     },
-    "infrastructure": 3
+    "good": {
+        "name": "renewable_energy",
+        "value": 109
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

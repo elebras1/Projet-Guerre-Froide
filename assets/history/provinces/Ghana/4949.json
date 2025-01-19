@@ -5,13 +5,22 @@
         "ENG",
         "GHN"
     ],
-    "fish": 29,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 659614,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 659614,
+        "template": 5
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "fish",
+        "value": 29
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

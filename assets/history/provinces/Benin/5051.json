@@ -5,13 +5,22 @@
         "FRA",
         "BEN"
     ],
-    "grain": 25,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 819228,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 819228,
+        "template": 5
     },
-    "infrastructure": 4,
-    "naval_base": 2
+    "good": {
+        "name": "grain",
+        "value": 25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

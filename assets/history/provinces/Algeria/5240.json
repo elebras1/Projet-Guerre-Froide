@@ -5,12 +5,18 @@
         "FRA",
         "ALG"
     ],
-    "air_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 65042,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 65042,
+        "template": 3
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

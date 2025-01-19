@@ -3,12 +3,12 @@ package com.populaire.projetguerrefroide.data;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.tommyettinger.ds.IntObjectMap;
+import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.economy.population.Population;
@@ -28,6 +28,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class DataManager {
@@ -66,7 +67,7 @@ public class DataManager {
 
     public World createWorldThreadSafe(GameEntities gameEntities, AsyncExecutor asyncExecutor) {
         Map<String, Country> countries = this.loadCountries(gameEntities.getMinisterTypes(), gameEntities.getIdeologies());
-        IntObjectMap<Province> provinces = this.loadProvinces(countries, gameEntities.getPopulationTypes(), gameEntities.getNationalIdeas(), gameEntities.getGovernments(), gameEntities.getIdeologies());
+        IntObjectMap<Province> provinces = this.loadProvinces(countries, gameEntities.getPopulationTypes(), gameEntities.getNationalIdeas(), gameEntities.getGovernments(), gameEntities.getIdeologies(), gameEntities);
 
         AtomicReference<World> worldRef = new AtomicReference<>();
         final CountDownLatch latch = new CountDownLatch(1);
@@ -89,10 +90,11 @@ public class DataManager {
         return this.readCountriesJson(ministerTypes, ideologies);
     }
 
-    private IntObjectMap<Province> loadProvinces(Map<String, Country> countries, IntObjectMap<PopulationType> populationTypes, NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies) {
+    private IntObjectMap<Province> loadProvinces(Map<String, Country> countries, IntObjectMap<PopulationType> populationTypes, NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies, GameEntities gameEntities) {
         IntObjectMap<Province> provincesByColor = new IntObjectMap<>(20000);
-        IntMap<Province> provinces = this.readProvincesJson(countries, populationTypes);
-        this.readRegionJson(provinces);
+        IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince = new IntObjectMap<>();
+        IntObjectMap<Province> provinces = this.readProvincesJson(countries, populationTypes, gameEntities, regionBuildingsByProvince);
+        this.readRegionJson(provinces, regionBuildingsByProvince);
         this.readDefinitionCsv(provinces, provincesByColor);
         this.readProvinceBitmap(provincesByColor);
         this.readCountriesHistoryJson(countries, provinces, nationalIdeas, governments, ideologies);
@@ -171,14 +173,14 @@ public class DataManager {
         return (red << 24) | (green << 16) | (blue << 8) | alpha;
     }
 
-    private IntMap<Province> readProvincesJson(Map<String, Country> countries, IntObjectMap<PopulationType> populationTypes) {
-        IntMap<Province> provinces = new IntMap<>(20000);
+    private IntObjectMap<Province> readProvincesJson(Map<String, Country> countries, IntObjectMap<PopulationType> populationTypes, GameEntities gameEntities, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince) {
+        IntObjectMap<Province> provinces = new IntObjectMap<>(20000);
         try {
             JsonNode provincesJson = this.openJson(this.provincesJsonFile);
             provincesJson.fields().forEachRemaining(entry -> {
                 String provinceFileName = this.historyPath + entry.getValue().asText();
                 short provinceId = Short.parseShort(entry.getKey());
-                Province province = this.readProvinceJson(countries, provinceFileName, provinceId, populationTypes);
+                Province province = this.readProvinceJson(countries, provinceFileName, provinceId, populationTypes, gameEntities, regionBuildingsByProvince);
                 provinces.put(provinceId, province);
             });
         } catch (IOException e) {
@@ -188,29 +190,80 @@ public class DataManager {
         return provinces;
     }
 
-    private LandProvince readProvinceJson(Map<String, Country> countries, String provinceFileName, short provinceId, IntObjectMap<PopulationType> populationTypes) {
+    private LandProvince readProvinceJson(Map<String, Country> countries, String provinceFileName, short provinceId, IntObjectMap<PopulationType> populationTypes, GameEntities gameEntities, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince) {
         try {
             JsonNode rootNode = this.openJson(provinceFileName);
-            String owner = rootNode.path("owner").asText();
-            String controller = rootNode.path("controller").asText();
+
+            List<Country> countriesCore = new ObjectList<>();
+            JsonNode addCoreNode = rootNode.get("add_core");
+            if (addCoreNode.isArray()) {
+                addCoreNode.forEach(countryCore -> countriesCore.add(countries.get(countryCore.asText())));
+            } else if (addCoreNode.isTextual()) {
+                countriesCore.add(countries.get(addCoreNode.asText()));
+            }
+
+            String owner = rootNode.get("owner").textValue();
             Country countryOwner = countries.get(owner);
+
+            String controller = rootNode.get("controller").textValue();
             Country countryController = countries.get(controller);
-            JsonNode dateNode = rootNode.path(this.defaultDate);
-            JsonNode populationNode = dateNode.path("population_total");
+
+            JsonNode populationNode = rootNode.get("population_total");
             int amount = populationNode.get("amount").intValue();
             short template = populationNode.get("template").shortValue();
             Population population = new Population(amount, populationTypes.get(template));
-            LandProvince province = new LandProvince(provinceId, countryOwner, countryController, population);
+
+            ObjectIntMap<Building> buildingsRegion;
+            JsonNode buildingsNode = rootNode.get("economy_building");
+            if(buildingsNode != null) {
+                buildingsRegion = new ObjectIntMap<>();
+                if (buildingsNode.isArray()) {
+                    buildingsNode.forEach(building -> {
+                        String buildingName = building.get("name").textValue();
+                        short size = building.get("size").shortValue();
+                        buildingsRegion.put(gameEntities.getBuildings().get(buildingName), size);
+                    });
+                } else {
+                    String buildingName = buildingsNode.get("name").textValue();
+                    short size = buildingsNode.get("size").shortValue();
+                    buildingsRegion.put(gameEntities.getBuildings().get(buildingName), size);
+                }
+                regionBuildingsByProvince.put(provinceId, buildingsRegion);
+            }
+
+            Good good = null;
+            float goodValue = 0.0f;
+            JsonNode goodNode = rootNode.get("good");
+            if(goodNode != null) {
+                String goodName = goodNode.get("name").textValue();
+                good = gameEntities.getGoods().get(goodName);
+                goodValue = goodNode.get("value").floatValue();
+            }
+
+            ObjectIntMap<Building> buildingsProvince = new ObjectIntMap<>();
+            JsonNode buildingsProvinceNode = rootNode.get("buildings");
+            if(buildingsProvinceNode != null) {
+                if (buildingsProvinceNode.isArray()) {
+                    buildingsProvinceNode.forEach(building -> {
+                        String buildingName = building.get("name").textValue();
+                        short size = building.get("size").shortValue();
+                        buildingsProvince.put(gameEntities.getBuildings().get(buildingName), size);
+                    });
+                }
+            }
+
+            LandProvince province = new LandProvince(provinceId, countryOwner, countryController, population, countriesCore, good, goodValue, buildingsProvince);
             countryOwner.addProvince(province);
             return province;
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
 
-    private void readRegionJson(IntMap<Province> provinces) {
+    private void readRegionJson(IntObjectMap<Province> provinces, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince) {
         try {
+            AtomicInteger total = new AtomicInteger();
             JsonNode rootNode = this.openJson(this.regionJsonFiles);
             rootNode.fields().forEachRemaining(regionData -> {
                 Region region = new Region(regionData.getKey());
@@ -220,18 +273,25 @@ public class DataManager {
                         province.getCountryController().addRegion(region);
                         province.setRegion(region);
                         region.addProvince(province);
+                        ObjectIntMap<Building> regionBuildings = regionBuildingsByProvince.get(province.getId());
+                        if(regionBuildings != null) {
+                            province.getRegion().addAllBuildings(regionBuildings);
+                        }
                     } else {
                         WaterProvince waterProvince = new WaterProvince(provinceId.shortValue());
                         provinces.put(provinceId.shortValue(), waterProvince);
                     }
                 });
+                if(!region.getBuildings().isEmpty()) {
+                    total.set(total.get() + 1);
+                }
             });
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void readDefinitionCsv(IntMap<Province> provinces, IntObjectMap<Province> provincesByColor) {
+    private void readDefinitionCsv(IntObjectMap<Province> provinces, IntObjectMap<Province> provincesByColor) {
         try (BufferedReader br = new BufferedReader(new StringReader(Gdx.files.internal(this.definitionCsvFile).readString()))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -256,7 +316,7 @@ public class DataManager {
         }
     }
 
-    private void readCountriesHistoryJson(Map<String, Country> countries, IntMap<Province> provinces, NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies) {
+    private void readCountriesHistoryJson(Map<String, Country> countries, IntObjectMap<Province> provinces, NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies) {
         try {
             JsonNode countriesJson = this.openJson(this.countriesHistoryJsonFiles);
             countriesJson.fields().forEachRemaining(entry -> {
@@ -268,7 +328,7 @@ public class DataManager {
         }
     }
 
-    private void readContinentJsonFile(IntMap<Province> provinces) {
+    private void readContinentJsonFile(IntObjectMap<Province> provinces) {
         try {
             JsonNode continentJson = this.openJson(this.continentJsonFile);
             continentJson.fields().forEachRemaining(entry -> {
@@ -283,7 +343,7 @@ public class DataManager {
         }
     }
 
-    private void readCountryHistoryJson(Map<String, Country> countries, String countryFileName, String idCountry, IntMap<Province> provinces, NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies) {
+    private void readCountryHistoryJson(Map<String, Country> countries, String countryFileName, String idCountry, IntObjectMap<Province> provinces, NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies) {
         try {
             if(countryFileName.equals("history/countries/REB - Rebels.json")) {
                 return;
@@ -341,7 +401,7 @@ public class DataManager {
                 List<String> ideologiesAcceptance = new ObjectList<>();
                 entry.getValue().get("ideologies_acceptance").forEach(ideology -> ideologiesAcceptance.add(ideology.asText()));
 
-                JsonNode electionNode = entry.getValue().path("election");
+                JsonNode electionNode = entry.getValue().get("election");
                 if(!electionNode.isEmpty()) {
                     boolean headOfState = electionNode.get("head_of_state").asBoolean();
                     boolean headOfGovernment = electionNode.get("head_of_government").asBoolean();
@@ -641,7 +701,7 @@ public class DataManager {
         return buildings;
     }
 
-    private void readPositionsJson(IntMap<Province> provinces) {
+    private void readPositionsJson(IntObjectMap<Province> provinces) {
         try {
             JsonNode positionsJson = this.openJson(this.positionsJsonFile);
             positionsJson.fields().forEachRemaining(entry -> {
@@ -660,7 +720,7 @@ public class DataManager {
         }
     }
 
-    private void readAdjenciesJson(IntMap<Province> provinces) {
+    private void readAdjenciesJson(IntObjectMap<Province> provinces) {
         try {
             JsonNode adjenciesJson = this.openJson(this.adjenciesJsonFile);
             adjenciesJson.fields().forEachRemaining(entry -> {

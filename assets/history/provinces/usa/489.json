@@ -2,12 +2,18 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "renewable_energy": 112,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1667,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 1667,
+        "template": 93
     },
-    "infrastructure": 5
+    "good": {
+        "name": "renewable_energy",
+        "value": 112
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

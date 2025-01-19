@@ -2,12 +2,18 @@
     "owner": "SCH",
     "controller": "SCH",
     "add_core": "SCH",
-    "meat": 350,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1198955,
-            "template": 74
-        }
+    "population_total": {
+        "amount": 1198955,
+        "template": 74
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 350
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

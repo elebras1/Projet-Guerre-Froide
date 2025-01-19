@@ -2,16 +2,22 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "renewable_energy": 210,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 221559,
-            "template": 93
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "naval_yards",
         "size": 9
-    }
+    },
+    "population_total": {
+        "amount": 221559,
+        "template": 93
+    },
+    "good": {
+        "name": "renewable_energy",
+        "value": 210
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

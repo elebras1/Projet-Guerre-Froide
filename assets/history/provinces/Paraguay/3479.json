@@ -2,16 +2,22 @@
     "owner": "PAR",
     "controller": "PAR",
     "add_core": "PAR",
-    "grain": 122,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 388750,
-            "template": 87
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "light_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 388750,
+        "template": 87
+    },
+    "good": {
+        "name": "grain",
+        "value": 122
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

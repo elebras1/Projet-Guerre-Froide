@@ -5,16 +5,22 @@
         "ENG",
         "BUR"
     ],
-    "oil": 93,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 175696,
-            "template": 24
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "refinery",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 175696,
+        "template": 24
+    },
+    "good": {
+        "name": "oil",
+        "value": 93
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

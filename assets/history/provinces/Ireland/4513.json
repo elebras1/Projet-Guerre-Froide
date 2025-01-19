@@ -2,12 +2,18 @@
     "owner": "IRE",
     "controller": "IRE",
     "add_core": "IRE",
-    "grain": 102.59,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 164756,
-            "template": 55
-        }
+    "population_total": {
+        "amount": 164756,
+        "template": 55
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 102.59
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -2,17 +2,26 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "grain": 767.79,
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4134016,
-            "template": 67
-        }
-    },
-    "infrastructure": 9,
     "economy_building": {
         "name": "naval_yards",
         "size": 7
-    }
+    },
+    "population_total": {
+        "amount": 4134016,
+        "template": 67
+    },
+    "good": {
+        "name": "grain",
+        "value": 767.79
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 9
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

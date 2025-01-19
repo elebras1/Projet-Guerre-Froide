@@ -2,14 +2,26 @@
     "owner": "PER",
     "controller": "PER",
     "add_core": "PER",
-    "grain": 9.67,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 53050,
-            "template": 16
-        }
+    "population_total": {
+        "amount": 53050,
+        "template": 16
     },
-    "infrastructure": 6,
-    "air_base": 2
+    "good": {
+        "name": "grain",
+        "value": 9.67
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

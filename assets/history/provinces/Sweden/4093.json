@@ -2,11 +2,14 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 6152,
-            "template": 59
-        }
+    "population_total": {
+        "amount": 6152,
+        "template": 59
     },
-    "infrastructure": 1
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

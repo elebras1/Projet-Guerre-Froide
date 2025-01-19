@@ -2,16 +2,22 @@
     "owner": "GUA",
     "controller": "GUA",
     "add_core": "GUA",
-    "vegetables": 61.18,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 256038,
-            "template": 76
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "military_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 256038,
+        "template": 76
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 61.18
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

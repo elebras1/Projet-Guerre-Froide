@@ -5,12 +5,18 @@
         "SAF",
         "NAM"
     ],
-    "grain": 0.26,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1420,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 1420,
+        "template": 4
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 0.26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -6,16 +6,22 @@
         "DRC",
         "SKA"
     ],
-    "precious_metals": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 80958,
-            "template": 2
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "light_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 80958,
+        "template": 2
+    },
+    "good": {
+        "name": "precious_metals",
+        "value": 6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

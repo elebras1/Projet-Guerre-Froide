@@ -2,16 +2,22 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "meat": 15.32,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 48348,
-            "template": 79
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 48348,
+        "template": 79
+    },
+    "good": {
+        "name": "meat",
+        "value": 15.32
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

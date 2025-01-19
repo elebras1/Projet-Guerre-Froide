@@ -5,12 +5,18 @@
         "CHI",
         "CHC"
     ],
-    "wood": 0.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1916202,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 1916202,
+        "template": 6
     },
-    "infrastructure": 3
+    "good": {
+        "name": "wood",
+        "value": 0.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

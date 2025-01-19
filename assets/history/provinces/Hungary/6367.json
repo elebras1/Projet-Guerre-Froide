@@ -2,16 +2,22 @@
     "add_core": "HUN",
     "owner": "HUN",
     "controller": "HUN",
-    "grain": 288.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 778524,
-            "template": 48
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "naval_yards",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 778524,
+        "template": 48
+    },
+    "good": {
+        "name": "grain",
+        "value": 288.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

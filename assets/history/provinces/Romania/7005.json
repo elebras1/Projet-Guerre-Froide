@@ -2,16 +2,22 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "wood": 1.25,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 680513,
-            "template": 50
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "naval_yards",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 680513,
+        "template": 50
+    },
+    "good": {
+        "name": "wood",
+        "value": 1.25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

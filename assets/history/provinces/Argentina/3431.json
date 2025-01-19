@@ -2,12 +2,18 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "renewable_energy": 189,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 47108,
-            "template": 79
-        }
+    "population_total": {
+        "amount": 47108,
+        "template": 79
     },
-    "infrastructure": 6
+    "good": {
+        "name": "renewable_energy",
+        "value": 189
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

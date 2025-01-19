@@ -5,12 +5,18 @@
         "LEB",
         "SYR"
     ],
-    "vegetables": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 284914,
-            "template": 37
-        }
+    "population_total": {
+        "amount": 284914,
+        "template": 37
     },
-    "infrastructure": 5
+    "good": {
+        "name": "vegetables",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

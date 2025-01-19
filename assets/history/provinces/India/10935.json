@@ -5,12 +5,18 @@
         "ENG",
         "IND"
     ],
-    "meat": 55.63,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 482361,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 482361,
+        "template": 15
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 55.63
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

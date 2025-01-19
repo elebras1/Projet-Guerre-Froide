@@ -5,12 +5,18 @@
         "AST",
         "PAG"
     ],
-    "wood": 0.03,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3866,
-            "template": 96
-        }
+    "population_total": {
+        "amount": 3866,
+        "template": 96
     },
-    "infrastructure": 1
+    "good": {
+        "name": "wood",
+        "value": 0.03
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

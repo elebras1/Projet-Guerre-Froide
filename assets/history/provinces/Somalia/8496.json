@@ -5,12 +5,18 @@
         "ITA",
         "SOM"
     ],
-    "grain": 1.67,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 30364,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 30364,
+        "template": 1
     },
-    "infrastructure": 3
+    "good": {
+        "name": "grain",
+        "value": 1.67
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

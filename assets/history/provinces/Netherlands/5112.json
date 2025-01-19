@@ -2,13 +2,22 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "oil": 299,
-    "naval_base": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 342071,
-            "template": 73
-        }
+    "population_total": {
+        "amount": 342071,
+        "template": 73
     },
-    "infrastructure": 5
+    "good": {
+        "name": "oil",
+        "value": 299
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 5
+        }
+    ]
 }

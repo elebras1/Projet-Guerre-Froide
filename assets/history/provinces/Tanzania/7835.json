@@ -6,12 +6,18 @@
         "TNZ",
         "TNG"
     ],
-    "wood": 0.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 55727,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 55727,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "wood",
+        "value": 0.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

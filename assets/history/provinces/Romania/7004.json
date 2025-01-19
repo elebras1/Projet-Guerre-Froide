@@ -2,17 +2,26 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "wood": 2.05,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 368970,
-            "template": 50
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 1
     },
-    "air_base": 4
+    "population_total": {
+        "amount": 368970,
+        "template": 50
+    },
+    "good": {
+        "name": "wood",
+        "value": 2.05
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

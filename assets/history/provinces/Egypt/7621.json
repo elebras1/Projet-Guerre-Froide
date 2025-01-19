@@ -2,16 +2,22 @@
     "owner": "EGY",
     "controller": "EGY",
     "add_core": "EGY",
-    "grain": 56.89,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 568894,
-            "template": 3
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "light_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 568894,
+        "template": 3
+    },
+    "good": {
+        "name": "grain",
+        "value": 56.89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

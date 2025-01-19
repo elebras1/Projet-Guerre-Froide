@@ -5,12 +5,18 @@
         "SOV",
         "RUS"
     ],
-    "fish": 8.29,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 938,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 938,
+        "template": 45
     },
-    "infrastructure": 3
+    "good": {
+        "name": "fish",
+        "value": 8.29
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

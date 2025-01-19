@@ -2,16 +2,22 @@
     "owner": "ETH",
     "controller": "ETH",
     "add_core": "ETH",
-    "vegetables": 63.67,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 285344,
-            "template": 1
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "military_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 285344,
+        "template": 1
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 63.67
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

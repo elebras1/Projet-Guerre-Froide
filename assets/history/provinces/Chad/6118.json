@@ -5,12 +5,18 @@
         "FRA",
         "CHA"
     ],
-    "grain": 5.49,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 62774,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 62774,
+        "template": 2
     },
-    "infrastructure": 1
+    "good": {
+        "name": "grain",
+        "value": 5.49
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

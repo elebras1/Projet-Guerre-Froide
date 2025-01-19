@@ -2,12 +2,18 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "vegetables": 4.69,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2113,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 2113,
+        "template": 92
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 4.69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

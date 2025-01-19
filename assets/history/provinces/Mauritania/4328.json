@@ -5,12 +5,18 @@
         "FRA",
         "MRA"
     ],
-    "fruits": 0.77,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1296,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 1296,
+        "template": 5
     },
-    "infrastructure": 1
+    "good": {
+        "name": "fruits",
+        "value": 0.77
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

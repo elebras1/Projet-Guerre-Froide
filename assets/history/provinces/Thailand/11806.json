@@ -2,13 +2,22 @@
     "owner": "SIA",
     "controller": "SIA",
     "add_core": "SIA",
-    "fish": 117.03,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 558009,
-            "template": 27
-        }
+    "population_total": {
+        "amount": 558009,
+        "template": 27
     },
-    "infrastructure": 1,
-    "naval_base": 1
+    "good": {
+        "name": "fish",
+        "value": 117.03
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

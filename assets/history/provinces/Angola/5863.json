@@ -5,12 +5,18 @@
         "POR",
         "ANG"
     ],
-    "grain": 9.89,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 69716,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 69716,
+        "template": 2
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 9.89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

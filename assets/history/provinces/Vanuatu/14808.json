@@ -6,14 +6,26 @@
         "VNT",
         "FRA"
     ],
-    "fruits": 4.2,
-    "air_base": 1,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 23848,
-            "template": 188
-        }
+    "population_total": {
+        "amount": 23848,
+        "template": 188
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 4.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "meat": 8.16,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 91186,
-            "template": 83
-        }
+    "population_total": {
+        "amount": 91186,
+        "template": 83
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 8.16
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

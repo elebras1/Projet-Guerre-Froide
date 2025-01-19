@@ -5,12 +5,18 @@
         "ENG",
         "MLY"
     ],
-    "wood": 1.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1060,
-            "template": 23
-        }
+    "population_total": {
+        "amount": 1060,
+        "template": 23
     },
-    "infrastructure": 1
+    "good": {
+        "name": "wood",
+        "value": 1.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

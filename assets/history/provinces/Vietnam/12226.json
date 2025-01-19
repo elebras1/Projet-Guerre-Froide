@@ -5,12 +5,18 @@
         "IDC",
         "SVI"
     ],
-    "oil": 89,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 676416,
-            "template": 28
-        }
+    "population_total": {
+        "amount": 676416,
+        "template": 28
     },
-    "infrastructure": 3
+    "good": {
+        "name": "oil",
+        "value": 89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

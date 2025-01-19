@@ -5,8 +5,6 @@
         "SOV",
         "RUS"
     ],
-    "vegetables": 47.07,
-    "naval_base": 10,
     "economy_building": [
         {
             "name": "military_academy",
@@ -17,12 +15,26 @@
             "size": 4
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 82881,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 82881,
+        "template": 45
     },
-    "infrastructure": 8,
-    "air_base": 8
+    "good": {
+        "name": "vegetables",
+        "value": 47.07
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        },
+        {
+            "name": "naval_base",
+            "size": 10
+        },
+        {
+            "name": "air_base",
+            "size": 8
+        }
+    ]
 }

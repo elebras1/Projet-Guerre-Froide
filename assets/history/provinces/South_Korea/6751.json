@@ -5,12 +5,18 @@
         "PRK",
         "KOR"
     ],
-    "grain": 10,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 71815,
-            "template": 10
-        }
+    "population_total": {
+        "amount": 71815,
+        "template": 10
     },
-    "infrastructure": 3
+    "good": {
+        "name": "grain",
+        "value": 10
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

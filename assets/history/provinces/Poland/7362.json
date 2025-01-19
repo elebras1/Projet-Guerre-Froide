@@ -2,12 +2,18 @@
     "owner": "POL",
     "controller": "POL",
     "add_core": "POL",
-    "rare_metals": 40.07,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 584729,
-            "template": 49
-        }
+    "population_total": {
+        "amount": 584729,
+        "template": 49
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 40.07
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

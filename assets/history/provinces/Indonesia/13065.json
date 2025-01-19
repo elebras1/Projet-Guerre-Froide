@@ -5,16 +5,22 @@
         "INO",
         "HOL"
     ],
-    "grain": 74.26,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 289143,
-            "template": 21
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "powerplant",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 289143,
+        "template": 21
+    },
+    "good": {
+        "name": "grain",
+        "value": 74.26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -5,18 +5,30 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "fish": 60,
-    "air_base": 2,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 374311,
-            "template": 62
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "light_industry",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 374311,
+        "template": 62
+    },
+    "good": {
+        "name": "fish",
+        "value": 60
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

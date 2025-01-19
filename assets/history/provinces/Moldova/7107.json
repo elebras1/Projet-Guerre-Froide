@@ -5,16 +5,22 @@
     ],
     "owner": "SOV",
     "controller": "SOV",
-    "vegetables": 240.58,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 693057,
-            "template": 50
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 693057,
+        "template": 50
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 240.58
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

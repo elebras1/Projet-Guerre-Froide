@@ -5,12 +5,18 @@
         "IDC",
         "SVI"
     ],
-    "wood": 0.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 663097,
-            "template": 28
-        }
+    "population_total": {
+        "amount": 663097,
+        "template": 28
     },
-    "infrastructure": 2
+    "good": {
+        "name": "wood",
+        "value": 0.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

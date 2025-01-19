@@ -5,13 +5,6 @@
     ],
     "owner": "USA",
     "controller": "USA",
-    "grain": 560.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1653944,
-            "template": 71
-        }
-    },
     "economy_building": [
         {
             "name": "air_research_center",
@@ -22,5 +15,18 @@
             "size": 4
         }
     ],
-    "infrastructure": 2
+    "population_total": {
+        "amount": 1653944,
+        "template": 71
+    },
+    "good": {
+        "name": "grain",
+        "value": 560.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

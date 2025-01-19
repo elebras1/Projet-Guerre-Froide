@@ -6,12 +6,18 @@
         "DRC",
         "KAT"
     ],
-    "uranium": 27.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 74351,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 74351,
+        "template": 2
     },
-    "infrastructure": 4
+    "good": {
+        "name": "uranium",
+        "value": 27.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

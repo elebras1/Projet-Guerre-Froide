@@ -2,17 +2,26 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "fruits": 108.04,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2851057,
-            "template": 66
-        }
-    },
-    "infrastructure": 7,
     "economy_building": {
         "name": "refinery",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 2851057,
+        "template": 66
+    },
+    "good": {
+        "name": "fruits",
+        "value": 108.04
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

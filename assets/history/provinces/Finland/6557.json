@@ -2,13 +2,22 @@
     "owner": "FIN",
     "controller": "FIN",
     "add_core": "FIN",
-    "fish": 28.48,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 96969,
-            "template": 53
-        }
+    "population_total": {
+        "amount": 96969,
+        "template": 53
     },
-    "infrastructure": 2,
-    "naval_base": 1
+    "good": {
+        "name": "fish",
+        "value": 28.48
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

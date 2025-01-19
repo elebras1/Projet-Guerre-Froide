@@ -2,13 +2,22 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "renewable_energy": 133,
-    "air_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 506929,
-            "template": 42
-        }
+    "population_total": {
+        "amount": 506929,
+        "template": 42
     },
-    "infrastructure": 4
+    "good": {
+        "name": "renewable_energy",
+        "value": 133
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

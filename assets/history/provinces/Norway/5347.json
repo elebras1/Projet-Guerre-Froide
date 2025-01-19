@@ -2,16 +2,22 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "grain": 16.48,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3243,
-            "template": 58
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "military_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 3243,
+        "template": 58
+    },
+    "good": {
+        "name": "grain",
+        "value": 16.48
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

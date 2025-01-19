@@ -2,17 +2,26 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "fruits": 19.77,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 46702,
-            "template": 94
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 46702,
+        "template": 94
+    },
+    "good": {
+        "name": "fruits",
+        "value": 19.77
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

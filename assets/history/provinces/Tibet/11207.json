@@ -5,12 +5,18 @@
         "TIB",
         "CHC"
     ],
-    "meat": 6.71,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 73987,
-            "template": 17
-        }
+    "population_total": {
+        "amount": 73987,
+        "template": 17
     },
-    "infrastructure": 1
+    "good": {
+        "name": "meat",
+        "value": 6.71
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

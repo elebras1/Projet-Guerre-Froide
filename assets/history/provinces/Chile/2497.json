@@ -2,12 +2,18 @@
     "owner": "CHL",
     "controller": "CHL",
     "add_core": "CHL",
-    "meat": 6.32,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 5978,
-            "template": 82
-        }
+    "population_total": {
+        "amount": 5978,
+        "template": 82
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 6.32
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

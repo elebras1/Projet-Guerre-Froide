@@ -2,16 +2,22 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "wood": 0.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 412183,
-            "template": 67
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "powerplant",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 412183,
+        "template": 67
+    },
+    "good": {
+        "name": "wood",
+        "value": 0.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

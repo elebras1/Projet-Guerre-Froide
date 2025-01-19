@@ -5,12 +5,18 @@
         "POR",
         "MOZ"
     ],
-    "grain": 26.81,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 283532,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 283532,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 26.81
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

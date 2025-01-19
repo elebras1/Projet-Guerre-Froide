@@ -2,12 +2,18 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "oil": 65,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 508738,
-            "template": 64
-        }
+    "population_total": {
+        "amount": 508738,
+        "template": 64
     },
-    "infrastructure": 3
+    "good": {
+        "name": "oil",
+        "value": 65
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

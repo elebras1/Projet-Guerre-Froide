@@ -5,12 +5,18 @@
     ],
     "owner": "SOV",
     "controller": "SOV",
-    "meat": 887.49,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1548603,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 1548603,
+        "template": 71
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 887.49
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "SAF",
     "controller": "SAF",
     "add_core": "SAF",
-    "grain": 19.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 113472,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 113472,
+        "template": 4
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 19.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

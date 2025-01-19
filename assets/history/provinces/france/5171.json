@@ -2,16 +2,22 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "meat": 202.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 173822,
-            "template": 70
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "light_industry",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 173822,
+        "template": 70
+    },
+    "good": {
+        "name": "meat",
+        "value": 202.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

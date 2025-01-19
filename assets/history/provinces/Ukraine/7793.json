@@ -5,13 +5,22 @@
         "SOV",
         "UKR"
     ],
-    "meat": 242.42,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 300664,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 300664,
+        "template": 45
     },
-    "infrastructure": 5,
-    "naval_base": 1
+    "good": {
+        "name": "meat",
+        "value": 242.42
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

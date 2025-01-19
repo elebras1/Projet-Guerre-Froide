@@ -5,12 +5,18 @@
         "SOV",
         "RUS"
     ],
-    "vegetables": 21.89,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 49057,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 49057,
+        "template": 45
     },
-    "infrastructure": 7
+    "good": {
+        "name": "vegetables",
+        "value": 21.89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        }
+    ]
 }

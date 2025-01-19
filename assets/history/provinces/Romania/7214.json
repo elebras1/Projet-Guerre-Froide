@@ -2,18 +2,30 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "fish": 192,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 417812,
-            "template": 50
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "naval_yards",
         "size": 4
     },
-    "air_base": 4
+    "population_total": {
+        "amount": 417812,
+        "template": 50
+    },
+    "good": {
+        "name": "fish",
+        "value": 192
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

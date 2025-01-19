@@ -5,13 +5,22 @@
     ],
     "owner": "ENG",
     "controller": "ENG",
-    "vegetables": 452.88,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 854235,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 854235,
+        "template": 71
     },
-    "infrastructure": 2,
-    "air_base": 5
+    "good": {
+        "name": "vegetables",
+        "value": 452.88
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "SOV",
         "BLR"
     ],
-    "fruits": 78.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 227016,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 227016,
+        "template": 45
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 78.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

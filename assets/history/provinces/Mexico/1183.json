@@ -2,12 +2,18 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "rare_metals": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 110316,
-            "template": 81
-        }
+    "population_total": {
+        "amount": 110316,
+        "template": 81
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

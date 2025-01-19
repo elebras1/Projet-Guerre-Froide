@@ -5,12 +5,18 @@
         "ENG",
         "IND"
     ],
-    "coal": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1525827,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 1525827,
+        "template": 15
     },
-    "infrastructure": 3
+    "good": {
+        "name": "coal",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

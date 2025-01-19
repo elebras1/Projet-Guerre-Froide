@@ -5,13 +5,22 @@
         "SOV",
         "RUS"
     ],
-    "grain": 10.15,
-    "naval_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 804,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 804,
+        "template": 45
     },
-    "infrastructure": 3
+    "good": {
+        "name": "grain",
+        "value": 10.15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 4
+        }
+    ]
 }

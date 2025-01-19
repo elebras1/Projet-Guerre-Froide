@@ -5,13 +5,22 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "fruits": 50,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 70064,
-            "template": 62
-        }
+    "population_total": {
+        "amount": 70064,
+        "template": 62
     },
-    "infrastructure": 5
+    "good": {
+        "name": "fruits",
+        "value": 50
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

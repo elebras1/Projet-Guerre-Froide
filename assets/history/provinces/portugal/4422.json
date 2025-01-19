@@ -2,13 +2,22 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "fish": 56.01,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 422383,
-            "template": 66
-        }
+    "population_total": {
+        "amount": 422383,
+        "template": 66
     },
-    "infrastructure": 7,
-    "naval_base": 1
+    "good": {
+        "name": "fish",
+        "value": 56.01
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

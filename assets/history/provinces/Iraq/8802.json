@@ -2,16 +2,22 @@
     "owner": "IRQ",
     "controller": "IRQ",
     "add_core": "IRQ",
-    "oil": 111,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 30228,
-            "template": 33
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 30228,
+        "template": 33
+    },
+    "good": {
+        "name": "oil",
+        "value": 111
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

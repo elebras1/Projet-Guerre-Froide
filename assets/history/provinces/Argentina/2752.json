@@ -2,16 +2,22 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "wood": 0.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 323927,
-            "template": 79
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "powerplant",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 323927,
+        "template": 79
+    },
+    "good": {
+        "name": "wood",
+        "value": 0.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

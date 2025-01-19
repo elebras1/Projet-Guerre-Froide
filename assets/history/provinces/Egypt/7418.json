@@ -2,17 +2,26 @@
     "owner": "EGY",
     "controller": "EGY",
     "add_core": "EGY",
-    "oil": 141,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2912506,
-            "template": 3
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "refinery",
         "size": 2
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 2912506,
+        "template": 3
+    },
+    "good": {
+        "name": "oil",
+        "value": 141
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -5,16 +5,22 @@
         "FRA",
         "MAD"
     ],
-    "grain": 37.31,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 243907,
-            "template": 1
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 243907,
+        "template": 1
+    },
+    "good": {
+        "name": "grain",
+        "value": 37.31
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

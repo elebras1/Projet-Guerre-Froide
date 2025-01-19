@@ -5,12 +5,18 @@
         "IDC",
         "LAO"
     ],
-    "vegetables": 4.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 63671,
-            "template": 22
-        }
+    "population_total": {
+        "amount": 63671,
+        "template": 22
     },
-    "infrastructure": 1
+    "good": {
+        "name": "vegetables",
+        "value": 4.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

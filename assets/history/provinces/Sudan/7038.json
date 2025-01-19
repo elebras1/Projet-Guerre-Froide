@@ -5,12 +5,18 @@
         "ENG",
         "SUD"
     ],
-    "grain": 4.29,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 68639,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 68639,
+        "template": 3
     },
-    "infrastructure": 1
+    "good": {
+        "name": "grain",
+        "value": 4.29
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

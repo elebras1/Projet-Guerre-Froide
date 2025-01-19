@@ -5,17 +5,26 @@
         "ENG",
         "JOR"
     ],
-    "vegetables": 2.69,
-    "air_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 883,
-            "template": 35
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "military_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 883,
+        "template": 35
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 2.69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

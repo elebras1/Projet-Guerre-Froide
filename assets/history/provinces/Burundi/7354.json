@@ -5,12 +5,18 @@
         "BEL",
         "BRD"
     ],
-    "grain": 204.89,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 958238,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 958238,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 204.89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

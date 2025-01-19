@@ -2,17 +2,26 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "meat": 371.55,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1044681,
-            "template": 60
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "heavy_industry",
         "size": 7
-    }
+    },
+    "population_total": {
+        "amount": 1044681,
+        "template": 60
+    },
+    "good": {
+        "name": "meat",
+        "value": 371.55
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

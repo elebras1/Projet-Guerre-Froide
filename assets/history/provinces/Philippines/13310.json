@@ -2,12 +2,18 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "grain": 119.92,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 483604,
-            "template": 25
-        }
+    "population_total": {
+        "amount": 483604,
+        "template": 25
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 119.92
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

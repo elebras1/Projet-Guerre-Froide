@@ -2,12 +2,18 @@
     "owner": "AFG",
     "controller": "AFG",
     "add_core": "AFG",
-    "meat": 3.37,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 34373,
-            "template": 12
-        }
+    "population_total": {
+        "amount": 34373,
+        "template": 12
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 3.37
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

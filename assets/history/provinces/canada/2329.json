@@ -5,16 +5,22 @@
         "CAN",
         "QUE"
     ],
-    "vegetables": 22.54,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 35289,
-            "template": 92
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "naval_yards",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 35289,
+        "template": 92
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 22.54
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

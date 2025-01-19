@@ -5,12 +5,18 @@
         "SOV",
         "KYG"
     ],
-    "grain": 169.02,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 298565,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 298565,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 169.02
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

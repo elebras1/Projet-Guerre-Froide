@@ -2,18 +2,30 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "rare_metals": 120.68,
-    "naval_base": 6,
-    "air_base": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 270089,
-            "template": 94
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "naval_yards",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 270089,
+        "template": 94
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 120.68
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 8
+        }
+    ]
 }

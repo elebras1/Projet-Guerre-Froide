@@ -2,12 +2,18 @@
     "owner": "MON",
     "controller": "MON",
     "add_core": "MON",
-    "coal": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1007,
-            "template": 9
-        }
+    "population_total": {
+        "amount": 1007,
+        "template": 9
     },
-    "infrastructure": 1
+    "good": {
+        "name": "coal",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

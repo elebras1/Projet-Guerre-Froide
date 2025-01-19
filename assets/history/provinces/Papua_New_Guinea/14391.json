@@ -5,16 +5,22 @@
         "AST",
         "PAG"
     ],
-    "precious_metals": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 134431,
-            "template": 96
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 134431,
+        "template": 96
+    },
+    "good": {
+        "name": "precious_metals",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

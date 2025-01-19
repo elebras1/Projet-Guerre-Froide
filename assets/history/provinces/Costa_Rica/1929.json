@@ -2,17 +2,26 @@
     "owner": "COS",
     "controller": "COS",
     "add_core": "COS",
-    "fruits": 15.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 191538,
-            "template": 76
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 2
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 191538,
+        "template": 76
+    },
+    "good": {
+        "name": "fruits",
+        "value": 15.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

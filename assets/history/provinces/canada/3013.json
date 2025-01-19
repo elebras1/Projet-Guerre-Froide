@@ -2,13 +2,22 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "grain": 4.3,
-    "naval_base": 10,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4035,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 4035,
+        "template": 92
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 4.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 10
+        }
+    ]
 }

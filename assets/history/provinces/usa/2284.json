@@ -2,16 +2,22 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "grain": 687.76,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2579770,
-            "template": 93
-        }
-    },
-    "infrastructure": 8,
     "economy_building": {
         "name": "refinery",
         "size": 7
-    }
+    },
+    "population_total": {
+        "amount": 2579770,
+        "template": 93
+    },
+    "good": {
+        "name": "grain",
+        "value": 687.76
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

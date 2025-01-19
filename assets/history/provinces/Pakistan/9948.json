@@ -5,12 +5,18 @@
         "ENG",
         "PAK"
     ],
-    "oil": 21,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 183968,
-            "template": 18
-        }
+    "population_total": {
+        "amount": 183968,
+        "template": 18
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 21
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

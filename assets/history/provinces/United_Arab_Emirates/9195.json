@@ -5,12 +5,18 @@
         "ENG",
         "UAE"
     ],
-    "oil": 101,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4258,
-            "template": 43
-        }
+    "population_total": {
+        "amount": 4258,
+        "template": 43
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 101
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,11 +2,14 @@
     "owner": "BOL",
     "controller": "BOL",
     "add_core": "BOL",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1431,
-            "template": 80
-        }
+    "population_total": {
+        "amount": 1431,
+        "template": 80
     },
-    "infrastructure": 3
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

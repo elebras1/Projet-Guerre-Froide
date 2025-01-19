@@ -2,17 +2,26 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "grain": 14.6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 103994,
-            "template": 60
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "naval_yards",
         "size": 8
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 103994,
+        "template": 60
+    },
+    "good": {
+        "name": "grain",
+        "value": 14.6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

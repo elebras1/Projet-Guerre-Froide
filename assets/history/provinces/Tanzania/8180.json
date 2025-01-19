@@ -7,13 +7,22 @@
         "TNG",
         "ZNZ"
     ],
-    "grain": 31.77,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 113466,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 113466,
+        "template": 1
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "grain",
+        "value": 31.77
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

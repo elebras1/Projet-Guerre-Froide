@@ -2,12 +2,18 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "renewable_energy": 1020,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 30414,
-            "template": 91
-        }
+    "population_total": {
+        "amount": 30414,
+        "template": 91
     },
-    "infrastructure": 4
+    "good": {
+        "name": "renewable_energy",
+        "value": 1020
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

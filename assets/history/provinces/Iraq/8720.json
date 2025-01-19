@@ -2,12 +2,18 @@
     "owner": "IRQ",
     "controller": "IRQ",
     "add_core": "IRQ",
-    "oil": 178,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 17317,
-            "template": 33
-        }
+    "population_total": {
+        "amount": 17317,
+        "template": 33
     },
-    "infrastructure": 2
+    "good": {
+        "name": "oil",
+        "value": 178
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

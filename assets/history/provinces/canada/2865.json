@@ -2,16 +2,22 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "fruits": 9.96,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 36745,
-            "template": 92
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "heavy_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 36745,
+        "template": 92
+    },
+    "good": {
+        "name": "fruits",
+        "value": 9.96
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -6,12 +6,18 @@
         "TNZ",
         "TNG"
     ],
-    "precious_metals": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 318634,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 318634,
+        "template": 1
     },
-    "infrastructure": 1
+    "good": {
+        "name": "precious_metals",
+        "value": 4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

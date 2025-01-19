@@ -5,13 +5,22 @@
         "CHI",
         "CHC"
     ],
-    "vegetables": 70.66,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 509452,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 509452,
+        "template": 6
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 70.66
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

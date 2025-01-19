@@ -2,16 +2,22 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "oil": 232,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1361220,
-            "template": 93
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "refinery",
         "size": 10
-    }
+    },
+    "population_total": {
+        "amount": 1361220,
+        "template": 93
+    },
+    "good": {
+        "name": "oil",
+        "value": 232
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

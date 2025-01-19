@@ -2,16 +2,22 @@
     "owner": "NZL",
     "controller": "NZL",
     "add_core": "NZL",
-    "meat": 60,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 182173,
-            "template": 95
-        }
-    },
-    "infrastructure": 8,
     "economy_building": {
         "name": "powerplant",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 182173,
+        "template": 95
+    },
+    "good": {
+        "name": "meat",
+        "value": 60
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

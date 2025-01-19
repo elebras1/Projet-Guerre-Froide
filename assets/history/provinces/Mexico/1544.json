@@ -2,12 +2,18 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "oil": 258,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 134801,
-            "template": 81
-        }
+    "population_total": {
+        "amount": 134801,
+        "template": 81
     },
-    "infrastructure": 5
+    "good": {
+        "name": "oil",
+        "value": 258
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

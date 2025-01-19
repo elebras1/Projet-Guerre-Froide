@@ -5,12 +5,18 @@
         "FRA",
         "NGR"
     ],
-    "uranium": 119.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 919,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 919,
+        "template": 5
     },
-    "infrastructure": 1
+    "good": {
+        "name": "uranium",
+        "value": 119.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

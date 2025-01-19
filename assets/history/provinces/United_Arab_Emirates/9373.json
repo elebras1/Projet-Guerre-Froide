@@ -5,12 +5,18 @@
         "ENG",
         "UAE"
     ],
-    "rare_metals": 118.36,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4958,
-            "template": 43
-        }
+    "population_total": {
+        "amount": 4958,
+        "template": 43
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 118.36
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

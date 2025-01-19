@@ -2,12 +2,18 @@
     "add_core": "HUN",
     "owner": "HUN",
     "controller": "HUN",
-    "oil": 29,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 502906,
-            "template": 48
-        }
+    "population_total": {
+        "amount": 502906,
+        "template": 48
     },
-    "infrastructure": 5
+    "good": {
+        "name": "oil",
+        "value": 29
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

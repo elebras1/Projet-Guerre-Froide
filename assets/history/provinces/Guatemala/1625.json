@@ -2,13 +2,22 @@
     "owner": "GUA",
     "controller": "GUA",
     "add_core": "GUA",
-    "vegetables": 38,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 457454,
-            "template": 76
-        }
+    "population_total": {
+        "amount": 457454,
+        "template": 76
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "vegetables",
+        "value": 38
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

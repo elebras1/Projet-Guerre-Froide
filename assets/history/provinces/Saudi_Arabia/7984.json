@@ -2,12 +2,18 @@
     "owner": "SAU",
     "controller": "SAU",
     "add_core": "SAU",
-    "fruits": 0.42,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4529,
-            "template": 40
-        }
+    "population_total": {
+        "amount": 4529,
+        "template": 40
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 0.42
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

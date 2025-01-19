@@ -2,18 +2,30 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "oil": 248,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 472939,
-            "template": 73
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "refinery",
         "size": 6
     },
-    "air_base": 6,
-    "naval_base": 1
+    "population_total": {
+        "amount": 472939,
+        "template": 73
+    },
+    "good": {
+        "name": "oil",
+        "value": 248
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 6
+        }
+    ]
 }

@@ -2,13 +2,22 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "fish": 1.82,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 116592,
-            "template": 91
-        }
+    "population_total": {
+        "amount": 116592,
+        "template": 91
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "fish",
+        "value": 1.82
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

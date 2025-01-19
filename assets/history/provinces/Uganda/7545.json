@@ -5,16 +5,22 @@
         "ENG",
         "UGD"
     ],
-    "fruits": 68.21,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 248796,
-            "template": 1
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 248796,
+        "template": 1
+    },
+    "good": {
+        "name": "fruits",
+        "value": 68.21
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

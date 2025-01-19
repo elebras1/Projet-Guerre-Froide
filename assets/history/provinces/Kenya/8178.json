@@ -5,13 +5,22 @@
         "ENG",
         "KEN"
     ],
-    "grain": 49.95,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 330441,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 330441,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 49.95
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -5,16 +5,22 @@
         "YEM",
         "NYE"
     ],
-    "meat": 19.35,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 578825,
-            "template": 44
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "military_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 578825,
+        "template": 44
+    },
+    "good": {
+        "name": "meat",
+        "value": 19.35
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

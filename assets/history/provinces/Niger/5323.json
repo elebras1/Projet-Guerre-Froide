@@ -5,16 +5,22 @@
         "FRA",
         "NGR"
     ],
-    "grain": 19.56,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 173200,
-            "template": 5
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 173200,
+        "template": 5
+    },
+    "good": {
+        "name": "grain",
+        "value": 19.56
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

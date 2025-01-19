@@ -5,16 +5,22 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "oil": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 690418,
-            "template": 47
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "naval_yards",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 690418,
+        "template": 47
+    },
+    "good": {
+        "name": "oil",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

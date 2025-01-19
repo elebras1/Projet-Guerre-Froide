@@ -6,13 +6,22 @@
         "ZIM",
         "RHO"
     ],
-    "precious_metals": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 363512,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 363512,
+        "template": 1
     },
-    "infrastructure": 4,
-    "air_base": 3
+    "good": {
+        "name": "precious_metals",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

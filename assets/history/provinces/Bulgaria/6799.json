@@ -2,12 +2,18 @@
     "owner": "BUL",
     "controller": "BUL",
     "add_core": "BUL",
-    "coal": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 483434,
-            "template": 46
-        }
+    "population_total": {
+        "amount": 483434,
+        "template": 46
     },
-    "infrastructure": 4
+    "good": {
+        "name": "coal",
+        "value": 6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

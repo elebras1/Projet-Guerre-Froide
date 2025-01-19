@@ -2,12 +2,18 @@
     "owner": "CHL",
     "controller": "CHL",
     "add_core": "CHL",
-    "precious_metals": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 9873,
-            "template": 82
-        }
+    "population_total": {
+        "amount": 9873,
+        "template": 82
     },
-    "infrastructure": 6
+    "good": {
+        "name": "precious_metals",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

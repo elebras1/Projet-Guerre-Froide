@@ -5,16 +5,22 @@
         "FRA",
         "CNG"
     ],
-    "vegetables": 23.85,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 300065,
-            "template": 2
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "light_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 300065,
+        "template": 2
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 23.85
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

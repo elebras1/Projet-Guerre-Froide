@@ -2,18 +2,30 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "grain": 231.75,
-    "naval_base": 2,
-    "air_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 815897,
-            "template": 59
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "refinery",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 815897,
+        "template": 59
+    },
+    "good": {
+        "name": "grain",
+        "value": 231.75
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

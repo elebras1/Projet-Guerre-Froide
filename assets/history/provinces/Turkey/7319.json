@@ -2,12 +2,18 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "meat": 10.58,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 77350,
-            "template": 42
-        }
+    "population_total": {
+        "amount": 77350,
+        "template": 42
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 10.58
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

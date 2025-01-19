@@ -5,13 +5,22 @@
         "FRA",
         "CNG"
     ],
-    "oil": 45,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 131503,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 131503,
+        "template": 2
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 45
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "fruits": 2.38,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 56143,
-            "template": 81
-        }
+    "population_total": {
+        "amount": 56143,
+        "template": 81
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 2.38
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

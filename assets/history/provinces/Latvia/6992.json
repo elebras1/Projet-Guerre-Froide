@@ -5,16 +5,22 @@
     ],
     "owner": "SOV",
     "controller": "SOV",
-    "wood": 2.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 123768,
-            "template": 56
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "aviation_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 123768,
+        "template": 56
+    },
+    "good": {
+        "name": "wood",
+        "value": 2.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

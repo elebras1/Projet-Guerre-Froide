@@ -2,12 +2,18 @@
     "owner": "PER",
     "controller": "PER",
     "add_core": "PER",
-    "grain": 38.87,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 370214,
-            "template": 16
-        }
+    "population_total": {
+        "amount": 370214,
+        "template": 16
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 38.87
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

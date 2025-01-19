@@ -2,12 +2,18 @@
     "owner": "AFG",
     "controller": "AFG",
     "add_core": "AFG",
-    "grain": 12.01,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 205822,
-            "template": 12
-        }
+    "population_total": {
+        "amount": 205822,
+        "template": 12
     },
-    "infrastructure": 3
+    "good": {
+        "name": "grain",
+        "value": 12.01
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

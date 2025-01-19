@@ -2,12 +2,18 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "rare_metals": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 55754,
-            "template": 83
-        }
+    "population_total": {
+        "amount": 55754,
+        "template": 83
     },
-    "infrastructure": 5
+    "good": {
+        "name": "rare_metals",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

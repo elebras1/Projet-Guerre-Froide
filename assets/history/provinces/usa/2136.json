@@ -2,16 +2,22 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "vegetables": 252.27,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 430069,
-            "template": 93
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "naval_yards",
         "size": 10
-    }
+    },
+    "population_total": {
+        "amount": 430069,
+        "template": 93
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 252.27
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

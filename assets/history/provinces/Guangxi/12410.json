@@ -6,14 +6,26 @@
         "CHI",
         "CHC"
     ],
-    "wood": 1,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1654809,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 1654809,
+        "template": 6
     },
-    "infrastructure": 4,
-    "air_base": 1
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

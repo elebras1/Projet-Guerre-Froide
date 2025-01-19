@@ -5,12 +5,18 @@
         "ENG",
         "UAE"
     ],
-    "meat": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3701,
-            "template": 43
-        }
+    "population_total": {
+        "amount": 3701,
+        "template": 43
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

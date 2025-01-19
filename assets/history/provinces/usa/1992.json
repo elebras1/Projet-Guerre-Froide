@@ -2,18 +2,30 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "meat": 248.1,
-    "air_base": 7,
-    "naval_base": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 422240,
-            "template": 93
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "military_industry",
         "size": 8
-    }
+    },
+    "population_total": {
+        "amount": 422240,
+        "template": 93
+    },
+    "good": {
+        "name": "meat",
+        "value": 248.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 7
+        }
+    ]
 }

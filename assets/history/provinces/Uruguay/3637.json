@@ -2,12 +2,18 @@
     "owner": "URU",
     "controller": "URU",
     "add_core": "URU",
-    "grain": 10.66,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 17702,
-            "template": 90
-        }
+    "population_total": {
+        "amount": 17702,
+        "template": 90
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 10.66
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

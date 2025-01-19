@@ -5,12 +5,18 @@
     ],
     "owner": "ENG",
     "controller": "ENG",
-    "wood": 3.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 0,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 0,
+        "template": 71
     },
-    "infrastructure": 5
+    "good": {
+        "name": "wood",
+        "value": 3.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "FRA",
         "BEN"
     ],
-    "vegetables": 31,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 63559,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 63559,
+        "template": 5
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 31
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

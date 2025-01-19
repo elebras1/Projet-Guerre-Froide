@@ -2,12 +2,18 @@
     "owner": "OMN",
     "controller": "OMN",
     "add_core": "OMN",
-    "oil": 75,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 936,
-            "template": 38
-        }
+    "population_total": {
+        "amount": 936,
+        "template": 38
     },
-    "infrastructure": 2
+    "good": {
+        "name": "oil",
+        "value": 75
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

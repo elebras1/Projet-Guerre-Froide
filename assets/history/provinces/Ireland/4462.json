@@ -2,12 +2,18 @@
     "owner": "IRE",
     "controller": "IRE",
     "add_core": "IRE",
-    "wood": 0.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 62863,
-            "template": 55
-        }
+    "population_total": {
+        "amount": 62863,
+        "template": 55
     },
-    "infrastructure": 5
+    "good": {
+        "name": "wood",
+        "value": 0.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

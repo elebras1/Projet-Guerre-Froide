@@ -2,13 +2,22 @@
     "add_core": "POL",
     "owner": "POL",
     "controller": "POL",
-    "meat": 406.18,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 431540,
-            "template": 49
-        }
+    "population_total": {
+        "amount": 431540,
+        "template": 49
     },
-    "infrastructure": 5,
-    "air_base": 6
+    "good": {
+        "name": "meat",
+        "value": 406.18
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 6
+        }
+    ]
 }

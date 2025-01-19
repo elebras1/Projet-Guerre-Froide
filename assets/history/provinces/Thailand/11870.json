@@ -2,16 +2,22 @@
     "owner": "SIA",
     "controller": "SIA",
     "add_core": "SIA",
-    "grain": 134.47,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 326689,
-            "template": 27
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "military_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 326689,
+        "template": 27
+    },
+    "good": {
+        "name": "grain",
+        "value": 134.47
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -2,16 +2,22 @@
     "owner": "CHL",
     "controller": "CHL",
     "add_core": "CHL",
-    "wood": 0.22,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1089967,
-            "template": 82
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "heavy_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 1089967,
+        "template": 82
+    },
+    "good": {
+        "name": "wood",
+        "value": 0.22
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

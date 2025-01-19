@@ -5,12 +5,18 @@
         "ENG",
         "IND"
     ],
-    "wood": 0.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1720060,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 1720060,
+        "template": 15
     },
-    "infrastructure": 4
+    "good": {
+        "name": "wood",
+        "value": 0.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

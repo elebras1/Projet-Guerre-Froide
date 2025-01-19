@@ -5,13 +5,22 @@
         "ENG",
         "GAM"
     ],
-    "vegetables": 15.47,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 135425,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 135425,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 15.47
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

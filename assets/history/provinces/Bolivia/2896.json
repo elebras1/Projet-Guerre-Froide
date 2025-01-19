@@ -2,12 +2,18 @@
     "owner": "BOL",
     "controller": "BOL",
     "add_core": "BOL",
-    "precious_metals": 28,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 213172,
-            "template": 80
-        }
+    "population_total": {
+        "amount": 213172,
+        "template": 80
     },
-    "infrastructure": 4
+    "good": {
+        "name": "precious_metals",
+        "value": 28
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

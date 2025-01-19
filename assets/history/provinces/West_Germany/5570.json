@@ -5,13 +5,22 @@
     ],
     "owner": "USA",
     "controller": "USA",
-    "wood": 3.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 788804,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 788804,
+        "template": 71
     },
-    "infrastructure": 2,
-    "air_base": 6
+    "good": {
+        "name": "wood",
+        "value": 3.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 6
+        }
+    ]
 }

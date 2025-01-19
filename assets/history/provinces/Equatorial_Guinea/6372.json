@@ -5,12 +5,18 @@
         "SPA",
         "EQG"
     ],
-    "oil": 73,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 29444,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 29444,
+        "template": 2
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 73
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,14 +2,26 @@
     "owner": "IRQ",
     "controller": "IRQ",
     "add_core": "IRQ",
-    "fruits": 58.3,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 400987,
-            "template": 33
-        }
+    "population_total": {
+        "amount": 400987,
+        "template": 33
     },
-    "infrastructure": 6,
-    "air_base": 3
+    "good": {
+        "name": "fruits",
+        "value": 58.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

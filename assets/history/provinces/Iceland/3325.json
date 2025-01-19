@@ -2,14 +2,26 @@
     "owner": "ICL",
     "controller": "ICL",
     "add_core": "ICL",
-    "rare_metals": 73.55,
-    "air_base": 4,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 103214,
-            "template": 54
-        }
+    "population_total": {
+        "amount": 103214,
+        "template": 54
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 73.55
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

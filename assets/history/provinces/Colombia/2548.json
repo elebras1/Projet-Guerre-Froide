@@ -2,12 +2,18 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "oil": 85,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1392,
-            "template": 83
-        }
+    "population_total": {
+        "amount": 1392,
+        "template": 83
     },
-    "infrastructure": 1
+    "good": {
+        "name": "oil",
+        "value": 85
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -5,17 +5,26 @@
         "SOV",
         "UKR"
     ],
-    "grain": 54.43,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 238088,
-            "template": 45
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "light_industry",
         "size": 4
     },
-    "naval_base": 3
+    "population_total": {
+        "amount": 238088,
+        "template": 45
+    },
+    "good": {
+        "name": "grain",
+        "value": 54.43
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

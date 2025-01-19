@@ -5,12 +5,18 @@
         "ENG",
         "IND"
     ],
-    "oil": 55,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1371376,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 1371376,
+        "template": 15
     },
-    "infrastructure": 5
+    "good": {
+        "name": "oil",
+        "value": 55
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "rare_metals": 7.17,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3171,
-            "template": 58
-        }
+    "population_total": {
+        "amount": 3171,
+        "template": 58
     },
-    "infrastructure": 1
+    "good": {
+        "name": "rare_metals",
+        "value": 7.17
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

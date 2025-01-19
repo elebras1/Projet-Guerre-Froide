@@ -2,13 +2,22 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "wood": 0.3,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 832860,
-            "template": 64
-        }
+    "population_total": {
+        "amount": 832860,
+        "template": 64
     },
-    "infrastructure": 5
+    "good": {
+        "name": "wood",
+        "value": 0.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

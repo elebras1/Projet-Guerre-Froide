@@ -5,12 +5,18 @@
         "ENG",
         "BUR"
     ],
-    "fish": 11.01,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 72685,
-            "template": 24
-        }
+    "population_total": {
+        "amount": 72685,
+        "template": 24
     },
-    "infrastructure": 1
+    "good": {
+        "name": "fish",
+        "value": 11.01
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

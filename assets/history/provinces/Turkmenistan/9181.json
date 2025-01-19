@@ -5,13 +5,22 @@
         "SOV",
         "TRK"
     ],
-    "vegetables": 1.09,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 432,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 432,
+        "template": 11
     },
-    "infrastructure": 4,
-    "air_base": 3
+    "good": {
+        "name": "vegetables",
+        "value": 1.09
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

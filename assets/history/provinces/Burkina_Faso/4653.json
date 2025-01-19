@@ -5,12 +5,18 @@
         "FRA",
         "BKN"
     ],
-    "grain": 5.85,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 161797,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 161797,
+        "template": 5
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 5.85
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

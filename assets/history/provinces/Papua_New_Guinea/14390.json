@@ -5,12 +5,18 @@
         "AST",
         "PAG"
     ],
-    "grain": 16.04,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 69891,
-            "template": 96
-        }
+    "population_total": {
+        "amount": 69891,
+        "template": 96
     },
-    "infrastructure": 1
+    "good": {
+        "name": "grain",
+        "value": 16.04
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

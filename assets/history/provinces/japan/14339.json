@@ -2,12 +2,18 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "coal": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 170267,
-            "template": 8
-        }
+    "population_total": {
+        "amount": 170267,
+        "template": 8
     },
-    "infrastructure": 4
+    "good": {
+        "name": "coal",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

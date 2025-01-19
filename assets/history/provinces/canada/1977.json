@@ -2,12 +2,18 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "uranium": 20,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 896,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 896,
+        "template": 92
     },
-    "infrastructure": 6
+    "good": {
+        "name": "uranium",
+        "value": 20
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

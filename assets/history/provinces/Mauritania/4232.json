@@ -5,12 +5,18 @@
         "FRA",
         "MRA"
     ],
-    "iron": 7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 886,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 886,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "iron",
+        "value": 7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

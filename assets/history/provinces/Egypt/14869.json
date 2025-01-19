@@ -2,7 +2,6 @@
     "owner": "EGY",
     "controller": "EGY",
     "add_core": "EGY",
-    "grain": 359.53,
     "economy_building": [
         {
             "name": "military_academy",
@@ -13,12 +12,22 @@
             "size": 7
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1131296,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 1131296,
+        "template": 3
     },
-    "infrastructure": 6,
-    "air_base": 2
+    "good": {
+        "name": "grain",
+        "value": 359.53
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

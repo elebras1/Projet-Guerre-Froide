@@ -2,18 +2,30 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "rare_metals": 6.8,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1122483,
-            "template": 91
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 5
     },
-    "air_base": 3
+    "population_total": {
+        "amount": 1122483,
+        "template": 91
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 6.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

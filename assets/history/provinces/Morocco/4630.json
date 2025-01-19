@@ -5,12 +5,18 @@
         "FRA",
         "MOR"
     ],
-    "vegetables": 55.95,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 460787,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 460787,
+        "template": 3
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 55.95
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

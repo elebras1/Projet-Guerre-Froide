@@ -5,12 +5,18 @@
         "SOV",
         "KAZ"
     ],
-    "vegetables": 17.23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 8478,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 8478,
+        "template": 11
     },
-    "infrastructure": 5
+    "good": {
+        "name": "vegetables",
+        "value": 17.23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

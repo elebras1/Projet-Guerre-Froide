@@ -5,12 +5,18 @@
         "INO",
         "HOL"
     ],
-    "wood": 0.25,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 221729,
-            "template": 21
-        }
+    "population_total": {
+        "amount": 221729,
+        "template": 21
     },
-    "infrastructure": 1
+    "good": {
+        "name": "wood",
+        "value": 0.25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

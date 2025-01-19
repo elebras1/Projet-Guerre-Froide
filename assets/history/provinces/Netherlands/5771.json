@@ -2,16 +2,22 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "grain": 298.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 771562,
-            "template": 73
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "military_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 771562,
+        "template": 73
+    },
+    "good": {
+        "name": "grain",
+        "value": 298.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

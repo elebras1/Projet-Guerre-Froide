@@ -2,12 +2,18 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "grain": 2.13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1476,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 1476,
+        "template": 92
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 2.13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

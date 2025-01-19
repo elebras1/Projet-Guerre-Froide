@@ -2,17 +2,26 @@
     "owner": "PAN",
     "controller": "PAN",
     "add_core": "PAN",
-    "meat": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 119551,
-            "template": 76
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 1
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 119551,
+        "template": 76
+    },
+    "good": {
+        "name": "meat",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

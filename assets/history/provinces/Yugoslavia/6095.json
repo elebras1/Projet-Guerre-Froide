@@ -5,16 +5,22 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "rare_metals": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 689551,
-            "template": 62
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "powerplant",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 689551,
+        "template": 62
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

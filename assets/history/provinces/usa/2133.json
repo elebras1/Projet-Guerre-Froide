@@ -2,16 +2,22 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "vegetables": 268.12,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 457132,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 457132,
+        "template": 93
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 268.12
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

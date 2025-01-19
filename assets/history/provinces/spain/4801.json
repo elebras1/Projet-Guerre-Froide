@@ -2,16 +2,22 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "vegetables": 22,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 160128,
-            "template": 67
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "military_industry",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 160128,
+        "template": 67
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 22
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

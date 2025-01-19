@@ -2,12 +2,18 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "meat": 8.96,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 34542,
-            "template": 77
-        }
+    "population_total": {
+        "amount": 34542,
+        "template": 77
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 8.96
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

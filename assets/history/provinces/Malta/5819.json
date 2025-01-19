@@ -5,13 +5,22 @@
         "ENG",
         "MLT"
     ],
-    "vegetables": 9.12,
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 311063,
-            "template": 65
-        }
+    "population_total": {
+        "amount": 311063,
+        "template": 65
     },
-    "infrastructure": 8
+    "good": {
+        "name": "vegetables",
+        "value": 9.12
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

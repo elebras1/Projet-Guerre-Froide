@@ -2,17 +2,26 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "grain": 140.82,
     "economy_building": {
         "name": "financial_district",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 356989,
-            "template": 70
-        }
+    "population_total": {
+        "amount": 356989,
+        "template": 70
     },
-    "infrastructure": 7,
-    "air_base": 5
+    "good": {
+        "name": "grain",
+        "value": 140.82
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

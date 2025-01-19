@@ -6,12 +6,18 @@
         "SYA",
         "ENG"
     ],
-    "oil": 15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1874,
-            "template": 44
-        }
+    "population_total": {
+        "amount": 1874,
+        "template": 44
     },
-    "infrastructure": 3
+    "good": {
+        "name": "oil",
+        "value": 15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

@@ -2,16 +2,22 @@
     "owner": "FIN",
     "controller": "FIN",
     "add_core": "FIN",
-    "rare_metals": 2.31,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 61117,
-            "template": 53
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "light_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 61117,
+        "template": 53
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 2.31
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

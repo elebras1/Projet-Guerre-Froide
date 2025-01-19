@@ -2,17 +2,26 @@
     "owner": "NZL",
     "controller": "NZL",
     "add_core": "NZL",
-    "fruits": 21,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 317920,
-            "template": 95
-        }
-    },
-    "infrastructure": 8,
     "economy_building": {
         "name": "light_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 317920,
+        "template": 95
+    },
+    "good": {
+        "name": "fruits",
+        "value": 21
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

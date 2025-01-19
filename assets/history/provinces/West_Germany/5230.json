@@ -5,16 +5,22 @@
     ],
     "owner": "FRA",
     "controller": "FRA",
-    "coal": 26,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1035987,
-            "template": 71
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "heavy_industry",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 1035987,
+        "template": 71
+    },
+    "good": {
+        "name": "coal",
+        "value": 26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

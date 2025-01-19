@@ -5,16 +5,22 @@
         "ENG",
         "IND"
     ],
-    "oil": 151,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1362724,
-            "template": 15
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "refinery",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 1362724,
+        "template": 15
+    },
+    "good": {
+        "name": "oil",
+        "value": 151
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

@@ -5,17 +5,26 @@
         "ENG",
         "IND"
     ],
-    "coal": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2033703,
-            "template": 15
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "light_industry",
         "size": 1
     },
-    "air_base": 2
+    "population_total": {
+        "amount": 2033703,
+        "template": 15
+    },
+    "good": {
+        "name": "coal",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

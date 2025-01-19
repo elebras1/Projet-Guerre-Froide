@@ -2,13 +2,22 @@
     "owner": "FIN",
     "controller": "FIN",
     "add_core": "FIN",
-    "grain": 44.53,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 92919,
-            "template": 53
-        }
+    "population_total": {
+        "amount": 92919,
+        "template": 53
     },
-    "infrastructure": 5,
-    "naval_base": 1
+    "good": {
+        "name": "grain",
+        "value": 44.53
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

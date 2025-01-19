@@ -2,7 +2,6 @@
     "owner": "POL",
     "controller": "POL",
     "add_core": "POL",
-    "coal": 2,
     "economy_building": [
         {
             "name": "military_academy",
@@ -13,11 +12,18 @@
             "size": 1
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 568782,
-            "template": 49
-        }
+    "population_total": {
+        "amount": 568782,
+        "template": 49
     },
-    "infrastructure": 4
+    "good": {
+        "name": "coal",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

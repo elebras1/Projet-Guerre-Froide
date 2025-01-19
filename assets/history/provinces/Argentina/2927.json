@@ -2,12 +2,18 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "fish": 1.64,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 519,
-            "template": 79
-        }
+    "population_total": {
+        "amount": 519,
+        "template": 79
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 1.64
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

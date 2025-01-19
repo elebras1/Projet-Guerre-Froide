@@ -2,12 +2,18 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "coal": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 105362,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 105362,
+        "template": 93
     },
-    "infrastructure": 5
+    "good": {
+        "name": "coal",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

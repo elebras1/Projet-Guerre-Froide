@@ -5,16 +5,22 @@
         "SOV",
         "ARM"
     ],
-    "grain": 68.96,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 503797,
-            "template": 30
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 503797,
+        "template": 30
+    },
+    "good": {
+        "name": "grain",
+        "value": 68.96
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

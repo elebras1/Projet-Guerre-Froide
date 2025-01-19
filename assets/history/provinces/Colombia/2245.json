@@ -2,12 +2,18 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "fruits": 0.22,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 7345,
-            "template": 83
-        }
+    "population_total": {
+        "amount": 7345,
+        "template": 83
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 0.22
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

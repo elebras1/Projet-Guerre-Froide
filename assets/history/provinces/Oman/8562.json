@@ -2,13 +2,22 @@
     "owner": "OMN",
     "controller": "OMN",
     "add_core": "OMN",
-    "fish": 0.5,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 71782,
-            "template": 40
-        }
+    "population_total": {
+        "amount": 71782,
+        "template": 40
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 0.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

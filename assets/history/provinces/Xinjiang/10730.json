@@ -6,12 +6,18 @@
         "CHC",
         "SIK"
     ],
-    "uranium": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 276522,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 276522,
+        "template": 6
     },
-    "infrastructure": 2
+    "good": {
+        "name": "uranium",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

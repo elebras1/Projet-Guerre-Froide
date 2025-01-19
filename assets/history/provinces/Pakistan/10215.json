@@ -5,16 +5,22 @@
         "ENG",
         "PAK"
     ],
-    "vegetables": 3.37,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 430917,
-            "template": 18
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "military_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 430917,
+        "template": 18
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 3.37
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

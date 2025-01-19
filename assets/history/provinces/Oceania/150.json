@@ -5,13 +5,22 @@
         "FRA",
         "FPO"
     ],
-    "fruits": 3.15,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 60696,
-            "template": 60
-        }
+    "population_total": {
+        "amount": 60696,
+        "template": 60
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 3.15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

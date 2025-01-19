@@ -2,12 +2,18 @@
     "owner": "NEP",
     "controller": "NEP",
     "add_core": "NEP",
-    "grain": 113.29,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 613107,
-            "template": 17
-        }
+    "population_total": {
+        "amount": 613107,
+        "template": 17
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 113.29
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

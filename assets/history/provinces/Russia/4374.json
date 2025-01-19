@@ -5,11 +5,14 @@
         "SOV",
         "RUS"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4018,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 4018,
+        "template": 45
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

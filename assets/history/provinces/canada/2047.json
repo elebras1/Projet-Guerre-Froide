@@ -2,12 +2,18 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "renewable_energy": 251,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 218905,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 218905,
+        "template": 92
     },
-    "infrastructure": 6
+    "good": {
+        "name": "renewable_energy",
+        "value": 251
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

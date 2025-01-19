@@ -6,13 +6,22 @@
         "DJI",
         "SOM"
     ],
-    "meat": 0.68,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 33711,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 33711,
+        "template": 1
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "meat",
+        "value": 0.68
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

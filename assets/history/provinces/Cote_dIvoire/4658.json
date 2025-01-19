@@ -5,16 +5,22 @@
         "FRA",
         "CDI"
     ],
-    "oil": 28,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 143462,
-            "template": 5
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "light_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 143462,
+        "template": 5
+    },
+    "good": {
+        "name": "oil",
+        "value": 28
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

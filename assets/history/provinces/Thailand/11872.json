@@ -2,16 +2,22 @@
     "owner": "SIA",
     "controller": "SIA",
     "add_core": "SIA",
-    "grain": 199.09,
     "economy_building": {
         "name": "financial_district",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 807845,
-            "template": 27
-        }
+    "population_total": {
+        "amount": 807845,
+        "template": 27
     },
-    "infrastructure": 1
+    "good": {
+        "name": "grain",
+        "value": 199.09
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

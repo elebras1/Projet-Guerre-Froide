@@ -2,12 +2,18 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "renewable_energy": 112,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1014871,
-            "template": 8
-        }
+    "population_total": {
+        "amount": 1014871,
+        "template": 8
     },
-    "infrastructure": 4
+    "good": {
+        "name": "renewable_energy",
+        "value": 112
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "PAL"
     ],
-    "fruits": 27,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 261515,
-            "template": 34
-        }
+    "population_total": {
+        "amount": 261515,
+        "template": 34
     },
-    "infrastructure": 6
+    "good": {
+        "name": "fruits",
+        "value": 27
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "FIN",
     "controller": "FIN",
     "add_core": "FIN",
-    "meat": 1.16,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 47672,
-            "template": 53
-        }
+    "population_total": {
+        "amount": 47672,
+        "template": 53
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 1.16
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

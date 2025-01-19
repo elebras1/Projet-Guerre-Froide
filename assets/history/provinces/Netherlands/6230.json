@@ -2,14 +2,6 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "grain": 298.2,
-    "naval_base": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1923761,
-            "template": 73
-        }
-    },
     "economy_building": [
         {
             "name": "university",
@@ -20,5 +12,22 @@
             "size": 5
         }
     ],
-    "infrastructure": 7
+    "population_total": {
+        "amount": 1923761,
+        "template": 73
+    },
+    "good": {
+        "name": "grain",
+        "value": 298.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "naval_base",
+            "size": 6
+        }
+    ]
 }

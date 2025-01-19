@@ -5,16 +5,22 @@
         "SOV",
         "UZB"
     ],
-    "meat": 213.11,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1282812,
-            "template": 11
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 1282812,
+        "template": 11
+    },
+    "good": {
+        "name": "meat",
+        "value": 213.11
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

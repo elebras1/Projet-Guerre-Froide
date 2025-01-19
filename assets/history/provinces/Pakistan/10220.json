@@ -5,16 +5,22 @@
         "ENG",
         "PAK"
     ],
-    "meat": 274.67,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3793539,
-            "template": 18
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "heavy_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 3793539,
+        "template": 18
+    },
+    "good": {
+        "name": "meat",
+        "value": 274.67
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

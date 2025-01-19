@@ -2,12 +2,18 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "oil": 71,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 9923,
-            "template": 58
-        }
+    "population_total": {
+        "amount": 9923,
+        "template": 58
     },
-    "infrastructure": 2
+    "good": {
+        "name": "oil",
+        "value": 71
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "OMN",
     "controller": "OMN",
     "add_core": "OMN",
-    "vegetables": 0.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 8319,
-            "template": 38
-        }
+    "population_total": {
+        "amount": 8319,
+        "template": 38
     },
-    "infrastructure": 3
+    "good": {
+        "name": "vegetables",
+        "value": 0.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

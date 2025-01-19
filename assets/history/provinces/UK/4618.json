@@ -2,14 +2,6 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "meat": 0.41,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 24514,
-            "template": 60
-        }
-    },
     "economy_building": [
         {
             "name": "naval_research_center",
@@ -20,6 +12,26 @@
             "size": 7
         }
     ],
-    "infrastructure": 2,
-    "air_base": 10
+    "population_total": {
+        "amount": 24514,
+        "template": 60
+    },
+    "good": {
+        "name": "meat",
+        "value": 0.41
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 10
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "fish": 8.01,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 14354,
-            "template": 58
-        }
+    "population_total": {
+        "amount": 14354,
+        "template": 58
     },
-    "infrastructure": 1
+    "good": {
+        "name": "fish",
+        "value": 8.01
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

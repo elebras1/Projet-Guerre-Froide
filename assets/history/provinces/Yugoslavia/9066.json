@@ -5,12 +5,18 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "grain": 90,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 172724,
-            "template": 62
-        }
+    "population_total": {
+        "amount": 172724,
+        "template": 62
     },
-    "infrastructure": 5
+    "good": {
+        "name": "grain",
+        "value": 90
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

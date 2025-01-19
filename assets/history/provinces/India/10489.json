@@ -5,12 +5,18 @@
         "ENG",
         "IND"
     ],
-    "precious_metals": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 473708,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 473708,
+        "template": 15
     },
-    "infrastructure": 5
+    "good": {
+        "name": "precious_metals",
+        "value": 4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

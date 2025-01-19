@@ -2,12 +2,18 @@
     "owner": "MON",
     "controller": "MON",
     "add_core": "MON",
-    "rare_metals": 15.13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1441,
-            "template": 9
-        }
+    "population_total": {
+        "amount": 1441,
+        "template": 9
     },
-    "infrastructure": 3
+    "good": {
+        "name": "rare_metals",
+        "value": 15.13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

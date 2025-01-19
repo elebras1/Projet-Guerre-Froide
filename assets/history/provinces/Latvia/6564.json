@@ -5,13 +5,22 @@
     ],
     "owner": "SOV",
     "controller": "SOV",
-    "wood": 6.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 71336,
-            "template": 56
-        }
+    "population_total": {
+        "amount": 71336,
+        "template": 56
     },
-    "infrastructure": 5,
-    "naval_base": 1
+    "good": {
+        "name": "wood",
+        "value": 6.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

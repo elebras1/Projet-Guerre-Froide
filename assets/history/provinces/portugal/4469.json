@@ -2,16 +2,22 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "vegetables": 191.57,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 147556,
-            "template": 66
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 147556,
+        "template": 66
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 191.57
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

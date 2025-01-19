@@ -2,13 +2,22 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "fruits": 1.63,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 30986,
-            "template": 155
-        }
+    "population_total": {
+        "amount": 30986,
+        "template": 155
     },
-    "infrastructure": 1
+    "good": {
+        "name": "fruits",
+        "value": 1.63
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

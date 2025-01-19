@@ -2,13 +2,22 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "precious_metals": 10,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 14349,
-            "template": 81
-        }
+    "population_total": {
+        "amount": 14349,
+        "template": 81
     },
-    "infrastructure": 6,
-    "air_base": 1
+    "good": {
+        "name": "precious_metals",
+        "value": 10
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

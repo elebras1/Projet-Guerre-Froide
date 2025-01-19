@@ -6,12 +6,18 @@
         "FRA",
         "MAL"
     ],
-    "precious_metals": 23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 47349,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 47349,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "precious_metals",
+        "value": 23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "FRA",
         "MOR"
     ],
-    "grain": 4.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 79467,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 79467,
+        "template": 3
     },
-    "infrastructure": 5
+    "good": {
+        "name": "grain",
+        "value": 4.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

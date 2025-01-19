@@ -2,13 +2,22 @@
     "owner": "HON",
     "controller": "HON",
     "add_core": "HON",
-    "grain": 12.567,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 44598,
-            "template": 76
-        }
+    "population_total": {
+        "amount": 44598,
+        "template": 76
     },
-    "infrastructure": 3,
-    "naval_base": 1
+    "good": {
+        "name": "grain",
+        "value": 12.567
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

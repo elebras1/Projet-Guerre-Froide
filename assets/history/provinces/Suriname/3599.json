@@ -5,12 +5,18 @@
         "HOL",
         "SUR"
     ],
-    "grain": 6.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2337,
-            "template": 89
-        }
+    "population_total": {
+        "amount": 2337,
+        "template": 89
     },
-    "infrastructure": 3
+    "good": {
+        "name": "grain",
+        "value": 6.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

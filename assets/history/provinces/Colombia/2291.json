@@ -2,16 +2,22 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "precious_metals": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 96581,
-            "template": 83
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "military_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 96581,
+        "template": 83
+    },
+    "good": {
+        "name": "precious_metals",
+        "value": 4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

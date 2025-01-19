@@ -2,17 +2,26 @@
     "add_core": "FRA",
     "owner": "FRA",
     "controller": "FRA",
-    "wood": 2.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 780821,
-            "template": 70
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "refinery",
         "size": 6
     },
-    "air_base": 7
+    "population_total": {
+        "amount": 780821,
+        "template": 70
+    },
+    "good": {
+        "name": "wood",
+        "value": 2.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 7
+        }
+    ]
 }

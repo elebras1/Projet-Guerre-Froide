@@ -6,12 +6,18 @@
         "SYA",
         "ENG"
     ],
-    "meat": 5.66,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 44152,
-            "template": 44
-        }
+    "population_total": {
+        "amount": 44152,
+        "template": 44
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 5.66
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

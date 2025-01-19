@@ -5,12 +5,18 @@
         "ENG",
         "NIG"
     ],
-    "wood": 0.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 310250,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 310250,
+        "template": 5
     },
-    "infrastructure": 3
+    "good": {
+        "name": "wood",
+        "value": 0.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

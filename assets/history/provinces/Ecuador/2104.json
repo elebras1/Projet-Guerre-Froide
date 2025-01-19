@@ -2,12 +2,18 @@
     "owner": "ECU",
     "controller": "ECU",
     "add_core": "ECU",
-    "precious_metals": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 522653,
-            "template": 84
-        }
+    "population_total": {
+        "amount": 522653,
+        "template": 84
     },
-    "infrastructure": 6
+    "good": {
+        "name": "precious_metals",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

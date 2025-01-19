@@ -5,17 +5,26 @@
         "BEL",
         "FLA"
     ],
-    "meat": 50.4,
-    "naval_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1134095,
-            "template": 69
-        }
-    },
-    "infrastructure": 7,
     "economy_building": {
         "name": "refinery",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 1134095,
+        "template": 69
+    },
+    "good": {
+        "name": "meat",
+        "value": 50.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "naval_base",
+            "size": 4
+        }
+    ]
 }

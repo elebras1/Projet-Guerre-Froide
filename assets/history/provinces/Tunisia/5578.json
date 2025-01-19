@@ -5,13 +5,22 @@
         "FRA",
         "TUN"
     ],
-    "vegetables": 5.49,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 34007,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 34007,
+        "template": 3
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "vegetables",
+        "value": 5.49
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -5,12 +5,18 @@
     ],
     "owner": "SOV",
     "controller": "SOV",
-    "uranium": 7.6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 971158,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 971158,
+        "template": 71
     },
-    "infrastructure": 6
+    "good": {
+        "name": "uranium",
+        "value": 7.6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

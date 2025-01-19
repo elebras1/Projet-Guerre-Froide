@@ -2,12 +2,18 @@
     "owner": "SOV",
     "controller": "SOV",
     "add_core": "PER",
-    "coal": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 194643,
-            "template": 16
-        }
+    "population_total": {
+        "amount": 194643,
+        "template": 16
     },
-    "infrastructure": 4
+    "good": {
+        "name": "coal",
+        "value": 4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

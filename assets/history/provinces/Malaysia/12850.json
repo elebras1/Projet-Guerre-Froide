@@ -5,12 +5,18 @@
         "ENG",
         "MLY"
     ],
-    "vegetables": 16.49,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 102473,
-            "template": 23
-        }
+    "population_total": {
+        "amount": 102473,
+        "template": 23
     },
-    "infrastructure": 1
+    "good": {
+        "name": "vegetables",
+        "value": 16.49
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

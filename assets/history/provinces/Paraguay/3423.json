@@ -2,12 +2,18 @@
     "owner": "PAR",
     "controller": "PAR",
     "add_core": "PAR",
-    "vegetables": 61.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 11185,
-            "template": 87
-        }
+    "population_total": {
+        "amount": 11185,
+        "template": 87
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 61.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

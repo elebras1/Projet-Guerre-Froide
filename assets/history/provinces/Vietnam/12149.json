@@ -5,12 +5,18 @@
         "IDC",
         "DRV"
     ],
-    "renewable_energy": 196,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 757758,
-            "template": 28
-        }
+    "population_total": {
+        "amount": 757758,
+        "template": 28
     },
-    "infrastructure": 2
+    "good": {
+        "name": "renewable_energy",
+        "value": 196
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

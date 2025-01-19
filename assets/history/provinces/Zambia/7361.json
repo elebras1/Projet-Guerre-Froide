@@ -6,16 +6,22 @@
         "ZMB",
         "RHO"
     ],
-    "grain": 6.92,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 50685,
-            "template": 1
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 50685,
+        "template": 1
+    },
+    "good": {
+        "name": "grain",
+        "value": 6.92
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

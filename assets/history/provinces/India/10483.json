@@ -5,12 +5,18 @@
         "ENG",
         "IND"
     ],
-    "uranium": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 949581,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 949581,
+        "template": 15
     },
-    "infrastructure": 4
+    "good": {
+        "name": "uranium",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

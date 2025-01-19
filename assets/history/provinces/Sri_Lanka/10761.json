@@ -5,13 +5,22 @@
         "ENG",
         "SRL"
     ],
-    "grain": 22.79,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 420266,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 420266,
+        "template": 15
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 22.79
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

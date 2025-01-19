@@ -2,13 +2,22 @@
     "owner": "SAU",
     "controller": "SAU",
     "add_core": "SAU",
-    "grain": 10.94,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 162286,
-            "template": 40
-        }
+    "population_total": {
+        "amount": 162286,
+        "template": 40
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "grain",
+        "value": 10.94
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

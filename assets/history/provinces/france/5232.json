@@ -2,13 +2,6 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "wood": 2.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 373019,
-            "template": 70
-        }
-    },
     "economy_building": [
         {
             "name": "air_research_center",
@@ -19,5 +12,18 @@
             "size": 6
         }
     ],
-    "infrastructure": 5
+    "population_total": {
+        "amount": 373019,
+        "template": 70
+    },
+    "good": {
+        "name": "wood",
+        "value": 2.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

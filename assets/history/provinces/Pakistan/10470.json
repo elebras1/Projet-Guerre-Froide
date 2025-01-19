@@ -6,11 +6,14 @@
         "IND",
         "PAK"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 73311,
-            "template": 18
-        }
+    "population_total": {
+        "amount": 73311,
+        "template": 18
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

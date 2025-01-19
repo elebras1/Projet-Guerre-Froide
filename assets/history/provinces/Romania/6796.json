@@ -2,16 +2,22 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "oil": 23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1342239,
-            "template": 50
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "refinery",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 1342239,
+        "template": 50
+    },
+    "good": {
+        "name": "oil",
+        "value": 23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -2,8 +2,6 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "vegetables": 306.26,
-    "naval_base": 6,
     "economy_building": [
         {
             "name": "financial_district",
@@ -14,11 +12,22 @@
             "size": 7
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1524263,
-            "template": 73
-        }
+    "population_total": {
+        "amount": 1524263,
+        "template": 73
     },
-    "infrastructure": 8
+    "good": {
+        "name": "vegetables",
+        "value": 306.26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        },
+        {
+            "name": "naval_base",
+            "size": 6
+        }
+    ]
 }

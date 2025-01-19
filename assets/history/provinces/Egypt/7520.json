@@ -2,16 +2,22 @@
     "owner": "EGY",
     "controller": "EGY",
     "add_core": "EGY",
-    "rare_metals": 22.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 680574,
-            "template": 3
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "heavy_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 680574,
+        "template": 3
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 22.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

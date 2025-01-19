@@ -2,13 +2,22 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "meat": 173.57,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1008655,
-            "template": 64
-        }
+    "population_total": {
+        "amount": 1008655,
+        "template": 64
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 173.57
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

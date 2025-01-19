@@ -5,8 +5,6 @@
         "LEB",
         "SYR"
     ],
-    "vegetables": 35.55,
-    "naval_base": 3,
     "economy_building": [
         {
             "name": "financial_district",
@@ -17,11 +15,22 @@
             "size": 3
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 118135,
-            "template": 37
-        }
+    "population_total": {
+        "amount": 118135,
+        "template": 37
     },
-    "infrastructure": 5
+    "good": {
+        "name": "vegetables",
+        "value": 35.55
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

@@ -5,16 +5,22 @@
         "INO",
         "HOL"
     ],
-    "fruits": 114.41,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4473000,
-            "template": 21
-        }
+    "population_total": {
+        "amount": 4473000,
+        "template": 21
     },
-    "infrastructure": 6
+    "good": {
+        "name": "fruits",
+        "value": 114.41
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

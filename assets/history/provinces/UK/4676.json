@@ -2,17 +2,26 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "coal": 9,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 143278,
-            "template": 60
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "refinery",
         "size": 5
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 143278,
+        "template": 60
+    },
+    "good": {
+        "name": "coal",
+        "value": 9
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

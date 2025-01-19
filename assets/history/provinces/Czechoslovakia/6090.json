@@ -5,16 +5,22 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "grain": 581.43,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 482625,
-            "template": 47
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 482625,
+        "template": 47
+    },
+    "good": {
+        "name": "grain",
+        "value": 581.43
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

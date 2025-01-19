@@ -2,12 +2,18 @@
     "owner": "ECU",
     "controller": "ECU",
     "add_core": "ECU",
-    "meat": 35,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 167315,
-            "template": 84
-        }
+    "population_total": {
+        "amount": 167315,
+        "template": 84
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 35
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

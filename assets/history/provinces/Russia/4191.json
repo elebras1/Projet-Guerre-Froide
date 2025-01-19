@@ -5,12 +5,18 @@
         "SOV",
         "RUS"
     ],
-    "rare_metals": 38.81,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2813,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 2813,
+        "template": 45
     },
-    "infrastructure": 1
+    "good": {
+        "name": "rare_metals",
+        "value": 38.81
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

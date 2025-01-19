@@ -5,12 +5,18 @@
         "SOV",
         "AZB"
     ],
-    "rare_metals": 2.54,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 128526,
-            "template": 30
-        }
+    "population_total": {
+        "amount": 128526,
+        "template": 30
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 2.54
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

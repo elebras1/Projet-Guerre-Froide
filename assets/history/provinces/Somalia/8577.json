@@ -5,16 +5,22 @@
         "ITA",
         "SOM"
     ],
-    "fruits": 5.56,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 194747,
-            "template": 1
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 194747,
+        "template": 1
+    },
+    "good": {
+        "name": "fruits",
+        "value": 5.56
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

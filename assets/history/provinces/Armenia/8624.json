@@ -5,16 +5,22 @@
         "SOV",
         "ARM"
     ],
-    "precious_metals": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 253914,
-            "template": 30
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "heavy_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 253914,
+        "template": 30
+    },
+    "good": {
+        "name": "precious_metals",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

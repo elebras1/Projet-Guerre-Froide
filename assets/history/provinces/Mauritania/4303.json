@@ -5,12 +5,18 @@
         "FRA",
         "MRA"
     ],
-    "meat": 1.17,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1370,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 1370,
+        "template": 5
     },
-    "infrastructure": 3
+    "good": {
+        "name": "meat",
+        "value": 1.17
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

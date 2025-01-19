@@ -2,16 +2,22 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "fruits": 60.62,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 210522,
-            "template": 67
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 210522,
+        "template": 67
+    },
+    "good": {
+        "name": "fruits",
+        "value": 60.62
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -2,17 +2,26 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "wood": 1.3,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 115247,
-            "template": 59
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "powerplant",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 115247,
+        "template": 59
+    },
+    "good": {
+        "name": "wood",
+        "value": 1.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

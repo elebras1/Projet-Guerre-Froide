@@ -5,13 +5,22 @@
         "PRK",
         "KOR"
     ],
-    "grain": 10,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2644890,
-            "template": 10
-        }
+    "population_total": {
+        "amount": 2644890,
+        "template": 10
     },
-    "infrastructure": 3,
-    "naval_base": 1
+    "good": {
+        "name": "grain",
+        "value": 10
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "grain": 30.65,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 112539,
-            "template": 42
-        }
+    "population_total": {
+        "amount": 112539,
+        "template": 42
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 30.65
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

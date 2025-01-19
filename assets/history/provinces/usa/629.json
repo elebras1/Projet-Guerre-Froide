@@ -6,11 +6,14 @@
         "name": "nuclear_test_site",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 550529,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 550529,
+        "template": 93
     },
-    "infrastructure": 3
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

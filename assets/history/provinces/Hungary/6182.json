@@ -2,16 +2,22 @@
     "add_core": "HUN",
     "owner": "HUN",
     "controller": "HUN",
-    "meat": 259.9,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 593626,
-            "template": 48
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "refinery",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 593626,
+        "template": 48
+    },
+    "good": {
+        "name": "meat",
+        "value": 259.9
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

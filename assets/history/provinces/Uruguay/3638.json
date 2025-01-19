@@ -2,12 +2,18 @@
     "owner": "URU",
     "controller": "URU",
     "add_core": "URU",
-    "vegetables": 5.21,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 61141,
-            "template": 90
-        }
+    "population_total": {
+        "amount": 61141,
+        "template": 90
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 5.21
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

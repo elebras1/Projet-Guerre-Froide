@@ -5,13 +5,22 @@
         "ENG",
         "ARG"
     ],
-    "fish": 0.13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 968,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 968,
+        "template": 5
     },
-    "infrastructure": 3,
-    "naval_base": 1
+    "good": {
+        "name": "fish",
+        "value": 0.13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

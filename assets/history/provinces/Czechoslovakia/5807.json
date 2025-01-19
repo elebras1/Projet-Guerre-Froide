@@ -5,12 +5,18 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "wood": 2.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 290229,
-            "template": 47
-        }
+    "population_total": {
+        "amount": 290229,
+        "template": 47
     },
-    "infrastructure": 6
+    "good": {
+        "name": "wood",
+        "value": 2.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

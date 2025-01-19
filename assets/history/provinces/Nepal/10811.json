@@ -2,12 +2,18 @@
     "owner": "NEP",
     "controller": "NEP",
     "add_core": "NEP",
-    "vegetables": 67.55,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 600717,
-            "template": 17
-        }
+    "population_total": {
+        "amount": 600717,
+        "template": 17
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 67.55
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

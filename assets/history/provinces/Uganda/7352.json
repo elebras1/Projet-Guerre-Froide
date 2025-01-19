@@ -5,12 +5,18 @@
         "ENG",
         "UGD"
     ],
-    "grain": 84.81,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 517711,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 517711,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 84.81
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

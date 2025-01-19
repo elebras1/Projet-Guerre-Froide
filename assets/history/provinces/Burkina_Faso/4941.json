@@ -5,12 +5,18 @@
         "FRA",
         "BKN"
     ],
-    "meat": 6.81,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 141886,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 141886,
+        "template": 5
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 6.81
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

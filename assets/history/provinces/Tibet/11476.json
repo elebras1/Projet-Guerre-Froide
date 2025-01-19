@@ -5,12 +5,18 @@
         "TIB",
         "CHC"
     ],
-    "grain": 1.86,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1665,
-            "template": 17
-        }
+    "population_total": {
+        "amount": 1665,
+        "template": 17
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 1.86
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

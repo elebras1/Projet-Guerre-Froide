@@ -2,12 +2,18 @@
     "owner": "ICL",
     "controller": "ICL",
     "add_core": "ICL",
-    "grain": 0.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1489,
-            "template": 54
-        }
+    "population_total": {
+        "amount": 1489,
+        "template": 54
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 0.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

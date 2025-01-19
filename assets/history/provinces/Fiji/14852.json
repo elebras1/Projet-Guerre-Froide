@@ -5,13 +5,22 @@
         "ENG",
         "FJI"
     ],
-    "precious_metals": 9.6,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 173396,
-            "template": 56
-        }
+    "population_total": {
+        "amount": 173396,
+        "template": 56
     },
-    "infrastructure": 5
+    "good": {
+        "name": "precious_metals",
+        "value": 9.6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

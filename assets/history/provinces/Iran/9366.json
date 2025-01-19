@@ -2,11 +2,14 @@
     "owner": "PER",
     "controller": "PER",
     "add_core": "PER",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 798,
-            "template": 16
-        }
+    "population_total": {
+        "amount": 798,
+        "template": 16
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

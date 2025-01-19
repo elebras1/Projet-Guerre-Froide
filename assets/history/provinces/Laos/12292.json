@@ -5,12 +5,18 @@
         "IDC",
         "LAO"
     ],
-    "grain": 7.05,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 24299,
-            "template": 22
-        }
+    "population_total": {
+        "amount": 24299,
+        "template": 22
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 7.05
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

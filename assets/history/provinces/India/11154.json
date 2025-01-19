@@ -5,11 +5,14 @@
         "ENG",
         "IND"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 210651,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 210651,
+        "template": 15
     },
-    "infrastructure": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

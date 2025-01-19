@@ -5,13 +5,22 @@
         "FRA",
         "COM"
     ],
-    "fish": 15.36,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 149436,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 149436,
+        "template": 1
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "fish",
+        "value": 15.36
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

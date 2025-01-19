@@ -5,12 +5,18 @@
         "SOV",
         "KAZ"
     ],
-    "oil": 23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 800,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 800,
+        "template": 11
     },
-    "infrastructure": 6
+    "good": {
+        "name": "oil",
+        "value": 23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

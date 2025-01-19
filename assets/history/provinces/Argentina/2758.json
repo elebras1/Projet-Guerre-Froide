@@ -2,16 +2,22 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "vegetables": 7.23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 12899,
-            "template": 79
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "refinery",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 12899,
+        "template": 79
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 7.23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

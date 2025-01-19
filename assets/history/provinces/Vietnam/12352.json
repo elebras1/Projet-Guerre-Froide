@@ -5,13 +5,22 @@
         "IDC",
         "SVI"
     ],
-    "grain": 97.88,
-    "naval_base": 7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 739510,
-            "template": 28
-        }
+    "population_total": {
+        "amount": 739510,
+        "template": 28
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 97.88
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "naval_base",
+            "size": 7
+        }
+    ]
 }

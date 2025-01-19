@@ -2,13 +2,22 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "vegetables": 24.81,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 68231,
-            "template": 59
-        }
+    "population_total": {
+        "amount": 68231,
+        "template": 59
     },
-    "infrastructure": 2,
-    "naval_base": 1
+    "good": {
+        "name": "vegetables",
+        "value": 24.81
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

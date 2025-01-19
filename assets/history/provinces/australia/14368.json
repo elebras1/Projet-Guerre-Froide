@@ -2,12 +2,18 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "meat": 3.87,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1069,
-            "template": 94
-        }
+    "population_total": {
+        "amount": 1069,
+        "template": 94
     },
-    "infrastructure": 5
+    "good": {
+        "name": "meat",
+        "value": 3.87
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

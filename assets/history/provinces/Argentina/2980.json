@@ -2,16 +2,22 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "oil": 18,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 165377,
-            "template": 79
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "refinery",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 165377,
+        "template": 79
+    },
+    "good": {
+        "name": "oil",
+        "value": 18
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

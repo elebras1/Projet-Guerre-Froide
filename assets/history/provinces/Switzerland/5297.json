@@ -2,13 +2,6 @@
     "owner": "SCH",
     "controller": "SCH",
     "add_core": "SCH",
-    "vegetables": 163.24,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 791105,
-            "template": 74
-        }
-    },
     "economy_building": [
         {
             "name": "university",
@@ -19,5 +12,18 @@
             "size": 4
         }
     ],
-    "infrastructure": 8
+    "population_total": {
+        "amount": 791105,
+        "template": 74
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 163.24
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

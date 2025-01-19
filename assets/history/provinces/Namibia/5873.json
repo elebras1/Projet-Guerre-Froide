@@ -5,12 +5,18 @@
         "SAF",
         "NAM"
     ],
-    "fish": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 934,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 934,
+        "template": 4
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

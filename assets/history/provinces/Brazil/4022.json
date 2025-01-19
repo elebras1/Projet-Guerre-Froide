@@ -2,13 +2,22 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "oil": 85,
-    "naval_base": 10,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 398702,
-            "template": 77
-        }
+    "population_total": {
+        "amount": 398702,
+        "template": 77
     },
-    "infrastructure": 6
+    "good": {
+        "name": "oil",
+        "value": 85
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 10
+        }
+    ]
 }

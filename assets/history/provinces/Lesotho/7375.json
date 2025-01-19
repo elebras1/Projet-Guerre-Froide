@@ -5,12 +5,18 @@
         "ENG",
         "LST"
     ],
-    "meat": 10.23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 315496,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 315496,
+        "template": 4
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 10.23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

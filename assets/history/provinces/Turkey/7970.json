@@ -2,12 +2,18 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "vegetables": 172.23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 635728,
-            "template": 42
-        }
+    "population_total": {
+        "amount": 635728,
+        "template": 42
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 172.23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

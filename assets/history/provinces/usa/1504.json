@@ -2,12 +2,18 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "grain": 300.9,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 511447,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 511447,
+        "template": 93
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 300.9
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

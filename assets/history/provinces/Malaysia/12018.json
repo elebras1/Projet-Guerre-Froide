@@ -5,12 +5,18 @@
         "ENG",
         "MLY"
     ],
-    "iron": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 204209,
-            "template": 23
-        }
+    "population_total": {
+        "amount": 204209,
+        "template": 23
     },
-    "infrastructure": 4
+    "good": {
+        "name": "iron",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,17 +2,26 @@
     "owner": "BUL",
     "controller": "BUL",
     "add_core": "BUL",
-    "uranium": 17.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1869081,
-            "template": 46
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "heavy_industry",
         "size": 1
     },
-    "air_base": 5
+    "population_total": {
+        "amount": 1869081,
+        "template": 46
+    },
+    "good": {
+        "name": "uranium",
+        "value": 17.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "GUY"
     ],
-    "grain": 7.619,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2656,
-            "template": 86
-        }
+    "population_total": {
+        "amount": 2656,
+        "template": 86
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 7.619
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

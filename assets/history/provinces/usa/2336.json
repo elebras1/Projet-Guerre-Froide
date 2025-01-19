@@ -2,8 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "grain": 26.54,
-    "naval_base": 10,
     "economy_building": [
         {
             "name": "national_monument",
@@ -14,11 +12,22 @@
             "size": 7
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 9954726,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 9954726,
+        "template": 93
     },
-    "infrastructure": 10
+    "good": {
+        "name": "grain",
+        "value": 26.54
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 10
+        },
+        {
+            "name": "naval_base",
+            "size": 10
+        }
+    ]
 }

@@ -2,13 +2,22 @@
     "owner": "SIA",
     "controller": "SIA",
     "add_core": "SIA",
-    "oil": 90,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 417703,
-            "template": 27
-        }
+    "population_total": {
+        "amount": 417703,
+        "template": 27
     },
-    "infrastructure": 1,
-    "naval_base": 3
+    "good": {
+        "name": "oil",
+        "value": 90
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

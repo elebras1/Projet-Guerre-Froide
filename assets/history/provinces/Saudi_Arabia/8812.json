@@ -2,16 +2,22 @@
     "owner": "SAU",
     "controller": "SAU",
     "add_core": "SAU",
-    "oil": 171,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 27420,
-            "template": 40
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "refinery",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 27420,
+        "template": 40
+    },
+    "good": {
+        "name": "oil",
+        "value": 171
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

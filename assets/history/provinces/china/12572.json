@@ -5,12 +5,18 @@
         "CHI",
         "CHC"
     ],
-    "coal": 23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 463249,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 463249,
+        "template": 6
     },
-    "infrastructure": 2
+    "good": {
+        "name": "coal",
+        "value": 23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

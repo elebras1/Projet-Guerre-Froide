@@ -5,12 +5,18 @@
         "ENG",
         "ISR"
     ],
-    "meat": 12.07,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 16483,
-            "template": 34
-        }
+    "population_total": {
+        "amount": 16483,
+        "template": 34
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 12.07
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

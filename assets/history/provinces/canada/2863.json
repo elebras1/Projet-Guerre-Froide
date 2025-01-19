@@ -2,12 +2,18 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "rare_metals": 9.38,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 862,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 862,
+        "template": 92
     },
-    "infrastructure": 6
+    "good": {
+        "name": "rare_metals",
+        "value": 9.38
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

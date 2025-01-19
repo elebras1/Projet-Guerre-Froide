@@ -2,13 +2,22 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "meat": 50.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 178146,
-            "template": 59
-        }
+    "population_total": {
+        "amount": 178146,
+        "template": 59
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "meat",
+        "value": 50.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

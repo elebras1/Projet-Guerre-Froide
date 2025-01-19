@@ -5,12 +5,18 @@
         "SOV",
         "RUS"
     ],
-    "oil": 102,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 160143,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 160143,
+        "template": 45
     },
-    "infrastructure": 3
+    "good": {
+        "name": "oil",
+        "value": 102
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

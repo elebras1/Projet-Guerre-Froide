@@ -5,16 +5,22 @@
         "SOV",
         "RUS"
     ],
-    "wood": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 363754,
-            "template": 45
-        }
-    },
-    "infrastructure": 7,
     "economy_building": {
         "name": "light_industry",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 363754,
+        "template": 45
+    },
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        }
+    ]
 }

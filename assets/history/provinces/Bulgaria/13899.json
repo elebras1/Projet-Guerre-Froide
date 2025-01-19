@@ -2,12 +2,18 @@
     "owner": "BUL",
     "controller": "BUL",
     "add_core": "BUL",
-    "rare_metals": 7.95,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 355228,
-            "template": 46
-        }
+    "population_total": {
+        "amount": 355228,
+        "template": 46
     },
-    "infrastructure": 6
+    "good": {
+        "name": "rare_metals",
+        "value": 7.95
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

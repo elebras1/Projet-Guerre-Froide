@@ -2,12 +2,18 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "vegetables": 3.83,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 11849,
-            "template": 81
-        }
+    "population_total": {
+        "amount": 11849,
+        "template": 81
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 3.83
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

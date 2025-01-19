@@ -2,12 +2,18 @@
     "owner": "SOV",
     "controller": "SOV",
     "add_core": "PER",
-    "wood": 1.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 164716,
-            "template": 16
-        }
+    "population_total": {
+        "amount": 164716,
+        "template": 16
     },
-    "infrastructure": 4
+    "good": {
+        "name": "wood",
+        "value": 1.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

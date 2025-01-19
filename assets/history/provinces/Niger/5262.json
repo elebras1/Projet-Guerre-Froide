@@ -5,12 +5,18 @@
         "FRA",
         "NGR"
     ],
-    "grain": 37,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 278894,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 278894,
+        "template": 5
     },
-    "infrastructure": 1
+    "good": {
+        "name": "grain",
+        "value": 37
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

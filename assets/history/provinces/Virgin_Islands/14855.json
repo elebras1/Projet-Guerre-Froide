@@ -5,13 +5,22 @@
         "USA",
         "VGI"
     ],
-    "fruits": 0.16,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 19400,
-            "template": 75
-        }
+    "population_total": {
+        "amount": 19400,
+        "template": 75
     },
-    "infrastructure": 5,
-    "naval_base": 1
+    "good": {
+        "name": "fruits",
+        "value": 0.16
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

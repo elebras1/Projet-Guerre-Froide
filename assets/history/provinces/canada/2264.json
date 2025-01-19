@@ -2,12 +2,18 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "meat": 2.27,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1003,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 1003,
+        "template": 92
     },
-    "infrastructure": 3
+    "good": {
+        "name": "meat",
+        "value": 2.27
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

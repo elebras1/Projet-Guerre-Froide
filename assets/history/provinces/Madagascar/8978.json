@@ -5,12 +5,18 @@
         "FRA",
         "MAD"
     ],
-    "meat": 5.84,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 27293,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 27293,
+        "template": 1
     },
-    "infrastructure": 5
+    "good": {
+        "name": "meat",
+        "value": 5.84
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

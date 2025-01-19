@@ -2,7 +2,6 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "grain": 105.83,
     "economy_building": [
         {
             "name": "military_academy",
@@ -13,12 +12,22 @@
             "size": 2
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 466923,
-            "template": 42
-        }
+    "population_total": {
+        "amount": 466923,
+        "template": 42
     },
-    "infrastructure": 6,
-    "air_base": 7
+    "good": {
+        "name": "grain",
+        "value": 105.83
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 7
+        }
+    ]
 }

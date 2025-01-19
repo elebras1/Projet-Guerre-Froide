@@ -5,12 +5,18 @@
         "SOV",
         "UZB"
     ],
-    "oil": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1040,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 1040,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "BUR"
     ],
-    "coal": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 135283,
-            "template": 24
-        }
+    "population_total": {
+        "amount": 135283,
+        "template": 24
     },
-    "infrastructure": 1
+    "good": {
+        "name": "coal",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

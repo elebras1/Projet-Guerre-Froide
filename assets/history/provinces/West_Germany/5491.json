@@ -5,16 +5,22 @@
     ],
     "owner": "ENG",
     "controller": "ENG",
-    "grain": 434.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 498001,
-            "template": 71
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "powerplant",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 498001,
+        "template": 71
+    },
+    "good": {
+        "name": "grain",
+        "value": 434.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

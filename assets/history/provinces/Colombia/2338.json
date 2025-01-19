@@ -2,13 +2,22 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "vegetables": 45.78,
-    "naval_base": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 194601,
-            "template": 83
-        }
+    "population_total": {
+        "amount": 194601,
+        "template": 83
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 45.78
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 5
+        }
+    ]
 }

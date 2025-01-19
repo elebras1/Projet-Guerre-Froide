@@ -5,12 +5,18 @@
         "SOV",
         "KAZ"
     ],
-    "meat": 13.57,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1195,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 1195,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 13.57
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

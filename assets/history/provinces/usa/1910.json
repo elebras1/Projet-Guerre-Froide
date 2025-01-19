@@ -2,12 +2,18 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "oil": 24,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 359501,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 359501,
+        "template": 93
     },
-    "infrastructure": 6
+    "good": {
+        "name": "oil",
+        "value": 24
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

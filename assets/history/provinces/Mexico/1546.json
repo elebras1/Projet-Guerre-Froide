@@ -2,12 +2,18 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "grain": 7.69,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 37447,
-            "template": 81
-        }
+    "population_total": {
+        "amount": 37447,
+        "template": 81
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 7.69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

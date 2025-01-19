@@ -2,13 +2,22 @@
     "owner": "POL",
     "controller": "POL",
     "add_core": "POL",
-    "fish": 237.25,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 392658,
-            "template": 49
-        }
+    "population_total": {
+        "amount": 392658,
+        "template": 49
     },
-    "infrastructure": 5
+    "good": {
+        "name": "fish",
+        "value": 237.25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

@@ -2,11 +2,14 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1304,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 1304,
+        "template": 92
     },
-    "infrastructure": 3
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

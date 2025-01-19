@@ -2,16 +2,22 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "rare_metals": 12.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 31374,
-            "template": 91
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 31374,
+        "template": 91
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 12.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

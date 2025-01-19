@@ -2,13 +2,6 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "precious_metals": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 295910,
-            "template": 81
-        }
-    },
     "economy_building": [
         {
             "name": "agriculture_research_center",
@@ -19,5 +12,18 @@
             "size": 4
         }
     ],
-    "infrastructure": 5
+    "population_total": {
+        "amount": 295910,
+        "template": 81
+    },
+    "good": {
+        "name": "precious_metals",
+        "value": 8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

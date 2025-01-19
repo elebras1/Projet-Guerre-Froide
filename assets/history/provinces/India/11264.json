@@ -5,16 +5,22 @@
         "ENG",
         "IND"
     ],
-    "fruits": 2.06,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2163054,
-            "template": 15
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "refinery",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 2163054,
+        "template": 15
+    },
+    "good": {
+        "name": "fruits",
+        "value": 2.06
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

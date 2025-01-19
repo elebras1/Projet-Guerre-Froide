@@ -2,16 +2,22 @@
     "owner": "SYR",
     "controller": "SYR",
     "add_core": "SYR",
-    "grain": 52.91,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 486317,
-            "template": 41
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "military_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 486317,
+        "template": 41
+    },
+    "good": {
+        "name": "grain",
+        "value": 52.91
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

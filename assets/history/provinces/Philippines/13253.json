@@ -2,16 +2,22 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "fruits": 0.53,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1240202,
-            "template": 25
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "naval_yards",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 1240202,
+        "template": 25
+    },
+    "good": {
+        "name": "fruits",
+        "value": 0.53
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

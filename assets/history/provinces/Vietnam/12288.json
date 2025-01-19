@@ -5,17 +5,26 @@
         "IDC",
         "DRV"
     ],
-    "grain": 275.18,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1189004,
-            "template": 28
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "military_industry",
         "size": 2
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 1189004,
+        "template": 28
+    },
+    "good": {
+        "name": "grain",
+        "value": 275.18
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "IDC",
         "DRV"
     ],
-    "iron": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 511070,
-            "template": 28
-        }
+    "population_total": {
+        "amount": 511070,
+        "template": 28
     },
-    "infrastructure": 2
+    "good": {
+        "name": "iron",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

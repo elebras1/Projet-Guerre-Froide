@@ -5,8 +5,6 @@
         "ENG",
         "SGP"
     ],
-    "meat": 14.73,
-    "naval_base": 6,
     "economy_building": [
         {
             "name": "financial_district",
@@ -17,12 +15,26 @@
             "size": 3
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 928877,
-            "template": 26
-        }
+    "population_total": {
+        "amount": 928877,
+        "template": 26
     },
-    "infrastructure": 6,
-    "air_base": 2
+    "good": {
+        "name": "meat",
+        "value": 14.73
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

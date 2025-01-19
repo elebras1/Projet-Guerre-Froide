@@ -2,16 +2,22 @@
     "owner": "POL",
     "controller": "POL",
     "add_core": "POL",
-    "coal": 12,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 712548,
-            "template": 49
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "powerplant",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 712548,
+        "template": 49
+    },
+    "good": {
+        "name": "coal",
+        "value": 12
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

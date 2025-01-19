@@ -5,12 +5,18 @@
         "SOV",
         "TRK"
     ],
-    "grain": 2.62,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 7165,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 7165,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 2.62
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

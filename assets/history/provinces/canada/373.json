@@ -2,7 +2,6 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "naval_base": 3,
     "economy_building": [
         {
             "name": "military_academy",
@@ -13,11 +12,18 @@
             "size": 3
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 55961,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 55961,
+        "template": 92
     },
-    "infrastructure": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

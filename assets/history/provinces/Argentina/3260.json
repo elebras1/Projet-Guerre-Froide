@@ -2,13 +2,22 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "vegetables": 11.4,
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 32658,
-            "template": 79
-        }
+    "population_total": {
+        "amount": 32658,
+        "template": 79
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 11.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

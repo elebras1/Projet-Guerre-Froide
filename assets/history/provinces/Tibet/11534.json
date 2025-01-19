@@ -5,11 +5,14 @@
         "TIB",
         "CHC"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1643,
-            "template": 17
-        }
+    "population_total": {
+        "amount": 1643,
+        "template": 17
     },
-    "infrastructure": 1
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

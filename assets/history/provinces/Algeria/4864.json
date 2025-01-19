@@ -5,11 +5,14 @@
         "FRA",
         "ALG"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1087,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 1087,
+        "template": 3
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -2,17 +2,26 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "precious_metals": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 613910,
-            "template": 67
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "heavy_industry",
         "size": 5
     },
-    "naval_base": 2
+    "population_total": {
+        "amount": 613910,
+        "template": 67
+    },
+    "good": {
+        "name": "precious_metals",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

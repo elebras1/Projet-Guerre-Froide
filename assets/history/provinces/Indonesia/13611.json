@@ -5,13 +5,22 @@
         "INO",
         "HOL"
     ],
-    "fish": 5.15,
-    "naval_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 16685,
-            "template": 21
-        }
+    "population_total": {
+        "amount": 16685,
+        "template": 21
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 5.15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 4
+        }
+    ]
 }

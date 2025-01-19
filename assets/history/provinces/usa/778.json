@@ -2,16 +2,22 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 46346,
-            "template": 93
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "military_industry",
         "size": 8
     },
-    "air_base": 8
+    "population_total": {
+        "amount": 46346,
+        "template": 93
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "air_base",
+            "size": 8
+        }
+    ]
 }

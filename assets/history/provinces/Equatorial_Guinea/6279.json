@@ -5,13 +5,22 @@
         "SPA",
         "EQG"
     ],
-    "fruits": 8.31,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 39571,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 39571,
+        "template": 2
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "fruits",
+        "value": 8.31
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

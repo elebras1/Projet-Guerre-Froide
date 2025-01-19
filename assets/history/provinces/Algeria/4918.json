@@ -5,12 +5,18 @@
         "FRA",
         "ALG"
     ],
-    "fruits": 2.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 77524,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 77524,
+        "template": 3
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 2.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

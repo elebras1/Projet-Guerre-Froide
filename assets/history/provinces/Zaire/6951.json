@@ -6,12 +6,18 @@
         "DRC",
         "KAT"
     ],
-    "rare_metals": 10.12,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 64228,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 64228,
+        "template": 2
     },
-    "infrastructure": 1
+    "good": {
+        "name": "rare_metals",
+        "value": 10.12
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

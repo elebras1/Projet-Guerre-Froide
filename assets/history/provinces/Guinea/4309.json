@@ -5,12 +5,18 @@
         "FRA",
         "GUI"
     ],
-    "fruits": 23.82,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 65918,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 65918,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 23.82
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

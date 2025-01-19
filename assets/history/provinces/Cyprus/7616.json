@@ -7,14 +7,26 @@
         "GRE",
         "TUR"
     ],
-    "meat": 35.39,
-    "air_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 220288,
-            "template": 32
-        }
+    "population_total": {
+        "amount": 220288,
+        "template": 32
     },
-    "infrastructure": 6,
-    "naval_base": 2
+    "good": {
+        "name": "meat",
+        "value": 35.39
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

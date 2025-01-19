@@ -2,12 +2,18 @@
     "owner": "SAF",
     "controller": "SAF",
     "add_core": "SAF",
-    "meat": 4.32,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 5985,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 5985,
+        "template": 4
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 4.32
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

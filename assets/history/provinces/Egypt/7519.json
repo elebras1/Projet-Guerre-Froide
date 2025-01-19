@@ -2,16 +2,22 @@
     "owner": "EGY",
     "controller": "EGY",
     "add_core": "EGY",
-    "vegetables": 274.83,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 985229,
-            "template": 3
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "naval_yards",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 985229,
+        "template": 3
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 274.83
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

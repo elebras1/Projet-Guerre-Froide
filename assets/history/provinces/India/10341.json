@@ -6,12 +6,18 @@
         "IND",
         "PAK"
     ],
-    "fruits": 1.19,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1189680,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 1189680,
+        "template": 15
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 1.19
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

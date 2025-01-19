@@ -2,18 +2,30 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "grain": 10,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 705448,
-            "template": 70
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "naval_yards",
         "size": 7
     },
-    "air_base": 4,
-    "naval_base": 1
+    "population_total": {
+        "amount": 705448,
+        "template": 70
+    },
+    "good": {
+        "name": "grain",
+        "value": 10
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

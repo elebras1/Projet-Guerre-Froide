@@ -2,12 +2,18 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 0,
-            "template": 73
-        }
+    "population_total": {
+        "amount": 0,
+        "template": 73
     },
-    "infrastructure": 1,
-    "naval_base": 1
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

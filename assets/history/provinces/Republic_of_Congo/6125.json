@@ -5,11 +5,14 @@
         "FRA",
         "CNG"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 5848,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 5848,
+        "template": 2
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

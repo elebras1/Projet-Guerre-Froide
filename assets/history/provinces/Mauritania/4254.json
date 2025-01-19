@@ -5,16 +5,22 @@
         "FRA",
         "MRA"
     ],
-    "grain": 1.43,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1567,
-            "template": 5
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 1567,
+        "template": 5
+    },
+    "good": {
+        "name": "grain",
+        "value": 1.43
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

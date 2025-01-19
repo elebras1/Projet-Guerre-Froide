@@ -5,12 +5,18 @@
         "INO",
         "HOL"
     ],
-    "grain": 58.05,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 226763,
-            "template": 21
-        }
+    "population_total": {
+        "amount": 226763,
+        "template": 21
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 58.05
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

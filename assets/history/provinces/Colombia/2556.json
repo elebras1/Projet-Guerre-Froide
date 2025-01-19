@@ -2,12 +2,18 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "wood": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 824,
-            "template": 83
-        }
+    "population_total": {
+        "amount": 824,
+        "template": 83
     },
-    "infrastructure": 1
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

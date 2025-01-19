@@ -2,17 +2,26 @@
     "owner": "POL",
     "controller": "POL",
     "add_core": "POL",
-    "wood": 1.1,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 224981,
-            "template": 49
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "heavy_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 224981,
+        "template": 49
+    },
+    "good": {
+        "name": "wood",
+        "value": 1.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

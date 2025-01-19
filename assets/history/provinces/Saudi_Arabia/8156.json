@@ -2,17 +2,26 @@
     "owner": "SAU",
     "controller": "SAU",
     "add_core": "SAU",
-    "meat": 1.75,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 48709,
-            "template": 40
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "refinery",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 48709,
+        "template": 40
+    },
+    "good": {
+        "name": "meat",
+        "value": 1.75
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

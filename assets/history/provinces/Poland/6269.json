@@ -2,12 +2,18 @@
     "owner": "POL",
     "controller": "POL",
     "add_core": "POL",
-    "wood": 0.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 158747,
-            "template": 49
-        }
+    "population_total": {
+        "amount": 158747,
+        "template": 49
     },
-    "infrastructure": 4
+    "good": {
+        "name": "wood",
+        "value": 0.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

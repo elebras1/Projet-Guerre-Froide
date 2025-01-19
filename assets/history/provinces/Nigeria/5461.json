@@ -5,12 +5,18 @@
         "ENG",
         "NIG"
     ],
-    "grain": 117.81,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 641476,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 641476,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 117.81
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

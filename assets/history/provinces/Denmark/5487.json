@@ -2,14 +2,26 @@
     "owner": "DEN",
     "controller": "DEN",
     "add_core": "DEN",
-    "meat": 380,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 498957,
-            "template": 51
-        }
+    "population_total": {
+        "amount": 498957,
+        "template": 51
     },
-    "infrastructure": 6,
-    "air_base": 6
+    "good": {
+        "name": "meat",
+        "value": 380
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 6
+        }
+    ]
 }

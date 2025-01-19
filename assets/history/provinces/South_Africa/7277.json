@@ -2,12 +2,18 @@
     "owner": "SAF",
     "controller": "SAF",
     "add_core": "SAF",
-    "precious_metals": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 129701,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 129701,
+        "template": 4
     },
-    "infrastructure": 6
+    "good": {
+        "name": "precious_metals",
+        "value": 8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

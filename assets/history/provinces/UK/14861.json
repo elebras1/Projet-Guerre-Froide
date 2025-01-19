@@ -2,13 +2,22 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "vegetables": 0.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 42606,
-            "template": 148
-        }
+    "population_total": {
+        "amount": 42606,
+        "template": 148
     },
-    "infrastructure": 5,
-    "naval_base": 1
+    "good": {
+        "name": "vegetables",
+        "value": 0.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

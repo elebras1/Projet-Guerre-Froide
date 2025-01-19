@@ -5,12 +5,18 @@
         "ENG",
         "IND"
     ],
-    "vegetables": 13.15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 263892,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 263892,
+        "template": 15
     },
-    "infrastructure": 5
+    "good": {
+        "name": "vegetables",
+        "value": 13.15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

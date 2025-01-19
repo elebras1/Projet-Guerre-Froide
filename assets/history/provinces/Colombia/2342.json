@@ -2,12 +2,18 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "iron": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 201795,
-            "template": 83
-        }
+    "population_total": {
+        "amount": 201795,
+        "template": 83
     },
-    "infrastructure": 4
+    "good": {
+        "name": "iron",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

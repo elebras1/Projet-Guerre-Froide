@@ -5,16 +5,22 @@
         "KOR",
         "PRK"
     ],
-    "coal": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 205124,
-            "template": 7
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "powerplant",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 205124,
+        "template": 7
+    },
+    "good": {
+        "name": "coal",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

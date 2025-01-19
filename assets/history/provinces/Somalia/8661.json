@@ -5,14 +5,26 @@
         "ITA",
         "SOM"
     ],
-    "grain": 12.37,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 205315,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 205315,
+        "template": 1
     },
-    "infrastructure": 5,
-    "air_base": 1
+    "good": {
+        "name": "grain",
+        "value": 12.37
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

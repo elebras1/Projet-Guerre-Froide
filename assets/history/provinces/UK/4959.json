@@ -2,17 +2,26 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "grain": 122.45,
     "economy_building": {
         "name": "intelligence_center",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 609713,
-            "template": 60
-        }
+    "population_total": {
+        "amount": 609713,
+        "template": 60
     },
-    "infrastructure": 5,
-    "naval_base": 3
+    "good": {
+        "name": "grain",
+        "value": 122.45
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

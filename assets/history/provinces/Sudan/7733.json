@@ -5,12 +5,18 @@
         "ENG",
         "SUD"
     ],
-    "fruits": 0.74,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4242,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 4242,
+        "template": 3
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 0.74
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

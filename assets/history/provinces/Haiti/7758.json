@@ -2,13 +2,22 @@
     "owner": "HAI",
     "controller": "HAI",
     "add_core": "HAI",
-    "grain": 33,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1444529,
-            "template": 75
-        }
+    "population_total": {
+        "amount": 1444529,
+        "template": 75
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 33
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

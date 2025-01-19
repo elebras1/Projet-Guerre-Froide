@@ -5,16 +5,22 @@
         "SOV",
         "RUS"
     ],
-    "naval_base": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 609780,
-            "template": 45
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "centrifuges",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 609780,
+        "template": 45
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 5
+        }
+    ]
 }

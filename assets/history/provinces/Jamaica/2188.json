@@ -5,17 +5,26 @@
         "ENG",
         "JMC"
     ],
-    "rare_metals": 4,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 644089,
-            "template": 75
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "light_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 644089,
+        "template": 75
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

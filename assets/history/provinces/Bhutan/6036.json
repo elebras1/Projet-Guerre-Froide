@@ -2,12 +2,18 @@
     "owner": "BHU",
     "controller": "BHU",
     "add_core": "BHU",
-    "fruits": 0.25,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 48807,
-            "template": 14
-        }
+    "population_total": {
+        "amount": 48807,
+        "template": 14
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 0.25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

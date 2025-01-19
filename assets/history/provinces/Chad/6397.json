@@ -5,12 +5,18 @@
         "FRA",
         "CHA"
     ],
-    "fruits": 1.15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2995,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 2995,
+        "template": 2
     },
-    "infrastructure": 1
+    "good": {
+        "name": "fruits",
+        "value": 1.15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

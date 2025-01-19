@@ -6,12 +6,18 @@
         "MLW",
         "RHO"
     ],
-    "vegetables": 16.87,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 218183,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 218183,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 16.87
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

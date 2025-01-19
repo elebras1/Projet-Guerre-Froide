@@ -5,13 +5,22 @@
         "POR",
         "MOZ"
     ],
-    "fruits": 45.04,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 545946,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 545946,
+        "template": 1
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "fruits",
+        "value": 45.04
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

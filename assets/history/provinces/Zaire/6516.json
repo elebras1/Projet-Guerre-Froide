@@ -6,12 +6,18 @@
         "DRC",
         "KON"
     ],
-    "fruits": 1.93,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4876,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 4876,
+        "template": 2
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 1.93
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -2,16 +2,22 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "vegetables": 8.06,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 41234,
-            "template": 67
-        }
+    "population_total": {
+        "amount": 41234,
+        "template": 67
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 8.06
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -2,16 +2,22 @@
     "owner": "PER",
     "controller": "PER",
     "add_core": "PER",
-    "oil": 276,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 65428,
-            "template": 16
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "refinery",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 65428,
+        "template": 16
+    },
+    "good": {
+        "name": "oil",
+        "value": 276
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

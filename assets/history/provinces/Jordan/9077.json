@@ -5,12 +5,18 @@
         "ENG",
         "JOR"
     ],
-    "meat": 0.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2653,
-            "template": 35
-        }
+    "population_total": {
+        "amount": 2653,
+        "template": 35
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 0.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

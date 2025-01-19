@@ -2,12 +2,18 @@
     "owner": "AFG",
     "controller": "AFG",
     "add_core": "AFG",
-    "wood": 0.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 69942,
-            "template": 12
-        }
+    "population_total": {
+        "amount": 69942,
+        "template": 12
     },
-    "infrastructure": 2
+    "good": {
+        "name": "wood",
+        "value": 0.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

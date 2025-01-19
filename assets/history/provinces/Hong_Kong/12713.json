@@ -6,7 +6,6 @@
         "CHI",
         "CHC"
     ],
-    "naval_base": 6,
     "economy_building": [
         {
             "name": "financial_district",
@@ -17,12 +16,22 @@
             "size": 5
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1802678,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 1802678,
+        "template": 6
     },
-    "infrastructure": 8,
-    "air_base": 5
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        },
+        {
+            "name": "naval_base",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "SAF",
     "controller": "SAF",
     "add_core": "SAF",
-    "fish": 6.21,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 17754,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 17754,
+        "template": 4
     },
-    "infrastructure": 6
+    "good": {
+        "name": "fish",
+        "value": 6.21
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

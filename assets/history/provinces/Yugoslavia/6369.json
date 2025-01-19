@@ -5,17 +5,26 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "grain": 125,
-    "air_base": 6,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 680673,
-            "template": 62
-        }
+    "population_total": {
+        "amount": 680673,
+        "template": 62
     },
-    "infrastructure": 5
+    "good": {
+        "name": "grain",
+        "value": 125
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 6
+        }
+    ]
 }

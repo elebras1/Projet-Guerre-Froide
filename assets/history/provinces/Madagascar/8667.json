@@ -5,12 +5,18 @@
         "FRA",
         "MAD"
     ],
-    "vegetables": 3.55,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 12244,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 12244,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 3.55
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

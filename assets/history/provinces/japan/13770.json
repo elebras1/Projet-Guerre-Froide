@@ -2,13 +2,22 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "fish": 206.91,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3089516,
-            "template": 8
-        }
+    "population_total": {
+        "amount": 3089516,
+        "template": 8
     },
-    "infrastructure": 4,
-    "naval_base": 6
+    "good": {
+        "name": "fish",
+        "value": 206.91
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 6
+        }
+    ]
 }

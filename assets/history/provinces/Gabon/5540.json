@@ -5,13 +5,22 @@
         "FRA",
         "GAB"
     ],
-    "oil": 41,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 220913,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 220913,
+        "template": 2
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "oil",
+        "value": 41
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

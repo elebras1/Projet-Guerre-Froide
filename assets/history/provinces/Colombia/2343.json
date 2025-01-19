@@ -2,16 +2,22 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "renewable_energy": 215,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 436144,
-            "template": 83
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 436144,
+        "template": 83
+    },
+    "good": {
+        "name": "renewable_energy",
+        "value": 215
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -2,17 +2,26 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "fish": 110.04,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 691031,
-            "template": 67
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 691031,
+        "template": 67
+    },
+    "good": {
+        "name": "fish",
+        "value": 110.04
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

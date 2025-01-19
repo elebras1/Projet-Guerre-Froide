@@ -5,13 +5,6 @@
         "SOV",
         "RUS"
     ],
-    "grain": 140.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 222003,
-            "template": 45
-        }
-    },
     "economy_building": [
         {
             "name": "university",
@@ -22,5 +15,18 @@
             "size": 6
         }
     ],
-    "infrastructure": 6
+    "population_total": {
+        "amount": 222003,
+        "template": 45
+    },
+    "good": {
+        "name": "grain",
+        "value": 140.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

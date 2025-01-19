@@ -6,18 +6,30 @@
         "CHC",
         "TWN"
     ],
-    "grain": 423.94,
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2157281,
-            "template": 6
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "military_industry",
         "size": 6
     },
-    "air_base": 1
+    "population_total": {
+        "amount": 2157281,
+        "template": 6
+    },
+    "good": {
+        "name": "grain",
+        "value": 423.94
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

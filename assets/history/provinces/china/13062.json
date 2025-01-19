@@ -5,17 +5,26 @@
         "CHI",
         "CHC"
     ],
-    "uranium": 4,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2678475,
-            "template": 6
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "powerplant",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 2678475,
+        "template": 6
+    },
+    "good": {
+        "name": "uranium",
+        "value": 4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

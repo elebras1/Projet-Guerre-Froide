@@ -5,7 +5,6 @@
         "ENG",
         "ISR"
     ],
-    "grain": 18.36,
     "economy_building": [
         {
             "name": "financial_district",
@@ -16,11 +15,18 @@
             "size": 2
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 30586,
-            "template": 34
-        }
+    "population_total": {
+        "amount": 30586,
+        "template": 34
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 18.36
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

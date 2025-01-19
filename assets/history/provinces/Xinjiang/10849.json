@@ -6,12 +6,18 @@
         "CHC",
         "SIK"
     ],
-    "grain": 8.48,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 28860,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 28860,
+        "template": 6
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 8.48
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

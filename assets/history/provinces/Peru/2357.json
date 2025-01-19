@@ -2,12 +2,18 @@
     "owner": "PRU",
     "controller": "PRU",
     "add_core": "PRU",
-    "grain": 3.08,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 11841,
-            "template": 88
-        }
+    "population_total": {
+        "amount": 11841,
+        "template": 88
     },
-    "infrastructure": 1
+    "good": {
+        "name": "grain",
+        "value": 3.08
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -5,17 +5,26 @@
         "FRA",
         "SEN"
     ],
-    "grain": 12.7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 138032,
-            "template": 5
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "light_industry",
         "size": 5
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 138032,
+        "template": 5
+    },
+    "good": {
+        "name": "grain",
+        "value": 12.7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

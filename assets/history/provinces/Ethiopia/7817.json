@@ -2,11 +2,14 @@
     "owner": "ETH",
     "controller": "ETH",
     "add_core": "ETH",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 25860,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 25860,
+        "template": 1
     },
-    "infrastructure": 3
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

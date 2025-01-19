@@ -6,12 +6,18 @@
         "ZIM",
         "RHO"
     ],
-    "grain": 5.71,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 39406,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 39406,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 5.71
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

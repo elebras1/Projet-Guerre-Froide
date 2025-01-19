@@ -5,12 +5,18 @@
         "ENG",
         "GHN"
     ],
-    "fruits": 220,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 284774,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 284774,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 220
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

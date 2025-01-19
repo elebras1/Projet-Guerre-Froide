@@ -5,13 +5,22 @@
         "USA",
         "MIC"
     ],
-    "grain": 44.09,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 32000,
-            "template": 111
-        }
+    "population_total": {
+        "amount": 32000,
+        "template": 111
     },
-    "infrastructure": 4,
-    "naval_base": 2
+    "good": {
+        "name": "grain",
+        "value": 44.09
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

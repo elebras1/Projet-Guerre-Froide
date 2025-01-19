@@ -5,12 +5,18 @@
         "ITA",
         "SOM"
     ],
-    "fruits": 2.15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 31893,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 31893,
+        "template": 1
     },
-    "infrastructure": 3
+    "good": {
+        "name": "fruits",
+        "value": 2.15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

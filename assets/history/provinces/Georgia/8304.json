@@ -5,12 +5,18 @@
         "SOV",
         "GEO"
     ],
-    "vegetables": 45.72,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 204898,
-            "template": 30
-        }
+    "population_total": {
+        "amount": 204898,
+        "template": 30
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 45.72
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "fruits": 44.7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 206591,
-            "template": 67
-        }
+    "population_total": {
+        "amount": 206591,
+        "template": 67
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 44.7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

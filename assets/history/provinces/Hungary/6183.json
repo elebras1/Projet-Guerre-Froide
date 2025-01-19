@@ -2,12 +2,18 @@
     "add_core": "HUN",
     "owner": "HUN",
     "controller": "HUN",
-    "uranium": 13.7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 738600,
-            "template": 48
-        }
+    "population_total": {
+        "amount": 738600,
+        "template": 48
     },
-    "infrastructure": 5
+    "good": {
+        "name": "uranium",
+        "value": 13.7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

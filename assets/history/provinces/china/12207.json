@@ -5,16 +5,22 @@
         "CHI",
         "CHC"
     ],
-    "rare_metals": 33.24,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 7777513,
-            "template": 6
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "powerplant",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 7777513,
+        "template": 6
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 33.24
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

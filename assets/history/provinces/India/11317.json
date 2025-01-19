@@ -5,12 +5,18 @@
         "ENG",
         "IND"
     ],
-    "fruits": 1.91,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1932905,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 1932905,
+        "template": 15
     },
-    "infrastructure": 3
+    "good": {
+        "name": "fruits",
+        "value": 1.91
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

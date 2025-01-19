@@ -5,17 +5,26 @@
         "FRA",
         "MOR"
     ],
-    "grain": 32.25,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 414794,
-            "template": 3
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "refinery",
         "size": 1
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 414794,
+        "template": 3
+    },
+    "good": {
+        "name": "grain",
+        "value": 32.25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -2,14 +2,26 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "rare_metals": 1,
-    "naval_base": 1,
-    "air_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 687512,
-            "template": 25
-        }
+    "population_total": {
+        "amount": 687512,
+        "template": 25
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

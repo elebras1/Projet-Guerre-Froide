@@ -5,12 +5,18 @@
         "ENG",
         "MLY"
     ],
-    "oil": 221,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 116621,
-            "template": 23
-        }
+    "population_total": {
+        "amount": 116621,
+        "template": 23
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 221
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

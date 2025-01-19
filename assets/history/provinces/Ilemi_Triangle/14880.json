@@ -7,11 +7,14 @@
         "KEN",
         "ETH"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 9991,
-            "template": 162
-        }
+    "population_total": {
+        "amount": 9991,
+        "template": 162
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -2,17 +2,26 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "wood": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1393526,
-            "template": 8
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "naval_yards",
         "size": 9
     },
-    "naval_base": 3
+    "population_total": {
+        "amount": 1393526,
+        "template": 8
+    },
+    "good": {
+        "name": "wood",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

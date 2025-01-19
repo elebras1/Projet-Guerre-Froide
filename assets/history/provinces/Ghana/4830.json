@@ -5,12 +5,18 @@
         "ENG",
         "GHN"
     ],
-    "grain": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 78283,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 78283,
+        "template": 5
     },
-    "infrastructure": 3
+    "good": {
+        "name": "grain",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

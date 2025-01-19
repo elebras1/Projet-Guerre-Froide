@@ -2,16 +2,22 @@
     "add_core": "HUN",
     "owner": "HUN",
     "controller": "HUN",
-    "fruits": 124.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 519367,
-            "template": 48
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "powerplant",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 519367,
+        "template": 48
+    },
+    "good": {
+        "name": "fruits",
+        "value": 124.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

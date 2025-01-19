@@ -2,8 +2,6 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "fruits": 171.13,
-    "naval_base": 5,
     "economy_building": [
         {
             "name": "military_academy",
@@ -14,11 +12,22 @@
             "size": 1
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1799956,
-            "template": 42
-        }
+    "population_total": {
+        "amount": 1799956,
+        "template": 42
     },
-    "infrastructure": 6
+    "good": {
+        "name": "fruits",
+        "value": 171.13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 5
+        }
+    ]
 }

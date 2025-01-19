@@ -5,12 +5,18 @@
         "CHI",
         "CHC"
     ],
-    "oil": 198,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 5190931,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 5190931,
+        "template": 6
     },
-    "infrastructure": 5
+    "good": {
+        "name": "oil",
+        "value": 198
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

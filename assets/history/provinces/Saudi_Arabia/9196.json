@@ -2,12 +2,18 @@
     "owner": "SAU",
     "controller": "SAU",
     "add_core": "SAU",
-    "oil": 210,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1457,
-            "template": 40
-        }
+    "population_total": {
+        "amount": 1457,
+        "template": 40
     },
-    "infrastructure": 2
+    "good": {
+        "name": "oil",
+        "value": 210
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

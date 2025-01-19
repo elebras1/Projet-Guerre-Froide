@@ -7,17 +7,26 @@
         "GRE",
         "TUR"
     ],
-    "fruits": 25,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 260122,
-            "template": 32
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 3
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 260122,
+        "template": 32
+    },
+    "good": {
+        "name": "fruits",
+        "value": 25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

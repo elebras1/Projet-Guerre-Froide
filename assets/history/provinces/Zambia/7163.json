@@ -6,12 +6,18 @@
         "ZMB",
         "RHO"
     ],
-    "renewable_energy": 132,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 57350,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 57350,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "renewable_energy",
+        "value": 132
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

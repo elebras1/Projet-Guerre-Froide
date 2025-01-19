@@ -5,12 +5,18 @@
         "SOV",
         "KYG"
     ],
-    "meat": 60.38,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 132171,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 132171,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 60.38
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "CHC",
         "CHI"
     ],
-    "precious_metals": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 702246,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 702246,
+        "template": 6
     },
-    "infrastructure": 6
+    "good": {
+        "name": "precious_metals",
+        "value": 8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

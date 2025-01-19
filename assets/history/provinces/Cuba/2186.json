@@ -2,17 +2,26 @@
     "owner": "CUB",
     "controller": "CUB",
     "add_core": "CUB",
-    "vegetables": 19.67,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 407778,
-            "template": 75
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 1
     },
-    "air_base": 2
+    "population_total": {
+        "amount": 407778,
+        "template": 75
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 19.67
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

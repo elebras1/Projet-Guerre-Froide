@@ -5,16 +5,22 @@
         "ENG",
         "SUD"
     ],
-    "grain": 10.7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 75064,
-            "template": 3
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "light_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 75064,
+        "template": 3
+    },
+    "good": {
+        "name": "grain",
+        "value": 10.7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

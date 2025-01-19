@@ -2,13 +2,22 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "naval_base": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 52935,
-            "template": 59
-        }
+    "population_total": {
+        "amount": 52935,
+        "template": 59
     },
-    "infrastructure": 5,
-    "air_base": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

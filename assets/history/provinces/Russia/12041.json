@@ -5,12 +5,18 @@
         "SOV",
         "RUS"
     ],
-    "coal": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1778,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 1778,
+        "template": 45
     },
-    "infrastructure": 3
+    "good": {
+        "name": "coal",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

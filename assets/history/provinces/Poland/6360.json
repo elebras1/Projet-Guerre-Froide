@@ -2,16 +2,22 @@
     "owner": "POL",
     "controller": "POL",
     "add_core": "POL",
-    "vegetables": 1566.56,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1339561,
-            "template": 49
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "powerplant",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 1339561,
+        "template": 49
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 1566.56
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

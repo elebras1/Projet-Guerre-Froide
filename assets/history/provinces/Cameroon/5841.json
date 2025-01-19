@@ -5,16 +5,22 @@
         "FRA",
         "CAM"
     ],
-    "vegetables": 132.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 415362,
-            "template": 2
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "light_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 415362,
+        "template": 2
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 132.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

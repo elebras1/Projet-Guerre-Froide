@@ -2,12 +2,18 @@
     "owner": "SOV",
     "controller": "SOV",
     "add_core": "PER",
-    "grain": 8.05,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 93217,
-            "template": 16
-        }
+    "population_total": {
+        "amount": 93217,
+        "template": 16
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 8.05
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

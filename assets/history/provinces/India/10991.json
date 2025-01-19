@@ -5,12 +5,18 @@
         "ENG",
         "IND"
     ],
-    "iron": 125,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1183190,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 1183190,
+        "template": 15
     },
-    "infrastructure": 5
+    "good": {
+        "name": "iron",
+        "value": 125
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

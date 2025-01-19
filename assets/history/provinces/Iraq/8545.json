@@ -2,17 +2,26 @@
     "owner": "IRQ",
     "controller": "IRQ",
     "add_core": "IRQ",
-    "grain": 65.04,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 342877,
-            "template": 33
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 3
     },
-    "air_base": 4
+    "population_total": {
+        "amount": 342877,
+        "template": 33
+    },
+    "good": {
+        "name": "grain",
+        "value": 65.04
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

@@ -2,17 +2,26 @@
     "owner": "CUB",
     "controller": "CUB",
     "add_core": "CUB",
-    "oil": 30,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 271348,
-            "template": 75
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "refinery",
         "size": 3
     },
-    "air_base": 2
+    "population_total": {
+        "amount": 271348,
+        "template": 75
+    },
+    "good": {
+        "name": "oil",
+        "value": 30
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

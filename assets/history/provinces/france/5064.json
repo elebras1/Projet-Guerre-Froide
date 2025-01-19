@@ -2,7 +2,6 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "grain": 363.86,
     "economy_building": [
         {
             "name": "military_academy",
@@ -13,11 +12,18 @@
             "size": 7
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 624039,
-            "template": 70
-        }
+    "population_total": {
+        "amount": 624039,
+        "template": 70
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 363.86
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

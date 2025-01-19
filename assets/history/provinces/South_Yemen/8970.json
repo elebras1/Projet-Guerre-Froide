@@ -6,11 +6,14 @@
         "SYA",
         "ENG"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3660,
-            "template": 44
-        }
+    "population_total": {
+        "amount": 3660,
+        "template": 44
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -4,14 +4,13 @@ import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
+import com.populaire.projetguerrefroide.economy.building.Building;
+import com.populaire.projetguerrefroide.economy.good.Good;
 import com.populaire.projetguerrefroide.economy.population.Population;
 
 import java.util.*;
 
 public class LandProvince implements Province {
-    private final List<Province> adjacentProvinces;
-    private final ObjectIntMap<String> positions;
-    private final IntSet pixels;
     private int color;
     private short id;
     private Country countryOwner;
@@ -19,12 +18,23 @@ public class LandProvince implements Province {
     private Region region;
     private Continent continent;
     private Population population;
+    private final List<Country> countriesCore;
+    private final Good good;
+    private final float goodValue;
+    private final ObjectIntMap<Building> buildings;
+    private final List<Province> adjacentProvinces;
+    private final ObjectIntMap<String> positions;
+    private final IntSet pixels;
 
-    public LandProvince(short id, Country countryOwner, Country countryController, Population population) {
+    public LandProvince(short id, Country countryOwner, Country countryController, Population population, List<Country> countriesCore, Good good, float goodValue, ObjectIntMap<Building> buildings) {
         this.id = id;
         this.countryOwner = countryOwner;
         this.countryController = countryController;
         this.population = population;
+        this.good = good;
+        this.goodValue = goodValue;
+        this.countriesCore = countriesCore;
+        this.buildings = buildings;
         this.adjacentProvinces = new ObjectList<>();
         this.positions = new ObjectIntMap<>();
         this.pixels = new IntSet();
@@ -42,8 +52,16 @@ public class LandProvince implements Province {
         return this.countryOwner;
     }
 
+    public void setCountryOwner(Country countryOwner) {
+        this.countryOwner = countryOwner;
+    }
+
     public Country getCountryController() {
         return this.countryController;
+    }
+
+    public void setCountryController(Country countryController) {
+        this.countryController = countryController;
     }
 
     public IntSet getPixels() {
@@ -96,8 +114,45 @@ public class LandProvince implements Province {
     public Continent getContinent() {
         return this.continent;
     }
+
     public Population getPopulation() {
         return this.population;
+    }
+
+    public void setPopulation(Population population) {
+        this.population = population;
+    }
+
+    public List<Country> getCountriesCore() {
+        return this.countriesCore;
+    }
+
+    public void addCountryCore(Country country) {
+        this.countriesCore.add(country);
+    }
+
+    public void removeCountryCore(Country country) {
+        this.countriesCore.remove(country);
+    }
+
+    public Good getGood() {
+        return this.good;
+    }
+
+    public float getGoodValue() {
+        return this.goodValue;
+    }
+
+    public ObjectIntMap<Building> getBuildings() {
+        return this.buildings;
+    }
+
+    public void addBuilding(Building building) {
+        this.buildings.put(building, 1);
+    }
+
+    public void removeBuilding(Building building) {
+        this.buildings.remove(building);
     }
 
     @Override

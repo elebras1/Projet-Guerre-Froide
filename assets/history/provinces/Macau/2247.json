@@ -2,12 +2,18 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 220367,
-            "template": 84
-        }
+    "population_total": {
+        "amount": 220367,
+        "template": 84
     },
-    "infrastructure": 6
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

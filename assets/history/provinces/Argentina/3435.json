@@ -2,9 +2,6 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "vegetables": 1803.37,
-    "naval_base": 5,
-    "air_base": 5,
     "economy_building": [
         {
             "name": "military_academy",
@@ -15,11 +12,26 @@
             "size": 1
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 6351313,
-            "template": 79
-        }
+    "population_total": {
+        "amount": 6351313,
+        "template": 79
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 1803.37
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

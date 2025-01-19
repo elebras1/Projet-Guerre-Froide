@@ -5,12 +5,18 @@
         "SAF",
         "NAM"
     ],
-    "vegetables": 0.23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 939,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 939,
+        "template": 4
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 0.23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

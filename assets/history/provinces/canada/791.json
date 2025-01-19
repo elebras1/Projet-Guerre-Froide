@@ -2,12 +2,18 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "meat": 2.34,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3112,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 3112,
+        "template": 92
     },
-    "infrastructure": 1
+    "good": {
+        "name": "meat",
+        "value": 2.34
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

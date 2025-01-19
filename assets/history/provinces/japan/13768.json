@@ -2,17 +2,26 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "grain": 266.81,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1076003,
-            "template": 8
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "heavy_industry",
         "size": 2
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 1076003,
+        "template": 8
+    },
+    "good": {
+        "name": "grain",
+        "value": 266.81
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

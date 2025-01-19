@@ -5,16 +5,22 @@
         "SOV",
         "RUS"
     ],
-    "iron": 30,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1674792,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 1674792,
+        "template": 45
     },
-    "infrastructure": 8
+    "good": {
+        "name": "iron",
+        "value": 30
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

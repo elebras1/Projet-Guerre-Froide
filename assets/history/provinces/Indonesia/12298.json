@@ -5,14 +5,26 @@
         "INO",
         "HOL"
     ],
-    "grain": 1245.84,
-    "naval_base": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 9741738,
-            "template": 21
-        }
+    "population_total": {
+        "amount": 9741738,
+        "template": 21
     },
-    "infrastructure": 6,
-    "air_base": 3
+    "good": {
+        "name": "grain",
+        "value": 1245.84
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

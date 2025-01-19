@@ -5,16 +5,22 @@
         "SOV",
         "BLR"
     ],
-    "meat": 64.74,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 136336,
-            "template": 45
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "refinery",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 136336,
+        "template": 45
+    },
+    "good": {
+        "name": "meat",
+        "value": 64.74
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

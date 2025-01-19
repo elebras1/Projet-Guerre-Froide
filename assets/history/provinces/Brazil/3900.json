@@ -2,12 +2,18 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "rare_metals": 11.17,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 168424,
-            "template": 77
-        }
+    "population_total": {
+        "amount": 168424,
+        "template": 77
     },
-    "infrastructure": 2
+    "good": {
+        "name": "rare_metals",
+        "value": 11.17
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

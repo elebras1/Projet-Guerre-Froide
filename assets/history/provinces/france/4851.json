@@ -2,13 +2,22 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "grain": 186.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 387399,
-            "template": 70
-        }
+    "population_total": {
+        "amount": 387399,
+        "template": 70
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "grain",
+        "value": 186.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

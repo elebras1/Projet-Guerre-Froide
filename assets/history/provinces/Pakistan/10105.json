@@ -5,12 +5,18 @@
         "ENG",
         "PAK"
     ],
-    "vegetables": 22.38,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 476955,
-            "template": 18
-        }
+    "population_total": {
+        "amount": 476955,
+        "template": 18
     },
-    "infrastructure": 5
+    "good": {
+        "name": "vegetables",
+        "value": 22.38
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

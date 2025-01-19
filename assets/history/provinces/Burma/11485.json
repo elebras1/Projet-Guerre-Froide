@@ -5,16 +5,22 @@
         "ENG",
         "BUR"
     ],
-    "fruits": 7.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 460692,
-            "template": 24
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "military_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 460692,
+        "template": 24
+    },
+    "good": {
+        "name": "fruits",
+        "value": 7.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

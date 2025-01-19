@@ -5,13 +5,22 @@
         "USA",
         "PRC"
     ],
-    "grain": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1176100,
-            "template": 75
-        }
+    "population_total": {
+        "amount": 1176100,
+        "template": 75
     },
-    "infrastructure": 6,
-    "naval_base": 2
+    "good": {
+        "name": "grain",
+        "value": 8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

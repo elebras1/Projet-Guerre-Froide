@@ -6,12 +6,18 @@
         "CHC",
         "SIK"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 6199,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 6199,
+        "template": 6
     },
-    "infrastructure": 2,
-    "air_base": 1
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

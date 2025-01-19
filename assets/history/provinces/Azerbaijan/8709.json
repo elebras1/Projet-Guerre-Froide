@@ -5,16 +5,22 @@
         "SOV",
         "AZB"
     ],
-    "vegetables": 59,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 237866,
-            "template": 30
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "powerplant",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 237866,
+        "template": 30
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 59
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

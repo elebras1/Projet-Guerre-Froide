@@ -5,12 +5,18 @@
         "ENG",
         "IND"
     ],
-    "grain": 96.26,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 664922,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 664922,
+        "template": 15
     },
-    "infrastructure": 5
+    "good": {
+        "name": "grain",
+        "value": 96.26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

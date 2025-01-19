@@ -2,18 +2,30 @@
     "owner": "PRU",
     "controller": "PRU",
     "add_core": "PRU",
-    "rare_metals": 26,
-    "naval_base": 6,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2216970,
-            "template": 88
-        }
+    "population_total": {
+        "amount": 2216970,
+        "template": 88
     },
-    "infrastructure": 6,
-    "air_base": 5
+    "good": {
+        "name": "rare_metals",
+        "value": 26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

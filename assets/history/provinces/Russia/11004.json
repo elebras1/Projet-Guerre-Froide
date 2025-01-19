@@ -5,12 +5,18 @@
         "SOV",
         "RUS"
     ],
-    "air_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1893,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 1893,
+        "template": 45
     },
-    "infrastructure": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "fish": 14.66,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 24089,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 24089,
+        "template": 92
     },
-    "infrastructure": 6
+    "good": {
+        "name": "fish",
+        "value": 14.66
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

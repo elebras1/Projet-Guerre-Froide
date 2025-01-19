@@ -5,17 +5,26 @@
         "ENG",
         "IND"
     ],
-    "grain": 112.25,
-    "naval_base": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 828449,
-            "template": 15
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "military_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 828449,
+        "template": 15
+    },
+    "good": {
+        "name": "grain",
+        "value": 112.25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 8
+        }
+    ]
 }

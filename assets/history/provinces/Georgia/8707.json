@@ -5,12 +5,18 @@
         "SOV",
         "GEO"
     ],
-    "meat": 42.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 283398,
-            "template": 30
-        }
+    "population_total": {
+        "amount": 283398,
+        "template": 30
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 42.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

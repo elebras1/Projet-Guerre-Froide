@@ -5,18 +5,30 @@
         "CAN",
         "QUE"
     ],
-    "vegetables": 35.45,
-    "naval_base": 10,
-    "air_base": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 78162,
-            "template": 92
-        }
-    },
-    "infrastructure": 7,
     "economy_building": {
         "name": "light_industry",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 78162,
+        "template": 92
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 35.45
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "naval_base",
+            "size": 10
+        },
+        {
+            "name": "air_base",
+            "size": 8
+        }
+    ]
 }

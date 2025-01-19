@@ -2,18 +2,30 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "vegetables": 33.79,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 129088,
-            "template": 59
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "naval_yards",
         "size": 9
     },
-    "air_base": 6
+    "population_total": {
+        "amount": 129088,
+        "template": 59
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 33.79
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 6
+        }
+    ]
 }

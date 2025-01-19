@@ -5,12 +5,18 @@
         "FRA",
         "CDI"
     ],
-    "grain": 44.32,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 108088,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 108088,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 44.32
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

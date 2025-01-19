@@ -2,11 +2,14 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 948,
-            "template": 81
-        }
+    "population_total": {
+        "amount": 948,
+        "template": 81
     },
-    "infrastructure": 6
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

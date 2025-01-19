@@ -5,12 +5,18 @@
         "FRA",
         "IND"
     ],
-    "grain": 33.9,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 337436,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 337436,
+        "template": 15
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 33.9
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

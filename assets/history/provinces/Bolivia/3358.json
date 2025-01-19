@@ -2,12 +2,18 @@
     "owner": "BOL",
     "controller": "BOL",
     "add_core": "BOL",
-    "grain": 2.24,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1339,
-            "template": 80
-        }
+    "population_total": {
+        "amount": 1339,
+        "template": 80
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 2.24
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

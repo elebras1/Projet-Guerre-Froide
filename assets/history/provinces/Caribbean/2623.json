@@ -2,17 +2,26 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "wood": 0.3,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 141050,
-            "template": 73
-        }
-    },
-    "infrastructure": 9,
     "economy_building": {
         "name": "refinery",
         "size": 8
-    }
+    },
+    "population_total": {
+        "amount": 141050,
+        "template": 73
+    },
+    "good": {
+        "name": "wood",
+        "value": 0.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 9
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

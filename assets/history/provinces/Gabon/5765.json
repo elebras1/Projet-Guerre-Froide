@@ -5,12 +5,18 @@
         "FRA",
         "GAB"
     ],
-    "vegetables": 8.44,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 33586,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 33586,
+        "template": 2
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 8.44
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

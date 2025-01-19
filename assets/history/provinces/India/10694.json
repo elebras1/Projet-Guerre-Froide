@@ -5,16 +5,22 @@
         "ENG",
         "IND"
     ],
-    "renewable_energy": 168,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1375702,
-            "template": 15
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "powerplant",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 1375702,
+        "template": 15
+    },
+    "good": {
+        "name": "renewable_energy",
+        "value": 168
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

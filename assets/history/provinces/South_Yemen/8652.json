@@ -6,12 +6,18 @@
         "SYA",
         "ENG"
     ],
-    "grain": 16.22,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 70192,
-            "template": 44
-        }
+    "population_total": {
+        "amount": 70192,
+        "template": 44
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 16.22
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

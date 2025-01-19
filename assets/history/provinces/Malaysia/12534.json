@@ -5,13 +5,22 @@
         "ENG",
         "MLY"
     ],
-    "grain": 12.99,
-    "naval_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 167927,
-            "template": 23
-        }
+    "population_total": {
+        "amount": 167927,
+        "template": 23
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 12.99
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 4
+        }
+    ]
 }

@@ -2,13 +2,22 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "vegetables": 136.67,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 833424,
-            "template": 8
-        }
+    "population_total": {
+        "amount": 833424,
+        "template": 8
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "vegetables",
+        "value": 136.67
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

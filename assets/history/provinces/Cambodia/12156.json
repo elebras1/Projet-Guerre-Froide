@@ -5,12 +5,18 @@
         "IDC",
         "CMB"
     ],
-    "precious_metals": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 56492,
-            "template": 20
-        }
+    "population_total": {
+        "amount": 56492,
+        "template": 20
     },
-    "infrastructure": 1
+    "good": {
+        "name": "precious_metals",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "SOV",
         "BLR"
     ],
-    "meat": 65.43,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 107700,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 107700,
+        "template": 45
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 65.43
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -6,12 +6,18 @@
         "KEN",
         "SOM"
     ],
-    "grain": 2.27,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 10468,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 10468,
+        "template": 1
     },
-    "infrastructure": 3
+    "good": {
+        "name": "grain",
+        "value": 2.27
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

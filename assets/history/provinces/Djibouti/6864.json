@@ -5,11 +5,14 @@
         "FRA",
         "DJI"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 10809,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 10809,
+        "template": 1
     },
-    "infrastructure": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

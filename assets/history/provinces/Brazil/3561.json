@@ -2,12 +2,18 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "fruits": 0.25,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 596,
-            "template": 77
-        }
+    "population_total": {
+        "amount": 596,
+        "template": 77
     },
-    "infrastructure": 1
+    "good": {
+        "name": "fruits",
+        "value": 0.25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "NIG"
     ],
-    "vegetables": 283.11,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1385293,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 1385293,
+        "template": 5
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 283.11
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

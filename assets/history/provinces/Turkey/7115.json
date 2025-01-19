@@ -2,12 +2,18 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "coal": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 694155,
-            "template": 42
-        }
+    "population_total": {
+        "amount": 694155,
+        "template": 42
     },
-    "infrastructure": 4
+    "good": {
+        "name": "coal",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

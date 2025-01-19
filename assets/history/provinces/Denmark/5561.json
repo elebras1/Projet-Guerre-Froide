@@ -2,8 +2,6 @@
     "owner": "DEN",
     "controller": "DEN",
     "add_core": "DEN",
-    "fish": 418,
-    "naval_base": 3,
     "economy_building": [
         {
             "name": "military_academy",
@@ -14,12 +12,26 @@
             "size": 5
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1134620,
-            "template": 51
-        }
+    "population_total": {
+        "amount": 1134620,
+        "template": 51
     },
-    "infrastructure": 8,
-    "air_base": 5
+    "good": {
+        "name": "fish",
+        "value": 418
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

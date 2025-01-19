@@ -2,7 +2,6 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "wood": 1,
     "economy_building": [
         {
             "name": "military_academy",
@@ -13,11 +12,18 @@
             "size": 4
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1516884,
-            "template": 83
-        }
+    "population_total": {
+        "amount": 1516884,
+        "template": 83
     },
-    "infrastructure": 6
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

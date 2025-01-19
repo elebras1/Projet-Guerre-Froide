@@ -5,16 +5,22 @@
         "ENG",
         "IND"
     ],
-    "vegetables": 121.9,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 986352,
-            "template": 15
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "aviation_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 986352,
+        "template": 15
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 121.9
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

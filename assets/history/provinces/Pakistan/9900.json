@@ -5,14 +5,26 @@
         "ENG",
         "PAK"
     ],
-    "grain": 114.97,
-    "naval_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1561255,
-            "template": 18
-        }
+    "population_total": {
+        "amount": 1561255,
+        "template": 18
     },
-    "infrastructure": 4,
-    "air_base": 2
+    "good": {
+        "name": "grain",
+        "value": 114.97
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 4
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "GUY"
     ],
-    "vegetables": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1778,
-            "template": 86
-        }
+    "population_total": {
+        "amount": 1778,
+        "template": 86
     },
-    "infrastructure": 3
+    "good": {
+        "name": "vegetables",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

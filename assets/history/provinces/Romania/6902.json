@@ -2,7 +2,6 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "vegetables": 400,
     "economy_building": [
         {
             "name": "military_academy",
@@ -13,12 +12,22 @@
             "size": 3
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2304257,
-            "template": 50
-        }
+    "population_total": {
+        "amount": 2304257,
+        "template": 50
     },
-    "infrastructure": 7,
-    "air_base": 5
+    "good": {
+        "name": "vegetables",
+        "value": 400
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

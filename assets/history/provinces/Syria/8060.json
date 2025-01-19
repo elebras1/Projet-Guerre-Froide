@@ -2,13 +2,22 @@
     "owner": "SYR",
     "controller": "SYR",
     "add_core": "SYR",
-    "meat": 0.72,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 12079,
-            "template": 41
-        }
+    "population_total": {
+        "amount": 12079,
+        "template": 41
     },
-    "infrastructure": 4,
-    "air_base": 2
+    "good": {
+        "name": "meat",
+        "value": 0.72
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

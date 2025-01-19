@@ -2,16 +2,22 @@
     "owner": "BUL",
     "controller": "BUL",
     "add_core": "BUL",
-    "wood": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 329881,
-            "template": 46
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "light_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 329881,
+        "template": 46
+    },
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

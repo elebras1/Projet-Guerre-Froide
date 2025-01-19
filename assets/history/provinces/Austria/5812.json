@@ -2,13 +2,18 @@
     "add_core": "AUS",
     "owner": "ENG",
     "controller": "ENG",
-    "wood": 1.9,
-    "grain": 610,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 221793,
-            "template": 68
-        }
+    "population_total": {
+        "amount": 221793,
+        "template": 68
     },
-    "infrastructure": 5
+    "good": {
+        "name": "grain",
+        "value": 610
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

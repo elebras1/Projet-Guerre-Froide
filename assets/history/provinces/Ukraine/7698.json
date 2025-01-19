@@ -5,17 +5,22 @@
         "SOV",
         "UKR"
     ],
-    "iron": 130,
-    "vegetables": 40.97,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 807295,
-            "template": 45
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "heavy_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 807295,
+        "template": 45
+    },
+    "good": {
+        "name": "iron",
+        "value": 130
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

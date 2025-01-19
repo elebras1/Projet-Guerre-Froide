@@ -5,12 +5,18 @@
         "ENG",
         "KWT"
     ],
-    "oil": 100,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 18640,
-            "template": 36
-        }
+    "population_total": {
+        "amount": 18640,
+        "template": 36
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 100
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

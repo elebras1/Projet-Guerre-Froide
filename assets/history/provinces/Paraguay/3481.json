@@ -2,12 +2,18 @@
     "owner": "PAR",
     "controller": "PAR",
     "add_core": "PAR",
-    "renewable_energy": 202,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 57704,
-            "template": 87
-        }
+    "population_total": {
+        "amount": 57704,
+        "template": 87
     },
-    "infrastructure": 5
+    "good": {
+        "name": "renewable_energy",
+        "value": 202
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

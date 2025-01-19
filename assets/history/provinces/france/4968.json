@@ -2,16 +2,22 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "oil": 32,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 101999,
-            "template": 70
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "refinery",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 101999,
+        "template": 70
+    },
+    "good": {
+        "name": "oil",
+        "value": 32
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

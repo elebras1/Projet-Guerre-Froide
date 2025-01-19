@@ -2,13 +2,22 @@
     "owner": "DOM",
     "controller": "DOM",
     "add_core": "DOM",
-    "fruits": 15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 277103,
-            "template": 75
-        }
+    "population_total": {
+        "amount": 277103,
+        "template": 75
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "fruits",
+        "value": 15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

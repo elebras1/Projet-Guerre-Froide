@@ -2,18 +2,30 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "oil": 121,
-    "air_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 348052,
-            "template": 58
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 6
     },
-    "naval_base": 2
+    "population_total": {
+        "amount": 348052,
+        "template": 58
+    },
+    "good": {
+        "name": "oil",
+        "value": 121
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

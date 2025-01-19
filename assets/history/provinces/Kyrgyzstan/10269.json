@@ -5,12 +5,18 @@
         "SOV",
         "KYG"
     ],
-    "vegetables": 8.96,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 32852,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 32852,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 8.96
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "KEN"
     ],
-    "fruits": 17.35,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 686769,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 686769,
+        "template": 1
     },
-    "infrastructure": 1
+    "good": {
+        "name": "fruits",
+        "value": 17.35
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

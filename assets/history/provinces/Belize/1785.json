@@ -5,12 +5,18 @@
         "ENG",
         "BLZ"
     ],
-    "fruits": 0.34,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 24673,
-            "template": 76
-        }
+    "population_total": {
+        "amount": 24673,
+        "template": 76
     },
-    "infrastructure": 5
+    "good": {
+        "name": "fruits",
+        "value": 0.34
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

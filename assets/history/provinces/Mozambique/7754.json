@@ -5,12 +5,18 @@
         "POR",
         "MOZ"
     ],
-    "meat": 8.77,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 197750,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 197750,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 8.77
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

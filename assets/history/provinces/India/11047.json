@@ -5,12 +5,18 @@
         "ENG",
         "IND"
     ],
-    "rare_metals": 20.92,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1769378,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 1769378,
+        "template": 15
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 20.92
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

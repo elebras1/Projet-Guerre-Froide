@@ -2,13 +2,22 @@
     "owner": "NZL",
     "controller": "NZL",
     "add_core": "NZL",
-    "vegetables": 15,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 508,
-            "template": 95
-        }
+    "population_total": {
+        "amount": 508,
+        "template": 95
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

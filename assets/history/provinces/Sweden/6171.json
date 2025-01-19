@@ -2,13 +2,6 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "grain": 32.25,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 286372,
-            "template": 59
-        }
-    },
     "economy_building": [
         {
             "name": "military_academy",
@@ -19,6 +12,22 @@
             "size": 4
         }
     ],
-    "infrastructure": 6,
-    "naval_base": 1
+    "population_total": {
+        "amount": 286372,
+        "template": 59
+    },
+    "good": {
+        "name": "grain",
+        "value": 32.25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

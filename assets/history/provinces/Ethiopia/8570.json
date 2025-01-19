@@ -5,12 +5,18 @@
         "ETH",
         "SOM"
     ],
-    "vegetables": 7.63,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 51240,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 51240,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 7.63
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

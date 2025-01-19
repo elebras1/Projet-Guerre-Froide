@@ -5,13 +5,22 @@
     ],
     "owner": "ENG",
     "controller": "ENG",
-    "meat": 177.45,
-    "naval_base": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1304677,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 1304677,
+        "template": 71
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 177.45
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "naval_base",
+            "size": 6
+        }
+    ]
 }

@@ -5,17 +5,26 @@
         "ENG",
         "IND"
     ],
-    "oil": 46,
-    "naval_base": 10,
     "economy_building": {
         "name": "financial_district",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3810220,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 3810220,
+        "template": 15
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 46
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 10
+        }
+    ]
 }

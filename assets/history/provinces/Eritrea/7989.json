@@ -6,12 +6,18 @@
         "ETH",
         "ERI"
     ],
-    "meat": 3.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 64080,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 64080,
+        "template": 1
     },
-    "infrastructure": 3
+    "good": {
+        "name": "meat",
+        "value": 3.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

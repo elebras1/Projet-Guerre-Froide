@@ -2,17 +2,26 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "fish": 17.66,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 41320,
-            "template": 58
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "naval_yards",
         "size": 7
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 41320,
+        "template": 58
+    },
+    "good": {
+        "name": "fish",
+        "value": 17.66
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

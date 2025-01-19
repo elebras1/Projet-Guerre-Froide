@@ -2,11 +2,14 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 5612,
-            "template": 58
-        }
+    "population_total": {
+        "amount": 5612,
+        "template": 58
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -2,16 +2,22 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "vegetables": 84.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 328472,
-            "template": 79
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "military_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 328472,
+        "template": 79
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 84.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

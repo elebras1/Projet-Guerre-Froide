@@ -2,12 +2,18 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "iron": 26,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 6506,
-            "template": 59
-        }
+    "population_total": {
+        "amount": 6506,
+        "template": 59
     },
-    "infrastructure": 2
+    "good": {
+        "name": "iron",
+        "value": 26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -2,18 +2,30 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "fruits": 253.52,
-    "naval_base": 10,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 619072,
-            "template": 93
-        }
-    },
-    "infrastructure": 7,
     "economy_building": {
         "name": "light_industry",
         "size": 7
     },
-    "air_base": 10
+    "population_total": {
+        "amount": 619072,
+        "template": 93
+    },
+    "good": {
+        "name": "fruits",
+        "value": 253.52
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "naval_base",
+            "size": 10
+        },
+        {
+            "name": "air_base",
+            "size": 10
+        }
+    ]
 }

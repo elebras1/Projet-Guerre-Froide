@@ -5,13 +5,22 @@
         "NZL",
         "CKI"
     ],
-    "fruits": 2.25,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 15000,
-            "template": 175
-        }
+    "population_total": {
+        "amount": 15000,
+        "template": 175
     },
-    "infrastructure": 3
+    "good": {
+        "name": "fruits",
+        "value": 2.25
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

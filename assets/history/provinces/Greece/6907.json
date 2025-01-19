@@ -2,13 +2,22 @@
     "add_core": "GRE",
     "owner": "GRE",
     "controller": "GRE",
-    "fish": 50,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 72713,
-            "template": 63
-        }
+    "population_total": {
+        "amount": 72713,
+        "template": 63
     },
-    "infrastructure": 3
+    "good": {
+        "name": "fish",
+        "value": 50
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

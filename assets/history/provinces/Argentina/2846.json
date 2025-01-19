@@ -2,12 +2,18 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "oil": 112,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 25317,
-            "template": 79
-        }
+    "population_total": {
+        "amount": 25317,
+        "template": 79
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 112
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

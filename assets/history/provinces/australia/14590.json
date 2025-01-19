@@ -2,16 +2,22 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "grain": 5.62,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4320,
-            "template": 94
-        }
-    },
-    "infrastructure": 8,
     "economy_building": {
         "name": "refinery",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 4320,
+        "template": 94
+    },
+    "good": {
+        "name": "grain",
+        "value": 5.62
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

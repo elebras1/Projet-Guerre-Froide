@@ -2,9 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "grain": 1297.93,
-    "naval_base": 8,
-    "air_base": 10,
     "economy_building": [
         {
             "name": "financial_district",
@@ -15,11 +12,26 @@
             "size": 7
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4868199,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 4868199,
+        "template": 93
     },
-    "infrastructure": 9
+    "good": {
+        "name": "grain",
+        "value": 1297.93
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 9
+        },
+        {
+            "name": "naval_base",
+            "size": 8
+        },
+        {
+            "name": "air_base",
+            "size": 10
+        }
+    ]
 }

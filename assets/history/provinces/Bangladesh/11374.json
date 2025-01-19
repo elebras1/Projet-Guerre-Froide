@@ -7,13 +7,22 @@
         "PAK",
         "IND"
     ],
-    "oil": 109,
-    "naval_base": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3354809,
-            "template": 13
-        }
+    "population_total": {
+        "amount": 3354809,
+        "template": 13
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 109
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 6
+        }
+    ]
 }

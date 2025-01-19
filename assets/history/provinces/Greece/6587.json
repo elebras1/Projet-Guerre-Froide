@@ -2,17 +2,26 @@
     "add_core": "GRE",
     "owner": "GRE",
     "controller": "GRE",
-    "rare_metals": 4.53,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 510103,
-            "template": 63
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "powerplant",
         "size": 1
     },
-    "naval_base": 2
+    "population_total": {
+        "amount": 510103,
+        "template": 63
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 4.53
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

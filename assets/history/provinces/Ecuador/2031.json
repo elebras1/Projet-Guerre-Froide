@@ -2,12 +2,18 @@
     "owner": "ECU",
     "controller": "ECU",
     "add_core": "ECU",
-    "fish": 37.417,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 275957,
-            "template": 84
-        }
+    "population_total": {
+        "amount": 275957,
+        "template": 84
     },
-    "infrastructure": 6
+    "good": {
+        "name": "fish",
+        "value": 37.417
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -6,12 +6,18 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "wood": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 222168,
-            "template": 62
-        }
+    "population_total": {
+        "amount": 222168,
+        "template": 62
     },
-    "infrastructure": 4
+    "good": {
+        "name": "wood",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -5,13 +5,22 @@
         "IDC",
         "DRV"
     ],
-    "rare_metals": 2.55,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3234759,
-            "template": 28
-        }
+    "population_total": {
+        "amount": 3234759,
+        "template": 28
     },
-    "infrastructure": 5,
-    "air_base": 1
+    "good": {
+        "name": "rare_metals",
+        "value": 2.55
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

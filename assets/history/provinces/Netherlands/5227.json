@@ -2,16 +2,22 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "rare_metals": 25.36,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 697263,
-            "template": 73
-        }
-    },
     "economy_building": {
         "name": "naval_research_center",
         "size": 1
     },
-    "infrastructure": 6
+    "population_total": {
+        "amount": 697263,
+        "template": 73
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 25.36
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

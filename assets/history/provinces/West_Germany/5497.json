@@ -5,12 +5,18 @@
     ],
     "owner": "USA",
     "controller": "USA",
-    "wood": 3.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 460742,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 460742,
+        "template": 71
     },
-    "infrastructure": 5
+    "good": {
+        "name": "wood",
+        "value": 3.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

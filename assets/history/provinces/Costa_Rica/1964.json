@@ -2,13 +2,22 @@
     "owner": "COS",
     "controller": "COS",
     "add_core": "COS",
-    "fruits": 12.201,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 76110,
-            "template": 76
-        }
+    "population_total": {
+        "amount": 76110,
+        "template": 76
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "fruits",
+        "value": 12.201
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

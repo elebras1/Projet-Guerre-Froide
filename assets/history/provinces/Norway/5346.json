@@ -2,12 +2,18 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "wood": 1.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 25553,
-            "template": 58
-        }
+    "population_total": {
+        "amount": 25553,
+        "template": 58
     },
-    "infrastructure": 6
+    "good": {
+        "name": "wood",
+        "value": 1.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

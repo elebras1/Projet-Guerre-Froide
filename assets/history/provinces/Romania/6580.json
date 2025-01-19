@@ -2,12 +2,18 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "renewable_energy": 109,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 238304,
-            "template": 50
-        }
+    "population_total": {
+        "amount": 238304,
+        "template": 50
     },
-    "infrastructure": 5
+    "good": {
+        "name": "renewable_energy",
+        "value": 109
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

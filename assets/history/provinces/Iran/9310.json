@@ -2,12 +2,18 @@
     "owner": "PER",
     "controller": "PER",
     "add_core": "PER",
-    "rare_metals": 23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 45754,
-            "template": 16
-        }
+    "population_total": {
+        "amount": 45754,
+        "template": 16
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

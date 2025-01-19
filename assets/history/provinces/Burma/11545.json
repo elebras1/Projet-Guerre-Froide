@@ -5,12 +5,18 @@
         "ENG",
         "BUR"
     ],
-    "grain": 111.51,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 969083,
-            "template": 24
-        }
+    "population_total": {
+        "amount": 969083,
+        "template": 24
     },
-    "infrastructure": 5
+    "good": {
+        "name": "grain",
+        "value": 111.51
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

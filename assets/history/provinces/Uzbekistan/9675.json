@@ -5,12 +5,18 @@
         "SOV",
         "UZB"
     ],
-    "vegetables": 2.56,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 6969,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 6969,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 2.56
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

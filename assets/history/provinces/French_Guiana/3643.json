@@ -2,12 +2,18 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "fruits": 0.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1880,
-            "template": 85
-        }
+    "population_total": {
+        "amount": 1880,
+        "template": 85
     },
-    "infrastructure": 1
+    "good": {
+        "name": "fruits",
+        "value": 0.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

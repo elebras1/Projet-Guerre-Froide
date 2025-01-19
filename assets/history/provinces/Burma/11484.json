@@ -5,12 +5,18 @@
         "ENG",
         "BUR"
     ],
-    "fruits": 3.6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 437681,
-            "template": 24
-        }
+    "population_total": {
+        "amount": 437681,
+        "template": 24
     },
-    "infrastructure": 1
+    "good": {
+        "name": "fruits",
+        "value": 3.6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

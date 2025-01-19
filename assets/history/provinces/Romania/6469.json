@@ -2,16 +2,22 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "vegetables": 250,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 637003,
-            "template": 50
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "heavy_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 637003,
+        "template": 50
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 250
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

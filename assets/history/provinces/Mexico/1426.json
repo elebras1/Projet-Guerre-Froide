@@ -2,16 +2,22 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "oil": 112,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 223950,
-            "template": 81
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "refinery",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 223950,
+        "template": 81
+    },
+    "good": {
+        "name": "oil",
+        "value": 112
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

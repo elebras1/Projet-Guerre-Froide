@@ -2,12 +2,18 @@
     "owner": "BOL",
     "controller": "BOL",
     "add_core": "BOL",
-    "vegetables": 0.85,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1004,
-            "template": 80
-        }
+    "population_total": {
+        "amount": 1004,
+        "template": 80
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 0.85
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

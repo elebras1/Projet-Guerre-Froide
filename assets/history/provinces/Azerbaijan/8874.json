@@ -5,12 +5,18 @@
         "SOV",
         "AZB"
     ],
-    "grain": 87,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 182998,
-            "template": 30
-        }
+    "population_total": {
+        "amount": 182998,
+        "template": 30
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 87
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

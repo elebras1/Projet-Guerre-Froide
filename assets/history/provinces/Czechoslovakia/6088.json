@@ -5,16 +5,22 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "coal": 9,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 421771,
-            "template": 47
-        }
-    },
-    "infrastructure": 7,
     "economy_building": {
         "name": "light_industry",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 421771,
+        "template": 47
+    },
+    "good": {
+        "name": "coal",
+        "value": 9
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        }
+    ]
 }

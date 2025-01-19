@@ -2,17 +2,26 @@
     "owner": "DEN",
     "controller": "DEN",
     "add_core": "DEN",
-    "grain": 280,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 385903,
-            "template": 51
-        }
-    },
     "economy_building": {
         "name": "naval_research_center",
         "size": 1
     },
-    "infrastructure": 6
+    "population_total": {
+        "amount": 385903,
+        "template": 51
+    },
+    "good": {
+        "name": "grain",
+        "value": 280
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

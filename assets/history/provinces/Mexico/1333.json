@@ -2,7 +2,6 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "grain": 65.03,
     "economy_building": [
         {
             "name": "financial_district",
@@ -13,11 +12,18 @@
             "size": 1
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 6358207,
-            "template": 81
-        }
+    "population_total": {
+        "amount": 6358207,
+        "template": 81
     },
-    "infrastructure": 8
+    "good": {
+        "name": "grain",
+        "value": 65.03
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

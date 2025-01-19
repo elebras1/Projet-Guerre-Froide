@@ -5,12 +5,18 @@
         "ENG",
         "SUD"
     ],
-    "meat": 11.04,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 80353,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 80353,
+        "template": 3
     },
-    "infrastructure": 1
+    "good": {
+        "name": "meat",
+        "value": 11.04
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "wood": 1.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 51503,
-            "template": 59
-        }
+    "population_total": {
+        "amount": 51503,
+        "template": 59
     },
-    "infrastructure": 4
+    "good": {
+        "name": "wood",
+        "value": 1.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

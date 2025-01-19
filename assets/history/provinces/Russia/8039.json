@@ -5,8 +5,6 @@
         "SOV",
         "RUS"
     ],
-    "wood": 1,
-    "air_base": 10,
     "economy_building": [
         {
             "name": "national_monument",
@@ -17,11 +15,22 @@
             "size": 1
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1409358,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 1409358,
+        "template": 45
     },
-    "infrastructure": 10
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 10
+        },
+        {
+            "name": "air_base",
+            "size": 10
+        }
+    ]
 }

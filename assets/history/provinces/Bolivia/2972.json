@@ -2,16 +2,22 @@
     "owner": "BOL",
     "controller": "BOL",
     "add_core": "BOL",
-    "vegetables": 8.94,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 206905,
-            "template": 80
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "powerplant",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 206905,
+        "template": 80
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 8.94
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

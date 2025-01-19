@@ -2,12 +2,18 @@
     "owner": "IRQ",
     "controller": "IRQ",
     "add_core": "IRQ",
-    "grain": 7.08,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 52998,
-            "template": 33
-        }
+    "population_total": {
+        "amount": 52998,
+        "template": 33
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 7.08
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

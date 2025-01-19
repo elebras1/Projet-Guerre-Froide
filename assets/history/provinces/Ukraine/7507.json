@@ -5,12 +5,18 @@
         "SOV",
         "UKR"
     ],
-    "vegetables": 60.56,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 205226,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 205226,
+        "template": 45
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 60.56
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,17 +2,26 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "rare_metals": 10,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 747752,
-            "template": 64
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "heavy_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 747752,
+        "template": 64
+    },
+    "good": {
+        "name": "rare_metals",
+        "value": 10
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

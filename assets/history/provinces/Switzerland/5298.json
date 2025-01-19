@@ -2,16 +2,22 @@
     "owner": "SCH",
     "controller": "SCH",
     "add_core": "SCH",
-    "renewable_energy": 206,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 370168,
-            "template": 74
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 7
-    }
+    },
+    "population_total": {
+        "amount": 370168,
+        "template": 74
+    },
+    "good": {
+        "name": "renewable_energy",
+        "value": 206
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

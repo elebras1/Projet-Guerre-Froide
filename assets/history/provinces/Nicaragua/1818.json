@@ -2,16 +2,22 @@
     "owner": "NIC",
     "controller": "NIC",
     "add_core": "NIC",
-    "meat": 12.731,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 150097,
-            "template": 76
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 150097,
+        "template": 76
+    },
+    "good": {
+        "name": "meat",
+        "value": 12.731
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

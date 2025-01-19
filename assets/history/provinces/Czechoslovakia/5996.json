@@ -5,7 +5,6 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "meat": 517,
     "economy_building": [
         {
             "name": "military_academy",
@@ -16,11 +15,18 @@
             "size": 3
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 959379,
-            "template": 47
-        }
+    "population_total": {
+        "amount": 959379,
+        "template": 47
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 517
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

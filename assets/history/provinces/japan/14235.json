@@ -2,12 +2,18 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "precious_metals": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 232810,
-            "template": 8
-        }
+    "population_total": {
+        "amount": 232810,
+        "template": 8
     },
-    "infrastructure": 4
+    "good": {
+        "name": "precious_metals",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

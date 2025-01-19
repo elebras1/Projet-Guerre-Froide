@@ -5,12 +5,18 @@
         "BRU",
         "ENG"
     ],
-    "oil": 160,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 43127,
-            "template": 19
-        }
+    "population_total": {
+        "amount": 43127,
+        "template": 19
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 160
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

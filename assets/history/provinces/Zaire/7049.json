@@ -5,12 +5,18 @@
         "BEL",
         "DRC"
     ],
-    "fruits": 4.86,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 39663,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 39663,
+        "template": 2
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 4.86
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

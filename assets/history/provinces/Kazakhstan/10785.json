@@ -5,12 +5,18 @@
         "SOV",
         "KAZ"
     ],
-    "rare_metals": 3.32,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 48063,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 48063,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 3.32
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

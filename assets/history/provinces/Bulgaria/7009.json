@@ -2,12 +2,18 @@
     "owner": "BUL",
     "controller": "BUL",
     "add_core": "BUL",
-    "grain": 175,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 281391,
-            "template": 46
-        }
+    "population_total": {
+        "amount": 281391,
+        "template": 46
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 175
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

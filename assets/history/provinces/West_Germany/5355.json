@@ -5,16 +5,22 @@
     ],
     "owner": "USA",
     "controller": "USA",
-    "coal": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2617231,
-            "template": 71
-        }
-    },
     "economy_building": {
         "name": "university",
         "size": 1
     },
-    "infrastructure": 2
+    "population_total": {
+        "amount": 2617231,
+        "template": 71
+    },
+    "good": {
+        "name": "coal",
+        "value": 4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

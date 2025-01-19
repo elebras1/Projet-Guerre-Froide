@@ -5,14 +5,26 @@
         "IDC",
         "SVI"
     ],
-    "fruits": 12.01,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 345960,
-            "template": 28
-        }
+    "population_total": {
+        "amount": 345960,
+        "template": 28
     },
-    "infrastructure": 3,
-    "air_base": 1,
-    "naval_base": 1
+    "good": {
+        "name": "fruits",
+        "value": 12.01
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

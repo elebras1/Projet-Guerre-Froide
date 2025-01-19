@@ -2,12 +2,18 @@
     "add_core": "ROM",
     "owner": "ROM",
     "controller": "ROM",
-    "coal": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 97097,
-            "template": 50
-        }
+    "population_total": {
+        "amount": 97097,
+        "template": 50
     },
-    "infrastructure": 4
+    "good": {
+        "name": "coal",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

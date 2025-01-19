@@ -5,12 +5,18 @@
         "FRA",
         "CAR"
     ],
-    "vegetables": 3.26,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1055,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 1055,
+        "template": 2
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 3.26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

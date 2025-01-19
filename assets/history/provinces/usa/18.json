@@ -2,12 +2,18 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "rare_metals": 42.07,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 5913,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 5913,
+        "template": 93
     },
-    "infrastructure": 2
+    "good": {
+        "name": "rare_metals",
+        "value": 42.07
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

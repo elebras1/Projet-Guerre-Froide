@@ -2,12 +2,18 @@
     "owner": "HON",
     "controller": "HON",
     "add_core": "HON",
-    "meat": 14,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 215221,
-            "template": 76
-        }
+    "population_total": {
+        "amount": 215221,
+        "template": 76
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 14
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

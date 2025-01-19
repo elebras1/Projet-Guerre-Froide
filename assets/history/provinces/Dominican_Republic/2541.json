@@ -2,12 +2,18 @@
     "owner": "DOM",
     "controller": "DOM",
     "add_core": "DOM",
-    "rare_metals": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 420433,
-            "template": 75
-        }
+    "population_total": {
+        "amount": 420433,
+        "template": 75
     },
-    "infrastructure": 6
+    "good": {
+        "name": "rare_metals",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

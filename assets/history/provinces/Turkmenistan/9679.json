@@ -5,12 +5,18 @@
         "SOV",
         "TRK"
     ],
-    "oil": 39,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 12464,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 12464,
+        "template": 11
     },
-    "infrastructure": 6
+    "good": {
+        "name": "oil",
+        "value": 39
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -2,13 +2,6 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "vegetables": 771.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1014012,
-            "template": 64
-        }
-    },
     "economy_building": [
         {
             "name": "university",
@@ -19,5 +12,18 @@
             "size": 6
         }
     ],
-    "infrastructure": 8
+    "population_total": {
+        "amount": 1014012,
+        "template": 64
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 771.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "vegetables": 1.64,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 5574,
-            "template": 60
-        }
+    "population_total": {
+        "amount": 5574,
+        "template": 60
     },
-    "infrastructure": 1
+    "good": {
+        "name": "vegetables",
+        "value": 1.64
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

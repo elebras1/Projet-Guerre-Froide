@@ -2,13 +2,22 @@
     "owner": "DEN",
     "controller": "DEN",
     "add_core": "DEN",
-    "fish": 0.5,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 23088,
-            "template": 51
-        }
+    "population_total": {
+        "amount": 23088,
+        "template": 51
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fish",
+        "value": 0.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

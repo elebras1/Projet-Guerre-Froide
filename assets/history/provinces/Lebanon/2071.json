@@ -5,17 +5,26 @@
         "LEB",
         "SYR"
     ],
-    "vegetables": 5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 250602,
-            "template": 37
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "powerplant",
         "size": 1
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 250602,
+        "template": 37
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "uranium": 0.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3913,
-            "template": 81
-        }
+    "population_total": {
+        "amount": 3913,
+        "template": 81
     },
-    "infrastructure": 4
+    "good": {
+        "name": "uranium",
+        "value": 0.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

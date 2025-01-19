@@ -2,12 +2,18 @@
     "owner": "MON",
     "controller": "MON",
     "add_core": "MON",
-    "meat": 0.33,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1041,
-            "template": 9
-        }
+    "population_total": {
+        "amount": 1041,
+        "template": 9
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 0.33
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "ENG",
         "UAE"
     ],
-    "fruits": 1.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3468,
-            "template": 43
-        }
+    "population_total": {
+        "amount": 3468,
+        "template": 43
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fruits",
+        "value": 1.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

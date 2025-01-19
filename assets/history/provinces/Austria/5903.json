@@ -2,17 +2,26 @@
     "add_core": "AUS",
     "owner": "ENG",
     "controller": "ENG",
-    "grain": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1154791,
-            "template": 68
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "heavy_industry",
         "size": 2
     },
-    "air_base": 4
+    "population_total": {
+        "amount": 1154791,
+        "template": 68
+    },
+    "good": {
+        "name": "grain",
+        "value": 8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

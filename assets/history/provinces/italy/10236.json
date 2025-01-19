@@ -2,16 +2,22 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "grain": 10.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 194721,
-            "template": 64
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "powerplant",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 194721,
+        "template": 64
+    },
+    "good": {
+        "name": "grain",
+        "value": 10.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

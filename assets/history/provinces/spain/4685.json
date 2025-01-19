@@ -2,12 +2,18 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "meat": 29.9,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 113695,
-            "template": 67
-        }
+    "population_total": {
+        "amount": 113695,
+        "template": 67
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 29.9
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

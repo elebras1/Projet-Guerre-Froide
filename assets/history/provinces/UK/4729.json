@@ -2,17 +2,26 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "oil": 190,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 683026,
-            "template": 60
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "refinery",
         "size": 6
     },
-    "naval_base": 3
+    "population_total": {
+        "amount": 683026,
+        "template": 60
+    },
+    "good": {
+        "name": "oil",
+        "value": 190
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

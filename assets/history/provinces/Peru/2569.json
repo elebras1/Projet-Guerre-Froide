@@ -2,12 +2,18 @@
     "owner": "PRU",
     "controller": "PRU",
     "add_core": "PRU",
-    "precious_metals": 7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 83731,
-            "template": 88
-        }
+    "population_total": {
+        "amount": 83731,
+        "template": 88
     },
-    "infrastructure": 3
+    "good": {
+        "name": "precious_metals",
+        "value": 7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

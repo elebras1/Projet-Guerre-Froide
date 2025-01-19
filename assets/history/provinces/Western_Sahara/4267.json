@@ -7,11 +7,14 @@
         "MOR",
         "MRA"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 89,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 89,
+        "template": 3
     },
-    "infrastructure": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "meat": 57.86,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 41285,
-            "template": 93
-        }
+    "population_total": {
+        "amount": 41285,
+        "template": 93
     },
-    "infrastructure": 5
+    "good": {
+        "name": "meat",
+        "value": 57.86
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

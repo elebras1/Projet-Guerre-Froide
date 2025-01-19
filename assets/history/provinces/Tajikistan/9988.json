@@ -5,12 +5,18 @@
         "SOV",
         "TAJ"
     ],
-    "rare_metals": 10.35,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 108605,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 108605,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "rare_metals",
+        "value": 10.35
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

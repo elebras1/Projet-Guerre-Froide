@@ -6,12 +6,18 @@
         "FRA",
         "MAL"
     ],
-    "grain": 4.78,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 51223,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 51223,
+        "template": 5
     },
-    "infrastructure": 1
+    "good": {
+        "name": "grain",
+        "value": 4.78
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

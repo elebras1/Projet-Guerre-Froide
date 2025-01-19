@@ -5,18 +5,30 @@
         "SOV",
         "UKR"
     ],
-    "air_base": 4,
-    "fish": 191.6,
-    "naval_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 598785,
-            "template": 45
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "naval_yards",
         "size": 8
-    }
+    },
+    "population_total": {
+        "amount": 598785,
+        "template": 45
+    },
+    "good": {
+        "name": "fish",
+        "value": 191.6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 4
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

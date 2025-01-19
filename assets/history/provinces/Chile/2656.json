@@ -2,12 +2,18 @@
     "owner": "CHL",
     "controller": "CHL",
     "add_core": "CHL",
-    "grain": 9.69,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 6782,
-            "template": 82
-        }
+    "population_total": {
+        "amount": 6782,
+        "template": 82
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 9.69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

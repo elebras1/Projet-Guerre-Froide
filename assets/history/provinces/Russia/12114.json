@@ -5,12 +5,18 @@
         "SOV",
         "RUS"
     ],
-    "iron": 15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 610304,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 610304,
+        "template": 45
     },
-    "infrastructure": 8
+    "good": {
+        "name": "iron",
+        "value": 15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

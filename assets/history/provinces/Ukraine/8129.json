@@ -5,12 +5,18 @@
         "SOV",
         "UKR"
     ],
-    "coal": 15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 94319,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 94319,
+        "template": 45
     },
-    "infrastructure": 4
+    "good": {
+        "name": "coal",
+        "value": 15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

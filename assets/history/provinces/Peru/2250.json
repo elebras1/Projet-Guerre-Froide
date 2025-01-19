@@ -2,11 +2,14 @@
     "owner": "PRU",
     "controller": "PRU",
     "add_core": "PRU",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 884,
-            "template": 88
-        }
+    "population_total": {
+        "amount": 884,
+        "template": 88
     },
-    "infrastructure": 1
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

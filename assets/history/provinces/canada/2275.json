@@ -5,12 +5,18 @@
         "CAN",
         "QUE"
     ],
-    "vegetables": 3.3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1773,
-            "template": 92
-        }
+    "population_total": {
+        "amount": 1773,
+        "template": 92
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 3.3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

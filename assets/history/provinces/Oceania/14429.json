@@ -5,13 +5,22 @@
         "USA",
         "GUM"
     ],
-    "fruits": 0.39,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 59650,
-            "template": 68
-        }
+    "population_total": {
+        "amount": 59650,
+        "template": 68
     },
-    "infrastructure": 6
+    "good": {
+        "name": "fruits",
+        "value": 0.39
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

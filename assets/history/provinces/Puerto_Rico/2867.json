@@ -5,13 +5,22 @@
         "USA",
         "PRC"
     ],
-    "vegetables": 8.02,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 458521,
-            "template": 75
-        }
+    "population_total": {
+        "amount": 458521,
+        "template": 75
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 8.02
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

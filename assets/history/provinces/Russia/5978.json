@@ -5,17 +5,26 @@
         "SOV",
         "RUS"
     ],
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 98911,
-            "template": 45
-        }
-    },
-    "infrastructure": 7,
     "economy_building": {
         "name": "naval_yards",
         "size": 9
     },
-    "air_base": 5
+    "population_total": {
+        "amount": 98911,
+        "template": 45
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

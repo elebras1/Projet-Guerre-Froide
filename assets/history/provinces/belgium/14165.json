@@ -5,15 +5,18 @@
         "BEL",
         "WLL"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 383702,
-            "template": 69
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "naval_yards",
         "size": 7
-    }
+    },
+    "population_total": {
+        "amount": 383702,
+        "template": 69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -5,13 +5,22 @@
         "SOV",
         "UZB"
     ],
-    "rare_metals": 24.11,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 256034,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 256034,
+        "template": 11
     },
-    "infrastructure": 6,
-    "air_base": 3
+    "good": {
+        "name": "rare_metals",
+        "value": 24.11
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 3
+        }
+    ]
 }

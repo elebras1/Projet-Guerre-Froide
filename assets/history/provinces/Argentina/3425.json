@@ -2,12 +2,18 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "grain": 155.05,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 487003,
-            "template": 79
-        }
+    "population_total": {
+        "amount": 487003,
+        "template": 79
     },
-    "infrastructure": 4
+    "good": {
+        "name": "grain",
+        "value": 155.05
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

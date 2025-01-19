@@ -6,12 +6,18 @@
         "TNZ",
         "TNG"
     ],
-    "fruits": 3.21,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 45519,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 45519,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fruits",
+        "value": 3.21
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

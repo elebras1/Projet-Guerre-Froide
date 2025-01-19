@@ -5,11 +5,14 @@
         "ENG",
         "BOT"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 728,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 728,
+        "template": 4
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

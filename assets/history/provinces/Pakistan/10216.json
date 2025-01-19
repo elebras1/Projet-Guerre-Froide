@@ -5,12 +5,18 @@
         "ENG",
         "PAK"
     ],
-    "renewable_energy": 360,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 714511,
-            "template": 18
-        }
+    "population_total": {
+        "amount": 714511,
+        "template": 18
     },
-    "infrastructure": 2
+    "good": {
+        "name": "renewable_energy",
+        "value": 360
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

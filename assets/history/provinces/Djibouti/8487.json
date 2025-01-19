@@ -5,12 +5,18 @@
         "FRA",
         "DJI"
     ],
-    "naval_base": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3481,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 3481,
+        "template": 1
     },
-    "infrastructure": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

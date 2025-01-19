@@ -5,12 +5,18 @@
         "YEM",
         "NYE"
     ],
-    "oil": 15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 38998,
-            "template": 44
-        }
+    "population_total": {
+        "amount": 38998,
+        "template": 44
     },
-    "infrastructure": 4
+    "good": {
+        "name": "oil",
+        "value": 15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

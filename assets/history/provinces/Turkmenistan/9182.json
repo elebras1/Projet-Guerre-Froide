@@ -5,16 +5,22 @@
         "SOV",
         "TRK"
     ],
-    "oil": 209,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 11099,
-            "template": 11
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "refinery",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 11099,
+        "template": 11
+    },
+    "good": {
+        "name": "oil",
+        "value": 209
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

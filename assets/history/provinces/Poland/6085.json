@@ -2,16 +2,22 @@
     "add_core": "POL",
     "owner": "POL",
     "controller": "POL",
-    "grain": 486.65,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 559842,
-            "template": 49
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "military_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 559842,
+        "template": 49
+    },
+    "good": {
+        "name": "grain",
+        "value": 486.65
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

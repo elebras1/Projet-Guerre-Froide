@@ -2,12 +2,18 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "grain": 44.81,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 142484,
-            "template": 77
-        }
+    "population_total": {
+        "amount": 142484,
+        "template": 77
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 44.81
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

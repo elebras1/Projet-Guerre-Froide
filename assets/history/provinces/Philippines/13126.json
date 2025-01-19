@@ -2,12 +2,18 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "fish": 26.15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 305568,
-            "template": 25
-        }
+    "population_total": {
+        "amount": 305568,
+        "template": 25
     },
-    "infrastructure": 5
+    "good": {
+        "name": "fish",
+        "value": 26.15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

@@ -6,12 +6,18 @@
         "ETH",
         "ERI"
     ],
-    "fish": 1.38,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 40965,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 40965,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 1.38
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

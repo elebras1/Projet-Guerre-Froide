@@ -2,17 +2,26 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "grain": 107.24,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1032129,
-            "template": 64
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "naval_yards",
         "size": 7
-    }
+    },
+    "population_total": {
+        "amount": 1032129,
+        "template": 64
+    },
+    "good": {
+        "name": "grain",
+        "value": 107.24
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

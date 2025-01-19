@@ -2,16 +2,22 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "oil": 202,
     "economy_building": {
         "name": "financial_district",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 140648,
-            "template": 77
-        }
+    "population_total": {
+        "amount": 140648,
+        "template": 77
     },
-    "infrastructure": 6
+    "good": {
+        "name": "oil",
+        "value": 202
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

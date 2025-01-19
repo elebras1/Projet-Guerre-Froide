@@ -5,12 +5,18 @@
         "SOV",
         "UKR"
     ],
-    "uranium": 27.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 781602,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 781602,
+        "template": 45
     },
-    "infrastructure": 4
+    "good": {
+        "name": "uranium",
+        "value": 27.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

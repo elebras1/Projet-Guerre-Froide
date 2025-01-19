@@ -2,12 +2,18 @@
     "add_core": "AUS",
     "owner": "ENG",
     "controller": "ENG",
-    "meat": 50,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 25662,
-            "template": 68
-        }
+    "population_total": {
+        "amount": 25662,
+        "template": 68
     },
-    "infrastructure": 3
+    "good": {
+        "name": "meat",
+        "value": 50
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

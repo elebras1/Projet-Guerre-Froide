@@ -5,12 +5,18 @@
         "ENG",
         "BHM"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 222,
-            "template": 75
-        }
+    "population_total": {
+        "amount": 222,
+        "template": 75
     },
-    "infrastructure": 5,
-    "naval_base": 1
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "FRA",
         "GAB"
     ],
-    "meat": 1.97,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1976,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 1976,
+        "template": 2
     },
-    "infrastructure": 2
+    "good": {
+        "name": "meat",
+        "value": 1.97
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

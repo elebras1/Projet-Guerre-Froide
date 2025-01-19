@@ -2,17 +2,26 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "grain": 365.63,
-    "naval_base": 3,
     "economy_building": {
         "name": "financial_district",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2187833,
-            "template": 60
-        }
+    "population_total": {
+        "amount": 2187833,
+        "template": 60
     },
-    "infrastructure": 8
+    "good": {
+        "name": "grain",
+        "value": 365.63
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        },
+        {
+            "name": "naval_base",
+            "size": 3
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "renewable_energy": 70,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 101238,
-            "template": 77
-        }
+    "population_total": {
+        "amount": 101238,
+        "template": 77
     },
-    "infrastructure": 4
+    "good": {
+        "name": "renewable_energy",
+        "value": 70
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

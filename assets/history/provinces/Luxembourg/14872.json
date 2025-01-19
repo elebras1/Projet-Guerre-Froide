@@ -2,16 +2,22 @@
     "owner": "LUX",
     "controller": "LUX",
     "add_core": "LUX",
-    "wood": 0.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 292487,
-            "template": 72
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 292487,
+        "template": 72
+    },
+    "good": {
+        "name": "wood",
+        "value": 0.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "rare_metals": 8.69,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4222,
-            "template": 59
-        }
+    "population_total": {
+        "amount": 4222,
+        "template": 59
     },
-    "infrastructure": 1
+    "good": {
+        "name": "rare_metals",
+        "value": 8.69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

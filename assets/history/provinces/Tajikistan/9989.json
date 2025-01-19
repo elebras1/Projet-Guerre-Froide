@@ -5,16 +5,22 @@
         "SOV",
         "TAJ"
     ],
-    "renewable_energy": 300,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 280834,
-            "template": 11
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "powerplant",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 280834,
+        "template": 11
+    },
+    "good": {
+        "name": "renewable_energy",
+        "value": 300
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

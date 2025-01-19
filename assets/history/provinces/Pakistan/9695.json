@@ -5,11 +5,14 @@
         "ENG",
         "PAK"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 23756,
-            "template": 18
-        }
+    "population_total": {
+        "amount": 23756,
+        "template": 18
     },
-    "infrastructure": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

@@ -2,11 +2,14 @@
     "owner": "IRQ",
     "controller": "IRQ",
     "add_core": "IRQ",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 809,
-            "template": 33
-        }
+    "population_total": {
+        "amount": 809,
+        "template": 33
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

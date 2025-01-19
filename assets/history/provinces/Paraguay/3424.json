@@ -2,12 +2,18 @@
     "owner": "PAR",
     "controller": "PAR",
     "add_core": "PAR",
-    "meat": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1235,
-            "template": 87
-        }
+    "population_total": {
+        "amount": 1235,
+        "template": 87
     },
-    "infrastructure": 4
+    "good": {
+        "name": "meat",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

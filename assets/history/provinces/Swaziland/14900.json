@@ -5,12 +5,18 @@
         "ENG",
         "SWA"
     ],
-    "grain": 4.5,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 35345,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 35345,
+        "template": 4
     },
-    "infrastructure": 6
+    "good": {
+        "name": "grain",
+        "value": 4.5
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

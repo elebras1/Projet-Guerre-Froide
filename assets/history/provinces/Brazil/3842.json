@@ -2,16 +2,22 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "iron": 104,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 287966,
-            "template": 77
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "heavy_industry",
         "size": 5
-    }
+    },
+    "population_total": {
+        "amount": 287966,
+        "template": 77
+    },
+    "good": {
+        "name": "iron",
+        "value": 104
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

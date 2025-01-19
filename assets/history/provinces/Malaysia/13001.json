@@ -5,16 +5,22 @@
         "ENG",
         "MLY"
     ],
-    "vegetables": 6.15,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 76628,
-            "template": 23
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 76628,
+        "template": 23
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 6.15
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

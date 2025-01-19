@@ -6,12 +6,18 @@
         "DRC",
         "KAT"
     ],
-    "vegetables": 28.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 25842,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 25842,
+        "template": 2
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 28.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

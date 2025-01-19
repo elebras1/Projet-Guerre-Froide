@@ -6,12 +6,18 @@
         "ZIM",
         "RHO"
     ],
-    "vegetables": 4.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 59732,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 59732,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 4.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

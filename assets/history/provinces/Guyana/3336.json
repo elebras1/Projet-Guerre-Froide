@@ -5,12 +5,18 @@
         "ENG",
         "GUY"
     ],
-    "precious_metals": 3,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2919,
-            "template": 86
-        }
+    "population_total": {
+        "amount": 2919,
+        "template": 86
     },
-    "infrastructure": 3
+    "good": {
+        "name": "precious_metals",
+        "value": 3
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

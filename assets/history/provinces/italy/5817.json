@@ -2,17 +2,26 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "vegetables": 156.84,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1070589,
-            "template": 64
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "light_industry",
         "size": 2
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 1070589,
+        "template": 64
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 156.84
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

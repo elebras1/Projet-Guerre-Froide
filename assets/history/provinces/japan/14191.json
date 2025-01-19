@@ -2,13 +2,6 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "wood": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1390582,
-            "template": 8
-        }
-    },
     "economy_building": [
         {
             "name": "naval_research_center",
@@ -19,5 +12,18 @@
             "size": 6
         }
     ],
-    "infrastructure": 3
+    "population_total": {
+        "amount": 1390582,
+        "template": 8
+    },
+    "good": {
+        "name": "wood",
+        "value": 6
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

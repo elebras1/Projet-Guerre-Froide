@@ -2,17 +2,26 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "fish": 100.02,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 544407,
-            "template": 8
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "naval_yards",
         "size": 7
     },
-    "naval_base": 1
+    "population_total": {
+        "amount": 544407,
+        "template": 8
+    },
+    "good": {
+        "name": "fish",
+        "value": 100.02
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

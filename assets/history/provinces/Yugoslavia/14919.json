@@ -2,17 +2,26 @@
     "add_core": "CRO",
     "owner": "YUG",
     "controller": "YUG",
-    "oil": 26,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 112298,
-            "template": 62
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "naval_yards",
         "size": 8
-    }
+    },
+    "population_total": {
+        "amount": 112298,
+        "template": 62
+    },
+    "good": {
+        "name": "oil",
+        "value": 26
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

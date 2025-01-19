@@ -2,12 +2,18 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "meat": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 969,
-            "template": 91
-        }
+    "population_total": {
+        "amount": 969,
+        "template": 91
     },
-    "infrastructure": 1
+    "good": {
+        "name": "meat",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

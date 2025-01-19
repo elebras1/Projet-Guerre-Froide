@@ -5,12 +5,18 @@
         "SOV",
         "UZB"
     ],
-    "precious_metals": 13,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 759,
-            "template": 11
-        }
+    "population_total": {
+        "amount": 759,
+        "template": 11
     },
-    "infrastructure": 4
+    "good": {
+        "name": "precious_metals",
+        "value": 13
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

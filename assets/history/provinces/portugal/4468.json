@@ -2,17 +2,26 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "grain": 59,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1136853,
-            "template": 66
-        }
-    },
-    "infrastructure": 7,
     "economy_building": {
         "name": "light_industry",
         "size": 3
     },
-    "naval_base": 2
+    "population_total": {
+        "amount": 1136853,
+        "template": 66
+    },
+    "good": {
+        "name": "grain",
+        "value": 59
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

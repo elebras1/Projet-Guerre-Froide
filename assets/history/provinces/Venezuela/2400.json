@@ -2,13 +2,22 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "oil": 257,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 321290,
-            "template": 91
-        }
+    "population_total": {
+        "amount": 321290,
+        "template": 91
     },
-    "infrastructure": 6,
-    "naval_base": 1
+    "good": {
+        "name": "oil",
+        "value": 257
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

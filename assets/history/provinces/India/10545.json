@@ -5,16 +5,22 @@
         "ENG",
         "IND"
     ],
-    "meat": 190.56,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2048412,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 2048412,
+        "template": 15
     },
-    "infrastructure": 5
+    "good": {
+        "name": "meat",
+        "value": 190.56
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

@@ -5,16 +5,22 @@
         "ENG",
         "KEN"
     ],
-    "meat": 10.91,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 173955,
-            "template": 1
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 173955,
+        "template": 1
+    },
+    "good": {
+        "name": "meat",
+        "value": 10.91
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -2,13 +2,22 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "meat": 142.19,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 830844,
-            "template": 8
-        }
+    "population_total": {
+        "amount": 830844,
+        "template": 8
     },
-    "infrastructure": 4,
-    "naval_base": 1
+    "good": {
+        "name": "meat",
+        "value": 142.19
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

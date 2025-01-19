@@ -5,16 +5,22 @@
         "IDC",
         "LAO"
     ],
-    "grain": 17.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 106812,
-            "template": 22
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "military_industry",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 106812,
+        "template": 22
+    },
+    "good": {
+        "name": "grain",
+        "value": 17.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

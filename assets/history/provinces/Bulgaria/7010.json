@@ -2,12 +2,18 @@
     "owner": "BUL",
     "controller": "BUL",
     "add_core": "BUL",
-    "meat": 200.87,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 343840,
-            "template": 46
-        }
+    "population_total": {
+        "amount": 343840,
+        "template": 46
     },
-    "infrastructure": 5
+    "good": {
+        "name": "meat",
+        "value": 200.87
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

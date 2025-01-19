@@ -5,16 +5,22 @@
         "SOV",
         "AZB"
     ],
-    "oil": 265,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 316686,
-            "template": 30
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "refinery",
         "size": 7
-    }
+    },
+    "population_total": {
+        "amount": 316686,
+        "template": 30
+    },
+    "good": {
+        "name": "oil",
+        "value": 265
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

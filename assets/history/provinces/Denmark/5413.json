@@ -2,17 +2,26 @@
     "owner": "DEN",
     "controller": "DEN",
     "add_core": "DEN",
-    "vegetables": 322,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 189674,
-            "template": 51
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "refinery",
         "size": 8
-    }
+    },
+    "population_total": {
+        "amount": 189674,
+        "template": 51
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 322
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

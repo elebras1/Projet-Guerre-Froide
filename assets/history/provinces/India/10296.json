@@ -5,12 +5,18 @@
         "POR",
         "IND"
     ],
-    "iron": 60,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 383730,
-            "template": 15
-        }
+    "population_total": {
+        "amount": 383730,
+        "template": 15
     },
-    "infrastructure": 8
+    "good": {
+        "name": "iron",
+        "value": 60
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

@@ -2,16 +2,22 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "renewable_energy": 243,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 311656,
-            "template": 81
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "powerplant",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 311656,
+        "template": 81
+    },
+    "good": {
+        "name": "renewable_energy",
+        "value": 243
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

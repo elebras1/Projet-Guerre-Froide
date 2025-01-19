@@ -2,16 +2,22 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "vegetables": 26.08,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 335172,
-            "template": 25
-        }
+    "population_total": {
+        "amount": 335172,
+        "template": 25
     },
-    "infrastructure": 5
+    "good": {
+        "name": "vegetables",
+        "value": 26.08
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

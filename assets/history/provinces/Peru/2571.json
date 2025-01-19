@@ -2,12 +2,18 @@
     "owner": "PRU",
     "controller": "PRU",
     "add_core": "PRU",
-    "vegetables": 6.8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 72299,
-            "template": 88
-        }
+    "population_total": {
+        "amount": 72299,
+        "template": 88
     },
-    "infrastructure": 5
+    "good": {
+        "name": "vegetables",
+        "value": 6.8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

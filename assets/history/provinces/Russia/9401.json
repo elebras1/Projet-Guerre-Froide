@@ -5,12 +5,18 @@
         "SOV",
         "RUS"
     ],
-    "meat": 10.96,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 10149,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 10149,
+        "template": 45
     },
-    "infrastructure": 6
+    "good": {
+        "name": "meat",
+        "value": 10.96
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

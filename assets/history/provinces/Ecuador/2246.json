@@ -2,12 +2,18 @@
     "owner": "ECU",
     "controller": "ECU",
     "add_core": "ECU",
-    "oil": 123,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4119,
-            "template": 84
-        }
+    "population_total": {
+        "amount": 4119,
+        "template": 84
     },
-    "infrastructure": 1
+    "good": {
+        "name": "oil",
+        "value": 123
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

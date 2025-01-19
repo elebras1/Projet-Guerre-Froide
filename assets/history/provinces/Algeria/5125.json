@@ -5,12 +5,18 @@
         "FRA",
         "ALG"
     ],
-    "iron": 7,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 59822,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 59822,
+        "template": 3
     },
-    "infrastructure": 1
+    "good": {
+        "name": "iron",
+        "value": 7
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

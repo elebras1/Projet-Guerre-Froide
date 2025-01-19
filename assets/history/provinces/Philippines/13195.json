@@ -2,14 +2,26 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "vegetables": 678.4,
-    "naval_base": 8,
-    "air_base": 4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2498423,
-            "template": 25
-        }
+    "population_total": {
+        "amount": 2498423,
+        "template": 25
     },
-    "infrastructure": 5
+    "good": {
+        "name": "vegetables",
+        "value": 678.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 8
+        },
+        {
+            "name": "air_base",
+            "size": 4
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "PRK",
         "KOR"
     ],
-    "wood": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4595653,
-            "template": 10
-        }
+    "population_total": {
+        "amount": 4595653,
+        "template": 10
     },
-    "infrastructure": 6
+    "good": {
+        "name": "wood",
+        "value": 1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

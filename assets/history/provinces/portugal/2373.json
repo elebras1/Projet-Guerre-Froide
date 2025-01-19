@@ -2,16 +2,22 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "grain": 20,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 248980,
-            "template": 66
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "powerplant",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 248980,
+        "template": 66
+    },
+    "good": {
+        "name": "grain",
+        "value": 20
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -5,14 +5,26 @@
         "SOV",
         "UKR"
     ],
-    "vegetables": 198.38,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1136392,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 1136392,
+        "template": 45
     },
-    "infrastructure": 7,
-    "air_base": 5
+    "good": {
+        "name": "vegetables",
+        "value": 198.38
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

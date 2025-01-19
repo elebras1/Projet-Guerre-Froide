@@ -2,16 +2,22 @@
     "owner": "FIN",
     "controller": "FIN",
     "add_core": "FIN",
-    "grain": 51.47,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 117375,
-            "template": 53
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "aviation_industry",
         "size": 2
-    }
+    },
+    "population_total": {
+        "amount": 117375,
+        "template": 53
+    },
+    "good": {
+        "name": "grain",
+        "value": 51.47
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

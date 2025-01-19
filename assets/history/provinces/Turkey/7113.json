@@ -2,16 +2,22 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "fruits": 201.67,
     "economy_building": {
         "name": "financial_district",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 250809,
-            "template": 42
-        }
+    "population_total": {
+        "amount": 250809,
+        "template": 42
     },
-    "infrastructure": 6
+    "good": {
+        "name": "fruits",
+        "value": 201.67
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

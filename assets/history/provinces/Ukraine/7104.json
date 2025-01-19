@@ -5,16 +5,22 @@
         "SOV",
         "UKR"
     ],
-    "vegetables": 529.85,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 187663,
-            "template": 45
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "aviation_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 187663,
+        "template": 45
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 529.85
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

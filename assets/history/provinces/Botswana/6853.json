@@ -5,12 +5,18 @@
         "ENG",
         "BOT"
     ],
-    "vegetables": 0.41,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1242,
-            "template": 4
-        }
+    "population_total": {
+        "amount": 1242,
+        "template": 4
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 0.41
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

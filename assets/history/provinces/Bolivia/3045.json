@@ -2,16 +2,22 @@
     "owner": "BOL",
     "controller": "BOL",
     "add_core": "BOL",
-    "oil": 78,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 35359,
-            "template": 80
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "refinery",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 35359,
+        "template": 80
+    },
+    "good": {
+        "name": "oil",
+        "value": 78
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

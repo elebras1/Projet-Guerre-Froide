@@ -2,12 +2,18 @@
     "owner": "ETH",
     "controller": "ETH",
     "add_core": "ETH",
-    "fish": 0.27,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 23719,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 23719,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fish",
+        "value": 0.27
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "FRA",
         "TUN"
     ],
-    "oil": 11,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2372,
-            "template": 3
-        }
+    "population_total": {
+        "amount": 2372,
+        "template": 3
     },
-    "infrastructure": 2
+    "good": {
+        "name": "oil",
+        "value": 11
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

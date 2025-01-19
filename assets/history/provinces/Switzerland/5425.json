@@ -2,7 +2,6 @@
     "owner": "SCH",
     "controller": "SCH",
     "add_core": "SCH",
-    "wood": 2,
     "economy_building": [
         {
             "name": "financial_district",
@@ -13,12 +12,22 @@
             "size": 2
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1487001,
-            "template": 74
-        }
+    "population_total": {
+        "amount": 1487001,
+        "template": 74
     },
-    "infrastructure": 8,
-    "air_base": 5
+    "good": {
+        "name": "wood",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

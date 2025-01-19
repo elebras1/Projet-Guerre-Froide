@@ -2,16 +2,22 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "meat": 556.1,
     "economy_building": {
         "name": "military_academy",
         "size": 1
     },
-    "1946.1.1": {
-        "population_total": {
-            "amount": 746129,
-            "template": 73
-        }
+    "population_total": {
+        "amount": 746129,
+        "template": 73
     },
-    "infrastructure": 8
+    "good": {
+        "name": "meat",
+        "value": 556.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

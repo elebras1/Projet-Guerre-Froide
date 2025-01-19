@@ -5,13 +5,22 @@
         "ENG",
         "MRT"
     ],
-    "vegetables": 1.71,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 465834,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 465834,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 1.71
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

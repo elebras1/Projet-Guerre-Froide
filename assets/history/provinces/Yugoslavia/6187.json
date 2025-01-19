@@ -6,13 +6,22 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "vegetables": 110,
-    "air_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 147434,
-            "template": 62
-        }
+    "population_total": {
+        "amount": 147434,
+        "template": 62
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 110
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

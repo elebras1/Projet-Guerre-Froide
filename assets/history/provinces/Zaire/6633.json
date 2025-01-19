@@ -6,12 +6,18 @@
         "DRC",
         "KAT"
     ],
-    "grain": 25.48,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 3376,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 3376,
+        "template": 2
     },
-    "infrastructure": 1
+    "good": {
+        "name": "grain",
+        "value": 25.48
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        }
+    ]
 }

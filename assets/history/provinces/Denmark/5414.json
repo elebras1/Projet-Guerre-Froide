@@ -2,13 +2,22 @@
     "add_core": "DEN",
     "owner": "DEN",
     "controller": "DEN",
-    "wood": 1.1,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 186550,
-            "template": 51
-        }
+    "population_total": {
+        "amount": 186550,
+        "template": 51
     },
-    "infrastructure": 6
+    "good": {
+        "name": "wood",
+        "value": 1.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "BEL",
         "RWD"
     ],
-    "vegetables": 72.2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 900799,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 900799,
+        "template": 1
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 72.2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

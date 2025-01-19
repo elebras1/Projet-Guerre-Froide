@@ -2,12 +2,18 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "wood": 0.4,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 617753,
-            "template": 66
-        }
+    "population_total": {
+        "amount": 617753,
+        "template": 66
     },
-    "infrastructure": 6
+    "good": {
+        "name": "wood",
+        "value": 0.4
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

@@ -5,12 +5,18 @@
     ],
     "owner": "USA",
     "controller": "USA",
-    "fruits": 161.89,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 454986,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 454986,
+        "template": 71
     },
-    "infrastructure": 6
+    "good": {
+        "name": "fruits",
+        "value": 161.89
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

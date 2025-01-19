@@ -5,7 +5,6 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "vegetables": 818,
     "economy_building": [
         {
             "name": "university",
@@ -16,11 +15,18 @@
             "size": 7
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1360183,
-            "template": 47
-        }
+    "population_total": {
+        "amount": 1360183,
+        "template": 47
     },
-    "infrastructure": 7
+    "good": {
+        "name": "vegetables",
+        "value": 818
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 7
+        }
+    ]
 }

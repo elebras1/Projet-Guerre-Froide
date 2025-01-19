@@ -5,11 +5,14 @@
         "INO",
         "HOL"
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 4159,
-            "template": 21
-        }
+    "population_total": {
+        "amount": 4159,
+        "template": 21
     },
-    "infrastructure": 4
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

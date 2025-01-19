@@ -2,18 +2,30 @@
     "owner": "DOM",
     "controller": "DOM",
     "add_core": "DOM",
-    "fruits": 8.66,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 649573,
-            "template": 75
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "light_industry",
         "size": 3
     },
-    "air_base": 2
+    "population_total": {
+        "amount": 649573,
+        "template": 75
+    },
+    "good": {
+        "name": "fruits",
+        "value": 8.66
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

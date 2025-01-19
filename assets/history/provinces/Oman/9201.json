@@ -2,11 +2,14 @@
     "owner": "OMN",
     "controller": "OMN",
     "add_core": "OMN",
-    "1946.1.1": {
-        "population_total": {
-            "amount": 22603,
-            "template": 38
-        }
+    "population_total": {
+        "amount": 22603,
+        "template": 38
     },
-    "infrastructure": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

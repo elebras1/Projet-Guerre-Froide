@@ -2,12 +2,18 @@
     "owner": "ETH",
     "controller": "ETH",
     "add_core": "ETH",
-    "meat": 2.23,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 14759,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 14759,
+        "template": 1
     },
-    "infrastructure": 3
+    "good": {
+        "name": "meat",
+        "value": 2.23
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

@@ -5,12 +5,18 @@
         "INO",
         "HOL"
     ],
-    "vegetables": 496.65,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 2773887,
-            "template": 21
-        }
+    "population_total": {
+        "amount": 2773887,
+        "template": 21
     },
-    "infrastructure": 6
+    "good": {
+        "name": "vegetables",
+        "value": 496.65
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

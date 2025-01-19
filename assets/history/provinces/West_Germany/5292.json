@@ -5,17 +5,26 @@
     ],
     "owner": "ENG",
     "controller": "ENG",
-    "coal": 31,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1505211,
-            "template": 71
-        }
-    },
-    "infrastructure": 1,
     "economy_building": {
         "name": "heavy_industry",
         "size": 3
     },
-    "air_base": 5
+    "population_total": {
+        "amount": 1505211,
+        "template": 71
+    },
+    "good": {
+        "name": "coal",
+        "value": 31
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 5
+        }
+    ]
 }

@@ -6,16 +6,22 @@
         "DRC",
         "SKA"
     ],
-    "fruits": 10.92,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 346383,
-            "template": 2
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 346383,
+        "template": 2
+    },
+    "good": {
+        "name": "fruits",
+        "value": 10.92
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

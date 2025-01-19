@@ -2,16 +2,22 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "grain": 210.33,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 5314425,
-            "template": 64
-        }
-    },
-    "infrastructure": 5,
     "economy_building": {
         "name": "refinery",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 5314425,
+        "template": 64
+    },
+    "good": {
+        "name": "grain",
+        "value": 210.33
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

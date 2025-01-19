@@ -5,18 +5,30 @@
         "ENG",
         "KWT"
     ],
-    "oil": 119,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 85155,
-            "template": 36
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "refinery",
         "size": 3
     },
-    "air_base": 1
+    "population_total": {
+        "amount": 85155,
+        "template": 36
+    },
+    "good": {
+        "name": "oil",
+        "value": 119
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        },
+        {
+            "name": "air_base",
+            "size": 1
+        }
+    ]
 }

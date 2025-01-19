@@ -2,17 +2,26 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "fruits": 110.75,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 542945,
-            "template": 42
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "heavy_industry",
         "size": 3
     },
-    "naval_base": 2
+    "population_total": {
+        "amount": 542945,
+        "template": 42
+    },
+    "good": {
+        "name": "fruits",
+        "value": 110.75
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

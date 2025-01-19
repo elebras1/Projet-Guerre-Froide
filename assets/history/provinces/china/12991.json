@@ -5,12 +5,18 @@
         "CHI",
         "CHC"
     ],
-    "iron": 90,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1414878,
-            "template": 6
-        }
+    "population_total": {
+        "amount": 1414878,
+        "template": 6
     },
-    "infrastructure": 4
+    "good": {
+        "name": "iron",
+        "value": 90
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

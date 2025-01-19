@@ -5,17 +5,26 @@
         "ENG",
         "BAH"
     ],
-    "oil": 94,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 109293,
-            "template": 31
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "refinery",
         "size": 7
     },
-    "naval_base": 2
+    "population_total": {
+        "amount": 109293,
+        "template": 31
+    },
+    "good": {
+        "name": "oil",
+        "value": 94
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

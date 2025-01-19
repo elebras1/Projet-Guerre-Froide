@@ -2,14 +2,6 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "grain": 51.69,
-    "air_base": 6,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 137355,
-            "template": 59
-        }
-    },
     "economy_building": [
         {
             "name": "air_research_center",
@@ -20,5 +12,22 @@
             "size": 7
         }
     ],
-    "infrastructure": 6
+    "population_total": {
+        "amount": 137355,
+        "template": 59
+    },
+    "good": {
+        "name": "grain",
+        "value": 51.69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        },
+        {
+            "name": "air_base",
+            "size": 6
+        }
+    ]
 }

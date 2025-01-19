@@ -12,12 +12,18 @@
             "size": 3
         }
     ],
-    "1946.1.1": {
-        "population_total": {
-            "amount": 17709,
-            "template": 40
-        }
+    "population_total": {
+        "amount": 17709,
+        "template": 40
     },
-    "infrastructure": 2,
-    "air_base": 2
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "air_base",
+            "size": 2
+        }
+    ]
 }

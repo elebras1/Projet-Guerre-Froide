@@ -2,17 +2,26 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "fish": 25.27,
-    "naval_base": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 144272,
-            "template": 59
-        }
-    },
-    "infrastructure": 2,
     "economy_building": {
         "name": "military_industry",
         "size": 4
-    }
+    },
+    "population_total": {
+        "amount": 144272,
+        "template": 59
+    },
+    "good": {
+        "name": "fish",
+        "value": 25.27
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        },
+        {
+            "name": "naval_base",
+            "size": 2
+        }
+    ]
 }

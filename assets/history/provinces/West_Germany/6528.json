@@ -5,12 +5,18 @@
     ],
     "owner": "FRA",
     "controller": "FRA",
-    "vegetables": 109,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 521326,
-            "template": 71
-        }
+    "population_total": {
+        "amount": 521326,
+        "template": 71
     },
-    "infrastructure": 5
+    "good": {
+        "name": "vegetables",
+        "value": 109
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

@@ -6,16 +6,22 @@
         "FRA",
         "MAL"
     ],
-    "grain": 10.24,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 78871,
-            "template": 5
-        }
-    },
-    "infrastructure": 4,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 78871,
+        "template": 5
+    },
+    "good": {
+        "name": "grain",
+        "value": 10.24
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

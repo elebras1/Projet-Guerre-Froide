@@ -5,12 +5,18 @@
         "ENG",
         "UGD"
     ],
-    "vegetables": 21.92,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 168830,
-            "template": 1
-        }
+    "population_total": {
+        "amount": 168830,
+        "template": 1
     },
-    "infrastructure": 2
+    "good": {
+        "name": "vegetables",
+        "value": 21.92
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

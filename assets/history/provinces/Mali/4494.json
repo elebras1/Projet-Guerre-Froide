@@ -6,12 +6,18 @@
         "FRA",
         "MAL"
     ],
-    "fish": 4.84,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 51063,
-            "template": 5
-        }
+    "population_total": {
+        "amount": 51063,
+        "template": 5
     },
-    "infrastructure": 2
+    "good": {
+        "name": "fish",
+        "value": 4.84
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

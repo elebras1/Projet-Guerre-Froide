@@ -5,14 +5,26 @@
         "SOV",
         "RUS"
     ],
-    "vegetables": 11.69,
-    "air_base": 7,
-    "naval_base": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 925,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 925,
+        "template": 45
     },
-    "infrastructure": 4
+    "good": {
+        "name": "vegetables",
+        "value": 11.69
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        },
+        {
+            "name": "naval_base",
+            "size": 8
+        },
+        {
+            "name": "air_base",
+            "size": 7
+        }
+    ]
 }

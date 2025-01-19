@@ -2,13 +2,22 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "fruits": 58.66,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 467962,
-            "template": 64
-        }
+    "population_total": {
+        "amount": 467962,
+        "template": 64
     },
-    "infrastructure": 5,
-    "naval_base": 1
+    "good": {
+        "name": "fruits",
+        "value": 58.66
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }

@@ -2,12 +2,18 @@
     "owner": "BUL",
     "controller": "BUL",
     "add_core": "BUL",
-    "precious_metals": 2,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 392331,
-            "template": 46
-        }
+    "population_total": {
+        "amount": 392331,
+        "template": 46
     },
-    "infrastructure": 4
+    "good": {
+        "name": "precious_metals",
+        "value": 2
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

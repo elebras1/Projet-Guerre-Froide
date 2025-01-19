@@ -2,12 +2,18 @@
     "owner": "ICL",
     "controller": "ICL",
     "add_core": "ICL",
-    "fish": 0.1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 684,
-            "template": 54
-        }
+    "population_total": {
+        "amount": 684,
+        "template": 54
     },
-    "infrastructure": 4
+    "good": {
+        "name": "fish",
+        "value": 0.1
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

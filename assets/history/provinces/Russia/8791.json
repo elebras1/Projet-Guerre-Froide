@@ -5,12 +5,18 @@
         "SOV",
         "RUS"
     ],
-    "renewable_energy": 100,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 162244,
-            "template": 45
-        }
+    "population_total": {
+        "amount": 162244,
+        "template": 45
     },
-    "infrastructure": 5
+    "good": {
+        "name": "renewable_energy",
+        "value": 100
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        }
+    ]
 }

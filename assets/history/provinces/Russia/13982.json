@@ -5,16 +5,22 @@
         "SOV",
         "RUS"
     ],
-    "vegetables": 255.73,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 488934,
-            "template": 45
-        }
-    },
-    "infrastructure": 8,
     "economy_building": {
         "name": "refinery",
         "size": 6
-    }
+    },
+    "population_total": {
+        "amount": 488934,
+        "template": 45
+    },
+    "good": {
+        "name": "vegetables",
+        "value": 255.73
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

@@ -2,16 +2,22 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "fish": 105.97,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 362963,
-            "template": 94
-        }
-    },
-    "infrastructure": 8,
     "economy_building": {
         "name": "refinery",
         "size": 3
-    }
+    },
+    "population_total": {
+        "amount": 362963,
+        "template": 94
+    },
+    "good": {
+        "name": "fish",
+        "value": 105.97
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 8
+        }
+    ]
 }

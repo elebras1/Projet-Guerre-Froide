@@ -2,12 +2,18 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "precious_metals": 8,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1003,
-            "template": 94
-        }
+    "population_total": {
+        "amount": 1003,
+        "template": 94
     },
-    "infrastructure": 4
+    "good": {
+        "name": "precious_metals",
+        "value": 8
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 4
+        }
+    ]
 }

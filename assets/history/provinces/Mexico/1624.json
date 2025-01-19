@@ -2,16 +2,22 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "meat": 54.16,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 211731,
-            "template": 81
-        }
-    },
-    "infrastructure": 6,
     "economy_building": {
         "name": "heavy_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 211731,
+        "template": 81
+    },
+    "good": {
+        "name": "meat",
+        "value": 54.16
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

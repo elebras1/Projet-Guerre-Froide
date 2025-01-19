@@ -5,16 +5,22 @@
         "ENG",
         "NIG"
     ],
-    "grain": 73.55,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 390694,
-            "template": 5
-        }
-    },
-    "infrastructure": 3,
     "economy_building": {
         "name": "military_industry",
         "size": 1
-    }
+    },
+    "population_total": {
+        "amount": 390694,
+        "template": 5
+    },
+    "good": {
+        "name": "grain",
+        "value": 73.55
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 3
+        }
+    ]
 }

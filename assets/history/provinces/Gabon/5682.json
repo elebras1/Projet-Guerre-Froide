@@ -5,12 +5,18 @@
         "FRA",
         "GAB"
     ],
-    "grain": 1.77,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 1551,
-            "template": 2
-        }
+    "population_total": {
+        "amount": 1551,
+        "template": 2
     },
-    "infrastructure": 2
+    "good": {
+        "name": "grain",
+        "value": 1.77
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 2
+        }
+    ]
 }

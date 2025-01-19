@@ -2,12 +2,18 @@
     "owner": "CHL",
     "controller": "CHL",
     "add_core": "CHL",
-    "rare_metals": 177.51,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 426004,
-            "template": 82
-        }
+    "population_total": {
+        "amount": 426004,
+        "template": 82
     },
-    "infrastructure": 6
+    "good": {
+        "name": "rare_metals",
+        "value": 177.51
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 6
+        }
+    ]
 }

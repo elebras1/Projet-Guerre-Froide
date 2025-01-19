@@ -2,13 +2,22 @@
     "owner": "BUL",
     "controller": "BUL",
     "add_core": "BUL",
-    "fruits": 175,
-    "naval_base": 1,
-    "1946.1.1": {
-        "population_total": {
-            "amount": 250967,
-            "template": 46
-        }
+    "population_total": {
+        "amount": 250967,
+        "template": 46
     },
-    "infrastructure": 5
+    "good": {
+        "name": "fruits",
+        "value": 175
+    },
+    "buildings": [
+        {
+            "name": "infrastructure",
+            "size": 5
+        },
+        {
+            "name": "naval_base",
+            "size": 1
+        }
+    ]
 }
