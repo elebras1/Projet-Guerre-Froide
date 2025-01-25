@@ -67,13 +67,15 @@ public class DataManager {
 
     public World createWorldThreadSafe(GameEntities gameEntities, AsyncExecutor asyncExecutor) {
         Map<String, Country> countries = this.loadCountries(gameEntities.getMinisterTypes(), gameEntities.getIdeologies());
-        IntObjectMap<LandProvince> provinces = this.loadProvinces(countries, gameEntities.getPopulationTypes(), gameEntities.getNationalIdeas(), gameEntities.getGovernments(), gameEntities.getIdeologies(), gameEntities);
+        IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(15000);
+        IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(4000);
+        this.loadProvinces(countries, provincesByColor, waterProvincesByColor, gameEntities.getPopulationTypes(), gameEntities.getNationalIdeas(), gameEntities.getGovernments(), gameEntities.getIdeologies(), gameEntities);
 
         AtomicReference<World> worldRef = new AtomicReference<>();
         final CountDownLatch latch = new CountDownLatch(1);
 
         Gdx.app.postRunnable(() -> {
-            worldRef.set(new World(new ObjectList<>(countries.values()), provinces, asyncExecutor));
+            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, asyncExecutor));
             latch.countDown();
         });
 
@@ -90,19 +92,16 @@ public class DataManager {
         return this.readCountriesJson(ministerTypes, ideologies);
     }
 
-    private IntObjectMap<LandProvince> loadProvinces(Map<String, Country> countries, IntObjectMap<PopulationType> populationTypes, NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies, GameEntities gameEntities) {
-        IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(20000);
+    private void loadProvinces(Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, IntObjectMap<PopulationType> populationTypes, NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies, GameEntities gameEntities) {
         IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince = new IntObjectMap<>();
         IntObjectMap<Province> provinces = this.readProvincesJson(countries, populationTypes, gameEntities, regionBuildingsByProvince);
         this.readRegionJson(provinces, regionBuildingsByProvince);
-        this.readDefinitionCsv(provinces, provincesByColor);
+        this.readDefinitionCsv(provinces, provincesByColor, waterProvincesByColor);
         this.readProvinceBitmap(provincesByColor);
         this.readCountriesHistoryJson(countries, provinces, nationalIdeas, governments, ideologies);
         this.readContinentJsonFile(provinces);
         this.readPositionsJson(provinces);
         this.readAdjenciesJson(provinces);
-
-        return provincesByColor;
     }
 
     private JsonNode openJson(String fileName) throws IOException {
@@ -291,7 +290,7 @@ public class DataManager {
         }
     }
 
-    private void readDefinitionCsv(IntObjectMap<Province> provinces, IntObjectMap<LandProvince> provincesByColor) {
+    private void readDefinitionCsv(IntObjectMap<Province> provinces, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor) {
         try (BufferedReader br = new BufferedReader(new StringReader(Gdx.files.internal(this.definitionCsvFile).readString()))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -299,15 +298,17 @@ public class DataManager {
                 if (!values[0].isEmpty()) {
                     short provinceId = Short.parseShort(values[0]);
                     Province province = provinces.get(provinceId);
-                    if(province instanceof LandProvince landProvince) {
-                        int red = Integer.parseInt(values[1]);
-                        int green = Integer.parseInt(values[2]);
-                        int blue = Integer.parseInt(values[3]);
-                        int alpha = 255;
+                    int red = Integer.parseInt(values[1]);
+                    int green = Integer.parseInt(values[2]);
+                    int blue = Integer.parseInt(values[3]);
+                    int alpha = 255;
 
-                        int color =  (red << 24) | (green << 16) | (blue << 8) | alpha;
-                        landProvince.setColor(color);
+                    int color =  (red << 24) | (green << 16) | (blue << 8) | alpha;
+                    province.setColor(color);
+                    if(province instanceof LandProvince landProvince) {
                         provincesByColor.put(color, landProvince);
+                    } else if(province instanceof WaterProvince waterProvince) {
+                        waterProvincesByColor.put(color, waterProvince);
                     }
                 }
             }
@@ -383,9 +384,9 @@ public class DataManager {
         for (short y = 0; y < bitmap.getHeight(); y++) {
             for (short x = 0; x < bitmap.getWidth(); x++) {
                 int color = bitmap.getPixel(x, y);
-                Province province = provincesByColor.get(color);
-                if(province instanceof LandProvince landProvince) {
-                    landProvince.addPixel(x, y);
+                LandProvince province = provincesByColor.get(color);
+                if(province != null) {
+                    province.addPixel(x, y);
                 }
             }
         }
