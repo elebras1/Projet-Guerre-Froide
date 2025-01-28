@@ -15,6 +15,7 @@ layout (binding = 6) uniform sampler2D u_textureColormap;
 layout (binding = 7) uniform sampler2D u_textureProvincesStripes;
 layout (binding = 8) uniform sampler2D u_textureStripes;
 layout (binding = 9) uniform sampler2D u_textureOverlayTile;
+layout (binding = 10) uniform sampler2D u_textureBorders;
 
 uniform float u_zoom;
 uniform float u_time;
@@ -28,6 +29,13 @@ const float xx = 1.0 / mapSize.x;
 const float yy = 1.0 / mapSize.y;
 const vec2 pix = vec2(xx, yy);
 
+// hqx variables
+const int ml = 0;
+const float threshold = 0.03;
+const float aaScale = 1500;
+const float mainLineThickness = 0.38197;
+const float subLineThickness = 0.2;
+
 // border variables
 const vec2 offsetsProvince[4] = vec2[](vec2(0.1, 0), vec2(-0.1, 0), vec2(0, 0.1), vec2(0, -0.1));
 const vec2 offsetsRegion[4] = vec2[](vec2(0.2, 0), vec2(-0.25, 0), vec2(0, 0.25), vec2(0, -0.25));
@@ -37,6 +45,46 @@ const vec3 GREYIFY = vec3( 0.212671, 0.715160, 0.072169 );
 
 vec2 getCorrectedTexCoord() {
     return vec2(v_texCoords.x, 1.0 - v_texCoords.y);
+}
+
+bool diag(inout vec4 sum, vec2 uv, vec2 p1, vec2 p2, sampler2D texture, float lineThickness) {
+    vec4 v1 = texelFetch(texture, ivec2(uv + p1), ml);
+    vec4 v2 = texelFetch(texture, ivec2(uv + p2), ml);
+    if (length(v1 - v2) < threshold) {
+        vec2 dir = p2 - p1,
+        lp = uv - (floor(uv + p1) + 0.5);
+        dir = normalize(vec2(dir.y, -dir.x));
+        float l = clamp((lineThickness - dot(lp, dir)) * aaScale, 0., 1.);
+        sum = mix(sum, v1, l);
+        return true;
+    }
+    return false;
+}
+
+vec4 hqxFilter(vec2 uv, sampler2D texture) {
+    vec4 sum = texelFetch(texture, ivec2(uv), ml);
+
+    if (diag(sum, uv, vec2(-1, 0), vec2(0, 1), texture, mainLineThickness)) {
+        diag(sum, uv, vec2(-1, 0), vec2(1, 1), texture, subLineThickness);
+        diag(sum, uv, vec2(-1, -1), vec2(0, 1), texture, subLineThickness);
+    }
+
+    if (diag(sum, uv, vec2(0, 1), vec2(1, 0), texture, mainLineThickness)) {
+        diag(sum, uv, vec2(0, 1), vec2(1, -1), texture, subLineThickness);
+        diag(sum, uv, vec2(-1, 1), vec2(1, 0), texture, subLineThickness);
+    }
+
+    if (diag(sum, uv, vec2(1, 0), vec2(0, -1), texture, mainLineThickness)) {
+        diag(sum, uv, vec2(1, 0), vec2(-1, -1), texture, subLineThickness);
+        diag(sum, uv, vec2(1, 1), vec2(0, -1), texture, subLineThickness);
+    }
+
+    if (diag(sum, uv, vec2(0, -1), vec2(-1, 0), texture, mainLineThickness)) {
+        diag(sum, uv, vec2(0, -1), vec2(-1, 1), texture, subLineThickness);
+        diag(sum, uv, vec2(1, -1), vec2(-1, 0), texture, subLineThickness);
+    }
+
+    return sum;
 }
 
 vec4 getWaterClose(vec2 texCoord) {
@@ -133,7 +181,20 @@ vec4 getTerrainMix(vec2 texCoord) {
     return terrain;
 }
 
-vec4 getLandClose(vec3 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv) {
+vec4 getBorder(vec4 filteredColor, vec2[4] offsets, vec3 color, vec2 uv) {
+    float thresholdSquared = threshold * threshold;
+    for (int i = 0; i < 4; i++) {
+        vec4 filteredNeighbor = hqxFilter(uv + offsets[i], u_textureProvinces);
+        vec3 deltaColor = filteredColor.rgb - filteredNeighbor.rgb;
+        if (dot(deltaColor, deltaColor) > thresholdSquared) {
+            return vec4(color, 1.0);
+        }
+    }
+
+    return vec4(0.0, 0.0, 0.0, 0.0);
+}
+
+vec4 getLandClose(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv) {
     vec4 terrain = getTerrainMix(texCoord);
     vec3 political = colorMapMode.rgb;
 
@@ -155,6 +216,20 @@ vec4 getLandClose(vec3 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv)
         political.rgb = clamp(mix(political.rgb, stripeColor.rgb, stripeFactor), 0.0, 1.0).rgb;
     }
 
+    vec4 colorBorder = texture(u_textureBorders, texCoord);
+    if(colorBorder.a > 0.0) {
+        vec4 border;
+        if(colorBorder.r > 0.0) {
+            border = getBorder(colorProvince, offsetsCountry, vec3(1.0, 0.0, 0.0), uv);
+        } else if(colorBorder.g > 0.0) {
+            border = getBorder(colorProvince, offsetsRegion, vec3(0.0, 0.0, 0.0), uv);
+        } else if(colorBorder.b > 0.0 && u_zoom < 0.5) {
+            border = getBorder(colorProvince, offsetsProvince, vec3(0.0), uv);
+        }
+
+        political.rgb = mix(political.rgb, border.rgb, step(0.01, border.a));
+    }
+
     political = political - 0.7;
     terrain.rgb = mix(terrain.rgb, political, 0.3);
     terrain.rgb *= 1.5;
@@ -162,7 +237,7 @@ vec4 getLandClose(vec3 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv)
     return terrain;
 }
 
-vec4 getLandFar(vec3 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv) {
+vec4 getLandFar(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv) {
     vec4 political = colorMapMode;
 
     vec3 deltaColor = colorProvince.rgb - u_colorProvinceSelected.rgb;
@@ -197,7 +272,7 @@ vec4 getLandFar(vec3 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv) {
 void main() {
     vec2 texCoord = getCorrectedTexCoord();
     vec2 uv = texCoord * mapSize;
-    vec3 colorProvince = texture(u_textureProvinces, texCoord).rgb;
+    vec4 colorProvince = hqxFilter(uv, u_textureProvinces);
     vec4 colorMapMode = texture(u_textureMapMode, colorProvince.rg);
     vec4 terrain;
     vec4 water;
