@@ -56,9 +56,4 @@ public class WaterProvince implements Province{
     public List<Province> getAdjacentProvinces() {
         return this.adjacentProvinces;
     }
-
-    @Override
-    public boolean isPixelProvince(short x, short y) {
-        return false;
-    }
 }

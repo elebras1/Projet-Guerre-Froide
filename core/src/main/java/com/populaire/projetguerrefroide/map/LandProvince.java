@@ -24,7 +24,7 @@ public class LandProvince implements Province {
     private final ObjectIntMap<Building> buildings;
     private final List<Province> adjacentProvinces;
     private final ObjectIntMap<String> positions;
-    private final IntSet pixels;
+    private final IntSet borderPixels;
 
     public LandProvince(short id, Country countryOwner, Country countryController, Population population, List<Country> countriesCore, Good good, float goodValue, ObjectIntMap<Building> buildings) {
         this.id = id;
@@ -37,7 +37,7 @@ public class LandProvince implements Province {
         this.buildings = buildings;
         this.adjacentProvinces = new ObjectList<>();
         this.positions = new ObjectIntMap<>();
-        this.pixels = new IntSet();
+        this.borderPixels = new IntSet();
     }
 
     public int getColor() {
@@ -64,12 +64,12 @@ public class LandProvince implements Province {
         this.countryController = countryController;
     }
 
-    public IntSet getPixels() {
-        return this.pixels;
+    public IntSet getBorderPixels() {
+        return this.borderPixels;
     }
 
-    public void addPixel(short x, short y) {
-        this.pixels.add((x << 16) | (y & 0xFFFF));
+    public void addBorderPixel(short x, short y) {
+        this.borderPixels.add((x << 16) | (y & 0xFFFF));
     }
 
     public short getId() {
@@ -156,35 +156,6 @@ public class LandProvince implements Province {
     }
 
     @Override
-    public boolean isPixelProvince(short x, short y) {
-        return this.pixels.contains((x << 16) | (y & 0xFFFF));
-    }
-
-    public boolean isPixelBorder(short x, short y) {
-        for (Province adjacentProvince : this.adjacentProvinces) {
-            if(adjacentProvince.isPixelProvince((short) (x + 1), y)
-                || adjacentProvince.isPixelProvince((short) (x - 1), y)
-                || adjacentProvince.isPixelProvince(x, (short) (y + 1))
-                || adjacentProvince.isPixelProvince(x, (short) (y - 1))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public IntList getPixelsBorder() {
-        IntList pixelsBorder = new IntList();
-        for(IntSet.IntSetIterator iterator = this.pixels.iterator(); iterator.hasNext();) {
-            int pixelInt = iterator.nextInt();
-            if(this.isPixelBorder((short)(pixelInt >> 16), (short) (pixelInt & 0xFFFF))) {
-                pixelsBorder.add(pixelInt);
-            }
-        }
-
-        return pixelsBorder;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -202,7 +173,7 @@ public class LandProvince implements Province {
         return "Province{" +
                 "id=" + this.id +
                 ", color='" + this.color + '\'' +
-                ", number_pixels=" + this.pixels.size() +
+                ", number_border_pixels=" + this.borderPixels.size() +
                 ", owner=" + this.countryOwner.getName() +
                 ", controller=" + this.countryController.getName() +
                 ", number_adjacentProvinces=" + this.adjacentProvinces.size() +

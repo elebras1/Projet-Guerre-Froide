@@ -15,7 +15,6 @@ layout (binding = 6) uniform sampler2D u_textureColormap;
 layout (binding = 7) uniform sampler2D u_textureProvincesStripes;
 layout (binding = 8) uniform sampler2D u_textureStripes;
 layout (binding = 9) uniform sampler2D u_textureOverlayTile;
-layout (binding = 10) uniform sampler2D u_textureBorders;
 
 uniform float u_zoom;
 uniform float u_time;
@@ -216,16 +215,8 @@ vec4 getLandClose(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv)
         political.rgb = clamp(mix(political.rgb, stripeColor.rgb, stripeFactor), 0.0, 1.0).rgb;
     }
 
-    vec4 colorBorder = texture(u_textureBorders, texCoord);
-    if(colorBorder.a > 0.0) {
-        vec4 border;
-        if(colorBorder.r > 0.0) {
-            border = getBorder(colorProvince, offsetsCountry, vec3(1.0, 0.0, 0.0), uv);
-        } else if(colorBorder.g > 0.0) {
-            border = getBorder(colorProvince, offsetsRegion, vec3(0.0, 0.0, 0.0), uv);
-        } else if(colorBorder.b > 0.0 && u_zoom < 0.5) {
-            border = getBorder(colorProvince, offsetsProvince, vec3(0.0), uv);
-        }
+    if(colorProvince.a < 1.0) {
+        vec4 border = getBorder(colorProvince, offsetsProvince, vec3(0.0, 0.0, 0.0), uv);
 
         political.rgb = mix(political.rgb, border.rgb, step(0.01, border.a));
     }

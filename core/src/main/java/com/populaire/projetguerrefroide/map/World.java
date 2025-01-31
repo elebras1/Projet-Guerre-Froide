@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
-import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
 
@@ -24,7 +23,6 @@ public class World {
     private Pixmap mapModePixmap;
     private Texture provincesTexture;
     private Texture mapModeTexture;
-    private Texture bordersTexture;
     private Texture waterTexture;
     private Texture colorMapWaterTexture;
     private Texture provincesStripesTexture;
@@ -46,9 +44,13 @@ public class World {
         this.mapModePixmap.setBlending(Pixmap.Blending.None);
         this.mapModePixmap.setColor(0, 0, 0, 0);
         this.mapModePixmap.fill();
+        Pixmap tempPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
+        this.provincesPixmap = new Pixmap(tempPixmap.getWidth(), tempPixmap.getHeight(), Pixmap.Format.RGBA8888);
+        this.provincesPixmap.drawPixmap(tempPixmap, 0, 0);
+        this.provincesPixmap.setBlending(Pixmap.Blending.None);
+        tempPixmap.dispose();
         this.updatePixmapCountriesColor();
-        Pixmap bordersPixmap = this.createBordersPixmap();
-        this.provincesPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
+        this.updateBordersProvincesPixmap();
         Pixmap provincesColorStripesPixmap = this.createProvincesColorStripesPixmap();
         String[] terrainTexturePaths = this.createTerrainTexturePaths();
 
@@ -59,8 +61,6 @@ public class World {
         this.mapModeTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
         this.provincesStripesTexture = new Texture(provincesColorStripesPixmap);
         this.provincesStripesTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-        this.bordersTexture = new Texture(bordersPixmap);
-        this.bordersTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
         this.provincesTexture = new Texture(this.provincesPixmap);
         this.provincesTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
         this.waterTexture = new Texture("map/terrain/sea_normal.png");
@@ -85,17 +85,14 @@ public class World {
     }
 
     public LandProvince getProvince(short x, short y) {
-        short adjustedX = x;
-        if (x < 0) {
-            adjustedX += WORLD_WIDTH;
-        } else if (x > WORLD_WIDTH) {
-            adjustedX -= WORLD_WIDTH;
-        }
+        x = (short) ((x + WORLD_WIDTH) % WORLD_WIDTH);
 
-        int provinceColor = this.provincesPixmap.getPixel(adjustedX, y);
+        int provinceColor = this.provincesPixmap.getPixel(x, y);
+        int provinceColorRGB = (provinceColor & 0xFFFFFF00) | 255;
 
-        return this.provinces.get(provinceColor);
+        return this.provinces.get(provinceColorRGB);
     }
+
 
     public void selectProvince(short x, short y) {
         this.selectedProvince = this.getProvince(x, y);
@@ -156,13 +153,8 @@ public class World {
     }
 
     public void updatePixmapTerrainColor() {
-        int whiteColor = 0xFFFFFFFF;
-        for(LandProvince province : this.provinces.values()) {
-            int color = province.getColor();
-            short red = (short) ((color >> 24) & 0xFF);
-            short green = (short) ((color >> 16) & 0xFF);
-            this.mapModePixmap.drawPixel(red, green, whiteColor);
-        }
+        Pixmap pixmap = new Pixmap(Gdx.files.internal("map/terrain/colormap.png"));
+        this.mapModePixmap.setPixels(pixmap.getPixels());
     }
 
     public void updatePixmapResourcesColor() {
@@ -193,33 +185,24 @@ public class World {
         return pixmap;
     }
 
-    public Pixmap createBordersPixmap() {
-        Pixmap pixmap = new Pixmap(WORLD_WIDTH, WORLD_HEIGHT, Pixmap.Format.RGBA8888);
-        short redBorderCountry = 255;
-        short greenBorderRegion = 255;
-        short blueBorderProvince = 255;
-        short alphaBorder = 255;
+    public void updateBordersProvincesPixmap() {
+        for(LandProvince province : this.provinces.values()) {
+            IntSet provincesBorderPixels = province.getBorderPixels();
+            for(IntSet.IntSetIterator iterator = provincesBorderPixels.iterator(); iterator.hasNext;) {
+                int borderPixel = iterator.next();
+                short x = (short) (borderPixel >> 16);
+                short y = (short) (borderPixel & 0xFFFF);
 
-        for(Country country : this.countries) {
-            IntSet countryPixelsBorder = country.getPixelsBorder();
-            IntSet regionsPixelsBorder = country.getRegionsPixelsBorder();
-            IntList provincesPixelsBorder = country.getProvincesPixelsBorder();
-            for(int i = 0; i < provincesPixelsBorder.size(); i++) {
-                int pixelInt = provincesPixelsBorder.get(i);
-                int pixelX = (pixelInt >> 16);
-                int pixelY = (pixelInt & 0xFFFF);
+                int color = this.provincesPixmap.getPixel(x, y);
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+                int blue = (color >> 8) & 0xFF;
 
-                if(countryPixelsBorder.contains(pixelInt)) {
-                    pixmap.drawPixel(pixelX, pixelY, redBorderCountry << 24 | greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);
-                } else if(regionsPixelsBorder.contains(pixelInt)) {
-                    pixmap.drawPixel(pixelX, pixelY, greenBorderRegion << 16 | blueBorderProvince << 8 | alphaBorder);
-                } else {
-                    pixmap.drawPixel(pixelX, pixelY, blueBorderProvince << 8 | alphaBorder);
-                }
+                int borderAlpha = 51;
+                color = (red << 24) | (green << 16) | (blue << 8) | borderAlpha;
+                this.provincesPixmap.drawPixel(x, y, color);
             }
         }
-
-        return pixmap;
     }
 
     public void changeMapMode(String mapMode) {
@@ -260,8 +243,7 @@ public class World {
         this.provincesStripesTexture.bind(7);
         this.stripesTexture.bind(8);
         this.overlayTileTexture.bind(9);
-        this.bordersTexture.bind(10);
-        this.defaultTexture.bind(11);
+        this.defaultTexture.bind(10);
 
         this.mapShader.setUniformi("u_textureProvinces", 0);
         this.mapShader.setUniformi("u_textureMapMode", 1);
@@ -290,9 +272,9 @@ public class World {
 
         batch.setShader(this.mapShader);
         batch.begin();
-        batch.draw(this.mapModeTexture, -WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
-        batch.draw(this.mapModeTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
-        batch.draw(this.mapModeTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        batch.draw(this.provincesTexture, -WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        batch.draw(this.provincesTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        batch.draw(this.provincesTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.setShader(null);
 
         this.fontShader.bind();

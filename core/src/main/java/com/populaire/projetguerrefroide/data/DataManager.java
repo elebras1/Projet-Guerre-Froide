@@ -380,17 +380,28 @@ public class DataManager {
     }
 
     private void readProvinceBitmap(IntObjectMap<LandProvince> provincesByColor) {
-        Pixmap bitmap = new Pixmap(Gdx.files.internal(this.mapPath + "provinces.bmp"));
-        for (short y = 0; y < bitmap.getHeight(); y++) {
-            for (short x = 0; x < bitmap.getWidth(); x++) {
-                int color = bitmap.getPixel(x, y);
+        Pixmap provincesPixmap = new Pixmap(Gdx.files.internal(this.mapPath + "provinces.bmp"));
+        short height = (short) provincesPixmap.getHeight();
+        short width = (short) provincesPixmap.getWidth();
+        for (short y = 0; y < provincesPixmap.getHeight(); y++) {
+            for (short x = 0; x < provincesPixmap.getWidth(); x++) {
+                int color = provincesPixmap.getPixel(x, y);
                 LandProvince province = provincesByColor.get(color);
                 if(province != null) {
-                    province.addPixel(x, y);
+                    if(x + 1 < width && provincesPixmap.getPixel(x + 1, y) != color) {
+                        province.addBorderPixel(x, y);
+                    } else if(x > 0 && provincesPixmap.getPixel(x - 1, y) != color) {
+                        province.addBorderPixel(x, y);
+                    } else if(y + 1 < height && provincesPixmap.getPixel(x, y + 1) != color) {
+                        province.addBorderPixel(x, y);
+                    } else if(y > 0 && provincesPixmap.getPixel(x, y - 1) != color) {
+                        province.addBorderPixel(x, y);
+                    }
                 }
             }
         }
-        bitmap.dispose();
+
+        provincesPixmap.dispose();
     }
 
     private Map<String, Government> readGovernmentsJson() {
