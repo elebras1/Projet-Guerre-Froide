@@ -422,6 +422,8 @@ public class World {
         this.elementShader.setUniformf("u_zoom", cam.zoom);
         this.elementShader.setUniformi("u_worldWidth", WORLD_WIDTH);
         this.meshElements.bind(this.elementShader);
+        Gdx.gl.glEnable(GL32.GL_BLEND);
+        Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
         Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshElements.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
         this.meshElements.unbind(this.elementShader);
     }
