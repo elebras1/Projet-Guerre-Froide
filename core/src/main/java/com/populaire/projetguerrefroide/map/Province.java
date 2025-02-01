@@ -1,7 +1,5 @@
 package com.populaire.projetguerrefroide.map;
 
-import com.github.tommyettinger.ds.ObjectIntMap;
-
 import java.util.List;
 
 public interface Province {
@@ -13,6 +11,4 @@ public interface Province {
     int getPosition(String name);
     void addAdjacentProvinces(Province province);
     List<Province> getAdjacentProvinces();
-    boolean isPixelProvince(short x, short y);
-
 }

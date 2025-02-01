@@ -169,66 +169,6 @@ public class Country {
         return this.labels;
     }
 
-    public IntSet getPixelsBorder() {
-        IntSet pixelsBorder = new IntSet();
-        IntSet pixels = new IntSet();
-        for(LandProvince province : this.provinces) {
-            pixels.addAll(province.getPixels());
-        }
-
-        for(IntSet.IntSetIterator iterator = pixels.iterator(); iterator.hasNext();) {
-            int pixelInt = iterator.nextInt();
-            short x = (short)(pixelInt >> 16);
-            short y = (short)(pixelInt & 0xFFFF);
-            if(this.isPixelBorder(x, y, pixels)) {
-                pixelsBorder.add(pixelInt);
-            }
-        }
-
-        return pixelsBorder;
-    }
-
-    public IntList getProvincesPixelsBorder() {
-        IntList pixelsBorder = new IntList();
-        for(LandProvince province : this.provinces) {
-            pixelsBorder.addAll(province.getPixelsBorder());
-        }
-
-        return pixelsBorder;
-    }
-
-    public IntSet getRegionsPixelsBorder() {
-        IntSet pixelsBorder = new IntSet();
-        for(Region region : this.regions) {
-            pixelsBorder.addAll(region.getPixelsBorder());
-        }
-
-        return pixelsBorder;
-    }
-
-    public IntList getPixelsBorder(List<LandProvince> provinces) {
-        IntList pixelsBorder = new IntList();
-        IntSet provincesPixels = new IntSet();
-        for(LandProvince province : provinces) {
-            provincesPixels.addAll(province.getPixels());
-        }
-        for(IntSet.IntSetIterator iterator = provincesPixels.iterator(); iterator.hasNext();) {
-            int pixelInt = iterator.nextInt();
-            if(this.isPixelBorder((short)(pixelInt >> 16), (short) (pixelInt & 0xFFFF), provincesPixels)) {
-                pixelsBorder.add(pixelInt);
-            }
-        }
-
-        return pixelsBorder;
-    }
-
-    public boolean isPixelBorder(short x, short y, IntSet pixels) {
-        return !pixels.contains((x + 1 << 16) | (y & 0xFFFF))
-            || !pixels.contains((x - 1 << 16) | (y & 0xFFFF))
-            || !pixels.contains((x << 16) | (y + 1 & 0xFFFF))
-            || !pixels.contains((x << 16) | (y - 1 & 0xFFFF));
-    }
-
     public void createLabels() {
         this.labels = new ObjectList<>();
         Set<LandProvince> visitedProvinces = new ObjectSet<>();
@@ -239,10 +179,12 @@ public class Country {
                 this.getConnectedProvinces(province, visitedProvinces, connectedProvinces);
                 if(connectedProvinces.size() > 5 || (connectedProvinces.size() == this.provinces.size() && connectedProvinces.size() > 1)) {
                     IntList positionsProvinces = new IntList();
+                    IntList pixelsBorderProvinces = new IntList();
                     for(LandProvince connectedProvince : connectedProvinces) {
                         positionsProvinces.add(connectedProvince.getPosition("default"));
+                        pixelsBorderProvinces.addAll(connectedProvince.getBorderPixels());
                     }
-                    MapLabel label = new MapLabel(this.getName(), this.getPixelsBorder(connectedProvinces), positionsProvinces);
+                    MapLabel label = new MapLabel(this.getName(), pixelsBorderProvinces, positionsProvinces);
                     this.labels.add(label);
                 }
             }

@@ -6,7 +6,7 @@ A copy of the GNU GPL v3.0 should have been included with this project. If not, 
 in vec2 v_texCoords;
 
 layout (binding = 0) uniform sampler2D u_textureProvinces;
-layout (binding = 1) uniform sampler2D u_textureCountries;
+layout (binding = 1) uniform sampler2D u_textureMapMode;
 layout (binding = 2) uniform sampler2D u_textureColorMapWater;
 layout (binding = 3) uniform sampler2D u_textureWaterNormal;
 layout (binding = 4) uniform sampler2D u_textureTerrain;
@@ -15,7 +15,6 @@ layout (binding = 6) uniform sampler2D u_textureColormap;
 layout (binding = 7) uniform sampler2D u_textureProvincesStripes;
 layout (binding = 8) uniform sampler2D u_textureStripes;
 layout (binding = 9) uniform sampler2D u_textureOverlayTile;
-layout (binding = 10) uniform sampler2D u_textureBorders;
 
 uniform float u_zoom;
 uniform float u_time;
@@ -23,18 +22,18 @@ uniform vec4 u_colorProvinceSelected;
 
 out vec4 fragColor;
 
-// hqx variables
-const int ml = 0;
-const float threshold = 0.03;
-const float aaScale = 17;
-const float mainLineThickness = 0.38197;
-const float subLineThickness = 0.2;
-
 //  terrain variables
 const vec2 mapSize = vec2(5616, 2160);
 const float xx = 1.0 / mapSize.x;
 const float yy = 1.0 / mapSize.y;
 const vec2 pix = vec2(xx, yy);
+
+// hqx variables
+const int ml = 0;
+const float threshold = 0.03;
+const float aaScale = 1500;
+const float mainLineThickness = 0.38197;
+const float subLineThickness = 0.2;
 
 // border variables
 const vec2 offsetsProvince[4] = vec2[](vec2(0.1, 0), vec2(-0.1, 0), vec2(0, 0.1), vec2(0, -0.1));
@@ -87,8 +86,7 @@ vec4 hqxFilter(vec2 uv, sampler2D texture) {
     return sum;
 }
 
-vec4 getWaterClose(vec2 texCoord)
-{
+vec4 getWaterClose(vec2 texCoord) {
     const float WRAP = 0.8;
     const float WaveModOne = 3.0;
     const float WaveModTwo = 4.0;
@@ -195,10 +193,9 @@ vec4 getBorder(vec4 filteredColor, vec2[4] offsets, vec3 color, vec2 uv) {
     return vec4(0.0, 0.0, 0.0, 0.0);
 }
 
-vec4 getLandClose(vec4 colorCountry, vec2 texCoord, vec2 uv) {
-    vec4 colorProvince = hqxFilter(uv, u_textureProvinces);
+vec4 getLandClose(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv) {
     vec4 terrain = getTerrainMix(texCoord);
-    vec3 political = colorCountry.rgb;
+    vec3 political = colorMapMode.rgb;
 
     float grey = dot(terrain.rgb, GREYIFY);
     terrain.rgb = vec3(grey);
@@ -211,37 +208,36 @@ vec4 getLandClose(vec4 colorCountry, vec2 texCoord, vec2 uv) {
         political.rgb = mix(political.rgb, vec3(grey), 0.5);
     }
 
-    vec4 stripeColor = texture(u_textureProvincesStripes, texCoord);
+    vec4 stripeColor = texture(u_textureProvincesStripes, colorProvince.rg);
     if(stripeColor.a > 0.0) {
         vec2 stripeCoord = fract(texCoord * vec2(512.0, 512.0 * mapSize.y / mapSize.x));
         float stripeFactor = texture(u_textureStripes, stripeCoord).a;
         political.rgb = clamp(mix(political.rgb, stripeColor.rgb, stripeFactor), 0.0, 1.0).rgb;
     }
 
-    vec4 colorBorder = texture(u_textureBorders, texCoord);
-    if(colorBorder.a > 0.0) {
+    if(colorProvince.a < 1.0) {
         vec4 border;
-        if(colorBorder.r > 0.0) {
-            border = getBorder(colorProvince, offsetsCountry, vec3(1.0, 0.0, 0.0), uv);
-        } else if(colorBorder.g > 0.0) {
-            border = getBorder(colorProvince, offsetsRegion, vec3(0.0, 0.0, 0.0), uv);
-        } else if(colorBorder.b > 0.0 && u_zoom < 0.5) {
-            border = getBorder(colorProvince, offsetsProvince, vec3(0.0), uv);
+        if(colorProvince.a < 0.1) {
+            if(u_zoom < 0.55) {
+                border = getBorder(colorProvince, offsetsProvince, vec3(0.13, 0.16, 0.20), uv);
+            }
+        } else if(colorProvince.a < 0.4) {
+            border = getBorder(colorProvince, offsetsRegion, vec3(0.13, 0.16, 0.20), uv);
+        } else if(colorProvince.a < 0.7) {
+            border = getBorder(colorProvince, offsetsCountry, vec3(0.74, 0.26, 0.22), uv);
         }
-
         political.rgb = mix(political.rgb, border.rgb, step(0.01, border.a));
     }
 
     political = political - 0.7;
     terrain.rgb = mix(terrain.rgb, political, 0.3);
     terrain.rgb *= 1.5;
-    terrain.a = colorCountry.a;
+    terrain.a = colorMapMode.a;
     return terrain;
 }
 
-vec4 getLandFar(vec4 colorCountry, vec2 texCoord, vec2 uv) {
-    vec4 colorProvince = hqxFilter(uv, u_textureProvinces);
-    vec4 political = colorCountry;
+vec4 getLandFar(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv) {
+    vec4 political = colorMapMode;
 
     vec3 deltaColor = colorProvince.rgb - u_colorProvinceSelected.rgb;
     if (dot(deltaColor, deltaColor) < 0.0001) {
@@ -252,7 +248,7 @@ vec4 getLandFar(vec4 colorCountry, vec2 texCoord, vec2 uv) {
         political.rgb = mix(political.rgb, vec3(grey), 0.5);
     }
 
-    vec4 stripeColor = texture(u_textureProvincesStripes, texCoord);
+    vec4 stripeColor = texture(u_textureProvincesStripes, colorProvince.rg);
     if(stripeColor.a > 0.0) {
         vec2 stripeCoord = fract(texCoord * vec2(512.0, 512.0 * mapSize.y / mapSize.x));
         float stripeFactor = texture(u_textureStripes, stripeCoord).a;
@@ -266,29 +262,30 @@ vec4 getLandFar(vec4 colorCountry, vec2 texCoord, vec2 uv) {
         political.rgb = 1.0 - 2.0 * (1.0 - overlayColor.rgb) * (1.0 - political.rgb);
     }
 
-    float grey = dot(colorCountry.rgb, GREYIFY);
-    colorCountry.rgb = mix(political.rgb, vec3(grey), 0.3);
+    float grey = dot(colorMapMode.rgb, GREYIFY);
+    colorMapMode.rgb = mix(political.rgb, vec3(grey), 0.3);
 
-    return colorCountry;
+    return colorMapMode;
 }
 
 void main() {
     vec2 texCoord = getCorrectedTexCoord();
     vec2 uv = texCoord * mapSize;
-    vec4 colorCountry = hqxFilter(uv, u_textureCountries);
+    vec4 colorProvince = hqxFilter(uv, u_textureProvinces);
+    vec4 colorMapMode = texture(u_textureMapMode, colorProvince.rg);
     vec4 terrain;
     vec4 water;
     int alphaColorWater = 0;
 
     if(u_zoom > .8) {
-        if(colorCountry.a > alphaColorWater) {
-            terrain = getLandFar(colorCountry, texCoord, uv);
+        if(colorMapMode.a > alphaColorWater) {
+            terrain = getLandFar(colorProvince, colorMapMode, texCoord, uv);
         } else {
             water = getWaterFar(texCoord);
         }
     } else {
-        if(colorCountry.a > alphaColorWater) {
-            terrain = getLandClose(colorCountry, texCoord, uv);
+        if(colorMapMode.a > alphaColorWater) {
+            terrain = getLandClose(colorProvince, colorMapMode, texCoord, uv);
         } else {
             water = getWaterClose(texCoord);
         }
