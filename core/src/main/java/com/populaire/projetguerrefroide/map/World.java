@@ -420,7 +420,10 @@ public class World {
         this.elementShader.setUniformi("u_texture", 0);
         this.elementShader.setUniformMatrix("u_projTrans", cam.combined);
         this.elementShader.setUniformf("u_zoom", cam.zoom);
-        this.meshElements.render(this.elementShader, GL32.GL_TRIANGLES);
+        this.elementShader.setUniformi("u_worldWidth", WORLD_WIDTH);
+        this.meshElements.bind(this.elementShader);
+        Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshElements.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
+        this.meshElements.unbind(this.elementShader);
     }
 
     public void dispose() {

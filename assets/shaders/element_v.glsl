@@ -6,6 +6,7 @@ in vec2 a_center;
 
 uniform float u_zoom;
 uniform mat4 u_projTrans;
+uniform int u_worldWidth;
 
 out vec2 v_texCoords;
 
@@ -15,5 +16,13 @@ void main() {
     vec2 offset = a_position - a_center;
     vec2 scaledPosition = a_center + (offset * u_zoom);
 
-    gl_Position = u_projTrans * vec4(scaledPosition, 0.0, 1.0);
+    float instanceOffset = 0.0;
+    if (gl_InstanceID == 1) {
+        instanceOffset = -u_worldWidth;
+    } else if (gl_InstanceID == 2) {
+        instanceOffset = u_worldWidth;
+    }
+
+    vec4 finalPosition = vec4(scaledPosition.x + instanceOffset, scaledPosition.y, 0.0, 1.0);
+    gl_Position = u_projTrans * finalPosition;
 }
