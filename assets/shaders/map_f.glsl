@@ -216,8 +216,16 @@ vec4 getLandClose(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv)
     }
 
     if(colorProvince.a < 1.0) {
-        vec4 border = getBorder(colorProvince, offsetsProvince, vec3(0.0, 0.0, 0.0), uv);
-
+        vec4 border;
+        if(colorProvince.a < 0.1) {
+            if(u_zoom < 0.55) {
+                border = getBorder(colorProvince, offsetsProvince, vec3(0.13, 0.16, 0.20), uv);
+            }
+        } else if(colorProvince.a < 0.4) {
+            border = getBorder(colorProvince, offsetsRegion, vec3(0.13, 0.16, 0.20), uv);
+        } else if(colorProvince.a < 0.7) {
+            border = getBorder(colorProvince, offsetsCountry, vec3(0.74, 0.26, 0.22), uv);
+        }
         political.rgb = mix(political.rgb, border.rgb, step(0.01, border.a));
     }
 

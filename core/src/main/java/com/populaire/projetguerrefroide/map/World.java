@@ -198,8 +198,7 @@ public class World {
                 int green = (color >> 16) & 0xFF;
                 int blue = (color >> 8) & 0xFF;
 
-                int borderAlpha = 51;
-                color = (red << 24) | (green << 16) | (blue << 8) | borderAlpha;
+                color = (red << 24) | (green << 16) | (blue << 8) | this.getBorderType(x, y, province.getCountryOwner(), province.getRegion());
                 this.provincesPixmap.drawPixel(x, y, color);
             }
         }
@@ -229,6 +228,24 @@ public class World {
 
         this.mapModeTexture.dispose();
         this.mapModeTexture = new Texture(this.mapModePixmap);
+    }
+
+    public short getBorderType(short x, short y, Country country, Region region) {
+        LandProvince provinceRight = this.getProvince((short) (x + 1), y);
+        LandProvince provinceLeft = this.getProvince((short) (x - 1), y);
+        LandProvince provinceUp = this.getProvince(x, (short) (y + 1));
+        LandProvince provinceDown = this.getProvince(x, (short) (y - 1));
+
+        // 0: water, nothing or province border, 153: country border, 77: region border
+        if(provinceRight == null || provinceLeft == null || provinceUp == null || provinceDown == null) {
+            return 0;
+        } else if (!provinceRight.getCountryOwner().equals(country) || !provinceLeft.getCountryOwner().equals(country) || !provinceUp.getCountryOwner().equals(country) || !provinceDown.getCountryOwner().equals(country)) {
+            return 153;
+        } else if (!provinceRight.getRegion().equals(region) || !provinceLeft.getRegion().equals(region) || !provinceUp.getRegion().equals(region) || !provinceDown.getRegion().equals(region)) {
+            return 77;
+        } else {
+            return 0;
+        }
     }
 
     public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
