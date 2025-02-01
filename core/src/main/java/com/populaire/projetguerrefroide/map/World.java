@@ -3,6 +3,8 @@ package com.populaire.projetguerrefroide.map;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.tommyettinger.ds.IntObjectMap;
@@ -32,8 +34,12 @@ public class World {
     private Texture overlayTileTexture;
     private Texture defaultTexture;
     private TextureArray terrainSheetArray;
+    private TextureAtlas mapElementsTextureAtlas;
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
+    private ShaderProgram elementShader;
+    private Mesh meshElements;
+    private MapMode mapMode;
 
     public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, AsyncExecutor asyncExecutor) {
         this.countries = countries;
@@ -53,6 +59,7 @@ public class World {
         this.updateBordersProvincesPixmap();
         Pixmap provincesColorStripesPixmap = this.createProvincesColorStripesPixmap();
         String[] terrainTexturePaths = this.createTerrainTexturePaths();
+        this.mapMode = MapMode.POLITICAL;
 
         for(Country country : this.countries) {
             country.createLabels();
@@ -74,6 +81,9 @@ public class World {
         this.overlayTileTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         this.defaultTexture = new Texture(0, 0, Pixmap.Format.RGB565);
         this.terrainSheetArray = new TextureArray(terrainTexturePaths);
+        this.mapElementsTextureAtlas = new TextureAtlas("map/element/map_elements.atlas");
+        this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        this.meshElements = this.generateMeshElements();
 
         String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
         String fragmentMapShader = Gdx.files.internal("shaders/map_f.glsl").readString();
@@ -81,6 +91,9 @@ public class World {
         String vertexFontShader = Gdx.files.internal("shaders/font_v.glsl").readString();
         String fragmentFontShader = Gdx.files.internal("shaders/font_f.glsl").readString();
         this.fontShader = new ShaderProgram(vertexFontShader, fragmentFontShader);
+        String vertexElementShader = Gdx.files.internal("shaders/element_v.glsl").readString();
+        String fragmentElementShader = Gdx.files.internal("shaders/element_f.glsl").readString();
+        this.elementShader = new ShaderProgram(vertexElementShader, fragmentElementShader);
         ShaderProgram.pedantic = false;
     }
 
@@ -208,21 +221,27 @@ public class World {
         switch(mapMode) {
             case "mapmode_political":
                 this.updatePixmapCountriesColor();
+                this.mapMode = MapMode.POLITICAL;
                 break;
             case "mapmode_strength":
                 this.updatePixmapIdeologiesColor();
+                this.mapMode = MapMode.IDEOLOGICAL;
                 break;
             case "mapmode_diplomatic":
                 this.updatePixmapCulturesColor();
+                this.mapMode = MapMode.CULTURAL;
                 break;
             case "mapmode_intel":
                 this.updatePixmapReligionsColor();
+                this.mapMode = MapMode.RELIGIOUS;
                 break;
             case "mapmode_terrain":
                 this.updatePixmapTerrainColor();
+                this.mapMode = MapMode.TERRAIN;
                 break;
             case "mapmode_resources":
                 this.updatePixmapResourcesColor();
+                this.mapMode = MapMode.RESOURCES;
                 break;
         }
 
@@ -246,6 +265,92 @@ public class World {
         } else {
             return 0;
         }
+    }
+
+    public Mesh generateMeshElements() {
+        int numProvinces = 0;
+        for(LandProvince province : this.provinces.values()) {
+            if(province.getGood() != null) {
+                numProvinces++;
+            }
+        }
+
+        float[] vertices = new float[numProvinces * 4 * 6];
+        short[] indices = new short[numProvinces * 6];
+
+        int vertexIndex = 0;
+        int indexIndex = 0;
+        short vertexOffset = 0;
+
+        short width = 13;
+        short height = 10;
+
+        for (LandProvince province : this.provinces.values()) {
+            if(province.getGood() == null) {
+                continue;
+            }
+            TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + province.getGood().getName());
+
+            int ressourcePosition = province.getPosition("default");
+            short cx = (short) (ressourcePosition >> 16);
+            short cy = (short) (ressourcePosition & 0xFFFF);
+
+            short x = (short) (cx - (width / 2));
+            short y = (short) (cy - (height / 2));
+
+            float u1 = resourceRegion.getU();
+            float v1 = resourceRegion.getV2();
+            float u2 = resourceRegion.getU2();
+            float v2 = resourceRegion.getV();
+
+            vertices[vertexIndex++] = x;
+            vertices[vertexIndex++] = y;
+            vertices[vertexIndex++] = u1;
+            vertices[vertexIndex++] = v1;
+            vertices[vertexIndex++] = cx;
+            vertices[vertexIndex++] = cy;
+
+            vertices[vertexIndex++] = x + width;
+            vertices[vertexIndex++] = y;
+            vertices[vertexIndex++] = u2;
+            vertices[vertexIndex++] = v1;
+            vertices[vertexIndex++] = cx;
+            vertices[vertexIndex++] = cy;
+
+            vertices[vertexIndex++] = x + width;
+            vertices[vertexIndex++] = y + height;
+            vertices[vertexIndex++] = u2;
+            vertices[vertexIndex++] = v2;
+            vertices[vertexIndex++] = cx;
+            vertices[vertexIndex++] = cy;
+
+            vertices[vertexIndex++] = x;
+            vertices[vertexIndex++] = y + height;
+            vertices[vertexIndex++] = u1;
+            vertices[vertexIndex++] = v2;
+            vertices[vertexIndex++] = cx;
+            vertices[vertexIndex++] = cy;
+
+            indices[indexIndex++] = vertexOffset;
+            indices[indexIndex++] = (short) (vertexOffset + 1);
+            indices[indexIndex++] = (short) (vertexOffset + 2);
+
+            indices[indexIndex++] = (short) (vertexOffset + 2);
+            indices[indexIndex++] = (short) (vertexOffset + 3);
+            indices[indexIndex++] = vertexOffset;
+
+            vertexOffset += 4;
+        }
+
+        Mesh mesh = new Mesh(true, vertices.length / 6, indices.length,
+            new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
+            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"),
+            new VertexAttribute(VertexAttributes.Usage.Generic, 2, "a_center"));
+
+        mesh.setVertices(vertices);
+        mesh.setIndices(indices);
+
+        return mesh;
     }
 
     public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
@@ -304,6 +409,18 @@ public class World {
         }
         batch.setShader(null);
         batch.end();
+        if(this.mapMode == MapMode.RESOURCES && cam.zoom < 0.8f) {
+            this.renderMeshElements(cam);
+        }
+    }
+
+    private void renderMeshElements(OrthographicCamera cam) {
+        this.elementShader.bind();
+        this.mapElementsTextureAtlas.getTextures().first().bind(0);
+        this.elementShader.setUniformi("u_texture", 0);
+        this.elementShader.setUniformMatrix("u_projTrans", cam.combined);
+        this.elementShader.setUniformf("u_zoom", cam.zoom);
+        this.meshElements.render(this.elementShader, GL32.GL_TRIANGLES);
     }
 
     public void dispose() {
