@@ -11,8 +11,6 @@
       },
       "max_level": 99,
       "time": 730,
-      "onmap": true,
-      "visibility": true,
       "color": [
         255,
         165,
@@ -31,8 +29,6 @@
       },
       "max_level": 99,
       "time": 200,
-      "onmap": true,
-      "visibility": true,
       "color": [
         0,
         0,
@@ -50,8 +46,6 @@
       },
       "max_level": 99,
       "time": 200,
-      "onmap": true,
-      "visibility": true,
       "color": [
         255,
         0,
@@ -72,8 +66,6 @@
       },
       "max_level": 99,
       "time": 200,
-      "onmap": true,
-      "visibility": true,
       "color": [
         255,
         255,
@@ -93,8 +85,6 @@
       },
       "max_level": 99,
       "time": 200,
-      "onmap": true,
-      "visibility": true,
       "color": [
         139,
         69,
@@ -115,8 +105,6 @@
       },
       "max_level": 99,
       "time": 200,
-      "onmap": true,
-      "visibility": true,
       "color": [
         0,
         255,
@@ -137,8 +125,6 @@
       },
       "max_level": 99,
       "time": 250,
-      "onmap": true,
-      "visibility": true,
       "color": [
         0,
         0,
@@ -159,8 +145,6 @@
       },
       "max_level": 99,
       "time": 10,
-      "onmap": true,
-      "visibility": true,
       "color": [
         0,
         255,
@@ -179,8 +163,6 @@
       },
       "max_level": 99,
       "time": 3,
-      "onmap": true,
-      "visibility": true,
       "color": [
         169,
         169,
@@ -199,8 +181,6 @@
       },
       "max_level": 99,
       "time": 1095,
-      "onmap": true,
-      "visibility": true,
       "color": [
         128,
         0,
@@ -221,8 +201,6 @@
       },
       "max_level": 99,
       "time": 2,
-      "onmap": true,
-      "visibility": true,
       "color": [
         128,
         0,
@@ -233,45 +211,31 @@
   "special_building": {
     "military_academy": {
       "cost": 2000,
-      "time": 730,
-      "visibility": true,
-      "onmap": false
+      "time": 730
     },
     "nuclear_test_site": {
       "cost": 1500,
-      "time": 3,
-      "visibility": true,
-      "onmap": false
+      "time": 3
     },
     "rocket_test_site": {
       "cost": 750,
-      "time": 3,
-      "visibility": true,
-      "onmap": false
+      "time": 3
     },
     "financial_district": {
       "cost": 1000,
-      "time": 3,
-      "visibility": true,
-      "onmap": false
+      "time": 3
     },
     "strategical_storage": {
       "cost": 250,
-      "time": 3,
-      "visibility": true,
-      "onmap": false
+      "time": 3
     },
     "intelligence_center": {
       "cost": 500,
-      "time": 3,
-      "visibility": true,
-      "onmap": false
+      "time": 3
     },
     "sdi_site": {
       "cost": 3000,
       "time": 3,
-      "visibility": true,
-      "onmap": false,
       "modifier": {
         "sdi_missile_defense": 5
       }
@@ -279,29 +243,21 @@
     "nuclear_silo": {
       "cost": 2000,
       "time": 1,
-      "visibility": true,
-      "onmap": false,
       "modifier": {
         "ammo_store": 4
       }
     },
     "spaceport": {
       "cost": 2500,
-      "time": 3,
-      "visibility": true,
-      "onmap": false
+      "time": 3
     },
     "national_monument": {
       "cost": 5000,
-      "time": 3,
-      "visibility": true,
-      "onmap": false
+      "time": 3
     },
     "university": {
       "cost": 10000,
       "time": 3,
-      "visibility": true,
-      "onmap": false,
       "modifier": {
         "industry_physics_cost": {
           "value": -0.01,
@@ -336,8 +292,6 @@
     "agriculture_research_center": {
       "cost": 10000,
       "time": 3,
-      "visibility": true,
-      "onmap": false,
       "modifier": {
         "industry_agriculture_mechanized_cost": {
           "value": -0.2,
@@ -351,15 +305,11 @@
     },
     "naval_research_center": {
       "cost": 2000,
-      "time": 3,
-      "visibility": true,
-      "onmap": false
+      "time": 3
     },
     "land_research_center": {
       "cost": 2000,
       "time": 3,
-      "visibility": true,
-      "onmap": false,
       "modifier": {
         "small_arms_cost": {
           "value": -0.1,
@@ -378,8 +328,6 @@
     "air_research_center": {
       "cost": 2000,
       "time": 3,
-      "visibility": true,
-      "onmap": false,
       "modifier": {
         "aircraftavionics_cost": {
           "value": -0.1,
@@ -397,9 +345,7 @@
     },
     "early_warning_site": {
       "cost": 3000,
-      "time": 3,
-      "visibility": true,
-      "onmap": false
+      "time": 3
     }
   },
   "development_building": {
@@ -410,8 +356,7 @@
       "max_level": 10,
       "modifier": {
         "air_capacity": 1
-      },
-      "visibility": true
+      }
     },
     "naval_base": {
       "onmap": true,
@@ -420,12 +365,10 @@
       "max_level": 10,
       "modifier": {
         "naval_capacity": 1
-      },
-      "visibility": true
+      }
     },
     "coastal_fort": {
-      "onmap": true,
-      "visibility": true,
+      "onmap": false,
       "cost": 5,
       "time": 180,
       "modifier": {
@@ -434,8 +377,7 @@
       "max_level": 10
     },
     "land_fort": {
-      "onmap": true,
-      "visibility": true,
+      "onmap": false,
       "cost": 5,
       "time": 180,
       "modifier": {
@@ -444,8 +386,7 @@
       "max_level": 10
     },
     "anti_air": {
-      "onmap": true,
-      "visibility": true,
+      "onmap": false,
       "cost": 3,
       "time": 60,
       "modifier": {
@@ -454,7 +395,6 @@
       "max_level": 10
     },
     "infrastructure": {
-      "visibility": false,
       "onmap": false,
       "cost": 1000,
       "time": 365,
@@ -464,25 +404,22 @@
       "max_level": 10
     },
     "radar_station": {
-      "onmap": true,
-      "visibility": true,
+      "onmap": false,
       "cost": 2,
       "time": 180,
       "modifier": {
-          "radar_level": 1
+        "radar_level": 1
       },
       "max_level": 10
     },
     "nuclear_reactor": {
-      "onmap": true,
-      "visibility": true,
+      "onmap": false,
       "cost": 50,
       "time": 180,
       "max_level": 10
     },
     "rocket_test": {
-      "onmap": true,
-      "visibility": true,
+      "onmap": false,
       "cost": 20,
       "time": 180,
       "max_level": 10

@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
+import com.populaire.projetguerrefroide.economy.building.Building;
 
 import java.util.*;
 
@@ -275,9 +276,17 @@ public class World {
 
     public Mesh generateMeshBuildings() {
         int numBuildings = 0;
-        for(Country country : this.countries) {
-            if(country.getCapital() != null && !country.getProvinces().isEmpty()) {
+
+        for (Country country : this.countries) {
+            if (country.getCapital() != null && !country.getProvinces().isEmpty()) {
                 numBuildings++;
+            }
+            for (LandProvince province : country.getProvinces()) {
+                for (Building building : province.getBuildings().keySet()) {
+                    if (building.isOnMap()) {
+                        numBuildings++;
+                    }
+                }
             }
         }
 
@@ -291,54 +300,39 @@ public class World {
         short width = 6;
         short height = 6;
 
-        for(Country country : this.countries) {
-            if(country.getCapital() == null || country.getProvinces().isEmpty()) {
-                continue;
+        TextureRegion capitalRegion = this.mapElementsTextureAtlas.findRegion("building_capital");
+        for (Country country : this.countries) {
+            if (country.getCapital() != null && !country.getProvinces().isEmpty()) {
+                int buildingPosition = country.getCapital().getPosition("default");
+                short cx = (short) (buildingPosition >> 16);
+                short cy = (short) (buildingPosition & 0xFFFF);
+
+                addVerticesIndicesBuilding(vertices, indices, vertexIndex, indexIndex, vertexOffset, cx, cy, width, height, capitalRegion);
+
+                vertexIndex += 16;
+                indexIndex += 6;
+                vertexOffset += 4;
             }
 
-            TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_capital");
+            for (LandProvince province : country.getProvinces()) {
+                for (Building building : province.getBuildings().keySet()) {
+                    if (!building.isOnMap()) {
+                        continue;
+                    }
 
-            int buildingPosition = country.getCapital().getPosition("default");
-            short cx = (short) (buildingPosition >> 16);
-            short cy = (short) (buildingPosition & 0xFFFF);
+                    TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_" + building.getName() + "_empty");
 
-            short x = (short) (cx - (width / 2));
-            short y = (short) (cy - (height / 2));
+                    int buildingPosition = province.getPosition(building.getName());
+                    short bx = (short) (buildingPosition >> 16);
+                    short by = (short) (buildingPosition & 0xFFFF);
 
-            float u1 = buildingRegion.getU();
-            float v1 = buildingRegion.getV2();
-            float u2 = buildingRegion.getU2();
-            float v2 = buildingRegion.getV();
+                    addVerticesIndicesBuilding(vertices, indices, vertexIndex, indexIndex, vertexOffset, bx, by, width, height, buildingRegion);
 
-            vertices[vertexIndex++] = x;
-            vertices[vertexIndex++] = y;
-            vertices[vertexIndex++] = u1;
-            vertices[vertexIndex++] = v1;
-
-            vertices[vertexIndex++] = x + width;
-            vertices[vertexIndex++] = y;
-            vertices[vertexIndex++] = u2;
-            vertices[vertexIndex++] = v1;
-
-            vertices[vertexIndex++] = x + width;
-            vertices[vertexIndex++] = y + height;
-            vertices[vertexIndex++] = u2;
-            vertices[vertexIndex++] = v2;
-
-            vertices[vertexIndex++] = x;
-            vertices[vertexIndex++] = y + height;
-            vertices[vertexIndex++] = u1;
-            vertices[vertexIndex++] = v2;
-
-            indices[indexIndex++] = vertexOffset;
-            indices[indexIndex++] = (short) (vertexOffset + 1);
-            indices[indexIndex++] = (short) (vertexOffset + 2);
-
-            indices[indexIndex++] = (short) (vertexOffset + 2);
-            indices[indexIndex++] = (short) (vertexOffset + 3);
-            indices[indexIndex++] = vertexOffset;
-
-            vertexOffset += 4;
+                    vertexIndex += 16;
+                    indexIndex += 6;
+                    vertexOffset += 4;
+                }
+            }
         }
 
         Mesh mesh = new Mesh(true, vertices.length / 4, indices.length,
@@ -349,6 +343,45 @@ public class World {
         mesh.setIndices(indices);
 
         return mesh;
+    }
+
+    private void addVerticesIndicesBuilding(float[] vertices, short[] indices, int vertexIndex, int indexIndex, short vertexOffset, short x, short y, short width, short height, TextureRegion region) {
+        short x1 = (short) (x - (width / 2));
+        short y1 = (short) (y - (height / 2));
+        short x2 = (short) (x1 + width);
+        short y2 = (short) (y1 + height);
+
+        float u1 = region.getU();
+        float v1 = region.getV2();
+        float u2 = region.getU2();
+        float v2 = region.getV();
+
+        vertices[vertexIndex++] = x1;
+        vertices[vertexIndex++] = y1;
+        vertices[vertexIndex++] = u1;
+        vertices[vertexIndex++] = v1;
+
+        vertices[vertexIndex++] = x2;
+        vertices[vertexIndex++] = y1;
+        vertices[vertexIndex++] = u2;
+        vertices[vertexIndex++] = v1;
+
+        vertices[vertexIndex++] = x2;
+        vertices[vertexIndex++] = y2;
+        vertices[vertexIndex++] = u2;
+        vertices[vertexIndex++] = v2;
+
+        vertices[vertexIndex++] = x1;
+        vertices[vertexIndex++] = y2;
+        vertices[vertexIndex++] = u1;
+        vertices[vertexIndex] = v2;
+
+        indices[indexIndex++] = vertexOffset;
+        indices[indexIndex++] = (short) (vertexOffset + 1);
+        indices[indexIndex++] = (short) (vertexOffset + 2);
+        indices[indexIndex++] = (short) (vertexOffset + 2);
+        indices[indexIndex++] = (short) (vertexOffset + 3);
+        indices[indexIndex] = vertexOffset;
     }
 
     public Mesh generateMeshResources() {
@@ -493,10 +526,10 @@ public class World {
         }
         batch.setShader(null);
         batch.end();
-        if(cam.zoom < 0.8f) {
+        if(cam.zoom <= 0.8f) {
             this.renderMeshBuildings(cam);
         }
-        if(this.mapMode == MapMode.RESOURCES && cam.zoom < 0.8f) {
+        if(this.mapMode == MapMode.RESOURCES && cam.zoom <= 0.8f) {
             this.renderMeshResources(cam);
         }
     }
@@ -546,6 +579,7 @@ public class World {
         this.fontShader.dispose();
         this.elementScaleShader.dispose();
         this.meshResources.dispose();
+        this.meshBuildings.dispose();
         this.mapElementsTextureAtlas.dispose();
     }
 }

@@ -642,8 +642,6 @@ public class DataManager {
                 String buildingName = entry.getKey();
                 int cost = entry.getValue().get("cost").intValue();
                 short time = entry.getValue().get("time").shortValue();
-                boolean onMap = entry.getValue().get("onmap").booleanValue();
-                boolean visibility = entry.getValue().get("visibility").booleanValue();
                 int workforce = entry.getValue().get("workforce").intValue();
                 int color = this.parseColor(entry.getValue().get("color"));
                 short maxLevel = entry.getValue().get("max_level").shortValue();
@@ -659,7 +657,7 @@ public class DataManager {
                     Good good = goods.get(outputGood.getKey());
                     outputGoods.put(good, outputGood.getValue().asInt());
                 });
-                buildings.put(buildingName, new EconomyBuilding(buildingName, cost, time, onMap, visibility, workforce, inputGoods, outputGoods, maxLevel, color));
+                buildings.put(buildingName, new EconomyBuilding(buildingName, cost, time, workforce, inputGoods, outputGoods, maxLevel, color));
             });
 
             JsonNode specialBuilding = buildingsJson.get("special_building");
@@ -667,11 +665,10 @@ public class DataManager {
                 String buildingName = entry.getKey();
                 int cost = entry.getValue().get("cost").intValue();
                 short time = entry.getValue().get("time").shortValue();
-                boolean onMap = entry.getValue().get("onmap").booleanValue();
-                boolean visibility = entry.getValue().get("visibility").booleanValue();
+
                 JsonNode modifiersNode = entry.getValue().get("modifier");
                 if(modifiersNode == null) {
-                    buildings.put(buildingName, new SpecialBuilding(buildingName, cost, time, onMap, visibility));
+                    buildings.put(buildingName, new SpecialBuilding(buildingName, cost, time));
                 } else {
                     List<Modifier> modifiers = new ObjectList<>();
                     modifiersNode.fields().forEachRemaining(modifierEntry -> {
@@ -685,7 +682,7 @@ public class DataManager {
                             modifiers.add(new Modifier(modifierName, value, modifierType));
                         }
                     });
-                    buildings.put(buildingName, new SpecialBuilding(buildingName, cost, time, onMap, visibility, modifiers));
+                    buildings.put(buildingName, new SpecialBuilding(buildingName, cost, time, modifiers));
                 }
             });
 
@@ -695,15 +692,14 @@ public class DataManager {
                 int cost = entry.getValue().get("cost").intValue();
                 short time = entry.getValue().get("time").shortValue();
                 boolean onMap = entry.getValue().get("onmap").booleanValue();
-                boolean visibility = entry.getValue().get("visibility").booleanValue();
                 short maxLevel = entry.getValue().get("max_level").shortValue();
                 JsonNode modifierNode = entry.getValue().get("modifier");
                 if(modifierNode == null) {
-                    buildings.put(buildingName, new DevelopmentBuilding(buildingName, cost, time, onMap, visibility, maxLevel));
+                    buildings.put(buildingName, new DevelopmentBuilding(buildingName, cost, time, onMap, maxLevel));
                 } else if(modifierNode.size() == 1) {
                     String modifierName = modifierNode.fieldNames().next();
                     float modifierValue = modifierNode.get(modifierName).floatValue();
-                    buildings.put(buildingName, new DevelopmentBuilding(buildingName, cost, time, onMap, visibility, maxLevel, new Modifier(modifierName, modifierValue)));
+                    buildings.put(buildingName, new DevelopmentBuilding(buildingName, cost, time, onMap, maxLevel, new Modifier(modifierName, modifierValue)));
                 }
             });
         } catch (IOException e) {

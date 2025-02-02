@@ -6,15 +6,11 @@ public abstract class Building {
     private final String name;
     private final int cost;
     private final short time;
-    private final boolean onMap;
-    private final boolean visibility;
 
-    public Building(String name, int cost, short time, boolean onMap, boolean visibility) {
+    public Building(String name, int cost, short time) {
         this.name = name;
         this.cost = cost;
         this.time = time;
-        this.onMap = onMap;
-        this.visibility = visibility;
     }
 
     public String getName() {
@@ -30,11 +26,7 @@ public abstract class Building {
     }
 
     public boolean isOnMap() {
-        return this.onMap;
-    }
-
-    public boolean isVisible() {
-        return this.visibility;
+        return false;
     }
 
     @Override
