@@ -38,7 +38,9 @@ public class World {
     private ShaderProgram mapShader;
     private ShaderProgram fontShader;
     private ShaderProgram elementShader;
-    private Mesh meshElements;
+    private ShaderProgram elementScaleShader;
+    private Mesh meshBuildings;
+    private Mesh meshResources;
     private MapMode mapMode;
 
     public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, AsyncExecutor asyncExecutor) {
@@ -81,9 +83,10 @@ public class World {
         this.overlayTileTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         this.defaultTexture = new Texture(0, 0, Pixmap.Format.RGB565);
         this.terrainSheetArray = new TextureArray(terrainTexturePaths);
-        this.mapElementsTextureAtlas = new TextureAtlas("map/element/map_elements.atlas");
+        this.mapElementsTextureAtlas = new TextureAtlas("map/elements/map_elements.atlas");
         this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        this.meshElements = this.generateMeshElements();
+        this.meshBuildings = this.generateMeshBuildings();
+        this.meshResources = this.generateMeshResources();
 
         String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
         String fragmentMapShader = Gdx.files.internal("shaders/map_f.glsl").readString();
@@ -94,6 +97,9 @@ public class World {
         String vertexElementShader = Gdx.files.internal("shaders/element_v.glsl").readString();
         String fragmentElementShader = Gdx.files.internal("shaders/element_f.glsl").readString();
         this.elementShader = new ShaderProgram(vertexElementShader, fragmentElementShader);
+        String vertexElementScaleShader = Gdx.files.internal("shaders/element_scale_v.glsl").readString();
+        String fragmentElementScaleShader = Gdx.files.internal("shaders/element_scale_f.glsl").readString();
+        this.elementScaleShader = new ShaderProgram(vertexElementScaleShader, fragmentElementScaleShader);
         ShaderProgram.pedantic = false;
     }
 
@@ -267,7 +273,85 @@ public class World {
         }
     }
 
-    public Mesh generateMeshElements() {
+    public Mesh generateMeshBuildings() {
+        int numBuildings = 0;
+        for(Country country : this.countries) {
+            if(country.getCapital() != null && !country.getProvinces().isEmpty()) {
+                numBuildings++;
+            }
+        }
+
+        float[] vertices = new float[numBuildings * 4 * 4];
+        short[] indices = new short[numBuildings * 6];
+
+        int vertexIndex = 0;
+        int indexIndex = 0;
+        short vertexOffset = 0;
+
+        short width = 6;
+        short height = 6;
+
+        for(Country country : this.countries) {
+            if(country.getCapital() == null || country.getProvinces().isEmpty()) {
+                continue;
+            }
+
+            TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_capital");
+
+            int buildingPosition = country.getCapital().getPosition("default");
+            short cx = (short) (buildingPosition >> 16);
+            short cy = (short) (buildingPosition & 0xFFFF);
+
+            short x = (short) (cx - (width / 2));
+            short y = (short) (cy - (height / 2));
+
+            float u1 = buildingRegion.getU();
+            float v1 = buildingRegion.getV2();
+            float u2 = buildingRegion.getU2();
+            float v2 = buildingRegion.getV();
+
+            vertices[vertexIndex++] = x;
+            vertices[vertexIndex++] = y;
+            vertices[vertexIndex++] = u1;
+            vertices[vertexIndex++] = v1;
+
+            vertices[vertexIndex++] = x + width;
+            vertices[vertexIndex++] = y;
+            vertices[vertexIndex++] = u2;
+            vertices[vertexIndex++] = v1;
+
+            vertices[vertexIndex++] = x + width;
+            vertices[vertexIndex++] = y + height;
+            vertices[vertexIndex++] = u2;
+            vertices[vertexIndex++] = v2;
+
+            vertices[vertexIndex++] = x;
+            vertices[vertexIndex++] = y + height;
+            vertices[vertexIndex++] = u1;
+            vertices[vertexIndex++] = v2;
+
+            indices[indexIndex++] = vertexOffset;
+            indices[indexIndex++] = (short) (vertexOffset + 1);
+            indices[indexIndex++] = (short) (vertexOffset + 2);
+
+            indices[indexIndex++] = (short) (vertexOffset + 2);
+            indices[indexIndex++] = (short) (vertexOffset + 3);
+            indices[indexIndex++] = vertexOffset;
+
+            vertexOffset += 4;
+        }
+
+        Mesh mesh = new Mesh(true, vertices.length / 4, indices.length,
+            new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
+            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"));
+
+        mesh.setVertices(vertices);
+        mesh.setIndices(indices);
+
+        return mesh;
+    }
+
+    public Mesh generateMeshResources() {
         int numProvinces = 0;
         for(LandProvince province : this.provinces.values()) {
             if(province.getGood() != null) {
@@ -409,23 +493,39 @@ public class World {
         }
         batch.setShader(null);
         batch.end();
+        if(cam.zoom < 0.8f) {
+            this.renderMeshBuildings(cam);
+        }
         if(this.mapMode == MapMode.RESOURCES && cam.zoom < 0.8f) {
-            this.renderMeshElements(cam);
+            this.renderMeshResources(cam);
         }
     }
 
-    private void renderMeshElements(OrthographicCamera cam) {
+    private void renderMeshBuildings(OrthographicCamera cam) {
         this.elementShader.bind();
         this.mapElementsTextureAtlas.getTextures().first().bind(0);
         this.elementShader.setUniformi("u_texture", 0);
         this.elementShader.setUniformMatrix("u_projTrans", cam.combined);
-        this.elementShader.setUniformf("u_zoom", cam.zoom);
         this.elementShader.setUniformi("u_worldWidth", WORLD_WIDTH);
-        this.meshElements.bind(this.elementShader);
+        this.meshBuildings.bind(this.elementShader);
         Gdx.gl.glEnable(GL32.GL_BLEND);
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
-        Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshElements.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
-        this.meshElements.unbind(this.elementShader);
+        Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshBuildings.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
+        this.meshBuildings.unbind(this.elementShader);
+    }
+
+    private void renderMeshResources(OrthographicCamera cam) {
+        this.elementScaleShader.bind();
+        this.mapElementsTextureAtlas.getTextures().first().bind(0);
+        this.elementScaleShader.setUniformi("u_texture", 0);
+        this.elementScaleShader.setUniformMatrix("u_projTrans", cam.combined);
+        this.elementScaleShader.setUniformf("u_zoom", cam.zoom);
+        this.elementScaleShader.setUniformi("u_worldWidth", WORLD_WIDTH);
+        this.meshResources.bind(this.elementScaleShader);
+        Gdx.gl.glEnable(GL32.GL_BLEND);
+        Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
+        Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshResources.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
+        this.meshResources.unbind(this.elementScaleShader);
     }
 
     public void dispose() {
@@ -444,5 +544,8 @@ public class World {
         this.provincesPixmap.dispose();
         this.mapShader.dispose();
         this.fontShader.dispose();
+        this.elementScaleShader.dispose();
+        this.meshResources.dispose();
+        this.mapElementsTextureAtlas.dispose();
     }
 }
