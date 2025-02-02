@@ -103,15 +103,6 @@ public class World {
         String fragmentElementScaleShader = Gdx.files.internal("shaders/element_scale_f.glsl").readString();
         this.elementScaleShader = new ShaderProgram(vertexElementScaleShader, fragmentElementScaleShader);
         ShaderProgram.pedantic = false;
-
-        for(Country country : this.countries) {
-            if(country.getName().equals("Rebels")) {
-                continue;
-            }
-            System.out.println(country.getName());
-            System.out.println(country.getAttitude().getName() + " " + country.getIdentity().getName() + " " + country.getIdeology().getName() + " " + country.getReligion().getName() + " " + country.getCulture().getName());
-            System.out.println();
-        }
     }
 
     public LandProvince getProvince(short x, short y) {
