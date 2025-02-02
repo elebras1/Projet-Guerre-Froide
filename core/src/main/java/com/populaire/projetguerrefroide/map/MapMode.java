@@ -6,5 +6,6 @@ public enum MapMode {
     CULTURAL,
     RELIGIOUS,
     TERRAIN,
-    RESOURCES
+    RESOURCES,
+    REGION
 }

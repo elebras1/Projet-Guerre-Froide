@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
 import com.populaire.projetguerrefroide.economy.building.Building;
+import com.populaire.projetguerrefroide.util.ColorGenerator;
 
 import java.util.*;
 
@@ -191,6 +192,15 @@ public class World {
         }
     }
 
+    public void updatePixmapRegionColor() {
+        for(LandProvince province : this.provinces.values()) {
+            int color = province.getColor();
+            short red = (short) ((color >> 24) & 0xFF);
+            short green = (short) ((color >> 16) & 0xFF);
+            this.mapModePixmap.drawPixel(red, green, ColorGenerator.getDeterministicRGBA(province.getRegion().getId()));
+        }
+    }
+
     public Pixmap createProvincesColorStripesPixmap() {
         Pixmap pixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
         for(LandProvince province : this.provinces.values()) {
@@ -249,6 +259,10 @@ public class World {
             case "mapmode_resources":
                 this.updatePixmapResourcesColor();
                 this.mapMode = MapMode.RESOURCES;
+                break;
+            case "mapmode_region":
+                this.updatePixmapRegionColor();
+                this.mapMode = MapMode.REGION;
                 break;
         }
 
