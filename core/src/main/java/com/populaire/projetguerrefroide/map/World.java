@@ -114,7 +114,6 @@ public class World {
         return this.provinces.get(provinceColorRGB);
     }
 
-
     public void selectProvince(short x, short y) {
         this.selectedProvince = this.getProvince(x, y);
     }
@@ -171,11 +170,6 @@ public class World {
             short green = (short) ((color >> 16) & 0xFF);
             this.mapModePixmap.drawPixel(red, green, province.getCountryOwner().getReligion().getColor());
         }
-    }
-
-    public void updatePixmapTerrainColor() {
-        Pixmap pixmap = new Pixmap(Gdx.files.internal("map/terrain/colormap.png"));
-        this.mapModePixmap.setPixels(pixmap.getPixels());
     }
 
     public void updatePixmapResourcesColor() {
@@ -253,7 +247,6 @@ public class World {
                 this.mapMode = MapMode.RELIGIOUS;
                 break;
             case "mapmode_terrain":
-                this.updatePixmapTerrainColor();
                 this.mapMode = MapMode.TERRAIN;
                 break;
             case "mapmode_resources":
@@ -511,6 +504,7 @@ public class World {
         this.mapShader.setUniformi("u_textureBorders", 10);
         this.mapShader.setUniformf("u_zoom", cam.zoom);
         this.mapShader.setUniformf("u_time", time);
+        this.mapShader.setUniformi("u_showTerrain", this.mapMode == MapMode.TERRAIN ? 1 : 0);
         if(this.selectedProvince != null) {
             int color = this.selectedProvince.getColor();
             float r = ((color >> 24) & 0xFF) / 255f;

@@ -18,6 +18,7 @@ layout (binding = 9) uniform sampler2D u_textureOverlayTile;
 
 uniform float u_zoom;
 uniform float u_time;
+uniform int u_showTerrain;
 uniform vec4 u_colorProvinceSelected;
 
 out vec4 fragColor;
@@ -196,6 +197,9 @@ vec4 getBorder(vec4 filteredColor, vec2[4] offsets, vec3 color, vec2 uv) {
 vec4 getLandClose(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv) {
     vec4 terrain = getTerrainMix(texCoord);
     vec3 political = colorMapMode.rgb;
+    if(u_showTerrain == 1) {
+        political = terrain.rgb;
+    }
 
     float grey = dot(terrain.rgb, GREYIFY);
     terrain.rgb = vec3(grey);
@@ -238,6 +242,9 @@ vec4 getLandClose(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv)
 
 vec4 getLandFar(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv) {
     vec4 political = colorMapMode;
+    if(u_showTerrain == 1) {
+        political = getTerrainMix(texCoord);
+    }
 
     vec3 deltaColor = colorProvince.rgb - u_colorProvinceSelected.rgb;
     if (dot(deltaColor, deltaColor) < 0.0001) {
@@ -273,26 +280,23 @@ void main() {
     vec2 uv = texCoord * mapSize;
     vec4 colorProvince = hqxFilter(uv, u_textureProvinces);
     vec4 colorMapMode = texture(u_textureMapMode, colorProvince.rg);
+
+    int alphaColorWater = 0;
+    bool isLand = colorMapMode.a > alphaColorWater;
+
     vec4 terrain;
     vec4 water;
-    int alphaColorWater = 0;
 
-    if(u_zoom > .8) {
-        if(colorMapMode.a > alphaColorWater) {
-            terrain = getLandFar(colorProvince, colorMapMode, texCoord, uv);
-        } else {
-            water = getWaterFar(texCoord);
-        }
+    if (u_zoom > 0.8) {
+        if (isLand) terrain = getLandFar(colorProvince, colorMapMode, texCoord, uv);
+        else water = getWaterFar(texCoord);
     } else {
-        if(colorMapMode.a > alphaColorWater) {
-            terrain = getLandClose(colorProvince, colorMapMode, texCoord, uv);
-        } else {
-            water = getWaterClose(texCoord);
-        }
+        if (isLand) terrain = getLandClose(colorProvince, colorMapMode, texCoord, uv);
+        else water = getWaterClose(texCoord);
     }
 
-    fragColor = terrain;
-
     fragColor.rgb = mix(water.rgb, terrain.rgb, terrain.a);
-    fragColor.a = 1.f;
+    fragColor.a = 1.0;
 }
+
+
