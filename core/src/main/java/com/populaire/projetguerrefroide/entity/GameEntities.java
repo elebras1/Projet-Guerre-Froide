@@ -18,8 +18,9 @@ public class GameEntities {
     private final Map<String, Building> buildings;
     private final Map<String, MinisterType> ministerTypes;
     private final IntObjectMap<PopulationType> populationTypes;
+    private final Map<String, Terrain> terrains;
 
-    public GameEntities(NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies, Map<String, Good> goods, PopulationDemands populationDemands, Map<String, Building> buildings, Map<String, MinisterType> ministerTypes, IntObjectMap<PopulationType> populationTypes) {
+    public GameEntities(NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies, Map<String, Good> goods, PopulationDemands populationDemands, Map<String, Building> buildings, Map<String, MinisterType> ministerTypes, IntObjectMap<PopulationType> populationTypes, Map<String, Terrain> terrains) {
         this.nationalIdeas = nationalIdeas;
         this.governments = governments;
         this.ideologies = ideologies;
@@ -28,6 +29,7 @@ public class GameEntities {
         this.buildings = buildings;
         this.ministerTypes = ministerTypes;
         this.populationTypes = populationTypes;
+        this.terrains = terrains;
     }
 
     public NationalIdeas getNationalIdeas() {
@@ -60,5 +62,9 @@ public class GameEntities {
 
     public IntObjectMap<PopulationType> getPopulationTypes() {
         return populationTypes;
+    }
+
+    public Map<String, Terrain> getTerrains() {
+        return terrains;
     }
 }

@@ -195,6 +195,15 @@ public class World {
         }
     }
 
+    public void updatePixmapTerrainColor() {
+        for(LandProvince province : this.provinces.values()) {
+            int color = province.getColor();
+            short red = (short) ((color >> 24) & 0xFF);
+            short green = (short) ((color >> 16) & 0xFF);
+            this.mapModePixmap.drawPixel(red, green, province.getTerrain().getColor());
+        }
+    }
+
     public Pixmap createProvincesColorStripesPixmap() {
         Pixmap pixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
         for(LandProvince province : this.provinces.values()) {
@@ -248,6 +257,10 @@ public class World {
                 break;
             case "mapmode_terrain":
                 this.mapMode = MapMode.TERRAIN;
+                break;
+            case "mapmode_terrain_2":
+                this.updatePixmapTerrainColor();
+                this.mapMode = MapMode.TERRAIN_2;
                 break;
             case "mapmode_resources":
                 this.updatePixmapResourcesColor();

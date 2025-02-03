@@ -1,0 +1,112 @@
+{
+  "arctic": {
+    "movement_cost": 1,
+    "humidity": -5,
+    "temperature": 5,
+    "precipitation": -30,
+    "color": [
+      235,
+      235,
+      235
+    ]
+  },
+  "plains": {
+    "movement_cost": 1,
+    "temperature": 8,
+    "humidity": -10,
+    "precipitation": 10,
+    "color": [
+      241,
+      221,
+      184
+    ]
+  },
+  "woods": {
+    "movement_cost": 1,
+    "temperature": 8,
+    "humidity": -5,
+    "precipitation": 15,
+    "color": [
+      165,
+      205,
+      108
+    ]
+  },
+  "forest": {
+    "movement_cost": 1,
+    "temperature": 8,
+    "humidity": 0,
+    "precipitation": 20,
+    "color": [
+      91,
+      123,
+      45
+    ]
+  },
+  "jungle": {
+    "movement_cost": 1,
+    "temperature": 10,
+    "humidity": 1,
+    "precipitation": 80,
+    "color": [
+      32,
+      151,
+      0
+    ]
+  },
+  "hills": {
+    "movement_cost": 1,
+    "temperature": 5,
+    "precipitation": 5,
+    "humidity": -5,
+    "color": [
+      135,
+      70,
+      0
+    ]
+  },
+  "mountain": {
+    "movement_cost": 1,
+    "temperature": 2,
+    "humidity": -10,
+    "precipitation": -10,
+    "color": [
+      117,
+      108,
+      119
+    ]
+  },
+  "high_mountain": {
+    "movement_cost": 1,
+    "humidity": -20,
+    "temperature": -2,
+    "precipitation": -20,
+    "color": [
+      61,
+      56,
+      62
+    ]
+  },
+  "desert": {
+    "movement_cost": 1,
+    "temperature": 15,
+    "humidity": -80,
+    "precipitation": -70,
+    "color": [
+      218,
+      195,
+      0
+    ]
+  },
+  "marsh": {
+    "movement_cost": 1,
+    "temperature": 8,
+    "humidity": 1,
+    "precipitation": 60,
+    "color": [
+      76,
+      112,
+      105
+    ]
+  }
+}

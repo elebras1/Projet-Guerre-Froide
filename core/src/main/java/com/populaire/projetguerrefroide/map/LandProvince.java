@@ -7,6 +7,7 @@ import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.economy.good.Good;
 import com.populaire.projetguerrefroide.economy.population.Population;
+import com.populaire.projetguerrefroide.entity.Terrain;
 
 import java.util.*;
 
@@ -18,6 +19,7 @@ public class LandProvince implements Province {
     private Region region;
     private Continent continent;
     private Population population;
+    private final Terrain terrain;
     private final List<Country> countriesCore;
     private final Good good;
     private final float goodValue;
@@ -26,11 +28,12 @@ public class LandProvince implements Province {
     private final ObjectIntMap<String> positions;
     private final IntSet borderPixels;
 
-    public LandProvince(short id, Country countryOwner, Country countryController, Population population, List<Country> countriesCore, Good good, float goodValue, ObjectIntMap<Building> buildings) {
+    public LandProvince(short id, Country countryOwner, Country countryController, Population population, Terrain terrain, List<Country> countriesCore, Good good, float goodValue, ObjectIntMap<Building> buildings) {
         this.id = id;
         this.countryOwner = countryOwner;
         this.countryController = countryController;
         this.population = population;
+        this.terrain = terrain;
         this.good = good;
         this.goodValue = goodValue;
         this.countriesCore = countriesCore;
@@ -62,6 +65,10 @@ public class LandProvince implements Province {
 
     public void setCountryController(Country countryController) {
         this.countryController = countryController;
+    }
+
+    public Terrain getTerrain() {
+        return this.terrain;
     }
 
     public IntSet getBorderPixels() {
@@ -177,6 +184,10 @@ public class LandProvince implements Province {
                 ", owner=" + this.countryOwner.getName() +
                 ", controller=" + this.countryController.getName() +
                 ", number_adjacentProvinces=" + this.adjacentProvinces.size() +
+                ", region=" + this.region.getId() +
+                ", continent=" + this.continent.getName() +
+                ", population=" + this.population +
+                ", terrain=" + this.terrain.getName() +
                 '}';
     }
 }
