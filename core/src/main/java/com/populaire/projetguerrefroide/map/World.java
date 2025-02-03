@@ -196,6 +196,16 @@ public class World {
     }
 
     public void updatePixmapTerrainColor() {
+        int whiteColor = 0xFFFFFFFF;
+        for(LandProvince province : this.provinces.values()) {
+            int color = province.getColor();
+            short red = (short) ((color >> 24) & 0xFF);
+            short green = (short) ((color >> 16) & 0xFF);
+            this.mapModePixmap.drawPixel(red, green, whiteColor);
+        }
+    }
+
+    public void updatePixmapTerrain2Color() {
         for(LandProvince province : this.provinces.values()) {
             int color = province.getColor();
             short red = (short) ((color >> 24) & 0xFF);
@@ -256,10 +266,11 @@ public class World {
                 this.mapMode = MapMode.RELIGIOUS;
                 break;
             case "mapmode_terrain":
+                this.updatePixmapTerrainColor();
                 this.mapMode = MapMode.TERRAIN;
                 break;
             case "mapmode_terrain_2":
-                this.updatePixmapTerrainColor();
+                this.updatePixmapTerrain2Color();
                 this.mapMode = MapMode.TERRAIN_2;
                 break;
             case "mapmode_resources":
