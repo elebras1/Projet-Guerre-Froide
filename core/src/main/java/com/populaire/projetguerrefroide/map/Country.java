@@ -19,6 +19,7 @@ public class Country {
     private Set<Region> regions;
     private List<LandProvince> provinces;
     private IntObjectMap<Minister> ministers;
+    private ObjectIntMap<Country> relations;
     private LandProvince capital;
     private Government government;
     private Ideology ideology;
@@ -83,6 +84,26 @@ public class Country {
 
     public IntObjectMap<Minister> getMinisters() {
         return this.ministers;
+    }
+
+    public void addRelation(Country country, int value) {
+        if(this.relations == null) {
+            this.relations = new ObjectIntMap<>();
+        }
+
+        this.relations.put(country, value);
+    }
+
+    public void removeRelation(Country country) {
+        this.relations.remove(country);
+
+        if(this.relations.isEmpty()) {
+            this.relations = null;
+        }
+    }
+
+    public ObjectIntMap<Country> getRelations() {
+        return this.relations;
     }
 
     public void setCapital(LandProvince capital) {

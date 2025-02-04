@@ -48,6 +48,10 @@ public class WorldService {
         return this.world.getSelectedProvince() != null;
     }
 
+    public boolean setCountryPlayer() {
+        return this.world.setCountryPlayer();
+    }
+
     public boolean hoverProvince(short x, short y) {
         return this.world.getProvince(x, y) != null;
     }

@@ -35,6 +35,7 @@ public class DataManager {
     private final String commonPath = "common/";
     private final String mapPath = "map/";
     private final String historyPath = "history/";
+    private final String diplomacyPath = historyPath + "diplomacy/";
     private final String countriesJsonFiles = this.commonPath + "countries.json";
     private final String countriesHistoryJsonFiles = this.historyPath + "countries.json";
     private final String regionJsonFiles = this.mapPath + "region.json";
@@ -52,6 +53,7 @@ public class DataManager {
     private final String populationDemandsJsonFile = this.commonPath + "population_demands.json";
     private final String ministerTypesJsonFile = this.commonPath + "minister_types.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
+    private final String relationJsonFile = this.diplomacyPath + "relation.json";
     private final ObjectMapper mapper = new ObjectMapper();
     private final String defaultDate = "1946.1.1";
 
@@ -91,7 +93,9 @@ public class DataManager {
     }
 
     private Map<String, Country> loadCountries(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
-        return this.readCountriesJson(ministerTypes, ideologies);
+        Map<String, Country> countries = this.readCountriesJson(ministerTypes, ideologies);
+        this.readRelationJson(countries);
+        return countries;
     }
 
     private void loadProvinces(Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, GameEntities gameEntities) {
@@ -733,6 +737,22 @@ public class DataManager {
         }
 
         return buildings;
+    }
+
+    private void readRelationJson(Map<String, Country> countries) {
+        try {
+            JsonNode relationsJson = this.openJson(this.relationJsonFile);
+            JsonNode relationArray = relationsJson.get("relation");
+            for(JsonNode relation : relationArray) {
+                Country country1 = countries.get(relation.get("country1").textValue());
+                Country country2 = countries.get(relation.get("country2").textValue());
+                int relationValue = relation.get("value").intValue();
+                country1.addRelation(country2, relationValue);
+                country2.addRelation(country1, relationValue);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void readPositionsJson(IntObjectMap<Province> provinces) {

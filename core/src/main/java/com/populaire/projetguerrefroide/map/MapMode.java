@@ -8,5 +8,6 @@ public enum MapMode {
     TERRAIN,
     TERRAIN_2,
     RESOURCES,
-    REGION
+    REGION,
+    RELATIONS
 }

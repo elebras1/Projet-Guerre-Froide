@@ -1,0 +1,999 @@
+{
+    "relation": [
+        {
+            "country1": "SOV",
+            "country2": "USA",
+            "value": 25
+        },
+        {
+            "country1": "CHC",
+            "country2": "SOV",
+            "value": 150
+        },
+        {
+            "country1": "JAP",
+            "country2": "USA",
+            "value": 150
+        },
+        {
+            "country1": "ISR",
+            "country2": "USA",
+            "value": 125
+        },
+        {
+            "country1": "CHI",
+            "country2": "USA",
+            "value": 60
+        },
+        {
+            "country1": "PHI",
+            "country2": "USA",
+            "value": 95
+        },
+        {
+            "country1": "AST",
+            "country2": "USA",
+            "value": 150
+        },
+        {
+            "country1": "NZL",
+            "country2": "USA",
+            "value": 150
+        },
+        {
+            "country1": "SIA",
+            "country2": "USA",
+            "value": 75
+        },
+        {
+            "country1": "CUB",
+            "country2": "USA",
+            "value": 75
+        },
+        {
+            "country1": "SOV",
+            "country2": "YUG",
+            "value": 100
+        },
+        {
+            "country1": "CHC",
+            "country2": "CHI",
+            "value": -125
+        },
+        {
+            "country1": "CHI",
+            "country2": "SIK",
+            "value": -200
+        },
+        {
+            "country1": "CHC",
+            "country2": "SIK",
+            "value": 50
+        },
+        {
+            "country1": "SIK",
+            "country2": "SOV",
+            "value": 130
+        },
+        {
+            "country1": "ENG",
+            "country2": "USA",
+            "value": 200
+        },
+        {
+            "country1": "CAN",
+            "country2": "USA",
+            "value": 190
+        },
+        {
+            "country1": "FRA",
+            "country2": "USA",
+            "value": 175
+        },
+        {
+            "country1": "FRG",
+            "country2": "USA",
+            "value": 190
+        },
+        {
+            "country1": "USA",
+            "country2": "WBR",
+            "value": 195
+        },
+        {
+            "country1": "BEL",
+            "country2": "USA",
+            "value": 190
+        },
+        {
+            "country1": "ICL",
+            "country2": "USA",
+            "value": 185
+        },
+        {
+            "country1": "DEN",
+            "country2": "USA",
+            "value": 190
+        },
+        {
+            "country1": "ITA",
+            "country2": "USA",
+            "value": 190
+        },
+        {
+            "country1": "LUX",
+            "country2": "USA",
+            "value": 190
+        },
+        {
+            "country1": "HOL",
+            "country2": "USA",
+            "value": 190
+        },
+        {
+            "country1": "NOR",
+            "country2": "USA",
+            "value": 190
+        },
+        {
+            "country1": "POR",
+            "country2": "USA",
+            "value": 190
+        },
+        {
+            "country1": "GRE",
+            "country2": "USA",
+            "value": 175
+        },
+        {
+            "country1": "TUR",
+            "country2": "USA",
+            "value": 170
+        },
+        {
+            "country1": "SPA",
+            "country2": "USA",
+            "value": 150
+        },
+        {
+            "country1": "ENG",
+            "country2": "FRA",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "ENG",
+            "value": 195
+        },
+        {
+            "country1": "ENG",
+            "country2": "ITA",
+            "value": 190
+        },
+        {
+            "country1": "ENG",
+            "country2": "HOL",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "ENG",
+            "value": 190
+        },
+        {
+            "country1": "ENG",
+            "country2": "LUX",
+            "value": 190
+        },
+        {
+            "country1": "ENG",
+            "country2": "FRG",
+            "value": 195
+        },
+        {
+            "country1": "ENG",
+            "country2": "WBR",
+            "value": 195
+        },
+        {
+            "country1": "DEN",
+            "country2": "ENG",
+            "value": 190
+        },
+        {
+            "country1": "ENG",
+            "country2": "NOR",
+            "value": 190
+        },
+        {
+            "country1": "ENG",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "ENG",
+            "country2": "GRE",
+            "value": 180
+        },
+        {
+            "country1": "ENG",
+            "country2": "TUR",
+            "value": 175
+        },
+        {
+            "country1": "ENG",
+            "country2": "SPA",
+            "value": 175
+        },
+        {
+            "country1": "BEL",
+            "country2": "FRA",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "FRA",
+            "value": 190
+        },
+        {
+            "country1": "DEN",
+            "country2": "FRA",
+            "value": 190
+        },
+        {
+            "country1": "FRA",
+            "country2": "ICL",
+            "value": 190
+        },
+        {
+            "country1": "FRA",
+            "country2": "ITA",
+            "value": 190
+        },
+        {
+            "country1": "FRA",
+            "country2": "LUX",
+            "value": 190
+        },
+        {
+            "country1": "FRA",
+            "country2": "HOL",
+            "value": 190
+        },
+        {
+            "country1": "FRA",
+            "country2": "NOR",
+            "value": 190
+        },
+        {
+            "country1": "FRA",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "FRA",
+            "country2": "GRE",
+            "value": 190
+        },
+        {
+            "country1": "FRA",
+            "country2": "TUR",
+            "value": 185
+        },
+        {
+            "country1": "FRA",
+            "country2": "FRG",
+            "value": 195
+        },
+        {
+            "country1": "FRA",
+            "country2": "WBR",
+            "value": 195
+        },
+        {
+            "country1": "FRA",
+            "country2": "SPA",
+            "value": 180
+        },
+        {
+            "country1": "BEL",
+            "country2": "CAN",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "DEN",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "ICL",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "ITA",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "LUX",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "HOL",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "NOR",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "GRE",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "TUR",
+            "value": 185
+        },
+        {
+            "country1": "BEL",
+            "country2": "FRG",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "WBR",
+            "value": 190
+        },
+        {
+            "country1": "BEL",
+            "country2": "SPA",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "DEN",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "ICL",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "ITA",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "LUX",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "HOL",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "NOR",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "GRE",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "TUR",
+            "value": 185
+        },
+        {
+            "country1": "CAN",
+            "country2": "FRG",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "WBR",
+            "value": 190
+        },
+        {
+            "country1": "CAN",
+            "country2": "SPA",
+            "value": 180
+        },
+        {
+            "country1": "DEN",
+            "country2": "ICL",
+            "value": 190
+        },
+        {
+            "country1": "DEN",
+            "country2": "ITA",
+            "value": 190
+        },
+        {
+            "country1": "DEN",
+            "country2": "LUX",
+            "value": 190
+        },
+        {
+            "country1": "DEN",
+            "country2": "HOL",
+            "value": 190
+        },
+        {
+            "country1": "DEN",
+            "country2": "NOR",
+            "value": 180
+        },
+        {
+            "country1": "DEN",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "DEN",
+            "country2": "GRE",
+            "value": 190
+        },
+        {
+            "country1": "DEN",
+            "country2": "TUR",
+            "value": 185
+        },
+        {
+            "country1": "DEN",
+            "country2": "FRG",
+            "value": 190
+        },
+        {
+            "country1": "DEN",
+            "country2": "WBR",
+            "value": 190
+        },
+        {
+            "country1": "DEN",
+            "country2": "SPA",
+            "value": 190
+        },
+        {
+            "country1": "ICL",
+            "country2": "ITA",
+            "value": 190
+        },
+        {
+            "country1": "ICL",
+            "country2": "LUX",
+            "value": 190
+        },
+        {
+            "country1": "HOL",
+            "country2": "ICL",
+            "value": 190
+        },
+        {
+            "country1": "ICL",
+            "country2": "NOR",
+            "value": 190
+        },
+        {
+            "country1": "ICL",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "GRE",
+            "country2": "ICL",
+            "value": 190
+        },
+        {
+            "country1": "ICL",
+            "country2": "TUR",
+            "value": 185
+        },
+        {
+            "country1": "FRG",
+            "country2": "ICL",
+            "value": 190
+        },
+        {
+            "country1": "ICL",
+            "country2": "WBR",
+            "value": 190
+        },
+        {
+            "country1": "ICL",
+            "country2": "SPA",
+            "value": 190
+        },
+        {
+            "country1": "ITA",
+            "country2": "LUX",
+            "value": 190
+        },
+        {
+            "country1": "HOL",
+            "country2": "ITA",
+            "value": 190
+        },
+        {
+            "country1": "ITA",
+            "country2": "NOR",
+            "value": 190
+        },
+        {
+            "country1": "ITA",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "GRE",
+            "country2": "ITA",
+            "value": 190
+        },
+        {
+            "country1": "ITA",
+            "country2": "TUR",
+            "value": 185
+        },
+        {
+            "country1": "FRG",
+            "country2": "ITA",
+            "value": 190
+        },
+        {
+            "country1": "ITA",
+            "country2": "WBR",
+            "value": 190
+        },
+        {
+            "country1": "ITA",
+            "country2": "SPA",
+            "value": 190
+        },
+        {
+            "country1": "HOL",
+            "country2": "LUX",
+            "value": 190
+        },
+        {
+            "country1": "LUX",
+            "country2": "NOR",
+            "value": 190
+        },
+        {
+            "country1": "LUX",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "GRE",
+            "country2": "LUX",
+            "value": 190
+        },
+        {
+            "country1": "LUX",
+            "country2": "TUR",
+            "value": 185
+        },
+        {
+            "country1": "FRG",
+            "country2": "LUX",
+            "value": 190
+        },
+        {
+            "country1": "LUX",
+            "country2": "WBR",
+            "value": 190
+        },
+        {
+            "country1": "LUX",
+            "country2": "SPA",
+            "value": 190
+        },
+        {
+            "country1": "HOL",
+            "country2": "NOR",
+            "value": 190
+        },
+        {
+            "country1": "HOL",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "GRE",
+            "country2": "HOL",
+            "value": 190
+        },
+        {
+            "country1": "HOL",
+            "country2": "TUR",
+            "value": 185
+        },
+        {
+            "country1": "FRG",
+            "country2": "HOL",
+            "value": 190
+        },
+        {
+            "country1": "HOL",
+            "country2": "WBR",
+            "value": 190
+        },
+        {
+            "country1": "HOL",
+            "country2": "SPA",
+            "value": 190
+        },
+        {
+            "country1": "NOR",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "GRE",
+            "country2": "NOR",
+            "value": 190
+        },
+        {
+            "country1": "NOR",
+            "country2": "TUR",
+            "value": 185
+        },
+        {
+            "country1": "FRG",
+            "country2": "NOR",
+            "value": 190
+        },
+        {
+            "country1": "NOR",
+            "country2": "WBR",
+            "value": 190
+        },
+        {
+            "country1": "NOR",
+            "country2": "SPA",
+            "value": 190
+        },
+        {
+            "country1": "GRE",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "POR",
+            "country2": "TUR",
+            "value": 185
+        },
+        {
+            "country1": "FRG",
+            "country2": "POR",
+            "value": 190
+        },
+        {
+            "country1": "POR",
+            "country2": "WBR",
+            "value": 190
+        },
+        {
+            "country1": "POR",
+            "country2": "SPA",
+            "value": 175
+        },
+        {
+            "country1": "GRE",
+            "country2": "TUR",
+            "value": 60
+        },
+        {
+            "country1": "FRG",
+            "country2": "GRE",
+            "value": 175
+        },
+        {
+            "country1": "GRE",
+            "country2": "WBR",
+            "value": 175
+        },
+        {
+            "country1": "GRE",
+            "country2": "SPA",
+            "value": 150
+        },
+        {
+            "country1": "FRG",
+            "country2": "TUR",
+            "value": 175
+        },
+        {
+            "country1": "TUR",
+            "country2": "WBR",
+            "value": 175
+        },
+        {
+            "country1": "SPA",
+            "country2": "TUR",
+            "value": 150
+        },
+        {
+            "country1": "ALB",
+            "country2": "SOV",
+            "value": 150
+        },
+        {
+            "country1": "BUL",
+            "country2": "SOV",
+            "value": 175
+        },
+        {
+            "country1": "CZE",
+            "country2": "SOV",
+            "value": 175
+        },
+        {
+            "country1": "DDR",
+            "country2": "SOV",
+            "value": 175
+        },
+        {
+            "country1": "HUN",
+            "country2": "SOV",
+            "value": 175
+        },
+        {
+            "country1": "POL",
+            "country2": "SOV",
+            "value": 175
+        },
+        {
+            "country1": "ROM",
+            "country2": "SOV",
+            "value": 175
+        },
+        {
+            "country1": "ALB",
+            "country2": "BUL",
+            "value": 175
+        },
+        {
+            "country1": "ALB",
+            "country2": "CZE",
+            "value": 175
+        },
+        {
+            "country1": "ALB",
+            "country2": "DDR",
+            "value": 175
+        },
+        {
+            "country1": "ALB",
+            "country2": "HUN",
+            "value": 175
+        },
+        {
+            "country1": "ALB",
+            "country2": "POL",
+            "value": 175
+        },
+        {
+            "country1": "ALB",
+            "country2": "ROM",
+            "value": 175
+        },
+        {
+            "country1": "BUL",
+            "country2": "CZE",
+            "value": 175
+        },
+        {
+            "country1": "BUL",
+            "country2": "DDR",
+            "value": 175
+        },
+        {
+            "country1": "BUL",
+            "country2": "HUN",
+            "value": 175
+        },
+        {
+            "country1": "BUL",
+            "country2": "POL",
+            "value": 175
+        },
+        {
+            "country1": "BUL",
+            "country2": "ROM",
+            "value": 175
+        },
+        {
+            "country1": "CZE",
+            "country2": "DDR",
+            "value": 175
+        },
+        {
+            "country1": "CZE",
+            "country2": "HUN",
+            "value": 175
+        },
+        {
+            "country1": "CZE",
+            "country2": "POL",
+            "value": 175
+        },
+        {
+            "country1": "CZE",
+            "country2": "ROM",
+            "value": 175
+        },
+        {
+            "country1": "DDR",
+            "country2": "HUN",
+            "value": 175
+        },
+        {
+            "country1": "DDR",
+            "country2": "POL",
+            "value": 175
+        },
+        {
+            "country1": "DDR",
+            "country2": "ROM",
+            "value": 175
+        },
+        {
+            "country1": "HUN",
+            "country2": "POL",
+            "value": 175
+        },
+        {
+            "country1": "HUN",
+            "country2": "ROM",
+            "value": 175
+        },
+        {
+            "country1": "POL",
+            "country2": "ROM",
+            "value": 175
+        },
+        {
+            "country1": "FIN",
+            "country2": "SWE",
+            "value": 150
+        },
+        {
+            "country1": "DEN",
+            "country2": "FIN",
+            "value": 140
+        },
+        {
+            "country1": "DEN",
+            "country2": "SWE",
+            "value": 130
+        },
+        {
+            "country1": "FRA",
+            "country2": "IDC",
+            "value": 200
+        },
+        {
+            "country1": "DRV",
+            "country2": "IDC",
+            "value": -200
+        },
+        {
+            "country1": "DRV",
+            "country2": "FRA",
+            "value": -200
+        },
+        {
+            "country1": "DRV",
+            "country2": "SVI",
+            "value": -200
+        },
+        {
+            "country1": "FRA",
+            "country2": "LAO",
+            "value": 175
+        },
+        {
+            "country1": "DRV",
+            "country2": "SOV",
+            "value": 100
+        },
+        {
+            "country1": "CHC",
+            "country2": "DRV",
+            "value": 75
+        },
+        {
+            "country1": "IND",
+            "country2": "PAK",
+            "value": -150
+        },
+        {
+            "country1": "ISR",
+            "country2": "PAL",
+            "value": -200
+        },
+        {
+            "country1": "ISR",
+            "country2": "LEB",
+            "value": -115
+        },
+        {
+            "country1": "ISR",
+            "country2": "JOR",
+            "value": -125
+        },
+        {
+            "country1": "EGY",
+            "country2": "ISR",
+            "value": -100
+        },
+        {
+            "country1": "ISR",
+            "country2": "SYR",
+            "value": -100
+        },
+        {
+            "country1": "IRQ",
+            "country2": "ISR",
+            "value": -125
+        },
+        {
+            "country1": "ISR",
+            "country2": "SAU",
+            "value": -90
+        },
+        {
+            "country1": "CHC",
+            "country2": "TIB",
+            "value": -125
+        },
+        {
+            "country1": "ALG",
+            "country2": "FRA",
+            "value": -25
+        },
+        {
+            "country1": "MOR",
+            "country2": "SPA",
+            "value": -25
+        },
+        {
+            "country1": "FRA",
+            "country2": "MOR",
+            "value": -25
+        },
+        {
+            "country1": "ENG",
+            "country2": "ICL",
+            "value": 50
+        },
+        {
+            "country1": "ERI",
+            "country2": "ETH",
+            "value": -25
+        }
+    ]
+}
