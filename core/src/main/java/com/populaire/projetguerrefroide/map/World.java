@@ -184,7 +184,6 @@ public class World {
     }
 
     public void updatePixmapResourcesColor() {
-        int whiteColor = 0xFFFFFFFF;
         for(LandProvince province : this.provinces.values()) {
             int color = province.getColor();
             short red = (short) ((color >> 24) & 0xFF);
@@ -192,7 +191,7 @@ public class World {
             if(province.getGood() != null) {
                 this.mapModePixmap.drawPixel(red, green, province.getGood().getColor());
             } else {
-                this.mapModePixmap.drawPixel(red, green, whiteColor);
+                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
             }
         }
     }
@@ -207,12 +206,11 @@ public class World {
     }
 
     public void updatePixmapTerrainColor() {
-        int whiteColor = 0xFFFFFFFF;
         for(LandProvince province : this.provinces.values()) {
             int color = province.getColor();
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
-            this.mapModePixmap.drawPixel(red, green, whiteColor);
+            this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
         }
     }
 
@@ -226,10 +224,6 @@ public class World {
     }
 
     public void updatePixmapRelationsColor() {
-        // Définition des couleurs en RGBA (Red, Green, Blue, Alpha)
-        int lightBlueColor = (0xAD << 24) | (0xD8 << 16) | (0xE6 << 8) | 0xFF; // RGBA: ADD8E6FF
-        int greyColor = (0x80 << 24) | (0x80 << 16) | (0x80 << 8) | 0xFF;       // RGBA: 808080FF
-
         ObjectIntMap<Country> relations = this.countryPlayer.getRelations();
 
         for(LandProvince province : this.provinces.values()) {
@@ -238,23 +232,12 @@ public class World {
             short green = (short) ((color >> 16) & 0xFF);
 
             if(province.getCountryOwner().equals(this.countryPlayer)) {
-                this.mapModePixmap.drawPixel(red, green, lightBlueColor);
+                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getLightBlueRGBA());
             } else if(relations != null && relations.containsKey(province.getCountryOwner())) {
                 int relationValue = relations.get(province.getCountryOwner());
-
-                float normalized = (relationValue + 200.0f) / 400.0f;
-                normalized = Math.max(0.0f, Math.min(1.0f, normalized));
-
-                int redComponent = (int)(255 * (1 - normalized));
-                int greenComponent = (int)(255 * normalized);
-                int blueComponent = 0;
-                int alphaComponent = 0xFF;
-
-                int relationColor = (redComponent << 24) | (greenComponent << 16) | (blueComponent << 8) | alphaComponent;
-
-                this.mapModePixmap.drawPixel(red, green, relationColor);
+                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getRedToGreenRGBA(relationValue, 200));
             } else {
-                this.mapModePixmap.drawPixel(red, green, greyColor);
+                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getGreyRGBA());
             }
         }
     }
