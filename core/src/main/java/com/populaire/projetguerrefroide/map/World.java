@@ -223,6 +223,23 @@ public class World {
         }
     }
 
+    public void updatePixmapPopulationColor() {
+        int maxPopulation = 0;
+        for (LandProvince province : this.provinces.values()) {
+            maxPopulation = Math.max(maxPopulation, province.getPopulation().getSize());
+        }
+
+        for (LandProvince province : this.provinces.values()) {
+            int color = province.getColor();
+            short red = (short) ((color >> 24) & 0xFF);
+            short green = (short) ((color >> 16) & 0xFF);
+            int pop = province.getPopulation().getSize();
+            float ratio = (maxPopulation > 0) ? (float) pop / maxPopulation : 0f;
+            this.mapModePixmap.drawPixel(red, green, ColorGenerator.getMagmaColorRGBA(ratio));
+        }
+    }
+
+
     public void updatePixmapRelationsColor() {
         ObjectIntMap<Country> relations = this.countryPlayer.getRelations();
 
@@ -235,7 +252,7 @@ public class World {
                 this.mapModePixmap.drawPixel(red, green, ColorGenerator.getLightBlueRGBA());
             } else if(relations != null && relations.containsKey(province.getCountryOwner())) {
                 int relationValue = relations.get(province.getCountryOwner());
-                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getRedToGreenRGBA(relationValue, 200));
+                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getRedToGreenGradientRGBA(relationValue, 200));
             } else {
                 this.mapModePixmap.drawPixel(red, green, ColorGenerator.getGreyRGBA());
             }
@@ -312,6 +329,11 @@ public class World {
             case "mapmode_theatre":
                 this.updatePixmapRelationsColor();
                 this.mapMode = MapMode.RELATIONS;
+                break;
+            case "mapmode_weather":
+                this.updatePixmapPopulationColor();
+                this.mapMode = MapMode.POPULATION;
+                break;
         }
 
         this.mapModeTexture.dispose();
