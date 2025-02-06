@@ -171,6 +171,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     @Override
     public void onBackClicked() {
         this.screenManager.showMainMenuScreen();
+        this.worldService.dispose();
     }
 
     @Override
