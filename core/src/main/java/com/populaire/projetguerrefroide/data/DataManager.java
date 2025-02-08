@@ -7,18 +7,16 @@ import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.github.tommyettinger.ds.IntObjectMap;
-import com.github.tommyettinger.ds.ObjectIntMap;
-import com.github.tommyettinger.ds.ObjectList;
-import com.github.tommyettinger.ds.ObjectObjectMap;
+import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.economy.population.Population;
-import com.populaire.projetguerrefroide.economy.population.PopulationDemands;
 import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.economy.building.DevelopmentBuilding;
 import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
 import com.populaire.projetguerrefroide.economy.building.SpecialBuilding;
 import com.populaire.projetguerrefroide.economy.good.*;
 import com.populaire.projetguerrefroide.economy.population.PopulationType;
+import com.populaire.projetguerrefroide.economy.standardofliving.StandardOfLiving;
+import com.populaire.projetguerrefroide.economy.standardofliving.StandardOfLivingLevel;
 import com.populaire.projetguerrefroide.entity.*;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.national.*;
@@ -49,8 +47,8 @@ public class DataManager {
     private final String ideologiesJsonFile = this.commonPath + "ideologies.json";
     private final String nationalIdeasJsonFile = this.commonPath + "national_ideas.json";
     private final String goodsJsonFile = this.commonPath + "goods.json";
+    private final String standardOfLivingJsonFile = this.commonPath + "standard_of_living.json";
     private final String populationTypesJsonFile = this.commonPath + "population_types.json";
-    private final String populationDemandsJsonFile = this.commonPath + "population_demands.json";
     private final String ministerTypesJsonFile = this.commonPath + "minister_types.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
@@ -63,11 +61,11 @@ public class DataManager {
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
         Map<String, Good> goods = this.readGoodsJson();
-        PopulationDemands populationDemands = this.readPopulationDemandsJson(goods);
+        StandardOfLiving standardOfLiving = this.readStandardOfLivingJson(goods);
         Map<String, Building> buildings = this.readBuildingsJson(goods);
         Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
         Map<String, Terrain> terrains = this.readTerrainsJson();
-        return new GameEntities(nationalIdeas, governments, ideologies, goods, populationDemands, buildings, ministerTypes, this.readPopulationTypesJson(), terrains);
+        return new GameEntities(nationalIdeas, governments, ideologies, goods, standardOfLiving, buildings, ministerTypes, this.readPopulationTypesJson(), terrains);
     }
 
     public World createWorldThreadSafe(GameEntities gameEntities, AsyncExecutor asyncExecutor) {
@@ -584,6 +582,30 @@ public class DataManager {
         return goods;
     }
 
+    private StandardOfLiving readStandardOfLivingJson(Map<String, Good> goods) {
+        try {
+            JsonNode standardOfLivingJson = this.openJson(this.standardOfLivingJsonFile);
+            short amount = standardOfLivingJson.get("amount").shortValue();
+            standardOfLivingJson = standardOfLivingJson.get("levels");
+            List<StandardOfLivingLevel> levels = new ObjectList<>();
+            standardOfLivingJson.fields().forEachRemaining(entry -> {
+                byte level = Byte.parseByte(entry.getKey());
+                ObjectFloatMap<Good> demands = new ObjectFloatMap<>();
+                entry.getValue().fields().forEachRemaining(demand -> {
+                    Good good = goods.get(demand.getKey());
+                    demands.put(good, demand.getValue().floatValue());
+                });
+                levels.add(new StandardOfLivingLevel(level, demands));
+            });
+
+            return new StandardOfLiving(amount, levels);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     private IntObjectMap<PopulationType> readPopulationTypesJson() {
         IntObjectMap<PopulationType> populationTypes = new IntObjectMap<>();
         try {
@@ -601,25 +623,6 @@ public class DataManager {
         }
 
         return populationTypes;
-    }
-
-    private PopulationDemands readPopulationDemandsJson(Map<String, Good> goods) {
-        Map<Good, Float> populationDemands = new ObjectObjectMap<>();
-        try {
-            JsonNode populationDemandsJson = this.openJson(this.populationDemandsJsonFile);
-            short amount = populationDemandsJson.get("amount").shortValue();
-            ((ObjectNode) populationDemandsJson).remove("amount");
-            populationDemandsJson.fields().forEachRemaining(entry -> {
-                Good good = goods.get(entry.getKey());
-                populationDemands.put(good, entry.getValue().floatValue());
-            });
-
-            return new PopulationDemands(amount, populationDemands);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
     }
 
     private Map<String, MinisterType> readMinisterTypesJson() {
