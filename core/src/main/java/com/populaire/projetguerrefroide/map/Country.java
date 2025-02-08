@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.*;
+import com.populaire.projetguerrefroide.entity.AllianceType;
 import com.populaire.projetguerrefroide.entity.Government;
 import com.populaire.projetguerrefroide.entity.Ideology;
 import com.populaire.projetguerrefroide.entity.Minister;
@@ -20,6 +21,7 @@ public class Country {
     private List<LandProvince> provinces;
     private IntObjectMap<Minister> ministers;
     private ObjectIntMap<Country> relations;
+    private Map<Country, AllianceType> alliances;
     private LandProvince capital;
     private Government government;
     private Ideology ideology;
@@ -104,6 +106,26 @@ public class Country {
 
     public ObjectIntMap<Country> getRelations() {
         return this.relations;
+    }
+
+    public void addAlliance(Country country, AllianceType allianceType) {
+        if(this.alliances == null) {
+            this.alliances = new ObjectObjectMap<>();
+        }
+
+        this.alliances.put(country, allianceType);
+    }
+
+    public void removeAlliance(Country country) {
+        this.alliances.remove(country);
+
+        if(this.alliances.isEmpty()) {
+            this.alliances = null;
+        }
+    }
+
+    public Map<Country, AllianceType> getAlliances() {
+        return this.alliances;
     }
 
     public void setCapital(LandProvince capital) {

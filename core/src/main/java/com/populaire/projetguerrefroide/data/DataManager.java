@@ -54,6 +54,7 @@ public class DataManager {
     private final String ministerTypesJsonFile = this.commonPath + "minister_types.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
+    private final String alliancesJsonFile = this.diplomacyPath + "alliances.json";
     private final ObjectMapper mapper = new ObjectMapper();
     private final String defaultDate = "1946.1.1";
 
@@ -95,6 +96,7 @@ public class DataManager {
     private Map<String, Country> loadCountries(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
         Map<String, Country> countries = this.readCountriesJson(ministerTypes, ideologies);
         this.readRelationJson(countries);
+        this.readAlliancesJson(countries);
         return countries;
     }
 
@@ -749,6 +751,22 @@ public class DataManager {
                 int relationValue = relation.get("value").intValue();
                 country1.addRelation(country2, relationValue);
                 country2.addRelation(country1, relationValue);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void readAlliancesJson(Map<String, Country> countries) {
+        try {
+            JsonNode alliancesJson = this.openJson(this.alliancesJsonFile);
+            JsonNode alliancesArray = alliancesJson.get("alliances");
+            for(JsonNode alliance : alliancesArray) {
+                Country country1 = countries.get(alliance.get("country1").textValue());
+                Country country2 = countries.get(alliance.get("country2").textValue());
+                String type = alliance.get("type").textValue();
+                country1.addAlliance(country2, AllianceType.getAllianceType(type, true));
+                country2.addAlliance(country1, AllianceType.getAllianceType(type, false));
             }
         } catch (IOException e) {
             e.printStackTrace();
