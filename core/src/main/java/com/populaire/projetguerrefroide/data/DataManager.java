@@ -15,6 +15,7 @@ import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
 import com.populaire.projetguerrefroide.economy.building.SpecialBuilding;
 import com.populaire.projetguerrefroide.economy.good.*;
 import com.populaire.projetguerrefroide.economy.population.PopulationTemplate;
+import com.populaire.projetguerrefroide.economy.population.PopulationType;
 import com.populaire.projetguerrefroide.entity.*;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.national.*;
@@ -45,9 +46,10 @@ public class DataManager {
     private final String ideologiesJsonFile = this.commonPath + "ideologies.json";
     private final String nationalIdeasJsonFile = this.commonPath + "national_ideas.json";
     private final String goodsJsonFile = this.commonPath + "goods.json";
-    private final String populationTypesJsonFile = this.commonPath + "population_types.json";
+    private final String populationTemplatesJsonFile = this.commonPath + "population_templates.json";
     private final String ministerTypesJsonFile = this.commonPath + "minister_types.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
+    private final String populationTypesJsonFile = this.commonPath + "poptypes.json";
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
     private final String alliancesJsonFile = this.diplomacyPath + "alliances.json";
     private final ObjectMapper mapper = new ObjectMapper();
@@ -58,12 +60,12 @@ public class DataManager {
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
         Map<String, Good> goods = this.readGoodsJson();
-        System.out.println(goods);
         Map<String, Building> buildings = this.readBuildingsJson(goods);
-        System.out.println(buildings);
+        Map<String, PopulationType> populationTypes = this.readPopulationTypesJson(goods);
+        System.out.println(populationTypes);
         Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
         Map<String, Terrain> terrains = this.readTerrainsJson();
-        return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, ministerTypes, this.readPopulationTypesJson(), terrains);
+        return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, ministerTypes, this.readPopulationTemplatesJson(), terrains);
     }
 
     public World createWorldThreadSafe(GameEntities gameEntities, AsyncExecutor asyncExecutor) {
@@ -580,16 +582,16 @@ public class DataManager {
         return goods;
     }
 
-    private IntObjectMap<PopulationTemplate> readPopulationTypesJson() {
+    private IntObjectMap<PopulationTemplate> readPopulationTemplatesJson() {
         IntObjectMap<PopulationTemplate> populationTemplates = new IntObjectMap<>();
         try {
-            JsonNode populationTypesJson = this.openJson(this.populationTypesJsonFile);
-            populationTypesJson.fields().forEachRemaining(entry -> {
+            JsonNode populationTemplatesJson = this.openJson(this.populationTemplatesJsonFile);
+            populationTemplatesJson.fields().forEachRemaining(entry -> {
                 short template = Short.parseShort(entry.getKey());
-                JsonNode populationValuesTypeNode = entry.getValue().get("value");
-                float children = populationValuesTypeNode.get(0).floatValue();
-                float adults = populationValuesTypeNode.get(1).floatValue();
-                float seniors = populationValuesTypeNode.get(2).floatValue();
+                JsonNode populationValuesNode = entry.getValue().get("value");
+                float children = populationValuesNode.get(0).floatValue();
+                float adults = populationValuesNode.get(1).floatValue();
+                float seniors = populationValuesNode.get(2).floatValue();
                 populationTemplates.put(template, new PopulationTemplate(template, children, adults, seniors));
             });
         } catch (IOException e) {
@@ -716,6 +718,44 @@ public class DataManager {
         }
 
         return buildings;
+    }
+
+    private Map<String, PopulationType> readPopulationTypesJson(Map<String, Good> goods) {
+        Map<String, PopulationType> populationTypes = new ObjectObjectMap<>();
+        try {
+            JsonNode populationTypesJson = this.openJson(this.populationTypesJsonFile);
+            populationTypesJson.fields().forEachRemaining(entry -> {
+                this.readPopulationTypeJson(this.commonPath + entry.getValue().asText(), entry.getKey(), goods, populationTypes);
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return populationTypes;
+    }
+
+    private void readPopulationTypeJson(String populationTypeFileName, String name, Map<String, Good> goods, Map<String, PopulationType> populationTypes) {
+        try {
+            JsonNode populationTypeJson = this.openJson(populationTypeFileName);
+            int color = this.parseColor(populationTypeJson.get("color"));
+            ObjectFloatMap<Good> standardDemands = new ObjectFloatMap<>();
+            JsonNode standardDemandsNode = populationTypeJson.get("standard_demands");
+            standardDemandsNode.fields().forEachRemaining(standardDemand -> {
+                Good good = goods.get(standardDemand.getKey());
+                float value = standardDemand.getValue().floatValue();
+                standardDemands.put(good, value);
+            });
+            ObjectFloatMap<Good> luxuryDemands = new ObjectFloatMap<>();
+            JsonNode luxuryDemandsNode = populationTypeJson.get("luxury_demands");
+            luxuryDemandsNode.fields().forEachRemaining(luxuryDemand -> {
+                Good good = goods.get(luxuryDemand.getKey());
+                float value = luxuryDemand.getValue().floatValue();
+                luxuryDemands.put(good, value);
+            });
+            populationTypes.put(name, new PopulationType(color, name, standardDemands, luxuryDemands));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void readRelationJson(Map<String, Country> countries) {
