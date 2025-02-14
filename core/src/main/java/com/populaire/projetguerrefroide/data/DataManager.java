@@ -47,7 +47,6 @@ public class DataManager {
     private final String ideologiesJsonFile = this.commonPath + "ideologies.json";
     private final String nationalIdeasJsonFile = this.commonPath + "national_ideas.json";
     private final String goodsJsonFile = this.commonPath + "goods.json";
-    private final String standardOfLivingJsonFile = this.commonPath + "standard_of_living.json";
     private final String populationTypesJsonFile = this.commonPath + "population_types.json";
     private final String ministerTypesJsonFile = this.commonPath + "minister_types.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
@@ -61,11 +60,12 @@ public class DataManager {
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
         Map<String, Good> goods = this.readGoodsJson();
-        StandardOfLiving standardOfLiving = this.readStandardOfLivingJson(goods);
+        System.out.println(goods);
         Map<String, Building> buildings = this.readBuildingsJson(goods);
+        System.out.println(buildings);
         Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
         Map<String, Terrain> terrains = this.readTerrainsJson();
-        return new GameEntities(nationalIdeas, governments, ideologies, goods, standardOfLiving, buildings, ministerTypes, this.readPopulationTypesJson(), terrains);
+        return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, ministerTypes, this.readPopulationTypesJson(), terrains);
     }
 
     public World createWorldThreadSafe(GameEntities gameEntities, AsyncExecutor asyncExecutor) {
@@ -580,30 +580,6 @@ public class DataManager {
         }
 
         return goods;
-    }
-
-    private StandardOfLiving readStandardOfLivingJson(Map<String, Good> goods) {
-        try {
-            JsonNode standardOfLivingJson = this.openJson(this.standardOfLivingJsonFile);
-            short amount = standardOfLivingJson.get("amount").shortValue();
-            standardOfLivingJson = standardOfLivingJson.get("levels");
-            List<StandardOfLivingLevel> levels = new ObjectList<>();
-            standardOfLivingJson.fields().forEachRemaining(entry -> {
-                byte level = Byte.parseByte(entry.getKey());
-                ObjectFloatMap<Good> demands = new ObjectFloatMap<>();
-                entry.getValue().fields().forEachRemaining(demand -> {
-                    Good good = goods.get(demand.getKey());
-                    demands.put(good, demand.getValue().floatValue());
-                });
-                levels.add(new StandardOfLivingLevel(level, demands));
-            });
-
-            return new StandardOfLiving(amount, levels);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
     }
 
     private IntObjectMap<PopulationType> readPopulationTypesJson() {

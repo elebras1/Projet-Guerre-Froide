@@ -88,6 +88,19 @@
       ],
       "priority": 50
     },
+    "gas": {
+      "base_production": 0.3,
+      "infra_production": 0.7,
+      "base_pop": 500,
+      "infra_pop": -200,
+      "cost": 1.5,
+      "color": [
+        100,
+        100,
+        100
+      ],
+      "priority": 80
+    },
     "wood": {
       "base_production": 10,
       "infra_production": 2,
@@ -186,20 +199,84 @@
     }
   },
   "advanced_goods": {
-    "light_products": {
-      "cost": 10,
+    "cement": {
+      "cost": 5,
       "color": [
-        255,
-        223,
-        186
+        169,
+        169,
+        169
       ]
     },
-    "heavy_components": {
-      "cost": 20,
+    "steel": {
+      "cost": 7,
+      "color": [
+        192,
+        192,
+        192
+      ]
+    },
+    "aluminium": {
+      "cost": 8,
+      "color": [
+        205,
+        205,
+        205
+      ]
+    },
+    "glass": {
+      "cost": 3,
+      "color": [
+        255,
+        255,
+        240
+      ]
+    },
+    "inorganic_chemicals": {
+      "cost": 5,
       "color": [
         128,
-        128,
+        0,
         128
+      ]
+    },
+    "fabric": {
+      "cost": 4,
+      "color": [
+        255,
+        228,
+        196
+      ]
+    },
+    "plastics": {
+      "cost": 6,
+      "color": [
+        255,
+        20,
+        147
+      ]
+    },
+    "paper": {
+      "cost": 2,
+      "color": [
+        255,
+        255,
+        255
+      ]
+    },
+    "integrated_circuits": {
+      "cost": 15,
+      "color": [
+        0,
+        0,
+        128
+      ]
+    },
+    "electronic_components": {
+      "cost": 12,
+      "color": [
+        70,
+        130,
+        180
       ]
     },
     "aerospace_parts": {
@@ -210,6 +287,14 @@
         235
       ]
     },
+    "machine_parts": {
+      "cost": 18,
+      "color": [
+        105,
+        105,
+        105
+      ]
+    },
     "ship_parts": {
       "cost": 30,
       "color": [
@@ -218,30 +303,70 @@
         128
       ]
     },
-    "high_tech": {
-      "cost": 50,
+    "computers": {
+      "cost": 25,
+      "color": [
+        0,
+        0,
+        0
+      ]
+    },
+    "automobiles": {
+      "cost": 20,
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    "clothes": {
+      "cost": 8,
+      "color": [
+        255,
+        192,
+        203
+      ]
+    },
+    "pharmaceuticals": {
+      "cost": 30,
       "color": [
         0,
         255,
-        255
+        0
       ]
     },
-    "services": {
-      "cost": 30,
+    "communication": {
+      "cost": 15,
       "color": [
-        255,
-        105,
-        180
+        0,
+        128,
+        128
+      ]
+    },
+    "transport": {
+      "cost": 20,
+      "color": [
+        139,
+        0,
+        0
       ]
     }
   },
   "military_goods": {
-    "military_products": {
-      "cost": 1.25,
+    "ammunition": {
+      "cost": 5,
       "color": [
-        0,
         128,
+        0,
         0
+      ]
+    },
+    "weaponry": {
+      "cost": 20,
+      "color": [
+        139,
+        69,
+        19
       ]
     },
     "refined_uranium": {
@@ -258,6 +383,30 @@
         255,
         215,
         0
+      ]
+    },
+    "armoured_vehicles": {
+      "cost": 50,
+      "color": [
+        85,
+        107,
+        47
+      ]
+    },
+    "ships": {
+      "cost": 100,
+      "color": [
+        0,
+        0,
+        255
+      ]
+    },
+    "aeroplanes": {
+      "cost": 150,
+      "color": [
+        135,
+        206,
+        250
       ]
     }
   }

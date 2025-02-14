@@ -1,0 +1,28 @@
+{
+    "color": [
+        75,
+        193,
+        237
+    ],
+    "standard_demands": {
+        "grain": 1.5,
+        "fish": 0.5,
+        "vegetables": 0.5,
+        "meat": 0.55,
+        "fruit": 0.5,
+        "clothes": 0.5,
+        "pharmaceuticals": 0.25,
+        "wood": 2,
+        "electricity": 0.5,
+        "cement": 0.5,
+        "fuel": 0.2,
+        "paper": 0.1,
+        "communication": 0.5,
+        "transport": 0.25,
+        "gas": 0.1
+    },
+    "luxury_demands": {
+        "automobiles": 0.5,
+        "computers": 0.03
+    }
+}

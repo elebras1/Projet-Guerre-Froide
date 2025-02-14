@@ -52,53 +52,195 @@
         0
       ]
     },
-    "light_industry": {
-      "workforce": 50000,
-      "cost": 2000,
+    "cement_factory": {
+      "workforce": 5000,
+      "cost": 3000,
       "input_goods": {
-        "electricity": 0.5,
-        "wood": 2.5,
-        "iron": 1,
-        "precious_metals": 0.1
+        "iron": 2,
+        "coal": 1
       },
       "output_goods": {
-        "light_products": 1
+        "cement": 1
       },
       "max_level": 99,
-      "time": 200,
+      "time": 100,
       "color": [
-        255,
-        255,
-        0
+        128,
+        128,
+        128
       ]
     },
-    "heavy_industry": {
-      "workforce": 20000,
-      "cost": 2000,
+    "steel_factory": {
+      "workforce": 6000,
+      "cost": 4000,
       "input_goods": {
-        "electricity": 3,
         "iron": 3,
         "coal": 2
       },
       "output_goods": {
-        "heavy_components": 1
+        "steel": 1
       },
       "max_level": 99,
-      "time": 200,
+      "time": 150,
       "color": [
-        139,
-        69,
-        19
+        105,
+        105,
+        105
       ]
     },
-    "aviation_industry": {
-      "workforce": 10000,
+    "aluminium_factory": {
+      "workforce": 5500,
+      "cost": 3500,
+      "input_goods": {
+        "inorganic_chemicals": 2,
+        "electricity": 4
+      },
+      "output_goods": {
+        "aluminium": 1
+      },
+      "max_level": 99,
+      "time": 120,
+      "color": [
+        205,
+        205,
+        205
+      ]
+    },
+    "glass_factory": {
+      "workforce": 4000,
+      "cost": 2500,
+      "input_goods": {
+        "inorganic_chemicals": 1,
+        "electricity": 2
+      },
+      "output_goods": {
+        "glass": 1
+      },
+      "max_level": 99,
+      "time": 100,
+      "color": [
+        255,
+        255,
+        240
+      ]
+    },
+    "inorganic_chemicals_factory": {
+      "workforce": 4500,
+      "cost": 3000,
+      "input_goods": {
+        "coal": 2,
+        "oil": 1
+      },
+      "output_goods": {
+        "inorganic_chemicals": 1
+      },
+      "max_level": 99,
+      "time": 110,
+      "color": [
+        128,
+        0,
+        128
+      ]
+    },
+    "fabric_factory": {
+      "workforce": 3000,
       "cost": 2000,
       "input_goods": {
-        "electricity": 2,
-        "fuel": 2,
-        "rare_metals": 3,
-        "light_products": 0.3
+        "wood": 3,
+        "electricity": 1
+      },
+      "output_goods": {
+        "fabric": 1
+      },
+      "max_level": 99,
+      "time": 90,
+      "color": [
+        255,
+        228,
+        196
+      ]
+    },
+    "plastics_factory": {
+      "workforce": 5000,
+      "cost": 3500,
+      "input_goods": {
+        "oil": 2,
+        "electricity": 2
+      },
+      "output_goods": {
+        "plastics": 1
+      },
+      "max_level": 99,
+      "time": 130,
+      "color": [
+        255,
+        20,
+        147
+      ]
+    },
+    "paper_factory": {
+      "workforce": 3500,
+      "cost": 2500,
+      "input_goods": {
+        "wood": 4,
+        "electricity": 1
+      },
+      "output_goods": {
+        "paper": 1
+      },
+      "max_level": 99,
+      "time": 100,
+      "color": [
+        255,
+        255,
+        255
+      ]
+    },
+    "integrated_circuits_factory": {
+      "workforce": 7000,
+      "cost": 5000,
+      "input_goods": {
+        "rare_metals": 1,
+        "electricity": 5,
+        "plastics": 0.5
+      },
+      "output_goods": {
+        "integrated_circuits": 1
+      },
+      "max_level": 99,
+      "time": 180,
+      "color": [
+        0,
+        0,
+        128
+      ]
+    },
+    "electronic_components_factory": {
+      "workforce": 6000,
+      "cost": 4500,
+      "input_goods": {
+        "integrated_circuits": 0.5,
+        "plastics": 1,
+        "electricity": 3
+      },
+      "output_goods": {
+        "electronic_components": 1
+      },
+      "max_level": 99,
+      "time": 150,
+      "color": [
+        70,
+        130,
+        180
+      ]
+    },
+    "aerospace_parts_factory": {
+      "workforce": 8000,
+      "cost": 6000,
+      "input_goods": {
+        "aluminium": 2,
+        "electronic_components": 1,
+        "electricity": 4
       },
       "output_goods": {
         "aerospace_parts": 1
@@ -106,109 +248,172 @@
       "max_level": 99,
       "time": 200,
       "color": [
-        0,
-        255,
-        255
+        135,
+        206,
+        235
       ]
     },
-    "naval_yards": {
-      "workforce": 10000,
-      "cost": 2000,
+    "machine_parts_factory": {
+      "workforce": 5500,
+      "cost": 4000,
       "input_goods": {
-        "electricity": 3,
-        "heavy_components": 0.75,
-        "fuel": 1,
-        "rare_metals": 0.2
+        "steel": 2,
+        "electricity": 3
+      },
+      "output_goods": {
+        "machine_parts": 1
+      },
+      "max_level": 99,
+      "time": 140,
+      "color": [
+        105,
+        105,
+        105
+      ]
+    },
+    "ship_parts_factory": {
+      "workforce": 7500,
+      "cost": 5000,
+      "input_goods": {
+        "steel": 3,
+        "electronic_components": 2,
+        "electricity": 5
       },
       "output_goods": {
         "ship_parts": 1
       },
       "max_level": 99,
-      "time": 250,
+      "time": 220,
       "color": [
         0,
         0,
-        139
+        128
       ]
     },
-    "high_tech_industry": {
-      "workforce": 5000,
-      "cost": 2000,
+    "computers_factory": {
+      "workforce": 7000,
+      "cost": 6000,
       "input_goods": {
-        "electricity": 5,
-        "fuel": 4,
-        "rare_metals": 3,
-        "precious_metals": 0.7
+        "integrated_circuits": 1,
+        "electronic_components": 2,
+        "plastics": 1,
+        "electricity": 4
       },
       "output_goods": {
-        "high_tech": 1
+        "computers": 1
       },
       "max_level": 99,
-      "time": 10,
+      "time": 180,
+      "color": [
+        0,
+        0,
+        0
+      ]
+    },
+    "automobiles_factory": {
+      "workforce": 8500,
+      "cost": 7000,
+      "input_goods": {
+        "steel": 2,
+        "machine_parts": 1,
+        "electronic_components": 1,
+        "plastics": 2,
+        "electricity": 3
+      },
+      "output_goods": {
+        "automobiles": 1
+      },
+      "max_level": 99,
+      "time": 200,
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    "clothes_factory": {
+      "workforce": 4000,
+      "cost": 2500,
+      "input_goods": {
+        "fabric": 3,
+        "electricity": 1
+      },
+      "output_goods": {
+        "clothes": 1
+      },
+      "max_level": 99,
+      "time": 90,
+      "color": [
+        255,
+        192,
+        203
+      ]
+    },
+    "pharmaceuticals_factory": {
+      "workforce": 6000,
+      "cost": 4500,
+      "input_goods": {
+        "inorganic_chemicals": 2,
+        "fabric": 1,
+        "electricity": 3
+      },
+      "output_goods": {
+        "pharmaceuticals": 1
+      },
+      "max_level": 99,
+      "time": 160,
       "color": [
         0,
         255,
         0
       ]
     },
-    "military_industry": {
-      "workforce": 10000,
-      "cost": 2000,
+    "communication_factory": {
+      "workforce": 6500,
+      "cost": 5000,
       "input_goods": {
-        "light_products": 0.5,
-        "heavy_components": 0.5
+        "electronic_components": 2,
+        "integrated_circuits": 1,
+        "plastics": 1,
+        "electricity": 4
       },
       "output_goods": {
-        "military_products": 12
+        "communication": 1
       },
       "max_level": 99,
-      "time": 3,
+      "time": 170,
       "color": [
-        169,
-        169,
-        169
-      ]
-    },
-    "centrifuges": {
-      "workforce": 1000,
-      "cost": 20000,
-      "input_goods": {
-        "heavy_components": 0.2,
-        "uranium": 7
-      },
-      "output_goods": {
-        "refined_uranium": 0.01
-      },
-      "max_level": 99,
-      "time": 1095,
-      "color": [
-        128,
         0,
+        128,
         128
       ]
     },
-    "satellites_factory": {
-      "workforce": 1000,
-      "cost": 2000,
+    "transport_factory": {
+      "workforce": 9000,
+      "cost": 8000,
       "input_goods": {
-        "high_tech": 1.5,
-        "electricity": 3,
-        "fuel": 5,
-        "military_products": 1.2
+        "automobiles": 1,
+        "machine_parts": 2,
+        "fuel": 3,
+        "electricity": 2
       },
       "output_goods": {
-        "military_satellites": 0.1
+        "transport": 1
       },
       "max_level": 99,
-      "time": 2,
+      "time": 240,
       "color": [
-        128,
+        139,
         0,
-        128
+        0
       ]
     }
   },
   "special_building": {
+    "administration": {
+      "cost": 5000,
+      "time": 365
+    },
     "military_academy": {
       "cost": 2000,
       "time": 730
@@ -270,22 +475,6 @@
         "industry_chemistry_cost": {
           "value": -0.01,
           "type": "technology_cost"
-        },
-        "industry_biology_cost": {
-          "value": -0.01,
-          "type": "technology_cost"
-        },
-        "industry_mathematics_cost": {
-          "value": -0.01,
-          "type": "technology_cost"
-        },
-        "industry_softwareengineering_cost": {
-          "value": -0.01,
-          "type": "technology_cost"
-        },
-        "industry_medicine_cost": {
-          "value": -0.01,
-          "type": "technology_cost"
         }
       }
     },
@@ -296,30 +485,14 @@
         "industry_agriculture_mechanized_cost": {
           "value": -0.2,
           "type": "technology_cost"
-        },
-        "industry_agriculture_fertilizer_cost": {
-          "value": -0.2,
-          "type": "technology_cost"
         }
       }
-    },
-    "naval_research_center": {
-      "cost": 2000,
-      "time": 3
     },
     "land_research_center": {
       "cost": 2000,
       "time": 3,
       "modifier": {
         "small_arms_cost": {
-          "value": -0.1,
-          "type": "technology_cost"
-        },
-        "light_artillery_cost": {
-          "value": -0.1,
-          "type": "technology_cost"
-        },
-        "anti_tank_cost": {
           "value": -0.1,
           "type": "technology_cost"
         }
@@ -331,14 +504,6 @@
       "modifier": {
         "aircraftavionics_cost": {
           "value": -0.1,
-          "type": "technology_cost"
-        },
-        "airframewing_speed_cost": {
-          "value": -0.1,
-          "type": "technology_cost"
-        },
-        "aircraftweapons_guns_cost": {
-          "value": -0.2,
           "type": "technology_cost"
         }
       }
@@ -394,7 +559,7 @@
       },
       "max_level": 10
     },
-    "infrastructure": {
+    "railway": {
       "onmap": false,
       "cost": 1000,
       "time": 365,
