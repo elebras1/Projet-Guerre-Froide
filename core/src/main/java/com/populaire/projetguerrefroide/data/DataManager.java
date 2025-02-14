@@ -14,9 +14,7 @@ import com.populaire.projetguerrefroide.economy.building.DevelopmentBuilding;
 import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
 import com.populaire.projetguerrefroide.economy.building.SpecialBuilding;
 import com.populaire.projetguerrefroide.economy.good.*;
-import com.populaire.projetguerrefroide.economy.population.PopulationType;
-import com.populaire.projetguerrefroide.economy.standardofliving.StandardOfLiving;
-import com.populaire.projetguerrefroide.economy.standardofliving.StandardOfLivingLevel;
+import com.populaire.projetguerrefroide.economy.population.PopulationTemplate;
 import com.populaire.projetguerrefroide.entity.*;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.national.*;
@@ -219,7 +217,7 @@ public class DataManager {
             JsonNode populationNode = rootNode.get("population_total");
             int amount = populationNode.get("amount").intValue();
             short template = populationNode.get("template").shortValue();
-            Population population = new Population(amount, gameEntities.getPopulationTypes().get(template));
+            Population population = new Population(amount, gameEntities.getPopulationTemplates().get(template));
 
             ObjectIntMap<Building> buildingsRegion;
             JsonNode buildingsNode = rootNode.get("economy_building");
@@ -582,8 +580,8 @@ public class DataManager {
         return goods;
     }
 
-    private IntObjectMap<PopulationType> readPopulationTypesJson() {
-        IntObjectMap<PopulationType> populationTypes = new IntObjectMap<>();
+    private IntObjectMap<PopulationTemplate> readPopulationTypesJson() {
+        IntObjectMap<PopulationTemplate> populationTemplates = new IntObjectMap<>();
         try {
             JsonNode populationTypesJson = this.openJson(this.populationTypesJsonFile);
             populationTypesJson.fields().forEachRemaining(entry -> {
@@ -592,13 +590,13 @@ public class DataManager {
                 float children = populationValuesTypeNode.get(0).floatValue();
                 float adults = populationValuesTypeNode.get(1).floatValue();
                 float seniors = populationValuesTypeNode.get(2).floatValue();
-                populationTypes.put(template, new PopulationType(template, children, adults, seniors));
+                populationTemplates.put(template, new PopulationTemplate(template, children, adults, seniors));
             });
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return populationTypes;
+        return populationTemplates;
     }
 
     private Map<String, MinisterType> readMinisterTypesJson() {

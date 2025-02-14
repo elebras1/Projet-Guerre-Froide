@@ -2,9 +2,9 @@ package com.populaire.projetguerrefroide.economy.population;
 
 public class Population {
     private final int amount;
-    private final PopulationType template;
+    private final PopulationTemplate template;
 
-    public Population(int amount, PopulationType template) {
+    public Population(int amount, PopulationTemplate template) {
         this.amount = amount;
         this.template = template;
     }

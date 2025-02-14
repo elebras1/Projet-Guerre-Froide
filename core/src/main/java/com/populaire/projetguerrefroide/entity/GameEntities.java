@@ -3,8 +3,7 @@ package com.populaire.projetguerrefroide.entity;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.economy.good.Good;
-import com.populaire.projetguerrefroide.economy.population.PopulationType;
-import com.populaire.projetguerrefroide.economy.standardofliving.StandardOfLiving;
+import com.populaire.projetguerrefroide.economy.population.PopulationTemplate;
 import com.populaire.projetguerrefroide.national.NationalIdeas;
 
 import java.util.Map;
@@ -16,17 +15,17 @@ public class GameEntities {
     private final Map<String, Good> goods;
     private final Map<String, Building> buildings;
     private final Map<String, MinisterType> ministerTypes;
-    private final IntObjectMap<PopulationType> populationTypes;
+    private final IntObjectMap<PopulationTemplate> populationTemplates;
     private final Map<String, Terrain> terrains;
 
-    public GameEntities(NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies, Map<String, Good> goods, Map<String, Building> buildings, Map<String, MinisterType> ministerTypes, IntObjectMap<PopulationType> populationTypes, Map<String, Terrain> terrains) {
+    public GameEntities(NationalIdeas nationalIdeas, Map<String, Government> governments, Map<String, Ideology> ideologies, Map<String, Good> goods, Map<String, Building> buildings, Map<String, MinisterType> ministerTypes, IntObjectMap<PopulationTemplate> populationTemplates, Map<String, Terrain> terrains) {
         this.nationalIdeas = nationalIdeas;
         this.governments = governments;
         this.ideologies = ideologies;
         this.goods = goods;
         this.buildings = buildings;
         this.ministerTypes = ministerTypes;
-        this.populationTypes = populationTypes;
+        this.populationTemplates = populationTemplates;
         this.terrains = terrains;
     }
 
@@ -54,8 +53,8 @@ public class GameEntities {
         return ministerTypes;
     }
 
-    public IntObjectMap<PopulationType> getPopulationTypes() {
-        return populationTypes;
+    public IntObjectMap<PopulationTemplate> getPopulationTemplates() {
+        return populationTemplates;
     }
 
     public Map<String, Terrain> getTerrains() {

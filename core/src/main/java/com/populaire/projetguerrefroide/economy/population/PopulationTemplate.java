@@ -1,12 +1,12 @@
 package com.populaire.projetguerrefroide.economy.population;
 
-public class PopulationType {
+public class PopulationTemplate {
     private final short id;
     private final float children;
     private final float adults;
     private final float seniors;
 
-    public PopulationType(short id, float children, float adults, float seniors) {
+    public PopulationTemplate(short id, float children, float adults, float seniors) {
         this.id = id;
         this.children = children;
         this.adults = adults;
@@ -46,7 +46,7 @@ public class PopulationType {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PopulationType that = (PopulationType) obj;
+        PopulationTemplate that = (PopulationTemplate) obj;
         return this.id == that.id;
     }
 }
