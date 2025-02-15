@@ -643,6 +643,16 @@
         }
       }
     },
+    "naval_research_center": {
+      "cost": 2000,
+      "time": 3,
+      "modifier": {
+        "naval_engineering_cost": {
+          "value": -0.1,
+          "type": "technology_cost"
+        }
+      }
+    },
     "early_warning_site": {
       "cost": 3000,
       "time": 3
