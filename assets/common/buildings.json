@@ -407,6 +407,141 @@
         0,
         0
       ]
+    },
+    "ammunition_factory": {
+      "workforce": 5000,
+      "cost": 3000,
+      "input_goods": {
+        "steel": 1,
+        "inorganic_chemicals": 1
+      },
+      "output_goods": {
+        "ammunition": 1
+      },
+      "max_level": 99,
+      "time": 120,
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    "weaponry_factory": {
+      "workforce": 6000,
+      "cost": 4000,
+      "input_goods": {
+        "steel": 2,
+        "machine_parts": 1,
+        "inorganic_chemicals": 1
+      },
+      "output_goods": {
+        "weaponry": 1
+      },
+      "max_level": 99,
+      "time": 150,
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    "centrifuges": {
+      "workforce": 1500,
+      "cost": 2000,
+      "input_goods": {
+        "uranium": 6,
+        "electricity": 2,
+        "inorganic_chemicals": 1
+      },
+      "output_goods": {
+        "refined_uranium": 1
+      },
+      "max_level": 99,
+      "time": 200,
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    "military_satellites_factory": {
+      "workforce": 2000,
+      "cost": 2000,
+      "input_goods": {
+        "aerospace_parts": 1,
+        "fuel": 1,
+        "electronic_components": 2
+      },
+      "output_goods": {
+        "military_satellites": 1
+      },
+      "max_level": 99,
+      "time": 200,
+      "color": [
+        255,
+        215,
+        0
+      ]
+    },
+    "armoured_vehicles_factory": {
+      "workforce": 7000,
+      "cost": 5000,
+      "input_goods": {
+        "steel": 2,
+        "machine_parts": 1,
+        "electronic_components": 1,
+        "fuel": 2
+      },
+      "output_goods": {
+        "armoured_vehicles": 1
+      },
+      "max_level": 99,
+      "time": 200,
+      "color": [
+        85,
+        107,
+        47
+      ]
+    },
+    "ships_factory": {
+      "workforce": 8000,
+      "cost": 6000,
+      "input_goods": {
+        "steel": 3,
+        "electronic_components": 1,
+        "ship_parts": 1,
+        "fuel": 3
+      },
+      "output_goods": {
+        "ships": 1
+      },
+      "max_level": 99,
+      "time": 220,
+      "color": [
+        0,
+        0,
+        128
+      ]
+    },
+    "aeroplanes_factory": {
+      "workforce": 9000,
+      "cost": 7000,
+      "input_goods": {
+        "aluminium": 2,
+        "aerospace_parts": 1,
+        "electronic_components": 1,
+        "fuel": 3
+      },
+      "output_goods": {
+        "aeroplanes": 1
+      },
+      "max_level": 99,
+      "time": 240,
+      "color": [
+        0,
+        0,
+        255
+      ]
     }
   },
   "special_building": {
