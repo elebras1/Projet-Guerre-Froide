@@ -1,7 +1,8 @@
 {
   "economy_building": {
     "refinery": {
-      "workforce": 10000,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 2000,
       "input_goods": {
         "oil": 1
@@ -18,7 +19,8 @@
       ]
     },
     "powerplant": {
-      "workforce": 1000,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 2000,
       "input_goods": {
         "coal": 4,
@@ -36,7 +38,7 @@
       ]
     },
     "nuclear_plant": {
-      "workforce": 2000,
+      "base_template": "template_economy_advanced",
       "cost": 2000,
       "input_goods": {
         "uranium": 2
@@ -53,7 +55,8 @@
       ]
     },
     "cement_factory": {
-      "workforce": 5000,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 3000,
       "input_goods": {
         "iron": 2,
@@ -71,7 +74,8 @@
       ]
     },
     "steel_factory": {
-      "workforce": 6000,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 4000,
       "input_goods": {
         "iron": 3,
@@ -89,7 +93,8 @@
       ]
     },
     "aluminium_factory": {
-      "workforce": 5500,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 3500,
       "input_goods": {
         "inorganic_chemicals": 2,
@@ -107,7 +112,8 @@
       ]
     },
     "glass_factory": {
-      "workforce": 4000,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 2500,
       "input_goods": {
         "inorganic_chemicals": 1,
@@ -125,7 +131,7 @@
       ]
     },
     "inorganic_chemicals_factory": {
-      "workforce": 4500,
+      "base_template": "template_economy_advanced",
       "cost": 3000,
       "input_goods": {
         "coal": 2,
@@ -143,7 +149,8 @@
       ]
     },
     "fabric_factory": {
-      "workforce": 3000,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 2000,
       "input_goods": {
         "wood": 3,
@@ -161,7 +168,8 @@
       ]
     },
     "plastics_factory": {
-      "workforce": 5000,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 3500,
       "input_goods": {
         "oil": 2,
@@ -179,7 +187,8 @@
       ]
     },
     "paper_factory": {
-      "workforce": 3500,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 2500,
       "input_goods": {
         "wood": 4,
@@ -197,7 +206,7 @@
       ]
     },
     "integrated_circuits_factory": {
-      "workforce": 7000,
+      "base_template": "template_economy_advanced",
       "cost": 5000,
       "input_goods": {
         "rare_metals": 1,
@@ -216,7 +225,7 @@
       ]
     },
     "electronic_components_factory": {
-      "workforce": 6000,
+      "base_template": "template_economy_advanced",
       "cost": 4500,
       "input_goods": {
         "integrated_circuits": 0.5,
@@ -235,7 +244,7 @@
       ]
     },
     "aerospace_parts_factory": {
-      "workforce": 8000,
+      "base_template": "template_economy_advanced",
       "cost": 6000,
       "input_goods": {
         "aluminium": 2,
@@ -254,7 +263,8 @@
       ]
     },
     "machine_parts_factory": {
-      "workforce": 5500,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 4000,
       "input_goods": {
         "steel": 2,
@@ -272,7 +282,7 @@
       ]
     },
     "ship_parts_factory": {
-      "workforce": 7500,
+      "base_template": "template_economy_advanced",
       "cost": 5000,
       "input_goods": {
         "steel": 3,
@@ -291,7 +301,7 @@
       ]
     },
     "computers_factory": {
-      "workforce": 7000,
+      "base_template": "template_economy_advanced",
       "cost": 6000,
       "input_goods": {
         "integrated_circuits": 1,
@@ -311,7 +321,8 @@
       ]
     },
     "automobiles_factory": {
-      "workforce": 8500,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 7000,
       "input_goods": {
         "steel": 2,
@@ -332,7 +343,8 @@
       ]
     },
     "clothes_factory": {
-      "workforce": 4000,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 2500,
       "input_goods": {
         "fabric": 3,
@@ -350,7 +362,7 @@
       ]
     },
     "pharmaceuticals_factory": {
-      "workforce": 6000,
+      "base_template": "template_economy_advanced",
       "cost": 4500,
       "input_goods": {
         "inorganic_chemicals": 2,
@@ -369,7 +381,7 @@
       ]
     },
     "communication_factory": {
-      "workforce": 6500,
+      "base_template": "template_economy_advanced",
       "cost": 5000,
       "input_goods": {
         "electronic_components": 2,
@@ -389,7 +401,7 @@
       ]
     },
     "transport_factory": {
-      "workforce": 9000,
+      "base_template": "template_economy",
       "cost": 8000,
       "input_goods": {
         "automobiles": 1,
@@ -409,7 +421,8 @@
       ]
     },
     "ammunition_factory": {
-      "workforce": 5000,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 3000,
       "input_goods": {
         "steel": 1,
@@ -427,7 +440,8 @@
       ]
     },
     "weaponry_factory": {
-      "workforce": 6000,
+      "base_template": "template_economy",
+      "artisans_template": "template_economy_artisan",
       "cost": 4000,
       "input_goods": {
         "steel": 2,
@@ -446,7 +460,7 @@
       ]
     },
     "centrifuges": {
-      "workforce": 1500,
+      "base_template": "template_economy_advanced",
       "cost": 2000,
       "input_goods": {
         "uranium": 6,
@@ -465,7 +479,7 @@
       ]
     },
     "military_satellites_factory": {
-      "workforce": 2000,
+      "base_template": "template_economy_advanced",
       "cost": 2000,
       "input_goods": {
         "aerospace_parts": 1,
@@ -484,7 +498,7 @@
       ]
     },
     "armoured_vehicles_factory": {
-      "workforce": 7000,
+      "base_template": "template_economy_advanced",
       "cost": 5000,
       "input_goods": {
         "steel": 2,
@@ -504,7 +518,7 @@
       ]
     },
     "ships_factory": {
-      "workforce": 8000,
+      "base_template": "template_economy_advanced",
       "cost": 6000,
       "input_goods": {
         "steel": 3,
@@ -524,7 +538,7 @@
       ]
     },
     "aeroplanes_factory": {
-      "workforce": 9000,
+      "base_template": "template_economy_advanced",
       "cost": 7000,
       "input_goods": {
         "aluminium": 2,

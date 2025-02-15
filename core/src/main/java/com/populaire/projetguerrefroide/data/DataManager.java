@@ -8,11 +8,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.tommyettinger.ds.*;
+import com.populaire.projetguerrefroide.economy.building.*;
 import com.populaire.projetguerrefroide.economy.population.Population;
-import com.populaire.projetguerrefroide.economy.building.Building;
-import com.populaire.projetguerrefroide.economy.building.DevelopmentBuilding;
-import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
-import com.populaire.projetguerrefroide.economy.building.SpecialBuilding;
 import com.populaire.projetguerrefroide.economy.good.*;
 import com.populaire.projetguerrefroide.economy.population.PopulationTemplate;
 import com.populaire.projetguerrefroide.economy.population.PopulationType;
@@ -48,6 +45,7 @@ public class DataManager {
     private final String goodsJsonFile = this.commonPath + "goods.json";
     private final String populationTemplatesJsonFile = this.commonPath + "population_templates.json";
     private final String ministerTypesJsonFile = this.commonPath + "minister_types.json";
+    private final String buildingsTemplatesJsonFile = this.commonPath + "buildings_templates.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
     private final String populationTypesJsonFile = this.commonPath + "poptypes.json";
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
@@ -60,8 +58,9 @@ public class DataManager {
         Map<String, Government> governments = this.readGovernmentsJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
         Map<String, Good> goods = this.readGoodsJson();
-        Map<String, Building> buildings = this.readBuildingsJson(goods);
         Map<String, PopulationType> populationTypes = this.readPopulationTypesJson(goods);
+        Map<String, BuildingTemplate> buildingTemplates = this.readBuildingTemplatesJson(populationTypes);
+        Map<String, Building> buildings = this.readBuildingsJson(goods, buildingTemplates);
         Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
         Map<String, Terrain> terrains = this.readTerrainsJson();
         return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, populationTypes, ministerTypes, this.readPopulationTemplatesJson(), terrains);
@@ -255,7 +254,7 @@ public class DataManager {
             LandProvince province = new LandProvince(provinceId, countryOwner, countryController, population, provinceTerrain, countriesCore, good, goodValue, buildingsProvince);
             countryOwner.addProvince(province);
             return province;
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
@@ -636,7 +635,40 @@ public class DataManager {
         return terrains;
     }
 
-    private Map<String, Building> readBuildingsJson(Map<String, Good> goods) {
+    private Map<String, BuildingTemplate> readBuildingTemplatesJson(Map<String, PopulationType> populationTypes) {
+        Map<String, BuildingTemplate> buildingTemplates = new ObjectObjectMap<>();
+        try {
+            JsonNode buildingTemplatesJson = this.openJson(this.buildingsTemplatesJsonFile);
+            JsonNode templateEmployeesNode = buildingTemplatesJson.get("templates_employees");
+            Map<String, Employee> templateEmployees = new ObjectObjectMap<>();
+            templateEmployeesNode.fields().forEachRemaining(entry -> {
+                String templateName = entry.getKey();
+                PopulationType populationType = populationTypes.get(entry.getValue().get("poptype").asText());
+                float amount = entry.getValue().get("amount").floatValue();
+                float effectMultiplier = entry.getValue().get("effect_multiplier").floatValue();
+                templateEmployees.put(templateName, new Employee(populationType, amount, effectMultiplier));
+            });
+
+            JsonNode templateBuildings = buildingTemplatesJson.get("templates_buildings");
+            templateBuildings.fields().forEachRemaining(entry -> {
+                String templateName = entry.getKey();
+                short workforce = entry.getValue().get("workforce").shortValue();
+                PopulationType owner = populationTypes.get(entry.getValue().get("owner").get("poptype").asText());
+                List<Employee> employees = new ObjectList<>();
+                entry.getValue().get("employees").forEach(employee -> {
+                    String employeeName = employee.asText();
+                    employees.add(templateEmployees.get(employeeName));
+                });
+                buildingTemplates.put(templateName, new BuildingTemplate(workforce, owner, employees));
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return buildingTemplates;
+    }
+
+    private Map<String, Building> readBuildingsJson(Map<String, Good> goods, Map<String, BuildingTemplate> buildingTemplates) {
         Map<String, Building> buildings = new ObjectObjectMap<>();
         try {
             JsonNode buildingsJson = this.openJson(this.buildingsJsonFile);
@@ -645,7 +677,11 @@ public class DataManager {
                 String buildingName = entry.getKey();
                 int cost = entry.getValue().get("cost").intValue();
                 short time = entry.getValue().get("time").shortValue();
-                int workforce = entry.getValue().get("workforce").intValue();
+                BuildingTemplate baseTemplate = buildingTemplates.get(entry.getValue().get("base_template").asText());
+                BuildingTemplate artisansTemplate = null;
+                if(entry.getValue().has("artisans_template")) {
+                    artisansTemplate = buildingTemplates.get(entry.getValue().get("artisans_template").asText());
+                }
                 int color = this.parseColor(entry.getValue().get("color"));
                 short maxLevel = entry.getValue().get("max_level").shortValue();
                 JsonNode inputGoodsNode = entry.getValue().get("input_goods");
@@ -660,7 +696,7 @@ public class DataManager {
                     Good good = goods.get(outputGood.getKey());
                     outputGoods.put(good, outputGood.getValue().asInt());
                 });
-                buildings.put(buildingName, new EconomyBuilding(buildingName, cost, time, workforce, inputGoods, outputGoods, maxLevel, color));
+                buildings.put(buildingName, new EconomyBuilding(baseTemplate, artisansTemplate, buildingName, cost, time, inputGoods, outputGoods, maxLevel, color));
             });
 
             JsonNode specialBuilding = buildingsJson.get("special_building");
@@ -719,7 +755,7 @@ public class DataManager {
             populationTypesJson.fields().forEachRemaining(entry -> {
                 this.readPopulationTypeJson(this.commonPath + entry.getValue().asText(), entry.getKey(), goods, populationTypes);
             });
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -745,7 +781,7 @@ public class DataManager {
                 luxuryDemands.put(good, value);
             });
             populationTypes.put(name, new PopulationType(color, name, standardDemands, luxuryDemands));
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

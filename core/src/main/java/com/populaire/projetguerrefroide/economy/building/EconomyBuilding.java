@@ -5,23 +5,29 @@ import com.populaire.projetguerrefroide.economy.good.Good;
 import java.util.Map;
 
 public class EconomyBuilding extends Building {
-    private final int workforce;
+    private final BuildingTemplate baseTemplate;
+    private final BuildingTemplate artisansTemplate;
     private final Map<Good, Integer> inputGoods;
     private final Map<Good, Integer> outputGoods;
     private final short maxLevel;
     private final int color;
 
-    public EconomyBuilding(String name, int cost, short time, int workforce, Map<Good, Integer> inputGoods, Map<Good, Integer> outputGoods, short maxLevel, int color) {
+    public EconomyBuilding(BuildingTemplate baseTemplate, BuildingTemplate artisansTemplate, String name, int cost, short time, Map<Good, Integer> inputGoods, Map<Good, Integer> outputGoods, short maxLevel, int color) {
         super(name, cost, time);
-        this.workforce = workforce;
+        this.baseTemplate = baseTemplate;
+        this.artisansTemplate = artisansTemplate;
         this.inputGoods = inputGoods;
         this.outputGoods = outputGoods;
         this.maxLevel = maxLevel;
         this.color = color;
     }
 
-    public int getWorkforce() {
-        return this.workforce;
+    public BuildingTemplate getBaseTemplate() {
+        return this.baseTemplate;
+    }
+
+    public BuildingTemplate getArtisansTemplate() {
+        return this.artisansTemplate;
     }
 
     public Map<Good, Integer> getInputGoods() {
@@ -47,7 +53,8 @@ public class EconomyBuilding extends Building {
             ", cost=" + this.getCost() +
             ", time=" + this.getTime() +
             ", onMap=" + this.isOnMap() +
-            ", workforce=" + this.workforce +
+            ", baseTemplate=" + this.baseTemplate +
+            ", artisansTemplate=" + this.artisansTemplate +
             ", inputGoods=" + this.inputGoods +
             ", outputGoods=" + this.outputGoods +
             ", maxLevel=" + this.maxLevel +
