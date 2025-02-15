@@ -2,10 +2,6 @@
     "owner": "FIN",
     "controller": "FIN",
     "add_core": "FIN",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 4
-    },
     "population_total": {
         "amount": 90337,
         "template": 53
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 4
+        }
+    ]
 }

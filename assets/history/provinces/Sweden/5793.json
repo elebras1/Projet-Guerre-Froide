@@ -2,10 +2,6 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 43429,
         "template": 59
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 1
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "clothes_factory",
+            "size": 2
+        },
+        {
+            "name": "plastics_factory",
+            "size": 2
+        },
+        {
+            "name": "machine_parts_factory",
+            "size": 2
+        }
+    ]
 }

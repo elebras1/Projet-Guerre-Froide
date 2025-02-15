@@ -2,10 +2,6 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 442821,
         "template": 8
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         },
         {
@@ -24,5 +20,11 @@
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "fabric_factory",
+            "size": 4
+        }
+    ]
 }

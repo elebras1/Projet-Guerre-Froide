@@ -2,10 +2,6 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 1
-    },
     "population_total": {
         "amount": 112682,
         "template": 79
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 1
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 47218,
         "template": 94
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "steel_factory",
+            "size": 4
+        },
+        {
+            "name": "glass_factory",
+            "size": 4
+        },
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 4
+        }
+    ]
 }

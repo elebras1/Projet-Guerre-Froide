@@ -2,10 +2,6 @@
     "owner": "GUA",
     "controller": "GUA",
     "add_core": "GUA",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 256038,
         "template": 76
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 1
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 1
+        }
+    ]
 }

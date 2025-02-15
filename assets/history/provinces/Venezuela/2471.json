@@ -2,10 +2,6 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 5
-    },
     "population_total": {
         "amount": 128575,
         "template": 91
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 7
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 7
+        }
+    ]
 }

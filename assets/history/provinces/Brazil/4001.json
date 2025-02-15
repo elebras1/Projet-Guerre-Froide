@@ -2,10 +2,6 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 129835,
         "template": 77
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 2
+        },
+        {
+            "name": "glass_factory",
+            "size": 2
+        },
+        {
+            "name": "cement_factory",
+            "size": 2
+        }
+    ]
 }

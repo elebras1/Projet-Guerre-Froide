@@ -5,10 +5,6 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "economy_building": {
-        "name": "aviation_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 492447,
         "template": 47
@@ -19,9 +15,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "aeroplanes_factory",
+            "size": 1
+        }
+    ]
 }

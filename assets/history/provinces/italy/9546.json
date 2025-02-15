@@ -2,10 +2,6 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 5
-    },
     "population_total": {
         "amount": 146233,
         "template": 64
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "steel_factory",
+            "size": 6
+        },
+        {
+            "name": "cement_factory",
+            "size": 6
+        }
+    ]
 }

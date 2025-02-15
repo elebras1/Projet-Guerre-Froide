@@ -2,10 +2,6 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "economy_building": {
-        "name": "refinery",
-        "size": 3
-    },
     "population_total": {
         "amount": 70430,
         "template": 81
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 3
+        }
+    ]
 }

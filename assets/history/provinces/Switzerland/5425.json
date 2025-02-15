@@ -2,16 +2,6 @@
     "owner": "SCH",
     "controller": "SCH",
     "add_core": "SCH",
-    "economy_building": [
-        {
-            "name": "financial_district",
-            "size": 1
-        },
-        {
-            "name": "aviation_industry",
-            "size": 2
-        }
-    ],
     "population_total": {
         "amount": 1487001,
         "template": 74
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         },
         {
@@ -30,5 +20,15 @@
             "size": 5
         }
     ],
-    "terrain": "high_mountain"
+    "terrain": "high_mountain",
+    "economy_buildings": [
+        {
+            "name": "financial_district",
+            "size": 1
+        },
+        {
+            "name": "aeroplanes_factory",
+            "size": 3
+        }
+    ]
 }

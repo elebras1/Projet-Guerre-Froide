@@ -2,10 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "economy_building": {
-        "name": "intelligence_center",
-        "size": 1
-    },
     "population_total": {
         "amount": 491197,
         "template": 93
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "intelligence_center",
+            "size": 1
+        }
+    ]
 }

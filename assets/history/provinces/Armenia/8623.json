@@ -5,10 +5,6 @@
         "SOV",
         "ARM"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 217873,
         "template": 30
@@ -19,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 2
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 2
+        }
+    ]
 }

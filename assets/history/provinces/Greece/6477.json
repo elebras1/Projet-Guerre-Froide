@@ -2,10 +2,6 @@
     "owner": "GRE",
     "controller": "GRE",
     "add_core": "GRE",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 2
-    },
     "population_total": {
         "amount": 123064,
         "template": 63
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -24,5 +20,11 @@
             "size": 1
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 2
+        }
+    ]
 }

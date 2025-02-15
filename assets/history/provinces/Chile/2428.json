@@ -2,10 +2,6 @@
     "owner": "CHL",
     "controller": "CHL",
     "add_core": "CHL",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 1
-    },
     "population_total": {
         "amount": 182150,
         "template": 82
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 1
+        }
+    ]
 }

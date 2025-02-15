@@ -2,16 +2,6 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "military_industry",
-            "size": 4
-        }
-    ],
     "population_total": {
         "amount": 286372,
         "template": 59
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -30,5 +20,19 @@
             "size": 1
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "ammunition_factory",
+            "size": 2
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 2
+        }
+    ]
 }

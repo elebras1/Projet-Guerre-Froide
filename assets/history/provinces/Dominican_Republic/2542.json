@@ -2,10 +2,6 @@
     "owner": "DOM",
     "controller": "DOM",
     "add_core": "DOM",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 649573,
         "template": 75
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -28,5 +24,15 @@
             "size": 2
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "clothes_factory",
+            "size": 5
+        },
+        {
+            "name": "paper_factory",
+            "size": 5
+        }
+    ]
 }

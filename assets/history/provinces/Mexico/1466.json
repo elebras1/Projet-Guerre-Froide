@@ -2,10 +2,6 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 5
-    },
     "population_total": {
         "amount": 333180,
         "template": 81
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 4
+        }
+    ]
 }

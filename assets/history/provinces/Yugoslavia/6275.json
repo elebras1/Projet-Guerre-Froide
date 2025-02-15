@@ -5,10 +5,6 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "economy_building": {
-        "name": "aviation_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 684170,
         "template": 62
@@ -19,9 +15,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "aeroplanes_factory",
+            "size": 1
+        }
+    ]
 }

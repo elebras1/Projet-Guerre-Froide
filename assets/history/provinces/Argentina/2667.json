@@ -2,10 +2,6 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 207492,
         "template": 79
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 1
+        },
+        {
+            "name": "steel_factory",
+            "size": 1
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "BUL",
     "controller": "BUL",
     "add_core": "BUL",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 1869081,
         "template": 46
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,19 @@
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "cement_factory",
+            "size": 1
+        },
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 1
+        },
+        {
+            "name": "glass_factory",
+            "size": 1
+        }
+    ]
 }

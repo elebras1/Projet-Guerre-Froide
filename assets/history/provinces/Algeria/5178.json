@@ -5,10 +5,6 @@
         "FRA",
         "ALG"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 433183,
         "template": 3
@@ -19,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "desert"
+    "terrain": "desert",
+    "economy_buildings": [
+        {
+            "name": "plastics_factory",
+            "size": 4
+        },
+        {
+            "name": "machine_parts_factory",
+            "size": 4
+        }
+    ]
 }

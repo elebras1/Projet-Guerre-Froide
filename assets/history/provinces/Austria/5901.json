@@ -2,10 +2,6 @@
     "add_core": "AUS",
     "owner": "SOV",
     "controller": "SOV",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 6
-    },
     "population_total": {
         "amount": 799922,
         "template": 68
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 6
+        }
+    ]
 }

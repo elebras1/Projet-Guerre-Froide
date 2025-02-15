@@ -2,16 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "economy_building": [
-        {
-            "name": "air_research_center",
-            "size": 1
-        },
-        {
-            "name": "aviation_industry",
-            "size": 10
-        }
-    ],
     "population_total": {
         "amount": 41808,
         "template": 93
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         },
         {
@@ -30,5 +20,15 @@
             "size": 10
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "air_research_center",
+            "size": 1
+        },
+        {
+            "name": "aeroplanes_factory",
+            "size": 11
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "economy_building": {
-        "name": "financial_district",
-        "size": 1
-    },
     "population_total": {
         "amount": 2187833,
         "template": 60
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         },
         {
@@ -24,5 +20,11 @@
             "size": 3
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "financial_district",
+            "size": 1
+        }
+    ]
 }

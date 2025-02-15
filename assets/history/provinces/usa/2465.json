@@ -2,16 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "economy_building": [
-        {
-            "name": "financial_district",
-            "size": 1
-        },
-        {
-            "name": "powerplant",
-            "size": 9
-        }
-    ],
     "population_total": {
         "amount": 634808,
         "template": 93
@@ -22,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "financial_district",
+            "size": 1
+        },
+        {
+            "name": "powerplant",
+            "size": 9
+        }
+    ]
 }

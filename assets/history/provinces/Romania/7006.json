@@ -2,10 +2,6 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 3
-    },
     "population_total": {
         "amount": 316260,
         "template": 50
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 3
+        }
+    ]
 }

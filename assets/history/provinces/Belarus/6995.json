@@ -5,10 +5,6 @@
         "SOV",
         "BLR"
     ],
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 258340,
         "template": 45
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -27,5 +23,23 @@
             "size": 4
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 4
+        },
+        {
+            "name": "steel_factory",
+            "size": 4
+        },
+        {
+            "name": "aluminium_factory",
+            "size": 4
+        },
+        {
+            "name": "cement_factory",
+            "size": 4
+        }
+    ]
 }

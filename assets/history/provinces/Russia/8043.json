@@ -5,10 +5,6 @@
         "SOV",
         "RUS"
     ],
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 173811,
         "template": 45
@@ -19,9 +15,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "transport_factory",
+            "size": 5
+        },
+        {
+            "name": "communication_factory",
+            "size": 5
+        },
+        {
+            "name": "steel_factory",
+            "size": 5
+        },
+        {
+            "name": "cement_factory",
+            "size": 5
+        }
+    ]
 }

@@ -5,10 +5,6 @@
         "IDC",
         "LAO"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 106812,
         "template": 22
@@ -19,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 1
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 1
+        }
+    ]
 }

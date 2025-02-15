@@ -2,16 +2,6 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 3
-        }
-    ],
     "population_total": {
         "amount": 2304257,
         "template": 50
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         },
         {
@@ -30,5 +20,19 @@
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "paper_factory",
+            "size": 2
+        },
+        {
+            "name": "fabric_factory",
+            "size": 2
+        }
+    ]
 }

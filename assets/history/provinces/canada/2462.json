@@ -2,10 +2,6 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "economy_building": {
-        "name": "aviation_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 29435,
         "template": 92
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "aeroplanes_factory",
+            "size": 3
+        }
+    ]
 }

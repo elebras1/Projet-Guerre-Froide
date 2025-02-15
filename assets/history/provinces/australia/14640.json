@@ -2,10 +2,6 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 13692,
         "template": 94
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 2
+        }
+    ]
 }

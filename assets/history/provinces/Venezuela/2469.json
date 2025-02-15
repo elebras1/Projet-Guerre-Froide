@@ -2,10 +2,6 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 1
-    },
     "population_total": {
         "amount": 14269,
         "template": 91
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 1
+        }
+    ]
 }

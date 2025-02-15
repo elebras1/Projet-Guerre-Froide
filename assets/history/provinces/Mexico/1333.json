@@ -2,16 +2,6 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "economy_building": [
-        {
-            "name": "financial_district",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 1
-        }
-    ],
     "population_total": {
         "amount": 6358207,
         "template": 81
@@ -22,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "financial_district",
+            "size": 1
+        },
+        {
+            "name": "paper_factory",
+            "size": 1
+        }
+    ]
 }

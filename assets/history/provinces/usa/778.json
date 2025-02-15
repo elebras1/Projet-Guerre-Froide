@@ -2,17 +2,13 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 8
-    },
     "population_total": {
         "amount": 46346,
         "template": 93
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         },
         {
@@ -20,5 +16,15 @@
             "size": 8
         }
     ],
-    "terrain": "desert"
+    "terrain": "desert",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 10
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 10
+        }
+    ]
 }

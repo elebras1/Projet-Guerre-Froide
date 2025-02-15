@@ -5,10 +5,6 @@
         "KOR",
         "PRK"
     ],
-    "economy_building": {
-        "name": "powerplant",
-        "size": 5
-    },
     "population_total": {
         "amount": 205124,
         "template": 7
@@ -19,9 +15,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 5
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 104309,
         "template": 66
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 6
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 2
-    },
     "population_total": {
         "amount": 244529,
         "template": 77
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 2
+        }
+    ]
 }

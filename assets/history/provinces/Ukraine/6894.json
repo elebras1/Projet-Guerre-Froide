@@ -5,10 +5,6 @@
     ],
     "owner": "SOV",
     "controller": "SOV",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 156765,
         "template": 45
@@ -19,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "marsh"
+    "terrain": "marsh",
+    "economy_buildings": [
+        {
+            "name": "communication_factory",
+            "size": 3
+        },
+        {
+            "name": "aluminium_factory",
+            "size": 3
+        }
+    ]
 }

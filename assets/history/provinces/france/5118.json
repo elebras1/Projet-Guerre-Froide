@@ -2,10 +2,6 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 5
-    },
     "population_total": {
         "amount": 475646,
         "template": 70
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 5
+        }
+    ]
 }

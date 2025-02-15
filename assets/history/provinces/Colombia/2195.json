@@ -2,10 +2,6 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 203777,
         "template": 83
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "aluminium_factory",
+            "size": 3
+        },
+        {
+            "name": "transport_factory",
+            "size": 3
+        }
+    ]
 }

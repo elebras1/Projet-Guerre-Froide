@@ -5,10 +5,6 @@
         "SOV",
         "RUS"
     ],
-    "economy_building": {
-        "name": "air_research_center",
-        "size": 1
-    },
     "population_total": {
         "amount": 526607,
         "template": 45
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         },
         {
@@ -27,5 +23,11 @@
             "size": 3
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "air_research_center",
+            "size": 1
+        }
+    ]
 }

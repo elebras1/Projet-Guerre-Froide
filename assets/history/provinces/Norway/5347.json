@@ -2,10 +2,6 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 3243,
         "template": 58
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 6
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 6
+        }
+    ]
 }

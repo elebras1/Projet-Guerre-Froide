@@ -2,10 +2,6 @@
     "owner": "EGY",
     "controller": "EGY",
     "add_core": "EGY",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 3
-    },
     "population_total": {
         "amount": 52786,
         "template": 3
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,11 @@
             "size": 2
         }
     ],
-    "terrain": "desert"
+    "terrain": "desert",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 3
+        }
+    ]
 }

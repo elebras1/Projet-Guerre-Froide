@@ -2,16 +2,6 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "economy_building": [
-        {
-            "name": "national_monument",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 7
-        }
-    ],
     "population_total": {
         "amount": 6605725,
         "template": 70
@@ -22,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "national_monument",
+            "size": 1
+        },
+        {
+            "name": "plastics_factory",
+            "size": 7
+        },
+        {
+            "name": "paper_factory",
+            "size": 7
+        }
+    ]
 }

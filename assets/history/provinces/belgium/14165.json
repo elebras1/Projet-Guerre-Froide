@@ -5,19 +5,21 @@
         "BEL",
         "WLL"
     ],
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 7
-    },
     "population_total": {
         "amount": 383702,
         "template": 69
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 7
+        }
+    ]
 }

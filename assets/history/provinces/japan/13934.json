@@ -2,10 +2,6 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 9
-    },
     "population_total": {
         "amount": 1393526,
         "template": 8
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         },
         {
@@ -24,5 +20,11 @@
             "size": 3
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 8
+        }
+    ]
 }

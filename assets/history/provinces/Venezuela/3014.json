@@ -2,10 +2,6 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 49393,
         "template": 91
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "glass_factory",
+            "size": 2
+        },
+        {
+            "name": "steel_factory",
+            "size": 2
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 96581,
         "template": 83
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 1
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 1
+        }
+    ]
 }

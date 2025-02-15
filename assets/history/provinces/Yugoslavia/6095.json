@@ -5,10 +5,6 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 1
-    },
     "population_total": {
         "amount": 689551,
         "template": 62
@@ -19,9 +15,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 1
+        }
+    ]
 }

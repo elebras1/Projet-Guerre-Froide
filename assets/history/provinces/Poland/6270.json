@@ -2,16 +2,6 @@
     "add_core": "POL",
     "owner": "POL",
     "controller": "POL",
-    "economy_building": [
-        {
-            "name": "university",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 2
-        }
-    ],
     "population_total": {
         "amount": 776578,
         "template": 49
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         },
         {
@@ -30,5 +20,19 @@
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "university",
+            "size": 1
+        },
+        {
+            "name": "clothes_factory",
+            "size": 4
+        },
+        {
+            "name": "paper_factory",
+            "size": 4
+        }
+    ]
 }

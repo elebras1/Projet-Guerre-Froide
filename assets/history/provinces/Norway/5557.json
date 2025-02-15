@@ -2,10 +2,6 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 5
-    },
     "population_total": {
         "amount": 99169,
         "template": 58
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 5
+        }
+    ]
 }

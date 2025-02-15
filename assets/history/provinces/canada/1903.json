@@ -2,19 +2,21 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 1
-    },
     "population_total": {
         "amount": 30579,
         "template": 92
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 1
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "economy_building": {
-        "name": "naval_research_center",
-        "size": 1
-    },
     "population_total": {
         "amount": 697263,
         "template": 73
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "naval_research_center",
+            "size": 1
+        }
+    ]
 }

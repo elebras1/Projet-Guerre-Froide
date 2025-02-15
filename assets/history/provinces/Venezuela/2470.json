@@ -2,10 +2,6 @@
     "owner": "VEN",
     "controller": "VEN",
     "add_core": "VEN",
-    "economy_building": {
-        "name": "refinery",
-        "size": 6
-    },
     "population_total": {
         "amount": 73885,
         "template": 91
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 6
+        }
+    ]
 }

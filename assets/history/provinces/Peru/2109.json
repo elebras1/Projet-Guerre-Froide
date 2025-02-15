@@ -2,10 +2,6 @@
     "owner": "PRU",
     "controller": "PRU",
     "add_core": "PRU",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 133922,
         "template": 88
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 2
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 2
+        }
+    ]
 }

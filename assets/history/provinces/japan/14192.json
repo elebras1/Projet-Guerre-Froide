@@ -2,16 +2,6 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "economy_building": [
-        {
-            "name": "financial_district",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 5
-        }
-    ],
     "population_total": {
         "amount": 15432232,
         "template": 8
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 9
         },
         {
@@ -34,5 +24,23 @@
             "size": 8
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "financial_district",
+            "size": 1
+        },
+        {
+            "name": "machine_parts_factory",
+            "size": 6
+        },
+        {
+            "name": "plastics_factory",
+            "size": 6
+        },
+        {
+            "name": "fabric_factory",
+            "size": 6
+        }
+    ]
 }

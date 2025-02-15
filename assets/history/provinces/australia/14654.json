@@ -2,10 +2,6 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "economy_building": {
-        "name": "refinery",
-        "size": 2
-    },
     "population_total": {
         "amount": 766,
         "template": 94
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 2
+        }
+    ]
 }

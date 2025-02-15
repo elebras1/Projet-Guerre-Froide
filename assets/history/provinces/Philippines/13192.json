@@ -2,10 +2,6 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "economy_building": {
-        "name": "military_academy",
-        "size": 1
-    },
     "population_total": {
         "amount": 335172,
         "template": 25
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        }
+    ]
 }

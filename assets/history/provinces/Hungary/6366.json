@@ -2,10 +2,6 @@
     "add_core": "HUN",
     "owner": "HUN",
     "controller": "HUN",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 900098,
         "template": 48
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "communication_factory",
+            "size": 1
+        },
+        {
+            "name": "automobiles_factory",
+            "size": 1
+        },
+        {
+            "name": "steel_factory",
+            "size": 1
+        }
+    ]
 }

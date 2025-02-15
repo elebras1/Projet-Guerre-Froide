@@ -2,10 +2,6 @@
     "owner": "SCH",
     "controller": "SCH",
     "add_core": "SCH",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 7
-    },
     "population_total": {
         "amount": 370168,
         "template": 74
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "high_mountain"
+    "terrain": "high_mountain",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 7
+        }
+    ]
 }

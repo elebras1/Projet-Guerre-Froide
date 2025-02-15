@@ -2,23 +2,13 @@
     "owner": "SAU",
     "controller": "SAU",
     "add_core": "SAU",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "military_industry",
-            "size": 3
-        }
-    ],
     "population_total": {
         "amount": 17709,
         "template": 40
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         },
         {
@@ -26,5 +16,15 @@
             "size": 2
         }
     ],
-    "terrain": "desert"
+    "terrain": "desert",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 5
+        }
+    ]
 }

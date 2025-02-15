@@ -2,10 +2,6 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "economy_building": {
-        "name": "refinery",
-        "size": 6
-    },
     "population_total": {
         "amount": 1342239,
         "template": 50
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 6
+        }
+    ]
 }

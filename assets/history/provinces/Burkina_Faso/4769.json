@@ -5,10 +5,6 @@
         "FRA",
         "BKN"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 365250,
         "template": 5
@@ -19,9 +15,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "machine_parts_factory",
+            "size": 1
+        },
+        {
+            "name": "fabric_factory",
+            "size": 1
+        },
+        {
+            "name": "plastics_factory",
+            "size": 1
+        }
+    ]
 }

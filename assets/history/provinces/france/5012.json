@@ -2,10 +2,6 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "economy_building": {
-        "name": "financial_district",
-        "size": 1
-    },
     "population_total": {
         "amount": 356989,
         "template": 70
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         },
         {
@@ -24,5 +20,11 @@
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "financial_district",
+            "size": 1
+        }
+    ]
 }

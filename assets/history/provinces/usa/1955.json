@@ -2,10 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "economy_building": {
-        "name": "aviation_industry",
-        "size": 10
-    },
     "population_total": {
         "amount": 404515,
         "template": 93
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "aeroplanes_factory",
+            "size": 8
+        }
+    ]
 }

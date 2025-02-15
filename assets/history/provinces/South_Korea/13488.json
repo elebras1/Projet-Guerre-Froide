@@ -5,10 +5,6 @@
         "PRK",
         "KOR"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 747079,
         "template": 10
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         },
         {
@@ -27,5 +23,19 @@
             "size": 2
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "plastics_factory",
+            "size": 3
+        },
+        {
+            "name": "fabric_factory",
+            "size": 3
+        },
+        {
+            "name": "clothes_factory",
+            "size": 3
+        }
+    ]
 }

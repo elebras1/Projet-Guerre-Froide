@@ -2,10 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "economy_building": {
-        "name": "refinery",
-        "size": 10
-    },
     "population_total": {
         "amount": 949947,
         "template": 93
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 10
+        }
+    ]
 }

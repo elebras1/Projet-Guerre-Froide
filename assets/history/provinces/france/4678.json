@@ -2,10 +2,6 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "economy_building": {
-        "name": "military_academy",
-        "size": 1
-    },
     "population_total": {
         "amount": 614058,
         "template": 70
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -24,5 +20,11 @@
             "size": 3
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        }
+    ]
 }

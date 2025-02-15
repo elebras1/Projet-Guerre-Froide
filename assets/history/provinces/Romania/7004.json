@@ -2,10 +2,6 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 368970,
         "template": 50
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,15 @@
             "size": 4
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "machine_parts_factory",
+            "size": 3
+        },
+        {
+            "name": "plastics_factory",
+            "size": 3
+        }
+    ]
 }

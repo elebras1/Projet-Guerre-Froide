@@ -2,10 +2,6 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 577968,
         "template": 42
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "transport_factory",
+            "size": 1
+        },
+        {
+            "name": "cement_factory",
+            "size": 1
+        }
+    ]
 }

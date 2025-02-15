@@ -5,10 +5,6 @@
         "ENG",
         "PAK"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 430917,
         "template": 18
@@ -19,9 +15,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 1
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 6
-    },
     "population_total": {
         "amount": 306470,
         "template": 93
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "machine_parts_factory",
+            "size": 7
+        },
+        {
+            "name": "fabric_factory",
+            "size": 7
+        },
+        {
+            "name": "plastics_factory",
+            "size": 7
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "MON",
     "controller": "MON",
     "add_core": "MON",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 32367,
         "template": 9
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 3
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "FIN",
     "controller": "FIN",
     "add_core": "FIN",
-    "economy_building": {
-        "name": "aviation_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 117375,
         "template": 53
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "aeroplanes_factory",
+            "size": 3
+        }
+    ]
 }

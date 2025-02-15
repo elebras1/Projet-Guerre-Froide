@@ -5,10 +5,6 @@
     ],
     "owner": "USA",
     "controller": "USA",
-    "economy_building": {
-        "name": "university",
-        "size": 1
-    },
     "population_total": {
         "amount": 2617231,
         "template": 71
@@ -19,9 +15,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "university",
+            "size": 1
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "IRQ",
     "controller": "IRQ",
     "add_core": "IRQ",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 342877,
         "template": 33
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,11 @@
             "size": 4
         }
     ],
-    "terrain": "desert"
+    "terrain": "desert",
+    "economy_buildings": [
+        {
+            "name": "plastics_factory",
+            "size": 4
+        }
+    ]
 }

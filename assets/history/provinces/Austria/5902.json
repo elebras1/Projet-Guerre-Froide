@@ -2,10 +2,6 @@
     "add_core": "AUS",
     "owner": "SOV",
     "controller": "SOV",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 5
-    },
     "population_total": {
         "amount": 346085,
         "template": 68
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "paper_factory",
+            "size": 7
+        },
+        {
+            "name": "clothes_factory",
+            "size": 7
+        }
+    ]
 }

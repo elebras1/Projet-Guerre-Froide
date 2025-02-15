@@ -6,10 +6,6 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 5
-    },
     "population_total": {
         "amount": 368586,
         "template": 62
@@ -20,9 +16,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 6
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 6
+        }
+    ]
 }

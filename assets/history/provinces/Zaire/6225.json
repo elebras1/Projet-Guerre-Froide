@@ -6,10 +6,6 @@
         "DRC",
         "KON"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 141891,
         "template": 2
@@ -20,9 +16,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 1
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 1
+        }
+    ]
 }

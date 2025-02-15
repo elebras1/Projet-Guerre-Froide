@@ -2,10 +2,6 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 6
-    },
     "population_total": {
         "amount": 2712645,
         "template": 67
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         },
         {
@@ -24,5 +20,15 @@
             "size": 8
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "paper_factory",
+            "size": 6
+        },
+        {
+            "name": "plastics_factory",
+            "size": 6
+        }
+    ]
 }

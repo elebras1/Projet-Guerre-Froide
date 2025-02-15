@@ -2,10 +2,6 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "economy_building": {
-        "name": "aviation_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 55771,
         "template": 42
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "aeroplanes_factory",
+            "size": 3
+        }
+    ]
 }

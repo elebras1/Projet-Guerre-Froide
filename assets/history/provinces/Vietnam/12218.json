@@ -5,10 +5,6 @@
         "IDC",
         "DRV"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 345986,
         "template": 28
@@ -19,9 +15,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 3
+        }
+    ]
 }

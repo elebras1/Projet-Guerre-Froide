@@ -2,10 +2,6 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 4
-    },
     "population_total": {
         "amount": 50563,
         "template": 79
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 4
+        }
+    ]
 }

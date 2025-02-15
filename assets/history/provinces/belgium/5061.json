@@ -5,10 +5,6 @@
         "BEL",
         "FLA"
     ],
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 8
-    },
     "population_total": {
         "amount": 1337476,
         "template": 69
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -27,5 +23,15 @@
             "size": 4
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "glass_factory",
+            "size": 8
+        },
+        {
+            "name": "cement_factory",
+            "size": 8
+        }
+    ]
 }

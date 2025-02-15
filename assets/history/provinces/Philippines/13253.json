@@ -2,10 +2,6 @@
     "owner": "PHI",
     "controller": "PHI",
     "add_core": "PHI",
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 1
-    },
     "population_total": {
         "amount": 1240202,
         "template": 25
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 1
+        }
+    ]
 }

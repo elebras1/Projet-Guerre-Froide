@@ -2,16 +2,6 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 1
-        }
-    ],
     "population_total": {
         "amount": 1799956,
         "template": 42
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -30,5 +20,19 @@
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "clothes_factory",
+            "size": 3
+        },
+        {
+            "name": "fabric_factory",
+            "size": 3
+        }
+    ]
 }

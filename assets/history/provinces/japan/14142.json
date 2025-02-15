@@ -2,10 +2,6 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "economy_building": {
-        "name": "military_academy",
-        "size": 1
-    },
     "population_total": {
         "amount": 1725247,
         "template": 8
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         },
         {
@@ -24,5 +20,11 @@
             "size": 2
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        }
+    ]
 }

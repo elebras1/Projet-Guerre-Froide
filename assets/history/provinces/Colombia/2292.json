@@ -2,16 +2,6 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 4
-        }
-    ],
     "population_total": {
         "amount": 1516884,
         "template": 83
@@ -22,9 +12,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "plastics_factory",
+            "size": 3
+        },
+        {
+            "name": "paper_factory",
+            "size": 3
+        },
+        {
+            "name": "machine_parts_factory",
+            "size": 3
+        }
+    ]
 }

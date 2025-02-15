@@ -2,10 +2,6 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "economy_building": {
-        "name": "refinery",
-        "size": 2
-    },
     "population_total": {
         "amount": 144245,
         "template": 67
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 2
+        }
+    ]
 }

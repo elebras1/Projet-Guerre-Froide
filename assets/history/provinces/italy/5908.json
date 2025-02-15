@@ -2,10 +2,6 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "economy_building": {
-        "name": "naval_research_center",
-        "size": 1
-    },
     "population_total": {
         "amount": 639578,
         "template": 64
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -24,5 +20,11 @@
             "size": 1
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "naval_research_center",
+            "size": 1
+        }
+    ]
 }

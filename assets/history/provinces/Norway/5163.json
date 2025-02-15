@@ -2,16 +2,6 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "naval_yards",
-            "size": 7
-        }
-    ],
     "population_total": {
         "amount": 142472,
         "template": 58
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -30,5 +20,15 @@
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "ships_factory",
+            "size": 7
+        }
+    ]
 }

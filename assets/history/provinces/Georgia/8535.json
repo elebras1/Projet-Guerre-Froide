@@ -5,10 +5,6 @@
         "SOV",
         "GEO"
     ],
-    "economy_building": {
-        "name": "refinery",
-        "size": 1
-    },
     "population_total": {
         "amount": 1066780,
         "template": 30
@@ -19,9 +15,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 1
+        }
+    ]
 }

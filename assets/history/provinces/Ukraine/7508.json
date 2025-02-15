@@ -5,10 +5,6 @@
         "SOV",
         "UKR"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 238088,
         "template": 45
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -27,5 +23,15 @@
             "size": 3
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "clothes_factory",
+            "size": 3
+        },
+        {
+            "name": "paper_factory",
+            "size": 3
+        }
+    ]
 }

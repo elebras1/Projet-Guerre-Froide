@@ -6,10 +6,6 @@
         "ZIM",
         "RHO"
     ],
-    "economy_building": {
-        "name": "powerplant",
-        "size": 2
-    },
     "population_total": {
         "amount": 103250,
         "template": 1
@@ -20,9 +16,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 2
+        }
+    ]
 }

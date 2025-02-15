@@ -2,16 +2,6 @@
     "owner": "POL",
     "controller": "POL",
     "add_core": "POL",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "aviation_industry",
-            "size": 1
-        }
-    ],
     "population_total": {
         "amount": 568782,
         "template": 49
@@ -22,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "aeroplanes_factory",
+            "size": 3
+        }
+    ]
 }

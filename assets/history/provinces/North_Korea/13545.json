@@ -5,10 +5,6 @@
         "KOR",
         "PRK"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 5
-    },
     "population_total": {
         "amount": 212998,
         "template": 7
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         },
         {
@@ -31,5 +27,15 @@
             "size": 3
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 7
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 7
+        }
+    ]
 }

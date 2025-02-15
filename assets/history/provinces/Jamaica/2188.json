@@ -5,10 +5,6 @@
         "ENG",
         "JMC"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 644089,
         "template": 75
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -27,5 +23,15 @@
             "size": 2
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "plastics_factory",
+            "size": 1
+        },
+        {
+            "name": "fabric_factory",
+            "size": 1
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "NZL",
     "controller": "NZL",
     "add_core": "NZL",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 5
-    },
     "population_total": {
         "amount": 379073,
         "template": 95
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 5
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "CUB",
     "controller": "CUB",
     "add_core": "CUB",
-    "economy_building": {
-        "name": "refinery",
-        "size": 3
-    },
     "population_total": {
         "amount": 271348,
         "template": 75
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,11 @@
             "size": 2
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 3
+        }
+    ]
 }

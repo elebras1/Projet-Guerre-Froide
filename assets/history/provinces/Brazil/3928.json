@@ -2,10 +2,6 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "economy_building": {
-        "name": "financial_district",
-        "size": 1
-    },
     "population_total": {
         "amount": 140648,
         "template": 77
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "financial_district",
+            "size": 1
+        }
+    ]
 }

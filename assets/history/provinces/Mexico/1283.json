@@ -2,16 +2,6 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "economy_building": [
-        {
-            "name": "agriculture_research_center",
-            "size": 1
-        },
-        {
-            "name": "heavy_industry",
-            "size": 4
-        }
-    ],
     "population_total": {
         "amount": 295910,
         "template": 81
@@ -22,9 +12,31 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "agriculture_research_center",
+            "size": 1
+        },
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 5
+        },
+        {
+            "name": "aluminium_factory",
+            "size": 5
+        },
+        {
+            "name": "cement_factory",
+            "size": 5
+        },
+        {
+            "name": "steel_factory",
+            "size": 5
+        }
+    ]
 }

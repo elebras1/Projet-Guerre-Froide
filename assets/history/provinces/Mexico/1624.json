@@ -2,10 +2,6 @@
     "owner": "MEX",
     "controller": "MEX",
     "add_core": "MEX",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 211731,
         "template": 81
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "automobiles_factory",
+            "size": 1
+        },
+        {
+            "name": "communication_factory",
+            "size": 1
+        },
+        {
+            "name": "steel_factory",
+            "size": 1
+        }
+    ]
 }

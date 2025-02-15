@@ -2,10 +2,6 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 268024,
         "template": 77
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 4
+        }
+    ]
 }

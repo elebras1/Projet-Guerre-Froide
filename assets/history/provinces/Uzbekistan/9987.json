@@ -5,10 +5,6 @@
         "SOV",
         "UZB"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 1282812,
         "template": 11
@@ -19,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "machine_parts_factory",
+            "size": 5
+        },
+        {
+            "name": "fabric_factory",
+            "size": 5
+        }
+    ]
 }

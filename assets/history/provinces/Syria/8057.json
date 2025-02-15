@@ -2,10 +2,6 @@
     "owner": "SYR",
     "controller": "SYR",
     "add_core": "SYR",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 486317,
         "template": 41
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "arctic"
+    "terrain": "arctic",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 1
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 1
+        }
+    ]
 }

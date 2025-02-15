@@ -2,16 +2,6 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "economy_building": [
-        {
-            "name": "air_research_center",
-            "size": 1
-        },
-        {
-            "name": "aviation_industry",
-            "size": 7
-        }
-    ],
     "population_total": {
         "amount": 137355,
         "template": 59
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -30,5 +20,15 @@
             "size": 6
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "air_research_center",
+            "size": 1
+        },
+        {
+            "name": "aeroplanes_factory",
+            "size": 7
+        }
+    ]
 }

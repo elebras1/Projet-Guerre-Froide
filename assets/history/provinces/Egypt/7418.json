@@ -2,10 +2,6 @@
     "owner": "EGY",
     "controller": "EGY",
     "add_core": "EGY",
-    "economy_building": {
-        "name": "refinery",
-        "size": 2
-    },
     "population_total": {
         "amount": 2912506,
         "template": 3
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,11 @@
             "size": 1
         }
     ],
-    "terrain": "marsh"
+    "terrain": "marsh",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 2
+        }
+    ]
 }

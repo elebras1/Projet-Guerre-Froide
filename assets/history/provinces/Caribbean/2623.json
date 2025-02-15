@@ -2,10 +2,6 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "economy_building": {
-        "name": "refinery",
-        "size": 8
-    },
     "population_total": {
         "amount": 141050,
         "template": 73
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 9
         },
         {
@@ -24,5 +20,11 @@
             "size": 1
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 8
+        }
+    ]
 }

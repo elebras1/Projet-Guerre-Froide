@@ -2,10 +2,6 @@
     "owner": "NOR",
     "controller": "NOR",
     "add_core": "NOR",
-    "economy_building": {
-        "name": "naval_research_center",
-        "size": 1
-    },
     "population_total": {
         "amount": 85450,
         "template": 58
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         },
         {
@@ -24,5 +20,11 @@
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "naval_research_center",
+            "size": 1
+        }
+    ]
 }

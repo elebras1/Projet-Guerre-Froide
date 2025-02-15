@@ -2,10 +2,6 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 304388,
         "template": 67
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "glass_factory",
+            "size": 3
+        },
+        {
+            "name": "steel_factory",
+            "size": 3
+        },
+        {
+            "name": "cement_factory",
+            "size": 3
+        }
+    ]
 }

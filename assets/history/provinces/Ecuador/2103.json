@@ -2,10 +2,6 @@
     "owner": "ECU",
     "controller": "ECU",
     "add_core": "ECU",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 72599,
         "template": 84
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 2
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 2
+        }
+    ]
 }

@@ -5,10 +5,6 @@
         "CHI",
         "CHC"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 6
-    },
     "population_total": {
         "amount": 4257071,
         "template": 6
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         },
         {
@@ -27,5 +23,15 @@
             "size": 2
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "plastics_factory",
+            "size": 7
+        },
+        {
+            "name": "fabric_factory",
+            "size": 7
+        }
+    ]
 }

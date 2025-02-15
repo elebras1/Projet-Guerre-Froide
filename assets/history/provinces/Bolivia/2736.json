@@ -2,10 +2,6 @@
     "owner": "BOL",
     "controller": "BOL",
     "add_core": "BOL",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 286625,
         "template": 80
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "paper_factory",
+            "size": 1
+        }
+    ]
 }

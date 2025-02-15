@@ -2,10 +2,6 @@
     "owner": "BOL",
     "controller": "BOL",
     "add_core": "BOL",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 97715,
         "template": 80
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 4
+        }
+    ]
 }

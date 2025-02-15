@@ -5,10 +5,6 @@
         "CHI",
         "CHC"
     ],
-    "economy_building": {
-        "name": "powerplant",
-        "size": 4
-    },
     "population_total": {
         "amount": 2678475,
         "template": 6
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -27,5 +23,11 @@
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 4
+        }
+    ]
 }

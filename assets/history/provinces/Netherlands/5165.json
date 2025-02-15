@@ -2,10 +2,6 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "economy_building": {
-        "name": "military_academy",
-        "size": 1
-    },
     "population_total": {
         "amount": 746129,
         "template": 73
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        }
+    ]
 }

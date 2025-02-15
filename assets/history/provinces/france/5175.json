@@ -2,10 +2,6 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 6
-    },
     "population_total": {
         "amount": 1027862,
         "template": 70
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         },
         {
@@ -24,5 +20,19 @@
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "clothes_factory",
+            "size": 7
+        },
+        {
+            "name": "machine_parts_factory",
+            "size": 7
+        },
+        {
+            "name": "fabric_factory",
+            "size": 7
+        }
+    ]
 }

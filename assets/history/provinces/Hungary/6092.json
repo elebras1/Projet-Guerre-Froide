@@ -2,10 +2,6 @@
     "add_core": "HUN",
     "owner": "HUN",
     "controller": "HUN",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 2
-    },
     "population_total": {
         "amount": 456685,
         "template": 48
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 2
+        }
+    ]
 }

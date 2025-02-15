@@ -2,16 +2,6 @@
     "owner": "AST",
     "controller": "AST",
     "add_core": "AST",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "heavy_industry",
-            "size": 1
-        }
-    ],
     "population_total": {
         "amount": 59481,
         "template": 94
@@ -22,9 +12,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "cement_factory",
+            "size": 1
+        },
+        {
+            "name": "communication_factory",
+            "size": 1
+        },
+        {
+            "name": "steel_factory",
+            "size": 1
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 4
-    },
     "population_total": {
         "amount": 204783,
         "template": 59
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 4
+        }
+    ]
 }

@@ -6,10 +6,6 @@
         "ZIM",
         "RHO"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 82325,
         "template": 1
@@ -20,9 +16,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 3
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 3
+        }
+    ]
 }

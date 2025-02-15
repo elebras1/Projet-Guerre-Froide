@@ -2,10 +2,6 @@
     "owner": "ETH",
     "controller": "ETH",
     "add_core": "ETH",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 285344,
         "template": 1
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 4
+        }
+    ]
 }

@@ -2,16 +2,6 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "economy_building": [
-        {
-            "name": "national_monument",
-            "size": 1
-        },
-        {
-            "name": "heavy_industry",
-            "size": 7
-        }
-    ],
     "population_total": {
         "amount": 4793984,
         "template": 60
@@ -22,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "national_monument",
+            "size": 1
+        },
+        {
+            "name": "glass_factory",
+            "size": 9
+        },
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 9
+        }
+    ]
 }

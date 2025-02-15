@@ -2,10 +2,6 @@
     "owner": "PER",
     "controller": "PER",
     "add_core": "PER",
-    "economy_building": {
-        "name": "refinery",
-        "size": 5
-    },
     "population_total": {
         "amount": 85259,
         "template": 16
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 5
+        }
+    ]
 }

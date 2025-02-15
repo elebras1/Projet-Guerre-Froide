@@ -5,10 +5,6 @@
         "ENG",
         "SUD"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 497533,
         "template": 3
@@ -19,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "paper_factory",
+            "size": 2
+        },
+        {
+            "name": "clothes_factory",
+            "size": 2
+        }
+    ]
 }

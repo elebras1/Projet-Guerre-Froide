@@ -2,10 +2,6 @@
     "owner": "SIA",
     "controller": "SIA",
     "add_core": "SIA",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 326689,
         "template": 27
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 1
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 4
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 4
+        }
+    ]
 }

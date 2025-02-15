@@ -2,10 +2,6 @@
     "owner": "SOV",
     "controller": "SOV",
     "add_core": "PER",
-    "economy_building": {
-        "name": "refinery",
-        "size": 5
-    },
     "population_total": {
         "amount": 104837,
         "template": 16
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 5
+        }
+    ]
 }

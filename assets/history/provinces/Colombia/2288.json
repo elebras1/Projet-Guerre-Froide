@@ -2,10 +2,6 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 303772,
         "template": 83
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "paper_factory",
+            "size": 3
+        }
+    ]
 }

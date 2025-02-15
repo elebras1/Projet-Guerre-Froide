@@ -2,10 +2,6 @@
     "owner": "HOL",
     "controller": "HOL",
     "add_core": "HOL",
-    "economy_building": {
-        "name": "aviation_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 785850,
         "template": 73
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "aeroplanes_factory",
+            "size": 4
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "POR",
     "controller": "POR",
     "add_core": "POR",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 3
-    },
     "population_total": {
         "amount": 147556,
         "template": 66
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 3
+        }
+    ]
 }

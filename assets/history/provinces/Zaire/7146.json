@@ -5,10 +5,6 @@
         "BEL",
         "DRC"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 112700,
         "template": 2
@@ -19,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "fabric_factory",
+            "size": 1
+        },
+        {
+            "name": "plastics_factory",
+            "size": 1
+        }
+    ]
 }

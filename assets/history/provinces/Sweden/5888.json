@@ -2,10 +2,6 @@
     "owner": "SWE",
     "controller": "SWE",
     "add_core": "SWE",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 5
-    },
     "population_total": {
         "amount": 92511,
         "template": 59
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 1
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 4
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 4
+        }
+    ]
 }

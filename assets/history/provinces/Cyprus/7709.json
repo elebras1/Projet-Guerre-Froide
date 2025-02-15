@@ -7,10 +7,6 @@
         "GRE",
         "TUR"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 260122,
         "template": 32
@@ -21,7 +17,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -29,5 +25,11 @@
             "size": 1
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "machine_parts_factory",
+            "size": 2
+        }
+    ]
 }

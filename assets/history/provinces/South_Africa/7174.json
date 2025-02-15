@@ -2,10 +2,6 @@
     "owner": "SAF",
     "controller": "SAF",
     "add_core": "SAF",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 122688,
         "template": 4
@@ -16,9 +12,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "communication_factory",
+            "size": 4
+        },
+        {
+            "name": "glass_factory",
+            "size": 4
+        },
+        {
+            "name": "aluminium_factory",
+            "size": 4
+        },
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 4
+        }
+    ]
 }

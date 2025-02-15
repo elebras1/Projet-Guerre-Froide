@@ -6,10 +6,6 @@
         "CHC",
         "TWN"
     ],
-    "economy_building": {
-        "name": "refinery",
-        "size": 1
-    },
     "population_total": {
         "amount": 396211,
         "template": 6
@@ -20,7 +16,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         },
         {
@@ -28,5 +24,11 @@
             "size": 1
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 1
+        }
+    ]
 }

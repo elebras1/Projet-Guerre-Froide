@@ -2,10 +2,6 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 7
-    },
     "population_total": {
         "amount": 1044681,
         "template": 60
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,23 @@
             "size": 1
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "aluminium_factory",
+            "size": 7
+        },
+        {
+            "name": "steel_factory",
+            "size": 7
+        },
+        {
+            "name": "communication_factory",
+            "size": 7
+        },
+        {
+            "name": "cement_factory",
+            "size": 7
+        }
+    ]
 }

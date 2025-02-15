@@ -2,16 +2,6 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "economy_building": [
-        {
-            "name": "air_research_center",
-            "size": 1
-        },
-        {
-            "name": "aviation_industry",
-            "size": 5
-        }
-    ],
     "population_total": {
         "amount": 1006701,
         "template": 64
@@ -22,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "air_research_center",
+            "size": 1
+        },
+        {
+            "name": "aeroplanes_factory",
+            "size": 7
+        }
+    ]
 }

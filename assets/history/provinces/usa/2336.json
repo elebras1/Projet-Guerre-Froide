@@ -2,16 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "economy_building": [
-        {
-            "name": "national_monument",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 7
-        }
-    ],
     "population_total": {
         "amount": 9954726,
         "template": 93
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 10
         },
         {
@@ -30,5 +20,15 @@
             "size": 10
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "national_monument",
+            "size": 1
+        },
+        {
+            "name": "paper_factory",
+            "size": 7
+        }
+    ]
 }

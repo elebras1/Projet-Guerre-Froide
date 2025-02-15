@@ -5,10 +5,6 @@
         "ENG",
         "BUR"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 460692,
         "template": 24
@@ -19,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 1
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 2
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 2
+        }
+    ]
 }

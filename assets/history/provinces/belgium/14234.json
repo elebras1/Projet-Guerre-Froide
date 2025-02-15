@@ -5,10 +5,6 @@
         "BEL",
         "WLL"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 1049038,
         "template": 69
@@ -19,9 +15,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "plastics_factory",
+            "size": 3
+        },
+        {
+            "name": "machine_parts_factory",
+            "size": 3
+        },
+        {
+            "name": "fabric_factory",
+            "size": 3
+        }
+    ]
 }

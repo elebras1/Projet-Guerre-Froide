@@ -2,10 +2,6 @@
     "owner": "IRE",
     "controller": "IRE",
     "add_core": "IRE",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 96308,
         "template": 55
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "fabric_factory",
+            "size": 1
+        },
+        {
+            "name": "clothes_factory",
+            "size": 1
+        }
+    ]
 }

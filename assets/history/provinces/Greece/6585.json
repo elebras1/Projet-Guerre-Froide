@@ -2,10 +2,6 @@
     "add_core": "GRE",
     "owner": "GRE",
     "controller": "GRE",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 911737,
         "template": 63
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "paper_factory",
+            "size": 4
+        },
+        {
+            "name": "fabric_factory",
+            "size": 4
+        }
+    ]
 }

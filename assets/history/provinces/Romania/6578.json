@@ -2,10 +2,6 @@
     "add_core": "ROM",
     "owner": "ROM",
     "controller": "ROM",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 324860,
         "template": 50
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 1
+        }
+    ]
 }

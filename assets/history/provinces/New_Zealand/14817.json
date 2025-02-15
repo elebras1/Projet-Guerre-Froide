@@ -2,10 +2,6 @@
     "owner": "NZL",
     "controller": "NZL",
     "add_core": "NZL",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 53459,
         "template": 95
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 1
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "fabric_factory",
+            "size": 3
+        },
+        {
+            "name": "paper_factory",
+            "size": 3
+        }
+    ]
 }

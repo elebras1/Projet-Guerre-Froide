@@ -2,10 +2,6 @@
     "owner": "ECU",
     "controller": "ECU",
     "add_core": "ECU",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 835518,
         "template": 84
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,11 @@
             "size": 3
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "machine_parts_factory",
+            "size": 1
+        }
+    ]
 }

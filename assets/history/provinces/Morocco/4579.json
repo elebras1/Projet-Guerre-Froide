@@ -5,10 +5,6 @@
         "FRA",
         "MOR"
     ],
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 294699,
         "template": 3
@@ -19,9 +15,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "communication_factory",
+            "size": 3
+        },
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 3
+        },
+        {
+            "name": "transport_factory",
+            "size": 3
+        },
+        {
+            "name": "aluminium_factory",
+            "size": 3
+        }
+    ]
 }

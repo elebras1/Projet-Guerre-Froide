@@ -2,10 +2,6 @@
     "owner": "ROM",
     "controller": "ROM",
     "add_core": "ROM",
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 3
-    },
     "population_total": {
         "amount": 680513,
         "template": 50
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 1
+        }
+    ]
 }

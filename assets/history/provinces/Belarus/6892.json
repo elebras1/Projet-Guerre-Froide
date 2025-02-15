@@ -5,10 +5,6 @@
     ],
     "owner": "SOV",
     "controller": "SOV",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 393494,
         "template": 45
@@ -19,9 +15,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "fabric_factory",
+            "size": 6
+        }
+    ]
 }

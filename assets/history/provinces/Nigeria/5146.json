@@ -5,10 +5,6 @@
         "ENG",
         "NIG"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 421811,
         "template": 5
@@ -19,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         }
     ],
-    "terrain": "arctic"
+    "terrain": "arctic",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 1
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 1
+        }
+    ]
 }

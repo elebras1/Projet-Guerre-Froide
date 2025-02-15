@@ -2,10 +2,6 @@
     "owner": "POL",
     "controller": "POL",
     "add_core": "POL",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 459810,
         "template": 49
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 4
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 4
+        }
+    ]
 }

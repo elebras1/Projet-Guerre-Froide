@@ -2,10 +2,6 @@
     "owner": "CUB",
     "controller": "CUB",
     "add_core": "CUB",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 216415,
         "template": 75
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "automobiles_factory",
+            "size": 2
+        },
+        {
+            "name": "steel_factory",
+            "size": 2
+        }
+    ]
 }

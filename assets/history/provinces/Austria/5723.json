@@ -2,10 +2,6 @@
     "add_core": "AUS",
     "owner": "USA",
     "controller": "USA",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 5
-    },
     "population_total": {
         "amount": 285618,
         "template": 68
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "high_mountain"
+    "terrain": "high_mountain",
+    "economy_buildings": [
+        {
+            "name": "fabric_factory",
+            "size": 7
+        },
+        {
+            "name": "paper_factory",
+            "size": 7
+        }
+    ]
 }

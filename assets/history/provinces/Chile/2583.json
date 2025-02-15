@@ -2,10 +2,6 @@
     "owner": "CHL",
     "controller": "CHL",
     "add_core": "CHL",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 1207772,
         "template": 82
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "fabric_factory",
+            "size": 1
+        }
+    ]
 }

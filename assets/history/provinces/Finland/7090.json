@@ -2,10 +2,6 @@
     "owner": "FIN",
     "controller": "FIN",
     "add_core": "FIN",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 59366,
         "template": 53
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 1
         }
     ],
-    "terrain": "marsh"
+    "terrain": "marsh",
+    "economy_buildings": [
+        {
+            "name": "paper_factory",
+            "size": 4
+        },
+        {
+            "name": "plastics_factory",
+            "size": 4
+        }
+    ]
 }

@@ -5,16 +5,6 @@
         "LEB",
         "SYR"
     ],
-    "economy_building": [
-        {
-            "name": "financial_district",
-            "size": 1
-        },
-        {
-            "name": "refinery",
-            "size": 3
-        }
-    ],
     "population_total": {
         "amount": 118135,
         "template": 37
@@ -25,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -33,5 +23,15 @@
             "size": 3
         }
     ],
-    "terrain": "arctic"
+    "terrain": "arctic",
+    "economy_buildings": [
+        {
+            "name": "financial_district",
+            "size": 1
+        },
+        {
+            "name": "refinery",
+            "size": 3
+        }
+    ]
 }

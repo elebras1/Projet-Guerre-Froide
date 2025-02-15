@@ -2,10 +2,6 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 7
-    },
     "population_total": {
         "amount": 4134016,
         "template": 67
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 9
         },
         {
@@ -24,5 +20,11 @@
             "size": 3
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 7
+        }
+    ]
 }

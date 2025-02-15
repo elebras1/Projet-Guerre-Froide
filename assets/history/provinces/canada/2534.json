@@ -5,16 +5,6 @@
         "CAN",
         "QUE"
     ],
-    "economy_building": [
-        {
-            "name": "air_research_center",
-            "size": 1
-        },
-        {
-            "name": "powerplant",
-            "size": 7
-        }
-    ],
     "population_total": {
         "amount": 332288,
         "template": 92
@@ -25,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "air_research_center",
+            "size": 1
+        },
+        {
+            "name": "powerplant",
+            "size": 7
+        }
+    ]
 }

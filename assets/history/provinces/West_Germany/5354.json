@@ -5,10 +5,6 @@
     ],
     "owner": "ENG",
     "controller": "ENG",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 3
-    },
     "population_total": {
         "amount": 2517267,
         "template": 71
@@ -19,9 +15,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 3
+        }
+    ]
 }

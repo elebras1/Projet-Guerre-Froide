@@ -2,16 +2,6 @@
     "owner": "ARG",
     "controller": "ARG",
     "add_core": "ARG",
-    "economy_building": [
-        {
-            "name": "financial_district",
-            "size": 1
-        },
-        {
-            "name": "military_industry",
-            "size": 4
-        }
-    ],
     "population_total": {
         "amount": 279111,
         "template": 79
@@ -22,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "financial_district",
+            "size": 1
+        },
+        {
+            "name": "ammunition_factory",
+            "size": 4
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 4
+        }
+    ]
 }

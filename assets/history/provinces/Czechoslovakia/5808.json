@@ -5,16 +5,6 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "economy_building": [
-        {
-            "name": "university",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 7
-        }
-    ],
     "population_total": {
         "amount": 1360183,
         "template": 47
@@ -25,9 +15,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "university",
+            "size": 1
+        },
+        {
+            "name": "fabric_factory",
+            "size": 5
+        },
+        {
+            "name": "machine_parts_factory",
+            "size": 5
+        }
+    ]
 }

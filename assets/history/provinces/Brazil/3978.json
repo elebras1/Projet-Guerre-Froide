@@ -2,16 +2,6 @@
     "owner": "BRA",
     "controller": "BRA",
     "add_core": "BRA",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "refinery",
-            "size": 1
-        }
-    ],
     "population_total": {
         "amount": 588504,
         "template": 77
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -34,5 +24,15 @@
             "size": 6
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "refinery",
+            "size": 1
+        }
+    ]
 }

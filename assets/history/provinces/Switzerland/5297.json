@@ -2,16 +2,6 @@
     "owner": "SCH",
     "controller": "SCH",
     "add_core": "SCH",
-    "economy_building": [
-        {
-            "name": "university",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 4
-        }
-    ],
     "population_total": {
         "amount": 791105,
         "template": 74
@@ -22,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "university",
+            "size": 1
+        },
+        {
+            "name": "machine_parts_factory",
+            "size": 3
+        }
+    ]
 }

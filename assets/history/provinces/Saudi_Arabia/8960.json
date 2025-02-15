@@ -2,10 +2,6 @@
     "owner": "SAU",
     "controller": "SAU",
     "add_core": "SAU",
-    "economy_building": {
-        "name": "refinery",
-        "size": 1
-    },
     "population_total": {
         "amount": 653,
         "template": 40
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         },
         {
@@ -24,5 +20,11 @@
             "size": 3
         }
     ],
-    "terrain": "desert"
+    "terrain": "desert",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 1
+        }
+    ]
 }

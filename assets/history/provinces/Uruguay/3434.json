@@ -2,10 +2,6 @@
     "owner": "URU",
     "controller": "URU",
     "add_core": "URU",
-    "economy_building": {
-        "name": "refinery",
-        "size": 3
-    },
     "population_total": {
         "amount": 64483,
         "template": 90
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,11 @@
             "size": 1
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 3
+        }
+    ]
 }

@@ -2,10 +2,6 @@
     "owner": "NEP",
     "controller": "NEP",
     "add_core": "NEP",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 955417,
         "template": 17
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "machine_parts_factory",
+            "size": 3
+        },
+        {
+            "name": "paper_factory",
+            "size": 3
+        }
+    ]
 }

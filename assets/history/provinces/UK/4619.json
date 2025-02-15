@@ -2,10 +2,6 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 7
-    },
     "population_total": {
         "amount": 95628,
         "template": 60
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -24,5 +20,11 @@
             "size": 1
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "paper_factory",
+            "size": 5
+        }
+    ]
 }

@@ -5,16 +5,6 @@
         "SOV",
         "RUS"
     ],
-    "economy_building": [
-        {
-            "name": "university",
-            "size": 1
-        },
-        {
-            "name": "powerplant",
-            "size": 6
-        }
-    ],
     "population_total": {
         "amount": 222003,
         "template": 45
@@ -25,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "university",
+            "size": 1
+        },
+        {
+            "name": "powerplant",
+            "size": 6
+        }
+    ]
 }

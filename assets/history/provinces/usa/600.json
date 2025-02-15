@@ -2,10 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 8
-    },
     "population_total": {
         "amount": 911229,
         "template": 93
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         },
         {
@@ -24,5 +20,11 @@
             "size": 10
         }
     ],
-    "terrain": "arctic"
+    "terrain": "arctic",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 6
+        }
+    ]
 }

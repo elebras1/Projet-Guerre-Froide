@@ -2,10 +2,6 @@
     "owner": "URU",
     "controller": "URU",
     "add_core": "URU",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 764508,
         "template": 90
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,19 @@
             "size": 1
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "machine_parts_factory",
+            "size": 2
+        },
+        {
+            "name": "fabric_factory",
+            "size": 2
+        },
+        {
+            "name": "plastics_factory",
+            "size": 2
+        }
+    ]
 }

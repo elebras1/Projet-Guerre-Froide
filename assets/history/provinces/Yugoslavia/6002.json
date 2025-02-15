@@ -5,10 +5,6 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 5
-    },
     "population_total": {
         "amount": 374311,
         "template": 62
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -31,5 +27,11 @@
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "fabric_factory",
+            "size": 6
+        }
+    ]
 }

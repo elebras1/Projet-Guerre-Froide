@@ -2,10 +2,6 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 1118415,
         "template": 8
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -24,5 +20,23 @@
             "size": 1
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "cement_factory",
+            "size": 2
+        },
+        {
+            "name": "communication_factory",
+            "size": 2
+        },
+        {
+            "name": "steel_factory",
+            "size": 2
+        },
+        {
+            "name": "automobiles_factory",
+            "size": 2
+        }
+    ]
 }

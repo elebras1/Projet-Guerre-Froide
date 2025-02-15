@@ -2,16 +2,6 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "economy_building": [
-        {
-            "name": "university",
-            "size": 1
-        },
-        {
-            "name": "powerplant",
-            "size": 7
-        }
-    ],
     "population_total": {
         "amount": 958796,
         "template": 60
@@ -22,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "university",
+            "size": 1
+        },
+        {
+            "name": "powerplant",
+            "size": 7
+        }
+    ]
 }

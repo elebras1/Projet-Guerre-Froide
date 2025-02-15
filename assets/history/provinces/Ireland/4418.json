@@ -2,10 +2,6 @@
     "owner": "IRE",
     "controller": "IRE",
     "add_core": "IRE",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 81686,
         "template": 55
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,19 @@
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "cement_factory",
+            "size": 1
+        },
+        {
+            "name": "aluminium_factory",
+            "size": 1
+        },
+        {
+            "name": "transport_factory",
+            "size": 1
+        }
+    ]
 }

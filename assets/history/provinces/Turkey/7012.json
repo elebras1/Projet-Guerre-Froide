@@ -2,10 +2,6 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 186419,
         "template": 42
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,15 @@
             "size": 3
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "fabric_factory",
+            "size": 3
+        },
+        {
+            "name": "paper_factory",
+            "size": 3
+        }
+    ]
 }

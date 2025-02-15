@@ -2,10 +2,6 @@
     "owner": "TUR",
     "controller": "TUR",
     "add_core": "TUR",
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 3
-    },
     "population_total": {
         "amount": 63075,
         "template": 42
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 4
+        }
+    ]
 }

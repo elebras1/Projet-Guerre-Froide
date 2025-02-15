@@ -5,16 +5,6 @@
         "CHI",
         "CHC"
     ],
-    "economy_building": [
-        {
-            "name": "financial_district",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 6
-        }
-    ],
     "population_total": {
         "amount": 7316045,
         "template": 6
@@ -25,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         },
         {
@@ -33,5 +23,23 @@
             "size": 10
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "financial_district",
+            "size": 1
+        },
+        {
+            "name": "machine_parts_factory",
+            "size": 6
+        },
+        {
+            "name": "fabric_factory",
+            "size": 6
+        },
+        {
+            "name": "clothes_factory",
+            "size": 6
+        }
+    ]
 }

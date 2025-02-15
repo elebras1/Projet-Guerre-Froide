@@ -5,10 +5,6 @@
         "ENG",
         "IND"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 2033703,
         "template": 15
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         },
         {
@@ -27,5 +23,15 @@
             "size": 2
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "clothes_factory",
+            "size": 2
+        },
+        {
+            "name": "paper_factory",
+            "size": 2
+        }
+    ]
 }

@@ -2,16 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "heavy_industry",
-            "size": 7
-        }
-    ],
     "population_total": {
         "amount": 318746,
         "template": 93
@@ -22,9 +12,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "cement_factory",
+            "size": 9
+        },
+        {
+            "name": "steel_factory",
+            "size": 9
+        },
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 9
+        }
+    ]
 }

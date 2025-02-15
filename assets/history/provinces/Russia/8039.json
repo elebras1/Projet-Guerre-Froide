@@ -5,16 +5,6 @@
         "SOV",
         "RUS"
     ],
-    "economy_building": [
-        {
-            "name": "national_monument",
-            "size": 1
-        },
-        {
-            "name": "military_industry",
-            "size": 1
-        }
-    ],
     "population_total": {
         "amount": 1409358,
         "template": 45
@@ -25,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 10
         },
         {
@@ -33,5 +23,19 @@
             "size": 10
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "national_monument",
+            "size": 1
+        },
+        {
+            "name": "ammunition_factory",
+            "size": 1
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 1
+        }
+    ]
 }

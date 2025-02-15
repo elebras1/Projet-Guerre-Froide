@@ -2,10 +2,6 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 49452,
         "template": 92
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "clothes_factory",
+            "size": 1
+        },
+        {
+            "name": "paper_factory",
+            "size": 1
+        },
+        {
+            "name": "machine_parts_factory",
+            "size": 1
+        }
+    ]
 }

@@ -2,16 +2,6 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "economy_building": [
-        {
-            "name": "air_research_center",
-            "size": 1
-        },
-        {
-            "name": "aviation_industry",
-            "size": 6
-        }
-    ],
     "population_total": {
         "amount": 373019,
         "template": 70
@@ -22,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "air_research_center",
+            "size": 1
+        },
+        {
+            "name": "aeroplanes_factory",
+            "size": 5
+        }
+    ]
 }

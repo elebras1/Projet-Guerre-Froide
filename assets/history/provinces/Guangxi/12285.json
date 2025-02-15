@@ -6,10 +6,6 @@
         "CHI",
         "CHC"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 5
-    },
     "population_total": {
         "amount": 552717,
         "template": 6
@@ -20,9 +16,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 7
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 7
+        }
+    ]
 }

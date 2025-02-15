@@ -2,10 +2,6 @@
     "owner": "NIC",
     "controller": "NIC",
     "add_core": "NIC",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 507796,
         "template": 76
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,11 @@
             "size": 1
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "machine_parts_factory",
+            "size": 2
+        }
+    ]
 }

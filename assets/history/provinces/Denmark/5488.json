@@ -2,10 +2,6 @@
     "owner": "DEN",
     "controller": "DEN",
     "add_core": "DEN",
-    "economy_building": {
-        "name": "naval_research_center",
-        "size": 1
-    },
     "population_total": {
         "amount": 385903,
         "template": 51
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,11 @@
             "size": 1
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "naval_research_center",
+            "size": 1
+        }
+    ]
 }

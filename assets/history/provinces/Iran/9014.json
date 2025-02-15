@@ -2,10 +2,6 @@
     "owner": "SOV",
     "controller": "SOV",
     "add_core": "PER",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 3676121,
         "template": 16
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "communication_factory",
+            "size": 4
+        },
+        {
+            "name": "glass_factory",
+            "size": 4
+        },
+        {
+            "name": "transport_factory",
+            "size": 4
+        }
+    ]
 }

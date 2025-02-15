@@ -2,16 +2,6 @@
     "owner": "SPA",
     "controller": "SPA",
     "add_core": "SPA",
-    "economy_building": [
-        {
-            "name": "naval_research_center",
-            "size": 1
-        },
-        {
-            "name": "heavy_industry",
-            "size": 5
-        }
-    ],
     "population_total": {
         "amount": 1248750,
         "template": 67
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         },
         {
@@ -30,5 +20,19 @@
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "naval_research_center",
+            "size": 1
+        },
+        {
+            "name": "automobiles_factory",
+            "size": 6
+        },
+        {
+            "name": "steel_factory",
+            "size": 6
+        }
+    ]
 }

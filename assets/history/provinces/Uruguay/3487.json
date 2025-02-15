@@ -2,10 +2,6 @@
     "owner": "URU",
     "controller": "URU",
     "add_core": "URU",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 9347,
         "template": 90
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 3
+        }
+    ]
 }

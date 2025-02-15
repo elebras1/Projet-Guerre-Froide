@@ -2,10 +2,6 @@
     "owner": "ITA",
     "controller": "ITA",
     "add_core": "ITA",
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 7
-    },
     "population_total": {
         "amount": 1032129,
         "template": 64
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         },
         {
@@ -24,5 +20,11 @@
             "size": 2
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 7
+        }
+    ]
 }

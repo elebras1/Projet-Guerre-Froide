@@ -2,10 +2,6 @@
     "owner": "NZL",
     "controller": "NZL",
     "add_core": "NZL",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 32373,
         "template": 95
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 5
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 5
+        }
+    ]
 }

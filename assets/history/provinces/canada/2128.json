@@ -2,19 +2,25 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 52071,
         "template": 92
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 6
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 6
+        }
+    ]
 }

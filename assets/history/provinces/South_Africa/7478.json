@@ -2,10 +2,6 @@
     "owner": "SAF",
     "controller": "SAF",
     "add_core": "SAF",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 367821,
         "template": 4
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "fabric_factory",
+            "size": 5
+        },
+        {
+            "name": "paper_factory",
+            "size": 5
+        },
+        {
+            "name": "machine_parts_factory",
+            "size": 5
+        }
+    ]
 }

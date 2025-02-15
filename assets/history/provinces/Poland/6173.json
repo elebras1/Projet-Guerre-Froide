@@ -2,10 +2,6 @@
     "add_core": "POL",
     "owner": "POL",
     "controller": "POL",
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 8
-    },
     "population_total": {
         "amount": 633822,
         "template": 49
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -24,5 +20,11 @@
             "size": 4
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 10
+        }
+    ]
 }

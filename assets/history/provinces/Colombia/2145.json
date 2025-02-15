@@ -2,10 +2,6 @@
     "owner": "COL",
     "controller": "COL",
     "add_core": "COL",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 93703,
         "template": 83
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "paper_factory",
+            "size": 1
+        },
+        {
+            "name": "fabric_factory",
+            "size": 1
+        },
+        {
+            "name": "plastics_factory",
+            "size": 1
+        }
+    ]
 }

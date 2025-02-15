@@ -6,10 +6,6 @@
         "DRC",
         "SKA"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 80958,
         "template": 2
@@ -20,9 +16,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "plastics_factory",
+            "size": 1
+        }
+    ]
 }

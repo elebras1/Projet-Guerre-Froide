@@ -5,16 +5,6 @@
     ],
     "owner": "USA",
     "controller": "USA",
-    "economy_building": [
-        {
-            "name": "air_research_center",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 4
-        }
-    ],
     "population_total": {
         "amount": 1653944,
         "template": 71
@@ -25,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "air_research_center",
+            "size": 1
+        },
+        {
+            "name": "plastics_factory",
+            "size": 3
+        }
+    ]
 }

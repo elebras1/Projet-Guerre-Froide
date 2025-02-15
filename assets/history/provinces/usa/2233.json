@@ -2,10 +2,6 @@
     "owner": "USA",
     "controller": "USA",
     "add_core": "USA",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 7
-    },
     "population_total": {
         "amount": 1633607,
         "template": 93
@@ -16,9 +12,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "glass_factory",
+            "size": 9
+        },
+        {
+            "name": "cement_factory",
+            "size": 9
+        },
+        {
+            "name": "steel_factory",
+            "size": 9
+        },
+        {
+            "name": "transport_factory",
+            "size": 9
+        }
+    ]
 }

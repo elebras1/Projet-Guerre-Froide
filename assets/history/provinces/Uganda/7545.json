@@ -5,10 +5,6 @@
         "ENG",
         "UGD"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 248796,
         "template": 1
@@ -19,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 3
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 3
+        }
+    ]
 }

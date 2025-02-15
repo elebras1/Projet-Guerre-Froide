@@ -2,16 +2,6 @@
     "owner": "FRA",
     "controller": "FRA",
     "add_core": "FRA",
-    "economy_building": [
-        {
-            "name": "intelligence_center",
-            "size": 1
-        },
-        {
-            "name": "heavy_industry",
-            "size": 6
-        }
-    ],
     "population_total": {
         "amount": 328564,
         "template": 70
@@ -22,9 +12,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "intelligence_center",
+            "size": 1
+        },
+        {
+            "name": "automobiles_factory",
+            "size": 6
+        },
+        {
+            "name": "steel_factory",
+            "size": 6
+        },
+        {
+            "name": "cement_factory",
+            "size": 6
+        }
+    ]
 }

@@ -5,10 +5,6 @@
         "FRA",
         "TUN"
     ],
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 258094,
         "template": 3
@@ -19,9 +15,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         }
     ],
-    "terrain": "desert"
+    "terrain": "desert",
+    "economy_buildings": [
+        {
+            "name": "steel_factory",
+            "size": 4
+        },
+        {
+            "name": "automobiles_factory",
+            "size": 4
+        },
+        {
+            "name": "cement_factory",
+            "size": 4
+        },
+        {
+            "name": "glass_factory",
+            "size": 4
+        }
+    ]
 }

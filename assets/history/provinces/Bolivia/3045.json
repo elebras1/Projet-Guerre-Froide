@@ -2,10 +2,6 @@
     "owner": "BOL",
     "controller": "BOL",
     "add_core": "BOL",
-    "economy_building": {
-        "name": "refinery",
-        "size": 1
-    },
     "population_total": {
         "amount": 35359,
         "template": 80
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 1
+        }
+    ]
 }

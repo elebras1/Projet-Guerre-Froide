@@ -5,10 +5,6 @@
     ],
     "owner": "ENG",
     "controller": "ENG",
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 9
-    },
     "population_total": {
         "amount": 953617,
         "template": 71
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 8
         },
         {
@@ -27,5 +23,11 @@
             "size": 3
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 8
+        }
+    ]
 }

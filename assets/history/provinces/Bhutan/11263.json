@@ -2,10 +2,6 @@
     "owner": "BHU",
     "controller": "BHU",
     "add_core": "BHU",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 43817,
         "template": 14
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 4
+        }
+    ]
 }

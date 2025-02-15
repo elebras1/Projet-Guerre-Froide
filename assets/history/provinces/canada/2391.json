@@ -2,10 +2,6 @@
     "owner": "CAN",
     "controller": "CAN",
     "add_core": "CAN",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 7
-    },
     "population_total": {
         "amount": 206344,
         "template": 92
@@ -16,9 +12,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 8
+        },
+        {
+            "name": "transport_factory",
+            "size": 8
+        },
+        {
+            "name": "communication_factory",
+            "size": 8
+        },
+        {
+            "name": "glass_factory",
+            "size": 8
+        }
+    ]
 }

@@ -5,17 +5,13 @@
         "SOV",
         "RUS"
     ],
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 9
-    },
     "population_total": {
         "amount": 98911,
         "template": 45
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 7
         },
         {
@@ -27,5 +23,11 @@
             "size": 5
         }
     ],
-    "terrain": "arctic"
+    "terrain": "arctic",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 8
+        }
+    ]
 }

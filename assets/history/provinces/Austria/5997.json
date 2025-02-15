@@ -2,16 +2,6 @@
     "add_core": "AUS",
     "owner": "SOV",
     "controller": "SOV",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "refinery",
-            "size": 3
-        }
-    ],
     "population_total": {
         "amount": 1698466,
         "template": 68
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -30,5 +20,15 @@
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "refinery",
+            "size": 3
+        }
+    ]
 }

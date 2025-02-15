@@ -5,19 +5,29 @@
         "FRA",
         "CAR"
     ],
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 4
-    },
     "population_total": {
         "amount": 74940,
         "template": 2
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 1
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 4
+        },
+        {
+            "name": "cement_factory",
+            "size": 4
+        },
+        {
+            "name": "steel_factory",
+            "size": 4
+        }
+    ]
 }

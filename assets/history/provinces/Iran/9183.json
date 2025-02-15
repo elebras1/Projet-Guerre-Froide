@@ -2,10 +2,6 @@
     "owner": "SOV",
     "controller": "SOV",
     "add_core": "PER",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 2
-    },
     "population_total": {
         "amount": 258809,
         "template": 16
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "hills"
+    "terrain": "hills",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 1
+        }
+    ]
 }

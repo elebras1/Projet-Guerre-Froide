@@ -2,10 +2,6 @@
     "owner": "PER",
     "controller": "PER",
     "add_core": "PER",
-    "economy_building": {
-        "name": "light_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 240241,
         "template": 16
@@ -16,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 4
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "fabric_factory",
+            "size": 1
+        },
+        {
+            "name": "clothes_factory",
+            "size": 1
+        }
+    ]
 }

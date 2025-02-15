@@ -5,10 +5,6 @@
         "ENG",
         "KEN"
     ],
-    "economy_building": {
-        "name": "military_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 173955,
         "template": 1
@@ -19,9 +15,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "ammunition_factory",
+            "size": 3
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 3
+        }
+    ]
 }

@@ -5,16 +5,6 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "economy_building": [
-        {
-            "name": "military_academy",
-            "size": 1
-        },
-        {
-            "name": "heavy_industry",
-            "size": 3
-        }
-    ],
     "population_total": {
         "amount": 959379,
         "template": 47
@@ -25,9 +15,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "military_academy",
+            "size": 1
+        },
+        {
+            "name": "cement_factory",
+            "size": 4
+        },
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 4
+        }
+    ]
 }

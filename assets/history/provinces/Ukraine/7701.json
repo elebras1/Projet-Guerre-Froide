@@ -5,10 +5,6 @@
         "SOV",
         "UKR"
     ],
-    "economy_building": {
-        "name": "naval_yards",
-        "size": 8
-    },
     "population_total": {
         "amount": 598785,
         "template": 45
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -31,5 +27,11 @@
             "size": 4
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "ships_factory",
+            "size": 7
+        }
+    ]
 }

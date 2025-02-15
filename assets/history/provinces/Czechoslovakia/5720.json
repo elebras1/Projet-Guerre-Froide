@@ -5,10 +5,6 @@
     ],
     "owner": "CZE",
     "controller": "CZE",
-    "economy_building": {
-        "name": "powerplant",
-        "size": 6
-    },
     "population_total": {
         "amount": 190930,
         "template": 47
@@ -19,9 +15,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 6
+        }
+    ]
 }

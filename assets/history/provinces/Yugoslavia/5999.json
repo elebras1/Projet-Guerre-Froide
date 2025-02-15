@@ -5,10 +5,6 @@
     ],
     "owner": "YUG",
     "controller": "YUG",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 260232,
         "template": 62
@@ -19,9 +15,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "cement_factory",
+            "size": 3
+        },
+        {
+            "name": "aluminium_factory",
+            "size": 3
+        },
+        {
+            "name": "steel_factory",
+            "size": 3
+        },
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 3
+        }
+    ]
 }

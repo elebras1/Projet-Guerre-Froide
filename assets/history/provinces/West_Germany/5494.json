@@ -5,16 +5,6 @@
     ],
     "owner": "USA",
     "controller": "USA",
-    "economy_building": [
-        {
-            "name": "financial_district",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 2
-        }
-    ],
     "population_total": {
         "amount": 1200170,
         "template": 71
@@ -25,9 +15,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "financial_district",
+            "size": 1
+        },
+        {
+            "name": "paper_factory",
+            "size": 1
+        },
+        {
+            "name": "fabric_factory",
+            "size": 1
+        },
+        {
+            "name": "plastics_factory",
+            "size": 1
+        }
+    ]
 }

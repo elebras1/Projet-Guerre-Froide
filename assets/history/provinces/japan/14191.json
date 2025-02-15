@@ -2,16 +2,6 @@
     "owner": "JAP",
     "controller": "JAP",
     "add_core": "JAP",
-    "economy_building": [
-        {
-            "name": "naval_research_center",
-            "size": 1
-        },
-        {
-            "name": "heavy_industry",
-            "size": 6
-        }
-    ],
     "population_total": {
         "amount": 1390582,
         "template": 8
@@ -22,9 +12,31 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 3
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "naval_research_center",
+            "size": 1
+        },
+        {
+            "name": "steel_factory",
+            "size": 5
+        },
+        {
+            "name": "transport_factory",
+            "size": 5
+        },
+        {
+            "name": "cement_factory",
+            "size": 5
+        },
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 5
+        }
+    ]
 }

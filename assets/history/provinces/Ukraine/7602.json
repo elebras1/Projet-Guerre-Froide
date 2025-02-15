@@ -5,10 +5,6 @@
         "SOV",
         "UKR"
     ],
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 77732,
         "template": 45
@@ -19,9 +15,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "cement_factory",
+            "size": 2
+        },
+        {
+            "name": "glass_factory",
+            "size": 2
+        },
+        {
+            "name": "aluminium_factory",
+            "size": 2
+        },
+        {
+            "name": "steel_factory",
+            "size": 2
+        }
+    ]
 }

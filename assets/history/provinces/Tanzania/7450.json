@@ -6,10 +6,6 @@
         "TNZ",
         "TNG"
     ],
-    "economy_building": {
-        "name": "light_industry",
-        "size": 5
-    },
     "population_total": {
         "amount": 357633,
         "template": 1
@@ -20,9 +16,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 1
         }
     ],
-    "terrain": "jungle"
+    "terrain": "jungle",
+    "economy_buildings": [
+        {
+            "name": "paper_factory",
+            "size": 5
+        },
+        {
+            "name": "clothes_factory",
+            "size": 5
+        }
+    ]
 }

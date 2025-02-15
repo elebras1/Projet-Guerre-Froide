@@ -5,17 +5,13 @@
         "SOV",
         "RUS"
     ],
-    "economy_building": {
-        "name": "centrifuges",
-        "size": 1
-    },
     "population_total": {
         "amount": 609780,
         "template": 45
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         },
         {
@@ -23,5 +19,11 @@
             "size": 5
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "centrifuges",
+            "size": 1
+        }
+    ]
 }

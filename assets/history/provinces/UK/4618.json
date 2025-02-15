@@ -2,16 +2,6 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "economy_building": [
-        {
-            "name": "naval_research_center",
-            "size": 1
-        },
-        {
-            "name": "military_industry",
-            "size": 7
-        }
-    ],
     "population_total": {
         "amount": 24514,
         "template": 60
@@ -22,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         },
         {
@@ -34,5 +24,19 @@
             "size": 10
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "naval_research_center",
+            "size": 1
+        },
+        {
+            "name": "ammunition_factory",
+            "size": 6
+        },
+        {
+            "name": "weaponry_factory",
+            "size": 6
+        }
+    ]
 }

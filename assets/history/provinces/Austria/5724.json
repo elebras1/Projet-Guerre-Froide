@@ -2,10 +2,6 @@
     "add_core": "AUS",
     "owner": "ENG",
     "controller": "ENG",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 1
-    },
     "population_total": {
         "amount": 382804,
         "template": 68
@@ -16,9 +12,23 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         }
     ],
-    "terrain": "woods"
+    "terrain": "woods",
+    "economy_buildings": [
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 1
+        },
+        {
+            "name": "automobiles_factory",
+            "size": 1
+        },
+        {
+            "name": "communication_factory",
+            "size": 1
+        }
+    ]
 }

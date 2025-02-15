@@ -2,16 +2,6 @@
     "owner": "ENG",
     "controller": "ENG",
     "add_core": "ENG",
-    "economy_building": [
-        {
-            "name": "nuclear_silo",
-            "size": 1
-        },
-        {
-            "name": "heavy_industry",
-            "size": 7
-        }
-    ],
     "population_total": {
         "amount": 2029391,
         "template": 60
@@ -22,9 +12,27 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "nuclear_silo",
+            "size": 1
+        },
+        {
+            "name": "pharmaceuticals_factory",
+            "size": 6
+        },
+        {
+            "name": "cement_factory",
+            "size": 6
+        },
+        {
+            "name": "aluminium_factory",
+            "size": 6
+        }
+    ]
 }

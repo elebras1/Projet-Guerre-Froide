@@ -2,10 +2,6 @@
     "owner": "POL",
     "controller": "POL",
     "add_core": "POL",
-    "economy_building": {
-        "name": "heavy_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 224981,
         "template": 49
@@ -16,7 +12,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -24,5 +20,19 @@
             "size": 1
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "automobiles_factory",
+            "size": 5
+        },
+        {
+            "name": "cement_factory",
+            "size": 5
+        },
+        {
+            "name": "steel_factory",
+            "size": 5
+        }
+    ]
 }

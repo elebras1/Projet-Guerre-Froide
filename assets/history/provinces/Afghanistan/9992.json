@@ -2,10 +2,6 @@
     "owner": "AFG",
     "controller": "AFG",
     "add_core": "AFG",
-    "economy_building": {
-        "name": "military_industry",
-        "size": 3
-    },
     "population_total": {
         "amount": 311499,
         "template": 12
@@ -16,9 +12,15 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 2
         }
     ],
-    "terrain": "mountain"
+    "terrain": "mountain",
+    "economy_buildings": [
+        {
+            "name": "armoured_vehicles_factory",
+            "size": 5
+        }
+    ]
 }

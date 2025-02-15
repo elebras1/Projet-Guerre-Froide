@@ -62,10 +62,9 @@ public class DataManager {
         Map<String, Good> goods = this.readGoodsJson();
         Map<String, Building> buildings = this.readBuildingsJson(goods);
         Map<String, PopulationType> populationTypes = this.readPopulationTypesJson(goods);
-        System.out.println(populationTypes);
         Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
         Map<String, Terrain> terrains = this.readTerrainsJson();
-        return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, ministerTypes, this.readPopulationTemplatesJson(), terrains);
+        return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, populationTypes, ministerTypes, this.readPopulationTemplatesJson(), terrains);
     }
 
     public World createWorldThreadSafe(GameEntities gameEntities, AsyncExecutor asyncExecutor) {
@@ -222,20 +221,15 @@ public class DataManager {
             Population population = new Population(amount, gameEntities.getPopulationTemplates().get(template));
 
             ObjectIntMap<Building> buildingsRegion;
-            JsonNode buildingsNode = rootNode.get("economy_building");
+            JsonNode buildingsNode = rootNode.get("economy_buildings");
             if(buildingsNode != null) {
                 buildingsRegion = new ObjectIntMap<>();
-                if (buildingsNode.isArray()) {
-                    buildingsNode.forEach(building -> {
-                        String buildingName = building.get("name").textValue();
-                        short size = building.get("size").shortValue();
-                        buildingsRegion.put(gameEntities.getBuildings().get(buildingName), size);
-                    });
-                } else {
-                    String buildingName = buildingsNode.get("name").textValue();
-                    short size = buildingsNode.get("size").shortValue();
+                buildingsNode.forEach(building -> {
+                    String buildingName = building.get("name").textValue();
+                    short size = building.get("size").shortValue();
                     buildingsRegion.put(gameEntities.getBuildings().get(buildingName), size);
-                }
+
+                });
                 regionBuildingsByProvince.put(provinceId, buildingsRegion);
             }
 
@@ -251,13 +245,11 @@ public class DataManager {
             ObjectIntMap<Building> buildingsProvince = new ObjectIntMap<>();
             JsonNode buildingsProvinceNode = rootNode.get("buildings");
             if(buildingsProvinceNode != null) {
-                if (buildingsProvinceNode.isArray()) {
-                    buildingsProvinceNode.forEach(building -> {
-                        String buildingName = building.get("name").textValue();
-                        short size = building.get("size").shortValue();
-                        buildingsProvince.put(gameEntities.getBuildings().get(buildingName), size);
-                    });
-                }
+                buildingsProvinceNode.forEach(building -> {
+                    String buildingName = building.get("name").textValue();
+                    short size = building.get("size").shortValue();
+                    buildingsProvince.put(gameEntities.getBuildings().get(buildingName), size);
+                });
             }
 
             LandProvince province = new LandProvince(provinceId, countryOwner, countryController, population, provinceTerrain, countriesCore, good, goodValue, buildingsProvince);

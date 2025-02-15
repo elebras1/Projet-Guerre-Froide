@@ -2,16 +2,6 @@
     "add_core": "HUN",
     "owner": "HUN",
     "controller": "HUN",
-    "economy_building": [
-        {
-            "name": "university",
-            "size": 1
-        },
-        {
-            "name": "light_industry",
-            "size": 4
-        }
-    ],
     "population_total": {
         "amount": 678735,
         "template": 48
@@ -22,9 +12,19 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 6
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "university",
+            "size": 1
+        },
+        {
+            "name": "plastics_factory",
+            "size": 5
+        }
+    ]
 }

@@ -5,10 +5,6 @@
     ],
     "owner": "ENG",
     "controller": "ENG",
-    "economy_building": {
-        "name": "refinery",
-        "size": 5
-    },
     "population_total": {
         "amount": 433206,
         "template": 71
@@ -19,7 +15,7 @@
     },
     "buildings": [
         {
-            "name": "infrastructure",
+            "name": "railway",
             "size": 5
         },
         {
@@ -27,5 +23,11 @@
             "size": 1
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "refinery",
+            "size": 5
+        }
+    ]
 }
