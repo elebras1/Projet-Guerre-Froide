@@ -121,8 +121,8 @@ public class DataManager {
                 String countryFileName = this.commonPath + entry.getValue().asText();
                 countries.put(entry.getKey(), this.readCountryJson(countryFileName, entry.getKey(), parseFileName(countryFileName), ministerTypes, ideologies));
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("loadProvinces : " + e);
         }
         return countries;
     }
@@ -153,7 +153,7 @@ public class DataManager {
                         startDate = dateFormat.parse(ministerNode.get("start_date").asText());
                         deathDate = dateFormat.parse(ministerNode.get("death_date").asText());
                     } catch(ParseException e) {
-                        e.printStackTrace();
+                        System.out.println("readCountryJson : " + e);
                     }
 
                     Minister minister = new Minister(name, ideologies.get(ideology), imageNameFile, loyalty, ministerTypes.get(type), startDate, deathDate);
@@ -161,8 +161,8 @@ public class DataManager {
                 });
             }
             return country;
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readCountryJson : " + e);
         }
         return null;
     }
@@ -186,8 +186,8 @@ public class DataManager {
                 Province province = this.readProvinceJson(countries, provinceFileName, provinceId, gameEntities, regionBuildingsByProvince);
                 provinces.put(provinceId, province);
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readProvincesJson : " + e);
         }
 
         return provinces;
@@ -254,8 +254,8 @@ public class DataManager {
             LandProvince province = new LandProvince(provinceId, countryOwner, countryController, population, provinceTerrain, countriesCore, good, goodValue, buildingsProvince);
             countryOwner.addProvince(province);
             return province;
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readProvinceJson : " + e);
         }
         return null;
     }
@@ -285,8 +285,8 @@ public class DataManager {
                     total.set(total.get() + 1);
                 }
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readRegionJson : " + e);
         }
     }
 
@@ -312,8 +312,8 @@ public class DataManager {
                     }
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readDefinitionCsv : " + e);
         }
     }
 
@@ -324,8 +324,8 @@ public class DataManager {
                 String countryFileName = this.historyPath + entry.getValue().textValue();
                 this.readCountryHistoryJson(countries, countryFileName, entry.getKey(), provinces, gameEntities);
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readCountriesHistoryJson : " + e);
         }
     }
 
@@ -339,8 +339,8 @@ public class DataManager {
                     province.setContinent(continent);
                 });
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readContinentJsonFile : " + e);
         }
     }
 
@@ -374,8 +374,8 @@ public class DataManager {
                 country.setHeadOfState(idMinisterHeadOfState);
                 country.setHeadOfGovernment(idMinisterHeadOfGovernment);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readCountryHistoryJson : " + e);
         }
     }
 
@@ -424,8 +424,8 @@ public class DataManager {
                     governments.put(governmentName, new Government(governmentName, ideologiesAcceptance));
                 }
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readGovernmentsJson : " + e);
         }
 
         return governments;
@@ -442,8 +442,8 @@ public class DataManager {
                 short factionDriftingSpeed = ideologyNode.get("faction_drifting_speed").shortValue();
                 ideologies.put(ideologyName, new Ideology(ideologyName, color, factionDriftingSpeed));
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readIdeologiesJson : " + e);
         }
 
         return ideologies;
@@ -503,8 +503,8 @@ public class DataManager {
             });
 
             return new NationalIdeas(cultures, religions, identities, attitudes);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readNationalIdeasJson : " + e);
         }
 
         return null;
@@ -566,8 +566,8 @@ public class DataManager {
                 int color = this.parseColor(militaryGoodsNode.get("color"));
                 goods.put(militaryGoodsName, new MilitaryGood(militaryGoodsName, cost, color));
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readGoodsJson : " + e);
         }
 
         return goods;
@@ -585,8 +585,8 @@ public class DataManager {
                 float seniors = populationValuesNode.get(2).floatValue();
                 populationTemplates.put(template, new PopulationTemplate(template, children, adults, seniors));
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readPopulationTemplatesJson : " + e);
         }
 
         return populationTemplates;
@@ -606,8 +606,8 @@ public class DataManager {
                 });
                 ministerTypes.put(ministerTypeName, new MinisterType(ministerTypeName, modifiers));
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readMinisterTypesJson : " + e);
         }
 
         return ministerTypes;
@@ -628,8 +628,8 @@ public class DataManager {
             });
 
             return terrains;
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readTerrainsJson : " + e);
         }
 
         return terrains;
@@ -662,7 +662,7 @@ public class DataManager {
                 buildingTemplates.put(templateName, new BuildingTemplate(workforce, owner, employees));
             });
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("readBuildingTemplatesJson : " + e);
         }
 
         return buildingTemplates;
@@ -741,8 +741,8 @@ public class DataManager {
                     buildings.put(buildingName, new DevelopmentBuilding(buildingName, cost, time, onMap, maxLevel, new Modifier(modifierName, modifierValue)));
                 }
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readBuildingsJson : " + e);
         }
 
         return buildings;
@@ -755,8 +755,8 @@ public class DataManager {
             populationTypesJson.fields().forEachRemaining(entry -> {
                 this.readPopulationTypeJson(this.commonPath + entry.getValue().asText(), entry.getKey(), goods, populationTypes);
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readPopulationTypesJson : " + e);
         }
 
         return populationTypes;
@@ -781,8 +781,8 @@ public class DataManager {
                 luxuryDemands.put(good, value);
             });
             populationTypes.put(name, new PopulationType(color, name, standardDemands, luxuryDemands));
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readPopulationTypeJson : " + e);
         }
     }
 
@@ -797,8 +797,8 @@ public class DataManager {
                 country1.addRelation(country2, relationValue);
                 country2.addRelation(country1, relationValue);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readRelationJson : " + e);
         }
     }
 
@@ -813,8 +813,8 @@ public class DataManager {
                 country1.addAlliance(country2, AllianceType.getAllianceType(type, true));
                 country2.addAlliance(country1, AllianceType.getAllianceType(type, false));
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readAlliancesJson : " + e);
         }
     }
 
@@ -832,8 +832,8 @@ public class DataManager {
                     province.addPosition(name, (x << 16) | (y & 0xFFFF));
                 });
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readPositionsJson : " + e);
         }
     }
 
@@ -845,8 +845,8 @@ public class DataManager {
                 Province province = provinces.get(provinceId);
                 entry.getValue().forEach(adjacency -> province.addAdjacentProvinces(provinces.get(adjacency.shortValue())));
             });
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("readAdjenciesJson : " + e);
         }
     }
 }
