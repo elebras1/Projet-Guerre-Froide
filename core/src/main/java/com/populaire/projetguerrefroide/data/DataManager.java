@@ -233,12 +233,9 @@ public class DataManager {
             }
 
             Good good = null;
-            float goodValue = 0.0f;
             JsonNode goodNode = rootNode.get("good");
             if(goodNode != null) {
-                String goodName = goodNode.get("name").textValue();
-                good = gameEntities.getGoods().get(goodName);
-                goodValue = goodNode.get("value").floatValue();
+                good = gameEntities.getGoods().get(goodNode.textValue());
             }
 
             ObjectIntMap<Building> buildingsProvince = new ObjectIntMap<>();
@@ -251,7 +248,7 @@ public class DataManager {
                 });
             }
 
-            LandProvince province = new LandProvince(provinceId, countryOwner, countryController, population, provinceTerrain, countriesCore, good, goodValue, buildingsProvince);
+            LandProvince province = new LandProvince(provinceId, countryOwner, countryController, population, provinceTerrain, countriesCore, good, buildingsProvince);
             countryOwner.addProvince(province);
             return province;
         } catch (Exception e) {

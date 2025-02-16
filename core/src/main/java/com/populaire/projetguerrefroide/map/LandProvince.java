@@ -22,20 +22,18 @@ public class LandProvince implements Province {
     private final Terrain terrain;
     private final List<Country> countriesCore;
     private final Good good;
-    private final float goodValue;
     private final ObjectIntMap<Building> buildings;
     private final List<Province> adjacentProvinces;
     private final ObjectIntMap<String> positions;
     private final IntSet borderPixels;
 
-    public LandProvince(short id, Country countryOwner, Country countryController, Population population, Terrain terrain, List<Country> countriesCore, Good good, float goodValue, ObjectIntMap<Building> buildings) {
+    public LandProvince(short id, Country countryOwner, Country countryController, Population population, Terrain terrain, List<Country> countriesCore, Good good, ObjectIntMap<Building> buildings) {
         this.id = id;
         this.countryOwner = countryOwner;
         this.countryController = countryController;
         this.population = population;
         this.terrain = terrain;
         this.good = good;
-        this.goodValue = goodValue;
         this.countriesCore = countriesCore;
         this.buildings = buildings;
         this.adjacentProvinces = new ObjectList<>();
@@ -144,10 +142,6 @@ public class LandProvince implements Province {
 
     public Good getGood() {
         return this.good;
-    }
-
-    public float getGoodValue() {
-        return this.goodValue;
     }
 
     public ObjectIntMap<Building> getBuildings() {
