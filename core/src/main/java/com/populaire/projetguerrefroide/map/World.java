@@ -188,8 +188,8 @@ public class World {
             int color = province.getColor();
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
-            if(province.getGood() != null) {
-                this.mapModePixmap.drawPixel(red, green, province.getGood().getColor());
+            if(province.getResourceGood() != null) {
+                this.mapModePixmap.drawPixel(red, green, province.getResourceGood().getColor());
             } else {
                 this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
             }
@@ -471,7 +471,7 @@ public class World {
     public Mesh generateMeshResources() {
         int numProvinces = 0;
         for(LandProvince province : this.provinces.values()) {
-            if(province.getGood() != null) {
+            if(province.getResourceGood() != null) {
                 numProvinces++;
             }
         }
@@ -487,10 +487,10 @@ public class World {
         short height = 10;
 
         for (LandProvince province : this.provinces.values()) {
-            if(province.getGood() == null) {
+            if(province.getResourceGood() == null) {
                 continue;
             }
-            TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + province.getGood().getName());
+            TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + province.getResourceGood().getName());
 
             int ressourcePosition = province.getPosition("default");
             short cx = (short) (ressourcePosition >> 16);

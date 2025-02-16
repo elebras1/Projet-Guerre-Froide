@@ -4,12 +4,12 @@ import com.populaire.projetguerrefroide.economy.population.PopulationType;
 
 import java.util.List;
 
-public class BuildingTemplate {
+public class ProductionType {
     private short workforce;
     private PopulationType owner;
     private List<Employee> employees;
 
-    public BuildingTemplate(short workforce, PopulationType owner, List<Employee> employees) {
+    public ProductionType(short workforce, PopulationType owner, List<Employee> employees) {
         this.workforce = workforce;
         this.owner = owner;
         this.employees = employees;
@@ -29,7 +29,7 @@ public class BuildingTemplate {
 
     @Override
     public String toString() {
-        return "BuildingTemplate{" +
+        return "ProductionType{" +
             "workforce=" + this.workforce +
             ", owner=" + this.owner +
             ", employees=" + this.employees +

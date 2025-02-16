@@ -1,11 +1,8 @@
 {
-  "food": {
+  "resource_goods": {
     "fish": {
-      "base_production": 0.1,
-      "infra_production": 0.9,
-      "base_pop": 3000,
-      "infra_pop": -2900,
-      "cost": 2,
+      "value": 2,
+      "cost": 1.4,
       "color": [
         200,
         230,
@@ -13,11 +10,8 @@
       ]
     },
     "grain": {
-      "base_production": 0.04,
-      "infra_production": 0.16,
-      "base_pop": 3000,
-      "infra_pop": -2900,
-      "cost": 0.5,
+      "value": 2,
+      "cost": 1.2,
       "color": [
         255,
         204,
@@ -25,11 +19,8 @@
       ]
     },
     "vegetables": {
-      "base_production": 0.008,
-      "infra_production": 0.064,
-      "base_pop": 3000,
-      "infra_pop": -2900,
-      "cost": 1,
+      "value": 2,
+      "cost": 1.2,
       "color": [
         34,
         139,
@@ -37,11 +28,8 @@
       ]
     },
     "fruits": {
-      "base_production": 0.02,
-      "infra_production": 0.08,
-      "base_pop": 3000,
-      "infra_pop": -2900,
-      "cost": 2,
+      "value": 2,
+      "cost": 1.4,
       "color": [
         255,
         99,
@@ -49,140 +37,99 @@
       ]
     },
     "meat": {
-      "base_production": 0.004,
-      "infra_production": 0.016,
-      "base_pop": 5000,
-      "infra_pop": -4900,
-      "cost": 3,
+      "value": 3,
+      "cost": 1.8,
       "color": [
         255,
         69,
         0
       ]
-    }
-  },
-  "natural_resources": {
+    },
     "oil": {
-      "base_production": 0.2,
-      "infra_production": 0.8,
-      "base_pop": 200,
-      "infra_pop": -50,
-      "cost": 1,
+      "value": 4,
+      "cost": 2,
       "color": [
         0,
         0,
         0
-      ],
-      "priority": 100
+      ]
     },
     "coal": {
-      "base_production": 1,
-      "infra_production": 2,
-      "base_pop": 1000,
-      "infra_pop": -500,
-      "cost": 1,
+      "value": 2,
+      "cost": 1.7,
       "color": [
         70,
         70,
         70
-      ],
-      "priority": 50
+      ]
     },
     "gas": {
-      "base_production": 0.3,
-      "infra_production": 0.7,
-      "base_pop": 500,
-      "infra_pop": -200,
-      "cost": 1.5,
+      "value": 4.5,
+      "cost": 2.5,
       "color": [
-        100,
-        100,
-        100
-      ],
-      "priority": 80
+        15,
+        255,
+        72
+      ]
     },
     "wood": {
-      "base_production": 10,
-      "infra_production": 2,
-      "base_pop": 1000,
-      "infra_pop": -900,
-      "cost": 2,
+      "value": 2,
+      "cost": 1.2,
       "color": [
         139,
         69,
         19
-      ],
-      "priority": 40
+      ]
     },
     "renewable_energy": {
-      "base_production": 0.6,
-      "infra_production": 0.4,
-      "base_pop": 100,
-      "infra_pop": -100,
-      "cost": 1,
+      "value": 2.5,
+      "cost": 1.4,
       "color": [
         0,
         255,
         0
-      ],
-      "priority": 20
+      ]
     },
     "uranium": {
-      "base_production": 0.5,
-      "infra_production": 0.8,
-      "base_pop": 5000,
-      "infra_pop": -3000,
-      "cost": 10,
+      "value": 6,
+      "cost": 3,
       "color": [
         0,
         255,
         255
-      ],
-      "priority": 75
+      ]
     },
     "iron": {
-      "base_production": 0.6,
-      "infra_production": 1.4,
-      "base_pop": 3000,
-      "infra_pop": -2900,
-      "cost": 2,
+      "value": 5,
+      "cost": 1.5,
       "color": [
         139,
         137,
         137
-      ],
-      "priority": 10
+      ]
     },
     "precious_metals": {
-      "base_production": 0.126,
-      "infra_production": 0.08,
-      "base_pop": 5000,
-      "infra_pop": -4900,
-      "cost": 10,
+      "value": 8,
+      "cost": 8,
       "color": [
         255,
         215,
         0
-      ],
-      "priority": 20
+      ]
     },
     "rare_metals": {
-      "base_production": 0.02,
-      "infra_production": 0.08,
-      "base_pop": 5000,
-      "infra_pop": -4900,
-      "cost": 5,
+      "value": 5.5,
+      "cost": 4,
       "color": [
         75,
         0,
         130
-      ],
-      "priority": 20
+      ]
     }
   },
-  "energy": {
+  "advanced_goods": {
     "fuel": {
-      "cost": 2,
+      "cost": 2.5,
       "color": [
         255,
         140,
@@ -190,89 +137,87 @@
       ]
     },
     "electricity": {
-      "cost": 4,
+      "cost": 3.5,
       "color": [
         0,
         0,
         255
       ]
-    }
-  },
-  "advanced_goods": {
+    },
     "cement": {
       "cost": 5,
       "color": [
-        169,
-        169,
-        169
+        186,
+        186,
+        164
       ]
     },
     "steel": {
-      "cost": 7,
+      "cost": 1.5,
       "color": [
-        192,
-        192,
-        192
+        95,
+        128,
+        147
       ]
     },
     "aluminium": {
-      "cost": 8,
+      "cost": 5,
       "color": [
-        205,
-        205,
-        205
+        192,
+        68,
+        20
       ]
     },
     "glass": {
-      "cost": 3,
+      "cost": 1.8,
       "color": [
-        255,
-        255,
-        240
+        200,
+        200,
+        200
       ]
     },
     "inorganic_chemicals": {
       "cost": 5,
       "color": [
-        128,
-        0,
-        128
+        133,
+        101,
+        35
       ]
     },
     "fabric": {
-      "cost": 4,
+      "cost": 1.5,
       "color": [
-        255,
-        228,
-        196
+        186,
+        50,
+        40
       ]
     },
     "plastics": {
-      "cost": 6,
+      "cost": 1.4,
       "color": [
-        255,
-        20,
-        147
+        211,
+        200,
+        200
       ]
     },
     "paper": {
-      "cost": 2,
+      "cost": 2.5,
       "color": [
-        255,
-        255,
-        255
+        216,
+        185,
+        80
       ]
     },
     "integrated_circuits": {
-      "cost": 15,
+      "cost": 5.4,
       "color": [
-        0,
-        0,
-        128
+        155,
+        255,
+        0
       ]
     },
     "electronic_components": {
-      "cost": 12,
+      "cost": 3.5,
       "color": [
         70,
         130,
@@ -280,7 +225,7 @@
       ]
     },
     "aerospace_parts": {
-      "cost": 30,
+      "cost": 3.5,
       "color": [
         135,
         206,
@@ -288,39 +233,39 @@
       ]
     },
     "machine_parts": {
-      "cost": 18,
+      "cost": 3.5,
       "color": [
-        105,
-        105,
-        105
+        177,
+        200,
+        200
       ]
     },
     "ship_parts": {
-      "cost": 30,
+      "cost": 3.5,
       "color": [
-        0,
+        135,
         0,
         128
       ]
     },
     "computers": {
-      "cost": 25,
+      "cost": 4.5,
       "color": [
-        0,
-        0,
-        0
+        255,
+        255,
+        100
       ]
     },
     "automobiles": {
-      "cost": 20,
+      "cost": 5.1,
       "color": [
-        255,
-        0,
-        0
+        60,
+        70,
+        65
       ]
     },
     "clothes": {
-      "cost": 8,
+      "cost": 2.9,
       "color": [
         255,
         192,
@@ -328,49 +273,49 @@
       ]
     },
     "pharmaceuticals": {
-      "cost": 30,
+      "cost": 2,
       "color": [
-        0,
         255,
-        0
+        200,
+        110
       ]
     },
     "communication": {
-      "cost": 15,
+      "cost": 4,
       "color": [
-        0,
-        128,
-        128
+        129,
+        63,
+        10
       ]
     },
     "transport": {
-      "cost": 20,
+      "cost": 3,
       "color": [
-        139,
+        133,
         0,
-        0
+        54
       ]
     }
   },
   "military_goods": {
     "ammunition": {
-      "cost": 5,
+      "cost": 7,
       "color": [
-        128,
-        0,
-        0
+        208,
+        202,
+        127
       ]
     },
     "weaponry": {
-      "cost": 20,
+      "cost": 9,
       "color": [
-        139,
-        69,
-        19
+        189,
+        118,
+        22
       ]
     },
     "refined_uranium": {
-      "cost": 2500,
+      "cost": 12,
       "color": [
         50,
         205,
@@ -378,7 +323,7 @@
       ]
     },
     "military_satellites": {
-      "cost": 1000,
+      "cost": 25,
       "color": [
         255,
         215,
@@ -386,7 +331,7 @@
       ]
     },
     "armoured_vehicles": {
-      "cost": 50,
+      "cost": 10.5,
       "color": [
         85,
         107,
@@ -394,19 +339,19 @@
       ]
     },
     "ships": {
-      "cost": 100,
+      "cost": 12,
       "color": [
-        0,
-        0,
-        255
+        145,
+        130,
+        86
       ]
     },
     "aeroplanes": {
-      "cost": 150,
+      "cost": 13,
       "color": [
-        135,
-        206,
-        250
+        221,
+        213,
+        182
       ]
     }
   }

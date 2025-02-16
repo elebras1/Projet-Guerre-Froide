@@ -45,8 +45,9 @@ public class DataManager {
     private final String goodsJsonFile = this.commonPath + "goods.json";
     private final String populationTemplatesJsonFile = this.commonPath + "population_templates.json";
     private final String ministerTypesJsonFile = this.commonPath + "minister_types.json";
-    private final String buildingsTemplatesJsonFile = this.commonPath + "buildings_templates.json";
+    private final String productionTypesJsonFile = this.commonPath + "production_types.json";
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
+    private final String resourceProductionsJsonFile = this.commonPath + "resource_productions.json";
     private final String populationTypesJsonFile = this.commonPath + "poptypes.json";
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
     private final String alliancesJsonFile = this.diplomacyPath + "alliances.json";
@@ -59,8 +60,9 @@ public class DataManager {
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
         Map<String, Good> goods = this.readGoodsJson();
         Map<String, PopulationType> populationTypes = this.readPopulationTypesJson(goods);
-        Map<String, BuildingTemplate> buildingTemplates = this.readBuildingTemplatesJson(populationTypes);
-        Map<String, Building> buildings = this.readBuildingsJson(goods, buildingTemplates);
+        Map<String, ProductionType> productionTypes = this.readProductionTypesJson(populationTypes);
+        Map<String, Building> buildings = this.readBuildingsJson(goods, productionTypes);
+        this.readResourceProductionsJson(goods, productionTypes);
         Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
         Map<String, Terrain> terrains = this.readTerrainsJson();
         return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, populationTypes, ministerTypes, this.readPopulationTemplatesJson(), terrains);
@@ -232,10 +234,10 @@ public class DataManager {
                 regionBuildingsByProvince.put(provinceId, buildingsRegion);
             }
 
-            Good good = null;
+            ResourceGood resourceGood = null;
             JsonNode goodNode = rootNode.get("good");
             if(goodNode != null) {
-                good = gameEntities.getGoods().get(goodNode.textValue());
+                resourceGood = (ResourceGood) gameEntities.getGoods().get(goodNode.textValue());
             }
 
             ObjectIntMap<Building> buildingsProvince = new ObjectIntMap<>();
@@ -248,7 +250,7 @@ public class DataManager {
                 });
             }
 
-            LandProvince province = new LandProvince(provinceId, countryOwner, countryController, population, provinceTerrain, countriesCore, good, buildingsProvince);
+            LandProvince province = new LandProvince(provinceId, countryOwner, countryController, population, provinceTerrain, countriesCore, resourceGood, buildingsProvince);
             countryOwner.addProvince(province);
             return province;
         } catch (Exception e) {
@@ -511,39 +513,14 @@ public class DataManager {
         Map<String, Good> goods = new ObjectObjectMap<>();
         try {
             JsonNode goodsJson = this.openJson(this.goodsJsonFile);
-            JsonNode foodJson = goodsJson.get("food");
-            foodJson.fields().forEachRemaining(entry -> {
+            JsonNode resourceGoods = goodsJson.get("resource_goods");
+            resourceGoods.fields().forEachRemaining(entry -> {
                 String goodName = entry.getKey();
                 JsonNode goodNode = entry.getValue();
-                float production = goodNode.get("base_production").floatValue();
-                float infraProduction = goodNode.get("infra_production").floatValue();
-                short basePopulation = goodNode.get("base_pop").shortValue();
-                short infraPopulation = goodNode.get("infra_pop").shortValue();
                 float cost = goodNode.get("cost").floatValue();
+                float value = goodNode.get("value").floatValue();
                 int color = this.parseColor(goodNode.get("color"));
-                goods.put(goodName, new Food(goodName, production, infraProduction, basePopulation, infraPopulation, cost, color));
-            });
-            JsonNode naturalResourcesJson = goodsJson.get("natural_resources");
-            naturalResourcesJson.fields().forEachRemaining(entry -> {
-                String naturalResourcesName = entry.getKey();
-                JsonNode naturalResourcesNode = entry.getValue();
-                float production = naturalResourcesNode.get("base_production").floatValue();
-                float infraProduction = naturalResourcesNode.get("infra_production").floatValue();
-                short basePopulation = naturalResourcesNode.get("base_pop").shortValue();
-                short infraPopulation = naturalResourcesNode.get("infra_pop").shortValue();
-                float cost = naturalResourcesNode.get("cost").floatValue();
-                int color = this.parseColor(naturalResourcesNode.get("color"));
-                short priority = naturalResourcesNode.get("priority").shortValue();
-                goods.put(naturalResourcesName, new NaturalResource(naturalResourcesName, production, infraProduction, basePopulation, infraPopulation, cost, color, priority));
-            });
-
-            JsonNode energyJson = goodsJson.get("energy");
-            energyJson.fields().forEachRemaining(entry -> {
-                String energyName = entry.getKey();
-                JsonNode energyNode = entry.getValue();
-                float cost = energyNode.get("cost").floatValue();
-                int color = this.parseColor(energyNode.get("color"));
-                goods.put(energyName, new Energy(energyName, cost, color));
+                goods.put(goodName, new ResourceGood(goodName, cost, color, value));
             });
 
             JsonNode advancedGoodsJson = goodsJson.get("advanced_goods");
@@ -632,40 +609,53 @@ public class DataManager {
         return terrains;
     }
 
-    private Map<String, BuildingTemplate> readBuildingTemplatesJson(Map<String, PopulationType> populationTypes) {
-        Map<String, BuildingTemplate> buildingTemplates = new ObjectObjectMap<>();
+    private Map<String, ProductionType> readProductionTypesJson(Map<String, PopulationType> populationTypes) {
+        Map<String, ProductionType> productionTypes = new ObjectObjectMap<>();
         try {
-            JsonNode buildingTemplatesJson = this.openJson(this.buildingsTemplatesJsonFile);
-            JsonNode templateEmployeesNode = buildingTemplatesJson.get("templates_employees");
-            Map<String, Employee> templateEmployees = new ObjectObjectMap<>();
-            templateEmployeesNode.fields().forEachRemaining(entry -> {
-                String templateName = entry.getKey();
+            JsonNode buildingTypesJson = this.openJson(this.productionTypesJsonFile);
+            JsonNode typesEmployeesNode = buildingTypesJson.get("types_employees");
+            Map<String, Employee> typeEmployees = new ObjectObjectMap<>();
+            typesEmployeesNode.fields().forEachRemaining(entry -> {
+                String typeName = entry.getKey();
                 PopulationType populationType = populationTypes.get(entry.getValue().get("poptype").asText());
                 float amount = entry.getValue().get("amount").floatValue();
                 float effectMultiplier = entry.getValue().get("effect_multiplier").floatValue();
-                templateEmployees.put(templateName, new Employee(populationType, amount, effectMultiplier));
+                typeEmployees.put(typeName, new Employee(populationType, amount, effectMultiplier));
             });
 
-            JsonNode templateBuildings = buildingTemplatesJson.get("templates_buildings");
-            templateBuildings.fields().forEachRemaining(entry -> {
-                String templateName = entry.getKey();
+            JsonNode typesBuildings = buildingTypesJson.get("types_buildings");
+            typesBuildings.fields().forEachRemaining(entry -> {
+                String typeName = entry.getKey();
                 short workforce = entry.getValue().get("workforce").shortValue();
                 PopulationType owner = populationTypes.get(entry.getValue().get("owner").get("poptype").asText());
                 List<Employee> employees = new ObjectList<>();
                 entry.getValue().get("employees").forEach(employee -> {
                     String employeeName = employee.asText();
-                    employees.add(templateEmployees.get(employeeName));
+                    employees.add(typeEmployees.get(employeeName));
                 });
-                buildingTemplates.put(templateName, new BuildingTemplate(workforce, owner, employees));
+                productionTypes.put(typeName, new ProductionType(workforce, owner, employees));
+            });
+
+            JsonNode typesRGOs = buildingTypesJson.get("types_rgo");
+            typesRGOs.fields().forEachRemaining(entry -> {
+                String typeName = entry.getKey();
+                short workforce = entry.getValue().get("workforce").shortValue();
+                PopulationType owner = populationTypes.get(entry.getValue().get("owner").get("poptype").asText());
+                List<Employee> employees = new ObjectList<>();
+                entry.getValue().get("employees").forEach(employee -> {
+                    String employeeName = employee.asText();
+                    employees.add(typeEmployees.get(employeeName));
+                });
+                productionTypes.put(typeName, new ResourceProductionType(workforce, owner, employees));
             });
         } catch (Exception e) {
-            System.out.println("readBuildingTemplatesJson : " + e);
+            System.out.println("readProductionTypesJson : " + e);
         }
 
-        return buildingTemplates;
+        return productionTypes;
     }
 
-    private Map<String, Building> readBuildingsJson(Map<String, Good> goods, Map<String, BuildingTemplate> buildingTemplates) {
+    private Map<String, Building> readBuildingsJson(Map<String, Good> goods, Map<String, ProductionType> productionTypes) {
         Map<String, Building> buildings = new ObjectObjectMap<>();
         try {
             JsonNode buildingsJson = this.openJson(this.buildingsJsonFile);
@@ -674,10 +664,10 @@ public class DataManager {
                 String buildingName = entry.getKey();
                 int cost = entry.getValue().get("cost").intValue();
                 short time = entry.getValue().get("time").shortValue();
-                BuildingTemplate baseTemplate = buildingTemplates.get(entry.getValue().get("base_template").asText());
-                BuildingTemplate artisansTemplate = null;
-                if(entry.getValue().has("artisans_template")) {
-                    artisansTemplate = buildingTemplates.get(entry.getValue().get("artisans_template").asText());
+                ProductionType baseType = productionTypes.get(entry.getValue().get("base_type").asText());
+                ProductionType artisansType = null;
+                if(entry.getValue().has("artisans_type")) {
+                    artisansType = productionTypes.get(entry.getValue().get("artisans_type").asText());
                 }
                 int color = this.parseColor(entry.getValue().get("color"));
                 short maxLevel = entry.getValue().get("max_level").shortValue();
@@ -693,7 +683,7 @@ public class DataManager {
                     Good good = goods.get(outputGood.getKey());
                     outputGoods.put(good, outputGood.getValue().asInt());
                 });
-                buildings.put(buildingName, new EconomyBuilding(baseTemplate, artisansTemplate, buildingName, cost, time, inputGoods, outputGoods, maxLevel, color));
+                buildings.put(buildingName, new EconomyBuilding(baseType, artisansType, buildingName, cost, time, inputGoods, outputGoods, maxLevel, color));
             });
 
             JsonNode specialBuilding = buildingsJson.get("special_building");
@@ -743,6 +733,19 @@ public class DataManager {
         }
 
         return buildings;
+    }
+
+    private void readResourceProductionsJson(Map<String, Good> goods, Map<String, ProductionType> productionTypes) {
+        try {
+            JsonNode resourceProductionsJson = this.openJson(this.resourceProductionsJsonFile);
+            resourceProductionsJson.fields().forEachRemaining(entry -> {
+                ResourceGood good = (ResourceGood) goods.get(entry.getKey());
+                ResourceProductionType productionType = (ResourceProductionType) productionTypes.get(entry.getValue().get("base_type").asText());
+                good.setProductionType(productionType);
+            });
+        } catch (Exception e) {
+            System.out.println("readResourceProductionsJson : " + e);
+        }
     }
 
     private Map<String, PopulationType> readPopulationTypesJson(Map<String, Good> goods) {

@@ -5,29 +5,29 @@ import com.populaire.projetguerrefroide.economy.good.Good;
 import java.util.Map;
 
 public class EconomyBuilding extends Building {
-    private final BuildingTemplate baseTemplate;
-    private final BuildingTemplate artisansTemplate;
+    private final ProductionType baseType;
+    private final ProductionType artisansType;
     private final Map<Good, Integer> inputGoods;
     private final Map<Good, Integer> outputGoods;
     private final short maxLevel;
     private final int color;
 
-    public EconomyBuilding(BuildingTemplate baseTemplate, BuildingTemplate artisansTemplate, String name, int cost, short time, Map<Good, Integer> inputGoods, Map<Good, Integer> outputGoods, short maxLevel, int color) {
+    public EconomyBuilding(ProductionType baseTemplate, ProductionType artisansTemplate, String name, int cost, short time, Map<Good, Integer> inputGoods, Map<Good, Integer> outputGoods, short maxLevel, int color) {
         super(name, cost, time);
-        this.baseTemplate = baseTemplate;
-        this.artisansTemplate = artisansTemplate;
+        this.baseType = baseTemplate;
+        this.artisansType = artisansTemplate;
         this.inputGoods = inputGoods;
         this.outputGoods = outputGoods;
         this.maxLevel = maxLevel;
         this.color = color;
     }
 
-    public BuildingTemplate getBaseTemplate() {
-        return this.baseTemplate;
+    public ProductionType getBaseType() {
+        return this.baseType;
     }
 
-    public BuildingTemplate getArtisansTemplate() {
-        return this.artisansTemplate;
+    public ProductionType getArtisansType() {
+        return this.artisansType;
     }
 
     public Map<Good, Integer> getInputGoods() {
@@ -53,8 +53,8 @@ public class EconomyBuilding extends Building {
             ", cost=" + this.getCost() +
             ", time=" + this.getTime() +
             ", onMap=" + this.isOnMap() +
-            ", baseTemplate=" + this.baseTemplate +
-            ", artisansTemplate=" + this.artisansTemplate +
+            ", baseType=" + this.baseType +
+            ", artisansType=" + this.artisansType +
             ", inputGoods=" + this.inputGoods +
             ", outputGoods=" + this.outputGoods +
             ", maxLevel=" + this.maxLevel +

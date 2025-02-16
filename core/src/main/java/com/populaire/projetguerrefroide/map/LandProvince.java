@@ -1,11 +1,11 @@
 package com.populaire.projetguerrefroide.map;
 
-import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.economy.good.Good;
+import com.populaire.projetguerrefroide.economy.good.ResourceGood;
 import com.populaire.projetguerrefroide.economy.population.Population;
 import com.populaire.projetguerrefroide.entity.Terrain;
 
@@ -21,19 +21,19 @@ public class LandProvince implements Province {
     private Population population;
     private final Terrain terrain;
     private final List<Country> countriesCore;
-    private final Good good;
+    private final ResourceGood resourceGood;
     private final ObjectIntMap<Building> buildings;
     private final List<Province> adjacentProvinces;
     private final ObjectIntMap<String> positions;
     private final IntSet borderPixels;
 
-    public LandProvince(short id, Country countryOwner, Country countryController, Population population, Terrain terrain, List<Country> countriesCore, Good good, ObjectIntMap<Building> buildings) {
+    public LandProvince(short id, Country countryOwner, Country countryController, Population population, Terrain terrain, List<Country> countriesCore, ResourceGood resourceGood, ObjectIntMap<Building> buildings) {
         this.id = id;
         this.countryOwner = countryOwner;
         this.countryController = countryController;
         this.population = population;
         this.terrain = terrain;
-        this.good = good;
+        this.resourceGood = resourceGood;
         this.countriesCore = countriesCore;
         this.buildings = buildings;
         this.adjacentProvinces = new ObjectList<>();
@@ -140,8 +140,8 @@ public class LandProvince implements Province {
         this.countriesCore.remove(country);
     }
 
-    public Good getGood() {
-        return this.good;
+    public Good getResourceGood() {
+        return this.resourceGood;
     }
 
     public ObjectIntMap<Building> getBuildings() {

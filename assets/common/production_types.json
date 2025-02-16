@@ -1,0 +1,104 @@
+{
+    "types_employees": {
+        "type_craftsmen": {
+            "poptype": "craftsmen",
+            "amount": 0.8,
+            "effect_multiplier": 1
+        },
+        "type_clerks": {
+            "poptype": "craftsmen",
+            "amount": 0.15,
+            "effect_multiplier": 1.01
+        },
+        "type_aristocrats": {
+            "poptype": "aristocrats",
+            "amount": 0.05,
+            "effect_multiplier": 1.01
+        },
+        "type_craftsmen_advanced": {
+            "poptype": "craftsmen",
+            "amount": 0.65,
+            "effect_multiplier": 1
+        },
+        "type_clerks_advanced": {
+            "poptype": "craftsmen",
+            "amount": 0.25,
+            "effect_multiplier": 1.01
+        },
+        "type_artisans": {
+            "poptype": "artisans",
+            "amount": 1,
+            "effect_multiplier": 0.2
+        },
+        "type_farmers": {
+            "poptype": "farmers",
+            "amount": 1,
+            "effect_multiplier": 1
+        },
+        "type_labourers": {
+            "poptype": "labourers",
+            "amount": 1,
+            "effect_multiplier": 1
+        },
+        "type_slaves": {
+            "poptype": "slaves",
+            "amount": 1,
+            "effect_multiplier": 1.3
+        }
+    },
+    "types_buildings": {
+        "type_economy": {
+            "workforce": 20000,
+            "owner": {
+                "poptype": "capitalists"
+            },
+            "employees": [
+                "type_craftsmen",
+                "type_clerks",
+                "type_aristocrats"
+            ]
+        },
+        "type_economy_artisan": {
+            "workforce": 5000,
+            "owner": {
+                "poptype": "artisans"
+            },
+            "employees": [
+                "type_artisans"
+            ]
+        },
+        "type_economy_advanced": {
+            "workforce": 20000,
+            "owner": {
+                "poptype": "capitalists"
+            },
+            "employees": [
+                "type_craftsmen_advanced",
+                "type_clerks_advanced",
+                "type_aristocrats"
+            ]
+        }
+    },
+    "types_rgo": {
+        "type_rgo_farmers": {
+            "workforce": 70000,
+            "owner": {
+                "poptype": "capitalists"
+            },
+            "employees": [
+                "type_farmers",
+                "type_slaves"
+            ]
+        },
+        "type_rgo_labourers": {
+            "workforce": 60000,
+            "owner": {
+                "poptype": "capitalists"
+            },
+            "employees": [
+                "type_labourers",
+                "type_slaves"
+            ]
+        }
+    }
+}
