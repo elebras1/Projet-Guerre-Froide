@@ -4,7 +4,21 @@
     "add_core": "HON",
     "population_total": {
         "amount": 344750,
-        "template": 76
+        "template": 76,
+        "populations": {
+            "farmers": 0.26899,
+            "labourers": 0.08306,
+            "craftsmen": 0.3653,
+            "clerks": 0.15655,
+            "aristocrats": 0.00434,
+            "artisans": 0.03517,
+            "bureaucrats": 0.00459,
+            "capitalists": 0.03243,
+            "clergymen": 0.01873,
+            "officers": 0.00593,
+            "slaves": 0.0,
+            "soldiers": 0.02491
+        }
     },
     "good": "fruits",
     "buildings": [

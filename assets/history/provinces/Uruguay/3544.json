@@ -4,7 +4,21 @@
     "add_core": "URU",
     "population_total": {
         "amount": 764508,
-        "template": 90
+        "template": 90,
+        "populations": {
+            "farmers": 0.51025,
+            "labourers": 0.10405,
+            "craftsmen": 0.18475,
+            "clerks": 0.07918,
+            "aristocrats": 0.00377,
+            "artisans": 0.03339,
+            "bureaucrats": 0.00419,
+            "capitalists": 0.03255,
+            "clergymen": 0.01767,
+            "officers": 0.00589,
+            "slaves": 0.0,
+            "soldiers": 0.02431
+        }
     },
     "good": "meat",
     "buildings": [

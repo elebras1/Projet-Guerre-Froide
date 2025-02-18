@@ -76,8 +76,8 @@ public class WorldService {
         return this.world.getSelectedProvince().getCountryOwner().getName();
     }
 
-    public int getPopulationSizeOfSelectedCountry() {
-        return this.world.getSelectedProvince().getCountryOwner().getPopulationSize();
+    public int getPopulationAmountOfSelectedCountry() {
+        return this.world.getSelectedProvince().getCountryOwner().getPopulationAmount();
     }
 
     public Government getGovernmentOfSelectedCountry() {

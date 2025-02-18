@@ -4,7 +4,21 @@
     "add_core": "SIA",
     "population_total": {
         "amount": 558009,
-        "template": 27
+        "template": 27,
+        "populations": {
+            "farmers": 0.80209,
+            "labourers": 0.06781,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00414,
+            "artisans": 0.03826,
+            "bureaucrats": 0.00493,
+            "capitalists": 0.03322,
+            "clergymen": 0.0186,
+            "officers": 0.00551,
+            "slaves": 0.0,
+            "soldiers": 0.02544
+        }
     },
     "good": "fish",
     "buildings": [

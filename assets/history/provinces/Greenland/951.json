@@ -4,7 +4,21 @@
     "add_core": "DEN",
     "population_total": {
         "amount": 655,
-        "template": 51
+        "template": 51,
+        "populations": {
+            "farmers": 0.43788,
+            "labourers": 0.43789,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00364,
+            "artisans": 0.03373,
+            "bureaucrats": 0.0046,
+            "capitalists": 0.03476,
+            "clergymen": 0.01732,
+            "officers": 0.00575,
+            "slaves": 0.0,
+            "soldiers": 0.02443
+        }
     },
     "buildings": [
         {

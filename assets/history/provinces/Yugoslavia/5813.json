@@ -7,7 +7,21 @@
     "controller": "YUG",
     "population_total": {
         "amount": 599578,
-        "template": 62
+        "template": 62,
+        "populations": {
+            "farmers": 0.81571,
+            "labourers": 0.06158,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00378,
+            "artisans": 0.03238,
+            "bureaucrats": 0.00466,
+            "capitalists": 0.03379,
+            "clergymen": 0.01698,
+            "officers": 0.00605,
+            "slaves": 0.0,
+            "soldiers": 0.02507
+        }
     },
     "good": "meat",
     "buildings": [

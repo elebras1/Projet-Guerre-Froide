@@ -200,10 +200,10 @@ public class Country {
         return this.attitude;
     }
 
-    public int getPopulationSize() {
+    public int getPopulationAmount() {
         int population = 0;
         for(LandProvince province : this.provinces) {
-            population += province.getPopulation().getSize();
+            population += province.getPopulation().getAmount();
         }
         return population;
     }

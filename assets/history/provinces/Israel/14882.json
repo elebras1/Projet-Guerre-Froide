@@ -4,7 +4,21 @@
     "add_core": "SYR",
     "population_total": {
         "amount": 153955,
-        "template": 34
+        "template": 34,
+        "populations": {
+            "farmers": 0.77552,
+            "labourers": 0.09819,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00409,
+            "artisans": 0.03893,
+            "bureaucrats": 0.00476,
+            "capitalists": 0.03266,
+            "clergymen": 0.01676,
+            "officers": 0.00557,
+            "slaves": 0.0,
+            "soldiers": 0.02352
+        }
     },
     "good": "vegetables",
     "buildings": [

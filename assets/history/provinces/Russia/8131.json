@@ -7,12 +7,40 @@
     ],
     "population_total": {
         "amount": 286766,
-        "template": 45
+        "template": 45,
+        "populations": {
+            "farmers": 0.26158,
+            "labourers": 0.08972,
+            "craftsmen": 0.39338,
+            "clerks": 0.1686,
+            "aristocrats": 0.0,
+            "artisans": 0.0,
+            "bureaucrats": 0.04813,
+            "capitalists": 0.0,
+            "clergymen": 0.00511,
+            "officers": 0.00408,
+            "slaves": 0.0,
+            "soldiers": 0.0294
+        }
     },
     "good": "grain",
     "buildings": [
         {
             "name": "railway",
+            "size": 4
+        }
+    ],
+    "economy_buildings": [
+        {
+            "name": "powerplant",
+            "size": 5
+        },
+        {
+            "name": "steel_factory",
+            "size": 8
+        },
+        {
+            "name": "machine_parts_factory",
             "size": 4
         }
     ],

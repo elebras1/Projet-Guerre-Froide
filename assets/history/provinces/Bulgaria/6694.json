@@ -4,7 +4,21 @@
     "add_core": "BUL",
     "population_total": {
         "amount": 328456,
-        "template": 46
+        "template": 46,
+        "populations": {
+            "labourers": 0.51516,
+            "farmers": 0.07686,
+            "craftsmen": 0.20065,
+            "clerks": 0.08599,
+            "aristocrats": 0.00379,
+            "artisans": 0.03282,
+            "bureaucrats": 0.00456,
+            "capitalists": 0.03347,
+            "clergymen": 0.01693,
+            "officers": 0.00562,
+            "slaves": 0.0,
+            "soldiers": 0.02415
+        }
     },
     "good": "wood",
     "buildings": [

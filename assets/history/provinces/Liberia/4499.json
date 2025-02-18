@@ -4,7 +4,21 @@
     "add_core": "LIB",
     "population_total": {
         "amount": 167974,
-        "template": 5
+        "template": 5,
+        "populations": {
+            "farmers": 0.25976,
+            "labourers": 0.07858,
+            "craftsmen": 0.3748,
+            "clerks": 0.16063,
+            "aristocrats": 0.00426,
+            "artisans": 0.03754,
+            "bureaucrats": 0.00421,
+            "capitalists": 0.034,
+            "clergymen": 0.01705,
+            "officers": 0.00584,
+            "slaves": 0.0,
+            "soldiers": 0.02333
+        }
     },
     "good": "vegetables",
     "buildings": [

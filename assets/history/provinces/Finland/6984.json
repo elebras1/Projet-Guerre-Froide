@@ -4,7 +4,21 @@
     "add_core": "FIN",
     "population_total": {
         "amount": 27360,
-        "template": 53
+        "template": 53,
+        "populations": {
+            "farmers": 0.80282,
+            "labourers": 0.08528,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00648,
+            "artisans": 0.03022,
+            "bureaucrats": 0.00306,
+            "capitalists": 0.0363,
+            "clergymen": 0.00961,
+            "officers": 0.00489,
+            "slaves": 0.0,
+            "soldiers": 0.02134
+        }
     },
     "good": "meat",
     "buildings": [

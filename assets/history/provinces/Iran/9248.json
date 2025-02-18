@@ -4,7 +4,21 @@
     "add_core": "PER",
     "population_total": {
         "amount": 33626,
-        "template": 16
+        "template": 16,
+        "populations": {
+            "labourers": 0.80027,
+            "farmers": 0.06925,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00369,
+            "artisans": 0.03884,
+            "bureaucrats": 0.00488,
+            "capitalists": 0.03467,
+            "clergymen": 0.0194,
+            "officers": 0.00601,
+            "slaves": 0.0,
+            "soldiers": 0.02299
+        }
     },
     "good": "coal",
     "buildings": [

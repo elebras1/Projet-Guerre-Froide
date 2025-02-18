@@ -65,7 +65,7 @@ public class DataManager {
         this.readResourceProductionsJson(goods, productionTypes);
         Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
         Map<String, Terrain> terrains = this.readTerrainsJson();
-        return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, populationTypes, ministerTypes, this.readPopulationTemplatesJson(), terrains);
+        return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, populationTypes, ministerTypes, terrains);
     }
 
     public World createWorldThreadSafe(GameEntities gameEntities, AsyncExecutor asyncExecutor) {
@@ -100,7 +100,8 @@ public class DataManager {
 
     private void loadProvinces(Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, GameEntities gameEntities) {
         IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince = new IntObjectMap<>();
-        IntObjectMap<Province> provinces = this.readProvincesJson(countries, gameEntities, regionBuildingsByProvince);
+        IntObjectMap<PopulationTemplate> populationTemplates = this.readPopulationTemplatesJson();
+        IntObjectMap<Province> provinces = this.readProvincesJson(countries, gameEntities, regionBuildingsByProvince, populationTemplates);
         this.readRegionJson(provinces, regionBuildingsByProvince);
         this.readDefinitionCsv(provinces, provincesByColor, waterProvincesByColor);
         this.readProvinceBitmap(provincesByColor);
@@ -178,14 +179,14 @@ public class DataManager {
         return (red << 24) | (green << 16) | (blue << 8) | alpha;
     }
 
-    private IntObjectMap<Province> readProvincesJson(Map<String, Country> countries, GameEntities gameEntities, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince) {
+    private IntObjectMap<Province> readProvincesJson(Map<String, Country> countries, GameEntities gameEntities, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince, IntObjectMap<PopulationTemplate> populationTemplates) {
         IntObjectMap<Province> provinces = new IntObjectMap<>(20000);
         try {
             JsonNode provincesJson = this.openJson(this.provincesJsonFile);
             provincesJson.fields().forEachRemaining(entry -> {
                 String provinceFileName = this.historyPath + entry.getValue().asText();
                 short provinceId = Short.parseShort(entry.getKey());
-                Province province = this.readProvinceJson(countries, provinceFileName, provinceId, gameEntities, regionBuildingsByProvince);
+                Province province = this.readProvinceJson(countries, provinceFileName, provinceId, gameEntities, regionBuildingsByProvince, populationTemplates);
                 provinces.put(provinceId, province);
             });
         } catch (Exception e) {
@@ -195,7 +196,7 @@ public class DataManager {
         return provinces;
     }
 
-    private LandProvince readProvinceJson(Map<String, Country> countries, String provinceFileName, short provinceId, GameEntities gameEntities, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince) {
+    private LandProvince readProvinceJson(Map<String, Country> countries, String provinceFileName, short provinceId, GameEntities gameEntities, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince, IntObjectMap<PopulationTemplate> populationTemplates) {
         try {
             JsonNode rootNode = this.openJson(provinceFileName);
 
@@ -219,7 +220,31 @@ public class DataManager {
             JsonNode populationNode = rootNode.get("population_total");
             int amount = populationNode.get("amount").intValue();
             short template = populationNode.get("template").shortValue();
-            Population population = new Population(amount, gameEntities.getPopulationTemplates().get(template));
+            PopulationTemplate populationTemplate = populationTemplates.get(template);
+            ObjectIntMap<PopulationType> populations = new ObjectIntMap<>();
+            JsonNode populationsNode = populationNode.get("populations");
+            int amountChildren = (int) (amount * populationTemplate.getChildren());
+            int amountSeniors = (int) (amount * populationTemplate.getSeniors());
+            int amountAdults = (int) (amount * populationTemplate.getAdults());
+
+            AtomicInteger amountPopulations = new AtomicInteger();
+            AtomicReference<PopulationType> biggestPopulationType = new AtomicReference<>();
+            populationsNode.fields().forEachRemaining(populationEntry -> {
+                String populationTypeName = populationEntry.getKey();
+                float populationTypeValue = populationEntry.getValue().floatValue();
+                PopulationType populationType = gameEntities.getPopulationTypes().get(populationTypeName);
+                int amountPopulationType = (int) (amountAdults * populationTypeValue);
+                amountPopulations.addAndGet(amountPopulationType);
+                populations.put(populationType, amountPopulationType);
+                if(biggestPopulationType.get() == null || amountPopulationType > populations.get(biggestPopulationType.get())) {
+                    biggestPopulationType.set(populationType);
+                }
+            });
+            if(amountAdults != amountPopulations.get()) {
+                int difference = amountAdults - amountPopulations.get();
+                populations.put(biggestPopulationType.get(), populations.get(biggestPopulationType.get()) + difference);
+            }
+            Population population = new Population(amountChildren, amountAdults, amountSeniors, populations);
 
             ObjectIntMap<Building> buildingsRegion;
             JsonNode buildingsNode = rootNode.get("economy_buildings");

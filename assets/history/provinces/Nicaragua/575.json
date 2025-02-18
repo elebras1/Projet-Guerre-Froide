@@ -4,7 +4,21 @@
     "add_core": "NIC",
     "population_total": {
         "amount": 21813,
-        "template": 76
+        "template": 76,
+        "populations": {
+            "farmers": 0.79257,
+            "labourers": 0.08127,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00401,
+            "artisans": 0.03762,
+            "bureaucrats": 0.00429,
+            "capitalists": 0.03403,
+            "clergymen": 0.01568,
+            "officers": 0.00537,
+            "slaves": 0.0,
+            "soldiers": 0.02516
+        }
     },
     "good": "fruits",
     "buildings": [

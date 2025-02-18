@@ -4,7 +4,21 @@
     "add_core": "FRA",
     "population_total": {
         "amount": 376696,
-        "template": 70
+        "template": 70,
+        "populations": {
+            "labourers": 0.25359,
+            "farmers": 0.09031,
+            "craftsmen": 0.38875,
+            "clerks": 0.16661,
+            "aristocrats": 0.00303,
+            "artisans": 0.03006,
+            "bureaucrats": 0.00338,
+            "capitalists": 0.03469,
+            "clergymen": 0.01479,
+            "officers": 0.00214,
+            "slaves": 0.0,
+            "soldiers": 0.01265
+        }
     },
     "good": "coal",
     "buildings": [

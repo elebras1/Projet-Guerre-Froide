@@ -7,7 +7,21 @@
     ],
     "population_total": {
         "amount": 1409358,
-        "template": 45
+        "template": 45,
+        "populations": {
+            "labourers": 0.43614,
+            "farmers": 0.06826,
+            "craftsmen": 0.28055,
+            "clerks": 0.12023,
+            "aristocrats": 0.0,
+            "artisans": 0.0,
+            "bureaucrats": 0.05556,
+            "capitalists": 0.0,
+            "clergymen": 0.00444,
+            "officers": 0.0046,
+            "slaves": 0.0,
+            "soldiers": 0.03022
+        }
     },
     "good": "wood",
     "buildings": [
@@ -28,11 +42,19 @@
         },
         {
             "name": "ammunition_factory",
-            "size": 1
+            "size": 3
         },
         {
             "name": "weaponry_factory",
-            "size": 1
+            "size": 2
+        },
+        {
+            "name": "cement_factory",
+            "size": 7
+        },
+        {
+            "name": "glass_factory",
+            "size": 4
         }
     ]
 }

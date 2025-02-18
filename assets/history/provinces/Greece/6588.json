@@ -4,7 +4,21 @@
     "add_core": "GRE",
     "population_total": {
         "amount": 123382,
-        "template": 63
+        "template": 63,
+        "populations": {
+            "labourers": 0.26939,
+            "farmers": 0.05779,
+            "craftsmen": 0.38292,
+            "clerks": 0.16411,
+            "aristocrats": 0.00399,
+            "artisans": 0.03617,
+            "bureaucrats": 0.00459,
+            "capitalists": 0.03406,
+            "clergymen": 0.01876,
+            "officers": 0.00528,
+            "slaves": 0.0,
+            "soldiers": 0.02294
+        }
     },
     "good": "rare_metals",
     "buildings": [

@@ -4,7 +4,21 @@
     "add_core": "HAI",
     "population_total": {
         "amount": 436067,
-        "template": 75
+        "template": 75,
+        "populations": {
+            "farmers": 0.62166,
+            "labourers": 0.07961,
+            "craftsmen": 0.12142,
+            "clerks": 0.05204,
+            "aristocrats": 0.00374,
+            "artisans": 0.03747,
+            "bureaucrats": 0.00448,
+            "capitalists": 0.03313,
+            "clergymen": 0.01598,
+            "officers": 0.0057,
+            "slaves": 0.0,
+            "soldiers": 0.02477
+        }
     },
     "good": "grain",
     "buildings": [

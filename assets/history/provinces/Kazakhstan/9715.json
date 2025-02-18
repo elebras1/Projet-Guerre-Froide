@@ -7,7 +7,21 @@
     ],
     "population_total": {
         "amount": 131633,
-        "template": 11
+        "template": 11,
+        "populations": {
+            "labourers": 0.84174,
+            "farmers": 0.06291,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.0,
+            "artisans": 0.0,
+            "bureaucrats": 0.05418,
+            "capitalists": 0.0,
+            "clergymen": 0.00483,
+            "officers": 0.00433,
+            "slaves": 0.0,
+            "soldiers": 0.03201
+        }
     },
     "good": "uranium",
     "buildings": [

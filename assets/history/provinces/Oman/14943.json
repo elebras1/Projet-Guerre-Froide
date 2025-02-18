@@ -4,7 +4,21 @@
     "add_core": "OMN",
     "population_total": {
         "amount": 19767,
-        "template": 38
+        "template": 38,
+        "populations": {
+            "labourers": 0.77693,
+            "farmers": 0.09407,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00384,
+            "artisans": 0.03538,
+            "bureaucrats": 0.0044,
+            "capitalists": 0.03725,
+            "clergymen": 0.01748,
+            "officers": 0.006,
+            "slaves": 0.0,
+            "soldiers": 0.02465
+        }
     },
     "good": "rare_metals",
     "buildings": [

@@ -4,7 +4,21 @@
     "add_core": "PRU",
     "population_total": {
         "amount": 9567,
-        "template": 88
+        "template": 88,
+        "populations": {
+            "labourers": 0.79178,
+            "farmers": 0.07945,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00379,
+            "artisans": 0.03418,
+            "bureaucrats": 0.00483,
+            "capitalists": 0.0348,
+            "clergymen": 0.01909,
+            "officers": 0.00528,
+            "slaves": 0.0,
+            "soldiers": 0.0268
+        }
     },
     "good": "precious_metals",
     "buildings": [

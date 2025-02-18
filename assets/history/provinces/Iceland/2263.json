@@ -4,7 +4,21 @@
     "add_core": "ICL",
     "population_total": {
         "amount": 1302,
-        "template": 54
+        "template": 54,
+        "populations": {
+            "farmers": 0.76985,
+            "labourers": 0.10365,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00361,
+            "artisans": 0.03418,
+            "bureaucrats": 0.00461,
+            "capitalists": 0.03606,
+            "clergymen": 0.01718,
+            "officers": 0.00569,
+            "slaves": 0.0,
+            "soldiers": 0.02517
+        }
     },
     "good": "meat",
     "buildings": [

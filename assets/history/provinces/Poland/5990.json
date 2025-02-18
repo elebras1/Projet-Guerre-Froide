@@ -4,7 +4,21 @@
     "add_core": "POL",
     "population_total": {
         "amount": 224981,
-        "template": 49
+        "template": 49,
+        "populations": {
+            "labourers": 0.27643,
+            "farmers": 0.06016,
+            "craftsmen": 0.36881,
+            "clerks": 0.15807,
+            "aristocrats": 0.00446,
+            "artisans": 0.03877,
+            "bureaucrats": 0.00436,
+            "capitalists": 0.0363,
+            "clergymen": 0.0199,
+            "officers": 0.00616,
+            "slaves": 0.0,
+            "soldiers": 0.02658
+        }
     },
     "good": "wood",
     "buildings": [

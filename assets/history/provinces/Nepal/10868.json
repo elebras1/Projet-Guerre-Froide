@@ -4,7 +4,21 @@
     "add_core": "NEP",
     "population_total": {
         "amount": 32595,
-        "template": 17
+        "template": 17,
+        "populations": {
+            "farmers": 0.78083,
+            "labourers": 0.09268,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00422,
+            "artisans": 0.03584,
+            "bureaucrats": 0.00419,
+            "capitalists": 0.03301,
+            "clergymen": 0.01892,
+            "officers": 0.00552,
+            "slaves": 0.0,
+            "soldiers": 0.02479
+        }
     },
     "good": "grain",
     "buildings": [

@@ -4,7 +4,21 @@
     "controller": "HUN",
     "population_total": {
         "amount": 642642,
-        "template": 48
+        "template": 48,
+        "populations": {
+            "farmers": 0.71056,
+            "labourers": 0.05678,
+            "craftsmen": 0.07166,
+            "clerks": 0.03071,
+            "aristocrats": 0.00391,
+            "artisans": 0.04045,
+            "bureaucrats": 0.00459,
+            "capitalists": 0.03268,
+            "clergymen": 0.01788,
+            "officers": 0.00634,
+            "slaves": 0.0,
+            "soldiers": 0.02444
+        }
     },
     "good": "fruits",
     "buildings": [

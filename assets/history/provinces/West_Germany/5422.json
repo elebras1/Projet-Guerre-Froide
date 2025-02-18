@@ -7,7 +7,21 @@
     "controller": "USA",
     "population_total": {
         "amount": 630074,
-        "template": 71
+        "template": 71,
+        "populations": {
+            "farmers": 0.25381,
+            "labourers": 0.08543,
+            "craftsmen": 0.36805,
+            "clerks": 0.15775,
+            "aristocrats": 0.00522,
+            "artisans": 0.03961,
+            "bureaucrats": 0.00593,
+            "capitalists": 0.02834,
+            "clergymen": 0.02173,
+            "officers": 0.00702,
+            "slaves": 0.0,
+            "soldiers": 0.02711
+        }
     },
     "good": "grain",
     "buildings": [

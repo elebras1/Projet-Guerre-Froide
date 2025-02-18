@@ -4,7 +4,21 @@
     "add_core": "CHL",
     "population_total": {
         "amount": 726,
-        "template": 82
+        "template": 82,
+        "populations": {
+            "labourers": 0.78779,
+            "farmers": 0.08723,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00397,
+            "artisans": 0.03295,
+            "bureaucrats": 0.00415,
+            "capitalists": 0.03446,
+            "clergymen": 0.0178,
+            "officers": 0.00585,
+            "slaves": 0.0,
+            "soldiers": 0.0258
+        }
     },
     "good": "wood",
     "buildings": [

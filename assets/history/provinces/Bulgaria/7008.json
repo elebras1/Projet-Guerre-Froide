@@ -4,7 +4,21 @@
     "controller": "BUL",
     "population_total": {
         "amount": 326994,
-        "template": 46
+        "template": 46,
+        "populations": {
+            "farmers": 0.78392,
+            "labourers": 0.10011,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00396,
+            "artisans": 0.03267,
+            "bureaucrats": 0.00448,
+            "capitalists": 0.02905,
+            "clergymen": 0.01621,
+            "officers": 0.00566,
+            "slaves": 0.0,
+            "soldiers": 0.02394
+        }
     },
     "good": "grain",
     "buildings": [

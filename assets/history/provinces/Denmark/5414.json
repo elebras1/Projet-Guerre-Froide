@@ -4,7 +4,21 @@
     "controller": "DEN",
     "population_total": {
         "amount": 186550,
-        "template": 51
+        "template": 51,
+        "populations": {
+            "labourers": 0.80353,
+            "farmers": 0.07319,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00393,
+            "artisans": 0.03779,
+            "bureaucrats": 0.00407,
+            "capitalists": 0.03138,
+            "clergymen": 0.01861,
+            "officers": 0.00523,
+            "slaves": 0.0,
+            "soldiers": 0.02227
+        }
     },
     "good": "wood",
     "buildings": [

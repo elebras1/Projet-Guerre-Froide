@@ -4,7 +4,21 @@
     "add_core": "EGY",
     "population_total": {
         "amount": 2912506,
-        "template": 3
+        "template": 3,
+        "populations": {
+            "labourers": 0.77886,
+            "farmers": 0.06472,
+            "craftsmen": 0.01927,
+            "clerks": 0.00826,
+            "aristocrats": 0.00418,
+            "artisans": 0.03435,
+            "bureaucrats": 0.00414,
+            "capitalists": 0.03668,
+            "clergymen": 0.01951,
+            "officers": 0.00538,
+            "slaves": 0.0,
+            "soldiers": 0.02465
+        }
     },
     "good": "oil",
     "buildings": [

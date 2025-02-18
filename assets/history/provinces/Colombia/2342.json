@@ -4,7 +4,21 @@
     "add_core": "COL",
     "population_total": {
         "amount": 201795,
-        "template": 83
+        "template": 83,
+        "populations": {
+            "labourers": 0.78854,
+            "farmers": 0.09854,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00389,
+            "artisans": 0.02996,
+            "bureaucrats": 0.00374,
+            "capitalists": 0.03393,
+            "clergymen": 0.01489,
+            "officers": 0.00539,
+            "slaves": 0.0,
+            "soldiers": 0.02112
+        }
     },
     "good": "iron",
     "buildings": [

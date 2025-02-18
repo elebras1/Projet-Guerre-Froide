@@ -4,7 +4,21 @@
     "add_core": "SPA",
     "population_total": {
         "amount": 616295,
-        "template": 67
+        "template": 67,
+        "populations": {
+            "farmers": 0.79352,
+            "labourers": 0.07026,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00392,
+            "artisans": 0.03919,
+            "bureaucrats": 0.00481,
+            "capitalists": 0.03773,
+            "clergymen": 0.01863,
+            "officers": 0.00593,
+            "slaves": 0.0,
+            "soldiers": 0.02601
+        }
     },
     "good": "fruits",
     "buildings": [

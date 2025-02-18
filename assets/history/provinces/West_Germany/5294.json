@@ -7,7 +7,21 @@
     "controller": "FRA",
     "population_total": {
         "amount": 1098389,
-        "template": 71
+        "template": 71,
+        "populations": {
+            "labourers": 0.67434,
+            "farmers": 0.09816,
+            "craftsmen": 0.08508,
+            "clerks": 0.03646,
+            "aristocrats": 0.00336,
+            "artisans": 0.03191,
+            "bureaucrats": 0.00381,
+            "capitalists": 0.03625,
+            "clergymen": 0.01548,
+            "officers": 0.00252,
+            "slaves": 0.0,
+            "soldiers": 0.01263
+        }
     },
     "good": "rare_metals",
     "buildings": [

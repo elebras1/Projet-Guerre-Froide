@@ -4,7 +4,21 @@
     "controller": "GRE",
     "population_total": {
         "amount": 911737,
-        "template": 63
+        "template": 63,
+        "populations": {
+            "labourers": 0.47472,
+            "farmers": 0.10069,
+            "craftsmen": 0.20994,
+            "clerks": 0.08997,
+            "aristocrats": 0.0043,
+            "artisans": 0.0338,
+            "bureaucrats": 0.00455,
+            "capitalists": 0.03354,
+            "clergymen": 0.01639,
+            "officers": 0.00609,
+            "slaves": 0.0,
+            "soldiers": 0.02601
+        }
     },
     "good": "coal",
     "buildings": [

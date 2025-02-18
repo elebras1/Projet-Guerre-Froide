@@ -4,7 +4,21 @@
     "add_core": "ARG",
     "population_total": {
         "amount": 46325,
-        "template": 79
+        "template": 79,
+        "populations": {
+            "farmers": 0.4345,
+            "labourers": 0.4345,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00394,
+            "artisans": 0.03819,
+            "bureaucrats": 0.00497,
+            "capitalists": 0.03288,
+            "clergymen": 0.01861,
+            "officers": 0.00587,
+            "slaves": 0.0,
+            "soldiers": 0.02654
+        }
     },
     "buildings": [
         {

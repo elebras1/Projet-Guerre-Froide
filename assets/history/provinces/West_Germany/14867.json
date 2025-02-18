@@ -8,7 +8,21 @@
     "controller": "WBR",
     "population_total": {
         "amount": 2502263,
-        "template": 71
+        "template": 71,
+        "populations": {
+            "farmers": 0.42298,
+            "labourers": 0.09381,
+            "craftsmen": 0.25035,
+            "clerks": 0.10729,
+            "aristocrats": 0.0042,
+            "artisans": 0.03459,
+            "bureaucrats": 0.00488,
+            "capitalists": 0.03539,
+            "clergymen": 0.01687,
+            "officers": 0.00558,
+            "slaves": 0.0,
+            "soldiers": 0.02406
+        }
     },
     "good": "grain",
     "buildings": [
@@ -26,6 +40,18 @@
         {
             "name": "national_monument",
             "size": 1
+        },
+        {
+            "name": "cement_factory",
+            "size": 8
+        },
+        {
+            "name": "glass_factory",
+            "size": 4
+        },
+        {
+            "name": "fabric_factory",
+            "size": 14
         }
     ]
 }

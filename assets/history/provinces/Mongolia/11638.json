@@ -4,7 +4,21 @@
     "add_core": "MON",
     "population_total": {
         "amount": 824,
-        "template": 9
+        "template": 9,
+        "populations": {
+            "farmers": 0.78651,
+            "labourers": 0.08755,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00374,
+            "artisans": 0.03328,
+            "bureaucrats": 0.00491,
+            "capitalists": 0.03267,
+            "clergymen": 0.01962,
+            "officers": 0.00586,
+            "slaves": 0.0,
+            "soldiers": 0.02586
+        }
     },
     "good": "meat",
     "buildings": [

@@ -4,7 +4,21 @@
     "add_core": "MEX",
     "population_total": {
         "amount": 79921,
-        "template": 81
+        "template": 81,
+        "populations": {
+            "labourers": 0.80017,
+            "farmers": 0.07563,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00413,
+            "artisans": 0.03362,
+            "bureaucrats": 0.00416,
+            "capitalists": 0.03671,
+            "clergymen": 0.0168,
+            "officers": 0.00531,
+            "slaves": 0.0,
+            "soldiers": 0.02347
+        }
     },
     "good": "iron",
     "buildings": [

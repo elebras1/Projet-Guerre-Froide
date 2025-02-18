@@ -7,7 +7,21 @@
     ],
     "population_total": {
         "amount": 280350,
-        "template": 45
+        "template": 45,
+        "populations": {
+            "labourers": 0.28488,
+            "farmers": 0.07585,
+            "craftsmen": 0.38169,
+            "clerks": 0.16358,
+            "aristocrats": 0.0,
+            "artisans": 0.0,
+            "bureaucrats": 0.05045,
+            "capitalists": 0.0,
+            "clergymen": 0.00533,
+            "officers": 0.00497,
+            "slaves": 0.0,
+            "soldiers": 0.03325
+        }
     },
     "good": "wood",
     "buildings": [
@@ -21,6 +35,10 @@
         {
             "name": "land_research_center",
             "size": 1
+        },
+        {
+            "name": "inorganic_chemicals_factory",
+            "size": 6
         }
     ]
 }

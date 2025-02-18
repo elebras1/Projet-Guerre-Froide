@@ -4,7 +4,21 @@
     "add_core": "SAL",
     "population_total": {
         "amount": 302251,
-        "template": 76
+        "template": 76,
+        "populations": {
+            "farmers": 0.64813,
+            "labourers": 0.08945,
+            "craftsmen": 0.09369,
+            "clerks": 0.04015,
+            "aristocrats": 0.00443,
+            "artisans": 0.03462,
+            "bureaucrats": 0.00484,
+            "capitalists": 0.03585,
+            "clergymen": 0.01717,
+            "officers": 0.00618,
+            "slaves": 0.0,
+            "soldiers": 0.02549
+        }
     },
     "good": "fruits",
     "buildings": [

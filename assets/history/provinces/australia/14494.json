@@ -4,7 +4,21 @@
     "add_core": "AST",
     "population_total": {
         "amount": 455729,
-        "template": 94
+        "template": 94,
+        "populations": {
+            "farmers": 0.43289,
+            "labourers": 0.07002,
+            "craftsmen": 0.25735,
+            "clerks": 0.11029,
+            "aristocrats": 0.00398,
+            "artisans": 0.0354,
+            "bureaucrats": 0.00467,
+            "capitalists": 0.03497,
+            "clergymen": 0.01878,
+            "officers": 0.00531,
+            "slaves": 0.0,
+            "soldiers": 0.02634
+        }
     },
     "good": "grain",
     "buildings": [

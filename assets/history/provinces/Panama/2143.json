@@ -4,7 +4,21 @@
     "add_core": "PAN",
     "population_total": {
         "amount": 8344,
-        "template": 76
+        "template": 76,
+        "populations": {
+            "farmers": 0.78008,
+            "labourers": 0.08892,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00405,
+            "artisans": 0.03877,
+            "bureaucrats": 0.00443,
+            "capitalists": 0.03406,
+            "clergymen": 0.01924,
+            "officers": 0.00529,
+            "slaves": 0.0,
+            "soldiers": 0.02516
+        }
     },
     "good": "grain",
     "buildings": [

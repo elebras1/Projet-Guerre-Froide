@@ -7,7 +7,21 @@
     ],
     "population_total": {
         "amount": 72212,
-        "template": 1
+        "template": 1,
+        "populations": {
+            "farmers": 0.80217,
+            "labourers": 0.07115,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00413,
+            "artisans": 0.03846,
+            "bureaucrats": 0.00414,
+            "capitalists": 0.03322,
+            "clergymen": 0.01556,
+            "officers": 0.00594,
+            "slaves": 0.0,
+            "soldiers": 0.02523
+        }
     },
     "good": "grain",
     "buildings": [

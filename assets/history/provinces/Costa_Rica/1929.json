@@ -4,7 +4,21 @@
     "add_core": "COS",
     "population_total": {
         "amount": 191538,
-        "template": 76
+        "template": 76,
+        "populations": {
+            "farmers": 0.3793,
+            "labourers": 0.08692,
+            "craftsmen": 0.28547,
+            "clerks": 0.12234,
+            "aristocrats": 0.00377,
+            "artisans": 0.03667,
+            "bureaucrats": 0.00394,
+            "capitalists": 0.03588,
+            "clergymen": 0.01849,
+            "officers": 0.00529,
+            "slaves": 0.0,
+            "soldiers": 0.02193
+        }
     },
     "good": "fruits",
     "buildings": [

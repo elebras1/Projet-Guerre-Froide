@@ -4,7 +4,21 @@
     "add_core": "CAN",
     "population_total": {
         "amount": 2200,
-        "template": 92
+        "template": 92,
+        "populations": {
+            "labourers": 0.77606,
+            "farmers": 0.09528,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00438,
+            "artisans": 0.03433,
+            "bureaucrats": 0.00489,
+            "capitalists": 0.03767,
+            "clergymen": 0.01699,
+            "officers": 0.00539,
+            "slaves": 0.0,
+            "soldiers": 0.02501
+        }
     },
     "good": "iron",
     "buildings": [

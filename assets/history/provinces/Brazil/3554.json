@@ -4,7 +4,21 @@
     "add_core": "BRA",
     "population_total": {
         "amount": 648,
-        "template": 77
+        "template": 77,
+        "populations": {
+            "farmers": 0.83622,
+            "labourers": 0.10147,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00273,
+            "artisans": 0.01033,
+            "bureaucrats": 0.00059,
+            "capitalists": 0.02226,
+            "clergymen": 0.02131,
+            "officers": 0.00022,
+            "slaves": 0.0,
+            "soldiers": 0.00487
+        }
     },
     "good": "fruits",
     "buildings": [

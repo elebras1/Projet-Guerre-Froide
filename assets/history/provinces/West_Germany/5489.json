@@ -7,7 +7,21 @@
     "controller": "ENG",
     "population_total": {
         "amount": 953617,
-        "template": 71
+        "template": 71,
+        "populations": {
+            "farmers": 0.56478,
+            "labourers": 0.07328,
+            "craftsmen": 0.18317,
+            "clerks": 0.0785,
+            "aristocrats": 0.00255,
+            "artisans": 0.03373,
+            "bureaucrats": 0.00278,
+            "capitalists": 0.03915,
+            "clergymen": 0.01319,
+            "officers": 0.00204,
+            "slaves": 0.0,
+            "soldiers": 0.00683
+        }
     },
     "good": "meat",
     "buildings": [

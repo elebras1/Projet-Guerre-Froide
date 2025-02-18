@@ -4,7 +4,21 @@
     "controller": "ROM",
     "population_total": {
         "amount": 251621,
-        "template": 50
+        "template": 50,
+        "populations": {
+            "farmers": 0.79101,
+            "labourers": 0.08044,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00357,
+            "artisans": 0.03729,
+            "bureaucrats": 0.00462,
+            "capitalists": 0.03479,
+            "clergymen": 0.01862,
+            "officers": 0.00555,
+            "slaves": 0.0,
+            "soldiers": 0.02411
+        }
     },
     "good": "grain",
     "buildings": [

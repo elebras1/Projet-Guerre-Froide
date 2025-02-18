@@ -4,7 +4,21 @@
     "add_core": "ETH",
     "population_total": {
         "amount": 338916,
-        "template": 1
+        "template": 1,
+        "populations": {
+            "farmers": 0.78556,
+            "labourers": 0.08697,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00429,
+            "artisans": 0.03644,
+            "bureaucrats": 0.00412,
+            "capitalists": 0.0332,
+            "clergymen": 0.01897,
+            "officers": 0.00557,
+            "slaves": 0.0,
+            "soldiers": 0.02488
+        }
     },
     "good": "vegetables",
     "buildings": [

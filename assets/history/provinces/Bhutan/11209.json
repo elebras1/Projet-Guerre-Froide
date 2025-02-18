@@ -4,7 +4,21 @@
     "add_core": "BHU",
     "population_total": {
         "amount": 11908,
-        "template": 14
+        "template": 14,
+        "populations": {
+            "farmers": 0.80015,
+            "labourers": 0.06398,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00439,
+            "artisans": 0.04052,
+            "bureaucrats": 0.00478,
+            "capitalists": 0.035,
+            "clergymen": 0.01817,
+            "officers": 0.00637,
+            "slaves": 0.0,
+            "soldiers": 0.02664
+        }
     },
     "good": "fruits",
     "buildings": [

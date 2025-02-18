@@ -4,7 +4,21 @@
     "add_core": "SCH",
     "population_total": {
         "amount": 436157,
-        "template": 74
+        "template": 74,
+        "populations": {
+            "farmers": 0.17272,
+            "labourers": 0.17272,
+            "craftsmen": 0.3743,
+            "clerks": 0.16042,
+            "aristocrats": 0.00374,
+            "artisans": 0.03289,
+            "bureaucrats": 0.00411,
+            "capitalists": 0.03321,
+            "clergymen": 0.01803,
+            "officers": 0.00533,
+            "slaves": 0.0,
+            "soldiers": 0.02253
+        }
     },
     "buildings": [
         {

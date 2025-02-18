@@ -226,14 +226,14 @@ public class World {
     public void updatePixmapPopulationColor() {
         int maxPopulation = 0;
         for (LandProvince province : this.provinces.values()) {
-            maxPopulation = Math.max(maxPopulation, province.getPopulation().getSize());
+            maxPopulation = Math.max(maxPopulation, province.getPopulation().getAmount());
         }
 
         for (LandProvince province : this.provinces.values()) {
             int color = province.getColor();
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
-            int pop = province.getPopulation().getSize();
+            int pop = province.getPopulation().getAmount();
             float ratio = (maxPopulation > 0) ? (float) pop / maxPopulation : 0f;
             this.mapModePixmap.drawPixel(red, green, ColorGenerator.getMagmaColorRGBA(ratio));
         }

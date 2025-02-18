@@ -4,7 +4,21 @@
     "add_core": "GUA",
     "population_total": {
         "amount": 256038,
-        "template": 76
+        "template": 76,
+        "populations": {
+            "farmers": 0.44803,
+            "labourers": 0.10712,
+            "craftsmen": 0.22014,
+            "clerks": 0.09435,
+            "aristocrats": 0.00433,
+            "artisans": 0.03655,
+            "bureaucrats": 0.00425,
+            "capitalists": 0.03674,
+            "clergymen": 0.01781,
+            "officers": 0.00557,
+            "slaves": 0.0,
+            "soldiers": 0.02511
+        }
     },
     "good": "vegetables",
     "buildings": [

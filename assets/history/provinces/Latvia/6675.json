@@ -7,7 +7,21 @@
     "controller": "SOV",
     "population_total": {
         "amount": 822968,
-        "template": 56
+        "template": 56,
+        "populations": {
+            "farmers": 0.55598,
+            "labourers": 0.08749,
+            "craftsmen": 0.18174,
+            "clerks": 0.07789,
+            "aristocrats": 0.0,
+            "artisans": 0.0,
+            "bureaucrats": 0.05459,
+            "capitalists": 0.0,
+            "clergymen": 0.00517,
+            "officers": 0.00485,
+            "slaves": 0.0,
+            "soldiers": 0.03229
+        }
     },
     "good": "grain",
     "buildings": [

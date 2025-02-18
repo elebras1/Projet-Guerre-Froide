@@ -4,7 +4,21 @@
     "add_core": "JAP",
     "population_total": {
         "amount": 1014871,
-        "template": 8
+        "template": 8,
+        "populations": {
+            "labourers": 0.7944,
+            "farmers": 0.08511,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00349,
+            "artisans": 0.03738,
+            "bureaucrats": 0.00421,
+            "capitalists": 0.03392,
+            "clergymen": 0.01518,
+            "officers": 0.00512,
+            "slaves": 0.0,
+            "soldiers": 0.02119
+        }
     },
     "good": "renewable_energy",
     "buildings": [

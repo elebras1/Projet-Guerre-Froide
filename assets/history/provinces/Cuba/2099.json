@@ -4,7 +4,21 @@
     "add_core": "CUB",
     "population_total": {
         "amount": 58006,
-        "template": 75
+        "template": 75,
+        "populations": {
+            "farmers": 0.80821,
+            "labourers": 0.06787,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.0043,
+            "artisans": 0.03601,
+            "bureaucrats": 0.00404,
+            "capitalists": 0.03434,
+            "clergymen": 0.0168,
+            "officers": 0.00516,
+            "slaves": 0.0,
+            "soldiers": 0.02327
+        }
     },
     "good": "vegetables",
     "buildings": [

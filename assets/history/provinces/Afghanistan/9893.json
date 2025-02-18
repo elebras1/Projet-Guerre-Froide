@@ -4,7 +4,21 @@
     "add_core": "AFG",
     "population_total": {
         "amount": 15547,
-        "template": 12
+        "template": 12,
+        "populations": {
+            "farmers": 0.80292,
+            "labourers": 0.06915,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00359,
+            "artisans": 0.03763,
+            "bureaucrats": 0.00439,
+            "capitalists": 0.03375,
+            "clergymen": 0.01827,
+            "officers": 0.00584,
+            "slaves": 0.0,
+            "soldiers": 0.02446
+        }
     },
     "good": "grain",
     "buildings": [

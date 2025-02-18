@@ -4,7 +4,21 @@
     "add_core": "IRE",
     "population_total": {
         "amount": 125544,
-        "template": 55
+        "template": 55,
+        "populations": {
+            "farmers": 0.2672,
+            "labourers": 0.08944,
+            "craftsmen": 0.35848,
+            "clerks": 0.15364,
+            "aristocrats": 0.00433,
+            "artisans": 0.03746,
+            "bureaucrats": 0.00424,
+            "capitalists": 0.03694,
+            "clergymen": 0.01906,
+            "officers": 0.00601,
+            "slaves": 0.0,
+            "soldiers": 0.0232
+        }
     },
     "good": "vegetables",
     "buildings": [

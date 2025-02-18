@@ -4,7 +4,21 @@
     "add_core": "ROM",
     "population_total": {
         "amount": 444994,
-        "template": 50
+        "template": 50,
+        "populations": {
+            "labourers": 0.8129,
+            "farmers": 0.0558,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00433,
+            "artisans": 0.03489,
+            "bureaucrats": 0.00496,
+            "capitalists": 0.03603,
+            "clergymen": 0.01837,
+            "officers": 0.00612,
+            "slaves": 0.0,
+            "soldiers": 0.0266
+        }
     },
     "good": "oil",
     "buildings": [

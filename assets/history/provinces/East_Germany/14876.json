@@ -7,7 +7,21 @@
     "controller": "SOV",
     "population_total": {
         "amount": 1004405,
-        "template": 71
+        "template": 71,
+        "populations": {
+            "farmers": 0.40527,
+            "labourers": 0.08593,
+            "craftsmen": 0.29032,
+            "clerks": 0.12442,
+            "aristocrats": 0.0,
+            "artisans": 0.0,
+            "bureaucrats": 0.05375,
+            "capitalists": 0.0,
+            "clergymen": 0.00513,
+            "officers": 0.00478,
+            "slaves": 0.0,
+            "soldiers": 0.0304
+        }
     },
     "good": "grain",
     "buildings": [
@@ -25,6 +39,14 @@
         {
             "name": "plastics_factory",
             "size": 3
+        },
+        {
+            "name": "ammunition_factory",
+            "size": 2
+        },
+        {
+            "name": "steel_factory",
+            "size": 7
         }
     ]
 }

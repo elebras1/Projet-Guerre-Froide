@@ -4,7 +4,21 @@
     "add_core": "TUR",
     "population_total": {
         "amount": 175945,
-        "template": 42
+        "template": 42,
+        "populations": {
+            "farmers": 0.79946,
+            "labourers": 0.08126,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00375,
+            "artisans": 0.03574,
+            "bureaucrats": 0.00416,
+            "capitalists": 0.02998,
+            "clergymen": 0.0169,
+            "officers": 0.0059,
+            "slaves": 0.0,
+            "soldiers": 0.02285
+        }
     },
     "good": "meat",
     "buildings": [

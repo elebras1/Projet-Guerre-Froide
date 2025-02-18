@@ -4,7 +4,21 @@
     "add_core": "SWE",
     "population_total": {
         "amount": 178146,
-        "template": 59
+        "template": 59,
+        "populations": {
+            "farmers": 0.8006,
+            "labourers": 0.07044,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00434,
+            "artisans": 0.0384,
+            "bureaucrats": 0.00451,
+            "capitalists": 0.0324,
+            "clergymen": 0.01914,
+            "officers": 0.00526,
+            "slaves": 0.0,
+            "soldiers": 0.02491
+        }
     },
     "good": "meat",
     "buildings": [

@@ -4,7 +4,21 @@
     "add_core": "JAP",
     "population_total": {
         "amount": 1725247,
-        "template": 8
+        "template": 8,
+        "populations": {
+            "labourers": 0.41442,
+            "farmers": 0.09885,
+            "craftsmen": 0.26042,
+            "clerks": 0.11161,
+            "aristocrats": 0.00379,
+            "artisans": 0.03125,
+            "bureaucrats": 0.00393,
+            "capitalists": 0.03354,
+            "clergymen": 0.01554,
+            "officers": 0.0057,
+            "slaves": 0.0,
+            "soldiers": 0.02095
+        }
     },
     "good": "renewable_energy",
     "buildings": [
@@ -22,6 +36,14 @@
         {
             "name": "military_academy",
             "size": 1
+        },
+        {
+            "name": "fabric_factory",
+            "size": 12
+        },
+        {
+            "name": "clothes_factory",
+            "size": 6
         }
     ]
 }

@@ -4,7 +4,21 @@
     "add_core": "USA",
     "population_total": {
         "amount": 2451,
-        "template": 93
+        "template": 93,
+        "populations": {
+            "farmers": 0.76024,
+            "labourers": 0.10224,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00565,
+            "artisans": 0.03973,
+            "bureaucrats": 0.00598,
+            "capitalists": 0.02699,
+            "clergymen": 0.0225,
+            "officers": 0.00721,
+            "slaves": 0.0,
+            "soldiers": 0.02946
+        }
     },
     "good": "vegetables",
     "buildings": [

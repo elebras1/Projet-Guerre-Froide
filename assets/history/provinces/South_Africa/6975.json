@@ -4,7 +4,21 @@
     "add_core": "SAF",
     "population_total": {
         "amount": 325610,
-        "template": 4
+        "template": 4,
+        "populations": {
+            "farmers": 0.26773,
+            "labourers": 0.07479,
+            "craftsmen": 0.37037,
+            "clerks": 0.15873,
+            "aristocrats": 0.00396,
+            "artisans": 0.03844,
+            "bureaucrats": 0.00409,
+            "capitalists": 0.03369,
+            "clergymen": 0.0165,
+            "officers": 0.00598,
+            "slaves": 0.0,
+            "soldiers": 0.02572
+        }
     },
     "good": "grain",
     "buildings": [

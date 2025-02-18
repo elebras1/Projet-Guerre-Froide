@@ -7,7 +7,21 @@
     ],
     "population_total": {
         "amount": 1202734,
-        "template": 45
+        "template": 45,
+        "populations": {
+            "labourers": 0.33298,
+            "farmers": 0.10908,
+            "craftsmen": 0.3239,
+            "clerks": 0.13881,
+            "aristocrats": 0.0,
+            "artisans": 0.0,
+            "bureaucrats": 0.05589,
+            "capitalists": 0.0,
+            "clergymen": 0.00501,
+            "officers": 0.00476,
+            "slaves": 0.0,
+            "soldiers": 0.02957
+        }
     },
     "good": "rare_metals",
     "buildings": [
@@ -21,6 +35,10 @@
         {
             "name": "powerplant",
             "size": 4
+        },
+        {
+            "name": "steel_factory",
+            "size": 12
         }
     ]
 }

@@ -8,7 +8,21 @@
     "controller": "YUG",
     "population_total": {
         "amount": 368586,
-        "template": 62
+        "template": 62,
+        "populations": {
+            "labourers": 0.25234,
+            "farmers": 0.09008,
+            "craftsmen": 0.3791,
+            "clerks": 0.16247,
+            "aristocrats": 0.00351,
+            "artisans": 0.0318,
+            "bureaucrats": 0.00387,
+            "capitalists": 0.02981,
+            "clergymen": 0.01788,
+            "officers": 0.00536,
+            "slaves": 0.0,
+            "soldiers": 0.02378
+        }
     },
     "good": "iron",
     "buildings": [

@@ -4,7 +4,21 @@
     "add_core": "TUR",
     "population_total": {
         "amount": 275205,
-        "template": 42
+        "template": 42,
+        "populations": {
+            "labourers": 0.7958,
+            "farmers": 0.07869,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00437,
+            "artisans": 0.03607,
+            "bureaucrats": 0.00481,
+            "capitalists": 0.03465,
+            "clergymen": 0.01665,
+            "officers": 0.00638,
+            "slaves": 0.0,
+            "soldiers": 0.02258
+        }
     },
     "good": "renewable_energy",
     "buildings": [

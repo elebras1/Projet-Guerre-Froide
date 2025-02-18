@@ -4,7 +4,21 @@
     "add_core": "NZL",
     "population_total": {
         "amount": 508,
-        "template": 95
+        "template": 95,
+        "populations": {
+            "farmers": 0.79508,
+            "labourers": 0.08199,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00418,
+            "artisans": 0.03456,
+            "bureaucrats": 0.00464,
+            "capitalists": 0.03189,
+            "clergymen": 0.01851,
+            "officers": 0.00605,
+            "slaves": 0.0,
+            "soldiers": 0.0231
+        }
     },
     "good": "vegetables",
     "buildings": [

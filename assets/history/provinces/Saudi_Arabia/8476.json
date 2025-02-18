@@ -4,7 +4,21 @@
     "add_core": "SAU",
     "population_total": {
         "amount": 31146,
-        "template": 40
+        "template": 40,
+        "populations": {
+            "farmers": 0.80563,
+            "labourers": 0.06642,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00395,
+            "artisans": 0.03473,
+            "bureaucrats": 0.00485,
+            "capitalists": 0.03366,
+            "clergymen": 0.01737,
+            "officers": 0.00607,
+            "slaves": 0.0,
+            "soldiers": 0.02732
+        }
     },
     "good": "fruits",
     "buildings": [

@@ -4,7 +4,21 @@
     "add_core": "IDC",
     "population_total": {
         "amount": 63324,
-        "template": 22
+        "template": 22,
+        "populations": {
+            "farmers": 0.77827,
+            "labourers": 0.09785,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.0039,
+            "artisans": 0.03515,
+            "bureaucrats": 0.00381,
+            "capitalists": 0.03447,
+            "clergymen": 0.01695,
+            "officers": 0.00551,
+            "slaves": 0.0,
+            "soldiers": 0.02409
+        }
     },
     "good": "fruits",
     "buildings": [

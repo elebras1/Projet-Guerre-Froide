@@ -4,7 +4,21 @@
     "add_core": "VEN",
     "population_total": {
         "amount": 600,
-        "template": 91
+        "template": 91,
+        "populations": {
+            "farmers": 0.8054,
+            "labourers": 0.0797,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00376,
+            "artisans": 0.0309,
+            "bureaucrats": 0.00408,
+            "capitalists": 0.03082,
+            "clergymen": 0.01836,
+            "officers": 0.00576,
+            "slaves": 0.0,
+            "soldiers": 0.02122
+        }
     },
     "good": "vegetables",
     "buildings": [

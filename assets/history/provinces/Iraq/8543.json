@@ -4,7 +4,21 @@
     "add_core": "IRQ",
     "population_total": {
         "amount": 173328,
-        "template": 33
+        "template": 33,
+        "populations": {
+            "labourers": 0.38991,
+            "farmers": 0.06758,
+            "craftsmen": 0.29087,
+            "clerks": 0.12466,
+            "aristocrats": 0.00404,
+            "artisans": 0.03885,
+            "bureaucrats": 0.00407,
+            "capitalists": 0.03253,
+            "clergymen": 0.01922,
+            "officers": 0.00605,
+            "slaves": 0.0,
+            "soldiers": 0.02222
+        }
     },
     "good": "oil",
     "buildings": [

@@ -7,7 +7,6 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -24,8 +23,6 @@ import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
@@ -256,7 +253,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
             this.countrySelectedUi.update(
                 this.worldService.getNameOfSelectedCountry(),
                 this.skinFlags.getRegion(this.worldService.getIdOfSelectedCountry()),
-                ValueFormatter.formatValue(this.worldService.getPopulationSizeOfSelectedCountry()),
+                ValueFormatter.formatValue(this.worldService.getPopulationAmountOfSelectedCountry()),
                 this.worldService.getGovernmentOfSelectedCountry().getName(), portrait, headOfState.getName(), this.localisation);
         } else {
             this.countrySelectedUi.hide();

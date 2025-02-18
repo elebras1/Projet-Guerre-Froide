@@ -4,7 +4,21 @@
     "add_core": "ECU",
     "population_total": {
         "amount": 38493,
-        "template": 84
+        "template": 84,
+        "populations": {
+            "farmers": 0.78504,
+            "labourers": 0.08232,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.0039,
+            "artisans": 0.03821,
+            "bureaucrats": 0.00473,
+            "capitalists": 0.03318,
+            "clergymen": 0.0189,
+            "officers": 0.00623,
+            "slaves": 0.0,
+            "soldiers": 0.02749
+        }
     },
     "good": "fruits",
     "buildings": [

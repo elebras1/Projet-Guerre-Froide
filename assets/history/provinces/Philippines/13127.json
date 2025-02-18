@@ -4,7 +4,21 @@
     "add_core": "PHI",
     "population_total": {
         "amount": 1128418,
-        "template": 25
+        "template": 25,
+        "populations": {
+            "labourers": 0.72771,
+            "farmers": 0.06298,
+            "craftsmen": 0.05341,
+            "clerks": 0.02289,
+            "aristocrats": 0.00387,
+            "artisans": 0.03963,
+            "bureaucrats": 0.00438,
+            "capitalists": 0.03531,
+            "clergymen": 0.02001,
+            "officers": 0.00563,
+            "slaves": 0.0,
+            "soldiers": 0.02418
+        }
     },
     "good": "rare_metals",
     "buildings": [

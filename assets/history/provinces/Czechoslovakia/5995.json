@@ -7,7 +7,21 @@
     "controller": "CZE",
     "population_total": {
         "amount": 364184,
-        "template": 47
+        "template": 47,
+        "populations": {
+            "farmers": 0.79379,
+            "labourers": 0.08192,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00395,
+            "artisans": 0.03289,
+            "bureaucrats": 0.00433,
+            "capitalists": 0.03623,
+            "clergymen": 0.01888,
+            "officers": 0.00562,
+            "slaves": 0.0,
+            "soldiers": 0.02239
+        }
     },
     "good": "grain",
     "buildings": [

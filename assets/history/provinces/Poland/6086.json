@@ -4,7 +4,21 @@
     "controller": "POL",
     "population_total": {
         "amount": 484214,
-        "template": 49
+        "template": 49,
+        "populations": {
+            "farmers": 0.81707,
+            "labourers": 0.06337,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00356,
+            "artisans": 0.03318,
+            "bureaucrats": 0.00448,
+            "capitalists": 0.03237,
+            "clergymen": 0.01817,
+            "officers": 0.00577,
+            "slaves": 0.0,
+            "soldiers": 0.02203
+        }
     },
     "good": "meat",
     "buildings": [

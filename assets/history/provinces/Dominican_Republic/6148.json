@@ -4,7 +4,21 @@
     "add_core": "DOM",
     "population_total": {
         "amount": 158718,
-        "template": 75
+        "template": 75,
+        "populations": {
+            "farmers": 0.80801,
+            "labourers": 0.05931,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00447,
+            "artisans": 0.03515,
+            "bureaucrats": 0.00483,
+            "capitalists": 0.03708,
+            "clergymen": 0.01788,
+            "officers": 0.00601,
+            "slaves": 0.0,
+            "soldiers": 0.02726
+        }
     },
     "good": "fruits",
     "buildings": [

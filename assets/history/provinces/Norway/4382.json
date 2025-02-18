@@ -4,7 +4,21 @@
     "add_core": "NOR",
     "population_total": {
         "amount": 25007,
-        "template": 58
+        "template": 58,
+        "populations": {
+            "labourers": 0.7961,
+            "farmers": 0.07115,
+            "craftsmen": 0.0,
+            "clerks": 0.0,
+            "aristocrats": 0.00409,
+            "artisans": 0.03695,
+            "bureaucrats": 0.00403,
+            "capitalists": 0.03776,
+            "clergymen": 0.01897,
+            "officers": 0.00613,
+            "slaves": 0.0,
+            "soldiers": 0.02482
+        }
     },
     "good": "oil",
     "buildings": [
