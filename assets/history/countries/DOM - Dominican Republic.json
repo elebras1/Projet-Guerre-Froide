@@ -1,135 +1,133 @@
 {
-  "capital": 2542,
-  "government": "authoritarian_gov",
-  "ideology": "paternal_auto_idolg",
-  "alignment": {
-    "x": 0,
-    "y": 0
-  },
-  "neutrality": 65,
-  "national_unity": 100,
-  "national_culture": "cul_latin_america",
-  "national_religion": "christianity",
-  "national_identity": "state_building_focus",
-  "national_attitude": "defensive",
-  "organized_religions_law": "state_religion",
-  "civil_liberties": "suspended_indefinitely",
-  "freedom_of_the_press": "state_press",
-  "elections_and_voting": "single_party_system",
-  "military_service": "limited_conscription_army",
-  "rule_of_law": "moderately_defined",
-  "human_rights": "not_recognized",
-  "public_oversight": "moral_code_of_conduct",
-  "foreign_policy": "detente_pol",
-  "intelligence_policy": "intelligence_gathering_pol",
-  "armaments_policy": "conventional_warfare_focus_pol",
-  "military_policy": "two_y_service_pol",
-  "nuclear_policy": "civilian_nuclear_focus_pol",
-  "domestic_policy": "agricultural_focus_pol",
-  "internal_policy": "oppressive_aff_pol",
-  "economic_policy": "resource_based_policy_pol",
-  "fiscal_policy": "reduced_taxation_pol",
-  "education_policy": "high_funding_edu_pol",
-  "popularity": {
-    "fascistic_idolg": 0,
-    "paternal_auto_idolg": 70,
-    "social_cons_idolg": 30,
-    "market_liberal_idolg": 0,
-    "social_liberal_idolg": 0,
-    "social_democrat_idolg": 0,
-    "left_wing_radical_idolg": 0,
-    "maoist_idolg": 0,
-    "communist_idolg": 0
-  },
-  "oob": "DOM_1946.txt",
-  "1946.1.1": {
-    "oob": "DOM_1946.txt",
-    "head_of_state": 1175001,
-    "head_of_government": 1175001
-  },
-  "1948.5.14": {
-    "oob": "DOM_1948.txt",
-    "head_of_state": 1175001,
-    "head_of_government": 1175001
-  },
-  "1950.6.25": {
-    "oob": "DOM_1950.txt",
-    "head_of_state": 1175001,
-    "head_of_government": 1175001
-  },
-  "1958.01.22": {
-    "add_country_modifier": {
-      "name": "signed_the_geneva_convention",
-      "duration": -1
-    }
-  },
-  "1961.12.11": {
-    "oob": "DOM_1961.txt",
-    "head_of_state": 1175003,
-    "head_of_government": 1175003,
-    "small_arms": 1,
-    "crew_served_weapons": 1,
-    "light_artillery": 1,
-    "centralized_command_and_control": 1,
-    "mass_firepower": 1
-  },
-  "1979.12.24": {
-    "oob": "DOM_1979.txt",
+    "capital": 2542,
+    "government": "authoritarian_gov",
+    "ideology": "paternal_auto_idolg",
     "alignment": {
-      "x": -25,
-      "y": 0
+        "x": 0,
+        "y": 0
     },
-    "head_of_state": 1175010,
-    "head_of_government": 1175010,
-    "small_arms": 2,
-    "crew_served_weapons": 2,
-    "light_engine": 2,
-    "light_artillery": 2,
-    "industry_modern_science": 1,
-    "industry_heavy_mechanical_parts": 1,
-    "centralized_command_and_control": 1,
-    "industry_physics": 1,
-    "industry_chemistry": 1,
-    "explosives": 1,
-    "mass_firepower": 1,
-    "industry_heavy_mechanical_engineering": 3
-  },
-  "1982.1.1": {
-    "head_of_state": 1175010,
-    "head_of_government": 1175010
-  },
-  "1991.1.16": {
-    "oob": "DOM_1991.txt",
-    "head_of_state": 1175003,
-    "head_of_government": 1175003,
-    "government": "republic_gov",
-    "ideology": "social_cons_idolg",
+    "neutrality": 65,
+    "national_unity": 100,
+    "national_identity": "state_building_focus",
+    "national_attitude": "defensive",
+    "organized_religions_law": "state_religion",
+    "civil_liberties": "suspended_indefinitely",
+    "freedom_of_the_press": "state_press",
+    "elections_and_voting": "single_party_system",
+    "military_service": "limited_conscription_army",
+    "rule_of_law": "moderately_defined",
+    "human_rights": "not_recognized",
+    "public_oversight": "moral_code_of_conduct",
+    "foreign_policy": "detente_pol",
+    "intelligence_policy": "intelligence_gathering_pol",
+    "armaments_policy": "conventional_warfare_focus_pol",
+    "military_policy": "two_y_service_pol",
+    "nuclear_policy": "civilian_nuclear_focus_pol",
+    "domestic_policy": "agricultural_focus_pol",
+    "internal_policy": "oppressive_aff_pol",
+    "economic_policy": "resource_based_policy_pol",
+    "fiscal_policy": "reduced_taxation_pol",
+    "education_policy": "high_funding_edu_pol",
     "popularity": {
-      "fascistic_idolg": 0,
-      "paternal_auto_idolg": 0,
-      "social_cons_idolg": 40,
-      "market_liberal_idolg": 20,
-      "social_liberal_idolg": 30,
-      "social_democrat_idolg": 10,
-      "left_wing_radical_idolg": 0,
-      "maoist_idolg": 0,
-      "communist_idolg": 0
+        "fascistic_idolg": 0,
+        "paternal_auto_idolg": 70,
+        "social_cons_idolg": 30,
+        "market_liberal_idolg": 0,
+        "social_liberal_idolg": 0,
+        "social_democrat_idolg": 0,
+        "left_wing_radical_idolg": 0,
+        "maoist_idolg": 0,
+        "communist_idolg": 0
     },
-    "guerrilla_war_warfare": 1,
-    "small_arms": 2,
-    "crew_served_weapons": 2,
-    "light_engine": 2,
-    "light_artillery": 2,
-    "industry_modern_science": 1,
-    "industry_psychology": 1,
-    "psychological_warfare": 1,
-    "industry_heavy_mechanical_parts": 1,
-    "centralized_command_and_control": 1,
-    "industry_physics": 1,
-    "industry_chemistry": 1,
-    "explosives": 1,
-    "mass_firepower": 1,
-    "industry_heavy_mechanical_engineering": 3,
-    "asymmetric_warfare": 1
-  }
+    "oob": "DOM_1946.txt",
+    "1946.1.1": {
+        "oob": "DOM_1946.txt",
+        "head_of_state": 1175001,
+        "head_of_government": 1175001
+    },
+    "1948.5.14": {
+        "oob": "DOM_1948.txt",
+        "head_of_state": 1175001,
+        "head_of_government": 1175001
+    },
+    "1950.6.25": {
+        "oob": "DOM_1950.txt",
+        "head_of_state": 1175001,
+        "head_of_government": 1175001
+    },
+    "1958.01.22": {
+        "add_country_modifier": {
+            "name": "signed_the_geneva_convention",
+            "duration": -1
+        }
+    },
+    "1961.12.11": {
+        "oob": "DOM_1961.txt",
+        "head_of_state": 1175003,
+        "head_of_government": 1175003,
+        "small_arms": 1,
+        "crew_served_weapons": 1,
+        "light_artillery": 1,
+        "centralized_command_and_control": 1,
+        "mass_firepower": 1
+    },
+    "1979.12.24": {
+        "oob": "DOM_1979.txt",
+        "alignment": {
+            "x": -25,
+            "y": 0
+        },
+        "head_of_state": 1175010,
+        "head_of_government": 1175010,
+        "small_arms": 2,
+        "crew_served_weapons": 2,
+        "light_engine": 2,
+        "light_artillery": 2,
+        "industry_modern_science": 1,
+        "industry_heavy_mechanical_parts": 1,
+        "centralized_command_and_control": 1,
+        "industry_physics": 1,
+        "industry_chemistry": 1,
+        "explosives": 1,
+        "mass_firepower": 1,
+        "industry_heavy_mechanical_engineering": 3
+    },
+    "1982.1.1": {
+        "head_of_state": 1175010,
+        "head_of_government": 1175010
+    },
+    "1991.1.16": {
+        "oob": "DOM_1991.txt",
+        "head_of_state": 1175003,
+        "head_of_government": 1175003,
+        "government": "republic_gov",
+        "ideology": "social_cons_idolg",
+        "popularity": {
+            "fascistic_idolg": 0,
+            "paternal_auto_idolg": 0,
+            "social_cons_idolg": 40,
+            "market_liberal_idolg": 20,
+            "social_liberal_idolg": 30,
+            "social_democrat_idolg": 10,
+            "left_wing_radical_idolg": 0,
+            "maoist_idolg": 0,
+            "communist_idolg": 0
+        },
+        "guerrilla_war_warfare": 1,
+        "small_arms": 2,
+        "crew_served_weapons": 2,
+        "light_engine": 2,
+        "light_artillery": 2,
+        "industry_modern_science": 1,
+        "industry_psychology": 1,
+        "psychological_warfare": 1,
+        "industry_heavy_mechanical_parts": 1,
+        "centralized_command_and_control": 1,
+        "industry_physics": 1,
+        "industry_chemistry": 1,
+        "explosives": 1,
+        "mass_firepower": 1,
+        "industry_heavy_mechanical_engineering": 3,
+        "asymmetric_warfare": 1
+    }
 }

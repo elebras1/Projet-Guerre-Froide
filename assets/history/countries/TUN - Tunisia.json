@@ -1,140 +1,138 @@
 {
-  "capital": 5502,
-  "government": "authoritarian_gov",
-  "ideology": "paternal_auto_idolg",
-  "alignment": {
-    "x": 0,
-    "y": 0
-  },
-  "neutrality": 55,
-  "national_unity": 100,
-  "national_culture": "cul_middle_east",
-  "national_religion": "islam",
-  "national_identity": "state_building_focus",
-  "national_attitude": "defensive",
-  "organized_religions_law": "state_religion",
-  "civil_liberties": "curfew",
-  "freedom_of_the_press": "censored_press",
-  "elections_and_voting": "single_party_system",
-  "military_service": "conventional_drafted_army",
-  "rule_of_law": "narrowly_defined",
-  "human_rights": "cultural_relativism",
-  "public_oversight": "limited_oversight",
-  "foreign_policy": "detente_pol",
-  "intelligence_policy": "intelligence_gathering_pol",
-  "armaments_policy": "conventional_warfare_focus_pol",
-  "military_policy": "two_y_service_pol",
-  "nuclear_policy": "civilian_nuclear_focus_pol",
-  "domestic_policy": "agricultural_focus_pol",
-  "internal_policy": "oppressive_aff_pol",
-  "economic_policy": "resource_based_policy_pol",
-  "fiscal_policy": "reduced_taxation_pol",
-  "education_policy": "high_funding_edu_pol",
-  "popularity": {
-    "fascistic_idolg": 0,
-    "paternal_auto_idolg": 70,
-    "social_cons_idolg": 30,
-    "market_liberal_idolg": 0,
-    "social_liberal_idolg": 0,
-    "social_democrat_idolg": 0,
-    "left_wing_radical_idolg": 0,
-    "maoist_idolg": 0,
-    "communist_idolg": 0
-  },
-  "oob": "empty.txt",
-  "1946.1.1": {
+    "capital": 5502,
+    "government": "authoritarian_gov",
+    "ideology": "paternal_auto_idolg",
+    "alignment": {
+        "x": 0,
+        "y": 0
+    },
+    "neutrality": 55,
+    "national_unity": 100,
+    "national_identity": "state_building_focus",
+    "national_attitude": "defensive",
+    "organized_religions_law": "state_religion",
+    "civil_liberties": "curfew",
+    "freedom_of_the_press": "censored_press",
+    "elections_and_voting": "single_party_system",
+    "military_service": "conventional_drafted_army",
+    "rule_of_law": "narrowly_defined",
+    "human_rights": "cultural_relativism",
+    "public_oversight": "limited_oversight",
+    "foreign_policy": "detente_pol",
+    "intelligence_policy": "intelligence_gathering_pol",
+    "armaments_policy": "conventional_warfare_focus_pol",
+    "military_policy": "two_y_service_pol",
+    "nuclear_policy": "civilian_nuclear_focus_pol",
+    "domestic_policy": "agricultural_focus_pol",
+    "internal_policy": "oppressive_aff_pol",
+    "economic_policy": "resource_based_policy_pol",
+    "fiscal_policy": "reduced_taxation_pol",
+    "education_policy": "high_funding_edu_pol",
+    "popularity": {
+        "fascistic_idolg": 0,
+        "paternal_auto_idolg": 70,
+        "social_cons_idolg": 30,
+        "market_liberal_idolg": 0,
+        "social_liberal_idolg": 0,
+        "social_democrat_idolg": 0,
+        "left_wing_radical_idolg": 0,
+        "maoist_idolg": 0,
+        "communist_idolg": 0
+    },
     "oob": "empty.txt",
-    "head_of_state": 1346001,
-    "head_of_government": 1346002
-  },
-  "1948.5.14": {
-    "head_of_state": 1346001,
-    "head_of_government": 1346002
-  },
-  "1950.6.25": {
-    "head_of_state": 1346001,
-    "head_of_government": 1346002
-  },
-  "1956.11.12": {
-    "join_organisation": "XUN",
-    "add_country_modifier": {
-      "name": "mod_united_nations_member_state",
-      "duration": -1
-    }
-  },
-  "1957.05.04": {
-    "add_country_modifier": {
-      "name": "signed_the_geneva_convention",
-      "duration": -1
-    }
-  },
-  "1961.12.11": {
-    "oob": "TUN_1961.txt",
-    "neutrality": 50,
-    "head_of_state": 1346006,
-    "head_of_government": 1346006,
-    "alignment": {
-      "x": -25,
-      "y": 0
+    "1946.1.1": {
+        "oob": "empty.txt",
+        "head_of_state": 1346001,
+        "head_of_government": 1346002
     },
-    "mass_firepower": 1,
-    "small_arms": 1,
-    "crew_served_weapons": 1,
-    "light_artillery": 1,
-    "centralized_command_and_control": 1
-  },
-  "1979.12.24": {
-    "oob": "TUN_1979.txt",
-    "neutrality": 50,
-    "head_of_state": 1346006,
-    "head_of_government": 1346009,
-    "mass_firepower": 1,
-    "guerrilla_war_warfare": 1,
-    "small_arms": 2,
-    "crew_served_weapons": 2,
-    "light_engine": 2,
-    "light_artillery": 2,
-    "industry_modern_science": 1,
-    "industry_psychology": 1,
-    "psychological_warfare": 1,
-    "industry_heavy_mechanical_parts": 1,
-    "industry_physics": 1,
-    "industry_chemistry": 1,
-    "explosives": 1,
-    "industry_heavy_mechanical_engineering": 3,
-    "asymmetric_warfare": 1,
-    "centralized_command_and_control": 1
-  },
-  "1982.1.1": {
-    "head_of_state": 1346006,
-    "head_of_government": 1346010
-  },
-  "1991.1.16": {
-    "oob": "TUN_1991.txt",
-    "neutrality": 50,
-    "alignment": {
-      "x": -15,
-      "y": 0
+    "1948.5.14": {
+        "head_of_state": 1346001,
+        "head_of_government": 1346002
     },
-    "head_of_state": 1346007,
-    "head_of_government": 1346013,
-    "mass_firepower": 1,
-    "guerrilla_war_warfare": 1,
-    "small_arms": 3,
-    "crew_served_weapons": 3,
-    "light_engine": 3,
-    "light_artillery": 3,
-    "industry_modern_science": 1,
-    "industry_psychology": 1,
-    "psychological_warfare": 1,
-    "industry_heavy_mechanical_parts": 1,
-    "industry_chemistry": 3,
-    "industry_light_massproduction": 2,
-    "industry_physics": 1,
-    "explosives": 1,
-    "industry_light_plastics": 4,
-    "industry_heavy_mechanical_engineering": 5,
-    "asymmetric_warfare": 1,
-    "centralized_command_and_control": 1
-  }
+    "1950.6.25": {
+        "head_of_state": 1346001,
+        "head_of_government": 1346002
+    },
+    "1956.11.12": {
+        "join_organisation": "XUN",
+        "add_country_modifier": {
+            "name": "mod_united_nations_member_state",
+            "duration": -1
+        }
+    },
+    "1957.05.04": {
+        "add_country_modifier": {
+            "name": "signed_the_geneva_convention",
+            "duration": -1
+        }
+    },
+    "1961.12.11": {
+        "oob": "TUN_1961.txt",
+        "neutrality": 50,
+        "head_of_state": 1346006,
+        "head_of_government": 1346006,
+        "alignment": {
+            "x": -25,
+            "y": 0
+        },
+        "mass_firepower": 1,
+        "small_arms": 1,
+        "crew_served_weapons": 1,
+        "light_artillery": 1,
+        "centralized_command_and_control": 1
+    },
+    "1979.12.24": {
+        "oob": "TUN_1979.txt",
+        "neutrality": 50,
+        "head_of_state": 1346006,
+        "head_of_government": 1346009,
+        "mass_firepower": 1,
+        "guerrilla_war_warfare": 1,
+        "small_arms": 2,
+        "crew_served_weapons": 2,
+        "light_engine": 2,
+        "light_artillery": 2,
+        "industry_modern_science": 1,
+        "industry_psychology": 1,
+        "psychological_warfare": 1,
+        "industry_heavy_mechanical_parts": 1,
+        "industry_physics": 1,
+        "industry_chemistry": 1,
+        "explosives": 1,
+        "industry_heavy_mechanical_engineering": 3,
+        "asymmetric_warfare": 1,
+        "centralized_command_and_control": 1
+    },
+    "1982.1.1": {
+        "head_of_state": 1346006,
+        "head_of_government": 1346010
+    },
+    "1991.1.16": {
+        "oob": "TUN_1991.txt",
+        "neutrality": 50,
+        "alignment": {
+            "x": -15,
+            "y": 0
+        },
+        "head_of_state": 1346007,
+        "head_of_government": 1346013,
+        "mass_firepower": 1,
+        "guerrilla_war_warfare": 1,
+        "small_arms": 3,
+        "crew_served_weapons": 3,
+        "light_engine": 3,
+        "light_artillery": 3,
+        "industry_modern_science": 1,
+        "industry_psychology": 1,
+        "psychological_warfare": 1,
+        "industry_heavy_mechanical_parts": 1,
+        "industry_chemistry": 3,
+        "industry_light_massproduction": 2,
+        "industry_physics": 1,
+        "explosives": 1,
+        "industry_light_plastics": 4,
+        "industry_heavy_mechanical_engineering": 5,
+        "asymmetric_warfare": 1,
+        "centralized_command_and_control": 1
+    }
 }

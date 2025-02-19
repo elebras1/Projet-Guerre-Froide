@@ -1,121 +1,119 @@
 {
-  "capital": 2188,
-  "government": "constitutional_monarchy_gov",
-  "ideology": "market_liberal_idolg",
-  "alignment": {
-    "x": 0,
-    "y": 0
-  },
-  "neutrality": 75,
-  "national_unity": 100,
-  "national_culture": "cul_latin_america",
-  "national_religion": "christianity",
-  "national_identity": "state_building_focus",
-  "national_attitude": "defensive",
-  "organized_religions_law": "secular_state",
-  "civil_liberties": "fully_granted_liberties",
-  "freedom_of_the_press": "free_press",
-  "elections_and_voting": "proportional",
-  "military_service": "limited_conscription_army",
-  "rule_of_law": "well_defined",
-  "human_rights": "universal_rights",
-  "public_oversight": "systematic_oversight",
-  "foreign_policy": "detente_pol",
-  "intelligence_policy": "intelligence_gathering_pol",
-  "armaments_policy": "conventional_warfare_focus_pol",
-  "military_policy": "two_y_service_pol",
-  "nuclear_policy": "civilian_nuclear_focus_pol",
-  "domestic_policy": "agricultural_focus_pol",
-  "internal_policy": "oppressive_aff_pol",
-  "economic_policy": "resource_based_policy_pol",
-  "fiscal_policy": "reduced_taxation_pol",
-  "education_policy": "high_funding_edu_pol",
-  "popularity": {
-    "fascistic_idolg": 0,
-    "paternal_auto_idolg": 0,
-    "social_cons_idolg": 0,
-    "market_liberal_idolg": 55,
-    "social_liberal_idolg": 45,
-    "social_democrat_idolg": 0,
-    "left_wing_radical_idolg": 0,
-    "maoist_idolg": 0,
-    "communist_idolg": 0
-  },
-  "oob": "empty.txt",
-  "1946.1.1": {
-    "oob": "empty.txt"
-  },
-  "1948.5.14": {},
-  "1950.6.25": {
-    "head_of_state": 1225001,
-    "head_of_government": 1225003,
-    "ideology": "social_liberal_idolg",
-    "popularity": {
-      "fascistic_idolg": 0,
-      "paternal_auto_idolg": 0,
-      "social_cons_idolg": 0,
-      "market_liberal_idolg": 43,
-      "social_liberal_idolg": 50,
-      "social_democrat_idolg": 7,
-      "left_wing_radical_idolg": 0,
-      "maoist_idolg": 0,
-      "communist_idolg": 0
-    }
-  },
-  "1961.12.11": {
-    "head_of_state": 1225002,
-    "head_of_government": 1225003,
-    "popularity": {
-      "fascistic_idolg": 0,
-      "paternal_auto_idolg": 0,
-      "social_cons_idolg": 0,
-      "market_liberal_idolg": 54,
-      "social_liberal_idolg": 44,
-      "social_democrat_idolg": 2,
-      "left_wing_radical_idolg": 0,
-      "maoist_idolg": 0,
-      "communist_idolg": 0
-    }
-  },
-  "1979.12.24": {
-    "oob": "JMC_1979.txt",
-    "head_of_state": 1225002,
-    "head_of_government": 1225006,
-    "popularity": {
-      "fascistic_idolg": 0,
-      "paternal_auto_idolg": 0,
-      "social_cons_idolg": 0,
-      "market_liberal_idolg": 43,
-      "social_liberal_idolg": 57,
-      "social_democrat_idolg": 0,
-      "left_wing_radical_idolg": 0,
-      "maoist_idolg": 0,
-      "communist_idolg": 0
+    "capital": 2188,
+    "government": "constitutional_monarchy_gov",
+    "ideology": "market_liberal_idolg",
+    "alignment": {
+        "x": 0,
+        "y": 0
     },
-    "small_arms": 1,
-    "crew_served_weapons": 1,
-    "centralized_command_and_control": 1,
-    "mass_firepower": 1
-  },
-  "1982.1.1": {
+    "neutrality": 75,
+    "national_unity": 100,
+    "national_identity": "state_building_focus",
+    "national_attitude": "defensive",
+    "organized_religions_law": "secular_state",
+    "civil_liberties": "fully_granted_liberties",
+    "freedom_of_the_press": "free_press",
+    "elections_and_voting": "proportional",
+    "military_service": "limited_conscription_army",
+    "rule_of_law": "well_defined",
+    "human_rights": "universal_rights",
+    "public_oversight": "systematic_oversight",
+    "foreign_policy": "detente_pol",
+    "intelligence_policy": "intelligence_gathering_pol",
+    "armaments_policy": "conventional_warfare_focus_pol",
+    "military_policy": "two_y_service_pol",
+    "nuclear_policy": "civilian_nuclear_focus_pol",
+    "domestic_policy": "agricultural_focus_pol",
+    "internal_policy": "oppressive_aff_pol",
+    "economic_policy": "resource_based_policy_pol",
+    "fiscal_policy": "reduced_taxation_pol",
+    "education_policy": "high_funding_edu_pol",
+    "popularity": {
+        "fascistic_idolg": 0,
+        "paternal_auto_idolg": 0,
+        "social_cons_idolg": 0,
+        "market_liberal_idolg": 55,
+        "social_liberal_idolg": 45,
+        "social_democrat_idolg": 0,
+        "left_wing_radical_idolg": 0,
+        "maoist_idolg": 0,
+        "communist_idolg": 0
+    },
     "oob": "empty.txt",
-    "head_of_state": 1225002,
-    "head_of_government": 1225007
-  },
-  "1991.1.16": {
-    "oob": "JMC_1991.txt",
-    "head_of_state": 1225002,
-    "head_of_government": 1225006,
-    "small_arms": 1,
-    "crew_served_weapons": 1,
-    "centralized_command_and_control": 1,
-    "mass_firepower": 1
-  },
-  "1962.9.18": {
-    "join_organisation": "XUN",
-    "add_country_modifier": {
-      "name": "mod_united_nations_member_state",
-      "duration": -1
+    "1946.1.1": {
+        "oob": "empty.txt"
+    },
+    "1948.5.14": {},
+    "1950.6.25": {
+        "head_of_state": 1225001,
+        "head_of_government": 1225003,
+        "ideology": "social_liberal_idolg",
+        "popularity": {
+            "fascistic_idolg": 0,
+            "paternal_auto_idolg": 0,
+            "social_cons_idolg": 0,
+            "market_liberal_idolg": 43,
+            "social_liberal_idolg": 50,
+            "social_democrat_idolg": 7,
+            "left_wing_radical_idolg": 0,
+            "maoist_idolg": 0,
+            "communist_idolg": 0
+        }
+    },
+    "1961.12.11": {
+        "head_of_state": 1225002,
+        "head_of_government": 1225003,
+        "popularity": {
+            "fascistic_idolg": 0,
+            "paternal_auto_idolg": 0,
+            "social_cons_idolg": 0,
+            "market_liberal_idolg": 54,
+            "social_liberal_idolg": 44,
+            "social_democrat_idolg": 2,
+            "left_wing_radical_idolg": 0,
+            "maoist_idolg": 0,
+            "communist_idolg": 0
+        }
+    },
+    "1979.12.24": {
+        "oob": "JMC_1979.txt",
+        "head_of_state": 1225002,
+        "head_of_government": 1225006,
+        "popularity": {
+            "fascistic_idolg": 0,
+            "paternal_auto_idolg": 0,
+            "social_cons_idolg": 0,
+            "market_liberal_idolg": 43,
+            "social_liberal_idolg": 57,
+            "social_democrat_idolg": 0,
+            "left_wing_radical_idolg": 0,
+            "maoist_idolg": 0,
+            "communist_idolg": 0
+        },
+        "small_arms": 1,
+        "crew_served_weapons": 1,
+        "centralized_command_and_control": 1,
+        "mass_firepower": 1
+    },
+    "1982.1.1": {
+        "oob": "empty.txt",
+        "head_of_state": 1225002,
+        "head_of_government": 1225007
+    },
+    "1991.1.16": {
+        "oob": "JMC_1991.txt",
+        "head_of_state": 1225002,
+        "head_of_government": 1225006,
+        "small_arms": 1,
+        "crew_served_weapons": 1,
+        "centralized_command_and_control": 1,
+        "mass_firepower": 1
+    },
+    "1962.9.18": {
+        "join_organisation": "XUN",
+        "add_country_modifier": {
+            "name": "mod_united_nations_member_state",
+            "duration": -1
+        }
     }
-  }
 }

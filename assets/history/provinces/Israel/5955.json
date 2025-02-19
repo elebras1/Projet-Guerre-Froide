@@ -21,6 +21,17 @@
             "officers": 0.0019,
             "slaves": 0.0,
             "soldiers": 0.00611
+        },
+        "cultures": {
+            "jewish": 0.0027,
+            "palestinian": 0.96149,
+            "arab": 0.01791,
+            "arab_levantine": 0.01791
+        },
+        "religions": {
+            "jewish": 0.00269,
+            "atheist": 2e-05,
+            "sunni": 0.9973
         }
     },
     "good": "grain",
