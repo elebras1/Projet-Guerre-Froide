@@ -24,6 +24,7 @@ import java.util.*;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
 
 public class DataManager {
     private final String commonPath = "common/";
@@ -221,30 +222,15 @@ public class DataManager {
             int amount = populationNode.get("amount").intValue();
             short template = populationNode.get("template").shortValue();
             PopulationTemplate populationTemplate = populationTemplates.get(template);
-            ObjectIntMap<PopulationType> populations = new ObjectIntMap<>();
-            JsonNode populationsNode = populationNode.get("populations");
             int amountChildren = (int) (amount * populationTemplate.getChildren());
             int amountSeniors = (int) (amount * populationTemplate.getSeniors());
             int amountAdults = (int) (amount * populationTemplate.getAdults());
 
-            AtomicInteger amountPopulations = new AtomicInteger();
-            AtomicReference<PopulationType> biggestPopulationType = new AtomicReference<>();
-            populationsNode.fields().forEachRemaining(populationEntry -> {
-                String populationTypeName = populationEntry.getKey();
-                float populationTypeValue = populationEntry.getValue().floatValue();
-                PopulationType populationType = gameEntities.getPopulationTypes().get(populationTypeName);
-                int amountPopulationType = (int) (amountAdults * populationTypeValue);
-                amountPopulations.addAndGet(amountPopulationType);
-                populations.put(populationType, amountPopulationType);
-                if(biggestPopulationType.get() == null || amountPopulationType > populations.get(biggestPopulationType.get())) {
-                    biggestPopulationType.set(populationType);
-                }
-            });
-            if(amountAdults != amountPopulations.get()) {
-                int difference = amountAdults - amountPopulations.get();
-                populations.put(biggestPopulationType.get(), populations.get(biggestPopulationType.get()) + difference);
-            }
-            Population population = new Population(amountChildren, amountAdults, amountSeniors, populations);
+            ObjectIntMap<PopulationType> populations = parseDistribution(populationNode.get("populations"), amountAdults, gameEntities.getPopulationTypes());
+            ObjectIntMap<Culture> cultures = parseDistribution(populationNode.get("cultures"), amountAdults, gameEntities.getNationalIdeas().getCultures());
+            ObjectIntMap<Religion> religions = parseDistribution(populationNode.get("religions"), amountAdults, gameEntities.getNationalIdeas().getReligions());
+
+            Population population = new Population(amountChildren, amountAdults, amountSeniors, populations, cultures, religions);
 
             ObjectIntMap<Building> buildingsRegion;
             JsonNode buildingsNode = rootNode.get("economy_buildings");
@@ -279,10 +265,36 @@ public class DataManager {
             countryOwner.addProvince(province);
             return province;
         } catch (Exception e) {
-            System.out.println("readProvinceJson : " + e);
+            e.printStackTrace();
         }
         return null;
     }
+
+    private <T> ObjectIntMap<T> parseDistribution(JsonNode node, int baseAmount, Map<String, T> lookupMap) {
+        ObjectIntMap<T> result = new ObjectIntMap<>();
+        int total = 0;
+        T biggest = null;
+
+        Iterator<Map.Entry<String, JsonNode>> fields = node.fields();
+        while (fields.hasNext()) {
+            Map.Entry<String, JsonNode> entry = fields.next();
+            T element = lookupMap.get(entry.getKey());
+
+            int computed = (int) (baseAmount * entry.getValue().floatValue());
+            result.put(element, computed);
+            total += computed;
+
+            if (biggest == null || computed > result.get(biggest)) {
+                biggest = element;
+            }
+        }
+
+        if (total != baseAmount && biggest != null) {
+            result.put(biggest, result.get(biggest) + (baseAmount - total));
+        }
+        return result;
+    }
+
 
     private void readRegionJson(IntObjectMap<Province> provinces, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince) {
         try {
@@ -382,12 +394,8 @@ public class DataManager {
             country.setGovernment(gameEntities.getGovernments().get(government));
             String ideology = countryJson.get("ideology").textValue();
             country.setIdeology(gameEntities.getIdeologies().get(ideology));
-            String culture = countryJson.get("national_culture").textValue();
-            country.setCulture(gameEntities.getNationalIdeas().getCultures().get(culture));
             String identity = countryJson.get("national_identity").textValue();
             country.setIdentity(gameEntities.getNationalIdeas().getIdentities().get(identity));
-            String religion = countryJson.get("national_religion").textValue();
-            country.setReligion(gameEntities.getNationalIdeas().getReligions().get(religion));
             String attitude = countryJson.get("national_attitude").textValue();
             country.setAttitude(gameEntities.getNationalIdeas().getAttitudes().get(attitude));
             JsonNode setupNode = countryJson.get(this.defaultDate);
@@ -478,7 +486,7 @@ public class DataManager {
             JsonNode nationalIdeasJson = this.openJson(this.nationalIdeasJsonFile);
 
             Map<String, Culture> cultures = new ObjectObjectMap<>();
-            nationalIdeasJson.get("national_culture").fields().forEachRemaining(culture -> {
+            nationalIdeasJson.get("cultures").fields().forEachRemaining(culture -> {
                 String name = culture.getKey();
                 JsonNode cultureValue = culture.getValue();
                 int color = this.parseColor(cultureValue.get("color"));
@@ -486,7 +494,7 @@ public class DataManager {
             });
 
             Map<String, Religion> religions = new ObjectObjectMap<>();
-            nationalIdeasJson.get("national_religion").fields().forEachRemaining(religion -> {
+            nationalIdeasJson.get("religions").fields().forEachRemaining(religion -> {
                 String name = religion.getKey();
                 JsonNode religionValue = religion.getValue();
                 int color = this.parseColor(religionValue.get("color"));

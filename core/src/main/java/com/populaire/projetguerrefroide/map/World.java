@@ -11,6 +11,8 @@ import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.populaire.projetguerrefroide.economy.building.Building;
+import com.populaire.projetguerrefroide.national.Culture;
+import com.populaire.projetguerrefroide.national.Religion;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
 
 import java.util.*;
@@ -170,7 +172,15 @@ public class World {
             int color = province.getColor();
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
-            this.mapModePixmap.drawPixel(red, green, province.getCountryOwner().getCulture().getColor());
+            Culture biggestCulture = null;
+            for(Culture culture : province.getPopulation().getCultures().keySet()) {
+                if(biggestCulture == null || province.getPopulation().getCultures().get(culture) > province.getPopulation().getCultures().get(biggestCulture)) {
+                    biggestCulture = culture;
+                }
+            }
+            if(biggestCulture != null) {
+                this.mapModePixmap.drawPixel(red, green, biggestCulture.getColor());
+            }
         }
     }
 
@@ -179,7 +189,15 @@ public class World {
             int color = province.getColor();
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
-            this.mapModePixmap.drawPixel(red, green, province.getCountryOwner().getReligion().getColor());
+            Religion biggestReligion = null;
+            for(Religion religion : province.getPopulation().getReligions().keySet()) {
+                if(biggestReligion == null || province.getPopulation().getReligions().get(religion) > province.getPopulation().getReligions().get(biggestReligion)) {
+                    biggestReligion = religion;
+                }
+            }
+            if(biggestReligion != null) {
+                this.mapModePixmap.drawPixel(red, green, biggestReligion.getColor());
+            }
         }
     }
 

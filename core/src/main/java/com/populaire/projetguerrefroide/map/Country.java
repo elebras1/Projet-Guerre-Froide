@@ -27,9 +27,7 @@ public class Country {
     private Ideology ideology;
     private int headOfGovernment;
     private int headOfState;
-    private Culture culture;
     private Identity identity;
-    private Religion religion;
     private Attitude attitude;
     private List<MapLabel> labels;
 
@@ -45,9 +43,7 @@ public class Country {
         this.ideology = null;
         this.headOfGovernment = -1;
         this.headOfState = -1;
-        this.culture = null;
         this.identity = null;
-        this.religion = null;
         this.attitude = null;
         this.labels = null;
     }
@@ -168,28 +164,12 @@ public class Country {
         return this.ministers.get(this.headOfGovernment);
     }
 
-    public void setCulture(Culture culture) {
-        this.culture = culture;
-    }
-
-    public Culture getCulture() {
-        return this.culture;
-    }
-
     public void setIdentity(Identity identity) {
         this.identity = identity;
     }
 
     public Identity getIdentity() {
         return this.identity;
-    }
-
-    public void setReligion(Religion religion) {
-        this.religion = religion;
-    }
-
-    public Religion getReligion() {
-        return this.religion;
     }
 
     public void setAttitude(Attitude attitude) {
