@@ -135,6 +135,10 @@ public class World {
         return false;
     }
 
+    public MapMode getMapMode() {
+        return this.mapMode;
+    }
+
     public short getNumberOfProvinces() {
         return (short) this.provinces.size();
     }

@@ -14,15 +14,19 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.github.tommyettinger.ds.IntObjectMap;
+import com.github.tommyettinger.ds.ObjectIntMap;
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.entity.Ideology;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
+import com.populaire.projetguerrefroide.map.MapMode;
 import com.populaire.projetguerrefroide.national.Culture;
 import com.populaire.projetguerrefroide.national.Religion;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
 
+import java.util.List;
 import java.util.Map;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
@@ -138,27 +142,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     @Override
     public IntObjectMap<String> getInformationsMapMode(String mapMode) {
         IntObjectMap<String> informations = new IntObjectMap<>();
-        return switch (mapMode) {
-            case "mapmode_strength" -> {
-                for (Ideology ideology : this.worldService.getGameEntities().getIdeologies().values()) {
-                    informations.put(ideology.getColor(), String.valueOf(ideology.getName()));
-                }
-                yield informations;
-            }
-            case "mapmode_diplomatic" -> {
-                for (Culture culture : this.worldService.getGameEntities().getNationalIdeas().getCultures().values()) {
-                    informations.put(culture.getColor(), String.valueOf(culture.getName()));
-                }
-                yield informations;
-            }
-            case "mapmode_intel" -> {
-                for (Religion religion : this.worldService.getGameEntities().getNationalIdeas().getReligions().values()) {
-                    informations.put(religion.getColor(), String.valueOf(religion.getName()));
-                }
-                yield informations;
-            }
-            default -> null;
-        };
+        return null;
     }
 
     @Override
@@ -168,11 +152,26 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
     @Override
     public void onHover(short x, short y) {
-        if(this.worldService.hoverProvince(x, y) && this.isMouseOverUI()) {
-            this.updateHoverBox(this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))),
-                this.worldService.getCountryNameOfHoveredProvince(x, y),
-                this.worldService.getCountryIdOfHoveredProvince(x, y));
-        } else if(this.isMouseOverUI()) {
+        if(this.worldService.hoverProvince(x, y) && !this.isMouseOverUI()) {
+            String text = this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))) + " (" + this.worldService.getCountryNameOfHoveredProvince(x, y) + ")";
+            if(this.worldService.getMapMode().equals(MapMode.CULTURAL)) {
+                ObjectIntMap<String> cultures = this.worldService.getCulturesOfHoveredProvince(x, y);
+                text = this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))) + " (" + this.worldService.getCountryNameOfHoveredProvince(x, y) + ")";
+                for(String culture : cultures.keySet()) {
+                    text += "\n" + this.localisation.get(culture) + " (" + cultures.get(culture) + "%)";
+                }
+                this.updateHoverBox(text, this.worldService.getCountryIdOfHoveredProvince(x, y));
+            } else if(this.worldService.getMapMode().equals(MapMode.RELIGIOUS)) {
+                ObjectIntMap<String> religions = this.worldService.getReligionsOfHoveredProvince(x, y);
+                text = this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))) + " (" + this.worldService.getCountryNameOfHoveredProvince(x, y) + ")";
+                for(String religion : religions.keySet()) {
+                    text += "\n" + this.localisation.get(religion) + " (" + religions.get(religion) + "%)";
+                }
+                this.updateHoverBox(text, this.worldService.getCountryIdOfHoveredProvince(x, y));
+            } else {
+                this.updateHoverBox(text, this.worldService.getCountryIdOfHoveredProvince(x, y));
+            }
+        } else if(!this.isMouseOverUI()) {
             this.hideHoverBox();
         }
     }
@@ -254,7 +253,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     private boolean isMouseOverUI() {
         int mouseX = Gdx.input.getX();
         int mouseY = Gdx.graphics.getHeight() - Gdx.input.getY();
-        return this.stage.hit(mouseX, mouseY, true) == null;
+        return this.stage.hit(mouseX, mouseY, true) != null;
     }
 
     @Override
@@ -268,10 +267,10 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.hoverBox.toFront();
     }
 
-    public void updateHoverBox(String provinceName, String countryName, String countryId) {
+    public void updateHoverBox(String text, String countryId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverBox.update(provinceName + " (" + countryName + ")", this.skinFlags.getDrawable(countryId));
+        this.hoverBox.update(text, this.skinFlags.getDrawable(countryId));
         this.hoverBox.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
                 y - this.gameContext.getCursorManager().getHeight() * 1.5f);
         this.hoverBox.setVisible(true);

@@ -1,8 +1,10 @@
 package com.populaire.projetguerrefroide.national;
 
+import com.populaire.projetguerrefroide.util.Named;
+
 import java.util.Objects;
 
-public class Culture {
+public class Culture implements Named {
     private final String name;
     private final int color;
 

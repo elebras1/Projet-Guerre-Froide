@@ -1,11 +1,12 @@
 package com.populaire.projetguerrefroide.national;
 
 import com.populaire.projetguerrefroide.entity.Modifier;
+import com.populaire.projetguerrefroide.util.Named;
 
 import java.util.List;
 import java.util.Objects;
 
-public class Identity {
+public class Identity implements Named {
     private final String name;
     private final List<Modifier> modifiers;
 
