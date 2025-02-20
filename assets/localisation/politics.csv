@@ -58,43 +58,430 @@ national_idealism;Idealism;Idéalisme;Idealismus;Idealizm;Idealismo;Idealismo;Id
 national_idealism_desc;National Idealism;Idéalisme national;Nationaler Idealismus;Idealizm narodowy;Idealismo nacional;Idealismo nazionale;National idealism;Národní idealismus;Nemzeti idealizmus;Nationaal idealisme;Idealismo nacional;Национальный идеализм;Kansallinen idealismi
 national_attitude;Attitude;Attitude;Einstellung;Postawa;Actitud;Atteggiamento;Hållning;Postoj;Hozzáállás;Houding;Atitude;Отношение;Asenne
 national_attitude_desc;National Attitude;Attitude nationale;Nationale Haltung;Postawa narodowa;Actitud nacional;Atteggiamento nazionale;National attityd;Národní postoj;Nemzeti hozzáállás;Nationale houding;Atitude nacional;Национальное отношение;Kansallinen asenne
-cul_north_america;North America;Amérique du Nord;Nordamerika;Ameryka Północna;América del Norte;Nord America;Nordamerika;Severní Amerika;Észak-Amerika;Noord-Amerika;América do Norte;Северная Америка;Pohjois-Amerikka
-cul_north_america_desc;North America;Amérique du Nord;Nordamerika;Ameryka Północna;América del Norte;Nord America;Nordamerika;Severní Amerika;Észak-Amerika;Noord-Amerika;América do Norte;Северная Америка;Pohjois-Amerikka
-cul_latin_america;Latin America;Amérique latine;Lateinamerika;Ameryka Łacińska;América Latina;America Latina;Latinamerika;Latinská Amerika;Latin-Amerika;Latijns-Amerika;América Latina;Латинская Америка;Latinalainen Amerikka
-cul_latin_america_desc;Latin America;Amérique latine;Lateinamerika;Ameryka Łacińska;América Latina;America Latina;Latinamerika;Latinská Amerika;Latin-Amerika;Latijns-Amerika;América Latina;Латинская Америка;Latinalainen Amerikka
-cul_western_europe;Western Europe;Europe de l'Ouest;Westeuropa;Europa Zachodnia;Europa Occidental;Europa occidentale;Västeuropa;Západní Evropa;Nyugat-Európa;West-Europa;Europa Ocidental;Западная Европа;Länsi-Eurooppa
-cul_western_europe_desc;Western Europe;Europe de l'Ouest;Westeuropa;Europa Zachodnia;Europa Occidental;Europa occidentale;Västeuropa;Západní Evropa;Nyugat-Európa;West-Europa;Europa Ocidental;Западная Европа;Länsi-Eurooppa
-cul_pacific;Pacific;Pacifique;Pazifik;Pacyfik;Pacífico;Pacifico;Stilla havet;Tichý oceán;Csendes-óceán;Pacifisch;Pacífico;Тихий океан;Tyyni valtameri
-cul_pacific_desc;Pacific;Pacifique;Pazifik;Pacyfik;Pacífico;Pacifico;Stilla havet;Tichý oceán;Csendes-óceán;Pacifisch;Pacífico;Тихий океан;Tyyni valtameri
-cul_east_europe;East Europe;Europe de l'Est;Osteuropa;Europa Wschodnia;Europa del Este;Europa orientale;Östeuropa;Východní Evropa;Kelet-Európa;Oost-Europa;Europa de Leste;Восточная Европа;Itä-Eurooppa
-cul_east_europe_desc;East Europe;Europe de l'Est;Osteuropa;Europa Wschodnia;Europa del Este;Europa orientale;Östeuropa;Východní Evropa;Kelet-Európa;Oost-Europa;Europa de Leste;Восточная Европа;Itä-Eurooppa
-cul_middle_east;Middle East;Moyen-Orient;Naher Osten;Bliski Wschód;Medio Oriente;Medio Oriente;Mellanöstern;Blízký východ;Közel-Kelet;Midden-Oosten;Ближний Восток;Lähi-itä
-cul_middle_east_desc;Middle East;Moyen-Orient;Naher Osten;Bliski Wschód;Medio Oriente;Medio Oriente;Mellanöstern;Blízký východ;Közel-Kelet;Midden-Oosten;Ближний Восток;Lähi-itä
-cul_sub_saharan_africa;Sub-Saharan Africa;Afrique subsaharienne;Subsahara-Afrika;Afryka Subsaharyjska;África Subsahariana;Africa subsahariana;Subsahariska Afrika;Subsaharská Afrika;Szaharai Afrika;Sub-Sahara-Afrika;Субсахарская Африка;Saharan eteläpuoleinen Afrikka
-cul_sub_saharan_africa_desc;Sub-Saharan Africa;Afrique subsaharienne;Subsahara-Afrika;Afryka Subsaharyjska;África Subsahariana;Africa subsahariana;Subsahariska Afrika;Subsaharská Afrika;Szaharai Afrika;Sub-Sahara-Afrika;Субсахарская Африка;Saharan eteläpuoleinen Afrikka
-cul_east_asia;East Asia;Asie de l'Est;Ostasien;Azja Wschodnia;Asia Oriental;Asia orientale;Östasien;Východní Asie;Kelet-Ázsia;Oost-Azië;Восточная Азия;Itä-Aasia
-cul_east_asia_desc;East Asia;Asie de l'Est;Ostasien;Azja Wschodnia;Asia Oriental;Asia orientale;Östasien;Východní Asie;Kelet-Ázsia;Oost-Azië;Восточная Азия;Itä-Aasia
-cul_south_asia;South Asia;Asie du Sud;Südasien;Azja Południowa;Asia del Sur;Asia meridionale;Sydasien;Jižní Asie;Dél-Ázsia;Zuid-Azië;Asia Meridional;Южная Азия;Etelä-Aasia
-cul_south_asia_desc;South Asia;Asie du Sud;Südasien;Azja Południowa;Asia del Sur;Asia meridionale;Sydasien;Jižní Asie;Dél-Ázsia;Zuid-Azië;Asia Meridional;Южная Азия;Etelä-Aasia
-hinduism;Hinduism;Hindouisme;Hinduismus;Hinduizm;Hinduismo;Induismo;Hinduism;Hinduismus;Hinduisztikus vallás;Hindoeïsme;Индуизм;Hindulaisuus
-hinduism_desc;Hinduism;Hindouisme;Hinduismus;Hinduizm;Hinduismo;Induismo;Hinduism;Hinduismus;Hinduisztikus vallás;Hindoeïsme;Индуизм;Hindulaisuus
-confucianism;Confucianism;Confucianisme;Konfuzianismus;Konfucjanizm;Confucianismo;Confucianesimo;Konfucianism;Konfucianismus;Konfucianizmus;Confucianisme;Конфуцианство;Konfutselaisuus
-confucianism_desc;Confucianism;Confucianisme;Konfuzianismus;Konfucjanizm;Confucianismo;Confucianesimo;Konfucianism;Konfucianismus;Konfucianizmus;Confucianisme;Конфуцианство;Konfutselaisuus
-buddhism;Buddhism;Bouddhisme;Buddhismus;Buddyzm;Budismo;Buddismo;Buddhism;Buddhismus;Buddhizmus;Boeddhisme;Буддизм;Buddhalaisuus
-buddhism_desc;Buddhism;Bouddhisme;Buddhismus;Buddyzm;Budismo;Buddismo;Buddhism;Buddhismus;Buddhizmus;Boeddhisme;Буддизм;Buddhalaisuus
-shintoism;Shintoism;Shintoïsme;Shintoismus;Shintoizm;Sintoísmo;Shintoismo;Shintoism;Šintoismus;Sintó vallás;Shintoïsme;Синтоизм;Shintolaisuus
-shintoism_desc;Shintoism;Shintoïsme;Shintoismus;Shintoizm;Sintoísmo;Shintoismo;Shintoism;Šintoismus;Sintó vallás;Shintoïsme;Синтоизм;Shintolaisuus
-atheism;Atheism;Athéisme;Atheismus;Ateizm;Ateísmo;Ateismo;Ateism;Ateismus;Ateizmus;Atheïsme;Ateísmo;Атеизм;Ateismi
-atheism_desc;Atheism;Athéisme;Atheismus;Ateizm;Ateísmo;Ateismo;Ateism;Ateizmus;Atheïsme;Ateísmo;Атеизм;Ateismi
-judaism;Judaism;Judaïsme;Judentum;Judaizm;Judaísmo;Ebraismo;Judendom;Judaismus;Zsidóság;Jodendom;Иудаизм;Juutalaisuus
-judaism_desc;Judaism;Judaïsme;Judentum;Judaizm;Judaísmo;Ebraismo;Judendom;Judaismus;Zsidóság;Jodendom;Иудаизм;Juutalaisuus
-christianity;Christianity;Christianisme;Christentum;Chrześcijaństwo;Cristianismo;Cristianesimo;Kristendom;Křesťanství;Kereszténység;Christendom;Христианство;Kristinusko
-christianity_desc;Christianity;Christianisme;Christentum;Chrześcijaństwo;Cristianismo;Cristianesimo;Kristendom;Křesťanství;Kereszténység;Christendom;Христианство;Kristinusko
-islam;Islam;Islam;Islam;Islam;Islam;Islam;Islam;Islám;Iszlám;Islam;Ислам;Islam
-islam_desc;Islam;Islam;Islam;Islam;Islam;Islam;Islam;Islám;Iszlám;Islam;Ислам;Islam
-folk_religions;Folk Religions;Religions populaires;Volksreligionen;Religie ludowe;Religiones populares;Religioni popolari;Folk religioner;Folk religions;Népvallások;Volksreligies;Народные религии;Folk religions
-folk_religions_desc;Folk Religions;Religions populaires;Volksreligionen;Religie ludowe;Religiones populares;Religioni popolari;Folk religioner;Folk religions;Népvallások;Volksreligies;Народные религии;Folk religions
-territorial_focus;Territorial Focus;Fokus teritorial;Fokus teritoriell;Foco territorial;Fokus terytorialny;Foco territorial;Fokus territorial;Folk religioner;Fokus på territorium;Folk religions
+abkhaz;Abkhaz;Abkhaze;Abchasisch;Abchaski;Abjaso;Abcaso;Abchazisk;Abcházský;Abház;Abchazisch;Abcasiano;Абхаз;Abhaasilainen
+aborigine;Aborigine;Aborigène;Aborigine;Aborygen;Aborigen;Aborigeno;Aboriginer;Aboridžinec;Aborigi;Aborigene;Aborígine;Абориген;Aboriginaali
+ache;Ache;Ache;Ache;Ache;Ache;Ache;Ache;Ache;Ache;Ache;Ache;Аче;Ache
+afar;Afar;Afar;Afar;Afar;Afar;Afar;Afar;Afar;Afár;Afar;Afar;Афар;Afar
+african_minor;African minority;Minorité africaine;Afrikanische Minderheit;Mniejszość afrykańska;Minoría africana;Minoranza africana;Afrikansk minoritet;Africká menšina;Afrikai kisebbség;Afrikaanse minderheid;Minoria africana;Африканское меньшинство;Afrikkalainen vähemmistö
+afrikaaner;Afrikaner;Afrikaner;Afrikaner;Afrykaner;Afrikáner;Afrikaner;Afrikaner;Afrikanec;Afrikán;Afrikaner;Afrikaner;Африканер;Afrikaaner
+afro_american;Afro-American;Afro-américain;Afroamerikanisch;Afroamerykanin;Afroamericano;Afroamericano;Afroamerikan;Afroameričan;Afroamerikai;Afro-Amerikaan;Afro-americano;Афроамериканец;Afroamerikkalainen
+afro_antillean;Afro-Antillean;Afro-antillais;Afroantillanisch;Afroantylejczyk;Afroantillano;Afroantillano;Afroantillansk;Afroantilský;Afro-antillai;Afro-Antilliaans;Afro-antilhano;Афроантилийский;Afroantillalainen
+afro_brazilian;Afro-Brazilian;Afro-brésilien;Afrobrasilianisch;Afro-brazylijski;Afrobrasileño;Afrobrasiliano;Afrobrasiliansk;Afrobrazilský;Afro-brazíliai;Afro-Braziliaans;Afro-brasileiro;Афробразильский;Afrobrasilialainen
+afro_caribbean;Afro-Caribbean;Afro-caribéen;Afrokaribisch;Afrokaraibski;Afrocaribeño;Afrocaraibico;Afrokaribisk;Afrokaribský;Afro-karibi;Afro-Caribisch;Afro-caribenho;Афрокарибский;Afrokaribialainen
+afro_caribeno;Afro-Caribbean;Afro-caribéen;Afrokaribisch;Afrokaraibski;Afrocaribeño;Afrocaraibico;Afrokaribisk;Afrokaribský;Afro-karibi;Afro-Caribisch;Afro-caribenho;Афрокарибский;Afrokaribialainen
+aimara;Aymara;Aymara;Aymara;Ajmara;Aymara;Aymara;Aymara;Aymara;Aymara;Aymara;Aymara;Аймара;Aymara
+aimat;Aimat;Aimat;Aimat;Aimat;Aimat;Aimat;Aimat;Aimat;Aimat;Aimat;Aimat;Аймат;Aimat
+ainu;Ainu;Aïnous;Ainu;Ajnowie;Ainu;Ainu;Ainu;Ainu;Ainu;Ainu;Ainu;Айны;Ainu
+akan;Akan;Akan;Akan;Akan;Akan;Akan;Akan;Akan;Akan;Akan;Akan;Акан;Akan
+albanian;Albanian;Albanais;Albanisch;Albański;Albanés;Albanese;Albansk;Albánský;Albán;Albanees;Albanês;Албанский;Albaanilainen
+algerian;Algerian;Algérien;Algerisch;Algierski;Algeriano;Algerino;Algerisk;Alžírský;Algériai;Algerijns;Argelino;Алжирский;Algerialainen
+altay;Altai;Altaï;Altaisch;Altajski;Altaico;Altaj;Altajisk;Altajský;Altaji;Altaj;Altaico;Алтайский;Altaalainen
+ambon_timor;Ambon Timor;Ambon-Timorais;Ambon-Timoresisch;Ambon-Timorczyk;Ambon Timor;Ambon Timor;Ambon-Timor;Ambonsko-timorský;Ambon-timori;Ambon-Timoriaans;Ambon-Timorense;Амбон-тиморский;Ambon-timorialainen
+american_spanish;American Spanish;Espagnol américain;Amerikanisches Spanisch;Amerykański hiszpański;Español americano;Spagnolo americano;Amerikansk spanska;Americká španělština;Amerikai spanyol;Amerikaans Spaans;Espanhol americano;Американский испанский;Amerikkalainen espanja
+amhara;Amhara;Amhara;Amhara;Amhara;Amhara;Amhara;Amhara;Amhara;Amhara;Amhara;Amhara;Амхара;Amhara
+andean_white_spanish;Andean White Spanish;Espagnol blanc andin;Andines Weißspanisch;Andyjski biały hiszpański;Español andino blanco;Spagnolo bianco andino;Andinskt vitt spanskt;Andské bílé španělština;Andoki fehér spanyol;Andes-wit Spaans;Espanhol branco andino;Андский белый испанский;Andien valkoinen espanja
+anglo_canadian;Anglo-Canadian;Anglo-canadien;Anglo-kanadisch;Anglo-kanadyjski;Anglo-canadiense;Anglo-canadese;Anglo-kanadensisk;Anglo-kanadský;Anglo-kanadai;Anglo-Canadees;Anglo-canadense;Англо-канадский;Anglo-kanadalainen
+arab;Arab;Arabe;Arabisch;Arabski;Árabe;Arabo;Arabisk;Arabský;Arab;Arabisch;Árabe;Араб;arabialainen
+arab_awazi;Arab Awazi;Arabe Awazi;Arabisch Awazi;Arabski Awazi;Árabe Awazi;Arabo Awazi;Arabisk Awazi;Arabský Awazi;Awazi arab;Arabisch Awazi;Árabe Awazi;Арабский Awazi;Awazi-arabialainen
+arab_gulf;Arab Gulf;Golfe arabe;Arabischer Golf;Zatoka arabska;Golfo árabe;Golfo arabo;Arabisk golf;Arabský záliv;Arab-öböl;Arabische Golf;Golfo árabe;Арабский залив;arabialainen lahti
+arab_hassaniya;Arab Hassaniya;Hassaniya arabe;Arabisch Hassaniya;Arabski Hassaniya;Árabe hassaniya;Arabo hassaniya;Arabisk Hassaniya;Arabský Hassaniya;Hassaniya arab;Arabisch Hassaniya;Árabe hassaniya;Арабский Hassaniya;Hassaniya-arabialainen
+arab_khamseh;Arab Khamseh;Arabe Khamseh;Arabisch Khamseh;Arabski Khamseh;Árabe Khamseh;Arabo Khamseh;Arabisk Khamseh;Arabský Khamseh;Khamseh arab;Arabisch Khamseh;Árabe Khamseh;Арабский Khamseh;Khamseh-arabialainen
+arab_levantine;Arab Levantine;Arabe levantin;Arabisch levantin;Arabski lewantyński;Árabe levantino;Arabo levantino;Levantinsk arabisk;Levantinský Arab;Levantin arab;Levantijns Arabisch;Árabe levantino;Арабский ливанский;Levanttilainen arabialainen
+arab_marsh;Arab Marsh;Marais arabe;Arabischer Sumpf;Arabski bagno;Árabe de los pantanos;Arabo delle paludi;Arabisk träsk;Arabský bažina;Arab mocsár;Arabisch moeras;Árabe dos pântanos;Арабское болото;Arabien suo
+arab_mesopotamian;Arab Mesopotamian;Arabe mésopotamien;Mesopotamisch Arabisch;Arabski mezopotamski;Árabe mesopotámico;Arabo mesopotamico;Mesopotamisk arabisk;Mezopotámský Arab;Mezopotámiai arab;Mesopotamisch Arabisch;Árabe mesopotâmico;Месопотамский араб;Mesopotamialainen arabialainen
+arab_saharan;Arab Saharan;Arabe saharien;Saharisch Arabisch;Arabski saharyjski;Árabe sahariano;Arabo sahariano;Saharisk arabisk;Saharský Arab;Szahara arab;Sahara-Arabisch;Árabe sahariano;Сахарский араб;Saharalainen arabialainen
+arab_sahrawi;Arab Sahrawi;Arabe sahraoui;Sahrauisch Arabisch;Arabski sahrawi;Árabe saharaui;Arabo saharaui;Sahrawi-arabisk;Sahrawský Arab;Sahrawi arab;Sahrawi-Arabisch;Árabe saharaui;Сахрави араб;Sahrawialainen arabialainen
+arab_shuwa;Arab Shuwa;Arabe Shuwa;Shuwa Arabisch;Arabski Shuwa;Árabe shuwa;Arabo shuwa;Shuwa-arabisk;Shuwa Arab;Shuwa arab;Shuwa Arabisch;Árabe shuwa;Шува арабский;Shuwa-arabialainen
+armenian;Armenian;Arménien;Armenisch;Ormiański;Armenio;Armeno;Armeniska;Arménský;Örmény;Armeens;Armênio;Армянский;Armenialainen
+aromanians;Aromanians;Aroumains;Aromunen;Arumuni;Arumanos;Aromeni;Aromuner;Aromuni;Arománok;Aroemenen;Arromeno;Арумыны;Aromaanit
+asian_minor;Asian Minor;Asie Mineure;Kleinasien;Azja Mniejsza;Asia Menor;Asia Minore;Mindre Asien;Malá Asie;Kis-Ázsia;Klein-Azië;Ásia Menor;Малая Азия;Vähä-Aasia
+assamese;Assamese;Assamais;Assamesisch;Asamski;Asamés;Assamese;Assamesiska;Ásamština;Asszámi;Assamees;Assamês;Ассамский;Assamilainen
+assyrian;Assyrian;Assyrien;Assyrisch;Asyryjski;Asirio;Assiro;Assyrisk;Asyrský;Asszír;Assyrisch;Assírio;Ассирийский;Assyrialainen
+australian;Australian;Australien;Australier;Australijski;Australiano;Australiano;Australiensk;Australský;Ausztrál;Australisch;Australiano;Австралийский;Australialainen
+austrian_german;Austrian German;Allemand autrichien;Österreichisches Deutsch;Austriacki niemiecki;Alemán austriaco;Tedesco austriaco;Österrikisk tyska;Rakouská němčina;Osztrák német;Oostenrijks Duits;Alemão austríaco;Австрийский немецкий;Itävaltalaissaksalainen
+avadhi;Avadhi;Avadhi;Avadhi;Awadhi;Avadhi;Avadhi;Avadhi;Avadhština;Avadhi;Avadhi;Avadhi;Авадхи;Avadhi
+avar;Avar;Avar;Aware;Awar;Avario;Avaro;Avar;Avarština;Avár;Avar;Avar;Аварский;Avaari
+azande;Azande;Azandé;Azande;Azande;Azande;Azande;Azande;Azande;Azande;Azande;Azande;Азанде;Azande
+azerbaijani;Azerbaijani;Azerbaïdjanais;Aserbaidschanisch;Azerbejdżański;Azerbaiyano;Azero;Azerbajdzjansk;Ázerbájdžánský;Azerbajdzsáni;Azerbeidzjaans;Azerbaijano;Азербайджанский;Azerbaidzanilainen
+bahrani;Bahrani;Bahreïnien;Bahrainisch;Bahrajński;Bahreiní;Bahreinita;Bahrainsk;Bahrajnský;Bahreini;Bahreins;Bahraini;Бахрейнский;Bahrainilainen
+bai;Bai;Bai;Bai;Bai;Bai;Bai;Bai;Bai;Bai;Bai;Bai;Бай;Baikalainen
+bakongo;Bakongo;Bakongo;Bakongo;Bakongo;Bakongo;Bakongo;Bakongo;Bakongo;Bakongo;Bakongo;Bakongo;Баконго;Bakongo
+balanta;Balanta;Balanta;Balanta;Balanta;Balanta;Balanta;Balanta;Balanta;Balanta;Balanta;Balanta;Баланта;Balanta
+bali;Bali;Balinais;Balinesisch;Baliński;Balinés;Balinese;Balinesisk;Balijský;Bali;Balinees;Balines;Балийский;Balilainen
+balkar;Balkar;Balkar;Balkar;Balkarski;Balkar;Balkar;Balkar;Balkar;Balkár;Balkar;Balkar;Балкарский;Balkar
+baluchi;Baluchi;Baloutche;Belutschisch;Beludżystański;Baluchi;Beluci;Baluchiska;Balúčský;Beludzs;Belutsjisch;Balúchi;Белуджский;Belutschilainen
+bambara;Bambara;Bambara;Bambara;Bambara;Bambara;Bambara;Bambara;Bambarština;Bambara;Bambara;Bambara;Бамбара;Bambara
+banda;Banda;Banda;Banda;Banda;Banda;Banda;Banda;Banda;Banda;Banda;Banda;Банда;Banda
+bari;Bari;Bari;Bari;Bari;Bari;Bari;Bari;Bari;Bari;Bari;Bari;Бари;Bari
+bashkir;Bashkir;Bachkir;Baschkirisch;Baskirski;Bashkir;Baschiro;Bashkiriska;Baškirský;Baskír;Bashkir;Bashkir;Башкирский;Bashkirilainen
+basque;Basque;Basque;Basque;Baskijski;Vasco;Basco;Baskiska;Baskický;Baszk;Basque;Basco;Баскский;Baskilainen
+bataks;Bataks;Batak;Batak;Batak;Batak;Batacchi;Batak;Batakština;Baták;Batak;Bataks;Батак;Batak
+baya_mandjia;Baya Mandjia;Baya Mandjia;Baya Mandjia;Baya Mandjia;Baya Mandjia;Baya Mandjia;Baya Mandjia;Baya Mandjia;Baya Mandjia;Baya Mandjia;Baya Mandjia;Бая-Манджия;Baya Mandjia
+beja;Beja;Beja;Beja;Bedża;Beja;Beja;Beja;Beja;Beja;Beja;Beja;Беджа;Beja
+bemba;Bemba;Bemba;Bemba;Bemba;Bemba;Bemba;Bemba;Bemba;Bemba;Bemba;Bemba;Бемба;Bemba
+bengali;Bengali;Bengali;Bengalisch;Bengalski;Bengalí;Bengalese;Bengaliska;Bengálský;Bengáli;Bengaals;Bengali;Бенгальский;Bengalilainen
+bengali_hindu;Bengali Hindu;Bengali hindou;Bengalisch-Hindu;Bengalski hinduski;Bengalí hindú;Bengalese indù;Bengalisk hindu;Bengálský hinduista;Bengáli hindu;Bengaalse hindoe;Bengali hindu;Бенгальский индуист;Bengalihindulainen
+berber;Berber;Berbère;Berber;Berberyjski;Beréber;Berbero;Berber;Berberský;Berber;Berber;Berbere;Берберский;Berberilainen
+betsileo;Betsileo;Betsileo;Betsileo;Betsileo;Betsileo;Betsileo;Betsileo;Betsileo;Betsileo;Betsileo;Betsileo;Бецилео;Betsileo
+betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Бецимисарака;Betsimisaraka
+biko;Biko;Biko;Biko;Biko;Biko;Biko;Biko;Biko;Biko;Biko;Biko;Бико;Biko
+black_anglo;Black Anglo;Anglo noir;Schwarzer Anglo;Czarny anglo;Anglo negro;Anglo nero;Svart anglo;Černý Anglo;Fekete angol;Zwarte Anglo;Anglo negro;Чёрный англо;Mustaanglo
+black_dutch;Black Dutch;Néerlandais noir;Schwarzer Holländer;Czarny Holender;Neerlandés negro;Olandese nero;Svart holländare;Černý Holanďan;Fekete holland;Zwarte Nederlander;Holandês negro;Чёрный голландец;Musta hollantilainen
+black_french;Black French;Français noir;Schwarzer Franzose;Czarny Francuz;Francés negro;Francese nero;Svart fransman;Černý Francouz;Fekete francia;Zwarte Fransman;Francês negro;Чёрный француз;Musta ranskalainen
+black_muslim;Black Muslim;Musulman noir;Schwarzer Muslim;Czarny muzułmanin;Musulmán negro;Musulmano nero;Svart muslim;Černý muslim;Fekete muszlim;Zwarte moslim;Muçulmano negro;Чёрный мусульманин;Musta muslimi
+black_portuguese;Black Portuguese;Portugais noir;Schwarzer Portugiese;Czarny Portugalczyk;Portugués negro;Portoghese nero;Svart portugis;Černý Portugalec;Fekete portugál;Zwarte Portugees;Português negro;Чёрный португалец;Musta portugalilainen
+black_spanish;Black Spanish;Espagnol noir;Schwarzer Spanier;Czarny Hiszpan;Español negro;Spagnolo nero;Svart spanjor;Černý Španěl;Fekete spanyol;Zwarte Spanjaard;Espanhol negro;Чёрный испанец;Musta espanjalainen
+bodo;Bodo;Bodo;Bodo;Bodo;Bodo;Bodo;Bodo;Bodo;Bodo;Bodo;Bodo;Бодо;Bodo
+bosniak;Bosniak;Bosniaque;Bosniake;Bośniak;Bosnio;Bosniaco;Bosniak;Bosňák;Bosnyák;Bosniak;Bósnio;Босняк;Bosniakki
+breton;Breton;Breton;Bretonisch;Bretoński;Bretón;Bretone;Breton;Bretonština;Breton;Bretoens;Bretão;Бретонский;Bretonilainen
+british;British;Britannique;Britisch;Brytyjski;Británico;Britannico;Brittisk;Britský;Brit;Brits;Britânico;Британский;Brittiläinen
+bulgarian;Bulgarian;Bulgare;Bulgarisch;Bułgarski;Búlgaro;Bulgaro;Bulgarsk;Bulharský;Bolgár;Bulgarije;Búlgar;Болгарский;Bulgarialainen
+burmese;Burmese;Birman;Burmesisch;Birmański;Birmano;Birmano;Burmesisk;Barmský;Burmai;Burmees;Birmanês;Бирманский;Burmalainen
+buryat;Buryat;Bouriate;Burjatisch;Buriacki;Buryato;Buriazia;Buryat;Burjatský;Burját;Buryat;Buryat;Бурятский;Buryatilainen
+byelorussian;Byelorussian;Biélorusse;Weißrussisch;Białoruski;Bielorruso;Bielorusso;Vitryssisk;Běloruský;Fehérorosz;Wit-Russisch;Bielorrusso;Белорусский;Valkovenäläinen
+caribbean_white_spanish;Caribbean White Spanish;Espagnol blanc des Caraïbes;Karibisch-Weißer Spanier;Karaibski biały Hiszpan;Español blanco caribeño;Spagnolo bianco caraibico;Karibisk vit spanjor;Karibský bílý Španěl;Karibi fehér spanyol;Caribisch witte Spaans;Espanhol branco caribenho;Карибский белый испанский;Karibian valkoinen espanjalainen
+catalan;Catalan;Catalan;Katalanisch;Kataloński;Catalán;Catalano;Katalansk;Katalánský;Katalán;Catalaans;Catalão;Каталанский;Katalonialainen
+cham;Cham;Cham;Cham;Cham;Cham;Cham;Cham;Chamština;Cham;Cham;Cham;Чам;Cham
+chechen;Chechen;Tchétchène;Tschetschenisch;Czeczeński;Checheno;Ceceno;Tjetjensk;Čečenský;Csecsen;Cjetsjeens;Checheno;Чеченский;Tšetšeenilainen
+chewa;Chewa;Chewa;Chewa;Czewa;Chewa;Chewa;Chewa;Čevština;Chewa;Chewa;Chewa;Чева;Chewa
+chin;Chin;Chin;Chin;Chin;Chin;Chin;Chin;Čjinština;Chin;Chin;Chin;Чин;Chin
+chinese;Chinese;Chinois;Chinesisch;Chiński;Chino;Cinese;Kinesisk;Čínský;Kínai;Chinees;Chinês;Китайский;Kiinalainen
+chinese_cantonese;Chinese Cantonese;Chinois cantonais;Kantonesisch;Chiński kantoński;Chino cantonés;Cinese cantonese;Kantonesisk kinesiska;Kantonština;Kantonai kínai;Kantonees;Chinês cantonês;Китайский кантонский;Kantoninkiinalainen
+chinese_hakka;Chinese Hakka;Chinois hakka;Hakka-Chinesisch;Chiński hakka;Chino hakka;Cinese hakka;Hakka kinesiska;Hakka;Hakkai kínai;Hakka;Chinês hakka;Китайский хакка;Hakkakiinalainen
+chinese_hokkien;Chinese Hokkien;Chinois hokkien;Hokkien-Chinesisch;Chiński hokkien;Chino hokkien;Cinese hokkien;Hokkien kinesiska;Hokkienština;Hokkien kínai;Hokkien;Chinês hokkien;Китайский хоккиен;Hokkienkiinalainen
+chinese_macanese;Chinese Macanese;Chinois macanais;Macanesisch;Chiński makauński;Chino macanés;Cinese macanese;Macanesisk kinesiska;Macaoština;Makaói kínai;Macanees;Chinês macaense;Китайский маканесский;Macaokiinalainen
+chokwe;Chokwe;Chokwé;Chokwe;Chokwe;Chokwe;Chokwe;Chokwe;Chokwe;Chokwe;Chokwe;Chokwe;Чокве;Chokwellainen
+christian_arab;Christian Arab;Arabe chrétien;Christlicher Araber;Chrześcijański Arab;Árabe cristiano;Arabo cristiano;Kristen araber;Křesťanský Aráb;Keresztény arab;Christelijke Arabier;Árabe cristão;Христианский араб;Kristillinen arabialainen
+christian_malayalam;Christian Malayalam;Malayalam chrétien;Christliches Malayalam;Chrześcijański malajalam;Malayalam cristiano;Malayalam cristiano;Kristen malayalam;Křesťanský malajalam;Keresztény malajalam;Christelijk Malayalam;Malayalam cristão;Христианский малаялам;Kristillinen malajalam
+chuvash;Chuvash;Tchouvache;Tschuwaschisch;Czuwański;Chuvash;Ciuvasso;Tschuvass;Čuvašský;Csuvasz;Tsjoevasj;Chuvache;Чувашский;Tsuvaasilainen
+circassians;Circassians;Circassiens;Tscherkessen;Czerkiesi;Circasianos;Circassi;Tsjerkesser;Čerkesoví;Cserkeszek;Tsjerkessen;Circassianos;Черкесы;Tsserkesselaiset
+coloured;Coloured;Coloured;Coloured;Coloured;Coloured;Coloured;Coloured;Coloured;Coloured;Coloured;Coloured;Колор;Coloured
+comore;Comorian;Comorien;Komoren;Komoryjski;Comorense;Comoriano;Komorisk;Komorský;Comori;Comorees;Comoriano;Коморский;Komorialainen
+corsican;Corsican;Corse;Korsisch;Korsykański;Corso;Corso;Korsikansk;Korzikánský;Korzikai;Corsicaans;Córsico;Корсиканский;Korsolainen
+croat;Croat;Croate;Kroate;Chorwat;Croata;Croato;Kroat;Chorvat;Horvát;Kroatisch;Croata;Хорват;Horvatalainen
+czech;Czech;Tchèque;Tschechisch;Czeski;Checo;Ceco;Tjeckisk;Český;Cseh;Tsjechisch;Tcheco;Чешский;Tšekkiläinen
+dakota;Dakota;Dakota;Dakota;Dakota;Dakota;Dakota;Dakota;Dakota;Dakota;Dakota;Dakota;Дакота;Dakotalainen
+damara;Damara;Damara;Damara;Damara;Damara;Damara;Damara;Damara;Damara;Damara;Damara;Дамара;Damaralainen
+danish;Danish;Danois;Dänisch;Duński;Danés;Danese;Danska;Dánský;Dán;Deens;Dinamarquês;Датский;Tanskalainen
+dargwa;Dargwa;Dargwa;Dargwa;Dargwijski;Dargwa;Dargwa;Dargwa;Dargwský;Dargva;Dargwa;Dargua;Даргинский;Dargwialainen
+dhivehi;Dhivehi;Dhivehi;Dhivehi;Dhivehi;Dhivehi;Dhivehi;Dhivehi;Dhivehi;Dhivehi;Dhivehi;Dhivehi;Дивехи;Dhivehialainen
+dinka;Dinka;Dinka;Dinka;Dinka;Dinka;Dinka;Dinka;Dinka;Dinka;Dinka;Dinka;Динка;Dinkalainen
+dong;Dong;Dong;Dong;Dong;Dong;Dong;Dong;Dong;Dong;Dong;Dong;Донг;Dongalainen
+druze;Druze;Druze;Druzen;Druzy;Druzos;Druzi;Druzer;Druzi;Druze;Druzen;Druzos;Друзы;Druzaalainen
+dutch;Dutch;Néerlandais;Niederländisch;Niderlandzki;Neerlandés;Olandese;Holländsk;Nizozemský;Holland;Nederlands;Holandês;Нидерландский;Hollantilainen
+dyula;Dyula;Dioula;Dyula;Diula;Dioula;Dyula;Dyula;Dioula;Dyula;Dioula;Dyula;Диула;Dyulalainen
+edo;Edo;Édo;Edo;Edo;Edo;Edo;Edo;Edo;Edo;Edo;Edo;Эдо;Edolainen
+egyptian;Egyptian;Égyptien;Ägyptisch;Egipski;Egipcio;Egiziano;Egyptisk;Egyptský;Egyiptomi;Egyptisch;Egípcio;Египетский;Egyptialainen
+emirati;Emirati;Émirati;Emiratisch;Emiracki;Emiratí;Emiratino;Emirati;Emirátský;Emirati;Emiraats;Emirato;Эмиратский;Emiraattilainen
+english;English;Anglais;Englisch;Angielski;Inglés;Inglese;Engelska;Anglický;Angol;Engels;Inglês;Английский;Englanninkielinen
+estonian;Estonian;Estonien;Estnisch;Estoński;Estonio;Estone;Estnisk;Estonský;Észt;Ests;Estoniano;Эстонский;Viroilainen
+european;European;Européen;Europäisch;Europejski;Europeo;Europeo;Europeisk;Evropský;Európai;Europees;Europeu;Европейский;Eurooppalainen
+ewe;Ewe;Éwé;Ewe;Ewe;Ewe;Ewe;Ewe;Ewe;Ewe;Ewe;Ewe;Эве;Ewelainen
+fang;Fang;Fang;Fang;Fang;Fang;Fang;Fang;Fang;Fang;Fang;Fang;Фанг;Fangilainen
+faroe;Faroese;Féroïen;Färöisch;Farojski;Feroés;Faroese;Färöisk;Faeroeský;Feröeri;Faeröers;Feroês;Фарерский;Fääröläinen
+filipino;Filipino;Philippin;Filipino;Filipiński;Filipino;Filippino;Filipino;Filipínský;Fülöp-szigeteki;Filipijns;Filipino;Филиппинский;Filippiinilainen
+finnish;Finnish;Finlandais;Finnisch;Fiński;Finlandés;Finlandese;Finsk;Finský;Finn;Fins;Finlandês;Финский;Suomalainen
+flemish;Flemish;Flamand;Flämisch;Flamandzki;Flamenco;Fiammingo;Flamländska;Flámský;Fleming;Vlaams;Flamengo;Фламандский;Flamantilainen
+fon;Fon;Fon;Fon;Fon;Fon;Fon;Fon;Fon;Fon;Fon;Fon;Фон;Fonilainen
+french;French;Français;Französisch;Francuski;Francés;Francese;Fransk;Francouzský;Francia;Frans;Francês;Французский;Ranskalainen
+french_canadian;French Canadian;Canadien français;Französisch-kanadisch;Kanadyjski francuski;Francés canadiense;Canadese francese;Fransk-kanadensisk;Kanadsky francouzský;Kanadai francia;Frans-Canadees;Francês canadiano;Французский канадец;Kanadalaisranskalainen
+fula;Fula;Peul;Fulani;Fulani;Fula;Fulani;Fulani;Fulani;Fulani;Fula;Fulani;Фула;Fulalainen
+fulbe;Fulbe;Fulbe;Fulbe;Fulbe;Fulbe;Fulbe;Fulbe;Fulbe;Fulbe;Fulbe;Fulbe;Фульбе;Fulbelainen
+fur;Fur;Fur;Fur;Fur;Fur;Fur;Fur;Fur;Fur;Fur;Fur;Фур;Furalainen
+ga_adangbe;Ga-Adangbe;Ga-Adangbe;Ga-Adangbe;Ga-Adangbe;Ga-Adangbe;Ga-Adangbe;Ga-Adangbe;Ga-Adangbe;Ga-Adangbe;Ga-Adangbe;Ga-Adangbe;Га-Адангбе;Ga-adangbelainen
+gagauz;Gagauz;Gagaouze;Gagauzisch;Gagauz;Gagauzo;Gagauzo;Gagauz;Gagauzský;Gagauz;Gagaoez;Gagauz;Гагаузский;Gagauzilainen
+ganda;Ganda;Ganda;Ganda;Ganda;Ganda;Ganda;Ganda;Ganda;Ganda;Ganda;Ganda;Ганда;Gandalainen
+ganguela;Ganguela;Ganguela;Ganguela;Ganguela;Ganguela;Ganguela;Ganguela;Ganguela;Ganguela;Ganguela;Ganguela;Гангуэла;Ganguelalainen
+georgian;Georgian;Géorgien;Georgisch;Gruziński;Georgiano;Georgiano;Georgisk;Gruzínský;Grúz;Georgisch;Georgiano;Грузинский;Georgialainen
+german;German;Allemand;Deutsch;Niemiecki;Alemán;Tedesco;Tysk;Německý;Német;Duits;Alemão;Немецкий;Saksalainen
+global_human;Global Human;Humain global;Globaler Mensch;Globalny człowiek;Humano global;Umano globale;Global människa;Globální člověk;Globális ember;Globaal mens;Humano global;Глобальный человек;Globaali ihminen
+goan;Goan;Goanais;Goanisch;Goański;Goano;Goano;Goansk;Goanský;Goai;Goaans;Goês;Гоанский;Goalainen
+gorontalo;Gorontalo;Gorontalo;Gorontalo;Gorontalo;Gorontalo;Gorontalo;Gorontalo;Gorontalo;Gorontalo;Gorontalo;Gorontalo;Горонталский;Gorontalolainen
+greek;Greek;Grec;Griechisch;Grecki;Griego;Greco;Grekisk;Řecký;Görög;Grieks;Grego;Греческий;Kreikkalainen
+gujarati;Gujarati;Goudjarati;Gujarati;Gudźarati;Guyaratí;Gujarati;Gujarati;Gudžaratský;Gujarati;Gujarati;Gujarate;Гуджарати;Gujaratilainen
+gur;Gur;Gour;Gur;Gur;Gur;Gur;Gur;Gur;Gur;Gur;Gur;Гур;Gurlainen
+hadjarai;Hadjarai;Hadjarai;Hadjarai;Hadjarai;Hadjarai;Hadjarai;Hadjarai;Hadjarai;Hadjarai;Hadjarai;Hadjarai;Хаджарай;Hadjarailainen
+hani;Hani;Hani;Hani;Hani;Hani;Hani;Hani;Hani;Hani;Hani;Hani;Хани;Hanilainen
+haredim_jewish;Haredi Jewish;Juif haredi;Haredi-Jude;Żyd haredi;Judío haredi;Ebreo haredi;Haredi-judisk;Haredijský Žid;Haredi zsidó;Haredi-Joods;Judeu haredi;Харедимский еврей;Haredimilainen juutalainen
+hausa;Hausa;Haoussa;Hausan;Hausa;Hausa;Hausa;Hausa;Hauský;Hausza;Hausa;Hausa;Хауса;Hausalainen
+hawaiian;Hawaiian;Hawaïen;Hawaiianisch;Hawajski;Hawaiano;Hawaiano;Havajisk;Havajský;Hawaii;Hawaïaans;Havaiano;Гавайский;Havaijilainen
+hazara;Hazara;Hazara;Hazara;Hazara;Hazara;Hazara;Hazara;Hazara;Hazara;Hazara;Hazara;Хазарский;Hazaaralainen
+herero;Herero;Herero;Herero;Herero;Herero;Herero;Herero;Herero;Herero;Herero;Herero;Хереро;Hererolainen
+hindi;Hindi;Hindi;Hindi;Hinduski;Hindi;Hindi;Hindi;Hindština;Hindi;Hindi;Hindi;Хинди;Hindilainen
+hui;Hui;Hui;Hui;Hui;Hui;Hui;Hui;Hui;Hui;Hui;Hui;Хуэй;Huilainen
+hungarian;Hungarian;Hongrois;Ungarisch;Węgierski;Húngaro;Ungherese;Ungersk;Maďarský;Finn;Hongaars;Húngaro;Венгерский;Unkarilainen
+hutu;Hutu;Hutu;Hutu;Hutu;Hutu;Hutu;Hutu;Hutu;Hutu;Hutu;Hutu;Хуту;Hutulainen
+ibad_arab;Ibad Arab;Arabe ibadite;Ibaditischer Araber;Arab ibadyjski;Árabe ibadí;Arabo ibadita;Ibadisk araber;Ibadistický Arab;Ibad arab;Ibad-Arabier;Árabe ibadita;Ибадитский араб;Ibad-arabialainen
+ibibio;Ibibio;Ibibio;Ibibio;Ibibio;Ibibio;Ibibio;Ibibio;Ibibio;Ibibio;Ibibio;Ibibio;Ибибио;Ibibiolainen
+ibo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Игбо;Igbolainen
+icelandic;Icelandic;Islandais;Isländisch;Islandzki;Islandés;Islandese;Isländsk;Islandský;Izland;IJslands;Islandês;Исландский;Islantilainen
+igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Igbo;Игбо;Igbolainen
+ijaw;Ijaw;Ijaw;Ijaw;Ijaw;Ijaw;Ijaw;Ijaw;Ijaw;Ijaw;Ijaw;Ijaw;Иджав;Ijawalainen
+indian;Indian;Indien;Inder;Indyjski;Indio;Indiano;Indisk;Indický;Indiai;Indiaan;Indiano;Индиец;Intialainen
+indian_muslim;Indian Muslim;Musulman indien;Indischer Muslim;Muzułmanin indyjski;Musulmán indio;Musulmano indiano;Indisk muslim;Indický muslim;Indiai muszlim;Indische moslim;Muçulmano indiano;Индийский мусульманин;Intialaismuslimi
+indian_shia;Indian Shia;Chiite indien;Indischer Schiite;Szyita indyjska;Chiita indio;Sciita indiano;Indisk shiitisk;Indická šíita;Indiai síita;Indische sjiiet;Xiita indiano;Индийский шиит;Intialaisšiia
+indonesian;Indonesian;Indonésien;Indonesisch;Indonezyjski;Indonesio;Indonesiano;Indonesisk;Indonéský;Indonéz;Indonesisch;Indonésio;Индонезийский;Indonesialainen
+ingush;Ingush;Ingouche;Ingusch;Ingujski;Ingush;Inguscio;Ingush;Ingušský;Ingus;Ingussisch;Ingush;Ингушский;Ingushilainen
+inuit;Inuit;Inuit;Inuit;Inuici;Inuit;Inuit;Inuit;Inuit;Inuit;Inuït;Inuit;Иннуиты;Inuiittilainen
+iraqi;Iraqi;Irakien;Irakisch;Iracki;Iraquí;Iracheno;Irakisk;Iracký;Iraki;Iraaks;Iraquiano;Иракский;Irakilainen
+irish;Irish;Irlandais;Irisch;Irlandzki;Irlandés;Irlandese;Irländsk;Irský;Ír;Iers;Irlandês;Ирландский;Irlantilainen
+italian;Italian;Italien;Italienisch;Włoski;Italiano;Italiano;Italiensk;Italský;Olasz;Italiaans;Italiano;Итальянский;Italialainen
+iteso;Iteso;Iteso;Iteso;Iteso;Iteso;Iteso;Iteso;Iteso;Iteso;Iteso;Iteso;Iteso;Itesolainen
+itsekari;Itsekari;Itsekari;Itsekari;Itsekari;Itsekari;Itsekari;Itsekari;Itsekari;Itsekari;Itsekari;Itsekari;Итсекари;Itsekarilainen
+japanese;Japanese;Japonais;Japanisch;Japoński;Japonés;Giapponese;Japansk;Japonský;Japán;Japans;Japonês;Японский;Japanilainen
+jewish;Jewish;Juif;Jüdisch;Żydowski;Judío;Ebraico;Judisk;Židovský;Zsidó;Joods;Judaico;Еврейский;Juutalainen
+jola;Jola;Jola;Jola;Jola;Jola;Jola;Jola;Jola;Jola;Jola;Jola;Жола;Jolalainen
+jordanian;Jordanian;Jordanien;Jordanisch;Jordanski;Jordano;Giordano;Jordansk;Jordánský;Jordániai;Jordaan;Jordaniano;Иорданский;Jordanalainen
+kabarday;Kabarday;Kabarday;Kabarday;Kabardajski;Kabarday;Kabarday;Kabarday;Kabardajský;Kabardai;Kabarday;Kabarday;Кабардайский;Kabardaylainen
+kabye;Kabye;Kabye;Kabye;Kabye;Kabye;Kabye;Kabye;Kabye;Kabye;Kabye;Kabye;Кабье;kabyelainen
+kachin;Kachin;Kachin;Kachin;Kachin;Kachin;Kachin;Kachin;Kachinský;Kachin;Kachin;Kachin;Качин;Kachinilainen
+kalenjin;Kalenjin;Kalenjin;Kalenjin;Kalenjin;Kalenjin;Kalenjin;Kalenjin;Kalenjin;Kalenjin;Kalenjin;Kalenjin;Календжин;Kalenjinilainen
+kalimatan;Kalimatan;Kalimatan;Kalimatan;Kalimatan;Kalimatan;Kalimatan;Kalimatan;Kalimatan;Kalimatan;Kalimatan;Kalimatan;Калиматан;Kalimatanelainen
+kalmyk;Kalmyk;Kalmouk;Kalmyk;Kałmucki;Kalmyk;Kalmyk;Kalmyk;Kalmycký;Kalmyk;Kalmyks;Kalmyk;Калмык;Kalmykilainen
+kamba;Kamba;Kamba;Kamba;Kamba;Kamba;Kamba;Kamba;Kamba;Kamba;Kamba;Kamba;Камба;Kambalainen
+kanak;Kanak;Kanak;Kanak;Kanak;Kanak;Kanak;Kanak;Kanak;Kanak;Kanak;Kanak;Канак;Kanakalainen
+kanem_bornou;Kanem Bornou;Kanem-Bornu;Kanem-Bornu;Kanem-Bornu;Kanem-Bornu;Kanem-Bornu;Kanem-Bornu;Kanem-Bornu;Kanem-Bornu;Kanem-Bornu;Kanem-Bornu;Канем-Борну;Kanem-bornoulainen
+kannada;Kannada;Kannada;Kannada;Kannada;Kannada;Kannada;Kannada;Kannada;Kannada;Kannada;Kannada;Каннада;Kannadalainen
+kanuri;Kanuri;Kanouri;Kanuri;Kanuri;Kanuri;Kanuri;Kanuri;Kanuri;Kanuri;Kanuri;Kanuri;Канури;Kanurilainen
+karachay;Karachay;Karatchaï;Karatschai;Karaćajski;Karachay;Karachay;Karatsjai;Karačajský;Karacsáj;Karatschai;Karachay;Карачаевский;Karachaialainen
+karachay_balkar;Karachay-Balkar;Karatchaï-balkar;Karatschai-Balkar;Karaćaj-Balkar;Karachay-balkar;Karachay-Balkar;Karatsjai-Balkar;Karačaj-balkarský;Karacsáj-balkár;Karatschai-Balkar;Karachay-Balkar;Карачаево-балкарский;Karachaialainen balkarilainen
+karakalpak;Karakalpak;Karakalpak;Karakalpak;Karakalpacki;Karakalpak;Karakalpak;Karakalpak;Karakalpacký;Karakalpaki;Karakalpak;Karakalpak;Каракалпакский;Karakalpakilainen
+karen;Karen;Karen;Karen;Karen;Karen;Karen;Karen;Karen;Karen;Karen;Karen;Карен;Karenilainen
+kashmiri;Kashmiri;Cachemir;Kaschmirisch;Kaszmirski;Cachemir;Cachemira;Kashmiri;Kašmírský;Kaszmiri;Kasjmirs;Caxemira;Кашмирский;Kashmirilainen
+kavango;Kavango;Kavango;Kavango;Kavango;Kavango;Kavango;Kavango;Kavango;Kavango;Kavango;Kavango;Каванго;Kavangolainen
+kazak;Kazakh;Kazakh;Kasachisch;Kazachski;Kazajo;Kazako;Kazakisk;Kazašský;Kazah;Kazachs;Cazaque;Казахский;Kazakhilainen
+khakas;Khakas;Khakas;Chakasisch;Khakaski;Jacas;Khakas;Khakas;Chakasský;Khakas;Khakas;Khakas;Хакасский;Khakasilainen
+khasi;Khasi;Khasi;Khasi;Khasi;Khasi;Khasi;Khasi;Khasi;Khasi;Khasi;Khasi;Кхаси;Khasilainen
+khmer;Khmer;Khmer;Khmer;Khmerski;Jemer;Khmer;Khmer;Khmerský;Khmer;Khmer;Khmer;Кхмерский;Khmerilainen
+khoisan;Khoisan;Khoïsan;Khoisan;Khoisana;Khoisan;Khoisan;Khoisan;Khoisan;Khoisana;Khoisan;Khoisan;Хойсан;Khoisanilainen
+kiga;Kiga;Kiga;Kiga;Kiga;Kiga;Kiga;Kiga;Kiga;Kiga;Kiga;Kiga;Кига;Kigailainen
+kikuyu;Kikuyu;Kikuyu;Kikuyu;Kikuyu;Kikuyu;Kikuyu;Kikuyu;Kikuyu;Kikuyu;Kikuyu;Kikuyu;Кикуйю;Kikuyulainen
+kimbundu;Kimbundu;Kimboundu;Kimbundu;Kimbundu;Kimbundu;Kimbundu;Kimbundu;Kimbundu;Kimbundu;Kimbundu;Kimbundu;Кимбунду;Kimbundulainen
+kirgiz;Kirghiz;Kirghize;Kirgisisch;Kirgiski;Kirguís;Kirghiso;Kirgizisk;Kyrgyzský;Kirgiz;Kirgisisch;Quirguiz;Киргизский;Kirgiisilainen
+kisii;Kisii;Kisii;Kisii;Kisii;Kisii;Kisii;Kisii;Kisii;Kisii;Kisii;Kisii;Кисии;Kisiilainen
+komi;Komi;Komi;Komi;Komi;Komi;Komi;Komi;Komijský;Komi;Komi;Komi;Коми;Komilainen
+korean;Korean;Coréen;Koreanisch;Koreański;Coreano;Coreano;Koreansk;Korejský;Koreai;Koreaans;Coreano;Корейский;Korealainen
+kpelle;Kpelle;Kpelle;Kpelle;Kpelle;Kpelle;Kpelle;Kpelle;Kpelle;Kpelle;Kpelle;Kpelle;Кпелле;Kpelleilainen
+kru;Kru;Kru;Kru;Kru;Kru;Kru;Kru;Kru;Kru;Kru;Kru;Кру;Kruilainen
+kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Куба;Kubalainen
+kurdish;Kurdish;Kurde;Kurdisch;Kurdyjski;Kurdo;Curdo;Kurdisk;Kurdský;Kurdisztai;Koerdisch;Curdo;Курдский;Kurdilainen
+kuwaiti;Kuwaiti;Koweïtien;Kuwaitisch;Kuwejcki;Kuwaití;Kuwaitiano;Kuwaitisk;Kuvajtský;Kuvaiti;Koeweitisch;Kuwaitiano;Кувейтский;Kuwaitilainen
+langi;Langi;Langi;Langi;Langi;Langi;Langi;Langi;Langi;Langi;Langi;Langi;Ланги;Langilainen
+lao;Lao;Laotien;Laotisch;Laotański;Lao;Laotiano;Laotisk;Laoský;Laoszi;Laotiaans;Laociano;Лаосский;Laolainen
+latvian;Latvian;Letton;Lettisch;Łotewski;Letón;Lettone;Lettisk;Lotyšský;Lett;Lets;Letão;Латвийский;Latvialainen
+lazi;Lazi;Lazi;Lazi;Lazi;Lazi;Lazi;Lazi;Lazi;Lazi;Lazi;Lazi;Лази;Lazilainen
+lebanese;Lebanese;Libanais;Libanesisch;Libański;Libanés;Libanese;Libanesisk;Libanonský;Libanoni;Libanees;Libanês;Ливанский;Libanonalainen
+lendu;Lendu;Lendu;Lendu;Lendu;Lendu;Lendu;Lendu;Lendu;Lendu;Lendu;Lendu;Ленду;Lendulainen
+libyan;Libyan;Libyen;Libysch;Libijski;Libio;Libico;Libysk;Libyjský;Líbiai;Libisch;Líbio;Ливийский;Libyalainen
+lingala;Lingala;Lingala;Lingala;Lingala;Lingala;Lingala;Lingala;Lingala;Lingala;Lingala;Lingala;Лингала;Lingalalainen
+lithuanian;Lithuanian;Lituanien;Litauisch;Litewski;Lituano;Lituano;Litauisk;Litevský;Litván;Litouws;Lituano;Литовский;Liettualainen
+lomwe;Lomwe;Lomwe;Lomwe;Lomwe;Lomwe;Lomwe;Lomwe;Lomwe;Lomwe;Lomwe;Lomwe;Ломве;Lomwellainen
+lozi;Lozi;Lozi;Lozi;Lozi;Lozi;Lozi;Lozi;Lozi;Lozi;Lozi;Lozi;Лози;Lozilainen
+luba;Luba;Luba;Luba;Luba;Luba;Luba;Luba;Luba;Luba;Luba;Luba;Люба;Lubalainen
+luhya;Luhya;Luhya;Luhya;Luhya;Luhya;Luhya;Luhya;Luhya;Luhya;Luhya;Luhya;Лухиа;Luhyailainen
+lunda;Lunda;Lunda;Lunda;Lunda;Lunda;Lunda;Lunda;Lunda;Lunda;Lunda;Lunda;Лунда;Lundalainen
+luo;Luo;Luo;Luo;Luo;Luo;Luo;Luo;Luo;Luo;Luo;Luo;Луо;Luolainen
+maasai;Maasai;Masaï;Massai;Masajowie;Masái;Masai;Maasai;Masaj;Maszáj;Maasai;Masai;Масаев;Maasailainen
+makonde;Makonde;Makonde;Makonde;Makonde;Makonde;Makonde;Makonde;Makonde;Makonde;Makonde;Makonde;Макондо;Makondelainen
+makua;Makua;Makua;Makua;Makua;Makua;Makua;Makua;Makua;Makua;Makua;Makua;Макуа;Makualainen
+malay;Malay;Malais;Malaiisch;Malajski;Malayo;Malese;Malaysisk;Malajský;Maláj;Maleis;Malaio;Малайский;Malaijainen
+malayalam;Malayalam;Malayalam;Malayalam;Malajalam;Malayalam;Malayalam;Malayalam;Malayalam;Malayalam;Malayalam;Malayalam;Малайалам;Malajalamilainen
+maltese;Maltese;Maltais;Maltesisch;Maltański;Maltés;Maltese;Maltesisk;Maltézský;Máltai;Maltees;Maltês;Мальтийский;Maltilainen
+manchu;Manchu;Mandchou;Mandschu;Mandżurski;Manchú;Manchu;Mantsju;Mandžuský;Mandzsuri;Mantsjoe;Manchu;Маньчжурский;Manchulainen
+mande;Mande;Mandé;Mande;Mande;Mande;Mande;Mande;Mande;Mande;Mande;Mande;Мандé;Mandelainen
+manipuri;Manipuri;Manipuri;Manipuri;Manipuri;Manipuri;Manipuri;Manipuri;Manipuri;Manipuri;Manipuri;Manipuri;Манипури;Manipurilainen
+manupur;Manupur;Manupur;Manupur;Manupur;Manupur;Manupur;Manupur;Manupur;Manupur;Manupur;Manupur;Манупур;Manupurilainen
+maori;Maori;Maori;Maori;Maoryjski;Maori;Maori;Maori;Maorský;Maori;Maori;Maori;Маори;Maorilainen
+marathi;Marathi;Marathi;Marathi;Marathijski;Maratí;Marathi;Marathi;Marathi;Marathi;Marathi;Marathi;Маратхи;Marathilainen
+mari;Mari;Mari;Mari;Mari;Mari;Mari;Mari;Mari;Mari;Mari;Mari;Марийский;Marilainen
+mauritanian;Mauritanian;Mauritanien;Mauretanisch;Mauretański;Mauritano;Mauritano;Mauretanisk;Mauritánský;Mauritániai;Mauritaniër;Mauritano;Мавританский;Mauritanialainen
+mayan;Mayan;Maya;Maya;Majanski;Maya;Maya;Mayansk;Majský;Majai;Maya;Maia;Майянский;Mayalainen
+mayo_kebbi;Mayo-Kebbi;Mayo-Kebbi;Mayo-Kebbi;Mayo-Kebbi;Mayo-Kebbi;Mayo-Kebbi;Mayo-Kebbi;Mayo-Kebbi;Mayo-Kebbi;Mayo-Kebbi;Mayo-Kebbi;Mayo-Kebbi;mayo-kebbilainen
+mbaka;Mbaka;Mbaka;Mbaka;Mbaka;Mbaka;Mbaka;Mbaka;Mbaka;Mbaka;Mbaka;Mbaka;Мбака;Mbakailainen
+mbochi;Mbochi;Mbochi;Mbochi;Mbochi;Mbochi;Mbochi;Mbochi;Mbochi;Mbochi;Mbochi;Mbochi;Мбочи;Mbochilainen
+melanesian;Melanesian;Mélanésien;Melanesisch;Melanezyjski;Melanesio;Melanesiano;Melanesisk;Melanéský;Melanéziai;Melanesiër;Melanésio;Меланезийский;Melanesialainen
+mende;Mende;Mende;Mende;Mende;Mende;Mende;Mende;Mende;Mende;Mende;Mende;Менде;Mendeilainen
+mennonites;Mennonites;Mennonites;Mennoniten;Menonici;Menonitas;Mennoniti;Mennoniter;Mennonité;Mennoniták;Mennonieten;Menonitas;Меннониты;Mennonitaalaiset
+merida;Merida;Merida;Merida;Merida;Merida;Merida;Merida;Merida;Merida;Merida;Merida;Мерида;meridalainen
+meru;Meru;Meru;Meru;Meru;Meru;Meru;Meru;Meru;Meru;Meru;Meru;Меру;Meruilainen
+mesoamerican_white_spanish;Mesoamerican White Spanish;Espagnol blanc mésoaméricain;Mesoamerikanisches weißes Spanisch;Mesoamerykański biały hiszpański;Español blanco mesoamericano;Spagnolo bianco mesoamericano;Mesoamerikansk vit spanska;Mesoamerická bílá španělština;Mesoamerikai fehér spanyol;Meso-Amerikaans wit Spaans;Espanhol branco mesoamericano;Месоамериканский белый испанский;Mesoamerikkalainen valkoinen espanja
+mestizo;Mestizo;Mestizo;Mestize;Mestyz;Mestizo;Mestizo;Mestizo;Mestizo;Mestizo;Mestizo;Mestiço;Местис;Mestitsi
+metis;Metis;Métis;Métis;Metysi;Metis;Metis;Métis;Metis;Metis;Métis;Métis;Метис;Metis
+miao;Miao;Miao;Miao;Miao;Miao;Miao;Miao;Miao;Miao;Miao;Miao;Мяо;Miao
+micronesian;Micronesian;Micronésien;Mikronesisch;Mikronezyjski;Micronesio;Micronesiano;Mikronesisk;Mikronéský;Mikronéziai;Micronesisch;Micronesiano;Микронезийский;Mikronesialainen
+min;Min;Min;Min;Min;Min;Min;Min;Min;Min;Min;Min;Минь;Min
+mixtec;Mixtec;Mixtec;Mixtekisch;Mixtecki;Mixteco;Mixteco;Mixtek;Mixtecký;Mixtec;Mixteeks;Mixteco;Мистекский;Mixtekolainen
+mizoram;Mizoram;Mizoram;Mizoram;Mizoram;Mizoram;Mizoram;Mizoram;Mizoram;Mizoram;Mizoram;Mizoram;Мизорам;Mizoramilainen
+moluccan;Moluccan;Moluquais;Molukken;Molukku;Moluco;Moluccano;Moluccan;Molucký;Moluccai;Molukkaan;Moluquense;Молукканский;Moluccalainen
+mon;Mon;Mon;Mon;Mon;Mon;Mon;Mon;Mon;Mon;Mon;Mon;Мон;Monilainen
+mongo;Mongo;Mongo;Mongo;Mongo;Mongo;Mongo;Mongo;Mongo;Mongo;Mongo;Mongo;Монго;Mongo
+mongol;Mongol;Mongol;Mongolisch;Mongolski;Mongol;Mongolo;Mongol;Mongolský;Mongol;Mongools;Mongol;Монгольский;Mongolilainen
+montenegrin;Montenegrin;Monténégrin;Montenegrinisch;Czarnogórczy;Montenegrino;Montenegrino;Montenegrinsk;Černohor;Montenegrói;Montenegrijns;Montenegrino;Черногорский;Montenegrilainen
+mordovian;Mordovian;Mordve;Mordwinisch;Mordwiński;Mordovio;Mordoviano;Mordvin;Mordovský;Mordvin;Mordovisch;Mordoviano;Мордовский;Mordvinalainen
+moro;Moro;Moro;Moro;Moro;Moro;Moro;Moro;Moro;Moro;Moro;Moro;Моро;Morolainen
+moroccan;Moroccan;Marocain;Marokkanisch;Marokański;Marroquí;Marocchino;Marockansk;Marocký;Marokkói;Marokkaans;Marroquino;Марокканский;Marokkolainen
+mossi;Mossi;Mossi;Mossi;Mossi;Mossi;Mossi;Mossi;Mossi;Mossi;Mossi;Mossi;Мосси;Mossilainen
+mushunguli;Mushunguli;Mushunguli;Mushunguli;Mushunguli;Mushunguli;Mushunguli;Mushunguli;Mushunguli;Mushunguli;Mushunguli;Mushunguli;Мушунгули;Mushungulilainen
+naga;Naga;Naga;Naga;Naga;Naga;Naga;Naga;Naga;Naga;Naga;Naga;Нага;Nagailainen
+nahua;Nahua;Nahua;Nahua;Nahua;Nahua;Nahua;Nahua;Nahua;Nahua;Nahua;Nahua;Нахуа;Nahuilainen
+nama;Nama;Nama;Nama;Nama;Nama;Nama;Nama;Nama;Nama;Nama;Nama;Нама;Namalainen
+native_american_minor;Native American Minority;Minorité amérindienne;Amerikanische Minderheit;Mniejszość rdzennych Amerykanów;Minoría nativoamericana;Minoranza nativoamericana;Amerikansk minoritet;Domorodá americká menšina;Őslakos amerikai kisebbség;Inheemse Amerikaanse minderheid;Minoria nativo-americana;Меньшинство коренных американцев;Alkuperäisamerikkalainen vähemmistö
+ndau;Ndau;Ndau;Ndau;Ndau;Ndau;Ndau;Ndau;Ndau;Ndau;Ndau;Ndau;Ндау;Ndaulainen
+nepali;Nepali;Népalais;Nepalesisch;Nepalski;Nepalí;Nepalese;Nepalesisk;Nepálský;Nepáli;Nepalees;Nepalês;Непальский;Nepalilainen
+new_zealander;New Zealander;Néo-Zélandais;Neuseeländer;Nowozelandczyk;Neozelandés;Neozelandese;Nyzeeländare;Novozélanďan;Új-zélandi;Nieuw-Zeelander;Neozelandês;Новозеландец;Uusiseelantilainen
+newar;Newar;Newar;Newar;Newar;Newar;Newar;Newar;Newar;Newar;Newar;Newar;Невар;Newarilainen
+ngalop;Ngalop;Ngalop;Ngalop;Ngalop;Ngalop;Ngalop;Ngalop;Ngalop;Ngalop;Ngalop;Ngalop;Нгалоп;Ngalopilainen
+nguni;Nguni;Nguni;Nguni;Nguni;Nguni;Nguni;Nguni;Nguni;Nguni;Nguni;Nguni;Нгуни;Ngunilainen
+north_caucasian;North Caucasian;Caucasien du Nord;Nordkaukasisch;Północnokaukaski;Caucásico del norte;Nordcaucasico;Nordkaukasisk;Severokavkazský;Észak-kaukázusi;Noord-Kaukasisch;Caucasiano do Norte;Северокавказский;Pohjoiskaukasialainen
+norwegian;Norwegian;Norvégien;Norwegisch;Norweski;Noruego;Norvegese;Norska;Norsky;Norvég;Noors;Norueguês;Норвежский;Norjalainen
+nuba;Nuba;Nuba;Nuba;Nuba;Nuba;Nuba;Nuba;Nuba;Nuba;Nuba;Nuba;Нуба;Nubalainen
+nuer;Nuer;Nuer;Nuer;Nuer;Nuer;Nuer;Nuer;Nuer;Nuer;Nuer;Nuer;Нуэр;Nuuerilainen
+nupe;Nupe;Nupe;Nupe;Nupe;Nupe;Nupe;Nupe;Nupe;Nupe;Nupe;Nupe;Нупе;Nupealainen
+nyakole;Nyakole;Nyakole;Nyakole;Nyakole;Nyakole;Nyakole;Nyakole;Nyakole;Nyakole;Nyakole;Nyakole;Ньяколе;Nyakoleilainen
+nyamwezi;Nyamwezi;Nyamwezi;Nyamwezi;Nyamwezi;Nyamwezi;Nyamwezi;Nyamwezi;Nyamwezi;Nyamwezi;Nyamwezi;Nyamwezi;Ньямевези;Nyamwezi
+occitans;Occitans;Occitans;Okzitaner;Oksytańscy;Occitánicos;Occitani;Occitaner;Okcitánští;Occitánok;Occitanen;Occitânicos;Окситанцы;Okcitanaalaiset
+omani;Omani;Omanais;Omanisch;omański;Omaní;Omanita;Omanisk;Ománský;ománi;Omani;Omanita;Оманский;Omanilainen
+oriya;Oriya;Oriya;Oriya;Orija;Oriya;Oriya;Oriya;Orijský;Orija;Oriya;Oriya;Одиа;Oriyalainen
+oromo;Oromo;Oromo;Oromo;Oromo;Oromo;Oromo;Oromo;Oromo;Oromo;Oromo;Oromo;Оромо;Oromolainen
+ossetian;Ossetian;Ossète;Ossetisch;Osetyjski;Osetio;Osseto;Ossetisk;Gruzínský;Oszét;Ossetisch;Ossetiano;Осетинский;Ossetialainen
+ovambo;Ovambo;Ovambo;Ovambo;Ovambo;Ovambo;Ovambo;Ovambo;Ovambo;Ovambo;Ovambo;Ovambo;Овамбо;Ovambolainen
+ovimbundu;Ovimbundu;Ovimbundu;Ovimbundu;Ovimbundu;Ovimbundu;Ovimbundu;Ovimbundu;Ovimbundu;Ovimbundu;Ovimbundu;Ovimbundu;Овимбунду;Ovimbundulainen
+padanian;Padanian;Padanien;Padanisch;Padanijski;Padanés;Padano;Padanisk;Padanijský;Padániai;Padanees;Padanês;Паданский;Padanialainen
+palestinian;Palestinian;Palestinien;Palästinensisch;Palestyński;Palestino;Palestinese;Palestinsk;Palestinský;Palestinai;Palestijns;Palestino;Палестинский;Palestiinalainen
+pamir;Pamir;Pamir;Pamirisch;Pamirski;Pamir;Pamir;Pamiriskt;Pamírský;Pamiri;Pamiris;Pamir;Памирский;Pamirilainen
+papua;Papuan;Papou;Papua;Papuański;Papuano;Papua;Papua;Papua;Papua;Papoeaans;Papuense;Папуасский;Papuaalainen
+pardo_portuguese;Pardo Portuguese;Portugais pardo;Pardo-Portugiesisch;Portugalski pardo;Portugués pardo;Portoghese pardo;Pardo portugisiska;Pardo portugalsky;Pardo portugál;Pardo-Portugees;Português pardo;Пардо-португальский;Pardopurtugalilainen
+pashtun;Pashtun;Pachtoun;Paschtunisch;Pasztuński;Pastún;Pashtun;Pashtun;Paštunský;Paštu;Pasjtoe;Pastún;Пуштуны;Paštuilainen
+persian;Persian;Persan;Persisch;Perski;Persa;Persiano;Persisk;Perský;Perzsa;Perzisch;Persa;Персидский;Persialainen
+platinean_white_spanish;Platinean White Spanish;Espagnol blanc platine;Platinweißes Spanisch;Platynowy biały hiszpański;Español blanco platino;Spagnolo bianco platino;Platinavat vit spanskt;Platinově bílá španělština;Platinafelü fehér spanyol;Platinaans wit Spaans;Espanhol branco platina;Платиново-белый испанский;Platina-valkoinen espanja
+polish;Polish;Polonais;Polnisch;Polski;Polaco;Polacco;Polsk;Polský;Lengyel;Pools;Polonês;Польский;Puolalainen
+polynesian;Polynesian;Polynésien;Polynesisch;Polinezyjski;Polinesio;Polinesiano;Polynesisk;Polynéský;Polinéziai;Polynesisch;Polinésio;Полинезийский;Polynesialainen
+pomak;Pomak;Pomak;Pomaken;Pomak;Pomaco;Pomaco;Pomak;Pomak;Pomák;Pomaken;Pomaco;Помаки;Pomakilainen
+portuguese;Portuguese;Portugais;Portugiesisch;Portugalski;Portugués;Portoghese;Portugisisk;Portugalský;Portugál;Portugees;Português;Португальский;Portugalilainen
+punjabi;Punjabi;Pendjabi;Punjabi;Pendżabski;Punjabi;Punjabi;Punjabi;Punjábský;Punjabi;Punjabi;Punjabi;Пенджабский;Punjabilainen
+qatari;Qatari;Qatarien;Katarisch;Katareński;Catarí;Qatari;Qatari;Katar;Kuvaiti;Kuwaiti;Catariano;Катарский;Qatarilainen
+quechua;Quechua;Quechua;Quechua;Keczua;Quechua;Quechua;Quechua;Kečuánský;Quechua;Quechua;Quechua;Кечуа;Keutsuaalainen
+rajput;Rajput;Rajput;Rajput;Radżput;Rajput;Rajput;Rajput;Radžput;Rajput;Rajput;Rajput;раджпут;Rajputilainen
+rakhine;Rakhine;Rakhine;Rakhine;Rachini;Rakhine;Rakhine;Rakhine;Rakhine;Rakhine;Rakhine;Rakhine;Ракхайн;Rakhainelainen
+rohingya;Rohingya;Rohingya;Rohingya;Rohingya;Rohingya;Rohingya;Rohingya;Rohingya;Rohingya;Rohingya;Rohingya;Рохинджа;Rohingjalainen
+roma;Roma;Rom;Roma;Rom;Roma;Roma;Roma;Romský;Roma;Roma;Roma;Рома;Romanilainen
+romanian;Romanian;Roumain;Rumänisch;Rumuński;Rumano;Romeno;Rumänsk;Rumunský;Román;Roemeens;Romeno;Румынский;Romanialainen
+romansh;Romansh;Romanche;Rätoromanisch;Retoromański;Retorrománico;Retoromancio;Romansh;Rétorománský;Rétoromán;Reto-Romaans;Romanche;Ретороманский;Retoromani
+russian;Russian;Russe;Russisch;Rosyjski;Ruso;Russo;Rysk;Ruský;Orosz;Russisch;Russo;Русский;Venäläinen
+rusyn;Rusyn;Ruthène;Ruthenisch;Rusyn;Rusino;Rusino;Ruthenisk;Rusínský;Ruszin;Rusyn;Rusino;Русин;Rusynilainen
+ryukyuan;Ryukyuan;Ryukyu;Ryukyu;Ryukyu;Ryukyu;Ryukyuan;Ryukyuan;Ryukyu;Ryukyuan;Ryukyuan;Ryukyuan;Рюкю;Ryukyu
+sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Сакалавы;Sakalavalainen
+sami;Sami;Sami;Samer;Saamowie;Sami;Sami;Samisk;Samojedi;Számi;Sami;Sami;Саамы;Saamelainen
+sangha;Sangha;Sangha;Sangha;Sangha;Sangha;Sangha;Sangha;Sangha;Sangha;Sangha;Sangha;Санга;Sanghaalainen
+sara;Sara;Sara;Sara;Sara;Sara;Sara;Sara;Sara;Sara;Sara;Sara;Сара;Saralainen
+sardinian;Sardinian;Sarde;Sardisch;Sardyński;Sardo;Sardo;Sardinsk;Sardinský;Szárd;Sardijns;Sardo;Сардинский;Sardiinalainen
+saudi;Saudi;Saoudien;Saudi;Tunejski;Saudí;Saudita;Saudisk;Saudský;Szaúd;Saoedi;Saudita;Саудовский;Saudiarabialainen
+scottish;Scottish;Écossais;Schottisch;Szkocki;Escocés;Scozzese;Skotsk;Skotský;Skót;Schots;Escocês;Шотландский;Skotlantilainen
+sena;Sena;Sena;Sena;Sena;Sena;Sena;Sena;Sena;Sena;Sena;Sena;Сена;Senalainen
+senufo;Senufo;Sénoufo;Senufo;Senufo;Senufo;Senufo;Senufo;Senufo;Senufo;Senufo;Senufo;Сенуфо;Senufo
+sepedi;Sepedi;Sepedi;Sepedi;Sepedi;Sepedi;Sepedi;Sepedi;Sepedi;Sepedi;Sepedi;Sepedi;Сепеди;Sepedilainen
+serb;Serb;Serbe;Serbisch;Serbski;Serbio;Serbo;Serbisk;Srb;Szerb;Servisch;Sérvio;Сербский;Serbialainen
+serer;Serer;Serer;Serer;Serer;Serer;Serer;Serer;Serer;Serer;Serer;Serer;Серер;Sererilainen
+shan;Shan;Shan;Shan;Shan;Shan;Shan;Shan;Shan;Shan;Shan;Shan;Шан;Shanilainen
+shia_arab;Shia Arab;Arabe chiite;Schiitischer Araber;Szyicki Arab;Árabe chiita;Arabo sciita;Sjiamuslim Arab;Šíitský Arab;Síita;Sjiiet;Árabe xiita;Шиитский араб;Sjiialarabialainen
+shilluk;Shilluk;Shilluk;Shilluk;Shilluk;Shilluk;Shilluk;Shilluk;Shilluk;Shilluk;Shilluk;Shilluk;Шиллук;Shillukilainen
+shona;Shona;Shona;Shona;Shona;Shona;Shona;Shona;Shona;Shona;Shona;Shona;Шона;Shonailainen
+siberian;Siberian;Sibérien;Sibirisch;Syberyjski;Siberiano;Siberiano;Sibirisk;Sibiřský;Szibériai;Siberisch;Siberiano;Сибирский;Siperialainen
+sikh;Sikh;Sikh;Sikh;Sikh;Sikh;Sikh;Sikh;Sikh;Sikh;Sikh;Sikh;Сикх;Sikhilainen
+sikkim;Sikkim;Sikkim;Sikkim;Sikkim;Sikkim;Sikkim;Sikkim;Sikkim;Sikkim;Sikkim;Sikkim;Сикким;Sikkimilainen
+silesians;Silesians;Silésiens;Schlesier;Ślązacy;Silesianos;Slesiani;Silesier;Slezané;Slezsiek;Slaven;Silésios;Силезцы;Silestiläiset
+sindi;Sindhi;Sindhi;Sindhi;Sindhi;Sindhi;Sindhi;Sindhijský;Sindhi;Sindhi;Sindhi;Sindhi;Синдхи;Sindhilainen
+singalese;Singalese;Cingalais;Singhalesisch;Cynhalański;Cingalés;Cingalese;Singalesisk;Cingalština;Szinhálai;Singalees;Cingalês;Сингальский;Singalalainen
+sinhala;Sinhala;Sinhala;Sinhalesisch;Sinhalski;Cingalés;Singalese;Sinhala;Sinhálský;Sinhala;Sinhala;Cingalês;Сингальский;Sinhalalainen
+slovak;Slovak;Slovaque;Slowakisch;Słowacki;Eslovaco;Slovacco;Slovakisk;Slovenský;Szlovák;Slowaaks;Eslovaco;Словацкий;Slovakialainen
+slovene;Slovene;Slovène;Slowenisch;Słoweński;Esloveno;Sloveno;Slovensk;Slovinský;Szlovén;Sloveens;Esloveno;Словенский;Slovenialainen
+soga;Soga;Soga;Soga;Soga;Soga;Soga;Soga;Soga;Soga;Soga;Soga;Сога;Sogalainen
+somali;Somali;Somalien;Somalisch;Somalijski;Somalí;Somalo;Somalisk;Somálský;Somáliai;Somalisch;Somali;Сомалийский;Somalialainen
+songhai;Songhai;Songhaï;Songhai;Songhaj;Songhai;Songhai;Songhai;Songhaj;Songhai;Songhai;Songhai;Сонгай;Songhailainen
+sotho;Sotho;Sotho;Sotho;Sotho;Sotho;Sotho;Sotho;Sotho;Sotho;Sotho;Sotho;Сото;Sotholainen
+soussou;Soussou;Soussou;Soussou;Soussou;Soussou;Soussou;Soussou;Soussou;Soussou;Soussou;Soussou;Суссу;Soussoulainen
+spanish;Spanish;Espagnol;Spanisch;Hiszpański;Español;Spagnolo;Spanska;Španělský;Spanyol;Spaans;Espanhol;Испанский;Espanjalainen
+sudanese;Sudanese;Soudanais;Sudanesisch;Sudański;Sudanés;Sudanese;Sudanesisk;Sudánský;Szudániai;Soedanees;Sudanês;Суданский;Sudanilainen
+sukuma;Sukuma;Sukuma;Sukuma;Sukuma;Sukuma;Sukuma;Sukuma;Sukuma;Sukuma;Sukuma;Sukuma;Сукума;Sukumalainen
+sunni_arab;Sunni Arab;Arabe sunnite;Sunnitischer Araber;Sunnicki Arab;Árabe sunita;Arabo sunnita;Sunnimuslim Arab;Sunnitský Arab;Síita;Soennitische Arabier;Árabe sunita;Суннитский араб;Sunniitaarabialainen
+swahili;Swahili;Swahili;Swahili;Suahili;Suaíli;Swahili;Swahili;Svahilština;Szuahéli;Swahili;Suaíli;Суахили;Swahili
+swazi;Swazi;Swazi;Swazi;Suazi;Suazi;Swazi;Swazi;Svazijský;Svazij;Swazi;Suazi;Свази;Swazilainen
+swedish;Swedish;Suédois;Schwedisch;Szwedzki;Sueco;Svedese;Svenska;Švédský;Svéd;Zweeds;Sueco;Шведский;Ruotsalainen
+swiss_german;Swiss German;Suisse alémanique;Schweizerdeutsch;Szwajcarski niemiecki;Alemán suizo;Svizzero tedesco;Schweizertyska;Švýcarská němčina;Svájci német;Zwitserduits;Alemão suíço;Швейцарский немецкий;Sveitsiruotsi
+syrian;Syrian;Syrien;Syrisch;Syryjski;Sirio;Siriano;Syrisk;Syrský;Szíriai;Syrisch;Sírio;Сирийский;Syyrialainen
+taiwanese;Taiwanese;Taïwanais;Taiwanisch;Tajwański;Taiwanés;Taiwanese;Taiwanesiska;Tchajwanský;Tajvani;Taiwanees;Taiwanês;Тайваньский;Taiwanilainen
+tajik;Tajik;Tadjik;Tadschikisch;Tadżycki;Tayiko;Tagiko;Tadzjikisk;Tádžický;Tadzsik;Tadzjieks;Tajique;Таджикский;Tadžikialainen
+tamil;Tamil;Tamoul;Tamil;Tamilski;Tamil;Tamil;Tamil;Tamilský;Tamil;Tamils;Tâmil;Тамильский;Tamili
+tatar;Tatar;Tatar;Tatarisch;Tatarski;Tártaro;Tataro;Tatarisk;Tatarský;Tatár;Tataars;Tártaro;Татарский;Tatarlainen
+tay;Tay;Tay;Tay;Tay;Tay;Tay;Tay;Tay;Tay;Tay;Tay;Тай;Taylainen
+teda;Teda;Teda;Teda;Teda;Teda;Teda;Teda;Teda;Teda;Teda;Teda;Теда;Tedalainen
+teke;Teke;Teke;Teke;Teke;Teke;Teke;Teke;Teke;Teke;Teke;Teke;Теке;Tekelainen
+telegu;Telugu;Télougou;Telugu;Telugu;Telugu;Telugu;Telugu;Telugu;Telugu;Telugu;Telugo;Телугу;Telugulainen
+temne;Temne;Temne;Temne;Temne;Temne;Temne;Temne;Temne;Temne;Temne;Temne;Темне;Temnelainen
+thai;Thai;Thai;Thailändisch;Tajski;Tailandés;Tailandese;Thailändsk;Thajský;Thai;Thais;Tailandês;Тайский;Thaimaalainen
+tibetan;Tibetan;Tibétain;Tibetisch;Tybetański;Tibetano;Tibetano;Tibetansk;Tibetský;Tibeti;Tibetaans;Tibetano;Тибетский;Tiibetilainen
+tigray;Tigray;Tigré;Tigräisch;Tigray;Tigray;Tigray;Tigray;Tigray;Tigray;Tigray;Tigray;Тигре;Tigraylainen
+tigre;Tigre;Tigre;Tigre;Tigre;Tigre;Tigre;Tigre;Tigre;Tigre;Tigre;Tigre;Тигре;Tigreilainen
+tiv;Tiv;Tiv;Tiv;Tiv;Tiv;Tiv;Tiv;Tiv;Tiv;Tiv;Tiv;Тив;Tivilainen
+tonga;Tonga;Tongan;Tongaisch;Tongijski;Tongano;Tongano;Tongansk;Tongský;Tongai;Tonganees;Tongan;Тонганский;Tongalainen
+toraja;Toraja;Toraja;Toraja;Toraja;Toraja;Toraja;Toraja;Toraja;Toraja;Toraja;Toraja;Тораджанский;Torajalainen
+toubou;Toubou;Toubou;Tubu;Tubu;Toubou;Toubou;Toubou;Tubu;Toubou;Toubou;Toubou;Тубу;Touboulainen
+tripuri;Tripuri;Tripuri;Tripuri;Tripuri;Tripuri;Tripuri;Tripuri;Tripuri;Tripuri;Tripuri;Tripuri;Трипури;Tripurilainen
+tsimihety;Tsimihety;Tsimihety;Tsimihety;Tsimihety;Tsimihety;Tsimihety;Tsimihety;Tsimihety;Tsimihety;Tsimihety;Tsimihety;Цимихети;Tsimihetylainen
+tsonga;Tsonga;Tsonga;Tsonga;Tsonga;Tsonga;Tsonga;Tsonga;Tsonga;Tsonga;Tsonga;Tsonga;Цсонга;Tsongalainen
+tswana;Tswana;Tswana;Tswana;Tswana;Tswana;Tswana;Tswana;Tswana;Tswana;Tswana;Tswana;Цсвана;Tsvanailainen
+tuareg;Tuareg;Touareg;Tuareg;Tuareg;Tuareg;Tuareg;Tuareg;Tuareg;Tuareg;Tuareg;Tuareg;Туарег;Tuaregilainen
+tujia;Tujia;Tujia;Tujia;Tujia;Tujia;Tujia;Tujia;Tujia;Tujia;Tujia;Tujia;Тудзя;Tujialainen
+tunisian;Tunisian;Tunisien;Tunesisch;Tunezyjski;Tunecino;Tuninese;Tunisisk;Tunezský;Tunéziai;Tunesisch;Tunisiano;Тунисский;Tunisialainen
+tuposa;Tuposa;Tuposa;Tuposa;Tuposa;Tuposa;Tuposa;Tuposa;Tuposa;Tuposa;Tuposa;Tuposa;Тупоса;Tuposalainen
+turkish;Turkish;Turc;Türkisch;Turecki;Turco;Turco;Turkisk;Turecký;Török;Turks;Turco;Турецкий;Turkkilainen
+turkmen;Turkmen;Turkmène;Turkmenisch;Turkmeński;Turcomano;Turkmeno;Turkmenisk;Turkménský;Türkmen;Turkmen;Turcomeno;Туркменский;Turkmenilainen
+tutsi;Tutsi;Tutsi;Tutsi;Tutsi;Tutsi;Tutsi;Tutsi;Tutsi;Tutsi;Tutsi;Tutsi;Тutsi;Tutsilainen
+tuvans;Tuvan;Touva;Tuwinisch;Tuwiński;Tuvano;Tuva;Tuvansk;Tuvinský;Tuvai;Tuvanees;Tuvan;Тувинский;Tuvinilainen
+udmurt;Udmurt;Oudmourte;Udmurtisch;Udmurowski;Udmurt;Udmurto;Udmurt;Udmurtský;Udmurti;Udmurts;Udmurto;Удмуртский;Udmurtilainen
+uighur;Uighur;Ouïghour;Uigurisch;Ujgur;Uigur;Uiguro;Uigurisk;Ujgur;Ujguro;Oeigoers;Uigure;Уйгурский;Uiguurilainen
+ukrainian;Ukrainian;Ukrainien;Ukrainisch;Ukraiński;Ucraniano;Ucraino;Ukrainsk;Ukrajinský;Ukrán;Oekraïens;Ucraniano;Украинский;Ukrainalainen
+uzbek;Uzbek;Ouzbek;Usbekisch;Uzbecki;Uzbeko;Uzbeco;Uzbekisk;Uzbecký;Üzbég;Oezbeeks;Usbeque;Узбекский;Uzbekkilainen
+venda;Venda;Venda;Venda;Venda;Venda;Venda;Venda;Venda;Venda;Venda;Venda;Венда;Vendalainen
+vietnamese;Vietnamese;Vietnamien;Vietnamesisch;Wietnamski;Vietnamita;Vietnamita;Vietnamesisk;Vietnamský;Vietnámi;Vietnamees;Vietnamita;Вьетнамский;Vietnamilainen
+vietnamese_christian;Vietnamese Christian;Chrétien vietnamien;Vietnamesischer Christ;Wietnamski chrześcijanin;Cristiano vietnamita;Cristiano vietnamita;Vietnamesisk kristen;Vietnamský křesťan;Vietnámi keresztény;Vietnamees christen;Cristão vietnamita;Вьетнамский христианин;Vietnamilaiskristillinen
+voltaic;Voltaic;Voltaique;Voltaisch;Voltański;Voltaico;Voltaico;Voltaiskt;Voltaický;Volta;Voltaïsch;Voltaico;Волтайский;Voltaalainen
+wallonian;Wallonian;Wallon;Wallonisch;Waloński;Valón;Valone;Vallonisk;Valonský;Wallon;Waals;Valão;Валлонский;Wallonalainen
+welsh;Welsh;Gallois;Walisisch;Walijski;Galés;Gallese;Walesisk;Velština;Walesi;Welsh;Galês;Валлийский;Walesilainen
+white_anglo;White Anglo;Anglo blanc;Weißer Anglo;Biały Anglo;Anglo blanco;Anglo nero;Vit anglo;Bílý anglosaský;Fehér angol;Wit Anglo;Anglo negro;Белый англо;Valkoinen anglolainen
+white_french;White French;Français blanc;Weißes Französisch;Biały francuski;Francés negro;Francese bianco;Vit fransk;Bílá francouzština;Fehér francia;Wit Frans;Francês negro;Белый француз;Valkoinen ranskalainen
+white_portuguese;White Portuguese;Portugais blanc;Weißes Portugiesisch;Biały portugalski;Portugués blanco;Portoghese bianco;Vit portugisiska;Bílá portugalština;Fehér portugál;Wit Portugees;Português branco;Белый португальский;Valkoinen portugalilainen
+white_spanish;White Spanish;Espagnol blanc;Weißes Spanisch;Biały hiszpański;Español blanco;Spagnolo bianco;Vit spanska;Bílá španělština;Fehér spanyol;Wit Spaans;Espanhol branco;Белый испанский;Valkoinen espanja
+wolof;Wolof;Wolof;Wolof;Wolof;Wolof;Wolof;Wolof;Wolof;Wolof;Wolof;Wolof;Волоф;Wolofilainen
+xhosa;Xhosa;Xhosa;Xhosa;Xhosa;Xhosa;Xhosa;Xhosa;Xhosa;Xhosa;Xhosa;Xhosa;Хоса;Xhosalainen
+yakut;Yakut;Iakoute;Jakutisch;Jakucki;Yakuto;Yakuto;Jakutisk;Jakutský;Jakuti;Yakutisch;Iacuto;Якутский;Jakutilainen
+yao;Yao;Yao;Yao;Jao;Yao;Yao;Yao;Yao;Yao;Yao;Yao;Яо;Yaolainen
+yao_asia;Yao (Asia);Yao (Asie);Yao (Asien);Jao (Azja);Yao (Asia);Yao (Asia);Yao (Asien);Yao (Asie);Yao (Ázsia);Yao (Azië);Yao (Ásia);Яо (Азия);Yaolainen (Aasia)
+yemeni;Yemeni;Yéménite;Jemenitisch;Jemeński;Yemení;Yemenita;Jemenitisk;Jemenský;Jemeni;Jemenitisch;Iemenita;Йеменский;Jemenilainen
+yi;Yiddish;Yiddish;Jiddisch;Jidiysz;Yidis;Yiddish;Jiddisch;Jidiš;Jiddis;Jiddisch;Iídiche;Идиш;Jiddi
+yoruba;Yoruba;Yoruba;Yoruba;Joruba;Yoruba;Yoruba;Yoruba;Yoruba;Yoruba;Yoruba;Iorubá;Йоруба;Yorubalainen
+yue;Yue (Cantonese);Yue (cantonais);Yue (Kantonesisch);Jue (kantoński);Yue (cantonés);Yue (cantonese);Yue (kantones);Yue (kantonština);Yue (kantoni);Yue (Kantsonees);Yue (cantonês);Юэ (кантонский);Yue (kantonilainen)
+yugoslav;Yugoslav;Yougoslave;Jugoslawisch;Jugosłowiański;Yugoslavo;Jugoslavo;Jugoslavisk;Jugoslávský;Jugoszláv;Joegoslaviër;Iugoslavo;Югославский;Jugoslavilainen
+zaghawa;Zaghawa;Zaghawa;Zaghawa;Zaghawa;Zaghawa;Zaghawa;Zaghawa;Zaghawa;Zaghawa;Zaghawa;Zaghawa;Загава;Zaghawalainen
+zapotec;Zapotec;Zapotèque;Zapotec;Zapotec;Zapoteca;Zapoteca;Zapotec;Zapotec;Zapotec;Zapotec;Zapoteca;Сапотекский;Zapoteekkilainen
+zarma;Zarma;Zarma;Zarma;Zarma;Zarma;Zarma;Zarma;Zarma;Zarma;Zarma;Zarma;Зарма;Zarmalainen
+zhuang;Zhuang;Zhuang;Zhuang;Zhuang;Zhuang;Zhuang;Zhuang;Zhuang;Zhuang;Zhuang;Zhuang;Чжуан;Zhuangilainen
+catholic;Catholic;Catholique;Katholisch;Katolicki;Católico;Cattolico;Katolsk;Katolický;Katolikus;Katholiek;Católico;Католический;Katolinen
+protestant;Protestant;Protestant;Protestantisch;Protestancki;Protestante;Protestante;Protestantisk;Protestantský;Protestáns;Protestants;Protestante;Протестантский;Protestanttinen
+orthodox;Orthodox;Orthodoxe;Orthodox;Prawosławny;Ortodoxo;Ortodosso;Ortodox;Ortodoxní;Ortodox;Orthodox;Ortodoxo;Православный;Ortodoksinen
+coptic;Coptic;Copte;Koptisch;Koptski;Copto;Copto;Koptisk;Koptský;Kopt;Koptisch;Copta;Коптский;Koptinen
+sunni;Sunni;Sunni;Sunnitisch;Sunnicki;Sunita;Sunita;Sunni;Sunni;Szunnita;Soennitisch;Sunita;Суннитский;Sunni
+ibad;Ibad;Ibadite;Ibaditisch;Ibad;Ibadí;Ibadita;Ibadisk;Ibaditský;Ibadita;Ibaditisch;Ibadita;Ибадитский;Ibadilainen
+shiite;Shiite;Chiite;Schiitisch;Szyicki;Chiita;Sciita;Sjiitisk;Šíitský;Síita;Sjiitisch;Xiita;Шиитский;Shiitaalainen
+druze;Druze;Druze;Druzen;Druzy;Druza;Druzo;Druzer;Druzi;Druze;Druzen;Druza;Друзы;Druzaalainen
+jewish;Jewish;Juif;Jüdisch;Żydowski;Judío;Ebraico;Judisk;Židovský;Zsidó;Joods;Judaico;Еврейский;Juutalainen
+buddhist;Buddhist;Bouddhiste;Buddhistisch;Buddyjski;Budista;Buddhista;Buddhist;Buddhistický;Buddhista;Boeddhistisch;Budista;Буддийский;Buddhalainen
+hindu;Hindu;Hindou;Hindu;Hinduski;Hindú;Indù;Hindu;Hindský;Hindu;Hindoe;Hindu;Индуистский;Hindulainen
+taoism;Taoism;Taoïsme;Taoismus;Taoizm;Taoísmo;Taoismo;Taoism;Taoismus;Taoizmus;Taoïsme;Taoísmo;Даосизм;Taolaisuus
+shinto;Shinto;Shintoïsme;Shinto;Shintōizm;Sintoísmo;Shintoismo;Shinto;Šintoismus;Sintoizmus;Shintoïsme;Xintoísmo;Синтоизм;Shintolaisuus
+sikh;Sikh;Sikh;Sikh;Sikhowi;Sikh;Sikh;Sikh;Sikh;Sikh;Sikh;Sikh;Сикх;Sikhilainen
+animist;Animist;Animiste;Animist;Animista;Animista;Animista;Animist;Animista;Animista;Animist;Animista;Анимист;Animistilainen
+atheist;Atheist;Athée;Atheist;Ateista;Ateo;Ateo;Ateist;Ateista;Atei;Atheïst;Ateu;Атеист;Ateistilainenterritorial_focus;Territorial Focus;Fokus teritorial;Fokus teritoriell;Foco territorial;Fokus terytorialny;Foco territorial;Fokus territorial;Folk religioner;Fokus på territorium;Folk religions
 territorial_focus_desc;We value our territory above all else with a territorial focus. Whether we want to expand or just defend our historic lands, we need a strong military and supporting economy to acheive our territorial ends.;Nous valorisons notre territoire avant tout avec un focus territorial. Que nous voulions nous étendre ou simplement défendre nos terres historiques, nous avons besoin d’une armée forte et d’une économie de soutien pour atteindre nos objectifs territoriaux.;Vi värderar vårt territorium över allt annat med ett territoriellt fokus. Oavsett om vi vill expandera eller bara försvara våra historiska länder, behöver vi en stark militär och en stödjande ekonomi för att uppnå våra territoriella mål.;Valoramos nuestro territorio por encima de todo con un enfoque territorial. Ya sea que queramos expandirnos o simplemente defender nuestras tierras históricas, necesitamos un ejército fuerte y una economía de apoyo para lograr nuestros objetivos territoriales.;Stawiamy nasz terytorium ponad wszystko, z naciskiem na terytorium. Niezależnie od tego, czy chcemy się rozszerzać, czy po prostu bronić naszych historycznych ziem, potrzebujemy silnej armii i wspierającej gospodarki, aby osiągnąć nasze terytorialne cele.;Valorizamos nosso território acima de tudo com um foco territorial. Quer desejemos expandir ou apenas defender nossas terras históricas, precisamos de um exército forte e de uma economia de apoio para alcançar nossos objetivos territoriais.;Vi värdesätter vårt territorium framför allt med ett territoriellt fokus. Oavsett om vi vill expandera eller bara försvara våra historiska länder, behöver vi en stark militär och en stödjande ekonomi för att uppnå våra territoriella mål.;Vi värdesätter vårt territorium över allt annat med ett territoriellt fokus. Oavsett om vi vill expandera eller bara försvara våra historiska länder, behöver vi en stark militär och stödjande ekonomi för att uppnå våra territoriella mål.;Stawiamy nasze terytorium ponad wszystko z naciskiem na terytorium. Chcemy bronić lub rozszerzać nasze ziemie, potrzebujemy silnej armii i wspierającej gospodarki, by osiągnąć nasze cele.;Fokus på territorium
 cultural_bias_focus;Cultural Bias Focus;Fokus sur les préjugés culturels;Fokus på kulturell partiskhet;Enfoque de sesgo cultural;Fokus na stronniczość kulturową;Foco de viés cultural;Fokus på kulturell partiskhet;Fokus på kulturell partiskhet;Folk religions
 cultural_bias_focus_desc;Cultural bias is the phenomenon of interpreting and judging phenomena by standards inherent to one's own culture. With this focus we aim to support our own culture or people over any other.;Le biais culturel est le phénomène d’interpréter et de juger des phénomènes selon des critères propres à sa propre culture. Avec ce focus, nous visons à soutenir notre propre culture ou notre propre peuple par rapport à tout autre.;Kulturell partiskhet är fenomenet att tolka och bedöma fenomen enligt standarder som är inneboende i ens egen kultur. Med detta fokus strävar vi efter att stödja vår egen kultur eller vårt eget folk framför andra.;El sesgo cultural es el fenómeno de interpretar y juzgar fenómenos según los estándares inherentes a la propia cultura. Con este enfoque, buscamos apoyar nuestra propia cultura o gente por encima de cualquier otra.;Stronniczość kulturowa to fenomen interpretowania i oceny zjawisk przez pryzmat norm własnej kultury. Z tym celem dążymy do wspierania naszej kultury lub naszego narodu nad innymi.;Viés cultural é o fenômeno de interpretar e julgar fenômenos pelos padrões inerentes à própria cultura. Com este foco, pretendemos apoiar nossa própria cultura ou povo em detrimento de outros.;Kulturell partiskhet är fenomenet att tolka och bedöma fenomen genom egna kulturella normer. Med detta fokus strävar vi efter att stödja vår egen kultur eller folk framför andra.;Fokus på kulturfördomar

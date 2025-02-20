@@ -1,164 +1,2980 @@
 {
-  "national_culture": {
-    "cul_north_america": {
+  "cultures": {
+    "abkhaz": {
       "color": [
-        135,
-        206,
-        235
-      ]
-    },
-    "cul_latin_america": {
-      "color": [
-        34,
-        139,
-        34
-      ]
-    },
-    "cul_western_europe": {
-      "color": [
+        173,
         255,
-        215,
-        0
+        47
       ]
     },
-    "cul_pacific": {
-      "color": [
-        70,
-        130,
-        180
-      ]
-    },
-    "cul_east_europe": {
+    "aborigine": {
       "color": [
         139,
         69,
         19
       ]
     },
-    "cul_middle_east": {
+    "ache": {
       "color": [
+        0,
+        255,
+        127
+      ]
+    },
+    "afar": {
+      "color": [
+        124,
+        252,
+        0
+      ]
+    },
+    "african_minor": {
+      "color": [
+        222,
+        184,
+        135
+      ]
+    },
+    "afrikaaner": {
+      "color": [
+        220,
+        145,
+        0
+      ]
+    },
+    "afro_american": {
+      "color": [
+        42,
+        42,
+        42
+      ]
+    },
+    "afro_antillean": {
+      "color": [
+        24,
+        44,
+        49
+      ]
+    },
+    "afro_brazilian": {
+      "color": [
+        25,
+        115,
+        44
+      ]
+    },
+    "afro_caribbean": {
+      "color": [
+        32,
+        57,
+        32
+      ]
+    },
+    "afro_caribeno": {
+      "color": [
+        12,
+        83,
+        12
+      ]
+    },
+    "aimara": {
+      "color": [
+        190,
+        45,
+        23
+      ]
+    },
+    "aimat": {
+      "color": [
+        189,
+        183,
+        107
+      ]
+    },
+    "ainu": {
+      "color": [
+        130,
+        130,
+        130
+      ]
+    },
+    "akan": {
+      "color": [
+        238,
+        130,
+        238
+      ]
+    },
+    "albanian": {
+      "color": [
+        140,
+        0,
+        0
+      ]
+    },
+    "algerian": {
+      "color": [
+        222,
+        184,
+        135
+      ]
+    },
+    "altay": {
+      "color": [
+        224,
+        255,
+        255
+      ]
+    },
+    "ambon_timor": {
+      "color": [
+        255,
+        20,
+        147
+      ]
+    },
+    "american_spanish": {
+      "color": [
+        190,
+        170,
+        180
+      ]
+    },
+    "amhara": {
+      "color": [
+        148,
+        0,
+        211
+      ]
+    },
+    "andean_white_spanish": {
+      "color": [
+        240,
         210,
-        105,
+        160
+      ]
+    },
+    "anglo_canadian": {
+      "color": [
+        248,
+        165,
+        255
+      ]
+    },
+    "arab": {
+      "color": [
+        60,
+        179,
+        113
+      ]
+    },
+    "arab_awazi": {
+      "color": [
+        25,
+        63,
+        18
+      ]
+    },
+    "arab_gulf": {
+      "color": [
+        160,
+        220,
         30
       ]
     },
-    "cul_sub_saharan_africa": {
+    "arab_hassaniya": {
+      "color": [
+        50,
+        70,
+        100
+      ]
+    },
+    "arab_khamseh": {
+      "color": [
+        31,
+        70,
+        25
+      ]
+    },
+    "arab_levantine": {
+      "color": [
+        77,
+        164,
+        60
+      ]
+    },
+    "arab_marsh": {
+      "color": [
+        30,
+        91,
+        21
+      ]
+    },
+    "arab_mesopotamian": {
+      "color": [
+        59,
+        104,
+        50
+      ]
+    },
+    "arab_saharan": {
+      "color": [
+        200,
+        246,
+        145
+      ]
+    },
+    "arab_sahrawi": {
+      "color": [
+        124,
+        246,
+        145
+      ]
+    },
+    "arab_shuwa": {
+      "color": [
+        99,
+        185,
+        113
+      ]
+    },
+    "armenian": {
+      "color": [
+        135,
+        125,
+        20
+      ]
+    },
+    "aromanians": {
+      "color": [
+        175,
+        238,
+        238
+      ]
+    },
+    "asian_minor": {
+      "color": [
+        132,
+        112,
+        255
+      ]
+    },
+    "assamese": {
+      "color": [
+        233,
+        150,
+        122
+      ]
+    },
+    "assyrian": {
+      "color": [
+        20,
+        125,
+        135
+      ]
+    },
+    "australian": {
+      "color": [
+        64,
+        132,
+        105
+      ]
+    },
+    "austrian_german": {
+      "color": [
+        140,
+        110,
+        110
+      ]
+    },
+    "avadhi": {
+      "color": [
+        90,
+        64,
+        23
+      ]
+    },
+    "avar": {
+      "color": [
+        127,
+        255,
+        0
+      ]
+    },
+    "azande": {
+      "color": [
+        255,
+        192,
+        203
+      ]
+    },
+    "azerbaijani": {
+      "color": [
+        255,
+        136,
+        0
+      ]
+    },
+    "bahrani": {
+      "color": [
+        193,
+        205,
+        193
+      ]
+    },
+    "bai": {
+      "color": [
+        255,
+        255,
+        0
+      ]
+    },
+    "bakongo": {
+      "color": [
+        25,
+        25,
+        112
+      ]
+    },
+    "balanta": {
+      "color": [
+        176,
+        48,
+        96
+      ]
+    },
+    "bali": {
+      "color": [
+        255,
+        140,
+        0
+      ]
+    },
+    "balkar": {
+      "color": [
+        0,
+        255,
+        127
+      ]
+    },
+    "baluchi": {
+      "color": [
+        143,
+        188,
+        143
+      ]
+    },
+    "bambara": {
+      "color": [
+        45,
+        88,
+        164
+      ]
+    },
+    "banda": {
+      "color": [
+        244,
+        164,
+        96
+      ]
+    },
+    "bari": {
+      "color": [
+        5,
+        192,
+        176
+      ]
+    },
+    "bashkir": {
+      "color": [
+        193,
+        205,
+        193
+      ]
+    },
+    "basque": {
+      "color": [
+        220,
+        170,
+        30
+      ]
+    },
+    "bataks": {
+      "color": [
+        138,
+        43,
+        226
+      ]
+    },
+    "baya_mandjia": {
+      "color": [
+        205,
+        92,
+        92
+      ]
+    },
+    "beja": {
       "color": [
         85,
         107,
         47
       ]
     },
-    "cul_east_asia": {
+    "bemba": {
       "color": [
-        255,
-        69,
-        0
+        138,
+        43,
+        226
       ]
     },
-    "cul_south_asia": {
+    "bengali": {
+      "color": [
+        60,
+        179,
+        113
+      ]
+    },
+    "bengali_hindu": {
       "color": [
         255,
         99,
         71
       ]
-    }
-  },
-  "national_religion": {
-    "hinduism": {
-      "supply_consumption": -0.005,
-      "peace_consumer_goods_demand": -0.005,
-      "war_exhaustion": -0.05,
+    },
+    "berber": {
+      "color": [
+        51,
+        75,
+        70
+      ]
+    },
+    "betsileo": {
+      "color": [
+        148,
+        0,
+        211
+      ]
+    },
+    "betsimisaraka": {
+      "color": [
+        199,
+        21,
+        133
+      ]
+    },
+    "biko": {
+      "color": [
+        119,
+        136,
+        153
+      ]
+    },
+    "black_anglo": {
+      "color": [
+        105,
+        105,
+        105
+      ]
+    },
+    "black_dutch": {
+      "color": [
+        112,
+        138,
+        144
+      ]
+    },
+    "black_french": {
+      "color": [
+        112,
+        138,
+        144
+      ]
+    },
+    "black_muslim": {
+      "color": [
+        43,
+        127,
+        81
+      ]
+    },
+    "black_portuguese": {
+      "color": [
+        87,
+        164,
+        95
+      ]
+    },
+    "black_spanish": {
+      "color": [
+        12,
+        83,
+        12
+      ]
+    },
+    "bodo": {
+      "color": [
+        250,
+        128,
+        114
+      ]
+    },
+    "bosniak": {
+      "color": [
+        30,
+        200,
+        200
+      ]
+    },
+    "breton": {
+      "color": [
+        100,
+        110,
+        100
+      ]
+    },
+    "british": {
+      "color": [
+        209,
+        66,
+        58
+      ]
+    },
+    "bulgarian": {
+      "color": [
+        65,
+        150,
+        100
+      ]
+    },
+    "burmese": {
       "color": [
         255,
-        165,
-        0
+        127,
+        80
       ]
     },
-    "confucianism": {
-      "supply_consumption": -0.005,
-      "peace_consumer_goods_demand": -0.005,
-      "war_exhaustion": -0.05,
-      "color": [
-        70,
-        130,
-        180
-      ]
-    },
-    "buddhism": {
-      "supply_consumption": -0.005,
-      "peace_consumer_goods_demand": -0.005,
+    "buryat": {
       "color": [
         255,
-        215,
-        0
+        160,
+        122
       ]
     },
-    "shintoism": {
-      "supply_consumption": -0.005,
-      "peace_consumer_goods_demand": -0.005,
-      "war_exhaustion": -0.05,
+    "byelorussian": {
+      "color": [
+        100,
+        140,
+        110
+      ]
+    },
+    "caribbean_white_spanish": {
+      "color": [
+        240,
+        240,
+        130
+      ]
+    },
+    "catalan": {
+      "color": [
+        220,
+        110,
+        30
+      ]
+    },
+    "cham": {
+      "color": [
+        32,
+        178,
+        170
+      ]
+    },
+    "chechen": {
+      "color": [
+        46,
+        139,
+        87
+      ]
+    },
+    "chewa": {
+      "color": [
+        208,
+        32,
+        144
+      ]
+    },
+    "chin": {
+      "color": [
+        255,
+        160,
+        122
+      ]
+    },
+    "chinese": {
+      "color": [
+        163,
+        68,
+        68
+      ]
+    },
+    "chinese_cantonese": {
+      "color": [
+        89,
+        34,
+        100
+      ]
+    },
+    "chinese_hakka": {
       "color": [
         255,
         69,
         0
       ]
     },
-    "judaism": {
-      "dissent_decrease": 0.004,
-      "territorial_pride": 0.005,
-      "research_efficiency": 0.002,
-      "supply_consumption": -0.005,
-      "peace_consumer_goods_demand": -0.005,
-      "war_exhaustion": -0.0025,
-      "national_unity": 0.02,
-      "prestige": 0.01,
-      "unit_recruitment_time": -0.001,
+    "chinese_hokkien": {
       "color": [
         0,
         0,
+        128
+      ]
+    },
+    "chinese_macanese": {
+      "color": [
+        107,
+        142,
+        35
+      ]
+    },
+    "chokwe": {
+      "color": [
+        238,
+        130,
+        238
+      ]
+    },
+    "christian_arab": {
+      "color": [
+        255,
+        20,
+        147
+      ]
+    },
+    "christian_malayalam": {
+      "color": [
+        67,
+        110,
+        238
+      ]
+    },
+    "chuvash": {
+      "color": [
+        244,
+        238,
+        224
+      ]
+    },
+    "circassians": {
+      "color": [
+        189,
+        183,
+        107
+      ]
+    },
+    "coloured": {
+      "color": [
+        244,
+        164,
+        96
+      ]
+    },
+    "comore": {
+      "color": [
+        0,
+        100,
+        0
+      ]
+    },
+    "corsican": {
+      "color": [
+        0,
+        191,
         255
       ]
     },
-    "christianity": {
-      "dissent_decrease": 0.004,
-      "global_revolt_risk": -0.2,
-      "espionage_bonus": 0.002,
-      "suseptibility": 0.001,
-      "neutrality_change": 0.02,
-      "prestige": 0.01,
+    "croat": {
       "color": [
-        255,
-        255,
+        140,
+        140,
+        190
+      ]
+    },
+    "czech": {
+      "color": [
+        120,
+        120,
         255
       ]
     },
-    "islam": {
-      "supply_consumption": -0.005,
-      "peace_consumer_goods_demand": -0.005,
-      "war_exhaustion": -0.05,
+    "dakota": {
       "color": [
-        34,
+        117,
+        84,
+        13
+      ]
+    },
+    "damara": {
+      "color": [
+        222,
+        184,
+        135
+      ]
+    },
+    "danish": {
+      "color": [
+        220,
+        40,
+        40
+      ]
+    },
+    "dargwa": {
+      "color": [
+        152,
+        251,
+        152
+      ]
+    },
+    "dhivehi": {
+      "color": [
+        124,
+        231,
+        156
+      ]
+    },
+    "dinka": {
+      "color": [
+        112,
+        138,
+        144
+      ]
+    },
+    "dong": {
+      "color": [
+        238,
+        221,
+        130
+      ]
+    },
+    "druze": {
+      "color": [
+        0,
+        51,
+        153
+      ]
+    },
+    "dutch": {
+      "color": [
+        230,
+        130,
+        50
+      ]
+    },
+    "dyula": {
+      "color": [
+        78,
+        99,
+        230
+      ]
+    },
+    "edo": {
+      "color": [
+        88,
+        99,
+        154
+      ]
+    },
+    "egyptian": {
+      "color": [
+        243,
+        214,
+        76
+      ]
+    },
+    "emirati": {
+      "color": [
+        131,
         139,
+        131
+      ]
+    },
+    "english": {
+      "color": [
+        220,
+        100,
+        220
+      ]
+    },
+    "estonian": {
+      "color": [
+        40,
+        30,
+        60
+      ]
+    },
+    "european": {
+      "color": [
+        240,
+        240,
+        230
+      ]
+    },
+    "ewe": {
+      "color": [
+        178,
+        34,
         34
       ]
     },
-    "folk_religions": {
-      "supply_consumption": -0.005,
-      "peace_consumer_goods_demand": -0.005,
-      "war_exhaustion": -0.05,
+    "fang": {
+      "color": [
+        135,
+        206,
+        250
+      ]
+    },
+    "faroe": {
+      "color": [
+        128,
+        155,
+        252
+      ]
+    },
+    "filipino": {
+      "color": [
+        218,
+        165,
+        32
+      ]
+    },
+    "finnish": {
+      "color": [
+        220,
+        220,
+        220
+      ]
+    },
+    "flemish": {
+      "color": [
+        250,
+        180,
+        80
+      ]
+    },
+    "fon": {
+      "color": [
+        255,
+        20,
+        147
+      ]
+    },
+    "french": {
+      "color": [
+        20,
+        20,
+        100
+      ]
+    },
+    "french_canadian": {
+      "color": [
+        168,
+        195,
+        255
+      ]
+    },
+    "fula": {
+      "color": [
+        42,
+        84,
+        0
+      ]
+    },
+    "fulbe": {
+      "color": [
+        22,
+        146,
+        187
+      ]
+    },
+    "fur": {
+      "color": [
+        216,
+        191,
+        216
+      ]
+    },
+    "ga_adangbe": {
+      "color": [
+        160,
+        32,
+        240
+      ]
+    },
+    "gagauz": {
+      "color": [
+        255,
+        99,
+        71
+      ]
+    },
+    "ganda": {
+      "color": [
+        160,
+        32,
+        240
+      ]
+    },
+    "ganguela": {
+      "color": [
+        147,
+        112,
+        219
+      ]
+    },
+    "georgian": {
+      "color": [
+        128,
+        207,
+        128
+      ]
+    },
+    "german": {
+      "color": [
+        110,
+        80,
+        80
+      ]
+    },
+    "global_human": {
+      "color": [
+        23,
+        65,
+        34
+      ]
+    },
+    "goan": {
+      "color": [
+        186,
+        85,
+        211
+      ]
+    },
+    "gorontalo": {
+      "color": [
+        153,
+        50,
+        204
+      ]
+    },
+    "greek": {
+      "color": [
+        122,
+        180,
+        210
+      ]
+    },
+    "gujarati": {
+      "color": [
+        99,
+        12,
+        89
+      ]
+    },
+    "gur": {
       "color": [
         139,
         69,
         19
       ]
     },
-    "atheism": {
-      "dissent_increase": 0.005,
+    "hadjarai": {
+      "color": [
+        173,
+        255,
+        47
+      ]
+    },
+    "hani": {
+      "color": [
+        184,
+        134,
+        11
+      ]
+    },
+    "haredim_jewish": {
+      "color": [
+        50,
+        60,
+        10
+      ]
+    },
+    "hausa": {
+      "color": [
+        32,
+        178,
+        170
+      ]
+    },
+    "hawaiian": {
+      "color": [
+        89,
+        155,
+        67
+      ]
+    },
+    "hazara": {
+      "color": [
+        189,
+        183,
+        107
+      ]
+    },
+    "herero": {
+      "color": [
+        105,
+        105,
+        105
+      ]
+    },
+    "hindi": {
+      "color": [
+        180,
+        75,
+        130
+      ]
+    },
+    "hui": {
+      "color": [
+        240,
+        230,
+        140
+      ]
+    },
+    "hungarian": {
+      "color": [
+        180,
+        255,
+        120
+      ]
+    },
+    "hutu": {
+      "color": [
+        139,
+        69,
+        19
+      ]
+    },
+    "ibad_arab": {
+      "color": [
+        32,
+        178,
+        170
+      ]
+    },
+    "ibibio": {
+      "color": [
+        238,
+        130,
+        238
+      ]
+    },
+    "ibo": {
+      "color": [
+        148,
+        0,
+        211
+      ]
+    },
+    "icelandic": {
+      "color": [
+        80,
+        20,
+        150
+      ]
+    },
+    "igbo": {
+      "color": [
+        178,
+        34,
+        34
+      ]
+    },
+    "ijaw": {
+      "color": [
+        255,
+        20,
+        147
+      ]
+    },
+    "indian": {
+      "color": [
+        255,
+        140,
+        0
+      ]
+    },
+    "indian_muslim": {
+      "color": [
+        0,
+        100,
+        0
+      ]
+    },
+    "indian_shia": {
+      "color": [
+        107,
+        142,
+        35
+      ]
+    },
+    "indonesian": {
+      "color": [
+        127,
+        255,
+        212
+      ]
+    },
+    "ingush": {
+      "color": [
+        60,
+        179,
+        113
+      ]
+    },
+    "inuit": {
+      "color": [
+        210,
+        243,
+        242
+      ]
+    },
+    "iraqi": {
+      "color": [
+        240,
+        230,
+        140
+      ]
+    },
+    "irish": {
+      "color": [
+        35,
+        140,
+        50
+      ]
+    },
+    "italian": {
+      "color": [
+        65,
+        180,
+        110
+      ]
+    },
+    "iteso": {
+      "color": [
+        255,
+        182,
+        193
+      ]
+    },
+    "itsekari": {
+      "color": [
+        209,
+        251,
+        255
+      ]
+    },
+    "japanese": {
+      "color": [
+        230,
+        230,
+        230
+      ]
+    },
+    "jewish": {
+      "color": [
+        150,
+        212,
+        214
+      ]
+    },
+    "jola": {
+      "color": [
+        143,
+        188,
+        143
+      ]
+    },
+    "jordanian": {
+      "color": [
+        0,
+        100,
+        0
+      ]
+    },
+    "kabarday": {
+      "color": [
+        102,
+        205,
+        170
+      ]
+    },
+    "kabye": {
+      "color": [
+        148,
+        0,
+        211
+      ]
+    },
+    "kachin": {
+      "color": [
+        123,
+        104,
+        238
+      ]
+    },
+    "kalenjin": {
+      "color": [
+        106,
+        90,
+        205
+      ]
+    },
+    "kalimatan": {
+      "color": [
+        160,
+        32,
+        240
+      ]
+    },
+    "kalmyk": {
+      "color": [
+        255,
+        165,
+        0
+      ]
+    },
+    "kamba": {
+      "color": [
+        222,
+        184,
+        135
+      ]
+    },
+    "kanak": {
+      "color": [
+        176,
+        48,
+        96
+      ]
+    },
+    "kanem_bornou": {
+      "color": [
+        176,
+        48,
+        96
+      ]
+    },
+    "kannada": {
+      "color": [
+        148,
+        0,
+        211
+      ]
+    },
+    "kanuri": {
+      "color": [
+        178,
+        34,
+        34
+      ]
+    },
+    "karachay": {
+      "color": [
+        154,
+        205,
+        50
+      ]
+    },
+    "karachay_balkar": {
+      "color": [
+        0,
+        255,
+        127
+      ]
+    },
+    "karakalpak": {
+      "color": [
+        102,
+        205,
+        170
+      ]
+    },
+    "karen": {
+      "color": [
+        0,
+        0,
+        128
+      ]
+    },
+    "kashmiri": {
+      "color": [
+        255,
+        0,
+        128
+      ]
+    },
+    "kavango": {
+      "color": [
+        178,
+        34,
+        34
+      ]
+    },
+    "kazak": {
+      "color": [
+        64,
+        224,
+        208
+      ]
+    },
+    "khakas": {
+      "color": [
+        190,
+        205,
+        0
+      ]
+    },
+    "khasi": {
+      "color": [
+        106,
+        90,
+        205
+      ]
+    },
+    "khmer": {
+      "color": [
+        250,
+        128,
+        114
+      ]
+    },
+    "khoisan": {
+      "color": [
+        255,
+        192,
+        203
+      ]
+    },
+    "kiga": {
+      "color": [
+        216,
+        191,
+        216
+      ]
+    },
+    "kikuyu": {
+      "color": [
+        205,
+        92,
+        92
+      ]
+    },
+    "kimbundu": {
+      "color": [
+        148,
+        0,
+        211
+      ]
+    },
+    "kirgiz": {
+      "color": [
+        32,
+        178,
+        170
+      ]
+    },
+    "kisii": {
+      "color": [
+        205,
+        92,
+        92
+      ]
+    },
+    "komi": {
+      "color": [
+        240,
+        255,
+        255
+      ]
+    },
+    "korean": {
+      "color": [
+        87,
+        89,
+        25
+      ]
+    },
+    "kpelle": {
+      "color": [
+        186,
+        85,
+        211
+      ]
+    },
+    "kru": {
+      "color": [
+        238,
+        232,
+        170
+      ]
+    },
+    "kuba": {
+      "color": [
+        166,
+        72,
+        57
+      ]
+    },
+    "kurdish": {
+      "color": [
+        160,
+        30,
+        154
+      ]
+    },
+    "kuwaiti": {
+      "color": [
+        129,
+        81,
+        124
+      ]
+    },
+    "langi": {
+      "color": [
+        178,
+        34,
+        34
+      ]
+    },
+    "lao": {
+      "color": [
+        218,
+        165,
+        32
+      ]
+    },
+    "latvian": {
+      "color": [
+        162,
+        17,
+        48
+      ]
+    },
+    "lazi": {
+      "color": [
+        115,
+        220,
+        200
+      ]
+    },
+    "lebanese": {
+      "color": [
+        230,
+        230,
+        250
+      ]
+    },
+    "lendu": {
+      "color": [
+        255,
+        105,
+        180
+      ]
+    },
+    "libyan": {
+      "color": [
+        193,
+        205,
+        193
+      ]
+    },
+    "lingala": {
+      "color": [
+        208,
+        32,
+        144
+      ]
+    },
+    "lithuanian": {
+      "color": [
+        17,
+        162,
+        48
+      ]
+    },
+    "lomwe": {
+      "color": [
+        186,
+        85,
+        211
+      ]
+    },
+    "lozi": {
+      "color": [
+        238,
+        130,
+        238
+      ]
+    },
+    "luba": {
+      "color": [
+        188,
+        143,
+        143
+      ]
+    },
+    "luhya": {
+      "color": [
+        255,
+        192,
+        203
+      ]
+    },
+    "lunda": {
+      "color": [
+        142,
+        65,
+        188
+      ]
+    },
+    "luo": {
+      "color": [
+        165,
+        42,
+        42
+      ]
+    },
+    "maasai": {
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    "makonde": {
+      "color": [
+        6,
+        90,
+        205
+      ]
+    },
+    "makua": {
+      "color": [
+        199,
+        21,
+        133
+      ]
+    },
+    "malay": {
+      "color": [
+        131,
+        139,
+        131
+      ]
+    },
+    "malayalam": {
+      "color": [
+        145,
+        44,
+        238
+      ]
+    },
+    "maltese": {
+      "color": [
+        70,
+        130,
+        180
+      ]
+    },
+    "manchu": {
+      "color": [
+        255,
+        60,
+        0
+      ]
+    },
+    "mande": {
+      "color": [
+        143,
+        188,
+        143
+      ]
+    },
+    "manipuri": {
+      "color": [
+        190,
+        150,
+        240
+      ]
+    },
+    "manupur": {
+      "color": [
+        132,
+        112,
+        255
+      ]
+    },
+    "maori": {
+      "color": [
+        210,
+        180,
+        140
+      ]
+    },
+    "marathi": {
+      "color": [
+        190,
+        220,
+        10
+      ]
+    },
+    "mari": {
+      "color": [
+        245,
+        255,
+        250
+      ]
+    },
+    "mauritanian": {
+      "color": [
+        76,
+        179,
+        250
+      ]
+    },
+    "mayan": {
+      "color": [
+        98,
+        88,
+        142
+      ]
+    },
+    "mayo_kebbi": {
+      "color": [
+        208,
+        32,
+        144
+      ]
+    },
+    "mbaka": {
+      "color": [
+        139,
+        69,
+        19
+      ]
+    },
+    "mbochi": {
+      "color": [
+        238,
+        130,
+        238
+      ]
+    },
+    "melanesian": {
+      "color": [
+        222,
+        184,
+        135
+      ]
+    },
+    "mende": {
+      "color": [
+        32,
+        178,
+        170
+      ]
+    },
+    "mennonites": {
+      "color": [
+        139,
+        139,
+        131
+      ]
+    },
+    "merida": {
+      "color": [
+        238,
+        130,
+        238
+      ]
+    },
+    "meru": {
+      "color": [
+        70,
+        130,
+        180
+      ]
+    },
+    "mesoamerican_white_spanish": {
+      "color": [
+        240,
+        230,
+        140
+      ]
+    },
+    "mestizo": {
+      "color": [
+        51,
+        117,
+        62
+      ]
+    },
+    "metis": {
+      "color": [
+        30,
+        75,
+        200
+      ]
+    },
+    "miao": {
+      "color": [
+        98,
+        67,
+        155
+      ]
+    },
+    "micronesian": {
+      "color": [
+        205,
+        133,
+        63
+      ]
+    },
+    "min": {
+      "color": [
+        76,
+        32,
+        200
+      ]
+    },
+    "mixtec": {
+      "color": [
+        199,
+        21,
+        133
+      ]
+    },
+    "mizoram": {
+      "color": [
+        153,
+        50,
+        204
+      ]
+    },
+    "moluccan": {
+      "color": [
+        132,
+        112,
+        255
+      ]
+    },
+    "mon": {
+      "color": [
+        218,
+        165,
+        32
+      ]
+    },
+    "mongo": {
+      "color": [
+        255,
+        20,
+        147
+      ]
+    },
+    "mongol": {
+      "color": [
+        128,
+        128,
+        255
+      ]
+    },
+    "montenegrin": {
+      "color": [
+        72,
+        61,
+        139
+      ]
+    },
+    "mordovian": {
+      "color": [
+        65,
+        105,
+        225
+      ]
+    },
+    "moro": {
+      "color": [
+        60,
+        179,
+        113
+      ]
+    },
+    "moroccan": {
+      "color": [
+        224,
+        146,
+        113
+      ]
+    },
+    "mossi": {
+      "color": [
+        124,
+        252,
+        0
+      ]
+    },
+    "mushunguli": {
+      "color": [
+        240,
+        230,
+        140
+      ]
+    },
+    "naga": {
+      "color": [
+        201,
+        0,
+        0
+      ]
+    },
+    "nahua": {
+      "color": [
+        88,
+        175,
+        160
+      ]
+    },
+    "nama": {
+      "color": [
+        245,
+        245,
+        220
+      ]
+    },
+    "native_american_minor": {
+      "color": [
+        160,
+        30,
+        100
+      ]
+    },
+    "ndau": {
+      "color": [
+        123,
+        104,
+        238
+      ]
+    },
+    "nepali": {
+      "color": [
+        255,
+        160,
+        122
+      ]
+    },
+    "new_zealander": {
       "color": [
         128,
         128,
         128
+      ]
+    },
+    "newar": {
+      "color": [
+        255,
+        165,
+        0
+      ]
+    },
+    "ngalop": {
+      "color": [
+        255,
+        127,
+        80
+      ]
+    },
+    "nguni": {
+      "color": [
+        255,
+        20,
+        147
+      ]
+    },
+    "north_caucasian": {
+      "color": [
+        252,
+        255,
+        161
+      ]
+    },
+    "norwegian": {
+      "color": [
+        255,
+        218,
+        185
+      ]
+    },
+    "nuba": {
+      "color": [
+        119,
+        136,
+        153
+      ]
+    },
+    "nuer": {
+      "color": [
+        49,
+        79,
+        79
+      ]
+    },
+    "nupe": {
+      "color": [
+        205,
+        133,
+        63
+      ]
+    },
+    "nyakole": {
+      "color": [
+        255,
+        20,
+        147
+      ]
+    },
+    "nyamwezi": {
+      "color": [
+        245,
+        245,
+        220
+      ]
+    },
+    "occitans": {
+      "color": [
+        110,
+        110,
+        50
+      ]
+    },
+    "omani": {
+      "color": [
+        98,
+        134,
+        153
+      ]
+    },
+    "oriya": {
+      "color": [
+        190,
+        63,
+        88
+      ]
+    },
+    "oromo": {
+      "color": [
+        238,
+        130,
+        238
+      ]
+    },
+    "ossetian": {
+      "color": [
+        0,
+        0,
+        255
+      ]
+    },
+    "ovambo": {
+      "color": [
+        255,
+        192,
+        203
+      ]
+    },
+    "ovimbundu": {
+      "color": [
+        153,
+        50,
+        204
+      ]
+    },
+    "padanian": {
+      "color": [
+        0,
+        128,
+        0
+      ]
+    },
+    "palestinian": {
+      "color": [
+        66,
+        140,
+        101
+      ]
+    },
+    "pamir": {
+      "color": [
+        0,
+        250,
+        154
+      ]
+    },
+    "papua": {
+      "color": [
+        199,
+        21,
+        133
+      ]
+    },
+    "pardo_portuguese": {
+      "color": [
+        143,
+        101,
+        4
+      ]
+    },
+    "pashtun": {
+      "color": [
+        46,
+        139,
+        87
+      ]
+    },
+    "persian": {
+      "color": [
+        240,
+        230,
+        140
+      ]
+    },
+    "platinean_white_spanish": {
+      "color": [
+        240,
+        220,
+        150
+      ]
+    },
+    "polish": {
+      "color": [
+        255,
+        120,
+        120
+      ]
+    },
+    "polynesian": {
+      "color": [
+        205,
+        175,
+        149
+      ]
+    },
+    "pomak": {
+      "color": [
+        65,
+        150,
+        0
+      ]
+    },
+    "portuguese": {
+      "color": [
+        160,
+        220,
+        30
+      ]
+    },
+    "punjabi": {
+      "color": [
+        90,
+        190,
+        41
+      ]
+    },
+    "qatari": {
+      "color": [
+        85,
+        107,
+        47
+      ]
+    },
+    "quechua": {
+      "color": [
+        178,
+        141,
+        85
+      ]
+    },
+    "rajput": {
+      "color": [
+        192,
+        232,
+        147
+      ]
+    },
+    "rakhine": {
+      "color": [
+        238,
+        221,
+        130
+      ]
+    },
+    "rohingya": {
+      "color": [
+        107,
+        142,
+        35
+      ]
+    },
+    "roma": {
+      "color": [
+        16,
+        102,
+        163
+      ]
+    },
+    "romanian": {
+      "color": [
+        240,
+        240,
+        140
+      ]
+    },
+    "romansh": {
+      "color": [
+        120,
+        140,
+        110
+      ]
+    },
+    "russian": {
+      "color": [
+        0,
+        70,
+        10
+      ]
+    },
+    "rusyn": {
+      "color": [
+        176,
+        196,
+        222
+      ]
+    },
+    "ryukyuan": {
+      "color": [
+        250,
+        250,
+        210
+      ]
+    },
+    "sakalava": {
+      "color": [
+        216,
+        191,
+        216
+      ]
+    },
+    "sami": {
+      "color": [
+        60,
+        180,
+        110
+      ]
+    },
+    "sangha": {
+      "color": [
+        139,
+        69,
+        19
+      ]
+    },
+    "sara": {
+      "color": [
+        139,
+        69,
+        19
+      ]
+    },
+    "sardinian": {
+      "color": [
+        244,
+        238,
+        224
+      ]
+    },
+    "saudi": {
+      "color": [
+        60,
+        255,
+        113
+      ]
+    },
+    "scottish": {
+      "color": [
+        0,
+        71,
+        182
+      ]
+    },
+    "sena": {
+      "color": [
+        176,
+        48,
+        96
+      ]
+    },
+    "senufo": {
+      "color": [
+        88,
+        190,
+        62
+      ]
+    },
+    "sepedi": {
+      "color": [
+        218,
+        112,
+        214
+      ]
+    },
+    "serb": {
+      "color": [
+        150,
+        65,
+        80
+      ]
+    },
+    "serer": {
+      "color": [
+        124,
+        252,
+        0
+      ]
+    },
+    "shan": {
+      "color": [
+        250,
+        128,
+        114
+      ]
+    },
+    "shia_arab": {
+      "color": [
+        189,
+        183,
+        107
+      ]
+    },
+    "shilluk": {
+      "color": [
+        205,
+        183,
+        158
+      ]
+    },
+    "shona": {
+      "color": [
+        255,
+        192,
+        203
+      ]
+    },
+    "siberian": {
+      "color": [
+        238,
+        145,
+        255
+      ]
+    },
+    "sikh": {
+      "color": [
+        255,
+        160,
+        122
+      ]
+    },
+    "sikkim": {
+      "color": [
+        128,
+        128,
+        128
+      ]
+    },
+    "silesians": {
+      "color": [
+        106,
+        90,
+        205
+      ]
+    },
+    "sindi": {
+      "color": [
+        190,
+        65,
+        230
+      ]
+    },
+    "singalese": {
+      "color": [
+        233,
+        150,
+        122
+      ]
+    },
+    "sinhala": {
+      "color": [
+        255,
+        165,
+        0
+      ]
+    },
+    "slovak": {
+      "color": [
+        120,
+        255,
+        255
+      ]
+    },
+    "slovene": {
+      "color": [
+        0,
+        90,
+        128
+      ]
+    },
+    "soga": {
+      "color": [
+        244,
+        164,
+        96
+      ]
+    },
+    "somali": {
+      "color": [
+        0,
+        255,
+        255
+      ]
+    },
+    "songhai": {
+      "color": [
+        124,
+        252,
+        0
+      ]
+    },
+    "sotho": {
+      "color": [
+        255,
+        105,
+        180
+      ]
+    },
+    "soussou": {
+      "color": [
+        143,
+        188,
+        143
+      ]
+    },
+    "spanish": {
+      "color": [
+        220,
+        220,
+        30
+      ]
+    },
+    "sudanese": {
+      "color": [
+        241,
+        241,
+        78
+      ]
+    },
+    "sukuma": {
+      "color": [
+        205,
+        133,
+        63
+      ]
+    },
+    "sunni_arab": {
+      "color": [
+        60,
+        179,
+        113
+      ]
+    },
+    "swahili": {
+      "color": [
+        143,
+        188,
+        143
+      ]
+    },
+    "swazi": {
+      "color": [
+        255,
+        192,
+        203
+      ]
+    },
+    "swedish": {
+      "color": [
+        20,
+        40,
+        160
+      ]
+    },
+    "swiss_german": {
+      "color": [
+        180,
+        40,
+        40
+      ]
+    },
+    "syrian": {
+      "color": [
+        205,
+        201,
+        201
+      ]
+    },
+    "taiwanese": {
+      "color": [
+        109,
+        168,
+        127
+      ]
+    },
+    "tajik": {
+      "color": [
+        238,
+        232,
+        170
+      ]
+    },
+    "tamil": {
+      "color": [
+        132,
+        112,
+        255
+      ]
+    },
+    "tatar": {
+      "color": [
+        188,
+        143,
+        143
+      ]
+    },
+    "tay": {
+      "color": [
+        255,
+        69,
+        0
+      ]
+    },
+    "teda": {
+      "color": [
+        156,
+        198,
+        100
+      ]
+    },
+    "teke": {
+      "color": [
+        160,
+        32,
+        240
+      ]
+    },
+    "telegu": {
+      "color": [
+        255,
+        127,
+        80
+      ]
+    },
+    "temne": {
+      "color": [
+        50,
+        205,
+        50
+      ]
+    },
+    "thai": {
+      "color": [
+        255,
+        165,
+        0
+      ]
+    },
+    "tibetan": {
+      "color": [
+        178,
+        34,
+        34
+      ]
+    },
+    "tigray": {
+      "color": [
+        0,
+        255,
+        127
+      ]
+    },
+    "tigre": {
+      "color": [
+        34,
+        139,
+        34
+      ]
+    },
+    "tiv": {
+      "color": [
+        205,
+        92,
+        92
+      ]
+    },
+    "tonga": {
+      "color": [
+        205,
+        92,
+        92
+      ]
+    },
+    "toraja": {
+      "color": [
+        186,
+        85,
+        211
+      ]
+    },
+    "toubou": {
+      "color": [
+        160,
+        94,
+        104
+      ]
+    },
+    "tripuri": {
+      "color": [
+        255,
+        160,
+        122
+      ]
+    },
+    "tsimihety": {
+      "color": [
+        255,
+        192,
+        203
+      ]
+    },
+    "tsonga": {
+      "color": [
+        188,
+        143,
+        143
+      ]
+    },
+    "tswana": {
+      "color": [
+        219,
+        112,
+        147
+      ]
+    },
+    "tuareg": {
+      "color": [
+        240,
+        230,
+        140
+      ]
+    },
+    "tujia": {
+      "color": [
+        250,
+        250,
+        210
+      ]
+    },
+    "tunisian": {
+      "color": [
+        170,
+        206,
+        162
+      ]
+    },
+    "tuposa": {
+      "color": [
+        139,
+        119,
+        101
+      ]
+    },
+    "turkish": {
+      "color": [
+        250,
+        55,
+        55
+      ]
+    },
+    "turkmen": {
+      "color": [
+        255,
+        99,
+        71
+      ]
+    },
+    "tutsi": {
+      "color": [
+        245,
+        245,
+        220
+      ]
+    },
+    "tuvans": {
+      "color": [
+        255,
+        140,
+        0
+      ]
+    },
+    "udmurt": {
+      "color": [
+        0,
+        255,
+        255
+      ]
+    },
+    "uighur": {
+      "color": [
+        143,
+        188,
+        143
+      ]
+    },
+    "ukrainian": {
+      "color": [
+        160,
+        160,
+        60
+      ]
+    },
+    "uzbek": {
+      "color": [
+        255,
+        69,
+        0
+      ]
+    },
+    "venda": {
+      "color": [
+        255,
+        105,
+        180
+      ]
+    },
+    "vietnamese": {
+      "color": [
+        238,
+        221,
+        130
+      ]
+    },
+    "vietnamese_christian": {
+      "color": [
+        238,
+        221,
+        30
+      ]
+    },
+    "voltaic": {
+      "color": [
+        49,
+        79,
+        79
+      ]
+    },
+    "wallonian": {
+      "color": [
+        190,
+        90,
+        20
+      ]
+    },
+    "welsh": {
+      "color": [
+        255,
+        121,
+        0
+      ]
+    },
+    "white_anglo": {
+      "color": [
+        65,
+        65,
+        129
+      ]
+    },
+    "white_french": {
+      "color": [
+        168,
+        195,
+        255
+      ]
+    },
+    "white_portuguese": {
+      "color": [
+        0,
+        112,
+        66
+      ]
+    },
+    "white_spanish": {
+      "color": [
+        238,
+        203,
+        173
+      ]
+    },
+    "wolof": {
+      "color": [
+        152,
+        251,
+        152
+      ]
+    },
+    "xhosa": {
+      "color": [
+        138,
+        43,
+        226
+      ]
+    },
+    "yakut": {
+      "color": [
+        255,
+        222,
+        173
+      ]
+    },
+    "yao": {
+      "color": [
+        255,
+        20,
+        147
+      ]
+    },
+    "yao_asia": {
+      "color": [
+        250,
+        250,
+        210
+      ]
+    },
+    "yemeni": {
+      "color": [
+        240,
+        230,
+        140
+      ]
+    },
+    "yi": {
+      "color": [
+        134,
+        25,
+        80
+      ]
+    },
+    "yoruba": {
+      "color": [
+        153,
+        50,
+        204
+      ]
+    },
+    "yue": {
+      "color": [
+        89,
+        34,
+        100
+      ]
+    },
+    "yugoslav": {
+      "color": [
+        176,
+        196,
+        222
+      ]
+    },
+    "zaghawa": {
+      "color": [
+        32,
+        178,
+        170
+      ]
+    },
+    "zapotec": {
+      "color": [
+        87,
+        199,
+        81
+      ]
+    },
+    "zarma": {
+      "color": [
+        102,
+        205,
+        170
+      ]
+    },
+    "zhuang": {
+      "color": [
+        200,
+        75,
+        134
+      ]
+    },
+    "zulu": {
+      "color": [
+        255,
+        20,
+        147
+      ]
+    }
+  },
+  "religions": {
+    "catholic": {
+      "color": [
+        204,
+        204,
+        0
+      ]
+    },
+    "protestant": {
+      "color": [
+        0,
+        0,
+        179
+      ]
+    },
+    "orthodox": {
+      "color": [
+        179,
+        128,
+        0
+      ]
+    },
+    "coptic": {
+      "color": [
+        0,
+        128,
+        179
+      ]
+    },
+    "sunni": {
+      "color": [
+        0,
+        153,
+        0
+      ]
+    },
+    "ibad": {
+      "color": [
+        26,
+        102,
+        153
+      ]
+    },
+    "shiite": {
+      "color": [
+        128,
+        128,
+        0
+      ]
+    },
+    "druze": {
+      "color": [
+        0,
+        51,
+        153
+      ]
+    },
+    "jewish": {
+      "color": [
+        77,
+        128,
+        77
+      ]
+    },
+    "buddhist": {
+      "color": [
+        255,
+        140,
+        0
+      ]
+    },
+    "hindu": {
+      "color": [
+        0,
+        204,
+        204
+      ]
+    },
+    "taoism": {
+      "color": [
+        0,
+        77,
+        204
+      ]
+    },
+    "shinto": {
+      "color": [
+        204,
+        0,
+        0
+      ]
+    },
+    "sikh": {
+      "color": [
+        77,
+        204,
+        0
+      ]
+    },
+    "animist": {
+      "color": [
+        128,
+        0,
+        0
+      ]
+    },
+    "atheist": {
+      "color": [
+        255,
+        255,
+        255
       ]
     }
   },
