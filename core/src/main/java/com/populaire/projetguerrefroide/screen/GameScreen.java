@@ -7,7 +7,6 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -24,8 +23,6 @@ import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
@@ -171,11 +168,11 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
     @Override
     public void onHover(short x, short y) {
-        if(this.worldService.hoverProvince(x, y) && !this.isMouseOverUI()) {
+        if(this.worldService.hoverProvince(x, y) && this.isMouseOverUI()) {
             this.updateHoverBox(this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))),
                 this.worldService.getCountryNameOfHoveredProvince(x, y),
                 this.worldService.getCountryIdOfHoveredProvince(x, y));
-        } else if(!this.isMouseOverUI()) {
+        } else if(this.isMouseOverUI()) {
             this.hideHoverBox();
         }
     }
@@ -257,7 +254,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     private boolean isMouseOverUI() {
         int mouseX = Gdx.input.getX();
         int mouseY = Gdx.graphics.getHeight() - Gdx.input.getY();
-        return this.stage.hit(mouseX, mouseY, true) != null;
+        return this.stage.hit(mouseX, mouseY, true) == null;
     }
 
     @Override
