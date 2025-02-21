@@ -11,7 +11,8 @@ import com.badlogic.gdx.utils.Scaling;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 public class HoverBox extends Table {
-    private final Label label;
+    private final Label mainLabel;
+    private final Label subLabel;
     private final Image image;
     private final float marginWidth;
     private final float heightWidth;
@@ -23,29 +24,49 @@ public class HoverBox extends Table {
         NinePatchDrawable ninePatchDrawable = new NinePatchDrawable(ninePatch);
 
         Label.LabelStyle labelStyleArial14Glow = labelStylePool.getLabelStyle("arial_14_glow");
+        Label.LabelStyle labelStyleArial14GlowYellow = labelStylePool.getLabelStyle("arial_14_glow", "yellow");
 
-        this.label = new Label("", labelStyleArial14Glow);
+        this.mainLabel = new Label("", labelStyleArial14Glow);
+        this.subLabel = new Label("", labelStyleArial14GlowYellow);
         this.image = new Image();
         this.image.setScaling(Scaling.fit);
 
+        Table mainTable = new Table();
+        mainTable.add(this.mainLabel);
+        mainTable.add(this.image);
+
         this.setBackground(ninePatchDrawable);
-        this.add(this.label);
-        this.add(this.image);
-        this.setVisible(false);
+        this.add(mainTable).row();
+        this.add(this.subLabel).expandX().top().left();
     }
 
     public void update(String text, Drawable flag) {
-        if(!text.equals(this.label.getText().toString())) {
-            this.label.setText(text);
+        if(!text.equals(this.mainLabel.getText().toString())) {
+            this.mainLabel.setText(text);
             this.image.setDrawable(flag);
+            this.subLabel.remove();
+            this.resize();
+        }
+    }
+
+    public void update(String mainText, String subText, Drawable flag) {
+        if(!mainText.equals(this.mainLabel.getText().toString())) {
+            this.mainLabel.setText(mainText);
+            this.image.setDrawable(flag);
+            this.subLabel.setText(subText);
+            if (!this.getChildren().contains(this.subLabel, true)) {
+                this.row().top();
+                this.add(this.subLabel).expandX().top().left();
+            }
             this.resize();
         }
     }
 
     public void update(String text) {
-        if(!text.equals(this.label.getText().toString())) {
-            this.label.setText(text);
+        if(!text.equals(this.mainLabel.getText().toString())) {
+            this.mainLabel.setText(text);
             this.image.setDrawable(null);
+            this.subLabel.remove();
             this.resize();
         }
     }
@@ -54,11 +75,13 @@ public class HoverBox extends Table {
         this.pack();
         float flagFitWidth = 0;
         if(this.image.getDrawable() != null) {
-            flagFitWidth = this.image.getWidth() * (this.label.getHeight() / this.image.getHeight());
+            flagFitWidth = this.image.getWidth() * (this.mainLabel.getHeight() / this.image.getHeight());
         }
         float marginBetween = this.marginWidth / 2f;
-        float width = this.label.getWidth() + marginBetween + flagFitWidth + this.marginWidth;
-        float height = this.label.getHeight() + this.heightWidth;
+        float width = this.mainLabel.getWidth() + marginBetween + flagFitWidth + this.marginWidth;
+        float height = this.mainLabel.getHeight() + this.heightWidth + (this.getChildren().contains(this.subLabel, true) ? this.subLabel.getMinHeight() : 0f);
+        System.out.println("Set, width: " + width + " height: " + height);
         this.setSize(width, height);
+        System.out.println("Reel size, width: " + this.getWidth() + " height: " + this.getHeight());
     }
 }
