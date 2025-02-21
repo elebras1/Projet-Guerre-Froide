@@ -46,8 +46,8 @@ public class WorldService {
         this.world.render(batch, cam, time);
     }
 
-    public void selectProvince(short x, short y) {
-        this.world.selectProvince(x, y);
+    public boolean selectProvince(short x, short y) {
+        return this.world.selectProvince(x, y);
     }
 
     public boolean isProvinceSelected() {

@@ -36,7 +36,7 @@ public class HoverBox extends Table {
         mainTable.add(this.image);
 
         this.setBackground(ninePatchDrawable);
-        this.add(mainTable).row();
+        this.add(mainTable).left().row();
         this.add(this.subLabel).expandX().top().left();
     }
 
@@ -74,14 +74,23 @@ public class HoverBox extends Table {
     private void resize() {
         this.pack();
         float flagFitWidth = 0;
-        if(this.image.getDrawable() != null) {
+
+        if (this.image.getDrawable() != null) {
             flagFitWidth = this.image.getWidth() * (this.mainLabel.getHeight() / this.image.getHeight());
         }
+
         float marginBetween = this.marginWidth / 2f;
-        float width = this.mainLabel.getWidth() + marginBetween + flagFitWidth + this.marginWidth;
-        float height = this.mainLabel.getHeight() + this.heightWidth + (this.getChildren().contains(this.subLabel, true) ? this.subLabel.getMinHeight() : 0f);
-        System.out.println("Set, width: " + width + " height: " + height);
+        float maxLabelWidth = this.mainLabel.getWidth();
+
+        if (this.getChildren().contains(this.subLabel, true)) {
+            maxLabelWidth = Math.max(maxLabelWidth, this.subLabel.getWidth());
+        }
+
+        float width = maxLabelWidth + marginBetween + flagFitWidth + this.marginWidth;
+        float height = this.mainLabel.getHeight() + this.heightWidth
+            + (this.getChildren().contains(this.subLabel, true) ? this.subLabel.getMinHeight() : 0f);
+
         this.setSize(width, height);
-        System.out.println("Reel size, width: " + this.getWidth() + " height: " + this.getHeight());
     }
+
 }

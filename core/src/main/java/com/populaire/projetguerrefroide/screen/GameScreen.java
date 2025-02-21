@@ -15,18 +15,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectIntMap;
-import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.configuration.Settings;
-import com.populaire.projetguerrefroide.entity.Ideology;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.map.MapMode;
-import com.populaire.projetguerrefroide.national.Culture;
-import com.populaire.projetguerrefroide.national.Religion;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
 
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -45,11 +40,13 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     private final Skin skinPopup;
     private final Skin skinPortraits;
     private final Skin skinScrollbars;
+    private final Skin skinProvince;
     private final Skin skinMainMenuInGame;
     private final Skin skinMinimap;
     private final Map<String, String> localisation;
-    private Stage stage;
-    private Debug debug;
+    private final Stage stage;
+    private final Debug debug;
+    private final ProvincePanel provincePanel;
     private HoverBox hoverBox;
     private MainMenuInGame mainMenuInGame;
     private float time;
@@ -66,11 +63,13 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.inputHandler = new GameInputHandler(this.cam, this);
         AssetManager assetManager = gameContext.getAssetManager();
         assetManager.load("ui/minimap/minimap_skin.json", Skin.class);
+        assetManager.load("ui/province/province_skin.json", Skin.class);
         assetManager.finishLoading();
         this.skinUi = assetManager.get("ui/ui_skin.json");
         this.skinFlags = assetManager.get("flags/flags_skin.json");
         this.skinPopup = assetManager.get("ui/popup/popup_skin.json");
         this.skinMinimap = assetManager.get("ui/minimap/minimap_skin.json");
+        this.skinProvince = assetManager.get("ui/province/province_skin.json");
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
@@ -81,21 +80,25 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.localisation.putAll(this.gameContext.getLocalisationManager().readProvinceNamesCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readLanguageCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readInterfaceCsv());
+
+        this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation);
+        this.debug = new Debug(this.worldService.getNumberOfProvinces());
+        this.stage = new Stage(new ScreenViewport());
         this.initializeUi();
+
         this.paused = false;
     }
 
     private void initializeUi() {
-        this.stage = new Stage(new ScreenViewport());
         //this.stage.setDebugAll(true);
 
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(this.multiplexer);
 
-        this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.debug.setPosition(100, 90);
         this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
+        this.provincePanel.setPosition(0, 0);
 
         this.hoverBox = new HoverBox(this.skinUi, this.gameContext.getLabelStylePool());
 
@@ -148,12 +151,16 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
     @Override
     public void onClick(short x, short y) {
-        this.worldService.selectProvince(x, y);
+        if(this.worldService.selectProvince(x, y)) {
+            this.showProvincePanel();
+        } else {
+            this.provincePanel.remove();
+        }
     }
 
     @Override
     public void onHover(short x, short y) {
-        if(this.worldService.hoverProvince(x, y) && !this.isMouseOverUI()) {
+        if(this.worldService.hoverProvince(x, y) && this.isMouseOverUI()) {
             String mainText = this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))) + " (" + this.worldService.getCountryNameOfHoveredProvince(x, y) + ")";
             if(this.worldService.getMapMode().equals(MapMode.CULTURAL)) {
                 ObjectIntMap<String> cultures = this.worldService.getCulturesOfHoveredProvince(x, y);
@@ -173,7 +180,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
             } else {
                 this.updateHoverBox(mainText, this.worldService.getCountryIdOfHoveredProvince(x, y));
             }
-        } else if(!this.isMouseOverUI()) {
+        } else if(this.isMouseOverUI()) {
             this.hideHoverBox();
         }
     }
@@ -255,7 +262,11 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     private boolean isMouseOverUI() {
         int mouseX = Gdx.input.getX();
         int mouseY = Gdx.graphics.getHeight() - Gdx.input.getY();
-        return this.stage.hit(mouseX, mouseY, true) != null;
+        return this.stage.hit(mouseX, mouseY, true) == null;
+    }
+
+    private void showProvincePanel() {
+        this.stage.addActor(this.provincePanel);
     }
 
     @Override

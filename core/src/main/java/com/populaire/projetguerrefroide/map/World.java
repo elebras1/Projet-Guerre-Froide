@@ -118,8 +118,9 @@ public class World {
         return this.provinces.get(provinceColorRGB);
     }
 
-    public void selectProvince(short x, short y) {
+    public boolean selectProvince(short x, short y) {
         this.selectedProvince = this.getProvince(x, y);
+        return this.selectedProvince != null;
     }
 
     public LandProvince getSelectedProvince() {
