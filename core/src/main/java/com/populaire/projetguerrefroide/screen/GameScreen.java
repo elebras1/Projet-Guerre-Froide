@@ -153,8 +153,6 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     public void onClick(short x, short y) {
         if(this.worldService.selectProvince(x, y)) {
             this.showProvincePanel();
-        } else {
-            this.provincePanel.remove();
         }
     }
 
@@ -266,6 +264,9 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     }
 
     private void showProvincePanel() {
+        this.provincePanel.setProvinceName(this.worldService.getSelectedProvinceId());
+        this.provincePanel.setRegionName(this.worldService.getRegionIdOfSelectedProvince());
+        this.provincePanel.setTerrainImage(this.worldService.getTerrainOfSelectedProvince());
         this.stage.addActor(this.provincePanel);
     }
 

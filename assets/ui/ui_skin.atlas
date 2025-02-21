@@ -6,133 +6,154 @@ filter: Linear, Linear
 repeat: none
 checkbutton_off
   rotate: false
-  xy: 274, 409
+  xy: 274, 416
   size: 30, 31
   orig: 30, 31
   offset: 0, 0
   index: -1
 checkbutton_on
   rotate: false
-  xy: 274, 376
+  xy: 274, 383
   size: 30, 31
   orig: 30, 31
   offset: 0, 0
   index: -1
+close_btn
+  rotate: false
+  xy: 1, 1
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+close_btn_down
+  rotate: false
+  xy: 32, 1
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+close_btn_over
+  rotate: false
+  xy: 63, 1
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
 flag_alpha
   rotate: false
-  xy: 1, 281
+  xy: 1, 288
   size: 109, 77
   orig: 109, 77
   offset: 0, 0
   index: -1
 flag_alpha2
   rotate: false
-  xy: 147, 361
+  xy: 147, 368
   size: 93, 64
   orig: 93, 64
   offset: 0, 0
   index: -1
 flag_overlay
   rotate: false
-  xy: 147, 427
+  xy: 147, 434
   size: 109, 77
   orig: 109, 77
   offset: 0, 0
   index: -1
 settings_less
   rotate: false
-  xy: 412, 467
+  xy: 412, 474
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_less_down
   rotate: false
-  xy: 112, 287
+  xy: 112, 294
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_less_over
   rotate: false
-  xy: 444, 467
+  xy: 444, 474
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more
   rotate: false
-  xy: 476, 467
+  xy: 476, 474
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more_down
   rotate: false
-  xy: 242, 388
+  xy: 242, 395
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more_over
   rotate: false
-  xy: 242, 349
+  xy: 242, 356
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_tab_btn_1
   rotate: false
-  xy: 258, 474
+  xy: 258, 481
   size: 82, 30
   orig: 82, 30
   offset: 0, 0
   index: -1
 settings_tab_btn_1_down
   rotate: false
-  xy: 1, 53
+  xy: 1, 60
   size: 82, 30
   orig: 82, 30
   offset: 0, 0
   index: -1
 settings_tab_btn_1_over
   rotate: false
-  xy: 258, 442
+  xy: 258, 449
   size: 82, 30
   orig: 82, 30
   offset: 0, 0
   index: -1
 settings_tab_btn_2
   rotate: false
-  xy: 342, 478
+  xy: 342, 485
   size: 68, 26
   orig: 68, 26
   offset: 0, 0
   index: -1
 settings_tab_btn_2_down
   rotate: false
-  xy: 1, 25
+  xy: 1, 32
   size: 68, 26
   orig: 68, 26
   offset: 0, 0
   index: -1
 settings_tab_btn_2_over
   rotate: false
-  xy: 342, 450
+  xy: 342, 457
   size: 68, 26
   orig: 68, 26
   offset: 0, 0
   index: -1
 small_tiles_dialog
   rotate: false
-  xy: 112, 326
+  xy: 112, 333
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 tiles_dialog
   rotate: false
-  xy: 1, 85
+  xy: 1, 92
   size: 95, 96
   split: 11, 11, 11, 10
   orig: 95, 96
@@ -140,14 +161,14 @@ tiles_dialog
   index: -1
 tiles_dialog_type3
   rotate: false
-  xy: 1, 183
+  xy: 1, 190
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
   index: -1
 tiles_dialog_type4
   rotate: false
-  xy: 1, 360
+  xy: 1, 367
   size: 144, 144
   orig: 144, 144
   offset: 0, 0

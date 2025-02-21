@@ -54,6 +54,18 @@ public class WorldService {
         return this.world.getSelectedProvince() != null;
     }
 
+    public String getSelectedProvinceId() {
+        return String.valueOf(this.world.getSelectedProvince().getId());
+    }
+
+    public String getTerrainOfSelectedProvince() {
+        return this.world.getSelectedProvince().getTerrain().getName();
+    }
+
+    public String getRegionIdOfSelectedProvince() {
+        return this.world.getSelectedProvince().getRegion().getId();
+    }
+
     public boolean setCountryPlayer() {
         return this.world.setCountryPlayer();
     }
