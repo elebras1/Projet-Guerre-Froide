@@ -84,7 +84,7 @@ public class ProvincePanel extends Table {
     }
 
     public void setRegionName(String name) {
-        this.regionName.setText(name);
+        this.regionName.setText(this.localisation.get(name));
         this.regionName.setPosition(this.regionName.getParent().getWidth() / 2 - this.regionName.getMinWidth() / 2, 105);
     }
 

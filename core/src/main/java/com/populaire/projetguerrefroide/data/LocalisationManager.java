@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class LocalisationManager {
     private final String localisationPath = "localisation/";
-    private final String provinceNamesCsvFile = this.localisationPath + "province_names.csv";
+    private final String provincesCsvFile = this.localisationPath + "provinces.csv";
     private final String mainmenuCsvFile = this.localisationPath + "mainmenu.csv";
     private final String mainemenuInGameCsvFile = this.localisationPath + "mainmenu_ig.csv";
     private final String newgameCsvFile = this.localisationPath + "newgame.csv";
@@ -21,6 +21,7 @@ public class LocalisationManager {
     private final String popupCsvFile = this.localisationPath + "popup.csv";
     private final String languageCsvFile = this.localisationPath + "language.csv";
     private final String interfaceFile = this.localisationPath + "interface.csv";
+    private final String regionsCsvFile = this.localisationPath + "regions.csv";
     private String language = "ENGLISH";
 
     public void setLanguage(String language) {
@@ -55,8 +56,12 @@ public class LocalisationManager {
         return this.readLocalisationCsv(this.language, this.languageCsvFile);
     }
 
-    public Map<String, String> readProvinceNamesCsv() {
-        return this.readLocalisationCsv("ENGLISH", this.provinceNamesCsvFile);
+    public Map<String, String> readProvincesCsv() {
+        return this.readLocalisationCsv("ENGLISH", this.provincesCsvFile);
+    }
+
+    public Map<String, String> readRegionsCsv() {
+        return this.readLocalisationCsv("ENGLISH", this.regionsCsvFile);
     }
 
     public Map<String, String> readInterfaceCsv() {

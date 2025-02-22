@@ -77,9 +77,11 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.localisation = this.gameContext.getLocalisationManager().readPoliticsCsv();
         this.localisation.putAll(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readPopupCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readProvinceNamesCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readProvincesCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readRegionsCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readLanguageCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readInterfaceCsv());
+        System.out.println(this.localisation);
 
         this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation);
         this.debug = new Debug(this.worldService.getNumberOfProvinces());

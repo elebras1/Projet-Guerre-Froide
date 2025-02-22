@@ -81,7 +81,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.localisation.putAll(this.gameContext.getLocalisationManager().readPoliticsCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readPopupCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readProvinceNamesCsv());
+        this.localisation.putAll(this.gameContext.getLocalisationManager().readProvincesCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readLanguageCsv());
         this.initializeUi();
         this.paused = false;
