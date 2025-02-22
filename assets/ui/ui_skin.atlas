@@ -6,35 +6,35 @@ filter: Linear, Linear
 repeat: none
 checkbutton_off
   rotate: false
-  xy: 274, 416
+  xy: 480, 441
   size: 30, 31
   orig: 30, 31
   offset: 0, 0
   index: -1
 checkbutton_on
   rotate: false
-  xy: 274, 383
+  xy: 242, 350
   size: 30, 31
   orig: 30, 31
   offset: 0, 0
   index: -1
 close_btn
   rotate: false
-  xy: 1, 1
+  xy: 274, 352
   size: 29, 29
   orig: 29, 29
   offset: 0, 0
   index: -1
 close_btn_down
   rotate: false
-  xy: 32, 1
+  xy: 305, 352
   size: 29, 29
   orig: 29, 29
   offset: 0, 0
   index: -1
 close_btn_over
   rotate: false
-  xy: 63, 1
+  xy: 69, 1
   size: 29, 29
   orig: 29, 29
   offset: 0, 0
@@ -60,44 +60,142 @@ flag_overlay
   orig: 109, 77
   offset: 0, 0
   index: -1
+resource_coal_small
+  rotate: false
+  xy: 412, 486
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_fish_small
+  rotate: false
+  xy: 1, 5
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_fruits_small
+  rotate: false
+  xy: 99, 252
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_gas_small
+  rotate: false
+  xy: 85, 58
+  size: 25, 32
+  orig: 25, 32
+  offset: 0, 0
+  index: -1
+resource_grain_small
+  rotate: false
+  xy: 112, 306
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_iron_small
+  rotate: false
+  xy: 412, 459
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_meat_small
+  rotate: false
+  xy: 446, 486
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_oil_small
+  rotate: false
+  xy: 35, 5
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_precious_metals_small
+  rotate: false
+  xy: 99, 198
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_rare_metals_small
+  rotate: false
+  xy: 446, 459
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_renewable_energy_small
+  rotate: false
+  xy: 99, 225
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_uranium_small
+  rotate: false
+  xy: 112, 279
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_vegetables_small
+  rotate: false
+  xy: 258, 422
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+resource_wood_small
+  rotate: false
+  xy: 292, 422
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
 settings_less
   rotate: false
-  xy: 412, 474
+  xy: 480, 474
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_less_down
   rotate: false
-  xy: 112, 294
+  xy: 242, 383
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_less_over
   rotate: false
-  xy: 444, 474
+  xy: 274, 383
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more
   rotate: false
-  xy: 476, 474
+  xy: 306, 383
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more_down
   rotate: false
-  xy: 242, 395
+  xy: 133, 240
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more_over
   rotate: false
-  xy: 242, 356
+  xy: 133, 201
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
