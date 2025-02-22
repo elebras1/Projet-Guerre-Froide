@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.populaire.projetguerrefroide.data.DataManager;
+import com.populaire.projetguerrefroide.economy.good.ResourceGood;
 import com.populaire.projetguerrefroide.entity.GameEntities;
 import com.populaire.projetguerrefroide.entity.Government;
 import com.populaire.projetguerrefroide.entity.Minister;
@@ -12,6 +13,7 @@ import com.populaire.projetguerrefroide.map.LandProvince;
 import com.populaire.projetguerrefroide.map.MapMode;
 import com.populaire.projetguerrefroide.map.World;
 import com.populaire.projetguerrefroide.util.Named;
+import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 public class WorldService {
     private final AsyncExecutor asyncExecutor;
@@ -64,6 +66,37 @@ public class WorldService {
 
     public String getRegionIdOfSelectedProvince() {
         return this.world.getSelectedProvince().getRegion().getId();
+    }
+
+    public String getResourceOfSelectedProvince() {
+        ResourceGood resourceGood = this.world.getSelectedProvince().getResourceGood();
+        if(resourceGood != null) {
+            return resourceGood.getName();
+        }
+
+        return null;
+    }
+
+    public String getPopulationRegionOfSelectedProvince() {
+        int population = 0;
+        for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
+            population += province.getPopulation().getAmount();
+        }
+
+        return ValueFormatter.formatValue(population);
+    }
+
+    public String getWorkersRegionOfSelectedProvince() {
+        int workers = 0;
+        for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
+            workers += province.getPopulation().getAmountAdults();
+        }
+
+        return ValueFormatter.formatValue(workers);
+    }
+
+    public int getNumberIndustryRegionOfSelectedProvince() {
+        return this.world.getSelectedProvince().getRegion().getBuildings().size();
     }
 
     public boolean setCountryPlayer() {

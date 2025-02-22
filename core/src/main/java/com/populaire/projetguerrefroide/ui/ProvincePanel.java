@@ -10,13 +10,21 @@ import java.util.Map;
 
 public class ProvincePanel extends Table {
     private final Skin skin;
+    private final Skin skinUi;
     private final Map<String, String> localisation;
     private Image terrainImage;
+    private Image resourceImage;
     private Label provinceName;
     private Label regionName;
+    private Label populationRegion;
+    private Label workersRegion;
+    private Label developmentIndexRegion;
+    private Label incomeRegion;
+    private Label industryRegion;
 
     public ProvincePanel(Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.skin = skin;
+        this.skinUi = skinUi;
         this.localisation = localisation;
         Drawable background = skin.getDrawable("bg_province");
         this.setBackground(background);
@@ -57,16 +65,29 @@ public class ProvincePanel extends Table {
         dataOverview.setPosition(12, 75);
 
         Label.LabelStyle labelStyleJockey16Paper = labelStylePool.getLabelStyle("jockey_16_paper");
+        Label.LabelStyle labelStyleDanger14 = labelStylePool.getLabelStyle("danger_14");
+        Label.LabelStyle labelStyleDanger20Dark = labelStylePool.getLabelStyle("danger_20_dark");
 
         this.regionName = new Label("", labelStyleJockey16Paper);
         dataOverview.addActor(this.regionName);
-
+        this.resourceImage = new Image();
+        dataOverview.addActor(this.resourceImage);
         dataOverview.addActor(this.createImage(skin, "prov_pop_icon", 22, 67));
+        this.populationRegion = new Label("", labelStyleDanger14);
+        dataOverview.addActor(this.populationRegion);
         dataOverview.addActor(this.createImage(skin, "icon_workers_small", 22, 44));
+        this.workersRegion = new Label("", labelStyleDanger14);
+        dataOverview.addActor(this.workersRegion);
         dataOverview.addActor(this.createImage(skin, "prov_DI", 22, 22));
+        this.developmentIndexRegion = new Label("", labelStyleDanger14);
+        dataOverview.addActor(this.developmentIndexRegion);
         dataOverview.addActor(this.createImage(skin, "icon_dollar_big", 145, 38));
+        this.incomeRegion = new Label("", labelStyleDanger14);
+        dataOverview.addActor(this.incomeRegion);
         dataOverview.addActor(this.createImage(skin, "icon_industry_small", 265, 53));
-        dataOverview.addActor(this.createImage(skin, "prov_build_infra", 165, 160));
+        this.industryRegion = new Label("", labelStyleDanger14);
+        dataOverview.addActor(this.industryRegion);
+        dataOverview.addActor(this.createImage(skin, "prov_build_infra", 162, 160));
         dataOverview.addActor(this.createImage(skin, "icon_militia_small", 285, 202));
 
         this.addActor(dataOverview);
@@ -78,6 +99,15 @@ public class ProvincePanel extends Table {
         return image;
     }
 
+    public void setResourceImage(String name) {
+        if(name != null) {
+            Drawable resource = this.skinUi.getDrawable("resource_" + name + "_small");
+            this.resourceImage.setDrawable(resource);
+            this.resourceImage.setSize(resource.getMinWidth(), resource.getMinHeight());
+            this.resourceImage.setPosition(22, 160);
+        }
+    }
+
     public void setProvinceName(String name) {
         this.provinceName.setText(this.localisation.get(name));
         this.provinceName.setPosition(this.getWidth() / 2 - this.provinceName.getMinWidth() / 2, 471);
@@ -85,7 +115,7 @@ public class ProvincePanel extends Table {
 
     public void setRegionName(String name) {
         this.regionName.setText(this.localisation.get(name));
-        this.regionName.setPosition(this.regionName.getParent().getWidth() / 2 - this.regionName.getMinWidth() / 2, 105);
+        this.regionName.setPosition(this.regionName.getParent().getWidth() / 2 - this.regionName.getMinWidth() / 2, 104);
     }
 
     public void setTerrainImage(String name) {
@@ -94,4 +124,28 @@ public class ProvincePanel extends Table {
         this.terrainImage.setSize(terrain.getMinWidth(), terrain.getMinHeight());
     }
 
+    public void setPopulationRegion(String population) {
+        this.populationRegion.setText(population);
+        this.populationRegion.setPosition(135 - this.populationRegion.getMinWidth(), 83);
+    }
+
+    public void setWorkersRegion(String workers) {
+        this.workersRegion.setText(workers);
+        this.workersRegion.setPosition(135 - this.workersRegion.getMinWidth(), 61);
+    }
+
+    public void setDevelopmentIndexRegion(int developmentIndex) {
+        this.developmentIndexRegion.setText(developmentIndex);
+        this.developmentIndexRegion.setPosition(125 - this.developmentIndexRegion.getMinWidth(), 38);
+    }
+
+    public void setIncomeRegion(int income) {
+        this.incomeRegion.setText(income);
+        this.incomeRegion.setPosition(248 - this.incomeRegion.getMinWidth(), 60);
+    }
+
+    public void setIndustryRegion(int industry) {
+        this.industryRegion.setText(industry);
+        this.industryRegion.setPosition(360 - this.industryRegion.getMinWidth(), 75);
+    }
 }

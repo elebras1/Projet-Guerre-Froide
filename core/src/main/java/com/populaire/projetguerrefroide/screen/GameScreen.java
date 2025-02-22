@@ -7,6 +7,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -81,7 +82,6 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.localisation.putAll(this.gameContext.getLocalisationManager().readRegionsCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readLanguageCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readInterfaceCsv());
-        System.out.println(this.localisation);
 
         this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation);
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
@@ -269,6 +269,12 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.provincePanel.setProvinceName(this.worldService.getSelectedProvinceId());
         this.provincePanel.setRegionName(this.worldService.getRegionIdOfSelectedProvince());
         this.provincePanel.setTerrainImage(this.worldService.getTerrainOfSelectedProvince());
+        this.provincePanel.setResourceImage(this.worldService.getResourceOfSelectedProvince());
+        this.provincePanel.setPopulationRegion(this.worldService.getPopulationRegionOfSelectedProvince());
+        this.provincePanel.setWorkersRegion(this.worldService.getWorkersRegionOfSelectedProvince());
+        this.provincePanel.setDevelopmentIndexRegion(0);
+        this.provincePanel.setIncomeRegion(0);
+        this.provincePanel.setIndustryRegion(this.worldService.getNumberIndustryRegionOfSelectedProvince());
         this.stage.addActor(this.provincePanel);
     }
 

@@ -4,7 +4,6 @@ import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.economy.building.Building;
-import com.populaire.projetguerrefroide.economy.good.Good;
 import com.populaire.projetguerrefroide.economy.good.ResourceGood;
 import com.populaire.projetguerrefroide.economy.population.Population;
 import com.populaire.projetguerrefroide.entity.Terrain;
@@ -140,7 +139,7 @@ public class LandProvince implements Province {
         this.countriesCore.remove(country);
     }
 
-    public Good getResourceGood() {
+    public ResourceGood getResourceGood() {
         return this.resourceGood;
     }
 
