@@ -110,7 +110,7 @@ public class ProvincePanel extends Table {
     private void setCountriesCoreFlagImages() {
         this.countriesCoreFlagImages = new ObjectList<>();
         int x = 35;
-        int y = 190;
+        int y = 193;
         for(int i = 0; i < 5; i++) {
             FlagImage flagImage = this.createFlagImage(this.skinUi, "minimask", "minishield", (short) 32, (short) 32);
             flagImage.setPosition(x, y);
