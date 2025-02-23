@@ -1,5 +1,8 @@
 package com.populaire.projetguerrefroide.ui;
 
+import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -11,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
@@ -18,16 +22,29 @@ import java.util.Map;
 
 public class Popup extends Table {
     private final PopupListener listener;
+    private FlagImage flagLeftImage;
+    private FlagImage flagRightImage;
 
-    public Popup(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, boolean doubleButton, boolean big, PopupListener listener) {
+    public Popup(Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, boolean doubleButton, boolean big, PopupListener listener) {
         this.listener = listener;
         this.setPopup(skin, labelStylePool, localisation, title, description, doubleButton, big, this.getIdButton(doubleButton, big));
+        this.flagLeftImage = createFlagImage(skinUi, skinFlags, "comecon");
+        this.flagLeftImage.setPosition(9, this.getHeight() - 75);
+        this.flagRightImage = createFlagImage(skinUi, skinFlags, "nato");
+        this.flagRightImage.setPosition(this.getWidth() - 72, this.getHeight() - 75);
         this.setTouchable(Touchable.enabled);
         this.addDragListener();
     }
 
-    public Popup(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, PopupListener listener) {
-        this(skin, labelStylePool, localisation, title, description, false, false, listener);
+    public Popup(Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, String idCountry, boolean doubleButton, boolean big, PopupListener listener) {
+        this.listener = listener;
+        this.setPopup(skin, labelStylePool, localisation, title, description, doubleButton, big, this.getIdButton(doubleButton, big));
+        this.flagLeftImage = createFlagImage(skinUi, skinFlags, idCountry);
+        this.flagLeftImage.setPosition(9, this.getHeight() - 75);
+        this.flagRightImage = createFlagImage(skinUi, skinFlags, idCountry);
+        this.flagRightImage.setPosition(this.getWidth() - 72, this.getHeight() - 75);
+        this.setTouchable(Touchable.enabled);
+        this.addDragListener();
     }
 
     private String getIdButton(boolean doubleButton, boolean big) {
@@ -57,6 +74,19 @@ public class Popup extends Table {
         this.addActor(titleLabel);
         this.addActor(descriptionLabel);
         this.addActor(button);
+    }
+
+    private FlagImage createFlagImage(Skin skinUi, Skin skinFlags, String idCountry) {
+        TextureRegion alphaFlag = skinUi.getRegion("shield_big");
+        TextureRegion overlayFlag = skinUi.getRegion("shield_big_overlay");
+        Pixmap defaultPixmapFlag = new Pixmap(64, 64, Pixmap.Format.RGBA8888);
+        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new Texture(defaultPixmapFlag));
+        defaultPixmapFlag.dispose();
+        FlagImage flagImage = new FlagImage(defaultFlag, overlayFlag, alphaFlag);
+        flagImage.setFlag(skinFlags.getRegion(idCountry));
+        this.addActor(flagImage);
+
+        return flagImage;
     }
 
     private Actor configureButton(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, boolean doubleButton, boolean big, Drawable background) {
@@ -147,5 +177,10 @@ public class Popup extends Table {
                 setPosition(getX() + deltaX, getY() + deltaY);
             }
         });
+    }
+
+    public void dispose() {
+        this.flagLeftImage.dispose();
+        this.flagRightImage.dispose();
     }
 }

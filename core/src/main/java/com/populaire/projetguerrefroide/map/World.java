@@ -127,6 +127,10 @@ public class World {
         return this.selectedProvince;
     }
 
+    public Country getCountryPlayer() {
+        return this.countryPlayer;
+    }
+
     public boolean setCountryPlayer() {
         if(this.selectedProvince != null) {
             this.countryPlayer = this.selectedProvince.getCountryOwner();

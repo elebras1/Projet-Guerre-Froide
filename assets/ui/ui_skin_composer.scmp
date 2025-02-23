@@ -1602,6 +1602,46 @@ atlasData: {
 			type: TEXTURE
 			hidden: false
 		}
+		{
+			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/shield_big.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: shield_big
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/shield_big_overlay.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: shield_big_overlay
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
 	]
 	fontDrawables: []
 }
@@ -3793,6 +3833,10 @@ preferences: {
 	id: {
 		class: java.lang.Integer
 		value: 550911102
+	}
+	last-import-export-path: {
+		class: java.lang.String
+		value: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/ui/ui_skin.json
 	}
 	resources-relative: {
 		class: java.lang.Boolean

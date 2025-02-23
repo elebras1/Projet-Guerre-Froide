@@ -123,6 +123,10 @@ public class WorldService {
         return this.world.getProvince(x, y).getCountryOwner().getName();
     }
 
+    public String getCountryIdOfSelectedProvince() {
+        return this.world.getSelectedProvince().getCountryOwner().getId();
+    }
+
     public ObjectIntMap<String> getCulturesOfHoveredProvince(short x, short y) {
         LandProvince province = this.world.getProvince(x, y);
         int amountAdults = province.getPopulation().getAmountAdults();
@@ -187,6 +191,10 @@ public class WorldService {
 
     public Minister getHeadOfGovernmentOfSelectedCountry() {
         return this.world.getSelectedProvince().getCountryOwner().getHeadOfGovernment();
+    }
+
+    public String getCountryIdPlayer() {
+        return this.world.getCountryPlayer().getId();
     }
 
     public short getNumberOfProvinces() {

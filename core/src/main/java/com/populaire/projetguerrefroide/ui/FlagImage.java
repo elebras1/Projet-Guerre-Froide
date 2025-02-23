@@ -12,10 +12,11 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 
 public class FlagImage extends Image {
     private TextureRegion flagTexture;
-    private TextureRegion overlayTexture;
-    private TextureRegion alphaTexture;
-    private Texture defaultTexture;
-    private ShaderProgram shader;
+    private final TextureRegion overlayTexture;
+    private final TextureRegion alphaTexture;
+    private final Texture defaultTexture;
+    private final ShaderProgram shader;
+
     public FlagImage(Drawable flag, TextureRegion overlay, TextureRegion alpha) {
         super(flag);
         this.overlayTexture = overlay;
@@ -74,8 +75,10 @@ public class FlagImage extends Image {
 
 
     public void dispose() {
-        if (this.shader != null) {
-            this.shader.dispose();
-        }
+        this.defaultTexture.dispose();
+        this.shader.dispose();
+        this.flagTexture.getTexture().dispose();
+        this.overlayTexture.getTexture().dispose();
+        this.alphaTexture.getTexture().dispose();
     }
 }

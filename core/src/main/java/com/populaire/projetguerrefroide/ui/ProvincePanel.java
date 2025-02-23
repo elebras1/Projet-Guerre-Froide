@@ -1,9 +1,13 @@
 package com.populaire.projetguerrefroide.ui;
 
+import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
@@ -11,6 +15,7 @@ import java.util.Map;
 public class ProvincePanel extends Table {
     private final Skin skin;
     private final Skin skinUi;
+    private final Skin skinFlags;
     private final Map<String, String> localisation;
     private Image terrainImage;
     private Image resourceImage;
@@ -21,10 +26,12 @@ public class ProvincePanel extends Table {
     private Label developmentIndexRegion;
     private Label incomeRegion;
     private Label industryRegion;
+    private FlagImage flagImage;
 
-    public ProvincePanel(Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public ProvincePanel(Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.skin = skin;
         this.skinUi = skinUi;
+        this.skinFlags = skinFlags;
         this.localisation = localisation;
         Drawable background = skin.getDrawable("bg_province");
         this.setBackground(background);
@@ -51,10 +58,18 @@ public class ProvincePanel extends Table {
         Label.LabelStyle labelStyleJockey24 = labelStylePool.getLabelStyle("jockey_24");
         this.provinceName = new Label("", labelStyleJockey24);
 
+        TextureRegion alphaFlag = skinUi.getRegion("shield_big");
+        TextureRegion overlayFlag = skinUi.getRegion("shield_big_overlay");
+        Pixmap defaultPixmapFlag = new Pixmap(64, 64, Pixmap.Format.RGBA8888);
+        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new Texture(defaultPixmapFlag));
+        defaultPixmapFlag.dispose();
+        this.flagImage = new FlagImage(defaultFlag, overlayFlag, alphaFlag);
+
         this.addActor(this.terrainImage);
         this.addActor(overlay);
         this.addActor(closeButton);
         this.addActor(this.provinceName);
+        this.addActor(this.flagImage);
     }
 
     private void setDataOverview(Skin skin, Skin skinUi, LabelStylePool labelStylePool) {
@@ -147,5 +162,14 @@ public class ProvincePanel extends Table {
     public void setIndustryRegion(int industry) {
         this.industryRegion.setText(industry);
         this.industryRegion.setPosition(360 - this.industryRegion.getMinWidth(), 75);
+    }
+
+    public void setFlagImage(String idCountry) {
+        this.flagImage.setFlag(this.skinFlags.getRegion(idCountry));
+        this.flagImage.setPosition(36, 430);
+    }
+
+    public void dispose() {
+        this.flagImage.dispose();
     }
 }

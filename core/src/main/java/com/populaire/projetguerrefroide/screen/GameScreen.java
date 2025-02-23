@@ -83,7 +83,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.localisation.putAll(this.gameContext.getLocalisationManager().readLanguageCsv());
         this.localisation.putAll(this.gameContext.getLocalisationManager().readInterfaceCsv());
 
-        this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation);
+        this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.localisation);
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new Stage(new ScreenViewport());
         this.initializeUi();
@@ -216,8 +216,8 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
     @Override
     public void onQuitClicked(PopupListener listener) {
-        Popup popup = new Popup(this.skinPopup, this.gameContext.getLabelStylePool(), this.localisation,
-            this.localisation.get("QUIT_TITLE"), this.localisation.get("QUIT_DESC"), true, false, listener);
+        Popup popup = new Popup(this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.localisation,
+            this.localisation.get("QUIT_TITLE"), this.localisation.get("QUIT_DESC"), this.worldService.getCountryIdPlayer(), true, false, listener);
         Table centerTable = new Table();
         centerTable.setFillParent(true);
         centerTable.add(popup).center();
@@ -275,6 +275,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.provincePanel.setDevelopmentIndexRegion(0);
         this.provincePanel.setIncomeRegion(0);
         this.provincePanel.setIndustryRegion(this.worldService.getNumberIndustryRegionOfSelectedProvince());
+        this.provincePanel.setFlagImage(this.worldService.getCountryIdOfSelectedProvince());
         this.stage.addActor(this.provincePanel);
     }
 
