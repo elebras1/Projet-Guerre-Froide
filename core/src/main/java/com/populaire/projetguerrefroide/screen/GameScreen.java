@@ -7,7 +7,6 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -276,6 +275,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.provincePanel.setIncomeRegion(0);
         this.provincePanel.setIndustryRegion(this.worldService.getNumberIndustryRegionOfSelectedProvince());
         this.provincePanel.setFlagImage(this.worldService.getCountryIdOfSelectedProvince());
+        this.provincePanel.setFlagCountriesCore(this.worldService.getCountriesCoreOfSelectedProvince());
         this.stage.addActor(this.provincePanel);
     }
 

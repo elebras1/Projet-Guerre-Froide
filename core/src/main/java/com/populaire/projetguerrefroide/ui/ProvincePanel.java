@@ -8,8 +8,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
+import java.util.List;
 import java.util.Map;
 
 public class ProvincePanel extends Table {
@@ -27,6 +29,7 @@ public class ProvincePanel extends Table {
     private Label incomeRegion;
     private Label industryRegion;
     private FlagImage flagImage;
+    private List<FlagImage> countriesCoreFlagImages;
 
     public ProvincePanel(Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.skin = skin;
@@ -37,7 +40,8 @@ public class ProvincePanel extends Table {
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
         this.setHeader(skin, skinUi, labelStylePool);
-        this.setDataOverview(skin, skinUi, labelStylePool);
+        this.setDataOverview(skin, labelStylePool);
+        this.setCountriesCoreFlagImages();
     }
 
     private void setHeader(Skin skin, Skin skinUi, LabelStylePool labelStylePool) {
@@ -58,12 +62,7 @@ public class ProvincePanel extends Table {
         Label.LabelStyle labelStyleJockey24 = labelStylePool.getLabelStyle("jockey_24");
         this.provinceName = new Label("", labelStyleJockey24);
 
-        TextureRegion alphaFlag = skinUi.getRegion("shield_big");
-        TextureRegion overlayFlag = skinUi.getRegion("shield_big_overlay");
-        Pixmap defaultPixmapFlag = new Pixmap(64, 64, Pixmap.Format.RGBA8888);
-        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new Texture(defaultPixmapFlag));
-        defaultPixmapFlag.dispose();
-        this.flagImage = new FlagImage(defaultFlag, overlayFlag, alphaFlag);
+        this.flagImage = this.createFlagImage(skinUi, "shield_big", "shield_big_overlay", (short) 64, (short) 64);
 
         this.addActor(this.terrainImage);
         this.addActor(overlay);
@@ -72,7 +71,7 @@ public class ProvincePanel extends Table {
         this.addActor(this.flagImage);
     }
 
-    private void setDataOverview(Skin skin, Skin skinUi, LabelStylePool labelStylePool) {
+    private void setDataOverview(Skin skin, LabelStylePool labelStylePool) {
         Table dataOverview = new Table();
         Drawable background = skin.getDrawable("bg_province_paper");
         dataOverview.setBackground(background);
@@ -108,10 +107,31 @@ public class ProvincePanel extends Table {
         this.addActor(dataOverview);
     }
 
+    private void setCountriesCoreFlagImages() {
+        this.countriesCoreFlagImages = new ObjectList<>();
+        int x = 35;
+        int y = 190;
+        for(int i = 0; i < 5; i++) {
+            FlagImage flagImage = this.createFlagImage(this.skinUi, "minimask", "minishield", (short) 32, (short) 32);
+            flagImage.setPosition(x, y);
+            this.countriesCoreFlagImages.add(flagImage);
+            x += 38;
+        }
+    }
+
     private Image createImage(Skin skin, String drawableName, float x, float y) {
         Image image = new Image(skin.getDrawable(drawableName));
         image.setPosition(x, y);
         return image;
+    }
+
+    private FlagImage createFlagImage(Skin skinUi, String alphaFlagName, String overlayFlagName, short height, short width) {
+        TextureRegion alphaFlag = skinUi.getRegion(alphaFlagName);
+        TextureRegion overlayFlag = skinUi.getRegion(overlayFlagName);
+        Pixmap defaultPixmapFlag = new Pixmap(width, height, Pixmap.Format.RGBA8888);
+        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new Texture(defaultPixmapFlag));
+        defaultPixmapFlag.dispose();
+        return new FlagImage(defaultFlag, overlayFlag, alphaFlag);
     }
 
     public void setResourceImage(String name) {
@@ -169,7 +189,14 @@ public class ProvincePanel extends Table {
         this.flagImage.setPosition(36, 430);
     }
 
-    public void dispose() {
-        this.flagImage.dispose();
+    public void setFlagCountriesCore(List<String> countriesCore) {
+        for(int i = 0; i < this.countriesCoreFlagImages.size(); i++) {
+            if(i < countriesCore.size()) {
+                this.countriesCoreFlagImages.get(i).setFlag(this.skinFlags.getRegion(countriesCore.get(i)));
+                this.addActor(this.countriesCoreFlagImages.get(i));
+            } else {
+                this.countriesCoreFlagImages.get(i).remove();
+            }
+        }
     }
 }

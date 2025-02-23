@@ -4,16 +4,20 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.tommyettinger.ds.ObjectIntMap;
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.data.DataManager;
 import com.populaire.projetguerrefroide.economy.good.ResourceGood;
 import com.populaire.projetguerrefroide.entity.GameEntities;
 import com.populaire.projetguerrefroide.entity.Government;
 import com.populaire.projetguerrefroide.entity.Minister;
+import com.populaire.projetguerrefroide.map.Country;
 import com.populaire.projetguerrefroide.map.LandProvince;
 import com.populaire.projetguerrefroide.map.MapMode;
 import com.populaire.projetguerrefroide.map.World;
 import com.populaire.projetguerrefroide.util.Named;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
+
+import java.util.List;
 
 public class WorldService {
     private final AsyncExecutor asyncExecutor;
@@ -21,11 +25,13 @@ public class WorldService {
     private GameEntities gameEntities;
     private World world;
     private final ObjectIntMap<String> elementPercentages;
+    private final List<String> elements;
 
     public WorldService() {
         this.asyncExecutor = new AsyncExecutor(2);;
         this.dataManager = new DataManager();
         this.elementPercentages = new ObjectIntMap<>();
+        this.elements = new ObjectList<>();
     }
 
     public void createWorld() {
@@ -137,6 +143,15 @@ public class WorldService {
         LandProvince province = this.world.getProvince(x, y);
         int amountAdults = province.getPopulation().getAmountAdults();
         return this.calculatePercentageDistributionFromProvinceData(province.getPopulation().getReligions(), amountAdults);
+    }
+
+    public List<String> getCountriesCoreOfSelectedProvince() {
+        this.elements.clear();
+        for(Country country : this.world.getSelectedProvince().getCountriesCore()) {
+            this.elements.add(country.getId());
+        }
+
+        return this.elements;
     }
 
     public <E extends Named> ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(ObjectIntMap<E> elements, int amountAdults) {
