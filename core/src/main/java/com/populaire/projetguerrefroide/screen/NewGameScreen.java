@@ -112,7 +112,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getConfigurationManager().loadBookmark(), this.localisation);
         TitleBar titleBar = new TitleBar(this.skin, this.gameContext.getLabelStylePool(), this.localisation);
         LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.localisation, this);
-        this.countrySelectedUi = new CountrySelected(this.skin, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation);
+        this.countrySelectedUi = new CountrySelected(this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.localisation);
         topTable.add(scenarioSavegameSelector).align(Align.topLeft).expandX();
         topTable.add(titleBar).align(Align.top);
         topTable.add(this.countrySelectedUi).align(Align.topRight).expandX();
@@ -244,17 +244,16 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     public void updateCountrySelected() {
         if(this.worldService.isProvinceSelected()) {
             Minister headOfState = this.worldService.getHeadOfStateOfSelectedCountry();
-            Drawable portrait;
-            try {
-                portrait = this.skinPortraits.getDrawable(headOfState.getImageNameFile());
-            } catch (com.badlogic.gdx.utils.GdxRuntimeException e) {
-                portrait = this.skinPortraits.getDrawable("admin_type");
+            String portraitNameFile = "admin_type";
+            if(headOfState.getImageNameFile() != null) {
+                portraitNameFile = headOfState.getImageNameFile();
             }
+
             this.countrySelectedUi.update(
                 this.worldService.getNameOfSelectedCountry(),
-                this.skinFlags.getRegion(this.worldService.getIdOfSelectedCountry()),
+                this.worldService.getIdOfSelectedCountry(),
                 ValueFormatter.formatValue(this.worldService.getPopulationAmountOfSelectedCountry()),
-                this.worldService.getGovernmentOfSelectedCountry().getName(), portrait, headOfState.getName(), this.localisation);
+                this.worldService.getGovernmentOfSelectedCountry().getName(), portraitNameFile, headOfState.getName(), this.localisation);
         } else {
             this.countrySelectedUi.hide();
         }

@@ -18,8 +18,12 @@ public class CountrySelected extends Table {
     private final Label leaderFullName;
     private final FlagImage flagImage;
     private final Image portrait;
+    private final Skin skinFlags;
+    private final Skin skinPortraits;
 
-    public CountrySelected(Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public CountrySelected(Skin skin, Skin skinUi, Skin skinFlags, Skin skinPortraits, LabelStylePool labelStylePool, Map<String, String> localisation) {
+        this.skinFlags = skinFlags;
+        this.skinPortraits = skinPortraits;
         Drawable background = skin.getDrawable("selected_bg");
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
@@ -91,12 +95,12 @@ public class CountrySelected extends Table {
         this.setVisible(false);
     }
 
-    public void update(String name, TextureRegion flag, String population, String government, Drawable portrait, String leaderFullName, Map<String, String> localisation) {
+    public void update(String name, String idCountry, String population, String government, String portrait, String leaderFullName, Map<String, String> localisation) {
         this.countryName.setText(name);
-        this.flagImage.setFlag(flag);
+        this.flagImage.setFlag(this.skinFlags.getRegion(idCountry));
         this.government.setText(localisation.get(government));
         this.countryPopulation.setText(population);
-        this.portrait.setDrawable(portrait);
+        this.portrait.setDrawable(this.skinPortraits.getDrawable(portrait));
         this.leaderFullName.setText(leaderFullName);
         this.setVisible(true);
     }
