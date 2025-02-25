@@ -66,9 +66,9 @@ public class Popup extends Table {
 
         Actor button = configureButton(skin, labelStylePool, localisation, doubleButton, big, background);
 
-        Label titleLabel = createLabel(title, labelStylePool.getLabelStyle("jockey_20_glow_blue"),
+        Label titleLabel = createLabel(localisation.get(title), labelStylePool.getLabelStyle("jockey_20_glow_blue"),
             background.getMinWidth() / 2, background.getMinHeight() - 42);
-        Label descriptionLabel = createWrappedLabel(description, labelStylePool.getLabelStyle("arial_18"),
+        Label descriptionLabel = createWrappedLabel(localisation.get(description), labelStylePool.getLabelStyle("arial_18"),
             background.getMinWidth(), background.getMinHeight());
 
         this.addActor(titleLabel);

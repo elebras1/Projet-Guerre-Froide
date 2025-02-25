@@ -193,7 +193,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     @Override
     public void onQuitClicked(PopupListener listener) {
         Popup popup = new Popup(this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.localisation,
-            this.localisation.get("QUIT_TITLE"), this.localisation.get("QUIT_DESC"), true, false, listener);
+            "QUIT_TITLE", "QUIT_DESC", true, false, listener);
         Table centerTable = new Table();
         centerTable.setFillParent(true);
         centerTable.add(popup).center();
