@@ -8,16 +8,23 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.badlogic.gdx.utils.Scaling;
+import com.github.tommyettinger.ds.ObjectIntMap;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
+import java.util.Map;
+
 public class HoverBox extends Table {
+    private final Map<String, String> localisation;
+    private final Skin skinFlags;
     private final Label mainLabel;
     private final Label subLabel;
     private final Image image;
     private final float marginWidth;
     private final float heightWidth;
 
-    public HoverBox(Skin skinUi, LabelStylePool labelStylePool) {
+    public HoverBox(Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
+        this.localisation = localisation;
+        this.skinFlags = skinFlags;
         NinePatch ninePatch = skinUi.getPatch("tiles_dialog");
         this.marginWidth = ninePatch.getLeftWidth() + ninePatch.getRightWidth();
         this.heightWidth = ninePatch.getTopHeight() + ninePatch.getBottomHeight();
@@ -40,20 +47,32 @@ public class HoverBox extends Table {
         this.add(this.subLabel).expandX().top().left();
     }
 
-    public void update(String text, Drawable flag) {
-        if(!text.equals(this.mainLabel.getText().toString())) {
-            this.mainLabel.setText(text);
-            this.image.setDrawable(flag);
+    public void update(short provinceId, String countryName, String countryId) {
+        String mainText = this.localisation.get(String.valueOf(provinceId)) + " (" + countryName + ")";
+        if(!mainText.equals(this.mainLabel.getText().toString())) {
+            this.mainLabel.setText(mainText);
+            this.image.setDrawable(this.skinFlags.getDrawable(countryId));
             this.subLabel.remove();
             this.resize();
         }
     }
 
-    public void update(String mainText, String subText, Drawable flag) {
-        if(!mainText.equals(this.mainLabel.getText().toString())) {
+    public void update(short provinceId, String countryName, String countryId, ObjectIntMap<String> elements) {
+        String mainText = this.localisation.get(String.valueOf(provinceId)) + " (" + countryName + ")";
+        if (!mainText.equals(this.mainLabel.getText().toString())) {
             this.mainLabel.setText(mainText);
-            this.image.setDrawable(flag);
-            this.subLabel.setText(subText);
+            this.image.setDrawable(this.skinFlags.getDrawable(countryId));
+
+            StringBuilder subText = new StringBuilder();
+            for (ObjectIntMap.Entry<String> entry : elements) {
+                if (!subText.isEmpty()) {
+                    subText.append("\n");
+                }
+                subText.append(this.localisation.get(entry.getKey())).append(" (").append(entry.getValue()).append("%)");
+            }
+
+            this.subLabel.setText(subText.toString());
+
             if (!this.getChildren().contains(this.subLabel, true)) {
                 this.row().top();
                 this.add(this.subLabel).expandX().top().left();
@@ -61,6 +80,7 @@ public class HoverBox extends Table {
             this.resize();
         }
     }
+
 
     public void update(String text) {
         if(!text.equals(this.mainLabel.getText().toString())) {
@@ -92,5 +112,4 @@ public class HoverBox extends Table {
 
         this.setSize(width, height);
     }
-
 }

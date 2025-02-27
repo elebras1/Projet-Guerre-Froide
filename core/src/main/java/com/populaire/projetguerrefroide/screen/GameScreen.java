@@ -101,7 +101,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
         this.provincePanel.setPosition(0, 0);
 
-        this.hoverBox = new HoverBox(this.skinUi, this.gameContext.getLabelStylePool());
+        this.hoverBox = new HoverBox(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.localisation);
 
         Table centerTable = new Table();
         centerTable.setFillParent(true);
@@ -160,24 +160,16 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     @Override
     public void onHover(short x, short y) {
         if(this.worldService.hoverProvince(x, y) && this.isMouseOverUI()) {
-            String mainText = this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))) + " (" + this.worldService.getCountryNameOfHoveredProvince(x, y) + ")";
+            String mainText;
             if(this.worldService.getMapMode().equals(MapMode.CULTURAL)) {
                 ObjectIntMap<String> cultures = this.worldService.getCulturesOfHoveredProvince(x, y);
-                mainText = this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))) + " (" + this.worldService.getCountryNameOfHoveredProvince(x, y) + ")";
-                String subText = cultures.keySet().stream()
-                    .map(culture -> this.localisation.get(culture) + " (" + cultures.get(culture) + "%)")
-                    .collect(Collectors.joining("\n"));
-                this.updateHoverBox(mainText, subText, this.worldService.getCountryIdOfHoveredProvince(x, y));
+                this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), cultures);
 
             } else if(this.worldService.getMapMode().equals(MapMode.RELIGIOUS)) {
                 ObjectIntMap<String> religions = this.worldService.getReligionsOfHoveredProvince(x, y);
-                mainText = this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))) + " (" + this.worldService.getCountryNameOfHoveredProvince(x, y) + ")";
-                String subText = religions.keySet().stream()
-                    .map(religion -> this.localisation.get(religion) + " (" + religions.get(religion) + "%)")
-                    .collect(Collectors.joining("\n"));
-                this.updateHoverBox(mainText, subText, this.worldService.getCountryIdOfHoveredProvince(x, y));
+                this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), religions);
             } else {
-                this.updateHoverBox(mainText, this.worldService.getCountryIdOfHoveredProvince(x, y));
+                this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y));
             }
         } else if(this.isMouseOverUI()) {
             this.hideHoverBox();
@@ -290,20 +282,20 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.hoverBox.toFront();
     }
 
-    public void updateHoverBox(String text, String countryId) {
+    public void updateHoverBox(short provinceId, String countryName, String countryId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverBox.update(text, this.skinFlags.getDrawable(countryId));
+        this.hoverBox.update(provinceId, countryName, countryId);
         this.hoverBox.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
                 y - this.gameContext.getCursorManager().getHeight() * 1.5f);
         this.hoverBox.setVisible(true);
         this.hoverBox.toBack();
     }
 
-    public void updateHoverBox(String mainText, String subText, String countryId) {
+    public void updateHoverBox(short provinceId, String countryName, String countryId, ObjectIntMap<String> elements) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverBox.update(mainText, subText, this.skinFlags.getDrawable(countryId));
+        this.hoverBox.update(provinceId, countryName, countryId, elements);
         this.hoverBox.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
             y - this.gameContext.getCursorManager().getHeight() * 1.5f);
         this.hoverBox.setVisible(true);

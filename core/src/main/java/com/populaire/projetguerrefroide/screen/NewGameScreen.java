@@ -98,7 +98,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.debug.setPosition(100, 90);
         this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
 
-        this.hoverBox = new HoverBox(this.skinUi, this.gameContext.getLabelStylePool());
+        this.hoverBox = new HoverBox(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.localisation);
 
         this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.localisation, this);
         this.mainMenuInGame.setVisible(false);
@@ -140,7 +140,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     @Override
     public void onHover(short x, short y) {
         if(this.worldService.hoverProvince(x, y) && !this.isMouseOverUI()) {
-            this.updateHoverBox(this.localisation.get(String.valueOf(this.worldService.getProvinceId(x, y))),
+            this.updateHoverBox(this.worldService.getProvinceId(x, y),
                 this.worldService.getCountryNameOfHoveredProvince(x, y),
                 this.worldService.getCountryIdOfHoveredProvince(x, y));
         } else {
@@ -259,10 +259,10 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         }
     }
 
-    public void updateHoverBox(String provinceName, String countryName, String countryId) {
+    public void updateHoverBox(short provinceId, String countryName, String countryId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverBox.update(provinceName + " (" + countryName + ")", this.skinFlags.getDrawable(countryId));
+        this.hoverBox.update(provinceId, countryName, countryId);
         this.hoverBox.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
             y - this.gameContext.getCursorManager().getHeight() * 1.5f);
         this.hoverBox.setVisible(true);
