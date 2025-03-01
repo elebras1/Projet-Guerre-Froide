@@ -43382,6 +43382,26 @@ atlasData: {
 			type: TEXTURE
 			hidden: false
 		}
+		{
+			file: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/portraits/NOR_M_Haakon_VII.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: NOR_M_Haakon_VII
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
 	]
 	fontDrawables: []
 }
@@ -44979,6 +44999,10 @@ preferences: {
 	id: {
 		class: java.lang.Integer
 		value: 112314192
+	}
+	last-import-export-path: {
+		class: java.lang.String
+		value: C:/Users/erwan/Desktop/DEV/projetGuerreFroide/assets/portraits/portraits_skin.json
 	}
 	resources-relative: {
 		class: java.lang.Boolean
