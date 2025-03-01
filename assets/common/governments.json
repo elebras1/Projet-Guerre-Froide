@@ -1,7 +1,12 @@
 {
-  "totalitarian_gov": {
+  "fascist_dictatorship_gov": {
     "ideologies_acceptance": [
-      "fascistic_idolg",
+      "fascistic_idolg"
+    ],
+    "election": {}
+  },
+  "proletarian_dictatorship_gov": {
+    "ideologies_acceptance": [
       "maoist_idolg",
       "communist_idolg"
     ],
@@ -14,10 +19,22 @@
     ],
     "election": {}
   },
+  "populist_dictatorship_gov": {
+    "ideologies_acceptance": [
+      "social_cons_idolg",
+      "market_liberal_idolg",
+      "left_wing_radical_idolg"
+    ],
+    "faction_drifting_speed": 4,
+    "election": {
+      "head_of_state": true,
+      "head_of_government": true,
+      "duration": 48
+    }
+  },
   "theocracy_gov": {
     "ideologies_acceptance": [
-      "paternal_auto_idolg",
-      "social_cons_idolg"
+      "paternal_auto_idolg"
     ],
     "election": {
       "head_of_state": false,
@@ -27,9 +44,10 @@
   },
   "absolute_monarchy_gov": {
     "ideologies_acceptance": [
+      "fascistic_idolg",
       "paternal_auto_idolg",
-      "market_liberal_idolg",
-      "social_cons_idolg"
+      "social_cons_idolg",
+      "market_liberal_idolg"
     ],
     "election": {}
   },
@@ -44,12 +62,14 @@
       "duration": 48
     }
   },
-  "republic_gov": {
+  "presidential_republic_gov": {
     "ideologies_acceptance": [
       "market_liberal_idolg",
       "social_liberal_idolg",
       "social_democrat_idolg",
-      "left_wing_radical_idolg"
+      "social_cons_idolg",
+      "left_wing_radical_idolg",
+      "communist_idolg"
     ],
     "election": {
       "head_of_state": true,
@@ -63,9 +83,23 @@
       "social_liberal_idolg"
     ],
     "election": {
-      "head_of_state": true,
+      "head_of_state": false,
       "head_of_government": true,
       "duration": 48
     }
+  },
+  "direct_democracy_gov": {
+    "ideologies_acceptance": [
+      "social_democrat_idolg",
+      "left_wing_radical_idolg"
+    ],
+    "election": {}
+  },
+  "anarchy_gov": {
+    "ideologies_acceptance": [
+      "left_wing_radical_idolg",
+      "market_liberal_idolg"
+    ],
+    "election": {}
   }
 }
