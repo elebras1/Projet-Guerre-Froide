@@ -160,14 +160,10 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     @Override
     public void onHover(short x, short y) {
         if(this.worldService.hoverProvince(x, y) && this.isMouseOverUI()) {
-            String mainText;
             if(this.worldService.getMapMode().equals(MapMode.CULTURAL)) {
-                ObjectIntMap<String> cultures = this.worldService.getCulturesOfHoveredProvince(x, y);
-                this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), cultures);
-
+                this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getCulturesOfHoveredProvince(x, y));
             } else if(this.worldService.getMapMode().equals(MapMode.RELIGIOUS)) {
-                ObjectIntMap<String> religions = this.worldService.getReligionsOfHoveredProvince(x, y);
-                this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), religions);
+                this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getReligionsOfHoveredProvince(x, y));
             } else {
                 this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y));
             }
