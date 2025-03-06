@@ -31,10 +31,10 @@ const vec2 pix = vec2(xx, yy);
 
 // hqx variables
 const int ml = 0;
-const float threshold = 0.03;
-const float aaScale = 1500;
-const float mainLineThickness = 0.38197;
-const float subLineThickness = 0.2;
+const float threshold = 0.02;
+const float aaScale = 18;
+const float mainLineThickness = 0.38;
+const float subLineThickness = 0.22;
 
 // border variables
 const vec2 offsetsProvince[4] = vec2[](vec2(0.1, 0), vec2(-0.1, 0), vec2(0, 0.1), vec2(0, -0.1));
@@ -47,6 +47,7 @@ vec2 getCorrectedTexCoord() {
     return vec2(v_texCoords.x, 1.0 - v_texCoords.y);
 }
 
+
 bool diag(inout vec4 sum, vec2 uv, vec2 p1, vec2 p2, sampler2D texture, float lineThickness) {
     vec4 v1 = texelFetch(texture, ivec2(uv + p1), ml);
     vec4 v2 = texelFetch(texture, ivec2(uv + p2), ml);
@@ -55,7 +56,11 @@ bool diag(inout vec4 sum, vec2 uv, vec2 p1, vec2 p2, sampler2D texture, float li
         lp = uv - (floor(uv + p1) + 0.5);
         dir = normalize(vec2(dir.y, -dir.x));
         float l = clamp((lineThickness - dot(lp, dir)) * aaScale, 0., 1.);
-        sum = mix(sum, v1, l);
+
+        if (l > 0.5) {
+            sum = v1;
+        }
+
         return true;
     }
     return false;
@@ -205,7 +210,7 @@ vec4 getLandClose(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv)
     terrain.rgb = vec3(grey);
 
     vec3 deltaColor = colorProvince.rgb - u_colorProvinceSelected.rgb;
-    if (dot(deltaColor, deltaColor) < 0.0001) {
+    if (dot(deltaColor, deltaColor) < 0.00000001) {
         political.rgb += 0.20;
         political.rgb = clamp(political.rgb, 0.0, 1.0);
         political.rgb *= 1.3;
@@ -247,7 +252,7 @@ vec4 getLandFar(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv) {
     }
 
     vec3 deltaColor = colorProvince.rgb - u_colorProvinceSelected.rgb;
-    if (dot(deltaColor, deltaColor) < 0.0001) {
+    if (dot(deltaColor, deltaColor) < 0.00000001) {
         political.rgb += 0.20;
         political.rgb = clamp(political.rgb, 0.0, 1.0);
         political.rgb *= 1.3;
@@ -298,5 +303,3 @@ void main() {
     fragColor.rgb = mix(water.rgb, terrain.rgb, terrain.a);
     fragColor.a = 1.0;
 }
-
-
