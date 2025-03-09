@@ -705,16 +705,16 @@ public class DataManager {
                 int color = this.parseColor(entry.getValue().get("color"));
                 short maxLevel = entry.getValue().get("max_level").shortValue();
                 JsonNode inputGoodsNode = entry.getValue().get("input_goods");
-                Map<Good, Integer> inputGoods = new ObjectObjectMap<>();
+                ObjectFloatMap<Good> inputGoods = new ObjectFloatMap<>();
                 inputGoodsNode.fields().forEachRemaining(inputGood -> {
                     Good good = goods.get(inputGood.getKey());
-                    inputGoods.put(good, inputGood.getValue().asInt());
+                    inputGoods.put(good, (float) inputGood.getValue().asDouble());
                 });
                 JsonNode outputGoodsNode = entry.getValue().get("output_goods");
-                Map<Good, Integer> outputGoods = new ObjectObjectMap<>();
+                ObjectFloatMap<Good> outputGoods = new ObjectFloatMap<>();
                 outputGoodsNode.fields().forEachRemaining(outputGood -> {
                     Good good = goods.get(outputGood.getKey());
-                    outputGoods.put(good, outputGood.getValue().asInt());
+                    outputGoods.put(good, (float) outputGood.getValue().asDouble());
                 });
                 buildings.put(buildingName, new EconomyBuilding(baseType, artisansType, buildingName, cost, time, inputGoods, outputGoods, maxLevel, color));
             });

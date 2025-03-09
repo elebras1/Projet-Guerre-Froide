@@ -1,18 +1,17 @@
 package com.populaire.projetguerrefroide.economy.building;
 
+import com.github.tommyettinger.ds.ObjectFloatMap;
 import com.populaire.projetguerrefroide.economy.good.Good;
-
-import java.util.Map;
 
 public class EconomyBuilding extends Building {
     private final ProductionType baseType;
     private final ProductionType artisansType;
-    private final Map<Good, Integer> inputGoods;
-    private final Map<Good, Integer> outputGoods;
+    private final ObjectFloatMap<Good> inputGoods;
+    private final ObjectFloatMap<Good> outputGoods;
     private final short maxLevel;
     private final int color;
 
-    public EconomyBuilding(ProductionType baseTemplate, ProductionType artisansTemplate, String name, int cost, short time, Map<Good, Integer> inputGoods, Map<Good, Integer> outputGoods, short maxLevel, int color) {
+    public EconomyBuilding(ProductionType baseTemplate, ProductionType artisansTemplate, String name, int cost, short time, ObjectFloatMap<Good> inputGoods, ObjectFloatMap<Good> outputGoods, short maxLevel, int color) {
         super(name, cost, time);
         this.baseType = baseTemplate;
         this.artisansType = artisansTemplate;
@@ -30,11 +29,11 @@ public class EconomyBuilding extends Building {
         return this.artisansType;
     }
 
-    public Map<Good, Integer> getInputGoods() {
+    public ObjectFloatMap<Good> getInputGoods() {
         return this.inputGoods;
     }
 
-    public Map<Good, Integer> getOutputGoods() {
+    public ObjectFloatMap<Good> getOutputGoods() {
         return this.outputGoods;
     }
 
