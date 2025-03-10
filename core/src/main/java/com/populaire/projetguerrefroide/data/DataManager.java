@@ -695,7 +695,6 @@ public class DataManager {
             JsonNode economyBuilding = buildingsJson.get("economy_building");
             economyBuilding.fields().forEachRemaining(entry -> {
                 String buildingName = entry.getKey();
-                int cost = entry.getValue().get("cost").intValue();
                 short time = entry.getValue().get("time").shortValue();
                 ProductionType baseType = productionTypes.get(entry.getValue().get("base_type").asText());
                 ProductionType artisansType = null;
@@ -704,6 +703,12 @@ public class DataManager {
                 }
                 int color = this.parseColor(entry.getValue().get("color"));
                 short maxLevel = entry.getValue().get("max_level").shortValue();
+                JsonNode goodsCostNode = entry.getValue().get("goods_cost");
+                ObjectFloatMap<Good> goodsCost = new ObjectFloatMap<>();
+                goodsCostNode.fields().forEachRemaining(goodCost -> {
+                    Good good = goods.get(goodCost.getKey());
+                    goodsCost.put(good, (float) goodCost.getValue().asDouble());
+                });
                 JsonNode inputGoodsNode = entry.getValue().get("input_goods");
                 ObjectFloatMap<Good> inputGoods = new ObjectFloatMap<>();
                 inputGoodsNode.fields().forEachRemaining(inputGood -> {
@@ -716,7 +721,7 @@ public class DataManager {
                     Good good = goods.get(outputGood.getKey());
                     outputGoods.put(good, (float) outputGood.getValue().asDouble());
                 });
-                buildings.put(buildingName, new EconomyBuilding(baseType, artisansType, buildingName, cost, time, inputGoods, outputGoods, maxLevel, color));
+                buildings.put(buildingName, new EconomyBuilding(baseType, artisansType, buildingName, time, goodsCost, inputGoods, outputGoods, maxLevel, color));
             });
 
             JsonNode specialBuilding = buildingsJson.get("special_building");

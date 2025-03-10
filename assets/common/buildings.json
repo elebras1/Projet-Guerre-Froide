@@ -3,7 +3,11 @@
     "refinery": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 2000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "oil": 2
       },
@@ -11,53 +15,68 @@
         "fuel": 2
       },
       "max_level": 99,
-      "time": 730,
-      "color": [
-        255,
-        165,
-        0
-      ]
+      "time": 730
     },
-    "powerplant": {
+    "coal_powerplant": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 2000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
-        "coal": 4,
+        "coal": 15,
         "renewable_energy": 4
       },
       "output_goods": {
-        "electricity": 6
+        "electricity": 12
       },
       "max_level": 99,
-      "time": 200,
-      "color": [
-        0,
-        0,
-        255
-      ]
+      "time": 200
     },
-    "nuclear_plant": {
-      "base_type": "type_economy_advanced",
-      "cost": 2000,
+    "renewable_powerplant": {
+      "base_type": "type_economy",
+      "artisans_type": "type_economy_artisan",
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
-        "uranium": 3
+        "renewable_energy": 15
       },
       "output_goods": {
-        "electricity": 8
+        "electricity": 12
       },
       "max_level": 99,
-      "time": 200,
-      "color": [
-        255,
-        0,
-        0
-      ]
+      "time": 200
+    },
+    "nuclear_powerplant": {
+      "base_type": "type_economy_advanced",
+      "goods_cost": {
+        "cement": 50,
+        "steel": 50,
+        "machine_parts": 25,
+        "electronics": 10
+      },
+      "input_goods": {
+        "uranium": 8
+      },
+      "output_goods": {
+        "electricity": 12
+      },
+      "max_level": 99,
+      "time": 200
     },
     "cement_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 3000,
+      "goods_cost": {
+        "wood": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "iron": 1,
         "coal": 7
@@ -66,17 +85,16 @@
         "cement": 10
       },
       "max_level": 99,
-      "time": 100,
-      "color": [
-        128,
-        128,
-        128
-      ]
+      "time": 100
     },
     "steel_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 4000,
+      "goods_cost": {
+        "cement": 20,
+        "wood": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "iron": 25,
         "coal": 9
@@ -85,17 +103,16 @@
         "steel": 15
       },
       "max_level": 99,
-      "time": 150,
-      "color": [
-        105,
-        105,
-        105
-      ]
+      "time": 150
     },
     "aluminium_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 3500,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "coal": 3,
         "rare_metals": 2,
@@ -105,17 +122,16 @@
         "aluminium": 6
       },
       "max_level": 99,
-      "time": 120,
-      "color": [
-        205,
-        205,
-        205
-      ]
+      "time": 120
     },
     "glass_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 2500,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "coal": 10
       },
@@ -123,16 +139,15 @@
         "glass": 7
       },
       "max_level": 99,
-      "time": 100,
-      "color": [
-        255,
-        255,
-        240
-      ]
+      "time": 100
     },
     "inorganic_chemicals_factory": {
       "base_type": "type_economy_advanced",
-      "cost": 3000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "coal": 2,
         "oil": 2,
@@ -142,17 +157,16 @@
         "inorganic_chemicals": 2.6
       },
       "max_level": 99,
-      "time": 110,
-      "color": [
-        128,
-        0,
-        128
-      ]
+      "time": 110
     },
     "fabric_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 2000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "vegetables": 5
       },
@@ -160,17 +174,16 @@
         "fabric": 5
       },
       "max_level": 99,
-      "time": 90,
-      "color": [
-        255,
-        228,
-        196
-      ]
+      "time": 90
     },
     "plastics_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 3500,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "oil": 4
       },
@@ -178,17 +191,16 @@
         "plastics": 8
       },
       "max_level": 99,
-      "time": 130,
-      "color": [
-        255,
-        20,
-        147
-      ]
+      "time": 130
     },
     "paper_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 2500,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "wood": 4
       },
@@ -196,16 +208,16 @@
         "paper": 3.2
       },
       "max_level": 99,
-      "time": 100,
-      "color": [
-        255,
-        255,
-        255
-      ]
+      "time": 100
     },
     "integrated_circuits_factory": {
       "base_type": "type_economy_advanced",
-      "cost": 5000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "aluminium": 10
+      },
       "input_goods": {
         "rare_metals": 2,
         "inorganic_chemicals": 4,
@@ -215,16 +227,16 @@
         "integrated_circuits": 6.5
       },
       "max_level": 99,
-      "time": 180,
-      "color": [
-        0,
-        0,
-        128
-      ]
+      "time": 180
     },
     "electronic_components_factory": {
       "base_type": "type_economy_advanced",
-      "cost": 4500,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "aluminium": 10
+      },
       "input_goods": {
         "integrated_circuits": 0.5,
         "rare_metals": 2,
@@ -235,17 +247,17 @@
         "electronic_components": 7
       },
       "max_level": 99,
-      "time": 150,
-      "color": [
-        70,
-        130,
-        180
-      ]
+      "time": 150
     },
     "machine_parts_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 4000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "wood": 20,
+        "aluminium": 10
+      },
       "input_goods": {
         "steel": 4,
         "aluminium": 2
@@ -254,16 +266,17 @@
         "machine_parts": 20
       },
       "max_level": 99,
-      "time": 140,
-      "color": [
-        105,
-        105,
-        105
-      ]
+      "time": 140
     },
     "computers_factory": {
       "base_type": "type_economy_advanced",
-      "cost": 6000,
+      "goods_cost": {
+        "cement": 20,
+        "machine_parts": 20,
+        "electronic_components": 20,
+        "integrated_circuits": 15,
+        "aluminium": 10
+      },
       "input_goods": {
         "integrated_circuits": 2,
         "electronic_components": 2,
@@ -274,17 +287,16 @@
         "computers": 10.2
       },
       "max_level": 99,
-      "time": 180,
-      "color": [
-        0,
-        0,
-        0
-      ]
+      "time": 180
     },
     "automobiles_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 7000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 50
+      },
       "input_goods": {
         "plastics": 3,
         "steel": 4,
@@ -294,17 +306,16 @@
         "automobiles": 8
       },
       "max_level": 99,
-      "time": 200,
-      "color": [
-        255,
-        0,
-        0
-      ]
+      "time": 200
     },
     "clothes_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 2500,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "fabric": 5
       },
@@ -312,16 +323,16 @@
         "clothes": 4
       },
       "max_level": 99,
-      "time": 90,
-      "color": [
-        255,
-        192,
-        203
-      ]
+      "time": 90
     },
     "pharmaceuticals_factory": {
       "base_type": "type_economy_advanced",
-      "cost": 4500,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7,
+        "electronic_components": 10
+      },
       "input_goods": {
         "inorganic_chemicals": 3,
         "plastics": 2
@@ -330,16 +341,16 @@
         "pharmaceuticals": 9.3
       },
       "max_level": 99,
-      "time": 160,
-      "color": [
-        0,
-        255,
-        0
-      ]
+      "time": 160
     },
     "communication_factory": {
       "base_type": "type_economy_advanced",
-      "cost": 5000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7,
+        "electronic_components": 10
+      },
       "input_goods": {
         "electronic_components": 2,
         "integrated_circuits": 3,
@@ -349,16 +360,15 @@
         "communication": 8.5
       },
       "max_level": 99,
-      "time": 170,
-      "color": [
-        0,
-        128,
-        128
-      ]
+      "time": 170
     },
     "transport_factory": {
       "base_type": "type_economy",
-      "cost": 8000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "automobiles": 1,
         "aeroplanes": 1,
@@ -369,17 +379,16 @@
         "transport": 10
       },
       "max_level": 99,
-      "time": 240,
-      "color": [
-        139,
-        0,
-        0
-      ]
+      "time": 240
     },
     "ammunition_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 3000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "steel": 5,
         "rare_metals" : 2,
@@ -389,17 +398,16 @@
         "ammunition": 6
       },
       "max_level": 99,
-      "time": 120,
-      "color": [
-        255,
-        0,
-        0
-      ]
+      "time": 120
     },
     "weaponry_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",
-      "cost": 4000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
       "input_goods": {
         "steel": 4,
         "machine_parts": 4,
@@ -410,16 +418,17 @@
         "weaponry": 4.5
       },
       "max_level": 99,
-      "time": 150,
-      "color": [
-        255,
-        0,
-        0
-      ]
+      "time": 150
     },
     "centrifuges": {
       "base_type": "type_economy_advanced",
-      "cost": 2000,
+      "goods_cost": {
+        "cement": 30,
+        "steel": 30,
+        "rare_metals": 20,
+        "machine_parts": 20,
+        "electronics": 10
+      },
       "input_goods": {
         "uranium": 6,
         "inorganic_chemicals": 1
@@ -428,16 +437,17 @@
         "refined_uranium": 6
       },
       "max_level": 99,
-      "time": 200,
-      "color": [
-        255,
-        0,
-        0
-      ]
+      "time": 200
     },
     "military_satellites_factory": {
       "base_type": "type_economy_advanced",
-      "cost": 2000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronics": 10,
+        "computers": 5
+      },
       "input_goods": {
         "machine_parts": 5,
         "electronic_components": 5,
@@ -447,16 +457,16 @@
         "military_satellites": 8
       },
       "max_level": 99,
-      "time": 200,
-      "color": [
-        255,
-        215,
-        0
-      ]
+      "time": 200
     },
     "armoured_vehicles_factory": {
       "base_type": "type_economy_advanced",
-      "cost": 5000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronics": 10
+      },
       "input_goods": {
         "plastics": 3,
         "steel": 5,
@@ -468,16 +478,16 @@
         "armoured_vehicles": 8.5
       },
       "max_level": 99,
-      "time": 200,
-      "color": [
-        85,
-        107,
-        47
-      ]
+      "time": 200
     },
     "ships_factory": {
       "base_type": "type_economy_advanced",
-      "cost": 6000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronics": 10
+      },
       "input_goods": {
         "steel": 4,
         "aluminium": 4,
@@ -488,16 +498,16 @@
         "ships": 7.5
       },
       "max_level": 99,
-      "time": 220,
-      "color": [
-        0,
-        0,
-        128
-      ]
+      "time": 220
     },
     "aeroplanes_factory": {
       "base_type": "type_economy_advanced",
-      "cost": 7000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronics": 10
+      },
       "input_goods": {
         "steel": 4,
         "aluminium": 4,
@@ -508,12 +518,7 @@
         "aeroplanes": 8
       },
       "max_level": 99,
-      "time": 240,
-      "color": [
-        0,
-        0,
-        255
-      ]
+      "time": 240
     }
   },
   "special_building": {
