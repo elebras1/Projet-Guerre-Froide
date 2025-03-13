@@ -10,9 +10,8 @@ public class EconomyBuilding extends Building {
     private final ObjectFloatMap<Good> inputGoods;
     private final ObjectFloatMap<Good> outputGoods;
     private final short maxLevel;
-    private final int color;
 
-    public EconomyBuilding(ProductionType baseTemplate, ProductionType artisansTemplate, String name, short time, ObjectFloatMap<Good> goodsCost, ObjectFloatMap<Good> inputGoods, ObjectFloatMap<Good> outputGoods, short maxLevel, int color) {
+    public EconomyBuilding(ProductionType baseTemplate, ProductionType artisansTemplate, String name, short time, ObjectFloatMap<Good> goodsCost, ObjectFloatMap<Good> inputGoods, ObjectFloatMap<Good> outputGoods, short maxLevel) {
         super(name, time);
         this.baseType = baseTemplate;
         this.artisansType = artisansTemplate;
@@ -20,7 +19,6 @@ public class EconomyBuilding extends Building {
         this.inputGoods = inputGoods;
         this.outputGoods = outputGoods;
         this.maxLevel = maxLevel;
-        this.color = color;
     }
 
     public ProductionType getBaseType() {
@@ -47,10 +45,6 @@ public class EconomyBuilding extends Building {
         return this.maxLevel;
     }
 
-    public int getColor() {
-        return this.color;
-    }
-
     @Override
     public String toString() {
         return "EconomyBuilding{" +
@@ -63,7 +57,6 @@ public class EconomyBuilding extends Building {
             ", inputGoods=" + this.inputGoods +
             ", outputGoods=" + this.outputGoods +
             ", maxLevel=" + this.maxLevel +
-            ", color=" + this.color +
             '}';
     }
 }

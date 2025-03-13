@@ -24,7 +24,6 @@ import java.util.*;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Function;
 
 public class DataManager {
     private final String commonPath = "common/";
@@ -265,7 +264,7 @@ public class DataManager {
             countryOwner.addProvince(province);
             return province;
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("readProvinceJson : " + e);
         }
         return null;
     }
@@ -701,7 +700,6 @@ public class DataManager {
                 if(entry.getValue().has("artisans_type")) {
                     artisansType = productionTypes.get(entry.getValue().get("artisans_type").asText());
                 }
-                int color = this.parseColor(entry.getValue().get("color"));
                 short maxLevel = entry.getValue().get("max_level").shortValue();
                 JsonNode goodsCostNode = entry.getValue().get("goods_cost");
                 ObjectFloatMap<Good> goodsCost = new ObjectFloatMap<>();
@@ -721,7 +719,7 @@ public class DataManager {
                     Good good = goods.get(outputGood.getKey());
                     outputGoods.put(good, (float) outputGood.getValue().asDouble());
                 });
-                buildings.put(buildingName, new EconomyBuilding(baseType, artisansType, buildingName, time, goodsCost, inputGoods, outputGoods, maxLevel, color));
+                buildings.put(buildingName, new EconomyBuilding(baseType, artisansType, buildingName, time, goodsCost, inputGoods, outputGoods, maxLevel));
             });
 
             JsonNode specialBuilding = buildingsJson.get("special_building");
