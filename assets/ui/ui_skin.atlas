@@ -6,35 +6,35 @@ filter: Linear, Linear
 repeat: none
 checkbutton_off
   rotate: false
-  xy: 133, 173
+  xy: 278, 350
   size: 30, 31
   orig: 30, 31
   offset: 0, 0
   index: -1
 checkbutton_on
   rotate: false
-  xy: 132, 140
+  xy: 310, 350
   size: 30, 31
   orig: 30, 31
   offset: 0, 0
   index: -1
 close_btn
   rotate: false
-  xy: 132, 109
+  xy: 69, 1
   size: 29, 29
   orig: 29, 29
   offset: 0, 0
   index: -1
 close_btn_down
   rotate: false
-  xy: 69, 1
+  xy: 132, 70
   size: 29, 29
   orig: 29, 29
   offset: 0, 0
   index: -1
 close_btn_over
   rotate: false
-  xy: 132, 78
+  xy: 167, 243
   size: 29, 29
   orig: 29, 29
   offset: 0, 0
@@ -62,63 +62,63 @@ flag_overlay
   index: -1
 icon_dissent_small_blue
   rotate: false
-  xy: 275, 313
+  xy: 342, 426
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_dissent_small_green
   rotate: false
-  xy: 302, 313
+  xy: 369, 426
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_dissent_small_red
   rotate: false
-  xy: 329, 313
+  xy: 338, 395
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_fuel_small_blue
   rotate: false
-  xy: 342, 426
+  xy: 365, 395
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_fuel_small_green
   rotate: false
-  xy: 369, 426
+  xy: 342, 364
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_fuel_small_red
   rotate: false
-  xy: 338, 395
+  xy: 369, 364
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_gdp_small_blue
   rotate: false
-  xy: 229, 225
+  xy: 229, 256
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 icon_gdp_small_green
   rotate: false
-  xy: 116, 47
+  xy: 229, 225
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 icon_gdp_small_red
   rotate: false
-  xy: 146, 47
+  xy: 229, 194
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
@@ -146,63 +146,63 @@ icon_leadership_small_red
   index: -1
 icon_manpower_army_small_blue
   rotate: false
-  xy: 383, 333
+  xy: 446, 416
   size: 24, 29
   orig: 24, 29
   offset: 0, 0
   index: -1
 icon_manpower_army_small_green
   rotate: false
-  xy: 356, 302
+  xy: 472, 416
   size: 24, 29
   orig: 24, 29
   offset: 0, 0
   index: -1
 icon_manpower_army_small_red
   rotate: false
-  xy: 382, 302
+  xy: 423, 385
   size: 24, 29
   orig: 24, 29
   offset: 0, 0
   index: -1
 icon_manpower_small_blue
   rotate: false
-  xy: 409, 333
+  xy: 423, 354
   size: 24, 29
   orig: 24, 29
   offset: 0, 0
   index: -1
 icon_manpower_small_green
   rotate: false
-  xy: 408, 302
+  xy: 449, 385
   size: 24, 29
   orig: 24, 29
   offset: 0, 0
   index: -1
 icon_manpower_small_red
   rotate: false
-  xy: 419, 416
+  xy: 449, 354
   size: 24, 29
   orig: 24, 29
   offset: 0, 0
   index: -1
 icon_money_small_blue
   rotate: false
-  xy: 445, 416
+  xy: 475, 385
   size: 24, 29
   orig: 24, 29
   offset: 0, 0
   index: -1
 icon_money_small_green
   rotate: false
-  xy: 471, 416
+  xy: 475, 354
   size: 24, 29
   orig: 24, 29
   offset: 0, 0
   index: -1
 icon_money_small_red
   rotate: false
-  xy: 423, 385
+  xy: 423, 323
   size: 24, 29
   orig: 24, 29
   offset: 0, 0
@@ -223,56 +223,56 @@ icon_oil
   index: -1
 icon_prestige_small_blue
   rotate: false
-  xy: 365, 395
+  xy: 342, 333
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_prestige_small_green
   rotate: false
-  xy: 342, 364
+  xy: 369, 333
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_prestige_small_red
   rotate: false
-  xy: 369, 364
+  xy: 392, 395
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_satellite_blue
   rotate: false
-  xy: 423, 364
+  xy: 71, 32
   size: 19, 19
   orig: 19, 19
   offset: 0, 0
   index: -1
 icon_satellite_green
   rotate: false
-  xy: 71, 32
+  xy: 92, 32
   size: 19, 19
   orig: 19, 19
   offset: 0, 0
   index: -1
 icon_satellite_red
   rotate: false
-  xy: 92, 32
+  xy: 396, 426
   size: 19, 19
   orig: 19, 19
   offset: 0, 0
   index: -1
 icon_spy_blue
   rotate: false
-  xy: 449, 393
+  xy: 449, 331
   size: 21, 21
   orig: 21, 21
   offset: 0, 0
   index: -1
 icon_spy_green
   rotate: false
-  xy: 472, 393
+  xy: 472, 331
   size: 21, 21
   orig: 21, 21
   offset: 0, 0
@@ -286,35 +286,35 @@ icon_spy_red
   index: -1
 icon_supplies_small_blue
   rotate: false
-  xy: 392, 395
+  xy: 396, 364
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_supplies_small_green
   rotate: false
-  xy: 396, 364
+  xy: 396, 333
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_supplies_small_red
   rotate: false
-  xy: 356, 333
+  xy: 419, 416
   size: 25, 29
   orig: 25, 29
   offset: 0, 0
   index: -1
 icon_unity_small_blue
   rotate: false
-  xy: 167, 243
+  xy: 167, 212
   size: 29, 29
   orig: 29, 29
   offset: 0, 0
   index: -1
 icon_unity_small_green
   rotate: false
-  xy: 167, 212
+  xy: 167, 181
   size: 29, 29
   orig: 29, 29
   offset: 0, 0
@@ -349,7 +349,7 @@ icon_uranium_small_green
   index: -1
 icon_uranium_small_red
   rotate: false
-  xy: 229, 256
+  xy: 198, 187
   size: 29, 29
   orig: 29, 29
   offset: 0, 0
@@ -417,6 +417,13 @@ resource_meat_small
   orig: 32, 25
   offset: 0, 0
   index: -1
+resource_none_small
+  rotate: false
+  xy: 133, 179
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
 resource_oil_small
   rotate: false
   xy: 212, 341
@@ -468,42 +475,42 @@ resource_wood_small
   index: -1
 settings_less
   rotate: false
-  xy: 242, 383
+  xy: 132, 140
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_less_down
   rotate: false
-  xy: 274, 383
+  xy: 132, 101
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_less_over
   rotate: false
-  xy: 306, 383
+  xy: 242, 383
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more
   rotate: false
-  xy: 246, 344
+  xy: 274, 383
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more_down
   rotate: false
-  xy: 278, 344
+  xy: 306, 383
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more_over
   rotate: false
-  xy: 310, 344
+  xy: 246, 344
   size: 30, 37
   orig: 30, 37
   offset: 0, 0

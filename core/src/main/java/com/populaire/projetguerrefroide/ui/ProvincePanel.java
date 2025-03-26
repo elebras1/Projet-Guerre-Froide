@@ -135,12 +135,16 @@ public class ProvincePanel extends Table {
     }
 
     public void setResourceImage(String name) {
+        Drawable resource;
         if(name != null) {
-            Drawable resource = this.skinUi.getDrawable("resource_" + name + "_small");
-            this.resourceImage.setDrawable(resource);
-            this.resourceImage.setSize(resource.getMinWidth(), resource.getMinHeight());
-            this.resourceImage.setPosition(22, 160);
+            resource = this.skinUi.getDrawable("resource_" + name + "_small");
+        } else {
+            resource = this.skinUi.getDrawable("resource_none_small");
         }
+
+        this.resourceImage.setDrawable(resource);
+        this.resourceImage.setSize(resource.getMinWidth(), resource.getMinHeight());
+        this.resourceImage.setPosition(22, 160);
     }
 
     public void setProvinceName(String name) {
