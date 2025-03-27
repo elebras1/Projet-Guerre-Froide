@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.ui;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -174,7 +175,9 @@ public class Popup extends Table {
             public void drag(InputEvent event, float x, float y, int pointer) {
                 float deltaX = x - startX;
                 float deltaY = y - startY;
-                setPosition(getX() + deltaX, getY() + deltaY);
+                float newX = MathUtils.clamp(getX() + deltaX, 0, getStage().getWidth() - getWidth());
+                float newY = MathUtils.clamp(getY() + deltaY, 0, getStage().getHeight() - getHeight());
+                setPosition(newX, newY);
             }
         });
     }
