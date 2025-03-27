@@ -105,6 +105,18 @@ public class WorldService {
         return this.world.getSelectedProvince().getRegion().getBuildings().size();
     }
 
+    public float getResourceProducedOfSelectedProvince() {
+        return 0f;
+    }
+
+    public int getInfrastructureValueOfSelectedProvince() {
+        return 0;
+    }
+
+    public float getGuerillaValueOfSelectedProvince() {
+        return 0f;
+    }
+
     public boolean setCountryPlayer() {
         return this.world.setCountryPlayer();
     }

@@ -23,6 +23,9 @@ public class ProvincePanel extends Table {
     private Image resourceImage;
     private Label provinceName;
     private Label regionName;
+    private Label resourceProduced;
+    private Label infrastructureValue;
+    private Label guerillaValue;
     private Label populationRegion;
     private Label workersRegion;
     private Label developmentIndexRegion;
@@ -86,6 +89,8 @@ public class ProvincePanel extends Table {
         dataOverview.addActor(this.regionName);
         this.resourceImage = new Image();
         dataOverview.addActor(this.resourceImage);
+        this.resourceProduced = new Label("", labelStyleDanger20Dark);
+        dataOverview.addActor(this.resourceProduced);
         dataOverview.addActor(this.createImage(skin, "prov_pop_icon", 22, 67));
         this.populationRegion = new Label("", labelStyleDanger14);
         dataOverview.addActor(this.populationRegion);
@@ -102,7 +107,11 @@ public class ProvincePanel extends Table {
         this.industryRegion = new Label("", labelStyleDanger14);
         dataOverview.addActor(this.industryRegion);
         dataOverview.addActor(this.createImage(skin, "prov_build_infra", 162, 160));
+        this.infrastructureValue = new Label("", labelStyleDanger20Dark);
+        dataOverview.addActor(this.infrastructureValue);
         dataOverview.addActor(this.createImage(skin, "icon_militia_small", 285, 202));
+        this.guerillaValue = new Label("", labelStyleDanger20Dark);
+        dataOverview.addActor(this.guerillaValue);
 
         this.addActor(dataOverview);
     }
@@ -202,5 +211,24 @@ public class ProvincePanel extends Table {
                 this.countriesCoreFlagImages.get(i).remove();
             }
         }
+    }
+
+    public void setResourceProduced(float resourceProduced) {
+        this.resourceProduced.setText(String.valueOf(resourceProduced));
+        this.resourceProduced.setPosition(136 - this.resourceProduced.getMinWidth(), 178);
+    }
+
+    public void setInfrastructureValue(int infrastructureValue) {
+        this.infrastructureValue.setText(infrastructureValue + "%");
+        this.infrastructureValue.setPosition(245 - this.infrastructureValue.getMinWidth(), 178);
+    }
+
+    public void setGuerillaValue(float guerillaValue) {
+        String text = "-";
+        if(guerillaValue != 0f) {
+            text = String.valueOf(guerillaValue);
+        }
+        this.guerillaValue.setText(text);
+        this.guerillaValue.setPosition(355 - this.guerillaValue.getMinWidth(), 223);
     }
 }
