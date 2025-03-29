@@ -21,8 +21,8 @@ public class GameContext {
         this.assetManager = assetManager;
         this.cursorManager = new CursorManager();
         Skin skinFonts = this.assetManager.get("ui/fonts/fonts_skin.json");
-        this.labelStylePool = new LabelStylePool(skinFonts);
         this.settings = this.configurationManager.loadSettings();
+        this.labelStylePool = new LabelStylePool(skinFonts, this.settings.getLanguage());
         this.localisationManager.setLanguage(this.settings.getLanguage());
     }
 
