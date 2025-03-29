@@ -1,6 +1,6 @@
-info face="Another Typewriter" size=80 bold=0 italic=0 charset="ANSI" stretchH=95 smooth=1 aa=2 padding=0,0,0,0 spacing=2,2
+info face="Another Typewriter" size=60 bold=0 italic=0 charset="ANSI" stretchH=95 smooth=1 aa=2 padding=0,0,0,0 spacing=2,2
 common lineHeight=76 base=63 scaleW=512 scaleH=512 pages=1
-page id=0 file="kart_font.png"
+page id=0 file="kart_60.png"
 
 char id=32   x=509   y=0     width=1     height=0     xoffset=0     yoffset=76    xadvance=33    page=0  
 char id=33   x=489   y=50    width=12    height=45    xoffset=0     yoffset=18    xadvance=13    page=0  
@@ -12,7 +12,8 @@ char id=38   x=128   y=374   width=39    height=44    xoffset=0     yoffset=18  
 char id=39   x=328   y=451   width=10    height=18    xoffset=7     yoffset=19    xadvance=33    page=0  
 char id=40   x=428   y=0     width=15    height=58    xoffset=1     yoffset=9     xadvance=16    page=0  
 char id=41   x=265   y=0     width=14    height=59    xoffset=0     yoffset=8     xadvance=16    page=0  
-char id=44   x=314   y=458   width=12    height=22    xoffset=0     yoffset=52    xadvance=13    page=0  
+char id=44   x=314   y=458   width=12    height=22    xoffset=0     yoffset=52    xadvance=13    page=0
+char id=45   x=351   y=450   width=27    height=11    xoffset=0     yoffset=35    xadvance=28    page=0  
 char id=46   x=340   y=451   width=10    height=11    xoffset=0     yoffset=52    xadvance=11    page=0  
 char id=47   x=113   y=0     width=37    height=60    xoffset=0     yoffset=6     xadvance=38    page=0  
 char id=48   x=436   y=218   width=34    height=46    xoffset=1     yoffset=17    xadvance=35    page=0  
