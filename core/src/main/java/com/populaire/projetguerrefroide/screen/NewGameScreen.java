@@ -43,7 +43,6 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     private final Skin skinPortraits;
     private final Skin skinScrollbars;
     private final Skin skinMainMenuInGame;
-    private final Map<String, String> localisation;
     private Stage stage;
     private Debug debug;
     private HoverBox hoverBox;
@@ -76,13 +75,13 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
-        this.localisation = this.gameContext.getLocalisationManager().readNewgameCsv();
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readBookmarkCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readPoliticsCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readPopupCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readProvincesCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readLanguageCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readNewgameCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readBookmarkCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readPoliticsCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readPopupCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readProvincesCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readLanguageCsv());
         this.initializeUi();
         this.paused = false;
     }
@@ -98,9 +97,9 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.debug.setPosition(100, 90);
         this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
 
-        this.hoverBox = new HoverBox(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.localisation);
+        this.hoverBox = new HoverBox(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
 
-        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.localisation, this);
+        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.mainMenuInGame.setVisible(false);
         Table centerTable = new Table();
         centerTable.setFillParent(true);
@@ -109,10 +108,10 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         Table topTable = new Table();
         topTable.setFillParent(true);
         topTable.top();
-        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getConfigurationManager().loadBookmark(), this.localisation);
-        TitleBar titleBar = new TitleBar(this.skin, this.gameContext.getLabelStylePool(), this.localisation);
-        LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.localisation, this);
-        this.countrySelectedUi = new CountrySelected(this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.localisation);
+        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getConfigurationManager().loadBookmark(), this.gameContext.getLocalisation());
+        TitleBar titleBar = new TitleBar(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
+        this.countrySelectedUi = new CountrySelected(this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         topTable.add(scenarioSavegameSelector).align(Align.topLeft).expandX();
         topTable.add(titleBar).align(Align.top);
         topTable.add(this.countrySelectedUi).align(Align.topRight).expandX();
@@ -192,7 +191,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     @Override
     public void onQuitClicked(PopupListener listener) {
-        Popup popup = new Popup(this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.localisation,
+        Popup popup = new Popup(this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(),
             "QUIT_TITLE", "QUIT_DESC", true, false, listener);
         Table centerTable = new Table();
         centerTable.setFillParent(true);
@@ -252,8 +251,8 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
             this.countrySelectedUi.update(
                 this.worldService.getNameOfSelectedCountry(),
                 this.worldService.getIdOfSelectedCountry(),
-                ValueFormatter.formatValue(this.worldService.getPopulationAmountOfSelectedCountry()),
-                this.worldService.getGovernmentOfSelectedCountry().getName(), portraitNameFile, headOfState.getName(), this.localisation);
+                ValueFormatter.formatValue(this.worldService.getPopulationAmountOfSelectedCountry(), this.gameContext.getLocalisation()),
+                this.worldService.getGovernmentOfSelectedCountry().getName(), portraitNameFile, headOfState.getName(), this.gameContext.getLocalisation());
         } else {
             this.countrySelectedUi.hide();
         }

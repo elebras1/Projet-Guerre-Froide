@@ -6,16 +6,14 @@ import com.populaire.projetguerrefroide.entity.Government;
 import com.populaire.projetguerrefroide.entity.Ideology;
 import com.populaire.projetguerrefroide.entity.Minister;
 import com.populaire.projetguerrefroide.national.Attitude;
-import com.populaire.projetguerrefroide.national.Culture;
 import com.populaire.projetguerrefroide.national.Identity;
-import com.populaire.projetguerrefroide.national.Religion;
+import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.*;
 import java.util.List;
 
 public class Country {
     private final String id;
-    private final String name;
     private final int color;
     private Set<Region> regions;
     private List<LandProvince> provinces;
@@ -31,9 +29,8 @@ public class Country {
     private Attitude attitude;
     private List<MapLabel> labels;
 
-    public Country(String id, String name, int color) {
+    public Country(String id, int color) {
         this.id = id;
-        this.name = name;
         this.color = color;
         this.regions = new ObjectSet<>();
         this.provinces = new ObjectList<>();
@@ -50,10 +47,6 @@ public class Country {
 
     public String getId() {
         return this.id;
-    }
-
-    public String getName() {
-        return this.name;
     }
 
     public int getColor() {
@@ -188,11 +181,15 @@ public class Country {
         return population;
     }
 
+    public String getName() {
+        return this.labels.getFirst().getLabel();
+    }
+
     public List<MapLabel> getLabels() {
         return this.labels;
     }
 
-    public void createLabels() {
+    public void createLabels(String name, LabelStylePool labelStylePool) {
         this.labels = new ObjectList<>();
         Set<LandProvince> visitedProvinces = new ObjectSet<>();
 
@@ -200,14 +197,14 @@ public class Country {
             if (!visitedProvinces.contains(province)) {
                 List<LandProvince> connectedProvinces = new ObjectList<>();
                 this.getConnectedProvinces(province, visitedProvinces, connectedProvinces);
-                if(connectedProvinces.size() > 5 || (connectedProvinces.size() == this.provinces.size() && connectedProvinces.size() > 1)) {
+                if(connectedProvinces.size() > 5 || (connectedProvinces.size() == this.provinces.size() && !connectedProvinces.isEmpty())) {
                     IntList positionsProvinces = new IntList();
                     IntList pixelsBorderProvinces = new IntList();
                     for(LandProvince connectedProvince : connectedProvinces) {
                         positionsProvinces.add(connectedProvince.getPosition("default"));
                         pixelsBorderProvinces.addAll(connectedProvince.getBorderPixels());
                     }
-                    MapLabel label = new MapLabel(this.getName(), pixelsBorderProvinces, positionsProvinces);
+                    MapLabel label = new MapLabel(name, labelStylePool, pixelsBorderProvinces, positionsProvinces);
                     this.labels.add(label);
                 }
             }
@@ -238,7 +235,6 @@ public class Country {
     public String toString() {
         return "Country{" +
                 "id='" + this.id + '\'' +
-                ", name='" + this.name + '\'' +
                 ", color='" + this.color + '\'' +
                 '}';
     }

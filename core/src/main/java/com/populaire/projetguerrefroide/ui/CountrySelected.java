@@ -51,7 +51,7 @@ public class CountrySelected extends Table {
         this.government.setBounds(110, 137, 160, 30);
         this.government.setAlignment(Align.right);
 
-        Label countryPopulationDescription = new Label("Population:", labelStyleJockey14);
+        Label countryPopulationDescription = new Label(localisation.get("POPULATION"), labelStyleJockey14);
         countryPopulationDescription.setBounds(110, 109, 156, 20);
         countryPopulationDescription.setAlignment(Align.left);
 

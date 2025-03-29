@@ -30,7 +30,7 @@ public class MainMenuInGame extends Table implements PopupListener {
 
     public MainMenuInGame(Skin skin, Skin skinUi, Skin skinScrollbars, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuInGameListener listener) {
         this.languages = new ObjectList<>();
-        this.languages.addAll(Arrays.asList("ENGLISH", "FRENCH", "GERMAN", "POLSKI", "SPANISH", "ITALIAN", "SWEDISH", "CZECH", "HUNGARIAN", "DUTCH", "PORTUGUESE", "RUSSIAN", "FINNISH"));
+        this.languages.addAll(Arrays.asList("ENGLISH", "FRENCH", "GERMAN", "POLSKI", "SPANISH", "ITALIAN", "SWEDISH", "CZECH", "HUNGARIAN", "DUTCH", "PORTUGUESE", "RUSSIAN", "FINNISH", "CHINESE"));
         this.framerates = new ObjectList<>();
         this.framerates.addAll(Arrays.asList("30", "60", "120", "144", "240", "300", "360", "420", "480", "540", "600"));
         this.skin = skin;

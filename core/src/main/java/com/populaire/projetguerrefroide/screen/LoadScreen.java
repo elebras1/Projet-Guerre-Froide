@@ -50,7 +50,8 @@ public class LoadScreen implements Screen {
     public void show() {
         this.worldService.getAsyncExecutor().submit(() -> {
             long startTime = System.currentTimeMillis();
-            this.worldService.createWorld();
+            this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readCountriesCsv());
+            this.worldService.createWorld(this.gameContext);
 
             Gdx.app.postRunnable(() -> {
                 this.gameContext.getSettings().applyGraphicsSettings();
