@@ -2,10 +2,13 @@ package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.data.LocalisationManager;
 import com.populaire.projetguerrefroide.data.ConfigurationManager;
 import com.populaire.projetguerrefroide.ui.CursorManager;
+
+import java.util.Map;
 
 public class GameContext {
     private final ConfigurationManager configurationManager;
@@ -13,6 +16,7 @@ public class GameContext {
     private final AssetManager assetManager;
     private final CursorManager cursorManager;
     private final LabelStylePool labelStylePool;
+    private final Map<String, String> localisation;
     private Settings settings;
 
     public GameContext(AssetManager assetManager) {
@@ -24,6 +28,7 @@ public class GameContext {
         this.settings = this.configurationManager.loadSettings();
         this.labelStylePool = new LabelStylePool(skinFonts, this.settings.getLanguage());
         this.localisationManager.setLanguage(this.settings.getLanguage());
+        this.localisation = new ObjectObjectMap<>();
     }
 
     public ConfigurationManager getConfigurationManager() {
@@ -52,6 +57,14 @@ public class GameContext {
 
     public void setSettings(Settings settings) {
         this.settings = settings;
+    }
+
+    public Map<String, String> getLocalisation() {
+        return this.localisation;
+    }
+
+    public void putAllLocalisation(Map<String, String> localisation) {
+        this.localisation.putAll(localisation);
     }
 
     public void dispose() {

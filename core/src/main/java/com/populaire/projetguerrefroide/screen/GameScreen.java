@@ -43,7 +43,6 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     private final Skin skinProvince;
     private final Skin skinMainMenuInGame;
     private final Skin skinMinimap;
-    private final Map<String, String> localisation;
     private final Stage stage;
     private final Debug debug;
     private final ProvincePanel provincePanel;
@@ -74,15 +73,15 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
 
-        this.localisation = this.gameContext.getLocalisationManager().readPoliticsCsv();
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readPopupCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readProvincesCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readRegionsCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readLanguageCsv());
-        this.localisation.putAll(this.gameContext.getLocalisationManager().readInterfaceCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readPoliticsCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readPopupCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readProvincesCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readRegionsCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readLanguageCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readInterfaceCsv());
 
-        this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.localisation);
+        this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new Stage(new ScreenViewport());
         this.initializeUi();
@@ -101,11 +100,11 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
         this.provincePanel.setPosition(0, 0);
 
-        this.hoverBox = new HoverBox(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.localisation);
+        this.hoverBox = new HoverBox(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
 
         Table centerTable = new Table();
         centerTable.setFillParent(true);
-        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.localisation, this);
+        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.mainMenuInGame.setVisible(false);
         centerTable.add(this.mainMenuInGame).center();
 
@@ -114,7 +113,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         topTable.top();
         topTable.pad(5);
 
-        Minimap minimap = new Minimap(this.skinMinimap, this.skinUi, this.gameContext.getLabelStylePool(), this.localisation, this);
+        Minimap minimap = new Minimap(this.skinMinimap, this.skinUi, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         minimap.setPosition(Gdx.graphics.getWidth() - minimap.getWidth(), 0);
 
         this.stage.addActor(this.hoverBox);
@@ -203,7 +202,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
     @Override
     public void onQuitClicked(PopupListener listener) {
-        Popup popup = new Popup(this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.localisation,
+        Popup popup = new Popup(this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(),
             "QUIT_TITLE", "QUIT_DESC", this.worldService.getCountryIdPlayer(), true, false, listener);
         Table centerTable = new Table();
         centerTable.setFillParent(true);

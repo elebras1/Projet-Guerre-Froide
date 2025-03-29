@@ -18,6 +18,7 @@ import com.populaire.projetguerrefroide.util.Named;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.List;
+import java.util.Map;
 
 public class WorldService {
     private final AsyncExecutor asyncExecutor;
@@ -34,8 +35,8 @@ public class WorldService {
         this.elements = new ObjectList<>();
     }
 
-    public void createWorld() {
-        this.world = this.dataManager.createWorldThreadSafe(this.getGameEntities(), this.asyncExecutor);
+    public void createWorld(GameContext gameContext) {
+        this.world = this.dataManager.createWorldThreadSafe(this.getGameEntities(), this.asyncExecutor, gameContext);
     }
 
     public AsyncExecutor getAsyncExecutor() {

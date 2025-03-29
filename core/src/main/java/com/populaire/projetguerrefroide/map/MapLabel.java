@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectList;
+import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class MapLabel {
     public int centroid;
     private int[] farthestPoints;
     private List<CurvePoint> points;
-    private static final BitmapFont font = new BitmapFont(Gdx.files.internal("ui/fonts/kart_font.fnt"), true);
+    private final BitmapFont font;
     private float fontScale;
     private static class CurvePoint {
         int center;
@@ -24,20 +25,22 @@ public class MapLabel {
         float angle;
     }
 
-    static {
-        font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-    }
-
-    public MapLabel(String label, IntList borderPixels, IntList positionsProvinces) {
+    public MapLabel(String label, LabelStylePool labelStylePool, IntList borderPixels, IntList positionsProvinces) {
+        this.font = labelStylePool.getLabelStyle("kart_60").font;
+        this.font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         this.label = label;
         IntList convexHull = this.getConvexHull(borderPixels);
         this.setCentroid(convexHull, positionsProvinces);
         this.findFarthestPoints(convexHull);
         GlyphLayout layout = new GlyphLayout();
-        layout.setText(font, this.label);
+        layout.setText(this.font, this.label);
         this.setFontScale(layout);
         this.calculateQuadraticBezierCurve();
         this.setPointsOrigin(layout);
+    }
+
+    public String getLabel() {
+        return this.label;
     }
 
     private IntList getConvexHull(IntList borderPixels) {
@@ -365,7 +368,7 @@ public class MapLabel {
                 glyphWidth,
                 glyphHeight,
                 1,
-                1,
+                -1,
                 curvePoint.angle
             );
 
@@ -378,7 +381,7 @@ public class MapLabel {
                 glyphWidth,
                 glyphHeight,
                 1,
-                1,
+                -1,
                 curvePoint.angle
             );
 
@@ -391,7 +394,7 @@ public class MapLabel {
                 glyphWidth,
                 glyphHeight,
                 1,
-                1,
+                -1,
                 curvePoint.angle
             );
         }

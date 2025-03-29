@@ -13,6 +13,7 @@ import com.github.tommyettinger.ds.ObjectIntMap;
 import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.national.Culture;
 import com.populaire.projetguerrefroide.national.Religion;
+import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
 
 import java.util.*;
@@ -49,7 +50,7 @@ public class World {
     private Mesh meshResources;
     private MapMode mapMode;
 
-    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, AsyncExecutor asyncExecutor) {
+    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, AsyncExecutor asyncExecutor, GameContext gameContext) {
         this.countries = countries;
         this.provinces = provinces;
         this.waterProvinces = waterProvinces;
@@ -70,7 +71,7 @@ public class World {
         this.mapMode = MapMode.POLITICAL;
 
         for(Country country : this.countries) {
-            country.createLabels();
+            country.createLabels(gameContext.getLocalisation().get(country.getId()), gameContext.getLabelStylePool());
         }
         this.mapModeTexture = new Texture(this.mapModePixmap);
         this.mapModeTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);

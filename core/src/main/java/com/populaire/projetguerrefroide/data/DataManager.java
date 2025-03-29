@@ -16,6 +16,7 @@ import com.populaire.projetguerrefroide.economy.population.PopulationType;
 import com.populaire.projetguerrefroide.entity.*;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.national.*;
+import com.populaire.projetguerrefroide.service.GameContext;
 
 import java.io.*;
 import java.text.ParseException;
@@ -68,7 +69,7 @@ public class DataManager {
         return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, populationTypes, ministerTypes, terrains);
     }
 
-    public World createWorldThreadSafe(GameEntities gameEntities, AsyncExecutor asyncExecutor) {
+    public World createWorldThreadSafe(GameEntities gameEntities, AsyncExecutor asyncExecutor, GameContext gameContext) {
         Map<String, Country> countries = this.loadCountries(gameEntities.getMinisterTypes(), gameEntities.getIdeologies());
         IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(15000);
         IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(4000);
@@ -78,7 +79,7 @@ public class DataManager {
         final CountDownLatch latch = new CountDownLatch(1);
 
         Gdx.app.postRunnable(() -> {
-            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, asyncExecutor));
+            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, asyncExecutor, gameContext));
             latch.countDown();
         });
 
@@ -138,7 +139,7 @@ public class DataManager {
         try {
             JsonNode countryJson = this.openJson(countryFileName);
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            Country country = new Country(countryId, countryName.replace("common/", ""), this.parseColor(countryJson.get("color")));
+            Country country = new Country(countryId, this.parseColor(countryJson.get("color")));
 
             JsonNode ministersNode = countryJson.get("ministers");
             if (ministersNode != null && ministersNode.isObject()) {
