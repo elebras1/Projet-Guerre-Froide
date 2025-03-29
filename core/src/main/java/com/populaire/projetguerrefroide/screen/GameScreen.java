@@ -256,8 +256,8 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.provincePanel.setRegionName(this.worldService.getRegionIdOfSelectedProvince());
         this.provincePanel.setTerrainImage(this.worldService.getTerrainOfSelectedProvince());
         this.provincePanel.setResourceImage(this.worldService.getResourceOfSelectedProvince());
-        this.provincePanel.setPopulationRegion(this.worldService.getPopulationRegionOfSelectedProvince());
-        this.provincePanel.setWorkersRegion(this.worldService.getWorkersRegionOfSelectedProvince());
+        this.provincePanel.setPopulationRegion(this.worldService.getPopulationRegionOfSelectedProvince(this.gameContext.getLocalisation()));
+        this.provincePanel.setWorkersRegion(this.worldService.getWorkersRegionOfSelectedProvince(this.gameContext.getLocalisation()));
         this.provincePanel.setDevelopmentIndexRegion(0);
         this.provincePanel.setIncomeRegion(0);
         this.provincePanel.setIndustryRegion(this.worldService.getNumberIndustryRegionOfSelectedProvince());

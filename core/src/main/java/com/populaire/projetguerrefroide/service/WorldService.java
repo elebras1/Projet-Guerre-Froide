@@ -84,22 +84,22 @@ public class WorldService {
         return null;
     }
 
-    public String getPopulationRegionOfSelectedProvince() {
+    public String getPopulationRegionOfSelectedProvince(Map<String, String> localisation) {
         int population = 0;
         for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
             population += province.getPopulation().getAmount();
         }
 
-        return ValueFormatter.formatValue(population);
+        return ValueFormatter.formatValue(population, localisation);
     }
 
-    public String getWorkersRegionOfSelectedProvince() {
+    public String getWorkersRegionOfSelectedProvince(Map<String, String> localisation) {
         int workers = 0;
         for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
             workers += province.getPopulation().getAmountAdults();
         }
 
-        return ValueFormatter.formatValue(workers);
+        return ValueFormatter.formatValue(workers, localisation);
     }
 
     public int getNumberIndustryRegionOfSelectedProvince() {
