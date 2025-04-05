@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class WorldService {
     private final AsyncExecutor asyncExecutor;
-    private final WorldDao dataManager;
+    private final WorldDao worldDao;
     private GameEntities gameEntities;
     private World world;
     private final ObjectIntMap<String> elementPercentages;
@@ -30,13 +30,13 @@ public class WorldService {
 
     public WorldService() {
         this.asyncExecutor = new AsyncExecutor(2);;
-        this.dataManager = new WorldDao();
+        this.worldDao = new WorldDao();
         this.elementPercentages = new ObjectIntMap<>();
         this.elements = new ObjectList<>();
     }
 
     public void createWorld(GameContext gameContext) {
-        this.world = this.dataManager.createWorldThreadSafe(this.getGameEntities(), this.asyncExecutor, gameContext);
+        this.world = this.worldDao.createWorldThreadSafe(this.getGameEntities(), this.asyncExecutor, gameContext);
     }
 
     public AsyncExecutor getAsyncExecutor() {
@@ -45,7 +45,7 @@ public class WorldService {
 
     public GameEntities getGameEntities() {
         if(this.gameEntities == null) {
-            this.gameEntities = this.dataManager.createGameEntities();
+            this.gameEntities = this.worldDao.createGameEntities();
         }
 
         return this.gameEntities;

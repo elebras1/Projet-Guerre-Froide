@@ -11,8 +11,8 @@ import com.populaire.projetguerrefroide.ui.CursorManager;
 import java.util.Map;
 
 public class GameContext {
-    private final ConfigurationDao configurationManager;
-    private final LocalisationDao localisationManager;
+    private final ConfigurationDao configurationDao;
+    private final LocalisationDao localisationDao;
     private final AssetManager assetManager;
     private final CursorManager cursorManager;
     private final LabelStylePool labelStylePool;
@@ -20,23 +20,23 @@ public class GameContext {
     private Settings settings;
 
     public GameContext(AssetManager assetManager) {
-        this.configurationManager = new ConfigurationDao();
-        this.localisationManager = new LocalisationDao();
+        this.configurationDao = new ConfigurationDao();
+        this.localisationDao = new LocalisationDao();
         this.assetManager = assetManager;
         this.cursorManager = new CursorManager();
         Skin skinFonts = this.assetManager.get("ui/fonts/fonts_skin.json");
-        this.settings = this.configurationManager.loadSettings();
+        this.settings = this.configurationDao.loadSettings();
         this.labelStylePool = new LabelStylePool(skinFonts, this.settings.getLanguage());
-        this.localisationManager.setLanguage(this.settings.getLanguage());
+        this.localisationDao.setLanguage(this.settings.getLanguage());
         this.localisation = new ObjectObjectMap<>();
     }
 
-    public ConfigurationDao getConfigurationManager() {
-        return this.configurationManager;
+    public ConfigurationDao getConfigurationDao() {
+        return this.configurationDao;
     }
 
-    public LocalisationDao getLocalisationManager() {
-        return this.localisationManager;
+    public LocalisationDao getLocalisationDao() {
+        return this.localisationDao;
     }
 
     public AssetManager getAssetManager() {
@@ -68,7 +68,7 @@ public class GameContext {
     }
 
     public void dispose() {
-        this.configurationManager.saveSettings(this.settings);
+        this.configurationDao.saveSettings(this.settings);
         this.assetManager.dispose();
         this.cursorManager.dispose();
     }

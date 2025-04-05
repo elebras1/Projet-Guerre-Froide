@@ -22,9 +22,6 @@ import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
 
-import java.util.Map;
-import java.util.stream.Collectors;
-
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
@@ -73,13 +70,13 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
 
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readPoliticsCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readPopupCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readProvincesCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readRegionsCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readLanguageCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readInterfaceCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readPoliticsCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readMainMenuInGameCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readPopupCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readProvincesCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readRegionsCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readLanguageCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readInterfaceCsv());
 
         this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
@@ -189,7 +186,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     @Override
     public void onApplySettingsClicked(Settings settings) {
         this.gameContext.setSettings(settings);
-        this.gameContext.getConfigurationManager().saveSettings(settings);
+        this.gameContext.getConfigurationDao().saveSettings(settings);
     }
 
     @Override

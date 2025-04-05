@@ -12,7 +12,6 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.populaire.projetguerrefroide.configuration.Settings;
@@ -22,8 +21,6 @@ import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
-
-import java.util.Map;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
@@ -75,13 +72,13 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readNewgameCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readBookmarkCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readPoliticsCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readMainMenuInGameCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readPopupCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readProvincesCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationManager().readLanguageCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readNewgameCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readBookmarkCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readPoliticsCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readMainMenuInGameCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readPopupCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readProvincesCsv());
+        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readLanguageCsv());
         this.initializeUi();
         this.paused = false;
     }
@@ -108,7 +105,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         Table topTable = new Table();
         topTable.setFillParent(true);
         topTable.top();
-        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getConfigurationManager().loadBookmark(), this.gameContext.getLocalisation());
+        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getConfigurationDao().loadBookmark(), this.gameContext.getLocalisation());
         TitleBar titleBar = new TitleBar(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.countrySelectedUi = new CountrySelected(this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
@@ -178,7 +175,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     @Override
     public void onApplySettingsClicked(Settings settings) {
         this.gameContext.setSettings(settings);
-        this.gameContext.getConfigurationManager().saveSettings(settings);
+        this.gameContext.getConfigurationDao().saveSettings(settings);
     }
 
     @Override
