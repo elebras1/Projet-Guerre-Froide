@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.data.DataManager;
+import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.economy.good.ResourceGood;
 import com.populaire.projetguerrefroide.entity.GameEntities;
 import com.populaire.projetguerrefroide.entity.Government;
@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class WorldService {
     private final AsyncExecutor asyncExecutor;
-    private final DataManager dataManager;
+    private final WorldDao dataManager;
     private GameEntities gameEntities;
     private World world;
     private final ObjectIntMap<String> elementPercentages;
@@ -30,7 +30,7 @@ public class WorldService {
 
     public WorldService() {
         this.asyncExecutor = new AsyncExecutor(2);;
-        this.dataManager = new DataManager();
+        this.dataManager = new WorldDao();
         this.elementPercentages = new ObjectIntMap<>();
         this.elements = new ObjectList<>();
     }

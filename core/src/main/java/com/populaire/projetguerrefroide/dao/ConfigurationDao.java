@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.data;
+package com.populaire.projetguerrefroide.dao;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -14,14 +14,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class ConfigurationManager {
+public class ConfigurationDao {
     private final ObjectMapper mapper;
     private final String commonPath = "common/";
     private final String settingsPath = "settings/";
     private final String bookmarkJsonFile = this.commonPath + "bookmark.json";
     private final String settingsJsonFile = this.settingsPath + "settings.json";
 
-    public ConfigurationManager() {
+    public ConfigurationDao() {
         this.mapper = new ObjectMapper();
     }
 

@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.data;
+package com.populaire.projetguerrefroide.dao;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -26,7 +26,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class DataManager {
+public class WorldDao {
     private final String commonPath = "common/";
     private final String mapPath = "map/";
     private final String historyPath = "history/";

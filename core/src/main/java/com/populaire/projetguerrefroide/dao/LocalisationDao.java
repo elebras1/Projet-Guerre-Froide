@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.data;
+package com.populaire.projetguerrefroide.dao;
 
 import com.badlogic.gdx.Gdx;
 import com.github.tommyettinger.ds.ObjectObjectMap;
@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Map;
 
-public class LocalisationManager {
+public class LocalisationDao {
     private final String localisationPath = "localisation/";
     private final String provincesCsvFile = this.localisationPath + "provinces.csv";
     private final String countriesCsvFile = this.localisationPath + "countries.csv";
