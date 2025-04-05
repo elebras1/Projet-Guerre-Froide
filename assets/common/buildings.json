@@ -391,7 +391,7 @@
       },
       "input_goods": {
         "steel": 5,
-        "rare_metals" : 2,
+        "rare_metals": 2,
         "inorganic_chemicals": 0.5
       },
       "output_goods": {
@@ -524,34 +524,90 @@
   "special_building": {
     "administration": {
       "cost": 5000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 365
     },
     "military_academy": {
       "cost": 2000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 730
     },
     "nuclear_test_site": {
       "cost": 1500,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3
     },
     "rocket_test_site": {
       "cost": 750,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3
     },
     "financial_district": {
       "cost": 1000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3
     },
     "strategical_storage": {
       "cost": 250,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3
     },
     "intelligence_center": {
       "cost": 500,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3
     },
     "sdi_site": {
       "cost": 3000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3,
       "modifier": {
         "sdi_missile_defense": 5
@@ -559,6 +615,13 @@
     },
     "nuclear_silo": {
       "cost": 2000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 1,
       "modifier": {
         "ammo_store": 4
@@ -566,14 +629,33 @@
     },
     "spaceport": {
       "cost": 2500,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3
     },
     "national_monument": {
       "cost": 5000,
+      "goods_cost": {
+        "cement": 30,
+        "steel": 30,
+        "machine_parts": 20
+      },
       "time": 3
     },
     "university": {
       "cost": 10000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3,
       "modifier": {
         "industry_physics_cost": {
@@ -592,6 +674,13 @@
     },
     "agriculture_research_center": {
       "cost": 10000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3,
       "modifier": {
         "industry_agriculture_mechanized_cost": {
@@ -602,6 +691,13 @@
     },
     "land_research_center": {
       "cost": 2000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3,
       "modifier": {
         "small_arms_cost": {
@@ -612,6 +708,13 @@
     },
     "air_research_center": {
       "cost": 2000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3,
       "modifier": {
         "aircraftavionics_cost": {
@@ -622,6 +725,13 @@
     },
     "naval_research_center": {
       "cost": 2000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3,
       "modifier": {
         "naval_engineering_cost": {
@@ -632,13 +742,27 @@
     },
     "early_warning_site": {
       "cost": 3000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 3
     }
   },
   "development_building": {
     "air_base": {
       "onmap": true,
-      "cost": 2,
+      "cost": 15000,
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 20,
+        "electronic_components": 10,
+        "computers": 5
+      },
       "time": 180,
       "max_level": 10,
       "modifier": {
@@ -647,7 +771,14 @@
     },
     "naval_base": {
       "onmap": true,
-      "cost": 5,
+      "cost": 15000,
+      "goods_cost": {
+        "cement": 200,
+        "steel": 200,
+        "machine_parts": 50,
+        "aeroplanes": 40,
+        "weaponry": 30
+      },
       "time": 180,
       "max_level": 10,
       "modifier": {
@@ -656,7 +787,14 @@
     },
     "coastal_fort": {
       "onmap": false,
-      "cost": 5,
+      "cost": 15000,
+      "goods_cost": {
+        "cement": 200,
+        "steel": 200,
+        "machine_parts": 50,
+        "ships": 40,
+        "weaponry": 30
+      },
       "time": 180,
       "modifier": {
         "coastal_fort_level": 1
@@ -665,7 +803,14 @@
     },
     "land_fort": {
       "onmap": false,
-      "cost": 5,
+      "cost": 15000,
+      "goods_cost": {
+        "cement": 200,
+        "steel": 200,
+        "machine_parts": 50,
+        "armoured_vehicles": 40,
+        "weaponry": 30
+      },
       "time": 180,
       "modifier": {
         "fort_level": 1
@@ -674,7 +819,14 @@
     },
     "anti_air": {
       "onmap": false,
-      "cost": 3,
+      "cost": 15000,
+      "goods_cost": {
+        "cement": 150,
+        "steel": 200,
+        "machine_parts": 50,
+        "armoured_vehicles": 10,
+        "weaponry": 40
+      },
       "time": 60,
       "modifier": {
         "anti_air_level": 1
@@ -684,6 +836,11 @@
     "railway": {
       "onmap": false,
       "cost": 1000,
+      "goods_cost": {
+        "cement": 100,
+        "steel": 100,
+        "machine_parts": 50
+      },
       "time": 365,
       "modifier": {
         "infrastructure": 0.1
@@ -692,7 +849,14 @@
     },
     "radar_station": {
       "onmap": false,
-      "cost": 2,
+      "cost": 2000,
+      "goods_cost": {
+        "cement": 100,
+        "steel": 100,
+        "machine_parts": 50,
+        "electronic_components": 15,
+        "computers": 10
+      },
       "time": 180,
       "modifier": {
         "radar_level": 1
@@ -701,13 +865,26 @@
     },
     "nuclear_reactor": {
       "onmap": false,
-      "cost": 50,
+      "cost": 18000,
+      "goods_cost": {
+        "cement": 300,
+        "steel": 200,
+        "machine_parts": 60,
+        "computers": 10
+      },
       "time": 180,
       "max_level": 10
     },
     "rocket_test": {
       "onmap": false,
-      "cost": 20,
+      "cost": 12000,
+      "goods_cost": {
+        "cement": 100,
+        "aluminium": 40,
+        "machine_parts": 20,
+        "weaponry": 50,
+        "computers": 20
+      },
       "time": 180,
       "max_level": 10
     }

@@ -1,14 +1,19 @@
 package com.populaire.projetguerrefroide.economy.building;
 
+import com.github.tommyettinger.ds.ObjectFloatMap;
+import com.populaire.projetguerrefroide.economy.good.Good;
+
 import java.util.Objects;
 
 public abstract class Building {
     private final String name;
     private final short time;
+    private final ObjectFloatMap<Good> goodsCost;
 
-    public Building(String name, short time) {
+    public Building(String name, short time, ObjectFloatMap<Good> goodsCost) {
         this.name = name;
         this.time = time;
+        this.goodsCost = goodsCost;
     }
 
     public String getName() {
@@ -21,6 +26,10 @@ public abstract class Building {
 
     public boolean isOnMap() {
         return false;
+    }
+
+    public ObjectFloatMap<Good> getGoodsCost() {
+        return this.goodsCost;
     }
 
     @Override

@@ -6,16 +6,14 @@ import com.populaire.projetguerrefroide.economy.good.Good;
 public class EconomyBuilding extends Building {
     private final ProductionType baseType;
     private final ProductionType artisansType;
-    private final ObjectFloatMap<Good> goodsCost;
     private final ObjectFloatMap<Good> inputGoods;
     private final ObjectFloatMap<Good> outputGoods;
     private final short maxLevel;
 
     public EconomyBuilding(ProductionType baseTemplate, ProductionType artisansTemplate, String name, short time, ObjectFloatMap<Good> goodsCost, ObjectFloatMap<Good> inputGoods, ObjectFloatMap<Good> outputGoods, short maxLevel) {
-        super(name, time);
+        super(name, time, goodsCost);
         this.baseType = baseTemplate;
         this.artisansType = artisansTemplate;
-        this.goodsCost = goodsCost;
         this.inputGoods = inputGoods;
         this.outputGoods = outputGoods;
         this.maxLevel = maxLevel;
@@ -27,10 +25,6 @@ public class EconomyBuilding extends Building {
 
     public ProductionType getArtisansType() {
         return this.artisansType;
-    }
-
-    public ObjectFloatMap<Good> getGoodsCost() {
-        return this.goodsCost;
     }
 
     public ObjectFloatMap<Good> getInputGoods() {
@@ -49,7 +43,7 @@ public class EconomyBuilding extends Building {
     public String toString() {
         return "EconomyBuilding{" +
             "name='" + this.getName() + '\'' +
-            ", goodsCost=" + this.goodsCost +
+            ", goodsCost=" + this.getGoodsCost() +
             ", time=" + this.getTime() +
             ", onMap=" + this.isOnMap() +
             ", baseType=" + this.baseType +

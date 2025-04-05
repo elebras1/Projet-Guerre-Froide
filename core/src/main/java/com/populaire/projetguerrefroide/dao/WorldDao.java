@@ -727,11 +727,17 @@ public class WorldDao {
             specialBuilding.fields().forEachRemaining(entry -> {
                 String buildingName = entry.getKey();
                 int cost = entry.getValue().get("cost").intValue();
+                JsonNode goodsCostNode = entry.getValue().get("goods_cost");
+                ObjectFloatMap<Good> goodsCost = new ObjectFloatMap<>();
+                goodsCostNode.fields().forEachRemaining(goodCost -> {
+                    Good good = goods.get(goodCost.getKey());
+                    goodsCost.put(good, (float) goodCost.getValue().asDouble());
+                });
                 short time = entry.getValue().get("time").shortValue();
 
                 JsonNode modifiersNode = entry.getValue().get("modifier");
                 if(modifiersNode == null) {
-                    buildings.put(buildingName, new SpecialBuilding(buildingName, cost, time));
+                    buildings.put(buildingName, new SpecialBuilding(buildingName, cost, time, goodsCost));
                 } else {
                     List<Modifier> modifiers = new ObjectList<>();
                     modifiersNode.fields().forEachRemaining(modifierEntry -> {
@@ -745,7 +751,7 @@ public class WorldDao {
                             modifiers.add(new Modifier(modifierName, value, modifierType));
                         }
                     });
-                    buildings.put(buildingName, new SpecialBuilding(buildingName, cost, time, modifiers));
+                    buildings.put(buildingName, new SpecialBuilding(buildingName, cost, time, goodsCost, modifiers));
                 }
             });
 
@@ -753,16 +759,22 @@ public class WorldDao {
             developmentBuilding.fields().forEachRemaining(entry -> {
                 String buildingName = entry.getKey();
                 int cost = entry.getValue().get("cost").intValue();
+                JsonNode goodsCostNode = entry.getValue().get("goods_cost");
+                ObjectFloatMap<Good> goodsCost = new ObjectFloatMap<>();
+                goodsCostNode.fields().forEachRemaining(goodCost -> {
+                    Good good = goods.get(goodCost.getKey());
+                    goodsCost.put(good, (float) goodCost.getValue().asDouble());
+                });
                 short time = entry.getValue().get("time").shortValue();
                 boolean onMap = entry.getValue().get("onmap").booleanValue();
                 short maxLevel = entry.getValue().get("max_level").shortValue();
                 JsonNode modifierNode = entry.getValue().get("modifier");
                 if(modifierNode == null) {
-                    buildings.put(buildingName, new DevelopmentBuilding(buildingName, cost, time, onMap, maxLevel));
+                    buildings.put(buildingName, new DevelopmentBuilding(buildingName, cost, time, goodsCost, onMap, maxLevel));
                 } else if(modifierNode.size() == 1) {
                     String modifierName = modifierNode.fieldNames().next();
                     float modifierValue = modifierNode.get(modifierName).floatValue();
-                    buildings.put(buildingName, new DevelopmentBuilding(buildingName, cost, time, onMap, maxLevel, new Modifier(modifierName, modifierValue)));
+                    buildings.put(buildingName, new DevelopmentBuilding(buildingName, cost, time, goodsCost, onMap, maxLevel, new Modifier(modifierName, modifierValue)));
                 }
             });
         } catch (Exception e) {

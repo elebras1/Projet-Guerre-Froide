@@ -1,21 +1,23 @@
 package com.populaire.projetguerrefroide.economy.building;
 
+import com.github.tommyettinger.ds.ObjectFloatMap;
+import com.populaire.projetguerrefroide.economy.good.Good;
 import com.populaire.projetguerrefroide.entity.Modifier;
 
 import java.util.List;
 
-public class SpecialBuilding extends Building{
+public class SpecialBuilding extends Building {
     private final int cost;
     private final List<Modifier> modifiers;
 
-    public SpecialBuilding(String name, int cost, short time, List<Modifier> modifiers) {
-        super(name, time);
+    public SpecialBuilding(String name, int cost, short time, ObjectFloatMap<Good> goodsCost, List<Modifier> modifiers) {
+        super(name, time, goodsCost);
         this.cost = cost;
         this.modifiers = modifiers;
     }
 
-    public SpecialBuilding(String name, int cost, short time) {
-        super(name, time);
+    public SpecialBuilding(String name, int cost, short time, ObjectFloatMap<Good> goodsCost) {
+        super(name, time, goodsCost);
         this.cost = cost;
         this.modifiers = null;
     }
