@@ -123,7 +123,7 @@ public class WorldDao {
             JsonNode countriesJson = this.openJson(this.countriesJsonFiles);
             countriesJson.fields().forEachRemaining(entry -> {
                 String countryFileName = this.commonPath + entry.getValue().asText();
-                countries.put(entry.getKey(), this.readCountryJson(countryFileName, entry.getKey(), parseFileName(countryFileName), ministerTypes, ideologies));
+                countries.put(entry.getKey(), this.readCountryJson(countryFileName, entry.getKey(), ministerTypes, ideologies));
             });
         } catch (Exception e) {
             System.out.println("loadProvinces : " + e);
@@ -131,11 +131,7 @@ public class WorldDao {
         return countries;
     }
 
-    private String parseFileName(String path) {
-        return path.replace("countries/", "").replace(".json", "");
-    }
-
-    private Country readCountryJson(String countryFileName, String countryId, String countryName, Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
+    private Country readCountryJson(String countryFileName, String countryId, Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
         try {
             JsonNode countryJson = this.openJson(countryFileName);
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -294,7 +290,6 @@ public class WorldDao {
         }
         return result;
     }
-
 
     private void readRegionJson(IntObjectMap<Province> provinces, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince) {
         try {

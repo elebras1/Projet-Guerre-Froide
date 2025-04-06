@@ -5,7 +5,6 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.ui.CursorManager;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class ProjetGuerreFroide extends Game {

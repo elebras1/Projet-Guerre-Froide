@@ -1,9 +1,5 @@
 package com.populaire.projetguerrefroide.util;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.nio.charset.StandardCharsets;
-
 public class ColorGenerator {
     // https://github.com/BIDS/colormap/blob/master/colormaps.py CC0 licensed
     private static final float[][] magma = {
