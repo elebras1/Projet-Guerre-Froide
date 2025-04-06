@@ -53,7 +53,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.gameContext = gameContext;
         this.worldService = worldService;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
-        this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 2f, 0);
+        this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 1.4f, 0);
         this.cam.update();
         this.batch = new SpriteBatch();
         this.multiplexer = new InputMultiplexer();
