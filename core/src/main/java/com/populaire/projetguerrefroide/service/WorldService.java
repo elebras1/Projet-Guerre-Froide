@@ -221,6 +221,10 @@ public class WorldService {
         return this.world.getSelectedProvince().getCountryOwner().getHeadOfGovernment();
     }
 
+    public int getPositionOfCapitalOfSelectedCountry() {
+        return this.world.getSelectedProvince().getCountryOwner().getCapital().getPosition("default");
+    }
+
     public String getCountryIdPlayer() {
         return this.world.getCountryPlayer().getId();
     }
