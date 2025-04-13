@@ -10,7 +10,9 @@ import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
+import com.populaire.projetguerrefroide.dao.MapDao;
 import com.populaire.projetguerrefroide.economy.building.Building;
+import com.populaire.projetguerrefroide.entity.RawMesh;
 import com.populaire.projetguerrefroide.national.Culture;
 import com.populaire.projetguerrefroide.national.Religion;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -22,6 +24,7 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class World {
+    private final MapDao mapDao;
     private final List<Country> countries;
     private final IntObjectMap<LandProvince> provinces;
     private final IntObjectMap<WaterProvince> waterProvinces;
@@ -39,6 +42,7 @@ public class World {
     private Texture stripesTexture;
     private Texture colorMapTexture;
     private Texture overlayTileTexture;
+    private Texture riverBodyTexture;
     private Texture defaultTexture;
     private TextureArray terrainSheetArray;
     private TextureAtlas mapElementsTextureAtlas;
@@ -46,11 +50,14 @@ public class World {
     private ShaderProgram fontShader;
     private ShaderProgram elementShader;
     private ShaderProgram elementScaleShader;
+    private ShaderProgram riverShader;
     private Mesh meshBuildings;
     private Mesh meshResources;
+    private Mesh meshRivers;
     private MapMode mapMode;
 
     public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, AsyncExecutor asyncExecutor, GameContext gameContext) {
+        this.mapDao = new MapDao();
         this.countries = countries;
         this.provinces = provinces;
         this.waterProvinces = waterProvinces;
@@ -88,12 +95,15 @@ public class World {
         this.stripesTexture = new Texture("map/terrain/stripes.png");
         this.overlayTileTexture = new Texture("map/terrain/map_overlay_tile.png");
         this.overlayTileTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
+        this.riverBodyTexture = new Texture("map/terrain/river.png");
+        this.riverBodyTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         this.defaultTexture = new Texture(0, 0, Pixmap.Format.RGB565);
         this.terrainSheetArray = new TextureArray(terrainTexturePaths);
         this.mapElementsTextureAtlas = new TextureAtlas("map/elements/map_elements.atlas");
         this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         this.meshBuildings = this.generateMeshBuildings();
         this.meshResources = this.generateMeshResources();
+        this.meshRivers = this.generateMeshRivers();
 
         String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
         String fragmentMapShader = Gdx.files.internal("shaders/map_f.glsl").readString();
@@ -107,6 +117,9 @@ public class World {
         String vertexElementScaleShader = Gdx.files.internal("shaders/element_scale_v.glsl").readString();
         String fragmentElementScaleShader = Gdx.files.internal("shaders/element_scale_f.glsl").readString();
         this.elementScaleShader = new ShaderProgram(vertexElementScaleShader, fragmentElementScaleShader);
+        String vertexRiverShader = Gdx.files.internal("shaders/river_v.glsl").readString();
+        String fragmentRiverShader = Gdx.files.internal("shaders/river_f.glsl").readString();
+        this.riverShader = new ShaderProgram(vertexRiverShader, fragmentRiverShader);
         ShaderProgram.pedantic = false;
     }
 
@@ -419,7 +432,7 @@ public class World {
                 short cx = (short) (buildingPosition >> 16);
                 short cy = (short) (buildingPosition & 0xFFFF);
 
-                addVerticesIndicesBuilding(vertices, indices, vertexIndex, indexIndex, vertexOffset, cx, cy, width, height, capitalRegion);
+                this.addVerticesIndicesBuilding(vertices, indices, vertexIndex, indexIndex, vertexOffset, cx, cy, width, height, capitalRegion);
 
                 vertexIndex += 16;
                 indexIndex += 6;
@@ -438,7 +451,7 @@ public class World {
                     short bx = (short) (buildingPosition >> 16);
                     short by = (short) (buildingPosition & 0xFFFF);
 
-                    addVerticesIndicesBuilding(vertices, indices, vertexIndex, indexIndex, vertexOffset, bx, by, width, height, buildingRegion);
+                    this.addVerticesIndicesBuilding(vertices, indices, vertexIndex, indexIndex, vertexOffset, bx, by, width, height, buildingRegion);
 
                     vertexIndex += 16;
                     indexIndex += 6;
@@ -582,6 +595,18 @@ public class World {
         return mesh;
     }
 
+    public Mesh generateMeshRivers() {
+        RawMesh rawMesh = this.mapDao.readRiversMeshJson();
+
+        Mesh mesh = new Mesh(true, rawMesh.getVertices().length / 4, rawMesh.getIndices().length,
+            new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
+            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"));
+        mesh.setVertices(rawMesh.getVertices());
+        mesh.setIndices(rawMesh.getIndices());
+
+        return mesh;
+    }
+
     public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
         this.mapShader.bind();
         this.provincesTexture.bind(0);
@@ -629,6 +654,8 @@ public class World {
         batch.draw(this.provincesTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.setShader(null);
 
+        this.renderMeshRivers(cam, time);
+
         this.fontShader.bind();
         this.fontShader.setUniformf("u_zoom", cam.zoom);
         batch.setShader(this.fontShader);
@@ -672,6 +699,22 @@ public class World {
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
         Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshResources.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
         this.meshResources.unbind(this.elementScaleShader);
+    }
+
+    private void renderMeshRivers(OrthographicCamera cam, float time) {
+        this.riverShader.bind();
+        this.riverBodyTexture.bind(0);
+        this.colorMapWaterTexture.bind(1);
+        this.riverShader.setUniformi("u_texture", 0);
+        this.riverShader.setUniformi("u_textureColorMapWater", 1);
+        this.riverShader.setUniformf("u_time", time);
+        this.riverShader.setUniformMatrix("u_projTrans", cam.combined);
+        this.riverShader.setUniformi("u_worldWidth", WORLD_WIDTH);
+        this.meshRivers.bind(this.riverShader);
+        Gdx.gl.glEnable(GL32.GL_BLEND);
+        Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
+        Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshRivers.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
+        this.meshRivers.unbind(this.riverShader);
     }
 
     public void dispose() {
