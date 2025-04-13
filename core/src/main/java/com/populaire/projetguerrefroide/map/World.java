@@ -28,7 +28,6 @@ public class World {
     private final List<Country> countries;
     private final IntObjectMap<LandProvince> provinces;
     private final IntObjectMap<WaterProvince> waterProvinces;
-    private final AsyncExecutor asyncExecutor;
     private LandProvince selectedProvince;
     private Country countryPlayer;
     private Pixmap provincesPixmap;
@@ -56,12 +55,11 @@ public class World {
     private Mesh meshRivers;
     private MapMode mapMode;
 
-    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, AsyncExecutor asyncExecutor, GameContext gameContext) {
+    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, GameContext gameContext) {
         this.mapDao = new MapDao();
         this.countries = countries;
         this.provinces = provinces;
         this.waterProvinces = waterProvinces;
-        this.asyncExecutor = asyncExecutor;
         this.mapModePixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
         this.mapModePixmap.setBlending(Pixmap.Blending.None);
         this.mapModePixmap.setColor(0, 0, 0, 0);

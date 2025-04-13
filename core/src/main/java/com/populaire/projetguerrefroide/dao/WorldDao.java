@@ -3,7 +3,6 @@ package com.populaire.projetguerrefroide.dao;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -69,7 +68,7 @@ public class WorldDao {
         return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, populationTypes, ministerTypes, terrains);
     }
 
-    public World createWorldThreadSafe(GameEntities gameEntities, AsyncExecutor asyncExecutor, GameContext gameContext) {
+    public World createWorldThreadSafe(GameEntities gameEntities, GameContext gameContext) {
         Map<String, Country> countries = this.loadCountries(gameEntities.getMinisterTypes(), gameEntities.getIdeologies());
         IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(15000);
         IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(4000);
@@ -79,7 +78,7 @@ public class WorldDao {
         final CountDownLatch latch = new CountDownLatch(1);
 
         Gdx.app.postRunnable(() -> {
-            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, asyncExecutor, gameContext));
+            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, gameContext));
             latch.countDown();
         });
 

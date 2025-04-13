@@ -36,7 +36,7 @@ public class WorldService {
     }
 
     public void createWorld(GameContext gameContext) {
-        this.world = this.worldDao.createWorldThreadSafe(this.getGameEntities(), this.asyncExecutor, gameContext);
+        this.world = this.worldDao.createWorldThreadSafe(this.getGameEntities(), gameContext);
     }
 
     public AsyncExecutor getAsyncExecutor() {
