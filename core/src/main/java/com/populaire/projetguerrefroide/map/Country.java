@@ -28,6 +28,7 @@ public class Country {
     private Identity identity;
     private Attitude attitude;
     private List<MapLabel> labels;
+    private String name;
 
     public Country(String id, int color) {
         this.id = id;
@@ -182,7 +183,7 @@ public class Country {
     }
 
     public String getName() {
-        return this.labels.getFirst().getLabel();
+        return this.name;
     }
 
     public List<MapLabel> getLabels() {
@@ -190,6 +191,7 @@ public class Country {
     }
 
     public void createLabels(String name, LabelStylePool labelStylePool) {
+        this.name = name;
         this.labels = new ObjectList<>();
         Set<LandProvince> visitedProvinces = new ObjectSet<>();
 
