@@ -2,43 +2,83 @@ package com.populaire.projetguerrefroide.dao;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.populaire.projetguerrefroide.entity.RawMesh;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonToken;
+import com.github.tommyettinger.ds.FloatList;
+import com.github.tommyettinger.ds.IntList;
+import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
 
-import java.io.IOException;
+import java.io.InputStream;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.IntBuffer;
 
 public class MapDao {
-    private final ObjectMapper mapper;
-    private final String mapPath = "map/";
-    private final String riversMeshFile = this.mapPath + "rivers_mesh.json";
+    private final JsonFactory factory = new JsonFactory();
+    private final String riversMeshFile = "map/rivers_mesh.json";
 
-    public MapDao() {
-        this.mapper = new ObjectMapper();
-    }
+    public RawMeshMultiDraw readRiversMeshJson() {
+        FileHandle fh = Gdx.files.internal(this.riversMeshFile);
+        try (InputStream is = fh.read(); JsonParser parser = this.factory.createParser(is)) {
 
-    private JsonNode openJson(String fileName) throws IOException {
-        FileHandle fileHandle = Gdx.files.internal(fileName);
-        return this.mapper.readTree(fileHandle.readString());
-    }
+            float[] vertices = null;
+            IntBuffer startsBuffer = null;
+            IntBuffer countsBuffer = null;
 
-    public RawMesh readRiversMeshJson() {
-        try {
-            JsonNode jsonNode = openJson(this.riversMeshFile);
-            float[] vertices = new float[jsonNode.get("vertices").size()];
-            short[] indices = new short[jsonNode.get("indices").size()];
+            while (parser.nextToken() != null) {
+                if (parser.currentToken() == JsonToken.FIELD_NAME) {
+                    String name = parser.currentName();
+                    parser.nextToken();
 
-            for (int i = 0; i < vertices.length; i++) {
-                vertices[i] = jsonNode.get("vertices").get(i).floatValue();
+                    switch (name) {
+                        case "vertices" -> vertices = this.readFloatArray(parser);
+                        case "starts" -> startsBuffer = this.readIntBuffer(parser);
+                        case "counts" -> countsBuffer = this.readIntBuffer(parser);
+                        default -> parser.skipChildren();
+                    }
+                }
             }
-            for (int i = 0; i < indices.length; i++) {
-                indices[i] = jsonNode.get("indices").get(i).shortValue();
-            }
-            return new RawMesh(vertices, indices);
+
+            if (vertices == null)
+                throw new RuntimeException("Fichier JSON incomplet");
+
+            return new RawMeshMultiDraw(vertices, startsBuffer, countsBuffer);
+
         } catch (Exception e) {
-            System.err.println("readRiversMeshJson: " + e);
+            System.out.println("readRiversMeshJson" + e.getMessage());
+            return null;
+        }
+    }
+
+    private float[] readFloatArray(JsonParser parser) throws Exception {
+        FloatList temp = new FloatList();
+        while (parser.nextToken() != JsonToken.END_ARRAY) {
+            temp.add(parser.getFloatValue());
+        }
+        float[] result = new float[temp.size()];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = temp.get(i);
+        }
+        return result;
+    }
+
+
+    private IntBuffer readIntBuffer(JsonParser parser) throws Exception {
+        IntList temp = new IntList();
+        while (parser.nextToken() != JsonToken.END_ARRAY) {
+            temp.add(parser.getIntValue());
+        }
+        IntBuffer buffer = ByteBuffer
+            .allocateDirect(temp.size() * Integer.BYTES)
+            .order(ByteOrder.nativeOrder())
+            .asIntBuffer();
+
+        for(int i = 0; i < temp.size(); i++) {
+            buffer.put(temp.get(i));
         }
 
-        return null;
+        buffer.flip();
+        return buffer;
     }
 }
