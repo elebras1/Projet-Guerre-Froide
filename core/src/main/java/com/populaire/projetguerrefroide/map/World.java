@@ -6,53 +6,55 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
-import com.badlogic.gdx.utils.async.AsyncExecutor;
+import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.populaire.projetguerrefroide.dao.MapDao;
 import com.populaire.projetguerrefroide.economy.building.Building;
-import com.populaire.projetguerrefroide.entity.RawMesh;
+import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
 import com.populaire.projetguerrefroide.national.Culture;
 import com.populaire.projetguerrefroide.national.Religion;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
+import com.populaire.projetguerrefroide.util.MeshMultiDrawIndirect;
+import org.lwjgl.opengl.GL43;
 
 import java.util.*;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class World {
+public class World implements Disposable {
     private final MapDao mapDao;
     private final List<Country> countries;
     private final IntObjectMap<LandProvince> provinces;
     private final IntObjectMap<WaterProvince> waterProvinces;
+    private final Pixmap provincesPixmap;
+    private final Pixmap mapModePixmap;
+    private Texture mapModeTexture;
+    private final Texture provincesTexture;
+    private final Texture waterTexture;
+    private final Texture colorMapWaterTexture;
+    private final Texture provincesStripesTexture;
+    private final Texture terrainTexture;
+    private final Texture stripesTexture;
+    private final Texture colorMapTexture;
+    private final Texture overlayTileTexture;
+    private final Texture riverBodyTexture;
+    private final Texture defaultTexture;
+    private final TextureArray terrainSheetArray;
+    private final TextureAtlas mapElementsTextureAtlas;
+    private final ShaderProgram mapShader;
+    private final ShaderProgram fontShader;
+    private final ShaderProgram elementShader;
+    private final ShaderProgram elementScaleShader;
+    private final ShaderProgram riverShader;
+    private final Mesh meshBuildings;
+    private final Mesh meshResources;
+    private final MeshMultiDrawIndirect meshRivers;
     private LandProvince selectedProvince;
     private Country countryPlayer;
-    private Pixmap provincesPixmap;
-    private Pixmap mapModePixmap;
-    private Texture provincesTexture;
-    private Texture mapModeTexture;
-    private Texture waterTexture;
-    private Texture colorMapWaterTexture;
-    private Texture provincesStripesTexture;
-    private Texture terrainTexture;
-    private Texture stripesTexture;
-    private Texture colorMapTexture;
-    private Texture overlayTileTexture;
-    private Texture riverBodyTexture;
-    private Texture defaultTexture;
-    private TextureArray terrainSheetArray;
-    private TextureAtlas mapElementsTextureAtlas;
-    private ShaderProgram mapShader;
-    private ShaderProgram fontShader;
-    private ShaderProgram elementShader;
-    private ShaderProgram elementScaleShader;
-    private ShaderProgram riverShader;
-    private Mesh meshBuildings;
-    private Mesh meshResources;
-    private Mesh meshRivers;
     private MapMode mapMode;
 
     public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, GameContext gameContext) {
@@ -593,14 +595,14 @@ public class World {
         return mesh;
     }
 
-    public Mesh generateMeshRivers() {
-        RawMesh rawMesh = this.mapDao.readRiversMeshJson();
+    public MeshMultiDrawIndirect generateMeshRivers() {
+        RawMeshMultiDraw rawMesh = this.mapDao.readRiversMeshJson();
 
-        Mesh mesh = new Mesh(true, rawMesh.getVertices().length / 4, rawMesh.getIndices().length,
+        MeshMultiDrawIndirect mesh = new MeshMultiDrawIndirect(true, rawMesh.getVertices().length / 4, 0,
             new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
             new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"));
         mesh.setVertices(rawMesh.getVertices());
-        mesh.setIndices(rawMesh.getIndices());
+        mesh.setIndirectCommands(rawMesh.getStarts(), rawMesh.getCounts());
 
         return mesh;
     }
@@ -711,10 +713,15 @@ public class World {
         this.meshRivers.bind(this.riverShader);
         Gdx.gl.glEnable(GL32.GL_BLEND);
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
-        Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshRivers.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
+        Gdx.gl.glEnable(GL32.GL_BLEND);
+        Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
+        GL43.glBindBuffer(GL43.GL_DRAW_INDIRECT_BUFFER, this.meshRivers.getIndirectBufferID());
+        GL43.glMultiDrawArraysIndirect(GL43.GL_TRIANGLE_STRIP, 0, this.meshRivers.getCommandCount(), 0);
+        GL43.glBindBuffer(GL43.GL_DRAW_INDIRECT_BUFFER, 0);
         this.meshRivers.unbind(this.riverShader);
     }
 
+    @Override
     public void dispose() {
         this.waterTexture.dispose();
         this.colorMapWaterTexture.dispose();
@@ -735,5 +742,8 @@ public class World {
         this.meshResources.dispose();
         this.meshBuildings.dispose();
         this.mapElementsTextureAtlas.dispose();
+        this.elementShader.dispose();
+        this.riverShader.dispose();
+        this.meshRivers.dispose();
     }
 }
