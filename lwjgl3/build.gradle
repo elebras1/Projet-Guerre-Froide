@@ -39,7 +39,6 @@ dependencies {
 
   testImplementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
   testImplementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-  testImplementation "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
   testImplementation "org.junit.jupiter:junit-jupiter-api:5.12.1"
   testImplementation "org.junit.jupiter:junit-jupiter-engine:5.12.1"
   testImplementation "org.junit.platform:junit-platform-launcher:1.12.1"
