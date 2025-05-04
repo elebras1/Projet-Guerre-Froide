@@ -76,11 +76,6 @@ subprojects {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.3'
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.3'
     implementation 'com.github.tommyettinger:jdkgdxds:1.8.0'
-    testImplementation 'com.badlogicgames.gdx:gdx-platform:1.13.1:natives-desktop'
-    testImplementation 'com.badlogicgames.gdx:gdx-backend-headless:1.13.1'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.12.1'
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.12.1'
-    testImplementation 'org.junit.platform:junit-platform-launcher:1.12.1'
   }
 }
 
