@@ -2,15 +2,19 @@
 
 in vec2 a_position;
 in vec2 a_texCoord0;
+in float a_width;
 
 uniform mat4 u_projTrans;
 uniform int u_worldWidth;
 
 out vec2 v_texCoords;
 out vec2 v_worldCoords;
+out float v_width;
 
 void main() {
     v_texCoords = a_texCoord0;
+    v_width = a_width;
+
 
     float instanceOffset = 0.0;
     if (gl_InstanceID == 1) {

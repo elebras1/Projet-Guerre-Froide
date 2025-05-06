@@ -598,9 +598,10 @@ public class World implements Disposable {
     public MeshMultiDrawIndirect generateMeshRivers() {
         RawMeshMultiDraw rawMesh = this.mapDao.readRiversMeshJson();
 
-        MeshMultiDrawIndirect mesh = new MeshMultiDrawIndirect(true, rawMesh.getVertices().length / 4, 0,
+        MeshMultiDrawIndirect mesh = new MeshMultiDrawIndirect(true, rawMesh.getVertices().length / 5, 0,
             new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
-            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"));
+            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"),
+            new VertexAttribute(VertexAttributes.Usage.Generic, 1, "a_width"));
         mesh.setVertices(rawMesh.getVertices());
         mesh.setIndirectCommands(rawMesh.getStarts(), rawMesh.getCounts());
 
@@ -710,6 +711,7 @@ public class World implements Disposable {
         this.riverShader.setUniformf("u_time", time);
         this.riverShader.setUniformMatrix("u_projTrans", cam.combined);
         this.riverShader.setUniformi("u_worldWidth", WORLD_WIDTH);
+        this.riverShader.setUniformf("u_zoom", cam.zoom);
         this.meshRivers.bind(this.riverShader);
         Gdx.gl.glEnable(GL32.GL_BLEND);
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
