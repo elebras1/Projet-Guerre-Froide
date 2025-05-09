@@ -15,12 +15,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.populaire.projetguerrefroide.configuration.Settings;
-import com.populaire.projetguerrefroide.entity.Minister;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.*;
-import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
@@ -42,8 +40,8 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     private final Skin skinMainMenuInGame;
     private Stage stage;
     private Debug debug;
-    private HoverBox hoverBox;
-    private CountrySelected countrySelectedUi;
+    private HoverTooltip hoverTooltip;
+    private CountrySummaryPanel countrySummaryPanel;
     private MainMenuInGame mainMenuInGame;
     private float time;
     private boolean paused;
@@ -94,7 +92,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.debug.setPosition(100, 90);
         this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
 
-        this.hoverBox = new HoverBox(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        this.hoverTooltip = new HoverTooltip(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
 
         this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.mainMenuInGame.setVisible(false);
@@ -108,10 +106,10 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getConfigurationDao().loadBookmark(), this.gameContext.getLocalisation());
         TitleBar titleBar = new TitleBar(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
-        this.countrySelectedUi = new CountrySelected(this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        this.countrySummaryPanel = new CountrySummaryPanel(this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         topTable.add(scenarioSavegameSelector).align(Align.topLeft).expandX();
         topTable.add(titleBar).align(Align.top);
-        topTable.add(this.countrySelectedUi).align(Align.topRight).expandX();
+        topTable.add(this.countrySummaryPanel).align(Align.topRight).expandX();
         topTable.pad(5);
 
         Table bottomTable = new Table();
@@ -120,7 +118,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         bottomTable.add(lobbyBox).align(Align.bottom);
         bottomTable.pad(5);
 
-        this.stage.addActor(this.hoverBox);
+        this.stage.addActor(this.hoverTooltip);
         this.stage.addActor(topTable);
         this.stage.addActor(bottomTable);
         this.stage.addActor(centerTable);
@@ -239,33 +237,23 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     public void updateCountrySelected() {
         if(this.worldService.isProvinceSelected()) {
-            Minister headOfState = this.worldService.getHeadOfStateOfSelectedCountry();
-            String portraitNameFile = "admin_type";
-            if(headOfState.getImageNameFile() != null) {
-                portraitNameFile = headOfState.getImageNameFile();
-            }
-
-            this.countrySelectedUi.update(
-                this.worldService.getNameOfSelectedCountry(),
-                this.worldService.getIdOfSelectedCountry(),
-                ValueFormatter.formatValue(this.worldService.getPopulationAmountOfSelectedCountry(), this.gameContext.getLocalisation()),
-                this.worldService.getGovernmentOfSelectedCountry().getName(), portraitNameFile, headOfState.getName(), this.gameContext.getLocalisation());
+            this.countrySummaryPanel.update(this.worldService.prepareCountrySummaryDto(this.gameContext.getLocalisation()), this.gameContext.getLocalisation());
         } else {
-            this.countrySelectedUi.hide();
+            this.countrySummaryPanel.hide();
         }
     }
 
     public void updateHoverBox(short provinceId, String countryName, String countryId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverBox.update(provinceId, countryName, countryId);
-        this.hoverBox.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
+        this.hoverTooltip.update(provinceId, countryName, countryId);
+        this.hoverTooltip.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
             y - this.gameContext.getCursorManager().getHeight() * 1.5f);
-        this.hoverBox.setVisible(true);
+        this.hoverTooltip.setVisible(true);
     }
 
     public void hideHoverBox() {
-        this.hoverBox.setVisible(false);
+        this.hoverTooltip.setVisible(false);
     }
 
     @Override

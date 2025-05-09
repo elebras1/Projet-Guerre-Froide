@@ -6,9 +6,9 @@ import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dao.WorldDao;
-import com.populaire.projetguerrefroide.economy.good.ResourceGood;
+import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
+import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.entity.GameEntities;
-import com.populaire.projetguerrefroide.entity.Government;
 import com.populaire.projetguerrefroide.entity.Minister;
 import com.populaire.projetguerrefroide.map.Country;
 import com.populaire.projetguerrefroide.map.LandProvince;
@@ -26,13 +26,11 @@ public class WorldService {
     private GameEntities gameEntities;
     private World world;
     private final ObjectIntMap<String> elementPercentages;
-    private final List<String> elements;
 
     public WorldService() {
-        this.asyncExecutor = new AsyncExecutor(2);;
+        this.asyncExecutor = new AsyncExecutor(2);
         this.worldDao = new WorldDao();
         this.elementPercentages = new ObjectIntMap<>();
-        this.elements = new ObjectList<>();
     }
 
     public void createWorld(GameContext gameContext) {
@@ -63,61 +61,6 @@ public class WorldService {
         return this.world.getSelectedProvince() != null;
     }
 
-    public String getSelectedProvinceId() {
-        return String.valueOf(this.world.getSelectedProvince().getId());
-    }
-
-    public String getTerrainOfSelectedProvince() {
-        return this.world.getSelectedProvince().getTerrain().getName();
-    }
-
-    public String getRegionIdOfSelectedProvince() {
-        return this.world.getSelectedProvince().getRegion().getId();
-    }
-
-    public String getResourceOfSelectedProvince() {
-        ResourceGood resourceGood = this.world.getSelectedProvince().getResourceGood();
-        if(resourceGood != null) {
-            return resourceGood.getName();
-        }
-
-        return null;
-    }
-
-    public String getPopulationRegionOfSelectedProvince(Map<String, String> localisation) {
-        int population = 0;
-        for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
-            population += province.getPopulation().getAmount();
-        }
-
-        return ValueFormatter.formatValue(population, localisation);
-    }
-
-    public String getWorkersRegionOfSelectedProvince(Map<String, String> localisation) {
-        int workers = 0;
-        for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
-            workers += province.getPopulation().getAmountAdults();
-        }
-
-        return ValueFormatter.formatValue(workers, localisation);
-    }
-
-    public int getNumberIndustryRegionOfSelectedProvince() {
-        return this.world.getSelectedProvince().getRegion().getBuildings().size();
-    }
-
-    public float getResourceProducedOfSelectedProvince() {
-        return 0f;
-    }
-
-    public int getInfrastructureValueOfSelectedProvince() {
-        return 0;
-    }
-
-    public float getGuerillaValueOfSelectedProvince() {
-        return 0f;
-    }
-
     public boolean setCountryPlayer() {
         return this.world.setCountryPlayer();
     }
@@ -142,8 +85,49 @@ public class WorldService {
         return this.world.getProvince(x, y).getCountryOwner().getName();
     }
 
-    public String getCountryIdOfSelectedProvince() {
-        return this.world.getSelectedProvince().getCountryOwner().getId();
+    public int getPositionOfCapitalOfSelectedCountry() {
+        return this.world.getSelectedProvince().getCountryOwner().getCapital().getPosition("default");
+    }
+
+    public String getCountryIdPlayer() {
+        return this.world.getCountryPlayer().getId();
+    }
+
+    public short getNumberOfProvinces() {
+        return this.world.getNumberOfProvinces();
+    }
+
+    public CountrySummaryDto prepareCountrySummaryDto(Map<String, String> localisation) {
+        Country selectedCountry = this.world.getSelectedProvince().getCountryOwner();
+        Minister headOfState = selectedCountry.getHeadOfState();
+        String portraitNameFile = "admin_type";
+        if(headOfState.getImageNameFile() != null) {
+            portraitNameFile = headOfState.getImageNameFile();
+        }
+        String population = ValueFormatter.formatValue(selectedCountry.getPopulationAmount(), localisation);
+
+        return new CountrySummaryDto(selectedCountry.getName(), selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName());
+    }
+
+    public ProvinceDto prepareProvinceDto(Map<String, String> localisation) {
+        LandProvince selectedProvince = this.world.getSelectedProvince();
+        String provinceId = String.valueOf(selectedProvince.getId());
+        String regionId = selectedProvince.getRegion().getId();
+        String terrainImage = selectedProvince.getTerrain().getName();
+        String resourceImage = selectedProvince.getResourceGood() != null ? selectedProvince.getResourceGood().getName() : null;
+        String populationRegion = this.getPopulationRegionOfSelectedProvince(localisation);
+        String workersRegion = this.getWorkersRegionOfSelectedProvince(localisation);
+        int developmentIndexRegion = 0;
+        int incomeRegion = 0;
+        int industryRegion = 0;
+        String flagImage = selectedProvince.getCountryOwner().getId();
+        List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
+
+        return new ProvinceDto(provinceId, regionId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, industryRegion, flagImage, flagCountriesCore, 0f, 0, 0);
+    }
+
+    public void changeMapMode(String mapMode) {
+        this.world.changeMapMode(mapMode);
     }
 
     public ObjectIntMap<String> getCulturesOfHoveredProvince(short x, short y) {
@@ -158,16 +142,7 @@ public class WorldService {
         return this.calculatePercentageDistributionFromProvinceData(province.getPopulation().getReligions(), amountAdults);
     }
 
-    public List<String> getCountriesCoreOfSelectedProvince() {
-        this.elements.clear();
-        for(Country country : this.world.getSelectedProvince().getCountriesCore()) {
-            this.elements.add(country.getId());
-        }
-
-        return this.elements;
-    }
-
-    public <E extends Named> ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(ObjectIntMap<E> elements, int amountAdults) {
+    private <E extends Named> ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(ObjectIntMap<E> elements, int amountAdults) {
         this.elementPercentages.clear();
         int total = 0;
         E biggestElement = null;
@@ -193,48 +168,31 @@ public class WorldService {
         return this.elementPercentages;
     }
 
-    public int getPopulationAmountOfHoveredProvince(short x, short y) {
-        return this.world.getProvince(x, y).getPopulation().getAmount();
+    private String getPopulationRegionOfSelectedProvince(Map<String, String> localisation) {
+        int population = 0;
+        for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
+            population += province.getPopulation().getAmount();
+        }
+
+        return ValueFormatter.formatValue(population, localisation);
     }
 
-    public String getIdOfSelectedCountry() {
-        return this.world.getSelectedProvince().getCountryOwner().getId();
+    private String getWorkersRegionOfSelectedProvince(Map<String, String> localisation) {
+        int workers = 0;
+        for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
+            workers += province.getPopulation().getAmountAdults();
+        }
+
+        return ValueFormatter.formatValue(workers, localisation);
     }
 
-    public String getNameOfSelectedCountry() {
-        return this.world.getSelectedProvince().getCountryOwner().getName();
-    }
+    private List<String> getCountriesCoreOfSelectedProvince() {
+        List<String> countriesCore = new ObjectList<>();
+        for(Country country : this.world.getSelectedProvince().getCountriesCore()) {
+            countriesCore.add(country.getId());
+        }
 
-    public int getPopulationAmountOfSelectedCountry() {
-        return this.world.getSelectedProvince().getCountryOwner().getPopulationAmount();
-    }
-
-    public Government getGovernmentOfSelectedCountry() {
-        return this.world.getSelectedProvince().getCountryOwner().getGovernment();
-    }
-
-    public Minister getHeadOfStateOfSelectedCountry() {
-        return this.world.getSelectedProvince().getCountryOwner().getHeadOfState();
-    }
-
-    public Minister getHeadOfGovernmentOfSelectedCountry() {
-        return this.world.getSelectedProvince().getCountryOwner().getHeadOfGovernment();
-    }
-
-    public int getPositionOfCapitalOfSelectedCountry() {
-        return this.world.getSelectedProvince().getCountryOwner().getCapital().getPosition("default");
-    }
-
-    public String getCountryIdPlayer() {
-        return this.world.getCountryPlayer().getId();
-    }
-
-    public short getNumberOfProvinces() {
-        return this.world.getNumberOfProvinces();
-    }
-
-    public void changeMapMode(String mapMode) {
-        this.world.changeMapMode(mapMode);
+        return countriesCore;
     }
 
     public void dispose() {

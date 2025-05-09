@@ -8,6 +8,6 @@ public interface MinimapListener {
     void zoomOut();
     void changeMapMode(String mapMode);
     IntObjectMap<String> getInformationsMapMode(String mapMode);
-    void updateHoverBox(String text);
+    void updateHoverTooltip(String text);
     void hideHoverBox();
 }

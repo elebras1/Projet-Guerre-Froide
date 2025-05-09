@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.github.tommyettinger.ds.ObjectList;
+import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.List;
@@ -143,7 +144,24 @@ public class ProvincePanel extends Table {
         return new FlagImage(defaultFlag, overlayFlag, alphaFlag);
     }
 
-    public void setResourceImage(String name) {
+    public void setData(ProvinceDto provinceDto) {
+        this.setProvinceName(provinceDto.getProvinceId());
+        this.setRegionName(provinceDto.getRegionId());
+        this.setTerrainImage(provinceDto.getTerrainImage());
+        this.setResourceImage(provinceDto.getResourceImage());
+        this.setPopulationRegion(provinceDto.getPopulationRegion());
+        this.setWorkersRegion(provinceDto.getWorkersRegion());
+        this.setDevelopmentIndexRegion(provinceDto.getDevelopmentIndexRegion());
+        this.setIncomeRegion(provinceDto.getIncomeRegion());
+        this.setIndustryRegion(provinceDto.getIndustryRegion());
+        this.setFlagImage(provinceDto.getFlagImage());
+        this.setFlagCountriesCore(provinceDto.getFlagCountriesCore());
+        this.setResourceProduced(provinceDto.getResourceProduced());
+        this.setInfrastructureValue(provinceDto.getInfrastructureValue());
+        this.setGuerillaValue(provinceDto.getGuerillaValue());
+    }
+
+    private void setResourceImage(String name) {
         Drawable resource;
         if(name != null) {
             resource = this.skinUi.getDrawable("resource_" + name + "_small");
@@ -156,53 +174,53 @@ public class ProvincePanel extends Table {
         this.resourceImage.setPosition(22, 160);
     }
 
-    public void setProvinceName(String name) {
+    private void setProvinceName(String name) {
         this.provinceName.setText(this.localisation.get(name));
         this.provinceName.setPosition(this.getWidth() / 2 - this.provinceName.getMinWidth() / 2, 471);
     }
 
-    public void setRegionName(String name) {
+    private void setRegionName(String name) {
         this.regionName.setText(this.localisation.get(name));
         this.regionName.setPosition(this.regionName.getParent().getWidth() / 2 - this.regionName.getMinWidth() / 2, 104);
     }
 
-    public void setTerrainImage(String name) {
+    private void setTerrainImage(String name) {
         Drawable terrain = this.skin.getDrawable("prov_terrain_" + name);
         this.terrainImage.setDrawable(terrain);
         this.terrainImage.setSize(terrain.getMinWidth(), terrain.getMinHeight());
     }
 
-    public void setPopulationRegion(String population) {
+    private void setPopulationRegion(String population) {
         this.populationRegion.setText(population);
         this.populationRegion.setPosition(135 - this.populationRegion.getMinWidth(), 83);
     }
 
-    public void setWorkersRegion(String workers) {
+    private void setWorkersRegion(String workers) {
         this.workersRegion.setText(workers);
         this.workersRegion.setPosition(135 - this.workersRegion.getMinWidth(), 61);
     }
 
-    public void setDevelopmentIndexRegion(int developmentIndex) {
+    private void setDevelopmentIndexRegion(int developmentIndex) {
         this.developmentIndexRegion.setText(developmentIndex);
         this.developmentIndexRegion.setPosition(125 - this.developmentIndexRegion.getMinWidth(), 38);
     }
 
-    public void setIncomeRegion(int income) {
+    private void setIncomeRegion(int income) {
         this.incomeRegion.setText(income);
         this.incomeRegion.setPosition(248 - this.incomeRegion.getMinWidth(), 60);
     }
 
-    public void setIndustryRegion(int industry) {
+    private void setIndustryRegion(int industry) {
         this.industryRegion.setText(industry);
         this.industryRegion.setPosition(360 - this.industryRegion.getMinWidth(), 75);
     }
 
-    public void setFlagImage(String idCountry) {
+    private void setFlagImage(String idCountry) {
         this.flagImage.setFlag(this.skinFlags.getRegion(idCountry));
         this.flagImage.setPosition(36, 430);
     }
 
-    public void setFlagCountriesCore(List<String> countriesCore) {
+    private void setFlagCountriesCore(List<String> countriesCore) {
         for(int i = 0; i < this.countriesCoreFlagImages.size(); i++) {
             if(i < countriesCore.size()) {
                 this.countriesCoreFlagImages.get(i).setFlag(this.skinFlags.getRegion(countriesCore.get(i)));
@@ -213,17 +231,17 @@ public class ProvincePanel extends Table {
         }
     }
 
-    public void setResourceProduced(float resourceProduced) {
+    private void setResourceProduced(float resourceProduced) {
         this.resourceProduced.setText(String.valueOf(resourceProduced));
         this.resourceProduced.setPosition(136 - this.resourceProduced.getMinWidth(), 178);
     }
 
-    public void setInfrastructureValue(int infrastructureValue) {
+    private void setInfrastructureValue(int infrastructureValue) {
         this.infrastructureValue.setText(infrastructureValue + "%");
         this.infrastructureValue.setPosition(245 - this.infrastructureValue.getMinWidth(), 178);
     }
 
-    public void setGuerillaValue(float guerillaValue) {
+    private void setGuerillaValue(float guerillaValue) {
         String text = "-";
         if(guerillaValue != 0f) {
             text = String.valueOf(guerillaValue);

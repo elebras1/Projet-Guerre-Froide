@@ -122,7 +122,7 @@ public class Minimap extends Table {
         button.addListener(new InputListener() {
             @Override
             public boolean mouseMoved(InputEvent event, float x, float y) {
-                listener.updateHoverBox(localisation.get(mapMode.toUpperCase()));
+                listener.updateHoverTooltip(localisation.get(mapMode.toUpperCase()));
                 return true;
             }
 

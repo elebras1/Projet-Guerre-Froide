@@ -43,7 +43,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     private final Stage stage;
     private final Debug debug;
     private final ProvincePanel provincePanel;
-    private HoverBox hoverBox;
+    private HoverTooltip hoverTooltip;
     private MainMenuInGame mainMenuInGame;
     private float time;
     private boolean paused;
@@ -90,8 +90,6 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     }
 
     private void initializeUi() {
-        //this.stage.setDebugAll(true);
-
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(this.multiplexer);
@@ -100,7 +98,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
         this.provincePanel.setPosition(0, 0);
 
-        this.hoverBox = new HoverBox(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        this.hoverTooltip = new HoverTooltip(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
 
         Table centerTable = new Table();
         centerTable.setFillParent(true);
@@ -116,7 +114,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         Minimap minimap = new Minimap(this.skinMinimap, this.skinUi, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         minimap.setPosition(Gdx.graphics.getWidth() - minimap.getWidth(), 0);
 
-        this.stage.addActor(this.hoverBox);
+        this.stage.addActor(this.hoverTooltip);
         this.stage.addActor(topTable);
         this.stage.addActor(minimap);
         this.stage.addActor(centerTable);
@@ -252,57 +250,44 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     }
 
     private void showProvincePanel() {
-        this.provincePanel.setProvinceName(this.worldService.getSelectedProvinceId());
-        this.provincePanel.setRegionName(this.worldService.getRegionIdOfSelectedProvince());
-        this.provincePanel.setTerrainImage(this.worldService.getTerrainOfSelectedProvince());
-        this.provincePanel.setResourceImage(this.worldService.getResourceOfSelectedProvince());
-        this.provincePanel.setPopulationRegion(this.worldService.getPopulationRegionOfSelectedProvince(this.gameContext.getLocalisation()));
-        this.provincePanel.setWorkersRegion(this.worldService.getWorkersRegionOfSelectedProvince(this.gameContext.getLocalisation()));
-        this.provincePanel.setDevelopmentIndexRegion(0);
-        this.provincePanel.setIncomeRegion(0);
-        this.provincePanel.setIndustryRegion(this.worldService.getNumberIndustryRegionOfSelectedProvince());
-        this.provincePanel.setFlagImage(this.worldService.getCountryIdOfSelectedProvince());
-        this.provincePanel.setFlagCountriesCore(this.worldService.getCountriesCoreOfSelectedProvince());
-        this.provincePanel.setResourceProduced(this.worldService.getResourceProducedOfSelectedProvince());
-        this.provincePanel.setInfrastructureValue(this.worldService.getInfrastructureValueOfSelectedProvince());
-        this.provincePanel.setGuerillaValue(this.worldService.getGuerillaValueOfSelectedProvince());
+        this.provincePanel.setData(this.worldService.prepareProvinceDto(this.gameContext.getLocalisation()));
         this.stage.addActor(this.provincePanel);
     }
 
     @Override
-    public void updateHoverBox(String text) {
+    public void updateHoverTooltip(String text) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverBox.update(text);
-        this.hoverBox.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
+        this.hoverTooltip.update(text);
+        this.hoverTooltip.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
                 y - this.gameContext.getCursorManager().getHeight() * 1.5f);
-        this.hoverBox.setVisible(true);
-        this.hoverBox.toFront();
+        this.hoverTooltip.setVisible(true);
+        this.hoverTooltip.toFront();
     }
 
     public void updateHoverBox(short provinceId, String countryName, String countryId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverBox.update(provinceId, countryName, countryId);
-        this.hoverBox.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
+        this.hoverTooltip.update(provinceId, countryName, countryId);
+        this.hoverTooltip.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
                 y - this.gameContext.getCursorManager().getHeight() * 1.5f);
-        this.hoverBox.setVisible(true);
-        this.hoverBox.toBack();
+        this.hoverTooltip.setVisible(true);
+        this.hoverTooltip.toBack();
     }
 
     public void updateHoverBox(short provinceId, String countryName, String countryId, ObjectIntMap<String> elements) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverBox.update(provinceId, countryName, countryId, elements);
-        this.hoverBox.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
+        this.hoverTooltip.update(provinceId, countryName, countryId, elements);
+        this.hoverTooltip.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
             y - this.gameContext.getCursorManager().getHeight() * 1.5f);
-        this.hoverBox.setVisible(true);
-        this.hoverBox.toBack();
+        this.hoverTooltip.setVisible(true);
+        this.hoverTooltip.toBack();
     }
 
     @Override
     public void hideHoverBox() {
-        this.hoverBox.setVisible(false);
+        this.hoverTooltip.setVisible(false);
     }
 
     @Override

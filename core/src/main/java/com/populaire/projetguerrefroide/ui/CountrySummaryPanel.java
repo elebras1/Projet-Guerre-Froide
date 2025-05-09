@@ -7,11 +7,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
+import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
 
-public class CountrySelected extends Table {
+public class CountrySummaryPanel extends Table {
     private final Label countryName;
     private final Label government;
     private final Label countryPopulation;
@@ -21,7 +22,7 @@ public class CountrySelected extends Table {
     private final Skin skinFlags;
     private final Skin skinPortraits;
 
-    public CountrySelected(Skin skin, Skin skinUi, Skin skinFlags, Skin skinPortraits, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public CountrySummaryPanel(Skin skin, Skin skinUi, Skin skinFlags, Skin skinPortraits, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.skinFlags = skinFlags;
         this.skinPortraits = skinPortraits;
         Drawable background = skin.getDrawable("selected_bg");
@@ -95,13 +96,13 @@ public class CountrySelected extends Table {
         this.setVisible(false);
     }
 
-    public void update(String name, String idCountry, String population, String government, String portrait, String leaderFullName, Map<String, String> localisation) {
-        this.countryName.setText(name);
-        this.flagImage.setFlag(this.skinFlags.getRegion(idCountry));
-        this.government.setText(localisation.get(government));
-        this.countryPopulation.setText(population);
-        this.portrait.setDrawable(this.skinPortraits.getDrawable(portrait));
-        this.leaderFullName.setText(leaderFullName);
+    public void update(CountrySummaryDto countrySummaryDto, Map<String, String> localisation) {
+        this.countryName.setText(countrySummaryDto.getCountryName());
+        this.flagImage.setFlag(this.skinFlags.getRegion(countrySummaryDto.getIdCountry()));
+        this.government.setText(localisation.get(countrySummaryDto.getGovernment()));
+        this.countryPopulation.setText(countrySummaryDto.getPopulation());
+        this.portrait.setDrawable(this.skinPortraits.getDrawable(countrySummaryDto.getPortrait()));
+        this.leaderFullName.setText(countrySummaryDto.getLeaderFullName());
         this.setVisible(true);
     }
 

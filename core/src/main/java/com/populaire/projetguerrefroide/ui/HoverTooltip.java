@@ -12,7 +12,7 @@ import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.Map;
 
-public class HoverBox extends Table {
+public class HoverTooltip extends Table {
     private final Map<String, String> localisation;
     private final Skin skinFlags;
     private final Label mainLabel;
@@ -21,7 +21,7 @@ public class HoverBox extends Table {
     private final float marginWidth;
     private final float heightWidth;
 
-    public HoverBox(Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public HoverTooltip(Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.localisation = localisation;
         this.skinFlags = skinFlags;
         NinePatch ninePatch = skinUi.getPatch("tiles_dialog");
