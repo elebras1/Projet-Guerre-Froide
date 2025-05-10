@@ -5,7 +5,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.configuration.Bookmark;
+import com.populaire.projetguerrefroide.entity.Bookmark;
 import com.populaire.projetguerrefroide.configuration.Settings;
 
 import java.io.IOException;

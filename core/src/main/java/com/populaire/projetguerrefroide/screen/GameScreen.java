@@ -16,6 +16,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
+import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.map.MapMode;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -250,7 +251,8 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     }
 
     private void showProvincePanel() {
-        this.provincePanel.setData(this.worldService.prepareProvinceDto(this.gameContext.getLocalisation()));
+        ProvinceDto provinceDto = this.worldService.prepareProvinceDto(this.gameContext.getLocalisation());
+        this.provincePanel.setData(provinceDto);
         this.stage.addActor(this.provincePanel);
     }
 
