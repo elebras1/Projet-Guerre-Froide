@@ -1,0 +1,53 @@
+{
+"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+	"default": {
+		"up": "thick_on",
+		"checked": "thick_of"
+	},
+	"date_btn": {
+		"up": "date_btn",
+		"down": "date_btn_down",
+		"over": "date_btn_over"
+	},
+	"minus_speed": {
+		"up": "minus_speed",
+		"down": "minus_speed_down",
+		"over": "minus_speed_over"
+	},
+	"plus_speed": {
+		"up": "plus_speed",
+		"down": "plus_speed_down",
+		"over": "plus_speed_over"
+	},
+	"tab_diplomacy": {
+		"up": "tab_diplomacy",
+		"down": "tab_diplomacy_down",
+		"over": "tab_diplomacy_over"
+	},
+	"tab_economy": {
+		"up": "tab_economy",
+		"down": "tab_economy_down",
+		"over": "tab_economy_over"
+	},
+	"tab_intel": {
+		"up": "tab_intel",
+		"down": "tab_intel_down",
+		"over": "tab_intel_over"
+	},
+	"tab_military": {
+		"up": "tab_military",
+		"down": "tab_military_down",
+		"over": "tab_military_over"
+	},
+	"tab_politics": {
+		"up": "tab_politics",
+		"down": "tab_politics_down",
+		"over": "tab_politics_over"
+	},
+	"tab_tech": {
+		"up": "tab_tech",
+		"down": "tab_tech_down",
+		"over": "tab_tech_over"
+	}
+}
+}

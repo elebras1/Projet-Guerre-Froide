@@ -1,0 +1,328 @@
+
+topbar_skin.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+date_btn
+  rotate: false
+  xy: 1, 1177
+  size: 196, 51
+  orig: 196, 51
+  offset: 0, 0
+  index: -1
+small_naked_bar
+  rotate: false
+  xy: 1, 1177
+  size: 196, 51
+  orig: 196, 51
+  offset: 0, 0
+  index: -1
+date_btn_down
+  rotate: false
+  xy: 1089, 1332
+  size: 196, 51
+  orig: 196, 51
+  offset: 0, 0
+  index: -1
+date_btn_over
+  rotate: false
+  xy: 1, 1124
+  size: 196, 51
+  orig: 196, 51
+  offset: 0, 0
+  index: -1
+defcon_buttons_0
+  rotate: false
+  xy: 1287, 1340
+  size: 35, 43
+  orig: 35, 43
+  offset: 0, 0
+  index: -1
+defcon_buttons_1
+  rotate: false
+  xy: 102, 1079
+  size: 35, 43
+  orig: 35, 43
+  offset: 0, 0
+  index: -1
+defcon_buttons_2
+  rotate: false
+  xy: 1007, 1185
+  size: 35, 43
+  orig: 35, 43
+  offset: 0, 0
+  index: -1
+defcon_buttons_3
+  rotate: false
+  xy: 1, 341
+  size: 35, 43
+  orig: 35, 43
+  offset: 0, 0
+  index: -1
+defcon_buttons_4
+  rotate: false
+  xy: 1324, 1340
+  size: 35, 43
+  orig: 35, 43
+  offset: 0, 0
+  index: -1
+defcon_buttons_5
+  rotate: false
+  xy: 102, 1034
+  size: 35, 43
+  orig: 35, 43
+  offset: 0, 0
+  index: -1
+menu
+  rotate: false
+  xy: 1287, 1312
+  size: 25, 26
+  orig: 25, 26
+  offset: 0, 0
+  index: -1
+minus_speed
+  rotate: false
+  xy: 139, 1092
+  size: 24, 30
+  orig: 24, 30
+  offset: 0, 0
+  index: -1
+minus_speed_down
+  rotate: false
+  xy: 1007, 1153
+  size: 24, 30
+  orig: 24, 30
+  offset: 0, 0
+  index: -1
+minus_speed_over
+  rotate: false
+  xy: 1044, 1198
+  size: 24, 30
+  orig: 24, 30
+  offset: 0, 0
+  index: -1
+naked_topbar
+  rotate: false
+  xy: 1, 1230
+  size: 1086, 153
+  orig: 1086, 153
+  offset: 0, 0
+  index: -1
+plus_speed
+  rotate: false
+  xy: 1, 313
+  size: 24, 26
+  orig: 24, 26
+  offset: 0, 0
+  index: -1
+plus_speed_down
+  rotate: false
+  xy: 38, 358
+  size: 24, 26
+  orig: 24, 26
+  offset: 0, 0
+  index: -1
+plus_speed_over
+  rotate: false
+  xy: 1361, 1357
+  size: 24, 26
+  orig: 24, 26
+  offset: 0, 0
+  index: -1
+prestige
+  rotate: false
+  xy: 1190, 1266
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+speed_indicator_slice_0
+  rotate: false
+  xy: 1256, 1276
+  size: 15, 26
+  orig: 15, 26
+  offset: 0, 0
+  index: -1
+speed_indicator_slice_1
+  rotate: false
+  xy: 1314, 1312
+  size: 15, 26
+  orig: 15, 26
+  offset: 0, 0
+  index: -1
+speed_indicator_slice_2
+  rotate: false
+  xy: 139, 1064
+  size: 15, 26
+  orig: 15, 26
+  offset: 0, 0
+  index: -1
+speed_indicator_slice_3
+  rotate: false
+  xy: 165, 1096
+  size: 15, 26
+  orig: 15, 26
+  offset: 0, 0
+  index: -1
+speed_indicator_slice_4
+  rotate: false
+  xy: 1070, 1202
+  size: 15, 26
+  orig: 15, 26
+  offset: 0, 0
+  index: -1
+speed_indicator_slice_5
+  rotate: false
+  xy: 1, 285
+  size: 15, 26
+  orig: 15, 26
+  offset: 0, 0
+  index: -1
+stats
+  rotate: false
+  xy: 1256, 1304
+  size: 29, 26
+  orig: 29, 26
+  offset: 0, 0
+  index: -1
+tab_diplomacy
+  rotate: false
+  xy: 199, 1148
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_diplomacy_down
+  rotate: false
+  xy: 1089, 1250
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_diplomacy_over
+  rotate: false
+  xy: 1, 1042
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_economy
+  rotate: false
+  xy: 300, 1148
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_economy_down
+  rotate: false
+  xy: 1, 960
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_economy_over
+  rotate: false
+  xy: 401, 1148
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_intel
+  rotate: false
+  xy: 1, 878
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_intel_down
+  rotate: false
+  xy: 502, 1148
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_intel_over
+  rotate: false
+  xy: 1, 796
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_military
+  rotate: false
+  xy: 603, 1148
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_military_down
+  rotate: false
+  xy: 1, 714
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_military_over
+  rotate: false
+  xy: 704, 1148
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_politics
+  rotate: false
+  xy: 906, 1148
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_politics_down
+  rotate: false
+  xy: 1, 468
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_politics_over
+  rotate: false
+  xy: 1, 386
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_tech
+  rotate: false
+  xy: 1, 632
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_tech_down
+  rotate: false
+  xy: 805, 1148
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+tab_tech_over
+  rotate: false
+  xy: 1, 550
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+thick_of
+  rotate: false
+  xy: 199, 1125
+  size: 24, 21
+  orig: 24, 21
+  offset: 0, 0
+  index: -1
+thick_on
+  rotate: false
+  xy: 102, 1011
+  size: 24, 21
+  orig: 24, 21
+  offset: 0, 0
+  index: -1

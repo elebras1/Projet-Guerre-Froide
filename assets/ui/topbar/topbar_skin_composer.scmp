@@ -3,7 +3,7 @@ atlasData: {
 	atlasCurrent: true
 	drawables: [
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_less.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/date_btn.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -12,7 +12,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_less
+			name: date_btn
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -23,7 +23,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_less_down.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/date_btn_down.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -32,7 +32,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_less_down
+			name: date_btn_down
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -43,7 +43,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_less_over.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/date_btn_over.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -52,7 +52,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_less_over
+			name: date_btn_over
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -63,7 +63,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_more.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/defcon_buttons_0.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -72,7 +72,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_more
+			name: defcon_buttons_0
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -83,7 +83,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_more_down.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/defcon_buttons_1.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -92,7 +92,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_more_down
+			name: defcon_buttons_1
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -103,7 +103,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_more_over.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/defcon_buttons_2.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -112,7 +112,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_more_over
+			name: defcon_buttons_2
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -123,7 +123,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/checkbutton_off.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/defcon_buttons_3.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -132,7 +132,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: checkbutton_off
+			name: defcon_buttons_3
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -143,7 +143,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/checkbutton_on.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/defcon_buttons_4.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -152,7 +152,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: checkbutton_on
+			name: defcon_buttons_4
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -163,7 +163,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/flag_alpha.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/defcon_buttons_5.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -172,7 +172,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: flag_alpha
+			name: defcon_buttons_5
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -183,7 +183,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/flag_alpha2.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/menu.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -192,7 +192,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: flag_alpha2
+			name: menu
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -203,7 +203,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/flag_overlay.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/minus_speed.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -212,7 +212,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: flag_overlay
+			name: minus_speed
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -223,7 +223,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_tab_btn_1.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/minus_speed_down.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -232,7 +232,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_tab_btn_1
+			name: minus_speed_down
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -243,7 +243,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_tab_btn_1_down.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/minus_speed_over.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -252,7 +252,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_tab_btn_1_down
+			name: minus_speed_over
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -263,7 +263,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_tab_btn_1_over.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/naked_topbar.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -272,7 +272,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_tab_btn_1_over
+			name: naked_topbar
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -283,7 +283,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_tab_btn_2.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/plus_speed.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -292,7 +292,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_tab_btn_2
+			name: plus_speed
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -303,7 +303,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_tab_btn_2_down.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/plus_speed_down.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -312,7 +312,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_tab_btn_2_down
+			name: plus_speed_down
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -323,7 +323,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/settings_tab_btn_2_over.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/plus_speed_over.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -332,7 +332,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: settings_tab_btn_2_over
+			name: plus_speed_over
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -343,7 +343,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/small_tiles_dialog.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/prestige.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -352,7 +352,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: small_tiles_dialog
+			name: prestige
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -363,7 +363,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/tiles_dialog_type3.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/small_naked_bar.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -372,7 +372,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: tiles_dialog_type3
+			name: small_naked_bar
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -383,7 +383,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/tiles_dialog_type4.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/speed_indicator_slice_0.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -392,7 +392,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: tiles_dialog_type4
+			name: speed_indicator_slice_0
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -403,7 +403,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/tiles_dialog.9.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/speed_indicator_slice_1.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -412,798 +412,18 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: tiles_dialog
+			name: speed_indicator_slice_1
 			tiled: false
 			minWidth: -1
 			minHeight: -1
 			customized: false
 			tenPatchData: null
 			tvgData: null
-			type: NINE_PATCH
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/close_btn.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: close_btn
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/close_btn_down.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: close_btn_down
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/close_btn_over.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: close_btn_over
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_coal_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_coal_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_fish_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_fish_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_grain_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_grain_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_iron_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_iron_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_meat_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_meat_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_oil_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_oil_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_rare_metals_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_rare_metals_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_uranium_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_uranium_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_vegetables_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_vegetables_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_wood_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_wood_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_fruits_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_fruits_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_renewable_energy_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_renewable_energy_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_precious_metals_small.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: resource_precious_metals_small
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_dissent_small_blue.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_dissent_small_blue
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_dissent_small_green.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_dissent_small_green
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_dissent_small_red.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_dissent_small_red
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_fuel_small_blue.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_fuel_small_blue
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_fuel_small_green.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_fuel_small_green
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_fuel_small_red.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_fuel_small_red
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_gdp_small_blue.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_gdp_small_blue
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_gdp_small_green.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_gdp_small_green
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_gdp_small_red.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_gdp_small_red
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_leadership_small_blue.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_leadership_small_blue
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_leadership_small_green.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_leadership_small_green
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_leadership_small_red.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_leadership_small_red
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_manpower_army_small_blue.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_manpower_army_small_blue
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_manpower_army_small_green.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_manpower_army_small_green
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_manpower_army_small_red.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_manpower_army_small_red
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_manpower_small_blue.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_manpower_small_blue
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_manpower_small_green.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_manpower_small_green
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_manpower_small_red.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_manpower_small_red
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_money_small_blue.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_money_small_blue
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_money_small_green.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_money_small_green
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_money_small_red.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_money_small_red
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_nuke.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_nuke
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_oil.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: icon_oil
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
 			type: TEXTURE
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_prestige_small_blue.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/speed_indicator_slice_2.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1212,7 +432,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_prestige_small_blue
+			name: speed_indicator_slice_2
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1223,7 +443,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_prestige_small_green.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/speed_indicator_slice_3.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1232,7 +452,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_prestige_small_green
+			name: speed_indicator_slice_3
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1243,7 +463,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_prestige_small_red.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/speed_indicator_slice_4.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1252,7 +472,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_prestige_small_red
+			name: speed_indicator_slice_4
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1263,7 +483,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_satellite_blue.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/speed_indicator_slice_5.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1272,7 +492,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_satellite_blue
+			name: speed_indicator_slice_5
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1283,7 +503,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_satellite_green.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/stats.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1292,7 +512,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_satellite_green
+			name: stats
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1303,7 +523,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_satellite_red.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_diplomacy.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1312,7 +532,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_satellite_red
+			name: tab_diplomacy
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1323,7 +543,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_spy_blue.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_diplomacy_down.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1332,7 +552,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_spy_blue
+			name: tab_diplomacy_down
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1343,7 +563,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_spy_green.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_diplomacy_over.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1352,7 +572,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_spy_green
+			name: tab_diplomacy_over
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1363,7 +583,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_spy_red.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_economy.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1372,7 +592,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_spy_red
+			name: tab_economy
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1383,7 +603,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_supplies_small_blue.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_economy_down.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1392,7 +612,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_supplies_small_blue
+			name: tab_economy_down
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1403,7 +623,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_supplies_small_green.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_economy_over.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1412,7 +632,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_supplies_small_green
+			name: tab_economy_over
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1423,7 +643,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_supplies_small_red.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_intel.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1432,7 +652,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_supplies_small_red
+			name: tab_intel
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1443,7 +663,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_unity_small_blue.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_intel_down.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1452,7 +672,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_unity_small_blue
+			name: tab_intel_down
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1463,7 +683,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_unity_small_green.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_intel_over.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1472,7 +692,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_unity_small_green
+			name: tab_intel_over
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1483,7 +703,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_unity_small_red.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_military.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1492,7 +712,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_unity_small_red
+			name: tab_military
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1503,7 +723,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_uranium.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_military_down.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1512,7 +732,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_uranium
+			name: tab_military_down
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1523,7 +743,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_uranium_small_blue.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_military_over.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1532,7 +752,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_uranium_small_blue
+			name: tab_military_over
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1543,7 +763,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_uranium_small_green.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_tech.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1552,7 +772,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_uranium_small_green
+			name: tab_tech
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1563,7 +783,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/icon_uranium_small_red.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_tech_down.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1572,7 +792,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: icon_uranium_small_red
+			name: tab_tech_down
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1583,7 +803,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/shield_big.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_tech_over.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1592,7 +812,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: shield_big
+			name: tab_tech_over
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1603,7 +823,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/shield_big_overlay.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/thick_of.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1612,7 +832,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: shield_big_overlay
+			name: thick_of
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1623,7 +843,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/minimask.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/thick_on.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1632,7 +852,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: minimask
+			name: thick_on
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1643,7 +863,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/minishield.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_politics.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1652,7 +872,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: minishield
+			name: tab_politics
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1663,7 +883,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_gas_small.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_politics_down.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1672,7 +892,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: resource_gas_small
+			name: tab_politics_down
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1683,7 +903,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/resource_none_small.png
+			file: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/tab_politics_over.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1692,7 +912,7 @@ atlasData: {
 			}
 			tint: null
 			tintName: null
-			name: resource_none_small
+			name: tab_politics_over
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -1858,6 +1078,35 @@ jsonData: {
 				parent: null
 			}
 		]
+		com.badlogic.gdx.scenes.scene2d.ui.Label: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
+				properties: {
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: null
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: true
+						value: null
+					}
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+				}
+				deletable: false
+				parent: null
+			}
+		]
 		com.badlogic.gdx.scenes.scene2d.ui.SplitPane: [
 			{
 				class: com.ray3k.skincomposer.data.StyleData
@@ -1883,35 +1132,6 @@ jsonData: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: handle
 						optional: false
-						value: null
-					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.Label: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
-				properties: {
-					font: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: font
-						optional: false
-						value: null
-					}
-					fontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: fontColor
-						optional: true
-						value: null
-					}
-					background: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: background
-						optional: true
 						value: null
 					}
 				}
@@ -2303,167 +1523,6 @@ jsonData: {
 				parent: null
 			}
 		]
-		com.badlogic.gdx.scenes.scene2d.ui.TextButton: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.TextButton
-				properties: {
-					font: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: font
-						optional: false
-						value: null
-					}
-					fontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: fontColor
-						optional: true
-						value: null
-					}
-					downFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: downFontColor
-						optional: true
-						value: null
-					}
-					overFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: overFontColor
-						optional: true
-						value: null
-					}
-					focusedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: focusedFontColor
-						optional: true
-						value: null
-					}
-					disabledFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: disabledFontColor
-						optional: true
-						value: null
-					}
-					checkedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedFontColor
-						optional: true
-						value: null
-					}
-					checkedDownFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedDownFontColor
-						optional: true
-						value: null
-					}
-					checkedOverFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedOverFontColor
-						optional: true
-						value: null
-					}
-					checkedFocusedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedFocusedFontColor
-						optional: true
-						value: null
-					}
-					up: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: up
-						optional: true
-						value: null
-					}
-					down: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: down
-						optional: true
-						value: null
-					}
-					over: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: over
-						optional: true
-						value: null
-					}
-					focused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: focused
-						optional: true
-						value: null
-					}
-					disabled: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: disabled
-						optional: true
-						value: null
-					}
-					checked: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checked
-						optional: true
-						value: null
-					}
-					checkedOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedOver
-						optional: true
-						value: null
-					}
-					checkedDown: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedDown
-						optional: true
-						value: null
-					}
-					checkedFocused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedFocused
-						optional: true
-						value: null
-					}
-					pressedOffsetX: {
-						type: float
-						name: pressedOffsetX
-						optional: true
-						value: 0
-					}
-					pressedOffsetY: {
-						type: float
-						name: pressedOffsetY
-						optional: true
-						value: 0
-					}
-					unpressedOffsetX: {
-						type: float
-						name: unpressedOffsetX
-						optional: true
-						value: 0
-					}
-					unpressedOffsetY: {
-						type: float
-						name: unpressedOffsetY
-						optional: true
-						value: 0
-					}
-					checkedOffsetX: {
-						type: float
-						name: checkedOffsetX
-						optional: true
-						value: 0
-					}
-					checkedOffsetY: {
-						type: float
-						name: checkedOffsetY
-						optional: true
-						value: 0
-					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
 		com.badlogic.gdx.scenes.scene2d.ui.CheckBox: [
 			{
 				class: com.ray3k.skincomposer.data.StyleData
@@ -2661,12 +1720,72 @@ jsonData: {
 				parent: null
 			}
 		]
-		com.badlogic.gdx.scenes.scene2d.ui.Button: [
+		com.badlogic.gdx.scenes.scene2d.ui.TextButton: [
 			{
 				class: com.ray3k.skincomposer.data.StyleData
 				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.TextButton
 				properties: {
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: null
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: true
+						value: null
+					}
+					downFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: downFontColor
+						optional: true
+						value: null
+					}
+					overFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: overFontColor
+						optional: true
+						value: null
+					}
+					focusedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: focusedFontColor
+						optional: true
+						value: null
+					}
+					disabledFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: disabledFontColor
+						optional: true
+						value: null
+					}
+					checkedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedFontColor
+						optional: true
+						value: null
+					}
+					checkedDownFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedDownFontColor
+						optional: true
+						value: null
+					}
+					checkedOverFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedOverFontColor
+						optional: true
+						value: null
+					}
+					checkedFocusedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedFocusedFontColor
+						optional: true
+						value: null
+					}
 					up: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
@@ -2761,28 +1880,129 @@ jsonData: {
 				deletable: false
 				parent: null
 			}
+		]
+		com.badlogic.gdx.scenes.scene2d.ui.Button: [
 			{
 				class: com.ray3k.skincomposer.data.StyleData
-				name: settings_tab_btn_1
+				name: default
 				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
 				properties: {
 					up: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: settings_tab_btn_1
+						value: thick_on
 					}
 					down: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: settings_tab_btn_1_down
+						value: null
 					}
 					over: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: settings_tab_btn_1_over
+						value: null
+					}
+					focused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: focused
+						optional: true
+						value: null
+					}
+					disabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: disabled
+						optional: true
+						value: null
+					}
+					checked: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checked
+						optional: true
+						value: thick_of
+					}
+					checkedOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedOver
+						optional: true
+						value: null
+					}
+					checkedDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedDown
+						optional: true
+						value: null
+					}
+					checkedFocused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedFocused
+						optional: true
+						value: null
+					}
+					pressedOffsetX: {
+						type: float
+						name: pressedOffsetX
+						optional: true
+						value: 0
+					}
+					pressedOffsetY: {
+						type: float
+						name: pressedOffsetY
+						optional: true
+						value: 0
+					}
+					unpressedOffsetX: {
+						type: float
+						name: unpressedOffsetX
+						optional: true
+						value: 0
+					}
+					unpressedOffsetY: {
+						type: float
+						name: unpressedOffsetY
+						optional: true
+						value: 0
+					}
+					checkedOffsetX: {
+						type: float
+						name: checkedOffsetX
+						optional: true
+						value: 0
+					}
+					checkedOffsetY: {
+						type: float
+						name: checkedOffsetY
+						optional: true
+						value: 0
+					}
+				}
+				deletable: false
+				parent: null
+			}
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: date_btn
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
+				properties: {
+					up: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: up
+						optional: true
+						value: date_btn
+					}
+					down: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: down
+						optional: true
+						value: date_btn_down
+					}
+					over: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: over
+						optional: true
+						value: date_btn_over
 					}
 					focused: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
@@ -2862,26 +2082,26 @@ jsonData: {
 			}
 			{
 				class: com.ray3k.skincomposer.data.StyleData
-				name: settings_tab_btn_2
+				name: minus_speed
 				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
 				properties: {
 					up: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: settings_tab_btn_2
+						value: minus_speed
 					}
 					down: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: settings_tab_btn_2_down
+						value: minus_speed_down
 					}
 					over: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: settings_tab_btn_2_over
+						value: minus_speed_over
 					}
 					focused: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
@@ -2961,125 +2181,26 @@ jsonData: {
 			}
 			{
 				class: com.ray3k.skincomposer.data.StyleData
-				name: checkbox
+				name: plus_speed
 				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
 				properties: {
 					up: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: checkbutton_off
+						value: plus_speed
 					}
 					down: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: null
+						value: plus_speed_down
 					}
 					over: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: null
-					}
-					focused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: focused
-						optional: true
-						value: null
-					}
-					disabled: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: disabled
-						optional: true
-						value: null
-					}
-					checked: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checked
-						optional: true
-						value: checkbutton_on
-					}
-					checkedOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedOver
-						optional: true
-						value: null
-					}
-					checkedDown: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedDown
-						optional: true
-						value: null
-					}
-					checkedFocused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedFocused
-						optional: true
-						value: null
-					}
-					pressedOffsetX: {
-						type: float
-						name: pressedOffsetX
-						optional: true
-						value: 0
-					}
-					pressedOffsetY: {
-						type: float
-						name: pressedOffsetY
-						optional: true
-						value: 0
-					}
-					unpressedOffsetX: {
-						type: float
-						name: unpressedOffsetX
-						optional: true
-						value: 0
-					}
-					unpressedOffsetY: {
-						type: float
-						name: unpressedOffsetY
-						optional: true
-						value: 0
-					}
-					checkedOffsetX: {
-						type: float
-						name: checkedOffsetX
-						optional: true
-						value: 0
-					}
-					checkedOffsetY: {
-						type: float
-						name: checkedOffsetY
-						optional: true
-						value: 0
-					}
-				}
-				deletable: true
-				parent: null
-			}
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: settings_less
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
-				properties: {
-					up: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: up
-						optional: true
-						value: settings_less
-					}
-					down: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: down
-						optional: true
-						value: settings_less_down
-					}
-					over: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: over
-						optional: true
-						value: settings_less_over
+						value: plus_speed_over
 					}
 					focused: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
@@ -3159,26 +2280,26 @@ jsonData: {
 			}
 			{
 				class: com.ray3k.skincomposer.data.StyleData
-				name: settings_more
+				name: tab_diplomacy
 				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
 				properties: {
 					up: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: settings_more
+						value: tab_diplomacy
 					}
 					down: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: settings_more_down
+						value: tab_diplomacy_down
 					}
 					over: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: settings_more_over
+						value: tab_diplomacy_over
 					}
 					focused: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
@@ -3258,26 +2379,422 @@ jsonData: {
 			}
 			{
 				class: com.ray3k.skincomposer.data.StyleData
-				name: close_btn
+				name: tab_economy
 				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
 				properties: {
 					up: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: up
 						optional: true
-						value: close_btn
+						value: tab_economy
 					}
 					down: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: down
 						optional: true
-						value: close_btn_down
+						value: tab_economy_down
 					}
 					over: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: over
 						optional: true
-						value: close_btn_over
+						value: tab_economy_over
+					}
+					focused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: focused
+						optional: true
+						value: null
+					}
+					disabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: disabled
+						optional: true
+						value: null
+					}
+					checked: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checked
+						optional: true
+						value: null
+					}
+					checkedOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedOver
+						optional: true
+						value: null
+					}
+					checkedDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedDown
+						optional: true
+						value: null
+					}
+					checkedFocused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedFocused
+						optional: true
+						value: null
+					}
+					pressedOffsetX: {
+						type: float
+						name: pressedOffsetX
+						optional: true
+						value: 0
+					}
+					pressedOffsetY: {
+						type: float
+						name: pressedOffsetY
+						optional: true
+						value: 0
+					}
+					unpressedOffsetX: {
+						type: float
+						name: unpressedOffsetX
+						optional: true
+						value: 0
+					}
+					unpressedOffsetY: {
+						type: float
+						name: unpressedOffsetY
+						optional: true
+						value: 0
+					}
+					checkedOffsetX: {
+						type: float
+						name: checkedOffsetX
+						optional: true
+						value: 0
+					}
+					checkedOffsetY: {
+						type: float
+						name: checkedOffsetY
+						optional: true
+						value: 0
+					}
+				}
+				deletable: true
+				parent: null
+			}
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: tab_intel
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
+				properties: {
+					up: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: up
+						optional: true
+						value: tab_intel
+					}
+					down: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: down
+						optional: true
+						value: tab_intel_down
+					}
+					over: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: over
+						optional: true
+						value: tab_intel_over
+					}
+					focused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: focused
+						optional: true
+						value: null
+					}
+					disabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: disabled
+						optional: true
+						value: null
+					}
+					checked: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checked
+						optional: true
+						value: null
+					}
+					checkedOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedOver
+						optional: true
+						value: null
+					}
+					checkedDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedDown
+						optional: true
+						value: null
+					}
+					checkedFocused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedFocused
+						optional: true
+						value: null
+					}
+					pressedOffsetX: {
+						type: float
+						name: pressedOffsetX
+						optional: true
+						value: 0
+					}
+					pressedOffsetY: {
+						type: float
+						name: pressedOffsetY
+						optional: true
+						value: 0
+					}
+					unpressedOffsetX: {
+						type: float
+						name: unpressedOffsetX
+						optional: true
+						value: 0
+					}
+					unpressedOffsetY: {
+						type: float
+						name: unpressedOffsetY
+						optional: true
+						value: 0
+					}
+					checkedOffsetX: {
+						type: float
+						name: checkedOffsetX
+						optional: true
+						value: 0
+					}
+					checkedOffsetY: {
+						type: float
+						name: checkedOffsetY
+						optional: true
+						value: 0
+					}
+				}
+				deletable: true
+				parent: null
+			}
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: tab_military
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
+				properties: {
+					up: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: up
+						optional: true
+						value: tab_military
+					}
+					down: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: down
+						optional: true
+						value: tab_military_down
+					}
+					over: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: over
+						optional: true
+						value: tab_military_over
+					}
+					focused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: focused
+						optional: true
+						value: null
+					}
+					disabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: disabled
+						optional: true
+						value: null
+					}
+					checked: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checked
+						optional: true
+						value: null
+					}
+					checkedOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedOver
+						optional: true
+						value: null
+					}
+					checkedDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedDown
+						optional: true
+						value: null
+					}
+					checkedFocused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedFocused
+						optional: true
+						value: null
+					}
+					pressedOffsetX: {
+						type: float
+						name: pressedOffsetX
+						optional: true
+						value: 0
+					}
+					pressedOffsetY: {
+						type: float
+						name: pressedOffsetY
+						optional: true
+						value: 0
+					}
+					unpressedOffsetX: {
+						type: float
+						name: unpressedOffsetX
+						optional: true
+						value: 0
+					}
+					unpressedOffsetY: {
+						type: float
+						name: unpressedOffsetY
+						optional: true
+						value: 0
+					}
+					checkedOffsetX: {
+						type: float
+						name: checkedOffsetX
+						optional: true
+						value: 0
+					}
+					checkedOffsetY: {
+						type: float
+						name: checkedOffsetY
+						optional: true
+						value: 0
+					}
+				}
+				deletable: true
+				parent: null
+			}
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: tab_politics
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
+				properties: {
+					up: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: up
+						optional: true
+						value: tab_politics
+					}
+					down: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: down
+						optional: true
+						value: tab_politics_down
+					}
+					over: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: over
+						optional: true
+						value: tab_politics_over
+					}
+					focused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: focused
+						optional: true
+						value: null
+					}
+					disabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: disabled
+						optional: true
+						value: null
+					}
+					checked: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checked
+						optional: true
+						value: null
+					}
+					checkedOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedOver
+						optional: true
+						value: null
+					}
+					checkedDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedDown
+						optional: true
+						value: null
+					}
+					checkedFocused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedFocused
+						optional: true
+						value: null
+					}
+					pressedOffsetX: {
+						type: float
+						name: pressedOffsetX
+						optional: true
+						value: 0
+					}
+					pressedOffsetY: {
+						type: float
+						name: pressedOffsetY
+						optional: true
+						value: 0
+					}
+					unpressedOffsetX: {
+						type: float
+						name: unpressedOffsetX
+						optional: true
+						value: 0
+					}
+					unpressedOffsetY: {
+						type: float
+						name: unpressedOffsetY
+						optional: true
+						value: 0
+					}
+					checkedOffsetX: {
+						type: float
+						name: checkedOffsetX
+						optional: true
+						value: 0
+					}
+					checkedOffsetY: {
+						type: float
+						name: checkedOffsetY
+						optional: true
+						value: 0
+					}
+				}
+				deletable: true
+				parent: null
+			}
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: tab_tech
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Button
+				properties: {
+					up: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: up
+						optional: true
+						value: tab_tech
+					}
+					down: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: down
+						optional: true
+						value: tab_tech_down
+					}
+					over: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: over
+						optional: true
+						value: tab_tech_over
 					}
 					focused: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
@@ -3892,11 +3409,7 @@ jsonData: {
 preferences: {
 	id: {
 		class: java.lang.Integer
-		value: 550911102
-	}
-	last-import-export-path: {
-		class: java.lang.String
-		value: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/ui_skin.json
+		value: 675050422
 	}
 	resources-relative: {
 		class: java.lang.Boolean
@@ -3907,7 +3420,7 @@ preferences: {
 		value: 30
 	}
 }
-saveFile: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/ui_skin_composer.scmp
+saveFile: C:/Users/erwan/Documents/dev/Projet-Guerre-Froide/assets/ui/topbar/topbar_skin_composer.scmp
 version: 58
 sceneComposer: null
 }
