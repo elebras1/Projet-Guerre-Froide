@@ -1,5 +1,7 @@
 package com.populaire.projetguerrefroide.dto;
 
+import com.populaire.projetguerrefroide.entity.DevelopementBuildingLevel;
+
 import java.util.List;
 
 public class ProvinceDto {
@@ -21,14 +23,11 @@ public class ProvinceDto {
     private final float incomeProvince;
     private final float revoltRisk;
     private final List<String> provinceIdsRegion;
-    private final byte navalBaseLevel;
-    private final byte airBaseLevel;
-    private final byte radarStationLevel;
-    private final byte antiAircraftGunsLevel;
+    private final DevelopementBuildingLevel developmentBuildingLevel;
     private final List<String> specialBuildings;
     private final List<String> colorBuildings;
 
-    public ProvinceDto(String provinceId, String regionId, String terrainImage, String resourceImage, String populationRegion, String workersRegion, int developmentIndexRegion, int incomeRegion, int industryRegion, String flagImage, List<String> flagCountriesCore, float resourceProduced, int infrastructureValue, int guerillaValue, String populationProvince, float incomeProvince, float revoltRisk, List<String> provinceIdsRegion, byte navalBaseLevel, byte airBaseLevel, byte radarStationLevel, byte antiAircraftGunsLevel, List<String> specialBuildings, List<String> colorBuildings) {
+    public ProvinceDto(String provinceId, String regionId, String terrainImage, String resourceImage, String populationRegion, String workersRegion, int developmentIndexRegion, int incomeRegion, int industryRegion, String flagImage, List<String> flagCountriesCore, float resourceProduced, int infrastructureValue, int guerillaValue, String populationProvince, float incomeProvince, float revoltRisk, List<String> provinceIdsRegion, DevelopementBuildingLevel developmentBuildingLeve, List<String> specialBuildings, List<String> colorBuildings) {
         this.provinceId = provinceId;
         this.regionId = regionId;
         this.terrainImage = terrainImage;
@@ -47,10 +46,7 @@ public class ProvinceDto {
         this.incomeProvince = incomeProvince;
         this.revoltRisk = revoltRisk;
         this.provinceIdsRegion = provinceIdsRegion;
-        this.navalBaseLevel = navalBaseLevel;
-        this.airBaseLevel = airBaseLevel;
-        this.radarStationLevel = radarStationLevel;
-        this.antiAircraftGunsLevel = antiAircraftGunsLevel;
+        this.developmentBuildingLevel = developmentBuildingLeve;
         this.specialBuildings = specialBuildings;
         this.colorBuildings = colorBuildings;
     }
@@ -127,20 +123,8 @@ public class ProvinceDto {
         return this.provinceIdsRegion;
     }
 
-    public byte getNavalBaseLevel() {
-        return this.navalBaseLevel;
-    }
-
-    public byte getAirBaseLevel() {
-        return this.airBaseLevel;
-    }
-
-    public byte getRadarStationLevel() {
-        return this.radarStationLevel;
-    }
-
-    public byte getAntiAircraftGunsLevel() {
-        return this.antiAircraftGunsLevel;
+    public DevelopementBuildingLevel getDevelopmentBuildingLevel() {
+        return this.developmentBuildingLevel;
     }
 
     public List<String> getSpecialBuildings() {

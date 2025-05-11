@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
+import com.populaire.projetguerrefroide.entity.DevelopementBuildingLevel;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.util.LabelUtils;
 
@@ -233,10 +234,11 @@ public class ProvincePanel extends Table {
         this.setIncomeProvince(provinceDto.getIncomeProvince());
         this.setRevoltRisk(provinceDto.getRevoltRisk());
         this.setProvinceNamesRegion(provinceDto.getProvinceIdsRegion());
-        this.setBuildingLevel(this.navalBaseLevel, provinceDto.getNavalBaseLevel());
-        this.setBuildingLevel(this.airBaseLevel, provinceDto.getAirBaseLevel());
-        this.setBuildingLevel(this.radarStationLevel, provinceDto.getRadarStationLevel());
-        this.setBuildingLevel(this.antiAircraftGunsLevel, provinceDto.getAntiAircraftGunsLevel());
+        DevelopementBuildingLevel developementBuildingLevel = provinceDto.getDevelopmentBuildingLevel();
+        this.setBuildingLevel(this.navalBaseLevel, developementBuildingLevel.getNavalBaseLevel());
+        this.setBuildingLevel(this.airBaseLevel, developementBuildingLevel.getAirBaseLevel());
+        this.setBuildingLevel(this.radarStationLevel, developementBuildingLevel.getRadarStationLevel());
+        this.setBuildingLevel(this.antiAircraftGunsLevel, developementBuildingLevel.getAntiAircraftGunsLevel());
         this.setColorBuildings(provinceDto.getColorsBuildings());
         this.setSpecialBuildings(provinceDto.getSpecialBuildings());
     }
