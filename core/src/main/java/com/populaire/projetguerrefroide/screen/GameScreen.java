@@ -159,11 +159,11 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     public void onHover(short x, short y) {
         if(this.worldService.hoverProvince(x, y) && this.isMouseOverUI()) {
             if(this.worldService.getMapMode().equals(MapMode.CULTURAL)) {
-                this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getCulturesOfHoveredProvince(x, y));
+                this.updateHoverTooltip(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getCulturesOfHoveredProvince(x, y));
             } else if(this.worldService.getMapMode().equals(MapMode.RELIGIOUS)) {
-                this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getReligionsOfHoveredProvince(x, y));
+                this.updateHoverTooltip(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getReligionsOfHoveredProvince(x, y));
             } else {
-                this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y));
+                this.updateHoverTooltip(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y));
             }
         } else if(this.isMouseOverUI()) {
             this.hideHoverBox();
@@ -267,7 +267,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.hoverTooltip.toFront();
     }
 
-    public void updateHoverBox(short provinceId, String countryName, String countryId) {
+    public void updateHoverTooltip(short provinceId, String countryName, String countryId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
         this.hoverTooltip.update(provinceId, countryName, countryId);
@@ -277,7 +277,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.hoverTooltip.toBack();
     }
 
-    public void updateHoverBox(short provinceId, String countryName, String countryId, ObjectIntMap<String> elements) {
+    public void updateHoverTooltip(short provinceId, String countryName, String countryId, ObjectIntMap<String> elements) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
         this.hoverTooltip.update(provinceId, countryName, countryId, elements);

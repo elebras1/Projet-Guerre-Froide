@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.tommyettinger.ds.ObjectIntMap;
+import com.github.tommyettinger.ds.ObjectIntOrderedMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
@@ -27,12 +28,12 @@ public class WorldService {
     private final WorldDao worldDao;
     private GameEntities gameEntities;
     private World world;
-    private final ObjectIntMap<String> elementPercentages;
+    private final ObjectIntOrderedMap<String> elementPercentages;
 
     public WorldService() {
         this.asyncExecutor = new AsyncExecutor(2);
         this.worldDao = new WorldDao();
-        this.elementPercentages = new ObjectIntMap<>();
+        this.elementPercentages = new ObjectIntOrderedMap<>();
     }
 
     public void createWorld(GameContext gameContext) {
@@ -199,6 +200,8 @@ public class WorldService {
             this.elementPercentages.put(biggestElement.getName(), this.elementPercentages.get(biggestElement.getName()) + difference);
         }
 
+        this.sortByValueDescending(this.elementPercentages);
+
         return this.elementPercentages;
     }
 
@@ -258,6 +261,21 @@ public class WorldService {
         }
 
         return colors;
+    }
+
+    private void sortByValueDescending(ObjectIntOrderedMap<String> map) {
+        ObjectList<String> keys = map.order();
+        int size = map.size();
+        for(int i = 1; i < size; i++){
+            String key = keys.get(i);
+            int value = map.get(key);
+            int j = i - 1;
+            while(j >= 0 && map.get(keys.get(j)) < value){
+                keys.set(j + 1, keys.get(j));
+                j--;
+            }
+            keys.set(j + 1, key);
+        }
     }
 
     public void dispose() {
