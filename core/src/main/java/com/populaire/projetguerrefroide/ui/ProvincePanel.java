@@ -44,17 +44,20 @@ public class ProvincePanel extends Table {
     private List<Image> radarStationLevel;
     private List<Image> antiAircraftGunsLevel;
     private List<Image> colorsBuildings;
+    private List<Image> specialBuildings;
 
     public ProvincePanel(Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.skin = skin;
         this.skinUi = skinUi;
         this.skinFlags = skinFlags;
         this.localisation = localisation;
+        this.provinceNamesRegion = new ObjectList<>();
         this.navalBaseLevel = new ObjectList<>();
         this.airBaseLevel = new ObjectList<>();
         this.radarStationLevel = new ObjectList<>();
         this.antiAircraftGunsLevel = new ObjectList<>();
         this.colorsBuildings = new ObjectList<>();
+        this.specialBuildings = new ObjectList<>();
         Drawable background = skin.getDrawable("bg_province");
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
@@ -66,8 +69,10 @@ public class ProvincePanel extends Table {
     private void setHeader(LabelStylePool labelStylePool) {
         this.terrainImage = new Image();
         this.terrainImage.setPosition(26, 315);
+        this.addActor(this.terrainImage);
 
         Image overlay = this.createImage(this.skin, "prov_overlay", 26, 315);
+        this.addActor(overlay);
 
         Button closeButton = new Button(this.skinUi, "close_btn");
         closeButton.setPosition(354, 455);
@@ -77,25 +82,23 @@ public class ProvincePanel extends Table {
                 ProvincePanel.this.remove();
             }
         });
+        this.addActor(closeButton);
 
         Label.LabelStyle labelStyleJockey24 = labelStylePool.getLabelStyle("jockey_24");
         this.provinceName = new Label("", labelStyleJockey24);
+        this.addActor(this.provinceName);
 
         this.flagImage = this.createFlagImage(this.skinUi, "shield_big", "shield_big_overlay", (short) 64, (short) 64);
-
-        this.addActor(this.terrainImage);
-        this.addActor(overlay);
-        this.addActor(closeButton);
-        this.addActor(this.provinceName);
         this.addActor(this.flagImage);
 
         Label.LabelStyle labelStyleJockey14 = labelStylePool.getLabelStyle("jockey_14");
-        this.provinceNamesRegion = new ObjectList<>();
         for(int i = 0; i < 8; i++) {
             Label label = new Label("", labelStyleJockey14);
             this.provinceNamesRegion.add(label);
             this.addActor(label);
         }
+
+        this.addActor(this.createSpecialBuildings(this.skin, 26, 25));
     }
 
     private void setDataOverview(LabelStylePool labelStylePool) {
@@ -186,32 +189,29 @@ public class ProvincePanel extends Table {
         return new FlagImage(defaultFlag, overlayFlag, alphaFlag);
     }
 
-    private Table createBuildingLevel(Skin skin, List<Image> buildingLevel, float x, float y) {
+    private Table createImageRow(Skin skin, String textureName, int count, float spacing, float x, float y, List<Image> targetList) {
         Table table = new Table();
         float imageX = 0;
-        float imageY = 0;
-        for(int i = 0; i < 10; i++) {
-            Image image = this.createImage(skin, "prov_building_plupp_off", imageX, imageY);
-            buildingLevel.add(image);
+        for (int i = 0; i < count; i++) {
+            Image image = this.createImage(skin, textureName, imageX, 0);
+            targetList.add(image);
             table.addActor(image);
-            imageX += 8;
+            imageX += spacing;
         }
         table.setPosition(x, y);
         return table;
     }
 
+    private Table createBuildingLevel(Skin skin, List<Image> buildingLevel, float x, float y) {
+        return createImageRow(skin, "prov_building_plupp_off", 10, 8, x, y, buildingLevel);
+    }
+
     private Table createColorBuildings(Skin skin, float x, float y) {
-        Table table = new Table();
-        float imageX = 0;
-        float imageY = 0;
-        for(int i = 0; i < 6; i++) {
-            Image image = this.createImage(skin, "factory_plupp_nofactory", imageX, imageY);
-            this.colorsBuildings.add(image);
-            table.addActor(image);
-            imageX += 18;
-        }
-        table.setPosition(x, y);
-        return table;
+        return createImageRow(skin, "factory_plupp_nofactory", 6, 18, x, y, this.colorsBuildings);
+    }
+
+    private Table createSpecialBuildings(Skin skin, float x, float y) {
+        return createImageRow(skin, "empty_spec_building", 8, 60, x, y, this.specialBuildings);
     }
 
     public void setData(ProvinceDto provinceDto) {
@@ -238,6 +238,7 @@ public class ProvincePanel extends Table {
         this.setBuildingLevel(this.radarStationLevel, provinceDto.getRadarStationLevel());
         this.setBuildingLevel(this.antiAircraftGunsLevel, provinceDto.getAntiAircraftGunsLevel());
         this.setColorBuildings(provinceDto.getColorsBuildings());
+        this.setSpecialBuildings(provinceDto.getSpecialBuildings());
     }
 
     private void setResourceImage(String name) {
@@ -378,6 +379,18 @@ public class ProvincePanel extends Table {
                 image.setDrawable(this.skin.getDrawable("factory_plupp_" + color));
             } else {
                 image.setDrawable(this.skin.getDrawable("factory_plupp_nofactory"));
+            }
+        }
+    }
+
+    private void setSpecialBuildings(List<String> specialBuildingsName) {
+        for(int i = 0; i < this.specialBuildings.size(); i++) {
+            Image image = this.specialBuildings.get(i);
+            if(i < specialBuildingsName.size()) {
+                String name = specialBuildingsName.get(i);
+                image.setDrawable(this.skin.getDrawable(name + "_building"));
+            } else {
+                image.setDrawable(this.skin.getDrawable("empty_spec_building"));
             }
         }
     }

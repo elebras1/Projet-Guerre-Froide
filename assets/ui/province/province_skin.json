@@ -1,17 +1,9 @@
 {
 "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
-	"default": {
-		"up": "prov_building_plupp_off"
-	},
 	"province_buildings_close": {
 		"up": "province_buildings_close",
 		"down": "province_buildings_close_down",
 		"over": "province_buildings_close_over"
-	},
-	"prov_building_plupp": {
-		"up": "prov_building_plupp_off",
-		"disabled": "prov_building_plupp_off",
-		"checked": "prov_building_plupp_on"
 	}
 }
 }
