@@ -9,9 +9,7 @@ import com.populaire.projetguerrefroide.entity.Bookmark;
 import com.populaire.projetguerrefroide.configuration.Settings;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class ConfigurationDao {
@@ -43,19 +41,13 @@ public class ConfigurationDao {
 
     public Bookmark loadBookmark() {
         Bookmark bookmark = null;
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
             JsonNode rootNode = this.openJson(this.bookmarkJsonFile);
             JsonNode bookmarkNode = rootNode.get("bookmark");
             String iconNameFile = bookmarkNode.get("icon").asText();
             String nameId = bookmarkNode.get("name").asText();
             String descriptionId = bookmarkNode.get("desc").asText();
-            Date date = null;
-            try {
-                date = dateFormat.parse(bookmarkNode.get("date").asText());
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+            LocalDate date = LocalDate.parse(bookmarkNode.get("date").asText());
 
             List<String> countriesId = new ObjectList<>();
             JsonNode countriesNode = bookmarkNode.get("country");

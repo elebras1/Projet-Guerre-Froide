@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.ui.view.MainMenu;
 
@@ -15,7 +16,7 @@ public class MainMenuScreen implements Screen, MainMenuListener {
     private final Stage stage;
     private final ScreenManager screenManager;
 
-    public MainMenuScreen(ScreenManager screenManager, GameContext gameContext) {
+    public MainMenuScreen(ScreenManager screenManager, GameContext gameContext, ConfigurationService configurationService) {
         this.stage = new Stage(new ScreenViewport());
         this.screenManager = screenManager;
         gameContext.getSettings().applyGraphicsSettings();
@@ -27,7 +28,8 @@ public class MainMenuScreen implements Screen, MainMenuListener {
         Table rootTable = new Table();
         rootTable.setFillParent(true);
         rootTable.setBackground(skin.getDrawable("frontend_main_bg"));
-        MainMenu menu = new MainMenu(skin, gameContext.getLabelStylePool(), gameContext.getLocalisationDao().readMainMenuCsv(), this);
+        configurationService.loadMainMenuLocalisation(gameContext);
+        MainMenu menu = new MainMenu(skin, gameContext.getLabelStylePool(), gameContext.getLocalisation(), this);
         rootTable.add(menu).center().padLeft(menu.getWidth() / 3);
         this.stage.addActor(rootTable);
     }

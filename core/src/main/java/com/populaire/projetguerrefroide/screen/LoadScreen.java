@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.util.Logging;
@@ -22,11 +23,13 @@ public class LoadScreen implements Screen {
     private final ScreenManager screenManager;
     private final GameContext gameContext;
     private final WorldService worldService;
+    private final ConfigurationService configurationService;
 
-    public LoadScreen(ScreenManager screenManager, GameContext gameContext) {
+    public LoadScreen(ScreenManager screenManager, GameContext gameContext, ConfigurationService configurationService) {
         this.screenManager = screenManager;
         this.gameContext = gameContext;
         this.worldService = new WorldService();
+        this.configurationService = configurationService;
         this.gameContext.getCursorManager().animatedCursor("busy");
         AssetManager assetManager = this.gameContext.getAssetManager();
         assetManager.load("loadingscreens/loadingscreens_skin.json", Skin.class);
@@ -46,9 +49,9 @@ public class LoadScreen implements Screen {
 
     @Override
     public void show() {
+        this.configurationService.loadGameAssets(gameContext.getAssetManager());
         this.worldService.getAsyncExecutor().submit(() -> {
             long startTime = System.currentTimeMillis();
-            this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readCountriesCsv());
             this.worldService.createWorld(this.gameContext);
 
             Gdx.app.postRunnable(() -> {
@@ -61,6 +64,7 @@ public class LoadScreen implements Screen {
 
             return null;
         });
+        this.gameContext.getAssetManager().finishLoading();
     }
 
     @Override

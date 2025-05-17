@@ -1,42 +1,32 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
-import com.populaire.projetguerrefroide.dao.LocalisationDao;
-import com.populaire.projetguerrefroide.dao.ConfigurationDao;
+import com.populaire.projetguerrefroide.entity.Bookmark;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 
 import java.util.Map;
 
 public class GameContext {
-    private final ConfigurationDao configurationDao;
-    private final LocalisationDao localisationDao;
+    private final Bookmark bookmark;
     private final AssetManager assetManager;
     private final CursorManager cursorManager;
     private final LabelStylePool labelStylePool;
     private final Map<String, String> localisation;
     private Settings settings;
 
-    public GameContext(AssetManager assetManager) {
-        this.configurationDao = new ConfigurationDao();
-        this.localisationDao = new LocalisationDao();
+    public GameContext(Bookmark bookmark, AssetManager assetManager, CursorManager cursorManager, Settings settings, LabelStylePool labelStylePool) {
+        this.bookmark = bookmark;
         this.assetManager = assetManager;
-        this.cursorManager = new CursorManager();
-        Skin skinFonts = this.assetManager.get("ui/fonts/fonts_skin.json");
-        this.settings = this.configurationDao.loadSettings();
-        this.labelStylePool = new LabelStylePool(skinFonts, this.settings.getLanguage());
-        this.localisationDao.setLanguage(this.settings.getLanguage());
+        this.cursorManager = cursorManager;
+        this.labelStylePool = labelStylePool;
         this.localisation = new ObjectObjectMap<>();
+        this.settings = settings;
     }
 
-    public ConfigurationDao getConfigurationDao() {
-        return this.configurationDao;
-    }
-
-    public LocalisationDao getLocalisationDao() {
-        return this.localisationDao;
+    public Bookmark getBookmark() {
+        return this.bookmark;
     }
 
     public AssetManager getAssetManager() {
@@ -68,7 +58,6 @@ public class GameContext {
     }
 
     public void dispose() {
-        this.configurationDao.saveSettings(this.settings);
         this.assetManager.dispose();
         this.cursorManager.dispose();
     }

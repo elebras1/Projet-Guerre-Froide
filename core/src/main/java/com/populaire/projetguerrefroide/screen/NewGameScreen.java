@@ -16,6 +16,7 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
+import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.view.*;
@@ -27,6 +28,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     private final ScreenManager screenManager;
     private final GameContext gameContext;
     private final WorldService worldService;
+    private final ConfigurationService configurationService;
     private final OrthographicCamera cam;
     private final SpriteBatch batch;
     private final InputMultiplexer multiplexer;
@@ -46,10 +48,11 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     private float time;
     private boolean paused;
 
-    public NewGameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService) {
+    public NewGameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService, ConfigurationService configurationService) {
         this.screenManager = screenManager;
         this.gameContext = gameContext;
         this.worldService = worldService;
+        this.configurationService = configurationService;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 1.4f, 0);
         this.cam.update();
@@ -57,12 +60,6 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
         AssetManager assetManager = gameContext.getAssetManager();
-        assetManager.load("ui/newgame/newgame_skin.json", Skin.class);
-        assetManager.load("flags/flags_skin.json", Skin.class);
-        assetManager.load("portraits/portraits_skin.json", Skin.class);
-        assetManager.load("ui/mainmenu_ig/mainmenu_ig_skin.json", Skin.class);
-        assetManager.load("ui/popup/popup_skin.json", Skin.class);
-        assetManager.finishLoading();
         this.skin = assetManager.get("ui/newgame/newgame_skin.json");
         this.skinUi = assetManager.get("ui/ui_skin.json");
         this.skinFlags = assetManager.get("flags/flags_skin.json");
@@ -70,13 +67,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readNewgameCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readBookmarkCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readPoliticsCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readMainMenuInGameCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readPopupCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readProvincesCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readLanguageCsv());
+        this.configurationService.loadNewGameLocalisation(this.gameContext);
         this.initializeUi();
         this.paused = false;
     }
@@ -103,7 +94,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         Table topTable = new Table();
         topTable.setFillParent(true);
         topTable.top();
-        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getConfigurationDao().loadBookmark(), this.gameContext.getLocalisation());
+        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getBookmark(), this.gameContext.getLocalisation());
         TitleBar titleBar = new TitleBar(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.countrySummaryPanel = new CountrySummaryPanel(this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
@@ -173,7 +164,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     @Override
     public void onApplySettingsClicked(Settings settings) {
         this.gameContext.setSettings(settings);
-        this.gameContext.getConfigurationDao().saveSettings(settings);
+        this.configurationService.saveSettings(settings);
     }
 
     @Override

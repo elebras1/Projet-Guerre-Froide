@@ -1,16 +1,16 @@
 package com.populaire.projetguerrefroide.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Bookmark {
     private final String iconNameFile;
     private final String nameId;
     private final String descriptionId;
-    private final Date date;
+    private final LocalDate date;
     private final List<String> countriesId;
 
-    public Bookmark(String iconNameFile, String nameId, String descriptionId, Date date, List<String> countriesId) {
+    public Bookmark(String iconNameFile, String nameId, String descriptionId, LocalDate date, List<String> countriesId) {
         this.iconNameFile = iconNameFile;
         this.nameId = nameId;
         this.descriptionId = descriptionId;
@@ -30,7 +30,7 @@ public class Bookmark {
         return this.descriptionId;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return this.date;
     }
 

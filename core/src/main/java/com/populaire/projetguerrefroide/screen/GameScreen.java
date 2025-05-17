@@ -19,7 +19,9 @@ import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.map.MapMode;
+import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.service.TimeService;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.view.*;
 
@@ -29,6 +31,8 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 public class GameScreen implements Screen, GameInputListener, MainMenuInGameListener, MinimapListener {
     private final GameContext gameContext;
     private final WorldService worldService;
+    private final ConfigurationService configurationService;
+    private final TimeService timeService;
     private final OrthographicCamera cam;
     private final SpriteBatch batch;
     private final InputMultiplexer multiplexer;
@@ -51,9 +55,11 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     private float time;
     private boolean paused;
 
-    public GameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService) {
+    public GameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService, ConfigurationService configurationService) {
         this.gameContext = gameContext;
         this.worldService = worldService;
+        this.configurationService = configurationService;
+        this.timeService = new TimeService(this.gameContext.getBookmark().getDate());
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         int capitalPosition = this.worldService.getPositionOfCapitalOfSelectedCountry();
         short capitalX = (short) (capitalPosition >> 16);
@@ -64,10 +70,6 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
         AssetManager assetManager = gameContext.getAssetManager();
-        assetManager.load("ui/topbar/topbar_skin.json", Skin.class);
-        assetManager.load("ui/minimap/minimap_skin.json", Skin.class);
-        assetManager.load("ui/province/province_skin.json", Skin.class);
-        assetManager.finishLoading();
         this.skinUi = assetManager.get("ui/ui_skin.json");
         this.skinFlags = assetManager.get("flags/flags_skin.json");
         this.skinPopup = assetManager.get("ui/popup/popup_skin.json");
@@ -78,13 +80,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
 
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readPoliticsCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readMainMenuInGameCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readPopupCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readProvincesCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readRegionsCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readLanguageCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readInterfaceCsv());
+        this.configurationService.loadGameLocalisation(this.gameContext);
 
         this.topBar = new TopBar(this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer());
         this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
@@ -198,7 +194,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     @Override
     public void onApplySettingsClicked(Settings settings) {
         this.gameContext.setSettings(settings);
-        this.gameContext.getConfigurationDao().saveSettings(settings);
+        this.configurationService.saveSettings(settings);
     }
 
     @Override
