@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.ui;
+package com.populaire.projetguerrefroide.ui.view;
 
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
@@ -18,6 +18,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 
 import java.util.Map;
 

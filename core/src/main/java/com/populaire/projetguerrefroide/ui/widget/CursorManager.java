@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.ui;
+package com.populaire.projetguerrefroide.ui.widget;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Cursor;

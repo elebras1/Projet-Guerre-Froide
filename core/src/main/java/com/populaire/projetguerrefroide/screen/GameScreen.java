@@ -21,7 +21,7 @@ import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.map.MapMode;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
-import com.populaire.projetguerrefroide.ui.*;
+import com.populaire.projetguerrefroide.ui.view.*;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
@@ -41,8 +41,10 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
     private final Skin skinProvince;
     private final Skin skinMainMenuInGame;
     private final Skin skinMinimap;
+    private final Skin skinTopBar;
     private final Stage stage;
     private final Debug debug;
+    private final TopBar topBar;
     private final ProvincePanel provincePanel;
     private HoverTooltip hoverTooltip;
     private MainMenuInGame mainMenuInGame;
@@ -62,12 +64,14 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
         AssetManager assetManager = gameContext.getAssetManager();
+        assetManager.load("ui/topbar/topbar_skin.json", Skin.class);
         assetManager.load("ui/minimap/minimap_skin.json", Skin.class);
         assetManager.load("ui/province/province_skin.json", Skin.class);
         assetManager.finishLoading();
         this.skinUi = assetManager.get("ui/ui_skin.json");
         this.skinFlags = assetManager.get("flags/flags_skin.json");
         this.skinPopup = assetManager.get("ui/popup/popup_skin.json");
+        this.skinTopBar = assetManager.get("ui/topbar/topbar_skin.json");
         this.skinMinimap = assetManager.get("ui/minimap/minimap_skin.json");
         this.skinProvince = assetManager.get("ui/province/province_skin.json");
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
@@ -82,6 +86,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readLanguageCsv());
         this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readInterfaceCsv());
 
+        this.topBar = new TopBar(this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer());
         this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new Stage(new ScreenViewport());
@@ -95,30 +100,35 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(this.multiplexer);
 
-        this.debug.setPosition(100, 90);
-        this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
+        this.topBar.setPosition(0, Gdx.graphics.getHeight() - this.topBar.getHeight());
+        this.topBar.setCountryData(this.worldService.prepareCountryDto(this.gameContext.getLocalisation()));
+        this.topBar.setRanking(this.worldService.getRankingOfSelectedCountry());
+        this.stage.addActor(this.topBar);
+
         this.provincePanel.setPosition(0, 0);
 
         this.hoverTooltip = new HoverTooltip(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        this.stage.addActor(this.hoverTooltip);
+
+        Table topTable = new Table();
+        topTable.setFillParent(true);
+        topTable.top();
+        topTable.pad(5);
+        this.stage.addActor(topTable);
+
+        Minimap minimap = new Minimap(this.skinMinimap, this.skinUi, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
+        minimap.setPosition(Gdx.graphics.getWidth() - minimap.getWidth(), 0);
+        this.stage.addActor(minimap);
 
         Table centerTable = new Table();
         centerTable.setFillParent(true);
         this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.mainMenuInGame.setVisible(false);
         centerTable.add(this.mainMenuInGame).center();
-
-        Table topTable = new Table();
-        topTable.setFillParent(true);
-        topTable.top();
-        topTable.pad(5);
-
-        Minimap minimap = new Minimap(this.skinMinimap, this.skinUi, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
-        minimap.setPosition(Gdx.graphics.getWidth() - minimap.getWidth(), 0);
-
-        this.stage.addActor(this.hoverTooltip);
-        this.stage.addActor(topTable);
-        this.stage.addActor(minimap);
         this.stage.addActor(centerTable);
+
+        this.debug.setPosition(100, 90);
+        this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
         this.stage.addActor(this.debug);
     }
 

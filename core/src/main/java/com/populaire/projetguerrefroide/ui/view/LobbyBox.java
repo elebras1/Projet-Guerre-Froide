@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.ui;
+package com.populaire.projetguerrefroide.ui.view;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.populaire.projetguerrefroide.screen.LobbyBoxListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.widget.HoverScrollPane;
 
 import java.util.Map;
 

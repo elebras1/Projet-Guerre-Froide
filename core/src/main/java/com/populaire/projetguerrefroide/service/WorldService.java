@@ -7,6 +7,7 @@ import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectIntOrderedMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dao.WorldDao;
+import com.populaire.projetguerrefroide.dto.CountryDto;
 import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.economy.building.Building;
@@ -100,6 +101,10 @@ public class WorldService {
         return this.world.getNumberOfProvinces();
     }
 
+    public int getRankingOfSelectedCountry() {
+        return 0;
+    }
+
     public CountrySummaryDto prepareCountrySummaryDto(Map<String, String> localisation) {
         Country selectedCountry = this.world.getSelectedProvince().getCountryOwner();
         Minister headOfState = selectedCountry.getHeadOfState();
@@ -110,6 +115,22 @@ public class WorldService {
         String population = ValueFormatter.formatValue(selectedCountry.getPopulationAmount(), localisation);
 
         return new CountrySummaryDto(selectedCountry.getName(), selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName());
+    }
+
+    public CountryDto prepareCountryDto(Map<String, String> localisation) {
+        Country selectedCountry = this.world.getSelectedProvince().getCountryOwner();
+        String population = ValueFormatter.formatValue(selectedCountry.getPopulationAmount(), localisation);
+        int manpower = 0;
+        String grossDomesticProduct = ValueFormatter.formatValue(0, localisation);
+        int money = 0;
+        int supplies = 0;
+        int fuel = 0;
+        float diplomaticInfluence = 0;
+        int uranium = 0;
+        String dissent = ValueFormatter.formatValue(0, localisation);
+        String nationalUnity = ValueFormatter.formatValue(0, localisation);
+
+        return new CountryDto(population, manpower, grossDomesticProduct, money, supplies, fuel, diplomaticInfluence, uranium, dissent, nationalUnity);
     }
 
     public ProvinceDto prepareProvinceDto(Map<String, String> localisation) {

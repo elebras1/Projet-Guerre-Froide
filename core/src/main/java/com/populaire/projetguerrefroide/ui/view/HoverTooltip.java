@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.ui;
+package com.populaire.projetguerrefroide.ui.view;
 
 import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;

@@ -6,7 +6,7 @@ import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dao.LocalisationDao;
 import com.populaire.projetguerrefroide.dao.ConfigurationDao;
-import com.populaire.projetguerrefroide.ui.CursorManager;
+import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 
 import java.util.Map;
 

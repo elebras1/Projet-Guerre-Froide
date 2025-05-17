@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.ui;
+package com.populaire.projetguerrefroide.ui.view;
 
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
@@ -12,6 +12,7 @@ import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.entity.DevelopementBuildingLevel;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.util.LabelUtils;
 
 import java.util.List;

@@ -9,7 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.ui.MainMenu;
+import com.populaire.projetguerrefroide.ui.view.MainMenu;
 
 public class MainMenuScreen implements Screen, MainMenuListener {
     private final Stage stage;
