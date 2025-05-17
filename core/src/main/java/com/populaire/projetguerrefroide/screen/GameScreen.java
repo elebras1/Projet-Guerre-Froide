@@ -320,6 +320,8 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
         this.worldService.renderWorld(this.batch, this.cam, time);
 
+        this.timeService.update(delta);
+
         if(!this.paused) {
             this.inputHandler.setDelta(delta);
             this.inputHandler.handleInput();
