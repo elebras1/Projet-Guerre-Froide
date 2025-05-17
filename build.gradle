@@ -72,10 +72,10 @@ subprojects {
   dependencies {
     implementation 'org.lwjgl:lwjgl:3.3.3'
     implementation 'org.lwjgl:lwjgl-opengl:3.3.3'
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.18.3'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.3'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.3'
-    implementation 'com.github.tommyettinger:jdkgdxds:1.8.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.19.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.19.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.19.0'
+    implementation 'com.github.tommyettinger:jdkgdxds:1.9.2'
   }
 }
 
