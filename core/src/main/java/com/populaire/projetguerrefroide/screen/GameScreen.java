@@ -24,11 +24,14 @@ import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.DateService;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.view.*;
+import com.populaire.projetguerrefroide.util.DateUtils;
+
+import java.time.LocalDate;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class GameScreen implements Screen, GameInputListener, DateListener, MainMenuInGameListener, MinimapListener {
+public class GameScreen implements Screen, GameInputListener, DateListener, TopBarListener, MainMenuInGameListener, MinimapListener {
     private final GameContext gameContext;
     private final WorldService worldService;
     private final ConfigurationService configurationService;
@@ -82,7 +85,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, Main
 
         this.configurationService.loadGameLocalisation(this.gameContext);
 
-        this.topBar = new TopBar(this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer());
+        this.topBar = new TopBar(this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer(), this);
         this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new Stage(new ScreenViewport());
@@ -178,8 +181,23 @@ public class GameScreen implements Screen, GameInputListener, DateListener, Main
     }
 
     @Override
-    public void onNewDay(String date) {
-        this.topBar.setDate(date);
+    public void onNewDay(LocalDate date) {
+        this.topBar.setDate(DateUtils.formatDate(date, this.gameContext.getLocalisation(), this.gameContext.getSettings().getLanguage()));
+    }
+
+    @Override
+    public int onSpeedUp() {
+        return this.dateService.upSpeed();
+    }
+
+    @Override
+    public int onSpeedDown() {
+        return this.dateService.downSpeed();
+    }
+
+    @Override
+    public int onTogglePause() {
+        return this.dateService.togglePause();
     }
 
     @Override

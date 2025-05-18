@@ -5,12 +5,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.populaire.projetguerrefroide.dto.CountryDto;
+import com.populaire.projetguerrefroide.screen.TopBarListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
-import com.populaire.projetguerrefroide.ui.widget.BackgroundButton;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 
 import java.util.Map;
@@ -34,7 +36,7 @@ public class TopBar extends Table {
     private Image dateState;
     private Label date;
 
-    public TopBar(Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String idCountry) {
+    public TopBar(Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String idCountry, TopBarListener listener) {
         this.skin = skin;
         this.skinUi = skinUi;
         this.skinFlags = skinFlags;
@@ -44,7 +46,7 @@ public class TopBar extends Table {
 
         this.setCountryData(labelStylePool);
         this.setTabButtons(labelStylePool, localisation);
-        this.addActor(this.createDateSection(labelStylePool));
+        this.setDateSection(labelStylePool, listener);
         this.addActor(this.createFlagSection(idCountry));
         this.addActor(this.createPrestigeSection(labelStylePool));
     }
@@ -73,14 +75,36 @@ public class TopBar extends Table {
         this.nationalUnity = this.addLabel("", labelStyleJockey16GlowBlue, 975, 130, this);
     }
 
-    private Actor createDateSection(LabelStylePool labelStylePool) {
+    private void setDateSection(LabelStylePool labelStylePool, TopBarListener listener) {
         Label.LabelStyle labelStyleJockey16Dark = labelStylePool.getLabelStyle("jockey_16_dark");
-        Button dateSection = this.addBackgroundButton("date_btn", 228, 40);
-        this.addButton("minus_speed", 0, 0, dateSection);
-        this.addButton("plus_speed", 0, 24, dateSection);
+        Button dateSection = this.addButton("date_btn", 228, 40);
+        dateSection.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                setDateState(listener.onTogglePause());
+            }
+        });
         this.dateState = this.addImage("speed_indicator_slice_0", 30, 14, dateSection);
-        this.date = this.addLabel("", labelStyleJockey16Dark, 75, 28, dateSection);
-        return dateSection;
+        this.date = this.addLabel("", labelStyleJockey16Dark, 55, 28, dateSection);
+        this.addActor(dateSection);
+
+        Button minusSpeed = this.addButton("minus_speed", 228, 40);
+        minusSpeed.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                setDateState(listener.onSpeedDown());
+            }
+        });
+        this.addActor(minusSpeed);
+
+        Button plusSpeed = this.addButton("plus_speed", 228, 64);
+        plusSpeed.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                setDateState(listener.onSpeedUp());
+            }
+        });
+        this.addActor(plusSpeed);
     }
 
     private Actor createFlagSection(String idCountry) {
@@ -151,10 +175,8 @@ public class TopBar extends Table {
         this.date.setText(date);
     }
 
-    private Button addBackgroundButton(String styleName, float x, float y) {
-        Button button = new BackgroundButton(this.skin, styleName);
-        button.setPosition(x, y);
-        return button;
+    private void setDateState(int state) {
+        this.dateState.setDrawable(this.skin, "speed_indicator_slice_" + state);
     }
 
     private Table addBackground(String backgroundName, float x, float y) {
