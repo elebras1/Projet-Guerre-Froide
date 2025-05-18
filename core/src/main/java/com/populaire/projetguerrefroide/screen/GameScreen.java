@@ -1,6 +1,6 @@
 package com.populaire.projetguerrefroide.screen;
 
-import com.badlogic.gdx.Gdx;
+import  com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
@@ -21,18 +21,18 @@ import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.map.MapMode;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.TimeService;
+import com.populaire.projetguerrefroide.service.DateService;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.view.*;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class GameScreen implements Screen, GameInputListener, MainMenuInGameListener, MinimapListener {
+public class GameScreen implements Screen, GameInputListener, DateListener, MainMenuInGameListener, MinimapListener {
     private final GameContext gameContext;
     private final WorldService worldService;
     private final ConfigurationService configurationService;
-    private final TimeService timeService;
+    private final DateService dateService;
     private final OrthographicCamera cam;
     private final SpriteBatch batch;
     private final InputMultiplexer multiplexer;
@@ -59,7 +59,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.gameContext = gameContext;
         this.worldService = worldService;
         this.configurationService = configurationService;
-        this.timeService = new TimeService(this.gameContext.getBookmark().getDate());
+        this.dateService = new DateService(this.gameContext.getBookmark().getDate(), this);
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         int capitalPosition = this.worldService.getPositionOfCapitalOfSelectedCountry();
         short capitalX = (short) (capitalPosition >> 16);
@@ -87,6 +87,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new Stage(new ScreenViewport());
         this.initializeUi();
+        this.dateService.initialize();
 
         this.paused = false;
     }
@@ -174,6 +175,11 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
         } else if(this.isMouseOverUI()) {
             this.hideHoverBox();
         }
+    }
+
+    @Override
+    public void onNewDay(String date) {
+        this.topBar.setDate(date);
     }
 
     @Override
@@ -320,7 +326,7 @@ public class GameScreen implements Screen, GameInputListener, MainMenuInGameList
 
         this.worldService.renderWorld(this.batch, this.cam, time);
 
-        this.timeService.update(delta);
+        this.dateService.update(delta);
 
         if(!this.paused) {
             this.inputHandler.setDelta(delta);

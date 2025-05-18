@@ -79,7 +79,7 @@ public class TopBar extends Table {
         this.addButton("minus_speed", 0, 0, dateSection);
         this.addButton("plus_speed", 0, 24, dateSection);
         this.dateState = this.addImage("speed_indicator_slice_0", 30, 14, dateSection);
-        this.date = this.addLabel("", labelStyleJockey16Dark, 50, 14, dateSection);
+        this.date = this.addLabel("", labelStyleJockey16Dark, 75, 28, dateSection);
         return dateSection;
     }
 
