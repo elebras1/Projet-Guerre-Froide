@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.util;
+package com.populaire.projetguerrefroide.graphics;
 
 import com.badlogic.gdx.graphics.Mesh;
 import com.badlogic.gdx.graphics.VertexAttribute;
@@ -12,7 +12,6 @@ import java.nio.IntBuffer;
 
 public class MeshMultiDrawIndirect implements Disposable {
     private final Mesh mesh;
-    private ByteBuffer commandBuffer;
     private int commandCount;
     private int indirectBufferID;
 
@@ -24,41 +23,43 @@ public class MeshMultiDrawIndirect implements Disposable {
         this.mesh.setVertices(vertices);
     }
 
+    public void setIndices(short[] indices) {
+        this.mesh.setIndices(indices);
+    }
+
     public void setIndirectCommands(IntBuffer starts, IntBuffer counts) {
         this.commandCount = counts.remaining();
-        this.commandBuffer = BufferUtils.newByteBuffer(this.commandCount * 16);
+        ByteBuffer commandBuffer = BufferUtils.newByteBuffer(this.commandCount * 16);
         this.indirectBufferID = GL43.glGenBuffers();
 
         for (int i = 0; i < this.commandCount; i++) {
             int count = counts.get(i);
             int first = starts.get(i);
 
-            this.commandBuffer.putInt(count);
-            this.commandBuffer.putInt(3);
-            this.commandBuffer.putInt(first);
-            this.commandBuffer.putInt(0);
+            commandBuffer.putInt(count);
+            commandBuffer.putInt(3);
+            commandBuffer.putInt(first);
+            commandBuffer.putInt(0);
         }
-        this.commandBuffer.flip();
+        commandBuffer.flip();
 
         GL43.glBindBuffer(GL43.GL_DRAW_INDIRECT_BUFFER, this.indirectBufferID);
-        GL43.glBufferData(GL43.GL_DRAW_INDIRECT_BUFFER, this.commandBuffer, GL43.GL_STATIC_DRAW);
+        GL43.glBufferData(GL43.GL_DRAW_INDIRECT_BUFFER, commandBuffer, GL43.GL_STATIC_DRAW);
         GL43.glBindBuffer(GL43.GL_DRAW_INDIRECT_BUFFER, 0);
     }
 
     public void bind(ShaderProgram shader) {
         this.mesh.bind(shader);
+        GL43.glBindBuffer(GL43.GL_DRAW_INDIRECT_BUFFER, this.indirectBufferID);
     }
 
     public void unbind(ShaderProgram shader) {
+        GL43.glBindBuffer(GL43.GL_DRAW_INDIRECT_BUFFER, 0);
         this.mesh.unbind(shader);
     }
 
     public int getCommandCount() {
         return this.commandCount;
-    }
-
-    public int getIndirectBufferID() {
-        return this.indirectBufferID;
     }
 
     @Override

@@ -9,10 +9,10 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.GL31;
 import com.badlogic.gdx.graphics.GL32;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.GdxNativesLoader;
+import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.util.MeshMultiDrawIndirect;
+import com.populaire.projetguerrefroide.graphics.MeshMultiDrawIndirect;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
@@ -47,20 +47,10 @@ public abstract class GdxBaseTest {
         }).when(mockApp).postRunnable(any(Runnable.class));
         mockedMeshMultiDrawIndirect = mockConstruction(MeshMultiDrawIndirect.class);
 
-        this.assetManager = new AssetManager();
-        this.assetManager.load("ui/ui_skin.json", Skin.class);
-        this.assetManager.load("ui/fonts/fonts_skin.json", Skin.class);
-        this.assetManager.finishLoading();
-
-        this.gameContext = new GameContext(this.assetManager);
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readCountriesCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readPoliticsCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readMainMenuInGameCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readPopupCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readProvincesCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readRegionsCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readLanguageCsv());
-        this.gameContext.putAllLocalisation(this.gameContext.getLocalisationDao().readInterfaceCsv());
+        ConfigurationService configurationService = new ConfigurationService();
+        this.gameContext = configurationService.getGameContext();
+        configurationService.loadMainMenuLocalisation(this.gameContext);
+        configurationService.loadGameLocalisation(this.gameContext);
     }
 
     @AfterAll

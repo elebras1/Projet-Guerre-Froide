@@ -17,7 +17,7 @@ import com.populaire.projetguerrefroide.national.Culture;
 import com.populaire.projetguerrefroide.national.Religion;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
-import com.populaire.projetguerrefroide.util.MeshMultiDrawIndirect;
+import com.populaire.projetguerrefroide.graphics.MeshMultiDrawIndirect;
 import org.lwjgl.opengl.GL43;
 
 import java.util.*;
@@ -715,11 +715,7 @@ public class World implements Disposable {
         this.meshRivers.bind(this.riverShader);
         Gdx.gl.glEnable(GL32.GL_BLEND);
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
-        Gdx.gl.glEnable(GL32.GL_BLEND);
-        Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
-        GL43.glBindBuffer(GL43.GL_DRAW_INDIRECT_BUFFER, this.meshRivers.getIndirectBufferID());
         GL43.glMultiDrawArraysIndirect(GL43.GL_TRIANGLE_STRIP, 0, this.meshRivers.getCommandCount(), 0);
-        GL43.glBindBuffer(GL43.GL_DRAW_INDIRECT_BUFFER, 0);
         this.meshRivers.unbind(this.riverShader);
     }
 
