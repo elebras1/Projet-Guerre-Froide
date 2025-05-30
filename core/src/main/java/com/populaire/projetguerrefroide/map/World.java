@@ -17,7 +17,7 @@ import com.populaire.projetguerrefroide.national.Culture;
 import com.populaire.projetguerrefroide.national.Religion;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
-import com.populaire.projetguerrefroide.graphics.MeshMultiDrawIndirect;
+import com.populaire.projetguerrefroide.adapter.graphics.MeshMultiDrawIndirect;
 import org.lwjgl.opengl.GL43;
 
 import java.util.*;
@@ -407,6 +407,10 @@ public class World implements Disposable {
                 numBuildings++;
             }
             for (LandProvince province : country.getProvinces()) {
+                System.out.println("Province: " + province.getId());
+                System.out.println(province.getBuildings());
+                System.out.println();
+                System.out.println();
                 for (Building building : province.getBuildings().keySet()) {
                     if (building.isOnMap()) {
                         numBuildings++;
