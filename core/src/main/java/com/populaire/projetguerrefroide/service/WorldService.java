@@ -7,6 +7,7 @@ import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectIntOrderedMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dao.WorldDao;
+import com.populaire.projetguerrefroide.dao.WorldDaoImplDsl;
 import com.populaire.projetguerrefroide.dto.CountryDto;
 import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
@@ -33,7 +34,7 @@ public class WorldService {
 
     public WorldService() {
         this.asyncExecutor = new AsyncExecutor(2);
-        this.worldDao = new WorldDao();
+        this.worldDao = new WorldDaoImplDsl("1946.1.1");
         this.elementPercentages = new ObjectIntOrderedMap<>();
     }
 

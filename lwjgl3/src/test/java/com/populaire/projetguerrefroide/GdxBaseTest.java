@@ -12,7 +12,7 @@ import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.utils.GdxNativesLoader;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.graphics.MeshMultiDrawIndirect;
+import com.populaire.projetguerrefroide.adapter.graphics.MeshMultiDrawIndirect;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;

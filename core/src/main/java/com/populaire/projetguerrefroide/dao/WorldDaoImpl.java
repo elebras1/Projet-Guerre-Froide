@@ -25,7 +25,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class WorldDao {
+public class WorldDaoImpl implements WorldDao {
     private final String commonPath = "common/";
     private final String mapPath = "map/";
     private final String historyPath = "history/";

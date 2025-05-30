@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class WorldDaoTest extends GdxBaseTest {
-    private final WorldDao worldDao;
+    private final WorldDaoImpl worldDao;
 
     public WorldDaoTest() {
-        this.worldDao = new WorldDao();
+        this.worldDao = new WorldDaoImpl();
     }
 
     @Test
