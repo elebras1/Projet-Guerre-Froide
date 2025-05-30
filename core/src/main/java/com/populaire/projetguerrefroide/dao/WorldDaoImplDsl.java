@@ -790,7 +790,7 @@ public class WorldDaoImplDsl implements WorldDao {
             Population population = new Population(amountChildren, amountAdults, amountSeniors, populations, cultures, religions);
 
             ObjectIntMap<Building> buildingsRegion;
-            JsonValue buildingsValue = populationValue.get("economy_buildings");
+            JsonValue buildingsValue = provinceValues.get("economy_buildings");
             if(buildingsValue != null) {
                 Iterator<JsonValue> buildingsIterator = buildingsValue.arrayIterator();
                 buildingsRegion = new ObjectIntMap<>();
@@ -805,13 +805,13 @@ public class WorldDaoImplDsl implements WorldDao {
             }
 
             ResourceGood resourceGood = null;
-            JsonValue goodValue = populationValue.get("good");
+            JsonValue goodValue = provinceValues.get("good");
             if(goodValue != null) {
                 resourceGood = (ResourceGood) gameEntities.getGoods().get(goodValue.asString());
             }
 
             ObjectIntMap<Building> buildingsProvince = new ObjectIntMap<>();
-            JsonValue buildingsProvinceValue = populationValue.get("buildings");
+            JsonValue buildingsProvinceValue = provinceValues.get("buildings");
             if(buildingsProvinceValue != null) {
                 Iterator<JsonValue> buildingsProvinceIterator = buildingsProvinceValue.arrayIterator();
                 while (buildingsProvinceIterator.hasNext()) {
