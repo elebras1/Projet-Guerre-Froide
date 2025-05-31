@@ -2,7 +2,10 @@ package com.populaire.projetguerrefroide.adapter.dsljson;
 
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.JsonReader;
+import com.dslplatform.json.JsonWriter;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class JsonMapper {
@@ -21,5 +24,14 @@ public class JsonMapper {
         byte[] finalStringBuffer = builder.getStringBuffer();
 
         return new JsonValue(tape, 0, finalStringBuffer, buffer);
+    }
+
+    public void writeValue(Object object, File file) throws IOException {
+        JsonWriter writer = dslJson.newWriter();
+        dslJson.serialize(writer, object);
+
+        try (FileOutputStream fileOutputStream = new FileOutputStream(file)) {
+            writer.toStream(fileOutputStream);
+        }
     }
 }

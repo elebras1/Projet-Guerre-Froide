@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.dao;
 
 import com.populaire.projetguerrefroide.GdxBaseTest;
+import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.entity.GameEntities;
 import com.populaire.projetguerrefroide.map.World;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,7 @@ public class WorldDaoTest extends GdxBaseTest {
     private final WorldDaoImpl worldDao;
 
     public WorldDaoTest() {
-        this.worldDao = new WorldDaoImpl();
+        this.worldDao = new WorldDaoImpl("1946.1.1");
     }
 
     @Test

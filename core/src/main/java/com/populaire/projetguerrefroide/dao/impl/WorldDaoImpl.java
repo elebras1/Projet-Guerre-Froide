@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.dao;
+package com.populaire.projetguerrefroide.dao.impl;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonMapper;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
+import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.economy.building.*;
 import com.populaire.projetguerrefroide.economy.good.*;
 import com.populaire.projetguerrefroide.economy.population.Population;
@@ -29,7 +30,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class WorldDaoImplDsl implements WorldDao {
+public class WorldDaoImpl implements WorldDao {
     private final String commonPath = "common/";
     private final String mapPath = "map/";
     private final String historyPath = "history/";
@@ -58,7 +59,7 @@ public class WorldDaoImplDsl implements WorldDao {
     private final String startDate;
     private final JsonMapper parser = new JsonMapper();
 
-    public WorldDaoImplDsl(String startDate) {
+    public WorldDaoImpl(String startDate) {
         this.startDate = startDate;
     }
 
@@ -603,8 +604,10 @@ public class WorldDaoImplDsl implements WorldDao {
                 Country country = this.readCountryJson(entry.getValue(), entry.getKey(), ministerTypes, ideologies);
                 countries.put(entry.getKey(), country);
             }
-        } catch (Exception e) {
-            System.out.println("loadProvinces : " + e);
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
         }
         return countries;
     }
@@ -632,8 +635,8 @@ public class WorldDaoImplDsl implements WorldDao {
                     try {
                         startDate = dateFormat.parse(ministerNode.get("start_date").asString());
                         deathDate = dateFormat.parse(ministerNode.get("death_date").asString());
-                    } catch(ParseException e) {
-                        System.out.println("readCountryJson : " + e);
+                    } catch (ParseException parseException) {
+                        parseException.printStackTrace();
                     }
 
                     Minister minister = new Minister(name, ideologies.get(ideology), imageNameFile, loyalty, ministerTypes.get(type), startDate, deathDate);
@@ -1036,8 +1039,10 @@ public class WorldDaoImplDsl implements WorldDao {
                     province.addAdjacentProvinces(provinces.get(adjacencyId));
                 }
             }
-        } catch (Exception e) {
-            System.out.println("readAdjenciesJson : " + e);
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
         }
     }
 
