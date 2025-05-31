@@ -30,14 +30,14 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
         return this.parser.parse(fileHandle.readBytes());
     }
 
+    private FileHandle getSettingsFileHandle(String filePath) {
+        Gdx.files.local(filePath).mkdirs();
+        return Gdx.files.local(filePath);
+    }
+
     private JsonValue parseJsonFileSettings(String filePath) throws IOException {
         Gdx.files.local(this.settingsPath).mkdirs();
-        FileHandle fileHandle = Gdx.files.local(filePath);
-
-        if (!fileHandle.exists()) {
-            fileHandle.writeString("{}", false);
-        }
-
+        FileHandle fileHandle = this.getSettingsFileHandle(filePath);
         return this.parser.parse(fileHandle.readBytes());
     }
 
@@ -46,14 +46,14 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
         Bookmark bookmark = null;
         try {
             JsonValue bookmarkValues = this.parseJsonFile(this.bookmarkJsonFile);
-            JsonValue bookmarValue = bookmarkValues.get("bookmark");
-            String iconNameFile = bookmarValue.get("icon").asString();
-            String nameId = bookmarValue.get("name").asString();
-            String descriptionId = bookmarValue.get("desc").asString();
-            LocalDate date = LocalDate.parse(bookmarValue.get("date").asString());
+            JsonValue bookmarkValue = bookmarkValues.get("bookmark");
+            String iconNameFile = bookmarkValue.get("icon").asString();
+            String nameId = bookmarkValue.get("name").asString();
+            String descriptionId = bookmarkValue.get("desc").asString();
+            LocalDate date = LocalDate.parse(bookmarkValue.get("date").asString());
 
             List<String> countriesId = new ObjectList<>();
-            JsonValue countriesNode = bookmarValue.get("country");
+            JsonValue countriesNode = bookmarkValue.get("country");
             if (countriesNode != null && countriesNode.isArray()) {
                 Iterator<JsonValue> iterator = countriesNode.arrayIterator();
                 while (iterator.hasNext()) {
@@ -76,19 +76,20 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
         Settings settings;
 
         try {
-            JsonValue settingsValues = this.parseJsonFileSettings(this.settingsJsonFile);
-            String language = settingsValues.get("language").asString();
-            short masterVolume = (short) settingsValues.get("masterVolume").asLong();
-            short musicVolume = (short) settingsValues.get("musicVolume").asLong();
-            short effectsVolume = (short) settingsValues.get("effectsVolume").asLong();
-            boolean vsync = settingsValues.get("vsync").asBoolean();
-            short capFrameRate = (short) settingsValues.get("capFrameRate").asLong();
-            boolean fullscreen = settingsValues.get("fullscreen").asBoolean();
-            boolean debugMode = settingsValues.get("debugMode").asBoolean();
-            settings = new Settings(language, masterVolume, musicVolume, effectsVolume, vsync, capFrameRate, fullscreen, debugMode);
-        } catch(IOException | NullPointerException e) {
+            FileHandle fileHandle = this.getSettingsFileHandle(this.settingsJsonFile);
+            if (!fileHandle.exists()) {
+                settings = new Settings();
+                this.saveSettings(settings);
+            } else {
+                byte[] buffer = fileHandle.readBytes();
+                settings = this.parser.readValue(buffer, Settings.class);
+            }
+        } catch(IOException ioException) {
+            ioException.printStackTrace();
             settings = new Settings();
-            this.saveSettings(settings);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            settings = new Settings();
         }
 
         return settings;

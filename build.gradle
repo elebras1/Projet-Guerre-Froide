@@ -74,6 +74,7 @@ subprojects {
     implementation 'org.lwjgl:lwjgl-opengl:3.3.3'
     implementation 'com.github.tommyettinger:jdkgdxds:1.9.2'
     implementation 'com.dslplatform:dsl-json:2.0.2'
+    annotationProcessor 'com.dslplatform:dsl-json:2.0.2'
   }
 }
 

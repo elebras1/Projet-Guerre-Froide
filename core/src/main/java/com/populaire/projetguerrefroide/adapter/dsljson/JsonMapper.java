@@ -26,6 +26,10 @@ public class JsonMapper {
         return new JsonValue(tape, 0, finalStringBuffer, buffer);
     }
 
+    public <T> T readValue(byte[] buffer, Class<T> type) throws IOException {
+        return dslJson.deserialize(type, buffer, buffer.length);
+    }
+
     public void writeValue(Object object, File file) throws IOException {
         JsonWriter writer = dslJson.newWriter();
         dslJson.serialize(writer, object);
