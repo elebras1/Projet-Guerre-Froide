@@ -31,14 +31,8 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
     }
 
     private FileHandle getSettingsFileHandle(String filePath) {
-        Gdx.files.local(filePath).mkdirs();
-        return Gdx.files.local(filePath);
-    }
-
-    private JsonValue parseJsonFileSettings(String filePath) throws IOException {
         Gdx.files.local(this.settingsPath).mkdirs();
-        FileHandle fileHandle = this.getSettingsFileHandle(filePath);
-        return this.parser.parse(fileHandle.readBytes());
+        return Gdx.files.local(filePath);
     }
 
     @Override
@@ -77,7 +71,7 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
 
         try {
             FileHandle fileHandle = this.getSettingsFileHandle(this.settingsJsonFile);
-            if (!fileHandle.exists()) {
+            if (!fileHandle.exists() || fileHandle.length() > 0) {
                 settings = new Settings();
                 this.saveSettings(settings);
             } else {
