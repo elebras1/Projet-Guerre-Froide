@@ -71,12 +71,12 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
 
         try {
             FileHandle fileHandle = this.getSettingsFileHandle(this.settingsJsonFile);
-            if (!fileHandle.exists() || fileHandle.length() > 0) {
-                settings = new Settings();
-                this.saveSettings(settings);
-            } else {
+            if (fileHandle.exists() && fileHandle.length() > 0) {
                 byte[] buffer = fileHandle.readBytes();
                 settings = this.parser.readValue(buffer, Settings.class);
+            } else {
+                settings = new Settings();
+                this.saveSettings(settings);
             }
         } catch(IOException ioException) {
             ioException.printStackTrace();
