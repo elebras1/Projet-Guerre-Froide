@@ -57,7 +57,7 @@ public class WorldDaoImpl implements WorldDao {
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
     private final String alliancesJsonFile = this.diplomacyPath + "alliances.json";
     private final String startDate;
-    private final JsonMapper parser = new JsonMapper();
+    private final JsonMapper mapper = new JsonMapper();
 
     public WorldDaoImpl(String startDate) {
         this.startDate = startDate;
@@ -104,7 +104,7 @@ public class WorldDaoImpl implements WorldDao {
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
         FileHandle fileHandle = Gdx.files.internal(filePath);
-        return parser.parse(fileHandle.readBytes());
+        return this.mapper.parse(fileHandle.readBytes());
     }
 
     private BufferedReader parseCsvFile(String filePath) throws IOException {

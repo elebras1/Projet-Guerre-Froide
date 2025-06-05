@@ -11,52 +11,50 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 public class JsonValue {
 
     private final Tape tape;
-    private final byte[] buffer;
     private final int tapeIdx;
     private final byte[] stringBuffer;
 
-    JsonValue(Tape tape, int tapeIdx, byte[] stringBuffer, byte[] buffer) {
+    JsonValue(Tape tape, int tapeIdx, byte[] stringBuffer) {
         this.tape = tape;
         this.tapeIdx = tapeIdx;
         this.stringBuffer = stringBuffer;
-        this.buffer = buffer;
     }
 
     public boolean isArray() {
-        return tape.getType(tapeIdx) == START_ARRAY;
+        return this.tape.getType(this.tapeIdx) == START_ARRAY;
     }
 
     public boolean isObject() {
-        return tape.getType(tapeIdx) == START_OBJECT;
+        return this.tape.getType(this.tapeIdx) == START_OBJECT;
     }
 
     public boolean isLong() {
-        return tape.getType(tapeIdx) == INT64;
+        return this.tape.getType(this.tapeIdx) == INT64;
     }
 
     public boolean isDouble() {
-        return tape.getType(tapeIdx) == DOUBLE;
+        return this.tape.getType(this.tapeIdx) == DOUBLE;
     }
 
     public boolean isBoolean() {
-        char type = tape.getType(tapeIdx);
+        char type = this.tape.getType(this.tapeIdx);
         return type == TRUE_VALUE || type == FALSE_VALUE;
     }
 
     public boolean isNull() {
-        return tape.getType(tapeIdx) == NULL_VALUE;
+        return this.tape.getType(this.tapeIdx) == NULL_VALUE;
     }
 
     public boolean isString() {
-        return tape.getType(tapeIdx) == STRING;
+        return this.tape.getType(this.tapeIdx) == STRING;
     }
 
     public Iterator<JsonValue> arrayIterator() {
-        return new ArrayIterator(tapeIdx);
+        return new ArrayIterator(this.tapeIdx);
     }
 
     public Iterator<Map.Entry<String, JsonValue>> objectIterator() {
-        return new ObjectIterator(tapeIdx);
+        return new ObjectIterator(this.tapeIdx);
     }
 
     public long asLong() {
@@ -64,64 +62,67 @@ public class JsonValue {
     }
 
     public double asDouble() {
-        return tape.getDouble(tapeIdx);
+        if (this.tape.getType(this.tapeIdx) == INT64) {
+            return this.tape.getInt64Value(this.tapeIdx);
+        }
+        return this.tape.getDouble(this.tapeIdx);
     }
 
     public boolean asBoolean() {
-        return tape.getType(tapeIdx) == TRUE_VALUE;
+        return this.tape.getType(this.tapeIdx) == TRUE_VALUE;
     }
 
     public String asString() {
-        return getString(tapeIdx);
+        return getString(this.tapeIdx);
     }
 
     private String getString(int tapeIdx) {
-        int stringBufferIdx = (int) tape.getValue(tapeIdx);
-        int len = IntegerUtils.toInt(stringBuffer, stringBufferIdx);
-        return new String(stringBuffer, stringBufferIdx + Integer.BYTES, len, UTF_8);
+        int stringBufferIdx = (int) this.tape.getValue(tapeIdx);
+        int len = IntegerUtils.toInt(this.stringBuffer, stringBufferIdx);
+        return new String(this.stringBuffer, stringBufferIdx + Integer.BYTES, len, UTF_8);
     }
 
     public JsonValue get(String name) {
         byte[] bytes = name.getBytes(UTF_8);
-        int idx = tapeIdx + 1;
-        int endIdx = tape.getMatchingBraceIndex(tapeIdx) - 1;
+        int idx = this.tapeIdx + 1;
+        int endIdx = this.tape.getMatchingBraceIndex(this.tapeIdx) - 1;
         while (idx < endIdx) {
-            int stringBufferIdx = (int) tape.getValue(idx);
-            int len = IntegerUtils.toInt(stringBuffer, stringBufferIdx);
-            int valIdx = tape.computeNextIndex(idx);
-            idx = tape.computeNextIndex(valIdx);
+            int stringBufferIdx = (int) this.tape.getValue(idx);
+            int len = IntegerUtils.toInt(this.stringBuffer, stringBufferIdx);
+            int valIdx = this.tape.computeNextIndex(idx);
+            idx = this.tape.computeNextIndex(valIdx);
             int from = stringBufferIdx + Integer.BYTES;
             int to = from + len;
-            if (Arrays.compare(bytes, 0, bytes.length, stringBuffer, from, to) == 0) {
-                return new JsonValue(tape, valIdx, stringBuffer, buffer);
+            if (Arrays.compare(bytes, 0, bytes.length, this.stringBuffer, from, to) == 0) {
+                return new JsonValue(this.tape, valIdx, this.stringBuffer);
             }
         }
         return null;
     }
 
     public JsonValue get(int index) {
-        int idx = tapeIdx + 1;
-        int endIdx = tape.getMatchingBraceIndex(tapeIdx);
+        int idx = this.tapeIdx + 1;
+        int endIdx = this.tape.getMatchingBraceIndex(this.tapeIdx);
 
         for (int i = 0; i < index; i++) {
             if (idx >= endIdx) return null;
-            idx = tape.computeNextIndex(idx);
+            idx = this.tape.computeNextIndex(idx);
         }
 
         if (idx < endIdx) {
-            return new JsonValue(tape, idx, stringBuffer, buffer);
+            return new JsonValue(this.tape, idx, this.stringBuffer);
         }
 
         return null;
     }
 
     public int getSize() {
-        return tape.getScopeCount(tapeIdx);
+        return this.tape.getScopeCount(this.tapeIdx);
     }
 
     @Override
     public String toString() {
-        switch (tape.getType(tapeIdx)) {
+        switch (this.tape.getType(this.tapeIdx)) {
             case INT64 -> {
                 return String.valueOf(asLong());
             }
@@ -154,20 +155,20 @@ public class JsonValue {
         private int idx;
 
         ArrayIterator(int startIdx) {
-            idx = startIdx + 1;
-            endIdx = tape.getMatchingBraceIndex(startIdx);
+            this.idx = startIdx + 1;
+            this.endIdx = tape.getMatchingBraceIndex(startIdx);
         }
 
         @Override
         public boolean hasNext() {
-            return idx < endIdx;
+            return this.idx < this.endIdx;
         }
 
         @Override
         public JsonValue next() {
             if (hasNext()) {
-                JsonValue value = new JsonValue(tape, idx, stringBuffer, buffer);
-                idx = tape.computeNextIndex(idx);
+                JsonValue value = new JsonValue(tape, this.idx, stringBuffer);
+                this.idx = tape.computeNextIndex(this.idx);
                 return value;
             }
             throw new NoSuchElementException("No more elements");
@@ -180,21 +181,21 @@ public class JsonValue {
         private int idx;
 
         ObjectIterator(int startIdx) {
-            idx = startIdx + 1;
-            endIdx = tape.getMatchingBraceIndex(startIdx) - 1;
+            this.idx = startIdx + 1;
+            this.endIdx = tape.getMatchingBraceIndex(startIdx) - 1;
         }
 
         @Override
         public boolean hasNext() {
-            return idx < endIdx;
+            return this.idx < this.endIdx;
         }
 
         @Override
         public Map.Entry<String, JsonValue> next() {
-            String key = getString(idx);
-            idx = tape.computeNextIndex(idx);
-            JsonValue value = new JsonValue(tape, idx, stringBuffer, buffer);
-            idx = tape.computeNextIndex(idx);
+            String key = getString(this.idx);
+            this.idx = tape.computeNextIndex(this.idx);
+            JsonValue value = new JsonValue(tape, this.idx, stringBuffer);
+            this.idx = tape.computeNextIndex(this.idx);
             return new ObjectField(key, value);
         }
     }
@@ -211,12 +212,12 @@ public class JsonValue {
 
         @Override
         public String getKey() {
-            return key;
+            return this.key;
         }
 
         @Override
         public JsonValue getValue() {
-            return value;
+            return this.value;
         }
 
         @Override

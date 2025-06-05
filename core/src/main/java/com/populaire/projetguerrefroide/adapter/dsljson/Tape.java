@@ -17,74 +17,74 @@ class Tape {
     protected int tapeIdx;
 
     Tape(int capacity) {
-        tape = new long[capacity];
+        this.tape = new long[capacity];
     }
 
-    void append(long val, char type) {
+    protected void append(long val, char type) {
         ensureCapacity();
-        tape[tapeIdx++] = val | (((long) type) << 56);
+        this.tape[this.tapeIdx++] = val | (((long) type) << 56);
     }
 
-    void appendInt64(long val) {
+    protected void appendInt64(long val) {
         append(0, INT64);
         ensureCapacity();
-        tape[tapeIdx++] = val;
+        this.tape[this.tapeIdx++] = val;
     }
 
-    void appendDouble(double val) {
+    protected void appendDouble(double val) {
         append(0, DOUBLE);
         ensureCapacity();
-        tape[tapeIdx++] = Double.doubleToRawLongBits(val);
+        this.tape[this.tapeIdx++] = Double.doubleToRawLongBits(val);
     }
 
     private void ensureCapacity() {
-        if (tapeIdx >= tape.length) {
-            long[] newTape = new long[tape.length * 2];
-            System.arraycopy(tape, 0, newTape, 0, tape.length);
-            tape = newTape;
+        if (this.tapeIdx >= this.tape.length) {
+            long[] newTape = new long[this.tape.length * 2];
+            System.arraycopy(this.tape, 0, newTape, 0, this.tape.length);
+            this.tape = newTape;
         }
     }
 
-    char getType(int idx) {
-        return (char) (tape[idx] >> 56);
+    protected char getType(int idx) {
+        return (char) (this.tape[idx] >> 56);
     }
 
-    long getValue(int idx) {
-        return tape[idx] & JSON_VALUE_MASK;
+    protected long getValue(int idx) {
+        return this.tape[idx] & JSON_VALUE_MASK;
     }
 
-    long getInt64Value(int idx) {
-        return tape[idx + 1];
+    protected long getInt64Value(int idx) {
+        return this.tape[idx + 1];
     }
 
-    double getDouble(int idx) {
-        long bits = tape[idx + 1];
+    protected double getDouble(int idx) {
+        long bits = this.tape[idx + 1];
         return Double.longBitsToDouble(bits);
     }
 
-    int getMatchingBraceIndex(int idx) {
-        return (int) tape[idx];
+    protected int getMatchingBraceIndex(int idx) {
+        return (int) this.tape[idx];
     }
 
-    int getScopeCount(int idx) {
-        return (int) ((tape[idx] >> 32) & JSON_COUNT_MASK);
+    protected int getScopeCount(int idx) {
+        return (int) ((this.tape[idx] >> 32) & JSON_COUNT_MASK);
     }
 
-    void write(int idx, int endIdx, char type, int count) {
+    protected void write(int idx, int endIdx, char type, int count) {
         long typeInfo = ((long) type) << 56;
         long endInfo = endIdx & 0xFFFFFFFFL;
         long countInfo = ((long) count & JSON_COUNT_MASK) << 32;
-        tape[idx] = typeInfo | countInfo | endInfo;
+        this.tape[idx] = typeInfo | countInfo | endInfo;
     }
 
-    int computeNextIndex(int idx) {
+    protected int computeNextIndex(int idx) {
         char t = getType(idx);
         if (t == START_ARRAY || t == START_OBJECT) return getMatchingBraceIndex(idx);
         else if (t == INT64 || t == DOUBLE) return idx + 2;
         else return idx + 1;
     }
 
-    void reset() {
-        tapeIdx = 0;
+    protected void reset() {
+        this.tapeIdx = 0;
     }
 }

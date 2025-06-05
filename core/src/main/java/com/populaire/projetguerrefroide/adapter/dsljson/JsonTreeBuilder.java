@@ -10,43 +10,51 @@ import java.util.Arrays;
 class JsonTreeBuilder {
     private final JsonReader<?> reader;
     private final Tape tape;
-
-    private byte[] stringBuffer = new byte[1024];
+    private byte[] stringBuffer;
     private int stringPtr = 0;
 
-    JsonTreeBuilder(JsonReader<?> reader, Tape tape) {
+    JsonTreeBuilder(JsonReader<?> reader, Tape tape, int capacity) {
         this.reader = reader;
         this.tape = tape;
+        this.stringBuffer = new byte[capacity];
     }
 
-    void parseValue(byte token) throws IOException {
+    protected void parseValue(byte token) throws IOException {
         switch (token) {
-            case '{' -> parseObject();
-            case '[' -> parseArray();
-            case '"' -> appendString(reader.readString());
+            case '{' -> this.parseObject();
+            case '[' -> this.parseArray();
+            case '"' -> this.appendString(this.reader.readString());
             case 't' -> {
-                reader.wasTrue();
-                tape.append(0, Tape.TRUE_VALUE);
+                this.reader.wasTrue();
+                this.tape.append(0, Tape.TRUE_VALUE);
             }
             case 'f' -> {
-                reader.wasFalse();
-                tape.append(0, Tape.FALSE_VALUE);
+                this.reader.wasFalse();
+                this.tape.append(0, Tape.FALSE_VALUE);
             }
             case 'n' -> {
-                reader.wasNull();
-                tape.append(0, Tape.NULL_VALUE);
+                this.reader.wasNull();
+                this.tape.append(0, Tape.NULL_VALUE);
             }
-            default -> parseNumber();
+            default -> this.parseNumber();
         }
+    }
+
+    protected byte[] getStringBuffer() {
+        return this.stringBuffer;
+    }
+
+    protected void resetStringBuffer() {
+        this.stringPtr = 0;
     }
 
     private void parseNumber() throws IOException {
         try {
-            double doubleValue = NumberConverter.deserializeDouble(reader);
+            double doubleValue = NumberConverter.deserializeDouble(this.reader);
             if (doubleValue == (long) doubleValue && !Double.isInfinite(doubleValue)) {
-                tape.appendInt64((long) doubleValue);
+                this.tape.appendInt64((long) doubleValue);
             } else {
-                tape.appendDouble(doubleValue);
+                this.tape.appendDouble(doubleValue);
             }
         } catch (Exception e) {
             throw new IOException("Invalid number format", e);
@@ -56,37 +64,37 @@ class JsonTreeBuilder {
     private void appendString(String s) {
         byte[] str = s.getBytes(StandardCharsets.UTF_8);
         int len = str.length;
-        int offset = stringPtr;
+        int offset = this.stringPtr;
 
-        ensureStringBufferCapacity(len + 4);
+        this.ensureStringBufferCapacity(len + 4);
 
-        stringBuffer[stringPtr++] = (byte) (len >> 24);
-        stringBuffer[stringPtr++] = (byte) (len >> 16);
-        stringBuffer[stringPtr++] = (byte) (len >> 8);
-        stringBuffer[stringPtr++] = (byte) len;
+        this.stringBuffer[this.stringPtr++] = (byte) (len >> 24);
+        this.stringBuffer[this.stringPtr++] = (byte) (len >> 16);
+        this.stringBuffer[this.stringPtr++] = (byte) (len >> 8);
+        this.stringBuffer[this.stringPtr++] = (byte) len;
 
-        System.arraycopy(str, 0, stringBuffer, stringPtr, len);
-        stringPtr += len;
+        System.arraycopy(str, 0, this.stringBuffer, this.stringPtr, len);
+        this.stringPtr += len;
 
-        tape.append(offset, Tape.STRING);
+        this.tape.append(offset, Tape.STRING);
     }
 
     private void ensureStringBufferCapacity(int needed) {
-        int required = stringPtr + needed;
-        if (required > stringBuffer.length) {
-            int newSize = Math.max(stringBuffer.length * 2, required);
-            stringBuffer = Arrays.copyOf(stringBuffer, newSize);
+        int required =this. stringPtr + needed;
+        if (required > this.stringBuffer.length) {
+            int newSize = Math.max(this.stringBuffer.length * 2, required);
+            this.stringBuffer = Arrays.copyOf(this.stringBuffer, newSize);
         }
     }
 
     private void parseObject() throws IOException {
-        int start = tape.tapeIdx;
-        tape.append(0, Tape.START_OBJECT);
+        int start = this.tape.tapeIdx;
+        this.tape.append(0, Tape.START_OBJECT);
         int count = 0;
 
-        byte next = reader.getNextToken();
+        byte next = this.reader.getNextToken();
         if (next == '}') {
-            tape.write(start, tape.tapeIdx, Tape.START_OBJECT, count);
+            this.tape.write(start, this.tape.tapeIdx, Tape.START_OBJECT, count);
             return;
         }
 
@@ -94,54 +102,105 @@ class JsonTreeBuilder {
             if (next != '"') {
                 throw new IOException("Expected string key in object, got: " + (char) next);
             }
-            String key = reader.readString();
-            appendString(key);
 
-            next = reader.getNextToken();
+            this.appendString();
+
+            next = this.reader.getNextToken();
             if (next != ':') {
                 throw new IOException("Expected ':' after object key, got: " + (char) next);
             }
 
-            next = reader.getNextToken();
-            parseValue(next);
+            next = this.reader.getNextToken();
+            this.parseValue(next);
             count++;
 
-            next = reader.getNextToken();
+            next = this.reader.getNextToken();
             if (next == ',') {
-                next = reader.getNextToken();
+                next = this.reader.getNextToken();
             }
 
         } while (next != '}');
 
-        tape.write(start, tape.tapeIdx, Tape.START_OBJECT, count);
+        this.tape.write(start, this.tape.tapeIdx, Tape.START_OBJECT, count);
+    }
+
+    private void appendString() throws IOException {
+        int offset = this.stringPtr;
+
+        this.ensureStringBufferCapacity(4);
+        int lengthPos = this.stringPtr;
+        this.stringPtr += 4;
+
+        int bytesRead = this.readString();
+
+        this.stringBuffer[lengthPos] = (byte) (bytesRead >> 24);
+        this.stringBuffer[lengthPos + 1] = (byte) (bytesRead >> 16);
+        this.stringBuffer[lengthPos + 2] = (byte) (bytesRead >> 8);
+        this.stringBuffer[lengthPos + 3] = (byte) bytesRead;
+
+        this.tape.append(offset, Tape.STRING);
+    }
+
+    private int readString() throws IOException {
+        int bytesRead = 0;
+
+        while (true) {
+            byte b = this.reader.read();
+
+            if (b == '"' && !this.isEscaped()) {
+                break;
+            }
+
+            if (b == '\\') {
+                this.ensureStringBufferCapacity(1);
+                this.stringBuffer[this.stringPtr++] = b;
+                bytesRead++;
+
+                b = this.reader.read();
+            }
+
+            this.ensureStringBufferCapacity(1);
+            this.stringBuffer[this.stringPtr++] = b;
+            bytesRead++;
+        }
+
+        return bytesRead;
+    }
+
+    private boolean isEscaped() {
+        int backslashCount = 0;
+        int pos = this.stringPtr - 1;
+
+        while (pos >= 0 && this.stringBuffer[pos] == '\\') {
+            backslashCount++;
+            pos--;
+        }
+
+        return (backslashCount % 2) == 1;
     }
 
     private void parseArray() throws IOException {
-        int start = tape.tapeIdx;
-        tape.append(0, Tape.START_ARRAY);
+        int start = this.tape.tapeIdx;
+        this.tape.append(0, Tape.START_ARRAY);
         int count = 0;
 
         byte next = reader.getNextToken();
         if (next == ']') {
-            tape.write(start, tape.tapeIdx, Tape.START_ARRAY, count);
+            this.tape.write(start, this.tape.tapeIdx, Tape.START_ARRAY, count);
             return;
         }
 
         do {
-            parseValue(next);
+            this.parseValue(next);
             count++;
 
-            next = reader.getNextToken();
+            next = this.reader.getNextToken();
             if (next == ',') {
-                next = reader.getNextToken();
+                next = this.reader.getNextToken();
             }
 
         } while (next != ']');
 
-        tape.write(start, tape.tapeIdx, Tape.START_ARRAY, count);
-    }
-
-    byte[] getStringBuffer() {
-        return stringBuffer;
+        tape.write(start, this.tape.tapeIdx, Tape.START_ARRAY, count);
     }
 }
