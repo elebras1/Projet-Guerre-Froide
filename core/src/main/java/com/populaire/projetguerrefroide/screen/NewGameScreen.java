@@ -20,6 +20,7 @@ import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.view.*;
+import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
@@ -83,8 +84,8 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.debug.setPosition(100, 90);
         this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
 
+        WidgetFactory widgetFactory = new WidgetFactory();
         this.hoverTooltip = new HoverTooltip(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
-
         this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.mainMenuInGame.setVisible(false);
         Table centerTable = new Table();
@@ -95,7 +96,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         topTable.setFillParent(true);
         topTable.top();
         ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getBookmark(), this.gameContext.getLocalisation());
-        TitleBar titleBar = new TitleBar(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        TitleBar titleBar = new TitleBar(widgetFactory, this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         LobbyBox lobbyBox = new LobbyBox(this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.countrySummaryPanel = new CountrySummaryPanel(this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         topTable.add(scenarioSavegameSelector).align(Align.topLeft).expandX();

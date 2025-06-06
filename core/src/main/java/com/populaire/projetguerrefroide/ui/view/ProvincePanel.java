@@ -1,24 +1,23 @@
 package com.populaire.projetguerrefroide.ui.view;
 
-import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.entity.DevelopementBuildingLevel;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
+import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.util.LabelUtils;
 
 import java.util.List;
 import java.util.Map;
 
 public class ProvincePanel extends Table {
+    private final WidgetFactory widgetFactory;
     private final Skin skin;
     private final Skin skinUi;
     private final Skin skinFlags;
@@ -48,7 +47,8 @@ public class ProvincePanel extends Table {
     private List<Image> colorsBuildings;
     private List<Image> specialBuildings;
 
-    public ProvincePanel(Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public ProvincePanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
+        this.widgetFactory = widgetFactory;
         this.skin = skin;
         this.skinUi = skinUi;
         this.skinFlags = skinFlags;
@@ -73,7 +73,7 @@ public class ProvincePanel extends Table {
         this.terrainImage.setPosition(26, 315);
         this.addActor(this.terrainImage);
 
-        Image overlay = this.createImage(this.skin, "prov_overlay", 26, 315);
+        Image overlay = this.widgetFactory.createImage(this.skin, "prov_overlay", 26, 315);
         this.addActor(overlay);
 
         Button closeButton = new Button(this.skinUi, "close_btn");
@@ -90,7 +90,7 @@ public class ProvincePanel extends Table {
         this.provinceName = new Label("", labelStyleJockey24);
         this.addActor(this.provinceName);
 
-        this.flagImage = this.createFlagImage(this.skinUi, "shield_big", "shield_big_overlay", (short) 64, (short) 64);
+        this.flagImage = this.widgetFactory.createFlagImage(this.skinUi, "shield_big", "shield_big_overlay", 64, 64);
         this.addActor(this.flagImage);
 
         Label.LabelStyle labelStyleJockey14 = labelStylePool.getLabelStyle("jockey_14");
@@ -100,7 +100,7 @@ public class ProvincePanel extends Table {
             this.addActor(label);
         }
 
-        this.addActor(this.createSpecialBuildings(this.skin, 26, 25));
+        this.addSpecialBuildings(this.skin, 26, 25, this);
     }
 
     private void setDataOverview(LabelStylePool labelStylePool) {
@@ -115,51 +115,38 @@ public class ProvincePanel extends Table {
         Label.LabelStyle labelStyleDanger20Dark = labelStylePool.getLabelStyle("danger_20_dark");
         Label.LabelStyle labelStyleJockey16Blue = labelStylePool.getLabelStyle("jockey_16", "blue");
 
-        this.regionName = new Label("", labelStyleJockey16Paper);
-        dataOverview.addActor(this.regionName);
-        this.resourceImage = new Image();
-        dataOverview.addActor(this.resourceImage);
-        this.resourceProduced = new Label("", labelStyleDanger20Dark);
-        dataOverview.addActor(this.resourceProduced);
-        dataOverview.addActor(this.createImage(this.skin, "prov_pop_icon", 22, 67));
-        this.populationRegion = new Label("", labelStyleDanger14);
-        dataOverview.addActor(this.populationRegion);
-        dataOverview.addActor(this.createImage(this.skin, "icon_workers_small", 22, 44));
-        this.workersRegion = new Label("", labelStyleDanger14);
-        dataOverview.addActor(this.workersRegion);
-        dataOverview.addActor(this.createImage(this.skin, "prov_DI", 22, 22));
-        this.developmentIndexRegion = new Label("", labelStyleDanger14);
-        dataOverview.addActor(this.developmentIndexRegion);
-        dataOverview.addActor(this.createImage(this.skin, "icon_dollar_big", 145, 38));
-        this.incomeRegion = new Label("", labelStyleDanger14);
-        dataOverview.addActor(this.incomeRegion);
-        dataOverview.addActor(this.createImage(this.skin, "icon_industry_small", 265, 53));
-        this.industryRegion = new Label("", labelStyleDanger14);
-        dataOverview.addActor(this.industryRegion);
-        dataOverview.addActor(this.createImage(this.skin, "prov_build_infra", 162, 160));
-        this.infrastructureValue = new Label("", labelStyleDanger20Dark);
-        dataOverview.addActor(this.infrastructureValue);
-        dataOverview.addActor(this.createImage(this.skinUi, "icon_manpower_small_blue", 27, 205));
-        this.populationProvince = new Label("", labelStyleJockey16Blue);
-        dataOverview.addActor(this.populationProvince);
-        dataOverview.addActor(this.createImage(this.skinUi, "icon_money_small_blue", 125, 205));
-        this.incomeProvince = new Label("", labelStyleJockey16Blue);
-        dataOverview.addActor(this.incomeProvince);
-        dataOverview.addActor(this.createImage(this.skinUi, "icon_dissent_small_blue", 199, 205));
-        this.revoltRisk = new Label("", labelStyleJockey16Blue);
-        dataOverview.addActor(this.revoltRisk);
-        dataOverview.addActor(this.createImage(this.skin, "icon_militia_small", 282, 202));
-        this.guerillaValue = new Label("", labelStyleDanger20Dark);
-        dataOverview.addActor(this.guerillaValue);
-        dataOverview.addActor(this.createImage(this.skin, "prov_build_navalbase", 254, 173));
-        dataOverview.addActor(this.createBuildingLevel(this.skin, this.navalBaseLevel, 285, 175));
-        dataOverview.addActor(this.createImage(this.skin, "prov_build_airfield", 254, 157));
-        dataOverview.addActor(this.createBuildingLevel(this.skin, this.airBaseLevel, 285, 159));
-        dataOverview.addActor(this.createImage(this.skin, "prov_build_aa", 254, 141));
-        dataOverview.addActor(this.createBuildingLevel(this.skin, this.antiAircraftGunsLevel, 285, 143));
-        dataOverview.addActor(this.createImage(this.skin, "prov_build_radar", 254, 125));
-        dataOverview.addActor(this.createBuildingLevel(this.skin, this.radarStationLevel, 285, 127));
-        dataOverview.addActor(this.createColorBuildings(this.skin, 269, 29));
+        this.regionName = this.widgetFactory.createLabel(labelStyleJockey16Paper, dataOverview);
+        this.resourceImage = this.widgetFactory.createImage(dataOverview);
+        this.resourceProduced = this.widgetFactory.createLabel(labelStyleDanger20Dark, dataOverview);
+        this.widgetFactory.createImage(this.skin, "prov_pop_icon", 22, 67, dataOverview);
+        this.populationRegion = this.widgetFactory.createLabel(labelStyleDanger14, dataOverview);
+        this.widgetFactory.createImage(this.skin, "icon_workers_small", 22, 44, dataOverview);
+        this.workersRegion = this.widgetFactory.createLabel(labelStyleDanger14, dataOverview);
+        this.widgetFactory.createImage(this.skin, "prov_DI", 22, 22, dataOverview);
+        this.developmentIndexRegion = this.widgetFactory.createLabel(labelStyleDanger14, dataOverview);
+        this.widgetFactory.createImage(this.skin, "icon_dollar_big", 145, 38, dataOverview);
+        this.incomeRegion = this.widgetFactory.createLabel(labelStyleDanger14, dataOverview);
+        this.widgetFactory.createImage(this.skin, "icon_industry_small", 265, 53, dataOverview);
+        this.industryRegion = this.widgetFactory.createLabel(labelStyleDanger14, dataOverview);
+        this.widgetFactory.createImage(this.skin, "prov_build_infra", 162, 160, dataOverview);
+        this.infrastructureValue = this.widgetFactory.createLabel(labelStyleDanger20Dark, dataOverview);
+        this.widgetFactory.createImage(this.skinUi, "icon_manpower_small_blue", 27, 205, dataOverview);
+        this.populationProvince = this.widgetFactory.createLabel(labelStyleJockey16Blue, dataOverview);
+        this.widgetFactory.createImage(this.skinUi, "icon_money_small_blue", 125, 205, dataOverview);
+        this.incomeProvince = this.widgetFactory.createLabel(labelStyleJockey16Blue, dataOverview);
+        this.widgetFactory.createImage(this.skinUi, "icon_dissent_small_blue", 199, 205, dataOverview);
+        this.revoltRisk = this.widgetFactory.createLabel(labelStyleJockey16Blue, dataOverview);
+        this.widgetFactory.createImage(this.skin, "icon_militia_small", 282, 202, dataOverview);
+        this.guerillaValue = this.widgetFactory.createLabel(labelStyleDanger20Dark, dataOverview);
+        this.widgetFactory.createImage(this.skin, "prov_build_navalbase", 254, 173, dataOverview);
+        this.addBuildingLevel(this.skin, this.navalBaseLevel, 285, 175, dataOverview);
+        this.widgetFactory.createImage(this.skin, "prov_build_airfield", 254, 157, dataOverview);
+        this.addBuildingLevel(this.skin, this.airBaseLevel, 285, 159, dataOverview);
+        this.widgetFactory.createImage(this.skin, "prov_build_aa", 254, 141, dataOverview);
+        this.addBuildingLevel(this.skin, this.antiAircraftGunsLevel, 285, 143, dataOverview);
+        this.widgetFactory.createImage(this.skin, "prov_build_radar", 254, 125, dataOverview);
+        this.addBuildingLevel(this.skin, this.radarStationLevel, 285, 127, dataOverview);
+        this.addColorBuildings(this.skin, 269, 29, dataOverview);
 
         this.addActor(dataOverview);
     }
@@ -169,51 +156,23 @@ public class ProvincePanel extends Table {
         int x = 35;
         int y = 193;
         for(int i = 0; i < 5; i++) {
-            FlagImage flagImage = this.createFlagImage(this.skinUi, "minimask", "minishield", (short) 32, (short) 32);
+            FlagImage flagImage = this.widgetFactory.createFlagImage(this.skinUi, "minimask", "minishield", 32, 32);
             flagImage.setPosition(x, y);
             this.countriesCoreFlagImages.add(flagImage);
             x += 38;
         }
     }
 
-    private Image createImage(Skin skin, String drawableName, float x, float y) {
-        Image image = new Image(skin.getDrawable(drawableName));
-        image.setPosition(x, y);
-        return image;
+    private Table addBuildingLevel(Skin skin, List<Image> buildingLevel, float x, float y, Group parent) {
+        return this.widgetFactory.createImageRow(skin, "prov_building_plupp_off", 10, 8, x, y, buildingLevel, parent);
     }
 
-    private FlagImage createFlagImage(Skin skinUi, String alphaFlagName, String overlayFlagName, short height, short width) {
-        TextureRegion alphaFlag = skinUi.getRegion(alphaFlagName);
-        TextureRegion overlayFlag = skinUi.getRegion(overlayFlagName);
-        Pixmap defaultPixmapFlag = new Pixmap(width, height, Pixmap.Format.RGBA8888);
-        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new Texture(defaultPixmapFlag));
-        defaultPixmapFlag.dispose();
-        return new FlagImage(defaultFlag, overlayFlag, alphaFlag);
+    private Table addColorBuildings(Skin skin, float x, float y, Group parent) {
+        return this.widgetFactory.createImageRow(skin, "factory_plupp_nofactory", 6, 18, x, y, this.colorsBuildings, parent);
     }
 
-    private Table createImageRow(Skin skin, String textureName, int count, float spacing, float x, float y, List<Image> targetList) {
-        Table table = new Table();
-        float imageX = 0;
-        for (int i = 0; i < count; i++) {
-            Image image = this.createImage(skin, textureName, imageX, 0);
-            targetList.add(image);
-            table.addActor(image);
-            imageX += spacing;
-        }
-        table.setPosition(x, y);
-        return table;
-    }
-
-    private Table createBuildingLevel(Skin skin, List<Image> buildingLevel, float x, float y) {
-        return createImageRow(skin, "prov_building_plupp_off", 10, 8, x, y, buildingLevel);
-    }
-
-    private Table createColorBuildings(Skin skin, float x, float y) {
-        return createImageRow(skin, "factory_plupp_nofactory", 6, 18, x, y, this.colorsBuildings);
-    }
-
-    private Table createSpecialBuildings(Skin skin, float x, float y) {
-        return createImageRow(skin, "empty_spec_building", 8, 60, x, y, this.specialBuildings);
+    private Table addSpecialBuildings(Skin skin, float x, float y, Group parent) {
+        return this.widgetFactory.createImageRow(skin, "empty_spec_building", 8, 60, x, y, this.specialBuildings, parent);
     }
 
     public void setData(ProvinceDto provinceDto) {

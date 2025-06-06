@@ -24,6 +24,7 @@ import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.DateService;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.view.*;
+import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.util.DateUtils;
 
 import java.time.LocalDate;
@@ -85,8 +86,9 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         this.configurationService.loadGameLocalisation(this.gameContext);
 
-        this.topBar = new TopBar(this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer(), this);
-        this.provincePanel = new ProvincePanel(this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        WidgetFactory widgetFactory = new WidgetFactory();
+        this.topBar = new TopBar(widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer(), this);
+        this.provincePanel = new ProvincePanel(widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new Stage(new ScreenViewport());
         this.initializeUi();
