@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.graphics;
+package com.populaire.projetguerrefroide.adapter.graphics;
 
 import com.badlogic.gdx.graphics.Mesh;
 import com.badlogic.gdx.graphics.VertexAttribute;

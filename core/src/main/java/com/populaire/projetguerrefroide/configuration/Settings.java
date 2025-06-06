@@ -1,7 +1,9 @@
 package com.populaire.projetguerrefroide.configuration;
 
 import com.badlogic.gdx.Gdx;
+import com.dslplatform.json.CompiledJson;
 
+@CompiledJson
 public class Settings implements Cloneable{
     private String language;
     private short masterVolume;

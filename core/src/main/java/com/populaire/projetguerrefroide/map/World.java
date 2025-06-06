@@ -10,14 +10,14 @@ import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
-import com.populaire.projetguerrefroide.dao.MapDao;
+import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
 import com.populaire.projetguerrefroide.national.Culture;
 import com.populaire.projetguerrefroide.national.Religion;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
-import com.populaire.projetguerrefroide.graphics.MeshMultiDrawIndirect;
+import com.populaire.projetguerrefroide.adapter.graphics.MeshMultiDrawIndirect;
 import org.lwjgl.opengl.GL43;
 
 import java.util.*;
@@ -26,7 +26,7 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class World implements Disposable {
-    private final MapDao mapDao;
+    private final MapDaoImpl mapDao;
     private final List<Country> countries;
     private final IntObjectMap<LandProvince> provinces;
     private final IntObjectMap<WaterProvince> waterProvinces;
@@ -58,7 +58,7 @@ public class World implements Disposable {
     private MapMode mapMode;
 
     public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, GameContext gameContext) {
-        this.mapDao = new MapDao();
+        this.mapDao = new MapDaoImpl();
         this.countries = countries;
         this.provinces = provinces;
         this.waterProvinces = waterProvinces;

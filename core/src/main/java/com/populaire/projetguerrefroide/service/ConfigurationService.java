@@ -5,6 +5,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dao.ConfigurationDao;
 import com.populaire.projetguerrefroide.dao.LocalisationDao;
+import com.populaire.projetguerrefroide.dao.impl.ConfigurationDaoImpl;
+import com.populaire.projetguerrefroide.dao.impl.LocalisationDaoImpl;
 import com.populaire.projetguerrefroide.entity.Bookmark;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 
@@ -13,8 +15,8 @@ public class ConfigurationService {
     private final LocalisationDao localisationDao;
 
     public ConfigurationService() {
-        this.configurationDao = new ConfigurationDao();
-        this.localisationDao = new LocalisationDao();
+        this.configurationDao = new ConfigurationDaoImpl();
+        this.localisationDao = new LocalisationDaoImpl();
     }
 
     public GameContext getGameContext() {
