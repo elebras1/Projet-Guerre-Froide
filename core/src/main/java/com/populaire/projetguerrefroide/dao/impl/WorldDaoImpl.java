@@ -17,6 +17,7 @@ import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.national.*;
 import com.populaire.projetguerrefroide.service.GameContext;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
@@ -104,7 +105,7 @@ public class WorldDaoImpl implements WorldDao {
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
         FileHandle fileHandle = Gdx.files.internal(filePath);
-        return this.mapper.parse(fileHandle.read());
+        return this.mapper.parse((BufferedInputStream) fileHandle.read(), (int) fileHandle.length());
     }
 
     private BufferedReader parseCsvFile(String filePath) throws IOException {

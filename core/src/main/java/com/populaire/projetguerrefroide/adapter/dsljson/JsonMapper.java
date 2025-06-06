@@ -21,22 +21,24 @@ public class JsonMapper {
         this.buffer = new byte[8192];
     }
 
-    public JsonValue parse(InputStream inputStream) throws IOException {
+    public JsonValue parse(BufferedInputStream inputStream, int length) throws IOException {
         try (inputStream) {
-            int totalBytesRead = 0;
-            int bytesRead;
+            this.ensureCapacity(length);
 
-            while ((bytesRead = inputStream.read(this.buffer, totalBytesRead, this.buffer.length - totalBytesRead)) != -1) {
-                totalBytesRead += bytesRead;
-                if (totalBytesRead == this.buffer.length) {
-                    ensureCapacity(totalBytesRead + 1);
+            int offset = 0;
+            while (offset < length) {
+                int bytesRead = inputStream.read(this.buffer, offset, length - offset);
+                if (bytesRead == -1) {
+                    throw new EOFException("Expected " + length + " bytes, but got " + offset);
                 }
+                offset += bytesRead;
             }
 
-            this.reader.process(this.buffer, totalBytesRead);
+            this.reader.process(this.buffer, length);
             return this.getJsonValue();
         }
     }
+
 
     public JsonValue parse(byte[] buffer) throws IOException {
         if (buffer == null || buffer.length == 0) {
