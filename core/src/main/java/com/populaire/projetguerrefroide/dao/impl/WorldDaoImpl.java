@@ -104,7 +104,7 @@ public class WorldDaoImpl implements WorldDao {
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
         FileHandle fileHandle = Gdx.files.internal(filePath);
-        return this.mapper.parse(fileHandle.readBytes());
+        return this.mapper.parse(fileHandle.read());
     }
 
     private BufferedReader parseCsvFile(String filePath) throws IOException {

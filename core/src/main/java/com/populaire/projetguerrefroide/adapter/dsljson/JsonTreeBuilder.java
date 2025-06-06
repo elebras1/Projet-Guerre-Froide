@@ -80,7 +80,7 @@ class JsonTreeBuilder {
     }
 
     private void ensureStringBufferCapacity(int needed) {
-        int required =this. stringPtr + needed;
+        int required = this.stringPtr + needed;
         if (required > this.stringBuffer.length) {
             int newSize = Math.max(this.stringBuffer.length * 2, required);
             this.stringBuffer = Arrays.copyOf(this.stringBuffer, newSize);
@@ -142,29 +142,25 @@ class JsonTreeBuilder {
     }
 
     private int readString() throws IOException {
-        int bytesRead = 0;
+        int startPos = this.stringPtr;
 
         while (true) {
             byte b = this.reader.read();
 
-            if (b == '"' && !this.isEscaped()) {
-                break;
-            }
-
-            if (b == '\\') {
-                this.ensureStringBufferCapacity(1);
-                this.stringBuffer[this.stringPtr++] = b;
-                bytesRead++;
-
-                b = this.reader.read();
+            if (b == '"') {
+                if (this.stringPtr == startPos || this.stringBuffer[this.stringPtr - 1] != '\\') {
+                    break;
+                }
+                if (!isEscaped()) {
+                    break;
+                }
             }
 
             this.ensureStringBufferCapacity(1);
             this.stringBuffer[this.stringPtr++] = b;
-            bytesRead++;
         }
 
-        return bytesRead;
+        return this.stringPtr - startPos;
     }
 
     private boolean isEscaped() {
