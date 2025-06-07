@@ -21,10 +21,11 @@ public class WidgetFactory {
         return table;
     }
 
-    public void applyBackgroundToTable(Skin skin, String backgroundName, Table table) {
+    public Drawable applyBackgroundToTable(Skin skin, String backgroundName, Table table) {
         Drawable background = skin.getDrawable(backgroundName);
         table.setBackground(background);
         table.setSize(background.getMinWidth(), background.getMinHeight());
+        return background;
     }
 
     public Label createLabel(String text, Label.LabelStyle style, float x, float y, Group parent) {
@@ -36,6 +37,14 @@ public class WidgetFactory {
 
     public Label createLabel(Label.LabelStyle style, Group parent) {
         Label label = new Label("", style);
+        parent.addActor(label);
+        return label;
+    }
+
+    public Label createLabel(String text, Label.LabelStyle style, float x, float y, float width, float height, int align, Group parent) {
+        Label label = new Label(text, style);
+        label.setBounds(x, y, width, height);
+        label.setAlignment(align);
         parent.addActor(label);
         return label;
     }
@@ -75,6 +84,16 @@ public class WidgetFactory {
         return image;
     }
 
+    public Image createImageWithOverlay(Skin skin, String drawableName, float x, float y, float width, float height, Group parent) {
+        Image image = new Image();
+        Stack stack = new Stack();
+        stack.add(image);
+        stack.add(new Image(skin.getDrawable(drawableName)));
+        stack.setBounds(x, y, width, height);
+        parent.addActor(stack);
+        return image;
+    }
+
     public Table createImageRow(Skin skin, String textureName, int count, float spacing, float x, float y, List<Image> targetList, Group parent) {
         Table table = new Table();
         float imageX = 0;
@@ -89,9 +108,9 @@ public class WidgetFactory {
         return table;
     }
 
-    public FlagImage createFlagImage(Skin skinUi, String alphaFlagName, String overlayFlagName, int width, int height) {
-        TextureRegion alphaFlag = skinUi.getRegion(alphaFlagName);
-        TextureRegion overlayFlag = skinUi.getRegion(overlayFlagName);
+    public FlagImage createFlagImage(Skin skin, String alphaFlagName, String overlayFlagName, int width, int height) {
+        TextureRegion alphaFlag = skin.getRegion(alphaFlagName);
+        TextureRegion overlayFlag = skin.getRegion(overlayFlagName);
         Pixmap defaultPixmapFlag = new Pixmap(width, height, Pixmap.Format.RGBA8888);
         TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new Texture(defaultPixmapFlag));
         defaultPixmapFlag.dispose();

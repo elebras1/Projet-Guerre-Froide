@@ -1,15 +1,12 @@
 package com.populaire.projetguerrefroide.ui.view;
 
-import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
+import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import java.util.Map;
 
@@ -23,20 +20,12 @@ public class CountrySummaryPanel extends Table {
     private final Skin skinFlags;
     private final Skin skinPortraits;
 
-    public CountrySummaryPanel(Skin skin, Skin skinUi, Skin skinFlags, Skin skinPortraits, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public CountrySummaryPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinPortraits, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.skinFlags = skinFlags;
         this.skinPortraits = skinPortraits;
-        Drawable background = skin.getDrawable("selected_bg");
-        this.setBackground(background);
-        this.setSize(background.getMinWidth(), background.getMinHeight());
+        Drawable background = widgetFactory.applyBackgroundToTable(skin, "selected_bg", this);
 
-        TextureRegion alphaFlag = skinUi.getRegion("flag_alpha");
-        TextureRegion overlayFlag = skinUi.getRegion("flag_overlay");
-        Pixmap defaultPixmapFlag = new Pixmap(109, 77, Pixmap.Format.RGBA8888);
-        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new Texture(defaultPixmapFlag));
-        defaultPixmapFlag.dispose();
-
-        this.flagImage = new FlagImage(defaultFlag, overlayFlag, alphaFlag);
+        this.flagImage = widgetFactory.createFlagImage(skinUi, "flag_alpha", "flag_overlay", 109, 77);
         this.flagImage.setPosition(6, 85);
         this.addActor(this.flagImage);
 
@@ -46,53 +35,15 @@ public class CountrySummaryPanel extends Table {
         Label.LabelStyle labelStyleJockey14Yellow = labelStylePool.getLabelStyle("jockey_14", "yellow");
         Label.LabelStyle labelStyleJockey14GlowBlue = labelStylePool.getLabelStyle("jockey_14_glow_blue");
 
-        this.countryName = new Label("", labelStyleJockey24);
-        this.addActor(this.countryName);
-
-        this.countryName.setBounds(0, 168, background.getMinWidth(), 20);
-        this.countryName.setAlignment(Align.center);
-
-        this.government = new Label("", labelStyleJockey14Dark);
-        this.government.setBounds(110, 137, 160, 30);
-        this.government.setAlignment(Align.right);
-        this.addActor(this.government);
-
-        Label countryPopulationDescription = new Label(localisation.get("POPULATION"), labelStyleJockey14);
-        countryPopulationDescription.setBounds(110, 109, 156, 20);
-        countryPopulationDescription.setAlignment(Align.left);
-        this.addActor(countryPopulationDescription);
-
-        this.countryPopulation = new Label("", labelStyleJockey14Yellow);
-        this.countryPopulation.setBounds(110, 109, 156, 20);
-        this.countryPopulation.setAlignment(Align.right);
-        this.addActor(this.countryPopulation);
-
-        this.portrait = new Image();
-        Stack portraitStack = new Stack();
-        portraitStack.add(this.portrait);
-        portraitStack.add(new Image(skin.getDrawable("tv_overlay")));
-        portraitStack.setBounds(6, 6, 78, 78);
-        this.addActor(portraitStack);
-
-        Label leaderDescription = new Label(localisation.get("HEAD_OF_STATE"), labelStyleJockey14Dark);
-        leaderDescription.setBounds(105, 72, 160, 20);
-        leaderDescription.setAlignment(Align.center);
-        this.addActor(leaderDescription);
-
-        this.leaderFullName = new Label("", labelStyleJockey14GlowBlue);
-        this.leaderFullName.setBounds(105, 48, 160, 20);
-        this.leaderFullName.setAlignment(Align.center);
-        this.addActor(this.leaderFullName);
-
-        Label wars = new Label(localisation.get("WARS"), labelStyleJockey14);
-        wars.setBounds(105, 29, 160, 20);
-        wars.setAlignment(Align.left);
-        this.addActor(wars);
-
-        Label allies = new Label(localisation.get("ALLIES"), labelStyleJockey14);
-        allies.setBounds(105, 10, 160, 20);
-        allies.setAlignment(Align.left);
-        this.addActor(allies);
+        this.countryName = widgetFactory.createLabel("", labelStyleJockey24, 0, 168, background.getMinWidth(), 20, Align.center, this);
+        this.government = widgetFactory.createLabel("", labelStyleJockey14Dark, 110, 137, 160, 30, Align.right, this);
+        widgetFactory.createLabel(localisation.get("POPULATION"), labelStyleJockey14, 110, 109, 156, 20, Align.left, this);
+        this.countryPopulation = widgetFactory.createLabel("", labelStyleJockey14Yellow, 110, 109, 156, 20, Align.right, this);
+        this.portrait = widgetFactory.createImageWithOverlay(skin, "tv_overlay", 6, 6, 78, 78, this);
+        widgetFactory.createLabel(localisation.get("HEAD_OF_STATE"), labelStyleJockey14Dark, 105, 72, 160, 20, Align.center, this);
+        this.leaderFullName = widgetFactory.createLabel("", labelStyleJockey14GlowBlue, 105, 48, 160, 20, Align.center, this);
+        widgetFactory.createLabel(localisation.get("WARS"), labelStyleJockey14, 105, 29, 160, 20, Align.left, this);
+        widgetFactory.createLabel(localisation.get("ALLIES"), labelStyleJockey14, 105, 10, 160, 20, Align.left, this);
 
         this.setVisible(false);
     }

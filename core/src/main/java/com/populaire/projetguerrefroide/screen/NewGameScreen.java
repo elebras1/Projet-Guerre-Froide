@@ -98,7 +98,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getBookmark(), this.gameContext.getLocalisation());
         TitleBar titleBar = new TitleBar(widgetFactory, this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         LobbyBox lobbyBox = new LobbyBox(widgetFactory, this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
-        this.countrySummaryPanel = new CountrySummaryPanel(this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        this.countrySummaryPanel = new CountrySummaryPanel(widgetFactory, this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         topTable.add(scenarioSavegameSelector).align(Align.topLeft).expandX();
         topTable.add(titleBar).align(Align.top);
         topTable.add(this.countrySummaryPanel).align(Align.topRight).expandX();
