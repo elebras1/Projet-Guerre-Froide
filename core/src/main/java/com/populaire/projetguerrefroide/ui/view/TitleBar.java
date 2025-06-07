@@ -11,7 +11,7 @@ import java.util.Map;
 public class TitleBar extends Table {
 
     public TitleBar(WidgetFactory widgetFactory, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation) {
-        widgetFactory.applyBackgroundToTable(skinUi, "selected_scenario_bg", 0, 0, this);
+        widgetFactory.applyBackgroundToTable(skinUi, "selected_scenario_bg", this);
 
         Label.LabelStyle labelStyleJocker18Black = labelStylePool.getLabelStyle("jockey_18_black");
         Label titleScenario = new Label(localisation.get("TITLE_SELECT_NATION"), labelStyleJocker18Black);

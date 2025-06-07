@@ -353,7 +353,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
             this.inputHandler.handleInput();
         }
 
-        this.debug.actualize(renderTimeMs);
+        this.debug.update(renderTimeMs);
 
         this.stage.act();
         this.stage.draw();

@@ -21,11 +21,10 @@ public class WidgetFactory {
         return table;
     }
 
-    public void applyBackgroundToTable(Skin skin, String backgroundName, float x, float y, Table table) {
+    public void applyBackgroundToTable(Skin skin, String backgroundName, Table table) {
         Drawable background = skin.getDrawable(backgroundName);
         table.setBackground(background);
         table.setSize(background.getMinWidth(), background.getMinHeight());
-        table.setPosition(x, y);
     }
 
     public Label createLabel(String text, Label.LabelStyle style, float x, float y, Group parent) {

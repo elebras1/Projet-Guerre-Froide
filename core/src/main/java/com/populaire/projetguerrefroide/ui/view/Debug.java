@@ -5,68 +5,68 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 public class Debug extends Table {
-    private final Label fps;
-    private final Label mousePosition;
-    private final Label memoryUsage;
-    private final Label delta;
-    private final Label heap;
-    private final Label resolution;
-    private final Label totalProvinces;
-    private final Label threadCount;
+    private static final float MEMORY_UPDATE_INTERVAL = 0.5f;
+
+    private final Label fpsLabel;
+    private final Label mousePositionLabel;
+    private final Label memoryLabel;
+    private final Label deltaLabel;
+    private final Label heapLabel;
+    private final Label resolutionLabel;
+    private final Label totalProvincesLabel;
+    private final Label threadCountLabel;
+
+    private float timeSinceLastStats;
 
     public Debug(short totalProvinces) {
-        this.fps = this.createLabel();
-        this.mousePosition = this.createLabel();
-        this.memoryUsage = this.createLabel();
-        this.delta = this.createLabel();
-        this.heap = this.createLabel();
-        this.resolution = this.createLabel();
-        this.totalProvinces = this.createLabel();
-        this.totalProvinces.setText("Number of provinces : " + totalProvinces);
-        this.threadCount = this.createLabel();
-        this.add(this.fps).left();
-        this.row();
-        this.add(this.mousePosition).left();
-        this.row();
-        this.add(this.heap).left();
-        this.row();
-        this.add(this.memoryUsage).left();
-        this.row();
-        this.add(this.delta).left();
-        this.row();
-        this.add(this.resolution).left();
-        this.row();
-        this.add(this.totalProvinces).left();
-        this.row();
-        this.add(this.threadCount).left();
+        Label.LabelStyle labelStyle = new Label.LabelStyle(new BitmapFont(), Color.GREEN);
+
+        this.fpsLabel = new Label("", labelStyle);
+        this.mousePositionLabel = new Label("", labelStyle);
+        this.memoryLabel = new Label("", labelStyle);
+        this.deltaLabel = new Label("", labelStyle);
+        this.heapLabel = new Label("", labelStyle);
+        this.resolutionLabel = new Label("", labelStyle);
+        this.totalProvincesLabel = new Label("", labelStyle);
+        this.threadCountLabel = new Label("", labelStyle);
+
+        this.totalProvincesLabel.setText("Number of provinces : " + totalProvinces);
+
+        Label[] allLabels = {this.fpsLabel, this.mousePositionLabel, this.heapLabel, this.memoryLabel, this.deltaLabel, this.resolutionLabel, this.totalProvincesLabel, this.threadCountLabel};
+        for (Label lbl : allLabels) {
+            this.add(lbl).left().pad(2f);
+            this.row();
+        }
     }
 
-    public void actualize(float delta) {
-        Runtime runtime = Runtime.getRuntime();
-        long currentTime = System.currentTimeMillis();
+    public void update(float deltaTime) {
+        int fps = Gdx.graphics.getFramesPerSecond();
+        int mouseX = Gdx.input.getX();
+        int mouseY = Gdx.input.getY();
+        int screenWidth = Gdx.graphics.getWidth();
+        int screenHeight = Gdx.graphics.getHeight();
 
-        this.fps.setText("FPS: " + Gdx.graphics.getFramesPerSecond());
-        this.mousePosition.setText("Mouse Position: " + Gdx.input.getX() + ", " + Gdx.input.getY());
-        this.memoryUsage.setText("Memory Usage: " + getMemoryUsage());
-        this.delta.setText("Delta: " + delta);
-        this.heap.setText("Heap: " + runtime.totalMemory() / (1024 * 1024) + " MB");
-        this.resolution.setText("Resolution: " + Gdx.graphics.getWidth() + "x" + Gdx.graphics.getHeight());
-        this.threadCount.setText("Thread Count: " + getThreadCount());
-    }
+        this.fpsLabel.setText(String.format("FPS : %d", fps));
+        this.mousePositionLabel.setText(String.format("Mouse : %d, %d", mouseX, mouseY));
+        this.deltaLabel.setText(String.format("Delta : %.3f s", deltaTime));
+        this.resolutionLabel.setText(String.format("Resolution : %dx%d", screenWidth, screenHeight));
 
-    private String getMemoryUsage() {
-        Runtime runtime = Runtime.getRuntime();
-        long usedMemory = (runtime.totalMemory() - runtime.freeMemory()) / (1024 * 1024);
-        return usedMemory + " MB / ";
-    }
+        this.timeSinceLastStats += deltaTime;
+        if (this.timeSinceLastStats >= MEMORY_UPDATE_INTERVAL) {
+            this.timeSinceLastStats = 0;
 
-    private String getThreadCount() {
-        return String.valueOf(Thread.activeCount());
-    }
+            Runtime runtime = Runtime.getRuntime();
+            long totalHeapMo = runtime.totalMemory()  / (1024 * 1024);
+            long freeHeapMo = runtime.freeMemory()   / (1024 * 1024);
+            long usedHeapMo = totalHeapMo - freeHeapMo;
+            int  threads = Thread.activeCount();
 
-    private Label createLabel() {
-        return new Label("", new Label.LabelStyle(new BitmapFont(), Color.GREEN));
+            this.heapLabel.setText(String.format("Heap : %d Mo / %d Mo", usedHeapMo, totalHeapMo));
+            this.memoryLabel.setText(String.format("Memory used : %d Mo", usedHeapMo));
+            this.threadCountLabel.setText(String.format("Active threads : %d", threads));
+        }
     }
 }
