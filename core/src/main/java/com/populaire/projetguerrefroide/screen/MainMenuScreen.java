@@ -11,6 +11,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.ui.view.MainMenu;
+import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 public class MainMenuScreen implements Screen, MainMenuListener {
     private final Stage stage;
@@ -29,7 +30,8 @@ public class MainMenuScreen implements Screen, MainMenuListener {
         rootTable.setFillParent(true);
         rootTable.setBackground(skin.getDrawable("frontend_main_bg"));
         configurationService.loadMainMenuLocalisation(gameContext);
-        MainMenu menu = new MainMenu(skin, gameContext.getLabelStylePool(), gameContext.getLocalisation(), this);
+        WidgetFactory widgetFactory = new WidgetFactory();
+        MainMenu menu = new MainMenu(widgetFactory, skin, gameContext.getLabelStylePool(), gameContext.getLocalisation(), this);
         rootTable.add(menu).center().padLeft(menu.getWidth() / 3);
         this.stage.addActor(rootTable);
     }

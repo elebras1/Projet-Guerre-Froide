@@ -9,17 +9,18 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.populaire.projetguerrefroide.screen.MainMenuListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import java.util.Map;
 
 public class MainMenu extends Table {
 
-    public MainMenu(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuListener listener) {
+    public MainMenu(WidgetFactory widgetFactory, Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuListener listener) {
         Label.LabelStyle labelStyleJockey24GlowBlue = labelStylePool.getLabelStyle("jockey_24_glow_blue");
         Label.LabelStyle labelStyleJockey24GlowRed = labelStylePool.getLabelStyle("jockey_24_glow_red");
         Label.LabelStyle labelStyleJockey20GlowBlue = labelStylePool.getLabelStyle("jockey_20_glow_blue");
 
-        Drawable background = skin.getDrawable("frontend_mainmenu_bg");
+        widgetFactory.applyBackgroundToTable(skin, "frontend_mainmenu_bg", this);
 
         Button playButton = new Button(skin, "frontend_big");
         playButton.add(new Label(localisation.get("SINGLEPLAYER"), labelStyleJockey24GlowBlue)).padBottom(5);
@@ -29,8 +30,8 @@ public class MainMenu extends Table {
                 listener.onSinglePlayerClicked();
             }
         });
-        playButton.setX(52);
-        playButton.setY(375);
+        playButton.setPosition(52, 375);
+        this.addActor(playButton);
 
         Button multiplayerButton = new Button(skin, "frontend_big");
         multiplayerButton.add(new Label(localisation.get("MULTIPLAYER"), labelStyleJockey24GlowBlue)).padBottom(5);
@@ -40,8 +41,8 @@ public class MainMenu extends Table {
                 listener.onMultiplayerClicked();
             }
         });
-        multiplayerButton.setX(52);
-        multiplayerButton.setY(295);
+        multiplayerButton.setPosition(52, 295);
+        this.addActor(multiplayerButton);
 
         Button optionsButton = new Button(skin, "frontend_small");
         optionsButton.add(new Label(localisation.get("OPTIONS"), labelStyleJockey20GlowBlue)).padBottom(5);
@@ -50,8 +51,8 @@ public class MainMenu extends Table {
             public void clicked(InputEvent event, float x, float y) {
             }
         });
-        optionsButton.setX(52);
-        optionsButton.setY(252);
+        optionsButton.setPosition(52, 252);
+        this.addActor(optionsButton);
 
         Button tutorialButton = new Button(skin, "frontend_small");
         tutorialButton.add(new Label(localisation.get("TUTORIAL"), labelStyleJockey20GlowBlue)).padBottom(5);
@@ -60,8 +61,8 @@ public class MainMenu extends Table {
             public void clicked(InputEvent event, float x, float y) {
             }
         });
-        tutorialButton.setX(52);
-        tutorialButton.setY(210);
+        tutorialButton.setPosition(52, 210);
+        this.addActor(tutorialButton);
 
         Button creditsButton = new Button(skin, "frontend_small");
         creditsButton.add(new Label(localisation.get("CREDITS"), labelStyleJockey20GlowBlue)).padBottom(5);
@@ -70,8 +71,8 @@ public class MainMenu extends Table {
             public void clicked(InputEvent event, float x, float y) {
             }
         });
-        creditsButton.setX(52);
-        creditsButton.setY(168);
+        creditsButton.setPosition(52, 168);
+        this.addActor(creditsButton);
 
         Button exitButton = new Button(skin, "frontend_big_exit");
         exitButton.add(new Label(localisation.get("EXIT"), labelStyleJockey24GlowRed)).padBottom(5);
@@ -81,16 +82,7 @@ public class MainMenu extends Table {
                 listener.onExitClicked();
             }
         });
-        exitButton.setX(52);
-        exitButton.setY(35);
-
-        this.setBackground(background);
-        this.setSize(background.getMinWidth(), background.getMinHeight());
-        this.addActor(playButton);
-        this.addActor(multiplayerButton);
-        this.addActor(optionsButton);
-        this.addActor(tutorialButton);
-        this.addActor(creditsButton);
+        exitButton.setPosition(52, 35);
         this.addActor(exitButton);
     }
 }
