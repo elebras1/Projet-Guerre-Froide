@@ -8,7 +8,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 import java.util.Map;
 
 public class LocalisationDaoImpl implements LocalisationDao {
@@ -92,7 +91,13 @@ public class LocalisationDaoImpl implements LocalisationDao {
             new InputStreamReader(
                 Gdx.files.internal(filename).read(), StandardCharsets.UTF_8))) {
             String[] headers = br.readLine().split(";");
-            int localisationIndex = Arrays.asList(headers).indexOf(language);
+            int localisationIndex = -1;
+            for (int i = 0; i < headers.length; i++) {
+                if (headers[i].equals(language)) {
+                    localisationIndex = i;
+                    break;
+                }
+            }
             if (localisationIndex == -1) {
                 throw new IllegalArgumentException("Localisation not found in CSV headers.");
             }

@@ -7,13 +7,12 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.util.Logging;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -35,7 +34,7 @@ public class LoadScreen implements Screen {
         assetManager.load("loadingscreens/loadingscreens_skin.json", Skin.class);
         this.stage = new Stage();
         Gdx.input.setInputProcessor(this.stage);
-        List<String> loadingImageNames = new ArrayList<>(Arrays.asList("load_1", "load_2", "load_3", "load_4", "load_5", "load_6", "load_7", "load_8", "load_9", "load_10", "load_11", "load_12"));
+        List<String> loadingImageNames = ObjectList.with("load_1", "load_2", "load_3", "load_4", "load_5", "load_6", "load_7", "load_8", "load_9", "load_10", "load_11", "load_12");
         Random random = new Random();
         Table rootTable = new Table();
         assetManager.finishLoading();

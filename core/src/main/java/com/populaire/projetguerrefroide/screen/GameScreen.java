@@ -91,13 +91,13 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.provincePanel = new ProvincePanel(widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new Stage(new ScreenViewport());
-        this.initializeUi();
+        this.initializeUi(widgetFactory);
         this.dateService.initialize();
 
         this.paused = false;
     }
 
-    private void initializeUi() {
+    private void initializeUi(WidgetFactory widgetFactory) {
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(this.multiplexer);
@@ -124,7 +124,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         Table centerTable = new Table();
         centerTable.setFillParent(true);
-        this.mainMenuInGame = new MainMenuInGame(this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
+        this.mainMenuInGame = new MainMenuInGame(widgetFactory, this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.mainMenuInGame.setVisible(false);
         centerTable.add(this.mainMenuInGame).center();
         this.stage.addActor(centerTable);
