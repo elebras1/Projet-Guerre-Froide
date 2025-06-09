@@ -351,6 +351,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         if(!this.paused) {
             this.inputHandler.setDelta(delta);
             this.inputHandler.handleInput();
+            this.inputHandler.updateCamera();
         }
 
         this.debug.update(renderTimeMs);

@@ -273,6 +273,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         if(!this.paused) {
             this.inputHandler.setDelta(delta);
             this.inputHandler.handleInput();
+            this.inputHandler.updateCamera();
         }
 
         this.debug.update(renderTimeMs);
