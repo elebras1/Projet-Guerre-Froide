@@ -26,8 +26,8 @@ public class GameInputHandler implements InputProcessor {
     private static final float ZOOM_SPEED_DECAY = 6f;
     private static final float ZOOM_FACTOR = 3f;
     private static final float VELOCITY_DECAY = 8f;
-    private static final float MAX_VELOCITY = 2.1f;
-    private static final float ACCELERATION = 16f;
+    private static final float MAX_VELOCITY = 800f;
+    private static final float ACCELERATION = 6400f;
 
     public GameInputHandler(OrthographicCamera cam, GameInputListener gameInputListener) {
         this.cam = cam;
@@ -142,14 +142,13 @@ public class GameInputHandler implements InputProcessor {
 
         this.cam.zoom = MathUtils.clamp(this.cam.zoom, 0.05f, WORLD_WIDTH / this.cam.viewportWidth);
 
-        this.cameraVelocity.set(this.posVelocity).scl(this.cam.zoom);
+        this.cameraVelocity.set(this.posVelocity).scl(this.cam.zoom * this.delta);
         this.cam.position.x += this.cameraVelocity.x;
         this.cam.position.y += this.cameraVelocity.y;
 
         this.cam.position.y = MathUtils.clamp(this.cam.position.y, -50, WORLD_HEIGHT + 50);
         this.cam.update();
     }
-
 
     @Override
     public boolean keyDown (int keycode) {
@@ -200,7 +199,6 @@ public class GameInputHandler implements InputProcessor {
         this.gameInputListener.onHover((short) (position >> 16), (short) (position & 0xFFFF));
         return true;
     }
-
 
     @Override
     public boolean scrolled(float amountX, float amountY) {
