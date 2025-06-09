@@ -3,11 +3,13 @@ package com.populaire.projetguerrefroide.ui.view;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
+import java.util.List;
 import java.util.Map;
 
 public class CountrySummaryPanel extends Table {
@@ -19,6 +21,7 @@ public class CountrySummaryPanel extends Table {
     private final Image portrait;
     private final Skin skinFlags;
     private final Skin skinPortraits;
+    private final List<FlagImage> alliesFlagImages;
 
     public CountrySummaryPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinPortraits, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.skinFlags = skinFlags;
@@ -45,7 +48,21 @@ public class CountrySummaryPanel extends Table {
         widgetFactory.createLabel(localisation.get("WARS"), labelStyleJockey14, 105, 29, 160, 20, Align.left, this);
         widgetFactory.createLabel(localisation.get("ALLIES"), labelStyleJockey14, 105, 10, 160, 20, Align.left, this);
 
+        this.alliesFlagImages = new ObjectList<>();
+        this.setAlliesFlags(widgetFactory, skinUi);
+
         this.setVisible(false);
+    }
+
+    public void setAlliesFlags(WidgetFactory widgetFactory, Skin skinUi) {
+        int x = 140;
+        int y = 9;
+        for(int i = 0; i < 7; i++) {
+            FlagImage flagImage = widgetFactory.createFlagImage(skinUi, "small_flag_mask", "small_flag_overlay", 24, 16);
+            flagImage.setPosition(x, y);
+            this.alliesFlagImages.add(flagImage);
+            x += 18;
+        }
     }
 
     public void update(CountrySummaryDto countrySummaryDto, Map<String, String> localisation) {
@@ -55,6 +72,16 @@ public class CountrySummaryPanel extends Table {
         this.countryPopulation.setText(countrySummaryDto.getPopulation());
         this.portrait.setDrawable(this.skinPortraits.getDrawable(countrySummaryDto.getPortrait()));
         this.leaderFullName.setText(countrySummaryDto.getLeaderFullName());
+        List<String> allies = countrySummaryDto.getAllies();
+        for (int i = this.alliesFlagImages.size() - 1; i >= 0; i--) {
+            if (i < allies.size()) {
+                this.alliesFlagImages.get(i).setFlag(this.skinFlags.getRegion(allies.get(i)));
+                this.addActor(this.alliesFlagImages.get(i));
+            } else {
+                this.alliesFlagImages.get(i).remove();
+            }
+        }
+
         this.setVisible(true);
     }
 

@@ -265,21 +265,21 @@ icon_satellite_red
   index: -1
 icon_spy_blue
   rotate: false
-  xy: 449, 331
+  xy: 248, 294
   size: 21, 21
   orig: 21, 21
   offset: 0, 0
   index: -1
 icon_spy_green
   rotate: false
-  xy: 472, 331
+  xy: 449, 313
   size: 21, 21
   orig: 21, 21
   offset: 0, 0
   index: -1
 icon_spy_red
   rotate: false
-  xy: 248, 294
+  xy: 472, 313
   size: 21, 21
   orig: 21, 21
   offset: 0, 0
@@ -569,6 +569,20 @@ shield_big_overlay
   xy: 112, 301
   size: 64, 64
   orig: 64, 64
+  offset: 0, 0
+  index: -1
+small_flag_mask
+  rotate: false
+  xy: 449, 336
+  size: 24, 16
+  orig: 24, 16
+  offset: 0, 0
+  index: -1
+small_flag_overlay
+  rotate: false
+  xy: 475, 336
+  size: 24, 16
+  orig: 24, 16
   offset: 0, 0
   index: -1
 small_tiles_dialog

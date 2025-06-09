@@ -114,8 +114,9 @@ public class WorldService {
             portraitNameFile = headOfState.getImageNameFile();
         }
         String population = ValueFormatter.formatValue(selectedCountry.getPopulationAmount(), localisation);
+        List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry);
 
-        return new CountrySummaryDto(selectedCountry.getName(), selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName());
+        return new CountrySummaryDto(selectedCountry.getName(), selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), allies);
     }
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {
@@ -312,6 +313,18 @@ public class WorldService {
             }
             keys.set(j + 1, key);
         }
+    }
+
+    private List<String> getAlliesOfSelectedCountry(Country country) {
+        List<String> allies = new ObjectList<>();
+        if(country.getAlliances() == null) {
+            return allies;
+        }
+
+        for(Country ally : country.getAlliances().keySet()) {
+            allies.add(ally.getId());
+        }
+        return allies;
     }
 
     public void dispose() {
