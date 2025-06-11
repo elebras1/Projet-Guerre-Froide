@@ -20,6 +20,7 @@ public class HoverTooltip extends Table {
     private final Image image;
     private final float marginWidth;
     private final float heightWidth;
+    private final StringBuilder text;
 
     public HoverTooltip(Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.localisation = localisation;
@@ -27,6 +28,7 @@ public class HoverTooltip extends Table {
         NinePatch ninePatch = skinUi.getPatch("tiles_dialog");
         this.marginWidth = ninePatch.getLeftWidth() + ninePatch.getRightWidth();
         this.heightWidth = ninePatch.getTopHeight() + ninePatch.getBottomHeight();
+        this.text = new StringBuilder();
         NinePatchDrawable ninePatchDrawable = new NinePatchDrawable(ninePatch);
 
         Label.LabelStyle labelStyleArial14Glow = labelStylePool.getLabelStyle("arial_14_glow");
@@ -57,20 +59,18 @@ public class HoverTooltip extends Table {
     }
 
     public void update(short provinceId, String countryName, String countryId, ObjectIntMap<String> elements) {
-        String mainText = this.localisation.get(String.valueOf(provinceId)) + " (" + countryName + ")";
-        if (!mainText.equals(this.mainLabel.getText().toString())) {
-            this.mainLabel.setText(mainText);
+        this.text.setLength(0);
+        this.text.append(this.localisation.get(String.valueOf(provinceId))).append(" (").append(countryName).append(")");
+        if (!this.text.toString().equals(this.mainLabel.getText().toString())) {
+            this.mainLabel.setText(this.text.toString());
             this.image.setDrawable(this.skinFlags.getDrawable(countryId));
 
-            StringBuilder subText = new StringBuilder();
             for (ObjectIntMap.Entry<String> entry : elements) {
-                if (!subText.isEmpty()) {
-                    subText.append("\n");
-                }
-                subText.append(this.localisation.get(entry.getKey())).append(" (").append(entry.getValue()).append("%)");
+                this.text.append("\n");
+                this.text.append(this.localisation.get(entry.getKey())).append(" (").append(entry.getValue()).append("%)");
             }
 
-            this.subLabel.setText(subText.toString());
+            this.subLabel.setText(this.text.toString());
 
             if (!this.getChildren().contains(this.subLabel, true)) {
                 this.row().top();

@@ -17,6 +17,7 @@ public class Debug extends Table {
     private final Label resolutionLabel;
     private final Label totalProvincesLabel;
     private final Label threadCountLabel;
+    private final StringBuilder text = new StringBuilder(64);
 
     private float timeSinceLastStats;
 
@@ -32,7 +33,9 @@ public class Debug extends Table {
         this.totalProvincesLabel = new Label("", labelStyle);
         this.threadCountLabel = new Label("", labelStyle);
 
-        this.totalProvincesLabel.setText("Number of provinces : " + totalProvinces);
+        this.text.setLength(0);
+        this.text.append("Number of provinces : ").append(totalProvinces);
+        this.totalProvincesLabel.setText(this.text.toString());
 
         Label[] allLabels = {this.fpsLabel, this.mousePositionLabel, this.heapLabel, this.memoryLabel, this.deltaLabel, this.resolutionLabel, this.totalProvincesLabel, this.threadCountLabel};
         for (Label lbl : allLabels) {
@@ -48,24 +51,38 @@ public class Debug extends Table {
         int screenWidth = Gdx.graphics.getWidth();
         int screenHeight = Gdx.graphics.getHeight();
 
-        this.fpsLabel.setText(String.format("FPS : %d", fps));
-        this.mousePositionLabel.setText(String.format("Mouse : %d, %d", mouseX, mouseY));
-        this.deltaLabel.setText(String.format("Delta : %.3f s", deltaTime));
-        this.resolutionLabel.setText(String.format("Resolution : %dx%d", screenWidth, screenHeight));
+        this.text.setLength(0);
+        this.fpsLabel.setText(this.text.append("FPS : ").append(fps).toString());
+
+        this.text.setLength(0);
+        this.mousePositionLabel.setText(this.text.append("Mouse : ").append(mouseX).append(", ").append(mouseY).toString());
+
+        this.text.setLength(0);
+        float roundedDelta = Math.round(deltaTime * 1000f) / 1000f;
+        this.text.setLength(0);
+        this.deltaLabel.setText(this.text.append("Delta : ").append(roundedDelta).append(" s").toString());
+
+        this.text.setLength(0);
+        this.resolutionLabel.setText(this.text.append("Resolution : ").append(screenWidth).append("x").append(screenHeight).toString());
 
         this.timeSinceLastStats += deltaTime;
         if (this.timeSinceLastStats >= MEMORY_UPDATE_INTERVAL) {
             this.timeSinceLastStats = 0;
 
             Runtime runtime = Runtime.getRuntime();
-            long totalHeapMo = runtime.totalMemory()  / (1024 * 1024);
-            long freeHeapMo = runtime.freeMemory()   / (1024 * 1024);
+            long totalHeapMo = runtime.totalMemory() / (1024 * 1024);
+            long freeHeapMo = runtime.freeMemory() / (1024 * 1024);
             long usedHeapMo = totalHeapMo - freeHeapMo;
-            int  threads = Thread.activeCount();
+            int threads = Thread.activeCount();
 
-            this.heapLabel.setText(String.format("Heap : %d Mo / %d Mo", usedHeapMo, totalHeapMo));
-            this.memoryLabel.setText(String.format("Memory used : %d Mo", usedHeapMo));
-            this.threadCountLabel.setText(String.format("Active threads : %d", threads));
+            this.text.setLength(0);
+            this.heapLabel.setText(this.text.append("Heap : ").append(usedHeapMo).append(" Mo / ").append(totalHeapMo).append(" Mo").toString());
+
+            this.text.setLength(0);
+            this.memoryLabel.setText(this.text.append("Memory used : ").append(usedHeapMo).append(" Mo").toString());
+
+            this.text.setLength(0);
+            this.threadCountLabel.setText(this.text.append("Active threads : ").append(threads).toString());
         }
     }
 }
