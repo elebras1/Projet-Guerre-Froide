@@ -225,7 +225,7 @@ vec4 getLandClose(vec4 colorProvince, vec4 colorMapMode, vec2 texCoord, vec2 uv)
     }
 
     if(colorProvince.a < 1.0) {
-        vec4 border;
+        vec4 border = vec4(0.0);
         if(colorProvince.a < 0.1) {
             if(u_zoom < 0.55) {
                 border = getBorder(colorProvince, offsetsProvince, vec3(0.13, 0.16, 0.20), uv);

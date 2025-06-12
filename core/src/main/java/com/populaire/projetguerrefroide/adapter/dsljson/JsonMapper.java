@@ -21,7 +21,7 @@ public class JsonMapper {
         this.buffer = new byte[8192];
     }
 
-    public JsonValue parse(BufferedInputStream inputStream, int length) throws IOException {
+    public JsonValue parse(InputStream inputStream, int length) throws IOException {
         try (inputStream) {
             this.ensureCapacity(length);
 
