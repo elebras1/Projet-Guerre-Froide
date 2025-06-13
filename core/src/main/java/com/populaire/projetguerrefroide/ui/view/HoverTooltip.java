@@ -65,10 +65,15 @@ public class HoverTooltip extends Table {
             this.mainLabel.setText(this.text.toString());
             this.image.setDrawable(this.skinFlags.getDrawable(countryId));
 
+            this.text.setLength(0);
+            int i = 0, size = elements.size();
             for (ObjectIntMap.Entry<String> entry : elements) {
-                this.text.append("\n");
                 this.text.append(this.localisation.get(entry.getKey())).append(" (").append(entry.getValue()).append("%)");
+                if (++i < size) {
+                    this.text.append("\n");
+                }
             }
+
 
             this.subLabel.setText(this.text.toString());
 
@@ -79,7 +84,6 @@ public class HoverTooltip extends Table {
             this.resize();
         }
     }
-
 
     public void update(String text) {
         if(!text.equals(this.mainLabel.getText().toString())) {
