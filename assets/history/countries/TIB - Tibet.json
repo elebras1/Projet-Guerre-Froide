@@ -2,10 +2,6 @@
     "capital": 11313,
     "government": "theocracy_gov",
     "ideology": "paternal_auto_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 75,
     "national_unity": 100,
     "national_identity": "state_building_focus",
@@ -39,57 +35,6 @@
         "maoist_idolg": 0,
         "communist_idolg": 0
     },
-    "oob": "TIB_1946.txt",
-    "1946.1.1": {
-        "oob": "TIB_1946.txt",
-        "head_of_state": 1338000,
-        "head_of_government": 1338001
-    },
-    "1948.5.14": {
-        "oob": "TIB_1948.txt",
-        "head_of_state": 1338000,
-        "head_of_government": 1338001
-    },
-    "1950.6.25": {
-        "oob": "TIB_1950.txt",
-        "head_of_state": 1338000,
-        "head_of_government": 1338001,
-        "set_country_flag": "invade_tibet_TIB_done",
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "light_artillery": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1961.12.11": {
-        "oob": "empty.txt",
-        "set_country_flag": "invade_tibet_TIB_done"
-    },
-    "1979.12.24": {
-        "set_country_flag": "invade_tibet_TIB_done",
-        "head_of_state": 1338000,
-        "head_of_government": 1338000
-    },
-    "1982.1.1": {
-        "oob": "empty.txt",
-        "head_of_state": 1338000,
-        "head_of_government": 1338000
-    },
-    "1991.1.16": {
-        "set_country_flag": "invade_tibet_TIB_done",
-        "head_of_state": 1338000,
-        "head_of_government": 1338000
-    },
-    "1950.01.07": {
-        "minister_image_change": 1338000
-    },
-    "1960.01.01": {
-        "minister_image_change": 1338000
-    },
-    "1970.01.01": {
-        "minister_image_change": 1338000
-    },
-    "1980.01.01": {
-        "minister_image_change": 1338000
-    }
+    "head_of_state": 1338000,
+    "head_of_government": 1338001
 }

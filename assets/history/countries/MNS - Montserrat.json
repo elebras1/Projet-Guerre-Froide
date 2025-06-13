@@ -2,10 +2,6 @@
     "capital": 3142,
     "government": "constitutional_monarchy_gov",
     "ideology": "social_cons_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 70,
     "national_unity": 100,
     "national_identity": "corporate_focus",
@@ -38,67 +34,5 @@
         "left_wing_radical_idolg": 0,
         "maoist_idolg": 0,
         "communist_idolg": 0
-    },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt"
-    },
-    "1948.5.14": {},
-    "1950.6.25": {},
-    "1961.12.11": {
-        "head_of_state": 1259002,
-        "head_of_government": 1259010,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3
-    },
-    "1979.12.24": {
-        "head_of_state": 1259002,
-        "head_of_government": 1259012,
-        "small_arms": 3,
-        "crew_served_weapons": 3,
-        "light_engine": 3,
-        "light_artillery": 3,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "industry_chemistry": 3,
-        "industry_light_massproduction": 2,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_light_plastics": 4,
-        "industry_heavy_mechanical_engineering": 5
-    },
-    "1982.1.1": {
-        "head_of_state": 1259002,
-        "head_of_government": 1259012
-    },
-    "1991.1.16": {
-        "head_of_state": 1259002,
-        "head_of_government": 1259012,
-        "small_arms": 3,
-        "crew_served_weapons": 3,
-        "light_engine": 3,
-        "light_artillery": 3,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "industry_chemistry": 3,
-        "industry_light_massproduction": 2,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_light_plastics": 4,
-        "industry_heavy_mechanical_engineering": 5
     }
 }

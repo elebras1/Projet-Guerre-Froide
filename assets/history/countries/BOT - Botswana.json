@@ -2,10 +2,6 @@
     "capital": 6965,
     "government": "presidential_republic_gov",
     "ideology": "social_cons_idolg",
-    "alignment": {
-        "x": -5,
-        "y": 0
-    },
     "neutrality": 75,
     "national_unity": 100,
     "national_identity": "corporate_focus",
@@ -38,97 +34,5 @@
         "left_wing_radical_idolg": 0,
         "maoist_idolg": 0,
         "communist_idolg": 0
-    },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt"
-    },
-    "1948.5.14": {},
-    "1950.6.25": {},
-    "1961.12.11": {},
-    "1968.03.29": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1979.12.24": {
-        "oob": "BOT_1979.txt",
-        "neutrality": 70,
-        "alignment": {
-            "x": -50,
-            "y": 0
-        },
-        "head_of_state": 1134003,
-        "head_of_government": 1134003,
-        "government": "constitutional_republic_gov",
-        "mass_firepower": [
-            1,
-            1
-        ],
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "medium_artillery": 1,
-        "heavy_artillery": 1,
-        "linear_fire_and_movement": 1,
-        "shock_attacks": 1,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "infiltration_tactics": 1,
-        "maneuver_warfare": 1,
-        "elastic_defense": 1,
-        "indirect_artillery_fire": 1,
-        "explosives": 1,
-        "industry_heavy_mechanical_engineering": 3
-    },
-    "1982.1.1": {
-        "head_of_state": 1134004,
-        "head_of_government": 1134004
-    },
-    "1991.1.16": {
-        "oob": "BOT_1991.txt",
-        "neutrality": 70,
-        "head_of_state": 1134004,
-        "head_of_government": 1134004,
-        "mass_firepower": [
-            1,
-            1
-        ],
-        "small_arms": 4,
-        "crew_served_weapons": 4,
-        "light_engine": 4,
-        "light_artillery": 4,
-        "medium_artillery": 3,
-        "heavy_artillery": 3,
-        "linear_fire_and_movement": 1,
-        "shock_attacks": 1,
-        "industry_mathematics": 3,
-        "industry_light_massproduction": 4,
-        "industry_chemistry": 6,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 5,
-        "infiltration_tactics": 1,
-        "maneuver_warfare": 1,
-        "industry_modern_science": 1,
-        "industry_electronics": 3,
-        "industry_softwareengineering": 1,
-        "elastic_defense": 1,
-        "explosives": 3,
-        "indirect_artillery_fire": 1,
-        "industry_heavy_mechanical_engineering": 5,
-        "industry_light_plastics": 7
-    },
-    "1966.10.17": {
-        "join_organisation": "XUN",
-        "add_country_modifier": {
-            "name": "mod_united_nations_member_state",
-            "duration": -1
-        }
     }
 }

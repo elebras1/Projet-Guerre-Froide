@@ -2,10 +2,6 @@
     "capital": 11937,
     "government": "proletarian_dictatorship_gov",
     "ideology": "communist_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 35,
     "national_unity": 100,
     "national_identity": "territorial_focus",
@@ -39,88 +35,10 @@
         "maoist_idolg": 15,
         "communist_idolg": 70
     },
-    "oob": "DRV_1946.txt",
-    "1946.1.1": {
-        "oob": "DRV_1946.txt",
-        "neutrality": 35,
-        "alignment": {
-            "x": 50,
-            "y": 0
-        },
-        "head_of_state": 1177000,
-        "head_of_government": 1177000
+    "alignment": {
+        "x": 50,
+        "y": 0
     },
-    "1948.5.14": {
-        "oob": "DRV_1948.txt",
-        "neutrality": 35,
-        "alignment": {
-            "x": 55,
-            "y": 0
-        },
-        "head_of_state": 1177000,
-        "head_of_government": 1177000
-    },
-    "1950.6.25": {
-        "oob": "DRV_1950.txt",
-        "neutrality": 30,
-        "head_of_state": 1177000,
-        "head_of_government": 1177000,
-        "alignment": {
-            "x": 60,
-            "y": 0
-        }
-    },
-    "1961.12.11": {
-        "oob": "DRV_1961.txt",
-        "neutrality": [
-            25,
-            10
-        ],
-        "alignment": {
-            "x": 120,
-            "y": 0
-        },
-        "head_of_state": 1177000,
-        "head_of_government": 1177007,
-        "set_global_flag": "IDC177003triggered"
-    },
-    "1979.12.24": {
-        "oob": "empty.txt",
-        "neutrality": 25,
-        "head_of_state": 1177002,
-        "head_of_government": 1177007,
-        "set_global_flag": "IDC177003triggered",
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3
-    },
-    "1982.1.1": {
-        "oob": "empty.txt",
-        "head_of_state": 1177004,
-        "head_of_government": 1177007
-    },
-    "1991.1.16": {
-        "neutrality": 25,
-        "head_of_state": 1177005,
-        "head_of_government": 1177012,
-        "set_global_flag": "IDC177003triggered"
-    },
-    "1955.09.20": {
-        "minister_image_change": 1177000
-    },
-    "1965.01.01": {
-        "minister_image_change": 1177007
-    },
-    "1976.07.02": {
-        "minister_image_change": 1177007
-    }
+    "head_of_state": 1177000,
+    "head_of_government": 1177000
 }

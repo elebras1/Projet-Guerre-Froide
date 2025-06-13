@@ -2,10 +2,6 @@
     "capital": 4493,
     "government": "authoritarian_gov",
     "ideology": "paternal_auto_idolg",
-    "alignment": {
-        "x": 5,
-        "y": 0
-    },
     "neutrality": 65,
     "national_unity": 100,
     "national_identity": "cultural_bias_focus",
@@ -38,79 +34,5 @@
         "left_wing_radical_idolg": 0,
         "maoist_idolg": 0,
         "communist_idolg": 0
-    },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt"
-    },
-    "1948.5.14": {},
-    "1950.6.25": {},
-    "1960.9.28": {
-        "join_organisation": "XUN",
-        "add_country_modifier": {
-            "name": "mod_united_nations_member_state",
-            "duration": -1
-        }
-    },
-    "1961.12.11": {
-        "oob": "MAL_1961.txt",
-        "neutrality": 60,
-        "head_of_state": 1248001,
-        "head_of_government": 1248001,
-        "alignment": {
-            "x": 40,
-            "y": 0
-        },
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1965.05.24": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1979.12.24": {
-        "oob": "MAL_1979.txt",
-        "neutrality": 60,
-        "head_of_state": 1248002,
-        "head_of_government": 1248002,
-        "alignment": {
-            "x": 100,
-            "y": 0
-        },
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "light_artillery": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1982.1.1": {
-        "head_of_state": 1248002,
-        "head_of_government": 1248002
-    },
-    "1991.1.16": {
-        "oob": "MAL_1991.txt",
-        "neutrality": 60,
-        "head_of_state": 1248003,
-        "head_of_government": 1248006,
-        "alignment": {
-            "x": 80,
-            "y": 0
-        },
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3
     }
 }

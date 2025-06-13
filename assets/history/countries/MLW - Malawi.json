@@ -2,10 +2,6 @@
     "capital": 7753,
     "government": "authoritarian_gov",
     "ideology": "paternal_auto_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 70,
     "national_unity": 100,
     "national_identity": "state_building_focus",
@@ -38,84 +34,5 @@
         "left_wing_radical_idolg": 0,
         "maoist_idolg": 0,
         "communist_idolg": 0
-    },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt"
-    },
-    "1948.5.14": {},
-    "1950.6.25": {
-        "alignment": {
-            "x": -20,
-            "y": 0
-        }
-    },
-    "1968.01.05": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1961.12.11": {},
-    "1964.12.1": {
-        "join_organisation": "XUN",
-        "add_country_modifier": {
-            "name": "mod_united_nations_member_state",
-            "duration": -1
-        }
-    },
-    "1979.12.24": {
-        "oob": "MLW_1979.txt",
-        "neutrality": 65,
-        "alignment": {
-            "x": -30,
-            "y": 0
-        },
-        "head_of_state": 1254003,
-        "head_of_government": 1254003,
-        "guerrilla_war_warfare": 1,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_artillery": 1,
-        "industry_modern_science": 1,
-        "industry_psychology": 1,
-        "psychological_warfare": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3,
-        "asymmetric_warfare": 1
-    },
-    "1982.1.1": {
-        "oob": "empty.txt",
-        "neutrality": 65,
-        "head_of_state": 1254003,
-        "head_of_government": 1254003
-    },
-    "1991.1.16": {
-        "oob": "MLW_1991.txt",
-        "neutrality": 65,
-        "alignment": {
-            "x": -40,
-            "y": 0
-        },
-        "head_of_state": 1254003,
-        "head_of_government": 1254003,
-        "guerrilla_war_warfare": 1,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_psychology": 1,
-        "psychological_warfare": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3,
-        "asymmetric_warfare": 1
     }
 }

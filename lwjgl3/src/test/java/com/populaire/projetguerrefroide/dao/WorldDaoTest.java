@@ -12,7 +12,7 @@ public class WorldDaoTest extends GdxBaseTest {
     private final WorldDaoImpl worldDao;
 
     public WorldDaoTest() {
-        this.worldDao = new WorldDaoImpl("1946.1.1");
+        this.worldDao = new WorldDaoImpl();
     }
 
     @Test

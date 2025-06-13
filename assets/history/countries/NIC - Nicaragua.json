@@ -2,10 +2,6 @@
     "capital": 1854,
     "government": "authoritarian_gov",
     "ideology": "paternal_auto_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 65,
     "national_unity": 100,
     "national_identity": "corporate_focus",
@@ -39,126 +35,6 @@
         "maoist_idolg": 0,
         "communist_idolg": 0
     },
-    "oob": "NIC_1946.txt",
-    "1946.1.1": {
-        "oob": "NIC_1946.txt",
-        "head_of_state": 1273001,
-        "head_of_government": 1273001
-    },
-    "1948.5.14": {
-        "oob": "NIC_1948.txt",
-        "head_of_state": 1273005,
-        "head_of_government": 1273001
-    },
-    "1950.6.25": {
-        "oob": "NIC_1950.txt",
-        "alignment": {
-            "x": -10,
-            "y": 0
-        },
-        "head_of_state": 1273001,
-        "head_of_government": 1273001
-    },
-    "1953.12.17": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1961.12.11": {
-        "oob": "NIC_1961.txt",
-        "alignment": {
-            "x": 25,
-            "y": 0
-        },
-        "head_of_state": 1273007,
-        "head_of_government": 1273007,
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "light_artillery": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1979.12.24": {
-        "oob": "NIC_1979.txt",
-        "neutrality": 60,
-        "alignment": {
-            "x": 75,
-            "y": 0
-        },
-        "head_of_state": 1273012,
-        "head_of_government": 1273012,
-        "government": "republic_gov",
-        "ideology": "left_wing_radical_idolg",
-        "civil_liberties": "emergency_law",
-        "freedom_of_the_press": "censored_press",
-        "elections_and_voting": "gerrymandering",
-        "human_rights": "universal_rights",
-        "popularity": {
-            "fascistic_idolg": 0,
-            "paternal_auto_idolg": 5,
-            "social_cons_idolg": 20,
-            "market_liberal_idolg": 0,
-            "social_liberal_idolg": 0,
-            "social_democrat_idolg": 10,
-            "left_wing_radical_idolg": 70,
-            "maoist_idolg": 0,
-            "communist_idolg": 0
-        },
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3
-    },
-    "1982.1.1": {
-        "head_of_state": 1273012,
-        "head_of_government": 1273012
-    },
-    "1991.1.16": {
-        "oob": "NIC_1991.txt",
-        "neutrality": 60,
-        "alignment": {
-            "x": 80,
-            "y": 0
-        },
-        "head_of_state": 1273013,
-        "head_of_government": 1273013,
-        "government": "constitutional_republic_gov",
-        "ideology": "social_cons_idolg",
-        "elections_and_voting": "proportional",
-        "public_oversight": "non-systematic_oversight",
-        "popularity": {
-            "fascistic_idolg": 0,
-            "paternal_auto_idolg": 0,
-            "social_cons_idolg": 55,
-            "market_liberal_idolg": 0,
-            "social_liberal_idolg": 0,
-            "social_democrat_idolg": 40,
-            "left_wing_radical_idolg": 5,
-            "maoist_idolg": 0,
-            "communist_idolg": 0
-        },
-        "small_arms": 3,
-        "crew_served_weapons": 3,
-        "light_engine": 3,
-        "light_artillery": 3,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "industry_chemistry": 3,
-        "industry_light_massproduction": 2,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_light_plastics": 4,
-        "industry_heavy_mechanical_engineering": 5
-    }
+    "head_of_state": 1273001,
+    "head_of_government": 1273001
 }

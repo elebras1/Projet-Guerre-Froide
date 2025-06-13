@@ -2,10 +2,6 @@
     "capital": 5540,
     "government": "presidential_republic_gov",
     "ideology": "social_cons_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 65,
     "national_unity": 100,
     "national_identity": "corporate_focus",
@@ -39,89 +35,6 @@
         "maoist_idolg": 0,
         "communist_idolg": 10
     },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt",
-        "head_of_state": 1196001,
-        "head_of_government": 1196001
-    },
-    "1948.5.14": {
-        "head_of_state": 1196001,
-        "head_of_government": 1196001,
-        "elections_and_voting": "gerrymandering"
-    },
-    "1950.6.25": {
-        "head_of_state": 1196001,
-        "head_of_government": 1196001
-    },
-    "1960.9.20": {
-        "join_organisation": "XUN",
-        "add_country_modifier": {
-            "name": "mod_united_nations_member_state",
-            "duration": -1
-        }
-    },
-    "1961.12.11": {
-        "head_of_state": 1196001,
-        "head_of_government": 1196001,
-        "alignment": {
-            "x": -10,
-            "y": 0
-        },
-        "neutrality": 60,
-        "government": "authoritarian_gov",
-        "civil_liberties": "emergency_law",
-        "elections_and_voting": "single_party_system"
-    },
-    "1965.02.26": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1979.12.24": {
-        "oob": "GAM_1979.txt",
-        "neutrality": 65,
-        "head_of_state": 1197005,
-        "head_of_government": 1197005,
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1982.1.1": {
-        "head_of_state": 1197005,
-        "head_of_government": 1197005,
-        "oob": "empty.txt"
-    },
-    "1991.1.16": {
-        "oob": "GAM_1991.txt",
-        "head_of_state": 1197005,
-        "head_of_government": 1197005,
-        "alignment": {
-            "x": -25,
-            "y": 0
-        },
-        "neutrality": 65,
-        "government": "republic_gov",
-        "civil_liberties": "fully_granted_liberties",
-        "elections_and_voting": "gerrymandering",
-        "guerrilla_war_warfare": 1,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "industry_modern_science": 1,
-        "industry_psychology": 1,
-        "psychological_warfare": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3,
-        "asymmetric_warfare": 1
-    },
-    "1966.10.20": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    }
+    "head_of_state": 1196001,
+    "head_of_government": 1196001
 }

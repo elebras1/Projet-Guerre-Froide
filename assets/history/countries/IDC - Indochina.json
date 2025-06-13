@@ -2,10 +2,6 @@
     "capital": 11937,
     "government": "authoritarian_gov",
     "ideology": "paternal_auto_idolg",
-    "alignment": {
-        "x": -50,
-        "y": 0
-    },
     "neutrality": 30,
     "national_unity": 100,
     "national_identity": "territorial_focus",
@@ -41,65 +37,6 @@
         "maoist_idolg": 0,
         "communist_idolg": 0
     },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "IDC_1946.txt",
-        "neutrality": 30,
-        "head_of_state": 1217010,
-        "head_of_government": 1217001,
-        "comb_paramilitary_recruitment": 1,
-        "centralized_command_and_control": 1
-    },
-    "1948.5.14": {
-        "oob": "IDC_1948.txt",
-        "neutrality": 30,
-        "head_of_state": 1194012,
-        "head_of_government": 1217002,
-        "set_country_flag": "IDC717002triggered"
-    },
-    "1950.6.25": {
-        "oob": "IDC_1950.txt",
-        "neutrality": 30,
-        "head_of_state": 1194012,
-        "head_of_government": 1217003,
-        "set_country_flag": "IDC717002triggered"
-    },
-    "1961.12.11": {
-        "oob": "empty.txt",
-        "neutrality": 25,
-        "alignment": {
-            "x": -100,
-            "y": 0
-        },
-        "set_country_flag": "IDC717002triggered"
-    },
-    "1979.12.24": {
-        "neutrality": 25,
-        "set_country_flag": "IDC717002triggered"
-    },
-    "1982.1.1": {
-        "oob": "empty.txt"
-    },
-    "1991.1.16": {
-        "neutrality": 25,
-        "set_country_flag": "IDC717002triggered"
-    },
-    "1955.09.20": {
-        "minister_image_change": 1217100
-    },
-    "1965.01.01": {
-        "minister_image_change": 1217107
-    },
-    "1976.07.02": {
-        "minister_image_change": 1217107
-    },
-    "1958.05.14": {
-        "minister_image_change": 1217010
-    },
-    "1967.04.05": {
-        "minister_image_change": 1217017
-    },
-    "1975.04.28": {
-        "minister_image_change": 1217116
-    }
+    "comb_paramilitary_recruitment": 1,
+    "centralized_command_and_control": 1
 }

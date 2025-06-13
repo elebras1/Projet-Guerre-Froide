@@ -56,11 +56,9 @@ public class WorldDaoImpl implements WorldDao {
     private final String populationTypesJsonFile = this.commonPath + "poptypes.json";
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
     private final String alliancesJsonFile = this.diplomacyPath + "alliances.json";
-    private final String startDate;
     private final JsonMapper mapper = new JsonMapper();
 
-    public WorldDaoImpl(String startDate) {
-        this.startDate = startDate;
+    public WorldDaoImpl() {
     }
 
     @Override
@@ -990,10 +988,9 @@ public class WorldDaoImpl implements WorldDao {
             country.setIdentity(gameEntities.getNationalIdeas().getIdentities().get(identity));
             String attitude = countryValues.get("national_attitude").asString();
             country.setAttitude(gameEntities.getNationalIdeas().getAttitudes().get(attitude));
-            JsonValue setupValues = countryValues.get(this.startDate);
-            if (setupValues.get("head_of_state") != null && setupValues.get("head_of_government") != null) {
-                int idMinisterHeadOfState = (int) setupValues.get("head_of_state").asLong();
-                int idMinisterHeadOfGovernment = (int) setupValues.get("head_of_government").asLong();
+            if(countryValues.get("head_of_state") != null && countryValues.get("head_of_government") != null) {
+                int idMinisterHeadOfState = (int) countryValues.get("head_of_state").asLong();
+                int idMinisterHeadOfGovernment = (int) countryValues.get("head_of_government").asLong();
                 country.setHeadOfState(idMinisterHeadOfState);
                 country.setHeadOfGovernment(idMinisterHeadOfGovernment);
             }

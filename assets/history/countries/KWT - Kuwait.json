@@ -2,10 +2,6 @@
     "capital": 8887,
     "government": "constitutional_monarchy_gov",
     "ideology": "social_cons_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 50,
     "national_unity": 100,
     "national_identity": "state_building_focus",
@@ -39,108 +35,6 @@
         "maoist_idolg": 0,
         "communist_idolg": 0
     },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt",
-        "head_of_state": 1237000,
-        "head_of_government": 1237003
-    },
-    "1948.5.14": {
-        "head_of_state": 1237000,
-        "head_of_government": 1237003
-    },
-    "1950.6.25": {
-        "set_country_flag": "1948_war_arab_minors_done",
-        "head_of_state": 1237001,
-        "head_of_government": 1237003
-    },
-    "1961.12.11": {
-        "oob": "KWT_1961.txt",
-        "neutrality": 45,
-        "alignment": {
-            "x": -20,
-            "y": 0
-        },
-        "set_country_flag": "1948_war_arab_minors_done",
-        "head_of_state": 1237001,
-        "head_of_government": 1237003,
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1963.5.14": {
-        "join_organisation": "XUN",
-        "add_country_modifier": {
-            "name": "mod_united_nations_member_state",
-            "duration": -1
-        }
-    },
-    "1967.09.02": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1979.12.24": {
-        "oob": "KWT_1979.txt",
-        "neutrality": 45,
-        "set_country_flag": "1948_war_arab_minors_done",
-        "head_of_state": 1237003,
-        "head_of_government": 1237004,
-        "guerrilla_war_warfare": 1,
-        "small_arms": 3,
-        "crew_served_weapons": 3,
-        "light_engine": 3,
-        "light_artillery": 3,
-        "industry_modern_science": 1,
-        "industry_psychology": 1,
-        "psychological_warfare": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "industry_chemistry": 3,
-        "industry_light_massproduction": 2,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_light_plastics": 4,
-        "industry_heavy_mechanical_engineering": 5,
-        "asymmetric_warfare": 1
-    },
-    "1982.1.1": {
-        "oob": "empty.txt",
-        "set_country_flag": "1948_war_arab_minors_done"
-    },
-    "1991.1.16": {
-        "oob": "KWT_1991.txt",
-        "neutrality": [
-            45,
-            0
-        ],
-        "alignment": {
-            "x": -90,
-            "y": 0
-        },
-        "head_of_state": 1237003,
-        "head_of_government": 1237004,
-        "set_country_flag": "1948_war_arab_minors_done",
-        "guerrilla_war_warfare": 1,
-        "small_arms": 3,
-        "crew_served_weapons": 3,
-        "light_engine": 3,
-        "light_artillery": 3,
-        "industry_modern_science": 1,
-        "industry_psychology": 1,
-        "psychological_warfare": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "industry_chemistry": 3,
-        "industry_light_massproduction": 2,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_light_plastics": 4,
-        "industry_heavy_mechanical_engineering": 5,
-        "asymmetric_warfare": 1
-    }
+    "head_of_state": 1237000,
+    "head_of_government": 1237003
 }

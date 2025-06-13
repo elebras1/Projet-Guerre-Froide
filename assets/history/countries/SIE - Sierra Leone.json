@@ -2,10 +2,6 @@
     "capital": 4340,
     "government": "presidential_republic_gov",
     "ideology": "social_democrat_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 65,
     "national_unity": 100,
     "national_identity": "corporate_focus",
@@ -38,100 +34,5 @@
         "left_wing_radical_idolg": 0,
         "maoist_idolg": 0,
         "communist_idolg": 0
-    },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt"
-    },
-    "1948.5.14": {},
-    "1950.6.25": {},
-    "1961.9.27": {
-        "join_organisation": "XUN",
-        "add_country_modifier": {
-            "name": "mod_united_nations_member_state",
-            "duration": -1
-        }
-    },
-    "1961.12.11": {
-        "oob": "SIE_1961.txt",
-        "neutrality": 65,
-        "head_of_state": 1316002,
-        "head_of_government": 1316003,
-        "alignment": {
-            "x": 10,
-            "y": 0
-        },
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "light_artillery": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1965.06.10": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1979.12.24": {
-        "oob": "SIE_1979.txt",
-        "neutrality": 60,
-        "head_of_state": 1316005,
-        "head_of_government": 1316005,
-        "alignment": {
-            "x": 20,
-            "y": 0
-        },
-        "government": "authoritarian_gov",
-        "ideology": "paternal_auto_idolg",
-        "freedom_of_the_press": "censored_press",
-        "elections_and_voting": "single_party_system",
-        "popularity": {
-            "fascistic_idolg": 0,
-            "paternal_auto_idolg": 70,
-            "social_cons_idolg": 0,
-            "market_liberal_idolg": 0,
-            "social_liberal_idolg": 0,
-            "social_democrat_idolg": 30,
-            "left_wing_radical_idolg": 0,
-            "maoist_idolg": 0,
-            "communist_idolg": 0
-        },
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3
-    },
-    "1982.1.1": {
-        "oob": "empty.txt",
-        "head_of_state": 1316005,
-        "head_of_government": 1316005
-    },
-    "1991.1.16": {
-        "oob": "SIE_1991.txt",
-        "neutrality": 60,
-        "head_of_state": 1316005,
-        "head_of_government": 1316005,
-        "civil_liberties": "emergency_law",
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3
     }
 }

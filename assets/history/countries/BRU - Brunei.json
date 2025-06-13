@@ -2,10 +2,6 @@
     "capital": 12780,
     "government": "authoritarian_gov",
     "ideology": "paternal_auto_idolg",
-    "alignment": {
-        "x": -5,
-        "y": 0
-    },
     "neutrality": 70,
     "national_unity": 100,
     "national_identity": "corporate_focus",
@@ -39,50 +35,6 @@
         "maoist_idolg": 0,
         "communist_idolg": 0
     },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt",
-        "head_of_state": 1138000,
-        "head_of_government": 1138000
-    },
-    "1948.5.14": {
-        "head_of_state": 1138000,
-        "head_of_government": 1138000
-    },
-    "1950.6.25": {
-        "head_of_state": 1138001,
-        "head_of_government": 1138001
-    },
-    "1961.12.11": {
-        "head_of_state": 1138001,
-        "head_of_government": 1138001
-    },
-    "1979.12.24": {
-        "head_of_state": 1138002,
-        "head_of_government": 1138002
-    },
-    "1982.1.1": {},
-    "1991.1.16": {
-        "oob": "BRU_1991.txt",
-        "neutrality": 65,
-        "head_of_state": 1138002,
-        "head_of_government": 1138002,
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1991.10.14": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1984.9.21": {
-        "join_organisation": "XUN",
-        "add_country_modifier": {
-            "name": "mod_united_nations_member_state",
-            "duration": -1
-        }
-    }
+    "head_of_state": 1138000,
+    "head_of_government": 1138000
 }

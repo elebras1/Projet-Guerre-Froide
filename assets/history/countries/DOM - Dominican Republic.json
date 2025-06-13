@@ -2,10 +2,6 @@
     "capital": 2542,
     "government": "authoritarian_gov",
     "ideology": "paternal_auto_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 65,
     "national_unity": 100,
     "national_identity": "state_building_focus",
@@ -39,95 +35,6 @@
         "maoist_idolg": 0,
         "communist_idolg": 0
     },
-    "oob": "DOM_1946.txt",
-    "1946.1.1": {
-        "oob": "DOM_1946.txt",
-        "head_of_state": 1175001,
-        "head_of_government": 1175001
-    },
-    "1948.5.14": {
-        "oob": "DOM_1948.txt",
-        "head_of_state": 1175001,
-        "head_of_government": 1175001
-    },
-    "1950.6.25": {
-        "oob": "DOM_1950.txt",
-        "head_of_state": 1175001,
-        "head_of_government": 1175001
-    },
-    "1958.01.22": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1961.12.11": {
-        "oob": "DOM_1961.txt",
-        "head_of_state": 1175003,
-        "head_of_government": 1175003,
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "light_artillery": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1979.12.24": {
-        "oob": "DOM_1979.txt",
-        "alignment": {
-            "x": -25,
-            "y": 0
-        },
-        "head_of_state": 1175010,
-        "head_of_government": 1175010,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3
-    },
-    "1982.1.1": {
-        "head_of_state": 1175010,
-        "head_of_government": 1175010
-    },
-    "1991.1.16": {
-        "oob": "DOM_1991.txt",
-        "head_of_state": 1175003,
-        "head_of_government": 1175003,
-        "government": "republic_gov",
-        "ideology": "social_cons_idolg",
-        "popularity": {
-            "fascistic_idolg": 0,
-            "paternal_auto_idolg": 0,
-            "social_cons_idolg": 40,
-            "market_liberal_idolg": 20,
-            "social_liberal_idolg": 30,
-            "social_democrat_idolg": 10,
-            "left_wing_radical_idolg": 0,
-            "maoist_idolg": 0,
-            "communist_idolg": 0
-        },
-        "guerrilla_war_warfare": 1,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_psychology": 1,
-        "psychological_warfare": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3,
-        "asymmetric_warfare": 1
-    }
+    "head_of_state": 1175001,
+    "head_of_government": 1175001
 }

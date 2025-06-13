@@ -34,7 +34,7 @@ public class WorldService {
 
     public WorldService() {
         this.asyncExecutor = new AsyncExecutor(2);
-        this.worldDao = new WorldDaoImpl("1946.1.1");
+        this.worldDao = new WorldDaoImpl();
         this.elementPercentages = new ObjectIntOrderedMap<>();
     }
 

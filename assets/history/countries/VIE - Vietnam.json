@@ -2,10 +2,6 @@
     "capital": 12225,
     "government": "authoritarian_gov",
     "ideology": "communist_idolg",
-    "alignment": {
-        "x": 75,
-        "y": 0
-    },
     "neutrality": 30,
     "national_unity": 100,
     "national_identity": "state_building_focus",
@@ -39,105 +35,8 @@
         "maoist_idolg": 20,
         "communist_idolg": 80
     },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt",
-        "head_of_state": 1359000,
-        "head_of_government": 1359000,
-        "comb_paramilitary_recruitment": 1,
-        "centralized_command_and_control": 1
-    },
-    "1948.5.14": {
-        "head_of_state": 1359000,
-        "head_of_government": 1359000,
-        "comb_paramilitary_recruitment": 1,
-        "centralized_command_and_control": 1
-    },
-    "1950.6.25": {
-        "head_of_state": 1359000,
-        "head_of_government": 1359000,
-        "comb_paramilitary_recruitment": 1,
-        "centralized_command_and_control": 1
-    },
-    "1957.06.28": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1961.12.11": {
-        "head_of_state": 1359000,
-        "head_of_government": 1359007,
-        "comb_paramilitary_recruitment": 1,
-        "centralized_command_and_control": 1
-    },
-    "1977.9.20": {
-        "join_organisation": "XUN",
-        "add_country_modifier": {
-            "name": "mod_united_nations_member_state",
-            "duration": -1
-        }
-    },
-    "1979.12.24": {
-        "oob": "VIE_1979.txt",
-        "head_of_state": 1359002,
-        "head_of_government": 1359007,
-        "alignment": {
-            "x": 130,
-            "y": 0
-        },
-        "comb_paramilitary_recruitment": 1,
-        "centralized_command_and_control": [
-            1,
-            1
-        ],
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3
-    },
-    "1982.1.1": {
-        "head_of_state": 1359004,
-        "head_of_government": 1359007
-    },
-    "1991.1.16": {
-        "oob": "VIE_1991.txt",
-        "head_of_state": 1359005,
-        "head_of_government": 1359012,
-        "comb_paramilitary_recruitment": 1,
-        "centralized_command_and_control": [
-            1,
-            1
-        ],
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3
-    },
-    "1955.09.20": {
-        "minister_image_change": 1359000
-    },
-    "1965.01.01": {
-        "minister_image_change": 1359007
-    },
-    "1976.07.02": {
-        "minister_image_change": 1359007
-    },
-    "1975.04.28": {
-        "minister_image_change": 1359016
-    }
+    "head_of_state": 1359000,
+    "head_of_government": 1359000,
+    "comb_paramilitary_recruitment": 1,
+    "centralized_command_and_control": 1
 }

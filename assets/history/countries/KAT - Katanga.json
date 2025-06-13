@@ -2,10 +2,6 @@
     "capital": 7159,
     "government": "authoritarian_gov",
     "ideology": "paternal_auto_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 70,
     "national_unity": 100,
     "national_identity": "territorial_focus",
@@ -38,27 +34,5 @@
         "left_wing_radical_idolg": 0,
         "maoist_idolg": 0,
         "communist_idolg": 0
-    },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt"
-    },
-    "1948.5.14": {},
-    "1950.6.25": {
-        "head_of_state": 1227001,
-        "head_of_government": 1227001
-    },
-    "1961.12.11": {
-        "oob": "KAT_1961.txt",
-        "neutrality": 65,
-        "head_of_state": 1227002,
-        "head_of_government": 1227002,
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1979.12.24": {},
-    "1982.1.1": {},
-    "1991.1.16": {}
+    }
 }

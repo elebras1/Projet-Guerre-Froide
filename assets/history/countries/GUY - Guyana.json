@@ -2,10 +2,6 @@
     "capital": 3395,
     "government": "presidential_republic_gov",
     "ideology": "left_wing_radical_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 60,
     "national_unity": 100,
     "national_identity": "state_building_focus",
@@ -38,61 +34,5 @@
         "left_wing_radical_idolg": 70,
         "maoist_idolg": 0,
         "communist_idolg": 10
-    },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt"
-    },
-    "1948.5.14": {},
-    "1950.6.25": {},
-    "1961.12.11": {},
-    "1966.9.20": {
-        "head_of_state": 1209001,
-        "head_of_government": 1209016,
-        "join_organisation": "XUN",
-        "add_country_modifier": {
-            "name": "mod_united_nations_member_state",
-            "duration": -1
-        }
-    },
-    "1968.07.22": {
-        "head_of_state": 1209001,
-        "head_of_government": 1209016,
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1979.12.24": {
-        "head_of_state": 1209015,
-        "head_of_government": 1209016,
-        "oob": "GUY_1979.txt",
-        "neutrality": 55,
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1982.1.1": {
-        "head_of_state": 1209016,
-        "head_of_government": 1209019,
-        "oob": "empty.txt"
-    },
-    "1991.1.16": {
-        "head_of_state": 1209017,
-        "head_of_government": 1209020,
-        "oob": "GUY_1991.txt",
-        "neutrality": 55,
-        "guerrilla_war_warfare": 1,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "industry_modern_science": 1,
-        "industry_psychology": 1,
-        "psychological_warfare": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3,
-        "asymmetric_warfare": 1
     }
 }

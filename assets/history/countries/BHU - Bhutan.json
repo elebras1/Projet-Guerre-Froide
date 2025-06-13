@@ -2,10 +2,6 @@
     "capital": 11209,
     "government": "absolute_monarchy_gov",
     "ideology": "paternal_auto_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 90,
     "national_unity": 100,
     "national_identity": "civic_focus",
@@ -39,128 +35,15 @@
         "maoist_idolg": 15,
         "communist_idolg": 0
     },
-    "oob": "BHU_1946.txt",
-    "1946.1.1": {
-        "oob": "BHU_1946.txt",
-        "neutrality": 90,
-        "head_of_state": 1127000,
-        "head_of_government": 1127003,
-        "specialist_tactics": 1,
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "mountain_capability": 1,
-        "linear_fire_and_movement": 1,
-        "shock_attacks": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1,
-        "infiltration_tactics": 1
-    },
-    "1948.5.14": {
-        "oob": "BHU_1948.txt",
-        "neutrality": 90,
-        "head_of_state": 1127000,
-        "head_of_government": 1127003,
-        "specialist_tactics": 1,
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "mountain_capability": 1,
-        "linear_fire_and_movement": 1,
-        "shock_attacks": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1,
-        "infiltration_tactics": 1
-    },
-    "1950.6.25": {
-        "oob": "BHU_1950.txt",
-        "neutrality": 90,
-        "head_of_state": 1127000,
-        "head_of_government": 1127003,
-        "specialist_tactics": 1,
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "mountain_capability": 1,
-        "light_artillery": 1,
-        "linear_fire_and_movement": 1,
-        "shock_attacks": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1,
-        "infiltration_tactics": 1
-    },
-    "1961.12.11": {
-        "oob": "BHU_1961.txt",
-        "neutrality": 90,
-        "head_of_state": 1127001,
-        "head_of_government": 1127004,
-        "specialist_tactics": 1,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "mountain_capability": 2,
-        "light_artillery": 1,
-        "linear_fire_and_movement": 1,
-        "shock_attacks": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3,
-        "infiltration_tactics": 1
-    },
-    "1971.9.21": {
-        "join_organisation": "XUN",
-        "add_country_modifier": {
-            "name": "mod_united_nations_member_state",
-            "duration": -1
-        }
-    },
-    "1979.12.24": {
-        "oob": "BHU_1979.txt",
-        "neutrality": 90,
-        "head_of_state": 1127002,
-        "head_of_government": 1127002,
-        "specialist_tactics": 1,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "mountain_capability": 2,
-        "light_artillery": 1,
-        "linear_fire_and_movement": 1,
-        "shock_attacks": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3,
-        "infiltration_tactics": 1
-    },
-    "1982.01.01": {},
-    "1991.01.10": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1991.01.16": {
-        "oob": "BHU_1991.txt",
-        "neutrality": 90,
-        "head_of_state": 1127002,
-        "head_of_government": 1127002
-    },
-    "1991.1.16": {
-        "specialist_tactics": 1,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "mountain_capability": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "linear_fire_and_movement": 1,
-        "shock_attacks": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3,
-        "infiltration_tactics": 1
-    }
+    "head_of_state": 1127000,
+    "head_of_government": 1127003,
+    "specialist_tactics": 1,
+    "small_arms": 1,
+    "crew_served_weapons": 1,
+    "mountain_capability": 1,
+    "linear_fire_and_movement": 1,
+    "shock_attacks": 1,
+    "centralized_command_and_control": 1,
+    "mass_firepower": 1,
+    "infiltration_tactics": 1
 }

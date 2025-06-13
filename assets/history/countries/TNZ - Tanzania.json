@@ -2,10 +2,6 @@
     "capital": 8181,
     "government": "authoritarian_gov",
     "ideology": "left_wing_radical_idolg",
-    "alignment": {
-        "x": 0,
-        "y": 0
-    },
     "neutrality": 60,
     "national_unity": 100,
     "national_identity": "state_building_focus",
@@ -38,79 +34,5 @@
         "left_wing_radical_idolg": 70,
         "maoist_idolg": 0,
         "communist_idolg": 0
-    },
-    "oob": "empty.txt",
-    "1946.1.1": {
-        "oob": "empty.txt"
-    },
-    "1948.5.14": {},
-    "1950.6.25": {},
-    "1961.12.11": {
-        "oob": "TNZ_1961.txt",
-        "neutrality": 55,
-        "head_of_state": 1340001,
-        "head_of_government": 1340001,
-        "small_arms": 1,
-        "crew_served_weapons": 1,
-        "light_artillery": 1,
-        "centralized_command_and_control": 1,
-        "mass_firepower": 1
-    },
-    "1962.12.12": {
-        "add_country_modifier": {
-            "name": "signed_the_geneva_convention",
-            "duration": -1
-        }
-    },
-    "1964.4.26": {
-        "join_organisation": "XUN",
-        "add_country_modifier": {
-            "name": "mod_united_nations_member_state",
-            "duration": -1
-        }
-    },
-    "1979.12.24": {
-        "oob": "TNZ_1979.txt",
-        "neutrality": 55,
-        "alignment": {
-            "x": -5,
-            "y": 0
-        },
-        "head_of_state": 1340001,
-        "head_of_government": 1340004,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3
-    },
-    "1982.1.1": {
-        "head_of_state": 1340001,
-        "head_of_government": 1340004
-    },
-    "1991.1.16": {
-        "oob": "TNZ_1991.txt",
-        "neutrality": 55,
-        "head_of_state": 1340002,
-        "head_of_government": 1340008,
-        "small_arms": 2,
-        "crew_served_weapons": 2,
-        "light_engine": 2,
-        "light_artillery": 2,
-        "industry_modern_science": 1,
-        "industry_heavy_mechanical_parts": 1,
-        "centralized_command_and_control": 1,
-        "industry_physics": 1,
-        "industry_chemistry": 1,
-        "explosives": 1,
-        "mass_firepower": 1,
-        "industry_heavy_mechanical_engineering": 3
     }
 }
