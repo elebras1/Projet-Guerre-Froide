@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.entity;
+package com.populaire.projetguerrefroide.politics;
 
 public class Election {
     private final boolean headOfState;

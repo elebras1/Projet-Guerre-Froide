@@ -4,7 +4,6 @@
         114,
         99
     ],
-    "graphical_culture": "Generic",
     "default_templates": {
         "USA_air_cavalry_division": [
             "air_cav_brigade",
@@ -83,7 +82,7 @@
         "militia_brigade": {}
     },
     "ministers": {
-        "1221000": {
+        "1": {
             "name": "Faisal II",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -92,7 +91,7 @@
             "death_date": "1958-07-14",
             "type": "courageous_type"
         },
-        "1221001": {
+        "2": {
             "name": "Muhammad Najib ar-Rubai'i",
             "ideology": "fascistic_idolg",
             "loyalty": 1,
@@ -101,7 +100,7 @@
             "death_date": "1963-02-08",
             "type": "extremist_type"
         },
-        "1221002": {
+        "2627": {
             "name": "Saddam Hussein",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.8,
@@ -110,7 +109,7 @@
             "death_date": "2003-04-09",
             "type": "dictator_type"
         },
-        "1221004": {
+        "4": {
             "name": "Abdul Salam Arif",
             "ideology": "social_democrat_idolg",
             "loyalty": 1,
@@ -119,7 +118,7 @@
             "death_date": "1966-04-13",
             "type": "controversial_figure"
         },
-        "1221005": {
+        "5": {
             "name": "Abd ar-Rahman al-Bazzaz",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.9,
@@ -128,7 +127,7 @@
             "death_date": "1966-08-09",
             "type": "reformer_type"
         },
-        "1221006": {
+        "6": {
             "name": "Abdul Rahman Arif",
             "ideology": "social_democrat_idolg",
             "loyalty": 1,
@@ -137,7 +136,7 @@
             "death_date": "1968-07-17",
             "type": "lethargic_type"
         },
-        "1221007": {
+        "2628": {
             "name": "Ahmed Hassan al-Bakr",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -146,7 +145,7 @@
             "death_date": "1979-07-16",
             "type": "traditionalist_type"
         },
-        "1221008": {
+        "8": {
             "name": "Hamdi al-Pachachi",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -155,7 +154,7 @@
             "death_date": "1946-02-23",
             "type": "hardliner_type"
         },
-        "1221009": {
+        "9": {
             "name": "Tawfiq al-Suwaidi",
             "ideology": "market_liberal_idolg",
             "loyalty": 1,
@@ -164,7 +163,7 @@
             "death_date": "1950-09-15",
             "type": "liberal_type"
         },
-        "1221010": {
+        "10": {
             "name": "Arshad al-Umrai",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -173,7 +172,7 @@
             "death_date": "1954-08-04",
             "type": "reputable_type"
         },
-        "1221011": {
+        "11": {
             "name": "Nuri as-Said",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.9,
@@ -182,7 +181,7 @@
             "death_date": "1958-05-18",
             "type": "controversial_figure"
         },
-        "1221012": {
+        "12": {
             "name": "Sayyid Salih Jabr",
             "ideology": "social_democrat_idolg",
             "loyalty": 1,
@@ -191,7 +190,7 @@
             "death_date": "1948-01-29",
             "type": "liberal_type"
         },
-        "1221013": {
+        "13": {
             "name": "Sayyid Muhammad as-Sadr",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -200,7 +199,7 @@
             "death_date": "1948-06-26",
             "type": "bureaucrat_type"
         },
-        "1221014": {
+        "14": {
             "name": "Muzahim al-Pachachi",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -209,7 +208,7 @@
             "death_date": "1949-01-06",
             "type": "zealous_type"
         },
-        "1221015": {
+        "15": {
             "name": "Ali Jawdat al-Ayubi",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -218,7 +217,7 @@
             "death_date": "1957-12-15",
             "type": "hardliner_type"
         },
-        "1221016": {
+        "16": {
             "name": "Mustafa Mahmud al-Umari",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -227,7 +226,7 @@
             "death_date": "1952-11-23",
             "type": "traditionalist_type"
         },
-        "1221017": {
+        "17": {
             "name": "Nureddin Mahmud",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -236,7 +235,7 @@
             "death_date": "1953-01-29",
             "type": "hardliner_type"
         },
-        "1221018": {
+        "18": {
             "name": "Jamil al-Midfai",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -245,7 +244,7 @@
             "death_date": "1953-09-17",
             "type": "reputable_type"
         },
-        "1221019": {
+        "19": {
             "name": "Muhammad Fadhel al-Jamali",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -254,7 +253,7 @@
             "death_date": "1954-04-29",
             "type": "religious_type"
         },
-        "1221020": {
+        "20": {
             "name": "Abdul-Wahab Mirjan",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -263,7 +262,7 @@
             "death_date": "1958-03-03",
             "type": "honest_type"
         },
-        "1221021": {
+        "21": {
             "name": "Ahmad Mukhtar Baban",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -272,7 +271,7 @@
             "death_date": "1958-07-14",
             "type": "administrator_type"
         },
-        "1221022": {
+        "2629": {
             "name": "Abd al-Karim Qasim",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1,
@@ -281,7 +280,7 @@
             "death_date": "1963-02-08",
             "type": "autocrat_type"
         },
-        "1221023": {
+        "23": {
             "name": "Tahir Yahya",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.9,
@@ -290,7 +289,7 @@
             "death_date": "1968-06-17",
             "type": "zealous_type"
         },
-        "1221024": {
+        "24": {
             "name": "Arif Abd ar-Razzaq",
             "ideology": "social_democrat_idolg",
             "loyalty": 1,
@@ -299,7 +298,7 @@
             "death_date": "1965-09-21",
             "type": "loyal_type"
         },
-        "1221025": {
+        "25": {
             "name": "Naji Talib",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -308,7 +307,7 @@
             "death_date": "1967-05-10",
             "type": "loyal_type"
         },
-        "1221026": {
+        "26": {
             "name": "Abd ar-Razzaq an-Naif",
             "ideology": "social_cons_idolg",
             "loyalty": 1,
@@ -317,7 +316,7 @@
             "death_date": "1968-07-30",
             "type": "honest_type"
         },
-        "1221027": {
+        "2630": {
             "name": "Sa'dun Hammadi",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1,
@@ -326,7 +325,7 @@
             "death_date": "1991-09-13",
             "type": "reformer_type"
         },
-        "1221028": {
+        "2631": {
             "name": "Mohammad Hamza al-Zubaidi",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1,
@@ -335,7 +334,7 @@
             "death_date": "1993-09-05",
             "type": "controversial_figure"
         },
-        "1221029": {
+        "62": {
             "name": "Abd al-llah",
             "ideology": "social_cons_idolg",
             "loyalty": 0.99,
@@ -344,7 +343,7 @@
             "death_date": "1958-07-14",
             "type": "courteous_figure"
         },
-        "1221030": {
+        "65": {
             "name": "Zeid bin Ra'ad",
             "ideology": "social_cons_idolg",
             "loyalty": 0.96,
@@ -353,7 +352,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1221031": {
+        "66": {
             "name": "Mired bin Ra'ad",
             "ideology": "social_cons_idolg",
             "loyalty": 0.95,
@@ -362,7 +361,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1221032": {
+        "67": {
             "name": "Firas bin Ra'ad",
             "ideology": "social_cons_idolg",
             "loyalty": 0.94,
@@ -371,7 +370,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1221100": {
+        "63": {
             "name": "Zeid I bin Hussein",
             "ideology": "social_cons_idolg",
             "loyalty": 0.98,
@@ -380,7 +379,7 @@
             "death_date": "1970-10-18",
             "type": "autocrat_type"
         },
-        "1221101": {
+        "64": {
             "name": "Ra'ad I bin Zeid",
             "ideology": "social_cons_idolg",
             "loyalty": 0.97,
@@ -389,7 +388,7 @@
             "death_date": "1999-12-31",
             "type": "visionary_type"
         },
-        "1221102": {
+        "2632": {
             "name": "Husain al-Radi",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -398,7 +397,7 @@
             "death_date": "1963-02-24",
             "type": "zealous_type"
         },
-        "1221103": {
+        "2633": {
             "name": "Fuad al-Rikabi",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -407,7 +406,7 @@
             "death_date": "1971-01-01",
             "type": "visionary_type"
         },
-        "1221104": {
+        "2634": {
             "name": "Talib El-Shibib",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -416,7 +415,7 @@
             "death_date": "1997-01-01",
             "type": "democrat_type"
         },
-        "1221105": {
+        "2635": {
             "name": "Yusuf Salman Yusuf",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -425,7 +424,7 @@
             "death_date": "1949-02-14",
             "type": "courageous_type"
         },
-        "1221106": {
+        "2636": {
             "name": "Baha' al-Din Nuri",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -434,7 +433,7 @@
             "death_date": "1953-04-01",
             "type": "zealous_type"
         },
-        "1221107": {
+        "2637": {
             "name": "Abd al-Karim Ahmad al-Daud",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -443,7 +442,7 @@
             "death_date": "1954-06-01",
             "type": "zealous_type"
         },
-        "1221108": {
+        "2638": {
             "name": "Hamid Uthman",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -452,7 +451,7 @@
             "death_date": "1955-06-01",
             "type": "zealous_type"
         },
-        "1221109": {
+        "2639": {
             "name": "Aziz Muhammad",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -461,7 +460,7 @@
             "death_date": "1993-01-01",
             "type": "loyal_type"
         },
-        "1221110": {
+        "2640": {
             "name": "Izzat Ibrahim al-Douri",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -470,7 +469,7 @@
             "death_date": "2300-01-01",
             "type": "loyal_type"
         },
-        "1221111": {
+        "2641": {
             "name": "Michel Aflaq",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -479,7 +478,7 @@
             "death_date": "1989-06-23",
             "type": "liberal_type"
         },
-        "1221112": {
+        "2642": {
             "name": "Amir Abdullah",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -488,7 +487,7 @@
             "death_date": "1985-08-22",
             "type": "hardliner_type"
         },
-        "1221113": {
+        "2643": {
             "name": "Aziz Muhammed",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -497,7 +496,7 @@
             "death_date": "1992-01-01",
             "type": "loyal_type"
         },
-        "1221114": {
+        "2644": {
             "name": "Aziz al-Hajj",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -506,7 +505,7 @@
             "death_date": "1991-11-08",
             "type": "extremist_type"
         },
-        "1221115": {
+        "2645": {
             "name": "Abd al-Ilah",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,

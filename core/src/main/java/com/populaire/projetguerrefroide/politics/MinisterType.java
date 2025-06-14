@@ -1,4 +1,6 @@
-package com.populaire.projetguerrefroide.entity;
+package com.populaire.projetguerrefroide.politics;
+
+import com.populaire.projetguerrefroide.entity.Modifier;
 
 import java.util.List;
 import java.util.Objects;

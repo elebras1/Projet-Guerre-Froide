@@ -15,6 +15,7 @@ import com.populaire.projetguerrefroide.economy.population.PopulationType;
 import com.populaire.projetguerrefroide.entity.*;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.national.*;
+import com.populaire.projetguerrefroide.politics.*;
 import com.populaire.projetguerrefroide.service.GameContext;
 
 import java.io.BufferedReader;

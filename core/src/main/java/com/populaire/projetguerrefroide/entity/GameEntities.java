@@ -4,6 +4,9 @@ import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.economy.good.Good;
 import com.populaire.projetguerrefroide.economy.population.PopulationType;
 import com.populaire.projetguerrefroide.national.NationalIdeas;
+import com.populaire.projetguerrefroide.politics.Government;
+import com.populaire.projetguerrefroide.politics.Ideology;
+import com.populaire.projetguerrefroide.politics.MinisterType;
 
 import java.util.Map;
 

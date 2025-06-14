@@ -4,7 +4,6 @@
         152,
         185
     ],
-    "graphical_culture": "Generic",
     "default_templates": {
         "FRA_light_aviation_division": [
             "air_cav_brigade",
@@ -72,7 +71,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "1316001": {
+        "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -81,7 +80,7 @@
             "death_date": "1952-02-06",
             "type": "parental_type"
         },
-        "1316002": {
+        "212": {
             "name": "Elizabeth II",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -90,7 +89,7 @@
             "death_date": "2300-05-12",
             "type": "traditionalist_type"
         },
-        "1316300": {
+        "344": {
             "name": "George VII",
             "ideology": "social_cons_idolg",
             "loyalty": 0.99,
@@ -99,7 +98,7 @@
             "death_date": "2300-01-01",
             "type": "parental_type"
         },
-        "1316301": {
+        "345": {
             "name": "Andrew I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.98,
@@ -108,7 +107,7 @@
             "death_date": "2300-01-01",
             "type": "fortunate_type"
         },
-        "1316302": {
+        "346": {
             "name": "Edward IX",
             "ideology": "social_cons_idolg",
             "loyalty": 0.97,
@@ -117,7 +116,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1316304": {
+        "347": {
             "name": "Anne II",
             "ideology": "social_cons_idolg",
             "loyalty": 0.96,
@@ -126,7 +125,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1316305": {
+        "348": {
             "name": "Margaret I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.95,
@@ -135,7 +134,7 @@
             "death_date": "2002-02-09",
             "type": "controversial_figure"
         },
-        "1316306": {
+        "349": {
             "name": "David III",
             "ideology": "social_cons_idolg",
             "loyalty": 0.94,
@@ -144,7 +143,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1316307": {
+        "350": {
             "name": "Sarah I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.93,
@@ -153,7 +152,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1316308": {
+        "351": {
             "name": "Henry IX",
             "ideology": "social_cons_idolg",
             "loyalty": 0.92,
@@ -162,7 +161,7 @@
             "death_date": "1974-06-10",
             "type": "courteous_figure"
         },
-        "1316309": {
+        "352": {
             "name": "William V",
             "ideology": "social_cons_idolg",
             "loyalty": 0.91,
@@ -171,7 +170,7 @@
             "death_date": "1972-08-28",
             "type": "courteous_figure"
         },
-        "1316310": {
+        "353": {
             "name": "Richard IV",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -180,7 +179,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1316311": {
+        "354": {
             "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -189,7 +188,7 @@
             "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "1316312": {
+        "355": {
             "name": "Albert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -198,7 +197,7 @@
             "death_date": "1996-07-08",
             "type": "fortunate_type"
         },
-        "1316003": {
+        "4666": {
             "name": "Milton Margai",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -207,7 +206,7 @@
             "death_date": "1964-01-01",
             "type": "democrat_type"
         },
-        "1316004": {
+        "4667": {
             "name": "Albert Margai",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -216,7 +215,7 @@
             "death_date": "1967-01-01",
             "type": "autocrat_type"
         },
-        "1316005": {
+        "4668": {
             "name": "Siaka Stevens",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -225,7 +224,7 @@
             "death_date": "1985-11-28",
             "type": "dictator_type"
         },
-        "1316006": {
+        "4669": {
             "name": "Joseph Saidu Momoh",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -234,7 +233,7 @@
             "death_date": "1992-04-29",
             "type": "lethargic_type"
         },
-        "1316100": {
+        "4670": {
             "name": "Sorie Ibrahim Koroma",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -243,7 +242,7 @@
             "death_date": "1985-11-28",
             "type": "autocrat_type"
         },
-        "1316101": {
+        "4671": {
             "name": "Francis Minah",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -252,7 +251,7 @@
             "death_date": "1989-05-03",
             "type": "loyal_type"
         },
-        "1316102": {
+        "4672": {
             "name": "John Amadu Bangura",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
@@ -261,7 +260,7 @@
             "death_date": "1970-03-29",
             "type": "democrat_type"
         },
-        "1316103": {
+        "4673": {
             "name": "I.T.A. Wallace-Johnston",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -270,7 +269,7 @@
             "death_date": "1965-05-10",
             "type": "administrator_type"
         },
-        "1316104": {
+        "4674": {
             "name": "Herbert Christian Bankole-Bright",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,
@@ -279,7 +278,7 @@
             "death_date": "1958-12-14",
             "type": "ambitious_type"
         },
-        "1316105": {
+        "4675": {
             "name": "Lamina Sankoh",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
@@ -288,7 +287,7 @@
             "death_date": "1964-01-01",
             "type": "reformer_type"
         },
-        "1316106": {
+        "4676": {
             "name": "Charles Margai",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,

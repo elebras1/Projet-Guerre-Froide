@@ -4,7 +4,6 @@
         5,
         135
     ],
-    "graphical_culture": "Generic",
     "default_templates": {
         "FRA_light_aviation_division": [
             "air_cav_brigade",
@@ -72,7 +71,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "1150001": {
+        "1041": {
             "name": "François Tombalbaye",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -81,7 +80,7 @@
             "death_date": "1975-04-13",
             "type": "parental_type"
         },
-        "1150002": {
+        "1042": {
             "name": "Noël Milarew Odingar",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -90,7 +89,7 @@
             "death_date": "1975-04-15",
             "type": "autocrat_type"
         },
-        "1150003": {
+        "1043": {
             "name": "Félix Malloum N'Gakoutou",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -99,7 +98,7 @@
             "death_date": "1979-03-23",
             "type": "bureaucrat_type"
         },
-        "1150004": {
+        "1044": {
             "name": "Goukouni Oueddei",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -108,7 +107,7 @@
             "death_date": "1982-06-07",
             "type": "ambitious_type"
         },
-        "1150005": {
+        "1045": {
             "name": "Lol Mahamat Choua",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.91,
@@ -117,7 +116,7 @@
             "death_date": "1979-09-03",
             "type": "parental_type"
         },
-        "1150006": {
+        "1046": {
             "name": "Hissène Habré",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.85,
@@ -126,7 +125,7 @@
             "death_date": "1990-12-02",
             "type": "autocrat_type"
         },
-        "1150007": {
+        "1047": {
             "name": "Idriss Déby",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.85,
@@ -135,7 +134,7 @@
             "death_date": "2013-01-01",
             "type": "dictator_type"
         },
-        "1150008": {
+        "1048": {
             "name": "Gabriel Lisette",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -144,7 +143,7 @@
             "death_date": "1959-02-11",
             "type": "ambitious_type"
         },
-        "1150009": {
+        "1049": {
             "name": "Gontchomé Sahoulba",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -153,7 +152,7 @@
             "death_date": "1959-03-12",
             "type": "extremist_type"
         },
-        "1150010": {
+        "1050": {
             "name": "Ahmed Koulamallah",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -162,7 +161,7 @@
             "death_date": "1959-03-26",
             "type": "religious_type"
         },
-        "1150011": {
+        "1051": {
             "name": "Djidingar Dono Ngardoum",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -171,7 +170,7 @@
             "death_date": "1982-06-19",
             "type": "administrator_type"
         },
-        "1150012": {
+        "1052": {
             "name": "Jean Alingué Bawoyeu",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -180,7 +179,7 @@
             "death_date": "1992-05-20",
             "type": "democrat_type"
         },
-        "1150013": {
+        "1053": {
             "name": "Jacques Rogué",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -189,7 +188,7 @@
             "death_date": "1948-11-24",
             "type": "bureaucrat_type"
         },
-        "1150014": {
+        "1054": {
             "name": "Paul Le Layec",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -198,7 +197,7 @@
             "death_date": "1949-07-07",
             "type": "reputable_type"
         },
-        "1150015": {
+        "1055": {
             "name": "Henry de Mauduit",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -207,7 +206,7 @@
             "death_date": "1951-01-27",
             "type": "traditionalist_type"
         },
-        "1150016": {
+        "1056": {
             "name": "Charles Hanin",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -216,7 +215,7 @@
             "death_date": "1951-10-19",
             "type": "parental_type"
         },
-        "1150017": {
+        "1057": {
             "name": "François Casamatta",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -225,7 +224,7 @@
             "death_date": "1951-12-19",
             "type": "administrator_type"
         },
-        "1150018": {
+        "1058": {
             "name": "Ignace Colombani",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -234,7 +233,7 @@
             "death_date": "1956-11-03",
             "type": "bureaucrat_type"
         },
-        "1150019": {
+        "1059": {
             "name": "René Troadec",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -243,7 +242,7 @@
             "death_date": "1959-01-22",
             "type": "traditionalist_type"
         },
-        "1150020": {
+        "1060": {
             "name": "Daniel Doustin",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -252,7 +251,7 @@
             "death_date": "1960-08-11",
             "type": "administrator_type"
         },
-        "1150021": {
+        "1061": {
             "name": "Aboubakar Abdel Rahmane",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 1.0,

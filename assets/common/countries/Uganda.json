@@ -4,7 +4,6 @@
         209,
         16
     ],
-    "graphical_culture": "Generic",
     "default_templates": {
         "ENG_air_cavalry_division": [
             "air_cav_brigade",
@@ -73,7 +72,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "1351001": {
+        "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -82,7 +81,7 @@
             "death_date": "1952-02-06",
             "type": "parental_type"
         },
-        "1351002": {
+        "212": {
             "name": "Elizabeth II",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -91,7 +90,7 @@
             "death_date": "2300-05-12",
             "type": "traditionalist_type"
         },
-        "1351300": {
+        "344": {
             "name": "George VII",
             "ideology": "social_cons_idolg",
             "loyalty": 0.99,
@@ -100,7 +99,7 @@
             "death_date": "2300-01-01",
             "type": "parental_type"
         },
-        "1351301": {
+        "345": {
             "name": "Andrew I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.98,
@@ -109,7 +108,7 @@
             "death_date": "2300-01-01",
             "type": "fortunate_type"
         },
-        "1351302": {
+        "346": {
             "name": "Edward IX",
             "ideology": "social_cons_idolg",
             "loyalty": 0.97,
@@ -118,7 +117,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1351304": {
+        "347": {
             "name": "Anne II",
             "ideology": "social_cons_idolg",
             "loyalty": 0.96,
@@ -127,7 +126,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1351305": {
+        "348": {
             "name": "Margaret I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.95,
@@ -136,7 +135,7 @@
             "death_date": "2002-02-09",
             "type": "controversial_figure"
         },
-        "1351306": {
+        "349": {
             "name": "David III",
             "ideology": "social_cons_idolg",
             "loyalty": 0.94,
@@ -145,7 +144,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1351307": {
+        "350": {
             "name": "Sarah I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.93,
@@ -154,7 +153,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1351308": {
+        "351": {
             "name": "Henry IX",
             "ideology": "social_cons_idolg",
             "loyalty": 0.92,
@@ -163,7 +162,7 @@
             "death_date": "1974-06-10",
             "type": "courteous_figure"
         },
-        "1351309": {
+        "352": {
             "name": "William V",
             "ideology": "social_cons_idolg",
             "loyalty": 0.91,
@@ -172,7 +171,7 @@
             "death_date": "1972-08-28",
             "type": "courteous_figure"
         },
-        "1351310": {
+        "353": {
             "name": "Richard IV",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -181,7 +180,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1351311": {
+        "354": {
             "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -190,7 +189,7 @@
             "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "1351312": {
+        "355": {
             "name": "Albert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -199,7 +198,7 @@
             "death_date": "1996-07-08",
             "type": "fortunate_type"
         },
-        "1351003": {
+        "5466": {
             "name": "Frederick Edward Mutesa II",
             "ideology": "social_cons_idolg",
             "loyalty": 0.95,
@@ -208,7 +207,7 @@
             "death_date": "1969-11-21",
             "type": "courteous_figure"
         },
-        "1351004": {
+        "5467": {
             "name": "Muwenda Mutebi II",
             "ideology": "social_cons_idolg",
             "loyalty": 0.95,
@@ -217,7 +216,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1351005": {
+        "5468": {
             "name": "Sir John Hathorn Hall",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -226,7 +225,7 @@
             "death_date": "1952-01-01",
             "type": "administrator_type"
         },
-        "1351006": {
+        "5469": {
             "name": "Sir Andrew Cohen",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -235,7 +234,7 @@
             "death_date": "1957-01-01",
             "type": "liberal_type"
         },
-        "1351007": {
+        "5470": {
             "name": "Sir Frederick Crawford",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -244,7 +243,7 @@
             "death_date": "1961-01-01",
             "type": "controversial_figure"
         },
-        "1351008": {
+        "5471": {
             "name": "Sir Walter Fleming Coutts",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -253,7 +252,7 @@
             "death_date": "1963-01-01",
             "type": "administrator_type"
         },
-        "1351009": {
+        "1591": {
             "name": "Milton Obote",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.9,
@@ -262,7 +261,7 @@
             "death_date": "1985-07-27",
             "type": "autocrat_type"
         },
-        "1351010": {
+        "5472": {
             "name": "Idi Amin Dada",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -271,7 +270,7 @@
             "death_date": "2003-08-16",
             "type": "autocrat_type"
         },
-        "1351011": {
+        "1593": {
             "name": "Yusuf Kironde Lule",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.7,
@@ -280,7 +279,7 @@
             "death_date": "1985-01-21",
             "type": "ambitious_type"
         },
-        "1351012": {
+        "1594": {
             "name": "Godfrey Lukongwa Binaisa",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.75,
@@ -289,7 +288,7 @@
             "death_date": "1992-01-01",
             "type": "parental_type"
         },
-        "1351013": {
+        "1595": {
             "name": "Paulo Muwanga",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.8,
@@ -298,7 +297,7 @@
             "death_date": "1991-04-01",
             "type": "zealous_type"
         },
-        "1351014": {
+        "1596": {
             "name": "Saulo Musoke",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -307,7 +306,7 @@
             "death_date": "1980-12-15",
             "type": "bureaucrat_type"
         },
-        "1351015": {
+        "1597": {
             "name": "Polycarp Nyamuchoncho",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -316,7 +315,7 @@
             "death_date": "1980-12-15",
             "type": "courageous_type"
         },
-        "1351016": {
+        "1598": {
             "name": "Joel Hunter Wacha-Olwol",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -325,7 +324,7 @@
             "death_date": "1980-12-15",
             "type": "traditionalist_type"
         },
-        "1351017": {
+        "1599": {
             "name": "Bazilio Olara-Okello",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -334,7 +333,7 @@
             "death_date": "1990-01-09",
             "type": "ambitious_type"
         },
-        "1351018": {
+        "1600": {
             "name": "Tito Okello",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -343,7 +342,7 @@
             "death_date": "1996-06-03",
             "type": "courageous_type"
         },
-        "1351019": {
+        "5473": {
             "name": "Yoweri Kaguta Museveni",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -352,7 +351,7 @@
             "death_date": "2300-01-01",
             "type": "reformer_type"
         },
-        "1351020": {
+        "5474": {
             "name": "Benedicto Kiwanuka",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -361,7 +360,7 @@
             "death_date": "1962-04-30",
             "type": "democrat_type"
         },
-        "1351021": {
+        "5475": {
             "name": "Otema Allimadi",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 1.0,
@@ -370,7 +369,7 @@
             "death_date": "1985-07-27",
             "type": "administrator_type"
         },
-        "1351022": {
+        "5476": {
             "name": "Abraham Waligo",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -379,7 +378,7 @@
             "death_date": "1986-01-26",
             "type": "traditionalist_type"
         },
-        "1351023": {
+        "5477": {
             "name": "Samson Kisekka",
             "ideology": "fascistic_idolg",
             "loyalty": 1.0,
@@ -388,7 +387,7 @@
             "death_date": "1991-01-22",
             "type": "visionary_type"
         },
-        "1351024": {
+        "5478": {
             "name": "George Cosmas Adyebo",
             "ideology": "fascistic_idolg",
             "loyalty": 1.0,
@@ -397,7 +396,7 @@
             "death_date": "1994-11-18",
             "type": "bureaucrat_type"
         },
-        "1351025": {
+        "5479": {
             "name": "Miria Obote",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.8,
@@ -406,7 +405,7 @@
             "death_date": "2300-01-01",
             "type": "ambitious_type"
         },
-        "1351100": {
+        "5480": {
             "name": "Mayanja Nkangi",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,
@@ -415,7 +414,7 @@
             "death_date": "2000-01-01",
             "type": "democrat_type"
         },
-        "1351101": {
+        "5481": {
             "name": "Dani Nabudere",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -424,7 +423,7 @@
             "death_date": "2011-11-09",
             "type": "ambitious_type"
         },
-        "1351102": {
+        "5482": {
             "name": "John Kale",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -433,7 +432,7 @@
             "death_date": "1960-08-17",
             "type": "ambitious_type"
         },
-        "1351103": {
+        "5483": {
             "name": "Chango Machyo",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -442,7 +441,7 @@
             "death_date": "2013-10-20",
             "type": "ambitious_type"
         },
-        "1351104": {
+        "5484": {
             "name": "Alice Auma",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
@@ -451,7 +450,7 @@
             "death_date": "2007-01-17",
             "type": "religious_type"
         },
-        "1351105": {
+        "5485": {
             "name": "Thomas Maraiba",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -460,7 +459,7 @@
             "death_date": "1981-03-23",
             "type": "controversial_figure"
         },
-        "1351106": {
+        "5486": {
             "name": "Olara Otunnu",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.5,
@@ -469,7 +468,7 @@
             "death_date": "2300-01-01",
             "type": "ambitious_type"
         },
-        "1351107": {
+        "5487": {
             "name": "Amon Bazira",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -478,7 +477,7 @@
             "death_date": "1993-08-01",
             "type": "moral_type"
         },
-        "1351108": {
+        "5488": {
             "name": "Joseph Kony",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
@@ -487,7 +486,7 @@
             "death_date": "2300-01-01",
             "type": "dictator_type"
         },
-        "1351109": {
+        "5489": {
             "name": "Vincent Otti",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
@@ -496,7 +495,7 @@
             "death_date": "2007-10-02",
             "type": "extremist_type"
         },
-        "1351110": {
+        "5490": {
             "name": "Tito Gafabusa Winyi IV",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -505,7 +504,7 @@
             "death_date": "1971-01-01",
             "type": "traditionalist_type"
         },
-        "1351111": {
+        "5491": {
             "name": "Rukirabasaija Agutamba Solomon Gafabusa Iguru I",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.49,
@@ -514,7 +513,7 @@
             "death_date": "2300-01-01",
             "type": "administrator_type"
         },
-        "1351112": {
+        "5492": {
             "name": "Ezekiel Tenywa Wako",
             "ideology": "social_cons_idolg",
             "loyalty": 0.48,
@@ -523,7 +522,7 @@
             "death_date": "1975-01-01",
             "type": "courteous_figure"
         },
-        "1351113": {
+        "5493": {
             "name": "William Wilberforce Kadhumbula Nadiope III ",
             "ideology": "social_cons_idolg",
             "loyalty": 0.47,
@@ -532,7 +531,7 @@
             "death_date": "1973-01-01",
             "type": "bureaucrat_type"
         },
-        "1351114": {
+        "5494": {
             "name": "Henry Wako Muloki",
             "ideology": "social_cons_idolg",
             "loyalty": 0.46,
@@ -541,7 +540,7 @@
             "death_date": "2008-09-01",
             "type": "reputable_type"
         },
-        "1351115": {
+        "5495": {
             "name": "George David Matthew Kamurasi Rukidi III",
             "ideology": "social_cons_idolg",
             "loyalty": 0.45,
@@ -550,7 +549,7 @@
             "death_date": "1965-12-21",
             "type": "administrator_type"
         },
-        "1351116": {
+        "5496": {
             "name": "Patrick David Matthew Kaboyo Olimi III",
             "ideology": "social_cons_idolg",
             "loyalty": 0.44,

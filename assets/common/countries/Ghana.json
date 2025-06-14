@@ -4,7 +4,6 @@
         48,
         51
     ],
-    "graphical_culture": "Generic",
     "default_templates": {
         "ENG_air_cavalry_division": [
             "air_cav_brigade",
@@ -73,7 +72,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "1200001": {
+        "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -82,7 +81,7 @@
             "death_date": "1952-02-06",
             "type": "parental_type"
         },
-        "1200002": {
+        "212": {
             "name": "Elizabeth II",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -91,7 +90,7 @@
             "death_date": "2300-05-12",
             "type": "traditionalist_type"
         },
-        "1200300": {
+        "344": {
             "name": "George VII",
             "ideology": "social_cons_idolg",
             "loyalty": 0.99,
@@ -100,7 +99,7 @@
             "death_date": "2300-01-01",
             "type": "parental_type"
         },
-        "1200301": {
+        "345": {
             "name": "Andrew I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.98,
@@ -109,7 +108,7 @@
             "death_date": "2300-01-01",
             "type": "fortunate_type"
         },
-        "1200302": {
+        "346": {
             "name": "Edward IX",
             "ideology": "social_cons_idolg",
             "loyalty": 0.97,
@@ -118,7 +117,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1200304": {
+        "347": {
             "name": "Anne II",
             "ideology": "social_cons_idolg",
             "loyalty": 0.96,
@@ -127,7 +126,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1200305": {
+        "348": {
             "name": "Margaret I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.95,
@@ -136,7 +135,7 @@
             "death_date": "2002-02-09",
             "type": "controversial_figure"
         },
-        "1200306": {
+        "349": {
             "name": "David III",
             "ideology": "social_cons_idolg",
             "loyalty": 0.94,
@@ -145,7 +144,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1200307": {
+        "350": {
             "name": "Sarah I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.93,
@@ -154,7 +153,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1200308": {
+        "351": {
             "name": "Henry IX",
             "ideology": "social_cons_idolg",
             "loyalty": 0.92,
@@ -163,7 +162,7 @@
             "death_date": "1974-06-10",
             "type": "courteous_figure"
         },
-        "1200309": {
+        "352": {
             "name": "William V",
             "ideology": "social_cons_idolg",
             "loyalty": 0.91,
@@ -172,7 +171,7 @@
             "death_date": "1972-08-28",
             "type": "courteous_figure"
         },
-        "1200310": {
+        "353": {
             "name": "Richard IV",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -181,7 +180,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1200311": {
+        "354": {
             "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -190,7 +189,7 @@
             "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "1200312": {
+        "355": {
             "name": "Albert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -199,7 +198,7 @@
             "death_date": "1996-07-08",
             "type": "fortunate_type"
         },
-        "1200003": {
+        "2068": {
             "name": "Sir Charles Noble Arden-Clarke",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -208,7 +207,7 @@
             "death_date": "1957-06-24",
             "type": "administrator_type"
         },
-        "1200004": {
+        "2069": {
             "name": "William Francis Hare",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -217,7 +216,7 @@
             "death_date": "1960-07-01",
             "type": "administrator_type"
         },
-        "1200005": {
+        "2070": {
             "name": "Dr.h.c. Kwame Nkrumah",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.9,
@@ -226,7 +225,7 @@
             "death_date": "1972-04-27",
             "type": "parental_type"
         },
-        "1200006": {
+        "2071": {
             "name": "Joseph Arthur Ankrah",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -235,7 +234,7 @@
             "death_date": "1969-04-02",
             "type": "courageous_type"
         },
-        "1200007": {
+        "2072": {
             "name": "Akwasi Amankwa Afrifa",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -244,7 +243,7 @@
             "death_date": "1970-08-07",
             "type": "autocrat_type"
         },
-        "1200008": {
+        "2073": {
             "name": "Nii Amaa Ollennu",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -253,7 +252,7 @@
             "death_date": "1970-08-31",
             "type": "administrator_type"
         },
-        "1200009": {
+        "2074": {
             "name": "Edward Akufo-Addo",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -262,7 +261,7 @@
             "death_date": "1972-01-13",
             "type": "lethargic_type"
         },
-        "1200010": {
+        "2075": {
             "name": "Ignatius Kutu Acheampong",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -271,7 +270,7 @@
             "death_date": "1978-07-05",
             "type": "hardliner_type"
         },
-        "1200011": {
+        "2076": {
             "name": "Frederick F.W.K. Akuffo",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -280,7 +279,7 @@
             "death_date": "1979-06-26",
             "type": "ambitious_type"
         },
-        "1200012": {
+        "2077": {
             "name": "Jerry John Rawlings",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -289,7 +288,7 @@
             "death_date": "2001-01-07",
             "type": "democrat_type"
         },
-        "1200013": {
+        "2078": {
             "name": "Dr. Hilla Limann",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.9,
@@ -298,7 +297,7 @@
             "death_date": "1992-01-01",
             "type": "visionary_type"
         },
-        "1200014": {
+        "2079": {
             "name": "Kofi Abrefa Busia",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -307,7 +306,7 @@
             "death_date": "1972-01-13",
             "type": "ambitious_type"
         },
-        "1200015": {
+        "2080": {
             "name": "Emmanuel Kwasi Kotoka",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -316,7 +315,7 @@
             "death_date": "1967-04-17",
             "type": "ambitious_type"
         },
-        "1200016": {
+        "2081": {
             "name": "J. B. Danquah",
             "ideology": "social_cons_idolg",
             "loyalty": 0.85,
@@ -325,7 +324,7 @@
             "death_date": "1965-02-04",
             "type": "traditionalist_type"
         },
-        "1200017": {
+        "2082": {
             "name": "Imoru Egala",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -334,7 +333,7 @@
             "death_date": "1981-04-02",
             "type": "visionary_type"
         },
-        "1200018": {
+        "2083": {
             "name": "Imoru Ayarna",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 1.0,
@@ -343,7 +342,7 @@
             "death_date": "1979-01-01",
             "type": "bureaucrat_type"
         },
-        "1200019": {
+        "2084": {
             "name": "William Ofori Atta",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.85,
@@ -352,7 +351,7 @@
             "death_date": "1988-07-14",
             "type": "religious_type"
         },
-        "1200020": {
+        "2085": {
             "name": "Emmanuel Obetsebi-Lamptey",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.85,
@@ -361,7 +360,7 @@
             "death_date": "1963-01-01",
             "type": "administrator_type"
         },
-        "1200021": {
+        "2086": {
             "name": "Ebenezer Ako-Adjei",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.8,

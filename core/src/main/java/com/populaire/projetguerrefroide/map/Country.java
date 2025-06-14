@@ -1,10 +1,10 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.*;
-import com.populaire.projetguerrefroide.entity.AllianceType;
-import com.populaire.projetguerrefroide.entity.Government;
-import com.populaire.projetguerrefroide.entity.Ideology;
-import com.populaire.projetguerrefroide.entity.Minister;
+import com.populaire.projetguerrefroide.politics.AllianceType;
+import com.populaire.projetguerrefroide.politics.Government;
+import com.populaire.projetguerrefroide.politics.Ideology;
+import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.national.Attitude;
 import com.populaire.projetguerrefroide.national.Identity;
 import com.populaire.projetguerrefroide.service.LabelStylePool;

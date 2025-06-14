@@ -4,7 +4,6 @@
         123,
         103
     ],
-    "graphical_culture": "Asian",
     "default_templates": {
         "CHC_airborne_division": [
             "air_cav_brigade",
@@ -936,7 +935,7 @@
         ]
     },
     "ministers": {
-        "1151001": {
+        "1112": {
             "name": "Mao Zedong",
             "ideology": "maoist_idolg",
             "loyalty": 0.9,
@@ -945,7 +944,7 @@
             "death_date": "1976-09-09",
             "type": "dictator_type"
         },
-        "1151003": {
+        "1113": {
             "name": "Liu Shaoqi",
             "ideology": "maoist_idolg",
             "loyalty": 1.0,
@@ -954,7 +953,7 @@
             "death_date": "1968-10-31",
             "type": "reformer_type"
         },
-        "1151105": {
+        "1114": {
             "name": "Song Qingling",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -963,7 +962,7 @@
             "death_date": "1981-05-29",
             "type": "courteous_figure"
         },
-        "1151004": {
+        "1115": {
             "name": "Hua Guofeng",
             "ideology": "maoist_idolg",
             "loyalty": 0.8,
@@ -972,7 +971,7 @@
             "death_date": "1981-06-29",
             "type": "autocrat_type"
         },
-        "1151006": {
+        "1116": {
             "name": "Zhao Ziyang",
             "ideology": "maoist_idolg",
             "loyalty": 0.8,
@@ -981,7 +980,7 @@
             "death_date": "1989-06-23",
             "type": "liberal_type"
         },
-        "1151007": {
+        "1117": {
             "name": "Hu Yaobang",
             "ideology": "maoist_idolg",
             "loyalty": 0.9,
@@ -990,7 +989,7 @@
             "death_date": "1989-04-15",
             "type": "reformer_type"
         },
-        "1151009": {
+        "1118": {
             "name": "Li Peng",
             "ideology": "maoist_idolg",
             "loyalty": 1.0,
@@ -999,7 +998,7 @@
             "death_date": "1998-03-17",
             "type": "bureaucrat_type"
         },
-        "1151010": {
+        "1119": {
             "name": "Jiang Zemin",
             "ideology": "maoist_idolg",
             "loyalty": 1.0,
@@ -1008,7 +1007,7 @@
             "death_date": "1999-12-31",
             "type": "autocrat_type"
         },
-        "1151100": {
+        "1120": {
             "name": "Mao Yuanxin",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1017,7 +1016,7 @@
             "death_date": "2300-01-01",
             "type": "extremist_type"
         },
-        "1151102": {
+        "1121": {
             "name": "Lin Biao",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1026,7 +1025,7 @@
             "death_date": "1971-04-27",
             "type": "hardliner_type"
         },
-        "1151103": {
+        "1122": {
             "name": "Zhou Enlai",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1035,7 +1034,7 @@
             "death_date": "1976-01-08",
             "type": "courteous_figure"
         },
-        "1151104": {
+        "1123": {
             "name": "Zhang Guotao",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -1044,7 +1043,7 @@
             "death_date": "1979-12-03",
             "type": "ambitious_type"
         },
-        "1151106": {
+        "1124": {
             "name": "Dong Biwu",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1053,7 +1052,7 @@
             "death_date": "1975-04-02",
             "type": "administrator_type"
         },
-        "1151107": {
+        "1125": {
             "name": "Zhu De",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1062,7 +1061,7 @@
             "death_date": "1976-07-06",
             "type": "hardliner_type"
         },
-        "1151108": {
+        "1126": {
             "name": "Chen Yun",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1071,7 +1070,7 @@
             "death_date": "1995-04-10",
             "type": "honest_type"
         },
-        "1151109": {
+        "1127": {
             "name": "Deng Xiaopeng",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -1080,7 +1079,7 @@
             "death_date": "1997-02-19",
             "type": "reformer_type"
         },
-        "1151110": {
+        "1128": {
             "name": "Jiang Qing",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1089,7 +1088,7 @@
             "death_date": "1976-09-09",
             "type": "extremist_type"
         },
-        "1151111": {
+        "1129": {
             "name": "Zhang Chunqiao",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1098,7 +1097,7 @@
             "death_date": "2005-04-21",
             "type": "hardliner_type"
         },
-        "1151112": {
+        "1130": {
             "name": "Yao Wenyuan",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1107,7 +1106,7 @@
             "death_date": "2005-09-23",
             "type": "hardliner_type"
         },
-        "1151113": {
+        "1131": {
             "name": "Wang Hongwen",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1116,7 +1115,7 @@
             "death_date": "1992-08-03",
             "type": "hardliner_type"
         },
-        "1151114": {
+        "1132": {
             "name": "Guo Moruo",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1125,7 +1124,7 @@
             "death_date": "1978-07-12",
             "type": "reputable_type"
         },
-        "1151115": {
+        "1133": {
             "name": "Peng Dehuai",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1134,7 +1133,7 @@
             "death_date": "1974-11-29",
             "type": "courageous_type"
         },
-        "1151116": {
+        "1134": {
             "name": "He Long",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1143,7 +1142,7 @@
             "death_date": "1969-06-08",
             "type": "loyal_type"
         },
-        "1151117": {
+        "1135": {
             "name": "Chen Yi",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1152,7 +1151,7 @@
             "death_date": "1972-01-06",
             "type": "courteous_figure"
         },
-        "1151118": {
+        "1136": {
             "name": "Ulanhu",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1161,7 +1160,7 @@
             "death_date": "1988-12-08",
             "type": "controversial_figure"
         },
-        "1151119": {
+        "1137": {
             "name": "Li Fuchun",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1170,7 +1169,7 @@
             "death_date": "1975-01-09",
             "type": "administrator_type"
         },
-        "1151120": {
+        "1138": {
             "name": "Li Xiannian",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1179,7 +1178,7 @@
             "death_date": "1992-06-21",
             "type": "fortunate_type"
         },
-        "1151121": {
+        "1139": {
             "name": "Nie Rongzhen",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1188,7 +1187,7 @@
             "death_date": "1992-05-14",
             "type": "hardliner_type"
         },
-        "1151122": {
+        "1140": {
             "name": "Bo Yibo",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -1197,7 +1196,7 @@
             "death_date": "2007-01-15",
             "type": "courageous_type"
         },
-        "1151123": {
+        "1141": {
             "name": "Lu Dingyi",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1206,7 +1205,7 @@
             "death_date": "1996-05-09",
             "type": "traditionalist_type"
         },
-        "1151124": {
+        "1142": {
             "name": "Luo Ruiqing",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1215,7 +1214,7 @@
             "death_date": "1978-08-03",
             "type": "dictator_type"
         },
-        "1151125": {
+        "1143": {
             "name": "Xi Zhongxun",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1224,7 +1223,7 @@
             "death_date": "1988-04-01",
             "type": "liberal_type"
         },
-        "1151126": {
+        "1144": {
             "name": "Xie Fuzhi",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1233,7 +1232,7 @@
             "death_date": "1976-06-06",
             "type": "extremist_type"
         },
-        "1151127": {
+        "1145": {
             "name": "Tao Zhu",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1242,7 +1241,7 @@
             "death_date": "1969-11-30",
             "type": "honest_type"
         },
-        "1151128": {
+        "1146": {
             "name": "Yang Shangkun",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1251,7 +1250,7 @@
             "death_date": "1993-03-27",
             "type": "reformer_type"
         },
-        "1151129": {
+        "1147": {
             "name": "Ye Jianying",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1260,7 +1259,7 @@
             "death_date": "1985-01-01",
             "type": "reformer_type"
         },
-        "1151130": {
+        "1148": {
             "name": "Luo Ronghuan",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1269,7 +1268,7 @@
             "death_date": "1963-12-16",
             "type": "parental_type"
         },
-        "1151131": {
+        "1149": {
             "name": "Xu Xiangqian",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1278,7 +1277,7 @@
             "death_date": "1990-09-21",
             "type": "reputable_type"
         },
-        "1151132": {
+        "1150": {
             "name": "Wang Zhen",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1287,7 +1286,7 @@
             "death_date": "1993-03-12",
             "type": "hardliner_type"
         },
-        "1151133": {
+        "1151": {
             "name": "Gao Gang",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1296,7 +1295,7 @@
             "death_date": "1954-08-01",
             "type": "ambitious_type"
         },
-        "1151134": {
+        "1152": {
             "name": "Ngapoi Ngawang Jigme",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,

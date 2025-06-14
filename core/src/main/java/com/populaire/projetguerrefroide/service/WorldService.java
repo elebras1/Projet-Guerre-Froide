@@ -16,7 +16,7 @@ import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
 import com.populaire.projetguerrefroide.economy.building.SpecialBuilding;
 import com.populaire.projetguerrefroide.entity.DevelopementBuildingLevel;
 import com.populaire.projetguerrefroide.entity.GameEntities;
-import com.populaire.projetguerrefroide.entity.Minister;
+import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
 import com.populaire.projetguerrefroide.util.Named;

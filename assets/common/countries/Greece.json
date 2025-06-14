@@ -4,7 +4,6 @@
         181,
         227
     ],
-    "graphical_culture": "Generic",
     "default_templates": {
         "ENG_air_cavalry_division": [
             "air_cav_brigade",
@@ -570,7 +569,7 @@
         ]
     },
     "ministers": {
-        "1201000": {
+        "2104": {
             "name": "Georgios II",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -579,7 +578,7 @@
             "death_date": "1947-04-01",
             "type": "autocrat_type"
         },
-        "1201001": {
+        "2105": {
             "name": "Pavlos",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -588,7 +587,7 @@
             "death_date": "1964-03-06",
             "type": "autocrat_type"
         },
-        "1201002": {
+        "2106": {
             "name": "Konstantinos II",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -597,7 +596,7 @@
             "death_date": "2300-01-01",
             "type": "autocrat_type"
         },
-        "1201084": {
+        "2107": {
             "name": "Pavlos II",
             "ideology": "social_cons_idolg",
             "loyalty": 0.99,
@@ -606,7 +605,7 @@
             "death_date": "2300-01-01",
             "type": "autocrat_type"
         },
-        "1201085": {
+        "2108": {
             "name": "Nikolaos I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.98,
@@ -615,7 +614,7 @@
             "death_date": "2300-01-01",
             "type": "autocrat_type"
         },
-        "1201086": {
+        "2109": {
             "name": "Alexia I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.97,
@@ -624,7 +623,7 @@
             "death_date": "2300-01-01",
             "type": "autocrat_type"
         },
-        "1201087": {
+        "2110": {
             "name": "Sophia I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.96,
@@ -633,7 +632,7 @@
             "death_date": "1962-05-14",
             "type": "autocrat_type"
         },
-        "1201088": {
+        "2111": {
             "name": "Eirene I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.95,
@@ -642,7 +641,7 @@
             "death_date": "2300-01-01",
             "type": "autocrat_type"
         },
-        "1201089": {
+        "2112": {
             "name": "Helene I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.94,
@@ -651,7 +650,7 @@
             "death_date": "1982-11-28",
             "type": "autocrat_type"
         },
-        "1201090": {
+        "2113": {
             "name": "Michael I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.93,
@@ -660,7 +659,7 @@
             "death_date": "2300-01-01",
             "type": "courageous_type"
         },
-        "1201003": {
+        "2114": {
             "name": "Georgios Zoitakis",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -669,7 +668,7 @@
             "death_date": "1972-03-21",
             "type": "autocrat_type"
         },
-        "1201004": {
+        "2115": {
             "name": "Georgios Papadopoulos",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.8,
@@ -678,7 +677,7 @@
             "death_date": "1973-11-25",
             "type": "hardliner_type"
         },
-        "1201005": {
+        "2116": {
             "name": "Phaedon Gizikis",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -687,7 +686,7 @@
             "death_date": "1974-12-18",
             "type": "hardliner_type"
         },
-        "1201007": {
+        "2117": {
             "name": "Michail Stasinopoulos",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -696,7 +695,7 @@
             "death_date": "1975-06-19",
             "type": "bureaucrat_type"
         },
-        "1201008": {
+        "2118": {
             "name": "Konstantinos Tsatsos",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -705,7 +704,7 @@
             "death_date": "1980-05-15",
             "type": "bureaucrat_type"
         },
-        "1201009": {
+        "2119": {
             "name": "Konstantinos G. Karamanlis",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -714,7 +713,7 @@
             "death_date": "1995-03-10",
             "type": "administrator_type"
         },
-        "1201010": {
+        "2120": {
             "name": "Ioannis Alevras",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -723,7 +722,7 @@
             "death_date": "1985-03-30",
             "type": "bureaucrat_type"
         },
-        "1201011": {
+        "2121": {
             "name": "Christos Sartzetakis",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -732,7 +731,7 @@
             "death_date": "1990-05-04",
             "type": "democrat_type"
         },
-        "1201013": {
+        "2122": {
             "name": "Themistoklis Sofoulis",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.8,
@@ -741,7 +740,7 @@
             "death_date": "1949-06-24",
             "type": "bureaucrat_type"
         },
-        "1201014": {
+        "2123": {
             "name": "Panagiotis Poulitsas",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -750,7 +749,7 @@
             "death_date": "1946-04-18",
             "type": "bureaucrat_type"
         },
-        "1201015": {
+        "2124": {
             "name": "Sofoklis Venizelos",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.8,
@@ -759,7 +758,7 @@
             "death_date": "1956-02-19",
             "type": "bureaucrat_type"
         },
-        "1201016": {
+        "2125": {
             "name": "Georgios Papandreou",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.8,
@@ -768,7 +767,7 @@
             "death_date": "1965-07-15",
             "type": "bureaucrat_type"
         },
-        "1201017": {
+        "2126": {
             "name": "Dimitrios Partsalidis",
             "ideology": "communist_idolg",
             "loyalty": 0.8,
@@ -777,7 +776,7 @@
             "death_date": "1954-03-05",
             "type": "bureaucrat_type"
         },
-        "1201018": {
+        "2127": {
             "name": "Konstantinos Tsaldaris",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -786,7 +785,7 @@
             "death_date": "1952-11-16",
             "type": "bureaucrat_type"
         },
-        "1201019": {
+        "2128": {
             "name": "Dimitrios E. Maximos",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -795,7 +794,7 @@
             "death_date": "1947-08-29",
             "type": "bureaucrat_type"
         },
-        "1201022": {
+        "2129": {
             "name": "Markos Vafiadis",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -804,7 +803,7 @@
             "death_date": "1949-02-07",
             "type": "bureaucrat_type"
         },
-        "1201023": {
+        "2130": {
             "name": "Nikos Zachariadis",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -813,7 +812,7 @@
             "death_date": "1949-04-03",
             "type": "bureaucrat_type"
         },
-        "1201025": {
+        "2131": {
             "name": "Alexandros Diomidis",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -822,7 +821,7 @@
             "death_date": "1950-01-06",
             "type": "bureaucrat_type"
         },
-        "1201026": {
+        "2132": {
             "name": "Ioannis Theotokis",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -831,7 +830,7 @@
             "death_date": "1950-03-23",
             "type": "bureaucrat_type"
         },
-        "1201030": {
+        "2133": {
             "name": "Nikolaos Plastiras",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.81,
@@ -840,7 +839,7 @@
             "death_date": "1952-11-19",
             "type": "reformer_type"
         },
-        "1201033": {
+        "2134": {
             "name": "Alexander Papagos",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -849,7 +848,7 @@
             "death_date": "1955-10-04",
             "type": "bureaucrat_type"
         },
-        "1201036": {
+        "2135": {
             "name": "Konstantinos Georgakopoulos",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -858,7 +857,7 @@
             "death_date": "1958-05-17",
             "type": "bureaucrat_type"
         },
-        "1201038": {
+        "2136": {
             "name": "Konstantinos Dovas",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -867,7 +866,7 @@
             "death_date": "1961-11-04",
             "type": "bureaucrat_type"
         },
-        "1201040": {
+        "2137": {
             "name": "Ioannis Passalidis",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -876,7 +875,7 @@
             "death_date": "1967-04-21",
             "type": "bureaucrat_type"
         },
-        "1201041": {
+        "2138": {
             "name": "Panagiotis Pipinelis",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -885,7 +884,7 @@
             "death_date": "1963-09-28",
             "type": "bureaucrat_type"
         },
-        "1201042": {
+        "2139": {
             "name": "Stylianos Mavromichalis",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -894,7 +893,7 @@
             "death_date": "1963-11-08",
             "type": "bureaucrat_type"
         },
-        "1201045": {
+        "2140": {
             "name": "Ioannis Paraskevopoulos",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.8,
@@ -903,7 +902,7 @@
             "death_date": "1967-04-03",
             "type": "bureaucrat_type"
         },
-        "1201047": {
+        "2141": {
             "name": "Georgios Athanasiadis-Novas",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -912,7 +911,7 @@
             "death_date": "1965-08-20",
             "type": "bureaucrat_type"
         },
-        "1201048": {
+        "2142": {
             "name": "Ilias Tsirimokos",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -921,7 +920,7 @@
             "death_date": "1965-09-17",
             "type": "bureaucrat_type"
         },
-        "1201049": {
+        "2143": {
             "name": "Stefanos Stefanopoulos",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -930,7 +929,7 @@
             "death_date": "1966-12-22",
             "type": "bureaucrat_type"
         },
-        "1201051": {
+        "2144": {
             "name": "Panagiotis Kanellopoulos",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.8,
@@ -939,7 +938,7 @@
             "death_date": "1967-04-21",
             "type": "bureaucrat_type"
         },
-        "1201053": {
+        "2145": {
             "name": "Konstantinos Kollias",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -948,7 +947,7 @@
             "death_date": "1967-12-13",
             "type": "hardliner_type"
         },
-        "1201055": {
+        "2146": {
             "name": "Spyros Markezinis",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -957,7 +956,7 @@
             "death_date": "1973-11-25",
             "type": "democrat_type"
         },
-        "1201056": {
+        "2147": {
             "name": "Adamantios Androutsopoulos",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -966,7 +965,7 @@
             "death_date": "1974-07-24",
             "type": "hardliner_type"
         },
-        "1201058": {
+        "2148": {
             "name": "Georgios Mavros",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -975,7 +974,7 @@
             "death_date": "1981-10-18",
             "type": "liberal_type"
         },
-        "1201059": {
+        "2149": {
             "name": "Andreas G. Papandreou",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -984,7 +983,7 @@
             "death_date": "1986-01-01",
             "type": "reformer_type"
         },
-        "1201061": {
+        "2150": {
             "name": "Georgios Rallis",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -993,7 +992,7 @@
             "death_date": "1985-06-03",
             "type": "bureaucrat_type"
         },
-        "1201062": {
+        "2151": {
             "name": "Charilaos Florakis",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -1002,7 +1001,7 @@
             "death_date": "1989-06-18",
             "type": "bureaucrat_type"
         },
-        "1201065": {
+        "2152": {
             "name": "Charilaos Florakis",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 1.0,
@@ -1011,7 +1010,7 @@
             "death_date": "1993-10-10",
             "type": "bureaucrat_type"
         },
-        "1201064": {
+        "2153": {
             "name": "Konstantinos Mitsotakis",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -1020,7 +1019,7 @@
             "death_date": "1996-09-22",
             "type": "reformer_type"
         },
-        "1201066": {
+        "2154": {
             "name": "Tzannis Tzannetakis",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -1029,7 +1028,7 @@
             "death_date": "1989-10-12",
             "type": "bureaucrat_type"
         },
-        "1201067": {
+        "2155": {
             "name": "Ioannis Grivas",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -1038,7 +1037,7 @@
             "death_date": "1989-11-23",
             "type": "bureaucrat_type"
         },
-        "1201068": {
+        "2156": {
             "name": "Xenophon Zolotas",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -1047,7 +1046,7 @@
             "death_date": "1990-04-11",
             "type": "bureaucrat_type"
         },
-        "1201070": {
+        "2157": {
             "name": "Dimitrios Ioannidis",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
@@ -1056,7 +1055,7 @@
             "death_date": "2010-08-16",
             "type": "dictator_type"
         },
-        "1201071": {
+        "2158": {
             "name": "Dimitrios Michailidis",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
@@ -1065,7 +1064,7 @@
             "death_date": "1991-11-04",
             "type": "visionary_type"
         },
-        "1201072": {
+        "2159": {
             "name": "Theramenes Antiphon",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
@@ -1074,7 +1073,7 @@
             "death_date": "1993-05-19",
             "type": "extremist_type"
         },
-        "1201074": {
+        "2160": {
             "name": "Manolis Glezos",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -1083,7 +1082,7 @@
             "death_date": "2300-01-01",
             "type": "courageous_type"
         },
-        "1201075": {
+        "2161": {
             "name": "Yiannis Ritsos",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -1092,7 +1091,7 @@
             "death_date": "1990-11-11",
             "type": "visionary_type"
         },
-        "1201076": {
+        "2162": {
             "name": "Alekos Panagoulis",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
@@ -1101,7 +1100,7 @@
             "death_date": "1976-05-01",
             "type": "courageous_type"
         },
-        "1201079": {
+        "2163": {
             "name": "Konstantinos Plevris",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
@@ -1110,7 +1109,7 @@
             "death_date": "1991-12-31",
             "type": "extremist_type"
         },
-        "1201080": {
+        "2164": {
             "name": "Christina Giannopoulos",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -1119,7 +1118,7 @@
             "death_date": "1958-01-01",
             "type": "ambitious_type"
         },
-        "1201081": {
+        "2165": {
             "name": "Christos Bistis",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1128,7 +1127,7 @@
             "death_date": "1992-01-01",
             "type": "ambitious_type"
         },
-        "1201082": {
+        "2166": {
             "name": "Isaac Jordanidis",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1137,7 +1136,7 @@
             "death_date": "1992-01-01",
             "type": "administrator_type"
         },
-        "1201083": {
+        "2167": {
             "name": "Gregoris Lambrakis",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.5,

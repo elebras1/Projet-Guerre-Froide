@@ -4,7 +4,6 @@
         124,
         62
     ],
-    "graphical_culture": "Generic",
     "default_templates": {
         "ENG_air_cavalry_division": [
             "air_cav_brigade",
@@ -88,7 +87,7 @@
         ]
     },
     "ministers": {
-        "1282000": {
+        "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -97,7 +96,7 @@
             "death_date": "1952-02-06",
             "type": "parental_type"
         },
-        "1282001": {
+        "212": {
             "name": "Elizabeth II",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -106,7 +105,7 @@
             "death_date": "2300-05-12",
             "type": "traditionalist_type"
         },
-        "1282300": {
+        "344": {
             "name": "George VII",
             "ideology": "social_cons_idolg",
             "loyalty": 0.99,
@@ -115,7 +114,7 @@
             "death_date": "2300-01-01",
             "type": "parental_type"
         },
-        "1282301": {
+        "345": {
             "name": "Andrew I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.98,
@@ -124,7 +123,7 @@
             "death_date": "2300-01-01",
             "type": "fortunate_type"
         },
-        "1282302": {
+        "346": {
             "name": "Edward IX",
             "ideology": "social_cons_idolg",
             "loyalty": 0.97,
@@ -133,7 +132,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1282304": {
+        "347": {
             "name": "Anne II",
             "ideology": "social_cons_idolg",
             "loyalty": 0.96,
@@ -142,7 +141,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1282305": {
+        "348": {
             "name": "Margaret I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.95,
@@ -151,7 +150,7 @@
             "death_date": "2002-02-09",
             "type": "controversial_figure"
         },
-        "1282306": {
+        "349": {
             "name": "David III",
             "ideology": "social_cons_idolg",
             "loyalty": 0.94,
@@ -160,7 +159,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1282307": {
+        "350": {
             "name": "Sarah I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.93,
@@ -169,7 +168,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1282308": {
+        "351": {
             "name": "Henry IX",
             "ideology": "social_cons_idolg",
             "loyalty": 0.92,
@@ -178,7 +177,7 @@
             "death_date": "1974-06-10",
             "type": "courteous_figure"
         },
-        "1282309": {
+        "352": {
             "name": "William V",
             "ideology": "social_cons_idolg",
             "loyalty": 0.91,
@@ -187,7 +186,7 @@
             "death_date": "1972-08-28",
             "type": "courteous_figure"
         },
-        "1282310": {
+        "353": {
             "name": "Richard IV",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -196,7 +195,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1282311": {
+        "354": {
             "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -205,7 +204,7 @@
             "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "1282312": {
+        "355": {
             "name": "Albert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -214,7 +213,7 @@
             "death_date": "1996-07-08",
             "type": "fortunate_type"
         },
-        "1282002": {
+        "429": {
             "name": "Louis Mountbatten",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -223,7 +222,7 @@
             "death_date": "1947-08-14",
             "type": "administrator_type"
         },
-        "1282003": {
+        "430": {
             "name": "Liaquat Khan",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -232,7 +231,7 @@
             "death_date": "1951-10-16",
             "type": "democrat_type"
         },
-        "1282004": {
+        "431": {
             "name": "Khawaja Nazimuddin",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -241,7 +240,7 @@
             "death_date": "1953-04-17",
             "type": "religious_type"
         },
-        "1282005": {
+        "432": {
             "name": "Muhammad Bogra",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -250,7 +249,7 @@
             "death_date": "1955-08-12",
             "type": "reformer_type"
         },
-        "1282006": {
+        "433": {
             "name": "Chaudhry Ali",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -259,7 +258,7 @@
             "death_date": "1956-09-12",
             "type": "bureaucrat_type"
         },
-        "1282007": {
+        "434": {
             "name": "Iskander Mirza",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -268,7 +267,7 @@
             "death_date": "1958-10-27",
             "type": "hardliner_type"
         },
-        "1282008": {
+        "435": {
             "name": "Ayub Khan",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -277,7 +276,7 @@
             "death_date": "1969-03-25",
             "type": "dictator_type"
         },
-        "1282009": {
+        "436": {
             "name": "Huseyn Suhrawardy",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -286,7 +285,7 @@
             "death_date": "1957-10-17",
             "type": "liberal_type"
         },
-        "1282010": {
+        "437": {
             "name": "Ibrahim Chundrigar",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -295,7 +294,7 @@
             "death_date": "1957-12-16",
             "type": "bureaucrat_type"
         },
-        "1282011": {
+        "4043": {
             "name": "Feroz Noon",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -304,7 +303,7 @@
             "death_date": "1958-10-07",
             "type": "courteous_figure"
         },
-        "1282013": {
+        "439": {
             "name": "Fatima Jinnah",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -313,7 +312,7 @@
             "death_date": "1967-07-09",
             "type": "democrat_type"
         },
-        "1282014": {
+        "4044": {
             "name": "Yahya Khan",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -322,7 +321,7 @@
             "death_date": "1971-12-20",
             "type": "dictator_type"
         },
-        "1282015": {
+        "4045": {
             "name": "Zulfikar Bhutto",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.8,
@@ -331,7 +330,7 @@
             "death_date": "1977-07-05",
             "type": "controversial_figure"
         },
-        "1282018": {
+        "4046": {
             "name": "Fazal Chaudhry",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 1.0,
@@ -340,7 +339,7 @@
             "death_date": "1978-09-16",
             "type": "bureaucrat_type"
         },
-        "1282019": {
+        "4047": {
             "name": "Muhammad Zia-ul-Haq",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.8,
@@ -349,7 +348,7 @@
             "death_date": "1988-08-17",
             "type": "dictator_type"
         },
-        "1282022": {
+        "4048": {
             "name": "Muhammad Junejo",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -358,7 +357,7 @@
             "death_date": "1988-05-29",
             "type": "bureaucrat_type"
         },
-        "1282023": {
+        "4049": {
             "name": "Ghulam Khan",
             "ideology": "social_cons_idolg",
             "loyalty": 0.8,
@@ -367,7 +366,7 @@
             "death_date": "1993-07-18",
             "type": "bureaucrat_type"
         },
-        "1282026": {
+        "4050": {
             "name": "Ghulam Jatoi",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -376,7 +375,7 @@
             "death_date": "1990-11-06",
             "type": "bureaucrat_type"
         },
-        "1282027": {
+        "4051": {
             "name": "Benazir Bhutto",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -385,7 +384,7 @@
             "death_date": "1993-04-18",
             "type": "iron_lady"
         },
-        "1282028": {
+        "4052": {
             "name": "Nawaz Sharif",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -394,7 +393,7 @@
             "death_date": "1993-04-18",
             "type": "fortunate_type"
         },
-        "1282029": {
+        "4053": {
             "name": "Asghar Khan",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,
@@ -403,7 +402,7 @@
             "death_date": "2300-01-01",
             "type": "controversial_figure"
         },
-        "1282030": {
+        "4054": {
             "name": "Sajjad Zaheer",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -412,7 +411,7 @@
             "death_date": "1973-09-13",
             "type": "visionary_type"
         },
-        "1282031": {
+        "4055": {
             "name": "Chaudhari Rehmatullah Aslam",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -421,7 +420,7 @@
             "death_date": "1973-09-13",
             "type": "ambitious_type"
         },
-        "1282032": {
+        "4056": {
             "name": "Faiz Ahmad Faiz",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -430,7 +429,7 @@
             "death_date": "1984-11-20",
             "type": "visionary_type"
         },
-        "1282033": {
+        "4057": {
             "name": "Habib Jalib",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -439,7 +438,7 @@
             "death_date": "1992-01-01",
             "type": "democrat_type"
         },
-        "1282034": {
+        "4058": {
             "name": "Jameel Ahmad Malik",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -448,7 +447,7 @@
             "death_date": "1992-01-01",
             "type": "administrator_type"
         },
-        "1282035": {
+        "4059": {
             "name": "Hassan Nasir",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -457,7 +456,7 @@
             "death_date": "1960-11-13",
             "type": "courageous_type"
         },
-        "1282036": {
+        "4060": {
             "name": "Nazeer Abbasi",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -466,7 +465,7 @@
             "death_date": "1980-08-09",
             "type": "courageous_type"
         },
-        "1282037": {
+        "4061": {
             "name": "Jam Saqi",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -475,7 +474,7 @@
             "death_date": "2300-01-01",
             "type": "ambitious_type"
         },
-        "1282038": {
+        "4062": {
             "name": "Muhammad Kamran Jahangiri",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
@@ -484,7 +483,7 @@
             "death_date": "1992-03-05",
             "type": "dictator_type"
         },
-        "1282039": {
+        "4063": {
             "name": "Azeem Iqbal",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
@@ -493,7 +492,7 @@
             "death_date": "1971-05-09",
             "type": "reputable_type"
         },
-        "1282040": {
+        "4064": {
             "name": "Mairaj Muhammad Khan",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -502,7 +501,7 @@
             "death_date": "1992-01-01",
             "type": "democrat_type"
         },
-        "1282041": {
+        "4065": {
             "name": "Afzal Bangash",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -511,7 +510,7 @@
             "death_date": "1992-01-01",
             "type": "administrator_type"
         },
-        "1282042": {
+        "4066": {
             "name": "Sher Ali Bacha",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -520,7 +519,7 @@
             "death_date": "1992-01-01",
             "type": "extremist_type"
         },
-        "1282043": {
+        "4067": {
             "name": "Major Ishaque Mohammad",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -529,7 +528,7 @@
             "death_date": "1986-01-01",
             "type": "traditionalist_type"
         },
-        "1282044": {
+        "4068": {
             "name": "Major General Akbar Khan",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,

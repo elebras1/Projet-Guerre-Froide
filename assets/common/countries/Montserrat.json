@@ -4,7 +4,6 @@
         145,
         140
     ],
-    "graphical_culture": "Generic",
     "default_templates": {
         "FRA_light_aviation_division": [
             "air_cav_brigade",
@@ -72,7 +71,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "1259001": {
+        "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -81,7 +80,7 @@
             "death_date": "1952-02-06",
             "type": "parental_type"
         },
-        "1259002": {
+        "212": {
             "name": "Elizabeth II",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -90,7 +89,7 @@
             "death_date": "2300-05-12",
             "type": "traditionalist_type"
         },
-        "1259300": {
+        "344": {
             "name": "George VII",
             "ideology": "social_cons_idolg",
             "loyalty": 0.99,
@@ -99,7 +98,7 @@
             "death_date": "2300-01-01",
             "type": "parental_type"
         },
-        "1259301": {
+        "345": {
             "name": "Andrew I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.98,
@@ -108,7 +107,7 @@
             "death_date": "2300-01-01",
             "type": "fortunate_type"
         },
-        "1259302": {
+        "346": {
             "name": "Edward IX",
             "ideology": "social_cons_idolg",
             "loyalty": 0.97,
@@ -117,7 +116,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1259304": {
+        "347": {
             "name": "Anne II",
             "ideology": "social_cons_idolg",
             "loyalty": 0.96,
@@ -126,7 +125,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1259305": {
+        "348": {
             "name": "Margaret I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.95,
@@ -135,7 +134,7 @@
             "death_date": "2002-02-09",
             "type": "controversial_figure"
         },
-        "1259306": {
+        "349": {
             "name": "David III",
             "ideology": "social_cons_idolg",
             "loyalty": 0.94,
@@ -144,7 +143,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1259307": {
+        "350": {
             "name": "Sarah I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.93,
@@ -153,7 +152,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1259308": {
+        "351": {
             "name": "Henry IX",
             "ideology": "social_cons_idolg",
             "loyalty": 0.92,
@@ -162,7 +161,7 @@
             "death_date": "1974-06-10",
             "type": "courteous_figure"
         },
-        "1259309": {
+        "352": {
             "name": "William V",
             "ideology": "social_cons_idolg",
             "loyalty": 0.91,
@@ -171,7 +170,7 @@
             "death_date": "1972-08-28",
             "type": "courteous_figure"
         },
-        "1259310": {
+        "353": {
             "name": "Richard IV",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -180,7 +179,7 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "1259311": {
+        "354": {
             "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -189,7 +188,7 @@
             "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "1259312": {
+        "355": {
             "name": "Albert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -198,7 +197,7 @@
             "death_date": "1996-07-08",
             "type": "fortunate_type"
         },
-        "1259003": {
+        "3519": {
             "name": "Willoughby Harry Thompson",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -207,7 +206,7 @@
             "death_date": "1974-01-01",
             "type": "administrator_type"
         },
-        "1259004": {
+        "3520": {
             "name": "Norman Derek Matthews",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -216,7 +215,7 @@
             "death_date": "1976-01-01",
             "type": "traditionalist_type"
         },
-        "1259005": {
+        "3521": {
             "name": "Gwilyum Wyn Jones",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -225,7 +224,7 @@
             "death_date": "1980-01-01",
             "type": "bureaucrat_type"
         },
-        "1259006": {
+        "3522": {
             "name": "David Kenneth Hay Dale",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -234,7 +233,7 @@
             "death_date": "1984-01-01",
             "type": "democrat_type"
         },
-        "1259007": {
+        "3523": {
             "name": "Arthur Christopher Watson",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -243,7 +242,7 @@
             "death_date": "1987-01-01",
             "type": "bureaucrat_type"
         },
-        "1259008": {
+        "3524": {
             "name": "Christopher J. Turner",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -252,7 +251,7 @@
             "death_date": "1990-01-01",
             "type": "administrator_type"
         },
-        "1259009": {
+        "3525": {
             "name": "David G. P. Taylor",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -261,7 +260,7 @@
             "death_date": "1993-01-01",
             "type": "ambitious_type"
         },
-        "1259010": {
+        "3526": {
             "name": "William Henry Bramble",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -270,7 +269,7 @@
             "death_date": "1970-12-01",
             "type": "democrat_type"
         },
-        "1259011": {
+        "3527": {
             "name": "Percival Austin Bramble",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -279,7 +278,7 @@
             "death_date": "1978-11-01",
             "type": "reformer_type"
         },
-        "1259012": {
+        "3528": {
             "name": "John Osborne",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -288,7 +287,7 @@
             "death_date": "1991-10-10",
             "type": "administrator_type"
         },
-        "1259013": {
+        "3529": {
             "name": "Reuben Meade",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
