@@ -2,11 +2,12 @@ package com.populaire.projetguerrefroide.screen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.utils.Disposable;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
 
-public class ScreenManager {
+public class ScreenManager implements Disposable {
     private final Game game;
     private final GameContext gameContext;
     private final ConfigurationService configurationService;
@@ -41,6 +42,7 @@ public class ScreenManager {
         }
     }
 
+    @Override
     public void dispose() {
         this.game.dispose();
         this.gameContext.dispose();

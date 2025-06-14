@@ -17,12 +17,13 @@ import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.Disposable;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 
 import java.util.Map;
 
-public class Popup extends Table {
+public class Popup extends Table implements Disposable {
     private final PopupListener listener;
     private FlagImage flagLeftImage;
     private FlagImage flagRightImage;
@@ -183,6 +184,7 @@ public class Popup extends Table {
         });
     }
 
+    @Override
     public void dispose() {
         this.flagLeftImage.dispose();
         this.flagRightImage.dispose();

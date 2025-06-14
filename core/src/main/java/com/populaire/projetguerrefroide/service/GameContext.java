@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.entity.Bookmark;
@@ -8,7 +9,7 @@ import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 
 import java.util.Map;
 
-public class GameContext {
+public class GameContext implements Disposable {
     private final Bookmark bookmark;
     private final AssetManager assetManager;
     private final CursorManager cursorManager;
@@ -57,6 +58,7 @@ public class GameContext {
         this.localisation.putAll(localisation);
     }
 
+    @Override
     public void dispose() {
         this.assetManager.dispose();
         this.cursorManager.dispose();

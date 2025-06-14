@@ -4,8 +4,9 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.utils.Disposable;
 
-public class ColorRectangle extends Actor {
+public class ColorRectangle extends Actor implements Disposable {
     private final Texture texture;
 
     public ColorRectangle(int color) {
@@ -21,6 +22,7 @@ public class ColorRectangle extends Actor {
         batch.draw(this.texture, this.getX(), this.getY(), this.getWidth(), this.getHeight());
     }
 
+    @Override
     public void dispose() {
         this.texture.dispose();
     }

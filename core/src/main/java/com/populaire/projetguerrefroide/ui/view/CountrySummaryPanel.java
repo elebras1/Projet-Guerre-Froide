@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.ui.view;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
@@ -12,7 +13,7 @@ import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import java.util.List;
 import java.util.Map;
 
-public class CountrySummaryPanel extends Table {
+public class CountrySummaryPanel extends Table implements Disposable {
     private final Label countryName;
     private final Label government;
     private final Label countryPopulation;
@@ -89,6 +90,7 @@ public class CountrySummaryPanel extends Table {
         this.setVisible(false);
     }
 
+    @Override
     public void dispose() {
         this.flagImage.dispose();
     }

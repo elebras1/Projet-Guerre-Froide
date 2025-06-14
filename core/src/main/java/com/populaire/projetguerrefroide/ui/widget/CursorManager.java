@@ -3,8 +3,9 @@ package com.populaire.projetguerrefroide.ui.widget;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Cursor;
 import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.utils.Disposable;
 
-public class CursorManager {
+public class CursorManager implements Disposable {
     private AnimatedCursor animatedCursor;
     private Cursor cursor;
     private int width;
@@ -49,6 +50,7 @@ public class CursorManager {
         return this.height;
     }
 
+    @Override
     public void dispose() {
         if(this.animatedCursor != null) {
             this.animatedCursor.dispose();
