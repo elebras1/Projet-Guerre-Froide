@@ -11,10 +11,14 @@ import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
+import com.populaire.projetguerrefroide.economy.Economy;
 import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
+import com.populaire.projetguerrefroide.entity.Terrain;
 import com.populaire.projetguerrefroide.national.Culture;
+import com.populaire.projetguerrefroide.national.NationalIdeas;
 import com.populaire.projetguerrefroide.national.Religion;
+import com.populaire.projetguerrefroide.politics.Politics;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
 import com.populaire.projetguerrefroide.adapter.graphics.MeshMultiDrawIndirect;
@@ -30,6 +34,10 @@ public class World implements Disposable {
     private final List<Country> countries;
     private final IntObjectMap<LandProvince> provinces;
     private final IntObjectMap<WaterProvince> waterProvinces;
+    private final Economy economy;
+    private final Politics politics;
+    private final NationalIdeas nationalIdeas;
+    private final Map<String, Terrain> terrains;
     private final Pixmap provincesPixmap;
     private final Pixmap mapModePixmap;
     private Texture mapModeTexture;
@@ -57,11 +65,15 @@ public class World implements Disposable {
     private Country countryPlayer;
     private MapMode mapMode;
 
-    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, GameContext gameContext) {
+    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, Economy economy, Politics politics, NationalIdeas nationalIdeas, Map<String, Terrain> terrains, GameContext gameContext) {
         this.mapDao = new MapDaoImpl();
         this.countries = countries;
         this.provinces = provinces;
         this.waterProvinces = waterProvinces;
+        this.economy = economy;
+        this.politics = politics;
+        this.nationalIdeas = nationalIdeas;
+        this.terrains = terrains;
         this.mapModePixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
         this.mapModePixmap.setBlending(Pixmap.Blending.None);
         this.mapModePixmap.setColor(0, 0, 0, 0);
@@ -121,6 +133,10 @@ public class World implements Disposable {
         String fragmentRiverShader = Gdx.files.internal("shaders/river_f.glsl").readString();
         this.riverShader = new ShaderProgram(vertexRiverShader, fragmentRiverShader);
         ShaderProgram.pedantic = false;
+    }
+
+    public Politics getPolitics() {
+        return this.politics;
     }
 
     public LandProvince getProvince(short x, short y) {

@@ -7,6 +7,7 @@ import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonMapper;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
 import com.populaire.projetguerrefroide.dao.WorldDao;
+import com.populaire.projetguerrefroide.economy.Economy;
 import com.populaire.projetguerrefroide.economy.building.*;
 import com.populaire.projetguerrefroide.economy.good.*;
 import com.populaire.projetguerrefroide.economy.population.Population;
@@ -63,32 +64,30 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     @Override
-    public GameEntities createGameEntities() {
-        NationalIdeas nationalIdeas = this.readNationalIdeasJson();
+    public World createWorldThreadSafe(GameContext gameContext) {
+        Minister[] ministers = new Minister[5853];
         Map<String, Government> governments = this.readGovernmentsJson();
+        NationalIdeas nationalIdeas = this.readNationalIdeasJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
+        Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
         Map<String, Good> goods = this.readGoodsJson();
         Map<String, PopulationType> populationTypes = this.readPopulationTypesJson(goods);
         Map<String, ProductionType> productionTypes = this.readProductionTypesJson(populationTypes);
         Map<String, Building> buildings = this.readBuildingsJson(goods, productionTypes);
         this.readResourceProductionsJson(goods, productionTypes);
-        Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
-        Map<String, Terrain> terrains = this.readTerrainsJson();
-        return new GameEntities(nationalIdeas, governments, ideologies, goods, buildings, populationTypes, ministerTypes, terrains);
-    }
-
-    @Override
-    public World createWorldThreadSafe(GameEntities gameEntities, GameContext gameContext) {
-        Map<String, Country> countries = this.loadCountries(gameEntities.getMinisterTypes(), gameEntities.getIdeologies());
+        Map<String, Country> countries = this.loadCountries(ministerTypes, ideologies, ministers);
         IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(15000);
         IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(4000);
-        this.loadProvinces(countries, provincesByColor, waterProvincesByColor, gameEntities);
+        Map<String, Terrain> terrains = this.readTerrainsJson();
+        this.loadProvinces(countries, provincesByColor, waterProvincesByColor, governments, nationalIdeas, ideologies, goods, buildings, populationTypes, terrains);
+        Politics politics = new Politics(ideologies, ministers, ministerTypes, governments);
+        Economy economy = new Economy(goods, buildings, populationTypes, productionTypes);
 
         AtomicReference<World> worldRef = new AtomicReference<>();
         final CountDownLatch latch = new CountDownLatch(1);
 
         Gdx.app.postRunnable(() -> {
-            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, gameContext));
+            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, economy, politics, nationalIdeas, terrains, gameContext));
             latch.countDown();
         });
 
@@ -581,14 +580,14 @@ public class WorldDaoImpl implements WorldDao {
         return terrains;
     }
 
-    private Map<String, Country> loadCountries(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
-        Map<String, Country> countries = this.readCountriesJson(ministerTypes, ideologies);
+    private Map<String, Country> loadCountries(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Minister[] ministers) {
+        Map<String, Country> countries = this.readCountriesJson(ministerTypes, ideologies, ministers);
         this.readRelationJson(countries);
         this.readAlliancesJson(countries);
         return countries;
     }
 
-    private Map<String, Country> readCountriesJson(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
+    private Map<String, Country> readCountriesJson(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Minister[] ministers) {
         Map<String, Country> countries = new ObjectObjectMap<>();
         Map<String, String> countriesPaths = new ObjectObjectMap<>();
         try {
@@ -600,7 +599,7 @@ public class WorldDaoImpl implements WorldDao {
             }
 
             for (Map.Entry<String, String> entry : countriesPaths.entrySet()) {
-                Country country = this.readCountryJson(entry.getValue(), entry.getKey(), ministerTypes, ideologies);
+                Country country = this.readCountryJson(entry.getValue(), entry.getKey(), ministerTypes, ideologies, ministers);
                 countries.put(entry.getKey(), country);
             }
         } catch (IOException ioException) {
@@ -611,7 +610,7 @@ public class WorldDaoImpl implements WorldDao {
         return countries;
     }
 
-    private Country readCountryJson(String countryPath, String countryId, Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
+    private Country readCountryJson(String countryPath, String countryId, Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Minister[] ministers) {
         try {
             JsonValue countryValues = this.parseJsonFile(countryPath);
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -622,7 +621,7 @@ public class WorldDaoImpl implements WorldDao {
                 Iterator<Map.Entry<String, JsonValue>> ministersEntryIterator = ministersValues.objectIterator();
                 while (ministersEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> ministerEntry = ministersEntryIterator.next();
-                    int ministerId = Integer.parseInt(ministerEntry.getKey());
+                    short ministerId = Short.parseShort(ministerEntry.getKey());
                     JsonValue ministerNode = ministerEntry.getValue();
                     String name = ministerNode.get("name").asString();
                     String ideology = ministerNode.get("ideology").asString();
@@ -639,7 +638,7 @@ public class WorldDaoImpl implements WorldDao {
                     }
 
                     Minister minister = new Minister(name, ideologies.get(ideology), imageNameFile, loyalty, ministerTypes.get(type), startDate, deathDate);
-                    country.addMinister(ministerId, minister);
+                    ministers[ministerId] = minister;
                 }
             }
             return country;
@@ -689,14 +688,14 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void loadProvinces(Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, GameEntities gameEntities) {
+    private void loadProvinces(Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, Ideology> ideologies, Map<String, Good> goods, Map<String, Building> buildings, Map<String, PopulationType> populationTypes,  Map<String, Terrain> terrains) {
         IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince = new IntObjectMap<>();
         IntObjectMap<PopulationTemplate> populationTemplates = this.readPopulationTemplatesJson();
-        IntObjectMap<Province> provinces = this.readProvincesJson(countries, gameEntities, regionBuildingsByProvince, populationTemplates);
+        IntObjectMap<Province> provinces = this.readProvincesJson(countries, regionBuildingsByProvince, populationTemplates, nationalIdeas, goods, buildings, populationTypes, terrains);
         this.readRegionJson(provinces, regionBuildingsByProvince);
         this.readDefinitionCsv(provinces, provincesByColor, waterProvincesByColor);
         this.readProvinceBitmap(provincesByColor);
-        this.readCountriesHistoryJson(countries, provinces, gameEntities);
+        this.readCountriesHistoryJson(countries, provinces, governments, nationalIdeas, ideologies);
         this.readContinentJsonFile(provinces);
         this.readAdjenciesJson(provinces);
         this.readPositionsJson(provinces);
@@ -726,7 +725,7 @@ public class WorldDaoImpl implements WorldDao {
         return populationTemplates;
     }
 
-    private IntObjectMap<Province> readProvincesJson(Map<String, Country> countries, GameEntities gameEntities, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince, IntObjectMap<PopulationTemplate> populationTemplates) {
+    private IntObjectMap<Province> readProvincesJson(Map<String, Country> countries, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince, IntObjectMap<PopulationTemplate> populationTemplates, NationalIdeas nationalIdeas, Map<String, Good> goods, Map<String, Building> buildings, Map<String, PopulationType> populationTypes, Map<String, Terrain> terrains) {
         IntObjectMap<Province> provinces = new IntObjectMap<>(15000);
         IntObjectMap<String> provincesPaths = new IntObjectMap<>(15000);
         try {
@@ -740,7 +739,7 @@ public class WorldDaoImpl implements WorldDao {
             for (IntObjectMap.Entry<String> entry : provincesPaths.entrySet()) {
                 short provinceId = (short) entry.getKey();
                 String provincePath = entry.getValue();
-                Province province = this.readProvinceJson(countries, provincePath, provinceId, gameEntities, regionBuildingsByProvince, populationTemplates);
+                Province province = this.readProvinceJson(countries, provincePath, provinceId, regionBuildingsByProvince, populationTemplates, nationalIdeas, goods, buildings, populationTypes, terrains);
                 provinces.put(provinceId, province);
             }
         } catch (IOException ioException) {
@@ -752,7 +751,7 @@ public class WorldDaoImpl implements WorldDao {
         return provinces;
     }
 
-    private LandProvince readProvinceJson(Map<String, Country> countries, String provincePath, short provinceId, GameEntities gameEntities, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince, IntObjectMap<PopulationTemplate> populationTemplates) {
+    private LandProvince readProvinceJson(Map<String, Country> countries, String provincePath, short provinceId, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince, IntObjectMap<PopulationTemplate> populationTemplates, NationalIdeas nationalIdeas, Map<String, Good> goods, Map<String, Building> buildings, Map<String, PopulationType> populationTypes, Map<String, Terrain> terrains) {
         try {
             JsonValue provinceValues = this.parseJsonFile(provincePath);
 
@@ -775,7 +774,7 @@ public class WorldDaoImpl implements WorldDao {
             Country countryController = countries.get(controller);
 
             String terrain = provinceValues.get("terrain").asString();
-            Terrain provinceTerrain = gameEntities.getTerrains().get(terrain);
+            Terrain provinceTerrain = terrains.get(terrain);
 
             JsonValue populationValue = provinceValues.get("population_total");
             int amount = (int) populationValue.get("amount").asLong();
@@ -785,9 +784,9 @@ public class WorldDaoImpl implements WorldDao {
             int amountSeniors = (int) (amount * populationTemplate.getSeniors());
             int amountAdults = (int) (amount * populationTemplate.getAdults());
 
-            ObjectIntMap<PopulationType> populations = this.parseDistribution(populationValue.get("populations"), amountAdults, gameEntities.getPopulationTypes());
-            ObjectIntMap<Culture> cultures = this.parseDistribution(populationValue.get("cultures"), amountAdults, gameEntities.getNationalIdeas().getCultures());
-            ObjectIntMap<Religion> religions = this.parseDistribution(populationValue.get("religions"), amountAdults, gameEntities.getNationalIdeas().getReligions());
+            ObjectIntMap<PopulationType> populations = this.parseDistribution(populationValue.get("populations"), amountAdults, populationTypes);
+            ObjectIntMap<Culture> cultures = this.parseDistribution(populationValue.get("cultures"), amountAdults, nationalIdeas.getCultures());
+            ObjectIntMap<Religion> religions = this.parseDistribution(populationValue.get("religions"), amountAdults, nationalIdeas.getReligions());
 
             Population population = new Population(amountChildren, amountAdults, amountSeniors, populations, cultures, religions);
 
@@ -800,7 +799,7 @@ public class WorldDaoImpl implements WorldDao {
                     JsonValue building = buildingsIterator.next();
                     String buildingName = building.get("name").asString();
                     short size = (short) building.get("size").asLong();
-                    buildingsRegion.put(gameEntities.getBuildings().get(buildingName), size);
+                    buildingsRegion.put(buildings.get(buildingName), size);
 
                 }
                 regionBuildingsByProvince.put(provinceId, buildingsRegion);
@@ -809,7 +808,7 @@ public class WorldDaoImpl implements WorldDao {
             ResourceGood resourceGood = null;
             JsonValue goodValue = provinceValues.get("good");
             if(goodValue != null) {
-                resourceGood = (ResourceGood) gameEntities.getGoods().get(goodValue.asString());
+                resourceGood = (ResourceGood) goods.get(goodValue.asString());
             }
 
             ObjectIntMap<Building> buildingsProvince = new ObjectIntMap<>();
@@ -820,7 +819,7 @@ public class WorldDaoImpl implements WorldDao {
                     JsonValue building = buildingsProvinceIterator.next();
                     String buildingName = building.get("name").asString();
                     short size = (short) building.get("size").asLong();
-                    buildingsProvince.put(gameEntities.getBuildings().get(buildingName), size);
+                    buildingsProvince.put(buildings.get(buildingName), size);
                 }
             }
 
@@ -950,7 +949,7 @@ public class WorldDaoImpl implements WorldDao {
         provincesPixmap.dispose();
     }
 
-    private void readCountriesHistoryJson(Map<String, Country> countries, IntObjectMap<Province> provinces, GameEntities gameEntities) {
+    private void readCountriesHistoryJson(Map<String, Country> countries, IntObjectMap<Province> provinces, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, Ideology> ideologies) {
         ObjectObjectMap<String, String> countriesHistoryPaths = new ObjectObjectMap<>();
         try {
             JsonValue countriesJson = this.parseJsonFile(this.countriesHistoryJsonFiles);
@@ -962,7 +961,7 @@ public class WorldDaoImpl implements WorldDao {
             for (Map.Entry<String, String> entry : countriesHistoryPaths) {
                 String countryId = entry.getKey();
                 String countryFileName = entry.getValue();
-                this.readCountryHistoryJson(countries, countryFileName, countryId, provinces, gameEntities);
+                this.readCountryHistoryJson(countries, countryFileName, countryId, provinces, governments, nationalIdeas, ideologies);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -971,7 +970,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readCountryHistoryJson(Map<String, Country> countries, String countryFileName, String idCountry, IntObjectMap<Province> provinces, GameEntities gameEntities) {
+    private void readCountryHistoryJson(Map<String, Country> countries, String countryFileName, String idCountry, IntObjectMap<Province> provinces, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, Ideology> ideologies) {
         try {
             if(countryFileName.equals("history/countries/REB - Rebels.json")) {
                 return;
@@ -982,18 +981,18 @@ public class WorldDaoImpl implements WorldDao {
             LandProvince capital = (LandProvince) provinces.get(idCapital);
             country.setCapital(capital);
             String government = countryValues.get("government").asString();
-            country.setGovernment(gameEntities.getGovernments().get(government));
+            country.setGovernment(governments.get(government));
             String ideology = countryValues.get("ideology").asString();
-            country.setIdeology(gameEntities.getIdeologies().get(ideology));
+            country.setIdeology(ideologies.get(ideology));
             String identity = countryValues.get("national_identity").asString();
-            country.setIdentity(gameEntities.getNationalIdeas().getIdentities().get(identity));
+            country.setIdentity(nationalIdeas.getIdentities().get(identity));
             String attitude = countryValues.get("national_attitude").asString();
-            country.setAttitude(gameEntities.getNationalIdeas().getAttitudes().get(attitude));
+            country.setAttitude(nationalIdeas.getAttitudes().get(attitude));
             if(countryValues.get("head_of_state") != null && countryValues.get("head_of_government") != null) {
-                int idMinisterHeadOfState = (int) countryValues.get("head_of_state").asLong();
-                int idMinisterHeadOfGovernment = (int) countryValues.get("head_of_government").asLong();
-                country.setHeadOfState(idMinisterHeadOfState);
-                country.setHeadOfGovernment(idMinisterHeadOfGovernment);
+                short idMinisterHeadOfState = (short) countryValues.get("head_of_state").asLong();
+                short idMinisterHeadOfGovernment = (short) countryValues.get("head_of_government").asLong();
+                country.setHeadOfStateId(idMinisterHeadOfState);
+                country.setHeadOfGovernmentId(idMinisterHeadOfGovernment);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();

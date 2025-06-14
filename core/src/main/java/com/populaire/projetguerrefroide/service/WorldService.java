@@ -15,7 +15,6 @@ import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
 import com.populaire.projetguerrefroide.economy.building.SpecialBuilding;
 import com.populaire.projetguerrefroide.entity.DevelopementBuildingLevel;
-import com.populaire.projetguerrefroide.entity.GameEntities;
 import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
@@ -28,7 +27,6 @@ import java.util.Map;
 public class WorldService {
     private final AsyncExecutor asyncExecutor;
     private final WorldDao worldDao;
-    private GameEntities gameEntities;
     private World world;
     private final ObjectIntOrderedMap<String> elementPercentages;
 
@@ -39,19 +37,11 @@ public class WorldService {
     }
 
     public void createWorld(GameContext gameContext) {
-        this.world = this.worldDao.createWorldThreadSafe(this.getGameEntities(), gameContext);
+        this.world = this.worldDao.createWorldThreadSafe(gameContext);
     }
 
     public AsyncExecutor getAsyncExecutor() {
         return this.asyncExecutor;
-    }
-
-    public GameEntities getGameEntities() {
-        if(this.gameEntities == null) {
-            this.gameEntities = this.worldDao.createGameEntities();
-        }
-
-        return this.gameEntities;
     }
 
     public void renderWorld(SpriteBatch batch, OrthographicCamera cam, float time) {
@@ -108,7 +98,7 @@ public class WorldService {
 
     public CountrySummaryDto prepareCountrySummaryDto(Map<String, String> localisation) {
         Country selectedCountry = this.world.getSelectedProvince().getCountryOwner();
-        Minister headOfState = selectedCountry.getHeadOfState();
+        Minister headOfState = this.world.getPolitics().getMinister(selectedCountry.getHeadOfStateId());
         String portraitNameFile = "admin_type";
         if(headOfState.getImageNameFile() != null) {
             portraitNameFile = headOfState.getImageNameFile();

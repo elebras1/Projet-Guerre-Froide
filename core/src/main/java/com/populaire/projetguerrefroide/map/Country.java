@@ -4,7 +4,6 @@ import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.politics.AllianceType;
 import com.populaire.projetguerrefroide.politics.Government;
 import com.populaire.projetguerrefroide.politics.Ideology;
-import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.national.Attitude;
 import com.populaire.projetguerrefroide.national.Identity;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
@@ -17,14 +16,13 @@ public class Country {
     private final int color;
     private Set<Region> regions;
     private List<LandProvince> provinces;
-    private IntObjectMap<Minister> ministers;
     private ObjectIntMap<Country> relations;
     private Map<Country, AllianceType> alliances;
     private LandProvince capital;
     private Government government;
     private Ideology ideology;
-    private int headOfGovernment;
-    private int headOfState;
+    private short headOfGovernmentId;
+    private short headOfStateId;
     private Identity identity;
     private Attitude attitude;
     private List<MapLabel> labels;
@@ -35,12 +33,11 @@ public class Country {
         this.color = color;
         this.regions = new ObjectSet<>();
         this.provinces = new ObjectList<>();
-        this.ministers = new IntObjectMap<>();
         this.capital = null;
         this.government = null;
         this.ideology = null;
-        this.headOfGovernment = -1;
-        this.headOfState = -1;
+        this.headOfGovernmentId = -1;
+        this.headOfStateId = -1;
         this.identity = null;
         this.attitude = null;
         this.labels = null;
@@ -68,14 +65,6 @@ public class Country {
 
     public List<LandProvince> getProvinces() {
         return this.provinces;
-    }
-
-    public void addMinister(int ministerId, Minister minister) {
-        this.ministers.put(ministerId, minister);
-    }
-
-    public IntObjectMap<Minister> getMinisters() {
-        return this.ministers;
     }
 
     public void addRelation(Country country, int value) {
@@ -142,20 +131,20 @@ public class Country {
         return this.ideology;
     }
 
-    public void setHeadOfGovernment(int idMinister) {
-        this.headOfGovernment = idMinister;
+    public void setHeadOfGovernmentId(short idMinister) {
+        this.headOfGovernmentId = idMinister;
     }
 
-    public Minister getHeadOfState() {
-        return this.ministers.get(this.headOfState);
+    public short getHeadOfStateId() {
+        return this.headOfStateId;
     }
 
-    public void setHeadOfState(int idMinister) {
-        this.headOfState = idMinister;
+    public void setHeadOfStateId(short idMinister) {
+        this.headOfStateId = idMinister;
     }
 
-    public Minister getHeadOfGovernment() {
-        return this.ministers.get(this.headOfGovernment);
+    public short getHeadOfGovernmentId() {
+        return this.headOfGovernmentId;
     }
 
     public void setIdentity(Identity identity) {
