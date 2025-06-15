@@ -56,6 +56,7 @@ public class WorldDaoImpl implements WorldDao {
     private final String buildingsJsonFile = this.commonPath + "buildings.json";
     private final String resourceProductionsJsonFile = this.commonPath + "resource_productions.json";
     private final String populationTypesJsonFile = this.commonPath + "poptypes.json";
+    private final String lawsJsonFile = this.commonPath + "laws.json";
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
     private final String alliancesJsonFile = this.diplomacyPath + "alliances.json";
     private final JsonMapper mapper = new JsonMapper();
@@ -75,12 +76,15 @@ public class WorldDaoImpl implements WorldDao {
         Map<String, ProductionType> productionTypes = this.readProductionTypesJson(populationTypes);
         Map<String, Building> buildings = this.readBuildingsJson(goods, productionTypes);
         this.readResourceProductionsJson(goods, productionTypes);
+        AtomicInteger baseEnactmentDaysLaw = new AtomicInteger();
+        List<LawGroup> lawGroups = this.readLawsJson(ideologies, baseEnactmentDaysLaw);
         Map<String, Country> countries = this.loadCountries(ministerTypes, ideologies, ministers);
+        System.out.println(lawGroups);
         IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(15000);
         IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(4000);
         Map<String, Terrain> terrains = this.readTerrainsJson();
         this.loadProvinces(countries, provincesByColor, waterProvincesByColor, governments, nationalIdeas, ideologies, goods, buildings, populationTypes, terrains);
-        Politics politics = new Politics(ideologies, ministers, ministerTypes, governments);
+        Politics politics = new Politics(ideologies, ministers, ministerTypes, governments, lawGroups, (byte) baseEnactmentDaysLaw.get());
         Economy economy = new Economy(goods, buildings, populationTypes, productionTypes);
 
         AtomicReference<World> worldRef = new AtomicReference<>();
@@ -578,6 +582,57 @@ public class WorldDaoImpl implements WorldDao {
         }
 
         return terrains;
+    }
+
+    private List<LawGroup> readLawsJson(Map<String, Ideology> ideologies, AtomicInteger baseEnactmentDaysLaw) {
+        List<LawGroup> lawGroups = new ObjectList<>();
+        try {
+            JsonValue lawsValues = this.parseJsonFile(this.lawsJsonFile);
+            baseEnactmentDaysLaw.set((int) lawsValues.get("base_enactment_days").asLong());
+            Iterator<Map.Entry<String, JsonValue>> lawGroupsEntryIterator = lawsValues.get("groups").objectIterator();
+            while (lawGroupsEntryIterator.hasNext()) {
+                Map.Entry<String, JsonValue> lawGroupEntry = lawGroupsEntryIterator.next();
+                String name = lawGroupEntry.getKey();
+                JsonValue lawGroupValue = lawGroupEntry.getValue();
+                byte factorEnactmentDays = (byte) lawGroupValue.get("factor_enactment_days").asLong();
+                List<Law> laws = new ObjectList<>();
+                Iterator<Map.Entry<String, JsonValue>> lawsEntryIterator = lawGroupValue.get("laws").objectIterator();
+                while (lawsEntryIterator.hasNext()) {
+                    Map.Entry<String, JsonValue> lawEntry = lawsEntryIterator.next();
+                    String lawName = lawEntry.getKey();
+                    JsonValue lawValue = lawEntry.getValue();
+                    List<String> requirements = new ObjectList<>();
+                    Iterator<JsonValue> requirementsIterator = lawValue.get("requirements").arrayIterator();
+                    while (requirementsIterator.hasNext()) {
+                        requirements.add(requirementsIterator.next().asString());
+                    }
+                    List<Modifier> modifiers = new ObjectList<>();
+                    Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = lawValue.get("modifiers").objectIterator();
+                    while (modifiersEntryIterator.hasNext()) {
+                        Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
+                        String modifierName = modifierEntry.getKey();
+                        float modifierValue = (float) modifierEntry.getValue().asDouble();
+                        modifiers.add(new Modifier(modifierName, modifierValue));
+                    }
+                    ObjectIntMap<Ideology> interestIdeologies = new ObjectIntMap<>();
+                    Iterator<Map.Entry<String, JsonValue>> interestIdeologiesEntryIterator = lawValue.get("interest_ideologies").objectIterator();
+                    while (interestIdeologiesEntryIterator.hasNext()) {
+                        Map.Entry<String, JsonValue> entry = interestIdeologiesEntryIterator.next();
+                        Ideology ideology = ideologies.get(entry.getKey());
+                        int value = (int) entry.getValue().asLong();
+                        interestIdeologies.put(ideology, value);
+                    }
+                    laws.add(new Law(lawName, requirements, modifiers, interestIdeologies));
+                }
+                lawGroups.add(new LawGroup(name, factorEnactmentDays, laws));
+            }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+        return lawGroups;
     }
 
     private Map<String, Country> loadCountries(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Minister[] ministers) {

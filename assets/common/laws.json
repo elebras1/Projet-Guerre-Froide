@@ -6,70 +6,70 @@
       "laws": {
         "monarchy": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "presidential_republic": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_cons_idolg": true,
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true
+            "social_cons_idolg": 1,
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1
           }
         },
         "parliamentary_republic": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true
+            "fascistic_idolg": -1,
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1
           }
         },
         "theocracy": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "paternal_auto_idolg": 1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "concil_republic": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "corporate_state": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         }
       }
@@ -79,110 +79,110 @@
       "laws": {
         "autocracy": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "technocracy": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "social_cons_idolg": false
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "social_cons_idolg": -1
           }
         },
         "oligarchy": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "market_liberal_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "market_liberal_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "landed_voting": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "wealth_voting": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "market_liberal_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "paternal_auto_idolg": 1,
+            "market_liberal_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "census_suffrage": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "universal_suffrage": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "single_party_state": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": 1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "anarchy": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "market_liberal_idolg": true,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "market_liberal_idolg": 1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         }
       }
@@ -192,63 +192,63 @@
       "laws": {
         "ethnostate": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "national_supremacy": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "racial_segregation": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "cultural_exclusion": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_cons_idolg": true,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false
+            "social_cons_idolg": 1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1
           }
         },
         "multiculturalism": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "social_cons_idolg": false,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "social_cons_idolg": -1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         }
       }
@@ -258,49 +258,49 @@
       "laws": {
         "state_religion": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "religious_tolerance": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": false,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "paternal_auto_idolg": -1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "secularism": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": false,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true
+            "paternal_auto_idolg": -1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1
           }
         },
         "atheism": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": false,
-            "social_cons_idolg": false,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "paternal_auto_idolg": -1,
+            "social_cons_idolg": -1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         }
       }
@@ -310,36 +310,36 @@
       "laws": {
         "hereditary_bureaucrats": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "appointed_bureaucrats": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_cons_idolg": true,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false
+            "social_cons_idolg": 1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1
           }
         },
         "elected_bureaucrats": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1
           }
         }
       }
@@ -349,36 +349,36 @@
       "laws": {
         "peasant_levies": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1
           }
         },
         "professional_army": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": false
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": -1
           }
         },
         "national_militia": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "mass_conscript_army": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "left_wing_radical_idolg": false
+            "left_wing_radical_idolg": -1
           }
         }
       }
@@ -388,81 +388,81 @@
       "laws": {
         "traditionalism": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "market_liberal_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "paternal_auto_idolg": 1,
+            "market_liberal_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "interventionism": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true,
-            "market_liberal_idolg": false
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "market_liberal_idolg": -1
           }
         },
         "agrarianism": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true,
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1
           }
         },
         "industry_banned": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "market_liberal_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "market_liberal_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "laissez_faire": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": -1,
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "cooperative_ownership": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": -1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "command_economy": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": 1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         }
       }
@@ -472,47 +472,47 @@
       "laws": {
         "protectionism": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true,
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "free_trade": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": -1,
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "isolationism": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1
           }
         },
         "mercantilism": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1
           }
         }
       }
@@ -522,42 +522,42 @@
       "laws": {
         "no_taxes": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1
           }
         },
         "flat_tax": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "progressive_tax": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "market_liberal_idolg": false,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "market_liberal_idolg": -1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "regressive_tax": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "market_liberal_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "paternal_auto_idolg": 1,
+            "market_liberal_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         }
       }
@@ -567,60 +567,60 @@
       "laws": {
         "serfdom": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "paternal_auto_idolg": 1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "tenant_farming": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "commercialized_agriculture": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "homesteading": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": false,
-            "social_democrat_idolg": true
+            "paternal_auto_idolg": -1,
+            "social_democrat_idolg": 1
           }
         },
         "collectivized_land": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "social_cons_idolg": false,
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "social_cons_idolg": -1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         }
       }
@@ -630,37 +630,37 @@
       "laws": {
         "no_colonial_affairs": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": false,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "paternal_auto_idolg": -1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "frontier_colonization": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "colonial_exploitation": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         }
       }
@@ -670,40 +670,40 @@
       "laws": {
         "no_police": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "social_cons_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": true
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "social_cons_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": 1
           }
         },
         "local_police_force": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1
           }
         },
         "dedicated_police_force": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "left_wing_radical_idolg": false
+            "left_wing_radical_idolg": -1
           }
         },
         "militarized_police_force": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1
           }
         }
       }
@@ -713,45 +713,45 @@
       "laws": {
         "no_schools": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "religious_schools": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "paternal_auto_idolg": 1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "private_schools": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "market_liberal_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "market_liberal_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "public_schools": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "market_liberal_idolg": false,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "market_liberal_idolg": -1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         }
       }
@@ -761,44 +761,44 @@
       "laws": {
         "no_healthcare": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "charity_hospitals": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true,
-            "market_liberal_idolg": true
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "market_liberal_idolg": 1
           }
         },
         "private_healthcare": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "public_healthcare": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "market_liberal_idolg": false,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "market_liberal_idolg": -1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         }
       }
@@ -808,50 +808,50 @@
       "laws": {
         "outlawed_dissent": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1
           }
         },
         "censorship": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "right_of_assembly": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1
           }
         },
         "free_speech": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "social_cons_idolg": false,
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "social_cons_idolg": -1,
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1
           }
         }
       }
@@ -861,34 +861,34 @@
       "laws": {
         "no_labor_rights": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "market_liberal_idolg": true,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "paternal_auto_idolg": 1,
+            "market_liberal_idolg": 1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "regulatory_bodies": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1
           }
         },
         "workers_protection": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": false,
-            "market_liberal_idolg": false,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "paternal_auto_idolg": -1,
+            "market_liberal_idolg": -1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         }
       }
@@ -898,35 +898,35 @@
       "laws": {
         "child_labor": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         },
         "child_protection": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "compulsory_education": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         }
       }
@@ -936,90 +936,92 @@
       "laws": {
         "legal_guardianship": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "social_cons_idolg": true,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "social_cons_idolg": 1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "women_in_workforce": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "social_cons_idolg": false,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "social_cons_idolg": -1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "women_civic_rights": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "social_cons_idolg": false,
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "social_cons_idolg": -1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         }
       }
     },
     "welfare": {
       "factor_enactment_days": 3,
-      "no_social_security": {
-        "requirements": [],
-        "modifiers": [],
-        "interest_ideologies": {
-          "market_liberal_idolg": true,
-          "social_democrat_idolg": false,
-          "left_wing_radical_idolg": false,
-          "maoist_idolg": false,
-          "communist_idolg": false
-        }
-      },
-      "poor_laws": {
-        "requirements": [],
-        "modifiers": [],
-        "interest_ideologies": {
-          "paternal_auto_idolg": true,
-          "social_cons_idolg": true,
-          "social_liberal_idolg": true,
-          "social_democrat_idolg": true
-        }
-      },
-      "wage_subsidies": {
-        "requirements": [],
-        "modifiers": [],
-        "interest_ideologies": {
-          "market_liberal_idolg": false,
-          "social_liberal_idolg": true,
-          "social_democrat_idolg": true
-        }
-      },
-      "old_age_pension": {
-        "requirements": [],
-        "modifiers": [],
-        "interest_ideologies": {
-          "paternal_auto_idolg": false,
-          "market_liberal_idolg": false,
-          "social_democrat_idolg": true,
-          "left_wing_radical_idolg": true,
-          "maoist_idolg": true,
-          "communist_idolg": true
+      "laws": {
+        "no_social_security": {
+          "requirements": [],
+          "modifiers": {},
+          "interest_ideologies": {
+            "market_liberal_idolg": 1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
+          }
+        },
+        "poor_laws": {
+          "requirements": [],
+          "modifiers": {},
+          "interest_ideologies": {
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1
+          }
+        },
+        "wage_subsidies": {
+          "requirements": [],
+          "modifiers": {},
+          "interest_ideologies": {
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1
+          }
+        },
+        "old_age_pension": {
+          "requirements": [],
+          "modifiers": {},
+          "interest_ideologies": {
+            "paternal_auto_idolg": -1,
+            "market_liberal_idolg": -1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
+          }
         }
       }
     },
@@ -1028,33 +1030,33 @@
       "laws": {
         "open_borders": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": false,
-            "paternal_auto_idolg": false,
-            "market_liberal_idolg": true,
-            "social_liberal_idolg": true,
-            "left_wing_radical_idolg": true
+            "fascistic_idolg": -1,
+            "paternal_auto_idolg": -1,
+            "market_liberal_idolg": 1,
+            "social_liberal_idolg": 1,
+            "left_wing_radical_idolg": 1
           }
         },
         "migration_controls": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "paternal_auto_idolg": true,
-            "social_cons_idolg": true
+            "paternal_auto_idolg": 1,
+            "social_cons_idolg": 1
           }
         },
         "closed_borders": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": true,
-            "paternal_auto_idolg": true,
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false
+            "fascistic_idolg": 1,
+            "paternal_auto_idolg": 1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1
           }
         }
       }
@@ -1064,25 +1066,25 @@
       "laws": {
         "slavery_banned": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "social_liberal_idolg": true,
-            "social_democrat_idolg": true,
-            "left_wing_radical_idolg": true,
-            "maoist_idolg": true,
-            "communist_idolg": true
+            "social_liberal_idolg": 1,
+            "social_democrat_idolg": 1,
+            "left_wing_radical_idolg": 1,
+            "maoist_idolg": 1,
+            "communist_idolg": 1
           }
         },
         "slavery_allowed": {
           "requirements": [],
-          "modifiers": [],
+          "modifiers": {},
           "interest_ideologies": {
-            "market_liberal_idolg": false,
-            "social_liberal_idolg": false,
-            "social_democrat_idolg": false,
-            "left_wing_radical_idolg": false,
-            "maoist_idolg": false,
-            "communist_idolg": false
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
+            "left_wing_radical_idolg": -1,
+            "maoist_idolg": -1,
+            "communist_idolg": -1
           }
         }
       }
