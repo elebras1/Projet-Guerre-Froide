@@ -79,7 +79,6 @@ public class WorldDaoImpl implements WorldDao {
         AtomicInteger baseEnactmentDaysLaw = new AtomicInteger();
         List<LawGroup> lawGroups = this.readLawsJson(ideologies, baseEnactmentDaysLaw);
         Map<String, Country> countries = this.loadCountries(ministerTypes, ideologies, ministers);
-        System.out.println(lawGroups);
         IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(15000);
         IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(4000);
         Map<String, Terrain> terrains = this.readTerrainsJson();
