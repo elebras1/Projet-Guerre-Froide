@@ -1,40 +1,56 @@
 {
   "fascist_dictatorship_gov": {
-    "ideologies_acceptance": [
+    "associated_ideologies": [
       "fascistic_idolg"
     ],
+    "distribution_of_power": [
+      "autocracy",
+      "oligarchy",
+      "single_party_state"
+    ],
+    "citizenship": [
+      "ethnostate",
+      "national_supremacy"
+    ],
+
     "election": {}
   },
   "proletarian_dictatorship_gov": {
-    "ideologies_acceptance": [
+    "associated_ideologies": [
       "maoist_idolg",
       "communist_idolg"
+    ],
+    "governance_principles": [
+      "concil_republic"
+    ],
+    "distribution_of_power": [
+      "single_party_state"
+    ],
+    "economic_system": [
+      "planned_economy",
+      "cooperative_ownership"
     ],
     "election": {}
   },
   "authoritarian_gov": {
-    "ideologies_acceptance": [
-      "fascistic_idolg",
-      "paternal_auto_idolg"
+    "associated_ideologies": [],
+    "distribution_of_power": [
+      "autocracy",
+      "technocracy",
+      "oligarchy",
+      "single_party_state"
     ],
     "election": {}
   },
-  "populist_dictatorship_gov": {
-    "ideologies_acceptance": [
-      "social_cons_idolg",
-      "market_liberal_idolg",
-      "left_wing_radical_idolg"
-    ],
-    "faction_drifting_speed": 4,
-    "election": {
-      "head_of_state": true,
-      "head_of_government": true,
-      "duration": 48
-    }
-  },
   "theocracy_gov": {
-    "ideologies_acceptance": [
+    "associated_ideologies": [
       "paternal_auto_idolg"
+    ],
+    "governance_principles": [
+      "theocracy"
+    ],
+    "church_and_state": [
+      "state_religion"
     ],
     "election": {
       "head_of_state": false,
@@ -43,18 +59,27 @@
     }
   },
   "absolute_monarchy_gov": {
-    "ideologies_acceptance": [
-      "fascistic_idolg",
-      "paternal_auto_idolg",
-      "social_cons_idolg",
-      "market_liberal_idolg"
+    "associated_ideologies": [],
+    "governance_principles": [
+      "monarchy"
+    ],
+    "distribution_of_power": [
+      "autocracy",
+      "technocracy",
+      "oligarchy"
     ],
     "election": {}
   },
   "constitutional_monarchy_gov": {
-    "ideologies_acceptance": [
-      "social_cons_idolg",
-      "market_liberal_idolg"
+    "associated_ideologies": [],
+    "governance_principles": [
+      "monarchy"
+    ],
+    "distribution_of_power": [
+      "landed_voting",
+      "wealth_voting",
+      "census_suffrage",
+      "universal_suffrage"
     ],
     "election": {
       "head_of_state": false,
@@ -63,13 +88,9 @@
     }
   },
   "presidential_republic_gov": {
-    "ideologies_acceptance": [
-      "market_liberal_idolg",
-      "social_liberal_idolg",
-      "social_democrat_idolg",
-      "social_cons_idolg",
-      "left_wing_radical_idolg",
-      "communist_idolg"
+    "associated_ideologies": [],
+    "governance_principles": [
+      "presidential_republic"
     ],
     "election": {
       "head_of_state": true,
@@ -77,10 +98,10 @@
       "duration": 48
     }
   },
-  "constitutional_republic_gov": {
-    "ideologies_acceptance": [
-      "market_liberal_idolg",
-      "social_liberal_idolg"
+  "parliamentary_republic_gov": {
+    "associated_ideologies": [],
+    "governance_principles": [
+      "parliamentary_republic"
     ],
     "election": {
       "head_of_state": false,
@@ -89,16 +110,35 @@
     }
   },
   "direct_democracy_gov": {
-    "ideologies_acceptance": [
-      "social_democrat_idolg",
-      "left_wing_radical_idolg"
+    "associated_ideologies": [],
+    "governance_principles": [
+      "parliamentary_republic, concil_republic"
+    ],
+    "distribution_of_power": [
+      "universal_suffrage"
     ],
     "election": {}
   },
   "anarchy_gov": {
-    "ideologies_acceptance": [
+    "associated_ideologies": [
       "left_wing_radical_idolg",
       "market_liberal_idolg"
+    ],
+    "governance_principles": [
+      "anarchy"
+    ],
+    "taxation": [
+      "no_taxes"
+    ],
+    "free_speech": [
+      "free_speech"
+    ],
+    "policing": [
+      "no_police"
+    ],
+    "economic_system": [
+      "laissez_faire",
+      "cooperative_ownership"
     ],
     "election": {}
   }
