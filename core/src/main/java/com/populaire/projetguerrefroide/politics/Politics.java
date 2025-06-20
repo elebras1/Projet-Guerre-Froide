@@ -1,6 +1,5 @@
 package com.populaire.projetguerrefroide.politics;
 
-import java.util.List;
 import java.util.Map;
 
 public class Politics {
@@ -8,10 +7,10 @@ public class Politics {
     private final Minister[] ministers;
     private final Map<String, MinisterType> ministerTypes;
     private final Map<String, Government> governments;
-    private final List<LawGroup> lawGroups;
+    private final Map<String, LawGroup> lawGroups;
     private final byte baseEnactmentDaysLaw;
 
-    public Politics(Map<String, Ideology> ideologies, Minister[] ministers, Map<String, MinisterType> ministerTypes, Map<String, Government> governments, List<LawGroup> lawGroups, byte baseEnactmentDaysLaw) {
+    public Politics(Map<String, Ideology> ideologies, Minister[] ministers, Map<String, MinisterType> ministerTypes, Map<String, Government> governments, Map<String, LawGroup> lawGroups, byte baseEnactmentDaysLaw) {
         this.ideologies = ideologies;
         this.ministers = ministers;
         this.ministerTypes = ministerTypes;
@@ -36,7 +35,7 @@ public class Politics {
         return this.governments;
     }
 
-    public List<LawGroup> getLawGroups() {
+    public Map<String, LawGroup> getLawGroups() {
         return this.lawGroups;
     }
 

@@ -1,13 +1,14 @@
 package com.populaire.projetguerrefroide.politics;
 
 import java.util.List;
+import java.util.Map;
 
 public class LawGroup {
     private final String name;
     private final byte factorEnactmentDays;
-    private final List<Law> laws;
+    private final Map<String, Law> laws;
 
-    public LawGroup(String name, byte factorEnactmentDays, List<Law> laws) {
+    public LawGroup(String name, byte factorEnactmentDays, Map<String, Law> laws) {
         this.name = name;
         this.factorEnactmentDays = factorEnactmentDays;
         this.laws = laws;
@@ -17,7 +18,7 @@ public class LawGroup {
         return this.factorEnactmentDays;
     }
 
-    public List<Law> getLaws() {
+    public Map<String, Law> getLaws() {
         return this.laws;
     }
 

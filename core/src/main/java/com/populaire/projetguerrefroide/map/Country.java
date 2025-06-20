@@ -1,9 +1,7 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.*;
-import com.populaire.projetguerrefroide.politics.AllianceType;
-import com.populaire.projetguerrefroide.politics.Government;
-import com.populaire.projetguerrefroide.politics.Ideology;
+import com.populaire.projetguerrefroide.politics.*;
 import com.populaire.projetguerrefroide.national.Attitude;
 import com.populaire.projetguerrefroide.national.Identity;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
@@ -27,6 +25,7 @@ public class Country {
     private Attitude attitude;
     private List<MapLabel> labels;
     private String name;
+    private Map<LawGroup, Law> laws;
 
     public Country(String id, int color) {
         this.id = id;
@@ -161,6 +160,14 @@ public class Country {
 
     public Attitude getAttitude() {
         return this.attitude;
+    }
+
+    public void setLaws(Map<LawGroup, Law> laws) {
+        this.laws = laws;
+    }
+
+    public Map<LawGroup, Law> getLaws() {
+        return this.laws;
     }
 
     public int getPopulationAmount() {
