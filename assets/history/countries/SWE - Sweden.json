@@ -48,5 +48,28 @@
   "industry_heavy_mechanical_engineering": 1,
   "linear_fire_and_movement": 1,
   "infiltration_tactics": 1,
-  "centralized_command_and_control": 1
+  "centralized_command_and_control": 1,
+  "laws": {
+    "governance_principles": "monarchy",
+    "distribution_of_power": "census_suffrage",
+    "citizenship": "cultural_exclusion",
+    "church_and_state": "religious_tolerance",
+    "bureaucracy": "appointed_bureaucrats",
+    "army_model": "professional_army",
+    "economic_system": "interventionism",
+    "trade_policy": "protectionism",
+    "taxation": "progressive_tax",
+    "land_reform": "commercialized_agriculture",
+    "colonization": "colonial_exploitation",
+    "policing": "dedicated_police_force",
+    "education_system": "private_schools",
+    "health_system": "private_healthcare",
+    "free_speech": "right_of_assembly",
+    "labor_rights": "regulatory_bodies",
+    "childrens_rights": "child_protection",
+    "rights_of_women": "women_in_workforce",
+    "welfare": "wage_subsidies",
+    "migration": "migration_controls",
+    "slavery": "slavery_banned"
+  }
 }

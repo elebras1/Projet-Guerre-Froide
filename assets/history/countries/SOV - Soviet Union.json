@@ -145,5 +145,28 @@
   "industry_electricity_conversion": 1,
   "industry_hightech_computers": 1,
   "industry_modern_science": 1,
-  "launcher_torpedotubes_surface": 1
+  "launcher_torpedotubes_surface": 1,
+  "laws": {
+    "governance_principles": "concil_republic",
+    "distribution_of_power": "single_party_state",
+    "citizenship": "multiculturalism",
+    "church_and_state": "atheism",
+    "bureaucracy": "appointed_bureaucrats",
+    "army_model": "national_militia",
+    "economic_system": "planned_economy",
+    "trade_policy": "protectionism",
+    "taxation": "progressive_tax",
+    "land_reform": "collectivized_land",
+    "colonization": "no_colonial_affairs",
+    "policing": "local_police_force",
+    "education_system": "public_schools",
+    "health_system": "public_healthcare",
+    "free_speech": "censorship",
+    "labor_rights": "workers_protection",
+    "childrens_rights": "compulsory_education",
+    "rights_of_women": "women_civic_rights",
+    "welfare": "universal_social_security",
+    "migration": "migration_controls",
+    "slavery": "slavery_banned"
+  }
 }

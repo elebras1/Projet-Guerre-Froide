@@ -20,5 +20,28 @@
   "head_of_state": 5743,
   "head_of_government": 5743,
   "mass_firepower": 1,
-  "centralized_command_and_control": 1
+  "centralized_command_and_control": 1,
+  "laws": {
+    "governance_principles": "presidential_republic",
+    "distribution_of_power": "oligarchy",
+    "citizenship": "cultural_exclusion",
+    "church_and_state": "religious_tolerance",
+    "bureaucracy": "appointed_bureaucrats",
+    "army_model": "professional_army",
+    "economic_system": "interventionism",
+    "trade_policy": "protectionism",
+    "taxation": "flat_tax",
+    "land_reform": "commercialized_agriculture",
+    "colonization": "colonial_exploitation",
+    "policing": "militarized_police_force",
+    "education_system": "private_schools",
+    "health_system": "private_healthcare",
+    "free_speech": "censorship",
+    "labor_rights": "regulatory_bodies",
+    "childrens_rights": "child_protection",
+    "rights_of_women": "women_in_workforce",
+    "welfare": "poor_laws",
+    "migration": "migration_controls",
+    "slavery": "slavery_banned"
+  }
 }

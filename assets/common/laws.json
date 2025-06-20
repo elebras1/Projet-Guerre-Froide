@@ -401,6 +401,7 @@
           "requirements": [],
           "modifiers": {},
           "interest_ideologies": {
+            "fascistic_idolg": 1,
             "paternal_auto_idolg": 1,
             "social_cons_idolg": 1,
             "market_liberal_idolg": -1
@@ -456,7 +457,6 @@
           "requirements": [],
           "modifiers": {},
           "interest_ideologies": {
-            "fascistic_idolg": 1,
             "market_liberal_idolg": -1,
             "social_liberal_idolg": -1,
             "social_democrat_idolg": -1,
@@ -1011,7 +1011,7 @@
             "social_democrat_idolg": 1
           }
         },
-        "old_age_pension": {
+        "universal_social_security": {
           "requirements": [],
           "modifiers": {},
           "interest_ideologies": {
