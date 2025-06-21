@@ -1,6 +1,6 @@
 package com.populaire.projetguerrefroide.dto;
 
-import com.populaire.projetguerrefroide.entity.DevelopementBuildingLevel;
+import com.populaire.projetguerrefroide.economy.DevelopementBuildingLevel;
 
 import java.util.List;
 

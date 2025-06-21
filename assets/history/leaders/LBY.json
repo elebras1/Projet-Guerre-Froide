@@ -1,0 +1,785 @@
+{
+  "country": "LBY",
+  "leaders": {
+    "24385": {
+      "name": "Fahmi Abdi",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24386": {
+      "name": "Abu Hafs Naderi",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "24387": {
+      "name": "Amr Benayoun",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "24388": {
+      "name": "Husam ad-Din Amr",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24389": {
+      "name": "Fathi Gheisari",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24390": {
+      "name": "Afif Abbas",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "24391": {
+      "name": "Nusrat Hawass",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24392": {
+      "name": "Bagher Bilal",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24393": {
+      "name": "Saif al-Din Abaza",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24394": {
+      "name": "Habib Abdu",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "24395": {
+      "name": "Fadel Azim",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24396": {
+      "name": "Ibro Hijazi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "24397": {
+      "name": "Ammar Sharifi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24398": {
+      "name": "Kafeel Maqdisi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24399": {
+      "name": "Boutros Ahsan",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "24400": {
+      "name": "Rashid Jaber",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "24401": {
+      "name": "Saadallah Salhi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "24402": {
+      "name": "Fazlallah Maalouf",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24403": {
+      "name": "Ata Barakat",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "24404": {
+      "name": "Alim Marwan",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "24405": {
+      "name": "Wahed El-Shennawi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24406": {
+      "name": "Nusrat Rajab",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24407": {
+      "name": "Moneim Al-Shehhi",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "24408": {
+      "name": "Fazli Boustani",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24409": {
+      "name": "Nariman Al-Enezi",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24410": {
+      "name": "Kamal ad-Din Aziz",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24411": {
+      "name": "Jalal Jebali",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24412": {
+      "name": "Badr Naim",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24413": {
+      "name": "Idris Al-Jazari",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24414": {
+      "name": "Sharaf al-Din Taha",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24415": {
+      "name": "Ali Akbar Kamali",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24416": {
+      "name": "Wael Najjar",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24417": {
+      "name": "Abdul Wahhab Barad",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "24418": {
+      "name": "Hassan Qaderi",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24419": {
+      "name": "Abu Hamza Tariq",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24420": {
+      "name": "Hajji Sharifi",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "24421": {
+      "name": "Adir Osman",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "24422": {
+      "name": "Fawaz Bakkali",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24423": {
+      "name": "Hadem Shawkat",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "24424": {
+      "name": "Rayan Alim",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24425": {
+      "name": "Nariman El-Shennawi",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24426": {
+      "name": "Hashim Naeemi",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24427": {
+      "name": "Rabih Qayyum",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24428": {
+      "name": "Kadeem Al-Omari",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24429": {
+      "name": "Mustafa Alawi",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "24430": {
+      "name": "Yusuf Shabazi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24431": {
+      "name": "Ikhtiyar al-Din Naif",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24432": {
+      "name": "Ahmed Tijani Hawsawi",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24433": {
+      "name": "Tahsin Hamdouchi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24434": {
+      "name": "Akil Salhi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24435": {
+      "name": "Mohy al-Din Murad",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24436": {
+      "name": "Afif Asem",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24437": {
+      "name": "Hashim Najdi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "24438": {
+      "name": "Sattar Basri",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "24439": {
+      "name": "Nasri Shabazi",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24440": {
+      "name": "Hosni Ammar",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "24441": {
+      "name": "Nimatullah Sa�id",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24442": {
+      "name": "Quddus Amir",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24443": {
+      "name": "Taj al-Din Nahhas",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24444": {
+      "name": "Ihsan Al-Farooq",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24445": {
+      "name": "Ilyas Al-Enezi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24446": {
+      "name": "Abdur Rauf Maqdisi",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24447": {
+      "name": "Ekram Hamdan",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24448": {
+      "name": "Fadi Hatem",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24449": {
+      "name": "Adeem Wahid",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24450": {
+      "name": "Barkatullah Rajab",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24451": {
+      "name": "Saadallah Sajjad",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24452": {
+      "name": "Kashif Farooq",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24453": {
+      "name": "Wahid Allawi",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24454": {
+      "name": "Mohannad Kazmi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "24455": {
+      "name": "Tayeb Kamali",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24456": {
+      "name": "Badr Darbi",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24457": {
+      "name": "Faizullah Naeemi",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24458": {
+      "name": "Farid Al-Qadi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24459": {
+      "name": "Imtiaz Akram",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "24460": {
+      "name": "Amr Nabih",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24461": {
+      "name": "Fadel Ghazzawi",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24462": {
+      "name": "Ghassan Tayeb",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24463": {
+      "name": "Akram Awan",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24464": {
+      "name": "Zayn ad-Din Khalef",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24465": {
+      "name": "Sharifullah Mahmoudi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "24466": {
+      "name": "Fawaz Yaziji",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24467": {
+      "name": "Mansur Bouazizi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24468": {
+      "name": "Shahed Naseeb",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "24469": {
+      "name": "Shujauddin Barad",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "24470": {
+      "name": "Haitham Turki",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24471": {
+      "name": "Manzur Al-Qadi",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24472": {
+      "name": "Zafarullah Ahad",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24473": {
+      "name": "Abdur Razzaq Maqdisi",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24474": {
+      "name": "Qaid Fahri",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24475": {
+      "name": "Abid Ali Juhani",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24476": {
+      "name": "Faiz Juhani",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24477": {
+      "name": "Samiullah Alavi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24478": {
+      "name": "Fariduddin Zaki",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24479": {
+      "name": "Shahnaz Bouazizi",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "24480": {
+      "name": "Lutfi Jaber",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "24481": {
+      "name": "Naseer Al Naqbi",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "24482": {
+      "name": "Salaam Alkalai",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24483": {
+      "name": "Aladdin Khalil",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24484": {
+      "name": "Wahid Ayad",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "24485": {
+      "name": "Bashir Baba",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24486": {
+      "name": "Jalal ad-Din Hamid",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24487": {
+      "name": "Boutros Bahjat",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "24488": {
+      "name": "Ikrimah Bakkal",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24489": {
+      "name": "Wajdi Kaddouri",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24490": {
+      "name": "Taha Hosni",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24491": {
+      "name": "Zayn ad-Din Al-Ghamdi",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "24492": {
+      "name": "Abu Salhi",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24493": {
+      "name": "Kabir Wahed",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "24494": {
+      "name": "Nasuh Al-Asiri",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24495": {
+      "name": "Labib Hawi",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24496": {
+      "name": "Faizan Naeemi",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "24497": {
+      "name": "Nimatullah Zawahiri",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24498": {
+      "name": "Abdur Rashid Sajjad",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24499": {
+      "name": "Abdul Wahid Adib",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24500": {
+      "name": "Ammar Nazmi",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24501": {
+      "name": "Anjem Sajjad",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24502": {
+      "name": "Abdul Basir Sajjad",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24503": {
+      "name": "Rushdi Hikmat",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24504": {
+      "name": "Ali Reza Najjar",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24505": {
+      "name": "Saddam Atif",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "24506": {
+      "name": "Asil Zahir",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24507": {
+      "name": "Ali Reza Alkalai",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24508": {
+      "name": "Kafeel Yasser",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "24509": {
+      "name": "Rizqallah Abulafia",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "24510": {
+      "name": "Abdul Latif Nabih",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24511": {
+      "name": "Kamal ad-Din Amr",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24512": {
+      "name": "Halim Majid",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "24513": {
+      "name": "Riaz Kadri",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "24514": {
+      "name": "Talat Ammar",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    }
+  }
+}

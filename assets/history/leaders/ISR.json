@@ -1,0 +1,821 @@
+{
+  "country": "ISR",
+  "leaders": {
+    "21800": {
+      "name": "Jethro Bar Lev",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "21801": {
+      "name": "Isaac Stavi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "21802": {
+      "name": "Chagai Biton",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "21803": {
+      "name": "Gil Bar Lev",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21804": {
+      "name": "Lavan Avraham",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "21805": {
+      "name": "Haim Ben-David",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21806": {
+      "name": "Elijah Ochion",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "21807": {
+      "name": "Adam Agnon",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21808": {
+      "name": "Adam Dahan",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21809": {
+      "name": "Lior Eilat",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21810": {
+      "name": "Ir Ben-Meir",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21811": {
+      "name": "Israel Yitzchak",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21812": {
+      "name": "Uzi Har-Paz",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21813": {
+      "name": "Samuel Tal",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "21814": {
+      "name": "Nitzan Levy",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21815": {
+      "name": "Dan Amiti",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21816": {
+      "name": "Uziel Shapira",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "21817": {
+      "name": "Nachan Adrei",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21818": {
+      "name": "Avichai Yitzhak",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "21819": {
+      "name": "Jordan Gabai",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21820": {
+      "name": "Avivel Levi",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21821": {
+      "name": "Uziel Tal",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21822": {
+      "name": "Avivel Amiti",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21823": {
+      "name": "Samuel Mizrahi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21824": {
+      "name": "Nadav Chadad",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "21825": {
+      "name": "Job Mizrachi",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21826": {
+      "name": "Elad Yitzchak",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21827": {
+      "name": "Shaul Ochion",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "21828": {
+      "name": "JOnah Che",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21829": {
+      "name": "Gil Friedman",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21830": {
+      "name": "Nadav Yitzhak",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21831": {
+      "name": "Yakar Chazan",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "21832": {
+      "name": "Zamir Chazan",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21833": {
+      "name": "Liran Yitzchak",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21834": {
+      "name": "Hadar Adrei",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21835": {
+      "name": "Ariel Eilat",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "21836": {
+      "name": "Hadriel Moshe",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "21837": {
+      "name": "Gershem Yosef",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21838": {
+      "name": "Malkiel Tal",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21839": {
+      "name": "Rafa Peretz",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21840": {
+      "name": "Eitan Agnon",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21841": {
+      "name": "Dan Malach",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21842": {
+      "name": "Haim Levy",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21843": {
+      "name": "Jonathan Har-Paz",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "21844": {
+      "name": "Tam Bar Lev",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21845": {
+      "name": "Seth Malach",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21846": {
+      "name": "Moshe Ben-Meir",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21847": {
+      "name": "Carmiel Yosef",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21848": {
+      "name": "Gershem Shapira",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21849": {
+      "name": "Noam Stavi",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "21850": {
+      "name": "Ayal Ben-Tov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21851": {
+      "name": "Gershem Ben-David",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "21852": {
+      "name": "Chavivi Azoulay",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21853": {
+      "name": "Simon Avraham",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21854": {
+      "name": "Merom Levy",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "21855": {
+      "name": "Elijah Malach",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "21856": {
+      "name": "Hadriel Chazan",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21857": {
+      "name": "Jacob Hadad",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21858": {
+      "name": "Rafa Mizrachi",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21859": {
+      "name": "Idan Cohen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "21860": {
+      "name": "Ayal Klein",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21861": {
+      "name": "Malach Yitzhak",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21862": {
+      "name": "Maor Chazan",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21863": {
+      "name": "Bartholomew Levi",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "21864": {
+      "name": "Tamir Amar",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21865": {
+      "name": "Barauch Yitzhak",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21866": {
+      "name": "Chavivi Ben-Meir",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "21867": {
+      "name": "Avi Ben-Meir",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21868": {
+      "name": "Meir Agnon",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21869": {
+      "name": "Hevel Agnon",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "21870": {
+      "name": "Hadriel Yosef",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21871": {
+      "name": "Job Che",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21872": {
+      "name": "Raviv Agnon",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "21873": {
+      "name": "Dotan Eilat",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21874": {
+      "name": "Idan Malach",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "21875": {
+      "name": "Gal Ben-Meir",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21876": {
+      "name": "Eli Gilboa",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21877": {
+      "name": "Chacham Caspi",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21878": {
+      "name": "Karmiel Levi",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21879": {
+      "name": "Hilel Yitzchak",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21880": {
+      "name": "Jeremish Ochion",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "21881": {
+      "name": "Shalev Eilat",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "21882": {
+      "name": "Tal Dahan",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "21883": {
+      "name": "Malachi Yitzchak",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "21884": {
+      "name": "Chavivi Hadad",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "21885": {
+      "name": "Levi Klein",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21886": {
+      "name": "Elad Adrei",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21887": {
+      "name": "Elan Ben-Tov",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21888": {
+      "name": "Eitan Caspi",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21889": {
+      "name": "Amos Agnon",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "21890": {
+      "name": "Karmiel Ashkenazi",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21891": {
+      "name": "Menashe Ben-Tov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21892": {
+      "name": "Malkiel Levy",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21893": {
+      "name": "Nitzan Har-Paz",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21894": {
+      "name": "Carmiel Gilboa",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21895": {
+      "name": "Yarden Bar Lev",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "21896": {
+      "name": "Saul Amar",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "21897": {
+      "name": "Ayal Chazan",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21898": {
+      "name": "Ilan Levi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "21899": {
+      "name": "Zamir Mizrachi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21900": {
+      "name": "Lior Agnon",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "21901": {
+      "name": "Ilan Ben-David",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21902": {
+      "name": "Isaac Gabai",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "21903": {
+      "name": "Omri Levy",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "21904": {
+      "name": "Jeremish Avraham",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "21905": {
+      "name": "Nir Avraham",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21906": {
+      "name": "Avraham Dahan",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21907": {
+      "name": "Saul Levy",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "21908": {
+      "name": "Jordan Hadad",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21909": {
+      "name": "Zakai Ochion",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "21910": {
+      "name": "Hadar Golan",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21911": {
+      "name": "Meir Katz",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "21912": {
+      "name": "Matan Che",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21913": {
+      "name": "Jacob Katz",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "21914": {
+      "name": "Elad Gabai",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21915": {
+      "name": "Elan Hadad",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21916": {
+      "name": "Jonathan Ben-David",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21917": {
+      "name": "Bela Tal",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "21918": {
+      "name": "Ron Hazan",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "21919": {
+      "name": "Noah Hadad",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21920": {
+      "name": "Shefer Levi",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21921": {
+      "name": "Asher Agnon",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "21922": {
+      "name": "Ziv Caspi",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "21923": {
+      "name": "Moshe Hadad",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "21924": {
+      "name": "Noah Levy",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21925": {
+      "name": "Elad Gabai",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "21926": {
+      "name": "Hod Levy",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "21927": {
+      "name": "Yarden Ben-Meir",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21928": {
+      "name": "Jordan Mizrachi",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21929": {
+      "name": "Otniel Gabai",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "21930": {
+      "name": "Peresh Ben-Meir",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21931": {
+      "name": "Uzi Adrei",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21932": {
+      "name": "Menashe Katz",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21933": {
+      "name": "Shalev Avraham",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21934": {
+      "name": "Mordechai Ben-Tov",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "21935": {
+      "name": "Yadid Ben-Meir",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    }
+  }
+}

@@ -1,0 +1,647 @@
+{
+  "country": "DEN",
+  "leaders": {
+    "12457": {
+      "name": "Matthias Olsen",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12458": {
+      "name": "Christian Johansen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12459": {
+      "name": "Peter Baltzer",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "12460": {
+      "name": "Frank Larsen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12461": {
+      "name": "Benjamin Jorgensen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "12462": {
+      "name": "Asbjorn Rasmussen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "12463": {
+      "name": "Lasse Rasmussen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12464": {
+      "name": "Ivan Petersen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12465": {
+      "name": "Kjeld Johansen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12466": {
+      "name": "Elias",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12467": {
+      "name": "Finn Jensen",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12468": {
+      "name": "Mike Larsen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "12469": {
+      "name": "Tomas Christensen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "12470": {
+      "name": "Paulus Larsen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12471": {
+      "name": "Ebbe Thomsen",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12472": {
+      "name": "Theis Rasmussen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12473": {
+      "name": "Robert Pedersen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12474": {
+      "name": "Vilhelm Olsen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12475": {
+      "name": "Mikael Kristensen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12476": {
+      "name": "Edvard Madsen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12477": {
+      "name": "Theis Pedersen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "12478": {
+      "name": "Magnus Jorgensen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12479": {
+      "name": "Ingolf Thomsen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "12480": {
+      "name": "Thorbjorn Johansen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "12481": {
+      "name": "Joakim Madsen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12482": {
+      "name": "Absalon Christiansen",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12483": {
+      "name": "Mads Madsen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12484": {
+      "name": "Stephan Pedersen",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "12485": {
+      "name": "Holger Hansen",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12486": {
+      "name": "Sten Knudsen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12487": {
+      "name": "Oscar Poulsen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "12488": {
+      "name": "Frederik Christiansen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12489": {
+      "name": "Sebastian Sorensen",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12490": {
+      "name": "Asger Kristensen",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12491": {
+      "name": "Eigil Jorgensen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12492": {
+      "name": "Ole Poulsen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "12493": {
+      "name": "Johnny Larsen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "12494": {
+      "name": "Kristoffer Larsen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12495": {
+      "name": "Adam Andersen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "12496": {
+      "name": "Aron Moller",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "12497": {
+      "name": "Paul Jorgensen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12498": {
+      "name": "Nick Jorgensen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "12499": {
+      "name": "Joel Johansen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12500": {
+      "name": "Osvald Poulsen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12501": {
+      "name": "Rasmus Andersen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12502": {
+      "name": "Aage Christiansen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12503": {
+      "name": "Josef Knudsen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12504": {
+      "name": "Sebastian Jorgensen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "12505": {
+      "name": "Steffen Madsen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "12506": {
+      "name": "Josef Christensen",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "12507": {
+      "name": "Tonny Jensen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "12508": {
+      "name": "Chresten",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12509": {
+      "name": "Ludvig Johansen",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12510": {
+      "name": "Lauritz Christiansen",
+      "skill": 6,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "12511": {
+      "name": "Vagn Nielsen",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "12512": {
+      "name": "Tonny Poulsen",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12513": {
+      "name": "Oliver Jorgensen",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12514": {
+      "name": "Hans Nielsen",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "12515": {
+      "name": "Steffen Petersen",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12516": {
+      "name": "Kaleb Nielsen",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "12517": {
+      "name": "Ib Knudsen",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12518": {
+      "name": "Tobias Larsen",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12519": {
+      "name": "Gunner Thomsen",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "12520": {
+      "name": "Gert Andersen",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12521": {
+      "name": "Danni Knudsen",
+      "skill": 9,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12522": {
+      "name": "Kurt Thomsen",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "12523": {
+      "name": "Jes Christiansen",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12524": {
+      "name": "Arnold Hansen",
+      "skill": 6,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12525": {
+      "name": "Herman Rasmussen",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "12526": {
+      "name": "Uffe Johansen",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "12527": {
+      "name": "Berthel Larsen",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "12528": {
+      "name": "Rolf Rasmussen",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "12529": {
+      "name": "Kurt Madsen",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "12530": {
+      "name": "Mogens Christiansen",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12531": {
+      "name": "Adolf Nielsen",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "12532": {
+      "name": "Rene Petersen",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "12533": {
+      "name": "Silas Nielsen",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "12534": {
+      "name": "Viggo Johansen",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "12535": {
+      "name": "Finn Rasmussen",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12536": {
+      "name": "Johan Andersen",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12537": {
+      "name": "Willy Larsen",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "12538": {
+      "name": "Thorkild Jensen",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "12539": {
+      "name": "Rasmus Andersen",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "12540": {
+      "name": "Eskild Petersen",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12541": {
+      "name": "Carsten Andersen",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "12542": {
+      "name": "Sebastian Johansen",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12543": {
+      "name": "Ludvig Jorgensen",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12544": {
+      "name": "Alexander Nielsen",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "12545": {
+      "name": "Wolfgang Johansen",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12546": {
+      "name": "Sofus Johansen",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12547": {
+      "name": "Valdemar Madsen",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "12548": {
+      "name": "Carsten Sorensen",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "12549": {
+      "name": "Orla Christiansen",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "12550": {
+      "name": "Immanuel Jensen",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "12551": {
+      "name": "Arvid Jorgensen",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "12552": {
+      "name": "Boje Moller",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12553": {
+      "name": "Gerhard Christiansen",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12554": {
+      "name": "Mike Madsen",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12555": {
+      "name": "Lasse Larsen",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12556": {
+      "name": "Laurs Jensen",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "12557": {
+      "name": "Oluf Madsen",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "12558": {
+      "name": "Mourits Christensen",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "12559": {
+      "name": "Steven Kristensen",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12560": {
+      "name": "Otto Jensen",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "12561": {
+      "name": "Ole Jorgensen",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "12562": {
+      "name": "Kresten Rasmussen",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "12563": {
+      "name": "Bastian Thomsen",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    }
+  }
+}

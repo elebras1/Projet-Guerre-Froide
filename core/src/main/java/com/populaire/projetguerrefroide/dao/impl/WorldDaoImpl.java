@@ -22,9 +22,9 @@ import com.populaire.projetguerrefroide.service.GameContext;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +39,7 @@ public class WorldDaoImpl implements WorldDao {
     private final String diplomacyPath = historyPath + "diplomacy/";
     private final String countriesJsonFiles = this.commonPath + "countries.json";
     private final String countriesHistoryJsonFiles = this.historyPath + "countries.json";
+    private final String leadersJsonFiles = this.historyPath + "leaders.json";
     private final String regionJsonFiles = this.mapPath + "region.json";
     private final String provincesJsonFile = this.historyPath + "provinces.json";
     private final String definitionCsvFile = this.mapPath + "definition.csv";
@@ -59,7 +60,9 @@ public class WorldDaoImpl implements WorldDao {
     private final String lawsJsonFile = this.commonPath + "laws.json";
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
     private final String alliancesJsonFile = this.diplomacyPath + "alliances.json";
+    private final String traitsJsonFile = this.commonPath + "traits.json";
     private final JsonMapper mapper = new JsonMapper();
+    private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public WorldDaoImpl() {
     }
@@ -67,6 +70,7 @@ public class WorldDaoImpl implements WorldDao {
     @Override
     public World createWorldThreadSafe(GameContext gameContext) {
         Minister[] ministers = new Minister[5853];
+        Leader[] leaders = new Leader[52419];
         Map<String, Government> governments = this.readGovernmentsJson();
         NationalIdeas nationalIdeas = this.readNationalIdeasJson();
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
@@ -78,12 +82,13 @@ public class WorldDaoImpl implements WorldDao {
         this.readResourceProductionsJson(goods, productionTypes);
         AtomicInteger baseEnactmentDaysLaw = new AtomicInteger();
         Map<String, LawGroup> lawGroups = this.readLawsJson(ideologies, baseEnactmentDaysLaw);
-        Map<String, Country> countries = this.loadCountries(ministerTypes, ideologies, ministers);
+        Map<String, Trait> traits = this.readTraitsJson();
+        Map<String, Country> countries = this.loadCountries(ministerTypes, ideologies, ministers, traits, leaders);
         IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(15000);
         IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(4000);
         Map<String, Terrain> terrains = this.readTerrainsJson();
         this.loadProvinces(countries, provincesByColor, waterProvincesByColor, governments, nationalIdeas, ideologies, goods, buildings, populationTypes, terrains, lawGroups);
-        Politics politics = new Politics(ideologies, ministers, ministerTypes, governments, lawGroups, (byte) baseEnactmentDaysLaw.get());
+        Politics politics = new Politics(ideologies, ministers, leaders, ministerTypes, governments, lawGroups, (byte) baseEnactmentDaysLaw.get());
         Economy economy = new Economy(goods, buildings, populationTypes, productionTypes);
 
         AtomicReference<World> worldRef = new AtomicReference<>();
@@ -634,10 +639,35 @@ public class WorldDaoImpl implements WorldDao {
         return lawGroups;
     }
 
-    private Map<String, Country> loadCountries(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Minister[] ministers) {
+    private Map<String, Trait> readTraitsJson() {
+        Map<String, Trait> traits = new ObjectObjectMap<>();
+        try {
+            JsonValue traitsValues = this.parseJsonFile(this.traitsJsonFile);
+            Iterator<Map.Entry<String, JsonValue>> traitsEntryIterator = traitsValues.objectIterator();
+            while (traitsEntryIterator.hasNext()) {
+                Map.Entry<String, JsonValue> entry = traitsEntryIterator.next();
+                String traitName = entry.getKey();
+                JsonValue traitValue = entry.getValue();
+                Map.Entry<String, JsonValue> modifierEntry = traitValue.objectIterator().next();
+                String modifierName = modifierEntry.getKey();
+                float modifierValue = (float) modifierEntry.getValue().asDouble();
+                Modifier modifier = new Modifier(modifierName, modifierValue);
+                traits.put(traitName, new Trait(traitName, modifier));
+            }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+        return traits;
+    }
+
+    private Map<String, Country> loadCountries(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Minister[] ministers, Map<String, Trait> traits, Leader[] leaders) {
         Map<String, Country> countries = this.readCountriesJson(ministerTypes, ideologies, ministers);
         this.readRelationJson(countries);
         this.readAlliancesJson(countries);
+        this.readLeadersJson(countries, traits, leaders);
         return countries;
     }
 
@@ -667,11 +697,11 @@ public class WorldDaoImpl implements WorldDao {
     private Country readCountryJson(String countryPath, String countryId, Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Minister[] ministers) {
         try {
             JsonValue countryValues = this.parseJsonFile(countryPath);
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Country country = new Country(countryId, this.parseColor(countryValues.get("color")));
 
             JsonValue ministersValues = countryValues.get("ministers");
             if (ministersValues != null && ministersValues.isObject()) {
+                ShortList ministersIds = new ShortList();
                 Iterator<Map.Entry<String, JsonValue>> ministersEntryIterator = ministersValues.objectIterator();
                 while (ministersEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> ministerEntry = ministersEntryIterator.next();
@@ -682,20 +712,18 @@ public class WorldDaoImpl implements WorldDao {
                     float loyalty = (float) ministerNode.get("loyalty").asDouble();
                     String imageNameFile = ministerNode.get("picture").asString();
                     String type = ministerNode.get("type").asString();
-                    Date startDate = null;
-                    Date deathDate = null;
-                    try {
-                        startDate = dateFormat.parse(ministerNode.get("start_date").asString());
-                        deathDate = dateFormat.parse(ministerNode.get("death_date").asString());
-                    } catch (ParseException parseException) {
-                        parseException.printStackTrace();
-                    }
+                    LocalDate startDate = LocalDate.parse(ministerNode.get("start_date").asString(), this.dateFormatter);
+                    LocalDate deathDate = LocalDate.parse(ministerNode.get("death_date").asString(), this.dateFormatter);
 
                     Minister minister = new Minister(name, ideologies.get(ideology), imageNameFile, loyalty, ministerTypes.get(type), startDate, deathDate);
                     ministers[ministerId] = minister;
+                    ministersIds.add(ministerId);
                 }
+                country.setMinistersIds(ministersIds);
             }
             return country;
+        } catch (DateTimeParseException dateTimeParseException) {
+            dateTimeParseException.printStackTrace();
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
@@ -735,6 +763,51 @@ public class WorldDaoImpl implements WorldDao {
                 country1.addAlliance(country2, AllianceType.getAllianceType(type, true));
                 country2.addAlliance(country1, AllianceType.getAllianceType(type, false));
             }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    private void readLeadersJson(Map<String, Country> countries, Map<String, Trait> traits, Leader[] leaders) {
+        Map<String, String> leadersPaths = new ObjectObjectMap<>();
+        try {
+            JsonValue leadersValues = this.parseJsonFile(this.leadersJsonFiles);
+            Iterator<Map.Entry<String, JsonValue>> leadersEntryIterator = leadersValues.objectIterator();
+            while (leadersEntryIterator.hasNext()) {
+                Map.Entry<String, JsonValue> entry = leadersEntryIterator.next();
+                leadersPaths.put(entry.getKey(), this.historyPath + entry.getValue().asString());
+            }
+
+            for (Map.Entry<String, String> entry : leadersPaths.entrySet()) {
+                this.readLeaderJson(entry.getValue(), countries, traits, leaders);
+            }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    private void readLeaderJson(String filename, Map<String, Country> countries, Map<String, Trait> traits, Leader[] leaders) {
+        try {
+            JsonValue leaderValues = this.parseJsonFile(filename);
+            String countryId = leaderValues.get("country").asString();
+            Iterator<Map.Entry<String, JsonValue>> leadersEntryIterator = leaderValues.get("leaders").objectIterator();
+            IntList leaderIds = new IntList();
+            while (leadersEntryIterator.hasNext()) {
+                Map.Entry<String, JsonValue> entry = leadersEntryIterator.next();
+                int leaderId = Integer.parseInt(entry.getKey());
+                JsonValue leaderValue = entry.getValue();
+                String name = leaderValue.get("name").asString();
+                byte skill = (byte) leaderValue.get("skill").asLong();
+                ForceType forceType = ForceType.fromString(leaderValue.get("force_type").asString());
+                Trait trait = traits.get(leaderValue.get("trait").asString());
+                leaders[leaderId] = new Leader(name, skill, forceType, trait);
+                leaderIds.add(leaderId);
+            }
+            countries.get(countryId).setLeadersIds(leaderIds);
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {

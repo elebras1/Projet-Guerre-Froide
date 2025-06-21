@@ -1,0 +1,68 @@
+{
+  "common": {
+    "leader_experience_gain": 0.02
+  },
+  "ambitious": {
+    "leader_experience_gain": 0.1
+  },
+  "fortress_buster": {
+    "fort_attack": 0.1
+  },
+  "old_guard": {
+    "xp_gain": -0.5
+  },
+  "trickster": {
+    "surprise_chance": 0.1
+  },
+  "logistics_wizard": {
+    "supply_consumption": -0.25
+  },
+  "defensive_doctrine": {
+    "defence_modifier": 0.1
+  },
+  "offensive_doctrine": {
+    "offence_modifier": 0.1
+  },
+  "winter_specialist": {
+    "winter_attrition": -0.5
+  },
+  "ranger": {
+    "forest_attack": 0.1
+  },
+  "engineer": {
+    "river_attack": 0.1
+  },
+  "panzer_leader": {
+    "combined_arms_bonus": 0.1
+  },
+  "commando": {
+    "out_of_supply_modifier": -0.2
+  },
+  "seawolf": {
+    "submarine_attack": 0.2
+  },
+  "blockade_runner": {
+    "disengage_timer": 1
+  },
+  "superior_tactician": {
+    "spread_out": 0.1
+  },
+  "spotter": {
+    "spotting_chance": 0.1
+  },
+  "tank_buster": {
+    "defender_softness": 0.2
+  },
+  "carpet_bomber": {
+    "strategic_attack": 0.1
+  },
+  "night_flyer": {
+    "night_attack": 0.1
+  },
+  "fleet_destroyer": {
+    "naval_attack": 0.1
+  },
+  "superior_air_tactician": {
+    "tactical_attack": 0.1
+  }
+}

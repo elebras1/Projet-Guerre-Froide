@@ -1,0 +1,647 @@
+{
+  "country": "COS",
+  "leaders": {
+    "10125": {
+      "name": "Salom�n Segura",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "10126": {
+      "name": "Ignacio Herrera",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10127": {
+      "name": "Santiago Sanchez",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10128": {
+      "name": "Gilberto Gutierrez",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10129": {
+      "name": "Paulito Rodriguez",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10130": {
+      "name": "Rub�n Dia",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10131": {
+      "name": "Rub�n Calderon",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "10132": {
+      "name": "Juanfran Ramirez",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "10133": {
+      "name": "Marcos Valverde",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10134": {
+      "name": "Juan Vargas",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10135": {
+      "name": "Vito Segura",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10136": {
+      "name": "Juano Lopez",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10137": {
+      "name": "Edmundo Torres",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "10138": {
+      "name": "Inaki Perez",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10139": {
+      "name": "Jacinto Vargas",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10140": {
+      "name": "Mat�as Villalobos",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10141": {
+      "name": "Abrah�n Morales",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "10142": {
+      "name": "August�n Torres",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10143": {
+      "name": "Crist�bal Hernandez",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "10144": {
+      "name": "Alejandro Morales",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10145": {
+      "name": "Hugo Salas",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "10146": {
+      "name": "Carlos Segura",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10147": {
+      "name": "Ariel Rodriguez",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10148": {
+      "name": "Mariano Gutierrez",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10149": {
+      "name": "Manuel Araya",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10150": {
+      "name": "Eloy Rodriguez",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "10151": {
+      "name": "Patricio Gonzalez",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10152": {
+      "name": "�ngel Hernandez",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10153": {
+      "name": "Alfredo Valverde",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10154": {
+      "name": "Ignacio Morales",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10155": {
+      "name": "Bonifacio Herrera",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10156": {
+      "name": "Gabriel Sanchez",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10157": {
+      "name": "Gonzalo Salas",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10158": {
+      "name": "Samuel Madriga",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10159": {
+      "name": "Gilberto Gutierrez",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10160": {
+      "name": "Ferrando Rodriguez",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10161": {
+      "name": "Isidro Moran",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10162": {
+      "name": "Diego Perez",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10163": {
+      "name": "Alberto Araya",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10164": {
+      "name": "Albano Perez",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10165": {
+      "name": "Agust�n Rojas",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10166": {
+      "name": "Ad�n Herrera",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "10167": {
+      "name": "Hugo Dia",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "10168": {
+      "name": "Abundio Ramirez",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "10169": {
+      "name": "Lorenzo Sanchez",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "10170": {
+      "name": "Sergio Gonzalez",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "10171": {
+      "name": "Santiago Valverde",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "10172": {
+      "name": "Santi Dia",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10173": {
+      "name": "Rogelio Torres",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10174": {
+      "name": "Pablo Gonzalez",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "10175": {
+      "name": "Dami�n Lopez",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "10176": {
+      "name": "Alberto Dia",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10177": {
+      "name": "Fabi�n Madriga",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10178": {
+      "name": "Eloy Gonzalez",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10179": {
+      "name": "Luciano Rodriguez",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10180": {
+      "name": "Germ�n Perez",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "10181": {
+      "name": "Mariano Rodriguez",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10182": {
+      "name": "Ad�n Sanchez",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10183": {
+      "name": "Ricardo Rodriguez",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10184": {
+      "name": "Lorenzo Dia",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10185": {
+      "name": "Absal�n Sanchez",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10186": {
+      "name": "Marcos Herrera",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10187": {
+      "name": "C�ndido Villalobos",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10188": {
+      "name": "Sancho Ramirez",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10189": {
+      "name": "Samuel Hernandez",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10190": {
+      "name": "Antero Herrera",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10191": {
+      "name": "Isaac Torres",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10192": {
+      "name": "Gregorio Valverde",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10193": {
+      "name": "Gershu Herrera",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "10194": {
+      "name": "Bartolom� Hernandez",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "10195": {
+      "name": "Agust�n Perez",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10196": {
+      "name": "Tom�s Araya",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10197": {
+      "name": "Juano Segura",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10198": {
+      "name": "Cornelio Perez",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10199": {
+      "name": "Albano Araya",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10200": {
+      "name": "Emanuel Araya",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "10201": {
+      "name": "Guillermo Gutierrez",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10202": {
+      "name": "Salom�n Ramirez",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "10203": {
+      "name": "Blas Morales",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10204": {
+      "name": "Tadeo Rodriguez",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "10205": {
+      "name": "Ramiro Araya",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10206": {
+      "name": "Froil�n Herrera",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "10207": {
+      "name": "Santiago Herrera",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10208": {
+      "name": "Jorge Araya",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "10209": {
+      "name": "Luis Lopez",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10210": {
+      "name": "Sa�l Ramirez",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "10211": {
+      "name": "Antonio Herrera",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10212": {
+      "name": "Luciano Lopez",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10213": {
+      "name": "Emilio Hernandez",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "10214": {
+      "name": "Jacobo Vargas",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10215": {
+      "name": "Sebasti�n Rodriguez",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10216": {
+      "name": "Mat�as Ramirez",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10217": {
+      "name": "Silvio Lopez",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10218": {
+      "name": "Crist�bal Ramirez",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10219": {
+      "name": "Gonzalo Madriga",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "10220": {
+      "name": "Ram�n Ramirez",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10221": {
+      "name": "Ferm�n Segura",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10222": {
+      "name": "Claudio Dia",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10223": {
+      "name": "Tom�s Torres",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "10224": {
+      "name": "Valent�n Rojas",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10225": {
+      "name": "Gustavo Salas",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "10226": {
+      "name": "Le�n Dia",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10227": {
+      "name": "Vicente Torres",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10228": {
+      "name": "Armando Salas",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10229": {
+      "name": "Basilio Torres",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10230": {
+      "name": "Rodolfo Perez",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "10231": {
+      "name": "Facundo Moran",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    }
+  }
+}

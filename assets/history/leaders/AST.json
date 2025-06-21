@@ -1,0 +1,953 @@
+{
+  "country": "AST",
+  "leaders": {
+    "1743": {
+      "name": "Dustin Vale",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "1744": {
+      "name": "Travis Were",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1745": {
+      "name": "Alexander Colbourne",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1746": {
+      "name": "Benjamin Ardill",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1747": {
+      "name": "Nicholas Deane",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "1748": {
+      "name": "Jonathan Balmain",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1749": {
+      "name": "Erik Nixon",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "1750": {
+      "name": "Martin Wollstonecraft",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1751": {
+      "name": "Cameron Westgarth",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "1752": {
+      "name": "Spencer Mills",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "1753": {
+      "name": "Gabriel Whitehead",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1754": {
+      "name": "Victor Sheahan",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "1755": {
+      "name": "Jordan Adey",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "1756": {
+      "name": "Corey Bini",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "1757": {
+      "name": "Jeffrey Maconochie",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "1758": {
+      "name": "Joseph Borrie",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "1759": {
+      "name": "Samuel Blackall",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1760": {
+      "name": "Charles McKinnon",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "1761": {
+      "name": "Benjamin Meagher",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "1762": {
+      "name": "Daniel Kilgour",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1763": {
+      "name": "Bradley Luttrell",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1764": {
+      "name": "Edgar Curthoys",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1765": {
+      "name": "Jordan Tryon",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "1766": {
+      "name": "Jacob Topp",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "1767": {
+      "name": "Alexander Kotai",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "1768": {
+      "name": "Travis Stout",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "1769": {
+      "name": "Christian Kirkby",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1770": {
+      "name": "Austin Perrier",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1771": {
+      "name": "Jason Gladys",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "1772": {
+      "name": "Travis Michell",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1773": {
+      "name": "Peter McKivat",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1774": {
+      "name": "Carlos Becher",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "1775": {
+      "name": "Kevin Nobbs",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "1776": {
+      "name": "Luis Cardus",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1777": {
+      "name": "Michael Cardus",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "1778": {
+      "name": "Timothy Hopetoun",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1779": {
+      "name": "Corey Holloway",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1780": {
+      "name": "Tyler Donoghue",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1781": {
+      "name": "Garrett Miljanovic",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1782": {
+      "name": "Bradley Rudduck",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "1783": {
+      "name": "Paul Diggles",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1784": {
+      "name": "Erik Kerry",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1785": {
+      "name": "Nathan Cowper",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "1786": {
+      "name": "Jason Boag",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1787": {
+      "name": "Charles Spedding",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1788": {
+      "name": "Francisco D'Arcy",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1789": {
+      "name": "Paul Chave",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "1790": {
+      "name": "Travis Reginald",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1791": {
+      "name": "Kevin Lees",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1792": {
+      "name": "Andrew O'Reily",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1793": {
+      "name": "Joseph Macandie",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1794": {
+      "name": "Kyle Snelling",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "1795": {
+      "name": "Kevin Fahey",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "1796": {
+      "name": "William Flierl",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1797": {
+      "name": "Evan Parsons",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1798": {
+      "name": "Steven Kirkby",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1799": {
+      "name": "Evan Sunners",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1800": {
+      "name": "Matthew Embley",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "1801": {
+      "name": "Christian Coode",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1802": {
+      "name": "Mark Packer",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "1803": {
+      "name": "Derek Mansour",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1804": {
+      "name": "Carlos Were",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "1805": {
+      "name": "Kenneth McKeown",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "1806": {
+      "name": "Jeremy Bavin",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1807": {
+      "name": "Carlos Balmer",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1808": {
+      "name": "Aaron Helpman",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1809": {
+      "name": "George Beeby",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1810": {
+      "name": "Cameron Lay",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1811": {
+      "name": "Christopher Spowers",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1812": {
+      "name": "Joseph Kirsova",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "1813": {
+      "name": "Raymond Farrar",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1814": {
+      "name": "Travis Van De Velde",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1815": {
+      "name": "Cody Lazar",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1816": {
+      "name": "Peter Ciantar",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "1817": {
+      "name": "Justin McCutcheon",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1818": {
+      "name": "Evan Lymburner",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1819": {
+      "name": "Ryan Liardet",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1820": {
+      "name": "Christopher Stonham",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1821": {
+      "name": "Shawn Wise",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "1822": {
+      "name": "Christian McKivat",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "1823": {
+      "name": "Dustin Ingamells",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1824": {
+      "name": "Vincent Deasey",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "1825": {
+      "name": "Garrett Horseman",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1826": {
+      "name": "Cody Shirlow",
+      "skill": 7,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "1827": {
+      "name": "Jared Bickersteth",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1828": {
+      "name": "Andrew Hobart",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1829": {
+      "name": "Evan Pflaum",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1830": {
+      "name": "Vincent Walkley",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "1831": {
+      "name": "Austin Chase",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1832": {
+      "name": "Spencer Farmer",
+      "skill": 6,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1833": {
+      "name": "Jeffrey Cosgrove",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1834": {
+      "name": "Christopher Etheridge",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1835": {
+      "name": "Chad Kirsova",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1836": {
+      "name": "Chad Packer",
+      "skill": 6,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1837": {
+      "name": "Adrian Ironside",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1838": {
+      "name": "Peter Alice",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1839": {
+      "name": "Corey Degraves",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1840": {
+      "name": "Jacob Blakey",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1841": {
+      "name": "Ian Mannix",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1842": {
+      "name": "Robert Black",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1843": {
+      "name": "Trevor Swanston",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1844": {
+      "name": "Cody Froggatt",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1845": {
+      "name": "Jeffrey Gregson",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1846": {
+      "name": "Kenneth Battye",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1847": {
+      "name": "Evan Poninski",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1848": {
+      "name": "Ryan Humffray",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1849": {
+      "name": "Jordan Macnamara",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1850": {
+      "name": "Victor Rouse",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1851": {
+      "name": "David Northfield",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1852": {
+      "name": "Erik Umbagai",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1853": {
+      "name": "Jesse Matra",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1854": {
+      "name": "Charles Madirazza",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1855": {
+      "name": "Vincent Poninski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "1856": {
+      "name": "Francisco Brewis",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "1857": {
+      "name": "Charles Pitcairn",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1858": {
+      "name": "Cory Bruche",
+      "skill": 6,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1859": {
+      "name": "Shawn Krome",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1860": {
+      "name": "Chad Sergeyev",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1861": {
+      "name": "Gregory Bancroft",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1862": {
+      "name": "Sean Matra",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1863": {
+      "name": "Jeremy Loewe",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1864": {
+      "name": "Kenneth Conrick",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1865": {
+      "name": "Kyle Nona",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1866": {
+      "name": "Jason Kinross",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1867": {
+      "name": "Luis Alice",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1868": {
+      "name": "Marcus McKellar",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "1869": {
+      "name": "Raymond Nona",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1870": {
+      "name": "Jason Lonsdale",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "1871": {
+      "name": "Ryan Pettigrew",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1872": {
+      "name": "Kyle Coane",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "1873": {
+      "name": "Mark Watsford",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1874": {
+      "name": "Benjamin Swanston",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "1875": {
+      "name": "Jeffrey Grave",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1876": {
+      "name": "Tyler Childe",
+      "skill": 6,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1877": {
+      "name": "Shane Hervey",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1878": {
+      "name": "Kenneth Goldfinch",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1879": {
+      "name": "Gregory Bavin",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1880": {
+      "name": "Travis Keene",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1881": {
+      "name": "Joshua Pittman",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1882": {
+      "name": "Jeremy Cardus",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1883": {
+      "name": "Kyle Isaachsen",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1884": {
+      "name": "William Plowman",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1885": {
+      "name": "Spencer Cheel",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "1886": {
+      "name": "Joseph McKinnon",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1887": {
+      "name": "Nicholas Comino",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "1888": {
+      "name": "Benjamin Rembert",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "1889": {
+      "name": "Austin Allingham",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1890": {
+      "name": "Zachary Reed",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1891": {
+      "name": "Gregory Crowe",
+      "skill": 8,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1892": {
+      "name": "Jacob Hayward",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1893": {
+      "name": "Ian Barwell",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1894": {
+      "name": "Jason Neitenstein",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1895": {
+      "name": "Brian Tarenorerer",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1896": {
+      "name": "Bryan Oberg",
+      "skill": 7,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "1897": {
+      "name": "Peter Topp",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "1898": {
+      "name": "Casey Skinner",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "1899": {
+      "name": "Victor Sulman",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "1900": {
+      "name": "Raymond Blair",
+      "skill": 6,
+      "force_type": "air",
+      "trait": "common"
+    }
+  }
+}

@@ -1,0 +1,929 @@
+{
+  "country": "POL",
+  "leaders": {
+    "31205": {
+      "name": "Boleslaw Jasinski",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31206": {
+      "name": "Korneli Sobczak",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31207": {
+      "name": "Honorat Kwiatkowski",
+      "skill": 9,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31208": {
+      "name": "Rafal Wozniak",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31209": {
+      "name": "Nataniel Czerwinski",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31210": {
+      "name": "Bernard Nowakowski",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31211": {
+      "name": "Hilary Nowak",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31212": {
+      "name": "Wandelin Kwiatkowski",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "31213": {
+      "name": "Honorat Zajac",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "31214": {
+      "name": "Hubert Gorski",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31215": {
+      "name": "Leslaw Czerwinski",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31216": {
+      "name": "Stefan Nowakowski",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31217": {
+      "name": "Korneliusz Wozniak",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31218": {
+      "name": "Pelagiusz Chmielewski",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31219": {
+      "name": "Zdzislaw Sobczak",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31220": {
+      "name": "Leon Chmielewski",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31221": {
+      "name": "Swietoslaw Nowicki",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31222": {
+      "name": "Piotr Kaczmarek",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "31223": {
+      "name": "Witold Gorski",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31224": {
+      "name": "Justyn Adamska",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31225": {
+      "name": "Celestyn Wisniewski",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "31226": {
+      "name": "Antonin Jablonski",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31227": {
+      "name": "Anatol Wisniewski",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31228": {
+      "name": "Leon Borkowski",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31229": {
+      "name": "Gerwazy Chmielewski",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31230": {
+      "name": "Oleg Kwiatkowski",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "31231": {
+      "name": "Serafin Kwiatkowski",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31232": {
+      "name": "Kasper Kr�l",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31233": {
+      "name": "Waclaw Chmielewski",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31234": {
+      "name": "Witalis Rutkowski",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31235": {
+      "name": "Adrian Kwiatkowska",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "31236": {
+      "name": "Brunon Adamczyk",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31237": {
+      "name": "Waldemar Gorski",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31238": {
+      "name": "Iwon Adamczyk",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31239": {
+      "name": "Marceli Michalski",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31240": {
+      "name": "Kornel Olszewski",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31241": {
+      "name": "Godzislaw Kowalczyk",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31242": {
+      "name": "Blazej Pawlak",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "31243": {
+      "name": "Dominik Dabrowski",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "31244": {
+      "name": "Leszek Wisniewski",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31245": {
+      "name": "Donat Nowak",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "31246": {
+      "name": "Remigiusz Kalinowski",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31247": {
+      "name": "Wojslaw Symanski",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31248": {
+      "name": "Maryn Symanski",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31249": {
+      "name": "Laurencjusz Kr�l",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31250": {
+      "name": "Idzi Ostrowski",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "31251": {
+      "name": "Wielislaw Pawlak",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31252": {
+      "name": "Tomislaw Wisniewski",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31253": {
+      "name": "Wlodzislaw Gorski",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31254": {
+      "name": "Bogumil Wozniak",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31255": {
+      "name": "Wlodzislaw Wozniak",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31256": {
+      "name": "Urban Wisniewski",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31257": {
+      "name": "Honorat Nowakowski",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31258": {
+      "name": "Patryk Nowicki",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31259": {
+      "name": "Marian Olszewski",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "31260": {
+      "name": "Oktawiusz Kowalczyk",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31261": {
+      "name": "Pelagiusz Nowakowski",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31262": {
+      "name": "Olgierd Adamska",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "31263": {
+      "name": "Zygfryd Zajac",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31264": {
+      "name": "Makary Grabowski",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31265": {
+      "name": "Franciszek Wieczorek",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31266": {
+      "name": "Marcel Dabrowski",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31267": {
+      "name": "August Olszewski",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31268": {
+      "name": "Franciszek Jasinski",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31269": {
+      "name": "Honorat Dabrowski",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31270": {
+      "name": "Bogumil Kwiatkowska",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31271": {
+      "name": "Bartosz Maciejewski",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31272": {
+      "name": "Albert Szczepanski",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31273": {
+      "name": "Norbert Michalski",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31274": {
+      "name": "Chwalib�g Kowalski",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "31275": {
+      "name": "Eliasz Zajac",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "31276": {
+      "name": "Maurycjusz Adamczyk",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "31277": {
+      "name": "Natanael Piotrowski",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "31278": {
+      "name": "Witold Olszewski",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31279": {
+      "name": "Maryn Walczak",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31280": {
+      "name": "Pafnucy Zawadzki",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "31281": {
+      "name": "Bernard Chmielewski",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "31282": {
+      "name": "Chrystian Zawadzki",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31283": {
+      "name": "Ferdynand Chmielewski",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31284": {
+      "name": "Luboslaw Rutkowski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31285": {
+      "name": "Przemysl Kucharski",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31286": {
+      "name": "Joachim Walczak",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31287": {
+      "name": "Pakoslaw Rutkowski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31288": {
+      "name": "Iwan Kalinowski",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31289": {
+      "name": "Oleg Dabrowski",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31290": {
+      "name": "Antonin Wozniak",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31291": {
+      "name": "Teobald Piotrowski",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31292": {
+      "name": "Juliusz Grabowski",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "31293": {
+      "name": "Patryk Pawlak",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31294": {
+      "name": "Klemens Kucharski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31295": {
+      "name": "Krzysztof Sawicki",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31296": {
+      "name": "Wit Sawicka",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31297": {
+      "name": "Kazimierz Wozniak",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31298": {
+      "name": "Zenobiusz Kowalski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31299": {
+      "name": "Andrzej Nowak",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "31300": {
+      "name": "Dobrogost Wysocki",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31301": {
+      "name": "Chwalimir Wozniak",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31302": {
+      "name": "Pafnucy Kaczmarek",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31303": {
+      "name": "Bartosz Nowakowski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "31304": {
+      "name": "Wojciech Zawadzki",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31305": {
+      "name": "Justyn Wojciechowski",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31306": {
+      "name": "Iwo Wisniewski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31307": {
+      "name": "J�zefat Kwiatkowski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31308": {
+      "name": "Milan Wozniak",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "31309": {
+      "name": "Manfred Czerwinski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31310": {
+      "name": "Ludomir Kwiatkowski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31311": {
+      "name": "Celestyn Piotrowski",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31312": {
+      "name": "Dobroslaw Wozniak",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31313": {
+      "name": "Milan Gorski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31314": {
+      "name": "Aleksy Jasinski",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "31315": {
+      "name": "Leonard Adamczyk",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31316": {
+      "name": "Sergiusz Wysocka",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31317": {
+      "name": "Romuald Adamczyk",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31318": {
+      "name": "Leon Wozniak",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31319": {
+      "name": "Dobroslaw Wysocki",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31320": {
+      "name": "Rajmund Nowicki",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31321": {
+      "name": "Izydor Walczak",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31322": {
+      "name": "Nataniel Gorski",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31323": {
+      "name": "Aniol Adamczyk",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31324": {
+      "name": "Lech Gorski",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "31325": {
+      "name": "Sofroniusz Adamczyk",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "31326": {
+      "name": "Ireneusz Nowak",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "31327": {
+      "name": "Leslaw Gorski",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "31328": {
+      "name": "Adrian Zajac",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31329": {
+      "name": "Szczepan Sobczak",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31330": {
+      "name": "Milan Czerwinski",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31331": {
+      "name": "Witold Wozniak",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "31332": {
+      "name": "Jan Kowalczyk",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "31333": {
+      "name": "Hilary Adamska",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "31334": {
+      "name": "Herbert Zawadzki",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31335": {
+      "name": "Narcyz Wysocki",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31336": {
+      "name": "Walter Kalinowski",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31337": {
+      "name": "Godzislaw Kowalczyk",
+      "skill": 6,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "31338": {
+      "name": "Luboslaw Wozniak",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31339": {
+      "name": "Maurycy Dudek",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31340": {
+      "name": "Kacper Grabowski",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "31341": {
+      "name": "Henryk Nowak",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "31342": {
+      "name": "Pakoslaw Wozniak",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "31343": {
+      "name": "Zygfryd Adamska",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "31344": {
+      "name": "Bonifacy Zawadzki",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31345": {
+      "name": "Rudolf Sobczak",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31346": {
+      "name": "Dymitr Borkowski",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "31347": {
+      "name": "Przemyslaw Wozniak",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "31348": {
+      "name": "Mieszko Kucharski",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31349": {
+      "name": "Tobiasz Rutkowski",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31350": {
+      "name": "Jaroslaw Olszewski",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31351": {
+      "name": "Leon Borkowski",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "31352": {
+      "name": "Witold Piotrowski",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31353": {
+      "name": "Onufry Zajac",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "31354": {
+      "name": "Mariusz Zajac",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31355": {
+      "name": "Brunon Zajac",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31356": {
+      "name": "Lucjan Piotrowski",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31357": {
+      "name": "Ginter Kucharski",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "31358": {
+      "name": "Mieszko Nowakowski",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    }
+  }
+}

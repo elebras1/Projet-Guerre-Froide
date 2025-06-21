@@ -1,0 +1,701 @@
+{
+  "country": "BEL",
+  "leaders": {
+    "2399": {
+      "name": "Ralf Leroy",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2400": {
+      "name": "Attilio Simon",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2401": {
+      "name": "Basten Vermeulen",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2402": {
+      "name": "Gil Willems",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "2403": {
+      "name": "Eric Baert",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2404": {
+      "name": "Remies Evrard",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2405": {
+      "name": "Merck Aerts",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "2406": {
+      "name": "Arend Bertrand",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2407": {
+      "name": "Leis Monami",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2408": {
+      "name": "Jobathan Janssens",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2409": {
+      "name": "Oscar De Cock",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2410": {
+      "name": "Wilmar De Vos",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2411": {
+      "name": "Constantijn G�rard",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2412": {
+      "name": "St�phane Verstraeten",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2413": {
+      "name": "Stan Mertens",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "2414": {
+      "name": "Nicolas Adam",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2415": {
+      "name": "Arnoud Petit",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2416": {
+      "name": "Pieter-Jan Bogaert",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2417": {
+      "name": "Guido Delhaize",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "2418": {
+      "name": "Cock Petit",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2419": {
+      "name": "Karel Desmet",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2420": {
+      "name": "Clement Janssens",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2421": {
+      "name": "Rijker Claessens",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2422": {
+      "name": "Porter Petit",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "2423": {
+      "name": "Neal De Ridder",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2424": {
+      "name": "John Simon",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2425": {
+      "name": "Brent Dumont",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2426": {
+      "name": "Tulken Charlier",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2427": {
+      "name": "Marcellien De Clercq",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2428": {
+      "name": "Merk Bogaerts",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2429": {
+      "name": "Borg Jacobs",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2430": {
+      "name": "Albrecht Smets",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2431": {
+      "name": "Eggewaart Aerts",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2432": {
+      "name": "Ventura Lambert",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2433": {
+      "name": "Zebedeus Lejeune",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2434": {
+      "name": "Daem Wouters",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "2435": {
+      "name": "Wout De Smet",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2436": {
+      "name": "Ludolf Lauwers",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2437": {
+      "name": "Sieckele Lemmens",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2438": {
+      "name": "Rutte Simon",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "2439": {
+      "name": "Eduard Fran�ois",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2440": {
+      "name": "Lollaert Maes",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2441": {
+      "name": "Krist Bosmans",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2442": {
+      "name": "Neef Peeters",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2443": {
+      "name": "Mandus Dumont",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2444": {
+      "name": "Wally Verstraeten",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "2445": {
+      "name": "Amaat Janssens",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "2446": {
+      "name": "Bette Wouters",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2447": {
+      "name": "Albien Simon",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2448": {
+      "name": "Vic Michel",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2449": {
+      "name": "Roeholt Claessens",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2450": {
+      "name": "Felix Lambert",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "2451": {
+      "name": "Constantijn Renard",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2452": {
+      "name": "Octaaf Mathieu",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2453": {
+      "name": "Bob Van den Broeck",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2454": {
+      "name": "Arend Delcroix",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2455": {
+      "name": "Paul Renard",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2456": {
+      "name": "Barabas Vermeersch",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "2457": {
+      "name": "Niels Thys",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2458": {
+      "name": "Reynard Simon",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2459": {
+      "name": "Laurens Pieters",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2460": {
+      "name": "Jaan Martens",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2461": {
+      "name": "Medard Denis",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "2462": {
+      "name": "Bastiaan Christiaens",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2463": {
+      "name": "Richard Vermeersch",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2464": {
+      "name": "Mon Dubois",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2465": {
+      "name": "Hendrik Fran�ois",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2466": {
+      "name": "Bor Claes",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "2467": {
+      "name": "Vaas Lemaire",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2468": {
+      "name": "Jean-Luc No�l",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2469": {
+      "name": "Genesius Lambert",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2470": {
+      "name": "Andr� Dehasse",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2471": {
+      "name": "Polleunis Geerts",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2472": {
+      "name": "Cent Simon",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2473": {
+      "name": "Nino Martin",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2474": {
+      "name": "Denis Wouters",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2475": {
+      "name": "Daaf De Vos",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "2476": {
+      "name": "Pauw Janssens",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2477": {
+      "name": "Marnix Goossens",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2478": {
+      "name": "Dominik Francois",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2479": {
+      "name": "Baard Goossens",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2480": {
+      "name": "Baptist Dubois",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2481": {
+      "name": "Soa Delcroix",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2482": {
+      "name": "Gideon De Smet",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2483": {
+      "name": "Herrema Wuyts",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2484": {
+      "name": "Tino Segers",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2485": {
+      "name": "Huib Cools",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2486": {
+      "name": "Cent De Backer",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "2487": {
+      "name": "Armand Fontaine",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2488": {
+      "name": "Bonne Segers",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2489": {
+      "name": "Here Vermeersch",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2490": {
+      "name": "Tuur Segers",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2491": {
+      "name": "Marten Bogaerts",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "2492": {
+      "name": "Laurentius Van den Broeck",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2493": {
+      "name": "Aernout Wouters",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2494": {
+      "name": "Broos Lenaerts",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2495": {
+      "name": "Benard Willems",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2496": {
+      "name": "Peeter Charlier",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2497": {
+      "name": "Yannick Claes",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2498": {
+      "name": "Hendrik Vermeiren",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2499": {
+      "name": "Evert Vermeulen",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2500": {
+      "name": "Joshua Francois",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2501": {
+      "name": "Edmond Jansen",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2502": {
+      "name": "Achim Martin",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2503": {
+      "name": "Baard Martin",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "2504": {
+      "name": "Emile Evrard",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "2505": {
+      "name": "Godefrood De Smet",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2506": {
+      "name": "Benedict Dupont",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2507": {
+      "name": "Henri Thomas",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2508": {
+      "name": "Boudewijn De Cock",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "2509": {
+      "name": "Ed Jacobs",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2510": {
+      "name": "Sooi Van den Broeck",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2511": {
+      "name": "Jochem Wouters",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2512": {
+      "name": "Werther Lambert",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2513": {
+      "name": "Huig Monami",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2514": {
+      "name": "Fiek Wauters",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    }
+  }
+}

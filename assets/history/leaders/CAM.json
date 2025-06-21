@@ -1,0 +1,743 @@
+{
+  "country": "CAM",
+  "leaders": {
+    "5202": {
+      "name": "Traore",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5203": {
+      "name": "Conteh",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "5204": {
+      "name": "Maina",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5205": {
+      "name": "Sow",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5206": {
+      "name": "Okeke",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5207": {
+      "name": "Haben Chiba",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "5208": {
+      "name": "Diop",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5209": {
+      "name": "Ikpe",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "5210": {
+      "name": "Oduya",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "5211": {
+      "name": "Dia",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "5212": {
+      "name": "Jafaru Ba",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5213": {
+      "name": "Alassane",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "5214": {
+      "name": "Ndiaye",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5215": {
+      "name": "Coulibaly",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5216": {
+      "name": "Ibeamaka Turay",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5217": {
+      "name": "Shakur",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5218": {
+      "name": "Ouakili",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "5219": {
+      "name": "Daren Sillah",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5220": {
+      "name": "Imade",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5221": {
+      "name": "Ahumibe",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "5222": {
+      "name": "Ndiaye",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5223": {
+      "name": "Coulibaly",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "5224": {
+      "name": "Morathi Gueye",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "5225": {
+      "name": "Gueye",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "5226": {
+      "name": "Kinfe Fall",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "5227": {
+      "name": "Onyenwe",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "5228": {
+      "name": "Okoro",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5229": {
+      "name": "Itsweire",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "5230": {
+      "name": "Kiho Nwosu",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5231": {
+      "name": "Congo",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "5232": {
+      "name": "Sane",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5233": {
+      "name": "Osei",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5234": {
+      "name": "Chahine",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5235": {
+      "name": "Mensah",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "5236": {
+      "name": "Yeboah",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5237": {
+      "name": "Kaseko Sow",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5238": {
+      "name": "Messina Okafor",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "5239": {
+      "name": "Nabulung Nwosu",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5240": {
+      "name": "Maalouf",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5241": {
+      "name": "Jalloh",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5242": {
+      "name": "Chiamaka Ndiaye",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5243": {
+      "name": "Barake Komgang",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5244": {
+      "name": "Kabili Ndikumana",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5245": {
+      "name": "Kabili Traore",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5246": {
+      "name": "Chata Owusu",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "5247": {
+      "name": "Mbasogo",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5248": {
+      "name": "Bankole",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5249": {
+      "name": "Owusu",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5250": {
+      "name": "Ghodbane",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "5251": {
+      "name": "Koroma",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5252": {
+      "name": "Kenyi Mensah",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "5253": {
+      "name": "Katungi Adewunni",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5254": {
+      "name": "Sissoko",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5255": {
+      "name": "Eammon Owusu",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "5256": {
+      "name": "Ja Diop",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "5257": {
+      "name": "Rasheed Sylia",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5258": {
+      "name": "Keon Sarr",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5259": {
+      "name": "Bah",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5260": {
+      "name": "Edmund Conteh",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5261": {
+      "name": "Conteh",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5262": {
+      "name": "Boussombo",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "5263": {
+      "name": "Ashur Keita",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5264": {
+      "name": "Nabulung Osei",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5265": {
+      "name": "Chiba",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5266": {
+      "name": "Owusu",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "5267": {
+      "name": "Kone",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "5268": {
+      "name": "Sall",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "5269": {
+      "name": "Sillah",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "5270": {
+      "name": "Okeke",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "5271": {
+      "name": "Gueye",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "5272": {
+      "name": "Hajari Bongo",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5273": {
+      "name": "Nabulung Maina",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5274": {
+      "name": "Chatha Fofana",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "5275": {
+      "name": "Jabari Koroma",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5276": {
+      "name": "Rasheed Bankole",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5277": {
+      "name": "Kabili Sylia",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "5278": {
+      "name": "Kanelo Imade",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5279": {
+      "name": "Osei",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "5280": {
+      "name": "Naeem Diop",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5281": {
+      "name": "Ba",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "5282": {
+      "name": "Ramses Congo",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5283": {
+      "name": "Mansa Sillah",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5284": {
+      "name": "Maat Okeke",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "5285": {
+      "name": "Andikan Shakur",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5286": {
+      "name": "Sane",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5287": {
+      "name": "Chiba",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5288": {
+      "name": "Cisse",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "5289": {
+      "name": "Sarr",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5290": {
+      "name": "Aoko Bah",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5291": {
+      "name": "Fofana",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5292": {
+      "name": "Kenyi Boussombo",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5293": {
+      "name": "Sow",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5294": {
+      "name": "Razi Rokki",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5295": {
+      "name": "Daramy",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "5296": {
+      "name": "Raimi Ballo",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5297": {
+      "name": "Traore",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "5298": {
+      "name": "Razi Sissoko",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5299": {
+      "name": "Cisse",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "5300": {
+      "name": "Mbeki",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5301": {
+      "name": "Gamba Kone",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5302": {
+      "name": "Bale Contee",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "5303": {
+      "name": "Iqqi Imade",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "5304": {
+      "name": "Jabulani Ikpe",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5305": {
+      "name": "Owusu",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "5306": {
+      "name": "Baingana Okafor",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5307": {
+      "name": "Onyenwe",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "5308": {
+      "name": "Issay Diop",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5309": {
+      "name": "Rabia Biya",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5310": {
+      "name": "Keita",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "5311": {
+      "name": "Gure Kone",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5312": {
+      "name": "Sy",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5313": {
+      "name": "Kaikura Sy",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5314": {
+      "name": "Oderoha",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5315": {
+      "name": "Guban Congo",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5316": {
+      "name": "Ouakili",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5317": {
+      "name": "Dakarai Chahine",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "5318": {
+      "name": "Yeboah",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5319": {
+      "name": "Turay",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "5320": {
+      "name": "Kinfe Agoume",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5321": {
+      "name": "Amani Onyenwe",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "5322": {
+      "name": "Maina",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "5323": {
+      "name": "Nwosu",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "5324": {
+      "name": "Oderoha",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    }
+  }
+}

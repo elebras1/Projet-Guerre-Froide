@@ -1,0 +1,767 @@
+{
+  "country": "CMB",
+  "leaders": {
+    "9642": {
+      "name": "Many Khlot",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9643": {
+      "name": "Vibol Khlot",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "9644": {
+      "name": "Chann Khin",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9645": {
+      "name": "Oudom Pach",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "9646": {
+      "name": "Samnang Long",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9647": {
+      "name": "Raksmei Hu",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9648": {
+      "name": "Chhay Sok",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9649": {
+      "name": "Chakara Im",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9650": {
+      "name": "Vichet Mien",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "9651": {
+      "name": "Sokhom Ma",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "9652": {
+      "name": "Rothanak Tao",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9653": {
+      "name": "Sopath Duong",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9654": {
+      "name": "Oudom Im",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "9655": {
+      "name": "Sophaep Tao",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9656": {
+      "name": "Chantrea Tep",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9657": {
+      "name": "Vichet Chey",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9658": {
+      "name": "Many Som",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "9659": {
+      "name": "Kravann Khin",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "9660": {
+      "name": "Samrin Nhek",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "9661": {
+      "name": "Sourkeat Moul",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "9662": {
+      "name": "Ponleu Yun",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9663": {
+      "name": "Devi So",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9664": {
+      "name": "Vithu Ang",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9665": {
+      "name": "Kiri Tep",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9666": {
+      "name": "Sothiya Pang",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9667": {
+      "name": "Chanthou Sang",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9668": {
+      "name": "Sokun Seng",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9669": {
+      "name": "Nimith Long",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "9670": {
+      "name": "Nimith Touch",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9671": {
+      "name": "Khemera Touch",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9672": {
+      "name": "Veha Chen",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9673": {
+      "name": "Chantrea Mien",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9674": {
+      "name": "Nimith Long",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9675": {
+      "name": "Sann Moul",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9676": {
+      "name": "Chea Hong",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "9677": {
+      "name": "Sophaep Moa",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9678": {
+      "name": "Reasmey Nhek",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "9679": {
+      "name": "Sothiya Touch",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9680": {
+      "name": "Phirum Ly",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9681": {
+      "name": "Vithara Ma",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "9682": {
+      "name": "Chea Oung",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "9683": {
+      "name": "Pich Pach",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9684": {
+      "name": "Akra Ly",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "9685": {
+      "name": "Sokha Moa",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "9686": {
+      "name": "Rathanak Sam",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9687": {
+      "name": "Sothiya Chey",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "9688": {
+      "name": "Visna Muy",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9689": {
+      "name": "Vithara San",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9690": {
+      "name": "Sathea So",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9691": {
+      "name": "Khean Ma",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "9692": {
+      "name": "Samnang Kim",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "9693": {
+      "name": "Munny Chhet",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "9694": {
+      "name": "Rith Som",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9695": {
+      "name": "Sorya Sang",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "9696": {
+      "name": "Vichet Ouch",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9697": {
+      "name": "Chann Ma",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "9698": {
+      "name": "Dara Touch",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9699": {
+      "name": "Sopath Touch",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9700": {
+      "name": "Dara Khlot",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9701": {
+      "name": "Rothanak Nhek",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9702": {
+      "name": "Sothear Chhith",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9703": {
+      "name": "Sopheap Long",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "9704": {
+      "name": "Viseth Em",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9705": {
+      "name": "Reasmey Tang",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "9706": {
+      "name": "Prak Moul",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9707": {
+      "name": "Sann Ang",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "9708": {
+      "name": "Bunroeun Ong",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9709": {
+      "name": "Chakra Em",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9710": {
+      "name": "Sambath Mien",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9711": {
+      "name": "Ponleu Oum",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9712": {
+      "name": "Pros Nhek",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "9713": {
+      "name": "Leap You",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9714": {
+      "name": "Leap Ma",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9715": {
+      "name": "Phala Em",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "9716": {
+      "name": "Phirum Duong",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9717": {
+      "name": "Rainsey Oum",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9718": {
+      "name": "Kravann Ouch",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9719": {
+      "name": "Pros Oung",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "9720": {
+      "name": "Sokhem Pok",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9721": {
+      "name": "Phirum Chhet",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9722": {
+      "name": "Samrin Duong",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9723": {
+      "name": "Davuth Khlot",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "9724": {
+      "name": "Viseth Long",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9725": {
+      "name": "Veha Yun",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9726": {
+      "name": "Borey Sang",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "9727": {
+      "name": "Visothirith Meas",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "9728": {
+      "name": "Sathea Oung",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9729": {
+      "name": "Vithara Som",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9730": {
+      "name": "Kravann Sang",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "9731": {
+      "name": "Nisay Som",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9732": {
+      "name": "Visoth So",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "9733": {
+      "name": "Thom Mien",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9734": {
+      "name": "Rithipol Sok",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9735": {
+      "name": "Sopheap Ang",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "9736": {
+      "name": "Sorya Moul",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "9737": {
+      "name": "Kong Kea San",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9738": {
+      "name": "Ponleu Soeur",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9739": {
+      "name": "Rithipol Chhith",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "9740": {
+      "name": "Leap Duong",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9741": {
+      "name": "Makara Muy",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9742": {
+      "name": "Pheakdei Ang",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9743": {
+      "name": "Pros Hong",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9744": {
+      "name": "Viseth Ly",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9745": {
+      "name": "Sokhom So",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9746": {
+      "name": "Sopheap Hu",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9747": {
+      "name": "Sothear Dith",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9748": {
+      "name": "Mittapheap Tang",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9749": {
+      "name": "Heng So",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9750": {
+      "name": "Sorya Touch",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9751": {
+      "name": "Chhaya Som",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9752": {
+      "name": "Nimol Keo",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "9753": {
+      "name": "Samphy Chhith",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9754": {
+      "name": "Davuth Men",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9755": {
+      "name": "Chea Vy",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9756": {
+      "name": "Visothirith Sok",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9757": {
+      "name": "Sangha Moul",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "9758": {
+      "name": "Chanvatey Ly",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9759": {
+      "name": "Vibol Mien",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9760": {
+      "name": "Nisay Ang",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9761": {
+      "name": "Samang Oum",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9762": {
+      "name": "Vichet Pok",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "9763": {
+      "name": "Kiri Sang",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "9764": {
+      "name": "Somnang Pok",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9765": {
+      "name": "Bona Som",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9766": {
+      "name": "Ponleak Pach",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "9767": {
+      "name": "Bona Soeur",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "9768": {
+      "name": "Rith Men",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    }
+  }
+}

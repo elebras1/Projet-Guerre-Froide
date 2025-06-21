@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.entity;
+package com.populaire.projetguerrefroide.economy;
 
 public class DevelopementBuildingLevel {
     private final byte navalBaseLevel;

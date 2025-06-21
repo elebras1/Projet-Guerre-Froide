@@ -21,11 +21,13 @@ public class Country {
     private Ideology ideology;
     private short headOfGovernmentId;
     private short headOfStateId;
+    private ShortList ministersIds;
     private Identity identity;
     private Attitude attitude;
     private List<MapLabel> labels;
     private String name;
     private Map<LawGroup, Law> laws;
+    private IntList leadersIds;
 
     public Country(String id, int color) {
         this.id = id;
@@ -138,6 +140,14 @@ public class Country {
         return this.headOfStateId;
     }
 
+    public void setMinistersIds(ShortList ministersIds) {
+        this.ministersIds = ministersIds;
+    }
+
+    public ShortList getMinistersIds() {
+        return this.ministersIds;
+    }
+
     public void setHeadOfStateId(short idMinister) {
         this.headOfStateId = idMinister;
     }
@@ -168,6 +178,14 @@ public class Country {
 
     public Map<LawGroup, Law> getLaws() {
         return this.laws;
+    }
+
+    public void setLeadersIds(IntList leadersIds) {
+        this.leadersIds = leadersIds;
+    }
+
+    public IntList getLeadersIds() {
+        return this.leadersIds;
     }
 
     public int getPopulationAmount() {

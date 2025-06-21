@@ -1,0 +1,797 @@
+{
+  "country": "MTN",
+  "leaders": {
+    "27680": {
+      "name": "Balsa Nikolic",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "27681": {
+      "name": "Valtazar Pavlovic",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "27682": {
+      "name": "Lakic Jovanovic",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27683": {
+      "name": "Radava Pavlovic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "27684": {
+      "name": "Stracimir Markovic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "27685": {
+      "name": "Mojaz Vukovic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "27686": {
+      "name": "Radan Knezevic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "27687": {
+      "name": "Dobrislav Petrovic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "27688": {
+      "name": "Prelja Savic",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27689": {
+      "name": "Joksim Stamenkovic",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "27690": {
+      "name": "Vujadin Nikolic",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "27691": {
+      "name": "Joko Stamenkovic",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27692": {
+      "name": "Radisa Markovic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27693": {
+      "name": "Puren Knezevic",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27694": {
+      "name": "�ulja Knezevic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27695": {
+      "name": "Batric Pavlovic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "27696": {
+      "name": "Andro Savic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "27697": {
+      "name": "Miketa Pavlovic",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "27698": {
+      "name": "Brajusko Stankovic",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27699": {
+      "name": "Vukic Pavlovic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27700": {
+      "name": "Markic Pavlovic",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27701": {
+      "name": "Zaro Nikolic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "27702": {
+      "name": "Danilo Jovanovic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27703": {
+      "name": "Mojsija Milosevic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27704": {
+      "name": "Blagota Petrovic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27705": {
+      "name": "Stijepo Nikolic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27706": {
+      "name": "Vujan Milosevic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "27707": {
+      "name": "Mojaz Milosevic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27708": {
+      "name": "Vucina Nikolic",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "27709": {
+      "name": "Ziroje",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27710": {
+      "name": "Mojaz Jovanovic",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27711": {
+      "name": "Njegoz Milosevic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27712": {
+      "name": "Tomas Pavlovic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "27713": {
+      "name": "Mihajilo Savic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "27714": {
+      "name": "Komlen Milosevic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "27715": {
+      "name": "Vojo Pavlovic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27716": {
+      "name": "Petrasin Maric",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27717": {
+      "name": "Drasko Nikolic",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27718": {
+      "name": "Gazo Stankovic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "27719": {
+      "name": "Mirun Petrovic",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27720": {
+      "name": "Dojcilo Nikolic",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "27721": {
+      "name": "Milos Jovanovic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "27722": {
+      "name": "Brano Vukovic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "27723": {
+      "name": "Rasko Stamenkovic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27724": {
+      "name": "Sakota Vukovic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "27725": {
+      "name": "Panto Jovanovic",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27726": {
+      "name": "Masan",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27727": {
+      "name": "Vitomir Nikolic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "27728": {
+      "name": "Vicko Knezevic",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "27729": {
+      "name": "Balsa Vukovic",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27730": {
+      "name": "Krsto Maric",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27731": {
+      "name": "Vujas Nikolic",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "27732": {
+      "name": "Kiro Stamenkovic",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "27733": {
+      "name": "Arsenije Nikolic",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "27734": {
+      "name": "Rogan",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27735": {
+      "name": "Matija Pavlovic",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27736": {
+      "name": "Gajo Markovic",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27737": {
+      "name": "Tomo Savic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "27738": {
+      "name": "Miladin Savic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "27739": {
+      "name": "Kicun Stankovic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27740": {
+      "name": "Vesko Todorovic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27741": {
+      "name": "Radan Maric",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27742": {
+      "name": "Jablan Jovanovic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "27743": {
+      "name": "Baco Todorovic",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "27744": {
+      "name": "Predivoje Todorovic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27745": {
+      "name": "Risto Vukovic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27746": {
+      "name": "Joko Petrovic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "27747": {
+      "name": "Dobrislav Markovic",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "27748": {
+      "name": "Vukasin Stankovic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27749": {
+      "name": "Sakota Vukovic",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27750": {
+      "name": "Baso Stamenkovic",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "27751": {
+      "name": "Mikan",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "27752": {
+      "name": "Zrno Pavlovic",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27753": {
+      "name": "Krsto Markovic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27754": {
+      "name": "Ziroje",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27755": {
+      "name": "Tosan Stankovic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27756": {
+      "name": "Krsto Markovic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27757": {
+      "name": "Mikailo Maric",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27758": {
+      "name": "Jaksa Nikolic",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "27759": {
+      "name": "Zeko Petrovic",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "27760": {
+      "name": "Komlen",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27761": {
+      "name": "Milos Vukovic",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "27762": {
+      "name": "Orle Vukovic",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "27763": {
+      "name": "Tomas Maric",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27764": {
+      "name": "Bako Markovic",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "27765": {
+      "name": "Soro Knezevic",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "27766": {
+      "name": "Nikola Vukovic",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27767": {
+      "name": "�uran Vukovic",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27768": {
+      "name": "Vukasin Nikolic",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "27769": {
+      "name": "Dobrislav",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27770": {
+      "name": "Vukosav Petrovic",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "27771": {
+      "name": "Davor Maric",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "27772": {
+      "name": "Laketa Stankovic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27773": {
+      "name": "Emilo Stamenkovic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27774": {
+      "name": "Dinjo Pavlovic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "27775": {
+      "name": "Vujadin Vukovic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "27776": {
+      "name": "Vujan Milosevic",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27777": {
+      "name": "Vukasin Pavlovic",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "27778": {
+      "name": "Mihajilo Savic",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27779": {
+      "name": "Mikosav Knezevic",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27780": {
+      "name": "Grgur Milosevic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27781": {
+      "name": "Vukola Jovanovic",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "27782": {
+      "name": "Miraz Vukovic",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "27783": {
+      "name": "Mijusko Todorovic",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "27784": {
+      "name": "Milutin Jovanovic",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27785": {
+      "name": "Danko Petrovic",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27786": {
+      "name": "Vujas Todorovic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27787": {
+      "name": "Blaso Savic",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27788": {
+      "name": "Velizar Stankovic",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27789": {
+      "name": "Isailo Markovic",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "27790": {
+      "name": "Maso Milosevic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "27791": {
+      "name": "Predivoje Maric",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "27792": {
+      "name": "Baso Stankovic",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "27793": {
+      "name": "Dinjo",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "27794": {
+      "name": "Rogan Jovanovic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27795": {
+      "name": "Vukoman Petrovic",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27796": {
+      "name": "Gojko Stankovic",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27797": {
+      "name": "Radava Knezevic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "27798": {
+      "name": "Mirkota Todorovic",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27799": {
+      "name": "Radule Nikolic",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27800": {
+      "name": "Panto Stankovic",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "27801": {
+      "name": "Dragoje Milosevic",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "27802": {
+      "name": "Vuleta Savic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27803": {
+      "name": "Mrkonja",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27804": {
+      "name": "Pejcin Milosevic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27805": {
+      "name": "Novak Jovanovic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "27806": {
+      "name": "Mile Stankovic",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "27807": {
+      "name": "Joko Savic",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27808": {
+      "name": "Banjo Maric",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "27809": {
+      "name": "Vasko Petrovic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "27810": {
+      "name": "Jolje Milosevic",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "27811": {
+      "name": "Krcun Jovanovic",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    }
+  }
+}

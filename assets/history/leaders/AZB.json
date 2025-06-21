@@ -1,0 +1,743 @@
+{
+  "country": "AZB",
+  "leaders": {
+    "2026": {
+      "name": "Habil Gaibov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2027": {
+      "name": "Mammad Huseynov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2028": {
+      "name": "Ahmad Kesemenli",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2029": {
+      "name": "Asgar Gaitabashi",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2030": {
+      "name": "Baghir Quliyev",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2031": {
+      "name": "Akbar Orujov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2032": {
+      "name": "Baybar Hasanov",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2033": {
+      "name": "Aghabey Bakikhanov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2034": {
+      "name": "Faig Bakikhanov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "2035": {
+      "name": "Aghabey Orujov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "2036": {
+      "name": "Yahya Rasulov",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "2037": {
+      "name": "Valeh Bagirov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "2038": {
+      "name": "Bunyatov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "2039": {
+      "name": "Gafiz Mahmudov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2040": {
+      "name": "Bahriz Yadigarov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2041": {
+      "name": "Manjun Huseynov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2042": {
+      "name": "Zohrab Babayev",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2043": {
+      "name": "Abbasagha Rasulbekov",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "2044": {
+      "name": "Aghabey Shirvansky",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2045": {
+      "name": "Mehdi Suleymanov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2046": {
+      "name": "Malik Yadigarov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2047": {
+      "name": "Abbasagha Valiyev",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2048": {
+      "name": "Bakikhanov",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "2049": {
+      "name": "Shohrat Aliyev",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2050": {
+      "name": "Hasan Bakikhanov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2051": {
+      "name": "Asgar Abbasov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2052": {
+      "name": "Asgar Agalarov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2053": {
+      "name": "Ujal Afsharov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2054": {
+      "name": "Elbay Afsharov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "2055": {
+      "name": "Ibrahim Yadigarov",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2056": {
+      "name": "Ogtay Bunyatov",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2057": {
+      "name": "Tahir Mammadov",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2058": {
+      "name": "Zohrab Rafiyev",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2059": {
+      "name": "Bahlul Bunyatov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "2060": {
+      "name": "Baloghlan Hajiev",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2061": {
+      "name": "Uzeyir Rasulov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2062": {
+      "name": "Ujal Ismayilov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2063": {
+      "name": "Zohrab Agalarov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2064": {
+      "name": "Faig Afsharov",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2065": {
+      "name": "Zohrab Bagirov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2066": {
+      "name": "Hazi Talishkhanov",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2067": {
+      "name": "Abbasagha Abbasov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "2068": {
+      "name": "Zahid Aliyev",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2069": {
+      "name": "Jahangir Kesemenli",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2070": {
+      "name": "Mazahir Abbasov",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2071": {
+      "name": "Vurghun Bunyatov",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2072": {
+      "name": "Zahid Bagirov",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "2073": {
+      "name": "Baloghlan Gaibov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2074": {
+      "name": "Jalil Novruzov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2075": {
+      "name": "Abbasagha Huseynov",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2076": {
+      "name": "Gafiz Guliyev",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "2077": {
+      "name": "Asgar Orujov",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2078": {
+      "name": "Shahriyar Rafiyev",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2079": {
+      "name": "Aghabey Hasanov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2080": {
+      "name": "Shahriyar Rafiyev",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2081": {
+      "name": "Vurghun Musayev",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2082": {
+      "name": "Habil Rasulov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2083": {
+      "name": "Adalat Helejov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2084": {
+      "name": "Hazi Huseinov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2085": {
+      "name": "Asgar Aliyarbeyov",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2086": {
+      "name": "Aghabey Musayev",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2087": {
+      "name": "Charkaz Kesemenli",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2088": {
+      "name": "Hazi Huseinov",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2089": {
+      "name": "Bahlul Valiyev",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2090": {
+      "name": "Subhi Aliyarbeyov",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2091": {
+      "name": "Malik Hajiev",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2092": {
+      "name": "Gafiz Orujov",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2093": {
+      "name": "Agalarov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "2094": {
+      "name": "Baybar Mammadov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "2095": {
+      "name": "Shohrat Talishinski",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2096": {
+      "name": "Ahmad Hasanov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2097": {
+      "name": "Aghabey Mammadov",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2098": {
+      "name": "Adalat Ismayilov",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2099": {
+      "name": "Gafiz Abbasov",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2100": {
+      "name": "Panah Novruzov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2101": {
+      "name": "Shaig Abbasov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2102": {
+      "name": "Jovdat Gaitabashi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2103": {
+      "name": "Baybar Bunyatov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2104": {
+      "name": "Jovdat Valiyev",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2105": {
+      "name": "Akbar Mammadov",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2106": {
+      "name": "Hasan Ibrahimov",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2107": {
+      "name": "Akbar Melikyeganov",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2108": {
+      "name": "Mammad Helejov",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2109": {
+      "name": "Bagman Agalarov",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "2110": {
+      "name": "Yahya Guliyev",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "2111": {
+      "name": "Manjun Bagirov",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2112": {
+      "name": "Malik Rasulov",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2113": {
+      "name": "Bahadir Hashimbeyov",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2114": {
+      "name": "Mammad Gaibov",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2115": {
+      "name": "Taghi Babayev",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "2116": {
+      "name": "Mehdi Rafiyev",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2117": {
+      "name": "Gasim Afsharov",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2118": {
+      "name": "Shaig Valiyev",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2119": {
+      "name": "Babayev",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "2120": {
+      "name": "Shaig Vizirov",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2121": {
+      "name": "Ujal Talishkhanov",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2122": {
+      "name": "Oghuz Babayev",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2123": {
+      "name": "Hazi Talishkhanov",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2124": {
+      "name": "Afiyaddin Huseynov",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2125": {
+      "name": "Faig Rasulbekov",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2126": {
+      "name": "Panah Gaibov",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2127": {
+      "name": "Zohrab Musayev",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2128": {
+      "name": "Adigozal Bunyatov",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2129": {
+      "name": "Aghabey Talishinski",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2130": {
+      "name": "Shaig Mammadov",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2131": {
+      "name": "Ogtay Vekilov",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2132": {
+      "name": "Bahriz Helejov",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2133": {
+      "name": "Yahya Hashimbeyov",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2134": {
+      "name": "Bahriz Musayev",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2135": {
+      "name": "Ujal Afsharov",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2136": {
+      "name": "Shohrat Musayev",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2137": {
+      "name": "Yahya Guliyev",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2138": {
+      "name": "Zohrab Guliyev",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "2139": {
+      "name": "Afiyaddin Sultanov",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2140": {
+      "name": "Faig Valiyev",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2141": {
+      "name": "Valeh Aliyev",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2142": {
+      "name": "Yahya Novruzov",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2143": {
+      "name": "Bahlul Helejov",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "2144": {
+      "name": "Jovdat Yadigarov",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2145": {
+      "name": "Gasim Shirvansky",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2146": {
+      "name": "Mazahir Talishkhanov",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "2147": {
+      "name": "Malik",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "2148": {
+      "name": "Malik Hasanov",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "common"
+    }
+  }
+}

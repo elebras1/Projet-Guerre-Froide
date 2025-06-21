@@ -1,0 +1,2429 @@
+{
+  "country": "FRA",
+  "leaders": {
+    "15742": {
+      "name": "Florimond Cyr",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15743": {
+      "name": "St�phane Beaule",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15744": {
+      "name": "S�raphin Poisson",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15745": {
+      "name": "Xavier Marcheterre",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15746": {
+      "name": "Gaspard Blanc",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15747": {
+      "name": "Louis-Alphonse Lereau",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15748": {
+      "name": "Christian Pichette",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15749": {
+      "name": "�lie Garreau",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "15750": {
+      "name": "Jean-Marc Mousseau",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15751": {
+      "name": "Olivier Cyr",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15752": {
+      "name": "Fr�d�ric Chasse",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15753": {
+      "name": "Yann Collin",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15754": {
+      "name": "Fulbert Beland",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15755": {
+      "name": "Alphonse Viens",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "15756": {
+      "name": "Paul-Louis Bonnet",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15757": {
+      "name": "Hilaire Giroux",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15758": {
+      "name": "Armand Menard",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15759": {
+      "name": "Odilon Lapierre",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15760": {
+      "name": "Jean-No�l Courtemanche",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15761": {
+      "name": "Herv� Garreau",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15762": {
+      "name": "St�phane Bergeron",
+      "skill": 9,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15763": {
+      "name": "Jean-Martin Chicoine",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "15764": {
+      "name": "Claude-Henri Joly",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "15765": {
+      "name": "Luc Mazuret",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15766": {
+      "name": "Ludovic Sirois",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15767": {
+      "name": "Jean-Yves Course",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "15768": {
+      "name": "Jacquet Bisaillon",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15769": {
+      "name": "Jean-Henri Lambert",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15770": {
+      "name": "Erwan Desnoyers",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15771": {
+      "name": "Fr�d�ric Pirouet",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15772": {
+      "name": "J�r�mie Dupere",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15773": {
+      "name": "Lucien Tanguay",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15774": {
+      "name": "Jean-Henri Sauve",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "15775": {
+      "name": "Jean-Robert Desnoyers",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15776": {
+      "name": "Marcellin Ruel",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15777": {
+      "name": "Jean-Martin Bertrand",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15778": {
+      "name": "Guy Dandonneau",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15779": {
+      "name": "Vivien Caya",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15780": {
+      "name": "S�raphin Coulombe",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15781": {
+      "name": "Jean-Antoine Paquette",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15782": {
+      "name": "Jacques Clement",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15783": {
+      "name": "Severin Rocheleau",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15784": {
+      "name": "Maurille Boncoeur",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15785": {
+      "name": "Paul-Antoine Brousseau",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15786": {
+      "name": "Jean-Antoine Allaire",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15787": {
+      "name": "Fabien Cotuand",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15788": {
+      "name": "Julien Lang",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15789": {
+      "name": "Yann Marier",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15790": {
+      "name": "Arnaud Carignan",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15791": {
+      "name": "Bernard Du Trieux",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15792": {
+      "name": "Fr�d�ric Lafond",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "15793": {
+      "name": "Fulbert Chicoine",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "15794": {
+      "name": "Alexandre Larivi�re",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15795": {
+      "name": "Louis Charron",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15796": {
+      "name": "J�r�mie Des Meaux",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15797": {
+      "name": "Jean-Louis Bois",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15798": {
+      "name": "Nicolas Guernon",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15799": {
+      "name": "Jean-Michel Gingras",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15800": {
+      "name": "Hilaire Lafond",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15801": {
+      "name": "Florimond Morin",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15802": {
+      "name": "Alphonse Joseph Plante",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15803": {
+      "name": "S�raphin Quirion",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15804": {
+      "name": "No�l Coupart",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15805": {
+      "name": "Edmond Chevrette",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15806": {
+      "name": "Jean-Robert Latourelle",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15807": {
+      "name": "Louison Grignon",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15808": {
+      "name": "Jean-S�bastien Fug�re",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15809": {
+      "name": "Alphonse Joseph Paquin",
+      "skill": 9,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15810": {
+      "name": "Jean-Michel Laliberte",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15811": {
+      "name": "Noel Berthiaume",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15812": {
+      "name": "Yann Lafond",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15813": {
+      "name": "Yann Cyr",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15814": {
+      "name": "Gaspard Lauzier",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "15815": {
+      "name": "Jules Audibert",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15816": {
+      "name": "Charles Gingras",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15817": {
+      "name": "Jean-Claude Boulanger",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15818": {
+      "name": "Gaspard Huot",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15819": {
+      "name": "Michel-Ange Belair",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15820": {
+      "name": "G�rald Faucher",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15821": {
+      "name": "Richard Ailleboust",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15822": {
+      "name": "Jean-Andr� Melanson",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15823": {
+      "name": "Christian Boisvert",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15824": {
+      "name": "Bernard Chandonnet",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15825": {
+      "name": "Jean-Jacques Mazuret",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15826": {
+      "name": "Herv� Trottier",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15827": {
+      "name": "J�r�mie Bosse",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15828": {
+      "name": "Jean-Henri Hervieux",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15829": {
+      "name": "Ludovic Cloutier",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15830": {
+      "name": "Jacquet Nadeau",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15831": {
+      "name": "�lie Monjeau",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15832": {
+      "name": "S�bastien Doucet",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15833": {
+      "name": "Yannick Perreault",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15834": {
+      "name": "Jean-�tienne Clavette",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15835": {
+      "name": "Raoul Ayot",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "15836": {
+      "name": "Adhemar Bordeleau",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15837": {
+      "name": "Fabien Echeverri",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15838": {
+      "name": "Aubin Laberge",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15839": {
+      "name": "Fabien Bergeron",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15840": {
+      "name": "Julien Josseaume",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15841": {
+      "name": "Richard Francoeur",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15842": {
+      "name": "L�on Beland",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15843": {
+      "name": "Severin Latourelle",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15844": {
+      "name": "Jean-Baptiste Monty",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15845": {
+      "name": "Jean-Pascal Cantin",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "15846": {
+      "name": "Jean-Baptiste Gauvin",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15847": {
+      "name": "Alexandre Bourget",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15848": {
+      "name": "Gr�goire Boisvert",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15849": {
+      "name": "Thierry Mazuret",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15850": {
+      "name": "Raoul Morin",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15851": {
+      "name": "Louis Jobin",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "15852": {
+      "name": "L�on Guibord",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15853": {
+      "name": "J�r�mie Pouchard",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15854": {
+      "name": "Jean-Christophe Louis",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15855": {
+      "name": "Jean-Yves C�te",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15856": {
+      "name": "Gabriel Charlebois",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15857": {
+      "name": "Richard Auger",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15858": {
+      "name": "�lie Galarneau",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15859": {
+      "name": "Jacquet Bler",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "engineer"
+    },
+    "15860": {
+      "name": "Medard Marcil",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15861": {
+      "name": "Jean-Robert Lereau",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15862": {
+      "name": "Jean-Marc Cailot",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15863": {
+      "name": "Louis-Alphonse Croquetaigne",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15864": {
+      "name": "Fulbert Ruest",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15865": {
+      "name": "Jean-Pierre Larivi�re",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15866": {
+      "name": "Jean-Yves Robert",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15867": {
+      "name": "Erwan Busson",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15868": {
+      "name": "Jean-Denis Plaisance",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15869": {
+      "name": "Jean-Claude emond",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15870": {
+      "name": "Abbon Lajeunesse",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "15871": {
+      "name": "Andr� Pinneau",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15872": {
+      "name": "Paul-Antoine Cliche",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15873": {
+      "name": "Charles Trudeau",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15874": {
+      "name": "Servais Moreau",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15875": {
+      "name": "Patrick Desnoyers",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15876": {
+      "name": "Francis Courtois",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15877": {
+      "name": "Servais Deziel",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15878": {
+      "name": "Jean-Charles Lachapelle",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15879": {
+      "name": "Olivier Ferland",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15880": {
+      "name": "Jean-No�l Landry",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15881": {
+      "name": "Pierre-Simon Miron",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15882": {
+      "name": "Fran�ois-Xavier Barri�re",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15883": {
+      "name": "Charles L'Angelier",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15884": {
+      "name": "Luc Bosse",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15885": {
+      "name": "Jean-Antoine Plouffe",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15886": {
+      "name": "Armand Brousseau",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15887": {
+      "name": "Thierry Jacques",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15888": {
+      "name": "Mathieu Gingras",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15889": {
+      "name": "St�phane Frechette",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15890": {
+      "name": "G�rald Brisebois",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15891": {
+      "name": "Medard L'Hiver",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15892": {
+      "name": "Marcel Barrientos",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15893": {
+      "name": "Patrice Tardif",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15894": {
+      "name": "Jean-Fran�ois Bourdette",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15895": {
+      "name": "Fr�d�ric Courcelle",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15896": {
+      "name": "Raoul Mainville",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15897": {
+      "name": "Gabriel Bourget",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15898": {
+      "name": "Odilon Trudeau",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15899": {
+      "name": "Roger Lepage",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15900": {
+      "name": "Vivien Piedalue",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15901": {
+      "name": "�mile Laux",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "15902": {
+      "name": "Fulbert Laforge",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15903": {
+      "name": "Jean-S�bastien Langlois",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15904": {
+      "name": "Louison Rouze",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15905": {
+      "name": "Pierre-Simon Collin",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15906": {
+      "name": "Guillaume Coupart",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15907": {
+      "name": "D�sir� Thibault",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15908": {
+      "name": "Marc Fortin",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15909": {
+      "name": "No�l Marier",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15910": {
+      "name": "Pierre-Julien Desnoyer",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15911": {
+      "name": "S�bastien Sevier",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "15912": {
+      "name": "Andr�-Marie Narcisse",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15913": {
+      "name": "Jacques Ferland",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "15914": {
+      "name": "Paul-Antoine Richard",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15915": {
+      "name": "Louis Vachon",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15916": {
+      "name": "Luc Bedard",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15917": {
+      "name": "�tienne Devoe",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15918": {
+      "name": "Guillaume Marcil",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15919": {
+      "name": "No�l Guernon",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15920": {
+      "name": "Fran�ois-Xavier Duplessis",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15921": {
+      "name": "Jean-Andr� Hebert",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15922": {
+      "name": "Albertet Larivi�re",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15923": {
+      "name": "S�bastien Plaisance",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15924": {
+      "name": "Jean-Paul Metivier",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15925": {
+      "name": "Abbon Deserres",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15926": {
+      "name": "Jean-Pascal DeGrasse",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15927": {
+      "name": "Baptiste Plouffe",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15928": {
+      "name": "Fulgence Labrecque",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15929": {
+      "name": "No�l Plouffe",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15930": {
+      "name": "Marcel Vincent",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15931": {
+      "name": "Jean-Claude Cotuand",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15932": {
+      "name": "Gerbaud Ruest",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15933": {
+      "name": "Ludovic Lang",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15934": {
+      "name": "Ludovic Beaujolie",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15935": {
+      "name": "Ademar Benoit",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15936": {
+      "name": "Fulgence Chastain",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15937": {
+      "name": "Jean-Pierre Aube",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15938": {
+      "name": "Jean-Baptiste Viens",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15939": {
+      "name": "Fran�ois-Xavier Theriault",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "15940": {
+      "name": "Val�ry Batard",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "ranger"
+    },
+    "15941": {
+      "name": "Patrice Godin",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15942": {
+      "name": "Jean-Pierre Robillard",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15943": {
+      "name": "Jean-Ren� Jette",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15944": {
+      "name": "Florimond Allaire",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15945": {
+      "name": "Jean-Robert Aube",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15946": {
+      "name": "Alexandre Marois",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15947": {
+      "name": "Gabriel Josseaume",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15948": {
+      "name": "Antoine Bussi�re",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15949": {
+      "name": "Herv� Clavet",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15950": {
+      "name": "Jean-Paul Voisine",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15951": {
+      "name": "Raoul L'Anglais",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15952": {
+      "name": "Jules Tetrault",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15953": {
+      "name": "Jean-Michel Du Trieux",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15954": {
+      "name": "Henri Riquier",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15955": {
+      "name": "Jean-Louis Beriault",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15956": {
+      "name": "Alexandre Nadeau",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15957": {
+      "name": "Alphonse Cyr",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15958": {
+      "name": "�tienne De La Ronde",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15959": {
+      "name": "Anatole Lagrange",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15960": {
+      "name": "Noel Mainville",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15961": {
+      "name": "Henri Giroux",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15962": {
+      "name": "Patrice Collin",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15963": {
+      "name": "Jean-Jacques Miron",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15964": {
+      "name": "Thierry Dubois",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15965": {
+      "name": "Maurice Legault",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15966": {
+      "name": "Jean-Denis Lejeune",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15967": {
+      "name": "Thierry Saurel",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15968": {
+      "name": "Jules Binet",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15969": {
+      "name": "Jean-Yves Mailloux",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "15970": {
+      "name": "Jean-�tienne Levesque",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15971": {
+      "name": "Roger Brault",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15972": {
+      "name": "Jean-Yves Coulombe",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15973": {
+      "name": "Medard Duplessis",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15974": {
+      "name": "Charles Rochefort",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "15975": {
+      "name": "Patrice D'Aubigne",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15976": {
+      "name": "Noel Pouchard",
+      "skill": 9,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "15977": {
+      "name": "Jean-Andr� Gousse",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15978": {
+      "name": "Jean-Fran�ois Tardif",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15979": {
+      "name": "Hilaire Laframboise",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15980": {
+      "name": "Jacques Rancourt",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15981": {
+      "name": "Fran�ois Theriault",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15982": {
+      "name": "Michel Theberge",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15983": {
+      "name": "Xavier Beland",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15984": {
+      "name": "Michel Aube",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15985": {
+      "name": "Jean-Julien Lacasse",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "15986": {
+      "name": "Pascal Cliche",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "15987": {
+      "name": "Fulgence Petrie",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15988": {
+      "name": "Fulgence Trottier",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15989": {
+      "name": "Thierry Cotuand",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15990": {
+      "name": "Guillaume Vincent",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15991": {
+      "name": "Odilon Mazuret",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15992": {
+      "name": "Louis-Alphonse Clavet",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15993": {
+      "name": "Pierre-Simon De La Ronde",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "15994": {
+      "name": "Patrick Blanc",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "15995": {
+      "name": "Jean-No�l Theberge",
+      "skill": 11,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15996": {
+      "name": "Ludovic Barrientos",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "15997": {
+      "name": "Arnaud Courcelle",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "15998": {
+      "name": "�mile Labrie",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "15999": {
+      "name": "Pierre-Simon Marcoux",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16000": {
+      "name": "Gerbaud Dubois",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "16001": {
+      "name": "S�bastien Clavet",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16002": {
+      "name": "�mile Plouffe",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16003": {
+      "name": "�lie Boisclair",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "16004": {
+      "name": "Charles Chalut",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "16005": {
+      "name": "Jean-Luc Aupry",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "16006": {
+      "name": "Gr�goire Gousse",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16007": {
+      "name": "�tienne Theriault",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16008": {
+      "name": "Jean-Antoine Lajoie",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16009": {
+      "name": "Julien-Joseph Bosse",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "16010": {
+      "name": "J�r�mie Lamoureux",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16011": {
+      "name": "Francis Tetrault",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16012": {
+      "name": "G�rald Talon",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16013": {
+      "name": "Julien Savard",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16014": {
+      "name": "Jean-Yves Dufour",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16015": {
+      "name": "Erwan Le Bras",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16016": {
+      "name": "Abbon Parizeau",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "16017": {
+      "name": "�ric etoile",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "16018": {
+      "name": "Jean-Andr� Drouin",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16019": {
+      "name": "Arnaud Ruest",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16020": {
+      "name": "Guy Sabourin",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16021": {
+      "name": "Medard Deserres",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16022": {
+      "name": "Mathieu Laberge",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "16023": {
+      "name": "�mile Genereux",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "16024": {
+      "name": "Louis-Alphonse Auger",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "16025": {
+      "name": "G�rald Huot",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "16026": {
+      "name": "Jean-Pierre Fug�re",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16027": {
+      "name": "Gerbaud Beaule",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16028": {
+      "name": "Jean-Claude Laframboise",
+      "skill": 8,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16029": {
+      "name": "D�sir� Lagace",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "16030": {
+      "name": "S�bastien Piedalue",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16031": {
+      "name": "Andr� Briard",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16032": {
+      "name": "Claude-Henri Bonnet",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16033": {
+      "name": "Baptiste Belanger",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16034": {
+      "name": "Ren� Boisclair",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16035": {
+      "name": "Nicolas Cartier",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16036": {
+      "name": "Matthieu Menard",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "16037": {
+      "name": "Jean-Pascal Proulx",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "16038": {
+      "name": "Guy Theberge",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16039": {
+      "name": "Francis Roussel",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "16040": {
+      "name": "Hilaire Provencher",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16041": {
+      "name": "Bernard Aubin",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16042": {
+      "name": "�ric Querry",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "16043": {
+      "name": "Baptiste Faure",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16044": {
+      "name": "S�raphin Gingras",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16045": {
+      "name": "�ric C�te",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16046": {
+      "name": "Hilaire Lampron",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16047": {
+      "name": "D�sir� Quirion",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "16048": {
+      "name": "Fran�ois-Xavier Mathieu",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "16049": {
+      "name": "Jean-Andr� Landry",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "16050": {
+      "name": "Jacques Lapresse",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16051": {
+      "name": "Andr� Masse",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16052": {
+      "name": "Louis-Alphonse Berie",
+      "skill": 7,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "16053": {
+      "name": "Olivier Chicoine",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "16054": {
+      "name": "Rainier Grondin",
+      "skill": 1,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "16055": {
+      "name": "Louison Gousse",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16056": {
+      "name": "Yannick Achin",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "panzer_leader"
+    },
+    "16057": {
+      "name": "Paul-Louis Lavallee",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16058": {
+      "name": "Raoul Duclos",
+      "skill": 5,
+      "force_type": "land",
+      "trait": "offensive_doctrine"
+    },
+    "16059": {
+      "name": "Christian Bonnet",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16060": {
+      "name": "J�r�my Bisaillon",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16061": {
+      "name": "Jean-Marc Pouchard",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "16062": {
+      "name": "Louis Aupry",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "16063": {
+      "name": "Paul-Louis Lef�bvre",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16064": {
+      "name": "Ademar Metivier",
+      "skill": 6,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16065": {
+      "name": "Louis-Alphonse Metivier",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "16066": {
+      "name": "Luc Douffet",
+      "skill": 2,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "16067": {
+      "name": "Claude-Henri Batard",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16068": {
+      "name": "Lucien Lajeunesse",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16069": {
+      "name": "Jules Lacasse",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "16070": {
+      "name": "Val�ry Barteaux",
+      "skill": 3,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16071": {
+      "name": "Bernard Frappier",
+      "skill": 4,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "16072": {
+      "name": "Gr�goire Batard",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16073": {
+      "name": "Raoul Bilodeau",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16074": {
+      "name": "Louis Barrientos",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "16075": {
+      "name": "Jean-Fran�ois Beaujolie",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16076": {
+      "name": "Olivier Dupont",
+      "skill": 7,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16077": {
+      "name": "Edmond Berger",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16078": {
+      "name": "Charles Letourneau",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "16079": {
+      "name": "Gabriel L'Anglais",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16080": {
+      "name": "Odilon Bourdette",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16081": {
+      "name": "Jean Laberge",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16082": {
+      "name": "Marcellin Gervais",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "16083": {
+      "name": "Fulbert Begin",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16084": {
+      "name": "Lucien Camus",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16085": {
+      "name": "Maurice Artois",
+      "skill": 6,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16086": {
+      "name": "Yann Lachapelle",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "16087": {
+      "name": "St�phane Boivin",
+      "skill": 6,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "16088": {
+      "name": "Claude-Henri Coupart",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16089": {
+      "name": "Jean Alexandre",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16090": {
+      "name": "Richard Duclos",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16091": {
+      "name": "Fulgence Bosse",
+      "skill": 7,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16092": {
+      "name": "�tienne Gilbert",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16093": {
+      "name": "S�bastien Laux",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16094": {
+      "name": "Ademar Labrecque",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16095": {
+      "name": "Jean-Denis Bonsaint",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16096": {
+      "name": "Jean-Martin Hervieux",
+      "skill": 6,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16097": {
+      "name": "Fernand Lauzier",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16098": {
+      "name": "Roger Coupart",
+      "skill": 6,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16099": {
+      "name": "Jean-Marie Menard",
+      "skill": 6,
+      "force_type": "sea",
+      "trait": "blockade_runner"
+    },
+    "16100": {
+      "name": "Jean-Louis Pinneau",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16101": {
+      "name": "Fran�ois-Xavier Loiselle",
+      "skill": 6,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16102": {
+      "name": "Edm� Paquette",
+      "skill": 8,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16103": {
+      "name": "Jean-Martin Gervais",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "16104": {
+      "name": "J�r�mie Huot",
+      "skill": 2,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16105": {
+      "name": "Lucien Boisvert",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16106": {
+      "name": "Michel Barrientos",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "seawolf"
+    },
+    "16107": {
+      "name": "Jean-Antoine Bonneville",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16108": {
+      "name": "Alain Frappier",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16109": {
+      "name": "S�raphin Beaujolie",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16110": {
+      "name": "Medard Plouffe",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16111": {
+      "name": "L�on Dionne",
+      "skill": 5,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16112": {
+      "name": "�tienne Leduc",
+      "skill": 4,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "16113": {
+      "name": "Florimond Trottier",
+      "skill": 1,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16114": {
+      "name": "Pierre-Simon Marleau",
+      "skill": 3,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "16115": {
+      "name": "Jean-Louis Chevrette",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "16116": {
+      "name": "Jean-Martin Theberge",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "16117": {
+      "name": "Guy Talon",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "16118": {
+      "name": "Pascal Bosse",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "16119": {
+      "name": "Andr�-Marie Cyr",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "16120": {
+      "name": "Richard Bazin",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "16121": {
+      "name": "Matthieu Lagace",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "16122": {
+      "name": "Alexandre Michaud",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "16123": {
+      "name": "Paul-Antoine Benoit",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "16124": {
+      "name": "No�l Rivard",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "16125": {
+      "name": "Albertet Gauvin",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "16126": {
+      "name": "Alphonse Joseph Racine",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "16127": {
+      "name": "Francis Bourgeois",
+      "skill": 9,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "16128": {
+      "name": "Fulbert Frappier",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "16129": {
+      "name": "Jean-Fran�ois Artois",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "16130": {
+      "name": "Fabien Bouvier",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "night_flyer"
+    },
+    "16131": {
+      "name": "Jean Verreau",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "16132": {
+      "name": "Gerbaud Lauzier",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "16133": {
+      "name": "Aubin Desruisseaux",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "16134": {
+      "name": "Abbon Trottier",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "16135": {
+      "name": "Andr�-Marie Audet",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "16136": {
+      "name": "Jean-Louis Sevier",
+      "skill": 1,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "16137": {
+      "name": "Jean-Baptiste Tardif",
+      "skill": 2,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "16138": {
+      "name": "Antoine LaCaille",
+      "skill": 8,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "16139": {
+      "name": "Yannick Mireault",
+      "skill": 6,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "16140": {
+      "name": "Gr�goire Quessy",
+      "skill": 6,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "16141": {
+      "name": "Jean-Baptiste Mainville",
+      "skill": 3,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "16142": {
+      "name": "Maurille Bonneville",
+      "skill": 5,
+      "force_type": "air",
+      "trait": "fleet_destroyer"
+    },
+    "16143": {
+      "name": "Fran�ois-Xavier Berube",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "16144": {
+      "name": "Jean-Ren� Menard",
+      "skill": 4,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "16145": {
+      "name": "Gerbaud Compagnon",
+      "skill": 7,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    }
+  }
+}

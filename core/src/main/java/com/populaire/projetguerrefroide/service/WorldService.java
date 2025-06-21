@@ -14,7 +14,7 @@ import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.economy.building.Building;
 import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
 import com.populaire.projetguerrefroide.economy.building.SpecialBuilding;
-import com.populaire.projetguerrefroide.entity.DevelopementBuildingLevel;
+import com.populaire.projetguerrefroide.economy.DevelopementBuildingLevel;
 import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.util.BuildingUtils;

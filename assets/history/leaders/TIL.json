@@ -1,0 +1,791 @@
+{
+  "country": "TIL",
+  "leaders": {
+    "45301": {
+      "name": "Hayam-wuruk Parameswara",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45302": {
+      "name": "Wibawa Joandi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45303": {
+      "name": "Nugi Wahyu",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45304": {
+      "name": "Ismaya Kabul",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45305": {
+      "name": "Dharmawangsa Umar",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45306": {
+      "name": "Perak Jakub",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45307": {
+      "name": "Jatawaman Affandra",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45308": {
+      "name": "Paul Kali",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45309": {
+      "name": "Yuda Paul",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45310": {
+      "name": "Kartanegra Fendy",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "trickster"
+    },
+    "45311": {
+      "name": "Imam Dumadi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45312": {
+      "name": "Rahmad Jaya",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "45313": {
+      "name": "Tri Acawarman",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "45314": {
+      "name": "Batara Hamengku-buwana",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45315": {
+      "name": "Mangoenkoesomo Adi putra wijaya",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45316": {
+      "name": "Galang Rama-gamheng",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45317": {
+      "name": "Eddi Bagus",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45318": {
+      "name": "Jatawaman Gathot",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45319": {
+      "name": "Untung Chakakirti",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45320": {
+      "name": "Kabul Acawarman",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45321": {
+      "name": "Karno Santoso",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45322": {
+      "name": "Perwira Pangeran-puger",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45323": {
+      "name": "Parameswara Sartoro",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45324": {
+      "name": "Waluyo Lemah",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "45325": {
+      "name": "Kers Tjipto",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45326": {
+      "name": "Hatta Widi",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45327": {
+      "name": "Wiji Hamzah",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45328": {
+      "name": "Widi Topan",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45329": {
+      "name": "Cahyo Pangeran-puger",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45330": {
+      "name": "Wibawa Lesmana",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45331": {
+      "name": "Wijaya Gathot",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "45332": {
+      "name": "Marjohan Catur",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "defensive_doctrine"
+    },
+    "45333": {
+      "name": "Rachmad Tri",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "45334": {
+      "name": "Satya Daksa",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45335": {
+      "name": "Tohjaya Affandra",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45336": {
+      "name": "Ade Matulesia",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45337": {
+      "name": "Widodo Gathot",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45338": {
+      "name": "Langgeng Wibawa",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "commando"
+    },
+    "45339": {
+      "name": "Jaka Jaka",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45340": {
+      "name": "Santoso Gesang",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45341": {
+      "name": "Lemah Lesmana",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45342": {
+      "name": "Hiawang Tohjaya",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45343": {
+      "name": "Nugi Tri",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "logistics_wizard"
+    },
+    "45344": {
+      "name": "Geni Daksa",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45345": {
+      "name": "Matulesia Galang",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45346": {
+      "name": "Satri Gesang",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45347": {
+      "name": "Garuda Kali",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45348": {
+      "name": "Kartanegara Chakakirti",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45349": {
+      "name": "Lemah Cahyo",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45350": {
+      "name": "Topan Topan",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45351": {
+      "name": "Paku Jaya",
+      "skill": 0,
+      "force_type": "land",
+      "trait": "common"
+    },
+    "45352": {
+      "name": "Jaka Hayam-wuruk",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45353": {
+      "name": "Ramelan Ahmed",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "45354": {
+      "name": "Parameswara Kersan",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "45355": {
+      "name": "Sartoro Eddi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45356": {
+      "name": "Agus Gesang",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45357": {
+      "name": "Tan-malaka Nugi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45358": {
+      "name": "Nanggroe Dewantara",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45359": {
+      "name": "Chakakirti Unggul",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "45360": {
+      "name": "Leo Baskoro",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45361": {
+      "name": "Jakub Dennys",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "spotter"
+    },
+    "45362": {
+      "name": "Leo Hulanapo",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45363": {
+      "name": "Mauliwarmadewa Gita",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45364": {
+      "name": "Ken-arok Glison",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45365": {
+      "name": "Jarot Widi",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45366": {
+      "name": "Ijo Dian",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45367": {
+      "name": "Raden Jerriz",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45368": {
+      "name": "Bagaskoro Tirto",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45369": {
+      "name": "Dennys Santoso",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45370": {
+      "name": "Nakula Dewantara",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45371": {
+      "name": "Perak Satriyo",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "45372": {
+      "name": "Paku Tjokroaminoto",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45373": {
+      "name": "Paku Wibowo",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45374": {
+      "name": "Cahyono Geni",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45375": {
+      "name": "Hulanapo Hayam-wuruk",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "superior_tactician"
+    },
+    "45376": {
+      "name": "Harta Kabul",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45377": {
+      "name": "Adhi Widodo",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45378": {
+      "name": "Rama-gamheng Kersan",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45379": {
+      "name": "Balihung-utunggadewa Mahisa-campaka",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45380": {
+      "name": "Bakti Mahisa-campaka",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45381": {
+      "name": "Sadewa Acawarman",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45382": {
+      "name": "Fendy Rahmad",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45383": {
+      "name": "Kersan Raden",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45384": {
+      "name": "Mangkubuni Daksa",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45385": {
+      "name": "Sadewa Garuda",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45386": {
+      "name": "Marjohan Paul",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45387": {
+      "name": "Affandra Glison",
+      "skill": 0,
+      "force_type": "sea",
+      "trait": "common"
+    },
+    "45388": {
+      "name": "Kartanegra Narotama",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "45389": {
+      "name": "Hitu Tri",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45390": {
+      "name": "Tjipto Iman",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "45391": {
+      "name": "Rachmad Kartanegara",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45392": {
+      "name": "Ferdian Perak",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "45393": {
+      "name": "Adi Ijo",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45394": {
+      "name": "Eddi Cahyo",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "45395": {
+      "name": "Ismaya Tjokroaminoto",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45396": {
+      "name": "Parameswara Cipta",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45397": {
+      "name": "Karno Adi putra wijaya",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45398": {
+      "name": "Dian Kabul",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45399": {
+      "name": "Matulesia Agus",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "45400": {
+      "name": "Wicaksono Natal",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45401": {
+      "name": "Yuda Eddi",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "45402": {
+      "name": "Adi Chahayah",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45403": {
+      "name": "Langgeng Hiawang",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45404": {
+      "name": "Gita Sampoerna",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45405": {
+      "name": "Ken-arok Lesmana",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45406": {
+      "name": "Jayakatong Untung",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45407": {
+      "name": "Maraja-kala Rajasa",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45408": {
+      "name": "Ramelan Wicaksono",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45409": {
+      "name": "Darma Jaya",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "45410": {
+      "name": "Jati Bakti",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "45411": {
+      "name": "Hiawang Candra",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45412": {
+      "name": "Gathot Candra",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45413": {
+      "name": "Panembahan-senapati Elang",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45414": {
+      "name": "Rahmawadi Mangoenkoesomo",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45415": {
+      "name": "Satri Matius",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45416": {
+      "name": "Gita Adhi",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45417": {
+      "name": "Natal Fendy",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45418": {
+      "name": "Dipanegara Waluyo",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45419": {
+      "name": "Natal Eko",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45420": {
+      "name": "Raharjo Harta",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45421": {
+      "name": "Mayusmar Mahisa-campaka",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45422": {
+      "name": "Dipanegara Eddi",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45423": {
+      "name": "Agung Sapto",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "superior_air_tactician"
+    },
+    "45424": {
+      "name": "Cahyono Gori",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45425": {
+      "name": "Santoso Tohjaya",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45426": {
+      "name": "Parameswara Topan",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45427": {
+      "name": "Ijo Fendy",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45428": {
+      "name": "Wayan Sarwono",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "tank_buster"
+    },
+    "45429": {
+      "name": "Widi Lemah",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "carpet_bomber"
+    },
+    "45430": {
+      "name": "Chandrabhanu Tan-malaka",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    },
+    "45431": {
+      "name": "Basuki Jaya",
+      "skill": 0,
+      "force_type": "air",
+      "trait": "common"
+    }
+  }
+}

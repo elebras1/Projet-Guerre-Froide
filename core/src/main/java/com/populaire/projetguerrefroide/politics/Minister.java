@@ -1,6 +1,6 @@
 package com.populaire.projetguerrefroide.politics;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Minister {
     private final String name;
@@ -8,10 +8,10 @@ public class Minister {
     private final String imageNameFile;
     private final float loyalty;
     private final MinisterType type;
-    private final Date startDate;
-    private final Date deathDate;
+    private final LocalDate startDate;
+    private final LocalDate deathDate;
 
-    public Minister(String name, Ideology ideology, String imageNameFile, float loyalty, MinisterType type, Date startDate, Date deathDate) {
+    public Minister(String name, Ideology ideology, String imageNameFile, float loyalty, MinisterType type, LocalDate startDate, LocalDate deathDate) {
         this.name = name;
         this.ideology = ideology;
         this.imageNameFile = imageNameFile;
@@ -41,11 +41,11 @@ public class Minister {
         return this.type;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return this.startDate;
     }
 
-    public Date getDeathDate() {
+    public LocalDate getDeathDate() {
         return this.deathDate;
     }
 
