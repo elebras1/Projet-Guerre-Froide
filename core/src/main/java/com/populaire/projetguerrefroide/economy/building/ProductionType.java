@@ -5,17 +5,17 @@ import com.populaire.projetguerrefroide.economy.population.PopulationType;
 import java.util.List;
 
 public class ProductionType {
-    private short workforce;
-    private PopulationType owner;
-    private List<Employee> employees;
+    private final int workforce;
+    private final PopulationType owner;
+    private final List<Employee> employees;
 
-    public ProductionType(short workforce, PopulationType owner, List<Employee> employees) {
+    public ProductionType(int workforce, PopulationType owner, List<Employee> employees) {
         this.workforce = workforce;
         this.owner = owner;
         this.employees = employees;
     }
 
-    public short getWorkforce() {
+    public int getWorkforce() {
         return this.workforce;
     }
 

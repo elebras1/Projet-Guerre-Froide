@@ -382,7 +382,7 @@ public class WorldDaoImpl implements WorldDao {
                 Map.Entry<String, JsonValue> entry = typesRGOs.next();
                 String typeName = entry.getKey();
                 JsonValue typeRGOValue = entry.getValue();
-                short workforce = (short) typeRGOValue.get("workforce").asLong();
+                int workforce = (int) typeRGOValue.get("workforce").asLong();
                 PopulationType owner = populationTypes.get(typeRGOValue.get("owner").get("poptype").asString());
                 List<Employee> employees = new ObjectList<>();
                 Iterator<JsonValue> employeesIterator = typeRGOValue.get("employees").arrayIterator();
