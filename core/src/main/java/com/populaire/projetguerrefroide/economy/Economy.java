@@ -10,7 +10,7 @@ import com.populaire.projetguerrefroide.map.LandProvince;
 import java.util.Map;
 
 public class Economy {
-    private final int numberProvinces = 20000; // todo change that whith the sum of land + water provinces, or max id of province
+    private final short maxProvinceId;
     private final Map<String, Good> goods;
     private final Map<String, Building> buildings;
     private final Map<String, PopulationType> populationTypes;
@@ -18,13 +18,14 @@ public class Economy {
     private final int[] resourceGoodsSize;
     private final float[] resourceGoodsProduction;
 
-    public Economy(Map<String, Good> goods, Map<String, Building> buildings, Map<String, PopulationType> populationTypes, Map<String, ProductionType> productionTypes) {
+    public Economy(short maxProvinceId, Map<String, Good> goods, Map<String, Building> buildings, Map<String, PopulationType> populationTypes, Map<String, ProductionType> productionTypes) {
+        this.maxProvinceId = maxProvinceId;
         this.goods = goods;
         this.buildings = buildings;
         this.populationTypes = populationTypes;
         this.productionTypes = productionTypes;
-        this.resourceGoodsSize = new int[this.numberProvinces];
-        this.resourceGoodsProduction = new float[this.numberProvinces];
+        this.resourceGoodsSize = new int[this.maxProvinceId];
+        this.resourceGoodsProduction = new float[this.maxProvinceId];
     }
 
     public Map<String, Good> getGoods() {

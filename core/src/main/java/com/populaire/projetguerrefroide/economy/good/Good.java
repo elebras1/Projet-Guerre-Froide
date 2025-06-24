@@ -1,11 +1,15 @@
 package com.populaire.projetguerrefroide.economy.good;
 
+import com.github.tommyettinger.ds.FloatList;
+
 import java.util.Objects;
 
 public abstract class Good {
     private final String name;
     private final float cost;
     private final int color;
+
+    private FloatList costs;
 
     public Good(String name, float cost, int color) {
         this.name = name;

@@ -84,12 +84,13 @@ public class WorldDaoImpl implements WorldDao {
         Map<String, LawGroup> lawGroups = this.readLawsJson(ideologies, baseEnactmentDaysLaw);
         Map<String, Trait> traits = this.readTraitsJson();
         Map<String, Country> countries = this.loadCountries(ministerTypes, ideologies, ministers, traits, leaders);
-        IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(15000);
-        IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(4000);
+        IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(14796, 1f);
+        IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(3388, 1f);
         Map<String, Terrain> terrains = this.readTerrainsJson();
         this.loadProvinces(countries, provincesByColor, waterProvincesByColor, governments, nationalIdeas, ideologies, goods, buildings, populationTypes, terrains, lawGroups);
+        short maxProvinceId = this.getMaxdId(provincesByColor);
         Politics politics = new Politics(ideologies, ministers, leaders, ministerTypes, governments, lawGroups, (byte) baseEnactmentDaysLaw.get());
-        Economy economy = new Economy(goods, buildings, populationTypes, productionTypes);
+        Economy economy = new Economy(maxProvinceId, goods, buildings, populationTypes, productionTypes);
 
         AtomicReference<World> worldRef = new AtomicReference<>();
         final CountDownLatch latch = new CountDownLatch(1);
@@ -122,7 +123,7 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue nationalIdeasValues = this.parseJsonFile(this.nationalIdeasJsonFile);
 
-            Map<String, Culture> cultures = new ObjectObjectMap<>();
+            Map<String, Culture> cultures = new ObjectObjectMap<>(409, 1f);
             Iterator<Map.Entry<String, JsonValue>> culturesEntryIterator = nationalIdeasValues.get("cultures").objectIterator();
             while (culturesEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> cultureEntry = culturesEntryIterator.next();
@@ -132,7 +133,7 @@ public class WorldDaoImpl implements WorldDao {
                 cultures.put(name, new Culture(name, color));
             }
 
-            Map<String, Religion> religions = new ObjectObjectMap<>();
+            Map<String, Religion> religions = new ObjectObjectMap<>(16);
             Iterator<Map.Entry<String, JsonValue>> religionsEntryIterator = nationalIdeasValues.get("religions").objectIterator();
             while (religionsEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> religionEntry = religionsEntryIterator.next();
@@ -142,7 +143,7 @@ public class WorldDaoImpl implements WorldDao {
                 religions.put(name, new Religion(name, color, null));
             }
 
-            Map<String, Identity> identities = new ObjectObjectMap<>();
+            Map<String, Identity> identities = new ObjectObjectMap<>(7);
             Iterator<Map.Entry<String, JsonValue>> identitiesEntryIterator = nationalIdeasValues.get("national_identity").objectIterator();
             while (identitiesEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> identityEntry = identitiesEntryIterator.next();
@@ -160,7 +161,7 @@ public class WorldDaoImpl implements WorldDao {
                 identities.put(name, new Identity(name, modifiers));
             }
 
-            Map<String, Attitude> attitudes = new ObjectObjectMap<>();
+            Map<String, Attitude> attitudes = new ObjectObjectMap<>(7);
             Iterator<Map.Entry<String, JsonValue>> attitudesEntryIterator = nationalIdeasValues.get("national_attitude").objectIterator();
             while (attitudesEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> attitudeEntry = attitudesEntryIterator.next();
@@ -189,7 +190,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private Map<String, Government> readGovernmentsJson() {
-        Map<String, Government> governments = new ObjectObjectMap<>();
+        Map<String, Government> governments = new ObjectObjectMap<>(10, 1f);
         try {
             JsonValue governmentsValues = this.parseJsonFile(this.governmentJsonFile);
 
@@ -228,7 +229,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private Map<String, Ideology> readIdeologiesJson() {
-        Map<String, Ideology> ideologies = new ObjectObjectMap<>();
+        Map<String, Ideology> ideologies = new ObjectObjectMap<>(9, 1f);
         try {
             JsonValue ideologiesValues = this.parseJsonFile(this.ideologiesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> ideologiesEntryIterator = ideologiesValues.objectIterator();
@@ -250,7 +251,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private Map<String, Good> readGoodsJson() {
-        Map<String, Good> goods = new ObjectObjectMap<>();
+        Map<String, Good> goods = new ObjectObjectMap<>(40, 1f);
         try {
             JsonValue goodsValues = this.parseJsonFile(this.goodsJsonFile);
             Iterator<Map.Entry<String, JsonValue>> resourceGoodsEntryIterator = goodsValues.get("resource_goods").objectIterator();
@@ -293,8 +294,8 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private Map<String, PopulationType> readPopulationTypesJson(Map<String, Good> goods) {
-        Map<String, PopulationType> populationTypes = new ObjectObjectMap<>();
-        Map<String, String> populationPaths = new ObjectObjectMap<>();
+        Map<String, PopulationType> populationTypes = new ObjectObjectMap<>(12, 1f);
+        Map<String, String> populationPaths = new ObjectObjectMap<>(12, 1f);
         try {
             JsonValue populationTypesValues = this.parseJsonFile(this.populationTypesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> populationTypesEntryIterator = populationTypesValues.objectIterator();
@@ -345,7 +346,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private Map<String, ProductionType> readProductionTypesJson(Map<String, PopulationType> populationTypes) {
-        Map<String, ProductionType> productionTypes = new ObjectObjectMap<>();
+        Map<String, ProductionType> productionTypes = new ObjectObjectMap<>(5, 1f);
         try {
             JsonValue buildingTypesJson = this.parseJsonFile(this.productionTypesJsonFile);
             Map<String, Employee> typeEmployees = new ObjectObjectMap<>();
@@ -403,7 +404,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private Map<String, Building> readBuildingsJson(Map<String, Good> goods, Map<String, ProductionType> productionTypes) {
-        Map<String, Building> buildings = new ObjectObjectMap<>();
+        Map<String, Building> buildings = new ObjectObjectMap<>(54, 1f);
         try {
             JsonValue buildingsValues = this.parseJsonFile(this.buildingsJsonFile);
             Iterator<Map.Entry<String, JsonValue>> economyBuildingEntryIterator = buildingsValues.get("economy_building").objectIterator();
@@ -535,7 +536,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private Map<String, MinisterType> readMinisterTypesJson() {
-        Map<String, MinisterType> ministerTypes = new ObjectObjectMap<>();
+        Map<String, MinisterType> ministerTypes = new ObjectObjectMap<>(26, 1f);
         try {
             JsonValue ministerTypesValues = this.parseJsonFile(this.ministerTypesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> ministerTypesEntryIterator = ministerTypesValues.objectIterator();
@@ -562,7 +563,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private Map<String, Terrain> readTerrainsJson() {
-        Map<String, Terrain> terrains = new ObjectObjectMap<>();
+        Map<String, Terrain> terrains = new ObjectObjectMap<>(10, 1f);
         try {
             JsonValue terrainsValues = this.parseJsonFile(this.terrainJsonFile);
             Iterator<Map.Entry<String, JsonValue>> terrainsEntryIterator = terrainsValues.objectIterator();
@@ -589,7 +590,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private Map<String, LawGroup> readLawsJson(Map<String, Ideology> ideologies, AtomicInteger baseEnactmentDaysLaw) {
-        Map<String, LawGroup> lawGroups = new ObjectObjectOrderedMap<>();
+        Map<String, LawGroup> lawGroups = new ObjectObjectOrderedMap<>(21, 1f);
         try {
             JsonValue lawsValues = this.parseJsonFile(this.lawsJsonFile);
             baseEnactmentDaysLaw.set((int) lawsValues.get("base_enactment_days").asLong());
@@ -640,7 +641,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private Map<String, Trait> readTraitsJson() {
-        Map<String, Trait> traits = new ObjectObjectMap<>();
+        Map<String, Trait> traits = new ObjectObjectMap<>(22, 1f);
         try {
             JsonValue traitsValues = this.parseJsonFile(this.traitsJsonFile);
             Iterator<Map.Entry<String, JsonValue>> traitsEntryIterator = traitsValues.objectIterator();
@@ -672,8 +673,8 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private Map<String, Country> readCountriesJson(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Minister[] ministers) {
-        Map<String, Country> countries = new ObjectObjectMap<>();
-        Map<String, String> countriesPaths = new ObjectObjectMap<>();
+        Map<String, Country> countries = new ObjectObjectMap<>(262, 1f);
+        Map<String, String> countriesPaths = new ObjectObjectMap<>(262, 1f);
         try {
             JsonValue countriesValues = this.parseJsonFile(this.countriesJsonFiles);
             Iterator<Map.Entry<String, JsonValue>> countriesEntryIterator = countriesValues.objectIterator();
@@ -853,8 +854,8 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private IntObjectMap<Province> readProvincesJson(Map<String, Country> countries, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince, IntObjectMap<PopulationTemplate> populationTemplates, NationalIdeas nationalIdeas, Map<String, Good> goods, Map<String, Building> buildings, Map<String, PopulationType> populationTypes, Map<String, Terrain> terrains) {
-        IntObjectMap<Province> provinces = new IntObjectMap<>(15000);
-        IntObjectMap<String> provincesPaths = new IntObjectMap<>(15000);
+        IntObjectMap<Province> provinces = new IntObjectMap<>(18184, 1f);
+        IntObjectMap<String> provincesPaths = new IntObjectMap<>(18184, 1f);
         try {
             JsonValue provincesValues = this.parseJsonFile(this.provincesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> provincesEntryIterator = provincesValues.objectIterator();
@@ -1212,6 +1213,16 @@ public class WorldDaoImpl implements WorldDao {
         int blue = (int) colorValueIterator.next().asLong();
         int alpha = 255;
         return (red << 24) | (green << 16) | (blue << 8) | alpha;
+    }
+
+    private short getMaxdId(IntObjectMap<LandProvince> provinces) {
+        short maxId = 0;
+        for (Province province : provinces.values()) {
+            if (province.getId() > maxId) {
+                maxId = province.getId();
+            }
+        }
+        return maxId;
     }
 }
 
