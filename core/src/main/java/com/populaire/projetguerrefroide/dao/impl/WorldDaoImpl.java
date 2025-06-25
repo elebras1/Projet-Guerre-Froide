@@ -817,7 +817,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private void loadProvinces(Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, Ideology> ideologies, Map<String, Good> goods, Map<String, Building> buildings, Map<String, PopulationType> populationTypes,  Map<String, Terrain> terrains, Map<String, LawGroup> lawGroups) {
-        IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince = new IntObjectMap<>();
+        IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
         IntObjectMap<PopulationTemplate> populationTemplates = this.readPopulationTemplatesJson();
         IntObjectMap<Province> provinces = this.readProvincesJson(countries, regionBuildingsByProvince, populationTemplates, nationalIdeas, goods, buildings, populationTypes, terrains);
         this.readRegionJson(provinces, regionBuildingsByProvince);
@@ -854,8 +854,8 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private IntObjectMap<Province> readProvincesJson(Map<String, Country> countries, IntObjectMap<ObjectIntMap<Building>> regionBuildingsByProvince, IntObjectMap<PopulationTemplate> populationTemplates, NationalIdeas nationalIdeas, Map<String, Good> goods, Map<String, Building> buildings, Map<String, PopulationType> populationTypes, Map<String, Terrain> terrains) {
-        IntObjectMap<Province> provinces = new IntObjectMap<>(18184, 1f);
-        IntObjectMap<String> provincesPaths = new IntObjectMap<>(18184, 1f);
+        IntObjectMap<Province> provinces = new IntObjectMap<>(14796, 1f);
+        IntObjectMap<String> provincesPaths = new IntObjectMap<>(14796, 1f);
         try {
             JsonValue provincesValues = this.parseJsonFile(this.provincesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> provincesEntryIterator = provincesValues.objectIterator();
@@ -1078,7 +1078,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private void readCountriesHistoryJson(Map<String, Country> countries, IntObjectMap<Province> provinces, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, Ideology> ideologies, Map<String, LawGroup> lawGroups) {
-        ObjectObjectMap<String, String> countriesHistoryPaths = new ObjectObjectMap<>();
+        ObjectObjectMap<String, String> countriesHistoryPaths = new ObjectObjectMap<>(262, 1f);
         try {
             JsonValue countriesJson = this.parseJsonFile(this.countriesHistoryJsonFiles);
             Iterator<Map.Entry<String, JsonValue>> countriesEntryIterator = countriesJson.objectIterator();
