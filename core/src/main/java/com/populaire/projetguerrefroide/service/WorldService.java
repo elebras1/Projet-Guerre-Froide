@@ -11,10 +11,10 @@ import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.CountryDto;
 import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
-import com.populaire.projetguerrefroide.economy.building.Building;
-import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
-import com.populaire.projetguerrefroide.economy.building.SpecialBuilding;
-import com.populaire.projetguerrefroide.economy.DevelopementBuildingLevel;
+import com.populaire.projetguerrefroide.economy.building.BuildingStore;
+import com.populaire.projetguerrefroide.economy.building.EconomyBuildingStore;
+import com.populaire.projetguerrefroide.economy.building.SpecialBuildingStore;
+import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevel;
 import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
@@ -225,7 +225,7 @@ public class WorldService {
         byte radarStationLevel = 0;
         byte antiAircraftGunsLevel = 0;
         for(LandProvince province : region.getProvinces()) {
-            for(Building building : province.getBuildings().keySet()) {
+            for(BuildingStore building : province.getBuildings().keySet()) {
                 switch (building.getName()) {
                     case "naval_base" -> navalBaseLevel = (byte) province.getBuildings().get(building);
                     case "air_base" -> airBaseLevel = (byte) province.getBuildings().get(building);
@@ -252,13 +252,13 @@ public class WorldService {
     }
 
     private List<String> getColorBuildingsOfRegionOrderByLevel(Region region) {
-        List<Building> buildings = new ObjectList<>(region.getBuildings().keySet());
+        List<BuildingStore> buildings = new ObjectList<>(region.getBuildings().keySet());
 
         buildings.sort((a, b) -> Integer.compare(region.getBuildings().get(b), region.getBuildings().get(a)));
 
         List<String> colors = new ObjectList<>();
-        for (Building building : buildings) {
-            if (building instanceof EconomyBuilding) {
+        for (BuildingStore building : buildings) {
+            if (building instanceof EconomyBuildingStore) {
                 String color = BuildingUtils.getColor(building.getName());
                 if (color != null) {
                     colors.add(color);
@@ -271,8 +271,8 @@ public class WorldService {
 
     private int getNumberIndustryOfRegion(Region region) {
         int industryRegion = 0;
-        for(Building building : region.getBuildings().keySet()) {
-            if(building instanceof EconomyBuilding) {
+        for(BuildingStore building : region.getBuildings().keySet()) {
+            if(building instanceof EconomyBuildingStore) {
                 industryRegion++;
             }
         }
@@ -282,8 +282,8 @@ public class WorldService {
 
     private List<String> getSpecialBuildingNamesOfRegion(Region region) {
         List<String> specialBuildingNames = new ObjectList<>();
-        for (Building building : region.getBuildings().keySet()) {
-            if (building instanceof SpecialBuilding) {
+        for (BuildingStore building : region.getBuildings().keySet()) {
+            if (building instanceof SpecialBuildingStore) {
                 specialBuildingNames.add(building.getName());
             }
         }

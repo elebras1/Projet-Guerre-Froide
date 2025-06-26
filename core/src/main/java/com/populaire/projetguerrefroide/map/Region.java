@@ -2,14 +2,14 @@ package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.economy.building.Building;
+import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 
 import java.util.List;
 
 public class Region {
     private final String id;
     private final List<LandProvince> provinces;
-    private final ObjectIntMap<Building> buildings;
+    private final ObjectIntMap<BuildingStore> buildings;
 
     public Region(String id) {
         this.id = id;
@@ -29,17 +29,17 @@ public class Region {
         return this.provinces;
     }
 
-    public ObjectIntMap<Building> getBuildings() {
+    public ObjectIntMap<BuildingStore> getBuildings() {
         return this.buildings;
     }
 
-    public void addBuilding(Building building, int size) {
+    public void addBuilding(BuildingStore building, int size) {
         int currentSize = this.buildings.get(building);
         this.buildings.put(building, currentSize + size);
     }
 
-    public void addAllBuildings(ObjectIntMap<Building> buildings) {
-        for(ObjectIntMap.Entry<Building> entry : buildings.entrySet()) {
+    public void addAllBuildings(ObjectIntMap<BuildingStore> buildings) {
+        for(ObjectIntMap.Entry<BuildingStore> entry : buildings.entrySet()) {
             this.addBuilding(entry.key, entry.value);
         }
     }

@@ -12,7 +12,7 @@ import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.economy.Economy;
-import com.populaire.projetguerrefroide.economy.building.Building;
+import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
 import com.populaire.projetguerrefroide.entity.Terrain;
 import com.populaire.projetguerrefroide.national.Culture;
@@ -423,7 +423,7 @@ public class World implements Disposable {
                 numBuildings++;
             }
             for (LandProvince province : country.getProvinces()) {
-                for (Building building : province.getBuildings().keySet()) {
+                for (BuildingStore building : province.getBuildings().keySet()) {
                     if (building.isOnMap()) {
                         numBuildings++;
                     }
@@ -456,7 +456,7 @@ public class World implements Disposable {
             }
 
             for (LandProvince province : country.getProvinces()) {
-                for (Building building : province.getBuildings().keySet()) {
+                for (BuildingStore building : province.getBuildings().keySet()) {
                     if (!building.isOnMap()) {
                         continue;
                     }
