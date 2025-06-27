@@ -10,24 +10,24 @@ public class PopulationTypeStore {
     private final List<String> names;
     private final IntList standardDemandGoodIds;
     private final FloatList standardDemandValues;
-    private final IntList standardDemandStart;
-    private final IntList standardDemandCount;
+    private final IntList standardDemandStarts;
+    private final IntList standardDemandCounts;
     private final IntList luxuryDemandGoodIds;
     private final FloatList luxuryDemandValues;
-    private final IntList luxuryDemandStart;
-    private final IntList luxuryDemandCount;
+    private final IntList luxuryDemandStarts;
+    private final IntList luxuryDemandCounts;
 
-    public PopulationTypeStore(IntList colors, List<String> names, IntList standardDemandGoodIds, FloatList standardDemandValues, IntList standardDemandStart, IntList standardDemandCount, IntList luxuryDemandGoodIds, FloatList luxuryDemandValues, IntList luxuryDemandStart, IntList luxuryDemandCount) {
+    public PopulationTypeStore(IntList colors, List<String> names, IntList standardDemandGoodIds, FloatList standardDemandValues, IntList standardDemandStarts, IntList standardDemandCounts, IntList luxuryDemandGoodIds, FloatList luxuryDemandValues, IntList luxuryDemandStarts, IntList luxuryDemandCounts) {
         this.colors = colors;
         this.names = names;
         this.standardDemandGoodIds = standardDemandGoodIds;
         this.standardDemandValues = standardDemandValues;
-        this.standardDemandStart = standardDemandStart;
-        this.standardDemandCount = standardDemandCount;
+        this.standardDemandStarts = standardDemandStarts;
+        this.standardDemandCounts = standardDemandCounts;
         this.luxuryDemandGoodIds = luxuryDemandGoodIds;
         this.luxuryDemandValues = luxuryDemandValues;
-        this.luxuryDemandStart = luxuryDemandStart;
-        this.luxuryDemandCount = luxuryDemandCount;
+        this.luxuryDemandStarts = luxuryDemandStarts;
+        this.luxuryDemandCounts = luxuryDemandCounts;
     }
 
     public IntList getColors() {
@@ -46,12 +46,12 @@ public class PopulationTypeStore {
         return this.standardDemandValues;
     }
 
-    public IntList getStandardDemandStart() {
-        return this.standardDemandStart;
+    public IntList getStandardDemandStarts() {
+        return this.standardDemandStarts;
     }
 
-    public IntList getStandardDemandCount() {
-        return this.standardDemandCount;
+    public IntList getStandardDemandCounts() {
+        return this.standardDemandCounts;
     }
 
     public IntList getLuxuryDemandGoodIds() {
@@ -62,12 +62,12 @@ public class PopulationTypeStore {
         return this.luxuryDemandValues;
     }
 
-    public IntList getLuxuryDemandStart() {
-        return this.luxuryDemandStart;
+    public IntList getLuxuryDemandStarts() {
+        return this.luxuryDemandStarts;
     }
 
-    public IntList getLuxuryDemandCount() {
-        return this.luxuryDemandCount;
+    public IntList getLuxuryDemandCounts() {
+        return this.luxuryDemandCounts;
     }
 
     @Override
@@ -77,12 +77,12 @@ public class PopulationTypeStore {
                 ", names=" + this.names +
                 ", standardDemandGoodIds=" + this.standardDemandGoodIds +
                 ", standardDemandValues=" + this.standardDemandValues +
-                ", standardDemandStart=" + this.standardDemandStart +
-                ", standardDemandCount=" + this.standardDemandCount +
+                ", standardDemandStart=" + this.standardDemandStarts +
+                ", standardDemandCount=" + this.standardDemandCounts +
                 ", luxuryDemandGoodIds=" + this.luxuryDemandGoodIds +
                 ", luxuryDemandValues=" + this.luxuryDemandValues +
-                ", luxuryDemandStart=" + this.luxuryDemandStart +
-                ", luxuryDemandCount=" + this.luxuryDemandCount +
+                ", luxuryDemandStarts=" + this.luxuryDemandStarts +
+                ", luxuryDemandCounts=" + this.luxuryDemandCounts +
                 '}';
     }
 }

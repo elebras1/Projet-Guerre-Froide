@@ -7,12 +7,16 @@ import java.util.List;
 public class ProductionTypeStore {
     private final IntList workforces;
     private final IntList ownerIds;
-    private final List<IntList> employeeIds;
+    private final IntList employeeIds;
+    private final IntList employeeStarts;
+    private final IntList employeeCounts;
 
-    public ProductionTypeStore(IntList workforces, IntList ownerIds, List<IntList> employeeIds) {
+    public ProductionTypeStore(IntList workforces, IntList ownerIds, IntList employeeIds, IntList employeeStarts, IntList employeeCounts) {
         this.workforces = workforces;
         this.ownerIds = ownerIds;
         this.employeeIds = employeeIds;
+        this.employeeStarts = employeeStarts;
+        this.employeeCounts = employeeCounts;
     }
 
     public IntList getWorkforces() {
@@ -23,17 +27,26 @@ public class ProductionTypeStore {
         return this.ownerIds;
     }
 
-    public List<IntList> getEmployeeIds() {
+    public IntList getEmployeeIds() {
         return this.employeeIds;
     }
 
+    public IntList getEmployeeStarts() {
+        return this.employeeStarts;
+    }
+
+    public IntList getEmployeeCounts() {
+        return this.employeeCounts;
+    }
 
     @Override
     public String toString() {
-        return "ResourceProductionType{" +
-            "workforces=" + this.workforces +
-            ", ownerIds=" + this.ownerIds +
-            ", employeeIds=" + this.employeeIds +
-            '}';
+        return "ProductionTypeStore{" +
+                "workforces=" + this.workforces +
+                ", ownerIds=" + this.ownerIds +
+                ", employeeIds=" + this.employeeIds +
+                ", employeeStarts=" + this.employeeStarts +
+                ", employeeCounts=" + this.employeeCounts +
+                '}';
     }
 }

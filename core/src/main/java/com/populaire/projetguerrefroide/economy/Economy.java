@@ -2,13 +2,8 @@ package com.populaire.projetguerrefroide.economy;
 
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectIntMap;
-import com.populaire.projetguerrefroide.economy.building.BuildingStore;
-import com.populaire.projetguerrefroide.economy.building.ProductionTypeStore;
-import com.populaire.projetguerrefroide.economy.good.GoodStore;
 import com.populaire.projetguerrefroide.economy.population.PopulationTypeStore;
 import com.populaire.projetguerrefroide.map.LandProvince;
-
-import java.util.Map;
 
 public class Economy {
     private final short maxProvinceId;
