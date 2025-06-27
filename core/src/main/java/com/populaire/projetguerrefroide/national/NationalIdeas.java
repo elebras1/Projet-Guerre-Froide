@@ -1,26 +1,28 @@
 package com.populaire.projetguerrefroide.national;
 
+import com.github.tommyettinger.ds.ObjectIntMap;
+
 import java.util.Map;
 
 public class NationalIdeas {
-    private final Map<String, Culture> cultures;
-    private final Map<String, Religion> religions;
+    private final ObjectIntMap<String> cultureIds;
+    private final ObjectIntMap<String> religionIds;
     private final Map<String, Identity> identities;
     private final Map<String, Attitude> attitudes;
 
-    public NationalIdeas(Map<String, Culture> cultures, Map<String, Religion> religions, Map<String, Identity> identities, Map<String, Attitude> attitudes) {
-        this.cultures = cultures;
-        this.religions = religions;
+    public NationalIdeas(ObjectIntMap<String> cultureIds, ObjectIntMap<String> religionIds, Map<String, Identity> identities, Map<String, Attitude> attitudes) {
+        this.cultureIds = cultureIds;
+        this.religionIds = religionIds;
         this.identities = identities;
         this.attitudes = attitudes;
     }
 
-    public Map<String, Culture> getCultures() {
-        return this.cultures;
+    public ObjectIntMap<String> getCultureIds() {
+        return this.cultureIds;
     }
 
-    public Map<String, Religion> getReligions() {
-        return this.religions;
+    public ObjectIntMap<String> getReligionIds() {
+        return this.religionIds;
     }
 
     public Map<String, Identity> getIdentities() {
@@ -34,10 +36,10 @@ public class NationalIdeas {
     @Override
     public String toString() {
         return "NationalIdeas{" +
-            "cultures=" + this.cultures +
-            ", religions=" + this.religions +
-            ", identities=" + this.identities +
-            ", attitudes=" + this.attitudes +
-            '}';
+                "cultureIds=" + this.cultureIds +
+                ", religionIds=" + this.religionIds +
+                ", identities=" + this.identities +
+                ", attitudes=" + this.attitudes +
+                '}';
     }
 }

@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.economy;
 
 import com.github.tommyettinger.ds.IntObjectMap;
+import com.github.tommyettinger.ds.ObjectIntMap;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.economy.building.ProductionTypeStore;
 import com.populaire.projetguerrefroide.economy.good.GoodStore;
@@ -11,37 +12,37 @@ import java.util.Map;
 
 public class Economy {
     private final short maxProvinceId;
-    private final Map<String, GoodStore> goods;
-    private final Map<String, BuildingStore> buildings;
-    private final Map<String, PopulationTypeStore> populationTypes;
-    private final Map<String, ProductionTypeStore> productionTypes;
-    private final int[] resourceGoodsSize;
-    private final float[] resourceGoodsProduction;
+    private final ObjectIntMap<String> goodIds;
+    private final ObjectIntMap<String>  buildingIds;
+    private final ObjectIntMap<String>  populationTypeIds;
+    private final ObjectIntMap<String>  productionTypeIds;
 
-    public Economy(short maxProvinceId, Map<String, GoodStore> goods, Map<String, BuildingStore> buildings, Map<String, PopulationTypeStore> populationTypes, Map<String, ProductionTypeStore> productionTypes) {
+    public Economy(short maxProvinceId, ObjectIntMap<String>  goodIds, ObjectIntMap<String>  buildingIds, ObjectIntMap<String>  populationTypeIds, ObjectIntMap<String>  productionTypeIds) {
         this.maxProvinceId = maxProvinceId;
-        this.goods = goods;
-        this.buildings = buildings;
-        this.populationTypes = populationTypes;
-        this.productionTypes = productionTypes;
-        this.resourceGoodsSize = new int[this.maxProvinceId];
-        this.resourceGoodsProduction = new float[this.maxProvinceId];
+        this.goodIds = goodIds;
+        this.buildingIds = buildingIds;
+        this.populationTypeIds = populationTypeIds;
+        this.productionTypeIds = productionTypeIds;
     }
 
-    public Map<String, GoodStore> getGoods() {
-        return this.goods;
+    public short getMaxProvinceId() {
+        return this.maxProvinceId;
     }
 
-    public Map<String, BuildingStore> getBuildings() {
-        return this.buildings;
+    public ObjectIntMap<String> getGoodIds() {
+        return this.goodIds;
     }
 
-    public Map<String, PopulationTypeStore> getPopulationTypes() {
-        return this.populationTypes;
+    public ObjectIntMap<String> getBuildingIds() {
+        return this.buildingIds;
     }
 
-    public Map<String, ProductionTypeStore> getProductionTypes() {
-        return this.productionTypes;
+    public ObjectIntMap<String> getPopulationTypeIds() {
+        return this.populationTypeIds;
+    }
+
+    public ObjectIntMap<String> getProductionTypeIds() {
+        return this.productionTypeIds;
     }
 
     public void setResourceGoodsSize(IntObjectMap<LandProvince> provinces) {

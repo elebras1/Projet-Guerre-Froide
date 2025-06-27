@@ -10,7 +10,6 @@ import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.economy.Economy;
 import com.populaire.projetguerrefroide.economy.building.*;
 import com.populaire.projetguerrefroide.economy.good.*;
-import com.populaire.projetguerrefroide.economy.population.PopulationStore;
 import com.populaire.projetguerrefroide.economy.population.PopulationTemplateStore;
 import com.populaire.projetguerrefroide.economy.population.PopulationTypeStore;
 import com.populaire.projetguerrefroide.entity.*;
@@ -123,24 +122,24 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue nationalIdeasValues = this.parseJsonFile(this.nationalIdeasJsonFile);
 
-            Map<String, Culture> cultures = new ObjectObjectMap<>(409, 1f);
+            Map<String, CultureStore> cultures = new ObjectObjectMap<>(409, 1f);
             Iterator<Map.Entry<String, JsonValue>> culturesEntryIterator = nationalIdeasValues.get("cultures").objectIterator();
             while (culturesEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> cultureEntry = culturesEntryIterator.next();
                 String name = cultureEntry.getKey();
                 JsonValue cultureValue = cultureEntry.getValue();
                 int color = this.parseColor(cultureValue.get("color"));
-                cultures.put(name, new Culture(name, color));
+                cultures.put(name, new CultureStore(name, color));
             }
 
-            Map<String, Religion> religions = new ObjectObjectMap<>(16);
+            Map<String, ReligionStore> religions = new ObjectObjectMap<>(16);
             Iterator<Map.Entry<String, JsonValue>> religionsEntryIterator = nationalIdeasValues.get("religions").objectIterator();
             while (religionsEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> religionEntry = religionsEntryIterator.next();
                 String name = religionEntry.getKey();
                 JsonValue religionValue = religionEntry.getValue();
                 int color = this.parseColor(religionValue.get("color"));
-                religions.put(name, new Religion(name, color, null));
+                religions.put(name, new ReligionStore(name, color, null));
             }
 
             Map<String, Identity> identities = new ObjectObjectMap<>(7);
@@ -913,8 +912,8 @@ public class WorldDaoImpl implements WorldDao {
             int amountAdults = (int) (amount * populationTemplate.getAdults());
 
             ObjectIntMap<PopulationTypeStore> populations = this.parseDistribution(populationValue.get("populations"), amountAdults, populationTypes);
-            ObjectIntMap<Culture> cultures = this.parseDistribution(populationValue.get("cultures"), amountAdults, nationalIdeas.getCultures());
-            ObjectIntMap<Religion> religions = this.parseDistribution(populationValue.get("religions"), amountAdults, nationalIdeas.getReligions());
+            ObjectIntMap<CultureStore> cultures = this.parseDistribution(populationValue.get("cultures"), amountAdults, nationalIdeas.getCultures());
+            ObjectIntMap<ReligionStore> religions = this.parseDistribution(populationValue.get("religions"), amountAdults, nationalIdeas.getReligions());
 
             PopulationStore population = new PopulationStore(amountChildren, amountAdults, amountSeniors, populations, cultures, religions);
 

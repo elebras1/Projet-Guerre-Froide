@@ -15,9 +15,9 @@ import com.populaire.projetguerrefroide.economy.Economy;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
 import com.populaire.projetguerrefroide.entity.Terrain;
-import com.populaire.projetguerrefroide.national.Culture;
+import com.populaire.projetguerrefroide.national.CultureStore;
 import com.populaire.projetguerrefroide.national.NationalIdeas;
-import com.populaire.projetguerrefroide.national.Religion;
+import com.populaire.projetguerrefroide.national.ReligionStore;
 import com.populaire.projetguerrefroide.politics.Politics;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
@@ -211,8 +211,8 @@ public class World implements Disposable {
             int color = province.getColor();
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
-            Culture biggestCulture = null;
-            for(Culture culture : province.getPopulation().getCultures().keySet()) {
+            CultureStore biggestCulture = null;
+            for(CultureStore culture : province.getPopulation().getCultures().keySet()) {
                 if(biggestCulture == null || province.getPopulation().getCultures().get(culture) > province.getPopulation().getCultures().get(biggestCulture)) {
                     biggestCulture = culture;
                 }
@@ -228,8 +228,8 @@ public class World implements Disposable {
             int color = province.getColor();
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
-            Religion biggestReligion = null;
-            for(Religion religion : province.getPopulation().getReligions().keySet()) {
+            ReligionStore biggestReligion = null;
+            for(ReligionStore religion : province.getPopulation().getReligions().keySet()) {
                 if(biggestReligion == null || province.getPopulation().getReligions().get(religion) > province.getPopulation().getReligions().get(biggestReligion)) {
                     biggestReligion = religion;
                 }

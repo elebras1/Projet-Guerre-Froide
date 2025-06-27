@@ -3,9 +3,6 @@ package com.populaire.projetguerrefroide.map;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.economy.building.BuildingStore;
-import com.populaire.projetguerrefroide.economy.good.ResourceGoodStore;
-import com.populaire.projetguerrefroide.economy.population.PopulationStore;
 import com.populaire.projetguerrefroide.entity.Terrain;
 
 import java.util.*;
@@ -17,24 +14,18 @@ public class LandProvince implements Province {
     private Country countryController;
     private Region region;
     private Continent continent;
-    private PopulationStore population;
     private final Terrain terrain;
     private final List<Country> countriesCore;
-    private final ResourceGoodStore resourceGood;
-    private final ObjectIntMap<BuildingStore> buildings;
     private final List<Province> adjacentProvinces;
     private final ObjectIntMap<String> positions;
     private final IntSet borderPixels;
 
-    public LandProvince(short id, Country countryOwner, Country countryController, PopulationStore population, Terrain terrain, List<Country> countriesCore, ResourceGoodStore resourceGood, ObjectIntMap<BuildingStore> buildings) {
+    public LandProvince(short id, Country countryOwner, Country countryController, Terrain terrain, List<Country> countriesCore) {
         this.id = id;
         this.countryOwner = countryOwner;
         this.countryController = countryController;
-        this.population = population;
         this.terrain = terrain;
-        this.resourceGood = resourceGood;
         this.countriesCore = countriesCore;
-        this.buildings = buildings;
         this.adjacentProvinces = new ObjectList<>();
         this.positions = new ObjectIntMap<>();
         this.borderPixels = new IntSet();
@@ -119,14 +110,6 @@ public class LandProvince implements Province {
         return this.continent;
     }
 
-    public PopulationStore getPopulation() {
-        return this.population;
-    }
-
-    public void setPopulation(PopulationStore population) {
-        this.population = population;
-    }
-
     public List<Country> getCountriesCore() {
         return this.countriesCore;
     }
@@ -137,22 +120,6 @@ public class LandProvince implements Province {
 
     public void removeCountryCore(Country country) {
         this.countriesCore.remove(country);
-    }
-
-    public ResourceGoodStore getResourceGood() {
-        return this.resourceGood;
-    }
-
-    public ObjectIntMap<BuildingStore> getBuildings() {
-        return this.buildings;
-    }
-
-    public void addBuilding(BuildingStore building) {
-        this.buildings.put(building, 1);
-    }
-
-    public void removeBuilding(BuildingStore building) {
-        this.buildings.remove(building);
     }
 
     @Override
@@ -179,7 +146,6 @@ public class LandProvince implements Province {
                 ", number_adjacentProvinces=" + this.adjacentProvinces.size() +
                 ", region=" + this.region.getId() +
                 ", continent=" + this.continent.getName() +
-                ", population=" + this.population +
                 ", terrain=" + this.terrain.getName() +
                 '}';
     }
