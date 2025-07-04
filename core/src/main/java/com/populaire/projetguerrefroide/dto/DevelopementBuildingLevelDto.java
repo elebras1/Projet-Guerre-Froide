@@ -1,12 +1,12 @@
 package com.populaire.projetguerrefroide.dto;
 
-public class DevelopementBuildingLevel {
+public class DevelopementBuildingLevelDto {
     private final byte navalBaseLevel;
     private final byte airBaseLevel;
     private final byte radarStationLevel;
     private final byte antiAircraftGunsLevel;
 
-    public DevelopementBuildingLevel(byte navalBaseLevel, byte airBaseLevel, byte radarStationLevel, byte antiAircraftGunsLevel) {
+    public DevelopementBuildingLevelDto(byte navalBaseLevel, byte airBaseLevel, byte radarStationLevel, byte antiAircraftGunsLevel) {
         this.navalBaseLevel = navalBaseLevel;
         this.airBaseLevel = airBaseLevel;
         this.radarStationLevel = radarStationLevel;

@@ -15,7 +15,7 @@ import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.economy.building.BuildingType;
 import com.populaire.projetguerrefroide.map.RegionStore;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
-import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevel;
+import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevelDto;
 import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
@@ -141,7 +141,7 @@ public class WorldService {
         String flagImage = selectedProvince.getCountryOwner().getId();
         List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
         List<String> provinceIdsRegion = this.getProvinceIdsOrderByPopulation(region);
-        DevelopementBuildingLevel developmentBuildingLevel = this.getDevelopementBuildingLevel(region);
+        DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(region);
         List<String> specialBuildings = this.getSpecialBuildingNames(region);
         List<String> colorsBuilding = this.getColorBuildingsOrderByLevel(region);
 
@@ -235,7 +235,7 @@ public class WorldService {
         return countriesCore;
     }
 
-    private DevelopementBuildingLevel getDevelopementBuildingLevel(Region region) {
+    private DevelopementBuildingLevelDto getDevelopementBuildingLevel(Region region) {
         byte navalBaseLevel = 0;
         byte airBaseLevel = 0;
         byte radarStationLevel = 0;
@@ -262,7 +262,7 @@ public class WorldService {
             }
         }
 
-        return new DevelopementBuildingLevel(navalBaseLevel, airBaseLevel, radarStationLevel, antiAircraftGunsLevel);
+        return new DevelopementBuildingLevelDto(navalBaseLevel, airBaseLevel, radarStationLevel, antiAircraftGunsLevel);
     }
 
     private List<String> getProvinceIdsOrderByPopulation(Region region) {
