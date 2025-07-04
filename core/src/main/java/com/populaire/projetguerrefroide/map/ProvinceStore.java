@@ -1,9 +1,10 @@
-package com.populaire.projetguerrefroide.economy;
+package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntList;
 
 public class ProvinceStore {
+    private final IntList colors;
     private final IntList resourceGoodIds;
     private final IntList buildingIds;
     private final IntList buildingValues;
@@ -13,21 +14,22 @@ public class ProvinceStore {
     private final IntList amountAdults;
     private final IntList amountSeniors;
     private final IntList populationTypeIds;
-    private final FloatList populationTypeValues;
+    private final IntList populationTypeValues;
     private final IntList populationTypeStarts;
     private final IntList populationTypeCounts;
     private final IntList cultureIds;
-    private final FloatList cultureValues;
+    private final IntList cultureValues;
     private final IntList cultureStarts;
     private final IntList cultureCounts;
     private final IntList religionIds;
-    private final FloatList religionValues;
+    private final IntList religionValues;
     private final IntList religionStarts;
     private final IntList religionCounts;
     private final IntList resourceGoodsSize;
     private final FloatList resourceGoodsProduction;
 
-    public ProvinceStore(IntList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, IntList populationTypeIds, FloatList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, IntList cultureIds, FloatList cultureValues, IntList cultureStarts, IntList cultureCounts, IntList religionIds, FloatList religionValues, IntList religionStarts, IntList religionCounts) {
+    public ProvinceStore(IntList colors, IntList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, IntList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, IntList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, IntList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
+        this.colors = colors;
         this.resourceGoodIds = resourceGoodIds;
         this.buildingIds = buildingIds;
         this.buildingValues = buildingValues;
@@ -50,6 +52,10 @@ public class ProvinceStore {
         this.religionCounts = religionCounts;
         this.resourceGoodsSize = new IntList(resourceGoodIds.size());
         this.resourceGoodsProduction = new FloatList(resourceGoodIds.size());
+    }
+
+    public IntList getColors() {
+        return this.colors;
     }
 
     public IntList getResourceGoodIds() {
@@ -88,7 +94,7 @@ public class ProvinceStore {
         return this.populationTypeIds;
     }
 
-    public FloatList getPopulationTypeValues() {
+    public IntList getPopulationTypeValues() {
         return this.populationTypeValues;
     }
 
@@ -104,7 +110,7 @@ public class ProvinceStore {
         return this.cultureIds;
     }
 
-    public FloatList getCultureValues() {
+    public IntList getCultureValues() {
         return this.cultureValues;
     }
 
@@ -120,7 +126,7 @@ public class ProvinceStore {
         return this.religionIds;
     }
 
-    public FloatList getReligionValues() {
+    public IntList getReligionValues() {
         return this.religionValues;
     }
 
@@ -140,9 +146,17 @@ public class ProvinceStore {
         return this.resourceGoodsProduction;
     }
 
+    public int getPopulationAmount(int provinceId) {
+        int children = this.amountChildren.get(provinceId);
+        int adults = this.amountAdults.get(provinceId);
+        int seniors = this.amountSeniors.get(provinceId);
+        return children + adults + seniors;
+    }
+
     @Override
     public String toString() {
         return "ProvinceStore{" +
+                "colors=" + this.colors +
                 "resourceGoodIds=" + this.resourceGoodIds +
                 ", buildingIds=" + this.buildingIds +
                 ", buildingValues=" + this.buildingValues +

@@ -8,7 +8,6 @@ import com.populaire.projetguerrefroide.entity.Terrain;
 import java.util.*;
 
 public class LandProvince implements Province {
-    private int color;
     private short id;
     private Country countryOwner;
     private Country countryController;
@@ -29,14 +28,6 @@ public class LandProvince implements Province {
         this.adjacentProvinces = new ObjectList<>();
         this.positions = new ObjectIntMap<>();
         this.borderPixels = new IntSet();
-    }
-
-    public int getColor() {
-        return this.color;
-    }
-
-    public void setColor(int color) {
-        this.color = color;
     }
 
     public Country getCountryOwner() {
@@ -139,7 +130,6 @@ public class LandProvince implements Province {
     public String toString() {
         return "Province{" +
                 "id=" + this.id +
-                ", color='" + this.color + '\'' +
                 ", number_border_pixels=" + this.borderPixels.size() +
                 ", owner=" + this.countryOwner.getName() +
                 ", controller=" + this.countryController.getName() +

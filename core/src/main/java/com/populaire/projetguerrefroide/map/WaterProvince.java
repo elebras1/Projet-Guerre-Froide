@@ -8,23 +8,12 @@ import java.util.List;
 public class WaterProvince implements Province{
     private final List<Province> adjacentProvinces;
     private final ObjectIntMap<String> positions;
-    private int color;
     private short id;
 
     public WaterProvince(short id) {
         this.id = id;
         this.adjacentProvinces = new ObjectList<>();
         this.positions = new ObjectIntMap<>();
-    }
-
-    @Override
-    public int getColor() {
-        return this.color;
-    }
-
-    @Override
-    public void setColor(int color) {
-        this.color = color;
     }
 
     @Override

@@ -5,16 +5,28 @@ import com.github.tommyettinger.ds.ObjectIntMap;
 import java.util.Map;
 
 public class NationalIdeas {
+    private final CultureStore cultureStore;
+    private final ReligionStore religionStore;
     private final ObjectIntMap<String> cultureIds;
     private final ObjectIntMap<String> religionIds;
     private final Map<String, Identity> identities;
     private final Map<String, Attitude> attitudes;
 
-    public NationalIdeas(ObjectIntMap<String> cultureIds, ObjectIntMap<String> religionIds, Map<String, Identity> identities, Map<String, Attitude> attitudes) {
+    public NationalIdeas(CultureStore cultureStore, ReligionStore religionStore, ObjectIntMap<String> cultureIds, ObjectIntMap<String> religionIds, Map<String, Identity> identities, Map<String, Attitude> attitudes) {
+        this.cultureStore = cultureStore;
+        this.religionStore = religionStore;
         this.cultureIds = cultureIds;
         this.religionIds = religionIds;
         this.identities = identities;
         this.attitudes = attitudes;
+    }
+
+    public CultureStore getCultureStore() {
+        return this.cultureStore;
+    }
+
+    public ReligionStore getReligionStore() {
+        return this.religionStore;
     }
 
     public ObjectIntMap<String> getCultureIds() {
@@ -36,6 +48,8 @@ public class NationalIdeas {
     @Override
     public String toString() {
         return "NationalIdeas{" +
+                "cultureStore=" + this.cultureStore +
+                ", religionStore=" + this.religionStore +
                 "cultureIds=" + this.cultureIds +
                 ", religionIds=" + this.religionIds +
                 ", identities=" + this.identities +

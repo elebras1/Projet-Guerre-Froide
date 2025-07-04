@@ -20,7 +20,7 @@ public class ReligionStore {
         return this.names;
     }
 
-    public IntList getColor() {
+    public IntList getColors() {
         return this.colors;
     }
 
