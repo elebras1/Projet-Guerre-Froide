@@ -56,11 +56,11 @@ public class ProvinceStoreBuilder {
         this.religionCounts = new IntList(this.defaultCapacity);
     }
 
-    private int getDefaultCapacity() {
+    public int getDefaultCapacity() {
         return this.defaultCapacity;
     }
 
-    private int getIndex() {
+    public int getIndex() {
         return this.index;
     }
 

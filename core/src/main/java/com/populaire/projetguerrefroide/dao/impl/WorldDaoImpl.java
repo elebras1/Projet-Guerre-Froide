@@ -94,7 +94,9 @@ public class WorldDaoImpl implements WorldDao {
         IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(14796, 1f);
         IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(3388, 1f);
         Map<String, Terrain> terrains = this.readTerrainsJson();
-        this.loadProvinces(countries, provincesByColor, waterProvincesByColor, governments, nationalIdeas, ideologies, goodIds, buildingIds, populationTypeIds, terrains, lawGroups);
+        RegionStoreBuilder regionStoreBuilder = new RegionStoreBuilder();
+        ProvinceStore provinceStore = this.loadProvinces(regionStoreBuilder, countries, provincesByColor, waterProvincesByColor, governments, nationalIdeas, ideologies, goodIds, buildingIds, populationTypeIds, terrains, lawGroups);
+        RegionStore regionStore = regionStoreBuilder.build();
         short maxProvinceId = this.getMaxdId(provincesByColor);
         Politics politics = new Politics(ideologies, ministers, leaders, ministerTypes, governments, lawGroups, (byte) baseEnactmentDaysLaw.get());
         Economy economy = new Economy(maxProvinceId, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, goodIds, buildingIds, populationTypeIds, productionTypeIds, employeeIds);
@@ -103,7 +105,7 @@ public class WorldDaoImpl implements WorldDao {
         final CountDownLatch latch = new CountDownLatch(1);
 
         Gdx.app.postRunnable(() -> {
-            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, economy, politics, nationalIdeas, terrains, gameContext));
+            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, economy, politics, nationalIdeas, terrains, gameContext));
             latch.countDown();
         });
 
@@ -840,18 +842,21 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void loadProvinces(Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, Ideology> ideologies, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains, Map<String, LawGroup> lawGroups) {
+    private ProvinceStore loadProvinces(RegionStoreBuilder regionStoreBuilder, Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, Ideology> ideologies, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains, Map<String, LawGroup> lawGroups) {
         IntObjectMap<IntIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
         IntIntMap populationTemplateIds = new IntIntMap(396, 1f);
         PopulationTemplateStore populationTemplateStore = this.readPopulationTemplatesJson(populationTemplateIds);
-        IntObjectMap<Province> provinces = this.readProvincesJson(countries, regionBuildingsByProvince, populationTemplateStore, populationTemplateIds, nationalIdeas, goodIds, buildingIds, populationTypeIds, terrains);
-        this.readRegionJson(provinces, regionBuildingsByProvince);
-        this.readDefinitionCsv(provinces, provincesByColor, waterProvincesByColor);
+        IntObjectMap<Province> provinces = new IntObjectMap<>(14796, 1f);
+        IntIntMap provinceIds = new IntIntMap();
+        ProvinceStore provinceStore = this.readProvincesJson(provinces, provinceIds, countries, regionBuildingsByProvince, populationTemplateStore, populationTemplateIds, nationalIdeas, goodIds, buildingIds, populationTypeIds, terrains);
+        this.readRegionJson(provinces, regionBuildingsByProvince, regionStoreBuilder);
+        this.readDefinitionCsv(provinceStore, provinces, provinceIds, provincesByColor, waterProvincesByColor);
         this.readProvinceBitmap(provincesByColor);
         this.readCountriesHistoryJson(countries, provinces, governments, nationalIdeas, ideologies, lawGroups);
         this.readContinentJsonFile(provinces);
         this.readAdjenciesJson(provinces);
         this.readPositionsJson(provinces);
+        return provinceStore;
     }
 
     private PopulationTemplateStore readPopulationTemplatesJson(IntIntMap populationTemplateIds) {
@@ -879,10 +884,9 @@ public class WorldDaoImpl implements WorldDao {
         return builder.build();
     }
 
-    private IntObjectMap<Province> readProvincesJson(Map<String, Country> countries, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, IntIntMap populationTemplateIds, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains) {
-        IntObjectMap<Province> provinces = new IntObjectMap<>(14796, 1f);
-        IntObjectMap<String> provincesPaths = new IntObjectMap<>(14796, 1f);
+    private ProvinceStore readProvincesJson(IntObjectMap<Province> provinces, IntIntMap provinceIds, Map<String, Country> countries, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, IntIntMap populationTemplateIds, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains) {
         ProvinceStoreBuilder builder = new ProvinceStoreBuilder();
+        IntObjectMap<String> provincesPaths = new IntObjectMap<>(builder.getDefaultCapacity(), 1f);
         try {
             JsonValue provincesValues = this.parseJsonFile(this.provincesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> provincesEntryIterator = provincesValues.objectIterator();
@@ -894,7 +898,7 @@ public class WorldDaoImpl implements WorldDao {
             for (IntObjectMap.Entry<String> entry : provincesPaths.entrySet()) {
                 short provinceId = (short) entry.getKey();
                 String provincePath = entry.getValue();
-                Province province = this.readProvinceJson(countries, provincePath, provinceId, regionBuildingsByProvince, populationTemplateStore, populationTemplateIds, nationalIdeas, goodIds, buildingIds, populationTypeIds, terrains, builder);
+                Province province = this.readProvinceJson(provinceIds, countries, provincePath, provinceId, regionBuildingsByProvince, populationTemplateStore, populationTemplateIds, nationalIdeas, goodIds, buildingIds, populationTypeIds, terrains, builder);
                 provinces.put(provinceId, province);
             }
         } catch (IOException ioException) {
@@ -903,10 +907,10 @@ public class WorldDaoImpl implements WorldDao {
             exception.printStackTrace();
         }
 
-        return provinces;
+        return builder.build();
     }
 
-    private LandProvince readProvinceJson(Map<String, Country> countries, String provincePath, short provinceId, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, IntIntMap populationTemplateIds, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains, ProvinceStoreBuilder builder) {
+    private LandProvince readProvinceJson(IntIntMap provinceIds, Map<String, Country> countries, String provincePath, short provinceId, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, IntIntMap populationTemplateIds, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains, ProvinceStoreBuilder builder) {
         try {
             JsonValue provinceValues = this.parseJsonFile(provincePath);
 
@@ -939,6 +943,7 @@ public class WorldDaoImpl implements WorldDao {
             int amountSeniors = (int) (amount * populationTemplateStore.getSeniors().get(populationTemplateId));
             int amountAdults = (int) (amount * populationTemplateStore.getAdults().get(populationTemplateId));
             builder.addProvince(provinceId).addAmountPopulation(amountChildren, amountSeniors, amountAdults);
+            int provinceIndex = builder.getIndex();
 
             this.parseDistribution(populationValue.get("populations"), amountAdults, populationTypeIds, builder, "population");
             this.parseDistribution(populationValue.get("cultures"), amountAdults, nationalIdeas.getCultureIds(), builder, "culture");
@@ -955,7 +960,7 @@ public class WorldDaoImpl implements WorldDao {
                     buildingIdsRegion.put(buildingIds.get(buildingName), size);
 
                 }
-                regionBuildingsByProvince.put(provinceId, buildingIdsRegion);
+                regionBuildingsByProvince.put(provinceIndex, buildingIdsRegion);
             }
 
             int resourceGoodId = -1;
@@ -977,6 +982,7 @@ public class WorldDaoImpl implements WorldDao {
                 }
             }
 
+            provinceIds.put(builder.getIndex(), provinceIndex);
             LandProvince province = new LandProvince(provinceId, countryOwner, countryController, provinceTerrain, countriesCore);
             countryOwner.addProvince(province);
             return province;
@@ -1014,14 +1020,15 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readRegionJson(IntObjectMap<Province> provinces, IntObjectMap<IntIntMap> regionBuildingsByProvince) {
+    private RegionStore readRegionJson(IntObjectMap<Province> provinces, IntObjectMap<IntIntMap> regionBuildingsByProvince, RegionStoreBuilder regionStoreBuilder) {
         try {
-            AtomicInteger total = new AtomicInteger();
             JsonValue regionValue = this.parseJsonFile(this.regionJsonFiles);
             Iterator<Map.Entry<String, JsonValue>> regionEntryIterator = regionValue.objectIterator();
             while (regionEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = regionEntryIterator.next();
-                Region region = new Region(entry.getKey());
+                String regionId = entry.getKey();
+                Region region = new Region(regionId);
+                regionStoreBuilder.addRegion(regionId);
                 Iterator<JsonValue> regionIterator = entry.getValue().arrayIterator();
                 while (regionIterator.hasNext()) {
                     short provinceId = (short) regionIterator.next().asLong();
@@ -1032,15 +1039,16 @@ public class WorldDaoImpl implements WorldDao {
                         region.addProvince(province);
                         IntIntMap regionBuildingIds = regionBuildingsByProvince.get(province.getId());
                         if(regionBuildingIds != null) {
-                            province.getRegion().addAllBuildings(regionBuildingIds);
+                            for(IntIntMap.Entry buildingEntry : regionBuildingIds) {
+                                int buildingId = buildingEntry.key;
+                                int size = buildingEntry.value;
+                                regionStoreBuilder.addBuilding(buildingId, size);
+                            }
                         }
                     } else {
                         WaterProvince waterProvince = new WaterProvince(provinceId);
                         provinces.put(provinceId, waterProvince);
                     }
-                }
-                if(!region.getBuildings().isEmpty()) {
-                    total.set(total.get() + 1);
                 }
             }
         } catch (IOException ioException) {
@@ -1048,9 +1056,11 @@ public class WorldDaoImpl implements WorldDao {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+
+        return regionStoreBuilder.build();
     }
 
-    private void readDefinitionCsv(IntObjectMap<Province> provinces, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor) {
+    private void readDefinitionCsv(ProvinceStore provinceStore, IntObjectMap<Province> provinces, IntIntMap provinceIds, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor) {
         try (BufferedReader bufferedReader = this.parseCsvFile(this.definitionCsvFile)) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
@@ -1064,7 +1074,8 @@ public class WorldDaoImpl implements WorldDao {
                     int alpha = 255;
 
                     int color =  (red << 24) | (green << 16) | (blue << 8) | alpha;
-                    province.setColor(color);
+                    int provinceIndex = provinceIds.get(provinceId);
+                    provinceStore.getColors().set(provinceIndex, color);
                     if(province instanceof LandProvince landProvince) {
                         provincesByColor.put(color, landProvince);
                     } else if(province instanceof WaterProvince waterProvince) {
