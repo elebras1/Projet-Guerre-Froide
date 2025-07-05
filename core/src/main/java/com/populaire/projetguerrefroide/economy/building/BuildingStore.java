@@ -7,7 +7,6 @@ public class BuildingStore {
     private final List<String> names;
     private final IntList times;
     private final ByteList types;
-    private final IntList onMapFlags;
     private final IntList goodsCostGoodIds;
     private final FloatList goodsCostValues;
     private final IntList goodsCostStarts;
@@ -26,15 +25,13 @@ public class BuildingStore {
     private final FloatList outputGoodValues;
     private final IntList outputGoodStarts;
     private final IntList outputGoodCounts;
-    private final IntList costsDev;
+    private final IntList costs;
     private final BooleanList onMap;
-    private final IntList costsSpecial;
 
-    private BuildingStore(List<String> names, IntList times, ByteList types, IntList onMapFlags, IntList goodsCostGoodIds, FloatList goodsCostValues, IntList goodsCostStarts, IntList goodsCostCounts, ByteList maxLevels, IntList modifierIds, IntList modifierStart, IntList modifierCount, IntList baseTypeIds, IntList artisansTypeIds, IntList inputGoodIds, FloatList inputGoodValues, IntList inputGoodStarts, IntList inputGoodCounts, IntList outputGoodIds, FloatList outputGoodValues, IntList outputGoodStarts, IntList outputGoodCounts, IntList costsDev, BooleanList onMap, IntList costsSpecial) {
+    public BuildingStore(List<String> names, IntList times, ByteList types, IntList goodsCostGoodIds, FloatList goodsCostValues, IntList goodsCostStarts, IntList goodsCostCounts, ByteList maxLevels, IntList modifierIds, IntList modifierStart, IntList modifierCount, IntList baseTypeIds, IntList artisansTypeIds, IntList inputGoodIds, FloatList inputGoodValues, IntList inputGoodStarts, IntList inputGoodCounts, IntList outputGoodIds, FloatList outputGoodValues, IntList outputGoodStarts, IntList outputGoodCounts, IntList costs, BooleanList onMap) {
         this.names = names;
         this.times = times;
         this.types = types;
-        this.onMapFlags = onMapFlags;
         this.goodsCostGoodIds = goodsCostGoodIds;
         this.goodsCostValues = goodsCostValues;
         this.goodsCostStarts = goodsCostStarts;
@@ -53,9 +50,8 @@ public class BuildingStore {
         this.outputGoodValues = outputGoodValues;
         this.outputGoodStarts = outputGoodStarts;
         this.outputGoodCounts = outputGoodCounts;
-        this.costsDev = costsDev;
+        this.costs = costs;
         this.onMap = onMap;
-        this.costsSpecial = costsSpecial;
     }
 
     public List<String> getNames() {
@@ -68,10 +64,6 @@ public class BuildingStore {
 
     public ByteList getTypes() {
         return this.types;
-    }
-
-    public IntList getOnMapFlags() {
-        return this.onMapFlags;
     }
 
     public IntList getGoodsCostGoodIds() {
@@ -146,16 +138,12 @@ public class BuildingStore {
         return this.outputGoodCounts;
     }
 
-    public IntList getCostsDev() {
-        return this.costsDev;
+    public IntList getCosts() {
+        return this.costs;
     }
 
     public BooleanList getOnMap() {
         return this.onMap;
-    }
-
-    public IntList getCostsSpecial() {
-        return this.costsSpecial;
     }
 
     @Override
@@ -164,7 +152,6 @@ public class BuildingStore {
                 "names=" + this.names +
                 ", times=" + this.times +
                 ", types=" + this.types +
-                ", onMapFlags=" + this.onMapFlags +
                 ", goodsCostGoodIds=" + this.goodsCostGoodIds +
                 ", goodsCostValues=" + this.goodsCostValues +
                 ", goodsCostStarts=" + this.goodsCostStarts +
@@ -183,9 +170,8 @@ public class BuildingStore {
                 ", outputGoodValues=" + this.outputGoodValues +
                 ", outputGoodStarts=" + this.outputGoodStarts +
                 ", outputGoodCounts=" + this.outputGoodCounts +
-                ", costsDev=" + this.costsDev +
+                ", costsDev=" + this.costs +
                 ", onMap=" + this.onMap +
-                ", costsSpecial=" + this.costsSpecial +
                 '}';
     }
 }

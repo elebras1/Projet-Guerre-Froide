@@ -8,12 +8,16 @@ import java.util.List;
 public class ReligionStore {
     private final List<String> names;
     private final IntList colors;
-    private final List<List<Modifier>> modifiers;
+    private final IntList modifierIds;
+    private final IntList modifierStart;
+    private final IntList modifierCount;
 
-    public ReligionStore(List<String> names, IntList colors, List<List<Modifier>> modifiers) {
+    public ReligionStore(List<String> names, IntList colors, IntList modifierIds, IntList modifierStart, IntList modifierCount) {
         this.names = names;
         this.colors = colors;
-        this.modifiers = modifiers;
+        this.modifierIds = modifierIds;
+        this.modifierStart = modifierStart;
+        this.modifierCount = modifierCount;
     }
 
     public List<String> getNames() {
@@ -24,16 +28,26 @@ public class ReligionStore {
         return this.colors;
     }
 
-    public List<List<Modifier>> getModifiers() {
-        return this.modifiers;
+    public IntList getModifierIds() {
+        return this.modifierIds;
+    }
+
+    public IntList getModifierStart() {
+        return this.modifierStart;
+    }
+
+    public IntList getModifierCount() {
+        return this.modifierCount;
     }
 
     @Override
     public String toString() {
-        return "Religion{" +
-                "names='" + this.names + '\'' +
+        return "ReligionStore{" +
+                "names=" + this.names +
                 ", colors=" + this.colors +
-                ", modifiers=" + this.modifiers +
+                ", modifierIds=" + this.modifierIds +
+                ", modifierStart=" + this.modifierStart +
+                ", modifierCount=" + this.modifierCount +
                 '}';
     }
 }

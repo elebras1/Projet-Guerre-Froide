@@ -4,6 +4,7 @@ import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntList;
 
 public class ProvinceStore {
+    private final IntList ids;
     private final IntList colors;
     private final IntList resourceGoodIds;
     private final IntList buildingIds;
@@ -28,7 +29,8 @@ public class ProvinceStore {
     private final IntList resourceGoodsSize;
     private final FloatList resourceGoodsProduction;
 
-    public ProvinceStore(IntList colors, IntList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, IntList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, IntList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, IntList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
+    public ProvinceStore(IntList ids, IntList colors, IntList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, IntList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, IntList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, IntList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
+        this.ids = ids;
         this.colors = colors;
         this.resourceGoodIds = resourceGoodIds;
         this.buildingIds = buildingIds;
@@ -52,6 +54,10 @@ public class ProvinceStore {
         this.religionCounts = religionCounts;
         this.resourceGoodsSize = new IntList(resourceGoodIds.size());
         this.resourceGoodsProduction = new FloatList(resourceGoodIds.size());
+    }
+
+    public IntList getIds() {
+        return this.ids;
     }
 
     public IntList getColors() {
@@ -156,6 +162,7 @@ public class ProvinceStore {
     @Override
     public String toString() {
         return "ProvinceStore{" +
+                "ids=" + this.ids +
                 "colors=" + this.colors +
                 "resourceGoodIds=" + this.resourceGoodIds +
                 ", buildingIds=" + this.buildingIds +

@@ -2,8 +2,6 @@ package com.populaire.projetguerrefroide.economy.building;
 
 import com.github.tommyettinger.ds.IntList;
 
-import java.util.List;
-
 public class ProductionTypeStore {
     private final IntList workforces;
     private final IntList ownerIds;

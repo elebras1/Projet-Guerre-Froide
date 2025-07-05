@@ -22,8 +22,9 @@ public class Economy {
     private final ObjectIntMap<String> buildingIds;
     private final ObjectIntMap<String> populationTypeIds;
     private final ObjectIntMap<String> productionTypeIds;
+    private final ObjectIntMap<String> employeeIds;
 
-    public Economy(short maxProvinceId, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, ObjectIntMap<String> productionTypeIds) {
+    public Economy(short maxProvinceId, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, ObjectIntMap<String> productionTypeIds, ObjectIntMap<String> employeeIds) {
         this.maxProvinceId = maxProvinceId;
         this.buildingStore = buildingStore;
         this.goodStore = goodStore;
@@ -34,6 +35,7 @@ public class Economy {
         this.buildingIds = buildingIds;
         this.populationTypeIds = populationTypeIds;
         this.productionTypeIds = productionTypeIds;
+        this.employeeIds = employeeIds;
     }
 
     public short getMaxProvinceId() {
@@ -72,6 +74,10 @@ public class Economy {
         return this.productionTypeIds;
     }
 
+    public ObjectIntMap<String> getEmployeeIds() {
+        return this.employeeIds;
+    }
+
     public int getPopulationAmount(ProvinceStore provinceStore, Country country) {
         int population = 0;
         for(LandProvince province : country.getProvinces()) {
@@ -98,7 +104,7 @@ public class Economy {
         IntList provincePopulationTypeCounts = provinceStore.getPopulationTypeCounts();
         IntList provincePopulationTypeValues = provinceStore.getPopulationTypeValues();
 
-        for (int provinceId = 1; provinceId < this.maxProvinceId; provinceId++) {
+        for (int provinceId = 0; provinceId < this.maxProvinceId; provinceId++) {
             int resourceGoodId = provinceResourceGoodIds.get(provinceId);
             if (resourceGoodId == -1) {
                 provinceResourceGoodsSize[provinceId] = -1;

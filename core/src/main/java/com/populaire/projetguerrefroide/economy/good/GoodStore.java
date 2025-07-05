@@ -11,7 +11,6 @@ public class GoodStore {
     private final FloatList costs;
     private final IntList colors;
     private final ByteList types;
-
     // Resource goods specific fields
     private final IntList productionTypeIds;
     private final FloatList values;

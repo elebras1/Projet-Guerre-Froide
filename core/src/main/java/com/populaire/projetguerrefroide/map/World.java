@@ -228,7 +228,7 @@ public class World implements Disposable {
 
     public void updatePixmapCountriesColor() {
         IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
@@ -238,7 +238,7 @@ public class World implements Disposable {
 
     public void updatePixmapIdeologiesColor() {
         IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
@@ -253,7 +253,7 @@ public class World implements Disposable {
         IntList provinceCultureCounts = this.provinceStore.getCultureCounts();
         IntList provinceCultureIds = this.provinceStore.getCultureIds();
 
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
@@ -277,7 +277,7 @@ public class World implements Disposable {
         IntList provinceReligionStarts = this.provinceStore.getReligionStarts();
         IntList provinceReligionCounts = this.provinceStore.getReligionCounts();
         IntList provinceReligionIds = this.provinceStore.getReligionIds();
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
@@ -298,7 +298,7 @@ public class World implements Disposable {
     public void updatePixmapResourcesColor() {
         IntList provinceColors = this.provinceStore.getColors();
         IntList provinceResourceGoodIds = this.provinceStore.getResourceGoodIds();
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
@@ -313,7 +313,7 @@ public class World implements Disposable {
 
     public void updatePixmapRegionColor() {
         IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
@@ -323,7 +323,7 @@ public class World implements Disposable {
 
     public void updatePixmapTerrainColor() {
         IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
@@ -333,7 +333,7 @@ public class World implements Disposable {
 
     public void updatePixmapTerrain2Color() {
         IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
@@ -348,7 +348,7 @@ public class World implements Disposable {
         }
 
         IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
@@ -363,7 +363,7 @@ public class World implements Disposable {
         ObjectIntMap<Country> relations = this.countryPlayer.getRelations();
 
         IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
@@ -607,7 +607,7 @@ public class World implements Disposable {
     public Mesh generateMeshResources() {
         int numProvinces = 0;
         IntList provinceResourceGoodIds = this.provinceStore.getResourceGoodIds();
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             if(provinceResourceGoodIds.get(provinceId) != -1) {
                 numProvinces++;
             }
@@ -623,7 +623,7 @@ public class World implements Disposable {
         short width = 13;
         short height = 10;
 
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
+        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int provinceResourceGoodId = provinceResourceGoodIds.get(provinceId);
             if(provinceResourceGoodId == -1) {
                 continue;
