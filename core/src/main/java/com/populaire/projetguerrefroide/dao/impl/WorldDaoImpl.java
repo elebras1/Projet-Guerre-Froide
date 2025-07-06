@@ -849,7 +849,7 @@ public class WorldDaoImpl implements WorldDao {
         PopulationTemplateStore populationTemplateStore = this.readPopulationTemplatesJson(populationTemplateIds);
         IntObjectMap<Province> provinces = new IntObjectMap<>(14796, 1f);
         ProvinceStore provinceStore = this.readProvincesJson(provinces, countries, regionBuildingsByProvince, populationTemplateStore, populationTemplateIds, nationalIdeas, goodIds, buildingIds, populationTypeIds, terrains);
-        this.readRegionJson(provinces, regionBuildingsByProvince, regionStoreBuilder);
+        this.readRegionJson(provinces, provinceStore.getIndexById(), regionBuildingsByProvince, regionStoreBuilder);
         this.readDefinitionCsv(provinceStore, provinces, provincesByColor, waterProvincesByColor);
         this.readProvinceBitmap(provincesByColor);
         this.readCountriesHistoryJson(countries, provinces, governments, nationalIdeas, ideologies, lawGroups);
@@ -943,7 +943,6 @@ public class WorldDaoImpl implements WorldDao {
             int amountSeniors = (int) (amount * populationTemplateStore.getSeniors().get(populationTemplateId));
             int amountAdults = (int) (amount * populationTemplateStore.getAdults().get(populationTemplateId));
             builder.addProvince(provinceId).addAmountPopulation(amountChildren, amountSeniors, amountAdults);
-            int provinceIndex = builder.getIndex();
 
             this.parseDistribution(populationValue.get("populations"), amountAdults, populationTypeIds, builder, "population");
             this.parseDistribution(populationValue.get("cultures"), amountAdults, nationalIdeas.getCultureIds(), builder, "culture");
@@ -960,7 +959,7 @@ public class WorldDaoImpl implements WorldDao {
                     buildingIdsRegion.put(buildingIds.get(buildingName), size);
 
                 }
-                regionBuildingsByProvince.put(provinceIndex, buildingIdsRegion);
+                regionBuildingsByProvince.put(provinceId, buildingIdsRegion);
             }
 
             int resourceGoodId = -1;
@@ -1015,7 +1014,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private RegionStore readRegionJson(IntObjectMap<Province> provinces, IntObjectMap<IntIntMap> regionBuildingsByProvince, RegionStoreBuilder regionStoreBuilder) {
+    private RegionStore readRegionJson(IntObjectMap<Province> provinces, IntIntMap provinceIndexById, IntObjectMap<IntIntMap> regionBuildingsByProvince, RegionStoreBuilder regionStoreBuilder) {
         try {
             JsonValue regionValue = this.parseJsonFile(this.regionJsonFiles);
             Iterator<Map.Entry<String, JsonValue>> regionEntryIterator = regionValue.objectIterator();
@@ -1032,7 +1031,7 @@ public class WorldDaoImpl implements WorldDao {
                         province.getCountryController().addRegion(region);
                         province.setRegion(region);
                         region.addProvince(province);
-                        IntIntMap regionBuildingIds = regionBuildingsByProvince.get(province.getId());
+                        IntIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
                             for(IntIntMap.Entry buildingEntry : regionBuildingIds) {
                                 int buildingId = buildingEntry.key;

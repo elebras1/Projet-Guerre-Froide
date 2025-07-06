@@ -40,6 +40,15 @@ public class RegionStoreBuilder {
     }
 
     public RegionStoreBuilder addBuilding(int buildingId, int value) {
+        int startIndex = this.buildingStarts.get(this.index);
+        int endIndex = startIndex + this.buildingCounts.get(this.index);
+        for(int i = startIndex; i < endIndex; i++) {
+            if (this.buildingIds.get(i) == buildingId) {
+                this.buildingValues.set(i, this.buildingValues.get(i) + value);
+                return this;
+            }
+        }
+
         this.buildingIds.add(buildingId);
         this.buildingValues.add(value);
         int currentCount = this.buildingCounts.get(this.index);
