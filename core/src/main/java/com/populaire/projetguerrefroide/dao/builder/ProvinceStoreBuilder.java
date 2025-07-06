@@ -1,11 +1,13 @@
 package com.populaire.projetguerrefroide.dao.builder;
 
+import com.github.tommyettinger.ds.IntIntMap;
 import com.github.tommyettinger.ds.IntList;
 import com.populaire.projetguerrefroide.map.ProvinceStore;
 
 public class ProvinceStoreBuilder {
     private final int defaultCapacity;
     private int index;
+    private final IntIntMap indexById;
     private final IntList ids;
     private final IntList colors;
     private final IntList resourceGoodIds;
@@ -32,6 +34,7 @@ public class ProvinceStoreBuilder {
     public ProvinceStoreBuilder() {
         this.defaultCapacity = 14797;
         this.index = 0;
+        this.indexById = new IntIntMap(this.defaultCapacity);
         this.ids = new IntList(this.defaultCapacity);
         this.colors = new IntList(this.defaultCapacity);
         this.resourceGoodIds = new IntList();
@@ -81,6 +84,7 @@ public class ProvinceStoreBuilder {
         this.religionCounts.add(0);
 
         this.index = this.ids.size() - 1;
+        this.indexById.put(id, this.index);
         return this;
     }
 
@@ -133,7 +137,7 @@ public class ProvinceStoreBuilder {
     }
 
     public ProvinceStore build() {
-        return new ProvinceStore(this.ids, this.colors, this.resourceGoodIds, this.buildingIds, this.buildingValues, this.buildingStarts, this.buildingCounts, this.amountChildren, this.amountAdults, this.amountSeniors, this.populationTypeIds, this.populationTypeValues, this.populationTypeStarts, this.populationTypeCounts, this.cultureIds, this.cultureValues, this.cultureStarts, this.cultureCounts, this.religionIds, this.religionValues, this.religionStarts, this.religionCounts);
+        return new ProvinceStore(this.indexById, this.ids, this.colors, this.resourceGoodIds, this.buildingIds, this.buildingValues, this.buildingStarts, this.buildingCounts, this.amountChildren, this.amountAdults, this.amountSeniors, this.populationTypeIds, this.populationTypeValues, this.populationTypeStarts, this.populationTypeCounts, this.cultureIds, this.cultureValues, this.cultureStarts, this.cultureCounts, this.religionIds, this.religionValues, this.religionStarts, this.religionCounts);
     }
 
 }

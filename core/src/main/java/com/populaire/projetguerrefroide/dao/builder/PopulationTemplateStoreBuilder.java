@@ -34,7 +34,7 @@ public class PopulationTemplateStoreBuilder {
         this.children.add(children);
         this.adults.add(adults);
         this.seniors.add(seniors);
-        this.index++;
+        this.index = this.ids.size() - 1;
     }
 
     public PopulationTemplateStore build() {

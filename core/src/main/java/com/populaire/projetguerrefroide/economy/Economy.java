@@ -82,7 +82,8 @@ public class Economy {
         int population = 0;
         for(LandProvince province : country.getProvinces()) {
             int provinceId = province.getId();
-            population += provinceStore.getPopulationAmount(provinceId);
+            int provinceIndex = provinceStore.getIndexById().get(provinceId);
+            population += provinceStore.getPopulationAmount(provinceIndex);
         }
         return population;
     }

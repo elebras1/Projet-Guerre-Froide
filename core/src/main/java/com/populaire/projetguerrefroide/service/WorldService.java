@@ -155,11 +155,12 @@ public class WorldService {
     public ObjectIntMap<String> getCulturesOfHoveredProvince(short x, short y) {
         LandProvince province = this.world.getProvince(x, y);
         ProvinceStore provinceStore = this.world.getProvinceStore();
-        int amountAdults = provinceStore.getAmountAdults().get(province.getId());
+        int provinceIndex = provinceStore.getIndexById().get(province.getId());
+        int amountAdults = provinceStore.getAmountAdults().get(provinceIndex);
         IntList provinceCultureIds = provinceStore.getCultureIds();
         IntList provinceCultureValues = provinceStore.getCultureValues();
-        int startIndex = provinceStore.getCultureStarts().get(province.getId());
-        int endIndex = startIndex + provinceStore.getCultureCounts().get(province.getId());
+        int startIndex = provinceStore.getCultureStarts().get(provinceIndex);
+        int endIndex = startIndex + provinceStore.getCultureCounts().get(provinceIndex);
         List<String> cultureNames = this.world.getNationalIdeas().getCultureStore().getNames();
 
         return this.calculatePercentageDistributionFromProvinceData(provinceCultureIds, provinceCultureValues, startIndex, endIndex, cultureNames, amountAdults);
@@ -168,11 +169,12 @@ public class WorldService {
     public ObjectIntMap<String> getReligionsOfHoveredProvince(short x, short y) {
         LandProvince province = this.world.getProvince(x, y);
         ProvinceStore provinceStore = this.world.getProvinceStore();
-        int amountAdults = provinceStore.getAmountAdults().get(province.getId());
+        int provinceIndex = provinceStore.getIndexById().get(province.getId());
+        int amountAdults = provinceStore.getAmountAdults().get(provinceIndex);
         IntList provinceReligionIds = provinceStore.getReligionIds();
         IntList provinceReligionValues = provinceStore.getReligionValues();
-        int startIndex = provinceStore.getReligionStarts().get(province.getId());
-        int endIndex = startIndex + provinceStore.getReligionCounts().get(province.getId());
+        int startIndex = provinceStore.getReligionStarts().get(provinceIndex);
+        int endIndex = startIndex + provinceStore.getReligionCounts().get(provinceIndex);
         List<String> religionNames = this.world.getNationalIdeas().getReligionStore().getNames();
 
         return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, startIndex, endIndex, religionNames, amountAdults);
@@ -268,20 +270,21 @@ public class WorldService {
     private List<String> getProvinceIdsOrderByPopulation(Region region) {
         ProvinceStore provinceStore = this.world.getProvinceStore();
 
-        IntList provinceIds = new IntList();
+        IntList provinceIndices = new IntList();
         for (LandProvince province : region.getProvinces()) {
-            provinceIds.add(province.getId());
+            int provinceIndex = provinceStore.getIndexById().get(province.getId());
+            provinceIndices.add(provinceIndex);
         }
 
-        provinceIds.sort((a, b) -> {
+        provinceIndices.sort((a, b) -> {
             int populationA = provinceStore.getAmountAdults().get(a);
             int populationB = provinceStore.getAmountAdults().get(b);
             return Integer.compare(populationB, populationA);
         });
 
         List<String> result = new ObjectList<>();
-        for (int provinceIndex = 0; provinceIndex < provinceIds.size(); provinceIndex++) {
-            int id = provinceIds.get(provinceIndex);
+        for (int provinceIndex = 0; provinceIndex < provinceIndices.size(); provinceIndex++) {
+            int id = provinceIndices.get(provinceIndex);
             result.add(String.valueOf(id));
         }
 

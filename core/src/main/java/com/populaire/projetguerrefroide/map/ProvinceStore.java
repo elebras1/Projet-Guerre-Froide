@@ -1,9 +1,11 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.FloatList;
+import com.github.tommyettinger.ds.IntIntMap;
 import com.github.tommyettinger.ds.IntList;
 
 public class ProvinceStore {
+    private final IntIntMap indexById;
     private final IntList ids;
     private final IntList colors;
     private final IntList resourceGoodIds;
@@ -29,7 +31,8 @@ public class ProvinceStore {
     private final IntList resourceGoodsSize;
     private final FloatList resourceGoodsProduction;
 
-    public ProvinceStore(IntList ids, IntList colors, IntList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, IntList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, IntList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, IntList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
+    public ProvinceStore(IntIntMap indexById, IntList ids, IntList colors, IntList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, IntList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, IntList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, IntList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
+        this.indexById = indexById;
         this.ids = ids;
         this.colors = colors;
         this.resourceGoodIds = resourceGoodIds;
@@ -54,6 +57,10 @@ public class ProvinceStore {
         this.religionCounts = religionCounts;
         this.resourceGoodsSize = new IntList(resourceGoodIds.size());
         this.resourceGoodsProduction = new FloatList(resourceGoodIds.size());
+    }
+
+    public IntIntMap getIndexById() {
+        return this.indexById;
     }
 
     public IntList getIds() {
@@ -162,6 +169,7 @@ public class ProvinceStore {
     @Override
     public String toString() {
         return "ProvinceStore{" +
+                "indexById=" + this.indexById +
                 "ids=" + this.ids +
                 "colors=" + this.colors +
                 "resourceGoodIds=" + this.resourceGoodIds +

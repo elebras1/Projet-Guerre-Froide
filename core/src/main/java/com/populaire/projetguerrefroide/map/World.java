@@ -195,7 +195,8 @@ public class World implements Disposable {
 
     public int getPopulationAmount(Province province) {
         int provinceId = province.getId();
-        return this.provinceStore.getPopulationAmount(provinceId);
+        int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
+        return this.provinceStore.getPopulationAmount(provinceIndex);
     }
 
     public int getPopulationAmount(Country country) {
@@ -204,7 +205,8 @@ public class World implements Disposable {
 
     public String getResourceGoodName(Province province) {
         int provinceId = province.getId();
-        int resourceGoodId = this.provinceStore.getResourceGoodIds().get(provinceId);
+        int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
+        int resourceGoodId = this.provinceStore.getResourceGoodIds().get(provinceIndex);
         if(resourceGoodId != -1) {
             return this.economy.getGoodStore().getNames().get(resourceGoodId);
         }
@@ -213,7 +215,8 @@ public class World implements Disposable {
 
     public int getAmountAdults(Province province) {
         int provinceId = province.getId();
-        return this.provinceStore.getAmountAdults().get(provinceId);
+        int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
+        return this.provinceStore.getAmountAdults().get(provinceIndex);
     }
 
     public String[] createTerrainTexturePaths() {
@@ -233,6 +236,7 @@ public class World implements Disposable {
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
             this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(this.provinces.get(color)).getCountryOwner().getColor());
+
         }
     }
 
@@ -384,7 +388,8 @@ public class World implements Disposable {
         Pixmap pixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
         for(LandProvince province : this.provinces.values()) {
             if(!province.getCountryOwner().equals(province.getCountryController())) {
-                int color = this.provinceStore.getColors().get(province.getId());
+                int provinceIndex = this.provinceStore.getIndexById().get(province.getId());
+                int color = this.provinceStore.getColors().get(provinceIndex);
                 short red = (short) ((color >> 24) & 0xFF);
                 short green = (short) ((color >> 16) & 0xFF);
                 pixmap.drawPixel(red, green, province.getCountryController().getColor());
@@ -495,8 +500,9 @@ public class World implements Disposable {
             }
             for (LandProvince province : country.getProvinces()) {
                 int provinceId = province.getId();
-                int provinceBuildingStart = provinceBuildingStarts.get(provinceId);
-                int provinceBuildingEnd = provinceBuildingStart + provinceBuildingCounts.get(provinceId);
+                int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
+                int provinceBuildingStart = provinceBuildingStarts.get(provinceIndex);
+                int provinceBuildingEnd = provinceBuildingStart + provinceBuildingCounts.get(provinceIndex);
                 for (int buildingIndex = provinceBuildingStart; buildingIndex < provinceBuildingEnd; buildingIndex++) {
                     int buildingId = provinceBuildingIds.get(buildingIndex);
                     if (buildingOnMap.get(buildingId)) {
@@ -532,11 +538,12 @@ public class World implements Disposable {
 
             for (LandProvince province : country.getProvinces()) {
                 int provinceId = province.getId();
-                int provinceBuildingStart = provinceBuildingStarts.get(provinceId);
-                int provinceBuildingEnd = provinceBuildingStart + provinceBuildingCounts.get(provinceId);
+                int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
+                int provinceBuildingStart = provinceBuildingStarts.get(provinceIndex);
+                int provinceBuildingEnd = provinceBuildingStart + provinceBuildingCounts.get(provinceIndex);
                 for (int buildingIndex = provinceBuildingStart; buildingIndex < provinceBuildingEnd; buildingIndex++) {
                     int buildingId = provinceBuildingIds.get(buildingIndex);
-                    if (buildingOnMap.get(buildingId)) {
+                    if (!buildingOnMap.get(buildingId)) {
                         continue;
                     }
 
@@ -734,7 +741,8 @@ public class World implements Disposable {
         this.mapShader.setUniformf("u_time", time);
         this.mapShader.setUniformi("u_showTerrain", this.mapMode == MapMode.TERRAIN ? 1 : 0);
         if(this.selectedProvince != null) {
-            int color = this.provinceStore.getColors().get(this.selectedProvince.getId());
+            int provinceIndex = this.provinceStore.getIndexById().get(this.selectedProvince.getId());
+            int color = this.provinceStore.getColors().get(provinceIndex);
             float r = ((color >> 24) & 0xFF) / 255f;
             float g = ((color >> 16) & 0xFF) / 255f;
             float b = ((color >> 8) & 0xFF) / 255f;
