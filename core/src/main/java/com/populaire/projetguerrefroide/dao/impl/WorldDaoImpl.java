@@ -845,10 +845,9 @@ public class WorldDaoImpl implements WorldDao {
 
     private ProvinceStore loadProvinces(RegionStoreBuilder regionStoreBuilder, Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, Ideology> ideologies, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains, Map<String, LawGroup> lawGroups) {
         IntObjectMap<IntIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
-        IntIntMap populationTemplateIds = new IntIntMap(396, 1f);
-        PopulationTemplateStore populationTemplateStore = this.readPopulationTemplatesJson(populationTemplateIds);
+        PopulationTemplateStore populationTemplateStore = this.readPopulationTemplatesJson();
         IntObjectMap<Province> provinces = new IntObjectMap<>(14796, 1f);
-        ProvinceStore provinceStore = this.readProvincesJson(provinces, countries, regionBuildingsByProvince, populationTemplateStore, populationTemplateIds, nationalIdeas, goodIds, buildingIds, populationTypeIds, terrains);
+        ProvinceStore provinceStore = this.readProvincesJson(provinces, countries, regionBuildingsByProvince, populationTemplateStore, nationalIdeas, goodIds, buildingIds, populationTypeIds, terrains);
         this.readRegionJson(provinces, provinceStore.getIndexById(), regionBuildingsByProvince, regionStoreBuilder);
         this.readDefinitionCsv(provinceStore, provinces, provincesByColor, waterProvincesByColor);
         this.readProvinceBitmap(provincesByColor);
@@ -859,7 +858,7 @@ public class WorldDaoImpl implements WorldDao {
         return provinceStore;
     }
 
-    private PopulationTemplateStore readPopulationTemplatesJson(IntIntMap populationTemplateIds) {
+    private PopulationTemplateStore readPopulationTemplatesJson() {
         PopulationTemplateStoreBuilder builder = new PopulationTemplateStoreBuilder();
         try {
             JsonValue populationTemplatesValues = this.parseJsonFile(this.populationTemplatesJsonFile);
@@ -873,7 +872,6 @@ public class WorldDaoImpl implements WorldDao {
                 float adults = (float) populationValuesIterator.next().asDouble();
                 float seniors = (float) populationValuesIterator.next().asDouble();
                 builder.add(template, children, adults, seniors);
-                populationTemplateIds.put(template, builder.getIndex());
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -884,7 +882,7 @@ public class WorldDaoImpl implements WorldDao {
         return builder.build();
     }
 
-    private ProvinceStore readProvincesJson(IntObjectMap<Province> provinces, Map<String, Country> countries, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, IntIntMap populationTemplateIds, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains) {
+    private ProvinceStore readProvincesJson(IntObjectMap<Province> provinces, Map<String, Country> countries, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains) {
         ProvinceStoreBuilder builder = new ProvinceStoreBuilder();
         IntObjectMap<String> provincesPaths = new IntObjectMap<>(builder.getDefaultCapacity(), 1f);
         try {
@@ -898,7 +896,7 @@ public class WorldDaoImpl implements WorldDao {
             for (IntObjectMap.Entry<String> entry : provincesPaths.entrySet()) {
                 short provinceId = (short) entry.getKey();
                 String provincePath = entry.getValue();
-                Province province = this.readProvinceJson(countries, provincePath, provinceId, regionBuildingsByProvince, populationTemplateStore, populationTemplateIds, nationalIdeas, goodIds, buildingIds, populationTypeIds, terrains, builder);
+                Province province = this.readProvinceJson(countries, provincePath, provinceId, regionBuildingsByProvince, populationTemplateStore, nationalIdeas, goodIds, buildingIds, populationTypeIds, terrains, builder);
                 provinces.put(provinceId, province);
             }
         } catch (IOException ioException) {
@@ -910,7 +908,7 @@ public class WorldDaoImpl implements WorldDao {
         return builder.build();
     }
 
-    private LandProvince readProvinceJson(Map<String, Country> countries, String provincePath, short provinceId, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, IntIntMap populationTemplateIds, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains, ProvinceStoreBuilder builder) {
+    private LandProvince readProvinceJson(Map<String, Country> countries, String provincePath, short provinceId, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains, ProvinceStoreBuilder builder) {
         try {
             JsonValue provinceValues = this.parseJsonFile(provincePath);
 
@@ -938,11 +936,11 @@ public class WorldDaoImpl implements WorldDao {
             JsonValue populationValue = provinceValues.get("population_total");
             int amount = (int) populationValue.get("amount").asLong();
             short template = (short) populationValue.get("template").asLong();
-            int populationTemplateId = populationTemplateIds.get(template);
-            int amountChildren = (int) (amount * populationTemplateStore.getChildren().get(populationTemplateId));
-            int amountSeniors = (int) (amount * populationTemplateStore.getSeniors().get(populationTemplateId));
-            int amountAdults = (int) (amount * populationTemplateStore.getAdults().get(populationTemplateId));
-            builder.addProvince(provinceId).addAmountPopulation(amountChildren, amountSeniors, amountAdults);
+            int populationTemplateIndex = populationTemplateStore.getIndexById().get(template);
+            int amountChildren = (int) (amount * populationTemplateStore.getChildren().get(populationTemplateIndex));
+            int amountSeniors = (int) (amount * populationTemplateStore.getSeniors().get(populationTemplateIndex));
+            int amountAdults = (int) (amount * populationTemplateStore.getAdults().get(populationTemplateIndex));
+            builder.addProvince(provinceId).addAmountPopulation(amountChildren, amountAdults, amountSeniors);
 
             this.parseDistribution(populationValue.get("populations"), amountAdults, populationTypeIds, builder, "population");
             this.parseDistribution(populationValue.get("cultures"), amountAdults, nationalIdeas.getCultureIds(), builder, "culture");
@@ -992,7 +990,7 @@ public class WorldDaoImpl implements WorldDao {
         return null;
     }
 
-    private void parseDistribution(JsonValue distributionValue, int totalAmount, ObjectIntMap<String> idsMap, ProvinceStoreBuilder builder, String distributionType) {
+    private void parseDistribution(JsonValue distributionValue, int amountAdults, ObjectIntMap<String> idsMap, ProvinceStoreBuilder builder, String distributionType) {
         if (distributionValue == null) {
             return;
         }
@@ -1004,7 +1002,7 @@ public class WorldDaoImpl implements WorldDao {
             float percentage = (float) distributionEntry.getValue().asDouble();
 
             int id = idsMap.get(name);
-            int value = (int) (totalAmount * percentage);
+            int value = (int) (amountAdults * percentage);
 
             switch (distributionType) {
                 case "population" -> builder.addPopulationType(id, value);

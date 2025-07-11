@@ -1,23 +1,23 @@
 package com.populaire.projetguerrefroide.economy.population;
 
 import com.github.tommyettinger.ds.FloatList;
-import com.github.tommyettinger.ds.ShortList;
+import com.github.tommyettinger.ds.IntIntMap;
 
 public class PopulationTemplateStore {
-    private final ShortList ids;
+    private final IntIntMap indexById;
     private final FloatList children;
     private final FloatList adults;
     private final FloatList seniors;
 
-    public PopulationTemplateStore(ShortList ids, FloatList children, FloatList adults, FloatList seniors) {
-        this.ids = ids;
+    public PopulationTemplateStore(IntIntMap indexById, FloatList children, FloatList adults, FloatList seniors) {
+        this.indexById = indexById;
         this.children = children;
         this.adults = adults;
         this.seniors = seniors;
     }
 
-    public ShortList getIds() {
-        return this.ids;
+    public IntIntMap getIndexById() {
+        return this.indexById;
     }
 
     public FloatList getChildren() {
@@ -35,7 +35,7 @@ public class PopulationTemplateStore {
     @Override
     public String toString() {
         return "PopulationTemplateStore{" +
-                "ids=" + this.ids +
+                "indexById=" + this.indexById +
                 ", children=" + this.children +
                 ", adults=" + this.adults +
                 ", seniors=" + this.seniors +

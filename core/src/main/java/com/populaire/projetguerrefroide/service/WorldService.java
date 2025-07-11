@@ -162,7 +162,6 @@ public class WorldService {
         int startIndex = provinceStore.getCultureStarts().get(provinceIndex);
         int endIndex = startIndex + provinceStore.getCultureCounts().get(provinceIndex);
         List<String> cultureNames = this.world.getNationalIdeas().getCultureStore().getNames();
-
         return this.calculatePercentageDistributionFromProvinceData(provinceCultureIds, provinceCultureValues, startIndex, endIndex, cultureNames, amountAdults);
     }
 
