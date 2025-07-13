@@ -72,6 +72,18 @@ public class JsonValue {
         return this.tape.getType(this.tapeIdx) == TRUE_VALUE;
     }
 
+    public char asChar() {
+        if (this.tape.getType(this.tapeIdx) == STRING) {
+            int stringBufferIdx = (int) this.tape.getValue(this.tapeIdx);
+            int len = IntegerUtils.toInt(this.stringBuffer, stringBufferIdx);
+            if (len == 1) {
+                return (char) this.stringBuffer[stringBufferIdx + Integer.BYTES];
+            }
+        }
+
+        return 0;
+    }
+
     public String asString() {
         return getString(this.tapeIdx);
     }
