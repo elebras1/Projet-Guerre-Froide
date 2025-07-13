@@ -188,14 +188,6 @@ public class Country {
         return this.leadersIds;
     }
 
-    public int getPopulationAmount() {
-        int population = 0;
-        for(LandProvince province : this.provinces) {
-            population += province.getPopulation().getAmount();
-        }
-        return population;
-    }
-
     public String getName() {
         return this.name;
     }

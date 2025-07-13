@@ -3,49 +3,31 @@ package com.populaire.projetguerrefroide.map;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.economy.building.Building;
-import com.populaire.projetguerrefroide.economy.good.ResourceGood;
-import com.populaire.projetguerrefroide.economy.population.Population;
 import com.populaire.projetguerrefroide.entity.Terrain;
 
 import java.util.*;
 
 public class LandProvince implements Province {
-    private int color;
     private short id;
     private Country countryOwner;
     private Country countryController;
     private Region region;
     private Continent continent;
-    private Population population;
     private final Terrain terrain;
     private final List<Country> countriesCore;
-    private final ResourceGood resourceGood;
-    private final ObjectIntMap<Building> buildings;
     private final List<Province> adjacentProvinces;
     private final ObjectIntMap<String> positions;
     private final IntSet borderPixels;
 
-    public LandProvince(short id, Country countryOwner, Country countryController, Population population, Terrain terrain, List<Country> countriesCore, ResourceGood resourceGood, ObjectIntMap<Building> buildings) {
+    public LandProvince(short id, Country countryOwner, Country countryController, Terrain terrain, List<Country> countriesCore) {
         this.id = id;
         this.countryOwner = countryOwner;
         this.countryController = countryController;
-        this.population = population;
         this.terrain = terrain;
-        this.resourceGood = resourceGood;
         this.countriesCore = countriesCore;
-        this.buildings = buildings;
         this.adjacentProvinces = new ObjectList<>();
         this.positions = new ObjectIntMap<>();
         this.borderPixels = new IntSet();
-    }
-
-    public int getColor() {
-        return this.color;
-    }
-
-    public void setColor(int color) {
-        this.color = color;
     }
 
     public Country getCountryOwner() {
@@ -119,14 +101,6 @@ public class LandProvince implements Province {
         return this.continent;
     }
 
-    public Population getPopulation() {
-        return this.population;
-    }
-
-    public void setPopulation(Population population) {
-        this.population = population;
-    }
-
     public List<Country> getCountriesCore() {
         return this.countriesCore;
     }
@@ -137,22 +111,6 @@ public class LandProvince implements Province {
 
     public void removeCountryCore(Country country) {
         this.countriesCore.remove(country);
-    }
-
-    public ResourceGood getResourceGood() {
-        return this.resourceGood;
-    }
-
-    public ObjectIntMap<Building> getBuildings() {
-        return this.buildings;
-    }
-
-    public void addBuilding(Building building) {
-        this.buildings.put(building, 1);
-    }
-
-    public void removeBuilding(Building building) {
-        this.buildings.remove(building);
     }
 
     @Override
@@ -172,14 +130,12 @@ public class LandProvince implements Province {
     public String toString() {
         return "Province{" +
                 "id=" + this.id +
-                ", color='" + this.color + '\'' +
                 ", number_border_pixels=" + this.borderPixels.size() +
                 ", owner=" + this.countryOwner.getName() +
                 ", controller=" + this.countryController.getName() +
                 ", number_adjacentProvinces=" + this.adjacentProvinces.size() +
                 ", region=" + this.region.getId() +
                 ", continent=" + this.continent.getName() +
-                ", population=" + this.population +
                 ", terrain=" + this.terrain.getName() +
                 '}';
     }

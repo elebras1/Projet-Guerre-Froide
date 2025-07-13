@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.service;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
+import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectIntOrderedMap;
 import com.github.tommyettinger.ds.ObjectList;
@@ -11,14 +12,13 @@ import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.CountryDto;
 import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
-import com.populaire.projetguerrefroide.economy.building.Building;
-import com.populaire.projetguerrefroide.economy.building.EconomyBuilding;
-import com.populaire.projetguerrefroide.economy.building.SpecialBuilding;
-import com.populaire.projetguerrefroide.economy.DevelopementBuildingLevel;
+import com.populaire.projetguerrefroide.economy.building.BuildingType;
+import com.populaire.projetguerrefroide.map.RegionStore;
+import com.populaire.projetguerrefroide.economy.building.BuildingStore;
+import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevelDto;
 import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
-import com.populaire.projetguerrefroide.util.Named;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.List;
@@ -103,7 +103,7 @@ public class WorldService {
         if(headOfState.getImageNameFile() != null) {
             portraitNameFile = headOfState.getImageNameFile();
         }
-        String population = ValueFormatter.formatValue(selectedCountry.getPopulationAmount(), localisation);
+        String population = ValueFormatter.formatValue(this.world.getPopulationAmount(selectedCountry), localisation);
         List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry);
 
         return new CountrySummaryDto(selectedCountry.getName(), selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), allies);
@@ -111,7 +111,7 @@ public class WorldService {
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {
         Country selectedCountry = this.world.getSelectedProvince().getCountryOwner();
-        String population = ValueFormatter.formatValue(selectedCountry.getPopulationAmount(), localisation);
+        String population = ValueFormatter.formatValue(this.world.getPopulationAmount(selectedCountry), localisation);
         int manpower = 0;
         String grossDomesticProduct = ValueFormatter.formatValue(0, localisation);
         int money = 0;
@@ -131,19 +131,19 @@ public class WorldService {
         String provinceId = String.valueOf(selectedProvince.getId());
         String regionId = region.getId();
         String terrainImage = selectedProvince.getTerrain().getName();
-        String resourceImage = selectedProvince.getResourceGood() != null ? selectedProvince.getResourceGood().getName() : null;
+        String resourceImage = this.world.getResourceGoodName(selectedProvince);
         String populationRegion = this.getPopulationRegionOfSelectedProvince(localisation);
         String workersRegion = this.getWorkersRegionOfSelectedProvince(localisation);
-        String populationProvince = ValueFormatter.formatValue(selectedProvince.getPopulation().getAmount(), localisation);
+        String populationProvince = ValueFormatter.formatValue(this.world.getPopulationAmount(selectedProvince), localisation);
         int developmentIndexRegion = 0;
         int incomeRegion = 0;
-        int numberIndustryRegion = this.getNumberIndustryOfRegion(region);
+        int numberIndustryRegion = this.getNumberIndustry(region);
         String flagImage = selectedProvince.getCountryOwner().getId();
         List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
-        List<String> provinceIdsRegion = this.getProvinceIdsOfRegionOrderByPopulation(region);
-        DevelopementBuildingLevel developmentBuildingLevel = this.getDevelopementBuildingLevelOfRegion(region);
-        List<String> specialBuildings = this.getSpecialBuildingNamesOfRegion(region);
-        List<String> colorsBuilding = this.getColorBuildingsOfRegionOrderByLevel(region);
+        List<String> provinceIdsRegion = this.getProvinceIdsOrderByPopulation(region);
+        DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(region);
+        List<String> specialBuildings = this.getSpecialBuildingNames(region);
+        List<String> colorsBuilding = this.getColorBuildingsOrderByLevel(region);
 
         return new ProvinceDto(provinceId, regionId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, numberIndustryRegion, flagImage, flagCountriesCore, 0f, 0, 0, populationProvince, 0f, 0f, provinceIdsRegion, developmentBuildingLevel, specialBuildings, colorsBuilding);
     }
@@ -154,37 +154,54 @@ public class WorldService {
 
     public ObjectIntMap<String> getCulturesOfHoveredProvince(short x, short y) {
         LandProvince province = this.world.getProvince(x, y);
-        int amountAdults = province.getPopulation().getAmountAdults();
-        return this.calculatePercentageDistributionFromProvinceData(province.getPopulation().getCultures(), amountAdults);
+        ProvinceStore provinceStore = this.world.getProvinceStore();
+        int provinceIndex = provinceStore.getIndexById().get(province.getId());
+        int amountAdults = provinceStore.getAmountAdults().get(provinceIndex);
+        IntList provinceCultureIds = provinceStore.getCultureIds();
+        IntList provinceCultureValues = provinceStore.getCultureValues();
+        int startIndex = provinceStore.getCultureStarts().get(provinceIndex);
+        int endIndex = startIndex + provinceStore.getCultureCounts().get(provinceIndex);
+        List<String> cultureNames = this.world.getNationalIdeas().getCultureStore().getNames();
+        return this.calculatePercentageDistributionFromProvinceData(provinceCultureIds, provinceCultureValues, startIndex, endIndex, cultureNames, amountAdults);
     }
 
     public ObjectIntMap<String> getReligionsOfHoveredProvince(short x, short y) {
         LandProvince province = this.world.getProvince(x, y);
-        int amountAdults = province.getPopulation().getAmountAdults();
-        return this.calculatePercentageDistributionFromProvinceData(province.getPopulation().getReligions(), amountAdults);
+        ProvinceStore provinceStore = this.world.getProvinceStore();
+        int provinceIndex = provinceStore.getIndexById().get(province.getId());
+        int amountAdults = provinceStore.getAmountAdults().get(provinceIndex);
+        IntList provinceReligionIds = provinceStore.getReligionIds();
+        IntList provinceReligionValues = provinceStore.getReligionValues();
+        int startIndex = provinceStore.getReligionStarts().get(provinceIndex);
+        int endIndex = startIndex + provinceStore.getReligionCounts().get(provinceIndex);
+        List<String> religionNames = this.world.getNationalIdeas().getReligionStore().getNames();
+
+        return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, startIndex, endIndex, religionNames, amountAdults);
     }
 
-    private <E extends Named> ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(ObjectIntMap<E> elements, int amountAdults) {
+    private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(IntList provinceElementIds, IntList provinceElementValues, int startIndex, int endIndex, List<String> elementNames, int amountAdults) {
         this.elementPercentages.clear();
         int total = 0;
-        E biggestElement = null;
-        for(E element : elements.keySet()) {
-            int amount = elements.get(element);
-            if(biggestElement == null || amount > elements.get(biggestElement)) {
-                biggestElement = element;
+        int biggestElementIndex = -1;
+        for(int elementIndex = startIndex; elementIndex < endIndex; elementIndex++) {
+            int amount = provinceElementValues.get(elementIndex);
+            int elementId = provinceElementIds.get(elementIndex);
+            if(biggestElementIndex == -1 || amount > provinceElementValues.get(biggestElementIndex)) {
+                biggestElementIndex = elementIndex;
             }
             if(amountAdults != 0) {
                 int percentage = (int) ((amount / (float) amountAdults) * 100);
                 total += percentage;
-                this.elementPercentages.put(element.getName(), percentage);
+                this.elementPercentages.put(elementNames.get(elementId), percentage);
             } else {
-                this.elementPercentages.put(element.getName(), 0);
+                this.elementPercentages.put(elementNames.get(elementId), 0);
             }
         }
 
-        if(total != 100 && biggestElement != null) {
+        if(total != 100 && biggestElementIndex != -1) {
             int difference = 100 - total;
-            this.elementPercentages.put(biggestElement.getName(), this.elementPercentages.get(biggestElement.getName()) + difference);
+            String biggestElementName = elementNames.get(provinceElementIds.get(biggestElementIndex));
+            this.elementPercentages.put(biggestElementName, this.elementPercentages.get(biggestElementName) + difference);
         }
 
         this.sortByValueDescending(this.elementPercentages);
@@ -195,7 +212,7 @@ public class WorldService {
     private String getPopulationRegionOfSelectedProvince(Map<String, String> localisation) {
         int population = 0;
         for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
-            population += province.getPopulation().getAmount();
+            population += this.world.getPopulationAmount(province);
         }
 
         return ValueFormatter.formatValue(population, localisation);
@@ -204,7 +221,7 @@ public class WorldService {
     private String getWorkersRegionOfSelectedProvince(Map<String, String> localisation) {
         int workers = 0;
         for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
-            workers += province.getPopulation().getAmountAdults();
+            workers += this.world.getAmountAdults(province);
         }
 
         return ValueFormatter.formatValue(workers, localisation);
@@ -219,74 +236,144 @@ public class WorldService {
         return countriesCore;
     }
 
-    private DevelopementBuildingLevel getDevelopementBuildingLevelOfRegion(Region region) {
+    private DevelopementBuildingLevelDto getDevelopementBuildingLevel(Region region) {
         byte navalBaseLevel = 0;
         byte airBaseLevel = 0;
         byte radarStationLevel = 0;
         byte antiAircraftGunsLevel = 0;
-        for(LandProvince province : region.getProvinces()) {
-            for(Building building : province.getBuildings().keySet()) {
-                switch (building.getName()) {
-                    case "naval_base" -> navalBaseLevel = (byte) province.getBuildings().get(building);
-                    case "air_base" -> airBaseLevel = (byte) province.getBuildings().get(building);
-                    case "radar_station" -> radarStationLevel = (byte) province.getBuildings().get(building);
-                    case "anti_air" -> antiAircraftGunsLevel = (byte) province.getBuildings().get(building);
+
+        RegionStore regionStore = this.world.getRegionStore();
+        BuildingStore buildingStore = this.world.getEconomy().getBuildingStore();
+
+        int regionIndex = regionStore.getRegionIds().get(region.getId());
+
+        int buildingStart = regionStore.getBuildingStarts().get(regionIndex);
+        int buildingEnd = buildingStart + regionStore.getBuildingCounts().get(regionIndex);
+
+        for (int i = buildingStart; i < buildingEnd; i++) {
+            int buildingId = regionStore.getBuildingIds().get(i);
+            int buildingLevel = regionStore.getBuildingValues().get(i);
+            String buildingName = buildingStore.getNames().get(buildingId);
+
+            switch (buildingName) {
+                case "naval_base" -> navalBaseLevel = (byte) buildingLevel;
+                case "air_base" -> airBaseLevel = (byte) buildingLevel;
+                case "radar_station" -> radarStationLevel = (byte) buildingLevel;
+                case "anti_air" -> antiAircraftGunsLevel = (byte) buildingLevel;
+            }
+        }
+
+        return new DevelopementBuildingLevelDto(navalBaseLevel, airBaseLevel, radarStationLevel, antiAircraftGunsLevel);
+    }
+
+    private List<String> getProvinceIdsOrderByPopulation(Region region) {
+        ProvinceStore provinceStore = this.world.getProvinceStore();
+
+        IntList provinceIndices = new IntList();
+        for (LandProvince province : region.getProvinces()) {
+            int provinceIndex = provinceStore.getIndexById().get(province.getId());
+            provinceIndices.add(provinceIndex);
+        }
+
+        provinceIndices.sort((a, b) -> {
+            int populationA = provinceStore.getAmountAdults().get(a);
+            int populationB = provinceStore.getAmountAdults().get(b);
+            return Integer.compare(populationB, populationA);
+        });
+
+        List<String> result = new ObjectList<>();
+        for (int provinceIndex = 0; provinceIndex < provinceIndices.size(); provinceIndex++) {
+            int id = provinceIndices.get(provinceIndex);
+            result.add(String.valueOf(id));
+        }
+
+        return result;
+    }
+
+    private List<String> getColorBuildingsOrderByLevel(Region region) {
+        RegionStore regionStore = this.world.getRegionStore();
+        BuildingStore buildingStore = this.world.getEconomy().getBuildingStore();
+
+        int regionId = regionStore.getRegionIds().get(region.getId());
+        int regionBuildingStart = regionStore.getBuildingStarts().get(regionId);
+        int regionBuildingEnd = regionBuildingStart + regionStore.getBuildingCounts().get(regionId);
+
+        List<Integer> buildingIndices = new ObjectList<>();
+
+        for (int buildingIndex = regionBuildingStart; buildingIndex < regionBuildingEnd; buildingIndex++) {
+            int buildingId = regionStore.getBuildingIds().get(buildingIndex);
+            byte buildingType = buildingStore.getTypes().get(buildingId);
+
+            if (buildingType == BuildingType.ECONOMY.getId()) {
+                String buildingName = buildingStore.getNames().get(buildingId);
+                String color = BuildingUtils.getColor(buildingName);
+
+                if (color != null) {
+                    buildingIndices.add(buildingIndex);
                 }
             }
         }
 
-        return new DevelopementBuildingLevel(navalBaseLevel, airBaseLevel, radarStationLevel, antiAircraftGunsLevel);
-    }
-
-    private List<String> getProvinceIdsOfRegionOrderByPopulation(Region region) {
-        List<LandProvince> provinces = new ObjectList<>(region.getProvinces());
-
-        provinces.sort((a, b) -> Integer.compare(b.getPopulation().getAmount(), a.getPopulation().getAmount()));
-
-        List<String> provinceIds = new ObjectList<>();
-        for (LandProvince province : provinces) {
-            provinceIds.add(String.valueOf(province.getId()));
-        }
-
-        return provinceIds;
-    }
-
-    private List<String> getColorBuildingsOfRegionOrderByLevel(Region region) {
-        List<Building> buildings = new ObjectList<>(region.getBuildings().keySet());
-
-        buildings.sort((a, b) -> Integer.compare(region.getBuildings().get(b), region.getBuildings().get(a)));
+        buildingIndices.sort((a, b) -> {
+            int levelA = regionStore.getBuildingValues().get(a);
+            int levelB = regionStore.getBuildingValues().get(b);
+            return Integer.compare(levelB, levelA);
+        });
 
         List<String> colors = new ObjectList<>();
-        for (Building building : buildings) {
-            if (building instanceof EconomyBuilding) {
-                String color = BuildingUtils.getColor(building.getName());
-                if (color != null) {
-                    colors.add(color);
-                }
-            }
+        for (int buildingIndex : buildingIndices) {
+            int buildingId = regionStore.getBuildingIds().get(buildingIndex);
+            String buildingName = buildingStore.getNames().get(buildingId);
+            String color = BuildingUtils.getColor(buildingName);
+            colors.add(color);
         }
 
         return colors;
     }
 
-    private int getNumberIndustryOfRegion(Region region) {
-        int industryRegion = 0;
-        for(Building building : region.getBuildings().keySet()) {
-            if(building instanceof EconomyBuilding) {
-                industryRegion++;
+    private int getNumberIndustry(Region region) {
+        int industryCount = 0;
+        RegionStore regionStore = this.world.getRegionStore();
+        BuildingStore buildingStore = this.world.getEconomy().getBuildingStore();
+
+        int regionIndex = regionStore.getRegionIds().get(region.getId());
+
+        int buildingStart = regionStore.getBuildingStarts().get(regionIndex);
+        int buildingEnd = buildingStart + regionStore.getBuildingCounts().get(regionIndex);
+
+        for (int i = buildingStart; i < buildingEnd; i++) {
+            int buildingId = regionStore.getBuildingIds().get(i);
+            byte buildingType = buildingStore.getTypes().get(buildingId);
+
+            if (buildingType == BuildingType.ECONOMY.getId()) {
+                industryCount++;
             }
         }
 
-        return industryRegion;
+        return industryCount;
     }
 
-    private List<String> getSpecialBuildingNamesOfRegion(Region region) {
+    private List<String> getSpecialBuildingNames(Region region) {
         List<String> specialBuildingNames = new ObjectList<>();
-        for (Building building : region.getBuildings().keySet()) {
-            if (building instanceof SpecialBuilding) {
-                specialBuildingNames.add(building.getName());
+        RegionStore regionStore = this.world.getRegionStore();
+
+        int regionId = regionStore.getRegionIds().get(region.getId());
+
+        int buildingStart = regionStore.getBuildingStarts().get(regionId);
+        int buildingEnd = buildingStart + regionStore.getBuildingCounts().get(regionId);
+
+        BuildingStore buildingStore = this.world.getEconomy().getBuildingStore();
+
+        for (int i = buildingStart; i < buildingEnd; i++) {
+            int buildingId = regionStore.getBuildingIds().get(i);
+            byte buildingType = buildingStore.getTypes().get(buildingId);
+
+            if (buildingType == BuildingType.SPECIAL.getId()) {
+                String buildingName = buildingStore.getNames().get(buildingId);
+                specialBuildingNames.add(buildingName);
             }
         }
+
         return specialBuildingNames;
     }
 
