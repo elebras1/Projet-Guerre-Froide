@@ -1,22 +1,20 @@
 package com.populaire.projetguerrefroide.politics;
 
-import com.populaire.projetguerrefroide.entity.Modifier;
-
 public class Trait {
     private final String name;
-    private final Modifier modifier;
+    private final int modifierId;
 
-    public Trait(String name, Modifier modifier) {
+    public Trait(String name, int modifierId) {
         this.name = name;
-        this.modifier = modifier;
+        this.modifierId = modifierId;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public Modifier getModifier() {
-        return this.modifier;
+    public int getModifierId() {
+        return this.modifierId;
     }
 
     @Override

@@ -71,10 +71,11 @@ public class WorldDaoImpl implements WorldDao {
     public World createWorldThreadSafe(GameContext gameContext) {
         Minister[] ministers = new Minister[5853];
         Leader[] leaders = new Leader[52419];
+        ModifierStoreBuilder modifierStoreBuilder = new ModifierStoreBuilder();
         Map<String, Government> governments = this.readGovernmentsJson();
-        NationalIdeas nationalIdeas = this.readNationalIdeasJson();
+        NationalIdeas nationalIdeas = this.readNationalIdeasJson(modifierStoreBuilder);
         Map<String, Ideology> ideologies = this.readIdeologiesJson();
-        Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson();
+        Map<String, MinisterType> ministerTypes = this.readMinisterTypesJson(modifierStoreBuilder);
         ObjectIntMap<String> goodIds = new ObjectIntMap<>(40, 1f);
         GoodStore goodStore = this.readGoodsJson(goodIds);
         ObjectIntMap<String> populationTypeIds = new ObjectIntMap<>(12, 1f);
@@ -88,8 +89,8 @@ public class WorldDaoImpl implements WorldDao {
         BuildingStore buildingStore = this.readBuildingsJson(goodIds, productionTypeIds, buildingIds);
         this.readResourceProductionsJson(goodStore, goodIds, productionTypeIds);
         AtomicInteger baseEnactmentDaysLaw = new AtomicInteger();
-        Map<String, LawGroup> lawGroups = this.readLawsJson(ideologies, baseEnactmentDaysLaw);
-        Map<String, Trait> traits = this.readTraitsJson();
+        Map<String, LawGroup> lawGroups = this.readLawsJson(ideologies, modifierStoreBuilder, baseEnactmentDaysLaw);
+        Map<String, Trait> traits = this.readTraitsJson(modifierStoreBuilder);
         Map<String, Country> countries = this.loadCountries(ministerTypes, ideologies, ministers, traits, leaders);
         IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(14796, 1f);
         IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(3388, 1f);
@@ -105,7 +106,7 @@ public class WorldDaoImpl implements WorldDao {
         final CountDownLatch latch = new CountDownLatch(1);
 
         Gdx.app.postRunnable(() -> {
-            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, economy, politics, nationalIdeas, terrains, gameContext));
+            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, modifierStoreBuilder.build(), economy, politics, nationalIdeas, terrains, gameContext));
             latch.countDown();
         });
 
@@ -128,7 +129,7 @@ public class WorldDaoImpl implements WorldDao {
         return new BufferedReader(new StringReader(fileHandle.readString()));
     }
 
-    private NationalIdeas readNationalIdeasJson() {
+    private NationalIdeas readNationalIdeasJson(ModifierStoreBuilder modifierStoreBuilder) {
         try {
             JsonValue nationalIdeasValues = this.parseJsonFile(this.nationalIdeasJsonFile);
 
@@ -164,16 +165,17 @@ public class WorldDaoImpl implements WorldDao {
                 Map.Entry<String, JsonValue> identityEntry = identitiesEntryIterator.next();
                 String name = identityEntry.getKey();
                 JsonValue identityValue = identityEntry.getValue();
-                List<Modifier> modifiers = new ObjectList<>();
+                IntList modifierIds = new IntList();
                 Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = identityValue.objectIterator();
                 while (modifiersEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
                     String modifierName = modifierEntry.getKey();
                     JsonValue modifierValue = modifierEntry.getValue();
                     float value = (float) modifierValue.asDouble();
-                    modifiers.add(new Modifier(modifierName, value));
+                    modifierStoreBuilder.addModifier(modifierName, value);
+                    modifierIds.add(modifierStoreBuilder.getIndex());
                 }
-                identities.put(name, new Identity(name, modifiers));
+                identities.put(name, new Identity(name, modifierIds));
             }
 
             Map<String, Attitude> attitudes = new ObjectObjectMap<>(7);
@@ -182,16 +184,17 @@ public class WorldDaoImpl implements WorldDao {
                 Map.Entry<String, JsonValue> attitudeEntry = attitudesEntryIterator.next();
                 String name = attitudeEntry.getKey();
                 JsonValue attitudeValue = attitudeEntry.getValue();
-                List<Modifier> modifiers = new ObjectList<>();
+                IntList modifierIds = new IntList();
                 Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = attitudeValue.objectIterator();
                 while (modifiersEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
                     String modifierName = modifierEntry.getKey();
                     JsonValue modifierValue = modifierEntry.getValue();
                     float value = (float) modifierValue.asDouble();
-                    modifiers.add(new Modifier(modifierName, value));
+                    modifierStoreBuilder.addModifier(modifierName, value);
+                    modifierIds.add(modifierStoreBuilder.getIndex());
                 }
-                attitudes.put(name, new Attitude(name, modifiers));
+                attitudes.put(name, new Attitude(name, modifierIds));
             }
 
             return new NationalIdeas(cultureStore, religionStore, cultureIds, religionIds, identities, attitudes);
@@ -562,7 +565,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private Map<String, MinisterType> readMinisterTypesJson() {
+    private Map<String, MinisterType> readMinisterTypesJson(ModifierStoreBuilder modifierStoreBuilder) {
         Map<String, MinisterType> ministerTypes = new ObjectObjectMap<>(26, 1f);
         try {
             JsonValue ministerTypesValues = this.parseJsonFile(this.ministerTypesJsonFile);
@@ -570,15 +573,16 @@ public class WorldDaoImpl implements WorldDao {
             while (ministerTypesEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = ministerTypesEntryIterator.next();
                 String ministerTypeName = entry.getKey();
-                List<Modifier> modifiers = new ObjectList<>();
+                IntList modifierIds = new IntList();
                 Iterator<Map.Entry<String, JsonValue>> modifierEntryIterator = entry.getValue().objectIterator();
                 while (modifierEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> modifierEntry = modifierEntryIterator.next();
                     String modifierName = modifierEntry.getKey();
                     float modifierValue = (float) modifierEntry.getValue().asDouble();
-                    modifiers.add(new Modifier(modifierName, modifierValue));
+                    modifierStoreBuilder.addModifier(modifierName, modifierValue);
+                    modifierIds.add(modifierStoreBuilder.getIndex());
                 }
-                ministerTypes.put(ministerTypeName, new MinisterType(ministerTypeName, modifiers));
+                ministerTypes.put(ministerTypeName, new MinisterType(ministerTypeName, modifierIds));
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -616,7 +620,7 @@ public class WorldDaoImpl implements WorldDao {
         return terrains;
     }
 
-    private Map<String, LawGroup> readLawsJson(Map<String, Ideology> ideologies, AtomicInteger baseEnactmentDaysLaw) {
+    private Map<String, LawGroup> readLawsJson(Map<String, Ideology> ideologies, ModifierStoreBuilder modifierStoreBuilder, AtomicInteger baseEnactmentDaysLaw) {
         Map<String, LawGroup> lawGroups = new ObjectObjectOrderedMap<>(21, 1f);
         try {
             JsonValue lawsValues = this.parseJsonFile(this.lawsJsonFile);
@@ -638,13 +642,14 @@ public class WorldDaoImpl implements WorldDao {
                     while (requirementsIterator.hasNext()) {
                         requirements.add(requirementsIterator.next().asString());
                     }
-                    List<Modifier> modifiers = new ObjectList<>();
+                    IntList modifierIds = new IntList();
                     Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = lawValue.get("modifiers").objectIterator();
                     while (modifiersEntryIterator.hasNext()) {
                         Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
                         String modifierName = modifierEntry.getKey();
                         float modifierValue = (float) modifierEntry.getValue().asDouble();
-                        modifiers.add(new Modifier(modifierName, modifierValue));
+                        modifierStoreBuilder.addModifier(modifierName, modifierValue);
+                        modifierIds.add(modifierStoreBuilder.getIndex());
                     }
                     ObjectIntMap<Ideology> interestIdeologies = new ObjectIntMap<>();
                     Iterator<Map.Entry<String, JsonValue>> interestIdeologiesEntryIterator = lawValue.get("interest_ideologies").objectIterator();
@@ -654,7 +659,7 @@ public class WorldDaoImpl implements WorldDao {
                         int value = (int) entry.getValue().asLong();
                         interestIdeologies.put(ideology, value);
                     }
-                    laws.put(lawName, new Law(lawName, requirements, modifiers, interestIdeologies));
+                    laws.put(lawName, new Law(lawName, requirements, modifierIds, interestIdeologies));
                 }
                 lawGroups.put(name, new LawGroup(name, factorEnactmentDays, laws));
             }
@@ -667,7 +672,7 @@ public class WorldDaoImpl implements WorldDao {
         return lawGroups;
     }
 
-    private Map<String, Trait> readTraitsJson() {
+    private Map<String, Trait> readTraitsJson(ModifierStoreBuilder modifierStoreBuilder) {
         Map<String, Trait> traits = new ObjectObjectMap<>(22, 1f);
         try {
             JsonValue traitsValues = this.parseJsonFile(this.traitsJsonFile);
@@ -679,8 +684,8 @@ public class WorldDaoImpl implements WorldDao {
                 Map.Entry<String, JsonValue> modifierEntry = traitValue.objectIterator().next();
                 String modifierName = modifierEntry.getKey();
                 float modifierValue = (float) modifierEntry.getValue().asDouble();
-                Modifier modifier = new Modifier(modifierName, modifierValue);
-                traits.put(traitName, new Trait(traitName, modifier));
+                modifierStoreBuilder.addModifier(modifierName, modifierValue);
+                traits.put(traitName, new Trait(traitName, modifierStoreBuilder.getIndex()));
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();

@@ -1,33 +1,32 @@
 package com.populaire.projetguerrefroide.national;
 
-import com.populaire.projetguerrefroide.entity.Modifier;
+import com.github.tommyettinger.ds.IntList;
 import com.populaire.projetguerrefroide.util.Named;
 
-import java.util.List;
 import java.util.Objects;
 
 public class Identity implements Named {
     private final String name;
-    private final List<Modifier> modifiers;
+    private final IntList modifierIds;
 
-    public Identity(String name, List<Modifier> modifiers) {
+    public Identity(String name, IntList modifierIds) {
         this.name = name;
-        this.modifiers = modifiers;
+        this.modifierIds = modifierIds;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public List<Modifier> getModifiers() {
-        return this.modifiers;
+    public IntList getModifierIds() {
+        return this.modifierIds;
     }
 
     @Override
     public String toString() {
         return "Identity{" +
                 "name='" + this.name + '\'' +
-                ", modifiers=" + this.modifiers +
+                ", modifiers=" + this.modifierIds +
                 '}';
     }
 

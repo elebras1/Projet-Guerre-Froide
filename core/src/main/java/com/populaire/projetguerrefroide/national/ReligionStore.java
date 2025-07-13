@@ -1,7 +1,6 @@
 package com.populaire.projetguerrefroide.national;
 
 import com.github.tommyettinger.ds.IntList;
-import com.populaire.projetguerrefroide.entity.Modifier;
 
 import java.util.List;
 

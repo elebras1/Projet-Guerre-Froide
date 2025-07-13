@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.economy.Economy;
+import com.populaire.projetguerrefroide.entity.ModifierStore;
 import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
 import com.populaire.projetguerrefroide.entity.Terrain;
 import com.populaire.projetguerrefroide.national.NationalIdeas;
@@ -31,6 +32,7 @@ public class World implements Disposable {
     private final IntObjectMap<WaterProvince> waterProvinces;
     private final ProvinceStore provinceStore;
     private final RegionStore regionStore;
+    private final ModifierStore modifierStore;
     private final Economy economy;
     private final Politics politics;
     private final NationalIdeas nationalIdeas;
@@ -62,13 +64,14 @@ public class World implements Disposable {
     private Country countryPlayer;
     private MapMode mapMode;
 
-    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, Economy economy, Politics politics, NationalIdeas nationalIdeas, Map<String, Terrain> terrains, GameContext gameContext) {
+    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, ModifierStore modifierStore, Economy economy, Politics politics, NationalIdeas nationalIdeas, Map<String, Terrain> terrains, GameContext gameContext) {
         this.mapDao = new MapDaoImpl();
         this.countries = countries;
         this.provinces = provinces;
         this.waterProvinces = waterProvinces;
         this.provinceStore = provinceStore;
         this.regionStore = regionStore;
+        this.modifierStore = modifierStore;
         this.economy = economy;
         this.politics = politics;
         this.nationalIdeas = nationalIdeas;

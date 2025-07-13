@@ -1,25 +1,24 @@
 package com.populaire.projetguerrefroide.politics;
 
-import com.populaire.projetguerrefroide.entity.Modifier;
+import com.github.tommyettinger.ds.IntList;
 
-import java.util.List;
 import java.util.Objects;
 
 public class MinisterType {
     private final String name;
-    private final List<Modifier> modifiers;
+    private final IntList modifierIds;
 
-    public MinisterType(String name, List<Modifier> modifiers) {
+    public MinisterType(String name, IntList modifierIds) {
         this.name = name;
-        this.modifiers = modifiers;
+        this.modifierIds = modifierIds;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public List<Modifier> getModifiers() {
-        return this.modifiers;
+    public IntList getModifierIds() {
+        return this.modifierIds;
     }
 
     @Override
@@ -39,7 +38,7 @@ public class MinisterType {
     public String toString() {
         return "MinisterType{" +
             "name='" + this.name + '\'' +
-            ", modifiers=" + this.modifiers +
+            ", modifiers=" + this.modifierIds +
             '}';
     }
 }

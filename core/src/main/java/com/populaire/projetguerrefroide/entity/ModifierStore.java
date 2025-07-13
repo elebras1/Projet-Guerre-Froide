@@ -1,53 +1,39 @@
 package com.populaire.projetguerrefroide.entity;
 
-import java.util.Objects;
+import com.github.tommyettinger.ds.CharList;
+import com.github.tommyettinger.ds.FloatList;
 
-public class Modifier {
-    private final String name;
-    private final float value;
-    private final String type;
+import java.util.List;
 
-    public Modifier(String name, float value, String type) {
-        this.name = name;
-        this.value = value;
-        this.type = type;
+public class ModifierStore {
+    private final List<String> names;
+    private final FloatList values;
+    private final CharList operators;
+
+    public ModifierStore(List<String> names, FloatList values, CharList operators) {
+        this.names = names;
+        this.values = values;
+        this.operators = operators;
     }
 
-    public Modifier(String name, float value) {
-        this(name, value, "add");
+    public List<String> getNames() {
+        return this.names;
     }
 
-    public String getName() {
-        return this.name;
+    public FloatList getValues() {
+        return this.values;
     }
 
-    public float getValue() {
-        return this.value;
-    }
-
-    public String getType() {
-        return this.type;
-    }
-
-    @Override
-    public final boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Modifier modifier)) return false;
-
-        return Objects.equals(this.name, modifier.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(this.name);
+    public CharList getOperators() {
+        return this.operators;
     }
 
     @Override
     public String toString() {
-        return "Modifier{" +
-            "name='" + this.name + '\'' +
-            ", value=" + this.value +
-            ", type='" + this.type + '\'' +
+        return "ModifierStore{" +
+            "names=" + this.names +
+            ", values=" + this.values +
+            ", types=" + this.operators +
             '}';
     }
 }
