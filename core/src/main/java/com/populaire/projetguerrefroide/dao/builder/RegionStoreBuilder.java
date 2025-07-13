@@ -32,10 +32,10 @@ public class RegionStoreBuilder {
     }
 
     public RegionStoreBuilder addRegion(String regionId) {
+        this.index = this.regionIds.size();
         this.regionIds.put(regionId, this.index);
         this.buildingStarts.add(this.buildingIds.size());
         this.buildingCounts.add(0);
-        this.index = this.regionIds.size() - 1;
         return this;
     }
 

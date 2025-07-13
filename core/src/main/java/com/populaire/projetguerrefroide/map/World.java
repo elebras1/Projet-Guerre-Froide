@@ -477,7 +477,7 @@ public class World implements Disposable {
             return 0;
         } else if (!provinceRight.getCountryOwner().equals(country) || !provinceLeft.getCountryOwner().equals(country) || !provinceUp.getCountryOwner().equals(country) || !provinceDown.getCountryOwner().equals(country)) {
             return 153;
-        } else if (!provinceRight.getRegion().equals(region) || !provinceLeft.getRegion().equals(region) || !provinceUp.getRegion().equals(region) || !provinceDown.getRegion().equals(region)) {
+        } else if (!region.equals(provinceRight.getRegion()) || !region.equals(provinceLeft.getRegion()) || !region.equals(provinceUp.getRegion()) || !region.equals(provinceDown.getRegion())) {
             return 77;
         } else {
             return 0;
