@@ -16,11 +16,13 @@ import com.populaire.projetguerrefroide.economy.building.BuildingType;
 import com.populaire.projetguerrefroide.map.RegionStore;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevelDto;
+import com.populaire.projetguerrefroide.politics.AllianceType;
 import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
+import javax.swing.text.html.parser.Entity;
 import java.util.List;
 import java.util.Map;
 
@@ -98,7 +100,7 @@ public class WorldService {
 
     public CountrySummaryDto prepareCountrySummaryDto(Map<String, String> localisation) {
         Country selectedCountry = this.world.getSelectedProvince().getCountryOwner();
-        Minister headOfState = this.world.getPolitics().getMinister(selectedCountry.getHeadOfStateId());
+        Minister headOfState = this.getHeadOfState(selectedCountry);
         String portraitNameFile = "admin_type";
         if(headOfState.getImageNameFile() != null) {
             portraitNameFile = headOfState.getImageNameFile();
@@ -402,6 +404,23 @@ public class WorldService {
             allies.add(ally.getId());
         }
         return allies;
+    }
+
+    public Minister getHeadOfState(Country country) {
+        Minister headOfState = null;
+        if(country.getHeadOfStateId() != -1) {
+            headOfState = this.world.getPolitics().getMinister(country.getHeadOfStateId());
+        }
+
+        if(country.getAlliances() != null) {
+            for (Map.Entry<Country, AllianceType> alliance : country.getAlliances().entrySet()) {
+                if (alliance.getValue() == AllianceType.COLONY) {
+                    headOfState = this.world.getPolitics().getMinister(alliance.getKey().getHeadOfStateId());
+                }
+            }
+        }
+
+        return headOfState;
     }
 
     public void dispose() {
