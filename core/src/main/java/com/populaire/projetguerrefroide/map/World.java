@@ -14,6 +14,7 @@ import com.populaire.projetguerrefroide.entity.ModifierStore;
 import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
 import com.populaire.projetguerrefroide.entity.Terrain;
 import com.populaire.projetguerrefroide.national.NationalIdeas;
+import com.populaire.projetguerrefroide.politics.AllianceType;
 import com.populaire.projetguerrefroide.politics.Politics;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
@@ -238,7 +239,18 @@ public class World implements Disposable {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
-            this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(this.provinces.get(color)).getCountryOwner().getColor());
+
+            Country country = Objects.requireNonNull(this.provinces.get(color)).getCountryOwner();
+            int countryColor = country.getColor();
+            if(country.getAlliances() != null) {
+                for(Map.Entry<Country, AllianceType> alliance : country.getAlliances().entrySet()) {
+                    if(alliance.getValue() == AllianceType.COLONY) {
+                        countryColor = alliance.getKey().getColor();
+                        break;
+                    }
+                }
+            }
+            this.mapModePixmap.drawPixel(red, green, countryColor);
 
         }
     }
