@@ -86,11 +86,6 @@
             "type": "puppet_state"
         },
         {
-            "country1": "ENG",
-            "country2": "HNK",
-            "type": "puppet_state"
-        },
-        {
             "country1": "USA",
             "country2": "WBR",
             "type": "puppet_state"
@@ -104,6 +99,16 @@
             "country1": "USA",
             "country2": "JAP",
             "type": "puppet_state"
+        },
+        {
+            "country1": "ENG",
+            "country2": "GHN",
+            "type": "colony"
+        },
+        {
+            "country1": "ENG",
+            "country2": "HNK",
+            "type": "colony"
         }
     ]
 }
