@@ -169,6 +169,7 @@ public class World implements Disposable {
 
     public boolean selectProvince(short x, short y) {
         this.selectedProvince = this.getProvince(x, y);
+        System.out.println("\n" + this.selectedProvince);
         return this.selectedProvince != null;
     }
 

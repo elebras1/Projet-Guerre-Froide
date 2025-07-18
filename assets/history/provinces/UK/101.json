@@ -1,7 +1,10 @@
 {
-    "owner": "ENG",
-    "controller": "ENG",
-    "add_core": "ENG",
+    "owner": "KIR",
+    "controller": "KIR",
+    "add_core": [
+      "KIR",
+      "ENG"
+    ],
     "population_total": {
         "amount": 30986,
         "template": 155,
