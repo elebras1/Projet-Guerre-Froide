@@ -1,7 +1,10 @@
 {
-    "owner": "FRA",
-    "controller": "FRA",
-    "add_core": "FRA",
+    "owner": "COM",
+    "controller": "COM",
+    "add_core": [
+        "FRA",
+        "COM"
+    ],
     "population_total": {
         "amount": 14717,
         "template": 109,
