@@ -411,8 +411,10 @@ public class WorldService {
             return allies;
         }
 
-        for(Country ally : country.getAlliances().keySet()) {
-            allies.add(ally.getId());
+        for(Map.Entry<Country, AllianceType> alliance : country.getAlliances().entrySet()) {
+            if(alliance.getValue() != AllianceType.COLONIZER) {
+                allies.add(alliance.getKey().getId());
+            }
         }
         return allies;
     }
