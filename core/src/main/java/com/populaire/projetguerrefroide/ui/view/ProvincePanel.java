@@ -185,7 +185,7 @@ public class ProvincePanel extends Table {
         this.setDevelopmentIndexRegion(provinceDto.getDevelopmentIndexRegion());
         this.setIncomeRegion(provinceDto.getIncomeRegion());
         this.setIndustryRegion(provinceDto.getIndustryRegion());
-        this.setFlagImage(provinceDto.getFlagImage());
+        this.setFlagImage(provinceDto.getCountryId(), provinceDto.getColonizerId());
         this.setFlagCountriesCore(provinceDto.getFlagCountriesCore());
         this.setResourceProduced(provinceDto.getResourceProduced());
         this.setInfrastructureValue(provinceDto.getInfrastructureValue());
@@ -257,8 +257,8 @@ public class ProvincePanel extends Table {
         this.industryRegion.setPosition(360 - this.industryRegion.getMinWidth(), 75);
     }
 
-    private void setFlagImage(String idCountry) {
-        this.flagImage.setFlag(this.skinFlags.getRegion(idCountry));
+    private void setFlagImage(String idCountry, String idColonizer) {
+        this.flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(skin, idCountry, idColonizer));
         this.flagImage.setPosition(36, 430);
     }
 

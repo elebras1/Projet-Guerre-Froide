@@ -46,6 +46,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     private HoverTooltip hoverTooltip;
     private CountrySummaryPanel countrySummaryPanel;
     private MainMenuInGame mainMenuInGame;
+    private WidgetFactory widgetFactory;
     private float time;
     private boolean paused;
 
@@ -69,6 +70,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
         this.configurationService.loadNewGameLocalisation(this.gameContext);
+        this.widgetFactory = new WidgetFactory();
         this.initializeUi();
         this.paused = false;
     }
@@ -84,9 +86,8 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.debug.setPosition(100, 90);
         this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
 
-        WidgetFactory widgetFactory = new WidgetFactory();
-        this.hoverTooltip = new HoverTooltip(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
-        this.mainMenuInGame = new MainMenuInGame(widgetFactory, this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
+        this.hoverTooltip = new HoverTooltip(this.widgetFactory, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        this.mainMenuInGame = new MainMenuInGame(this.widgetFactory, this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.mainMenuInGame.setVisible(false);
         Table centerTable = new Table();
         centerTable.setFillParent(true);
@@ -96,9 +97,9 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         topTable.setFillParent(true);
         topTable.top();
         ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getBookmark(), this.gameContext.getLocalisation());
-        TitleBar titleBar = new TitleBar(widgetFactory, this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
-        LobbyBox lobbyBox = new LobbyBox(widgetFactory, this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
-        this.countrySummaryPanel = new CountrySummaryPanel(widgetFactory, this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        TitleBar titleBar = new TitleBar(this.widgetFactory, this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        LobbyBox lobbyBox = new LobbyBox(this.widgetFactory, this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
+        this.countrySummaryPanel = new CountrySummaryPanel(this.widgetFactory, this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         topTable.add(scenarioSavegameSelector).align(Align.topLeft).expandX();
         topTable.add(titleBar).align(Align.top);
         topTable.add(this.countrySummaryPanel).align(Align.topRight).expandX();
@@ -128,7 +129,8 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         if(this.worldService.hoverProvince(x, y) && !this.isMouseOverUI()) {
             this.updateHoverBox(this.worldService.getProvinceId(x, y),
                 this.worldService.getCountryNameOfHoveredProvince(x, y),
-                this.worldService.getCountryIdOfHoveredProvince(x, y));
+                this.worldService.getCountryIdOfHoveredProvince(x, y),
+                this.worldService.getColonizerIdOfHoveredProvince(x, y));
         } else {
             this.hideHoverBox();
         }
@@ -178,7 +180,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     @Override
     public void onQuitClicked(PopupListener listener) {
-        Popup popup = new Popup(this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(),
+        Popup popup = new Popup(this.widgetFactory, this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(),
             "QUIT_TITLE", "QUIT_DESC", true, false, listener);
         Table centerTable = new Table();
         centerTable.setFillParent(true);
@@ -235,10 +237,10 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         }
     }
 
-    public void updateHoverBox(short provinceId, String countryName, String countryId) {
+    public void updateHoverBox(short provinceId, String countryName, String countryId, String colonizerId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverTooltip.update(provinceId, countryName, countryId);
+        this.hoverTooltip.update(provinceId, countryName, countryId, colonizerId);
         this.hoverTooltip.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
             y - this.gameContext.getCursorManager().getHeight() * 1.5f);
         this.hoverTooltip.setVisible(true);

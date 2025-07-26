@@ -12,7 +12,8 @@ public class ProvinceDto {
     private final int developmentIndexRegion;
     private final int incomeRegion;
     private final int industryRegion;
-    private final String flagImage;
+    private final String countryId;
+    private final String colonizerId;
     private final List<String> flagCountriesCore;
     private final float resourceProduced;
     private final int infrastructureValue;
@@ -25,7 +26,7 @@ public class ProvinceDto {
     private final List<String> specialBuildings;
     private final List<String> colorBuildings;
 
-    public ProvinceDto(String provinceId, String regionId, String terrainImage, String resourceImage, String populationRegion, String workersRegion, int developmentIndexRegion, int incomeRegion, int industryRegion, String flagImage, List<String> flagCountriesCore, float resourceProduced, int infrastructureValue, int guerillaValue, String populationProvince, float incomeProvince, float revoltRisk, List<String> provinceIdsRegion, DevelopementBuildingLevelDto developmentBuildingLeve, List<String> specialBuildings, List<String> colorBuildings) {
+    public ProvinceDto(String provinceId, String regionId, String terrainImage, String resourceImage, String populationRegion, String workersRegion, int developmentIndexRegion, int incomeRegion, int industryRegion, String countryId, String colonizerId, List<String> flagCountriesCore, float resourceProduced, int infrastructureValue, int guerillaValue, String populationProvince, float incomeProvince, float revoltRisk, List<String> provinceIdsRegion, DevelopementBuildingLevelDto developmentBuildingLeve, List<String> specialBuildings, List<String> colorBuildings) {
         this.provinceId = provinceId;
         this.regionId = regionId;
         this.terrainImage = terrainImage;
@@ -35,7 +36,8 @@ public class ProvinceDto {
         this.developmentIndexRegion = developmentIndexRegion;
         this.incomeRegion = incomeRegion;
         this.industryRegion = industryRegion;
-        this.flagImage = flagImage;
+        this.countryId = countryId;
+        this.colonizerId = colonizerId;
         this.flagCountriesCore = flagCountriesCore;
         this.resourceProduced = resourceProduced;
         this.infrastructureValue = infrastructureValue;
@@ -85,8 +87,12 @@ public class ProvinceDto {
         return this.industryRegion;
     }
 
-    public String getFlagImage() {
-        return this.flagImage;
+    public String getCountryId() {
+        return this.countryId;
+    }
+
+    public String getColonizerId() {
+        return this.colonizerId;
     }
 
     public List<String> getFlagCountriesCore() {

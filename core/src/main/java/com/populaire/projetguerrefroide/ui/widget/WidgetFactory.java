@@ -116,4 +116,28 @@ public class WidgetFactory {
         defaultPixmapFlag.dispose();
         return new FlagImage(defaultFlag, overlayFlag, alphaFlag);
     }
+
+    public Drawable getFlagDrawable(Skin skin, String countryId, String colonizerId) {
+        if (colonizerId == null) {
+            return skin.getDrawable(countryId);
+        }
+
+        if (skin.has(countryId + "_COL_" + colonizerId, TextureRegion.class)) {
+            return skin.getDrawable(countryId + "_COL_" + colonizerId);
+        }
+
+        return skin.getDrawable(colonizerId);
+    }
+
+    public TextureRegion getFlagTextureRegion(Skin skin, String countryId, String colonizerId) {
+        if (colonizerId == null) {
+            return skin.getRegion(countryId);
+        }
+
+        if (skin.has(countryId + "_COL_" + colonizerId, TextureRegion.class)) {
+            return skin.getRegion(countryId + "_COL_" + colonizerId);
+        }
+
+        return skin.getRegion(colonizerId);
+    }
 }

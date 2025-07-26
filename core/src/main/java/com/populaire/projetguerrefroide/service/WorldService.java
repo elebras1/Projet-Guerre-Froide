@@ -22,7 +22,6 @@ import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.List;
 import java.util.Map;
 
@@ -108,7 +107,7 @@ public class WorldService {
         String population = ValueFormatter.formatValue(this.world.getPopulationAmount(selectedCountry), localisation);
         List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry);
 
-        return new CountrySummaryDto(selectedCountry.getName(), selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), allies);
+        return new CountrySummaryDto(selectedCountry.getName(), selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), getColonizerId(selectedCountry), allies);
     }
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {
@@ -140,14 +139,15 @@ public class WorldService {
         int developmentIndexRegion = 0;
         int incomeRegion = 0;
         int numberIndustryRegion = this.getNumberIndustry(region);
-        String flagImage = selectedProvince.getCountryOwner().getId();
+        String countryId = selectedProvince.getCountryOwner().getId();
+        String colonizerId = this.getColonizerId(selectedProvince.getCountryOwner());
         List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
         List<String> provinceIdsRegion = this.getProvinceIdsOrderByPopulation(region);
         DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(region);
         List<String> specialBuildings = this.getSpecialBuildingNames(region);
         List<String> colorsBuilding = this.getColorBuildingsOrderByLevel(region);
 
-        return new ProvinceDto(provinceId, regionId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, numberIndustryRegion, flagImage, flagCountriesCore, 0f, 0, 0, populationProvince, 0f, 0f, provinceIdsRegion, developmentBuildingLevel, specialBuildings, colorsBuilding);
+        return new ProvinceDto(provinceId, regionId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, numberIndustryRegion, countryId, colonizerId, flagCountriesCore, 0f, 0, 0, populationProvince, 0f, 0f, provinceIdsRegion, developmentBuildingLevel, specialBuildings, colorsBuilding);
     }
 
     public void changeMapMode(String mapMode) {
@@ -179,6 +179,17 @@ public class WorldService {
         List<String> religionNames = this.world.getNationalIdeas().getReligionStore().getNames();
 
         return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, startIndex, endIndex, religionNames, amountAdults);
+    }
+
+    public String getColonizerId() {
+        Country country = this.world.getSelectedProvince().getCountryOwner();
+        return this.getColonizerId(country);
+    }
+
+    public String getColonizerIdOfHoveredProvince(short x, short y) {
+        LandProvince province = this.world.getProvince(x, y);
+        Country country = province.getCountryOwner();
+        return this.getColonizerId(country);
     }
 
     private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(IntList provinceElementIds, IntList provinceElementValues, int startIndex, int endIndex, List<String> elementNames, int amountAdults) {
@@ -422,6 +433,21 @@ public class WorldService {
 
         return headOfState;
     }
+
+    private String getColonizerId(Country country) {
+        if(country.getAlliances() == null) {
+            return null;
+        }
+
+        for(Map.Entry<Country, AllianceType> alliances : country.getAlliances().entrySet()) {
+            if(alliances.getValue() == AllianceType.COLONY) {
+                return alliances.getKey().getId();
+            }
+        }
+
+        return null;
+    }
+
 
     public void dispose() {
         this.world.dispose();

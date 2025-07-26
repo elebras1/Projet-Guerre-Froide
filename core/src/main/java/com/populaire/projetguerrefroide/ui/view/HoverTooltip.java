@@ -9,10 +9,12 @@ import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.badlogic.gdx.utils.Scaling;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import java.util.Map;
 
 public class HoverTooltip extends Table {
+    private final WidgetFactory widgetFactory;
     private final Map<String, String> localisation;
     private final Skin skinFlags;
     private final Label mainLabel;
@@ -22,7 +24,8 @@ public class HoverTooltip extends Table {
     private final float heightWidth;
     private final StringBuilder text;
 
-    public HoverTooltip(Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public HoverTooltip(WidgetFactory widgetFactory, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
+        this.widgetFactory = widgetFactory;
         this.localisation = localisation;
         this.skinFlags = skinFlags;
         NinePatch ninePatch = skinUi.getPatch("tiles_dialog");
@@ -48,22 +51,22 @@ public class HoverTooltip extends Table {
         this.add(this.subLabel).expandX().top().left();
     }
 
-    public void update(short provinceId, String countryName, String countryId) {
+    public void update(short provinceId, String countryName, String countryId, String colonizerId) {
         String mainText = this.localisation.get(String.valueOf(provinceId)) + " (" + countryName + ")";
         if(!mainText.equals(this.mainLabel.getText().toString())) {
             this.mainLabel.setText(mainText);
-            this.image.setDrawable(this.skinFlags.getDrawable(countryId));
+            this.image.setDrawable(this.widgetFactory.getFlagDrawable(this.skinFlags, countryId, colonizerId));
             this.subLabel.remove();
             this.resize();
         }
     }
 
-    public void update(short provinceId, String countryName, String countryId, ObjectIntMap<String> elements) {
+    public void update(short provinceId, String countryName, String countryId, String colonizerId, ObjectIntMap<String> elements) {
         this.text.setLength(0);
         this.text.append(this.localisation.get(String.valueOf(provinceId))).append(" (").append(countryName).append(")");
         if (!this.text.toString().equals(this.mainLabel.getText().toString())) {
             this.mainLabel.setText(this.text.toString());
-            this.image.setDrawable(this.skinFlags.getDrawable(countryId));
+            this.image.setDrawable(this.widgetFactory.getFlagDrawable(this.skinFlags, countryId, colonizerId));
 
             this.text.setLength(0);
             int i = 0, size = elements.size();

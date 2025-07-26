@@ -9,15 +9,17 @@ public class CountrySummaryDto {
     private final String government;
     private final String portrait;
     private final String leaderFullName;
+    private final String colonizerId;
     private final List<String> allies;
 
-    public CountrySummaryDto(String countryName, String idCountry, String population, String government, String portrait, String leaderFullName, List<String> allies) {
+    public CountrySummaryDto(String countryName, String idCountry, String population, String government, String portrait, String leaderFullName, String colonizerId, List<String> allies) {
         this.countryName = countryName;
         this.idCountry = idCountry;
         this.population = population;
         this.government = government;
         this.portrait = portrait;
         this.leaderFullName = leaderFullName;
+        this.colonizerId = colonizerId;
         this.allies = allies;
     }
 
@@ -43,6 +45,10 @@ public class CountrySummaryDto {
 
     public String getLeaderFullName() {
         return this.leaderFullName;
+    }
+
+    public String getColonizerId() {
+        return this.colonizerId;
     }
 
     public List<String> getAllies() {

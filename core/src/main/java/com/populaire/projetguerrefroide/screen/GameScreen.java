@@ -56,6 +56,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     private final ProvincePanel provincePanel;
     private HoverTooltip hoverTooltip;
     private MainMenuInGame mainMenuInGame;
+    private WidgetFactory widgetFactory;
     private float time;
     private boolean paused;
 
@@ -86,18 +87,18 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         this.configurationService.loadGameLocalisation(this.gameContext);
 
-        WidgetFactory widgetFactory = new WidgetFactory();
-        this.topBar = new TopBar(widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer(), this);
-        this.provincePanel = new ProvincePanel(widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        this.widgetFactory = new WidgetFactory();
+        this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer(), this.worldService.getColonizerId(), this);
+        this.provincePanel = new ProvincePanel(this.widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new Stage(new ScreenViewport());
-        this.initializeUi(widgetFactory);
+        this.initializeUi();
         this.dateService.initialize();
 
         this.paused = false;
     }
 
-    private void initializeUi(WidgetFactory widgetFactory) {
+    private void initializeUi() {
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(this.multiplexer);
@@ -109,7 +110,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         this.provincePanel.setPosition(0, 0);
 
-        this.hoverTooltip = new HoverTooltip(this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        this.hoverTooltip = new HoverTooltip(this.widgetFactory, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.stage.addActor(this.hoverTooltip);
 
         Table topTable = new Table();
@@ -124,7 +125,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         Table centerTable = new Table();
         centerTable.setFillParent(true);
-        this.mainMenuInGame = new MainMenuInGame(widgetFactory, this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
+        this.mainMenuInGame = new MainMenuInGame(this.widgetFactory, this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.mainMenuInGame.setVisible(false);
         centerTable.add(this.mainMenuInGame).center();
         this.stage.addActor(centerTable);
@@ -171,11 +172,11 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     public void onHover(short x, short y) {
         if(this.worldService.hoverProvince(x, y) && this.isMouseOverUI()) {
             if(this.worldService.getMapMode().equals(MapMode.CULTURAL)) {
-                this.updateHoverTooltip(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getCulturesOfHoveredProvince(x, y));
+                this.updateHoverTooltip(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y), this.worldService.getCulturesOfHoveredProvince(x, y));
             } else if(this.worldService.getMapMode().equals(MapMode.RELIGIOUS)) {
-                this.updateHoverTooltip(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getReligionsOfHoveredProvince(x, y));
+                this.updateHoverTooltip(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y), this.worldService.getReligionsOfHoveredProvince(x, y));
             } else {
-                this.updateHoverTooltip(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y));
+                this.updateHoverTooltip(this.worldService.getProvinceId(x, y), this.worldService.getCountryNameOfHoveredProvince(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y));
             }
         } else if(this.isMouseOverUI()) {
             this.hideHoverBox();
@@ -233,8 +234,8 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
     @Override
     public void onQuitClicked(PopupListener listener) {
-        Popup popup = new Popup(this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(),
-            "QUIT_TITLE", "QUIT_DESC", this.worldService.getCountryIdPlayer(), true, false, listener);
+        Popup popup = new Popup(this.widgetFactory, this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(),
+            "QUIT_TITLE", "QUIT_DESC", this.worldService.getCountryIdPlayer(), this.worldService.getColonizerId(), true, false, listener);
         Table centerTable = new Table();
         centerTable.setFillParent(true);
         centerTable.add(popup).center();
@@ -299,20 +300,20 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.hoverTooltip.toFront();
     }
 
-    public void updateHoverTooltip(short provinceId, String countryName, String countryId) {
+    public void updateHoverTooltip(short provinceId, String countryName, String countryId, String colonizerId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverTooltip.update(provinceId, countryName, countryId);
+        this.hoverTooltip.update(provinceId, countryName, countryId, colonizerId);
         this.hoverTooltip.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
                 y - this.gameContext.getCursorManager().getHeight() * 1.5f);
         this.hoverTooltip.setVisible(true);
         this.hoverTooltip.toBack();
     }
 
-    public void updateHoverTooltip(short provinceId, String countryName, String countryId, ObjectIntMap<String> elements) {
+    public void updateHoverTooltip(short provinceId, String countryName, String countryId, String colonizerId, ObjectIntMap<String> elements) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverTooltip.update(provinceId, countryName, countryId, elements);
+        this.hoverTooltip.update(provinceId, countryName, countryId, colonizerId, elements);
         this.hoverTooltip.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
             y - this.gameContext.getCursorManager().getHeight() * 1.5f);
         this.hoverTooltip.setVisible(true);
