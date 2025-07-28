@@ -258,7 +258,7 @@ public class ProvincePanel extends Table {
     }
 
     private void setFlagImage(String idCountry, String idColonizer) {
-        this.flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(skin, idCountry, idColonizer));
+        this.flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(this.skinFlags, idCountry, idColonizer));
         this.flagImage.setPosition(36, 430);
     }
 
