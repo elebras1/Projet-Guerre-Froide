@@ -77,10 +77,6 @@ public class WorldService {
         return this.world.getProvince(x, y).getCountryOwner().getId();
     }
 
-    public String getCountryNameOfHoveredProvince(short x, short y) {
-        return this.world.getProvince(x, y).getCountryOwner().getName();
-    }
-
     public int getPositionOfCapitalOfSelectedCountry() {
         return this.world.getSelectedProvince().getCountryOwner().getCapital().getPosition("default");
     }
@@ -107,7 +103,7 @@ public class WorldService {
         String population = ValueFormatter.formatValue(this.world.getPopulationAmount(selectedCountry), localisation);
         List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry);
 
-        return new CountrySummaryDto(selectedCountry.getName(), selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), getColonizerId(selectedCountry), allies);
+        return new CountrySummaryDto(selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), getColonizerId(selectedCountry), allies);
     }
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {

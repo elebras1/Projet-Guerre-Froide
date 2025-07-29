@@ -69,7 +69,7 @@ public class CountrySummaryPanel extends Table implements Disposable {
     }
 
     public void update(CountrySummaryDto countrySummaryDto, Map<String, String> localisation) {
-        this.countryName.setText(countrySummaryDto.getCountryName());
+        this.countryName.setText(localisation.get(countrySummaryDto.getIdCountry()));
         this.flagImage.setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, countrySummaryDto.getIdCountry(), countrySummaryDto.getColonizerId()));
         this.government.setText(localisation.get(countrySummaryDto.getGovernment()));
         this.countryPopulation.setText(countrySummaryDto.getPopulation());
