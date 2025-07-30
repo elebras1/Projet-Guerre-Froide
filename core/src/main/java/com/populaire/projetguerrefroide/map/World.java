@@ -136,17 +136,6 @@ public class World implements Disposable {
         String fragmentRiverShader = Gdx.files.internal("shaders/river_f.glsl").readString();
         this.riverShader = new ShaderProgram(vertexRiverShader, fragmentRiverShader);
         ShaderProgram.pedantic = false;
-
-        for(Country country : countries) {
-            if(country.getAlliances() == null) {
-                continue;
-            }
-            for(AllianceType allianceType : country.getAlliances().values()) {
-                if(allianceType == AllianceType.COLONY) {
-                    System.out.println(country + " " + country.getName());
-                }
-            }
-        }
     }
 
     public ProvinceStore getProvinceStore() {
