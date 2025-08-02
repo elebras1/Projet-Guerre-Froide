@@ -16,6 +16,7 @@ import com.populaire.projetguerrefroide.economy.building.BuildingType;
 import com.populaire.projetguerrefroide.map.RegionStore;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevelDto;
+import com.populaire.projetguerrefroide.politics.AllianceType;
 import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
@@ -76,10 +77,6 @@ public class WorldService {
         return this.world.getProvince(x, y).getCountryOwner().getId();
     }
 
-    public String getCountryNameOfHoveredProvince(short x, short y) {
-        return this.world.getProvince(x, y).getCountryOwner().getName();
-    }
-
     public int getPositionOfCapitalOfSelectedCountry() {
         return this.world.getSelectedProvince().getCountryOwner().getCapital().getPosition("default");
     }
@@ -98,7 +95,7 @@ public class WorldService {
 
     public CountrySummaryDto prepareCountrySummaryDto(Map<String, String> localisation) {
         Country selectedCountry = this.world.getSelectedProvince().getCountryOwner();
-        Minister headOfState = this.world.getPolitics().getMinister(selectedCountry.getHeadOfStateId());
+        Minister headOfState = this.getHeadOfState(selectedCountry);
         String portraitNameFile = "admin_type";
         if(headOfState.getImageNameFile() != null) {
             portraitNameFile = headOfState.getImageNameFile();
@@ -106,7 +103,7 @@ public class WorldService {
         String population = ValueFormatter.formatValue(this.world.getPopulationAmount(selectedCountry), localisation);
         List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry);
 
-        return new CountrySummaryDto(selectedCountry.getName(), selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), allies);
+        return new CountrySummaryDto(selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), this.world.getColonizerId(selectedCountry), allies);
     }
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {
@@ -138,14 +135,15 @@ public class WorldService {
         int developmentIndexRegion = 0;
         int incomeRegion = 0;
         int numberIndustryRegion = this.getNumberIndustry(region);
-        String flagImage = selectedProvince.getCountryOwner().getId();
+        String countryId = selectedProvince.getCountryOwner().getId();
+        String colonizerId = this.world.getColonizerId(selectedProvince.getCountryOwner());
         List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
         List<String> provinceIdsRegion = this.getProvinceIdsOrderByPopulation(region);
         DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(region);
         List<String> specialBuildings = this.getSpecialBuildingNames(region);
         List<String> colorsBuilding = this.getColorBuildingsOrderByLevel(region);
 
-        return new ProvinceDto(provinceId, regionId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, numberIndustryRegion, flagImage, flagCountriesCore, 0f, 0, 0, populationProvince, 0f, 0f, provinceIdsRegion, developmentBuildingLevel, specialBuildings, colorsBuilding);
+        return new ProvinceDto(provinceId, regionId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, numberIndustryRegion, countryId, colonizerId, flagCountriesCore, 0f, 0, 0, populationProvince, 0f, 0f, provinceIdsRegion, developmentBuildingLevel, specialBuildings, colorsBuilding);
     }
 
     public void changeMapMode(String mapMode) {
@@ -177,6 +175,22 @@ public class WorldService {
         List<String> religionNames = this.world.getNationalIdeas().getReligionStore().getNames();
 
         return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, startIndex, endIndex, religionNames, amountAdults);
+    }
+
+    public String getColonizerIdOfSelectedProvince() {
+        Country country = this.world.getSelectedProvince().getCountryOwner();
+        return this.world.getColonizerId(country);
+    }
+
+    public String getColonizerIdOfCountryPlayer() {
+        Country country = this.world.getCountryPlayer();
+        return this.world.getColonizerId(country);
+    }
+
+    public String getColonizerIdOfHoveredProvince(short x, short y) {
+        LandProvince province = this.world.getProvince(x, y);
+        Country country = province.getCountryOwner();
+        return this.world.getColonizerId(country);
     }
 
     private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(IntList provinceElementIds, IntList provinceElementValues, int startIndex, int endIndex, List<String> elementNames, int amountAdults) {
@@ -398,10 +412,29 @@ public class WorldService {
             return allies;
         }
 
-        for(Country ally : country.getAlliances().keySet()) {
-            allies.add(ally.getId());
+        for(Map.Entry<Country, AllianceType> alliance : country.getAlliances().entrySet()) {
+            if(alliance.getValue() != AllianceType.COLONIZER) {
+                allies.add(alliance.getKey().getId());
+            }
         }
         return allies;
+    }
+
+    public Minister getHeadOfState(Country country) {
+        Minister headOfState = null;
+        if(country.getHeadOfStateId() != -1) {
+            headOfState = this.world.getPolitics().getMinister(country.getHeadOfStateId());
+        }
+
+        if(country.getAlliances() != null) {
+            for (Map.Entry<Country, AllianceType> alliance : country.getAlliances().entrySet()) {
+                if (alliance.getValue() == AllianceType.COLONY) {
+                    headOfState = this.world.getPolitics().getMinister(alliance.getKey().getHeadOfStateId());
+                }
+            }
+        }
+
+        return headOfState;
     }
 
     public void dispose() {

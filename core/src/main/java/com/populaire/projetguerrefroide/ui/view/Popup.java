@@ -20,6 +20,7 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Disposable;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
+import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import java.util.Map;
 
@@ -27,24 +28,27 @@ public class Popup extends Table implements Disposable {
     private final PopupListener listener;
     private FlagImage flagLeftImage;
     private FlagImage flagRightImage;
+    private WidgetFactory widgetFactory;
 
-    public Popup(Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, boolean doubleButton, boolean big, PopupListener listener) {
+    public Popup(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, boolean doubleButton, boolean big, PopupListener listener) {
         this.listener = listener;
+        this.widgetFactory = widgetFactory;
         this.setPopup(skin, labelStylePool, localisation, title, description, doubleButton, big, this.getIdButton(doubleButton, big));
-        this.flagLeftImage = createFlagImage(skinUi, skinFlags, "comecon");
+        this.flagLeftImage = createFlagImage(skinUi, skinFlags, "comecon", null);
         this.flagLeftImage.setPosition(9, this.getHeight() - 75);
-        this.flagRightImage = createFlagImage(skinUi, skinFlags, "nato");
+        this.flagRightImage = createFlagImage(skinUi, skinFlags, "nato", null);
         this.flagRightImage.setPosition(this.getWidth() - 72, this.getHeight() - 75);
         this.setTouchable(Touchable.enabled);
         this.addDragListener();
     }
 
-    public Popup(Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, String idCountry, boolean doubleButton, boolean big, PopupListener listener) {
+    public Popup(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, String idCountry, String idColonizer, boolean doubleButton, boolean big, PopupListener listener) {
         this.listener = listener;
+        this.widgetFactory = widgetFactory;
         this.setPopup(skin, labelStylePool, localisation, title, description, doubleButton, big, this.getIdButton(doubleButton, big));
-        this.flagLeftImage = createFlagImage(skinUi, skinFlags, idCountry);
+        this.flagLeftImage = createFlagImage(skinUi, skinFlags, idCountry, idColonizer);
         this.flagLeftImage.setPosition(9, this.getHeight() - 75);
-        this.flagRightImage = createFlagImage(skinUi, skinFlags, idCountry);
+        this.flagRightImage = createFlagImage(skinUi, skinFlags, idCountry, idColonizer);
         this.flagRightImage.setPosition(this.getWidth() - 72, this.getHeight() - 75);
         this.setTouchable(Touchable.enabled);
         this.addDragListener();
@@ -79,14 +83,14 @@ public class Popup extends Table implements Disposable {
         this.addActor(button);
     }
 
-    private FlagImage createFlagImage(Skin skinUi, Skin skinFlags, String idCountry) {
+    private FlagImage createFlagImage(Skin skinUi, Skin skinFlags, String idCountry, String IdColonizer) {
         TextureRegion alphaFlag = skinUi.getRegion("shield_big");
         TextureRegion overlayFlag = skinUi.getRegion("shield_big_overlay");
         Pixmap defaultPixmapFlag = new Pixmap(64, 64, Pixmap.Format.RGBA8888);
         TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new Texture(defaultPixmapFlag));
         defaultPixmapFlag.dispose();
         FlagImage flagImage = new FlagImage(defaultFlag, overlayFlag, alphaFlag);
-        flagImage.setFlag(skinFlags.getRegion(idCountry));
+        flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(skinFlags, idCountry, IdColonizer));
         this.addActor(flagImage);
 
         return flagImage;

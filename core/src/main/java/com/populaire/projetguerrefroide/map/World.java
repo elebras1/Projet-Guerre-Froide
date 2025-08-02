@@ -14,10 +14,12 @@ import com.populaire.projetguerrefroide.entity.ModifierStore;
 import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
 import com.populaire.projetguerrefroide.entity.Terrain;
 import com.populaire.projetguerrefroide.national.NationalIdeas;
+import com.populaire.projetguerrefroide.politics.AllianceType;
 import com.populaire.projetguerrefroide.politics.Politics;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
 import com.populaire.projetguerrefroide.adapter.graphics.MeshMultiDrawIndirect;
+import com.populaire.projetguerrefroide.util.LocalisationUtils;
 import org.lwjgl.opengl.GL43;
 
 import java.util.*;
@@ -92,7 +94,7 @@ public class World implements Disposable {
         this.mapMode = MapMode.POLITICAL;
 
         for(Country country : this.countries) {
-            country.createLabels(gameContext.getLocalisation().get(country.getId()), gameContext.getLabelStylePool());
+            country.createLabels(LocalisationUtils.getCountryNameLocalisation(gameContext.getLocalisation(), country.getId(), this.getColonizerId(country)), gameContext.getLabelStylePool());
         }
         this.mapModeTexture = new Texture(this.mapModePixmap);
         this.mapModeTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
@@ -206,6 +208,20 @@ public class World implements Disposable {
         return this.economy.getPopulationAmount(this.provinceStore, country);
     }
 
+    public String getColonizerId(Country country) {
+        if(country.getAlliances() == null) {
+            return null;
+        }
+
+        for(Map.Entry<Country, AllianceType> alliances : country.getAlliances().entrySet()) {
+            if(alliances.getValue() == AllianceType.COLONY) {
+                return alliances.getKey().getId();
+            }
+        }
+
+        return null;
+    }
+
     public String getResourceGoodName(Province province) {
         int provinceId = province.getId();
         int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
@@ -238,7 +254,18 @@ public class World implements Disposable {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
-            this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(this.provinces.get(color)).getCountryOwner().getColor());
+
+            Country country = Objects.requireNonNull(this.provinces.get(color)).getCountryOwner();
+            int countryColor = country.getColor();
+            if(country.getAlliances() != null) {
+                for(Map.Entry<Country, AllianceType> alliance : country.getAlliances().entrySet()) {
+                    if(alliance.getValue() == AllianceType.COLONY) {
+                        countryColor = alliance.getKey().getColor();
+                        break;
+                    }
+                }
+            }
+            this.mapModePixmap.drawPixel(red, green, countryColor);
 
         }
     }

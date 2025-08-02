@@ -1,7 +1,10 @@
 {
-    "owner": "USA",
-    "controller": "USA",
-    "add_core": "USA",
+    "owner": "MAR",
+    "controller": "MAR",
+    "add_core": [
+      "MAR",
+      "USA"
+    ],
     "population_total": {
         "amount": 13000,
         "template": 155,

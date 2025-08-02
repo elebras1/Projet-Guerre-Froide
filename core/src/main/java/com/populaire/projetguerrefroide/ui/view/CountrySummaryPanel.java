@@ -9,6 +9,7 @@ import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
+import com.populaire.projetguerrefroide.util.LocalisationUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -23,10 +24,12 @@ public class CountrySummaryPanel extends Table implements Disposable {
     private final Skin skinFlags;
     private final Skin skinPortraits;
     private final List<FlagImage> alliesFlagImages;
+    private final WidgetFactory widgetFactory;
 
     public CountrySummaryPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, Skin skinPortraits, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.skinFlags = skinFlags;
         this.skinPortraits = skinPortraits;
+        this.widgetFactory = widgetFactory;
         Drawable background = widgetFactory.applyBackgroundToTable(skin, "selected_bg", this);
 
         this.flagImage = widgetFactory.createFlagImage(skinUi, "flag_alpha", "flag_overlay", 109, 77);
@@ -67,8 +70,8 @@ public class CountrySummaryPanel extends Table implements Disposable {
     }
 
     public void update(CountrySummaryDto countrySummaryDto, Map<String, String> localisation) {
-        this.countryName.setText(countrySummaryDto.getCountryName());
-        this.flagImage.setFlag(this.skinFlags.getRegion(countrySummaryDto.getIdCountry()));
+        this.countryName.setText(LocalisationUtils.getCountryNameLocalisation(localisation, countrySummaryDto.getIdCountry(), countrySummaryDto.getColonizerId()));
+        this.flagImage.setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, countrySummaryDto.getIdCountry(), countrySummaryDto.getColonizerId()));
         this.government.setText(localisation.get(countrySummaryDto.getGovernment()));
         this.countryPopulation.setText(countrySummaryDto.getPopulation());
         this.portrait.setDrawable(this.skinPortraits.getDrawable(countrySummaryDto.getPortrait()));
@@ -76,7 +79,7 @@ public class CountrySummaryPanel extends Table implements Disposable {
         List<String> allies = countrySummaryDto.getAllies();
         for (int i = this.alliesFlagImages.size() - 1; i >= 0; i--) {
             if (i < allies.size()) {
-                this.alliesFlagImages.get(i).setFlag(this.skinFlags.getRegion(allies.get(i)));
+                this.alliesFlagImages.get(i).setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, allies.get(i), null));
                 this.addActor(this.alliesFlagImages.get(i));
             } else {
                 this.alliesFlagImages.get(i).remove();

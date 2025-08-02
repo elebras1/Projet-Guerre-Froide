@@ -1,9 +1,10 @@
 {
-    "owner": "SPA",
-    "controller": "SPA",
+    "owner": "RIF",
+    "controller": "RIF",
     "add_core": [
         "SPA",
-        "MOR"
+        "MOR",
+        "RIF"
     ],
     "population_total": {
         "amount": 457806,

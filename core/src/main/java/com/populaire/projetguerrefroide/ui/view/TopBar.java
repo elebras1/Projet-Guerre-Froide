@@ -33,7 +33,7 @@ public class TopBar extends Table {
     private Image dateState;
     private Label date;
 
-    public TopBar(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String idCountry, TopBarListener listener) {
+    public TopBar(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String idCountry, String idColonizer, TopBarListener listener) {
         this.widgetFactory = widgetFactory;
         this.skin = skin;
         this.skinUi = skinUi;
@@ -45,7 +45,7 @@ public class TopBar extends Table {
         this.setCountryData(labelStylePool);
         this.setTabButtons(labelStylePool, localisation);
         this.setDateSection(labelStylePool, listener);
-        this.addActor(this.createFlagSection(idCountry));
+        this.addActor(this.createFlagSection(idCountry, idColonizer));
         this.addActor(this.createPrestigeSection(labelStylePool));
     }
 
@@ -105,12 +105,12 @@ public class TopBar extends Table {
         this.addActor(plusSpeed);
     }
 
-    private Actor createFlagSection(String idCountry) {
+    private Actor createFlagSection(String idCountry, String idColonizer) {
         Table flagSection = this.widgetFactory.createBackgroundTable(this.skin, "small_naked_bar", 37, 40);
         FlagImage flagImage = this.widgetFactory.createFlagImage(this.skinUi, "flag_alpha", "flag_overlay", 109, 77);
         flagImage.setPosition(-10, -21);
         flagSection.addActor(flagImage);
-        flagImage.setFlag(this.skinFlags.getRegion(idCountry));
+        flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(this.skinFlags, idCountry, idColonizer));
         this.widgetFactory.createFlatButton(this.skin, "stats", 96, 13, flagSection);
         this.widgetFactory.createFlatButton(this.skin, "menu", 126, 13, flagSection);
         this.defcon = this.widgetFactory.createImage(this.skin, "defcon_buttons_0", 156, 4, flagSection);
