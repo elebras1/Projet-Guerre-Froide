@@ -9,6 +9,7 @@ import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
+import com.populaire.projetguerrefroide.util.LocalisationUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -69,7 +70,7 @@ public class CountrySummaryPanel extends Table implements Disposable {
     }
 
     public void update(CountrySummaryDto countrySummaryDto, Map<String, String> localisation) {
-        this.countryName.setText(localisation.get(countrySummaryDto.getIdCountry()));
+        this.countryName.setText(LocalisationUtils.getCountryNameLocalisation(localisation, countrySummaryDto.getIdCountry(), countrySummaryDto.getColonizerId()));
         this.flagImage.setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, countrySummaryDto.getIdCountry(), countrySummaryDto.getColonizerId()));
         this.government.setText(localisation.get(countrySummaryDto.getGovernment()));
         this.countryPopulation.setText(countrySummaryDto.getPopulation());

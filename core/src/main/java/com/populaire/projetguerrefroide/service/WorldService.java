@@ -103,7 +103,7 @@ public class WorldService {
         String population = ValueFormatter.formatValue(this.world.getPopulationAmount(selectedCountry), localisation);
         List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry);
 
-        return new CountrySummaryDto(selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), getColonizerId(selectedCountry), allies);
+        return new CountrySummaryDto(selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), this.world.getColonizerId(selectedCountry), allies);
     }
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {
@@ -136,7 +136,7 @@ public class WorldService {
         int incomeRegion = 0;
         int numberIndustryRegion = this.getNumberIndustry(region);
         String countryId = selectedProvince.getCountryOwner().getId();
-        String colonizerId = this.getColonizerId(selectedProvince.getCountryOwner());
+        String colonizerId = this.world.getColonizerId(selectedProvince.getCountryOwner());
         List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
         List<String> provinceIdsRegion = this.getProvinceIdsOrderByPopulation(region);
         DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(region);
@@ -179,18 +179,18 @@ public class WorldService {
 
     public String getColonizerIdOfSelectedProvince() {
         Country country = this.world.getSelectedProvince().getCountryOwner();
-        return this.getColonizerId(country);
+        return this.world.getColonizerId(country);
     }
 
     public String getColonizerIdOfCountryPlayer() {
         Country country = this.world.getCountryPlayer();
-        return this.getColonizerId(country);
+        return this.world.getColonizerId(country);
     }
 
     public String getColonizerIdOfHoveredProvince(short x, short y) {
         LandProvince province = this.world.getProvince(x, y);
         Country country = province.getCountryOwner();
-        return this.getColonizerId(country);
+        return this.world.getColonizerId(country);
     }
 
     private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(IntList provinceElementIds, IntList provinceElementValues, int startIndex, int endIndex, List<String> elementNames, int amountAdults) {
@@ -436,21 +436,6 @@ public class WorldService {
 
         return headOfState;
     }
-
-    private String getColonizerId(Country country) {
-        if(country.getAlliances() == null) {
-            return null;
-        }
-
-        for(Map.Entry<Country, AllianceType> alliances : country.getAlliances().entrySet()) {
-            if(alliances.getValue() == AllianceType.COLONY) {
-                return alliances.getKey().getId();
-            }
-        }
-
-        return null;
-    }
-
 
     public void dispose() {
         this.world.dispose();

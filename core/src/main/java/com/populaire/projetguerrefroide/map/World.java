@@ -19,6 +19,7 @@ import com.populaire.projetguerrefroide.politics.Politics;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
 import com.populaire.projetguerrefroide.adapter.graphics.MeshMultiDrawIndirect;
+import com.populaire.projetguerrefroide.util.LocalisationUtils;
 import org.lwjgl.opengl.GL43;
 
 import java.util.*;
@@ -93,7 +94,7 @@ public class World implements Disposable {
         this.mapMode = MapMode.POLITICAL;
 
         for(Country country : this.countries) {
-            country.createLabels(gameContext.getLocalisation().get(country.getId()), gameContext.getLabelStylePool());
+            country.createLabels(LocalisationUtils.getCountryNameLocalisation(gameContext.getLocalisation(), country.getId(), this.getColonizerId(country)), gameContext.getLabelStylePool());
         }
         this.mapModeTexture = new Texture(this.mapModePixmap);
         this.mapModeTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
@@ -205,6 +206,20 @@ public class World implements Disposable {
 
     public int getPopulationAmount(Country country) {
         return this.economy.getPopulationAmount(this.provinceStore, country);
+    }
+
+    public String getColonizerId(Country country) {
+        if(country.getAlliances() == null) {
+            return null;
+        }
+
+        for(Map.Entry<Country, AllianceType> alliances : country.getAlliances().entrySet()) {
+            if(alliances.getValue() == AllianceType.COLONY) {
+                return alliances.getKey().getId();
+            }
+        }
+
+        return null;
     }
 
     public String getResourceGoodName(Province province) {

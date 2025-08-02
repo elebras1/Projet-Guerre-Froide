@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.Scaling;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
+import com.populaire.projetguerrefroide.util.LocalisationUtils;
 
 import java.util.Map;
 
@@ -52,7 +53,7 @@ public class HoverTooltip extends Table {
     }
 
     public void update(short provinceId, String countryId, String colonizerId) {
-        String mainText = this.localisation.get(String.valueOf(provinceId)) + " (" + this.localisation.get(countryId) + ")";
+        String mainText = this.localisation.get(String.valueOf(provinceId)) + " (" + LocalisationUtils.getCountryNameLocalisation(localisation, countryId, colonizerId) + ")";
         if(!mainText.equals(this.mainLabel.getText().toString())) {
             this.mainLabel.setText(mainText);
             this.image.setDrawable(this.widgetFactory.getFlagDrawable(this.skinFlags, countryId, colonizerId));
@@ -63,7 +64,7 @@ public class HoverTooltip extends Table {
 
     public void update(short provinceId, String countryId, String colonizerId, ObjectIntMap<String> elements) {
         this.text.setLength(0);
-        this.text.append(this.localisation.get(String.valueOf(provinceId))).append(" (").append(this.localisation.get(countryId)).append(")");
+        this.text.append(this.localisation.get(String.valueOf(provinceId))).append(" (").append(LocalisationUtils.getCountryNameLocalisation(localisation, countryId, colonizerId)).append(")");
         if (!this.text.toString().equals(this.mainLabel.getText().toString())) {
             this.mainLabel.setText(this.text.toString());
             this.image.setDrawable(this.widgetFactory.getFlagDrawable(this.skinFlags, countryId, colonizerId));
