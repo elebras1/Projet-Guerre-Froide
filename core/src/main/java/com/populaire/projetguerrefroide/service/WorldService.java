@@ -177,8 +177,13 @@ public class WorldService {
         return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, startIndex, endIndex, religionNames, amountAdults);
     }
 
-    public String getColonizerId() {
+    public String getColonizerIdOfSelectedProvince() {
         Country country = this.world.getSelectedProvince().getCountryOwner();
+        return this.getColonizerId(country);
+    }
+
+    public String getColonizerIdOfCountryPlayer() {
+        Country country = this.world.getCountryPlayer();
         return this.getColonizerId(country);
     }
 
