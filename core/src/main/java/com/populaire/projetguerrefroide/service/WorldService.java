@@ -257,7 +257,7 @@ public class WorldService {
         byte antiAircraftGunsLevel = 0;
 
         RegionStore regionStore = this.world.getRegionStore();
-        BuildingStore buildingStore = this.world.getEconomy().getBuildingStore();
+        BuildingStore buildingStore = this.world.getBuildingStore();
 
         int regionIndex = regionStore.getRegionIds().get(region.getId());
 
@@ -306,7 +306,7 @@ public class WorldService {
 
     private List<String> getColorBuildingsOrderByLevel(Region region) {
         RegionStore regionStore = this.world.getRegionStore();
-        BuildingStore buildingStore = this.world.getEconomy().getBuildingStore();
+        BuildingStore buildingStore = this.world.getBuildingStore();
 
         int regionId = regionStore.getRegionIds().get(region.getId());
         int regionBuildingStart = regionStore.getBuildingStarts().get(regionId);
@@ -348,7 +348,7 @@ public class WorldService {
     private int getNumberIndustry(Region region) {
         int industryCount = 0;
         RegionStore regionStore = this.world.getRegionStore();
-        BuildingStore buildingStore = this.world.getEconomy().getBuildingStore();
+        BuildingStore buildingStore = this.world.getBuildingStore();
 
         int regionIndex = regionStore.getRegionIds().get(region.getId());
 
@@ -376,7 +376,7 @@ public class WorldService {
         int buildingStart = regionStore.getBuildingStarts().get(regionId);
         int buildingEnd = buildingStart + regionStore.getBuildingCounts().get(regionId);
 
-        BuildingStore buildingStore = this.world.getEconomy().getBuildingStore();
+        BuildingStore buildingStore = this.world.getBuildingStore();
 
         for (int i = buildingStart; i < buildingEnd; i++) {
             int buildingId = regionStore.getBuildingIds().get(i);

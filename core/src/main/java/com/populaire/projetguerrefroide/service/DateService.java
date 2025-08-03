@@ -11,13 +11,16 @@ public class DateService {
     private double accumulator;
     private static final double[] DAYS_PER_SECOND = {0.0, 0.5, 1.0, 2.0, 5.0, 10.0};
     private final DateListener dateListener;
+    private final EconomyService economyService;
 
-    public DateService(LocalDate startDate, DateListener dateListener) {
+    public DateService(LocalDate startDate, DateListener dateListener, EconomyService economyService) {
+
         this.speed = 1;
         this.paused = true;
         this.date = startDate;
         this.accumulator = 0.0;
         this.dateListener = dateListener;
+        this.economyService = economyService;
     }
 
     public void initialize() {
