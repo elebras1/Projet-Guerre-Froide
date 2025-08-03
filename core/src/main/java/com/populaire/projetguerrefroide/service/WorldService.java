@@ -37,6 +37,10 @@ public class WorldService {
         this.elementPercentages = new ObjectIntOrderedMap<>();
     }
 
+    protected World getWorld() {
+        return this.world;
+    }
+
     public void createWorld(GameContext gameContext) {
         this.world = this.worldDao.createWorldThreadSafe(gameContext);
     }

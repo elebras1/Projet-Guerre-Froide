@@ -62,7 +62,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.gameContext = gameContext;
         this.worldService = worldService;
         this.configurationService = configurationService;
-        this.economyService = new EconomyService();
+        this.economyService = new EconomyService(this.worldService);
         this.dateService = new DateService(this.gameContext.getBookmark().getDate(), this, this.economyService);
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         int capitalPosition = this.worldService.getPositionOfCapitalOfSelectedCountry();
