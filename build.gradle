@@ -60,6 +60,7 @@ subprojects {
   version = '$projectVersion'
   ext.appName = 'ProjetGuerreFroide'
   repositories {
+    maven { url = uri("https://central.sonatype.com/repository/maven-snapshots/") }
     mavenCentral()
     maven { url 'https://s01.oss.sonatype.org' }
     // You may want to remove the following line if you have errors downloading dependencies.
@@ -70,6 +71,8 @@ subprojects {
   }
 
   dependencies {
+    implementation 'io.github.monstroussoftware.gdx-webgpu:gdx-desktop-webgpu:-SNAPSHOT'
+    implementation 'io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:-SNAPSHOT'
     implementation 'org.lwjgl:lwjgl:3.3.3'
     implementation 'org.lwjgl:lwjgl-opengl:3.3.3'
     implementation 'com.github.tommyettinger:jdkgdxds:1.9.2'
