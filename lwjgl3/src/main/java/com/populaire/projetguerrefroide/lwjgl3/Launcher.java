@@ -16,9 +16,9 @@ public class Launcher {
 
     private static WgDesktopApplicationConfiguration getDefaultConfiguration() {
         WgDesktopApplicationConfiguration configuration = new WgDesktopApplicationConfiguration();
+        configuration.setWindowedMode(1080, 720);
         configuration.setTitle("ProjetGuerreFroide");
         configuration.useVsync(true);
-        configuration.setWindowedMode(640, 480);
         //configuration.setFullscreenMode(WgDesktopApplicationConfiguration.getDisplayMode());
         configuration.setWindowIcon("logo32.png");
         return configuration;
