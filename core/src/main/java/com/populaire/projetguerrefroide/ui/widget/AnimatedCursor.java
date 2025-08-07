@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.monstrous.gdx.webgpu.graphics.g2d.WgTextureAtlas;
 import com.populaire.projetguerrefroide.util.TextureRegionOperations;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public class AnimatedCursor {
     private int currentCursorIndex;
 
     public AnimatedCursor(String name) {
-        TextureAtlas atlas = new TextureAtlas(Gdx.files.internal("ui/cursor/" + name + "/" + name + ".atlas"));
+        TextureAtlas atlas = new WgTextureAtlas(Gdx.files.internal("ui/cursor/" + name + "/" + name + ".atlas"));
         this.animation = new Animation<>(frameDuration, atlas.findRegions(name));
         this.animation.setFrameDuration(frameDuration);
         this.animation.setPlayMode(Animation.PlayMode.LOOP);

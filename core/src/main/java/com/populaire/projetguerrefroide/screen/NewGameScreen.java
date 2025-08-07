@@ -4,9 +4,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -14,6 +13,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.monstrous.gdx.webgpu.graphics.g2d.WgSpriteBatch;
+import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
+import com.monstrous.gdx.webgpu.scene2d.WgStage;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
@@ -31,7 +33,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     private final WorldService worldService;
     private final ConfigurationService configurationService;
     private final OrthographicCamera cam;
-    private final SpriteBatch batch;
+    private final Batch batch;
     private final InputMultiplexer multiplexer;
     private final GameInputHandler inputHandler;
     private final Skin skin;
@@ -58,7 +60,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 1.4f, 0);
         this.cam.update();
-        this.batch = new SpriteBatch();
+        this.batch = new WgSpriteBatch();
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
         AssetManager assetManager = gameContext.getAssetManager();
@@ -76,7 +78,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     }
 
     private void initializeUi() {
-        this.stage = new Stage(new ScreenViewport());
+        this.stage = new WgStage(new ScreenViewport());
 
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
@@ -264,8 +266,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.cam.position.x = camX;
         this.batch.setProjectionMatrix(this.cam.combined);
 
-        Gdx.gl.glClearColor(1, 1, 1, 1);
-        Gdx.gl.glClear(GL32.GL_COLOR_BUFFER_BIT);
+        WgScreenUtils.clear(1, 1, 1, 1);
 
         this.worldService.renderWorld(this.batch, this.cam, time);
 
