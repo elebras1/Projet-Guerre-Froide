@@ -18,6 +18,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Disposable;
+import com.monstrous.gdx.webgpu.graphics.WgTexture;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
@@ -87,7 +88,7 @@ public class Popup extends Table implements Disposable {
         TextureRegion alphaFlag = skinUi.getRegion("shield_big");
         TextureRegion overlayFlag = skinUi.getRegion("shield_big_overlay");
         Pixmap defaultPixmapFlag = new Pixmap(64, 64, Pixmap.Format.RGBA8888);
-        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new Texture(defaultPixmapFlag));
+        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new WgTexture(defaultPixmapFlag));
         defaultPixmapFlag.dispose();
         FlagImage flagImage = new FlagImage(defaultFlag, overlayFlag, alphaFlag);
         flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(skinFlags, idCountry, IdColonizer));

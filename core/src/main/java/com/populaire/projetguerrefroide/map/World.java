@@ -2,12 +2,16 @@ package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.*;
+import com.monstrous.gdx.webgpu.graphics.WgMesh;
+import com.monstrous.gdx.webgpu.graphics.WgTexture;
+import com.monstrous.gdx.webgpu.graphics.WgTextureArray;
+import com.monstrous.gdx.webgpu.graphics.g2d.WgTextureAtlas;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.economy.Economy;
 import com.populaire.projetguerrefroide.entity.ModifierStore;
@@ -51,17 +55,16 @@ public class World implements Disposable {
     private final Texture colorMapTexture;
     private final Texture overlayTileTexture;
     private final Texture riverBodyTexture;
-    private final Texture defaultTexture;
-    private final TextureArray terrainSheetArray;
+    private final WgTextureArray terrainSheetArray;
     private final TextureAtlas mapElementsTextureAtlas;
-    private final ShaderProgram mapShader;
+    /*private final ShaderProgram mapShader;
     private final ShaderProgram fontShader;
     private final ShaderProgram elementShader;
     private final ShaderProgram elementScaleShader;
     private final ShaderProgram riverShader;
     private final Mesh meshBuildings;
-    private final Mesh meshResources;
-    private final MeshMultiDrawIndirect meshRivers;
+    private final Mesh meshResources;*/
+    //private final MeshMultiDrawIndirect meshRivers;
     private LandProvince selectedProvince;
     private Country countryPlayer;
     private MapMode mapMode;
@@ -96,32 +99,31 @@ public class World implements Disposable {
         for(Country country : this.countries) {
             country.createLabels(LocalisationUtils.getCountryNameLocalisation(gameContext.getLocalisation(), country.getId(), this.getColonizerId(country)), gameContext.getLabelStylePool());
         }
-        this.mapModeTexture = new Texture(this.mapModePixmap);
-        this.mapModeTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-        this.provincesStripesTexture = new Texture(provincesColorStripesPixmap);
-        this.provincesStripesTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-        this.provincesTexture = new Texture(this.provincesPixmap);
-        this.provincesTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-        this.waterTexture = new Texture("map/terrain/sea_normal.png");
-        this.waterTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        this.colorMapWaterTexture = new Texture("map/terrain/colormap_water.png");
-        this.colorMapWaterTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        this.colorMapTexture = new Texture("map/terrain/colormap.png");
-        this.terrainTexture = new Texture("map/terrain.bmp");
-        this.stripesTexture = new Texture("map/terrain/stripes.png");
-        this.overlayTileTexture = new Texture("map/terrain/map_overlay_tile.png");
-        this.overlayTileTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        this.riverBodyTexture = new Texture("map/terrain/river.png");
+        this.mapModeTexture = new WgTexture(this.mapModePixmap);
+        this.mapModeTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        this.provincesStripesTexture = new WgTexture(provincesColorStripesPixmap);
+        this.provincesStripesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        this.provincesTexture = new WgTexture(this.provincesPixmap);
+        this.provincesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        this.waterTexture = new WgTexture("map/terrain/sea_normal.png");
+        this.waterTexture.setWrap(WgTexture.TextureWrap.Repeat, WgTexture.TextureWrap.Repeat);
+        this.colorMapWaterTexture = new WgTexture("map/terrain/colormap_water.png");
+        this.colorMapWaterTexture.setFilter(WgTexture.TextureFilter.Linear, WgTexture.TextureFilter.Linear);
+        this.colorMapTexture = new WgTexture("map/terrain/colormap.png");
+        this.terrainTexture = new WgTexture("map/terrain.bmp");
+        this.stripesTexture = new WgTexture("map/terrain/stripes.png");
+        this.overlayTileTexture = new WgTexture("map/terrain/map_overlay_tile.png");
+        this.overlayTileTexture.setWrap(WgTexture.TextureWrap.Repeat, WgTexture.TextureWrap.Repeat);
+        this.riverBodyTexture = new WgTexture("map/terrain/river.png");
         this.riverBodyTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        this.defaultTexture = new Texture(0, 0, Pixmap.Format.RGB565);
-        this.terrainSheetArray = new TextureArray(terrainTexturePaths);
-        this.mapElementsTextureAtlas = new TextureAtlas("map/elements/map_elements.atlas");
+        this.terrainSheetArray = new WgTextureArray(terrainTexturePaths);
+        this.mapElementsTextureAtlas = new WgTextureAtlas(Gdx.files.internal("map/elements/map_elements.atlas"));
         this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        this.meshBuildings = this.generateMeshBuildings();
-        this.meshResources = this.generateMeshResources();
-        this.meshRivers = this.generateMeshRivers();
+        //this.meshBuildings = this.generateMeshBuildings();
+        //this.meshResources = this.generateMeshResources();
+        //this.meshRivers = this.generateMeshRivers();
 
-        String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
+        /*String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
         String fragmentMapShader = Gdx.files.internal("shaders/map_f.glsl").readString();
         this.mapShader = new ShaderProgram(vertexMapShader, fragmentMapShader);
         String vertexFontShader = Gdx.files.internal("shaders/font_v.glsl").readString();
@@ -136,7 +138,7 @@ public class World implements Disposable {
         String vertexRiverShader = Gdx.files.internal("shaders/river_v.glsl").readString();
         String fragmentRiverShader = Gdx.files.internal("shaders/river_f.glsl").readString();
         this.riverShader = new ShaderProgram(vertexRiverShader, fragmentRiverShader);
-        ShaderProgram.pedantic = false;
+        ShaderProgram.pedantic = false;*/
     }
 
     public ProvinceStore getProvinceStore() {
@@ -493,7 +495,7 @@ public class World implements Disposable {
         }
 
         this.mapModeTexture.dispose();
-        this.mapModeTexture = new Texture(this.mapModePixmap);
+        this.mapModeTexture = new WgTexture(this.mapModePixmap);
     }
 
     public short getBorderType(short x, short y, Country country, Region region) {
@@ -592,7 +594,7 @@ public class World implements Disposable {
             }
         }
 
-        Mesh mesh = new Mesh(true, vertices.length / 4, indices.length,
+        Mesh mesh = new WgMesh(true, vertices.length / 4, indices.length,
             new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
             new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"));
 
@@ -718,7 +720,7 @@ public class World implements Disposable {
             vertexOffset += 4;
         }
 
-        Mesh mesh = new Mesh(true, vertices.length / 6, indices.length,
+        Mesh mesh = new WgMesh(true, vertices.length / 6, indices.length,
             new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
             new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"),
             new VertexAttribute(VertexAttributes.Usage.Generic, 2, "a_center"));
@@ -729,7 +731,7 @@ public class World implements Disposable {
         return mesh;
     }
 
-    public MeshMultiDrawIndirect generateMeshRivers() {
+    /*public MeshMultiDrawIndirect generateMeshRivers() {
         RawMeshMultiDraw rawMesh = this.mapDao.readRiversMeshJson();
 
         MeshMultiDrawIndirect mesh = new MeshMultiDrawIndirect(true, rawMesh.getVertices().length / 5, 0,
@@ -740,10 +742,10 @@ public class World implements Disposable {
         mesh.setIndirectCommands(rawMesh.getStarts(), rawMesh.getCounts());
 
         return mesh;
-    }
+    }*/
 
-    public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
-        this.mapShader.bind();
+    public void render(Batch batch, OrthographicCamera cam, float time) {
+        /*this.mapShader.bind();
         this.provincesTexture.bind(0);
         this.mapModeTexture.bind(1);
         this.colorMapWaterTexture.bind(2);
@@ -754,7 +756,6 @@ public class World implements Disposable {
         this.provincesStripesTexture.bind(7);
         this.stripesTexture.bind(8);
         this.overlayTileTexture.bind(9);
-        this.defaultTexture.bind(10);
 
         this.mapShader.setUniformi("u_textureProvinces", 0);
         this.mapShader.setUniformi("u_textureMapMode", 1);
@@ -766,7 +767,6 @@ public class World implements Disposable {
         this.mapShader.setUniformi("u_textureProvincesStripes", 7);
         this.mapShader.setUniformi("u_textureStripes", 8);
         this.mapShader.setUniformi("u_textureOverlayTile", 9);
-        this.mapShader.setUniformi("u_textureBorders", 10);
         this.mapShader.setUniformf("u_zoom", cam.zoom);
         this.mapShader.setUniformf("u_time", time);
         this.mapShader.setUniformi("u_showTerrain", this.mapMode == MapMode.TERRAIN ? 1 : 0);
@@ -790,7 +790,7 @@ public class World implements Disposable {
         batch.draw(this.provincesTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.setShader(null);
 
-        this.renderMeshRivers(cam, time);
+        //this.renderMeshRivers(cam, time);
 
         this.fontShader.bind();
         this.fontShader.setUniformf("u_zoom", cam.zoom);
@@ -807,10 +807,10 @@ public class World implements Disposable {
         }
         if(this.mapMode == MapMode.RESOURCES && cam.zoom <= 0.8f) {
             this.renderMeshResources(cam);
-        }
+        }*/
     }
 
-    private void renderMeshBuildings(OrthographicCamera cam) {
+    /*private void renderMeshBuildings(OrthographicCamera cam) {
         this.elementShader.bind();
         this.mapElementsTextureAtlas.getTextures().first().bind(0);
         this.elementShader.setUniformi("u_texture", 0);
@@ -821,9 +821,9 @@ public class World implements Disposable {
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
         Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshBuildings.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
         this.meshBuildings.unbind(this.elementShader);
-    }
+    }*/
 
-    private void renderMeshResources(OrthographicCamera cam) {
+    /*private void renderMeshResources(OrthographicCamera cam) {
         this.elementScaleShader.bind();
         this.mapElementsTextureAtlas.getTextures().first().bind(0);
         this.elementScaleShader.setUniformi("u_texture", 0);
@@ -835,9 +835,9 @@ public class World implements Disposable {
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
         Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshResources.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
         this.meshResources.unbind(this.elementScaleShader);
-    }
+    }*/
 
-    private void renderMeshRivers(OrthographicCamera cam, float time) {
+    /*private void renderMeshRivers(OrthographicCamera cam, float time) {
         this.riverShader.bind();
         this.riverBodyTexture.bind(0);
         this.colorMapWaterTexture.bind(1);
@@ -852,7 +852,7 @@ public class World implements Disposable {
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
         GL43.glMultiDrawArraysIndirect(GL43.GL_TRIANGLE_STRIP, 0, this.meshRivers.getCommandCount(), 0);
         this.meshRivers.unbind(this.riverShader);
-    }
+    }*/
 
     @Override
     public void dispose() {
@@ -865,18 +865,17 @@ public class World implements Disposable {
         this.stripesTexture.dispose();
         this.overlayTileTexture.dispose();
         this.colorMapTexture.dispose();
-        this.defaultTexture.dispose();
         this.terrainSheetArray.dispose();
         this.mapModePixmap.dispose();
         this.provincesPixmap.dispose();
-        this.mapShader.dispose();
+        this.mapElementsTextureAtlas.dispose();
+        /*this.mapShader.dispose();
         this.fontShader.dispose();
         this.elementScaleShader.dispose();
         this.meshResources.dispose();
         this.meshBuildings.dispose();
-        this.mapElementsTextureAtlas.dispose();
         this.elementShader.dispose();
         this.riverShader.dispose();
-        this.meshRivers.dispose();
+        this.meshRivers.dispose();*/
     }
 }

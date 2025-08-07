@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectList;
+import com.monstrous.gdx.webgpu.graphics.WgTexture;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class MapLabel {
 
     public MapLabel(String label, LabelStylePool labelStylePool, IntList borderPixels, IntList positionsProvinces) {
         this.font = labelStylePool.getLabelStyle("kart_60").font;
-        this.font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        this.font.getRegion().getTexture().setFilter(WgTexture.TextureFilter.Linear, WgTexture.TextureFilter.Linear);
         this.label = label;
         IntList convexHull = this.getConvexHull(borderPixels);
         this.setCentroid(convexHull, positionsProvinces);
@@ -345,7 +346,7 @@ public class MapLabel {
         }
     }
 
-    public void render(SpriteBatch batch) {
+    public void render(Batch batch) {
         TextureRegion textureRegionFont = font.getRegion();
         CurvePoint curvePoint;
         BitmapFont.Glyph glyph;

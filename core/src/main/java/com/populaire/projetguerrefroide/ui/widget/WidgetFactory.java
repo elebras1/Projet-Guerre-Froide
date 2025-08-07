@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.monstrous.gdx.webgpu.graphics.WgTexture;
 
 import java.util.List;
 
@@ -112,7 +113,7 @@ public class WidgetFactory {
         TextureRegion alphaFlag = skin.getRegion(alphaFlagName);
         TextureRegion overlayFlag = skin.getRegion(overlayFlagName);
         Pixmap defaultPixmapFlag = new Pixmap(width, height, Pixmap.Format.RGBA8888);
-        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new Texture(defaultPixmapFlag));
+        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new WgTexture(defaultPixmapFlag));
         defaultPixmapFlag.dispose();
         return new FlagImage(defaultFlag, overlayFlag, alphaFlag);
     }

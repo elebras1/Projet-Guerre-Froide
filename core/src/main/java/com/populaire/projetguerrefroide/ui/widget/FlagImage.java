@@ -9,23 +9,25 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.monstrous.gdx.webgpu.graphics.WgShaderProgram;
+import com.monstrous.gdx.webgpu.graphics.WgTexture;
+import com.populaire.projetguerrefroide.util.WgslUtils;
 
 public class FlagImage extends Image {
     private TextureRegion flagTexture;
     private final TextureRegion overlayTexture;
     private final TextureRegion alphaTexture;
     private final Texture defaultTexture;
-    private final ShaderProgram shader;
+    //private final WgShaderProgram shader;
 
     public FlagImage(Drawable flag, TextureRegion overlay, TextureRegion alpha) {
         super(flag);
         this.overlayTexture = overlay;
         this.alphaTexture = alpha;
         Pixmap defaultPixmap = new Pixmap(this.overlayTexture.getRegionWidth(), this.overlayTexture.getRegionHeight(), Pixmap.Format.RGBA8888);
-        this.defaultTexture = new Texture(defaultPixmap);
-        String vertexShader = Gdx.files.internal("shaders/flag_v.glsl").readString();
-        String fragmentShader = Gdx.files.internal("shaders/flag_f.glsl").readString();
-        this.shader = new ShaderProgram(vertexShader, fragmentShader);
+        this.defaultTexture = new WgTexture(defaultPixmap);
+        //String shaderSource = WgslUtils.buildShaderSource("flag_v.wgsl", "flag_f.wgsl");
+        //this.shader = new WgShaderProgram("flagShader", shaderSource, "");
     }
 
     public void setFlag(TextureRegion flag) {
@@ -35,7 +37,7 @@ public class FlagImage extends Image {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        batch.setShader(this.shader);
+        /*batch.setShader(this.shader);
 
         this.flagTexture.getTexture().bind(0);
         this.overlayTexture.getTexture().bind(1);
@@ -65,18 +67,17 @@ public class FlagImage extends Image {
             this.alphaTexture.getV(),
             this.alphaTexture.getU2(),
             this.alphaTexture.getV2()
-        );
+        );*/
 
         super.draw(batch, parentAlpha);
 
-        batch.setShader(null);
-        Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
+        //batch.setShader(null);
+        //Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
     }
-
 
     public void dispose() {
         this.defaultTexture.dispose();
-        this.shader.dispose();
+        //this.shader.dispose();
         this.flagTexture.getTexture().dispose();
         this.overlayTexture.getTexture().dispose();
         this.alphaTexture.getTexture().dispose();

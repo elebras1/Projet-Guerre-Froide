@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectIntMap;
@@ -45,7 +45,7 @@ public class WorldService {
         return this.asyncExecutor;
     }
 
-    public void renderWorld(SpriteBatch batch, OrthographicCamera cam, float time) {
+    public void renderWorld(Batch batch, OrthographicCamera cam, float time) {
         this.world.render(batch, cam, time);
     }
 

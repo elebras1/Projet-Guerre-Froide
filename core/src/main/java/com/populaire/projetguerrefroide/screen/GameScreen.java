@@ -6,6 +6,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -15,6 +16,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectIntMap;
+import com.monstrous.gdx.webgpu.graphics.g2d.WgSpriteBatch;
+import com.monstrous.gdx.webgpu.scene2d.WgStage;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
@@ -38,7 +41,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     private final ConfigurationService configurationService;
     private final DateService dateService;
     private final OrthographicCamera cam;
-    private final SpriteBatch batch;
+    private final Batch batch;
     private final InputMultiplexer multiplexer;
     private final GameInputHandler inputHandler;
     private final Skin skinUi;
@@ -71,7 +74,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         short capitalY = (short) (capitalPosition & 0xFFFF);
         this.cam.position.set(capitalX, capitalY, 0);
         this.cam.update();
-        this.batch = new SpriteBatch();
+        this.batch = new WgSpriteBatch();
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
         AssetManager assetManager = gameContext.getAssetManager();
@@ -91,7 +94,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer(), this.worldService.getColonizerIdOfSelectedProvince(), this);
         this.provincePanel = new ProvincePanel(this.widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
-        this.stage = new Stage(new ScreenViewport());
+        this.stage = new WgStage(new ScreenViewport());
         this.initializeUi();
         this.dateService.initialize();
 

@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Disposable;
+import com.monstrous.gdx.webgpu.graphics.WgTexture;
 
 public class ColorRectangle extends Actor implements Disposable {
     private final Texture texture;
@@ -13,7 +14,7 @@ public class ColorRectangle extends Actor implements Disposable {
         Pixmap pixmap = new Pixmap(1, 1, Pixmap.Format.RGBA8888);
         pixmap.setColor(color);
         pixmap.fill();
-        this.texture = new Texture(pixmap);
+        this.texture = new WgTexture(pixmap);
         pixmap.dispose();
     }
 

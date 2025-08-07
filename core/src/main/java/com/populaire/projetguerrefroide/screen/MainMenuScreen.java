@@ -22,7 +22,7 @@ public class MainMenuScreen implements Screen, MainMenuListener {
         this.stage = new WgStage(new ScreenViewport());
         this.screenManager = screenManager;
         configurationService.loadMainMenuLocalisation(gameContext);
-        //gameContext.getSettings().applyGraphicsSettings();
+        gameContext.getSettings().applyGraphicsSettings();
         Gdx.input.setInputProcessor(this.stage);
         this.initializeUi(gameContext);
     }
