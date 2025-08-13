@@ -90,7 +90,7 @@ public class ProvincePanel extends Table {
         this.provinceName = new Label("", labelStyleJockey24);
         this.addActor(this.provinceName);
 
-        this.flagImage = this.widgetFactory.createFlagImage(this.skinUi, "shield_big", "shield_big_overlay", 64, 64);
+        this.flagImage = this.widgetFactory.createFlagImage(this.skinUi, "shield_big", "shield_big_overlay");
         this.addActor(this.flagImage);
 
         Label.LabelStyle labelStyleJockey14 = labelStylePool.getLabelStyle("jockey_14");
@@ -156,7 +156,7 @@ public class ProvincePanel extends Table {
         int x = 35;
         int y = 193;
         for(int i = 0; i < 5; i++) {
-            FlagImage flagImage = this.widgetFactory.createFlagImage(this.skinUi, "minimask", "minishield", 32, 32);
+            FlagImage flagImage = this.widgetFactory.createFlagImage(this.skinUi, "minimask", "minishield");
             flagImage.setPosition(x, y);
             this.countriesCoreFlagImages.add(flagImage);
             x += 38;

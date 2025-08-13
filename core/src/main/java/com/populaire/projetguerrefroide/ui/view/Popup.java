@@ -85,12 +85,7 @@ public class Popup extends Table implements Disposable {
     }
 
     private FlagImage createFlagImage(Skin skinUi, Skin skinFlags, String idCountry, String IdColonizer) {
-        TextureRegion alphaFlag = skinUi.getRegion("shield_big");
-        TextureRegion overlayFlag = skinUi.getRegion("shield_big_overlay");
-        Pixmap defaultPixmapFlag = new Pixmap(64, 64, Pixmap.Format.RGBA8888);
-        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new WgTexture(defaultPixmapFlag));
-        defaultPixmapFlag.dispose();
-        FlagImage flagImage = new FlagImage(defaultFlag, overlayFlag, alphaFlag);
+        FlagImage flagImage = this.widgetFactory.createFlagImage(skinUi, "shield_big", "shield_big_overlay");
         flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(skinFlags, idCountry, IdColonizer));
         this.addActor(flagImage);
 

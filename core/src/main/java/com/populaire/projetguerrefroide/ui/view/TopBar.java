@@ -107,7 +107,7 @@ public class TopBar extends Table {
 
     private Actor createFlagSection(String idCountry, String idColonizer) {
         Table flagSection = this.widgetFactory.createBackgroundTable(this.skin, "small_naked_bar", 37, 40);
-        FlagImage flagImage = this.widgetFactory.createFlagImage(this.skinUi, "flag_alpha", "flag_overlay", 109, 77);
+        FlagImage flagImage = this.widgetFactory.createFlagImage(this.skinUi, "flag_alpha", "flag_overlay");
         flagImage.setPosition(-10, -21);
         flagSection.addActor(flagImage);
         flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(this.skinFlags, idCountry, idColonizer));

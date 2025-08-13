@@ -1,85 +1,153 @@
 package com.populaire.projetguerrefroide.ui.widget;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL32;
-import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.monstrous.gdx.webgpu.graphics.WgShaderProgram;
+import com.badlogic.gdx.math.Vector4;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.utils.Disposable;
+import com.github.xpenatan.webgpu.*;
+import com.monstrous.gdx.webgpu.graphics.Binder;
+import com.monstrous.gdx.webgpu.graphics.WgMesh;
 import com.monstrous.gdx.webgpu.graphics.WgTexture;
+import com.monstrous.gdx.webgpu.wrappers.*;
 import com.populaire.projetguerrefroide.util.WgslUtils;
 
-public class FlagImage extends Image {
+public class FlagImage extends Actor implements Disposable {
     private TextureRegion flagTexture;
     private final TextureRegion overlayTexture;
     private final TextureRegion alphaTexture;
-    private final Texture defaultTexture;
-    //private final WgShaderProgram shader;
+    private final WgMesh mesh;
+    private final WebGPUPipeline pipeline;
+    private final Binder binder;
+    private final WebGPUUniformBuffer uniformBuffer;
+    private final int uniformBufferSize;
 
-    public FlagImage(Drawable flag, TextureRegion overlay, TextureRegion alpha) {
-        super(flag);
+    public FlagImage(TextureRegion overlay, TextureRegion alpha) {
+        this.setSize(overlay.getRegionWidth(), overlay.getRegionHeight());
         this.overlayTexture = overlay;
         this.alphaTexture = alpha;
-        Pixmap defaultPixmap = new Pixmap(this.overlayTexture.getRegionWidth(), this.overlayTexture.getRegionHeight(), Pixmap.Format.RGBA8888);
-        this.defaultTexture = new WgTexture(defaultPixmap);
-        //String shaderSource = WgslUtils.buildShaderSource("flag_v.wgsl", "flag_f.wgsl");
-        //this.shader = new WgShaderProgram("flagShader", shaderSource, "");
+        VertexAttributes vertexAttributes = new VertexAttributes(VertexAttribute.Position(), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        this.mesh = this.createMesh(vertexAttributes);
+        this.uniformBufferSize = (4 * 3) * Float.BYTES;
+        this.uniformBuffer = new WebGPUUniformBuffer(this.uniformBufferSize, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
+        this.binder = this.createBinder();
+        this.pipeline = this.createPipeline(vertexAttributes, WgslUtils.getShaderSource("flag.wgsl"));
+        this.bindStaticTextures();
+    }
+
+    private WgMesh createMesh(VertexAttributes vertexAttributes) {
+        WgMesh mesh = new WgMesh(true, 4, 6, vertexAttributes);
+
+        float[] vertices = new float[] {
+            -1f, -1f, 0f, 0f, 1f,
+            1f, -1f, 0f, 1f, 1f,
+            1f,  1f, 0f, 1f, 0f,
+            -1f,  1f, 0f, 0f, 0f
+        };
+
+        short[] indices = new short[] {
+            0, 1, 2,
+            0, 2, 3
+        };
+
+        mesh.setVertices(vertices);
+        mesh.setIndices(indices);
+
+        return mesh;
+    }
+
+    private Binder createBinder(){
+        Binder binder = new Binder();
+        binder.defineGroup(0, createBindGroupLayout());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("textureFlag", 0, 1);
+        binder.defineBinding("textureFlagSampler", 0, 2);
+        binder.defineBinding("textureOverlay", 0, 3);
+        binder.defineBinding("textureOverlaySampler", 0, 4);
+        binder.defineBinding("textureAlpha", 0, 5);
+        binder.defineBinding("textureAlphaSampler", 0, 6);
+
+        int offset = 0;
+        binder.defineUniform("uvFlag", 0, 0, offset);
+        offset += 4*4;
+        binder.defineUniform("uvOverlay", 0, 0, offset);
+        offset += 4*4;
+        binder.defineUniform("uvAlpha", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBuffer, 0, this.uniformBufferSize);
+
+        return binder;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayout() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout flagImage");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSize, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(3, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(4, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(5, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(6, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUPipeline createPipeline(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline";
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binder.getPipelineLayout("pipeline layout"), pipelineSpec);
+    }
+
+    private void bindStaticTextures() {
+        this.binder.setTexture("textureOverlay", ((WgTexture) this.overlayTexture.getTexture()).getTextureView());
+        this.binder.setSampler("textureOverlaySampler", ((WgTexture) this.overlayTexture.getTexture()).getSampler());
+        this.binder.setUniform("uvOverlay", new Vector4(this.overlayTexture.getU(), this.overlayTexture.getV(), this.overlayTexture.getU2(), this.overlayTexture.getV2()));
+        this.binder.setTexture("textureAlpha", ((WgTexture) this.alphaTexture.getTexture()).getTextureView());
+        this.binder.setSampler("textureAlphaSampler", ((WgTexture) this.alphaTexture.getTexture()).getSampler());
+        this.binder.setUniform("uvAlpha", new Vector4(this.alphaTexture.getU(), this.alphaTexture.getV(), this.alphaTexture.getU2(), this.alphaTexture.getV2()));
+        this.uniformBuffer.flush();
     }
 
     public void setFlag(TextureRegion flag) {
         this.flagTexture = flag;
+        this.binder.setTexture("textureFlag", ((WgTexture) this.flagTexture.getTexture()).getTextureView());
+        this.binder.setSampler("textureFlagSampler", ((WgTexture) this.flagTexture.getTexture()).getSampler());
+        this.binder.setUniform("uvFlag", new Vector4(this.flagTexture.getU(), this.flagTexture.getV(), this.flagTexture.getU2(), this.flagTexture.getV2()));
+        this.uniformBuffer.flush();
     }
-
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        /*batch.setShader(this.shader);
+        if(flagTexture == null) {
+            return;
+        }
 
-        this.flagTexture.getTexture().bind(0);
-        this.overlayTexture.getTexture().bind(1);
-        this.alphaTexture.getTexture().bind(2);
-        this.defaultTexture.bind(3);
+        batch.end();
 
-        this.shader.setUniformi("u_textureFlag", 0);
-        this.shader.setUniformi("u_textureOverlay", 1);
-        this.shader.setUniformi("u_textureAlpha", 2);
-        this.shader.setUniformf(
-            "u_uvFlag",
-            this.flagTexture.getU(),
-            this.flagTexture.getV(),
-            this.flagTexture.getU2(),
-            this.flagTexture.getV2()
-        );
-        this.shader.setUniformf(
-            "u_uvOverlay",
-            this.overlayTexture.getU(),
-            this.overlayTexture.getV(),
-            this.overlayTexture.getU2(),
-            this.overlayTexture.getV2()
-        );
-        this.shader.setUniformf(
-            "u_uvAlpha",
-            this.alphaTexture.getU(),
-            this.alphaTexture.getV(),
-            this.alphaTexture.getU2(),
-            this.alphaTexture.getV2()
-        );*/
+        WebGPURenderPass pass = RenderPassBuilder.create("Flag image pass");
+        int webgpuY = Gdx.graphics.getHeight() - (int)(this.getY() + this.getHeight());
+        pass.setViewport(this.getX(), webgpuY, (int) this.getWidth(), (int) this.getHeight(), 0f, 1f);
+        pass.setScissorRect((int) this.getX(), webgpuY, (int) this.getWidth(), (int) this.getHeight());
+        pass.setPipeline(this.pipeline);
+        this.binder.bindGroup(pass, 0);
 
-        super.draw(batch, parentAlpha);
+        this.mesh.render(pass, GL20.GL_TRIANGLES, 0, this.mesh.getNumIndices(), 1, 0);
 
-        //batch.setShader(null);
-        //Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
+        pass.end();
+        batch.begin();
     }
 
+    @Override
     public void dispose() {
-        this.defaultTexture.dispose();
-        //this.shader.dispose();
-        this.flagTexture.getTexture().dispose();
-        this.overlayTexture.getTexture().dispose();
-        this.alphaTexture.getTexture().dispose();
+        this.mesh.dispose();
+        this.pipeline.dispose();
+        this.binder.dispose();
+        this.uniformBuffer.dispose();
     }
 }

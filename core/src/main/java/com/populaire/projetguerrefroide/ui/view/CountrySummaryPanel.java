@@ -32,7 +32,7 @@ public class CountrySummaryPanel extends Table implements Disposable {
         this.widgetFactory = widgetFactory;
         Drawable background = widgetFactory.applyBackgroundToTable(skin, "selected_bg", this);
 
-        this.flagImage = widgetFactory.createFlagImage(skinUi, "flag_alpha", "flag_overlay", 109, 77);
+        this.flagImage = widgetFactory.createFlagImage(skinUi, "flag_alpha", "flag_overlay");
         this.flagImage.setPosition(6, 85);
         this.addActor(this.flagImage);
 
@@ -62,7 +62,7 @@ public class CountrySummaryPanel extends Table implements Disposable {
         int x = 140;
         int y = 9;
         for(int i = 0; i < 7; i++) {
-            FlagImage flagImage = widgetFactory.createFlagImage(skinUi, "small_flag_mask", "small_flag_overlay", 24, 16);
+            FlagImage flagImage = widgetFactory.createFlagImage(skinUi, "small_flag_mask", "small_flag_overlay");
             flagImage.setPosition(x, y);
             this.alliesFlagImages.add(flagImage);
             x += 18;
