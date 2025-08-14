@@ -17,6 +17,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.monstrous.gdx.webgpu.graphics.g2d.WgSpriteBatch;
+import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.monstrous.gdx.webgpu.scene2d.WgStage;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
@@ -345,10 +346,9 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.cam.position.x = camX;
         this.batch.setProjectionMatrix(this.cam.combined);
 
-        Gdx.gl.glClearColor(1, 1, 1, 1);
-        Gdx.gl.glClear(GL32.GL_COLOR_BUFFER_BIT);
+        WgScreenUtils.clear(1, 1, 1, 1);
 
-        this.worldService.renderWorld(this.batch, this.cam, time);
+        this.worldService.renderWorld(this.batch, this.cam, this.time);
 
         this.dateService.update(delta);
 
