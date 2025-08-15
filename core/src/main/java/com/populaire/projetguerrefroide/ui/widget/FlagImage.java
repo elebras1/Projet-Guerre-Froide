@@ -61,7 +61,7 @@ public class FlagImage extends Actor implements Disposable {
 
     private Binder createBinder(){
         Binder binder = new Binder();
-        binder.defineGroup(0, createBindGroupLayout());
+        binder.defineGroup(0, this.createBindGroupLayout());
 
         binder.defineBinding("uniforms", 0, 0);
         binder.defineBinding("textureFlag", 0, 1);
@@ -73,9 +73,9 @@ public class FlagImage extends Actor implements Disposable {
 
         int offset = 0;
         binder.defineUniform("uvFlag", 0, 0, offset);
-        offset += 4*4;
+        offset += 4 * Float.BYTES;
         binder.defineUniform("uvOverlay", 0, 0, offset);
-        offset += 4*4;
+        offset += 4 * Float.BYTES;
         binder.defineUniform("uvAlpha", 0, 0, offset);
 
         binder.setBuffer("uniforms", this.uniformBuffer, 0, this.uniformBufferSize);
@@ -101,7 +101,7 @@ public class FlagImage extends Actor implements Disposable {
         PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
         pipelineSpec.name = "pipeline";
         pipelineSpec.enableBlending();
-        return new WebGPUPipeline(this.binder.getPipelineLayout("pipeline layout"), pipelineSpec);
+        return new WebGPUPipeline(this.binder.getPipelineLayout("pipeline layout flagImage"), pipelineSpec);
     }
 
     private void bindStaticTextures() {
