@@ -6,12 +6,16 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.badlogic.gdx.math.Vector4;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.*;
+import com.github.xpenatan.webgpu.*;
+import com.monstrous.gdx.webgpu.graphics.Binder;
 import com.monstrous.gdx.webgpu.graphics.WgMesh;
 import com.monstrous.gdx.webgpu.graphics.WgTexture;
 import com.monstrous.gdx.webgpu.graphics.WgTextureArray;
 import com.monstrous.gdx.webgpu.graphics.g2d.WgTextureAtlas;
+import com.monstrous.gdx.webgpu.wrappers.*;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.economy.Economy;
 import com.populaire.projetguerrefroide.entity.ModifierStore;
@@ -24,6 +28,7 @@ import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
 import com.populaire.projetguerrefroide.adapter.graphics.MeshMultiDrawIndirect;
 import com.populaire.projetguerrefroide.util.LocalisationUtils;
+import com.populaire.projetguerrefroide.util.WgslUtils;
 import org.lwjgl.opengl.GL43;
 
 import java.util.*;
@@ -61,10 +66,14 @@ public class World implements Disposable {
     private final ShaderProgram fontShader;
     private final ShaderProgram elementShader;
     private final ShaderProgram elementScaleShader;
-    private final ShaderProgram riverShader;
-    private final Mesh meshBuildings;
-    private final Mesh meshResources;*/
+    private final ShaderProgram riverShader;*/
+    private final WgMesh meshBuildings;
+    //private final WgMesh meshResources;
     //private final MeshMultiDrawIndirect meshRivers;
+    private final WebGPUUniformBuffer uniformBufferBuildings;
+    private final Binder binderBuildings;
+    private final WebGPUPipeline pipelineBuildings;
+    private final int uniformBufferSizeBuildings;
     private LandProvince selectedProvince;
     private Country countryPlayer;
     private MapMode mapMode;
@@ -119,7 +128,13 @@ public class World implements Disposable {
         this.terrainSheetArray = new WgTextureArray(terrainTexturePaths);
         this.mapElementsTextureAtlas = new WgTextureAtlas(Gdx.files.internal("map/elements/map_elements.atlas"));
         this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        //this.meshBuildings = this.generateMeshBuildings();
+        VertexAttributes vertexAttributesBuildings = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        this.meshBuildings = this.generateMeshBuildings(vertexAttributesBuildings);
+        this.uniformBufferSizeBuildings = (16 + 1 + 3) * Float.BYTES;
+        this.uniformBufferBuildings = new WebGPUUniformBuffer(this.uniformBufferSizeBuildings, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
+        this.binderBuildings = this.createBinderBuildings();
+        this.pipelineBuildings = this.createPipelineBuildings(vertexAttributesBuildings, WgslUtils.getShaderSource("element.wgsl"));
+        this.bindStaticTextures();
         //this.meshResources = this.generateMeshResources();
         //this.meshRivers = this.generateMeshRivers();
 
@@ -516,7 +531,7 @@ public class World implements Disposable {
         }
     }
 
-    public Mesh generateMeshBuildings() {
+    public WgMesh generateMeshBuildings(VertexAttributes vertexAttributes) {
         int numBuildings = 0;
 
         IntList provinceBuildingIds = this.provinceStore.getBuildingIds();
@@ -594,9 +609,7 @@ public class World implements Disposable {
             }
         }
 
-        Mesh mesh = new WgMesh(true, vertices.length / 4, indices.length,
-            new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
-            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"));
+        WgMesh mesh = new WgMesh(true, vertices.length / 4, indices.length, vertexAttributes);
 
         mesh.setVertices(vertices);
         mesh.setIndices(indices);
@@ -744,6 +757,48 @@ public class World implements Disposable {
         return mesh;
     }*/
 
+    public Binder createBinderBuildings() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutBuildings());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("texture", 0, 1);
+        binder.defineBinding("textureSampler", 0, 2);
+
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBufferBuildings, 0, this.uniformBufferSizeBuildings);
+
+        return binder;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayoutBuildings() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout buildings");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeBuildings, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUPipeline createPipelineBuildings(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline";
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderBuildings.getPipelineLayout("pipeline layout buildings"), pipelineSpec);
+    }
+
+    private void bindStaticTextures() {
+        this.binderBuildings.setTexture("texture", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getTextureView());
+        this.binderBuildings.setSampler("textureSampler", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getSampler());
+        this.binderBuildings.setUniform("worldWidth", (float) WORLD_WIDTH);
+        this.uniformBufferBuildings.flush();
+    }
+
     public void render(Batch batch, OrthographicCamera cam, float time) {
         /*this.mapShader.bind();
         this.provincesTexture.bind(0);
@@ -801,27 +856,29 @@ public class World implements Disposable {
             }
         }
         batch.setShader(null);
-        batch.end();
+        batch.end();*/
         if(cam.zoom <= 0.8f) {
             this.renderMeshBuildings(cam);
         }
-        if(this.mapMode == MapMode.RESOURCES && cam.zoom <= 0.8f) {
+        /*if(this.mapMode == MapMode.RESOURCES && cam.zoom <= 0.8f) {
             this.renderMeshResources(cam);
         }*/
     }
 
-    /*private void renderMeshBuildings(OrthographicCamera cam) {
-        this.elementShader.bind();
-        this.mapElementsTextureAtlas.getTextures().first().bind(0);
-        this.elementShader.setUniformi("u_texture", 0);
-        this.elementShader.setUniformMatrix("u_projTrans", cam.combined);
-        this.elementShader.setUniformi("u_worldWidth", WORLD_WIDTH);
-        this.meshBuildings.bind(this.elementShader);
-        Gdx.gl.glEnable(GL32.GL_BLEND);
-        Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
-        Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshBuildings.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
-        this.meshBuildings.unbind(this.elementShader);
-    }*/
+    private void renderMeshBuildings(OrthographicCamera cam) {
+        this.binderBuildings.setUniform("projTrans", cam.combined);
+        this.uniformBufferBuildings.flush();
+
+        WebGPURenderPass pass = RenderPassBuilder.create("Buildings image pass");
+        pass.setViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), 0f, 1f);
+        pass.setScissorRect(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        pass.setPipeline(this.pipelineBuildings);
+        this.binderBuildings.bindGroup(pass, 0);
+
+        this.meshBuildings.render(pass, GL20.GL_TRIANGLES, 0, this.meshBuildings.getNumIndices(), 3, 0);
+
+        pass.end();
+    }
 
     /*private void renderMeshResources(OrthographicCamera cam) {
         this.elementScaleShader.bind();
