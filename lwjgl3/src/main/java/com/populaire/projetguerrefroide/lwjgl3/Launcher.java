@@ -1,5 +1,6 @@
 package com.populaire.projetguerrefroide.lwjgl3;
 
+import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.monstrous.gdx.webgpu.backends.desktop.WgDesktopApplication;
 import com.monstrous.gdx.webgpu.backends.desktop.WgDesktopApplicationConfiguration;
 import com.populaire.projetguerrefroide.ProjetGuerreFroide;
@@ -19,6 +20,7 @@ public class Launcher {
         configuration.setWindowedMode(1080, 720);
         configuration.setTitle("ProjetGuerreFroide");
         configuration.useVsync(true);
+        configuration.backendWebGPU = JWebGPUBackend.WGPU;
         //configuration.setFullscreenMode(WgDesktopApplicationConfiguration.getDisplayMode());
         configuration.setWindowIcon("logo32.png");
         return configuration;

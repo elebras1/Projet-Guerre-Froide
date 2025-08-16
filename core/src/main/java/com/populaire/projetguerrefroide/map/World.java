@@ -2,38 +2,38 @@ package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
-import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
-import com.badlogic.gdx.math.Vector4;
+import com.badlogic.gdx.math.Matrix4;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.*;
 import com.github.xpenatan.webgpu.*;
+import com.monstrous.gdx.webgpu.application.WebGPUContext;
+import com.monstrous.gdx.webgpu.application.WgGraphics;
 import com.monstrous.gdx.webgpu.graphics.Binder;
 import com.monstrous.gdx.webgpu.graphics.WgMesh;
 import com.monstrous.gdx.webgpu.graphics.WgTexture;
 import com.monstrous.gdx.webgpu.graphics.WgTextureArray;
 import com.monstrous.gdx.webgpu.graphics.g2d.WgTextureAtlas;
 import com.monstrous.gdx.webgpu.wrappers.*;
+import com.populaire.projetguerrefroide.adapter.graphics.WGProjection;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.economy.Economy;
 import com.populaire.projetguerrefroide.entity.ModifierStore;
-import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
 import com.populaire.projetguerrefroide.entity.Terrain;
 import com.populaire.projetguerrefroide.national.NationalIdeas;
 import com.populaire.projetguerrefroide.politics.AllianceType;
 import com.populaire.projetguerrefroide.politics.Politics;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
-import com.populaire.projetguerrefroide.adapter.graphics.MeshMultiDrawIndirect;
 import com.populaire.projetguerrefroide.util.LocalisationUtils;
+import com.populaire.projetguerrefroide.util.WebGPUHelper;
 import com.populaire.projetguerrefroide.util.WgslUtils;
-import org.lwjgl.opengl.GL43;
 
 import java.util.*;
 
-import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class World implements Disposable {
@@ -799,7 +799,7 @@ public class World implements Disposable {
         this.uniformBufferBuildings.flush();
     }
 
-    public void render(Batch batch, OrthographicCamera cam, float time) {
+    public void render(WGProjection projection, OrthographicCamera cam, float time) {
         /*this.mapShader.bind();
         this.provincesTexture.bind(0);
         this.mapModeTexture.bind(1);
@@ -858,20 +858,21 @@ public class World implements Disposable {
         batch.setShader(null);
         batch.end();*/
         if(cam.zoom <= 0.8f) {
-            this.renderMeshBuildings(cam);
+            this.renderMeshBuildings(projection.getCombinedMatrix());
         }
         /*if(this.mapMode == MapMode.RESOURCES && cam.zoom <= 0.8f) {
             this.renderMeshResources(cam);
         }*/
     }
 
-    private void renderMeshBuildings(OrthographicCamera cam) {
-        this.binderBuildings.setUniform("projTrans", cam.combined);
+    private void renderMeshBuildings(Matrix4 projectionViewTransform) {
+        this.binderBuildings.setUniform("projTrans", projectionViewTransform);
         this.uniformBufferBuildings.flush();
 
-        WebGPURenderPass pass = RenderPassBuilder.create("Buildings image pass");
-        pass.setViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), 0f, 1f);
-        pass.setScissorRect(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        Rectangle view = WebGPUHelper.getViewport();
+
+        WebGPURenderPass pass = RenderPassBuilder.create("Buildings pass");
+        pass.setViewport(view.x, view.y, view.width, view.height, 0, 1);
         pass.setPipeline(this.pipelineBuildings);
         this.binderBuildings.bindGroup(pass, 0);
 

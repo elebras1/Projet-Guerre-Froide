@@ -5,7 +5,6 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -13,9 +12,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.monstrous.gdx.webgpu.graphics.g2d.WgSpriteBatch;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.monstrous.gdx.webgpu.scene2d.WgStage;
+import com.populaire.projetguerrefroide.adapter.graphics.WGProjection;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
@@ -33,7 +32,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     private final WorldService worldService;
     private final ConfigurationService configurationService;
     private final OrthographicCamera cam;
-    private final Batch batch;
+    private final WGProjection projection;
     private final InputMultiplexer multiplexer;
     private final GameInputHandler inputHandler;
     private final Skin skin;
@@ -60,7 +59,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 1.4f, 0);
         this.cam.update();
-        this.batch = new WgSpriteBatch();
+        this.projection = new WGProjection();
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
         AssetManager assetManager = gameContext.getAssetManager();
@@ -264,11 +263,11 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         float camX = this.cam.position.x;
         camX = (camX + WORLD_WIDTH) % WORLD_WIDTH;
         this.cam.position.x = camX;
-        this.batch.setProjectionMatrix(this.cam.combined);
+        this.projection.setProjectionMatrix(this.cam.combined);
 
         WgScreenUtils.clear(1, 1, 1, 1);
 
-        this.worldService.renderWorld(this.batch, this.cam, time);
+        this.worldService.renderWorld(this.projection, this.cam, time);
 
         if(!this.paused) {
             this.inputHandler.setDelta(delta);
@@ -309,6 +308,5 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     @Override
     public void dispose() {
         this.stage.dispose();
-        this.batch.dispose();
     }
 }
