@@ -29,7 +29,7 @@ fn vs_main(input: VertexInput) -> VertexOutput {
         instanceOffset = uniforms.worldWidth;
     }
 
-    output.position = vec4<f32>((uniforms.projTrans * vec4<f32>(input.position + vec2<f32>(instanceOffset, 0.0), 0.0, 1.0)).xy, 0.0, 1.0);
+    output.position = uniforms.projTrans * vec4<f32>(input.position + vec2<f32>(instanceOffset, 0.0), 0.0, 1.0);
     output.texCoord = input.texCoord;
 
     return output;
