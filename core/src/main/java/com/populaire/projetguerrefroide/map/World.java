@@ -508,6 +508,9 @@ public class World implements Disposable {
 
         this.mapModeTexture.dispose();
         this.mapModeTexture = new WgTexture(this.mapModePixmap);
+        this.binderProvinces.setTexture("textureMapMode", this.mapModeTexture.getTextureView());
+        this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
+        this.uniformBufferProvinces.flush();
     }
 
     private short getBorderType(short x, short y, Country country, Region region) {
@@ -944,6 +947,7 @@ public class World implements Disposable {
         this.binderProvinces.setTexture("textureOverlayTile", this.overlayTileTexture.getTextureView());
         this.binderProvinces.setSampler("textureOverlayTileSampler", this.overlayTileTexture.getSampler());
         this.binderProvinces.setUniform("worldWidth", (float) WORLD_WIDTH);
+        this.uniformBufferProvinces.flush();
 
         this.binderBuildings.setTexture("texture", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getTextureView());
         this.binderBuildings.setSampler("textureSampler", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getSampler());
