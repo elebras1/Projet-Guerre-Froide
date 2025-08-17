@@ -10,8 +10,6 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.*;
 import com.github.xpenatan.webgpu.*;
-import com.monstrous.gdx.webgpu.application.WebGPUContext;
-import com.monstrous.gdx.webgpu.application.WgGraphics;
 import com.monstrous.gdx.webgpu.graphics.Binder;
 import com.monstrous.gdx.webgpu.graphics.WgMesh;
 import com.monstrous.gdx.webgpu.graphics.WgTexture;
@@ -62,11 +60,6 @@ public class World implements Disposable {
     private final Texture riverBodyTexture;
     private final WgTextureArray terrainSheetArray;
     private final TextureAtlas mapElementsTextureAtlas;
-    /*private final ShaderProgram mapShader;
-    private final ShaderProgram fontShader;
-    private final ShaderProgram elementShader;
-    private final ShaderProgram elementScaleShader;
-    private final ShaderProgram riverShader;*/
     private final WgMesh meshBuildings;
     private final WgMesh meshResources;
     //private final MeshMultiDrawIndirect meshRivers;
@@ -146,23 +139,6 @@ public class World implements Disposable {
         this.pipelineResources = this.createPipelineResources(vertexAttributesResources, WgslUtils.getShaderSource("element_scale.wgsl"));
         this.bindStaticTextures();
         //this.meshRivers = this.generateMeshRivers();
-
-        /*String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
-        String fragmentMapShader = Gdx.files.internal("shaders/map_f.glsl").readString();
-        this.mapShader = new ShaderProgram(vertexMapShader, fragmentMapShader);
-        String vertexFontShader = Gdx.files.internal("shaders/font_v.glsl").readString();
-        String fragmentFontShader = Gdx.files.internal("shaders/font_f.glsl").readString();
-        this.fontShader = new ShaderProgram(vertexFontShader, fragmentFontShader);
-        String vertexElementShader = Gdx.files.internal("shaders/element_v.glsl").readString();
-        String fragmentElementShader = Gdx.files.internal("shaders/element_f.glsl").readString();
-        this.elementShader = new ShaderProgram(vertexElementShader, fragmentElementShader);
-        String vertexElementScaleShader = Gdx.files.internal("shaders/element_scale_v.glsl").readString();
-        String fragmentElementScaleShader = Gdx.files.internal("shaders/element_scale_f.glsl").readString();
-        this.elementScaleShader = new ShaderProgram(vertexElementScaleShader, fragmentElementScaleShader);
-        String vertexRiverShader = Gdx.files.internal("shaders/river_v.glsl").readString();
-        String fragmentRiverShader = Gdx.files.internal("shaders/river_f.glsl").readString();
-        this.riverShader = new ShaderProgram(vertexRiverShader, fragmentRiverShader);
-        ShaderProgram.pedantic = false;*/
     }
 
     public ProvinceStore getProvinceStore() {
@@ -742,8 +718,7 @@ public class World implements Disposable {
             vertexOffset += 4;
         }
 
-        WgMesh mesh = new WgMesh(true, vertices.length / 6, indices.length, vertexAttributes);
-
+        WgMesh mesh = new WgMesh(true, vertices.length / 6, indices.length, false, vertexAttributes);
 
         mesh.setVertices(vertices);
         mesh.setIndices(indices);
@@ -909,9 +884,9 @@ public class World implements Disposable {
         if(cam.zoom <= 0.8f) {
             this.renderMeshBuildings(projection.getCombinedMatrix());
         }
-        //if(this.mapMode == MapMode.RESOURCES && cam.zoom <= 0.8f) {
+        if(this.mapMode == MapMode.RESOURCES && cam.zoom <= 0.8f) {
             this.renderMeshResources(projection.getCombinedMatrix(), cam.zoom);
-        //}
+        }
     }
 
     private void renderMeshBuildings(Matrix4 projectionViewTransform) {
@@ -931,10 +906,6 @@ public class World implements Disposable {
     }
 
     private void renderMeshResources(Matrix4 projectionViewTransform, float zoom) {
-        System.out.println("Zoom : " + zoom);
-        System.out.println("Projection view transform : " + projectionViewTransform);
-        System.out.println("Vertices : " + Arrays.toString(this.meshResources.getVertices(new float[30])));
-
         this.binderResources.setUniform("projTrans", projectionViewTransform);
         this.binderResources.setUniform("zoom", zoom);
 
@@ -984,13 +955,5 @@ public class World implements Disposable {
         this.mapModePixmap.dispose();
         this.provincesPixmap.dispose();
         this.mapElementsTextureAtlas.dispose();
-        /*this.mapShader.dispose();
-        this.fontShader.dispose();
-        this.elementScaleShader.dispose();
-        this.meshResources.dispose();
-        this.meshBuildings.dispose();
-        this.elementShader.dispose();
-        this.riverShader.dispose();
-        this.meshRivers.dispose();*/
     }
 }
