@@ -32,6 +32,7 @@ import com.populaire.projetguerrefroide.util.WgslUtils;
 
 import java.util.*;
 
+import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
 public class World implements Disposable {
@@ -531,8 +532,8 @@ public class World implements Disposable {
         float[] vertice = new float[] {
             0, 0, 0, 0,
             WORLD_WIDTH, 0, 1, 0,
-            WORLD_WIDTH, WORLD_WIDTH, 1, 1,
-            0, WORLD_WIDTH, 0, 1
+            WORLD_WIDTH, WORLD_HEIGHT, 1, 1,
+            0, WORLD_HEIGHT, 0, 1
         };
 
         short[] indices = new short[] {
