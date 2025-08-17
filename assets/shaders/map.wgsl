@@ -40,20 +40,20 @@ struct VertexOutput {
 @group(0) @binding(19) var textureOverlayTile: texture_2d<f32>;
 @group(0) @binding(20) var textureOverlayTileSampler: sampler;
 
-// Constantes terrain
+// Constants terrain
 const MAP_SIZE: vec2<f32> = vec2<f32>(5616.0, 2160.0);
 const XX: f32 = 1.0 / 5616.0;
 const YY: f32 = 1.0 / 2160.0;
 const PIX: vec2<f32> = vec2<f32>(XX, YY);
 
-// Constantes hqx
+// Constants hqx
 const ML: i32 = 0;
 const THRESHOLD: f32 = 0.02;
 const AA_SCALE: f32 = 18.0;
 const MAIN_LINE_THICKNESS: f32 = 0.38;
 const SUB_LINE_THICKNESS: f32 = 0.22;
 
-// Constantes border - tableaux d'offsets
+// Constants border
 const OFFSETS_PROVINCE: array<vec2<f32>, 4> = array<vec2<f32>, 4>(
     vec2<f32>(0.1, 0.0),
     vec2<f32>(-0.1, 0.0),
@@ -92,6 +92,54 @@ fn vs_main(input: VertexInput) -> VertexOutput {
     output.texCoord = input.texCoord;
 
     return output;
+}
+
+fn getCorrectedTexCoord(texCoord: vec2<f32>) -> vec2<f32> {
+    return vec2<f32>(texCoord.x, 1.0 - texCoord.y);
+}
+
+fn diag(sum: ptr<function, vec4<f32>>, uv: vec2<f32>, p1: vec2<f32>, p2: vec2<f32>, texture: texture_2d<f32>, lineThickness: f32) -> bool {
+    let v1: vec4<f32> = textureLoad(texture, vec2<i32>(uv + p1), ML);
+    let v2: vec4<f32> = textureLoad(texture, vec2<i32>(uv + p2), ML);
+
+    if (length(v1 - v2) < THRESHOLD) {
+        let dir: vec2<f32> = normalize(vec2<f32>((p2 - p1).y, -(p2 - p1).x));
+        let lp: vec2<f32> = uv - (floor(uv + p1) + 0.5);
+        let l: f32 = clamp((lineThickness - dot(lp, dir)) * AA_SCALE, 0.0, 1.0);
+
+        if (l > 0.5) {
+            *sum = v1;
+        }
+
+        return true;
+    }
+    return false;
+}
+
+fn hqxFilter(uv: vec2<f32>, texture: texture_2d<f32>) -> vec4<f32> {
+    var sum: vec4<f32> = textureLoad(texture, vec2<i32>(uv), ML);
+
+    if (diag(&sum, uv, vec2<f32>(-1.0, 0.0), vec2<f32>(0.0, 1.0), texture, MAIN_LINE_THICKNESS)) {
+        diag(&sum, uv, vec2<f32>(-1.0, 0.0), vec2<f32>(1.0, 1.0), texture, SUB_LINE_THICKNESS);
+        diag(&sum, uv, vec2<f32>(-1.0, -1.0), vec2<f32>(0.0, 1.0), texture, SUB_LINE_THICKNESS);
+    }
+
+    if (diag(&sum, uv, vec2<f32>(0.0, 1.0), vec2<f32>(1.0, 0.0), texture, MAIN_LINE_THICKNESS)) {
+        diag(&sum, uv, vec2<f32>(0.0, 1.0), vec2<f32>(1.0, -1.0), texture, SUB_LINE_THICKNESS);
+        diag(&sum, uv, vec2<f32>(-1.0, 1.0), vec2<f32>(1.0, 0.0), texture, SUB_LINE_THICKNESS);
+    }
+
+    if (diag(&sum, uv, vec2<f32>(1.0, 0.0), vec2<f32>(0.0, -1.0), texture, MAIN_LINE_THICKNESS)) {
+        diag(&sum, uv, vec2<f32>(1.0, 0.0), vec2<f32>(-1.0, -1.0), texture, SUB_LINE_THICKNESS);
+        diag(&sum, uv, vec2<f32>(1.0, 1.0), vec2<f32>(0.0, -1.0), texture, SUB_LINE_THICKNESS);
+    }
+
+    if (diag(&sum, uv, vec2<f32>(0.0, -1.0), vec2<f32>(-1.0, 0.0), texture, MAIN_LINE_THICKNESS)) {
+        diag(&sum, uv, vec2<f32>(0.0, -1.0), vec2<f32>(-1.0, 1.0), texture, SUB_LINE_THICKNESS);
+        diag(&sum, uv, vec2<f32>(1.0, -1.0), vec2<f32>(-1.0, 0.0), texture, SUB_LINE_THICKNESS);
+    }
+
+    return sum;
 }
 
 fn getWaterClose(texCoord: vec2<f32>) -> vec4<f32> {
@@ -148,7 +196,7 @@ fn getWaterClose(texCoord: vec2<f32>) -> vec4<f32> {
 }
 
 fn getWaterFar(texCoord: vec2<f32>) -> vec4<f32> {
-    let waterColor : vec3<f32> = textureSample(textureColorMapWater, textureColorMapWaterSampler, texCoord).rgb;
+    let waterColor: vec3<f32> = textureSample(textureColorMapWater, textureColorMapWaterSampler, texCoord).rgb;
     var overlayColor: vec4<f32> = textureSample(textureOverlayTile, textureOverlayTileSampler, texCoord * vec2(11.0, 11.0 * MAP_SIZE.y / MAP_SIZE.x));
     if (overlayColor.r < 0.5) {
         overlayColor = vec4(2.0 * overlayColor.r * waterColor.r,2.0 * overlayColor.g * waterColor.g,2.0 * overlayColor.b * waterColor.b,overlayColor.a);
@@ -161,10 +209,13 @@ fn getWaterFar(texCoord: vec2<f32>) -> vec4<f32> {
 
 @fragment
 fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
-    if (uniforms.zoom > 0.8) {
+    let texCoord: vec2<f32> = getCorrectedTexCoord(input.texCoord);
+    let uv: vec2<f32> = texCoord * MAP_SIZE;
+    let colorProvince: vec4<f32> = hqxFilter(uv, textureProvinces);
+    /*if (uniforms.zoom > 0.8) {
         return getWaterFar(input.texCoord);
     } else {
         return getWaterClose(input.texCoord);
-    }
-    return vec4<f32>(1.0, 0.0, 0.0, 1.0);
+    }*/
+    return colorProvince;
 }
