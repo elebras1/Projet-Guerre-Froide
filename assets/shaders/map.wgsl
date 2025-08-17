@@ -328,8 +328,7 @@ fn getLandFar(colorProvince: vec4<f32>, colorMapMode: vec4<f32>, texCoord: vec2<
 fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
     let uv: vec2<f32> = input.texCoord * MAP_SIZE;
     let colorProvince: vec4<f32> = hqxFilter(uv, textureProvinces);
-    let flippedCoords = vec2<f32>(colorProvince.r, 1.0 - colorProvince.g);
-    let colorMapMode: vec4<f32> = textureSample(textureMapMode, textureMapModeSampler, flippedCoords);
+    let colorMapMode: vec4<f32> = textureSample(textureMapMode, textureMapModeSampler, colorProvince.rg);
 
     let isLand: bool = colorMapMode.a > 0.0;
 
@@ -338,15 +337,15 @@ fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
 
     if (uniforms.zoom > 0.8) {
         if(isLand) {
-            terrain = getLandFar(colorProvince, colorMapMode, texCoord, uv);
+            terrain = getLandFar(colorProvince, colorMapMode, input.texCoord, uv);
         } else {
-            water = getWaterFar(texCoord);
+            water = getWaterFar(input.texCoord);
         }
     } else {
         if(isLand) {
-            terrain = getLandClose(colorProvince, colorMapMode, texCoord, uv);
+            terrain = getLandClose(colorProvince, colorMapMode, input.texCoord, uv);
         } else {
-            water = getWaterClose(texCoord);
+            water = getWaterClose(input.texCoord);
         }
     }
 

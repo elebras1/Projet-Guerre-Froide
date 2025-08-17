@@ -508,6 +508,7 @@ public class World implements Disposable {
 
         this.mapModeTexture.dispose();
         this.mapModeTexture = new WgTexture(this.mapModePixmap);
+        this.mapModeTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
         this.binderProvinces.setTexture("textureMapMode", this.mapModeTexture.getTextureView());
         this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
         this.uniformBufferProvinces.flush();
