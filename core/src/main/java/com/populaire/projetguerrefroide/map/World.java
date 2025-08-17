@@ -1077,5 +1077,17 @@ public class World implements Disposable {
         this.mapModePixmap.dispose();
         this.provincesPixmap.dispose();
         this.mapElementsTextureAtlas.dispose();
+        this.meshProvinces.dispose();
+        this.meshBuildings.dispose();
+        this.meshResources.dispose();
+        this.binderProvinces.dispose();
+        this.binderBuildings.dispose();
+        this.binderResources.dispose();
+        this.uniformBufferProvinces.dispose();
+        this.uniformBufferBuildings.dispose();
+        this.uniformBufferResources.dispose();
+        this.pipelineProvinces.dispose();
+        this.pipelineBuildings.dispose();
+        this.pipelineResources.dispose();
     }
 }

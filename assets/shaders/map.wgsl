@@ -352,6 +352,5 @@ fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
 
     let fragColor: vec4<f32> = vec4<f32>(mix(water.rgb, terrain.rgb, terrain.a), 1.0);
 
-    return fragColor;*/
-    return colorMapMode;
+    return fragColor;
 }
