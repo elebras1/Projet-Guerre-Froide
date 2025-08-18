@@ -337,8 +337,8 @@ fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
 
     let isLand: bool = colorMapMode.a > 0.0;
 
-    var terrain: vec4<f32> = vec4<f32>(0.0, 0.0, 0.0, 1.0);
-    var water: vec4<f32> = vec4<f32>(0.0, 0.0, 0.0, 1.0);
+    var terrain: vec4<f32> = vec4<f32>(0.0, 0.0, 0.0, 0.0);
+    var water: vec4<f32> = vec4<f32>(0.0, 0.0, 0.0, 0.0);
 
     if (uniforms.zoom > 0.8) {
         if(isLand) {
