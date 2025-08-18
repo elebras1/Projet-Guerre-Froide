@@ -328,7 +328,12 @@ fn getLandFar(colorProvince: vec4<f32>, colorMapMode: vec4<f32>, texCoord: vec2<
 fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
     let uv: vec2<f32> = input.texCoord * MAP_SIZE;
     let colorProvince: vec4<f32> = hqxFilter(uv, textureProvinces);
-    let colorMapMode: vec4<f32> = textureSample(textureMapMode, textureMapModeSampler, colorProvince.rg);
+
+    let dims = vec2<f32>(textureDimensions(textureMapMode, 0u));
+    let coord = clamp(colorProvince.rg * (dims - 1.0) + 0.5, vec2<f32>(0.0), dims - 1.0);
+    let texel = vec2<i32>(floor(coord));
+
+    let colorMapMode: vec4<f32> = textureLoad(textureMapMode, texel, 0);
 
     let isLand: bool = colorMapMode.a > 0.0;
 

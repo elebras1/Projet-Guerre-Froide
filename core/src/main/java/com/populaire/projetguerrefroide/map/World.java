@@ -99,8 +99,8 @@ public class World implements Disposable {
         this.mapModePixmap.fill();
         Pixmap tempPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
         this.provincesPixmap = new Pixmap(tempPixmap.getWidth(), tempPixmap.getHeight(), Pixmap.Format.RGBA8888);
-        this.provincesPixmap.drawPixmap(tempPixmap, 0, 0);
         this.provincesPixmap.setBlending(Pixmap.Blending.None);
+        this.provincesPixmap.drawPixmap(tempPixmap, 0, 0);
         tempPixmap.dispose();
         this.updatePixmapCountriesColor();
         this.updateBordersProvincesPixmap();
@@ -115,7 +115,7 @@ public class World implements Disposable {
         this.mapModeTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
         this.provincesStripesTexture = new WgTexture(provincesColorStripesPixmap);
         this.provincesStripesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
-        this.provincesTexture = new WgTexture(this.provincesPixmap);
+        this.provincesTexture = new WgTexture(this.provincesPixmap, "provincesTexture", false);
         this.provincesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
         this.waterTexture = new WgTexture("map/terrain/sea_normal.png");
         this.waterTexture.setWrap(WgTexture.TextureWrap.Repeat, WgTexture.TextureWrap.Repeat);
