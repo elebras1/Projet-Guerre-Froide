@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.map;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Rectangle;
@@ -49,6 +50,7 @@ public class World implements Disposable {
     private final Map<String, Terrain> terrains;
     private final Pixmap provincesPixmap;
     private final Pixmap mapModePixmap;
+    private final Pixmap provincesColorStripesPixmap;
     private WgTexture mapModeTexture;
     private final WgTexture provincesTexture;
     private final WgTexture waterTexture;
@@ -94,35 +96,42 @@ public class World implements Disposable {
         this.nationalIdeas = nationalIdeas;
         this.terrains = terrains;
         this.mapModePixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
-        this.mapModePixmap.setBlending(Pixmap.Blending.None);
         this.mapModePixmap.setColor(0, 0, 0, 0);
         this.mapModePixmap.fill();
-        Pixmap tempPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
-        this.provincesPixmap = new Pixmap(tempPixmap.getWidth(), tempPixmap.getHeight(), Pixmap.Format.RGBA8888);
+        Pixmap tempProvincesPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
+        this.provincesPixmap = new Pixmap(tempProvincesPixmap.getWidth(), tempProvincesPixmap.getHeight(), Pixmap.Format.RGBA8888);
         this.provincesPixmap.setBlending(Pixmap.Blending.None);
-        this.provincesPixmap.drawPixmap(tempPixmap, 0, 0);
-        tempPixmap.dispose();
+        this.provincesPixmap.drawPixmap(tempProvincesPixmap, 0, 0);
+        tempProvincesPixmap.dispose();
         this.updatePixmapCountriesColor();
         this.updateBordersProvincesPixmap();
-        Pixmap provincesColorStripesPixmap = this.createProvincesColorStripesPixmap();
+        this.provincesColorStripesPixmap = this.createProvincesColorStripesPixmap();
         String[] terrainTexturePaths = this.createTerrainTexturePaths();
         this.mapMode = MapMode.POLITICAL;
 
         for(Country country : this.countries) {
             country.createLabels(LocalisationUtils.getCountryNameLocalisation(gameContext.getLocalisation(), country.getId(), this.getColonizerId(country)), gameContext.getLabelStylePool());
         }
-        this.mapModeTexture = new WgTexture(this.mapModePixmap);
+        PixmapTextureData mapModeTextureData = new PixmapTextureData(this.mapModePixmap, Pixmap.Format.RGBA8888, false, false);
+        this.mapModeTexture = new WgTexture(mapModeTextureData, "mapModeTexture", false);
         this.mapModeTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
-        this.provincesStripesTexture = new WgTexture(provincesColorStripesPixmap);
+        PixmapTextureData provincesColorStripesTextureData = new PixmapTextureData(provincesColorStripesPixmap, Pixmap.Format.RGBA8888, false, false);
+        this.provincesStripesTexture = new WgTexture(provincesColorStripesTextureData, "provincesStripesTexture", false);
         this.provincesStripesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
-        this.provincesTexture = new WgTexture(this.provincesPixmap, "provincesTexture", false);
+        PixmapTextureData provincesTextureData = new PixmapTextureData(this.provincesPixmap, Pixmap.Format.RGBA8888, false, false);
+        this.provincesTexture = new WgTexture(provincesTextureData, "provincesTexture", false);
         this.provincesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
         this.waterTexture = new WgTexture("map/terrain/sea_normal.png");
+        this.waterTexture.setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
         this.waterTexture.setWrap(WgTexture.TextureWrap.Repeat, WgTexture.TextureWrap.Repeat);
         this.colorMapWaterTexture = new WgTexture("map/terrain/colormap_water.png");
-        this.colorMapWaterTexture.setFilter(WgTexture.TextureFilter.Linear, WgTexture.TextureFilter.Linear);
+        this.colorMapWaterTexture.setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
         this.colorMapTexture = new WgTexture("map/terrain/colormap.png");
-        this.terrainTexture = new WgTexture("map/terrain.bmp");
+        this.colorMapTexture.setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
+        Pixmap terrainPixmap = new Pixmap(Gdx.files.internal("map/terrain.bmp"));
+        PixmapTextureData terrainTextureData = new PixmapTextureData(terrainPixmap, Pixmap.Format.RGBA8888, false, false);
+        this.terrainTexture = new WgTexture(terrainTextureData, "terrainTexture", false);
+        terrainPixmap.dispose();
         this.stripesTexture = new WgTexture("map/terrain/stripes.png");
         this.overlayTileTexture = new WgTexture("map/terrain/map_overlay_tile.png");
         this.overlayTileTexture.setWrap(WgTexture.TextureWrap.Repeat, WgTexture.TextureWrap.Repeat);
@@ -130,7 +139,7 @@ public class World implements Disposable {
         this.riverBodyTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         this.terrainSheetArray = new WgTextureArray(terrainTexturePaths);
         this.mapElementsTextureAtlas = new WgTextureAtlas(Gdx.files.internal("map/elements/map_elements.atlas"));
-        this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
         VertexAttributes vertexAttributesProvinces = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
         this.meshProvinces = this.generateMeshProvinces(vertexAttributesProvinces);
         this.uniformBufferSizeProvinces = (16 + 4 + 4) * Float.BYTES;
@@ -507,7 +516,8 @@ public class World implements Disposable {
         }
 
         this.mapModeTexture.dispose();
-        this.mapModeTexture = new WgTexture(this.mapModePixmap);
+        PixmapTextureData mapModeTextureData = new PixmapTextureData(this.mapModePixmap, Pixmap.Format.RGBA8888, false, false);
+        this.mapModeTexture = new WgTexture(mapModeTextureData, "mapModeTexture", false);
         this.mapModeTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
         this.binderProvinces.setTexture("textureMapMode", this.mapModeTexture.getTextureView());
         this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
@@ -1077,6 +1087,7 @@ public class World implements Disposable {
         this.terrainSheetArray.dispose();
         this.mapModePixmap.dispose();
         this.provincesPixmap.dispose();
+        this.provincesColorStripesPixmap.dispose();
         this.mapElementsTextureAtlas.dispose();
         this.meshProvinces.dispose();
         this.meshBuildings.dispose();

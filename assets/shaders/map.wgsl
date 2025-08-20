@@ -206,7 +206,7 @@ fn getWaterFar(texCoord: vec2<f32>) -> vec4<f32> {
 fn getTerrain(corner: vec2<f32>, texCoord: vec2<f32>, localTexCoord: vec2<f32>) -> vec4<f32> {
     let index: f32 = textureSample(textureTerrain, textureTerrainSampler, floor(texCoord * MAP_SIZE + vec2<f32>(0.5, 0.5)) / MAP_SIZE + 0.5 * PIX * corner).r;
     let flooredIndex: f32 = floor(index * 256.0);
-    let colour: vec4<f32> = textureSample(textureTerrainsheet, textureTerrainsheetSampler, localTexCoord, i32(flooredIndex));
+    let colour: vec4<f32> = textureSampleLevel(textureTerrainsheet, textureTerrainsheetSampler, localTexCoord, i32(flooredIndex), 0.0);
     return colour;
 }
 
@@ -260,10 +260,10 @@ fn getLandClose(colorProvince: vec4<f32>, colorMapMode: vec4<f32>, texCoord: vec
         political = mix(political, vec3<f32>(grey), 0.5);
     }
 
-    let stripeColor: vec4<f32> = textureSample(textureProvincesStripes, textureProvincesStripesSampler, colorProvince.rg);
+    let stripeColor: vec4<f32> = textureSampleLevel(textureProvincesStripes, textureProvincesStripesSampler, colorProvince.rg, 0.0);
     if (stripeColor.a > 0.0) {
         let stripeCoord: vec2<f32> = fract(texCoord * vec2<f32>(512.0, 512.0 * MAP_SIZE.y / MAP_SIZE.x));
-        let stripeFactor: f32 = textureSample(textureStripes, textureStripesSampler, stripeCoord).a;
+        let stripeFactor: f32 = textureSampleLevel(textureStripes, textureStripesSampler, stripeCoord, 0.0).a;
         political = clamp(mix(political, stripeColor.rgb, stripeFactor), vec3<f32>(0.0), vec3<f32>(1.0));
     }
 
@@ -303,10 +303,10 @@ fn getLandFar(colorProvince: vec4<f32>, colorMapMode: vec4<f32>, texCoord: vec2<
         political = vec4<f32>(mix(political.rgb, vec3<f32>(grey), 0.5), political.a);
     }
 
-    let stripeColor: vec4<f32> = textureSample(textureProvincesStripes, textureProvincesStripesSampler, colorProvince.rg);
+    let stripeColor: vec4<f32> = textureSampleLevel(textureProvincesStripes, textureProvincesStripesSampler, colorProvince.rg, 0.0);
     if (stripeColor.a > 0.0) {
         let stripeCoord: vec2<f32> = fract(texCoord * vec2<f32>(512.0, 512.0 * MAP_SIZE.y / MAP_SIZE.x));
-        let stripeFactor: f32 = textureSample(textureStripes, textureStripesSampler, stripeCoord).a;
+        let stripeFactor: f32 = textureSampleLevel(textureStripes, textureStripesSampler, stripeCoord, 0.0).a;
         political = vec4<f32>(clamp(mix(political.rgb, stripeColor.rgb, stripeFactor), vec3<f32>(0.0), vec3<f32>(1.0)), political.a);
     }
 
@@ -328,12 +328,7 @@ fn getLandFar(colorProvince: vec4<f32>, colorMapMode: vec4<f32>, texCoord: vec2<
 fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
     let uv: vec2<f32> = input.texCoord * MAP_SIZE;
     let colorProvince: vec4<f32> = hqxFilter(uv, textureProvinces);
-
-    let dims = vec2<f32>(textureDimensions(textureMapMode, 0u));
-    let coord = clamp(colorProvince.rg * (dims - 1.0) + 0.5, vec2<f32>(0.0), dims - 1.0);
-    let texel = vec2<i32>(floor(coord));
-
-    let colorMapMode: vec4<f32> = textureLoad(textureMapMode, texel, 0);
+    let colorMapMode: vec4<f32> = textureSample(textureMapMode, textureMapModeSampler, colorProvince.rg);
 
     let isLand: bool = colorMapMode.a > 0.0;
 
