@@ -39,7 +39,8 @@ fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
     let uvAlpha = mix(uniforms.uvAlpha.xy, uniforms.uvAlpha.zw, input.texCoord);
 
     let flagColor = textureSample(textureFlag, textureFlagSampler, uvFlag);
-    let overlayColor = textureSample(textureOverlay, textureOverlaySampler, uvOverlay);
+    var overlayColor = textureSample(textureOverlay, textureOverlaySampler, uvOverlay);
+    overlayColor = vec4<f32>(overlayColor.rgb, overlayColor.a * 1.5);
     let alphaColor = textureSample(textureAlpha, textureAlphaSampler, uvAlpha);
 
     let color = mix(flagColor, overlayColor, overlayColor.a);
