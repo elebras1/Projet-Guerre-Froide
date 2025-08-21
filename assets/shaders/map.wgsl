@@ -324,6 +324,10 @@ fn getLandFar(colorProvince: vec4<f32>, colorMapMode: vec4<f32>, texCoord: vec2<
     return vec4<f32>(finalColor, colorMapMode.a);
 }
 
+fn applyGamma(color: vec3<f32>) -> vec3<f32> {
+    return pow(color, vec3<f32>(1.8));
+}
+
 @fragment
 fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
     let uv: vec2<f32> = input.texCoord * MAP_SIZE;
@@ -349,7 +353,7 @@ fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
         }
     }
 
-    let fragColor: vec4<f32> = vec4<f32>(mix(water.rgb, terrain.rgb, terrain.a), 1.0);
-
-    return fragColor;
+    var fragColor: vec3<f32> = mix(water.rgb, terrain.rgb, terrain.a);
+    fragColor = applyGamma(fragColor);
+    return vec4<f32>(fragColor, 1.0);
 }
