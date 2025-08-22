@@ -24,7 +24,6 @@ public class Country {
     private ShortList ministersIds;
     private Identity identity;
     private Attitude attitude;
-    private List<MapLabel> labels;
     private String name;
     private Map<LawGroup, Law> laws;
     private IntList leadersIds;
@@ -41,7 +40,6 @@ public class Country {
         this.headOfStateId = -1;
         this.identity = null;
         this.attitude = null;
-        this.labels = null;
     }
 
     public String getId() {
@@ -192,13 +190,8 @@ public class Country {
         return this.name;
     }
 
-    public List<MapLabel> getLabels() {
-        return this.labels;
-    }
-
-    public void createLabels(String name, LabelStylePool labelStylePool) {
+    public void getLabelsData(String name, MapLabel mapLabel, FloatList vertices, ShortList indices) {
         this.name = name;
-        this.labels = new ObjectList<>();
         Set<LandProvince> visitedProvinces = new ObjectSet<>();
 
         for (LandProvince province : this.provinces) {
@@ -212,8 +205,7 @@ public class Country {
                         positionsProvinces.add(connectedProvince.getPosition("default"));
                         pixelsBorderProvinces.addAll(connectedProvince.getBorderPixels());
                     }
-                    MapLabel label = new MapLabel(name, labelStylePool, pixelsBorderProvinces, positionsProvinces);
-                    this.labels.add(label);
+                    mapLabel.generateData(name, pixelsBorderProvinces, positionsProvinces, vertices, indices);
                 }
             }
         }
