@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide.adapter.graphics;
 
 import com.badlogic.gdx.math.Matrix4;
 
-public class WGProjection {
+public class WgProjection {
 
     private final Matrix4 projectionMatrix;
 
@@ -12,7 +12,7 @@ public class WGProjection {
 
     private final Matrix4 combinedMatrix;
 
-    public WGProjection() {
+    public WgProjection() {
         this.projectionMatrix = new Matrix4();
         this.transformMatrix = new Matrix4();
         // matrix which will transform an opengl ortho matrix to a webgpu ortho matrix

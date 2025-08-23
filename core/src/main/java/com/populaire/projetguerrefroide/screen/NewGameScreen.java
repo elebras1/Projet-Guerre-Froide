@@ -14,7 +14,7 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.monstrous.gdx.webgpu.scene2d.WgStage;
-import com.populaire.projetguerrefroide.adapter.graphics.WGProjection;
+import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
@@ -32,7 +32,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     private final WorldService worldService;
     private final ConfigurationService configurationService;
     private final OrthographicCamera cam;
-    private final WGProjection projection;
+    private final WgProjection projection;
     private final InputMultiplexer multiplexer;
     private final GameInputHandler inputHandler;
     private final Skin skin;
@@ -59,7 +59,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 1.4f, 0);
         this.cam.update();
-        this.projection = new WGProjection();
+        this.projection = new WgProjection();
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
         AssetManager assetManager = gameContext.getAssetManager();

@@ -15,7 +15,7 @@ import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.monstrous.gdx.webgpu.scene2d.WgStage;
-import com.populaire.projetguerrefroide.adapter.graphics.WGProjection;
+import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
@@ -39,7 +39,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     private final ConfigurationService configurationService;
     private final DateService dateService;
     private final OrthographicCamera cam;
-    private final WGProjection projection;
+    private final WgProjection projection;
     private final InputMultiplexer multiplexer;
     private final GameInputHandler inputHandler;
     private final Skin skinUi;
@@ -67,7 +67,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.configurationService = configurationService;
         this.dateService = new DateService(this.gameContext.getBookmark().getDate(), this);
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
-        this.projection = new WGProjection();
+        this.projection = new WgProjection();
         int capitalPosition = this.worldService.getPositionOfCapitalOfSelectedCountry();
         short capitalX = (short) (capitalPosition >> 16);
         short capitalY = (short) (capitalPosition & 0xFFFF);

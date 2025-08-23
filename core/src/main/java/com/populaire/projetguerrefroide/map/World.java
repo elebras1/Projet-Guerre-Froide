@@ -18,10 +18,12 @@ import com.monstrous.gdx.webgpu.graphics.WgTexture;
 import com.monstrous.gdx.webgpu.graphics.WgTextureArray;
 import com.monstrous.gdx.webgpu.graphics.g2d.WgTextureAtlas;
 import com.monstrous.gdx.webgpu.wrappers.*;
-import com.populaire.projetguerrefroide.adapter.graphics.WGProjection;
+import com.populaire.projetguerrefroide.adapter.graphics.WgMeshMulti;
+import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.economy.Economy;
 import com.populaire.projetguerrefroide.entity.ModifierStore;
+import com.populaire.projetguerrefroide.entity.RawMeshMulti;
 import com.populaire.projetguerrefroide.entity.Terrain;
 import com.populaire.projetguerrefroide.national.NationalIdeas;
 import com.populaire.projetguerrefroide.politics.AllianceType;
@@ -70,23 +72,27 @@ public class World implements Disposable {
     private final WgMesh meshMapLabels;
     private final WgMesh meshBuildings;
     private final WgMesh meshResources;
-    //private final MeshMultiDrawIndirect meshRivers;
+    private final WgMeshMulti meshRivers;
     private final WebGPUUniformBuffer uniformBufferProvinces;
     private final WebGPUUniformBuffer uniformBufferMapLabels;
     private final WebGPUUniformBuffer uniformBufferBuildings;
     private final WebGPUUniformBuffer uniformBufferResources;
+    private final WebGPUUniformBuffer uniformBufferRivers;
     private final Binder binderProvinces;
     private final Binder binderMapLabels;
     private final Binder binderBuildings;
     private final Binder binderResources;
+    private final Binder binderRivers;
     private final WebGPUPipeline pipelineProvinces;
     private final WebGPUPipeline pipelineMapLabels;
     private final WebGPUPipeline pipelineBuildings;
     private final WebGPUPipeline pipelineResources;
+    private final WebGPUPipeline pipelineRivers;
     private final int uniformBufferSizeProvinces;
     private final int uniformBufferSizeMapLabels;
     private final int uniformBufferSizeBuildings;
     private final int uniformBufferSizeResources;
+    private  final int uniformBufferSizeRivers;
     private LandProvince selectedProvince;
     private Country countryPlayer;
     private MapMode mapMode;
@@ -173,8 +179,14 @@ public class World implements Disposable {
         this.uniformBufferResources = new WebGPUUniformBuffer(this.uniformBufferSizeResources, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
         this.binderResources = this.createBinderResources();
         this.pipelineResources = this.createPipelineResources(vertexAttributesResources, WgslUtils.getShaderSource("element_scale.wgsl"));
+        VertexAttributes vertexAttributesRivers = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.Normal, 1, "width"));
+        this.meshRivers = this.generateMeshRivers(vertexAttributesRivers);
+        this.uniformBufferSizeRivers = (16 + 4 + 4) * Float.BYTES;
+        this.uniformBufferRivers = new WebGPUUniformBuffer(this.uniformBufferSizeRivers, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
+        this.binderRivers = this.createBinderRivers();
+        this.pipelineRivers = this.createPipelineRivers(vertexAttributesRivers, WgslUtils.getShaderSource("river.wgsl"));
         this.bindStaticTextures();
-        //this.meshRivers = this.generateMeshRivers();
+
     }
 
     public ProvinceStore getProvinceStore() {
@@ -803,18 +815,15 @@ public class World implements Disposable {
         return mesh;
     }
 
-    /*private MeshMultiDrawIndirect generateMeshRivers() {
-        RawMeshMultiDraw rawMesh = this.mapDao.readRiversMeshJson();
+    private WgMeshMulti generateMeshRivers(VertexAttributes vertexAttributes) {
+        RawMeshMulti rawMesh = this.mapDao.readRiversMeshJson();
 
-        MeshMultiDrawIndirect mesh = new MeshMultiDrawIndirect(true, rawMesh.getVertices().length / 5, 0,
-            new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
-            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"),
-            new VertexAttribute(VertexAttributes.Usage.Generic, 1, "a_width"));
+        WgMeshMulti mesh = new WgMeshMulti(true, rawMesh.getVertices().length / 5, 0, vertexAttributes);
         mesh.setVertices(rawMesh.getVertices());
         mesh.setIndirectCommands(rawMesh.getStarts(), rawMesh.getCounts());
 
         return mesh;
-    }*/
+    }
 
     private Binder createBinderProvinces() {
         Binder binder = new Binder();
@@ -918,6 +927,30 @@ public class World implements Disposable {
         return binder;
     }
 
+    private Binder createBinderRivers() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutRivers());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("texture", 0, 1);
+        binder.defineBinding("textureSampler", 0, 2);
+        binder.defineBinding("textureColorMapWater", 0, 3);
+        binder.defineBinding("textureColorMapWaterSampler", 0, 4);
+
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBufferRivers, 0, this.uniformBufferSizeRivers);
+
+        return binder;
+    }
+
     private WebGPUBindGroupLayout createBindGroupLayoutProvinces() {
         WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout provinces");
         layout.begin();
@@ -976,6 +1009,18 @@ public class World implements Disposable {
         return layout;
     }
 
+    private WebGPUBindGroupLayout createBindGroupLayoutRivers() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout rivers");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeRivers, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(3, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(4, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
     private WebGPUPipeline createPipelineProvinces(VertexAttributes vertexAttributes, String shaderSource) {
         PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
         pipelineSpec.name = "pipeline";
@@ -1002,6 +1047,14 @@ public class World implements Disposable {
         pipelineSpec.name = "pipeline resources";
         pipelineSpec.enableBlending();
         return new WebGPUPipeline(this.binderResources.getPipelineLayout("pipeline layout resources"), pipelineSpec);
+    }
+
+    private WebGPUPipeline createPipelineRivers(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline rivers";
+        pipelineSpec.topology = WGPUPrimitiveTopology.TriangleStrip;
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderRivers.getPipelineLayout("pipeline layout rivers"), pipelineSpec);
     }
 
     private void bindStaticTextures() {
@@ -1042,10 +1095,18 @@ public class World implements Disposable {
         this.binderResources.setSampler("textureSampler", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getSampler());
         this.binderResources.setUniform("worldWidth", (float) WORLD_WIDTH);
         this.uniformBufferResources.flush();
+
+        this.binderRivers.setTexture("texture", this.riverBodyTexture.getTextureView());
+        this.binderRivers.setSampler("textureSampler", this.riverBodyTexture.getSampler());
+        this.binderRivers.setTexture("textureColorMapWater", this.colorMapWaterTexture.getTextureView());
+        this.binderRivers.setSampler("textureColorMapWaterSampler", this.colorMapWaterTexture.getSampler());
+        this.binderRivers.setUniform("worldWidth", (float) WORLD_WIDTH);
+        this.uniformBufferRivers.flush();
     }
 
-    public void render(WGProjection projection, OrthographicCamera cam, float time) {
+    public void render(WgProjection projection, OrthographicCamera cam, float time) {
         this.renderMeshProvinces(projection.getCombinedMatrix(), cam.zoom, time);
+        this.renderMeshRivers(projection.getCombinedMatrix(), cam.zoom, time);
         this.renderMeshMapLabels(projection.getCombinedMatrix(), cam.zoom);
         if(cam.zoom <= 0.8f) {
             this.renderMeshBuildings(projection.getCombinedMatrix());
@@ -1135,22 +1196,23 @@ public class World implements Disposable {
         pass.end();
     }
 
-    /*private void renderMeshRivers(OrthographicCamera cam, float time) {
-        this.riverShader.bind();
-        this.riverBodyTexture.bind(0);
-        this.colorMapWaterTexture.bind(1);
-        this.riverShader.setUniformi("u_texture", 0);
-        this.riverShader.setUniformi("u_textureColorMapWater", 1);
-        this.riverShader.setUniformf("u_time", time);
-        this.riverShader.setUniformMatrix("u_projTrans", cam.combined);
-        this.riverShader.setUniformi("u_worldWidth", WORLD_WIDTH);
-        this.riverShader.setUniformf("u_zoom", cam.zoom);
-        this.meshRivers.bind(this.riverShader);
-        Gdx.gl.glEnable(GL32.GL_BLEND);
-        Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
-        GL43.glMultiDrawArraysIndirect(GL43.GL_TRIANGLE_STRIP, 0, this.meshRivers.getCommandCount(), 0);
-        this.meshRivers.unbind(this.riverShader);
-    }*/
+    private void renderMeshRivers(Matrix4 projectionViewTransform, float zoom, float time) {
+        this.binderRivers.setUniform("projTrans", projectionViewTransform);
+        this.binderRivers.setUniform("zoom", zoom);
+        this.binderRivers.setUniform("time", time);
+        this.uniformBufferRivers.flush();
+
+        Rectangle view = WebGPUHelper.getViewport();
+
+        WebGPURenderPass pass = RenderPassBuilder.create("Rivers pass");
+        pass.setViewport(view.x, view.y, view.width, view.height, 0, 1);
+        pass.setPipeline(this.pipelineRivers);
+        this.binderRivers.bindGroup(pass, 0);
+
+        this.meshRivers.render(pass, GL20.GL_TRIANGLE_STRIP, this.meshRivers.getNumIndices(), 0, 3, 0);
+
+        pass.end();
+    }
 
     @Override
     public void dispose() {
