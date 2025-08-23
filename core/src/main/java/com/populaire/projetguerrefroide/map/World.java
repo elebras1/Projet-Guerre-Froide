@@ -92,7 +92,8 @@ public class World implements Disposable {
     private final int uniformBufferSizeMapLabels;
     private final int uniformBufferSizeBuildings;
     private final int uniformBufferSizeResources;
-    private  final int uniformBufferSizeRivers;
+    private final int uniformBufferSizeRivers;
+    private final Vector4 selectedProvinceColor;
     private LandProvince selectedProvince;
     private Country countryPlayer;
     private MapMode mapMode;
@@ -122,6 +123,7 @@ public class World implements Disposable {
         this.provincesColorStripesPixmap = this.createProvincesColorStripesPixmap();
         FileHandle[] terrainTextureFiles = this.createTerrainTextureFiles();
         this.mapMode = MapMode.POLITICAL;
+        this.selectedProvinceColor = new Vector4();
 
         PixmapTextureData mapModeTextureData = new PixmapTextureData(this.mapModePixmap, Pixmap.Format.RGBA8888, false, false);
         this.mapModeTexture = new WgTexture(mapModeTextureData, "mapModeTexture", false);
@@ -861,7 +863,7 @@ public class World implements Disposable {
         binder.defineUniform("time", 0, 0, offset);
         offset += Float.BYTES;
         binder.defineUniform("showTerrain", 0, 0, offset);
-        offset += Integer.BYTES;
+        offset += Float.BYTES;
         binder.defineUniform("colorProvinceSelected", 0, 0, offset);
 
         binder.setBuffer("uniforms", this.uniformBufferProvinces, 0, this.uniformBufferSizeProvinces);
@@ -1128,9 +1130,9 @@ public class World implements Disposable {
             float g = ((color >> 16) & 0xFF) / 255f;
             float b = ((color >> 8) & 0xFF) / 255f;
             float a = (color & 0xFF) / 255f;
-            this.binderProvinces.setUniform("colorProvinceSelected", new Vector4(r, g, b, a));
+            this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(r, g, b, a));
         } else {
-            this.binderProvinces.setUniform("colorProvinceSelected", new Vector4(0f, 0f, 0f, 0f));
+            this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(0f, 0f, 0f, 0f));
         }
         this.uniformBufferProvinces.flush();
 

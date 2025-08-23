@@ -3,7 +3,7 @@ struct Uniforms {
     worldWidth: f32,
     zoom: f32,
     time: f32,
-    showTerrain: i32,
+    showTerrain: f32,
     colorProvinceSelected: vec4<f32>,
 }
 
@@ -245,7 +245,7 @@ fn getLandClose(colorProvince: vec4<f32>, colorMapMode: vec4<f32>, texCoord: vec
     var terrain: vec4<f32> = getTerrainMix(texCoord);
     var political: vec3<f32> = colorMapMode.rgb;
 
-    if (uniforms.showTerrain == 1) {
+    if (uniforms.showTerrain == 1.0) {
         political = terrain.rgb;
     }
 
@@ -290,7 +290,7 @@ fn getLandClose(colorProvince: vec4<f32>, colorMapMode: vec4<f32>, texCoord: vec
 fn getLandFar(colorProvince: vec4<f32>, colorMapMode: vec4<f32>, texCoord: vec2<f32>, uv: vec2<f32>) -> vec4<f32> {
     var political: vec4<f32> = colorMapMode;
 
-    if (uniforms.showTerrain == 1) {
+    if (uniforms.showTerrain == 1.0) {
         political = getTerrainMix(texCoord);
     }
 
