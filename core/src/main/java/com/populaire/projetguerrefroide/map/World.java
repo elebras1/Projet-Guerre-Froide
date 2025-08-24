@@ -61,7 +61,7 @@ public class World implements Disposable {
     private final ShaderProgram riverShader;
     private final Mesh meshBuildings;
     private final Mesh meshResources;
-    private final MeshMultiDrawIndirect meshRivers;
+    //private final MeshMultiDrawIndirect meshRivers;
     private LandProvince selectedProvince;
     private Country countryPlayer;
     private MapMode mapMode;
@@ -119,7 +119,7 @@ public class World implements Disposable {
         this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         this.meshBuildings = this.generateMeshBuildings();
         this.meshResources = this.generateMeshResources();
-        this.meshRivers = this.generateMeshRivers();
+        //this.meshRivers = this.generateMeshRivers();
 
         String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
         String fragmentMapShader = Gdx.files.internal("shaders/map_f.glsl").readString();
@@ -790,7 +790,7 @@ public class World implements Disposable {
         batch.draw(this.provincesTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.setShader(null);
 
-        this.renderMeshRivers(cam, time);
+        //this.renderMeshRivers(cam, time);
 
         this.fontShader.bind();
         this.fontShader.setUniformf("u_zoom", cam.zoom);
@@ -837,7 +837,7 @@ public class World implements Disposable {
         this.meshResources.unbind(this.elementScaleShader);
     }
 
-    private void renderMeshRivers(OrthographicCamera cam, float time) {
+    /*private void renderMeshRivers(OrthographicCamera cam, float time) {
         this.riverShader.bind();
         this.riverBodyTexture.bind(0);
         this.colorMapWaterTexture.bind(1);
@@ -852,7 +852,7 @@ public class World implements Disposable {
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
         GL43.glMultiDrawArraysIndirect(GL43.GL_TRIANGLE_STRIP, 0, this.meshRivers.getCommandCount(), 0);
         this.meshRivers.unbind(this.riverShader);
-    }
+    }*/
 
     @Override
     public void dispose() {
@@ -877,6 +877,6 @@ public class World implements Disposable {
         this.mapElementsTextureAtlas.dispose();
         this.elementShader.dispose();
         this.riverShader.dispose();
-        this.meshRivers.dispose();
+        //this.meshRivers.dispose();
     }
 }
