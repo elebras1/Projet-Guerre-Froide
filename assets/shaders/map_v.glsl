@@ -1,4 +1,4 @@
-#version 420
+#version 320 es
 
 in vec4 a_position;
 in vec4 a_color;

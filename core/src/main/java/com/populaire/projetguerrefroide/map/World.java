@@ -766,7 +766,6 @@ public class World implements Disposable {
         this.mapShader.setUniformi("u_textureProvincesStripes", 7);
         this.mapShader.setUniformi("u_textureStripes", 8);
         this.mapShader.setUniformi("u_textureOverlayTile", 9);
-        this.mapShader.setUniformi("u_textureBorders", 10);
         this.mapShader.setUniformf("u_zoom", cam.zoom);
         this.mapShader.setUniformf("u_time", time);
         this.mapShader.setUniformi("u_showTerrain", this.mapMode == MapMode.TERRAIN ? 1 : 0);
@@ -815,7 +814,7 @@ public class World implements Disposable {
         this.mapElementsTextureAtlas.getTextures().first().bind(0);
         this.elementShader.setUniformi("u_texture", 0);
         this.elementShader.setUniformMatrix("u_projTrans", cam.combined);
-        this.elementShader.setUniformi("u_worldWidth", WORLD_WIDTH);
+        this.elementShader.setUniformf("u_worldWidth", WORLD_WIDTH);
         this.meshBuildings.bind(this.elementShader);
         Gdx.gl.glEnable(GL32.GL_BLEND);
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
@@ -829,7 +828,7 @@ public class World implements Disposable {
         this.elementScaleShader.setUniformi("u_texture", 0);
         this.elementScaleShader.setUniformMatrix("u_projTrans", cam.combined);
         this.elementScaleShader.setUniformf("u_zoom", cam.zoom);
-        this.elementScaleShader.setUniformi("u_worldWidth", WORLD_WIDTH);
+        this.elementScaleShader.setUniformf("u_worldWidth", WORLD_WIDTH);
         this.meshResources.bind(this.elementScaleShader);
         Gdx.gl.glEnable(GL32.GL_BLEND);
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
@@ -845,7 +844,7 @@ public class World implements Disposable {
         this.riverShader.setUniformi("u_textureColorMapWater", 1);
         this.riverShader.setUniformf("u_time", time);
         this.riverShader.setUniformMatrix("u_projTrans", cam.combined);
-        this.riverShader.setUniformi("u_worldWidth", WORLD_WIDTH);
+        this.riverShader.setUniformf("u_worldWidth", WORLD_WIDTH);
         this.riverShader.setUniformf("u_zoom", cam.zoom);
         this.meshRivers.bind(this.riverShader);
         Gdx.gl.glEnable(GL32.GL_BLEND);

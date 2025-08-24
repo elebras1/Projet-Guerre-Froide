@@ -1,4 +1,5 @@
-#version 420
+#version 320 es
+precision mediump float;
 
 in vec2 v_texCoords;
 uniform sampler2D u_textureFlag;
@@ -21,7 +22,7 @@ void main() {
     vec4 alphaColor = texture(u_textureAlpha, uvAlpha);
 
     vec4 color = mix(flagColor, overlayColor, overlayColor.a);
-    if(alphaColor.a < 1) {
+    if(alphaColor.a < 1.0) {
         fragColor = overlayColor;
     } else {
         fragColor = mix(alphaColor, color, alphaColor.a);

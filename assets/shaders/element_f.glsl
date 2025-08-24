@@ -1,4 +1,5 @@
-#version 420
+#version 320 es
+precision mediump float;
 
 in vec2 v_texCoords;
 uniform sampler2D u_texture;

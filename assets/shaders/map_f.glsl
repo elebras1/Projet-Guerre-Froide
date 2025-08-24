@@ -1,20 +1,19 @@
-/*This shader is derived from the map shader of the "Project Alice" : https://github.com/schombert/Project-Alice,
-Licensed under the GNU General Public License v3.0. You can redistribute it and/or modify it under the terms of the GPL v3.0.
-A copy of the GNU GPL v3.0 should have been included with this project. If not, see <https://www.gnu.org/licenses/>.*/
-#version 420
+#version 320 es
+precision mediump float;
+precision mediump sampler2DArray;
 
 in vec2 v_texCoords;
 
-layout (binding = 0) uniform sampler2D u_textureProvinces;
-layout (binding = 1) uniform sampler2D u_textureMapMode;
-layout (binding = 2) uniform sampler2D u_textureColorMapWater;
-layout (binding = 3) uniform sampler2D u_textureWaterNormal;
-layout (binding = 4) uniform sampler2D u_textureTerrain;
-layout (binding = 5) uniform sampler2DArray u_textureTerrainsheet;
-layout (binding = 6) uniform sampler2D u_textureColormap;
-layout (binding = 7) uniform sampler2D u_textureProvincesStripes;
-layout (binding = 8) uniform sampler2D u_textureStripes;
-layout (binding = 9) uniform sampler2D u_textureOverlayTile;
+uniform sampler2D u_textureProvinces;
+uniform sampler2D u_textureMapMode;
+uniform sampler2D u_textureColorMapWater;
+uniform sampler2D u_textureWaterNormal;
+uniform sampler2D u_textureTerrain;
+uniform sampler2DArray u_textureTerrainsheet;
+uniform sampler2D u_textureColormap;
+uniform sampler2D u_textureProvincesStripes;
+uniform sampler2D u_textureStripes;
+uniform sampler2D u_textureOverlayTile;
 
 uniform float u_zoom;
 uniform float u_time;
@@ -24,7 +23,7 @@ uniform vec4 u_colorProvinceSelected;
 out vec4 fragColor;
 
 //  terrain variables
-const vec2 mapSize = vec2(5616, 2160);
+const vec2 mapSize = vec2(5616.0, 2160.0);
 const float xx = 1.0 / mapSize.x;
 const float yy = 1.0 / mapSize.y;
 const vec2 pix = vec2(xx, yy);
@@ -32,7 +31,7 @@ const vec2 pix = vec2(xx, yy);
 // hqx variables
 const int ml = 0;
 const float threshold = 0.02;
-const float aaScale = 18;
+const float aaScale = 18.0;
 const float mainLineThickness = 0.38;
 const float subLineThickness = 0.22;
 
@@ -109,10 +108,10 @@ vec4 getWaterClose(vec2 texCoord) {
     const vec3 eyeDirection = vec3(0.0, 1.0, 1.0);
     const vec3 lightDirection = vec3(0.0, 1.0, 1.0);
 
-    vec2 coordA = texCoord * 3 + vec2(0.10, 0.10);
-    vec2 coordB = texCoord * 1 + vec2(0.00, 0.10);
-    vec2 coordC = texCoord * 2 + vec2(0.00, 0.15);
-    vec2 coordD = texCoord * 5 + vec2(0.00, 0.30);
+    vec2 coordA = texCoord * 3.0 + vec2(0.10, 0.10);
+    vec2 coordB = texCoord * 1.0 + vec2(0.00, 0.10);
+    vec2 coordC = texCoord * 2.0 + vec2(0.00, 0.15);
+    vec2 coordD = texCoord * 5.0 + vec2(0.00, 0.30);
 
     vec4 vBumpA = texture(u_textureWaterNormal, coordA);
     coordB += vec2(0.03, 0.05) * u_time;
@@ -126,9 +125,9 @@ vec4 getWaterClose(vec2 texCoord) {
     vBumpC.xyz + vBumpD.xyz) - WaveModTwo);
 
     vec3 eyeDir = normalize(eyeDirection);
-    float NdotL = max(dot(eyeDir, (vBumpTex / 2)), 0);
+    float NdotL = max(dot(eyeDir, (vBumpTex / 2.0)), 0.0);
 
-    NdotL = clamp((NdotL + WRAP) / (1 + WRAP), 0.f, 1.f);
+    NdotL = clamp((NdotL + WRAP) / (1.0 + WRAP), 0.f, 1.f);
     NdotL = mix(NdotL, 1.0, 0.0);
 
     vec3 color = NdotL * (WorldColorColor * vColorMapFactor);
@@ -146,8 +145,8 @@ vec4 getWaterClose(vec2 texCoord) {
 }
 
 vec4 getWaterFar(vec2 texCoord) {
-    const vec3 waterColor = texture(u_textureColorMapWater, texCoord).rgb;
-    vec4 overlayColor = texture(u_textureOverlayTile, v_texCoords * vec2(11., 11. * mapSize.y / mapSize.x));
+    vec3 waterColor = texture(u_textureColorMapWater, texCoord).rgb;
+    vec4 overlayColor = texture(u_textureOverlayTile, v_texCoords * vec2(11.0, 11.0 * mapSize.y / mapSize.x));
     if (overlayColor.r < 0.5) {
         overlayColor.rgb = 2.0 * overlayColor.rgb * waterColor;
     } else {
@@ -160,7 +159,7 @@ vec4 getWaterFar(vec2 texCoord) {
 // The terrain color from the current texture coordinate offset with one pixel in the "corner" direction
 vec4 getTerrain(vec2 corner, vec2 texCoord, vec2 localTexCoord) {
     float index = texture(u_textureTerrain, floor(texCoord * mapSize + vec2(0.5, 0.5)) / mapSize + 0.5 * pix * corner).r;
-    index = floor(index * 256);
+    index = floor(index * 256.0);
     vec4 colour = texture(u_textureTerrainsheet, vec3(localTexCoord, index));
     return colour;
 }
@@ -286,7 +285,7 @@ void main() {
     vec4 colorProvince = hqxFilter(uv, u_textureProvinces);
     vec4 colorMapMode = texture(u_textureMapMode, colorProvince.rg);
 
-    int alphaColorWater = 0;
+    float alphaColorWater = 0.0;
     bool isLand = colorMapMode.a > alphaColorWater;
 
     vec4 terrain;

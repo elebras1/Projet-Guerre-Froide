@@ -1,4 +1,4 @@
-#version 420
+#version 320 es
 
 in vec2 a_position;
 in vec2 a_texCoord0;
@@ -6,7 +6,7 @@ in vec2 a_center;
 
 uniform float u_zoom;
 uniform mat4 u_projTrans;
-uniform int u_worldWidth;
+uniform float u_worldWidth;
 
 out vec2 v_texCoords;
 
