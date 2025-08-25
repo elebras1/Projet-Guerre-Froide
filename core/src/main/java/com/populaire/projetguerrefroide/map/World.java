@@ -222,6 +222,20 @@ public class World implements Disposable {
 
     public boolean selectProvince(short x, short y) {
         this.selectedProvince = this.getProvince(x, y);
+
+        if(this.selectedProvince != null) {
+            int provinceIndex = this.provinceStore.getIndexById().get(this.selectedProvince.getId());
+            int color = this.provinceStore.getColors().get(provinceIndex);
+            float r = ((color >> 24) & 0xFF) / 255f;
+            float g = ((color >> 16) & 0xFF) / 255f;
+            float b = ((color >> 8) & 0xFF) / 255f;
+            float a = (color & 0xFF) / 255f;
+            this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(r, g, b, a));
+        } else {
+            this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(0f, 0f, 0f, 0f));
+        }
+        this.uniformBufferProvinces.flush();
+
         return this.selectedProvince != null;
     }
 
@@ -550,6 +564,7 @@ public class World implements Disposable {
         this.mapModeTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
         this.binderProvinces.setTexture("textureMapMode", this.mapModeTexture.getTextureView());
         this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
+        this.binderProvinces.setUniform("showTerrain", this.mapMode == MapMode.TERRAIN ? 1 : 0);
         this.uniformBufferProvinces.flush();
     }
 
@@ -1081,6 +1096,7 @@ public class World implements Disposable {
         this.binderProvinces.setTexture("textureOverlayTile", this.overlayTileTexture.getTextureView());
         this.binderProvinces.setSampler("textureOverlayTileSampler", this.overlayTileTexture.getSampler());
         this.binderProvinces.setUniform("worldWidth", (float) WORLD_WIDTH);
+        this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(0f, 0f, 0f, 0f));
         this.uniformBufferProvinces.flush();
 
         this.binderMapLabels.setTexture("texture", ((WgTexture) this.fontMapLabelRegion.getTexture()).getTextureView());
@@ -1122,18 +1138,6 @@ public class World implements Disposable {
         this.binderProvinces.setUniform("projTrans", projectionViewTransform);
         this.binderProvinces.setUniform("zoom", zoom);
         this.binderProvinces.setUniform("time", time);
-        this.binderProvinces.setUniform("showTerrain", this.mapMode == MapMode.TERRAIN ? 1 : 0);
-        if(this.selectedProvince != null) {
-            int provinceIndex = this.provinceStore.getIndexById().get(this.selectedProvince.getId());
-            int color = this.provinceStore.getColors().get(provinceIndex);
-            float r = ((color >> 24) & 0xFF) / 255f;
-            float g = ((color >> 16) & 0xFF) / 255f;
-            float b = ((color >> 8) & 0xFF) / 255f;
-            float a = (color & 0xFF) / 255f;
-            this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(r, g, b, a));
-        } else {
-            this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(0f, 0f, 0f, 0f));
-        }
         this.uniformBufferProvinces.flush();
 
         Rectangle view = WebGPUHelper.getViewport();
