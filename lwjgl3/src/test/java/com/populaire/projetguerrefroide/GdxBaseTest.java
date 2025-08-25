@@ -12,7 +12,7 @@ import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.utils.GdxNativesLoader;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.adapter.graphics.MeshMultiDrawIndirect;
+import com.populaire.projetguerrefroide.adapter.graphics.MeshMulti;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
@@ -24,7 +24,7 @@ import static org.mockito.Mockito.mockConstruction;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class GdxBaseTest {
-    private MockedConstruction<MeshMultiDrawIndirect> mockedMeshMultiDrawIndirect;
+    private MockedConstruction<MeshMulti> mockedMeshMultiDrawIndirect;
     protected AssetManager assetManager;
     protected GameContext gameContext;
 
@@ -45,7 +45,7 @@ public abstract class GdxBaseTest {
             r.run();
             return null;
         }).when(mockApp).postRunnable(any(Runnable.class));
-        mockedMeshMultiDrawIndirect = mockConstruction(MeshMultiDrawIndirect.class);
+        mockedMeshMultiDrawIndirect = mockConstruction(MeshMulti.class);
 
         ConfigurationService configurationService = new ConfigurationService();
         this.gameContext = configurationService.getGameContext();

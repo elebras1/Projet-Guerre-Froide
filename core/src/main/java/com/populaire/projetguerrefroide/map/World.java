@@ -18,9 +18,8 @@ import com.populaire.projetguerrefroide.politics.AllianceType;
 import com.populaire.projetguerrefroide.politics.Politics;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
-import com.populaire.projetguerrefroide.adapter.graphics.MeshMultiDrawIndirect;
+import com.populaire.projetguerrefroide.adapter.graphics.MeshMulti;
 import com.populaire.projetguerrefroide.util.LocalisationUtils;
-import org.lwjgl.opengl.GL43;
 
 import java.util.*;
 
@@ -61,7 +60,7 @@ public class World implements Disposable {
     private final ShaderProgram riverShader;
     private final Mesh meshBuildings;
     private final Mesh meshResources;
-    //private final MeshMultiDrawIndirect meshRivers;
+    private final MeshMulti meshRivers;
     private LandProvince selectedProvince;
     private Country countryPlayer;
     private MapMode mapMode;
@@ -119,7 +118,7 @@ public class World implements Disposable {
         this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         this.meshBuildings = this.generateMeshBuildings();
         this.meshResources = this.generateMeshResources();
-        //this.meshRivers = this.generateMeshRivers();
+        this.meshRivers = this.generateMeshRivers();
 
         String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
         String fragmentMapShader = Gdx.files.internal("shaders/map_f.glsl").readString();
@@ -729,10 +728,10 @@ public class World implements Disposable {
         return mesh;
     }
 
-    public MeshMultiDrawIndirect generateMeshRivers() {
+    public MeshMulti generateMeshRivers() {
         RawMeshMultiDraw rawMesh = this.mapDao.readRiversMeshJson();
 
-        MeshMultiDrawIndirect mesh = new MeshMultiDrawIndirect(true, rawMesh.getVertices().length / 5, 0,
+        MeshMulti mesh = new MeshMulti(true, rawMesh.getVertices().length / 5, 0,
             new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
             new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"),
             new VertexAttribute(VertexAttributes.Usage.Generic, 1, "a_width"));
@@ -789,7 +788,7 @@ public class World implements Disposable {
         batch.draw(this.provincesTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
         batch.setShader(null);
 
-        //this.renderMeshRivers(cam, time);
+        this.renderMeshRivers(cam, time);
 
         this.fontShader.bind();
         this.fontShader.setUniformf("u_zoom", cam.zoom);
@@ -836,7 +835,7 @@ public class World implements Disposable {
         this.meshResources.unbind(this.elementScaleShader);
     }
 
-    /*private void renderMeshRivers(OrthographicCamera cam, float time) {
+    private void renderMeshRivers(OrthographicCamera cam, float time) {
         this.riverShader.bind();
         this.riverBodyTexture.bind(0);
         this.colorMapWaterTexture.bind(1);
@@ -846,12 +845,10 @@ public class World implements Disposable {
         this.riverShader.setUniformMatrix("u_projTrans", cam.combined);
         this.riverShader.setUniformf("u_worldWidth", WORLD_WIDTH);
         this.riverShader.setUniformf("u_zoom", cam.zoom);
-        this.meshRivers.bind(this.riverShader);
         Gdx.gl.glEnable(GL32.GL_BLEND);
         Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
-        GL43.glMultiDrawArraysIndirect(GL43.GL_TRIANGLE_STRIP, 0, this.meshRivers.getCommandCount(), 0);
-        this.meshRivers.unbind(this.riverShader);
-    }*/
+        this.meshRivers.render(this.riverShader, GL32.GL_TRIANGLE_STRIP, 0, 0, 3, 1);
+    }
 
     @Override
     public void dispose() {
