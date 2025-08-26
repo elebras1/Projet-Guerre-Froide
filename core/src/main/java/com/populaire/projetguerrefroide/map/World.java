@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Matrix4;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector4;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.*;
@@ -32,7 +31,6 @@ import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
 import com.populaire.projetguerrefroide.util.LocalisationUtils;
-import com.populaire.projetguerrefroide.util.WebGPUHelper;
 import com.populaire.projetguerrefroide.util.WgslUtils;
 
 import java.util.*;
@@ -1140,10 +1138,7 @@ public class World implements Disposable {
         this.binderProvinces.setUniform("time", time);
         this.uniformBufferProvinces.flush();
 
-        Rectangle view = WebGPUHelper.getViewport();
-
         WebGPURenderPass pass = RenderPassBuilder.create("Provinces pass");
-        pass.setViewport(view.x, view.y, view.width, view.height, 0, 1);
         pass.setPipeline(this.pipelineProvinces);
         this.binderProvinces.bindGroup(pass, 0);
 
@@ -1157,10 +1152,7 @@ public class World implements Disposable {
         this.binderMapLabels.setUniform("zoom", zoom);
         this.uniformBufferMapLabels.flush();
 
-        Rectangle view = WebGPUHelper.getViewport();
-
         WebGPURenderPass pass = RenderPassBuilder.create("Map labels pass");
-        pass.setViewport(view.x, view.y, view.width, view.height, 0, 1);
         pass.setPipeline(this.pipelineMapLabels);
         this.binderMapLabels.bindGroup(pass, 0);
 
@@ -1173,10 +1165,7 @@ public class World implements Disposable {
         this.binderBuildings.setUniform("projTrans", projectionViewTransform);
         this.uniformBufferBuildings.flush();
 
-        Rectangle view = WebGPUHelper.getViewport();
-
         WebGPURenderPass pass = RenderPassBuilder.create("Buildings pass");
-        pass.setViewport(view.x, view.y, view.width, view.height, 0, 1);
         pass.setPipeline(this.pipelineBuildings);
         this.binderBuildings.bindGroup(pass, 0);
 
@@ -1190,10 +1179,7 @@ public class World implements Disposable {
         this.binderResources.setUniform("zoom", zoom);
         this.uniformBufferResources.flush();
 
-        Rectangle view = WebGPUHelper.getViewport();
-
         WebGPURenderPass pass = RenderPassBuilder.create("Resources pass");
-        pass.setViewport(view.x, view.y, view.width, view.height, 0, 1);
         pass.setPipeline(this.pipelineResources);
         this.binderResources.bindGroup(pass, 0);
 
@@ -1208,10 +1194,7 @@ public class World implements Disposable {
         this.binderRivers.setUniform("time", time);
         this.uniformBufferRivers.flush();
 
-        Rectangle view = WebGPUHelper.getViewport();
-
         WebGPURenderPass pass = RenderPassBuilder.create("Rivers pass");
-        pass.setViewport(view.x, view.y, view.width, view.height, 0, 1);
         pass.setPipeline(this.pipelineRivers);
         this.binderRivers.bindGroup(pass, 0);
 
