@@ -94,14 +94,13 @@ fn vs_main(input: VertexInput) -> VertexOutput {
     return output;
 }
 
-fn diag(sum: ptr<function, vec4<f32>>, uv: vec2<f32>, p1: vec2<f32>, p2: vec2<f32>, texture: texture_2d<f32>, lineThickness: f32) -> bool {
-    let v1: vec4<f32> = textureLoad(texture, vec2<i32>(uv + p1), ML);
-    let v2: vec4<f32> = textureLoad(texture, vec2<i32>(uv + p2), ML);
-
-    if (length(v1 - v2) < THRESHOLD) {
-        let dir: vec2<f32> = normalize(vec2<f32>((p2 - p1).y, -(p2 - p1).x));
-        let lp: vec2<f32> = uv - (floor(uv + p1) + 0.5);
-        let l: f32 = clamp((lineThickness - dot(lp, dir)) * AA_SCALE, 0.0, 1.0);
+fn diagSamples(sum: ptr<function, vec4<f32>>, uv: vec2<f32>, p1: vec2<f32>, p2: vec2<f32>, v1: vec4<f32>, v2: vec4<f32>, lineThickness: f32) -> bool {
+    let diff = v1 - v2;
+    if (dot(diff, diff) < THRESHOLD * THRESHOLD) {
+        let delta = p2 - p1;
+        let dir = normalize(vec2<f32>(delta.y, -delta.x));
+        let lp = uv - (floor(uv + p1) + 0.5);
+        let l = clamp((lineThickness - dot(lp, dir)) * AA_SCALE, 0.0, 1.0);
 
         if (l > 0.5) {
             *sum = v1;
@@ -113,26 +112,38 @@ fn diag(sum: ptr<function, vec4<f32>>, uv: vec2<f32>, p1: vec2<f32>, p2: vec2<f3
 }
 
 fn hqxFilter(uv: vec2<f32>, texture: texture_2d<f32>) -> vec4<f32> {
-    var sum: vec4<f32> = textureLoad(texture, vec2<i32>(uv), ML);
+    let base_coord = vec2<i32>(uv);
 
-    if (diag(&sum, uv, vec2<f32>(-1.0, 0.0), vec2<f32>(0.0, 1.0), texture, MAIN_LINE_THICKNESS)) {
-        diag(&sum, uv, vec2<f32>(-1.0, 0.0), vec2<f32>(1.0, 1.0), texture, SUB_LINE_THICKNESS);
-        diag(&sum, uv, vec2<f32>(-1.0, -1.0), vec2<f32>(0.0, 1.0), texture, SUB_LINE_THICKNESS);
+    let upperLeft = textureLoad(texture, base_coord + vec2<i32>(-1, -1), ML);
+    let upper = textureLoad(texture, base_coord + vec2<i32>( 0, -1), ML);
+    let upperRight = textureLoad(texture, base_coord + vec2<i32>( 1, -1), ML);
+    let left = textureLoad(texture, base_coord + vec2<i32>(-1,  0), ML);
+    let center = textureLoad(texture, base_coord, ML);
+    let right = textureLoad(texture, base_coord + vec2<i32>( 1,  0), ML);
+    let lowerLeft = textureLoad(texture, base_coord + vec2<i32>(-1,  1), ML);
+    let lower = textureLoad(texture, base_coord + vec2<i32>( 0,  1), ML);
+    let lowerRight = textureLoad(texture, base_coord + vec2<i32>( 1,  1), ML);
+
+    var sum = center;
+
+    if (diagSamples(&sum, uv, vec2<f32>(-1.0, 0.0), vec2<f32>(0.0, 1.0), left, lower, MAIN_LINE_THICKNESS)) {
+        _ = diagSamples(&sum, uv, vec2<f32>(-1.0, 0.0), vec2<f32>(1.0, 1.0), left, lowerRight, SUB_LINE_THICKNESS);
+        _ = diagSamples(&sum, uv, vec2<f32>(-1.0, -1.0), vec2<f32>(0.0, 1.0), upperLeft, lower, SUB_LINE_THICKNESS);
     }
 
-    if (diag(&sum, uv, vec2<f32>(0.0, 1.0), vec2<f32>(1.0, 0.0), texture, MAIN_LINE_THICKNESS)) {
-        diag(&sum, uv, vec2<f32>(0.0, 1.0), vec2<f32>(1.0, -1.0), texture, SUB_LINE_THICKNESS);
-        diag(&sum, uv, vec2<f32>(-1.0, 1.0), vec2<f32>(1.0, 0.0), texture, SUB_LINE_THICKNESS);
+    if (diagSamples(&sum, uv, vec2<f32>(0.0, 1.0), vec2<f32>(1.0, 0.0), lower, right, MAIN_LINE_THICKNESS)) {
+        _ = diagSamples(&sum, uv, vec2<f32>(0.0, 1.0), vec2<f32>(1.0, -1.0), lower, upperRight, SUB_LINE_THICKNESS);
+        _ = diagSamples(&sum, uv, vec2<f32>(-1.0, 1.0), vec2<f32>(1.0, 0.0), lowerLeft, right, SUB_LINE_THICKNESS);
     }
 
-    if (diag(&sum, uv, vec2<f32>(1.0, 0.0), vec2<f32>(0.0, -1.0), texture, MAIN_LINE_THICKNESS)) {
-        diag(&sum, uv, vec2<f32>(1.0, 0.0), vec2<f32>(-1.0, -1.0), texture, SUB_LINE_THICKNESS);
-        diag(&sum, uv, vec2<f32>(1.0, 1.0), vec2<f32>(0.0, -1.0), texture, SUB_LINE_THICKNESS);
+    if (diagSamples(&sum, uv, vec2<f32>(1.0, 0.0), vec2<f32>(0.0, -1.0), right, upper, MAIN_LINE_THICKNESS)) {
+        _ = diagSamples(&sum, uv, vec2<f32>(1.0, 0.0), vec2<f32>(-1.0, -1.0), right, upperLeft, SUB_LINE_THICKNESS);
+        _ = diagSamples(&sum, uv, vec2<f32>(1.0, 1.0), vec2<f32>(0.0, -1.0), lowerRight, upper, SUB_LINE_THICKNESS);
     }
 
-    if (diag(&sum, uv, vec2<f32>(0.0, -1.0), vec2<f32>(-1.0, 0.0), texture, MAIN_LINE_THICKNESS)) {
-        diag(&sum, uv, vec2<f32>(0.0, -1.0), vec2<f32>(-1.0, 1.0), texture, SUB_LINE_THICKNESS);
-        diag(&sum, uv, vec2<f32>(1.0, -1.0), vec2<f32>(-1.0, 0.0), texture, SUB_LINE_THICKNESS);
+    if (diagSamples(&sum, uv, vec2<f32>(0.0, -1.0), vec2<f32>(-1.0, 0.0), upper, left, MAIN_LINE_THICKNESS)) {
+        _ = diagSamples(&sum, uv, vec2<f32>(0.0, -1.0), vec2<f32>(-1.0, 1.0), upper, lowerLeft, SUB_LINE_THICKNESS);
+        _ = diagSamples(&sum, uv, vec2<f32>(1.0, -1.0), vec2<f32>(-1.0, 0.0), upperRight, left, SUB_LINE_THICKNESS);
     }
 
     return sum;
@@ -150,8 +161,8 @@ fn getWaterClose(texCoord: vec2<f32>) -> vec4<f32> {
     var waterColor: vec4<f32> = vec4<f32>(0.22, 0.3, 0.45, 1.0);
     let worldColorColor: vec3<f32> = textureSample(textureColorMapWater, textureColorMapWaterSampler, texCoord).rgb;
 
-    var modifiedTexCoord: vec2<f32> = texCoord * 100.0;
-    modifiedTexCoord = modifiedTexCoord * 0.25 + uniforms.time * 0.002;
+    var modifiedTexCoord: vec2<f32> = texCoord * 25.0;
+    modifiedTexCoord = modifiedTexCoord + uniforms.time * 0.002;
 
     let eyeDirection: vec3<f32> = vec3<f32>(0.0, 1.0, 1.0);
     let lightDirection: vec3<f32> = vec3<f32>(0.0, 1.0, 1.0);
