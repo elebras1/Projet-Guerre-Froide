@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
-import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector4;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.*;
@@ -71,11 +70,7 @@ public class World implements Disposable {
     private final WgMesh meshBuildings;
     private final WgMesh meshResources;
     private final WgMeshMulti meshRivers;
-    private final WebGPUUniformBuffer uniformBufferProvinces;
-    private final WebGPUUniformBuffer uniformBufferMapLabels;
-    private final WebGPUUniformBuffer uniformBufferBuildings;
-    private final WebGPUUniformBuffer uniformBufferResources;
-    private final WebGPUUniformBuffer uniformBufferRivers;
+    private final WebGPUUniformBuffer uniformBufferWorld;
     private final Binder binderProvinces;
     private final Binder binderMapLabels;
     private final Binder binderBuildings;
@@ -86,11 +81,7 @@ public class World implements Disposable {
     private final WebGPUPipeline pipelineBuildings;
     private final WebGPUPipeline pipelineResources;
     private final WebGPUPipeline pipelineRivers;
-    private final int uniformBufferSizeProvinces;
-    private final int uniformBufferSizeMapLabels;
-    private final int uniformBufferSizeBuildings;
-    private final int uniformBufferSizeResources;
-    private final int uniformBufferSizeRivers;
+    private final int uniformBufferSizeWorld;
     private final Vector4 selectedProvinceColor;
     private LandProvince selectedProvince;
     private Country countryPlayer;
@@ -155,34 +146,26 @@ public class World implements Disposable {
         this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
         this.fontMapLabelRegion = gameContext.getLabelStylePool().getLabelStyle("kart_60").font.getRegion();
         this.fontMapLabelRegion.getTexture().setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
+        this.uniformBufferSizeWorld = (16 + 4 + 4) * Float.BYTES;
+        this.uniformBufferWorld = new WebGPUUniformBuffer(this.uniformBufferSizeWorld, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
         VertexAttributes vertexAttributesProvinces = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
         this.meshProvinces = this.generateMeshProvinces(vertexAttributesProvinces);
-        this.uniformBufferSizeProvinces = (16 + 4 + 4) * Float.BYTES;
-        this.uniformBufferProvinces = new WebGPUUniformBuffer(this.uniformBufferSizeProvinces, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
         this.binderProvinces = this.createBinderProvinces();
         this.pipelineProvinces = this.createPipelineProvinces(vertexAttributesProvinces, WgslUtils.getShaderSource("map.wgsl"));
         VertexAttributes vertexAttributesMapLabels = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
         this.meshMapLabels = this.generateMeshMapLabels(vertexAttributesMapLabels, gameContext.getLocalisation(), gameContext.getLabelStylePool());
-        this.uniformBufferSizeMapLabels = (16 + 4) * Float.BYTES;
-        this.uniformBufferMapLabels = new WebGPUUniformBuffer(this.uniformBufferSizeMapLabels, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
         this.binderMapLabels = this.createBinderMapLabels();
         this.pipelineMapLabels = this.createPipelineMapLabels(vertexAttributesMapLabels, WgslUtils.getShaderSource("font.wgsl"));
         VertexAttributes vertexAttributesBuildings = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
         this.meshBuildings = this.generateMeshBuildings(vertexAttributesBuildings);
-        this.uniformBufferSizeBuildings = (16 + 4) * Float.BYTES;
-        this.uniformBufferBuildings = new WebGPUUniformBuffer(this.uniformBufferSizeBuildings, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
         this.binderBuildings = this.createBinderBuildings();
         this.pipelineBuildings = this.createPipelineBuildings(vertexAttributesBuildings, WgslUtils.getShaderSource("element.wgsl"));
         VertexAttributes vertexAttributesResources = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.Normal, 2, "center"));
         this.meshResources = this.generateMeshResources(vertexAttributesResources);
-        this.uniformBufferSizeResources = (16 + 4) * Float.BYTES;
-        this.uniformBufferResources = new WebGPUUniformBuffer(this.uniformBufferSizeResources, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
         this.binderResources = this.createBinderResources();
         this.pipelineResources = this.createPipelineResources(vertexAttributesResources, WgslUtils.getShaderSource("element_scale.wgsl"));
         VertexAttributes vertexAttributesRivers = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.Normal, 1, "width"));
         this.meshRivers = this.generateMeshRivers(vertexAttributesRivers);
-        this.uniformBufferSizeRivers = (16 + 4 + 4) * Float.BYTES;
-        this.uniformBufferRivers = new WebGPUUniformBuffer(this.uniformBufferSizeRivers, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
         this.binderRivers = this.createBinderRivers();
         this.pipelineRivers = this.createPipelineRivers(vertexAttributesRivers, WgslUtils.getShaderSource("river.wgsl"));
         this.bindStaticTextures();
@@ -232,7 +215,7 @@ public class World implements Disposable {
         } else {
             this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(0f, 0f, 0f, 0f));
         }
-        this.uniformBufferProvinces.flush();
+        this.uniformBufferWorld.flush();
 
         return this.selectedProvince != null;
     }
@@ -563,7 +546,7 @@ public class World implements Disposable {
         this.binderProvinces.setTexture("textureMapMode", this.mapModeTexture.getTextureView());
         this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
         this.binderProvinces.setUniform("showTerrain", this.mapMode == MapMode.TERRAIN ? 1 : 0);
-        this.uniformBufferProvinces.flush();
+        this.uniformBufferWorld.flush();
     }
 
     private short getBorderType(short x, short y, Country country, Region region) {
@@ -879,7 +862,7 @@ public class World implements Disposable {
         offset += Float.BYTES;
         binder.defineUniform("colorProvinceSelected", 0, 0, offset);
 
-        binder.setBuffer("uniforms", this.uniformBufferProvinces, 0, this.uniformBufferSizeProvinces);
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
 
         return binder;
     }
@@ -898,8 +881,14 @@ public class World implements Disposable {
         binder.defineUniform("worldWidth", 0, 0, offset);
         offset += Float.BYTES;
         binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
 
-        binder.setBuffer("uniforms", this.uniformBufferMapLabels, 0, this.uniformBufferSizeMapLabels);
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
 
         return binder;
     }
@@ -916,8 +905,16 @@ public class World implements Disposable {
         binder.defineUniform("projTrans", 0, 0, offset);
         offset += 16 * Float.BYTES;
         binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
 
-        binder.setBuffer("uniforms", this.uniformBufferBuildings, 0, this.uniformBufferSizeBuildings);
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
 
         return binder;
     }
@@ -936,8 +933,14 @@ public class World implements Disposable {
         binder.defineUniform("worldWidth", 0, 0, offset);
         offset += Float.BYTES;
         binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
 
-        binder.setBuffer("uniforms", this.uniformBufferResources, 0, this.uniformBufferSizeResources);
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
 
         return binder;
     }
@@ -957,11 +960,15 @@ public class World implements Disposable {
         offset += 16 * Float.BYTES;
         binder.defineUniform("worldWidth", 0, 0, offset);
         offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
         binder.defineUniform("time", 0, 0, offset);
         offset += Float.BYTES;
-        binder.defineUniform("zoom", 0, 0, offset);
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
 
-        binder.setBuffer("uniforms", this.uniformBufferRivers, 0, this.uniformBufferSizeRivers);
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
 
         return binder;
     }
@@ -969,7 +976,7 @@ public class World implements Disposable {
     private WebGPUBindGroupLayout createBindGroupLayoutProvinces() {
         WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout provinces");
         layout.begin();
-        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeProvinces, false);
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
         layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
         layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
         layout.addTexture(3, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
@@ -997,7 +1004,7 @@ public class World implements Disposable {
     private WebGPUBindGroupLayout createBindGroupLayoutMapLabels() {
         WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout map labels");
         layout.begin();
-        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeMapLabels, false);
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
         layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
         layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
         layout.end();
@@ -1007,7 +1014,7 @@ public class World implements Disposable {
     private WebGPUBindGroupLayout createBindGroupLayoutBuildings() {
         WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout buildings");
         layout.begin();
-        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeBuildings, false);
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
         layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
         layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
         layout.end();
@@ -1017,7 +1024,7 @@ public class World implements Disposable {
     private WebGPUBindGroupLayout createBindGroupLayoutResources() {
         WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout resources");
         layout.begin();
-        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeResources, false);
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
         layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
         layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
         layout.end();
@@ -1027,7 +1034,7 @@ public class World implements Disposable {
     private WebGPUBindGroupLayout createBindGroupLayoutRivers() {
         WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout rivers");
         layout.begin();
-        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeRivers, false);
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
         layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
         layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
         layout.addTexture(3, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
@@ -1095,49 +1102,53 @@ public class World implements Disposable {
         this.binderProvinces.setSampler("textureOverlayTileSampler", this.overlayTileTexture.getSampler());
         this.binderProvinces.setUniform("worldWidth", (float) WORLD_WIDTH);
         this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(0f, 0f, 0f, 0f));
-        this.uniformBufferProvinces.flush();
 
         this.binderMapLabels.setTexture("texture", ((WgTexture) this.fontMapLabelRegion.getTexture()).getTextureView());
         this.binderMapLabels.setSampler("textureSampler", ((WgTexture) this.fontMapLabelRegion.getTexture()).getSampler());
         this.binderMapLabels.setUniform("worldWidth", (float) WORLD_WIDTH);
-        this.uniformBufferMapLabels.flush();
 
         this.binderBuildings.setTexture("texture", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getTextureView());
         this.binderBuildings.setSampler("textureSampler", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getSampler());
         this.binderBuildings.setUniform("worldWidth", (float) WORLD_WIDTH);
-        this.uniformBufferBuildings.flush();
 
         this.binderResources.setTexture("texture", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getTextureView());
         this.binderResources.setSampler("textureSampler", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getSampler());
         this.binderResources.setUniform("worldWidth", (float) WORLD_WIDTH);
-        this.uniformBufferResources.flush();
 
         this.binderRivers.setTexture("texture", this.riverBodyTexture.getTextureView());
         this.binderRivers.setSampler("textureSampler", this.riverBodyTexture.getSampler());
         this.binderRivers.setTexture("textureColorMapWater", this.colorMapWaterTexture.getTextureView());
         this.binderRivers.setSampler("textureColorMapWaterSampler", this.colorMapWaterTexture.getSampler());
         this.binderRivers.setUniform("worldWidth", (float) WORLD_WIDTH);
-        this.uniformBufferRivers.flush();
+        this.uniformBufferWorld.flush();
     }
 
     public void render(WgProjection projection, OrthographicCamera cam, float time) {
-        this.renderMeshProvinces(projection.getCombinedMatrix(), cam.zoom, time);
-        this.renderMeshRivers(projection.getCombinedMatrix(), cam.zoom, time);
-        this.renderMeshMapLabels(projection.getCombinedMatrix(), cam.zoom);
+        this.binderProvinces.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderProvinces.setUniform("zoom", cam.zoom);
+        this.binderProvinces.setUniform("time", time);
+        this.binderMapLabels.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderMapLabels.setUniform("zoom", cam.zoom);
+        this.binderBuildings.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderResources.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderResources.setUniform("zoom", cam.zoom);
+        this.binderRivers.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderRivers.setUniform("zoom", cam.zoom);
+        this.binderRivers.setUniform("time", time);
+        this.uniformBufferWorld.flush();
+
+        this.renderMeshProvinces();
+        this.renderMeshRivers();
+        this.renderMeshMapLabels();
         if(cam.zoom <= 0.8f) {
-            this.renderMeshBuildings(projection.getCombinedMatrix());
+            this.renderMeshBuildings();
         }
         if(this.mapMode == MapMode.RESOURCES && cam.zoom <= 0.8f) {
-            this.renderMeshResources(projection.getCombinedMatrix(), cam.zoom);
+            this.renderMeshResources();
         }
     }
 
-    private void renderMeshProvinces(Matrix4 projectionViewTransform, float zoom, float time) {
-        this.binderProvinces.setUniform("projTrans", projectionViewTransform);
-        this.binderProvinces.setUniform("zoom", zoom);
-        this.binderProvinces.setUniform("time", time);
-        this.uniformBufferProvinces.flush();
-
+    private void renderMeshProvinces() {
         WebGPURenderPass pass = RenderPassBuilder.create("Provinces pass");
         pass.setPipeline(this.pipelineProvinces);
         this.binderProvinces.bindGroup(pass, 0);
@@ -1147,11 +1158,7 @@ public class World implements Disposable {
         pass.end();
     }
 
-    private void renderMeshMapLabels(Matrix4 projectionViewTransform, float zoom) {
-        this.binderMapLabels.setUniform("projTrans", projectionViewTransform);
-        this.binderMapLabels.setUniform("zoom", zoom);
-        this.uniformBufferMapLabels.flush();
-
+    private void renderMeshMapLabels() {
         WebGPURenderPass pass = RenderPassBuilder.create("Map labels pass");
         pass.setPipeline(this.pipelineMapLabels);
         this.binderMapLabels.bindGroup(pass, 0);
@@ -1161,10 +1168,7 @@ public class World implements Disposable {
         pass.end();
     }
 
-    private void renderMeshBuildings(Matrix4 projectionViewTransform) {
-        this.binderBuildings.setUniform("projTrans", projectionViewTransform);
-        this.uniformBufferBuildings.flush();
-
+    private void renderMeshBuildings() {
         WebGPURenderPass pass = RenderPassBuilder.create("Buildings pass");
         pass.setPipeline(this.pipelineBuildings);
         this.binderBuildings.bindGroup(pass, 0);
@@ -1174,11 +1178,7 @@ public class World implements Disposable {
         pass.end();
     }
 
-    private void renderMeshResources(Matrix4 projectionViewTransform, float zoom) {
-        this.binderResources.setUniform("projTrans", projectionViewTransform);
-        this.binderResources.setUniform("zoom", zoom);
-        this.uniformBufferResources.flush();
-
+    private void renderMeshResources() {
         WebGPURenderPass pass = RenderPassBuilder.create("Resources pass");
         pass.setPipeline(this.pipelineResources);
         this.binderResources.bindGroup(pass, 0);
@@ -1188,12 +1188,7 @@ public class World implements Disposable {
         pass.end();
     }
 
-    private void renderMeshRivers(Matrix4 projectionViewTransform, float zoom, float time) {
-        this.binderRivers.setUniform("projTrans", projectionViewTransform);
-        this.binderRivers.setUniform("zoom", zoom);
-        this.binderRivers.setUniform("time", time);
-        this.uniformBufferRivers.flush();
-
+    private void renderMeshRivers() {
         WebGPURenderPass pass = RenderPassBuilder.create("Rivers pass");
         pass.setPipeline(this.pipelineRivers);
         this.binderRivers.bindGroup(pass, 0);
@@ -1227,10 +1222,7 @@ public class World implements Disposable {
         this.binderMapLabels.dispose();
         this.binderBuildings.dispose();
         this.binderResources.dispose();
-        this.uniformBufferProvinces.dispose();
-        this.uniformBufferMapLabels.dispose();
-        this.uniformBufferBuildings.dispose();
-        this.uniformBufferResources.dispose();
+        this.uniformBufferWorld.dispose();
         this.pipelineProvinces.dispose();
         this.pipelineMapLabels.dispose();
         this.pipelineBuildings.dispose();

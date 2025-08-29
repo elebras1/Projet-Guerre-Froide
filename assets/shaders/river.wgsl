@@ -1,8 +1,10 @@
 struct Uniforms {
     projTrans: mat4x4<f32>,
     worldWidth: f32,
-    time: f32,
     zoom: f32,
+    time: f32,
+    showTerrain: f32, // unused
+    colorProvinceSelected: vec4<f32>, // unused
 }
 
 struct VertexInput {
