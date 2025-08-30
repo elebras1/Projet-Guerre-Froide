@@ -1,6 +1,5 @@
 package com.populaire.projetguerrefroide.ui.widget;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -25,12 +24,13 @@ public class FlagImage extends Actor implements Disposable {
     private final Binder binder;
     private final WebGPUUniformBuffer uniformBuffer;
     private final int uniformBufferSize;
+    private float[] vertices;
 
     public FlagImage(TextureRegion overlay, TextureRegion alpha) {
         this.setSize(overlay.getRegionWidth(), overlay.getRegionHeight());
         this.overlayTexture = overlay;
         this.alphaTexture = alpha;
-        VertexAttributes vertexAttributes = new VertexAttributes(VertexAttribute.Position(), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        VertexAttributes vertexAttributes = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
         this.mesh = this.createMesh(vertexAttributes);
         this.uniformBufferSize = (16 + 4 * 3) * Float.BYTES;
         this.uniformBuffer = new WebGPUUniformBuffer(this.uniformBufferSize, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
@@ -40,21 +40,22 @@ public class FlagImage extends Actor implements Disposable {
     }
 
     private WgMesh createMesh(VertexAttributes vertexAttributes) {
-        WgMesh mesh = new WgMesh(true, 4, 6, vertexAttributes);
+        WgMesh mesh = new WgMesh(false, 4, 6, vertexAttributes);
 
-        float[] vertices = new float[] {
-            0, 0, 0, 0,
-            this.getWidth(), 0f, 1f, 0f,
-            this.getWidth(), this.getHeight(), 1f, 1f,
-            0f, this.getHeight(), 0f, 1f
+        this.vertices = new float[] {
+            this.getX(), this.getY(), 0f, 1f,
+            this.getX() + this.getWidth(), this.getY(), 1f, 1f,
+            this.getX() + this.getWidth(), this.getY() + this.getHeight(), 1f, 0f,
+            this.getX(), this.getY() + this.getHeight(), 0f, 0f
         };
+
 
         short[] indices = new short[] {
             0, 1, 2,
             0, 2, 3
         };
 
-        mesh.setVertices(vertices);
+        mesh.setVertices(this.vertices);
         mesh.setIndices(indices);
 
         return mesh;
@@ -126,13 +127,36 @@ public class FlagImage extends Actor implements Disposable {
     }
 
     @Override
-    protected void positionChanged() {
+    public void positionChanged() {
         if(this.binder == null || this.getStage() == null) {
             return;
         }
 
+        this.updateMeshVertices();
         this.binder.setUniform("projTrans", ((WgScreenViewport)this.getStage().getViewport()).getProjectionMatrix());
         this.uniformBuffer.flush();
+    }
+
+    private void updateMeshVertices() {
+        int i = 0;
+        this.vertices[i++] = this.getX();
+        this.vertices[i++] = this.getY();
+        this.vertices[i++] = 0f;
+        this.vertices[i++] = 1f;
+        this.vertices[i++] = this.getX() + this.getWidth();
+        this.vertices[i++] = this.getY();
+        this.vertices[i++] = 1f;
+        this.vertices[i++] = 1f;
+        this.vertices[i++] = this.getX() + this.getWidth();
+        this.vertices[i++] = this.getY() + this.getHeight();
+        this.vertices[i++] = 1f;
+        this.vertices[i++] = 0f;
+        this.vertices[i++] = this.getX();
+        this.vertices[i++] = this.getY() + this.getHeight();
+        this.vertices[i++] = 0f;
+        this.vertices[i] = 0f;
+
+        this.mesh.setVertices(this.vertices);
     }
 
     @Override
@@ -142,10 +166,7 @@ public class FlagImage extends Actor implements Disposable {
         }
 
         batch.end();
-        this.binder.setUniform("projTrans", ((WgScreenViewport)this.getStage().getViewport()).getProjectionMatrix());
-        this.uniformBuffer.flush();
-
-        System.out.println("Matrix projection : " + ((WgScreenViewport)this.getStage().getViewport()).getProjectionMatrix());
+        this.positionChanged();
 
         WebGPURenderPass pass = RenderPassBuilder.create("Flag image pass");
         pass.setPipeline(this.pipeline);

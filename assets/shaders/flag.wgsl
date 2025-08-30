@@ -6,7 +6,7 @@ struct Uniforms {
 }
 
 struct VertexInput {
-    @location(0) position: vec3<f32>,
+    @location(0) position: vec2<f32>,
     @location(1) texCoord: vec2<f32>
 }
 
@@ -27,7 +27,7 @@ struct VertexOutput {
 fn vs_main(input: VertexInput) -> VertexOutput {
     var output: VertexOutput;
 
-    output.position = uniforms.projTrans * vec4<f32>(input.position, 1.0);
+    output.position = uniforms.projTrans * vec4<f32>(input.position, 0.0, 1.0);
     output.texCoord = input.texCoord;
 
     return output;
