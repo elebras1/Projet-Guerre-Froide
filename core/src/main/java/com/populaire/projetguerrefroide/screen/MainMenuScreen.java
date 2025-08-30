@@ -6,9 +6,9 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.monstrous.gdx.webgpu.scene2d.WgStage;
+import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.ui.view.MainMenu;
@@ -19,7 +19,7 @@ public class MainMenuScreen implements Screen, MainMenuListener {
     private final ScreenManager screenManager;
 
     public MainMenuScreen(ScreenManager screenManager, GameContext gameContext, ConfigurationService configurationService) {
-        this.stage = new WgStage(new ScreenViewport());
+        this.stage = new WgStage(new WgScreenViewport());
         this.screenManager = screenManager;
         configurationService.loadMainMenuLocalisation(gameContext);
         gameContext.getSettings().applyGraphicsSettings();

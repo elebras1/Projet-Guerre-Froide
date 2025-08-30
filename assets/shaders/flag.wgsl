@@ -1,4 +1,5 @@
 struct Uniforms {
+    projTrans: mat4x4<f32>,
     uvFlag: vec4<f32>,
     uvOverlay: vec4<f32>,
     uvAlpha: vec4<f32>,
@@ -26,7 +27,7 @@ struct VertexOutput {
 fn vs_main(input: VertexInput) -> VertexOutput {
     var output: VertexOutput;
 
-    output.position = vec4<f32>(input.position, 1.0);
+    output.position = uniforms.projTrans * vec4<f32>(input.position, 1.0);
     output.texCoord = input.texCoord;
 
     return output;

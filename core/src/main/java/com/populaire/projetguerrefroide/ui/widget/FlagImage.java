@@ -13,6 +13,7 @@ import com.monstrous.gdx.webgpu.graphics.Binder;
 import com.monstrous.gdx.webgpu.graphics.WgMesh;
 import com.monstrous.gdx.webgpu.graphics.WgTexture;
 import com.monstrous.gdx.webgpu.wrappers.*;
+import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.util.WgslUtils;
 
 public class FlagImage extends Actor implements Disposable {
@@ -31,7 +32,7 @@ public class FlagImage extends Actor implements Disposable {
         this.alphaTexture = alpha;
         VertexAttributes vertexAttributes = new VertexAttributes(VertexAttribute.Position(), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
         this.mesh = this.createMesh(vertexAttributes);
-        this.uniformBufferSize = (4 * 3) * Float.BYTES;
+        this.uniformBufferSize = (16 + 4 * 3) * Float.BYTES;
         this.uniformBuffer = new WebGPUUniformBuffer(this.uniformBufferSize, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
         this.binder = this.createBinder();
         this.pipeline = this.createPipeline(vertexAttributes, WgslUtils.getShaderSource("flag.wgsl"));
@@ -42,10 +43,10 @@ public class FlagImage extends Actor implements Disposable {
         WgMesh mesh = new WgMesh(true, 4, 6, vertexAttributes);
 
         float[] vertices = new float[] {
-            -1f, -1f, 0f, 0f, 1f,
-            1f, -1f, 0f, 1f, 1f,
-            1f,  1f, 0f, 1f, 0f,
-            -1f,  1f, 0f, 0f, 0f
+            0, 0, 0, 0,
+            this.getWidth(), 0f, 1f, 0f,
+            this.getWidth(), this.getHeight(), 1f, 1f,
+            0f, this.getHeight(), 0f, 1f
         };
 
         short[] indices = new short[] {
@@ -72,6 +73,8 @@ public class FlagImage extends Actor implements Disposable {
         binder.defineBinding("textureAlphaSampler", 0, 6);
 
         int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
         binder.defineUniform("uvFlag", 0, 0, offset);
         offset += 4 * Float.BYTES;
         binder.defineUniform("uvOverlay", 0, 0, offset);
@@ -123,17 +126,28 @@ public class FlagImage extends Actor implements Disposable {
     }
 
     @Override
+    protected void positionChanged() {
+        if(this.binder == null || this.getStage() == null) {
+            return;
+        }
+
+        this.binder.setUniform("projTrans", ((WgScreenViewport)this.getStage().getViewport()).getProjectionMatrix());
+        this.uniformBuffer.flush();
+    }
+
+    @Override
     public void draw(Batch batch, float parentAlpha) {
         if(flagTexture == null) {
             return;
         }
 
         batch.end();
+        this.binder.setUniform("projTrans", ((WgScreenViewport)this.getStage().getViewport()).getProjectionMatrix());
+        this.uniformBuffer.flush();
+
+        System.out.println("Matrix projection : " + ((WgScreenViewport)this.getStage().getViewport()).getProjectionMatrix());
 
         WebGPURenderPass pass = RenderPassBuilder.create("Flag image pass");
-        int webgpuY = Gdx.graphics.getHeight() - (int)(this.getY() + this.getHeight());
-        pass.setViewport(this.getX(), webgpuY, (int) this.getWidth(), (int) this.getHeight(), 0f, 1f);
-        pass.setScissorRect((int) this.getX(), webgpuY, (int) this.getWidth(), (int) this.getHeight());
         pass.setPipeline(this.pipeline);
         this.binder.bindGroup(pass, 0);
 
