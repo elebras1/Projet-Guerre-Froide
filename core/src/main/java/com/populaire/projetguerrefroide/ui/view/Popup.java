@@ -1,8 +1,5 @@
 package com.populaire.projetguerrefroide.ui.view;
 
-import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -15,17 +12,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
-import com.badlogic.gdx.utils.Disposable;
-import com.monstrous.gdx.webgpu.graphics.WgTexture;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import java.util.Map;
 
-public class Popup extends Table implements Disposable {
+public class Popup extends Table {
     private final PopupListener listener;
     private FlagImage flagLeftImage;
     private FlagImage flagRightImage;
@@ -182,11 +176,5 @@ public class Popup extends Table implements Disposable {
                 setPosition(newX, newY);
             }
         });
-    }
-
-    @Override
-    public void dispose() {
-        this.flagLeftImage.dispose();
-        this.flagRightImage.dispose();
     }
 }

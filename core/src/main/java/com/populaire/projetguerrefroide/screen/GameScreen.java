@@ -88,7 +88,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         this.configurationService.loadGameLocalisation(this.gameContext);
 
-        this.widgetFactory = new WidgetFactory();
+        this.widgetFactory = new WidgetFactory(this.skinUi, this.skinFlags);
         this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer(), this.worldService.getColonizerIdOfSelectedProvince(), this);
         this.provincePanel = new ProvincePanel(this.widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
@@ -368,6 +368,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.cam.update();
 
         this.stage.getViewport().update(width, height, true);
+        this.widgetFactory.updateProjectionMatrixRenderer(((WgScreenViewport) this.stage.getViewport()).getProjectionMatrix());
     }
 
     @Override

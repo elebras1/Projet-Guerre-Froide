@@ -71,7 +71,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
         this.configurationService.loadNewGameLocalisation(this.gameContext);
-        this.widgetFactory = new WidgetFactory();
+        this.widgetFactory = new WidgetFactory(this.skinUi, this.skinFlags);
         this.initializeUi();
         this.paused = false;
     }
@@ -288,6 +288,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.cam.update();
 
         this.stage.getViewport().update(width, height, true);
+        this.widgetFactory.updateProjectionMatrixRenderer(((WgScreenViewport) this.stage.getViewport()).getProjectionMatrix());
     }
 
     @Override

@@ -1,13 +1,25 @@
 package com.populaire.projetguerrefroide.ui.widget;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.populaire.projetguerrefroide.ui.renderer.FlagImageRenderer;
 
 import java.util.List;
 
 public class WidgetFactory {
+    private FlagImageRenderer flagImageRenderer;
+
+    public WidgetFactory() {
+        this.flagImageRenderer = new FlagImageRenderer();
+    }
+
+    public WidgetFactory(Skin skinUi, Skin skinFlags) {
+        this.flagImageRenderer = new FlagImageRenderer();
+        this.flagImageRenderer.initialize(skinUi.getAtlas().getTextures().first(), skinUi.getAtlas().getTextures().first(), skinFlags.getAtlas().getTextures().first());
+    }
 
     public Table createBackgroundTable(Skin skin, String backgroundName, float x, float y) {
         Drawable background = skin.getDrawable(backgroundName);
@@ -108,7 +120,7 @@ public class WidgetFactory {
     public FlagImage createFlagImage(Skin skin, String alphaFlagName, String overlayFlagName) {
         TextureRegion alphaFlag = skin.getRegion(alphaFlagName);
         TextureRegion overlayFlag = skin.getRegion(overlayFlagName);
-        return new FlagImage(overlayFlag, alphaFlag);
+        return new FlagImage(this.flagImageRenderer, overlayFlag, alphaFlag);
     }
 
     public Drawable getFlagDrawable(Skin skin, String countryId, String colonizerId) {
@@ -133,5 +145,9 @@ public class WidgetFactory {
         }
 
         return skin.getRegion(colonizerId);
+    }
+
+    public void updateProjectionMatrixRenderer(Matrix4 projectionMatrix) {
+        this.flagImageRenderer.setProjectionMatrix(projectionMatrix);
     }
 }
