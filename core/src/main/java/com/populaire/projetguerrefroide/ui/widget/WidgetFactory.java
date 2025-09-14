@@ -150,4 +150,8 @@ public class WidgetFactory {
     public void updateProjectionMatrixRenderer(Matrix4 projectionMatrix) {
         this.flagImageRenderer.setProjectionMatrix(projectionMatrix);
     }
+
+    public FlagImageRenderer getFlagImageRenderer() {
+        return this.flagImageRenderer;
+    }
 }

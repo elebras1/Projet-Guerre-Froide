@@ -27,9 +27,6 @@ public class FlagImage extends Actor {
         if(flagTexture == null) {
             return;
         }
-
-        batch.end();
-        this.renderer.render(this.flagTexture, this.overlayTexture, this.alphaTexture, this.getX(), this.getY());
-        batch.begin();
+        this.renderer.addFlag(this.flagTexture, this.overlayTexture, this.alphaTexture, this.getX(), this.getY(), this.getWidth(), this.getHeight());
     }
 }

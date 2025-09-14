@@ -279,6 +279,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
         this.stage.act();
         this.stage.draw();
+        this.widgetFactory.getFlagImageRenderer().render();
     }
 
     @Override

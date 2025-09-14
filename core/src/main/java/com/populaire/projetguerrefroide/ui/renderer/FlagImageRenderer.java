@@ -7,8 +7,10 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector4;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.BufferUtils;
 import com.badlogic.gdx.utils.Disposable;
+import com.github.tommyettinger.ds.ObjectList;
 import com.github.xpenatan.webgpu.*;
 import com.monstrous.gdx.webgpu.graphics.Binder;
 import com.monstrous.gdx.webgpu.graphics.WgTexture;
@@ -18,6 +20,7 @@ import com.populaire.projetguerrefroide.util.WgslUtils;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
+import java.util.List;
 
 public class FlagImageRenderer implements Disposable {
     private WebGPUPipeline pipeline;
@@ -32,6 +35,24 @@ public class FlagImageRenderer implements Disposable {
     private final Vector4 uvOverlay;
     private final Vector4 uvAlpha;
     private final Vector4 uvFlag;
+    private final List<FlagInstance> flagInstances = new ObjectList<>();
+
+    private static class FlagInstance {
+        TextureRegion flagRegion;
+        TextureRegion overlayRegion;
+        TextureRegion alphaRegion;
+        float x, y, width, height;
+
+        FlagInstance(TextureRegion flag, TextureRegion overlay, TextureRegion alpha, float x, float y, float width, float height) {
+            this.flagRegion = flag;
+            this.overlayRegion = overlay;
+            this.alphaRegion = alpha;
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
+    }
 
     public FlagImageRenderer() {
         VertexAttributes vertexAttributes = new VertexAttributes(
@@ -171,21 +192,30 @@ public class FlagImageRenderer implements Disposable {
         this.vertexFloats.flip();
     }
 
-    public void render(TextureRegion flagRegion, TextureRegion overlayRegion, TextureRegion alphaRegion, float x, float y, float width, float height) {
-        WebGPURenderPass pass = RenderPassBuilder.create("Flag image pass");
-        switchTexture(overlayRegion, alphaRegion, flagRegion);
-        createQuadVertices(x, y, width, height);
-        this.vertexBuffer.setVertices(this.vertexBB, 0, 4 * this.vertexSize);
-        pass.setPipeline(this.pipeline);
-        this.binder.bindGroup(pass, 0);
-        pass.setVertexBuffer(0, this.vertexBuffer.getBuffer(), 0, 4 * this.vertexSize);
-        pass.setIndexBuffer(this.indexBuffer.getBuffer(), WGPUIndexFormat.Uint16, 0, 6 * Short.BYTES);
-        pass.drawIndexed(6, 1, 0, 0, 0);
-        pass.end();
+    public void addFlag(TextureRegion flagRegion, TextureRegion overlayRegion, TextureRegion alphaRegion, float x, float y, float width, float height) {
+        this.flagInstances.add(new FlagInstance(flagRegion, overlayRegion, alphaRegion, x, y, width, height));
     }
 
-    public void render(TextureRegion flagRegion, TextureRegion overlayRegion, TextureRegion alphaRegion, float x, float y) {
-        render(flagRegion, overlayRegion, alphaRegion, x, y, flagRegion.getRegionWidth(), flagRegion.getRegionHeight());
+    public void render() {
+        if (this.flagInstances.isEmpty()) {
+            return;
+        }
+
+        WebGPURenderPass pass = RenderPassBuilder.create("Flag batch pass");
+        pass.setPipeline(this.pipeline);
+        this.binder.bindGroup(pass, 0);
+        pass.setIndexBuffer(this.indexBuffer.getBuffer(), WGPUIndexFormat.Uint16, 0, 6 * Short.BYTES);
+
+        for (FlagInstance instance : this.flagInstances) {
+            switchTexture(instance.overlayRegion, instance.alphaRegion, instance.flagRegion);
+            createQuadVertices(instance.x, instance.y, instance.width, instance.height);
+            this.vertexBuffer.setVertices(this.vertexBB, 0, 4 * this.vertexSize);
+            pass.setVertexBuffer(0, this.vertexBuffer.getBuffer(), 0, 4 * this.vertexSize);
+            pass.drawIndexed(6, 1, 0, 0, 0);
+        }
+
+        pass.end();
+        this.flagInstances.clear();
     }
 
     @Override
