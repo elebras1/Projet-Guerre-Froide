@@ -13,7 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
-import com.monstrous.gdx.webgpu.scene2d.WgStage;
+import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.configuration.Settings;
@@ -88,11 +88,11 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         this.configurationService.loadGameLocalisation(this.gameContext);
 
-        this.widgetFactory = new WidgetFactory(this.skinUi, this.skinFlags);
+        this.widgetFactory = new WidgetFactory();
         this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer(), this.worldService.getColonizerIdOfSelectedProvince(), this);
         this.provincePanel = new ProvincePanel(this.widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
-        this.stage = new WgStage(new WgScreenViewport());
+        this.stage = new WgCustomStage(new WgScreenViewport(), this.skinUi, this.skinFlags);
         this.initializeUi();
         this.dateService.initialize();
 
@@ -359,7 +359,6 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         this.stage.act();
         this.stage.draw();
-        this.widgetFactory.getFlagImageRenderer().render();
     }
 
     @Override
@@ -369,7 +368,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.cam.update();
 
         this.stage.getViewport().update(width, height, true);
-        this.widgetFactory.updateProjectionMatrixRenderer(((WgScreenViewport) this.stage.getViewport()).getProjectionMatrix());
+        ((WgCustomStage) this.stage).updateRendererProjection();
     }
 
     @Override

@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.monstrous.gdx.webgpu.scene2d.WgStage;
+import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.configuration.Settings;
@@ -71,13 +72,13 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
         this.configurationService.loadNewGameLocalisation(this.gameContext);
-        this.widgetFactory = new WidgetFactory(this.skinUi, this.skinFlags);
+        this.widgetFactory = new WidgetFactory();
         this.initializeUi();
         this.paused = false;
     }
 
     private void initializeUi() {
-        this.stage = new WgStage(new WgScreenViewport());
+        this.stage = new WgCustomStage(new WgScreenViewport(), this.skinUi, this.skinFlags);
 
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
@@ -279,7 +280,6 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
         this.stage.act();
         this.stage.draw();
-        this.widgetFactory.getFlagImageRenderer().render();
     }
 
     @Override
@@ -289,7 +289,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.cam.update();
 
         this.stage.getViewport().update(width, height, true);
-        this.widgetFactory.updateProjectionMatrixRenderer(((WgScreenViewport) this.stage.getViewport()).getProjectionMatrix());
+        ((WgCustomStage) this.stage).updateRendererProjection();
     }
 
     @Override
