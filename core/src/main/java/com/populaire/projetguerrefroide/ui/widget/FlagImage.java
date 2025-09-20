@@ -24,9 +24,9 @@ public class FlagImage extends Actor {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        if(flagTexture == null) {
+        if(this.flagTexture == null) {
             return;
         }
-        this.renderer.addFlag(this.flagTexture, this.overlayTexture, this.alphaTexture, this.getX(), this.getY(), this.getWidth(), this.getHeight());
+        this.renderer.add(this.overlayTexture, this.alphaTexture, this.flagTexture, this.getX(), this.getY(), this.getWidth(), this.getHeight());
     }
 }

@@ -359,6 +359,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         this.stage.act();
         this.stage.draw();
+        this.widgetFactory.getFlagImageRenderer().render();
     }
 
     @Override

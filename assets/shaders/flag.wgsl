@@ -1,18 +1,21 @@
 struct Uniforms {
     projTrans: mat4x4<f32>,
-    uvFlag: vec4<f32>,
-    uvOverlay: vec4<f32>,
-    uvAlpha: vec4<f32>,
 }
 
 struct VertexInput {
     @location(0) position: vec2<f32>,
-    @location(1) texCoord: vec2<f32>
+    @location(1) texCoord: vec2<f32>,
+    @location(2) uvOverlay: vec2<f32>,
+    @location(3) uvAlpha: vec2<f32>,
+    @location(4) uvFlag: vec2<f32>
 }
 
 struct VertexOutput {
     @builtin(position) position: vec4<f32>,
-    @location(0) texCoord: vec2<f32>
+    @location(0) texCoord: vec2<f32>,
+    @location(1) uvOverlay: vec2<f32>,
+    @location(2) uvAlpha: vec2<f32>,
+    @location(3) uvFlag: vec2<f32>
 }
 
 @group(0) @binding(0) var<uniform> uniforms: Uniforms;
@@ -29,20 +32,19 @@ fn vs_main(input: VertexInput) -> VertexOutput {
 
     output.position = uniforms.projTrans * vec4<f32>(input.position, 0.0, 1.0);
     output.texCoord = input.texCoord;
+    output.uvOverlay = input.uvOverlay;
+    output.uvAlpha = input.uvAlpha;
+    output.uvFlag = input.uvFlag;
 
     return output;
 }
 
 @fragment
 fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
-    let uvFlag = mix(uniforms.uvFlag.xy, uniforms.uvFlag.zw, input.texCoord);
-    let uvOverlay = mix(uniforms.uvOverlay.xy, uniforms.uvOverlay.zw, input.texCoord);
-    let uvAlpha = mix(uniforms.uvAlpha.xy, uniforms.uvAlpha.zw, input.texCoord);
-
-    let flagColor = textureSample(textureFlag, textureFlagSampler, uvFlag);
-    var overlayColor = textureSample(textureOverlay, textureOverlaySampler, uvOverlay);
+    let flagColor = textureSample(textureFlag, textureFlagSampler, input.uvFlag);
+    var overlayColor = textureSample(textureOverlay, textureOverlaySampler, input.uvOverlay);
     overlayColor = vec4<f32>(overlayColor.rgb, overlayColor.a * 1.5);
-    let alphaColor = textureSample(textureAlpha, textureAlphaSampler, uvAlpha);
+    let alphaColor = textureSample(textureAlpha, textureAlphaSampler, input.uvAlpha);
 
     let color = mix(flagColor, overlayColor, overlayColor.a);
     var fragColor = vec4<f32>(color.rgb, alphaColor.a);

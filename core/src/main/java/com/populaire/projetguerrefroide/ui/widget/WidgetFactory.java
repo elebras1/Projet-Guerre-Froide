@@ -10,15 +10,14 @@ import com.populaire.projetguerrefroide.ui.renderer.FlagImageRenderer;
 import java.util.List;
 
 public class WidgetFactory {
-    private FlagImageRenderer flagImageRenderer;
+    private final FlagImageRenderer flagImageRenderer;
 
     public WidgetFactory() {
-        this.flagImageRenderer = new FlagImageRenderer();
+        this.flagImageRenderer = null;
     }
 
     public WidgetFactory(Skin skinUi, Skin skinFlags) {
-        this.flagImageRenderer = new FlagImageRenderer();
-        this.flagImageRenderer.initialize(skinUi.getAtlas().getTextures().first(), skinUi.getAtlas().getTextures().first(), skinFlags.getAtlas().getTextures().first());
+        this.flagImageRenderer = new FlagImageRenderer(skinUi.getAtlas().getTextures().first(), skinUi.getAtlas().getTextures().first(), skinFlags.getAtlas().getTextures().first());
     }
 
     public Table createBackgroundTable(Skin skin, String backgroundName, float x, float y) {
@@ -118,6 +117,9 @@ public class WidgetFactory {
     }
 
     public FlagImage createFlagImage(Skin skin, String alphaFlagName, String overlayFlagName) {
+        if(this.flagImageRenderer == null) {
+            throw new IllegalStateException("FlagImageRenderer is not initialized. Please use the constructor with Skin parameters.");
+        }
         TextureRegion alphaFlag = skin.getRegion(alphaFlagName);
         TextureRegion overlayFlag = skin.getRegion(overlayFlagName);
         return new FlagImage(this.flagImageRenderer, overlayFlag, alphaFlag);
