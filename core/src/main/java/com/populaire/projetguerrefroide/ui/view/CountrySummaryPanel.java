@@ -3,7 +3,6 @@ package com.populaire.projetguerrefroide.ui.view;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
-import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
@@ -14,7 +13,7 @@ import com.populaire.projetguerrefroide.util.LocalisationUtils;
 import java.util.List;
 import java.util.Map;
 
-public class CountrySummaryPanel extends Table implements Disposable {
+public class CountrySummaryPanel extends Table {
     private final Label countryName;
     private final Label government;
     private final Label countryPopulation;
@@ -32,7 +31,7 @@ public class CountrySummaryPanel extends Table implements Disposable {
         this.widgetFactory = widgetFactory;
         Drawable background = widgetFactory.applyBackgroundToTable(skin, "selected_bg", this);
 
-        this.flagImage = widgetFactory.createFlagImage(skinUi, "flag_alpha", "flag_overlay", 109, 77);
+        this.flagImage = widgetFactory.createFlagImage(skinUi, "flag_alpha", "flag_overlay");
         this.flagImage.setPosition(6, 85);
         this.addActor(this.flagImage);
 
@@ -62,7 +61,7 @@ public class CountrySummaryPanel extends Table implements Disposable {
         int x = 140;
         int y = 9;
         for(int i = 0; i < 7; i++) {
-            FlagImage flagImage = widgetFactory.createFlagImage(skinUi, "small_flag_mask", "small_flag_overlay", 24, 16);
+            FlagImage flagImage = widgetFactory.createFlagImage(skinUi, "small_flag_mask", "small_flag_overlay");
             flagImage.setPosition(x, y);
             this.alliesFlagImages.add(flagImage);
             x += 18;
@@ -91,10 +90,5 @@ public class CountrySummaryPanel extends Table implements Disposable {
 
     public void hide() {
         this.setVisible(false);
-    }
-
-    @Override
-    public void dispose() {
-        this.flagImage.dispose();
     }
 }

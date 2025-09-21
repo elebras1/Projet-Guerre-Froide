@@ -4,17 +4,18 @@ import  com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectIntMap;
+import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
+import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
+import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
+import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
@@ -38,7 +39,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     private final ConfigurationService configurationService;
     private final DateService dateService;
     private final OrthographicCamera cam;
-    private final SpriteBatch batch;
+    private final WgProjection projection;
     private final InputMultiplexer multiplexer;
     private final GameInputHandler inputHandler;
     private final Skin skinUi;
@@ -66,12 +67,12 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.configurationService = configurationService;
         this.dateService = new DateService(this.gameContext.getBookmark().getDate(), this);
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
+        this.projection = new WgProjection();
         int capitalPosition = this.worldService.getPositionOfCapitalOfSelectedCountry();
         short capitalX = (short) (capitalPosition >> 16);
         short capitalY = (short) (capitalPosition & 0xFFFF);
         this.cam.position.set(capitalX, capitalY, 0);
         this.cam.update();
-        this.batch = new SpriteBatch();
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
         AssetManager assetManager = gameContext.getAssetManager();
@@ -91,7 +92,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer(), this.worldService.getColonizerIdOfSelectedProvince(), this);
         this.provincePanel = new ProvincePanel(this.widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
-        this.stage = new Stage(new ScreenViewport());
+        this.stage = new WgCustomStage(new WgScreenViewport(), this.skinUi, this.skinFlags);
         this.initializeUi();
         this.dateService.initialize();
 
@@ -340,12 +341,11 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         float camX = this.cam.position.x;
         camX = (camX + WORLD_WIDTH) % WORLD_WIDTH;
         this.cam.position.x = camX;
-        this.batch.setProjectionMatrix(this.cam.combined);
+        this.projection.setProjectionMatrix(this.cam.combined);
 
-        Gdx.gl.glClearColor(1, 1, 1, 1);
-        Gdx.gl.glClear(GL32.GL_COLOR_BUFFER_BIT);
+        WgScreenUtils.clear(1, 1, 1, 1);
 
-        this.worldService.renderWorld(this.batch, this.cam, time);
+        this.worldService.renderWorld(this.projection, this.cam, this.time);
 
         this.dateService.update(delta);
 
@@ -368,6 +368,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.cam.update();
 
         this.stage.getViewport().update(width, height, true);
+        ((WgCustomStage) this.stage).updateRendererProjection();
     }
 
     @Override
@@ -388,6 +389,5 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     @Override
     public void dispose() {
         this.stage.dispose();
-        this.batch.dispose();
     }
 }

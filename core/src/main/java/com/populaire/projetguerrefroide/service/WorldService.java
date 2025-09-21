@@ -1,12 +1,12 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectIntOrderedMap;
 import com.github.tommyettinger.ds.ObjectList;
+import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.CountryDto;
@@ -45,8 +45,8 @@ public class WorldService {
         return this.asyncExecutor;
     }
 
-    public void renderWorld(SpriteBatch batch, OrthographicCamera cam, float time) {
-        this.world.render(batch, cam, time);
+    public void renderWorld(WgProjection projection, OrthographicCamera cam, float time) {
+        this.world.render(projection, cam, time);
     }
 
     public boolean selectProvince(short x, short y) {

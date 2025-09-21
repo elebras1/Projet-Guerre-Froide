@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.monstrous.gdx.webgpu.graphics.g2d.WgBitmapFont;
 
 public class Debug extends Table {
     private static final float MEMORY_UPDATE_INTERVAL = 0.5f;
@@ -22,7 +23,7 @@ public class Debug extends Table {
     private float timeSinceLastStats;
 
     public Debug(short totalProvinces) {
-        Label.LabelStyle labelStyle = new Label.LabelStyle(new BitmapFont(), Color.GREEN);
+        Label.LabelStyle labelStyle = new Label.LabelStyle(new WgBitmapFont(), Color.GREEN);
 
         this.fpsLabel = new Label("", labelStyle);
         this.mousePositionLabel = new Label("", labelStyle);

@@ -3,11 +3,12 @@ package com.populaire.projetguerrefroide.screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
+import com.monstrous.gdx.webgpu.scene2d.WgStage;
+import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.ui.view.MainMenu;
@@ -18,18 +19,20 @@ public class MainMenuScreen implements Screen, MainMenuListener {
     private final ScreenManager screenManager;
 
     public MainMenuScreen(ScreenManager screenManager, GameContext gameContext, ConfigurationService configurationService) {
-        this.stage = new Stage(new ScreenViewport());
+        this.stage = new WgStage(new WgScreenViewport());
         this.screenManager = screenManager;
+        configurationService.loadMainMenuLocalisation(gameContext);
         gameContext.getSettings().applyGraphicsSettings();
         Gdx.input.setInputProcessor(this.stage);
+        this.initializeUi(gameContext);
+    }
+
+    public void initializeUi(GameContext gameContext) {
         AssetManager assetManager = gameContext.getAssetManager();
-        assetManager.load("ui/mainmenu/mainmenu_skin.json", Skin.class);
-        assetManager.finishLoading();
         Skin skin = assetManager.get("ui/mainmenu/mainmenu_skin.json");
         Table rootTable = new Table();
         rootTable.setFillParent(true);
         rootTable.setBackground(skin.getDrawable("frontend_main_bg"));
-        configurationService.loadMainMenuLocalisation(gameContext);
         WidgetFactory widgetFactory = new WidgetFactory();
         MainMenu menu = new MainMenu(widgetFactory, skin, gameContext.getLabelStylePool(), gameContext.getLocalisation(), this);
         rootTable.add(menu).center().padLeft(menu.getWidth() / 3);
@@ -42,8 +45,7 @@ public class MainMenuScreen implements Screen, MainMenuListener {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(1, 1, 1, 1);
-        Gdx.gl.glClear(GL32.GL_COLOR_BUFFER_BIT);
+        WgScreenUtils.clear(1, 1, 1, 1);
 
         this.stage.act();
         this.stage.draw();

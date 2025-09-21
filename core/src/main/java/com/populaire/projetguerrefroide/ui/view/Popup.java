@@ -1,8 +1,5 @@
 package com.populaire.projetguerrefroide.ui.view;
 
-import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -15,16 +12,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
-import com.badlogic.gdx.utils.Disposable;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import java.util.Map;
 
-public class Popup extends Table implements Disposable {
+public class Popup extends Table {
     private final PopupListener listener;
     private FlagImage flagLeftImage;
     private FlagImage flagRightImage;
@@ -84,12 +79,7 @@ public class Popup extends Table implements Disposable {
     }
 
     private FlagImage createFlagImage(Skin skinUi, Skin skinFlags, String idCountry, String IdColonizer) {
-        TextureRegion alphaFlag = skinUi.getRegion("shield_big");
-        TextureRegion overlayFlag = skinUi.getRegion("shield_big_overlay");
-        Pixmap defaultPixmapFlag = new Pixmap(64, 64, Pixmap.Format.RGBA8888);
-        TextureRegionDrawable defaultFlag = new TextureRegionDrawable(new Texture(defaultPixmapFlag));
-        defaultPixmapFlag.dispose();
-        FlagImage flagImage = new FlagImage(defaultFlag, overlayFlag, alphaFlag);
+        FlagImage flagImage = this.widgetFactory.createFlagImage(skinUi, "shield_big", "shield_big_overlay");
         flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(skinFlags, idCountry, IdColonizer));
         this.addActor(flagImage);
 
@@ -186,11 +176,5 @@ public class Popup extends Table implements Disposable {
                 setPosition(newX, newY);
             }
         });
-    }
-
-    @Override
-    public void dispose() {
-        this.flagLeftImage.dispose();
-        this.flagRightImage.dispose();
     }
 }

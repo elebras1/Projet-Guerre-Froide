@@ -2,6 +2,7 @@ package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.monstrous.gdx.webgpu.assets.WgAssetManager;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dao.ConfigurationDao;
 import com.populaire.projetguerrefroide.dao.LocalisationDao;
@@ -21,7 +22,7 @@ public class ConfigurationService {
 
     public GameContext getGameContext() {
         Bookmark bookmark = this.configurationDao.loadBookmark();
-        AssetManager assetManager = new AssetManager();
+        AssetManager assetManager = new WgAssetManager();
         this.loadInitialAssets(assetManager);
         CursorManager cursorManager = new CursorManager();
         Settings settings = this.configurationDao.loadSettings();
@@ -34,6 +35,7 @@ public class ConfigurationService {
         assetManager.load("ui/ui_skin.json", Skin.class);
         assetManager.load("ui/fonts/fonts_skin.json", Skin.class);
         assetManager.load("ui/scrollbars/scrollbars_skin.json", Skin.class);
+        assetManager.load("ui/mainmenu/mainmenu_skin.json", Skin.class);
         assetManager.finishLoading();
     }
 

@@ -8,7 +8,7 @@ import com.dslplatform.json.NumberConverter;
 import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntList;
 import com.populaire.projetguerrefroide.dao.MapDao;
-import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
+import com.populaire.projetguerrefroide.entity.RawMeshMulti;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +20,7 @@ public class MapDaoImpl implements MapDao {
     private final String riversMeshFile = "map/rivers_mesh.json";
 
     @Override
-    public RawMeshMultiDraw readRiversMeshJson() {
+    public RawMeshMulti readRiversMeshJson() {
         FileHandle fh = Gdx.files.internal(this.riversMeshFile);
         try (InputStream is = fh.read()) {
             byte[] bytes = is.readAllBytes();
@@ -69,7 +69,7 @@ public class MapDaoImpl implements MapDao {
             if (vertices == null)
                 throw new RuntimeException("Missing 'vertices' in JSON");
 
-            return new RawMeshMultiDraw(vertices, startsBuffer, countsBuffer);
+            return new RawMeshMulti(vertices, startsBuffer, countsBuffer);
 
         } catch (IOException ioException) {
             ioException.printStackTrace();

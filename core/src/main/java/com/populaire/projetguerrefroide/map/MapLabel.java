@@ -1,46 +1,36 @@
 package com.populaire.projetguerrefroide.map;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL32;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
+import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectList;
+import com.github.tommyettinger.ds.ShortList;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.List;
 
-import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
-
 public class MapLabel {
-    private final String label;
-    public int centroid;
-    private int[] farthestPoints;
-    private List<CurvePoint> points;
     private final BitmapFont font;
-    private float fontScale;
     private static class CurvePoint {
         int center;
         int origin;
         float angle;
     }
 
-    public MapLabel(String label, LabelStylePool labelStylePool, IntList borderPixels, IntList positionsProvinces) {
-        this.font = labelStylePool.getLabelStyle("kart_60").font;
-        this.font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        this.label = label;
-        IntList convexHull = this.getConvexHull(borderPixels);
-        this.setCentroid(convexHull, positionsProvinces);
-        this.findFarthestPoints(convexHull);
-        GlyphLayout layout = new GlyphLayout();
-        layout.setText(this.font, this.label);
-        this.setFontScale(layout);
-        this.calculateQuadraticBezierCurve();
-        this.setPointsOrigin(layout);
+    public MapLabel(BitmapFont font) {
+        this.font = font;
     }
 
-    public String getLabel() {
-        return this.label;
+    public void generateData(String label, IntList borderPixels, IntList positionsProvinces, FloatList vertices, ShortList indices) {
+        IntList convexHull = this.getConvexHull(borderPixels);
+        int centroid = this.getCentroid(convexHull, positionsProvinces);
+        int[] farthestPoints = this.getFarthestPoints(convexHull);
+        GlyphLayout layout = new GlyphLayout();
+        layout.setText(this.font, label);
+        float fontScale = this.getFontScale(layout, farthestPoints, centroid);
+        List<CurvePoint> points = this.calculateQuadraticBezierCurve(label, farthestPoints, centroid);
+        this.setPointsOrigin(layout, fontScale, points);
+        this.addMeshData(vertices, indices, label, points, fontScale);
     }
 
     private IntList getConvexHull(IntList borderPixels) {
@@ -184,7 +174,7 @@ public class MapLabel {
         return (xMax << 16) | (yMax & 0xFFFF);
     }
 
-    private void setCentroid(IntList convexHull, IntList positionsProvinces) {
+    private int getCentroid(IntList convexHull, IntList positionsProvinces) {
         int centerX = 0;
         int centerY = 0;
 
@@ -213,10 +203,10 @@ public class MapLabel {
             }
         }
 
-        this.centroid = closestPosition;
+        return closestPosition;
     }
 
-    private void findFarthestPoints(IntList pixels) {
+    private int[] getFarthestPoints(IntList pixels) {
         double maxDistance = 0;
         int farthestPoint1 = -1;
         int farthestPoint2 = -1;
@@ -242,33 +232,33 @@ public class MapLabel {
         }
 
         if((farthestPoint1 >> 16) < (farthestPoint2 >> 16)) {
-            this.farthestPoints = new int[] {farthestPoint1, farthestPoint2};
+            return new int[] {farthestPoint1, farthestPoint2};
         } else {
-            this.farthestPoints = new int[] {farthestPoint2, farthestPoint1};
+            return new int[] {farthestPoint2, farthestPoint1};
         }
     }
 
-    private void setFontScale(GlyphLayout layout) {
+    private float getFontScale(GlyphLayout layout, int[] farthestPoints, int centroid) {
         float textLength = layout.width;
-        float curveLength = this.approximateCurveLength();
-        this.fontScale = (curveLength / textLength) * 0.4f;
+        float curveLength = this.approximateCurveLength(farthestPoints, centroid);
+        return (curveLength / textLength) * 0.4f;
     }
 
-    private void calculateQuadraticBezierCurve() {
-        this.points = new ObjectList<>();
+    private List<CurvePoint> calculateQuadraticBezierCurve(String label, int[] farthestPoints, int centroid) {
+        List<CurvePoint> points = new ObjectList<>();
 
-        int numberOfPoints = this.label.length() + 2;
+        int numberOfPoints = label.length() + 2;
 
-        int farthestPoint1 = this.farthestPoints[0];
+        int farthestPoint1 = farthestPoints[0];
         short farthestPointX1 = (short) (farthestPoint1 >> 16);
         short farthestPointY1 = (short) (farthestPoint1 & 0xFFFF);
 
-        int farthestPoint2 = this.farthestPoints[1];
+        int farthestPoint2 = farthestPoints[1];
         short farthestPointX2 = (short) (farthestPoint2 >> 16);
         short farthestPointY2 = (short) (farthestPoint2 & 0xFFFF);
 
-        short centroidX = (short) (this.centroid >> 16);
-        short centroidY = (short) (this.centroid & 0xFFFF);
+        short centroidX = (short) (centroid >> 16);
+        short centroidY = (short) (centroid & 0xFFFF);
 
         float compressionFactor = 0.7f;
 
@@ -283,13 +273,13 @@ public class MapLabel {
 
             CurvePoint curvePoint = new CurvePoint();
             curvePoint.center = ((int) x << 16) | ((int) y & 0xFFFF);
-            this.points.add(curvePoint);
+            points.add(curvePoint);
         }
 
-        for (int i = 1; i < this.points.size() - 1; i++) {
-            CurvePoint previous = this.points.get(i - 1);
-            CurvePoint point = this.points.get(i);
-            CurvePoint next = this.points.get(i + 1);
+        for (int i = 1; i < points.size() - 1; i++) {
+            CurvePoint previous = points.get(i - 1);
+            CurvePoint point = points.get(i);
+            CurvePoint next = points.get(i + 1);
 
             short nextCenterX = (short) (next.center >> 16);
             short nextCenterY = (short) (next.center & 0xFFFF);
@@ -302,21 +292,22 @@ public class MapLabel {
             point.angle = (float) Math.atan2(dy, dx) * (180f / (float) Math.PI);
         }
 
-        this.points.remove(0);
-        this.points.remove(this.points.size() - 1);
+        points.remove(0);
+        points.remove(points.size() - 1);
+        return points;
     }
 
-    private float approximateCurveLength() {
-        int farthestPoint1 = this.farthestPoints[0];
+    private float approximateCurveLength(int[] farthestPoints, int centroid) {
+        int farthestPoint1 = farthestPoints[0];
         short farthestPointX1 = (short) (farthestPoint1 >> 16);
         short farthestPointY1 = (short) (farthestPoint1 & 0xFFFF);
 
-        int farthestPoint2 = this.farthestPoints[1];
+        int farthestPoint2 = farthestPoints[1];
         short farthestPointX2 = (short) (farthestPoint2 >> 16);
         short farthestPointY2 = (short) (farthestPoint2 & 0xFFFF);
 
-        short centroidX = (short) (this.centroid >> 16);
-        short centroidY = (short) (this.centroid & 0xFFFF);
+        short centroidX = (short) (centroid >> 16);
+        short centroidY = (short) (centroid & 0xFFFF);
 
         int dx1 = farthestPointX1 - centroidX;
         int dy1 = farthestPointY1 - centroidY;
@@ -329,76 +320,86 @@ public class MapLabel {
         return distance1 + distance2;
     }
 
-    private void setPointsOrigin(GlyphLayout layout) {
-        float glyphHeight = layout.height * this.fontScale;
-        for (int i = 0; i < this.points.size(); i++) {
+    private void setPointsOrigin(GlyphLayout layout, float fontScale, List<CurvePoint> points) {
+        float glyphHeight = layout.height * fontScale;
+        for (int i = 0; i < points.size(); i++) {
             BitmapFont.Glyph glyph = layout.runs.first().glyphs.get(i);
-            float glyphWidth = glyph.width * this.fontScale;
+            float glyphWidth = glyph.width * fontScale;
 
-            short centerX = (short) (this.points.get(i).center >> 16);
-            short centerY = (short) (this.points.get(i).center & 0xFFFF);
+            short centerX = (short) (points.get(i).center >> 16);
+            short centerY = (short) (points.get(i).center & 0xFFFF);
 
             short x = (short) (centerX - (glyphWidth / 2));
             short y = (short) (centerY - (glyphHeight / 2));
 
-            this.points.get(i).origin = (x << 16) | (y & 0xFFFF);
+            points.get(i).origin = (x << 16) | (y & 0xFFFF);
         }
     }
 
-    public void render(SpriteBatch batch) {
-        TextureRegion textureRegionFont = font.getRegion();
-        CurvePoint curvePoint;
-        BitmapFont.Glyph glyph;
-        for (int i = 0; i < this.label.length(); i++) {
-            curvePoint = this.points.get(i);
-            glyph = font.getData().getGlyph(this.label.charAt(i));
-            textureRegionFont.setRegion(glyph.u, glyph.v, glyph.u2, glyph.v2);
-            float glyphWidth = glyph.width * this.fontScale;
-            float glyphHeight = glyph.height * this.fontScale;
+    private void addMeshData(FloatList vertices, ShortList indices, String label, List<CurvePoint> points, float fontScale) {
+        for (int i = 0; i < label.length(); i++) {
+            CurvePoint curvePoint = points.get(i);
+            BitmapFont.Glyph glyph = this.font.getData().getGlyph(label.charAt(i));
+            if (glyph == null) {
+                continue;
+            }
 
-            short originX = (short) (curvePoint.origin >> 16);
-            short originY = (short) (curvePoint.origin & 0xFFFF);
+            float u = glyph.u;
+            float v = glyph.v;
+            float u2 = glyph.u2;
+            float v2 = glyph.v2;
 
-            batch.draw(
-                textureRegionFont,
-                originX - WORLD_WIDTH,
-                originY,
-                glyphWidth / 2,
-                glyphHeight / 2,
-                glyphWidth,
-                glyphHeight,
-                1,
-                -1,
-                curvePoint.angle
-            );
+            float glyphWidth = glyph.width * fontScale;
+            float glyphHeight = glyph.height * fontScale;
 
-            batch.draw(
-                textureRegionFont,
-                originX,
-                originY,
-                glyphWidth / 2,
-                glyphHeight / 2,
-                glyphWidth,
-                glyphHeight,
-                1,
-                -1,
-                curvePoint.angle
-            );
+            float pivotX = glyphWidth / 2f;
+            float pivotY = glyphHeight / 2f;
 
-            batch.draw(
-                textureRegionFont,
-                originX + WORLD_WIDTH,
-                originY,
-                glyphWidth / 2,
-                glyphHeight / 2,
-                glyphWidth,
-                glyphHeight,
-                1,
-                -1,
-                curvePoint.angle
-            );
+            float posX = (short) (curvePoint.origin >> 16) + pivotX;
+            float posY = (short) (curvePoint.origin & 0xFFFF) + pivotY;
+
+            float scaleX = 1f;
+            float scaleY = -1f;
+
+            float lx1 = -pivotX * scaleX;
+            float ly1 = -pivotY * scaleY;
+            float lx2 = (glyphWidth - pivotX) * scaleX;
+            float ly2 = -pivotY * scaleY;
+            float lx3 = (glyphWidth - pivotX) * scaleX;
+            float ly3 = (glyphHeight - pivotY) * scaleY;
+            float lx4 = -pivotX * scaleX;
+            float ly4 = (glyphHeight - pivotY) * scaleY;
+
+            float angleRad = (float) Math.toRadians(curvePoint.angle);
+            float cos = (float) Math.cos(angleRad);
+            float sin = (float) Math.sin(angleRad);
+
+            float x1 = posX + (lx1 * cos - ly1 * sin);
+            float y1 = posY + (lx1 * sin + ly1 * cos);
+
+            float x2 = posX + (lx2 * cos - ly2 * sin);
+            float y2 = posY + (lx2 * sin + ly2 * cos);
+
+            float x3 = posX + (lx3 * cos - ly3 * sin);
+            float y3 = posY + (lx3 * sin + ly3 * cos);
+
+            float x4 = posX + (lx4 * cos - ly4 * sin);
+            float y4 = posY + (lx4 * sin + ly4 * cos);
+
+            int startIndex = vertices.size() / 4;
+
+            vertices.add(x1, y1, u, v2);
+            vertices.add(x2, y2, u2, v2);
+            vertices.add(x3, y3, u2, v);
+            vertices.add(x4, y4, u, v);
+
+            indices.add((short) startIndex);
+            indices.add((short) (startIndex + 1));
+            indices.add((short) (startIndex + 2));
+
+            indices.add((short) startIndex);
+            indices.add((short) (startIndex + 2));
+            indices.add((short) (startIndex + 3));
         }
-
-        Gdx.gl.glActiveTexture(GL32.GL_TEXTURE0);
     }
 }

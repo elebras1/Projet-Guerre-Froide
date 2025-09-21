@@ -1,26 +1,36 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.*;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.badlogic.gdx.math.Vector4;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.tommyettinger.ds.*;
+import com.github.xpenatan.webgpu.*;
+import com.monstrous.gdx.webgpu.graphics.Binder;
+import com.monstrous.gdx.webgpu.graphics.WgMesh;
+import com.monstrous.gdx.webgpu.graphics.WgTexture;
+import com.monstrous.gdx.webgpu.graphics.WgTextureArray;
+import com.monstrous.gdx.webgpu.graphics.g2d.WgTextureAtlas;
+import com.monstrous.gdx.webgpu.wrappers.*;
+import com.populaire.projetguerrefroide.adapter.graphics.WgMeshMulti;
+import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.economy.Economy;
 import com.populaire.projetguerrefroide.entity.ModifierStore;
-import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
+import com.populaire.projetguerrefroide.entity.RawMeshMulti;
 import com.populaire.projetguerrefroide.entity.Terrain;
 import com.populaire.projetguerrefroide.national.NationalIdeas;
 import com.populaire.projetguerrefroide.politics.AllianceType;
 import com.populaire.projetguerrefroide.politics.Politics;
 import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
-import com.populaire.projetguerrefroide.adapter.graphics.MeshMultiDrawIndirect;
 import com.populaire.projetguerrefroide.util.LocalisationUtils;
-import org.lwjgl.opengl.GL43;
+import com.populaire.projetguerrefroide.util.WgslUtils;
 
 import java.util.*;
 
@@ -41,27 +51,38 @@ public class World implements Disposable {
     private final Map<String, Terrain> terrains;
     private final Pixmap provincesPixmap;
     private final Pixmap mapModePixmap;
-    private Texture mapModeTexture;
-    private final Texture provincesTexture;
-    private final Texture waterTexture;
-    private final Texture colorMapWaterTexture;
-    private final Texture provincesStripesTexture;
-    private final Texture terrainTexture;
-    private final Texture stripesTexture;
-    private final Texture colorMapTexture;
-    private final Texture overlayTileTexture;
-    private final Texture riverBodyTexture;
-    private final Texture defaultTexture;
-    private final TextureArray terrainSheetArray;
-    private final TextureAtlas mapElementsTextureAtlas;
-    private final ShaderProgram mapShader;
-    private final ShaderProgram fontShader;
-    private final ShaderProgram elementShader;
-    private final ShaderProgram elementScaleShader;
-    private final ShaderProgram riverShader;
-    private final Mesh meshBuildings;
-    private final Mesh meshResources;
-    private final MeshMultiDrawIndirect meshRivers;
+    private final Pixmap provincesColorStripesPixmap;
+    private WgTexture mapModeTexture;
+    private final WgTexture provincesTexture;
+    private final WgTexture waterTexture;
+    private final WgTexture colorMapWaterTexture;
+    private final WgTexture provincesStripesTexture;
+    private final WgTexture terrainTexture;
+    private final WgTexture stripesTexture;
+    private final WgTexture colorMapTexture;
+    private final WgTexture overlayTileTexture;
+    private final WgTexture riverBodyTexture;
+    private final WgTextureArray terrainSheetArray;
+    private final WgTextureAtlas mapElementsTextureAtlas;
+    private final TextureRegion fontMapLabelRegion;
+    private final WgMesh meshProvinces;
+    private final WgMesh meshMapLabels;
+    private final WgMesh meshBuildings;
+    private final WgMesh meshResources;
+    private final WgMeshMulti meshRivers;
+    private final WebGPUUniformBuffer uniformBufferWorld;
+    private final Binder binderProvinces;
+    private final Binder binderMapLabels;
+    private final Binder binderBuildings;
+    private final Binder binderResources;
+    private final Binder binderRivers;
+    private final WebGPUPipeline pipelineProvinces;
+    private final WebGPUPipeline pipelineMapLabels;
+    private final WebGPUPipeline pipelineBuildings;
+    private final WebGPUPipeline pipelineResources;
+    private final WebGPUPipeline pipelineRivers;
+    private final int uniformBufferSizeWorld;
+    private final Vector4 selectedProvinceColor;
     private LandProvince selectedProvince;
     private Country countryPlayer;
     private MapMode mapMode;
@@ -79,64 +100,76 @@ public class World implements Disposable {
         this.nationalIdeas = nationalIdeas;
         this.terrains = terrains;
         this.mapModePixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
-        this.mapModePixmap.setBlending(Pixmap.Blending.None);
         this.mapModePixmap.setColor(0, 0, 0, 0);
         this.mapModePixmap.fill();
-        Pixmap tempPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
-        this.provincesPixmap = new Pixmap(tempPixmap.getWidth(), tempPixmap.getHeight(), Pixmap.Format.RGBA8888);
-        this.provincesPixmap.drawPixmap(tempPixmap, 0, 0);
+        Pixmap tempProvincesPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
+        this.provincesPixmap = new Pixmap(tempProvincesPixmap.getWidth(), tempProvincesPixmap.getHeight(), Pixmap.Format.RGBA8888);
         this.provincesPixmap.setBlending(Pixmap.Blending.None);
-        tempPixmap.dispose();
+        this.provincesPixmap.drawPixmap(tempProvincesPixmap, 0, 0);
+        tempProvincesPixmap.dispose();
         this.updatePixmapCountriesColor();
         this.updateBordersProvincesPixmap();
-        Pixmap provincesColorStripesPixmap = this.createProvincesColorStripesPixmap();
-        String[] terrainTexturePaths = this.createTerrainTexturePaths();
+        this.provincesColorStripesPixmap = this.createProvincesColorStripesPixmap();
+        FileHandle[] terrainTextureFiles = this.createTerrainTextureFiles();
         this.mapMode = MapMode.POLITICAL;
+        this.selectedProvinceColor = new Vector4();
 
-        for(Country country : this.countries) {
-            country.createLabels(LocalisationUtils.getCountryNameLocalisation(gameContext.getLocalisation(), country.getId(), this.getColonizerId(country)), gameContext.getLabelStylePool());
-        }
-        this.mapModeTexture = new Texture(this.mapModePixmap);
-        this.mapModeTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-        this.provincesStripesTexture = new Texture(provincesColorStripesPixmap);
-        this.provincesStripesTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-        this.provincesTexture = new Texture(this.provincesPixmap);
-        this.provincesTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-        this.waterTexture = new Texture("map/terrain/sea_normal.png");
-        this.waterTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        this.colorMapWaterTexture = new Texture("map/terrain/colormap_water.png");
-        this.colorMapWaterTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        this.colorMapTexture = new Texture("map/terrain/colormap.png");
-        this.terrainTexture = new Texture("map/terrain.bmp");
-        this.stripesTexture = new Texture("map/terrain/stripes.png");
-        this.overlayTileTexture = new Texture("map/terrain/map_overlay_tile.png");
-        this.overlayTileTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        this.riverBodyTexture = new Texture("map/terrain/river.png");
+        PixmapTextureData mapModeTextureData = new PixmapTextureData(this.mapModePixmap, Pixmap.Format.RGBA8888, false, false);
+        this.mapModeTexture = new WgTexture(mapModeTextureData, "mapModeTexture", false);
+        this.mapModeTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        PixmapTextureData provincesColorStripesTextureData = new PixmapTextureData(provincesColorStripesPixmap, Pixmap.Format.RGBA8888, false, false);
+        this.provincesStripesTexture = new WgTexture(provincesColorStripesTextureData, "provincesStripesTexture", false);
+        this.provincesStripesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        PixmapTextureData provincesTextureData = new PixmapTextureData(this.provincesPixmap, Pixmap.Format.RGBA8888, false, false);
+        this.provincesTexture = new WgTexture(provincesTextureData, "provincesTexture", false);
+        this.provincesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        this.waterTexture = new WgTexture("map/terrain/sea_normal.png");
+        this.waterTexture.setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
+        this.waterTexture.setWrap(WgTexture.TextureWrap.Repeat, WgTexture.TextureWrap.Repeat);
+        Pixmap colorMapWaterPixmap = new Pixmap(Gdx.files.internal("map/terrain/colormap_water.png"));
+        this.colorMapWaterTexture = new WgTexture(colorMapWaterPixmap, "colorMapWaterTexture", false);
+        colorMapWaterPixmap.dispose();
+        this.colorMapWaterTexture.setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
+        this.colorMapTexture = new WgTexture("map/terrain/colormap.png");
+        this.colorMapTexture.setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
+        Pixmap terrainPixmap = new Pixmap(Gdx.files.internal("map/terrain.bmp"));
+        PixmapTextureData terrainTextureData = new PixmapTextureData(terrainPixmap, Pixmap.Format.RGBA8888, false, false);
+        this.terrainTexture = new WgTexture(terrainTextureData, "terrainTexture", false);
+        terrainPixmap.dispose();
+        this.stripesTexture = new WgTexture("map/terrain/stripes.png");
+        this.overlayTileTexture = new WgTexture("map/terrain/map_overlay_tile.png");
+        this.overlayTileTexture.setWrap(WgTexture.TextureWrap.Repeat, WgTexture.TextureWrap.Repeat);
+        this.riverBodyTexture = new WgTexture("map/terrain/river.png");
         this.riverBodyTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        this.defaultTexture = new Texture(0, 0, Pixmap.Format.RGB565);
-        this.terrainSheetArray = new TextureArray(terrainTexturePaths);
-        this.mapElementsTextureAtlas = new TextureAtlas("map/elements/map_elements.atlas");
-        this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        this.meshBuildings = this.generateMeshBuildings();
-        this.meshResources = this.generateMeshResources();
-        this.meshRivers = this.generateMeshRivers();
+        this.terrainSheetArray = new WgTextureArray(terrainTextureFiles);
+        this.mapElementsTextureAtlas = new WgTextureAtlas(Gdx.files.internal("map/elements/map_elements.atlas"));
+        this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
+        this.fontMapLabelRegion = gameContext.getLabelStylePool().getLabelStyle("kart_60").font.getRegion();
+        this.fontMapLabelRegion.getTexture().setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
+        this.uniformBufferSizeWorld = (16 + 4 + 4) * Float.BYTES;
+        this.uniformBufferWorld = new WebGPUUniformBuffer(this.uniformBufferSizeWorld, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
+        VertexAttributes vertexAttributesProvinces = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        this.meshProvinces = this.generateMeshProvinces(vertexAttributesProvinces);
+        this.binderProvinces = this.createBinderProvinces();
+        this.pipelineProvinces = this.createPipelineProvinces(vertexAttributesProvinces, WgslUtils.getShaderSource("map.wgsl"));
+        VertexAttributes vertexAttributesMapLabels = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        this.meshMapLabels = this.generateMeshMapLabels(vertexAttributesMapLabels, gameContext.getLocalisation(), gameContext.getLabelStylePool());
+        this.binderMapLabels = this.createBinderMapLabels();
+        this.pipelineMapLabels = this.createPipelineMapLabels(vertexAttributesMapLabels, WgslUtils.getShaderSource("font.wgsl"));
+        VertexAttributes vertexAttributesBuildings = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        this.meshBuildings = this.generateMeshBuildings(vertexAttributesBuildings);
+        this.binderBuildings = this.createBinderBuildings();
+        this.pipelineBuildings = this.createPipelineBuildings(vertexAttributesBuildings, WgslUtils.getShaderSource("element.wgsl"));
+        VertexAttributes vertexAttributesResources = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.Normal, 2, "center"));
+        this.meshResources = this.generateMeshResources(vertexAttributesResources);
+        this.binderResources = this.createBinderResources();
+        this.pipelineResources = this.createPipelineResources(vertexAttributesResources, WgslUtils.getShaderSource("element_scale.wgsl"));
+        VertexAttributes vertexAttributesRivers = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.Normal, 1, "width"));
+        this.meshRivers = this.generateMeshRivers(vertexAttributesRivers);
+        this.binderRivers = this.createBinderRivers();
+        this.pipelineRivers = this.createPipelineRivers(vertexAttributesRivers, WgslUtils.getShaderSource("river.wgsl"));
+        this.bindStaticTextures();
 
-        String vertexMapShader = Gdx.files.internal("shaders/map_v.glsl").readString();
-        String fragmentMapShader = Gdx.files.internal("shaders/map_f.glsl").readString();
-        this.mapShader = new ShaderProgram(vertexMapShader, fragmentMapShader);
-        String vertexFontShader = Gdx.files.internal("shaders/font_v.glsl").readString();
-        String fragmentFontShader = Gdx.files.internal("shaders/font_f.glsl").readString();
-        this.fontShader = new ShaderProgram(vertexFontShader, fragmentFontShader);
-        String vertexElementShader = Gdx.files.internal("shaders/element_v.glsl").readString();
-        String fragmentElementShader = Gdx.files.internal("shaders/element_f.glsl").readString();
-        this.elementShader = new ShaderProgram(vertexElementShader, fragmentElementShader);
-        String vertexElementScaleShader = Gdx.files.internal("shaders/element_scale_v.glsl").readString();
-        String fragmentElementScaleShader = Gdx.files.internal("shaders/element_scale_f.glsl").readString();
-        this.elementScaleShader = new ShaderProgram(vertexElementScaleShader, fragmentElementScaleShader);
-        String vertexRiverShader = Gdx.files.internal("shaders/river_v.glsl").readString();
-        String fragmentRiverShader = Gdx.files.internal("shaders/river_f.glsl").readString();
-        this.riverShader = new ShaderProgram(vertexRiverShader, fragmentRiverShader);
-        ShaderProgram.pedantic = false;
     }
 
     public ProvinceStore getProvinceStore() {
@@ -170,6 +203,20 @@ public class World implements Disposable {
 
     public boolean selectProvince(short x, short y) {
         this.selectedProvince = this.getProvince(x, y);
+
+        if(this.selectedProvince != null) {
+            int provinceIndex = this.provinceStore.getIndexById().get(this.selectedProvince.getId());
+            int color = this.provinceStore.getColors().get(provinceIndex);
+            float r = ((color >> 24) & 0xFF) / 255f;
+            float g = ((color >> 16) & 0xFF) / 255f;
+            float b = ((color >> 8) & 0xFF) / 255f;
+            float a = (color & 0xFF) / 255f;
+            this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(r, g, b, a));
+        } else {
+            this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(0f, 0f, 0f, 0f));
+        }
+        this.uniformBufferWorld.flush();
+
         return this.selectedProvince != null;
     }
 
@@ -238,17 +285,17 @@ public class World implements Disposable {
         return this.provinceStore.getAmountAdults().get(provinceIndex);
     }
 
-    public String[] createTerrainTexturePaths() {
-        String[] terrainTexturePaths = new String[64];
+    private FileHandle[] createTerrainTextureFiles() {
+        FileHandle[] terrainTexturePaths = new FileHandle[64];
         String pathBase = "map/terrain/textures/";
         for(int i = 0; i < 64; i++) {
-            terrainTexturePaths[i] = pathBase + "text_" + i + ".png";
+            terrainTexturePaths[i] = Gdx.files.internal(pathBase + "text_" + i + ".png");
         }
 
         return terrainTexturePaths;
     }
 
-    public void updatePixmapCountriesColor() {
+    private void updatePixmapCountriesColor() {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
@@ -270,7 +317,7 @@ public class World implements Disposable {
         }
     }
 
-    public void updatePixmapIdeologiesColor() {
+    private void updatePixmapIdeologiesColor() {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
@@ -280,7 +327,7 @@ public class World implements Disposable {
         }
     }
 
-    public void updatePixmapCulturesColor() {
+    private void updatePixmapCulturesColor() {
         IntList provinceColors = this.provinceStore.getColors();
         IntList provinceCultureValues = this.provinceStore.getCultureValues();
         IntList provinceCultureStarts = this.provinceStore.getCultureStarts();
@@ -305,7 +352,7 @@ public class World implements Disposable {
         }
     }
 
-    public void updatePixmapReligionsColor() {
+    private void updatePixmapReligionsColor() {
         IntList provinceColors = this.provinceStore.getColors();
         IntList provinceReligionValues = this.provinceStore.getReligionValues();
         IntList provinceReligionStarts = this.provinceStore.getReligionStarts();
@@ -329,7 +376,7 @@ public class World implements Disposable {
         }
     }
 
-    public void updatePixmapResourcesColor() {
+    private void updatePixmapResourcesColor() {
         IntList provinceColors = this.provinceStore.getColors();
         IntList provinceResourceGoodIds = this.provinceStore.getResourceGoodIds();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
@@ -345,7 +392,7 @@ public class World implements Disposable {
         }
     }
 
-    public void updatePixmapRegionColor() {
+    private void updatePixmapRegionColor() {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
@@ -355,7 +402,7 @@ public class World implements Disposable {
         }
     }
 
-    public void updatePixmapTerrainColor() {
+    private void updatePixmapTerrainColor() {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
@@ -375,7 +422,7 @@ public class World implements Disposable {
         }
     }
 
-    public void updatePixmapPopulationColor() {
+    private void updatePixmapPopulationColor() {
         int maxPopulation = 0;
         for (int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             maxPopulation = Math.max(maxPopulation, this.provinceStore.getPopulationAmount(provinceId));
@@ -393,7 +440,7 @@ public class World implements Disposable {
     }
 
 
-    public void updatePixmapRelationsColor() {
+    private void updatePixmapRelationsColor() {
         ObjectIntMap<Country> relations = this.countryPlayer.getRelations();
 
         IntList provinceColors = this.provinceStore.getColors();
@@ -414,7 +461,7 @@ public class World implements Disposable {
         }
     }
 
-    public Pixmap createProvincesColorStripesPixmap() {
+    private Pixmap createProvincesColorStripesPixmap() {
         Pixmap pixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
         for(LandProvince province : this.provinces.values()) {
             if(!province.getCountryOwner().equals(province.getCountryController())) {
@@ -429,7 +476,7 @@ public class World implements Disposable {
         return pixmap;
     }
 
-    public void updateBordersProvincesPixmap() {
+    private void updateBordersProvincesPixmap() {
         for(LandProvince province : this.provinces.values()) {
             IntSet provincesBorderPixels = province.getBorderPixels();
             for(IntSet.IntSetIterator iterator = provincesBorderPixels.iterator(); iterator.hasNext;) {
@@ -493,10 +540,16 @@ public class World implements Disposable {
         }
 
         this.mapModeTexture.dispose();
-        this.mapModeTexture = new Texture(this.mapModePixmap);
+        PixmapTextureData mapModeTextureData = new PixmapTextureData(this.mapModePixmap, Pixmap.Format.RGBA8888, false, false);
+        this.mapModeTexture = new WgTexture(mapModeTextureData, "mapModeTexture", false);
+        this.mapModeTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        this.binderProvinces.setTexture("textureMapMode", this.mapModeTexture.getTextureView());
+        this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
+        this.binderProvinces.setUniform("showTerrain", this.mapMode == MapMode.TERRAIN ? 1 : 0);
+        this.uniformBufferWorld.flush();
     }
 
-    public short getBorderType(short x, short y, Country country, Region region) {
+    private short getBorderType(short x, short y, Country country, Region region) {
         LandProvince provinceRight = this.getProvince((short) (x + 1), y);
         LandProvince provinceLeft = this.getProvince((short) (x - 1), y);
         LandProvince provinceUp = this.getProvince(x, (short) (y + 1));
@@ -514,7 +567,43 @@ public class World implements Disposable {
         }
     }
 
-    public Mesh generateMeshBuildings() {
+    private WgMesh generateMeshProvinces(VertexAttributes vertexAttributes) {
+        float[] vertices = new float[] {
+            0, 0, 0, 0,
+            WORLD_WIDTH, 0, 1, 0,
+            WORLD_WIDTH, WORLD_HEIGHT, 1, 1,
+            0, WORLD_HEIGHT, 0, 1
+        };
+
+        short[] indices = new short[] {
+            0, 1, 2,
+            2, 3, 0
+        };
+
+        WgMesh mesh = new WgMesh(true, vertices.length / 4, indices.length, vertexAttributes);
+        mesh.setVertices(vertices);
+        mesh.setIndices(indices);
+
+        return mesh;
+    }
+
+    private WgMesh generateMeshMapLabels(VertexAttributes vertexAttributes, Map<String, String> localisation, LabelStylePool labelStylePool) {
+        MapLabel mapLabel = new MapLabel(labelStylePool.getLabelStyle("kart_60").font);
+        FloatList vertices = new FloatList();
+        ShortList indices = new ShortList();
+
+        for(Country country : this.countries) {
+            country.getLabelsData(LocalisationUtils.getCountryNameLocalisation(localisation, country.getId(), this.getColonizerId(country)), mapLabel, vertices, indices);
+        }
+
+        WgMesh mesh = new WgMesh(false, vertices.size() / 4, indices.size(), vertexAttributes);
+        mesh.setVertices(vertices.toArray());
+        mesh.setIndices(indices.toArray());
+
+        return mesh;
+    }
+
+    private WgMesh generateMeshBuildings(VertexAttributes vertexAttributes) {
         int numBuildings = 0;
 
         IntList provinceBuildingIds = this.provinceStore.getBuildingIds();
@@ -592,9 +681,7 @@ public class World implements Disposable {
             }
         }
 
-        Mesh mesh = new Mesh(true, vertices.length / 4, indices.length,
-            new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
-            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"));
+        WgMesh mesh = new WgMesh(true, vertices.length / 4, indices.length, vertexAttributes);
 
         mesh.setVertices(vertices);
         mesh.setIndices(indices);
@@ -641,7 +728,7 @@ public class World implements Disposable {
         indices[indexIndex] = vertexOffset;
     }
 
-    public Mesh generateMeshResources() {
+    private WgMesh generateMeshResources(VertexAttributes vertexAttributes) {
         int numProvinces = 0;
         IntList provinceResourceGoodIds = this.provinceStore.getResourceGoodIds();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
@@ -718,10 +805,7 @@ public class World implements Disposable {
             vertexOffset += 4;
         }
 
-        Mesh mesh = new Mesh(true, vertices.length / 6, indices.length,
-            new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
-            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"),
-            new VertexAttribute(VertexAttributes.Usage.Generic, 2, "a_center"));
+        WgMesh mesh = new WgMesh(true, vertices.length / 6, indices.length, false, vertexAttributes);
 
         mesh.setVertices(vertices);
         mesh.setIndices(indices);
@@ -729,129 +813,389 @@ public class World implements Disposable {
         return mesh;
     }
 
-    public MeshMultiDrawIndirect generateMeshRivers() {
-        RawMeshMultiDraw rawMesh = this.mapDao.readRiversMeshJson();
+    private WgMeshMulti generateMeshRivers(VertexAttributes vertexAttributes) {
+        RawMeshMulti rawMesh = this.mapDao.readRiversMeshJson();
 
-        MeshMultiDrawIndirect mesh = new MeshMultiDrawIndirect(true, rawMesh.getVertices().length / 5, 0,
-            new VertexAttribute(VertexAttributes.Usage.Position, 2, "a_position"),
-            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"),
-            new VertexAttribute(VertexAttributes.Usage.Generic, 1, "a_width"));
+        WgMeshMulti mesh = new WgMeshMulti(true, rawMesh.getVertices().length / 5, 0, vertexAttributes);
         mesh.setVertices(rawMesh.getVertices());
         mesh.setIndirectCommands(rawMesh.getStarts(), rawMesh.getCounts());
 
         return mesh;
     }
 
-    public void render(SpriteBatch batch, OrthographicCamera cam, float time) {
-        this.mapShader.bind();
-        this.provincesTexture.bind(0);
-        this.mapModeTexture.bind(1);
-        this.colorMapWaterTexture.bind(2);
-        this.waterTexture.bind(3);
-        this.terrainTexture.bind(4);
-        this.terrainSheetArray.bind(5);
-        this.colorMapTexture.bind(6);
-        this.provincesStripesTexture.bind(7);
-        this.stripesTexture.bind(8);
-        this.overlayTileTexture.bind(9);
-        this.defaultTexture.bind(10);
+    private Binder createBinderProvinces() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutProvinces());
 
-        this.mapShader.setUniformi("u_textureProvinces", 0);
-        this.mapShader.setUniformi("u_textureMapMode", 1);
-        this.mapShader.setUniformi("u_textureColorMapWater", 2);
-        this.mapShader.setUniformi("u_textureWaterNormal", 3);
-        this.mapShader.setUniformi("u_textureTerrain", 4);
-        this.mapShader.setUniformi("u_textureTerrainsheet", 5);
-        this.mapShader.setUniformi("u_textureColormap", 6);
-        this.mapShader.setUniformi("u_textureProvincesStripes", 7);
-        this.mapShader.setUniformi("u_textureStripes", 8);
-        this.mapShader.setUniformi("u_textureOverlayTile", 9);
-        this.mapShader.setUniformi("u_textureBorders", 10);
-        this.mapShader.setUniformf("u_zoom", cam.zoom);
-        this.mapShader.setUniformf("u_time", time);
-        this.mapShader.setUniformi("u_showTerrain", this.mapMode == MapMode.TERRAIN ? 1 : 0);
-        if(this.selectedProvince != null) {
-            int provinceIndex = this.provinceStore.getIndexById().get(this.selectedProvince.getId());
-            int color = this.provinceStore.getColors().get(provinceIndex);
-            float r = ((color >> 24) & 0xFF) / 255f;
-            float g = ((color >> 16) & 0xFF) / 255f;
-            float b = ((color >> 8) & 0xFF) / 255f;
-            float a = (color & 0xFF) / 255f;
-            this.mapShader.setUniformf("u_colorProvinceSelected", r, g, b, a);
-        } else {
-            this.mapShader.setUniformf("u_colorProvinceSelected", 0f, 0f, 0f, 0f);
-        }
-        this.mapShader.setUniformMatrix("u_projTrans", cam.combined);
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("textureProvinces", 0, 1);
+        binder.defineBinding("textureProvincesSampler", 0, 2);
+        binder.defineBinding("textureMapMode", 0, 3);
+        binder.defineBinding("textureMapModeSampler", 0, 4);
+        binder.defineBinding("textureColorMapWater", 0, 5);
+        binder.defineBinding("textureColorMapWaterSampler", 0, 6);
+        binder.defineBinding("textureWaterNormal", 0, 7);
+        binder.defineBinding("textureWaterNormalSampler", 0, 8);
+        binder.defineBinding("textureTerrain", 0, 9);
+        binder.defineBinding("textureTerrainSampler", 0, 10);
+        binder.defineBinding("textureTerrainsheet", 0, 11);
+        binder.defineBinding("textureTerrainsheetSampler", 0, 12);
+        binder.defineBinding("textureColormap", 0, 13);
+        binder.defineBinding("textureColormapSampler", 0, 14);
+        binder.defineBinding("textureProvincesStripes", 0, 15);
+        binder.defineBinding("textureProvincesStripesSampler", 0, 16);
+        binder.defineBinding("textureStripes", 0, 17);
+        binder.defineBinding("textureStripesSampler", 0, 18);
+        binder.defineBinding("textureOverlayTile", 0, 19);
+        binder.defineBinding("textureOverlayTileSampler", 0, 20);
 
-        batch.setShader(this.mapShader);
-        batch.begin();
-        batch.draw(this.provincesTexture, -WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
-        batch.draw(this.provincesTexture, 0, 0, WORLD_WIDTH, WORLD_HEIGHT);
-        batch.draw(this.provincesTexture, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT);
-        batch.setShader(null);
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
 
-        this.renderMeshRivers(cam, time);
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
 
-        this.fontShader.bind();
-        this.fontShader.setUniformf("u_zoom", cam.zoom);
-        batch.setShader(this.fontShader);
-        for(Country country : this.countries) {
-            for(MapLabel label : country.getLabels()) {
-                label.render(batch);
-            }
-        }
-        batch.setShader(null);
-        batch.end();
+        return binder;
+    }
+
+    private Binder createBinderMapLabels() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutMapLabels());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("texture", 0, 1);
+        binder.defineBinding("textureSampler", 0, 2);
+
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
+
+        return binder;
+    }
+
+    private Binder createBinderBuildings() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutBuildings());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("texture", 0, 1);
+        binder.defineBinding("textureSampler", 0, 2);
+
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
+
+        return binder;
+    }
+
+    private Binder createBinderResources() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutResources());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("texture", 0, 1);
+        binder.defineBinding("textureSampler", 0, 2);
+
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
+
+        return binder;
+    }
+
+    private Binder createBinderRivers() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutRivers());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("texture", 0, 1);
+        binder.defineBinding("textureSampler", 0, 2);
+        binder.defineBinding("textureColorMapWater", 0, 3);
+        binder.defineBinding("textureColorMapWaterSampler", 0, 4);
+
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
+
+        return binder;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayoutProvinces() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout provinces");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(3, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(4, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(5, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(6, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(7, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(8, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(9, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(10, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(11, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2DArray, false);
+        layout.addSampler(12, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(13, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(14, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(15, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(16, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(17, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(18, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(19, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(20, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayoutMapLabels() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout map labels");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayoutBuildings() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout buildings");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayoutResources() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout resources");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayoutRivers() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout rivers");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(3, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(4, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUPipeline createPipelineProvinces(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline";
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderProvinces.getPipelineLayout("pipeline layout provinces"), pipelineSpec);
+    }
+
+    private WebGPUPipeline createPipelineMapLabels(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline map labels";
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderMapLabels.getPipelineLayout("pipeline layout map labels"), pipelineSpec);
+    }
+
+    private WebGPUPipeline createPipelineBuildings(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline";
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderBuildings.getPipelineLayout("pipeline layout buildings"), pipelineSpec);
+    }
+
+    private WebGPUPipeline createPipelineResources(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline resources";
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderResources.getPipelineLayout("pipeline layout resources"), pipelineSpec);
+    }
+
+    private WebGPUPipeline createPipelineRivers(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline rivers";
+        pipelineSpec.topology = WGPUPrimitiveTopology.TriangleStrip;
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderRivers.getPipelineLayout("pipeline layout rivers"), pipelineSpec);
+    }
+
+    private void bindStaticTextures() {
+        this.binderProvinces.setTexture("textureProvinces", this.provincesTexture.getTextureView());
+        this.binderProvinces.setSampler("textureProvincesSampler", this.provincesTexture.getSampler());
+        this.binderProvinces.setTexture("textureMapMode", this.mapModeTexture.getTextureView());
+        this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
+        this.binderProvinces.setTexture("textureColorMapWater", this.colorMapWaterTexture.getTextureView());
+        this.binderProvinces.setSampler("textureColorMapWaterSampler", this.colorMapWaterTexture.getSampler());
+        this.binderProvinces.setTexture("textureWaterNormal", this.waterTexture.getTextureView());
+        this.binderProvinces.setSampler("textureWaterNormalSampler", this.waterTexture.getSampler());
+        this.binderProvinces.setTexture("textureTerrain", this.terrainTexture.getTextureView());
+        this.binderProvinces.setSampler("textureTerrainSampler", this.terrainTexture.getSampler());
+        this.binderProvinces.setTexture("textureTerrainsheet", this.terrainSheetArray.getTextureView());
+        this.binderProvinces.setSampler("textureTerrainsheetSampler", this.terrainSheetArray.getSampler());
+        this.binderProvinces.setTexture("textureColormap", this.colorMapTexture.getTextureView());
+        this.binderProvinces.setSampler("textureColormapSampler", this.colorMapTexture.getSampler());
+        this.binderProvinces.setTexture("textureProvincesStripes", this.provincesStripesTexture.getTextureView());
+        this.binderProvinces.setSampler("textureProvincesStripesSampler", this.provincesStripesTexture.getSampler());
+        this.binderProvinces.setTexture("textureStripes", this.stripesTexture.getTextureView());
+        this.binderProvinces.setSampler("textureStripesSampler", this.stripesTexture.getSampler());
+        this.binderProvinces.setTexture("textureOverlayTile", this.overlayTileTexture.getTextureView());
+        this.binderProvinces.setSampler("textureOverlayTileSampler", this.overlayTileTexture.getSampler());
+        this.binderProvinces.setUniform("worldWidth", (float) WORLD_WIDTH);
+        this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(0f, 0f, 0f, 0f));
+
+        this.binderMapLabels.setTexture("texture", ((WgTexture) this.fontMapLabelRegion.getTexture()).getTextureView());
+        this.binderMapLabels.setSampler("textureSampler", ((WgTexture) this.fontMapLabelRegion.getTexture()).getSampler());
+        this.binderMapLabels.setUniform("worldWidth", (float) WORLD_WIDTH);
+
+        this.binderBuildings.setTexture("texture", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getTextureView());
+        this.binderBuildings.setSampler("textureSampler", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getSampler());
+        this.binderBuildings.setUniform("worldWidth", (float) WORLD_WIDTH);
+
+        this.binderResources.setTexture("texture", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getTextureView());
+        this.binderResources.setSampler("textureSampler", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getSampler());
+        this.binderResources.setUniform("worldWidth", (float) WORLD_WIDTH);
+
+        this.binderRivers.setTexture("texture", this.riverBodyTexture.getTextureView());
+        this.binderRivers.setSampler("textureSampler", this.riverBodyTexture.getSampler());
+        this.binderRivers.setTexture("textureColorMapWater", this.colorMapWaterTexture.getTextureView());
+        this.binderRivers.setSampler("textureColorMapWaterSampler", this.colorMapWaterTexture.getSampler());
+        this.binderRivers.setUniform("worldWidth", (float) WORLD_WIDTH);
+        this.uniformBufferWorld.flush();
+    }
+
+    public void render(WgProjection projection, OrthographicCamera cam, float time) {
+        this.binderProvinces.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderProvinces.setUniform("zoom", cam.zoom);
+        this.binderProvinces.setUniform("time", time);
+        this.binderMapLabels.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderMapLabels.setUniform("zoom", cam.zoom);
+        this.binderBuildings.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderResources.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderResources.setUniform("zoom", cam.zoom);
+        this.binderRivers.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderRivers.setUniform("zoom", cam.zoom);
+        this.binderRivers.setUniform("time", time);
+        this.uniformBufferWorld.flush();
+
+        this.renderMeshProvinces();
+        this.renderMeshRivers();
+        this.renderMeshMapLabels();
         if(cam.zoom <= 0.8f) {
-            this.renderMeshBuildings(cam);
+            this.renderMeshBuildings();
         }
         if(this.mapMode == MapMode.RESOURCES && cam.zoom <= 0.8f) {
-            this.renderMeshResources(cam);
+            this.renderMeshResources();
         }
     }
 
-    private void renderMeshBuildings(OrthographicCamera cam) {
-        this.elementShader.bind();
-        this.mapElementsTextureAtlas.getTextures().first().bind(0);
-        this.elementShader.setUniformi("u_texture", 0);
-        this.elementShader.setUniformMatrix("u_projTrans", cam.combined);
-        this.elementShader.setUniformi("u_worldWidth", WORLD_WIDTH);
-        this.meshBuildings.bind(this.elementShader);
-        Gdx.gl.glEnable(GL32.GL_BLEND);
-        Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
-        Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshBuildings.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
-        this.meshBuildings.unbind(this.elementShader);
+    private void renderMeshProvinces() {
+        WebGPURenderPass pass = RenderPassBuilder.create("Provinces pass");
+        pass.setPipeline(this.pipelineProvinces);
+        this.binderProvinces.bindGroup(pass, 0);
+
+        this.meshProvinces.render(pass, GL20.GL_TRIANGLES, 0, this.meshProvinces.getNumIndices(), 3, 0);
+
+        pass.end();
     }
 
-    private void renderMeshResources(OrthographicCamera cam) {
-        this.elementScaleShader.bind();
-        this.mapElementsTextureAtlas.getTextures().first().bind(0);
-        this.elementScaleShader.setUniformi("u_texture", 0);
-        this.elementScaleShader.setUniformMatrix("u_projTrans", cam.combined);
-        this.elementScaleShader.setUniformf("u_zoom", cam.zoom);
-        this.elementScaleShader.setUniformi("u_worldWidth", WORLD_WIDTH);
-        this.meshResources.bind(this.elementScaleShader);
-        Gdx.gl.glEnable(GL32.GL_BLEND);
-        Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
-        Gdx.gl32.glDrawElementsInstanced(GL32.GL_TRIANGLES, this.meshResources.getNumIndices(), GL32.GL_UNSIGNED_SHORT, 0, 3);
-        this.meshResources.unbind(this.elementScaleShader);
+    private void renderMeshMapLabels() {
+        WebGPURenderPass pass = RenderPassBuilder.create("Map labels pass");
+        pass.setPipeline(this.pipelineMapLabels);
+        this.binderMapLabels.bindGroup(pass, 0);
+
+        this.meshMapLabels.render(pass, GL20.GL_TRIANGLES, 0, this.meshMapLabels.getNumIndices(), 3, 0);
+
+        pass.end();
     }
 
-    private void renderMeshRivers(OrthographicCamera cam, float time) {
-        this.riverShader.bind();
-        this.riverBodyTexture.bind(0);
-        this.colorMapWaterTexture.bind(1);
-        this.riverShader.setUniformi("u_texture", 0);
-        this.riverShader.setUniformi("u_textureColorMapWater", 1);
-        this.riverShader.setUniformf("u_time", time);
-        this.riverShader.setUniformMatrix("u_projTrans", cam.combined);
-        this.riverShader.setUniformi("u_worldWidth", WORLD_WIDTH);
-        this.riverShader.setUniformf("u_zoom", cam.zoom);
-        this.meshRivers.bind(this.riverShader);
-        Gdx.gl.glEnable(GL32.GL_BLEND);
-        Gdx.gl.glBlendFunc(GL32.GL_SRC_ALPHA, GL32.GL_ONE_MINUS_SRC_ALPHA);
-        GL43.glMultiDrawArraysIndirect(GL43.GL_TRIANGLE_STRIP, 0, this.meshRivers.getCommandCount(), 0);
-        this.meshRivers.unbind(this.riverShader);
+    private void renderMeshBuildings() {
+        WebGPURenderPass pass = RenderPassBuilder.create("Buildings pass");
+        pass.setPipeline(this.pipelineBuildings);
+        this.binderBuildings.bindGroup(pass, 0);
+
+        this.meshBuildings.render(pass, GL20.GL_TRIANGLES, 0, this.meshBuildings.getNumIndices(), 3, 0);
+
+        pass.end();
+    }
+
+    private void renderMeshResources() {
+        WebGPURenderPass pass = RenderPassBuilder.create("Resources pass");
+        pass.setPipeline(this.pipelineResources);
+        this.binderResources.bindGroup(pass, 0);
+
+        this.meshResources.render(pass, GL20.GL_TRIANGLES, 0, this.meshResources.getNumIndices(), 3, 0);
+
+        pass.end();
+    }
+
+    private void renderMeshRivers() {
+        WebGPURenderPass pass = RenderPassBuilder.create("Rivers pass");
+        pass.setPipeline(this.pipelineRivers);
+        this.binderRivers.bindGroup(pass, 0);
+
+        this.meshRivers.render(pass, GL20.GL_TRIANGLE_STRIP, this.meshRivers.getNumIndices(), 0, 3, 0);
+
+        pass.end();
     }
 
     @Override
@@ -865,18 +1209,23 @@ public class World implements Disposable {
         this.stripesTexture.dispose();
         this.overlayTileTexture.dispose();
         this.colorMapTexture.dispose();
-        this.defaultTexture.dispose();
         this.terrainSheetArray.dispose();
         this.mapModePixmap.dispose();
         this.provincesPixmap.dispose();
-        this.mapShader.dispose();
-        this.fontShader.dispose();
-        this.elementScaleShader.dispose();
-        this.meshResources.dispose();
-        this.meshBuildings.dispose();
+        this.provincesColorStripesPixmap.dispose();
         this.mapElementsTextureAtlas.dispose();
-        this.elementShader.dispose();
-        this.riverShader.dispose();
-        this.meshRivers.dispose();
+        this.meshProvinces.dispose();
+        this.meshMapLabels.dispose();
+        this.meshBuildings.dispose();
+        this.meshResources.dispose();
+        this.binderProvinces.dispose();
+        this.binderMapLabels.dispose();
+        this.binderBuildings.dispose();
+        this.binderResources.dispose();
+        this.uniformBufferWorld.dispose();
+        this.pipelineProvinces.dispose();
+        this.pipelineMapLabels.dispose();
+        this.pipelineBuildings.dispose();
+        this.pipelineResources.dispose();
     }
 }

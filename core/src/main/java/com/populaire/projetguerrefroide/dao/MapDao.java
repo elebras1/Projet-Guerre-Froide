@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.dao;
 
-import com.populaire.projetguerrefroide.entity.RawMeshMultiDraw;
+import com.populaire.projetguerrefroide.entity.RawMeshMulti;
 
 public interface MapDao {
-    RawMeshMultiDraw readRiversMeshJson();
+    RawMeshMulti readRiversMeshJson();
 }
