@@ -141,7 +141,7 @@ public class World implements Disposable {
         this.overlayTileTexture.setWrap(WgTexture.TextureWrap.Repeat, WgTexture.TextureWrap.Repeat);
         this.riverBodyTexture = new WgTexture("map/terrain/river.png");
         this.riverBodyTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        this.terrainSheetArray = new WgTextureArray(terrainTextureFiles);
+        this.terrainSheetArray = new WgTextureArray(true, false, terrainTextureFiles);
         this.mapElementsTextureAtlas = new WgTextureAtlas(Gdx.files.internal("map/elements/map_elements.atlas"));
         this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
         this.fontMapLabelRegion = gameContext.getLabelStylePool().getLabelStyle("kart_60").font.getRegion();
