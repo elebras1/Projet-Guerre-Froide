@@ -51,12 +51,14 @@ public class ConfigurationService {
     }
 
     public void loadMainMenuLocalisation(GameContext gameContext) {
+        this.setLanguage(gameContext);
         gameContext.putAllLocalisation(this.localisationDao.readMainMenuCsv());
         gameContext.putAllLocalisation(this.localisationDao.readCountriesCsv());
 
     }
 
     public void loadNewGameLocalisation(GameContext gameContext) {
+        this.setLanguage(gameContext);
         gameContext.putAllLocalisation(this.localisationDao.readNewgameCsv());
         gameContext.putAllLocalisation(this.localisationDao.readBookmarkCsv());
         gameContext.putAllLocalisation(this.localisationDao.readPoliticsCsv());
@@ -67,6 +69,7 @@ public class ConfigurationService {
     }
 
     public void loadGameLocalisation(GameContext gameContext) {
+        this.setLanguage(gameContext);
         gameContext.putAllLocalisation(this.localisationDao.readPoliticsCsv());
         gameContext.putAllLocalisation(this.localisationDao.readMainMenuInGameCsv());
         gameContext.putAllLocalisation(this.localisationDao.readPopupCsv());
@@ -74,6 +77,10 @@ public class ConfigurationService {
         gameContext.putAllLocalisation(this.localisationDao.readRegionsCsv());
         gameContext.putAllLocalisation(this.localisationDao.readLanguageCsv());
         gameContext.putAllLocalisation(this.localisationDao.readInterfaceCsv());
+    }
+
+    private void setLanguage(GameContext gameContext) {
+        this.localisationDao.setLanguage(gameContext.getSettings().getLanguage());
     }
 
     public void saveSettings(Settings settings) {

@@ -77,7 +77,7 @@ public class LocalisationDaoImpl implements LocalisationDao {
 
     @Override
     public Map<String, String> readRegionsCsv() {
-        return this.readLocalisationCsv("ENGLISH", this.regionsCsvFile);
+        return this.readLocalisationCsv(this.language, this.regionsCsvFile);
     }
 
     @Override
