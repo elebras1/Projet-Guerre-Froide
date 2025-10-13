@@ -27,6 +27,7 @@ public class MapLabel {
         int[] farthestPoints = this.getFarthestPoints(convexHull);
         GlyphLayout layout = new GlyphLayout();
         layout.setText(this.font, label);
+        System.out.println("/n " + label);
         float fontScale = this.getFontScale(layout, farthestPoints, centroid);
         List<CurvePoint> points = this.calculateQuadraticBezierCurve(label, farthestPoints, centroid);
         this.setPointsOrigin(layout, fontScale, points);
@@ -322,7 +323,9 @@ public class MapLabel {
 
     private void setPointsOrigin(GlyphLayout layout, float fontScale, List<CurvePoint> points) {
         float glyphHeight = layout.height * fontScale;
-        for (int i = 0; i < points.size(); i++) {
+        int processCount = Math.min(points.size(), layout.runs.first().glyphs.size);
+
+        for (int i = 0; i < processCount; i++) {
             BitmapFont.Glyph glyph = layout.runs.first().glyphs.get(i);
             float glyphWidth = glyph.width * fontScale;
 
