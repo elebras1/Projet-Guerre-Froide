@@ -27,7 +27,6 @@ public class MapLabel {
         int[] farthestPoints = this.getFarthestPoints(convexHull);
         GlyphLayout layout = new GlyphLayout();
         layout.setText(this.font, label);
-        System.out.println("/n " + label);
         float fontScale = this.getFontScale(layout, farthestPoints, centroid);
         List<CurvePoint> points = this.calculateQuadraticBezierCurve(label, farthestPoints, centroid);
         this.setPointsOrigin(layout, fontScale, points);
