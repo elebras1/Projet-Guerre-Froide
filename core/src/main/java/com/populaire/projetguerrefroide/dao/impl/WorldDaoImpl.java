@@ -8,7 +8,6 @@ import com.populaire.projetguerrefroide.adapter.dsljson.JsonMapper;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.builder.*;
-import com.populaire.projetguerrefroide.economy.Economy;
 import com.populaire.projetguerrefroide.economy.building.*;
 import com.populaire.projetguerrefroide.economy.good.*;
 import com.populaire.projetguerrefroide.economy.population.PopulationTemplateStore;
@@ -98,16 +97,13 @@ public class WorldDaoImpl implements WorldDao {
         RegionStoreBuilder regionStoreBuilder = new RegionStoreBuilder();
         ProvinceStore provinceStore = this.loadProvinces(regionStoreBuilder, countries, provincesByColor, waterProvincesByColor, governments, nationalIdeas, ideologies, goodIds, buildingIds, populationTypeIds, terrains, lawGroups);
         RegionStore regionStore = regionStoreBuilder.build();
-        short maxProvinceId = this.getMaxdId(provincesByColor);
         Politics politics = new Politics(ideologies, ministers, leaders, ministerTypes, governments, lawGroups, (byte) baseEnactmentDaysLaw.get());
-        Economy economy = new Economy(maxProvinceId, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, goodIds, buildingIds, populationTypeIds, productionTypeIds, employeeIds);
 
         AtomicReference<World> worldRef = new AtomicReference<>();
         final CountDownLatch latch = new CountDownLatch(1);
 
         Gdx.app.postRunnable(() -> {
-            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, modifierStoreBuilder.build(), economy, politics, nationalIdeas, terrains, gameContext));
-            latch.countDown();
+            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, modifierStoreBuilder.build(), buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, politics, nationalIdeas, terrains, gameContext));            latch.countDown();
         });
 
         try {
@@ -1245,16 +1241,6 @@ public class WorldDaoImpl implements WorldDao {
         int blue = (int) colorValueIterator.next().asLong();
         int alpha = 255;
         return (red << 24) | (green << 16) | (blue << 8) | alpha;
-    }
-
-    private short getMaxdId(IntObjectMap<LandProvince> provinces) {
-        short maxId = 0;
-        for (Province province : provinces.values()) {
-            if (province.getId() > maxId) {
-                maxId = province.getId();
-            }
-        }
-        return maxId;
     }
 }
 
