@@ -56,7 +56,9 @@ public class ProvinceStore {
         this.religionStarts = religionStarts;
         this.religionCounts = religionCounts;
         this.resourceGoodsSize = new IntList(resourceGoodIds.size());
+        this.resourceGoodsSize.setSize(resourceGoodIds.size());
         this.resourceGoodsProduction = new FloatList(resourceGoodIds.size());
+        this.resourceGoodsProduction.setSize(resourceGoodIds.size());
     }
 
     public IntIntMap getIndexById() {

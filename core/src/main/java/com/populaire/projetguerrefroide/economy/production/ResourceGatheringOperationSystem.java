@@ -10,7 +10,7 @@ import com.populaire.projetguerrefroide.map.ProvinceStore;
 public class ResourceGatheringOperationSystem {
 
     public void initialiazeSize(ProvinceStore provinceStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore) {
-        int[] provinceResourceGoodsSize = provinceStore.getResourceGoodsSize().items;
+        IntList provinceResourceGoodsSize = provinceStore.getResourceGoodsSize();
 
         IntList provinceResourceGoodIds = provinceStore.getResourceGoodIds();
         IntList goodProductionTypeIds = goodStore.getProductionTypeIds();
@@ -29,7 +29,7 @@ public class ResourceGatheringOperationSystem {
         for (int provinceId = 0; provinceId < provinceStore.getIds().size(); provinceId++) {
             int resourceGoodId = provinceResourceGoodIds.get(provinceId);
             if (resourceGoodId == -1) {
-                provinceResourceGoodsSize[provinceId] = -1;
+                provinceResourceGoodsSize.set(provinceId, -1);
                 continue;
             }
 
@@ -56,13 +56,15 @@ public class ResourceGatheringOperationSystem {
             int size = (workerInProvince + workforce - 1) / workforce;
             size = (int)(size * 1.5f);
 
-            provinceResourceGoodsSize[provinceId] = size;
+            provinceResourceGoodsSize.set(provinceId, size);
         }
-        provinceStore.getResourceGoodsSize().setSize(provinceStore.getIds().size());
+    }
+
+    public void hire(ProvinceStore provinceStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore) {
     }
 
     public void produce(ProvinceStore provinceStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore) {
-        float[] provinceResourceGoodsProductions = provinceStore.getResourceGoodsProduction().items;
+        FloatList provinceResourceGoodsProductions = provinceStore.getResourceGoodsProduction();
 
         IntList provinceResourceGoodsSize = provinceStore.getResourceGoodsSize();
         IntList provinceResourceGoodIds = provinceStore.getResourceGoodIds();
@@ -72,15 +74,22 @@ public class ResourceGatheringOperationSystem {
             int provinceResourceGoodSize = provinceResourceGoodsSize.get(provinceId);
             int resourceGoodId = provinceResourceGoodIds.get(provinceId);
             if (resourceGoodId == -1) {
-                provinceResourceGoodsProductions[provinceId] = -1;
+                provinceResourceGoodsProductions.set(provinceId, -1);
                 continue;
             }
 
             float goodProductionValue = goodProductionValues.get(resourceGoodId);
 
             float baseProduction = provinceResourceGoodSize * goodProductionValue;
-            provinceResourceGoodsProductions[provinceId] = baseProduction;
+            provinceResourceGoodsProductions.set(provinceId, baseProduction);
         }
-        provinceStore.getResourceGoodsProduction().setSize(provinceStore.getIds().size());
+    }
+
+    private int getMaxWorkers(ProvinceStore provinceStore, ProductionTypeStore productionTypeStore, GoodStore goodStore, int provinceId) {
+        int resourceGoodSize = provinceStore.getResourceGoodsSize().get(provinceId);
+        int resourceGoodId = provinceStore.getResourceGoodIds().get(provinceId);
+        int productionTypeId = goodStore.getProductionTypeIds().get(resourceGoodId);
+        int workforce = productionTypeStore.getWorkforces().get(productionTypeId);
+        return resourceGoodSize * workforce;
     }
 }
