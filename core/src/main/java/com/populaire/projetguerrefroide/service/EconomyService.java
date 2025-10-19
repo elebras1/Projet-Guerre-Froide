@@ -16,8 +16,12 @@ public class EconomyService {
         this.rgoSystem.initialiazeSize(this.worldContext.getProvinceStore(), this.worldContext.getGoodStore(), this.worldContext.getProductionTypeStore(), this.worldContext.getEmployeeStore());
     }
 
+    public void hire() {
+        this.rgoSystem.hire(this.worldContext.getProvinceStore(), this.worldContext.getGoodStore(), this.worldContext.getProductionTypeStore(), this.worldContext.getEmployeeStore());
+    }
+
     public void produce() {
-        this.rgoSystem.produce(this.worldContext.getProvinceStore(), this.worldContext.getGoodStore(), this.worldContext.getProductionTypeStore(), this.worldContext.getEmployeeStore());
+        this.rgoSystem.produce(this.worldContext.getProvinceStore(), this.worldContext.getGoodStore(), this.worldContext.getProductionTypeStore());
     }
 
     public float getResourceGoodsProduction(short provinceId) {

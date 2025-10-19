@@ -12,6 +12,7 @@ import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.util.LabelUtils;
+import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.List;
 import java.util.Map;
@@ -207,7 +208,7 @@ public class ProvincePanel extends Table {
         if(resourceProduced == -1f) {
             this.resourceProduced.setText("-");
         } else {
-            this.resourceProduced.setText(String.valueOf(resourceProduced));
+            this.resourceProduced.setText(ValueFormatter.formatValue(resourceProduced));
         }
         this.resourceProduced.setPosition(136 - this.resourceProduced.getMinWidth(), 178);
     }

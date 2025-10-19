@@ -212,6 +212,7 @@ public class WorldService implements DateListener {
 
     @Override
     public void onNewDay(LocalDate date) {
+        this.economyService.hire();
         this.economyService.produce();
     }
 

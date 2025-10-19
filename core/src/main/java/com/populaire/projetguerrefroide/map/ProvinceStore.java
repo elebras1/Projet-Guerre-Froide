@@ -30,6 +30,7 @@ public class ProvinceStore {
     private final IntList religionCounts;
     private final IntList resourceGoodsSize;
     private final FloatList resourceGoodsProduction;
+    private final IntList resourceGoodsPopulationHireValues;
 
     public ProvinceStore(IntIntMap indexById, IntList ids, IntList colors, IntList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, IntList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, IntList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, IntList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
         this.indexById = indexById;
@@ -59,6 +60,8 @@ public class ProvinceStore {
         this.resourceGoodsSize.setSize(resourceGoodIds.size());
         this.resourceGoodsProduction = new FloatList(resourceGoodIds.size());
         this.resourceGoodsProduction.setSize(resourceGoodIds.size());
+        this.resourceGoodsPopulationHireValues = new IntList(populationTypeIds.size());
+        this.resourceGoodsPopulationHireValues.setSize(populationTypeIds.size());
     }
 
     public IntIntMap getIndexById() {
@@ -159,6 +162,10 @@ public class ProvinceStore {
 
     public FloatList getResourceGoodsProduction() {
         return this.resourceGoodsProduction;
+    }
+
+    public IntList getResourceGoodsPopulationHireValues() {
+        return this.resourceGoodsPopulationHireValues;
     }
 
     public int getPopulationAmount(int provinceId) {

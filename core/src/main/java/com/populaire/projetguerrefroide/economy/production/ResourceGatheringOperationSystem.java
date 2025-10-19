@@ -61,14 +61,70 @@ public class ResourceGatheringOperationSystem {
     }
 
     public void hire(ProvinceStore provinceStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore) {
+        IntList provinceResourceGoodsPopulationHireValues = provinceStore.getResourceGoodsPopulationHireValues();
+        IntList provinceResourceGoodIds = provinceStore.getResourceGoodIds();
+
+        IntList goodProductionTypeIds = goodStore.getProductionTypeIds();
+        IntList productionTypeEmployeeStarts = productionTypeStore.getEmployeeStarts();
+        IntList productionTypeEmployeeCounts = productionTypeStore.getEmployeeCounts();
+        IntList productionTypeEmployeeIds = productionTypeStore.getEmployeeIds();
+
+        IntList employeePopulationTypeIds = employeeStore.getPopulationTypeIds();
+        FloatList employeeAmounts = employeeStore.getAmounts();
+
+        IntList provincePopulationTypeIds = provinceStore.getPopulationTypeIds();
+        IntList provincePopulationTypeStarts = provinceStore.getPopulationTypeStarts();
+        IntList provincePopulationTypeCounts = provinceStore.getPopulationTypeCounts();
+        IntList provincePopulationTypeValues = provinceStore.getPopulationTypeValues();
+
+        for (int provinceId = 0; provinceId < provinceStore.getIds().size(); provinceId++) {
+            int resourceGoodId = provinceResourceGoodIds.get(provinceId);
+
+            if (resourceGoodId == -1) {
+                continue;
+            }
+
+            int productionTypeId = goodProductionTypeIds.get(resourceGoodId);
+            int maxWorkers = getMaxWorkers(provinceStore, productionTypeStore, goodStore, provinceId);
+
+            int employeeStart = productionTypeEmployeeStarts.get(productionTypeId);
+            int employeeCount = productionTypeEmployeeCounts.get(productionTypeId);
+
+            int populationTypeStart = provincePopulationTypeStarts.get(provinceId);
+            int populationTypeCount = provincePopulationTypeCounts.get(provinceId);
+
+            for (int popIndex = populationTypeStart; popIndex < populationTypeStart + populationTypeCount; popIndex++) {
+                int popTypeId = provincePopulationTypeIds.get(popIndex);
+                int popTypeValue = provincePopulationTypeValues.get(popIndex);
+
+                int hiredForThisPop = 0;
+
+                for (int employeeIndex = employeeStart; employeeIndex < employeeStart + employeeCount; employeeIndex++) {
+                    int employeeId = productionTypeEmployeeIds.get(employeeIndex);
+                    int requiredPopTypeId = employeePopulationTypeIds.get(employeeId);
+
+                    if (requiredPopTypeId == popTypeId) {
+                        float ratio = employeeAmounts.get(employeeId);
+                        int neededForThisType = (int)(maxWorkers * ratio);
+                        hiredForThisPop = Math.min(popTypeValue, neededForThisType);
+                        break;
+                    }
+                }
+
+                provinceResourceGoodsPopulationHireValues.set(popIndex, hiredForThisPop);
+            }
+        }
     }
 
-    public void produce(ProvinceStore provinceStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore) {
+    public void produce(ProvinceStore provinceStore, GoodStore goodStore, ProductionTypeStore productionTypeStore) {
         FloatList provinceResourceGoodsProductions = provinceStore.getResourceGoodsProduction();
 
         IntList provinceResourceGoodsSize = provinceStore.getResourceGoodsSize();
         IntList provinceResourceGoodIds = provinceStore.getResourceGoodIds();
         FloatList goodProductionValues = goodStore.getValues();
+
+        IntList provincePopulationTypeStarts = provinceStore.getPopulationTypeStarts();
+        IntList provincePopulationTypeCounts = provinceStore.getPopulationTypeCounts();
 
         for (int provinceId = 0; provinceId < provinceStore.getIds().size(); provinceId++) {
             int provinceResourceGoodSize = provinceResourceGoodsSize.get(provinceId);
@@ -81,7 +137,18 @@ public class ResourceGatheringOperationSystem {
             float goodProductionValue = goodProductionValues.get(resourceGoodId);
 
             float baseProduction = provinceResourceGoodSize * goodProductionValue;
-            provinceResourceGoodsProductions.set(provinceId, baseProduction);
+
+            int totalWorkers = 0;
+            int populationTypeStart = provincePopulationTypeStarts.get(provinceId);
+            int populationTypeCount = provincePopulationTypeCounts.get(provinceId);
+            for (int popIndex = populationTypeStart; popIndex < populationTypeStart + populationTypeCount; popIndex++) {
+                totalWorkers += provinceStore.getResourceGoodsPopulationHireValues().get(popIndex);
+            }
+
+            float throughput = (float) totalWorkers / getMaxWorkers(provinceStore, productionTypeStore, goodStore, provinceId);
+            float production = baseProduction * throughput;
+
+            provinceResourceGoodsProductions.set(provinceId, production);
         }
     }
 
