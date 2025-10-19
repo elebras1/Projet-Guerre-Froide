@@ -19,17 +19,20 @@ import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevelDto;
 import com.populaire.projetguerrefroide.politics.AllianceType;
 import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
+import com.populaire.projetguerrefroide.screen.DateListener;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
-public class WorldService {
+public class WorldService implements DateListener {
     private final AsyncExecutor asyncExecutor;
     private final WorldDao worldDao;
     private World world;
     private final ObjectIntOrderedMap<String> elementPercentages;
+    private EconomyService economyService;
 
     public WorldService() {
         this.asyncExecutor = new AsyncExecutor(2);
@@ -39,6 +42,7 @@ public class WorldService {
 
     public void createWorld(GameContext gameContext) {
         this.world = this.worldDao.createWorldThreadSafe(gameContext);
+        this.economyService = new EconomyService(this.world);
     }
 
     public AsyncExecutor getAsyncExecutor() {
@@ -47,6 +51,10 @@ public class WorldService {
 
     public void renderWorld(WgProjection projection, OrthographicCamera cam, float time) {
         this.world.render(projection, cam, time);
+    }
+
+    public void initializeEconomy() {
+        this.economyService.initialize();
     }
 
     public boolean selectProvince(short x, short y) {
@@ -138,12 +146,13 @@ public class WorldService {
         String countryId = selectedProvince.getCountryOwner().getId();
         String colonizerId = this.world.getColonizerId(selectedProvince.getCountryOwner());
         List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
+        float resourceProduced = this.economyService.getResourceGoodsProduction(selectedProvince.getId());
         List<String> provinceIdsRegion = this.getProvinceIdsOrderByPopulation(region);
         DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(region);
         List<String> specialBuildings = this.getSpecialBuildingNames(region);
         List<String> colorsBuilding = this.getColorBuildingsOrderByLevel(region);
 
-        return new ProvinceDto(provinceId, regionId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, numberIndustryRegion, countryId, colonizerId, flagCountriesCore, 0f, 0, 0, populationProvince, 0f, 0f, provinceIdsRegion, developmentBuildingLevel, specialBuildings, colorsBuilding);
+        return new ProvinceDto(provinceId, regionId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, numberIndustryRegion, countryId, colonizerId, flagCountriesCore, resourceProduced, 0, 0, populationProvince, 0f, 0f, provinceIdsRegion, developmentBuildingLevel, specialBuildings, colorsBuilding);
     }
 
     public void changeMapMode(String mapMode) {
@@ -191,6 +200,19 @@ public class WorldService {
         LandProvince province = this.world.getProvince(x, y);
         Country country = province.getCountryOwner();
         return this.world.getColonizerId(country);
+    }
+
+    public float getResourceGoodsProduction() {
+        LandProvince selectedProvince = this.world.getSelectedProvince();
+        if(selectedProvince == null) {
+            return -1;
+        }
+        return this.economyService.getResourceGoodsProduction(selectedProvince.getId());
+    }
+
+    @Override
+    public void onNewDay(LocalDate date) {
+        this.economyService.produce();
     }
 
     private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(IntList provinceElementIds, IntList provinceElementValues, int startIndex, int endIndex, List<String> elementNames, int amountAdults) {
@@ -420,7 +442,7 @@ public class WorldService {
         return allies;
     }
 
-    public Minister getHeadOfState(Country country) {
+    private Minister getHeadOfState(Country country) {
         Minister headOfState = null;
         if(country.getHeadOfStateId() != -1) {
             headOfState = this.world.getPolitics().getMinister(country.getHeadOfStateId());

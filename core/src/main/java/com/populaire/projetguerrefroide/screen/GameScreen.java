@@ -65,7 +65,9 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.gameContext = gameContext;
         this.worldService = worldService;
         this.configurationService = configurationService;
-        this.dateService = new DateService(this.gameContext.getBookmark().getDate(), this);
+        this.dateService = new DateService(this.gameContext.getBookmark().getDate());
+        this.dateService.addListener(this.worldService);
+        this.dateService.addListener(this);
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.projection = new WgProjection();
         int capitalPosition = this.worldService.getPositionOfCapitalOfSelectedCountry();
@@ -94,6 +96,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new WgCustomStage(new WgScreenViewport(), this.skinUi, this.skinFlags);
         this.initializeUi();
+        this.worldService.initializeEconomy();
         this.dateService.initialize();
 
         this.paused = false;
@@ -187,6 +190,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     @Override
     public void onNewDay(LocalDate date) {
         this.topBar.setDate(DateUtils.formatDate(date, this.gameContext.getLocalisation(), this.gameContext.getSettings().getLanguage()));
+        this.provincePanel.setResourceProduced(this.worldService.getResourceGoodsProduction());
     }
 
     @Override

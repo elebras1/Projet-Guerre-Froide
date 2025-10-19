@@ -41,7 +41,7 @@ import java.util.*;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class World implements Disposable {
+public class World implements WorldContext, Disposable {
     private final MapDaoImpl mapDao;
     private final List<Country> countries;
     private final IntObjectMap<LandProvince> provinces;
@@ -183,34 +183,42 @@ public class World implements Disposable {
 
     }
 
+    @Override
     public ProvinceStore getProvinceStore() {
         return this.provinceStore;
     }
 
+    @Override
     public RegionStore getRegionStore() {
         return this.regionStore;
     }
 
+    @Override
     public BuildingStore getBuildingStore() {
         return this.buildingStore;
     }
 
+    @Override
     public ProductionTypeStore getProductionTypeStore() {
         return this.productionTypeStore;
     }
 
+    @Override
     public GoodStore getGoodStore() {
         return this.goodStore;
     }
 
+    @Override
     public EmployeeStore getEmployeeStore() {
         return this.employeeStore;
     }
 
+    @Override
     public Politics getPolitics() {
         return this.politics;
     }
 
+    @Override
     public NationalIdeas getNationalIdeas() {
         return  this.nationalIdeas;
     }
@@ -443,7 +451,7 @@ public class World implements Disposable {
         }
     }
 
-    public void updatePixmapTerrain2Color() {
+    private void updatePixmapTerrain2Color() {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);

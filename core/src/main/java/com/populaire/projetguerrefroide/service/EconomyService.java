@@ -1,27 +1,27 @@
 package com.populaire.projetguerrefroide.service;
 
-import com.populaire.projetguerrefroide.economy.building.EmployeeStore;
-import com.populaire.projetguerrefroide.economy.building.ProductionTypeStore;
-import com.populaire.projetguerrefroide.economy.good.GoodStore;
 import com.populaire.projetguerrefroide.economy.production.ResourceGatheringOperationSystem;
-import com.populaire.projetguerrefroide.map.ProvinceStore;
+import com.populaire.projetguerrefroide.map.WorldContext;
 
 public class EconomyService {
-    private final ProvinceStore provinceStore;
-    private final GoodStore goodStore;
-    private final ProductionTypeStore productionTypeStore;
-    private final EmployeeStore employeeStore;
-    private final ResourceGatheringOperationSystem rgoSystem;
+    private final WorldContext worldContext;
+    private ResourceGatheringOperationSystem rgoSystem;
 
-    public EconomyService(ProvinceStore provinceStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore) {
-        this.provinceStore = provinceStore;
-        this.goodStore = goodStore;
-        this.productionTypeStore = productionTypeStore;
-        this.employeeStore = employeeStore;
+    public EconomyService(WorldContext worldContext) {
+        this.worldContext = worldContext;
         this.rgoSystem = new ResourceGatheringOperationSystem();
     }
 
     public void initialize() {
-        this.rgoSystem.initialiaseSize(this.provinceStore, this.goodStore, this.productionTypeStore, this.employeeStore);
+        this.rgoSystem.initialiazeSize(this.worldContext.getProvinceStore(), this.worldContext.getGoodStore(), this.worldContext.getProductionTypeStore(), this.worldContext.getEmployeeStore());
+    }
+
+    public void produce() {
+        this.rgoSystem.produce(this.worldContext.getProvinceStore(), this.worldContext.getGoodStore(), this.worldContext.getProductionTypeStore(), this.worldContext.getEmployeeStore());
+    }
+
+    public float getResourceGoodsProduction(short provinceId) {
+        int provinceIndex = this.worldContext.getProvinceStore().getIndexById().get(provinceId);
+        return this.worldContext.getProvinceStore().getResourceGoodsProduction().get(provinceIndex);
     }
 }

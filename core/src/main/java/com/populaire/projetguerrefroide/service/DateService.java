@@ -1,8 +1,10 @@
 package com.populaire.projetguerrefroide.service;
 
+import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.screen.DateListener;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class DateService {
     private int speed;
@@ -10,14 +12,18 @@ public class DateService {
     private LocalDate date;
     private double accumulator;
     private static final double[] DAYS_PER_SECOND = {0.0, 0.5, 1.0, 2.0, 5.0, 10.0};
-    private final DateListener dateListener;
+    private final List<DateListener> dateListeners;
 
-    public DateService(LocalDate startDate, DateListener dateListener) {
+    public DateService(LocalDate startDate) {
         this.speed = 1;
         this.paused = true;
         this.date = startDate;
         this.accumulator = 0.0;
-        this.dateListener = dateListener;
+        this.dateListeners = new ObjectList<>();
+    }
+
+    public void addListener(DateListener dateListener) {
+        this.dateListeners.add(dateListener);
     }
 
     public void initialize() {
@@ -54,12 +60,14 @@ public class DateService {
         if (daysToAdd > 0) {
             this.date = this.date.plusDays(daysToAdd);
             this.accumulator -= daysToAdd;
-            onNewDay(this.date);
+            this.onNewDay(this.date);
         }
     }
 
     private void onNewDay(LocalDate newDate) {
-        this.dateListener.onNewDay(newDate);
+        for(DateListener dateListener : this.dateListeners) {
+            dateListener.onNewDay(newDate);
+        }
     }
 
     private int getDisplaySpeed() {

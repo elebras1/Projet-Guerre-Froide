@@ -1,5 +1,6 @@
 package com.populaire.projetguerrefroide.economy.production;
 
+import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntList;
 import com.populaire.projetguerrefroide.economy.building.EmployeeStore;
 import com.populaire.projetguerrefroide.economy.building.ProductionTypeStore;
@@ -8,7 +9,7 @@ import com.populaire.projetguerrefroide.map.ProvinceStore;
 
 public class ResourceGatheringOperationSystem {
 
-    public void initialiaseSize(ProvinceStore provinceStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore) {
+    public void initialiazeSize(ProvinceStore provinceStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore) {
         int[] provinceResourceGoodsSize = provinceStore.getResourceGoodsSize().items;
 
         IntList provinceResourceGoodIds = provinceStore.getResourceGoodIds();
@@ -57,5 +58,29 @@ public class ResourceGatheringOperationSystem {
 
             provinceResourceGoodsSize[provinceId] = size;
         }
+        provinceStore.getResourceGoodsSize().setSize(provinceStore.getIds().size());
+    }
+
+    public void produce(ProvinceStore provinceStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore) {
+        float[] provinceResourceGoodsProductions = provinceStore.getResourceGoodsProduction().items;
+
+        IntList provinceResourceGoodsSize = provinceStore.getResourceGoodsSize();
+        IntList provinceResourceGoodIds = provinceStore.getResourceGoodIds();
+        FloatList goodProductionValues = goodStore.getValues();
+
+        for (int provinceId = 0; provinceId < provinceStore.getIds().size(); provinceId++) {
+            int provinceResourceGoodSize = provinceResourceGoodsSize.get(provinceId);
+            int resourceGoodId = provinceResourceGoodIds.get(provinceId);
+            if (resourceGoodId == -1) {
+                provinceResourceGoodsProductions[provinceId] = -1;
+                continue;
+            }
+
+            float goodProductionValue = goodProductionValues.get(resourceGoodId);
+
+            float baseProduction = provinceResourceGoodSize * goodProductionValue;
+            provinceResourceGoodsProductions[provinceId] = baseProduction;
+        }
+        provinceStore.getResourceGoodsProduction().setSize(provinceStore.getIds().size());
     }
 }
