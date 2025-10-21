@@ -148,7 +148,7 @@ public class WorldService implements DateListener {
         List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
         float resourceProduced = this.economyService.getResourceGoodsProduction(selectedProvince.getId());
         List<String> provinceIdsRegion = this.getProvinceIdsOrderByPopulation(region);
-        DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(region);
+        DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(selectedProvince.getId());
         List<String> specialBuildings = this.getSpecialBuildingNames(region);
         List<String> colorsBuilding = this.getColorBuildingsOrderByLevel(region);
 
@@ -273,23 +273,23 @@ public class WorldService implements DateListener {
         return countriesCore;
     }
 
-    private DevelopementBuildingLevelDto getDevelopementBuildingLevel(Region region) {
+    private DevelopementBuildingLevelDto getDevelopementBuildingLevel(int provinceId) {
         byte navalBaseLevel = 0;
         byte airBaseLevel = 0;
         byte radarStationLevel = 0;
         byte antiAircraftGunsLevel = 0;
 
-        RegionStore regionStore = this.world.getRegionStore();
+        ProvinceStore provinceStore = this.world.getProvinceStore();
         BuildingStore buildingStore = this.world.getBuildingStore();
 
-        int regionIndex = regionStore.getRegionIds().get(region.getId());
+        int provinceIndex = provinceStore.getIndexById().get(provinceId);
 
-        int buildingStart = regionStore.getBuildingStarts().get(regionIndex);
-        int buildingEnd = buildingStart + regionStore.getBuildingCounts().get(regionIndex);
+        int buildingStart = provinceStore.getBuildingStarts().get(provinceIndex);
+        int buildingCount = provinceStore.getBuildingCounts().get(provinceIndex);
 
-        for (int i = buildingStart; i < buildingEnd; i++) {
-            int buildingId = regionStore.getBuildingIds().get(i);
-            int buildingLevel = regionStore.getBuildingValues().get(i);
+        for (int i = buildingStart; i < buildingStart + buildingCount; i++) {
+            int buildingId = provinceStore.getBuildingIds().get(i);
+            int buildingLevel = provinceStore.getBuildingValues().get(i);
             String buildingName = buildingStore.getNames().get(buildingId);
 
             switch (buildingName) {
