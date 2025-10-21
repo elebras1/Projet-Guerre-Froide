@@ -19,7 +19,11 @@ import com.monstrous.gdx.webgpu.wrappers.*;
 import com.populaire.projetguerrefroide.adapter.graphics.WgMeshMulti;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
-import com.populaire.projetguerrefroide.economy.Economy;
+import com.populaire.projetguerrefroide.economy.building.BuildingStore;
+import com.populaire.projetguerrefroide.economy.building.EmployeeStore;
+import com.populaire.projetguerrefroide.economy.building.ProductionTypeStore;
+import com.populaire.projetguerrefroide.economy.good.GoodStore;
+import com.populaire.projetguerrefroide.economy.population.PopulationTypeStore;
 import com.populaire.projetguerrefroide.entity.ModifierStore;
 import com.populaire.projetguerrefroide.entity.RawMeshMulti;
 import com.populaire.projetguerrefroide.entity.Terrain;
@@ -37,7 +41,7 @@ import java.util.*;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class World implements Disposable {
+public class World implements WorldContext, Disposable {
     private final MapDaoImpl mapDao;
     private final List<Country> countries;
     private final IntObjectMap<LandProvince> provinces;
@@ -45,7 +49,11 @@ public class World implements Disposable {
     private final ProvinceStore provinceStore;
     private final RegionStore regionStore;
     private final ModifierStore modifierStore;
-    private final Economy economy;
+    private final BuildingStore buildingStore;
+    private final GoodStore goodStore;
+    private final EmployeeStore employeeStore;
+    private final ProductionTypeStore productionTypeStore;
+    private final PopulationTypeStore populationTypeStore;
     private final Politics politics;
     private final NationalIdeas nationalIdeas;
     private final Map<String, Terrain> terrains;
@@ -87,15 +95,18 @@ public class World implements Disposable {
     private Country countryPlayer;
     private MapMode mapMode;
 
-    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, ModifierStore modifierStore, Economy economy, Politics politics, NationalIdeas nationalIdeas, Map<String, Terrain> terrains, GameContext gameContext) {
-        this.mapDao = new MapDaoImpl();
+    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, ModifierStore modifierStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, Politics politics, NationalIdeas nationalIdeas, Map<String, Terrain> terrains, GameContext gameContext) {        this.mapDao = new MapDaoImpl();
         this.countries = countries;
         this.provinces = provinces;
         this.waterProvinces = waterProvinces;
         this.provinceStore = provinceStore;
         this.regionStore = regionStore;
         this.modifierStore = modifierStore;
-        this.economy = economy;
+        this.buildingStore = buildingStore;
+        this.goodStore = goodStore;
+        this.productionTypeStore = productionTypeStore;
+        this.employeeStore = employeeStore;
+        this.populationTypeStore = populationTypeStore;
         this.politics = politics;
         this.nationalIdeas = nationalIdeas;
         this.terrains = terrains;
@@ -172,22 +183,42 @@ public class World implements Disposable {
 
     }
 
+    @Override
     public ProvinceStore getProvinceStore() {
         return this.provinceStore;
     }
 
+    @Override
     public RegionStore getRegionStore() {
         return this.regionStore;
     }
 
-    public Economy getEconomy() {
-        return this.economy;
+    @Override
+    public BuildingStore getBuildingStore() {
+        return this.buildingStore;
     }
 
+    @Override
+    public ProductionTypeStore getProductionTypeStore() {
+        return this.productionTypeStore;
+    }
+
+    @Override
+    public GoodStore getGoodStore() {
+        return this.goodStore;
+    }
+
+    @Override
+    public EmployeeStore getEmployeeStore() {
+        return this.employeeStore;
+    }
+
+    @Override
     public Politics getPolitics() {
         return this.politics;
     }
 
+    @Override
     public NationalIdeas getNationalIdeas() {
         return  this.nationalIdeas;
     }
@@ -252,7 +283,15 @@ public class World implements Disposable {
     }
 
     public int getPopulationAmount(Country country) {
-        return this.economy.getPopulationAmount(this.provinceStore, country);
+        int population = 0;
+        for(LandProvince province : country.getProvinces()) {
+            int provinceId = province.getId();
+            int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
+            population += this.provinceStore.getPopulationAmount(provinceIndex);
+        }
+
+        return population;
+
     }
 
     public String getColonizerId(Country country) {
@@ -274,7 +313,7 @@ public class World implements Disposable {
         int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
         int resourceGoodId = this.provinceStore.getResourceGoodIds().get(provinceIndex);
         if(resourceGoodId != -1) {
-            return this.economy.getGoodStore().getNames().get(resourceGoodId);
+            return this.goodStore.getNames().get(resourceGoodId);
         }
         return null;
     }
@@ -385,7 +424,7 @@ public class World implements Disposable {
             short green = (short) ((color >> 16) & 0xFF);
             int provinceResourceGoodId = provinceResourceGoodIds.get(provinceId);
             if(provinceResourceGoodId != -1) {
-                this.mapModePixmap.drawPixel(red, green, this.economy.getGoodStore().getColors().get(provinceResourceGoodId));
+                this.mapModePixmap.drawPixel(red, green, this.goodStore.getColors().get(provinceResourceGoodId));
             } else {
                 this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
             }
@@ -412,7 +451,7 @@ public class World implements Disposable {
         }
     }
 
-    public void updatePixmapTerrain2Color() {
+    private void updatePixmapTerrain2Color() {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
@@ -610,8 +649,8 @@ public class World implements Disposable {
         IntList provinceBuildingStarts = this.provinceStore.getBuildingStarts();
         IntList provinceBuildingCounts = this.provinceStore.getBuildingCounts();
 
-        BooleanList buildingOnMap = this.economy.getBuildingStore().getOnMap();
-        List<String> buildingNames = this.economy.getBuildingStore().getNames();
+        BooleanList buildingOnMap = this.buildingStore.getOnMap();
+        List<String> buildingNames = this.buildingStore.getNames();
 
         for (Country country : this.countries) {
             if (country.getCapital() != null && !country.getProvinces().isEmpty()) {
@@ -752,7 +791,7 @@ public class World implements Disposable {
             if(provinceResourceGoodId == -1) {
                 continue;
             }
-            TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + this.economy.getGoodStore().getNames().get(provinceResourceGoodId));
+            TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + this.goodStore.getNames().get(provinceResourceGoodId));
 
             int ressourcePosition = Objects.requireNonNull(this.provinces.get(this.provinceStore.getColors().get(provinceId))).getPosition("default");
             short cx = (short) (ressourcePosition >> 16);

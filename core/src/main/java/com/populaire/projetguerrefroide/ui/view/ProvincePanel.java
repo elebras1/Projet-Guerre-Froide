@@ -12,6 +12,7 @@ import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.util.LabelUtils;
+import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.List;
 import java.util.Map;
@@ -203,6 +204,15 @@ public class ProvincePanel extends Table {
         this.setSpecialBuildings(provinceDto.getSpecialBuildings());
     }
 
+    public void setResourceProduced(float resourceProduced) {
+        if(resourceProduced == -1f) {
+            this.resourceProduced.setText("-");
+        } else {
+            this.resourceProduced.setText(ValueFormatter.formatValue(resourceProduced));
+        }
+        this.resourceProduced.setPosition(136 - this.resourceProduced.getMinWidth(), 178);
+    }
+
     private void setResourceImage(String name) {
         Drawable resource;
         if(name != null) {
@@ -271,11 +281,6 @@ public class ProvincePanel extends Table {
                 this.countriesCoreFlagImages.get(i).remove();
             }
         }
-    }
-
-    private void setResourceProduced(float resourceProduced) {
-        this.resourceProduced.setText(String.valueOf(resourceProduced));
-        this.resourceProduced.setPosition(136 - this.resourceProduced.getMinWidth(), 178);
     }
 
     private void setInfrastructureValue(int infrastructureValue) {

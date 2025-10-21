@@ -14,4 +14,8 @@ public class ValueFormatter {
             return String.valueOf(value);
         }
     }
+
+    public static String formatValue(float value) {
+        return String.format("%.4f", value);
+    }
 }
