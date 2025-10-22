@@ -19,24 +19,35 @@ package com.populaire.projetguerrefroide.adapter.graphics;
 
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.github.xpenatan.webgpu.WGPUTextureFormat;
+import com.monstrous.gdx.webgpu.graphics.utils.WgFrameBuffer;
 import com.monstrous.gdx.webgpu.scene2d.WgStage;
 import com.populaire.projetguerrefroide.ui.renderer.FlagImageRenderer;
 
 public class WgCustomStage extends WgStage {
 
+    private final WgFrameBuffer frameBuffer;
     private final FlagImageRenderer flagImageRenderer;
 
     public WgCustomStage(Viewport viewport, Skin skinUi, Skin skinFlags) {
         super(viewport);
-        this.flagImageRenderer = new FlagImageRenderer(skinUi.getAtlas().getTextures().first(), skinUi.getAtlas().getTextures().first(), skinFlags.getAtlas().getTextures().first());
+        this.frameBuffer = new WgFrameBuffer(WGPUTextureFormat.BGRA8UnormSrgb, viewport.getScreenWidth(), viewport.getScreenHeight(), true);
+        this.flagImageRenderer = new FlagImageRenderer(skinUi.getAtlas().getTextures().first(), skinUi.getAtlas().getTextures().first(), skinFlags.getAtlas().getTextures().first(), viewport.getScreenWidth(), viewport.getScreenHeight());
     }
 
     /** Override to call an alternative debug drawer */
     @Override
     public void draw() {
-        if (!getRoot().isVisible()) return;
+        if (!getRoot().isVisible()) {
+            return;
+        }
+
+        this.frameBuffer.begin();
+        this.flagImageRenderer.render();
+        this.frameBuffer.end();
 
         getViewport().apply(); // Apply viewport changes (updates camera viewport dimensions)
         Camera camera = getViewport().getCamera();
@@ -47,8 +58,6 @@ public class WgCustomStage extends WgStage {
         batch.begin();
         getRoot().draw(batch, 1);
         batch.end();
-
-        this.flagImageRenderer.render();
     }
 
     public void updateRendererProjection() {
@@ -57,5 +66,9 @@ public class WgCustomStage extends WgStage {
 
     public FlagImageRenderer getFlagImageRenderer() {
         return this.flagImageRenderer;
+    }
+
+    public WgFrameBuffer getFrameBuffer() {
+        return this.frameBuffer;
     }
 }

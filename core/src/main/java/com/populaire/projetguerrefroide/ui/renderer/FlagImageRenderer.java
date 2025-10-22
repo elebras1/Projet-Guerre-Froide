@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Matrix4;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.xpenatan.webgpu.*;
 import com.monstrous.gdx.webgpu.graphics.Binder;
@@ -13,6 +14,8 @@ import com.monstrous.gdx.webgpu.wrappers.*;
 import com.populaire.projetguerrefroide.util.WgslUtils;
 
 public class FlagImageRenderer implements Disposable {
+    private final int width;
+    private final int height;
     private final float[] vertices;
     private final short[] indices;
     private final WgMesh mesh;
@@ -21,12 +24,18 @@ public class FlagImageRenderer implements Disposable {
     private final WebGPUPipeline pipeline;
     private final int uniformBufferSize;
     private int numberFlags;
+    private int cursorX;
+    private int cursorY;
+    private int cursorRowHeight;
+    private final int cursorPadding;
     private static final int NUMBER_MAX_FLAGS = 250;
     private static final int VERTICES_PER_FLAG = 4;
     private static final int INDICES_PER_FLAG = 6;
     private static final int FLOATS_PER_VERTEX = 10;
 
-    public FlagImageRenderer(Texture overlayTexture, Texture alphaTexture, Texture flagTexture) {
+    public FlagImageRenderer(Texture overlayTexture, Texture alphaTexture, Texture flagTexture, int width, int height) {
+        this.width = width;
+        this.height = height;
         this.uniformBufferSize = 16 * Float.BYTES;
         this.uniformBuffer = new WebGPUUniformBuffer(this.uniformBufferSize, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
         VertexAttributes vertexAttributes = new VertexAttributes(
@@ -45,6 +54,10 @@ public class FlagImageRenderer implements Disposable {
         this.pipeline = this.createPipeline(vertexAttributes, WgslUtils.getShaderSource("flag.wgsl"));
         this.bindStaticTextures(overlayTexture, alphaTexture, flagTexture);
         this.numberFlags = 0;
+        this.cursorX = 0;
+        this.cursorY = 0;
+        this.cursorPadding = 2;
+        this.cursorRowHeight = 0;
     }
 
     private WgMesh generateMeshProvinces(VertexAttributes vertexAttributes) {
@@ -120,10 +133,17 @@ public class FlagImageRenderer implements Disposable {
         this.binder.setSampler("textureFlagSampler", ((WgTexture) flagTexture).getSampler());
     }
 
-    private void updateMesh(TextureRegion overlayRegion, TextureRegion alphaRegion, TextureRegion flagRegion, float x, float y, float width, float height) {
+    private void updateMesh(Vector2 position, TextureRegion overlayRegion, TextureRegion alphaRegion, TextureRegion flagRegion, float width, float height) {
         if (this.numberFlags >= NUMBER_MAX_FLAGS) {
             throw new RuntimeException("Too many flags! Max: " + NUMBER_MAX_FLAGS + ", current: " + this.numberFlags);
         }
+
+        if(position.x > 0 && position.y > 0) {
+            return;
+        }
+
+        int x = this.cursorX + this.cursorPadding;
+        int y = this.cursorY + this.cursorPadding;
 
         int vertexOffset = this.numberFlags * VERTICES_PER_FLAG * FLOATS_PER_VERTEX;
 
@@ -185,6 +205,29 @@ public class FlagImageRenderer implements Disposable {
         this.vertices[vertexOffset++] = alphaV1;
         this.vertices[vertexOffset++] = flagU1;
         this.vertices[vertexOffset] = flagV1;
+
+        position.x = x;
+        position.y = y;
+
+        this.moveCursor((int)width, (int)height);
+    }
+
+    public void moveCursor(int widthElement, int heightElement) {
+        if (this.cursorX + widthElement + this.cursorPadding > this.width) {
+            this.cursorX = 0;
+            this.cursorY += this.cursorRowHeight;
+            this.cursorRowHeight = 0;
+        }
+
+        if (this.cursorY + heightElement + this.cursorPadding > this.height) {
+            return;
+        }
+
+        if (this.cursorRowHeight < heightElement + this.cursorPadding * 2) {
+            this.cursorRowHeight = heightElement + this.cursorPadding * 2;
+        }
+
+        this.cursorX += widthElement + this.cursorPadding * 2;
     }
 
     public void setProjectionMatrix(Matrix4 projectionMatrix) {
@@ -192,8 +235,9 @@ public class FlagImageRenderer implements Disposable {
         this.uniformBuffer.flush();
     }
 
-    public void add(TextureRegion overlayRegion, TextureRegion alphaRegion, TextureRegion flagRegion, float x, float y, float width, float height) {
-        this.updateMesh(overlayRegion, alphaRegion, flagRegion, x, y, width, height);
+    public void add(Vector2 position, TextureRegion overlayRegion, TextureRegion alphaRegion, TextureRegion flagRegion, float width, float height) {
+        this.updateMesh(position, overlayRegion, alphaRegion, flagRegion, width, height);
+        System.out.println("Adding flag at position :  x:" + position.x + ", y:" + position.y);
         this.numberFlags++;
     }
 
