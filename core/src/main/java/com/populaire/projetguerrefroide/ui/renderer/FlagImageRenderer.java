@@ -14,6 +14,10 @@ import com.populaire.projetguerrefroide.util.IndexedPoint;
 import com.populaire.projetguerrefroide.util.WgslUtils;
 
 public class FlagImageRenderer implements Disposable {
+    private static final int NUMBER_MAX_FLAGS = 250;
+    private static final int VERTICES_PER_FLAG = 4;
+    private static final int INDICES_PER_FLAG = 6;
+    private static final int FLOATS_PER_VERTEX = 10;
     private final int width;
     private final int height;
     private final float[] vertices;
@@ -28,10 +32,7 @@ public class FlagImageRenderer implements Disposable {
     private int cursorY;
     private int cursorRowHeight;
     private final int cursorPadding;
-    private static final int NUMBER_MAX_FLAGS = 250;
-    private static final int VERTICES_PER_FLAG = 4;
-    private static final int INDICES_PER_FLAG = 6;
-    private static final int FLOATS_PER_VERTEX = 10;
+    private boolean isDirty;
 
     public FlagImageRenderer(Texture overlayTexture, Texture alphaTexture, Texture flagTexture, int width, int height) {
         this.width = width;
@@ -58,6 +59,7 @@ public class FlagImageRenderer implements Disposable {
         this.cursorY = 0;
         this.cursorPadding = 2;
         this.cursorRowHeight = 0;
+        this.isDirty = true;
     }
 
     private WgMesh generateMeshProvinces(VertexAttributes vertexAttributes) {
@@ -237,15 +239,19 @@ public class FlagImageRenderer implements Disposable {
         this.uniformBuffer.flush();
     }
 
-    public void add(IndexedPoint indexedPoint, TextureRegion overlayRegion, TextureRegion alphaRegion, TextureRegion flagRegion, float width, float height) {
+    public void update(IndexedPoint indexedPoint, TextureRegion overlayRegion, TextureRegion alphaRegion, TextureRegion flagRegion, float width, float height) {
         if(this.numberFlags >= NUMBER_MAX_FLAGS) {
             throw  new IllegalArgumentException("Too many flags in indexed image");
         }
         this.updateMesh(indexedPoint, overlayRegion, alphaRegion, flagRegion, width, height);
+        this.isDirty = true;
     }
 
     public void render() {
-        this.mesh.setVertices(this.vertices);
+        if(this.isDirty) {
+            this.mesh.setVertices(this.vertices);
+            this.isDirty = false;
+        }
         WebGPURenderPass pass = RenderPassBuilder.create("Provinces pass");
         pass.setPipeline(this.pipeline);
         this.binder.bindGroup(pass, 0);

@@ -13,16 +13,19 @@ public class FlagImage extends Actor {
     private final TextureRegion alphaTexture;
     private final IndexedPoint frameBufferPosition;
     private TextureRegion flagTexture;
+    private boolean isDirty;
 
     public FlagImage(TextureRegion overlay, TextureRegion alpha) {
         this.setSize(overlay.getRegionWidth(), overlay.getRegionHeight());
         this.overlayTexture = overlay;
         this.alphaTexture = alpha;
         this.frameBufferPosition = new IndexedPoint();
+        this.isDirty = true;
     }
 
     public void setFlag(TextureRegion flag) {
         this.flagTexture = flag;
+        this.isDirty = true;
     }
 
     @Override
@@ -31,8 +34,14 @@ public class FlagImage extends Actor {
             return;
         }
 
-        FlagImageRenderer renderer = ((WgCustomStage) this.getStage()).getFlagImageRenderer();
-        renderer.add(this.frameBufferPosition, this.overlayTexture, this.alphaTexture, this.flagTexture, this.getWidth(), this.getHeight());
+        if(this.isDirty) {
+            WgCustomStage stage = (WgCustomStage)getStage();
+            FlagImageRenderer renderer = stage.getFlagImageRenderer();
+            renderer.update(this.frameBufferPosition, this.overlayTexture, this.alphaTexture, this.flagTexture, this.getWidth(), this.getHeight());
+            stage.setFrameBufferIsDirty();
+            this.isDirty = false;
+        }
+
         Texture frameBufferTexture = ((WgCustomStage) this.getStage()).getFrameBuffer().getColorBufferTexture();
         float u  = (float) this.frameBufferPosition.getX() / frameBufferTexture.getWidth();
         float u2 = (this.frameBufferPosition.getX() + this.getWidth()) / frameBufferTexture.getWidth();

@@ -30,11 +30,13 @@ public class WgCustomStage extends WgStage {
 
     private final WgFrameBuffer frameBuffer;
     private final FlagImageRenderer flagImageRenderer;
+    private boolean frameBufferIsDirty;
 
     public WgCustomStage(Viewport viewport, Skin skinUi, Skin skinFlags) {
         super(viewport);
         this.frameBuffer = new WgFrameBuffer(WGPUTextureFormat.BGRA8UnormSrgb, viewport.getScreenWidth(), viewport.getScreenHeight(), true);
         this.flagImageRenderer = new FlagImageRenderer(skinUi.getAtlas().getTextures().first(), skinUi.getAtlas().getTextures().first(), skinFlags.getAtlas().getTextures().first(), viewport.getScreenWidth(), viewport.getScreenHeight());
+        this.frameBufferIsDirty = true;
     }
 
     /** Override to call an alternative debug drawer */
@@ -44,9 +46,12 @@ public class WgCustomStage extends WgStage {
             return;
         }
 
-        this.frameBuffer.begin();
-        this.flagImageRenderer.render();
-        this.frameBuffer.end();
+        if(this.frameBufferIsDirty) {
+            this.frameBuffer.begin();
+            this.flagImageRenderer.render();
+            this.frameBuffer.end();
+            this.frameBufferIsDirty = false;
+        }
 
         getViewport().apply(); // Apply viewport changes (updates camera viewport dimensions)
         Camera camera = getViewport().getCamera();
@@ -61,6 +66,7 @@ public class WgCustomStage extends WgStage {
 
     public void updateRendererProjection() {
         this.flagImageRenderer.setProjectionMatrix(((WgScreenViewport) this.getViewport()).getProjectionMatrix());
+        this.frameBufferIsDirty = true;
     }
 
     public FlagImageRenderer getFlagImageRenderer() {
@@ -69,5 +75,9 @@ public class WgCustomStage extends WgStage {
 
     public WgFrameBuffer getFrameBuffer() {
         return this.frameBuffer;
+    }
+
+    public void setFrameBufferIsDirty() {
+        this.frameBufferIsDirty = true;
     }
 }
