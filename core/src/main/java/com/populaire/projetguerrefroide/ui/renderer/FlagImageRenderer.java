@@ -4,13 +4,13 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Matrix4;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.xpenatan.webgpu.*;
 import com.monstrous.gdx.webgpu.graphics.Binder;
 import com.monstrous.gdx.webgpu.graphics.WgMesh;
 import com.monstrous.gdx.webgpu.graphics.WgTexture;
 import com.monstrous.gdx.webgpu.wrappers.*;
+import com.populaire.projetguerrefroide.util.IndexedPoint;
 import com.populaire.projetguerrefroide.util.WgslUtils;
 
 public class FlagImageRenderer implements Disposable {
@@ -133,19 +133,18 @@ public class FlagImageRenderer implements Disposable {
         this.binder.setSampler("textureFlagSampler", ((WgTexture) flagTexture).getSampler());
     }
 
-    private void updateMesh(Vector2 position, TextureRegion overlayRegion, TextureRegion alphaRegion, TextureRegion flagRegion, float width, float height) {
-        if (this.numberFlags >= NUMBER_MAX_FLAGS) {
-            throw new RuntimeException("Too many flags! Max: " + NUMBER_MAX_FLAGS + ", current: " + this.numberFlags);
-        }
+    private void updateMesh(IndexedPoint indexedPoint, TextureRegion overlayRegion, TextureRegion alphaRegion, TextureRegion flagRegion, float width, float height) {
+        boolean flagExist = indexedPoint.getIndex() != -1;
 
-        if(position.x > 0 && position.y > 0) {
-            return;
-        }
-
+        int vertexOffset = this.numberFlags * VERTICES_PER_FLAG * FLOATS_PER_VERTEX;
         int x = this.cursorX + this.cursorPadding;
         int y = this.cursorY + this.cursorPadding;
 
-        int vertexOffset = this.numberFlags * VERTICES_PER_FLAG * FLOATS_PER_VERTEX;
+        if(flagExist) {
+            vertexOffset = indexedPoint.getIndex() * VERTICES_PER_FLAG * FLOATS_PER_VERTEX;
+            x = indexedPoint.getX();
+            y = indexedPoint.getY();
+        }
 
         float overlayU1 = overlayRegion.getU();
         float overlayV1 = overlayRegion.getV();
@@ -206,10 +205,13 @@ public class FlagImageRenderer implements Disposable {
         this.vertices[vertexOffset++] = flagU1;
         this.vertices[vertexOffset] = flagV1;
 
-        position.x = x;
-        position.y = y;
-
-        this.moveCursor((int)width, (int)height);
+        if(!flagExist) {
+            indexedPoint.setIndex(this.numberFlags);
+            indexedPoint.setX(x);
+            indexedPoint.setY(y);
+            this.moveCursor((int)width, (int)height);
+            this.numberFlags++;
+        }
     }
 
     public void moveCursor(int widthElement, int heightElement) {
@@ -235,10 +237,11 @@ public class FlagImageRenderer implements Disposable {
         this.uniformBuffer.flush();
     }
 
-    public void add(Vector2 position, TextureRegion overlayRegion, TextureRegion alphaRegion, TextureRegion flagRegion, float width, float height) {
-        this.updateMesh(position, overlayRegion, alphaRegion, flagRegion, width, height);
-        System.out.println("Adding flag at position :  x:" + position.x + ", y:" + position.y);
-        this.numberFlags++;
+    public void add(IndexedPoint indexedPoint, TextureRegion overlayRegion, TextureRegion alphaRegion, TextureRegion flagRegion, float width, float height) {
+        if(this.numberFlags >= NUMBER_MAX_FLAGS) {
+            throw  new IllegalArgumentException("Too many flags in indexed image");
+        }
+        this.updateMesh(indexedPoint, overlayRegion, alphaRegion, flagRegion, width, height);
     }
 
     public void render() {
@@ -249,7 +252,6 @@ public class FlagImageRenderer implements Disposable {
         int indicesToRender = this.numberFlags * INDICES_PER_FLAG;
         this.mesh.render(pass, GL20.GL_TRIANGLES, 0, indicesToRender, 1, 0);
         pass.end();
-        this.numberFlags = 0;
     }
 
     @Override
