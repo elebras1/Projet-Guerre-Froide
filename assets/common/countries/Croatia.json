@@ -1,967 +1,967 @@
 {
-    "color": [
-        77,
-        103,
-        174
-    ],
-    "default_templates": {
-        "USA_air_cavalry_division": [
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade",
-            "air_cav_brigade"
-        ],
-        "USA_armored_division": [
-            "armor_brigade",
-            "armor_brigade",
-            "heavy_mechanized_brigade",
-            "light_mechanized_brigade",
-            "sp_artillery_brigade"
-        ],
-        "USA_cavalry_division": [
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "cavalry_brigade",
-            "sp_artillery_brigade"
-        ],
-        "USA_heavy_mechanized_division": [
-            "heavy_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "light_mechanized_brigade",
-            "armor_brigade",
-            "sp_artillery_brigade"
-        ],
-        "USA_light_mechanized_division": [
-            "light_mechanized_brigade",
-            "light_mechanized_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
-        ],
-        "USA_motorized_division": [
-            "motorized_brigade",
-            "motorized_brigade",
-            "heavy_mechanized_brigade",
-            "sp_artillery_brigade"
-        ],
-        "USA_infantry_division": [
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "artillery_brigade"
-        ],
-        "USA_marine_division": [
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade",
-            "marine_brigade"
-        ],
-        "USA_mountain_division": [
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade",
-            "bergsjaeger_brigade"
-        ],
-        "USA_national_guard_division": [
-            "infantry_brigade",
-            "infantry_brigade",
-            "infantry_brigade",
-            "artillery_brigade"
-        ]
-    },
-    "unit_names": {},
-    "ministers": {
-        "1243": {
-            "name": "Vladimir Bakaric",
-            "ideology": "communist_idolg",
-            "loyalty": 1,
-            "picture": "CRO_M_Bakaric_Vladimir",
-            "start_date": "1945-04-14",
-            "death_date": "1969-01-01",
-            "type": "visionary_type"
-        },
-        "1244": {
-            "name": "Savka Dabcevic-Kucar",
-            "ideology": "communist_idolg",
-            "loyalty": 1,
-            "picture": "CRO_M_Dabcevic-Kucar_Savka",
-            "start_date": "1969-01-01",
-            "death_date": "1971-12-14",
-            "type": "iron_lady"
-        },
-        "1245": {
-            "name": "Milka Planinc",
-            "ideology": "communist_idolg",
-            "loyalty": 1,
-            "picture": "CRO_M_Planinc_Milka",
-            "start_date": "1971-12-14",
-            "death_date": "1986-05-16",
-            "type": "autocrat_type"
-        },
-        "1246": {
-            "name": "Jure Bilic",
-            "ideology": "communist_idolg",
-            "loyalty": 1,
-            "picture": "CRO_M_Bilic_Jure",
-            "start_date": "1982-05-01",
-            "death_date": "1983-07-01",
-            "type": "traditionalist_type"
-        },
-        "1247": {
-            "name": "Josip Vrhovec",
-            "ideology": "communist_idolg",
-            "loyalty": 1,
-            "picture": "CRO_M_Vrhovec_Josip",
-            "start_date": "1983-07-01",
-            "death_date": "1984-05-15",
-            "type": "ambitious_type"
-        },
-        "1248": {
-            "name": "Mika Spiljak",
-            "ideology": "communist_idolg",
-            "loyalty": 1,
-            "picture": "CRO_M_Spiljak_Mika",
-            "start_date": "1984-05-15",
-            "death_date": "1986-05-01",
-            "type": "bureaucrat_type"
-        },
-        "1249": {
-            "name": "Stanko Stojcevic",
-            "ideology": "communist_idolg",
-            "loyalty": 1,
-            "picture": "CRO_M_Stojcevic_Stanko",
-            "start_date": "1986-05-01",
-            "death_date": "1989-12-01",
-            "type": "administrator_type"
-        },
-        "1250": {
-            "name": "Ivica Racan",
-            "ideology": "communist_idolg",
-            "loyalty": 1,
-            "picture": "CRO_M_Racan_Ivica",
-            "start_date": "1989-12-01",
-            "death_date": "1991-12-31",
-            "type": "zealous_type"
-        },
-        "1251": {
-            "name": "Franjo Tudman",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "CRO_M_Tudman_Franjo",
-            "start_date": "1990-05-30",
-            "death_date": "1999-12-10",
-            "type": "controversial_figure"
-        },
-        "1252": {
-            "name": "Stjepan Mesic",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "YUG_M_Mesic_Stjepan",
-            "start_date": "1990-05-30",
-            "death_date": "1990-08-24",
-            "type": "reformer_type"
-        },
-        "1253": {
-            "name": "Josip Manolic",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "CRO_M_Manolic_Josip",
-            "start_date": "1990-08-24",
-            "death_date": "1991-07-17",
-            "type": "extremist_type"
-        },
-        "1254": {
-            "name": "Franjo Greguric",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "CRO_M_Greguric_Franjo",
-            "start_date": "1991-07-17",
-            "death_date": "1992-08-12",
-            "type": "ambitious_type"
-        },
-        "1255": {
-            "name": "Vlado Janic Capo",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Capo_Vlado_J",
-            "start_date": "1941-01-01",
-            "death_date": "1991-05-04",
-            "type": "loyal_type"
-        },
-        "1256": {
-            "name": "Veceslav Holjevac",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Holjevac_Veceslav",
-            "start_date": "1939-01-01",
-            "death_date": "1970-07-11",
-            "type": "visionary_type"
-        },
-        "1257": {
-            "name": "Slavko Komar",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Komar_Slavko",
-            "start_date": "1941-01-01",
-            "death_date": "2000-07-28",
-            "type": "reformer_type"
-        },
-        "1258": {
-            "name": "Stipe �uvar",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Suvar_Stipe",
-            "start_date": "1966-01-01",
-            "death_date": "2004-06-29",
-            "type": "reformer_type"
-        },
-        "1259": {
-            "name": "Leon Ger�kovic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Gerskovic_Leon",
-            "start_date": "1935-01-01",
-            "death_date": "1992-04-01",
-            "type": "administrator_type"
-        },
-        "1260": {
-            "name": "Andrija Hebrang",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Hebrang_Andrija",
-            "start_date": "1919-01-01",
-            "death_date": "1949-10-01",
-            "type": "hardliner_type"
-        },
-        "1261": {
-            "name": "Rade �igic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Zigic_Rade",
-            "start_date": "1934-01-01",
-            "death_date": "1954-02-04",
-            "type": "honest_type"
-        },
-        "1262": {
-            "name": "Stanko Opacic Canica",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Canica_Stanko_O",
-            "start_date": "1934-01-01",
-            "death_date": "1994-05-06",
-            "type": "traditionalist_type"
-        },
-        "1263": {
-            "name": "Du�an Brkic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Brkic_Dusan",
-            "start_date": "1941-01-01",
-            "death_date": "2000-07-28",
-            "type": "reputable_type"
-        },
-        "1264": {
-            "name": "Ante Pavelic",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Pavelic_Ante",
-            "start_date": "1946-01-01",
-            "death_date": "2300-01-01",
-            "type": "dictator_type"
-        },
-        "1265": {
-            "name": "Andrija Artukovic",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Artukovic_Andrija",
-            "start_date": "1929-01-01",
-            "death_date": "1988-01-16",
-            "type": "extremist_type"
-        },
-        "1266": {
-            "name": "Tomislav II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Tomislav_II",
-            "start_date": "1943-07-31",
-            "death_date": "1948-01-29",
-            "type": "lethargic_type"
-        },
-        "1267": {
-            "name": "Vjekoslav Luburic",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Luburic_Vjekoslav",
-            "start_date": "1932-01-01",
-            "death_date": "1969-04-20",
-            "type": "extremist_type"
-        },
-        "1268": {
-            "name": "Milivoj A�ner",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Asner_Milivoj",
-            "start_date": "1946-01-01",
-            "death_date": "2011-06-14",
-            "type": "fortunate_type"
-        },
-        "1269": {
-            "name": "Eugen Kvaternik",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Kvaternik_Eugen",
-            "start_date": "1962-03-10",
-            "death_date": "1992-01-01",
-            "type": "ambitious_type"
-        },
-        "1270": {
-            "name": "Slavko Kvaternik",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Kvaternik_Slavko",
-            "start_date": "1946-01-01",
-            "death_date": "2300-01-01",
-            "type": "loyal_type"
-        },
-        "1271": {
-            "name": "Edo Bulat",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Bulat_Edo",
-            "start_date": "1941-05-01",
-            "death_date": "1984-06-28",
-            "type": "reformer_type"
-        },
-        "1272": {
-            "name": "Vilko Rieger",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Rieger_Vilko",
-            "start_date": "1939-01-01",
-            "death_date": "1998-06-06",
-            "type": "administrator_type"
-        },
-        "1273": {
-            "name": "Ivo Korsky",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Korsky_Ivo",
-            "start_date": "1941-05-01",
-            "death_date": "2004-12-12",
-            "type": "loyal_type"
-        },
-        "1274": {
-            "name": "Ivan Or�anic",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Orsanic_Ivan",
-            "start_date": "1941-05-01",
-            "death_date": "1968-12-07",
-            "type": "traditionalist_type"
-        },
-        "1275": {
-            "name": "Dobroslav Paraga",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Paraga_Dobroslav",
-            "start_date": "1980-01-01",
-            "death_date": "2300-01-01",
-            "type": "courageous_type"
-        },
-        "1276": {
-            "name": "Bla� Kraljevic",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Kraljevic_Blaz",
-            "start_date": "1972-01-01",
-            "death_date": "1992-01-01",
-            "type": "visionary_type"
-        },
-        "1277": {
-            "name": "Ante Parad�ik",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Paradzik_Ante",
-            "start_date": "1971-01-01",
-            "death_date": "1991-09-21",
-            "type": "democrat_type"
-        },
-        "1278": {
-            "name": "Ilija Tolic",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Tolic_Ilija",
-            "start_date": "1961-01-01",
-            "death_date": "2300-01-01",
-            "type": "zealous_type"
-        },
-        "1279": {
-            "name": "Ivan Maticevic",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Maticevic_Ivan",
-            "start_date": "1963-07-07",
-            "death_date": "1974-10-29",
-            "type": "extremist_type"
-        },
-        "1280": {
-            "name": "Mato Prpic",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Prpic_Mato",
-            "start_date": "1963-07-07",
-            "death_date": "1974-10-29",
-            "type": "extremist_type"
-        },
-        "1281": {
-            "name": "Ludvig Pavlovic",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Pavlovic_Ludvig",
-            "start_date": "1970-01-01",
-            "death_date": "1991-09-18",
-            "type": "zealous_type"
-        },
-        "1282": {
-            "name": "Vladimir �eks",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Seks_Vladimir",
-            "start_date": "1971-01-01",
-            "death_date": "2008-01-11",
-            "type": "reputable_type"
-        },
-        "1283": {
-            "name": "Andrija Hebrang Jr.",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Hebrang_Andrija_Jr",
-            "start_date": "1970-01-01",
-            "death_date": "2005-02-25",
-            "type": "democrat_type"
-        },
-        "1284": {
-            "name": "Zdenko �krabalo",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Skrabalo_Zdenko",
-            "start_date": "1960-01-01",
-            "death_date": "1993-05-28",
-            "type": "traditionalist_type"
-        },
-        "1285": {
-            "name": "Mate Granic",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Granic_Mate",
-            "start_date": "1978-01-01",
-            "death_date": "2000-01-27",
-            "type": "reputable_type"
-        },
-        "1286": {
-            "name": "Miko Tripalo",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Tripalo_Miko",
-            "start_date": "1965-01-01",
-            "death_date": "1995-01-01",
-            "type": "bureaucrat_type"
-        },
-        "1287": {
-            "name": "Marko Veselica",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Veselica_Marko",
-            "start_date": "1969-01-01",
-            "death_date": "2001-12-30",
-            "type": "religious_type"
-        },
-        "1288": {
-            "name": "Ivan Milas",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Milas_Ivan",
-            "start_date": "1969-01-01",
-            "death_date": "2011-07-29",
-            "type": "extremist_type"
-        },
-        "1289": {
-            "name": "Zdravko Tomac",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Tomac_Zdravko",
-            "start_date": "1970-01-01",
-            "death_date": "2003-09-01",
-            "type": "hardliner_type"
-        },
-        "1290": {
-            "name": "Bruno Bu�ic",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Busic_Bruno",
-            "start_date": "1960-01-01",
-            "death_date": "1978-10-16",
-            "type": "democrat_type"
-        },
-        "1291": {
-            "name": "Vlado Gotovac",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Gotovac_Vlado",
-            "start_date": "1971-01-01",
-            "death_date": "2000-12-07",
-            "type": "liberal_type"
-        },
-        "1292": {
-            "name": "Slavko Goldstein",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Goldstein_Slavko",
-            "start_date": "1957-12-11",
-            "death_date": "1990-12-31",
-            "type": "honest_type"
-        },
-        "1293": {
-            "name": "Vladko Macek",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Macek_Vladko",
-            "start_date": "1928-01-01",
-            "death_date": "1964-05-15",
-            "type": "traditionalist_type"
-        },
-        "1294": {
-            "name": "Ivan �uba�ic",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Subasic_Ivan",
-            "start_date": "1930-01-01",
-            "death_date": "1955-03-22",
-            "type": "reputable_type"
-        },
-        "1295": {
-            "name": "Juraj Krnjevic",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Krnjevic_Juraj",
-            "start_date": "1923-01-01",
-            "death_date": "1988-01-09",
-            "type": "zealous_type"
-        },
-        "1296": {
-            "name": "August Ko�utic",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Kosutic_August",
-            "start_date": "1921-01-01",
-            "death_date": "1964-09-12",
-            "type": "hardliner_type"
-        },
-        "1297": {
-            "name": "Juraj �utej",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Sutej_Juraj",
-            "start_date": "1939-01-01",
-            "death_date": "1976-01-01",
-            "type": "bureaucrat_type"
-        },
-        "1298": {
-            "name": "Ivan Andres",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Andres_Ivan",
-            "start_date": "1919-01-01",
-            "death_date": "1959-03-17",
-            "type": "administrator_type"
-        },
-        "1299": {
-            "name": "Dra�en Budi�a",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Budisa_Drazen",
-            "start_date": "1971-01-01",
-            "death_date": "2300-01-01",
-            "type": "traditionalist_type"
-        },
-        "1300": {
-            "name": "Neven Sesardic",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Sesardic_Neven",
-            "start_date": "1985-01-01",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "1301": {
-            "name": "Srecko Bijelic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Bijelic_Srecko",
-            "start_date": "1960-01-01",
-            "death_date": "1971-01-01",
-            "type": "liberal_type"
-        },
-        "1302": {
-            "name": "Srecko Bijelic",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Bijelic_Srecko",
-            "start_date": "1971-01-01",
-            "death_date": "2004-09-22",
-            "type": "liberal_type"
-        },
-        "1303": {
-            "name": "Tihomil Rada",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Rada_Tihomil",
-            "start_date": "1950-01-01",
-            "death_date": "2002-03-19",
-            "type": "democrat_type"
-        },
-        "1304": {
-            "name": "Radimir Cacic",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Cacic_Radimir",
-            "start_date": "1985-01-01",
-            "death_date": "2300-01-01",
-            "type": "controversial_figure"
-        },
-        "1305": {
-            "name": "Jak�a Ku�an",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Kusan_Jaksa",
-            "start_date": "1960-01-01",
-            "death_date": "2300-01-01",
-            "type": "honest_type"
-        },
-        "1306": {
-            "name": "Vesna Pusic",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Pusic_Vesna",
-            "start_date": "1978-01-01",
-            "death_date": "2300-01-01",
-            "type": "hardliner_type"
-        },
-        "1307": {
-            "name": "Vladimir Bebic",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Bebic_Vladimir",
-            "start_date": "1980-01-01",
-            "death_date": "2009-06-13",
-            "type": "moral_type"
-        },
-        "1308": {
-            "name": "Branko Horvat",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Horvat_Branko",
-            "start_date": "1958-01-01",
-            "death_date": "2003-12-01",
-            "type": "visionary_type"
-        },
-        "1309": {
-            "name": "Slavko Linic",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Linic_Slavko",
-            "start_date": "1986-01-01",
-            "death_date": "2300-01-01",
-            "type": "administrator_type"
-        },
-        "1310": {
-            "name": "Gajo Petrovic",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Petrovic_Gajo",
-            "start_date": "1956-01-01",
-            "death_date": "1993-06-13",
-            "type": "moral_type"
-        },
-        "1311": {
-            "name": "Milan Kangrga",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Kangrga_Milan",
-            "start_date": "1964-09-01",
-            "death_date": "2008-04-25",
-            "type": "democrat_type"
-        },
-        "1312": {
-            "name": "Predrag Vranicki",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Vranicki_Predrag",
-            "start_date": "1964-09-01",
-            "death_date": "2002-01-31",
-            "type": "honest_type"
-        },
-        "1313": {
-            "name": "Dragutin Lesar",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Lesar_Dragutin",
-            "start_date": "1978-01-01",
-            "death_date": "2300-01-01",
-            "type": "supreme_leader"
-        },
-        "1314": {
-            "name": "Ivan �ibl",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Sibl_Ivan",
-            "start_date": "1942-01-01",
-            "death_date": "1989-03-30",
-            "type": "courageous_type"
-        },
-        "1315": {
-            "name": "Ivan Ribar",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Ribar_Ivan",
-            "start_date": "1918-01-01",
-            "death_date": "1968-06-11",
-            "type": "courteous_figure"
-        },
-        "1316": {
-            "name": "Vicko Krstulovic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Krstulovic_Vicko",
-            "start_date": "1923-01-01",
-            "death_date": "1988-09-28",
-            "type": "bureaucrat_type"
-        },
-        "1317": {
-            "name": "Oskar I",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Oskar_I",
-            "start_date": "1946-01-01",
-            "death_date": "1961-02-24",
-            "type": "courteous_figure"
-        },
-        "1318": {
-            "name": "Zvonimir II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.49,
-            "picture": "CRO_M_Zvonimir_II",
-            "start_date": "1961-02-24",
-            "death_date": "2300-01-01",
-            "type": "honest_type"
-        },
-        "1319": {
-            "name": "Jakov I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.48,
-            "picture": "CRO_M_Jakov_I",
-            "start_date": "1946-01-01",
-            "death_date": "2006-02-10",
-            "type": "reputable_type"
-        },
-        "1320": {
-            "name": "Ivo Tartaglia",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Tartaglia_Ivo",
-            "start_date": "1920-01-01",
-            "death_date": "1949-04-03",
-            "type": "administrator_type"
-        },
-        "1321": {
-            "name": "Josip Smodlaka",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Smodlaka_Josip",
-            "start_date": "1910-01-01",
-            "death_date": "1956-07-01",
-            "type": "courageous_type"
-        },
-        "1322": {
-            "name": "Ivo Tijardovic",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Tijardovic_Ivo",
-            "start_date": "1941-01-01",
-            "death_date": "1976-03-19",
-            "type": "liberal_type"
-        },
-        "1323": {
-            "name": "Luciano Delbianco",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Delbianco_Luciano",
-            "start_date": "1977-01-01",
-            "death_date": "2300-01-01",
-            "type": "bureaucrat_type"
-        },
-        "1324": {
-            "name": "Valter Drandic",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Drandic_Valter",
-            "start_date": "1985-01-01",
-            "death_date": "2006-08-01",
-            "type": "courteous_figure"
-        },
-        "1325": {
-            "name": "Mladen Schwartz",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Schwartz_Mladen",
-            "start_date": "1980-01-01",
-            "death_date": "2300-01-01",
-            "type": "dictator_type"
-        },
-        "1326": {
-            "name": "Boris Mik�ic",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Miksic_Boris",
-            "start_date": "1978-01-01",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "1327": {
-            "name": "Miro Bare�ic",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Baresic_Miro",
-            "start_date": "1970-01-01",
-            "death_date": "1991-07-31",
-            "type": "autocrat_type"
-        },
-        "1328": {
-            "name": "Inoslav Be�ker",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Besker_Inoslav",
-            "start_date": "1975-01-01",
-            "death_date": "2300-01-01",
-            "type": "honest_type"
-        },
-        "1329": {
-            "name": "Nikica Valentic",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Valentic_Nikica",
-            "start_date": "1984-01-01",
-            "death_date": "2300-01-01",
-            "type": "administrator_type"
-        },
-        "1330": {
-            "name": "Gojko �u�ak",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Susak_Gojko",
-            "start_date": "1970-01-01",
-            "death_date": "1998-05-03",
-            "type": "extremist_type"
-        },
-        "1331": {
-            "name": "Smiljko Sokol",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Sokol_Smiljko",
-            "start_date": "1966-01-01",
-            "death_date": "2300-01-01",
-            "type": "hardliner_type"
-        },
-        "1332": {
-            "name": "Antun Vujic",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Vujic_Antun",
-            "start_date": "1971-01-01",
-            "death_date": "2300-01-01",
-            "type": "ambitious_type"
-        },
-        "1333": {
-            "name": "Jozo Rado�",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Rados_Jozo",
-            "start_date": "1983-01-01",
-            "death_date": "2300-01-01",
-            "type": "liberal_type"
-        },
-        "1334": {
-            "name": "Vladimir Nazor",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Nazor_Vladimir",
-            "start_date": "1942-01-01",
-            "death_date": "1949-06-19",
-            "type": "reputable_type"
-        },
-        "1335": {
-            "name": "Ivo Peri�in",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Perisin_Ivo",
-            "start_date": "1960-01-01",
-            "death_date": "2008-10-30",
-            "type": "administrator_type"
-        },
-        "1336": {
-            "name": "Dragutin Haramija",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Haramija_Dragutin",
-            "start_date": "1946-01-01",
-            "death_date": "1971-01-01",
-            "type": "reformer_type"
-        },
-        "1337": {
-            "name": "Dragutin Haramija",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Haramija_Dragutin",
-            "start_date": "1971-01-01",
-            "death_date": "2012-11-28",
-            "type": "reformer_type"
-        },
-        "1338": {
-            "name": "Zlatko Kramaric",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Kramaric_Zlatko",
-            "start_date": "1990-01-01",
-            "death_date": "2300-01-01",
-            "type": "ambitious_type"
-        },
-        "1339": {
-            "name": "Ema Derosi-Bjelajac",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Derosi-Bjelajac_Ema",
-            "start_date": "1944-01-01",
-            "death_date": "2300-01-01",
-            "type": "loyal_type"
-        },
-        "1340": {
-            "name": "Dragutin Dimitrovic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Dimitrovic_Dragutin",
-            "start_date": "1980-01-01",
-            "death_date": "2012-03-24",
-            "type": "reformer_type"
-        },
-        "682": {
-            "name": "Danko Grlic",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Grlic_Danko",
-            "start_date": "1931-01-01",
-            "death_date": "1984-03-01",
-            "type": "liberal_type"
-        }
-    }
+				"color": [
+								77,
+								103,
+								174
+				],
+				"default_templates": {
+								"USA_air_cavalry_division": [
+												"air_cav_brigade",
+												"air_cav_brigade",
+												"air_cav_brigade",
+												"air_cav_brigade"
+								],
+								"USA_armored_division": [
+												"armor_brigade",
+												"armor_brigade",
+												"heavy_mechanized_brigade",
+												"light_mechanized_brigade",
+												"sp_artillery_brigade"
+								],
+								"USA_cavalry_division": [
+												"cavalry_brigade",
+												"cavalry_brigade",
+												"cavalry_brigade",
+												"cavalry_brigade",
+												"sp_artillery_brigade"
+								],
+								"USA_heavy_mechanized_division": [
+												"heavy_mechanized_brigade",
+												"heavy_mechanized_brigade",
+												"light_mechanized_brigade",
+												"armor_brigade",
+												"sp_artillery_brigade"
+								],
+								"USA_light_mechanized_division": [
+												"light_mechanized_brigade",
+												"light_mechanized_brigade",
+												"heavy_mechanized_brigade",
+												"sp_artillery_brigade"
+								],
+								"USA_motorized_division": [
+												"motorized_brigade",
+												"motorized_brigade",
+												"heavy_mechanized_brigade",
+												"sp_artillery_brigade"
+								],
+								"USA_infantry_division": [
+												"infantry_brigade",
+												"infantry_brigade",
+												"infantry_brigade",
+												"infantry_brigade",
+												"artillery_brigade"
+								],
+								"USA_marine_division": [
+												"marine_brigade",
+												"marine_brigade",
+												"marine_brigade",
+												"marine_brigade"
+								],
+								"USA_mountain_division": [
+												"bergsjaeger_brigade",
+												"bergsjaeger_brigade",
+												"bergsjaeger_brigade",
+												"bergsjaeger_brigade"
+								],
+								"USA_national_guard_division": [
+												"infantry_brigade",
+												"infantry_brigade",
+												"infantry_brigade",
+												"artillery_brigade"
+								]
+				},
+				"unit_names": {},
+				"ministers": {
+								"1243": {
+												"name": "Vladimir Bakaric",
+												"ideology": "communist_idolg",
+												"loyalty": 1,
+												"picture": "CRO_M_Bakaric_Vladimir",
+												"start_date": "1945-04-14",
+												"death_date": "1969-01-01",
+												"type": "visionary_type"
+								},
+								"1244": {
+												"name": "Savka Dabcevic-Kucar",
+												"ideology": "communist_idolg",
+												"loyalty": 1,
+												"picture": "CRO_M_Dabcevic-Kucar_Savka",
+												"start_date": "1969-01-01",
+												"death_date": "1971-12-14",
+												"type": "iron_lady"
+								},
+								"1245": {
+												"name": "Milka Planinc",
+												"ideology": "communist_idolg",
+												"loyalty": 1,
+												"picture": "CRO_M_Planinc_Milka",
+												"start_date": "1971-12-14",
+												"death_date": "1986-05-16",
+												"type": "autocrat_type"
+								},
+								"1246": {
+												"name": "Jure Bilic",
+												"ideology": "communist_idolg",
+												"loyalty": 1,
+												"picture": "CRO_M_Bilic_Jure",
+												"start_date": "1982-05-01",
+												"death_date": "1983-07-01",
+												"type": "traditionalist_type"
+								},
+								"1247": {
+												"name": "Josip Vrhovec",
+												"ideology": "communist_idolg",
+												"loyalty": 1,
+												"picture": "CRO_M_Vrhovec_Josip",
+												"start_date": "1983-07-01",
+												"death_date": "1984-05-15",
+												"type": "ambitious_type"
+								},
+								"1248": {
+												"name": "Mika Spiljak",
+												"ideology": "communist_idolg",
+												"loyalty": 1,
+												"picture": "CRO_M_Spiljak_Mika",
+												"start_date": "1984-05-15",
+												"death_date": "1986-05-01",
+												"type": "bureaucrat_type"
+								},
+								"1249": {
+												"name": "Stanko Stojcevic",
+												"ideology": "communist_idolg",
+												"loyalty": 1,
+												"picture": "CRO_M_Stojcevic_Stanko",
+												"start_date": "1986-05-01",
+												"death_date": "1989-12-01",
+												"type": "administrator_type"
+								},
+								"1250": {
+												"name": "Ivica Racan",
+												"ideology": "communist_idolg",
+												"loyalty": 1,
+												"picture": "CRO_M_Racan_Ivica",
+												"start_date": "1989-12-01",
+												"death_date": "1991-12-31",
+												"type": "zealous_type"
+								},
+								"1251": {
+												"name": "Franjo Tudman",
+												"ideology": "social_cons_idolg",
+												"loyalty": 1,
+												"picture": "CRO_M_Tudman_Franjo",
+												"start_date": "1990-05-30",
+												"death_date": "1999-12-10",
+												"type": "controversial_figure"
+								},
+								"1252": {
+												"name": "Stjepan Mesic",
+												"ideology": "social_cons_idolg",
+												"loyalty": 1,
+												"picture": "YUG_M_Mesic_Stjepan",
+												"start_date": "1990-05-30",
+												"death_date": "1990-08-24",
+												"type": "reformer_type"
+								},
+								"1253": {
+												"name": "Josip Manolic",
+												"ideology": "social_cons_idolg",
+												"loyalty": 1,
+												"picture": "CRO_M_Manolic_Josip",
+												"start_date": "1990-08-24",
+												"death_date": "1991-07-17",
+												"type": "extremist_type"
+								},
+								"1254": {
+												"name": "Franjo Greguric",
+												"ideology": "social_cons_idolg",
+												"loyalty": 1,
+												"picture": "CRO_M_Greguric_Franjo",
+												"start_date": "1991-07-17",
+												"death_date": "1992-08-12",
+												"type": "ambitious_type"
+								},
+								"1255": {
+												"name": "Vlado Janic Capo",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Capo_Vlado_J",
+												"start_date": "1941-01-01",
+												"death_date": "1991-05-04",
+												"type": "loyal_type"
+								},
+								"1256": {
+												"name": "Veceslav Holjevac",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Holjevac_Veceslav",
+												"start_date": "1939-01-01",
+												"death_date": "1970-07-11",
+												"type": "visionary_type"
+								},
+								"1257": {
+												"name": "Slavko Komar",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Komar_Slavko",
+												"start_date": "1941-01-01",
+												"death_date": "2000-07-28",
+												"type": "reformer_type"
+								},
+								"1258": {
+												"name": "Stipe Šuvar",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Suvar_Stipe",
+												"start_date": "1966-01-01",
+												"death_date": "2004-06-29",
+												"type": "reformer_type"
+								},
+								"1259": {
+												"name": "Leon Gerškovic",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Gerskovic_Leon",
+												"start_date": "1935-01-01",
+												"death_date": "1992-04-01",
+												"type": "administrator_type"
+								},
+								"1260": {
+												"name": "Andrija Hebrang",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Hebrang_Andrija",
+												"start_date": "1919-01-01",
+												"death_date": "1949-10-01",
+												"type": "hardliner_type"
+								},
+								"1261": {
+												"name": "Rade Žigic",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Zigic_Rade",
+												"start_date": "1934-01-01",
+												"death_date": "1954-02-04",
+												"type": "honest_type"
+								},
+								"1262": {
+												"name": "Stanko Opacic Canica",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Canica_Stanko_O",
+												"start_date": "1934-01-01",
+												"death_date": "1994-05-06",
+												"type": "traditionalist_type"
+								},
+								"1263": {
+												"name": "Dušan Brkic",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Brkic_Dusan",
+												"start_date": "1941-01-01",
+												"death_date": "2000-07-28",
+												"type": "reputable_type"
+								},
+								"1264": {
+												"name": "Ante Pavelic",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Pavelic_Ante",
+												"start_date": "1946-01-01",
+												"death_date": "2300-01-01",
+												"type": "dictator_type"
+								},
+								"1265": {
+												"name": "Andrija Artukovic",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Artukovic_Andrija",
+												"start_date": "1929-01-01",
+												"death_date": "1988-01-16",
+												"type": "extremist_type"
+								},
+								"1266": {
+												"name": "Tomislav II",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Tomislav_II",
+												"start_date": "1943-07-31",
+												"death_date": "1948-01-29",
+												"type": "lethargic_type"
+								},
+								"1267": {
+												"name": "Vjekoslav Luburic",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Luburic_Vjekoslav",
+												"start_date": "1932-01-01",
+												"death_date": "1969-04-20",
+												"type": "extremist_type"
+								},
+								"1268": {
+												"name": "Milivoj Ašner",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Asner_Milivoj",
+												"start_date": "1946-01-01",
+												"death_date": "2011-06-14",
+												"type": "fortunate_type"
+								},
+								"1269": {
+												"name": "Eugen Kvaternik",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Kvaternik_Eugen",
+												"start_date": "1962-03-10",
+												"death_date": "1992-01-01",
+												"type": "ambitious_type"
+								},
+								"1270": {
+												"name": "Slavko Kvaternik",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Kvaternik_Slavko",
+												"start_date": "1946-01-01",
+												"death_date": "2300-01-01",
+												"type": "loyal_type"
+								},
+								"1271": {
+												"name": "Edo Bulat",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Bulat_Edo",
+												"start_date": "1941-05-01",
+												"death_date": "1984-06-28",
+												"type": "reformer_type"
+								},
+								"1272": {
+												"name": "Vilko Rieger",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Rieger_Vilko",
+												"start_date": "1939-01-01",
+												"death_date": "1998-06-06",
+												"type": "administrator_type"
+								},
+								"1273": {
+												"name": "Ivo Korsky",
+												"ideology": "paternal_auto_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Korsky_Ivo",
+												"start_date": "1941-05-01",
+												"death_date": "2004-12-12",
+												"type": "loyal_type"
+								},
+								"1274": {
+												"name": "Ivan Oršanic",
+												"ideology": "paternal_auto_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Orsanic_Ivan",
+												"start_date": "1941-05-01",
+												"death_date": "1968-12-07",
+												"type": "traditionalist_type"
+								},
+								"1275": {
+												"name": "Dobroslav Paraga",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Paraga_Dobroslav",
+												"start_date": "1980-01-01",
+												"death_date": "2300-01-01",
+												"type": "courageous_type"
+								},
+								"1276": {
+												"name": "Blaž Kraljevic",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Kraljevic_Blaz",
+												"start_date": "1972-01-01",
+												"death_date": "1992-01-01",
+												"type": "visionary_type"
+								},
+								"1277": {
+												"name": "Ante Paradžik",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Paradzik_Ante",
+												"start_date": "1971-01-01",
+												"death_date": "1991-09-21",
+												"type": "democrat_type"
+								},
+								"1278": {
+												"name": "Ilija Tolic",
+												"ideology": "paternal_auto_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Tolic_Ilija",
+												"start_date": "1961-01-01",
+												"death_date": "2300-01-01",
+												"type": "zealous_type"
+								},
+								"1279": {
+												"name": "Ivan Maticevic",
+												"ideology": "paternal_auto_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Maticevic_Ivan",
+												"start_date": "1963-07-07",
+												"death_date": "1974-10-29",
+												"type": "extremist_type"
+								},
+								"1280": {
+												"name": "Mato Prpic",
+												"ideology": "paternal_auto_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Prpic_Mato",
+												"start_date": "1963-07-07",
+												"death_date": "1974-10-29",
+												"type": "extremist_type"
+								},
+								"1281": {
+												"name": "Ludvig Pavlovic",
+												"ideology": "paternal_auto_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Pavlovic_Ludvig",
+												"start_date": "1970-01-01",
+												"death_date": "1991-09-18",
+												"type": "zealous_type"
+								},
+								"1282": {
+												"name": "Vladimir Šeks",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Seks_Vladimir",
+												"start_date": "1971-01-01",
+												"death_date": "2008-01-11",
+												"type": "reputable_type"
+								},
+								"1283": {
+												"name": "Andrija Hebrang Jr.",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Hebrang_Andrija_Jr",
+												"start_date": "1970-01-01",
+												"death_date": "2005-02-25",
+												"type": "democrat_type"
+								},
+								"1284": {
+												"name": "Zdenko Škrabalo",
+												"ideology": "social_democrat_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Skrabalo_Zdenko",
+												"start_date": "1960-01-01",
+												"death_date": "1993-05-28",
+												"type": "traditionalist_type"
+								},
+								"1285": {
+												"name": "Mate Granic",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Granic_Mate",
+												"start_date": "1978-01-01",
+												"death_date": "2000-01-27",
+												"type": "reputable_type"
+								},
+								"1286": {
+												"name": "Miko Tripalo",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Tripalo_Miko",
+												"start_date": "1965-01-01",
+												"death_date": "1995-01-01",
+												"type": "bureaucrat_type"
+								},
+								"1287": {
+												"name": "Marko Veselica",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Veselica_Marko",
+												"start_date": "1969-01-01",
+												"death_date": "2001-12-30",
+												"type": "religious_type"
+								},
+								"1288": {
+												"name": "Ivan Milas",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Milas_Ivan",
+												"start_date": "1969-01-01",
+												"death_date": "2011-07-29",
+												"type": "extremist_type"
+								},
+								"1289": {
+												"name": "Zdravko Tomac",
+												"ideology": "social_democrat_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Tomac_Zdravko",
+												"start_date": "1970-01-01",
+												"death_date": "2003-09-01",
+												"type": "hardliner_type"
+								},
+								"1290": {
+												"name": "Bruno Bušic",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Busic_Bruno",
+												"start_date": "1960-01-01",
+												"death_date": "1978-10-16",
+												"type": "democrat_type"
+								},
+								"1291": {
+												"name": "Vlado Gotovac",
+												"ideology": "market_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Gotovac_Vlado",
+												"start_date": "1971-01-01",
+												"death_date": "2000-12-07",
+												"type": "liberal_type"
+								},
+								"1292": {
+												"name": "Slavko Goldstein",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Goldstein_Slavko",
+												"start_date": "1957-12-11",
+												"death_date": "1990-12-31",
+												"type": "honest_type"
+								},
+								"1293": {
+												"name": "Vladko Macek",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Macek_Vladko",
+												"start_date": "1928-01-01",
+												"death_date": "1964-05-15",
+												"type": "traditionalist_type"
+								},
+								"1294": {
+												"name": "Ivan Šubašic",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Subasic_Ivan",
+												"start_date": "1930-01-01",
+												"death_date": "1955-03-22",
+												"type": "reputable_type"
+								},
+								"1295": {
+												"name": "Juraj Krnjevic",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Krnjevic_Juraj",
+												"start_date": "1923-01-01",
+												"death_date": "1988-01-09",
+												"type": "zealous_type"
+								},
+								"1296": {
+												"name": "August Košutic",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Kosutic_August",
+												"start_date": "1921-01-01",
+												"death_date": "1964-09-12",
+												"type": "hardliner_type"
+								},
+								"1297": {
+												"name": "Juraj Šutej",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Sutej_Juraj",
+												"start_date": "1939-01-01",
+												"death_date": "1976-01-01",
+												"type": "bureaucrat_type"
+								},
+								"1298": {
+												"name": "Ivan Andres",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Andres_Ivan",
+												"start_date": "1919-01-01",
+												"death_date": "1959-03-17",
+												"type": "administrator_type"
+								},
+								"1299": {
+												"name": "Dražen Budiša",
+												"ideology": "market_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Budisa_Drazen",
+												"start_date": "1971-01-01",
+												"death_date": "2300-01-01",
+												"type": "traditionalist_type"
+								},
+								"1300": {
+												"name": "Neven Sesardic",
+												"ideology": "market_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Sesardic_Neven",
+												"start_date": "1985-01-01",
+												"death_date": "2300-01-01",
+												"type": "parental_type"
+								},
+								"1301": {
+												"name": "Srecko Bijelic",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Bijelic_Srecko",
+												"start_date": "1960-01-01",
+												"death_date": "1971-01-01",
+												"type": "liberal_type"
+								},
+								"1302": {
+												"name": "Srecko Bijelic",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Bijelic_Srecko",
+												"start_date": "1971-01-01",
+												"death_date": "2004-09-22",
+												"type": "liberal_type"
+								},
+								"1303": {
+												"name": "Tihomil Rada",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Rada_Tihomil",
+												"start_date": "1950-01-01",
+												"death_date": "2002-03-19",
+												"type": "democrat_type"
+								},
+								"1304": {
+												"name": "Radimir Cacic",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Cacic_Radimir",
+												"start_date": "1985-01-01",
+												"death_date": "2300-01-01",
+												"type": "controversial_figure"
+								},
+								"1305": {
+												"name": "Jakša Kušan",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Kusan_Jaksa",
+												"start_date": "1960-01-01",
+												"death_date": "2300-01-01",
+												"type": "honest_type"
+								},
+								"1306": {
+												"name": "Vesna Pusic",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Pusic_Vesna",
+												"start_date": "1978-01-01",
+												"death_date": "2300-01-01",
+												"type": "hardliner_type"
+								},
+								"1307": {
+												"name": "Vladimir Bebic",
+												"ideology": "social_democrat_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Bebic_Vladimir",
+												"start_date": "1980-01-01",
+												"death_date": "2009-06-13",
+												"type": "moral_type"
+								},
+								"1308": {
+												"name": "Branko Horvat",
+												"ideology": "social_democrat_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Horvat_Branko",
+												"start_date": "1958-01-01",
+												"death_date": "2003-12-01",
+												"type": "visionary_type"
+								},
+								"1309": {
+												"name": "Slavko Linic",
+												"ideology": "social_democrat_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Linic_Slavko",
+												"start_date": "1986-01-01",
+												"death_date": "2300-01-01",
+												"type": "administrator_type"
+								},
+								"1310": {
+												"name": "Gajo Petrovic",
+												"ideology": "left_wing_radical_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Petrovic_Gajo",
+												"start_date": "1956-01-01",
+												"death_date": "1993-06-13",
+												"type": "moral_type"
+								},
+								"1311": {
+												"name": "Milan Kangrga",
+												"ideology": "left_wing_radical_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Kangrga_Milan",
+												"start_date": "1964-09-01",
+												"death_date": "2008-04-25",
+												"type": "democrat_type"
+								},
+								"1312": {
+												"name": "Predrag Vranicki",
+												"ideology": "left_wing_radical_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Vranicki_Predrag",
+												"start_date": "1964-09-01",
+												"death_date": "2002-01-31",
+												"type": "honest_type"
+								},
+								"1313": {
+												"name": "Dragutin Lesar",
+												"ideology": "left_wing_radical_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Lesar_Dragutin",
+												"start_date": "1978-01-01",
+												"death_date": "2300-01-01",
+												"type": "supreme_leader"
+								},
+								"1314": {
+												"name": "Ivan Šibl",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Sibl_Ivan",
+												"start_date": "1942-01-01",
+												"death_date": "1989-03-30",
+												"type": "courageous_type"
+								},
+								"1315": {
+												"name": "Ivan Ribar",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Ribar_Ivan",
+												"start_date": "1918-01-01",
+												"death_date": "1968-06-11",
+												"type": "courteous_figure"
+								},
+								"1316": {
+												"name": "Vicko Krstulovic",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Krstulovic_Vicko",
+												"start_date": "1923-01-01",
+												"death_date": "1988-09-28",
+												"type": "bureaucrat_type"
+								},
+								"1317": {
+												"name": "Oskar I",
+												"ideology": "market_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Oskar_I",
+												"start_date": "1946-01-01",
+												"death_date": "1961-02-24",
+												"type": "courteous_figure"
+								},
+								"1318": {
+												"name": "Zvonimir II",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.49,
+												"picture": "CRO_M_Zvonimir_II",
+												"start_date": "1961-02-24",
+												"death_date": "2300-01-01",
+												"type": "honest_type"
+								},
+								"1319": {
+												"name": "Jakov I",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.48,
+												"picture": "CRO_M_Jakov_I",
+												"start_date": "1946-01-01",
+												"death_date": "2006-02-10",
+												"type": "reputable_type"
+								},
+								"1320": {
+												"name": "Ivo Tartaglia",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Tartaglia_Ivo",
+												"start_date": "1920-01-01",
+												"death_date": "1949-04-03",
+												"type": "administrator_type"
+								},
+								"1321": {
+												"name": "Josip Smodlaka",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Smodlaka_Josip",
+												"start_date": "1910-01-01",
+												"death_date": "1956-07-01",
+												"type": "courageous_type"
+								},
+								"1322": {
+												"name": "Ivo Tijardovic",
+												"ideology": "social_democrat_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Tijardovic_Ivo",
+												"start_date": "1941-01-01",
+												"death_date": "1976-03-19",
+												"type": "liberal_type"
+								},
+								"1323": {
+												"name": "Luciano Delbianco",
+												"ideology": "social_democrat_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Delbianco_Luciano",
+												"start_date": "1977-01-01",
+												"death_date": "2300-01-01",
+												"type": "bureaucrat_type"
+								},
+								"1324": {
+												"name": "Valter Drandic",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Drandic_Valter",
+												"start_date": "1985-01-01",
+												"death_date": "2006-08-01",
+												"type": "courteous_figure"
+								},
+								"1325": {
+												"name": "Mladen Schwartz",
+												"ideology": "fascistic_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Schwartz_Mladen",
+												"start_date": "1980-01-01",
+												"death_date": "2300-01-01",
+												"type": "dictator_type"
+								},
+								"1326": {
+												"name": "Boris Mikšic",
+												"ideology": "market_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Miksic_Boris",
+												"start_date": "1978-01-01",
+												"death_date": "2300-01-01",
+												"type": "fortunate_type"
+								},
+								"1327": {
+												"name": "Miro Barešic",
+												"ideology": "paternal_auto_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Baresic_Miro",
+												"start_date": "1970-01-01",
+												"death_date": "1991-07-31",
+												"type": "autocrat_type"
+								},
+								"1328": {
+												"name": "Inoslav Bešker",
+												"ideology": "left_wing_radical_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Besker_Inoslav",
+												"start_date": "1975-01-01",
+												"death_date": "2300-01-01",
+												"type": "honest_type"
+								},
+								"1329": {
+												"name": "Nikica Valentic",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Valentic_Nikica",
+												"start_date": "1984-01-01",
+												"death_date": "2300-01-01",
+												"type": "administrator_type"
+								},
+								"1330": {
+												"name": "Gojko Šušak",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Susak_Gojko",
+												"start_date": "1970-01-01",
+												"death_date": "1998-05-03",
+												"type": "extremist_type"
+								},
+								"1331": {
+												"name": "Smiljko Sokol",
+												"ideology": "social_cons_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Sokol_Smiljko",
+												"start_date": "1966-01-01",
+												"death_date": "2300-01-01",
+												"type": "hardliner_type"
+								},
+								"1332": {
+												"name": "Antun Vujic",
+												"ideology": "social_democrat_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Vujic_Antun",
+												"start_date": "1971-01-01",
+												"death_date": "2300-01-01",
+												"type": "ambitious_type"
+								},
+								"1333": {
+												"name": "Jozo Radoš",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Rados_Jozo",
+												"start_date": "1983-01-01",
+												"death_date": "2300-01-01",
+												"type": "liberal_type"
+								},
+								"1334": {
+												"name": "Vladimir Nazor",
+												"ideology": "left_wing_radical_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Nazor_Vladimir",
+												"start_date": "1942-01-01",
+												"death_date": "1949-06-19",
+												"type": "reputable_type"
+								},
+								"1335": {
+												"name": "Ivo Perišin",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Perisin_Ivo",
+												"start_date": "1960-01-01",
+												"death_date": "2008-10-30",
+												"type": "administrator_type"
+								},
+								"1336": {
+												"name": "Dragutin Haramija",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Haramija_Dragutin",
+												"start_date": "1946-01-01",
+												"death_date": "1971-01-01",
+												"type": "reformer_type"
+								},
+								"1337": {
+												"name": "Dragutin Haramija",
+												"ideology": "social_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Haramija_Dragutin",
+												"start_date": "1971-01-01",
+												"death_date": "2012-11-28",
+												"type": "reformer_type"
+								},
+								"1338": {
+												"name": "Zlatko Kramaric",
+												"ideology": "market_liberal_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Kramaric_Zlatko",
+												"start_date": "1990-01-01",
+												"death_date": "2300-01-01",
+												"type": "ambitious_type"
+								},
+								"1339": {
+												"name": "Ema Derosi-Bjelajac",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Derosi-Bjelajac_Ema",
+												"start_date": "1944-01-01",
+												"death_date": "2300-01-01",
+												"type": "loyal_type"
+								},
+								"1340": {
+												"name": "Dragutin Dimitrovic",
+												"ideology": "communist_idolg",
+												"loyalty": 0.5,
+												"picture": "CRO_M_Dimitrovic_Dragutin",
+												"start_date": "1980-01-01",
+												"death_date": "2012-03-24",
+												"type": "reformer_type"
+								},
+								"682": {
+												"name": "Danko Grlic",
+												"ideology": "left_wing_radical_idolg",
+												"loyalty": 0.5,
+												"picture": "YUG_M_Grlic_Danko",
+												"start_date": "1931-01-01",
+												"death_date": "1984-03-01",
+												"type": "liberal_type"
+								}
+				}
 }
