@@ -459,12 +459,13 @@ public class WorldDaoImpl implements WorldDao {
                     buildingStoreBuilder.addInputGood(goodId, goodValue);
                 }
                 Iterator<Map.Entry<String, JsonValue>> outputGoodsEntryIterator = buildingValue.get("output_goods").objectIterator();
-                while (outputGoodsEntryIterator.hasNext()) {
+                if (outputGoodsEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> outputGood = outputGoodsEntryIterator.next();
                     int goodId = goodIds.get(outputGood.getKey());
                     float goodValue = (float) outputGood.getValue().asDouble();
                     buildingStoreBuilder.addOutputGood(goodId, goodValue);
                 }
+
                 buildingStoreBuilder.addCost(-1).addOnMap(false);
                 buildingIds.put(buildingName, buildingStoreBuilder.getIndex());
             }

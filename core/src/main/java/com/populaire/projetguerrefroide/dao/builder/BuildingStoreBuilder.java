@@ -27,8 +27,6 @@ public class BuildingStoreBuilder {
     private final IntList inputGoodCounts;
     private final IntList outputGoodIds;
     private final FloatList outputGoodValues;
-    private final IntList outputGoodStarts;
-    private final IntList outputGoodCounts;
     private final IntList costs;
     private final BooleanList onMap;
 
@@ -54,8 +52,6 @@ public class BuildingStoreBuilder {
         this.inputGoodCounts = new IntList(this.defaultCapacity);
         this.outputGoodIds = new IntList();
         this.outputGoodValues = new FloatList();
-        this.outputGoodStarts = new IntList(this.defaultCapacity);
-        this.outputGoodCounts = new IntList(this.defaultCapacity);
         this.costs = new IntList();
         this.onMap = new BooleanList();
     }
@@ -82,9 +78,6 @@ public class BuildingStoreBuilder {
 
         this.inputGoodStarts.add(this.inputGoodIds.size());
         this.inputGoodCounts.add(0);
-
-        this.outputGoodStarts.add(this.outputGoodIds.size());
-        this.outputGoodCounts.add(0);
 
         this.index = this.names.size() - 1;
         return this;
@@ -137,10 +130,6 @@ public class BuildingStoreBuilder {
     public BuildingStoreBuilder addOutputGood(int goodId, float value) {
         this.outputGoodIds.add(goodId);
         this.outputGoodValues.add(value);
-
-        int currentCount = this.outputGoodCounts.get(this.index);
-        this.outputGoodCounts.set(this.index, currentCount + 1);
-
         return this;
     }
 
@@ -155,6 +144,6 @@ public class BuildingStoreBuilder {
     }
 
     public BuildingStore build() {
-        return new BuildingStore(this.names, this.times, this.types, this.goodsCostGoodIds, this.goodsCostValues, this.goodsCostStarts, this.goodsCostCounts, this.maxLevels, this.modifierIds, this.modifierStart, this.modifierCount, this.baseTypeIds, this.artisansTypeIds, this.inputGoodIds, this.inputGoodValues, this.inputGoodStarts, this.inputGoodCounts, this.outputGoodIds, this.outputGoodValues, this.outputGoodStarts, this.outputGoodCounts, this.costs, this.onMap);
+        return new BuildingStore(this.names, this.times, this.types, this.goodsCostGoodIds, this.goodsCostValues, this.goodsCostStarts, this.goodsCostCounts, this.maxLevels, this.modifierIds, this.modifierStart, this.modifierCount, this.baseTypeIds, this.artisansTypeIds, this.inputGoodIds, this.inputGoodValues, this.inputGoodStarts, this.inputGoodCounts, this.outputGoodIds, this.outputGoodValues, this.costs, this.onMap);
     }
 }

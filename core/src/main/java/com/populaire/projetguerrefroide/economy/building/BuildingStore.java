@@ -23,12 +23,10 @@ public class BuildingStore {
     private final IntList inputGoodCounts;
     private final IntList outputGoodIds;
     private final FloatList outputGoodValues;
-    private final IntList outputGoodStarts;
-    private final IntList outputGoodCounts;
     private final IntList costs;
     private final BooleanList onMap;
 
-    public BuildingStore(List<String> names, IntList times, ByteList types, IntList goodsCostGoodIds, FloatList goodsCostValues, IntList goodsCostStarts, IntList goodsCostCounts, ByteList maxLevels, IntList modifierIds, IntList modifierStart, IntList modifierCount, IntList baseTypeIds, IntList artisansTypeIds, IntList inputGoodIds, FloatList inputGoodValues, IntList inputGoodStarts, IntList inputGoodCounts, IntList outputGoodIds, FloatList outputGoodValues, IntList outputGoodStarts, IntList outputGoodCounts, IntList costs, BooleanList onMap) {
+    public BuildingStore(List<String> names, IntList times, ByteList types, IntList goodsCostGoodIds, FloatList goodsCostValues, IntList goodsCostStarts, IntList goodsCostCounts, ByteList maxLevels, IntList modifierIds, IntList modifierStart, IntList modifierCount, IntList baseTypeIds, IntList artisansTypeIds, IntList inputGoodIds, FloatList inputGoodValues, IntList inputGoodStarts, IntList inputGoodCounts, IntList outputGoodIds, FloatList outputGoodValues, IntList costs, BooleanList onMap) {
         this.names = names;
         this.times = times;
         this.types = types;
@@ -48,8 +46,6 @@ public class BuildingStore {
         this.inputGoodCounts = inputGoodCounts;
         this.outputGoodIds = outputGoodIds;
         this.outputGoodValues = outputGoodValues;
-        this.outputGoodStarts = outputGoodStarts;
-        this.outputGoodCounts = outputGoodCounts;
         this.costs = costs;
         this.onMap = onMap;
     }
@@ -130,14 +126,6 @@ public class BuildingStore {
         return this.outputGoodValues;
     }
 
-    public IntList getOutputGoodStarts() {
-        return this.outputGoodStarts;
-    }
-
-    public IntList getOutputGoodCounts() {
-        return this.outputGoodCounts;
-    }
-
     public IntList getCosts() {
         return this.costs;
     }
@@ -168,8 +156,6 @@ public class BuildingStore {
                 ", inputGoodCounts=" + this.inputGoodCounts +
                 ", outputGoodIds=" + this.outputGoodIds +
                 ", outputGoodValues=" + this.outputGoodValues +
-                ", outputGoodStarts=" + this.outputGoodStarts +
-                ", outputGoodCounts=" + this.outputGoodCounts +
                 ", costsDev=" + this.costs +
                 ", onMap=" + this.onMap +
                 '}';
