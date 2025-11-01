@@ -71,7 +71,8 @@ subprojects {
   }
 
   dependencies {
-    implementation 'io.github.monstroussoftware.gdx-webgpu:gdx-desktop-webgpu:-SNAPSHOT'
+    implementation "io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:0.5"
+    implementation 'io.github.monstroussoftware.gdx-webgpu:backend-desktop:0.5'
     implementation 'io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:-SNAPSHOT'
     implementation 'org.lwjgl:lwjgl:3.3.3'
     implementation 'org.lwjgl:lwjgl-opengl:3.3.3'
