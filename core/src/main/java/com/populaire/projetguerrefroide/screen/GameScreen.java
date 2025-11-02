@@ -288,7 +288,6 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
     private boolean containsMainMenuInGame(Actor actor) {
         if (actor instanceof MainMenuInGame) {
-            System.out.println("MainMenuInGame found, skipping touchable change.");
             return true;
         }
 
