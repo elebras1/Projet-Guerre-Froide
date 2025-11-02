@@ -35,7 +35,7 @@ import java.time.LocalDate;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class GameScreen implements Screen, GameInputListener, DateListener, TopBarListener, MainMenuInGameListener, MinimapListener {
+public class GameScreen implements Screen, GameInputListener, DateListener, TopBarListener, MainMenuInGameListener, MinimapListener, EconomyPanelListener {
     private final GameContext gameContext;
     private final WorldService worldService;
     private final ConfigurationService configurationService;
@@ -134,7 +134,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         Table centerTable = new Table();
         centerTable.setFillParent(true);
-        this.economyPanel = new EconomyPanel(this.widgetFactory, this.skinEconomy, this.skinUi, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
+        this.economyPanel = new EconomyPanel(this.widgetFactory, this.skinEconomy, this.skinUi, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.mainMenuInGame = new MainMenuInGame(this.widgetFactory, this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         Stack stack = new Stack();
         stack.add(this.economyPanel);
@@ -247,7 +247,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     }
 
     @Override
-    public void onCloseClicked() {
+    public void onCloseMainMenuInGameClicked() {
         this.paused = false;
         this.mainMenuInGame.setVisible(false);
         this.multiplexer.addProcessor(this.inputHandler);
@@ -274,6 +274,11 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     public void onCancelPopupClicked() {
         this.stage.getActors().removeValue(this.stage.getActors().peek(), true);
         this.mainMenuInGame.setTouchable(Touchable.enabled);
+    }
+
+    @Override
+    public void onCloseEconomyPanelClicked() {
+        this.economyPanel.setVisible(false);
     }
 
     public void setActorsTouchable(boolean touchable) {

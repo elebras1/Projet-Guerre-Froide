@@ -170,7 +170,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     }
 
     @Override
-    public void onCloseClicked() {
+    public void onCloseMainMenuInGameClicked() {
         this.paused = false;
         this.mainMenuInGame.setVisible(false);
         this.multiplexer.addProcessor(this.inputHandler);

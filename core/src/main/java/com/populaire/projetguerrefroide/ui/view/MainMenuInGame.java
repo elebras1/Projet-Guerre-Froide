@@ -97,7 +97,7 @@ public class MainMenuInGame extends Table implements PopupListener {
         cancelButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                listener.onCloseClicked();
+                listener.onCloseMainMenuInGameClicked();
             }
         });
     }
