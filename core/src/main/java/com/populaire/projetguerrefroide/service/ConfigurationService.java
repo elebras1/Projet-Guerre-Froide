@@ -48,6 +48,7 @@ public class ConfigurationService {
         assetManager.load("ui/topbar/topbar_skin.json", Skin.class);
         assetManager.load("ui/minimap/minimap_skin.json", Skin.class);
         assetManager.load("ui/province/province_skin.json", Skin.class);
+        assetManager.load("ui/economy/economy_skin.json", Skin.class);
     }
 
     public void loadMainMenuLocalisation(GameContext gameContext) {

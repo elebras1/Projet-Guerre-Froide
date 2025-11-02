@@ -43,7 +43,7 @@ public class TopBar extends Table {
         this.setSize(background.getMinWidth(), background.getMinHeight());
 
         this.setCountryData(labelStylePool);
-        this.setTabButtons(labelStylePool, localisation);
+        this.setTabButtons(labelStylePool, localisation, listener);
         this.setDateSection(labelStylePool, listener);
         this.addActor(this.createFlagSection(idCountry, idColonizer));
         this.addActor(this.createPrestigeSection(labelStylePool));
@@ -130,9 +130,15 @@ public class TopBar extends Table {
         return prestigeSection;
     }
 
-    private void setTabButtons(LabelStylePool labelStylePool, Map<String, String> localisation) {
+    private void setTabButtons(LabelStylePool labelStylePool, Map<String, String> localisation, TopBarListener listener) {
         Label.LabelStyle labelStyleJockey16Dark = labelStylePool.getLabelStyle("jockey_16_dark");
         Button economyButton = this.widgetFactory.createButton(this.skin, "tab_economy", 425, 30, this);
+        economyButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                listener.onEconomyClicked();
+            }
+        });
         this.widgetFactory.createLabel(localisation.get("ECONOMY"), labelStyleJockey16Dark, 10, 20, economyButton);
         Button militaryButton = this.widgetFactory.createButton(this.skin, "tab_military", 522, 30, this);
         this.widgetFactory.createLabel(localisation.get("ARMAMENTS"), labelStyleJockey16Dark, 10, 20, militaryButton);

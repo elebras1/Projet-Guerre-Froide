@@ -1,14 +1,16 @@
 package com.populaire.projetguerrefroide.screen;
 
-import  com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.ObjectIntMap;
@@ -51,12 +53,14 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     private final Skin skinMainMenuInGame;
     private final Skin skinMinimap;
     private final Skin skinTopBar;
+    private final Skin skinEconomy;
     private final Stage stage;
     private final Debug debug;
     private final TopBar topBar;
     private final ProvincePanel provincePanel;
     private HoverTooltip hoverTooltip;
     private MainMenuInGame mainMenuInGame;
+    private EconomyPanel economyPanel;
     private WidgetFactory widgetFactory;
     private float time;
     private boolean paused;
@@ -87,6 +91,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
         this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
+        this.skinEconomy = assetManager.get("ui/economy/economy_skin.json");
 
         this.configurationService.loadGameLocalisation(this.gameContext);
 
@@ -129,9 +134,16 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         Table centerTable = new Table();
         centerTable.setFillParent(true);
+        this.economyPanel = new EconomyPanel(this.widgetFactory, this.skinEconomy, this.skinUi, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.mainMenuInGame = new MainMenuInGame(this.widgetFactory, this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
+        Stack stack = new Stack();
+        stack.add(this.economyPanel);
+        Table mainMenuTable = new Table();
+        mainMenuTable.add(this.mainMenuInGame);
+        stack.add(mainMenuTable);
+        this.economyPanel.setVisible(false);
         this.mainMenuInGame.setVisible(false);
-        centerTable.add(this.mainMenuInGame).center();
+        centerTable.add(stack).center();
         this.stage.addActor(centerTable);
 
         this.debug.setPosition(100, 90);
@@ -209,6 +221,11 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     }
 
     @Override
+    public void onEconomyClicked() {
+        this.economyPanel.setVisible(true);
+    }
+
+    @Override
     public void onEscape() {
         this.paused = true;
         this.mainMenuInGame.setVisible(true);
@@ -263,23 +280,27 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         for (int i = 0; i < this.stage.getActors().size; i++) {
             Actor actor = this.stage.getActors().get(i);
 
-            if (actor instanceof Table table) {
-                boolean containsMainMenu = false;
-
-                for (Actor child : table.getChildren()) {
-                    if (child instanceof MainMenuInGame) {
-                        containsMainMenu = true;
-                        break;
-                    }
-                }
-
-                if (!containsMainMenu) {
-                    actor.setTouchable(touchable ? Touchable.childrenOnly : Touchable.disabled);
-                }
-            } else {
+            if (!this.containsMainMenuInGame(actor)) {
                 actor.setTouchable(touchable ? Touchable.childrenOnly : Touchable.disabled);
             }
         }
+    }
+
+    private boolean containsMainMenuInGame(Actor actor) {
+        if (actor instanceof MainMenuInGame) {
+            System.out.println("MainMenuInGame found, skipping touchable change.");
+            return true;
+        }
+
+        if (actor instanceof Group group) {
+            for (Actor child : group.getChildren()) {
+                if (this.containsMainMenuInGame(child)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     private boolean isMouseOverUI() {

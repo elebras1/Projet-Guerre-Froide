@@ -6,4 +6,6 @@ public interface TopBarListener {
     int onSpeedDown();
 
     int onTogglePause();
+
+    void onEconomyClicked();
 }
