@@ -20,6 +20,7 @@ import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
+import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.map.MapMode;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
@@ -134,7 +135,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         Table centerTable = new Table();
         centerTable.setFillParent(true);
-        this.economyPanel = new EconomyPanel(this.widgetFactory, this.skinEconomy, this.skinUi, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
+        this.economyPanel = new EconomyPanel(this.widgetFactory, this.skinEconomy, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         this.mainMenuInGame = new MainMenuInGame(this.widgetFactory, this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
         Stack stack = new Stack();
         stack.add(this.economyPanel);
@@ -222,6 +223,8 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
     @Override
     public void onEconomyClicked() {
+        RegionsBuildingsDto regionsBuildingsDto = this.worldService.prepareRegionsBuildingsDto();
+        this.economyPanel.setData(regionsBuildingsDto);
         this.economyPanel.setVisible(true);
     }
 

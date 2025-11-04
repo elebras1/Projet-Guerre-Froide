@@ -92,7 +92,7 @@ public class World implements WorldContext, Disposable {
     private final int uniformBufferSizeWorld;
     private final Vector4 selectedProvinceColor;
     private LandProvince selectedProvince;
-    private Country countryPlayer;
+    private Country playerCountry;
     private MapMode mapMode;
 
     public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, ModifierStore modifierStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, Politics politics, NationalIdeas nationalIdeas, Map<String, Terrain> terrains, GameContext gameContext) {        this.mapDao = new MapDaoImpl();
@@ -220,7 +220,12 @@ public class World implements WorldContext, Disposable {
 
     @Override
     public NationalIdeas getNationalIdeas() {
-        return  this.nationalIdeas;
+        return this.nationalIdeas;
+    }
+
+    @Override
+    public Country getPlayerCountry() {
+        return this.playerCountry;
     }
 
     public LandProvince getProvince(short x, short y) {
@@ -255,13 +260,9 @@ public class World implements WorldContext, Disposable {
         return this.selectedProvince;
     }
 
-    public Country getCountryPlayer() {
-        return this.countryPlayer;
-    }
-
     public boolean setCountryPlayer() {
         if(this.selectedProvince != null) {
-            this.countryPlayer = this.selectedProvince.getCountryOwner();
+            this.playerCountry = this.selectedProvince.getCountryOwner();
             return true;
         }
 
@@ -480,7 +481,7 @@ public class World implements WorldContext, Disposable {
 
 
     private void updatePixmapRelationsColor() {
-        ObjectIntMap<Country> relations = this.countryPlayer.getRelations();
+        ObjectIntMap<Country> relations = this.playerCountry.getRelations();
 
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
@@ -489,7 +490,7 @@ public class World implements WorldContext, Disposable {
             short green = (short) ((color >> 16) & 0xFF);
 
             LandProvince province = this.provinces.get(color);
-            if(Objects.requireNonNull(province).getCountryOwner().equals(this.countryPlayer)) {
+            if(Objects.requireNonNull(province).getCountryOwner().equals(this.playerCountry)) {
                 this.mapModePixmap.drawPixel(red, green, ColorGenerator.getLightBlueRGBA());
             } else if(relations != null && relations.containsKey(province.getCountryOwner())) {
                 int relationValue = relations.get(province.getCountryOwner());

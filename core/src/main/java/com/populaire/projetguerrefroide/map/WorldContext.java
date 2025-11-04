@@ -8,6 +8,7 @@ import com.populaire.projetguerrefroide.national.NationalIdeas;
 import com.populaire.projetguerrefroide.politics.Politics;
 
 public interface WorldContext {
+    Country getPlayerCountry();
     ProvinceStore getProvinceStore();
     RegionStore getRegionStore();
     BuildingStore getBuildingStore();

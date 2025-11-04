@@ -9,13 +9,10 @@ import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
-import com.populaire.projetguerrefroide.dto.CountryDto;
-import com.populaire.projetguerrefroide.dto.CountrySummaryDto;
-import com.populaire.projetguerrefroide.dto.ProvinceDto;
+import com.populaire.projetguerrefroide.dto.*;
 import com.populaire.projetguerrefroide.economy.building.BuildingType;
 import com.populaire.projetguerrefroide.map.RegionStore;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
-import com.populaire.projetguerrefroide.dto.DevelopementBuildingLevelDto;
 import com.populaire.projetguerrefroide.politics.AllianceType;
 import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
@@ -90,7 +87,7 @@ public class WorldService implements DateListener {
     }
 
     public String getCountryIdPlayer() {
-        return this.world.getCountryPlayer().getId();
+        return this.world.getPlayerCountry().getId();
     }
 
     public short getNumberOfProvinces() {
@@ -192,7 +189,7 @@ public class WorldService implements DateListener {
     }
 
     public String getColonizerIdOfCountryPlayer() {
-        Country country = this.world.getCountryPlayer();
+        Country country = this.world.getPlayerCountry();
         return this.world.getColonizerId(country);
     }
 
@@ -208,6 +205,10 @@ public class WorldService implements DateListener {
             return -1;
         }
         return this.economyService.getResourceGoodsProduction(selectedProvince.getId());
+    }
+
+    public RegionsBuildingsDto prepareRegionsBuildingsDto() {
+        return this.economyService.prepareRegionsBuildingsDto();
     }
 
     @Override

@@ -1,7 +1,12 @@
 package com.populaire.projetguerrefroide.service;
 
+import com.github.tommyettinger.ds.ObjectList;
+import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.economy.production.ResourceGatheringOperationSystem;
+import com.populaire.projetguerrefroide.map.Region;
 import com.populaire.projetguerrefroide.map.WorldContext;
+
+import java.util.List;
 
 public class EconomyService {
     private final WorldContext worldContext;
@@ -22,6 +27,14 @@ public class EconomyService {
 
     public void produce() {
         this.rgoSystem.produce(this.worldContext.getProvinceStore(), this.worldContext.getGoodStore(), this.worldContext.getProductionTypeStore());
+    }
+
+    public RegionsBuildingsDto prepareRegionsBuildingsDto() {
+        List<String> regionIds = new ObjectList<>();
+        for(Region region : this.worldContext.getPlayerCountry().getRegions()) {
+            regionIds.add(region.getId());
+        }
+        return new RegionsBuildingsDto(regionIds);
     }
 
     public float getResourceGoodsProduction(short provinceId) {
