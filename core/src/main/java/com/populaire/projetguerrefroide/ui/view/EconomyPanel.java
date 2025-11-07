@@ -95,6 +95,7 @@ public class EconomyPanel extends Table {
                 Table regionsBuildingsTable = new Table();
                 regionsBuildingsTable.add(regionTable).row();
                 Cell<Table> buildingCell = regionsBuildingsTable.add(buildingsTable).padLeft(-6);
+                regionsBuildingsTable.setUserObject(buildingsTable);
 
                 minButton.addListener(new ClickListener() {
                     @Override
@@ -117,8 +118,14 @@ public class EconomyPanel extends Table {
                 this.buildingRegionsTable.add(regionsBuildingsTable).row();
             } else {
                 Actor actor = actors.get(index);
-                if(actor instanceof Table regionsBuildingsTable && regionsBuildingsTable.getChild(0) instanceof Table regionTable && regionTable.getChild(0) instanceof Label regionLabel) {
+                if(actor instanceof Table regionsBuildingsTable && regionsBuildingsTable.getChild(0) instanceof Table regionTable && regionTable.getChild(0) instanceof Label regionLabel && regionTable.getChild(1) instanceof Button minButton && regionTable.getChild(2) instanceof Button maxButton) {
                     regionLabel.setText(regionName);
+                    if(maxButton.isVisible() && regionsBuildingsTable.getUserObject() instanceof Table buildingsTable) {
+                        Cell<Table> buildingCell = regionsBuildingsTable.getCells().get(1);
+                        buildingCell.setActor(buildingsTable);
+                        minButton.setVisible(true);
+                        maxButton.setVisible(false);
+                    }
                 }
             }
             index++;
