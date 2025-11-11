@@ -224,6 +224,8 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     @Override
     public void onEconomyClicked() {
         this.economyPanel.setVisible(true);
+        RegionsBuildingsDto regionsBuildingsDto = this.worldService.prepareRegionsBuildingsDto();
+        this.economyPanel.setData(regionsBuildingsDto);
     }
 
     @Override

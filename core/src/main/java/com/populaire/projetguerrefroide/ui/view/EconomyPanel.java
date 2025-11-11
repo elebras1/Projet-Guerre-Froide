@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.SnapshotArray;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
+import com.populaire.projetguerrefroide.economy.building.BuildingType;
 import com.populaire.projetguerrefroide.screen.EconomyPanelListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.HoverScrollPane;
@@ -73,8 +74,11 @@ public class EconomyPanel extends Table {
 
         SnapshotArray<Actor> actors = this.buildingRegionsTable.getChildren();
         int index = 0;
-        for(String regionIds : regionsBuildingsDto.getRegionIds()) {
-            String regionName = this.localisation.get(regionIds);
+        for(String regionId : regionsBuildingsDto.getRegionIds()) {
+            int id = regionsBuildingsDto.getRegionIdLookup().get(regionId);
+            int buildingCount = regionsBuildingsDto.getBuildingCounts().get(id);
+            int buildingStart = regionsBuildingsDto.getBuildingStarts().get(id);
+            String regionName = this.localisation.get(regionId);
             if(index >= actors.size) {
                 Table regionTable = new Table();
                 regionTable.setBackground(regionBackground);
@@ -86,10 +90,43 @@ public class EconomyPanel extends Table {
                 maxButton.setVisible(false);
 
                 Table buildingsTable = new Table();
-                for(int i = 0; i < 6; i++) {
-                    Table buildingTable = new Table();
-                    this.widgetFactory.applyBackgroundToTable(this.skin, "eco_build", buildingTable);
-                    buildingsTable.add(buildingTable).padRight(-10);
+                int economyCount = 0;
+                for (int i = 0; i < buildingCount; i++) {
+                    int buildingId = regionsBuildingsDto.getBuildingIds().get(buildingStart + i);
+                    int typeId = regionsBuildingsDto.getBuildingTypes().get(buildingId);
+
+                    if (typeId == BuildingType.ECONOMY.getId()) {
+                        Table buildingTable = new Table();
+                        String buildingName = regionsBuildingsDto.getBuildingNames().get(buildingId);
+
+                        this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingTable);
+                        this.widgetFactory.createImage(this.skin, "building_" + buildingName, 10, 55, buildingTable);
+                        buildingsTable.add(buildingTable).padRight(-10);
+
+                        economyCount++;
+
+                        if (economyCount % 6 == 0) {
+                            buildingsTable.row();
+                        }
+                    }
+                }
+
+                if (economyCount == 0) {
+                    for (int i = 0; i < 6; i++) {
+                        Table emptyTable = new Table();
+                        this.widgetFactory.applyBackgroundToTable(this.skin, "eco_build", emptyTable);
+                        buildingsTable.add(emptyTable).padRight(-10);
+                    }
+                } else {
+                    int remainder = economyCount % 6;
+                    if (remainder != 0) {
+                        int missing = 6 - remainder;
+                        for (int i = 0; i < missing; i++) {
+                            Table emptyTable = new Table();
+                            this.widgetFactory.applyBackgroundToTable(this.skin, "eco_build", emptyTable);
+                            buildingsTable.add(emptyTable).padRight(-10);
+                        }
+                    }
                 }
 
                 Table regionsBuildingsTable = new Table();

@@ -6,21 +6,21 @@ filter: Linear, Linear
 repeat: none
 ac_btn_long_off
   rotate: false
-  xy: 2017, 768
+  xy: 1437, 698
   size: 20, 51
   orig: 20, 51
   offset: 0, 0
   index: -1
 ac_btn_long_on
   rotate: false
-  xy: 1547, 699
+  xy: 279, 100
   size: 20, 51
   orig: 20, 51
   offset: 0, 0
   index: -1
 aviation_left
   rotate: false
-  xy: 1967, 1468
+  xy: 1382, 97
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
@@ -46,58 +46,72 @@ bg_economy_trade
   orig: 1156, 796
   offset: 0, 0
   index: -1
+building_aeroplanes_factory
+  rotate: false
+  xy: 1126, 310
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_aeroplanes_factory_building
+  rotate: false
+  xy: 192, 153
+  size: 108, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
 building_aluminium_factory
   rotate: false
-  xy: 1307, 516
+  xy: 412, 94
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
 building_aluminium_factory_building
   rotate: false
-  xy: 279, 95
+  xy: 522, 95
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
 building_ammunition_factory
   rotate: false
-  xy: 1424, 575
+  xy: 767, 210
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
 building_ammunition_factory_building
   rotate: false
-  xy: 169, 95
+  xy: 877, 220
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
 building_armoured_vehicles_factory
   rotate: false
-  xy: 1314, 575
+  xy: 987, 239
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
 building_armoured_vehicles_factory_building
   rotate: false
-  xy: 1236, 251
+  xy: 987, 180
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
 building_automobiles_factory
   rotate: false
-  xy: 1427, 634
+  xy: 877, 161
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
 building_automobiles_factory_building
   rotate: false
-  xy: 1236, 310
+  xy: 1097, 191
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
@@ -111,196 +125,336 @@ building_box_template
   index: -1
 building_cement_factory
   rotate: false
-  xy: 1317, 634
+  xy: 987, 121
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
 building_cement_factory_building
   rotate: false
-  xy: 1907, 762
+  xy: 1097, 132
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
-building_clothes_factory
-  rotate: false
-  xy: 1437, 693
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_clothes_factory_building
-  rotate: false
-  xy: 1797, 762
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_computers_factory
-  rotate: false
-  xy: 1327, 693
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_computers_factory_building
-  rotate: false
-  xy: 1687, 762
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_electronic_components_factory
-  rotate: false
-  xy: 1900, 703
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_electronic_components_factory_building
-  rotate: false
-  xy: 1577, 762
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_fabric_factory
-  rotate: false
-  xy: 1790, 703
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_fabric_factory_building
-  rotate: false
-  xy: 1126, 251
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_glass_factory
-  rotate: false
-  xy: 1680, 703
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_glass_factory_building
-  rotate: false
-  xy: 1460, 752
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_inorganic_chemicals_factory
-  rotate: false
-  xy: 1570, 703
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_inorganic_chemicals_factory_building
-  rotate: false
-  xy: 1350, 752
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_multimodal_transport
-  rotate: false
-  xy: 489, 36
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_multimodal_transport_building
-  rotate: false
-  xy: 522, 154
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_paper_factory
-  rotate: false
-  xy: 379, 36
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_paper_factory_building
-  rotate: false
-  xy: 412, 154
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_pharmaceuticals_factory
-  rotate: false
-  xy: 269, 36
-  size: 108, 57
-  orig: 108, 57
-  offset: 0, 0
-  index: -1
-building_pharmaceuticals_factory_building
+building_centrifuges
   rotate: false
   xy: 302, 154
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
+building_centrifuges_building
+  rotate: false
+  xy: 412, 153
+  size: 108, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
+building_clothes_factory
+  rotate: false
+  xy: 1097, 73
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_clothes_factory_building
+  rotate: false
+  xy: 1797, 703
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_coal_powerplant
+  rotate: false
+  xy: 522, 154
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_coal_powerplant_building
+  rotate: false
+  xy: 1350, 751
+  size: 108, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
+building_communication_factory
+  rotate: false
+  xy: 1460, 752
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_communication_factory_building
+  rotate: false
+  xy: 1126, 250
+  size: 108, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
+building_computers_factory
+  rotate: false
+  xy: 1907, 702
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_computers_factory_building
+  rotate: false
+  xy: 1790, 644
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_electronic_components_factory
+  rotate: false
+  xy: 1900, 643
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_electronic_components_factory_building
+  rotate: false
+  xy: 1790, 585
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_fabric_factory
+  rotate: false
+  xy: 1900, 584
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_fabric_factory_building
+  rotate: false
+  xy: 1327, 692
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_glass_factory
+  rotate: false
+  xy: 1317, 633
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_glass_factory_building
+  rotate: false
+  xy: 1314, 574
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_inorganic_chemicals_factory
+  rotate: false
+  xy: 1307, 515
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_inorganic_chemicals_factory_building
+  rotate: false
+  xy: 1307, 456
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_integrated_circuits_factory
+  rotate: false
+  xy: 1577, 762
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_integrated_circuits_factory_building
+  rotate: false
+  xy: 1687, 761
+  size: 108, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
+building_machine_parts_factory
+  rotate: false
+  xy: 1797, 762
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_machine_parts_factory_building
+  rotate: false
+  xy: 1907, 761
+  size: 108, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
+building_military_satellites_factory
+  rotate: false
+  xy: 1236, 310
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_military_satellites_factory_building
+  rotate: false
+  xy: 1236, 251
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_multimodal_transport
+  rotate: false
+  xy: 1290, 397
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_multimodal_transport_building
+  rotate: false
+  xy: 1236, 192
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_nuclear_powerplant
+  rotate: false
+  xy: 1570, 703
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_nuclear_powerplant_building
+  rotate: false
+  xy: 1680, 701
+  size: 108, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
+building_paper_factory
+  rotate: false
+  xy: 1207, 133
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_paper_factory_building
+  rotate: false
+  xy: 1207, 74
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_pharmaceuticals_factory
+  rotate: false
+  xy: 522, 36
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_pharmaceuticals_factory_building
+  rotate: false
+  xy: 1207, 15
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
 building_plastics_factory
   rotate: false
-  xy: 159, 36
+  xy: 639, 164
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
 building_plastics_factory_building
   rotate: false
-  xy: 192, 154
+  xy: 632, 105
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
+building_refinery
+  rotate: false
+  xy: 1460, 693
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_refinery_building
+  rotate: false
+  xy: 1570, 643
+  size: 108, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
 building_renewable_powerplant
   rotate: false
-  xy: 499, 95
+  xy: 632, 46
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
 building_renewable_powerplant_building
   rotate: false
-  xy: 1126, 310
+  xy: 749, 151
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
+building_ships_factory
+  rotate: false
+  xy: 1680, 642
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_ships_factory_building
+  rotate: false
+  xy: 169, 93
+  size: 108, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
 building_sign
   rotate: false
-  xy: 1417, 515
+  xy: 1792, 1459
   size: 108, 58
   orig: 108, 58
   offset: 0, 0
   index: -1
 building_steel_factory
   rotate: false
-  xy: 389, 95
+  xy: 742, 92
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
 building_steel_factory_building
   rotate: false
-  xy: 1792, 1460
+  xy: 742, 33
   size: 108, 57
   orig: 108, 57
   offset: 0, 0
   index: -1
+building_weaponry_factory
+  rotate: false
+  xy: 159, 34
+  size: 108, 57
+  orig: 108, 57
+  offset: 0, 0
+  index: -1
+building_weaponry_factory_building
+  rotate: false
+  xy: 302, 94
+  size: 108, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
 building_wire
   rotate: false
-  xy: 1399, 378
+  xy: 2040, 1541
   size: 7, 39
   orig: 7, 39
   offset: 0, 0
@@ -314,7 +468,7 @@ buildings_bg
   index: -1
 centrifuge_left
   rotate: false
-  xy: 721, 199
+  xy: 1382, 29
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
@@ -342,56 +496,56 @@ eco_back_over
   index: -1
 eco_box_metal_blue
   rotate: false
-  xy: 1537, 642
+  xy: 319, 43
   size: 48, 49
   orig: 48, 49
   offset: 0, 0
   index: -1
 eco_box_metal_green
   rotate: false
-  xy: 599, 44
+  xy: 269, 42
   size: 48, 49
   orig: 48, 49
   offset: 0, 0
   index: -1
 eco_box_metal_grey
   rotate: false
-  xy: 1476, 263
+  xy: 1902, 1463
   size: 48, 49
   orig: 48, 49
   offset: 0, 0
   index: -1
 eco_box_metal_red
   rotate: false
-  xy: 609, 103
+  xy: 1952, 1463
   size: 48, 49
   orig: 48, 49
   offset: 0, 0
   index: -1
 eco_btn_ai_off
   rotate: false
-  xy: 295, 4
+  xy: 478, 18
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
   index: -1
 eco_btn_ai_on
   rotate: false
-  xy: 329, 4
+  xy: 2009, 1614
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
   index: -1
 eco_btn_aiknob_off
   rotate: false
-  xy: 1411, 246
+  xy: 1879, 1526
   size: 49, 35
   orig: 49, 35
   offset: 0, 0
   index: -1
 eco_btn_aiknob_on
   rotate: false
-  xy: 1476, 314
+  xy: 935, 306
   size: 49, 35
   orig: 49, 35
   offset: 0, 0
@@ -419,35 +573,35 @@ eco_btn_develop_over
   index: -1
 eco_btn_dollar_off
   rotate: false
-  xy: 1674, 635
+  xy: 852, 35
   size: 22, 22
   orig: 22, 22
   offset: 0, 0
   index: -1
 eco_btn_dollar_on
   rotate: false
-  xy: 1698, 635
+  xy: 1317, 168
   size: 22, 22
   orig: 22, 22
   offset: 0, 0
   index: -1
 eco_btn_eco_trade_tab
   rotate: false
-  xy: 1941, 1807
+  xy: 1941, 1853
   size: 91, 36
   orig: 91, 36
   offset: 0, 0
   index: -1
 eco_btn_eco_trade_tab_down
   rotate: false
-  xy: 1941, 1845
+  xy: 1941, 1891
   size: 91, 36
   orig: 91, 36
   offset: 0, 0
   index: -1
 eco_btn_eco_trade_tab_over
   rotate: false
-  xy: 1941, 1883
+  xy: 1941, 1929
   size: 91, 36
   orig: 91, 36
   offset: 0, 0
@@ -475,77 +629,77 @@ eco_btn_pop_over
   index: -1
 eco_btn_regional_off
   rotate: false
-  xy: 363, 4
+  xy: 2009, 1582
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
   index: -1
 eco_btn_regional_on
   rotate: false
-  xy: 397, 4
+  xy: 2006, 1550
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
   index: -1
 eco_btn_tab_ai
   rotate: false
-  xy: 1941, 1600
+  xy: 1941, 1646
   size: 78, 35
   orig: 78, 35
   offset: 0, 0
   index: -1
 eco_btn_tab_ai_down
   rotate: false
-  xy: 1941, 1637
+  xy: 1941, 1683
   size: 78, 35
   orig: 78, 35
   offset: 0, 0
   index: -1
 eco_btn_tab_ai_over
   rotate: false
-  xy: 1941, 1674
+  xy: 1941, 1720
   size: 78, 35
   orig: 78, 35
   offset: 0, 0
   index: -1
 eco_btn_triangle
   rotate: false
-  xy: 1527, 325
+  xy: 955, 343
   size: 19, 24
   orig: 19, 24
   offset: 0, 0
   index: -1
 eco_btn_triangle_down
   rotate: false
-  xy: 111, 1
+  xy: 876, 33
   size: 19, 24
   orig: 19, 24
   offset: 0, 0
   index: -1
 eco_btn_triangle_over
   rotate: false
-  xy: 1722, 633
+  xy: 111, 1
   size: 19, 24
   orig: 19, 24
   offset: 0, 0
   index: -1
 eco_btn_triangle_right
   rotate: false
-  xy: 2009, 1574
+  xy: 918, 33
   size: 19, 24
   orig: 19, 24
   offset: 0, 0
   index: -1
 eco_btn_triangle_right_down
   rotate: false
-  xy: 132, 1
+  xy: 897, 33
   size: 19, 24
   orig: 19, 24
   offset: 0, 0
   index: -1
 eco_btn_triangle_right_over
   rotate: false
-  xy: 1743, 638
+  xy: 132, 1
   size: 19, 24
   orig: 19, 24
   offset: 0, 0
@@ -580,7 +734,7 @@ eco_build
   index: -1
 eco_build_progress_bar
   rotate: false
-  xy: 1941, 2017
+  xy: 852, 91
   size: 98, 12
   orig: 98, 12
   offset: 0, 0
@@ -678,77 +832,77 @@ eco_button_workforce
   index: -1
 eco_folder_btn_red
   rotate: false
-  xy: 1307, 488
+  xy: 1290, 369
   size: 107, 26
   orig: 107, 26
   offset: 0, 0
   index: -1
 eco_folder_btn_red_down
   rotate: false
-  xy: 1416, 487
+  xy: 632, 18
   size: 107, 26
   orig: 107, 26
   offset: 0, 0
   index: -1
 eco_folder_btn_red_over
   rotate: false
-  xy: 1290, 460
+  xy: 741, 5
   size: 107, 26
   orig: 107, 26
   offset: 0, 0
   index: -1
 eco_folder_btn_yellow
   rotate: false
-  xy: 1290, 432
+  xy: 156, 6
   size: 107, 26
   orig: 107, 26
   offset: 0, 0
   index: -1
 eco_folder_btn_yellow_down
   rotate: false
-  xy: 1290, 404
+  xy: 859, 133
   size: 107, 26
   orig: 107, 26
   offset: 0, 0
   index: -1
 eco_folder_btn_yellow_over
   rotate: false
-  xy: 1290, 376
+  xy: 852, 105
   size: 107, 26
   orig: 107, 26
   offset: 0, 0
   index: -1
 eco_icon_ammo_green
   rotate: false
-  xy: 955, 318
+  xy: 1207, 198
   size: 18, 20
   orig: 18, 20
   offset: 0, 0
   index: -1
 eco_icon_ammo_red
   rotate: false
-  xy: 2009, 662
+  xy: 918, 11
   size: 18, 20
   orig: 18, 20
   offset: 0, 0
   index: -1
 eco_icon_fuel_green
   rotate: false
-  xy: 935, 321
+  xy: 2017, 703
   size: 18, 20
   orig: 18, 20
   offset: 0, 0
   index: -1
 eco_icon_fuel_red
   rotate: false
-  xy: 975, 318
+  xy: 1515, 671
   size: 18, 20
   orig: 18, 20
   offset: 0, 0
   index: -1
 eco_icon_industry
   rotate: false
-  xy: 226, 1
+  xy: 409, 15
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
@@ -762,105 +916,105 @@ eco_icon_infra
   index: -1
 eco_icon_invest
   rotate: false
-  xy: 261, 2
+  xy: 444, 16
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 eco_icon_nuke_green
   rotate: false
-  xy: 610, 15
+  xy: 1457, 664
   size: 27, 27
   orig: 27, 27
   offset: 0, 0
   index: -1
 eco_icon_nuke_red
   rotate: false
-  xy: 1645, 630
+  xy: 1486, 635
   size: 27, 27
   orig: 27, 27
   offset: 0, 0
   index: -1
 eco_icon_prod
   rotate: false
-  xy: 1978, 667
+  xy: 2017, 785
   size: 29, 34
   orig: 29, 34
   offset: 0, 0
   index: -1
 eco_icon_reinforce
   rotate: false
-  xy: 1916, 667
+  xy: 2006, 1514
   size: 29, 34
   orig: 29, 34
   offset: 0, 0
   index: -1
 eco_icon_sat_green
   rotate: false
-  xy: 955, 340
+  xy: 1097, 269
   size: 27, 27
   orig: 27, 27
   offset: 0, 0
   index: -1
 eco_icon_sat_red
   rotate: false
-  xy: 1616, 630
+  xy: 1486, 664
   size: 27, 27
   orig: 27, 27
   offset: 0, 0
   index: -1
 eco_icon_upgrade
   rotate: false
-  xy: 1947, 667
+  xy: 2002, 1478
   size: 29, 34
   orig: 29, 34
   offset: 0, 0
   index: -1
 eco_icon_workers_2
   rotate: false
-  xy: 156, 1
+  xy: 339, 8
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 eco_plate_max
   rotate: false
-  xy: 431, 6
+  xy: 2017, 755
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 eco_plate_max_down
   rotate: false
-  xy: 491, 6
+  xy: 1427, 662
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 eco_plate_max_over
   rotate: false
-  xy: 461, 6
+  xy: 2017, 725
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 eco_plate_min
   rotate: false
-  xy: 551, 6
+  xy: 1424, 602
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 eco_plate_min_down
   rotate: false
-  xy: 958, 369
+  xy: 1424, 572
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 eco_plate_min_over
   rotate: false
-  xy: 521, 6
+  xy: 1427, 632
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
@@ -881,21 +1035,21 @@ eco_slider_bar2
   index: -1
 eco_sort_1
   rotate: false
-  xy: 1879, 1531
+  xy: 1941, 1582
   size: 66, 30
   orig: 66, 30
   offset: 0, 0
   index: -1
 eco_sort_1_down
   rotate: false
-  xy: 1947, 1536
+  xy: 850, 1
   size: 66, 30
   orig: 66, 30
   offset: 0, 0
   index: -1
 eco_sort_1_over
   rotate: false
-  xy: 1941, 1568
+  xy: 1941, 1614
   size: 66, 30
   orig: 66, 30
   offset: 0, 0
@@ -923,21 +1077,21 @@ eco_sort_3_over
   index: -1
 eco_sort_5
   rotate: false
-  xy: 1941, 1953
+  xy: 852, 59
   size: 95, 30
   orig: 95, 30
   offset: 0, 0
   index: -1
 eco_sort_5_down
   rotate: false
-  xy: 1941, 1921
+  xy: 1941, 1967
   size: 95, 30
   orig: 95, 30
   offset: 0, 0
   index: -1
 eco_sort_5_over
   rotate: false
-  xy: 1941, 1985
+  xy: 1941, 1999
   size: 95, 30
   orig: 95, 30
   offset: 0, 0
@@ -986,21 +1140,21 @@ eco_sort_type_date_over
   index: -1
 eco_sort_workforce
   rotate: false
-  xy: 1941, 1743
+  xy: 1941, 1789
   size: 80, 30
   orig: 80, 30
   offset: 0, 0
   index: -1
 eco_sort_workforce_down
   rotate: false
-  xy: 1941, 1711
+  xy: 1941, 1757
   size: 80, 30
   orig: 80, 30
   offset: 0, 0
   index: -1
 eco_sort_workforce_over
   rotate: false
-  xy: 1941, 1775
+  xy: 1941, 1821
   size: 80, 30
   orig: 80, 30
   offset: 0, 0
@@ -1014,21 +1168,21 @@ eco_trade_bg
   index: -1
 econmy_build_icon
   rotate: false
-  xy: 1687, 659
+  xy: 469, 50
   size: 48, 42
   orig: 48, 42
   offset: 0, 0
   index: -1
 econmy_subsidized_icon
   rotate: false
-  xy: 1637, 659
+  xy: 419, 50
   size: 48, 42
   orig: 48, 42
   offset: 0, 0
   index: -1
 econmy_suspended_icon1
   rotate: false
-  xy: 1587, 659
+  xy: 369, 50
   size: 48, 42
   orig: 48, 42
   offset: 0, 0
@@ -1056,14 +1210,14 @@ economy_paper
   index: -1
 economy_priority_star_off
   rotate: false
-  xy: 581, 6
+  xy: 1207, 220
   size: 27, 28
   orig: 27, 28
   offset: 0, 0
   index: -1
 economy_priority_star_on
   rotate: false
-  xy: 1587, 629
+  xy: 1457, 634
   size: 27, 28
   orig: 27, 28
   offset: 0, 0
@@ -1084,133 +1238,133 @@ factory_bar
   index: -1
 factory_workforce_plupp
   rotate: false
-  xy: 1879, 1519
+  xy: 1902, 1514
   size: 14, 10
   orig: 14, 10
   offset: 0, 0
   index: -1
 generic_left
   rotate: false
-  xy: 1399, 419
+  xy: 1346, 301
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 high_tech_left
   rotate: false
-  xy: 1346, 308
+  xy: 1346, 165
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 icon_di
   rotate: false
-  xy: 1737, 664
+  xy: 2010, 585
   size: 37, 37
   orig: 37, 37
   offset: 0, 0
   index: -1
 icon_pop
   rotate: false
-  xy: 2010, 684
+  xy: 2010, 624
   size: 37, 37
   orig: 37, 37
   offset: 0, 0
   index: -1
 icon_workforce
   rotate: false
-  xy: 2010, 723
+  xy: 2010, 663
   size: 37, 37
   orig: 37, 37
   offset: 0, 0
   index: -1
 industry_heavy_left
   rotate: false
-  xy: 851, 201
+  xy: 1400, 388
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 industry_light_left
   rotate: false
-  xy: 1464, 419
+  xy: 1346, 233
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 military_goods_left
   rotate: false
-  xy: 1411, 283
+  xy: 1411, 252
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 nuclear_left
   rotate: false
-  xy: 1411, 351
+  xy: 1411, 320
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 power_plant_left
   rotate: false
-  xy: 1346, 240
+  xy: 1317, 97
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 prod_icon
   rotate: false
-  xy: 191, 1
+  xy: 374, 15
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 rafinery_left
   rotate: false
-  xy: 1902, 1463
+  xy: 1317, 29
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 resource_light_blue
   rotate: false
-  xy: 1846, 673
+  xy: 269, 12
   size: 33, 28
   orig: 33, 28
   offset: 0, 0
   index: -1
 resource_light_green
   rotate: false
-  xy: 1881, 673
+  xy: 304, 12
   size: 33, 28
   orig: 33, 28
   offset: 0, 0
   index: -1
 resource_light_grey
   rotate: false
-  xy: 1776, 673
+  xy: 721, 237
   size: 33, 28
   orig: 33, 28
   offset: 0, 0
   index: -1
 resource_light_red
   rotate: false
-  xy: 1811, 673
+  xy: 958, 369
   size: 33, 28
   orig: 33, 28
   offset: 0, 0
   index: -1
 satellites_left
   rotate: false
-  xy: 1476, 351
+  xy: 1411, 184
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
   index: -1
 shipyard_left
   rotate: false
-  xy: 786, 201
+  xy: 1941, 1514
   size: 63, 66
   orig: 63, 66
   offset: 0, 0
