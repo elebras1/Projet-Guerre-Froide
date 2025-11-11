@@ -19,13 +19,19 @@ apply plugin: 'io.github.fourlastor.construo'
 import io.github.fourlastor.construo.Target
 
 sourceSets.main.resources.srcDirs += [ rootProject.file('assets').path ]
-mainClassName = 'com.populaire.projetguerrefroide.lwjgl3.Launcher'
-application.setMainClass(mainClassName)
+application {
+  mainClass = 'com.populaire.projetguerrefroide.lwjgl3.Launcher'
+}
+
 eclipse.project.name = appName + '-lwjgl3'
-java.sourceCompatibility = 21
-java.targetCompatibility = 21
+java {
+  toolchain {
+    languageVersion.set(JavaLanguageVersion.of(25))
+  }
+}
+
 if (JavaVersion.current().isJava9Compatible()) {
-  compileJava.options.release.set(21)
+  compileJava.options.release.set(25)
 }
 
 dependencies {
@@ -69,7 +75,7 @@ jar {
   }
 // setting the manifest makes the JAR runnable.
   manifest {
-    attributes 'Main-Class': project.mainClassName
+    attributes 'Main-Class': application.mainClass.get()
   }
 // this last step may help on some OSes that need extra instruction to make runnable JARs.
   doLast {

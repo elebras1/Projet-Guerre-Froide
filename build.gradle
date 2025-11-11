@@ -29,7 +29,11 @@ allprojects {
 
 configure(subprojects) {
   apply plugin: 'java-library'
-  sourceCompatibility = 21
+  java {
+    toolchain {
+      languageVersion.set(JavaLanguageVersion.of(25))
+    }
+  }
 
   // From https://lyze.dev/2021/04/29/libGDX-Internal-Assets-List/
   // The article can be helpful when using assets.txt in your project.
@@ -71,12 +75,10 @@ subprojects {
   }
 
   dependencies {
-    implementation "io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:0.5"
-    implementation 'io.github.monstroussoftware.gdx-webgpu:backend-desktop:0.5'
+    implementation "io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:0.7.1"
+    implementation 'io.github.monstroussoftware.gdx-webgpu:backend-desktop:0.7.1'
     implementation 'io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:-SNAPSHOT'
-    implementation 'org.lwjgl:lwjgl:3.3.3'
-    implementation 'org.lwjgl:lwjgl-opengl:3.3.3'
-    implementation 'com.github.tommyettinger:jdkgdxds:1.9.2'
+    implementation 'com.github.tommyettinger:jdkgdxds:1.13.1'
     implementation 'com.dslplatform:dsl-json:2.0.2'
     annotationProcessor 'com.dslplatform:dsl-json:2.0.2'
   }
