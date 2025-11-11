@@ -23,6 +23,11 @@ public class HoverScrollPane extends WgScrollPane {
     protected void addScrollListener() {
         this.addListener(new InputListener() {
             @Override
+            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
+                getStage().setScrollFocus(HoverScrollPane.this);
+            }
+
+            @Override
             public boolean scrolled(InputEvent event, float x, float y, float amountX, float amountY) {
                 if (isOver(x, y)) {
                     setScrollbarsVisible(true);
@@ -41,6 +46,7 @@ public class HoverScrollPane extends WgScrollPane {
             }
         });
     }
+
 
     private boolean isOver(float x, float y) {
         return x >= 0 && x < getWidth() && y >= 0 && y < getHeight();
