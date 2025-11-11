@@ -59,6 +59,7 @@ run {
   setIgnoreExitValue(true)
 
   if (os.contains('mac')) jvmArgs += "-XstartOnFirstThread"
+  jvmArgs += "-XX:+UseCompactObjectHeaders"
 }
 
 jar {
