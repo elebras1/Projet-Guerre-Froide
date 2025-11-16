@@ -227,6 +227,11 @@ public class World implements WorldContext, Disposable {
     public Country getPlayerCountry() {
         return this.playerCountry;
     }
+    
+    @Override
+    public List<Country> getCountries() {
+        return this.countries;
+    }
 
     public LandProvince getProvince(short x, short y) {
         x = (short) ((x + WORLD_WIDTH) % WORLD_WIDTH);

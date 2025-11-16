@@ -7,6 +7,8 @@ import com.populaire.projetguerrefroide.economy.good.GoodStore;
 import com.populaire.projetguerrefroide.national.NationalIdeas;
 import com.populaire.projetguerrefroide.politics.Politics;
 
+import java.util.List;
+
 public interface WorldContext {
     Country getPlayerCountry();
     ProvinceStore getProvinceStore();
@@ -17,5 +19,6 @@ public interface WorldContext {
     EmployeeStore getEmployeeStore();
     Politics getPolitics();
     NationalIdeas getNationalIdeas();
+    List<Country> getCountries();
 
 }

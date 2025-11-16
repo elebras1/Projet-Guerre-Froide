@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.dto;
 
 import com.github.tommyettinger.ds.ByteList;
+import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectIntMap;
 
@@ -15,9 +16,14 @@ public class RegionsBuildingsDto {
     private final IntList buildingCounts;
     private final List<String> buildingNames;
     private final ByteList buildingTypes;
+    private final ByteList buildingMaxLevels;
+    private final ByteList infrastructureValues;
+    private final IntList populationAmounts;
+    private final IntList buildingWorkersAmount;
+    private final ByteList buildingWorkersRatio;
+    private final FloatList buildingProductionValues;
 
-
-    public RegionsBuildingsDto(List<String> regionIds, ObjectIntMap<String> regionIdLookup, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, List<String> buildingNames, ByteList buildingTypes) {
+    public RegionsBuildingsDto(List<String> regionIds, ObjectIntMap<String> regionIdLookup, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, List<String> buildingNames, ByteList buildingTypes, ByteList buildingMaxLevels, ByteList infrastructureValues, IntList populationAmounts, IntList buildingWorkersAmount, ByteList buildingWorkersRatio, FloatList buildingProductionValues) {
         this.regionIds = regionIds;
         this.regionIdLookup = regionIdLookup;
         this.buildingIds = buildingIds;
@@ -26,6 +32,12 @@ public class RegionsBuildingsDto {
         this.buildingCounts = buildingCounts;
         this.buildingNames = buildingNames;
         this.buildingTypes = buildingTypes;
+        this.buildingMaxLevels = buildingMaxLevels;
+        this.infrastructureValues = infrastructureValues;
+        this.populationAmounts = populationAmounts;
+        this.buildingWorkersAmount = buildingWorkersAmount;
+        this.buildingWorkersRatio = buildingWorkersRatio;
+        this.buildingProductionValues = buildingProductionValues;
     }
 
     public List<String> getRegionIds() {
@@ -60,4 +72,27 @@ public class RegionsBuildingsDto {
         return this.buildingTypes;
     }
 
+    public ByteList getBuildingMaxLevels() {
+        return this.buildingMaxLevels;
+    }
+
+    public ByteList getInfrastructureValues() {
+        return this.infrastructureValues;
+    }
+
+    public IntList getPopulationAmounts() {
+        return this.populationAmounts;
+    }
+
+    public IntList getBuildingWorkersAmount() {
+        return this.buildingWorkersAmount;
+    }
+
+    public ByteList getBuildingWorkersRatio() {
+        return this.buildingWorkersRatio;
+    }
+
+    public FloatList getBuildingProductionValues() {
+        return this.buildingProductionValues;
+    }
 }

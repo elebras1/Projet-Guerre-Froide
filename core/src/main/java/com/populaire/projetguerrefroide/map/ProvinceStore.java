@@ -30,7 +30,8 @@ public class ProvinceStore {
     private final IntList religionCounts;
     private final IntList resourceGoodsSize;
     private final FloatList resourceGoodsProduction;
-    private final IntList resourceGoodsPopulationHireValues;
+    private final IntList resourceGoodsPopulationAmountValues;
+    private final IntList buildingsPopulationAmountValues;
 
     public ProvinceStore(IntIntMap indexById, IntList ids, IntList colors, IntList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, IntList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, IntList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, IntList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
         this.indexById = indexById;
@@ -60,8 +61,10 @@ public class ProvinceStore {
         this.resourceGoodsSize.setSize(resourceGoodIds.size());
         this.resourceGoodsProduction = new FloatList(resourceGoodIds.size());
         this.resourceGoodsProduction.setSize(resourceGoodIds.size());
-        this.resourceGoodsPopulationHireValues = new IntList(populationTypeIds.size());
-        this.resourceGoodsPopulationHireValues.setSize(populationTypeIds.size());
+        this.resourceGoodsPopulationAmountValues = new IntList(populationTypeIds.size());
+        this.resourceGoodsPopulationAmountValues.setSize(populationTypeIds.size());
+        this.buildingsPopulationAmountValues = new IntList(populationTypeIds.size());
+        this.buildingsPopulationAmountValues.setSize(populationTypeIds.size());
     }
 
     public IntIntMap getIndexById() {
@@ -164,8 +167,12 @@ public class ProvinceStore {
         return this.resourceGoodsProduction;
     }
 
-    public IntList getResourceGoodsPopulationHireValues() {
-        return this.resourceGoodsPopulationHireValues;
+    public IntList getResourceGoodsPopulationAmountValues() {
+        return this.resourceGoodsPopulationAmountValues;
+    }
+
+    public IntList getBuildingsPopulationAmountValues() {
+        return this.buildingsPopulationAmountValues;
     }
 
     public int getPopulationAmount(int provinceId) {

@@ -41,10 +41,23 @@ public class WidgetFactory {
         return label;
     }
 
+    public Label createLabel(String text, Label.LabelStyle labelStyle, Group parent) {
+        Label label = new Label(text, labelStyle);
+        parent.addActor(label);
+        return label;
+    }
+
     public Label createLabel(String text, Label.LabelStyle labelStyle, float x, float y, float width, float height, int align, Group parent) {
         Label label = new Label(text, labelStyle);
         label.setBounds(x, y, width, height);
         label.setAlignment(align);
+        parent.addActor(label);
+        return label;
+    }
+
+    public Label createLabelCentered(String text, Label.LabelStyle labelStyle, float x, float y, Group parent) {
+        Label label = new Label(text, labelStyle);
+        label.setPosition(x - label.getWidth() / 2, y);
         parent.addActor(label);
         return label;
     }

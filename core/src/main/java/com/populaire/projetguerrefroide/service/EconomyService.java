@@ -1,15 +1,10 @@
 package com.populaire.projetguerrefroide.service;
 
-import com.github.tommyettinger.ds.ByteList;
-import com.github.tommyettinger.ds.IntList;
-import com.github.tommyettinger.ds.ObjectIntMap;
-import com.github.tommyettinger.ds.ObjectList;
+import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.economy.production.ResourceGatheringOperationSystem;
-import com.populaire.projetguerrefroide.map.Region;
-import com.populaire.projetguerrefroide.map.RegionStore;
-import com.populaire.projetguerrefroide.map.WorldContext;
+import com.populaire.projetguerrefroide.map.*;
 
 import java.util.List;
 
@@ -48,12 +43,97 @@ public class EconomyService {
         IntList buildingCounts = new IntList(regionStore.getBuildingCounts());
         List<String> buildingNames = new ObjectList<>(buildingStore.getNames());
         ByteList buildingTypes = new ByteList(buildingStore.getTypes());
+        ByteList buildingMaxLevels = new ByteList(buildingStore.getMaxLevels());
+        ByteList infrastructureValues = new ByteList(regionStore.getBuildingIds().size());
+        infrastructureValues.setSize(regionStore.getBuildingIds().size());
+        IntList populationsAmount = this.getPopulationsAmount(this.worldContext.getCountries(), regionStore, this.worldContext.getProvinceStore());
+        IntList buildingWorkersAmount = this.getBuildingWorkersAmount(regionStore);
+        IntList workersAmount = this.getWorkersAmount(this.worldContext.getCountries(), this.worldContext.getRegionStore(), this.worldContext.getProvinceStore());
+        ByteList buildingWorkersRatio = this.getBuildingWorkersRatio(workersAmount, buildingWorkersAmount);
+        FloatList buildingProductionValues = new FloatList(regionStore.getBuildingProductionValues());
 
-        return new RegionsBuildingsDto(regionIds, regionIdLookup, buildingIds, buildingValues, buildingStarts, buildingCounts, buildingNames, buildingTypes);
+        return new RegionsBuildingsDto(regionIds, regionIdLookup, buildingIds, buildingValues, buildingStarts, buildingCounts, buildingNames, buildingTypes, buildingMaxLevels, infrastructureValues, populationsAmount, buildingWorkersAmount, buildingWorkersRatio, buildingProductionValues);
     }
 
     public float getResourceGoodsProduction(short provinceId) {
         int provinceIndex = this.worldContext.getProvinceStore().getIndexById().get(provinceId);
         return this.worldContext.getProvinceStore().getResourceGoodsProduction().get(provinceIndex);
+    }
+
+    private IntList getPopulationsAmount(List<Country> countries, RegionStore regionStore, ProvinceStore provinceStore) {
+        IntList populationsAmount = new IntList();
+        populationsAmount.setSize(this.worldContext.getRegionStore().getRegionIds().size());
+        for(Country country : countries) {
+            for (Region region : country.getRegions()) {
+                int population = 0;
+                for (LandProvince province : region.getProvinces()) {
+                    int provinceId = provinceStore.getIndexById().get(province.getId());
+                    population += this.worldContext.getProvinceStore().getPopulationAmount(provinceId);
+                }
+                int regionId = regionStore.getRegionIds().get(region.getId());
+                populationsAmount.set(regionId, population);
+            }
+        }
+
+        return populationsAmount;
+    }
+
+    private IntList getWorkersAmount(List<Country> countries, RegionStore regionStore, ProvinceStore provinceStore) {
+        IntList workersAmount = new IntList(regionStore.getRegionIds().size());
+        workersAmount.setSize(regionStore.getRegionIds().size());
+        for(Country country : countries) {
+            for(Region region : country.getRegions()) {
+                int workers = 0;
+                for(LandProvince province : region.getProvinces()) {
+                    workers += this.getAmountAdults(province, provinceStore);
+                }
+                int regionId = regionStore.getRegionIds().get(region.getId());
+                workersAmount.set(regionId, workers);
+            }
+        }
+
+        return workersAmount;
+    }
+
+    private IntList getBuildingWorkersAmount(RegionStore regionStore) {
+        IntList buildingWorkersAmount = new IntList(regionStore.getRegionIds().size());
+        buildingWorkersAmount.setSize(regionStore.getRegionIds().size());
+        for(int regionId = 0; regionId < regionStore.getRegionIds().size(); regionId++) {
+            int buildingStart = regionStore.getBuildingStarts().get(regionId);
+            int buildingCount = regionStore.getBuildingCounts().get(regionId);
+            int amountWorkers = 0;
+            for(int buildingId = buildingStart; buildingId < buildingStart + buildingCount; buildingId++) {
+                amountWorkers += regionStore.getBuildingWorkersAmountValues().get(buildingId);
+            }
+
+            buildingWorkersAmount.set(regionId, amountWorkers);
+        }
+
+        return buildingWorkersAmount;
+    }
+
+    private ByteList getBuildingWorkersRatio(IntList workersAmount, IntList buildingWorkersAmount) {
+        ByteList buildingWorkersRatio = new ByteList(workersAmount.size());
+        buildingWorkersRatio.setSize(workersAmount.size());
+
+        for(int regionId = 0; regionId < workersAmount.size(); regionId++) {
+            int totalWorkers = workersAmount.get(regionId);
+            int buildingWorkers = buildingWorkersAmount.get(regionId);
+            if(totalWorkers == 0) {
+                buildingWorkersRatio.set(regionId, (byte)0);
+            } else {
+                float ratio = (float)buildingWorkers / (float)totalWorkers;
+                byte ratioByte = (byte)(ratio * 100);
+                buildingWorkersRatio.set(regionId, ratioByte);
+            }
+        }
+
+        return buildingWorkersRatio;
+    }
+
+    public int getAmountAdults(Province province, ProvinceStore provinceStore) {
+        int provinceId = province.getId();
+        int provinceIndex = provinceStore.getIndexById().get(provinceId);
+        return provinceStore.getAmountAdults().get(provinceIndex);
     }
 }
