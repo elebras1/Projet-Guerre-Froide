@@ -7,11 +7,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.monstrous.gdx.webgpu.scene2d.WgScrollPane;
 
 public class HoverScrollPane extends WgScrollPane {
-    public HoverScrollPane(Actor actor, Skin skin) {
-        super(actor, skin);
-        this.setVariableSizeKnobs(false);
-        this.setFadeScrollBars(false);
-    }
 
     public HoverScrollPane(Actor actor, Skin skin, String styleName) {
         super(actor, skin, styleName);
@@ -24,12 +19,30 @@ public class HoverScrollPane extends WgScrollPane {
         this.addListener(new InputListener() {
             @Override
             public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
-                getStage().setScrollFocus(HoverScrollPane.this);
+                if (getStage() == null) return;
+
+                Actor hitActor = getStage().hit(event.getStageX(), event.getStageY(), true);
+
+                if (hitActor != null && (hitActor == HoverScrollPane.this || hitActor.isDescendantOf(HoverScrollPane.this))) {
+                    getStage().setScrollFocus(HoverScrollPane.this);
+                }
+            }
+
+            @Override
+            public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
+                if (getStage() != null && getStage().getScrollFocus() == HoverScrollPane.this) {
+                    getStage().setScrollFocus(null);
+                }
             }
 
             @Override
             public boolean scrolled(InputEvent event, float x, float y, float amountX, float amountY) {
-                if (isOver(x, y)) {
+                if (getStage() == null) return false;
+
+                Actor hitActor = getStage().hit(event.getStageX(), event.getStageY(), true);
+                boolean isActuallyTouchable = hitActor != null && (hitActor == HoverScrollPane.this || hitActor.isDescendantOf(HoverScrollPane.this));
+
+                if (isActuallyTouchable && isOver(x, y)) {
                     setScrollbarsVisible(true);
                     if (isScrollY() || isScrollX()) {
                         if (isScrollY()) {
@@ -47,8 +60,7 @@ public class HoverScrollPane extends WgScrollPane {
         });
     }
 
-
     private boolean isOver(float x, float y) {
-        return x >= 0 && x < getWidth() && y >= 0 && y < getHeight();
+        return x >= 0 && x < this.getWidth() && y >= 0 && y < this.getHeight();
     }
 }
