@@ -75,9 +75,8 @@ subprojects {
   }
 
   dependencies {
-    implementation "io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:0.7.1"
-    implementation 'io.github.monstroussoftware.gdx-webgpu:backend-desktop:0.7.1'
-    implementation 'io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:-SNAPSHOT'
+    implementation "io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:0.7.2"
+    implementation 'io.github.monstroussoftware.gdx-webgpu:backend-desktop:0.7.2'
     implementation 'com.github.tommyettinger:jdkgdxds:1.13.1'
     implementation 'com.dslplatform:dsl-json:2.0.2'
     annotationProcessor 'com.dslplatform:dsl-json:2.0.2'
