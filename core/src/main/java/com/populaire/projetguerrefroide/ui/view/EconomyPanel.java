@@ -10,6 +10,7 @@ import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.economy.building.BuildingType;
 import com.populaire.projetguerrefroide.screen.EconomyPanelListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.ui.widget.ClickableTable;
 import com.populaire.projetguerrefroide.ui.widget.HoverScrollPane;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
@@ -44,9 +45,27 @@ public class EconomyPanel extends Table {
         mainTable.setFillParent(true);
         this.add(mainTable);
 
-        widgetFactory.createImage(this.skin, "icon_di", 530, 677, mainTable);
-        widgetFactory.createImage(this.skin, "icon_pop", 605, 677, mainTable);
-        widgetFactory.createImage(this.skin, "icon_workforce", 685, 677, mainTable);
+        Button developpementIndexButton = widgetFactory.createButton(this.skin, "icon_di", 530, 677, mainTable);
+        developpementIndexButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                listener.onSortRegions(SortType.DEVELOPPEMENT_INDEX);
+            }
+        });
+        Button populationButton = widgetFactory.createButton(this.skin, "icon_pop", 605, 677, mainTable);
+        populationButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                listener.onSortRegions(SortType.POPULATION);
+            }
+        });
+        Button worforceButton = widgetFactory.createButton(this.skin, "icon_workforce", 685, 677, mainTable);
+        worforceButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                listener.onSortRegions(SortType.WORKFORCE);
+            }
+        });
 
         Button aiButton = widgetFactory.createButton(skin, "eco_btn_ai", 83, 685.5f, mainTable);
         Button regionalButton = widgetFactory.createButton(skin, "eco_btn_regional", 773, 685.5f, mainTable);
@@ -87,7 +106,7 @@ public class EconomyPanel extends Table {
             int populationAmount = regionsBuildingsDto.getPopulationAmounts().get(id);
             int buildingWorkerAmount = regionsBuildingsDto.getBuildingWorkersAmount().get(id);
             int buildingWorkerRatio = regionsBuildingsDto.getBuildingWorkersRatio().get(id);
-            int infrastructureValue = regionsBuildingsDto.getInfrastructureValues().get(id);
+            byte developpementIndexValue = regionsBuildingsDto.getDeveloppementIndexValues().get(id);
             String regionName = this.localisation.get(regionId);
             if(index >= actors.size) {
                 Table regionTable = new Table();
@@ -98,7 +117,7 @@ public class EconomyPanel extends Table {
                 Button maxButton = this.widgetFactory.createButton(this.skin, "eco_plate_max", 684, 9, regionTable);
                 minButton.setVisible(true);
                 maxButton.setVisible(false);
-                this.widgetFactory.createLabelCentered(infrastructureValue + "%", labelStyleJockey16GlowBlue, 477, 7, regionTable);
+                this.widgetFactory.createLabelCentered(developpementIndexValue + "%", labelStyleJockey16GlowBlue, 477, 7, regionTable);
                 this.widgetFactory.createLabelCentered(ValueFormatter.formatValue(populationAmount, this.localisation), labelStyleJockey16GlowBlue, 545, 7, regionTable);
                 this.widgetFactory.createLabelCentered(buildingWorkerAmount + " (" + buildingWorkerRatio + "%)", labelStyleJockey16GlowBlue, 638, 7, regionTable);
 
@@ -111,7 +130,8 @@ public class EconomyPanel extends Table {
                     float buildingProduction = regionsBuildingsDto.getBuildingProductionValues().get(buildingId);
 
                     if (typeId == BuildingType.ECONOMY.getId()) {
-                        Table buildingTable = new Table();
+                        Table buildingTable = new ClickableTable();
+                        buildingTable.setUserObject(buildingId);
                         String buildingName = regionsBuildingsDto.getBuildingNames().get(buildingId);
                         byte maxLevel = regionsBuildingsDto.getBuildingMaxLevels().get(buildingId);
                         String buildingLevel = buildingValue + "/" + maxLevel;

@@ -454,7 +454,7 @@ building_weaponry_factory_building
   index: -1
 building_wire
   rotate: false
-  xy: 2040, 1541
+  xy: 986, 328
   size: 7, 39
   orig: 7, 39
   offset: 0, 0
@@ -531,7 +531,7 @@ eco_btn_ai_off
   index: -1
 eco_btn_ai_on
   rotate: false
-  xy: 2009, 1614
+  xy: 1427, 660
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
@@ -629,14 +629,14 @@ eco_btn_pop_over
   index: -1
 eco_btn_regional_off
   rotate: false
-  xy: 2009, 1582
+  xy: 1461, 661
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
   index: -1
 eco_btn_regional_on
   rotate: false
-  xy: 2006, 1550
+  xy: 1495, 661
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
@@ -783,7 +783,7 @@ eco_building_light
   index: -1
 eco_building_light_yellow
   rotate: false
-  xy: 1317, 702
+  xy: 1560, 681
   size: 8, 10
   orig: 8, 10
   offset: 0, 0
@@ -874,28 +874,28 @@ eco_folder_btn_yellow_over
   index: -1
 eco_icon_ammo_green
   rotate: false
-  xy: 1207, 198
+  xy: 2029, 1416
   size: 18, 20
   orig: 18, 20
   offset: 0, 0
   index: -1
 eco_icon_ammo_red
   rotate: false
-  xy: 918, 11
+  xy: 2029, 1372
   size: 18, 20
   orig: 18, 20
   offset: 0, 0
   index: -1
 eco_icon_fuel_green
   rotate: false
-  xy: 2017, 703
+  xy: 2029, 1438
   size: 18, 20
   orig: 18, 20
   offset: 0, 0
   index: -1
 eco_icon_fuel_red
   rotate: false
-  xy: 1515, 671
+  xy: 2029, 1394
   size: 18, 20
   orig: 18, 20
   offset: 0, 0
@@ -923,28 +923,28 @@ eco_icon_invest
   index: -1
 eco_icon_nuke_green
   rotate: false
-  xy: 1457, 664
+  xy: 2017, 732
   size: 27, 27
   orig: 27, 27
   offset: 0, 0
   index: -1
 eco_icon_nuke_red
   rotate: false
-  xy: 1486, 635
+  xy: 1447, 126
   size: 27, 27
   orig: 27, 27
   offset: 0, 0
   index: -1
 eco_icon_prod
   rotate: false
-  xy: 2017, 785
+  xy: 1424, 588
   size: 29, 34
   orig: 29, 34
   offset: 0, 0
   index: -1
 eco_icon_reinforce
   rotate: false
-  xy: 2006, 1514
+  xy: 1529, 657
   size: 29, 34
   orig: 29, 34
   offset: 0, 0
@@ -958,14 +958,14 @@ eco_icon_sat_green
   index: -1
 eco_icon_sat_red
   rotate: false
-  xy: 1486, 664
+  xy: 1447, 155
   size: 27, 27
   orig: 27, 27
   offset: 0, 0
   index: -1
 eco_icon_upgrade
   rotate: false
-  xy: 2002, 1478
+  xy: 1427, 624
   size: 29, 34
   orig: 29, 34
   offset: 0, 0
@@ -979,42 +979,42 @@ eco_icon_workers_2
   index: -1
 eco_plate_max
   rotate: false
-  xy: 2017, 755
+  xy: 1424, 558
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 eco_plate_max_down
   rotate: false
-  xy: 1427, 662
+  xy: 1417, 498
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 eco_plate_max_over
   rotate: false
-  xy: 2017, 725
+  xy: 1417, 528
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 eco_plate_min
   rotate: false
-  xy: 1424, 602
+  xy: 2017, 791
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 eco_plate_min_down
   rotate: false
-  xy: 1424, 572
+  xy: 2017, 761
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 eco_plate_min_over
   rotate: false
-  xy: 1427, 632
+  xy: 1417, 468
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
@@ -1217,7 +1217,7 @@ economy_priority_star_off
   index: -1
 economy_priority_star_on
   rotate: false
-  xy: 1457, 634
+  xy: 2017, 702
   size: 27, 28
   orig: 27, 28
   offset: 0, 0
@@ -1238,7 +1238,7 @@ factory_bar
   index: -1
 factory_workforce_plupp
   rotate: false
-  xy: 1902, 1514
+  xy: 1417, 456
   size: 14, 10
   orig: 14, 10
   offset: 0, 0
@@ -1264,6 +1264,20 @@ icon_di
   orig: 37, 37
   offset: 0, 0
   index: -1
+icon_di_down
+  rotate: false
+  xy: 2010, 546
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
+icon_di_over
+  rotate: false
+  xy: 721, 228
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
 icon_pop
   rotate: false
   xy: 2010, 624
@@ -1271,9 +1285,37 @@ icon_pop
   orig: 37, 37
   offset: 0, 0
   index: -1
+icon_pop_down
+  rotate: false
+  xy: 2009, 1607
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
+icon_pop_over
+  rotate: false
+  xy: 2009, 1568
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
 icon_workforce
   rotate: false
   xy: 2010, 663
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
+icon_workforce_down
+  rotate: false
+  xy: 2006, 1529
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
+icon_workforce_over
+  rotate: false
+  xy: 2006, 1490
   size: 37, 37
   orig: 37, 37
   offset: 0, 0
@@ -1343,14 +1385,14 @@ resource_light_green
   index: -1
 resource_light_grey
   rotate: false
-  xy: 721, 237
+  xy: 958, 369
   size: 33, 28
   orig: 33, 28
   offset: 0, 0
   index: -1
 resource_light_red
   rotate: false
-  xy: 958, 369
+  xy: 2002, 1460
   size: 33, 28
   orig: 33, 28
   offset: 0, 0

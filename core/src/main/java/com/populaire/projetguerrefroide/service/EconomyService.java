@@ -5,6 +5,7 @@ import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.economy.production.ResourceGatheringOperationSystem;
 import com.populaire.projetguerrefroide.map.*;
+import com.populaire.projetguerrefroide.ui.view.SortType;
 
 import java.util.List;
 
@@ -36,6 +37,10 @@ public class EconomyService {
         for(Region region : this.worldContext.getPlayerCountry().getRegions()) {
             regionIds.add(region.getId());
         }
+        IntList regionInternalIds = new IntList(regionStore.getRegionIds().size());
+        for(int regionId = 0; regionId < regionIds.size(); regionId++) {
+            regionInternalIds.add(regionId);
+        }
         ObjectIntMap<String> regionIdLookup = new ObjectIntMap<>(regionStore.getRegionIds());
         IntList buildingIds = new IntList(regionStore.getBuildingIds());
         IntList buildingValues = new IntList(regionStore.getBuildingValues());
@@ -44,15 +49,19 @@ public class EconomyService {
         List<String> buildingNames = new ObjectList<>(buildingStore.getNames());
         ByteList buildingTypes = new ByteList(buildingStore.getTypes());
         ByteList buildingMaxLevels = new ByteList(buildingStore.getMaxLevels());
-        ByteList infrastructureValues = new ByteList(regionStore.getBuildingIds().size());
-        infrastructureValues.setSize(regionStore.getBuildingIds().size());
+        ByteList developpementIndexValues = new ByteList(regionStore.getBuildingIds().size());
+        developpementIndexValues.setSize(regionStore.getBuildingIds().size());
         IntList populationsAmount = this.getPopulationsAmount(this.worldContext.getCountries(), regionStore, this.worldContext.getProvinceStore());
         IntList buildingWorkersAmount = this.getBuildingWorkersAmount(regionStore);
         IntList workersAmount = this.getWorkersAmount(this.worldContext.getCountries(), this.worldContext.getRegionStore(), this.worldContext.getProvinceStore());
         ByteList buildingWorkersRatio = this.getBuildingWorkersRatio(workersAmount, buildingWorkersAmount);
         FloatList buildingProductionValues = new FloatList(regionStore.getBuildingProductionValues());
 
-        return new RegionsBuildingsDto(regionIds, regionIdLookup, buildingIds, buildingValues, buildingStarts, buildingCounts, buildingNames, buildingTypes, buildingMaxLevels, infrastructureValues, populationsAmount, buildingWorkersAmount, buildingWorkersRatio, buildingProductionValues);
+        return new RegionsBuildingsDto(regionIds, regionInternalIds, regionIdLookup, buildingIds, buildingValues, buildingStarts, buildingCounts, buildingNames, buildingTypes, buildingMaxLevels, developpementIndexValues, populationsAmount, buildingWorkersAmount, buildingWorkersRatio, buildingProductionValues);
+    }
+
+    public RegionsBuildingsDto prepareRegionsBuildingsDtoSorted(SortType sortType) {
+        return null;
     }
 
     public float getResourceGoodsProduction(short provinceId) {
@@ -131,7 +140,7 @@ public class EconomyService {
         return buildingWorkersRatio;
     }
 
-    public int getAmountAdults(Province province, ProvinceStore provinceStore) {
+    private int getAmountAdults(Province province, ProvinceStore provinceStore) {
         int provinceId = province.getId();
         int provinceIndex = provinceStore.getIndexById().get(provinceId);
         return provinceStore.getAmountAdults().get(provinceIndex);

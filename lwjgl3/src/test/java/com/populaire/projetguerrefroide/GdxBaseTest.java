@@ -4,7 +4,6 @@ import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Graphics;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Files;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.GL31;
@@ -31,7 +30,6 @@ public abstract class GdxBaseTest {
     @BeforeAll
     public void beforeAll() {
         GdxNativesLoader.load();
-        Gdx.files = new Lwjgl3Files();
         Gdx.gl = Mockito.mock(GL20.class);
         Gdx.gl20 = Mockito.mock(GL20.class);
         Gdx.gl30 = Mockito.mock(GL30.class);

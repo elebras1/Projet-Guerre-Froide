@@ -223,6 +223,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
     @Override
     public void onEconomyClicked() {
+        this.economyPanel.setTouchable(Touchable.enabled);
         this.economyPanel.setVisible(true);
         RegionsBuildingsDto regionsBuildingsDto = this.worldService.prepareRegionsBuildingsDto();
         this.economyPanel.setData(regionsBuildingsDto);
@@ -281,7 +282,14 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
     @Override
     public void onCloseEconomyPanelClicked() {
+        this.economyPanel.setTouchable(Touchable.disabled);
         this.economyPanel.setVisible(false);
+    }
+
+    @Override
+    public void onSortRegions(SortType sortType) {
+        RegionsBuildingsDto regionsBuildingsDto = this.worldService.prepareRegionsBuildingsDtoSorted(sortType);
+        this.economyPanel.setData(regionsBuildingsDto);
     }
 
     public void setActorsTouchable(boolean touchable) {

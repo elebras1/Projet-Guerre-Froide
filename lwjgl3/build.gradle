@@ -35,13 +35,8 @@ if (JavaVersion.current().isJava9Compatible()) {
 }
 
 dependencies {
-  implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
   implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
   implementation project(':core')
-
-  if(enableGraalNative == 'true') {
-    implementation "io.github.berstanio:gdx-svmhelper-backend-lwjgl3:$graalHelperVersion"
-  }
   testImplementation "org.junit.jupiter:junit-jupiter-api:5.12.1"
   testImplementation "org.junit.jupiter:junit-jupiter-engine:5.12.1"
   testImplementation "org.junit.platform:junit-platform-launcher:1.12.1"
@@ -60,6 +55,7 @@ run {
 
   if (os.contains('mac')) jvmArgs += "-XstartOnFirstThread"
   jvmArgs += "-XX:+UseCompactObjectHeaders"
+  jvmArgs += "--enable-native-access=ALL-UNNAMED"
 }
 
 jar {
@@ -76,7 +72,10 @@ jar {
   }
 // setting the manifest makes the JAR runnable.
   manifest {
-    attributes 'Main-Class': application.mainClass.get()
+    attributes(
+      'Main-Class': application.mainClass.get(),
+      'Enable-Native-Access': 'ALL-UNNAMED'
+    )
   }
 // this last step may help on some OSes that need extra instruction to make runnable JARs.
   doLast {

@@ -9,6 +9,7 @@ import java.util.List;
 
 public class RegionsBuildingsDto {
     private final List<String> regionIds;
+    private final IntList regionInternalIds;
     private final ObjectIntMap<String> regionIdLookup;
     private final IntList buildingIds;
     private final IntList buildingValues;
@@ -17,14 +18,15 @@ public class RegionsBuildingsDto {
     private final List<String> buildingNames;
     private final ByteList buildingTypes;
     private final ByteList buildingMaxLevels;
-    private final ByteList infrastructureValues;
+    private final ByteList developpementIndexValues;
     private final IntList populationAmounts;
     private final IntList buildingWorkersAmount;
     private final ByteList buildingWorkersRatio;
     private final FloatList buildingProductionValues;
 
-    public RegionsBuildingsDto(List<String> regionIds, ObjectIntMap<String> regionIdLookup, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, List<String> buildingNames, ByteList buildingTypes, ByteList buildingMaxLevels, ByteList infrastructureValues, IntList populationAmounts, IntList buildingWorkersAmount, ByteList buildingWorkersRatio, FloatList buildingProductionValues) {
+    public RegionsBuildingsDto(List<String> regionIds, IntList regionInternalIds, ObjectIntMap<String> regionIdLookup, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, List<String> buildingNames, ByteList buildingTypes, ByteList buildingMaxLevels, ByteList developpementIndexValues, IntList populationAmounts, IntList buildingWorkersAmount, ByteList buildingWorkersRatio, FloatList buildingProductionValues) {
         this.regionIds = regionIds;
+        this.regionInternalIds = regionInternalIds;
         this.regionIdLookup = regionIdLookup;
         this.buildingIds = buildingIds;
         this.buildingValues = buildingValues;
@@ -33,7 +35,7 @@ public class RegionsBuildingsDto {
         this.buildingNames = buildingNames;
         this.buildingTypes = buildingTypes;
         this.buildingMaxLevels = buildingMaxLevels;
-        this.infrastructureValues = infrastructureValues;
+        this.developpementIndexValues = developpementIndexValues;
         this.populationAmounts = populationAmounts;
         this.buildingWorkersAmount = buildingWorkersAmount;
         this.buildingWorkersRatio = buildingWorkersRatio;
@@ -42,6 +44,10 @@ public class RegionsBuildingsDto {
 
     public List<String> getRegionIds() {
         return this.regionIds;
+    }
+
+    public IntList getRegionInternalIds() {
+        return this.regionInternalIds;
     }
 
     public ObjectIntMap<String> getRegionIdLookup() {
@@ -76,8 +82,8 @@ public class RegionsBuildingsDto {
         return this.buildingMaxLevels;
     }
 
-    public ByteList getInfrastructureValues() {
-        return this.infrastructureValues;
+    public ByteList getDeveloppementIndexValues() {
+        return this.developpementIndexValues;
     }
 
     public IntList getPopulationAmounts() {

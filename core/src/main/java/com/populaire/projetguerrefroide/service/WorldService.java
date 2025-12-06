@@ -17,6 +17,7 @@ import com.populaire.projetguerrefroide.politics.AllianceType;
 import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.screen.DateListener;
+import com.populaire.projetguerrefroide.ui.view.SortType;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
@@ -209,6 +210,10 @@ public class WorldService implements DateListener {
 
     public RegionsBuildingsDto prepareRegionsBuildingsDto() {
         return this.economyService.prepareRegionsBuildingsDto();
+    }
+
+    public RegionsBuildingsDto prepareRegionsBuildingsDtoSorted(SortType sortType) {
+        return this.economyService.prepareRegionsBuildingsDtoSorted(sortType);
     }
 
     @Override
