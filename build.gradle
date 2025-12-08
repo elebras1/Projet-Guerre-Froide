@@ -81,7 +81,7 @@ subprojects {
     implementation 'com.dslplatform:dsl-json:2.0.2'
     annotationProcessor 'com.dslplatform:dsl-json:2.0.2'
     implementation 'io.github.elebras1:flecs-java:0.2.2'
-    annotationProcessor 'io.github.elebras1:flecs-java-processor:0.2.2'
+    annotationProcessor 'io.github.elebras1:flecs-java:0.2.2'
   }
 }
 

@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.github.elebras1.flecs.Flecs;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -12,14 +13,16 @@ public class ProjetGuerreFroide extends Game {
     public static final int WORLD_WIDTH = 5616;
     public static final int WORLD_HEIGHT = 2160;
     private final ConfigurationService configurationService;
+    private final Flecs ecsWorld;
 
     public ProjetGuerreFroide() {
         this.configurationService = new ConfigurationService();
+        this.ecsWorld = new Flecs();
     }
 
     @Override
     public void create() {
-        GameContext gameContext = this.configurationService.getGameContext();
+        GameContext gameContext = this.configurationService.getGameContext(this.ecsWorld);
         ScreenManager screenManager = new ScreenManager(this, gameContext, configurationService);
         this.loadAssets(gameContext.getAssetManager());
         screenManager.showMainMenuScreen();
@@ -34,6 +37,8 @@ public class ProjetGuerreFroide extends Game {
 
     @Override
     public void dispose() {
+        System.out.println("Ok ecs");
         super.dispose();
+        this.ecsWorld.close();
     }
 }
