@@ -4,7 +4,6 @@ import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.politics.*;
 import com.populaire.projetguerrefroide.national.Attitude;
 import com.populaire.projetguerrefroide.national.Identity;
-import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.*;
 import java.util.List;
@@ -21,7 +20,7 @@ public class Country {
     private Ideology ideology;
     private short headOfGovernmentId;
     private short headOfStateId;
-    private ShortList ministersIds;
+    private ShortList ministerIds;
     private Identity identity;
     private Attitude attitude;
     private String name;
@@ -138,12 +137,12 @@ public class Country {
         return this.headOfStateId;
     }
 
-    public void setMinistersIds(ShortList ministersIds) {
-        this.ministersIds = ministersIds;
+    public void setMinisterIds(ShortList ministerIds) {
+        this.ministerIds = ministerIds;
     }
 
-    public ShortList getMinistersIds() {
-        return this.ministersIds;
+    public ShortList getMinisterIds() {
+        return this.ministerIds;
     }
 
     public void setHeadOfStateId(short idMinister) {

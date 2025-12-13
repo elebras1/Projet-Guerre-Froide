@@ -4,6 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.github.elebras1.flecs.Flecs;
+import com.populaire.projetguerrefroide.component.Minister;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -18,6 +19,7 @@ public class ProjetGuerreFroide extends Game {
     public ProjetGuerreFroide() {
         this.configurationService = new ConfigurationService();
         this.ecsWorld = new Flecs();
+        this.ecsWorld.component(Minister.class);
     }
 
     @Override
@@ -37,7 +39,6 @@ public class ProjetGuerreFroide extends Game {
 
     @Override
     public void dispose() {
-        System.out.println("Ok ecs");
         super.dispose();
         this.ecsWorld.close();
     }

@@ -3,9 +3,12 @@ package com.populaire.projetguerrefroide.dao.impl;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
+import com.github.elebras1.flecs.Entity;
+import com.github.elebras1.flecs.Flecs;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonMapper;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
+import com.populaire.projetguerrefroide.component.Minister;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.builder.*;
 import com.populaire.projetguerrefroide.economy.building.*;
@@ -64,11 +67,13 @@ public class WorldDaoImpl implements WorldDao {
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public WorldDaoImpl() {
+
     }
 
     @Override
     public World createWorldThreadSafe(GameContext gameContext) {
-        Minister[] ministers = new Minister[5853];
+        Flecs ecsWorld = gameContext.getEcsWorld();
+        IntLongMap ministerIds = new IntLongMap(5853, 1f);
         Leader[] leaders = new Leader[52419];
         ModifierStoreBuilder modifierStoreBuilder = new ModifierStoreBuilder();
         Map<String, Government> governments = this.readGovernmentsJson();
@@ -90,29 +95,17 @@ public class WorldDaoImpl implements WorldDao {
         AtomicInteger baseEnactmentDaysLaw = new AtomicInteger();
         Map<String, LawGroup> lawGroups = this.readLawsJson(ideologies, modifierStoreBuilder, baseEnactmentDaysLaw);
         Map<String, Trait> traits = this.readTraitsJson(modifierStoreBuilder);
-        Map<String, Country> countries = this.loadCountries(ministerTypes, ideologies, ministers, traits, leaders);
+        Map<String, Country> countries = this.loadCountries(ecsWorld, ministerIds, ministerTypes, ideologies, traits, leaders);
         IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(14796, 1f);
         IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(3388, 1f);
         Map<String, Terrain> terrains = this.readTerrainsJson();
         RegionStoreBuilder regionStoreBuilder = new RegionStoreBuilder();
         ProvinceStore provinceStore = this.loadProvinces(regionStoreBuilder, countries, provincesByColor, waterProvincesByColor, governments, nationalIdeas, ideologies, goodIds, buildingIds, populationTypeIds, terrains, lawGroups);
         RegionStore regionStore = regionStoreBuilder.build();
-        Politics politics = new Politics(ideologies, ministers, leaders, ministerTypes, governments, lawGroups, (byte) baseEnactmentDaysLaw.get());
+        Politics politics = new Politics(ministerIds, ideologies, leaders, ministerTypes, governments, lawGroups, (byte) baseEnactmentDaysLaw.get());
+        World world = new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, modifierStoreBuilder.build(), buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, politics, nationalIdeas, terrains, gameContext);
 
-        AtomicReference<World> worldRef = new AtomicReference<>();
-        final CountDownLatch latch = new CountDownLatch(1);
-
-        Gdx.app.postRunnable(() -> {
-            worldRef.set(new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, modifierStoreBuilder.build(), buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, politics, nationalIdeas, terrains, gameContext));            latch.countDown();
-        });
-
-        try {
-            latch.await();
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
-        return worldRef.get();
+        return world;
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -693,15 +686,15 @@ public class WorldDaoImpl implements WorldDao {
         return traits;
     }
 
-    private Map<String, Country> loadCountries(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Minister[] ministers, Map<String, Trait> traits, Leader[] leaders) {
-        Map<String, Country> countries = this.readCountriesJson(ministerTypes, ideologies, ministers);
+    private Map<String, Country> loadCountries(Flecs ecsWorld, IntLongMap ministerIds, Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Map<String, Trait> traits, Leader[] leaders) {
+        Map<String, Country> countries = this.readCountriesJson(ecsWorld, ministerIds, ministerTypes, ideologies);
         this.readRelationJson(countries);
         this.readAlliancesJson(countries);
         this.readLeadersJson(countries, traits, leaders);
         return countries;
     }
 
-    private Map<String, Country> readCountriesJson(Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Minister[] ministers) {
+    private Map<String, Country> readCountriesJson(Flecs ecsWorld, IntLongMap ministerIds, Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
         Map<String, Country> countries = new ObjectObjectMap<>(262, 1f);
         Map<String, String> countriesPaths = new ObjectObjectMap<>(262, 1f);
         try {
@@ -713,7 +706,7 @@ public class WorldDaoImpl implements WorldDao {
             }
 
             for (Map.Entry<String, String> entry : countriesPaths.entrySet()) {
-                Country country = this.readCountryJson(entry.getValue(), entry.getKey(), ministerTypes, ideologies, ministers);
+                Country country = this.readCountryJson(ecsWorld, entry.getValue(), ministerIds, entry.getKey(), ministerTypes, ideologies);
                 countries.put(entry.getKey(), country);
             }
         } catch (IOException ioException) {
@@ -724,14 +717,14 @@ public class WorldDaoImpl implements WorldDao {
         return countries;
     }
 
-    private Country readCountryJson(String countryPath, String countryId, Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies, Minister[] ministers) {
+    private Country readCountryJson(Flecs ecsWorld, String countryPath, IntLongMap ministerIds, String countryId, Map<String, MinisterType> ministerTypes, Map<String, Ideology> ideologies) {
         try {
             JsonValue countryValues = this.parseJsonFile(countryPath);
             Country country = new Country(countryId, this.parseColor(countryValues.get("color")));
 
             JsonValue ministersValues = countryValues.get("ministers");
             if (ministersValues != null && ministersValues.isObject()) {
-                ShortList ministersIds = new ShortList();
+                ShortList countryMinisterIds = new ShortList();
                 Iterator<Map.Entry<String, JsonValue>> ministersEntryIterator = ministersValues.objectIterator();
                 while (ministersEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> ministerEntry = ministersEntryIterator.next();
@@ -742,14 +735,15 @@ public class WorldDaoImpl implements WorldDao {
                     float loyalty = (float) ministerNode.get("loyalty").asDouble();
                     String imageNameFile = ministerNode.get("picture").asString();
                     String type = ministerNode.get("type").asString();
-                    LocalDate startDate = LocalDate.parse(ministerNode.get("start_date").asString(), this.dateFormatter);
-                    LocalDate deathDate = LocalDate.parse(ministerNode.get("death_date").asString(), this.dateFormatter);
+                    int startDate = (int) LocalDate.parse(ministerNode.get("start_date").asString(), dateFormatter).toEpochDay();
+                    int deathDate = (int) LocalDate.parse(ministerNode.get("death_date").asString(), dateFormatter).toEpochDay();
 
-                    Minister minister = new Minister(name, ideologies.get(ideology), imageNameFile, loyalty, ministerTypes.get(type), startDate, deathDate);
-                    ministers[ministerId] = minister;
-                    ministersIds.add(ministerId);
+                    Entity minister = ecsWorld.obtainEntity(ecsWorld.entity());
+                    minister.set(new Minister(name, imageNameFile, loyalty, startDate, deathDate));
+                    countryMinisterIds.add(ministerId);
+                    ministerIds.put(ministerId, minister.id());
                 }
-                country.setMinistersIds(ministersIds);
+                country.setMinisterIds(countryMinisterIds);
             }
             return country;
         } catch (DateTimeParseException dateTimeParseException) {

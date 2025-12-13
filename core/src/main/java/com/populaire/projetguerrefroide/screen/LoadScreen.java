@@ -28,7 +28,7 @@ public class LoadScreen implements Screen {
     public LoadScreen(ScreenManager screenManager, GameContext gameContext, ConfigurationService configurationService) {
         this.screenManager = screenManager;
         this.gameContext = gameContext;
-        this.worldService = new WorldService();
+        this.worldService = new WorldService(gameContext);
         this.configurationService = configurationService;
         this.gameContext.getCursorManager().animatedCursor("busy");
         AssetManager assetManager = this.gameContext.getAssetManager();
@@ -50,20 +50,17 @@ public class LoadScreen implements Screen {
     @Override
     public void show() {
         this.configurationService.loadGameAssets(gameContext.getAssetManager());
-        this.worldService.getAsyncExecutor().submit(() -> {
-            long startTime = System.currentTimeMillis();
-            this.worldService.createWorld(this.gameContext);
+        long startTime = System.currentTimeMillis();
+        this.worldService.createWorld();
 
-            Gdx.app.postRunnable(() -> {
-                this.gameContext.getSettings().applyGraphicsSettings();
-                this.screenManager.showNewGameScreen(this.worldService);
-            });
-
-            long endTime = System.currentTimeMillis();
-            Logging.getLogger("LoadScreen").info("World load: " + (endTime - startTime) + "ms");
-
-            return null;
+        Gdx.app.postRunnable(() -> {
+            this.gameContext.getSettings().applyGraphicsSettings();
+            this.screenManager.showNewGameScreen(this.worldService);
         });
+
+        long endTime = System.currentTimeMillis();
+        Logging.getLogger("LoadScreen").info("World load: " + (endTime - startTime) + "ms");
+
         this.gameContext.getAssetManager().finishLoading();
     }
 

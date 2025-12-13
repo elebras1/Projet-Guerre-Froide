@@ -2,11 +2,14 @@ package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
+import com.github.elebras1.flecs.Entity;
+import com.github.elebras1.flecs.Flecs;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectIntOrderedMap;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
+import com.populaire.projetguerrefroide.component.Minister;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.*;
@@ -14,7 +17,6 @@ import com.populaire.projetguerrefroide.economy.building.BuildingType;
 import com.populaire.projetguerrefroide.map.RegionStore;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.politics.AllianceType;
-import com.populaire.projetguerrefroide.politics.Minister;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.screen.DateListener;
 import com.populaire.projetguerrefroide.ui.view.SortType;
@@ -26,20 +28,22 @@ import java.util.List;
 import java.util.Map;
 
 public class WorldService implements DateListener {
+    private final GameContext gameContext;
     private final AsyncExecutor asyncExecutor;
     private final WorldDao worldDao;
     private World world;
     private final ObjectIntOrderedMap<String> elementPercentages;
     private EconomyService economyService;
 
-    public WorldService() {
+    public WorldService(GameContext gameContext) {
+        this.gameContext = gameContext;
         this.asyncExecutor = new AsyncExecutor(2);
         this.worldDao = new WorldDaoImpl();
         this.elementPercentages = new ObjectIntOrderedMap<>();
     }
 
-    public void createWorld(GameContext gameContext) {
-        this.world = this.worldDao.createWorldThreadSafe(gameContext);
+    public void createWorld() {
+        this.world = this.worldDao.createWorldThreadSafe(this.gameContext);
         this.economyService = new EconomyService(this.world);
     }
 
@@ -103,13 +107,13 @@ public class WorldService implements DateListener {
         Country selectedCountry = this.world.getSelectedProvince().getCountryOwner();
         Minister headOfState = this.getHeadOfState(selectedCountry);
         String portraitNameFile = "admin_type";
-        if(headOfState.getImageNameFile() != null) {
-            portraitNameFile = headOfState.getImageNameFile();
+        if(headOfState.imageFileName() != null) {
+            portraitNameFile = headOfState.imageFileName();
         }
         String population = ValueFormatter.formatValue(this.world.getPopulationAmount(selectedCountry), localisation);
         List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry);
 
-        return new CountrySummaryDto(selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), this.world.getColonizerId(selectedCountry), allies);
+        return new CountrySummaryDto(selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.name(), this.world.getColonizerId(selectedCountry), allies);
     }
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {
@@ -451,14 +455,20 @@ public class WorldService implements DateListener {
 
     private Minister getHeadOfState(Country country) {
         Minister headOfState = null;
+        Flecs ecsWorld = this.gameContext.getEcsWorld();
         if(country.getHeadOfStateId() != -1) {
-            headOfState = this.world.getPolitics().getMinister(country.getHeadOfStateId());
+            long ministerId = this.world.getPolitics().getMinistersIds().get(country.getHeadOfStateId());
+            Entity entityMinister = ecsWorld.obtainEntity(ministerId);
+            headOfState = entityMinister.get(Minister.class);
         }
 
         if(country.getAlliances() != null) {
             for (Map.Entry<Country, AllianceType> alliance : country.getAlliances().entrySet()) {
                 if (alliance.getValue() == AllianceType.COLONY) {
-                    headOfState = this.world.getPolitics().getMinister(alliance.getKey().getHeadOfStateId());
+                    long ministerId = this.world.getPolitics().getMinistersIds().get(alliance.getKey().getHeadOfStateId());
+                    Entity entityMinister = ecsWorld.obtainEntity(ministerId);
+                    headOfState = entityMinister.get(Minister.class);
+
                 }
             }
         }

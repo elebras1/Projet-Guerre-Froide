@@ -1,19 +1,21 @@
 package com.populaire.projetguerrefroide.politics;
 
+import com.github.tommyettinger.ds.IntLongMap;
+
 import java.util.Map;
 
 public class Politics {
+    private final IntLongMap ministersIds;
     private final Map<String, Ideology> ideologies;
-    private final Minister[] ministers;
     private final Leader[] leaders;
     private final Map<String, MinisterType> ministerTypes;
     private final Map<String, Government> governments;
     private final Map<String, LawGroup> lawGroups;
     private final byte baseEnactmentDaysLaw;
 
-    public Politics(Map<String, Ideology> ideologies, Minister[] ministers, Leader[] leaders, Map<String, MinisterType> ministerTypes, Map<String, Government> governments, Map<String, LawGroup> lawGroups, byte baseEnactmentDaysLaw) {
+    public Politics(IntLongMap ministersIds, Map<String, Ideology> ideologies, Leader[] leaders, Map<String, MinisterType> ministerTypes, Map<String, Government> governments, Map<String, LawGroup> lawGroups, byte baseEnactmentDaysLaw) {
+        this.ministersIds = ministersIds;
         this.ideologies = ideologies;
-        this.ministers = ministers;
         this.leaders = leaders;
         this.ministerTypes = ministerTypes;
         this.governments = governments;
@@ -21,12 +23,12 @@ public class Politics {
         this.baseEnactmentDaysLaw = baseEnactmentDaysLaw;
     }
 
-    public Map<String, Ideology> getIdeologies() {
-        return this.ideologies;
+    public IntLongMap getMinistersIds() {
+        return this.ministersIds;
     }
 
-    public Minister[] getMinisters() {
-        return this.ministers;
+    public Map<String, Ideology> getIdeologies() {
+        return this.ideologies;
     }
 
     public Leader[] getLeaders() {
@@ -43,12 +45,5 @@ public class Politics {
 
     public Map<String, LawGroup> getLawGroups() {
         return this.lawGroups;
-    }
-
-    public Minister getMinister(int index) {
-        if (index < 0 || index >= this.ministers.length) {
-            throw new IndexOutOfBoundsException("Invalid minister index: " + index);
-        }
-        return this.ministers[index];
     }
 }
