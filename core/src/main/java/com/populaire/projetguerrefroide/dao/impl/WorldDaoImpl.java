@@ -5,6 +5,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.github.elebras1.flecs.Entity;
 import com.github.elebras1.flecs.Flecs;
+import com.github.elebras1.flecs.FlecsConstants;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonMapper;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
@@ -22,6 +23,7 @@ import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.national.*;
 import com.populaire.projetguerrefroide.politics.*;
 import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.MutableInt;
 
 import java.io.BufferedReader;
@@ -76,6 +78,7 @@ public class WorldDaoImpl implements WorldDao {
     @Override
     public World createWorld(GameContext gameContext) {
         Flecs ecsWorld = gameContext.getEcsWorld();
+        this.initializeRelations(ecsWorld);
         Leader[] leaders = new Leader[52419];
         Map<String, Government> governments = this.readGovernmentsJson();
         NationalIdeas nationalIdeas = this.readNationalIdeasJson(ecsWorld);
@@ -106,6 +109,11 @@ public class WorldDaoImpl implements WorldDao {
         Politics politics = new Politics(leaders, governments, lawGroups, (byte) baseEnactmentDaysLaw.getValue());
 
         return new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, politics, nationalIdeas, terrains, gameContext);
+    }
+
+    private void initializeRelations(Flecs ecsWorld) {
+        long alignedWithId = ecsWorld.entity(EcsConstants.EcsAlignedWith);
+        ecsWorld.obtainEntity(alignedWithId).add(FlecsConstants.EcsExclusive);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -718,6 +726,7 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue countryValues = this.parseJsonFile(countryPath);
             Country country = new Country(countryId, this.parseColor(countryValues.get("color")));
+            long alignedWithId = ecsWorld.lookup(EcsConstants.EcsAlignedWith);
 
             JsonValue ministersValues = countryValues.get("ministers");
             if (ministersValues != null && ministersValues.isObject()) {
@@ -735,8 +744,12 @@ public class WorldDaoImpl implements WorldDao {
                     int startDate = (int) LocalDate.parse(ministerNode.get("start_date").asString(), dateFormatter).toEpochDay();
                     int deathDate = (int) LocalDate.parse(ministerNode.get("death_date").asString(), dateFormatter).toEpochDay();
 
+                    long ideologyEntityId = ecsWorld.entity(ideology);
+                    long typeEntityId = ecsWorld.entity(type);
                     long ministerEntityId = ecsWorld.entity(String.valueOf(ministerId));
                     Entity ministerEntity = ecsWorld.obtainEntity(ministerEntityId);
+                    ministerEntity.addRelation(alignedWithId, ideologyEntityId);
+                    ministerEntity.isA(typeEntityId);
                     ministerEntity.set(new Minister(name, imageNameFile, loyalty, startDate, deathDate));
                     countryMinisterIds.add(ministerEntity.id());
                 }
