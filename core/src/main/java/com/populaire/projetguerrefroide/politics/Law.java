@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.politics;
 
 import com.github.tommyettinger.ds.IntList;
-import com.github.tommyettinger.ds.ObjectIntMap;
+import com.github.tommyettinger.ds.LongIntMap;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ public class Law {
     private final String name;
     private final List<String> requirements;
     private final IntList modifierIds;
-    private final ObjectIntMap<Ideology> interestIdeologies;
+    private final LongIntMap interestIdeologies;
 
-    public Law(String name, List<String> requirements, IntList modifierIds, ObjectIntMap<Ideology> interestIdeologies) {
+    public Law(String name, List<String> requirements, IntList modifierIds, LongIntMap interestIdeologies) {
         this.name = name;
         this.requirements = requirements;
         this.modifierIds = modifierIds;
@@ -30,7 +30,7 @@ public class Law {
         return this.modifierIds;
     }
 
-    public ObjectIntMap<Ideology> getInterestIdeologies() {
+    public LongIntMap getInterestIdeologies() {
         return this.interestIdeologies;
     }
 

@@ -17,10 +17,10 @@ public class Country {
     private Map<Country, AllianceType> alliances;
     private LandProvince capital;
     private Government government;
-    private Ideology ideology;
-    private short headOfGovernmentId;
-    private short headOfStateId;
-    private ShortList ministerIds;
+    private long ideologyId;
+    private long headOfGovernmentId;
+    private long headOfStateId;
+    private LongList ministerIds;
     private Identity identity;
     private Attitude attitude;
     private String name;
@@ -34,7 +34,7 @@ public class Country {
         this.provinces = new ObjectList<>();
         this.capital = null;
         this.government = null;
-        this.ideology = null;
+        this.ideologyId = -1;
         this.headOfGovernmentId = -1;
         this.headOfStateId = -1;
         this.identity = null;
@@ -121,35 +121,35 @@ public class Country {
         return this.government;
     }
 
-    public void setIdeology(Ideology ideology) {
-        this.ideology = ideology;
+    public void setIdeologyId(long ideologyId) {
+        this.ideologyId = ideologyId;
     }
 
-    public Ideology getIdeology() {
-        return this.ideology;
+    public long getIdeologyId() {
+        return this.ideologyId;
     }
 
-    public void setHeadOfGovernmentId(short idMinister) {
+    public void setHeadOfGovernmentId(long idMinister) {
         this.headOfGovernmentId = idMinister;
     }
 
-    public short getHeadOfStateId() {
+    public long getHeadOfStateId() {
         return this.headOfStateId;
     }
 
-    public void setMinisterIds(ShortList ministerIds) {
+    public void setMinisterIds(LongList ministerIds) {
         this.ministerIds = ministerIds;
     }
 
-    public ShortList getMinisterIds() {
+    public LongList getMinisterIds() {
         return this.ministerIds;
     }
 
-    public void setHeadOfStateId(short idMinister) {
+    public void setHeadOfStateId(long idMinister) {
         this.headOfStateId = idMinister;
     }
 
-    public short getHeadOfGovernmentId() {
+    public long getHeadOfGovernmentId() {
         return this.headOfGovernmentId;
     }
 

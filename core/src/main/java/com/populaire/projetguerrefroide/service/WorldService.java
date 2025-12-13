@@ -43,7 +43,7 @@ public class WorldService implements DateListener {
     }
 
     public void createWorld() {
-        this.world = this.worldDao.createWorldThreadSafe(this.gameContext);
+        this.world = this.worldDao.createWorld(this.gameContext);
         this.economyService = new EconomyService(this.world);
     }
 
@@ -158,7 +158,7 @@ public class WorldService implements DateListener {
     }
 
     public void changeMapMode(String mapMode) {
-        this.world.changeMapMode(mapMode);
+        this.world.changeMapMode(mapMode, this.gameContext.getEcsWorld());
     }
 
     public ObjectIntMap<String> getCulturesOfHoveredProvince(short x, short y) {
@@ -457,16 +457,14 @@ public class WorldService implements DateListener {
         Minister headOfState = null;
         Flecs ecsWorld = this.gameContext.getEcsWorld();
         if(country.getHeadOfStateId() != -1) {
-            long ministerId = this.world.getPolitics().getMinistersIds().get(country.getHeadOfStateId());
-            Entity entityMinister = ecsWorld.obtainEntity(ministerId);
+            Entity entityMinister = ecsWorld.obtainEntity(country.getHeadOfStateId());
             headOfState = entityMinister.get(Minister.class);
         }
 
         if(country.getAlliances() != null) {
             for (Map.Entry<Country, AllianceType> alliance : country.getAlliances().entrySet()) {
                 if (alliance.getValue() == AllianceType.COLONY) {
-                    long ministerId = this.world.getPolitics().getMinistersIds().get(alliance.getKey().getHeadOfStateId());
-                    Entity entityMinister = ecsWorld.obtainEntity(ministerId);
+                    Entity entityMinister = ecsWorld.obtainEntity(alliance.getKey().getHeadOfStateId());
                     headOfState = entityMinister.get(Minister.class);
 
                 }
