@@ -18,23 +18,25 @@ public class ProjetGuerreFroide extends Game {
     public static final int WORLD_WIDTH = 5616;
     public static final int WORLD_HEIGHT = 2160;
     private final ConfigurationService configurationService;
+    private ScreenManager screenManager;
+    private GameContext gameContext;
     private final Flecs ecsWorld;
 
     public ProjetGuerreFroide() {
         this.configurationService = new ConfigurationService();
         this.ecsWorld = new Flecs();
-        this.ecsWorld.component(Modifier.class);
-        this.ecsWorld.component(Minister.class);
-        this.ecsWorld.component(MinisterType.class);
-        this.ecsWorld.component(Ideology.class);
     }
 
     @Override
     public void create() {
-        GameContext gameContext = this.configurationService.getGameContext(this.ecsWorld);
-        ScreenManager screenManager = new ScreenManager(this, gameContext, configurationService);
-        this.loadAssets(gameContext.getAssetManager());
-        screenManager.showMainMenuScreen();
+        this.ecsWorld.component(Modifier.class);
+        this.ecsWorld.component(Minister.class);
+        this.ecsWorld.component(MinisterType.class);
+        this.ecsWorld.component(Ideology.class);
+        this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
+        this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService);
+        this.loadAssets(this.gameContext.getAssetManager());
+        this.screenManager.showMainMenuScreen();
         this.ecsDebug(gameContext);
     }
 
@@ -48,13 +50,16 @@ public class ProjetGuerreFroide extends Game {
     private void ecsDebug(GameContext gameContext) {
         Settings settings = gameContext.getSettings();
         if(settings.isDebugMode()) {
-            gameContext.getEcsWorld().enableRest((short) 27750);
+            this.ecsWorld.enableRest((short) 27750);
         }
     }
 
     @Override
     public void dispose() {
-        super.dispose();
+        this.ecsWorld.disableRest();
         this.ecsWorld.close();
+        this.screenManager.dispose();
+        this.gameContext.dispose();
+        super.dispose();
     }
 }

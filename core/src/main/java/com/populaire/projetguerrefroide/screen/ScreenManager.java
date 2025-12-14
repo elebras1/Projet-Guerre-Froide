@@ -44,7 +44,5 @@ public class ScreenManager implements Disposable {
 
     @Override
     public void dispose() {
-        this.game.dispose();
-        this.gameContext.dispose();
     }
 }
