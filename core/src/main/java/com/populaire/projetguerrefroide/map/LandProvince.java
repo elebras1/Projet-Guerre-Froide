@@ -12,7 +12,7 @@ public class LandProvince implements Province {
     private Country countryOwner;
     private Country countryController;
     private Region region;
-    private Continent continent;
+    private long continentId;
     private final Terrain terrain;
     private final List<Country> countriesCore;
     private final List<Province> adjacentProvinces;
@@ -74,8 +74,8 @@ public class LandProvince implements Province {
         return this.region;
     }
 
-    public void setContinent(Continent continent) {
-        this.continent = continent;
+    public void setContinentId(long continentId) {
+        this.continentId = continentId;
     }
 
     @Override
@@ -97,8 +97,8 @@ public class LandProvince implements Province {
         return this.adjacentProvinces;
     }
 
-    public Continent getContinent() {
-        return this.continent;
+    public long getContinentId() {
+        return this.continentId;
     }
 
     public List<Country> getCountriesCore() {
@@ -135,7 +135,7 @@ public class LandProvince implements Province {
                 ", controller=" + this.countryController.getName() +
                 ", number_adjacentProvinces=" + this.adjacentProvinces.size() +
                 ", region=" + this.region.getId() +
-                ", continent=" + this.continent.getName() +
+                ", continent=" + this.continentId +
                 ", terrain=" + this.terrain.getName() +
                 '}';
     }

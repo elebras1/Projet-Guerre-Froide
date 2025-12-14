@@ -35,9 +35,6 @@ import java.time.format.DateTimeParseException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class WorldDaoImpl implements WorldDao {
     private final String commonPath = "common/";
@@ -114,6 +111,8 @@ public class WorldDaoImpl implements WorldDao {
     private void initializeRelations(Flecs ecsWorld) {
         long alignedWithId = ecsWorld.entity(EcsConstants.EcsAlignedWith);
         ecsWorld.obtainEntity(alignedWithId).add(FlecsConstants.EcsExclusive);
+        long locatedInId = ecsWorld.entity(EcsConstants.EcsLocatedIn);
+        ecsWorld.obtainEntity(locatedInId).add(FlecsConstants.EcsExclusive);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -252,7 +251,7 @@ public class WorldDaoImpl implements WorldDao {
                 String ideologyName = entry.getKey();
                 JsonValue ideologyValue = entry.getValue();
                 int color = this.parseColor(ideologyValue.get("color"));
-                short factionDriftingSpeed = (short) ideologyValue.get("faction_drifting_speed").asLong();
+                byte factionDriftingSpeed = (byte) ideologyValue.get("faction_drifting_speed").asLong();
 
                 long ideologyEntityId = ecsWorld.entity(ideologyName);
                 Entity ideologyEntity = ecsWorld.obtainEntity(ideologyEntityId);
@@ -741,8 +740,8 @@ public class WorldDaoImpl implements WorldDao {
                     float loyalty = (float) ministerNode.get("loyalty").asDouble();
                     String imageNameFile = ministerNode.get("picture").asString();
                     String type = ministerNode.get("type").asString();
-                    int startDate = (int) LocalDate.parse(ministerNode.get("start_date").asString(), dateFormatter).toEpochDay();
-                    int deathDate = (int) LocalDate.parse(ministerNode.get("death_date").asString(), dateFormatter).toEpochDay();
+                    int startDate = (int) LocalDate.parse(ministerNode.get("start_date").asString(), this.dateFormatter).toEpochDay();
+                    int deathDate = (int) LocalDate.parse(ministerNode.get("death_date").asString(), this.dateFormatter).toEpochDay();
 
                     long ideologyEntityId = ecsWorld.entity(ideology);
                     long typeEntityId = ecsWorld.entity(type);
@@ -858,7 +857,7 @@ public class WorldDaoImpl implements WorldDao {
         this.readDefinitionCsv(provinceStore, provinces, provincesByColor, waterProvincesByColor);
         this.readProvinceBitmap(provincesByColor);
         this.readCountriesHistoryJson(ecsWorld, countries, provinces, governments, nationalIdeas, lawGroups);
-        this.readContinentJsonFile(provinces);
+        this.readContinentJsonFile(ecsWorld, provinces);
         this.readAdjenciesJson(provinces);
         this.readPositionsJson(provinces);
         return provinceStore;
@@ -1175,18 +1174,20 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readContinentJsonFile(IntObjectMap<Province> provinces) {
+    private void readContinentJsonFile(Flecs ecsWorld, IntObjectMap<Province> provinces) {
         try {
             JsonValue continentValues = this.parseJsonFile(this.continentJsonFile);
             Iterator<Map.Entry<String, JsonValue>> continentEntryIterator = continentValues.objectIterator();
+            long locatedInId = ecsWorld.lookup(EcsConstants.EcsLocatedIn);
             while (continentEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = continentEntryIterator.next();
-                Continent continent = new Continent(entry.getKey());
+                String continentName = entry.getKey();
+                long continentEntityId = ecsWorld.entity(continentName);
                 Iterator<JsonValue> provincesIterator = entry.getValue().arrayIterator();
                 while (provincesIterator.hasNext()) {
                     short provinceId = (short) provincesIterator.next().asLong();
                     LandProvince province = (LandProvince) provinces.get(provinceId);
-                    province.setContinent(continent);
+                    province.setContinentId(continentEntityId);
                 }
             }
         } catch (IOException ioException) {
