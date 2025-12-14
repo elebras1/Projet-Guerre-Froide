@@ -66,6 +66,7 @@ public class LoadScreen implements Screen {
 
     @Override
     public void render(float delta) {
+        this.gameContext.getEcsWorld().progress(delta);
         this.stage.act();
         this.stage.draw();
 

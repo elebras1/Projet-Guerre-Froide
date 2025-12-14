@@ -266,6 +266,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.cam.position.x = camX;
         this.projection.setProjectionMatrix(this.cam.combined);
 
+        this.gameContext.getEcsWorld().progress(delta);
         WgScreenUtils.clear(1, 1, 1, 1);
 
         this.worldService.renderWorld(this.projection, this.cam, time);

@@ -384,6 +384,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.cam.position.x = camX;
         this.projection.setProjectionMatrix(this.cam.combined);
 
+        this.gameContext.getEcsWorld().progress(delta);
         WgScreenUtils.clear(1, 1, 1, 1);
 
         this.worldService.renderWorld(this.projection, this.cam, this.time);

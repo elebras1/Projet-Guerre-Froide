@@ -8,6 +8,7 @@ import com.populaire.projetguerrefroide.component.Ideology;
 import com.populaire.projetguerrefroide.component.Minister;
 import com.populaire.projetguerrefroide.component.MinisterType;
 import com.populaire.projetguerrefroide.component.Modifier;
+import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -34,6 +35,7 @@ public class ProjetGuerreFroide extends Game {
         ScreenManager screenManager = new ScreenManager(this, gameContext, configurationService);
         this.loadAssets(gameContext.getAssetManager());
         screenManager.showMainMenuScreen();
+        this.ecsDebug(gameContext);
     }
 
     private void loadAssets(AssetManager assetManager) {
@@ -41,6 +43,13 @@ public class ProjetGuerreFroide extends Game {
         assetManager.load("ui/fonts/fonts_skin.json", Skin.class);
         assetManager.load("ui/scrollbars/scrollbars_skin.json", Skin.class);
         assetManager.finishLoading();
+    }
+
+    private void ecsDebug(GameContext gameContext) {
+        Settings settings = gameContext.getSettings();
+        if(settings.isDebugMode()) {
+            gameContext.getEcsWorld().enableRest((short) 27750);
+        }
     }
 
     @Override
