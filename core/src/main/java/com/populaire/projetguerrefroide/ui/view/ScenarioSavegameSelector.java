@@ -65,12 +65,12 @@ public class ScenarioSavegameSelector extends Table {
 
     private Table createScenarioTable(Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation) {
         Table scenarioTable = new Table();
-        Drawable bookmarkImage = skinUi.getDrawable(bookmark.getIconNameFile());
+        Drawable bookmarkImage = skinUi.getDrawable(bookmark.iconNameFile());
         scenarioTable.setBackground(bookmarkImage);
         LabelStyle labelStyleImpactSmall = labelStylePool.getLabelStyle("impact_small");
         LabelStyle labelStyleJockey14 = labelStylePool.getLabelStyle("jockey_14");
-        Label nameLabel = new Label(localisation.get(bookmark.getNameId()), labelStyleImpactSmall);
-        Label descriptionLabel = new Label(localisation.get(bookmark.getDescriptionId()), labelStyleJockey14);
+        Label nameLabel = new Label(localisation.get(bookmark.nameId()), labelStyleImpactSmall);
+        Label descriptionLabel = new Label(localisation.get(bookmark.descriptionId()), labelStyleJockey14);
         nameLabel.setPosition(15, 35);
         descriptionLabel.setPosition(10, 15);
         scenarioTable.addActor(nameLabel);

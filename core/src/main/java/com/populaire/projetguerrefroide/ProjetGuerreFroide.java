@@ -9,6 +9,7 @@ import com.populaire.projetguerrefroide.component.Minister;
 import com.populaire.projetguerrefroide.component.MinisterType;
 import com.populaire.projetguerrefroide.component.Modifier;
 import com.populaire.projetguerrefroide.configuration.Settings;
+import com.populaire.projetguerrefroide.entity.Terrain;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -33,6 +34,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(Minister.class);
         this.ecsWorld.component(MinisterType.class);
         this.ecsWorld.component(Ideology.class);
+        this.ecsWorld.component(Terrain.class);
         this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
         this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService);
         this.loadAssets(this.gameContext.getAssetManager());

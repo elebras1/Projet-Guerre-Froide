@@ -70,7 +70,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.gameContext = gameContext;
         this.worldService = worldService;
         this.configurationService = configurationService;
-        this.dateService = new DateService(this.gameContext.getBookmark().getDate());
+        this.dateService = new DateService(this.gameContext.getBookmark().date());
         this.dateService.addListener(this.worldService);
         this.dateService.addListener(this);
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);

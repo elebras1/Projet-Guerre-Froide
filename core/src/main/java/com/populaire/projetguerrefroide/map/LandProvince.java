@@ -3,7 +3,6 @@ package com.populaire.projetguerrefroide.map;
 import com.github.tommyettinger.ds.IntSet;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.entity.Terrain;
 
 import java.util.*;
 
@@ -13,17 +12,17 @@ public class LandProvince implements Province {
     private Country countryController;
     private Region region;
     private long continentId;
-    private final Terrain terrain;
+    private final long terrainId;
     private final List<Country> countriesCore;
     private final List<Province> adjacentProvinces;
     private final ObjectIntMap<String> positions;
     private final IntSet borderPixels;
 
-    public LandProvince(short id, Country countryOwner, Country countryController, Terrain terrain, List<Country> countriesCore) {
+    public LandProvince(short id, Country countryOwner, Country countryController, long terrainId, List<Country> countriesCore) {
         this.id = id;
         this.countryOwner = countryOwner;
         this.countryController = countryController;
-        this.terrain = terrain;
+        this.terrainId = terrainId;
         this.countriesCore = countriesCore;
         this.adjacentProvinces = new ObjectList<>();
         this.positions = new ObjectIntMap<>();
@@ -46,8 +45,8 @@ public class LandProvince implements Province {
         this.countryController = countryController;
     }
 
-    public Terrain getTerrain() {
-        return this.terrain;
+    public long getTerrainId() {
+        return this.terrainId;
     }
 
     public IntSet getBorderPixels() {
@@ -136,7 +135,7 @@ public class LandProvince implements Province {
                 ", number_adjacentProvinces=" + this.adjacentProvinces.size() +
                 ", region=" + this.region.getId() +
                 ", continent=" + this.continentId +
-                ", terrain=" + this.terrain.getName() +
+                ", terrain=" + this.terrainId +
                 '}';
     }
 }

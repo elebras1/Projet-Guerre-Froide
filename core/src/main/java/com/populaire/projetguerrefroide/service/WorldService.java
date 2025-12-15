@@ -133,11 +133,12 @@ public class WorldService implements DateListener {
     }
 
     public ProvinceDto prepareProvinceDto(Map<String, String> localisation) {
+        World ecsWorld = this.gameContext.getEcsWorld();
         LandProvince selectedProvince = this.worldManager.getSelectedProvince();
         Region region = selectedProvince.getRegion();
         String provinceId = String.valueOf(selectedProvince.getId());
         String regionId = region.getId();
-        String terrainImage = selectedProvince.getTerrain().getName();
+        String terrainImage = ecsWorld.obtainEntity(selectedProvince.getTerrainId()).getName();
         String resourceImage = this.worldManager.getResourceGoodName(selectedProvince);
         String populationRegion = this.getPopulationRegionOfSelectedProvince(localisation);
         String workersRegion = this.getWorkersRegionOfSelectedProvince(localisation);

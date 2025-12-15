@@ -57,7 +57,6 @@ public class WorldManager implements WorldContext, Disposable {
     private final PopulationTypeStore populationTypeStore;
     private final Politics politics;
     private final NationalIdeas nationalIdeas;
-    private final Map<String, Terrain> terrains;
     private final Pixmap provincesPixmap;
     private final Pixmap mapModePixmap;
     private final Pixmap provincesColorStripesPixmap;
@@ -96,7 +95,8 @@ public class WorldManager implements WorldContext, Disposable {
     private Country playerCountry;
     private MapMode mapMode;
 
-    public WorldManager(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, Politics politics, NationalIdeas nationalIdeas, Map<String, Terrain> terrains, GameContext gameContext) {        this.mapDao = new MapDaoImpl();
+    public WorldManager(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, Politics politics, NationalIdeas nationalIdeas, GameContext gameContext) {
+        this.mapDao = new MapDaoImpl();
         this.countries = countries;
         this.provinces = provinces;
         this.waterProvinces = waterProvinces;
@@ -109,7 +109,6 @@ public class WorldManager implements WorldContext, Disposable {
         this.populationTypeStore = populationTypeStore;
         this.politics = politics;
         this.nationalIdeas = nationalIdeas;
-        this.terrains = terrains;
         this.mapModePixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
         this.mapModePixmap.setColor(0, 0, 0, 0);
         this.mapModePixmap.fill();
@@ -463,13 +462,18 @@ public class WorldManager implements WorldContext, Disposable {
         }
     }
 
-    private void updatePixmapTerrain2Color() {
+    private void updatePixmapTerrain2Color(World ecsWorld) {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
             short green = (short) ((color >> 16) & 0xFF);
-            this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(this.provinces.get(color)).getTerrain().getColor());
+            LandProvince province = this.provinces.get(color);
+            if(province != null) {
+                Entity terrainEntity = ecsWorld.obtainEntity(province.getTerrainId());
+                Terrain terrain = terrainEntity.get(Terrain.class);
+                this.mapModePixmap.drawPixel(red, green, terrain.color());
+            }
         }
     }
 
@@ -569,7 +573,7 @@ public class WorldManager implements WorldContext, Disposable {
                 this.mapMode = MapMode.TERRAIN;
                 break;
             case "mapmode_terrain_2":
-                this.updatePixmapTerrain2Color();
+                this.updatePixmapTerrain2Color(ecsWorld);
                 this.mapMode = MapMode.TERRAIN_2;
                 break;
             case "mapmode_resources":
@@ -867,9 +871,9 @@ public class WorldManager implements WorldContext, Disposable {
     private WgMeshMulti generateMeshRivers(VertexAttributes vertexAttributes) {
         RawMeshMulti rawMesh = this.mapDao.readRiversMeshJson();
 
-        WgMeshMulti mesh = new WgMeshMulti(true, rawMesh.getVertices().length / 5, 0, vertexAttributes);
-        mesh.setVertices(rawMesh.getVertices());
-        mesh.setIndirectCommands(rawMesh.getStarts(), rawMesh.getCounts());
+        WgMeshMulti mesh = new WgMeshMulti(true, rawMesh.vertices().length / 5, 0, vertexAttributes);
+        mesh.setVertices(rawMesh.vertices());
+        mesh.setIndirectCommands(rawMesh.starts(), rawMesh.counts());
 
         return mesh;
     }
