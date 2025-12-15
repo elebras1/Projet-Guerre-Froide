@@ -12,13 +12,13 @@ import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
 import com.populaire.projetguerrefroide.component.Ideology;
 import com.populaire.projetguerrefroide.component.Minister;
 import com.populaire.projetguerrefroide.component.Modifier;
+import com.populaire.projetguerrefroide.component.Terrain;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.builder.*;
 import com.populaire.projetguerrefroide.economy.building.*;
 import com.populaire.projetguerrefroide.economy.good.*;
 import com.populaire.projetguerrefroide.economy.population.PopulationTemplateStore;
 import com.populaire.projetguerrefroide.economy.population.PopulationTypeStore;
-import com.populaire.projetguerrefroide.entity.*;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.national.*;
 import com.populaire.projetguerrefroide.politics.*;
@@ -174,13 +174,13 @@ public class WorldDaoImpl implements WorldDao {
                 identities.put(name, new Identity(name, modifierIds));
             }
 
-            Map<String, Attitude> attitudes = new ObjectObjectMap<>(7);
             Iterator<Map.Entry<String, JsonValue>> attitudesEntryIterator = nationalIdeasValues.get("national_attitude").objectIterator();
             while (attitudesEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> attitudeEntry = attitudesEntryIterator.next();
-                String name = attitudeEntry.getKey();
+                String attitudeName = attitudeEntry.getKey();
+                long attitudeEntityId = ecsWorld.entity(attitudeName);
+                Entity attitudeEntity = ecsWorld.obtainEntity(attitudeEntityId);
                 JsonValue attitudeValue = attitudeEntry.getValue();
-                IntList modifierIds = new IntList();
                 Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = attitudeValue.objectIterator();
                 while (modifiersEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
@@ -188,12 +188,11 @@ public class WorldDaoImpl implements WorldDao {
                     JsonValue modifierValue = modifierEntry.getValue();
                     float value = (float) modifierValue.asDouble();
                     long modifierTagId = ecsWorld.entity(modifierName);
-                    // TODO associate modifierTagId with modifier value in data oriented way
+                    attitudeEntity.set(modifierTagId, new Modifier(value));
                 }
-                attitudes.put(name, new Attitude(name, modifierIds));
             }
 
-            return new NationalIdeas(cultureStore, religionStore, cultureIds, religionIds, identities, attitudes);
+            return new NationalIdeas(cultureStore, religionStore, cultureIds, religionIds, identities);
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
@@ -569,15 +568,15 @@ public class WorldDaoImpl implements WorldDao {
             while (ministerTypesEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = ministerTypesEntryIterator.next();
                 String ministerTypeName = entry.getKey();
-                long ministerTypeEntity = ecsWorld.entity(ministerTypeName);
-                Entity ministerType = ecsWorld.obtainEntity(ministerTypeEntity);
+                long ministerTypeEntityId = ecsWorld.entity(ministerTypeName);
+                Entity ministerTypeEntity = ecsWorld.obtainEntity(ministerTypeEntityId);
                 Iterator<Map.Entry<String, JsonValue>> modifierEntryIterator = entry.getValue().objectIterator();
                 while (modifierEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> modifierEntry = modifierEntryIterator.next();
                     String modifierName = modifierEntry.getKey();
                     float modifierValue = (float) modifierEntry.getValue().asDouble();
                     long modifierTagId = ecsWorld.entity(modifierName);
-                    ministerType.set(modifierTagId, new Modifier(modifierValue));
+                    ministerTypeEntity.set(modifierTagId, new Modifier(modifierValue));
                 }
             }
         } catch (IOException ioException) {
@@ -1145,7 +1144,8 @@ public class WorldDaoImpl implements WorldDao {
             String identity = countryValues.get("national_identity").asString();
             country.setIdentity(nationalIdeas.getIdentities().get(identity));
             String attitude = countryValues.get("national_attitude").asString();
-            country.setAttitude(nationalIdeas.getAttitudes().get(attitude));
+            long attitudeId = ecsWorld.lookup(attitude);
+            country.setAttitudeId(attitudeId);
             if(countryValues.get("head_of_state") != null && countryValues.get("head_of_government") != null) {
                 short ministerHeadOfStateId = (short) countryValues.get("head_of_state").asLong();
                 short ministerHeadOfGovernmentId = (short) countryValues.get("head_of_government").asLong();

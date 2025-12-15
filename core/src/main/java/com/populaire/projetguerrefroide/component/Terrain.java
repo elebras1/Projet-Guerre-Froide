@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.entity;
+package com.populaire.projetguerrefroide.component;
 
 import com.github.elebras1.flecs.annotation.FlecsComponent;
 
