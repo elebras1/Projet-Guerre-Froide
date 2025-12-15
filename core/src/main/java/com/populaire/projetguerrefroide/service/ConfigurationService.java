@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.github.elebras1.flecs.Flecs;
+import com.github.elebras1.flecs.World;
 import com.monstrous.gdx.webgpu.assets.WgAssetManager;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dao.ConfigurationDao;
@@ -21,7 +21,7 @@ public class ConfigurationService {
         this.localisationDao = new LocalisationDaoImpl();
     }
 
-    public GameContext getGameContext(Flecs ecsWorld) {
+    public GameContext getGameContext(World ecsWorld) {
         Bookmark bookmark = this.configurationDao.loadBookmark();
         AssetManager assetManager = new WgAssetManager();
         this.loadInitialAssets(assetManager);

@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.github.elebras1.flecs.Entity;
-import com.github.elebras1.flecs.Flecs;
+import com.github.elebras1.flecs.World;
 import com.github.elebras1.flecs.FlecsConstants;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonMapper;
@@ -73,8 +73,8 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     @Override
-    public World createWorld(GameContext gameContext) {
-        Flecs ecsWorld = gameContext.getEcsWorld();
+    public WorldManager createWorld(GameContext gameContext) {
+        World ecsWorld = gameContext.getEcsWorld();
         this.initializeRelations(ecsWorld);
         Leader[] leaders = new Leader[52419];
         Map<String, Government> governments = this.readGovernmentsJson();
@@ -105,10 +105,10 @@ public class WorldDaoImpl implements WorldDao {
         RegionStore regionStore = regionStoreBuilder.build();
         Politics politics = new Politics(leaders, governments, lawGroups, (byte) baseEnactmentDaysLaw.getValue());
 
-        return new World(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, politics, nationalIdeas, terrains, gameContext);
+        return new WorldManager(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, politics, nationalIdeas, terrains, gameContext);
     }
 
-    private void initializeRelations(Flecs ecsWorld) {
+    private void initializeRelations(World ecsWorld) {
         long alignedWithId = ecsWorld.entity(EcsConstants.EcsAlignedWith);
         ecsWorld.obtainEntity(alignedWithId).add(FlecsConstants.EcsExclusive);
         long locatedInId = ecsWorld.entity(EcsConstants.EcsLocatedIn);
@@ -125,7 +125,7 @@ public class WorldDaoImpl implements WorldDao {
         return new BufferedReader(new StringReader(fileHandle.readString()));
     }
 
-    private NationalIdeas readNationalIdeasJson(Flecs ecsWorld) {
+    private NationalIdeas readNationalIdeasJson(World ecsWorld) {
         try {
             JsonValue nationalIdeasValues = this.parseJsonFile(this.nationalIdeasJsonFile);
 
@@ -242,7 +242,7 @@ public class WorldDaoImpl implements WorldDao {
         return governments;
     }
 
-    private void readIdeologiesJson(Flecs ecsWorld) {
+    private void readIdeologiesJson(World ecsWorld) {
         try {
             JsonValue ideologiesValues = this.parseJsonFile(this.ideologiesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> ideologiesEntryIterator = ideologiesValues.objectIterator();
@@ -562,7 +562,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readMinisterTypesJson(Flecs ecsWorld) {
+    private void readMinisterTypesJson(World ecsWorld) {
         try {
             JsonValue ministerTypesValues = this.parseJsonFile(this.ministerTypesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> ministerTypesEntryIterator = ministerTypesValues.objectIterator();
@@ -614,7 +614,7 @@ public class WorldDaoImpl implements WorldDao {
         return terrains;
     }
 
-    private Map<String, LawGroup> readLawsJson(Flecs ecsWorld, MutableInt baseEnactmentDaysLaw) {
+    private Map<String, LawGroup> readLawsJson(World ecsWorld, MutableInt baseEnactmentDaysLaw) {
         Map<String, LawGroup> lawGroups = new ObjectObjectOrderedMap<>(21, 1f);
         try {
             JsonValue lawsValues = this.parseJsonFile(this.lawsJsonFile);
@@ -666,7 +666,7 @@ public class WorldDaoImpl implements WorldDao {
         return lawGroups;
     }
 
-    private Map<String, Trait> readTraitsJson(Flecs ecsWorld) {
+    private Map<String, Trait> readTraitsJson(World ecsWorld) {
         Map<String, Trait> traits = new ObjectObjectMap<>(22, 1f);
         try {
             JsonValue traitsValues = this.parseJsonFile(this.traitsJsonFile);
@@ -690,7 +690,7 @@ public class WorldDaoImpl implements WorldDao {
         return traits;
     }
 
-    private Map<String, Country> loadCountries(Flecs ecsWorld, Map<String, Trait> traits, Leader[] leaders) {
+    private Map<String, Country> loadCountries(World ecsWorld, Map<String, Trait> traits, Leader[] leaders) {
         Map<String, Country> countries = this.readCountriesJson(ecsWorld);
         this.readRelationJson(countries);
         this.readAlliancesJson(countries);
@@ -698,7 +698,7 @@ public class WorldDaoImpl implements WorldDao {
         return countries;
     }
 
-    private Map<String, Country> readCountriesJson(Flecs ecsWorld) {
+    private Map<String, Country> readCountriesJson(World ecsWorld) {
         Map<String, Country> countries = new ObjectObjectMap<>(262, 1f);
         Map<String, String> countriesPaths = new ObjectObjectMap<>(262, 1f);
         try {
@@ -721,7 +721,7 @@ public class WorldDaoImpl implements WorldDao {
         return countries;
     }
 
-    private Country readCountryJson(Flecs ecsWorld, String countryPath, String countryId) {
+    private Country readCountryJson(World ecsWorld, String countryPath, String countryId) {
         try {
             JsonValue countryValues = this.parseJsonFile(countryPath);
             Country country = new Country(countryId, this.parseColor(countryValues.get("color")));
@@ -848,7 +848,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private ProvinceStore loadProvinces(Flecs ecsWorld, RegionStoreBuilder regionStoreBuilder, Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, Map<String, Government> governments, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains, Map<String, LawGroup> lawGroups) {
+    private ProvinceStore loadProvinces(World ecsWorld, RegionStoreBuilder regionStoreBuilder, Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, Map<String, Government> governments, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Map<String, Terrain> terrains, Map<String, LawGroup> lawGroups) {
         IntObjectMap<IntIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
         PopulationTemplateStore populationTemplateStore = this.readPopulationTemplatesJson();
         IntObjectMap<Province> provinces = new IntObjectMap<>(14796, 1f);
@@ -1109,7 +1109,7 @@ public class WorldDaoImpl implements WorldDao {
         provincesPixmap.dispose();
     }
 
-    private void readCountriesHistoryJson(Flecs ecsWorld, Map<String, Country> countries, IntObjectMap<Province> provinces, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, LawGroup> lawGroups) {
+    private void readCountriesHistoryJson(World ecsWorld, Map<String, Country> countries, IntObjectMap<Province> provinces, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, LawGroup> lawGroups) {
         ObjectObjectMap<String, String> countriesHistoryPaths = new ObjectObjectMap<>(262, 1f);
         try {
             JsonValue countriesJson = this.parseJsonFile(this.countriesHistoryJsonFiles);
@@ -1130,7 +1130,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readCountryHistoryJson(Flecs ecsWorld, Map<String, Country> countries, String countryFileName, String idCountry, IntObjectMap<Province> provinces, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, LawGroup> lawGroups) {
+    private void readCountryHistoryJson(World ecsWorld, Map<String, Country> countries, String countryFileName, String idCountry, IntObjectMap<Province> provinces, Map<String, Government> governments, NationalIdeas nationalIdeas, Map<String, LawGroup> lawGroups) {
         try {
             if(countryFileName.equals("history/countries/REB - Rebels.json")) {
                 return;
@@ -1174,7 +1174,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readContinentJsonFile(Flecs ecsWorld, IntObjectMap<Province> provinces) {
+    private void readContinentJsonFile(World ecsWorld, IntObjectMap<Province> provinces) {
         try {
             JsonValue continentValues = this.parseJsonFile(this.continentJsonFile);
             Iterator<Map.Entry<String, JsonValue>> continentEntryIterator = continentValues.objectIterator();

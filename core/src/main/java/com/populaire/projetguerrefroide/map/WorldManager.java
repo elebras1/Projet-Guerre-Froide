@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Vector4;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.elebras1.flecs.Entity;
-import com.github.elebras1.flecs.Flecs;
+import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.*;
 import com.github.xpenatan.webgpu.*;
 import com.monstrous.gdx.webgpu.graphics.Binder;
@@ -43,7 +43,7 @@ import java.util.*;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class World implements WorldContext, Disposable {
+public class WorldManager implements WorldContext, Disposable {
     private final MapDaoImpl mapDao;
     private final List<Country> countries;
     private final IntObjectMap<LandProvince> provinces;
@@ -96,7 +96,7 @@ public class World implements WorldContext, Disposable {
     private Country playerCountry;
     private MapMode mapMode;
 
-    public World(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, Politics politics, NationalIdeas nationalIdeas, Map<String, Terrain> terrains, GameContext gameContext) {        this.mapDao = new MapDaoImpl();
+    public WorldManager(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, Politics politics, NationalIdeas nationalIdeas, Map<String, Terrain> terrains, GameContext gameContext) {        this.mapDao = new MapDaoImpl();
         this.countries = countries;
         this.provinces = provinces;
         this.waterProvinces = waterProvinces;
@@ -362,7 +362,7 @@ public class World implements WorldContext, Disposable {
         }
     }
 
-    private void updatePixmapIdeologiesColor(Flecs ecsWorld) {
+    private void updatePixmapIdeologiesColor(World ecsWorld) {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
@@ -546,7 +546,7 @@ public class World implements WorldContext, Disposable {
         }
     }
 
-    public void changeMapMode(String mapMode, Flecs ecsWorld) {
+    public void changeMapMode(String mapMode, World ecsWorld) {
         switch(mapMode) {
             case "mapmode_political":
                 this.updatePixmapCountriesColor();

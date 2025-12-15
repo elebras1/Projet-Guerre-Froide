@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.github.elebras1.flecs.Flecs;
+import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.Ideology;
 import com.populaire.projetguerrefroide.component.Minister;
 import com.populaire.projetguerrefroide.component.MinisterType;
@@ -20,11 +20,11 @@ public class ProjetGuerreFroide extends Game {
     private final ConfigurationService configurationService;
     private ScreenManager screenManager;
     private GameContext gameContext;
-    private final Flecs ecsWorld;
+    private final World ecsWorld;
 
     public ProjetGuerreFroide() {
         this.configurationService = new ConfigurationService();
-        this.ecsWorld = new Flecs();
+        this.ecsWorld = new World();
     }
 
     @Override

@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.GL31;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.utils.GdxNativesLoader;
-import com.github.elebras1.flecs.Flecs;
+import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.adapter.graphics.WgMeshMulti;
@@ -47,7 +47,7 @@ public abstract class GdxBaseTest {
         mockedMeshMultiDrawIndirect = mockConstruction(WgMeshMulti.class);
 
         ConfigurationService configurationService = new ConfigurationService();
-        Flecs ecsWorld = new Flecs();
+        World ecsWorld = new World();
         this.gameContext = configurationService.getGameContext(ecsWorld);
         configurationService.loadMainMenuLocalisation(this.gameContext);
         configurationService.loadGameLocalisation(this.gameContext);

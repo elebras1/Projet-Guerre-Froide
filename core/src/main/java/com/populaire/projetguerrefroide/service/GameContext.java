@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.utils.Disposable;
-import com.github.elebras1.flecs.Flecs;
+import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.entity.Bookmark;
@@ -11,7 +11,7 @@ import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 import java.util.Map;
 
 public class GameContext implements Disposable {
-    private final Flecs ecsWorld;
+    private final World ecsWorld;
     private final Bookmark bookmark;
     private final AssetManager assetManager;
     private final CursorManager cursorManager;
@@ -19,7 +19,7 @@ public class GameContext implements Disposable {
     private final Map<String, String> localisation;
     private Settings settings;
 
-    public GameContext(Flecs ecsWorld, Bookmark bookmark, AssetManager assetManager, CursorManager cursorManager, Settings settings, LabelStylePool labelStylePool) {
+    public GameContext(World ecsWorld, Bookmark bookmark, AssetManager assetManager, CursorManager cursorManager, Settings settings, LabelStylePool labelStylePool) {
         this.ecsWorld = ecsWorld;
         this.bookmark = bookmark;
         this.assetManager = assetManager;
@@ -29,7 +29,7 @@ public class GameContext implements Disposable {
         this.settings = settings;
     }
 
-    public Flecs getEcsWorld() {
+    public World getEcsWorld() {
         return this.ecsWorld;
     }
 
