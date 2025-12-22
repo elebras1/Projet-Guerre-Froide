@@ -5,7 +5,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.github.elebras1.flecs.Entity;
 import com.github.elebras1.flecs.World;
-import com.github.elebras1.flecs.FlecsConstants;
+import com.github.elebras1.flecs.util.FlecsConstants;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonMapper;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
