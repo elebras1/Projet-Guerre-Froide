@@ -9,14 +9,12 @@ public class NationalIdeas {
     private final ReligionStore religionStore;
     private final ObjectIntMap<String> cultureIds;
     private final ObjectIntMap<String> religionIds;
-    private final Map<String, Identity> identities;
 
-    public NationalIdeas(CultureStore cultureStore, ReligionStore religionStore, ObjectIntMap<String> cultureIds, ObjectIntMap<String> religionIds, Map<String, Identity> identities) {
+    public NationalIdeas(CultureStore cultureStore, ReligionStore religionStore, ObjectIntMap<String> cultureIds, ObjectIntMap<String> religionIds) {
         this.cultureStore = cultureStore;
         this.religionStore = religionStore;
         this.cultureIds = cultureIds;
         this.religionIds = religionIds;
-        this.identities = identities;
     }
 
     public CultureStore getCultureStore() {
@@ -35,10 +33,6 @@ public class NationalIdeas {
         return this.religionIds;
     }
 
-    public Map<String, Identity> getIdentities() {
-        return this.identities;
-    }
-
     @Override
     public String toString() {
         return "NationalIdeas{" +
@@ -46,7 +40,6 @@ public class NationalIdeas {
                 ", religionStore=" + this.religionStore +
                 "cultureIds=" + this.cultureIds +
                 ", religionIds=" + this.religionIds +
-                ", identities=" + this.identities +
                 '}';
     }
 }

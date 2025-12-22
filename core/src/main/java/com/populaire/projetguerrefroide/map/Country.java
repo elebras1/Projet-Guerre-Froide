@@ -2,7 +2,6 @@ package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.politics.*;
-import com.populaire.projetguerrefroide.national.Identity;
 
 import java.util.*;
 import java.util.List;
@@ -20,7 +19,7 @@ public class Country {
     private long headOfGovernmentId;
     private long headOfStateId;
     private LongList ministerIds;
-    private Identity identity;
+    private long identityId;
     private long attitudeId;
     private String name;
     private Map<LawGroup, Law> laws;
@@ -36,7 +35,7 @@ public class Country {
         this.ideologyId = -1;
         this.headOfGovernmentId = -1;
         this.headOfStateId = -1;
-        this.identity = null;
+        this.identityId = -1;
         this.attitudeId = -1;
     }
 
@@ -152,12 +151,12 @@ public class Country {
         return this.headOfGovernmentId;
     }
 
-    public void setIdentity(Identity identity) {
-        this.identity = identity;
+    public void setIdentityId(long identityId) {
+        this.identityId = identityId;
     }
 
-    public Identity getIdentity() {
-        return this.identity;
+    public long getIdentityId() {
+        return this.identityId;
     }
 
     public void setAttitudeId(long attitudeId) {

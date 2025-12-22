@@ -155,13 +155,13 @@ public class WorldDaoImpl implements WorldDao {
             }
             ReligionStore religionStore = religionStoreBuilder.build();
 
-            Map<String, Identity> identities = new ObjectObjectMap<>(7);
             Iterator<Map.Entry<String, JsonValue>> identitiesEntryIterator = nationalIdeasValues.get("national_identity").objectIterator();
             while (identitiesEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> identityEntry = identitiesEntryIterator.next();
                 String name = identityEntry.getKey();
+                long identityEntityId = ecsWorld.entity(name);
+                Entity identityEntity = ecsWorld.obtainEntity(identityEntityId);
                 JsonValue identityValue = identityEntry.getValue();
-                IntList modifierIds = new IntList();
                 Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = identityValue.objectIterator();
                 while (modifiersEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
@@ -169,9 +169,8 @@ public class WorldDaoImpl implements WorldDao {
                     JsonValue modifierValue = modifierEntry.getValue();
                     float value = (float) modifierValue.asDouble();
                     long modifierTagId = ecsWorld.entity(modifierName);
-                    // TODO associate modifierTagId with modifier value in data oriented way
+                    identityEntity.set(modifierTagId, new Modifier(value));
                 }
-                identities.put(name, new Identity(name, modifierIds));
             }
 
             Iterator<Map.Entry<String, JsonValue>> attitudesEntryIterator = nationalIdeasValues.get("national_attitude").objectIterator();
@@ -192,7 +191,7 @@ public class WorldDaoImpl implements WorldDao {
                 }
             }
 
-            return new NationalIdeas(cultureStore, religionStore, cultureIds, religionIds, identities);
+            return new NationalIdeas(cultureStore, religionStore, cultureIds, religionIds);
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
@@ -1142,7 +1141,8 @@ public class WorldDaoImpl implements WorldDao {
             String ideology = countryValues.get("ideology").asString();
             country.setIdeologyId(ecsWorld.lookup(ideology));
             String identity = countryValues.get("national_identity").asString();
-            country.setIdentity(nationalIdeas.getIdentities().get(identity));
+            long identityId = ecsWorld.lookup(identity);
+            country.setIdentityId(identityId);
             String attitude = countryValues.get("national_attitude").asString();
             long attitudeId = ecsWorld.lookup(attitude);
             country.setAttitudeId(attitudeId);
