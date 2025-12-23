@@ -14,7 +14,7 @@ public class Country {
     private ObjectIntMap<Country> relations;
     private Map<Country, AllianceType> alliances;
     private LandProvince capital;
-    private Government government;
+    private long governmentId;
     private long ideologyId;
     private long headOfGovernmentId;
     private long headOfStateId;
@@ -31,7 +31,7 @@ public class Country {
         this.regions = new ObjectSet<>();
         this.provinces = new ObjectList<>();
         this.capital = null;
-        this.government = null;
+        this.governmentId = -1;
         this.ideologyId = -1;
         this.headOfGovernmentId = -1;
         this.headOfStateId = -1;
@@ -111,12 +111,12 @@ public class Country {
         return this.capital;
     }
 
-    public void setGovernment(Government government) {
-        this.government = government;
+    public void setGovernmentId(long governmentId) {
+        this.governmentId = governmentId;
     }
 
-    public Government getGovernment() {
-        return this.government;
+    public long getGovernmentId() {
+        return this.governmentId;
     }
 
     public void setIdeologyId(long ideologyId) {

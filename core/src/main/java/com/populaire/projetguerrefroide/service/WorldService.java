@@ -104,6 +104,7 @@ public class WorldService implements DateListener {
     }
 
     public CountrySummaryDto prepareCountrySummaryDto(Map<String, String> localisation) {
+        World ecsWorld = this.gameContext.getEcsWorld();
         Country selectedCountry = this.worldManager.getSelectedProvince().getCountryOwner();
         Minister headOfState = this.getHeadOfState(selectedCountry);
         String portraitNameFile = "admin_type";
@@ -112,8 +113,9 @@ public class WorldService implements DateListener {
         }
         String population = ValueFormatter.formatValue(this.worldManager.getPopulationAmount(selectedCountry), localisation);
         List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry);
+        String government = ecsWorld.obtainEntity(selectedCountry.getGovernmentId()).getName();
 
-        return new CountrySummaryDto(selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.name(), this.worldManager.getColonizerId(selectedCountry), allies);
+        return new CountrySummaryDto(selectedCountry.getId(), population, government, portraitNameFile, headOfState.name(), this.worldManager.getColonizerId(selectedCountry), allies);
     }
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {
