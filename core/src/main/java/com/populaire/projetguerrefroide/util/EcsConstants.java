@@ -4,4 +4,5 @@ public class EcsConstants {
     public static final String EcsAlignedWith = "AlignedWith";
     public static final String EcsLocatedIn = "LocatedIn";
     public static final String EcsAcceptance = "Acceptance";
+    public static final String EcsHas = "Has";
 }

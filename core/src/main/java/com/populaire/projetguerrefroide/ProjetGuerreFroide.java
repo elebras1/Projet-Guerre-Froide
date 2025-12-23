@@ -31,6 +31,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(Ideology.class);
         this.ecsWorld.component(Terrain.class);
         this.ecsWorld.component(ElectoralMechanism.class);
+        this.ecsWorld.component(Leader.class);
         this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
         this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService);
         this.loadAssets(this.gameContext.getAssetManager());

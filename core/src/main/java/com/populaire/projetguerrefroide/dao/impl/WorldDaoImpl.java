@@ -92,15 +92,15 @@ public class WorldDaoImpl implements WorldDao {
         this.readResourceProductionsJson(goodStore, goodIds, productionTypeIds);
         MutableInt baseEnactmentDaysLaw = new MutableInt(0);
         Map<String, LawGroup> lawGroups = this.readLawsJson(ecsWorld, baseEnactmentDaysLaw);
-        Map<String, Trait> traits = this.readTraitsJson(ecsWorld);
-        Map<String, Country> countries = this.loadCountries(ecsWorld, traits, leaders);
+        this.readTraitsJson(ecsWorld);
+        Map<String, Country> countries = this.loadCountries(ecsWorld);
         IntObjectMap<LandProvince> provincesByColor = new IntObjectMap<>(14796, 1f);
         IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(3388, 1f);
         this.readTerrainsJson(ecsWorld);
         RegionStoreBuilder regionStoreBuilder = new RegionStoreBuilder();
         ProvinceStore provinceStore = this.loadProvinces(ecsWorld, regionStoreBuilder, countries, provincesByColor, waterProvincesByColor, nationalIdeas, goodIds, buildingIds, populationTypeIds, lawGroups);
         RegionStore regionStore = regionStoreBuilder.build();
-        Politics politics = new Politics(leaders, lawGroups, (byte) baseEnactmentDaysLaw.getValue());
+        Politics politics = new Politics(lawGroups, (byte) baseEnactmentDaysLaw.getValue());
 
         return new WorldManager(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, politics, nationalIdeas, gameContext);
     }
@@ -112,6 +112,8 @@ public class WorldDaoImpl implements WorldDao {
         ecsWorld.obtainEntity(locatedInId).add(FlecsConstants.EcsExclusive);
         long acceptanceId = ecsWorld.entity(EcsConstants.EcsAcceptance);
         ecsWorld.obtainEntity(acceptanceId);
+        long hasId = ecsWorld.entity(EcsConstants.EcsHas);
+        ecsWorld.obtainEntity(hasId).add(FlecsConstants.EcsExclusive);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -659,8 +661,7 @@ public class WorldDaoImpl implements WorldDao {
         return lawGroups;
     }
 
-    private Map<String, Trait> readTraitsJson(World ecsWorld) {
-        Map<String, Trait> traits = new ObjectObjectMap<>(22, 1f);
+    private void readTraitsJson(World ecsWorld) {
         try {
             JsonValue traitsValues = this.parseJsonFile(this.traitsJsonFile);
             Iterator<Map.Entry<String, JsonValue>> traitsEntryIterator = traitsValues.objectIterator();
@@ -672,22 +673,22 @@ public class WorldDaoImpl implements WorldDao {
                 String modifierName = modifierEntry.getKey();
                 float modifierValue = (float) modifierEntry.getValue().asDouble();
                 long modifierTagId = ecsWorld.entity(modifierName);
-                // TODO associate modifierTagId with modifier value in data oriented way
+                long traitEntityId = ecsWorld.entity(traitName);
+                Entity traitEntity = ecsWorld.obtainEntity(traitEntityId);
+                traitEntity.set(modifierTagId, new Modifier(modifierValue));
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
-        return traits;
     }
 
-    private Map<String, Country> loadCountries(World ecsWorld, Map<String, Trait> traits, Leader[] leaders) {
+    private Map<String, Country> loadCountries(World ecsWorld) {
         Map<String, Country> countries = this.readCountriesJson(ecsWorld);
         this.readRelationJson(countries);
         this.readAlliancesJson(countries);
-        this.readLeadersJson(countries, traits, leaders);
+        this.readLeadersJson(ecsWorld, countries);
         return countries;
     }
 
@@ -796,7 +797,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readLeadersJson(Map<String, Country> countries, Map<String, Trait> traits, Leader[] leaders) {
+    private void readLeadersJson(World ecsWorld, Map<String, Country> countries) {
         Map<String, String> leadersPaths = new ObjectObjectMap<>();
         try {
             JsonValue leadersValues = this.parseJsonFile(this.leadersJsonFiles);
@@ -807,7 +808,7 @@ public class WorldDaoImpl implements WorldDao {
             }
 
             for (Map.Entry<String, String> entry : leadersPaths.entrySet()) {
-                this.readLeaderJson(entry.getValue(), countries, traits, leaders);
+                this.readLeaderJson(ecsWorld, entry.getValue(), countries);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -816,22 +817,25 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readLeaderJson(String filename, Map<String, Country> countries, Map<String, Trait> traits, Leader[] leaders) {
+    private void readLeaderJson(World ecsWorld, String filename, Map<String, Country> countries) {
         try {
             JsonValue leaderValues = this.parseJsonFile(filename);
             String countryId = leaderValues.get("country").asString();
+            long hasId = ecsWorld.lookup(EcsConstants.EcsHas);
             Iterator<Map.Entry<String, JsonValue>> leadersEntryIterator = leaderValues.get("leaders").objectIterator();
             IntList leaderIds = new IntList();
             while (leadersEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = leadersEntryIterator.next();
-                int leaderId = Integer.parseInt(entry.getKey());
+                String leaderId = entry.getKey();
                 JsonValue leaderValue = entry.getValue();
                 String name = leaderValue.get("name").asString();
                 byte skill = (byte) leaderValue.get("skill").asLong();
-                ForceType forceType = ForceType.fromString(leaderValue.get("force_type").asString());
-                Trait trait = traits.get(leaderValue.get("trait").asString());
-                leaders[leaderId] = new Leader(name, skill, forceType, trait);
-                leaderIds.add(leaderId);
+                byte forceType = ForceType.fromString(leaderValue.get("force_type").asString());
+                long traitId = ecsWorld.lookup(leaderValue.get("trait").asString());
+                long leaderEntityId = ecsWorld.entity(leaderId);
+                Entity leaderEntity = ecsWorld.obtainEntity(leaderEntityId);
+                leaderEntity.set(new Leader(name, skill, forceType));
+                leaderEntity.addRelation(hasId, traitId);
             }
             countries.get(countryId).setLeadersIds(leaderIds);
         } catch (IOException ioException) {
