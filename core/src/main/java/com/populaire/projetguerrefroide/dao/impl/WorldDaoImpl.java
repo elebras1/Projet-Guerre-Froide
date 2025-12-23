@@ -73,7 +73,6 @@ public class WorldDaoImpl implements WorldDao {
     public WorldManager createWorld(GameContext gameContext) {
         World ecsWorld = gameContext.getEcsWorld();
         this.initializeRelations(ecsWorld);
-        Leader[] leaders = new Leader[52419];
         this.readIdeologiesJson(ecsWorld);
         this.readGovernmentsJson(ecsWorld);
         NationalIdeas nationalIdeas = this.readNationalIdeasJson(ecsWorld);
