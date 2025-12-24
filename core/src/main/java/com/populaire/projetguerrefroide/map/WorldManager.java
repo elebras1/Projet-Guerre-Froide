@@ -30,8 +30,7 @@ import com.populaire.projetguerrefroide.economy.population.PopulationTypeStore;
 import com.populaire.projetguerrefroide.entity.RawMeshMulti;
 import com.populaire.projetguerrefroide.component.Terrain;
 import com.populaire.projetguerrefroide.national.NationalIdeas;
-import com.populaire.projetguerrefroide.politics.AllianceType;
-import com.populaire.projetguerrefroide.politics.Politics;
+import com.populaire.projetguerrefroide.util.AllianceType;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.util.ColorGenerator;
@@ -55,7 +54,6 @@ public class WorldManager implements WorldContext, Disposable {
     private final EmployeeStore employeeStore;
     private final ProductionTypeStore productionTypeStore;
     private final PopulationTypeStore populationTypeStore;
-    private final Politics politics;
     private final NationalIdeas nationalIdeas;
     private final Pixmap provincesPixmap;
     private final Pixmap mapModePixmap;
@@ -95,7 +93,7 @@ public class WorldManager implements WorldContext, Disposable {
     private Country playerCountry;
     private MapMode mapMode;
 
-    public WorldManager(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, Politics politics, NationalIdeas nationalIdeas, GameContext gameContext) {
+    public WorldManager(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, NationalIdeas nationalIdeas, GameContext gameContext) {
         this.mapDao = new MapDaoImpl();
         this.countries = countries;
         this.provinces = provinces;
@@ -107,7 +105,6 @@ public class WorldManager implements WorldContext, Disposable {
         this.productionTypeStore = productionTypeStore;
         this.employeeStore = employeeStore;
         this.populationTypeStore = populationTypeStore;
-        this.politics = politics;
         this.nationalIdeas = nationalIdeas;
         this.mapModePixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
         this.mapModePixmap.setColor(0, 0, 0, 0);
@@ -210,11 +207,6 @@ public class WorldManager implements WorldContext, Disposable {
     @Override
     public EmployeeStore getEmployeeStore() {
         return this.employeeStore;
-    }
-
-    @Override
-    public Politics getPolitics() {
-        return this.politics;
     }
 
     @Override

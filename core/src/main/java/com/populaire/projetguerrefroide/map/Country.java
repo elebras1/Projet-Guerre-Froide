@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.*;
-import com.populaire.projetguerrefroide.politics.*;
+import com.populaire.projetguerrefroide.util.AllianceType;
 
 import java.util.*;
 import java.util.List;
@@ -22,7 +22,7 @@ public class Country {
     private long identityId;
     private long attitudeId;
     private String name;
-    private Map<LawGroup, Law> laws;
+    private LongList lawIds;
     private IntList leadersIds;
 
     public Country(String id, int color) {
@@ -167,12 +167,12 @@ public class Country {
         return this.attitudeId;
     }
 
-    public void setLaws(Map<LawGroup, Law> laws) {
-        this.laws = laws;
+    public void setLawIds(LongList lawIds) {
+        this.lawIds = lawIds;
     }
 
-    public Map<LawGroup, Law> getLaws() {
-        return this.laws;
+    public LongList getLawIds() {
+        return this.lawIds;
     }
 
     public void setLeadersIds(IntList leadersIds) {

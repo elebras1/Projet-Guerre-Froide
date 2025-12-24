@@ -26,17 +26,22 @@ public class ProjetGuerreFroide extends Game {
 
     @Override
     public void create() {
+        this.registerComponents();
+        this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
+        this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService);
+        this.loadAssets(this.gameContext.getAssetManager());
+        this.screenManager.showMainMenuScreen();
+        this.ecsDebug(gameContext);
+    }
+
+    private void registerComponents() {
         this.ecsWorld.component(Modifier.class);
         this.ecsWorld.component(Minister.class);
         this.ecsWorld.component(Ideology.class);
         this.ecsWorld.component(Terrain.class);
         this.ecsWorld.component(ElectoralMechanism.class);
         this.ecsWorld.component(Leader.class);
-        this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
-        this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService);
-        this.loadAssets(this.gameContext.getAssetManager());
-        this.screenManager.showMainMenuScreen();
-        this.ecsDebug(gameContext);
+        this.ecsWorld.component(EnactmentDuration.class);
     }
 
     private void loadAssets(AssetManager assetManager) {

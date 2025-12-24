@@ -16,7 +16,7 @@ import com.populaire.projetguerrefroide.dto.*;
 import com.populaire.projetguerrefroide.economy.building.BuildingType;
 import com.populaire.projetguerrefroide.map.RegionStore;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
-import com.populaire.projetguerrefroide.politics.AllianceType;
+import com.populaire.projetguerrefroide.util.AllianceType;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.screen.DateListener;
 import com.populaire.projetguerrefroide.ui.view.SortType;

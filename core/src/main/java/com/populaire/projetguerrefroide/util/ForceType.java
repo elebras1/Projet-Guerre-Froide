@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.politics;
+package com.populaire.projetguerrefroide.util;
 
 public enum ForceType {
     LAND, SEA, AIR;
