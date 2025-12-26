@@ -4,10 +4,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.elebras1.flecs.Entity;
 import com.github.elebras1.flecs.World;
-import com.github.tommyettinger.ds.IntList;
-import com.github.tommyettinger.ds.ObjectIntMap;
-import com.github.tommyettinger.ds.ObjectIntOrderedMap;
-import com.github.tommyettinger.ds.ObjectList;
+import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.component.Minister;
 import com.populaire.projetguerrefroide.dao.WorldDao;
@@ -32,14 +29,12 @@ public class WorldService implements DateListener {
     private final AsyncExecutor asyncExecutor;
     private final WorldDao worldDao;
     private WorldManager worldManager;
-    private final ObjectIntOrderedMap<String> elementPercentages;
     private EconomyService economyService;
 
     public WorldService(GameContext gameContext) {
         this.gameContext = gameContext;
         this.asyncExecutor = new AsyncExecutor(2);
         this.worldDao = new WorldDaoImpl();
-        this.elementPercentages = new ObjectIntOrderedMap<>();
     }
 
     public void createWorld() {
@@ -169,12 +164,11 @@ public class WorldService implements DateListener {
         ProvinceStore provinceStore = this.worldManager.getProvinceStore();
         int provinceIndex = provinceStore.getIndexById().get(province.getId());
         int amountAdults = provinceStore.getAmountAdults().get(provinceIndex);
-        IntList provinceCultureIds = provinceStore.getCultureIds();
+        LongList provinceCultureIds = provinceStore.getCultureIds();
         IntList provinceCultureValues = provinceStore.getCultureValues();
         int startIndex = provinceStore.getCultureStarts().get(provinceIndex);
         int endIndex = startIndex + provinceStore.getCultureCounts().get(provinceIndex);
-        List<String> cultureNames = this.worldManager.getNationalIdeas().getCultureStore().getNames();
-        return this.calculatePercentageDistributionFromProvinceData(provinceCultureIds, provinceCultureValues, startIndex, endIndex, cultureNames, amountAdults);
+        return this.calculatePercentageDistributionFromProvinceData(provinceCultureIds, provinceCultureValues, startIndex, endIndex, amountAdults);
     }
 
     public ObjectIntMap<String> getReligionsOfHoveredProvince(short x, short y) {
@@ -230,7 +224,7 @@ public class WorldService implements DateListener {
     }
 
     private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(IntList provinceElementIds, IntList provinceElementValues, int startIndex, int endIndex, List<String> elementNames, int amountAdults) {
-        this.elementPercentages.clear();
+        ObjectIntOrderedMap<String> elementPercentages = new ObjectIntOrderedMap<>();
         int total = 0;
         int biggestElementIndex = -1;
         for(int elementIndex = startIndex; elementIndex < endIndex; elementIndex++) {
@@ -242,21 +236,52 @@ public class WorldService implements DateListener {
             if(amountAdults != 0) {
                 int percentage = (int) ((amount / (float) amountAdults) * 100);
                 total += percentage;
-                this.elementPercentages.put(elementNames.get(elementId), percentage);
+                elementPercentages.put(elementNames.get(elementId), percentage);
             } else {
-                this.elementPercentages.put(elementNames.get(elementId), 0);
+                elementPercentages.put(elementNames.get(elementId), 0);
             }
         }
 
         if(total != 100 && biggestElementIndex != -1) {
             int difference = 100 - total;
             String biggestElementName = elementNames.get(provinceElementIds.get(biggestElementIndex));
-            this.elementPercentages.put(biggestElementName, this.elementPercentages.get(biggestElementName) + difference);
+            elementPercentages.put(biggestElementName, elementPercentages.get(biggestElementName) + difference);
         }
 
-        this.sortByValueDescending(this.elementPercentages);
+        this.sortByValueDescending(elementPercentages);
 
-        return this.elementPercentages;
+        return elementPercentages;
+    }
+
+    private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(LongList provinceElementIds, IntList provinceElementValues, int startIndex, int endIndex, int amountAdults) {
+        ObjectIntOrderedMap<String> elementPercentages = new ObjectIntOrderedMap<>();
+        World ecsWorld = this.gameContext.getEcsWorld();
+        int total = 0;
+        int biggestElementIndex = -1;
+        for(int elementIndex = startIndex; elementIndex < endIndex; elementIndex++) {
+            int amount = provinceElementValues.get(elementIndex);
+            long elementId = provinceElementIds.get(elementIndex);
+            if(biggestElementIndex == -1 || amount > provinceElementValues.get(biggestElementIndex)) {
+                biggestElementIndex = elementIndex;
+            }
+            if(amountAdults != 0) {
+                int percentage = (int) ((amount / (float) amountAdults) * 100);
+                total += percentage;
+                elementPercentages.put(ecsWorld.obtainEntity(elementId).getName(), percentage);
+            } else {
+                elementPercentages.put(ecsWorld.obtainEntity(elementId).getName(), 0);
+            }
+        }
+
+        if(total != 100 && biggestElementIndex != -1) {
+            int difference = 100 - total;
+            String biggestElementName = ecsWorld.obtainEntity(provinceElementIds.get(biggestElementIndex)).getName();
+            elementPercentages.put(biggestElementName, elementPercentages.get(biggestElementName) + difference);
+        }
+
+        this.sortByValueDescending(elementPercentages);
+
+        return elementPercentages;
     }
 
     private String getPopulationRegionOfSelectedProvince(Map<String, String> localisation) {

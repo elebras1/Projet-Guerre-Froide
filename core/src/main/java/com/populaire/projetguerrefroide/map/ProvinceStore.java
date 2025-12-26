@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.map;
 import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntIntMap;
 import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.LongList;
 
 public class ProvinceStore {
     private final IntIntMap indexById;
@@ -20,7 +21,7 @@ public class ProvinceStore {
     private final IntList populationTypeValues;
     private final IntList populationTypeStarts;
     private final IntList populationTypeCounts;
-    private final IntList cultureIds;
+    private final LongList cultureIds;
     private final IntList cultureValues;
     private final IntList cultureStarts;
     private final IntList cultureCounts;
@@ -33,7 +34,7 @@ public class ProvinceStore {
     private final IntList resourceGoodsPopulationAmountValues;
     private final IntList buildingsPopulationAmountValues;
 
-    public ProvinceStore(IntIntMap indexById, IntList ids, IntList colors, IntList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, IntList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, IntList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, IntList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
+    public ProvinceStore(IntIntMap indexById, IntList ids, IntList colors, IntList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, IntList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, LongList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, IntList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
         this.indexById = indexById;
         this.ids = ids;
         this.colors = colors;
@@ -127,7 +128,7 @@ public class ProvinceStore {
         return this.populationTypeCounts;
     }
 
-    public IntList getCultureIds() {
+    public LongList getCultureIds() {
         return this.cultureIds;
     }
 

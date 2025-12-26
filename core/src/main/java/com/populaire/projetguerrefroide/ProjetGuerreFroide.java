@@ -42,6 +42,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(ElectoralMechanism.class);
         this.ecsWorld.component(Leader.class);
         this.ecsWorld.component(EnactmentDuration.class);
+        this.ecsWorld.component(Color.class);
     }
 
     private void loadAssets(AssetManager assetManager) {

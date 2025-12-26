@@ -20,6 +20,7 @@ import com.monstrous.gdx.webgpu.graphics.g2d.WgTextureAtlas;
 import com.monstrous.gdx.webgpu.wrappers.*;
 import com.populaire.projetguerrefroide.adapter.graphics.WgMeshMulti;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
+import com.populaire.projetguerrefroide.component.Color;
 import com.populaire.projetguerrefroide.component.Ideology;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
@@ -369,12 +370,12 @@ public class WorldManager implements WorldContext, Disposable {
         }
     }
 
-    private void updatePixmapCulturesColor() {
+    private void updatePixmapCulturesColor(World ecsWorld) {
         IntList provinceColors = this.provinceStore.getColors();
         IntList provinceCultureValues = this.provinceStore.getCultureValues();
         IntList provinceCultureStarts = this.provinceStore.getCultureStarts();
         IntList provinceCultureCounts = this.provinceStore.getCultureCounts();
-        IntList provinceCultureIds = this.provinceStore.getCultureIds();
+        LongList provinceCultureIds = this.provinceStore.getCultureIds();
 
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
@@ -388,8 +389,8 @@ public class WorldManager implements WorldContext, Disposable {
                 }
             }
             if(biggestCultureIndex != -1) {
-                int biggestCultureId = provinceCultureIds.get(biggestCultureIndex);
-                this.mapModePixmap.drawPixel(red, green, this.nationalIdeas.getCultureStore().getColors().get(biggestCultureId));
+                long biggestCultureId = provinceCultureIds.get(biggestCultureIndex);
+                this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestCultureId)).get(Color.class).value());
             }
         }
     }
@@ -553,7 +554,7 @@ public class WorldManager implements WorldContext, Disposable {
                 this.mapMode = MapMode.IDEOLOGICAL;
                 break;
             case "mapmode_diplomatic":
-                this.updatePixmapCulturesColor();
+                this.updatePixmapCulturesColor(ecsWorld);
                 this.mapMode = MapMode.CULTURAL;
                 break;
             case "mapmode_intel":

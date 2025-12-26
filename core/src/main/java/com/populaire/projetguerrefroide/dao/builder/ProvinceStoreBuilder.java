@@ -2,6 +2,7 @@ package com.populaire.projetguerrefroide.dao.builder;
 
 import com.github.tommyettinger.ds.IntIntMap;
 import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.LongList;
 import com.populaire.projetguerrefroide.map.ProvinceStore;
 
 public class ProvinceStoreBuilder {
@@ -22,7 +23,7 @@ public class ProvinceStoreBuilder {
     private final IntList populationTypeValues;
     private final IntList populationTypeStarts;
     private final IntList populationTypeCounts;
-    private final IntList cultureIds;
+    private final LongList cultureIds;
     private final IntList cultureValues;
     private final IntList cultureStarts;
     private final IntList cultureCounts;
@@ -49,7 +50,7 @@ public class ProvinceStoreBuilder {
         this.populationTypeValues = new IntList();
         this.populationTypeStarts = new IntList(this.defaultCapacity);
         this.populationTypeCounts = new IntList(this.defaultCapacity);
-        this.cultureIds = new IntList();
+        this.cultureIds = new LongList();
         this.cultureValues = new IntList();
         this.cultureStarts = new IntList(this.defaultCapacity);
         this.cultureCounts = new IntList(this.defaultCapacity);
@@ -118,7 +119,7 @@ public class ProvinceStoreBuilder {
         return this;
     }
 
-    public ProvinceStoreBuilder addCulture(int cultureId, int value) {
+    public ProvinceStoreBuilder addCulture(long cultureId, int value) {
         this.cultureIds.add(cultureId);
         this.cultureValues.add(value);
 

@@ -130,18 +130,16 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue nationalIdeasValues = this.parseJsonFile(this.nationalIdeasJsonFile);
 
-            CultureStoreBuilder cultureStoreBuilder = new CultureStoreBuilder();
-            ObjectIntMap<String> cultureIds = new ObjectIntMap<>(cultureStoreBuilder.getDefaultCapacity(), 1f);
             Iterator<Map.Entry<String, JsonValue>> culturesEntryIterator = nationalIdeasValues.get("cultures").objectIterator();
             while (culturesEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> cultureEntry = culturesEntryIterator.next();
                 String name = cultureEntry.getKey();
                 JsonValue cultureValue = cultureEntry.getValue();
                 int color = this.parseColor(cultureValue.get("color"));
-                cultureStoreBuilder.addCulture(name, color);
-                cultureIds.put(name, cultureStoreBuilder.getIndex());
+                long cultureEntityId = ecsWorld.entity(name);
+                Entity cultureEntity = ecsWorld.obtainEntity(cultureEntityId);
+                cultureEntity.set(new Color(color));
             }
-            CultureStore cultureStore = cultureStoreBuilder.build();
 
             ReligionStoreBuilder religionStoreBuilder = new ReligionStoreBuilder();
             ObjectIntMap<String> religionIds = new ObjectIntMap<>(religionStoreBuilder.getDefaultCapacity(), 1f);
@@ -192,7 +190,7 @@ public class WorldDaoImpl implements WorldDao {
                 }
             }
 
-            return new NationalIdeas(cultureStore, religionStore, cultureIds, religionIds);
+            return new NationalIdeas(religionStore, religionIds);
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
@@ -951,9 +949,9 @@ public class WorldDaoImpl implements WorldDao {
             int amountAdults = (int) (amount * populationTemplateStore.getAdults().get(populationTemplateIndex));
             builder.addProvince(provinceId).addAmountPopulation(amountChildren, amountAdults, amountSeniors);
 
-            this.parseDistribution(populationValue.get("populations"), amountAdults, populationTypeIds, builder, "population");
-            this.parseDistribution(populationValue.get("cultures"), amountAdults, nationalIdeas.getCultureIds(), builder, "culture");
-            this.parseDistribution(populationValue.get("religions"), amountAdults, nationalIdeas.getReligionIds(), builder, "religion");
+            this.parseDistribution(ecsWorld, populationValue.get("populations"), amountAdults, populationTypeIds, builder, "population");
+            this.parseDistribution(ecsWorld, populationValue.get("cultures"), amountAdults, null, builder, "culture");
+            this.parseDistribution(ecsWorld, populationValue.get("religions"), amountAdults, nationalIdeas.getReligionIds(), builder, "religion");
 
             JsonValue buildingsValue = provinceValues.get("economy_buildings");
             if(buildingsValue != null) {
@@ -998,7 +996,7 @@ public class WorldDaoImpl implements WorldDao {
         return null;
     }
 
-    private void parseDistribution(JsonValue distributionValue, int amountAdults, ObjectIntMap<String> idsMap, ProvinceStoreBuilder builder, String distributionType) {
+    private void parseDistribution(World ecsWorld, JsonValue distributionValue, int amountAdults, ObjectIntMap<String> idsMap, ProvinceStoreBuilder builder, String distributionType) {
         if (distributionValue == null) {
             return;
         }
@@ -1008,14 +1006,21 @@ public class WorldDaoImpl implements WorldDao {
             Map.Entry<String, JsonValue> distributionEntry = distributionEntryIterator.next();
             String name = distributionEntry.getKey();
             float percentage = (float) distributionEntry.getValue().asDouble();
-
-            int id = idsMap.get(name);
             int value = (int) (amountAdults * percentage);
 
             switch (distributionType) {
-                case "population" -> builder.addPopulationType(id, value);
-                case "culture" -> builder.addCulture(id, value);
-                case "religion" -> builder.addReligion(id, value);
+                case "population" -> {
+                    int id = idsMap.get(name);
+                    builder.addPopulationType(id, value);
+                }
+                case "culture" -> {
+                    long id = ecsWorld.lookup(name);
+                    builder.addCulture(id, value);
+                }
+                case "religion" -> {
+                    int id = idsMap.get(name);
+                    builder.addReligion(id, value);
+                }
             }
         }
     }
