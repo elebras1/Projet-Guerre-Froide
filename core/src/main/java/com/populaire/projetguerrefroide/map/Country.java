@@ -8,12 +8,10 @@ import java.util.List;
 
 public class Country {
     private final String id;
-    private final int color;
-    private Set<Region> regions;
-    private List<LandProvince> provinces;
+    private LongList provinceIds;
     private ObjectIntMap<Country> relations;
     private Map<Country, AllianceType> alliances;
-    private LandProvince capital;
+    private long capitalId;
     private long governmentId;
     private long ideologyId;
     private long headOfGovernmentId;
@@ -25,12 +23,10 @@ public class Country {
     private LongList lawIds;
     private IntList leadersIds;
 
-    public Country(String id, int color) {
+    public Country(String id) {
         this.id = id;
-        this.color = color;
-        this.regions = new ObjectSet<>();
-        this.provinces = new ObjectList<>();
-        this.capital = null;
+        this.provinceIds = new LongList();
+        this.capitalId = -1;
         this.governmentId = -1;
         this.ideologyId = -1;
         this.headOfGovernmentId = -1;
@@ -43,24 +39,12 @@ public class Country {
         return this.id;
     }
 
-    public int getColor() {
-        return this.color;
+    public void addProvinceId(long provinceId) {
+        this.provinceIds.add(provinceId);
     }
 
-    public void addRegion(Region region) {
-        this.regions.add(region);
-    }
-
-    public Set<Region> getRegions() {
-        return this.regions;
-    }
-
-    public void addProvince(LandProvince province) {
-        this.provinces.add(province);
-    }
-
-    public List<LandProvince> getProvinces() {
-        return this.provinces;
+    public LongList getProvinceIds() {
+        return this.provinceIds;
     }
 
     public void addRelation(Country country, int value) {
@@ -103,12 +87,12 @@ public class Country {
         return this.alliances;
     }
 
-    public void setCapital(LandProvince capital) {
-        this.capital = capital;
+    public void setCapitalId(long capitalId) {
+        this.capitalId = capitalId;
     }
 
-    public LandProvince getCapital() {
-        return this.capital;
+    public long getCapitalId() {
+        return this.capitalId;
     }
 
     public void setGovernmentId(long governmentId) {
@@ -232,7 +216,6 @@ public class Country {
     public String toString() {
         return "Country{" +
                 "id='" + this.id + '\'' +
-                ", color='" + this.color + '\'' +
                 '}';
     }
 }

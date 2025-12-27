@@ -75,7 +75,7 @@ public class EconomyService {
         for(Country country : countries) {
             for (Region region : country.getRegions()) {
                 int population = 0;
-                for (LandProvince province : region.getProvinces()) {
+                for (LandProvince province : region.getProvinceIds()) {
                     int provinceId = provinceStore.getIndexById().get(province.getId());
                     population += this.worldContext.getProvinceStore().getPopulationAmount(provinceId);
                 }
@@ -93,7 +93,7 @@ public class EconomyService {
         for(Country country : countries) {
             for(Region region : country.getRegions()) {
                 int workers = 0;
-                for(LandProvince province : region.getProvinces()) {
+                for(LandProvince province : region.getProvinceIds()) {
                     workers += this.getAmountAdults(province, provinceStore);
                 }
                 int regionId = regionStore.getRegionIds().get(region.getId());

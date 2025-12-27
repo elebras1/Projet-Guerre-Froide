@@ -45,8 +45,6 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 public class WorldManager implements WorldContext, Disposable {
     private final MapDaoImpl mapDao;
     private final List<Country> countries;
-    private final IntObjectMap<LandProvince> provinces;
-    private final IntObjectMap<WaterProvince> waterProvinces;
     private final ProvinceStore provinceStore;
     private final RegionStore regionStore;
     private final BuildingStore buildingStore;
@@ -92,11 +90,9 @@ public class WorldManager implements WorldContext, Disposable {
     private Country playerCountry;
     private MapMode mapMode;
 
-    public WorldManager(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, GameContext gameContext) {
+    public WorldManager(List<Country> countries, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, GameContext gameContext) {
         this.mapDao = new MapDaoImpl();
         this.countries = countries;
-        this.provinces = provinces;
-        this.waterProvinces = waterProvinces;
         this.provinceStore = provinceStore;
         this.regionStore = regionStore;
         this.buildingStore = buildingStore;

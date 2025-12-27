@@ -314,7 +314,7 @@ public class WorldService implements DateListener {
         ProvinceStore provinceStore = this.worldManager.getProvinceStore();
 
         IntList provinceIndices = new IntList();
-        for (LandProvince province : region.getProvinces()) {
+        for (LandProvince province : region.getProvinceIds()) {
             int provinceIndex = provinceStore.getIndexById().get(province.getId());
             provinceIndices.add(provinceIndex);
         }
