@@ -4,7 +4,6 @@ import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.economy.building.EmployeeStore;
 import com.populaire.projetguerrefroide.economy.building.ProductionTypeStore;
 import com.populaire.projetguerrefroide.economy.good.GoodStore;
-import com.populaire.projetguerrefroide.national.NationalIdeas;
 
 import java.util.List;
 
@@ -16,7 +15,6 @@ public interface WorldContext {
     GoodStore getGoodStore();
     ProductionTypeStore getProductionTypeStore();
     EmployeeStore getEmployeeStore();
-    NationalIdeas getNationalIdeas();
     List<Country> getCountries();
 
 }

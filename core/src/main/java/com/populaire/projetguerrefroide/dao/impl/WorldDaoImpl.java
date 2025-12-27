@@ -17,7 +17,6 @@ import com.populaire.projetguerrefroide.economy.good.*;
 import com.populaire.projetguerrefroide.economy.population.PopulationTemplateStore;
 import com.populaire.projetguerrefroide.economy.population.PopulationTypeStore;
 import com.populaire.projetguerrefroide.map.*;
-import com.populaire.projetguerrefroide.national.*;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.AllianceType;
 import com.populaire.projetguerrefroide.util.EcsConstants;
@@ -75,7 +74,7 @@ public class WorldDaoImpl implements WorldDao {
         this.initializeRelations(ecsWorld);
         this.readIdeologiesJson(ecsWorld);
         this.readGovernmentsJson(ecsWorld);
-        NationalIdeas nationalIdeas = this.readNationalIdeasJson(ecsWorld);
+        this.readNationalIdeasJson(ecsWorld);
         this.readMinisterTypesJson(ecsWorld);
         ObjectIntMap<String> goodIds = new ObjectIntMap<>(40, 1f);
         GoodStore goodStore = this.readGoodsJson(goodIds);
@@ -96,10 +95,10 @@ public class WorldDaoImpl implements WorldDao {
         IntObjectMap<WaterProvince> waterProvincesByColor = new IntObjectMap<>(3388, 1f);
         this.readTerrainsJson(ecsWorld);
         RegionStoreBuilder regionStoreBuilder = new RegionStoreBuilder();
-        ProvinceStore provinceStore = this.loadProvinces(ecsWorld, regionStoreBuilder, countries, provincesByColor, waterProvincesByColor, nationalIdeas, goodIds, buildingIds, populationTypeIds);
+        ProvinceStore provinceStore = this.loadProvinces(ecsWorld, regionStoreBuilder, countries, provincesByColor, waterProvincesByColor, goodIds, buildingIds, populationTypeIds);
         RegionStore regionStore = regionStoreBuilder.build();
 
-        return new WorldManager(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, nationalIdeas, gameContext);
+        return new WorldManager(new ObjectList<>(countries.values()), provincesByColor, waterProvincesByColor, provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, gameContext);
     }
 
     private void initializeRelations(World ecsWorld) {
@@ -126,7 +125,7 @@ public class WorldDaoImpl implements WorldDao {
         return new BufferedReader(new StringReader(fileHandle.readString()));
     }
 
-    private NationalIdeas readNationalIdeasJson(World ecsWorld) {
+    private void readNationalIdeasJson(World ecsWorld) {
         try {
             JsonValue nationalIdeasValues = this.parseJsonFile(this.nationalIdeasJsonFile);
 
@@ -141,18 +140,16 @@ public class WorldDaoImpl implements WorldDao {
                 cultureEntity.set(new Color(color));
             }
 
-            ReligionStoreBuilder religionStoreBuilder = new ReligionStoreBuilder();
-            ObjectIntMap<String> religionIds = new ObjectIntMap<>(religionStoreBuilder.getDefaultCapacity(), 1f);
             Iterator<Map.Entry<String, JsonValue>> religionsEntryIterator = nationalIdeasValues.get("religions").objectIterator();
             while (religionsEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> religionEntry = religionsEntryIterator.next();
                 String name = religionEntry.getKey();
                 JsonValue religionValue = religionEntry.getValue();
                 int color = this.parseColor(religionValue.get("color"));
-                religionStoreBuilder.addReligion(name, color);
-                religionIds.put(name, religionStoreBuilder.getIndex());
+                long religionEntityId = ecsWorld.entity(name);
+                Entity religionEntity = ecsWorld.obtainEntity(religionEntityId);
+                religionEntity.set(new Color(color));
             }
-            ReligionStore religionStore = religionStoreBuilder.build();
 
             Iterator<Map.Entry<String, JsonValue>> identitiesEntryIterator = nationalIdeasValues.get("national_identity").objectIterator();
             while (identitiesEntryIterator.hasNext()) {
@@ -189,15 +186,11 @@ public class WorldDaoImpl implements WorldDao {
                     attitudeEntity.set(modifierTagId, new Modifier(value));
                 }
             }
-
-            return new NationalIdeas(religionStore, religionIds);
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
-        return null;
     }
 
     private void readGovernmentsJson(World ecsWorld) {
@@ -850,15 +843,15 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private ProvinceStore loadProvinces(World ecsWorld, RegionStoreBuilder regionStoreBuilder, Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds) {
+    private ProvinceStore loadProvinces(World ecsWorld, RegionStoreBuilder regionStoreBuilder, Map<String, Country> countries, IntObjectMap<LandProvince> provincesByColor, IntObjectMap<WaterProvince> waterProvincesByColor, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds) {
         IntObjectMap<IntIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
         PopulationTemplateStore populationTemplateStore = this.readPopulationTemplatesJson();
         IntObjectMap<Province> provinces = new IntObjectMap<>(14796, 1f);
-        ProvinceStore provinceStore = this.readProvincesJson(ecsWorld, provinces, countries, regionBuildingsByProvince, populationTemplateStore, nationalIdeas, goodIds, buildingIds, populationTypeIds);
+        ProvinceStore provinceStore = this.readProvincesJson(ecsWorld, provinces, countries, regionBuildingsByProvince, populationTemplateStore, goodIds, buildingIds, populationTypeIds);
         this.readRegionJson(provinces, regionBuildingsByProvince, regionStoreBuilder);
         this.readDefinitionCsv(provinceStore, provinces, provincesByColor, waterProvincesByColor);
         this.readProvinceBitmap(provincesByColor);
-        this.readCountriesHistoryJson(ecsWorld, countries, provinces, nationalIdeas);
+        this.readCountriesHistoryJson(ecsWorld, countries, provinces);
         this.readContinentJsonFile(ecsWorld, provinces);
         this.readAdjenciesJson(provinces);
         this.readPositionsJson(provinces);
@@ -889,7 +882,7 @@ public class WorldDaoImpl implements WorldDao {
         return builder.build();
     }
 
-    private ProvinceStore readProvincesJson(World ecsWorld, IntObjectMap<Province> provinces, Map<String, Country> countries, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds) {
+    private ProvinceStore readProvincesJson(World ecsWorld, IntObjectMap<Province> provinces, Map<String, Country> countries, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds) {
         ProvinceStoreBuilder builder = new ProvinceStoreBuilder();
         IntObjectMap<String> provincesPaths = new IntObjectMap<>(builder.getDefaultCapacity(), 1f);
         try {
@@ -903,7 +896,7 @@ public class WorldDaoImpl implements WorldDao {
             for (IntObjectMap.Entry<String> entry : provincesPaths.entrySet()) {
                 short provinceId = (short) entry.getKey();
                 String provincePath = entry.getValue();
-                Province province = this.readProvinceJson(ecsWorld, countries, provincePath, provinceId, regionBuildingsByProvince, populationTemplateStore, nationalIdeas, goodIds, buildingIds, populationTypeIds, builder);
+                Province province = this.readProvinceJson(ecsWorld, countries, provincePath, provinceId, regionBuildingsByProvince, populationTemplateStore, goodIds, buildingIds, populationTypeIds, builder);
                 provinces.put(provinceId, province);
             }
         } catch (IOException ioException) {
@@ -915,7 +908,7 @@ public class WorldDaoImpl implements WorldDao {
         return builder.build();
     }
 
-    private LandProvince readProvinceJson(World ecsWorld, Map<String, Country> countries, String provincePath, short provinceId, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, NationalIdeas nationalIdeas, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, ProvinceStoreBuilder builder) {
+    private LandProvince readProvinceJson(World ecsWorld, Map<String, Country> countries, String provincePath, short provinceId, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, ProvinceStoreBuilder builder) {
         try {
             JsonValue provinceValues = this.parseJsonFile(provincePath);
 
@@ -951,7 +944,7 @@ public class WorldDaoImpl implements WorldDao {
 
             this.parseDistribution(ecsWorld, populationValue.get("populations"), amountAdults, populationTypeIds, builder, "population");
             this.parseDistribution(ecsWorld, populationValue.get("cultures"), amountAdults, null, builder, "culture");
-            this.parseDistribution(ecsWorld, populationValue.get("religions"), amountAdults, nationalIdeas.getReligionIds(), builder, "religion");
+            this.parseDistribution(ecsWorld, populationValue.get("religions"), amountAdults, null, builder, "religion");
 
             JsonValue buildingsValue = provinceValues.get("economy_buildings");
             if(buildingsValue != null) {
@@ -1018,7 +1011,7 @@ public class WorldDaoImpl implements WorldDao {
                     builder.addCulture(id, value);
                 }
                 case "religion" -> {
-                    int id = idsMap.get(name);
+                    long id = ecsWorld.lookup(name);
                     builder.addReligion(id, value);
                 }
             }
@@ -1118,7 +1111,7 @@ public class WorldDaoImpl implements WorldDao {
         provincesPixmap.dispose();
     }
 
-    private void readCountriesHistoryJson(World ecsWorld, Map<String, Country> countries, IntObjectMap<Province> provinces, NationalIdeas nationalIdeas) {
+    private void readCountriesHistoryJson(World ecsWorld, Map<String, Country> countries, IntObjectMap<Province> provinces) {
         ObjectObjectMap<String, String> countriesHistoryPaths = new ObjectObjectMap<>(262, 1f);
         try {
             JsonValue countriesJson = this.parseJsonFile(this.countriesHistoryJsonFiles);

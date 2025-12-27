@@ -176,13 +176,12 @@ public class WorldService implements DateListener {
         ProvinceStore provinceStore = this.worldManager.getProvinceStore();
         int provinceIndex = provinceStore.getIndexById().get(province.getId());
         int amountAdults = provinceStore.getAmountAdults().get(provinceIndex);
-        IntList provinceReligionIds = provinceStore.getReligionIds();
+        LongList provinceReligionIds = provinceStore.getReligionIds();
         IntList provinceReligionValues = provinceStore.getReligionValues();
         int startIndex = provinceStore.getReligionStarts().get(provinceIndex);
         int endIndex = startIndex + provinceStore.getReligionCounts().get(provinceIndex);
-        List<String> religionNames = this.worldManager.getNationalIdeas().getReligionStore().getNames();
 
-        return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, startIndex, endIndex, religionNames, amountAdults);
+        return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, startIndex, endIndex, amountAdults);
     }
 
     public String getColonizerIdOfSelectedProvince() {
@@ -221,36 +220,6 @@ public class WorldService implements DateListener {
     public void onNewDay(LocalDate date) {
         this.economyService.hire();
         this.economyService.produce();
-    }
-
-    private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(IntList provinceElementIds, IntList provinceElementValues, int startIndex, int endIndex, List<String> elementNames, int amountAdults) {
-        ObjectIntOrderedMap<String> elementPercentages = new ObjectIntOrderedMap<>();
-        int total = 0;
-        int biggestElementIndex = -1;
-        for(int elementIndex = startIndex; elementIndex < endIndex; elementIndex++) {
-            int amount = provinceElementValues.get(elementIndex);
-            int elementId = provinceElementIds.get(elementIndex);
-            if(biggestElementIndex == -1 || amount > provinceElementValues.get(biggestElementIndex)) {
-                biggestElementIndex = elementIndex;
-            }
-            if(amountAdults != 0) {
-                int percentage = (int) ((amount / (float) amountAdults) * 100);
-                total += percentage;
-                elementPercentages.put(elementNames.get(elementId), percentage);
-            } else {
-                elementPercentages.put(elementNames.get(elementId), 0);
-            }
-        }
-
-        if(total != 100 && biggestElementIndex != -1) {
-            int difference = 100 - total;
-            String biggestElementName = elementNames.get(provinceElementIds.get(biggestElementIndex));
-            elementPercentages.put(biggestElementName, elementPercentages.get(biggestElementName) + difference);
-        }
-
-        this.sortByValueDescending(elementPercentages);
-
-        return elementPercentages;
     }
 
     private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(LongList provinceElementIds, IntList provinceElementValues, int startIndex, int endIndex, int amountAdults) {

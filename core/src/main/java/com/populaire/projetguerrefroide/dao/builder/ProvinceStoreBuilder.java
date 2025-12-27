@@ -27,7 +27,7 @@ public class ProvinceStoreBuilder {
     private final IntList cultureValues;
     private final IntList cultureStarts;
     private final IntList cultureCounts;
-    private final IntList religionIds;
+    private final LongList religionIds;
     private final IntList religionValues;
     private final IntList religionStarts;
     private final IntList religionCounts;
@@ -54,7 +54,7 @@ public class ProvinceStoreBuilder {
         this.cultureValues = new IntList();
         this.cultureStarts = new IntList(this.defaultCapacity);
         this.cultureCounts = new IntList(this.defaultCapacity);
-        this.religionIds = new IntList();
+        this.religionIds = new LongList();
         this.religionValues = new IntList();
         this.religionStarts = new IntList(this.defaultCapacity);
         this.religionCounts = new IntList(this.defaultCapacity);
@@ -128,7 +128,7 @@ public class ProvinceStoreBuilder {
         return this;
     }
 
-    public ProvinceStoreBuilder addReligion(int religionId, int value) {
+    public ProvinceStoreBuilder addReligion(long religionId, int value) {
         this.religionIds.add(religionId);
         this.religionValues.add(value);
 

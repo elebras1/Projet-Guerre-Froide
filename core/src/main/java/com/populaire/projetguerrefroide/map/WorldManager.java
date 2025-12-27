@@ -30,7 +30,6 @@ import com.populaire.projetguerrefroide.economy.good.GoodStore;
 import com.populaire.projetguerrefroide.economy.population.PopulationTypeStore;
 import com.populaire.projetguerrefroide.entity.RawMeshMulti;
 import com.populaire.projetguerrefroide.component.Terrain;
-import com.populaire.projetguerrefroide.national.NationalIdeas;
 import com.populaire.projetguerrefroide.util.AllianceType;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
@@ -55,7 +54,6 @@ public class WorldManager implements WorldContext, Disposable {
     private final EmployeeStore employeeStore;
     private final ProductionTypeStore productionTypeStore;
     private final PopulationTypeStore populationTypeStore;
-    private final NationalIdeas nationalIdeas;
     private final Pixmap provincesPixmap;
     private final Pixmap mapModePixmap;
     private final Pixmap provincesColorStripesPixmap;
@@ -94,7 +92,7 @@ public class WorldManager implements WorldContext, Disposable {
     private Country playerCountry;
     private MapMode mapMode;
 
-    public WorldManager(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, NationalIdeas nationalIdeas, GameContext gameContext) {
+    public WorldManager(List<Country> countries, IntObjectMap<LandProvince> provinces, IntObjectMap<WaterProvince> waterProvinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, GameContext gameContext) {
         this.mapDao = new MapDaoImpl();
         this.countries = countries;
         this.provinces = provinces;
@@ -106,7 +104,6 @@ public class WorldManager implements WorldContext, Disposable {
         this.productionTypeStore = productionTypeStore;
         this.employeeStore = employeeStore;
         this.populationTypeStore = populationTypeStore;
-        this.nationalIdeas = nationalIdeas;
         this.mapModePixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
         this.mapModePixmap.setColor(0, 0, 0, 0);
         this.mapModePixmap.fill();
@@ -208,11 +205,6 @@ public class WorldManager implements WorldContext, Disposable {
     @Override
     public EmployeeStore getEmployeeStore() {
         return this.employeeStore;
-    }
-
-    @Override
-    public NationalIdeas getNationalIdeas() {
-        return this.nationalIdeas;
     }
 
     @Override
@@ -390,17 +382,17 @@ public class WorldManager implements WorldContext, Disposable {
             }
             if(biggestCultureIndex != -1) {
                 long biggestCultureId = provinceCultureIds.get(biggestCultureIndex);
-                this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestCultureId)).get(Color.class).value());
+                this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestCultureId).get(Color.class)).value());
             }
         }
     }
 
-    private void updatePixmapReligionsColor() {
+    private void updatePixmapReligionsColor(World ecsWorld) {
         IntList provinceColors = this.provinceStore.getColors();
         IntList provinceReligionValues = this.provinceStore.getReligionValues();
         IntList provinceReligionStarts = this.provinceStore.getReligionStarts();
         IntList provinceReligionCounts = this.provinceStore.getReligionCounts();
-        IntList provinceReligionIds = this.provinceStore.getReligionIds();
+        LongList provinceReligionIds = this.provinceStore.getReligionIds();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             short red = (short) ((color >> 24) & 0xFF);
@@ -413,8 +405,8 @@ public class WorldManager implements WorldContext, Disposable {
                 }
             }
             if(biggestReligionIndex != -1) {
-                int biggestReligionId = provinceReligionIds.get(biggestReligionIndex);
-                this.mapModePixmap.drawPixel(red, green, this.nationalIdeas.getReligionStore().getColors().get(biggestReligionId));
+                long biggestReligionId = provinceReligionIds.get(biggestReligionIndex);
+                this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestReligionId).get(Color.class)).value());
             }
         }
     }
@@ -558,7 +550,7 @@ public class WorldManager implements WorldContext, Disposable {
                 this.mapMode = MapMode.CULTURAL;
                 break;
             case "mapmode_intel":
-                this.updatePixmapReligionsColor();
+                this.updatePixmapReligionsColor(ecsWorld);
                 this.mapMode = MapMode.RELIGIOUS;
                 break;
             case "mapmode_terrain":
