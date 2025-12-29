@@ -31,10 +31,10 @@ public class EconomyService {
     }
 
     public RegionsBuildingsDto prepareRegionsBuildingsDto() {
-        RegionStore regionStore = this.worldContext.getRegionStore();
+        /*RegionStore regionStore = this.worldContext.getRegionStore();
         BuildingStore buildingStore = this.worldContext.getBuildingStore();
         List<String> regionIds = new ObjectList<>();
-        for(Region region : this.worldContext.getPlayerCountry().getRegions()) {
+        for(Region region : this.worldContext.getPlayerCountryId().getRegions()) {
             regionIds.add(region.getId());
         }
         IntList regionInternalIds = new IntList(regionStore.getRegionIds().size());
@@ -57,7 +57,8 @@ public class EconomyService {
         ByteList buildingWorkersRatio = this.getBuildingWorkersRatio(workersAmount, buildingWorkersAmount);
         FloatList buildingProductionValues = new FloatList(regionStore.getBuildingProductionValues());
 
-        return new RegionsBuildingsDto(regionIds, regionInternalIds, regionIdLookup, buildingIds, buildingValues, buildingStarts, buildingCounts, buildingNames, buildingTypes, buildingMaxLevels, developpementIndexValues, populationsAmount, buildingWorkersAmount, buildingWorkersRatio, buildingProductionValues);
+        return new RegionsBuildingsDto(regionIds, regionInternalIds, regionIdLookup, buildingIds, buildingValues, buildingStarts, buildingCounts, buildingNames, buildingTypes, buildingMaxLevels, developpementIndexValues, populationsAmount, buildingWorkersAmount, buildingWorkersRatio, buildingProductionValues);*/
+        return null;
     }
 
     public RegionsBuildingsDto prepareRegionsBuildingsDtoSorted(SortType sortType) {
@@ -71,7 +72,7 @@ public class EconomyService {
 
     private IntList getPopulationsAmount(List<Country> countries, RegionStore regionStore, ProvinceStore provinceStore) {
         IntList populationsAmount = new IntList();
-        populationsAmount.setSize(this.worldContext.getRegionStore().getRegionIds().size());
+        /*populationsAmount.setSize(this.worldContext.getRegionStore().getRegionIds().size());
         for(Country country : countries) {
             for (Region region : country.getRegions()) {
                 int population = 0;
@@ -82,14 +83,14 @@ public class EconomyService {
                 int regionId = regionStore.getRegionIds().get(region.getId());
                 populationsAmount.set(regionId, population);
             }
-        }
+        }*/
 
         return populationsAmount;
     }
 
     private IntList getWorkersAmount(List<Country> countries, RegionStore regionStore, ProvinceStore provinceStore) {
         IntList workersAmount = new IntList(regionStore.getRegionIds().size());
-        workersAmount.setSize(regionStore.getRegionIds().size());
+        /*workersAmount.setSize(regionStore.getRegionIds().size());
         for(Country country : countries) {
             for(Region region : country.getRegions()) {
                 int workers = 0;
@@ -99,7 +100,7 @@ public class EconomyService {
                 int regionId = regionStore.getRegionIds().get(region.getId());
                 workersAmount.set(regionId, workers);
             }
-        }
+        }*/
 
         return workersAmount;
     }
@@ -140,9 +141,10 @@ public class EconomyService {
         return buildingWorkersRatio;
     }
 
-    private int getAmountAdults(Province province, ProvinceStore provinceStore) {
-        int provinceId = province.getId();
+    private int getAmountAdults(long provinceId, ProvinceStore provinceStore) {
+        /*int provinceId = province.getId();
         int provinceIndex = provinceStore.getIndexById().get(provinceId);
-        return provinceStore.getAmountAdults().get(provinceIndex);
+        return provinceStore.getAmountAdults().get(provinceIndex);*/
+        return 0;
     }
 }

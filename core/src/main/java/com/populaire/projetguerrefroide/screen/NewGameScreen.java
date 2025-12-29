@@ -128,11 +128,11 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     @Override
     public void onHover(short x, short y) {
-        if(this.worldService.hoverProvince(x, y) && !this.isMouseOverUI()) {
+        /*if(this.worldService.hoverProvince(x, y) && !this.isMouseOverUI()) {
             this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y));
         } else {
             this.hideHoverBox();
-        }
+        }*/
     }
 
     @Override

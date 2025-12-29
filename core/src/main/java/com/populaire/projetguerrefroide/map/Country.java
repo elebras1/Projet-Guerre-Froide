@@ -1,19 +1,13 @@
 package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.*;
-import com.populaire.projetguerrefroide.util.AllianceType;
-
-import java.util.*;
-import java.util.List;
 
 public class Country {
     private final String id;
     private LongList provinceIds;
     private ObjectIntMap<Country> relations;
-    private Map<Country, AllianceType> alliances;
     private long capitalId;
     private long governmentId;
-    private long ideologyId;
     private long headOfGovernmentId;
     private long headOfStateId;
     private LongList ministerIds;
@@ -28,7 +22,6 @@ public class Country {
         this.provinceIds = new LongList();
         this.capitalId = -1;
         this.governmentId = -1;
-        this.ideologyId = -1;
         this.headOfGovernmentId = -1;
         this.headOfStateId = -1;
         this.identityId = -1;
@@ -67,26 +60,6 @@ public class Country {
         return this.relations;
     }
 
-    public void addAlliance(Country country, AllianceType allianceType) {
-        if(this.alliances == null) {
-            this.alliances = new ObjectObjectMap<>();
-        }
-
-        this.alliances.put(country, allianceType);
-    }
-
-    public void removeAlliance(Country country) {
-        this.alliances.remove(country);
-
-        if(this.alliances.isEmpty()) {
-            this.alliances = null;
-        }
-    }
-
-    public Map<Country, AllianceType> getAlliances() {
-        return this.alliances;
-    }
-
     public void setCapitalId(long capitalId) {
         this.capitalId = capitalId;
     }
@@ -101,14 +74,6 @@ public class Country {
 
     public long getGovernmentId() {
         return this.governmentId;
-    }
-
-    public void setIdeologyId(long ideologyId) {
-        this.ideologyId = ideologyId;
-    }
-
-    public long getIdeologyId() {
-        return this.ideologyId;
     }
 
     public void setHeadOfGovernmentId(long idMinister) {
@@ -172,7 +137,7 @@ public class Country {
     }
 
     public void getLabelsData(String name, MapLabel mapLabel, FloatList vertices, ShortList indices) {
-        this.name = name;
+        /*this.name = name;
         Set<LandProvince> visitedProvinces = new ObjectSet<>();
 
         for (LandProvince province : this.provinces) {
@@ -189,11 +154,11 @@ public class Country {
                     mapLabel.generateData(name, pixelsBorderProvinces, positionsProvinces, vertices, indices);
                 }
             }
-        }
+        }*/
     }
 
-    public void getConnectedProvinces(LandProvince province, Set<LandProvince> visitedProvinces, List<LandProvince> connectedProvinces) {
-        visitedProvinces.add(province);
+    public void getConnectedProvinces(long provinceId, LongSet visitedProvinceIds, LongList connectedProvinceIds) {
+        /*visitedProvinces.add(province);
         connectedProvinces.add(province);
         for(Province adjacentProvince : province.getAdjacentProvinces()) {
             if(adjacentProvince instanceof LandProvince adjacentLandProvince) {
@@ -201,7 +166,7 @@ public class Country {
                     this.getConnectedProvinces(adjacentLandProvince, visitedProvinces, connectedProvinces);
                 }
             }
-        }
+        }*/
     }
 
     @Override

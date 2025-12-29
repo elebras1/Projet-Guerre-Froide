@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.github.elebras1.flecs.Entity;
-import com.github.elebras1.flecs.Query;
 import com.github.elebras1.flecs.World;
 import com.github.elebras1.flecs.util.FlecsConstants;
 import com.github.tommyettinger.ds.*;
@@ -19,7 +18,6 @@ import com.populaire.projetguerrefroide.economy.population.PopulationTemplateSto
 import com.populaire.projetguerrefroide.economy.population.PopulationTypeStore;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.util.AllianceType;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.ForceType;
 
@@ -94,17 +92,20 @@ public class WorldDaoImpl implements WorldDao {
         this.readTerrainsJson(ecsWorld);
         RegionStoreBuilder regionStoreBuilder = new RegionStoreBuilder();
         IntLongMap provinces = new IntLongMap(15000, 1f);
-        ProvinceStore provinceStore = this.loadProvinces(ecsWorld, regionStoreBuilder, countries, provinces, goodIds, buildingIds, populationTypeIds);
+        Borders borders = new Borders();
+        ProvinceStore provinceStore = this.loadProvinces(ecsWorld, regionStoreBuilder, countries, provinces, goodIds, buildingIds, populationTypeIds, borders);
         RegionStore regionStore = regionStoreBuilder.build();
 
-        return new WorldManager(new ObjectList<>(countries.values()), provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, gameContext);
+        return new WorldManager(new ObjectList<>(countries.values()), provinces, provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, borders, gameContext);
     }
 
     private void initializeRelations(World ecsWorld) {
         long alignedWithId = ecsWorld.entity(EcsConstants.EcsAlignedWith);
         ecsWorld.obtainEntity(alignedWithId).add(FlecsConstants.EcsExclusive);
-        long locatedInId = ecsWorld.entity(EcsConstants.EcsLocatedIn);
-        ecsWorld.obtainEntity(locatedInId).add(FlecsConstants.EcsExclusive);
+        long locatedInRegion = ecsWorld.entity(EcsConstants.EcsLocatedInRegion);
+        ecsWorld.obtainEntity(locatedInRegion).add(FlecsConstants.EcsExclusive);
+        long locatedInContinent = ecsWorld.entity(EcsConstants.EcsLocatedInContinent);
+        ecsWorld.obtainEntity(locatedInContinent).add(FlecsConstants.EcsExclusive);
         ecsWorld.entity(EcsConstants.EcsAcceptance);
         long hasId = ecsWorld.entity(EcsConstants.EcsHas);
         ecsWorld.obtainEntity(hasId).add(FlecsConstants.EcsExclusive);
@@ -127,6 +128,15 @@ public class WorldDaoImpl implements WorldDao {
         ecsWorld.obtainEntity(ownedById).add(FlecsConstants.EcsExclusive);
         ecsWorld.entity(EcsConstants.EcsCoreOf);
         ecsWorld.entity(EcsConstants.EcsPositionElementTag);
+        long hasTerrain = ecsWorld.entity(EcsConstants.EcsHasTerrain);
+        ecsWorld.obtainEntity(hasTerrain).add(FlecsConstants.EcsExclusive);
+        ecsWorld.entity(EcsConstants.EcsAlliedWith);
+        ecsWorld.entity(EcsConstants.EcsGuarantees);
+        ecsWorld.entity(EcsConstants.EcsIsGuaranteedBy);
+        ecsWorld.entity(EcsConstants.EcsIsPuppetMasterOf);
+        ecsWorld.entity(EcsConstants.EcsIsPuppetOf);
+        ecsWorld.entity(EcsConstants.EcsColonizes);
+        ecsWorld.entity(EcsConstants.EcsIsColonyOf);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -699,7 +709,7 @@ public class WorldDaoImpl implements WorldDao {
     private Map<String, Country> loadCountries(World ecsWorld) {
         Map<String, Country> countries = this.readCountriesJson(ecsWorld);
         this.readRelationJson(countries);
-        this.readAlliancesJson(countries);
+        this.readAlliancesJson(ecsWorld);
         this.readLeadersJson(ecsWorld, countries);
         return countries;
     }
@@ -799,17 +809,21 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readAlliancesJson(Map<String, Country> countries) {
+    private void readAlliancesJson(World ecsWorld) {
         try {
             JsonValue alliancesValues = this.parseJsonFile(this.alliancesJsonFile);
             Iterator<JsonValue> alliancesIterator = alliancesValues.get("alliances").arrayIterator();
             while (alliancesIterator.hasNext()) {
                 JsonValue alliance = alliancesIterator.next();
-                Country country1 = countries.get(alliance.get("country1").asString());
-                Country country2 = countries.get(alliance.get("country2").asString());
+                String countryNameId1 = alliance.get("country1").asString();
+                Entity country1 = ecsWorld.obtainEntity(ecsWorld.entity(countryNameId1));
+                String countryNameId2 = alliance.get("country2").asString();
+                Entity country2 = ecsWorld.obtainEntity(ecsWorld.entity(countryNameId2));
                 String type = alliance.get("type").asString();
-                country1.addAlliance(country2, AllianceType.getAllianceType(type, true));
-                country2.addAlliance(country1, AllianceType.getAllianceType(type, false));
+                long relationId1 = ecsWorld.lookup(EcsConstants.getAllianceRelation(type, true));
+                country1.addRelation(relationId1, country2.id());
+                long relationId2 = ecsWorld.lookup(EcsConstants.getAllianceRelation(type, false));
+                country2.addRelation(relationId2, country1.id());
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -866,13 +880,13 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private ProvinceStore loadProvinces(World ecsWorld, RegionStoreBuilder regionStoreBuilder, Map<String, Country> countries, IntLongMap provinces, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds) {
+    private ProvinceStore loadProvinces(World ecsWorld, RegionStoreBuilder regionStoreBuilder, Map<String, Country> countries, IntLongMap provinces, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, Borders borders) {
         IntObjectMap<IntIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
         PopulationTemplateStore populationTemplateStore = this.readPopulationTemplatesJson();
         ProvinceStore provinceStore = this.readProvincesJson(ecsWorld, countries, regionBuildingsByProvince, populationTemplateStore, goodIds, buildingIds, populationTypeIds);
         this.readRegionJson(ecsWorld, regionBuildingsByProvince, regionStoreBuilder);
         this.readDefinitionCsv(ecsWorld, provinces, provinceStore);
-        this.readProvinceBitmap(ecsWorld, provinces);
+        this.readProvinceBitmap(ecsWorld, provinces, borders);
         this.readCountriesHistoryJson(ecsWorld, countries);
         this.readContinentJsonFile(ecsWorld);
         this.readAdjenciesJson(ecsWorld);
@@ -933,6 +947,8 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue provinceValues = this.parseJsonFile(provincePath);
 
+            long hasTerrainId = ecsWorld.lookup(EcsConstants.EcsHasTerrain);
+
             long coreOfId = ecsWorld.lookup(EcsConstants.EcsCoreOf);
             long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
             long controlledById = ecsWorld.lookup(EcsConstants.EcsControlledBy);
@@ -963,7 +979,7 @@ public class WorldDaoImpl implements WorldDao {
 
             String terrain = provinceValues.get("terrain").asString();
             long terrainId = ecsWorld.lookup(terrain);
-            provinceEntity.add(terrainId);
+            provinceEntity.addRelation(hasTerrainId, terrainId);
 
             JsonValue populationValue = provinceValues.get("population_total");
             int amount = (int) populationValue.get("amount").asLong();
@@ -1051,10 +1067,9 @@ public class WorldDaoImpl implements WorldDao {
     private void readRegionJson(World ecsWorld, IntObjectMap<IntIntMap> regionBuildingsByProvince, RegionStoreBuilder regionStoreBuilder) {
         try {
             JsonValue regionValue = this.parseJsonFile(this.regionJsonFiles);
-            long countryTagId = ecsWorld.lookup(EcsConstants.EcsCountryTag);
             long controlledById = ecsWorld.lookup(EcsConstants.EcsControlledBy);
             long regionTagId = ecsWorld.lookup(EcsConstants.EcsRegionTag);
-            long locatedInId = ecsWorld.lookup(EcsConstants.EcsLocatedIn);
+            long locatedInRegionId = ecsWorld.lookup(EcsConstants.EcsLocatedInRegion);
             long hasId = ecsWorld.lookup(EcsConstants.EcsHas);
             long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
             long seaProvinceTagId = ecsWorld.lookup(EcsConstants.EcsSeaProvinceTag);
@@ -1073,13 +1088,12 @@ public class WorldDaoImpl implements WorldDao {
                     if(provinceEntityId != -1) {
                         Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
                         provinceEntity.add(landProvinceTagId);
-                        try (Query query = ecsWorld.query().with(controlledById, provinceEntityId).with(countryTagId).build()) {
-                            query.each((countryEntityId) -> {
-                                Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
-                                countryEntity.addRelation(hasId, regionEntityId);
-                            });
+                        long countryEntityId = provinceEntity.target(controlledById, 0);
+                        if (countryEntityId != 0) {
+                            Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
+                            countryEntity.addRelation(hasId, regionEntityId);
                         }
-                        provinceEntity.addRelation(locatedInId, regionEntityId);
+                        provinceEntity.addRelation(locatedInRegionId, regionEntityId);
                         regionEntity.addRelation(hasId, provinceEntityId);
                         IntIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
@@ -1134,41 +1148,56 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readProvinceBitmap(World ecsWorld, IntLongMap provinces) {
+    private void readProvinceBitmap(World ecsWorld, IntLongMap provinces, Borders borders) {
         Pixmap provincesPixmap = new Pixmap(Gdx.files.internal(this.mapPath + "provinces.bmp"));
+
+        IntList xyValues = new IntList();
+        LongObjectMap<IntList> temporaryGroups = new LongObjectMap<>();
+
         short height = (short) provincesPixmap.getHeight();
         short width = (short) provincesPixmap.getWidth();
-
-        long hasId = ecsWorld.lookup(EcsConstants.EcsHas);
 
         for (short y = 0; y < height; y++) {
             for (short x = 0; x < width; x++) {
                 int color = provincesPixmap.getPixel(x, y);
                 long provinceEntityId = provinces.get(color);
-                Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                if(provinceEntityId != 0) {
-                    boolean isBorder = false;
-                    if (x + 1 < width && provincesPixmap.getPixel(x + 1, y) != color) {
-                        isBorder = true;
-                    }
-                    else if (x > 0 && provincesPixmap.getPixel(x - 1, y) != color) {
-                        isBorder = true;
-                    }
-                    else if (y + 1 < height && provincesPixmap.getPixel(x, y + 1) != color) {
-                        isBorder = true;
-                    }
-                    else if (y > 0 && provincesPixmap.getPixel(x, y - 1) != color) {
-                        isBorder = true;
-                    }
 
-                    if (isBorder) {
-                        // TODO
+                if (provinceEntityId != 0 && isBorderPixel(provincesPixmap, x, y, color, width, height)) {
+                    IntList group = temporaryGroups.get(provinceEntityId);
+                    if (group == null) {
+                        group = new IntList();
+                        temporaryGroups.put(provinceEntityId, group);
                     }
+                    group.add(x);
+                    group.add(y);
                 }
             }
         }
 
+        for (LongObjectMap.Entry<IntList> entry : temporaryGroups.entrySet()) {
+            IntList coords = entry.value;
+            int startIndex = xyValues.size();
+            xyValues.addAll(coords);
+            int endIndex = xyValues.size() - 1;
+            Entity provinceEntity = ecsWorld.obtainEntity(entry.key);
+            provinceEntity.set(new Border(startIndex, endIndex));
+        }
+        borders.setXyValues(xyValues.shrink());
+
         provincesPixmap.dispose();
+    }
+
+    private boolean isBorderPixel(Pixmap pixmap, int x, int y, int color, int w, int h) {
+        if (x + 1 < w && pixmap.getPixel(x + 1, y) != color) {
+            return true;
+        }
+        if (x > 0 && pixmap.getPixel(x - 1, y) != color) {
+            return true;
+        }
+        if (y + 1 < h && pixmap.getPixel(x, y + 1) != color) {
+            return true;
+        }
+        return y > 0 && pixmap.getPixel(x, y - 1) != color;
     }
 
     private void readCountriesHistoryJson(World ecsWorld, Map<String, Country> countries) {
@@ -1197,6 +1226,9 @@ public class WorldDaoImpl implements WorldDao {
             if(countryFileName.equals("history/countries/REB - Rebels.json")) {
                 return;
             }
+            long alignedWithId = ecsWorld.lookup(EcsConstants.EcsAlignedWith);
+            Entity countryEntity = ecsWorld.obtainEntity(ecsWorld.lookup(idCountry));
+
             JsonValue countryValues = this.parseJsonFile(countryFileName);
             short idCapital = (short) countryValues.get("capital").asLong();
             Country country = countries.get(idCountry);
@@ -1206,7 +1238,8 @@ public class WorldDaoImpl implements WorldDao {
             long governmentId = ecsWorld.lookup(government);
             country.setGovernmentId(governmentId);
             String ideology = countryValues.get("ideology").asString();
-            country.setIdeologyId(ecsWorld.lookup(ideology));
+            long ideologyId = ecsWorld.lookup(ideology);
+            countryEntity.addRelation(alignedWithId, ideologyId);
             String identity = countryValues.get("national_identity").asString();
             long identityId = ecsWorld.lookup(identity);
             country.setIdentityId(identityId);
@@ -1243,7 +1276,7 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue continentValues = this.parseJsonFile(this.continentJsonFile);
             Iterator<Map.Entry<String, JsonValue>> continentEntryIterator = continentValues.objectIterator();
-            long locatedInId = ecsWorld.lookup(EcsConstants.EcsLocatedIn);
+            long locatedInContinentId = ecsWorld.lookup(EcsConstants.EcsLocatedInContinent);
             while (continentEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = continentEntryIterator.next();
                 String continentName = entry.getKey();
@@ -1253,7 +1286,7 @@ public class WorldDaoImpl implements WorldDao {
                     short provinceId = (short) provincesIterator.next().asLong();
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                     Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                    provinceEntity.addRelation(locatedInId, continentEntityId);
+                    provinceEntity.addRelation(locatedInContinentId, continentEntityId);
                 }
             }
         } catch (IOException ioException) {

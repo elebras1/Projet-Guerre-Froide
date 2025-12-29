@@ -8,7 +8,7 @@ import com.populaire.projetguerrefroide.economy.good.GoodStore;
 import java.util.List;
 
 public interface WorldContext {
-    Country getPlayerCountry();
+    long getPlayerCountryId();
     ProvinceStore getProvinceStore();
     RegionStore getRegionStore();
     BuildingStore getBuildingStore();
