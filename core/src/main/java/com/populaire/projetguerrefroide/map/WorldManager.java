@@ -255,7 +255,7 @@ public class WorldManager implements WorldContext, Disposable {
         long ownedBy = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
         if(this.selectedProvinceId != 0) {
             Entity selectedProvinceEntity = ecsWorld.obtainEntity(this.selectedProvinceId);
-            this.playerCountryId = selectedProvinceEntity.target(ownedBy, 0);
+            this.playerCountryId = selectedProvinceEntity.target(ownedBy);
             return true;
         }
 
@@ -295,7 +295,7 @@ public class WorldManager implements WorldContext, Disposable {
         long isColonyOfId = ecsWorld.lookup(EcsConstants.EcsIsColonyOf);
         long countryEntityId = ecsWorld.lookup(country.getId());
         Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
-        long countryColonizerId = countryEntity.target(isColonyOfId, 0);
+        long countryColonizerId = countryEntity.target(isColonyOfId);
         if(countryColonizerId != 0) {
             Entity colonyEntity = ecsWorld.obtainEntity(countryColonizerId);
             return colonyEntity.getName();
@@ -345,11 +345,11 @@ public class WorldManager implements WorldContext, Disposable {
             long provinceEntityId = this.provinces.get(color);
             Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
 
-            long countryEntityId = provinceEntity.target(ownedById, 0);
+            long countryEntityId = provinceEntity.target(ownedById);
             Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
             Color countryColor = countryEntity.get(Color.class);
 
-            long countryColonizerId = countryEntity.target(isColonyOfId, 0);
+            long countryColonizerId = countryEntity.target(isColonyOfId);
             if(countryColonizerId != 0) {
                 Entity colonyEntity = ecsWorld.obtainEntity(countryColonizerId);
                 countryColor = colonyEntity.get(Color.class);
@@ -371,9 +371,9 @@ public class WorldManager implements WorldContext, Disposable {
             long provinceEntityId = this.provinces.get(color);
             if(provinceEntityId != -1) {
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                long countryOwnerId = provinceEntity.target(ownedById, 0);
+                long countryOwnerId = provinceEntity.target(ownedById);
                 Entity countryOwnerEntity = ecsWorld.obtainEntity(countryOwnerId);
-                long ideologyId = countryOwnerEntity.target(alignedWithId, 0);
+                long ideologyId = countryOwnerEntity.target(alignedWithId);
                 Entity ideologyEntity = ecsWorld.obtainEntity(ideologyId);
                 Ideology ideology = ideologyEntity.get(Ideology.class);
                 this.mapModePixmap.drawPixel(red, green, ideology.color());
@@ -447,13 +447,23 @@ public class WorldManager implements WorldContext, Disposable {
     }
 
     private void updatePixmapRegionColor() {
-        /*IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            int color = provinceColors.get(provinceId);
-            short red = (short) ((color >> 24) & 0xFF);
-            short green = (short) ((color >> 16) & 0xFF);
-            this.mapModePixmap.drawPixel(red, green, ColorGenerator.getDeterministicRGBA(Objects.requireNonNull(this.provinces.get(color)).getRegion().getId()));
-        }*/
+        World ecsWorld = this.gameContext.getEcsWorld();
+        long locatedInRegionId = ecsWorld.lookup(EcsConstants.EcsLocatedInRegion);
+        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
+        try(Query query = ecsWorld.query().with(landProvinceTagId).with(Color.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    long landProvinceId = iter.entity(i);
+                    Entity landProvinceEntity = ecsWorld.obtainEntity(landProvinceId);
+                    long regionId = landProvinceEntity.target(locatedInRegionId);
+                    Entity regionEntity = ecsWorld.obtainEntity(regionId);
+                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
+                    this.mapModePixmap.drawPixel(red, green, ColorGenerator.getDeterministicRGBA(regionEntity.getName()));
+                }
+            });
+        }
     }
 
     private void updatePixmapTerrainColor() {
@@ -476,7 +486,7 @@ public class WorldManager implements WorldContext, Disposable {
             long provinceEntityId = this.provinces.get(color);
             if(provinceEntityId != -1) {
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                long terrainId = provinceEntity.target(hasTerrainId, 0);
+                long terrainId = provinceEntity.target(hasTerrainId);
                 Entity terrainEntity = ecsWorld.obtainEntity(terrainId);
                 Terrain terrain = terrainEntity.get(Terrain.class);
                 this.mapModePixmap.drawPixel(red, green, terrain.color());
@@ -503,24 +513,37 @@ public class WorldManager implements WorldContext, Disposable {
 
 
     private void updatePixmapRelationsColor() {
-        /*ObjectIntMap<Country> relations = this.playerCountryId.getRelations();
+        World ecsWorld = this.gameContext.getEcsWorld();
+        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
+        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
 
-        IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            int color = provinceColors.get(provinceId);
-            short red = (short) ((color >> 24) & 0xFF);
-            short green = (short) ((color >> 16) & 0xFF);
+        Entity playerCountryEntity = ecsWorld.obtainEntity(this.playerCountryId);
 
-            LandProvince province = this.provinces.get(color);
-            if(Objects.requireNonNull(province).getCountryOwner().equals(this.playerCountryId)) {
-                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getLightBlueRGBA());
-            } else if(relations != null && relations.containsKey(province.getCountryOwner())) {
-                int relationValue = relations.get(province.getCountryOwner());
-                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getRedToGreenGradientRGBA(relationValue, 200));
-            } else {
-                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getGreyRGBA());
-            }
-        }*/
+        try(Query query = ecsWorld.query().with(landProvinceTagId).with(Color.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    long landProvinceId = iter.entity(i);
+                    Entity landProvinceEntity = ecsWorld.obtainEntity(landProvinceId);
+                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
+
+                    long countryOwnerId = landProvinceEntity.target(ownedById);
+                    if(this.playerCountryId == countryOwnerId) {
+                        this.mapModePixmap.drawPixel(red, green, ColorGenerator.getLightBlueRGBA());
+                    } else if (countryOwnerId != 0) {
+                        DiplomaticRelation relation = playerCountryEntity.get(DiplomaticRelation.class, countryOwnerId);
+                        if (relation != null) {
+                            this.mapModePixmap.drawPixel(red, green, ColorGenerator.getRedToGreenGradientRGBA(relation.value(), 200));
+                        } else {
+                            this.mapModePixmap.drawPixel(red, green, ColorGenerator.getGreyRGBA());
+                        }
+                    } else {
+                        this.mapModePixmap.drawPixel(red, green, ColorGenerator.getGreyRGBA());
+                    }
+                }
+            });
+        }
     }
 
     private Pixmap createProvincesColorStripesPixmap() {
@@ -534,8 +557,8 @@ public class WorldManager implements WorldContext, Disposable {
                 for(int i = 0; i < iter.count(); i++) {
                     long landProvinceId = iter.entity(i);
                     Entity landProvinceEntity = ecsWorld.obtainEntity(landProvinceId);
-                    long countryOwnerId = landProvinceEntity.target(ownedById, 0);
-                    long countryControllerId = landProvinceEntity.target(controlledById, 0);
+                    long countryOwnerId = landProvinceEntity.target(ownedById);
+                    long countryControllerId = landProvinceEntity.target(controlledById);
                     if(countryOwnerId == countryControllerId) {
                         continue;
                     }
@@ -547,7 +570,6 @@ public class WorldManager implements WorldContext, Disposable {
                     pixmap.drawPixel(red, green, countryColor);
                 }
             });
-
         }
 
         return pixmap;
@@ -572,8 +594,8 @@ public class WorldManager implements WorldContext, Disposable {
                     int green = (color >> 16) & 0xFF;
                     int blue = (color >> 8) & 0xFF;
 
-                    long countryId = landProvince.target(ownedById, 0);
-                    long regionId = landProvince.target(locatedInRegionId, 0);
+                    long countryId = landProvince.target(ownedById);
+                    long regionId = landProvince.target(locatedInRegionId);
                     color = (red << 24) | (green << 16) | (blue << 8) | this.getBorderType(ecsWorld, x, y, countryId, regionId, ownedById, locatedInRegionId);
                     this.provincesPixmap.drawPixel(x, y, color);
                 }
@@ -649,9 +671,9 @@ public class WorldManager implements WorldContext, Disposable {
         // 0: water, nothing or province border, 153: country border, 77: region border
         if(provinceRightId == 0 || provinceLeftId == 0 || provinceUpId == 0 || provinceDownId == 0) {
             return 0;
-        } else if (provinceRight.target(countryRelationId, 0) != countryId || provinceLeft.target(countryRelationId, 0) != countryId || provinceUp.target(countryRelationId, 0) != countryId || provinceDown.target(countryRelationId, 0) != countryId) {
+        } else if (provinceRight.target(countryRelationId) != countryId || provinceLeft.target(countryRelationId) != countryId || provinceUp.target(countryRelationId) != countryId || provinceDown.target(countryRelationId) != countryId) {
             return 153;
-        } else if (provinceRight.target(regionRelationId, 0) != regionId || provinceLeft.target(regionRelationId, 0) != regionId || provinceUp.target(regionRelationId, 0) != regionId || provinceDown.target(regionRelationId, 0) != regionId) {
+        } else if (provinceRight.target(regionRelationId) != regionId || provinceLeft.target(regionRelationId) != regionId || provinceUp.target(regionRelationId) != regionId || provinceDown.target(regionRelationId) != regionId) {
             return 77;
         } else {
             return 0;

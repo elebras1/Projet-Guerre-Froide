@@ -5,7 +5,6 @@ import com.github.tommyettinger.ds.*;
 public class Country {
     private final String id;
     private LongList provinceIds;
-    private ObjectIntMap<Country> relations;
     private long capitalId;
     private long governmentId;
     private long headOfGovernmentId;
@@ -38,26 +37,6 @@ public class Country {
 
     public LongList getProvinceIds() {
         return this.provinceIds;
-    }
-
-    public void addRelation(Country country, int value) {
-        if(this.relations == null) {
-            this.relations = new ObjectIntMap<>();
-        }
-
-        this.relations.put(country, value);
-    }
-
-    public void removeRelation(Country country) {
-        this.relations.remove(country);
-
-        if(this.relations.isEmpty()) {
-            this.relations = null;
-        }
-    }
-
-    public ObjectIntMap<Country> getRelations() {
-        return this.relations;
     }
 
     public void setCapitalId(long capitalId) {

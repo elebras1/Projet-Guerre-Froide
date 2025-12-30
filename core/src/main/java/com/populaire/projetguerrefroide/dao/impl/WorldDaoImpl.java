@@ -189,7 +189,7 @@ public class WorldDaoImpl implements WorldDao {
                     JsonValue modifierValue = modifierEntry.getValue();
                     float value = (float) modifierValue.asDouble();
                     long modifierTagId = ecsWorld.entity(modifierName);
-                    identityEntity.set(modifierTagId, new Modifier(value));
+                    identityEntity.set(new Modifier(value), modifierTagId);
                 }
             }
 
@@ -207,7 +207,7 @@ public class WorldDaoImpl implements WorldDao {
                     JsonValue modifierValue = modifierEntry.getValue();
                     float value = (float) modifierValue.asDouble();
                     long modifierTagId = ecsWorld.entity(modifierName);
-                    attitudeEntity.set(modifierTagId, new Modifier(value));
+                    attitudeEntity.set(new Modifier(value), modifierTagId);
                 }
             }
         } catch (IOException ioException) {
@@ -589,7 +589,7 @@ public class WorldDaoImpl implements WorldDao {
                     String modifierName = modifierEntry.getKey();
                     float modifierValue = (float) modifierEntry.getValue().asDouble();
                     long modifierTagId = ecsWorld.entity(modifierName);
-                    ministerTypeEntity.set(modifierTagId, new Modifier(modifierValue));
+                    ministerTypeEntity.set(new Modifier(modifierValue), modifierTagId);
                 }
             }
         } catch (IOException ioException) {
@@ -661,7 +661,7 @@ public class WorldDaoImpl implements WorldDao {
                         String modifierName = modifierEntry.getKey();
                         float modifierValue = (float) modifierEntry.getValue().asDouble();
                         long modifierTagId = ecsWorld.entity(modifierName);
-                        lawEntity.set(modifierTagId, new Modifier(modifierValue));
+                        lawEntity.set(new Modifier(modifierValue), modifierTagId);
                     }
                     Iterator<Map.Entry<String, JsonValue>> interestIdeologiesEntryIterator = lawValue.get("interest_ideologies").objectIterator();
                     while (interestIdeologiesEntryIterator.hasNext()) {
@@ -697,7 +697,7 @@ public class WorldDaoImpl implements WorldDao {
                 long modifierTagId = ecsWorld.entity(modifierName);
                 long traitEntityId = ecsWorld.entity(traitName);
                 Entity traitEntity = ecsWorld.obtainEntity(traitEntityId);
-                traitEntity.set(modifierTagId, new Modifier(modifierValue));
+                traitEntity.set(new Modifier(modifierValue), modifierTagId);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -708,7 +708,7 @@ public class WorldDaoImpl implements WorldDao {
 
     private Map<String, Country> loadCountries(World ecsWorld) {
         Map<String, Country> countries = this.readCountriesJson(ecsWorld);
-        this.readRelationJson(countries);
+        this.readRelationJson(ecsWorld);
         this.readAlliancesJson(ecsWorld);
         this.readLeadersJson(ecsWorld, countries);
         return countries;
@@ -790,17 +790,19 @@ public class WorldDaoImpl implements WorldDao {
         return null;
     }
 
-    private void readRelationJson(Map<String, Country> countries) {
+    private void readRelationJson(World ecsWorld) {
         try {
             JsonValue relationsValues = this.parseJsonFile(this.relationJsonFile);
             Iterator<JsonValue> relationsIterator = relationsValues.get("relation").arrayIterator();
             while (relationsIterator.hasNext()) {
                 JsonValue relation = relationsIterator.next();
-                Country country1 = countries.get(relation.get("country1").asString());
-                Country country2 = countries.get(relation.get("country2").asString());
+                String countryNameId1 = relation.get("country1").asString();
+                Entity country1 = ecsWorld.obtainEntity(ecsWorld.lookup(countryNameId1));
+                String countryNameId2 = relation.get("country2").asString();
+                Entity country2 = ecsWorld.obtainEntity(ecsWorld.lookup(countryNameId2));
                 int relationValue = (int) relation.get("value").asLong();
-                country1.addRelation(country2, relationValue);
-                country2.addRelation(country1, relationValue);
+                country1.set(new DiplomaticRelation(relationValue), country2.id());
+                country2.set(new DiplomaticRelation(relationValue), country1.id());
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -1088,7 +1090,7 @@ public class WorldDaoImpl implements WorldDao {
                     if(provinceEntityId != -1) {
                         Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
                         provinceEntity.add(landProvinceTagId);
-                        long countryEntityId = provinceEntity.target(controlledById, 0);
+                        long countryEntityId = provinceEntity.target(controlledById);
                         if (countryEntityId != 0) {
                             Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
                             countryEntity.addRelation(hasId, regionEntityId);
