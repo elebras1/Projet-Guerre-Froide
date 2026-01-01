@@ -270,35 +270,41 @@ public class WorldManager implements WorldContext, Disposable {
         return (short) this.provinces.size();
     }
 
-    public int getPopulationAmount(long provinceEntityId) {
+    public int getPopulationAmountOfProvince(long provinceEntityId) {
         Entity provinceEntity = this.gameContext.getEcsWorld().obtainEntity(provinceEntityId);
         int provinceId = Integer.parseInt(provinceEntity.getName());
         int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
         return this.provinceStore.getPopulationAmount(provinceIndex);
     }
 
-    public int getPopulationAmount(Country country) {
+    public int getPopulationAmountOfCountry(long countryEntityId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
+        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
+
         int population = 0;
-        for(int i = 0; i < country.getProvinceIds().size(); i++) {
-            Entity provinceEntity = gameContext.getEcsWorld().obtainEntity(country.getProvinceIds().get(i));
-            int provinceId = Integer.parseInt(provinceEntity.getName());
-            int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
-            population += this.provinceStore.getPopulationAmount(provinceIndex);
+
+        try (Query provinceQuery = ecsWorld.query().with(landProvinceTagId).with(ownedById, countryEntityId).build()) {
+            for (long provinceEntityId : provinceQuery.entities()) {
+                Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+                int provinceId = Integer.parseInt(provinceEntity.getName());
+                int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
+                population += this.provinceStore.getPopulationAmount(provinceIndex);
+            }
         }
 
         return population;
-
     }
 
-    public String getColonizerId(Country country) {
+
+    public String getColonizerId(long countryId) {
         World ecsWorld = this.gameContext.getEcsWorld();
         long isColonyOfId = ecsWorld.lookup(EcsConstants.EcsIsColonyOf);
-        long countryEntityId = ecsWorld.lookup(country.getId());
-        Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
-        long countryColonizerId = countryEntity.target(isColonyOfId);
+        Entity country = ecsWorld.obtainEntity(countryId);
+        long countryColonizerId = country.target(isColonyOfId);
         if(countryColonizerId != 0) {
-            Entity colonyEntity = ecsWorld.obtainEntity(countryColonizerId);
-            return colonyEntity.getName();
+            Entity colony = ecsWorld.obtainEntity(countryColonizerId);
+            return colony.getName();
         }
 
         return null;
@@ -580,7 +586,7 @@ public class WorldManager implements WorldContext, Disposable {
         long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
         long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
         long locatedInRegionId = ecsWorld.lookup(EcsConstants.EcsLocatedInRegion);
-        int[] xyBorders = this.borders.getXyValues();
+        int[] xyBorders = this.borders.getPixels();
         try(Query landProvinceQuery = ecsWorld.query().with(landProvinceTagId).build()) {
             landProvinceQuery.each(landProvinceId -> {
                 Entity landProvince = ecsWorld.obtainEntity(landProvinceId);
@@ -701,12 +707,26 @@ public class WorldManager implements WorldContext, Disposable {
     }
 
     private WgMesh generateMeshMapLabels(VertexAttributes vertexAttributes, Map<String, String> localisation, LabelStylePool labelStylePool) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        long countryTagId = ecsWorld.lookup(EcsConstants.EcsCountryTag);
         MapLabel mapLabel = new MapLabel(labelStylePool.getLabelStyle("kart_60").font);
         FloatList vertices = new FloatList();
         ShortList indices = new ShortList();
-
-        for(Country country : this.countries) {
-            country.getLabelsData(LocalisationUtils.getCountryNameLocalisation(localisation, country.getId(), this.getColonizerId(country)), mapLabel, vertices, indices);
+        try(Query query = ecsWorld.query().with(countryTagId).build()) {
+            query.each(countryId -> {
+                Entity country = ecsWorld.obtainEntity(countryId);
+                String countryNameId = country.getName();
+                this.getLabelsData(
+                    ecsWorld,
+                    countryId,
+                    countryNameId,
+                    LocalisationUtils.getCountryNameLocalisation(localisation, countryNameId, this.getColonizerId(country.id())),
+                    mapLabel,
+                    vertices,
+                    indices,
+                    this.borders
+                );
+            });
         }
 
         WgMesh mesh = new WgMesh(false, vertices.size() / 4, indices.size(), vertexAttributes);
@@ -716,9 +736,80 @@ public class WorldManager implements WorldContext, Disposable {
         return mesh;
     }
 
+    private void getLabelsData(World ecsWorld, long countryId, String countryNameId, String countryName, MapLabel mapLabel, FloatList vertices, ShortList indices, Borders borders) {
+        LongSet visitedProvinces = new LongSet();
+        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
+        com.github.elebras1.flecs.collection.LongList provinceIds;
+        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
+
+        try(Query query = ecsWorld.query().with(ownedById, countryId).with(landProvinceTagId).build()) {
+            provinceIds = query.entities();
+        }
+
+        for (int i = 0; i < provinceIds.size(); i++) {
+            long provinceId = provinceIds.get(i);
+            if (!visitedProvinces.contains(provinceId)) {
+                LongList connectedProvinces = new LongList();
+                this.getConnectedProvinces(ecsWorld, countryNameId, provinceId, visitedProvinces, connectedProvinces);
+                if(connectedProvinces.size() > 5 || (connectedProvinces.size() == provinceIds.size() && !connectedProvinces.isEmpty())) {
+                    IntList positionsProvinces = new IntList();
+                    IntList pixelsBorderProvinces = new IntList();
+                    for(int j = 0; j < connectedProvinces.size(); j++) {
+                        long connectedProvinceId = connectedProvinces.get(j);
+                        Entity connectedProvince = ecsWorld.obtainEntity(connectedProvinceId);
+                        Border border = connectedProvince.get(Border.class);
+                        long positionEntityId = ecsWorld.lookup("province_" + connectedProvince.getName() + "_pos_default");
+                        Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
+                        Position position = positionEntity.get(Position.class);
+                        positionsProvinces.add(position.x());
+                        positionsProvinces.add(position.y());
+                        pixelsBorderProvinces.addAll(Arrays.copyOfRange(borders.getPixels(), border.startIndex(), border.endIndex()));
+                    }
+                    mapLabel.generateData(countryName, pixelsBorderProvinces, positionsProvinces, vertices, indices);
+                }
+            }
+        }
+    }
+
+    private void getConnectedProvinces(World ecsWorld, String countryNameId, long startProvinceId, LongSet visitedProvinceIds, LongList connectedProvinceIds) {
+        long adjacentToId = ecsWorld.lookup(EcsConstants.EcsAdjacentTo);
+        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
+        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
+
+        LongList toProcess = new LongList();
+        toProcess.add(startProvinceId);
+
+        visitedProvinceIds.add(startProvinceId);
+        connectedProvinceIds.add(startProvinceId);
+
+        while (!toProcess.isEmpty()) {
+            long currentId = toProcess.pop();
+
+            try (Query query = ecsWorld.query().with(adjacentToId, currentId).with(landProvinceTagId).build()) {
+                query.each(adjacentId -> {
+                    Entity adjacentIdx = ecsWorld.obtainEntity(adjacentId);
+                    long ownerEntityId = adjacentIdx.target(ownedById);
+
+                    if (ownerEntityId != 0 && ecsWorld.obtainEntity(ownerEntityId).getName().equals(countryNameId)) {
+                        if (!visitedProvinceIds.contains(adjacentId)) {
+                            visitedProvinceIds.add(adjacentId);
+                            connectedProvinceIds.add(adjacentId);
+                            toProcess.add(adjacentId);
+                        }
+                    }
+                });
+            }
+        }
+    }
+
     private WgMesh generateMeshBuildings(VertexAttributes vertexAttributes) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        int numBuildings = 0;
+        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
+        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
+        long countryTagId = ecsWorld.lookup(EcsConstants.EcsCountryTag);
+        long hasCapitalId = ecsWorld.lookup(EcsConstants.EcsHasCapital);
+
+        MutableInt numBuildings = new MutableInt(0);
 
         IntList provinceBuildingIds = this.provinceStore.getBuildingIds();
         IntList provinceBuildingStarts = this.provinceStore.getBuildingStarts();
@@ -727,84 +818,116 @@ public class WorldManager implements WorldContext, Disposable {
         BooleanList buildingOnMap = this.buildingStore.getOnMap();
         List<String> buildingNames = this.buildingStore.getNames();
 
-        for (Country country : this.countries) {
-            if (country.getCapitalId() != -1 && !country.getProvinceIds().isEmpty()) {
-                numBuildings++;
-            }
-            for (int i = 0; i < country.getProvinceIds().size(); i++) {
-                long provinceEntityId = country.getProvinceIds().get(i);
-                int provinceId = Integer.parseInt(this.gameContext.getEcsWorld().obtainEntity(provinceEntityId).getName());
-                int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
-                int provinceBuildingStart = provinceBuildingStarts.get(provinceIndex);
-                int provinceBuildingEnd = provinceBuildingStart + provinceBuildingCounts.get(provinceIndex);
-                for (int buildingIndex = provinceBuildingStart; buildingIndex < provinceBuildingEnd; buildingIndex++) {
-                    int buildingId = provinceBuildingIds.get(buildingIndex);
-                    if (buildingOnMap.get(buildingId)) {
-                        numBuildings++;
-                    }
+        try (Query countryQuery = ecsWorld.query().with(countryTagId).build()) {
+            countryQuery.each(countryEntityId -> {
+                Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
+                long capitalTarget = countryEntity.target(hasCapitalId);
+                final boolean[] hadProvince = {false};
+
+                try (Query provinceQuery = ecsWorld.query()
+                    .with(landProvinceTagId)
+                    .with(ownedById, countryEntityId)
+                    .build()) {
+
+                    provinceQuery.each(provinceEntityId -> {
+                        hadProvince[0] = true;
+
+                        Entity province = ecsWorld.obtainEntity(provinceEntityId);
+                        int provinceNameId = Integer.parseInt(province.getName());
+                        int provinceIndex = provinceStore.getIndexById().get(provinceNameId);
+                        int start = provinceBuildingStarts.get(provinceIndex);
+                        int end = start + provinceBuildingCounts.get(provinceIndex);
+
+                        for (int bi = start; bi < end; bi++) {
+                            int buildingId = provinceBuildingIds.get(bi);
+                            if (buildingOnMap.get(buildingId)) {
+                                numBuildings.increment();
+                            }
+                        }
+                    });
                 }
-            }
+
+                if (capitalTarget != 0 && hadProvince[0]) {
+                    numBuildings.increment();
+                }
+            });
         }
 
-        float[] vertices = new float[numBuildings * 4 * 4];
-        short[] indices = new short[numBuildings * 6];
+        int nb = numBuildings.getValue();
+        float[] vertices = new float[nb * 4 * 4];
+        short[] indices = new short[nb * 6];
 
-        int vertexIndex = 0;
-        int indexIndex = 0;
-        short vertexOffset = 0;
+        final MutableInt vertexIndex = new MutableInt(0);
+        final MutableInt indexIndex = new MutableInt(0);
+        final MutableInt vertexOffset = new MutableInt(0);
 
         short width = 6;
         short height = 6;
 
         TextureRegion capitalRegion = this.mapElementsTextureAtlas.findRegion("building_capital");
-        for (Country country : this.countries) {
-            if (country.getCapitalId() != -1 && !country.getProvinceIds().isEmpty()) {
-                Entity capitalProvinceEntity = ecsWorld.obtainEntity(country.getCapitalId());
-                long positionEntityId = ecsWorld.lookup("province_" + capitalProvinceEntity.getName() + "_pos_default");
-                Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
-                Position position = positionEntity.get(Position.class);
-                int cx = position.x();
-                int cy = position.y();
 
-                this.addVerticesIndicesBuilding(vertices, indices, vertexIndex, indexIndex, vertexOffset, cx, cy, width, height, capitalRegion);
+        try (Query countryQuery = ecsWorld.query().with(countryTagId).build()) {
+            countryQuery.each(countryEntityId -> {
+                Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
+                long capitalTarget = countryEntity.target(hasCapitalId);
+                final boolean[] hadProvince = {false};
 
-                vertexIndex += 16;
-                indexIndex += 6;
-                vertexOffset += 4;
-            }
+                try (Query provinceQuery = ecsWorld.query()
+                    .with(landProvinceTagId)
+                    .with(ownedById, countryEntityId)
+                    .build()) {
 
-            for (int i = 0; i < country.getProvinceIds().size(); i++) {
-                long provinceEntityId = country.getProvinceIds().get(i);
-                Entity province = ecsWorld.obtainEntity(provinceEntityId);
-                int provinceNameId = Integer.parseInt(province.getName());
-                int provinceIndex = this.provinceStore.getIndexById().get(provinceNameId);
-                int provinceBuildingStart = provinceBuildingStarts.get(provinceIndex);
-                int provinceBuildingEnd = provinceBuildingStart + provinceBuildingCounts.get(provinceIndex);
-                for (int buildingIndex = provinceBuildingStart; buildingIndex < provinceBuildingEnd; buildingIndex++) {
-                    int buildingId = provinceBuildingIds.get(buildingIndex);
-                    if (!buildingOnMap.get(buildingId)) {
-                        continue;
-                    }
+                    provinceQuery.each(provinceEntityId -> {
+                        hadProvince[0] = true;
 
-                    TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_" + buildingNames.get(buildingId) + "_empty");
+                        Entity province = ecsWorld.obtainEntity(provinceEntityId);
+                        int provinceNameId = Integer.parseInt(province.getName());
+                        int provinceIndex = provinceStore.getIndexById().get(provinceNameId);
+                        int start = provinceBuildingStarts.get(provinceIndex);
+                        int end = start + provinceBuildingCounts.get(provinceIndex);
 
-                    long buildingPositionEntityId = ecsWorld.lookup("province_" + provinceNameId + "_pos_" + buildingNames.get(buildingId));
-                    Entity buildingPositionEntity = ecsWorld.obtainEntity(buildingPositionEntityId);
-                    Position position = buildingPositionEntity.get(Position.class);
-                    int bx = position.x();
-                    int by = position.y();
+                        for (int bi = start; bi < end; bi++) {
+                            int buildingId = provinceBuildingIds.get(bi);
+                            if (!buildingOnMap.get(buildingId)) {
+                                continue;
+                            }
 
-                    this.addVerticesIndicesBuilding(vertices, indices, vertexIndex, indexIndex, vertexOffset, bx, by, width, height, buildingRegion);
+                            String buildingName = buildingNames.get(buildingId);
+                            TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_" + buildingName + "_empty");
 
-                    vertexIndex += 16;
-                    indexIndex += 6;
-                    vertexOffset += 4;
+                            long buildingPositionEntityId = ecsWorld.lookup("province_" + provinceNameId + "_pos_" + buildingName);
+                            Entity buildingPositionEntity = ecsWorld.obtainEntity(buildingPositionEntityId);
+                            Position pos = buildingPositionEntity.get(Position.class);
+                            int bx = pos.x();
+                            int by = pos.y();
+
+                            this.addVerticesIndicesBuilding(vertices, indices, vertexIndex.getValue(), indexIndex.getValue(), (short) vertexOffset.getValue(), bx, by, width, height, buildingRegion);
+
+                            vertexIndex.increment(16);
+                            indexIndex.increment(6);
+                            vertexOffset.increment(4);
+                        }
+                    });
                 }
-            }
+
+                if (capitalTarget != 0 && hadProvince[0]) {
+                    Entity capitalProvinceEntity = ecsWorld.obtainEntity(capitalTarget);
+                    long positionEntityId = ecsWorld.lookup("province_" + capitalProvinceEntity.getName() + "_pos_default");
+                    Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
+                    Position position = positionEntity.get(Position.class);
+                    int cx = position.x();
+                    int cy = position.y();
+
+                    this.addVerticesIndicesBuilding(vertices, indices, vertexIndex.getValue(), indexIndex.getValue(), (short) vertexOffset.getValue(), cx, cy, width, height, capitalRegion);
+
+                    vertexIndex.increment(16);
+                    indexIndex.increment(6);
+                    vertexOffset.increment(4);
+                }
+            });
         }
 
         WgMesh mesh = new WgMesh(true, vertices.length / 4, indices.length, vertexAttributes);
-
         mesh.setVertices(vertices);
         mesh.setIndices(indices);
 
@@ -1264,7 +1387,7 @@ public class WorldManager implements WorldContext, Disposable {
 
         this.renderMeshProvinces();
         this.renderMeshRivers();
-        //this.renderMeshMapLabels();
+        this.renderMeshMapLabels();
         if(cam.zoom <= 0.8f) {
             this.renderMeshBuildings();
         }

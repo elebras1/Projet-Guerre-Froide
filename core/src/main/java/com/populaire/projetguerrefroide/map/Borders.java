@@ -1,16 +1,16 @@
 package com.populaire.projetguerrefroide.map;
 
 public class Borders {
-    private int[] xyValues;
+    private int[] pixels;
 
     public Borders() {
     }
 
-    public int[] getXyValues() {
-        return this.xyValues;
+    public int[] getPixels() {
+        return this.pixels;
     }
 
-    public void setXyValues(int[] xyValues) {
-        this.xyValues = xyValues;
+    public void setPixels(int[] pixels) {
+        this.pixels = pixels;
     }
 }

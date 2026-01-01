@@ -29,6 +29,7 @@ public class EcsConstants {
     public static final String EcsIsPuppetOf = "IsPuppetOf";
     public static final String EcsColonizes = "Colonizes";
     public static final String EcsIsColonyOf = "IsColonyOf";
+    public static final String EcsHasCapital = "HasCapital";
 
 
     public static String getAllianceRelation(String type, boolean isFirstCountry) {

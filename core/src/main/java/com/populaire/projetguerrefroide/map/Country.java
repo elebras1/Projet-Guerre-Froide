@@ -4,22 +4,17 @@ import com.github.tommyettinger.ds.*;
 
 public class Country {
     private final String id;
-    private LongList provinceIds;
-    private long capitalId;
     private long governmentId;
     private long headOfGovernmentId;
     private long headOfStateId;
     private LongList ministerIds;
     private long identityId;
     private long attitudeId;
-    private String name;
     private LongList lawIds;
     private IntList leadersIds;
 
     public Country(String id) {
         this.id = id;
-        this.provinceIds = new LongList();
-        this.capitalId = -1;
         this.governmentId = -1;
         this.headOfGovernmentId = -1;
         this.headOfStateId = -1;
@@ -29,22 +24,6 @@ public class Country {
 
     public String getId() {
         return this.id;
-    }
-
-    public void addProvinceId(long provinceId) {
-        this.provinceIds.add(provinceId);
-    }
-
-    public LongList getProvinceIds() {
-        return this.provinceIds;
-    }
-
-    public void setCapitalId(long capitalId) {
-        this.capitalId = capitalId;
-    }
-
-    public long getCapitalId() {
-        return this.capitalId;
     }
 
     public void setGovernmentId(long governmentId) {
@@ -109,43 +88,6 @@ public class Country {
 
     public IntList getLeadersIds() {
         return this.leadersIds;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void getLabelsData(String name, MapLabel mapLabel, FloatList vertices, ShortList indices) {
-        /*this.name = name;
-        Set<LandProvince> visitedProvinces = new ObjectSet<>();
-
-        for (LandProvince province : this.provinces) {
-            if (!visitedProvinces.contains(province)) {
-                List<LandProvince> connectedProvinces = new ObjectList<>();
-                this.getConnectedProvinces(province, visitedProvinces, connectedProvinces);
-                if(connectedProvinces.size() > 5 || (connectedProvinces.size() == this.provinces.size() && !connectedProvinces.isEmpty())) {
-                    IntList positionsProvinces = new IntList();
-                    IntList pixelsBorderProvinces = new IntList();
-                    for(LandProvince connectedProvince : connectedProvinces) {
-                        positionsProvinces.add(connectedProvince.getPosition("default"));
-                        pixelsBorderProvinces.addAll(connectedProvince.getBorderPixels());
-                    }
-                    mapLabel.generateData(name, pixelsBorderProvinces, positionsProvinces, vertices, indices);
-                }
-            }
-        }*/
-    }
-
-    public void getConnectedProvinces(long provinceId, LongSet visitedProvinceIds, LongList connectedProvinceIds) {
-        /*visitedProvinces.add(province);
-        connectedProvinces.add(province);
-        for(Province adjacentProvince : province.getAdjacentProvinces()) {
-            if(adjacentProvince instanceof LandProvince adjacentLandProvince) {
-                if(!visitedProvinces.contains(adjacentProvince) && adjacentLandProvince.getCountryOwner().equals(this)) {
-                    this.getConnectedProvinces(adjacentLandProvince, visitedProvinces, connectedProvinces);
-                }
-            }
-        }*/
     }
 
     @Override

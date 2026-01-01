@@ -137,6 +137,7 @@ public class WorldDaoImpl implements WorldDao {
         ecsWorld.entity(EcsConstants.EcsIsPuppetOf);
         ecsWorld.entity(EcsConstants.EcsColonizes);
         ecsWorld.entity(EcsConstants.EcsIsColonyOf);
+        ecsWorld.entity(EcsConstants.EcsHasCapital);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -934,7 +935,7 @@ public class WorldDaoImpl implements WorldDao {
             for (IntObjectMap.Entry<String> entry : provincesPaths.entrySet()) {
                 short provinceId = (short) entry.getKey();
                 String provincePath = entry.getValue();
-                this.readProvinceJson(ecsWorld, countries, provincePath, provinceId, regionBuildingsByProvince, populationTemplateStore, goodIds, buildingIds, populationTypeIds, builder);
+                this.readProvinceJson(ecsWorld, provincePath, provinceId, regionBuildingsByProvince, populationTemplateStore, goodIds, buildingIds, populationTypeIds, builder);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -945,11 +946,12 @@ public class WorldDaoImpl implements WorldDao {
         return builder.build();
     }
 
-    private void readProvinceJson(World ecsWorld, Map<String, Country> countries, String provincePath, short provinceId, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, ProvinceStoreBuilder builder) {
+    private void readProvinceJson(World ecsWorld, String provincePath, short provinceId, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, ObjectIntMap<String> goodIds, ObjectIntMap<String> buildingIds, ObjectIntMap<String> populationTypeIds, ProvinceStoreBuilder builder) {
         try {
             JsonValue provinceValues = this.parseJsonFile(provincePath);
 
             long hasTerrainId = ecsWorld.lookup(EcsConstants.EcsHasTerrain);
+            long hasId = ecsWorld.lookup(EcsConstants.EcsHas);
 
             long coreOfId = ecsWorld.lookup(EcsConstants.EcsCoreOf);
             long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
@@ -972,8 +974,9 @@ public class WorldDaoImpl implements WorldDao {
             }
 
             String owner = provinceValues.get("owner").asString();
-            long countryOwnerId = ecsWorld.lookup(owner);
-            provinceEntity.addRelation(ownedById, countryOwnerId);
+            Entity countryOwner = ecsWorld.obtainEntity(ecsWorld.lookup(owner));
+            provinceEntity.addRelation(ownedById, countryOwner.id());
+            countryOwner.addRelation(hasId, provinceEntity.id());
 
             String controller = provinceValues.get("controller").asString();
             long countryControllerId = ecsWorld.lookup(controller);
@@ -1027,9 +1030,6 @@ public class WorldDaoImpl implements WorldDao {
                     builder.addBuilding(buildingId, size);
                 }
             }
-
-            Country countryOwner = countries.get(owner);
-            countryOwner.addProvinceId(provinceEntityId);
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
@@ -1180,11 +1180,11 @@ public class WorldDaoImpl implements WorldDao {
             IntList coords = entry.value;
             int startIndex = xyValues.size();
             xyValues.addAll(coords);
-            int endIndex = xyValues.size() - 1;
+            int endIndex = xyValues.size();
             Entity provinceEntity = ecsWorld.obtainEntity(entry.key);
             provinceEntity.set(new Border(startIndex, endIndex));
         }
-        borders.setXyValues(xyValues.shrink());
+        borders.setPixels(xyValues.shrink());
 
         provincesPixmap.dispose();
     }
@@ -1229,13 +1229,14 @@ public class WorldDaoImpl implements WorldDao {
                 return;
             }
             long alignedWithId = ecsWorld.lookup(EcsConstants.EcsAlignedWith);
+            long hasCapitalId = ecsWorld.lookup(EcsConstants.EcsHasCapital);
             Entity countryEntity = ecsWorld.obtainEntity(ecsWorld.lookup(idCountry));
 
             JsonValue countryValues = this.parseJsonFile(countryFileName);
             short idCapital = (short) countryValues.get("capital").asLong();
             Country country = countries.get(idCountry);
             long capitalId = ecsWorld.lookup(String.valueOf(idCapital));
-            country.setCapitalId(capitalId);
+            countryEntity.addRelation(hasCapitalId, capitalId);
             String government = countryValues.get("government").asString();
             long governmentId = ecsWorld.lookup(government);
             country.setGovernmentId(governmentId);

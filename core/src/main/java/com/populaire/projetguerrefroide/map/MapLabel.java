@@ -5,7 +5,6 @@ import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectList;
 import com.github.tommyettinger.ds.ShortList;
-import com.populaire.projetguerrefroide.service.LabelStylePool;
 
 import java.util.List;
 
@@ -46,103 +45,110 @@ public class MapLabel {
         short maxPixelY = (short) (maxPixelInt & 0xFFFF);
 
         for (int x = minPixelX; x <= maxPixelX; x += step) {
-            int minYPoint = this.getMinYPointInRange(borderPixels, x, x + step);
-            int maxYPoint = this.getMaxYPointInRange(borderPixels, x, x + step);
+            int minYIndex = this.getMinYIndexInRange(borderPixels, x, x + step);
+            int maxYIndex = this.getMaxYIndexInRange(borderPixels, x, x + step);
 
-            if (minYPoint != -1) approximateBorder.add(minYPoint);
-            if (maxYPoint != -1) approximateBorder.add(maxYPoint);
+            if (minYIndex != -1) {
+                approximateBorder.add(borderPixels.get(minYIndex));
+                approximateBorder.add(borderPixels.get(minYIndex + 1));
+            }
+            if (maxYIndex != -1) {
+                approximateBorder.add(borderPixels.get(maxYIndex));
+                approximateBorder.add(borderPixels.get(maxYIndex + 1));
+            }
         }
 
         for (int y = minPixelY; y <= maxPixelY; y += step) {
-            int minXPoint = this.getMinXPointInRange(borderPixels, y, y + step);
-            int maxXPoint = this.getMaxXPointInRange(borderPixels, y, y + step);
+            int minXIndex = this.getMinXIndexInRange(borderPixels, y, y + step);
+            int maxXIndex = this.getMaxXIndexInRange(borderPixels, y, y + step);
 
-            if (minXPoint != -1) approximateBorder.add(minXPoint);
-            if (maxXPoint != -1) approximateBorder.add(maxXPoint);
+            if (minXIndex != -1) {
+                approximateBorder.add(borderPixels.get(minXIndex));
+                approximateBorder.add(borderPixels.get(minXIndex + 1));
+            }
+            if (maxXIndex != -1) {
+                approximateBorder.add(borderPixels.get(maxXIndex));
+                approximateBorder.add(borderPixels.get(maxXIndex + 1));
+            }
         }
 
         return approximateBorder;
     }
 
-    private int getMinYPointInRange(IntList pixels, int xStart, int xEnd) {
-        int minYPoint = -1;
-        int minYPointY = Integer.MAX_VALUE;
-        for (int i = 0; i < pixels.size(); i++) {
-            int pixelInt = pixels.get(i);
-            short pixelX = (short) (pixelInt >> 16);
-            short pixelY = (short) (pixelInt & 0xFFFF);
+    private int getMinYIndexInRange(IntList pixels, int xStart, int xEnd) {
+        int index = -1;
+        int minY = Integer.MAX_VALUE;
+        for (int i = 0; i < pixels.size(); i += 2) {
+            int pixelX = pixels.get(i);
+            int pixelY = pixels.get(i + 1);
 
             if (pixelX >= xStart && pixelX < xEnd) {
-                if (pixelY < minYPointY) {
-                    minYPoint = pixelInt;
-                    minYPointY = pixelY;
+                if (pixelY < minY) {
+                    minY = pixelY;
+                    index = i;
                 }
             }
         }
-        return minYPoint;
+        return index;
     }
 
-    private int getMaxYPointInRange(IntList pixels, int xStart, int xEnd) {
-        int maxYPoint = -1;
-        int maxYPointY = -1;
-        for (int i = 0; i < pixels.size(); i++) {
-            int pixelInt = pixels.get(i);
-            short pixelX = (short) (pixelInt >> 16);
-            short pixelY = (short) (pixelInt & 0xFFFF);
+    private int getMaxYIndexInRange(IntList pixels, int xStart, int xEnd) {
+        int index = -1;
+        int maxY = -1;
+        for (int i = 0; i < pixels.size(); i += 2) {
+            int pixelX = pixels.get(i);
+            int pixelY = pixels.get(i + 1);
 
             if (pixelX >= xStart && pixelX < xEnd) {
-                if (pixelY > maxYPointY) {
-                    maxYPoint = pixelInt;
-                    maxYPointY = pixelY;
+                if (pixelY > maxY) {
+                    maxY = pixelY;
+                    index = i;
                 }
             }
         }
-        return maxYPoint;
+        return index;
     }
 
-    private int getMinXPointInRange(IntList pixels, int yStart, int yEnd) {
-        int minXPoint = -1;
-        int minXPointX = Integer.MAX_VALUE;
-        for (int i = 0; i < pixels.size(); i++) {
-            int pixelInt = pixels.get(i);
-            short pixelX = (short) (pixelInt >> 16);
-            short pixelY = (short) (pixelInt & 0xFFFF);
+    private int getMinXIndexInRange(IntList pixels, int yStart, int yEnd) {
+        int index = -1;
+        int minX = Integer.MAX_VALUE;
+        for (int i = 0; i < pixels.size(); i += 2) {
+            int pixelX = pixels.get(i);
+            int pixelY = pixels.get(i + 1);
 
             if (pixelY >= yStart && pixelY < yEnd) {
-                if (pixelX < minXPointX) {
-                    minXPoint = pixelInt;
-                    minXPointX = pixelX;
+                if (pixelX < minX) {
+                    minX = pixelX;
+                    index = i;
                 }
             }
         }
-        return minXPoint;
+        return index;
     }
 
-    private int getMaxXPointInRange(IntList pixels, int yStart, int yEnd) {
-        int maxXPoint = -1;
-        int maxXPointX = -1;
-        for (int i = 0; i < pixels.size(); i++) {
-            int pixelInt = pixels.get(i);
-            short pixelX = (short) (pixelInt >> 16);
-            short pixelY = (short) (pixelInt & 0xFFFF);
+    private int getMaxXIndexInRange(IntList pixels, int yStart, int yEnd) {
+        int index = -1;
+        int maxX = -1;
+        for (int i = 0; i < pixels.size(); i += 2) {
+            int pixelX = pixels.get(i);
+            int pixelY = pixels.get(i + 1);
 
             if (pixelY >= yStart && pixelY < yEnd) {
-                if (pixelX > maxXPointX) {
-                    maxXPoint = pixelInt;
-                    maxXPointX = pixelX;
+                if (pixelX > maxX) {
+                    maxX = pixelX;
+                    index = i;
                 }
             }
         }
-        return maxXPoint;
+        return index;
     }
 
     private int getMinPixel(IntList pixels) {
-        short xMin = Short.MAX_VALUE;
-        short yMin = Short.MAX_VALUE;
-        for(int i = 0; i < pixels.size(); i++) {
-            int pixelInt = pixels.get(i);
-            short pixelX = (short) (pixelInt >> 16);
-            short pixelY = (short) (pixelInt & 0xFFFF);
+        int xMin = Integer.MAX_VALUE;
+        int yMin = Integer.MAX_VALUE;
+        for(int i = 0; i < pixels.size(); i += 2) {
+            int pixelX = pixels.get(i);
+            int pixelY = pixels.get(i + 1);
 
             if(pixelX < xMin) {
                 xMin = pixelX;
@@ -156,12 +162,11 @@ public class MapLabel {
     }
 
     private int getMaxPixel(IntList pixels) {
-        short xMax = 0;
-        short yMax = 0;
-        for(int i = 0; i < pixels.size(); i++) {
-            int pixelInt = pixels.get(i);
-            short pixelX = (short) (pixelInt >> 16);
-            short pixelY = (short) (pixelInt & 0xFFFF);
+        int xMax = 0;
+        int yMax = 0;
+        for(int i = 0; i < pixels.size(); i += 2) {
+            int pixelX = pixels.get(i);
+            int pixelY = pixels.get(i + 1);
 
             if(pixelX > xMax) {
                 xMax = pixelX;
@@ -175,31 +180,31 @@ public class MapLabel {
     }
 
     private int getCentroid(IntList convexHull, IntList positionsProvinces) {
-        int centerX = 0;
-        int centerY = 0;
+        long centerX = 0;
+        long centerY = 0;
 
-        for (int i = 0; i < convexHull.size(); i++) {
-            int pixelInt = convexHull.get(i);
-            centerX += (short) (pixelInt >> 16);
-            centerY += (short) (pixelInt & 0xFFFF);
+        for (int i = 0; i < convexHull.size(); i += 2) {
+            centerX += convexHull.get(i);
+            centerY += convexHull.get(i + 1);
         }
 
-        centerX /= convexHull.size();
-        centerY /= convexHull.size();
+        if (convexHull.size() > 0) {
+            centerX /= (convexHull.size() / 2);
+            centerY /= (convexHull.size() / 2);
+        }
 
         int closestPosition = -1;
-        int minDistanceSquared = Integer.MAX_VALUE;
+        long minDistanceSquared = Long.MAX_VALUE;
 
-        for (int i = 0; i < positionsProvinces.size(); i++) {
-            int positionInt = positionsProvinces.get(i);
-            int px = (short) (positionInt >> 16);
-            int py = (short) (positionInt & 0xFFFF);
+        for (int i = 0; i < positionsProvinces.size(); i += 2) {
+            int px = positionsProvinces.get(i);
+            int py = positionsProvinces.get(i + 1);
 
-            int distanceSquared = (px - centerX) * (px - centerX) + (py - centerY) * (py - centerY);
+            long distanceSquared = (px - centerX) * (px - centerX) + (py - centerY) * (py - centerY);
 
             if (distanceSquared < minDistanceSquared) {
                 minDistanceSquared = distanceSquared;
-                closestPosition = positionInt;
+                closestPosition = (px << 16) | (py & 0xFFFF);
             }
         }
 
@@ -211,22 +216,20 @@ public class MapLabel {
         int farthestPoint1 = -1;
         int farthestPoint2 = -1;
 
-        for (int i = 0; i < pixels.size(); i++) {
-            for (int j = i + 1; j < pixels.size(); j++) {
-                int pixelInt1 = pixels.get(i);
-                short pixelX1 = (short) (pixelInt1 >> 16);
-                short pixelY1 = (short) (pixelInt1 & 0xFFFF);
+        for (int i = 0; i < pixels.size(); i += 2) {
+            int pixelX1 = pixels.get(i);
+            int pixelY1 = pixels.get(i + 1);
 
-                int pixelInt2 = pixels.get(j);
-                short pixelX2 = (short) (pixelInt2 >> 16);
-                short pixelY2 = (short) (pixelInt2 & 0xFFFF);
+            for (int j = i + 2; j < pixels.size(); j += 2) {
+                int pixelX2 = pixels.get(j);
+                int pixelY2 = pixels.get(j + 1);
 
                 double distance = Math.sqrt(Math.pow(pixelX2 - pixelX1, 2) + Math.pow(pixelY2 - pixelY1, 2));
 
                 if (distance > maxDistance) {
                     maxDistance = distance;
-                    farthestPoint1 = pixelInt1;
-                    farthestPoint2 = pixelInt2;
+                    farthestPoint1 = (pixelX1 << 16) | (pixelY1 & 0xFFFF);
+                    farthestPoint2 = (pixelX2 << 16) | (pixelY2 & 0xFFFF);
                 }
             }
         }
