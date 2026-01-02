@@ -65,7 +65,7 @@ public class EconomyService {
         return null;
     }
 
-    public float getResourceGoodsProduction(short provinceId) {
+    public float getResourceGoodsProduction(int provinceId) {
         int provinceIndex = this.worldContext.getProvinceStore().getIndexById().get(provinceId);
         return this.worldContext.getProvinceStore().getResourceGoodsProduction().get(provinceIndex);
     }
