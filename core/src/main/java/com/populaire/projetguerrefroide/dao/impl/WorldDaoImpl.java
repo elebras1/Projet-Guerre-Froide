@@ -888,7 +888,6 @@ public class WorldDaoImpl implements WorldDao {
             JsonValue provinceValues = this.parseJsonFile(provincePath);
 
             long provinceEntityId = ecsWorld.entity(String.valueOf(provinceId));
-            System.out.println("Loading province " + provinceId);
             Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
 
             JsonValue addCoreValue = provinceValues.get("add_core");
@@ -1148,8 +1147,7 @@ public class WorldDaoImpl implements WorldDao {
             Entity country = ecsWorld.obtainEntity(ecsWorld.lookup(idCountry));
 
             JsonValue countryValues = this.parseJsonFile(countryFileName);
-            long capital = countryValues.get("capital").asLong();
-
+            short capital = (short) countryValues.get("capital").asLong();
             long capitalId = ecsWorld.lookup(String.valueOf(capital));
             country.addRelation(ecsConstants.hasCapital(), capitalId);
             String government = countryValues.get("government").asString();
@@ -1219,7 +1217,6 @@ public class WorldDaoImpl implements WorldDao {
             while (adjenciesEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = adjenciesEntryIterator.next();
                 short provinceId = Short.parseShort(entry.getKey());
-                System.out.println("Adjacencies, province : " + provinceId);
                 long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
                 Iterator<JsonValue> adjacenciesIterator = entry.getValue().arrayIterator();
@@ -1244,7 +1241,6 @@ public class WorldDaoImpl implements WorldDao {
                 Map.Entry<String, JsonValue> entry = positionsEntryIterator.next();
                 short provinceId = Short.parseShort(entry.getKey());
                 long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
-                System.out.println("Position, province " + provinceId);
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
                 provinceEntity.add(ecsConstants.positionElementTag());
                 Iterator<Map.Entry<String, JsonValue>> positionIterator = entry.getValue().objectIterator();
