@@ -94,7 +94,6 @@ public class WorldDaoImpl implements WorldDao {
         Borders borders = new Borders();
         ProvinceStore provinceStore = this.loadProvinces(ecsWorld, ecsConstants, regionStoreBuilder, provinces, goodIds, buildingIds, populationTypeIds, borders);
         RegionStore regionStore = regionStoreBuilder.build();
-        System.out.println("provinces size " + provinces.size());
 
         return new WorldManager(provinces, provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, borders, gameContext);
     }
@@ -890,6 +889,7 @@ public class WorldDaoImpl implements WorldDao {
 
             long provinceEntityId = ecsWorld.entity(String.valueOf(provinceId));
             Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+            provinceEntity.add(ecsConstants.landProvinceTag());
 
             JsonValue addCoreValue = provinceValues.get("add_core");
             if (addCoreValue.isArray()) {
@@ -1011,9 +1011,8 @@ public class WorldDaoImpl implements WorldDao {
                 while (regionIterator.hasNext()) {
                     short provinceId = (short) regionIterator.next().asLong();
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
-                    if(provinceEntityId != -1) {
-                        Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                        provinceEntity.add(ecsConstants.landProvinceTag());
+                    Entity provinceEntity = provinceEntityId != -1 ? ecsWorld.obtainEntity(provinceEntityId) : null;
+                    if(provinceEntityId != -1 && provinceEntity.has(ecsConstants.landProvinceTag())) {
                         provinceEntity.addRelation(ecsConstants.locatedInRegion(), regionEntityId);
                         IntIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
@@ -1025,7 +1024,7 @@ public class WorldDaoImpl implements WorldDao {
                         }
                     } else {
                         provinceEntityId = ecsWorld.entity(String.valueOf(provinceId));
-                        Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+                        provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
                         provinceEntity.add(ecsConstants.seaProvinceTag());
                     }
                 }
@@ -1057,9 +1056,6 @@ public class WorldDaoImpl implements WorldDao {
                         provinces.put(color, provinceEntityId);
                         int provinceIndex = provinceStore.getIndexById().get(provinceId);
                         provinceStore.getColors().set(provinceIndex, color);
-                        System.out.println("Land province found in definition.csv: " + provinceId);
-                    } else {
-                        System.out.println("Sea province found in definition.csv: " + provinceId);
                     }
                 }
             }

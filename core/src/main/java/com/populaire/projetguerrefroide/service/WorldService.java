@@ -16,6 +16,7 @@ import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.screen.DateListener;
 import com.populaire.projetguerrefroide.ui.view.SortType;
 import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -110,24 +111,27 @@ public class WorldService implements DateListener {
     }
 
     public CountrySummaryDto prepareCountrySummaryDto(Map<String, String> localisation) {
-        /*World ecsWorld = this.gameContext.getEcsWorld();
-        Country selectedCountry = this.worldManager.getSelectedProvinceId().getCountryOwner();
-        Minister headOfState = this.getHeadOfState(selectedCountry);
+        World ecsWorld = this.gameContext.getEcsWorld();
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+        long selectedCountryId = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId()).target(ecsConstants.ownedBy());
+        Entity selectedCountry = ecsWorld.obtainEntity(selectedCountryId);
+        Minister headOfState = this.getHeadOfState(selectedCountryId);
         String portraitNameFile = "admin_type";
         if(headOfState.imageFileName() != null) {
             portraitNameFile = headOfState.imageFileName();
         }
-        String population = ValueFormatter.formatValue(this.worldManager.getPopulationAmount(selectedCountry), localisation);
-        List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry);
-        String government = ecsWorld.obtainEntity(selectedCountry.getGovernmentId()).getName();
+        String population = ValueFormatter.formatValue(this.worldManager.getPopulationAmountOfCountry(selectedCountryId), localisation);
+        List<String> allies = this.getAlliesOfSelectedCountry(selectedCountryId);
+        String government = ecsWorld.obtainEntity(selectedCountry.target(ecsConstants.hasGovernment())).getName();
 
-        return new CountrySummaryDto(selectedCountry.getId(), population, government, portraitNameFile, headOfState.name(), this.worldManager.getColonizerId(selectedCountry), allies);*/
-        return null;
+        return new CountrySummaryDto(selectedCountry.getName(), population, government, portraitNameFile, headOfState.name(), this.worldManager.getColonizerId(selectedCountryId), allies);
     }
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {
-        /*Country selectedCountry = this.worldManager.getSelectedProvinceId().getCountryOwner();
-        String population = ValueFormatter.formatValue(this.worldManager.getPopulationAmount(selectedCountry), localisation);
+        World ecsWorld = this.gameContext.getEcsWorld();
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+        long selectedCountryId = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId()).target(ecsConstants.ownedBy());
+        String population = ValueFormatter.formatValue(this.worldManager.getPopulationAmountOfCountry(selectedCountryId), localisation);
         int manpower = 0;
         String grossDomesticProduct = ValueFormatter.formatValue(0, localisation);
         int money = 0;
@@ -138,8 +142,7 @@ public class WorldService implements DateListener {
         String dissent = ValueFormatter.formatValue(0, localisation);
         String nationalUnity = ValueFormatter.formatValue(0, localisation);
 
-        return new CountryDto(population, manpower, grossDomesticProduct, money, supplies, fuel, diplomaticInfluence, uranium, dissent, nationalUnity);*/
-        return null;
+        return new CountryDto(population, manpower, grossDomesticProduct, money, supplies, fuel, diplomaticInfluence, uranium, dissent, nationalUnity);
     }
 
     public ProvinceDto prepareProvinceDto(Map<String, String> localisation) {
@@ -478,22 +481,23 @@ public class WorldService implements DateListener {
     }
 
     private Minister getHeadOfState(long countryId) {
-        Minister headOfState = null;
-        /*World ecsWorld = this.gameContext.getEcsWorld();
-        if(country.getHeadOfStateId() != -1) {
-            Entity entityMinister = ecsWorld.obtainEntity(country.getHeadOfStateId());
-            headOfState = entityMinister.get(Minister.class);
+        World ecsWorld = this.gameContext.getEcsWorld();
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+
+        Entity country = ecsWorld.obtainEntity(countryId);
+        long headOfStateId = country.target(ecsConstants.headOfState());
+
+        long countryColonizerId = country.target(ecsConstants.isColonyOf());
+        if(countryColonizerId != 0) {
+            Entity colonizerCountry = ecsWorld.obtainEntity(countryColonizerId);
+            headOfStateId = colonizerCountry.target(ecsConstants.headOfState());
         }
 
-        if(country.getAlliances() != null) {
-            for (Map.Entry<Country, AllianceType> alliance : country.getAlliances().entrySet()) {
-                if (alliance.getValue() == AllianceType.COLONY) {
-                    Entity entityMinister = ecsWorld.obtainEntity(alliance.getKey().getHeadOfStateId());
-                    headOfState = entityMinister.get(Minister.class);
-
-                }
-            }
-        }*/
+        Minister headOfState = null;
+        if(headOfStateId != 0) {
+            Entity entityMinister = ecsWorld.obtainEntity(headOfStateId);
+            headOfState = entityMinister.get(Minister.class);
+        }
 
         return headOfState;
     }

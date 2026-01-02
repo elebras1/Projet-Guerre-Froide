@@ -232,6 +232,7 @@ public class WorldManager implements WorldContext, Disposable {
             float a = (color & 0xFF) / 255f;
             this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(r, g, b, a));
         } else {
+            this.selectedProvinceId = -1;
             this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(0f, 0f, 0f, 0f));
         }
         this.uniformBufferWorld.flush();
