@@ -451,7 +451,7 @@ public class WorldService implements DateListener {
         }
     }
 
-    private List<String> getAlliesOfSelectedCountry(Country country) {
+    private List<String> getAlliesOfSelectedCountry(long countryId) {
         List<String> allies = new ObjectList<>();
         /*if(country.getAlliances() == null) {
             return allies;
@@ -465,7 +465,7 @@ public class WorldService implements DateListener {
         return allies;
     }
 
-    private Minister getHeadOfState(Country country) {
+    private Minister getHeadOfState(long countryId) {
         Minister headOfState = null;
         /*World ecsWorld = this.gameContext.getEcsWorld();
         if(country.getHeadOfStateId() != -1) {

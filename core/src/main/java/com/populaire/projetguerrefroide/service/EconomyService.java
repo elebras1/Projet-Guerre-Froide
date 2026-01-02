@@ -70,7 +70,7 @@ public class EconomyService {
         return this.worldContext.getProvinceStore().getResourceGoodsProduction().get(provinceIndex);
     }
 
-    private IntList getPopulationsAmount(List<Country> countries, RegionStore regionStore, ProvinceStore provinceStore) {
+    private IntList getPopulationsAmount(RegionStore regionStore, ProvinceStore provinceStore) {
         IntList populationsAmount = new IntList();
         /*populationsAmount.setSize(this.worldContext.getRegionStore().getRegionIds().size());
         for(Country country : countries) {
@@ -88,7 +88,7 @@ public class EconomyService {
         return populationsAmount;
     }
 
-    private IntList getWorkersAmount(List<Country> countries, RegionStore regionStore, ProvinceStore provinceStore) {
+    private IntList getWorkersAmount(RegionStore regionStore, ProvinceStore provinceStore) {
         IntList workersAmount = new IntList(regionStore.getRegionIds().size());
         /*workersAmount.setSize(regionStore.getRegionIds().size());
         for(Country country : countries) {

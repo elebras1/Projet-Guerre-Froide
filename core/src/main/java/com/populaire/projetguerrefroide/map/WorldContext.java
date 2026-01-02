@@ -15,6 +15,5 @@ public interface WorldContext {
     GoodStore getGoodStore();
     ProductionTypeStore getProductionTypeStore();
     EmployeeStore getEmployeeStore();
-    List<Country> getCountries();
 
 }

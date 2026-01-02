@@ -34,6 +34,12 @@ public class EcsConstants {
     private static final String COLONIZES = "Colonizes";
     private static final String IS_COLONY_OF = "IsColonyOf";
     private static final String HAS_CAPITAL = "HasCapital";
+    private static final String HAS_GOVERNMENT = "HasGovernment";
+    private static final String HAS_IDENTITY = "HasIdentity";
+    private static final String HAS_ATTITUDE = "HasAttitude";
+    private static final String HAS_IDEOLOGY = "HasIdeology";
+    public static final String HEAD_OF_STATE = "HeadOfState";
+    public static final String HEAD_OF_GOVERNMENT = "HeadOfGovernment";
 
     private long alignedWith = -1;
     private long locatedInRegion = -1;
@@ -65,6 +71,12 @@ public class EcsConstants {
     private long colonizes = -1;
     private long isColonyOf = -1;
     private long hasCapital = -1;
+    private long hasGovernment = -1;
+    private long hasIdentity = -1;
+    private long hasAttitude = -1;
+    private long hasIdeology = -1;
+    private long headOfState = -1;
+    private long headOfGovernment = -1;
 
     private final World ecsWorld;
 
@@ -316,6 +328,54 @@ public class EcsConstants {
         }
 
         return this.hasCapital;
+    }
+
+    public long hasGovernment() {
+        if(this.hasGovernment == -1) {
+            this.hasGovernment = this.ecsWorld.entity(HAS_GOVERNMENT);
+        }
+
+        return this.hasGovernment;
+    }
+
+    public long hasIdentity() {
+        if(this.hasIdentity == -1) {
+            this.hasIdentity = this.ecsWorld.entity(HAS_IDENTITY);
+        }
+
+        return this.hasIdentity;
+    }
+
+    public long hasAttitude() {
+        if(this.hasAttitude == -1) {
+            this.hasAttitude = this.ecsWorld.entity(HAS_ATTITUDE);
+        }
+
+        return this.hasAttitude;
+    }
+
+    public long hasIdeology() {
+        if(this.hasIdeology == -1) {
+            this.hasIdeology = this.ecsWorld.entity(HAS_IDEOLOGY);
+        }
+
+        return this.hasIdeology;
+    }
+
+    public long headOfState() {
+        if(this.headOfState == -1) {
+            this.headOfState = this.ecsWorld.entity(HEAD_OF_STATE);
+        }
+
+        return this.headOfState;
+    }
+
+    public long headOfGovernment() {
+        if(this.headOfGovernment == -1) {
+            this.headOfGovernment = this.ecsWorld.entity(HEAD_OF_GOVERNMENT);
+        }
+
+        return this.headOfGovernment;
     }
 
     public long getAllianceRelation(String type, boolean isFirstCountry) {
