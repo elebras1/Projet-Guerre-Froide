@@ -252,10 +252,9 @@ public class WorldManager implements WorldContext, Disposable {
 
     public boolean setCountryPlayer() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        long ownedBy = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
         if(this.selectedProvinceId != 0) {
             Entity selectedProvinceEntity = ecsWorld.obtainEntity(this.selectedProvinceId);
-            this.playerCountryId = selectedProvinceEntity.target(ownedBy);
+            this.playerCountryId = selectedProvinceEntity.target(this.gameContext.getEcsConstants().ownedBy());
             return true;
         }
 
@@ -279,12 +278,11 @@ public class WorldManager implements WorldContext, Disposable {
 
     public int getPopulationAmountOfCountry(long countryEntityId) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
-        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
 
         int population = 0;
 
-        try (Query provinceQuery = ecsWorld.query().with(landProvinceTagId).with(ownedById, countryEntityId).build()) {
+        try (Query provinceQuery = ecsWorld.query().with(ecsConstants.landProvinceTag()).with(ecsConstants.ownedBy(), countryEntityId).build()) {
             for (long provinceEntityId : provinceQuery.entities()) {
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
                 int provinceId = Integer.parseInt(provinceEntity.getName());
@@ -299,9 +297,9 @@ public class WorldManager implements WorldContext, Disposable {
 
     public String getColonizerId(long countryId) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        long isColonyOfId = ecsWorld.lookup(EcsConstants.EcsIsColonyOf);
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         Entity country = ecsWorld.obtainEntity(countryId);
-        long countryColonizerId = country.target(isColonyOfId);
+        long countryColonizerId = country.target(ecsConstants.isColonyOf());
         if(countryColonizerId != 0) {
             Entity colony = ecsWorld.obtainEntity(countryColonizerId);
             return colony.getName();
@@ -340,8 +338,7 @@ public class WorldManager implements WorldContext, Disposable {
 
     private void updatePixmapCountriesColor() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
-        long isColonyOfId = ecsWorld.lookup(EcsConstants.EcsIsColonyOf);
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
@@ -351,11 +348,11 @@ public class WorldManager implements WorldContext, Disposable {
             long provinceEntityId = this.provinces.get(color);
             Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
 
-            long countryEntityId = provinceEntity.target(ownedById);
+            long countryEntityId = provinceEntity.target(ecsConstants.ownedBy());
             Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
             Color countryColor = countryEntity.get(Color.class);
 
-            long countryColonizerId = countryEntity.target(isColonyOfId);
+            long countryColonizerId = countryEntity.target(ecsConstants.isColonyOf());
             if(countryColonizerId != 0) {
                 Entity colonyEntity = ecsWorld.obtainEntity(countryColonizerId);
                 countryColor = colonyEntity.get(Color.class);
@@ -367,8 +364,7 @@ public class WorldManager implements WorldContext, Disposable {
     }
 
     private void updatePixmapIdeologiesColor(World ecsWorld) {
-        long alignedWithId = ecsWorld.lookup(EcsConstants.EcsAlignedWith);
-        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
@@ -377,9 +373,9 @@ public class WorldManager implements WorldContext, Disposable {
             long provinceEntityId = this.provinces.get(color);
             if(provinceEntityId != -1) {
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                long countryOwnerId = provinceEntity.target(ownedById);
+                long countryOwnerId = provinceEntity.target(ecsConstants.ownedBy());
                 Entity countryOwnerEntity = ecsWorld.obtainEntity(countryOwnerId);
-                long ideologyId = countryOwnerEntity.target(alignedWithId);
+                long ideologyId = countryOwnerEntity.target(ecsConstants.alignedWith());
                 Entity ideologyEntity = ecsWorld.obtainEntity(ideologyId);
                 Ideology ideology = ideologyEntity.get(Ideology.class);
                 this.mapModePixmap.drawPixel(red, green, ideology.color());
@@ -454,14 +450,13 @@ public class WorldManager implements WorldContext, Disposable {
 
     private void updatePixmapRegionColor() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        long locatedInRegionId = ecsWorld.lookup(EcsConstants.EcsLocatedInRegion);
-        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
-        try(Query query = ecsWorld.query().with(landProvinceTagId).with(Color.class).build()) {
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+        try(Query query = ecsWorld.query().with(ecsConstants.landProvinceTag()).with(Color.class).build()) {
             query.iter(iter -> {
                 for(int i = 0; i < iter.count(); i++) {
                     long landProvinceId = iter.entity(i);
                     Entity landProvinceEntity = ecsWorld.obtainEntity(landProvinceId);
-                    long regionId = landProvinceEntity.target(locatedInRegionId);
+                    long regionId = landProvinceEntity.target(ecsConstants.locatedInRegion());
                     Entity regionEntity = ecsWorld.obtainEntity(regionId);
                     int color = iter.fieldInt(Color.class, 1, "value", i);
                     int red = (color >> 24) & 0xFF;
@@ -483,7 +478,6 @@ public class WorldManager implements WorldContext, Disposable {
     }
 
     private void updatePixmapTerrain2Color(World ecsWorld) {
-        long hasTerrainId = ecsWorld.lookup(EcsConstants.EcsHasTerrain);
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
@@ -492,7 +486,7 @@ public class WorldManager implements WorldContext, Disposable {
             long provinceEntityId = this.provinces.get(color);
             if(provinceEntityId != -1) {
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                long terrainId = provinceEntity.target(hasTerrainId);
+                long terrainId = provinceEntity.target(this.gameContext.getEcsConstants().hasTerrain());
                 Entity terrainEntity = ecsWorld.obtainEntity(terrainId);
                 Terrain terrain = terrainEntity.get(Terrain.class);
                 this.mapModePixmap.drawPixel(red, green, terrain.color());
@@ -520,12 +514,11 @@ public class WorldManager implements WorldContext, Disposable {
 
     private void updatePixmapRelationsColor() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
-        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
 
         Entity playerCountryEntity = ecsWorld.obtainEntity(this.playerCountryId);
 
-        try(Query query = ecsWorld.query().with(landProvinceTagId).with(Color.class).build()) {
+        try(Query query = ecsWorld.query().with(ecsConstants.landProvinceTag()).with(Color.class).build()) {
             query.iter(iter -> {
                 for(int i = 0; i < iter.count(); i++) {
                     long landProvinceId = iter.entity(i);
@@ -534,7 +527,7 @@ public class WorldManager implements WorldContext, Disposable {
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
 
-                    long countryOwnerId = landProvinceEntity.target(ownedById);
+                    long countryOwnerId = landProvinceEntity.target(ecsConstants.ownedBy());
                     if(this.playerCountryId == countryOwnerId) {
                         this.mapModePixmap.drawPixel(red, green, ColorGenerator.getLightBlueRGBA());
                     } else if (countryOwnerId != 0) {
@@ -555,16 +548,14 @@ public class WorldManager implements WorldContext, Disposable {
     private Pixmap createProvincesColorStripesPixmap() {
         Pixmap pixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
         World ecsWorld = this.gameContext.getEcsWorld();
-        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
-        long controlledById = ecsWorld.lookup(EcsConstants.EcsControlledBy);
-        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
-        try(Query query = ecsWorld.query().with(landProvinceTagId).with(Color.class).build()) {
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+        try(Query query = ecsWorld.query().with(ecsConstants.landProvinceTag()).with(Color.class).build()) {
             query.iter(iter -> {
                 for(int i = 0; i < iter.count(); i++) {
                     long landProvinceId = iter.entity(i);
                     Entity landProvinceEntity = ecsWorld.obtainEntity(landProvinceId);
-                    long countryOwnerId = landProvinceEntity.target(ownedById);
-                    long countryControllerId = landProvinceEntity.target(controlledById);
+                    long countryOwnerId = landProvinceEntity.target(ecsConstants.ownedBy());
+                    long countryControllerId = landProvinceEntity.target(ecsConstants.controlledBy());
                     if(countryOwnerId == countryControllerId) {
                         continue;
                     }
@@ -583,15 +574,13 @@ public class WorldManager implements WorldContext, Disposable {
 
     private void updateBordersProvincesPixmap() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
-        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
-        long locatedInRegionId = ecsWorld.lookup(EcsConstants.EcsLocatedInRegion);
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         int[] xyBorders = this.borders.getPixels();
-        try(Query landProvinceQuery = ecsWorld.query().with(landProvinceTagId).build()) {
+        try(Query landProvinceQuery = ecsWorld.query().with(ecsConstants.landProvinceTag()).build()) {
             landProvinceQuery.each(landProvinceId -> {
                 Entity landProvince = ecsWorld.obtainEntity(landProvinceId);
                 Border border = landProvince.get(Border.class);
-                for(int i = border.startIndex(); i <= border.endIndex(); i = i + 2) {
+                for(int i = border.startIndex(); i < border.endIndex(); i = i + 2) {
                     int x = xyBorders[i];
                     int y = xyBorders[i + 1];
 
@@ -600,9 +589,9 @@ public class WorldManager implements WorldContext, Disposable {
                     int green = (color >> 16) & 0xFF;
                     int blue = (color >> 8) & 0xFF;
 
-                    long countryId = landProvince.target(ownedById);
-                    long regionId = landProvince.target(locatedInRegionId);
-                    color = (red << 24) | (green << 16) | (blue << 8) | this.getBorderType(ecsWorld, x, y, countryId, regionId, ownedById, locatedInRegionId);
+                    long countryId = landProvince.target(ecsConstants.ownedBy());
+                    long regionId = landProvince.target(ecsConstants.locatedInRegion());
+                    color = (red << 24) | (green << 16) | (blue << 8) | this.getBorderType(ecsWorld, x, y, countryId, regionId, ecsConstants.ownedBy(), ecsConstants.locatedInRegion());
                     this.provincesPixmap.drawPixel(x, y, color);
                 }
             });
@@ -708,16 +697,17 @@ public class WorldManager implements WorldContext, Disposable {
 
     private WgMesh generateMeshMapLabels(VertexAttributes vertexAttributes, Map<String, String> localisation, LabelStylePool labelStylePool) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        long countryTagId = ecsWorld.lookup(EcsConstants.EcsCountryTag);
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         MapLabel mapLabel = new MapLabel(labelStylePool.getLabelStyle("kart_60").font);
         FloatList vertices = new FloatList();
         ShortList indices = new ShortList();
-        try(Query query = ecsWorld.query().with(countryTagId).build()) {
+        try(Query query = ecsWorld.query().with(ecsConstants.countryTag()).build()) {
             query.each(countryId -> {
                 Entity country = ecsWorld.obtainEntity(countryId);
                 String countryNameId = country.getName();
                 this.getLabelsData(
                     ecsWorld,
+                    ecsConstants,
                     countryId,
                     countryNameId,
                     LocalisationUtils.getCountryNameLocalisation(localisation, countryNameId, this.getColonizerId(country.id())),
@@ -736,13 +726,11 @@ public class WorldManager implements WorldContext, Disposable {
         return mesh;
     }
 
-    private void getLabelsData(World ecsWorld, long countryId, String countryNameId, String countryName, MapLabel mapLabel, FloatList vertices, ShortList indices, Borders borders) {
+    private void getLabelsData(World ecsWorld, EcsConstants ecsConstants, long countryId, String countryNameId, String countryName, MapLabel mapLabel, FloatList vertices, ShortList indices, Borders borders) {
         LongSet visitedProvinces = new LongSet();
-        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
         com.github.elebras1.flecs.collection.LongList provinceIds;
-        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
 
-        try(Query query = ecsWorld.query().with(ownedById, countryId).with(landProvinceTagId).build()) {
+        try(Query query = ecsWorld.query().with(ecsConstants.ownedBy(), countryId).with(ecsConstants.landProvinceTag()).build()) {
             provinceIds = query.entities();
         }
 
@@ -750,7 +738,7 @@ public class WorldManager implements WorldContext, Disposable {
             long provinceId = provinceIds.get(i);
             if (!visitedProvinces.contains(provinceId)) {
                 LongList connectedProvinces = new LongList();
-                this.getConnectedProvinces(ecsWorld, countryNameId, provinceId, visitedProvinces, connectedProvinces);
+                this.getConnectedProvinces(ecsWorld, ecsConstants, countryNameId, provinceId, visitedProvinces, connectedProvinces);
                 if(connectedProvinces.size() > 5 || (connectedProvinces.size() == provinceIds.size() && !connectedProvinces.isEmpty())) {
                     IntList positionsProvinces = new IntList();
                     IntList pixelsBorderProvinces = new IntList();
@@ -771,11 +759,7 @@ public class WorldManager implements WorldContext, Disposable {
         }
     }
 
-    private void getConnectedProvinces(World ecsWorld, String countryNameId, long startProvinceId, LongSet visitedProvinceIds, LongList connectedProvinceIds) {
-        long adjacentToId = ecsWorld.lookup(EcsConstants.EcsAdjacentTo);
-        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
-        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
-
+    private void getConnectedProvinces(World ecsWorld, EcsConstants ecsConstants, String countryNameId, long startProvinceId, LongSet visitedProvinceIds, LongList connectedProvinceIds) {
         LongList toProcess = new LongList();
         toProcess.add(startProvinceId);
 
@@ -785,10 +769,10 @@ public class WorldManager implements WorldContext, Disposable {
         while (!toProcess.isEmpty()) {
             long currentId = toProcess.pop();
 
-            try (Query query = ecsWorld.query().with(adjacentToId, currentId).with(landProvinceTagId).build()) {
+            try (Query query = ecsWorld.query().with(ecsConstants.adjacentTo(), currentId).with(ecsConstants.landProvinceTag()).build()) {
                 query.each(adjacentId -> {
                     Entity adjacentIdx = ecsWorld.obtainEntity(adjacentId);
-                    long ownerEntityId = adjacentIdx.target(ownedById);
+                    long ownerEntityId = adjacentIdx.target(ecsConstants.ownedBy());
 
                     if (ownerEntityId != 0 && ecsWorld.obtainEntity(ownerEntityId).getName().equals(countryNameId)) {
                         if (!visitedProvinceIds.contains(adjacentId)) {
@@ -804,10 +788,7 @@ public class WorldManager implements WorldContext, Disposable {
 
     private WgMesh generateMeshBuildings(VertexAttributes vertexAttributes) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        long landProvinceTagId = ecsWorld.lookup(EcsConstants.EcsLandProvinceTag);
-        long ownedById = ecsWorld.lookup(EcsConstants.EcsOwnedBy);
-        long countryTagId = ecsWorld.lookup(EcsConstants.EcsCountryTag);
-        long hasCapitalId = ecsWorld.lookup(EcsConstants.EcsHasCapital);
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
 
         MutableInt numBuildings = new MutableInt(0);
 
@@ -818,15 +799,15 @@ public class WorldManager implements WorldContext, Disposable {
         BooleanList buildingOnMap = this.buildingStore.getOnMap();
         List<String> buildingNames = this.buildingStore.getNames();
 
-        try (Query countryQuery = ecsWorld.query().with(countryTagId).build()) {
+        try (Query countryQuery = ecsWorld.query().with(ecsConstants.countryTag()).build()) {
             countryQuery.each(countryEntityId -> {
                 Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
-                long capitalTarget = countryEntity.target(hasCapitalId);
+                long capitalTarget = countryEntity.target(ecsConstants.hasCapital());
                 final boolean[] hadProvince = {false};
 
                 try (Query provinceQuery = ecsWorld.query()
-                    .with(landProvinceTagId)
-                    .with(ownedById, countryEntityId)
+                    .with(ecsConstants.landProvinceTag())
+                    .with(ecsConstants.ownedBy(), countryEntityId)
                     .build()) {
 
                     provinceQuery.each(provinceEntityId -> {
@@ -866,15 +847,15 @@ public class WorldManager implements WorldContext, Disposable {
 
         TextureRegion capitalRegion = this.mapElementsTextureAtlas.findRegion("building_capital");
 
-        try (Query countryQuery = ecsWorld.query().with(countryTagId).build()) {
+        try (Query countryQuery = ecsWorld.query().with(ecsConstants.countryTag()).build()) {
             countryQuery.each(countryEntityId -> {
                 Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
-                long capitalTarget = countryEntity.target(hasCapitalId);
+                long capitalTarget = countryEntity.target(ecsConstants.hasCapital());
                 final boolean[] hadProvince = {false};
 
                 try (Query provinceQuery = ecsWorld.query()
-                    .with(landProvinceTagId)
-                    .with(ownedById, countryEntityId)
+                    .with(ecsConstants.landProvinceTag())
+                    .with(ecsConstants.ownedBy(), countryEntityId)
                     .build()) {
 
                     provinceQuery.each(provinceEntityId -> {

@@ -7,11 +7,13 @@ import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.entity.Bookmark;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import java.util.Map;
 
 public class GameContext implements Disposable {
     private final World ecsWorld;
+    private final EcsConstants ecsConstants;
     private final Bookmark bookmark;
     private final AssetManager assetManager;
     private final CursorManager cursorManager;
@@ -21,6 +23,7 @@ public class GameContext implements Disposable {
 
     public GameContext(World ecsWorld, Bookmark bookmark, AssetManager assetManager, CursorManager cursorManager, Settings settings, LabelStylePool labelStylePool) {
         this.ecsWorld = ecsWorld;
+        this.ecsConstants = new EcsConstants(this.ecsWorld);
         this.bookmark = bookmark;
         this.assetManager = assetManager;
         this.cursorManager = cursorManager;
@@ -31,6 +34,10 @@ public class GameContext implements Disposable {
 
     public World getEcsWorld() {
         return this.ecsWorld;
+    }
+
+    public EcsConstants getEcsConstants() {
+        return this.ecsConstants;
     }
 
     public Bookmark getBookmark() {
