@@ -209,7 +209,7 @@ public class WorldManager implements WorldContext, Disposable {
         return this.playerCountryId;
     }
 
-    public long getProvince(int x, int y) {
+    public long getLandProvinceId(int x, int y) {
         x = (x + WORLD_WIDTH) % WORLD_WIDTH;
 
         int provinceColor = this.provincesPixmap.getPixel(x, y);
@@ -220,7 +220,7 @@ public class WorldManager implements WorldContext, Disposable {
 
     public boolean selectProvince(int x, int y) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        this.selectedProvinceId = this.getProvince(x, y);
+        this.selectedProvinceId = this.getLandProvinceId(x, y);
         if(this.selectedProvinceId != 0) {
             Entity selectedProvinceEntity = ecsWorld.obtainEntity(this.selectedProvinceId);
             int provinceNameId = Integer.parseInt(selectedProvinceEntity.getName());
@@ -647,13 +647,13 @@ public class WorldManager implements WorldContext, Disposable {
     }
 
     private short getBorderType(World ecsWorld, int x, int y, long countryId, long regionId, long countryRelationId, long regionRelationId) {
-        long provinceRightId = this.getProvince((x + 1), y);
+        long provinceRightId = this.getLandProvinceId((x + 1), y);
         Entity provinceRight = ecsWorld.obtainEntity(provinceRightId);
-        long provinceLeftId = this.getProvince((x - 1), y);
+        long provinceLeftId = this.getLandProvinceId((x - 1), y);
         Entity provinceLeft = ecsWorld.obtainEntity(provinceLeftId);
-        long provinceUpId = this.getProvince(x, (y + 1));
+        long provinceUpId = this.getLandProvinceId(x, (y + 1));
         Entity provinceUp = ecsWorld.obtainEntity(provinceUpId);
-        long provinceDownId = this.getProvince(x, (y - 1));
+        long provinceDownId = this.getLandProvinceId(x, (y - 1));
         Entity provinceDown = ecsWorld.obtainEntity(provinceDownId);
 
         // 0: water, nothing or province border, 153: country border, 77: region border

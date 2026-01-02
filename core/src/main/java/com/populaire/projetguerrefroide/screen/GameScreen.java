@@ -18,6 +18,7 @@ import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
+import com.populaire.projetguerrefroide.component.Position;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
@@ -75,10 +76,8 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.dateService.addListener(this);
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.projection = new WgProjection();
-        int capitalPosition = this.worldService.getPositionOfCapitalOfSelectedCountry();
-        short capitalX = (short) (capitalPosition >> 16);
-        short capitalY = (short) (capitalPosition & 0xFFFF);
-        this.cam.position.set(capitalX, capitalY, 0);
+        Position capitalPosition = this.worldService.getPositionOfCapitalOfSelectedCountry();
+        this.cam.position.set(capitalPosition.x(), capitalPosition.y(), 0);
         this.cam.update();
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
@@ -187,7 +186,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
     @Override
     public void onHover(short x, short y) {
-        if(this.worldService.hoverProvince(x, y) && this.isMouseOverUI()) {
+        if(this.worldService.hoverLandProvince(x, y) && this.isMouseOverUI()) {
             if(this.worldService.getMapMode().equals(MapMode.CULTURAL)) {
                 this.updateHoverTooltip(this.worldService.getProvinceId(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y), this.worldService.getCulturesOfHoveredProvince(x, y));
             } else if(this.worldService.getMapMode().equals(MapMode.RELIGIOUS)) {

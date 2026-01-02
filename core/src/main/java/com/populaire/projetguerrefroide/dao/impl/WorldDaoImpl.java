@@ -94,6 +94,7 @@ public class WorldDaoImpl implements WorldDao {
         Borders borders = new Borders();
         ProvinceStore provinceStore = this.loadProvinces(ecsWorld, ecsConstants, regionStoreBuilder, provinces, goodIds, buildingIds, populationTypeIds, borders);
         RegionStore regionStore = regionStoreBuilder.build();
+        System.out.println("provinces size " + provinces.size());
 
         return new WorldManager(provinces, provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, borders, gameContext);
     }
@@ -1052,10 +1053,13 @@ public class WorldDaoImpl implements WorldDao {
 
                     int color =  (red << 24) | (green << 16) | (blue << 8) | alpha;
                     provinceEntity.set(new Color(color));
-                    provinces.put(color, provinceEntityId);
                     if (provinceEntity.has(ecsConstants.landProvinceTag())) {
+                        provinces.put(color, provinceEntityId);
                         int provinceIndex = provinceStore.getIndexById().get(provinceId);
                         provinceStore.getColors().set(provinceIndex, color);
+                        System.out.println("Land province found in definition.csv: " + provinceId);
+                    } else {
+                        System.out.println("Sea province found in definition.csv: " + provinceId);
                     }
                 }
             }

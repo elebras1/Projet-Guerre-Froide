@@ -7,6 +7,7 @@ import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.component.Minister;
+import com.populaire.projetguerrefroide.component.Position;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.*;
@@ -14,6 +15,7 @@ import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.screen.DateListener;
 import com.populaire.projetguerrefroide.ui.view.SortType;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -61,13 +63,13 @@ public class WorldService implements DateListener {
         return this.worldManager.setCountryPlayer();
     }
 
-    public boolean hoverProvince(short x, short y) {
-        return this.worldManager.getProvince(x, y) != 0;
+    public boolean hoverLandProvince(short x, short y) {
+        return this.worldManager.getLandProvinceId(x, y) != 0;
     }
 
     public short getProvinceId(short x, short y) {
-        //return this.worldManager.getProvince(x, y).getId();
-        return -1;
+        long provinceId = this.worldManager.getLandProvinceId(x, y);
+        return Short.parseShort(this.gameContext.getEcsWorld().obtainEntity(provinceId).getName());
     }
 
     public MapMode getMapMode() {
@@ -75,18 +77,28 @@ public class WorldService implements DateListener {
     }
 
     public String getCountryIdOfHoveredProvince(short x, short y) {
-        //return this.worldManager.getProvince(x, y).getCountryOwner().getId();
-        return null;
+        World ecsWorld = this.gameContext.getEcsWorld();
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+        Entity province = ecsWorld.obtainEntity(this.worldManager.getLandProvinceId(x, y));
+        long countryOwnerId = province.target(ecsConstants.ownedBy());
+        return ecsWorld.obtainEntity(countryOwnerId).getName();
     }
 
-    public int getPositionOfCapitalOfSelectedCountry() {
-        //return this.worldManager.getSelectedProvinceId().getCountryOwner().getCapital().getPosition("default");
-        return -1;
+    public Position getPositionOfCapitalOfSelectedCountry() {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+        Entity selectedProvince = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId());
+        Entity countryOwner = ecsWorld.obtainEntity(selectedProvince.target(ecsConstants.ownedBy()));
+        Entity capitalProvince = ecsWorld.obtainEntity(countryOwner.target(ecsConstants.hasCapital()));
+        long capitalPositionId = ecsWorld.lookup("province_" + capitalProvince.getName() + "_pos_default");
+        Entity capitalPosition = ecsWorld.obtainEntity(capitalPositionId);
+        return capitalPosition.get(Position.class);
     }
 
     public String getCountryIdPlayer() {
-        //return this.worldManager.getPlayerCountryId().getId();
-        return null;
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity countryPlayer = ecsWorld.obtainEntity(this.worldManager.getPlayerCountryId());
+        return countryPlayer.getName();
     }
 
     public short getNumberOfProvinces() {

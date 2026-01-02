@@ -12,7 +12,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
-import com.monstrous.gdx.webgpu.scene2d.WgStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
@@ -128,11 +127,11 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     @Override
     public void onHover(short x, short y) {
-        /*if(this.worldService.hoverProvince(x, y) && !this.isMouseOverUI()) {
+        if(this.worldService.hoverLandProvince(x, y) && !this.isMouseOverUI()) {
             this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y));
         } else {
             this.hideHoverBox();
-        }*/
+        }
     }
 
     @Override
