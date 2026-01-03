@@ -41,7 +41,7 @@ public class WorldService implements DateListener {
 
     public void createWorld() {
         this.worldManager = this.worldDao.createWorld(this.gameContext);
-        this.economyService = new EconomyService(this.worldManager);
+        this.economyService = new EconomyService(this.gameContext, this.worldManager);
     }
 
     public AsyncExecutor getAsyncExecutor() {

@@ -6,9 +6,10 @@ import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.ObjectIntMap;
 
 import java.util.List;
+import java.util.Set;
 
 public class RegionsBuildingsDto {
-    private final List<String> regionIds;
+    private final Set<String> regionIds;
     private final IntList regionInternalIds;
     private final ObjectIntMap<String> regionIdLookup;
     private final IntList buildingIds;
@@ -24,7 +25,7 @@ public class RegionsBuildingsDto {
     private final ByteList buildingWorkersRatio;
     private final FloatList buildingProductionValues;
 
-    public RegionsBuildingsDto(List<String> regionIds, IntList regionInternalIds, ObjectIntMap<String> regionIdLookup, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, List<String> buildingNames, ByteList buildingTypes, ByteList buildingMaxLevels, ByteList developpementIndexValues, IntList populationAmounts, IntList buildingWorkersAmount, ByteList buildingWorkersRatio, FloatList buildingProductionValues) {
+    public RegionsBuildingsDto(Set<String> regionIds, IntList regionInternalIds, ObjectIntMap<String> regionIdLookup, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, List<String> buildingNames, ByteList buildingTypes, ByteList buildingMaxLevels, ByteList developpementIndexValues, IntList populationAmounts, IntList buildingWorkersAmount, ByteList buildingWorkersRatio, FloatList buildingProductionValues) {
         this.regionIds = regionIds;
         this.regionInternalIds = regionInternalIds;
         this.regionIdLookup = regionIdLookup;
@@ -42,7 +43,7 @@ public class RegionsBuildingsDto {
         this.buildingProductionValues = buildingProductionValues;
     }
 
-    public List<String> getRegionIds() {
+    public Set<String> getRegionIds() {
         return this.regionIds;
     }
 
