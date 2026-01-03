@@ -520,20 +520,23 @@ public class WorldService implements DateListener {
         };
 
         for (long relation : relations) {
-            int count = country.depth(relation);
-            for (int i = 0; i < count; i++) {
-                long alliedCountryId = country.target(relation, i);
-                if (alliedCountryId == 0 || relation == ecsConstants.isColonyOf()) {
-                    continue;
+            int i = 0;
+            long alliedCountryId = country.target(relation, i);
+
+            while (alliedCountryId != 0) {
+
+                if (relation != ecsConstants.isColonyOf()) {
+                    Entity alliedCountry = ecsWorld.obtainEntity(alliedCountryId);
+                    if (alliedCountry != null) {
+                        String alliedCountryNameId = alliedCountry.getName();
+                        if (!allies.contains(alliedCountryNameId)) {
+                            allies.add(alliedCountryNameId);
+                        }
+                    }
                 }
 
-                Entity alliedCountry = ecsWorld.obtainEntity(alliedCountryId);
-
-                String alliedCountryNameId = alliedCountry.getName();
-
-                if (!allies.contains(alliedCountryNameId)) {
-                    allies.add(alliedCountryNameId);
-                }
+                i++;
+                alliedCountryId = country.target(relation, i);
             }
         }
 

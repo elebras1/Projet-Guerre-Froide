@@ -220,8 +220,9 @@ public class WorldManager implements WorldContext, Disposable {
 
     public boolean selectProvince(int x, int y) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        this.selectedProvinceId = this.getLandProvinceId(x, y);
-        if(this.selectedProvinceId != 0) {
+        long selectedProvinceId = this.getLandProvinceId(x, y);
+        if(selectedProvinceId != 0) {
+            this.selectedProvinceId = selectedProvinceId;
             Entity selectedProvinceEntity = ecsWorld.obtainEntity(this.selectedProvinceId);
             int provinceNameId = Integer.parseInt(selectedProvinceEntity.getName());
             int provinceIndex = this.provinceStore.getIndexById().get(provinceNameId);
@@ -237,7 +238,7 @@ public class WorldManager implements WorldContext, Disposable {
         }
         this.uniformBufferWorld.flush();
 
-        return this.selectedProvinceId != 0;
+        return this.selectedProvinceId != -1;
     }
 
     public long getSelectedProvinceId() {
