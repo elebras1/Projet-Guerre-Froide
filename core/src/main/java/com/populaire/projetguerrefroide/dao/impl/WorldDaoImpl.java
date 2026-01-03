@@ -713,13 +713,10 @@ public class WorldDaoImpl implements WorldDao {
                     int deathDate = (int) LocalDate.parse(ministerNode.get("death_date").asString(), this.dateFormatter).toEpochDay();
 
                     long ideologyEntityId = ecsWorld.entity(ideology);
-                    long typeEntityId = ecsWorld.entity(type);
+                    long typeEntityId = ecsWorld.lookup(type);
                     long ministerEntityId = ecsWorld.entity(String.valueOf(ministerId));
                     Entity ministerEntity = ecsWorld.obtainEntity(ministerEntityId);
-                    ministerEntity.addRelation(ecsConstants.alignedWith(), ideologyEntityId);
-                    ministerEntity.isA(typeEntityId);
-                    ministerEntity.set(new Minister(name, imageNameFile, loyalty, startDate, deathDate));
-                    ministerEntity.addRelation(ecsConstants.belongsTo(), countryEntityId);
+                    ministerEntity.set(new Minister(name, imageNameFile, loyalty, startDate, deathDate, countryEntityId, ideologyEntityId, typeEntityId));
                 }
             }
         } catch (DateTimeParseException dateTimeParseException) {
@@ -829,7 +826,7 @@ public class WorldDaoImpl implements WorldDao {
         this.readProvinceBitmap(ecsWorld, provinces, borders);
         this.readCountriesHistoryJson(ecsWorld, ecsConstants);
         this.readContinentJsonFile(ecsWorld, ecsConstants);
-        this.readAdjenciesJson(ecsWorld, ecsConstants);
+        this.readAdjenciesJson(ecsWorld);
         this.readPositionsJson(ecsWorld, ecsConstants);
         return provinceStore;
     }
@@ -1210,7 +1207,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readAdjenciesJson(World ecsWorld, EcsConstants ecsConstants) {
+    private void readAdjenciesJson(World ecsWorld) {
         try {
             JsonValue adjenciesValues = this.parseJsonFile(this.adjenciesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> adjenciesEntryIterator = adjenciesValues.objectIterator();
@@ -1219,12 +1216,16 @@ public class WorldDaoImpl implements WorldDao {
                 short provinceId = Short.parseShort(entry.getKey());
                 long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+                long[] adjacencyIds = new long[32];
                 Iterator<JsonValue> adjacenciesIterator = entry.getValue().arrayIterator();
+                int i = 0;
                 while (adjacenciesIterator.hasNext()) {
                     short adjacencyId = (short) adjacenciesIterator.next().asLong();
                     long adjacencyEntityId = ecsWorld.lookup(String.valueOf(adjacencyId));
-                    provinceEntity.addRelation(ecsConstants.adjacentTo(), adjacencyEntityId);
+                    adjacencyIds[i] = adjacencyEntityId;
+                    i++;
                 }
+                provinceEntity.set(new Adjacencies(adjacencyIds));
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -1252,8 +1253,7 @@ public class WorldDaoImpl implements WorldDao {
                     short y = (short) positionNode.get("y").asLong();
                     long positionEntityId = ecsWorld.entity("province_" + provinceId + "_pos_" + name);
                     Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
-                    positionEntity.set(new Position(x, y));
-                    positionEntity.addRelation(ecsConstants.locatedInProvince(), provinceEntityId);
+                    positionEntity.set(new Position(x, y, provinceEntityId));
                 }
             }
         } catch (IOException ioException) {

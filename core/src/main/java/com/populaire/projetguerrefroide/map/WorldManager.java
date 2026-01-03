@@ -370,7 +370,7 @@ public class WorldManager implements WorldContext, Disposable {
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
                 long countryOwnerId = provinceEntity.target(ecsConstants.ownedBy());
                 Entity countryOwnerEntity = ecsWorld.obtainEntity(countryOwnerId);
-                long ideologyId = countryOwnerEntity.target(ecsConstants.alignedWith());
+                long ideologyId = countryOwnerEntity.target(ecsConstants.hasIdeology());
                 Entity ideologyEntity = ecsWorld.obtainEntity(ideologyId);
                 Ideology ideology = ideologyEntity.get(Ideology.class);
                 this.mapModePixmap.drawPixel(red, green, ideology.color());
@@ -733,7 +733,7 @@ public class WorldManager implements WorldContext, Disposable {
             long provinceId = provinceIds.get(i);
             if (!visitedProvinces.contains(provinceId)) {
                 LongList connectedProvinces = new LongList();
-                this.getConnectedProvinces(ecsWorld, ecsConstants, countryNameId, provinceId, visitedProvinces, connectedProvinces);
+                this.getConnectedProvinces(ecsWorld, ecsConstants, countryId, provinceId, visitedProvinces, connectedProvinces);
                 if(connectedProvinces.size() > 5 || (connectedProvinces.size() == provinceIds.size() && !connectedProvinces.isEmpty())) {
                     IntList positionsProvinces = new IntList();
                     IntList pixelsBorderProvinces = new IntList();
@@ -754,7 +754,7 @@ public class WorldManager implements WorldContext, Disposable {
         }
     }
 
-    private void getConnectedProvinces(World ecsWorld, EcsConstants ecsConstants, String countryNameId, long startProvinceId, LongSet visitedProvinceIds, LongList connectedProvinceIds) {
+    private void getConnectedProvinces(World ecsWorld, EcsConstants ecsConstants, long countryId, long startProvinceId, LongSet visitedProvinceIds, LongList connectedProvinceIds) {
         LongList toProcess = new LongList();
         toProcess.add(startProvinceId);
 
@@ -763,20 +763,29 @@ public class WorldManager implements WorldContext, Disposable {
 
         while (!toProcess.isEmpty()) {
             long currentId = toProcess.pop();
+            Entity currentEntity = ecsWorld.obtainEntity(currentId);
+            Adjacencies adjacencies = currentEntity.get(Adjacencies.class);
 
-            try (Query query = ecsWorld.query().with(ecsConstants.adjacentTo(), currentId).with(ecsConstants.landProvinceTag()).build()) {
-                query.each(adjacentId -> {
-                    Entity adjacentIdx = ecsWorld.obtainEntity(adjacentId);
-                    long ownerEntityId = adjacentIdx.target(ecsConstants.ownedBy());
+            if (adjacencies == null || adjacencies.provinceIds() == null) {
+                continue;
+            }
 
-                    if (ownerEntityId != 0 && ecsWorld.obtainEntity(ownerEntityId).getName().equals(countryNameId)) {
-                        if (!visitedProvinceIds.contains(adjacentId)) {
-                            visitedProvinceIds.add(adjacentId);
-                            connectedProvinceIds.add(adjacentId);
-                            toProcess.add(adjacentId);
-                        }
-                    }
-                });
+            for (int i = 0; i < adjacencies.provinceIds().length; i++) {
+                long neighborId = adjacencies.provinceIds()[i];
+                if (neighborId == 0 || visitedProvinceIds.contains(neighborId)) {
+                    continue;
+                }
+                Entity neighborEntity = ecsWorld.obtainEntity(neighborId);
+                if (!neighborEntity.has(ecsConstants.landProvinceTag())) {
+                    continue;
+                }
+
+                long ownerEntityId = neighborEntity.target(ecsConstants.ownedBy());
+                if (ownerEntityId != 0 && ownerEntityId == countryId) {
+                    visitedProvinceIds.add(neighborId);
+                    connectedProvinceIds.add(neighborId);
+                    toProcess.add(neighborId);
+                }
             }
         }
     }

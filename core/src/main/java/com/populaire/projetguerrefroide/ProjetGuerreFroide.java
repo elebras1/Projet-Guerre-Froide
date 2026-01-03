@@ -46,6 +46,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(Position.class);
         this.ecsWorld.component(Border.class);
         this.ecsWorld.component(DiplomaticRelation.class);
+        this.ecsWorld.component(Adjacencies.class);
     }
 
     private void loadAssets(AssetManager assetManager) {
