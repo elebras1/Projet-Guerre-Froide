@@ -4,6 +4,7 @@ import com.github.elebras1.flecs.Entity;
 import com.github.elebras1.flecs.Query;
 import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.*;
+import com.populaire.projetguerrefroide.component.GeoHierarchy;
 import com.populaire.projetguerrefroide.component.Province;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
@@ -50,7 +51,8 @@ public class EconomyService {
                     Entity province = ecsWorld.obtainEntity(iter.entity(i));
                     long ownerId = iter.fieldLong(Province.class, 0, "ownerId", i);
                     if (ownerId == this.worldContext.getPlayerCountryId()) {
-                        long regionId = province.target(ecsConstants.locatedInRegion());
+                        GeoHierarchy geoHierarchy = province.get(GeoHierarchy.class);
+                        long regionId = geoHierarchy.regionId();
                         String regionNameId = ecsWorld.obtainEntity(regionId).getName();
                         regionIds.add(regionNameId);
                     }
@@ -98,7 +100,8 @@ public class EconomyService {
         try (Query query = ecsWorld.query().with(ecsConstants.landProvinceTag()).build()) {
             query.each(provinceId -> {
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceId);
-                long regionId = provinceEntity.target(ecsConstants.locatedInRegion());
+                GeoHierarchy geoHierarchy = provinceEntity.get(GeoHierarchy.class);
+                long regionId = geoHierarchy.regionId();
                 String regionNameId = ecsWorld.obtainEntity(regionId).getName();
                 int regionIndex = regionStore.getRegionIds().get(regionNameId);
                 int provinceNameId = Integer.parseInt(provinceEntity.getName());
@@ -121,7 +124,8 @@ public class EconomyService {
         try (Query query = ecsWorld.query().with(ecsConstants.landProvinceTag()).build()) {
             query.each(provinceId -> {
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceId);
-                long regionId = provinceEntity.target(ecsConstants.locatedInRegion());
+                GeoHierarchy geoHierarchy = provinceEntity.get(GeoHierarchy.class);
+                long regionId = geoHierarchy.regionId();
                 String regionNameId = ecsWorld.obtainEntity(regionId).getName();
                 int regionIndex = regionStore.getRegionIds().get(regionNameId);
                 int adults = this.getAmountAdults(provinceId, provinceStore);

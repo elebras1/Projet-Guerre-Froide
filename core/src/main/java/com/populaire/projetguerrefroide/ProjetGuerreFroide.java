@@ -49,6 +49,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(Adjacencies.class);
         this.ecsWorld.component(Country.class);
         this.ecsWorld.component(Province.class);
+        this.ecsWorld.component(GeoHierarchy.class);
     }
 
     private void loadAssets(AssetManager assetManager) {

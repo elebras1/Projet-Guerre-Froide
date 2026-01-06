@@ -7,10 +7,7 @@ import com.github.elebras1.flecs.Query;
 import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
-import com.populaire.projetguerrefroide.component.Country;
-import com.populaire.projetguerrefroide.component.Minister;
-import com.populaire.projetguerrefroide.component.Position;
-import com.populaire.projetguerrefroide.component.Province;
+import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.*;
@@ -162,7 +159,8 @@ public class WorldService implements DateListener {
         EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         Entity selectedProvince = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId());
         Province selectedProvinceData = selectedProvince.get(Province.class);
-        Entity region = ecsWorld.obtainEntity(selectedProvince.target(ecsConstants.locatedInRegion()));
+        GeoHierarchy selectedProvinceGeo = selectedProvince.get(GeoHierarchy.class);
+        Entity region = ecsWorld.obtainEntity(selectedProvinceGeo.regionId());
         String provinceNameId = selectedProvince.getName();
         String regionNameId = region.getName();
         Entity terrain = ecsWorld.obtainEntity(selectedProvinceData.terrainId());
@@ -294,15 +292,21 @@ public class WorldService implements DateListener {
 
     private String getPopulationRegionOfSelectedProvince(Map<String, String> localisation) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
 
         Entity selectedProvince = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId());
-        long regionId = selectedProvince.target(ecsConstants.locatedInRegion());
+        GeoHierarchy selectedProvinceGeo = selectedProvince.get(GeoHierarchy.class);
+        long regionId = selectedProvince.target(selectedProvinceGeo.regionId());
         MutableInt population = new MutableInt(0);
 
-        try (Query query = ecsWorld.query().with(ecsConstants.locatedInRegion(), regionId).build()) {
-            query.each(provinceId -> {
-                population.increment(this.worldManager.getPopulationAmountOfProvince(provinceId));
+        try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    long provinceId = iter.entity(i);
+                    long provinceRegionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
+                    if (provinceRegionId == regionId) {
+                        population.increment(this.worldManager.getPopulationAmountOfProvince(provinceId));
+                    }
+                }
             });
         }
 
@@ -311,15 +315,21 @@ public class WorldService implements DateListener {
 
     private String getWorkersRegionOfSelectedProvince(Map<String, String> localisation) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
 
         Entity selectedProvince = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId());
-        long regionId = selectedProvince.target(ecsConstants.locatedInRegion());
+        GeoHierarchy selectedProvinceGeo = selectedProvince.get(GeoHierarchy.class);
+        long regionId = selectedProvince.target(selectedProvinceGeo.regionId());
         MutableInt workers = new MutableInt(0);
 
-        try (Query query = ecsWorld.query().with(ecsConstants.locatedInRegion(), regionId).build()) {
-            query.each(provinceId -> {
-                workers.increment(this.worldManager.getAmountAdults(provinceId));
+        try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    long provinceId = iter.entity(i);
+                    long provinceRegionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
+                    if (provinceRegionId == regionId) {
+                        workers.increment(this.worldManager.getAmountAdults(provinceId));
+                    }
+                }
             });
         }
 
@@ -377,14 +387,19 @@ public class WorldService implements DateListener {
 
     private List<String> getProvinceIdsOrderByPopulation(long regionId) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         ProvinceStore provinceStore = this.worldManager.getProvinceStore();
 
         IntList provinceIndices = new IntList();
-        try (Query query = ecsWorld.query().with(ecsConstants.locatedInRegion(), regionId).build()) {
-            query.each(provinceId -> {
-                int provinceIndex = provinceStore.getIndexById().get(Integer.parseInt(ecsWorld.obtainEntity(provinceId).getName()));
-                provinceIndices.add(provinceIndex);
+        try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    long provinceId = iter.entity(i);
+                    long provinceRegionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
+                    if (provinceRegionId == regionId) {
+                        int provinceIndex = provinceStore.getIndexById().get(Integer.parseInt(ecsWorld.obtainEntity(provinceId).getName()));
+                        provinceIndices.add(provinceIndex);
+                    }
+                }
             });
         }
 
