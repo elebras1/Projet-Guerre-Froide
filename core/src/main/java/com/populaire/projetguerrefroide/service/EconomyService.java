@@ -4,6 +4,7 @@ import com.github.elebras1.flecs.Entity;
 import com.github.elebras1.flecs.Query;
 import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.*;
+import com.populaire.projetguerrefroide.component.Province;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.economy.production.ResourceGatheringOperationSystem;
@@ -43,12 +44,17 @@ public class EconomyService {
         RegionStore regionStore = this.worldContext.getRegionStore();
         BuildingStore buildingStore = this.worldContext.getBuildingStore();
         Set<String> regionIds = new ObjectSet<>();
-        try (Query query = ecsWorld.query().with(ecsConstants.ownedBy(), this.worldContext.getPlayerCountryId()).build()) {
-            query.each(provinceId -> {
-                Entity provinceEntity = ecsWorld.obtainEntity(provinceId);
-                long regionId = provinceEntity.target(ecsConstants.locatedInRegion());
-                String regionNameId = ecsWorld.obtainEntity(regionId).getName();
-                regionIds.add(regionNameId);
+        try (Query query = ecsWorld.query().with(Province.class).build()) {
+            query.iter(iter -> {
+                for (int i = 0; i < iter.count(); i++) {
+                    Entity province = ecsWorld.obtainEntity(iter.entity(i));
+                    long ownerId = iter.fieldLong(Province.class, 0, "ownerId", i);
+                    if (ownerId == this.worldContext.getPlayerCountryId()) {
+                        long regionId = province.target(ecsConstants.locatedInRegion());
+                        String regionNameId = ecsWorld.obtainEntity(regionId).getName();
+                        regionIds.add(regionNameId);
+                    }
+                }
             });
         }
         IntList regionInternalIds = new IntList(regionStore.getRegionIds().size());

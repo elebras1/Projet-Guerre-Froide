@@ -7,8 +7,10 @@ import com.github.elebras1.flecs.Query;
 import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
+import com.populaire.projetguerrefroide.component.Country;
 import com.populaire.projetguerrefroide.component.Minister;
 import com.populaire.projetguerrefroide.component.Position;
+import com.populaire.projetguerrefroide.component.Province;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.*;
@@ -23,6 +25,7 @@ import com.populaire.projetguerrefroide.util.MutableInt;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -85,16 +88,18 @@ public class WorldService implements DateListener {
         World ecsWorld = this.gameContext.getEcsWorld();
         EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         Entity province = ecsWorld.obtainEntity(this.worldManager.getLandProvinceId(x, y));
-        long countryOwnerId = province.target(ecsConstants.ownedBy());
-        return ecsWorld.obtainEntity(countryOwnerId).getName();
+        Province provinceData = province.get(Province.class);
+        return ecsWorld.obtainEntity(provinceData.ownerId()).getName();
     }
 
     public Position getPositionOfCapitalOfSelectedCountry() {
         World ecsWorld = this.gameContext.getEcsWorld();
         EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         Entity selectedProvince = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId());
-        Entity countryOwner = ecsWorld.obtainEntity(selectedProvince.target(ecsConstants.ownedBy()));
-        Entity capitalProvince = ecsWorld.obtainEntity(countryOwner.target(ecsConstants.hasCapital()));
+        Province selectedProvinceData = selectedProvince.get(Province.class);
+        Entity countryOwner = ecsWorld.obtainEntity(selectedProvinceData.ownerId());
+        Country countryOwnerData = countryOwner.get(Country.class);
+        Entity capitalProvince = ecsWorld.obtainEntity(countryOwnerData.capitalId());
         long capitalPositionId = ecsWorld.lookup("province_" + capitalProvince.getName() + "_pos_default");
         Entity capitalPosition = ecsWorld.obtainEntity(capitalPositionId);
         return capitalPosition.get(Position.class);
@@ -117,25 +122,28 @@ public class WorldService implements DateListener {
     public CountrySummaryDto prepareCountrySummaryDto(Map<String, String> localisation) {
         World ecsWorld = this.gameContext.getEcsWorld();
         EcsConstants ecsConstants = this.gameContext.getEcsConstants();
-        long selectedCountryId = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId()).target(ecsConstants.ownedBy());
-        Entity selectedCountry = ecsWorld.obtainEntity(selectedCountryId);
-        Minister headOfState = this.getHeadOfState(selectedCountryId);
+        Entity selectedProvince = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId());
+        Province selectedProvinceData = selectedProvince.get(Province.class);
+        Entity selectedCountry = ecsWorld.obtainEntity(selectedProvinceData.ownerId());
+        Country countryData = selectedCountry.get(Country.class);
+        Minister headOfState = this.getHeadOfState(selectedCountry.id());
         String portraitNameFile = "admin_type";
         if(headOfState.imageFileName() != null) {
             portraitNameFile = headOfState.imageFileName();
         }
-        String population = ValueFormatter.formatValue(this.worldManager.getPopulationAmountOfCountry(selectedCountryId), localisation);
-        List<String> allies = this.getAlliesOfSelectedCountry(selectedCountryId);
-        String government = ecsWorld.obtainEntity(selectedCountry.target(ecsConstants.hasGovernment())).getName();
+        String population = ValueFormatter.formatValue(this.worldManager.getPopulationAmountOfCountry(selectedCountry.id()), localisation);
+        List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry.id());
+        String government = ecsWorld.obtainEntity(countryData.governmentId()).getName();
 
-        return new CountrySummaryDto(selectedCountry.getName(), population, government, portraitNameFile, headOfState.name(), this.worldManager.getColonizerId(selectedCountryId), allies);
+        return new CountrySummaryDto(selectedCountry.getName(), population, government, portraitNameFile, headOfState.name(), this.worldManager.getColonizerId(selectedCountry.id()), allies);
     }
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {
         World ecsWorld = this.gameContext.getEcsWorld();
         EcsConstants ecsConstants = this.gameContext.getEcsConstants();
-        long selectedCountryId = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId()).target(ecsConstants.ownedBy());
-        String population = ValueFormatter.formatValue(this.worldManager.getPopulationAmountOfCountry(selectedCountryId), localisation);
+        Entity selectedProvince = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId());
+        Province selectedProvinceData = selectedProvince.get(Province.class);
+        String population = ValueFormatter.formatValue(this.worldManager.getPopulationAmountOfCountry(selectedProvinceData.ownerId()), localisation);
         int manpower = 0;
         String grossDomesticProduct = ValueFormatter.formatValue(0, localisation);
         int money = 0;
@@ -153,10 +161,11 @@ public class WorldService implements DateListener {
         World ecsWorld = this.gameContext.getEcsWorld();
         EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         Entity selectedProvince = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId());
+        Province selectedProvinceData = selectedProvince.get(Province.class);
         Entity region = ecsWorld.obtainEntity(selectedProvince.target(ecsConstants.locatedInRegion()));
         String provinceNameId = selectedProvince.getName();
         String regionNameId = region.getName();
-        Entity terrain = ecsWorld.obtainEntity(selectedProvince.target(ecsConstants.hasTerrain()));
+        Entity terrain = ecsWorld.obtainEntity(selectedProvinceData.terrainId());
         String terrainImage = terrain.getName();
         String resourceImage = this.worldManager.getResourceGoodName(selectedProvince.id());
         String populationRegion = this.getPopulationRegionOfSelectedProvince(localisation);
@@ -165,7 +174,7 @@ public class WorldService implements DateListener {
         int developmentIndexRegion = 0;
         int incomeRegion = 0;
         int numberIndustryRegion = this.getNumberIndustry(region.id());
-        Entity country = ecsWorld.obtainEntity(selectedProvince.target(ecsConstants.ownedBy()));
+        Entity country = ecsWorld.obtainEntity(selectedProvinceData.ownerId());
         String countryNameId = country.getName();
         String colonizerId = this.worldManager.getColonizerId(country.id());
         List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
@@ -213,19 +222,20 @@ public class WorldService implements DateListener {
 
     public String getColonizerIdOfSelectedProvince() {
         Entity selectedProvince = this.gameContext.getEcsWorld().obtainEntity(this.worldManager.getSelectedProvinceId());
-        long countryId = selectedProvince.target(this.gameContext.getEcsConstants().ownedBy());
-        return this.worldManager.getColonizerId(countryId);
+        Province selectedProvinceData = selectedProvince.get(Province.class);
+        return this.worldManager.getColonizerId(selectedProvinceData.ownerId());
     }
 
     public String getColonizerIdOfCountryPlayer() {
         Entity selectedProvince = this.gameContext.getEcsWorld().obtainEntity(this.worldManager.getSelectedProvinceId());
-        long countryId = selectedProvince.target(this.gameContext.getEcsConstants().ownedBy());
-        return this.worldManager.getColonizerId(countryId);
+        Province selectedProvinceData = selectedProvince.get(Province.class);
+        return this.worldManager.getColonizerId(selectedProvinceData.ownerId());
     }
 
     public String getColonizerIdOfHoveredProvince(short x, short y) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(this.worldManager.getLandProvinceId(x, y));
-        return this.worldManager.getColonizerId(province.target(this.gameContext.getEcsConstants().ownedBy()));
+        Province provinceData = province.get(Province.class);
+        return this.worldManager.getColonizerId(provinceData.ownerId());
     }
 
     public float getResourceGoodsProduction() {
@@ -318,15 +328,18 @@ public class WorldService implements DateListener {
 
     private List<String> getCountriesCoreOfSelectedProvince() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
-
+        long selectedProvinceId = this.worldManager.getSelectedProvinceId();
+        Entity provinceEntity = ecsWorld.obtainEntity(selectedProvinceId);
+        Province provinceData = provinceEntity.get(Province.class);
         List<String> countriesCore = new ObjectList<>();
-        try (Query query = ecsWorld.query().with(ecsConstants.coreOf(), this.worldManager.getSelectedProvinceId()).build()) {
-            query.each(provinceId -> {
-                long countryId = ecsWorld.obtainEntity(provinceId).target(ecsConstants.coreOf());
-                String countryNameId = ecsWorld.obtainEntity(countryId).getName();
-                countriesCore.add(countryNameId);
-            });
+        for (int i = 0; i < provinceData.coreIds().length; i++) {
+            long coreCountryId = provinceData.coreIds()[i];
+            if (coreCountryId == 0) {
+                continue;
+            }
+
+            String countryNameId = ecsWorld.obtainEntity(coreCountryId).getName();
+            countriesCore.add(countryNameId);
         }
 
         return countriesCore;
@@ -548,12 +561,14 @@ public class WorldService implements DateListener {
         EcsConstants ecsConstants = this.gameContext.getEcsConstants();
 
         Entity country = ecsWorld.obtainEntity(countryId);
-        long headOfStateId = country.target(ecsConstants.headOfState());
+        Country countryData = country.get(Country.class);
+        long headOfStateId = countryData.headOfStateId();
 
         long countryColonizerId = country.target(ecsConstants.isColonyOf());
         if(countryColonizerId != 0) {
             Entity colonizerCountry = ecsWorld.obtainEntity(countryColonizerId);
-            headOfStateId = colonizerCountry.target(ecsConstants.headOfState());
+            Country colonizerCountryData = colonizerCountry.get(Country.class);
+            headOfStateId = colonizerCountryData.headOfStateId();
         }
 
         Minister headOfState = null;

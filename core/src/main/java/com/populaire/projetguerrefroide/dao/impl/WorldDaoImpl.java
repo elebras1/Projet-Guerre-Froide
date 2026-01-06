@@ -888,30 +888,29 @@ public class WorldDaoImpl implements WorldDao {
             Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
             provinceEntity.add(ecsConstants.landProvinceTag());
 
+            long[] coreIds = new long[8];
             JsonValue addCoreValue = provinceValues.get("add_core");
             if (addCoreValue.isArray()) {
+                int i = 0;
                 Iterator<JsonValue> addCoreIterator = addCoreValue.arrayIterator();
                 while (addCoreIterator.hasNext()) {
                     JsonValue countryCore = addCoreIterator.next();
                     long countryCoreId = ecsWorld.lookup(countryCore.asString());
-                    provinceEntity.addRelation(ecsConstants.coreOf(), countryCoreId);
+                    coreIds[i] = countryCoreId;
+                    i++;
                 }
             } else {
-                long countryCoreId = ecsWorld.lookup(addCoreValue.asString());
-                provinceEntity.addRelation(ecsConstants.coreOf(), countryCoreId);
+                coreIds[0] = ecsWorld.lookup(addCoreValue.asString());
             }
 
             String owner = provinceValues.get("owner").asString();
-            Entity countryOwner = ecsWorld.obtainEntity(ecsWorld.lookup(owner));
-            provinceEntity.addRelation(ecsConstants.ownedBy(), countryOwner.id());
+            long countryOwnerId = ecsWorld.lookup(owner);
 
             String controller = provinceValues.get("controller").asString();
             long countryControllerId = ecsWorld.lookup(controller);
-            provinceEntity.addRelation(ecsConstants.controlledBy(), countryControllerId);
 
             String terrain = provinceValues.get("terrain").asString();
             long terrainId = ecsWorld.lookup(terrain);
-            provinceEntity.addRelation(ecsConstants.hasTerrain(), terrainId);
 
             JsonValue populationValue = provinceValues.get("population_total");
             int amount = (int) populationValue.get("amount").asLong();
@@ -957,6 +956,8 @@ public class WorldDaoImpl implements WorldDao {
                     builder.addBuilding(buildingId, size);
                 }
             }
+
+            provinceEntity.set(new Province(coreIds, countryOwnerId, countryControllerId, terrainId));
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
@@ -1146,37 +1147,39 @@ public class WorldDaoImpl implements WorldDao {
             JsonValue countryValues = this.parseJsonFile(countryFileName);
             short capital = (short) countryValues.get("capital").asLong();
             long capitalId = ecsWorld.lookup(String.valueOf(capital));
-            country.addRelation(ecsConstants.hasCapital(), capitalId);
             String government = countryValues.get("government").asString();
             long governmentId = ecsWorld.lookup(government);
-            country.addRelation(ecsConstants.hasGovernment(), governmentId);
             String ideology = countryValues.get("ideology").asString();
             long ideologyId = ecsWorld.lookup(ideology);
-            country.addRelation(ecsConstants.hasIdeology(), ideologyId);
             String identity = countryValues.get("national_identity").asString();
             long identityId = ecsWorld.lookup(identity);
-            country.addRelation(ecsConstants.hasIdentity(), identityId);
             String attitude = countryValues.get("national_attitude").asString();
             long attitudeId = ecsWorld.lookup(attitude);
-            country.addRelation(ecsConstants.hasAttitude(), attitudeId);
+            long ministerHeadOfStateEntityId = 0;
+            long ministerHeadOfGovernmentEntityId = 0;
             if(countryValues.get("head_of_state") != null && countryValues.get("head_of_government") != null) {
                 long ministerHeadOfStateId = countryValues.get("head_of_state").asLong();
                 long ministerHeadOfGovernmentId = countryValues.get("head_of_government").asLong();
-
-                long ministerHeadOfStateEntityId = ecsWorld.lookup(String.valueOf(ministerHeadOfStateId));
-                country.addRelation(ecsConstants.headOfState(), ministerHeadOfStateEntityId);
-                long ministerHeadOfGovernmentEntityId = ecsWorld.lookup(String.valueOf(ministerHeadOfGovernmentId));
-                country.addRelation(ecsConstants.headOfGovernment(), ministerHeadOfGovernmentEntityId);
+                ministerHeadOfStateEntityId = ecsWorld.lookup(String.valueOf(ministerHeadOfStateId));
+                ministerHeadOfGovernmentEntityId = ecsWorld.lookup(String.valueOf(ministerHeadOfGovernmentId));
             }
+
+            long[] lawIds = new long[48];
+            int i = 0;
             Iterator<Map.Entry<String, JsonValue>> lawsIterator = countryValues.get("laws").objectIterator();
             while(lawsIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = lawsIterator.next();
-                String LawGroupName = entry.getKey();
+                String lawGroupName = entry.getKey();
                 String lawName = entry.getValue().asString();
-                long lawGroupId = ecsWorld.lookup(LawGroupName);
+
+                long lawGroupId = ecsWorld.lookup(lawGroupName);
                 long lawId = ecsWorld.lookup(lawName);
-                country.addRelation(lawGroupId, lawId);
+
+                lawIds[i] = lawGroupId;
+                lawIds[i + 1] = lawId;
+                i += 2;
             }
+            country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
