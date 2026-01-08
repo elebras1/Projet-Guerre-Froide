@@ -261,8 +261,8 @@ public class WorldManager implements WorldContext, Disposable {
         return this.mapMode;
     }
 
-    public short getNumberOfProvinces() {
-        return (short) this.provinces.size();
+    public int getNumberOfProvinces() {
+        return this.provinces.size();
     }
 
     public int getPopulationAmountOfProvince(long provinceEntityId) {
@@ -342,8 +342,8 @@ public class WorldManager implements WorldContext, Disposable {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
-            short red = (short) ((color >> 24) & 0xFF);
-            short green = (short) ((color >> 16) & 0xFF);
+            int red = (color >> 24) & 0xFF;
+            int green = (color >> 16) & 0xFF;
 
             long provinceEntityId = this.provinces.get(color);
             Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
@@ -368,8 +368,8 @@ public class WorldManager implements WorldContext, Disposable {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
-            short red = (short) ((color >> 24) & 0xFF);
-            short green = (short) ((color >> 16) & 0xFF);
+            int red = (color >> 24) & 0xFF;
+            int green = (color >> 16) & 0xFF;
             long provinceEntityId = this.provinces.get(color);
             if(provinceEntityId != -1) {
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
@@ -393,8 +393,8 @@ public class WorldManager implements WorldContext, Disposable {
 
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
-            short red = (short) ((color >> 24) & 0xFF);
-            short green = (short) ((color >> 16) & 0xFF);
+            int red = (color >> 24) & 0xFF;
+            int green = (color >> 16) & 0xFF;
             int provinceCultureStart = provinceCultureStarts.get(provinceId);
             int biggestCultureIndex = -1;
             for(int cultureIndex = provinceCultureStart; cultureIndex < provinceCultureStart + provinceCultureCounts.get(provinceId); cultureIndex++) {
@@ -417,8 +417,8 @@ public class WorldManager implements WorldContext, Disposable {
         LongList provinceReligionIds = this.provinceStore.getReligionIds();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
-            short red = (short) ((color >> 24) & 0xFF);
-            short green = (short) ((color >> 16) & 0xFF);
+            int red = (color >> 24) & 0xFF;
+            int green = (color >> 16) & 0xFF;
             int provinceReligionStart = provinceReligionStarts.get(provinceId);
             int biggestReligionIndex = -1;
             for(int religionIndex = provinceReligionStart; religionIndex < provinceReligionStart + provinceReligionCounts.get(provinceId); religionIndex++) {
@@ -438,8 +438,8 @@ public class WorldManager implements WorldContext, Disposable {
         IntList provinceResourceGoodIds = this.provinceStore.getResourceGoodIds();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
-            short red = (short) ((color >> 24) & 0xFF);
-            short green = (short) ((color >> 16) & 0xFF);
+            int red = (color >> 24) & 0xFF;
+            int green = (color >> 16) & 0xFF;
             int provinceResourceGoodId = provinceResourceGoodIds.get(provinceId);
             if(provinceResourceGoodId != -1) {
                 this.mapModePixmap.drawPixel(red, green, this.goodStore.getColors().get(provinceResourceGoodId));
@@ -451,14 +451,10 @@ public class WorldManager implements WorldContext, Disposable {
 
     private void updatePixmapRegionColor() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
-        try(Query query = ecsWorld.query().with(ecsConstants.landProvinceTag()).with(Color.class).build()) {
+        try(Query query = ecsWorld.query().with(Province.class).with(Color.class).with(GeoHierarchy.class).build()) {
             query.iter(iter -> {
                 for(int i = 0; i < iter.count(); i++) {
-                    long landProvinceId = iter.entity(i);
-                    Entity landProvinceEntity = ecsWorld.obtainEntity(landProvinceId);
-                    GeoHierarchy geoHierarchy = landProvinceEntity.get(GeoHierarchy.class);
-                    long regionId = geoHierarchy.regionId();
+                    long regionId = iter.fieldLong(GeoHierarchy.class, 2, "regionId", i);
                     Entity regionEntity = ecsWorld.obtainEntity(regionId);
                     int color = iter.fieldInt(Color.class, 1, "value", i);
                     int red = (color >> 24) & 0xFF;
@@ -473,8 +469,8 @@ public class WorldManager implements WorldContext, Disposable {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
-            short red = (short) ((color >> 24) & 0xFF);
-            short green = (short) ((color >> 16) & 0xFF);
+            int red = (color >> 24) & 0xFF;
+            int green = (color >> 16) & 0xFF;
             this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
         }
     }
@@ -483,8 +479,8 @@ public class WorldManager implements WorldContext, Disposable {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
-            short red = (short) ((color >> 24) & 0xFF);
-            short green = (short) ((color >> 16) & 0xFF);
+            int red = (color >> 24) & 0xFF;
+            int green = (color >> 16) & 0xFF;
             long provinceEntityId = this.provinces.get(color);
             if(provinceEntityId != -1) {
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
@@ -505,8 +501,8 @@ public class WorldManager implements WorldContext, Disposable {
         IntList provinceColors = this.provinceStore.getColors();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
-            short red = (short) ((color >> 24) & 0xFF);
-            short green = (short) ((color >> 16) & 0xFF);
+            int red = (color >> 24) & 0xFF;
+            int green = (color >> 16) & 0xFF;
             int pop = this.provinceStore.getPopulationAmount(provinceId);
             float ratio = (maxPopulation > 0) ? (float) pop / maxPopulation : 0f;
             this.mapModePixmap.drawPixel(red, green, ColorGenerator.getMagmaColorRGBA(ratio));
@@ -569,13 +565,10 @@ public class WorldManager implements WorldContext, Disposable {
 
     private void updateBordersProvincesPixmap() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         int[] xyBorders = this.borders.getPixels();
-        try(Query landProvinceQuery = ecsWorld.query().with(Province.class).with(Border.class).with(GeoHierarchy.class).build()) {
-            landProvinceQuery.iter(iter -> {
+        try(Query provinceQuery = ecsWorld.query().with(Province.class).with(Border.class).with(GeoHierarchy.class).build()) {
+            provinceQuery.iter(iter -> {
                 for(int i = 0; i < iter.count(); i++) {
-                    long landProvinceId = iter.entity(i);
-                    Entity landProvince = ecsWorld.obtainEntity(landProvinceId);
                     int borderStartIndex = iter.fieldInt(Border.class, 1, "startIndex", i);
                     int borderEndIndex = iter.fieldInt(Border.class, 1, "endIndex", i);
                     for(int j = borderStartIndex; j < borderEndIndex; j = j + 2) {
@@ -594,6 +587,41 @@ public class WorldManager implements WorldContext, Disposable {
                     }
                 }
             });
+        }
+    }
+
+    private int getBorderType(World ecsWorld, int x, int y, long countryId, long regionId) {
+        long provinceRightId = this.getLandProvinceId((x + 1), y);
+        if(provinceRightId == 0) {
+            return 0; // water, nothing or province border
+        }
+        Entity provinceRight = ecsWorld.obtainEntity(provinceRightId);
+        Province provinceRightData = provinceRight.get(Province.class);
+        long provinceLeftId = this.getLandProvinceId((x - 1), y);
+        if(provinceLeftId == 0) {
+            return 0; // water, nothing or province border
+        }
+        Entity provinceLeft = ecsWorld.obtainEntity(provinceLeftId);
+        Province provinceLeftData = provinceLeft.get(Province.class);
+        long provinceUpId = this.getLandProvinceId(x, (y + 1));
+        if(provinceUpId == 0) {
+            return 0; // water, nothing or province border
+        }
+        Entity provinceUp = ecsWorld.obtainEntity(provinceUpId);
+        Province provinceUpData = provinceUp.get(Province.class);
+        long provinceDownId = this.getLandProvinceId(x, (y - 1));
+        if(provinceDownId == 0) {
+            return 0; // water, nothing or province border
+        }
+        Entity provinceDown = ecsWorld.obtainEntity(provinceDownId);
+        Province provinceDownData = provinceDown.get(Province.class);
+
+        if (provinceRightData.ownerId() != countryId || provinceLeftData.ownerId() != countryId || provinceUpData.ownerId() != countryId || provinceDownData.ownerId() != countryId) {
+            return 153; // country border
+        } else if (provinceRight.get(GeoHierarchy.class).regionId() != regionId || provinceLeft.get(GeoHierarchy.class).regionId() != regionId || provinceUp.get(GeoHierarchy.class).regionId() != regionId || provinceDown.get(GeoHierarchy.class).regionId() != regionId) {
+            return 77; // region border
+        } else {
+            return 0; // water, nothing or province border
         }
     }
 
@@ -650,41 +678,6 @@ public class WorldManager implements WorldContext, Disposable {
         this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
         this.binderProvinces.setUniform("showTerrain", this.mapMode == MapMode.TERRAIN ? 1 : 0);
         this.uniformBufferWorld.flush();
-    }
-
-    private short getBorderType(World ecsWorld, int x, int y, long countryId, long regionId) {
-        long provinceRightId = this.getLandProvinceId((x + 1), y);
-        if(provinceRightId == 0) {
-            return 0; // water, nothing or province border
-        }
-        Entity provinceRight = ecsWorld.obtainEntity(provinceRightId);
-        Province provinceRightData = provinceRight.get(Province.class);
-        long provinceLeftId = this.getLandProvinceId((x - 1), y);
-        if(provinceLeftId == 0) {
-            return 0; // water, nothing or province border
-        }
-        Entity provinceLeft = ecsWorld.obtainEntity(provinceLeftId);
-        Province provinceLeftData = provinceLeft.get(Province.class);
-        long provinceUpId = this.getLandProvinceId(x, (y + 1));
-        if(provinceUpId == 0) {
-            return 0; // water, nothing or province border
-        }
-        Entity provinceUp = ecsWorld.obtainEntity(provinceUpId);
-        Province provinceUpData = provinceUp.get(Province.class);
-        long provinceDownId = this.getLandProvinceId(x, (y - 1));
-        if(provinceDownId == 0) {
-            return 0; // water, nothing or province border
-        }
-        Entity provinceDown = ecsWorld.obtainEntity(provinceDownId);
-        Province provinceDownData = provinceDown.get(Province.class);
-
-        if (provinceRightData.ownerId() != countryId || provinceLeftData.ownerId() != countryId || provinceUpData.ownerId() != countryId || provinceDownData.ownerId() != countryId) {
-            return 153; // country border
-        } else if (provinceRight.get(GeoHierarchy.class).regionId() != regionId || provinceLeft.get(GeoHierarchy.class).regionId() != regionId || provinceUp.get(GeoHierarchy.class).regionId() != regionId || provinceDown.get(GeoHierarchy.class).regionId() != regionId) {
-            return 77; // region border
-        } else {
-            return 0; // water, nothing or province border
-        }
     }
 
     private WgMesh generateMeshProvinces(VertexAttributes vertexAttributes) {
@@ -869,8 +862,8 @@ public class WorldManager implements WorldContext, Disposable {
         final MutableInt indexIndex = new MutableInt(0);
         final MutableInt vertexOffset = new MutableInt(0);
 
-        short width = 6;
-        short height = 6;
+        int width = 6;
+        int height = 6;
 
         TextureRegion capitalRegion = this.mapElementsTextureAtlas.findRegion("building_capital");
 
@@ -994,8 +987,8 @@ public class WorldManager implements WorldContext, Disposable {
         int indexIndex = 0;
         short vertexOffset = 0;
 
-        short width = 13;
-        short height = 10;
+        int width = 13;
+        int height = 10;
 
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int provinceResourceGoodId = provinceResourceGoodIds.get(provinceId);

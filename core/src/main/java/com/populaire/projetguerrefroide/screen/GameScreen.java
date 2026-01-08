@@ -341,7 +341,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.hoverTooltip.toFront();
     }
 
-    public void updateHoverTooltip(short provinceId, String countryId, String colonizerId) {
+    public void updateHoverTooltip(int provinceId, String countryId, String colonizerId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
         this.hoverTooltip.update(provinceId, countryId, colonizerId);
@@ -351,7 +351,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.hoverTooltip.toBack();
     }
 
-    public void updateHoverTooltip(short provinceId, String countryId, String colonizerId, ObjectIntMap<String> elements) {
+    public void updateHoverTooltip(int provinceId, String countryId, String colonizerId, ObjectIntMap<String> elements) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
         this.hoverTooltip.update(provinceId, countryId, colonizerId, elements);

@@ -22,7 +22,7 @@ public class Debug extends Table {
 
     private float timeSinceLastStats;
 
-    public Debug(short totalProvinces) {
+    public Debug(int totalProvinces) {
         Label.LabelStyle labelStyle = new Label.LabelStyle(new WgBitmapFont(), Color.GREEN);
 
         this.fpsLabel = new Label("", labelStyle);

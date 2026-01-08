@@ -235,7 +235,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         }
     }
 
-    public void updateHoverBox(short provinceId, String countryId, String colonizerId) {
+    public void updateHoverBox(int provinceId, String countryId, String colonizerId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
         this.hoverTooltip.update(provinceId, countryId, colonizerId);

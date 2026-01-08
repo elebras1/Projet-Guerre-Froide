@@ -29,7 +29,7 @@ public class PopulationTemplateStoreBuilder {
         return this.index;
     }
 
-    public void add(short id, float children, float adults, float seniors) {
+    public void add(int id, float children, float adults, float seniors) {
         this.indexById.put(id, this.index + 1);
         this.children.add(children);
         this.adults.add(adults);

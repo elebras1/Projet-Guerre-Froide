@@ -93,22 +93,22 @@ public class EconomyService {
 
     private IntList getPopulationsAmount(RegionStore regionStore, ProvinceStore provinceStore) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         IntList populationsAmount = new IntList();
         populationsAmount.setSize(regionStore.getRegionIds().size());
 
-        try (Query query = ecsWorld.query().with(ecsConstants.landProvinceTag()).build()) {
-            query.each(provinceId -> {
-                Entity provinceEntity = ecsWorld.obtainEntity(provinceId);
-                GeoHierarchy geoHierarchy = provinceEntity.get(GeoHierarchy.class);
-                long regionId = geoHierarchy.regionId();
-                String regionNameId = ecsWorld.obtainEntity(regionId).getName();
-                int regionIndex = regionStore.getRegionIds().get(regionNameId);
-                int provinceNameId = Integer.parseInt(provinceEntity.getName());
-                int provinceIndex = provinceStore.getIndexById().get(provinceNameId);
-                int population = provinceStore.getPopulationAmount(provinceIndex);
-                int currentPopulation = populationsAmount.get(regionIndex);
-                populationsAmount.set(regionIndex, currentPopulation + population);
+        try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    Entity provinceEntity = ecsWorld.obtainEntity(iter.entityId(i));
+                    long regionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
+                    String regionNameId = ecsWorld.obtainEntity(regionId).getName();
+                    int regionIndex = regionStore.getRegionIds().get(regionNameId);
+                    int provinceNameId = Integer.parseInt(provinceEntity.getName());
+                    int provinceIndex = provinceStore.getIndexById().get(provinceNameId);
+                    int population = provinceStore.getPopulationAmount(provinceIndex);
+                    int currentPopulation = populationsAmount.get(regionIndex);
+                    populationsAmount.set(regionIndex, currentPopulation + population);
+                }
             });
         }
 
@@ -117,20 +117,20 @@ public class EconomyService {
 
     private IntList getWorkersAmount(RegionStore regionStore, ProvinceStore provinceStore) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         IntList workersAmount = new IntList(regionStore.getRegionIds().size());
         workersAmount.setSize(regionStore.getRegionIds().size());
 
-        try (Query query = ecsWorld.query().with(ecsConstants.landProvinceTag()).build()) {
-            query.each(provinceId -> {
-                Entity provinceEntity = ecsWorld.obtainEntity(provinceId);
-                GeoHierarchy geoHierarchy = provinceEntity.get(GeoHierarchy.class);
-                long regionId = geoHierarchy.regionId();
-                String regionNameId = ecsWorld.obtainEntity(regionId).getName();
-                int regionIndex = regionStore.getRegionIds().get(regionNameId);
-                int adults = this.getAmountAdults(provinceId, provinceStore);
-                int currentWorkers = workersAmount.get(regionIndex);
-                workersAmount.set(regionIndex, currentWorkers + adults);
+        try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    Entity provinceEntity = ecsWorld.obtainEntity(iter.entityId(i));
+                    long regionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
+                    String regionNameId = ecsWorld.obtainEntity(regionId).getName();
+                    int regionIndex = regionStore.getRegionIds().get(regionNameId);
+                    int adults = this.getAmountAdults(provinceEntity.id(), provinceStore);
+                    int currentWorkers = workersAmount.get(regionIndex);
+                    workersAmount.set(regionIndex, currentWorkers + adults);
+                }
             });
         }
 

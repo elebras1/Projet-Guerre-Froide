@@ -56,7 +56,7 @@ public class WorldService implements DateListener {
         this.economyService.initialize();
     }
 
-    public boolean selectProvince(short x, short y) {
+    public boolean selectProvince(int x, int y) {
         return this.worldManager.selectProvince(x, y);
     }
 
@@ -68,22 +68,21 @@ public class WorldService implements DateListener {
         return this.worldManager.setCountryPlayer();
     }
 
-    public boolean hoverLandProvince(short x, short y) {
+    public boolean hoverLandProvince(int x, int y) {
         return this.worldManager.getLandProvinceId(x, y) != 0;
     }
 
-    public short getProvinceId(short x, short y) {
+    public int getProvinceId(int x, int y) {
         long provinceId = this.worldManager.getLandProvinceId(x, y);
-        return Short.parseShort(this.gameContext.getEcsWorld().obtainEntity(provinceId).getName());
+        return Integer.parseInt(this.gameContext.getEcsWorld().obtainEntity(provinceId).getName());
     }
 
     public MapMode getMapMode() {
         return this.worldManager.getMapMode();
     }
 
-    public String getCountryIdOfHoveredProvince(short x, short y) {
+    public String getCountryIdOfHoveredProvince(int x, int y) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         Entity province = ecsWorld.obtainEntity(this.worldManager.getLandProvinceId(x, y));
         Province provinceData = province.get(Province.class);
         return ecsWorld.obtainEntity(provinceData.ownerId()).getName();
@@ -91,7 +90,6 @@ public class WorldService implements DateListener {
 
     public Position getPositionOfCapitalOfSelectedCountry() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         Entity selectedProvince = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId());
         Province selectedProvinceData = selectedProvince.get(Province.class);
         Entity countryOwner = ecsWorld.obtainEntity(selectedProvinceData.ownerId());
@@ -108,7 +106,7 @@ public class WorldService implements DateListener {
         return countryPlayer.getName();
     }
 
-    public short getNumberOfProvinces() {
+    public int getNumberOfProvinces() {
         return this.worldManager.getNumberOfProvinces();
     }
 
@@ -189,7 +187,7 @@ public class WorldService implements DateListener {
         this.worldManager.changeMapMode(mapMode);
     }
 
-    public ObjectIntMap<String> getCulturesOfHoveredProvince(short x, short y) {
+    public ObjectIntMap<String> getCulturesOfHoveredProvince(int x, int y) {
         long provinceId = this.worldManager.getLandProvinceId(x, y);
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         int provinceNameId = Integer.parseInt(province.getName());
@@ -203,7 +201,7 @@ public class WorldService implements DateListener {
         return this.calculatePercentageDistributionFromProvinceData(provinceCultureIds, provinceCultureValues, startIndex, endIndex, amountAdults);
     }
 
-    public ObjectIntMap<String> getReligionsOfHoveredProvince(short x, short y) {
+    public ObjectIntMap<String> getReligionsOfHoveredProvince(int x, int y) {
         long provinceId = this.worldManager.getLandProvinceId(x, y);
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         int provinceNameId = Integer.parseInt(province.getName());
@@ -230,7 +228,7 @@ public class WorldService implements DateListener {
         return this.worldManager.getColonizerId(selectedProvinceData.ownerId());
     }
 
-    public String getColonizerIdOfHoveredProvince(short x, short y) {
+    public String getColonizerIdOfHoveredProvince(int x, int y) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(this.worldManager.getLandProvinceId(x, y));
         Province provinceData = province.get(Province.class);
         return this.worldManager.getColonizerId(provinceData.ownerId());
@@ -242,7 +240,7 @@ public class WorldService implements DateListener {
             return -1;
         }
         Entity selectedProvince = this.gameContext.getEcsWorld().obtainEntity(selectedProvinceId);
-        return this.economyService.getResourceGoodsProduction(Short.parseShort(selectedProvince.getName()));
+        return this.economyService.getResourceGoodsProduction(Integer.parseInt(selectedProvince.getName()));
     }
 
     public RegionsBuildingsDto prepareRegionsBuildingsDto() {
