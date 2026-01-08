@@ -35,7 +35,7 @@ public class ProjetGuerreFroide extends Game {
     }
 
     private void registerComponents() {
-        this.ecsWorld.component(Modifier.class);
+        this.ecsWorld.component(Modifiers.class);
         this.ecsWorld.component(Minister.class);
         this.ecsWorld.component(Ideology.class);
         this.ecsWorld.component(Terrain.class);
