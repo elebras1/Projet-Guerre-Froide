@@ -763,15 +763,6 @@
         ]
     },
     "ministers": {
-        "872": {
-            "name": "Norodom Sihanouk",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.8,
-            "picture": "CMB_M_Sihanouk_Norodom",
-            "start_date": "1941-04-25",
-            "death_date": "2012-10-15",
-            "type": "autocrat_type"
-        },
         "873": {
             "name": "Norodom Suramarit",
             "ideology": "paternal_auto_idolg",
@@ -781,23 +772,14 @@
             "death_date": "1960-04-03",
             "type": "autocrat_type"
         },
-        "874": {
-            "name": "Norodom Sihamoni",
+        "872": {
+            "name": "Norodom Sihanouk",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 0.78,
-            "picture": "CMB_M_Sihamoni_Norodom",
-            "start_date": "1971-05-14",
-            "death_date": "2300-01-01",
-            "type": "traditionalist_type"
-        },
-        "875": {
-            "name": "Norodom Ranariddh",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.77,
-            "picture": "CMB_M_Ranariddh_Norodom",
-            "start_date": "1962-01-02",
-            "death_date": "2300-01-01",
-            "type": "traditionalist_type"
+            "loyalty": 0.8,
+            "picture": "CMB_M_Sihanouk_Norodom",
+            "start_date": "1941-04-25",
+            "death_date": "2012-10-15",
+            "type": "autocrat_type"
         },
         "876": {
             "name": "Samdach Penn Nouth",
@@ -808,6 +790,24 @@
             "death_date": "1976-04-04",
             "type": "bureaucrat_type"
         },
+        "909": {
+            "name": "Kulap Kamon Metharom",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Metharom_Kulap_K",
+            "start_date": "1946-07-08",
+            "death_date": "1954-07-21",
+            "type": "courteous_figure"
+        },
+        "914": {
+            "name": "Hu Nim",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Nim_Hu",
+            "start_date": "1950-01-01",
+            "death_date": "1997-07-06",
+            "type": "reformer_type"
+        },
         "877": {
             "name": "Chan Nak",
             "ideology": "paternal_auto_idolg",
@@ -816,6 +816,15 @@
             "start_date": "1953-11-22",
             "death_date": "1954-04-07",
             "type": "bureaucrat_type"
+        },
+        "907": {
+            "name": "Toby Ryer",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Ryer_Toby",
+            "start_date": "1954-06-12",
+            "death_date": "1975-05-09",
+            "type": "reformer_type"
         },
         "878": {
             "name": "Leng Ngeth",
@@ -862,6 +871,15 @@
             "death_date": "1958-07-10",
             "type": "bureaucrat_type"
         },
+        "913": {
+            "name": "Son Sen",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Sen_Son",
+            "start_date": "1960-01-01",
+            "death_date": "1997-03-15",
+            "type": "zealous_type"
+        },
         "883": {
             "name": "Chuop Hell",
             "ideology": "paternal_auto_idolg",
@@ -879,6 +897,24 @@
             "start_date": "1960-04-19",
             "death_date": "1961-01-28",
             "type": "bureaucrat_type"
+        },
+        "904": {
+            "name": "Pich Sopheap Veasna Soun",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Soun_Pich_S_V",
+            "start_date": "1961-01-25",
+            "death_date": "1979-12-04",
+            "type": "administrator_type"
+        },
+        "875": {
+            "name": "Norodom Ranariddh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.77,
+            "picture": "CMB_M_Ranariddh_Norodom",
+            "start_date": "1962-01-02",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
         },
         "885": {
             "name": "Nhiek Tioulong",
@@ -906,6 +942,15 @@
             "start_date": "1962-10-06",
             "death_date": "1966-10-25",
             "type": "autocrat_type"
+        },
+        "905": {
+            "name": "Vibol Soun",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Soun_Vibol",
+            "start_date": "1963-05-05",
+            "death_date": "1979-12-04",
+            "type": "lethargic_type"
         },
         "888": {
             "name": "Lon Nol",
@@ -943,6 +988,15 @@
             "death_date": "1972-03-18",
             "type": "hardliner_type"
         },
+        "874": {
+            "name": "Norodom Sihamoni",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.78,
+            "picture": "CMB_M_Sihamoni_Norodom",
+            "start_date": "1971-05-14",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
         "892": {
             "name": "Son Ngoc Thanh",
             "ideology": "paternal_auto_idolg",
@@ -951,6 +1005,15 @@
             "start_date": "1972-03-18",
             "death_date": "1972-10-15",
             "type": "reformer_type"
+        },
+        "912": {
+            "name": "Ieng Sary",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Sary_Ieng",
+            "start_date": "1972-09-18",
+            "death_date": "1995-01-11",
+            "type": "zealous_type"
         },
         "893": {
             "name": "Hang Thun Hak",
@@ -1015,6 +1078,15 @@
             "death_date": "1976-10-25",
             "type": "controversial_figure"
         },
+        "906": {
+            "name": "Nhung Quý Trai Phan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Phan_Nhung_Q_T",
+            "start_date": "1979-01-01",
+            "death_date": "1991-12-31",
+            "type": "moral_type"
+        },
         "900": {
             "name": "Heng Samrin",
             "ideology": "communist_idolg",
@@ -1042,51 +1114,6 @@
             "death_date": "1984-12-26",
             "type": "bureaucrat_type"
         },
-        "903": {
-            "name": "Hun Sen",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Sen_Hun",
-            "start_date": "1984-12-26",
-            "death_date": "1993-09-24",
-            "type": "bureaucrat_type"
-        },
-        "904": {
-            "name": "Pich Sopheap Veasna Soun",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Soun_Pich_S_V",
-            "start_date": "1961-01-25",
-            "death_date": "1979-12-04",
-            "type": "administrator_type"
-        },
-        "905": {
-            "name": "Vibol Soun",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Soun_Vibol",
-            "start_date": "1963-05-05",
-            "death_date": "1979-12-04",
-            "type": "lethargic_type"
-        },
-        "906": {
-            "name": "Nhung Quý Trai Phan",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Phan_Nhung_Q_T",
-            "start_date": "1979-01-01",
-            "death_date": "1991-12-31",
-            "type": "moral_type"
-        },
-        "907": {
-            "name": "Toby Ryer",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Ryer_Toby",
-            "start_date": "1954-06-12",
-            "death_date": "1975-05-09",
-            "type": "reformer_type"
-        },
         "908": {
             "name": "Roland Samnang Phirun",
             "ideology": "social_liberal_idolg",
@@ -1096,14 +1123,14 @@
             "death_date": "1991-12-23",
             "type": "courageous_type"
         },
-        "909": {
-            "name": "Kulap Kamon Metharom",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Metharom_Kulap_K",
-            "start_date": "1946-07-08",
-            "death_date": "1954-07-21",
-            "type": "courteous_figure"
+        "903": {
+            "name": "Hun Sen",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Sen_Hun",
+            "start_date": "1984-12-26",
+            "death_date": "1993-09-24",
+            "type": "bureaucrat_type"
         },
         "910": {
             "name": "Pol Var Nouth",
@@ -1122,33 +1149,6 @@
             "start_date": "1988-12-03",
             "death_date": "1991-12-31",
             "type": "hardliner_type"
-        },
-        "912": {
-            "name": "Ieng Sary",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Sary_Ieng",
-            "start_date": "1972-09-18",
-            "death_date": "1995-01-11",
-            "type": "zealous_type"
-        },
-        "913": {
-            "name": "Son Sen",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Sen_Son",
-            "start_date": "1960-01-01",
-            "death_date": "1997-03-15",
-            "type": "zealous_type"
-        },
-        "914": {
-            "name": "Hu Nim",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Nim_Hu",
-            "start_date": "1950-01-01",
-            "death_date": "1997-07-06",
-            "type": "reformer_type"
         }
     }
 }

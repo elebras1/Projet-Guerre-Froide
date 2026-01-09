@@ -72,19 +72,10 @@
     },
     "unit_names": "",
     "ministers": {
-        "4789": {
-            "name": "Abdirahman Ahmed Ali Tuur",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SLL_M_Tuur_Abdirahman_A_A",
-            "start_date": "1982-01-01",
-            "death_date": "1993-05-16",
-            "type": "courageous_type"
-        },
-        "4790": {
+        "4775": {
             "name": "Muhammad Haji Ibrahim Egal",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
+            "loyalty": 1.0,
             "picture": "SOM_M_Egal_Muhammad_H_I",
             "start_date": "1960-01-01",
             "death_date": "2002-05-03",
@@ -98,6 +89,15 @@
             "start_date": "1965-01-01",
             "death_date": "2300-01-01",
             "type": "democrat_type"
+        },
+        "4789": {
+            "name": "Abdirahman Ahmed Ali Tuur",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SLL_M_Tuur_Abdirahman_A_A",
+            "start_date": "1982-01-01",
+            "death_date": "1993-05-16",
+            "type": "courageous_type"
         }
     }
 }

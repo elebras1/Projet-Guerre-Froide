@@ -71,131 +71,32 @@
     },
     "unit_names": "",
     "ministers": {
-        "4302": {
-            "name": "Maurice Duplessis",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Duplessis_Maurice",
-            "start_date": "1944-08-08",
-            "death_date": "1960-06-22",
-            "type": "traditionalist_type"
-        },
-        "4303": {
-            "name": "Antonio Barrette",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Barrette_Antonio",
-            "start_date": "1960-06-22",
-            "death_date": "1962-11-14",
-            "type": "bureaucrat_type"
-        },
-        "4304": {
-            "name": "Daniel Johnson, Sr.",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Johnson_Sr_Daniel",
-            "start_date": "1962-11-14",
-            "death_date": "1970-04-29",
-            "type": "reformer_type"
-        },
-        "4305": {
-            "name": "Jean-Jacques Bertrand",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Bertrand_Jean-Jacques",
-            "start_date": "1970-04-29",
-            "death_date": "1973-10-29",
+        "959": {
+            "name": "Adrien Arcand",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Arcand_Adrien",
+            "start_date": "1899-10-03",
+            "death_date": "1967-08-01",
             "type": "controversial_figure"
         },
-        "4306": {
-            "name": "Gabriel Loubier",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Loubier_Gabriel",
-            "start_date": "1973-10-29",
-            "death_date": "1976-11-15",
-            "type": "lethargic_type"
+        "957": {
+            "name": "Fred Rose",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Rose_Fred",
+            "start_date": "1934-01-01",
+            "death_date": "1947-01-30",
+            "type": "controversial_figure"
         },
-        "4307": {
-            "name": "Rodrigue Biron",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Biron_Rodrigue",
-            "start_date": "1976-11-15",
-            "death_date": "1981-04-13",
-            "type": "traditionalist_type"
-        },
-        "4308": {
-            "name": "Roch LaSalle",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_LaSalle_Roch",
-            "start_date": "1981-04-13",
-            "death_date": "1985-12-02",
-            "type": "administrator_type"
-        },
-        "4309": {
-            "name": "Jean-Marc Beliveau",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Beliveau_Jean-Marc",
-            "start_date": "1985-12-02",
-            "death_date": "1989-09-25",
-            "type": "moral_type"
-        },
-        "4310": {
-            "name": "Robert Coppenrath",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Coppenrath_Robert",
-            "start_date": "1989-09-25",
-            "death_date": "1994-09-12",
-            "type": "administrator_type"
-        },
-        "4311": {
-            "name": "René Lévesque",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Levesque_Rene",
-            "start_date": "1970-04-29",
-            "death_date": "1985-12-02",
-            "type": "reformer_type"
-        },
-        "4312": {
-            "name": "Pierre-Marc Johnson",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Johnson_Pierre-Marc",
-            "start_date": "1985-12-02",
-            "death_date": "1989-09-25",
-            "type": "traditionalist_type"
-        },
-        "4313": {
-            "name": "Jacques Parizeau",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Parizeau_Jacques",
-            "start_date": "1989-09-25",
-            "death_date": "1994-09-12",
+        "4347": {
+            "name": "Paul Bouchard",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.9,
+            "picture": "QUE_M_Bouchard_Paul",
+            "start_date": "1936-01-01",
+            "death_date": "1980-01-01",
             "type": "hardliner_type"
-        },
-        "4314": {
-            "name": "Victor Levis",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "QUE_M_Levis_Victor",
-            "start_date": "1981-04-13",
-            "death_date": "1985-12-02",
-            "type": "reformer_type"
-        },
-        "4315": {
-            "name": "Nick Auf der Maur",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "QUE_M_Maur_Nick_A",
-            "start_date": "1976-11-15",
-            "death_date": "1994-09-12",
-            "type": "visionary_type"
         },
         "4316": {
             "name": "Adélard Godbout",
@@ -206,158 +107,23 @@
             "death_date": "1952-07-16",
             "type": "reformer_type"
         },
-        "4317": {
-            "name": "Georges-Émile Lapalme",
-            "ideology": "social_liberal_idolg",
+        "4302": {
+            "name": "Maurice Duplessis",
+            "ideology": "social_cons_idolg",
             "loyalty": 1.0,
-            "picture": "QUE_M_Lapalme_Georges-Emile",
-            "start_date": "1952-07-16",
+            "picture": "QUE_M_Duplessis_Maurice",
+            "start_date": "1944-08-08",
             "death_date": "1960-06-22",
-            "type": "administrator_type"
-        },
-        "4318": {
-            "name": "Jean Lesage",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Lesage_Jean",
-            "start_date": "1960-06-22",
-            "death_date": "1970-04-29",
-            "type": "reformer_type"
-        },
-        "4319": {
-            "name": "Robert Bourassa",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.95,
-            "picture": "QUE_M_Bourassa_Robert",
-            "start_date": "1970-04-29",
-            "death_date": "1994-09-12",
-            "type": "controversial_figure"
-        },
-        "4320": {
-            "name": "Claude Ryan",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Ryan_Claude",
-            "start_date": "1981-04-13",
-            "death_date": "1985-12-02",
             "type": "traditionalist_type"
         },
-        "4321": {
-            "name": "P. Ernest Grégoire",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Gregoire_P_Ernest",
-            "start_date": "1948-07-28",
-            "death_date": "1952-07-16",
-            "type": "administrator_type"
-        },
-        "4322": {
-            "name": "Gilles Grégoire",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Gregoire_Gilles",
-            "start_date": "1966-06-05",
-            "death_date": "1970-04-29",
-            "type": "controversial_figure"
-        },
-        "4323": {
-            "name": "Pierre Bourgault",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Bourgault_Pierre",
-            "start_date": "1966-06-05",
-            "death_date": "1970-04-29",
-            "type": "reputable_type"
-        },
-        "4324": {
-            "name": "Camil Samson",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.95,
-            "picture": "QUE_M_Samson_Camil",
-            "start_date": "1970-04-29",
-            "death_date": "1981-04-13",
-            "type": "visionary_type"
-        },
-        "4325": {
-            "name": "Yvon Dupuis",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Dupuis_Yvon",
-            "start_date": "1973-10-29",
-            "death_date": "1976-11-15",
-            "type": "controversial_figure"
-        },
-        "4326": {
-            "name": "Jean-Paul Poulin",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Poulin_Jean-Paul",
-            "start_date": "1981-04-13",
-            "death_date": "1994-09-12",
-            "type": "traditionalist_type"
-        },
-        "4327": {
-            "name": "Jean Ouimet",
-            "ideology": "social_democrat_idolg",
+        "4348": {
+            "name": "Lionel Groulx",
+            "ideology": "fascistic_idolg",
             "loyalty": 0.9,
-            "picture": "QUE_M_Ouimet_Jean",
-            "start_date": "1989-09-25",
-            "death_date": "1994-09-12",
-            "type": "ambitious_type"
-        },
-        "4328": {
-            "name": "Gaétan Nadeau",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.9,
-            "picture": "QUE_M_Nadeau_Gaetan",
-            "start_date": "1989-09-25",
-            "death_date": "1994-09-12",
-            "type": "hardliner_type"
-        },
-        "4329": {
-            "name": "Michel Chartrand",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.9,
-            "picture": "QUE_M_Chartrand_Michel",
-            "start_date": "1948-07-28",
-            "death_date": "1998-11-30",
-            "type": "courageous_type"
-        },
-        "4330": {
-            "name": "Henri-François Gautrin",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.91,
-            "picture": "QUE_M_Gautrin_Henri-Francois",
-            "start_date": "1976-11-15",
-            "death_date": "1981-04-13",
-            "type": "administrator_type"
-        },
-        "4331": {
-            "name": "Roger Deslauriers",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.92,
-            "picture": "QUE_M_Deslauriers_Roger",
-            "start_date": "1985-12-02",
-            "death_date": "1989-09-25",
-            "type": "ambitious_type"
-        },
-        "4332": {
-            "name": "Jacques Paquette",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.92,
-            "picture": "QUE_M_Paquette_Jacques",
-            "start_date": "1985-12-02",
-            "death_date": "1986-08-28",
-            "type": "dictator_type"
-        },
-        "4333": {
-            "name": "Gérard Lachance",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Lachance_Gerard",
-            "start_date": "1989-09-25",
-            "death_date": "1994-09-12",
-            "type": "parental_type"
+            "picture": "QUE_M_Groulx_Lionel",
+            "start_date": "1946-01-01",
+            "death_date": "1950-01-01",
+            "type": "religious_type"
         },
         "4334": {
             "name": "Guy Caron",
@@ -368,24 +134,6 @@
             "death_date": "1956-10-01",
             "type": "traditionalist_type"
         },
-        "4335": {
-            "name": "Robert Verrier",
-            "ideology": "maoist_idolg",
-            "loyalty": 1.0,
-            "picture": "QUE_M_Verrier_Robert",
-            "start_date": "1981-04-13",
-            "death_date": "1989-09-25",
-            "type": "hardliner_type"
-        },
-        "957": {
-            "name": "Fred Rose",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "CAN_M_Rose_Fred",
-            "start_date": "1934-01-01",
-            "death_date": "1947-01-30",
-            "type": "controversial_figure"
-        },
         "4336": {
             "name": "Stanley Brehaut Ryerson",
             "ideology": "communist_idolg",
@@ -395,33 +143,6 @@
             "death_date": "1976-11-15",
             "type": "traditionalist_type"
         },
-        "4337": {
-            "name": "Sam Walsh",
-            "ideology": "communist_idolg",
-            "loyalty": 0.91,
-            "picture": "QUE_M_Walsh_Sam",
-            "start_date": "1976-11-15",
-            "death_date": "1989-09-25",
-            "type": "courageous_type"
-        },
-        "4338": {
-            "name": "Roger Rashi",
-            "ideology": "communist_idolg",
-            "loyalty": 0.92,
-            "picture": "QUE_M_Rashi_Roger",
-            "start_date": "1981-04-13",
-            "death_date": "2009-12-11",
-            "type": "liberal_type"
-        },
-        "4339": {
-            "name": "Marianne Roy",
-            "ideology": "communist_idolg",
-            "loyalty": 0.93,
-            "picture": "QUE_M_Roy_Marianne",
-            "start_date": "1989-09-25",
-            "death_date": "1994-09-12",
-            "type": "ambitious_type"
-        },
         "4340": {
             "name": "Marcel Chaput",
             "ideology": "paternal_auto_idolg",
@@ -430,6 +151,33 @@
             "start_date": "1946-01-01",
             "death_date": "1977-01-01",
             "type": "ambitious_type"
+        },
+        "4321": {
+            "name": "P. Ernest Grégoire",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Gregoire_P_Ernest",
+            "start_date": "1948-07-28",
+            "death_date": "1952-07-16",
+            "type": "administrator_type"
+        },
+        "4329": {
+            "name": "Michel Chartrand",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.9,
+            "picture": "QUE_M_Chartrand_Michel",
+            "start_date": "1948-07-28",
+            "death_date": "1998-11-30",
+            "type": "courageous_type"
+        },
+        "4317": {
+            "name": "Georges-Émile Lapalme",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Lapalme_Georges-Emile",
+            "start_date": "1952-07-16",
+            "death_date": "1960-06-22",
+            "type": "administrator_type"
         },
         "4341": {
             "name": "Andrée Ferretti",
@@ -458,6 +206,24 @@
             "death_date": "1977-03-15",
             "type": "controversial_figure"
         },
+        "4303": {
+            "name": "Antonio Barrette",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Barrette_Antonio",
+            "start_date": "1960-06-22",
+            "death_date": "1962-11-14",
+            "type": "bureaucrat_type"
+        },
+        "4318": {
+            "name": "Jean Lesage",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Lesage_Jean",
+            "start_date": "1960-06-22",
+            "death_date": "1970-04-29",
+            "type": "reformer_type"
+        },
         "4344": {
             "name": "Guy Pouliot",
             "ideology": "paternal_auto_idolg",
@@ -466,6 +232,105 @@
             "start_date": "1962-01-01",
             "death_date": "1964-01-01",
             "type": "bureaucrat_type"
+        },
+        "4304": {
+            "name": "Daniel Johnson, Sr.",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Johnson_Sr_Daniel",
+            "start_date": "1962-11-14",
+            "death_date": "1970-04-29",
+            "type": "reformer_type"
+        },
+        "4322": {
+            "name": "Gilles Grégoire",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Gregoire_Gilles",
+            "start_date": "1966-06-05",
+            "death_date": "1970-04-29",
+            "type": "controversial_figure"
+        },
+        "4323": {
+            "name": "Pierre Bourgault",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Bourgault_Pierre",
+            "start_date": "1966-06-05",
+            "death_date": "1970-04-29",
+            "type": "reputable_type"
+        },
+        "4305": {
+            "name": "Jean-Jacques Bertrand",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Bertrand_Jean-Jacques",
+            "start_date": "1970-04-29",
+            "death_date": "1973-10-29",
+            "type": "controversial_figure"
+        },
+        "4324": {
+            "name": "Camil Samson",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.95,
+            "picture": "QUE_M_Samson_Camil",
+            "start_date": "1970-04-29",
+            "death_date": "1981-04-13",
+            "type": "visionary_type"
+        },
+        "4311": {
+            "name": "René Lévesque",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Levesque_Rene",
+            "start_date": "1970-04-29",
+            "death_date": "1985-12-02",
+            "type": "reformer_type"
+        },
+        "4319": {
+            "name": "Robert Bourassa",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "QUE_M_Bourassa_Robert",
+            "start_date": "1970-04-29",
+            "death_date": "1994-09-12",
+            "type": "controversial_figure"
+        },
+        "4306": {
+            "name": "Gabriel Loubier",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Loubier_Gabriel",
+            "start_date": "1973-10-29",
+            "death_date": "1976-11-15",
+            "type": "lethargic_type"
+        },
+        "4325": {
+            "name": "Yvon Dupuis",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Dupuis_Yvon",
+            "start_date": "1973-10-29",
+            "death_date": "1976-11-15",
+            "type": "controversial_figure"
+        },
+        "4307": {
+            "name": "Rodrigue Biron",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Biron_Rodrigue",
+            "start_date": "1976-11-15",
+            "death_date": "1981-04-13",
+            "type": "traditionalist_type"
+        },
+        "4330": {
+            "name": "Henri-François Gautrin",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.91,
+            "picture": "QUE_M_Gautrin_Henri-Francois",
+            "start_date": "1976-11-15",
+            "death_date": "1981-04-13",
+            "type": "administrator_type"
         },
         "4345": {
             "name": "Jérôme Choquette",
@@ -476,6 +341,168 @@
             "death_date": "1981-04-13",
             "type": "parental_type"
         },
+        "4337": {
+            "name": "Sam Walsh",
+            "ideology": "communist_idolg",
+            "loyalty": 0.91,
+            "picture": "QUE_M_Walsh_Sam",
+            "start_date": "1976-11-15",
+            "death_date": "1989-09-25",
+            "type": "courageous_type"
+        },
+        "4315": {
+            "name": "Nick Auf der Maur",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "QUE_M_Maur_Nick_A",
+            "start_date": "1976-11-15",
+            "death_date": "1994-09-12",
+            "type": "visionary_type"
+        },
+        "4308": {
+            "name": "Roch LaSalle",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_LaSalle_Roch",
+            "start_date": "1981-04-13",
+            "death_date": "1985-12-02",
+            "type": "administrator_type"
+        },
+        "4314": {
+            "name": "Victor Levis",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "QUE_M_Levis_Victor",
+            "start_date": "1981-04-13",
+            "death_date": "1985-12-02",
+            "type": "reformer_type"
+        },
+        "4320": {
+            "name": "Claude Ryan",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Ryan_Claude",
+            "start_date": "1981-04-13",
+            "death_date": "1985-12-02",
+            "type": "traditionalist_type"
+        },
+        "4335": {
+            "name": "Robert Verrier",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Verrier_Robert",
+            "start_date": "1981-04-13",
+            "death_date": "1989-09-25",
+            "type": "hardliner_type"
+        },
+        "4326": {
+            "name": "Jean-Paul Poulin",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Poulin_Jean-Paul",
+            "start_date": "1981-04-13",
+            "death_date": "1994-09-12",
+            "type": "traditionalist_type"
+        },
+        "4338": {
+            "name": "Roger Rashi",
+            "ideology": "communist_idolg",
+            "loyalty": 0.92,
+            "picture": "QUE_M_Rashi_Roger",
+            "start_date": "1981-04-13",
+            "death_date": "2009-12-11",
+            "type": "liberal_type"
+        },
+        "4332": {
+            "name": "Jacques Paquette",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.92,
+            "picture": "QUE_M_Paquette_Jacques",
+            "start_date": "1985-12-02",
+            "death_date": "1986-08-28",
+            "type": "dictator_type"
+        },
+        "4309": {
+            "name": "Jean-Marc Beliveau",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Beliveau_Jean-Marc",
+            "start_date": "1985-12-02",
+            "death_date": "1989-09-25",
+            "type": "moral_type"
+        },
+        "4312": {
+            "name": "Pierre-Marc Johnson",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Johnson_Pierre-Marc",
+            "start_date": "1985-12-02",
+            "death_date": "1989-09-25",
+            "type": "traditionalist_type"
+        },
+        "4331": {
+            "name": "Roger Deslauriers",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.92,
+            "picture": "QUE_M_Deslauriers_Roger",
+            "start_date": "1985-12-02",
+            "death_date": "1989-09-25",
+            "type": "ambitious_type"
+        },
+        "4310": {
+            "name": "Robert Coppenrath",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Coppenrath_Robert",
+            "start_date": "1989-09-25",
+            "death_date": "1994-09-12",
+            "type": "administrator_type"
+        },
+        "4313": {
+            "name": "Jacques Parizeau",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Parizeau_Jacques",
+            "start_date": "1989-09-25",
+            "death_date": "1994-09-12",
+            "type": "hardliner_type"
+        },
+        "4327": {
+            "name": "Jean Ouimet",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "QUE_M_Ouimet_Jean",
+            "start_date": "1989-09-25",
+            "death_date": "1994-09-12",
+            "type": "ambitious_type"
+        },
+        "4328": {
+            "name": "Gaétan Nadeau",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "QUE_M_Nadeau_Gaetan",
+            "start_date": "1989-09-25",
+            "death_date": "1994-09-12",
+            "type": "hardliner_type"
+        },
+        "4333": {
+            "name": "Gérard Lachance",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "QUE_M_Lachance_Gerard",
+            "start_date": "1989-09-25",
+            "death_date": "1994-09-12",
+            "type": "parental_type"
+        },
+        "4339": {
+            "name": "Marianne Roy",
+            "ideology": "communist_idolg",
+            "loyalty": 0.93,
+            "picture": "QUE_M_Roy_Marianne",
+            "start_date": "1989-09-25",
+            "death_date": "1994-09-12",
+            "type": "ambitious_type"
+        },
         "4346": {
             "name": "Robert Libman",
             "ideology": "paternal_auto_idolg",
@@ -484,33 +511,6 @@
             "start_date": "1989-09-25",
             "death_date": "1994-09-12",
             "type": "hardliner_type"
-        },
-        "959": {
-            "name": "Adrien Arcand",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.9,
-            "picture": "CAN_M_Arcand_Adrien",
-            "start_date": "1899-10-03",
-            "death_date": "1967-08-01",
-            "type": "controversial_figure"
-        },
-        "4347": {
-            "name": "Paul Bouchard",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.9,
-            "picture": "QUE_M_Bouchard_Paul",
-            "start_date": "1936-01-01",
-            "death_date": "1980-01-01",
-            "type": "hardliner_type"
-        },
-        "4348": {
-            "name": "Lionel Groulx",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.9,
-            "picture": "QUE_M_Groulx_Lionel",
-            "start_date": "1946-01-01",
-            "death_date": "1950-01-01",
-            "type": "religious_type"
         }
     }
 }

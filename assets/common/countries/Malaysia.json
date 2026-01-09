@@ -72,6 +72,51 @@
     },
     "unit_names": "",
     "ministers": {
+        "3311": {
+            "name": "Eu Chooi Yip",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_Yip_Eu_C",
+            "start_date": "1938-02-01",
+            "death_date": "1991-09-01",
+            "type": "moral_type"
+        },
+        "3313": {
+            "name": "S.A. Ganapathy",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_Ganapathy_S_A",
+            "start_date": "1939-10-01",
+            "death_date": "1949-05-04",
+            "type": "visionary_type"
+        },
+        "3308": {
+            "name": "Abdul Rashid bin Maidin",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_Maidin_Abdul_R",
+            "start_date": "1941-12-08",
+            "death_date": "1989-09-01",
+            "type": "courageous_type"
+        },
+        "3310": {
+            "name": "Suriani Abdullah",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_Abdullah_Suriani",
+            "start_date": "1942-05-12",
+            "death_date": "1989-09-01",
+            "type": "iron_lady"
+        },
+        "3303": {
+            "name": "Yeung Kwo",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_Kwo_Yeung",
+            "start_date": "1946-01-01",
+            "death_date": "1956-08-25",
+            "type": "administrator_type"
+        },
         "3289": {
             "name": "Abdul Rahman",
             "ideology": "paternal_auto_idolg",
@@ -80,6 +125,69 @@
             "start_date": "1946-01-01",
             "death_date": "1960-04-01",
             "type": "bureaucrat_type"
+        },
+        "3298": {
+            "name": "Tunku A. Rahman",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "MLY_M_Rahman_Tunku_A",
+            "start_date": "1946-01-01",
+            "death_date": "1970-09-22",
+            "type": "visionary_type"
+        },
+        "3302": {
+            "name": "Chin Peng",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_Peng_Chin",
+            "start_date": "1946-01-01",
+            "death_date": "1991-12-31",
+            "type": "courageous_type"
+        },
+        "3312": {
+            "name": "Shamsiah Fakeh",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_Fakeh_Shamsiah",
+            "start_date": "1948-06-16",
+            "death_date": "1994-08-23",
+            "type": "parental_type"
+        },
+        "3309": {
+            "name": "Abdullah C.D.",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_C_D_Abdullah",
+            "start_date": "1949-05-12",
+            "death_date": "1989-09-01",
+            "type": "fortunate_type"
+        },
+        "3315": {
+            "name": "Bong Kee Chok",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_Chok_Bong_K",
+            "start_date": "1954-01-01",
+            "death_date": "1973-10-01",
+            "type": "reformer_type"
+        },
+        "3314": {
+            "name": "Wen Min Chyuan",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_Chyuan_Wen_M",
+            "start_date": "1954-01-01",
+            "death_date": "2005-12-01",
+            "type": "zealous_type"
+        },
+        "3316": {
+            "name": "Ang Chu Ting",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_Ting_Ang_C",
+            "start_date": "1955-01-01",
+            "death_date": "1990-10-17",
+            "type": "zealous_type"
         },
         "3290": {
             "name": "Hisamuddin A. Shah",
@@ -99,6 +207,15 @@
             "death_date": "1965-09-20",
             "type": "fortunate_type"
         },
+        "3307": {
+            "name": "Dr. Chen Man Hin",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "MLY_M_Hin_Chen_M",
+            "start_date": "1965-01-01",
+            "death_date": "1999-01-01",
+            "type": "zealous_type"
+        },
         "3292": {
             "name": "Ismail N. Shah",
             "ideology": "paternal_auto_idolg",
@@ -107,105 +224,6 @@
             "start_date": "1965-09-21",
             "death_date": "1970-09-20",
             "type": "ambitious_type"
-        },
-        "3293": {
-            "name": "Abdul Halim",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "MLY_M_Halim_Abdul",
-            "start_date": "1970-09-21",
-            "death_date": "1975-09-20",
-            "type": "parental_type"
-        },
-        "3294": {
-            "name": "Yahya Petra",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "MLY_M_Petra_Yahya",
-            "start_date": "1975-09-21",
-            "death_date": "1979-03-29",
-            "type": "lethargic_type"
-        },
-        "3295": {
-            "name": "Ahmad S. A. Billah",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "MLY_M_Billah_Ahmad",
-            "start_date": "1979-03-29",
-            "death_date": "1984-04-25",
-            "type": "administrator_type"
-        },
-        "3296": {
-            "name": "Mahmud Iskandar",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "MLY_M_Iskandar_Mahmud",
-            "start_date": "1984-04-25",
-            "death_date": "1989-04-25",
-            "type": "controversial_figure"
-        },
-        "3297": {
-            "name": "Azlan Shah",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "MLY_M_Shah_Azlan",
-            "start_date": "1989-04-26",
-            "death_date": "1994-04-25",
-            "type": "bureaucrat_type"
-        },
-        "3298": {
-            "name": "Tunku A. Rahman",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "MLY_M_Rahman_Tunku_A",
-            "start_date": "1946-01-01",
-            "death_date": "1970-09-22",
-            "type": "visionary_type"
-        },
-        "3299": {
-            "name": "Abdul R. Hussein",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "MLY_M_Hussein_Abdul_R",
-            "start_date": "1970-09-22",
-            "death_date": "1976-01-14",
-            "type": "reformer_type"
-        },
-        "3300": {
-            "name": "Hussein Onn",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "MLY_M_Onn_Hussein",
-            "start_date": "1976-01-15",
-            "death_date": "1981-07-16",
-            "type": "reputable_type"
-        },
-        "3301": {
-            "name": "Mahatir Mohamad",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "MLY_M_Mohamad_Mahatir",
-            "start_date": "1981-07-16",
-            "death_date": "2003-10-31",
-            "type": "reformer_type"
-        },
-        "3302": {
-            "name": "Chin Peng",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_Peng_Chin",
-            "start_date": "1946-01-01",
-            "death_date": "1991-12-31",
-            "type": "courageous_type"
-        },
-        "3303": {
-            "name": "Yeung Kwo",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_Kwo_Yeung",
-            "start_date": "1946-01-01",
-            "death_date": "1956-08-25",
-            "type": "administrator_type"
         },
         "3304": {
             "name": "Syed Hussein Alatas",
@@ -225,6 +243,51 @@
             "death_date": "1990-01-01",
             "type": "ambitious_type"
         },
+        "3293": {
+            "name": "Abdul Halim",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MLY_M_Halim_Abdul",
+            "start_date": "1970-09-21",
+            "death_date": "1975-09-20",
+            "type": "parental_type"
+        },
+        "3299": {
+            "name": "Abdul R. Hussein",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "MLY_M_Hussein_Abdul_R",
+            "start_date": "1970-09-22",
+            "death_date": "1976-01-14",
+            "type": "reformer_type"
+        },
+        "3294": {
+            "name": "Yahya Petra",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MLY_M_Petra_Yahya",
+            "start_date": "1975-09-21",
+            "death_date": "1979-03-29",
+            "type": "lethargic_type"
+        },
+        "3300": {
+            "name": "Hussein Onn",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "MLY_M_Onn_Hussein",
+            "start_date": "1976-01-15",
+            "death_date": "1981-07-16",
+            "type": "reputable_type"
+        },
+        "3295": {
+            "name": "Ahmad S. A. Billah",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MLY_M_Billah_Ahmad",
+            "start_date": "1979-03-29",
+            "death_date": "1984-04-25",
+            "type": "administrator_type"
+        },
         "3306": {
             "name": "Tun Dr. Lim Keng Yaik",
             "ideology": "social_liberal_idolg",
@@ -234,95 +297,32 @@
             "death_date": "2007-01-01",
             "type": "administrator_type"
         },
-        "3307": {
-            "name": "Dr. Chen Man Hin",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_Hin_Chen_M",
-            "start_date": "1965-01-01",
-            "death_date": "1999-01-01",
-            "type": "zealous_type"
-        },
-        "3308": {
-            "name": "Abdul Rashid bin Maidin",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_Maidin_Abdul_R",
-            "start_date": "1941-12-08",
-            "death_date": "1989-09-01",
-            "type": "courageous_type"
-        },
-        "3309": {
-            "name": "Abdullah C.D.",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_C_D_Abdullah",
-            "start_date": "1949-05-12",
-            "death_date": "1989-09-01",
-            "type": "fortunate_type"
-        },
-        "3310": {
-            "name": "Suriani Abdullah",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_Abdullah_Suriani",
-            "start_date": "1942-05-12",
-            "death_date": "1989-09-01",
-            "type": "iron_lady"
-        },
-        "3311": {
-            "name": "Eu Chooi Yip",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_Yip_Eu_C",
-            "start_date": "1938-02-01",
-            "death_date": "1991-09-01",
-            "type": "moral_type"
-        },
-        "3312": {
-            "name": "Shamsiah Fakeh",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_Fakeh_Shamsiah",
-            "start_date": "1948-06-16",
-            "death_date": "1994-08-23",
-            "type": "parental_type"
-        },
-        "3313": {
-            "name": "S.A. Ganapathy",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_Ganapathy_S_A",
-            "start_date": "1939-10-01",
-            "death_date": "1949-05-04",
-            "type": "visionary_type"
-        },
-        "3314": {
-            "name": "Wen Min Chyuan",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_Chyuan_Wen_M",
-            "start_date": "1954-01-01",
-            "death_date": "2005-12-01",
-            "type": "zealous_type"
-        },
-        "3315": {
-            "name": "Bong Kee Chok",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_Chok_Bong_K",
-            "start_date": "1954-01-01",
-            "death_date": "1973-10-01",
+        "3301": {
+            "name": "Mahatir Mohamad",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "MLY_M_Mohamad_Mahatir",
+            "start_date": "1981-07-16",
+            "death_date": "2003-10-31",
             "type": "reformer_type"
         },
-        "3316": {
-            "name": "Ang Chu Ting",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "MLY_M_Ting_Ang_C",
-            "start_date": "1955-01-01",
-            "death_date": "1990-10-17",
-            "type": "zealous_type"
+        "3296": {
+            "name": "Mahmud Iskandar",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MLY_M_Iskandar_Mahmud",
+            "start_date": "1984-04-25",
+            "death_date": "1989-04-25",
+            "type": "controversial_figure"
+        },
+        "3297": {
+            "name": "Azlan Shah",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MLY_M_Shah_Azlan",
+            "start_date": "1989-04-26",
+            "death_date": "1994-04-25",
+            "type": "bureaucrat_type"
         }
     }
 }

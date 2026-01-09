@@ -73,7 +73,7 @@
         "3588": {
             "name": "Yan Xishan",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "CSX_M_Xishan_Yan",
             "start_date": "1911-01-01",
             "death_date": "1960-07-22",
@@ -106,15 +106,6 @@
             "death_date": "1952-01-01",
             "type": "courageous_type"
         },
-        "4662": {
-            "name": "Fu Zuoyi",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CSX_M_Zuoyi_Fu",
-            "start_date": "1945-01-01",
-            "death_date": "1974-04-19",
-            "type": "ambitious_type"
-        },
         "4663": {
             "name": "Yang Aiyuan",
             "ideology": "paternal_auto_idolg",
@@ -124,14 +115,14 @@
             "death_date": "1959-01-01",
             "type": "courageous_type"
         },
-        "4664": {
-            "name": "Zhao Chengshou",
-            "ideology": "left_wing_radical_idolg",
+        "4662": {
+            "name": "Fu Zuoyi",
+            "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
-            "picture": "CSX_M_Chengshou_Zhao",
-            "start_date": "1950-01-01",
-            "death_date": "1966-10-01",
-            "type": "honest_type"
+            "picture": "CSX_M_Zuoyi_Fu",
+            "start_date": "1945-01-01",
+            "death_date": "1974-04-19",
+            "type": "ambitious_type"
         },
         "4665": {
             "name": "Ji Pengfei",
@@ -150,6 +141,15 @@
             "start_date": "1946-01-01",
             "death_date": "2007-01-15",
             "type": "courageous_type"
+        },
+        "4664": {
+            "name": "Zhao Chengshou",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "CSX_M_Chengshou_Zhao",
+            "start_date": "1950-01-01",
+            "death_date": "1966-10-01",
+            "type": "honest_type"
         }
     }
 }

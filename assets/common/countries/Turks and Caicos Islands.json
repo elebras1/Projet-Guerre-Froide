@@ -72,6 +72,15 @@
     },
     "unit_names": "",
     "ministers": {
+        "354": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
         "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
@@ -80,6 +89,15 @@
             "start_date": "1936-09-11",
             "death_date": "1952-02-06",
             "type": "parental_type"
+        },
+        "351": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
         },
         "212": {
             "name": "Elizabeth II",
@@ -90,42 +108,6 @@
             "death_date": "2300-05-12",
             "type": "traditionalist_type"
         },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
         "348": {
             "name": "Margaret I",
             "ideology": "social_cons_idolg",
@@ -135,32 +117,14 @@
             "death_date": "2002-02-09",
             "type": "controversial_figure"
         },
-        "349": {
-            "name": "David III",
+        "355": {
+            "name": "Albert I von Bayern",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "350": {
-            "name": "Sarah I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "351": {
-            "name": "Henry IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
         },
         "352": {
             "name": "William V",
@@ -180,23 +144,23 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "354": {
-            "name": "Robert I von Bayern",
+        "344": {
+            "name": "George VII",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Robert_I_Bayern",
-            "start_date": "1919-02-03",
-            "death_date": "1955-08-02",
-            "type": "traditionalist_type"
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
         },
-        "355": {
-            "name": "Albert I von Bayern",
+        "347": {
+            "name": "Anne II",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "5437": {
             "name": "Alexander Graham Mitchell",
@@ -216,6 +180,15 @@
             "death_date": "1978-01-01",
             "type": "bureaucrat_type"
         },
+        "5442": {
+            "name": "James A.G.S. McCartney",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "TCI_M_McCartney_James_A_G_S",
+            "start_date": "1976-08-31",
+            "death_date": "1980-05-09",
+            "type": "ambitious_type"
+        },
         "5439": {
             "name": "John Clifford Strong",
             "ideology": "social_cons_idolg",
@@ -225,32 +198,23 @@
             "death_date": "1982-01-01",
             "type": "traditionalist_type"
         },
-        "5440": {
-            "name": "Christopher J. Turner",
+        "345": {
+            "name": "Andrew I",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "TCI_M_Turner_Christopher_J",
-            "start_date": "1982-01-01",
-            "death_date": "1987-01-01",
-            "type": "administrator_type"
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
         },
-        "5441": {
-            "name": "Michael J. Bradley",
+        "349": {
+            "name": "David III",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "TCI_M_Bradley_Michael_J",
-            "start_date": "1987-01-01",
-            "death_date": "1993-01-01",
-            "type": "loyal_type"
-        },
-        "5442": {
-            "name": "James A.G.S. McCartney",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "TCI_M_McCartney_James_A_G_S",
-            "start_date": "1976-08-31",
-            "death_date": "1980-05-09",
-            "type": "ambitious_type"
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "5443": {
             "name": "Oswald Skippings",
@@ -270,6 +234,33 @@
             "death_date": "1985-03-28",
             "type": "lethargic_type"
         },
+        "5440": {
+            "name": "Christopher J. Turner",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "TCI_M_Turner_Christopher_J",
+            "start_date": "1982-01-01",
+            "death_date": "1987-01-01",
+            "type": "administrator_type"
+        },
+        "346": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "350": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
         "5445": {
             "name": "Nathaniel Francis",
             "ideology": "social_democrat_idolg",
@@ -278,6 +269,15 @@
             "start_date": "1985-03-28",
             "death_date": "1986-07-25",
             "type": "lethargic_type"
+        },
+        "5441": {
+            "name": "Michael J. Bradley",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "TCI_M_Bradley_Michael_J",
+            "start_date": "1987-01-01",
+            "death_date": "1993-01-01",
+            "type": "loyal_type"
         },
         "5446": {
             "name": "Washington Misick",

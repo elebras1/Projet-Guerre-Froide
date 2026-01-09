@@ -690,6 +690,106 @@
         ]
     },
     "ministers": {
+        "784": {
+            "name": "Nikola Todorov Zhekov",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Zhekov_Nikola_T",
+            "start_date": "1886-01-01",
+            "death_date": "1949-11-01",
+            "type": "fortunate_type"
+        },
+        "781": {
+            "name": "Venelin Ganev",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Ganev_Venelin",
+            "start_date": "1908-01-01",
+            "death_date": "1966-03-25",
+            "type": "administrator_type"
+        },
+        "783": {
+            "name": "Atanas Dimitrov Burov",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Burov_Atanas_D",
+            "start_date": "1911-01-01",
+            "death_date": "1954-05-14",
+            "type": "moral_type"
+        },
+        "775": {
+            "name": "Aleksandar Tsankov",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Tsankov_Aleksandar",
+            "start_date": "1923-06-09",
+            "death_date": "1959-07-27",
+            "type": "autocrat_type"
+        },
+        "778": {
+            "name": "Nikola Petkov",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Petkov_Nikola",
+            "start_date": "1930-01-01",
+            "death_date": "1947-09-23",
+            "type": "democrat_type"
+        },
+        "780": {
+            "name": "Nikola Mushanov",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Mushanov_Nikola",
+            "start_date": "1931-01-01",
+            "death_date": "1951-05-10",
+            "type": "liberal_type"
+        },
+        "782": {
+            "name": "Dmitar Gichev",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Gichev_Dmitar",
+            "start_date": "1933-01-01",
+            "death_date": "1964-01-01",
+            "type": "courageous_type"
+        },
+        "776": {
+            "name": "Ivan Dochev",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Dochev_Ivan",
+            "start_date": "1937-01-01",
+            "death_date": "2005-01-01",
+            "type": "extremist_type"
+        },
+        "787": {
+            "name": "Venko Markovski",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Markovski_Venko",
+            "start_date": "1943-01-01",
+            "death_date": "1988-01-07",
+            "type": "dictator_type"
+        },
+        "774": {
+            "name": "Kiril Yanchulev",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Yanchulev_Kiril",
+            "start_date": "1944-09-03",
+            "death_date": "1961-04-15",
+            "type": "moral_type"
+        },
+        "766": {
+            "name": "Kimon S. Georgiev",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "BUL_M_Georgiev_Kimon_S",
+            "start_date": "1944-09-09",
+            "death_date": "1946-11-22",
+            "wikipage": "/wiki/Kimon_Georgiev",
+            "type": "autocrat_type"
+        },
         "759": {
             "name": "Simeon II",
             "ideology": "market_liberal_idolg",
@@ -728,6 +828,15 @@
             "death_date": "1980-10-21",
             "type": "hardliner_type"
         },
+        "779": {
+            "name": "Alexe Badarau",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Badarau_Alexe",
+            "start_date": "1952-01-01",
+            "death_date": "1997-06-09",
+            "type": "administrator_type"
+        },
         "763": {
             "name": "Todor H. Zhivkov",
             "ideology": "communist_idolg",
@@ -736,34 +845,6 @@
             "start_date": "1954-03-04",
             "death_date": "1989-11-10",
             "type": "administrator_type"
-        },
-        "764": {
-            "name": "Petar T. Mladenov",
-            "ideology": "communist_idolg",
-            "loyalty": 1,
-            "picture": "BUL_M_Mladenov_Petar_T",
-            "start_date": "1989-11-10",
-            "death_date": "1992-12-31",
-            "type": "administrator_type"
-        },
-        "765": {
-            "name": "Zhelyu M. Zhelev",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "BUL_M_Zhelev_Zhelyu_M",
-            "start_date": "1990-08-01",
-            "death_date": "1997-01-22",
-            "type": "administrator_type"
-        },
-        "766": {
-            "name": "Kimon S. Georgiev",
-            "ideology": "communist_idolg",
-            "loyalty": 1,
-            "picture": "BUL_M_Georgiev_Kimon_S",
-            "start_date": "1944-09-09",
-            "death_date": "1946-11-22",
-            "wikipage": "/wiki/Kimon_Georgiev",
-            "type": "autocrat_type"
         },
         "767": {
             "name": "Anton T. Yugov",
@@ -774,6 +855,15 @@
             "death_date": "1962-11-19",
             "type": "reformer_type"
         },
+        "777": {
+            "name": "Georgi Markov",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Markov_Georgi",
+            "start_date": "1969-01-01",
+            "death_date": "1978-09-11",
+            "type": "courageous_type"
+        },
         "768": {
             "name": "Stanko G. Todorov",
             "ideology": "communist_idolg",
@@ -781,6 +871,15 @@
             "picture": "BUL_M_Todorov_Stanko_G",
             "start_date": "1971-07-07",
             "death_date": "1981-06-16",
+            "type": "bureaucrat_type"
+        },
+        "785": {
+            "name": "Dimitar Gocev",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Gocev_Dimitar",
+            "start_date": "1976-01-01",
+            "death_date": "2300-01-01",
             "type": "bureaucrat_type"
         },
         "769": {
@@ -801,6 +900,24 @@
             "death_date": "1990-02-03",
             "type": "bureaucrat_type"
         },
+        "786": {
+            "name": "Aleksandar Karakachanov",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "BUL_M_Karakachanov_Aleksandar",
+            "start_date": "1989-01-01",
+            "death_date": "2300-01-01",
+            "type": "bureaucrat_type"
+        },
+        "764": {
+            "name": "Petar T. Mladenov",
+            "ideology": "communist_idolg",
+            "loyalty": 1,
+            "picture": "BUL_M_Mladenov_Petar_T",
+            "start_date": "1989-11-10",
+            "death_date": "1992-12-31",
+            "type": "administrator_type"
+        },
         "771": {
             "name": "Andrey K. Lukanov",
             "ideology": "communist_idolg",
@@ -809,6 +926,15 @@
             "start_date": "1990-02-03",
             "death_date": "1992-12-31",
             "type": "bureaucrat_type"
+        },
+        "765": {
+            "name": "Zhelyu M. Zhelev",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1,
+            "picture": "BUL_M_Zhelev_Zhelyu_M",
+            "start_date": "1990-08-01",
+            "death_date": "1997-01-22",
+            "type": "administrator_type"
         },
         "772": {
             "name": "Dimitar I. Popov",
@@ -827,132 +953,6 @@
             "start_date": "1991-11-08",
             "death_date": "1992-12-31",
             "type": "bureaucrat_type"
-        },
-        "774": {
-            "name": "Kiril Yanchulev",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Yanchulev_Kiril",
-            "start_date": "1944-09-03",
-            "death_date": "1961-04-15",
-            "type": "moral_type"
-        },
-        "775": {
-            "name": "Aleksandar Tsankov",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Tsankov_Aleksandar",
-            "start_date": "1923-06-09",
-            "death_date": "1959-07-27",
-            "type": "autocrat_type"
-        },
-        "776": {
-            "name": "Ivan Dochev",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Dochev_Ivan",
-            "start_date": "1937-01-01",
-            "death_date": "2005-01-01",
-            "type": "extremist_type"
-        },
-        "777": {
-            "name": "Georgi Markov",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Markov_Georgi",
-            "start_date": "1969-01-01",
-            "death_date": "1978-09-11",
-            "type": "courageous_type"
-        },
-        "778": {
-            "name": "Nikola Petkov",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Petkov_Nikola",
-            "start_date": "1930-01-01",
-            "death_date": "1947-09-23",
-            "type": "democrat_type"
-        },
-        "779": {
-            "name": "Alexe Badarau",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Badarau_Alexe",
-            "start_date": "1952-01-01",
-            "death_date": "1997-06-09",
-            "type": "administrator_type"
-        },
-        "780": {
-            "name": "Nikola Mushanov",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Mushanov_Nikola",
-            "start_date": "1931-01-01",
-            "death_date": "1951-05-10",
-            "type": "liberal_type"
-        },
-        "781": {
-            "name": "Venelin Ganev",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Ganev_Venelin",
-            "start_date": "1908-01-01",
-            "death_date": "1966-03-25",
-            "type": "administrator_type"
-        },
-        "782": {
-            "name": "Dmitar Gichev",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Gichev_Dmitar",
-            "start_date": "1933-01-01",
-            "death_date": "1964-01-01",
-            "type": "courageous_type"
-        },
-        "783": {
-            "name": "Atanas Dimitrov Burov",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Burov_Atanas_D",
-            "start_date": "1911-01-01",
-            "death_date": "1954-05-14",
-            "type": "moral_type"
-        },
-        "784": {
-            "name": "Nikola Todorov Zhekov",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Zhekov_Nikola_T",
-            "start_date": "1886-01-01",
-            "death_date": "1949-11-01",
-            "type": "fortunate_type"
-        },
-        "785": {
-            "name": "Dimitar Gocev",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Gocev_Dimitar",
-            "start_date": "1976-01-01",
-            "death_date": "2300-01-01",
-            "type": "bureaucrat_type"
-        },
-        "786": {
-            "name": "Aleksandar Karakachanov",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "BUL_M_Karakachanov_Aleksandar",
-            "start_date": "1989-01-01",
-            "death_date": "2300-01-01",
-            "type": "bureaucrat_type"
-        },
-        "787": {
-            "name": "Venko Markovski",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Markovski_Venko",
-            "start_date": "1943-01-01",
-            "death_date": "1988-01-07",
-            "type": "dictator_type"
         }
     }
 }

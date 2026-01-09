@@ -72,15 +72,6 @@
     },
     "unit_names": "",
     "ministers": {
-        "2041": {
-            "name": "Mohammed A. el-Husseini",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "PAL_M_el-Husseini_Mohammed_A",
-            "start_date": "1946-01-01",
-            "death_date": "1974-07-04",
-            "type": "hardliner_type"
-        },
         "2042": {
             "name": "Ahmed Hilmi Pasha",
             "ideology": "paternal_auto_idolg",
@@ -89,6 +80,15 @@
             "start_date": "1946-01-01",
             "death_date": "1964-01-01",
             "type": "bureaucrat_type"
+        },
+        "2041": {
+            "name": "Mohammed A. el-Husseini",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "PAL_M_el-Husseini_Mohammed_A",
+            "start_date": "1946-01-01",
+            "death_date": "1974-07-04",
+            "type": "hardliner_type"
         },
         "2043": {
             "name": "Ahmad al-Shukeiri",
@@ -108,13 +108,13 @@
             "death_date": "1969-02-04",
             "type": "hardliner_type"
         },
-        "2045": {
-            "name": "M. Yasser Arafat al-Qudwa al-Husseini",
+        "2048": {
+            "name": "Khalil I. al-Wazir",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "PAL_M_Arafat_Mohammed_Y",
+            "loyalty": 1.0,
+            "picture": "PAL_M_al-Wazir_Khalil_I",
             "start_date": "1969-02-04",
-            "death_date": "1999-12-31",
+            "death_date": "1988-04-16",
             "type": "hardliner_type"
         },
         "2046": {
@@ -135,13 +135,13 @@
             "death_date": "1991-01-14",
             "type": "hardliner_type"
         },
-        "2048": {
-            "name": "Khalil I. al-Wazir",
+        "2045": {
+            "name": "M. Yasser Arafat al-Qudwa al-Husseini",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "PAL_M_al-Wazir_Khalil_I",
+            "loyalty": 0.9,
+            "picture": "PAL_M_Arafat_Mohammed_Y",
             "start_date": "1969-02-04",
-            "death_date": "1988-04-16",
+            "death_date": "1999-12-31",
             "type": "hardliner_type"
         }
     }

@@ -70,6 +70,15 @@
     },
     "unit_names": "",
     "ministers": {
+        "3040": {
+            "name": "Phetsarath Rattanavongsa",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LAO_M_Rattanavongsa_Phetsarath",
+            "start_date": "1946-01-01",
+            "death_date": "1959-10-14",
+            "type": "dictator_type"
+        },
         "3034": {
             "name": "Sisavang Phoulivong",
             "ideology": "paternal_auto_idolg",
@@ -79,14 +88,23 @@
             "death_date": "1959-10-29",
             "type": "autocrat_type"
         },
-        "3035": {
+        "2569": {
             "name": "Souvanna Phouma",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 0.8,
+            "loyalty": 1.0,
             "picture": "LAO_M_Phouma_Souvanna",
             "start_date": "1946-01-01",
             "death_date": "1975-12-02",
             "type": "bureaucrat_type"
+        },
+        "3041": {
+            "name": "Prince Vong Savang",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LAO_M_Savang_Vong",
+            "start_date": "1952-09-27",
+            "death_date": "1978-04-11",
+            "type": "administrator_type"
         },
         "3036": {
             "name": "Katay Sasorith",
@@ -97,15 +115,6 @@
             "death_date": "1956-03-21",
             "type": "bureaucrat_type"
         },
-        "3037": {
-            "name": "Sisavang Vatthana",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Vatthana_Sisavang",
-            "start_date": "1959-10-29",
-            "death_date": "1978-05-13",
-            "type": "autocrat_type"
-        },
         "2565": {
             "name": "Phoui Sananikone",
             "ideology": "paternal_auto_idolg",
@@ -115,95 +124,14 @@
             "death_date": "1959-12-31",
             "type": "bureaucrat_type"
         },
-        "2566": {
-            "name": "Sounthone Pathammavong",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Pathammavong_Sounthone",
-            "start_date": "1959-12-31",
-            "death_date": "1960-01-07",
-            "type": "hardliner_type"
-        },
-        "2567": {
-            "name": "Kou Abhay",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Abhay_Kou",
-            "start_date": "1960-01-07",
-            "death_date": "1960-06-03",
-            "type": "hardliner_type"
-        },
-        "2568": {
-            "name": "Boun Oum",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Oum_Boun",
-            "start_date": "1960-12-13",
-            "death_date": "1962-06-23",
-            "type": "bureaucrat_type"
-        },
-        "2570": {
-            "name": "Souphanouvong",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Souphanouvong",
-            "start_date": "1975-12-02",
-            "death_date": "1986-10-31",
-            "type": "bureaucrat_type"
-        },
-        "2571": {
-            "name": "Phoumi Vongvichit",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Vongvichit_Phoumi",
-            "start_date": "1986-10-31",
-            "death_date": "1991-08-15",
-            "type": "dictator_type"
-        },
-        "2572": {
-            "name": "Kaysone Phomvihane",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "LAO_M_Phomvihane_Kaysone",
-            "start_date": "1975-12-08",
-            "death_date": "1992-11-21",
-            "type": "dictator_type"
-        },
-        "2573": {
-            "name": "Khamtai Siphandon",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Siphandon_Khamtai",
-            "start_date": "1991-08-15",
-            "death_date": "1998-02-24",
-            "type": "hardliner_type"
-        },
-        "3038": {
-            "name": "Soulivong Savang",
+        "2579": {
+            "name": "Phoumi Nosavan",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
-            "picture": "LAO_M_Savang_Soulivong",
-            "start_date": "1975-12-02",
-            "death_date": "2300-01-01",
-            "type": "reformer_type"
-        },
-        "3039": {
-            "name": "Sauryavong Savang",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "LAO_M_Savang_Sauryavong",
-            "start_date": "1975-12-02",
-            "death_date": "2300-01-01",
-            "type": "reformer_type"
-        },
-        "3040": {
-            "name": "Phetsarath Rattanavongsa",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "LAO_M_Rattanavongsa_Phetsarath",
-            "start_date": "1946-01-01",
-            "death_date": "1959-10-14",
-            "type": "supreme_leader"
+            "picture": "LAO_M_Nosavan_Phoumi",
+            "start_date": "1959-02-11",
+            "death_date": "1985-03-01",
+            "type": "hardliner_type"
         },
         "2574": {
             "name": "Phoumi Nousavan",
@@ -223,13 +151,40 @@
             "death_date": "1975-05-05",
             "type": "ambitious_type"
         },
-        "2576": {
-            "name": "Nouhak Phoumsavanh",
-            "ideology": "communist_idolg",
+        "3037": {
+            "name": "Sisavang Vatthana",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Vatthana_Sisavang",
+            "start_date": "1959-10-29",
+            "death_date": "1978-05-13",
+            "type": "autocrat_type"
+        },
+        "2566": {
+            "name": "Sounthone Pathammavong",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Pathammavong_Sounthone",
+            "start_date": "1959-12-31",
+            "death_date": "1960-01-07",
+            "type": "hardliner_type"
+        },
+        "2567": {
+            "name": "Kou Abhay",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Abhay_Kou",
+            "start_date": "1960-01-07",
+            "death_date": "1960-06-03",
+            "type": "hardliner_type"
+        },
+        "2580": {
+            "name": "Quinim Pholsena",
+            "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
-            "picture": "LAO_M_Phoumsavanh_Nouhak",
-            "start_date": "1972-02-01",
-            "death_date": "1998-02-24",
+            "picture": "LAO_M_Pholsena_Quinim",
+            "start_date": "1960-08-09",
+            "death_date": "1963-04-01",
             "type": "administrator_type"
         },
         "2577": {
@@ -241,6 +196,15 @@
             "death_date": "1966-10-07",
             "type": "zealous_type"
         },
+        "2568": {
+            "name": "Boun Oum",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Oum_Boun",
+            "start_date": "1960-12-13",
+            "death_date": "1962-06-23",
+            "type": "bureaucrat_type"
+        },
         "2578": {
             "name": "Ouane Rattikone",
             "ideology": "paternal_auto_idolg",
@@ -250,32 +214,68 @@
             "death_date": "1971-10-02",
             "type": "fortunate_type"
         },
-        "2579": {
-            "name": "Phoumi Nosavan",
+        "2576": {
+            "name": "Nouhak Phoumsavanh",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "LAO_M_Phoumsavanh_Nouhak",
+            "start_date": "1972-02-01",
+            "death_date": "1998-02-24",
+            "type": "administrator_type"
+        },
+        "2570": {
+            "name": "Souphanouvong",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Souphanouvong",
+            "start_date": "1975-12-02",
+            "death_date": "1986-10-31",
+            "type": "bureaucrat_type"
+        },
+        "3038": {
+            "name": "Soulivong Savang",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
-            "picture": "LAO_M_Nosavan_Phoumi",
-            "start_date": "1959-02-11",
-            "death_date": "1985-03-01",
+            "picture": "LAO_M_Savang_Soulivong",
+            "start_date": "1975-12-02",
+            "death_date": "2300-01-01",
+            "type": "reformer_type"
+        },
+        "3039": {
+            "name": "Sauryavong Savang",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LAO_M_Savang_Sauryavong",
+            "start_date": "1975-12-02",
+            "death_date": "2300-01-01",
+            "type": "reformer_type"
+        },
+        "2572": {
+            "name": "Kaysone Phomvihane",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "LAO_M_Phomvihane_Kaysone",
+            "start_date": "1975-12-08",
+            "death_date": "1992-11-21",
+            "type": "dictator_type"
+        },
+        "2571": {
+            "name": "Phoumi Vongvichit",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Vongvichit_Phoumi",
+            "start_date": "1986-10-31",
+            "death_date": "1991-08-15",
+            "type": "dictator_type"
+        },
+        "2573": {
+            "name": "Khamtai Siphandon",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Siphandon_Khamtai",
+            "start_date": "1991-08-15",
+            "death_date": "1998-02-24",
             "type": "hardliner_type"
-        },
-        "3041": {
-            "name": "Prince Vong Savang",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "LAO_M_Savang_Vong",
-            "start_date": "1952-09-27",
-            "death_date": "1978-04-11",
-            "type": "administrator_type"
-        },
-        "2580": {
-            "name": "Quinim Pholsena",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "LAO_M_Pholsena_Quinim",
-            "start_date": "1960-08-09",
-            "death_date": "1963-04-01",
-            "type": "administrator_type"
         }
     }
 }

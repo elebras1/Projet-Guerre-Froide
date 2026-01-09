@@ -72,6 +72,24 @@
     },
     "unit_names": "",
     "ministers": {
+        "354": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
+        "1894": {
+            "name": "Ambalal Dahyabhai Patel",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "FJI_M_Patel_Ambalal_D",
+            "start_date": "1929-01-01",
+            "death_date": "1969-10-01",
+            "type": "traditionalist_type"
+        },
         "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
@@ -79,6 +97,33 @@
             "picture": "ENG_George",
             "start_date": "1936-09-11",
             "death_date": "1952-02-06",
+            "type": "parental_type"
+        },
+        "351": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "1896": {
+            "name": "James Madhavan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "FJI_M_Madhavan_James",
+            "start_date": "1947-01-01",
+            "death_date": "1973-01-01",
+            "type": "reputable_type"
+        },
+        "1892": {
+            "name": "Kamisese Mara",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "FJI_M_Mara_Kamisese",
+            "start_date": "1950-01-01",
+            "death_date": "1992-06-02",
             "type": "parental_type"
         },
         "212": {
@@ -90,42 +135,6 @@
             "death_date": "2300-05-12",
             "type": "traditionalist_type"
         },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
         "348": {
             "name": "Margaret I",
             "ideology": "social_cons_idolg",
@@ -135,32 +144,14 @@
             "death_date": "2002-02-09",
             "type": "controversial_figure"
         },
-        "349": {
-            "name": "David III",
+        "355": {
+            "name": "Albert I von Bayern",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "350": {
-            "name": "Sarah I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "351": {
-            "name": "Henry IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
         },
         "352": {
             "name": "William V",
@@ -180,50 +171,32 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "354": {
-            "name": "Robert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Robert_I_Bayern",
-            "start_date": "1919-02-03",
-            "death_date": "1955-08-02",
-            "type": "traditionalist_type"
-        },
-        "355": {
-            "name": "Albert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
-        },
-        "1892": {
-            "name": "Kamisese Mara",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "FJI_M_Mara_Kamisese",
-            "start_date": "1950-01-01",
-            "death_date": "1992-06-02",
-            "type": "parental_type"
-        },
-        "1893": {
-            "name": "Timoci Bavadra",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "FJI_M_Bavadra_Timoci",
-            "start_date": "1987-04-13",
-            "death_date": "1987-05-14",
-            "type": "visionary_type"
-        },
-        "1894": {
-            "name": "Ambalal Dahyabhai Patel",
+        "1897": {
+            "name": "James Shankar Singh",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
-            "picture": "FJI_M_Patel_Ambalal_D",
-            "start_date": "1929-01-01",
-            "death_date": "1969-10-01",
-            "type": "traditionalist_type"
+            "picture": "FJI_M_Singh_James_S",
+            "start_date": "1963-01-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "344": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "347": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "1895": {
             "name": "Siddiq Moidin Koya",
@@ -234,32 +207,32 @@
             "death_date": "1987-01-01",
             "type": "democrat_type"
         },
-        "1896": {
-            "name": "James Madhavan",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "FJI_M_Madhavan_James",
-            "start_date": "1947-01-01",
-            "death_date": "1973-01-01",
-            "type": "reputable_type"
-        },
-        "1897": {
-            "name": "James Shankar Singh",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "FJI_M_Singh_James_S",
-            "start_date": "1963-01-01",
-            "death_date": "2300-01-01",
-            "type": "administrator_type"
-        },
-        "1898": {
-            "name": "Uday Singh",
-            "ideology": "social_liberal_idolg",
+        "1900": {
+            "name": "Frank Bainimarama",
+            "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
-            "picture": "FJI_M_",
-            "start_date": "1985-01-01",
+            "picture": "FJI_M_Bainimarama_Frank",
+            "start_date": "1976-08-01",
             "death_date": "2300-01-01",
-            "type": "reformer_type"
+            "type": "parental_type"
+        },
+        "345": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "349": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "1899": {
             "name": "Sitiveni Rabuka",
@@ -270,14 +243,41 @@
             "death_date": "2300-01-01",
             "type": "autocrat_type"
         },
-        "1900": {
-            "name": "Frank Bainimarama",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "FJI_M_Bainimarama_Frank",
-            "start_date": "1976-08-01",
+        "346": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
             "death_date": "2300-01-01",
-            "type": "parental_type"
+            "type": "courteous_figure"
+        },
+        "350": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1898": {
+            "name": "Uday Singh",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "FJI_M_",
+            "start_date": "1985-01-01",
+            "death_date": "2300-01-01",
+            "type": "reformer_type"
+        },
+        "1893": {
+            "name": "Timoci Bavadra",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "FJI_M_Bavadra_Timoci",
+            "start_date": "1987-04-13",
+            "death_date": "1987-05-14",
+            "type": "visionary_type"
         }
     }
 }

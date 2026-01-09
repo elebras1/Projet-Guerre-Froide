@@ -72,6 +72,33 @@
     },
     "unit_names": "",
     "ministers": {
+        "354": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
+        "3317": {
+            "name": "Mohamed Amin Didi",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "MLD_M_Didi_Mohamed_A",
+            "start_date": "1929-01-01",
+            "death_date": "1953-09-02",
+            "type": "reformer_type"
+        },
+        "3319": {
+            "name": "Muhammad Fareed Didi",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MLD_M_Didi_Muhammad_F",
+            "start_date": "1932-12-16",
+            "death_date": "1968-11-11",
+            "type": "parental_type"
+        },
         "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
@@ -80,6 +107,15 @@
             "start_date": "1936-09-11",
             "death_date": "1952-02-06",
             "type": "parental_type"
+        },
+        "351": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
         },
         "212": {
             "name": "Elizabeth II",
@@ -90,42 +126,6 @@
             "death_date": "2300-05-12",
             "type": "traditionalist_type"
         },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
         "348": {
             "name": "Margaret I",
             "ideology": "social_cons_idolg",
@@ -135,32 +135,23 @@
             "death_date": "2002-02-09",
             "type": "controversial_figure"
         },
-        "349": {
-            "name": "David III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
+        "3318": {
+            "name": "Ibrahim Muhammad Didi",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "MLD_M_Didi_Ibrahim_M",
+            "start_date": "1953-09-02",
+            "death_date": "1954-03-07",
+            "type": "administrator_type"
         },
-        "350": {
-            "name": "Sarah I",
+        "355": {
+            "name": "Albert I von Bayern",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "351": {
-            "name": "Henry IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
         },
         "352": {
             "name": "William V",
@@ -180,50 +171,23 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "354": {
-            "name": "Robert I von Bayern",
+        "344": {
+            "name": "George VII",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Robert_I_Bayern",
-            "start_date": "1919-02-03",
-            "death_date": "1955-08-02",
-            "type": "traditionalist_type"
-        },
-        "355": {
-            "name": "Albert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
-        },
-        "3317": {
-            "name": "Mohamed Amin Didi",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "MLD_M_Didi_Mohamed_A",
-            "start_date": "1929-01-01",
-            "death_date": "1953-09-02",
-            "type": "reformer_type"
-        },
-        "3318": {
-            "name": "Ibrahim Muhammad Didi",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "MLD_M_Didi_Ibrahim_M",
-            "start_date": "1953-09-02",
-            "death_date": "1954-03-07",
-            "type": "administrator_type"
-        },
-        "3319": {
-            "name": "Muhammad Fareed Didi",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "MLD_M_Didi_Muhammad_F",
-            "start_date": "1932-12-16",
-            "death_date": "1968-11-11",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
             "type": "parental_type"
+        },
+        "347": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "3320": {
             "name": "Ibrahim Nasir",
@@ -234,6 +198,15 @@
             "death_date": "1978-11-11",
             "type": "reformer_type"
         },
+        "345": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
         "3321": {
             "name": "Maumoon Abdul Gayoom",
             "ideology": "market_liberal_idolg",
@@ -242,6 +215,33 @@
             "start_date": "1978-11-11",
             "death_date": "2008-11-11",
             "type": "autocrat_type"
+        },
+        "349": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "346": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "350": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         }
     }
 }

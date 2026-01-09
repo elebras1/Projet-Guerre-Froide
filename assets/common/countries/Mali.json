@@ -71,6 +71,24 @@
     },
     "unit_names": "",
     "ministers": {
+        "3328": {
+            "name": "Mamadou Konaté",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MAL_M_Konate_Mamadou",
+            "start_date": "1945-05-02",
+            "death_date": "1956-05-11",
+            "type": "reformer_type"
+        },
+        "3327": {
+            "name": "Fily Dabo Sissoko",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "MAL_M_Sissoko_Fily_D",
+            "start_date": "1945-10-01",
+            "death_date": "1964-06-30",
+            "type": "visionary_type"
+        },
         "2020": {
             "name": "Modibo Keïta",
             "ideology": "paternal_auto_idolg",
@@ -79,51 +97,6 @@
             "start_date": "1960-06-20",
             "death_date": "1968-11-19",
             "type": "liberal_type"
-        },
-        "2021": {
-            "name": "Moussa Traoré",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "MAL_M_Traore_Moussa",
-            "start_date": "1968-11-19",
-            "death_date": "1991-03-26",
-            "type": "liberal_type"
-        },
-        "2022": {
-            "name": "Amadou Toumani Touré",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "MAL_M_Toure_Amadou_T",
-            "start_date": "1991-03-26",
-            "death_date": "1992-06-08",
-            "type": "reformer_type"
-        },
-        "3322": {
-            "name": "Yoro Diakité",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "MAL_M_Diakite_Yoro",
-            "start_date": "1968-11-19",
-            "death_date": "1969-09-18",
-            "type": "ambitious_type"
-        },
-        "3323": {
-            "name": "Mamadou Dembelé",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "MAL_M_Dembele_Mamadou",
-            "start_date": "1986-06-06",
-            "death_date": "1988-06-06",
-            "type": "bureaucrat_type"
-        },
-        "3324": {
-            "name": "Soumana Sacko",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "MAL_M_Sacko_Soumana",
-            "start_date": "1991-04-02",
-            "death_date": "1992-06-09",
-            "type": "administrator_type"
         },
         "3325": {
             "name": "Abdoulaye Soumaré",
@@ -143,24 +116,6 @@
             "death_date": "2003-02-14",
             "type": "administrator_type"
         },
-        "3327": {
-            "name": "Fily Dabo Sissoko",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "MAL_M_Sissoko_Fily_D",
-            "start_date": "1945-10-01",
-            "death_date": "1964-06-30",
-            "type": "visionary_type"
-        },
-        "3328": {
-            "name": "Mamadou Konaté",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "MAL_M_Konate_Mamadou",
-            "start_date": "1945-05-02",
-            "death_date": "1956-05-11",
-            "type": "reformer_type"
-        },
         "3329": {
             "name": "Alpha Oumar Konaré",
             "ideology": "social_democrat_idolg",
@@ -170,6 +125,24 @@
             "death_date": "2008-02-01",
             "type": "reputable_type"
         },
+        "3322": {
+            "name": "Yoro Diakité",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MAL_M_Diakite_Yoro",
+            "start_date": "1968-11-19",
+            "death_date": "1969-09-18",
+            "type": "ambitious_type"
+        },
+        "2021": {
+            "name": "Moussa Traoré",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "MAL_M_Traore_Moussa",
+            "start_date": "1968-11-19",
+            "death_date": "1991-03-26",
+            "type": "liberal_type"
+        },
         "3330": {
             "name": "Iyad Ag Ghaly",
             "ideology": "fascistic_idolg",
@@ -178,6 +151,33 @@
             "start_date": "1985-01-01",
             "death_date": "2300-01-01",
             "type": "religious_type"
+        },
+        "3323": {
+            "name": "Mamadou Dembelé",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MAL_M_Dembele_Mamadou",
+            "start_date": "1986-06-06",
+            "death_date": "1988-06-06",
+            "type": "bureaucrat_type"
+        },
+        "2022": {
+            "name": "Amadou Toumani Touré",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "MAL_M_Toure_Amadou_T",
+            "start_date": "1991-03-26",
+            "death_date": "1992-06-08",
+            "type": "reformer_type"
+        },
+        "3324": {
+            "name": "Soumana Sacko",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "MAL_M_Sacko_Soumana",
+            "start_date": "1991-04-02",
+            "death_date": "1992-06-09",
+            "type": "administrator_type"
         }
     }
 }

@@ -1105,6 +1105,51 @@
         ]
     },
     "ministers": {
+        "1218": {
+            "name": "James W. Ford",
+            "ideology": "communist_idolg",
+            "loyalty": 0.95,
+            "picture": "CSA_M_Ford_James_W",
+            "start_date": "1932-01-01",
+            "death_date": "1957-01-01",
+            "type": "courageous_type"
+        },
+        "1217": {
+            "name": "Angelo Herndon",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "CSA_M_Herndon_Angelo",
+            "start_date": "1932-01-01",
+            "death_date": "1987-12-09",
+            "type": "courageous_type"
+        },
+        "1219": {
+            "name": "Earl Browder",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "USA_M_Browder_Earl",
+            "start_date": "1940-11-05",
+            "death_date": "1963-06-27",
+            "type": "extremist_type"
+        },
+        "1203": {
+            "name": "Andrew N. Johnson",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "CSA_M_Johnson_Andrew_N",
+            "start_date": "1944-11-07",
+            "death_date": "1948-11-02",
+            "type": "bureaucrat_type"
+        },
+        "1204": {
+            "name": "Grady McWhiney",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.81,
+            "picture": "CSA_M_McWhiney_Grady",
+            "start_date": "1945-01-01",
+            "death_date": "1992-01-01",
+            "type": "traditionalist_type"
+        },
         "1165": {
             "name": "Claude Pepper",
             "ideology": "social_liberal_idolg",
@@ -1113,168 +1158,6 @@
             "start_date": "1946-01-01",
             "death_date": "1952-11-04",
             "type": "liberal_type"
-        },
-        "1166": {
-            "name": "Estes Kefauver",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CSA_M_Kefauver_Estes",
-            "start_date": "1952-11-04",
-            "death_date": "1960-11-08",
-            "type": "reputable_type"
-        },
-        "1167": {
-            "name": "John S. Battle",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CSA_M_Battle_John_S",
-            "start_date": "1956-11-06",
-            "death_date": "1960-11-08",
-            "type": "controversial_figure"
-        },
-        "1168": {
-            "name": "Albert Benjamin Chandler, Sr.",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.95,
-            "picture": "CSA_M_Chandler_Sr_Albert_B",
-            "start_date": "1956-11-06",
-            "death_date": "1960-11-08",
-            "type": "administrator_type"
-        },
-        "1169": {
-            "name": "Frank G. Clement",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.95,
-            "picture": "CSA_M_Clement_Frank_G",
-            "start_date": "1956-11-06",
-            "death_date": "1964-11-03",
-            "type": "courteous_figure"
-        },
-        "1170": {
-            "name": "LeRoy Collins",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.95,
-            "picture": "CSA_M_Collins_LeRoy",
-            "start_date": "1956-11-06",
-            "death_date": "1960-11-08",
-            "type": "reputable_type"
-        },
-        "1171": {
-            "name": "Luther H. Hodges",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.95,
-            "picture": "CSA_M_Hodges_Luther_H",
-            "start_date": "1956-11-06",
-            "death_date": "1960-11-08",
-            "type": "bureaucrat_type"
-        },
-        "1172": {
-            "name": "Terry Sanford",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "CSA_M_Sanford_Terry",
-            "start_date": "1960-11-08",
-            "death_date": "1976-11-02",
-            "type": "bureaucrat_type"
-        },
-        "1173": {
-            "name": "Jennings Randolph",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "CSA_M_Randolph_Jennings",
-            "start_date": "1964-11-03",
-            "death_date": "1984-11-06",
-            "type": "controversial_figure"
-        },
-        "1174": {
-            "name": "Ramsey Clark",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CSA_M_Clark_Ramsey",
-            "start_date": "1972-11-07",
-            "death_date": "1976-11-02",
-            "type": "reputable_type"
-        },
-        "1175": {
-            "name": "Fred R. Harris",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CSA_M_Harris_Fred_R",
-            "start_date": "1976-11-02",
-            "death_date": "1980-11-04",
-            "type": "ambitious_type"
-        },
-        "1176": {
-            "name": "Lloyd Bentsen",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.95,
-            "picture": "CSA_M_Bentsen_Lloyd",
-            "start_date": "1976-11-02",
-            "death_date": "1992-11-03",
-            "type": "traditionalist_type"
-        },
-        "1177": {
-            "name": "Morris Udall",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.95,
-            "picture": "CSA_M_Udall_Morris",
-            "start_date": "1976-11-02",
-            "death_date": "1992-11-03",
-            "type": "visionary_type"
-        },
-        "1178": {
-            "name": "Lane Kirkland",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CSA_M_Kirkland_Lane",
-            "start_date": "1984-11-06",
-            "death_date": "1988-11-08",
-            "type": "administrator_type"
-        },
-        "1179": {
-            "name": "Ernest Hollings",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.96,
-            "picture": "CSA_M_Hollings_Ernest",
-            "start_date": "1984-11-06",
-            "death_date": "1988-11-08",
-            "type": "controversial_figure"
-        },
-        "1180": {
-            "name": "Reubin Askew",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.96,
-            "picture": "CSA_M_Askew_Reubin",
-            "start_date": "1984-11-06",
-            "death_date": "1988-11-08",
-            "type": "liberal_type"
-        },
-        "1181": {
-            "name": "Jesse Jackson",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CSA_M_Jackson_Jesse",
-            "start_date": "1988-11-08",
-            "death_date": "1992-11-03",
-            "type": "religious_type"
-        },
-        "1182": {
-            "name": "Al Gore",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.95,
-            "picture": "CSA_M_Gore_Al",
-            "start_date": "1988-11-08",
-            "death_date": "1992-11-03",
-            "type": "ambitious_type"
-        },
-        "1183": {
-            "name": "Bruce Babbitt",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.95,
-            "picture": "CSA_M_Babbitt_Bruce",
-            "start_date": "1988-11-08",
-            "death_date": "1992-11-03",
-            "type": "administrator_type"
         },
         "1184": {
             "name": "Richard Russell, Jr.",
@@ -1294,6 +1177,24 @@
             "death_date": "1952-11-04",
             "type": "traditionalist_type"
         },
+        "1220": {
+            "name": "Robert F. Williams",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CSA_M_Williams_Robert_F",
+            "start_date": "1950-01-01",
+            "death_date": "1996-10-15",
+            "type": "controversial_figure"
+        },
+        "1205": {
+            "name": "John G. Crommelin",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.82,
+            "picture": "CSA_M_Crommelin_John_G",
+            "start_date": "1950-05-01",
+            "death_date": "1976-11-02",
+            "type": "hardliner_type"
+        },
         "1186": {
             "name": "Alben W. Barkley",
             "ideology": "social_cons_idolg",
@@ -1303,6 +1204,24 @@
             "death_date": "1956-11-06",
             "type": "moral_type"
         },
+        "1206": {
+            "name": "Stuart Hamblen",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.83,
+            "picture": "CSA_M_Hamblen_Stuart",
+            "start_date": "1952-11-04",
+            "death_date": "1956-11-06",
+            "type": "ambitious_type"
+        },
+        "1166": {
+            "name": "Estes Kefauver",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CSA_M_Kefauver_Estes",
+            "start_date": "1952-11-04",
+            "death_date": "1960-11-08",
+            "type": "reputable_type"
+        },
         "1187": {
             "name": "James William Fulbright",
             "ideology": "social_cons_idolg",
@@ -1311,6 +1230,42 @@
             "start_date": "1952-11-04",
             "death_date": "1972-11-07",
             "type": "liberal_type"
+        },
+        "1167": {
+            "name": "John S. Battle",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CSA_M_Battle_John_S",
+            "start_date": "1956-11-06",
+            "death_date": "1960-11-08",
+            "type": "controversial_figure"
+        },
+        "1168": {
+            "name": "Albert Benjamin Chandler, Sr.",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "CSA_M_Chandler_Sr_Albert_B",
+            "start_date": "1956-11-06",
+            "death_date": "1960-11-08",
+            "type": "administrator_type"
+        },
+        "1170": {
+            "name": "LeRoy Collins",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "CSA_M_Collins_LeRoy",
+            "start_date": "1956-11-06",
+            "death_date": "1960-11-08",
+            "type": "reputable_type"
+        },
+        "1171": {
+            "name": "Luther H. Hodges",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "CSA_M_Hodges_Luther_H",
+            "start_date": "1956-11-06",
+            "death_date": "1960-11-08",
+            "type": "bureaucrat_type"
         },
         "1188": {
             "name": "Albert Gore, Sr.",
@@ -1329,6 +1284,24 @@
             "start_date": "1956-11-06",
             "death_date": "1960-11-08",
             "type": "bureaucrat_type"
+        },
+        "1169": {
+            "name": "Frank G. Clement",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "CSA_M_Clement_Frank_G",
+            "start_date": "1956-11-06",
+            "death_date": "1964-11-03",
+            "type": "courteous_figure"
+        },
+        "1199": {
+            "name": "George Lincoln Rockwell",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.83,
+            "picture": "USA_M_Rockwell_George_L",
+            "start_date": "1958-07-01",
+            "death_date": "1967-08-25",
+            "type": "hardliner_type"
         },
         "1190": {
             "name": "Ross Barnett",
@@ -1357,131 +1330,14 @@
             "death_date": "1972-11-07",
             "type": "visionary_type"
         },
-        "1193": {
-            "name": "Orval Faubus",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "CSA_M_Faubus_Orval",
+        "1172": {
+            "name": "Terry Sanford",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "CSA_M_Sanford_Terry",
             "start_date": "1960-11-08",
-            "death_date": "1984-11-06",
-            "type": "parental_type"
-        },
-        "1194": {
-            "name": "Wilbur Mills",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CSA_M_Mills_Wilbur",
-            "start_date": "1972-11-07",
             "death_date": "1976-11-02",
-            "type": "lethargic_type"
-        },
-        "1195": {
-            "name": "Howard Baker",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CSA_M_Baker_Howard",
-            "start_date": "1980-11-04",
-            "death_date": "1984-11-06",
-            "type": "democrat_type"
-        },
-        "1196": {
-            "name": "John Connally",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "CSA_M_Connally_John",
-            "start_date": "1980-11-04",
-            "death_date": "1984-11-06",
-            "type": "administrator_type"
-        },
-        "1197": {
-            "name": "Bob Dole",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "CSA_M_Dole_Bob",
-            "start_date": "1980-11-04",
-            "death_date": "1992-11-03",
-            "type": "traditionalist_type"
-        },
-        "1198": {
-            "name": "Isabell Masters",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CSA_M_Masters_Isabell",
-            "start_date": "1988-11-08",
-            "death_date": "1992-11-03",
-            "type": "ambitious_type"
-        },
-        "1199": {
-            "name": "George Lincoln Rockwell",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.95,
-            "picture": "USA_M_Rockwell_George_L",
-            "start_date": "1958-07-01",
-            "death_date": "1967-08-25",
-            "type": "hardliner_type"
-        },
-        "1200": {
-            "name": "William Luther Pierce",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.96,
-            "picture": "USA_M_Pierce_William_L",
-            "start_date": "1966-01-01",
-            "death_date": "1992-01-01",
-            "type": "hardliner_type"
-        },
-        "1201": {
-            "name": "David Duke",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.97,
-            "picture": "USA_M_Duke_David",
-            "start_date": "1975-01-01",
-            "death_date": "1992-01-01",
-            "type": "controversial_figure"
-        },
-        "1202": {
-            "name": "Bob Richards",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.98,
-            "picture": "USA_M_Richards_Bob",
-            "start_date": "1984-11-06",
-            "death_date": "1992-01-01",
-            "type": "parental_type"
-        },
-        "1203": {
-            "name": "Andrew N. Johnson",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.8,
-            "picture": "CSA_M_Johnson_Andrew_N",
-            "start_date": "1944-11-07",
-            "death_date": "1948-11-02",
             "type": "bureaucrat_type"
-        },
-        "1204": {
-            "name": "Grady McWhiney",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.81,
-            "picture": "CSA_M_McWhiney_Grady",
-            "start_date": "1945-01-01",
-            "death_date": "1992-01-01",
-            "type": "traditionalist_type"
-        },
-        "1205": {
-            "name": "John G. Crommelin",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.82,
-            "picture": "CSA_M_Crommelin_John_G",
-            "start_date": "1950-05-01",
-            "death_date": "1976-11-02",
-            "type": "hardliner_type"
-        },
-        "1206": {
-            "name": "Stuart Hamblen",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.83,
-            "picture": "CSA_M_Hamblen_Stuart",
-            "start_date": "1952-11-04",
-            "death_date": "1956-11-06",
-            "type": "ambitious_type"
         },
         "1207": {
             "name": "Charles L. Sullivan",
@@ -1492,6 +1348,15 @@
             "death_date": "1979-04-18",
             "type": "traditionalist_type"
         },
+        "1193": {
+            "name": "Orval Faubus",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "CSA_M_Faubus_Orval",
+            "start_date": "1960-11-08",
+            "death_date": "1984-11-06",
+            "type": "parental_type"
+        },
         "1208": {
             "name": "Mel Bradford",
             "ideology": "paternal_auto_idolg",
@@ -1501,6 +1366,15 @@
             "death_date": "1992-01-01",
             "type": "visionary_type"
         },
+        "1173": {
+            "name": "Jennings Randolph",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "CSA_M_Randolph_Jennings",
+            "start_date": "1964-11-03",
+            "death_date": "1984-11-06",
+            "type": "controversial_figure"
+        },
         "1209": {
             "name": "Jesse Benjamin Stoner",
             "ideology": "paternal_auto_idolg",
@@ -1509,6 +1383,33 @@
             "start_date": "1964-11-03",
             "death_date": "1992-01-01",
             "type": "hardliner_type"
+        },
+        "1200": {
+            "name": "William Luther Pierce",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.85,
+            "picture": "USA_M_Pierce_William_L",
+            "start_date": "1966-01-01",
+            "death_date": "1992-01-01",
+            "type": "hardliner_type"
+        },
+        "1174": {
+            "name": "Ramsey Clark",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CSA_M_Clark_Ramsey",
+            "start_date": "1972-11-07",
+            "death_date": "1976-11-02",
+            "type": "reputable_type"
+        },
+        "1194": {
+            "name": "Wilbur Mills",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CSA_M_Mills_Wilbur",
+            "start_date": "1972-11-07",
+            "death_date": "1976-11-02",
+            "type": "lethargic_type"
         },
         "1210": {
             "name": "Marshall Uncapher",
@@ -1528,6 +1429,51 @@
             "death_date": "1976-11-02",
             "type": "honest_type"
         },
+        "1201": {
+            "name": "David Duke",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.86,
+            "picture": "USA_M_Duke_David",
+            "start_date": "1975-01-01",
+            "death_date": "1992-01-01",
+            "type": "controversial_figure"
+        },
+        "1175": {
+            "name": "Fred R. Harris",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CSA_M_Harris_Fred_R",
+            "start_date": "1976-11-02",
+            "death_date": "1980-11-04",
+            "type": "ambitious_type"
+        },
+        "1176": {
+            "name": "Lloyd Bentsen",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "CSA_M_Bentsen_Lloyd",
+            "start_date": "1976-11-02",
+            "death_date": "1992-11-03",
+            "type": "traditionalist_type"
+        },
+        "1177": {
+            "name": "Morris Udall",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "CSA_M_Udall_Morris",
+            "start_date": "1976-11-02",
+            "death_date": "1992-11-03",
+            "type": "visionary_type"
+        },
+        "1216": {
+            "name": "Lyndon LaRouche",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.95,
+            "picture": "USA_M_LaRouche_Lyndon",
+            "start_date": "1976-11-02",
+            "death_date": "2300-01-01",
+            "type": "controversial_figure"
+        },
         "1212": {
             "name": "Clyde N. Wilson",
             "ideology": "paternal_auto_idolg",
@@ -1537,23 +1483,23 @@
             "death_date": "1992-01-01",
             "type": "hardliner_type"
         },
-        "1213": {
-            "name": "Thomas Fleming",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.87,
-            "picture": "CSA_M_Fleming_Thomas",
-            "start_date": "1982-01-01",
-            "death_date": "1992-01-01",
-            "type": "controversial_figure"
+        "1195": {
+            "name": "Howard Baker",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CSA_M_Baker_Howard",
+            "start_date": "1980-11-04",
+            "death_date": "1984-11-06",
+            "type": "democrat_type"
         },
-        "1214": {
-            "name": "Pat Robertson",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.88,
-            "picture": "CSA_M_Robertson_Pat",
-            "start_date": "1988-11-08",
-            "death_date": "1992-11-03",
-            "type": "zealous_type"
+        "1196": {
+            "name": "John Connally",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "CSA_M_Connally_John",
+            "start_date": "1980-11-04",
+            "death_date": "1984-11-06",
+            "type": "administrator_type"
         },
         "1215": {
             "name": "David H. Koch",
@@ -1564,50 +1510,104 @@
             "death_date": "1984-11-06",
             "type": "ambitious_type"
         },
-        "1216": {
-            "name": "Lyndon LaRouche",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_LaRouche_Lyndon",
-            "start_date": "1976-11-02",
-            "death_date": "2300-01-01",
-            "type": "controversial_figure"
-        },
-        "1217": {
-            "name": "Angelo Herndon",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 1.0,
-            "picture": "CSA_M_Herndon_Angelo",
-            "start_date": "1932-01-01",
-            "death_date": "1987-12-09",
-            "type": "courageous_type"
-        },
-        "1218": {
-            "name": "James W. Ford",
-            "ideology": "communist_idolg",
+        "1197": {
+            "name": "Bob Dole",
+            "ideology": "social_cons_idolg",
             "loyalty": 0.95,
-            "picture": "CSA_M_Ford_James_W",
-            "start_date": "1932-01-01",
-            "death_date": "1957-01-01",
-            "type": "courageous_type"
+            "picture": "CSA_M_Dole_Bob",
+            "start_date": "1980-11-04",
+            "death_date": "1992-11-03",
+            "type": "traditionalist_type"
         },
-        "1219": {
-            "name": "Earl Browder",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "USA_M_Browder_Earl",
-            "start_date": "1940-11-05",
-            "death_date": "1963-06-27",
-            "type": "extremist_type"
-        },
-        "1220": {
-            "name": "Robert F. Williams",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CSA_M_Williams_Robert_F",
-            "start_date": "1950-01-01",
-            "death_date": "1996-10-15",
+        "1213": {
+            "name": "Thomas Fleming",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.87,
+            "picture": "CSA_M_Fleming_Thomas",
+            "start_date": "1982-01-01",
+            "death_date": "1992-01-01",
             "type": "controversial_figure"
+        },
+        "1178": {
+            "name": "Lane Kirkland",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CSA_M_Kirkland_Lane",
+            "start_date": "1984-11-06",
+            "death_date": "1988-11-08",
+            "type": "administrator_type"
+        },
+        "1179": {
+            "name": "Ernest Hollings",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.96,
+            "picture": "CSA_M_Hollings_Ernest",
+            "start_date": "1984-11-06",
+            "death_date": "1988-11-08",
+            "type": "controversial_figure"
+        },
+        "1180": {
+            "name": "Reubin Askew",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.96,
+            "picture": "CSA_M_Askew_Reubin",
+            "start_date": "1984-11-06",
+            "death_date": "1988-11-08",
+            "type": "liberal_type"
+        },
+        "1202": {
+            "name": "Bob Richards",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.88,
+            "picture": "USA_M_Richards_Bob",
+            "start_date": "1984-11-06",
+            "death_date": "1992-01-01",
+            "type": "parental_type"
+        },
+        "1181": {
+            "name": "Jesse Jackson",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CSA_M_Jackson_Jesse",
+            "start_date": "1988-11-08",
+            "death_date": "1992-11-03",
+            "type": "religious_type"
+        },
+        "1182": {
+            "name": "Al Gore",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "CSA_M_Gore_Al",
+            "start_date": "1988-11-08",
+            "death_date": "1992-11-03",
+            "type": "ambitious_type"
+        },
+        "1183": {
+            "name": "Bruce Babbitt",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.95,
+            "picture": "CSA_M_Babbitt_Bruce",
+            "start_date": "1988-11-08",
+            "death_date": "1992-11-03",
+            "type": "administrator_type"
+        },
+        "1198": {
+            "name": "Isabell Masters",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CSA_M_Masters_Isabell",
+            "start_date": "1988-11-08",
+            "death_date": "1992-11-03",
+            "type": "ambitious_type"
+        },
+        "1214": {
+            "name": "Pat Robertson",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.88,
+            "picture": "CSA_M_Robertson_Pat",
+            "start_date": "1988-11-08",
+            "death_date": "1992-11-03",
+            "type": "zealous_type"
         }
     }
 }

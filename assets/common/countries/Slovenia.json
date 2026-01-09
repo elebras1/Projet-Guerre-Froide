@@ -72,6 +72,51 @@
     },
     "unit_names": "",
     "ministers": {
+        "4762": {
+            "name": "Jospi Vidmar",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Vidmar_Jospi",
+            "start_date": "1895-10-14",
+            "death_date": "1972-01-01",
+            "type": "administrator_type"
+        },
+        "4756": {
+            "name": "Miha Krek",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Krek_Miha",
+            "start_date": "1921-01-01",
+            "death_date": "1969-11-18",
+            "type": "hardliner_type"
+        },
+        "4752": {
+            "name": "Angela Vode",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Vode_Angela",
+            "start_date": "1922-01-01",
+            "death_date": "1985-05-05",
+            "type": "reformer_type"
+        },
+        "4757": {
+            "name": "Franc Snoj",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Snoj_Franc",
+            "start_date": "1930-01-01",
+            "death_date": "1962-04-22",
+            "type": "courageous_type"
+        },
+        "4758": {
+            "name": "Edvard Kocbek",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Kocbek_Edvard",
+            "start_date": "1930-01-01",
+            "death_date": "1981-11-03",
+            "type": "religious_type"
+        },
         "4726": {
             "name": "Josip Vidmar",
             "ideology": "communist_idolg",
@@ -79,6 +124,60 @@
             "picture": "SLV_M_Vidmar_Josip",
             "start_date": "1943-10-03",
             "death_date": "1953-03-01",
+            "type": "ambitious_type"
+        },
+        "4754": {
+            "name": "Ljenko Urbancic",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Urbancic_Ljenko",
+            "start_date": "1944-01-01",
+            "death_date": "2006-03-01",
+            "type": "zealous_type"
+        },
+        "4751": {
+            "name": "Boris Pahor",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Pahor_Boris",
+            "start_date": "1945-01-01",
+            "death_date": "2300-01-01",
+            "type": "liberal_type"
+        },
+        "4740": {
+            "name": "Boris Kidric",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLV_M_Kidric_Boris",
+            "start_date": "1945-05-05",
+            "death_date": "1953-04-11",
+            "type": "courageous_type"
+        },
+        "4759": {
+            "name": "Maksimiljan Anton I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Anton_I",
+            "start_date": "1946-01-01",
+            "death_date": "1976-11-01",
+            "type": "traditionalist_type"
+        },
+        "4761": {
+            "name": "Edvard Kardelj",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Kardelj_Edvard",
+            "start_date": "1946-01-01",
+            "death_date": "1979-10-02",
+            "type": "reformer_type"
+        },
+        "4753": {
+            "name": "Ljubo Sirc",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Sirc_Ljubo",
+            "start_date": "1946-01-01",
+            "death_date": "2300-01-01",
             "type": "ambitious_type"
         },
         "4727": {
@@ -89,6 +188,15 @@
             "start_date": "1946-06-01",
             "death_date": "1962-01-01",
             "type": "administrator_type"
+        },
+        "4741": {
+            "name": "Boris Kraigher",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SLV_M_Kraigher_Boris",
+            "start_date": "1953-12-15",
+            "death_date": "1962-06-25",
+            "type": "hardliner_type"
         },
         "4728": {
             "name": "Vida Tomic",
@@ -117,14 +225,41 @@
             "death_date": "1967-01-01",
             "type": "courageous_type"
         },
+        "4742": {
+            "name": "Janko Smole",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SLV_M_Smole_Janko",
+            "start_date": "1965-01-01",
+            "death_date": "1967-01-01",
+            "type": "bureaucrat_type"
+        },
+        "4743": {
+            "name": "Stane Kavcic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SLV_M_Kavcic_Stane",
+            "start_date": "1967-01-01",
+            "death_date": "1972-11-27",
+            "type": "lethargic_type"
+        },
         "4731": {
             "name": "Sergej Kraigher",
             "ideology": "communist_idolg",
             "loyalty": 0.9,
             "picture": "YUG_M_Kraigher_Sergej",
             "start_date": "1967-01-01",
-            "death_date": "1979-05-01",
+            "death_date": "1982-05-15",
             "type": "autocrat_type"
+        },
+        "4744": {
+            "name": "Andrej Marinc",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SLV_M_Marinc_Andrej",
+            "start_date": "1972-11-27",
+            "death_date": "1978-04-01",
+            "type": "parental_type"
         },
         "4732": {
             "name": "Tone Kropuek",
@@ -135,6 +270,15 @@
             "death_date": "1974-01-01",
             "type": "administrator_type"
         },
+        "4750": {
+            "name": "Slavoj Zizek",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Zizek_Slavoj",
+            "start_date": "1973-11-08",
+            "death_date": "2300-01-01",
+            "type": "visionary_type"
+        },
         "4733": {
             "name": "Marijan Brecelj",
             "ideology": "communist_idolg",
@@ -143,6 +287,51 @@
             "start_date": "1974-01-01",
             "death_date": "1974-06-01",
             "type": "loyal_type"
+        },
+        "4749": {
+            "name": "Andrej Bajuk",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "SLV_M_Bajuk_Andrej",
+            "start_date": "1976-01-01",
+            "death_date": "2000-11-17",
+            "type": "administrator_type"
+        },
+        "4760": {
+            "name": "Marjan Hugo I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Hugo_I",
+            "start_date": "1976-11-01",
+            "death_date": "2300-01-01",
+            "type": "moral_type"
+        },
+        "4745": {
+            "name": "Anton Vratua",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "SLV_M_Vratusa_Anton",
+            "start_date": "1978-04-01",
+            "death_date": "1980-07-01",
+            "type": "honest_type"
+        },
+        "4755": {
+            "name": "Pavel Gantar",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Gantar_Pavel",
+            "start_date": "1980-01-01",
+            "death_date": "2300-01-01",
+            "type": "liberal_type"
+        },
+        "4746": {
+            "name": "Janez Zemljaric",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SLV_M_Zemljaric_Janez",
+            "start_date": "1980-07-01",
+            "death_date": "1984-05-23",
+            "type": "administrator_type"
         },
         "4734": {
             "name": "France Popit",
@@ -153,31 +342,13 @@
             "death_date": "1988-05-01",
             "type": "bureaucrat_type"
         },
-        "4735": {
-            "name": "Janez Stanovnik",
+        "4747": {
+            "name": "Duan inigoj",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
-            "picture": "SLV_M_Stanovnik_Janez",
-            "start_date": "1988-05-01",
-            "death_date": "1989-01-01",
-            "type": "liberal_type"
-        },
-        "4736": {
-            "name": "Janez Stanovnik",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "SLV_M_Stanovnik_Janez",
-            "start_date": "1989-01-01",
-            "death_date": "1990-05-10",
-            "type": "liberal_type"
-        },
-        "4737": {
-            "name": "Milan Kucan",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SLV_M_Kucan_Milan",
-            "start_date": "1990-05-10",
-            "death_date": "2002-12-22",
+            "picture": "SLV_M_Sinigoj_Dusan",
+            "start_date": "1984-05-23",
+            "death_date": "1990-05-16",
             "type": "reformer_type"
         },
         "4738": {
@@ -198,76 +369,31 @@
             "death_date": "2012-12-22",
             "type": "visionary_type"
         },
-        "4740": {
-            "name": "Boris Kidric",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "SLV_M_Kidric_Boris",
-            "start_date": "1945-05-05",
-            "death_date": "1953-04-11",
-            "type": "courageous_type"
+        "4763": {
+            "name": "Zmago Jelincic Plemeniti",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "SLV_M_Plemeniti_Zmago_J",
+            "start_date": "1987-07-06",
+            "death_date": "2300-01-01",
+            "type": "extremist_type"
         },
-        "4741": {
-            "name": "Boris Kraigher",
+        "4735": {
+            "name": "Janez Stanovnik",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
-            "picture": "SLV_M_Kraigher_Boris",
-            "start_date": "1953-12-15",
-            "death_date": "1962-06-25",
-            "type": "hardliner_type"
+            "picture": "SLV_M_Stanovnik_Janez",
+            "start_date": "1988-05-01",
+            "death_date": "1990-05-10",
+            "type": "liberal_type"
         },
-        "4742": {
-            "name": "Janko Smole",
-            "ideology": "communist_idolg",
+        "4737": {
+            "name": "Milan Kucan",
+            "ideology": "social_cons_idolg",
             "loyalty": 1.0,
-            "picture": "SLV_M_Smole_Janko",
-            "start_date": "1965-01-01",
-            "death_date": "1967-01-01",
-            "type": "bureaucrat_type"
-        },
-        "4743": {
-            "name": "Stane Kavcic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SLV_M_Kavcic_Stane",
-            "start_date": "1967-01-01",
-            "death_date": "1972-11-27",
-            "type": "lethargic_type"
-        },
-        "4744": {
-            "name": "Andrej Marinc",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SLV_M_Marinc_Andrej",
-            "start_date": "1972-11-27",
-            "death_date": "1978-04-01",
-            "type": "parental_type"
-        },
-        "4745": {
-            "name": "Anton Vratua",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "SLV_M_Vratusa_Anton",
-            "start_date": "1978-04-01",
-            "death_date": "1980-07-01",
-            "type": "honest_type"
-        },
-        "4746": {
-            "name": "Janez Zemljaric",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SLV_M_Zemljaric_Janez",
-            "start_date": "1980-07-01",
-            "death_date": "1984-05-23",
-            "type": "administrator_type"
-        },
-        "4747": {
-            "name": "Duan inigoj",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SLV_M_Sinigoj_Dusan",
-            "start_date": "1984-05-23",
-            "death_date": "1990-05-16",
+            "picture": "SLV_M_Kucan_Milan",
+            "start_date": "1990-05-10",
+            "death_date": "2002-12-22",
             "type": "reformer_type"
         },
         "4748": {
@@ -278,141 +404,6 @@
             "start_date": "1990-05-16",
             "death_date": "1992-05-14",
             "type": "reformer_type"
-        },
-        "4749": {
-            "name": "Andrej Bajuk",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "SLV_M_Bajuk_Andrej",
-            "start_date": "1976-01-01",
-            "death_date": "2000-11-17",
-            "type": "administrator_type"
-        },
-        "4750": {
-            "name": "Slavoj Zizek",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Zizek_Slavoj",
-            "start_date": "1973-11-08",
-            "death_date": "2300-01-01",
-            "type": "visionary_type"
-        },
-        "4751": {
-            "name": "Boris Pahor",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Pahor_Boris",
-            "start_date": "1945-01-01",
-            "death_date": "2300-01-01",
-            "type": "liberal_type"
-        },
-        "4752": {
-            "name": "Angela Vode",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Vode_Angela",
-            "start_date": "1922-01-01",
-            "death_date": "1985-05-05",
-            "type": "reformer_type"
-        },
-        "4753": {
-            "name": "Ljubo Sirc",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Sirc_Ljubo",
-            "start_date": "1946-01-01",
-            "death_date": "2300-01-01",
-            "type": "ambitious_type"
-        },
-        "4754": {
-            "name": "Ljenko Urbancic",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Urbancic_Ljenko",
-            "start_date": "1944-01-01",
-            "death_date": "2006-03-01",
-            "type": "zealous_type"
-        },
-        "4755": {
-            "name": "Pavel Gantar",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Gantar_Pavel",
-            "start_date": "1980-01-01",
-            "death_date": "2300-01-01",
-            "type": "liberal_type"
-        },
-        "4756": {
-            "name": "Miha Krek",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Krek_Miha",
-            "start_date": "1921-01-01",
-            "death_date": "1969-11-18",
-            "type": "hardliner_type"
-        },
-        "4757": {
-            "name": "Franc Snoj",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Snoj_Franc",
-            "start_date": "1930-01-01",
-            "death_date": "1962-04-22",
-            "type": "courageous_type"
-        },
-        "4758": {
-            "name": "Edvard Kocbek",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Kocbek_Edvard",
-            "start_date": "1930-01-01",
-            "death_date": "1981-11-03",
-            "type": "religious_type"
-        },
-        "4759": {
-            "name": "Maksimiljan Anton I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Anton_I",
-            "start_date": "1946-01-01",
-            "death_date": "1976-11-01",
-            "type": "traditionalist_type"
-        },
-        "4760": {
-            "name": "Marjan Hugo I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Hugo_I",
-            "start_date": "1976-11-01",
-            "death_date": "2300-01-01",
-            "type": "moral_type"
-        },
-        "4761": {
-            "name": "Edvard Kardelj",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Kardelj_Edvard",
-            "start_date": "1946-01-01",
-            "death_date": "1979-10-02",
-            "type": "reformer_type"
-        },
-        "4762": {
-            "name": "Jospi Vidmar",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Vidmar_Jospi",
-            "start_date": "1895-10-14",
-            "death_date": "1972-01-01",
-            "type": "administrator_type"
-        },
-        "4763": {
-            "name": "Zmago Jelincic Plemeniti",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "SLV_M_Plemeniti_Zmago_J",
-            "start_date": "1987-07-06",
-            "death_date": "2300-01-01",
-            "type": "extremist_type"
         }
     }
 }

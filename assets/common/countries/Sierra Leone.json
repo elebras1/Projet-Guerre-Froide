@@ -71,6 +71,33 @@
     },
     "unit_names": "",
     "ministers": {
+        "4674": {
+            "name": "Herbert Christian Bankole-Bright",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SEI_M_Bankole-Bright_Herbert_C",
+            "start_date": "1915-01-01",
+            "death_date": "1958-12-14",
+            "type": "ambitious_type"
+        },
+        "354": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
+        "4673": {
+            "name": "I.T.A. Wallace-Johnston",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SEI_M_Wallace-Johnston_I_T_A",
+            "start_date": "1930-01-01",
+            "death_date": "1965-05-10",
+            "type": "administrator_type"
+        },
         "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
@@ -79,6 +106,24 @@
             "start_date": "1936-09-11",
             "death_date": "1952-02-06",
             "type": "parental_type"
+        },
+        "4675": {
+            "name": "Lamina Sankoh",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SEI_M_Sankoh_Lamina",
+            "start_date": "1946-01-01",
+            "death_date": "1964-01-01",
+            "type": "reformer_type"
+        },
+        "351": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
         },
         "212": {
             "name": "Elizabeth II",
@@ -89,6 +134,60 @@
             "death_date": "2300-05-12",
             "type": "traditionalist_type"
         },
+        "348": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "355": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "352": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "4666": {
+            "name": "Milton Margai",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SEI_M_Margai_Milton",
+            "start_date": "1961-01-01",
+            "death_date": "1964-01-01",
+            "type": "democrat_type"
+        },
+        "353": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "4667": {
+            "name": "Albert Margai",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SEI_M_Margai_Albert",
+            "start_date": "1964-01-01",
+            "death_date": "1967-01-01",
+            "type": "autocrat_type"
+        },
         "344": {
             "name": "George VII",
             "ideology": "social_cons_idolg",
@@ -98,23 +197,23 @@
             "death_date": "2300-01-01",
             "type": "parental_type"
         },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
+        "4668": {
+            "name": "Siaka Stevens",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "SEI_M_Stevens_Siaka",
+            "start_date": "1967-01-01",
+            "death_date": "1985-11-28",
+            "type": "dictator_type"
         },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
+        "4672": {
+            "name": "John Amadu Bangura",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SEI_M_Bangura_John_A",
+            "start_date": "1968-04-18",
+            "death_date": "1970-03-29",
+            "type": "democrat_type"
         },
         "347": {
             "name": "Anne II",
@@ -125,14 +224,32 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "348": {
-            "name": "Margaret I",
+        "4670": {
+            "name": "Sorie Ibrahim Koroma",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "SEI_M_Koroma_Sorie_I",
+            "start_date": "1971-04-19",
+            "death_date": "1985-11-28",
+            "type": "autocrat_type"
+        },
+        "4676": {
+            "name": "Charles Margai",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SEI_M_Margai_Charles",
+            "start_date": "1972-01-01",
+            "death_date": "2300-01-01",
+            "type": "autocrat_type"
+        },
+        "345": {
+            "name": "Andrew I",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "ENG_M_Margaret_I",
-            "start_date": "1952-03-01",
-            "death_date": "2002-02-09",
-            "type": "controversial_figure"
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
         },
         "349": {
             "name": "David III",
@@ -140,6 +257,15 @@
             "loyalty": 0.94,
             "picture": "ENG_M_David_III",
             "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "346": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
@@ -152,78 +278,6 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "351": {
-            "name": "Henry IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
-        },
-        "352": {
-            "name": "William V",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.91,
-            "picture": "ENG_M_William_V",
-            "start_date": "1959-12-18",
-            "death_date": "1972-08-28",
-            "type": "courteous_figure"
-        },
-        "353": {
-            "name": "Richard IV",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "ENG_M_Richard_IV",
-            "start_date": "1962-08-26",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "354": {
-            "name": "Robert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Robert_I_Bayern",
-            "start_date": "1919-02-03",
-            "death_date": "1955-08-02",
-            "type": "traditionalist_type"
-        },
-        "355": {
-            "name": "Albert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
-        },
-        "4666": {
-            "name": "Milton Margai",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SEI_M_Margai_Milton",
-            "start_date": "1961-01-01",
-            "death_date": "1964-01-01",
-            "type": "democrat_type"
-        },
-        "4667": {
-            "name": "Albert Margai",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SEI_M_Margai_Albert",
-            "start_date": "1964-01-01",
-            "death_date": "1967-01-01",
-            "type": "autocrat_type"
-        },
-        "4668": {
-            "name": "Siaka Stevens",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "SEI_M_Stevens_Siaka",
-            "start_date": "1967-01-01",
-            "death_date": "1985-11-28",
-            "type": "dictator_type"
-        },
         "4669": {
             "name": "Joseph Saidu Momoh",
             "ideology": "paternal_auto_idolg",
@@ -233,15 +287,6 @@
             "death_date": "1992-04-29",
             "type": "lethargic_type"
         },
-        "4670": {
-            "name": "Sorie Ibrahim Koroma",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "SEI_M_Koroma_Sorie_I",
-            "start_date": "1971-04-19",
-            "death_date": "1985-11-28",
-            "type": "autocrat_type"
-        },
         "4671": {
             "name": "Francis Minah",
             "ideology": "paternal_auto_idolg",
@@ -250,51 +295,6 @@
             "start_date": "1985-11-29",
             "death_date": "1989-05-03",
             "type": "loyal_type"
-        },
-        "4672": {
-            "name": "John Amadu Bangura",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SEI_M_Bangura_John_A",
-            "start_date": "1968-04-18",
-            "death_date": "1970-03-29",
-            "type": "democrat_type"
-        },
-        "4673": {
-            "name": "I.T.A. Wallace-Johnston",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "SEI_M_Wallace-Johnston_I_T_A",
-            "start_date": "1930-01-01",
-            "death_date": "1965-05-10",
-            "type": "administrator_type"
-        },
-        "4674": {
-            "name": "Herbert Christian Bankole-Bright",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SEI_M_Bankole-Bright_Herbert_C",
-            "start_date": "1915-01-01",
-            "death_date": "1958-12-14",
-            "type": "ambitious_type"
-        },
-        "4675": {
-            "name": "Lamina Sankoh",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SEI_M_Sankoh_Lamina",
-            "start_date": "1946-01-01",
-            "death_date": "1964-01-01",
-            "type": "reformer_type"
-        },
-        "4676": {
-            "name": "Charles Margai",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SEI_M_Margai_Charles",
-            "start_date": "1972-01-01",
-            "death_date": "2300-01-01",
-            "type": "autocrat_type"
         }
     }
 }

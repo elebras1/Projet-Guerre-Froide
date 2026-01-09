@@ -71,15 +71,6 @@
     },
     "unit_names": "",
     "ministers": {
-        "811": {
-            "name": "Ntare V",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "BRD_M_Ntare_V",
-            "start_date": "1966-06-01",
-            "death_date": "1972-04-29",
-            "type": "courteous_figure"
-        },
         "812": {
             "name": "Mwambutsa IV",
             "ideology": "social_cons_idolg",
@@ -96,24 +87,6 @@
             "picture": "BRD_M_Rwagasore_Louis",
             "start_date": "1958-01-01",
             "death_date": "1961-10-13",
-            "type": "courteous_figure"
-        },
-        "814": {
-            "name": "Regina Kanyange",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "BRD_M_Kanyange_Regina",
-            "start_date": "1966-06-01",
-            "death_date": "1987-01-01",
-            "type": "courteous_figure"
-        },
-        "815": {
-            "name": "Rose Paula Iribagiza",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.91,
-            "picture": "BRD_M_Iribagiza_Rose_P",
-            "start_date": "1966-06-01",
-            "death_date": "2013-01-01",
             "type": "courteous_figure"
         },
         "816": {
@@ -179,6 +152,33 @@
             "death_date": "1966-07-08",
             "type": "ambitious_type"
         },
+        "811": {
+            "name": "Ntare V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "BRD_M_Ntare_V",
+            "start_date": "1966-06-01",
+            "death_date": "1972-04-29",
+            "type": "courteous_figure"
+        },
+        "814": {
+            "name": "Regina Kanyange",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "BRD_M_Kanyange_Regina",
+            "start_date": "1966-06-01",
+            "death_date": "1987-01-01",
+            "type": "courteous_figure"
+        },
+        "815": {
+            "name": "Rose Paula Iribagiza",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "BRD_M_Iribagiza_Rose_P",
+            "start_date": "1966-06-01",
+            "death_date": "2013-01-01",
+            "type": "courteous_figure"
+        },
         "823": {
             "name": "Michel Micombero",
             "ideology": "paternal_auto_idolg",
@@ -197,15 +197,6 @@
             "death_date": "1987-09-03",
             "type": "hardliner_type"
         },
-        "825": {
-            "name": "Pierre Buyoya",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "BRD_M_Buyoya_Pierre",
-            "start_date": "1987-09-03",
-            "death_date": "1993-07-10",
-            "type": "democrat_type"
-        },
         "826": {
             "name": "Édouard Nzambimana",
             "ideology": "paternal_auto_idolg",
@@ -215,15 +206,6 @@
             "death_date": "1978-10-13",
             "type": "administrator_type"
         },
-        "827": {
-            "name": "Adrien Sibomana",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "BRD_M_Sibomana_Adrien",
-            "start_date": "1988-10-19",
-            "death_date": "1993-07-10",
-            "type": "loyal_type"
-        },
         "828": {
             "name": "Melchior Ndadaye",
             "ideology": "maoist_idolg",
@@ -232,6 +214,24 @@
             "start_date": "1979-08-01",
             "death_date": "1993-10-21",
             "type": "visionary_type"
+        },
+        "825": {
+            "name": "Pierre Buyoya",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "BRD_M_Buyoya_Pierre",
+            "start_date": "1987-09-03",
+            "death_date": "1993-07-10",
+            "type": "democrat_type"
+        },
+        "827": {
+            "name": "Adrien Sibomana",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "BRD_M_Sibomana_Adrien",
+            "start_date": "1988-10-19",
+            "death_date": "1993-07-10",
+            "type": "loyal_type"
         }
     }
 }

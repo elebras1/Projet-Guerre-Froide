@@ -79,8 +79,8 @@
             "picture": "DEN_Christian_X",
             "start_date": "1890-09-26",
             "death_date": "1947-04-20",
-            "wikipage": "/wiki/Christian_X_of_Denmark",
-            "type": "courageous_type"
+            "type": "courageous_type",
+            "wikipage": "/wiki/Christian_X_of_Denmark"
         },
         "1518": {
             "name": "Frederik IX",
@@ -89,68 +89,8 @@
             "picture": "DEN_Frederick_IX",
             "start_date": "1919-03-11",
             "death_date": "1972-01-14",
-            "wikipage": "/wiki/Frederick_IX_of_Denmark",
-            "type": "parental_type"
-        },
-        "1519": {
-            "name": "Margrethe II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "DEN_Margrethe_II",
-            "start_date": "1960-04-16",
-            "death_date": "1999-12-31",
-            "wikipage": "/wiki/Margrethe_II_of_Denmark",
-            "type": "courteous_figure"
-        },
-        "1520": {
-            "name": "Frederik X",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "DEN_M_Frederik_X",
-            "start_date": "1986-05-26",
-            "death_date": "2300-01-01",
-            "wikipage": "/wiki/Frederik,_Crown_Prince_of_Denmark",
-            "type": "courteous_figure"
-        },
-        "1521": {
-            "name": "Joachim I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "DEN_M_Joachim_I",
-            "start_date": "1987-06-07",
-            "death_date": "2300-01-01",
-            "wikipage": "/wiki/Prince_Joachim_of_Denmark",
-            "type": "courteous_figure"
-        },
-        "1522": {
-            "name": "Benedikte_I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "DEN_M_Benedikte_I",
-            "start_date": "1962-04-29",
-            "death_date": "2300-01-01",
-            "wikipage": "/wiki/Princess_Benedikte_of_Denmark",
-            "type": "courteous_figure"
-        },
-        "1523": {
-            "name": "Gustav I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "DEN_M_Gustav_I",
-            "start_date": "1987-01-12",
-            "death_date": "2300-01-01",
-            "wikipage": "/wiki/Gustav,_Hereditary_Prince_of_Sayn-Wittgenstein-Berleburg",
-            "type": "courteous_figure"
-        },
-        "1524": {
-            "name": "Alexandra I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "DEN_M_Alexandra_I",
-            "start_date": "1988-11-20",
-            "death_date": "2300-01-01",
-            "wikipage": "/wiki/Princess_Alexandra_of_Sayn-Wittgenstein-Berleburg",
-            "type": "courteous_figure"
+            "type": "parental_type",
+            "wikipage": "/wiki/Frederick_IX_of_Denmark"
         },
         "1525": {
             "name": "Knud VII",
@@ -159,17 +99,25 @@
             "picture": "DEN_M_Knud_VII",
             "start_date": "1920-07-27",
             "death_date": "1976-06-14",
-            "wikipage": "/wiki/Prince_Knud_of_Denmark",
-            "type": "courteous_figure"
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Prince_Knud_of_Denmark"
         },
-        "1526": {
-            "name": "Elisabeth I",
+        "1885": {
+            "name": "Andrass Samuelsen",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "DEN_M_Elisabeth_I",
-            "start_date": "1953-05-08",
-            "death_date": "2300-01-01",
-            "wikipage": "/wiki/Princess_Elisabeth_of_Denmark",
+            "loyalty": 1.0,
+            "picture": "FAR_M_Samuelsen_Andrass",
+            "start_date": "1924-01-01",
+            "death_date": "1950-12-15",
+            "type": "administrator_type"
+        },
+        "1887": {
+            "name": "Peter Mohr Dam",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "FAR_M_Dam_Peter_M",
+            "start_date": "1936-01-01",
+            "death_date": "1968-11-19",
             "type": "courteous_figure"
         },
         "1879": {
@@ -181,6 +129,34 @@
             "death_date": "1954-01-01",
             "type": "bureaucrat_type"
         },
+        "1886": {
+            "name": "Kristian Djurhuus",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FAR_M_Djurhuus_Kristian",
+            "start_date": "1950-12-15",
+            "death_date": "1970-12-12",
+            "type": "bureaucrat_type"
+        },
+        "1888": {
+            "name": "Hákun Djurhuus",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "FAR_M_Djurhuus_Hakun",
+            "start_date": "1951-01-01",
+            "death_date": "1967-01-12",
+            "type": "administrator_type"
+        },
+        "1526": {
+            "name": "Elisabeth I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "DEN_M_Elisabeth_I",
+            "start_date": "1953-05-08",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Princess_Elisabeth_of_Denmark"
+        },
         "1880": {
             "name": "Niels Elkær-Hansen",
             "ideology": "social_cons_idolg",
@@ -190,6 +166,16 @@
             "death_date": "1961-01-01",
             "type": "administrator_type"
         },
+        "1519": {
+            "name": "Margrethe II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "DEN_Margrethe_II",
+            "start_date": "1960-04-16",
+            "death_date": "1999-12-31",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Margrethe_II_of_Denmark"
+        },
         "1881": {
             "name": "Mogens Wahl",
             "ideology": "social_cons_idolg",
@@ -198,6 +184,25 @@
             "start_date": "1961-01-01",
             "death_date": "1972-01-01",
             "type": "loyal_type"
+        },
+        "1522": {
+            "name": "Benedikte_I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "DEN_M_Benedikte_I",
+            "start_date": "1962-04-29",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Princess_Benedikte_of_Denmark"
+        },
+        "1889": {
+            "name": "Atli Dam",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "FAR_M_Dam_Atli",
+            "start_date": "1970-12-12",
+            "death_date": "1993-01-18",
+            "type": "bureaucrat_type"
         },
         "1882": {
             "name": "Leif Groth",
@@ -217,6 +222,45 @@
             "death_date": "1988-01-01",
             "type": "courteous_figure"
         },
+        "1890": {
+            "name": "Pauli Ellefsen",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FAR_M_Ellefsen_Pauli",
+            "start_date": "1981-01-05",
+            "death_date": "1985-01-10",
+            "type": "bureaucrat_type"
+        },
+        "1520": {
+            "name": "Frederik X",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "DEN_M_Frederik_X",
+            "start_date": "1986-05-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Frederik,_Crown_Prince_of_Denmark"
+        },
+        "1523": {
+            "name": "Gustav I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "DEN_M_Gustav_I",
+            "start_date": "1987-01-12",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Gustav,_Hereditary_Prince_of_Sayn-Wittgenstein-Berleburg"
+        },
+        "1521": {
+            "name": "Joachim I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "DEN_M_Joachim_I",
+            "start_date": "1987-06-07",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Prince_Joachim_of_Denmark"
+        },
         "1884": {
             "name": "Bent Klinte",
             "ideology": "social_cons_idolg",
@@ -226,59 +270,15 @@
             "death_date": "1995-01-01",
             "type": "bureaucrat_type"
         },
-        "1885": {
-            "name": "Andrass Samuelsen",
+        "1524": {
+            "name": "Alexandra I",
             "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "FAR_M_Samuelsen_Andrass",
-            "start_date": "1924-01-01",
-            "death_date": "1950-12-15",
-            "type": "administrator_type"
-        },
-        "1886": {
-            "name": "Kristian Djurhuus",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "FAR_M_Djurhuus_Kristian",
-            "start_date": "1950-12-15",
-            "death_date": "1970-12-12",
-            "type": "bureaucrat_type"
-        },
-        "1887": {
-            "name": "Peter Mohr Dam",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "FAR_M_Dam_Peter_M",
-            "start_date": "1936-01-01",
-            "death_date": "1968-11-19",
-            "type": "courteous_figure"
-        },
-        "1888": {
-            "name": "Hákun Djurhuus",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "FAR_M_Djurhuus_Hakun",
-            "start_date": "1951-01-01",
-            "death_date": "1967-01-12",
-            "type": "administrator_type"
-        },
-        "1889": {
-            "name": "Atli Dam",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "FAR_M_Dam_Atli",
-            "start_date": "1970-12-12",
-            "death_date": "1993-01-18",
-            "type": "bureaucrat_type"
-        },
-        "1890": {
-            "name": "Pauli Ellefsen",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "FAR_M_Ellefsen_Pauli",
-            "start_date": "1981-01-05",
-            "death_date": "1985-01-10",
-            "type": "bureaucrat_type"
+            "loyalty": 0.95,
+            "picture": "DEN_M_Alexandra_I",
+            "start_date": "1988-11-20",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Princess_Alexandra_of_Sayn-Wittgenstein-Berleburg"
         },
         "1891": {
             "name": "Jógvan Sundstein",

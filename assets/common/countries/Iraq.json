@@ -82,6 +82,15 @@
         "militia_brigade": {}
     },
     "ministers": {
+        "2645": {
+            "name": "Abd al-Ilah",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_al-Ilah_Abd",
+            "start_date": "1939-01-01",
+            "death_date": "1958-07-14",
+            "type": "moral_type"
+        },
         "1": {
             "name": "Faisal II",
             "ideology": "social_cons_idolg",
@@ -91,59 +100,14 @@
             "death_date": "1958-07-14",
             "type": "courageous_type"
         },
-        "2": {
-            "name": "Muhammad Najib ar-Rubai'i",
-            "ideology": "fascistic_idolg",
-            "loyalty": 1,
-            "picture": "IRQ_M_ar-Rubai'i_Muhammad_N",
-            "start_date": "1958-07-14",
-            "death_date": "1963-02-08",
-            "type": "extremist_type"
-        },
-        "2627": {
-            "name": "Saddam Hussein",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.8,
-            "picture": "IRQ_M_Hussein_Saddam",
-            "start_date": "1959-10-07",
-            "death_date": "2003-04-09",
-            "type": "dictator_type"
-        },
-        "4": {
-            "name": "Abdul Salam Arif",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1,
-            "picture": "IRQ_M_Arif_Abdul_S",
-            "start_date": "1963-02-08",
-            "death_date": "1966-04-13",
-            "type": "controversial_figure"
-        },
-        "5": {
-            "name": "Abd ar-Rahman al-Bazzaz",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.9,
-            "picture": "IRQ_M_al-Bazzaz_Abd_Ar-Rahman",
-            "start_date": "1965-09-21",
-            "death_date": "1966-08-09",
-            "type": "reformer_type"
-        },
-        "6": {
-            "name": "Abdul Rahman Arif",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1,
-            "picture": "IRQ_M_Arif_Abdul_Rahman",
-            "start_date": "1966-04-16",
-            "death_date": "1968-07-17",
-            "type": "lethargic_type"
-        },
-        "2628": {
-            "name": "Ahmed Hassan al-Bakr",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "IRQ_M_al-Bakr_Ahmed_H",
-            "start_date": "1963-02-08",
-            "death_date": "1979-07-16",
-            "type": "traditionalist_type"
+        "2635": {
+            "name": "Yusuf Salman Yusuf",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_Yusuf_Yusuf_S",
+            "start_date": "1941-10-29",
+            "death_date": "1949-02-14",
+            "type": "courageous_type"
         },
         "8": {
             "name": "Hamdi al-Pachachi",
@@ -153,6 +117,15 @@
             "start_date": "1944-06-04",
             "death_date": "1946-02-23",
             "type": "hardliner_type"
+        },
+        "62": {
+            "name": "Abd al-llah",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "IRQ_M_al-llah_Abd",
+            "start_date": "1946-01-01",
+            "death_date": "1958-07-14",
+            "type": "courteous_figure"
         },
         "9": {
             "name": "Tawfiq al-Suwaidi",
@@ -190,6 +163,15 @@
             "death_date": "1948-01-29",
             "type": "liberal_type"
         },
+        "2641": {
+            "name": "Michel Aflaq",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_Aflaq_Michel",
+            "start_date": "1947-04-06",
+            "death_date": "1989-06-23",
+            "type": "liberal_type"
+        },
         "13": {
             "name": "Sayyid Muhammad as-Sadr",
             "ideology": "social_cons_idolg",
@@ -208,6 +190,15 @@
             "death_date": "1949-01-06",
             "type": "zealous_type"
         },
+        "2636": {
+            "name": "Baha' al-Din Nuri",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_Nuri_Baha_D",
+            "start_date": "1949-02-14",
+            "death_date": "1953-04-01",
+            "type": "zealous_type"
+        },
         "15": {
             "name": "Ali Jawdat al-Ayubi",
             "ideology": "social_cons_idolg",
@@ -216,6 +207,15 @@
             "start_date": "1949-12-10",
             "death_date": "1957-12-15",
             "type": "hardliner_type"
+        },
+        "2633": {
+            "name": "Fuad al-Rikabi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_al-Rikabi_Fuad",
+            "start_date": "1951-01-01",
+            "death_date": "1971-01-01",
+            "type": "visionary_type"
         },
         "16": {
             "name": "Mustafa Mahmud al-Umari",
@@ -244,6 +244,15 @@
             "death_date": "1953-09-17",
             "type": "reputable_type"
         },
+        "2637": {
+            "name": "Abd al-Karim Ahmad al-Daud",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_al-Daud_Abd_K_A",
+            "start_date": "1953-04-01",
+            "death_date": "1954-06-01",
+            "type": "zealous_type"
+        },
         "19": {
             "name": "Muhammad Fadhel al-Jamali",
             "ideology": "social_cons_idolg",
@@ -252,6 +261,24 @@
             "start_date": "1953-09-17",
             "death_date": "1954-04-29",
             "type": "religious_type"
+        },
+        "2638": {
+            "name": "Hamid Uthman",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_Uthman_Hamid",
+            "start_date": "1954-06-01",
+            "death_date": "1955-06-01",
+            "type": "zealous_type"
+        },
+        "2632": {
+            "name": "Husain al-Radi",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_al-Radi_Husain",
+            "start_date": "1955-11-18",
+            "death_date": "1963-02-24",
+            "type": "zealous_type"
         },
         "20": {
             "name": "Abdul-Wahab Mirjan",
@@ -271,14 +298,95 @@
             "death_date": "1958-07-14",
             "type": "administrator_type"
         },
-        "2629": {
+        "2": {
+            "name": "Muhammad Najib ar-Rubai'i",
+            "ideology": "fascistic_idolg",
+            "loyalty": 1,
+            "picture": "IRQ_M_ar-Rubai'i_Muhammad_N",
+            "start_date": "1958-07-14",
+            "death_date": "1963-02-08",
+            "type": "extremist_type"
+        },
+        "22": {
             "name": "Abd al-Karim Qasim",
-            "ideology": "paternal_auto_idolg",
+            "ideology": "social_cons_idolg",
             "loyalty": 1,
             "picture": "IRQ_M_Qasim_Abd_K",
             "start_date": "1958-07-14",
             "death_date": "1963-02-08",
             "type": "autocrat_type"
+        },
+        "63": {
+            "name": "Zeid I bin Hussein",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "IRQ_M_Hussein_Zeid",
+            "start_date": "1958-07-14",
+            "death_date": "1970-10-18",
+            "type": "autocrat_type"
+        },
+        "2634": {
+            "name": "Talib El-Shibib",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_el-Shibib_Talib",
+            "start_date": "1959-09-01",
+            "death_date": "1997-01-01",
+            "type": "democrat_type"
+        },
+        "3": {
+            "name": "Saddam Hussein",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.8,
+            "picture": "IRQ_M_Hussein_Saddam",
+            "start_date": "1959-10-07",
+            "death_date": "2003-04-09",
+            "type": "dictator_type"
+        },
+        "4": {
+            "name": "Abdul Salam Arif",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1,
+            "picture": "IRQ_M_Arif_Abdul_S",
+            "start_date": "1963-02-08",
+            "death_date": "1966-04-13",
+            "type": "controversial_figure"
+        },
+        "7": {
+            "name": "Ahmed Hassan al-Bakr",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.9,
+            "picture": "IRQ_M_al-Bakr_Ahmed_H",
+            "start_date": "1963-02-08",
+            "death_date": "1979-07-16",
+            "type": "traditionalist_type"
+        },
+        "2639": {
+            "name": "Aziz Muhammad",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_Muhammad_Aziz",
+            "start_date": "1963-02-24",
+            "death_date": "1993-01-01",
+            "type": "loyal_type"
+        },
+        "2642": {
+            "name": "Amir Abdullah",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_Abdullah_Amir",
+            "start_date": "1963-02-25",
+            "death_date": "1985-08-22",
+            "type": "hardliner_type"
+        },
+        "2643": {
+            "name": "Aziz Muhammed",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_Muhammed_Aziz",
+            "start_date": "1963-02-25",
+            "death_date": "1992-01-01",
+            "type": "loyal_type"
         },
         "23": {
             "name": "Tahir Yahya",
@@ -298,6 +406,24 @@
             "death_date": "1965-09-21",
             "type": "loyal_type"
         },
+        "5": {
+            "name": "Abd ar-Rahman al-Bazzaz",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "IRQ_M_al-Bazzaz_Abd_Ar-Rahman",
+            "start_date": "1965-09-21",
+            "death_date": "1966-08-09",
+            "type": "reformer_type"
+        },
+        "6": {
+            "name": "Abdul Rahman Arif",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1,
+            "picture": "IRQ_M_Arif_Abdul_Rahman",
+            "start_date": "1966-04-16",
+            "death_date": "1968-07-17",
+            "type": "lethargic_type"
+        },
         "25": {
             "name": "Naji Talib",
             "ideology": "social_cons_idolg",
@@ -306,6 +432,15 @@
             "start_date": "1966-08-09",
             "death_date": "1967-05-10",
             "type": "loyal_type"
+        },
+        "2644": {
+            "name": "Aziz al-Hajj",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "IRQ_M_al-Hajj_Aziz",
+            "start_date": "1967-07-14",
+            "death_date": "1991-11-08",
+            "type": "extremist_type"
         },
         "26": {
             "name": "Abd ar-Razzaq an-Naif",
@@ -316,32 +451,23 @@
             "death_date": "1968-07-30",
             "type": "honest_type"
         },
-        "2630": {
-            "name": "Sa'dun Hammadi",
+        "2640": {
+            "name": "Izzat Ibrahim al-Douri",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1,
-            "picture": "IRQ_M_Hammadi_Sa'dun",
-            "start_date": "1991-03-23",
-            "death_date": "1991-09-13",
-            "type": "reformer_type"
+            "loyalty": 0.5,
+            "picture": "IRQ_M_al-Douri_Izzat",
+            "start_date": "1968-07-17",
+            "death_date": "2300-01-01",
+            "type": "loyal_type"
         },
-        "2631": {
-            "name": "Mohammad Hamza al-Zubaidi",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1,
-            "picture": "IRQ_M_al-Zubaidi_Mohammad_H",
-            "start_date": "1991-09-16",
-            "death_date": "1993-09-05",
-            "type": "controversial_figure"
-        },
-        "62": {
-            "name": "Abd al-llah",
+        "64": {
+            "name": "Ra'ad I bin Zeid",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "IRQ_M_al-llah_Abd",
-            "start_date": "1946-01-01",
-            "death_date": "1958-07-14",
-            "type": "courteous_figure"
+            "loyalty": 0.97,
+            "picture": "IRQ_M_Zeid_Raad",
+            "start_date": "1970-10-18",
+            "death_date": "1999-12-31",
+            "type": "visionary_type"
         },
         "65": {
             "name": "Zeid bin Ra'ad",
@@ -370,149 +496,23 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "63": {
-            "name": "Zeid I bin Hussein",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "IRQ_M_Hussein_Zeid",
-            "start_date": "1958-07-14",
-            "death_date": "1970-10-18",
-            "type": "autocrat_type"
+        "27": {
+            "name": "Sa'dun Hammadi",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1,
+            "picture": "IRQ_M_Hammadi_Sa'dun",
+            "start_date": "1991-03-23",
+            "death_date": "1991-09-13",
+            "type": "reformer_type"
         },
-        "64": {
-            "name": "Ra'ad I bin Zeid",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "IRQ_M_Zeid_Raad",
-            "start_date": "1970-10-18",
-            "death_date": "1999-12-31",
-            "type": "visionary_type"
-        },
-        "2632": {
-            "name": "Husain al-Radi",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_al-Radi_Husain",
-            "start_date": "1955-11-18",
-            "death_date": "1963-02-24",
-            "type": "zealous_type"
-        },
-        "2633": {
-            "name": "Fuad al-Rikabi",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_al-Rikabi_Fuad",
-            "start_date": "1951-01-01",
-            "death_date": "1971-01-01",
-            "type": "visionary_type"
-        },
-        "2634": {
-            "name": "Talib El-Shibib",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_el-Shibib_Talib",
-            "start_date": "1959-09-01",
-            "death_date": "1997-01-01",
-            "type": "democrat_type"
-        },
-        "2635": {
-            "name": "Yusuf Salman Yusuf",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_Yusuf_Yusuf_S",
-            "start_date": "1941-10-29",
-            "death_date": "1949-02-14",
-            "type": "courageous_type"
-        },
-        "2636": {
-            "name": "Baha' al-Din Nuri",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_Nuri_Baha_D",
-            "start_date": "1949-02-14",
-            "death_date": "1953-04-01",
-            "type": "zealous_type"
-        },
-        "2637": {
-            "name": "Abd al-Karim Ahmad al-Daud",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_al-Daud_Abd_K_A",
-            "start_date": "1953-04-01",
-            "death_date": "1954-06-01",
-            "type": "zealous_type"
-        },
-        "2638": {
-            "name": "Hamid Uthman",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_Uthman_Hamid",
-            "start_date": "1954-06-01",
-            "death_date": "1955-06-01",
-            "type": "zealous_type"
-        },
-        "2639": {
-            "name": "Aziz Muhammad",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_Muhammad_Aziz",
-            "start_date": "1963-02-24",
-            "death_date": "1993-01-01",
-            "type": "loyal_type"
-        },
-        "2640": {
-            "name": "Izzat Ibrahim al-Douri",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_al-Douri_Izzat",
-            "start_date": "1968-07-17",
-            "death_date": "2300-01-01",
-            "type": "loyal_type"
-        },
-        "2641": {
-            "name": "Michel Aflaq",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_Aflaq_Michel",
-            "start_date": "1947-04-06",
-            "death_date": "1989-06-23",
-            "type": "liberal_type"
-        },
-        "2642": {
-            "name": "Amir Abdullah",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_Abdullah_Amir",
-            "start_date": "1963-02-25",
-            "death_date": "1985-08-22",
-            "type": "hardliner_type"
-        },
-        "2643": {
-            "name": "Aziz Muhammed",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_Muhammed_Aziz",
-            "start_date": "1963-02-25",
-            "death_date": "1992-01-01",
-            "type": "loyal_type"
-        },
-        "2644": {
-            "name": "Aziz al-Hajj",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_al-Hajj_Aziz",
-            "start_date": "1967-07-14",
-            "death_date": "1991-11-08",
-            "type": "extremist_type"
-        },
-        "2645": {
-            "name": "Abd al-Ilah",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "IRQ_M_al-Ilah_Abd",
-            "start_date": "1939-01-01",
-            "death_date": "1958-07-14",
-            "type": "moral_type"
+        "28": {
+            "name": "Mohammad Hamza al-Zubaidi",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1,
+            "picture": "IRQ_M_al-Zubaidi_Mohammad_H",
+            "start_date": "1991-09-16",
+            "death_date": "1993-09-05",
+            "type": "controversial_figure"
         }
     }
 }

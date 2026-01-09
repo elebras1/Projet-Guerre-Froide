@@ -72,6 +72,51 @@
     },
     "unit_names": "",
     "ministers": {
+        "4779": {
+            "name": "Maxamuud Cali Shiire",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SOM_M_Shiire_Maxamuud_C",
+            "start_date": "1897-01-01",
+            "death_date": "1960-01-01",
+            "type": "parental_type"
+        },
+        "4783": {
+            "name": "Jean-Marc Pratley",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "SOM_M_Pratley_Jean-Marc",
+            "start_date": "1953-01-01",
+            "death_date": "1990-06-06",
+            "type": "visionary_type"
+        },
+        "4787": {
+            "name": "Daud Abdulle Hirsi",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SOM_M_Hirsi_Daud_A",
+            "start_date": "1956-08-01",
+            "death_date": "1965-04-18",
+            "type": "ambitious_type"
+        },
+        "4780": {
+            "name": "Cabdil Salaam",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SOM_M_Salaam_Cabdil",
+            "start_date": "1960-01-01",
+            "death_date": "1997-01-01",
+            "type": "traditionalist_type"
+        },
+        "4775": {
+            "name": "Muhammad Haji Ibrahim Egal",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SOM_M_Egal_Muhammad_H_I",
+            "start_date": "1960-01-01",
+            "death_date": "2002-05-03",
+            "type": "democrat_type"
+        },
         "4770": {
             "name": "Aden Abdullah Osman Daar",
             "ideology": "social_cons_idolg",
@@ -81,6 +126,33 @@
             "death_date": "1967-06-10",
             "type": "democrat_type"
         },
+        "4786": {
+            "name": "Osman Haji Mohamed",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SOM_M_Mohamed_Osman_H",
+            "start_date": "1960-07-01",
+            "death_date": "1975-07-28",
+            "type": "administrator_type"
+        },
+        "4784": {
+            "name": "Haji Bashir Ismail Yusuf",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SOM_M_Yusuf_Haji_B_I",
+            "start_date": "1960-07-01",
+            "death_date": "1984-01-02",
+            "type": "administrator_type"
+        },
+        "4785": {
+            "name": "Abdillahi Mohammed Ahmed",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SOM_M_Ahmed_Abdillahi_M",
+            "start_date": "1960-07-01",
+            "death_date": "1993-01-01",
+            "type": "reformer_type"
+        },
         "4771": {
             "name": "Abdirashid Ali Shermarke",
             "ideology": "social_cons_idolg",
@@ -88,6 +160,24 @@
             "picture": "SOM_M_Shermarke_Abdirashid_A",
             "start_date": "1960-07-12",
             "death_date": "1969-10-15",
+            "type": "administrator_type"
+        },
+        "4788": {
+            "name": "Abdullah Mohamed Fadil",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SOM_M_Fadil_Abdullah_M",
+            "start_date": "1960-08-01",
+            "death_date": "1999-09-12",
+            "type": "extremist_type"
+        },
+        "4774": {
+            "name": "Abdirizak Haji Hussein",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SOM_M_Hussein_Abdirizak_H",
+            "start_date": "1964-06-14",
+            "death_date": "1967-07-15",
             "type": "administrator_type"
         },
         "4772": {
@@ -99,32 +189,23 @@
             "death_date": "1991-01-26",
             "type": "dictator_type"
         },
-        "4773": {
-            "name": "Ali Mahdi Muhammad",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SOM_M_Muhammad_Ali_M",
-            "start_date": "1991-01-26",
-            "death_date": "1997-01-03",
-            "type": "democrat_type"
+        "4781": {
+            "name": "Salaad Gabeyre Kediye",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SOM_M_Kediye_Salaad_G",
+            "start_date": "1969-10-21",
+            "death_date": "1972-08-01",
+            "type": "dictator_type"
         },
-        "4774": {
-            "name": "Abdirizak Haji Hussein",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SOM_M_Hussein_Abdirizak_H",
-            "start_date": "1964-06-14",
-            "death_date": "1967-07-15",
-            "type": "administrator_type"
-        },
-        "4775": {
-            "name": "Muhammad Haji Ibrahim Egal",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SOM_M_Egal_Muhammad_H_I",
-            "start_date": "1967-07-15",
-            "death_date": "1969-11-01",
-            "type": "democrat_type"
+        "4782": {
+            "name": "Jama Korshel",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SOM_M_Korshel_Jama",
+            "start_date": "1969-10-21",
+            "death_date": "1989-03-01",
+            "type": "ambitious_type"
         },
         "4776": {
             "name": "Muhammad Ali Samatar",
@@ -153,95 +234,14 @@
             "death_date": "1993-05-01",
             "type": "administrator_type"
         },
-        "4779": {
-            "name": "Maxamuud Cali Shiire",
+        "4773": {
+            "name": "Ali Mahdi Muhammad",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SOM_M_Shiire_Maxamuud_C",
-            "start_date": "1897-01-01",
-            "death_date": "1960-01-01",
-            "type": "parental_type"
-        },
-        "4780": {
-            "name": "Cabdil Salaam",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SOM_M_Salaam_Cabdil",
-            "start_date": "1960-01-01",
-            "death_date": "1997-01-01",
-            "type": "traditionalist_type"
-        },
-        "4781": {
-            "name": "Salaad Gabeyre Kediye",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "SOM_M_Kediye_Salaad_G",
-            "start_date": "1969-10-21",
-            "death_date": "1972-08-01",
-            "type": "dictator_type"
-        },
-        "4782": {
-            "name": "Jama Korshel",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "SOM_M_Korshel_Jama",
-            "start_date": "1969-10-21",
-            "death_date": "1989-03-01",
-            "type": "ambitious_type"
-        },
-        "4783": {
-            "name": "Jean-Marc Pratley",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "SOM_M_Pratley_Jean-Marc",
-            "start_date": "1953-01-01",
-            "death_date": "1990-06-06",
-            "type": "visionary_type"
-        },
-        "4784": {
-            "name": "Haji Bashir Ismail Yusuf",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SOM_M_Yusuf_Haji_B_I",
-            "start_date": "1960-07-01",
-            "death_date": "1984-01-02",
-            "type": "administrator_type"
-        },
-        "4785": {
-            "name": "Abdillahi Mohammed Ahmed",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SOM_M_Ahmed_Abdillahi_M",
-            "start_date": "1960-07-01",
-            "death_date": "1993-01-01",
-            "type": "reformer_type"
-        },
-        "4786": {
-            "name": "Osman Haji Mohamed",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SOM_M_Mohamed_Osman_H",
-            "start_date": "1960-07-01",
-            "death_date": "1975-07-28",
-            "type": "administrator_type"
-        },
-        "4787": {
-            "name": "Daud Abdulle Hirsi",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "SOM_M_Hirsi_Daud_A",
-            "start_date": "1956-08-01",
-            "death_date": "1965-04-18",
-            "type": "ambitious_type"
-        },
-        "4788": {
-            "name": "Abdullah Mohamed Fadil",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "SOM_M_Fadil_Abdullah_M",
-            "start_date": "1960-08-01",
-            "death_date": "1999-09-12",
-            "type": "extremist_type"
+            "loyalty": 1.0,
+            "picture": "SOM_M_Muhammad_Ali_M",
+            "start_date": "1991-01-26",
+            "death_date": "1997-01-03",
+            "type": "democrat_type"
         }
     }
 }

@@ -71,49 +71,49 @@
     },
     "unit_names": "",
     "ministers": {
-        "5807": {
+        "1513": {
+            "name": "Patrice Lumumba",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.9,
+            "picture": "KON_M_Lumumba_Patrice",
+            "start_date": "1955-01-01",
+            "death_date": "1961-01-17",
+            "type": "parental_type"
+        },
+        "1516": {
+            "name": "Cyrille Adoula",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Adoula_Cyrille",
+            "start_date": "1958-01-01",
+            "death_date": "1978-05-24",
+            "type": "reformer_type"
+        },
+        "1512": {
             "name": "Joseph Kasa-Vubu",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.4,
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
             "picture": "KON_M_Kasavubu_Joseph",
             "start_date": "1960-07-01",
             "death_date": "1965-11-24",
             "type": "lethargic_type"
         },
-        "5808": {
-            "name": "Antoine Gizenga",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.7,
-            "picture": "KON_M_Gizenga_Antoine",
-            "start_date": "1961-03-31",
-            "death_date": "1961-08-05",
-            "type": "ambitious_type"
+        "5826": {
+            "name": "Étienne Tshisekedi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.6,
+            "picture": "KON_M_Tshisekedi_Etienne",
+            "start_date": "1960-07-01",
+            "death_date": "2012-11-01",
+            "type": "controversial_figure"
         },
-        "5809": {
-            "name": "Joseph-Désiré Mobutu",
-            "ideology": "fascistic_idolg",
-            "loyalty": 1.0,
-            "picture": "KON_M_Mobutu_Joseph-Desire",
-            "start_date": "1965-11-24",
-            "death_date": "1997-05-16",
-            "type": "autocrat_type"
-        },
-        "5810": {
-            "name": "Patrice Lumumba",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 1.0,
-            "picture": "KON_M_Lumumba_Patrice",
-            "start_date": "1960-06-24",
-            "death_date": "1960-09-05",
-            "type": "parental_type"
-        },
-        "5811": {
+        "1515": {
             "name": "Joseph Iléo",
             "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.9,
+            "loyalty": 0.91,
             "picture": "KON_M_Ileo_Joseph",
             "start_date": "1960-09-05",
-            "death_date": "1961-08-02",
+            "death_date": "1994-09-19",
             "type": "visionary_type"
         },
         "5812": {
@@ -125,14 +125,14 @@
             "death_date": "1960-10-03",
             "type": "parental_type"
         },
-        "5813": {
-            "name": "Cyrille Adoula",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "KON_M_Adoula_Cyrille",
-            "start_date": "1961-08-02",
-            "death_date": "1964-06-30",
-            "type": "reformer_type"
+        "1514": {
+            "name": "Antoine Gizenga",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.95,
+            "picture": "KON_M_Gizenga_Antoine",
+            "start_date": "1961-01-17",
+            "death_date": "2300-01-01",
+            "type": "ambitious_type"
         },
         "5814": {
             "name": "Moise Tshombe",
@@ -160,6 +160,15 @@
             "start_date": "1965-11-14",
             "death_date": "1966-10-26",
             "type": "administrator_type"
+        },
+        "5809": {
+            "name": "Joseph-Désiré Mobutu",
+            "ideology": "fascistic_idolg",
+            "loyalty": 1.0,
+            "picture": "KON_M_Mobutu_Joseph-Desire",
+            "start_date": "1965-11-24",
+            "death_date": "1997-05-16",
+            "type": "autocrat_type"
         },
         "5817": {
             "name": "Mpinga Kasenda",
@@ -241,15 +250,6 @@
             "start_date": "1991-04-01",
             "death_date": "1991-09-29",
             "type": "administrator_type"
-        },
-        "5826": {
-            "name": "Étienne Tshisekedi",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.6,
-            "picture": "KON_M_Tshisekedi_Etienne",
-            "start_date": "1960-07-01",
-            "death_date": "2012-11-01",
-            "type": "controversial_figure"
         },
         "5827": {
             "name": "Bernardin Mungul Diaka",

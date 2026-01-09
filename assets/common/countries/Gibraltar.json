@@ -72,114 +72,6 @@
     },
     "unit_names": "",
     "ministers": {
-        "211": {
-            "name": "George VI",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.85,
-            "picture": "ENG_George",
-            "start_date": "1936-09-11",
-            "death_date": "1952-02-06",
-            "type": "parental_type"
-        },
-        "212": {
-            "name": "Elizabeth II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.85,
-            "picture": "ENG_Elizabeth",
-            "start_date": "1952-02-06",
-            "death_date": "2300-05-12",
-            "type": "traditionalist_type"
-        },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "348": {
-            "name": "Margaret I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "ENG_M_Margaret_I",
-            "start_date": "1952-03-01",
-            "death_date": "2002-02-09",
-            "type": "controversial_figure"
-        },
-        "349": {
-            "name": "David III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "350": {
-            "name": "Sarah I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "351": {
-            "name": "Henry IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
-        },
-        "352": {
-            "name": "William V",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.91,
-            "picture": "ENG_M_William_V",
-            "start_date": "1959-12-18",
-            "death_date": "1972-08-28",
-            "type": "courteous_figure"
-        },
-        "353": {
-            "name": "Richard IV",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "ENG_M_Richard_IV",
-            "start_date": "1962-08-26",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
         "354": {
             "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
@@ -189,14 +81,14 @@
             "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "355": {
-            "name": "Albert I von Bayern",
+        "211": {
+            "name": "George VI",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
         },
         "2087": {
             "name": "Sir Ralph Eastwood",
@@ -207,6 +99,15 @@
             "death_date": "1947-02-08",
             "type": "bureaucrat_type"
         },
+        "351": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
         "2088": {
             "name": "Sir Kenneth Anderson",
             "ideology": "social_cons_idolg",
@@ -215,6 +116,24 @@
             "start_date": "1947-02-08",
             "death_date": "1952-04-23",
             "type": "administrator_type"
+        },
+        "212": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "348": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
         },
         "2089": {
             "name": "Sir Gordon MacMillan",
@@ -234,6 +153,15 @@
             "death_date": "1958-04-16",
             "type": "traditionalist_type"
         },
+        "355": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
         "2091": {
             "name": "Sir Charles Keightley",
             "ideology": "social_cons_idolg",
@@ -242,6 +170,15 @@
             "start_date": "1958-04-16",
             "death_date": "1962-06-08",
             "type": "courageous_type"
+        },
+        "352": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
         },
         "2092": {
             "name": "Sir Alfred Ward",
@@ -252,6 +189,24 @@
             "death_date": "1965-08-05",
             "type": "traditionalist_type"
         },
+        "353": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "2100": {
+            "name": "Sir Joshua Hassan",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "GRT_M_Hassan_Joshua",
+            "start_date": "1964-08-11",
+            "death_date": "1987-12-08",
+            "type": "ambitious_type"
+        },
         "2093": {
             "name": "Sir Gerald Lathbury",
             "ideology": "social_cons_idolg",
@@ -260,6 +215,24 @@
             "start_date": "1965-08-05",
             "death_date": "1969-03-01",
             "type": "bureaucrat_type"
+        },
+        "344": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "347": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "2094": {
             "name": "Sir Varyl Begg",
@@ -270,6 +243,15 @@
             "death_date": "1973-10-03",
             "type": "courageous_type"
         },
+        "2101": {
+            "name": "Sir Robert Peliza",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "GRT_M_Peliza_Robert",
+            "start_date": "1969-08-06",
+            "death_date": "1972-06-25",
+            "type": "administrator_type"
+        },
         "2095": {
             "name": "Sir John Grandy",
             "ideology": "social_cons_idolg",
@@ -279,6 +261,15 @@
             "death_date": "1978-05-30",
             "type": "honest_type"
         },
+        "345": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
         "2096": {
             "name": "Sir William Jackson",
             "ideology": "social_cons_idolg",
@@ -287,6 +278,33 @@
             "start_date": "1978-05-30",
             "death_date": "1982-10-26",
             "type": "loyal_type"
+        },
+        "349": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "346": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "350": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "2097": {
             "name": "Sir David Williams",
@@ -306,33 +324,6 @@
             "death_date": "1989-12-01",
             "type": "loyal_type"
         },
-        "2099": {
-            "name": "Sir Derek Reffell",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.85,
-            "picture": "GRT_M_Reffell_Derek",
-            "start_date": "1989-12-01",
-            "death_date": "1993-04-01",
-            "type": "administrator_type"
-        },
-        "2100": {
-            "name": "Sir Joshua Hassan",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "GRT_M_Hassan_Joshua",
-            "start_date": "1964-08-11",
-            "death_date": "1987-12-08",
-            "type": "ambitious_type"
-        },
-        "2101": {
-            "name": "Sir Robert Peliza",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "GRT_M_Peliza_Robert",
-            "start_date": "1969-08-06",
-            "death_date": "1972-06-25",
-            "type": "administrator_type"
-        },
         "2102": {
             "name": "Adolfo Canepa",
             "ideology": "market_liberal_idolg",
@@ -350,6 +341,15 @@
             "start_date": "1988-03-25",
             "death_date": "1996-05-17",
             "type": "ambitious_type"
+        },
+        "2099": {
+            "name": "Sir Derek Reffell",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "GRT_M_Reffell_Derek",
+            "start_date": "1989-12-01",
+            "death_date": "1993-04-01",
+            "type": "administrator_type"
         }
     }
 }

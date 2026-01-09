@@ -82,95 +82,32 @@
         "militia_brigade": ""
     },
     "ministers": {
-        "2950": {
+        "2952": {
+            "name": "Fu'ad Nassar",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "JOR_M_Nassar_Fu_ad",
+            "start_date": "1945-01-01",
+            "death_date": "1976-02-08",
+            "type": "hardliner_type"
+        },
+        "2956": {
+            "name": "Fa'iq Warrad",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "JOR_M_Warrad_Faiq",
+            "start_date": "1945-01-01",
+            "death_date": "1994-01-01",
+            "type": "administrator_type"
+        },
+        "29": {
             "name": "Abdullah I bin al-Hussein",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "ideology": "social_cons_idolg",
+            "loyalty": 1,
             "picture": "JOR_M_al-Hussein_Abdullah_i",
             "start_date": "1946-01-01",
             "death_date": "1951-07-20",
             "type": "autocrat_type"
-        },
-        "2951": {
-            "name": "Talal I bin Abdullah",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "JOR_M_Abdullah_Talal_i",
-            "start_date": "1951-07-20",
-            "death_date": "1952-08-11",
-            "type": "controversial_figure"
-        },
-        "31": {
-            "name": "Hussein bin Talal",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "JOR_M_Talal_Hussein_i",
-            "start_date": "1952-08-11",
-            "death_date": "1999-02-07",
-            "type": "bureaucrat_type"
-        },
-        "55": {
-            "name": "Abdullah II ibn al-Hussein",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.99,
-            "picture": "JOR_M_al-Hussein_Abdullah_II",
-            "start_date": "1980-01-30",
-            "death_date": "2300-01-01",
-            "type": "traditionalist_type"
-        },
-        "56": {
-            "name": "Faisal bin al-Hussein",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.98,
-            "picture": "JOR_M_al-Hussein_Faisal",
-            "start_date": "1981-10-11",
-            "death_date": "2300-01-01",
-            "type": "traditionalist_type"
-        },
-        "57": {
-            "name": "Muhammad bin Talal",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.97,
-            "picture": "JOR_M_Talal_Muhammad",
-            "start_date": "1958-10-02",
-            "death_date": "2300-01-01",
-            "type": "traditionalist_type"
-        },
-        "58": {
-            "name": "Talal bin Muhammad",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.96,
-            "picture": "JOR_M_Muhammad_Talal",
-            "start_date": "1983-07-26",
-            "death_date": "2300-01-01",
-            "type": "traditionalist_type"
-        },
-        "59": {
-            "name": "Ghazi bin Muhammad",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.95,
-            "picture": "JOR_M_Muhammad_Ghazi",
-            "start_date": "1984-10-15",
-            "death_date": "2300-01-01",
-            "type": "traditionalist_type"
-        },
-        "60": {
-            "name": "Hassan bin Talal",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.94,
-            "picture": "JOR_M_Talal_Hassan",
-            "start_date": "1965-03-20",
-            "death_date": "2300-01-01",
-            "type": "traditionalist_type"
-        },
-        "61": {
-            "name": "Naif bin Abdullah",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.93,
-            "picture": "JOR_M_Abdullah_Naif",
-            "start_date": "1946-01-01",
-            "death_date": "1983-10-12",
-            "type": "traditionalist_type"
         },
         "32": {
             "name": "Ibrahim Hashem",
@@ -180,6 +117,24 @@
             "start_date": "1946-01-01",
             "death_date": "1958-05-18",
             "type": "bureaucrat_type"
+        },
+        "2954": {
+            "name": "John Bagot Glubb",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "JOR_M_Glubb_John_B",
+            "start_date": "1946-01-01",
+            "death_date": "1960-01-01",
+            "type": "courageous_type"
+        },
+        "61": {
+            "name": "Naif bin Abdullah",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.93,
+            "picture": "JOR_M_Abdullah_Naif",
+            "start_date": "1946-01-01",
+            "death_date": "1983-10-12",
+            "type": "traditionalist_type"
         },
         "33": {
             "name": "Samir al-Rifai",
@@ -208,10 +163,37 @@
             "death_date": "1956-07-01",
             "type": "bureaucrat_type"
         },
+        "2955": {
+            "name": "Fahmi al-Salfiti",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "JOR_M_Salfiti_Fahmi",
+            "start_date": "1951-06-01",
+            "death_date": "1980-12-31",
+            "type": "lethargic_type"
+        },
+        "30": {
+            "name": "Talal I bin Abdullah",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1,
+            "picture": "JOR_M_Abdullah_Talal_i",
+            "start_date": "1951-07-20",
+            "death_date": "1952-08-11",
+            "type": "controversial_figure"
+        },
+        "31": {
+            "name": "Hussein bin Talal",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1,
+            "picture": "JOR_M_Talal_Hussein_i",
+            "start_date": "1952-08-11",
+            "death_date": "1999-02-07",
+            "type": "bureaucrat_type"
+        },
         "36": {
             "name": "Fawzi al-Mulki",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_al-Mulki_Fawzi",
             "start_date": "1953-05-05",
             "death_date": "1954-05-04",
@@ -229,7 +211,7 @@
         "38": {
             "name": "Sulayman al-Nabulsi",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_al-Nabulsi_Sulayman",
             "start_date": "1956-10-29",
             "death_date": "1957-04-13",
@@ -238,11 +220,20 @@
         "39": {
             "name": "Husayin F. al-Khalidi",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_al-Khalidi_Husayn_F",
             "start_date": "1957-04-13",
             "death_date": "1957-04-24",
             "type": "bureaucrat_type"
+        },
+        "57": {
+            "name": "Muhammad bin Talal",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.97,
+            "picture": "JOR_M_Talal_Muhammad",
+            "start_date": "1958-10-02",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
         },
         "40": {
             "name": "Bahjat Talhouni",
@@ -271,19 +262,46 @@
             "death_date": "1967-04-23",
             "type": "bureaucrat_type"
         },
+        "2953": {
+            "name": "Bashir Barghouti",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "JOR_M_Barghouti_Bashir",
+            "start_date": "1965-01-08",
+            "death_date": "1997-08-01",
+            "type": "zealous_type"
+        },
+        "60": {
+            "name": "Hassan bin Talal",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.94,
+            "picture": "JOR_M_Talal_Hassan",
+            "start_date": "1965-03-20",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
         "43": {
             "name": "Saad M. Jumaa",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_Jumaa_Saad_M",
             "start_date": "1967-04-23",
             "death_date": "1967-10-07",
             "type": "bureaucrat_type"
         },
+        "2957": {
+            "name": "Munther Qwaider",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "JOR_M_Qwaider_Munther",
+            "start_date": "1967-06-11",
+            "death_date": "1990-01-01",
+            "type": "reformer_type"
+        },
         "44": {
             "name": "Abdelmunim al-Rifai",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_al-Rifai_Abdelmunim",
             "start_date": "1969-03-24",
             "death_date": "1970-09-16",
@@ -292,7 +310,7 @@
         "45": {
             "name": "Mohammad D. Al-Abbasi",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_Al-Abbasi_Mohammad_D",
             "start_date": "1970-09-16",
             "death_date": "1970-09-26",
@@ -301,7 +319,7 @@
         "46": {
             "name": "Ahmad Toukan",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_Toukan_Ahmad",
             "start_date": "1970-09-26",
             "death_date": "1970-10-28",
@@ -310,7 +328,7 @@
         "47": {
             "name": "Ahmad al-Lawzi",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_al-Lawzi_Ahmad",
             "start_date": "1971-11-28",
             "death_date": "1973-05-26",
@@ -337,29 +355,65 @@
         "50": {
             "name": "Abdelhamid Sharaf",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_Sharaf_Abdelhamid",
             "start_date": "1979-12-19",
             "death_date": "1980-07-03",
             "type": "bureaucrat_type"
         },
+        "55": {
+            "name": "Abdullah II ibn al-Hussein",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.99,
+            "picture": "JOR_M_al-Hussein_Abdullah_II",
+            "start_date": "1980-01-30",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
         "51": {
             "name": "Kassim al-Rimawi",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_al-Rimawi_Kassim",
             "start_date": "1980-07-03",
             "death_date": "1980-08-28",
             "type": "bureaucrat_type"
         },
+        "56": {
+            "name": "Faisal bin al-Hussein",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.98,
+            "picture": "JOR_M_al-Hussein_Faisal",
+            "start_date": "1981-10-11",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
+        "58": {
+            "name": "Talal bin Muhammad",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.96,
+            "picture": "JOR_M_Muhammad_Talal",
+            "start_date": "1983-07-26",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
+        },
         "52": {
             "name": "Ahmad Obeidat",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_Obeidat_Ahmad",
             "start_date": "1984-01-10",
             "death_date": "1985-04-04",
             "type": "bureaucrat_type"
+        },
+        "59": {
+            "name": "Ghazi bin Muhammad",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.95,
+            "picture": "JOR_M_Muhammad_Ghazi",
+            "start_date": "1984-10-15",
+            "death_date": "2300-01-01",
+            "type": "traditionalist_type"
         },
         "53": {
             "name": "Zaid ibn Shaker",
@@ -373,65 +427,11 @@
         "54": {
             "name": "Taher N. al-Masri",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
+            "loyalty": 1,
             "picture": "JOR_M_al-Masri_Taher_N",
             "start_date": "1991-06-19",
             "death_date": "1991-11-21",
             "type": "bureaucrat_type"
-        },
-        "2952": {
-            "name": "Fu'ad Nassar",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "JOR_M_Nassar_Fu_ad",
-            "start_date": "1945-01-01",
-            "death_date": "1976-02-08",
-            "type": "hardliner_type"
-        },
-        "2953": {
-            "name": "Bashir Barghouti",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "JOR_M_Barghouti_Bashir",
-            "start_date": "1965-01-08",
-            "death_date": "1997-08-01",
-            "type": "zealous_type"
-        },
-        "2954": {
-            "name": "John Bagot Glubb",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "JOR_M_Glubb_John_B",
-            "start_date": "1946-01-01",
-            "death_date": "1960-01-01",
-            "type": "courageous_type"
-        },
-        "2955": {
-            "name": "Fahmi al-Salfiti",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "JOR_M_Salfiti_Fahmi",
-            "start_date": "1951-06-01",
-            "death_date": "1980-12-31",
-            "type": "lethargic_type"
-        },
-        "2956": {
-            "name": "Fa'iq Warrad",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "JOR_M_Warrad_Faiq",
-            "start_date": "1945-01-01",
-            "death_date": "1994-01-01",
-            "type": "administrator_type"
-        },
-        "2957": {
-            "name": "Munther Qwaider",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "JOR_M_Qwaider_Munther",
-            "start_date": "1967-06-11",
-            "death_date": "1990-01-01",
-            "type": "reformer_type"
         }
     }
 }

@@ -827,59 +827,14 @@
             "death_date": "1969-04-28",
             "type": "autocrat_type"
         },
-        "1985": {
-            "name": "Vincent Auriol",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 1.0,
-            "picture": "FRA_M_Auriol_Vincent_J",
-            "start_date": "1947-01-16",
-            "death_date": "1954-01-16",
-            "type": "bureaucrat_type"
-        },
-        "1986": {
-            "name": "René Coty",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "FRA_M_Coty_Rene_J_G",
-            "start_date": "1954-01-08",
-            "death_date": "1959-01-08",
-            "type": "bureaucrat_type"
-        },
-        "1987": {
-            "name": "Alain Poher",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "FRA_M_Poher_Alain_E_L_M",
-            "start_date": "1969-04-28",
-            "death_date": "1974-05-21",
-            "type": "bureaucrat_type"
-        },
-        "1988": {
-            "name": "Georges Pompidou",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "FRA_M_Pompidou_Georges_J_R",
-            "start_date": "1962-04-14",
-            "death_date": "1974-05-21",
-            "type": "controversial_figure"
-        },
-        "1989": {
-            "name": "Valéry Giscard d'Estaing",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "FRA_M_Giscard_dEstaing_Valery_M_R_G",
-            "start_date": "1974-04-27",
-            "death_date": "1981-04-21",
-            "type": "bureaucrat_type"
-        },
-        "1990": {
-            "name": "François Mitterrand",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.8,
-            "picture": "FRA_M_Mitterrand_Francois_M_A_M",
-            "start_date": "1967-04-05",
-            "death_date": "1995-04-17",
-            "type": "reformer_type"
+        "2007": {
+            "name": "René Valentin Binet",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "FRA_M_Binet_Rene_V",
+            "start_date": "1947-01-01",
+            "death_date": "1957-01-01",
+            "type": "extremist_type"
         },
         "1991": {
             "name": "Paul Ramadier",
@@ -889,6 +844,15 @@
             "start_date": "1947-01-16",
             "death_date": "1947-11-24",
             "type": "reformer_type"
+        },
+        "1985": {
+            "name": "Vincent Auriol",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "FRA_M_Auriol_Vincent_J",
+            "start_date": "1947-01-16",
+            "death_date": "1954-01-16",
+            "type": "bureaucrat_type"
         },
         "1992": {
             "name": "Robert Schuman",
@@ -917,6 +881,15 @@
             "death_date": "1956-02-01",
             "type": "bureaucrat_type"
         },
+        "1986": {
+            "name": "René Coty",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FRA_M_Coty_Rene_J_G",
+            "start_date": "1954-01-08",
+            "death_date": "1959-01-08",
+            "type": "bureaucrat_type"
+        },
         "1995": {
             "name": "Guy Mollet",
             "ideology": "social_cons_idolg",
@@ -935,6 +908,15 @@
             "death_date": "1958-05-14",
             "type": "bureaucrat_type"
         },
+        "1706": {
+            "name": "Pierre J.A. Messmer",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "FRA_M_Messmer_Pierre_J_A",
+            "start_date": "1958-01-29",
+            "death_date": "2007-08-29",
+            "type": "autocrat_type"
+        },
         "1997": {
             "name": "Michel J. Debré",
             "ideology": "social_cons_idolg",
@@ -942,6 +924,33 @@
             "picture": "FRA_M_Debre_Michel_J",
             "start_date": "1959-01-08",
             "death_date": "1962-04-14",
+            "type": "reformer_type"
+        },
+        "1988": {
+            "name": "Georges Pompidou",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "FRA_M_Pompidou_Georges_J_R",
+            "start_date": "1962-04-14",
+            "death_date": "1974-05-21",
+            "type": "controversial_figure"
+        },
+        "2008": {
+            "name": "Jean-Marie Le Pen",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "FRA_M_Pen_Jean-Marie",
+            "start_date": "1965-01-01",
+            "death_date": "2011-01-01",
+            "type": "zealous_type"
+        },
+        "1990": {
+            "name": "François Mitterrand",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.8,
+            "picture": "FRA_M_Mitterrand_Francois_M_A_M",
+            "start_date": "1967-04-05",
+            "death_date": "1995-04-17",
             "type": "reformer_type"
         },
         "1998": {
@@ -953,6 +962,15 @@
             "death_date": "1969-06-20",
             "type": "bureaucrat_type"
         },
+        "1987": {
+            "name": "Alain Poher",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "FRA_M_Poher_Alain_E_L_M",
+            "start_date": "1969-04-28",
+            "death_date": "1974-05-21",
+            "type": "bureaucrat_type"
+        },
         "1999": {
             "name": "Jacques Chaban-Delmas",
             "ideology": "social_cons_idolg",
@@ -962,14 +980,14 @@
             "death_date": "1972-07-06",
             "type": "reformer_type"
         },
-        "2000": {
-            "name": "Pierre J.A. Messmer",
-            "ideology": "social_cons_idolg",
+        "1989": {
+            "name": "Valéry Giscard d'Estaing",
+            "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
-            "picture": "FRA_M_Messmer_Pierre_J_A",
-            "start_date": "1972-07-06",
-            "death_date": "1974-05-27",
-            "type": "autocrat_type"
+            "picture": "FRA_M_Giscard_dEstaing_Valery_M_R_G",
+            "start_date": "1974-04-27",
+            "death_date": "1981-04-21",
+            "type": "bureaucrat_type"
         },
         "2001": {
             "name": "Jacques R. Chirac",
@@ -1024,24 +1042,6 @@
             "start_date": "1991-05-15",
             "death_date": "1992-04-02",
             "type": "bureaucrat_type"
-        },
-        "2007": {
-            "name": "René Valentin Binet",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "FRA_M_Binet_Rene_V",
-            "start_date": "1947-01-01",
-            "death_date": "1957-01-01",
-            "type": "extremist_type"
-        },
-        "2008": {
-            "name": "Jean-Marie Le Pen",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "FRA_M_Pen_Jean-Marie",
-            "start_date": "1965-01-01",
-            "death_date": "2011-01-01",
-            "type": "zealous_type"
         }
     }
 }

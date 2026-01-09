@@ -72,6 +72,15 @@
     },
     "unit_names": "",
     "ministers": {
+        "555": {
+            "name": "Omer R. J. Vanaudenhove",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "BEL_M_Vanaudenhove_Omer_R_J",
+            "start_date": "1954-01-01",
+            "death_date": "1994-11-26",
+            "type": "bureaucrat_type"
+        },
         "1976": {
             "name": "Gaston Geens",
             "ideology": "social_cons_idolg",
@@ -90,14 +99,14 @@
             "death_date": "1995-01-01",
             "type": "administrator_type"
         },
-        "1978": {
-            "name": "Renaat Landuyt",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "FLA_M_Landuyt_Renaat",
-            "start_date": "1982-01-01",
-            "death_date": "2300-01-01",
-            "type": "ambitious_type"
+        "578": {
+            "name": "Karel Van Miert",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_van_Miert_Karel",
+            "start_date": "1976-01-01",
+            "death_date": "1989-01-01",
+            "type": "administrator_type"
         },
         "1979": {
             "name": "Karel Dillen",
@@ -108,25 +117,7 @@
             "death_date": "1996-01-01",
             "type": "extremist_type"
         },
-        "1980": {
-            "name": "Jaak Perquy",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "FLA_M_Perquy_Jaak",
-            "start_date": "1989-01-01",
-            "death_date": "2009-12-01",
-            "type": "ambitious_type"
-        },
-        "1981": {
-            "name": "Karel Van Miert",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_van_Miert_Karel",
-            "start_date": "1976-01-01",
-            "death_date": "1989-01-01",
-            "type": "administrator_type"
-        },
-        "1982": {
+        "579": {
             "name": "Frank Vandenbroucke",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -135,14 +126,23 @@
             "death_date": "1994-01-01",
             "type": "ambitious_type"
         },
-        "1983": {
-            "name": "Omer R. J. Vanaudenhove",
-            "ideology": "market_liberal_idolg",
+        "1978": {
+            "name": "Renaat Landuyt",
+            "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
-            "picture": "BEL_M_Vanaudenhove_Omer_R_J",
-            "start_date": "1954-01-01",
-            "death_date": "1994-11-26",
-            "type": "bureaucrat_type"
+            "picture": "FLA_M_Landuyt_Renaat",
+            "start_date": "1982-01-01",
+            "death_date": "2300-01-01",
+            "type": "ambitious_type"
+        },
+        "1980": {
+            "name": "Jaak Perquy",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "FLA_M_Perquy_Jaak",
+            "start_date": "1989-01-01",
+            "death_date": "2009-12-01",
+            "type": "ambitious_type"
         }
     }
 }

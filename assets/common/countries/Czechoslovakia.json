@@ -72,14 +72,23 @@
     },
     "unit_names": "",
     "ministers": {
-        "1407": {
-            "name": "Edvard Benes",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Benes_Edvard",
-            "start_date": "1945-01-01",
-            "death_date": "1948-06-15",
-            "type": "administrator_type"
+        "1405": {
+            "name": "Karel IV ze Schwarzenberga",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Karel_IV",
+            "start_date": "1918-01-01",
+            "death_date": "1986-04-09",
+            "type": "courageous_type"
+        },
+        "1435": {
+            "name": "Rudolf Slánský",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Slansky_Rudolf",
+            "start_date": "1930-01-02",
+            "death_date": "1952-12-03",
+            "type": "democrat_type"
         },
         "1390": {
             "name": "Zdenek Fierlinger",
@@ -90,32 +99,140 @@
             "death_date": "1946-07-02",
             "type": "bureaucrat_type"
         },
+        "1389": {
+            "name": "Edvard Benes",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Benes_Edvard",
+            "start_date": "1945-01-01",
+            "death_date": "1948-06-15",
+            "type": "administrator_type"
+        },
+        "1412": {
+            "name": "Jan rámek",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Sramek_Jan",
+            "start_date": "1945-04-05",
+            "death_date": "1956-04-22",
+            "type": "religious_type"
+        },
+        "1424": {
+            "name": "Radola Gajda",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Gajda_Radola",
+            "start_date": "1946-01-01",
+            "death_date": "1948-04-15",
+            "type": "dictator_type"
+        },
+        "1410": {
+            "name": "Ruena Krásná",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Krasna_Ruzena",
+            "start_date": "1946-01-01",
+            "death_date": "1948-06-15",
+            "type": "courageous_type"
+        },
+        "1425": {
+            "name": "Jirí Stríbrný",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Stribrny_Jiri",
+            "start_date": "1946-01-01",
+            "death_date": "1955-01-21",
+            "type": "controversial_figure"
+        },
+        "1427": {
+            "name": "Helena Koeluhová",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Kozeluhova_Helena",
+            "start_date": "1946-01-01",
+            "death_date": "1967-05-06",
+            "type": "ambitious_type"
+        },
+        "1426": {
+            "name": "Adolf Procházka",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Prochazka_Adolf",
+            "start_date": "1946-01-01",
+            "death_date": "1970-05-08",
+            "type": "moral_type"
+        },
+        "1411": {
+            "name": "Petr Zenkl",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Zenkl_Petr",
+            "start_date": "1946-01-01",
+            "death_date": "1975-11-02",
+            "type": "democrat_type"
+        },
+        "1432": {
+            "name": "Jan Patocka",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Patocka_Jan",
+            "start_date": "1946-01-01",
+            "death_date": "1977-04-13",
+            "type": "honest_type"
+        },
+        "1434": {
+            "name": "Even Erban",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Erban_Evzen",
+            "start_date": "1946-01-01",
+            "death_date": "1989-11-01",
+            "type": "bureaucrat_type"
+        },
+        "1428": {
+            "name": "Pavel Tigrid",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Tigrid_Pavel",
+            "start_date": "1946-01-01",
+            "death_date": "1996-01-01",
+            "type": "traditionalist_type"
+        },
         "1391": {
             "name": "Klement Gottwald",
             "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
+            "loyalty": 0.9,
             "picture": "CZE_M_Gottwald_Klement",
             "start_date": "1946-07-02",
-            "death_date": "1948-06-15",
-            "type": "hardliner_type"
-        },
-        "1392": {
-            "name": "Klement Gottwald",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Gottwald_Klement",
-            "start_date": "1948-06-15",
             "death_date": "1953-03-14",
             "type": "hardliner_type"
         },
-        "1408": {
+        "1413": {
+            "name": "Alois Peter",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Peter_Alois",
+            "start_date": "1948-02-25",
+            "death_date": "1951-12-14",
+            "type": "parental_type"
+        },
+        "1393": {
             "name": "Antonín Zápotocký",
             "ideology": "communist_idolg",
-            "loyalty": 0.8,
+            "loyalty": 1.0,
             "picture": "CZE_M_Zapotocky_Antonin",
-            "start_date": "1948-06-15",
+            "start_date": "1948-06-14",
             "death_date": "1957-11-13",
             "type": "bureaucrat_type"
+        },
+        "1414": {
+            "name": "Josef Plojhar",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Plojhar_Josef",
+            "start_date": "1951-12-14",
+            "death_date": "1968-03-22",
+            "type": "controversial_figure"
         },
         "1394": {
             "name": "Viliam Siroký",
@@ -144,6 +261,24 @@
             "death_date": "1968-04-08",
             "type": "bureaucrat_type"
         },
+        "1429": {
+            "name": "Jirí Karas",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Karas_Jiri",
+            "start_date": "1968-01-01",
+            "death_date": "2000-01-01",
+            "type": "administrator_type"
+        },
+        "1403": {
+            "name": "Václav Havel",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Havel_Vaclav",
+            "start_date": "1968-01-01",
+            "death_date": "2000-01-01",
+            "type": "reformer_type"
+        },
         "1397": {
             "name": "Alexander Dubcek",
             "ideology": "communist_idolg",
@@ -152,114 +287,6 @@
             "start_date": "1968-01-05",
             "death_date": "1969-04-17",
             "type": "reformer_type"
-        },
-        "1398": {
-            "name": "Oldrich Cerník",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Cernik_Oldrich",
-            "start_date": "1968-04-08",
-            "death_date": "1970-01-28",
-            "type": "reformer_type"
-        },
-        "1399": {
-            "name": "Gustáv Husák",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Husak_Gustav",
-            "start_date": "1969-04-17",
-            "death_date": "1987-12-13",
-            "type": "hardliner_type"
-        },
-        "1400": {
-            "name": "Lubomír Strougal",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Strougal_Lubomir",
-            "start_date": "1970-01-28",
-            "death_date": "1988-10-12",
-            "type": "autocrat_type"
-        },
-        "1401": {
-            "name": "Milos Jakes",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Jakes_Milos",
-            "start_date": "1987-12-13",
-            "death_date": "1991-12-31",
-            "type": "reformer_type"
-        },
-        "1402": {
-            "name": "Ladislav Adamec",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Adamec_Ladislav",
-            "start_date": "1988-10-12",
-            "death_date": "1991-12-31",
-            "type": "democrat_type"
-        },
-        "1409": {
-            "name": "Václav Havel",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.8,
-            "picture": "CZE_M_Havel_Vaclav",
-            "start_date": "1968-01-01",
-            "death_date": "2000-01-01",
-            "type": "reformer_type"
-        },
-        "1404": {
-            "name": "Marián Calfa",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Calfa_Marian",
-            "start_date": "1987-12-01",
-            "death_date": "1991-12-31",
-            "type": "reformer_type"
-        },
-        "1410": {
-            "name": "Ruena Krásná",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Krasna_Ruzena",
-            "start_date": "1946-01-01",
-            "death_date": "1948-06-15",
-            "type": "courageous_type"
-        },
-        "1411": {
-            "name": "Petr Zenkl",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Zenkl_Petr",
-            "start_date": "1946-01-01",
-            "death_date": "1975-11-02",
-            "type": "democrat_type"
-        },
-        "1412": {
-            "name": "Jan rámek",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Sramek_Jan",
-            "start_date": "1945-04-05",
-            "death_date": "1956-04-22",
-            "type": "religious_type"
-        },
-        "1413": {
-            "name": "Alois Peter",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Peter_Alois",
-            "start_date": "1948-02-25",
-            "death_date": "1951-12-14",
-            "type": "parental_type"
-        },
-        "1414": {
-            "name": "Josef Plojhar",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Plojhar_Josef",
-            "start_date": "1951-12-14",
-            "death_date": "1968-03-22",
-            "type": "controversial_figure"
         },
         "1415": {
             "name": "Anthony Pospisil",
@@ -270,41 +297,14 @@
             "death_date": "1973-06-15",
             "type": "reformer_type"
         },
-        "1416": {
-            "name": "Rostislav Peter",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Peter_Rostislav",
-            "start_date": "1973-06-15",
-            "death_date": "1980-07-21",
-            "type": "liberal_type"
-        },
-        "1417": {
-            "name": "Frantiek Toman",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Toman_Frantisek",
-            "start_date": "1980-07-21",
-            "death_date": "1981-09-20",
-            "type": "ambitious_type"
-        },
-        "1418": {
-            "name": "Zbynek alman",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Zalman_Zbynek",
-            "start_date": "1981-09-20",
-            "death_date": "1989-11-26",
-            "type": "traditionalist_type"
-        },
-        "1419": {
-            "name": "Josef Bartoncík",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Bartoncik_Josef",
-            "start_date": "1989-11-26",
-            "death_date": "1990-09-30",
-            "type": "democrat_type"
+        "1398": {
+            "name": "Oldrich Cerník",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Cernik_Oldrich",
+            "start_date": "1968-04-08",
+            "death_date": "1970-01-28",
+            "type": "reformer_type"
         },
         "1420": {
             "name": "Josef Lux",
@@ -324,6 +324,114 @@
             "death_date": "1993-04-02",
             "type": "liberal_type"
         },
+        "1399": {
+            "name": "Gustáv Husák",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Husak_Gustav",
+            "start_date": "1969-04-17",
+            "death_date": "1987-12-13",
+            "type": "hardliner_type"
+        },
+        "1400": {
+            "name": "Lubomír Strougal",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Strougal_Lubomir",
+            "start_date": "1970-01-28",
+            "death_date": "1988-10-12",
+            "type": "autocrat_type"
+        },
+        "1430": {
+            "name": "Bohumil Svoboda",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Svoboda_Bohumil",
+            "start_date": "1971-01-01",
+            "death_date": "1996-01-01",
+            "type": "honest_type"
+        },
+        "1433": {
+            "name": "Katerina Svobodová",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Svobodova_Katerina",
+            "start_date": "1972-03-21",
+            "death_date": "1989-11-20",
+            "type": "iron_lady"
+        },
+        "1416": {
+            "name": "Rostislav Peter",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Peter_Rostislav",
+            "start_date": "1973-06-15",
+            "death_date": "1980-07-21",
+            "type": "liberal_type"
+        },
+        "1431": {
+            "name": "Václav Klaus",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Klaus_Vaclav",
+            "start_date": "1980-01-01",
+            "death_date": "2000-01-01",
+            "type": "administrator_type"
+        },
+        "1417": {
+            "name": "Frantiek Toman",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Toman_Frantisek",
+            "start_date": "1980-07-21",
+            "death_date": "1981-09-20",
+            "type": "ambitious_type"
+        },
+        "1418": {
+            "name": "Zbynek alman",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Zalman_Zbynek",
+            "start_date": "1981-09-20",
+            "death_date": "1989-11-26",
+            "type": "traditionalist_type"
+        },
+        "1406": {
+            "name": "Karel V ze Schwarzenberga",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Karel_V",
+            "start_date": "1986-04-09",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1404": {
+            "name": "Marián Calfa",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Calfa_Marian",
+            "start_date": "1987-12-01",
+            "death_date": "1991-12-31",
+            "type": "reformer_type"
+        },
+        "1401": {
+            "name": "Milos Jakes",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Jakes_Milos",
+            "start_date": "1987-12-13",
+            "death_date": "1991-12-31",
+            "type": "reformer_type"
+        },
+        "1402": {
+            "name": "Ladislav Adamec",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Adamec_Ladislav",
+            "start_date": "1988-10-12",
+            "death_date": "1991-12-31",
+            "type": "democrat_type"
+        },
         "1422": {
             "name": "Miroslav Sládek",
             "ideology": "paternal_auto_idolg",
@@ -342,131 +450,14 @@
             "death_date": "2000-01-01",
             "type": "administrator_type"
         },
-        "1424": {
-            "name": "Radola Gajda",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Gajda_Radola",
-            "start_date": "1946-01-01",
-            "death_date": "1948-04-15",
-            "type": "dictator_type"
-        },
-        "1425": {
-            "name": "Jirí Stríbrný",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Stribrny_Jiri",
-            "start_date": "1946-01-01",
-            "death_date": "1955-01-21",
-            "type": "controversial_figure"
-        },
-        "1426": {
-            "name": "Adolf Procházka",
+        "1419": {
+            "name": "Josef Bartoncík",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,
-            "picture": "CZE_M_Prochazka_Adolf",
-            "start_date": "1946-01-01",
-            "death_date": "1970-05-08",
-            "type": "moral_type"
-        },
-        "1427": {
-            "name": "Helena Koeluhová",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Kozeluhova_Helena",
-            "start_date": "1946-01-01",
-            "death_date": "1967-05-06",
-            "type": "ambitious_type"
-        },
-        "1428": {
-            "name": "Pavel Tigrid",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Tigrid_Pavel",
-            "start_date": "1946-01-01",
-            "death_date": "1996-01-01",
-            "type": "traditionalist_type"
-        },
-        "1429": {
-            "name": "Jirí Karas",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Karas_Jiri",
-            "start_date": "1968-01-01",
-            "death_date": "2000-01-01",
-            "type": "administrator_type"
-        },
-        "1430": {
-            "name": "Bohumil Svoboda",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Svoboda_Bohumil",
-            "start_date": "1971-01-01",
-            "death_date": "1996-01-01",
-            "type": "honest_type"
-        },
-        "1431": {
-            "name": "Václav Klaus",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Klaus_Vaclav",
-            "start_date": "1980-01-01",
-            "death_date": "2000-01-01",
-            "type": "administrator_type"
-        },
-        "1432": {
-            "name": "Jan Patocka",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Patocka_Jan",
-            "start_date": "1946-01-01",
-            "death_date": "1977-04-13",
-            "type": "honest_type"
-        },
-        "1433": {
-            "name": "Katerina Svobodová",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Svobodova_Katerina",
-            "start_date": "1972-03-21",
-            "death_date": "1989-11-20",
-            "type": "iron_lady"
-        },
-        "1434": {
-            "name": "Even Erban",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Erban_Evzen",
-            "start_date": "1946-01-01",
-            "death_date": "1989-11-01",
-            "type": "bureaucrat_type"
-        },
-        "1435": {
-            "name": "Rudolf Slánský",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Slansky_Rudolf",
-            "start_date": "1930-01-02",
-            "death_date": "1952-12-03",
+            "picture": "CZE_M_Bartoncik_Josef",
+            "start_date": "1989-11-26",
+            "death_date": "1990-09-30",
             "type": "democrat_type"
-        },
-        "1405": {
-            "name": "Karel IV ze Schwarzenberga",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Karel_IV",
-            "start_date": "1918-01-01",
-            "death_date": "1986-04-09",
-            "type": "courageous_type"
-        },
-        "1406": {
-            "name": "Karel V ze Schwarzenberga",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Karel_V",
-            "start_date": "1986-04-09",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
         }
     }
 }

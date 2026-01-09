@@ -152,6 +152,24 @@
             "death_date": "1968-11-19",
             "type": "liberal_type"
         },
+        "2023": {
+            "name": "Léopold Sédar Senghor",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "SEN_M_Senghor_Leopold_S",
+            "start_date": "1960-09-06",
+            "death_date": "1980-12-31",
+            "type": "parental_type"
+        },
+        "2026": {
+            "name": "Landing Savané",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "SEN_M_Savane_Landing",
+            "start_date": "1965-01-01",
+            "death_date": "1999-12-31",
+            "type": "democrat_type"
+        },
         "2021": {
             "name": "Moussa Traoré",
             "ideology": "paternal_auto_idolg",
@@ -161,22 +179,13 @@
             "death_date": "1991-03-26",
             "type": "liberal_type"
         },
-        "2022": {
-            "name": "Amadou Toumani Touré",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "MAL_M_Toure_Amadou_T",
-            "start_date": "1991-03-26",
-            "death_date": "1992-06-08",
-            "type": "reformer_type"
-        },
-        "2023": {
-            "name": "Léopold Sédar Senghor",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.9,
-            "picture": "SEN_M_Senghor_Leopold_S",
-            "start_date": "1960-09-06",
-            "death_date": "1980-12-31",
+        "2025": {
+            "name": "Abdoulaye Wade",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "SEN_M_Wade_Abdoulaye",
+            "start_date": "1978-02-26",
+            "death_date": "1993-02-21",
             "type": "parental_type"
         },
         "2024": {
@@ -188,23 +197,14 @@
             "death_date": "2000-04-01",
             "type": "democrat_type"
         },
-        "2025": {
-            "name": "Abdoulaye Wade",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "SEN_M_Wade_Abdoulaye",
-            "start_date": "1978-02-26",
-            "death_date": "1993-02-21",
-            "type": "parental_type"
-        },
-        "2026": {
-            "name": "Landing Savané",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 1.0,
-            "picture": "SEN_M_Savane_Landing",
-            "start_date": "1988-02-28",
-            "death_date": "1993-02-21",
-            "type": "democrat_type"
+        "2022": {
+            "name": "Amadou Toumani Touré",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "MAL_M_Toure_Amadou_T",
+            "start_date": "1991-03-26",
+            "death_date": "1992-06-08",
+            "type": "reformer_type"
         }
     }
 }

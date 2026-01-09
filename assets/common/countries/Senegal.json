@@ -71,69 +71,6 @@
     },
     "unit_names": {},
     "ministers": {
-        "4591": {
-            "name": "Léopold Sédar Senghor",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.9,
-            "picture": "SEN_M_Senghor_Leopold_S",
-            "start_date": "1960-09-06",
-            "death_date": "1980-12-31",
-            "type": "parental_type"
-        },
-        "2024": {
-            "name": "Abdou Diouf",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.7,
-            "picture": "SEN_M_Diouf_Abdou",
-            "start_date": "1981-01-01",
-            "death_date": "2000-04-01",
-            "type": "democrat_type"
-        },
-        "4592": {
-            "name": "Mamadou Dia",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.8,
-            "picture": "SEN_M_Dia_Mamadou",
-            "start_date": "1957-05-18",
-            "death_date": "1988-02-28",
-            "type": "autocrat_type"
-        },
-        "4593": {
-            "name": "Habib Thiam",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.9,
-            "picture": "SEN_M_Thiam_Habib",
-            "start_date": "1981-01-01",
-            "death_date": "1998-07-03",
-            "type": "administrator_type"
-        },
-        "4594": {
-            "name": "Moustapha Niasse",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "SEN_M_Niasse_Moustapha",
-            "start_date": "1979-01-01",
-            "death_date": "2001-03-03",
-            "type": "courageous_type"
-        },
-        "2025": {
-            "name": "Abdoulaye Wade",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1,
-            "picture": "SEN_M_Wade_Abdoulaye",
-            "start_date": "1978-02-26",
-            "death_date": "1993-02-21",
-            "type": "parental_type"
-        },
-        "4595": {
-            "name": "Landing Savané",
-            "ideology": "maoist_idolg",
-            "loyalty": 1,
-            "picture": "SEN_M_Savane_Landing",
-            "start_date": "1965-01-01",
-            "death_date": "1999-12-31",
-            "type": "democrat_type"
-        },
         "4596": {
             "name": "Ibrahim Niass",
             "ideology": "paternal_auto_idolg",
@@ -141,24 +78,6 @@
             "picture": "SEN_M_Niass_Ibrahim",
             "start_date": "1930-01-01",
             "death_date": "1975-01-01",
-            "type": "religious_type"
-        },
-        "4597": {
-            "name": "Abbas Gueye",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "SEN_M_Gueye_Abbas",
-            "start_date": "1952-01-01",
-            "death_date": "1999-08-02",
-            "type": "reformer_type"
-        },
-        "4598": {
-            "name": "Hassan Cisse",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SEN_M_Cisse_Hassan",
-            "start_date": "1983-01-01",
-            "death_date": "2008-08-14",
             "type": "religious_type"
         },
         "4599": {
@@ -170,6 +89,33 @@
             "death_date": "1968-06-10",
             "type": "bureaucrat_type"
         },
+        "4603": {
+            "name": "Cheikh Anta Diop",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Diop_Cheikh_A",
+            "start_date": "1950-01-01",
+            "death_date": "1986-02-07",
+            "type": "visionary_type"
+        },
+        "4597": {
+            "name": "Abbas Gueye",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Gueye_Abbas",
+            "start_date": "1952-01-01",
+            "death_date": "1999-08-02",
+            "type": "reformer_type"
+        },
+        "4592": {
+            "name": "Mamadou Dia",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.8,
+            "picture": "SEN_M_Dia_Mamadou",
+            "start_date": "1957-05-18",
+            "death_date": "1988-02-28",
+            "type": "autocrat_type"
+        },
         "4600": {
             "name": "Majhmoud Diop",
             "ideology": "communist_idolg",
@@ -179,32 +125,14 @@
             "death_date": "1985-12-31",
             "type": "zealous_type"
         },
-        "4601": {
-            "name": "Amath Dansokho",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "SEN_M_Dansokho_Amath",
-            "start_date": "1983-02-27",
-            "death_date": "2300-01-01",
-            "type": "administrator_type"
-        },
-        "4602": {
-            "name": "Aly Niane",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "SEN_M_Niane_Aly",
-            "start_date": "1982-07-21",
-            "death_date": "2300-01-01",
-            "type": "lethargic_type"
-        },
-        "4603": {
-            "name": "Cheikh Anta Diop",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SEN_M_Diop_Cheikh_A",
-            "start_date": "1950-01-01",
-            "death_date": "1986-02-07",
-            "type": "visionary_type"
+        "2023": {
+            "name": "Léopold Sédar Senghor",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "SEN_M_Senghor_Leopold_S",
+            "start_date": "1960-09-06",
+            "death_date": "1980-12-31",
+            "type": "parental_type"
         },
         "4604": {
             "name": "Boubacar Gueye",
@@ -215,6 +143,15 @@
             "death_date": "1989-11-22",
             "type": "administrator_type"
         },
+        "2026": {
+            "name": "Landing Savané",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "SEN_M_Savane_Landing",
+            "start_date": "1965-01-01",
+            "death_date": "1999-12-31",
+            "type": "democrat_type"
+        },
         "4605": {
             "name": "Ousmane Ngom",
             "ideology": "market_liberal_idolg",
@@ -223,6 +160,69 @@
             "start_date": "1975-01-01",
             "death_date": "2300-01-01",
             "type": "democrat_type"
+        },
+        "2025": {
+            "name": "Abdoulaye Wade",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "SEN_M_Wade_Abdoulaye",
+            "start_date": "1978-02-26",
+            "death_date": "1993-02-21",
+            "type": "parental_type"
+        },
+        "4594": {
+            "name": "Moustapha Niasse",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "SEN_M_Niasse_Moustapha",
+            "start_date": "1979-01-01",
+            "death_date": "2001-03-03",
+            "type": "courageous_type"
+        },
+        "4593": {
+            "name": "Habib Thiam",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "SEN_M_Thiam_Habib",
+            "start_date": "1981-01-01",
+            "death_date": "1998-07-03",
+            "type": "administrator_type"
+        },
+        "2024": {
+            "name": "Abdou Diouf",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.7,
+            "picture": "SEN_M_Diouf_Abdou",
+            "start_date": "1981-01-01",
+            "death_date": "2000-04-01",
+            "type": "democrat_type"
+        },
+        "4602": {
+            "name": "Aly Niane",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Niane_Aly",
+            "start_date": "1982-07-21",
+            "death_date": "2300-01-01",
+            "type": "lethargic_type"
+        },
+        "4598": {
+            "name": "Hassan Cisse",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Cisse_Hassan",
+            "start_date": "1983-01-01",
+            "death_date": "2008-08-14",
+            "type": "religious_type"
+        },
+        "4601": {
+            "name": "Amath Dansokho",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SEN_M_Dansokho_Amath",
+            "start_date": "1983-02-27",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
         }
     }
 }

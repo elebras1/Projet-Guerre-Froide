@@ -72,6 +72,42 @@
     },
     "unit_names": "",
     "ministers": {
+        "2249": {
+            "name": "Francis Xavier Waldron",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "USA_M_Waldron_Francis_X",
+            "start_date": "1926-01-01",
+            "death_date": "1961-01-31",
+            "type": "honest_type"
+        },
+        "2248": {
+            "name": "James P. Cannon",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.8,
+            "picture": "USA_M_Cannon_James_P",
+            "start_date": "1928-01-01",
+            "death_date": "1974-08-21",
+            "type": "reformer_type"
+        },
+        "2210": {
+            "name": "William Dudley Pelley",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.8,
+            "picture": "USA_M_Pelley_William_D",
+            "start_date": "1933-01-01",
+            "death_date": "1965-06-30",
+            "type": "zealous_type"
+        },
+        "1219": {
+            "name": "Earl Browder",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "USA_M_Browder_Earl",
+            "start_date": "1940-11-05",
+            "death_date": "1963-06-27",
+            "type": "extremist_type"
+        },
         "4284": {
             "name": "Rexford Guy Tugwell",
             "ideology": "social_liberal_idolg",
@@ -81,6 +117,79 @@
             "death_date": "1946-01-01",
             "type": "administrator_type"
         },
+        "2194": {
+            "name": "Thomas E. Dewey",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Dewey_Thomas_E",
+            "start_date": "1944-01-01",
+            "death_date": "1949-01-20",
+            "type": "democrat_type"
+        },
+        "2211": {
+            "name": "Gerald L. K. Smith",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.81,
+            "picture": "USA_M_Smith_Gerald_L_K",
+            "start_date": "1944-01-01",
+            "death_date": "1966-04-15",
+            "type": "religious_type"
+        },
+        "2193": {
+            "name": "Harry S. Truman",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "USA_M_Truman_Harry_M",
+            "start_date": "1945-01-01",
+            "death_date": "1953-01-20",
+            "type": "administrator_type",
+            "wikipage": "/wiki/Harry_S._Truman"
+        },
+        "2250": {
+            "name": "Edward A. Teichert",
+            "ideology": "communist_idolg",
+            "loyalty": 0.92,
+            "picture": "USA_M_Teichert_Edward_A",
+            "start_date": "1946-01-01",
+            "death_date": "1952-11-04",
+            "type": "administrator_type"
+        },
+        "2222": {
+            "name": "Henry A. Wallace",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "USA_M_Wallace_Henry_A",
+            "start_date": "1946-01-01",
+            "death_date": "1965-11-18",
+            "type": "religious_type"
+        },
+        "2251": {
+            "name": "Gus Hall",
+            "ideology": "communist_idolg",
+            "loyalty": 0.91,
+            "picture": "USA_M_Hall_Gus",
+            "start_date": "1946-01-01",
+            "death_date": "1980-10-13",
+            "type": "traditionalist_type"
+        },
+        "2252": {
+            "name": "John Gates",
+            "ideology": "communist_idolg",
+            "loyalty": 0.91,
+            "picture": "USA_M_Gates_John",
+            "start_date": "1946-01-01",
+            "death_date": "1982-01-01",
+            "type": "liberal_type"
+        },
+        "2242": {
+            "name": "Farrell Dobbs",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.9,
+            "picture": "USA_M_Dobbs_Farrell",
+            "start_date": "1946-01-01",
+            "death_date": "1983-10-31",
+            "type": "ambitious_type"
+        },
         "4285": {
             "name": "Jesús Toribio Piñero",
             "ideology": "market_liberal_idolg",
@@ -88,6 +197,33 @@
             "picture": "PRC_M_Pinero_Jesus_T",
             "start_date": "1946-02-01",
             "death_date": "1949-01-01",
+            "type": "administrator_type"
+        },
+        "2234": {
+            "name": "Frank Zeidler",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.9,
+            "picture": "USA_M_Zeidler_Frank",
+            "start_date": "1948-04-20",
+            "death_date": "1986-07-07",
+            "type": "visionary_type"
+        },
+        "2235": {
+            "name": "Norman Thomas",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Thomas_Norman",
+            "start_date": "1948-11-02",
+            "death_date": "1952-11-04",
+            "type": "religious_type"
+        },
+        "4291": {
+            "name": "Martín Travieso",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "PRC_M_Travieso_Martin",
+            "start_date": "1949-01-01",
+            "death_date": "1952-01-01",
             "type": "administrator_type"
         },
         "4286": {
@@ -99,68 +235,32 @@
             "death_date": "1965-01-01",
             "type": "visionary_type"
         },
-        "4287": {
-            "name": "Roberto Sánchez Vilella",
-            "ideology": "social_liberal_idolg",
+        "2236": {
+            "name": "Darlington Hoopes",
+            "ideology": "left_wing_radical_idolg",
             "loyalty": 1.0,
-            "picture": "PRC_M_Vilella_Roberto_S",
-            "start_date": "1965-01-01",
-            "death_date": "1969-01-01",
+            "picture": "USA_M_Hoopes_Darlington",
+            "start_date": "1952-11-04",
+            "death_date": "1960-11-08",
+            "type": "administrator_type"
+        },
+        "2223": {
+            "name": "Vincent Hallinan",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "USA_M_Hallinan_Vincent",
+            "start_date": "1952-11-04",
+            "death_date": "1972-11-07",
             "type": "reputable_type"
         },
-        "4288": {
-            "name": "Luis Alberto Ferré Aguayo",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "PRC_M_Aguayo_Luis_A_F",
-            "start_date": "1969-01-01",
-            "death_date": "1973-01-01",
-            "type": "reformer_type"
-        },
-        "4289": {
-            "name": "Rafael Hernández Colón",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "PRC_M_Colon_Rafael_H",
-            "start_date": "1973-01-01",
-            "death_date": "1993-01-01",
-            "type": "administrator_type"
-        },
-        "4290": {
-            "name": "Carlos Antonio Romero Barceló",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "PRC_M_Barcelo_Carlos",
-            "start_date": "1977-01-01",
-            "death_date": "1985-01-01",
-            "type": "lethargic_type"
-        },
-        "4291": {
-            "name": "Martín Travieso",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "PRC_M_Travieso_Martin",
-            "start_date": "1949-01-01",
-            "death_date": "1952-01-01",
-            "type": "administrator_type"
-        },
-        "2193": {
-            "name": "Harry S. Truman",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "USA_M_Truman_Harry_M",
-            "start_date": "1945-01-01",
-            "death_date": "1953-01-20",
-            "type": "administrator_type"
-        },
-        "2194": {
-            "name": "Thomas E. Dewey",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Dewey_Thomas_E",
-            "start_date": "1944-01-01",
-            "death_date": "1949-01-20",
-            "type": "democrat_type"
+        "2253": {
+            "name": "Eric Hass",
+            "ideology": "communist_idolg",
+            "loyalty": 0.93,
+            "picture": "USA_M_Hass_Eric",
+            "start_date": "1952-11-04",
+            "death_date": "1972-11-07",
+            "type": "parental_type"
         },
         "2195": {
             "name": "Dwight D. Eisenhower",
@@ -180,141 +280,6 @@
             "death_date": "1961-01-20",
             "type": "bureaucrat_type"
         },
-        "2197": {
-            "name": "John F. Kennedy",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Kennedy_John_F",
-            "start_date": "1961-01-20",
-            "death_date": "1963-11-22",
-            "type": "administrator_type"
-        },
-        "2198": {
-            "name": "Lyndon B. Johnson",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "USA_M_Johnson_Lyndon_B",
-            "start_date": "1961-01-20",
-            "death_date": "1965-01-20",
-            "type": "autocrat_type"
-        },
-        "2199": {
-            "name": "Lyndon B. Johnson",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Johnson_Lyndon_B",
-            "start_date": "1965-01-20",
-            "death_date": "1969-01-20",
-            "type": "reformer_type"
-        },
-        "2200": {
-            "name": "Hubert H. Humphrey",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "USA_M_Humphrey_Hubert_H",
-            "start_date": "1965-01-20",
-            "death_date": "1973-01-20",
-            "type": "bureaucrat_type"
-        },
-        "2201": {
-            "name": "Barry M. Goldwater",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Goldwater_Barry_M",
-            "start_date": "1965-01-20",
-            "death_date": "1969-01-20",
-            "type": "traditionalist_type"
-        },
-        "2202": {
-            "name": "Richard M. Nixon",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Nixon_Richard_M",
-            "start_date": "1969-01-20",
-            "death_date": "1974-08-08",
-            "type": "ambitious_type"
-        },
-        "2203": {
-            "name": "Gerald R. Ford",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "USA_M_Ford_Gerald_R",
-            "start_date": "1974-08-08",
-            "death_date": "1981-01-20",
-            "type": "bureaucrat_type"
-        },
-        "2204": {
-            "name": "George S. McGovern",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_McGovern_George_S",
-            "start_date": "1973-01-21",
-            "death_date": "1977-01-20",
-            "type": "bureaucrat_type"
-        },
-        "2205": {
-            "name": "James E. Carter, Jr.",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Carter_James_E_Jr",
-            "start_date": "1977-01-21",
-            "death_date": "1985-01-20",
-            "type": "bureaucrat_type"
-        },
-        "2206": {
-            "name": "Walter F. Mondale",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "USA_M_Mondale_Walter_F",
-            "start_date": "1977-01-21",
-            "death_date": "1989-01-20",
-            "type": "honest_type"
-        },
-        "2207": {
-            "name": "Ronald W. Reagan",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Reagan_Ronald_W",
-            "start_date": "1981-01-21",
-            "death_date": "1989-01-20",
-            "type": "hardliner_type"
-        },
-        "2208": {
-            "name": "George H.W. Bush",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Bush_George_HW",
-            "start_date": "1989-01-21",
-            "death_date": "1993-01-20",
-            "type": "hardliner_type"
-        },
-        "2209": {
-            "name": "Michael S. Dukakis",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Dukakis_Michael_S",
-            "start_date": "1989-01-21",
-            "death_date": "1993-01-20",
-            "type": "bureaucrat_type"
-        },
-        "2210": {
-            "name": "William Dudley Pelley",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.8,
-            "picture": "USA_M_Pelley_William_D",
-            "start_date": "1933-01-01",
-            "death_date": "1965-06-30",
-            "type": "zealous_type"
-        },
-        "2211": {
-            "name": "Gerald L. K. Smith",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.81,
-            "picture": "USA_M_Smith_Gerald_L_K",
-            "start_date": "1944-01-01",
-            "death_date": "1966-04-15",
-            "type": "religious_type"
-        },
         "2212": {
             "name": "Willis Carto",
             "ideology": "fascistic_idolg",
@@ -323,6 +288,15 @@
             "start_date": "1955-01-01",
             "death_date": "1992-01-01",
             "type": "extremist_type"
+        },
+        "2237": {
+            "name": "David McReynolds",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.91,
+            "picture": "USA_M_McReynolds_David",
+            "start_date": "1957-01-01",
+            "death_date": "2300-01-01",
+            "type": "courageous_type"
         },
         "1199": {
             "name": "George Lincoln Rockwell",
@@ -351,248 +325,32 @@
             "death_date": "1992-01-01",
             "type": "controversial_figure"
         },
-        "1200": {
-            "name": "William Luther Pierce",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.85,
-            "picture": "USA_M_Pierce_William_L",
-            "start_date": "1966-01-01",
-            "death_date": "1992-01-01",
-            "type": "hardliner_type"
-        },
-        "1201": {
-            "name": "David Duke",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.86,
-            "picture": "USA_M_Duke_David",
-            "start_date": "1975-01-01",
-            "death_date": "1992-01-01",
-            "type": "controversial_figure"
-        },
-        "2215": {
-            "name": "Frazier Glenn Miller",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.87,
-            "picture": "USA_M_Miller_Frazier_G",
-            "start_date": "1980-01-01",
-            "death_date": "1992-01-01",
-            "type": "autocrat_type"
-        },
-        "1202": {
-            "name": "Bob Richards",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.88,
-            "picture": "USA_M_Richards_Bob",
-            "start_date": "1984-11-06",
-            "death_date": "1992-01-01",
-            "type": "parental_type"
-        },
-        "2216": {
-            "name": "James Gordon Gritz",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.89,
-            "picture": "USA_M_Gritz_James_G",
-            "start_date": "1988-01-01",
-            "death_date": "1992-01-01",
-            "type": "dictator_type"
-        },
-        "2217": {
-            "name": "George Corley Wallace",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "USA_M_Wallace_George_C",
-            "start_date": "1968-11-05",
-            "death_date": "1992-01-01",
-            "type": "controversial_figure"
-        },
-        "2218": {
-            "name": "John G. Schmitz",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Schmitz_John_G",
-            "start_date": "1972-11-07",
-            "death_date": "1976-11-02",
-            "type": "extremist_type"
-        },
-        "2219": {
-            "name": "Howard Phillips",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.91,
-            "picture": "USA_M_Phillips_Howard",
-            "start_date": "1974-01-01",
-            "death_date": "1992-01-01",
-            "type": "moral_type"
-        },
-        "2220": {
-            "name": "Lester Maddox",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.92,
-            "picture": "USA_M_Maddox_Lester",
-            "start_date": "1976-11-02",
-            "death_date": "1992-01-01",
-            "type": "parental_type"
-        },
-        "2221": {
-            "name": "John Rarick",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.93,
-            "picture": "USA_M_Rarick_John",
-            "start_date": "1980-11-04",
-            "death_date": "1992-01-01",
-            "type": "hardliner_type"
-        },
-        "2222": {
-            "name": "Henry A. Wallace",
-            "ideology": "market_liberal_idolg",
+        "2258": {
+            "name": "Angela Davis",
+            "ideology": "communist_idolg",
             "loyalty": 0.8,
-            "picture": "USA_M_Wallace_Henry_A",
-            "start_date": "1946-01-01",
-            "death_date": "1965-11-18",
-            "type": "religious_type"
-        },
-        "2223": {
-            "name": "Vincent Hallinan",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.8,
-            "picture": "USA_M_Hallinan_Vincent",
-            "start_date": "1952-11-04",
-            "death_date": "1972-11-07",
-            "type": "reputable_type"
-        },
-        "2224": {
-            "name": "John G. Hospers",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.8,
-            "picture": "USA_M_Hospers_John_G",
-            "start_date": "1972-11-07",
-            "death_date": "1976-11-02",
-            "type": "ambitious_type"
-        },
-        "2225": {
-            "name": "Roger MacBride",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.8,
-            "picture": "USA_M_MacBride_Roger",
-            "start_date": "1976-11-02",
-            "death_date": "1980-11-04",
-            "type": "visionary_type"
-        },
-        "2226": {
-            "name": "Ed Clark",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.8,
-            "picture": "USA_M_Clark_Ed",
-            "start_date": "1980-11-04",
-            "death_date": "1984-11-06",
-            "type": "reformer_type"
-        },
-        "2227": {
-            "name": "David Bergland",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.8,
-            "picture": "USA_M_Bergland_David",
-            "start_date": "1984-11-06",
-            "death_date": "1988-11-08",
-            "type": "administrator_type"
-        },
-        "2228": {
-            "name": "Ronald Ernest Paul",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.8,
-            "picture": "USA_M_Paul_Ronald_E",
-            "start_date": "1988-11-08",
-            "death_date": "2300-01-01",
-            "type": "controversial_figure"
-        },
-        "2229": {
-            "name": "Eldridge Cleaver",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Cleaver_Eldridge",
-            "start_date": "1968-11-05",
-            "death_date": "1972-11-07",
-            "type": "religious_type"
-        },
-        "2230": {
-            "name": "Benjamin Spock",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.9,
-            "picture": "USA_M_Spock_Benjamin",
-            "start_date": "1972-11-07",
-            "death_date": "1976-11-02",
-            "type": "reputable_type"
-        },
-        "2231": {
-            "name": "Margaret Wright",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Wright_Margaret",
-            "start_date": "1976-11-02",
-            "death_date": "1980-11-04",
-            "type": "ambitious_type"
-        },
-        "1216": {
-            "name": "Lyndon LaRouche",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.95,
-            "picture": "USA_M_LaRouche_Lyndon",
-            "start_date": "1976-11-02",
-            "death_date": "2300-01-01",
-            "type": "controversial_figure"
-        },
-        "2232": {
-            "name": "Maureen Smith",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Smith_Maureen",
-            "start_date": "1980-11-04",
-            "death_date": "1984-11-06",
-            "type": "administrator_type"
-        },
-        "2233": {
-            "name": "Herbert G. Lewin",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Lewin_Herbert_G",
-            "start_date": "1988-11-08",
-            "death_date": "1992-01-01",
-            "type": "hardliner_type"
-        },
-        "2234": {
-            "name": "Frank Zeidler",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.9,
-            "picture": "USA_M_Zeidler_Frank",
-            "start_date": "1948-04-20",
-            "death_date": "1986-07-07",
-            "type": "visionary_type"
-        },
-        "2235": {
-            "name": "Norman Thomas",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Thomas_Norman",
-            "start_date": "1948-11-02",
-            "death_date": "1952-11-04",
-            "type": "religious_type"
-        },
-        "2236": {
-            "name": "Darlington Hoopes",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Hoopes_Darlington",
-            "start_date": "1952-11-04",
-            "death_date": "1960-11-08",
-            "type": "administrator_type"
-        },
-        "2237": {
-            "name": "David McReynolds",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.91,
-            "picture": "USA_M_McReynolds_David",
-            "start_date": "1957-01-01",
+            "picture": "USA_M_Davis_Angela",
+            "start_date": "1960-01-01",
             "death_date": "2300-01-01",
             "type": "courageous_type"
+        },
+        "2197": {
+            "name": "John F. Kennedy",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Kennedy_John_F",
+            "start_date": "1961-01-20",
+            "death_date": "1963-11-22",
+            "type": "administrator_type"
+        },
+        "2198": {
+            "name": "Lyndon B. Johnson",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "USA_M_Johnson_Lyndon_B",
+            "start_date": "1961-01-20",
+            "death_date": "1969-01-20",
+            "type": "autocrat_type"
         },
         "2238": {
             "name": "John Quinn Brisben",
@@ -603,41 +361,14 @@
             "death_date": "2012-04-17",
             "type": "ambitious_type"
         },
-        "2239": {
-            "name": "Peter Camejo",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.93,
-            "picture": "USA_M_Camejo_Peter",
-            "start_date": "1976-11-02",
-            "death_date": "2008-09-13",
-            "type": "controversial_figure"
-        },
-        "2240": {
-            "name": "Sonia Johnson",
-            "ideology": "left_wing_radical_idolg",
+        "2254": {
+            "name": "Henning A. Blomen",
+            "ideology": "communist_idolg",
             "loyalty": 0.94,
-            "picture": "USA_M_Johnson_Sonia",
-            "start_date": "1977-01-01",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "2241": {
-            "name": "Willa Kenoyer",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.95,
-            "picture": "USA_M_Kenoyer_Willa",
-            "start_date": "1984-11-06",
-            "death_date": "2300-01-01",
+            "picture": "USA_M_Blomen_Henning_A",
+            "start_date": "1964-11-03",
+            "death_date": "1972-11-07",
             "type": "administrator_type"
-        },
-        "2242": {
-            "name": "Farrell Dobbs",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.9,
-            "picture": "USA_M_Dobbs_Farrell",
-            "start_date": "1946-01-01",
-            "death_date": "1983-10-31",
-            "type": "ambitious_type"
         },
         "2243": {
             "name": "Clifton DeBerry",
@@ -648,6 +379,114 @@
             "death_date": "1992-01-01",
             "type": "courageous_type"
         },
+        "4287": {
+            "name": "Roberto Sánchez Vilella",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "PRC_M_Vilella_Roberto_S",
+            "start_date": "1965-01-01",
+            "death_date": "1969-01-01",
+            "type": "reputable_type"
+        },
+        "2201": {
+            "name": "Barry M. Goldwater",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Goldwater_Barry_M",
+            "start_date": "1965-01-20",
+            "death_date": "1969-01-20",
+            "type": "traditionalist_type"
+        },
+        "2200": {
+            "name": "Hubert H. Humphrey",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "USA_M_Humphrey_Hubert_H",
+            "start_date": "1965-01-20",
+            "death_date": "1973-01-20",
+            "type": "bureaucrat_type"
+        },
+        "1200": {
+            "name": "William Luther Pierce",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.85,
+            "picture": "USA_M_Pierce_William_L",
+            "start_date": "1966-01-01",
+            "death_date": "1992-01-01",
+            "type": "hardliner_type"
+        },
+        "2229": {
+            "name": "Eldridge Cleaver",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Cleaver_Eldridge",
+            "start_date": "1968-11-05",
+            "death_date": "1972-11-07",
+            "type": "religious_type"
+        },
+        "2217": {
+            "name": "George Corley Wallace",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "USA_M_Wallace_George_C",
+            "start_date": "1968-11-05",
+            "death_date": "1992-01-01",
+            "type": "controversial_figure"
+        },
+        "2255": {
+            "name": "Charlene Mitchell",
+            "ideology": "communist_idolg",
+            "loyalty": 0.95,
+            "picture": "USA_M_Mitchell_Charlene",
+            "start_date": "1968-11-05",
+            "death_date": "2300-01-01",
+            "type": "courageous_type"
+        },
+        "4288": {
+            "name": "Luis Alberto Ferré Aguayo",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "PRC_M_Aguayo_Luis_A_F",
+            "start_date": "1969-01-01",
+            "death_date": "1973-01-01",
+            "type": "reformer_type"
+        },
+        "2202": {
+            "name": "Richard M. Nixon",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Nixon_Richard_M",
+            "start_date": "1969-01-20",
+            "death_date": "1974-08-08",
+            "type": "ambitious_type"
+        },
+        "2218": {
+            "name": "John G. Schmitz",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Schmitz_John_G",
+            "start_date": "1972-11-07",
+            "death_date": "1976-11-02",
+            "type": "extremist_type"
+        },
+        "2224": {
+            "name": "John G. Hospers",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "USA_M_Hospers_John_G",
+            "start_date": "1972-11-07",
+            "death_date": "1976-11-02",
+            "type": "ambitious_type"
+        },
+        "2230": {
+            "name": "Benjamin Spock",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "USA_M_Spock_Benjamin",
+            "start_date": "1972-11-07",
+            "death_date": "1976-11-02",
+            "type": "reputable_type"
+        },
         "2244": {
             "name": "Evelyn Reed",
             "ideology": "maoist_idolg",
@@ -656,6 +495,231 @@
             "start_date": "1972-11-07",
             "death_date": "1979-01-01",
             "type": "visionary_type"
+        },
+        "2256": {
+            "name": "Louis Fisher",
+            "ideology": "communist_idolg",
+            "loyalty": 0.96,
+            "picture": "USA_M_Fisher_Louis",
+            "start_date": "1972-11-07",
+            "death_date": "1992-01-01",
+            "type": "hardliner_type"
+        },
+        "4289": {
+            "name": "Rafael Hernández Colón",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "PRC_M_Colon_Rafael_H",
+            "start_date": "1973-01-01",
+            "death_date": "1993-01-01",
+            "type": "administrator_type"
+        },
+        "2204": {
+            "name": "George S. McGovern",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_McGovern_George_S",
+            "start_date": "1973-01-21",
+            "death_date": "1977-01-20",
+            "type": "bureaucrat_type"
+        },
+        "2219": {
+            "name": "Howard Phillips",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.91,
+            "picture": "USA_M_Phillips_Howard",
+            "start_date": "1974-01-01",
+            "death_date": "1992-01-01",
+            "type": "moral_type"
+        },
+        "2203": {
+            "name": "Gerald R. Ford",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "USA_M_Ford_Gerald_R",
+            "start_date": "1974-08-08",
+            "death_date": "1981-01-20",
+            "type": "bureaucrat_type"
+        },
+        "1201": {
+            "name": "David Duke",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.86,
+            "picture": "USA_M_Duke_David",
+            "start_date": "1975-01-01",
+            "death_date": "1992-01-01",
+            "type": "controversial_figure"
+        },
+        "2225": {
+            "name": "Roger MacBride",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "USA_M_MacBride_Roger",
+            "start_date": "1976-11-02",
+            "death_date": "1980-11-04",
+            "type": "visionary_type"
+        },
+        "2231": {
+            "name": "Margaret Wright",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Wright_Margaret",
+            "start_date": "1976-11-02",
+            "death_date": "1980-11-04",
+            "type": "ambitious_type"
+        },
+        "2257": {
+            "name": "Jules Levin",
+            "ideology": "communist_idolg",
+            "loyalty": 0.97,
+            "picture": "USA_M_Levin_Jules",
+            "start_date": "1976-11-02",
+            "death_date": "1980-11-04",
+            "type": "bureaucrat_type"
+        },
+        "2220": {
+            "name": "Lester Maddox",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.92,
+            "picture": "USA_M_Maddox_Lester",
+            "start_date": "1976-11-02",
+            "death_date": "1992-01-01",
+            "type": "parental_type"
+        },
+        "2239": {
+            "name": "Peter Camejo",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.93,
+            "picture": "USA_M_Camejo_Peter",
+            "start_date": "1976-11-02",
+            "death_date": "2008-09-13",
+            "type": "controversial_figure"
+        },
+        "1216": {
+            "name": "Lyndon LaRouche",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.95,
+            "picture": "USA_M_LaRouche_Lyndon",
+            "start_date": "1976-11-02",
+            "death_date": "2300-01-01",
+            "type": "controversial_figure"
+        },
+        "4290": {
+            "name": "Carlos Antonio Romero Barceló",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "PRC_M_Barcelo_Carlos",
+            "start_date": "1977-01-01",
+            "death_date": "1985-01-01",
+            "type": "lethargic_type"
+        },
+        "2240": {
+            "name": "Sonia Johnson",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.94,
+            "picture": "USA_M_Johnson_Sonia",
+            "start_date": "1977-01-01",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "2205": {
+            "name": "James E. Carter, Jr.",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Carter_James_E_Jr",
+            "start_date": "1977-01-21",
+            "death_date": "1985-01-20",
+            "type": "bureaucrat_type"
+        },
+        "2206": {
+            "name": "Walter F. Mondale",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "USA_M_Mondale_Walter_F",
+            "start_date": "1977-01-21",
+            "death_date": "1989-01-20",
+            "type": "honest_type"
+        },
+        "2215": {
+            "name": "Frazier Glenn Miller",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.87,
+            "picture": "USA_M_Miller_Frazier_G",
+            "start_date": "1980-01-01",
+            "death_date": "1992-01-01",
+            "type": "autocrat_type"
+        },
+        "2226": {
+            "name": "Ed Clark",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "USA_M_Clark_Ed",
+            "start_date": "1980-11-04",
+            "death_date": "1984-11-06",
+            "type": "reformer_type"
+        },
+        "2232": {
+            "name": "Maureen Smith",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Smith_Maureen",
+            "start_date": "1980-11-04",
+            "death_date": "1984-11-06",
+            "type": "administrator_type"
+        },
+        "2221": {
+            "name": "John Rarick",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.93,
+            "picture": "USA_M_Rarick_John",
+            "start_date": "1980-11-04",
+            "death_date": "1992-01-01",
+            "type": "hardliner_type"
+        },
+        "2247": {
+            "name": "Deirdre Griswold",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.95,
+            "picture": "USA_M_Griswold_Deirdre",
+            "start_date": "1980-11-04",
+            "death_date": "2300-01-01",
+            "type": "iron_lady"
+        },
+        "2207": {
+            "name": "Ronald W. Reagan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Reagan_Ronald_W",
+            "start_date": "1981-01-21",
+            "death_date": "1989-01-20",
+            "type": "hardliner_type"
+        },
+        "2227": {
+            "name": "David Bergland",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "USA_M_Bergland_David",
+            "start_date": "1984-11-06",
+            "death_date": "1988-11-08",
+            "type": "administrator_type"
+        },
+        "1202": {
+            "name": "Bob Richards",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.88,
+            "picture": "USA_M_Richards_Bob",
+            "start_date": "1984-11-06",
+            "death_date": "1992-01-01",
+            "type": "parental_type"
+        },
+        "2241": {
+            "name": "Willa Kenoyer",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.95,
+            "picture": "USA_M_Kenoyer_Willa",
+            "start_date": "1984-11-06",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
         },
         "2245": {
             "name": "Melvin T. Mason",
@@ -675,122 +739,50 @@
             "death_date": "2300-01-01",
             "type": "visionary_type"
         },
-        "2247": {
-            "name": "Deirdre Griswold",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.95,
-            "picture": "USA_M_Griswold_Deirdre",
-            "start_date": "1980-11-04",
-            "death_date": "2300-01-01",
-            "type": "iron_lady"
+        "2216": {
+            "name": "James Gordon Gritz",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.89,
+            "picture": "USA_M_Gritz_James_G",
+            "start_date": "1988-01-01",
+            "death_date": "1992-01-01",
+            "type": "dictator_type"
         },
-        "2248": {
-            "name": "James P. Cannon",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.8,
-            "picture": "USA_M_Cannon_James_P",
-            "start_date": "1928-01-01",
-            "death_date": "1974-08-21",
-            "type": "reformer_type"
-        },
-        "2249": {
-            "name": "Francis Xavier Waldron",
-            "ideology": "communist_idolg",
-            "loyalty": 0.8,
-            "picture": "USA_M_Waldron_Francis_X",
-            "start_date": "1926-01-01",
-            "death_date": "1961-01-31",
-            "type": "honest_type"
-        },
-        "1219": {
-            "name": "Earl Browder",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "USA_M_Browder_Earl",
-            "start_date": "1940-11-05",
-            "death_date": "1963-06-27",
-            "type": "extremist_type"
-        },
-        "2250": {
-            "name": "Edward A. Teichert",
-            "ideology": "communist_idolg",
-            "loyalty": 0.92,
-            "picture": "USA_M_Teichert_Edward_A",
-            "start_date": "1946-01-01",
-            "death_date": "1952-11-04",
-            "type": "administrator_type"
-        },
-        "2251": {
-            "name": "Gus Hall",
-            "ideology": "communist_idolg",
-            "loyalty": 0.91,
-            "picture": "USA_M_Hall_Gus",
-            "start_date": "1946-01-01",
-            "death_date": "1980-10-13",
-            "type": "traditionalist_type"
-        },
-        "2252": {
-            "name": "John Gates",
-            "ideology": "communist_idolg",
-            "loyalty": 0.91,
-            "picture": "USA_M_Gates_John",
-            "start_date": "1946-01-01",
-            "death_date": "1982-01-01",
-            "type": "liberal_type"
-        },
-        "2253": {
-            "name": "Eric Hass",
-            "ideology": "communist_idolg",
-            "loyalty": 0.93,
-            "picture": "USA_M_Hass_Eric",
-            "start_date": "1952-11-04",
-            "death_date": "1972-11-07",
-            "type": "parental_type"
-        },
-        "2254": {
-            "name": "Henning A. Blomen",
-            "ideology": "communist_idolg",
-            "loyalty": 0.94,
-            "picture": "USA_M_Blomen_Henning_A",
-            "start_date": "1964-11-03",
-            "death_date": "1972-11-07",
-            "type": "administrator_type"
-        },
-        "2255": {
-            "name": "Charlene Mitchell",
-            "ideology": "communist_idolg",
-            "loyalty": 0.95,
-            "picture": "USA_M_Mitchell_Charlene",
-            "start_date": "1968-11-05",
-            "death_date": "2300-01-01",
-            "type": "courageous_type"
-        },
-        "2256": {
-            "name": "Louis Fisher",
-            "ideology": "communist_idolg",
-            "loyalty": 0.96,
-            "picture": "USA_M_Fisher_Louis",
-            "start_date": "1972-11-07",
+        "2233": {
+            "name": "Herbert G. Lewin",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Lewin_Herbert_G",
+            "start_date": "1988-11-08",
             "death_date": "1992-01-01",
             "type": "hardliner_type"
         },
-        "2257": {
-            "name": "Jules Levin",
-            "ideology": "communist_idolg",
-            "loyalty": 0.97,
-            "picture": "USA_M_Levin_Jules",
-            "start_date": "1976-11-02",
-            "death_date": "1980-11-04",
-            "type": "bureaucrat_type"
-        },
-        "2258": {
-            "name": "Angela Davis",
-            "ideology": "communist_idolg",
+        "2228": {
+            "name": "Ronald Ernest Paul",
+            "ideology": "market_liberal_idolg",
             "loyalty": 0.8,
-            "picture": "USA_M_Davis_Angela",
-            "start_date": "1960-01-01",
+            "picture": "USA_M_Paul_Ronald_E",
+            "start_date": "1988-11-08",
             "death_date": "2300-01-01",
-            "type": "courageous_type"
+            "type": "controversial_figure"
+        },
+        "2208": {
+            "name": "George H.W. Bush",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Bush_George_HW",
+            "start_date": "1989-01-21",
+            "death_date": "1993-01-20",
+            "type": "hardliner_type"
+        },
+        "2209": {
+            "name": "Michael S. Dukakis",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Dukakis_Michael_S",
+            "start_date": "1989-01-21",
+            "death_date": "1993-01-20",
+            "type": "bureaucrat_type"
         }
     }
 }

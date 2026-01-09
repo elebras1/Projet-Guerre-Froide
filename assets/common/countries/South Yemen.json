@@ -72,6 +72,24 @@
     },
     "unit_names": "",
     "ministers": {
+        "4916": {
+            "name": "Saleh I bin Ghalib Al Qu'aiti",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SYA_M_Saleh_I",
+            "start_date": "1936-01-01",
+            "death_date": "1956-01-01",
+            "type": "ambitious_type"
+        },
+        "4928": {
+            "name": "Reginald Stuart Champion",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SYA_M_Champion_Reginald_S",
+            "start_date": "1945-01-01",
+            "death_date": "1950-01-01",
+            "type": "bureaucrat_type"
+        },
         "4908": {
             "name": "Qahtan Muhammad al-Shaabi",
             "ideology": "communist_idolg",
@@ -80,42 +98,6 @@
             "start_date": "1946-01-01",
             "death_date": "1969-06-22",
             "type": "zealous_type"
-        },
-        "4909": {
-            "name": "Salim Rubai Ali",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SYA_M_Ali_Salim_R",
-            "start_date": "1969-06-23",
-            "death_date": "1978-06-26",
-            "type": "controversial_figure"
-        },
-        "4910": {
-            "name": "Ali Nasir Muhammad",
-            "ideology": "communist_idolg",
-            "loyalty": 0.75,
-            "picture": "SYA_M_Muhammad_Ali_N",
-            "start_date": "1971-08-02",
-            "death_date": "1985-02-04",
-            "type": "democrat_type"
-        },
-        "4911": {
-            "name": "Abdul Fattah Ismail",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 1.0,
-            "picture": "SYA_M_Ismail_Abdul_F",
-            "start_date": "1978-12-27",
-            "death_date": "1980-04-21",
-            "type": "zealous_type"
-        },
-        "4912": {
-            "name": "Haidar Abu Bakr al-Attas",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SYA_M_al-Attas_Haidar_B_A",
-            "start_date": "1985-02-14",
-            "death_date": "1991-12-31",
-            "type": "loyal_type"
         },
         "4913": {
             "name": "Faysal al-Shaabi",
@@ -126,32 +108,23 @@
             "death_date": "1969-06-22",
             "type": "administrator_type"
         },
-        "4914": {
-            "name": "Muhammad Ali Haitham",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SYA_M_Haitham_Muhammad_A",
-            "start_date": "1969-06-23",
-            "death_date": "1971-08-02",
-            "type": "liberal_type"
-        },
-        "4915": {
-            "name": "Yasin Said Numan",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SYA_M_Numan_Yasin_S",
-            "start_date": "1986-02-08",
-            "death_date": "1991-12-31",
-            "type": "honest_type"
-        },
-        "4916": {
-            "name": "Saleh I bin Ghalib Al Qu'aiti",
+        "4929": {
+            "name": "William Allmond Codrington Goode",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,
-            "picture": "SYA_M_Saleh_I",
-            "start_date": "1936-01-01",
-            "death_date": "1956-01-01",
-            "type": "ambitious_type"
+            "picture": "SYA_M_Goode_William_A_C",
+            "start_date": "1950-01-01",
+            "death_date": "1951-04-01",
+            "type": "reputable_type"
+        },
+        "4930": {
+            "name": "Tom Hickinbotham",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SYA_M_Hickinbotham_Tom",
+            "start_date": "1951-04-01",
+            "death_date": "1956-07-13",
+            "type": "bureaucrat_type"
         },
         "4917": {
             "name": "Awadh II bin Saleh al Qu'aiti",
@@ -162,14 +135,14 @@
             "death_date": "1966-08-10",
             "type": "traditionalist_type"
         },
-        "4918": {
-            "name": "Ghalib II bin Awadh al-Qu'aiti",
+        "4931": {
+            "name": "William Henry Tucker Luce",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,
-            "picture": "SYA_M_Ghalib_II",
-            "start_date": "1966-08-10",
-            "death_date": "2300-01-01",
-            "type": "autocrat_type"
+            "picture": "SYA_M_Luce_William_H_T",
+            "start_date": "1956-07-13",
+            "death_date": "1960-10-23",
+            "type": "bureaucrat_type"
         },
         "4919": {
             "name": "Charles Hepburn Johnston",
@@ -180,31 +153,40 @@
             "death_date": "1963-07-17",
             "type": "courteous_figure"
         },
-        "4920": {
-            "name": "Gerald Kennedy Nicholas Trevaskis",
-            "ideology": "social_cons_idolg",
+        "4934": {
+            "name": "Abdullah al Asnag",
+            "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
-            "picture": "SYA_M_Trevaskis_Gerald_K_N",
-            "start_date": "1963-07-17",
-            "death_date": "1964-12-21",
-            "type": "traditionalist_type"
+            "picture": "SYA_M_al-Asnag_Abdullah",
+            "start_date": "1961-01-01",
+            "death_date": "1968-01-01",
+            "type": "loyal_type"
         },
-        "4921": {
-            "name": "Richard Gordon Turnbull",
-            "ideology": "social_cons_idolg",
+        "4935": {
+            "name": "Abdullah Badhib",
+            "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
-            "picture": "SYA_M_Turnbull_Richard_G",
-            "start_date": "1964-12-21",
-            "death_date": "1967-05-27",
-            "type": "hardliner_type"
+            "picture": "SYA_M_Badhib_Abdullah",
+            "start_date": "1961-01-01",
+            "death_date": "1975-08-01",
+            "type": "reputable_type"
         },
-        "4922": {
-            "name": "Humphrey Trevelyan",
-            "ideology": "social_cons_idolg",
+        "4933": {
+            "name": "Jarallah Omar al-Kuhali",
+            "ideology": "communist_idolg",
             "loyalty": 0.5,
-            "picture": "SYA_M_Trevelyan_Humphrey",
-            "start_date": "1967-05-27",
-            "death_date": "1967-11-30",
+            "picture": "SYA_M_al-Kuhali_Jarallah_O",
+            "start_date": "1963-01-01",
+            "death_date": "2002-12-01",
+            "type": "visionary_type"
+        },
+        "4937": {
+            "name": "Saleh Bin Farid",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SYA_M_Farid_Saleh_B",
+            "start_date": "1963-01-01",
+            "death_date": "2300-01-01",
             "type": "traditionalist_type"
         },
         "4923": {
@@ -225,6 +207,24 @@
             "death_date": "1965-01-23",
             "type": "bureaucrat_type"
         },
+        "4920": {
+            "name": "Gerald Kennedy Nicholas Trevaskis",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SYA_M_Trevaskis_Gerald_K_N",
+            "start_date": "1963-07-17",
+            "death_date": "1964-12-21",
+            "type": "traditionalist_type"
+        },
+        "4921": {
+            "name": "Richard Gordon Turnbull",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SYA_M_Turnbull_Richard_G",
+            "start_date": "1964-12-21",
+            "death_date": "1967-05-27",
+            "type": "hardliner_type"
+        },
         "4925": {
             "name": "Abdul-Qawi Hassan Makkawi",
             "ideology": "social_cons_idolg",
@@ -243,6 +243,15 @@
             "death_date": "1966-08-30",
             "type": "bureaucrat_type"
         },
+        "4918": {
+            "name": "Ghalib II bin Awadh al-Qu'aiti",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SYA_M_Ghalib_II",
+            "start_date": "1966-08-10",
+            "death_date": "2300-01-01",
+            "type": "autocrat_type"
+        },
         "4927": {
             "name": "Salih al-Awadli",
             "ideology": "social_cons_idolg",
@@ -252,41 +261,14 @@
             "death_date": "1967-11-30",
             "type": "bureaucrat_type"
         },
-        "4928": {
-            "name": "Reginald Stuart Champion",
+        "4922": {
+            "name": "Humphrey Trevelyan",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,
-            "picture": "SYA_M_Champion_Reginald_S",
-            "start_date": "1945-01-01",
-            "death_date": "1950-01-01",
-            "type": "bureaucrat_type"
-        },
-        "4929": {
-            "name": "William Allmond Codrington Goode",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SYA_M_Goode_William_A_C",
-            "start_date": "1950-01-01",
-            "death_date": "1951-04-01",
-            "type": "reputable_type"
-        },
-        "4930": {
-            "name": "Tom Hickinbotham",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SYA_M_Hickinbotham_Tom",
-            "start_date": "1951-04-01",
-            "death_date": "1956-07-13",
-            "type": "bureaucrat_type"
-        },
-        "4931": {
-            "name": "William Henry Tucker Luce",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SYA_M_Luce_William_H_T",
-            "start_date": "1956-07-13",
-            "death_date": "1960-10-23",
-            "type": "bureaucrat_type"
+            "picture": "SYA_M_Trevelyan_Humphrey",
+            "start_date": "1967-05-27",
+            "death_date": "1967-11-30",
+            "type": "traditionalist_type"
         },
         "4932": {
             "name": "Salim Rabiyya Ali",
@@ -297,50 +279,32 @@
             "death_date": "1978-06-01",
             "type": "ambitious_type"
         },
-        "4933": {
-            "name": "Jarallah Omar al-Kuhali",
+        "4914": {
+            "name": "Muhammad Ali Haitham",
             "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "SYA_M_al-Kuhali_Jarallah_O",
-            "start_date": "1963-01-01",
-            "death_date": "2002-12-01",
-            "type": "visionary_type"
+            "loyalty": 1.0,
+            "picture": "SYA_M_Haitham_Muhammad_A",
+            "start_date": "1969-06-23",
+            "death_date": "1971-08-02",
+            "type": "liberal_type"
         },
-        "4934": {
-            "name": "Abdullah al Asnag",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "SYA_M_al-Asnag_Abdullah",
-            "start_date": "1961-01-01",
-            "death_date": "1968-01-01",
-            "type": "loyal_type"
+        "4909": {
+            "name": "Salim Rubai Ali",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SYA_M_Ali_Salim_R",
+            "start_date": "1969-06-23",
+            "death_date": "1978-06-26",
+            "type": "controversial_figure"
         },
-        "4935": {
-            "name": "Abdullah Badhib",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "SYA_M_Badhib_Abdullah",
-            "start_date": "1961-01-01",
-            "death_date": "1975-08-01",
-            "type": "reputable_type"
-        },
-        "4936": {
-            "name": "Zein al-Abideen al-Mehdar",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "SYA_M_al-Mehdar_Zein_A",
-            "start_date": "1988-01-01",
-            "death_date": "1999-10-17",
-            "type": "extremist_type"
-        },
-        "4937": {
-            "name": "Saleh Bin Farid",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SYA_M_Farid_Saleh_B",
-            "start_date": "1963-01-01",
-            "death_date": "2300-01-01",
-            "type": "traditionalist_type"
+        "4910": {
+            "name": "Ali Nasir Muhammad",
+            "ideology": "communist_idolg",
+            "loyalty": 0.75,
+            "picture": "SYA_M_Muhammad_Ali_N",
+            "start_date": "1971-08-02",
+            "death_date": "1986-01-24",
+            "type": "democrat_type"
         },
         "4938": {
             "name": "Raqiya Homeidan",
@@ -350,6 +314,42 @@
             "start_date": "1975-01-01",
             "death_date": "2300-01-01",
             "type": "democrat_type"
+        },
+        "4911": {
+            "name": "Abdul Fattah Ismail",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "SYA_M_Ismail_Abdul_F",
+            "start_date": "1978-12-27",
+            "death_date": "1980-04-21",
+            "type": "zealous_type"
+        },
+        "4912": {
+            "name": "Haidar Abu Bakr al-Attas",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SYA_M_al-Attas_Haidar_B_A",
+            "start_date": "1985-02-14",
+            "death_date": "1994-05-09",
+            "type": "loyal_type"
+        },
+        "4915": {
+            "name": "Yasin Said Numan",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SYA_M_Numan_Yasin_S",
+            "start_date": "1986-02-08",
+            "death_date": "1991-12-31",
+            "type": "honest_type"
+        },
+        "4936": {
+            "name": "Zein al-Abideen al-Mehdar",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "SYA_M_al-Mehdar_Zein_A",
+            "start_date": "1988-01-01",
+            "death_date": "1999-10-17",
+            "type": "extremist_type"
         }
     }
 }

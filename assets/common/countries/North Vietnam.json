@@ -100,6 +100,24 @@
         ]
     },
     "ministers": {
+        "2560": {
+            "name": "Tran Van Tra",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "DRV_M_Tra_Tran_V",
+            "start_date": "1940-01-01",
+            "death_date": "1996-04-20",
+            "type": "honest_type"
+        },
+        "2561": {
+            "name": "Nguyen Thi Dinh",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "DRV_M_Dinh_Nguyen_T",
+            "start_date": "1945-01-01",
+            "death_date": "1992-08-26",
+            "type": "hardliner_type"
+        },
         "2519": {
             "name": "Ho Chi Minh",
             "ideology": "communist_idolg",
@@ -109,6 +127,69 @@
             "death_date": "1969-09-02",
             "type": "autocrat_type"
         },
+        "2562": {
+            "name": "Nguyen Van Linh",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "DRV_M_Linh_Nguyen_V",
+            "start_date": "1946-01-01",
+            "death_date": "1998-04-27",
+            "type": "reformer_type"
+        },
+        "2558": {
+            "name": "Vo Nguyen Giap",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "DRV_M_Giap_Vo_N",
+            "start_date": "1946-01-01",
+            "death_date": "2013-10-04",
+            "type": "hardliner_type"
+        },
+        "2559": {
+            "name": "Nguyen Thi Binh",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "DRV_M_Binh_Nguyen_T",
+            "start_date": "1948-01-01",
+            "death_date": "2300-01-01",
+            "type": "iron_lady"
+        },
+        "2564": {
+            "name": "Huynh Tan Phat",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "DRV_M_Phat_Huynh_T",
+            "start_date": "1949-11-01",
+            "death_date": "1989-08-30",
+            "type": "bureaucrat_type"
+        },
+        "2563": {
+            "name": "Hoang Van Hoan",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "DRV_M_Hoan_Hoang_V",
+            "start_date": "1950-01-01",
+            "death_date": "1991-01-01",
+            "type": "traditionalist_type"
+        },
+        "2521": {
+            "name": "Nguyen Huu Tho",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "DRV_M_Tho_Nguyen_H",
+            "start_date": "1954-11-01",
+            "death_date": "1996-12-24",
+            "type": "bureaucrat_type"
+        },
+        "2525": {
+            "name": "Pham Van Dong",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "DRV_M_Dong_Pham_Van",
+            "start_date": "1955-09-20",
+            "death_date": "1987-06-18",
+            "type": "bureaucrat_type"
+        },
         "2520": {
             "name": "Ton Duc Thang",
             "ideology": "communist_idolg",
@@ -117,15 +198,6 @@
             "start_date": "1969-09-02",
             "death_date": "1980-03-30",
             "type": "administrator_type"
-        },
-        "3896": {
-            "name": "Nguyen Huu Tho",
-            "ideology": "communist_idolg",
-            "loyalty": 0.8,
-            "picture": "DRV_M_Tho_Nguyen_H",
-            "start_date": "1954-11-01",
-            "death_date": "1981-07-04",
-            "type": "courteous_figure"
         },
         "2522": {
             "name": "Truong Chinh",
@@ -143,24 +215,6 @@
             "picture": "DRV_M_Cong_Vo_Chi",
             "start_date": "1987-06-17",
             "death_date": "1992-09-24",
-            "type": "bureaucrat_type"
-        },
-        "2524": {
-            "name": "Le Duc Anh",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "DRV_M_Anh_Le_Duc",
-            "start_date": "1992-09-24",
-            "death_date": "1997-09-24",
-            "type": "bureaucrat_type"
-        },
-        "2525": {
-            "name": "Pham Van Dong",
-            "ideology": "communist_idolg",
-            "loyalty": 0.8,
-            "picture": "DRV_M_Dong_Pham_Van",
-            "start_date": "1955-09-20",
-            "death_date": "1987-06-18",
             "type": "bureaucrat_type"
         },
         "2526": {
@@ -190,67 +244,13 @@
             "death_date": "1991-08-08",
             "type": "bureaucrat_type"
         },
-        "2558": {
-            "name": "Vo Nguyen Giap",
+        "2524": {
+            "name": "Le Duc Anh",
             "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Giap_Vo_N",
-            "start_date": "1946-01-01",
-            "death_date": "2013-10-04",
-            "type": "hardliner_type"
-        },
-        "2559": {
-            "name": "Nguyen Thi Binh",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Binh_Nguyen_T",
-            "start_date": "1948-01-01",
-            "death_date": "2300-01-01",
-            "type": "iron_lady"
-        },
-        "2560": {
-            "name": "Tran Van Tra",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Tra_Tran_V",
-            "start_date": "1940-01-01",
-            "death_date": "1996-04-20",
-            "type": "honest_type"
-        },
-        "2561": {
-            "name": "Nguyen Thi Dinh",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Dinh_Nguyen_T",
-            "start_date": "1945-01-01",
-            "death_date": "1992-08-26",
-            "type": "hardliner_type"
-        },
-        "2562": {
-            "name": "Nguyen Van Linh",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Linh_Nguyen_V",
-            "start_date": "1946-01-01",
-            "death_date": "1998-04-27",
-            "type": "reformer_type"
-        },
-        "2563": {
-            "name": "Hoang Van Hoan",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Hoan_Hoang_V",
-            "start_date": "1950-01-01",
-            "death_date": "1991-01-01",
-            "type": "traditionalist_type"
-        },
-        "2564": {
-            "name": "Huynh Tan Phat",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Phat_Huynh_T",
-            "start_date": "1949-11-01",
-            "death_date": "1989-08-30",
+            "loyalty": 1.0,
+            "picture": "DRV_M_Anh_Le_Duc",
+            "start_date": "1992-09-24",
+            "death_date": "1997-09-24",
             "type": "bureaucrat_type"
         }
     }

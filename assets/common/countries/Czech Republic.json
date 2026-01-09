@@ -72,14 +72,14 @@
     },
     "unit_names": "",
     "ministers": {
-        "1389": {
-            "name": "Edvard Benes",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Benes_Edvard",
-            "start_date": "1945-01-01",
-            "death_date": "1948-06-15",
-            "type": "administrator_type"
+        "1405": {
+            "name": "Karel IV ze Schwarzenberga",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Karel_IV",
+            "start_date": "1918-01-01",
+            "death_date": "1986-04-09",
+            "type": "courageous_type"
         },
         "1390": {
             "name": "Zdenek Fierlinger",
@@ -90,21 +90,21 @@
             "death_date": "1946-07-02",
             "type": "bureaucrat_type"
         },
+        "1389": {
+            "name": "Edvard Benes",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Benes_Edvard",
+            "start_date": "1945-01-01",
+            "death_date": "1948-06-15",
+            "type": "administrator_type"
+        },
         "1391": {
             "name": "Klement Gottwald",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.9,
             "picture": "CZE_M_Gottwald_Klement",
             "start_date": "1946-07-02",
-            "death_date": "1948-06-15",
-            "type": "hardliner_type"
-        },
-        "1392": {
-            "name": "Klement Gottwald",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Gottwald_Klement",
-            "start_date": "1948-06-15",
             "death_date": "1953-03-14",
             "type": "hardliner_type"
         },
@@ -144,6 +144,15 @@
             "death_date": "1968-04-08",
             "type": "bureaucrat_type"
         },
+        "1403": {
+            "name": "Václav Havel",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Havel_Vaclav",
+            "start_date": "1968-01-01",
+            "death_date": "2000-01-01",
+            "type": "reformer_type"
+        },
         "1397": {
             "name": "Alexander Dubcek",
             "ideology": "communist_idolg",
@@ -180,6 +189,24 @@
             "death_date": "1988-10-12",
             "type": "autocrat_type"
         },
+        "1406": {
+            "name": "Karel V ze Schwarzenberga",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CZE_M_Karel_V",
+            "start_date": "1986-04-09",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1404": {
+            "name": "Marián Calfa",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CZE_M_Calfa_Marian",
+            "start_date": "1987-12-01",
+            "death_date": "1991-12-31",
+            "type": "reformer_type"
+        },
         "1401": {
             "name": "Milos Jakes",
             "ideology": "communist_idolg",
@@ -197,42 +224,6 @@
             "start_date": "1988-10-12",
             "death_date": "1991-12-31",
             "type": "democrat_type"
-        },
-        "1403": {
-            "name": "Václav Havel",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Havel_Vaclav",
-            "start_date": "1987-12-01",
-            "death_date": "1991-12-31",
-            "type": "reformer_type"
-        },
-        "1404": {
-            "name": "Marián Calfa",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CZE_M_Calfa_Marian",
-            "start_date": "1987-12-01",
-            "death_date": "1991-12-31",
-            "type": "reformer_type"
-        },
-        "1405": {
-            "name": "Karel IV ze Schwarzenberga",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Karel_IV",
-            "start_date": "1918-01-01",
-            "death_date": "1986-04-09",
-            "type": "courageous_type"
-        },
-        "1406": {
-            "name": "Karel V ze Schwarzenberga",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CZE_M_Karel_V",
-            "start_date": "1986-04-09",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
         }
     }
 }

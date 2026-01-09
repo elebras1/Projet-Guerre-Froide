@@ -72,6 +72,15 @@
     },
     "unit_names": "",
     "ministers": {
+        "354": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
         "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
@@ -80,78 +89,6 @@
             "start_date": "1936-09-11",
             "death_date": "1952-02-06",
             "type": "parental_type"
-        },
-        "212": {
-            "name": "Elizabeth II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ENG_Elizabeth",
-            "start_date": "1952-02-06",
-            "death_date": "2300-05-12",
-            "type": "traditionalist_type"
-        },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "348": {
-            "name": "Margaret I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "ENG_M_Margaret_I",
-            "start_date": "1952-03-01",
-            "death_date": "2002-02-09",
-            "type": "controversial_figure"
-        },
-        "349": {
-            "name": "David III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "350": {
-            "name": "Sarah I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
         },
         "351": {
             "name": "Henry IX",
@@ -162,41 +99,23 @@
             "death_date": "1974-06-10",
             "type": "courteous_figure"
         },
-        "352": {
-            "name": "William V",
+        "212": {
+            "name": "Elizabeth II",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.91,
-            "picture": "ENG_M_William_V",
-            "start_date": "1959-12-18",
-            "death_date": "1972-08-28",
-            "type": "courteous_figure"
-        },
-        "353": {
-            "name": "Richard IV",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "ENG_M_Richard_IV",
-            "start_date": "1962-08-26",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "354": {
-            "name": "Robert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Robert_I_Bayern",
-            "start_date": "1919-02-03",
-            "death_date": "1955-08-02",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
             "type": "traditionalist_type"
         },
-        "355": {
-            "name": "Albert I von Bayern",
+        "348": {
+            "name": "Margaret I",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
         },
         "483": {
             "name": "Grantley Herbert Adams",
@@ -207,6 +126,15 @@
             "death_date": "1958-04-17",
             "type": "reformer_type"
         },
+        "355": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
         "484": {
             "name": "Hugh Gordon Cummins",
             "ideology": "social_democrat_idolg",
@@ -215,6 +143,15 @@
             "start_date": "1958-04-17",
             "death_date": "1961-12-08",
             "type": "administrator_type"
+        },
+        "352": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
         },
         "485": {
             "name": "Errol Barrow",
@@ -225,32 +162,23 @@
             "death_date": "1987-06-01",
             "type": "visionary_type"
         },
-        "486": {
-            "name": "John T. Adams",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "BAR_M_Adams_John_T",
-            "start_date": "1976-09-08",
-            "death_date": "1985-03-11",
-            "type": "traditionalist_type"
-        },
-        "487": {
-            "name": "Bernard St. John",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "BAR_M_St_John_Bernard",
-            "start_date": "1985-03-11",
-            "death_date": "1986-05-29",
-            "type": "administrator_type"
-        },
-        "488": {
-            "name": "Erskine Sandiford",
+        "353": {
+            "name": "Richard IV",
             "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "BAR_M_Sandiford_Erskine",
-            "start_date": "1987-06-01",
-            "death_date": "1994-09-07",
-            "type": "bureaucrat_type"
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "344": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
         },
         "489": {
             "name": "Sir John Montague Stow",
@@ -270,6 +198,15 @@
             "death_date": "1976-08-09",
             "type": "reputable_type"
         },
+        "347": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
         "491": {
             "name": "Sir William Douglas",
             "ideology": "social_cons_idolg",
@@ -278,6 +215,15 @@
             "start_date": "1976-08-09",
             "death_date": "1984-02-24",
             "type": "honest_type"
+        },
+        "486": {
+            "name": "John T. Adams",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "BAR_M_Adams_John_T",
+            "start_date": "1976-09-08",
+            "death_date": "1985-03-11",
+            "type": "traditionalist_type"
         },
         "492": {
             "name": "Sir Deighton Lisle Ward",
@@ -288,6 +234,42 @@
             "death_date": "1984-01-09",
             "type": "administrator_type"
         },
+        "345": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "349": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "346": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "350": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
         "493": {
             "name": "Sir Hugh Springer",
             "ideology": "social_cons_idolg",
@@ -296,6 +278,24 @@
             "start_date": "1984-02-24",
             "death_date": "1990-06-06",
             "type": "reputable_type"
+        },
+        "487": {
+            "name": "Bernard St. John",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "BAR_M_St_John_Bernard",
+            "start_date": "1985-03-11",
+            "death_date": "1986-05-29",
+            "type": "administrator_type"
+        },
+        "488": {
+            "name": "Erskine Sandiford",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BAR_M_Sandiford_Erskine",
+            "start_date": "1987-06-01",
+            "death_date": "1994-09-07",
+            "type": "bureaucrat_type"
         },
         "494": {
             "name": "Dame Nita Barrow",

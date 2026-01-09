@@ -72,6 +72,15 @@
     },
     "unit_names": "",
     "ministers": {
+        "1744": {
+            "name": "Hailu Tekle Haymanot",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Haymanot_Hailu_T",
+            "start_date": "1923-01-01",
+            "death_date": "1950-12-31",
+            "type": "lethargic_type"
+        },
         "1720": {
             "name": "Haile Selassie I",
             "ideology": "social_cons_idolg",
@@ -90,12 +99,12 @@
             "death_date": "1997-02-17",
             "type": "fortunate_type"
         },
-        "1722": {
-            "name": "Zera Yacob II",
+        "1726": {
+            "name": "Tafari I",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.79,
-            "picture": "ETH_M_Yacob_II",
-            "start_date": "1968-08-17",
+            "loyalty": 0.75,
+            "picture": "ETH_M_Tafari_I",
+            "start_date": "1934-07-27",
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
@@ -108,186 +117,6 @@
             "death_date": "1957-05-13",
             "type": "courteous_figure"
         },
-        "1724": {
-            "name": "Wossen Seged I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.77,
-            "picture": "ETH_M_Seged_I",
-            "start_date": "1962-01-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "1725": {
-            "name": "Mikael I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.76,
-            "picture": "ETH_M_Mikael_I",
-            "start_date": "1965-01-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "1726": {
-            "name": "Tafari I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.75,
-            "picture": "ETH_M_Tafari_I",
-            "start_date": "1934-07-27",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "1727": {
-            "name": "Beede Mariam I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.74,
-            "picture": "ETH_M_Mariam_I",
-            "start_date": "1972-01-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "1728": {
-            "name": "Sahle Selassie I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.73,
-            "picture": "ETH_M_Selassie_I_Sahle",
-            "start_date": "1962-04-24",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "1729": {
-            "name": "Sahle Selassie II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.72,
-            "picture": "ETH_M_Selassie_II_Sahle",
-            "start_date": "1975-06-14",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "1730": {
-            "name": "Aman Andom",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Andom_Aman",
-            "start_date": "1974-09-12",
-            "death_date": "1974-11-17",
-            "type": "ambitious_type"
-        },
-        "1731": {
-            "name": "Mengistu Haile Mariam",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "ETH_M_Mariam_Mengistu_H",
-            "start_date": "1974-11-17",
-            "death_date": "1991-05-21",
-            "type": "dictator_type"
-        },
-        "1732": {
-            "name": "Tafari Benti",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Benti_Tafari",
-            "start_date": "1974-11-28",
-            "death_date": "1977-02-03",
-            "type": "ambitious_type"
-        },
-        "1733": {
-            "name": "Meles Zenawi",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Zenawi_Meles",
-            "start_date": "1991-05-21",
-            "death_date": "1995-08-22",
-            "type": "reformer_type"
-        },
-        "1734": {
-            "name": "Makonnen Endelkachew",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Endelkachew_Makonnen",
-            "start_date": "1942-01-01",
-            "death_date": "1957-11-01",
-            "type": "courteous_figure"
-        },
-        "1735": {
-            "name": "Abebe Aregai",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Aregai_Abebe",
-            "start_date": "1957-11-01",
-            "death_date": "1960-12-15",
-            "type": "loyal_type"
-        },
-        "1736": {
-            "name": "Aklilu Habte-Wold",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Habte-Wold_Aklilu",
-            "start_date": "1960-12-15",
-            "death_date": "1974-03-01",
-            "type": "lethargic_type"
-        },
-        "1737": {
-            "name": "Endelkachew Makonnen",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Makonnen_Endelkachew",
-            "start_date": "1974-02-28",
-            "death_date": "1974-07-22",
-            "type": "democrat_type"
-        },
-        "1738": {
-            "name": "Mikael Imru",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Imru_Mikael",
-            "start_date": "1974-07-22",
-            "death_date": "1974-09-12",
-            "type": "liberal_type"
-        },
-        "1739": {
-            "name": "Fikre Selassie Wogderess",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Wogderess_Fikre_S",
-            "start_date": "1987-09-10",
-            "death_date": "1989-11-08",
-            "type": "lethargic_type"
-        },
-        "1740": {
-            "name": "Hailu Yimenu",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Yimenu_Hailu",
-            "start_date": "1989-11-08",
-            "death_date": "1991-04-26",
-            "type": "bureaucrat_type"
-        },
-        "1741": {
-            "name": "Tesfaye Dinka",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Dinka_Tesfaye",
-            "start_date": "1991-04-26",
-            "death_date": "1991-06-06",
-            "type": "administrator_type"
-        },
-        "1742": {
-            "name": "Tamirat Layne",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "ETH_M_Layne_Tamirat",
-            "start_date": "1991-06-06",
-            "death_date": "1995-08-22",
-            "type": "lethargic_type"
-        },
-        "1743": {
-            "name": "Berhane Meskel Reda",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ETH_M_Reda_Berhane_M",
-            "start_date": "1975-01-08",
-            "death_date": "1992-01-01",
-            "type": "ambitious_type"
-        },
         "1716": {
             "name": "Hamid Idris Awate",
             "ideology": "fascistic_idolg",
@@ -297,32 +126,14 @@
             "death_date": "1964-05-28",
             "type": "hardliner_type"
         },
-        "1744": {
-            "name": "Hailu Tekle Haymanot",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "ETH_M_Haymanot_Hailu_T",
-            "start_date": "1923-01-01",
-            "death_date": "1950-12-31",
-            "type": "lethargic_type"
-        },
-        "1745": {
-            "name": "Teferra Wolde-Semait",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ETH_M_Wolde-Semait_Teferra",
-            "start_date": "1964-01-01",
-            "death_date": "2013-06-25",
-            "type": "reformer_type"
-        },
-        "1746": {
-            "name": "Meles Disannda",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "ETH_M_Disannda_Meles",
-            "start_date": "1969-12-01",
-            "death_date": "1985-12-17",
-            "type": "autocrat_type"
+        "1734": {
+            "name": "Makonnen Endelkachew",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Endelkachew_Makonnen",
+            "start_date": "1942-01-01",
+            "death_date": "1957-11-01",
+            "type": "courteous_figure"
         },
         "1747": {
             "name": "Mulugeta Buli",
@@ -351,6 +162,51 @@
             "death_date": "1960-12-24",
             "type": "ambitious_type"
         },
+        "1751": {
+            "name": "Ali Atto",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Atto_Ali",
+            "start_date": "1956-07-08",
+            "death_date": "1986-02-11",
+            "type": "visionary_type"
+        },
+        "1735": {
+            "name": "Abebe Aregai",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Aregai_Abebe",
+            "start_date": "1957-11-01",
+            "death_date": "1960-12-15",
+            "type": "loyal_type"
+        },
+        "1736": {
+            "name": "Aklilu Habte-Wold",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Habte-Wold_Aklilu",
+            "start_date": "1960-12-15",
+            "death_date": "1974-03-01",
+            "type": "lethargic_type"
+        },
+        "1724": {
+            "name": "Wossen Seged I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.77,
+            "picture": "ETH_M_Seged_I",
+            "start_date": "1962-01-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1728": {
+            "name": "Sahle Selassie I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.73,
+            "picture": "ETH_M_Selassie_I_Sahle",
+            "start_date": "1962-04-24",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
         "1750": {
             "name": "Medhin Kassa",
             "ideology": "paternal_auto_idolg",
@@ -360,14 +216,158 @@
             "death_date": "1974-11-23",
             "type": "lethargic_type"
         },
-        "1751": {
-            "name": "Ali Atto",
+        "1745": {
+            "name": "Teferra Wolde-Semait",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
-            "picture": "ETH_M_Atto_Ali",
-            "start_date": "1956-07-08",
-            "death_date": "1986-02-11",
-            "type": "visionary_type"
+            "picture": "ETH_M_Wolde-Semait_Teferra",
+            "start_date": "1964-01-01",
+            "death_date": "2013-06-25",
+            "type": "reformer_type"
+        },
+        "1725": {
+            "name": "Mikael I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.76,
+            "picture": "ETH_M_Mikael_I",
+            "start_date": "1965-01-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1722": {
+            "name": "Zera Yacob II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.79,
+            "picture": "ETH_M_Yacob_II",
+            "start_date": "1968-08-17",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1746": {
+            "name": "Meles Disannda",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Disannda_Meles",
+            "start_date": "1969-12-01",
+            "death_date": "1985-12-17",
+            "type": "autocrat_type"
+        },
+        "1727": {
+            "name": "Beede Mariam I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.74,
+            "picture": "ETH_M_Mariam_I",
+            "start_date": "1972-01-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1737": {
+            "name": "Endelkachew Makonnen",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Makonnen_Endelkachew",
+            "start_date": "1974-02-28",
+            "death_date": "1974-07-22",
+            "type": "democrat_type"
+        },
+        "1738": {
+            "name": "Mikael Imru",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Imru_Mikael",
+            "start_date": "1974-07-22",
+            "death_date": "1974-09-12",
+            "type": "liberal_type"
+        },
+        "1730": {
+            "name": "Aman Andom",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Andom_Aman",
+            "start_date": "1974-09-12",
+            "death_date": "1974-11-17",
+            "type": "ambitious_type"
+        },
+        "1731": {
+            "name": "Mengistu Haile Mariam",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "ETH_M_Mariam_Mengistu_H",
+            "start_date": "1974-11-17",
+            "death_date": "1991-05-21",
+            "type": "dictator_type"
+        },
+        "1732": {
+            "name": "Tafari Benti",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Benti_Tafari",
+            "start_date": "1974-11-28",
+            "death_date": "1977-02-03",
+            "type": "ambitious_type"
+        },
+        "1743": {
+            "name": "Berhane Meskel Reda",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ETH_M_Reda_Berhane_M",
+            "start_date": "1975-01-08",
+            "death_date": "1992-01-01",
+            "type": "ambitious_type"
+        },
+        "1729": {
+            "name": "Sahle Selassie II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.72,
+            "picture": "ETH_M_Selassie_II_Sahle",
+            "start_date": "1975-06-14",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "1739": {
+            "name": "Fikre Selassie Wogderess",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Wogderess_Fikre_S",
+            "start_date": "1987-09-10",
+            "death_date": "1989-11-08",
+            "type": "lethargic_type"
+        },
+        "1740": {
+            "name": "Hailu Yimenu",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Yimenu_Hailu",
+            "start_date": "1989-11-08",
+            "death_date": "1991-04-26",
+            "type": "bureaucrat_type"
+        },
+        "1741": {
+            "name": "Tesfaye Dinka",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Dinka_Tesfaye",
+            "start_date": "1991-04-26",
+            "death_date": "1991-06-06",
+            "type": "administrator_type"
+        },
+        "1733": {
+            "name": "Meles Zenawi",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Zenawi_Meles",
+            "start_date": "1991-05-21",
+            "death_date": "1995-08-22",
+            "type": "reformer_type"
+        },
+        "1742": {
+            "name": "Tamirat Layne",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "ETH_M_Layne_Tamirat",
+            "start_date": "1991-06-06",
+            "death_date": "1995-08-22",
+            "type": "lethargic_type"
         }
     }
 }

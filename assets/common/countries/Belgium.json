@@ -570,68 +570,41 @@
         ]
     },
     "ministers": {
-        "538": {
-            "name": "Prince Charles",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "BEL_M_Meinrad_Charles_T_H_A",
-            "start_date": "1945-08-18",
-            "death_date": "1983-06-01",
-            "type": "autocrat_type"
+        "574": {
+            "name": "Fernand Dehousse",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Dehousse_Fernand",
+            "start_date": "1906-06-03",
+            "death_date": "1976-08-10",
+            "type": "reformer_type"
         },
-        "539": {
-            "name": "Baudouin",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "BEL_M_Gustave_Baudouin_A_C_L_A_M",
-            "start_date": "1950-07-20",
-            "death_date": "1993-07-31",
-            "type": "religious_type"
+        "569": {
+            "name": "Julien Lahaut",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Lahaut_Julien",
+            "start_date": "1944-01-01",
+            "death_date": "1950-08-18",
+            "type": "reformer_type"
         },
-        "540": {
-            "name": "Leopold III",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.98,
-            "picture": "BEL_M_Leopold_III",
-            "start_date": "1946-01-01",
-            "death_date": "1951-07-16",
+        "572": {
+            "name": "Jean-Francois Thiriart",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Thiriart_Jean-Francois",
+            "start_date": "1944-01-01",
+            "death_date": "1992-11-23",
             "type": "controversial_figure"
         },
-        "541": {
-            "name": "Albert II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "BEL_M_Albert_II",
-            "start_date": "1952-06-06",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "542": {
-            "name": "Philippe",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "BEL_M_Philippe",
-            "start_date": "1978-04-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "543": {
-            "name": "Laurent",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "BEL_M_Laurent",
-            "start_date": "1981-10-19",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "544": {
-            "name": "Alexander",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "BEL_M_Alexander",
-            "start_date": "1960-07-18",
-            "death_date": "2009-11-29",
-            "type": "courteous_figure"
+        "590": {
+            "name": "Max Buset",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Buset_Max",
+            "start_date": "1945-01-01",
+            "death_date": "1959-01-01",
+            "type": "bureaucrat_type"
         },
         "545": {
             "name": "Achille H. Van Acker",
@@ -642,23 +615,14 @@
             "death_date": "1958-06-26",
             "type": "reformer_type"
         },
-        "546": {
-            "name": "Paul-Henri Spaak",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.8,
-            "picture": "BEL_M_Spaak_Paul-Henri",
-            "start_date": "1946-03-13",
-            "death_date": "1965-07-28",
-            "type": "bureaucrat_type"
-        },
-        "547": {
-            "name": "J. J. Camille Huysmans",
-            "ideology": "social_democrat_idolg",
+        "538": {
+            "name": "Prince Charles",
+            "ideology": "social_cons_idolg",
             "loyalty": 1.0,
-            "picture": "BEL_M_Huysmans_J_J_Camille",
-            "start_date": "1946-08-03",
-            "death_date": "1947-03-20",
-            "type": "bureaucrat_type"
+            "picture": "BEL_M_Meinrad_Charles_T_H_A",
+            "start_date": "1945-08-18",
+            "death_date": "1983-06-01",
+            "type": "autocrat_type"
         },
         "548": {
             "name": "August-Edmond de Schryver",
@@ -678,6 +642,51 @@
             "death_date": "1961-04-25",
             "type": "bureaucrat_type"
         },
+        "540": {
+            "name": "Leopold III",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.98,
+            "picture": "BEL_M_Leopold_III",
+            "start_date": "1946-01-01",
+            "death_date": "1951-07-16",
+            "type": "controversial_figure"
+        },
+        "546": {
+            "name": "Paul-Henri Spaak",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.8,
+            "picture": "BEL_M_Spaak_Paul-Henri",
+            "start_date": "1946-03-13",
+            "death_date": "1965-07-28",
+            "type": "bureaucrat_type"
+        },
+        "568": {
+            "name": "Leon Degrelle",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Degrelle_Leon",
+            "start_date": "1946-03-13",
+            "death_date": "1994-03-31",
+            "type": "extremist_type"
+        },
+        "547": {
+            "name": "J. J. Camille Huysmans",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "BEL_M_Huysmans_J_J_Camille",
+            "start_date": "1946-08-03",
+            "death_date": "1947-03-20",
+            "type": "bureaucrat_type"
+        },
+        "575": {
+            "name": "Herman Achille von Rompuy",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Rompuy_Herman_A",
+            "start_date": "1947-10-13",
+            "death_date": "2013-07-08",
+            "type": "reformer_type"
+        },
         "550": {
             "name": "Gaston F. M. Eyskens",
             "ideology": "social_cons_idolg",
@@ -696,6 +705,15 @@
             "death_date": "1950-08-16",
             "type": "parental_type"
         },
+        "539": {
+            "name": "Baudouin",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "BEL_M_Gustave_Baudouin_A_C_L_A_M",
+            "start_date": "1950-07-20",
+            "death_date": "1993-07-31",
+            "type": "religious_type"
+        },
         "552": {
             "name": "Joseph C. L. M. E. Pholien",
             "ideology": "social_cons_idolg",
@@ -704,15 +722,6 @@
             "start_date": "1950-08-16",
             "death_date": "1952-01-15",
             "type": "loyal_type"
-        },
-        "553": {
-            "name": "Jean M. J. Van Houtte",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "BEL_M_Houtte_Jean_M_J_van",
-            "start_date": "1952-01-15",
-            "death_date": "1954-04-23",
-            "type": "bureaucrat_type"
         },
         "554": {
             "name": "Henri M. H. Liebaert",
@@ -723,14 +732,68 @@
             "death_date": "1958-06-26",
             "type": "bureaucrat_type"
         },
+        "553": {
+            "name": "Jean M. J. Van Houtte",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BEL_M_Houtte_Jean_M_J_van",
+            "start_date": "1952-01-15",
+            "death_date": "1954-04-23",
+            "type": "bureaucrat_type"
+        },
+        "541": {
+            "name": "Albert II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "BEL_M_Albert_II",
+            "start_date": "1952-06-06",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "593": {
+            "name": "Ernest Burnelle",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Burnelle_Ernest",
+            "start_date": "1954-01-01",
+            "death_date": "1968-08-05",
+            "type": "ambitious_type"
+        },
         "555": {
             "name": "Omer R. J. Vanaudenhove",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
             "picture": "BEL_M_Vanaudenhove_Omer_R_J",
-            "start_date": "1961-04-25",
-            "death_date": "1966-03-19",
+            "start_date": "1954-01-01",
+            "death_date": "1994-11-26",
             "type": "bureaucrat_type"
+        },
+        "571": {
+            "name": "Rene Beelen",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Beelen_Rene",
+            "start_date": "1954-05-01",
+            "death_date": "1966-02-01",
+            "type": "hardliner_type"
+        },
+        "591": {
+            "name": "Leo Collard",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Collard_Leo",
+            "start_date": "1959-01-01",
+            "death_date": "1971-01-01",
+            "type": "reformer_type"
+        },
+        "544": {
+            "name": "Alexander",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "BEL_M_Alexander",
+            "start_date": "1960-07-18",
+            "death_date": "2009-11-29",
+            "type": "courteous_figure"
         },
         "556": {
             "name": "Théodore J. A. M. Lefèvre",
@@ -741,6 +804,15 @@
             "death_date": "1965-07-28",
             "type": "administrator_type"
         },
+        "580": {
+            "name": "Norbert Hougardy",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Hougardy_Norbert",
+            "start_date": "1964-01-01",
+            "death_date": "1969-01-01",
+            "type": "courageous_type"
+        },
         "557": {
             "name": "Pierre C. J. M. Harmel",
             "ideology": "social_cons_idolg",
@@ -748,6 +820,15 @@
             "picture": "BEL_M_Harmel_Pierre_C_J_M",
             "start_date": "1965-07-28",
             "death_date": "1966-03-19",
+            "type": "bureaucrat_type"
+        },
+        "559": {
+            "name": "Edmond J. I. Leburton",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "BEL_M_Leburton_Edmond_J_I",
+            "start_date": "1965-07-28",
+            "death_date": "1974-04-25",
             "type": "bureaucrat_type"
         },
         "558": {
@@ -759,69 +840,6 @@
             "death_date": "1979-04-03",
             "type": "ambitious_type"
         },
-        "559": {
-            "name": "Edmond J. I. Leburton",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "BEL_M_Leburton_Edmond_J_I",
-            "start_date": "1965-07-28",
-            "death_date": "1974-04-25",
-            "type": "bureaucrat_type"
-        },
-        "560": {
-            "name": "Leonard C. Tindemans",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "BEL_M_Tindemans_Leonard_C",
-            "start_date": "1973-01-26",
-            "death_date": "1978-10-20",
-            "type": "administrator_type"
-        },
-        "561": {
-            "name": "Wilfried Martens",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "BEL_M_Martens_Wilfried",
-            "start_date": "1979-04-03",
-            "death_date": "1992-03-07",
-            "type": "reformer_type"
-        },
-        "562": {
-            "name": "Marc M. F. Eyskens",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "BEL_M_Eyskens_Marc_M_F",
-            "start_date": "1981-03-31",
-            "death_date": "1981-12-17",
-            "type": "bureaucrat_type"
-        },
-        "563": {
-            "name": "Jean-Luc Dehaene",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "BEL_M_Dehaene_Jean-Luc",
-            "start_date": "1992-03-07",
-            "death_date": "1999-07-12",
-            "type": "reformer_type"
-        },
-        "564": {
-            "name": "Léon V. P. Hurez",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "BEL_M_Hurez_Leon_V_P",
-            "start_date": "1974-04-25",
-            "death_date": "1978-10-20",
-            "type": "reformer_type"
-        },
-        "565": {
-            "name": "Willem W. H. Claes",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "BEL_M_Claes_Willem_W_H",
-            "start_date": "1978-10-20",
-            "death_date": "1995-05-21",
-            "type": "bureaucrat_type"
-        },
         "566": {
             "name": "Willy C. E. H. De Clercq",
             "ideology": "market_liberal_idolg",
@@ -830,132 +848,6 @@
             "start_date": "1966-03-19",
             "death_date": "1985-11-28",
             "type": "liberal_type"
-        },
-        "567": {
-            "name": "Guy M. M. Verhofstadt",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "BEL_M_Verhofstadt_Guy_M_M",
-            "start_date": "1985-11-28",
-            "death_date": "1999-12-31",
-            "type": "liberal_type"
-        },
-        "568": {
-            "name": "Leon Degrelle",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Degrelle_Leon",
-            "start_date": "1946-03-13",
-            "death_date": "1994-03-31",
-            "type": "extremist_type"
-        },
-        "569": {
-            "name": "Julien Lahaut",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Lahaut_Julien",
-            "start_date": "1944-01-01",
-            "death_date": "1950-08-18",
-            "type": "reformer_type"
-        },
-        "570": {
-            "name": "Ludo Martens",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Martens_Ludo",
-            "start_date": "1968-03-02",
-            "death_date": "2000-01-01",
-            "type": "extremist_type"
-        },
-        "571": {
-            "name": "Rene Beelen",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Beelen_Rene",
-            "start_date": "1954-05-01",
-            "death_date": "1966-02-01",
-            "type": "hardliner_type"
-        },
-        "572": {
-            "name": "Jean-Francois Thiriart",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Thiriart_Jean-Francois",
-            "start_date": "1944-01-01",
-            "death_date": "1992-11-23",
-            "type": "controversial_figure"
-        },
-        "573": {
-            "name": "Guy Spitaels",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Spitaels_Guy",
-            "start_date": "1977-01-31",
-            "death_date": "1994-01-25",
-            "type": "reformer_type"
-        },
-        "574": {
-            "name": "Fernand Dehousse",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Dehousse_Fernand",
-            "start_date": "1906-06-03",
-            "death_date": "1976-08-10",
-            "type": "reformer_type"
-        },
-        "575": {
-            "name": "Herman Achille von Rompuy",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Rompuy_Herman_A",
-            "start_date": "1947-10-13",
-            "death_date": "2013-07-08",
-            "type": "reformer_type"
-        },
-        "576": {
-            "name": "André Cools",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Cools_Andre",
-            "start_date": "1968-01-01",
-            "death_date": "1991-08-11",
-            "type": "controversial_figure"
-        },
-        "577": {
-            "name": "Philippe Busquin",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Busquin_Philippe",
-            "start_date": "1980-01-01",
-            "death_date": "1999-01-01",
-            "type": "visionary_type"
-        },
-        "578": {
-            "name": "Karel Van Miert",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_van_Miert_Karel",
-            "start_date": "1978-01-01",
-            "death_date": "1989-01-01",
-            "type": "administrator_type"
-        },
-        "579": {
-            "name": "Frank Vandenbroucke",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Vandenbroucke_Frank",
-            "start_date": "1978-01-01",
-            "death_date": "1989-01-01",
-            "type": "ambitious_type"
-        },
-        "580": {
-            "name": "Norbert Hougardy",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Hougardy_Norbert",
-            "start_date": "1964-01-01",
-            "death_date": "1969-01-01",
-            "type": "courageous_type"
         },
         "581": {
             "name": "Milou Jeunehomme",
@@ -966,6 +858,33 @@
             "death_date": "1973-01-01",
             "type": "honest_type"
         },
+        "576": {
+            "name": "André Cools",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Cools_Andre",
+            "start_date": "1968-01-01",
+            "death_date": "1991-08-11",
+            "type": "controversial_figure"
+        },
+        "570": {
+            "name": "Ludo Martens",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Martens_Ludo",
+            "start_date": "1968-03-02",
+            "death_date": "2000-01-01",
+            "type": "extremist_type"
+        },
+        "594": {
+            "name": "Marc Drumaux",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Drumaux_Marc",
+            "start_date": "1968-08-06",
+            "death_date": "1972-11-15",
+            "type": "visionary_type"
+        },
         "582": {
             "name": "Pierre Descamps",
             "ideology": "market_liberal_idolg",
@@ -974,6 +893,24 @@
             "start_date": "1969-01-01",
             "death_date": "1972-01-01",
             "type": "bureaucrat_type"
+        },
+        "592": {
+            "name": "Jos Van Eynde",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Van_Eynde_Jos",
+            "start_date": "1971-01-01",
+            "death_date": "1975-01-01",
+            "type": "visionary_type"
+        },
+        "595": {
+            "name": "Louis Van Geyt",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Van_Geyt_Louis",
+            "start_date": "1972-11-16",
+            "death_date": "1989-11-01",
+            "type": "traditionalist_type"
         },
         "583": {
             "name": "Frans Grootjans",
@@ -984,15 +921,6 @@
             "death_date": "1982-01-01",
             "type": "liberal_type"
         },
-        "584": {
-            "name": "Annemie Neyts-Uyttebroeck",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Neyts-Uyttebroeck_Annemie",
-            "start_date": "1985-01-01",
-            "death_date": "1989-01-01",
-            "type": "visionary_type"
-        },
         "585": {
             "name": "André Damseaux",
             "ideology": "market_liberal_idolg",
@@ -1001,6 +929,69 @@
             "start_date": "1973-01-01",
             "death_date": "1982-10-25",
             "type": "liberal_type"
+        },
+        "560": {
+            "name": "Leonard C. Tindemans",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BEL_M_Tindemans_Leonard_C",
+            "start_date": "1973-01-26",
+            "death_date": "1978-10-20",
+            "type": "administrator_type"
+        },
+        "564": {
+            "name": "Léon V. P. Hurez",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "BEL_M_Hurez_Leon_V_P",
+            "start_date": "1974-04-25",
+            "death_date": "1978-10-20",
+            "type": "reformer_type"
+        },
+        "578": {
+            "name": "Karel Van Miert",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_van_Miert_Karel",
+            "start_date": "1976-01-01",
+            "death_date": "1989-01-01",
+            "type": "administrator_type"
+        },
+        "573": {
+            "name": "Guy Spitaels",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Spitaels_Guy",
+            "start_date": "1977-01-31",
+            "death_date": "1994-01-25",
+            "type": "reformer_type"
+        },
+        "579": {
+            "name": "Frank Vandenbroucke",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Vandenbroucke_Frank",
+            "start_date": "1978-01-01",
+            "death_date": "1994-01-01",
+            "type": "ambitious_type"
+        },
+        "542": {
+            "name": "Philippe",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "BEL_M_Philippe",
+            "start_date": "1978-04-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "565": {
+            "name": "Willem W. H. Claes",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "BEL_M_Claes_Willem_W_H",
+            "start_date": "1978-10-20",
+            "death_date": "1995-05-21",
+            "type": "bureaucrat_type"
         },
         "586": {
             "name": "Jean Gol",
@@ -1011,6 +1002,42 @@
             "death_date": "1995-01-01",
             "type": "visionary_type"
         },
+        "561": {
+            "name": "Wilfried Martens",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "BEL_M_Martens_Wilfried",
+            "start_date": "1979-04-03",
+            "death_date": "1992-03-07",
+            "type": "reformer_type"
+        },
+        "577": {
+            "name": "Philippe Busquin",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Busquin_Philippe",
+            "start_date": "1980-01-01",
+            "death_date": "1999-01-01",
+            "type": "visionary_type"
+        },
+        "562": {
+            "name": "Marc M. F. Eyskens",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BEL_M_Eyskens_Marc_M_F",
+            "start_date": "1981-03-31",
+            "death_date": "1981-12-17",
+            "type": "bureaucrat_type"
+        },
+        "543": {
+            "name": "Laurent",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "BEL_M_Laurent",
+            "start_date": "1981-10-19",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
         "587": {
             "name": "Louis Michel",
             "ideology": "market_liberal_idolg",
@@ -1019,6 +1046,24 @@
             "start_date": "1982-01-01",
             "death_date": "1999-01-01",
             "type": "courteous_figure"
+        },
+        "584": {
+            "name": "Annemie Neyts-Uyttebroeck",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "BEL_M_Neyts-Uyttebroeck_Annemie",
+            "start_date": "1985-01-01",
+            "death_date": "1989-01-01",
+            "type": "visionary_type"
+        },
+        "567": {
+            "name": "Guy M. M. Verhofstadt",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "BEL_M_Verhofstadt_Guy_M_M",
+            "start_date": "1985-11-28",
+            "death_date": "1999-12-31",
+            "type": "liberal_type"
         },
         "588": {
             "name": "Antoine Duquesne",
@@ -1038,59 +1083,14 @@
             "death_date": "2003-01-01",
             "type": "bureaucrat_type"
         },
-        "590": {
-            "name": "Max Buset",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Buset_Max",
-            "start_date": "1945-01-01",
-            "death_date": "1959-01-01",
-            "type": "bureaucrat_type"
-        },
-        "591": {
-            "name": "Leo Collard",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Collard_Leo",
-            "start_date": "1959-01-01",
-            "death_date": "1971-01-01",
+        "563": {
+            "name": "Jean-Luc Dehaene",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BEL_M_Dehaene_Jean-Luc",
+            "start_date": "1992-03-07",
+            "death_date": "1999-07-12",
             "type": "reformer_type"
-        },
-        "592": {
-            "name": "Jos Van Eynde",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Van_Eynde_Jos",
-            "start_date": "1971-01-01",
-            "death_date": "1975-01-01",
-            "type": "visionary_type"
-        },
-        "593": {
-            "name": "Ernest Burnelle",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Burnelle_Ernest",
-            "start_date": "1954-01-01",
-            "death_date": "1968-08-05",
-            "type": "ambitious_type"
-        },
-        "594": {
-            "name": "Marc Drumaux",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Drumaux_Marc",
-            "start_date": "1968-08-06",
-            "death_date": "1972-11-15",
-            "type": "visionary_type"
-        },
-        "595": {
-            "name": "Louis Van Geyt",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "BEL_M_Van_Geyt_Louis",
-            "start_date": "1972-11-16",
-            "death_date": "1989-11-01",
-            "type": "traditionalist_type"
         }
     }
 }

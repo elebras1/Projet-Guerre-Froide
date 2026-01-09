@@ -898,6 +898,42 @@
         ]
     },
     "ministers": {
+        "3588": {
+            "name": "Yan Xishan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1,
+            "picture": "CSX_M_Xishan_Yan",
+            "start_date": "1911-01-01",
+            "death_date": "1960-07-22",
+            "type": "reformer_type"
+        },
+        "5230": {
+            "name": "Hsieh Hsueh-hung",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Hsueh-hung_Hsieh",
+            "start_date": "1925-01-01",
+            "death_date": "1970-01-15",
+            "type": "iron_lady"
+        },
+        "5232": {
+            "name": "Cai Xiaoqian",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Xiaoqian_Cai",
+            "start_date": "1925-01-01",
+            "death_date": "1982-10-01",
+            "type": "ambitious_type"
+        },
+        "3641": {
+            "name": "Chang Chun-mai",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Chun-mai_Chang",
+            "start_date": "1933-01-01",
+            "death_date": "1969-02-23",
+            "type": "reformer_type"
+        },
         "3578": {
             "name": "Chiang Kai-shek",
             "ideology": "paternal_auto_idolg",
@@ -907,41 +943,23 @@
             "death_date": "1975-04-05",
             "type": "autocrat_type"
         },
-        "3579": {
-            "name": "Li Zongren",
+        "3632": {
+            "name": "Liu Chih",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CHI_M_Li_Zongren",
-            "start_date": "1949-01-21",
-            "death_date": "1950-03-01",
-            "type": "dictator_type"
+            "loyalty": 0.5,
+            "picture": "TWN_M_Chih_Liu",
+            "start_date": "1945-01-01",
+            "death_date": "1971-01-01",
+            "type": "loyal_type"
         },
-        "3580": {
-            "name": "Yen Chia-kan",
+        "3635": {
+            "name": "Kung Te-cheng",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CHI_M_Yen_Chia_kan",
-            "start_date": "1975-04-06",
-            "death_date": "1978-05-20",
-            "type": "administrator_type"
-        },
-        "3581": {
-            "name": "Chiang Ching-kuo",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CHI_M_Chiang_Ching_kuo",
-            "start_date": "1978-05-20",
-            "death_date": "1988-01-13",
-            "type": "reformer_type"
-        },
-        "3582": {
-            "name": "Lee Teng-hui",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CHI_M_Lee_Teng_hui",
-            "start_date": "1988-01-13",
-            "death_date": "1996-05-20",
-            "type": "reformer_type"
+            "loyalty": 0.5,
+            "picture": "TWN_M_Te-cheng_Kung",
+            "start_date": "1945-01-01",
+            "death_date": "2008-10-28",
+            "type": "traditionalist_type"
         },
         "5214": {
             "name": "T.V. Soong",
@@ -952,6 +970,60 @@
             "death_date": "1947-03-01",
             "type": "ambitious_type"
         },
+        "5244": {
+            "name": "Chen Cheng-po",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Chengpo_Chen",
+            "start_date": "1946-01-01",
+            "death_date": "1947-03-25",
+            "type": "liberal_type"
+        },
+        "5234": {
+            "name": "Wu Shi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Shi_Wu",
+            "start_date": "1946-01-01",
+            "death_date": "1950-06-10",
+            "type": "ambitious_type"
+        },
+        "5231": {
+            "name": "Lin Hidaka",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Hidaka_Lin",
+            "start_date": "1946-01-01",
+            "death_date": "1955-09-11",
+            "type": "administrator_type"
+        },
+        "3638": {
+            "name": "Hu Shih",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Shih_Hu",
+            "start_date": "1946-01-01",
+            "death_date": "1967-08-16",
+            "type": "reformer_type"
+        },
+        "5235": {
+            "name": "Sun Li-jen",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Li-jen_Sun",
+            "start_date": "1947-01-01",
+            "death_date": "1990-11-19",
+            "type": "courageous_type"
+        },
+        "5245": {
+            "name": "Zhong Yiren",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Yiren_Zhong",
+            "start_date": "1947-02-28",
+            "death_date": "2300-01-01",
+            "type": "bureaucrat_type"
+        },
         "5215": {
             "name": "Chang Ch'ün",
             "ideology": "paternal_auto_idolg",
@@ -960,6 +1032,33 @@
             "start_date": "1947-04-18",
             "death_date": "1948-05-24",
             "type": "reformer_type"
+        },
+        "5226": {
+            "name": "Ju Zheng",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "TWN_M_Zheng_Ju",
+            "start_date": "1948-04-20",
+            "death_date": "1951-11-23",
+            "type": "loyal_type"
+        },
+        "5228": {
+            "name": "Yu Youren",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.6,
+            "picture": "TWN_M_Youren_Yu",
+            "start_date": "1948-04-20",
+            "death_date": "1964-11-10",
+            "type": "traditionalist_type"
+        },
+        "5227": {
+            "name": "Cheng Qian",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.7,
+            "picture": "TWN_M_Qian_Chen",
+            "start_date": "1948-04-20",
+            "death_date": "1968-04-05",
+            "type": "fortunate_type"
         },
         "5216": {
             "name": "Weng Wenhao",
@@ -979,6 +1078,15 @@
             "death_date": "1949-03-12",
             "type": "hardliner_type"
         },
+        "3579": {
+            "name": "Li Zongren",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1,
+            "picture": "CHI_M_Li_Zongren",
+            "start_date": "1949-01-21",
+            "death_date": "1950-03-01",
+            "type": "dictator_type"
+        },
         "5218": {
             "name": "He Yingqin",
             "ideology": "paternal_auto_idolg",
@@ -988,13 +1096,31 @@
             "death_date": "1949-06-03",
             "type": "fortunate_type"
         },
-        "5219": {
-            "name": "Yan Xishan",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CSX_M_Xishan_Yan",
-            "start_date": "1911-01-01",
-            "death_date": "1950-03-07",
+        "3640": {
+            "name": "Yin Haiguang",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Haiguang_Yin",
+            "start_date": "1950-01-01",
+            "death_date": "1969-09-16",
+            "type": "visionary_type"
+        },
+        "3639": {
+            "name": "Lei Chen",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Chen_Lei",
+            "start_date": "1950-01-01",
+            "death_date": "1979-01-01",
+            "type": "democrat_type"
+        },
+        "5239": {
+            "name": "Wu Sanlian",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Sanlian_Wu",
+            "start_date": "1950-02-06",
+            "death_date": "1988-10-29",
             "type": "reformer_type"
         },
         "5220": {
@@ -1015,68 +1141,23 @@
             "death_date": "1958-06-30",
             "type": "bureaucrat_type"
         },
-        "5222": {
-            "name": "Sun Yun-suan",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "TWN_M_Yun-suan_Sun",
-            "start_date": "1978-05-30",
-            "death_date": "1984-05-20",
+        "5240": {
+            "name": "Peng Mingmin",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Mingmin_Peng",
+            "start_date": "1960-01-01",
+            "death_date": "2300-01-01",
+            "type": "bureaucrat_type"
+        },
+        "5243": {
+            "name": "Li Ao",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Ao_Li",
+            "start_date": "1960-01-01",
+            "death_date": "2300-01-01",
             "type": "visionary_type"
-        },
-        "5223": {
-            "name": "Yu Kuo-hwa",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "TWN_M_Kuo-hwa_Yu",
-            "start_date": "1984-05-20",
-            "death_date": "1989-05-21",
-            "type": "reformer_type"
-        },
-        "5224": {
-            "name": "Lee Huan",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "TWN_M_Huan_Lee",
-            "start_date": "1989-05-21",
-            "death_date": "1990-05-30",
-            "type": "traditionalist_type"
-        },
-        "5225": {
-            "name": "Hau Pei-tsun",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "TWN_M_Pei-tsun_Hau",
-            "start_date": "1990-05-30",
-            "death_date": "1993-02-10",
-            "type": "traditionalist_type"
-        },
-        "5226": {
-            "name": "Ju Zheng",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.8,
-            "picture": "TWN_M_Zheng_Ju",
-            "start_date": "1948-04-20",
-            "death_date": "1951-11-23",
-            "type": "loyal_type"
-        },
-        "5227": {
-            "name": "Cheng Qian",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.7,
-            "picture": "TWN_M_Qian_Chen",
-            "start_date": "1948-04-20",
-            "death_date": "1968-04-05",
-            "type": "fortunate_type"
-        },
-        "5228": {
-            "name": "Yu Youren",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.6,
-            "picture": "TWN_M_Youren_Yu",
-            "start_date": "1948-04-20",
-            "death_date": "1964-11-10",
-            "type": "traditionalist_type"
         },
         "5229": {
             "name": "Chiang Peng-chien",
@@ -1087,122 +1168,86 @@
             "death_date": "2000-12-15",
             "type": "reformer_type"
         },
-        "3632": {
-            "name": "Liu Chih",
-            "ideology": "paternal_auto_idolg",
+        "5251": {
+            "name": "Wu Boxiong",
+            "ideology": "social_cons_idolg",
             "loyalty": 0.5,
-            "picture": "TWN_M_Chih_Liu",
-            "start_date": "1945-01-01",
-            "death_date": "1971-01-01",
-            "type": "loyal_type"
+            "picture": "TWN_M_Boxiong_Wu",
+            "start_date": "1968-01-01",
+            "death_date": "2300-01-01",
+            "type": "religious_type"
         },
-        "3635": {
-            "name": "Kung Te-cheng",
-            "ideology": "paternal_auto_idolg",
+        "5247": {
+            "name": "Huang Wenxiong",
+            "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
-            "picture": "TWN_M_Te-cheng_Kung",
-            "start_date": "1945-01-01",
-            "death_date": "2008-10-28",
-            "type": "traditionalist_type"
-        },
-        "5230": {
-            "name": "Hsieh Hsueh-hung",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Hsueh-hung_Hsieh",
-            "start_date": "1925-01-01",
-            "death_date": "1970-01-15",
-            "type": "iron_lady"
-        },
-        "5231": {
-            "name": "Lin Hidaka",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Hidaka_Lin",
-            "start_date": "1946-01-01",
-            "death_date": "1955-09-11",
+            "picture": "TWN_M_Wenxiong_Huang",
+            "start_date": "1970-04-01",
+            "death_date": "2300-01-01",
             "type": "administrator_type"
         },
-        "5232": {
-            "name": "Cai Xiaoqian",
-            "ideology": "maoist_idolg",
+        "5252": {
+            "name": "Wu Dunyi",
+            "ideology": "social_cons_idolg",
             "loyalty": 0.5,
-            "picture": "TWN_M_Xiaoqian_Cai",
-            "start_date": "1925-01-01",
-            "death_date": "1950-03-01",
+            "picture": "TWN_M_Dunyi_Wu",
+            "start_date": "1973-01-01",
+            "death_date": "2300-01-01",
             "type": "ambitious_type"
         },
-        "5233": {
-            "name": "Cai Xiaoqian",
+        "3580": {
+            "name": "Yen Chia-kan",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Xiaoqian_Cai",
-            "start_date": "1950-03-01",
-            "death_date": "1982-10-01",
-            "type": "controversial_figure"
+            "loyalty": 1,
+            "picture": "CHI_M_Yen_Chia_kan",
+            "start_date": "1975-04-06",
+            "death_date": "1978-05-20",
+            "type": "administrator_type"
         },
-        "5234": {
-            "name": "Wu Shi",
+        "3581": {
+            "name": "Chiang Ching-kuo",
             "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Shi_Wu",
-            "start_date": "1946-01-01",
-            "death_date": "1950-06-10",
-            "type": "ambitious_type"
-        },
-        "3638": {
-            "name": "Hu Shih",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Shih_Hu",
-            "start_date": "1946-01-01",
-            "death_date": "1967-08-16",
+            "loyalty": 1,
+            "picture": "CHI_M_Chiang_Ching_kuo",
+            "start_date": "1978-05-20",
+            "death_date": "1988-01-13",
             "type": "reformer_type"
         },
-        "3639": {
-            "name": "Lei Chen",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Chen_Lei",
-            "start_date": "1950-01-01",
-            "death_date": "1979-01-01",
-            "type": "democrat_type"
-        },
-        "3640": {
-            "name": "Yin Haiguang",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Haiguang_Yin",
-            "start_date": "1950-01-01",
-            "death_date": "1969-09-16",
+        "5222": {
+            "name": "Sun Yun-suan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "TWN_M_Yun-suan_Sun",
+            "start_date": "1978-05-30",
+            "death_date": "1984-05-20",
             "type": "visionary_type"
         },
-        "3641": {
-            "name": "Chang Chun-mai",
+        "5242": {
+            "name": "Song Chuyu",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Chuyu_Song",
+            "start_date": "1979-01-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "5250": {
+            "name": "Huang Dazhou",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "TWN_M_Dazhou_Huang",
+            "start_date": "1979-01-01",
+            "death_date": "2300-01-01",
+            "type": "loyal_type"
+        },
+        "5253": {
+            "name": "Huang Zhuwen",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.5,
-            "picture": "TWN_M_Chun-mai_Chang",
-            "start_date": "1933-01-01",
-            "death_date": "1969-02-23",
-            "type": "reformer_type"
-        },
-        "3642": {
-            "name": "Wang Zhongquan",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Zhongquan_Wang",
-            "start_date": "1987-11-21",
-            "death_date": "2013-03-19",
-            "type": "extremist_type"
-        },
-        "5235": {
-            "name": "Sun Li-jen",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Li-jen_Sun",
-            "start_date": "1947-01-01",
-            "death_date": "1990-11-19",
-            "type": "courageous_type"
+            "picture": "TWN_M_Zhuwen_Huang",
+            "start_date": "1979-01-01",
+            "death_date": "2300-01-01",
+            "type": "bureaucrat_type"
         },
         "5236": {
             "name": "Chen Shuibian",
@@ -1231,24 +1276,6 @@
             "death_date": "2300-01-01",
             "type": "iron_lady"
         },
-        "5239": {
-            "name": "Wu Sanlian",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Sanlian_Wu",
-            "start_date": "1950-02-06",
-            "death_date": "1988-10-29",
-            "type": "reformer_type"
-        },
-        "5240": {
-            "name": "Peng Mingmin",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Mingmin_Peng",
-            "start_date": "1960-01-01",
-            "death_date": "2300-01-01",
-            "type": "bureaucrat_type"
-        },
         "5241": {
             "name": "Huang Kunhui",
             "ideology": "social_democrat_idolg",
@@ -1258,57 +1285,12 @@
             "death_date": "2300-01-01",
             "type": "administrator_type"
         },
-        "5242": {
-            "name": "Song Chuyu",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Chuyu_Song",
-            "start_date": "1979-01-01",
-            "death_date": "2300-01-01",
-            "type": "administrator_type"
-        },
-        "5243": {
-            "name": "Li Ao",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Ao_Li",
-            "start_date": "1960-01-01",
-            "death_date": "2300-01-01",
-            "type": "visionary_type"
-        },
-        "5244": {
-            "name": "Chen Cheng-po",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Chengpo_Chen",
-            "start_date": "1946-01-01",
-            "death_date": "1947-03-25",
-            "type": "liberal_type"
-        },
-        "5245": {
-            "name": "Zhong Yiren",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Yiren_Zhong",
-            "start_date": "1947-02-28",
-            "death_date": "2300-01-01",
-            "type": "bureaucrat_type"
-        },
         "5246": {
             "name": "Xie Changting",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "TWN_M_Changting_Xie",
             "start_date": "1981-01-01",
-            "death_date": "2300-01-01",
-            "type": "administrator_type"
-        },
-        "5247": {
-            "name": "Huang Wenxiong",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Wenxiong_Huang",
-            "start_date": "1970-04-01",
             "death_date": "2300-01-01",
             "type": "administrator_type"
         },
@@ -1330,41 +1312,50 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "5250": {
-            "name": "Huang Dazhou",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Dazhou_Huang",
-            "start_date": "1979-01-01",
-            "death_date": "2300-01-01",
-            "type": "loyal_type"
+        "5223": {
+            "name": "Yu Kuo-hwa",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "TWN_M_Kuo-hwa_Yu",
+            "start_date": "1984-05-20",
+            "death_date": "1989-05-21",
+            "type": "reformer_type"
         },
-        "5251": {
-            "name": "Wu Boxiong",
-            "ideology": "social_cons_idolg",
+        "3642": {
+            "name": "Wang Zhongquan",
+            "ideology": "fascistic_idolg",
             "loyalty": 0.5,
-            "picture": "TWN_M_Boxiong_Wu",
-            "start_date": "1968-01-01",
-            "death_date": "2300-01-01",
-            "type": "religious_type"
+            "picture": "TWN_M_Zhongquan_Wang",
+            "start_date": "1987-11-21",
+            "death_date": "2013-03-19",
+            "type": "extremist_type"
         },
-        "5252": {
-            "name": "Wu Dunyi",
+        "3582": {
+            "name": "Lee Teng-hui",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Dunyi_Wu",
-            "start_date": "1973-01-01",
-            "death_date": "2300-01-01",
-            "type": "ambitious_type"
+            "loyalty": 1,
+            "picture": "CHI_M_Lee_Teng_hui",
+            "start_date": "1988-01-13",
+            "death_date": "1996-05-20",
+            "type": "reformer_type"
         },
-        "5253": {
-            "name": "Huang Zhuwen",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "TWN_M_Zhuwen_Huang",
-            "start_date": "1979-01-01",
-            "death_date": "2300-01-01",
-            "type": "bureaucrat_type"
+        "5224": {
+            "name": "Lee Huan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "TWN_M_Huan_Lee",
+            "start_date": "1989-05-21",
+            "death_date": "1990-05-30",
+            "type": "traditionalist_type"
+        },
+        "5225": {
+            "name": "Hau Pei-tsun",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "TWN_M_Pei-tsun_Hau",
+            "start_date": "1990-05-30",
+            "death_date": "1993-02-10",
+            "type": "traditionalist_type"
         }
     }
 }

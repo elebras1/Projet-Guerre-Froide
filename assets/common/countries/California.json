@@ -1105,285 +1105,6 @@
         ]
     },
     "ministers": {
-        "829": {
-            "name": "Earl Warren",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Warren_Earl",
-            "start_date": "1943-01-04",
-            "death_date": "1954-11-02",
-            "type": "moral_type"
-        },
-        "830": {
-            "name": "Goodwin Jess Knight",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Knight_Goodwin_J",
-            "start_date": "1954-11-02",
-            "death_date": "1958-11-04",
-            "type": "liberal_type"
-        },
-        "831": {
-            "name": "William F. Knowland",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Knowland_William_F",
-            "start_date": "1958-11-04",
-            "death_date": "1962-11-06",
-            "type": "reputable_type"
-        },
-        "832": {
-            "name": "Richard M. Nixon",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Nixon_Richard_M_a",
-            "start_date": "1962-11-06",
-            "death_date": "1966-11-08",
-            "type": "administrator_type"
-        },
-        "833": {
-            "name": "Ronald W. Reagan",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "USA_M_Reagan_Ronald_W",
-            "start_date": "1966-11-08",
-            "death_date": "1974-11-05",
-            "type": "hardliner_type"
-        },
-        "834": {
-            "name": "Houston I. Flournoy",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Flournoy_Houston_I",
-            "start_date": "1974-11-05",
-            "death_date": "1982-11-02",
-            "type": "liberal_type"
-        },
-        "835": {
-            "name": "Evelle J. Younger",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Younger_Evelle_J",
-            "start_date": "1978-11-07",
-            "death_date": "1982-11-02",
-            "type": "reputable_type"
-        },
-        "836": {
-            "name": "George Deukmejian",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Deukmejian_George",
-            "start_date": "1982-11-02",
-            "death_date": "1990-11-06",
-            "type": "hardliner_type"
-        },
-        "837": {
-            "name": "Pete Wilson",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Wilson_Pete",
-            "start_date": "1990-11-06",
-            "death_date": "1998-11-03",
-            "type": "traditionalist_type"
-        },
-        "838": {
-            "name": "James Roosevelt",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Roosevelt_James",
-            "start_date": "1946-01-01",
-            "death_date": "1954-11-02",
-            "type": "administrator_type"
-        },
-        "839": {
-            "name": "Richard P. Graves",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Graves_Richard_P",
-            "start_date": "1954-11-02",
-            "death_date": "1958-11-04",
-            "type": "traditionalist_type"
-        },
-        "840": {
-            "name": "Edmund Gerald Brown, Sr.",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Brown_Sr_Edmund_G",
-            "start_date": "1958-11-04",
-            "death_date": "1970-11-03",
-            "type": "visionary_type"
-        },
-        "841": {
-            "name": "Jesse M. Unruh",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Unruh_Jesse_M",
-            "start_date": "1970-11-03",
-            "death_date": "1974-11-05",
-            "type": "ambitious_type"
-        },
-        "842": {
-            "name": "Edmund Gerald Brown, Jr.",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Brown_Jr_Edmund_G",
-            "start_date": "1974-11-05",
-            "death_date": "1982-11-02",
-            "type": "visionary_type"
-        },
-        "843": {
-            "name": "Tom Bradley",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Bradley_Tom",
-            "start_date": "1982-11-02",
-            "death_date": "1990-11-06",
-            "type": "traditionalist_type"
-        },
-        "844": {
-            "name": "Dianne Feinstein",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Feinstein_Dianne",
-            "start_date": "1990-11-06",
-            "death_date": "1994-11-08",
-            "type": "iron_lady"
-        },
-        "845": {
-            "name": "William K. Shearer",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.95,
-            "picture": "CAL_M_Shearer_William_K",
-            "start_date": "1970-11-03",
-            "death_date": "1974-11-05",
-            "type": "visionary_type"
-        },
-        "846": {
-            "name": "Edmon V. Kaiser",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.95,
-            "picture": "CAL_M_Kaiser_Edmon_V",
-            "start_date": "1970-11-03",
-            "death_date": "2000-11-07",
-            "type": "parental_type"
-        },
-        "847": {
-            "name": "Theresa F. Dietrich",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.95,
-            "picture": "CAL_M_Dietrich_Theresa_F",
-            "start_date": "1970-11-03",
-            "death_date": "1982-11-02",
-            "type": "iron_lady"
-        },
-        "848": {
-            "name": "James C. Griffin",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.95,
-            "picture": "CAL_M_Griffin_James_C",
-            "start_date": "1968-11-05",
-            "death_date": "1986-11-04",
-            "type": "hardliner_type"
-        },
-        "849": {
-            "name": "Gary V. Miller",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.96,
-            "picture": "CAL_M_Miller_Gary_V",
-            "start_date": "1986-11-04",
-            "death_date": "1994-11-08",
-            "type": "bureaucrat_type"
-        },
-        "850": {
-            "name": "Jerome N. McCready",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_McCready_Jerome_N",
-            "start_date": "1990-11-06",
-            "death_date": "1994-11-08",
-            "type": "parental_type"
-        },
-        "851": {
-            "name": "Dan P. Dougherty",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.8,
-            "picture": "CAL_M_Dougherty_Dan_P",
-            "start_date": "1980-11-04",
-            "death_date": "1986-11-04",
-            "type": "administrator_type"
-        },
-        "852": {
-            "name": "Joseph Fuhrig",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.8,
-            "picture": "CAL_M_Fuhrig_Joseph",
-            "start_date": "1980-11-04",
-            "death_date": "1990-11-06",
-            "type": "reputable_type"
-        },
-        "853": {
-            "name": "Dennis Thompson",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.8,
-            "picture": "CAL_M_Thompson_Dennis",
-            "start_date": "1990-11-06",
-            "death_date": "1994-11-08",
-            "type": "traditionalist_type"
-        },
-        "854": {
-            "name": "Ed Clark",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.8,
-            "picture": "CAL_M_Clark_Ed",
-            "start_date": "1980-11-04",
-            "death_date": "1984-11-06",
-            "type": "administrator_type"
-        },
-        "855": {
-            "name": "Ricardo Romo",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Romo_Ricardo",
-            "start_date": "1970-11-03",
-            "death_date": "1974-11-05",
-            "type": "bureaucrat_type"
-        },
-        "856": {
-            "name": "Elizabeth Keathley",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Keathley_Elizabeth",
-            "start_date": "1974-11-05",
-            "death_date": "1978-11-07",
-            "type": "administrator_type"
-        },
-        "857": {
-            "name": "Marilyn Seals",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Seals_Marilyn",
-            "start_date": "1974-11-05",
-            "death_date": "1982-11-02",
-            "type": "liberal_type"
-        },
-        "858": {
-            "name": "Elizabeth Martinez",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Martinez_Elizabeth",
-            "start_date": "1982-11-02",
-            "death_date": "1986-11-04",
-            "type": "ambitious_type"
-        },
-        "859": {
-            "name": "Maria Elizabeth Munoz",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "CAL_M_Munoz_Maria_E",
-            "start_date": "1986-11-04",
-            "death_date": "1994-11-08",
-            "type": "reformer_type"
-        },
         "860": {
             "name": "Dorothy Ray Healey",
             "ideology": "left_wing_radical_idolg",
@@ -1400,42 +1121,6 @@
             "picture": "CAL_M_Kusnitz_Rose_C",
             "start_date": "1934-01-01",
             "death_date": "1975-09-08",
-            "type": "ambitious_type"
-        },
-        "862": {
-            "name": "Loretta Starvus Stack",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.91,
-            "picture": "CAL_M_Stack_Loretta_S",
-            "start_date": "1950-01-01",
-            "death_date": "1991-02-17",
-            "type": "visionary_type"
-        },
-        "863": {
-            "name": "Nicholas F. Benton",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.92,
-            "picture": "CAL_M_Benton_Nicholas_F",
-            "start_date": "1974-01-01",
-            "death_date": "2300-01-01",
-            "type": "religious_type"
-        },
-        "864": {
-            "name": "James P. Cannon",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.9,
-            "picture": "CAL_M_Cannon_James_P",
-            "start_date": "1953-01-01",
-            "death_date": "1974-08-21",
-            "type": "reformer_type"
-        },
-        "865": {
-            "name": "Melvin T. Mason",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.9,
-            "picture": "CAL_M_Mason_Melvin_T",
-            "start_date": "1978-01-01",
-            "death_date": "2300-01-01",
             "type": "ambitious_type"
         },
         "866": {
@@ -1456,6 +1141,24 @@
             "death_date": "1964-01-01",
             "type": "traditionalist_type"
         },
+        "829": {
+            "name": "Earl Warren",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Warren_Earl",
+            "start_date": "1943-01-04",
+            "death_date": "1954-11-02",
+            "type": "moral_type"
+        },
+        "838": {
+            "name": "James Roosevelt",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Roosevelt_James",
+            "start_date": "1946-01-01",
+            "death_date": "1954-11-02",
+            "type": "administrator_type"
+        },
         "868": {
             "name": "Archie Brown",
             "ideology": "communist_idolg",
@@ -1465,6 +1168,15 @@
             "death_date": "1988-01-01",
             "type": "hardliner_type"
         },
+        "862": {
+            "name": "Loretta Starvus Stack",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.91,
+            "picture": "CAL_M_Stack_Loretta_S",
+            "start_date": "1950-01-01",
+            "death_date": "1991-02-17",
+            "type": "visionary_type"
+        },
         "869": {
             "name": "Al Richmond",
             "ideology": "communist_idolg",
@@ -1473,6 +1185,51 @@
             "start_date": "1951-01-01",
             "death_date": "1987-11-06",
             "type": "democrat_type"
+        },
+        "864": {
+            "name": "James P. Cannon",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.9,
+            "picture": "CAL_M_Cannon_James_P",
+            "start_date": "1953-01-01",
+            "death_date": "1974-08-21",
+            "type": "reformer_type"
+        },
+        "830": {
+            "name": "Goodwin Jess Knight",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Knight_Goodwin_J",
+            "start_date": "1954-11-02",
+            "death_date": "1958-11-04",
+            "type": "liberal_type"
+        },
+        "839": {
+            "name": "Richard P. Graves",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Graves_Richard_P",
+            "start_date": "1954-11-02",
+            "death_date": "1958-11-04",
+            "type": "traditionalist_type"
+        },
+        "831": {
+            "name": "William F. Knowland",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Knowland_William_F",
+            "start_date": "1958-11-04",
+            "death_date": "1962-11-06",
+            "type": "reputable_type"
+        },
+        "840": {
+            "name": "Edmund Gerald Brown, Sr.",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Brown_Sr_Edmund_G",
+            "start_date": "1958-11-04",
+            "death_date": "1970-11-03",
+            "type": "visionary_type"
         },
         "870": {
             "name": "Angela Davis",
@@ -1490,7 +1247,250 @@
             "picture": "CAL_M_Ware_Jonathan",
             "start_date": "1960-01-01",
             "death_date": "2300-01-01",
-            "type": "supreme_leader"
+            "type": "dictator_type"
+        },
+        "832": {
+            "name": "Richard M. Nixon",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Nixon_Richard_M_a",
+            "start_date": "1962-11-06",
+            "death_date": "1966-11-08",
+            "type": "administrator_type"
+        },
+        "848": {
+            "name": "James C. Griffin",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.95,
+            "picture": "CAL_M_Griffin_James_C",
+            "start_date": "1968-11-05",
+            "death_date": "1986-11-04",
+            "type": "hardliner_type"
+        },
+        "841": {
+            "name": "Jesse M. Unruh",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Unruh_Jesse_M",
+            "start_date": "1970-11-03",
+            "death_date": "1974-11-05",
+            "type": "ambitious_type"
+        },
+        "845": {
+            "name": "William K. Shearer",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.95,
+            "picture": "CAL_M_Shearer_William_K",
+            "start_date": "1970-11-03",
+            "death_date": "1974-11-05",
+            "type": "visionary_type"
+        },
+        "855": {
+            "name": "Ricardo Romo",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Romo_Ricardo",
+            "start_date": "1970-11-03",
+            "death_date": "1974-11-05",
+            "type": "bureaucrat_type"
+        },
+        "847": {
+            "name": "Theresa F. Dietrich",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.95,
+            "picture": "CAL_M_Dietrich_Theresa_F",
+            "start_date": "1970-11-03",
+            "death_date": "1982-11-02",
+            "type": "iron_lady"
+        },
+        "846": {
+            "name": "Edmon V. Kaiser",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.95,
+            "picture": "CAL_M_Kaiser_Edmon_V",
+            "start_date": "1970-11-03",
+            "death_date": "2000-11-07",
+            "type": "parental_type"
+        },
+        "863": {
+            "name": "Nicholas F. Benton",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.92,
+            "picture": "CAL_M_Benton_Nicholas_F",
+            "start_date": "1974-01-01",
+            "death_date": "2300-01-01",
+            "type": "religious_type"
+        },
+        "856": {
+            "name": "Elizabeth Keathley",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Keathley_Elizabeth",
+            "start_date": "1974-11-05",
+            "death_date": "1978-11-07",
+            "type": "administrator_type"
+        },
+        "834": {
+            "name": "Houston I. Flournoy",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Flournoy_Houston_I",
+            "start_date": "1974-11-05",
+            "death_date": "1982-11-02",
+            "type": "liberal_type"
+        },
+        "842": {
+            "name": "Edmund Gerald Brown, Jr.",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Brown_Jr_Edmund_G",
+            "start_date": "1974-11-05",
+            "death_date": "1982-11-02",
+            "type": "visionary_type"
+        },
+        "857": {
+            "name": "Marilyn Seals",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Seals_Marilyn",
+            "start_date": "1974-11-05",
+            "death_date": "1982-11-02",
+            "type": "liberal_type"
+        },
+        "865": {
+            "name": "Melvin T. Mason",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.9,
+            "picture": "CAL_M_Mason_Melvin_T",
+            "start_date": "1978-01-01",
+            "death_date": "2300-01-01",
+            "type": "ambitious_type"
+        },
+        "835": {
+            "name": "Evelle J. Younger",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Younger_Evelle_J",
+            "start_date": "1978-11-07",
+            "death_date": "1982-11-02",
+            "type": "reputable_type"
+        },
+        "854": {
+            "name": "Ed Clark",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "CAL_M_Clark_Ed",
+            "start_date": "1980-11-04",
+            "death_date": "1984-11-06",
+            "type": "administrator_type"
+        },
+        "851": {
+            "name": "Dan P. Dougherty",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "CAL_M_Dougherty_Dan_P",
+            "start_date": "1980-11-04",
+            "death_date": "1986-11-04",
+            "type": "administrator_type"
+        },
+        "852": {
+            "name": "Joseph Fuhrig",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "CAL_M_Fuhrig_Joseph",
+            "start_date": "1980-11-04",
+            "death_date": "1990-11-06",
+            "type": "reputable_type"
+        },
+        "2207": {
+            "name": "Ronald W. Reagan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "USA_M_Reagan_Ronald_W",
+            "start_date": "1981-01-21",
+            "death_date": "1989-01-20",
+            "type": "hardliner_type"
+        },
+        "858": {
+            "name": "Elizabeth Martinez",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Martinez_Elizabeth",
+            "start_date": "1982-11-02",
+            "death_date": "1986-11-04",
+            "type": "ambitious_type"
+        },
+        "836": {
+            "name": "George Deukmejian",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Deukmejian_George",
+            "start_date": "1982-11-02",
+            "death_date": "1990-11-06",
+            "type": "hardliner_type"
+        },
+        "843": {
+            "name": "Tom Bradley",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Bradley_Tom",
+            "start_date": "1982-11-02",
+            "death_date": "1990-11-06",
+            "type": "traditionalist_type"
+        },
+        "849": {
+            "name": "Gary V. Miller",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.96,
+            "picture": "CAL_M_Miller_Gary_V",
+            "start_date": "1986-11-04",
+            "death_date": "1994-11-08",
+            "type": "bureaucrat_type"
+        },
+        "859": {
+            "name": "Maria Elizabeth Munoz",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Munoz_Maria_E",
+            "start_date": "1986-11-04",
+            "death_date": "1994-11-08",
+            "type": "reformer_type"
+        },
+        "844": {
+            "name": "Dianne Feinstein",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Feinstein_Dianne",
+            "start_date": "1990-11-06",
+            "death_date": "1994-11-08",
+            "type": "iron_lady"
+        },
+        "850": {
+            "name": "Jerome N. McCready",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_McCready_Jerome_N",
+            "start_date": "1990-11-06",
+            "death_date": "1994-11-08",
+            "type": "parental_type"
+        },
+        "853": {
+            "name": "Dennis Thompson",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.8,
+            "picture": "CAL_M_Thompson_Dennis",
+            "start_date": "1990-11-06",
+            "death_date": "1994-11-08",
+            "type": "traditionalist_type"
+        },
+        "837": {
+            "name": "Pete Wilson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CAL_M_Wilson_Pete",
+            "start_date": "1990-11-06",
+            "death_date": "1998-11-03",
+            "type": "traditionalist_type"
         }
     }
 }

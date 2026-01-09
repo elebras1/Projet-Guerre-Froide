@@ -72,6 +72,15 @@
     },
     "unit_names": "",
     "ministers": {
+        "354": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
         "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
@@ -80,6 +89,24 @@
             "start_date": "1936-09-11",
             "death_date": "1952-02-06",
             "type": "parental_type"
+        },
+        "1861": {
+            "name": "Sir Geoffrey Miles Clifford",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.8,
+            "picture": "FKL_M_Clifford_Geoffrey_M",
+            "start_date": "1946-01-01",
+            "death_date": "1954-01-01",
+            "type": "administrator_type"
+        },
+        "351": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
         },
         "212": {
             "name": "Elizabeth II",
@@ -90,42 +117,6 @@
             "death_date": "2300-05-12",
             "type": "traditionalist_type"
         },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
         "348": {
             "name": "Margaret I",
             "ideology": "social_cons_idolg",
@@ -135,32 +126,32 @@
             "death_date": "2002-02-09",
             "type": "controversial_figure"
         },
-        "349": {
-            "name": "David III",
+        "1862": {
+            "name": "Sir Oswald Raynor Arthur",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
+            "loyalty": 0.8,
+            "picture": "FKL_M_Arthur_Oswald_R",
+            "start_date": "1954-01-01",
+            "death_date": "1957-01-01",
+            "type": "bureaucrat_type"
         },
-        "350": {
-            "name": "Sarah I",
+        "355": {
+            "name": "Albert I von Bayern",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
         },
-        "351": {
-            "name": "Henry IX",
+        "1863": {
+            "name": "Sir Edwin Porter Arrowsmith",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
+            "loyalty": 0.8,
+            "picture": "FKL_M_Arrowsmith_Edwin_P",
+            "start_date": "1957-01-01",
+            "death_date": "1964-01-01",
+            "type": "honest_type"
         },
         "352": {
             "name": "William V",
@@ -180,51 +171,6 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "354": {
-            "name": "Robert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Robert_I_Bayern",
-            "start_date": "1919-02-03",
-            "death_date": "1955-08-02",
-            "type": "traditionalist_type"
-        },
-        "355": {
-            "name": "Albert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
-        },
-        "1861": {
-            "name": "Sir Geoffrey Miles Clifford",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.8,
-            "picture": "FKL_M_Clifford_Geoffrey_M",
-            "start_date": "1946-01-01",
-            "death_date": "1954-01-01",
-            "type": "administrator_type"
-        },
-        "1862": {
-            "name": "Sir Oswald Raynor Arthur",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.8,
-            "picture": "FKL_M_Arthur_Oswald_R",
-            "start_date": "1954-01-01",
-            "death_date": "1957-01-01",
-            "type": "bureaucrat_type"
-        },
-        "1863": {
-            "name": "Sir Edwin Porter Arrowsmith",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.8,
-            "picture": "FKL_M_Arrowsmith_Edwin_P",
-            "start_date": "1957-01-01",
-            "death_date": "1964-01-01",
-            "type": "honest_type"
-        },
         "1864": {
             "name": "Sir Cosmo D. P. T. Haskard",
             "ideology": "social_cons_idolg",
@@ -233,6 +179,24 @@
             "start_date": "1964-01-01",
             "death_date": "1970-01-01",
             "type": "loyal_type"
+        },
+        "344": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "347": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "1865": {
             "name": "Sir Ernest Gordon Lewis",
@@ -261,6 +225,24 @@
             "death_date": "1980-01-01",
             "type": "bureaucrat_type"
         },
+        "345": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "349": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
         "1868": {
             "name": "Sir Rex Masterman Hunt",
             "ideology": "social_cons_idolg",
@@ -270,23 +252,14 @@
             "death_date": "1985-10-16",
             "type": "reputable_type"
         },
-        "1869": {
-            "name": "Gordon Wesley Jewkes",
+        "346": {
+            "name": "Edward IX",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.8,
-            "picture": "FKL_M_Jewkes_Gordon_W",
-            "start_date": "1985-10-16",
-            "death_date": "1988-01-01",
-            "type": "bureaucrat_type"
-        },
-        "1870": {
-            "name": "William Hugh Fullerton",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.8,
-            "picture": "FKL_M_Fullerton_William",
-            "start_date": "1988-01-01",
-            "death_date": "1992-01-01",
-            "type": "administrator_type"
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
         },
         "1871": {
             "name": "Oswaldo Jorge Garcia",
@@ -306,6 +279,15 @@
             "death_date": "1982-06-14",
             "type": "parental_type"
         },
+        "350": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
         "1873": {
             "name": "Sir Jeremy Moore",
             "ideology": "social_cons_idolg",
@@ -324,6 +306,15 @@
             "death_date": "1989-04-01",
             "type": "ambitious_type"
         },
+        "1869": {
+            "name": "Gordon Wesley Jewkes",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.8,
+            "picture": "FKL_M_Jewkes_Gordon_W",
+            "start_date": "1985-10-16",
+            "death_date": "1988-01-01",
+            "type": "bureaucrat_type"
+        },
         "1875": {
             "name": "Brian Cummings",
             "ideology": "social_cons_idolg",
@@ -332,6 +323,15 @@
             "start_date": "1987-04-01",
             "death_date": "1988-05-01",
             "type": "reputable_type"
+        },
+        "1870": {
+            "name": "William Hugh Fullerton",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.8,
+            "picture": "FKL_M_Fullerton_William",
+            "start_date": "1988-01-01",
+            "death_date": "1992-01-01",
+            "type": "administrator_type"
         },
         "1876": {
             "name": "Colin Redston",

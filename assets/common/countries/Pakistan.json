@@ -87,6 +87,15 @@
         ]
     },
     "ministers": {
+        "354": {
+            "name": "Robert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
+            "type": "traditionalist_type"
+        },
         "211": {
             "name": "George VI",
             "ideology": "social_cons_idolg",
@@ -96,77 +105,14 @@
             "death_date": "1952-02-06",
             "type": "parental_type"
         },
-        "212": {
-            "name": "Elizabeth II",
+        "2451": {
+            "name": "Louis Mountbatten",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
-            "picture": "ENG_Elizabeth",
-            "start_date": "1952-02-06",
-            "death_date": "2300-05-12",
-            "type": "traditionalist_type"
-        },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "348": {
-            "name": "Margaret I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "ENG_M_Margaret_I",
-            "start_date": "1952-03-01",
-            "death_date": "2002-02-09",
-            "type": "controversial_figure"
-        },
-        "349": {
-            "name": "David III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "350": {
-            "name": "Sarah I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
+            "picture": "IND_M_Mountbatten_Louis",
+            "start_date": "1946-01-01",
+            "death_date": "1947-08-15",
+            "type": "administrator_type"
         },
         "351": {
             "name": "Henry IX",
@@ -177,50 +123,14 @@
             "death_date": "1974-06-10",
             "type": "courteous_figure"
         },
-        "352": {
-            "name": "William V",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.91,
-            "picture": "ENG_M_William_V",
-            "start_date": "1959-12-18",
-            "death_date": "1972-08-28",
-            "type": "courteous_figure"
-        },
-        "353": {
-            "name": "Richard IV",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "ENG_M_Richard_IV",
-            "start_date": "1962-08-26",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "354": {
-            "name": "Robert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Robert_I_Bayern",
-            "start_date": "1919-02-03",
-            "death_date": "1955-08-02",
-            "type": "traditionalist_type"
-        },
-        "355": {
-            "name": "Albert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
-        },
-        "429": {
-            "name": "Louis Mountbatten",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "IND_M_Mountbatten_Louis",
-            "start_date": "1946-01-01",
-            "death_date": "1947-08-14",
-            "type": "administrator_type"
+        "4068": {
+            "name": "Major General Akbar Khan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "PAK_M_Mohammad_Ishaque",
+            "start_date": "1947-01-01",
+            "death_date": "1993-01-01",
+            "type": "hardliner_type"
         },
         "430": {
             "name": "Liaquat Khan",
@@ -231,176 +141,14 @@
             "death_date": "1951-10-16",
             "type": "democrat_type"
         },
-        "431": {
-            "name": "Khawaja Nazimuddin",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Nazimuddin_Khawaja",
-            "start_date": "1951-10-17",
-            "death_date": "1953-04-17",
-            "type": "religious_type"
-        },
-        "432": {
-            "name": "Muhammad Bogra",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Bogra_Muhammad_A",
-            "start_date": "1953-04-17",
-            "death_date": "1955-08-12",
-            "type": "reformer_type"
-        },
-        "433": {
-            "name": "Chaudhry Ali",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Ali_Chaudhry_M",
-            "start_date": "1955-08-12",
-            "death_date": "1956-09-12",
-            "type": "bureaucrat_type"
-        },
-        "434": {
-            "name": "Iskander Mirza",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Mirza_Iskander",
-            "start_date": "1956-03-23",
-            "death_date": "1958-10-27",
-            "type": "hardliner_type"
-        },
-        "435": {
-            "name": "Ayub Khan",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "PAK_M_Khan_Ayub",
-            "start_date": "1958-10-07",
-            "death_date": "1969-03-25",
-            "type": "dictator_type"
-        },
-        "436": {
-            "name": "Huseyn Suhrawardy",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Suhrawardy_Huseyn",
-            "start_date": "1956-09-12",
-            "death_date": "1957-10-17",
-            "type": "liberal_type"
-        },
-        "437": {
-            "name": "Ibrahim Chundrigar",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Chundrigar_Ibrahim_I",
-            "start_date": "1957-10-17",
-            "death_date": "1957-12-16",
-            "type": "bureaucrat_type"
-        },
-        "4043": {
-            "name": "Feroz Noon",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Noon_Feroz_K",
-            "start_date": "1957-12-16",
-            "death_date": "1958-10-07",
-            "type": "courteous_figure"
-        },
-        "439": {
-            "name": "Fatima Jinnah",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Jinnah_Fatima",
-            "start_date": "1965-01-01",
-            "death_date": "1967-07-09",
-            "type": "democrat_type"
-        },
-        "4044": {
-            "name": "Yahya Khan",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Khan_Yahya",
-            "start_date": "1969-03-25",
-            "death_date": "1971-12-20",
-            "type": "dictator_type"
-        },
-        "4045": {
-            "name": "Zulfikar Bhutto",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.8,
-            "picture": "PAK_M_Bhutto_Zulfikar_A",
-            "start_date": "1970-01-01",
-            "death_date": "1977-07-05",
-            "type": "controversial_figure"
-        },
-        "4046": {
-            "name": "Fazal Chaudhry",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Chaudhry_Fazal_I",
-            "start_date": "1973-08-14",
-            "death_date": "1978-09-16",
-            "type": "bureaucrat_type"
-        },
-        "4047": {
-            "name": "Muhammad Zia-ul-Haq",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.8,
-            "picture": "PAK_M_Zia-ul-Haq_Muhammad",
-            "start_date": "1977-05-07",
-            "death_date": "1988-08-17",
-            "type": "dictator_type"
-        },
-        "4048": {
-            "name": "Muhammad Junejo",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Junejo_Muhammad_K",
-            "start_date": "1985-03-24",
-            "death_date": "1988-05-29",
-            "type": "bureaucrat_type"
-        },
-        "4049": {
-            "name": "Ghulam Khan",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.8,
-            "picture": "PAK_M_Khan_Ghulam_I",
-            "start_date": "1988-05-29",
-            "death_date": "1993-07-18",
-            "type": "bureaucrat_type"
-        },
-        "4050": {
-            "name": "Ghulam Jatoi",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Jatoi_Ghulam_M",
-            "start_date": "1988-01-01",
-            "death_date": "1990-11-06",
-            "type": "bureaucrat_type"
-        },
-        "4051": {
-            "name": "Benazir Bhutto",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Bhutto_Benazir",
-            "start_date": "1988-12-02",
-            "death_date": "1993-04-18",
-            "type": "iron_lady"
-        },
-        "4052": {
-            "name": "Nawaz Sharif",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "PAK_M_Sharif_Nawaz",
-            "start_date": "1990-11-06",
-            "death_date": "1993-04-18",
-            "type": "fortunate_type"
-        },
-        "4053": {
-            "name": "Asghar Khan",
-            "ideology": "social_cons_idolg",
+        "4059": {
+            "name": "Hassan Nasir",
+            "ideology": "communist_idolg",
             "loyalty": 0.5,
-            "picture": "PAK_M_Khan_Asghar",
-            "start_date": "1970-02-12",
-            "death_date": "2300-01-01",
-            "type": "controversial_figure"
+            "picture": "PAK_M_Nasir_Hassan",
+            "start_date": "1948-01-01",
+            "death_date": "1960-11-13",
+            "type": "courageous_type"
         },
         "4054": {
             "name": "Sajjad Zaheer",
@@ -420,15 +168,6 @@
             "death_date": "1973-09-13",
             "type": "ambitious_type"
         },
-        "4056": {
-            "name": "Faiz Ahmad Faiz",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "PAK_M_Faiz_Faiz_A",
-            "start_date": "1950-01-01",
-            "death_date": "1984-11-20",
-            "type": "visionary_type"
-        },
         "4057": {
             "name": "Habib Jalib",
             "ideology": "left_wing_radical_idolg",
@@ -438,49 +177,112 @@
             "death_date": "1992-01-01",
             "type": "democrat_type"
         },
-        "4058": {
-            "name": "Jameel Ahmad Malik",
-            "ideology": "communist_idolg",
+        "4056": {
+            "name": "Faiz Ahmad Faiz",
+            "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
-            "picture": "PAK_M_Malik_Jameel_A",
-            "start_date": "1975-01-01",
-            "death_date": "1992-01-01",
-            "type": "administrator_type"
+            "picture": "PAK_M_Faiz_Faiz_A",
+            "start_date": "1950-01-01",
+            "death_date": "1984-11-20",
+            "type": "visionary_type"
         },
-        "4059": {
-            "name": "Hassan Nasir",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "PAK_M_Nasir_Hassan",
-            "start_date": "1948-01-01",
-            "death_date": "1960-11-13",
+        "431": {
+            "name": "Khawaja Nazimuddin",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Nazimuddin_Khawaja",
+            "start_date": "1951-10-17",
+            "death_date": "1953-04-17",
+            "type": "religious_type"
+        },
+        "212": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "348": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "432": {
+            "name": "Muhammad Bogra",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Bogra_Muhammad_A",
+            "start_date": "1953-04-17",
+            "death_date": "1955-08-12",
+            "type": "reformer_type"
+        },
+        "355": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "433": {
+            "name": "Chaudhry Ali",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Ali_Chaudhry_M",
+            "start_date": "1955-08-12",
+            "death_date": "1956-09-12",
+            "type": "bureaucrat_type"
+        },
+        "434": {
+            "name": "Iskander Mirza",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Mirza_Iskander",
+            "start_date": "1956-03-23",
+            "death_date": "1958-10-27",
+            "type": "hardliner_type"
+        },
+        "436": {
+            "name": "Huseyn Suhrawardy",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Suhrawardy_Huseyn",
+            "start_date": "1956-09-12",
+            "death_date": "1957-10-17",
+            "type": "liberal_type"
+        },
+        "437": {
+            "name": "Ibrahim Chundrigar",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Chundrigar_Ibrahim_I",
+            "start_date": "1957-10-17",
+            "death_date": "1957-12-16",
+            "type": "bureaucrat_type"
+        },
+        "438": {
+            "name": "Feroz Noon",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Noon_Feroz_K",
+            "start_date": "1957-12-16",
+            "death_date": "1958-10-07",
             "type": "courageous_type"
         },
-        "4060": {
-            "name": "Nazeer Abbasi",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "PAK_M_Abbasi_Nazeer",
-            "start_date": "1978-01-01",
-            "death_date": "1980-08-09",
-            "type": "courageous_type"
-        },
-        "4061": {
-            "name": "Jam Saqi",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "PAK_M_Saqi_Jam",
-            "start_date": "1968-01-01",
-            "death_date": "2300-01-01",
-            "type": "ambitious_type"
-        },
-        "4062": {
-            "name": "Muhammad Kamran Jahangiri",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "PAK_M_Jahangiri_Muhammad_K",
-            "start_date": "1971-01-01",
-            "death_date": "1992-03-05",
+        "435": {
+            "name": "Ayub Khan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "PAK_M_Khan_Ayub",
+            "start_date": "1958-10-07",
+            "death_date": "1969-03-25",
             "type": "dictator_type"
         },
         "4063": {
@@ -492,32 +294,14 @@
             "death_date": "1971-05-09",
             "type": "reputable_type"
         },
-        "4064": {
-            "name": "Mairaj Muhammad Khan",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "PAK_M_Khan_Mairaj_M",
-            "start_date": "1970-01-01",
-            "death_date": "1992-01-01",
-            "type": "democrat_type"
-        },
-        "4065": {
-            "name": "Afzal Bangash",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "PAK_M_Bangash_Afzal",
-            "start_date": "1967-01-01",
-            "death_date": "1992-01-01",
-            "type": "administrator_type"
-        },
-        "4066": {
-            "name": "Sher Ali Bacha",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "PAK_M_Bacha_Sher_A",
-            "start_date": "1970-01-01",
-            "death_date": "1992-01-01",
-            "type": "extremist_type"
+        "352": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
         },
         "4067": {
             "name": "Major Ishaque Mohammad",
@@ -528,14 +312,230 @@
             "death_date": "1986-01-01",
             "type": "traditionalist_type"
         },
-        "4068": {
-            "name": "Major General Akbar Khan",
-            "ideology": "paternal_auto_idolg",
+        "353": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "439": {
+            "name": "Fatima Jinnah",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Jinnah_Fatima",
+            "start_date": "1965-01-01",
+            "death_date": "1967-07-09",
+            "type": "democrat_type"
+        },
+        "344": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "4065": {
+            "name": "Afzal Bangash",
+            "ideology": "maoist_idolg",
             "loyalty": 0.5,
-            "picture": "PAK_M_Mohammad_Ishaque",
-            "start_date": "1947-01-01",
-            "death_date": "1993-01-01",
-            "type": "hardliner_type"
+            "picture": "PAK_M_Bangash_Afzal",
+            "start_date": "1967-01-01",
+            "death_date": "1992-01-01",
+            "type": "administrator_type"
+        },
+        "4061": {
+            "name": "Jam Saqi",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "PAK_M_Saqi_Jam",
+            "start_date": "1968-01-01",
+            "death_date": "2300-01-01",
+            "type": "ambitious_type"
+        },
+        "347": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "440": {
+            "name": "Yahya Khan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Khan_Yahya",
+            "start_date": "1969-03-25",
+            "death_date": "1971-12-20",
+            "type": "dictator_type"
+        },
+        "4045": {
+            "name": "Zulfikar Bhutto",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.8,
+            "picture": "PAK_M_Bhutto_Zulfikar_A",
+            "start_date": "1970-01-01",
+            "death_date": "1977-07-05",
+            "type": "controversial_figure"
+        },
+        "4064": {
+            "name": "Mairaj Muhammad Khan",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "PAK_M_Khan_Mairaj_M",
+            "start_date": "1970-01-01",
+            "death_date": "1992-01-01",
+            "type": "democrat_type"
+        },
+        "4066": {
+            "name": "Sher Ali Bacha",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "PAK_M_Bacha_Sher_A",
+            "start_date": "1970-01-01",
+            "death_date": "1992-01-01",
+            "type": "extremist_type"
+        },
+        "4053": {
+            "name": "Asghar Khan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "PAK_M_Khan_Asghar",
+            "start_date": "1970-02-12",
+            "death_date": "2300-01-01",
+            "type": "controversial_figure"
+        },
+        "4062": {
+            "name": "Muhammad Kamran Jahangiri",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "PAK_M_Jahangiri_Muhammad_K",
+            "start_date": "1971-01-01",
+            "death_date": "1992-03-05",
+            "type": "dictator_type"
+        },
+        "4046": {
+            "name": "Fazal Chaudhry",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Chaudhry_Fazal_I",
+            "start_date": "1973-08-14",
+            "death_date": "1978-09-16",
+            "type": "bureaucrat_type"
+        },
+        "4058": {
+            "name": "Jameel Ahmad Malik",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "PAK_M_Malik_Jameel_A",
+            "start_date": "1975-01-01",
+            "death_date": "1992-01-01",
+            "type": "administrator_type"
+        },
+        "4047": {
+            "name": "Muhammad Zia-ul-Haq",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "PAK_M_Zia-ul-Haq_Muhammad",
+            "start_date": "1977-05-07",
+            "death_date": "1988-08-17",
+            "type": "dictator_type"
+        },
+        "4060": {
+            "name": "Nazeer Abbasi",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "PAK_M_Abbasi_Nazeer",
+            "start_date": "1978-01-01",
+            "death_date": "1980-08-09",
+            "type": "courageous_type"
+        },
+        "345": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "349": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "346": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "350": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "4048": {
+            "name": "Muhammad Junejo",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Junejo_Muhammad_K",
+            "start_date": "1985-03-24",
+            "death_date": "1988-05-29",
+            "type": "bureaucrat_type"
+        },
+        "4050": {
+            "name": "Ghulam Jatoi",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Jatoi_Ghulam_M",
+            "start_date": "1988-01-01",
+            "death_date": "1990-11-06",
+            "type": "bureaucrat_type"
+        },
+        "4049": {
+            "name": "Ghulam Khan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.8,
+            "picture": "PAK_M_Khan_Ghulam_I",
+            "start_date": "1988-05-29",
+            "death_date": "1993-07-18",
+            "type": "bureaucrat_type"
+        },
+        "4051": {
+            "name": "Benazir Bhutto",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Bhutto_Benazir",
+            "start_date": "1988-12-02",
+            "death_date": "1993-04-18",
+            "type": "iron_lady"
+        },
+        "4052": {
+            "name": "Nawaz Sharif",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "PAK_M_Sharif_Nawaz",
+            "start_date": "1990-11-06",
+            "death_date": "1993-04-18",
+            "type": "fortunate_type"
         }
     }
 }
