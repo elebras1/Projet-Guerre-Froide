@@ -753,7 +753,7 @@ public class WorldDaoImpl implements WorldDao {
                 Iterator<Map.Entry<String, JsonValue>> ministersEntryIterator = ministersValues.objectIterator();
                 while (ministersEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> ministerEntry = ministersEntryIterator.next();
-                    String ministerNameId = ministerEntry.getKey() + ministerEntry.getValue().get("name").asString();
+                    String ministerNameId = ministerEntry.getKey();
                     JsonValue ministerNode = ministerEntry.getValue();
                     String name = ministerNode.get("name").asString();
                     String ideology = ministerNode.get("ideology").asString();
@@ -1205,8 +1205,8 @@ public class WorldDaoImpl implements WorldDao {
             long ministerHeadOfStateEntityId = 0;
             long ministerHeadOfGovernmentEntityId = 0;
             if(countryValues.get("head_of_state") != null && countryValues.get("head_of_government") != null) {
-                long ministerHeadOfStateId = countryValues.get("head_of_state").asLong();
-                long ministerHeadOfGovernmentId = countryValues.get("head_of_government").asLong();
+                String ministerHeadOfStateId = countryValues.get("head_of_state").asString();
+                String ministerHeadOfGovernmentId = countryValues.get("head_of_government").asString();
                 ministerHeadOfStateEntityId = ecsWorld.lookup(String.valueOf(ministerHeadOfStateId));
                 ministerHeadOfGovernmentEntityId = ecsWorld.lookup(String.valueOf(ministerHeadOfGovernmentId));
             }
