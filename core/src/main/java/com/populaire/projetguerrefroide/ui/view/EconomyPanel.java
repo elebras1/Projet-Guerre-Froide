@@ -99,14 +99,14 @@ public class EconomyPanel extends Table {
 
         SnapshotArray<Actor> actors = this.buildingRegionsTable.getChildren();
         int index = 0;
-        for(String regionId : regionsBuildingsDto.getRegionIds()) {
-            int id = regionsBuildingsDto.getRegionIdLookup().get(regionId);
-            int buildingCount = regionsBuildingsDto.getBuildingCounts().get(id);
-            int buildingStart = regionsBuildingsDto.getBuildingStarts().get(id);
-            int populationAmount = regionsBuildingsDto.getPopulationAmounts().get(id);
-            int buildingWorkerAmount = regionsBuildingsDto.getBuildingWorkersAmount().get(id);
-            int buildingWorkerRatio = regionsBuildingsDto.getBuildingWorkersRatio().get(id);
-            byte developpementIndexValue = regionsBuildingsDto.getDeveloppementIndexValues().get(id);
+        for(String regionId : regionsBuildingsDto.regionIds()) {
+            int id = regionsBuildingsDto.regionIdLookup().get(regionId);
+            int buildingCount = regionsBuildingsDto.buildingCounts().get(id);
+            int buildingStart = regionsBuildingsDto.buildingStarts().get(id);
+            int populationAmount = regionsBuildingsDto.populationAmounts().get(id);
+            int buildingWorkerAmount = regionsBuildingsDto.buildingWorkersAmount().get(id);
+            int buildingWorkerRatio = regionsBuildingsDto.buildingWorkersRatio().get(id);
+            byte developpementIndexValue = regionsBuildingsDto.developpementIndexValues().get(id);
             String regionName = this.localisation.get(regionId);
             if(index >= actors.size) {
                 Table regionTable = new Table();
@@ -124,16 +124,16 @@ public class EconomyPanel extends Table {
                 Table buildingsTable = new Table();
                 int economyCount = 0;
                 for (int i = 0; i < buildingCount; i++) {
-                    int buildingId = regionsBuildingsDto.getBuildingIds().get(buildingStart + i);
-                    int typeId = regionsBuildingsDto.getBuildingTypes().get(buildingId);
-                    int buildingValue = regionsBuildingsDto.getBuildingValues().get(buildingId);
-                    float buildingProduction = regionsBuildingsDto.getBuildingProductionValues().get(buildingId);
+                    int buildingId = regionsBuildingsDto.buildingIds().get(buildingStart + i);
+                    int typeId = regionsBuildingsDto.buildingTypes().get(buildingId);
+                    int buildingValue = regionsBuildingsDto.buildingValues().get(buildingId);
+                    float buildingProduction = regionsBuildingsDto.buildingProductionValues().get(buildingId);
 
                     if (typeId == BuildingType.ECONOMY.getId()) {
                         Table buildingTable = new ClickableTable();
                         buildingTable.setUserObject(buildingId);
-                        String buildingName = regionsBuildingsDto.getBuildingNames().get(buildingId);
-                        byte maxLevel = regionsBuildingsDto.getBuildingMaxLevels().get(buildingId);
+                        String buildingName = regionsBuildingsDto.buildingNames().get(buildingId);
+                        byte maxLevel = regionsBuildingsDto.buildingMaxLevels().get(buildingId);
                         String buildingLevel = buildingValue + "/" + maxLevel;
 
                         this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingTable);

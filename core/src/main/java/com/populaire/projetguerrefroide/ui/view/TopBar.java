@@ -153,16 +153,16 @@ public class TopBar extends Table {
     }
 
     public void setCountryData(CountryDto countryDto) {
-        this.population.setText(countryDto.getPopulation());
-        this.manpower.setText(String.valueOf(countryDto.getManpower()));
-        this.grossDomesticProduct.setText(countryDto.getGrossDomesticProduct());
-        this.money.setText(String.valueOf(countryDto.getMoney()));
-        this.supplies.setText(String.valueOf(countryDto.getSupplies()));
-        this.fuel.setText(String.valueOf(countryDto.getFuel()));
-        this.diplomaticInfluence.setText(String.valueOf(countryDto.getDiplomaticInfluence()));
-        this.uranium.setText(String.valueOf(countryDto.getUranium()));
-        this.dissent.setText(countryDto.getDissent());
-        this.nationalUnity.setText(countryDto.getNationalUnity());
+        this.population.setText(countryDto.population());
+        this.manpower.setText(String.valueOf(countryDto.manpower()));
+        this.grossDomesticProduct.setText(countryDto.grossDomesticProduct());
+        this.money.setText(String.valueOf(countryDto.money()));
+        this.supplies.setText(String.valueOf(countryDto.supplies()));
+        this.fuel.setText(String.valueOf(countryDto.fuel()));
+        this.diplomaticInfluence.setText(String.valueOf(countryDto.diplomaticInfluence()));
+        this.uranium.setText(String.valueOf(countryDto.uranium()));
+        this.dissent.setText(countryDto.dissent());
+        this.nationalUnity.setText(countryDto.nationalUnity());
     }
 
     public void setRanking(int ranking) {
