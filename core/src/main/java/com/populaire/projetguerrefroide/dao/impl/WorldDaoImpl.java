@@ -845,11 +845,10 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue leaderValues = this.parseJsonFile(filename);
             String countryId = leaderValues.get("country").asString();
-            Iterator<Map.Entry<String, JsonValue>> leadersEntryIterator = leaderValues.get("leaders").objectIterator();
+            Iterator<JsonValue> leadersValueIterator = leaderValues.get("leaders").arrayIterator();
             long countryEntityId = ecsWorld.lookup(countryId);
-            while (leadersEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = leadersEntryIterator.next();
-                JsonValue leaderValue = entry.getValue();
+            while (leadersValueIterator.hasNext()) {
+                JsonValue leaderValue = leadersValueIterator.next();
                 String name = leaderValue.get("name").asString();
                 byte skill = (byte) leaderValue.get("skill").asLong();
                 byte forceType = ForceType.fromString(leaderValue.get("force_type").asString());

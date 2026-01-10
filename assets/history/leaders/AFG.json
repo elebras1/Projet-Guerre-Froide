@@ -1,983 +1,983 @@
 {
-  "country": "AFG",
-  "leaders": {
-    "1": {
-      "name": "Saif al-Din Hotaki",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "2": {
-      "name": "Jalal ad-Din Hotaki",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "3": {
-      "name": "Abdul Mannan Karzai",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "4": {
-      "name": "Bahri Popalzai",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "5": {
-      "name": "Muzaffar Khwaja",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "6": {
-      "name": "Ilyas Ali",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "7": {
-      "name": "Rashad Sherzai",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "8": {
-      "name": "Imran Qaderi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "9": {
-      "name": "Salim Qaderi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "10": {
-      "name": "Jihan Ahmadi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "11": {
-      "name": "Imad Abdul",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "12": {
-      "name": "Nizam al-Din Ahmadi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "13": {
-      "name": "Moatassem Mohammad",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "14": {
-      "name": "Fazlallah Aziz",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15": {
-      "name": "Hajj Ahmadzai",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "16": {
-      "name": "Qusay Qaderi",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "17": {
-      "name": "Latif Badakhshi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "18": {
-      "name": "Fuad Ali",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "19": {
-      "name": "Akif Jamalzadah",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "20": {
-      "name": "Nawaz Mohammad",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "21": {
-      "name": "Nurullah Jamalzadah",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22": {
-      "name": "Hilmi Ahmadzai",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "23": {
-      "name": "Abdul Hai Badakhshi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "24": {
-      "name": "Safi al-Din Sadaty",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "25": {
-      "name": "Hossam Jamalzadah",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26": {
-      "name": "Saad Khwaja",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "27": {
-      "name": "Faqir Khwaja",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "28": {
-      "name": "Habib ur Rahman Hotaki",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "29": {
-      "name": "Hajj Jamalzadah",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "30": {
-      "name": "Ruhullah Ali",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "31": {
-      "name": "Abdul Mannan Ali",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "32": {
-      "name": "Asif Sadaty",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "33": {
-      "name": "Nasrallah Abdul",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "34": {
-      "name": "Nasuh Ali",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "35": {
-      "name": "Abdul Nasser Sohal",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "36": {
-      "name": "Khalil Ali",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37": {
-      "name": "Baha' al-Din Aziz",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "38": {
-      "name": "Abdul Hakim Abdul",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "panzer_leader"
-    },
-    "39": {
-      "name": "Hassan Popalzai",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "40": {
-      "name": "Boulos Mohammad",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "41": {
-      "name": "Fathallah Sohal",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "42": {
-      "name": "Samad Abdul",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "43": {
-      "name": "Ghassan Karzai",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44": {
-      "name": "Abdul Wahhab Ali",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "45": {
-      "name": "Hadid Mohammad",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "46": {
-      "name": "Hisham Badakhshi",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "47": {
-      "name": "Muammer Mohammad",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "48": {
-      "name": "Khadr Sadaty",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "49": {
-      "name": "Abdul Wahid Ahmadzai",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "50": {
-      "name": "Ziad Qaderi",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "51": {
-      "name": "Ismatullah Jamalzadah",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "52": {
-      "name": "Shahid Mohammad",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "53": {
-      "name": "Tufail Shinwari",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "54": {
-      "name": "Nadeem Aziz",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "55": {
-      "name": "Fouzan Jamalzadah",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "56": {
-      "name": "Fatin Jamalzadah",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "57": {
-      "name": "Zayn ad-Din Sadaty",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "58": {
-      "name": "Ahad Ahmadi",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "59": {
-      "name": "Abidin Popalzai",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "60": {
-      "name": "Omar Sadaty",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "61": {
-      "name": "Abdur Rab Sherzai",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "62": {
-      "name": "Imtiaz Ali",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "63": {
-      "name": "Abd Manaf Badakhshi",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "64": {
-      "name": "Mahbubur Qaderi",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "65": {
-      "name": "Turki Khwaja",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "66": {
-      "name": "Naseeb Sadaty",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "67": {
-      "name": "Afif Hotaki",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "68": {
-      "name": "Shaaban Hotaki",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "69": {
-      "name": "Jamal Popalzai",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "70": {
-      "name": "Shukri Abdul",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "71": {
-      "name": "Wajdi Badakhshi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "72": {
-      "name": "Wahed Sherzai",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "73": {
-      "name": "Rayan Abdul",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "74": {
-      "name": "Abdul Hamid Ahmadzai",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "75": {
-      "name": "Fazli Sadaty",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "76": {
-      "name": "Tufail Khwaja",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "77": {
-      "name": "Ali Naqi Badakhshi",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "78": {
-      "name": "Aladdin Sherzai",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "79": {
-      "name": "Husam ad-Din Hotaki",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "80": {
-      "name": "Hadid Karzai",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "81": {
-      "name": "Sattar Qaderi",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "82": {
-      "name": "Taha Abdul",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "83": {
-      "name": "Wahid Hotaki",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "84": {
-      "name": "Naim Hotaki",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "85": {
-      "name": "Ammar Shinwari",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "86": {
-      "name": "Abdi Qaderi",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "87": {
-      "name": "Samiullah Badakhshi",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "seawolf"
-    },
-    "88": {
-      "name": "Naqibullah Mohammad",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "89": {
-      "name": "Rizqallah Karzai",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "90": {
-      "name": "Murad Sadaty",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "91": {
-      "name": "Hadem Jamalzadah",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "92": {
-      "name": "Faheem Badakhshi",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "93": {
-      "name": "Atiqullah Popalzai",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "94": {
-      "name": "Ibro Abdul",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "95": {
-      "name": "Muharrem Jamalzadah",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "96": {
-      "name": "Malik Aziz",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "97": {
-      "name": "Jihan Sohal",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "98": {
-      "name": "Naji Khwaja",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "99": {
-      "name": "Hussein Hotaki",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "seawolf"
-    },
-    "100": {
-      "name": "Abdul Hadi Jamalzadah",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "101": {
-      "name": "Haldun Karzai",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "102": {
-      "name": "Basri Mohammad",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "103": {
-      "name": "Abdus Sabur Ahmadi",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "104": {
-      "name": "Adib Ahmadi",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "105": {
-      "name": "Hafiz Sadaty",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "106": {
-      "name": "Abdur Razzaq Shinwari",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "107": {
-      "name": "Rashad Jamalzadah",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "108": {
-      "name": "Shafiqullah Sohal",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "109": {
-      "name": "Husam ad-Din Khwaja",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "110": {
-      "name": "Faizan Abdul",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "111": {
-      "name": "Hazem Ali",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "112": {
-      "name": "Moneim Sohal",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "113": {
-      "name": "Abdul Ali Khwaja",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "114": {
-      "name": "Muhammad Mohammad",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "spotter"
-    },
-    "115": {
-      "name": "Al-Farooq Sadaty",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "116": {
-      "name": "Bakr Popalzai",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "117": {
-      "name": "Abdur Raqib Hotaki",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "118": {
-      "name": "Safi al-Din Sadaty",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "119": {
-      "name": "Abd Manaf Hotaki",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "120": {
-      "name": "Kashif Popalzai",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "121": {
-      "name": "Munif Mohammad",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "122": {
-      "name": "Mubarak Sherzai",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "fleet_destroyer"
-    },
-    "123": {
-      "name": "Abdul Basit Ahmadi",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "124": {
-      "name": "Munif Popalzai",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "125": {
-      "name": "Lalji Ali",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "tank_buster"
-    },
-    "126": {
-      "name": "Dhikrullah Shinwari",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "127": {
-      "name": "Malik Mohammad",
-      "skill": 5,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "128": {
-      "name": "Haitham Karzai",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "129": {
-      "name": "Abdul Halim Sadaty",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "130": {
-      "name": "Salman Khwaja",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "131": {
-      "name": "Muammer Karzai",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "132": {
-      "name": "Ja'far Sherzai",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "133": {
-      "name": "Hafeez Popalzai",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "134": {
-      "name": "Nuh Jamalzadah",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "135": {
-      "name": "Fadi Aziz",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "136": {
-      "name": "Hajji Aziz",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "137": {
-      "name": "Haydar Ali",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "138": {
-      "name": "Zahir al-Din Ahmadzai",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "139": {
-      "name": "Akil Khwaja",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "140": {
-      "name": "Mukhtar Aziz",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "141": {
-      "name": "Ridwan Karzai",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "142": {
-      "name": "Faizullah Sadaty",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "143": {
-      "name": "Riad Sadaty",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "144": {
-      "name": "Abdul Wahid Popalzai",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "145": {
-      "name": "Ehsanullah Abdul",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "146": {
-      "name": "Hafiz Ahmadzai",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "147": {
-      "name": "Naji Popalzai",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "148": {
-      "name": "Hamidullah Sohal",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "tank_buster"
-    },
-    "149": {
-      "name": "Sayyid Ali",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "150": {
-      "name": "Muharrem Karzai",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "151": {
-      "name": "Suleiman Abdul",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "tank_buster"
-    },
-    "152": {
-      "name": "Nihad Ahmadzai",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "153": {
-      "name": "Anjem Aziz",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "154": {
-      "name": "Bilal Badakhshi",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "tank_buster"
-    },
-    "155": {
-      "name": "Rafiq Mohammad",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "156": {
-      "name": "Aqeel Aziz",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "157": {
-      "name": "Ataullah Popalzai",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "158": {
-      "name": "Osman Khwaja",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "159": {
-      "name": "Salman Ahmadzai",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "160": {
-      "name": "Abdul Haq Qaderi",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "161": {
-      "name": "Salah ad-Din Hotaki",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "162": {
-      "name": "Ismat ad-Din Mohammad",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "163": {
-      "name": "Luay Sherzai",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    }
-  }
+    "country": "AFG",
+    "leaders": [
+        {
+            "name": "Saif al-Din Hotaki",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jalal ad-Din Hotaki",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Abdul Mannan Karzai",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Bahri Popalzai",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Muzaffar Khwaja",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ilyas Ali",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Rashad Sherzai",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Imran Qaderi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Salim Qaderi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jihan Ahmadi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Imad Abdul",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Nizam al-Din Ahmadi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Moatassem Mohammad",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Fazlallah Aziz",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hajj Ahmadzai",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Qusay Qaderi",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Latif Badakhshi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Fuad Ali",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Akif Jamalzadah",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Nawaz Mohammad",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Nurullah Jamalzadah",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hilmi Ahmadzai",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Abdul Hai Badakhshi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Safi al-Din Sadaty",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Hossam Jamalzadah",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Saad Khwaja",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Faqir Khwaja",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Habib ur Rahman Hotaki",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hajj Jamalzadah",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Ruhullah Ali",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Abdul Mannan Ali",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Asif Sadaty",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Nasrallah Abdul",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Nasuh Ali",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Abdul Nasser Sohal",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Khalil Ali",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Baha' al-Din Aziz",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Abdul Hakim Abdul",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "panzer_leader"
+        },
+        {
+            "name": "Hassan Popalzai",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Boulos Mohammad",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Fathallah Sohal",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Samad Abdul",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Ghassan Karzai",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Abdul Wahhab Ali",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Hadid Mohammad",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Hisham Badakhshi",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Muammer Mohammad",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Khadr Sadaty",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Abdul Wahid Ahmadzai",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ziad Qaderi",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ismatullah Jamalzadah",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Shahid Mohammad",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tufail Shinwari",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Nadeem Aziz",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Fouzan Jamalzadah",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Fatin Jamalzadah",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Zayn ad-Din Sadaty",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ahad Ahmadi",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Abidin Popalzai",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Omar Sadaty",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Abdur Rab Sherzai",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Imtiaz Ali",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Abd Manaf Badakhshi",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Mahbubur Qaderi",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Turki Khwaja",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Naseeb Sadaty",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Afif Hotaki",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Shaaban Hotaki",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Jamal Popalzai",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Shukri Abdul",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Wajdi Badakhshi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Wahed Sherzai",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Rayan Abdul",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Abdul Hamid Ahmadzai",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Fazli Sadaty",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tufail Khwaja",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ali Naqi Badakhshi",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Aladdin Sherzai",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Husam ad-Din Hotaki",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hadid Karzai",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Sattar Qaderi",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Taha Abdul",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wahid Hotaki",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Naim Hotaki",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Ammar Shinwari",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Abdi Qaderi",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Samiullah Badakhshi",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "seawolf"
+        },
+        {
+            "name": "Naqibullah Mohammad",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Rizqallah Karzai",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Murad Sadaty",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Hadem Jamalzadah",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Faheem Badakhshi",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Atiqullah Popalzai",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Ibro Abdul",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Muharrem Jamalzadah",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Malik Aziz",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Jihan Sohal",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Naji Khwaja",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Hussein Hotaki",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "seawolf"
+        },
+        {
+            "name": "Abdul Hadi Jamalzadah",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Haldun Karzai",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Basri Mohammad",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Abdus Sabur Ahmadi",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Adib Ahmadi",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Hafiz Sadaty",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Abdur Razzaq Shinwari",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Rashad Jamalzadah",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Shafiqullah Sohal",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Husam ad-Din Khwaja",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Faizan Abdul",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Hazem Ali",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Moneim Sohal",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Abdul Ali Khwaja",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Muhammad Mohammad",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "spotter"
+        },
+        {
+            "name": "Al-Farooq Sadaty",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Bakr Popalzai",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Abdur Raqib Hotaki",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Safi al-Din Sadaty",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Abd Manaf Hotaki",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Kashif Popalzai",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Munif Mohammad",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Mubarak Sherzai",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "fleet_destroyer"
+        },
+        {
+            "name": "Abdul Basit Ahmadi",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Munif Popalzai",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Lalji Ali",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "tank_buster"
+        },
+        {
+            "name": "Dhikrullah Shinwari",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Malik Mohammad",
+            "skill": 5,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Haitham Karzai",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Abdul Halim Sadaty",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Salman Khwaja",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Muammer Karzai",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Ja'far Sherzai",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Hafeez Popalzai",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Nuh Jamalzadah",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Fadi Aziz",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Hajji Aziz",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Haydar Ali",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Zahir al-Din Ahmadzai",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Akil Khwaja",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Mukhtar Aziz",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Ridwan Karzai",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Faizullah Sadaty",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Riad Sadaty",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Abdul Wahid Popalzai",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Ehsanullah Abdul",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Hafiz Ahmadzai",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Naji Popalzai",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Hamidullah Sohal",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "tank_buster"
+        },
+        {
+            "name": "Sayyid Ali",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Muharrem Karzai",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Suleiman Abdul",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "tank_buster"
+        },
+        {
+            "name": "Nihad Ahmadzai",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Anjem Aziz",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Bilal Badakhshi",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "tank_buster"
+        },
+        {
+            "name": "Rafiq Mohammad",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Aqeel Aziz",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Ataullah Popalzai",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Osman Khwaja",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Salman Ahmadzai",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Abdul Haq Qaderi",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Salah ad-Din Hotaki",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Ismat ad-Din Mohammad",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Luay Sherzai",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        }
+    ]
 }

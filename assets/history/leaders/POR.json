@@ -1,893 +1,893 @@
 {
-  "country": "POR",
-  "leaders": {
-    "31359": {
-      "name": "Paulo Castro",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31360": {
-      "name": "Aguinaldo Martins",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "31361": {
-      "name": "Joaquim Fernandes",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31362": {
-      "name": "SargAo Azevedo",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "31363": {
-      "name": "Juliano Cardoso",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "31364": {
-      "name": "Marcos Dias",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "31365": {
-      "name": "Alexandre Rocha",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "31366": {
-      "name": "Alfredo Lima",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31367": {
-      "name": "Silvio Barros",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31368": {
-      "name": "Rui Ribeiro",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31369": {
-      "name": "Bruno Cardoso",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31370": {
-      "name": "Rúben Ribeiro",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "31371": {
-      "name": "Antero Fernandes",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31372": {
-      "name": "José Almeida",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31373": {
-      "name": "Juliano Souza",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "31374": {
-      "name": "Matias Pereira",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "31375": {
-      "name": "Luís Fernandes",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "31376": {
-      "name": "Hélder Santos",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31377": {
-      "name": "Aguinaldo Lima",
-      "skill": 6,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "31378": {
-      "name": "Timóteo Carvalho",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31379": {
-      "name": "Bruno Rocha",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31380": {
-      "name": "Miguel Melo",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31381": {
-      "name": "Ricardo Gomes",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31382": {
-      "name": "Ricardo Gomes",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31383": {
-      "name": "Filipe Azevedo",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31384": {
-      "name": "Henrique Barbosa",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "31385": {
-      "name": "Joao Pinto",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31386": {
-      "name": "Jesus Silva",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31387": {
-      "name": "Guilherme Melo",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31388": {
-      "name": "SargAo Fernandes",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31389": {
-      "name": "Adao Goncalves",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31390": {
-      "name": "Adao Ferreira",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "31391": {
-      "name": "Hélder Castro",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "31392": {
-      "name": "Hélder Cavalcanti",
-      "skill": 6,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "31393": {
-      "name": "Alfredo Costa",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "31394": {
-      "name": "Jorge Cardoso",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31395": {
-      "name": "Guilherme Ferreira",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31396": {
-      "name": "Eduardo Oliveira",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "31397": {
-      "name": "Jorge Oliveira",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "31398": {
-      "name": "Timóteo Souza",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "31399": {
-      "name": "Luiz Barros",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "31400": {
-      "name": "Henrique Silva",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31401": {
-      "name": "Jaime Cardoso",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "31402": {
-      "name": "Armando Silva",
-      "skill": 7,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "31403": {
-      "name": "Luís Rocha",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "31404": {
-      "name": "Davi Martins",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31405": {
-      "name": "Teobaldo Barros",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "31406": {
-      "name": "Paulo Ribeiro",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "31407": {
-      "name": "Bruno Fernandes",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31408": {
-      "name": "Joao Gomes",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "31409": {
-      "name": "Eduardo Pereira",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31410": {
-      "name": "Henrique Ferreira",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "31411": {
-      "name": "Alexandre Santos",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "31412": {
-      "name": "Matias Martins",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31413": {
-      "name": "Marcos Rocha",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31414": {
-      "name": "Joaquim Martins",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31415": {
-      "name": "Timóteo Azevedo",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "31416": {
-      "name": "Filipe Costa",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31417": {
-      "name": "Filipe Costa",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "31418": {
-      "name": "Bernardo Ribeiro",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "31419": {
-      "name": "Jesus Ribeiro",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31420": {
-      "name": "Maicon Rodrigues",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31421": {
-      "name": "Miguel Lima",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "31422": {
-      "name": "Abraao Barbosa",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31423": {
-      "name": "Henrique Martins",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "31424": {
-      "name": "Pedro Costa",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "31425": {
-      "name": "Armando Cavalcanti",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "31426": {
-      "name": "Patrício Correia",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "panzer_leader"
-    },
-    "31427": {
-      "name": "Adriano Fernandes",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "31428": {
-      "name": "Silvio Costa",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31429": {
-      "name": "Antero Oliveira",
-      "skill": 6,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31430": {
-      "name": "Miguel Gomes",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31431": {
-      "name": "Aarao Azevedo",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31432": {
-      "name": "Luiz Pinto",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31433": {
-      "name": "Pedro Araujo",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31434": {
-      "name": "Abraao Martins",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "31435": {
-      "name": "Adriano Fernandes",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31436": {
-      "name": "Manuel Pereira",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31437": {
-      "name": "Marcos Rocha",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "31438": {
-      "name": "Teobaldo Rodrigues",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "blockade_runner"
-    },
-    "31439": {
-      "name": "Ricardo Sousa",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31440": {
-      "name": "Maicol Rodrigues",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31441": {
-      "name": "Hélder Carvalho",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31442": {
-      "name": "Guilherme Correia",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31443": {
-      "name": "Bernardo Ferreira",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31444": {
-      "name": "Joao Souza",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "31445": {
-      "name": "Luís Martins",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31446": {
-      "name": "Rodrigo Azevedo",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31447": {
-      "name": "Maicol Carvalho",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31448": {
-      "name": "José Cardoso",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31449": {
-      "name": "Jesus Pereira",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "spotter"
-    },
-    "31450": {
-      "name": "Bruno Castro",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31451": {
-      "name": "Nélson Carvalho",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31452": {
-      "name": "Leonardo Azevedo",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "31453": {
-      "name": "Roque Correia",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31454": {
-      "name": "Luciano Lima",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "spotter"
-    },
-    "31455": {
-      "name": "Teobaldo Souza",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "spotter"
-    },
-    "31456": {
-      "name": "Henrique Fernandes",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "blockade_runner"
-    },
-    "31457": {
-      "name": "Jesus Lima",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31458": {
-      "name": "Gustavo Fernandes",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "31459": {
-      "name": "Bruno Cardoso",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "31460": {
-      "name": "Marcos Rocha",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "31461": {
-      "name": "Joao Martins",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "31462": {
-      "name": "Rúben Fernandes",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31463": {
-      "name": "Antero Rocha",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31464": {
-      "name": "Juliano Alves",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31465": {
-      "name": "Abraao Silva",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "seawolf"
-    },
-    "31466": {
-      "name": "Zé Alves",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "blockade_runner"
-    },
-    "31467": {
-      "name": "Joao Souza",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "31468": {
-      "name": "Roque Pereira",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31469": {
-      "name": "Silvio Cavalcanti",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "31470": {
-      "name": "Miguel Rodrigues",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31471": {
-      "name": "André Fernandes",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31472": {
-      "name": "Pedro Carvalho",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31473": {
-      "name": "Teobaldo Sousa",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "fleet_destroyer"
-    },
-    "31474": {
-      "name": "Zé Cavalcanti",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31475": {
-      "name": "Adao Silva",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31476": {
-      "name": "Luiz Oliveira",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "tank_buster"
-    },
-    "31477": {
-      "name": "Leonardo Azevedo",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31478": {
-      "name": "Luiz Ribeiro",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31479": {
-      "name": "Joao Cavalcanti",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "31480": {
-      "name": "Carlos Castro",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31481": {
-      "name": "Adriano Araujo",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31482": {
-      "name": "Eduardo Alves",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31483": {
-      "name": "Miguel Sousa",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31484": {
-      "name": "Teobaldo Santos",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31485": {
-      "name": "Abraao Lima",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31486": {
-      "name": "Hélder Oliveira",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31487": {
-      "name": "Luciano Araujo",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31488": {
-      "name": "Luiz Almeida",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31489": {
-      "name": "Bernardo Carvalho",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "31490": {
-      "name": "Juliano Castro",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31491": {
-      "name": "Miguel Lima",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31492": {
-      "name": "Eduardo Dias",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "carpet_bomber"
-    },
-    "31493": {
-      "name": "Davi Barbosa",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31494": {
-      "name": "SimAo Cavalcanti",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31495": {
-      "name": "Manuel Lima",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31496": {
-      "name": "Manuel Goncalves",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31497": {
-      "name": "Maicon Souza",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "31498": {
-      "name": "Rui Souza",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31499": {
-      "name": "Carlos Lima",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31500": {
-      "name": "Rui Dias",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "31501": {
-      "name": "Godofredo Ferreira",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31502": {
-      "name": "Miguel Cardoso",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31503": {
-      "name": "Antero Gomes",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31504": {
-      "name": "Alexandre Lima",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31505": {
-      "name": "Jesus Pereira",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "31506": {
-      "name": "Rodrigo Oliveira",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    }
-  }
+    "country": "POR",
+    "leaders": [
+        {
+            "name": "Paulo Castro",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Aguinaldo Martins",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Joaquim Fernandes",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "SargAo Azevedo",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Juliano Cardoso",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Marcos Dias",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Alexandre Rocha",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Alfredo Lima",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Silvio Barros",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Rui Ribeiro",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Bruno Cardoso",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Rúben Ribeiro",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Antero Fernandes",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "José Almeida",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Juliano Souza",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Matias Pereira",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Luís Fernandes",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Hélder Santos",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Aguinaldo Lima",
+            "skill": 6,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Timóteo Carvalho",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Bruno Rocha",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Miguel Melo",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ricardo Gomes",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ricardo Gomes",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Filipe Azevedo",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Henrique Barbosa",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Joao Pinto",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jesus Silva",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Guilherme Melo",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "SargAo Fernandes",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Adao Goncalves",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Adao Ferreira",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Hélder Castro",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Hélder Cavalcanti",
+            "skill": 6,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Alfredo Costa",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Jorge Cardoso",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Guilherme Ferreira",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Eduardo Oliveira",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Jorge Oliveira",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Timóteo Souza",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Luiz Barros",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Henrique Silva",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jaime Cardoso",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Armando Silva",
+            "skill": 7,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Luís Rocha",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Davi Martins",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Teobaldo Barros",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Paulo Ribeiro",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Bruno Fernandes",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Joao Gomes",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Eduardo Pereira",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Henrique Ferreira",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Alexandre Santos",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Matias Martins",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Marcos Rocha",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Joaquim Martins",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Timóteo Azevedo",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Filipe Costa",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Filipe Costa",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Bernardo Ribeiro",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Jesus Ribeiro",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Maicon Rodrigues",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Miguel Lima",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Abraao Barbosa",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Henrique Martins",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Pedro Costa",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Armando Cavalcanti",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Patrício Correia",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "panzer_leader"
+        },
+        {
+            "name": "Adriano Fernandes",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Silvio Costa",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Antero Oliveira",
+            "skill": 6,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Miguel Gomes",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Aarao Azevedo",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Luiz Pinto",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Pedro Araujo",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Abraao Martins",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Adriano Fernandes",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Manuel Pereira",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Marcos Rocha",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Teobaldo Rodrigues",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "blockade_runner"
+        },
+        {
+            "name": "Ricardo Sousa",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Maicol Rodrigues",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Hélder Carvalho",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Guilherme Correia",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Bernardo Ferreira",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Joao Souza",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Luís Martins",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Rodrigo Azevedo",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Maicol Carvalho",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "José Cardoso",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Jesus Pereira",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "spotter"
+        },
+        {
+            "name": "Bruno Castro",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Nélson Carvalho",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Leonardo Azevedo",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Roque Correia",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Luciano Lima",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "spotter"
+        },
+        {
+            "name": "Teobaldo Souza",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "spotter"
+        },
+        {
+            "name": "Henrique Fernandes",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "blockade_runner"
+        },
+        {
+            "name": "Jesus Lima",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Gustavo Fernandes",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Bruno Cardoso",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Marcos Rocha",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Joao Martins",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Rúben Fernandes",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Antero Rocha",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Juliano Alves",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Abraao Silva",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "seawolf"
+        },
+        {
+            "name": "Zé Alves",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "blockade_runner"
+        },
+        {
+            "name": "Joao Souza",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Roque Pereira",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Silvio Cavalcanti",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Miguel Rodrigues",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "André Fernandes",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Pedro Carvalho",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Teobaldo Sousa",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "fleet_destroyer"
+        },
+        {
+            "name": "Zé Cavalcanti",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Adao Silva",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Luiz Oliveira",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "tank_buster"
+        },
+        {
+            "name": "Leonardo Azevedo",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Luiz Ribeiro",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Joao Cavalcanti",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Carlos Castro",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Adriano Araujo",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Eduardo Alves",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Miguel Sousa",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Teobaldo Santos",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Abraao Lima",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Hélder Oliveira",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Luciano Araujo",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Luiz Almeida",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Bernardo Carvalho",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Juliano Castro",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Miguel Lima",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Eduardo Dias",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "carpet_bomber"
+        },
+        {
+            "name": "Davi Barbosa",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "SimAo Cavalcanti",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Manuel Lima",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Manuel Goncalves",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Maicon Souza",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Rui Souza",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Carlos Lima",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Rui Dias",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Godofredo Ferreira",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Miguel Cardoso",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Antero Gomes",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Alexandre Lima",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Jesus Pereira",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Rodrigo Oliveira",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        }
+    ]
 }
