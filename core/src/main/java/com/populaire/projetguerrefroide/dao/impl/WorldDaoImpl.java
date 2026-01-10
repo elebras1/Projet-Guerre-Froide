@@ -14,7 +14,6 @@ import com.populaire.projetguerrefroide.dao.builder.*;
 import com.populaire.projetguerrefroide.economy.building.*;
 import com.populaire.projetguerrefroide.economy.good.*;
 import com.populaire.projetguerrefroide.economy.population.PopulationTemplateStore;
-import com.populaire.projetguerrefroide.economy.population.PopulationTypeStore;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.EcsConstants;
@@ -77,7 +76,7 @@ public class WorldDaoImpl implements WorldDao {
         ObjectIntMap<String> goodIds = new ObjectIntMap<>(40, 1f);
         GoodStore goodStore = this.readGoodsJson(goodIds);
         ObjectIntMap<String> populationTypeIds = new ObjectIntMap<>(12, 1f);
-        PopulationTypeStore populationTypeStore = this.readPopulationTypesJson(goodIds, populationTypeIds);
+        this.readPopulationTypesJson(ecsWorld, goodIds, populationTypeIds);
         ObjectIntMap<String> productionTypeIds = new ObjectIntMap<>(5, 1f);
         EmployeeStoreBuilder employeeStoreBuilder = new EmployeeStoreBuilder();
         EmployeeStore employeeStore = employeeStoreBuilder.build();
@@ -95,7 +94,7 @@ public class WorldDaoImpl implements WorldDao {
         ProvinceStore provinceStore = this.loadProvinces(ecsWorld, ecsConstants, regionStoreBuilder, provinces, goodIds, buildingIds, populationTypeIds, borders);
         RegionStore regionStore = regionStoreBuilder.build();
 
-        return new WorldManager(provinces, provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, populationTypeStore, borders, gameContext);
+        return new WorldManager(provinces, provinceStore, regionStore, buildingStore, goodStore, productionTypeStore, employeeStore, borders, gameContext);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -315,9 +314,8 @@ public class WorldDaoImpl implements WorldDao {
         return null;
     }
 
-    private PopulationTypeStore readPopulationTypesJson(ObjectIntMap<String> goodIds, ObjectIntMap<String> productionTypesIds) {
+    private void readPopulationTypesJson(World ecsWorld, ObjectIntMap<String> goodIds, ObjectIntMap<String> productionTypesIds) {
         Map<String, String> populationPaths = new ObjectObjectMap<>(12, 1f);
-        PopulationTypeStoreBuilder builder = new PopulationTypeStoreBuilder();
         try {
             JsonValue populationTypesValues = this.parseJsonFile(this.populationTypesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> populationTypesEntryIterator = populationTypesValues.objectIterator();
@@ -327,38 +325,48 @@ public class WorldDaoImpl implements WorldDao {
             }
 
             for (Map.Entry<String, String> populationPath : populationPaths.entrySet()) {
-                this.readPopulationTypeJson(populationPath.getValue(), populationPath.getKey(), goodIds, builder, productionTypesIds);
+                this.readPopulationTypeJson(ecsWorld, populationPath.getValue(), populationPath.getKey(), goodIds, productionTypesIds);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
-        return builder.build();
     }
 
-    private void readPopulationTypeJson(String populationTypePath, String name, ObjectIntMap<String> goodIds, PopulationTypeStoreBuilder builder, ObjectIntMap<String> populationTypeIds) {
+    private void readPopulationTypeJson(World ecsWorld, String populationTypePath, String name, ObjectIntMap<String> goodIds, ObjectIntMap<String> populationTypeIds) {
         try {
             JsonValue populationTypeValue = this.parseJsonFile(populationTypePath);
             int color = this.parseColor(populationTypeValue.get("color"));
-            builder.addPopulationType(name, color);
+            long populationTypeId = ecsWorld.entity(name);
+            Entity populationType = ecsWorld.obtainEntity(populationTypeId);
+            populationType.set(new Color(color));
+
+            long[] standardDemandGoodIds = new long[16];
+            float[] standardDemandGoodValues = new float[16];
+            int standardDemandIndex = 0;
             Iterator<Map.Entry<String, JsonValue>> standardDemandsEntryIterator = populationTypeValue.get("standard_demands").objectIterator();
             while (standardDemandsEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = standardDemandsEntryIterator.next();
-                int goodId = goodIds.get(entry.getKey());
+                long goodId = goodIds.get(entry.getKey()); // TODO lookup the good id in flecs
                 float value = (float) entry.getValue().asDouble();
-                builder.addStandardDemand(goodId, value);
+                standardDemandGoodIds[standardDemandIndex] = goodId;
+                standardDemandGoodValues[standardDemandIndex] = value;
+                standardDemandIndex++;
             }
 
+            long[] luxuryDemandGoodIds = new long[8];
+            float[] luxuryDemandGoodValues = new float[8];
+            int luxuryDemandIndex = 0;
             Iterator<Map.Entry<String, JsonValue>> luxuryDemandsEntryIterator = populationTypeValue.get("luxury_demands").objectIterator();
             while (luxuryDemandsEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = luxuryDemandsEntryIterator.next();
-                int goodId = goodIds.get(entry.getKey());
+                long goodId = goodIds.get(entry.getKey()); // TODO lookup the good id in flecs
                 float value = (float) entry.getValue().asDouble();
-                builder.addLuxuryDemand(goodId, value);
+                luxuryDemandGoodIds[luxuryDemandIndex] = goodId;
+                luxuryDemandGoodValues[luxuryDemandIndex] = value;
             }
-            populationTypeIds.put(name, builder.getIndex());
+            populationType.set(new PopulationType(standardDemandGoodIds, standardDemandGoodValues, luxuryDemandGoodIds, luxuryDemandGoodValues));
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {

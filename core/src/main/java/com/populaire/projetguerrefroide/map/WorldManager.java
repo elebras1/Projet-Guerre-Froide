@@ -28,7 +28,6 @@ import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.economy.building.EmployeeStore;
 import com.populaire.projetguerrefroide.economy.building.ProductionTypeStore;
 import com.populaire.projetguerrefroide.economy.good.GoodStore;
-import com.populaire.projetguerrefroide.economy.population.PopulationTypeStore;
 import com.populaire.projetguerrefroide.entity.RawMeshMulti;
 import com.populaire.projetguerrefroide.util.*;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -49,7 +48,6 @@ public class WorldManager implements WorldContext, Disposable {
     private final EmployeeStore employeeStore;
     private final Borders borders;
     private final ProductionTypeStore productionTypeStore;
-    private final PopulationTypeStore populationTypeStore;
     private final Pixmap provincesPixmap;
     private final Pixmap mapModePixmap;
     private final Pixmap provincesColorStripesPixmap;
@@ -89,7 +87,7 @@ public class WorldManager implements WorldContext, Disposable {
     private MapMode mapMode;
     private final GameContext gameContext;
 
-    public WorldManager(IntLongMap provinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, PopulationTypeStore populationTypeStore, Borders borders, GameContext gameContext) {
+    public WorldManager(IntLongMap provinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, Borders borders, GameContext gameContext) {
         this.mapDao = new MapDaoImpl();
         this.provinces = provinces;
         this.provinceStore = provinceStore;
@@ -98,7 +96,6 @@ public class WorldManager implements WorldContext, Disposable {
         this.goodStore = goodStore;
         this.productionTypeStore = productionTypeStore;
         this.employeeStore = employeeStore;
-        this.populationTypeStore = populationTypeStore;
         this.borders = borders;
         this.gameContext = gameContext;
         this.mapModePixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
