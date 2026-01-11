@@ -24,7 +24,6 @@ import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.component.Color;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
-import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.entity.RawMeshMulti;
 import com.populaire.projetguerrefroide.util.*;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -39,8 +38,6 @@ public class WorldManager implements WorldContext, Disposable {
     private final MapDaoImpl mapDao;
     private final IntLongMap provinces;
     private final ProvinceStore provinceStore;
-    private final RegionStore regionStore;
-    private final BuildingStore buildingStore;
     private final Borders borders;
     private final Pixmap provincesPixmap;
     private final Pixmap mapModePixmap;
@@ -81,12 +78,10 @@ public class WorldManager implements WorldContext, Disposable {
     private MapMode mapMode;
     private final GameContext gameContext;
 
-    public WorldManager(IntLongMap provinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, Borders borders, GameContext gameContext) {
+    public WorldManager(IntLongMap provinces, ProvinceStore provinceStore, Borders borders, GameContext gameContext) {
         this.mapDao = new MapDaoImpl();
         this.provinces = provinces;
         this.provinceStore = provinceStore;
-        this.regionStore = regionStore;
-        this.buildingStore = buildingStore;
         this.borders = borders;
         this.gameContext = gameContext;
         this.mapModePixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
@@ -165,16 +160,6 @@ public class WorldManager implements WorldContext, Disposable {
     @Override
     public ProvinceStore getProvinceStore() {
         return this.provinceStore;
-    }
-
-    @Override
-    public RegionStore getRegionStore() {
-        return this.regionStore;
-    }
-
-    @Override
-    public BuildingStore getBuildingStore() {
-        return this.buildingStore;
     }
 
     @Override
@@ -782,15 +767,13 @@ public class WorldManager implements WorldContext, Disposable {
 
     private WgMesh generateMeshBuildings(VertexAttributes vertexAttributes) {
         World ecsWorld = this.gameContext.getEcsWorld();
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
 
         MutableInt numBuildings = new MutableInt(0);
 
-        IntList provinceBuildingIds = this.provinceStore.getBuildingIds();
+        LongList provinceBuildingIds = this.provinceStore.getBuildingIds();
         IntList provinceBuildingStarts = this.provinceStore.getBuildingStarts();
         IntList provinceBuildingCounts = this.provinceStore.getBuildingCounts();
-
-        BooleanList buildingOnMap = this.buildingStore.getOnMap();
-        List<String> buildingNames = this.buildingStore.getNames();
 
         Set<Long> countriesWithProvinces = new HashSet<>();
 
@@ -808,8 +791,9 @@ public class WorldManager implements WorldContext, Disposable {
                     int end = start + provinceBuildingCounts.get(provinceIndex);
 
                     for (int bi = start; bi < end; bi++) {
-                        int buildingId = provinceBuildingIds.get(bi);
-                        if (buildingOnMap.get(buildingId)) {
+                        long buildingId = provinceBuildingIds.get(bi);
+                        Entity building = ecsWorld.obtainEntity(buildingId);
+                        if (building.has(ecsConstants.onMap())) {
                             numBuildings.increment();
                         }
                     }
@@ -852,12 +836,13 @@ public class WorldManager implements WorldContext, Disposable {
                     int end = start + provinceBuildingCounts.get(provinceIndex);
 
                     for (int bi = start; bi < end; bi++) {
-                        int buildingId = provinceBuildingIds.get(bi);
-                        if (!buildingOnMap.get(buildingId)) {
+                        long buildingId = provinceBuildingIds.get(bi);
+                        Entity building = ecsWorld.obtainEntity(buildingId);
+                        if (!building.has(ecsConstants.onMap())) {
                             continue;
                         }
 
-                        String buildingName = buildingNames.get(buildingId);
+                        String buildingName = building.getName();
                         TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_" + buildingName + "_empty");
 
                         long buildingPositionEntityId = ecsWorld.lookup("province_" + provinceNameId + "_pos_" + buildingName);

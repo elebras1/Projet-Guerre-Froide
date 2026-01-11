@@ -12,7 +12,7 @@ public class ProvinceStoreBuilder {
     private final IntList ids;
     private final IntList colors;
     private final LongList resourceGoodIds;
-    private final IntList buildingIds;
+    private final LongList buildingIds;
     private final IntList buildingValues;
     private final IntList buildingStarts;
     private final IntList buildingCounts;
@@ -39,7 +39,7 @@ public class ProvinceStoreBuilder {
         this.ids = new IntList(this.defaultCapacity);
         this.colors = new IntList(this.defaultCapacity);
         this.resourceGoodIds = new LongList();
-        this.buildingIds = new IntList();
+        this.buildingIds = new LongList();
         this.buildingValues = new IntList();
         this.buildingStarts = new IntList(this.defaultCapacity);
         this.buildingCounts = new IntList(this.defaultCapacity);
@@ -101,7 +101,7 @@ public class ProvinceStoreBuilder {
         return this;
     }
 
-    public ProvinceStoreBuilder addBuilding(int buildingId, int value) {
+    public ProvinceStoreBuilder addBuilding(long buildingId, int value) {
         this.buildingIds.add(buildingId);
         this.buildingValues.add(value);
 

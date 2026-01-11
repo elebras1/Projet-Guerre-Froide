@@ -10,7 +10,7 @@ public class ProvinceStore {
     private final IntList ids;
     private final IntList colors;
     private final LongList resourceGoodIds;
-    private final IntList buildingIds;
+    private final LongList buildingIds;
     private final IntList buildingValues;
     private final IntList buildingStarts;
     private final IntList buildingCounts;
@@ -34,7 +34,7 @@ public class ProvinceStore {
     private final IntList resourceGoodsPopulationAmountValues;
     private final IntList buildingsPopulationAmountValues;
 
-    public ProvinceStore(IntIntMap indexById, IntList ids, IntList colors, LongList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, LongList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, LongList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, LongList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
+    public ProvinceStore(IntIntMap indexById, IntList ids, IntList colors, LongList resourceGoodIds, LongList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, LongList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, LongList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, LongList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
         this.indexById = indexById;
         this.ids = ids;
         this.colors = colors;
@@ -84,7 +84,7 @@ public class ProvinceStore {
         return this.resourceGoodIds;
     }
 
-    public IntList getBuildingIds() {
+    public LongList getBuildingIds() {
         return this.buildingIds;
     }
 

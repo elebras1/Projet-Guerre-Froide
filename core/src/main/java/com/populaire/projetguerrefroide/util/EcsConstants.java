@@ -40,9 +40,10 @@ public class EcsConstants {
     private static final String HAS_IDEOLOGY = "HasIdeology";
     public static final String HEAD_OF_STATE = "HeadOfState";
     public static final String HEAD_OF_GOVERNMENT = "HeadOfGovernment";
-    public static final String RessourceGoodTag = "RessourceGoodTag";
-    public static final String AdvancedGoodTag = "AdvancedGoodTag";
-    public static final String MilitaryGoodTag = "MilitaryGoodTag";
+    public static final String RESSOURCE_GOOD_TAG = "RessourceGoodTag";
+    public static final String ADVANCED_GOOD_TAG = "AdvancedGoodTag";
+    public static final String MILITARY_GOOD_TAG = "MilitaryGoodTag";
+    public static final String ON_MAP = "OnMap";
 
     private long alignedWith = -1;
     private long locatedInRegion = -1;
@@ -83,6 +84,8 @@ public class EcsConstants {
     private long ressourceGoodTag = -1;
     private long advancedGoodTag = -1;
     private long militaryGoodTag = -1;
+    private long onMap = -1;
+
 
     private final World ecsWorld;
 
@@ -386,7 +389,7 @@ public class EcsConstants {
 
     public long ressourceGoodTag() {
         if(this.ressourceGoodTag == -1) {
-            this.ressourceGoodTag = this.ecsWorld.entity(RessourceGoodTag);
+            this.ressourceGoodTag = this.ecsWorld.entity(RESSOURCE_GOOD_TAG);
         }
 
         return this.ressourceGoodTag;
@@ -394,7 +397,7 @@ public class EcsConstants {
 
     public long advancedGoodTag() {
         if(this.advancedGoodTag == -1) {
-            this.advancedGoodTag = this.ecsWorld.entity(AdvancedGoodTag);
+            this.advancedGoodTag = this.ecsWorld.entity(ADVANCED_GOOD_TAG);
         }
 
         return this.advancedGoodTag;
@@ -402,10 +405,18 @@ public class EcsConstants {
 
     public long militaryGoodTag() {
         if(this.militaryGoodTag == -1) {
-            this.militaryGoodTag = this.ecsWorld.entity(MilitaryGoodTag);
+            this.militaryGoodTag = this.ecsWorld.entity(MILITARY_GOOD_TAG);
         }
 
         return this.militaryGoodTag;
+    }
+
+    public long onMap() {
+        if(this.onMap == -1) {
+            this.onMap = this.ecsWorld.entity(ON_MAP);
+        }
+
+        return this.onMap;
     }
 
     public long getAllianceRelation(String type, boolean isFirstCountry) {

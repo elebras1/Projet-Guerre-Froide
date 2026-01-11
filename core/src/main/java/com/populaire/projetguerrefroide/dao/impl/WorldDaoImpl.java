@@ -11,7 +11,6 @@ import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.builder.*;
-import com.populaire.projetguerrefroide.economy.building.*;
 import com.populaire.projetguerrefroide.economy.population.PopulationTemplateStore;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -75,19 +74,16 @@ public class WorldDaoImpl implements WorldDao {
         this.readGoodsJson(ecsWorld, ecsConstants);
         this.readPopulationTypesJson(ecsWorld);
         this.readProductionTypesJson(ecsWorld);
-        ObjectIntMap<String> buildingIds = new ObjectIntMap<>(54, 1f);
-        BuildingStore buildingStore = this.readBuildingsJson(ecsWorld, buildingIds);
+        this.readBuildingsJson(ecsWorld, ecsConstants);
         this.readResourceProductionsJson(ecsWorld);
         this.readTraitsJson(ecsWorld);
         this.loadCountries(ecsWorld, ecsConstants);
         this.readTerrainsJson(ecsWorld);
-        RegionStoreBuilder regionStoreBuilder = new RegionStoreBuilder();
         IntLongMap provinces = new IntLongMap(15000, 1f);
         Borders borders = new Borders();
-        ProvinceStore provinceStore = this.loadProvinces(ecsWorld, ecsConstants, regionStoreBuilder, provinces, buildingIds, borders);
-        RegionStore regionStore = regionStoreBuilder.build();
+        ProvinceStore provinceStore = this.loadProvinces(ecsWorld, ecsConstants, provinces, borders);
 
-        return new WorldManager(provinces, provinceStore, regionStore, buildingStore, borders, gameContext);
+        return new WorldManager(provinces, provinceStore, borders, gameContext);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -439,124 +435,151 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private BuildingStore readBuildingsJson(World ecsWorld, ObjectIntMap<String> buildingIds) {
-        BuildingStoreBuilder buildingStoreBuilder = new BuildingStoreBuilder();
+    private void readBuildingsJson(World ecsWorld, EcsConstants ecsConstants) {
         try {
             JsonValue buildingsValues = this.parseJsonFile(this.buildingsJsonFile);
             Iterator<Map.Entry<String, JsonValue>> economyBuildingEntryIterator = buildingsValues.get("economy_building").objectIterator();
             while (economyBuildingEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = economyBuildingEntryIterator.next();
                 String buildingName = entry.getKey();
+                Entity building = ecsWorld.obtainEntity(ecsWorld.entity(buildingName));
                 JsonValue buildingValue = entry.getValue();
                 int time = (int) buildingValue.get("time").asLong();
-                buildingStoreBuilder.addBuilding(buildingName, time, BuildingType.ECONOMY.getId());
-                long baseTypeId = ecsWorld.lookup(buildingValue.get("base_type").asString());
-                buildingStoreBuilder.addBaseType(baseTypeId);
-                long artisansTypeId = -1;
+                long buildingTypeId = ecsWorld.lookup(buildingValue.get("base_type").asString());
+                long artisansTypeId = 0;
                 if(buildingValue.get("artisans_type") != null) {
                     artisansTypeId = ecsWorld.lookup(buildingValue.get("artisans_type").asString());
                 }
-                buildingStoreBuilder.addArtisansType(artisansTypeId);
                 byte maxLevel = (byte) buildingValue.get("max_level").asLong();
-                buildingStoreBuilder.addMaxLevel(maxLevel);
+                long[] goodCostIds = new long[8];
+                float[] goodCostValues = new float[8];
                 Iterator<Map.Entry<String, JsonValue>> goodsCostEntryIterator = buildingValue.get("goods_cost").objectIterator();
+                int goodCostIndex = 0;
                 while (goodsCostEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> goodCost = goodsCostEntryIterator.next();
                     long goodId = ecsWorld.lookup(goodCost.getKey());
                     float goodValue = (float) goodCost.getValue().asDouble();
-                    buildingStoreBuilder.addGoodsCost(goodId, goodValue);
+                    goodCostIds[goodCostIndex] = goodId;
+                    goodCostValues[goodCostIndex] = goodValue;
+                    goodCostIndex++;
                 }
+                long[] inputGoodIds = new long[8];
+                float[] inputGoodValues = new float[8];
                 Iterator<Map.Entry<String, JsonValue>> inputGoodsEntryIterator = buildingValue.get("input_goods").objectIterator();
+                int inputGoodIndex = 0;
                 while (inputGoodsEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> inputGood = inputGoodsEntryIterator.next();
                     long goodId = ecsWorld.lookup(inputGood.getKey());
                     float goodValue = (float) inputGood.getValue().asDouble();
-                    buildingStoreBuilder.addInputGood(goodId, goodValue);
+                    inputGoodIds[inputGoodIndex] = goodId;
+                    inputGoodValues[inputGoodIndex] = goodValue;
+                    inputGoodIndex++;
                 }
+                long outputGoodId = 0;
+                float outputGoodValue = 0;
                 Iterator<Map.Entry<String, JsonValue>> outputGoodsEntryIterator = buildingValue.get("output_goods").objectIterator();
                 if (outputGoodsEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> outputGood = outputGoodsEntryIterator.next();
                     long goodId = ecsWorld.lookup(outputGood.getKey());
                     float goodValue = (float) outputGood.getValue().asDouble();
-                    buildingStoreBuilder.addOutputGood(goodId, goodValue);
+                    outputGoodId = goodId;
+                    outputGoodValue = goodValue;
                 }
-
-                buildingStoreBuilder.addCost(-1).addOnMap(false);
-                buildingIds.put(buildingName, buildingStoreBuilder.getIndex());
+                building.set(new EconomyBuilding(time, buildingTypeId, artisansTypeId, maxLevel, goodCostIds, goodCostValues, inputGoodIds, inputGoodValues, outputGoodId, outputGoodValue));
             }
 
             Iterator<Map.Entry<String, JsonValue>> specialBuildingEntryIterator = buildingsValues.get("special_building").objectIterator();
             while (specialBuildingEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = specialBuildingEntryIterator.next();
                 String buildingName = entry.getKey();
+                Entity building = ecsWorld.obtainEntity(ecsWorld.entity(buildingName));
                 JsonValue buildingValue = entry.getValue();
                 int time = (int) buildingValue.get("time").asLong();
                 int cost = (int) buildingValue.get("cost").asLong();
-                buildingStoreBuilder.addBuilding(buildingName, time, BuildingType.SPECIAL.getId()).addCost(cost);
+                long[] goodCostIds = new long[8];
+                float[] goodCostValues = new float[8];
                 Iterator<Map.Entry<String, JsonValue>> goodsCostEntryIterator = buildingValue.get("goods_cost").objectIterator();
+                int goodCostIndex = 0;
                 while (goodsCostEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> goodCost = goodsCostEntryIterator.next();
                     long goodId = ecsWorld.lookup(goodCost.getKey());
                     float goodValue = (float) goodCost.getValue().asDouble();
-                    buildingStoreBuilder.addGoodsCost(goodId, goodValue);
+                    goodCostIds[goodCostIndex] = goodId;
+                    goodCostValues[goodCostIndex] = goodValue;
+                    goodCostIndex++;
                 }
 
                 JsonValue modifiersValues = buildingValue.get("modifier");
                 if (modifiersValues != null) {
+                    long[] modifierIds = new long[8];
+                    float[] modifierValues = new float[8];
                     Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = modifiersValues.objectIterator();
+                    int i = 0;
                     while (modifiersEntryIterator.hasNext()) {
                         Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
                         String modifierName = modifierEntry.getKey();
                         JsonValue modifierValue = modifierEntry.getValue();
-                        if (modifierValue.isLong()) {
-                            buildingStoreBuilder.addModifier(-1); // todo : refactor modifier to data oriented
-                        } else {
-                            float value = (float) modifierValue.get("value").asDouble();
-                            String modifierType = modifierValue.get("type").asString();
-                            buildingStoreBuilder.addModifier(-1); // todo : refactor modifier to data oriented
-                        }
+                        long modifierId = ecsWorld.entity(modifierName);
+                        float value = (float) modifierValue.asDouble();
+                        modifierIds[i] = modifierId;
+                        modifierValues[i] = value;
+                        i++;
                     }
+                    building.set(new Modifiers(modifierValues, modifierIds));
                 }
-                buildingStoreBuilder.addMaxLevel((byte) -1).addBaseType(-1).addArtisansType(-1).addOnMap(false);
-                buildingIds.put(buildingName, buildingStoreBuilder.getIndex());
+                building.set(new SpecialBuilding(time, cost, goodCostIds, goodCostValues));
             }
 
             Iterator<Map.Entry<String, JsonValue>> developmentBuildingEntryIterator = buildingsValues.get("development_building").objectIterator();
             while (developmentBuildingEntryIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = developmentBuildingEntryIterator.next();
                 String buildingName = entry.getKey();
+                Entity building = ecsWorld.obtainEntity(ecsWorld.entity(buildingName));
                 JsonValue buildingValue = entry.getValue();
                 int time = (int) buildingValue.get("time").asLong();
                 int cost = (int) buildingValue.get("cost").asLong();
-                buildingStoreBuilder.addBuilding(buildingName, time, BuildingType.DEVELOPMENT.getId()).addCost(cost);
+                long[] goodCostIds = new long[8];
+                float[] goodCostValues = new float[8];
                 Iterator<Map.Entry<String, JsonValue>> goodsCostEntryIterator = buildingValue.get("goods_cost").objectIterator();
+                int goodCostIndex = 0;
                 while (goodsCostEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> goodCost = goodsCostEntryIterator.next();
                     long goodId = ecsWorld.lookup(goodCost.getKey());
                     float goodValue = (float) goodCost.getValue().asDouble();
-                    buildingStoreBuilder.addGoodsCost(goodId, goodValue);
+                    goodCostIds[goodCostIndex] = goodId;
+                    goodCostValues[goodCostIndex] = goodValue;
+                    goodCostIndex++;
                 }
                 boolean onMap = buildingValue.get("onmap").asBoolean();
-                byte maxLevel = (byte) buildingValue.get("max_level").asLong();
-                buildingStoreBuilder.addOnMap(onMap).addMaxLevel(maxLevel);
-                JsonValue modifierValues = buildingValue.get("modifier");
-                if(modifierValues != null) {
-                    Iterator<Map.Entry<String, JsonValue>> modifierEntryIterator = modifierValues.objectIterator();
-                    Map.Entry<String, JsonValue> modifierEntry = modifierEntryIterator.next();
-                    String modifierName = modifierEntry.getKey();
-                    float modifierValue = (float) modifierEntry.getValue().asLong();
-                    buildingStoreBuilder.addModifier(-1); // todo : refactor modifier to data oriented
+                if(onMap) {
+                    building.add(ecsConstants.onMap());
                 }
-                buildingStoreBuilder.addBaseType(-1).addArtisansType(-1);
-                buildingIds.put(buildingName, buildingStoreBuilder.getIndex());
+                int maxLevel = (int) buildingValue.get("max_level").asLong();
+                JsonValue modifiersValues = buildingValue.get("modifier");
+                if (modifiersValues != null) {
+                    long[] modifierIds = new long[8];
+                    float[] modifierValues = new float[8];
+                    Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = modifiersValues.objectIterator();
+                    int i = 0;
+                    while (modifiersEntryIterator.hasNext()) {
+                        Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
+                        String modifierName = modifierEntry.getKey();
+                        JsonValue modifierValue = modifierEntry.getValue();
+                        long modifierId = ecsWorld.entity(modifierName);
+                        float value = (float) modifierValue.asDouble();
+                        modifierIds[i] = modifierId;
+                        modifierValues[i] = value;
+                        i++;
+                    }
+                    building.set(new Modifiers(modifierValues, modifierIds));
+                }
+                building.set(new DevelopmentBuilding(time, cost, goodCostIds, goodCostValues, maxLevel));
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
-        return buildingStoreBuilder.build();
     }
 
     private void readResourceProductionsJson(World ecsWorld) {
@@ -878,11 +901,11 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private ProvinceStore loadProvinces(World ecsWorld, EcsConstants ecsConstants, RegionStoreBuilder regionStoreBuilder, IntLongMap provinces, ObjectIntMap<String> buildingIds, Borders borders) {
-        IntObjectMap<IntIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
+    private ProvinceStore loadProvinces(World ecsWorld, EcsConstants ecsConstants, IntLongMap provinces, Borders borders) {
+        IntObjectMap<LongIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
         PopulationTemplateStore populationTemplateStore = this.readPopulationTemplatesJson();
-        ProvinceStore provinceStore = this.readProvincesJson(ecsWorld, regionBuildingsByProvince, populationTemplateStore, buildingIds);
-        this.readRegionJson(ecsWorld, ecsConstants, regionBuildingsByProvince, regionStoreBuilder);
+        ProvinceStore provinceStore = this.readProvincesJson(ecsWorld, regionBuildingsByProvince, populationTemplateStore);
+        this.readRegionJson(ecsWorld, ecsConstants, regionBuildingsByProvince);
         this.readDefinitionCsv(ecsWorld, ecsConstants, provinces, provinceStore);
         this.readProvinceBitmap(ecsWorld, provinces, borders);
         this.readCountriesHistoryJson(ecsWorld, ecsConstants);
@@ -916,7 +939,7 @@ public class WorldDaoImpl implements WorldDao {
         return builder.build();
     }
 
-    private ProvinceStore readProvincesJson(World ecsWorld, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, ObjectIntMap<String> buildingIds) {
+    private ProvinceStore readProvincesJson(World ecsWorld, IntObjectMap<LongIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore) {
         ProvinceStoreBuilder builder = new ProvinceStoreBuilder();
         IntObjectMap<String> provincesPaths = new IntObjectMap<>(builder.getDefaultCapacity(), 1f);
         try {
@@ -930,7 +953,7 @@ public class WorldDaoImpl implements WorldDao {
             for (IntObjectMap.Entry<String> entry : provincesPaths.entrySet()) {
                 int provinceId = entry.getKey();
                 String provincePath = entry.getValue();
-                this.readProvinceJson(ecsWorld, provincePath, provinceId, regionBuildingsByProvince, populationTemplateStore, buildingIds, builder);
+                this.readProvinceJson(ecsWorld, provincePath, provinceId, regionBuildingsByProvince, populationTemplateStore, builder);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -941,7 +964,7 @@ public class WorldDaoImpl implements WorldDao {
         return builder.build();
     }
 
-    private void readProvinceJson(World ecsWorld, String provincePath, int provinceId, IntObjectMap<IntIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, ObjectIntMap<String> buildingIds, ProvinceStoreBuilder builder) {
+    private void readProvinceJson(World ecsWorld, String provincePath, int provinceId, IntObjectMap<LongIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, ProvinceStoreBuilder builder) {
         try {
             JsonValue provinceValues = this.parseJsonFile(provincePath);
 
@@ -987,13 +1010,13 @@ public class WorldDaoImpl implements WorldDao {
 
             JsonValue buildingsValue = provinceValues.get("economy_buildings");
             if(buildingsValue != null) {
-                IntIntMap buildings = new IntIntMap();
+                LongIntMap buildings = new LongIntMap();
                 Iterator<JsonValue> buildingsIterator = buildingsValue.arrayIterator();
                 while (buildingsIterator.hasNext()) {
                     JsonValue building = buildingsIterator.next();
                     String buildingName = building.get("name").asString();
                     int size = (int) building.get("size").asLong();
-                    buildings.put(buildingIds.get(buildingName), size);
+                    buildings.put(ecsWorld.lookup(buildingName), size);
                 }
                 regionBuildingsByProvince.put(provinceId, buildings);
             }
@@ -1012,7 +1035,7 @@ public class WorldDaoImpl implements WorldDao {
                     JsonValue building = buildingsProvinceIterator.next();
                     String buildingName = building.get("name").asString();
                     int size = (int) building.get("size").asLong();
-                    int buildingId = buildingIds.get(buildingName);
+                    long buildingId = ecsWorld.lookup(buildingName);
                     builder.addBuilding(buildingId, size);
                 }
             }
@@ -1054,7 +1077,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readRegionJson(World ecsWorld, EcsConstants ecsConstants, IntObjectMap<IntIntMap> regionBuildingsByProvince, RegionStoreBuilder regionStoreBuilder) {
+    private void readRegionJson(World ecsWorld, EcsConstants ecsConstants, IntObjectMap<LongIntMap> regionBuildingsByProvince) {
         try {
             JsonValue regionValue = this.parseJsonFile(this.regionJsonFiles);
             Iterator<Map.Entry<String, JsonValue>> regionEntryIterator = regionValue.objectIterator();
@@ -1064,7 +1087,6 @@ public class WorldDaoImpl implements WorldDao {
                 long regionEntityId = ecsWorld.entity(regionId);
                 Entity regionEntity = ecsWorld.obtainEntity(regionEntityId);
                 regionEntity.add(ecsConstants.regionTag());
-                regionStoreBuilder.addRegion(regionId);
                 Iterator<JsonValue> regionIterator = entry.getValue().arrayIterator();
                 while (regionIterator.hasNext()) {
                     int provinceId = (int) regionIterator.next().asLong();
@@ -1072,12 +1094,13 @@ public class WorldDaoImpl implements WorldDao {
                     Entity provinceEntity = provinceEntityId != -1 ? ecsWorld.obtainEntity(provinceEntityId) : null;
                     if(provinceEntityId != -1 && provinceEntity.has(Province.class)) {
                         provinceEntity.set(new GeoHierarchy(regionEntityId, -1));
-                        IntIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
+                        LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
-                            for(IntIntMap.Entry buildingEntry : regionBuildingIds) {
-                                int buildingId = buildingEntry.key;
+                            for(LongIntMap.Entry buildingEntry : regionBuildingIds) {
+                                long buildingId = buildingEntry.key;
                                 int size = buildingEntry.value;
-                                regionStoreBuilder.addBuilding(buildingId, size);
+                                Entity building = ecsWorld.obtainEntity(ecsWorld.entity());
+                                building.set(new Building(regionEntityId, buildingId, size));
                             }
                         }
                     } else {

@@ -2,18 +2,19 @@ package com.populaire.projetguerrefroide.map;
 
 import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.LongList;
 import com.github.tommyettinger.ds.ObjectIntMap;
 
 public class RegionStore {
     private final ObjectIntMap<String> regionIds;
-    private final IntList buildingIds;
+    private final LongList buildingIds;
     private final IntList buildingValues;
     private final IntList buildingStarts;
     private final IntList buildingCounts;
     private final FloatList buildingProductionValues;
     private final IntList buildingWorkersAmountValues;
 
-    public RegionStore(ObjectIntMap<String> regionIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts) {
+    public RegionStore(ObjectIntMap<String> regionIds, LongList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts) {
         this.regionIds = regionIds;
         this.buildingIds = buildingIds;
         this.buildingValues = buildingValues;
@@ -29,7 +30,7 @@ public class RegionStore {
         return this.regionIds;
     }
 
-    public IntList getBuildingIds() {
+    public LongList getBuildingIds() {
         return this.buildingIds;
     }
 

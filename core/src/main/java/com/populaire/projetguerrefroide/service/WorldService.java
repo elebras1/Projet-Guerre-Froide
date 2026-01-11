@@ -11,8 +11,6 @@ import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.*;
-import com.populaire.projetguerrefroide.economy.building.BuildingStore;
-import com.populaire.projetguerrefroide.economy.building.BuildingType;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.screen.DateListener;
 import com.populaire.projetguerrefroide.ui.view.SortType;
@@ -360,7 +358,6 @@ public class WorldService implements DateListener {
         byte antiAircraftGunsLevel = 0;
 
         ProvinceStore provinceStore = this.worldManager.getProvinceStore();
-        BuildingStore buildingStore = this.worldManager.getBuildingStore();
 
         int provinceIndex = provinceStore.getIndexById().get(provinceId);
 
@@ -368,11 +365,11 @@ public class WorldService implements DateListener {
         int buildingCount = provinceStore.getBuildingCounts().get(provinceIndex);
 
         for (int i = buildingStart; i < buildingStart + buildingCount; i++) {
-            int buildingId = provinceStore.getBuildingIds().get(i);
+            long buildingId = provinceStore.getBuildingIds().get(i);
+            Entity building = this.gameContext.getEcsWorld().obtainEntity(buildingId);
             int buildingLevel = provinceStore.getBuildingValues().get(i);
-            String buildingName = buildingStore.getNames().get(buildingId);
 
-            switch (buildingName) {
+            switch (building.getName()) {
                 case "naval_base" -> navalBaseLevel = (byte) buildingLevel;
                 case "air_base" -> airBaseLevel = (byte) buildingLevel;
                 case "radar_station" -> radarStationLevel = (byte) buildingLevel;
@@ -417,9 +414,6 @@ public class WorldService implements DateListener {
     }
 
     private List<String> getColorBuildingsOrderByLevel(long regionId) {
-        RegionStore regionStore = this.worldManager.getRegionStore();
-        BuildingStore buildingStore = this.worldManager.getBuildingStore();
-
         Entity region = this.gameContext.getEcsWorld().obtainEntity(regionId);
         String regionNameId = region.getName();
         int regionIndex = regionStore.getRegionIds().get(regionNameId);
@@ -429,12 +423,11 @@ public class WorldService implements DateListener {
         List<Integer> buildingIndices = new ObjectList<>();
 
         for (int buildingIndex = regionBuildingStart; buildingIndex < regionBuildingEnd; buildingIndex++) {
-            int buildingId = regionStore.getBuildingIds().get(buildingIndex);
-            byte buildingType = buildingStore.getTypes().get(buildingId);
+            long buildingId = regionStore.getBuildingIds().get(buildingIndex);
+            Entity building = this.gameContext.getEcsWorld().obtainEntity(buildingId);
 
-            if (buildingType == BuildingType.ECONOMY.getId()) {
-                String buildingName = buildingStore.getNames().get(buildingId);
-                String color = BuildingUtils.getColor(buildingName);
+            if (building.has(EconomyBuilding.class)) {
+                String color = BuildingUtils.getColor(building.getName());
 
                 if (color != null) {
                     buildingIndices.add(buildingIndex);
@@ -450,9 +443,9 @@ public class WorldService implements DateListener {
 
         List<String> colors = new ObjectList<>();
         for (int buildingIndex : buildingIndices) {
-            int buildingId = regionStore.getBuildingIds().get(buildingIndex);
-            String buildingName = buildingStore.getNames().get(buildingId);
-            String color = BuildingUtils.getColor(buildingName);
+            long buildingId = regionStore.getBuildingIds().get(buildingIndex);
+            Entity building = this.gameContext.getEcsWorld().obtainEntity(buildingId);
+            String color = BuildingUtils.getColor(building.getName());
             colors.add(color);
         }
 
@@ -463,7 +456,6 @@ public class WorldService implements DateListener {
         World ecsWorld = this.gameContext.getEcsWorld();
         int industryCount = 0;
         RegionStore regionStore = this.worldManager.getRegionStore();
-        BuildingStore buildingStore = this.worldManager.getBuildingStore();
 
         String regionNameId = ecsWorld.obtainEntity(regionId).getName();
         int regionIndex = regionStore.getRegionIds().get(regionNameId);
@@ -472,10 +464,10 @@ public class WorldService implements DateListener {
         int buildingEnd = buildingStart + regionStore.getBuildingCounts().get(regionIndex);
 
         for (int i = buildingStart; i < buildingEnd; i++) {
-            int buildingId = regionStore.getBuildingIds().get(i);
-            byte buildingType = buildingStore.getTypes().get(buildingId);
+            long buildingId = regionStore.getBuildingIds().get(i);
+            Entity building = ecsWorld.obtainEntity(buildingId);
 
-            if (buildingType == BuildingType.ECONOMY.getId()) {
+            if (building.has(EconomyBuilding.class)) {
                 industryCount++;
             }
         }
@@ -494,15 +486,12 @@ public class WorldService implements DateListener {
         int buildingStart = regionStore.getBuildingStarts().get(regionIndex);
         int buildingEnd = buildingStart + regionStore.getBuildingCounts().get(regionIndex);
 
-        BuildingStore buildingStore = this.worldManager.getBuildingStore();
-
         for (int i = buildingStart; i < buildingEnd; i++) {
-            int buildingId = regionStore.getBuildingIds().get(i);
-            byte buildingType = buildingStore.getTypes().get(buildingId);
+            long buildingId = regionStore.getBuildingIds().get(i);
+            Entity building = ecsWorld.obtainEntity(buildingId);
 
-            if (buildingType == BuildingType.SPECIAL.getId()) {
-                String buildingName = buildingStore.getNames().get(buildingId);
-                specialBuildingNames.add(buildingName);
+            if (building.has(SpecialBuilding.class)) {
+                specialBuildingNames.add(building.getName());
             }
         }
 
