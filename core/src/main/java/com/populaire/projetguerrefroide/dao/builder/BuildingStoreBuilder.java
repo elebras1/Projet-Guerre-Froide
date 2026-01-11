@@ -19,8 +19,8 @@ public class BuildingStoreBuilder {
     private final IntList modifierIds;
     private final IntList modifierStart;
     private final IntList modifierCount;
-    private final IntList baseTypeIds;
-    private final IntList artisansTypeIds;
+    private final LongList baseTypeIds;
+    private final LongList artisansTypeIds;
     private final LongList inputGoodIds;
     private final FloatList inputGoodValues;
     private final IntList inputGoodStarts;
@@ -44,8 +44,8 @@ public class BuildingStoreBuilder {
         this.modifierIds = new IntList();
         this.modifierStart = new IntList(this.defaultCapacity);
         this.modifierCount = new IntList(this.defaultCapacity);
-        this.baseTypeIds = new IntList();
-        this.artisansTypeIds = new IntList();
+        this.baseTypeIds = new LongList();
+        this.artisansTypeIds = new LongList();
         this.inputGoodIds = new LongList();
         this.inputGoodValues = new FloatList();
         this.inputGoodStarts = new IntList(this.defaultCapacity);
@@ -107,12 +107,12 @@ public class BuildingStoreBuilder {
         return this;
     }
 
-    public BuildingStoreBuilder addBaseType(int baseTypeId) {
+    public BuildingStoreBuilder addBaseType(long baseTypeId) {
         this.baseTypeIds.add(baseTypeId);
         return this;
     }
 
-    public BuildingStoreBuilder addArtisansType(int artisansTypeId) {
+    public BuildingStoreBuilder addArtisansType(long artisansTypeId) {
         this.artisansTypeIds.add(artisansTypeId);
         return this;
     }

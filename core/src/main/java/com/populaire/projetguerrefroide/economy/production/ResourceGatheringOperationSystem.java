@@ -5,24 +5,15 @@ import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntList;
 import com.github.tommyettinger.ds.LongList;
-import com.populaire.projetguerrefroide.component.Good;
-import com.populaire.projetguerrefroide.component.ResourceProduction;
-import com.populaire.projetguerrefroide.economy.building.EmployeeStore;
-import com.populaire.projetguerrefroide.economy.building.ProductionTypeStore;
+import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.map.ProvinceStore;
 
 public class ResourceGatheringOperationSystem {
 
-    public void initialiazeSize(World ecsWorld, ProvinceStore provinceStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore) {
+    public void initialiazeSize(World ecsWorld, ProvinceStore provinceStore) {
         IntList provinceResourceGoodsSize = provinceStore.getResourceGoodsSize();
 
         LongList provinceResourceGoodIds = provinceStore.getResourceGoodIds();
-
-        IntList productionTypeWorkforces = productionTypeStore.getWorkforces();
-        IntList productionTypeEmployeeStarts = productionTypeStore.getEmployeeStarts();
-        IntList productionTypeEmployeeIds = productionTypeStore.getEmployeeIds();
-
-        LongList employeePopulationTypeIds = employeeStore.getPopulationTypeIds();
 
         LongList provincePopulationTypeIds = provinceStore.getPopulationTypeIds();
         IntList provincePopulationTypeStarts = provinceStore.getPopulationTypeStarts();
@@ -37,11 +28,13 @@ public class ResourceGatheringOperationSystem {
             }
             Entity resourceGood = ecsWorld.obtainEntity(resourceGoodId);
             ResourceProduction resourceProduction = resourceGood.get(ResourceProduction.class);
-            int workforce = productionTypeWorkforces.get(resourceProduction.productionTypeId());
+            Entity productionType = ecsWorld.obtainEntity(resourceProduction.productionTypeId());
+            ProductionType productionTypeData = productionType.get(ProductionType.class);
+            long firstEmployeeEntityId = productionTypeData.employeeTypes()[0];
+            Entity employeeEntity = ecsWorld.obtainEntity(firstEmployeeEntityId);
+            EmployeeType employeeTypeData = employeeEntity.get(EmployeeType.class);
+            long workerPopulationTypeId = employeeTypeData.populationTypeId();
 
-            int employeeStart = productionTypeEmployeeStarts.get(resourceProduction.productionTypeId());
-            int employeeId = productionTypeEmployeeIds.get(employeeStart);
-            long workerPopulationTypeId = employeePopulationTypeIds.get(employeeId);
 
             int populationTypeStart = provincePopulationTypeStarts.get(provinceId);
             int populationTypeCount = provincePopulationTypeCounts.get(provinceId);
@@ -56,23 +49,16 @@ public class ResourceGatheringOperationSystem {
                 }
             }
 
-            int size = (workerInProvince + workforce - 1) / workforce;
+            int size = (workerInProvince + productionTypeData.workforce() - 1) / productionTypeData.workforce();
             size = (int)(size * 1.5f);
 
             provinceResourceGoodsSize.set(provinceId, size);
         }
     }
 
-    public void hire(World ecsWorld, ProvinceStore provinceStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore) {
+    public void hire(World ecsWorld, ProvinceStore provinceStore) {
         IntList provinceResourceGoodsPopulationAmountValues = provinceStore.getResourceGoodsPopulationAmountValues();
         LongList provinceResourceGoodIds = provinceStore.getResourceGoodIds();
-
-        IntList productionTypeEmployeeStarts = productionTypeStore.getEmployeeStarts();
-        IntList productionTypeEmployeeCounts = productionTypeStore.getEmployeeCounts();
-        IntList productionTypeEmployeeIds = productionTypeStore.getEmployeeIds();
-
-        LongList employeePopulationTypeIds = employeeStore.getPopulationTypeIds();
-        FloatList employeeAmounts = employeeStore.getAmounts();
 
         LongList provincePopulationTypeIds = provinceStore.getPopulationTypeIds();
         IntList provincePopulationTypeStarts = provinceStore.getPopulationTypeStarts();
@@ -87,10 +73,10 @@ public class ResourceGatheringOperationSystem {
             }
             Entity resourceGood = ecsWorld.obtainEntity(resourceGoodId);
             ResourceProduction resourceProduction = resourceGood.get(ResourceProduction.class);
-            int maxWorkers = getMaxWorkers(ecsWorld, provinceStore, productionTypeStore, provinceId);
+            int maxWorkers = getMaxWorkers(ecsWorld, provinceStore, provinceId);
 
-            int employeeStart = productionTypeEmployeeStarts.get(resourceProduction.productionTypeId());
-            int employeeCount = productionTypeEmployeeCounts.get(resourceProduction.productionTypeId());
+            Entity productionType = ecsWorld.obtainEntity(resourceProduction.productionTypeId());
+            ProductionType productionTypeData = productionType.get(ProductionType.class);
 
             int populationTypeStart = provincePopulationTypeStarts.get(provinceId);
             int populationTypeCount = provincePopulationTypeCounts.get(provinceId);
@@ -101,12 +87,13 @@ public class ResourceGatheringOperationSystem {
 
                 int hiredForThisPop = 0;
 
-                for (int employeeIndex = employeeStart; employeeIndex < employeeStart + employeeCount; employeeIndex++) {
-                    int employeeId = productionTypeEmployeeIds.get(employeeIndex);
-                    long requiredPopTypeId = employeePopulationTypeIds.get(employeeId);
+                for (int employeeIndex = 0; employeeIndex < productionTypeData.employeeTypes().length && productionTypeData.employeeTypes()[employeeIndex] != 0; employeeIndex++) {
+                    long employeeId = productionTypeData.employeeTypes()[employeeIndex];
+                    EmployeeType employeeType = ecsWorld.obtainEntity(employeeId).get(EmployeeType.class);
+                    long requiredPopTypeId = employeeType.populationTypeId();
 
                     if (requiredPopTypeId == popTypeId) {
-                        float ratio = employeeAmounts.get(employeeId);
+                        float ratio = employeeType.amount();
                         int neededForThisType = (int)(maxWorkers * ratio);
                         hiredForThisPop = Math.min(popTypeValue, neededForThisType);
                         break;
@@ -118,7 +105,7 @@ public class ResourceGatheringOperationSystem {
         }
     }
 
-    public void produce(World ecsWorld, ProvinceStore provinceStore, ProductionTypeStore productionTypeStore) {
+    public void produce(World ecsWorld, ProvinceStore provinceStore) {
         FloatList provinceResourceGoodsProductions = provinceStore.getResourceGoodsProduction();
 
         IntList provinceResourceGoodsSize = provinceStore.getResourceGoodsSize();
@@ -147,19 +134,20 @@ public class ResourceGatheringOperationSystem {
                 totalWorkers += provinceStore.getResourceGoodsPopulationAmountValues().get(popIndex);
             }
 
-            float throughput = (float) totalWorkers / this.getMaxWorkers(ecsWorld, provinceStore, productionTypeStore, provinceId);
+            float throughput = (float) totalWorkers / this.getMaxWorkers(ecsWorld, provinceStore, provinceId);
             float production = baseProduction * throughput;
 
             provinceResourceGoodsProductions.set(provinceId, production);
         }
     }
 
-    private int getMaxWorkers(World ecsWorld, ProvinceStore provinceStore, ProductionTypeStore productionTypeStore, int provinceId) {
+    private int getMaxWorkers(World ecsWorld, ProvinceStore provinceStore, int provinceId) {
         int resourceGoodSize = provinceStore.getResourceGoodsSize().get(provinceId);
         long resourceGoodId = provinceStore.getResourceGoodIds().get(provinceId);
         Entity resourceGood = ecsWorld.obtainEntity(resourceGoodId);
         ResourceProduction resourceProduction = resourceGood.get(ResourceProduction.class);
-        int workforce = productionTypeStore.getWorkforces().get(resourceProduction.productionTypeId());
-        return resourceGoodSize * workforce;
+        Entity productionType = ecsWorld.obtainEntity(resourceProduction.productionTypeId());
+        ProductionType productionTypeData = productionType.get(ProductionType.class);
+        return resourceGoodSize * productionTypeData.workforce();
     }
 }

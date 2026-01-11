@@ -74,14 +74,10 @@ public class WorldDaoImpl implements WorldDao {
         this.readMinisterTypesJson(ecsWorld);
         this.readGoodsJson(ecsWorld, ecsConstants);
         this.readPopulationTypesJson(ecsWorld);
-        ObjectIntMap<String> productionTypeIds = new ObjectIntMap<>(5, 1f);
-        EmployeeStoreBuilder employeeStoreBuilder = new EmployeeStoreBuilder();
-        EmployeeStore employeeStore = employeeStoreBuilder.build();
-        ObjectIntMap<String> employeeIds = new ObjectIntMap<>(employeeStoreBuilder.getDefaultCapacity(), 1f);
-        ProductionTypeStore productionTypeStore = this.readProductionTypesJson(ecsWorld, employeeStoreBuilder, productionTypeIds, employeeIds);
+        this.readProductionTypesJson(ecsWorld);
         ObjectIntMap<String> buildingIds = new ObjectIntMap<>(54, 1f);
-        BuildingStore buildingStore = this.readBuildingsJson(ecsWorld, productionTypeIds, buildingIds);
-        this.readResourceProductionsJson(ecsWorld, productionTypeIds);
+        BuildingStore buildingStore = this.readBuildingsJson(ecsWorld, buildingIds);
+        this.readResourceProductionsJson(ecsWorld);
         this.readTraitsJson(ecsWorld);
         this.loadCountries(ecsWorld, ecsConstants);
         this.readTerrainsJson(ecsWorld);
@@ -91,7 +87,7 @@ public class WorldDaoImpl implements WorldDao {
         ProvinceStore provinceStore = this.loadProvinces(ecsWorld, ecsConstants, regionStoreBuilder, provinces, buildingIds, borders);
         RegionStore regionStore = regionStoreBuilder.build();
 
-        return new WorldManager(provinces, provinceStore, regionStore, buildingStore, productionTypeStore, employeeStore, borders, gameContext);
+        return new WorldManager(provinces, provinceStore, regionStore, buildingStore, borders, gameContext);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -378,8 +374,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private ProductionTypeStore readProductionTypesJson(World ecsWorld, EmployeeStoreBuilder employeeStoreBuilder, ObjectIntMap<String> productionTypeIds, ObjectIntMap<String> employeeIds) {
-        ProductionTypeStoreBuilder productionTypeStoreBuilder = new ProductionTypeStoreBuilder();
+    private void readProductionTypesJson(World ecsWorld) {
         try {
             JsonValue buildingTypesJson = this.parseJsonFile(this.productionTypesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> typesEmployeesValues = buildingTypesJson.get("types_employees").objectIterator();
@@ -390,55 +385,61 @@ public class WorldDaoImpl implements WorldDao {
                 long populationTypeId = ecsWorld.lookup(typeEmployeeValue.get("poptype").asString());
                 float amount = (float) typeEmployeeValue.get("amount").asDouble();
                 float effectMultiplier = (float) typeEmployeeValue.get("effect_multiplier").asDouble();
-                employeeStoreBuilder.addEmployee(populationTypeId, amount, effectMultiplier);
-                employeeIds.put(typeName, employeeStoreBuilder.getIndex());
+                Entity employee = ecsWorld.obtainEntity(ecsWorld.entity(typeName));
+                employee.set(new EmployeeType(populationTypeId, amount, effectMultiplier));
             }
 
             Iterator<Map.Entry<String, JsonValue>> typesBuildingsValues = buildingTypesJson.get("types_buildings").objectIterator();
             while (typesBuildingsValues.hasNext()) {
                 Map.Entry<String, JsonValue> entry = typesBuildingsValues.next();
                 String typeName = entry.getKey();
+                Entity buildingTypeEntity = ecsWorld.obtainEntity(ecsWorld.entity(typeName));
                 JsonValue typeBuildingsValue = entry.getValue();
                 int workforce = (int) typeBuildingsValue.get("workforce").asLong();
                 long ownerId = ecsWorld.lookup(typeBuildingsValue.get("owner").get("poptype").asString());
-                productionTypeStoreBuilder.addProductionType(workforce, ownerId);
+
+                long[] employeeIds = new long[4];
                 Iterator<JsonValue> employeesIterator = typeBuildingsValue.get("employees").arrayIterator();
+                int i = 0;
                 while (employeesIterator.hasNext()) {
                     JsonValue employee = employeesIterator.next();
                     String employeeName = employee.asString();
-                    int employeeId = employeeIds.get(employeeName);
-                    productionTypeStoreBuilder.addEmployee(employeeId);
+                    long employeeId = ecsWorld.lookup(employeeName);
+                    employeeIds[i] = employeeId;
+                    i++;
                 }
-                productionTypeIds.put(typeName, productionTypeStoreBuilder.getIndex());
+                buildingTypeEntity.set(new ProductionType(workforce, ownerId, employeeIds));
             }
 
             Iterator<Map.Entry<String, JsonValue>> typesRGOs = buildingTypesJson.get("types_rgo").objectIterator();
             while (typesRGOs.hasNext()) {
                 Map.Entry<String, JsonValue> entry = typesRGOs.next();
                 String typeName = entry.getKey();
+                Entity buildingTypeEntity = ecsWorld.obtainEntity(ecsWorld.entity(typeName));
                 JsonValue typeRGOValue = entry.getValue();
                 int workforce = (int) typeRGOValue.get("workforce").asLong();
                 long ownerId = ecsWorld.lookup(typeRGOValue.get("owner").get("poptype").asString());
-                productionTypeStoreBuilder.addProductionType(workforce, ownerId);
+
+                long[] employeeIds = new long[4];
                 Iterator<JsonValue> employeesIterator = typeRGOValue.get("employees").arrayIterator();
+                int i = 0;
                 while (employeesIterator.hasNext()) {
                     JsonValue employee = employeesIterator.next();
                     String employeeName = employee.asString();
-                    int employeeId = employeeIds.get(employeeName);
-                    productionTypeStoreBuilder.addEmployee(employeeId);
+                    long employeeId = ecsWorld.lookup(employeeName);
+                    employeeIds[i] = employeeId;
+                    i++;
                 }
-                productionTypeIds.put(typeName, productionTypeStoreBuilder.getIndex());
+                buildingTypeEntity.set(new ProductionType(workforce, ownerId, employeeIds));
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
-        return productionTypeStoreBuilder.build();
     }
 
-    private BuildingStore readBuildingsJson(World ecsWorld, ObjectIntMap<String> productionTypeIds, ObjectIntMap<String> buildingIds) {
+    private BuildingStore readBuildingsJson(World ecsWorld, ObjectIntMap<String> buildingIds) {
         BuildingStoreBuilder buildingStoreBuilder = new BuildingStoreBuilder();
         try {
             JsonValue buildingsValues = this.parseJsonFile(this.buildingsJsonFile);
@@ -449,11 +450,11 @@ public class WorldDaoImpl implements WorldDao {
                 JsonValue buildingValue = entry.getValue();
                 int time = (int) buildingValue.get("time").asLong();
                 buildingStoreBuilder.addBuilding(buildingName, time, BuildingType.ECONOMY.getId());
-                int baseTypeId = productionTypeIds.get(buildingValue.get("base_type").asString());
+                long baseTypeId = ecsWorld.lookup(buildingValue.get("base_type").asString());
                 buildingStoreBuilder.addBaseType(baseTypeId);
-                int artisansTypeId = -1;
+                long artisansTypeId = -1;
                 if(buildingValue.get("artisans_type") != null) {
-                    artisansTypeId = productionTypeIds.get(buildingValue.get("artisans_type").asString());
+                    artisansTypeId = ecsWorld.lookup(buildingValue.get("artisans_type").asString());
                 }
                 buildingStoreBuilder.addArtisansType(artisansTypeId);
                 byte maxLevel = (byte) buildingValue.get("max_level").asLong();
@@ -558,7 +559,7 @@ public class WorldDaoImpl implements WorldDao {
         return buildingStoreBuilder.build();
     }
 
-    private void readResourceProductionsJson(World ecsWorld, ObjectIntMap<String> productionTypeIds) {
+    private void readResourceProductionsJson(World ecsWorld) {
         try {
             JsonValue resourceProductionsValues = this.parseJsonFile(this.resourceProductionsJsonFile);
             Iterator<Map.Entry<String, JsonValue>> resourceProductionsEntryIterator = resourceProductionsValues.objectIterator();
@@ -567,7 +568,7 @@ public class WorldDaoImpl implements WorldDao {
                 long goodId = ecsWorld.lookup(entry.getKey());
                 Entity good = ecsWorld.obtainEntity(goodId);
                 JsonValue productionValue = entry.getValue();
-                int productionTypeId = productionTypeIds.get(productionValue.get("base_type").asString());
+                long productionTypeId = ecsWorld.lookup(productionValue.get("base_type").asString());
                 good.set(new ResourceProduction(productionTypeId));
             }
         } catch (IOException ioException) {

@@ -15,8 +15,8 @@ public class BuildingStore {
     private final IntList modifierIds;
     private final IntList modifierStart;
     private final IntList modifierCount;
-    private final IntList baseTypeIds;
-    private final IntList artisansTypeIds;
+    private final LongList baseTypeIds;
+    private final LongList artisansTypeIds;
     private final LongList inputGoodIds;
     private final FloatList inputGoodValues;
     private final IntList inputGoodStarts;
@@ -26,7 +26,7 @@ public class BuildingStore {
     private final IntList costs;
     private final BooleanList onMap;
 
-    public BuildingStore(List<String> names, IntList times, ByteList types, LongList goodsCostGoodIds, FloatList goodsCostValues, IntList goodsCostStarts, IntList goodsCostCounts, ByteList maxLevels, IntList modifierIds, IntList modifierStart, IntList modifierCount, IntList baseTypeIds, IntList artisansTypeIds, LongList inputGoodIds, FloatList inputGoodValues, IntList inputGoodStarts, IntList inputGoodCounts, LongList outputGoodIds, FloatList outputGoodValues, IntList costs, BooleanList onMap) {
+    public BuildingStore(List<String> names, IntList times, ByteList types, LongList goodsCostGoodIds, FloatList goodsCostValues, IntList goodsCostStarts, IntList goodsCostCounts, ByteList maxLevels, IntList modifierIds, IntList modifierStart, IntList modifierCount, LongList baseTypeIds, LongList artisansTypeIds, LongList inputGoodIds, FloatList inputGoodValues, IntList inputGoodStarts, IntList inputGoodCounts, LongList outputGoodIds, FloatList outputGoodValues, IntList costs, BooleanList onMap) {
         this.names = names;
         this.times = times;
         this.types = types;
@@ -94,11 +94,11 @@ public class BuildingStore {
         return this.modifierCount;
     }
 
-    public IntList getBaseTypeIds() {
+    public LongList getBaseTypeIds() {
         return this.baseTypeIds;
     }
 
-    public IntList getArtisansTypeIds() {
+    public LongList getArtisansTypeIds() {
         return this.artisansTypeIds;
     }
 

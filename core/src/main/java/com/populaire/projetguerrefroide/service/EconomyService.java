@@ -28,15 +28,15 @@ public class EconomyService {
     }
 
     public void initialize() {
-        this.rgoSystem.initialiazeSize(this.gameContext.getEcsWorld(), this.worldContext.getProvinceStore(), this.worldContext.getProductionTypeStore(), this.worldContext.getEmployeeStore());
+        this.rgoSystem.initialiazeSize(this.gameContext.getEcsWorld(), this.worldContext.getProvinceStore());
     }
 
     public void hire() {
-        this.rgoSystem.hire(this.gameContext.getEcsWorld(), this.worldContext.getProvinceStore(), this.worldContext.getProductionTypeStore(), this.worldContext.getEmployeeStore());
+        this.rgoSystem.hire(this.gameContext.getEcsWorld(), this.worldContext.getProvinceStore());
     }
 
     public void produce() {
-        this.rgoSystem.produce(this.gameContext.getEcsWorld(), this.worldContext.getProvinceStore(), this.worldContext.getProductionTypeStore());
+        this.rgoSystem.produce(this.gameContext.getEcsWorld(), this.worldContext.getProvinceStore());
     }
 
     public RegionsBuildingsDto prepareRegionsBuildingsDto() {

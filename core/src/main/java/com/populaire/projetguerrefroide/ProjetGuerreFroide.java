@@ -55,6 +55,8 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(PopulationType.class);
         this.ecsWorld.component(Good.class);
         this.ecsWorld.component(ResourceProduction.class);
+        this.ecsWorld.component(EmployeeType.class);
+        this.ecsWorld.component(ProductionType.class);
     }
 
     private void loadAssets(AssetManager assetManager) {
