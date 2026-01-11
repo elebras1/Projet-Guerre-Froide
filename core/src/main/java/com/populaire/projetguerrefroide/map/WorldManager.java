@@ -27,7 +27,6 @@ import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.economy.building.BuildingStore;
 import com.populaire.projetguerrefroide.economy.building.EmployeeStore;
 import com.populaire.projetguerrefroide.economy.building.ProductionTypeStore;
-import com.populaire.projetguerrefroide.economy.good.GoodStore;
 import com.populaire.projetguerrefroide.entity.RawMeshMulti;
 import com.populaire.projetguerrefroide.util.*;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -44,7 +43,6 @@ public class WorldManager implements WorldContext, Disposable {
     private final ProvinceStore provinceStore;
     private final RegionStore regionStore;
     private final BuildingStore buildingStore;
-    private final GoodStore goodStore;
     private final EmployeeStore employeeStore;
     private final Borders borders;
     private final ProductionTypeStore productionTypeStore;
@@ -87,13 +85,12 @@ public class WorldManager implements WorldContext, Disposable {
     private MapMode mapMode;
     private final GameContext gameContext;
 
-    public WorldManager(IntLongMap provinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, GoodStore goodStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, Borders borders, GameContext gameContext) {
+    public WorldManager(IntLongMap provinces, ProvinceStore provinceStore, RegionStore regionStore, BuildingStore buildingStore, ProductionTypeStore productionTypeStore, EmployeeStore employeeStore, Borders borders, GameContext gameContext) {
         this.mapDao = new MapDaoImpl();
         this.provinces = provinces;
         this.provinceStore = provinceStore;
         this.regionStore = regionStore;
         this.buildingStore = buildingStore;
-        this.goodStore = goodStore;
         this.productionTypeStore = productionTypeStore;
         this.employeeStore = employeeStore;
         this.borders = borders;
@@ -189,11 +186,6 @@ public class WorldManager implements WorldContext, Disposable {
     @Override
     public ProductionTypeStore getProductionTypeStore() {
         return this.productionTypeStore;
-    }
-
-    @Override
-    public GoodStore getGoodStore() {
-        return this.goodStore;
     }
 
     @Override
@@ -309,9 +301,9 @@ public class WorldManager implements WorldContext, Disposable {
         Entity provinceEntity = this.gameContext.getEcsWorld().obtainEntity(provinceEntityId);
         int provinceId = Integer.parseInt(provinceEntity.getName());
         int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
-        int resourceGoodId = this.provinceStore.getResourceGoodIds().get(provinceIndex);
+        long resourceGoodId = this.provinceStore.getResourceGoodIds().get(provinceIndex);
         if(resourceGoodId != -1) {
-            return this.goodStore.getNames().get(resourceGoodId);
+            return this.gameContext.getEcsWorld().obtainEntity(resourceGoodId).getName();
         }
         return null;
     }
@@ -432,14 +424,15 @@ public class WorldManager implements WorldContext, Disposable {
 
     private void updatePixmapResourcesColor() {
         IntList provinceColors = this.provinceStore.getColors();
-        IntList provinceResourceGoodIds = this.provinceStore.getResourceGoodIds();
+        LongList provinceResourceGoodIds = this.provinceStore.getResourceGoodIds();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             int color = provinceColors.get(provinceId);
             int red = (color >> 24) & 0xFF;
             int green = (color >> 16) & 0xFF;
-            int provinceResourceGoodId = provinceResourceGoodIds.get(provinceId);
+            long provinceResourceGoodId = provinceResourceGoodIds.get(provinceId);
             if(provinceResourceGoodId != -1) {
-                this.mapModePixmap.drawPixel(red, green, this.goodStore.getColors().get(provinceResourceGoodId));
+                Color goodColor = this.gameContext.getEcsWorld().obtainEntity(provinceResourceGoodId).get(Color.class);
+                this.mapModePixmap.drawPixel(red, green, goodColor.value());
             } else {
                 this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
             }
@@ -970,7 +963,7 @@ public class WorldManager implements WorldContext, Disposable {
     private WgMesh generateMeshResources(VertexAttributes vertexAttributes) {
         World ecsWorld = this.gameContext.getEcsWorld();
         int numProvinces = 0;
-        IntList provinceResourceGoodIds = this.provinceStore.getResourceGoodIds();
+        LongList provinceResourceGoodIds = this.provinceStore.getResourceGoodIds();
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
             if(provinceResourceGoodIds.get(provinceId) != -1) {
                 numProvinces++;
@@ -988,11 +981,11 @@ public class WorldManager implements WorldContext, Disposable {
         int height = 10;
 
         for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            int provinceResourceGoodId = provinceResourceGoodIds.get(provinceId);
+            long provinceResourceGoodId = provinceResourceGoodIds.get(provinceId);
             if(provinceResourceGoodId == -1) {
                 continue;
             }
-            TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + this.goodStore.getNames().get(provinceResourceGoodId));
+            TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + this.gameContext.getEcsWorld().obtainEntity(provinceResourceGoodId).getName());
 
             long positionEntityId = ecsWorld.lookup("province_" + this.provinceStore.getIds().get(provinceId) + "_pos_default");
             Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);

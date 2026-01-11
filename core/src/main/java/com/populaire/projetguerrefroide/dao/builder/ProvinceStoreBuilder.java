@@ -11,7 +11,7 @@ public class ProvinceStoreBuilder {
     private final IntIntMap indexById;
     private final IntList ids;
     private final IntList colors;
-    private final IntList resourceGoodIds;
+    private final LongList resourceGoodIds;
     private final IntList buildingIds;
     private final IntList buildingValues;
     private final IntList buildingStarts;
@@ -19,7 +19,7 @@ public class ProvinceStoreBuilder {
     private final IntList amountChildren;
     private final IntList amountAdults;
     private final IntList amountSeniors;
-    private final IntList populationTypeIds;
+    private final LongList populationTypeIds;
     private final IntList populationTypeValues;
     private final IntList populationTypeStarts;
     private final IntList populationTypeCounts;
@@ -38,7 +38,7 @@ public class ProvinceStoreBuilder {
         this.indexById = new IntIntMap(this.defaultCapacity);
         this.ids = new IntList(this.defaultCapacity);
         this.colors = new IntList(this.defaultCapacity);
-        this.resourceGoodIds = new IntList();
+        this.resourceGoodIds = new LongList();
         this.buildingIds = new IntList();
         this.buildingValues = new IntList();
         this.buildingStarts = new IntList(this.defaultCapacity);
@@ -46,7 +46,7 @@ public class ProvinceStoreBuilder {
         this.amountChildren = new IntList(this.defaultCapacity);
         this.amountAdults = new IntList(this.defaultCapacity);
         this.amountSeniors = new IntList(this.defaultCapacity);
-        this.populationTypeIds = new IntList();
+        this.populationTypeIds = new LongList();
         this.populationTypeValues = new IntList();
         this.populationTypeStarts = new IntList(this.defaultCapacity);
         this.populationTypeCounts = new IntList(this.defaultCapacity);
@@ -96,7 +96,7 @@ public class ProvinceStoreBuilder {
         return this;
     }
 
-    public ProvinceStoreBuilder addResourceGood(int resourceGoodId) {
+    public ProvinceStoreBuilder addResourceGood(long resourceGoodId) {
         this.resourceGoodIds.add(resourceGoodId);
         return this;
     }
@@ -110,7 +110,7 @@ public class ProvinceStoreBuilder {
         return this;
     }
 
-    public ProvinceStoreBuilder addPopulationType(int populationTypeId, int value) {
+    public ProvinceStoreBuilder addPopulationType(long populationTypeId, int value) {
         this.populationTypeIds.add(populationTypeId);
         this.populationTypeValues.add(value);
 

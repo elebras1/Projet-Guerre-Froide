@@ -9,7 +9,7 @@ public class ProvinceStore {
     private final IntIntMap indexById;
     private final IntList ids;
     private final IntList colors;
-    private final IntList resourceGoodIds;
+    private final LongList resourceGoodIds;
     private final IntList buildingIds;
     private final IntList buildingValues;
     private final IntList buildingStarts;
@@ -17,7 +17,7 @@ public class ProvinceStore {
     private final IntList amountChildren;
     private final IntList amountAdults;
     private final IntList amountSeniors;
-    private final IntList populationTypeIds;
+    private final LongList populationTypeIds;
     private final IntList populationTypeValues;
     private final IntList populationTypeStarts;
     private final IntList populationTypeCounts;
@@ -34,7 +34,7 @@ public class ProvinceStore {
     private final IntList resourceGoodsPopulationAmountValues;
     private final IntList buildingsPopulationAmountValues;
 
-    public ProvinceStore(IntIntMap indexById, IntList ids, IntList colors, IntList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, IntList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, LongList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, LongList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
+    public ProvinceStore(IntIntMap indexById, IntList ids, IntList colors, LongList resourceGoodIds, IntList buildingIds, IntList buildingValues, IntList buildingStarts, IntList buildingCounts, IntList amountChildren, IntList amountAdults, IntList amountSeniors, LongList populationTypeIds, IntList populationTypeValues, IntList populationTypeStarts, IntList populationTypeCounts, LongList cultureIds, IntList cultureValues, IntList cultureStarts, IntList cultureCounts, LongList religionIds, IntList religionValues, IntList religionStarts, IntList religionCounts) {
         this.indexById = indexById;
         this.ids = ids;
         this.colors = colors;
@@ -80,7 +80,7 @@ public class ProvinceStore {
         return this.colors;
     }
 
-    public IntList getResourceGoodIds() {
+    public LongList getResourceGoodIds() {
         return this.resourceGoodIds;
     }
 
@@ -112,7 +112,7 @@ public class ProvinceStore {
         return this.amountSeniors;
     }
 
-    public IntList getPopulationTypeIds() {
+    public LongList getPopulationTypeIds() {
         return this.populationTypeIds;
     }
 

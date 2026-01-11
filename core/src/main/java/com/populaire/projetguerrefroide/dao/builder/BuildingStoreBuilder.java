@@ -11,7 +11,7 @@ public class BuildingStoreBuilder {
     private final List<String> names;
     private final IntList times;
     private final ByteList types;
-    private final IntList goodsCostGoodIds;
+    private final LongList goodsCostGoodIds;
     private final FloatList goodsCostValues;
     private final IntList goodsCostStarts;
     private final IntList goodsCostCounts;
@@ -21,11 +21,11 @@ public class BuildingStoreBuilder {
     private final IntList modifierCount;
     private final IntList baseTypeIds;
     private final IntList artisansTypeIds;
-    private final IntList inputGoodIds;
+    private final LongList inputGoodIds;
     private final FloatList inputGoodValues;
     private final IntList inputGoodStarts;
     private final IntList inputGoodCounts;
-    private final IntList outputGoodIds;
+    private final LongList outputGoodIds;
     private final FloatList outputGoodValues;
     private final IntList costs;
     private final BooleanList onMap;
@@ -36,7 +36,7 @@ public class BuildingStoreBuilder {
         this.names = new ObjectList<>(this.defaultCapacity);
         this.times = new IntList(this.defaultCapacity);
         this.types = new ByteList(this.defaultCapacity);
-        this.goodsCostGoodIds = new IntList();
+        this.goodsCostGoodIds = new LongList();
         this.goodsCostValues = new FloatList();
         this.goodsCostStarts = new IntList(this.defaultCapacity);
         this.goodsCostCounts = new IntList(this.defaultCapacity);
@@ -46,11 +46,11 @@ public class BuildingStoreBuilder {
         this.modifierCount = new IntList(this.defaultCapacity);
         this.baseTypeIds = new IntList();
         this.artisansTypeIds = new IntList();
-        this.inputGoodIds = new IntList();
+        this.inputGoodIds = new LongList();
         this.inputGoodValues = new FloatList();
         this.inputGoodStarts = new IntList(this.defaultCapacity);
         this.inputGoodCounts = new IntList(this.defaultCapacity);
-        this.outputGoodIds = new IntList();
+        this.outputGoodIds = new LongList();
         this.outputGoodValues = new FloatList();
         this.costs = new IntList();
         this.onMap = new BooleanList();
@@ -83,7 +83,7 @@ public class BuildingStoreBuilder {
         return this;
     }
 
-    public BuildingStoreBuilder addGoodsCost(int goodId, float value) {
+    public BuildingStoreBuilder addGoodsCost(long goodId, float value) {
         this.goodsCostGoodIds.add(goodId);
         this.goodsCostValues.add(value);
 
@@ -117,7 +117,7 @@ public class BuildingStoreBuilder {
         return this;
     }
 
-    public BuildingStoreBuilder addInputGood(int goodId, float value) {
+    public BuildingStoreBuilder addInputGood(long goodId, float value) {
         this.inputGoodIds.add(goodId);
         this.inputGoodValues.add(value);
 
@@ -127,7 +127,7 @@ public class BuildingStoreBuilder {
         return this;
     }
 
-    public BuildingStoreBuilder addOutputGood(int goodId, float value) {
+    public BuildingStoreBuilder addOutputGood(long goodId, float value) {
         this.outputGoodIds.add(goodId);
         this.outputGoodValues.add(value);
         return this;

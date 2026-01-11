@@ -22,7 +22,6 @@ import com.populaire.projetguerrefroide.util.MutableInt;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 

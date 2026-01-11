@@ -1,15 +1,16 @@
 package com.populaire.projetguerrefroide.economy.building;
 
 import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.LongList;
 
 public class ProductionTypeStore {
     private final IntList workforces;
-    private final IntList ownerIds;
+    private final LongList ownerIds;
     private final IntList employeeIds;
     private final IntList employeeStarts;
     private final IntList employeeCounts;
 
-    public ProductionTypeStore(IntList workforces, IntList ownerIds, IntList employeeIds, IntList employeeStarts, IntList employeeCounts) {
+    public ProductionTypeStore(IntList workforces, LongList ownerIds, IntList employeeIds, IntList employeeStarts, IntList employeeCounts) {
         this.workforces = workforces;
         this.ownerIds = ownerIds;
         this.employeeIds = employeeIds;
@@ -21,7 +22,7 @@ public class ProductionTypeStore {
         return this.workforces;
     }
 
-    public IntList getOwnerIds() {
+    public LongList getOwnerIds() {
         return this.ownerIds;
     }
 

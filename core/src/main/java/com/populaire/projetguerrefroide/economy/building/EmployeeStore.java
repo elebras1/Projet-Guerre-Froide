@@ -2,19 +2,20 @@ package com.populaire.projetguerrefroide.economy.building;
 
 import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.LongList;
 
 public class EmployeeStore {
-    private final IntList populationTypeIds;
+    private final LongList populationTypeIds;
     private final FloatList amounts;
     private final FloatList effectMultipliers;
 
-    public EmployeeStore(IntList populationTypeIds, FloatList amounts, FloatList effectMultipliers) {
+    public EmployeeStore(LongList populationTypeIds, FloatList amounts, FloatList effectMultipliers) {
         this.populationTypeIds = populationTypeIds;
         this.amounts = amounts;
         this.effectMultipliers = effectMultipliers;
     }
 
-    public IntList getPopulationTypeIds() {
+    public LongList getPopulationTypeIds() {
         return this.populationTypeIds;
     }
 
@@ -26,7 +27,7 @@ public class EmployeeStore {
         return this.effectMultipliers;
     }
 
-    public int getPopulationTypeId(int index) {
+    public long getPopulationTypeId(int index) {
         return this.populationTypeIds.get(index);
     }
 

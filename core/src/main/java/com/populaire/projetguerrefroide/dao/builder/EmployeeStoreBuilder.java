@@ -1,20 +1,20 @@
 package com.populaire.projetguerrefroide.dao.builder;
 
 import com.github.tommyettinger.ds.FloatList;
-import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.LongList;
 import com.populaire.projetguerrefroide.economy.building.EmployeeStore;
 
 public class EmployeeStoreBuilder {
     private final int defaultCapacity;
     private int index;
-    private final IntList populationTypeIds;
+    private final LongList populationTypeIds;
     private final FloatList amounts;
     private final FloatList effectMultipliers;
 
     public EmployeeStoreBuilder() {
         this.defaultCapacity = 10;
         this.index = 0;
-        this.populationTypeIds = new IntList(this.defaultCapacity);
+        this.populationTypeIds = new LongList(this.defaultCapacity);
         this.amounts = new FloatList(this.defaultCapacity);
         this.effectMultipliers = new FloatList(this.defaultCapacity);
     }
@@ -27,7 +27,7 @@ public class EmployeeStoreBuilder {
         return this.index;
     }
 
-    public void addEmployee(int populationTypeId, float amount, float effectMultiplier) {
+    public void addEmployee(long populationTypeId, float amount, float effectMultiplier) {
         this.populationTypeIds.add(populationTypeId);
         this.amounts.add(amount);
         this.effectMultipliers.add(effectMultiplier);

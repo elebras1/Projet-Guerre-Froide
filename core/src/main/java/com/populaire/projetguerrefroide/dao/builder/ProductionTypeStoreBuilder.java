@@ -1,13 +1,14 @@
 package com.populaire.projetguerrefroide.dao.builder;
 
 import com.github.tommyettinger.ds.IntList;
+import com.github.tommyettinger.ds.LongList;
 import com.populaire.projetguerrefroide.economy.building.ProductionTypeStore;
 
 public class ProductionTypeStoreBuilder {
     private final int defaultCapacity;
     private int index;
     private final IntList workforces;
-    private final IntList ownerIds;
+    private final LongList ownerIds;
     private final IntList employeeIds;
     private final IntList employeeStarts;
     private final IntList employeeCounts;
@@ -16,7 +17,7 @@ public class ProductionTypeStoreBuilder {
         this.defaultCapacity = 5;
         this.index = 0;
         this.workforces = new IntList(this.defaultCapacity);
-        this.ownerIds = new IntList(this.defaultCapacity);
+        this.ownerIds = new LongList(this.defaultCapacity);
         this.employeeIds = new IntList();
         this.employeeStarts = new IntList(this.defaultCapacity);
         this.employeeCounts = new IntList(this.defaultCapacity);
@@ -30,7 +31,7 @@ public class ProductionTypeStoreBuilder {
         return this.index;
     }
 
-    public ProductionTypeStoreBuilder addProductionType(int workforce, int ownerId) {
+    public ProductionTypeStoreBuilder addProductionType(int workforce, long ownerId) {
         this.workforces.add(workforce);
         this.ownerIds.add(ownerId);
         this.employeeStarts.add(this.employeeIds.size());

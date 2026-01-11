@@ -7,7 +7,7 @@ public class BuildingStore {
     private final List<String> names;
     private final IntList times;
     private final ByteList types;
-    private final IntList goodsCostGoodIds;
+    private final LongList goodsCostGoodIds;
     private final FloatList goodsCostValues;
     private final IntList goodsCostStarts;
     private final IntList goodsCostCounts;
@@ -17,16 +17,16 @@ public class BuildingStore {
     private final IntList modifierCount;
     private final IntList baseTypeIds;
     private final IntList artisansTypeIds;
-    private final IntList inputGoodIds;
+    private final LongList inputGoodIds;
     private final FloatList inputGoodValues;
     private final IntList inputGoodStarts;
     private final IntList inputGoodCounts;
-    private final IntList outputGoodIds;
+    private final LongList outputGoodIds;
     private final FloatList outputGoodValues;
     private final IntList costs;
     private final BooleanList onMap;
 
-    public BuildingStore(List<String> names, IntList times, ByteList types, IntList goodsCostGoodIds, FloatList goodsCostValues, IntList goodsCostStarts, IntList goodsCostCounts, ByteList maxLevels, IntList modifierIds, IntList modifierStart, IntList modifierCount, IntList baseTypeIds, IntList artisansTypeIds, IntList inputGoodIds, FloatList inputGoodValues, IntList inputGoodStarts, IntList inputGoodCounts, IntList outputGoodIds, FloatList outputGoodValues, IntList costs, BooleanList onMap) {
+    public BuildingStore(List<String> names, IntList times, ByteList types, LongList goodsCostGoodIds, FloatList goodsCostValues, IntList goodsCostStarts, IntList goodsCostCounts, ByteList maxLevels, IntList modifierIds, IntList modifierStart, IntList modifierCount, IntList baseTypeIds, IntList artisansTypeIds, LongList inputGoodIds, FloatList inputGoodValues, IntList inputGoodStarts, IntList inputGoodCounts, LongList outputGoodIds, FloatList outputGoodValues, IntList costs, BooleanList onMap) {
         this.names = names;
         this.times = times;
         this.types = types;
@@ -62,7 +62,7 @@ public class BuildingStore {
         return this.types;
     }
 
-    public IntList getGoodsCostGoodIds() {
+    public LongList getGoodsCostGoodIds() {
         return this.goodsCostGoodIds;
     }
 
@@ -102,7 +102,7 @@ public class BuildingStore {
         return this.artisansTypeIds;
     }
 
-    public IntList getInputGoodIds() {
+    public LongList getInputGoodIds() {
         return this.inputGoodIds;
     }
 
@@ -118,7 +118,7 @@ public class BuildingStore {
         return this.inputGoodCounts;
     }
 
-    public IntList getOutputGoodIds() {
+    public LongList getOutputGoodIds() {
         return this.outputGoodIds;
     }
 
