@@ -8,7 +8,7 @@ import com.dslplatform.json.NumberConverter;
 import com.github.tommyettinger.ds.FloatList;
 import com.github.tommyettinger.ds.IntList;
 import com.populaire.projetguerrefroide.dao.MapDao;
-import com.populaire.projetguerrefroide.entity.RawMeshMulti;
+import com.populaire.projetguerrefroide.pojo.RawMeshMulti;
 
 import java.io.IOException;
 import java.io.InputStream;

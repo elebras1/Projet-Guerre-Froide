@@ -14,10 +14,7 @@ import com.populaire.projetguerrefroide.dto.*;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.screen.DateListener;
 import com.populaire.projetguerrefroide.ui.view.SortType;
-import com.populaire.projetguerrefroide.util.BuildingUtils;
-import com.populaire.projetguerrefroide.util.EcsConstants;
-import com.populaire.projetguerrefroide.util.MutableInt;
-import com.populaire.projetguerrefroide.util.ValueFormatter;
+import com.populaire.projetguerrefroide.util.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -98,7 +95,7 @@ public class WorldService implements DateListener {
         return capitalPosition.get(Position.class);
     }
 
-    public String getCountryIdPlayer() {
+    public String getCountryPlayerNameId() {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity countryPlayer = ecsWorld.obtainEntity(this.worldManager.getPlayerCountryId());
         return countryPlayer.getName();
@@ -152,7 +149,6 @@ public class WorldService implements DateListener {
 
     public ProvinceDto prepareProvinceDto(Map<String, String> localisation) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         Entity selectedProvince = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId());
         Province selectedProvinceData = selectedProvince.get(Province.class);
         GeoHierarchy selectedProvinceGeo = selectedProvince.get(GeoHierarchy.class);
@@ -221,9 +217,7 @@ public class WorldService implements DateListener {
     }
 
     public String getColonizerIdOfCountryPlayer() {
-        Entity selectedProvince = this.gameContext.getEcsWorld().obtainEntity(this.worldManager.getSelectedProvinceId());
-        Province selectedProvinceData = selectedProvince.get(Province.class);
-        return this.worldManager.getColonizerId(selectedProvinceData.ownerId());
+        return this.worldManager.getColonizerId(this.worldManager.getPlayerCountryId());
     }
 
     public String getColonizerIdOfHoveredProvince(int x, int y) {
@@ -242,11 +236,11 @@ public class WorldService implements DateListener {
     }
 
     public RegionsBuildingsDto prepareRegionsBuildingsDto() {
-        return this.economyService.prepareRegionsBuildingsDto();
+        return this.economyService.prepareRegionsBuildingsDto(this.worldManager.getPlayerCountryId());
     }
 
     public RegionsBuildingsDto prepareRegionsBuildingsDtoSorted(SortType sortType) {
-        return this.economyService.prepareRegionsBuildingsDtoSorted(sortType);
+        return this.economyService.prepareRegionsBuildingsDtoSorted(this.worldManager.getPlayerCountryId(), sortType);
     }
 
     @Override
@@ -414,39 +408,34 @@ public class WorldService implements DateListener {
     }
 
     private List<String> getColorBuildingsOrderByLevel(long regionId) {
-        Entity region = this.gameContext.getEcsWorld().obtainEntity(regionId);
-        String regionNameId = region.getName();
-        int regionIndex = regionStore.getRegionIds().get(regionNameId);
-        int regionBuildingStart = regionStore.getBuildingStarts().get(regionIndex);
-        int regionBuildingEnd = regionBuildingStart + regionStore.getBuildingCounts().get(regionIndex);
+        World ecsWorld = this.gameContext.getEcsWorld();
+        List<Pair<Integer, String>> validBuildings = new ObjectList<>();
 
-        List<Integer> buildingIndices = new ObjectList<>();
+        try (Query query = ecsWorld.query().with(Building.class).build()) {
+            query.iter(iter -> {
+                for (int i = 0; i < iter.count(); i++) {
+                    long parentId = iter.fieldLong(Building.class, 0, "parentId", i);
+                    if (parentId == regionId) {
+                        long buildingTypeId = iter.fieldLong(Building.class, 0, "typeId", i);
+                        Entity buildingType = ecsWorld.obtainEntity(buildingTypeId);
+                        if (buildingType.has(EconomyBuilding.class)) {
+                            String color = BuildingUtils.getColor(buildingType.getName());
+                            if (color != null) {
+                                int level = iter.fieldInt(Building.class, 0, "size", i);
 
-        for (int buildingIndex = regionBuildingStart; buildingIndex < regionBuildingEnd; buildingIndex++) {
-            long buildingId = regionStore.getBuildingIds().get(buildingIndex);
-            Entity building = this.gameContext.getEcsWorld().obtainEntity(buildingId);
-
-            if (building.has(EconomyBuilding.class)) {
-                String color = BuildingUtils.getColor(building.getName());
-
-                if (color != null) {
-                    buildingIndices.add(buildingIndex);
+                                validBuildings.add(new Pair<>(level, color));
+                            }
+                        }
+                    }
                 }
-            }
+            });
         }
 
-        buildingIndices.sort((a, b) -> {
-            int levelA = regionStore.getBuildingValues().get(a);
-            int levelB = regionStore.getBuildingValues().get(b);
-            return Integer.compare(levelB, levelA);
-        });
+        validBuildings.sort((a, b) -> Integer.compare(b.first(), a.first()));
 
-        List<String> colors = new ObjectList<>();
-        for (int buildingIndex : buildingIndices) {
-            long buildingId = regionStore.getBuildingIds().get(buildingIndex);
-            Entity building = this.gameContext.getEcsWorld().obtainEntity(buildingId);
-            String color = BuildingUtils.getColor(building.getName());
-            colors.add(color);
+        List<String> colors = new ObjectList<>(validBuildings.size());
+        for (Pair<Integer, String> building: validBuildings) {
+            colors.add(building.second());
         }
 
         return colors;
@@ -454,45 +443,44 @@ public class WorldService implements DateListener {
 
     private int getNumberIndustry(long regionId) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        int industryCount = 0;
-        RegionStore regionStore = this.worldManager.getRegionStore();
+        MutableInt industryCount = new MutableInt(0);
 
-        String regionNameId = ecsWorld.obtainEntity(regionId).getName();
-        int regionIndex = regionStore.getRegionIds().get(regionNameId);
+        try(Query query = ecsWorld.query().with(Building.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    long regionBuildingId = iter.fieldLong(Building.class, 0, "parentId", i);
+                    if(regionBuildingId == regionId) {
+                        long buildingTypeId = iter.fieldLong(Building.class, 0, "typeId", i);
+                        Entity buildingType = ecsWorld.obtainEntity(buildingTypeId);
+                        if(buildingType.has(EconomyBuilding.class)) {
+                            industryCount.increment();
+                        }
+                    }
+                }
+            });
 
-        int buildingStart = regionStore.getBuildingStarts().get(regionIndex);
-        int buildingEnd = buildingStart + regionStore.getBuildingCounts().get(regionIndex);
-
-        for (int i = buildingStart; i < buildingEnd; i++) {
-            long buildingId = regionStore.getBuildingIds().get(i);
-            Entity building = ecsWorld.obtainEntity(buildingId);
-
-            if (building.has(EconomyBuilding.class)) {
-                industryCount++;
-            }
         }
 
-        return industryCount;
+        return industryCount.getValue();
     }
 
     private List<String> getSpecialBuildingNames(long regionId) {
         World ecsWorld = this.gameContext.getEcsWorld();
         List<String> specialBuildingNames = new ObjectList<>();
-        RegionStore regionStore = this.worldManager.getRegionStore();
+        try(Query query = ecsWorld.query().with(Building.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    long regionBuildingId = iter.fieldLong(Building.class, 0, "parentId", i);
+                    if(regionBuildingId == regionId) {
+                        long buildingTypeId = iter.fieldLong(Building.class, 0, "typeId", i);
+                        Entity buildingType = ecsWorld.obtainEntity(buildingTypeId);
+                        if(buildingType.has(SpecialBuilding.class)) {
+                            specialBuildingNames.add(buildingType.getName());
+                        }
+                    }
+                }
+            });
 
-        String regionNameId = ecsWorld.obtainEntity(regionId).getName();
-        int regionIndex = regionStore.getRegionIds().get(regionNameId);
-
-        int buildingStart = regionStore.getBuildingStarts().get(regionIndex);
-        int buildingEnd = buildingStart + regionStore.getBuildingCounts().get(regionIndex);
-
-        for (int i = buildingStart; i < buildingEnd; i++) {
-            long buildingId = regionStore.getBuildingIds().get(i);
-            Entity building = ecsWorld.obtainEntity(buildingId);
-
-            if (building.has(SpecialBuilding.class)) {
-                specialBuildingNames.add(building.getName());
-            }
         }
 
         return specialBuildingNames;

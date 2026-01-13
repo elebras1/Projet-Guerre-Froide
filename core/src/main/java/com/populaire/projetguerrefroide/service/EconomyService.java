@@ -4,6 +4,8 @@ import com.github.elebras1.flecs.Entity;
 import com.github.elebras1.flecs.Query;
 import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.*;
+import com.populaire.projetguerrefroide.component.Building;
+import com.populaire.projetguerrefroide.component.EconomyBuilding;
 import com.populaire.projetguerrefroide.component.GeoHierarchy;
 import com.populaire.projetguerrefroide.component.Province;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
@@ -12,15 +14,15 @@ import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.economy.production.ResourceGatheringOperationSystem;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.ui.view.SortType;
+import com.populaire.projetguerrefroide.util.MutableInt;
 
+import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class EconomyService {
     private final GameContext gameContext;
     private final WorldContext worldContext;
-    private ResourceGatheringOperationSystem rgoSystem;
+    private final ResourceGatheringOperationSystem rgoSystem;
 
     public EconomyService(GameContext gameContext, WorldContext worldContext) {
         this.gameContext = gameContext;
@@ -40,98 +42,143 @@ public class EconomyService {
         this.rgoSystem.produce(this.gameContext.getEcsWorld(), this.worldContext.getProvinceStore());
     }
 
-    public RegionsBuildingsDto prepareRegionsBuildingsDto() {
+    public RegionsBuildingsDto prepareRegionsBuildingsDto(long countryId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        ProvinceStore provinceStore = this.worldContext.getProvinceStore();
+
+        LongOrderedSet regionIds = new LongOrderedSet();
+        try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    long ownerId = iter.fieldLong(Province.class, 0, "ownerId", i);
+                    if(countryId == ownerId) {
+                        long regionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
+                        regionIds.add(regionId);
+                    }
+                }
+            });
+        }
+
+        List<RegionDto> regions = new ObjectList<>();
+        LongSet.LongSetIterator iterator = regionIds.iterator();
+        while(iterator.hasNext()) {
+            Entity region = ecsWorld.obtainEntity(iterator.nextLong());
+            RegionDto regionData = this.collectRegionData(countryId, region.id(), region.getName(), provinceStore);
+            regions.add(regionData);
+        }
+
+        return new RegionsBuildingsDto(regions);
     }
 
-    public RegionsBuildingsDto prepareRegionsBuildingsDtoSorted(SortType sortType) {
-        return null;
+    public RegionsBuildingsDto prepareRegionsBuildingsDtoSorted(long countryId, SortType sortType) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        ProvinceStore provinceStore = this.worldContext.getProvinceStore();
+
+        LongOrderedSet regionIds = new LongOrderedSet();
+        try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    long ownerId = iter.fieldLong(Province.class, 0, "ownerId", i);
+                    if(countryId == ownerId) {
+                        long regionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
+                        regionIds.add(regionId);
+                    }
+                }
+            });
+        }
+
+        List<RegionDto> regions = new ObjectList<>();
+        LongSet.LongSetIterator iterator = regionIds.iterator();
+        while(iterator.hasNext()) {
+            Entity region = ecsWorld.obtainEntity(iterator.nextLong());
+            RegionDto regionData = this.collectRegionData(countryId, region.id(), region.getName(), provinceStore);
+            regions.add(regionData);
+        }
+
+        this.sortRegions(regions, sortType);
+
+        return new RegionsBuildingsDto(regions);
+    }
+
+    private RegionDto collectRegionData(long countryId, long regionId, String regionNameId, ProvinceStore provinceStore) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        MutableInt populationAmount = new MutableInt(0);
+        MutableInt buildingWorkerAmount = new MutableInt(0);
+        List<BuildingDto> buildings = new ObjectList<>();
+
+        try (Query provinceQuery = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
+            provinceQuery.iter(iter -> {
+                for (int i = 0; i < iter.count(); i++) {
+                    long provinceId = iter.entity(i);
+                    long ownerId = iter.fieldLong(Province.class, 0, "ownerId", i);
+                    long parentRegionId = iter.fieldLong(GeoHierarchy.class, 0, "regionId", i);
+
+                    if (countryId == ownerId && parentRegionId == regionId) {
+                        int adults = this.getAmountAdults(provinceId, provinceStore);
+                        populationAmount.increment(adults);
+                    }
+                }
+            });
+        }
+
+        try (Query buildingQuery = ecsWorld.query().with(Building.class).build()) {
+            buildingQuery.iter(iter -> {
+                for (int i = 0; i < iter.count(); i++) {
+                    long parentRegionId = iter.fieldLong(Building.class, 0, "parentId", i);
+
+                    if (parentRegionId == regionId) {
+                        long buildingId = iter.entity(i);
+                        long buildingTypeId = iter.fieldLong(Building.class, 0, "typeId", i);
+                        int buildingSize = iter.fieldInt(Building.class, 0, "size", i);
+
+                        Entity buildingType = ecsWorld.obtainEntity(buildingTypeId);
+
+                        if (buildingType.has(EconomyBuilding.class)) {
+                            EconomyBuilding economyBuilding = buildingType.get(EconomyBuilding.class);
+                            BuildingDto building = new BuildingDto(buildingId, buildingType.getName(), buildingSize, economyBuilding.maxLevel(), 0);
+                            int workers = this.estimateWorkersForBuilding();
+                            buildingWorkerAmount.increment(workers);
+                            buildings.add(building);
+                        }
+                    }
+                }
+            });
+        }
+
+        byte developpementIndexValue = this.calculateDeveloppementIndex();
+        int buildingWorkerRatio = 0;
+        if (populationAmount.getValue() > 0) {
+            buildingWorkerRatio = (int) ((buildingWorkerAmount.getValue() * 100.0f) / populationAmount.getValue());
+        }
+
+        return new RegionDto(regionNameId, populationAmount.getValue(), buildingWorkerAmount.getValue(), buildingWorkerRatio, developpementIndexValue, buildings);
+    }
+
+    private int estimateWorkersForBuilding() {
+        return 0;
+    }
+
+    private byte calculateDeveloppementIndex() {
+        return 0;
+    }
+
+    private void sortRegions(List<RegionDto> regions, SortType sortType) {
+        switch (sortType) {
+            case DEVELOPPEMENT_INDEX:
+                regions.sort(Comparator.comparingInt(RegionDto::developpementIndexValue).reversed());
+                break;
+            case POPULATION:
+                regions.sort(Comparator.comparingInt(RegionDto::populationAmount).reversed());
+                break;
+            case WORKFORCE:
+                regions.sort(Comparator.comparingInt(RegionDto::buildingWorkerAmount).reversed());
+                break;
+        }
     }
 
     public float getResourceGoodsProduction(int provinceId) {
         int provinceIndex = this.worldContext.getProvinceStore().getIndexById().get(provinceId);
         return this.worldContext.getProvinceStore().getResourceGoodsProduction().get(provinceIndex);
-    }
-
-    private IntList prepareRegionsDto(ProvinceStore provinceStore, Map<RegionDto, List<BuildingDto>> regionsBuildings) {
-        World ecsWorld = this.gameContext.getEcsWorld();
-        IntList populationsAmount = new IntList();
-        populationsAmount.setSize(regionStore.getRegionIds().size());
-
-        try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
-            query.iter(iter -> {
-                for(int i = 0; i < iter.count(); i++) {
-                    Entity provinceEntity = ecsWorld.obtainEntity(iter.entityId(i));
-                    long regionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
-                    String regionNameId = ecsWorld.obtainEntity(regionId).getName();
-                    int regionIndex = regionStore.getRegionIds().get(regionNameId);
-                    int provinceNameId = Integer.parseInt(provinceEntity.getName());
-                    int provinceIndex = provinceStore.getIndexById().get(provinceNameId);
-                    int population = provinceStore.getPopulationAmount(provinceIndex);
-                    int currentPopulation = populationsAmount.get(regionIndex);
-                    populationsAmount.set(regionIndex, currentPopulation + population);
-                }
-            });
-        }
-
-        return populationsAmount;
-    }
-
-    private IntList getWorkersAmount(RegionStore regionStore, ProvinceStore provinceStore) {
-        World ecsWorld = this.gameContext.getEcsWorld();
-        IntList workersAmount = new IntList(regionStore.getRegionIds().size());
-        workersAmount.setSize(regionStore.getRegionIds().size());
-
-        try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
-            query.iter(iter -> {
-                for(int i = 0; i < iter.count(); i++) {
-                    Entity provinceEntity = ecsWorld.obtainEntity(iter.entityId(i));
-                    long regionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
-                    String regionNameId = ecsWorld.obtainEntity(regionId).getName();
-                    int regionIndex = regionStore.getRegionIds().get(regionNameId);
-                    int adults = this.getAmountAdults(provinceEntity.id(), provinceStore);
-                    int currentWorkers = workersAmount.get(regionIndex);
-                    workersAmount.set(regionIndex, currentWorkers + adults);
-                }
-            });
-        }
-
-        return workersAmount;
-    }
-
-    private IntList getBuildingWorkersAmount(RegionStore regionStore) {
-        IntList buildingWorkersAmount = new IntList(regionStore.getRegionIds().size());
-        buildingWorkersAmount.setSize(regionStore.getRegionIds().size());
-        for(int regionId = 0; regionId < regionStore.getRegionIds().size(); regionId++) {
-            int buildingStart = regionStore.getBuildingStarts().get(regionId);
-            int buildingCount = regionStore.getBuildingCounts().get(regionId);
-            int amountWorkers = 0;
-            for(int buildingId = buildingStart; buildingId < buildingStart + buildingCount; buildingId++) {
-                amountWorkers += regionStore.getBuildingWorkersAmountValues().get(buildingId);
-            }
-
-            buildingWorkersAmount.set(regionId, amountWorkers);
-        }
-
-        return buildingWorkersAmount;
-    }
-
-    private ByteList getBuildingWorkersRatio(IntList workersAmount, IntList buildingWorkersAmount) {
-        ByteList buildingWorkersRatio = new ByteList(workersAmount.size());
-        buildingWorkersRatio.setSize(workersAmount.size());
-
-        for(int regionId = 0; regionId < workersAmount.size(); regionId++) {
-            int totalWorkers = workersAmount.get(regionId);
-            int buildingWorkers = buildingWorkersAmount.get(regionId);
-            if(totalWorkers == 0) {
-                buildingWorkersRatio.set(regionId, (byte)0);
-            } else {
-                float ratio = (float)buildingWorkers / (float)totalWorkers;
-                byte ratioByte = (byte)(ratio * 100);
-                buildingWorkersRatio.set(regionId, ratioByte);
-            }
-        }
-
-        return buildingWorkersRatio;
     }
 
     private int getAmountAdults(long provinceId, ProvinceStore provinceStore) {

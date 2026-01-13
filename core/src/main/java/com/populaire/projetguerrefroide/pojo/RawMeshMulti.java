@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.entity;
+package com.populaire.projetguerrefroide.pojo;
 
 import java.nio.IntBuffer;
 

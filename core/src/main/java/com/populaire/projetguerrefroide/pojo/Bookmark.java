@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.entity;
+package com.populaire.projetguerrefroide.pojo;
 
 import java.time.LocalDate;
 import java.util.List;

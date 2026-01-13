@@ -96,7 +96,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.configurationService.loadGameLocalisation(this.gameContext);
 
         this.widgetFactory = new WidgetFactory();
-        this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer(), this.worldService.getColonizerIdOfSelectedProvince(), this);
+        this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryPlayerNameId(), this.worldService.getColonizerIdOfSelectedProvince(), this);
         this.provincePanel = new ProvincePanel(this.widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new WgCustomStage(new WgScreenViewport(), this.skinUi, this.skinFlags);
@@ -260,7 +260,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     @Override
     public void onQuitClicked(PopupListener listener) {
         Popup popup = new Popup(this.widgetFactory, this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(),
-            "QUIT_TITLE", "QUIT_DESC", this.worldService.getCountryIdPlayer(), this.worldService.getColonizerIdOfCountryPlayer(), true, false, listener);
+            "QUIT_TITLE", "QUIT_DESC", this.worldService.getCountryPlayerNameId(), this.worldService.getColonizerIdOfCountryPlayer(), true, false, listener);
         Table centerTable = new Table();
         centerTable.setFillParent(true);
         centerTable.add(popup).center();

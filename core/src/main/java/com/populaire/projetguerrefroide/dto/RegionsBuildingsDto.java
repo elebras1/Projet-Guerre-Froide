@@ -1,7 +1,8 @@
 package com.populaire.projetguerrefroide.dto;
 
-import java.util.List;
-import java.util.Map;
+import com.populaire.projetguerrefroide.service.EconomyService;
 
-public record RegionsBuildingsDto(Map<RegionDto, List<BuildingDto>> regionsBuildings) {
+import java.util.List;
+
+public record RegionsBuildingsDto(List<RegionDto> regions) {
 }

@@ -1,4 +1,4 @@
 package com.populaire.projetguerrefroide.dto;
 
-public record BuildingDto(String buildingTypeNameId, int buildingLevel, int developpementIndex, int workersAmount, int workersRatio, float productionValue) {
+public record BuildingDto(long buildingId, String buildingName, int buildingValue, int maxLevel, float productionValue) {
 }

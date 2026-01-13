@@ -6,6 +6,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.SnapshotArray;
+import com.populaire.projetguerrefroide.dto.BuildingDto;
+import com.populaire.projetguerrefroide.dto.RegionDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.screen.EconomyPanelListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
@@ -91,61 +93,49 @@ public class EconomyPanel extends Table {
         this.addActor(rightTable);
     }
 
-    public void setData(RegionsBuildingsDto regionsBuildingsDto) {
+    @SuppressWarnings("unchecked")
+    public void setData(RegionsBuildingsDto dto) {
         Label.LabelStyle labelStyleJockey16GlowBlue = this.labelStylePool.getLabelStyle("jockey_16_glow_blue");
         Label.LabelStyle labelJockey14Tight = this.labelStylePool.getLabelStyle("jockey_14_tight");
         Drawable regionBackground = this.skin.getDrawable("economy_region_plate_small");
 
         SnapshotArray<Actor> actors = this.buildingRegionsTable.getChildren();
         int index = 0;
-        for(String regionId : regionsBuildingsDto.regionIds()) {
-            int id = regionsBuildingsDto.regionIdLookup().get(regionId);
-            int buildingCount = regionsBuildingsDto.buildingCounts().get(id);
-            int buildingStart = regionsBuildingsDto.buildingStarts().get(id);
-            int populationAmount = regionsBuildingsDto.populationAmounts().get(id);
-            int buildingWorkerAmount = regionsBuildingsDto.buildingWorkersAmount().get(id);
-            int buildingWorkerRatio = regionsBuildingsDto.buildingWorkersRatio().get(id);
-            byte developpementIndexValue = regionsBuildingsDto.developpementIndexValues().get(id);
-            String regionName = this.localisation.get(regionId);
-            if(index >= actors.size) {
+
+        for (RegionDto region : dto.regions()) {
+            String regionName = this.localisation.get(region.regionId());
+
+            if (index >= actors.size) {
                 Table regionTable = new Table();
                 regionTable.setBackground(regionBackground);
                 regionTable.setSize(regionBackground.getMinWidth(), regionBackground.getMinHeight());
+
                 this.widgetFactory.createLabel(regionName, labelStyleJockey16GlowBlue, 8, 7, regionTable);
                 Button minButton = this.widgetFactory.createButton(this.skin, "eco_plate_min", 684, 9, regionTable);
                 Button maxButton = this.widgetFactory.createButton(this.skin, "eco_plate_max", 684, 9, regionTable);
                 minButton.setVisible(true);
                 maxButton.setVisible(false);
-                this.widgetFactory.createLabelCentered(developpementIndexValue + "%", labelStyleJockey16GlowBlue, 477, 7, regionTable);
-                this.widgetFactory.createLabelCentered(ValueFormatter.formatValue(populationAmount, this.localisation), labelStyleJockey16GlowBlue, 545, 7, regionTable);
-                this.widgetFactory.createLabelCentered(buildingWorkerAmount + " (" + buildingWorkerRatio + "%)", labelStyleJockey16GlowBlue, 638, 7, regionTable);
+
+                this.widgetFactory.createLabelCentered(region.developpementIndexValue() + "%", labelStyleJockey16GlowBlue, 477, 7, regionTable);
+                this.widgetFactory.createLabelCentered(ValueFormatter.formatValue(region.populationAmount(), this.localisation), labelStyleJockey16GlowBlue, 545, 7, regionTable);
+                this.widgetFactory.createLabelCentered(region.buildingWorkerAmount() + " (" + region.buildingWorkerRatio() + "%)", labelStyleJockey16GlowBlue, 638, 7, regionTable);
 
                 Table buildingsTable = new Table();
                 int economyCount = 0;
-                for (int i = 0; i < buildingCount; i++) {
-                    int buildingId = regionsBuildingsDto.buildingIds().get(buildingStart + i);
-                    int typeId = regionsBuildingsDto.buildingTypes().get(buildingId);
-                    int buildingValue = regionsBuildingsDto.buildingValues().get(buildingId);
-                    float buildingProduction = regionsBuildingsDto.buildingProductionValues().get(buildingId);
 
-                    if (typeId == BuildingType.ECONOMY.getId()) {
-                        Table buildingTable = new ClickableTable();
-                        buildingTable.setUserObject(buildingId);
-                        String buildingName = regionsBuildingsDto.buildingNames().get(buildingId);
-                        byte maxLevel = regionsBuildingsDto.buildingMaxLevels().get(buildingId);
-                        String buildingLevel = buildingValue + "/" + maxLevel;
+                for (BuildingDto building : region.buildings()) {
+                    Table buildingTable = new ClickableTable();
+                    buildingTable.setUserObject(building.buildingId());
+                    String buildingLevel = building.buildingValue() + "/" + building.maxLevel();
 
-                        this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingTable);
-                        this.widgetFactory.createImage(this.skin, "building_" + buildingName, 10, 55, buildingTable);
-                        this.widgetFactory.createLabelCentered(ValueFormatter.formatValue(buildingProduction), labelStyleJockey16GlowBlue, buildingTable.getWidth() / 2, 21, buildingTable);
-                        this.widgetFactory.createLabelCentered(buildingLevel, labelJockey14Tight, buildingTable.getWidth() / 2, 2, buildingTable);
-                        buildingsTable.add(buildingTable).padRight(-10);
-
-                        economyCount++;
-
-                        if (economyCount % 6 == 0) {
-                            buildingsTable.row();
-                        }
+                    this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingTable);
+                    this.widgetFactory.createImage(this.skin, "building_" + building.buildingName(), 10, 55, buildingTable);
+                    this.widgetFactory.createLabelCentered(ValueFormatter.formatValue(building.productionValue()), labelStyleJockey16GlowBlue, buildingTable.getWidth() / 2, 21, buildingTable);
+                    this.widgetFactory.createLabelCentered(buildingLevel, labelJockey14Tight, buildingTable.getWidth() / 2, 2, buildingTable);
+                    buildingsTable.add(buildingTable).padRight(-10);
+                    economyCount++;
+                    if (economyCount % 6 == 0) {
+                        buildingsTable.row();
                     }
                 }
 
@@ -193,9 +183,9 @@ public class EconomyPanel extends Table {
                 this.buildingRegionsTable.add(regionsBuildingsTable).row();
             } else {
                 Actor actor = actors.get(index);
-                if(actor instanceof Table regionsBuildingsTable && regionsBuildingsTable.getChild(0) instanceof Table regionTable && regionTable.getChild(0) instanceof Label regionLabel && regionTable.getChild(1) instanceof Button minButton && regionTable.getChild(2) instanceof Button maxButton) {
+                if (actor instanceof Table regionsBuildingsTable && regionsBuildingsTable.getChild(0) instanceof Table regionTable && regionTable.getChild(0) instanceof Label regionLabel && regionTable.getChild(1) instanceof Button minButton && regionTable.getChild(2) instanceof Button maxButton) {
                     regionLabel.setText(regionName);
-                    if(maxButton.isVisible() && regionsBuildingsTable.getUserObject() instanceof Table buildingsTable) {
+                    if (maxButton.isVisible() && regionsBuildingsTable.getUserObject() instanceof Table buildingsTable) {
                         Cell<Table> buildingCell = regionsBuildingsTable.getCells().get(1);
                         buildingCell.setActor(buildingsTable);
                         minButton.setVisible(true);
@@ -206,7 +196,7 @@ public class EconomyPanel extends Table {
             index++;
         }
 
-        while(index < actors.size) {
+        while (index < actors.size) {
             Actor actor = actors.get(index);
             actor.remove();
             index++;

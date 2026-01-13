@@ -24,7 +24,7 @@ import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.component.Color;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
-import com.populaire.projetguerrefroide.entity.RawMeshMulti;
+import com.populaire.projetguerrefroide.pojo.RawMeshMulti;
 import com.populaire.projetguerrefroide.util.*;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.LabelStylePool;

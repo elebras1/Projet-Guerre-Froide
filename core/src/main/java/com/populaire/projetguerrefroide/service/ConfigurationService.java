@@ -9,7 +9,7 @@ import com.populaire.projetguerrefroide.dao.ConfigurationDao;
 import com.populaire.projetguerrefroide.dao.LocalisationDao;
 import com.populaire.projetguerrefroide.dao.impl.ConfigurationDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.LocalisationDaoImpl;
-import com.populaire.projetguerrefroide.entity.Bookmark;
+import com.populaire.projetguerrefroide.pojo.Bookmark;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 
 public class ConfigurationService {
