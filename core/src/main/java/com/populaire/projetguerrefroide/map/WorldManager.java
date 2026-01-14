@@ -37,7 +37,6 @@ import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 public class WorldManager implements WorldContext, Disposable {
     private final MapDaoImpl mapDao;
     private final IntLongMap provinces;
-    private final ProvinceStore provinceStore;
     private final Borders borders;
     private final Pixmap provincesPixmap;
     private final Pixmap mapModePixmap;
@@ -78,10 +77,9 @@ public class WorldManager implements WorldContext, Disposable {
     private MapMode mapMode;
     private final GameContext gameContext;
 
-    public WorldManager(IntLongMap provinces, ProvinceStore provinceStore, Borders borders, GameContext gameContext) {
+    public WorldManager(IntLongMap provinces, Borders borders, GameContext gameContext) {
         this.mapDao = new MapDaoImpl();
         this.provinces = provinces;
-        this.provinceStore = provinceStore;
         this.borders = borders;
         this.gameContext = gameContext;
         this.mapModePixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
@@ -158,11 +156,6 @@ public class WorldManager implements WorldContext, Disposable {
     }
 
     @Override
-    public ProvinceStore getProvinceStore() {
-        return this.provinceStore;
-    }
-
-    @Override
     public long getPlayerCountryId() {
         return this.playerCountryId;
     }
@@ -182,9 +175,7 @@ public class WorldManager implements WorldContext, Disposable {
         if(selectedProvinceId != 0) {
             this.selectedProvinceId = selectedProvinceId;
             Entity selectedProvinceEntity = ecsWorld.obtainEntity(this.selectedProvinceId);
-            int provinceNameId = Integer.parseInt(selectedProvinceEntity.getName());
-            int provinceIndex = this.provinceStore.getIndexById().get(provinceNameId);
-            int color = this.provinceStore.getColors().get(provinceIndex);
+            int color = selectedProvinceEntity.get(Color.class).value();
             float r = ((color >> 24) & 0xFF) / 255f;
             float g = ((color >> 16) & 0xFF) / 255f;
             float b = ((color >> 8) & 0xFF) / 255f;
@@ -225,9 +216,8 @@ public class WorldManager implements WorldContext, Disposable {
 
     public int getPopulationAmountOfProvince(long provinceEntityId) {
         Entity provinceEntity = this.gameContext.getEcsWorld().obtainEntity(provinceEntityId);
-        int provinceId = Integer.parseInt(provinceEntity.getName());
-        int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
-        return this.provinceStore.getPopulationAmount(provinceIndex);
+        Province provinceData = provinceEntity.get(Province.class);
+        return provinceData.amountChildren() + provinceData.amountAdults() + provinceData.amountSeniors();
     }
 
     public int getPopulationAmountOfCountry(long countryEntityId) {
@@ -237,13 +227,12 @@ public class WorldManager implements WorldContext, Disposable {
         try (Query provinceQuery = ecsWorld.query().with(Province.class).build()) {
             provinceQuery.iter(iter -> {
                 for(int i = 0; i < iter.count(); i++) {
-                    long ownerId = iter.fieldInt(Province.class, 0, "ownerId", i);
+                    long ownerId = iter.fieldLong(Province.class, 0, "ownerId", i);
                     if(ownerId == countryEntityId) {
-                        long provinceEntityId = iter.entity(i);
-                        Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                        int provinceId = Integer.parseInt(provinceEntity.getName());
-                        int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
-                        population.increment(this.provinceStore.getPopulationAmount(provinceIndex));
+                        int amountChildren = iter.fieldInt(Province.class, 0, "amountChildren", i);
+                        int amountAdults = iter.fieldInt(Province.class, 0, "amountAdults", i);
+                        int amountSeniors = iter.fieldInt(Province.class, 0, "amountSeniors", i);
+                        population.increment(amountChildren + amountAdults + amountSeniors);
                     }
                 }
             });
@@ -268,20 +257,17 @@ public class WorldManager implements WorldContext, Disposable {
 
     public String getResourceGoodName(long provinceEntityId) {
         Entity provinceEntity = this.gameContext.getEcsWorld().obtainEntity(provinceEntityId);
-        int provinceId = Integer.parseInt(provinceEntity.getName());
-        int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
-        long resourceGoodId = this.provinceStore.getResourceGoodIds().get(provinceIndex);
-        if(resourceGoodId != -1) {
-            return this.gameContext.getEcsWorld().obtainEntity(resourceGoodId).getName();
+        ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
+        if(resourceGathering != null) {
+            return this.gameContext.getEcsWorld().obtainEntity(resourceGathering.goodId()).getName();
         }
         return null;
     }
 
     public int getAmountAdults(long provinceEntityId) {
         Entity provinceEntity = this.gameContext.getEcsWorld().obtainEntity(provinceEntityId);
-        int provinceId = Integer.parseInt(provinceEntity.getName());
-        int provinceIndex = this.provinceStore.getIndexById().get(provinceId);
-        return this.provinceStore.getAmountAdults().get(provinceIndex);
+        Province provinceData = provinceEntity.get(Province.class);
+        return provinceData.amountAdults();
     }
 
     private FileHandle[] createTerrainTextureFiles() {
@@ -297,114 +283,139 @@ public class WorldManager implements WorldContext, Disposable {
     private void updatePixmapCountriesColor() {
         World ecsWorld = this.gameContext.getEcsWorld();
         EcsConstants ecsConstants = this.gameContext.getEcsConstants();
-        IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 1; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            int color = provinceColors.get(provinceId);
-            int red = (color >> 24) & 0xFF;
-            int green = (color >> 16) & 0xFF;
+        try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
 
-            long provinceEntityId = this.provinces.get(color);
-            Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-            Province provinceData = provinceEntity.get(Province.class);
+                    long countryEntityId = iter.fieldLong(Province.class, 0, "ownerId", i);
+                    Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
+                    Color countryColor = countryEntity.get(Color.class);
 
-            long countryEntityId = provinceData.ownerId();
-            Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
-            Color countryColor = countryEntity.get(Color.class);
+                    long countryColonizerId = countryEntity.target(ecsConstants.isColonyOf());
+                    if(countryColonizerId != 0) {
+                        Entity colonyEntity = ecsWorld.obtainEntity(countryColonizerId);
+                        countryColor = colonyEntity.get(Color.class);
+                    }
 
-            long countryColonizerId = countryEntity.target(ecsConstants.isColonyOf());
-            if(countryColonizerId != 0) {
-                Entity colonyEntity = ecsWorld.obtainEntity(countryColonizerId);
-                countryColor = colonyEntity.get(Color.class);
-            }
-
-            this.mapModePixmap.drawPixel(red, green, countryColor.value());
-
+                    this.mapModePixmap.drawPixel(red, green, countryColor.value());
+                }
+            });
         }
     }
 
     private void updatePixmapIdeologiesColor(World ecsWorld) {
-        IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            int color = provinceColors.get(provinceId);
-            int red = (color >> 24) & 0xFF;
-            int green = (color >> 16) & 0xFF;
-            long provinceEntityId = this.provinces.get(color);
-            if(provinceEntityId != -1) {
-                Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                Province provinceData = provinceEntity.get(Province.class);
-                long countryOwnerId = provinceData.ownerId();
-                Entity countryOwnerEntity = ecsWorld.obtainEntity(countryOwnerId);
-                Country countryOwnerData = countryOwnerEntity.get(Country.class);
-                Entity ideologyEntity = ecsWorld.obtainEntity(countryOwnerData.ideologyId());
-                Ideology ideology = ideologyEntity.get(Ideology.class);
-                this.mapModePixmap.drawPixel(red, green, ideology.color());
-            }
+        try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
+
+                    long countryOwnerId = iter.fieldLong(Province.class, 0, "ownerId", i);
+                    Entity countryOwnerEntity = ecsWorld.obtainEntity(countryOwnerId);
+                    Country countryOwnerData = countryOwnerEntity.get(Country.class);
+                    Entity ideologyEntity = ecsWorld.obtainEntity(countryOwnerData.ideologyId());
+                    Ideology ideology = ideologyEntity.get(Ideology.class);
+                    this.mapModePixmap.drawPixel(red, green, ideology.color());
+                }
+            });
         }
     }
 
     private void updatePixmapCulturesColor(World ecsWorld) {
-        IntList provinceColors = this.provinceStore.getColors();
-        IntList provinceCultureValues = this.provinceStore.getCultureValues();
-        IntList provinceCultureStarts = this.provinceStore.getCultureStarts();
-        IntList provinceCultureCounts = this.provinceStore.getCultureCounts();
-        LongList provinceCultureIds = this.provinceStore.getCultureIds();
+        try(Query query = ecsWorld.query().with(Province.class).with(Color.class).with(CultureDistribution.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
 
-        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            int color = provinceColors.get(provinceId);
-            int red = (color >> 24) & 0xFF;
-            int green = (color >> 16) & 0xFF;
-            int provinceCultureStart = provinceCultureStarts.get(provinceId);
-            int biggestCultureIndex = -1;
-            for(int cultureIndex = provinceCultureStart; cultureIndex < provinceCultureStart + provinceCultureCounts.get(provinceId); cultureIndex++) {
-                if(biggestCultureIndex == -1 || provinceCultureValues.get(cultureIndex) > provinceCultureValues.get(biggestCultureIndex)) {
-                    biggestCultureIndex = cultureIndex;
+                    long provinceEntityId = iter.entity(i);
+                    Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+                    CultureDistribution cultureDistribution = provinceEntity.get(CultureDistribution.class);
+                    long[] cultureIds = cultureDistribution.populationIds();
+                    int[] cultureAmounts = cultureDistribution.populationAmounts();
+
+                    int biggestCultureIndex = -1;
+                    int biggestCultureAmount = 0;
+                    for(int j = 0; j < cultureIds.length; j++) {
+                        if(cultureIds[j] != 0 && cultureAmounts[j] > biggestCultureAmount) {
+                            biggestCultureAmount = cultureAmounts[j];
+                            biggestCultureIndex = j;
+                        }
+                    }
+                    if(biggestCultureIndex != -1) {
+                        long biggestCultureId = cultureIds[biggestCultureIndex];
+                        this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestCultureId).get(Color.class)).value());
+                    }
                 }
-            }
-            if(biggestCultureIndex != -1) {
-                long biggestCultureId = provinceCultureIds.get(biggestCultureIndex);
-                this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestCultureId).get(Color.class)).value());
-            }
+            });
         }
     }
 
     private void updatePixmapReligionsColor(World ecsWorld) {
-        IntList provinceColors = this.provinceStore.getColors();
-        IntList provinceReligionValues = this.provinceStore.getReligionValues();
-        IntList provinceReligionStarts = this.provinceStore.getReligionStarts();
-        IntList provinceReligionCounts = this.provinceStore.getReligionCounts();
-        LongList provinceReligionIds = this.provinceStore.getReligionIds();
-        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            int color = provinceColors.get(provinceId);
-            int red = (color >> 24) & 0xFF;
-            int green = (color >> 16) & 0xFF;
-            int provinceReligionStart = provinceReligionStarts.get(provinceId);
-            int biggestReligionIndex = -1;
-            for(int religionIndex = provinceReligionStart; religionIndex < provinceReligionStart + provinceReligionCounts.get(provinceId); religionIndex++) {
-                if(biggestReligionIndex == -1 || provinceReligionValues.get(religionIndex) > provinceReligionValues.get(biggestReligionIndex)) {
-                    biggestReligionIndex = religionIndex;
+        try(Query query = ecsWorld.query().with(Province.class).with(Color.class).with(ReligionDistribution.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
+
+                    long provinceEntityId = iter.entity(i);
+                    Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+                    ReligionDistribution religionDistribution = provinceEntity.get(ReligionDistribution.class);
+                    long[] religionIds = religionDistribution.populationIds();
+                    int[] religionAmounts = religionDistribution.populationAmounts();
+
+                    int biggestReligionIndex = -1;
+                    int biggestReligionAmount = 0;
+                    for(int j = 0; j < religionIds.length; j++) {
+                        if(religionIds[j] != 0 && religionAmounts[j] > biggestReligionAmount) {
+                            biggestReligionAmount = religionAmounts[j];
+                            biggestReligionIndex = j;
+                        }
+                    }
+                    if(biggestReligionIndex != -1) {
+                        long biggestReligionId = religionIds[biggestReligionIndex];
+                        this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestReligionId).get(Color.class)).value());
+                    }
                 }
-            }
-            if(biggestReligionIndex != -1) {
-                long biggestReligionId = provinceReligionIds.get(biggestReligionIndex);
-                this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestReligionId).get(Color.class)).value());
-            }
+            });
         }
     }
 
     private void updatePixmapResourcesColor() {
-        IntList provinceColors = this.provinceStore.getColors();
-        LongList provinceResourceGoodIds = this.provinceStore.getResourceGoodIds();
-        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            int color = provinceColors.get(provinceId);
-            int red = (color >> 24) & 0xFF;
-            int green = (color >> 16) & 0xFF;
-            long provinceResourceGoodId = provinceResourceGoodIds.get(provinceId);
-            if(provinceResourceGoodId != -1) {
-                Color goodColor = this.gameContext.getEcsWorld().obtainEntity(provinceResourceGoodId).get(Color.class);
-                this.mapModePixmap.drawPixel(red, green, goodColor.value());
-            } else {
-                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
-            }
+        World ecsWorld = this.gameContext.getEcsWorld();
+        try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
+                    this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
+                }
+            });
+        }
+        try(Query query = ecsWorld.query().with(Province.class).with(Color.class).with(ResourceGathering.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
+
+                    long provinceEntityId = iter.entity(i);
+                    Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+                    ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
+                    long resourceGoodId = resourceGathering.goodId();
+                    if(resourceGoodId != -1) {
+                        Color goodColor = ecsWorld.obtainEntity(resourceGoodId).get(Color.class);
+                        this.mapModePixmap.drawPixel(red, green, goodColor.value());
+                    }
+                }
+            });
         }
     }
 
@@ -425,46 +436,69 @@ public class WorldManager implements WorldContext, Disposable {
     }
 
     private void updatePixmapTerrainColor() {
-        IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            int color = provinceColors.get(provinceId);
-            int red = (color >> 24) & 0xFF;
-            int green = (color >> 16) & 0xFF;
-            this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
+        World ecsWorld = this.gameContext.getEcsWorld();
+        try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
+                    this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
+                }
+            });
         }
     }
 
     private void updatePixmapTerrain2Color(World ecsWorld) {
-        IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            int color = provinceColors.get(provinceId);
-            int red = (color >> 24) & 0xFF;
-            int green = (color >> 16) & 0xFF;
-            long provinceEntityId = this.provinces.get(color);
-            if(provinceEntityId != -1) {
-                Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                Province provinceData = provinceEntity.get(Province.class);
-                Entity terrainEntity = ecsWorld.obtainEntity(provinceData.terrainId());
-                Terrain terrain = terrainEntity.get(Terrain.class);
-                this.mapModePixmap.drawPixel(red, green, terrain.color());
-            }
+        try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
+
+                    long terrainId = iter.fieldLong(Province.class, 0, "terrainId", i);
+                    Entity terrainEntity = ecsWorld.obtainEntity(terrainId);
+                    Terrain terrain = terrainEntity.get(Terrain.class);
+                    this.mapModePixmap.drawPixel(red, green, terrain.color());
+                }
+            });
         }
     }
 
     private void updatePixmapPopulationColor() {
-        int maxPopulation = 0;
-        for (int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            maxPopulation = Math.max(maxPopulation, this.provinceStore.getPopulationAmount(provinceId));
+        World ecsWorld = this.gameContext.getEcsWorld();
+        MutableInt maxPopulation = new MutableInt(0);
+
+        try(Query query = ecsWorld.query().with(Province.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    int amountChildren = iter.fieldInt(Province.class, 0, "amountChildren", i);
+                    int amountAdults = iter.fieldInt(Province.class, 0, "amountAdults", i);
+                    int amountSeniors = iter.fieldInt(Province.class, 0, "amountSeniors", i);
+                    int pop = amountChildren + amountAdults + amountSeniors;
+                    if(pop > maxPopulation.getValue()) {
+                        maxPopulation.setValue(pop);
+                    }
+                }
+            });
         }
 
-        IntList provinceColors = this.provinceStore.getColors();
-        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            int color = provinceColors.get(provinceId);
-            int red = (color >> 24) & 0xFF;
-            int green = (color >> 16) & 0xFF;
-            int pop = this.provinceStore.getPopulationAmount(provinceId);
-            float ratio = (maxPopulation > 0) ? (float) pop / maxPopulation : 0f;
-            this.mapModePixmap.drawPixel(red, green, ColorGenerator.getMagmaColorRGBA(ratio));
+        try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
+
+                    int amountChildren = iter.fieldInt(Province.class, 0, "amountChildren", i);
+                    int amountAdults = iter.fieldInt(Province.class, 0, "amountAdults", i);
+                    int amountSeniors = iter.fieldInt(Province.class, 0, "amountSeniors", i);
+                    int pop = amountChildren + amountAdults + amountSeniors;
+                    float ratio = (maxPopulation.getValue() > 0) ? (float) pop / maxPopulation.getValue() : 0f;
+                    this.mapModePixmap.drawPixel(red, green, ColorGenerator.getMagmaColorRGBA(ratio));
+                }
+            });
         }
     }
 
@@ -771,29 +805,27 @@ public class WorldManager implements WorldContext, Disposable {
 
         MutableInt numBuildings = new MutableInt(0);
 
-        LongList provinceBuildingIds = this.provinceStore.getBuildingIds();
-        IntList provinceBuildingStarts = this.provinceStore.getBuildingStarts();
-        IntList provinceBuildingCounts = this.provinceStore.getBuildingCounts();
-
         Set<Long> countriesWithProvinces = new HashSet<>();
+        LongObjectMap<LongList> buildingsByProvince = new LongObjectMap<>();
 
         try (Query provinceQuery = ecsWorld.query().with(Province.class).build()) {
-            provinceQuery.iter(iter -> {
+            provinceQuery.each(provinceEntityId -> {
+                long ownerId = ecsWorld.obtainEntity(provinceEntityId).get(Province.class).ownerId();
+                countriesWithProvinces.add(ownerId);
+                buildingsByProvince.put(provinceEntityId, new LongList());
+            });
+        }
+
+        try (Query buildingQuery = ecsWorld.query().with(Building.class).build()) {
+            buildingQuery.iter(iter -> {
                 for (int i = 0; i < iter.count(); i++) {
-                    long ownerId = iter.fieldInt(Province.class, 0, "ownerId", i);
-                    countriesWithProvinces.add(ownerId);
-
-                    long provinceEntityId = iter.entity(i);
-                    Entity province = ecsWorld.obtainEntity(provinceEntityId);
-                    int provinceNameId = Integer.parseInt(province.getName());
-                    int provinceIndex = provinceStore.getIndexById().get(provinceNameId);
-                    int start = provinceBuildingStarts.get(provinceIndex);
-                    int end = start + provinceBuildingCounts.get(provinceIndex);
-
-                    for (int bi = start; bi < end; bi++) {
-                        long buildingId = provinceBuildingIds.get(bi);
-                        Entity building = ecsWorld.obtainEntity(buildingId);
-                        if (building.has(ecsConstants.onMap())) {
+                    long parentId = iter.fieldLong(Building.class, 0, "parentId", i);
+                    long buildingEntityId = iter.entity(i);
+                    Entity building = ecsWorld.obtainEntity(buildingEntityId);
+                    if (building.has(ecsConstants.onMap())) {
+                        LongList buildings = buildingsByProvince.get(parentId);
+                        if (buildings != null) {
+                            buildings.add(buildingEntityId);
                             numBuildings.increment();
                         }
                     }
@@ -826,37 +858,34 @@ public class WorldManager implements WorldContext, Disposable {
         TextureRegion capitalRegion = this.mapElementsTextureAtlas.findRegion("building_capital");
 
         try (Query provinceQuery = ecsWorld.query().with(Province.class).build()) {
-            provinceQuery.iter(iter -> {
-                for (int i = 0; i < iter.count(); i++) {
-                    long provinceEntityId = iter.entity(i);
-                    Entity province = ecsWorld.obtainEntity(provinceEntityId);
-                    int provinceNameId = Integer.parseInt(province.getName());
-                    int provinceIndex = provinceStore.getIndexById().get(provinceNameId);
-                    int start = provinceBuildingStarts.get(provinceIndex);
-                    int end = start + provinceBuildingCounts.get(provinceIndex);
+            provinceQuery.each(provinceEntityId -> {
+                Entity province = ecsWorld.obtainEntity(provinceEntityId);
+                String provinceNameId = province.getName();
+                LongList buildings = buildingsByProvince.get(provinceEntityId);
+                if (buildings == null) {
+                    return;
+                }
 
-                    for (int bi = start; bi < end; bi++) {
-                        long buildingId = provinceBuildingIds.get(bi);
-                        Entity building = ecsWorld.obtainEntity(buildingId);
-                        if (!building.has(ecsConstants.onMap())) {
-                            continue;
-                        }
+                for (int bi = 0; bi < buildings.size(); bi++) {
+                    long buildingEntityId = buildings.get(bi);
+                    Entity building = ecsWorld.obtainEntity(buildingEntityId);
+                    Building buildingData = building.get(Building.class);
+                    Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
+                    String buildingName = buildingType.getName();
 
-                        String buildingName = building.getName();
-                        TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_" + buildingName + "_empty");
+                    TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_" + buildingName + "_empty");
 
-                        long buildingPositionEntityId = ecsWorld.lookup("province_" + provinceNameId + "_pos_" + buildingName);
-                        Entity buildingPositionEntity = ecsWorld.obtainEntity(buildingPositionEntityId);
-                        Position pos = buildingPositionEntity.get(Position.class);
-                        int bx = pos.x();
-                        int by = pos.y();
+                    long buildingPositionEntityId = ecsWorld.lookup("province_" + provinceNameId + "_pos_" + buildingName);
+                    Entity buildingPositionEntity = ecsWorld.obtainEntity(buildingPositionEntityId);
+                    Position pos = buildingPositionEntity.get(Position.class);
+                    int bx = pos.x();
+                    int by = pos.y();
 
-                        this.addVerticesIndicesBuilding(vertices, indices, vertexIndex.getValue(), indexIndex.getValue(), (short) vertexOffset.getValue(), bx, by, width, height, buildingRegion);
+                    this.addVerticesIndicesBuilding(vertices, indices, vertexIndex.getValue(), indexIndex.getValue(), (short) vertexOffset.getValue(), bx, by, width, height, buildingRegion);
 
-                        vertexIndex.increment(16);
-                        indexIndex.increment(6);
-                        vertexOffset.increment(4);
-                    }
+                    vertexIndex.increment(16);
+                    indexIndex.increment(6);
+                    vertexOffset.increment(4);
                 }
             });
         }
@@ -931,82 +960,100 @@ public class WorldManager implements WorldContext, Disposable {
 
     private WgMesh generateMeshResources(VertexAttributes vertexAttributes) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        int numProvinces = 0;
-        LongList provinceResourceGoodIds = this.provinceStore.getResourceGoodIds();
-        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            if(provinceResourceGoodIds.get(provinceId) != -1) {
-                numProvinces++;
-            }
+        MutableInt numProvinces = new MutableInt(0);
+        try(Query query = ecsWorld.query().with(Province.class).with(ResourceGathering.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    long provinceEntityId = iter.entity(i);
+                    Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+                    ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
+                    if(resourceGathering.goodId() != -1) {
+                        numProvinces.increment();
+                    }
+                }
+            });
         }
 
-        float[] vertices = new float[numProvinces * 4 * 6];
-        short[] indices = new short[numProvinces * 6];
+        float[] vertices = new float[numProvinces.getValue() * 4 * 6];
+        short[] indices = new short[numProvinces.getValue() * 6];
 
-        int vertexIndex = 0;
-        int indexIndex = 0;
-        short vertexOffset = 0;
+        final MutableInt vertexIndex = new MutableInt(0);
+        final MutableInt indexIndex = new MutableInt(0);
+        final MutableInt vertexOffset = new MutableInt(0);
 
         int width = 13;
         int height = 10;
 
-        for(int provinceId = 0; provinceId < this.provinceStore.getColors().size(); provinceId++) {
-            long provinceResourceGoodId = provinceResourceGoodIds.get(provinceId);
-            if(provinceResourceGoodId == -1) {
-                continue;
-            }
-            TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + this.gameContext.getEcsWorld().obtainEntity(provinceResourceGoodId).getName());
+        try(Query query = ecsWorld.query().with(Province.class).with(ResourceGathering.class).build()) {
+            query.iter(iter -> {
+                for(int i = 0; i < iter.count(); i++) {
+                    long provinceEntityId = iter.entity(i);
+                    Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+                    ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
+                    long provinceResourceGoodId = resourceGathering.goodId();
+                    if(provinceResourceGoodId == -1) {
+                        continue;
+                    }
+                    TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + ecsWorld.obtainEntity(provinceResourceGoodId).getName());
 
-            long positionEntityId = ecsWorld.lookup("province_" + this.provinceStore.getIds().get(provinceId) + "_pos_default");
-            Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
-            Position position = positionEntity.get(Position.class);
-            int cx = position.x();
-            int cy = position.y();
+                    long positionEntityId = ecsWorld.lookup("province_" + provinceEntity.getName() + "_pos_default");
+                    Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
+                    Position position = positionEntity.get(Position.class);
+                    int cx = position.x();
+                    int cy = position.y();
 
-            int x = cx - (width / 2);
-            int y = cy - (height / 2);
+                    int x = cx - (width / 2);
+                    int y = cy - (height / 2);
 
-            float u1 = resourceRegion.getU();
-            float v1 = resourceRegion.getV2();
-            float u2 = resourceRegion.getU2();
-            float v2 = resourceRegion.getV();
+                    float u1 = resourceRegion.getU();
+                    float v1 = resourceRegion.getV2();
+                    float u2 = resourceRegion.getU2();
+                    float v2 = resourceRegion.getV();
 
-            vertices[vertexIndex++] = x;
-            vertices[vertexIndex++] = y;
-            vertices[vertexIndex++] = u1;
-            vertices[vertexIndex++] = v1;
-            vertices[vertexIndex++] = cx;
-            vertices[vertexIndex++] = cy;
+                    int vIdx = vertexIndex.getValue();
+                    vertices[vIdx++] = x;
+                    vertices[vIdx++] = y;
+                    vertices[vIdx++] = u1;
+                    vertices[vIdx++] = v1;
+                    vertices[vIdx++] = cx;
+                    vertices[vIdx++] = cy;
 
-            vertices[vertexIndex++] = x + width;
-            vertices[vertexIndex++] = y;
-            vertices[vertexIndex++] = u2;
-            vertices[vertexIndex++] = v1;
-            vertices[vertexIndex++] = cx;
-            vertices[vertexIndex++] = cy;
+                    vertices[vIdx++] = x + width;
+                    vertices[vIdx++] = y;
+                    vertices[vIdx++] = u2;
+                    vertices[vIdx++] = v1;
+                    vertices[vIdx++] = cx;
+                    vertices[vIdx++] = cy;
 
-            vertices[vertexIndex++] = x + width;
-            vertices[vertexIndex++] = y + height;
-            vertices[vertexIndex++] = u2;
-            vertices[vertexIndex++] = v2;
-            vertices[vertexIndex++] = cx;
-            vertices[vertexIndex++] = cy;
+                    vertices[vIdx++] = x + width;
+                    vertices[vIdx++] = y + height;
+                    vertices[vIdx++] = u2;
+                    vertices[vIdx++] = v2;
+                    vertices[vIdx++] = cx;
+                    vertices[vIdx++] = cy;
 
-            vertices[vertexIndex++] = x;
-            vertices[vertexIndex++] = y + height;
-            vertices[vertexIndex++] = u1;
-            vertices[vertexIndex++] = v2;
-            vertices[vertexIndex++] = cx;
-            vertices[vertexIndex++] = cy;
+                    vertices[vIdx++] = x;
+                    vertices[vIdx++] = y + height;
+                    vertices[vIdx++] = u1;
+                    vertices[vIdx++] = v2;
+                    vertices[vIdx++] = cx;
+                    vertices[vIdx++] = cy;
+                    vertexIndex.setValue(vIdx);
 
-            indices[indexIndex++] = vertexOffset;
-            indices[indexIndex++] = (short) (vertexOffset + 1);
-            indices[indexIndex++] = (short) (vertexOffset + 2);
+                    int iIdx = indexIndex.getValue();
+                    short vOff = (short) vertexOffset.getValue();
+                    indices[iIdx++] = vOff;
+                    indices[iIdx++] = (short) (vOff + 1);
+                    indices[iIdx++] = (short) (vOff + 2);
 
-            indices[indexIndex++] = (short) (vertexOffset + 2);
-            indices[indexIndex++] = (short) (vertexOffset + 3);
-            indices[indexIndex++] = vertexOffset;
+                    indices[iIdx++] = (short) (vOff + 2);
+                    indices[iIdx++] = (short) (vOff + 3);
+                    indices[iIdx++] = vOff;
+                    indexIndex.setValue(iIdx);
 
-            vertexOffset += 4;
+                    vertexOffset.increment(4);
+                }
+            });
         }
 
         WgMesh mesh = new WgMesh(true, vertices.length / 6, indices.length, false, vertexAttributes);

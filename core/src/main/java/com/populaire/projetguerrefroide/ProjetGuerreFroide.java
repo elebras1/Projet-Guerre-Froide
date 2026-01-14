@@ -62,6 +62,10 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(DevelopmentBuilding.class);
         this.ecsWorld.component(Building.class);
         this.ecsWorld.component(PopulationTemplate.class);
+        this.ecsWorld.component(CultureDistribution.class);
+        this.ecsWorld.component(PopulationDistribution.class);
+        this.ecsWorld.component(ReligionDistribution.class);
+        this.ecsWorld.component(ResourceGathering.class);
     }
 
     private void loadAssets(AssetManager assetManager) {

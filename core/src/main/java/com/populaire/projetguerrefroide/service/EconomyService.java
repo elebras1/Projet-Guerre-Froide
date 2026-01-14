@@ -31,20 +31,19 @@ public class EconomyService {
     }
 
     public void initialize() {
-        this.rgoSystem.initialiazeSize(this.gameContext.getEcsWorld(), this.worldContext.getProvinceStore());
+        this.rgoSystem.initializeSize(this.gameContext.getEcsWorld());
     }
 
     public void hire() {
-        this.rgoSystem.hire(this.gameContext.getEcsWorld(), this.worldContext.getProvinceStore());
+        this.rgoSystem.hire(this.gameContext.getEcsWorld());
     }
 
     public void produce() {
-        this.rgoSystem.produce(this.gameContext.getEcsWorld(), this.worldContext.getProvinceStore());
+        this.rgoSystem.produce(this.gameContext.getEcsWorld());
     }
 
     public RegionsBuildingsDto prepareRegionsBuildingsDto(long countryId) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        ProvinceStore provinceStore = this.worldContext.getProvinceStore();
 
         LongOrderedSet regionIds = new LongOrderedSet();
         try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
@@ -63,7 +62,7 @@ public class EconomyService {
         LongSet.LongSetIterator iterator = regionIds.iterator();
         while(iterator.hasNext()) {
             Entity region = ecsWorld.obtainEntity(iterator.nextLong());
-            RegionDto regionData = this.collectRegionData(countryId, region.id(), region.getName(), provinceStore);
+            RegionDto regionData = this.collectRegionData(countryId, region.id(), region.getName());
             regions.add(regionData);
         }
 
@@ -72,7 +71,6 @@ public class EconomyService {
 
     public RegionsBuildingsDto prepareRegionsBuildingsDtoSorted(long countryId, SortType sortType) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        ProvinceStore provinceStore = this.worldContext.getProvinceStore();
 
         LongOrderedSet regionIds = new LongOrderedSet();
         try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
@@ -91,7 +89,7 @@ public class EconomyService {
         LongSet.LongSetIterator iterator = regionIds.iterator();
         while(iterator.hasNext()) {
             Entity region = ecsWorld.obtainEntity(iterator.nextLong());
-            RegionDto regionData = this.collectRegionData(countryId, region.id(), region.getName(), provinceStore);
+            RegionDto regionData = this.collectRegionData(countryId, region.id(), region.getName());
             regions.add(regionData);
         }
 
@@ -100,7 +98,7 @@ public class EconomyService {
         return new RegionsBuildingsDto(regions);
     }
 
-    private RegionDto collectRegionData(long countryId, long regionId, String regionNameId, ProvinceStore provinceStore) {
+    private RegionDto collectRegionData(long countryId, long regionId, String regionNameId) {
         World ecsWorld = this.gameContext.getEcsWorld();
         MutableInt populationAmount = new MutableInt(0);
         MutableInt buildingWorkerAmount = new MutableInt(0);
@@ -114,7 +112,7 @@ public class EconomyService {
                     long parentRegionId = iter.fieldLong(GeoHierarchy.class, 0, "regionId", i);
 
                     if (countryId == ownerId && parentRegionId == regionId) {
-                        int adults = this.getAmountAdults(provinceId, provinceStore);
+                        int adults = this.getAmountAdults(provinceId);
                         populationAmount.increment(adults);
                     }
                 }
@@ -176,14 +174,18 @@ public class EconomyService {
         }
     }
 
-    public float getResourceGoodsProduction(int provinceId) {
-        int provinceIndex = this.worldContext.getProvinceStore().getIndexById().get(provinceId);
-        return this.worldContext.getProvinceStore().getResourceGoodsProduction().get(provinceIndex);
+    public float getResourceGatheringProduction(int provinceId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
+        if (provinceEntityId == -1) {
+            return -1f;
+        }
+        return this.rgoSystem.getProduction(ecsWorld, provinceEntityId);
     }
 
-    private int getAmountAdults(long provinceId, ProvinceStore provinceStore) {
-        int provinceNameId = Integer.parseInt(this.gameContext.getEcsWorld().obtainEntity(provinceId).getName());
-        int provinceIndex = provinceStore.getIndexById().get(provinceNameId);
-        return provinceStore.getAmountAdults().get(provinceIndex);
+    private int getAmountAdults(long provinceId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Province province = ecsWorld.obtainEntity(provinceId).get(Province.class);
+        return province.amountAdults();
     }
 }
