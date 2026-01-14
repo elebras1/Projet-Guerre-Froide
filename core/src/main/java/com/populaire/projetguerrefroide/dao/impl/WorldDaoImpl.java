@@ -11,7 +11,6 @@ import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.builder.*;
-import com.populaire.projetguerrefroide.economy.population.PopulationTemplateStore;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.EcsConstants;
@@ -903,8 +902,8 @@ public class WorldDaoImpl implements WorldDao {
 
     private ProvinceStore loadProvinces(World ecsWorld, EcsConstants ecsConstants, IntLongMap provinces, Borders borders) {
         IntObjectMap<LongIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
-        PopulationTemplateStore populationTemplateStore = this.readPopulationTemplatesJson();
-        ProvinceStore provinceStore = this.readProvincesJson(ecsWorld, regionBuildingsByProvince, populationTemplateStore);
+        this.readPopulationTemplatesJson(ecsWorld);
+        ProvinceStore provinceStore = this.readProvincesJson(ecsWorld, regionBuildingsByProvince);
         this.readRegionJson(ecsWorld, ecsConstants, regionBuildingsByProvince);
         this.readDefinitionCsv(ecsWorld, ecsConstants, provinces, provinceStore);
         this.readProvinceBitmap(ecsWorld, provinces, borders);
@@ -915,31 +914,29 @@ public class WorldDaoImpl implements WorldDao {
         return provinceStore;
     }
 
-    private PopulationTemplateStore readPopulationTemplatesJson() {
-        PopulationTemplateStoreBuilder builder = new PopulationTemplateStoreBuilder();
+    private void readPopulationTemplatesJson(World ecsWorld) {
         try {
             JsonValue populationTemplatesValues = this.parseJsonFile(this.populationTemplatesJsonFile);
             Iterator<Map.Entry<String, JsonValue>> populationTemplatesIterator = populationTemplatesValues.objectIterator();
             while (populationTemplatesIterator.hasNext()) {
                 Map.Entry<String, JsonValue> entry = populationTemplatesIterator.next();
-                int template = Integer.parseInt(entry.getKey());
+                long populationTemplateId = ecsWorld.entity("population_template_" + entry.getKey());
+                Entity populationTemplate = ecsWorld.obtainEntity(populationTemplateId);
                 JsonValue templateValue = entry.getValue();
                 Iterator<JsonValue> populationValuesIterator = templateValue.get("value").arrayIterator();
-                float children = (float) populationValuesIterator.next().asDouble();
-                float adults = (float) populationValuesIterator.next().asDouble();
-                float seniors = (float) populationValuesIterator.next().asDouble();
-                builder.add(template, children, adults, seniors);
+                float childrenRatio = (float) populationValuesIterator.next().asDouble();
+                float adultsRatio = (float) populationValuesIterator.next().asDouble();
+                float seniorsRatio = (float) populationValuesIterator.next().asDouble();
+                populationTemplate.set(new PopulationTemplate(childrenRatio, adultsRatio, seniorsRatio));
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
-        return builder.build();
     }
 
-    private ProvinceStore readProvincesJson(World ecsWorld, IntObjectMap<LongIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore) {
+    private ProvinceStore readProvincesJson(World ecsWorld, IntObjectMap<LongIntMap> regionBuildingsByProvince) {
         ProvinceStoreBuilder builder = new ProvinceStoreBuilder();
         IntObjectMap<String> provincesPaths = new IntObjectMap<>(builder.getDefaultCapacity(), 1f);
         try {
@@ -953,7 +950,7 @@ public class WorldDaoImpl implements WorldDao {
             for (IntObjectMap.Entry<String> entry : provincesPaths.entrySet()) {
                 int provinceId = entry.getKey();
                 String provincePath = entry.getValue();
-                this.readProvinceJson(ecsWorld, provincePath, provinceId, regionBuildingsByProvince, populationTemplateStore, builder);
+                this.readProvinceJson(ecsWorld, provincePath, provinceId, regionBuildingsByProvince, builder);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -964,7 +961,7 @@ public class WorldDaoImpl implements WorldDao {
         return builder.build();
     }
 
-    private void readProvinceJson(World ecsWorld, String provincePath, int provinceId, IntObjectMap<LongIntMap> regionBuildingsByProvince, PopulationTemplateStore populationTemplateStore, ProvinceStoreBuilder builder) {
+    private void readProvinceJson(World ecsWorld, String provincePath, int provinceId, IntObjectMap<LongIntMap> regionBuildingsByProvince, ProvinceStoreBuilder builder) {
         try {
             JsonValue provinceValues = this.parseJsonFile(provincePath);
 
@@ -997,11 +994,12 @@ public class WorldDaoImpl implements WorldDao {
 
             JsonValue populationValue = provinceValues.get("population_total");
             int amount = (int) populationValue.get("amount").asLong();
-            int template = (int) populationValue.get("template").asLong();
-            int populationTemplateIndex = populationTemplateStore.getIndexById().get(template);
-            int amountChildren = (int) (amount * populationTemplateStore.getChildren().get(populationTemplateIndex));
-            int amountSeniors = (int) (amount * populationTemplateStore.getSeniors().get(populationTemplateIndex));
-            int amountAdults = (int) (amount * populationTemplateStore.getAdults().get(populationTemplateIndex));
+            int templateNumber = (int) populationValue.get("template").asLong();
+            Entity template = ecsWorld.obtainEntity(ecsWorld.lookup("population_template_" + templateNumber));
+            PopulationTemplate populationTemplateData = template.get(PopulationTemplate.class);
+            int amountChildren = (int) (amount * populationTemplateData.childrenRatio());
+            int amountAdults = (int) (amount * populationTemplateData.adultsRatio());
+            int amountSeniors = (int) (amount * populationTemplateData.seniorsRatio());
             builder.addProvince(provinceId).addAmountPopulation(amountChildren, amountAdults, amountSeniors);
 
             this.parseDistribution(ecsWorld, populationValue.get("populations"), amountAdults, builder, "population");

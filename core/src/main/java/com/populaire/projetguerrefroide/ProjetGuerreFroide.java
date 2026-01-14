@@ -61,6 +61,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(SpecialBuilding.class);
         this.ecsWorld.component(DevelopmentBuilding.class);
         this.ecsWorld.component(Building.class);
+        this.ecsWorld.component(PopulationTemplate.class);
     }
 
     private void loadAssets(AssetManager assetManager) {
