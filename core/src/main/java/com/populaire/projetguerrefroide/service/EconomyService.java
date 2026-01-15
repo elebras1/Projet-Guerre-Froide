@@ -174,9 +174,9 @@ public class EconomyService {
         }
     }
 
-    public float getResourceGatheringProduction(int provinceId) {
+    public float getResourceGatheringProduction(String provinceNameId) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
+        long provinceEntityId = ecsWorld.lookup(provinceNameId);
         if (provinceEntityId == -1) {
             return -1f;
         }

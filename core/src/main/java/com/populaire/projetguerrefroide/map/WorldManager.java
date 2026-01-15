@@ -822,7 +822,8 @@ public class WorldManager implements WorldContext, Disposable {
                     long parentId = iter.fieldLong(Building.class, 0, "parentId", i);
                     long buildingEntityId = iter.entity(i);
                     Entity building = ecsWorld.obtainEntity(buildingEntityId);
-                    if (building.has(ecsConstants.onMap())) {
+                    Entity buildingType = ecsWorld.obtainEntity(building.get(Building.class).typeId());
+                    if (buildingType.has(ecsConstants.onMap())) {
                         LongList buildings = buildingsByProvince.get(parentId);
                         if (buildings != null) {
                             buildings.add(buildingEntityId);

@@ -111,7 +111,6 @@ public class WorldService implements DateListener {
 
     public CountrySummaryDto prepareCountrySummaryDto(Map<String, String> localisation) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         Entity selectedProvince = ecsWorld.obtainEntity(this.worldManager.getSelectedProvinceId());
         Province selectedProvinceData = selectedProvince.get(Province.class);
         Entity selectedCountry = ecsWorld.obtainEntity(selectedProvinceData.ownerId());
@@ -167,9 +166,9 @@ public class WorldService implements DateListener {
         String countryNameId = country.getName();
         String colonizerId = this.worldManager.getColonizerId(country.id());
         List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
-        float resourceProduced = this.economyService.getResourceGatheringProduction(Integer.parseInt(provinceNameId));
+        float resourceProduced = this.economyService.getResourceGatheringProduction(provinceNameId);
         List<String> provinceIdsRegion = this.getProvinceIdsOrderByPopulation(region.id());
-        DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(Integer.parseInt(provinceNameId));
+        DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(selectedProvince.id());
         List<String> specialBuildings = this.getSpecialBuildingNames(region.id());
         List<String> colorsBuilding = this.getColorBuildingsOrderByLevel(region.id());
 
@@ -225,7 +224,7 @@ public class WorldService implements DateListener {
             return -1;
         }
         Entity selectedProvince = this.gameContext.getEcsWorld().obtainEntity(selectedProvinceId);
-        return this.economyService.getResourceGatheringProduction(Integer.parseInt(selectedProvince.getName()));
+        return this.economyService.getResourceGatheringProduction(selectedProvince.getName());
     }
 
     public RegionsBuildingsDto prepareRegionsBuildingsDto() {
@@ -336,7 +335,7 @@ public class WorldService implements DateListener {
         return countriesCore;
     }
 
-    private DevelopementBuildingLevelDto getDevelopementBuildingLevel(int provinceId) {
+    private DevelopementBuildingLevelDto getDevelopementBuildingLevel(long provinceId) {
         World ecsWorld = this.gameContext.getEcsWorld();
         MutableInt navalBaseLevel = new MutableInt(0);
         MutableInt airBaseLevel = new MutableInt(0);
