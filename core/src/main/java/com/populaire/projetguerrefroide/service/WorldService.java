@@ -12,15 +12,13 @@ import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.*;
 import com.populaire.projetguerrefroide.map.*;
-import com.populaire.projetguerrefroide.screen.DateListener;
 import com.populaire.projetguerrefroide.ui.view.SortType;
 import com.populaire.projetguerrefroide.util.*;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
-public class WorldService implements DateListener {
+public class WorldService {
     private final GameContext gameContext;
     private final AsyncExecutor asyncExecutor;
     private final WorldDao worldDao;
@@ -45,10 +43,6 @@ public class WorldService implements DateListener {
 
     public void renderWorld(WgProjection projection, OrthographicCamera cam, float time) {
         this.worldManager.render(projection, cam, time);
-    }
-
-    public void initializeEconomy() {
-        this.economyService.initialize();
     }
 
     public boolean selectProvince(int x, int y) {
@@ -233,12 +227,6 @@ public class WorldService implements DateListener {
 
     public RegionsBuildingsDto prepareRegionsBuildingsDtoSorted(SortType sortType) {
         return this.economyService.prepareRegionsBuildingsDtoSorted(this.worldManager.getPlayerCountryId(), sortType);
-    }
-
-    @Override
-    public void onNewDay(LocalDate date) {
-        this.economyService.hire();
-        this.economyService.produce();
     }
 
     private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(long[] provinceElementIds, int[] provinceElementValues, int amountAdults) {

@@ -26,7 +26,7 @@ import com.populaire.projetguerrefroide.input.GameInputHandler;
 import com.populaire.projetguerrefroide.map.MapMode;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.DateService;
+import com.populaire.projetguerrefroide.service.TimeService;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.view.*;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
@@ -37,11 +37,11 @@ import java.time.LocalDate;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class GameScreen implements Screen, GameInputListener, DateListener, TopBarListener, MainMenuInGameListener, MinimapListener, EconomyPanelListener {
+public class GameScreen implements Screen, GameInputListener, TimeListener, TopBarListener, MainMenuInGameListener, MinimapListener, EconomyPanelListener {
     private final GameContext gameContext;
     private final WorldService worldService;
     private final ConfigurationService configurationService;
-    private final DateService dateService;
+    private final TimeService timeService;
     private final OrthographicCamera cam;
     private final WgProjection projection;
     private final InputMultiplexer multiplexer;
@@ -71,9 +71,8 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.gameContext = gameContext;
         this.worldService = worldService;
         this.configurationService = configurationService;
-        this.dateService = new DateService(this.gameContext.getBookmark().date());
-        this.dateService.addListener(this.worldService);
-        this.dateService.addListener(this);
+        this.timeService = new TimeService(this.gameContext.getBookmark().date());
+        this.timeService.addListener(this);
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.projection = new WgProjection();
         Position capitalPosition = this.worldService.getPositionOfCapitalOfSelectedCountry();
@@ -101,8 +100,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new WgCustomStage(new WgScreenViewport(), this.skinUi, this.skinFlags);
         this.initializeUi();
-        this.worldService.initializeEconomy();
-        this.dateService.initialize();
+        this.timeService.initialize();
 
         this.paused = false;
     }
@@ -201,23 +199,24 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
     @Override
     public void onNewDay(LocalDate date) {
+        this.gameContext.getEcsWorld().progress(1f);
         this.topBar.setDate(DateUtils.formatDate(date, this.gameContext.getLocalisation(), this.gameContext.getSettings().getLanguage()));
         this.provincePanel.setResourceProduced(this.worldService.getResourceGoodsProduction());
     }
 
     @Override
     public int onSpeedUp() {
-        return this.dateService.upSpeed();
+        return this.timeService.upSpeed();
     }
 
     @Override
     public int onSpeedDown() {
-        return this.dateService.downSpeed();
+        return this.timeService.downSpeed();
     }
 
     @Override
     public int onTogglePause() {
-        return this.dateService.togglePause();
+        return this.timeService.togglePause();
     }
 
     @Override
@@ -383,12 +382,11 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.cam.position.x = camX;
         this.projection.setProjectionMatrix(this.cam.combined);
 
-        this.gameContext.getEcsWorld().progress(delta);
         WgScreenUtils.clear(1, 1, 1, 1);
 
         this.worldService.renderWorld(this.projection, this.cam, this.time);
 
-        this.dateService.update(delta);
+        this.timeService.update(delta);
 
         if(!this.paused) {
             this.inputHandler.setDelta(delta);

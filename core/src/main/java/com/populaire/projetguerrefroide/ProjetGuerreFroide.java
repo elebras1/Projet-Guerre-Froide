@@ -26,6 +26,7 @@ public class ProjetGuerreFroide extends Game {
 
     @Override
     public void create() {
+        this.ecsWorld.setThreads(4);
         this.registerComponents();
         this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
         this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService);

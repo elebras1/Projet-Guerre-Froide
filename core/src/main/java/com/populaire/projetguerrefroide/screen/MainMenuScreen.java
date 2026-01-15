@@ -47,7 +47,6 @@ public class MainMenuScreen implements Screen, MainMenuListener {
 
     @Override
     public void render(float delta) {
-        this.gameContext.getEcsWorld().progress(delta);
         WgScreenUtils.clear(1, 1, 1, 1);
 
         this.stage.act();

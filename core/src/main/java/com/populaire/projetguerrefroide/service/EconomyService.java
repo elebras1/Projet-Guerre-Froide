@@ -4,14 +4,13 @@ import com.github.elebras1.flecs.Entity;
 import com.github.elebras1.flecs.Query;
 import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.*;
-import com.populaire.projetguerrefroide.component.Building;
-import com.populaire.projetguerrefroide.component.EconomyBuilding;
-import com.populaire.projetguerrefroide.component.GeoHierarchy;
-import com.populaire.projetguerrefroide.component.Province;
+import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
 import com.populaire.projetguerrefroide.dto.RegionDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
-import com.populaire.projetguerrefroide.economy.production.ResourceGatheringOperationSystem;
+import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationHireSystem;
+import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationProduceSystem;
+import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationSizeSystem;
 import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.ui.view.SortType;
 import com.populaire.projetguerrefroide.util.MutableInt;
@@ -22,24 +21,16 @@ import java.util.List;
 public class EconomyService {
     private final GameContext gameContext;
     private final WorldContext worldContext;
-    private final ResourceGatheringOperationSystem rgoSystem;
+    private final ResourceGatheringOperationSizeSystem rgoSizeSystem;
+    private final ResourceGatheringOperationHireSystem rgoHireSystem;
+    private final ResourceGatheringOperationProduceSystem rgoProduceSystem;
 
     public EconomyService(GameContext gameContext, WorldContext worldContext) {
         this.gameContext = gameContext;
         this.worldContext = worldContext;
-        this.rgoSystem = new ResourceGatheringOperationSystem();
-    }
-
-    public void initialize() {
-        this.rgoSystem.initializeSize(this.gameContext.getEcsWorld());
-    }
-
-    public void hire() {
-        this.rgoSystem.hire(this.gameContext.getEcsWorld());
-    }
-
-    public void produce() {
-        this.rgoSystem.produce(this.gameContext.getEcsWorld());
+        this.rgoSizeSystem = new ResourceGatheringOperationSizeSystem(this.gameContext.getEcsWorld());
+        this.rgoHireSystem = new ResourceGatheringOperationHireSystem(this.gameContext.getEcsWorld(), this);
+        this.rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld(), this);
     }
 
     public RegionsBuildingsDto prepareRegionsBuildingsDto(long countryId) {
@@ -96,6 +87,14 @@ public class EconomyService {
         this.sortRegions(regions, sortType);
 
         return new RegionsBuildingsDto(regions);
+    }
+
+    public int getMaxWorkers(World ecsWorld, long resourceGoodId, int resourceGoodSize) {
+        Entity resourceGoodEntity = ecsWorld.obtainEntity(resourceGoodId);
+        ResourceProduction resourceProduction = resourceGoodEntity.get(ResourceProduction.class);
+        Entity productionTypeEntity = ecsWorld.obtainEntity(resourceProduction.productionTypeId());
+        ProductionType productionTypeData = productionTypeEntity.get(ProductionType.class);
+        return resourceGoodSize * productionTypeData.workforce();
     }
 
     private RegionDto collectRegionData(long countryId, long regionId, String regionNameId) {
@@ -180,12 +179,21 @@ public class EconomyService {
         if (provinceEntityId == -1) {
             return -1f;
         }
-        return this.rgoSystem.getProduction(ecsWorld, provinceEntityId);
+        return this.getProduction(ecsWorld, provinceEntityId);
     }
 
     private int getAmountAdults(long provinceId) {
         World ecsWorld = this.gameContext.getEcsWorld();
         Province province = ecsWorld.obtainEntity(provinceId).get(Province.class);
         return province.amountAdults();
+    }
+
+    private float getProduction(World ecsWorld, long provinceEntityId) {
+        Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+        ResourceGathering state = provinceEntity.get(ResourceGathering.class);
+        if (state != null) {
+            return state.production();
+        }
+        return -1f;
     }
 }

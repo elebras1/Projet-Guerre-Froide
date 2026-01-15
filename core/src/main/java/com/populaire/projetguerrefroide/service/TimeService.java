@@ -1,29 +1,29 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.screen.DateListener;
+import com.populaire.projetguerrefroide.screen.TimeListener;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class DateService {
+public class TimeService {
     private int speed;
     private boolean paused;
     private LocalDate date;
     private double accumulator;
     private static final double[] DAYS_PER_SECOND = {0.0, 0.5, 1.0, 2.0, 5.0, 10.0};
-    private final List<DateListener> dateListeners;
+    private final List<TimeListener> timeListeners;
 
-    public DateService(LocalDate startDate) {
+    public TimeService(LocalDate startDate) {
         this.speed = 1;
         this.paused = true;
         this.date = startDate;
         this.accumulator = 0.0;
-        this.dateListeners = new ObjectList<>();
+        this.timeListeners = new ObjectList<>();
     }
 
-    public void addListener(DateListener dateListener) {
-        this.dateListeners.add(dateListener);
+    public void addListener(TimeListener timeListener) {
+        this.timeListeners.add(timeListener);
     }
 
     public void initialize() {
@@ -65,8 +65,8 @@ public class DateService {
     }
 
     private void onNewDay(LocalDate newDate) {
-        for(DateListener dateListener : this.dateListeners) {
-            dateListener.onNewDay(newDate);
+        for(TimeListener timeListener : this.timeListeners) {
+            timeListener.onNewDay(newDate);
         }
     }
 

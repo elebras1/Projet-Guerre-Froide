@@ -56,7 +56,6 @@ public class LoadScreen implements Screen {
     public void render(float delta) {
         switch (this.loadingStep) {
             case LOADING_ASSETS -> {
-                this.gameContext.getEcsWorld().progress(delta);
                 this.stage.act();
                 this.stage.draw();
                 this.gameContext.getCursorManager().update(delta);
@@ -69,7 +68,6 @@ public class LoadScreen implements Screen {
                 this.loadingStep = FINISHED;
             }
             case FINISHED -> {
-                this.gameContext.getEcsWorld().progress(delta);
                 this.gameContext.getCursorManager().update(delta);
                 this.gameContext.getSettings().applyGraphicsSettings();
                 this.gameContext.getAssetManager().finishLoading();
