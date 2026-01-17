@@ -8,9 +8,7 @@ import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Vector4;
 import com.badlogic.gdx.utils.Disposable;
-import com.github.elebras1.flecs.Entity;
-import com.github.elebras1.flecs.Query;
-import com.github.elebras1.flecs.World;
+import com.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.*;
 import com.github.xpenatan.webgpu.*;
 import com.monstrous.gdx.webgpu.graphics.Binder;
@@ -28,6 +26,7 @@ import com.populaire.projetguerrefroide.pojo.RawMeshMulti;
 import com.populaire.projetguerrefroide.util.*;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import java.util.*;
 
@@ -226,13 +225,11 @@ public class WorldManager implements WorldContext, Disposable {
         MutableInt population = new MutableInt(0);
         try (Query provinceQuery = ecsWorld.query().with(Province.class).build()) {
             provinceQuery.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
                 for(int i = 0; i < iter.count(); i++) {
-                    long ownerId = iter.fieldLong(Province.class, 0, "ownerId", i);
-                    if(ownerId == countryEntityId) {
-                        int amountChildren = iter.fieldInt(Province.class, 0, "amountChildren", i);
-                        int amountAdults = iter.fieldInt(Province.class, 0, "amountAdults", i);
-                        int amountSeniors = iter.fieldInt(Province.class, 0, "amountSeniors", i);
-                        population.increment(amountChildren + amountAdults + amountSeniors);
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    if(provinceView.ownerId() == countryEntityId) {
+                        population.increment(provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors());
                     }
                 }
             });
@@ -285,19 +282,22 @@ public class WorldManager implements WorldContext, Disposable {
         EcsConstants ecsConstants = this.gameContext.getEcsConstants();
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
             query.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
+                Field<Color> colorField = iter.field(Color.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    ColorView colorView = colorField.getMutView(i);
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
 
-                    long countryEntityId = iter.fieldLong(Province.class, 0, "ownerId", i);
-                    Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
-                    Color countryColor = countryEntity.get(Color.class);
+                    EntityView countryView = ecsWorld.obtainEntityView(provinceView.ownerId());
+                    ColorView countryColor = countryView.getMutView(Color.class);
 
-                    long countryColonizerId = countryEntity.target(ecsConstants.isColonyOf());
+                    long countryColonizerId = countryView.target(ecsConstants.isColonyOf());
                     if(countryColonizerId != 0) {
-                        Entity colonyEntity = ecsWorld.obtainEntity(countryColonizerId);
-                        countryColor = colonyEntity.get(Color.class);
+                        EntityView colonyView = ecsWorld.obtainEntityView(countryColonizerId);
+                        countryColor = colonyView.getMutView(Color.class);
                     }
 
                     this.mapModePixmap.drawPixel(red, green, countryColor.value());
@@ -309,17 +309,20 @@ public class WorldManager implements WorldContext, Disposable {
     private void updatePixmapIdeologiesColor(World ecsWorld) {
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
             query.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
+                Field<Color> colorField = iter.field(Color.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    ColorView colorView = colorField.getMutView(i);
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
 
-                    long countryOwnerId = iter.fieldLong(Province.class, 0, "ownerId", i);
-                    Entity countryOwnerEntity = ecsWorld.obtainEntity(countryOwnerId);
-                    Country countryOwnerData = countryOwnerEntity.get(Country.class);
-                    Entity ideologyEntity = ecsWorld.obtainEntity(countryOwnerData.ideologyId());
-                    Ideology ideology = ideologyEntity.get(Ideology.class);
-                    this.mapModePixmap.drawPixel(red, green, ideology.color());
+                    EntityView countryOwnerView = ecsWorld.obtainEntityView(provinceView.ownerId());
+                    CountryView countryOwnerDataView = countryOwnerView.getMutView(Country.class);
+                    EntityView ideologyView = ecsWorld.obtainEntityView(countryOwnerDataView.ideologyId());
+                    IdeologyView ideologyDataView = ideologyView.getMutView(Ideology.class);
+                    this.mapModePixmap.drawPixel(red, green, ideologyDataView.color());
                 }
             });
         }
@@ -328,27 +331,27 @@ public class WorldManager implements WorldContext, Disposable {
     private void updatePixmapCulturesColor(World ecsWorld) {
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).with(CultureDistribution.class).build()) {
             query.iter(iter -> {
+                Field<Color> colorField = iter.field(Color.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ColorView colorView = colorField.getMutView(i);
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
 
-                    long provinceEntityId = iter.entity(i);
-                    Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                    CultureDistribution cultureDistribution = provinceEntity.get(CultureDistribution.class);
-                    long[] cultureIds = cultureDistribution.populationIds();
-                    int[] cultureAmounts = cultureDistribution.populationAmounts();
+                    long provinceId = iter.entity(i);
+                    EntityView provinceView = ecsWorld.obtainEntityView(provinceId);
+                    CultureDistributionView cultureDistributionView = provinceView.getMutView(CultureDistribution.class);
 
                     int biggestCultureIndex = -1;
                     int biggestCultureAmount = 0;
-                    for(int j = 0; j < cultureIds.length; j++) {
-                        if(cultureIds[j] != 0 && cultureAmounts[j] > biggestCultureAmount) {
-                            biggestCultureAmount = cultureAmounts[j];
+                    for(int j = 0; j < cultureDistributionView.populationIdsLength(); j++) {
+                        if(cultureDistributionView.populationIds(j) != 0 && cultureDistributionView.populationAmounts(j) > biggestCultureAmount) {
+                            biggestCultureAmount = cultureDistributionView.populationAmounts(j);
                             biggestCultureIndex = j;
                         }
                     }
                     if(biggestCultureIndex != -1) {
-                        long biggestCultureId = cultureIds[biggestCultureIndex];
+                        long biggestCultureId = cultureDistributionView.populationIds(biggestCultureIndex);
                         this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestCultureId).get(Color.class)).value());
                     }
                 }
@@ -359,27 +362,27 @@ public class WorldManager implements WorldContext, Disposable {
     private void updatePixmapReligionsColor(World ecsWorld) {
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).with(ReligionDistribution.class).build()) {
             query.iter(iter -> {
+                Field<Color> colorField = iter.field(Color.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ColorView colorView = colorField.getMutView(i);
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
 
-                    long provinceEntityId = iter.entity(i);
-                    Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                    ReligionDistribution religionDistribution = provinceEntity.get(ReligionDistribution.class);
-                    long[] religionIds = religionDistribution.populationIds();
-                    int[] religionAmounts = religionDistribution.populationAmounts();
+                    long provinceId = iter.entity(i);
+                    EntityView provinceView = ecsWorld.obtainEntityView(provinceId);
+                    ReligionDistributionView religionDistributionView = provinceView.getMutView(ReligionDistribution.class);
 
                     int biggestReligionIndex = -1;
                     int biggestReligionAmount = 0;
-                    for(int j = 0; j < religionIds.length; j++) {
-                        if(religionIds[j] != 0 && religionAmounts[j] > biggestReligionAmount) {
-                            biggestReligionAmount = religionAmounts[j];
+                    for(int j = 0; j < religionDistributionView.populationIdsLength(); j++) {
+                        if(religionDistributionView.populationIds(j) != 0 && religionDistributionView.populationAmounts(j) > biggestReligionAmount) {
+                            biggestReligionAmount = religionDistributionView.populationAmounts(j);
                             biggestReligionIndex = j;
                         }
                     }
                     if(biggestReligionIndex != -1) {
-                        long biggestReligionId = religionIds[biggestReligionIndex];
+                        long biggestReligionId = religionDistributionView.populationIds(biggestReligionIndex);
                         this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestReligionId).get(Color.class)).value());
                     }
                 }
@@ -391,8 +394,10 @@ public class WorldManager implements WorldContext, Disposable {
         World ecsWorld = this.gameContext.getEcsWorld();
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
             query.iter(iter -> {
+                Field<Color> colorField = iter.field(Color.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ColorView colorView = colorField.getMutView(i);
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
                     this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
@@ -401,15 +406,17 @@ public class WorldManager implements WorldContext, Disposable {
         }
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).with(ResourceGathering.class).build()) {
             query.iter(iter -> {
+                Field<Color> colorField = iter.field(Color.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ColorView colorView = colorField.getMutView(i);
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
 
-                    long provinceEntityId = iter.entity(i);
-                    Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
-                    ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
-                    long resourceGoodId = resourceGathering.goodId();
+                    long provinceId = iter.entity(i);
+                    EntityView provinceView = ecsWorld.obtainEntityView(provinceId);
+                    ResourceGatheringView resourceGatheringView = provinceView.getMutView(ResourceGathering.class);
+                    long resourceGoodId = resourceGatheringView.goodId();
                     if(resourceGoodId != -1) {
                         Color goodColor = ecsWorld.obtainEntity(resourceGoodId).get(Color.class);
                         this.mapModePixmap.drawPixel(red, green, goodColor.value());
@@ -423,13 +430,16 @@ public class WorldManager implements WorldContext, Disposable {
         World ecsWorld = this.gameContext.getEcsWorld();
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).with(GeoHierarchy.class).build()) {
             query.iter(iter -> {
+                Field<Color> colorField = iter.field(Color.class, 1);
+                Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 2);
                 for(int i = 0; i < iter.count(); i++) {
-                    long regionId = iter.fieldLong(GeoHierarchy.class, 2, "regionId", i);
-                    Entity regionEntity = ecsWorld.obtainEntity(regionId);
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ColorView colorView = colorField.getMutView(i);
+                    GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+                    EntityView regionView = ecsWorld.obtainEntityView(geoHierarchyView.regionId());
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
-                    this.mapModePixmap.drawPixel(red, green, ColorGenerator.getDeterministicRGBA(regionEntity.getName()));
+                    this.mapModePixmap.drawPixel(red, green, ColorGenerator.getDeterministicRGBA(regionView.getName()));
                 }
             });
         }
@@ -439,8 +449,10 @@ public class WorldManager implements WorldContext, Disposable {
         World ecsWorld = this.gameContext.getEcsWorld();
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
             query.iter(iter -> {
+                Field<Color> colorField = iter.field(Color.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ColorView colorView = colorField.getMutView(i);
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
                     this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
@@ -452,15 +464,18 @@ public class WorldManager implements WorldContext, Disposable {
     private void updatePixmapTerrain2Color(World ecsWorld) {
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
             query.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
+                Field<Color> colorField = iter.field(Color.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    ColorView colorView = colorField.getMutView(i);
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
 
-                    long terrainId = iter.fieldLong(Province.class, 0, "terrainId", i);
-                    Entity terrainEntity = ecsWorld.obtainEntity(terrainId);
-                    Terrain terrain = terrainEntity.get(Terrain.class);
-                    this.mapModePixmap.drawPixel(red, green, terrain.color());
+                    EntityView terrainView = ecsWorld.obtainEntityView(provinceView.terrainId());
+                    TerrainView terrainDataView = terrainView.getMutView(Terrain.class);
+                    this.mapModePixmap.drawPixel(red, green, terrainDataView.color());
                 }
             });
         }
@@ -472,11 +487,10 @@ public class WorldManager implements WorldContext, Disposable {
 
         try(Query query = ecsWorld.query().with(Province.class).build()) {
             query.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
                 for(int i = 0; i < iter.count(); i++) {
-                    int amountChildren = iter.fieldInt(Province.class, 0, "amountChildren", i);
-                    int amountAdults = iter.fieldInt(Province.class, 0, "amountAdults", i);
-                    int amountSeniors = iter.fieldInt(Province.class, 0, "amountSeniors", i);
-                    int pop = amountChildren + amountAdults + amountSeniors;
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    int pop = provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors();
                     if(pop > maxPopulation.getValue()) {
                         maxPopulation.setValue(pop);
                     }
@@ -486,15 +500,16 @@ public class WorldManager implements WorldContext, Disposable {
 
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
             query.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
+                Field<Color> colorField = iter.field(Color.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    ColorView colorView = colorField.getMutView(i);
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
 
-                    int amountChildren = iter.fieldInt(Province.class, 0, "amountChildren", i);
-                    int amountAdults = iter.fieldInt(Province.class, 0, "amountAdults", i);
-                    int amountSeniors = iter.fieldInt(Province.class, 0, "amountSeniors", i);
-                    int pop = amountChildren + amountAdults + amountSeniors;
+                    int pop = provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors();
                     float ratio = (maxPopulation.getValue() > 0) ? (float) pop / maxPopulation.getValue() : 0f;
                     this.mapModePixmap.drawPixel(red, green, ColorGenerator.getMagmaColorRGBA(ratio));
                 }
@@ -509,18 +524,21 @@ public class WorldManager implements WorldContext, Disposable {
 
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
             query.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
+                Field<Color> colorField = iter.field(Color.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    ColorView colorView = colorField.getMutView(i);
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
 
-                    long countryOwnerId = iter.fieldInt(Province.class, 0, "ownerId", i);
-                    if(this.playerCountryId == countryOwnerId) {
+                    if(this.playerCountryId == provinceView.ownerId()) {
                         this.mapModePixmap.drawPixel(red, green, ColorGenerator.getLightBlueRGBA());
-                    } else if (countryOwnerId != 0) {
-                        DiplomaticRelation relation = playerCountryEntity.get(DiplomaticRelation.class, countryOwnerId);
-                        if (relation != null) {
-                            this.mapModePixmap.drawPixel(red, green, ColorGenerator.getRedToGreenGradientRGBA(relation.value(), 200));
+                    } else if (provinceView.ownerId() != 0) {
+                        DiplomaticRelationView relationView = playerCountryEntity.getMutView(DiplomaticRelation.class, provinceView.ownerId());
+                        if (relationView != null) {
+                            this.mapModePixmap.drawPixel(red, green, ColorGenerator.getRedToGreenGradientRGBA(relationView.value(), 200));
                         } else {
                             this.mapModePixmap.drawPixel(red, green, ColorGenerator.getGreyRGBA());
                         }
@@ -537,18 +555,20 @@ public class WorldManager implements WorldContext, Disposable {
         World ecsWorld = this.gameContext.getEcsWorld();
         try(Query query = ecsWorld.query().with(Province.class).with(Color.class).build()) {
             query.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
+                Field<Color> colorField = iter.field(Color.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    long ownerId = iter.fieldInt(Province.class, 0, "ownerId", i);
-                    long controllerId = iter.fieldInt(Province.class, 0, "controllerId", i);
-                    if(ownerId == controllerId) {
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    if(provinceView.ownerId() == provinceView.controllerId()) {
                         continue;
                     }
-                    Entity countryEntity = ecsWorld.obtainEntity(controllerId);
-                    int color = iter.fieldInt(Color.class, 1, "value", i);
+                    ColorView colorView = colorField.getMutView(i);
+                    EntityView countryView = ecsWorld.obtainEntityView(provinceView.controllerId());
+                    int color = colorView.value();
                     int red = (color >> 24) & 0xFF;
                     int green = (color >> 16) & 0xFF;
-                    int countryColor = countryEntity.get(Color.class).value();
-                    pixmap.drawPixel(red, green, countryColor);
+                    ColorView countryColorView = countryView.getMutView(Color.class);
+                    pixmap.drawPixel(red, green, countryColorView.value());
                 }
             });
         }
@@ -561,10 +581,14 @@ public class WorldManager implements WorldContext, Disposable {
         int[] xyBorders = this.borders.getPixels();
         try(Query provinceQuery = ecsWorld.query().with(Province.class).with(Border.class).with(GeoHierarchy.class).build()) {
             provinceQuery.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
+                Field<Border> borderField = iter.field(Border.class, 1);
+                Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 2);
                 for(int i = 0; i < iter.count(); i++) {
-                    int borderStartIndex = iter.fieldInt(Border.class, 1, "startIndex", i);
-                    int borderEndIndex = iter.fieldInt(Border.class, 1, "endIndex", i);
-                    for(int j = borderStartIndex; j < borderEndIndex; j = j + 2) {
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    BorderView borderView = borderField.getMutView(i);
+                    GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+                    for(int j = borderView.startIndex(); j < borderView.endIndex(); j = j + 2) {
                         int x = xyBorders[j];
                         int y = xyBorders[j + 1];
 
@@ -573,9 +597,7 @@ public class WorldManager implements WorldContext, Disposable {
                         int green = (color >> 16) & 0xFF;
                         int blue = (color >> 8) & 0xFF;
 
-                        long countryId = iter.fieldLong(Province.class, 0, "ownerId", i);
-                        long regionId = iter.fieldLong(GeoHierarchy.class, 2, "regionId", i);
-                        color = (red << 24) | (green << 16) | (blue << 8) | this.getBorderType(ecsWorld, x, y, countryId, regionId);
+                        color = (red << 24) | (green << 16) | (blue << 8) | this.getBorderType(ecsWorld, x, y, provinceView.ownerId(), geoHierarchyView.regionId());
                         this.provincesPixmap.drawPixel(x, y, color);
                     }
                 }
@@ -728,9 +750,10 @@ public class WorldManager implements WorldContext, Disposable {
 
         try(Query query = ecsWorld.query().with(Province.class).build()) {
             query.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
                 for(int i = 0; i < iter.count(); i++) {
-                    long ownerId = iter.fieldInt(Province.class, 0, "ownerId", i);
-                    if(ownerId == countryId) {
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    if(provinceView.ownerId() == countryId) {
                         long provinceEntityId = iter.entity(i);
                         provinceIds.add(provinceEntityId);
                     }
@@ -810,21 +833,22 @@ public class WorldManager implements WorldContext, Disposable {
 
         try (Query provinceQuery = ecsWorld.query().with(Province.class).build()) {
             provinceQuery.each(provinceEntityId -> {
-                long ownerId = ecsWorld.obtainEntity(provinceEntityId).get(Province.class).ownerId();
-                countriesWithProvinces.add(ownerId);
+                EntityView provinceView = ecsWorld.obtainEntityView(provinceEntityId);
+                ProvinceView provinceDataView = provinceView.getMutView(Province.class);
+                countriesWithProvinces.add(provinceDataView.ownerId());
                 buildingsByProvince.put(provinceEntityId, new LongList());
             });
         }
 
         try (Query buildingQuery = ecsWorld.query().with(Building.class).build()) {
             buildingQuery.iter(iter -> {
+                Field<Building> buildingField = iter.field(Building.class, 0);
                 for (int i = 0; i < iter.count(); i++) {
-                    long parentId = iter.fieldLong(Building.class, 0, "parentId", i);
+                    BuildingView buildingView = buildingField.getMutView(i);
                     long buildingEntityId = iter.entity(i);
-                    Entity building = ecsWorld.obtainEntity(buildingEntityId);
-                    Entity buildingType = ecsWorld.obtainEntity(building.get(Building.class).typeId());
-                    if (buildingType.has(ecsConstants.onMap())) {
-                        LongList buildings = buildingsByProvince.get(parentId);
+                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
+                    if (buildingTypeView.has(ecsConstants.onMap())) {
+                        LongList buildings = buildingsByProvince.get(buildingView.parentId());
                         if (buildings != null) {
                             buildings.add(buildingEntityId);
                             numBuildings.increment();
@@ -836,10 +860,10 @@ public class WorldManager implements WorldContext, Disposable {
 
         try (Query countryQuery = ecsWorld.query().with(Country.class).build()) {
             countryQuery.each(countryEntityId -> {
-                Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
-                Country countryData = countryEntity.get(Country.class);
+                EntityView countryView = ecsWorld.obtainEntityView(countryEntityId);
+                CountryView countryDataView = countryView.getMutView(Country.class);
 
-                if (countryData.capitalId() != 0 && countriesWithProvinces.contains(countryEntityId)) {
+                if (countryDataView.capitalId() != 0 && countriesWithProvinces.contains(countryEntityId)) {
                     numBuildings.increment();
                 }
             });

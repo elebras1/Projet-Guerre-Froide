@@ -1,8 +1,6 @@
 package com.populaire.projetguerrefroide.service;
 
-import com.github.elebras1.flecs.Entity;
-import com.github.elebras1.flecs.Query;
-import com.github.elebras1.flecs.World;
+import com.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
@@ -39,11 +37,13 @@ public class EconomyService {
         LongOrderedSet regionIds = new LongOrderedSet();
         try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
             query.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
+                Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    long ownerId = iter.fieldLong(Province.class, 0, "ownerId", i);
-                    if(countryId == ownerId) {
-                        long regionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
-                        regionIds.add(regionId);
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    if(countryId == provinceView.ownerId()) {
+                        GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+                        regionIds.add(geoHierarchyView.regionId());
                     }
                 }
             });
@@ -66,11 +66,13 @@ public class EconomyService {
         LongOrderedSet regionIds = new LongOrderedSet();
         try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
             query.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
+                Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
-                    long ownerId = iter.fieldLong(Province.class, 0, "ownerId", i);
-                    if(countryId == ownerId) {
-                        long regionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
-                        regionIds.add(regionId);
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    if(countryId == provinceView.ownerId()) {
+                        GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+                        regionIds.add(geoHierarchyView.regionId());
                     }
                 }
             });
@@ -90,11 +92,11 @@ public class EconomyService {
     }
 
     public int getMaxWorkers(World ecsWorld, long resourceGoodId, int resourceGoodSize) {
-        Entity resourceGoodEntity = ecsWorld.obtainEntity(resourceGoodId);
-        ResourceProduction resourceProduction = resourceGoodEntity.get(ResourceProduction.class);
-        Entity productionTypeEntity = ecsWorld.obtainEntity(resourceProduction.productionTypeId());
-        ProductionType productionTypeData = productionTypeEntity.get(ProductionType.class);
-        return resourceGoodSize * productionTypeData.workforce();
+        EntityView resourceGoodView = ecsWorld.obtainEntityView(resourceGoodId);
+        ResourceProductionView resourceProductionView = resourceGoodView.getMutView(ResourceProduction.class);
+        EntityView productionTypeEntityView = ecsWorld.obtainEntityView(resourceProductionView.productionTypeId());
+        ProductionTypeView productionTypeDataView = productionTypeEntityView.getMutView(ProductionType.class);
+        return resourceGoodSize * productionTypeDataView.workforce();
     }
 
     private RegionDto collectRegionData(long countryId, long regionId, String regionNameId) {
@@ -105,12 +107,13 @@ public class EconomyService {
 
         try (Query provinceQuery = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
             provinceQuery.iter(iter -> {
+                Field<Province> provinceField = iter.field(Province.class, 0);
+                Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
                 for (int i = 0; i < iter.count(); i++) {
                     long provinceId = iter.entity(i);
-                    long ownerId = iter.fieldLong(Province.class, 0, "ownerId", i);
-                    long parentRegionId = iter.fieldLong(GeoHierarchy.class, 0, "regionId", i);
-
-                    if (countryId == ownerId && parentRegionId == regionId) {
+                    ProvinceView provinceView = provinceField.getMutView(i);
+                    GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+                    if (countryId == provinceView.ownerId() && geoHierarchyView.regionId() == regionId) {
                         int adults = this.getAmountAdults(provinceId);
                         populationAmount.increment(adults);
                     }
@@ -120,19 +123,17 @@ public class EconomyService {
 
         try (Query buildingQuery = ecsWorld.query().with(Building.class).build()) {
             buildingQuery.iter(iter -> {
+                Field<Building> buildingField = iter.field(Building.class, 0);
                 for (int i = 0; i < iter.count(); i++) {
-                    long parentRegionId = iter.fieldLong(Building.class, 0, "parentId", i);
-
-                    if (parentRegionId == regionId) {
+                    BuildingView buildingView = buildingField.getMutView(i);
+                    if (buildingView.parentId() == regionId) {
                         long buildingId = iter.entity(i);
-                        long buildingTypeId = iter.fieldLong(Building.class, 0, "typeId", i);
-                        int buildingSize = iter.fieldInt(Building.class, 0, "size", i);
 
-                        Entity buildingType = ecsWorld.obtainEntity(buildingTypeId);
+                        EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
 
-                        if (buildingType.has(EconomyBuilding.class)) {
-                            EconomyBuilding economyBuilding = buildingType.get(EconomyBuilding.class);
-                            BuildingDto building = new BuildingDto(buildingId, buildingType.getName(), buildingSize, economyBuilding.maxLevel(), 0);
+                        if (buildingTypeView.has(EconomyBuilding.class)) {
+                            EconomyBuildingView economyBuildingView = buildingTypeView.getMutView(EconomyBuilding.class);
+                            BuildingDto building = new BuildingDto(buildingId, buildingTypeView.getName(), buildingView.size(), economyBuildingView.maxLevel(), 0);
                             int workers = this.estimateWorkersForBuilding();
                             buildingWorkerAmount.increment(workers);
                             buildings.add(building);

@@ -208,7 +208,7 @@ public class WorldDaoImpl implements WorldDao {
                 while (governmentElementsIterator.hasNext()) {
                     Map.Entry<String, JsonValue> governmentElementEntry = governmentElementsIterator.next();
                     long lawGroupId = ecsWorld.lookup(governmentElementEntry.getKey());
-                    if(lawGroupId != -1) {
+                    if(lawGroupId != 0) {
                         Iterator<JsonValue> supportedLawsIterator = governmentElementEntry.getValue().arrayIterator();
                         while (supportedLawsIterator.hasNext()) {
                             JsonValue supportedLawValue = supportedLawsIterator.next();
@@ -1016,7 +1016,7 @@ public class WorldDaoImpl implements WorldDao {
             JsonValue goodValue = provinceValues.get("good");
             if(goodValue != null) {
                 long goodId = ecsWorld.lookup(goodValue.asString());
-                province.set(new ResourceGathering(goodId, 0, 0f, new int[6]));
+                province.set(new ResourceGathering(goodId, 0, 0f, new int[12]));
             }
 
             JsonValue buildingsProvinceValue = provinceValues.get("buildings");
@@ -1086,8 +1086,8 @@ public class WorldDaoImpl implements WorldDao {
                 while (regionIterator.hasNext()) {
                     int provinceId = (int) regionIterator.next().asLong();
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
-                    Entity provinceEntity = provinceEntityId != -1 ? ecsWorld.obtainEntity(provinceEntityId) : null;
-                    if(provinceEntityId != -1 && provinceEntity.has(Province.class)) {
+                    Entity provinceEntity = provinceEntityId != 0 ? ecsWorld.obtainEntity(provinceEntityId) : null;
+                    if(provinceEntityId != 0 && provinceEntity.has(Province.class)) {
                         provinceEntity.set(new GeoHierarchy(regionEntityId, -1));
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {

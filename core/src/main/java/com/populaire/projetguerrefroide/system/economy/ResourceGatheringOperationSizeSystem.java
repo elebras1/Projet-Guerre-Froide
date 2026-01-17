@@ -1,8 +1,6 @@
 package com.populaire.projetguerrefroide.system.economy;
 
-import com.github.elebras1.flecs.Entity;
-import com.github.elebras1.flecs.Iter;
-import com.github.elebras1.flecs.World;
+import com.github.elebras1.flecs.*;
 import com.github.elebras1.flecs.util.FlecsConstants;
 import com.populaire.projetguerrefroide.component.*;
 
@@ -15,44 +13,41 @@ public class ResourceGatheringOperationSizeSystem {
     }
 
     private void process(Iter iter) {
+        Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 1);
         for (int i = 0; i < iter.count(); i++) {
-            long provinceEntityId = iter.entity(i);
-            Entity provinceEntity = this.ecsWorld.obtainEntity(provinceEntityId);
+            long provinceId = iter.entity(i);
+            EntityView provinceView = this.ecsWorld.obtainEntityView(provinceId);
+            ResourceGatheringView resourceGatheringView = resourceGatheringField.getMutView(i);
 
-            long resourceGoodId = iter.fieldLong(ResourceGathering.class, 1, "goodId", i);
-
-            Entity resourceGoodEntity = this.ecsWorld.obtainEntity(resourceGoodId);
-            ResourceProduction resourceProduction = resourceGoodEntity.get(ResourceProduction.class);
-            if (resourceProduction == null) {
+            EntityView resourceGoodView = this.ecsWorld.obtainEntityView(resourceGatheringView.goodId());
+            ResourceProductionView resourceProductionView = resourceGoodView.getMutView(ResourceProduction.class);
+            if (resourceProductionView == null) {
                 continue;
             }
 
-            Entity productionTypeEntity = this.ecsWorld.obtainEntity(resourceProduction.productionTypeId());
-            ProductionType productionTypeData = productionTypeEntity.get(ProductionType.class);
-            if (productionTypeData == null || productionTypeData.employeeTypes()[0] == 0) {
+            EntityView productionTypeView = this.ecsWorld.obtainEntityView(resourceProductionView.productionTypeId());
+            ProductionTypeView productionTypeDataView = productionTypeView.getMutView(ProductionType.class);
+            if (productionTypeDataView == null || productionTypeDataView.employeeTypes(0) == 0) {
                 continue;
             }
 
-            long firstEmployeeEntityId = productionTypeData.employeeTypes()[0];
-            Entity employeeEntity = this.ecsWorld.obtainEntity(firstEmployeeEntityId);
-            EmployeeType employeeTypeData = employeeEntity.get(EmployeeType.class);
+            long firstEmployeeEntityId = productionTypeDataView.employeeTypes(0);
+            EntityView employeeEntity = this.ecsWorld.obtainEntityView(firstEmployeeEntityId);
+            EmployeeTypeView employeeTypeData = employeeEntity.getMutView(EmployeeType.class);
             long workerPopulationTypeId = employeeTypeData.populationTypeId();
 
-            PopulationDistribution popDistribution = provinceEntity.get(PopulationDistribution.class);
-            long[] populationIds = popDistribution.populationIds();
-            int[] populationAmounts = popDistribution.populationAmounts();
-
+            PopulationDistributionView popDistribution = provinceView.getMutView(PopulationDistribution.class);
             int workerInProvince = 0;
-            for (int j = 0; j < populationIds.length; j++) {
-                if (populationIds[j] == workerPopulationTypeId) {
-                    workerInProvince = populationAmounts[j];
+            for (int j = 0; j < popDistribution.populationIdsLength(); j++) {
+                if (popDistribution.populationIds(j) == workerPopulationTypeId) {
+                    workerInProvince = popDistribution.populationAmounts(j);
                     break;
                 }
             }
 
-            int size = (workerInProvince + productionTypeData.workforce() - 1) / productionTypeData.workforce();
+            int size = (workerInProvince + productionTypeDataView.workforce() - 1) / productionTypeDataView.workforce();
             size = (int) (size * 1.5f);
-            iter.setFieldInt(ResourceGathering.class, 1, "size", i, size);
+            resourceGatheringView.size(size);
         }
     }
 }
