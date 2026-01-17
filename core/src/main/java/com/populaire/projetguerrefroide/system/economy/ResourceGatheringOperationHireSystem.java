@@ -16,22 +16,23 @@ public class ResourceGatheringOperationHireSystem {
     }
 
     public void hire(Iter iter) {
+        Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 1);
         for (int i = 0; i < iter.count(); i++) {
             long provinceEntityId = iter.entity(i);
-            Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+            Entity provinceEntity = this.ecsWorld.obtainEntity(provinceEntityId);
+            ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
+            long resourceGoodId = resourceGathering.goodId();
 
-            long resourceGoodId = iter.fieldLong(ResourceGathering.class, 1, "goodId", i);
-
-            Entity resourceGoodEntity = ecsWorld.obtainEntity(resourceGoodId);
+            Entity resourceGoodEntity = this.ecsWorld.obtainEntity(resourceGoodId);
             ResourceProduction resourceProduction = resourceGoodEntity.get(ResourceProduction.class);
             if (resourceProduction == null) {
                 continue;
             }
 
-            int size = iter.fieldInt(ResourceGathering.class, 1, "size", i);
-            int maxWorkers = economyService.getMaxWorkers(ecsWorld, resourceGoodId, size);
+            int size = resourceGathering.size();
+            int maxWorkers = this.economyService.getMaxWorkers(this.ecsWorld, resourceGoodId, size);
 
-            Entity productionTypeEntity = ecsWorld.obtainEntity(resourceProduction.productionTypeId());
+            Entity productionTypeEntity = this.ecsWorld.obtainEntity(resourceProduction.productionTypeId());
             ProductionType productionTypeData = productionTypeEntity.get(ProductionType.class);
 
             PopulationDistribution popDistribution = provinceEntity.get(PopulationDistribution.class);
@@ -48,7 +49,7 @@ public class ResourceGatheringOperationHireSystem {
 
                 for (int employeeIndex = 0; employeeIndex < productionTypeData.employeeTypes().length && productionTypeData.employeeTypes()[employeeIndex] != 0; employeeIndex++) {
                     long employeeId = productionTypeData.employeeTypes()[employeeIndex];
-                    EmployeeType employeeType = ecsWorld.obtainEntity(employeeId).get(EmployeeType.class);
+                    EmployeeType employeeType = this.ecsWorld.obtainEntity(employeeId).get(EmployeeType.class);
                     long requiredPopTypeId = employeeType.populationTypeId();
 
                     if (requiredPopTypeId == popTypeId) {

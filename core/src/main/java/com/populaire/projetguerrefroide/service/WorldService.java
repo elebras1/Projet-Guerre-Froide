@@ -3,6 +3,7 @@ package com.populaire.projetguerrefroide.service;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.async.AsyncExecutor;
 import com.github.elebras1.flecs.Entity;
+import com.github.elebras1.flecs.Field;
 import com.github.elebras1.flecs.Query;
 import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.*;
@@ -269,10 +270,11 @@ public class WorldService {
 
         try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
             query.iter(iter -> {
+                Field<GeoHierarchy> geoField = iter.field(GeoHierarchy.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
                     long provinceId = iter.entity(i);
-                    long provinceRegionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
-                    if (provinceRegionId == selectedProvinceGeo.regionId()) {
+                    GeoHierarchyView geoView = geoField.getMutView(i);
+                    if (geoView.regionId() == selectedProvinceGeo.regionId()) {
                         population.increment(this.worldManager.getPopulationAmountOfProvince(provinceId));
                     }
                 }
@@ -291,10 +293,11 @@ public class WorldService {
 
         try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
             query.iter(iter -> {
+                Field<GeoHierarchy> geoField = iter.field(GeoHierarchy.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
                     long provinceId = iter.entity(i);
-                    long provinceRegionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
-                    if (provinceRegionId == selectedProvinceGeo.regionId()) {
+                    GeoHierarchyView geoView = geoField.getMutView(i);
+                    if (geoView.regionId() == selectedProvinceGeo.regionId()) {
                         workers.increment(this.worldManager.getAmountAdults(provinceId));
                     }
                 }
@@ -332,21 +335,20 @@ public class WorldService {
 
         try(Query query = ecsWorld.query().with(Building.class).build()) {
             query.iter(iter -> {
+                Field<Building> buildingField = iter.field(Building.class, 0);
                 for(int i = 0; i < iter.count(); i++) {
-                    long provinceBuildingId = iter.fieldLong(Building.class, 0, "parentId", i);
-                    if(provinceBuildingId != provinceId) {
+                    BuildingView buildingView = buildingField.getMutView(i);
+                    if(buildingView.parentId() != provinceId) {
                         continue;
                     }
 
-                    long buildingTypeId = iter.fieldLong(Building.class, 0, "typeId", i);
-                    int buildingLevel = iter.fieldInt(Building.class, 0, "size", i);
-                    Entity buildingType = ecsWorld.obtainEntity(buildingTypeId);
+                    Entity buildingType = ecsWorld.obtainEntity(buildingView.typeId());
 
                     switch (buildingType.getName()) {
-                        case "naval_base" -> navalBaseLevel.setValue(buildingLevel);
-                        case "air_base" -> airBaseLevel.setValue(buildingLevel);
-                        case "radar_station" -> radarStationLevel.setValue(buildingLevel);
-                        case "anti_air" -> antiAircraftGunsLevel.setValue(buildingLevel);
+                        case "naval_base" -> navalBaseLevel.setValue(buildingView.size());
+                        case "air_base" -> airBaseLevel.setValue(buildingView.size());
+                        case "radar_station" -> radarStationLevel.setValue(buildingView.size());
+                        case "anti_air" -> antiAircraftGunsLevel.setValue(buildingView.size());
                     }
                 }
             });
@@ -361,10 +363,11 @@ public class WorldService {
         LongList provinceIds = new LongList();
         try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
             query.iter(iter -> {
+                Field<GeoHierarchy> geoField = iter.field(GeoHierarchy.class, 1);
                 for(int i = 0; i < iter.count(); i++) {
                     long provinceId = iter.entity(i);
-                    long provinceRegionId = iter.fieldLong(GeoHierarchy.class, 1, "regionId", i);
-                    if (provinceRegionId == regionId) {
+                    GeoHierarchyView geoView = geoField.getMutView(i);
+                    if (geoView.regionId() == regionId) {
                         provinceIds.add(provinceId);
                     }
                 }
@@ -392,17 +395,15 @@ public class WorldService {
 
         try (Query query = ecsWorld.query().with(Building.class).build()) {
             query.iter(iter -> {
+                Field<Building> buildingField = iter.field(Building.class, 0);
                 for (int i = 0; i < iter.count(); i++) {
-                    long parentId = iter.fieldLong(Building.class, 0, "parentId", i);
-                    if (parentId == regionId) {
-                        long buildingTypeId = iter.fieldLong(Building.class, 0, "typeId", i);
-                        Entity buildingType = ecsWorld.obtainEntity(buildingTypeId);
+                    BuildingView buildingView = buildingField.getMutView(i);
+                    if (buildingView.parentId() == regionId) {
+                        Entity buildingType = ecsWorld.obtainEntity(buildingView.typeId());
                         if (buildingType.has(EconomyBuilding.class)) {
                             String color = BuildingUtils.getColor(buildingType.getName());
                             if (color != null) {
-                                int level = iter.fieldInt(Building.class, 0, "size", i);
-
-                                validBuildings.add(new Pair<>(level, color));
+                                validBuildings.add(new Pair<>(buildingView.size(), color));
                             }
                         }
                     }
@@ -426,11 +427,11 @@ public class WorldService {
 
         try(Query query = ecsWorld.query().with(Building.class).build()) {
             query.iter(iter -> {
+                Field<Building> buildingField = iter.field(Building.class, 0);
                 for(int i = 0; i < iter.count(); i++) {
-                    long regionBuildingId = iter.fieldLong(Building.class, 0, "parentId", i);
-                    if(regionBuildingId == regionId) {
-                        long buildingTypeId = iter.fieldLong(Building.class, 0, "typeId", i);
-                        Entity buildingType = ecsWorld.obtainEntity(buildingTypeId);
+                    BuildingView buildingView = buildingField.getMutView(i);
+                    if(buildingView.parentId() == regionId) {
+                        Entity buildingType = ecsWorld.obtainEntity(buildingView.typeId());
                         if(buildingType.has(EconomyBuilding.class)) {
                             industryCount.increment();
                         }
@@ -448,11 +449,11 @@ public class WorldService {
         List<String> specialBuildingNames = new ObjectList<>();
         try(Query query = ecsWorld.query().with(Building.class).build()) {
             query.iter(iter -> {
+                Field<Building> buildingField = iter.field(Building.class, 0);
                 for(int i = 0; i < iter.count(); i++) {
-                    long regionBuildingId = iter.fieldLong(Building.class, 0, "parentId", i);
-                    if(regionBuildingId == regionId) {
-                        long buildingTypeId = iter.fieldLong(Building.class, 0, "typeId", i);
-                        Entity buildingType = ecsWorld.obtainEntity(buildingTypeId);
+                    BuildingView buildingView = buildingField.getMutView(i);
+                    if(buildingView.parentId() == regionId) {
+                        Entity buildingType = ecsWorld.obtainEntity(buildingView.typeId());
                         if(buildingType.has(SpecialBuilding.class)) {
                             specialBuildingNames.add(buildingType.getName());
                         }
