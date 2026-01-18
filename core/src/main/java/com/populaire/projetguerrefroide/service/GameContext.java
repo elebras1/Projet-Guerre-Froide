@@ -6,6 +6,7 @@ import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.pojo.Bookmark;
+import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 

@@ -6,10 +6,10 @@ import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
 import com.populaire.projetguerrefroide.dto.RegionDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
+import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationHireSystem;
 import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationProduceSystem;
 import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationSizeSystem;
-import com.populaire.projetguerrefroide.map.*;
 import com.populaire.projetguerrefroide.ui.view.SortType;
 import com.populaire.projetguerrefroide.util.MutableInt;
 
@@ -18,14 +18,14 @@ import java.util.List;
 
 public class EconomyService {
     private final GameContext gameContext;
-    private final WorldContext worldContext;
+    private final QueryRepository queryRepository;
     private final ResourceGatheringOperationSizeSystem rgoSizeSystem;
     private final ResourceGatheringOperationHireSystem rgoHireSystem;
     private final ResourceGatheringOperationProduceSystem rgoProduceSystem;
 
-    public EconomyService(GameContext gameContext, WorldContext worldContext) {
+    public EconomyService(GameContext gameContext, QueryRepository queryRepository) {
         this.gameContext = gameContext;
-        this.worldContext = worldContext;
+        this.queryRepository = queryRepository;
         this.rgoSizeSystem = new ResourceGatheringOperationSizeSystem(this.gameContext.getEcsWorld());
         this.rgoHireSystem = new ResourceGatheringOperationHireSystem(this.gameContext.getEcsWorld(), this);
         this.rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld(), this);
@@ -35,19 +35,18 @@ public class EconomyService {
         World ecsWorld = this.gameContext.getEcsWorld();
 
         LongOrderedSet regionIds = new LongOrderedSet();
-        try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
-            query.iter(iter -> {
-                Field<Province> provinceField = iter.field(Province.class, 0);
-                Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
-                for(int i = 0; i < iter.count(); i++) {
-                    ProvinceView provinceView = provinceField.getMutView(i);
-                    if(countryId == provinceView.ownerId()) {
-                        GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
-                        regionIds.add(geoHierarchyView.regionId());
-                    }
+        Query query = this.queryRepository.getProvincesWithGeoHierarchy();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                if(countryId == provinceView.ownerId()) {
+                    GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+                    regionIds.add(geoHierarchyView.regionId());
                 }
-            });
-        }
+            }
+        });
 
         List<RegionDto> regions = new ObjectList<>();
         LongSet.LongSetIterator iterator = regionIds.iterator();
@@ -64,19 +63,18 @@ public class EconomyService {
         World ecsWorld = this.gameContext.getEcsWorld();
 
         LongOrderedSet regionIds = new LongOrderedSet();
-        try (Query query = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
-            query.iter(iter -> {
-                Field<Province> provinceField = iter.field(Province.class, 0);
-                Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
-                for(int i = 0; i < iter.count(); i++) {
-                    ProvinceView provinceView = provinceField.getMutView(i);
-                    if(countryId == provinceView.ownerId()) {
-                        GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
-                        regionIds.add(geoHierarchyView.regionId());
-                    }
+        Query query = this.queryRepository.getProvincesWithGeoHierarchy();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                if(countryId == provinceView.ownerId()) {
+                    GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+                    regionIds.add(geoHierarchyView.regionId());
                 }
-            });
-        }
+            }
+        });
 
         List<RegionDto> regions = new ObjectList<>();
         LongSet.LongSetIterator iterator = regionIds.iterator();
@@ -105,43 +103,39 @@ public class EconomyService {
         MutableInt buildingWorkerAmount = new MutableInt(0);
         List<BuildingDto> buildings = new ObjectList<>();
 
-        try (Query provinceQuery = ecsWorld.query().with(Province.class).with(GeoHierarchy.class).build()) {
-            provinceQuery.iter(iter -> {
-                Field<Province> provinceField = iter.field(Province.class, 0);
-                Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
-                for (int i = 0; i < iter.count(); i++) {
-                    long provinceId = iter.entity(i);
-                    ProvinceView provinceView = provinceField.getMutView(i);
-                    GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
-                    if (countryId == provinceView.ownerId() && geoHierarchyView.regionId() == regionId) {
-                        int adults = this.getAmountAdults(provinceId);
-                        populationAmount.increment(adults);
+        Query provinceQuery = this.queryRepository.getProvincesWithGeoHierarchy();
+        provinceQuery.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
+            for (int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+                if (countryId == provinceView.ownerId() && geoHierarchyView.regionId() == regionId) {
+                    populationAmount.increment(provinceView.amountAdults());
+                }
+            }
+        });
+
+        Query buildingQuery = this.queryRepository.getBuildings();
+        buildingQuery.iter(iter -> {
+            Field<Building> buildingField = iter.field(Building.class, 0);
+            for (int i = 0; i < iter.count(); i++) {
+                BuildingView buildingView = buildingField.getMutView(i);
+                if (buildingView.parentId() == regionId) {
+                    long buildingId = iter.entity(i);
+
+                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
+
+                    if (buildingTypeView.has(EconomyBuilding.class)) {
+                        EconomyBuildingView economyBuildingView = buildingTypeView.getMutView(EconomyBuilding.class);
+                        BuildingDto building = new BuildingDto(buildingId, buildingTypeView.getName(), buildingView.size(), economyBuildingView.maxLevel(), 0);
+                        int workers = this.estimateWorkersForBuilding();
+                        buildingWorkerAmount.increment(workers);
+                        buildings.add(building);
                     }
                 }
-            });
-        }
-
-        try (Query buildingQuery = ecsWorld.query().with(Building.class).build()) {
-            buildingQuery.iter(iter -> {
-                Field<Building> buildingField = iter.field(Building.class, 0);
-                for (int i = 0; i < iter.count(); i++) {
-                    BuildingView buildingView = buildingField.getMutView(i);
-                    if (buildingView.parentId() == regionId) {
-                        long buildingId = iter.entity(i);
-
-                        EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
-
-                        if (buildingTypeView.has(EconomyBuilding.class)) {
-                            EconomyBuildingView economyBuildingView = buildingTypeView.getMutView(EconomyBuilding.class);
-                            BuildingDto building = new BuildingDto(buildingId, buildingTypeView.getName(), buildingView.size(), economyBuildingView.maxLevel(), 0);
-                            int workers = this.estimateWorkersForBuilding();
-                            buildingWorkerAmount.increment(workers);
-                            buildings.add(building);
-                        }
-                    }
-                }
-            });
-        }
+            }
+        });
 
         byte developpementIndexValue = this.calculateDeveloppementIndex();
         int buildingWorkerRatio = 0;
@@ -181,12 +175,6 @@ public class EconomyService {
             return -1f;
         }
         return this.getProduction(ecsWorld, provinceEntityId);
-    }
-
-    private int getAmountAdults(long provinceId) {
-        World ecsWorld = this.gameContext.getEcsWorld();
-        Province province = ecsWorld.obtainEntity(provinceId).get(Province.class);
-        return province.amountAdults();
     }
 
     private float getProduction(World ecsWorld, long provinceEntityId) {

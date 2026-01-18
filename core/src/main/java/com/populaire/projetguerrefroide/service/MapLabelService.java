@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.map;
+package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.graphics.g2d.*;
 import com.github.tommyettinger.ds.FloatList;
@@ -8,7 +8,7 @@ import com.github.tommyettinger.ds.ShortList;
 
 import java.util.List;
 
-public class MapLabel {
+public class MapLabelService {
     private final BitmapFont font;
     private static class CurvePoint {
         int center;
@@ -16,7 +16,7 @@ public class MapLabel {
         float angle;
     }
 
-    public MapLabel(BitmapFont font) {
+    public MapLabelService(BitmapFont font) {
         this.font = font;
     }
 

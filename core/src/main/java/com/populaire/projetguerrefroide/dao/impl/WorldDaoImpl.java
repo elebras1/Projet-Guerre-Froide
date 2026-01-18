@@ -10,8 +10,10 @@ import com.populaire.projetguerrefroide.adapter.dsljson.JsonMapper;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.WorldDao;
-import com.populaire.projetguerrefroide.map.*;
+import com.populaire.projetguerrefroide.pojo.Borders;
+import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.service.MapService;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.ForceType;
 
@@ -61,7 +63,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     @Override
-    public WorldManager createWorld(GameContext gameContext) {
+    public MapService createWorld(GameContext gameContext, QueryRepository queryRepository) {
         World ecsWorld = gameContext.getEcsWorld();
         EcsConstants ecsConstants = gameContext.getEcsConstants();
         this.readIdeologiesJson(ecsWorld);
@@ -81,7 +83,7 @@ public class WorldDaoImpl implements WorldDao {
         Borders borders = new Borders();
         this.loadProvinces(ecsWorld, ecsConstants, provinces, borders);
 
-        return new WorldManager(provinces, borders, gameContext);
+        return new MapService(gameContext, queryRepository, provinces, borders);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {

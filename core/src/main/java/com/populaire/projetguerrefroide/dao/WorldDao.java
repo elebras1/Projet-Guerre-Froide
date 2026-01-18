@@ -1,8 +1,9 @@
 package com.populaire.projetguerrefroide.dao;
 
-import com.populaire.projetguerrefroide.map.WorldManager;
+import com.populaire.projetguerrefroide.service.MapService;
+import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.service.GameContext;
 
 public interface WorldDao {
-    WorldManager createWorld(GameContext gameContext);
+    MapService createWorld(GameContext gameContext, QueryRepository queryRepository);
 }

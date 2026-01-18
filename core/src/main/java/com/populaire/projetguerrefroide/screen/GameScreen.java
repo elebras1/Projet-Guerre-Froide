@@ -23,7 +23,7 @@ import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
-import com.populaire.projetguerrefroide.map.MapMode;
+import com.populaire.projetguerrefroide.pojo.MapMode;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.TimeService;
