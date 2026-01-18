@@ -72,133 +72,16 @@
     },
     "unit_names": "",
     "ministers": {
-        "4677": {
-            "name": "Yusof bin Ishak",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SGP_M_Ishak_Yusof",
-            "start_date": "1946-01-01",
-            "death_date": "1970-11-23",
-            "type": "honest_type"
-        },
-        "4678": {
-            "name": "Yeoh Ghim Seng",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "SGP_M_Seng_Yeoh_G",
-            "start_date": "1970-11-23",
-            "death_date": "1985-09-02",
-            "type": "administrator_type"
-        },
-        "4679": {
-            "name": "Benjamin Henry Sheares",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SGP_M_Sheares_Benjamin_H",
-            "start_date": "1971-01-02",
-            "death_date": "1981-05-12",
-            "type": "courageous_type"
-        },
-        "4680": {
-            "name": "Devan Nair",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SGP_M_Nair_Devan",
-            "start_date": "1981-10-23",
-            "death_date": "1985-03-28",
-            "type": "controversial_figure"
-        },
-        "4681": {
-            "name": "Wee Kim Wee",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SGP_M_Wee_Wee_K",
-            "start_date": "1985-09-02",
-            "death_date": "1993-09-01",
-            "type": "liberal_type"
-        },
-        "4682": {
-            "name": "Lee Kuan Yew",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "SGP_M_Yew_Lee_K",
-            "start_date": "1946-01-01",
-            "death_date": "1990-11-28",
-            "type": "traditionalist_type"
-        },
-        "4683": {
-            "name": "Goh Chok Tong",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SGP_M_Tong_Goh_C",
-            "start_date": "1990-11-28",
-            "death_date": "2004-08-12",
-            "type": "reformer_type"
-        },
-        "4684": {
-            "name": "Lee Siew Choh",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "SGP_M_Choh_Lee_S",
-            "start_date": "1963-01-01",
-            "death_date": "1968-04-19",
-            "type": "controversial_figure"
-        },
-        "4685": {
-            "name": "J. B. Jeyaretnam",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "SGP_M_Jeyaretnam_J_B",
-            "start_date": "1972-11-18",
-            "death_date": "2001-09-30",
-            "type": "reformer_type"
-        },
-        "4686": {
-            "name": "Chiam See Tong",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "SGP_M_Tong_Chiam_S",
-            "start_date": "1976-01-01",
-            "death_date": "1991-12-31",
-            "type": "honest_type"
-        },
-        "4687": {
-            "name": "David Marshall",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "SGP_M_Marshall_David",
-            "start_date": "1955-08-01",
-            "death_date": "1972-11-18",
-            "type": "democrat_type"
-        },
-        "4688": {
-            "name": "Lim Yew Hock",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "SGP_M_Hock_Lim_Y",
-            "start_date": "1956-06-07",
-            "death_date": "1963-02-27",
-            "type": "hardliner_type"
-        },
-        "4689": {
-            "name": "Sir Franklin Charles Gimson",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "SGP_M_Gimson_Franklin_C",
-            "start_date": "1946-01-01",
-            "death_date": "1975-11-13",
-            "type": "hardliner_type"
-        },
-        "3311": {
+        "Eu_Chooi_Yip_1": {
             "name": "Eu Chooi Yip",
             "ideology": "communist_idolg",
-            "loyalty": 0.45,
+            "loyalty": 0.5,
             "picture": "MLY_M_Yip_Eu_C",
             "start_date": "1938-02-01",
             "death_date": "1991-09-01",
             "type": "moral_type"
         },
-        "4690": {
+        "Lin_Ah_Liang_1": {
             "name": "Lin Ah Liang",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -207,7 +90,34 @@
             "death_date": "1947-08-28",
             "type": "autocrat_type"
         },
-        "4691": {
+        "Yusof_bin_Ishak_1": {
+            "name": "Yusof bin Ishak",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SGP_M_Ishak_Yusof",
+            "start_date": "1946-01-01",
+            "death_date": "1970-11-23",
+            "type": "honest_type"
+        },
+        "Sir_Franklin_Charles_Gimson_1": {
+            "name": "Sir Franklin Charles Gimson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "SGP_M_Gimson_Franklin_C",
+            "start_date": "1946-01-01",
+            "death_date": "1975-11-13",
+            "type": "hardliner_type"
+        },
+        "Lee_Kuan_Yew_1": {
+            "name": "Lee Kuan Yew",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "SGP_M_Yew_Lee_K",
+            "start_date": "1946-01-01",
+            "death_date": "1990-11-28",
+            "type": "traditionalist_type"
+        },
+        "Fong_Chong_Pik_1": {
             "name": "Fong Chong Pik",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -216,25 +126,7 @@
             "death_date": "2004-01-01",
             "type": "loyal_type"
         },
-        "4692": {
-            "name": "Lee Siew-Choh",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "SGP_M_Siew-Choh_Lee",
-            "start_date": "1959-05-30",
-            "death_date": "2002-07-18",
-            "type": "administrator_type"
-        },
-        "4693": {
-            "name": "Lim Chin Siong",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "SGP_M_Siong_Lim_C",
-            "start_date": "1954-01-01",
-            "death_date": "1996-02-05",
-            "type": "administrator_type"
-        },
-        "4694": {
+        "PV_Sharma_1": {
             "name": "P.V. Sharma",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -243,7 +135,88 @@
             "death_date": "1992-01-01",
             "type": "bureaucrat_type"
         },
-        "4695": {
+        "Lim_Chin_Siong_1": {
+            "name": "Lim Chin Siong",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "SGP_M_Siong_Lim_C",
+            "start_date": "1954-01-01",
+            "death_date": "1996-02-05",
+            "type": "administrator_type"
+        },
+        "David_Marshall_1": {
+            "name": "David Marshall",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "SGP_M_Marshall_David",
+            "start_date": "1955-08-01",
+            "death_date": "1972-11-18",
+            "type": "democrat_type"
+        },
+        "Lim_Yew_Hock_1": {
+            "name": "Lim Yew Hock",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "SGP_M_Hock_Lim_Y",
+            "start_date": "1956-06-07",
+            "death_date": "1963-02-27",
+            "type": "hardliner_type"
+        },
+        "Lee_SiewChoh_1": {
+            "name": "Lee Siew-Choh",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "SGP_M_Siew-Choh_Lee",
+            "start_date": "1959-05-30",
+            "death_date": "2002-07-18",
+            "type": "administrator_type"
+        },
+        "Lee_Siew_Choh_1": {
+            "name": "Lee Siew Choh",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "SGP_M_Choh_Lee_S",
+            "start_date": "1963-01-01",
+            "death_date": "1968-04-19",
+            "type": "controversial_figure"
+        },
+        "Yeoh_Ghim_Seng_1": {
+            "name": "Yeoh Ghim Seng",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "SGP_M_Seng_Yeoh_G",
+            "start_date": "1970-11-23",
+            "death_date": "1985-09-02",
+            "type": "administrator_type"
+        },
+        "Benjamin_Henry_Sheares_1": {
+            "name": "Benjamin Henry Sheares",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SGP_M_Sheares_Benjamin_H",
+            "start_date": "1971-01-02",
+            "death_date": "1981-05-12",
+            "type": "courageous_type"
+        },
+        "J_B_Jeyaretnam_1": {
+            "name": "J. B. Jeyaretnam",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "SGP_M_Jeyaretnam_J_B",
+            "start_date": "1972-11-18",
+            "death_date": "2001-09-30",
+            "type": "reformer_type"
+        },
+        "Chiam_See_Tong_1": {
+            "name": "Chiam See Tong",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "SGP_M_Tong_Chiam_S",
+            "start_date": "1976-01-01",
+            "death_date": "1991-12-31",
+            "type": "honest_type"
+        },
+        "Tan_Chen_Bock_1": {
             "name": "Tan Chen Bock",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
@@ -252,7 +225,25 @@
             "death_date": "2300-01-01",
             "type": "administrator_type"
         },
-        "4696": {
+        "Devan_Nair_1": {
+            "name": "Devan Nair",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SGP_M_Nair_Devan",
+            "start_date": "1981-10-23",
+            "death_date": "1985-03-28",
+            "type": "controversial_figure"
+        },
+        "Wee_Kim_Wee_1": {
+            "name": "Wee Kim Wee",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SGP_M_Wee_Wee_K",
+            "start_date": "1985-09-02",
+            "death_date": "1993-09-01",
+            "type": "liberal_type"
+        },
+        "Ibrahim_Maidin_1": {
             "name": "Ibrahim Maidin",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
@@ -260,6 +251,15 @@
             "start_date": "1988-01-01",
             "death_date": "2001-12-01",
             "type": "religious_type"
+        },
+        "Goh_Chok_Tong_1": {
+            "name": "Goh Chok Tong",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SGP_M_Tong_Goh_C",
+            "start_date": "1990-11-28",
+            "death_date": "2004-08-12",
+            "type": "reformer_type"
         }
     }
 }

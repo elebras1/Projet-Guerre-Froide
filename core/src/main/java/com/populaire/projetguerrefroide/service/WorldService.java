@@ -1,98 +1,97 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.utils.async.AsyncExecutor;
-import com.github.tommyettinger.ds.IntList;
-import com.github.tommyettinger.ds.ObjectIntMap;
-import com.github.tommyettinger.ds.ObjectIntOrderedMap;
-import com.github.tommyettinger.ds.ObjectList;
+import com.github.elebras1.flecs.*;
+import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
+import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.*;
-import com.populaire.projetguerrefroide.economy.building.BuildingType;
-import com.populaire.projetguerrefroide.map.RegionStore;
-import com.populaire.projetguerrefroide.economy.building.BuildingStore;
-import com.populaire.projetguerrefroide.politics.AllianceType;
-import com.populaire.projetguerrefroide.politics.Minister;
-import com.populaire.projetguerrefroide.map.*;
-import com.populaire.projetguerrefroide.screen.DateListener;
+import com.populaire.projetguerrefroide.pojo.MapMode;
+import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.ui.view.SortType;
-import com.populaire.projetguerrefroide.util.BuildingUtils;
-import com.populaire.projetguerrefroide.util.ValueFormatter;
+import com.populaire.projetguerrefroide.util.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
-public class WorldService implements DateListener {
-    private final AsyncExecutor asyncExecutor;
+public class WorldService {
+    private final GameContext gameContext;
     private final WorldDao worldDao;
-    private World world;
-    private final ObjectIntOrderedMap<String> elementPercentages;
-    private EconomyService economyService;
+    private final QueryRepository queryRepository;
+    private final EconomyService economyService;
+    private MapService mapService;
 
-    public WorldService() {
-        this.asyncExecutor = new AsyncExecutor(2);
+    public WorldService(GameContext gameContext) {
+        this.gameContext = gameContext;
         this.worldDao = new WorldDaoImpl();
-        this.elementPercentages = new ObjectIntOrderedMap<>();
+        this.queryRepository = new QueryRepository(this.gameContext.getEcsWorld(), this.gameContext.getEcsConstants());
+        this.economyService = new EconomyService(this.gameContext, this.queryRepository);
     }
 
-    public void createWorld(GameContext gameContext) {
-        this.world = this.worldDao.createWorldThreadSafe(gameContext);
-        this.economyService = new EconomyService(this.world);
-    }
-
-    public AsyncExecutor getAsyncExecutor() {
-        return this.asyncExecutor;
+    public void createWorld() {
+        this.mapService = this.worldDao.createWorld(this.gameContext, this.queryRepository);
+        this.gameContext.getEcsWorld().shrink();
     }
 
     public void renderWorld(WgProjection projection, OrthographicCamera cam, float time) {
-        this.world.render(projection, cam, time);
+        this.mapService.render(projection, cam, time);
     }
 
-    public void initializeEconomy() {
-        this.economyService.initialize();
-    }
-
-    public boolean selectProvince(short x, short y) {
-        return this.world.selectProvince(x, y);
+    public boolean selectProvince(int x, int y) {
+        return this.mapService.selectProvince(x, y);
     }
 
     public boolean isProvinceSelected() {
-        return this.world.getSelectedProvince() != null;
+        return this.mapService.getSelectedProvinceId() != -1;
     }
 
     public boolean setCountryPlayer() {
-        return this.world.setCountryPlayer();
+        return this.mapService.setCountryPlayer();
     }
 
-    public boolean hoverProvince(short x, short y) {
-        return this.world.getProvince(x, y) != null;
+    public boolean hoverLandProvince(int x, int y) {
+        return this.mapService.getLandProvinceId(x, y) != 0;
     }
 
-    public short getProvinceId(short x, short y) {
-        return this.world.getProvince(x, y).getId();
+    public int getProvinceId(int x, int y) {
+        long provinceId = this.mapService.getLandProvinceId(x, y);
+        return Integer.parseInt(this.gameContext.getEcsWorld().obtainEntity(provinceId).getName());
     }
 
     public MapMode getMapMode() {
-        return this.world.getMapMode();
+        return this.mapService.getMapMode();
     }
 
-    public String getCountryIdOfHoveredProvince(short x, short y) {
-        return this.world.getProvince(x, y).getCountryOwner().getId();
+    public String getCountryIdOfHoveredProvince(int x, int y) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity province = ecsWorld.obtainEntity(this.mapService.getLandProvinceId(x, y));
+        Province provinceData = province.get(Province.class);
+        return ecsWorld.obtainEntity(provinceData.ownerId()).getName();
     }
 
-    public int getPositionOfCapitalOfSelectedCountry() {
-        return this.world.getSelectedProvince().getCountryOwner().getCapital().getPosition("default");
+    public Position getPositionOfCapitalOfSelectedCountry() {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
+        Province selectedProvinceData = selectedProvince.get(Province.class);
+        Entity countryOwner = ecsWorld.obtainEntity(selectedProvinceData.ownerId());
+        Country countryOwnerData = countryOwner.get(Country.class);
+        Entity capitalProvince = ecsWorld.obtainEntity(countryOwnerData.capitalId());
+        long capitalPositionId = ecsWorld.lookup("province_" + capitalProvince.getName() + "_pos_default");
+        Entity capitalPosition = ecsWorld.obtainEntity(capitalPositionId);
+        return capitalPosition.get(Position.class);
     }
 
-    public String getCountryIdPlayer() {
-        return this.world.getPlayerCountry().getId();
+    public String getCountryPlayerNameId() {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity countryPlayer = ecsWorld.obtainEntity(this.mapService.getPlayerCountryId());
+        return countryPlayer.getName();
     }
 
-    public short getNumberOfProvinces() {
-        return this.world.getNumberOfProvinces();
+    public int getNumberOfProvinces() {
+        return this.mapService.getNumberOfProvinces();
     }
 
     public int getRankingOfSelectedCountry() {
@@ -100,21 +99,28 @@ public class WorldService implements DateListener {
     }
 
     public CountrySummaryDto prepareCountrySummaryDto(Map<String, String> localisation) {
-        Country selectedCountry = this.world.getSelectedProvince().getCountryOwner();
-        Minister headOfState = this.getHeadOfState(selectedCountry);
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
+        Province selectedProvinceData = selectedProvince.get(Province.class);
+        Entity selectedCountry = ecsWorld.obtainEntity(selectedProvinceData.ownerId());
+        Country countryData = selectedCountry.get(Country.class);
+        Minister headOfState = this.getHeadOfState(selectedCountry.id());
         String portraitNameFile = "admin_type";
-        if(headOfState.getImageNameFile() != null) {
-            portraitNameFile = headOfState.getImageNameFile();
+        if(headOfState.imageFileName() != null) {
+            portraitNameFile = headOfState.imageFileName();
         }
-        String population = ValueFormatter.formatValue(this.world.getPopulationAmount(selectedCountry), localisation);
-        List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry);
+        String population = ValueFormatter.formatValue(this.mapService.getPopulationAmountOfCountry(selectedCountry.id()), localisation);
+        List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry.id());
+        String government = ecsWorld.obtainEntity(countryData.governmentId()).getName();
 
-        return new CountrySummaryDto(selectedCountry.getId(), population, selectedCountry.getGovernment().getName(), portraitNameFile, headOfState.getName(), this.world.getColonizerId(selectedCountry), allies);
+        return new CountrySummaryDto(selectedCountry.getName(), population, government, portraitNameFile, headOfState.name(), this.mapService.getColonizerId(selectedCountry.id()), allies);
     }
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {
-        Country selectedCountry = this.world.getSelectedProvince().getCountryOwner();
-        String population = ValueFormatter.formatValue(this.world.getPopulationAmount(selectedCountry), localisation);
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
+        Province selectedProvinceData = selectedProvince.get(Province.class);
+        String population = ValueFormatter.formatValue(this.mapService.getPopulationAmountOfCountry(selectedProvinceData.ownerId()), localisation);
         int manpower = 0;
         String grossDomesticProduct = ValueFormatter.formatValue(0, localisation);
         int money = 0;
@@ -129,293 +135,326 @@ public class WorldService implements DateListener {
     }
 
     public ProvinceDto prepareProvinceDto(Map<String, String> localisation) {
-        LandProvince selectedProvince = this.world.getSelectedProvince();
-        Region region = selectedProvince.getRegion();
-        String provinceId = String.valueOf(selectedProvince.getId());
-        String regionId = region.getId();
-        String terrainImage = selectedProvince.getTerrain().getName();
-        String resourceImage = this.world.getResourceGoodName(selectedProvince);
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
+        Province selectedProvinceData = selectedProvince.get(Province.class);
+        GeoHierarchy selectedProvinceGeo = selectedProvince.get(GeoHierarchy.class);
+        Entity region = ecsWorld.obtainEntity(selectedProvinceGeo.regionId());
+        String provinceNameId = selectedProvince.getName();
+        String regionNameId = region.getName();
+        Entity terrain = ecsWorld.obtainEntity(selectedProvinceData.terrainId());
+        String terrainImage = terrain.getName();
+        String resourceImage = this.mapService.getResourceGoodName(selectedProvince.id());
         String populationRegion = this.getPopulationRegionOfSelectedProvince(localisation);
         String workersRegion = this.getWorkersRegionOfSelectedProvince(localisation);
-        String populationProvince = ValueFormatter.formatValue(this.world.getPopulationAmount(selectedProvince), localisation);
+        String populationProvince = ValueFormatter.formatValue(this.mapService.getPopulationAmountOfProvince(selectedProvince.id()), localisation);
         int developmentIndexRegion = 0;
         int incomeRegion = 0;
-        int numberIndustryRegion = this.getNumberIndustry(region);
-        String countryId = selectedProvince.getCountryOwner().getId();
-        String colonizerId = this.world.getColonizerId(selectedProvince.getCountryOwner());
+        int numberIndustryRegion = this.getNumberIndustry(region.id());
+        Entity country = ecsWorld.obtainEntity(selectedProvinceData.ownerId());
+        String countryNameId = country.getName();
+        String colonizerId = this.mapService.getColonizerId(country.id());
         List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
-        float resourceProduced = this.economyService.getResourceGoodsProduction(selectedProvince.getId());
-        List<String> provinceIdsRegion = this.getProvinceIdsOrderByPopulation(region);
-        DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(selectedProvince.getId());
-        List<String> specialBuildings = this.getSpecialBuildingNames(region);
-        List<String> colorsBuilding = this.getColorBuildingsOrderByLevel(region);
+        float resourceProduced = this.economyService.getResourceGatheringProduction(provinceNameId);
+        List<String> provinceIdsRegion = this.getProvinceIdsOrderByPopulation(region.id());
+        DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(selectedProvince.id());
+        List<String> specialBuildings = this.getSpecialBuildingNames(region.id());
+        List<String> colorsBuilding = this.getColorBuildingsOrderByLevel(region.id());
 
-        return new ProvinceDto(provinceId, regionId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, numberIndustryRegion, countryId, colonizerId, flagCountriesCore, resourceProduced, 0, 0, populationProvince, 0f, 0f, provinceIdsRegion, developmentBuildingLevel, specialBuildings, colorsBuilding);
+        return new ProvinceDto(provinceNameId, regionNameId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, numberIndustryRegion, countryNameId, colonizerId, flagCountriesCore, resourceProduced, 0, 0, populationProvince, 0f, 0f, provinceIdsRegion, developmentBuildingLevel, specialBuildings, colorsBuilding);
     }
 
     public void changeMapMode(String mapMode) {
-        this.world.changeMapMode(mapMode);
+        this.mapService.changeMapMode(mapMode);
     }
 
-    public ObjectIntMap<String> getCulturesOfHoveredProvince(short x, short y) {
-        LandProvince province = this.world.getProvince(x, y);
-        ProvinceStore provinceStore = this.world.getProvinceStore();
-        int provinceIndex = provinceStore.getIndexById().get(province.getId());
-        int amountAdults = provinceStore.getAmountAdults().get(provinceIndex);
-        IntList provinceCultureIds = provinceStore.getCultureIds();
-        IntList provinceCultureValues = provinceStore.getCultureValues();
-        int startIndex = provinceStore.getCultureStarts().get(provinceIndex);
-        int endIndex = startIndex + provinceStore.getCultureCounts().get(provinceIndex);
-        List<String> cultureNames = this.world.getNationalIdeas().getCultureStore().getNames();
-        return this.calculatePercentageDistributionFromProvinceData(provinceCultureIds, provinceCultureValues, startIndex, endIndex, cultureNames, amountAdults);
+    public ObjectIntMap<String> getCulturesOfHoveredProvince(int x, int y) {
+        long provinceId = this.mapService.getLandProvinceId(x, y);
+        Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
+        Province provinceData = province.get(Province.class);
+        int amountAdults = provinceData.amountAdults();
+        CultureDistribution cultureDistribution = province.get(CultureDistribution.class);
+        long[] provinceCultureIds = cultureDistribution.populationIds();
+        int[] provinceCultureValues = cultureDistribution.populationAmounts();
+        return this.calculatePercentageDistributionFromProvinceData(provinceCultureIds, provinceCultureValues, amountAdults);
     }
 
-    public ObjectIntMap<String> getReligionsOfHoveredProvince(short x, short y) {
-        LandProvince province = this.world.getProvince(x, y);
-        ProvinceStore provinceStore = this.world.getProvinceStore();
-        int provinceIndex = provinceStore.getIndexById().get(province.getId());
-        int amountAdults = provinceStore.getAmountAdults().get(provinceIndex);
-        IntList provinceReligionIds = provinceStore.getReligionIds();
-        IntList provinceReligionValues = provinceStore.getReligionValues();
-        int startIndex = provinceStore.getReligionStarts().get(provinceIndex);
-        int endIndex = startIndex + provinceStore.getReligionCounts().get(provinceIndex);
-        List<String> religionNames = this.world.getNationalIdeas().getReligionStore().getNames();
+    public ObjectIntMap<String> getReligionsOfHoveredProvince(int x, int y) {
+        long provinceId = this.mapService.getLandProvinceId(x, y);
+        Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
+        Province provinceData = province.get(Province.class);
+        int amountAdults = provinceData.amountAdults();
+        ReligionDistribution religionDistribution = province.get(ReligionDistribution.class);
+        long[] provinceReligionIds = religionDistribution.populationIds();
+        int[] provinceReligionValues = religionDistribution.populationAmounts();
 
-        return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, startIndex, endIndex, religionNames, amountAdults);
+        return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, amountAdults);
     }
 
     public String getColonizerIdOfSelectedProvince() {
-        Country country = this.world.getSelectedProvince().getCountryOwner();
-        return this.world.getColonizerId(country);
+        Entity selectedProvince = this.gameContext.getEcsWorld().obtainEntity(this.mapService.getSelectedProvinceId());
+        Province selectedProvinceData = selectedProvince.get(Province.class);
+        return this.mapService.getColonizerId(selectedProvinceData.ownerId());
     }
 
     public String getColonizerIdOfCountryPlayer() {
-        Country country = this.world.getPlayerCountry();
-        return this.world.getColonizerId(country);
+        return this.mapService.getColonizerId(this.mapService.getPlayerCountryId());
     }
 
-    public String getColonizerIdOfHoveredProvince(short x, short y) {
-        LandProvince province = this.world.getProvince(x, y);
-        Country country = province.getCountryOwner();
-        return this.world.getColonizerId(country);
+    public String getColonizerIdOfHoveredProvince(int x, int y) {
+        Entity province = this.gameContext.getEcsWorld().obtainEntity(this.mapService.getLandProvinceId(x, y));
+        Province provinceData = province.get(Province.class);
+        return this.mapService.getColonizerId(provinceData.ownerId());
     }
 
     public float getResourceGoodsProduction() {
-        LandProvince selectedProvince = this.world.getSelectedProvince();
-        if(selectedProvince == null) {
+        long selectedProvinceId = this.mapService.getSelectedProvinceId();
+        if(selectedProvinceId == -1) {
             return -1;
         }
-        return this.economyService.getResourceGoodsProduction(selectedProvince.getId());
+        Entity selectedProvince = this.gameContext.getEcsWorld().obtainEntity(selectedProvinceId);
+        return this.economyService.getResourceGatheringProduction(selectedProvince.getName());
     }
 
     public RegionsBuildingsDto prepareRegionsBuildingsDto() {
-        return this.economyService.prepareRegionsBuildingsDto();
+        return this.economyService.prepareRegionsBuildingsDto(this.mapService.getPlayerCountryId());
     }
 
     public RegionsBuildingsDto prepareRegionsBuildingsDtoSorted(SortType sortType) {
-        return this.economyService.prepareRegionsBuildingsDtoSorted(sortType);
+        return this.economyService.prepareRegionsBuildingsDtoSorted(this.mapService.getPlayerCountryId(), sortType);
     }
 
-    @Override
-    public void onNewDay(LocalDate date) {
-        this.economyService.hire();
-        this.economyService.produce();
-    }
-
-    private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(IntList provinceElementIds, IntList provinceElementValues, int startIndex, int endIndex, List<String> elementNames, int amountAdults) {
-        this.elementPercentages.clear();
+    private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(long[] provinceElementIds, int[] provinceElementValues, int amountAdults) {
+        ObjectIntOrderedMap<String> elementPercentages = new ObjectIntOrderedMap<>();
+        World ecsWorld = this.gameContext.getEcsWorld();
         int total = 0;
         int biggestElementIndex = -1;
-        for(int elementIndex = startIndex; elementIndex < endIndex; elementIndex++) {
-            int amount = provinceElementValues.get(elementIndex);
-            int elementId = provinceElementIds.get(elementIndex);
-            if(biggestElementIndex == -1 || amount > provinceElementValues.get(biggestElementIndex)) {
+        for(int elementIndex = 0; elementIndex < provinceElementIds.length && provinceElementValues[elementIndex] != 0; elementIndex++) {
+            int amount = provinceElementValues[elementIndex];
+            long elementId = provinceElementIds[elementIndex];
+            if(biggestElementIndex == -1 || amount > provinceElementValues[biggestElementIndex]) {
                 biggestElementIndex = elementIndex;
             }
             if(amountAdults != 0) {
                 int percentage = (int) ((amount / (float) amountAdults) * 100);
                 total += percentage;
-                this.elementPercentages.put(elementNames.get(elementId), percentage);
+                elementPercentages.put(ecsWorld.obtainEntity(elementId).getName(), percentage);
             } else {
-                this.elementPercentages.put(elementNames.get(elementId), 0);
+                elementPercentages.put(ecsWorld.obtainEntity(elementId).getName(), 0);
             }
         }
 
         if(total != 100 && biggestElementIndex != -1) {
             int difference = 100 - total;
-            String biggestElementName = elementNames.get(provinceElementIds.get(biggestElementIndex));
-            this.elementPercentages.put(biggestElementName, this.elementPercentages.get(biggestElementName) + difference);
+            String biggestElementName = ecsWorld.obtainEntity(provinceElementIds[biggestElementIndex]).getName();
+            elementPercentages.put(biggestElementName, elementPercentages.get(biggestElementName) + difference);
         }
 
-        this.sortByValueDescending(this.elementPercentages);
+        this.sortByValueDescending(elementPercentages);
 
-        return this.elementPercentages;
+        return elementPercentages;
     }
 
     private String getPopulationRegionOfSelectedProvince(Map<String, String> localisation) {
-        int population = 0;
-        for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
-            population += this.world.getPopulationAmount(province);
-        }
+        World ecsWorld = this.gameContext.getEcsWorld();
 
-        return ValueFormatter.formatValue(population, localisation);
+        Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
+        GeoHierarchy selectedProvinceGeo = selectedProvince.get(GeoHierarchy.class);
+        MutableInt population = new MutableInt(0);
+
+        Query query = this.queryRepository.getProvincesWithGeoHierarchy();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<GeoHierarchy> geoField = iter.field(GeoHierarchy.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                GeoHierarchyView geoView = geoField.getMutView(i);
+                if (geoView.regionId() == selectedProvinceGeo.regionId()) {
+                    population.increment(provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors());
+                }
+            }
+        });
+
+        return ValueFormatter.formatValue(population.getValue(), localisation);
     }
 
     private String getWorkersRegionOfSelectedProvince(Map<String, String> localisation) {
-        int workers = 0;
-        for(LandProvince province : this.world.getSelectedProvince().getRegion().getProvinces()) {
-            workers += this.world.getAmountAdults(province);
-        }
+        World ecsWorld = this.gameContext.getEcsWorld();
 
-        return ValueFormatter.formatValue(workers, localisation);
+        Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
+        GeoHierarchy selectedProvinceGeo = selectedProvince.get(GeoHierarchy.class);
+        MutableInt workers = new MutableInt(0);
+
+        Query query = this.queryRepository.getProvincesWithGeoHierarchy();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<GeoHierarchy> geoField = iter.field(GeoHierarchy.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                GeoHierarchyView geoView = geoField.getMutView(i);
+                if (geoView.regionId() == selectedProvinceGeo.regionId()) {
+                    workers.increment(provinceView.amountAdults());
+                }
+            }
+        });
+
+        return ValueFormatter.formatValue(workers.getValue(), localisation);
     }
 
     private List<String> getCountriesCoreOfSelectedProvince() {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        long selectedProvinceId = this.mapService.getSelectedProvinceId();
+        Entity provinceEntity = ecsWorld.obtainEntity(selectedProvinceId);
+        Province provinceData = provinceEntity.get(Province.class);
         List<String> countriesCore = new ObjectList<>();
-        for(Country country : this.world.getSelectedProvince().getCountriesCore()) {
-            countriesCore.add(country.getId());
+        for (int i = 0; i < provinceData.coreIds().length; i++) {
+            long coreCountryId = provinceData.coreIds()[i];
+            if (coreCountryId == 0) {
+                continue;
+            }
+
+            String countryNameId = ecsWorld.obtainEntity(coreCountryId).getName();
+            countriesCore.add(countryNameId);
         }
 
         return countriesCore;
     }
 
-    private DevelopementBuildingLevelDto getDevelopementBuildingLevel(int provinceId) {
-        byte navalBaseLevel = 0;
-        byte airBaseLevel = 0;
-        byte radarStationLevel = 0;
-        byte antiAircraftGunsLevel = 0;
+    private DevelopementBuildingLevelDto getDevelopementBuildingLevel(long provinceId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        MutableInt navalBaseLevel = new MutableInt(0);
+        MutableInt airBaseLevel = new MutableInt(0);
+        MutableInt radarStationLevel = new MutableInt(0);
+        MutableInt antiAircraftGunsLevel = new MutableInt(0);
 
-        ProvinceStore provinceStore = this.world.getProvinceStore();
-        BuildingStore buildingStore = this.world.getBuildingStore();
+        try(Query query = ecsWorld.query().with(Building.class).build()) {
+            query.iter(iter -> {
+                Field<Building> buildingField = iter.field(Building.class, 0);
+                for(int i = 0; i < iter.count(); i++) {
+                    BuildingView buildingView = buildingField.getMutView(i);
+                    if(buildingView.parentId() != provinceId) {
+                        continue;
+                    }
 
-        int provinceIndex = provinceStore.getIndexById().get(provinceId);
+                    Entity buildingType = ecsWorld.obtainEntity(buildingView.typeId());
 
-        int buildingStart = provinceStore.getBuildingStarts().get(provinceIndex);
-        int buildingCount = provinceStore.getBuildingCounts().get(provinceIndex);
-
-        for (int i = buildingStart; i < buildingStart + buildingCount; i++) {
-            int buildingId = provinceStore.getBuildingIds().get(i);
-            int buildingLevel = provinceStore.getBuildingValues().get(i);
-            String buildingName = buildingStore.getNames().get(buildingId);
-
-            switch (buildingName) {
-                case "naval_base" -> navalBaseLevel = (byte) buildingLevel;
-                case "air_base" -> airBaseLevel = (byte) buildingLevel;
-                case "radar_station" -> radarStationLevel = (byte) buildingLevel;
-                case "anti_air" -> antiAircraftGunsLevel = (byte) buildingLevel;
-            }
+                    switch (buildingType.getName()) {
+                        case "naval_base" -> navalBaseLevel.setValue(buildingView.size());
+                        case "air_base" -> airBaseLevel.setValue(buildingView.size());
+                        case "radar_station" -> radarStationLevel.setValue(buildingView.size());
+                        case "anti_air" -> antiAircraftGunsLevel.setValue(buildingView.size());
+                    }
+                }
+            });
         }
 
-        return new DevelopementBuildingLevelDto(navalBaseLevel, airBaseLevel, radarStationLevel, antiAircraftGunsLevel);
+        return new DevelopementBuildingLevelDto((byte) navalBaseLevel.getValue(), (byte)  airBaseLevel.getValue(), (byte)  radarStationLevel.getValue(), (byte)  antiAircraftGunsLevel.getValue());
     }
 
-    private List<String> getProvinceIdsOrderByPopulation(Region region) {
-        ProvinceStore provinceStore = this.world.getProvinceStore();
+    private List<String> getProvinceIdsOrderByPopulation(long regionId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
 
-        IntList provinceIndices = new IntList();
-        for (LandProvince province : region.getProvinces()) {
-            int provinceIndex = provinceStore.getIndexById().get(province.getId());
-            provinceIndices.add(provinceIndex);
-        }
+        LongList provinceIds = new LongList();
+        Query query = this.queryRepository.getProvincesWithGeoHierarchy();
+        query.iter(iter -> {
+            Field<GeoHierarchy> geoField = iter.field(GeoHierarchy.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                long provinceId = iter.entity(i);
+                GeoHierarchyView geoView = geoField.getMutView(i);
+                if (geoView.regionId() == regionId) {
+                    provinceIds.add(provinceId);
+                }
+            }
+        });
 
-        provinceIndices.sort((a, b) -> {
-            int populationA = provinceStore.getAmountAdults().get(a);
-            int populationB = provinceStore.getAmountAdults().get(b);
-            return Integer.compare(populationB, populationA);
+        this.gameContext.getEcsWorld().scope(() -> {
+            provinceIds.sort((a, b) -> {
+                EntityView provinceAView = ecsWorld.obtainEntityView(a);
+                ProvinceView provinceDataAView = provinceAView.getMutView(Province.class);
+                EntityView provinceBView = ecsWorld.obtainEntityView(b);
+                ProvinceView provinceDataBView = provinceBView.getMutView(Province.class);
+                return Integer.compare(provinceDataBView.amountAdults(), provinceDataAView.amountAdults());
+            });
         });
 
         List<String> result = new ObjectList<>();
-        for (int provinceIndex = 0; provinceIndex < provinceIndices.size(); provinceIndex++) {
-            int id = provinceIndices.get(provinceIndex);
+        for (int provinceIndex = 0; provinceIndex < provinceIds.size(); provinceIndex++) {
+            long id = provinceIds.get(provinceIndex);
             result.add(String.valueOf(id));
         }
 
         return result;
     }
 
-    private List<String> getColorBuildingsOrderByLevel(Region region) {
-        RegionStore regionStore = this.world.getRegionStore();
-        BuildingStore buildingStore = this.world.getBuildingStore();
+    private List<String> getColorBuildingsOrderByLevel(long regionId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        List<Pair<Integer, String>> validBuildings = new ObjectList<>();
 
-        int regionId = regionStore.getRegionIds().get(region.getId());
-        int regionBuildingStart = regionStore.getBuildingStarts().get(regionId);
-        int regionBuildingEnd = regionBuildingStart + regionStore.getBuildingCounts().get(regionId);
-
-        List<Integer> buildingIndices = new ObjectList<>();
-
-        for (int buildingIndex = regionBuildingStart; buildingIndex < regionBuildingEnd; buildingIndex++) {
-            int buildingId = regionStore.getBuildingIds().get(buildingIndex);
-            byte buildingType = buildingStore.getTypes().get(buildingId);
-
-            if (buildingType == BuildingType.ECONOMY.getId()) {
-                String buildingName = buildingStore.getNames().get(buildingId);
-                String color = BuildingUtils.getColor(buildingName);
-
-                if (color != null) {
-                    buildingIndices.add(buildingIndex);
+        Query query = this.queryRepository.getBuildings();
+        query.iter(iter -> {
+            Field<Building> buildingField = iter.field(Building.class, 0);
+            for (int i = 0; i < iter.count(); i++) {
+                BuildingView buildingView = buildingField.getMutView(i);
+                if (buildingView.parentId() == regionId) {
+                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
+                    if (buildingTypeView.has(EconomyBuilding.class)) {
+                        String color = BuildingUtils.getColor(buildingTypeView.getName());
+                        if (color != null) {
+                            validBuildings.add(new Pair<>(buildingView.size(), color));
+                        }
+                    }
                 }
             }
-        }
-
-        buildingIndices.sort((a, b) -> {
-            int levelA = regionStore.getBuildingValues().get(a);
-            int levelB = regionStore.getBuildingValues().get(b);
-            return Integer.compare(levelB, levelA);
         });
 
-        List<String> colors = new ObjectList<>();
-        for (int buildingIndex : buildingIndices) {
-            int buildingId = regionStore.getBuildingIds().get(buildingIndex);
-            String buildingName = buildingStore.getNames().get(buildingId);
-            String color = BuildingUtils.getColor(buildingName);
-            colors.add(color);
+        validBuildings.sort((a, b) -> Integer.compare(b.first(), a.first()));
+
+        List<String> colors = new ObjectList<>(validBuildings.size());
+        for (Pair<Integer, String> building: validBuildings) {
+            colors.add(building.second());
         }
 
         return colors;
     }
 
-    private int getNumberIndustry(Region region) {
-        int industryCount = 0;
-        RegionStore regionStore = this.world.getRegionStore();
-        BuildingStore buildingStore = this.world.getBuildingStore();
+    private int getNumberIndustry(long regionId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        MutableInt industryCount = new MutableInt(0);
 
-        int regionIndex = regionStore.getRegionIds().get(region.getId());
-
-        int buildingStart = regionStore.getBuildingStarts().get(regionIndex);
-        int buildingEnd = buildingStart + regionStore.getBuildingCounts().get(regionIndex);
-
-        for (int i = buildingStart; i < buildingEnd; i++) {
-            int buildingId = regionStore.getBuildingIds().get(i);
-            byte buildingType = buildingStore.getTypes().get(buildingId);
-
-            if (buildingType == BuildingType.ECONOMY.getId()) {
-                industryCount++;
+        Query query = this.queryRepository.getBuildings();
+        query.iter(iter -> {
+            Field<Building> buildingField = iter.field(Building.class, 0);
+            for(int i = 0; i < iter.count(); i++) {
+                BuildingView buildingView = buildingField.getMutView(i);
+                if(buildingView.parentId() == regionId) {
+                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
+                    if(buildingTypeView.has(EconomyBuilding.class)) {
+                        industryCount.increment();
+                    }
+                }
             }
-        }
+        });
 
-        return industryCount;
+        return industryCount.getValue();
     }
 
-    private List<String> getSpecialBuildingNames(Region region) {
+    private List<String> getSpecialBuildingNames(long regionId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
         List<String> specialBuildingNames = new ObjectList<>();
-        RegionStore regionStore = this.world.getRegionStore();
 
-        int regionId = regionStore.getRegionIds().get(region.getId());
-
-        int buildingStart = regionStore.getBuildingStarts().get(regionId);
-        int buildingEnd = buildingStart + regionStore.getBuildingCounts().get(regionId);
-
-        BuildingStore buildingStore = this.world.getBuildingStore();
-
-        for (int i = buildingStart; i < buildingEnd; i++) {
-            int buildingId = regionStore.getBuildingIds().get(i);
-            byte buildingType = buildingStore.getTypes().get(buildingId);
-
-            if (buildingType == BuildingType.SPECIAL.getId()) {
-                String buildingName = buildingStore.getNames().get(buildingId);
-                specialBuildingNames.add(buildingName);
+        Query query = this.queryRepository.getBuildings();
+        query.iter(iter -> {
+            Field<Building> buildingField = iter.field(Building.class, 0);
+            for(int i = 0; i < iter.count(); i++) {
+                BuildingView buildingView = buildingField.getMutView(i);
+                if(buildingView.parentId() == regionId) {
+                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
+                    if(buildingTypeView.has(SpecialBuilding.class)) {
+                        specialBuildingNames.add(buildingTypeView.getName());
+                    }
+                }
             }
-        }
+        });
 
         return specialBuildingNames;
     }
@@ -435,39 +474,77 @@ public class WorldService implements DateListener {
         }
     }
 
-    private List<String> getAlliesOfSelectedCountry(Country country) {
+    private List<String> getAlliesOfSelectedCountry(long countryId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+
         List<String> allies = new ObjectList<>();
-        if(country.getAlliances() == null) {
+
+        Entity country = ecsWorld.obtainEntity(countryId);
+        if (country == null) {
             return allies;
         }
 
-        for(Map.Entry<Country, AllianceType> alliance : country.getAlliances().entrySet()) {
-            if(alliance.getValue() != AllianceType.COLONIZER) {
-                allies.add(alliance.getKey().getId());
+        long[] relations = new long[] {
+                ecsConstants.alliedWith(),
+                ecsConstants.guarantees(),
+                ecsConstants.isGuaranteedBy(),
+                ecsConstants.isPuppetMasterOf(),
+                ecsConstants.isPuppetOf(),
+                ecsConstants.colonizes(),
+                ecsConstants.isColonyOf()
+        };
+
+        for (long relation : relations) {
+            int i = 0;
+            long alliedCountryId = country.target(relation, i);
+
+            while (alliedCountryId != 0) {
+
+                if (relation != ecsConstants.isColonyOf()) {
+                    Entity alliedCountry = ecsWorld.obtainEntity(alliedCountryId);
+                    if (alliedCountry != null) {
+                        String alliedCountryNameId = alliedCountry.getName();
+                        if (!allies.contains(alliedCountryNameId)) {
+                            allies.add(alliedCountryNameId);
+                        }
+                    }
+                }
+
+                i++;
+                alliedCountryId = country.target(relation, i);
             }
         }
+
         return allies;
     }
 
-    private Minister getHeadOfState(Country country) {
-        Minister headOfState = null;
-        if(country.getHeadOfStateId() != -1) {
-            headOfState = this.world.getPolitics().getMinister(country.getHeadOfStateId());
+    private Minister getHeadOfState(long countryId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+
+        Entity country = ecsWorld.obtainEntity(countryId);
+        Country countryData = country.get(Country.class);
+        long headOfStateId = countryData.headOfStateId();
+
+        long countryColonizerId = country.target(ecsConstants.isColonyOf());
+        if(countryColonizerId != 0) {
+            Entity colonizerCountry = ecsWorld.obtainEntity(countryColonizerId);
+            Country colonizerCountryData = colonizerCountry.get(Country.class);
+            headOfStateId = colonizerCountryData.headOfStateId();
         }
 
-        if(country.getAlliances() != null) {
-            for (Map.Entry<Country, AllianceType> alliance : country.getAlliances().entrySet()) {
-                if (alliance.getValue() == AllianceType.COLONY) {
-                    headOfState = this.world.getPolitics().getMinister(alliance.getKey().getHeadOfStateId());
-                }
-            }
+        Minister headOfState = null;
+        if(headOfStateId != 0) {
+            Entity entityMinister = ecsWorld.obtainEntity(headOfStateId);
+            headOfState = entityMinister.get(Minister.class);
         }
 
         return headOfState;
     }
 
     public void dispose() {
-        this.world.dispose();
-        this.asyncExecutor.dispose();
+        this.mapService.dispose();
+        this.queryRepository.dispose();
     }
 }

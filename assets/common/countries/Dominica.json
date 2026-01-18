@@ -71,115 +71,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "211": {
-            "name": "George VI",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ENG_George",
-            "start_date": "1936-09-11",
-            "death_date": "1952-02-06",
-            "type": "parental_type"
-        },
-        "212": {
-            "name": "Elizabeth II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ENG_Elizabeth",
-            "start_date": "1952-02-06",
-            "death_date": "2300-05-12",
-            "type": "traditionalist_type"
-        },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "348": {
-            "name": "Margaret I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "ENG_M_Margaret_I",
-            "start_date": "1952-03-01",
-            "death_date": "2002-02-09",
-            "type": "controversial_figure"
-        },
-        "349": {
-            "name": "David III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "350": {
-            "name": "Sarah I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "351": {
-            "name": "Henry IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
-        },
-        "352": {
-            "name": "William V",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.91,
-            "picture": "ENG_M_William_V",
-            "start_date": "1959-12-18",
-            "death_date": "1972-08-28",
-            "type": "courteous_figure"
-        },
-        "353": {
-            "name": "Richard IV",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "ENG_M_Richard_IV",
-            "start_date": "1962-08-26",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "354": {
+        "Robert_I_von_Bayern_1": {
             "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -188,7 +80,43 @@
             "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "355": {
+        "George_VI_1": {
+            "name": "George VI",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
+        },
+        "Henry_IX_1": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "Elizabeth_II_1": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "Margaret_I_1": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "Albert_I_von_Bayern_1": {
             "name": "Albert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -197,52 +125,7 @@
             "death_date": "1996-07-08",
             "type": "fortunate_type"
         },
-        "1569": {
-            "name": "Sir Louis Cools-Lartigue",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.9,
-            "picture": "DMN_M_Cools-Lartigue_Louis",
-            "start_date": "1978-11-03",
-            "death_date": "1979-06-16",
-            "type": "traditionalist_type"
-        },
-        "1570": {
-            "name": "Fred Degazon",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "DMN_M_Degazon_Fred",
-            "start_date": "1979-01-16",
-            "death_date": "1980-01-29",
-            "type": "lethargic_type"
-        },
-        "1571": {
-            "name": "Jenner B. M. Armour",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "DMN_M_Armour_Jenner",
-            "start_date": "1980-01-29",
-            "death_date": "1980-02-25",
-            "type": "administrator_type"
-        },
-        "1572": {
-            "name": "Aurelius Marie",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "DMN_M_Marie_Aurelius",
-            "start_date": "1980-02-25",
-            "death_date": "1983-12-19",
-            "type": "bureaucrat_type"
-        },
-        "1573": {
-            "name": "Sir Clarence Seignoret",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "DMN_M_Seignoret_Clarence",
-            "start_date": "1983-12-19",
-            "death_date": "1993-10-25",
-            "type": "reputable_type"
-        },
-        "1574": {
+        "Frank_Baron_1": {
             "name": "Frank Baron",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 1.0,
@@ -251,7 +134,16 @@
             "death_date": "1961-01-21",
             "type": "bureaucrat_type"
         },
-        "1575": {
+        "William_V_1": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "Edward_Oliver_LeBlanc_1": {
             "name": "Edward Oliver LeBlanc",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -260,7 +152,34 @@
             "death_date": "1974-07-27",
             "type": "moral_type"
         },
-        "1576": {
+        "Richard_IV_1": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "George_VII_1": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "Anne_II_1": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Patrick_John_1": {
             "name": "Patrick John",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -269,7 +188,34 @@
             "death_date": "1979-06-25",
             "type": "ambitious_type"
         },
-        "1577": {
+        "Andrew_I_1": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "Sir_Louis_CoolsLartigue_1": {
+            "name": "Sir Louis Cools-Lartigue",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.9,
+            "picture": "DMN_M_Cools-Lartigue_Louis",
+            "start_date": "1978-11-03",
+            "death_date": "1979-06-16",
+            "type": "traditionalist_type"
+        },
+        "Fred_Degazon_1": {
+            "name": "Fred Degazon",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_Degazon_Fred",
+            "start_date": "1979-01-16",
+            "death_date": "1980-01-29",
+            "type": "lethargic_type"
+        },
+        "Oliver_Seraphin_1": {
             "name": "Oliver Seraphin",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -278,7 +224,34 @@
             "death_date": "1980-07-21",
             "type": "administrator_type"
         },
-        "1578": {
+        "David_III_1": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Jenner_B_M_Armour_1": {
+            "name": "Jenner B. M. Armour",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_Armour_Jenner",
+            "start_date": "1980-01-29",
+            "death_date": "1980-02-25",
+            "type": "administrator_type"
+        },
+        "Aurelius_Marie_1": {
+            "name": "Aurelius Marie",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_Marie_Aurelius",
+            "start_date": "1980-02-25",
+            "death_date": "1983-12-19",
+            "type": "bureaucrat_type"
+        },
+        "Eugenia_Charles_1": {
             "name": "Eugenia Charles",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -286,6 +259,33 @@
             "start_date": "1980-07-21",
             "death_date": "1995-06-14",
             "type": "iron_lady"
+        },
+        "Edward_IX_1": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Sarah_I_1": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Sir_Clarence_Seignoret_1": {
+            "name": "Sir Clarence Seignoret",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "DMN_M_Seignoret_Clarence",
+            "start_date": "1983-12-19",
+            "death_date": "1993-10-25",
+            "type": "reputable_type"
         }
     }
 }

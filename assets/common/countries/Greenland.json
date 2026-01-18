@@ -72,107 +72,67 @@
     },
     "unit_names": "",
     "ministers": {
-        "1517": {
+        "Christian_X_1": {
             "name": "Christian X",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "DEN_Christian_X",
             "start_date": "1890-09-26",
             "death_date": "1947-04-20",
-            "wikipage": "/wiki/Christian_X_of_Denmark",
-            "type": "courageous_type"
+            "type": "courageous_type",
+            "wikipage": "/wiki/Christian_X_of_Denmark"
         },
-        "1518": {
+        "Frederik_IX_1": {
             "name": "Frederik IX",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "DEN_Frederick_IX",
             "start_date": "1919-03-11",
             "death_date": "1972-01-14",
-            "wikipage": "/wiki/Frederick_IX_of_Denmark",
-            "type": "parental_type"
+            "type": "parental_type",
+            "wikipage": "/wiki/Frederick_IX_of_Denmark"
         },
-        "1519": {
-            "name": "Margrethe II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "DEN_Margrethe_II",
-            "start_date": "1960-04-16",
-            "death_date": "1999-12-31",
-            "wikipage": "/wiki/Margrethe_II_of_Denmark",
-            "type": "courteous_figure"
-        },
-        "1520": {
-            "name": "Frederik X",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "DEN_M_Frederik_X",
-            "start_date": "1986-05-26",
-            "death_date": "2300-01-01",
-            "wikipage": "/wiki/Frederik,_Crown_Prince_of_Denmark",
-            "type": "courteous_figure"
-        },
-        "1521": {
-            "name": "Joachim I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "DEN_M_Joachim_I",
-            "start_date": "1987-06-07",
-            "death_date": "2300-01-01",
-            "wikipage": "/wiki/Prince_Joachim_of_Denmark",
-            "type": "courteous_figure"
-        },
-        "1522": {
-            "name": "Benedikte_I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "DEN_M_Benedikte_I",
-            "start_date": "1962-04-29",
-            "death_date": "2300-01-01",
-            "wikipage": "/wiki/Princess_Benedikte_of_Denmark",
-            "type": "courteous_figure"
-        },
-        "1523": {
-            "name": "Gustav I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "DEN_M_Gustav_I",
-            "start_date": "1987-01-12",
-            "death_date": "2300-01-01",
-            "wikipage": "/wiki/Gustav,_Hereditary_Prince_of_Sayn-Wittgenstein-Berleburg",
-            "type": "courteous_figure"
-        },
-        "1524": {
-            "name": "Alexandra I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "DEN_M_Alexandra_I",
-            "start_date": "1988-11-20",
-            "death_date": "2300-01-01",
-            "wikipage": "/wiki/Princess_Alexandra_of_Sayn-Wittgenstein-Berleburg",
-            "type": "courteous_figure"
-        },
-        "1525": {
+        "Knud_VII_1": {
             "name": "Knud VII",
             "ideology": "social_cons_idolg",
             "loyalty": 0.94,
             "picture": "DEN_M_Knud_VII",
             "start_date": "1920-07-27",
             "death_date": "1976-06-14",
-            "wikipage": "/wiki/Prince_Knud_of_Denmark",
-            "type": "courteous_figure"
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Prince_Knud_of_Denmark"
         },
-        "1526": {
+        "Elisabeth_I_1": {
             "name": "Elisabeth I",
             "ideology": "social_cons_idolg",
             "loyalty": 0.93,
             "picture": "DEN_M_Elisabeth_I",
             "start_date": "1953-05-08",
             "death_date": "2300-01-01",
-            "wikipage": "/wiki/Princess_Elisabeth_of_Denmark",
-            "type": "courteous_figure"
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Princess_Elisabeth_of_Denmark"
         },
-        "2168": {
+        "Margrethe_II_1": {
+            "name": "Margrethe II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "DEN_Margrethe_II",
+            "start_date": "1960-04-16",
+            "death_date": "1999-12-31",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Margrethe_II_of_Denmark"
+        },
+        "Benedikte_I_1": {
+            "name": "Benedikte_I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "DEN_M_Benedikte_I",
+            "start_date": "1962-04-29",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Princess_Benedikte_of_Denmark"
+        },
+        "Lars_Chemnitz_1": {
             "name": "Lars Chemnitz",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -181,7 +141,7 @@
             "death_date": "1979-05-01",
             "type": "traditionalist_type"
         },
-        "2169": {
+        "Jonathan_Motzfeldt_1": {
             "name": "Jonathan Motzfeldt",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -190,7 +150,47 @@
             "death_date": "1991-03-18",
             "type": "controversial_figure"
         },
-        "2170": {
+        "Frederik_X_1": {
+            "name": "Frederik X",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "DEN_M_Frederik_X",
+            "start_date": "1986-05-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Frederik,_Crown_Prince_of_Denmark"
+        },
+        "Gustav_I_1": {
+            "name": "Gustav I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "DEN_M_Gustav_I",
+            "start_date": "1987-01-12",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Gustav,_Hereditary_Prince_of_Sayn-Wittgenstein-Berleburg"
+        },
+        "Joachim_I_1": {
+            "name": "Joachim I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "DEN_M_Joachim_I",
+            "start_date": "1987-06-07",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Prince_Joachim_of_Denmark"
+        },
+        "Alexandra_I_1": {
+            "name": "Alexandra I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "DEN_M_Alexandra_I",
+            "start_date": "1988-11-20",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure",
+            "wikipage": "/wiki/Princess_Alexandra_of_Sayn-Wittgenstein-Berleburg"
+        },
+        "Lars_Emil_Johansen_1": {
             "name": "Lars Emil Johansen",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,

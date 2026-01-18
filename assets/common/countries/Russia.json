@@ -1680,187 +1680,7 @@
         ]
     },
     "ministers": {
-        "4463": {
-            "name": "Iosif V. Stalin",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SOV_M_Stalin_Iosif_V",
-            "start_date": "1936-01-01",
-            "death_date": "1953-03-05",
-            "type": "dictator_type"
-        },
-        "4464": {
-            "name": "Georgiy M. Malenkov",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SOV_M_Malenkov_Georgiy_M",
-            "start_date": "1953-03-06",
-            "death_date": "1955-02-08",
-            "type": "hardliner_type"
-        },
-        "4465": {
-            "name": "Nikolay A. Bulganin",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SOV_M_Bulganin_Nikolay_A",
-            "start_date": "1955-02-08",
-            "death_date": "1958-03-27",
-            "type": "bureaucrat_type"
-        },
-        "4466": {
-            "name": "Nikita S. Khrushchev",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SOV_M_Khrushchev_Nikita_S",
-            "start_date": "1953-09-14",
-            "death_date": "1964-10-14",
-            "type": "reformer_type"
-        },
-        "4467": {
-            "name": "Leonid I. Brezhnev",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SOV_M_Brezhnev_Leonid_I",
-            "start_date": "1964-10-14",
-            "death_date": "1982-11-10",
-            "type": "hardliner_type"
-        },
-        "4468": {
-            "name": "Alexei N. Kosygin",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SOV_M_Kosygin_Alexei_N",
-            "start_date": "1964-10-15",
-            "death_date": "1980-10-23",
-            "type": "bureaucrat_type"
-        },
-        "4469": {
-            "name": "Yuri V. Andropov",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SOV_M_Andropov_Yuri_V",
-            "start_date": "1982-11-11",
-            "death_date": "1984-02-09",
-            "type": "hardliner_type"
-        },
-        "4470": {
-            "name": "Konstantin U. Chernenko",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SOV_M_Chernenko_Konstantin_U",
-            "start_date": "1984-02-10",
-            "death_date": "1985-03-10",
-            "type": "hardliner_type"
-        },
-        "4471": {
-            "name": "Nikolai A. Tikhonov",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SOV_M_Tikhonov_Nikolai_A",
-            "start_date": "1980-10-23",
-            "death_date": "1985-09-27",
-            "type": "autocrat_type"
-        },
-        "4472": {
-            "name": "Mikhail S. Gorbachev",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SOV_M_Gorbachev_Mikhail_S",
-            "start_date": "1985-03-10",
-            "death_date": "1991-08-24",
-            "type": "reformer_type"
-        },
-        "4473": {
-            "name": "Nikolai I. Ryzhkov",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "SOV_M_Ryzhkov_Nikolai_I",
-            "start_date": "1985-09-27",
-            "death_date": "1991-01-14",
-            "type": "bureaucrat_type"
-        },
-        "4474": {
-            "name": "Boris N. Yeltsin",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "RUS_M_Yeltsin_Boris_N",
-            "start_date": "1991-01-14",
-            "death_date": "1999-12-31",
-            "type": "democrat_type"
-        },
-        "4475": {
-            "name": "Konstantin V. Rodzaevsky",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "SOV_M_Rodzaevsky_Konstantin_V",
-            "start_date": "1946-01-01",
-            "death_date": "1946-08-30",
-            "type": "supreme_leader"
-        },
-        "4476": {
-            "name": "Anastasy Vonsyatsky",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Vonsyatsky_Anastasy",
-            "start_date": "1946-01-01",
-            "death_date": "1965-02-05",
-            "type": "extremist_type"
-        },
-        "4477": {
-            "name": "Andrey A. Vlasov",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Vlasov_Andrey_A",
-            "start_date": "1946-01-01",
-            "death_date": "1946-08-02",
-            "type": "democrat_type"
-        },
-        "4478": {
-            "name": "Irakly Tsereteli",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Tsereteli_Irakly",
-            "start_date": "1946-01-01",
-            "death_date": "1959-05-20",
-            "type": "hardliner_type"
-        },
-        "4479": {
-            "name": "Vladimir I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Vladimir_I",
-            "start_date": "1946-01-01",
-            "death_date": "1992-04-21",
-            "type": "traditionalist_type"
-        },
-        "4480": {
-            "name": "Nicholas III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.49,
-            "picture": "RUS_M_Nicholas_III",
-            "start_date": "1946-01-01",
-            "death_date": "1992-04-21",
-            "type": "autocrat_type"
-        },
-        "4481": {
-            "name": "Vladimir III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.48,
-            "picture": "RUS_M_Vladimir_III",
-            "start_date": "1938-10-12",
-            "death_date": "1992-04-21",
-            "type": "democrat_type"
-        },
-        "4482": {
-            "name": "Alexander Kerensky",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Kerensky_Alexander",
-            "start_date": "1917-07-21",
-            "death_date": "1970-06-11",
-            "type": "reformer_type"
-        },
-        "4483": {
+        "Viktor_Chernov_1": {
             "name": "Viktor Chernov",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -1869,115 +1689,7 @@
             "death_date": "1952-04-15",
             "type": "moral_type"
         },
-        "4484": {
-            "name": "Ivan Ilyin",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Ilyin_Ivan",
-            "start_date": "1918-01-01",
-            "death_date": "1954-12-21",
-            "type": "visionary_type"
-        },
-        "4485": {
-            "name": "Pavel Bermondt-Avalov",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Bermondt-Avalov_Pavel",
-            "start_date": "1919-01-01",
-            "death_date": "1974-01-27",
-            "type": "hardliner_type"
-        },
-        "4486": {
-            "name": "Aleksandr Rodzyanko",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Rodzyanko_Aleksandr",
-            "start_date": "1919-01-01",
-            "death_date": "1970-05-06",
-            "type": "traditionalist_type"
-        },
-        "4487": {
-            "name": "Vladimir Zhirinovsky",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Zhirinovsky_Vladimir",
-            "start_date": "1990-01-01",
-            "death_date": "2300-01-01",
-            "type": "controversial_figure"
-        },
-        "4488": {
-            "name": "Grigory Yavlinsky",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Yavlinsky_Grigory",
-            "start_date": "1990-01-01",
-            "death_date": "2300-01-01",
-            "type": "reformer_type"
-        },
-        "4489": {
-            "name": "Andrei Sakharov",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Sakharov_Andrei",
-            "start_date": "1967-07-21",
-            "death_date": "1989-12-14",
-            "type": "democrat_type"
-        },
-        "4490": {
-            "name": "Ariadna Tyrkova-Williams",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Tyrkova-Williams_Ariadna",
-            "start_date": "1917-03-17",
-            "death_date": "1962-01-12",
-            "type": "visionary_type"
-        },
-        "4491": {
-            "name": "Sofia Panina",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Panina_Sofia",
-            "start_date": "1917-03-12",
-            "death_date": "1956-01-01",
-            "type": "moral_type"
-        },
-        "4492": {
-            "name": "Anton Kartashev",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Kartashev_Anton",
-            "start_date": "1917-03-25",
-            "death_date": "1960-09-10",
-            "type": "religious_type"
-        },
-        "4493": {
-            "name": "Vasily Maklakov",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Maklakov_Vasily",
-            "start_date": "1917-03-12",
-            "death_date": "1957-07-15",
-            "type": "administrator_type"
-        },
-        "4494": {
-            "name": "Alexander Ivanovich Konovalov",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Konovalov_Alexander_I",
-            "start_date": "1917-03-17",
-            "death_date": "1949-01-28",
-            "type": "reputable_type"
-        },
-        "4495": {
-            "name": "Mikhail Tereshchenko",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Tereshchenko_Mikhail",
-            "start_date": "1917-03-17",
-            "death_date": "1956-04-01",
-            "type": "fortunate_type"
-        },
-        "4496": {
+        "Sergei_Prokopovich_1": {
             "name": "Sergei Prokopovich",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.5,
@@ -1986,7 +1698,70 @@
             "death_date": "1955-01-01",
             "type": "reformer_type"
         },
-        "4497": {
+        "Sofia_Panina_1": {
+            "name": "Sofia Panina",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Panina_Sofia",
+            "start_date": "1917-03-12",
+            "death_date": "1956-01-01",
+            "type": "moral_type"
+        },
+        "Vasily_Maklakov_1": {
+            "name": "Vasily Maklakov",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Maklakov_Vasily",
+            "start_date": "1917-03-12",
+            "death_date": "1957-07-15",
+            "type": "administrator_type"
+        },
+        "Alexander_Ivanovich_Konovalov_1": {
+            "name": "Alexander Ivanovich Konovalov",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Konovalov_Alexander_I",
+            "start_date": "1917-03-17",
+            "death_date": "1949-01-28",
+            "type": "reputable_type"
+        },
+        "Mikhail_Tereshchenko_1": {
+            "name": "Mikhail Tereshchenko",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Tereshchenko_Mikhail",
+            "start_date": "1917-03-17",
+            "death_date": "1956-04-01",
+            "type": "fortunate_type"
+        },
+        "Ariadna_TyrkovaWilliams_1": {
+            "name": "Ariadna Tyrkova-Williams",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Tyrkova-Williams_Ariadna",
+            "start_date": "1917-03-17",
+            "death_date": "1962-01-12",
+            "type": "visionary_type"
+        },
+        "Anton_Kartashev_1": {
+            "name": "Anton Kartashev",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Kartashev_Anton",
+            "start_date": "1917-03-25",
+            "death_date": "1960-09-10",
+            "type": "religious_type"
+        },
+        "Alexander_Kerensky_1": {
+            "name": "Alexander Kerensky",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Kerensky_Alexander",
+            "start_date": "1917-07-21",
+            "death_date": "1970-06-11",
+            "type": "reformer_type"
+        },
+        "Grigory_Semyonov_1": {
             "name": "Grigory Semyonov",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -1995,7 +1770,34 @@
             "death_date": "1946-08-30",
             "type": "traditionalist_type"
         },
-        "4498": {
+        "Ivan_Ilyin_1": {
+            "name": "Ivan Ilyin",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Ilyin_Ivan",
+            "start_date": "1918-01-01",
+            "death_date": "1954-12-21",
+            "type": "visionary_type"
+        },
+        "Aleksandr_Rodzyanko_1": {
+            "name": "Aleksandr Rodzyanko",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Rodzyanko_Aleksandr",
+            "start_date": "1919-01-01",
+            "death_date": "1970-05-06",
+            "type": "traditionalist_type"
+        },
+        "Pavel_BermondtAvalov_1": {
+            "name": "Pavel Bermondt-Avalov",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Bermondt-Avalov_Pavel",
+            "start_date": "1919-01-01",
+            "death_date": "1974-01-27",
+            "type": "hardliner_type"
+        },
+        "Lev_Okhotin_1": {
             "name": "Lev Okhotin",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
@@ -2004,25 +1806,25 @@
             "death_date": "1948-06-15",
             "type": "hardliner_type"
         },
-        "4499": {
-            "name": "Dmitry Vasilyev",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Vasilyev_Dmitry",
-            "start_date": "1980-01-01",
-            "death_date": "2003-07-13",
-            "type": "controversial_figure"
+        "Iosif_V_Stalin_1": {
+            "name": "Iosif V. Stalin",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Stalin_Iosif_V",
+            "start_date": "1936-01-01",
+            "death_date": "1953-03-05",
+            "type": "supreme_leader"
         },
-        "4500": {
-            "name": "Alexander Barkashov",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Barkashov_Alexander",
-            "start_date": "1985-01-01",
-            "death_date": "2300-01-01",
-            "type": "extremist_type"
+        "Vladimir_III_1": {
+            "name": "Vladimir III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.48,
+            "picture": "RUS_M_Vladimir_III",
+            "start_date": "1938-10-12",
+            "death_date": "1992-04-21",
+            "type": "democrat_type"
         },
-        "4501": {
+        "Boris_Smyslovsky_1": {
             "name": "Boris Smyslovsky",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -2031,97 +1833,7 @@
             "death_date": "1988-09-05",
             "type": "courageous_type"
         },
-        "4502": {
-            "name": "Alexander Lvovich Kazembek",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Kazembek_Alexander_L",
-            "start_date": "1944-01-01",
-            "death_date": "1977-02-21",
-            "type": "traditionalist_type"
-        },
-        "4503": {
-            "name": "Geydar Dzhemal",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Dzhemal_Geydar",
-            "start_date": "1979-01-01",
-            "death_date": "2300-01-01",
-            "type": "religious_type"
-        },
-        "4504": {
-            "name": "Georgy K. Zhukov",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Zhukov_Georgy_K",
-            "start_date": "1955-02-09",
-            "death_date": "1967-12-25",
-            "type": "ambitious_type"
-        },
-        "4505": {
-            "name": "Yuri A. Gagarin",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Gagarin_Yuri_A",
-            "start_date": "1961-01-01",
-            "death_date": "1968-03-27",
-            "type": "visionary_type"
-        },
-        "4506": {
-            "name": "Svetlana I. Alliluyeva",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Alliluyeva_Svetlana_I",
-            "start_date": "1945-01-01",
-            "death_date": "2011-11-22",
-            "type": "controversial_figure"
-        },
-        "4507": {
-            "name": "Vasily I. Stalin",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Stalin_Vasily_I",
-            "start_date": "1945-01-01",
-            "death_date": "1962-03-19",
-            "type": "fortunate_type"
-        },
-        "4508": {
-            "name": "Yevgeny Y. Dzhugashvili",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Dzhugashvili_Yevgeny_Y",
-            "start_date": "1959-07-26",
-            "death_date": "2300-01-01",
-            "type": "hardliner_type"
-        },
-        "4509": {
-            "name": "Galina Y. Dzhugashvili",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Dzhugashvili_Galina_Y",
-            "start_date": "1959-07-26",
-            "death_date": "2007-08-27",
-            "type": "extremist_type"
-        },
-        "4510": {
-            "name": "Joseph G. Alliluyev",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Alliluyev_Joseph_G",
-            "start_date": "1967-01-01",
-            "death_date": "2008-11-02",
-            "type": "extremist_type"
-        },
-        "4511": {
-            "name": "Yuri A. Zhdanov",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "RUS_M_Zhdanov_Yuri_A",
-            "start_date": "1949-01-01",
-            "death_date": "2006-12-19",
-            "type": "administrator_type"
-        },
-        "4512": {
+        "Andrei_A_Zhdanov_1": {
             "name": "Andrei A. Zhdanov",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -2130,7 +1842,214 @@
             "death_date": "1948-08-31",
             "type": "ambitious_type"
         },
-        "4513": {
+        "Alexander_Lvovich_Kazembek_1": {
+            "name": "Alexander Lvovich Kazembek",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Kazembek_Alexander_L",
+            "start_date": "1944-01-01",
+            "death_date": "1977-02-21",
+            "type": "traditionalist_type"
+        },
+        "Vasily_I_Stalin_1": {
+            "name": "Vasily I. Stalin",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Stalin_Vasily_I",
+            "start_date": "1945-01-01",
+            "death_date": "1962-03-19",
+            "type": "fortunate_type"
+        },
+        "Svetlana_I_Alliluyeva_1": {
+            "name": "Svetlana I. Alliluyeva",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Alliluyeva_Svetlana_I",
+            "start_date": "1945-01-01",
+            "death_date": "2011-11-22",
+            "type": "controversial_figure"
+        },
+        "Andrey_A_Vlasov_1": {
+            "name": "Andrey A. Vlasov",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Vlasov_Andrey_A",
+            "start_date": "1946-01-01",
+            "death_date": "1946-08-02",
+            "type": "democrat_type"
+        },
+        "Konstantin_V_Rodzaevsky_1": {
+            "name": "Konstantin V. Rodzaevsky",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "SOV_M_Rodzaevsky_Konstantin_V",
+            "start_date": "1946-01-01",
+            "death_date": "1946-08-30",
+            "type": "dictator_type"
+        },
+        "Irakly_Tsereteli_1": {
+            "name": "Irakly Tsereteli",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Tsereteli_Irakly",
+            "start_date": "1946-01-01",
+            "death_date": "1959-05-20",
+            "type": "hardliner_type"
+        },
+        "Anastasy_Vonsyatsky_1": {
+            "name": "Anastasy Vonsyatsky",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Vonsyatsky_Anastasy",
+            "start_date": "1946-01-01",
+            "death_date": "1965-02-05",
+            "type": "extremist_type"
+        },
+        "Vladimir_I_1": {
+            "name": "Vladimir I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Vladimir_I",
+            "start_date": "1946-01-01",
+            "death_date": "1992-04-21",
+            "type": "traditionalist_type"
+        },
+        "Nicholas_III_1": {
+            "name": "Nicholas III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.49,
+            "picture": "RUS_M_Nicholas_III",
+            "start_date": "1946-01-01",
+            "death_date": "1992-04-21",
+            "type": "autocrat_type"
+        },
+        "Yuri_A_Zhdanov_1": {
+            "name": "Yuri A. Zhdanov",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Zhdanov_Yuri_A",
+            "start_date": "1949-01-01",
+            "death_date": "2006-12-19",
+            "type": "administrator_type"
+        },
+        "Georgiy_M_Malenkov_1": {
+            "name": "Georgiy M. Malenkov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Malenkov_Georgiy_M",
+            "start_date": "1953-03-06",
+            "death_date": "1988-01-14",
+            "type": "hardliner_type"
+        },
+        "Nikita_S_Khrushchev_1": {
+            "name": "Nikita S. Khrushchev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Khrushchev_Nikita_S",
+            "start_date": "1953-09-14",
+            "death_date": "1964-10-14",
+            "type": "reformer_type"
+        },
+        "Nikolay_A_Bulganin_1": {
+            "name": "Nikolay A. Bulganin",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Bulganin_Nikolay_A",
+            "start_date": "1955-02-08",
+            "death_date": "1975-02-24",
+            "type": "bureaucrat_type"
+        },
+        "Georgy_K_Zhukov_1": {
+            "name": "Georgy K. Zhukov",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Zhukov_Georgy_K",
+            "start_date": "1955-02-09",
+            "death_date": "1967-12-25",
+            "type": "ambitious_type"
+        },
+        "Galina_Y_Dzhugashvili_1": {
+            "name": "Galina Y. Dzhugashvili",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Dzhugashvili_Galina_Y",
+            "start_date": "1959-07-26",
+            "death_date": "2007-08-27",
+            "type": "extremist_type"
+        },
+        "Yevgeny_Y_Dzhugashvili_1": {
+            "name": "Yevgeny Y. Dzhugashvili",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Dzhugashvili_Yevgeny_Y",
+            "start_date": "1959-07-26",
+            "death_date": "2300-01-01",
+            "type": "hardliner_type"
+        },
+        "Yuri_A_Gagarin_1": {
+            "name": "Yuri A. Gagarin",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Gagarin_Yuri_A",
+            "start_date": "1961-01-01",
+            "death_date": "1968-03-27",
+            "type": "visionary_type"
+        },
+        "Leonid_I_Brezhnev_1": {
+            "name": "Leonid I. Brezhnev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Brezhnev_Leonid_I",
+            "start_date": "1964-10-14",
+            "death_date": "1982-11-10",
+            "type": "hardliner_type"
+        },
+        "Alexei_N_Kosygin_1": {
+            "name": "Alexei N. Kosygin",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Kosygin_Alexei_N",
+            "start_date": "1964-10-15",
+            "death_date": "1980-10-23",
+            "type": "bureaucrat_type"
+        },
+        "Joseph_G_Alliluyev_1": {
+            "name": "Joseph G. Alliluyev",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Alliluyev_Joseph_G",
+            "start_date": "1967-01-01",
+            "death_date": "2008-11-02",
+            "type": "extremist_type"
+        },
+        "Andrei_Sakharov_1": {
+            "name": "Andrei Sakharov",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Sakharov_Andrei",
+            "start_date": "1967-07-21",
+            "death_date": "1989-12-14",
+            "type": "democrat_type"
+        },
+        "Geydar_Dzhemal_1": {
+            "name": "Geydar Dzhemal",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Dzhemal_Geydar",
+            "start_date": "1979-01-01",
+            "death_date": "2300-01-01",
+            "type": "religious_type"
+        },
+        "Dmitry_Vasilyev_1": {
+            "name": "Dmitry Vasilyev",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Vasilyev_Dmitry",
+            "start_date": "1980-01-01",
+            "death_date": "2003-07-13",
+            "type": "controversial_figure"
+        },
+        "Alexander_Shumyatsky_1": {
             "name": "Alexander Shumyatsky",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,
@@ -2139,13 +2058,94 @@
             "death_date": "2031-07-21",
             "type": "zealous_type"
         },
-        "4514": {
+        "Nikolai_A_Tikhonov_1": {
+            "name": "Nikolai A. Tikhonov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Tikhonov_Nikolai_A",
+            "start_date": "1980-10-23",
+            "death_date": "1985-09-27",
+            "type": "autocrat_type"
+        },
+        "Yuri_V_Andropov_1": {
+            "name": "Yuri V. Andropov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Andropov_Yuri_V",
+            "start_date": "1982-11-11",
+            "death_date": "1984-02-09",
+            "type": "hardliner_type"
+        },
+        "Konstantin_U_Chernenko_1": {
+            "name": "Konstantin U. Chernenko",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Chernenko_Konstantin_U",
+            "start_date": "1984-02-10",
+            "death_date": "1985-03-10",
+            "type": "hardliner_type"
+        },
+        "Alexander_Barkashov_1": {
+            "name": "Alexander Barkashov",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Barkashov_Alexander",
+            "start_date": "1985-01-01",
+            "death_date": "2300-01-01",
+            "type": "extremist_type"
+        },
+        "Mikhail_S_Gorbachev_1": {
+            "name": "Mikhail S. Gorbachev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Gorbachev_Mikhail_S",
+            "start_date": "1985-03-10",
+            "death_date": "1991-08-24",
+            "type": "reformer_type"
+        },
+        "Nikolai_I_Ryzhkov_1": {
+            "name": "Nikolai I. Ryzhkov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Ryzhkov_Nikolai_I",
+            "start_date": "1985-09-27",
+            "death_date": "1991-01-14",
+            "type": "bureaucrat_type"
+        },
+        "Vladimir_Zhirinovsky_1": {
+            "name": "Vladimir Zhirinovsky",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Zhirinovsky_Vladimir",
+            "start_date": "1990-01-01",
+            "death_date": "2300-01-01",
+            "type": "controversial_figure"
+        },
+        "Grigory_Yavlinsky_1": {
+            "name": "Grigory Yavlinsky",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "RUS_M_Yavlinsky_Grigory",
+            "start_date": "1990-01-01",
+            "death_date": "2300-01-01",
+            "type": "reformer_type"
+        },
+        "Garry_Kasparov_1": {
             "name": "Garry Kasparov",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
             "picture": "RUS_M_Kasparov_Garry",
             "start_date": "1990-01-01",
             "death_date": "2300-01-01",
+            "type": "democrat_type"
+        },
+        "Boris_N_Yeltsin_1": {
+            "name": "Boris N. Yeltsin",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "RUS_M_Yeltsin_Boris_N",
+            "start_date": "1991-01-14",
+            "death_date": "1999-12-31",
             "type": "democrat_type"
         }
     }

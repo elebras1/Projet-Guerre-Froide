@@ -78,106 +78,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "5497": {
-            "name": "Nikita S. Khrushchev",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "SOV_M_Khrushchev_Nikita_S",
-            "start_date": "1938-01-27",
-            "death_date": "1949-01-28",
-            "type": "reformer_type"
-        },
-        "5498": {
-            "name": "Lazar M. Kaganovich",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Kaganovich_Lazar_M",
-            "start_date": "1947-03-03",
-            "death_date": "1947-12-26",
-            "type": "extremist_type"
-        },
-        "5499": {
-            "name": "Leonid G. Melnikov",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Melnikov_Leonid",
-            "start_date": "1949-12-16",
-            "death_date": "1953-06-04",
-            "type": "hardliner_type"
-        },
-        "5500": {
-            "name": "Aleksey I. Kirichenko",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Kirichenko_Aleksey_I",
-            "start_date": "1953-06-04",
-            "death_date": "1957-12-26",
-            "type": "bureaucrat_type"
-        },
-        "5501": {
-            "name": "Nikolay V. Podgorny",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Podgorny_Nikolay_V",
-            "start_date": "1957-12-26",
-            "death_date": "1963-07-02",
-            "type": "liberal_type"
-        },
-        "5502": {
-            "name": "Petro Y. Shelest",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Shelest_Petro_Y",
-            "start_date": "1963-07-02",
-            "death_date": "1972-05-25",
-            "type": "fortunate_type"
-        },
-        "5503": {
-            "name": "Vladimir Vasilyevich Shcherbitsky",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Shcherbitsky_Vladimir_V",
-            "start_date": "1972-05-25",
-            "death_date": "1989-09-28",
-            "type": "hardliner_type"
-        },
-        "5504": {
-            "name": "Vladimir A. Ivashko",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Ivashko_Vladimir_A",
-            "start_date": "1989-09-28",
-            "death_date": "1990-06-23",
-            "type": "administrator_type"
-        },
-        "5505": {
-            "name": "Stanislav I. Hurenko",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Hurenko_Stanislav_I",
-            "start_date": "1990-06-23",
-            "death_date": "2013-04-14",
-            "type": "lethargic_type"
-        },
-        "5506": {
-            "name": "Leonid M. Kravchuk",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Kravchuk_Leonid_M",
-            "start_date": "1991-09-01",
-            "death_date": "1994-07-19",
-            "type": "democrat_type"
-        },
-        "5507": {
-            "name": "Leonid D. Kuchma",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Kuchma_Leonid_D",
-            "start_date": "1990-01-01",
-            "death_date": "2005-01-23",
-            "type": "controversial_figure"
-        },
-        "5508": {
+        "Andrii_Livytsky_1": {
             "name": "Andrii Livytsky",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -186,7 +87,7 @@
             "death_date": "1954-01-17",
             "type": "courageous_type"
         },
-        "5509": {
+        "Stepan_Wytwycky_1": {
             "name": "Stepan Wytwycky",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -195,25 +96,7 @@
             "death_date": "1965-10-09",
             "type": "reputable_type"
         },
-        "5510": {
-            "name": "Mykola Livytsky",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Livytsky_Mykola",
-            "start_date": "1965-10-09",
-            "death_date": "1989-12-08",
-            "type": "bureaucrat_type"
-        },
-        "5511": {
-            "name": "Mykola Plaviuk",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "UKR_M_Plaviuk_Mykola",
-            "start_date": "1989-12-08",
-            "death_date": "1992-08-22",
-            "type": "courteous_figure"
-        },
-        "5512": {
+        "Andrii_Yakovliv_1": {
             "name": "Andrii Yakovliv",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -222,7 +105,7 @@
             "death_date": "1945-01-01",
             "type": "administrator_type"
         },
-        "5513": {
+        "Kost_Pankivsky_1": {
             "name": "Kost Pankivsky",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -231,7 +114,16 @@
             "death_date": "1948-07-19",
             "type": "traditionalist_type"
         },
-        "5514": {
+        "Lazar_M_Kaganovich_2": {
+            "name": "Lazar M. Kaganovich",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Kaganovich_Lazar_M",
+            "start_date": "1947-03-03",
+            "death_date": "1947-12-26",
+            "type": "extremist_type"
+        },
+        "Isaak_Mazepa_1": {
             "name": "Isaak Mazepa",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -240,7 +132,16 @@
             "death_date": "1952-01-01",
             "type": "democrat_type"
         },
-        "5515": {
+        "Leonid_G_Melnikov_1": {
+            "name": "Leonid G. Melnikov",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Melnikov_Leonid",
+            "start_date": "1949-12-16",
+            "death_date": "1953-06-04",
+            "type": "hardliner_type"
+        },
+        "Stepan_Baran_1": {
             "name": "Stepan Baran",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -249,7 +150,16 @@
             "death_date": "1953-06-04",
             "type": "administrator_type"
         },
-        "5516": {
+        "Aleksey_I_Kirichenko_1": {
+            "name": "Aleksey I. Kirichenko",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Kirichenko_Aleksey_I",
+            "start_date": "1953-06-04",
+            "death_date": "1957-12-26",
+            "type": "bureaucrat_type"
+        },
+        "Spyrydon_Dovhal_1": {
             "name": "Spyrydon Dovhal",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -258,7 +168,16 @@
             "death_date": "1972-01-01",
             "type": "liberal_type"
         },
-        "5517": {
+        "Nikita_S_Khrushchev_1": {
+            "name": "Nikita S. Khrushchev",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "SOV_M_Khrushchev_Nikita_S",
+            "start_date": "1953-09-14",
+            "death_date": "1964-10-14",
+            "type": "reformer_type"
+        },
+        "Symon_Sozontiv_1": {
             "name": "Symon Sozontiv",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -267,7 +186,7 @@
             "death_date": "1957-01-01",
             "type": "lethargic_type"
         },
-        "5518": {
+        "Mykola_Livytskyi_1": {
             "name": "Mykola Livytskyi",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -276,7 +195,34 @@
             "death_date": "1967-01-01",
             "type": "traditionalist_type"
         },
-        "5519": {
+        "Nikolay_V_Podgorny_1": {
+            "name": "Nikolay V. Podgorny",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Podgorny_Nikolay_V",
+            "start_date": "1957-12-26",
+            "death_date": "1963-07-02",
+            "type": "liberal_type"
+        },
+        "Petro_Y_Shelest_1": {
+            "name": "Petro Y. Shelest",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Shelest_Petro_Y",
+            "start_date": "1963-07-02",
+            "death_date": "1972-05-25",
+            "type": "fortunate_type"
+        },
+        "Mykola_Livytsky_1": {
+            "name": "Mykola Livytsky",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Livytsky_Mykola",
+            "start_date": "1965-10-09",
+            "death_date": "1989-12-08",
+            "type": "bureaucrat_type"
+        },
+        "Atanas_Figol_1": {
             "name": "Atanas Figol",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -285,7 +231,7 @@
             "death_date": "1969-01-01",
             "type": "bureaucrat_type"
         },
-        "5520": {
+        "Vasyl_Fedoronchuk_1": {
             "name": "Vasyl Fedoronchuk",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -294,7 +240,16 @@
             "death_date": "1974-01-01",
             "type": "liberal_type"
         },
-        "5521": {
+        "Vladimir_Vasilyevich_Shcherbitsky_1": {
+            "name": "Vladimir Vasilyevich Shcherbitsky",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Shcherbitsky_Vladimir_V",
+            "start_date": "1972-05-25",
+            "death_date": "1989-09-28",
+            "type": "hardliner_type"
+        },
+        "Teofil_Leontiy_1": {
             "name": "Teofil Leontiy",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -303,7 +258,7 @@
             "death_date": "1980-01-01",
             "type": "democrat_type"
         },
-        "5522": {
+        "Yaroslav_B_Rudnycky_1": {
             "name": "Yaroslav B. Rudnycky",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -312,7 +267,16 @@
             "death_date": "1989-12-08",
             "type": "administrator_type"
         },
-        "5523": {
+        "Vladimir_A_Ivashko_1": {
+            "name": "Vladimir A. Ivashko",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Ivashko_Vladimir_A",
+            "start_date": "1989-09-28",
+            "death_date": "1990-06-23",
+            "type": "administrator_type"
+        },
+        "Ivan_Samiylenko_1": {
             "name": "Ivan Samiylenko",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -320,6 +284,42 @@
             "start_date": "1989-12-08",
             "death_date": "1992-01-01",
             "type": "reformer_type"
+        },
+        "Mykola_Plaviuk_1": {
+            "name": "Mykola Plaviuk",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Plaviuk_Mykola",
+            "start_date": "1989-12-08",
+            "death_date": "1992-08-22",
+            "type": "courteous_figure"
+        },
+        "Leonid_D_Kuchma_1": {
+            "name": "Leonid D. Kuchma",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Kuchma_Leonid_D",
+            "start_date": "1990-01-01",
+            "death_date": "2005-01-23",
+            "type": "controversial_figure"
+        },
+        "Stanislav_I_Hurenko_1": {
+            "name": "Stanislav I. Hurenko",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Hurenko_Stanislav_I",
+            "start_date": "1990-06-23",
+            "death_date": "2013-04-14",
+            "type": "lethargic_type"
+        },
+        "Leonid_M_Kravchuk_1": {
+            "name": "Leonid M. Kravchuk",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "UKR_M_Kravchuk_Leonid_M",
+            "start_date": "1991-09-01",
+            "death_date": "1994-07-19",
+            "type": "democrat_type"
         }
     }
 }

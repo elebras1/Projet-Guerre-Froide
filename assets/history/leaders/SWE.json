@@ -1,887 +1,887 @@
 {
-  "country": "SWE",
-  "leaders": {
-    "44516": {
-      "name": "Thorbjörn Larsson",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "44517": {
-      "name": "Staffan Lundgren",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44518": {
-      "name": "Gunnar Holmberg",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "44519": {
-      "name": "Olov Martinsson",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44520": {
-      "name": "Jöran Dahl",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44521": {
-      "name": "Sebastian Sjöberg",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "winter_specialist"
-    },
-    "44522": {
-      "name": "Alfred Pettersson",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44523": {
-      "name": "Jacob Berg",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44524": {
-      "name": "Ralf Johnsson",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44525": {
-      "name": "Emil Åström",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44526": {
-      "name": "Jöns Berg",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44527": {
-      "name": "Agne Gunnarsson",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "44528": {
-      "name": "Kevin Jansson",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44529": {
-      "name": "Joakim Ek",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "44530": {
-      "name": "Ola Öberg",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44531": {
-      "name": "Mattias Bengtsson",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44532": {
-      "name": "Rolf Lund",
-      "skill": 6,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "44533": {
-      "name": "Kasper Nyman",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "44534": {
-      "name": "Elia Eliasson",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "44535": {
-      "name": "Ragnar Olofsson",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44536": {
-      "name": "Robin Gunnarsson",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "44537": {
-      "name": "Gösta Jönsson",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44538": {
-      "name": "Adolf Nordström",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44539": {
-      "name": "Sture Åberg",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44540": {
-      "name": "Pål Lindgren",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "44541": {
-      "name": "Jesper Johansson",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "44542": {
-      "name": "Rune Fransson",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44543": {
-      "name": "Fabian Lundström",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44544": {
-      "name": "Pär Bergqvist",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44545": {
-      "name": "Benjamin Wallin",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44546": {
-      "name": "Rafael Andreasson",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "44547": {
-      "name": "Valter Dahl",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44548": {
-      "name": "Rikard Nordström",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "44549": {
-      "name": "Moses Lindholm",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "44550": {
-      "name": "Bert Nyström",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44551": {
-      "name": "Curt Åkesson",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44552": {
-      "name": "Daniel Gustavsson",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44553": {
-      "name": "Willy Johansson",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44554": {
-      "name": "Nicklas Mårtensson",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44555": {
-      "name": "Hektor Björklund",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "44556": {
-      "name": "Petter Blom",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44557": {
-      "name": "Arnold Sandberg",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44558": {
-      "name": "Wilhelm Lindberg",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44559": {
-      "name": "Uno Lindberg",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "44560": {
-      "name": "Harald Nilsson",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "44561": {
-      "name": "Albert Lindgren",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "44562": {
-      "name": "Ivar Lundberg",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44563": {
-      "name": "Alexander Åkesson",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "44564": {
-      "name": "Oscar Ek",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44565": {
-      "name": "Petter Berg",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44566": {
-      "name": "Matts Lundström",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44567": {
-      "name": "Gert Danielsson",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "44568": {
-      "name": "Viking Larsson",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44569": {
-      "name": "Harry Björk",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "44570": {
-      "name": "Svantepolk Dahlberg",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "44571": {
-      "name": "Evald Karlsson",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "panzer_leader"
-    },
-    "44572": {
-      "name": "Gert Jönsson",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44573": {
-      "name": "Kaj Holmgren",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "44574": {
-      "name": "Arnold Johansson",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44575": {
-      "name": "Nicklas Ström",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44576": {
-      "name": "Holger Ivarsson",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "44577": {
-      "name": "Charles Lind",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44578": {
-      "name": "Ingemar Petersson",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44579": {
-      "name": "Karl Gustafsson",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44580": {
-      "name": "Alex Nyberg",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "44581": {
-      "name": "Kevin Jonsson",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44582": {
-      "name": "Tobias Engström",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44583": {
-      "name": "Gandalf Åberg",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44584": {
-      "name": "Kenneth Sjögren",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44585": {
-      "name": "Gerhard Holmgren",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "44586": {
-      "name": "Hektor Larsson",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "44587": {
-      "name": "Enar Eriksson",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44588": {
-      "name": "Fredrik Öberg",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44589": {
-      "name": "Anton Arvidsson",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44590": {
-      "name": "Herman Göransson",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "44591": {
-      "name": "Josef Lindholm",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44592": {
-      "name": "Mickael Engström",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44593": {
-      "name": "Kim Månsson",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "44594": {
-      "name": "Set Mattsson",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44595": {
-      "name": "Matteus Berggren",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "44596": {
-      "name": "Dag Söderström",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44597": {
-      "name": "Torsten Lindström",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44598": {
-      "name": "Elia Nyström",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "44599": {
-      "name": "Arne Strömberg",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "44600": {
-      "name": "Kenneth Sandberg",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44601": {
-      "name": "Carl Jönsson",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44602": {
-      "name": "Gabriel Björk",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44603": {
-      "name": "Kenth Lindholm",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "seawolf"
-    },
-    "44604": {
-      "name": "Alex Sundström",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44605": {
-      "name": "Bernt Persson",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44606": {
-      "name": "Kent Engström",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44607": {
-      "name": "Set Lindgren",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44608": {
-      "name": "Jarl Axelsson",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44609": {
-      "name": "Örn Lundberg",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "blockade_runner"
-    },
-    "44610": {
-      "name": "Ulrik Jonasson",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44611": {
-      "name": "Frank Nilsson",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44612": {
-      "name": "Pär Lundin",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44613": {
-      "name": "Adolf Mårtensson",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44614": {
-      "name": "Elmer Nordström",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44615": {
-      "name": "Julius Lund",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44616": {
-      "name": "Melker Bergqvist",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44617": {
-      "name": "Rasmus Abrahamsson",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44618": {
-      "name": "Gandalf Fredriksson",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44619": {
-      "name": "Pål Söderberg",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "seawolf"
-    },
-    "44620": {
-      "name": "Victor Berglund",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44621": {
-      "name": "Sören Blom",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "44622": {
-      "name": "Dick Fransson",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44623": {
-      "name": "Bertil Hedlund",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "44624": {
-      "name": "Tore Åkesson",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44625": {
-      "name": "Jöran Karlsson",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44626": {
-      "name": "Pär Pettersson",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44627": {
-      "name": "Seth Carlsson",
-      "skill": 6,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "44628": {
-      "name": "Reine Persson",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "44629": {
-      "name": "Roy Samuelsson",
-      "skill": 5,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44630": {
-      "name": "Torvald Jönsson",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44631": {
-      "name": "Waldemar Hedlund",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44632": {
-      "name": "Mattias Söderström",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "44633": {
-      "name": "Martin Sjöberg",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44634": {
-      "name": "Christian Andreasson",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "44635": {
-      "name": "Christer Arvidsson",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44636": {
-      "name": "Frans Isaksson",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44637": {
-      "name": "Tore Nordström",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44638": {
-      "name": "Torsten Magnusson",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44639": {
-      "name": "Engelbrekt Jönsson",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "tank_buster"
-    },
-    "44640": {
-      "name": "Kenny Lindholm",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44641": {
-      "name": "Albert Bengtsson",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44642": {
-      "name": "Kristoffer Åberg",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44643": {
-      "name": "Torbjörn Nyström",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44644": {
-      "name": "Love Nyman",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44645": {
-      "name": "Wilhelm Karlsson",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "44646": {
-      "name": "Hans Lindholm",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "44647": {
-      "name": "Eric Karlsson",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "44648": {
-      "name": "Konrad Ivarsson",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44649": {
-      "name": "Morgan Månsson",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44650": {
-      "name": "Bror Larsson",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "44651": {
-      "name": "Paul Bergqvist",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44652": {
-      "name": "Olaus Holmberg",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44653": {
-      "name": "Kristofer Nordin",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "44654": {
-      "name": "August Wallin",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "44655": {
-      "name": "Roger Svensson",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44656": {
-      "name": "Öste Jonasson",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44657": {
-      "name": "Mathias Hedlund",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "fleet_destroyer"
-    },
-    "44658": {
-      "name": "Oliver Nyman",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44659": {
-      "name": "Thomas Sandberg",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "44660": {
-      "name": "Curt Jonasson",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44661": {
-      "name": "Hektor Bergqvist",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "44662": {
-      "name": "Set Sundström",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    }
-  }
+    "country": "SWE",
+    "leaders": [
+        {
+            "name": "Thorbjörn Larsson",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Staffan Lundgren",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Gunnar Holmberg",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Olov Martinsson",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jöran Dahl",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Sebastian Sjöberg",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "winter_specialist"
+        },
+        {
+            "name": "Alfred Pettersson",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jacob Berg",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ralf Johnsson",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Emil Åström",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jöns Berg",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Agne Gunnarsson",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Kevin Jansson",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Joakim Ek",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Ola Öberg",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Mattias Bengtsson",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Rolf Lund",
+            "skill": 6,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Kasper Nyman",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Elia Eliasson",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Ragnar Olofsson",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Robin Gunnarsson",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Gösta Jönsson",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Adolf Nordström",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Sture Åberg",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Pål Lindgren",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Jesper Johansson",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Rune Fransson",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Fabian Lundström",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Pär Bergqvist",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Benjamin Wallin",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Rafael Andreasson",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Valter Dahl",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Rikard Nordström",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Moses Lindholm",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Bert Nyström",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Curt Åkesson",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Daniel Gustavsson",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Willy Johansson",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Nicklas Mårtensson",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hektor Björklund",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Petter Blom",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Arnold Sandberg",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wilhelm Lindberg",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Uno Lindberg",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Harald Nilsson",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Albert Lindgren",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Ivar Lundberg",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Alexander Åkesson",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Oscar Ek",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Petter Berg",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Matts Lundström",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Gert Danielsson",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Viking Larsson",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Harry Björk",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Svantepolk Dahlberg",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Evald Karlsson",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "panzer_leader"
+        },
+        {
+            "name": "Gert Jönsson",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kaj Holmgren",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Arnold Johansson",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Nicklas Ström",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Holger Ivarsson",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Charles Lind",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ingemar Petersson",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Karl Gustafsson",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Alex Nyberg",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Kevin Jonsson",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tobias Engström",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Gandalf Åberg",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kenneth Sjögren",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Gerhard Holmgren",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Hektor Larsson",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Enar Eriksson",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Fredrik Öberg",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Anton Arvidsson",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Herman Göransson",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Josef Lindholm",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Mickael Engström",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kim Månsson",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Set Mattsson",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Matteus Berggren",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Dag Söderström",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Torsten Lindström",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Elia Nyström",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Arne Strömberg",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Kenneth Sandberg",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Carl Jönsson",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Gabriel Björk",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Kenth Lindholm",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "seawolf"
+        },
+        {
+            "name": "Alex Sundström",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Bernt Persson",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Kent Engström",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Set Lindgren",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Jarl Axelsson",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Örn Lundberg",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "blockade_runner"
+        },
+        {
+            "name": "Ulrik Jonasson",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Frank Nilsson",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Pär Lundin",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Adolf Mårtensson",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Elmer Nordström",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Julius Lund",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Melker Bergqvist",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Rasmus Abrahamsson",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Gandalf Fredriksson",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Pål Söderberg",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "seawolf"
+        },
+        {
+            "name": "Victor Berglund",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Sören Blom",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Dick Fransson",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Bertil Hedlund",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Tore Åkesson",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Jöran Karlsson",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Pär Pettersson",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Seth Carlsson",
+            "skill": 6,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Reine Persson",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Roy Samuelsson",
+            "skill": 5,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Torvald Jönsson",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Waldemar Hedlund",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Mattias Söderström",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Martin Sjöberg",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Christian Andreasson",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Christer Arvidsson",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Frans Isaksson",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Tore Nordström",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Torsten Magnusson",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Engelbrekt Jönsson",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "tank_buster"
+        },
+        {
+            "name": "Kenny Lindholm",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Albert Bengtsson",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Kristoffer Åberg",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Torbjörn Nyström",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Love Nyman",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Wilhelm Karlsson",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Hans Lindholm",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Eric Karlsson",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Konrad Ivarsson",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Morgan Månsson",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Bror Larsson",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Paul Bergqvist",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Olaus Holmberg",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Kristofer Nordin",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "August Wallin",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Roger Svensson",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Öste Jonasson",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Mathias Hedlund",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "fleet_destroyer"
+        },
+        {
+            "name": "Oliver Nyman",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Thomas Sandberg",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Curt Jonasson",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Hektor Bergqvist",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Set Sundström",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        }
+    ]
 }

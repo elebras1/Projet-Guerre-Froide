@@ -86,430 +86,7 @@
         ]
     },
     "ministers": {
-        "2510": {
-            "name": "Georges L. M. Thierry d'Argenlieu",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "IDC_M_Thierry_dArgenlieu_Georges_L_M",
-            "start_date": "1945-10-31",
-            "death_date": "1947-04-01",
-            "type": "autocrat_type"
-        },
-        "2511": {
-            "name": "Émile Bollaert",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "IDC_M_Bollaert_Emile",
-            "start_date": "1947-04-01",
-            "death_date": "1948-10-20",
-            "type": "bureaucrat_type"
-        },
-        "2512": {
-            "name": "Léon M. A. P. Pignon",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "IDC_M_Pignon_Leon_M_A_P",
-            "start_date": "1948-10-20",
-            "death_date": "1950-12-17",
-            "type": "bureaucrat_type"
-        },
-        "2513": {
-            "name": "Jean J. M. G. de Lattre de Tassigny",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "IDC_M_de_Lattre_de_Tassigny_Jean_J_M_G",
-            "start_date": "1950-12-17",
-            "death_date": "1952-01-11",
-            "type": "autocrat_type"
-        },
-        "2514": {
-            "name": "Raoul A. L. Salan",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "IDC_M_Salan_Raoul_A_L",
-            "start_date": "1952-01-11",
-            "death_date": "1952-04-01",
-            "type": "hardliner_type"
-        },
-        "2515": {
-            "name": "Jean Letourneau",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "IDC_M_Letourneau_Jean",
-            "start_date": "1952-04-01",
-            "death_date": "1953-08-17",
-            "type": "bureaucrat_type"
-        },
-        "2516": {
-            "name": "Maurice Dejean",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "IDC_M_Dejean_Maurice",
-            "start_date": "1953-08-17",
-            "death_date": "1954-04-10",
-            "type": "bureaucrat_type"
-        },
-        "2517": {
-            "name": "Paul H. R. Ély",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "IDC_M_Ely_Paul_H_R",
-            "start_date": "1954-04-10",
-            "death_date": "1955-06-02",
-            "type": "autocrat_type"
-        },
-        "2518": {
-            "name": "Henri Hoppenot",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "IDC_M_Hoppenot_Henri",
-            "start_date": "1955-06-02",
-            "death_date": "1959-12-31",
-            "type": "bureaucrat_type"
-        },
-        "1984": {
-            "name": "Charles de Gaulle",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.85,
-            "picture": "FRA_M_De_Gaulle_Charles_A_J_M",
-            "start_date": "1944-07-03",
-            "death_date": "1969-04-28",
-            "type": "autocrat_type"
-        },
-        "1985": {
-            "name": "Vincent Auriol",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 1.0,
-            "picture": "FRA_M_Auriol_Vincent_J",
-            "start_date": "1947-01-16",
-            "death_date": "1954-01-16",
-            "type": "bureaucrat_type"
-        },
-        "1986": {
-            "name": "René Coty",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "FRA_M_Coty_Rene_J_G",
-            "start_date": "1954-01-08",
-            "death_date": "1959-01-08",
-            "type": "bureaucrat_type"
-        },
-        "1987": {
-            "name": "Alain Poher",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "FRA_M_Poher_Alain_E_L_M",
-            "start_date": "1969-04-28",
-            "death_date": "1974-05-21",
-            "type": "bureaucrat_type"
-        },
-        "1988": {
-            "name": "Georges Pompidou",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "FRA_M_Pompidou_Georges_J_R",
-            "start_date": "1962-04-14",
-            "death_date": "1974-05-21",
-            "type": "controversial_figure"
-        },
-        "1989": {
-            "name": "Valéry Giscard d'Estaing",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "FRA_M_Giscard_dEstaing_Valery_M_R_G",
-            "start_date": "1974-04-27",
-            "death_date": "1981-04-21",
-            "type": "bureaucrat_type"
-        },
-        "1990": {
-            "name": "François Mitterrand",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.8,
-            "picture": "FRA_M_Mitterrand_Francois_M_A_M",
-            "start_date": "1967-04-05",
-            "death_date": "1995-04-17",
-            "type": "reformer_type"
-        },
-        "2007": {
-            "name": "René Valentin Binet",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "FRA_M_Binet_Rene_V",
-            "start_date": "1947-01-01",
-            "death_date": "1957-01-01",
-            "type": "extremist_type"
-        },
-        "2008": {
-            "name": "Jean-Marie Le Pen",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "FRA_M_Pen_Jean-Marie",
-            "start_date": "1965-01-01",
-            "death_date": "2011-01-01",
-            "type": "zealous_type"
-        },
-        "2519": {
-            "name": "Ho Chi Minh",
-            "ideology": "communist_idolg",
-            "loyalty": 0.8,
-            "picture": "DRV_M_Minh_Ho_Chi",
-            "start_date": "1945-09-02",
-            "death_date": "1969-09-02",
-            "type": "autocrat_type"
-        },
-        "2520": {
-            "name": "Ton Duc Thang",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "DRV_M_Thang_Ton_Duc",
-            "start_date": "1969-09-02",
-            "death_date": "1980-03-30",
-            "type": "administrator_type"
-        },
-        "2521": {
-            "name": "Nguyen Huu Tho",
-            "ideology": "communist_idolg",
-            "loyalty": 0.8,
-            "picture": "DRV_M_Tho_Nguyen_H",
-            "start_date": "1954-11-01",
-            "death_date": "1996-12-24",
-            "type": "bureaucrat_type"
-        },
-        "2522": {
-            "name": "Truong Chinh",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "DRV_M_Chinh_Truong",
-            "start_date": "1981-07-04",
-            "death_date": "1987-06-17",
-            "type": "bureaucrat_type"
-        },
-        "2523": {
-            "name": "Vo Chi Cong",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "DRV_M_Cong_Vo_Chi",
-            "start_date": "1987-06-17",
-            "death_date": "1992-09-24",
-            "type": "bureaucrat_type"
-        },
-        "2524": {
-            "name": "Le Duc Anh",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "DRV_M_Anh_Le_Duc",
-            "start_date": "1992-09-24",
-            "death_date": "1997-09-24",
-            "type": "bureaucrat_type"
-        },
-        "2525": {
-            "name": "Pham Van Dong",
-            "ideology": "communist_idolg",
-            "loyalty": 0.8,
-            "picture": "DRV_M_Dong_Pham_Van",
-            "start_date": "1955-09-20",
-            "death_date": "1987-06-18",
-            "type": "bureaucrat_type"
-        },
-        "2526": {
-            "name": "Pham Hung",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "DRV_M_Hung_Pham",
-            "start_date": "1987-06-18",
-            "death_date": "1988-03-10",
-            "type": "bureaucrat_type"
-        },
-        "2527": {
-            "name": "Vo Van Kiet",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "DRV_M_Kiet_Vo_Van",
-            "start_date": "1988-03-10",
-            "death_date": "1997-09-24",
-            "type": "bureaucrat_type"
-        },
-        "2528": {
-            "name": "Do Muoi",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "DRV_M_Muoi_Do",
-            "start_date": "1988-06-22",
-            "death_date": "1991-08-08",
-            "type": "bureaucrat_type"
-        },
-        "2529": {
-            "name": "Ngo Dinh Diem",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.99,
-            "picture": "SVI_M_Diem_Ngo_Dinh",
-            "start_date": "1954-06-16",
-            "death_date": "1963-11-02",
-            "type": "autocrat_type"
-        },
-        "2530": {
-            "name": "Duong Van Minh",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "SVI_M_Minh_Duong_Van",
-            "start_date": "1963-11-02",
-            "death_date": "1992-12-31",
-            "type": "hardliner_type"
-        },
-        "2531": {
-            "name": "Nguyen Khanh",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.99,
-            "picture": "SVI_M_Khanh_Nguyen",
-            "start_date": "1964-01-30",
-            "death_date": "1964-11-04",
-            "type": "autocrat_type"
-        },
-        "2532": {
-            "name": "Phan Khac Suu",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Suu_Phan_Khac",
-            "start_date": "1964-10-26",
-            "death_date": "1965-06-14",
-            "type": "bureaucrat_type"
-        },
-        "2533": {
-            "name": "Nguyen Van Thieu",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Thieu_Nguyen_Van",
-            "start_date": "1965-06-14",
-            "death_date": "1975-04-21",
-            "type": "hardliner_type"
-        },
-        "2534": {
-            "name": "Tran Van Huong",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.8,
-            "picture": "SVI_M_Huong_Tran_Van",
-            "start_date": "1964-11-04",
-            "death_date": "1975-04-28",
-            "type": "bureaucrat_type"
-        },
-        "2535": {
-            "name": "Nguyen Phan Long",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Long_Nguyen_Phan",
-            "start_date": "1950-01-21",
-            "death_date": "1950-04-26",
-            "type": "bureaucrat_type"
-        },
-        "2536": {
-            "name": "Tran Van Huu",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Huu_Tran_Van",
-            "start_date": "1950-04-26",
-            "death_date": "1952-06-06",
-            "type": "bureaucrat_type"
-        },
-        "2537": {
-            "name": "Nguyen Van Tam",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Tam_Nguyen_Van",
-            "start_date": "1952-06-06",
-            "death_date": "1953-12-17",
-            "type": "autocrat_type"
-        },
-        "2538": {
-            "name": "Nguyen Phuc Buu Loc",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Buu_Loc_Nguyen_Phuc",
-            "start_date": "1953-12-17",
-            "death_date": "1954-06-16",
-            "type": "autocrat_type"
-        },
-        "2539": {
-            "name": "Nguyen Ngoc Tho",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Tho_Nguyen_Ngoc",
-            "start_date": "1963-11-02",
-            "death_date": "1964-01-30",
-            "type": "bureaucrat_type"
-        },
-        "2540": {
-            "name": "Nguyen Xuan Oanh",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.8,
-            "picture": "SVI_M_Oanh_Nguyen_Xuan",
-            "start_date": "1964-08-29",
-            "death_date": "1965-02-15",
-            "type": "bureaucrat_type"
-        },
-        "2541": {
-            "name": "Phan Huy Quat",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Quat_Phan_Huy",
-            "start_date": "1965-02-15",
-            "death_date": "1965-06-08",
-            "type": "bureaucrat_type"
-        },
-        "2542": {
-            "name": "Nguyen Cao Ky",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Ky_Nguyen_Cao",
-            "start_date": "1965-06-08",
-            "death_date": "1967-10-31",
-            "type": "controversial_figure"
-        },
-        "2543": {
-            "name": "Nguyen Van Loc",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Loc_Nguyen_Van",
-            "start_date": "1967-10-31",
-            "death_date": "1968-05-17",
-            "type": "bureaucrat_type"
-        },
-        "2544": {
-            "name": "Tran Thien Khiem",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Khiem_Tran_Thien",
-            "start_date": "1969-09-01",
-            "death_date": "1975-04-04",
-            "type": "hardliner_type"
-        },
-        "2545": {
-            "name": "Nguyen Ba Can",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Can_Nguyen_Ba",
-            "start_date": "1975-04-04",
-            "death_date": "1975-04-24",
-            "type": "bureaucrat_type"
-        },
-        "2546": {
-            "name": "Vu Van Mau",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Mau_Vu_Van",
-            "start_date": "1975-04-24",
-            "death_date": "1992-12-31",
-            "type": "bureaucrat_type"
-        },
-        "2547": {
-            "name": "Hoang Minh Chinh",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_Chinh_Hoang_M",
-            "start_date": "1946-01-01",
-            "death_date": "2300-01-01",
-            "type": "democrat_type"
-        },
-        "2548": {
+        "Hoang_Van_Chi_1": {
             "name": "Hoang Van Chi",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,
@@ -518,16 +95,7 @@
             "death_date": "1988-07-06",
             "type": "moral_type"
         },
-        "2549": {
-            "name": "Hoàng Co Minh",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_Minh_Hoang_C",
-            "start_date": "1975-01-01",
-            "death_date": "1987-01-01",
-            "type": "reformer_type"
-        },
-        "2550": {
+        "Nguyen_Manh_Tuong_1": {
             "name": "Nguyen Manh Tuong",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.5,
@@ -536,43 +104,7 @@
             "death_date": "1997-06-13",
             "type": "honest_type"
         },
-        "2551": {
-            "name": "Ho Van Nhut",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_Nhut_Ho_V",
-            "start_date": "1951-01-01",
-            "death_date": "1986-03-13",
-            "type": "moral_type"
-        },
-        "2552": {
-            "name": "Huynh Phu So",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_So_Huynh_P",
-            "start_date": "1940-01-01",
-            "death_date": "1947-04-01",
-            "type": "supreme_leader"
-        },
-        "2553": {
-            "name": "Ba Cut",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_Cut_Ba",
-            "start_date": "1944-01-01",
-            "death_date": "1956-07-13",
-            "type": "religious_type"
-        },
-        "2554": {
-            "name": "Duong Quynh Hoa",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_Hoa_Duong_Q",
-            "start_date": "1960-01-01",
-            "death_date": "2006-02-25",
-            "type": "courageous_type"
-        },
-        "2555": {
+        "Nguyen_Ton_Hoan_1": {
             "name": "Nguyen Ton Hoan",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -581,43 +113,16 @@
             "death_date": "2001-09-19",
             "type": "ambitious_type"
         },
-        "2556": {
-            "name": "Dau Khan",
-            "ideology": "paternal_auto_idolg",
+        "Huynh_Phu_So_1": {
+            "name": "Huynh Phu So",
+            "ideology": "fascistic_idolg",
             "loyalty": 0.5,
-            "picture": "SVI_M_Khan_Dau",
-            "start_date": "1956-01-02",
-            "death_date": "1986-04-07",
-            "type": "traditionalist_type"
+            "picture": "SVI_M_So_Huynh_P",
+            "start_date": "1940-01-01",
+            "death_date": "1947-04-01",
+            "type": "dictator_type"
         },
-        "2557": {
-            "name": "Nguyen Van Ly",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_Ly_Nguyen_V",
-            "start_date": "1970-01-01",
-            "death_date": "2300-01-01",
-            "type": "religious_type"
-        },
-        "2558": {
-            "name": "Vo Nguyen Giap",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Giap_Vo_N",
-            "start_date": "1946-01-01",
-            "death_date": "2013-10-04",
-            "type": "hardliner_type"
-        },
-        "2559": {
-            "name": "Nguyen Thi Binh",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Binh_Nguyen_T",
-            "start_date": "1948-01-01",
-            "death_date": "2300-01-01",
-            "type": "iron_lady"
-        },
-        "2560": {
+        "Tran_Van_Tra_1": {
             "name": "Tran Van Tra",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -626,7 +131,25 @@
             "death_date": "1996-04-20",
             "type": "honest_type"
         },
-        "2561": {
+        "Ba_Cut_1": {
+            "name": "Ba Cut",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Cut_Ba",
+            "start_date": "1944-01-01",
+            "death_date": "1956-07-13",
+            "type": "religious_type"
+        },
+        "Charles_de_Gaulle_1": {
+            "name": "Charles de Gaulle",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.85,
+            "picture": "FRA_M_De_Gaulle_Charles_A_J_M",
+            "start_date": "1944-07-03",
+            "death_date": "1969-04-28",
+            "type": "autocrat_type"
+        },
+        "Nguyen_Thi_Dinh_1": {
             "name": "Nguyen Thi Dinh",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -635,34 +158,34 @@
             "death_date": "1992-08-26",
             "type": "hardliner_type"
         },
-        "2562": {
-            "name": "Nguyen Van Linh",
+        "Ho_Chi_Minh_1": {
+            "name": "Ho Chi Minh",
             "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Linh_Nguyen_V",
+            "loyalty": 0.8,
+            "picture": "DRV_M_Minh_Ho_Chi",
+            "start_date": "1945-09-02",
+            "death_date": "1969-09-02",
+            "type": "autocrat_type"
+        },
+        "Georges_L_M_Thierry_dArgenlieu_1": {
+            "name": "Georges L. M. Thierry d'Argenlieu",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "IDC_M_Thierry_dArgenlieu_Georges_L_M",
+            "start_date": "1945-10-31",
+            "death_date": "1947-04-01",
+            "type": "autocrat_type"
+        },
+        "Souvanna_Phouma_1": {
+            "name": "Souvanna Phouma",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Phouma_Souvanna",
             "start_date": "1946-01-01",
-            "death_date": "1998-04-27",
-            "type": "reformer_type"
-        },
-        "2563": {
-            "name": "Hoang Van Hoan",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Hoan_Hoang_V",
-            "start_date": "1950-01-01",
-            "death_date": "1991-01-01",
-            "type": "traditionalist_type"
-        },
-        "2564": {
-            "name": "Huynh Tan Phat",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "DRV_M_Phat_Huynh_T",
-            "start_date": "1949-11-01",
-            "death_date": "1989-08-30",
+            "death_date": "1975-12-02",
             "type": "bureaucrat_type"
         },
-        "876": {
+        "Samdach_Penn_Nouth_1": {
             "name": "Samdach Penn Nouth",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.9,
@@ -671,295 +194,34 @@
             "death_date": "1976-04-04",
             "type": "bureaucrat_type"
         },
-        "877": {
-            "name": "Chan Nak",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Nak_Chan",
-            "start_date": "1953-11-22",
-            "death_date": "1954-04-07",
-            "type": "bureaucrat_type"
-        },
-        "878": {
-            "name": "Leng Ngeth",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Ngeth_Leng",
-            "start_date": "1955-01-26",
-            "death_date": "1955-10-03",
-            "type": "bureaucrat_type"
-        },
-        "879": {
-            "name": "Oum Chheang Sun",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Chheang_Sun_Oum",
-            "start_date": "1956-01-05",
-            "death_date": "1956-02-29",
-            "type": "bureaucrat_type"
-        },
-        "880": {
-            "name": "Khim Tit",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Tit_Khim",
-            "start_date": "1956-03-25",
-            "death_date": "1956-09-15",
-            "type": "bureaucrat_type"
-        },
-        "881": {
-            "name": "Sam Yun",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Yun_Sam",
-            "start_date": "1956-10-15",
-            "death_date": "1957-04-09",
-            "type": "bureaucrat_type"
-        },
-        "882": {
-            "name": "Sim Var",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Var_Sim",
-            "start_date": "1957-07-07",
-            "death_date": "1958-07-10",
-            "type": "bureaucrat_type"
-        },
-        "883": {
-            "name": "Chuop Hell",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Hell_Chuop",
-            "start_date": "1960-04-03",
-            "death_date": "1960-06-20",
-            "type": "bureaucrat_type"
-        },
-        "884": {
-            "name": "Pho Proeung",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Proeung_Pho",
-            "start_date": "1960-04-19",
-            "death_date": "1961-01-28",
-            "type": "bureaucrat_type"
-        },
-        "885": {
-            "name": "Nhiek Tioulong",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Tieoulong_Nhiek",
-            "start_date": "1962-02-13",
-            "death_date": "1962-08-06",
-            "type": "hardliner_type"
-        },
-        "886": {
-            "name": "Chau Sen Cocsal Chhum",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Sen_Cocsal_Chhum_Chau",
-            "start_date": "1962-08-06",
-            "death_date": "1962-10-06",
-            "type": "bureaucrat_type"
-        },
-        "887": {
-            "name": "Norodom Kanthoul",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Kanthoul_Norodom",
-            "start_date": "1962-10-06",
-            "death_date": "1966-10-25",
-            "type": "autocrat_type"
-        },
-        "888": {
-            "name": "Lon Nol",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "CMB_M_Nol_Lon",
-            "start_date": "1966-10-25",
-            "death_date": "1975-04-01",
-            "type": "hardliner_type"
-        },
-        "889": {
-            "name": "Son Sann",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Sann_Son",
-            "start_date": "1967-05-01",
-            "death_date": "1968-01-31",
+        "Nguyen_Van_Linh_1": {
+            "name": "Nguyen Van Linh",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "DRV_M_Linh_Nguyen_V",
+            "start_date": "1946-01-01",
+            "death_date": "1998-04-27",
             "type": "reformer_type"
         },
-        "890": {
-            "name": "Cheng Heng",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Heng_Cheng",
-            "start_date": "1970-03-21",
-            "death_date": "1972-03-10",
-            "type": "dictator_type"
-        },
-        "891": {
-            "name": "Sisowath Sirik Matak",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Sirik_Matak_Sisowath",
-            "start_date": "1971-03-11",
-            "death_date": "1972-03-18",
+        "Vo_Nguyen_Giap_1": {
+            "name": "Vo Nguyen Giap",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "DRV_M_Giap_Vo_N",
+            "start_date": "1946-01-01",
+            "death_date": "2013-10-04",
             "type": "hardliner_type"
         },
-        "892": {
-            "name": "Son Ngoc Thanh",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Ngoc_Thanh_Son",
-            "start_date": "1972-03-18",
-            "death_date": "1972-10-15",
-            "type": "reformer_type"
-        },
-        "893": {
-            "name": "Hang Thun Hak",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Thun_Hak_Hang_dummy",
-            "start_date": "1972-10-15",
-            "death_date": "1973-05-06",
-            "type": "reformer_type"
-        },
-        "894": {
-            "name": "In Tam",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Tam_In",
-            "start_date": "1973-05-06",
-            "death_date": "1973-12-09",
-            "type": "hardliner_type"
-        },
-        "895": {
-            "name": "Long Boret",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Boret_Long",
-            "start_date": "1973-12-09",
-            "death_date": "1975-04-17",
-            "type": "hardliner_type"
-        },
-        "896": {
-            "name": "Saukham Khoy",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Koy_Saukham",
-            "start_date": "1975-04-01",
-            "death_date": "1975-04-17",
-            "type": "dictator_type"
-        },
-        "897": {
-            "name": "Khieu Samphan",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.8,
-            "picture": "CMB_M_Samphan_Khieu",
-            "start_date": "1976-04-04",
+        "Hoang_Minh_Chinh_1": {
+            "name": "Hoang Minh Chinh",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Chinh_Hoang_M",
+            "start_date": "1946-01-01",
             "death_date": "2300-01-01",
-            "type": "controversial_figure"
+            "type": "democrat_type"
         },
-        "898": {
-            "name": "Pol Pot",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.8,
-            "picture": "CMB_M_Pot_Pol",
-            "start_date": "1976-04-14",
-            "death_date": "1998-04-15",
-            "type": "controversial_figure"
-        },
-        "899": {
-            "name": "Nuon Chea",
-            "ideology": "maoist_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Chea_Nuon",
-            "start_date": "1976-09-27",
-            "death_date": "1976-10-25",
-            "type": "controversial_figure"
-        },
-        "900": {
-            "name": "Heng Samrin",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "CMB_M_Samrin_Heng",
-            "start_date": "1979-01-07",
-            "death_date": "1992-04-06",
-            "type": "reformer_type"
-        },
-        "901": {
-            "name": "Pen Sovann",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Sovann_Pen",
-            "start_date": "1981-06-27",
-            "death_date": "1981-12-05",
-            "type": "bureaucrat_type"
-        },
-        "902": {
-            "name": "Chan Si",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Si_Chan_dummy",
-            "start_date": "1981-12-05",
-            "death_date": "1984-12-26",
-            "type": "bureaucrat_type"
-        },
-        "903": {
-            "name": "Hun Sen",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CMB_M_Sen_Hun",
-            "start_date": "1984-12-26",
-            "death_date": "1993-09-24",
-            "type": "bureaucrat_type"
-        },
-        "904": {
-            "name": "Pich Sopheap Veasna Soun",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Soun_Pich_S_V",
-            "start_date": "1961-01-25",
-            "death_date": "1979-12-04",
-            "type": "administrator_type"
-        },
-        "905": {
-            "name": "Vibol Soun",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Soun_Vibol",
-            "start_date": "1963-05-05",
-            "death_date": "1979-12-04",
-            "type": "lethargic_type"
-        },
-        "906": {
-            "name": "Nhung Quý Trai Phan",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Phan_Nhung_Q_T",
-            "start_date": "1979-01-01",
-            "death_date": "1991-12-31",
-            "type": "moral_type"
-        },
-        "907": {
-            "name": "Toby Ryer",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Ryer_Toby",
-            "start_date": "1954-06-12",
-            "death_date": "1975-05-09",
-            "type": "reformer_type"
-        },
-        "908": {
-            "name": "Roland Samnang Phirun",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Phirun_Roland_S",
-            "start_date": "1983-11-01",
-            "death_date": "1991-12-23",
-            "type": "courageous_type"
-        },
-        "909": {
+        "Kulap_Kamon_Metharom_1": {
             "name": "Kulap Kamon Metharom",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
@@ -968,43 +230,70 @@
             "death_date": "1954-07-21",
             "type": "courteous_figure"
         },
-        "910": {
-            "name": "Pol Var Nouth",
-            "ideology": "social_liberal_idolg",
+        "René_Valentin_Binet_1": {
+            "name": "René Valentin Binet",
+            "ideology": "fascistic_idolg",
             "loyalty": 0.5,
-            "picture": "CMB_M_Nouth_Pol_V",
-            "start_date": "1988-12-03",
-            "death_date": "1991-12-31",
+            "picture": "FRA_M_Binet_Rene_V",
+            "start_date": "1947-01-01",
+            "death_date": "1957-01-01",
+            "type": "extremist_type"
+        },
+        "Vincent_Auriol_1": {
+            "name": "Vincent Auriol",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 1.0,
+            "picture": "FRA_M_Auriol_Vincent_J",
+            "start_date": "1947-01-16",
+            "death_date": "1954-01-16",
             "type": "bureaucrat_type"
         },
-        "911": {
-            "name": "Sothy Kunthea Sopheap Tit Yun",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Yun_Sothy_K_S_T",
-            "start_date": "1988-12-03",
-            "death_date": "1991-12-31",
-            "type": "hardliner_type"
+        "Émile_Bollaert_1": {
+            "name": "Émile Bollaert",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "IDC_M_Bollaert_Emile",
+            "start_date": "1947-04-01",
+            "death_date": "1948-10-20",
+            "type": "bureaucrat_type"
         },
-        "912": {
-            "name": "Ieng Sary",
+        "Nguyen_Thi_Binh_1": {
+            "name": "Nguyen Thi Binh",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "DRV_M_Binh_Nguyen_T",
+            "start_date": "1948-01-01",
+            "death_date": "2300-01-01",
+            "type": "iron_lady"
+        },
+        "Léon_M_A_P_Pignon_1": {
+            "name": "Léon M. A. P. Pignon",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "IDC_M_Pignon_Leon_M_A_P",
+            "start_date": "1948-10-20",
+            "death_date": "1950-12-17",
+            "type": "bureaucrat_type"
+        },
+        "Huynh_Tan_Phat_1": {
+            "name": "Huynh Tan Phat",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "DRV_M_Phat_Huynh_T",
+            "start_date": "1949-11-01",
+            "death_date": "1989-08-30",
+            "type": "bureaucrat_type"
+        },
+        "Hoang_Van_Hoan_1": {
+            "name": "Hoang Van Hoan",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
-            "picture": "CMB_M_Sary_Ieng",
-            "start_date": "1972-09-18",
-            "death_date": "1995-01-11",
-            "type": "zealous_type"
+            "picture": "DRV_M_Hoan_Hoang_V",
+            "start_date": "1950-01-01",
+            "death_date": "1991-01-01",
+            "type": "traditionalist_type"
         },
-        "913": {
-            "name": "Son Sen",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "CMB_M_Sen_Son",
-            "start_date": "1960-01-01",
-            "death_date": "1997-03-15",
-            "type": "zealous_type"
-        },
-        "914": {
+        "Hu_Nim_1": {
             "name": "Hu Nim",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -1013,7 +302,214 @@
             "death_date": "1997-07-06",
             "type": "reformer_type"
         },
-        "2565": {
+        "Nguyen_Phan_Long_1": {
+            "name": "Nguyen Phan Long",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Long_Nguyen_Phan",
+            "start_date": "1950-01-21",
+            "death_date": "1950-04-26",
+            "type": "bureaucrat_type"
+        },
+        "Tran_Van_Huu_1": {
+            "name": "Tran Van Huu",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Huu_Tran_Van",
+            "start_date": "1950-04-26",
+            "death_date": "1952-06-06",
+            "type": "bureaucrat_type"
+        },
+        "Jean_J_M_G_de_Lattre_de_Tassigny_1": {
+            "name": "Jean J. M. G. de Lattre de Tassigny",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "IDC_M_de_Lattre_de_Tassigny_Jean_J_M_G",
+            "start_date": "1950-12-17",
+            "death_date": "1952-01-11",
+            "type": "autocrat_type"
+        },
+        "Ho_Van_Nhut_1": {
+            "name": "Ho Van Nhut",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Nhut_Ho_V",
+            "start_date": "1951-01-01",
+            "death_date": "1986-03-13",
+            "type": "moral_type"
+        },
+        "Raoul_A_L_Salan_1": {
+            "name": "Raoul A. L. Salan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "IDC_M_Salan_Raoul_A_L",
+            "start_date": "1952-01-11",
+            "death_date": "1952-04-01",
+            "type": "hardliner_type"
+        },
+        "Jean_Letourneau_1": {
+            "name": "Jean Letourneau",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "IDC_M_Letourneau_Jean",
+            "start_date": "1952-04-01",
+            "death_date": "1953-08-17",
+            "type": "bureaucrat_type"
+        },
+        "Nguyen_Van_Tam_1": {
+            "name": "Nguyen Van Tam",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Tam_Nguyen_Van",
+            "start_date": "1952-06-06",
+            "death_date": "1953-12-17",
+            "type": "autocrat_type"
+        },
+        "Maurice_Dejean_1": {
+            "name": "Maurice Dejean",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "IDC_M_Dejean_Maurice",
+            "start_date": "1953-08-17",
+            "death_date": "1954-04-10",
+            "type": "bureaucrat_type"
+        },
+        "Chan_Nak_1": {
+            "name": "Chan Nak",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Nak_Chan",
+            "start_date": "1953-11-22",
+            "death_date": "1954-04-07",
+            "type": "bureaucrat_type"
+        },
+        "Nguyen_Phuc_Buu_Loc_1": {
+            "name": "Nguyen Phuc Buu Loc",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Buu_Loc_Nguyen_Phuc",
+            "start_date": "1953-12-17",
+            "death_date": "1954-06-16",
+            "type": "autocrat_type"
+        },
+        "René_Coty_1": {
+            "name": "René Coty",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "FRA_M_Coty_Rene_J_G",
+            "start_date": "1954-01-08",
+            "death_date": "1959-01-08",
+            "type": "bureaucrat_type"
+        },
+        "Paul_H_R_Ély_1": {
+            "name": "Paul H. R. Ély",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "IDC_M_Ely_Paul_H_R",
+            "start_date": "1954-04-10",
+            "death_date": "1955-06-02",
+            "type": "autocrat_type"
+        },
+        "Toby_Ryer_1": {
+            "name": "Toby Ryer",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Ryer_Toby",
+            "start_date": "1954-06-12",
+            "death_date": "1975-05-09",
+            "type": "reformer_type"
+        },
+        "Ngo_Dinh_Diem_1": {
+            "name": "Ngo Dinh Diem",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.99,
+            "picture": "SVI_M_Diem_Ngo_Dinh",
+            "start_date": "1954-06-16",
+            "death_date": "1963-11-02",
+            "type": "autocrat_type"
+        },
+        "Nguyen_Huu_Tho_1": {
+            "name": "Nguyen Huu Tho",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "DRV_M_Tho_Nguyen_H",
+            "start_date": "1954-11-01",
+            "death_date": "1996-12-24",
+            "type": "bureaucrat_type"
+        },
+        "Leng_Ngeth_1": {
+            "name": "Leng Ngeth",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Ngeth_Leng",
+            "start_date": "1955-01-26",
+            "death_date": "1955-10-03",
+            "type": "bureaucrat_type"
+        },
+        "Henri_Hoppenot_1": {
+            "name": "Henri Hoppenot",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "IDC_M_Hoppenot_Henri",
+            "start_date": "1955-06-02",
+            "death_date": "1959-12-31",
+            "type": "bureaucrat_type"
+        },
+        "Pham_Van_Dong_1": {
+            "name": "Pham Van Dong",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "DRV_M_Dong_Pham_Van",
+            "start_date": "1955-09-20",
+            "death_date": "1987-06-18",
+            "type": "bureaucrat_type"
+        },
+        "Dau_Khan_1": {
+            "name": "Dau Khan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Khan_Dau",
+            "start_date": "1956-01-02",
+            "death_date": "1986-04-07",
+            "type": "traditionalist_type"
+        },
+        "Oum_Chheang_Sun_1": {
+            "name": "Oum Chheang Sun",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Chheang_Sun_Oum",
+            "start_date": "1956-01-05",
+            "death_date": "1956-02-29",
+            "type": "bureaucrat_type"
+        },
+        "Khim_Tit_1": {
+            "name": "Khim Tit",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Tit_Khim",
+            "start_date": "1956-03-25",
+            "death_date": "1956-09-15",
+            "type": "bureaucrat_type"
+        },
+        "Sam_Yun_1": {
+            "name": "Sam Yun",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Yun_Sam",
+            "start_date": "1956-10-15",
+            "death_date": "1957-04-09",
+            "type": "bureaucrat_type"
+        },
+        "Sim_Var_1": {
+            "name": "Sim Var",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Var_Sim",
+            "start_date": "1957-07-07",
+            "death_date": "1958-07-10",
+            "type": "bureaucrat_type"
+        },
+        "Phoui_Sananikone_1": {
             "name": "Phoui Sananikone",
             "ideology": "paternal_auto_idolg",
             "loyalty": 1.0,
@@ -1022,124 +518,7 @@
             "death_date": "1959-12-31",
             "type": "bureaucrat_type"
         },
-        "2566": {
-            "name": "Sounthone Pathammavong",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Pathammavong_Sounthone",
-            "start_date": "1959-12-31",
-            "death_date": "1960-01-07",
-            "type": "hardliner_type"
-        },
-        "2567": {
-            "name": "Kou Abhay",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Abhay_Kou",
-            "start_date": "1960-01-07",
-            "death_date": "1960-06-03",
-            "type": "hardliner_type"
-        },
-        "2568": {
-            "name": "Boun Oum",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Oum_Boun",
-            "start_date": "1960-12-13",
-            "death_date": "1962-06-23",
-            "type": "bureaucrat_type"
-        },
-        "2569": {
-            "name": "Souvanna Phouma",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Phouma_Souvanna",
-            "start_date": "1962-06-23",
-            "death_date": "1975-12-02",
-            "type": "bureaucrat_type"
-        },
-        "2570": {
-            "name": "Souphanouvong",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Souphanouvong",
-            "start_date": "1975-12-02",
-            "death_date": "1986-10-31",
-            "type": "bureaucrat_type"
-        },
-        "2571": {
-            "name": "Phoumi Vongvichit",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Vongvichit_Phoumi",
-            "start_date": "1986-10-31",
-            "death_date": "1991-08-15",
-            "type": "dictator_type"
-        },
-        "2572": {
-            "name": "Kaysone Phomvihane",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "LAO_M_Phomvihane_Kaysone",
-            "start_date": "1975-12-08",
-            "death_date": "1992-11-21",
-            "type": "dictator_type"
-        },
-        "2573": {
-            "name": "Khamtai Siphandon",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "LAO_M_Siphandon_Khamtai",
-            "start_date": "1991-08-15",
-            "death_date": "1998-02-24",
-            "type": "hardliner_type"
-        },
-        "2574": {
-            "name": "Phoumi Nousavan",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "LAO_M_Nousavan_Phoumi",
-            "start_date": "1959-09-18",
-            "death_date": "1965-02-01",
-            "type": "hardliner_type"
-        },
-        "2575": {
-            "name": "Vang Pao",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "LAO_M_Pao_Vang",
-            "start_date": "1959-09-18",
-            "death_date": "1975-05-05",
-            "type": "ambitious_type"
-        },
-        "2576": {
-            "name": "Nouhak Phoumsavanh",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "LAO_M_Phoumsavanh_Nouhak",
-            "start_date": "1972-02-01",
-            "death_date": "1998-02-24",
-            "type": "administrator_type"
-        },
-        "2577": {
-            "name": "Kong Le",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "LAO_M_Le_Kong",
-            "start_date": "1960-08-09",
-            "death_date": "1966-10-07",
-            "type": "zealous_type"
-        },
-        "2578": {
-            "name": "Ouane Rattikone",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "LAO_M_Rattikone_Ouane",
-            "start_date": "1962-01-08",
-            "death_date": "1971-10-02",
-            "type": "fortunate_type"
-        },
-        "2579": {
+        "Phoumi_Nosavan_1": {
             "name": "Phoumi Nosavan",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -1148,7 +527,79 @@
             "death_date": "1985-03-01",
             "type": "hardliner_type"
         },
-        "2580": {
+        "Phoumi_Nousavan_1": {
+            "name": "Phoumi Nousavan",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LAO_M_Nousavan_Phoumi",
+            "start_date": "1959-09-18",
+            "death_date": "1965-02-01",
+            "type": "hardliner_type"
+        },
+        "Vang_Pao_1": {
+            "name": "Vang Pao",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "LAO_M_Pao_Vang",
+            "start_date": "1959-09-18",
+            "death_date": "1975-05-05",
+            "type": "ambitious_type"
+        },
+        "Sounthone_Pathammavong_1": {
+            "name": "Sounthone Pathammavong",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Pathammavong_Sounthone",
+            "start_date": "1959-12-31",
+            "death_date": "1960-01-07",
+            "type": "hardliner_type"
+        },
+        "Son_Sen_1": {
+            "name": "Son Sen",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Sen_Son",
+            "start_date": "1960-01-01",
+            "death_date": "1997-03-15",
+            "type": "zealous_type"
+        },
+        "Duong_Quynh_Hoa_1": {
+            "name": "Duong Quynh Hoa",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Hoa_Duong_Q",
+            "start_date": "1960-01-01",
+            "death_date": "2006-02-25",
+            "type": "courageous_type"
+        },
+        "Kou_Abhay_1": {
+            "name": "Kou Abhay",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Abhay_Kou",
+            "start_date": "1960-01-07",
+            "death_date": "1960-06-03",
+            "type": "hardliner_type"
+        },
+        "Chuop_Hell_1": {
+            "name": "Chuop Hell",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Hell_Chuop",
+            "start_date": "1960-04-03",
+            "death_date": "1960-06-20",
+            "type": "bureaucrat_type"
+        },
+        "Pho_Proeung_1": {
+            "name": "Pho Proeung",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Proeung_Pho",
+            "start_date": "1960-04-19",
+            "death_date": "1961-01-28",
+            "type": "bureaucrat_type"
+        },
+        "Quinim_Pholsena_1": {
             "name": "Quinim Pholsena",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -1156,6 +607,555 @@
             "start_date": "1960-08-09",
             "death_date": "1963-04-01",
             "type": "administrator_type"
+        },
+        "Kong_Le_1": {
+            "name": "Kong Le",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LAO_M_Le_Kong",
+            "start_date": "1960-08-09",
+            "death_date": "1966-10-07",
+            "type": "zealous_type"
+        },
+        "Boun_Oum_1": {
+            "name": "Boun Oum",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Oum_Boun",
+            "start_date": "1960-12-13",
+            "death_date": "1962-06-23",
+            "type": "bureaucrat_type"
+        },
+        "Pich_Sopheap_Veasna_Soun_1": {
+            "name": "Pich Sopheap Veasna Soun",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Soun_Pich_S_V",
+            "start_date": "1961-01-25",
+            "death_date": "1979-12-04",
+            "type": "administrator_type"
+        },
+        "Ouane_Rattikone_1": {
+            "name": "Ouane Rattikone",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LAO_M_Rattikone_Ouane",
+            "start_date": "1962-01-08",
+            "death_date": "1971-10-02",
+            "type": "fortunate_type"
+        },
+        "Nhiek_Tioulong_1": {
+            "name": "Nhiek Tioulong",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Tieoulong_Nhiek",
+            "start_date": "1962-02-13",
+            "death_date": "1962-08-06",
+            "type": "hardliner_type"
+        },
+        "Georges_Pompidou_1": {
+            "name": "Georges Pompidou",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "FRA_M_Pompidou_Georges_J_R",
+            "start_date": "1962-04-14",
+            "death_date": "1974-05-21",
+            "type": "controversial_figure"
+        },
+        "Chau_Sen_Cocsal_Chhum_1": {
+            "name": "Chau Sen Cocsal Chhum",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Sen_Cocsal_Chhum_Chau",
+            "start_date": "1962-08-06",
+            "death_date": "1962-10-06",
+            "type": "bureaucrat_type"
+        },
+        "Norodom_Kanthoul_1": {
+            "name": "Norodom Kanthoul",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Kanthoul_Norodom",
+            "start_date": "1962-10-06",
+            "death_date": "1966-10-25",
+            "type": "autocrat_type"
+        },
+        "Vibol_Soun_1": {
+            "name": "Vibol Soun",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Soun_Vibol",
+            "start_date": "1963-05-05",
+            "death_date": "1979-12-04",
+            "type": "lethargic_type"
+        },
+        "Nguyen_Ngoc_Tho_1": {
+            "name": "Nguyen Ngoc Tho",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Tho_Nguyen_Ngoc",
+            "start_date": "1963-11-02",
+            "death_date": "1964-01-30",
+            "type": "bureaucrat_type"
+        },
+        "Duong_Van_Minh_1": {
+            "name": "Duong Van Minh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "SVI_M_Minh_Duong_Van",
+            "start_date": "1963-11-02",
+            "death_date": "1992-12-31",
+            "type": "hardliner_type"
+        },
+        "Nguyen_Khanh_1": {
+            "name": "Nguyen Khanh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.99,
+            "picture": "SVI_M_Khanh_Nguyen",
+            "start_date": "1964-01-30",
+            "death_date": "1964-11-04",
+            "type": "autocrat_type"
+        },
+        "Nguyen_Xuan_Oanh_1": {
+            "name": "Nguyen Xuan Oanh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "SVI_M_Oanh_Nguyen_Xuan",
+            "start_date": "1964-08-29",
+            "death_date": "1965-02-15",
+            "type": "bureaucrat_type"
+        },
+        "Phan_Khac_Suu_1": {
+            "name": "Phan Khac Suu",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Suu_Phan_Khac",
+            "start_date": "1964-10-26",
+            "death_date": "1965-06-14",
+            "type": "bureaucrat_type"
+        },
+        "Tran_Van_Huong_1": {
+            "name": "Tran Van Huong",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "SVI_M_Huong_Tran_Van",
+            "start_date": "1964-11-04",
+            "death_date": "1975-04-28",
+            "type": "bureaucrat_type"
+        },
+        "JeanMarie_Le_Pen_1": {
+            "name": "Jean-Marie Le Pen",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "FRA_M_Pen_Jean-Marie",
+            "start_date": "1965-01-01",
+            "death_date": "2011-01-01",
+            "type": "zealous_type"
+        },
+        "Phan_Huy_Quat_1": {
+            "name": "Phan Huy Quat",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Quat_Phan_Huy",
+            "start_date": "1965-02-15",
+            "death_date": "1965-06-08",
+            "type": "bureaucrat_type"
+        },
+        "Nguyen_Cao_Ky_1": {
+            "name": "Nguyen Cao Ky",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Ky_Nguyen_Cao",
+            "start_date": "1965-06-08",
+            "death_date": "1967-10-31",
+            "type": "controversial_figure"
+        },
+        "Nguyen_Van_Thieu_1": {
+            "name": "Nguyen Van Thieu",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Thieu_Nguyen_Van",
+            "start_date": "1965-06-14",
+            "death_date": "1975-04-21",
+            "type": "hardliner_type"
+        },
+        "Lon_Nol_1": {
+            "name": "Lon Nol",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "CMB_M_Nol_Lon",
+            "start_date": "1966-10-25",
+            "death_date": "1975-04-01",
+            "type": "hardliner_type"
+        },
+        "François_Mitterrand_1": {
+            "name": "François Mitterrand",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.8,
+            "picture": "FRA_M_Mitterrand_Francois_M_A_M",
+            "start_date": "1967-04-05",
+            "death_date": "1995-04-17",
+            "type": "reformer_type"
+        },
+        "Son_Sann_1": {
+            "name": "Son Sann",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Sann_Son",
+            "start_date": "1967-05-01",
+            "death_date": "1968-01-31",
+            "type": "reformer_type"
+        },
+        "Nguyen_Van_Loc_1": {
+            "name": "Nguyen Van Loc",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Loc_Nguyen_Van",
+            "start_date": "1967-10-31",
+            "death_date": "1968-05-17",
+            "type": "bureaucrat_type"
+        },
+        "Alain_Poher_1": {
+            "name": "Alain Poher",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "FRA_M_Poher_Alain_E_L_M",
+            "start_date": "1969-04-28",
+            "death_date": "1974-05-21",
+            "type": "bureaucrat_type"
+        },
+        "Tran_Thien_Khiem_1": {
+            "name": "Tran Thien Khiem",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Khiem_Tran_Thien",
+            "start_date": "1969-09-01",
+            "death_date": "1975-04-04",
+            "type": "hardliner_type"
+        },
+        "Ton_Duc_Thang_1": {
+            "name": "Ton Duc Thang",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "DRV_M_Thang_Ton_Duc",
+            "start_date": "1969-09-02",
+            "death_date": "1980-03-30",
+            "type": "administrator_type"
+        },
+        "Nguyen_Van_Ly_1": {
+            "name": "Nguyen Van Ly",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Ly_Nguyen_V",
+            "start_date": "1970-01-01",
+            "death_date": "2300-01-01",
+            "type": "religious_type"
+        },
+        "Cheng_Heng_1": {
+            "name": "Cheng Heng",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Heng_Cheng",
+            "start_date": "1970-03-21",
+            "death_date": "1972-03-10",
+            "type": "dictator_type"
+        },
+        "Sisowath_Sirik_Matak_1": {
+            "name": "Sisowath Sirik Matak",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Sirik_Matak_Sisowath",
+            "start_date": "1971-03-11",
+            "death_date": "1972-03-18",
+            "type": "hardliner_type"
+        },
+        "Nouhak_Phoumsavanh_1": {
+            "name": "Nouhak Phoumsavanh",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "LAO_M_Phoumsavanh_Nouhak",
+            "start_date": "1972-02-01",
+            "death_date": "1998-02-24",
+            "type": "administrator_type"
+        },
+        "Son_Ngoc_Thanh_1": {
+            "name": "Son Ngoc Thanh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Ngoc_Thanh_Son",
+            "start_date": "1972-03-18",
+            "death_date": "1972-10-15",
+            "type": "reformer_type"
+        },
+        "Ieng_Sary_1": {
+            "name": "Ieng Sary",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Sary_Ieng",
+            "start_date": "1972-09-18",
+            "death_date": "1995-01-11",
+            "type": "zealous_type"
+        },
+        "Hang_Thun_Hak_1": {
+            "name": "Hang Thun Hak",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Thun_Hak_Hang_dummy",
+            "start_date": "1972-10-15",
+            "death_date": "1973-05-06",
+            "type": "reformer_type"
+        },
+        "In_Tam_1": {
+            "name": "In Tam",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Tam_In",
+            "start_date": "1973-05-06",
+            "death_date": "1973-12-09",
+            "type": "hardliner_type"
+        },
+        "Long_Boret_1": {
+            "name": "Long Boret",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Boret_Long",
+            "start_date": "1973-12-09",
+            "death_date": "1975-04-17",
+            "type": "hardliner_type"
+        },
+        "Valéry_Giscard_dEstaing_1": {
+            "name": "Valéry Giscard d'Estaing",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "FRA_M_Giscard_dEstaing_Valery_M_R_G",
+            "start_date": "1974-04-27",
+            "death_date": "1981-04-21",
+            "type": "bureaucrat_type"
+        },
+        "Hoàng_Co_Minh_1": {
+            "name": "Hoàng Co Minh",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Minh_Hoang_C",
+            "start_date": "1975-01-01",
+            "death_date": "1987-01-01",
+            "type": "reformer_type"
+        },
+        "Saukham_Khoy_1": {
+            "name": "Saukham Khoy",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Koy_Saukham",
+            "start_date": "1975-04-01",
+            "death_date": "1975-04-17",
+            "type": "dictator_type"
+        },
+        "Nguyen_Ba_Can_1": {
+            "name": "Nguyen Ba Can",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Can_Nguyen_Ba",
+            "start_date": "1975-04-04",
+            "death_date": "1975-04-24",
+            "type": "bureaucrat_type"
+        },
+        "Vu_Van_Mau_1": {
+            "name": "Vu Van Mau",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Mau_Vu_Van",
+            "start_date": "1975-04-24",
+            "death_date": "1992-12-31",
+            "type": "bureaucrat_type"
+        },
+        "Souphanouvong_1": {
+            "name": "Souphanouvong",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Souphanouvong",
+            "start_date": "1975-12-02",
+            "death_date": "1986-10-31",
+            "type": "bureaucrat_type"
+        },
+        "Kaysone_Phomvihane_1": {
+            "name": "Kaysone Phomvihane",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "LAO_M_Phomvihane_Kaysone",
+            "start_date": "1975-12-08",
+            "death_date": "1992-11-21",
+            "type": "dictator_type"
+        },
+        "Khieu_Samphan_1": {
+            "name": "Khieu Samphan",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.8,
+            "picture": "CMB_M_Samphan_Khieu",
+            "start_date": "1976-04-04",
+            "death_date": "2300-01-01",
+            "type": "controversial_figure"
+        },
+        "Pol_Pot_1": {
+            "name": "Pol Pot",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.8,
+            "picture": "CMB_M_Pot_Pol",
+            "start_date": "1976-04-14",
+            "death_date": "1998-04-15",
+            "type": "controversial_figure"
+        },
+        "Nuon_Chea_1": {
+            "name": "Nuon Chea",
+            "ideology": "maoist_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Chea_Nuon",
+            "start_date": "1976-09-27",
+            "death_date": "1976-10-25",
+            "type": "controversial_figure"
+        },
+        "Nhung_Quý_Trai_Phan_1": {
+            "name": "Nhung Quý Trai Phan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Phan_Nhung_Q_T",
+            "start_date": "1979-01-01",
+            "death_date": "1991-12-31",
+            "type": "moral_type"
+        },
+        "Heng_Samrin_1": {
+            "name": "Heng Samrin",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "CMB_M_Samrin_Heng",
+            "start_date": "1979-01-07",
+            "death_date": "1992-04-06",
+            "type": "reformer_type"
+        },
+        "Pen_Sovann_1": {
+            "name": "Pen Sovann",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Sovann_Pen",
+            "start_date": "1981-06-27",
+            "death_date": "1981-12-05",
+            "type": "bureaucrat_type"
+        },
+        "Truong_Chinh_1": {
+            "name": "Truong Chinh",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "DRV_M_Chinh_Truong",
+            "start_date": "1981-07-04",
+            "death_date": "1987-06-17",
+            "type": "bureaucrat_type"
+        },
+        "Chan_Si_1": {
+            "name": "Chan Si",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Si_Chan_dummy",
+            "start_date": "1981-12-05",
+            "death_date": "1984-12-26",
+            "type": "bureaucrat_type"
+        },
+        "Roland_Samnang_Phirun_1": {
+            "name": "Roland Samnang Phirun",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Phirun_Roland_S",
+            "start_date": "1983-11-01",
+            "death_date": "1991-12-23",
+            "type": "courageous_type"
+        },
+        "Hun_Sen_1": {
+            "name": "Hun Sen",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CMB_M_Sen_Hun",
+            "start_date": "1984-12-26",
+            "death_date": "1993-09-24",
+            "type": "bureaucrat_type"
+        },
+        "Phoumi_Vongvichit_1": {
+            "name": "Phoumi Vongvichit",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Vongvichit_Phoumi",
+            "start_date": "1986-10-31",
+            "death_date": "1991-08-15",
+            "type": "dictator_type"
+        },
+        "Vo_Chi_Cong_1": {
+            "name": "Vo Chi Cong",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "DRV_M_Cong_Vo_Chi",
+            "start_date": "1987-06-17",
+            "death_date": "1992-09-24",
+            "type": "bureaucrat_type"
+        },
+        "Pham_Hung_1": {
+            "name": "Pham Hung",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "DRV_M_Hung_Pham",
+            "start_date": "1987-06-18",
+            "death_date": "1988-03-10",
+            "type": "bureaucrat_type"
+        },
+        "Vo_Van_Kiet_1": {
+            "name": "Vo Van Kiet",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "DRV_M_Kiet_Vo_Van",
+            "start_date": "1988-03-10",
+            "death_date": "1997-09-24",
+            "type": "bureaucrat_type"
+        },
+        "Do_Muoi_1": {
+            "name": "Do Muoi",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "DRV_M_Muoi_Do",
+            "start_date": "1988-06-22",
+            "death_date": "1991-08-08",
+            "type": "bureaucrat_type"
+        },
+        "Pol_Var_Nouth_1": {
+            "name": "Pol Var Nouth",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Nouth_Pol_V",
+            "start_date": "1988-12-03",
+            "death_date": "1991-12-31",
+            "type": "bureaucrat_type"
+        },
+        "Sothy_Kunthea_Sopheap_Tit_Yun_1": {
+            "name": "Sothy Kunthea Sopheap Tit Yun",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "CMB_M_Yun_Sothy_K_S_T",
+            "start_date": "1988-12-03",
+            "death_date": "1991-12-31",
+            "type": "hardliner_type"
+        },
+        "Khamtai_Siphandon_1": {
+            "name": "Khamtai Siphandon",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "LAO_M_Siphandon_Khamtai",
+            "start_date": "1991-08-15",
+            "death_date": "1998-02-24",
+            "type": "hardliner_type"
+        },
+        "Le_Duc_Anh_1": {
+            "name": "Le Duc Anh",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "DRV_M_Anh_Le_Duc",
+            "start_date": "1992-09-24",
+            "death_date": "1997-09-24",
+            "type": "bureaucrat_type"
         }
     }
 }

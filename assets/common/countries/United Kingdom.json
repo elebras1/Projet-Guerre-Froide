@@ -1064,817 +1064,7 @@
         ]
     },
     "ministers": {
-        "211": {
-            "name": "George VI",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "ENG_George",
-            "start_date": "1936-09-11",
-            "death_date": "1952-02-06",
-            "type": "parental_type"
-        },
-        "212": {
-            "name": "Elizabeth II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "ENG_Elizabeth",
-            "start_date": "1952-02-06",
-            "death_date": "2300-05-12",
-            "type": "traditionalist_type"
-        },
-        "5539": {
-            "name": "Clement Attlee",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.8,
-            "picture": "ENG_Clement_Atlee",
-            "start_date": "1945-07-26",
-            "death_date": "1960-05-26",
-            "type": "reformer_type"
-        },
-        "5540": {
-            "name": "Winston Churchill",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "ENG_Winston_Churchill",
-            "start_date": "1951-07-26",
-            "death_date": "1955-04-07",
-            "type": "hardliner_type"
-        },
-        "5541": {
-            "name": "Anthony Eden",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "ENG_Anthony_Eden",
-            "start_date": "1955-04-07",
-            "death_date": "1957-10-01",
-            "type": "courteous_figure"
-        },
-        "5542": {
-            "name": "Harold Macmillan",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "ENG_Harold_Macmillan",
-            "start_date": "1957-01-10",
-            "death_date": "1963-10-19",
-            "type": "courteous_figure"
-        },
-        "5543": {
-            "name": "Harold Wilson",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.95,
-            "picture": "ENG_M_Wilson_James_H",
-            "start_date": "1960-11-03",
-            "death_date": "1976-04-05",
-            "type": "administrator_type"
-        },
-        "5544": {
-            "name": "Edward Heath",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.8,
-            "picture": "ENG_Edward_Heath",
-            "start_date": "1965-07-27",
-            "death_date": "1983-06-09",
-            "type": "honest_type"
-        },
-        "5545": {
-            "name": "James Callaghan",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1,
-            "picture": "ENG_M_Callahan_Leonard_J",
-            "start_date": "1963-02-07",
-            "death_date": "1984-05-04",
-            "type": "reputable_type"
-        },
-        "5546": {
-            "name": "Margaret Thatcher",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "ENG_M_Thatcher_Margaret_H",
-            "start_date": "1979-04-05",
-            "death_date": "1990-11-28",
-            "type": "iron_lady"
-        },
-        "5547": {
-            "name": "John Major",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1,
-            "picture": "ENG_John_Major",
-            "start_date": "1990-05-02",
-            "death_date": "1997-11-28",
-            "type": "ambitious_type"
-        },
-        "5548": {
-            "name": "John Bean",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Bean_John",
-            "start_date": "1957-01-01",
-            "death_date": "1968-01-01",
-            "type": "extremist_type"
-        },
-        "5549": {
-            "name": "John Tyndall",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Tyndall_John",
-            "start_date": "1967-01-01",
-            "death_date": "1980-01-01",
-            "type": "administrator_type"
-        },
-        "5550": {
-            "name": "Oswald Mosley",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Mosley_Oswald",
-            "start_date": "1940-08-01",
-            "death_date": "1977-02-11",
-            "type": "dictator_type"
-        },
-        "5551": {
-            "name": "John Kingsley Read",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Read_John_K",
-            "start_date": "1974-01-01",
-            "death_date": "1976-01-01",
-            "type": "dictator_type"
-        },
-        "5552": {
-            "name": "Colin Jordan",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Jordan_Colin",
-            "start_date": "1962-04-20",
-            "death_date": "1968-01-01",
-            "type": "extremist_type"
-        },
-        "5553": {
-            "name": "Jeffrey Hamm",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Hamm_Jeffrey",
-            "start_date": "1944-11-01",
-            "death_date": "1994-05-04",
-            "type": "bureaucrat_type"
-        },
-        "5554": {
-            "name": "Keith Thompson",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Thompson_Keith",
-            "start_date": "1974-01-01",
-            "death_date": "2300-01-01",
-            "type": "extremist_type"
-        },
-        "5555": {
-            "name": "John Graeme Wood",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Wood_John_G",
-            "start_date": "1967-01-01",
-            "death_date": "2007-11-22",
-            "type": "ambitious_type"
-        },
-        "5556": {
-            "name": "Michael McLaughlin",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_McLaughlin_Michael",
-            "start_date": "1975-01-01",
-            "death_date": "2300-01-01",
-            "type": "autocrat_type"
-        },
-        "5557": {
-            "name": "Andrew Fountaine",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Fountaine_Andrew",
-            "start_date": "1957-01-01",
-            "death_date": "1997-09-14",
-            "type": "dictator_type"
-        },
-        "5558": {
-            "name": "Arthur K. Chesterton",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Chesterton_Arthur_K",
-            "start_date": "1954-01-01",
-            "death_date": "1973-08-16",
-            "type": "autocrat_type"
-        },
-        "5559": {
-            "name": "Iain Macleod",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Macleod_Iain",
-            "start_date": "1961-10-09",
-            "death_date": "1970-07-20",
-            "type": "administrator_type"
-        },
-        "5560": {
-            "name": "Enoch Powell",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Powell_Enoch",
-            "start_date": "1955-12-21",
-            "death_date": "1987-07-11",
-            "type": "controversial_figure"
-        },
-        "5561": {
-            "name": "Reginald Maudling",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Maudling_Reginald",
-            "start_date": "1959-10-14",
-            "death_date": "1979-02-14",
-            "type": "administrator_type"
-        },
-        "5562": {
-            "name": "Michael Heseltine",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Heseltine_Michael",
-            "start_date": "1979-04-05",
-            "death_date": "1997-02-05",
-            "type": "ambitious_type"
-        },
-        "5563": {
-            "name": "Rab Butler",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Butler_Rab",
-            "start_date": "1953-06-23",
-            "death_date": "1964-10-16",
-            "type": "bureaucrat_type"
-        },
-        "5564": {
-            "name": "Quintin Hogg",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Hogg_Quintin",
-            "start_date": "1963-10-19",
-            "death_date": "1974-03-04",
-            "type": "moral_type"
-        },
-        "5565": {
-            "name": "Kenneth Clarke",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Clarke_Kenneth",
-            "start_date": "1970-06-18",
-            "death_date": "2300-01-01",
-            "type": "reputable_type"
-        },
-        "5566": {
-            "name": "Alec Douglas-Home",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Douglas-Home_Alec",
-            "start_date": "1963-10-19",
-            "death_date": "1965-07-25",
-            "type": "traditionalist_type"
-        },
-        "5567": {
-            "name": "Alexander Lord Greyhill",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Greyhill_Alexander_L",
-            "start_date": "1950-01-01",
-            "death_date": "1999-12-31",
-            "type": "traditionalist_type"
-        },
-        "5568": {
-            "name": "Sir Francis Baxton",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Baxton_Francis",
-            "start_date": "1980-01-01",
-            "death_date": "1999-12-31",
-            "type": "ambitious_type"
-        },
-        "5569": {
-            "name": "Clement Davies",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Davies_Clement",
-            "start_date": "1945-08-02",
-            "death_date": "1956-11-05",
-            "type": "lethargic_type"
-        },
-        "5570": {
-            "name": "Jo Grimond",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Grimond_Jo",
-            "start_date": "1956-11-05",
-            "death_date": "1967-01-17",
-            "type": "liberal_type"
-        },
-        "5571": {
-            "name": "David Steel",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Steel_David",
-            "start_date": "1976-05-10",
-            "death_date": "1997-04-13",
-            "type": "honest_type"
-        },
-        "5572": {
-            "name": "Roy Jenkins II",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Jenkins_II_Roy",
-            "start_date": "1981-03-26",
-            "death_date": "1983-05-13",
-            "type": "reformer_type"
-        },
-        "5573": {
-            "name": "David Owen",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Owen_David",
-            "start_date": "1982-07-02",
-            "death_date": "1997-08-06",
-            "type": "ambitious_type"
-        },
-        "5574": {
-            "name": "Robert Maclennan",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Maclennan_Robert",
-            "start_date": "1987-08-06",
-            "death_date": "1988-07-16",
-            "type": "reformer_type"
-        },
-        "5575": {
-            "name": "Paddy Ashdown",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Ashdown_Paddy",
-            "start_date": "1987-06-12",
-            "death_date": "2002-05-01",
-            "type": "ambitious_type"
-        },
-        "5576": {
-            "name": "Sir James Henderson-Stewart",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Henderson-Stewart_James",
-            "start_date": "1945-01-01",
-            "death_date": "1961-01-01",
-            "type": "loyal_type"
-        },
-        "5577": {
-            "name": "Stanley Holmes",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Holmes_Stanley",
-            "start_date": "1946-01-01",
-            "death_date": "1947-01-01",
-            "type": "bureaucrat_type"
-        },
-        "5578": {
-            "name": "John Maclay",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Maclay_John",
-            "start_date": "1947-01-01",
-            "death_date": "1956-01-01",
-            "type": "administrator_type"
-        },
-        "5579": {
-            "name": "Sir Colin Norman Thornton-Kemsley",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Thornton-Kemsley_Colin_N",
-            "start_date": "1961-01-01",
-            "death_date": "1964-01-01",
-            "type": "lethargic_type"
-        },
-        "5580": {
-            "name": "David Renton",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Renton_David",
-            "start_date": "1964-01-01",
-            "death_date": "1968-01-01",
-            "type": "fortunate_type"
-        },
-        "5581": {
-            "name": "Jeremy Thorpe",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Thorpe_Jeremy",
-            "start_date": "1967-01-01",
-            "death_date": "1976-07-07",
-            "type": "controversial_figure"
-        },
-        "5582": {
-            "name": "Neil Kinnock",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Kinnock_Neil",
-            "start_date": "1979-05-03",
-            "death_date": "1997-04-13",
-            "type": "reformer_type"
-        },
-        "5583": {
-            "name": "John Smith",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Smith_John",
-            "start_date": "1978-11-11",
-            "death_date": "1994-05-12",
-            "type": "courteous_figure"
-        },
-        "5584": {
-            "name": "Barbara Castle",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Castle_Barbara",
-            "start_date": "1964-10-18",
-            "death_date": "1976-04-05",
-            "type": "iron_lady"
-        },
-        "5585": {
-            "name": "Michael Foot",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Foot_Michael",
-            "start_date": "1945-01-01",
-            "death_date": "1983-10-02",
-            "type": "loyal_type"
-        },
-        "5586": {
-            "name": "Tony Blair",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Blair_Tony",
-            "start_date": "1989-11-02",
-            "death_date": "2007-06-24",
-            "type": "visionary_type"
-        },
-        "5587": {
-            "name": "Gordon Brown",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Brown_Gordon",
-            "start_date": "1989-11-02",
-            "death_date": "2010-01-01",
-            "type": "ambitious_type"
-        },
-        "5588": {
-            "name": "Hugh Gaitskell",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Gaitskell_Hugh",
-            "start_date": "1955-12-14",
-            "death_date": "1963-01-18",
-            "type": "reformer_type"
-        },
-        "5589": {
-            "name": "Herbet Morrison",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Morrison_Herbet",
-            "start_date": "1945-07-26",
-            "death_date": "1959-10-08",
-            "type": "administrator_type"
-        },
-        "5590": {
-            "name": "Aneurin Bevan",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Bevan_Aneurin",
-            "start_date": "1955-12-14",
-            "death_date": "1960-07-06",
-            "type": "visionary_type"
-        },
-        "5591": {
-            "name": "George Brown",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Brown_George",
-            "start_date": "1963-02-07",
-            "death_date": "1970-06-18",
-            "type": "controversial_figure"
-        },
-        "5592": {
-            "name": "Roy Jenkins",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Jenkins_Roy",
-            "start_date": "1976-03-25",
-            "death_date": "1988-07-16",
-            "type": "reformer_type"
-        },
-        "5593": {
-            "name": "Denis Healey",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Healey_Denis",
-            "start_date": "1976-03-25",
-            "death_date": "1992-04-09",
-            "type": "reputable_type"
-        },
-        "5594": {
-            "name": "Tony Benn",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Benn_Tony",
-            "start_date": "1976-03-25",
-            "death_date": "2001-06-07",
-            "type": "hardliner_type"
-        },
-        "5595": {
-            "name": "Tony Crosland",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Crosland_Tony",
-            "start_date": "1959-10-08",
-            "death_date": "1977-02-13",
-            "type": "liberal_type"
-        },
-        "5596": {
-            "name": "Peter Shore",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Shore_Peter",
-            "start_date": "1959-08-10",
-            "death_date": "1997-05-01",
-            "type": "hardliner_type"
-        },
-        "5597": {
-            "name": "John Silkin",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Silkin_John",
-            "start_date": "1980-11-04",
-            "death_date": "1987-06-11",
-            "type": "fortunate_type"
-        },
-        "5598": {
-            "name": "Roy Hattersley",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Hattersley_Roy",
-            "start_date": "1983-10-02",
-            "death_date": "1997-05-01",
-            "type": "courteous_figure"
-        },
-        "5599": {
-            "name": "Eric Heffer",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Heffer_Eric",
-            "start_date": "1983-10-02",
-            "death_date": "1991-05-27",
-            "type": "extremist_type"
-        },
-        "5600": {
-            "name": "Shirley Willaims",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Willaims_Shirley",
-            "start_date": "1976-10-09",
-            "death_date": "1987-05-04",
-            "type": "reformer_type"
-        },
-        "5601": {
-            "name": "Ken Livingstone",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Livingstone_Ken",
-            "start_date": "1981-05-17",
-            "death_date": "2008-05-05",
-            "type": "hardliner_type"
-        },
-        "5602": {
-            "name": "Tom Wintringham",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Wintringham_Tom",
-            "start_date": "1945-07-26",
-            "death_date": "1949-09-16",
-            "type": "visionary_type"
-        },
-        "5603": {
-            "name": "Ted Grant",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Grant_Ted",
-            "start_date": "1941-06-22",
-            "death_date": "2006-07-20",
-            "type": "zealous_type"
-        },
-        "5604": {
-            "name": "Reg Birch",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Birch_Reg",
-            "start_date": "1968-04-18",
-            "death_date": "1992-01-01",
-            "type": "hardliner_type"
-        },
-        "5605": {
-            "name": "Harry Pollitt",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Pollitt_Harry",
-            "start_date": "1941-01-01",
-            "death_date": "1956-01-01",
-            "type": "courageous_type"
-        },
-        "5606": {
-            "name": "J.R. Campbell",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Campbell_J_R",
-            "start_date": "1930-01-08",
-            "death_date": "1969-09-18",
-            "type": "loyal_type"
-        },
-        "5607": {
-            "name": "Willie Gallacher",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Gallacher_Willie",
-            "start_date": "1930-01-08",
-            "death_date": "1965-08-12",
-            "type": "ambitious_type"
-        },
-        "5608": {
-            "name": "Harry McShane",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_McShane_Harry",
-            "start_date": "1930-01-08",
-            "death_date": "1988-04-12",
-            "type": "visionary_type"
-        },
-        "5609": {
-            "name": "R. Palme Dutt",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Dutt_R_Palme",
-            "start_date": "1941-06-22",
-            "death_date": "1972-11-01",
-            "type": "visionary_type"
-        },
-        "5610": {
-            "name": "John Gollan",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Gollan_John",
-            "start_date": "1952-04-02",
-            "death_date": "1977-11-08",
-            "type": "administrator_type"
-        },
-        "5611": {
-            "name": "Gordon McLennan",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_McLennan_Gordon",
-            "start_date": "1966-01-01",
-            "death_date": "1992-01-01",
-            "type": "honest_type"
-        },
-        "5612": {
-            "name": "George Matthews",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Matthews_George",
-            "start_date": "1972-04-11",
-            "death_date": "1991-09-18",
-            "type": "loyal_type"
-        },
-        "5613": {
-            "name": "Ralph Miliband",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Miliband_Ralph",
-            "start_date": "1948-09-28",
-            "death_date": "1994-05-21",
-            "type": "reformer_type"
-        },
-        "5614": {
-            "name": "Arthur Scargil",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Scargil_Arthur",
-            "start_date": "1982-01-01",
-            "death_date": "2300-01-01",
-            "type": "hardliner_type"
-        },
-        "5615": {
-            "name": "T. Dan Smith",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Smith_T_D",
-            "start_date": "1959-08-10",
-            "death_date": "1970-01-01",
-            "type": "controversial_figure"
-        },
-        "5616": {
-            "name": "Sir Walter Walker",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Walker_Walter",
-            "start_date": "1972-01-01",
-            "death_date": "1992-01-01",
-            "type": "hardliner_type"
-        },
-        "5617": {
-            "name": "Sir Bernard Montgomery",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Montgomery_Bernard",
-            "start_date": "1946-01-01",
-            "death_date": "1976-03-26",
-            "type": "hardliner_type"
-        },
-        "5618": {
-            "name": "David Crook",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Crook_David",
-            "start_date": "1936-07-17",
-            "death_date": "1992-01-01",
-            "type": "ambitious_type"
-        },
-        "5619": {
-            "name": "Edmund Ironside",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Ironside_Edmund",
-            "start_date": "1945-01-01",
-            "death_date": "1959-09-22",
-            "type": "traditionalist_type"
-        },
-        "5620": {
-            "name": "Sir Richard Hilton",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Hilton_Richard",
-            "start_date": "1954-01-01",
-            "death_date": "1999-07-15",
-            "type": "traditionalist_type"
-        },
-        "5621": {
-            "name": "Shirley Williams",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Williams_Shirley",
-            "start_date": "1982-07-02",
-            "death_date": "1992-08-06",
-            "type": "courteous_figure"
-        },
-        "5622": {
-            "name": "John Pardoe",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Pardoe_John",
-            "start_date": "1976-07-07",
-            "death_date": "1983-04-13",
-            "type": "courageous_type"
-        },
-        "5623": {
-            "name": "Alan Beith",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Beith_Alan",
-            "start_date": "1987-06-12",
-            "death_date": "1997-04-13",
-            "type": "liberal_type"
-        },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "354": {
+        "Robert_I_von_Bayern_1": {
             "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -1883,214 +1073,34 @@
             "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "355": {
-            "name": "Albert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
-        },
-        "5624": {
-            "name": "Louis Mountbatten",
-            "ideology": "social_cons_idolg",
+        "Willie_Gallacher_1": {
+            "name": "Willie Gallacher",
+            "ideology": "communist_idolg",
             "loyalty": 0.5,
-            "picture": "ENG_M_Mountbatten_Louis",
-            "start_date": "1968-05-08",
-            "death_date": "1979-08-27",
+            "picture": "ENG_M_Gallacher_Willie",
+            "start_date": "1930-01-08",
+            "death_date": "1965-08-12",
             "type": "ambitious_type"
         },
-        "5625": {
-            "name": "Robert Gascoyne-Cecil",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Gascoyne-Cecil_Robert",
-            "start_date": "1945-01-01",
-            "death_date": "1972-02-23",
-            "type": "traditionalist_type"
-        },
-        "5626": {
-            "name": "Bill Bland",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Bland_Bill",
-            "start_date": "1937-01-01",
-            "death_date": "2001-04-13",
-            "type": "hardliner_type"
-        },
-        "5627": {
-            "name": "Tariq Ali",
+        "JR_Campbell_1": {
+            "name": "J.R. Campbell",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
-            "picture": "ENG_M_Ali_Tariq",
-            "start_date": "1968-03-17",
-            "death_date": "2300-01-01",
-            "type": "visionary_type"
+            "picture": "ENG_M_Campbell_J_R",
+            "start_date": "1930-01-08",
+            "death_date": "1969-09-18",
+            "type": "loyal_type"
         },
-        "5628": {
-            "name": "Alan Woods",
+        "Harry_McShane_1": {
+            "name": "Harry McShane",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
-            "picture": "ENG_M_Woods_Alan",
-            "start_date": "1964-01-01",
-            "death_date": "2300-01-01",
-            "type": "bureaucrat_type"
-        },
-        "5629": {
-            "name": "Peter Taffe",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Taffe_Peter",
-            "start_date": "1964-01-01",
-            "death_date": "2300-01-01",
-            "type": "administrator_type"
-        },
-        "5630": {
-            "name": "John G. Hargrave",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Hargrave_John_G.",
-            "start_date": "1935-01-01",
-            "death_date": "1982-11-21",
+            "picture": "ENG_M_McShane_Harry",
+            "start_date": "1930-01-08",
+            "death_date": "1988-04-12",
             "type": "visionary_type"
         },
-        "5631": {
-            "name": "C. J. Hunt",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Hunt_C_J",
-            "start_date": "1965-01-01",
-            "death_date": "1999-01-01",
-            "type": "parental_type"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "348": {
-            "name": "Margaret I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "ENG_M_Margaret_I",
-            "start_date": "1952-03-01",
-            "death_date": "2002-02-09",
-            "type": "controversial_figure"
-        },
-        "349": {
-            "name": "David III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "350": {
-            "name": "Sarah I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "351": {
-            "name": "Henry IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
-        },
-        "352": {
-            "name": "William V",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.91,
-            "picture": "ENG_M_William_V",
-            "start_date": "1959-12-18",
-            "death_date": "1972-08-28",
-            "type": "courteous_figure"
-        },
-        "353": {
-            "name": "Richard IV",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "ENG_M_Richard_IV",
-            "start_date": "1962-08-26",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "5632": {
-            "name": "Geoffrey Howe",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Howe_Geoffrey",
-            "start_date": "1975-02-04",
-            "death_date": "1990-11-01",
-            "type": "administrator_type"
-        },
-        "5633": {
-            "name": "William Whitelaw",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Whitelaw_William",
-            "start_date": "1975-02-04",
-            "death_date": "1987-12-01",
-            "type": "courteous_figure"
-        },
-        "5634": {
-            "name": "Douglas Hurd",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Hurd_Douglas",
-            "start_date": "1990-11-27",
-            "death_date": "1997-05-01",
-            "type": "courteous_figure"
-        },
-        "5635": {
-            "name": "Keith Joseph",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Joseph_Keith",
-            "start_date": "1975-02-04",
-            "death_date": "1987-06-11",
-            "type": "visionary_type"
-        },
-        "5636": {
-            "name": "Norman Tebbit",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Tebbit_Norman",
-            "start_date": "1981-09-14",
-            "death_date": "1992-04-09",
-            "type": "hardliner_type"
-        },
-        "5637": {
-            "name": "Ian Paisley",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Paisley_Ian",
-            "start_date": "1956-01-01",
-            "death_date": "2008-06-05",
-            "type": "religious_type"
-        },
-        "5638": {
-            "name": "John Colins",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Colins_John",
-            "start_date": "1958-02-17",
-            "death_date": "1982-01-01",
-            "type": "religious_type"
-        },
-        "5639": {
+        "Peggy_Duff_1": {
             "name": "Peggy Duff",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -2099,16 +1109,88 @@
             "death_date": "1967-05-10",
             "type": "moral_type"
         },
-        "5640": {
-            "name": "Sir Richard Acland",
+        "John_G_Hargrave_1": {
+            "name": "John G. Hargrave",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Hargrave_John_G.",
+            "start_date": "1935-01-01",
+            "death_date": "1982-11-21",
+            "type": "visionary_type"
+        },
+        "David_Crook_1": {
+            "name": "David Crook",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Crook_David",
+            "start_date": "1936-07-17",
+            "death_date": "1992-01-01",
+            "type": "ambitious_type"
+        },
+        "George_VI_1": {
+            "name": "George VI",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
+        },
+        "Bill_Bland_1": {
+            "name": "Bill Bland",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Bland_Bill",
+            "start_date": "1937-01-01",
+            "death_date": "2001-04-13",
+            "type": "hardliner_type"
+        },
+        "Oswald_Mosley_1": {
+            "name": "Oswald Mosley",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Mosley_Oswald",
+            "start_date": "1940-08-01",
+            "death_date": "1977-02-11",
+            "type": "dictator_type"
+        },
+        "Harry_Pollitt_1": {
+            "name": "Harry Pollitt",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Pollitt_Harry",
+            "start_date": "1941-01-01",
+            "death_date": "1956-01-01",
+            "type": "courageous_type"
+        },
+        "R_Palme_Dutt_1": {
+            "name": "R. Palme Dutt",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Dutt_R_Palme",
+            "start_date": "1941-06-22",
+            "death_date": "1972-11-01",
+            "type": "visionary_type"
+        },
+        "Ted_Grant_1": {
+            "name": "Ted Grant",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
-            "picture": "ENG_M_Acland_Richard",
-            "start_date": "1942-01-01",
-            "death_date": "1990-11-24",
-            "type": "democrat_type"
+            "picture": "ENG_M_Grant_Ted",
+            "start_date": "1941-06-22",
+            "death_date": "2006-07-20",
+            "type": "zealous_type"
         },
-        "5641": {
+        "Jack_Jones_1": {
+            "name": "Jack Jones",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Jones_Jack",
+            "start_date": "1942-01-01",
+            "death_date": "1978-12-01",
+            "type": "bureaucrat_type"
+        },
+        "J_B_Priestley_1": {
             "name": "J. B. Priestley",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -2117,16 +1199,142 @@
             "death_date": "1984-08-14",
             "type": "reputable_type"
         },
-        "5642": {
-            "name": "Jack Jones",
+        "Sir_Richard_Acland_1": {
+            "name": "Sir Richard Acland",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
-            "picture": "ENG_M_Jones_Jack",
+            "picture": "ENG_M_Acland_Richard",
             "start_date": "1942-01-01",
-            "death_date": "1978-12-01",
-            "type": "supreme_leader"
+            "death_date": "1990-11-24",
+            "type": "democrat_type"
         },
-        "5643": {
+        "Jeffrey_Hamm_1": {
+            "name": "Jeffrey Hamm",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Hamm_Jeffrey",
+            "start_date": "1944-11-01",
+            "death_date": "1994-05-04",
+            "type": "bureaucrat_type"
+        },
+        "Edmund_Ironside_1": {
+            "name": "Edmund Ironside",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Ironside_Edmund",
+            "start_date": "1945-01-01",
+            "death_date": "1959-09-22",
+            "type": "traditionalist_type"
+        },
+        "Sir_James_HendersonStewart_1": {
+            "name": "Sir James Henderson-Stewart",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Henderson-Stewart_James",
+            "start_date": "1945-01-01",
+            "death_date": "1961-01-01",
+            "type": "loyal_type"
+        },
+        "Hewlett_Johnson_1": {
+            "name": "Hewlett Johnson",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Johnson_Hewlett",
+            "start_date": "1945-01-01",
+            "death_date": "1966-10-22",
+            "type": "religious_type"
+        },
+        "Robert_GascoyneCecil_1": {
+            "name": "Robert Gascoyne-Cecil",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Gascoyne-Cecil_Robert",
+            "start_date": "1945-01-01",
+            "death_date": "1972-02-23",
+            "type": "traditionalist_type"
+        },
+        "Michael_Foot_1": {
+            "name": "Michael Foot",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Foot_Michael",
+            "start_date": "1945-01-01",
+            "death_date": "1983-10-02",
+            "type": "loyal_type"
+        },
+        "Tom_Wintringham_1": {
+            "name": "Tom Wintringham",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Wintringham_Tom",
+            "start_date": "1945-07-26",
+            "death_date": "1949-09-16",
+            "type": "visionary_type"
+        },
+        "Herbet_Morrison_1": {
+            "name": "Herbet Morrison",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Morrison_Herbet",
+            "start_date": "1945-07-26",
+            "death_date": "1959-10-08",
+            "type": "administrator_type"
+        },
+        "Clement_Attlee_1": {
+            "name": "Clement Attlee",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.8,
+            "picture": "ENG_Clement_Atlee",
+            "start_date": "1945-07-26",
+            "death_date": "1960-05-26",
+            "type": "reformer_type"
+        },
+        "Clement_Davies_1": {
+            "name": "Clement Davies",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Davies_Clement",
+            "start_date": "1945-08-02",
+            "death_date": "1956-11-05",
+            "type": "lethargic_type"
+        },
+        "Stanley_Holmes_1": {
+            "name": "Stanley Holmes",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Holmes_Stanley",
+            "start_date": "1946-01-01",
+            "death_date": "1947-01-01",
+            "type": "bureaucrat_type"
+        },
+        "Henry_IX_1": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "Sir_Bernard_Montgomery_1": {
+            "name": "Sir Bernard Montgomery",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Montgomery_Bernard",
+            "start_date": "1946-01-01",
+            "death_date": "1976-03-26",
+            "type": "hardliner_type"
+        },
+        "John_Maclay_1": {
+            "name": "John Maclay",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Maclay_John",
+            "start_date": "1947-01-01",
+            "death_date": "1956-01-01",
+            "type": "administrator_type"
+        },
+        "Hugh_Scanlon_1": {
             "name": "Hugh Scanlon",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -2135,7 +1343,7 @@
             "death_date": "2004-01-27",
             "type": "hardliner_type"
         },
-        "5644": {
+        "Ken_Coates_1": {
             "name": "Ken Coates",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -2144,16 +1352,97 @@
             "death_date": "2010-06-27",
             "type": "extremist_type"
         },
-        "5645": {
-            "name": "Malcolm Caldwell",
-            "ideology": "maoist_idolg",
+        "Ralph_Miliband_1": {
+            "name": "Ralph Miliband",
+            "ideology": "communist_idolg",
             "loyalty": 0.5,
-            "picture": "ENG_M_Caldwell_Malcolm",
-            "start_date": "1968-01-01",
-            "death_date": "1978-12-23",
-            "type": "extremist_type"
+            "picture": "ENG_M_Miliband_Ralph",
+            "start_date": "1948-09-28",
+            "death_date": "1994-05-21",
+            "type": "reformer_type"
         },
-        "5646": {
+        "Alexander_Lord_Greyhill_1": {
+            "name": "Alexander Lord Greyhill",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Greyhill_Alexander_L",
+            "start_date": "1950-01-01",
+            "death_date": "1999-12-31",
+            "type": "traditionalist_type"
+        },
+        "Winston_Churchill_1": {
+            "name": "Winston Churchill",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1,
+            "picture": "ENG_Winston_Churchill",
+            "start_date": "1951-07-26",
+            "death_date": "1955-04-07",
+            "type": "hardliner_type"
+        },
+        "Elizabeth_II_1": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "Margaret_I_1": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "John_Gollan_1": {
+            "name": "John Gollan",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Gollan_John",
+            "start_date": "1952-04-02",
+            "death_date": "1977-11-08",
+            "type": "administrator_type"
+        },
+        "Rab_Butler_1": {
+            "name": "Rab Butler",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Butler_Rab",
+            "start_date": "1953-06-23",
+            "death_date": "1964-10-16",
+            "type": "bureaucrat_type"
+        },
+        "Arthur_K_Chesterton_1": {
+            "name": "Arthur K. Chesterton",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Chesterton_Arthur_K",
+            "start_date": "1954-01-01",
+            "death_date": "1973-08-16",
+            "type": "autocrat_type"
+        },
+        "Sir_Richard_Hilton_1": {
+            "name": "Sir Richard Hilton",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Hilton_Richard",
+            "start_date": "1954-01-01",
+            "death_date": "1999-07-15",
+            "type": "traditionalist_type"
+        },
+        "Anthony_Eden_1": {
+            "name": "Anthony Eden",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1,
+            "picture": "ENG_Anthony_Eden",
+            "start_date": "1955-04-07",
+            "death_date": "1957-10-01",
+            "type": "courteous_figure"
+        },
+        "Jason_Tower_1": {
             "name": "Jason Tower",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.5,
@@ -2162,34 +1451,529 @@
             "death_date": "1959-10-08",
             "type": "ambitious_type"
         },
-        "5647": {
-            "name": "John Buckle",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "ENG_M_Buckle_John",
-            "start_date": "1979-03-19",
-            "death_date": "1983-11-27",
-            "type": "supreme_leader"
+        "Albert_I_von_Bayern_1": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
         },
-        "5648": {
+        "Aneurin_Bevan_1": {
+            "name": "Aneurin Bevan",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Bevan_Aneurin",
+            "start_date": "1955-12-14",
+            "death_date": "1960-07-06",
+            "type": "visionary_type"
+        },
+        "Hugh_Gaitskell_1": {
+            "name": "Hugh Gaitskell",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Gaitskell_Hugh",
+            "start_date": "1955-12-14",
+            "death_date": "1963-01-18",
+            "type": "reformer_type"
+        },
+        "Enoch_Powell_1": {
+            "name": "Enoch Powell",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Powell_Enoch",
+            "start_date": "1955-12-21",
+            "death_date": "1987-07-11",
+            "type": "controversial_figure"
+        },
+        "Ian_Paisley_1": {
+            "name": "Ian Paisley",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Paisley_Ian",
+            "start_date": "1956-01-01",
+            "death_date": "2008-06-05",
+            "type": "religious_type"
+        },
+        "Jo_Grimond_1": {
+            "name": "Jo Grimond",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Grimond_Jo",
+            "start_date": "1956-11-05",
+            "death_date": "1967-01-17",
+            "type": "liberal_type"
+        },
+        "John_Bean_1": {
+            "name": "John Bean",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Bean_John",
+            "start_date": "1957-01-01",
+            "death_date": "1968-01-01",
+            "type": "extremist_type"
+        },
+        "Andrew_Fountaine_1": {
+            "name": "Andrew Fountaine",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Fountaine_Andrew",
+            "start_date": "1957-01-01",
+            "death_date": "1997-09-14",
+            "type": "dictator_type"
+        },
+        "Harold_Macmillan_1": {
+            "name": "Harold Macmillan",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1,
+            "picture": "ENG_Harold_Macmillan",
+            "start_date": "1957-01-10",
+            "death_date": "1963-10-19",
+            "type": "courteous_figure"
+        },
+        "John_Colins_1": {
+            "name": "John Colins",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Colins_John",
+            "start_date": "1958-02-17",
+            "death_date": "1982-01-01",
+            "type": "religious_type"
+        },
+        "T_Dan_Smith_1": {
+            "name": "T. Dan Smith",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Smith_T_D",
+            "start_date": "1959-08-10",
+            "death_date": "1970-01-01",
+            "type": "controversial_figure"
+        },
+        "Peter_Shore_1": {
+            "name": "Peter Shore",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Shore_Peter",
+            "start_date": "1959-08-10",
+            "death_date": "1997-05-01",
+            "type": "hardliner_type"
+        },
+        "Tony_Crosland_1": {
+            "name": "Tony Crosland",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Crosland_Tony",
+            "start_date": "1959-10-08",
+            "death_date": "1977-02-13",
+            "type": "liberal_type"
+        },
+        "Reginald_Maudling_1": {
+            "name": "Reginald Maudling",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Maudling_Reginald",
+            "start_date": "1959-10-14",
+            "death_date": "1979-02-14",
+            "type": "administrator_type"
+        },
+        "William_V_1": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "Harold_Wilson_1": {
+            "name": "Harold Wilson",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Wilson_James_H",
+            "start_date": "1960-11-03",
+            "death_date": "1976-04-05",
+            "type": "administrator_type"
+        },
+        "Sir_Colin_Norman_ThorntonKemsley_1": {
+            "name": "Sir Colin Norman Thornton-Kemsley",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Thornton-Kemsley_Colin_N",
+            "start_date": "1961-01-01",
+            "death_date": "1964-01-01",
+            "type": "lethargic_type"
+        },
+        "Iain_Macleod_1": {
+            "name": "Iain Macleod",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Macleod_Iain",
+            "start_date": "1961-10-09",
+            "death_date": "1970-07-20",
+            "type": "administrator_type"
+        },
+        "Colin_Jordan_1": {
+            "name": "Colin Jordan",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Jordan_Colin",
+            "start_date": "1962-04-20",
+            "death_date": "1968-01-01",
+            "type": "extremist_type"
+        },
+        "Richard_IV_1": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Michael_MacCreery_1": {
             "name": "Michael MacCreery",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
             "picture": "ENG_M_MacCreery_Michael",
             "start_date": "1963-01-01",
             "death_date": "1965-04-01",
-            "type": "supreme_leader"
+            "type": "zealous_type"
         },
-        "5649": {
-            "name": "David Icke",
-            "ideology": "left_wing_radical_idolg",
+        "George_Brown_1": {
+            "name": "George Brown",
+            "ideology": "social_democrat_idolg",
             "loyalty": 0.5,
-            "picture": "ENG_M_Icke_David",
-            "start_date": "1988-02-03",
-            "death_date": "1991-01-01",
+            "picture": "ENG_M_Brown_George",
+            "start_date": "1963-02-07",
+            "death_date": "1970-06-18",
             "type": "controversial_figure"
         },
-        "5650": {
+        "James_Callaghan_1": {
+            "name": "James Callaghan",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1,
+            "picture": "ENG_M_Callahan_Leonard_J",
+            "start_date": "1963-02-07",
+            "death_date": "1984-05-04",
+            "type": "reputable_type"
+        },
+        "Alec_DouglasHome_1": {
+            "name": "Alec Douglas-Home",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Douglas-Home_Alec",
+            "start_date": "1963-10-19",
+            "death_date": "1965-07-25",
+            "type": "traditionalist_type"
+        },
+        "Quintin_Hogg_1": {
+            "name": "Quintin Hogg",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Hogg_Quintin",
+            "start_date": "1963-10-19",
+            "death_date": "1974-03-04",
+            "type": "moral_type"
+        },
+        "David_Renton_1": {
+            "name": "David Renton",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Renton_David",
+            "start_date": "1964-01-01",
+            "death_date": "1968-01-01",
+            "type": "fortunate_type"
+        },
+        "Alan_Woods_1": {
+            "name": "Alan Woods",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Woods_Alan",
+            "start_date": "1964-01-01",
+            "death_date": "2300-01-01",
+            "type": "bureaucrat_type"
+        },
+        "Peter_Taffe_1": {
+            "name": "Peter Taffe",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Taffe_Peter",
+            "start_date": "1964-01-01",
+            "death_date": "2300-01-01",
+            "type": "administrator_type"
+        },
+        "Barbara_Castle_1": {
+            "name": "Barbara Castle",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Castle_Barbara",
+            "start_date": "1964-10-18",
+            "death_date": "1976-04-05",
+            "type": "iron_lady"
+        },
+        "C_J_Hunt_1": {
+            "name": "C. J. Hunt",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Hunt_C_J",
+            "start_date": "1965-01-01",
+            "death_date": "1999-01-01",
+            "type": "parental_type"
+        },
+        "Edward_Heath_1": {
+            "name": "Edward Heath",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.8,
+            "picture": "ENG_Edward_Heath",
+            "start_date": "1965-07-27",
+            "death_date": "1983-06-09",
+            "type": "honest_type"
+        },
+        "Gordon_McLennan_1": {
+            "name": "Gordon McLennan",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_McLennan_Gordon",
+            "start_date": "1966-01-01",
+            "death_date": "1992-01-01",
+            "type": "honest_type"
+        },
+        "George_VII_1": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "Jeremy_Thorpe_1": {
+            "name": "Jeremy Thorpe",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Thorpe_Jeremy",
+            "start_date": "1967-01-01",
+            "death_date": "1976-07-07",
+            "type": "controversial_figure"
+        },
+        "John_Tyndall_1": {
+            "name": "John Tyndall",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Tyndall_John",
+            "start_date": "1967-01-01",
+            "death_date": "1980-01-01",
+            "type": "administrator_type"
+        },
+        "John_Graeme_Wood_1": {
+            "name": "John Graeme Wood",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Wood_John_G",
+            "start_date": "1967-01-01",
+            "death_date": "2007-11-22",
+            "type": "ambitious_type"
+        },
+        "Malcolm_Caldwell_1": {
+            "name": "Malcolm Caldwell",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Caldwell_Malcolm",
+            "start_date": "1968-01-01",
+            "death_date": "1978-12-23",
+            "type": "extremist_type"
+        },
+        "Tariq_Ali_1": {
+            "name": "Tariq Ali",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Ali_Tariq",
+            "start_date": "1968-03-17",
+            "death_date": "2300-01-01",
+            "type": "visionary_type"
+        },
+        "Reg_Birch_1": {
+            "name": "Reg Birch",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Birch_Reg",
+            "start_date": "1968-04-18",
+            "death_date": "1992-01-01",
+            "type": "hardliner_type"
+        },
+        "Louis_Mountbatten_1": {
+            "name": "Louis Mountbatten",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Mountbatten_Louis",
+            "start_date": "1968-05-08",
+            "death_date": "1979-08-27",
+            "type": "ambitious_type"
+        },
+        "Anne_II_1": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Kenneth_Clarke_1": {
+            "name": "Kenneth Clarke",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Clarke_Kenneth",
+            "start_date": "1970-06-18",
+            "death_date": "2300-01-01",
+            "type": "reputable_type"
+        },
+        "Sir_Walter_Walker_1": {
+            "name": "Sir Walter Walker",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Walker_Walter",
+            "start_date": "1972-01-01",
+            "death_date": "1992-01-01",
+            "type": "hardliner_type"
+        },
+        "George_Matthews_1": {
+            "name": "George Matthews",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Matthews_George",
+            "start_date": "1972-04-11",
+            "death_date": "1991-09-18",
+            "type": "loyal_type"
+        },
+        "John_Kingsley_Read_1": {
+            "name": "John Kingsley Read",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Read_John_K",
+            "start_date": "1974-01-01",
+            "death_date": "1976-01-01",
+            "type": "dictator_type"
+        },
+        "Keith_Thompson_1": {
+            "name": "Keith Thompson",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Thompson_Keith",
+            "start_date": "1974-01-01",
+            "death_date": "2300-01-01",
+            "type": "extremist_type"
+        },
+        "Michael_McLaughlin_1": {
+            "name": "Michael McLaughlin",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_McLaughlin_Michael",
+            "start_date": "1975-01-01",
+            "death_date": "2300-01-01",
+            "type": "autocrat_type"
+        },
+        "Keith_Joseph_1": {
+            "name": "Keith Joseph",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Joseph_Keith",
+            "start_date": "1975-02-04",
+            "death_date": "1987-06-11",
+            "type": "visionary_type"
+        },
+        "William_Whitelaw_1": {
+            "name": "William Whitelaw",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Whitelaw_William",
+            "start_date": "1975-02-04",
+            "death_date": "1987-12-01",
+            "type": "courteous_figure"
+        },
+        "Geoffrey_Howe_1": {
+            "name": "Geoffrey Howe",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Howe_Geoffrey",
+            "start_date": "1975-02-04",
+            "death_date": "1990-11-01",
+            "type": "administrator_type"
+        },
+        "Roy_Jenkins_1": {
+            "name": "Roy Jenkins",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Jenkins_Roy",
+            "start_date": "1976-03-25",
+            "death_date": "1988-07-16",
+            "type": "reformer_type"
+        },
+        "Denis_Healey_1": {
+            "name": "Denis Healey",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Healey_Denis",
+            "start_date": "1976-03-25",
+            "death_date": "1992-04-09",
+            "type": "reputable_type"
+        },
+        "Tony_Benn_1": {
+            "name": "Tony Benn",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Benn_Tony",
+            "start_date": "1976-03-25",
+            "death_date": "2001-06-07",
+            "type": "hardliner_type"
+        },
+        "David_Steel_1": {
+            "name": "David Steel",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Steel_David",
+            "start_date": "1976-05-10",
+            "death_date": "1997-04-13",
+            "type": "honest_type"
+        },
+        "John_Pardoe_1": {
+            "name": "John Pardoe",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Pardoe_John",
+            "start_date": "1976-07-07",
+            "death_date": "1983-04-13",
+            "type": "courageous_type"
+        },
+        "Shirley_Willaims_1": {
+            "name": "Shirley Willaims",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Willaims_Shirley",
+            "start_date": "1976-10-09",
+            "death_date": "1987-05-04",
+            "type": "reformer_type"
+        },
+        "Andrew_I_1": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "John_Smith_1": {
+            "name": "John Smith",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Smith_John",
+            "start_date": "1978-11-11",
+            "death_date": "1994-05-12",
+            "type": "courteous_figure"
+        },
+        "Dr_Derek_Wall_1": {
             "name": "Dr. Derek Wall",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -2198,14 +1982,230 @@
             "death_date": "2008-01-01",
             "type": "reformer_type"
         },
-        "5651": {
-            "name": "Hewlett Johnson",
+        "John_Buckle_1": {
+            "name": "John Buckle",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Buckle_John",
+            "start_date": "1979-03-19",
+            "death_date": "1983-11-27",
+            "type": "ambitious_type"
+        },
+        "Margaret_Thatcher_1": {
+            "name": "Margaret Thatcher",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1,
+            "picture": "ENG_M_Thatcher_Margaret_H",
+            "start_date": "1979-04-05",
+            "death_date": "1990-11-28",
+            "type": "iron_lady"
+        },
+        "Michael_Heseltine_1": {
+            "name": "Michael Heseltine",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Heseltine_Michael",
+            "start_date": "1979-04-05",
+            "death_date": "1997-02-05",
+            "type": "ambitious_type"
+        },
+        "Neil_Kinnock_1": {
+            "name": "Neil Kinnock",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Kinnock_Neil",
+            "start_date": "1979-05-03",
+            "death_date": "1997-04-13",
+            "type": "reformer_type"
+        },
+        "David_III_1": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Sir_Francis_Baxton_1": {
+            "name": "Sir Francis Baxton",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Baxton_Francis",
+            "start_date": "1980-01-01",
+            "death_date": "1999-12-31",
+            "type": "ambitious_type"
+        },
+        "John_Silkin_1": {
+            "name": "John Silkin",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Silkin_John",
+            "start_date": "1980-11-04",
+            "death_date": "1987-06-11",
+            "type": "fortunate_type"
+        },
+        "Roy_Jenkins_II_1": {
+            "name": "Roy Jenkins II",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Jenkins_II_Roy",
+            "start_date": "1981-03-26",
+            "death_date": "1983-05-13",
+            "type": "reformer_type"
+        },
+        "Ken_Livingstone_1": {
+            "name": "Ken Livingstone",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Livingstone_Ken",
+            "start_date": "1981-05-17",
+            "death_date": "2008-05-05",
+            "type": "hardliner_type"
+        },
+        "Norman_Tebbit_1": {
+            "name": "Norman Tebbit",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Tebbit_Norman",
+            "start_date": "1981-09-14",
+            "death_date": "1992-04-09",
+            "type": "hardliner_type"
+        },
+        "Arthur_Scargil_1": {
+            "name": "Arthur Scargil",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
-            "picture": "ENG_M_Johnson_Hewlett",
-            "start_date": "1945-01-01",
-            "death_date": "1966-10-22",
-            "type": "religious_type"
+            "picture": "ENG_M_Scargil_Arthur",
+            "start_date": "1982-01-01",
+            "death_date": "2300-01-01",
+            "type": "hardliner_type"
+        },
+        "Edward_IX_1": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Sarah_I_1": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Shirley_Williams_1": {
+            "name": "Shirley Williams",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Williams_Shirley",
+            "start_date": "1982-07-02",
+            "death_date": "1992-08-06",
+            "type": "courteous_figure"
+        },
+        "David_Owen_1": {
+            "name": "David Owen",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Owen_David",
+            "start_date": "1982-07-02",
+            "death_date": "1997-08-06",
+            "type": "ambitious_type"
+        },
+        "Eric_Heffer_1": {
+            "name": "Eric Heffer",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Heffer_Eric",
+            "start_date": "1983-10-02",
+            "death_date": "1991-05-27",
+            "type": "extremist_type"
+        },
+        "Roy_Hattersley_1": {
+            "name": "Roy Hattersley",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Hattersley_Roy",
+            "start_date": "1983-10-02",
+            "death_date": "1997-05-01",
+            "type": "courteous_figure"
+        },
+        "Alan_Beith_1": {
+            "name": "Alan Beith",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Beith_Alan",
+            "start_date": "1987-06-12",
+            "death_date": "1997-04-13",
+            "type": "liberal_type"
+        },
+        "Paddy_Ashdown_1": {
+            "name": "Paddy Ashdown",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Ashdown_Paddy",
+            "start_date": "1987-06-12",
+            "death_date": "2002-05-01",
+            "type": "ambitious_type"
+        },
+        "Robert_Maclennan_1": {
+            "name": "Robert Maclennan",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Maclennan_Robert",
+            "start_date": "1987-08-06",
+            "death_date": "1988-07-16",
+            "type": "reformer_type"
+        },
+        "David_Icke_1": {
+            "name": "David Icke",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Icke_David",
+            "start_date": "1988-02-03",
+            "death_date": "1991-01-01",
+            "type": "controversial_figure"
+        },
+        "Tony_Blair_1": {
+            "name": "Tony Blair",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Blair_Tony",
+            "start_date": "1989-11-02",
+            "death_date": "2007-06-24",
+            "type": "visionary_type"
+        },
+        "Gordon_Brown_1": {
+            "name": "Gordon Brown",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Brown_Gordon",
+            "start_date": "1989-11-02",
+            "death_date": "2010-01-01",
+            "type": "ambitious_type"
+        },
+        "John_Major_1": {
+            "name": "John Major",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1,
+            "picture": "ENG_John_Major",
+            "start_date": "1990-05-02",
+            "death_date": "1997-11-28",
+            "type": "ambitious_type"
+        },
+        "Douglas_Hurd_1": {
+            "name": "Douglas Hurd",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "ENG_M_Hurd_Douglas",
+            "start_date": "1990-11-27",
+            "death_date": "1997-05-01",
+            "type": "courteous_figure"
         }
     }
 }

@@ -1,779 +1,779 @@
 {
-  "country": "FIN",
-  "leaders": {
-    "15108": {
-      "name": "Anssi Niemi",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15109": {
-      "name": "Toivo Koskinen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15110": {
-      "name": "Antti Heikkinen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "15111": {
-      "name": "Eero Kinnunen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15112": {
-      "name": "Uuno Lehtinen",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "15113": {
-      "name": "Juho Turunen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "15114": {
-      "name": "Pauli Rantanen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "winter_specialist"
-    },
-    "15115": {
-      "name": "Veikko Salonen",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15116": {
-      "name": "Tapio Heikkinen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15117": {
-      "name": "Kalle Korhonen",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15118": {
-      "name": "Pekka Koskinen",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15119": {
-      "name": "Matti Järvinen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "15120": {
-      "name": "Lauri Heikkinen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "15121": {
-      "name": "Tauno Salonen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15122": {
-      "name": "Aaku Mäkelä",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15123": {
-      "name": "Hannes Virtanen",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15124": {
-      "name": "Heino Virtanen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15125": {
-      "name": "Jarno Lehtinen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15126": {
-      "name": "Anssi Karjalainen",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "15127": {
-      "name": "Matti Karjalainen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "panzer_leader"
-    },
-    "15128": {
-      "name": "Veikko Virtanen",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15129": {
-      "name": "Antti Hämäläinen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15130": {
-      "name": "Aaro Lehtonen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "15131": {
-      "name": "Ari Nieminen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15132": {
-      "name": "Reijo Lehtinen",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "15133": {
-      "name": "Olavi Karjalainen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "15134": {
-      "name": "Jouko Lehtonen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "15135": {
-      "name": "Severi Turunen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15136": {
-      "name": "Tauno Salonen",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "15137": {
-      "name": "Riku Mattila",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15138": {
-      "name": "Riku Lahtinen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "15139": {
-      "name": "Jari Nieminen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15140": {
-      "name": "Severi Laitinen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "winter_specialist"
-    },
-    "15141": {
-      "name": "Arvi Lehtinen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15142": {
-      "name": "Risto Järvinen",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "winter_specialist"
-    },
-    "15143": {
-      "name": "Veikko Heikkilä",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "15144": {
-      "name": "Eino Karjalainen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15145": {
-      "name": "Taavi Heinonen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15146": {
-      "name": "Aaku Lehtonen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "15147": {
-      "name": "Juhani Tuominen",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "15148": {
-      "name": "Teemu Järvinen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "winter_specialist"
-    },
-    "15149": {
-      "name": "Olavi Mäkelä",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15150": {
-      "name": "Lauri Salminen",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15151": {
-      "name": "Pekka Jokinen",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "winter_specialist"
-    },
-    "15152": {
-      "name": "Kalle Heikkinen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15153": {
-      "name": "Onni Nieminen",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15154": {
-      "name": "Uno Lehtonen",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "15155": {
-      "name": "Olavi Rantanen",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "15156": {
-      "name": "Hannu Laitinen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15157": {
-      "name": "Risto Mäkelä",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15158": {
-      "name": "Urho Hämäläinen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "15159": {
-      "name": "Arvo Lehtinen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15160": {
-      "name": "Risto Salonen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "15161": {
-      "name": "Arvo Niemi",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "15162": {
-      "name": "Matti Heikkilä",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15163": {
-      "name": "Onni Virtanen",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15164": {
-      "name": "Jussi Saarinen",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15165": {
-      "name": "Lauri Järvinen",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15166": {
-      "name": "Arvo Korhonen",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15167": {
-      "name": "Sami Karjalainen",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15168": {
-      "name": "Arvi Karjalainen",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "blockade_runner"
-    },
-    "15169": {
-      "name": "Sami Mäkelä",
-      "skill": 5,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15170": {
-      "name": "Tauno Niemi",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15171": {
-      "name": "Onni Savolainen",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15172": {
-      "name": "Matti Salminen",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15173": {
-      "name": "Reijo Lehtonen",
-      "skill": 7,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15174": {
-      "name": "Aaro Järvinen",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "15175": {
-      "name": "Hannes Lehtinen",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15176": {
-      "name": "Olavi Lehtonen",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "15177": {
-      "name": "Reijo Heinonen",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15178": {
-      "name": "Lauri Turunen",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15179": {
-      "name": "Hannes Rantanen",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15180": {
-      "name": "Mika Laitinen",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15181": {
-      "name": "Tuomas Heikkinen",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15182": {
-      "name": "Risto Saarinen",
-      "skill": 5,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15183": {
-      "name": "Rami Tuominen",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15184": {
-      "name": "Risto Heikkilä",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15185": {
-      "name": "Osmo Heikkinen",
-      "skill": 6,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15186": {
-      "name": "Uno Savolainen",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15187": {
-      "name": "Lauri Lahtinen",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15188": {
-      "name": "Ari Lahtinen",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "15189": {
-      "name": "Uuno Salminen",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15190": {
-      "name": "Mika Laine",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "15191": {
-      "name": "Pauli Nieminen",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15192": {
-      "name": "Osmo Kinnunen",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "seawolf"
-    },
-    "15193": {
-      "name": "Tarmo Kinnunen",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15194": {
-      "name": "Joonas Järvinen",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "15195": {
-      "name": "Arvo Lehtinen",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15196": {
-      "name": "Tuukka Heinonen",
-      "skill": 5,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "15197": {
-      "name": "Aarne Rantanen",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "15198": {
-      "name": "Paavo Turunen",
-      "skill": 5,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15199": {
-      "name": "Olavi Lehtinen",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15200": {
-      "name": "Sami Laitinen",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15201": {
-      "name": "Paavo Saarinen",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "15202": {
-      "name": "Hannu Lehtinen",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "15203": {
-      "name": "Tuomas Salo",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "15204": {
-      "name": "Juho Salminen",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "carpet_bomber"
-    },
-    "15205": {
-      "name": "Antti Tuominen",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15206": {
-      "name": "Hannes Heinonen",
-      "skill": 5,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "15207": {
-      "name": "Pekka Savolainen",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "tank_buster"
-    },
-    "15208": {
-      "name": "Valto Turunen",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15209": {
-      "name": "Mika Mattila",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15210": {
-      "name": "Erkki Mäkelä",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15211": {
-      "name": "Aaro Lehtonen",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "15212": {
-      "name": "Jarno Mäkinen",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15213": {
-      "name": "Reijo Laitinen",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15214": {
-      "name": "Jarno Lehtonen",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15215": {
-      "name": "Ville Saarinen",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15216": {
-      "name": "Ari Turunen",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15217": {
-      "name": "Väinö Järvinen",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15218": {
-      "name": "Aaku Tuominen",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "15219": {
-      "name": "Santeri Jokinen",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "tank_buster"
-    },
-    "15220": {
-      "name": "Tapani Lehtonen",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "15221": {
-      "name": "Valto Lahtinen",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15222": {
-      "name": "Mattias Niemi",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15223": {
-      "name": "Hannes Mattila",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15224": {
-      "name": "Olavi Hämäläinen",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "fleet_destroyer"
-    },
-    "15225": {
-      "name": "Sami Mäkinen",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15226": {
-      "name": "Arvo Rantanen",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15227": {
-      "name": "Asko Laine",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "15228": {
-      "name": "Joonas Virtanen",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "15229": {
-      "name": "Viljo Järvinen",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "15230": {
-      "name": "Riku Mäkelä",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "fleet_destroyer"
-    },
-    "15231": {
-      "name": "Olavi Saarinen",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "carpet_bomber"
-    },
-    "15232": {
-      "name": "Santeri Hämäläinen",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15233": {
-      "name": "Aarne Salminen",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "tank_buster"
-    },
-    "15234": {
-      "name": "Kalle Heinonen",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15235": {
-      "name": "Riku Lahtinen",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "15236": {
-      "name": "Anssi Lehtinen",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    }
-  }
+    "country": "FIN",
+    "leaders": [
+        {
+            "name": "Anssi Niemi",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Toivo Koskinen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Antti Heikkinen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Eero Kinnunen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Uuno Lehtinen",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Juho Turunen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Pauli Rantanen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "winter_specialist"
+        },
+        {
+            "name": "Veikko Salonen",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tapio Heikkinen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kalle Korhonen",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Pekka Koskinen",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Matti Järvinen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Lauri Heikkinen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Tauno Salonen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Aaku Mäkelä",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hannes Virtanen",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heino Virtanen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jarno Lehtinen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Anssi Karjalainen",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Matti Karjalainen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "panzer_leader"
+        },
+        {
+            "name": "Veikko Virtanen",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Antti Hämäläinen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Aaro Lehtonen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Ari Nieminen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Reijo Lehtinen",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Olavi Karjalainen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Jouko Lehtonen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Severi Turunen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tauno Salonen",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Riku Mattila",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Riku Lahtinen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Jari Nieminen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Severi Laitinen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "winter_specialist"
+        },
+        {
+            "name": "Arvi Lehtinen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Risto Järvinen",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "winter_specialist"
+        },
+        {
+            "name": "Veikko Heikkilä",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Eino Karjalainen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Taavi Heinonen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Aaku Lehtonen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Juhani Tuominen",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Teemu Järvinen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "winter_specialist"
+        },
+        {
+            "name": "Olavi Mäkelä",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Lauri Salminen",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Pekka Jokinen",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "winter_specialist"
+        },
+        {
+            "name": "Kalle Heikkinen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Onni Nieminen",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Uno Lehtonen",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Olavi Rantanen",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Hannu Laitinen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Risto Mäkelä",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Urho Hämäläinen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Arvo Lehtinen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Risto Salonen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Arvo Niemi",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Matti Heikkilä",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Onni Virtanen",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Jussi Saarinen",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Lauri Järvinen",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Arvo Korhonen",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Sami Karjalainen",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Arvi Karjalainen",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "blockade_runner"
+        },
+        {
+            "name": "Sami Mäkelä",
+            "skill": 5,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Tauno Niemi",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Onni Savolainen",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Matti Salminen",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Reijo Lehtonen",
+            "skill": 7,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Aaro Järvinen",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Hannes Lehtinen",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Olavi Lehtonen",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Reijo Heinonen",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Lauri Turunen",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Hannes Rantanen",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Mika Laitinen",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Tuomas Heikkinen",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Risto Saarinen",
+            "skill": 5,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Rami Tuominen",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Risto Heikkilä",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Osmo Heikkinen",
+            "skill": 6,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Uno Savolainen",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Lauri Lahtinen",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Ari Lahtinen",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Uuno Salminen",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Mika Laine",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Pauli Nieminen",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Osmo Kinnunen",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "seawolf"
+        },
+        {
+            "name": "Tarmo Kinnunen",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Joonas Järvinen",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Arvo Lehtinen",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Tuukka Heinonen",
+            "skill": 5,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Aarne Rantanen",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Paavo Turunen",
+            "skill": 5,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Olavi Lehtinen",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Sami Laitinen",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Paavo Saarinen",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Hannu Lehtinen",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Tuomas Salo",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Juho Salminen",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "carpet_bomber"
+        },
+        {
+            "name": "Antti Tuominen",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Hannes Heinonen",
+            "skill": 5,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Pekka Savolainen",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "tank_buster"
+        },
+        {
+            "name": "Valto Turunen",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Mika Mattila",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Erkki Mäkelä",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Aaro Lehtonen",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Jarno Mäkinen",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Reijo Laitinen",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Jarno Lehtonen",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Ville Saarinen",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Ari Turunen",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Väinö Järvinen",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Aaku Tuominen",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Santeri Jokinen",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "tank_buster"
+        },
+        {
+            "name": "Tapani Lehtonen",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Valto Lahtinen",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Mattias Niemi",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Hannes Mattila",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Olavi Hämäläinen",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "fleet_destroyer"
+        },
+        {
+            "name": "Sami Mäkinen",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Arvo Rantanen",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Asko Laine",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Joonas Virtanen",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Viljo Järvinen",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Riku Mäkelä",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "fleet_destroyer"
+        },
+        {
+            "name": "Olavi Saarinen",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "carpet_bomber"
+        },
+        {
+            "name": "Santeri Hämäläinen",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Aarne Salminen",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "tank_buster"
+        },
+        {
+            "name": "Kalle Heinonen",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Riku Lahtinen",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Anssi Lehtinen",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        }
+    ]
 }

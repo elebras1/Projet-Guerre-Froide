@@ -72,115 +72,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "211": {
-            "name": "George VI",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ENG_George",
-            "start_date": "1936-09-11",
-            "death_date": "1952-02-06",
-            "type": "parental_type"
-        },
-        "212": {
-            "name": "Elizabeth II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ENG_Elizabeth",
-            "start_date": "1952-02-06",
-            "death_date": "2300-05-12",
-            "type": "traditionalist_type"
-        },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "348": {
-            "name": "Margaret I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "ENG_M_Margaret_I",
-            "start_date": "1952-03-01",
-            "death_date": "2002-02-09",
-            "type": "controversial_figure"
-        },
-        "349": {
-            "name": "David III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "350": {
-            "name": "Sarah I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "351": {
-            "name": "Henry IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
-        },
-        "352": {
-            "name": "William V",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.91,
-            "picture": "ENG_M_William_V",
-            "start_date": "1959-12-18",
-            "death_date": "1972-08-28",
-            "type": "courteous_figure"
-        },
-        "353": {
-            "name": "Richard IV",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "ENG_M_Richard_IV",
-            "start_date": "1962-08-26",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "354": {
+        "Robert_I_von_Bayern_1": {
             "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -189,16 +81,16 @@
             "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "355": {
-            "name": "Albert I von Bayern",
+        "George_VI_1": {
+            "name": "George VI",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
         },
-        "1016": {
+        "Ivor_Otterbein_Smith_1": {
             "name": "Ivor Otterbein Smith",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.9,
@@ -207,7 +99,16 @@
             "death_date": "1952-01-01",
             "type": "administrator_type"
         },
-        "1017": {
+        "Henry_IX_1": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "Andrew_Morris_Gerrard_1": {
             "name": "Andrew Morris Gerrard",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.9,
@@ -216,7 +117,34 @@
             "death_date": "1956-01-01",
             "type": "reputable_type"
         },
-        "1018": {
+        "Elizabeth_II_1": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "Margaret_I_1": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "Albert_I_von_Bayern_1": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "Alan_Hillard_Donald_1": {
             "name": "Alan Hillard Donald",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.9,
@@ -225,7 +153,16 @@
             "death_date": "1960-01-01",
             "type": "bureaucrat_type"
         },
-        "1019": {
+        "William_V_1": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "Jack_Rose_1": {
             "name": "Jack Rose",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.9,
@@ -234,61 +171,7 @@
             "death_date": "1964-01-01",
             "type": "honest_type"
         },
-        "1020": {
-            "name": "John Alfred Cumber",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "CAY_M_Cumber_John_A",
-            "start_date": "1964-01-01",
-            "death_date": "1968-01-01",
-            "type": "traditionalist_type"
-        },
-        "1021": {
-            "name": "Athelstan Charles Ethelwulf Long",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "CAY_M_Long_Athelstan_C_E",
-            "start_date": "1968-01-01",
-            "death_date": "1972-01-01",
-            "type": "traditionalist_type"
-        },
-        "1022": {
-            "name": "Kenneth Roy Crook",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "CAY_M_Crook_Kenneth_R",
-            "start_date": "1972-01-01",
-            "death_date": "1974-01-01",
-            "type": "democrat_type"
-        },
-        "1023": {
-            "name": "Thomas Russell",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "CAY_M_Russell_Thomas",
-            "start_date": "1974-01-01",
-            "death_date": "1981-01-01",
-            "type": "reputable_type"
-        },
-        "1024": {
-            "name": "George Peter Lloyd",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "CAY_M_Lloyd_George_P",
-            "start_date": "1981-01-01",
-            "death_date": "1987-06-10",
-            "type": "administrator_type"
-        },
-        "1025": {
-            "name": "Alan James Scott",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "CAY_M_Scott_Alan_J",
-            "start_date": "1987-06-10",
-            "death_date": "1992-09-14",
-            "type": "bureaucrat_type"
-        },
-        "1026": {
+        "Thomas_C_Jefferson_1": {
             "name": "Thomas C. Jefferson",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.9,
@@ -297,7 +180,25 @@
             "death_date": "1994-01-01",
             "type": "administrator_type"
         },
-        "1027": {
+        "Richard_IV_1": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "John_Alfred_Cumber_1": {
+            "name": "John Alfred Cumber",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "CAY_M_Cumber_John_A",
+            "start_date": "1964-01-01",
+            "death_date": "1968-01-01",
+            "type": "traditionalist_type"
+        },
+        "Truman_Murray_Bodden_1": {
             "name": "Truman Murray Bodden",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -306,7 +207,106 @@
             "death_date": "2000-11-01",
             "type": "bureaucrat_type"
         },
-        "1028": {
+        "George_VII_1": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "Athelstan_Charles_Ethelwulf_Long_1": {
+            "name": "Athelstan Charles Ethelwulf Long",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "CAY_M_Long_Athelstan_C_E",
+            "start_date": "1968-01-01",
+            "death_date": "1972-01-01",
+            "type": "traditionalist_type"
+        },
+        "Anne_II_1": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Kenneth_Roy_Crook_1": {
+            "name": "Kenneth Roy Crook",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "CAY_M_Crook_Kenneth_R",
+            "start_date": "1972-01-01",
+            "death_date": "1974-01-01",
+            "type": "democrat_type"
+        },
+        "Thomas_Russell_1": {
+            "name": "Thomas Russell",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "CAY_M_Russell_Thomas",
+            "start_date": "1974-01-01",
+            "death_date": "1981-01-01",
+            "type": "reputable_type"
+        },
+        "Andrew_I_1": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "David_III_1": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "George_Peter_Lloyd_1": {
+            "name": "George Peter Lloyd",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "CAY_M_Lloyd_George_P",
+            "start_date": "1981-01-01",
+            "death_date": "1987-06-10",
+            "type": "administrator_type"
+        },
+        "Edward_IX_1": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Sarah_I_1": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Alan_James_Scott_1": {
+            "name": "Alan James Scott",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "CAY_M_Scott_Alan_J",
+            "start_date": "1987-06-10",
+            "death_date": "1992-09-14",
+            "type": "bureaucrat_type"
+        },
+        "Kurt_Tibbetts_1": {
             "name": "Kurt Tibbetts",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,

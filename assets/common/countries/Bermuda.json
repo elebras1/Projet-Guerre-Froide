@@ -72,115 +72,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "211": {
-            "name": "George VI",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ENG_George",
-            "start_date": "1936-09-11",
-            "death_date": "1952-02-06",
-            "type": "parental_type"
-        },
-        "212": {
-            "name": "Elizabeth II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ENG_Elizabeth",
-            "start_date": "1952-02-06",
-            "death_date": "2300-05-12",
-            "type": "traditionalist_type"
-        },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "348": {
-            "name": "Margaret I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "ENG_M_Margaret_I",
-            "start_date": "1952-03-01",
-            "death_date": "2002-02-09",
-            "type": "controversial_figure"
-        },
-        "349": {
-            "name": "David III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "350": {
-            "name": "Sarah I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "351": {
-            "name": "Henry IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
-        },
-        "352": {
-            "name": "William V",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.91,
-            "picture": "ENG_M_William_V",
-            "start_date": "1959-12-18",
-            "death_date": "1972-08-28",
-            "type": "courteous_figure"
-        },
-        "353": {
-            "name": "Richard IV",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "ENG_M_Richard_IV",
-            "start_date": "1962-08-26",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "354": {
+        "Robert_I_von_Bayern_1": {
             "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -189,16 +81,16 @@
             "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "355": {
-            "name": "Albert I von Bayern",
+        "George_VI_1": {
+            "name": "George VI",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
         },
-        "610": {
+        "Sir_Ralph_Leatham_1": {
             "name": "Sir Ralph Leatham",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.9,
@@ -207,7 +99,16 @@
             "death_date": "1949-01-01",
             "type": "lethargic_type"
         },
-        "611": {
+        "Henry_IX_1": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "Sir_Alexander_Hood_1": {
             "name": "Sir Alexander Hood",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.9,
@@ -216,7 +117,25 @@
             "death_date": "1955-01-01",
             "type": "administrator_type"
         },
-        "612": {
+        "Elizabeth_II_1": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "Margaret_I_1": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "Sir_John_Woodall_1": {
             "name": "Sir John Woodall",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.9,
@@ -225,7 +144,16 @@
             "death_date": "1959-01-01",
             "type": "parental_type"
         },
-        "613": {
+        "Albert_I_von_Bayern_1": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "Sir_Julian_Gascoigne_1": {
             "name": "Sir Julian Gascoigne",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.9,
@@ -234,7 +162,25 @@
             "death_date": "1964-01-01",
             "type": "courageous_type"
         },
-        "614": {
+        "William_V_1": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "Richard_IV_1": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Roland_Robinson_1": {
             "name": "Roland Robinson",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -243,61 +189,25 @@
             "death_date": "1972-01-01",
             "type": "reputable_type"
         },
-        "615": {
-            "name": "Sir Richard Sharples",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "BRM_M_Sharples_Richard",
-            "start_date": "1972-01-01",
-            "death_date": "1973-01-01",
-            "type": "traditionalist_type"
-        },
-        "616": {
-            "name": "Sir Edwin Leather",
+        "George_VII_1": {
+            "name": "George VII",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "BRM_M_Leather_Edwin",
-            "start_date": "1973-01-01",
-            "death_date": "1977-01-01",
-            "type": "democrat_type"
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
         },
-        "617": {
-            "name": "Sir Peter Ramsbotham",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "BRM_M_Ramsbotham_Peter",
-            "start_date": "1977-01-01",
-            "death_date": "1980-01-01",
-            "type": "honest_type"
-        },
-        "618": {
-            "name": "Sir Richard Posnett",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "BRM_M_Posnett_Richard",
-            "start_date": "1980-01-01",
-            "death_date": "1983-01-01",
+        "Lois_BrowneEvans_1": {
+            "name": "Lois Browne-Evans",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "BRM_M_Browne-Evans_Lois",
+            "start_date": "1968-01-01",
+            "death_date": "1998-01-01",
             "type": "administrator_type"
         },
-        "619": {
-            "name": "Viscount Dunrossil",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "BRM_M_Dunrossil_Viscount",
-            "start_date": "1983-01-01",
-            "death_date": "1988-01-01",
-            "type": "liberal_type"
-        },
-        "620": {
-            "name": "Sir Desmond Langley",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.9,
-            "picture": "BRM_M_Langley_Desmond",
-            "start_date": "1988-01-01",
-            "death_date": "1992-01-01",
-            "type": "traditionalist_type"
-        },
-        "621": {
+        "Sir_Henry_Tucker_1": {
             "name": "Sir Henry Tucker",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -306,7 +216,16 @@
             "death_date": "1971-12-29",
             "type": "administrator_type"
         },
-        "622": {
+        "Anne_II_1": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Sir_Edward_Richards_1": {
             "name": "Sir Edward Richards",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -315,7 +234,25 @@
             "death_date": "1975-12-29",
             "type": "reputable_type"
         },
-        "623": {
+        "Sir_Richard_Sharples_1": {
+            "name": "Sir Richard Sharples",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "BRM_M_Sharples_Richard",
+            "start_date": "1972-01-01",
+            "death_date": "1973-01-01",
+            "type": "traditionalist_type"
+        },
+        "Sir_Edwin_Leather_1": {
+            "name": "Sir Edwin Leather",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "BRM_M_Leather_Edwin",
+            "start_date": "1973-01-01",
+            "death_date": "1977-01-01",
+            "type": "democrat_type"
+        },
+        "John_Sharpe_1": {
             "name": "John Sharpe",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -324,7 +261,16 @@
             "death_date": "1977-08-30",
             "type": "administrator_type"
         },
-        "624": {
+        "Sir_Peter_Ramsbotham_1": {
+            "name": "Sir Peter Ramsbotham",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "BRM_M_Ramsbotham_Peter",
+            "start_date": "1977-01-01",
+            "death_date": "1980-01-01",
+            "type": "honest_type"
+        },
+        "David_Gibbons_1": {
             "name": "David Gibbons",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -333,7 +279,34 @@
             "death_date": "1982-01-15",
             "type": "bureaucrat_type"
         },
-        "625": {
+        "Andrew_I_1": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "David_III_1": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Sir_Richard_Posnett_1": {
+            "name": "Sir Richard Posnett",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "BRM_M_Posnett_Richard",
+            "start_date": "1980-01-01",
+            "death_date": "1983-01-01",
+            "type": "administrator_type"
+        },
+        "John_Swan_1": {
             "name": "John Swan",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -342,14 +315,41 @@
             "death_date": "1995-08-25",
             "type": "visionary_type"
         },
-        "626": {
-            "name": "Lois Browne-Evans",
+        "Edward_IX_1": {
+            "name": "Edward IX",
             "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "BRM_M_Browne-Evans_Lois",
-            "start_date": "1968-01-01",
-            "death_date": "1998-01-01",
-            "type": "administrator_type"
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Sarah_I_1": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Viscount_Dunrossil_1": {
+            "name": "Viscount Dunrossil",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "BRM_M_Dunrossil_Viscount",
+            "start_date": "1983-01-01",
+            "death_date": "1988-01-01",
+            "type": "liberal_type"
+        },
+        "Sir_Desmond_Langley_1": {
+            "name": "Sir Desmond Langley",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.9,
+            "picture": "BRM_M_Langley_Desmond",
+            "start_date": "1988-01-01",
+            "death_date": "1992-01-01",
+            "type": "traditionalist_type"
         }
     }
 }

@@ -72,187 +72,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "4907": {
-            "name": "Bao Dai",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.8,
-            "picture": "SVI_M_Dai_Bao",
-            "start_date": "1946-01-01",
-            "death_date": "1997-07-30",
-            "type": "parental_type"
-        },
-        "2529": {
-            "name": "Ngo Dinh Diem",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.99,
-            "picture": "SVI_M_Diem_Ngo_Dinh",
-            "start_date": "1954-06-16",
-            "death_date": "1963-11-02",
-            "type": "autocrat_type"
-        },
-        "2530": {
-            "name": "Duong Van Minh",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.9,
-            "picture": "SVI_M_Minh_Duong_Van",
-            "start_date": "1963-11-02",
-            "death_date": "1992-12-31",
-            "type": "hardliner_type"
-        },
-        "2531": {
-            "name": "Nguyen Khanh",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.99,
-            "picture": "SVI_M_Khanh_Nguyen",
-            "start_date": "1964-01-30",
-            "death_date": "1964-11-04",
-            "type": "autocrat_type"
-        },
-        "2532": {
-            "name": "Phan Khac Suu",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Suu_Phan_Khac",
-            "start_date": "1964-10-26",
-            "death_date": "1965-06-14",
-            "type": "bureaucrat_type"
-        },
-        "2533": {
-            "name": "Nguyen Van Thieu",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Thieu_Nguyen_Van",
-            "start_date": "1965-06-14",
-            "death_date": "1975-04-21",
-            "type": "hardliner_type"
-        },
-        "2534": {
-            "name": "Tran Van Huong",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.8,
-            "picture": "SVI_M_Huong_Tran_Van",
-            "start_date": "1964-11-04",
-            "death_date": "1975-04-28",
-            "type": "bureaucrat_type"
-        },
-        "2535": {
-            "name": "Nguyen Phan Long",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Long_Nguyen_Phan",
-            "start_date": "1950-01-21",
-            "death_date": "1950-04-26",
-            "type": "bureaucrat_type"
-        },
-        "2536": {
-            "name": "Tran Van Huu",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Huu_Tran_Van",
-            "start_date": "1950-04-26",
-            "death_date": "1952-06-06",
-            "type": "bureaucrat_type"
-        },
-        "2537": {
-            "name": "Nguyen Van Tam",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Tam_Nguyen_Van",
-            "start_date": "1952-06-06",
-            "death_date": "1953-12-17",
-            "type": "autocrat_type"
-        },
-        "2538": {
-            "name": "Nguyen Phuc Buu Loc",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Buu_Loc_Nguyen_Phuc",
-            "start_date": "1953-12-17",
-            "death_date": "1954-06-16",
-            "type": "autocrat_type"
-        },
-        "2539": {
-            "name": "Nguyen Ngoc Tho",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Tho_Nguyen_Ngoc",
-            "start_date": "1963-11-02",
-            "death_date": "1964-01-30",
-            "type": "bureaucrat_type"
-        },
-        "2540": {
-            "name": "Nguyen Xuan Oanh",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.8,
-            "picture": "SVI_M_Oanh_Nguyen_Xuan",
-            "start_date": "1964-08-29",
-            "death_date": "1965-02-15",
-            "type": "bureaucrat_type"
-        },
-        "2541": {
-            "name": "Phan Huy Quat",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Quat_Phan_Huy",
-            "start_date": "1965-02-15",
-            "death_date": "1965-06-08",
-            "type": "bureaucrat_type"
-        },
-        "2542": {
-            "name": "Nguyen Cao Ky",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Ky_Nguyen_Cao",
-            "start_date": "1965-06-08",
-            "death_date": "1967-10-31",
-            "type": "controversial_figure"
-        },
-        "2543": {
-            "name": "Nguyen Van Loc",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Loc_Nguyen_Van",
-            "start_date": "1967-10-31",
-            "death_date": "1968-05-17",
-            "type": "bureaucrat_type"
-        },
-        "2544": {
-            "name": "Tran Thien Khiem",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Khiem_Tran_Thien",
-            "start_date": "1969-09-01",
-            "death_date": "1975-04-04",
-            "type": "hardliner_type"
-        },
-        "2545": {
-            "name": "Nguyen Ba Can",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Can_Nguyen_Ba",
-            "start_date": "1975-04-04",
-            "death_date": "1975-04-24",
-            "type": "bureaucrat_type"
-        },
-        "2546": {
-            "name": "Vu Van Mau",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "SVI_M_Mau_Vu_Van",
-            "start_date": "1975-04-24",
-            "death_date": "1992-12-31",
-            "type": "bureaucrat_type"
-        },
-        "2547": {
-            "name": "Hoang Minh Chinh",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_Chinh_Hoang_M",
-            "start_date": "1946-01-01",
-            "death_date": "2300-01-01",
-            "type": "democrat_type"
-        },
-        "2548": {
+        "Hoang_Van_Chi_1": {
             "name": "Hoang Van Chi",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,
@@ -261,16 +81,7 @@
             "death_date": "1988-07-06",
             "type": "moral_type"
         },
-        "2549": {
-            "name": "Hoàng Co Minh",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_Minh_Hoang_C",
-            "start_date": "1975-01-01",
-            "death_date": "1987-01-01",
-            "type": "reformer_type"
-        },
-        "2550": {
+        "Nguyen_Manh_Tuong_1": {
             "name": "Nguyen Manh Tuong",
             "ideology": "social_democrat_idolg",
             "loyalty": 0.5,
@@ -279,43 +90,7 @@
             "death_date": "1997-06-13",
             "type": "honest_type"
         },
-        "2551": {
-            "name": "Ho Van Nhut",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_Nhut_Ho_V",
-            "start_date": "1951-01-01",
-            "death_date": "1986-03-13",
-            "type": "moral_type"
-        },
-        "2552": {
-            "name": "Huynh Phu So",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_So_Huynh_P",
-            "start_date": "1940-01-01",
-            "death_date": "1947-04-01",
-            "type": "supreme_leader"
-        },
-        "2553": {
-            "name": "Ba Cut",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_Cut_Ba",
-            "start_date": "1944-01-01",
-            "death_date": "1956-07-13",
-            "type": "religious_type"
-        },
-        "2554": {
-            "name": "Duong Quynh Hoa",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "SVI_M_Hoa_Duong_Q",
-            "start_date": "1960-01-01",
-            "death_date": "2006-02-25",
-            "type": "courageous_type"
-        },
-        "2555": {
+        "Nguyen_Ton_Hoan_1": {
             "name": "Nguyen Ton Hoan",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -324,7 +99,97 @@
             "death_date": "2001-09-19",
             "type": "ambitious_type"
         },
-        "2556": {
+        "Huynh_Phu_So_1": {
+            "name": "Huynh Phu So",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_So_Huynh_P",
+            "start_date": "1940-01-01",
+            "death_date": "1947-04-01",
+            "type": "dictator_type"
+        },
+        "Ba_Cut_1": {
+            "name": "Ba Cut",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Cut_Ba",
+            "start_date": "1944-01-01",
+            "death_date": "1956-07-13",
+            "type": "religious_type"
+        },
+        "Bao_Dai_1": {
+            "name": "Bao Dai",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.8,
+            "picture": "SVI_M_Dai_Bao",
+            "start_date": "1946-01-01",
+            "death_date": "1997-07-30",
+            "type": "parental_type"
+        },
+        "Hoang_Minh_Chinh_1": {
+            "name": "Hoang Minh Chinh",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Chinh_Hoang_M",
+            "start_date": "1946-01-01",
+            "death_date": "2300-01-01",
+            "type": "democrat_type"
+        },
+        "Nguyen_Phan_Long_1": {
+            "name": "Nguyen Phan Long",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Long_Nguyen_Phan",
+            "start_date": "1950-01-21",
+            "death_date": "1950-04-26",
+            "type": "bureaucrat_type"
+        },
+        "Tran_Van_Huu_1": {
+            "name": "Tran Van Huu",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Huu_Tran_Van",
+            "start_date": "1950-04-26",
+            "death_date": "1952-06-06",
+            "type": "bureaucrat_type"
+        },
+        "Ho_Van_Nhut_1": {
+            "name": "Ho Van Nhut",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Nhut_Ho_V",
+            "start_date": "1951-01-01",
+            "death_date": "1986-03-13",
+            "type": "moral_type"
+        },
+        "Nguyen_Van_Tam_1": {
+            "name": "Nguyen Van Tam",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Tam_Nguyen_Van",
+            "start_date": "1952-06-06",
+            "death_date": "1953-12-17",
+            "type": "autocrat_type"
+        },
+        "Nguyen_Phuc_Buu_Loc_1": {
+            "name": "Nguyen Phuc Buu Loc",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Buu_Loc_Nguyen_Phuc",
+            "start_date": "1953-12-17",
+            "death_date": "1954-06-16",
+            "type": "autocrat_type"
+        },
+        "Ngo_Dinh_Diem_1": {
+            "name": "Ngo Dinh Diem",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.99,
+            "picture": "SVI_M_Diem_Ngo_Dinh",
+            "start_date": "1954-06-16",
+            "death_date": "1963-11-02",
+            "type": "autocrat_type"
+        },
+        "Dau_Khan_1": {
             "name": "Dau Khan",
             "ideology": "paternal_auto_idolg",
             "loyalty": 0.5,
@@ -333,7 +198,115 @@
             "death_date": "1986-04-07",
             "type": "traditionalist_type"
         },
-        "2557": {
+        "Duong_Quynh_Hoa_1": {
+            "name": "Duong Quynh Hoa",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Hoa_Duong_Q",
+            "start_date": "1960-01-01",
+            "death_date": "2006-02-25",
+            "type": "courageous_type"
+        },
+        "Nguyen_Ngoc_Tho_1": {
+            "name": "Nguyen Ngoc Tho",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Tho_Nguyen_Ngoc",
+            "start_date": "1963-11-02",
+            "death_date": "1964-01-30",
+            "type": "bureaucrat_type"
+        },
+        "Duong_Van_Minh_1": {
+            "name": "Duong Van Minh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "SVI_M_Minh_Duong_Van",
+            "start_date": "1963-11-02",
+            "death_date": "1992-12-31",
+            "type": "hardliner_type"
+        },
+        "Nguyen_Khanh_1": {
+            "name": "Nguyen Khanh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.99,
+            "picture": "SVI_M_Khanh_Nguyen",
+            "start_date": "1964-01-30",
+            "death_date": "1964-11-04",
+            "type": "autocrat_type"
+        },
+        "Nguyen_Xuan_Oanh_1": {
+            "name": "Nguyen Xuan Oanh",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "SVI_M_Oanh_Nguyen_Xuan",
+            "start_date": "1964-08-29",
+            "death_date": "1965-02-15",
+            "type": "bureaucrat_type"
+        },
+        "Phan_Khac_Suu_1": {
+            "name": "Phan Khac Suu",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Suu_Phan_Khac",
+            "start_date": "1964-10-26",
+            "death_date": "1965-06-14",
+            "type": "bureaucrat_type"
+        },
+        "Tran_Van_Huong_1": {
+            "name": "Tran Van Huong",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "SVI_M_Huong_Tran_Van",
+            "start_date": "1964-11-04",
+            "death_date": "1975-04-28",
+            "type": "bureaucrat_type"
+        },
+        "Phan_Huy_Quat_1": {
+            "name": "Phan Huy Quat",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Quat_Phan_Huy",
+            "start_date": "1965-02-15",
+            "death_date": "1965-06-08",
+            "type": "bureaucrat_type"
+        },
+        "Nguyen_Cao_Ky_1": {
+            "name": "Nguyen Cao Ky",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Ky_Nguyen_Cao",
+            "start_date": "1965-06-08",
+            "death_date": "1967-10-31",
+            "type": "controversial_figure"
+        },
+        "Nguyen_Van_Thieu_1": {
+            "name": "Nguyen Van Thieu",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Thieu_Nguyen_Van",
+            "start_date": "1965-06-14",
+            "death_date": "1975-04-21",
+            "type": "hardliner_type"
+        },
+        "Nguyen_Van_Loc_1": {
+            "name": "Nguyen Van Loc",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Loc_Nguyen_Van",
+            "start_date": "1967-10-31",
+            "death_date": "1968-05-17",
+            "type": "bureaucrat_type"
+        },
+        "Tran_Thien_Khiem_1": {
+            "name": "Tran Thien Khiem",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Khiem_Tran_Thien",
+            "start_date": "1969-09-01",
+            "death_date": "1975-04-04",
+            "type": "hardliner_type"
+        },
+        "Nguyen_Van_Ly_1": {
             "name": "Nguyen Van Ly",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
@@ -341,6 +314,33 @@
             "start_date": "1970-01-01",
             "death_date": "2300-01-01",
             "type": "religious_type"
+        },
+        "Hoàng_Co_Minh_1": {
+            "name": "Hoàng Co Minh",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "SVI_M_Minh_Hoang_C",
+            "start_date": "1975-01-01",
+            "death_date": "1987-01-01",
+            "type": "reformer_type"
+        },
+        "Nguyen_Ba_Can_1": {
+            "name": "Nguyen Ba Can",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Can_Nguyen_Ba",
+            "start_date": "1975-04-04",
+            "death_date": "1975-04-24",
+            "type": "bureaucrat_type"
+        },
+        "Vu_Van_Mau_1": {
+            "name": "Vu Van Mau",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "SVI_M_Mau_Vu_Van",
+            "start_date": "1975-04-24",
+            "death_date": "1992-12-31",
+            "type": "bureaucrat_type"
         }
     }
 }

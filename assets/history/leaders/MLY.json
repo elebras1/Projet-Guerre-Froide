@@ -1,959 +1,959 @@
 {
-  "country": "MLY",
-  "leaders": {
-    "26528": {
-      "name": "bin Yaakop Yeop",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "26529": {
-      "name": "bin Lokman Yaakop",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26530": {
-      "name": "bin Tanggang Mat",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "26531": {
-      "name": "bin Jusoh Dollah",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "26532": {
-      "name": "bin Daniel Gombak",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26533": {
-      "name": "bin Jumaat Raja",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26534": {
-      "name": "bin Elyas Desa",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26535": {
-      "name": "bin Rabu Bambang",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26536": {
-      "name": "bin Nerang Isnin",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "panzer_leader"
-    },
-    "26537": {
-      "name": "bin Lokman Malim",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26538": {
-      "name": "bin Anuar Yaacob",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26539": {
-      "name": "bin Merdeka Embong",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26540": {
-      "name": "bin Adi Putra Omar",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "26541": {
-      "name": "bin Demak Jumaat",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26542": {
-      "name": "bin Jiwa Bachok",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26543": {
-      "name": "bin Mulia Yahaya",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26544": {
-      "name": "bin Agus Danial",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "26545": {
-      "name": "bin Hamengku Danial",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26546": {
-      "name": "bin Deraman Selamat",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "26547": {
-      "name": "bin Bestari Deris",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26548": {
-      "name": "bin Omar Zulkifli",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "26549": {
-      "name": "bin Baba Bambang",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26550": {
-      "name": "bin Agus Jaya",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26551": {
-      "name": "bin Suib Ujang",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "26552": {
-      "name": "bin Malim Budiarto",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26553": {
-      "name": "bin Agung Megat",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26554": {
-      "name": "bin Teh Jebat",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26555": {
-      "name": "bin Shuib Daud",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26556": {
-      "name": "bin Wira Embong",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "26557": {
-      "name": "bin Elyas Jati",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26558": {
-      "name": "bin Usop Hamengku",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26559": {
-      "name": "bin Senin Mulia",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "panzer_leader"
-    },
-    "26560": {
-      "name": "bin Ujang Adi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26561": {
-      "name": "bin Danial Mail",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26562": {
-      "name": "bin Baba Muda",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26563": {
-      "name": "bin Jumaat Demang",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26564": {
-      "name": "bin Gombak Suib",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26565": {
-      "name": "bin Jusoh Sulong",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "26566": {
-      "name": "bin Bagus Adi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26567": {
-      "name": "bin Yaakop Ungu",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "26568": {
-      "name": "bin Chik Zulkipli",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "26569": {
-      "name": "bin Daniel Danial",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26570": {
-      "name": "bin Andika Demak",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26571": {
-      "name": "bin Uda Raja",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26572": {
-      "name": "bin Shuib Megat",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26573": {
-      "name": "bin Mamat Awang",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26574": {
-      "name": "bin Agung Daniel",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26575": {
-      "name": "bin Awang Deris",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26576": {
-      "name": "bin Adiputera Luncai",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26577": {
-      "name": "bin Adiputera Megat",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26578": {
-      "name": "bin Jiwa Anuar",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26579": {
-      "name": "bin Bachok Sulung",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "26580": {
-      "name": "bin Teruna Dumadi",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26581": {
-      "name": "bin Indera Omar",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26582": {
-      "name": "bin Demak Lukman",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "26583": {
-      "name": "bin Tanggang Perwira",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26584": {
-      "name": "bin Yahaya Adi Putra",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "26585": {
-      "name": "bin Jiwa Atan",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26586": {
-      "name": "bin Basuki Ungu",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26587": {
-      "name": "bin Selasa Usop",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26588": {
-      "name": "bin Lukman Merdeka",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26589": {
-      "name": "bin Jiwa Ishak",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26590": {
-      "name": "bin Selasa Senin",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26591": {
-      "name": "bin Teruna Deraman",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26592": {
-      "name": "bin Danial Daut",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26593": {
-      "name": "bin Kifli Omar",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26594": {
-      "name": "bin Kifli Mulia",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26595": {
-      "name": "bin Jaya Elias",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26596": {
-      "name": "bin Jumaat Sulung",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26597": {
-      "name": "bin Hitam Yunos",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26598": {
-      "name": "bin Noh Hamengku",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26599": {
-      "name": "bin Yaacob Wira",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "26600": {
-      "name": "bin Luncai Elias",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26601": {
-      "name": "bin Bagus Omar",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "26602": {
-      "name": "bin Budi Leman",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26603": {
-      "name": "bin Ishak Yunos",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "26604": {
-      "name": "bin Leman Noh",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "26605": {
-      "name": "bin Basuki Mulia",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26606": {
-      "name": "bin Kamis Jati",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26607": {
-      "name": "bin Mail Yaakop",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26608": {
-      "name": "bin Budiarto Putera",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "26609": {
-      "name": "bin Haron Omar",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "blockade_runner"
-    },
-    "26610": {
-      "name": "bin Agung Perang",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "26611": {
-      "name": "bin Elyas Deraman",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26612": {
-      "name": "bin Kefli Desa",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26613": {
-      "name": "bin Hitam Kamis",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "26614": {
-      "name": "bin Yunos Jiwa",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "26615": {
-      "name": "bin Budiarto Osman",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26616": {
-      "name": "bin Dumadi Zulkarnain",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26617": {
-      "name": "bin Yaakob Jaya",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "26618": {
-      "name": "bin Kechik Jusoh",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "26619": {
-      "name": "bin Jumaat Sabtu",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26620": {
-      "name": "bin Budiarto Bachok",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26621": {
-      "name": "bin Dollah Isnin",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26622": {
-      "name": "bin Daut Muda",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "spotter"
-    },
-    "26623": {
-      "name": "bin Agus Jiwa",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26624": {
-      "name": "bin Sulung Chik",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26625": {
-      "name": "bin Mad Lokman",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26626": {
-      "name": "bin Basuki Mulia",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26627": {
-      "name": "bin Demang Embong",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26628": {
-      "name": "bin Haron Indra",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26629": {
-      "name": "bin Lukman Jebat",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "26630": {
-      "name": "bin Yaakob Teruna",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "spotter"
-    },
-    "26631": {
-      "name": "bin Adiputera Dollah",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26632": {
-      "name": "bin Bachok Sabtu",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "spotter"
-    },
-    "26633": {
-      "name": "bin Desa Elyas",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26634": {
-      "name": "bin Kechik Mail",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26635": {
-      "name": "bin Lukman Anuar",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26636": {
-      "name": "bin Budiarto Merdeka",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26637": {
-      "name": "bin Mat Noh",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26638": {
-      "name": "bin Demak Sabtu",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26639": {
-      "name": "bin Teh Dumadi",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26640": {
-      "name": "bin Bambang Kechik",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "26641": {
-      "name": "bin Kesuma Danang",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "26642": {
-      "name": "bin Haron Jiwa",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26643": {
-      "name": "bin Usop Bestari",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26644": {
-      "name": "bin Hitam Yaacob",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26645": {
-      "name": "bin Mail Ahad",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "26646": {
-      "name": "bin Lokman Zulkifli",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "26647": {
-      "name": "bin Andika Johan",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "fleet_destroyer"
-    },
-    "26648": {
-      "name": "bin Omar Agung",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26649": {
-      "name": "bin Dumadi Teruna",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26650": {
-      "name": "bin Johan Sabtu",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26651": {
-      "name": "bin Zulkarnain Mulia",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26652": {
-      "name": "bin Sulung Leman",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "26653": {
-      "name": "bin Indera Teruna",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26654": {
-      "name": "bin Yeop Adi Putera",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "carpet_bomber"
-    },
-    "26655": {
-      "name": "bin Merdeka Ishak",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26656": {
-      "name": "bin Daud Ungu",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26657": {
-      "name": "bin Wira Kifli",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26658": {
-      "name": "bin Agus Putera",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26659": {
-      "name": "bin Johan Lokman",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "26660": {
-      "name": "bin Adi Putera Jati",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26661": {
-      "name": "bin Budiarto Ahad",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "26662": {
-      "name": "bin Baba Johan",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26663": {
-      "name": "bin Haron Budi",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26664": {
-      "name": "bin Yaakop Dumadi",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26665": {
-      "name": "bin Luncai Yeop",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26666": {
-      "name": "bin Elyas Deraman",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "26667": {
-      "name": "bin Rabu Bayu",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26668": {
-      "name": "bin Adi Usop",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26669": {
-      "name": "bin Yeop Agus",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "26670": {
-      "name": "bin Anuar Sulong",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26671": {
-      "name": "bin Uda Rabu",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26672": {
-      "name": "bin Baba Zakaria",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "26673": {
-      "name": "bin Kifli Adi Putera",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26674": {
-      "name": "bin Budiarto Kechik",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "26675": {
-      "name": "bin Deris Sabtu",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26676": {
-      "name": "bin Demang Hamengku",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26677": {
-      "name": "bin Elias Daut",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26678": {
-      "name": "bin Ishak Demak",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26679": {
-      "name": "bin Zakaria Ujang",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26680": {
-      "name": "bin Dumadi Raja",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26681": {
-      "name": "bin Jati Yahaya",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "fleet_destroyer"
-    },
-    "26682": {
-      "name": "bin Sulung Adi Putra",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "26683": {
-      "name": "bin Rabu Noh",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "26684": {
-      "name": "bin Jusoh Ahad",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "26685": {
-      "name": "bin Bambang Awang",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "carpet_bomber"
-    },
-    "26686": {
-      "name": "bin Basuki Rabu",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    }
-  }
+    "country": "MLY",
+    "leaders": [
+        {
+            "name": "bin Yaakop Yeop",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "bin Lokman Yaakop",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Tanggang Mat",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "bin Jusoh Dollah",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "bin Daniel Gombak",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Jumaat Raja",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Elyas Desa",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Rabu Bambang",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Nerang Isnin",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "panzer_leader"
+        },
+        {
+            "name": "bin Lokman Malim",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Anuar Yaacob",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Merdeka Embong",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Adi Putra Omar",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "bin Demak Jumaat",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Jiwa Bachok",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Mulia Yahaya",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Agus Danial",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "bin Hamengku Danial",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Deraman Selamat",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "bin Bestari Deris",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Omar Zulkifli",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "bin Baba Bambang",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Agus Jaya",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Suib Ujang",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "bin Malim Budiarto",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Agung Megat",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Teh Jebat",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Shuib Daud",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Wira Embong",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "bin Elyas Jati",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Usop Hamengku",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Senin Mulia",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "panzer_leader"
+        },
+        {
+            "name": "bin Ujang Adi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Danial Mail",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Baba Muda",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Jumaat Demang",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Gombak Suib",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Jusoh Sulong",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "bin Bagus Adi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Yaakop Ungu",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "bin Chik Zulkipli",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "bin Daniel Danial",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Andika Demak",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Uda Raja",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Shuib Megat",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Mamat Awang",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Agung Daniel",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Awang Deris",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Adiputera Luncai",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Adiputera Megat",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Jiwa Anuar",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Bachok Sulung",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "bin Teruna Dumadi",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Indera Omar",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Demak Lukman",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "bin Tanggang Perwira",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Yahaya Adi Putra",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "bin Jiwa Atan",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Basuki Ungu",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Selasa Usop",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Lukman Merdeka",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Jiwa Ishak",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Selasa Senin",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Teruna Deraman",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Danial Daut",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Kifli Omar",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Kifli Mulia",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Jaya Elias",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Jumaat Sulung",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Hitam Yunos",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Noh Hamengku",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Yaacob Wira",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "bin Luncai Elias",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Bagus Omar",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "bin Budi Leman",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Ishak Yunos",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "bin Leman Noh",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "bin Basuki Mulia",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Kamis Jati",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Mail Yaakop",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Budiarto Putera",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "bin Haron Omar",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "blockade_runner"
+        },
+        {
+            "name": "bin Agung Perang",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "bin Elyas Deraman",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Kefli Desa",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Hitam Kamis",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "bin Yunos Jiwa",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "bin Budiarto Osman",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Dumadi Zulkarnain",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Yaakob Jaya",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "bin Kechik Jusoh",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "bin Jumaat Sabtu",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Budiarto Bachok",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Dollah Isnin",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Daut Muda",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "spotter"
+        },
+        {
+            "name": "bin Agus Jiwa",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Sulung Chik",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Mad Lokman",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Basuki Mulia",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Demang Embong",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Haron Indra",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Lukman Jebat",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "bin Yaakob Teruna",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "spotter"
+        },
+        {
+            "name": "bin Adiputera Dollah",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Bachok Sabtu",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "spotter"
+        },
+        {
+            "name": "bin Desa Elyas",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Kechik Mail",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Lukman Anuar",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Budiarto Merdeka",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Mat Noh",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Demak Sabtu",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Teh Dumadi",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Bambang Kechik",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "bin Kesuma Danang",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "bin Haron Jiwa",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Usop Bestari",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Hitam Yaacob",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Mail Ahad",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "bin Lokman Zulkifli",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "bin Andika Johan",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "fleet_destroyer"
+        },
+        {
+            "name": "bin Omar Agung",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Dumadi Teruna",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Johan Sabtu",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Zulkarnain Mulia",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Sulung Leman",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "bin Indera Teruna",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Yeop Adi Putera",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "carpet_bomber"
+        },
+        {
+            "name": "bin Merdeka Ishak",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Daud Ungu",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Wira Kifli",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Agus Putera",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Johan Lokman",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "bin Adi Putera Jati",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Budiarto Ahad",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "bin Baba Johan",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Haron Budi",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Yaakop Dumadi",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Luncai Yeop",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Elyas Deraman",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "bin Rabu Bayu",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Adi Usop",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Yeop Agus",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "bin Anuar Sulong",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Uda Rabu",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Baba Zakaria",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "bin Kifli Adi Putera",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Budiarto Kechik",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "bin Deris Sabtu",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Demang Hamengku",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Elias Daut",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Ishak Demak",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Zakaria Ujang",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Dumadi Raja",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Jati Yahaya",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "fleet_destroyer"
+        },
+        {
+            "name": "bin Sulung Adi Putra",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "bin Rabu Noh",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "bin Jusoh Ahad",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "bin Bambang Awang",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "carpet_bomber"
+        },
+        {
+            "name": "bin Basuki Rabu",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        }
+    ]
 }

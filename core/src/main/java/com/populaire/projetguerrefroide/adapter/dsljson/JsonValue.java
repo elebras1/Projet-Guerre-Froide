@@ -1,5 +1,7 @@
 package com.populaire.projetguerrefroide.adapter.dsljson;
 
+import com.populaire.projetguerrefroide.util.IntegerUtils;
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
@@ -212,29 +214,21 @@ public class JsonValue {
         }
     }
 
-    private static class ObjectField implements Map.Entry<String, JsonValue> {
-
-        private final String key;
-        private final JsonValue value;
-
-        ObjectField(String key, JsonValue value) {
-            this.key = key;
-            this.value = value;
-        }
+    private record ObjectField(String key, JsonValue value) implements Map.Entry<String, JsonValue> {
 
         @Override
-        public String getKey() {
-            return this.key;
-        }
+            public String getKey() {
+                return this.key;
+            }
 
-        @Override
-        public JsonValue getValue() {
-            return this.value;
-        }
+            @Override
+            public JsonValue getValue() {
+                return this.value;
+            }
 
-        @Override
-        public JsonValue setValue(JsonValue value) {
-            throw new UnsupportedOperationException("Object fields are immutable");
+            @Override
+            public JsonValue setValue(JsonValue value) {
+                throw new UnsupportedOperationException("Object fields are immutable");
+            }
         }
-    }
 }

@@ -785,34 +785,7 @@
         ]
     },
     "ministers": {
-        "205": {
-            "name": "Wilhelmina",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Wilhelmina",
-            "start_date": "1946-01-01",
-            "death_date": "1948-09-04",
-            "type": "autocrat_type"
-        },
-        "206": {
-            "name": "Juliana",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Juliana",
-            "start_date": "1948-09-04",
-            "death_date": "1980-04-30",
-            "type": "courteous_figure"
-        },
-        "207": {
-            "name": "Beatrix",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Beatrix",
-            "start_date": "1980-04-30",
-            "death_date": "1999-12-31",
-            "type": "administrator_type"
-        },
-        "3696": {
+        "Willem_Schermerhorn_1": {
             "name": "Willem Schermerhorn",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -821,25 +794,7 @@
             "death_date": "1946-07-03",
             "type": "democrat_type"
         },
-        "3697": {
-            "name": "Louis J. M. Beel",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Beel_Louis_J_M",
-            "start_date": "1946-01-01",
-            "death_date": "1959-05-19",
-            "type": "reformer_type"
-        },
-        "3698": {
-            "name": "Willem Drees",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Drees_Willem",
-            "start_date": "1946-07-03",
-            "death_date": "1958-12-22",
-            "type": "reformer_type"
-        },
-        "3699": {
+        "Dirk_U_Stikker_1": {
             "name": "Dirk U. Stikker",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -848,7 +803,34 @@
             "death_date": "1948-08-24",
             "type": "administrator_type"
         },
-        "3700": {
+        "Wilhelmina_1": {
+            "name": "Wilhelmina",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Wilhelmina",
+            "start_date": "1946-01-01",
+            "death_date": "1948-09-04",
+            "type": "autocrat_type"
+        },
+        "Louis_J_M_Beel_1": {
+            "name": "Louis J. M. Beel",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Beel_Louis_J_M",
+            "start_date": "1946-01-01",
+            "death_date": "1959-05-19",
+            "type": "reformer_type"
+        },
+        "Willem_Drees_1": {
+            "name": "Willem Drees",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Drees_Willem",
+            "start_date": "1946-07-03",
+            "death_date": "1958-12-22",
+            "type": "reformer_type"
+        },
+        "Pieter_J_Oud_1": {
             "name": "Pieter J. Oud",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -857,187 +839,16 @@
             "death_date": "1963-11-09",
             "type": "democrat_type"
         },
-        "3701": {
-            "name": "Jan E. de Quay",
+        "Juliana_1": {
+            "name": "Juliana",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
-            "picture": "HOL_M_de_Quay_Jan_E",
-            "start_date": "1959-05-19",
-            "death_date": "1963-07-24",
-            "type": "bureaucrat_type"
-        },
-        "3702": {
-            "name": "Victor G. M. Marijnen",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Marijnen_Victor_G_M",
-            "start_date": "1963-07-24",
-            "death_date": "1965-04-14",
-            "type": "bureaucrat_type"
-        },
-        "3703": {
-            "name": "Jacobus A. W. Burger",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Burger_Jacobus_A_W",
-            "start_date": "1958-12-22",
-            "death_date": "1962-09-16",
-            "type": "democrat_type"
-        },
-        "3704": {
-            "name": "Anne Vondeling",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Vondeling_Anne",
-            "start_date": "1962-09-16",
-            "death_date": "1966-09-13",
-            "type": "bureaucrat_type"
-        },
-        "3705": {
-            "name": "Edzo H. Toxopeus",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Toxopeus_Edzo_H",
-            "start_date": "1963-11-09",
-            "death_date": "1969-10-01",
-            "type": "bureaucrat_type"
-        },
-        "3706": {
-            "name": "Johannes M. den Uijl",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Uijl_Johannes_M",
-            "start_date": "1966-09-13",
-            "death_date": "1986-07-21",
-            "type": "autocrat_type"
-        },
-        "3707": {
-            "name": "Willem Kok",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Kok_Willem",
-            "start_date": "1986-07-21",
-            "death_date": "1999-12-31",
-            "type": "autocrat_type"
-        },
-        "3708": {
-            "name": "Jozef M. L. T. Cals",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Cals_Jozef_M_L_T",
-            "start_date": "1965-04-14",
-            "death_date": "1966-11-22",
-            "type": "bureaucrat_type"
-        },
-        "3709": {
-            "name": "Jelle Zijlstra",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Zijlstra_Jelle",
-            "start_date": "1966-11-22",
-            "death_date": "1967-04-05",
-            "type": "administrator_type"
-        },
-        "3710": {
-            "name": "Petrus J. S. de Jong",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Jong_Petrus_J_S",
-            "start_date": "1967-04-05",
-            "death_date": "1971-07-06",
-            "type": "administrator_type"
-        },
-        "3711": {
-            "name": "Barend W. Biesheuvel",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Biesheuvel_Barend_W",
-            "start_date": "1971-07-06",
-            "death_date": "1973-05-11",
-            "type": "bureaucrat_type"
-        },
-        "3712": {
-            "name": "Franciscus H. J. J. Andriessen",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Andriessen_Franciscus_H_J_J",
-            "start_date": "1973-05-11",
-            "death_date": "1976-10-22",
-            "type": "democrat_type"
-        },
-        "3713": {
-            "name": "Andreas A. M. van Agt",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Agt_Andreas_A_M_van",
-            "start_date": "1976-10-22",
-            "death_date": "1982-10-13",
-            "type": "bureaucrat_type"
-        },
-        "3714": {
-            "name": "Rudolphus F. M. Lubbers",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Lubbers_Rudolphus_F_M",
-            "start_date": "1982-10-13",
-            "death_date": "1994-05-03",
-            "type": "bureaucrat_type"
-        },
-        "3715": {
-            "name": "Willem J. Geertsema",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Geertsema_Willem_J",
-            "start_date": "1969-10-01",
-            "death_date": "1972-11-29",
-            "type": "bureaucrat_type"
-        },
-        "3716": {
-            "name": "Hans Wiegel",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Wiegel_Hans",
-            "start_date": "1972-11-29",
-            "death_date": "1982-09-08",
-            "type": "reformer_type"
-        },
-        "3717": {
-            "name": "Eduardus H. T. M. Nijpels",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Nijpels_Eduardus_H_T_M",
-            "start_date": "1982-09-08",
-            "death_date": "1989-09-06",
-            "type": "bureaucrat_type"
-        },
-        "3718": {
-            "name": "Joris J. C. Voorhoeve",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Voorhoeve_Joris_J_C",
-            "start_date": "1989-09-06",
-            "death_date": "1992-12-31",
-            "type": "democrat_type"
-        },
-        "3719": {
-            "name": "Willem-Alexander",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Willem-Alexander",
-            "start_date": "1985-04-27",
-            "death_date": "2300-01-01",
+            "picture": "HOL_M_Juliana",
+            "start_date": "1948-09-04",
+            "death_date": "1980-04-30",
             "type": "courteous_figure"
         },
-        "3720": {
-            "name": "Friso",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Friso",
-            "start_date": "1986-09-25",
-            "death_date": "2013-08-12",
-            "type": "courteous_figure"
-        },
-        "3721": {
+        "Constantijn_1": {
             "name": "Constantijn",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -1046,7 +857,7 @@
             "death_date": "1964-02-09",
             "type": "courteous_figure"
         },
-        "3722": {
+        "Irene_1": {
             "name": "Irene",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -1055,7 +866,25 @@
             "death_date": "2300-01-01",
             "type": "controversial_figure"
         },
-        "3723": {
+        "Jacobus_A_W_Burger_1": {
+            "name": "Jacobus A. W. Burger",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Burger_Jacobus_A_W",
+            "start_date": "1958-12-22",
+            "death_date": "1962-09-16",
+            "type": "democrat_type"
+        },
+        "Jan_E_de_Quay_1": {
+            "name": "Jan E. de Quay",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_de_Quay_Jan_E",
+            "start_date": "1959-05-19",
+            "death_date": "1963-07-24",
+            "type": "bureaucrat_type"
+        },
+        "Margriet_1": {
             "name": "Margriet",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -1064,7 +893,160 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "3724": {
+        "Anne_Vondeling_1": {
+            "name": "Anne Vondeling",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Vondeling_Anne",
+            "start_date": "1962-09-16",
+            "death_date": "1966-09-13",
+            "type": "bureaucrat_type"
+        },
+        "Victor_G_M_Marijnen_1": {
+            "name": "Victor G. M. Marijnen",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Marijnen_Victor_G_M",
+            "start_date": "1963-07-24",
+            "death_date": "1965-04-14",
+            "type": "bureaucrat_type"
+        },
+        "Edzo_H_Toxopeus_1": {
+            "name": "Edzo H. Toxopeus",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Toxopeus_Edzo_H",
+            "start_date": "1963-11-09",
+            "death_date": "1969-10-01",
+            "type": "bureaucrat_type"
+        },
+        "Cristina_1": {
+            "name": "Cristina",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Cristina",
+            "start_date": "1965-02-18",
+            "death_date": "1975-02-14",
+            "type": "courteous_figure"
+        },
+        "Jozef_M_L_T_Cals_1": {
+            "name": "Jozef M. L. T. Cals",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Cals_Jozef_M_L_T",
+            "start_date": "1965-04-14",
+            "death_date": "1966-11-22",
+            "type": "bureaucrat_type"
+        },
+        "Johannes_M_den_Uijl_1": {
+            "name": "Johannes M. den Uijl",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Uijl_Johannes_M",
+            "start_date": "1966-09-13",
+            "death_date": "1986-07-21",
+            "type": "autocrat_type"
+        },
+        "Jelle_Zijlstra_1": {
+            "name": "Jelle Zijlstra",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Zijlstra_Jelle",
+            "start_date": "1966-11-22",
+            "death_date": "1967-04-05",
+            "type": "administrator_type"
+        },
+        "Petrus_J_S_de_Jong_1": {
+            "name": "Petrus J. S. de Jong",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Jong_Petrus_J_S",
+            "start_date": "1967-04-05",
+            "death_date": "1971-07-06",
+            "type": "administrator_type"
+        },
+        "Willem_J_Geertsema_1": {
+            "name": "Willem J. Geertsema",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Geertsema_Willem_J",
+            "start_date": "1969-10-01",
+            "death_date": "1972-11-29",
+            "type": "bureaucrat_type"
+        },
+        "Barend_W_Biesheuvel_1": {
+            "name": "Barend W. Biesheuvel",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Biesheuvel_Barend_W",
+            "start_date": "1971-07-06",
+            "death_date": "1973-05-11",
+            "type": "bureaucrat_type"
+        },
+        "Hans_Wiegel_1": {
+            "name": "Hans Wiegel",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Wiegel_Hans",
+            "start_date": "1972-11-29",
+            "death_date": "1982-09-08",
+            "type": "reformer_type"
+        },
+        "Franciscus_H_J_J_Andriessen_1": {
+            "name": "Franciscus H. J. J. Andriessen",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Andriessen_Franciscus_H_J_J",
+            "start_date": "1973-05-11",
+            "death_date": "1976-10-22",
+            "type": "democrat_type"
+        },
+        "Andreas_A_M_van_Agt_1": {
+            "name": "Andreas A. M. van Agt",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Agt_Andreas_A_M_van",
+            "start_date": "1976-10-22",
+            "death_date": "1982-10-13",
+            "type": "bureaucrat_type"
+        },
+        "Beatrix_1": {
+            "name": "Beatrix",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Beatrix",
+            "start_date": "1980-04-30",
+            "death_date": "1999-12-31",
+            "type": "administrator_type"
+        },
+        "Eduardus_H_T_M_Nijpels_1": {
+            "name": "Eduardus H. T. M. Nijpels",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Nijpels_Eduardus_H_T_M",
+            "start_date": "1982-09-08",
+            "death_date": "1989-09-06",
+            "type": "bureaucrat_type"
+        },
+        "Rudolphus_F_M_Lubbers_1": {
+            "name": "Rudolphus F. M. Lubbers",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Lubbers_Rudolphus_F_M",
+            "start_date": "1982-10-13",
+            "death_date": "1994-05-03",
+            "type": "bureaucrat_type"
+        },
+        "WillemAlexander_1": {
+            "name": "Willem-Alexander",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Willem-Alexander",
+            "start_date": "1985-04-27",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Maurits_1": {
             "name": "Maurits",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -1073,7 +1055,25 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "3725": {
+        "Willem_Kok_1": {
+            "name": "Willem Kok",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Kok_Willem",
+            "start_date": "1986-07-21",
+            "death_date": "1999-12-31",
+            "type": "autocrat_type"
+        },
+        "Friso_1": {
+            "name": "Friso",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Friso",
+            "start_date": "1986-09-25",
+            "death_date": "2013-08-12",
+            "type": "courteous_figure"
+        },
+        "Bernhard_1": {
             "name": "Bernhard",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -1082,22 +1082,22 @@
             "death_date": "2300-01-01",
             "type": "courteous_figure"
         },
-        "3726": {
+        "Joris_J_C_Voorhoeve_1": {
+            "name": "Joris J. C. Voorhoeve",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Voorhoeve_Joris_J_C",
+            "start_date": "1989-09-06",
+            "death_date": "1992-12-31",
+            "type": "democrat_type"
+        },
+        "PieterChristiaan_1": {
             "name": "Pieter-Christiaan",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
             "picture": "HOL_M_",
             "start_date": "1990-03-22",
             "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "3727": {
-            "name": "Cristina",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Cristina",
-            "start_date": "1965-02-18",
-            "death_date": "1975-02-14",
             "type": "courteous_figure"
         }
     }

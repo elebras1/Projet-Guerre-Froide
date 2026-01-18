@@ -52,7 +52,7 @@ public class HoverTooltip extends Table {
         this.add(this.subLabel).expandX().top().left();
     }
 
-    public void update(short provinceId, String countryId, String colonizerId) {
+    public void update(int provinceId, String countryId, String colonizerId) {
         String mainText = this.localisation.get(String.valueOf(provinceId)) + " (" + LocalisationUtils.getCountryNameLocalisation(localisation, countryId, colonizerId) + ")";
         if(!mainText.equals(this.mainLabel.getText().toString())) {
             this.mainLabel.setText(mainText);
@@ -62,7 +62,7 @@ public class HoverTooltip extends Table {
         }
     }
 
-    public void update(short provinceId, String countryId, String colonizerId, ObjectIntMap<String> elements) {
+    public void update(int provinceId, String countryId, String colonizerId, ObjectIntMap<String> elements) {
         this.text.setLength(0);
         this.text.append(this.localisation.get(String.valueOf(provinceId))).append(" (").append(LocalisationUtils.getCountryNameLocalisation(localisation, countryId, colonizerId)).append(")");
         if (!this.text.toString().equals(this.mainLabel.getText().toString())) {

@@ -18,14 +18,15 @@ import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
+import com.populaire.projetguerrefroide.component.Position;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.input.GameInputHandler;
-import com.populaire.projetguerrefroide.map.MapMode;
+import com.populaire.projetguerrefroide.pojo.MapMode;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.DateService;
+import com.populaire.projetguerrefroide.service.TimeService;
 import com.populaire.projetguerrefroide.service.WorldService;
 import com.populaire.projetguerrefroide.ui.view.*;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
@@ -36,11 +37,11 @@ import java.time.LocalDate;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class GameScreen implements Screen, GameInputListener, DateListener, TopBarListener, MainMenuInGameListener, MinimapListener, EconomyPanelListener {
+public class GameScreen implements Screen, GameInputListener, TimeListener, TopBarListener, MainMenuInGameListener, MinimapListener, EconomyPanelListener {
     private final GameContext gameContext;
     private final WorldService worldService;
     private final ConfigurationService configurationService;
-    private final DateService dateService;
+    private final TimeService timeService;
     private final OrthographicCamera cam;
     private final WgProjection projection;
     private final InputMultiplexer multiplexer;
@@ -70,15 +71,12 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.gameContext = gameContext;
         this.worldService = worldService;
         this.configurationService = configurationService;
-        this.dateService = new DateService(this.gameContext.getBookmark().getDate());
-        this.dateService.addListener(this.worldService);
-        this.dateService.addListener(this);
+        this.timeService = new TimeService(this.gameContext.getBookmark().date());
+        this.timeService.addListener(this);
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.projection = new WgProjection();
-        int capitalPosition = this.worldService.getPositionOfCapitalOfSelectedCountry();
-        short capitalX = (short) (capitalPosition >> 16);
-        short capitalY = (short) (capitalPosition & 0xFFFF);
-        this.cam.position.set(capitalX, capitalY, 0);
+        Position capitalPosition = this.worldService.getPositionOfCapitalOfSelectedCountry();
+        this.cam.position.set(capitalPosition.x(), capitalPosition.y(), 0);
         this.cam.update();
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
@@ -97,13 +95,12 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.configurationService.loadGameLocalisation(this.gameContext);
 
         this.widgetFactory = new WidgetFactory();
-        this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryIdPlayer(), this.worldService.getColonizerIdOfSelectedProvince(), this);
+        this.topBar = new TopBar(this.widgetFactory, this.skinTopBar, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this.worldService.getCountryPlayerNameId(), this.worldService.getColonizerIdOfSelectedProvince(), this);
         this.provincePanel = new ProvincePanel(this.widgetFactory, this.skinProvince, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.stage = new WgCustomStage(new WgScreenViewport(), this.skinUi, this.skinFlags);
         this.initializeUi();
-        this.worldService.initializeEconomy();
-        this.dateService.initialize();
+        this.timeService.initialize();
 
         this.paused = false;
     }
@@ -187,7 +184,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
     @Override
     public void onHover(short x, short y) {
-        if(this.worldService.hoverProvince(x, y) && this.isMouseOverUI()) {
+        if(this.worldService.hoverLandProvince(x, y) && this.isMouseOverUI()) {
             if(this.worldService.getMapMode().equals(MapMode.CULTURAL)) {
                 this.updateHoverTooltip(this.worldService.getProvinceId(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y), this.worldService.getCulturesOfHoveredProvince(x, y));
             } else if(this.worldService.getMapMode().equals(MapMode.RELIGIOUS)) {
@@ -202,23 +199,24 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
     @Override
     public void onNewDay(LocalDate date) {
+        this.gameContext.getEcsWorld().progress(1f);
         this.topBar.setDate(DateUtils.formatDate(date, this.gameContext.getLocalisation(), this.gameContext.getSettings().getLanguage()));
         this.provincePanel.setResourceProduced(this.worldService.getResourceGoodsProduction());
     }
 
     @Override
     public int onSpeedUp() {
-        return this.dateService.upSpeed();
+        return this.timeService.upSpeed();
     }
 
     @Override
     public int onSpeedDown() {
-        return this.dateService.downSpeed();
+        return this.timeService.downSpeed();
     }
 
     @Override
     public int onTogglePause() {
-        return this.dateService.togglePause();
+        return this.timeService.togglePause();
     }
 
     @Override
@@ -261,7 +259,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
     @Override
     public void onQuitClicked(PopupListener listener) {
         Popup popup = new Popup(this.widgetFactory, this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(),
-            "QUIT_TITLE", "QUIT_DESC", this.worldService.getCountryIdPlayer(), this.worldService.getColonizerIdOfCountryPlayer(), true, false, listener);
+            "QUIT_TITLE", "QUIT_DESC", this.worldService.getCountryPlayerNameId(), this.worldService.getColonizerIdOfCountryPlayer(), true, false, listener);
         Table centerTable = new Table();
         centerTable.setFillParent(true);
         centerTable.add(popup).center();
@@ -342,7 +340,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.hoverTooltip.toFront();
     }
 
-    public void updateHoverTooltip(short provinceId, String countryId, String colonizerId) {
+    public void updateHoverTooltip(int provinceId, String countryId, String colonizerId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
         this.hoverTooltip.update(provinceId, countryId, colonizerId);
@@ -352,7 +350,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
         this.hoverTooltip.toBack();
     }
 
-    public void updateHoverTooltip(short provinceId, String countryId, String colonizerId, ObjectIntMap<String> elements) {
+    public void updateHoverTooltip(int provinceId, String countryId, String colonizerId, ObjectIntMap<String> elements) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
         this.hoverTooltip.update(provinceId, countryId, colonizerId, elements);
@@ -388,7 +386,7 @@ public class GameScreen implements Screen, GameInputListener, DateListener, TopB
 
         this.worldService.renderWorld(this.projection, this.cam, this.time);
 
-        this.dateService.update(delta);
+        this.timeService.update(delta);
 
         if(!this.paused) {
             this.inputHandler.setDelta(delta);

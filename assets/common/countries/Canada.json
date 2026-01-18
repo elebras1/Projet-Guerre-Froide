@@ -732,304 +732,7 @@
         ]
     },
     "ministers": {
-        "211": {
-            "name": "George VI",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ENG_George",
-            "start_date": "1936-09-11",
-            "death_date": "1952-02-06",
-            "type": "parental_type"
-        },
-        "212": {
-            "name": "Elizabeth II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ENG_Elizabeth",
-            "start_date": "1952-02-06",
-            "death_date": "2300-05-12",
-            "type": "traditionalist_type"
-        },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "348": {
-            "name": "Margaret I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "ENG_M_Margaret_I",
-            "start_date": "1952-03-01",
-            "death_date": "2002-02-09",
-            "type": "controversial_figure"
-        },
-        "349": {
-            "name": "David III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "350": {
-            "name": "Sarah I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "351": {
-            "name": "Henry IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
-        },
-        "352": {
-            "name": "William V",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.91,
-            "picture": "ENG_M_William_V",
-            "start_date": "1959-12-18",
-            "death_date": "1972-08-28",
-            "type": "courteous_figure"
-        },
-        "353": {
-            "name": "Richard IV",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "ENG_M_Richard_IV",
-            "start_date": "1962-08-26",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "354": {
-            "name": "Robert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Robert_I_Bayern",
-            "start_date": "1919-02-03",
-            "death_date": "1955-08-02",
-            "type": "traditionalist_type"
-        },
-        "355": {
-            "name": "Albert I von Bayern",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.4,
-            "picture": "ENG_M_Albert_I_Bayern",
-            "start_date": "1955-08-02",
-            "death_date": "1996-07-08",
-            "type": "fortunate_type"
-        },
-        "940": {
-            "name": "William L. M. King",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_King_William_L_M",
-            "start_date": "1919-08-07",
-            "death_date": "1949-06-27",
-            "type": "administrator_type"
-        },
-        "941": {
-            "name": "Louis St. Laurent",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Laurent_Luis",
-            "start_date": "1949-06-27",
-            "death_date": "1958-03-31",
-            "type": "parental_type"
-        },
-        "942": {
-            "name": "George A. Drew",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Drew_George_A",
-            "start_date": "1949-06-27",
-            "death_date": "1957-06-10",
-            "type": "hardliner_type"
-        },
-        "943": {
-            "name": "John Diefenbaker",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Diefenbaker_John",
-            "start_date": "1957-06-10",
-            "death_date": "1968-06-25",
-            "type": "reformer_type"
-        },
-        "944": {
-            "name": "Lester B. Pearson",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Pearson_Lester_B",
-            "start_date": "1958-03-31",
-            "death_date": "1968-06-25",
-            "type": "liberal_type"
-        },
-        "945": {
-            "name": "Pierre Trudeau",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Trudeau_Pierre",
-            "start_date": "1968-06-25",
-            "death_date": "1984-09-04",
-            "type": "administrator_type"
-        },
-        "946": {
-            "name": "Robert Stanfield",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Stanfield_Robert",
-            "start_date": "1968-06-25",
-            "death_date": "1979-05-22",
-            "type": "honest_type"
-        },
-        "947": {
-            "name": "Joe Clark",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Clark_Joe",
-            "start_date": "1979-05-22",
-            "death_date": "1984-09-04",
-            "type": "bureaucrat_type"
-        },
-        "948": {
-            "name": "John Turner",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Turner_John",
-            "start_date": "1984-09-04",
-            "death_date": "1993-10-25",
-            "type": "traditionalist_type"
-        },
-        "949": {
-            "name": "Brian Mulroney",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Mulroney_Brian",
-            "start_date": "1984-09-04",
-            "death_date": "1993-10-25",
-            "type": "reformer_type"
-        },
-        "950": {
-            "name": "Major James Coldwell",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Coldwell_James",
-            "start_date": "1945-06-11",
-            "death_date": "1962-06-18",
-            "type": "honest_type"
-        },
-        "951": {
-            "name": "Solon Earl Low",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Low_Solon_E",
-            "start_date": "1945-06-11",
-            "death_date": "1962-06-18",
-            "type": "zealous_type"
-        },
-        "952": {
-            "name": "Tommy Douglas",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Douglas_Tommy",
-            "start_date": "1962-06-18",
-            "death_date": "1968-04-20",
-            "type": "liberal_type"
-        },
-        "953": {
-            "name": "David Lewis",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Lewis_David",
-            "start_date": "1972-10-30",
-            "death_date": "1979-05-22",
-            "type": "democrat_type"
-        },
-        "954": {
-            "name": "Ed Broadbent",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Broadbent_Ed",
-            "start_date": "1979-05-22",
-            "death_date": "1993-10-25",
-            "type": "honest_type"
-        },
-        "955": {
-            "name": "Tim Buck",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Buck_Tim",
-            "start_date": "1929-06-11",
-            "death_date": "1962-06-18",
-            "type": "loyal_type"
-        },
-        "956": {
-            "name": "William Kashtan",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "CAN_M_Kashtan_William",
-            "start_date": "1965-11-08",
-            "death_date": "1988-11-21",
-            "type": "traditionalist_type"
-        },
-        "957": {
-            "name": "Fred Rose",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Rose_Fred",
-            "start_date": "1934-01-01",
-            "death_date": "1947-01-30",
-            "type": "controversial_figure"
-        },
-        "958": {
-            "name": "William John Beattie",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Beattie_William_J",
-            "start_date": "1965-01-01",
-            "death_date": "1978-01-01",
-            "type": "extremist_type"
-        },
-        "959": {
+        "Adrien_Arcand_1": {
             "name": "Adrien Arcand",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
@@ -1038,340 +741,43 @@
             "death_date": "1967-08-01",
             "type": "controversial_figure"
         },
-        "960": {
-            "name": "Alexi Strashokov",
+        "Robert_I_von_Bayern_1": {
+            "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Strashokov_Alexi",
-            "start_date": "1979-06-04",
-            "death_date": "1993-06-05",
-            "type": "fortunate_type"
-        },
-        "961": {
-            "name": "Curtis Hawthorne",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Hawthorne_Curtis",
-            "start_date": "1962-02-07",
-            "death_date": "1983-01-13",
-            "type": "honest_type"
-        },
-        "962": {
-            "name": "Albert Michael Thompson",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Thompson_Albert_M",
-            "start_date": "1951-01-18",
-            "death_date": "1969-04-05",
-            "type": "loyal_type"
-        },
-        "963": {
-            "name": "Allan MacEachen",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_MacEachen_Allan",
-            "start_date": "1968-06-25",
-            "death_date": "1984-09-04",
-            "type": "loyal_type"
-        },
-        "964": {
-            "name": "Robert N. Thompson",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Thompson_Robert_N",
-            "start_date": "1961-01-01",
-            "death_date": "1997-11-16",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Robert_I_Bayern",
+            "start_date": "1919-02-03",
+            "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "965": {
-            "name": "D. Real Caouette",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Caouette_D_Real",
-            "start_date": "1961-01-01",
-            "death_date": "1976-12-16",
-            "type": "visionary_type"
-        },
-        "966": {
-            "name": "Andres-Gilles Fortin",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Fortin_Andres-Gilles",
-            "start_date": "1971-04-01",
-            "death_date": "1977-04-24",
-            "type": "controversial_figure"
-        },
-        "967": {
-            "name": "Gilles Caouette",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Caouette_Gilles",
-            "start_date": "1977-05-24",
-            "death_date": "1997-05-12",
+        "William_L_M_King_1": {
+            "name": "William L. M. King",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_King_William_L_M",
+            "start_date": "1919-08-07",
+            "death_date": "1949-06-27",
             "type": "administrator_type"
         },
-        "968": {
-            "name": "Charles-Arthur Gauthier",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Gauthier_Charles-Arthur",
-            "start_date": "1971-04-01",
-            "death_date": "1997-05-12",
-            "type": "traditionalist_type"
-        },
-        "969": {
-            "name": "Fabien Roy",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Roy_Fabien",
-            "start_date": "1979-03-20",
-            "death_date": "2300-05-12",
-            "type": "lethargic_type"
-        },
-        "970": {
-            "name": "Martin Hattersley",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Hattersley_Martin",
-            "start_date": "1980-11-01",
-            "death_date": "2300-05-12",
-            "type": "reformer_type"
-        },
-        "971": {
-            "name": "Harvey Lainson",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Lainson_Harvey",
-            "start_date": "1986-06-22",
-            "death_date": "2005-02-28",
-            "type": "lethargic_type"
-        },
-        "972": {
-            "name": "Ken Campbell",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Campbell_Ken",
-            "start_date": "1990-01-01",
-            "death_date": "2006-08-28",
-            "type": "zealous_type"
-        },
-        "973": {
-            "name": "John Horne Blackmore",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Blackmore_John_H",
-            "start_date": "1935-01-01",
-            "death_date": "1971-04-02",
-            "type": "extremist_type"
-        },
-        "974": {
-            "name": "Audrey McLaughlin",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_McLaughlin_Audrey",
-            "start_date": "1989-12-03",
-            "death_date": "1995-10-15",
-            "type": "liberal_type"
-        },
-        "975": {
-            "name": "Adm. Michael P. Gosling",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Gosling_Michael_P",
-            "start_date": "1946-01-01",
-            "death_date": "1976-12-12",
-            "type": "parental_type"
-        },
-        "976": {
-            "name": "Rear Adm. William Landymore",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Landymore_William",
-            "start_date": "1963-11-01",
-            "death_date": "1991-12-31",
-            "type": "traditionalist_type"
-        },
-        "977": {
-            "name": "Gen. Romeo Dallaire",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Dallaire_Romeo",
-            "start_date": "1989-07-03",
-            "death_date": "2046-01-01",
-            "type": "courageous_type"
-        },
-        "978": {
-            "name": "Leslie Morris",
+        "Tim_Buck_1": {
+            "name": "Tim Buck",
             "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Morris_Leslie",
-            "start_date": "1962-08-01",
-            "death_date": "1964-11-13",
-            "type": "autocrat_type"
-        },
-        "979": {
-            "name": "George Hewison",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Hewison_George",
-            "start_date": "1988-06-01",
-            "death_date": "1992-09-01",
-            "type": "reformer_type"
-        },
-        "980": {
-            "name": "Jack Scott",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Scott_Jack",
-            "start_date": "1964-12-01",
-            "death_date": "1972-09-13",
-            "type": "hardliner_type"
-        },
-        "981": {
-            "name": "Hardial Bains",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Bains_Hardial",
-            "start_date": "1963-04-07",
-            "death_date": "1997-08-24",
-            "type": "extremist_type"
-        },
-        "982": {
-            "name": "John Aimers",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Aimers_John",
-            "start_date": "1970-01-01",
-            "death_date": "2300-05-12",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Buck_Tim",
+            "start_date": "1929-06-11",
+            "death_date": "1962-06-18",
             "type": "loyal_type"
         },
-        "983": {
-            "name": "Harold Alexander",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Alexander_Harold",
-            "start_date": "1946-01-01",
-            "death_date": "1952-02-28",
-            "type": "courageous_type"
-        },
-        "984": {
-            "name": "Vincent Massey",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Massey_Vincent",
-            "start_date": "1952-02-28",
-            "death_date": "1959-09-15",
-            "type": "courteous_figure"
-        },
-        "985": {
-            "name": "Georges-Philéas Vanier",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Vanier_Georges-Phileas",
-            "start_date": "1959-09-15",
-            "death_date": "1967-03-05",
-            "type": "bureaucrat_type"
-        },
-        "986": {
-            "name": "Roland Michener",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Michener_Roland",
-            "start_date": "1967-04-17",
-            "death_date": "1974-01-14",
-            "type": "courteous_figure"
-        },
-        "987": {
-            "name": "Jules Léger",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Leger_Jules",
-            "start_date": "1974-01-14",
-            "death_date": "1979-01-22",
-            "type": "courteous_figure"
-        },
-        "988": {
-            "name": "Edward Richard Schreyer",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Schreyer_Edward_R",
-            "start_date": "1979-01-22",
-            "death_date": "1984-04-14",
-            "type": "courteous_figure"
-        },
-        "989": {
-            "name": "Jeanne Mathilde Sauvé",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Sauve_Jeanne_M",
-            "start_date": "1984-04-14",
-            "death_date": "1990-01-29",
-            "type": "courteous_figure"
-        },
-        "990": {
-            "name": "Ramon John Hnatyshyn",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Hnatyshyn_Ramon_J",
-            "start_date": "1990-01-29",
-            "death_date": "1995-02-08",
-            "type": "courteous_figure"
-        },
-        "991": {
-            "name": "Roger Smethwick",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Smethwick_Roger",
-            "start_date": "1956-09-01",
-            "death_date": "1983-04-11",
-            "type": "hardliner_type"
-        },
-        "992": {
-            "name": "Miguel Figueroa",
+        "Fred_Rose_1": {
+            "name": "Fred Rose",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
-            "picture": "CAN_M_Figueroa_Miguel",
-            "start_date": "1992-12-01",
-            "death_date": "2300-05-12",
-            "type": "traditionalist_type"
-        },
-        "993": {
-            "name": "John Ross Taylor",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Taylor_John_R",
-            "start_date": "1940-01-01",
-            "death_date": "1994-11-06",
-            "type": "zealous_type"
-        },
-        "994": {
-            "name": "Don Andrews",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Andrews_Don",
-            "start_date": "1967-01-01",
-            "death_date": "2022-01-01",
+            "picture": "CAN_M_Rose_Fred",
+            "start_date": "1934-01-01",
+            "death_date": "1947-01-30",
             "type": "controversial_figure"
         },
-        "995": {
-            "name": "Paul Fromm",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Fromm_Paul",
-            "start_date": "1967-01-01",
-            "death_date": "2019-01-03",
-            "type": "extremist_type"
-        },
-        "996": {
-            "name": "Ron Gostick",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Gostick_Ron",
-            "start_date": "1946-01-01",
-            "death_date": "2005-07-26",
-            "type": "dictator_type"
-        },
-        "997": {
+        "Chuck_Crate_1": {
             "name": "Chuck Crate",
             "ideology": "fascistic_idolg",
             "loyalty": 0.5,
@@ -1380,34 +786,25 @@
             "death_date": "1992-01-01",
             "type": "parental_type"
         },
-        "998": {
-            "name": "Alexander Bell Patterson",
+        "John_Horne_Blackmore_1": {
+            "name": "John Horne Blackmore",
             "ideology": "social_cons_idolg",
             "loyalty": 0.5,
-            "picture": "CAN_M_Patterson_Alexander_B",
-            "start_date": "1967-01-01",
-            "death_date": "1993-04-02",
-            "type": "ambitious_type"
+            "picture": "CAN_M_Blackmore_John_H",
+            "start_date": "1935-01-01",
+            "death_date": "1971-04-02",
+            "type": "extremist_type"
         },
-        "999": {
-            "name": "Ken Sweigard",
+        "George_VI_1": {
+            "name": "George VI",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Sweigard_Ken",
-            "start_date": "1983-01-01",
-            "death_date": "2005-07-11",
-            "type": "religious_type"
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
         },
-        "1000": {
-            "name": "Hazen Argue",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CAN_M_Argue_Hazen",
-            "start_date": "1960-01-01",
-            "death_date": "1991-10-02",
-            "type": "reformer_type"
-        },
-        "1001": {
+        "Percy_Wright_1": {
             "name": "Percy Wright",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -1416,7 +813,367 @@
             "death_date": "1980-09-30",
             "type": "zealous_type"
         },
-        "1002": {
+        "John_Ross_Taylor_1": {
+            "name": "John Ross Taylor",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Taylor_John_R",
+            "start_date": "1940-01-01",
+            "death_date": "1994-11-06",
+            "type": "zealous_type"
+        },
+        "Major_James_Coldwell_1": {
+            "name": "Major James Coldwell",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Coldwell_James",
+            "start_date": "1945-06-11",
+            "death_date": "1962-06-18",
+            "type": "honest_type"
+        },
+        "Solon_Earl_Low_1": {
+            "name": "Solon Earl Low",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Low_Solon_E",
+            "start_date": "1945-06-11",
+            "death_date": "1962-06-18",
+            "type": "zealous_type"
+        },
+        "Harold_Alexander_1": {
+            "name": "Harold Alexander",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Alexander_Harold",
+            "start_date": "1946-01-01",
+            "death_date": "1952-02-28",
+            "type": "courageous_type"
+        },
+        "Henry_IX_1": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "Adm_Michael_P_Gosling_1": {
+            "name": "Adm. Michael P. Gosling",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Gosling_Michael_P",
+            "start_date": "1946-01-01",
+            "death_date": "1976-12-12",
+            "type": "parental_type"
+        },
+        "Ron_Gostick_1": {
+            "name": "Ron Gostick",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Gostick_Ron",
+            "start_date": "1946-01-01",
+            "death_date": "2005-07-26",
+            "type": "dictator_type"
+        },
+        "George_A_Drew_1": {
+            "name": "George A. Drew",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Drew_George_A",
+            "start_date": "1949-06-27",
+            "death_date": "1957-06-10",
+            "type": "hardliner_type"
+        },
+        "Louis_St_Laurent_1": {
+            "name": "Louis St. Laurent",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Laurent_Luis",
+            "start_date": "1949-06-27",
+            "death_date": "1958-03-31",
+            "type": "parental_type"
+        },
+        "Albert_Michael_Thompson_1": {
+            "name": "Albert Michael Thompson",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Thompson_Albert_M",
+            "start_date": "1951-01-18",
+            "death_date": "1969-04-05",
+            "type": "loyal_type"
+        },
+        "Elizabeth_II_1": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "Vincent_Massey_1": {
+            "name": "Vincent Massey",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Massey_Vincent",
+            "start_date": "1952-02-28",
+            "death_date": "1959-09-15",
+            "type": "courteous_figure"
+        },
+        "Margaret_I_1": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "Albert_I_von_Bayern_1": {
+            "name": "Albert I von Bayern",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.4,
+            "picture": "ENG_M_Albert_I_Bayern",
+            "start_date": "1955-08-02",
+            "death_date": "1996-07-08",
+            "type": "fortunate_type"
+        },
+        "Roger_Smethwick_1": {
+            "name": "Roger Smethwick",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Smethwick_Roger",
+            "start_date": "1956-09-01",
+            "death_date": "1983-04-11",
+            "type": "hardliner_type"
+        },
+        "John_Diefenbaker_1": {
+            "name": "John Diefenbaker",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Diefenbaker_John",
+            "start_date": "1957-06-10",
+            "death_date": "1968-06-25",
+            "type": "reformer_type"
+        },
+        "Lester_B_Pearson_1": {
+            "name": "Lester B. Pearson",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Pearson_Lester_B",
+            "start_date": "1958-03-31",
+            "death_date": "1968-06-25",
+            "type": "liberal_type"
+        },
+        "GeorgesPhiléas_Vanier_1": {
+            "name": "Georges-Philéas Vanier",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Vanier_Georges-Phileas",
+            "start_date": "1959-09-15",
+            "death_date": "1967-03-05",
+            "type": "bureaucrat_type"
+        },
+        "William_V_1": {
+            "name": "William V",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
+        },
+        "Hazen_Argue_1": {
+            "name": "Hazen Argue",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Argue_Hazen",
+            "start_date": "1960-01-01",
+            "death_date": "1991-10-02",
+            "type": "reformer_type"
+        },
+        "D_Real_Caouette_1": {
+            "name": "D. Real Caouette",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Caouette_D_Real",
+            "start_date": "1961-01-01",
+            "death_date": "1976-12-16",
+            "type": "visionary_type"
+        },
+        "Robert_N_Thompson_1": {
+            "name": "Robert N. Thompson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Thompson_Robert_N",
+            "start_date": "1961-01-01",
+            "death_date": "1997-11-16",
+            "type": "traditionalist_type"
+        },
+        "Curtis_Hawthorne_1": {
+            "name": "Curtis Hawthorne",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Hawthorne_Curtis",
+            "start_date": "1962-02-07",
+            "death_date": "1983-01-13",
+            "type": "honest_type"
+        },
+        "Tommy_Douglas_1": {
+            "name": "Tommy Douglas",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Douglas_Tommy",
+            "start_date": "1962-06-18",
+            "death_date": "1968-04-20",
+            "type": "liberal_type"
+        },
+        "Leslie_Morris_1": {
+            "name": "Leslie Morris",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Morris_Leslie",
+            "start_date": "1962-08-01",
+            "death_date": "1964-11-13",
+            "type": "autocrat_type"
+        },
+        "Richard_IV_1": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Hardial_Bains_1": {
+            "name": "Hardial Bains",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Bains_Hardial",
+            "start_date": "1963-04-07",
+            "death_date": "1997-08-24",
+            "type": "extremist_type"
+        },
+        "Rear_Adm_William_Landymore_1": {
+            "name": "Rear Adm. William Landymore",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Landymore_William",
+            "start_date": "1963-11-01",
+            "death_date": "1991-12-31",
+            "type": "traditionalist_type"
+        },
+        "Jack_Scott_1": {
+            "name": "Jack Scott",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Scott_Jack",
+            "start_date": "1964-12-01",
+            "death_date": "1972-09-13",
+            "type": "hardliner_type"
+        },
+        "William_John_Beattie_1": {
+            "name": "William John Beattie",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Beattie_William_J",
+            "start_date": "1965-01-01",
+            "death_date": "1978-01-01",
+            "type": "extremist_type"
+        },
+        "William_Kashtan_1": {
+            "name": "William Kashtan",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Kashtan_William",
+            "start_date": "1965-11-08",
+            "death_date": "1988-11-21",
+            "type": "traditionalist_type"
+        },
+        "George_VII_1": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "Alexander_Bell_Patterson_1": {
+            "name": "Alexander Bell Patterson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Patterson_Alexander_B",
+            "start_date": "1967-01-01",
+            "death_date": "1993-04-02",
+            "type": "ambitious_type"
+        },
+        "Paul_Fromm_1": {
+            "name": "Paul Fromm",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Fromm_Paul",
+            "start_date": "1967-01-01",
+            "death_date": "2019-01-03",
+            "type": "extremist_type"
+        },
+        "Don_Andrews_1": {
+            "name": "Don Andrews",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Andrews_Don",
+            "start_date": "1967-01-01",
+            "death_date": "2022-01-01",
+            "type": "controversial_figure"
+        },
+        "Roland_Michener_1": {
+            "name": "Roland Michener",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Michener_Roland",
+            "start_date": "1967-04-17",
+            "death_date": "1974-01-14",
+            "type": "courteous_figure"
+        },
+        "Robert_Stanfield_1": {
+            "name": "Robert Stanfield",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Stanfield_Robert",
+            "start_date": "1968-06-25",
+            "death_date": "1979-05-22",
+            "type": "honest_type"
+        },
+        "Pierre_Trudeau_1": {
+            "name": "Pierre Trudeau",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Trudeau_Pierre",
+            "start_date": "1968-06-25",
+            "death_date": "1984-09-04",
+            "type": "administrator_type"
+        },
+        "Allan_MacEachen_1": {
+            "name": "Allan MacEachen",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_MacEachen_Allan",
+            "start_date": "1968-06-25",
+            "death_date": "1984-09-04",
+            "type": "loyal_type"
+        },
+        "Anne_II_1": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "James_Laxer_1": {
             "name": "James Laxer",
             "ideology": "left_wing_radical_idolg",
             "loyalty": 0.5,
@@ -1424,6 +1181,249 @@
             "start_date": "1969-09-06",
             "death_date": "1974-07-08",
             "type": "visionary_type"
+        },
+        "John_Aimers_1": {
+            "name": "John Aimers",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Aimers_John",
+            "start_date": "1970-01-01",
+            "death_date": "2300-05-12",
+            "type": "loyal_type"
+        },
+        "AndresGilles_Fortin_1": {
+            "name": "Andres-Gilles Fortin",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Fortin_Andres-Gilles",
+            "start_date": "1971-04-01",
+            "death_date": "1977-04-24",
+            "type": "controversial_figure"
+        },
+        "CharlesArthur_Gauthier_1": {
+            "name": "Charles-Arthur Gauthier",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Gauthier_Charles-Arthur",
+            "start_date": "1971-04-01",
+            "death_date": "1997-05-12",
+            "type": "traditionalist_type"
+        },
+        "David_Lewis_1": {
+            "name": "David Lewis",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Lewis_David",
+            "start_date": "1972-10-30",
+            "death_date": "1979-05-22",
+            "type": "democrat_type"
+        },
+        "Jules_Léger_1": {
+            "name": "Jules Léger",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Leger_Jules",
+            "start_date": "1974-01-14",
+            "death_date": "1979-01-22",
+            "type": "courteous_figure"
+        },
+        "Gilles_Caouette_1": {
+            "name": "Gilles Caouette",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Caouette_Gilles",
+            "start_date": "1977-05-24",
+            "death_date": "1997-05-12",
+            "type": "administrator_type"
+        },
+        "Andrew_I_1": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "Edward_Richard_Schreyer_1": {
+            "name": "Edward Richard Schreyer",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Schreyer_Edward_R",
+            "start_date": "1979-01-22",
+            "death_date": "1984-04-14",
+            "type": "courteous_figure"
+        },
+        "Fabien_Roy_1": {
+            "name": "Fabien Roy",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Roy_Fabien",
+            "start_date": "1979-03-20",
+            "death_date": "2300-05-12",
+            "type": "lethargic_type"
+        },
+        "Joe_Clark_1": {
+            "name": "Joe Clark",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Clark_Joe",
+            "start_date": "1979-05-22",
+            "death_date": "1984-09-04",
+            "type": "bureaucrat_type"
+        },
+        "Ed_Broadbent_1": {
+            "name": "Ed Broadbent",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Broadbent_Ed",
+            "start_date": "1979-05-22",
+            "death_date": "1993-10-25",
+            "type": "honest_type"
+        },
+        "Alexi_Strashokov_1": {
+            "name": "Alexi Strashokov",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Strashokov_Alexi",
+            "start_date": "1979-06-04",
+            "death_date": "1993-06-05",
+            "type": "fortunate_type"
+        },
+        "David_III_1": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Martin_Hattersley_1": {
+            "name": "Martin Hattersley",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Hattersley_Martin",
+            "start_date": "1980-11-01",
+            "death_date": "2300-05-12",
+            "type": "reformer_type"
+        },
+        "Edward_IX_1": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Sarah_I_1": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Ken_Sweigard_1": {
+            "name": "Ken Sweigard",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Sweigard_Ken",
+            "start_date": "1983-01-01",
+            "death_date": "2005-07-11",
+            "type": "religious_type"
+        },
+        "Jeanne_Mathilde_Sauvé_1": {
+            "name": "Jeanne Mathilde Sauvé",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Sauve_Jeanne_M",
+            "start_date": "1984-04-14",
+            "death_date": "1990-01-29",
+            "type": "courteous_figure"
+        },
+        "John_Turner_1": {
+            "name": "John Turner",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Turner_John",
+            "start_date": "1984-09-04",
+            "death_date": "1993-10-25",
+            "type": "traditionalist_type"
+        },
+        "Brian_Mulroney_1": {
+            "name": "Brian Mulroney",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "CAN_M_Mulroney_Brian",
+            "start_date": "1984-09-04",
+            "death_date": "1993-10-25",
+            "type": "reformer_type"
+        },
+        "Harvey_Lainson_1": {
+            "name": "Harvey Lainson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Lainson_Harvey",
+            "start_date": "1986-06-22",
+            "death_date": "2005-02-28",
+            "type": "lethargic_type"
+        },
+        "George_Hewison_1": {
+            "name": "George Hewison",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Hewison_George",
+            "start_date": "1988-06-01",
+            "death_date": "1992-09-01",
+            "type": "reformer_type"
+        },
+        "Gen_Romeo_Dallaire_1": {
+            "name": "Gen. Romeo Dallaire",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Dallaire_Romeo",
+            "start_date": "1989-07-03",
+            "death_date": "2046-01-01",
+            "type": "courageous_type"
+        },
+        "Audrey_McLaughlin_1": {
+            "name": "Audrey McLaughlin",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_McLaughlin_Audrey",
+            "start_date": "1989-12-03",
+            "death_date": "1995-10-15",
+            "type": "liberal_type"
+        },
+        "Ken_Campbell_1": {
+            "name": "Ken Campbell",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Campbell_Ken",
+            "start_date": "1990-01-01",
+            "death_date": "2006-08-28",
+            "type": "zealous_type"
+        },
+        "Ramon_John_Hnatyshyn_1": {
+            "name": "Ramon John Hnatyshyn",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Hnatyshyn_Ramon_J",
+            "start_date": "1990-01-29",
+            "death_date": "1995-02-08",
+            "type": "courteous_figure"
+        },
+        "Miguel_Figueroa_1": {
+            "name": "Miguel Figueroa",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "CAN_M_Figueroa_Miguel",
+            "start_date": "1992-12-01",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
         }
     }
 }

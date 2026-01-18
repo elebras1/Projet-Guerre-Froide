@@ -538,358 +538,7 @@
         ]
     },
     "ministers": {
-        "5767": {
-            "name": "Josip Broz Tito",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Tito_Josip_Broz",
-            "start_date": "1946-01-01",
-            "death_date": "1980-05-04",
-            "type": "autocrat_type"
-        },
-        "5768": {
-            "name": "Lazar Kolievski",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Kolisevski_Lazar",
-            "start_date": "1980-05-04",
-            "death_date": "1980-05-15",
-            "type": "autocrat_type"
-        },
-        "5769": {
-            "name": "Cvijetin Mijatovic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Mijatovic_Cvijetin",
-            "start_date": "1980-05-15",
-            "death_date": "1981-05-15",
-            "type": "autocrat_type"
-        },
-        "5770": {
-            "name": "Sergej Kraigher",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Kraigher_Sergej",
-            "start_date": "1981-05-15",
-            "death_date": "1982-05-15",
-            "type": "autocrat_type"
-        },
-        "5771": {
-            "name": "Petar Stambolic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.8,
-            "picture": "YUG_M_Stambolic_Petar",
-            "start_date": "1963-06-29",
-            "death_date": "1983-05-15",
-            "type": "autocrat_type"
-        },
-        "5772": {
-            "name": "Mika piljak",
-            "ideology": "communist_idolg",
-            "loyalty": 0.81,
-            "picture": "YUG_M_Spiljak_Mika",
-            "start_date": "1967-05-16",
-            "death_date": "1984-05-15",
-            "type": "bureaucrat_type"
-        },
-        "5773": {
-            "name": "Veselin Duranovic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.8,
-            "picture": "YUG_M_Duranovic_Veselin",
-            "start_date": "1977-01-18",
-            "death_date": "1985-05-15",
-            "type": "autocrat_type"
-        },
-        "5774": {
-            "name": "Radovan Vlajkovic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Vlajkovic_Radovan",
-            "start_date": "1985-05-15",
-            "death_date": "1986-05-15",
-            "type": "bureaucrat_type"
-        },
-        "5775": {
-            "name": "Sinan Hasani",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Hasani_Sinan",
-            "start_date": "1986-05-15",
-            "death_date": "1987-05-15",
-            "type": "hardliner_type"
-        },
-        "5776": {
-            "name": "Lazar Mojsov",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "YUG_M_Mojsov_Lazar",
-            "start_date": "1987-05-15",
-            "death_date": "1988-05-15",
-            "type": "bureaucrat_type"
-        },
-        "5777": {
-            "name": "Raif Dizdarevic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Dizdarevic_Raif",
-            "start_date": "1978-04-01",
-            "death_date": "1989-05-15",
-            "type": "courageous_type"
-        },
-        "5778": {
-            "name": "Janez Drnovsek",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Drnovsek_Janez",
-            "start_date": "1989-05-15",
-            "death_date": "1990-05-15",
-            "type": "democrat_type"
-        },
-        "5779": {
-            "name": "Borisav Jovic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Jovic_Borisav",
-            "start_date": "1990-05-15",
-            "death_date": "1991-05-15",
-            "type": "hardliner_type"
-        },
-        "5780": {
-            "name": "Stjepan Mesic",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.8,
-            "picture": "YUG_M_Mesic_Stjepan",
-            "start_date": "1990-05-30",
-            "death_date": "1992-12-31",
-            "type": "reformer_type"
-        },
-        "5781": {
-            "name": "Mitja Ribicic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Ribicic_Mitja",
-            "start_date": "1969-05-18",
-            "death_date": "1971-07-30",
-            "type": "bureaucrat_type"
-        },
-        "5782": {
-            "name": "Dzemal Bijedic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Bijedic_Dzemal",
-            "start_date": "1971-07-30",
-            "death_date": "1977-01-18",
-            "type": "bureaucrat_type"
-        },
-        "5783": {
-            "name": "Milka Planinc",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Planinc_Milka",
-            "start_date": "1971-12-14",
-            "death_date": "1986-05-16",
-            "type": "autocrat_type"
-        },
-        "5784": {
-            "name": "Branko Mikulic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Mikulic_Branko",
-            "start_date": "1986-05-16",
-            "death_date": "1989-03-16",
-            "type": "bureaucrat_type"
-        },
-        "5785": {
-            "name": "Ante Markovic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Markovic_Ante",
-            "start_date": "1989-03-16",
-            "death_date": "1992-12-31",
-            "type": "reformer_type"
-        },
-        "4630": {
-            "name": "Petar II Karadjordjevic",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Petar_II",
-            "start_date": "1934-10-09",
-            "death_date": "1970-11-03",
-            "type": "lethargic_type"
-        },
-        "4631": {
-            "name": "Aleksandar II Karadjordjevic",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Aleksandar_II",
-            "start_date": "1970-11-03",
-            "death_date": "2300-01-01",
-            "type": "ambitious_type"
-        },
-        "5786": {
-            "name": "Milan Stojadinovic",
-            "ideology": "fascistic_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Stojadinovic_Milan",
-            "start_date": "1935-01-01",
-            "death_date": "1961-10-26",
-            "type": "dictator_type"
-        },
-        "5787": {
-            "name": "Vane Ivanovic",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Ivanovic_Vane",
-            "start_date": "1946-01-01",
-            "death_date": "1999-04-04",
-            "type": "moral_type"
-        },
-        "5788": {
-            "name": "Slobodan Milosevic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Milosevic_Slobodan",
-            "start_date": "1980-01-01",
-            "death_date": "1990-12-31",
-            "type": "autocrat_type"
-        },
-        "5789": {
-            "name": "Milovan Djilas",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Djilas_Milovan",
-            "start_date": "1946-01-01",
-            "death_date": "1995-04-20",
-            "type": "reformer_type"
-        },
-        "5790": {
-            "name": "Konstantin Popovic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Popovic_Konstantin",
-            "start_date": "1933-01-01",
-            "death_date": "1992-10-20",
-            "type": "courageous_type"
-        },
-        "5791": {
-            "name": "Moa Pijade",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Pijade_Mosa",
-            "start_date": "1920-01-01",
-            "death_date": "1957-05-15",
-            "type": "reputable_type"
-        },
-        "5792": {
-            "name": "Edvard Kardelj",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Kardelj_Edvard",
-            "start_date": "1929-01-01",
-            "death_date": "1979-02-10",
-            "type": "reformer_type"
-        },
-        "3269": {
-            "name": "Panko Brashnarov",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Brashnarov_Panko",
-            "start_date": "1919-01-01",
-            "death_date": "1951-05-05",
-            "type": "dictator_type"
-        },
-        "3518": {
-            "name": "Vlado Dapcevic",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Dapcevic_Vlado",
-            "start_date": "1933-01-01",
-            "death_date": "2001-07-12",
-            "type": "dictator_type"
-        },
-        "5793": {
-            "name": "Venko Markovski",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Markovski_Venko",
-            "start_date": "1943-01-01",
-            "death_date": "1968-05-05",
-            "type": "dictator_type"
-        },
-        "4645": {
-            "name": "Sreten ujovic",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Zujovic_Sreten",
-            "start_date": "1941-01-01",
-            "death_date": "1976-06-11",
-            "type": "dictator_type"
-        },
-        "682": {
-            "name": "Danko Grlic",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Grlic_Danko",
-            "start_date": "1931-01-01",
-            "death_date": "1984-03-01",
-            "type": "liberal_type"
-        },
-        "4646": {
-            "name": "Mihailo Markovic",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Markovic_Mihailo",
-            "start_date": "1960-01-01",
-            "death_date": "1986-09-01",
-            "type": "extremist_type"
-        },
-        "1311": {
-            "name": "Milan Kangrga",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Kangrga_Milan",
-            "start_date": "1964-09-01",
-            "death_date": "2008-04-25",
-            "type": "democrat_type"
-        },
-        "1310": {
-            "name": "Gajo Petrovic",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Petrovic_Gajo",
-            "start_date": "1956-01-01",
-            "death_date": "1993-06-13",
-            "type": "moral_type"
-        },
-        "5794": {
-            "name": "Predrag Vranicki",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Vranicki_Predrag",
-            "start_date": "1965-01-01",
-            "death_date": "2002-01-31",
-            "type": "honest_type"
-        },
-        "4652": {
-            "name": "Milosav Milosavljevic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "SER_M_Milosavljevic_Milosav",
-            "start_date": "1935-01-01",
-            "death_date": "1986-12-01",
-            "type": "visionary_type"
-        },
-        "1260": {
-            "name": "Andrija Hebrang",
-            "ideology": "communist_idolg",
-            "loyalty": 0.5,
-            "picture": "CRO_M_Hebrang_Andrija",
-            "start_date": "1919-01-01",
-            "death_date": "1949-10-01",
-            "type": "hardliner_type"
-        },
-        "1315": {
+        "Ivan_Ribar_1": {
             "name": "Ivan Ribar",
             "ideology": "communist_idolg",
             "loyalty": 0.5,
@@ -898,25 +547,142 @@
             "death_date": "1968-06-11",
             "type": "courteous_figure"
         },
-        "5795": {
-            "name": "Jusuf Gervalla",
+        "Andrija_Hebrang_1": {
+            "name": "Andrija Hebrang",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "CRO_M_Hebrang_Andrija",
+            "start_date": "1919-01-01",
+            "death_date": "1949-10-01",
+            "type": "hardliner_type"
+        },
+        "Panko_Brashnarov_1": {
+            "name": "Panko Brashnarov",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
-            "picture": "YUG_M_Gervalla_Jusuf",
-            "start_date": "1969-01-01",
-            "death_date": "1982-01-17",
-            "type": "zealous_type"
+            "picture": "YUG_M_Brashnarov_Panko",
+            "start_date": "1919-01-01",
+            "death_date": "1951-05-05",
+            "type": "dictator_type"
         },
-        "5796": {
-            "name": "Kadri Zeka",
+        "Moa_Pijade_1": {
+            "name": "Moa Pijade",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Pijade_Mosa",
+            "start_date": "1920-01-01",
+            "death_date": "1957-05-15",
+            "type": "reputable_type"
+        },
+        "Milan_Stojadinovic_1": {
+            "name": "Milan Stojadinovic",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Stojadinovic_Milan",
+            "start_date": "1925-01-01",
+            "death_date": "1961-10-26",
+            "type": "dictator_type"
+        },
+        "Edvard_Kardelj_2": {
+            "name": "Edvard Kardelj",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Kardelj_Edvard",
+            "start_date": "1929-01-01",
+            "death_date": "1979-02-10",
+            "type": "reformer_type"
+        },
+        "Danko_Grlic_1": {
+            "name": "Danko Grlic",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Grlic_Danko",
+            "start_date": "1931-01-01",
+            "death_date": "1984-03-01",
+            "type": "liberal_type"
+        },
+        "Konstantin_Popovic_1": {
+            "name": "Konstantin Popovic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Popovic_Konstantin",
+            "start_date": "1933-01-01",
+            "death_date": "1992-10-20",
+            "type": "courageous_type"
+        },
+        "Vlado_Dapcevic_1": {
+            "name": "Vlado Dapcevic",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
-            "picture": "YUG_M_Zeka_Kadri",
-            "start_date": "1973-01-01",
-            "death_date": "1982-01-17",
-            "type": "extremist_type"
+            "picture": "YUG_M_Dapcevic_Vlado",
+            "start_date": "1933-01-01",
+            "death_date": "2001-07-12",
+            "type": "dictator_type"
         },
-        "5797": {
+        "Petar_II_Karadjordjevic_1": {
+            "name": "Petar II Karadjordjevic",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Petar_II",
+            "start_date": "1934-10-09",
+            "death_date": "1970-11-03",
+            "type": "lethargic_type"
+        },
+        "Milosav_Milosavljevic_1": {
+            "name": "Milosav Milosavljevic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "SER_M_Milosavljevic_Milosav",
+            "start_date": "1935-01-01",
+            "death_date": "1986-12-01",
+            "type": "visionary_type"
+        },
+        "Sreten_ujovic_1": {
+            "name": "Sreten ujovic",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Zujovic_Sreten",
+            "start_date": "1941-01-01",
+            "death_date": "1976-06-11",
+            "type": "dictator_type"
+        },
+        "Venko_Markovski_1": {
+            "name": "Venko Markovski",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Markovski_Venko",
+            "start_date": "1943-01-01",
+            "death_date": "1988-01-07",
+            "type": "dictator_type"
+        },
+        "Josip_Broz_Tito_1": {
+            "name": "Josip Broz Tito",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Tito_Josip_Broz",
+            "start_date": "1946-01-01",
+            "death_date": "1980-05-04",
+            "type": "supreme_leader"
+        },
+        "Milovan_Djilas_1": {
+            "name": "Milovan Djilas",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Djilas_Milovan",
+            "start_date": "1946-01-01",
+            "death_date": "1995-04-20",
+            "type": "reformer_type"
+        },
+        "Vane_Ivanovic_1": {
+            "name": "Vane Ivanovic",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Ivanovic_Vane",
+            "start_date": "1946-01-01",
+            "death_date": "1999-04-04",
+            "type": "moral_type"
+        },
+        "Ali_Aliu_1": {
             "name": "Ali Aliu",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -925,16 +691,7 @@
             "death_date": "2010-04-25",
             "type": "traditionalist_type"
         },
-        "5798": {
-            "name": "Rexhep Mala",
-            "ideology": "maoist_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Mala_Rexhep",
-            "start_date": "1971-01-01",
-            "death_date": "1984-01-22",
-            "type": "hardliner_type"
-        },
-        "5799": {
+        "Janko_Plemel_1": {
             "name": "Janko Plemel",
             "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
@@ -943,16 +700,7 @@
             "death_date": "1968-02-17",
             "type": "reformer_type"
         },
-        "5800": {
-            "name": "Peter Pisanski",
-            "ideology": "market_liberal_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Pisanski_Peter",
-            "start_date": "1952-04-16",
-            "death_date": "1974-11-19",
-            "type": "reputable_type"
-        },
-        "5801": {
+        "Ivan_Darko_1": {
             "name": "Ivan Darko",
             "ideology": "maoist_idolg",
             "loyalty": 0.5,
@@ -961,14 +709,257 @@
             "death_date": "1979-09-09",
             "type": "visionary_type"
         },
-        "4620": {
-            "name": "Slobodan Milosevic",
-            "ideology": "social_democrat_idolg",
+        "Peter_Pisanski_1": {
+            "name": "Peter Pisanski",
+            "ideology": "market_liberal_idolg",
             "loyalty": 0.5,
-            "picture": "SER_M_Milosevic_Slobodan",
-            "start_date": "1990-12-31",
+            "picture": "YUG_M_Pisanski_Peter",
+            "start_date": "1952-04-16",
+            "death_date": "1974-11-19",
+            "type": "reputable_type"
+        },
+        "Gajo_Petrovic_1": {
+            "name": "Gajo Petrovic",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "CRO_M_Petrovic_Gajo",
+            "start_date": "1956-01-01",
+            "death_date": "1993-06-13",
+            "type": "moral_type"
+        },
+        "Mihailo_Markovic_1": {
+            "name": "Mihailo Markovic",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Markovic_Mihailo",
+            "start_date": "1960-01-01",
+            "death_date": "1986-09-01",
+            "type": "extremist_type"
+        },
+        "Veselin_Duranovic_1": {
+            "name": "Veselin Duranovic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.7,
+            "picture": "YUG_M_Duranovic_Veselin",
+            "start_date": "1963-06-25",
+            "death_date": "1985-05-15",
+            "type": "administrator_type"
+        },
+        "Petar_Stambolic_2": {
+            "name": "Petar Stambolic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.8,
+            "picture": "YUG_M_Stambolic_Petar",
+            "start_date": "1963-06-29",
+            "death_date": "1983-05-15",
+            "type": "autocrat_type"
+        },
+        "Predrag_Vranicki_1": {
+            "name": "Predrag Vranicki",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "CRO_M_Vranicki_Predrag",
+            "start_date": "1964-09-01",
+            "death_date": "2002-01-31",
+            "type": "honest_type"
+        },
+        "Milan_Kangrga_1": {
+            "name": "Milan Kangrga",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "CRO_M_Kangrga_Milan",
+            "start_date": "1964-09-01",
+            "death_date": "2008-04-25",
+            "type": "democrat_type"
+        },
+        "Sergej_Kraigher_1": {
+            "name": "Sergej Kraigher",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "YUG_M_Kraigher_Sergej",
+            "start_date": "1967-01-01",
+            "death_date": "1982-05-15",
+            "type": "autocrat_type"
+        },
+        "Mika_piljak_1": {
+            "name": "Mika piljak",
+            "ideology": "communist_idolg",
+            "loyalty": 0.81,
+            "picture": "YUG_M_Spiljak_Mika",
+            "start_date": "1967-05-16",
+            "death_date": "1984-05-15",
+            "type": "bureaucrat_type"
+        },
+        "Jusuf_Gervalla_1": {
+            "name": "Jusuf Gervalla",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Gervalla_Jusuf",
+            "start_date": "1969-01-01",
+            "death_date": "1982-01-17",
+            "type": "zealous_type"
+        },
+        "Mitja_Ribicic_1": {
+            "name": "Mitja Ribicic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Ribicic_Mitja",
+            "start_date": "1969-05-18",
+            "death_date": "1971-07-30",
+            "type": "bureaucrat_type"
+        },
+        "Aleksandar_II_Karadjordjevic_1": {
+            "name": "Aleksandar II Karadjordjevic",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Aleksandar_II",
+            "start_date": "1970-11-03",
+            "death_date": "2300-01-01",
+            "type": "ambitious_type"
+        },
+        "Rexhep_Mala_1": {
+            "name": "Rexhep Mala",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Mala_Rexhep",
+            "start_date": "1971-01-01",
+            "death_date": "1984-01-22",
+            "type": "hardliner_type"
+        },
+        "Dzemal_Bijedic_1": {
+            "name": "Dzemal Bijedic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Bijedic_Dzemal",
+            "start_date": "1971-07-30",
+            "death_date": "1977-01-18",
+            "type": "bureaucrat_type"
+        },
+        "Milka_Planinc_2": {
+            "name": "Milka Planinc",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Planinc_Milka",
+            "start_date": "1971-12-14",
+            "death_date": "1986-05-16",
+            "type": "autocrat_type"
+        },
+        "Kadri_Zeka_1": {
+            "name": "Kadri Zeka",
+            "ideology": "maoist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Zeka_Kadri",
+            "start_date": "1973-01-01",
+            "death_date": "1982-01-17",
+            "type": "extremist_type"
+        },
+        "Raif_Dizdarevic_1": {
+            "name": "Raif Dizdarevic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Dizdarevic_Raif",
+            "start_date": "1978-04-01",
+            "death_date": "1989-05-15",
+            "type": "courageous_type"
+        },
+        "Slobodan_Milosevic_2": {
+            "name": "Slobodan Milosevic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Milosevic_Slobodan",
+            "start_date": "1980-01-01",
             "death_date": "1997-07-23",
-            "type": "controversial_figure"
+            "type": "autocrat_type"
+        },
+        "Lazar_Kolievski_1": {
+            "name": "Lazar Kolievski",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Kolisevski_Lazar",
+            "start_date": "1980-05-04",
+            "death_date": "1980-05-15",
+            "type": "autocrat_type"
+        },
+        "Cvijetin_Mijatovic_1": {
+            "name": "Cvijetin Mijatovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Mijatovic_Cvijetin",
+            "start_date": "1980-05-15",
+            "death_date": "1981-05-15",
+            "type": "autocrat_type"
+        },
+        "Radovan_Vlajkovic_1": {
+            "name": "Radovan Vlajkovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Vlajkovic_Radovan",
+            "start_date": "1985-05-15",
+            "death_date": "1986-05-15",
+            "type": "bureaucrat_type"
+        },
+        "Sinan_Hasani_1": {
+            "name": "Sinan Hasani",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Hasani_Sinan",
+            "start_date": "1986-05-15",
+            "death_date": "1987-05-15",
+            "type": "hardliner_type"
+        },
+        "Branko_Mikulic_2": {
+            "name": "Branko Mikulic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Mikulic_Branko",
+            "start_date": "1986-05-16",
+            "death_date": "1989-03-16",
+            "type": "bureaucrat_type"
+        },
+        "Lazar_Mojsov_1": {
+            "name": "Lazar Mojsov",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "YUG_M_Mojsov_Lazar",
+            "start_date": "1987-05-15",
+            "death_date": "1988-05-15",
+            "type": "bureaucrat_type"
+        },
+        "Ante_Markovic_1": {
+            "name": "Ante Markovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Markovic_Ante",
+            "start_date": "1989-03-16",
+            "death_date": "1992-12-31",
+            "type": "reformer_type"
+        },
+        "Janez_Drnovsek_1": {
+            "name": "Janez Drnovsek",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Drnovsek_Janez",
+            "start_date": "1989-05-15",
+            "death_date": "1990-05-15",
+            "type": "democrat_type"
+        },
+        "Borisav_Jovic_1": {
+            "name": "Borisav Jovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Jovic_Borisav",
+            "start_date": "1990-05-15",
+            "death_date": "1991-05-15",
+            "type": "hardliner_type"
+        },
+        "Stjepan_Mesic_1": {
+            "name": "Stjepan Mesic",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1,
+            "picture": "YUG_M_Mesic_Stjepan",
+            "start_date": "1990-05-30",
+            "death_date": "1992-12-31",
+            "type": "reformer_type"
         }
     }
 }

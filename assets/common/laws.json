@@ -477,10 +477,9 @@
             "fascistic_idolg": 1,
             "paternal_auto_idolg": 1,
             "social_cons_idolg": 1,
-            "market_liberal_idolg": 1,
-            "social_liberal_idolg": 1,
-            "social_democrat_idolg": 1,
-            "left_wing_radical_idolg": 1,
+            "market_liberal_idolg": -1,
+            "social_liberal_idolg": -1,
+            "social_democrat_idolg": -1,
             "maoist_idolg": 1,
             "communist_idolg": 1
           }
@@ -803,7 +802,7 @@
         }
       }
     },
-    "free_speech": {
+    "public_expression": {
       "factor_enactment_days": 3,
       "laws": {
         "outlawed_dissent": {

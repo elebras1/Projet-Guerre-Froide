@@ -1,1541 +1,1541 @@
 {
-  "country": "JAP",
-  "leaders": {
-    "22144": {
-      "name": "Hatsuhiko Ito",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22145": {
-      "name": "So Hashimoto",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22146": {
-      "name": "Munenao Hirano",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22147": {
-      "name": "Ryuta Kogawa",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22148": {
-      "name": "Kenshi Shimizu",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22149": {
-      "name": "Akinori Adachi",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22150": {
-      "name": "Yoshiro Kawata",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22151": {
-      "name": "Kinji Aoki",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22152": {
-      "name": "Bunjiro Nagano",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22153": {
-      "name": "Shigezo Ozaki",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22154": {
-      "name": "Toshihiko Matsuo",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22155": {
-      "name": "Tomohito Terada",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22156": {
-      "name": "Takaki Abe",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22157": {
-      "name": "Takehiko Nakamoto",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22158": {
-      "name": "Yonetoshi Daisen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22159": {
-      "name": "Tsuneyuki Koku",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22160": {
-      "name": "Yoshihiro Nagai",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22161": {
-      "name": "Taiga Murayama",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22162": {
-      "name": "Michitaka Matsumura",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22163": {
-      "name": "Masanobu Arai",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22164": {
-      "name": "Jiro Koyanagi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22165": {
-      "name": "Tsuruo Uenohara",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22166": {
-      "name": "Sumiyoshi Niiya",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22167": {
-      "name": "Ryohei Furukawa",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22168": {
-      "name": "Yukihiro Ishiyama",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22169": {
-      "name": "Kiichiro Makino",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22170": {
-      "name": "Soma Deguchi",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22171": {
-      "name": "Seiichi Irie",
-      "skill": 6,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22172": {
-      "name": "Tadaaki Furuta",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22173": {
-      "name": "Masahiro Kurokawa",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22174": {
-      "name": "Yukinori Kawashima",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22175": {
-      "name": "Masataka Ogasahara",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22176": {
-      "name": "Haruhiko Shibutani",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22177": {
-      "name": "Yamato Asai",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22178": {
-      "name": "Naoyasu Taue",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22179": {
-      "name": "Tadanori Hagiwara",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22180": {
-      "name": "Kaiji Nakada",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22181": {
-      "name": "Kiyohiko Furutani",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22182": {
-      "name": "Takenori Yagawa",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22183": {
-      "name": "Mitsujiro Nan",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22184": {
-      "name": "Iori Hirayama",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22185": {
-      "name": "Kiyoshi Yagi",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22186": {
-      "name": "Yoshinari Kudo",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22187": {
-      "name": "Ryuichiro Shibata",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22188": {
-      "name": "Tatsuji Asano",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22189": {
-      "name": "Kazushige Hirose",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22190": {
-      "name": "Kiyotoshi Murata",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22191": {
-      "name": "Masuo Katagiri",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "22192": {
-      "name": "Hiro Hagiwara",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22193": {
-      "name": "Tosei Shitamura",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22194": {
-      "name": "Taiji Sugiura",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22195": {
-      "name": "Akiyuki Fukuda",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22196": {
-      "name": "Hideji Murai",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22197": {
-      "name": "Yudai Honda",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22198": {
-      "name": "Mikinori Seki",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22199": {
-      "name": "Eikichi Hino",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22200": {
-      "name": "Sadaharu Arai",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22201": {
-      "name": "Masatoshi Izumi",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22202": {
-      "name": "Shota Furuta",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22203": {
-      "name": "Aki Shimizu",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22204": {
-      "name": "Toshikatsu Otani",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22205": {
-      "name": "Toshikazu Niwa",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22206": {
-      "name": "Toshitake Yoshikawa",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22207": {
-      "name": "Shoji Kishimoto",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22208": {
-      "name": "Shigenori Nishida",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22209": {
-      "name": "Nobuhito Oohashi",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22210": {
-      "name": "Yasutoshi Koda",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22211": {
-      "name": "Sueki Yoshida",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22212": {
-      "name": "Kogoro Tanimoto",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22213": {
-      "name": "Naohisa Ooshima",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22214": {
-      "name": "Jitsuo Shigeki",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22215": {
-      "name": "Shigeyuki Koga",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22216": {
-      "name": "Shun'ya Kiyomizu",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22217": {
-      "name": "Junichiro Taguchi",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22218": {
-      "name": "Naohisa Yamamoto",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22219": {
-      "name": "Naokazu Yamamoto",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22220": {
-      "name": "Shigekuni Numata",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22221": {
-      "name": "Kan'ichi Koide",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "22222": {
-      "name": "Rui Yamakawa",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22223": {
-      "name": "Hoshio Araki",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22224": {
-      "name": "Toyoyuki Arakawa",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22225": {
-      "name": "Michihiro Matsuo",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22226": {
-      "name": "Katsuyuki Honma",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22227": {
-      "name": "Kunihiro Aoyama",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22228": {
-      "name": "Toshiya Kogawa",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22229": {
-      "name": "Tomiji Makino",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22230": {
-      "name": "Ken Shinosaki",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22231": {
-      "name": "Akikazu Yamamura",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22232": {
-      "name": "Naohiro Usui",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22233": {
-      "name": "Shinjiro Koike",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22234": {
-      "name": "Shozo Yamakawa",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22235": {
-      "name": "Tetsuo Souma",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22236": {
-      "name": "Koju Fukuoka",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22237": {
-      "name": "Fumiki Ishii",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22238": {
-      "name": "Isao Asano",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22239": {
-      "name": "Katsuyuki Tomita",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22240": {
-      "name": "Sadayuki Kuhabara",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22241": {
-      "name": "Hakaru Tashiro",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22242": {
-      "name": "Ryuki Haraguchi",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22243": {
-      "name": "Yuichiro Takuda",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22244": {
-      "name": "Kazuhide Inagaki",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22245": {
-      "name": "Masaumi Kurita",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22246": {
-      "name": "Chikara Niiya",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22247": {
-      "name": "Hisahiko Kurita",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "22248": {
-      "name": "Shintoku Iguchi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22249": {
-      "name": "Ikuo Kondo",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22250": {
-      "name": "Toyoji Furutani",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22251": {
-      "name": "Soichiro Nakada",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "22252": {
-      "name": "Hiroshige Yamaoka",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22253": {
-      "name": "Eishu Masuda",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22254": {
-      "name": "Fukuo Eida",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22255": {
-      "name": "Michihisa Umeta",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22256": {
-      "name": "Suzunosuke Ooki",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22257": {
-      "name": "Tatsuji Shinosaki",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22258": {
-      "name": "Natsuki Kamei",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22259": {
-      "name": "Masakuni Komori",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22260": {
-      "name": "Ryuhei Kino",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22261": {
-      "name": "Akimasa Souma",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22262": {
-      "name": "Haruki Otani",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22263": {
-      "name": "Hiroto Satou",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22264": {
-      "name": "Masanori Kokura",
-      "skill": 6,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22265": {
-      "name": "Kensuke Ine",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22266": {
-      "name": "Yuji Okumura",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22267": {
-      "name": "Kenjiro Tanba",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22268": {
-      "name": "Satoshi Hashimoto",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22269": {
-      "name": "Chikaki Rin",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22270": {
-      "name": "Shuichiro Hayashida",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22271": {
-      "name": "Yukihito Hoshi",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22272": {
-      "name": "Kenjiro Shintani",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22273": {
-      "name": "Tomotaka Iwata",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22274": {
-      "name": "Kogoro Kanno",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22275": {
-      "name": "Hirozo Kasahara",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "22276": {
-      "name": "Shun Yokoi",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22277": {
-      "name": "Toshiharu Yano",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "ranger"
-    },
-    "22278": {
-      "name": "Tomoharu Nonaka",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22279": {
-      "name": "Ryoichi Ogata",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22280": {
-      "name": "Koshiro Oyama",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22281": {
-      "name": "Goki Sutou",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22282": {
-      "name": "Michiyo Nakamoto",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22283": {
-      "name": "Yukiyasu Shirakawa",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22284": {
-      "name": "Mitsugi Imano",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22285": {
-      "name": "Itsuro Kawahara",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22286": {
-      "name": "Takashi Kochi",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22287": {
-      "name": "Jin Yanagita",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22288": {
-      "name": "Kenta Makino",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22289": {
-      "name": "Etsuo Yamanaka",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22290": {
-      "name": "Tsunesuke Tashiro",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22291": {
-      "name": "Kazukuni Daisen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22292": {
-      "name": "Hisatoshi Aoyama",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22293": {
-      "name": "Susumu Imai",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "22294": {
-      "name": "Kazutomo Oonishi",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "22295": {
-      "name": "Satoji Suda",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22296": {
-      "name": "Yoshitaka Sekiguchi",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "22297": {
-      "name": "Norichika Sakaguchi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "22298": {
-      "name": "Nobuyasu Nan",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22299": {
-      "name": "Soichiro Katagiri",
-      "skill": 10,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22300": {
-      "name": "Kenshi Taue",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22301": {
-      "name": "Shunzo Furuta",
-      "skill": 5,
-      "force_type": "sea",
-      "trait": "blockade_runner"
-    },
-    "22302": {
-      "name": "Riichi Asano",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22303": {
-      "name": "Tomoharu Matsumoto",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22304": {
-      "name": "Toshitake Uchida",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22305": {
-      "name": "Mitsuhiko Kurokawa",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22306": {
-      "name": "Kensuke Mitani",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22307": {
-      "name": "Issei Kuhabara",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22308": {
-      "name": "Tadakatsu Kuroki",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22309": {
-      "name": "Teiji Shinohara",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22310": {
-      "name": "Yoshitaka Kawabata",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22311": {
-      "name": "Daijiro Ishihara",
-      "skill": 5,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22312": {
-      "name": "Norichika Kamuta",
-      "skill": 10,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22313": {
-      "name": "Ninzaburo Tanikawa",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22314": {
-      "name": "Ryoji Nakamoto",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22315": {
-      "name": "Hirotoshi Miyake",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "blockade_runner"
-    },
-    "22316": {
-      "name": "Takahiro Kawasaki",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22317": {
-      "name": "Yoshinobu Sutou",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22318": {
-      "name": "Yasuo Komori",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22319": {
-      "name": "Takenori Baba",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22320": {
-      "name": "Katsuji Miyakawa",
-      "skill": 5,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22321": {
-      "name": "Shojiro Nishida",
-      "skill": 8,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22322": {
-      "name": "Kuniaki Ogura",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22323": {
-      "name": "Shin'ichiro Shinoda",
-      "skill": 7,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22324": {
-      "name": "Eikichi Maeda",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22325": {
-      "name": "Yozaburo Kimura",
-      "skill": 7,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22326": {
-      "name": "Taka Numata",
-      "skill": 6,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22327": {
-      "name": "Mitsujiro Yano",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22328": {
-      "name": "Norihide Oosawa",
-      "skill": 9,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22329": {
-      "name": "Shoitsu Komori",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22330": {
-      "name": "Tomohisa Inagaki",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "spotter"
-    },
-    "22331": {
-      "name": "Yutaka Koide",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22332": {
-      "name": "Chikaki Tominaga",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22333": {
-      "name": "Zenz Ogura",
-      "skill": 7,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22334": {
-      "name": "Ryoichi Kamei",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22335": {
-      "name": "Hidetsugu Koda",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22336": {
-      "name": "Ryuta Kaneda",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22337": {
-      "name": "Tomehiro Mizutani",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22338": {
-      "name": "Kojiro Tashima",
-      "skill": 8,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22339": {
-      "name": "Hiromitsu Miyakawa",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "blockade_runner"
-    },
-    "22340": {
-      "name": "Mamoru Hanada",
-      "skill": 5,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22341": {
-      "name": "Rin Kouya",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22342": {
-      "name": "Arihito Nakano",
-      "skill": 5,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22343": {
-      "name": "Mikizo Kogawa",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22344": {
-      "name": "Tadashi Kishimoto",
-      "skill": 6,
-      "force_type": "sea",
-      "trait": "blockade_runner"
-    },
-    "22345": {
-      "name": "Takahiko Mizokuchi",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22346": {
-      "name": "Junji Ogasahara",
-      "skill": 6,
-      "force_type": "sea",
-      "trait": "spotter"
-    },
-    "22347": {
-      "name": "Kosaku Tagami",
-      "skill": 5,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22348": {
-      "name": "Taketoshi Kitahara",
-      "skill": 9,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22349": {
-      "name": "Ryutaro Umeta",
-      "skill": 5,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22350": {
-      "name": "Takamitsu Kanazawa",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22351": {
-      "name": "Yoshio Okuno",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22352": {
-      "name": "Mitsuro Negishi",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22353": {
-      "name": "Katsuyoshi Matsui",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "blockade_runner"
-    },
-    "22354": {
-      "name": "Tsuruo Matsumura",
-      "skill": 6,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22355": {
-      "name": "Yoshinobu Iwata",
-      "skill": 6,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22356": {
-      "name": "Shigemi Kouki",
-      "skill": 5,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22357": {
-      "name": "Tateo Ogura",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22358": {
-      "name": "Koju Kaneda",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22359": {
-      "name": "Norifumi Kawamura",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22360": {
-      "name": "Hirohisa Yasui",
-      "skill": 8,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22361": {
-      "name": "Motoshi Ikegami",
-      "skill": 7,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "22362": {
-      "name": "Mitsuhiro Yasui",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "22363": {
-      "name": "Kozo Seki",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "22364": {
-      "name": "Kin'ya Nishihara",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22365": {
-      "name": "Kosaku Masuda",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22366": {
-      "name": "Norimoto Oouchi",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22367": {
-      "name": "Mitsuyuki Kawano",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22368": {
-      "name": "Yutaka Yagi",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22369": {
-      "name": "Hidefumi Nagano",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22370": {
-      "name": "Norio Matsumura",
-      "skill": 5,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "22371": {
-      "name": "Teruyuki Oosaki",
-      "skill": 6,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "22372": {
-      "name": "Yuto Sanwa",
-      "skill": 5,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22373": {
-      "name": "Aki Ooyama",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22374": {
-      "name": "Akikazu Honda",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22375": {
-      "name": "Sachio Sangi",
-      "skill": 5,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22376": {
-      "name": "Shigeki Machida",
-      "skill": 5,
-      "force_type": "air",
-      "trait": "fleet_destroyer"
-    },
-    "22377": {
-      "name": "Shonosuke Uchiumi",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22378": {
-      "name": "Shigeta Kiyomizu",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22379": {
-      "name": "Junki Maeda",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22380": {
-      "name": "Tosei Morikawa",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22381": {
-      "name": "Sumiya Sangi",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22382": {
-      "name": "Norihide Miki",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22383": {
-      "name": "Kyoichi Ikegami",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "22384": {
-      "name": "Masaaki Suitani",
-      "skill": 5,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "22385": {
-      "name": "Shotaro Katagiri",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "tank_buster"
-    },
-    "22386": {
-      "name": "Shotaro Sugano",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22387": {
-      "name": "Yoshifumi Narita",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "carpet_bomber"
-    },
-    "22388": {
-      "name": "Takuichi Kohara",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "22389": {
-      "name": "Ieyasu Matsuda",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22390": {
-      "name": "Shin'ichi Nishida",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22391": {
-      "name": "Eio Sakamoto",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22392": {
-      "name": "Kazuhide Koumura",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "22393": {
-      "name": "Kaname Eida",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "22394": {
-      "name": "Naotaka Takeda",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22395": {
-      "name": "Kazuki Sano",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22396": {
-      "name": "Shigeo Uchiyama",
-      "skill": 3,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22397": {
-      "name": "Taisei Takahashi",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "22398": {
-      "name": "Kotaro Kanausuku",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "22399": {
-      "name": "Fumikazu Kurota",
-      "skill": 6,
-      "force_type": "air",
-      "trait": "common"
-    }
-  }
+    "country": "JAP",
+    "leaders": [
+        {
+            "name": "Hatsuhiko Ito",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "So Hashimoto",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Munenao Hirano",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ryuta Kogawa",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kenshi Shimizu",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Akinori Adachi",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Yoshiro Kawata",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kinji Aoki",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Bunjiro Nagano",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Shigezo Ozaki",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Toshihiko Matsuo",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tomohito Terada",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Takaki Abe",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Takehiko Nakamoto",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Yonetoshi Daisen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Tsuneyuki Koku",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Yoshihiro Nagai",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Taiga Murayama",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Michitaka Matsumura",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Masanobu Arai",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jiro Koyanagi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Tsuruo Uenohara",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Sumiyoshi Niiya",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ryohei Furukawa",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Yukihiro Ishiyama",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Kiichiro Makino",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Soma Deguchi",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Seiichi Irie",
+            "skill": 6,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Tadaaki Furuta",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Masahiro Kurokawa",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Yukinori Kawashima",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Masataka Ogasahara",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Haruhiko Shibutani",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Yamato Asai",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Naoyasu Taue",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Tadanori Hagiwara",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kaiji Nakada",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kiyohiko Furutani",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Takenori Yagawa",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Mitsujiro Nan",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Iori Hirayama",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kiyoshi Yagi",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Yoshinari Kudo",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ryuichiro Shibata",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Tatsuji Asano",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kazushige Hirose",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kiyotoshi Murata",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Masuo Katagiri",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Hiro Hagiwara",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tosei Shitamura",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Taiji Sugiura",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Akiyuki Fukuda",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hideji Murai",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Yudai Honda",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Mikinori Seki",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Eikichi Hino",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Sadaharu Arai",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Masatoshi Izumi",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Shota Furuta",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Aki Shimizu",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Toshikatsu Otani",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Toshikazu Niwa",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Toshitake Yoshikawa",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Shoji Kishimoto",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Shigenori Nishida",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Nobuhito Oohashi",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Yasutoshi Koda",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Sueki Yoshida",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kogoro Tanimoto",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Naohisa Ooshima",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jitsuo Shigeki",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Shigeyuki Koga",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Shun'ya Kiyomizu",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Junichiro Taguchi",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Naohisa Yamamoto",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Naokazu Yamamoto",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Shigekuni Numata",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kan'ichi Koide",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Rui Yamakawa",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hoshio Araki",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Toyoyuki Arakawa",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Michihiro Matsuo",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Katsuyuki Honma",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kunihiro Aoyama",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Toshiya Kogawa",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tomiji Makino",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ken Shinosaki",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Akikazu Yamamura",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Naohiro Usui",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Shinjiro Koike",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Shozo Yamakawa",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tetsuo Souma",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Koju Fukuoka",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Fumiki Ishii",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Isao Asano",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Katsuyuki Tomita",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Sadayuki Kuhabara",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hakaru Tashiro",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Ryuki Haraguchi",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Yuichiro Takuda",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kazuhide Inagaki",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Masaumi Kurita",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Chikara Niiya",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hisahiko Kurita",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Shintoku Iguchi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ikuo Kondo",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Toyoji Furutani",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Soichiro Nakada",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Hiroshige Yamaoka",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Eishu Masuda",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Fukuo Eida",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Michihisa Umeta",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Suzunosuke Ooki",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tatsuji Shinosaki",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Natsuki Kamei",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Masakuni Komori",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Ryuhei Kino",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Akimasa Souma",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Haruki Otani",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Hiroto Satou",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Masanori Kokura",
+            "skill": 6,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kensuke Ine",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Yuji Okumura",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kenjiro Tanba",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Satoshi Hashimoto",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Chikaki Rin",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Shuichiro Hayashida",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Yukihito Hoshi",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Kenjiro Shintani",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tomotaka Iwata",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Kogoro Kanno",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Hirozo Kasahara",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Shun Yokoi",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Toshiharu Yano",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "ranger"
+        },
+        {
+            "name": "Tomoharu Nonaka",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Ryoichi Ogata",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Koshiro Oyama",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Goki Sutou",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Michiyo Nakamoto",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Yukiyasu Shirakawa",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Mitsugi Imano",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Itsuro Kawahara",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Takashi Kochi",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jin Yanagita",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kenta Makino",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Etsuo Yamanaka",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Tsunesuke Tashiro",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kazukuni Daisen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hisatoshi Aoyama",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Susumu Imai",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Kazutomo Oonishi",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Satoji Suda",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Yoshitaka Sekiguchi",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Norichika Sakaguchi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Nobuyasu Nan",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Soichiro Katagiri",
+            "skill": 10,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Kenshi Taue",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Shunzo Furuta",
+            "skill": 5,
+            "force_type": "sea",
+            "trait": "blockade_runner"
+        },
+        {
+            "name": "Riichi Asano",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Tomoharu Matsumoto",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Toshitake Uchida",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Mitsuhiko Kurokawa",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Kensuke Mitani",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Issei Kuhabara",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Tadakatsu Kuroki",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Teiji Shinohara",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Yoshitaka Kawabata",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Daijiro Ishihara",
+            "skill": 5,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Norichika Kamuta",
+            "skill": 10,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Ninzaburo Tanikawa",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Ryoji Nakamoto",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Hirotoshi Miyake",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "blockade_runner"
+        },
+        {
+            "name": "Takahiro Kawasaki",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Yoshinobu Sutou",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Yasuo Komori",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Takenori Baba",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Katsuji Miyakawa",
+            "skill": 5,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Shojiro Nishida",
+            "skill": 8,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Kuniaki Ogura",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Shin'ichiro Shinoda",
+            "skill": 7,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Eikichi Maeda",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Yozaburo Kimura",
+            "skill": 7,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Taka Numata",
+            "skill": 6,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Mitsujiro Yano",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Norihide Oosawa",
+            "skill": 9,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Shoitsu Komori",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Tomohisa Inagaki",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "spotter"
+        },
+        {
+            "name": "Yutaka Koide",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Chikaki Tominaga",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Zenz Ogura",
+            "skill": 7,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Ryoichi Kamei",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Hidetsugu Koda",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Ryuta Kaneda",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Tomehiro Mizutani",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Kojiro Tashima",
+            "skill": 8,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Hiromitsu Miyakawa",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "blockade_runner"
+        },
+        {
+            "name": "Mamoru Hanada",
+            "skill": 5,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Rin Kouya",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Arihito Nakano",
+            "skill": 5,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Mikizo Kogawa",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Tadashi Kishimoto",
+            "skill": 6,
+            "force_type": "sea",
+            "trait": "blockade_runner"
+        },
+        {
+            "name": "Takahiko Mizokuchi",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Junji Ogasahara",
+            "skill": 6,
+            "force_type": "sea",
+            "trait": "spotter"
+        },
+        {
+            "name": "Kosaku Tagami",
+            "skill": 5,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Taketoshi Kitahara",
+            "skill": 9,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Ryutaro Umeta",
+            "skill": 5,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Takamitsu Kanazawa",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Yoshio Okuno",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Mitsuro Negishi",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Katsuyoshi Matsui",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "blockade_runner"
+        },
+        {
+            "name": "Tsuruo Matsumura",
+            "skill": 6,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Yoshinobu Iwata",
+            "skill": 6,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Shigemi Kouki",
+            "skill": 5,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Tateo Ogura",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Koju Kaneda",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Norifumi Kawamura",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Hirohisa Yasui",
+            "skill": 8,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Motoshi Ikegami",
+            "skill": 7,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Mitsuhiro Yasui",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Kozo Seki",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Kin'ya Nishihara",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Kosaku Masuda",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Norimoto Oouchi",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Mitsuyuki Kawano",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Yutaka Yagi",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Hidefumi Nagano",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Norio Matsumura",
+            "skill": 5,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Teruyuki Oosaki",
+            "skill": 6,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Yuto Sanwa",
+            "skill": 5,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Aki Ooyama",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Akikazu Honda",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Sachio Sangi",
+            "skill": 5,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Shigeki Machida",
+            "skill": 5,
+            "force_type": "air",
+            "trait": "fleet_destroyer"
+        },
+        {
+            "name": "Shonosuke Uchiumi",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Shigeta Kiyomizu",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Junki Maeda",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Tosei Morikawa",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Sumiya Sangi",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Norihide Miki",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Kyoichi Ikegami",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Masaaki Suitani",
+            "skill": 5,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Shotaro Katagiri",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "tank_buster"
+        },
+        {
+            "name": "Shotaro Sugano",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Yoshifumi Narita",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "carpet_bomber"
+        },
+        {
+            "name": "Takuichi Kohara",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Ieyasu Matsuda",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Shin'ichi Nishida",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Eio Sakamoto",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Kazuhide Koumura",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Kaname Eida",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Naotaka Takeda",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Kazuki Sano",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Shigeo Uchiyama",
+            "skill": 3,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Taisei Takahashi",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Kotaro Kanausuku",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Fumikazu Kurota",
+            "skill": 6,
+            "force_type": "air",
+            "trait": "common"
+        }
+    ]
 }

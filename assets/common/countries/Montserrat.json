@@ -71,115 +71,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "211": {
-            "name": "George VI",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ENG_George",
-            "start_date": "1936-09-11",
-            "death_date": "1952-02-06",
-            "type": "parental_type"
-        },
-        "212": {
-            "name": "Elizabeth II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "ENG_Elizabeth",
-            "start_date": "1952-02-06",
-            "death_date": "2300-05-12",
-            "type": "traditionalist_type"
-        },
-        "344": {
-            "name": "George VII",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.99,
-            "picture": "ENG_M_George_VII",
-            "start_date": "1966-11-14",
-            "death_date": "2300-01-01",
-            "type": "parental_type"
-        },
-        "345": {
-            "name": "Andrew I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.98,
-            "picture": "ENG_M_Andrew_I",
-            "start_date": "1978-02-19",
-            "death_date": "2300-01-01",
-            "type": "fortunate_type"
-        },
-        "346": {
-            "name": "Edward IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.97,
-            "picture": "ENG_M_Edward_IX",
-            "start_date": "1982-03-10",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "347": {
-            "name": "Anne II",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.96,
-            "picture": "ENG_M_Anne_II",
-            "start_date": "1968-08-15",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "348": {
-            "name": "Margaret I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.95,
-            "picture": "ENG_M_Margaret_I",
-            "start_date": "1952-03-01",
-            "death_date": "2002-02-09",
-            "type": "controversial_figure"
-        },
-        "349": {
-            "name": "David III",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.94,
-            "picture": "ENG_M_David_III",
-            "start_date": "1979-11-03",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "350": {
-            "name": "Sarah I",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.93,
-            "picture": "ENG_M_Sarah_I",
-            "start_date": "1982-05-01",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "351": {
-            "name": "Henry IX",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.92,
-            "picture": "ENG_M_Henry_IX",
-            "start_date": "1946-01-01",
-            "death_date": "1974-06-10",
-            "type": "courteous_figure"
-        },
-        "352": {
-            "name": "William V",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.91,
-            "picture": "ENG_M_William_V",
-            "start_date": "1959-12-18",
-            "death_date": "1972-08-28",
-            "type": "courteous_figure"
-        },
-        "353": {
-            "name": "Richard IV",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "ENG_M_Richard_IV",
-            "start_date": "1962-08-26",
-            "death_date": "2300-01-01",
-            "type": "courteous_figure"
-        },
-        "354": {
+        "Robert_I_von_Bayern_1": {
             "name": "Robert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -188,7 +80,43 @@
             "death_date": "1955-08-02",
             "type": "traditionalist_type"
         },
-        "355": {
+        "George_VI_1": {
+            "name": "George VI",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_George",
+            "start_date": "1936-09-11",
+            "death_date": "1952-02-06",
+            "type": "parental_type"
+        },
+        "Henry_IX_1": {
+            "name": "Henry IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.92,
+            "picture": "ENG_M_Henry_IX",
+            "start_date": "1946-01-01",
+            "death_date": "1974-06-10",
+            "type": "courteous_figure"
+        },
+        "Elizabeth_II_1": {
+            "name": "Elizabeth II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "ENG_Elizabeth",
+            "start_date": "1952-02-06",
+            "death_date": "2300-05-12",
+            "type": "traditionalist_type"
+        },
+        "Margaret_I_1": {
+            "name": "Margaret I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.95,
+            "picture": "ENG_M_Margaret_I",
+            "start_date": "1952-03-01",
+            "death_date": "2002-02-09",
+            "type": "controversial_figure"
+        },
+        "Albert_I_von_Bayern_1": {
             "name": "Albert I von Bayern",
             "ideology": "social_cons_idolg",
             "loyalty": 0.4,
@@ -197,70 +125,16 @@
             "death_date": "1996-07-08",
             "type": "fortunate_type"
         },
-        "3519": {
-            "name": "Willoughby Harry Thompson",
+        "William_V_1": {
+            "name": "William V",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "MNS_M_Thompson_Willoughby_H",
-            "start_date": "1971-01-01",
-            "death_date": "1974-01-01",
-            "type": "administrator_type"
+            "loyalty": 0.91,
+            "picture": "ENG_M_William_V",
+            "start_date": "1959-12-18",
+            "death_date": "1972-08-28",
+            "type": "courteous_figure"
         },
-        "3520": {
-            "name": "Norman Derek Matthews",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "MNS_M_Matthews_Norman_D",
-            "start_date": "1974-01-01",
-            "death_date": "1976-01-01",
-            "type": "traditionalist_type"
-        },
-        "3521": {
-            "name": "Gwilyum Wyn Jones",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "MNS_M_Jones_Gwilyum_W",
-            "start_date": "1976-01-01",
-            "death_date": "1980-01-01",
-            "type": "bureaucrat_type"
-        },
-        "3522": {
-            "name": "David Kenneth Hay Dale",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "MNS_M_Dale_David_K_H",
-            "start_date": "1980-01-01",
-            "death_date": "1984-01-01",
-            "type": "democrat_type"
-        },
-        "3523": {
-            "name": "Arthur Christopher Watson",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "MNS_M_Watson_Arthur_C",
-            "start_date": "1984-01-01",
-            "death_date": "1987-01-01",
-            "type": "bureaucrat_type"
-        },
-        "3524": {
-            "name": "Christopher J. Turner",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "MNS_M_Turner_Christopher_J",
-            "start_date": "1987-01-01",
-            "death_date": "1990-01-01",
-            "type": "administrator_type"
-        },
-        "3525": {
-            "name": "David G. P. Taylor",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "MNS_M_Taylor_David_G_P",
-            "start_date": "1990-01-01",
-            "death_date": "1993-01-01",
-            "type": "ambitious_type"
-        },
-        "3526": {
+        "William_Henry_Bramble_1": {
             "name": "William Henry Bramble",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -269,7 +143,34 @@
             "death_date": "1970-12-01",
             "type": "democrat_type"
         },
-        "3527": {
+        "Richard_IV_1": {
+            "name": "Richard IV",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "ENG_M_Richard_IV",
+            "start_date": "1962-08-26",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "George_VII_1": {
+            "name": "George VII",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.99,
+            "picture": "ENG_M_George_VII",
+            "start_date": "1966-11-14",
+            "death_date": "2300-01-01",
+            "type": "parental_type"
+        },
+        "Anne_II_1": {
+            "name": "Anne II",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.96,
+            "picture": "ENG_M_Anne_II",
+            "start_date": "1968-08-15",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Percival_Austin_Bramble_1": {
             "name": "Percival Austin Bramble",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -278,7 +179,43 @@
             "death_date": "1978-11-01",
             "type": "reformer_type"
         },
-        "3528": {
+        "Willoughby_Harry_Thompson_1": {
+            "name": "Willoughby Harry Thompson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MNS_M_Thompson_Willoughby_H",
+            "start_date": "1971-01-01",
+            "death_date": "1974-01-01",
+            "type": "administrator_type"
+        },
+        "Norman_Derek_Matthews_1": {
+            "name": "Norman Derek Matthews",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MNS_M_Matthews_Norman_D",
+            "start_date": "1974-01-01",
+            "death_date": "1976-01-01",
+            "type": "traditionalist_type"
+        },
+        "Gwilyum_Wyn_Jones_1": {
+            "name": "Gwilyum Wyn Jones",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MNS_M_Jones_Gwilyum_W",
+            "start_date": "1976-01-01",
+            "death_date": "1980-01-01",
+            "type": "bureaucrat_type"
+        },
+        "Andrew_I_1": {
+            "name": "Andrew I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.98,
+            "picture": "ENG_M_Andrew_I",
+            "start_date": "1978-02-19",
+            "death_date": "2300-01-01",
+            "type": "fortunate_type"
+        },
+        "John_Osborne_1": {
             "name": "John Osborne",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,
@@ -287,7 +224,70 @@
             "death_date": "1991-10-10",
             "type": "administrator_type"
         },
-        "3529": {
+        "David_III_1": {
+            "name": "David III",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.94,
+            "picture": "ENG_M_David_III",
+            "start_date": "1979-11-03",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "David_Kenneth_Hay_Dale_1": {
+            "name": "David Kenneth Hay Dale",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MNS_M_Dale_David_K_H",
+            "start_date": "1980-01-01",
+            "death_date": "1984-01-01",
+            "type": "democrat_type"
+        },
+        "Edward_IX_1": {
+            "name": "Edward IX",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.97,
+            "picture": "ENG_M_Edward_IX",
+            "start_date": "1982-03-10",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Sarah_I_1": {
+            "name": "Sarah I",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.93,
+            "picture": "ENG_M_Sarah_I",
+            "start_date": "1982-05-01",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Arthur_Christopher_Watson_1": {
+            "name": "Arthur Christopher Watson",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MNS_M_Watson_Arthur_C",
+            "start_date": "1984-01-01",
+            "death_date": "1987-01-01",
+            "type": "bureaucrat_type"
+        },
+        "Christopher_J_Turner_1": {
+            "name": "Christopher J. Turner",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MNS_M_Turner_Christopher_J",
+            "start_date": "1987-01-01",
+            "death_date": "1990-01-01",
+            "type": "administrator_type"
+        },
+        "David_G_P_Taylor_2": {
+            "name": "David G. P. Taylor",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "MNS_M_Taylor_David_G_P",
+            "start_date": "1990-01-01",
+            "death_date": "1993-01-01",
+            "type": "ambitious_type"
+        },
+        "Reuben_Meade_1": {
             "name": "Reuben Meade",
             "ideology": "market_liberal_idolg",
             "loyalty": 1.0,

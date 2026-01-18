@@ -17,10 +17,12 @@ import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 public class MainMenuScreen implements Screen, MainMenuListener {
     private final Stage stage;
     private final ScreenManager screenManager;
+    private final GameContext gameContext;
 
     public MainMenuScreen(ScreenManager screenManager, GameContext gameContext, ConfigurationService configurationService) {
         this.stage = new WgStage(new WgScreenViewport());
         this.screenManager = screenManager;
+        this.gameContext = gameContext;
         configurationService.loadMainMenuLocalisation(gameContext);
         gameContext.getSettings().applyGraphicsSettings();
         Gdx.input.setInputProcessor(this.stage);

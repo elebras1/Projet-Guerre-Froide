@@ -2,13 +2,14 @@ package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.github.elebras1.flecs.World;
 import com.monstrous.gdx.webgpu.assets.WgAssetManager;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dao.ConfigurationDao;
 import com.populaire.projetguerrefroide.dao.LocalisationDao;
 import com.populaire.projetguerrefroide.dao.impl.ConfigurationDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.LocalisationDaoImpl;
-import com.populaire.projetguerrefroide.entity.Bookmark;
+import com.populaire.projetguerrefroide.pojo.Bookmark;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 
 public class ConfigurationService {
@@ -20,7 +21,7 @@ public class ConfigurationService {
         this.localisationDao = new LocalisationDaoImpl();
     }
 
-    public GameContext getGameContext() {
+    public GameContext getGameContext(World ecsWorld) {
         Bookmark bookmark = this.configurationDao.loadBookmark();
         AssetManager assetManager = new WgAssetManager();
         this.loadInitialAssets(assetManager);
@@ -28,7 +29,7 @@ public class ConfigurationService {
         Settings settings = this.configurationDao.loadSettings();
         Skin skinFonts = assetManager.get("ui/fonts/fonts_skin.json");
         LabelStylePool labelStylePool = new LabelStylePool(skinFonts, settings.getLanguage());
-        return new GameContext(bookmark, assetManager, cursorManager, settings, labelStylePool);
+        return new GameContext(ecsWorld, bookmark, assetManager, cursorManager, settings, labelStylePool);
     }
 
     public void loadInitialAssets(AssetManager assetManager) {

@@ -1,391 +1,391 @@
 {
-  "color": [
-    238,
-    238,
-    238
-  ],
-  "default_templates": {
-    "ENG_air_cavalry_division": [
-      "air_cav_brigade",
-      "air_cav_brigade",
-      "air_cav_brigade",
-      "air_cav_brigade"
+    "color": [
+        238,
+        238,
+        238
     ],
-    "ENG_armoured_division": [
-      "armor_brigade",
-      "armor_brigade",
-      "heavy_mechanized_brigade",
-      "light_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "ENG_cavalry_division": [
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "cavalry_brigade",
-      "sp_artillery_brigade"
-    ],
-    "ENG_heavy_mechanized_division": [
-      "heavy_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "light_mechanized_brigade",
-      "armor_brigade",
-      "sp_artillery_brigade"
-    ],
-    "ENG_light_mechanized_division": [
-      "light_mechanized_brigade",
-      "light_mechanized_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "ENG_motorized_division": [
-      "motorized_brigade",
-      "motorized_brigade",
-      "heavy_mechanized_brigade",
-      "sp_artillery_brigade"
-    ],
-    "ENG_infantry_division": [
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "artillery_brigade"
-    ],
-    "ENG_marine_division": [
-      "marine_brigade",
-      "marine_brigade",
-      "marine_brigade",
-      "marine_brigade"
-    ],
-    "ENG_mountain_division": [
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade",
-      "bergsjaeger_brigade"
-    ],
-    "ENG_national_guard_division": [
-      "infantry_brigade",
-      "infantry_brigade",
-      "infantry_brigade",
-      "artillery_brigade"
-    ]
-  },
-  "unit_names": "",
-  "ministers": {
-    "3147": {
-      "name": "Idris I",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.8,
-      "picture": "LBY_M_Idris_I",
-      "start_date": "1951-12-24",
-      "death_date": "1969-09-01",
-      "type": "courteous_figure"
+    "default_templates": {
+        "ENG_air_cavalry_division": [
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade",
+            "air_cav_brigade"
+        ],
+        "ENG_armoured_division": [
+            "armor_brigade",
+            "armor_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_cavalry_division": [
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "cavalry_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_heavy_mechanized_division": [
+            "heavy_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "light_mechanized_brigade",
+            "armor_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_light_mechanized_division": [
+            "light_mechanized_brigade",
+            "light_mechanized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_motorized_division": [
+            "motorized_brigade",
+            "motorized_brigade",
+            "heavy_mechanized_brigade",
+            "sp_artillery_brigade"
+        ],
+        "ENG_infantry_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ],
+        "ENG_marine_division": [
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade",
+            "marine_brigade"
+        ],
+        "ENG_mountain_division": [
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade",
+            "bergsjaeger_brigade"
+        ],
+        "ENG_national_guard_division": [
+            "infantry_brigade",
+            "infantry_brigade",
+            "infantry_brigade",
+            "artillery_brigade"
+        ]
     },
-    "3148": {
-      "name": "Muammar Gaddafi",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.8,
-      "picture": "LBY_M_Gaddafi_Muammar",
-      "start_date": "1969-09-01",
-      "death_date": "2011-08-23",
-      "type": "dictator_type"
-    },
-    "3149": {
-      "name": "Mahmud al-Muntasir",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.9,
-      "picture": "LBY_M_Al-Muntasir_Mahmud",
-      "start_date": "1951-03-29",
-      "death_date": "1965-03-20",
-      "type": "traditionalist_type"
-    },
-    "3150": {
-      "name": "Muhammad Sakizli",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_Sakizli_Muhammad",
-      "start_date": "1954-02-19",
-      "death_date": "1954-04-12",
-      "type": "ambitious_type"
-    },
-    "3151": {
-      "name": "Mustafa Ben Halim",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_Halim_Mustafa_B",
-      "start_date": "1954-04-12",
-      "death_date": "1957-05-26",
-      "type": "administrator_type"
-    },
-    "3152": {
-      "name": "Abdul Majid Kubar",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_Kubar_Abdul_M",
-      "start_date": "1957-05-26",
-      "death_date": "1960-10-17",
-      "type": "bureaucrat_type"
-    },
-    "3153": {
-      "name": "Muhammad Osman Said",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_Said_Muhammad_O",
-      "start_date": "1960-10-17",
-      "death_date": "1963-03-19",
-      "type": "bureaucrat_type"
-    },
-    "3154": {
-      "name": "Mohieddin Fikini",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_Fikini_Mohieddin",
-      "start_date": "1963-03-19",
-      "death_date": "1964-01-20",
-      "type": "reformer_type"
-    },
-    "3155": {
-      "name": "Hussein Maziq",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_Maziq_Hussein",
-      "start_date": "1965-03-20",
-      "death_date": "1967-07-02",
-      "type": "ambitious_type"
-    },
-    "3156": {
-      "name": "Abdul Qadir al-Badri",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_al-Badri_Abdul_Q",
-      "start_date": "1967-07-02",
-      "death_date": "1967-10-25",
-      "type": "bureaucrat_type"
-    },
-    "3157": {
-      "name": "Abdul Hamid al-Bakkoush",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_al-Bakkoush_Abdul_H",
-      "start_date": "1967-10-25",
-      "death_date": "1968-09-04",
-      "type": "visionary_type"
-    },
-    "3158": {
-      "name": "Wanis al-Qaddafi",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_al-Qaddafi_Wanis",
-      "start_date": "1968-09-04",
-      "death_date": "1969-08-31",
-      "type": "bureaucrat_type"
-    },
-    "3159": {
-      "name": "Mahmud Sulayman al-Maghribi",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_al-Maghribi_Mahmud_S",
-      "start_date": "1969-08-31",
-      "death_date": "1970-01-16",
-      "type": "administrator_type"
-    },
-    "3160": {
-      "name": "Abdessalam Jalloud",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_Jalloud_Abdessalam",
-      "start_date": "1972-07-16",
-      "death_date": "1977-03-02",
-      "type": "loyal_type"
-    },
-    "3161": {
-      "name": "Abdul Ati al-Obeidi",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_al-Obeidi_Abdul_A",
-      "start_date": "1972-07-16",
-      "death_date": "1977-03-02",
-      "type": "administrator_type"
-    },
-    "3162": {
-      "name": "Jadallah Azzuz at-Talhi",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.9,
-      "picture": "LBY_M_at-Talhi_Jadallah_A",
-      "start_date": "1977-03-02",
-      "death_date": "1987-03-01",
-      "type": "bureaucrat_type"
-    },
-    "3163": {
-      "name": "Muhammad az-Zaruq Rajab",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_Rajab_Muhammad_A",
-      "start_date": "1984-02-16",
-      "death_date": "1986-03-03",
-      "type": "bureaucrat_type"
-    },
-    "3164": {
-      "name": "Umar Mustafa al-Muntasir",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_Al-Muntasir_Umar_M",
-      "start_date": "1987-03-01",
-      "death_date": "1990-10-07",
-      "type": "bureaucrat_type"
-    },
-    "3165": {
-      "name": "Abuzed Omar Dorda",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 1.0,
-      "picture": "LBY_M_Dorda_Abuzed_O",
-      "start_date": "1990-10-07",
-      "death_date": "1994-01-29",
-      "type": "administrator_type"
-    },
-    "3166": {
-      "name": "Hasan I as-Senussi",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.79,
-      "picture": "LBY_M_Hasan_I",
-      "start_date": "1956-10-26",
-      "death_date": "1992-04-28",
-      "type": "religious_type"
-    },
-    "3167": {
-      "name": "Mohammed El Senussi",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.78,
-      "picture": "LBY_M_Senussi_Mohammed",
-      "start_date": "1977-10-20",
-      "death_date": "2300-01-01",
-      "type": "courteous_figure"
-    },
-    "3168": {
-      "name": "Ahmed al-Senussi",
-      "ideology": "social_cons_idolg",
-      "loyalty": 0.77,
-      "picture": "LBY_al-Senussi_Ahmed",
-      "start_date": "1948-01-01",
-      "death_date": "2300-01-01",
-      "type": "reformer_type"
-    },
-    "3169": {
-      "name": "Idris II bin Abdullah al-Senussi",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.76,
-      "picture": "LBY_M_al-Senussi_Idris_II",
-      "start_date": "1972-01-18",
-      "death_date": "2300-01-01",
-      "type": "courteous_figure"
-    },
-    "3170": {
-      "name": "Bernard Montgomery",
-      "ideology": "market_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_M_Montgomery_Bernard",
-      "start_date": "1946-01-01",
-      "death_date": "1976-03-24",
-      "type": "loyal_type"
-    },
-    "3171": {
-      "name": "Alanajm al-Ackmar",
-      "ideology": "communist_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_al-Ackmar_Alanajm",
-      "start_date": "1955-08-01",
-      "death_date": "1991-12-31",
-      "type": "autocrat_type"
-    },
-    "3172": {
-      "name": "Hassan al-Wali",
-      "ideology": "social_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_al-Wali_Hassan",
-      "start_date": "1949-04-06",
-      "death_date": "1975-12-01",
-      "type": "lethargic_type"
-    },
-    "3173": {
-      "name": "Omar Hariri",
-      "ideology": "social_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_Hariri_Omar",
-      "start_date": "1969-09-01",
-      "death_date": "2015-01-01",
-      "type": "democrat_type"
-    },
-    "3174": {
-      "name": "Umar Mihayshi",
-      "ideology": "paternal_auto_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_M_Mihayshi_Umar",
-      "start_date": "1969-09-01",
-      "death_date": "1983-12-01",
-      "type": "honest_type"
-    },
-    "3175": {
-      "name": "Ahmed Ibrahim Ihwas",
-      "ideology": "social_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_M_Ihwas_Ahmed_I",
-      "start_date": "1981-10-07",
-      "death_date": "1984-05-08",
-      "type": "democrat_type"
-    },
-    "3176": {
-      "name": "Mohammed Magariaf",
-      "ideology": "social_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_M_Magariaf_Mohammed",
-      "start_date": "1978-01-01",
-      "death_date": "2013-01-01",
-      "type": "courageous_type"
-    },
-    "3177": {
-      "name": "Dr. Adulrahim Saleh",
-      "ideology": "social_democrat_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_M_Saleh_Adulrahim",
-      "start_date": "1980-08-01",
-      "death_date": "2013-01-01",
-      "type": "visionary_type"
-    },
-    "3178": {
-      "name": "Fadil al-Masudi",
-      "ideology": "market_liberal_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_M_al-Masudi_Fadil",
-      "start_date": "1969-01-01",
-      "death_date": "2013-01-01",
-      "type": "democrat_type"
-    },
-    "3179": {
-      "name": "Abdullah Muhammad al-Senussi",
-      "ideology": "fascistic_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_M_al-Senussi_Abdullah_M",
-      "start_date": "1959-10-07",
-      "death_date": "1992-06-03",
-      "type": "ambitious_type"
-    },
-    "3180": {
-      "name": "Ramadan Ali",
-      "ideology": "fascistic_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_M_Ali_Ramadan",
-      "start_date": "1935-10-01",
-      "death_date": "1950-01-01",
-      "type": "parental_type"
-    },
-    "3181": {
-      "name": "Amr Taher Deghayes",
-      "ideology": "left_wing_radical_idolg",
-      "loyalty": 0.5,
-      "picture": "LBY_M_Deghayes_Amr_T",
-      "start_date": "1954-01-01",
-      "death_date": "1982-01-01",
-      "type": "hardliner_type"
+    "unit_names": "",
+    "ministers": {
+        "Ramadan_Ali_1": {
+            "name": "Ramadan Ali",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_M_Ali_Ramadan",
+            "start_date": "1935-10-01",
+            "death_date": "1950-01-01",
+            "type": "parental_type"
+        },
+        "Bernard_Montgomery_1": {
+            "name": "Bernard Montgomery",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_M_Montgomery_Bernard",
+            "start_date": "1946-01-01",
+            "death_date": "1976-03-24",
+            "type": "loyal_type"
+        },
+        "Ahmed_alSenussi_1": {
+            "name": "Ahmed al-Senussi",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.77,
+            "picture": "LBY_al-Senussi_Ahmed",
+            "start_date": "1948-01-01",
+            "death_date": "2300-01-01",
+            "type": "reformer_type"
+        },
+        "Hassan_alWali_1": {
+            "name": "Hassan al-Wali",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_al-Wali_Hassan",
+            "start_date": "1949-04-06",
+            "death_date": "1975-12-01",
+            "type": "lethargic_type"
+        },
+        "Mahmud_alMuntasir_1": {
+            "name": "Mahmud al-Muntasir",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "LBY_M_Al-Muntasir_Mahmud",
+            "start_date": "1951-03-29",
+            "death_date": "1965-03-20",
+            "type": "traditionalist_type"
+        },
+        "Idris_I_1": {
+            "name": "Idris I",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "LBY_M_Idris_I",
+            "start_date": "1951-12-24",
+            "death_date": "1969-09-01",
+            "type": "courteous_figure"
+        },
+        "Amr_Taher_Deghayes_1": {
+            "name": "Amr Taher Deghayes",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_M_Deghayes_Amr_T",
+            "start_date": "1954-01-01",
+            "death_date": "1982-01-01",
+            "type": "hardliner_type"
+        },
+        "Muhammad_Sakizli_1": {
+            "name": "Muhammad Sakizli",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_Sakizli_Muhammad",
+            "start_date": "1954-02-19",
+            "death_date": "1954-04-12",
+            "type": "ambitious_type"
+        },
+        "Mustafa_Ben_Halim_1": {
+            "name": "Mustafa Ben Halim",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_Halim_Mustafa_B",
+            "start_date": "1954-04-12",
+            "death_date": "1957-05-26",
+            "type": "administrator_type"
+        },
+        "Alanajm_alAckmar_1": {
+            "name": "Alanajm al-Ackmar",
+            "ideology": "communist_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_al-Ackmar_Alanajm",
+            "start_date": "1955-08-01",
+            "death_date": "1991-12-31",
+            "type": "autocrat_type"
+        },
+        "Hasan_I_asSenussi_1": {
+            "name": "Hasan I as-Senussi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.79,
+            "picture": "LBY_M_Hasan_I",
+            "start_date": "1956-10-26",
+            "death_date": "1992-04-28",
+            "type": "religious_type"
+        },
+        "Abdul_Majid_Kubar_1": {
+            "name": "Abdul Majid Kubar",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_Kubar_Abdul_M",
+            "start_date": "1957-05-26",
+            "death_date": "1960-10-17",
+            "type": "bureaucrat_type"
+        },
+        "Abdullah_Muhammad_alSenussi_1": {
+            "name": "Abdullah Muhammad al-Senussi",
+            "ideology": "fascistic_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_M_al-Senussi_Abdullah_M",
+            "start_date": "1959-10-07",
+            "death_date": "1992-06-03",
+            "type": "ambitious_type"
+        },
+        "Muhammad_Osman_Said_1": {
+            "name": "Muhammad Osman Said",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_Said_Muhammad_O",
+            "start_date": "1960-10-17",
+            "death_date": "1963-03-19",
+            "type": "bureaucrat_type"
+        },
+        "Mohieddin_Fikini_1": {
+            "name": "Mohieddin Fikini",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_Fikini_Mohieddin",
+            "start_date": "1963-03-19",
+            "death_date": "1964-01-20",
+            "type": "reformer_type"
+        },
+        "Hussein_Maziq_1": {
+            "name": "Hussein Maziq",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_Maziq_Hussein",
+            "start_date": "1965-03-20",
+            "death_date": "1967-07-02",
+            "type": "ambitious_type"
+        },
+        "Abdul_Qadir_alBadri_1": {
+            "name": "Abdul Qadir al-Badri",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_al-Badri_Abdul_Q",
+            "start_date": "1967-07-02",
+            "death_date": "1967-10-25",
+            "type": "bureaucrat_type"
+        },
+        "Abdul_Hamid_alBakkoush_1": {
+            "name": "Abdul Hamid al-Bakkoush",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_al-Bakkoush_Abdul_H",
+            "start_date": "1967-10-25",
+            "death_date": "1968-09-04",
+            "type": "visionary_type"
+        },
+        "Wanis_alQaddafi_1": {
+            "name": "Wanis al-Qaddafi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_al-Qaddafi_Wanis",
+            "start_date": "1968-09-04",
+            "death_date": "1969-08-31",
+            "type": "bureaucrat_type"
+        },
+        "Fadil_alMasudi_1": {
+            "name": "Fadil al-Masudi",
+            "ideology": "market_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_M_al-Masudi_Fadil",
+            "start_date": "1969-01-01",
+            "death_date": "2013-01-01",
+            "type": "democrat_type"
+        },
+        "Mahmud_Sulayman_alMaghribi_1": {
+            "name": "Mahmud Sulayman al-Maghribi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_al-Maghribi_Mahmud_S",
+            "start_date": "1969-08-31",
+            "death_date": "1970-01-16",
+            "type": "administrator_type"
+        },
+        "Umar_Mihayshi_1": {
+            "name": "Umar Mihayshi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_M_Mihayshi_Umar",
+            "start_date": "1969-09-01",
+            "death_date": "1983-12-01",
+            "type": "honest_type"
+        },
+        "Muammar_Gaddafi_1": {
+            "name": "Muammar Gaddafi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.8,
+            "picture": "LBY_M_Gaddafi_Muammar",
+            "start_date": "1969-09-01",
+            "death_date": "2011-08-23",
+            "type": "dictator_type"
+        },
+        "Omar_Hariri_1": {
+            "name": "Omar Hariri",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_Hariri_Omar",
+            "start_date": "1969-09-01",
+            "death_date": "2015-01-01",
+            "type": "democrat_type"
+        },
+        "Idris_II_bin_Abdullah_alSenussi_1": {
+            "name": "Idris II bin Abdullah al-Senussi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.76,
+            "picture": "LBY_M_al-Senussi_Idris_II",
+            "start_date": "1972-01-18",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Abdessalam_Jalloud_1": {
+            "name": "Abdessalam Jalloud",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_Jalloud_Abdessalam",
+            "start_date": "1972-07-16",
+            "death_date": "1977-03-02",
+            "type": "loyal_type"
+        },
+        "Abdul_Ati_alObeidi_1": {
+            "name": "Abdul Ati al-Obeidi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_al-Obeidi_Abdul_A",
+            "start_date": "1972-07-16",
+            "death_date": "1977-03-02",
+            "type": "administrator_type"
+        },
+        "Jadallah_Azzuz_atTalhi_1": {
+            "name": "Jadallah Azzuz at-Talhi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.9,
+            "picture": "LBY_M_at-Talhi_Jadallah_A",
+            "start_date": "1977-03-02",
+            "death_date": "1987-03-01",
+            "type": "bureaucrat_type"
+        },
+        "Mohammed_El_Senussi_1": {
+            "name": "Mohammed El Senussi",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 0.78,
+            "picture": "LBY_M_Senussi_Mohammed",
+            "start_date": "1977-10-20",
+            "death_date": "2300-01-01",
+            "type": "courteous_figure"
+        },
+        "Mohammed_Magariaf_1": {
+            "name": "Mohammed Magariaf",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_M_Magariaf_Mohammed",
+            "start_date": "1978-01-01",
+            "death_date": "2013-01-01",
+            "type": "courageous_type"
+        },
+        "Dr_Adulrahim_Saleh_1": {
+            "name": "Dr. Adulrahim Saleh",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_M_Saleh_Adulrahim",
+            "start_date": "1980-08-01",
+            "death_date": "2013-01-01",
+            "type": "visionary_type"
+        },
+        "Ahmed_Ibrahim_Ihwas_1": {
+            "name": "Ahmed Ibrahim Ihwas",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 0.5,
+            "picture": "LBY_M_Ihwas_Ahmed_I",
+            "start_date": "1981-10-07",
+            "death_date": "1984-05-08",
+            "type": "democrat_type"
+        },
+        "Muhammad_azZaruq_Rajab_1": {
+            "name": "Muhammad az-Zaruq Rajab",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_Rajab_Muhammad_A",
+            "start_date": "1984-02-16",
+            "death_date": "1986-03-03",
+            "type": "bureaucrat_type"
+        },
+        "Umar_Mustafa_alMuntasir_1": {
+            "name": "Umar Mustafa al-Muntasir",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_Al-Muntasir_Umar_M",
+            "start_date": "1987-03-01",
+            "death_date": "1990-10-07",
+            "type": "bureaucrat_type"
+        },
+        "Abuzed_Omar_Dorda_1": {
+            "name": "Abuzed Omar Dorda",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "LBY_M_Dorda_Abuzed_O",
+            "start_date": "1990-10-07",
+            "death_date": "1994-01-29",
+            "type": "administrator_type"
+        }
     }
-  }
 }

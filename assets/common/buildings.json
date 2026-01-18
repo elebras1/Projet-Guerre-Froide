@@ -658,19 +658,8 @@
       },
       "time": 3,
       "modifier": {
-        "industry_physics_cost": {
-          "value": -0.01,
-          "type": "technology_cost"
-        },
-        "industry_electronics_cost": {
-          "value": -0.01,
-          "type": "technology_cost"
-        },
-        "industry_chemistry_cost": {
-          "value": -0.01,
-          "type": "technology_cost"
+          "technology_cost" : -0.1
         }
-      }
     },
     "agriculture_research_center": {
       "cost": 10000,
@@ -683,10 +672,7 @@
       },
       "time": 3,
       "modifier": {
-        "industry_agriculture_mechanized_cost": {
-          "value": -0.2,
-          "type": "technology_cost"
-        }
+          "technology_cost" : -0.2
       }
     },
     "land_research_center": {
@@ -700,10 +686,7 @@
       },
       "time": 3,
       "modifier": {
-        "small_arms_cost": {
-          "value": -0.1,
-          "type": "technology_cost"
-        }
+        "technology_cost" : -0.1
       }
     },
     "air_research_center": {
@@ -717,10 +700,7 @@
       },
       "time": 3,
       "modifier": {
-        "aircraftavionics_cost": {
-          "value": -0.1,
-          "type": "technology_cost"
-        }
+        "technology_cost" : -0.1
       }
     },
     "naval_research_center": {
@@ -734,10 +714,7 @@
       },
       "time": 3,
       "modifier": {
-        "naval_engineering_cost": {
-          "value": -0.1,
-          "type": "technology_cost"
-        }
+        "technology_cost" : -0.1
       }
     },
     "early_warning_site": {
@@ -782,7 +759,7 @@
       "time": 180,
       "max_level": 10,
       "modifier": {
-        "naval_capacity": 1
+          "naval_capacity": 1
       }
     },
     "coastal_fort": {

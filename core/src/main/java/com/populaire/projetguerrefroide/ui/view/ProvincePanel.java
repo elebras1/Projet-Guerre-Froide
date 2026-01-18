@@ -177,31 +177,31 @@ public class ProvincePanel extends Table {
     }
 
     public void setData(ProvinceDto provinceDto) {
-        this.setProvinceName(provinceDto.getProvinceId());
-        this.setRegionName(provinceDto.getRegionId());
-        this.setTerrainImage(provinceDto.getTerrainImage());
-        this.setResourceImage(provinceDto.getResourceImage());
-        this.setPopulationRegion(provinceDto.getPopulationRegion());
-        this.setWorkersRegion(provinceDto.getWorkersRegion());
-        this.setDevelopmentIndexRegion(provinceDto.getDevelopmentIndexRegion());
-        this.setIncomeRegion(provinceDto.getIncomeRegion());
-        this.setIndustryRegion(provinceDto.getIndustryRegion());
-        this.setFlagImage(provinceDto.getCountryId(), provinceDto.getColonizerId());
-        this.setFlagCountriesCore(provinceDto.getFlagCountriesCore());
-        this.setResourceProduced(provinceDto.getResourceProduced());
-        this.setInfrastructureValue(provinceDto.getInfrastructureValue());
-        this.setGuerillaValue(provinceDto.getGuerillaValue());
-        this.setPopulationProvince(provinceDto.getPopulationProvince());
-        this.setIncomeProvince(provinceDto.getIncomeProvince());
-        this.setRevoltRisk(provinceDto.getRevoltRisk());
-        this.setProvinceNamesRegion(provinceDto.getProvinceIdsRegion());
-        DevelopementBuildingLevelDto developementBuildingLevelDto = provinceDto.getDevelopmentBuildingLevel();
-        this.setBuildingLevel(this.navalBaseLevel, developementBuildingLevelDto.getNavalBaseLevel());
-        this.setBuildingLevel(this.airBaseLevel, developementBuildingLevelDto.getAirBaseLevel());
-        this.setBuildingLevel(this.radarStationLevel, developementBuildingLevelDto.getRadarStationLevel());
-        this.setBuildingLevel(this.antiAircraftGunsLevel, developementBuildingLevelDto.getAntiAircraftGunsLevel());
-        this.setColorBuildings(provinceDto.getColorsBuildings());
-        this.setSpecialBuildings(provinceDto.getSpecialBuildings());
+        this.setProvinceName(provinceDto.provinceId());
+        this.setRegionName(provinceDto.regionId());
+        this.setTerrainImage(provinceDto.terrainImage());
+        this.setResourceImage(provinceDto.resourceImage());
+        this.setPopulationRegion(provinceDto.populationRegion());
+        this.setWorkersRegion(provinceDto.workersRegion());
+        this.setDevelopmentIndexRegion(provinceDto.developmentIndexRegion());
+        this.setIncomeRegion(provinceDto.incomeRegion());
+        this.setIndustryRegion(provinceDto.industryRegion());
+        this.setFlagImage(provinceDto.countryId(), provinceDto.colonizerId());
+        this.setFlagCountriesCore(provinceDto.flagCountriesCore());
+        this.setResourceProduced(provinceDto.resourceProduced());
+        this.setInfrastructureValue(provinceDto.infrastructureValue());
+        this.setGuerillaValue(provinceDto.guerillaValue());
+        this.setPopulationProvince(provinceDto.populationProvince());
+        this.setIncomeProvince(provinceDto.incomeProvince());
+        this.setRevoltRisk(provinceDto.revoltRisk());
+        this.setProvinceNamesRegion(provinceDto.provinceIdsRegion());
+        DevelopementBuildingLevelDto developementBuildingLevelDto = provinceDto.developmentBuildingLevel();
+        this.setBuildingLevel(this.navalBaseLevel, developementBuildingLevelDto.navalBaseLevel());
+        this.setBuildingLevel(this.airBaseLevel, developementBuildingLevelDto.airBaseLevel());
+        this.setBuildingLevel(this.radarStationLevel, developementBuildingLevelDto.radarStationLevel());
+        this.setBuildingLevel(this.antiAircraftGunsLevel, developementBuildingLevelDto.antiAircraftGunsLevel());
+        this.setColorBuildings(provinceDto.colorBuildings());
+        this.setSpecialBuildings(provinceDto.specialBuildings());
     }
 
     public void setResourceProduced(float resourceProduced) {

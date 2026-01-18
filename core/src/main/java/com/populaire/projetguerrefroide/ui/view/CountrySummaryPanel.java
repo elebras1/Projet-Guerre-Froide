@@ -69,13 +69,13 @@ public class CountrySummaryPanel extends Table {
     }
 
     public void update(CountrySummaryDto countrySummaryDto, Map<String, String> localisation) {
-        this.countryName.setText(LocalisationUtils.getCountryNameLocalisation(localisation, countrySummaryDto.getIdCountry(), countrySummaryDto.getColonizerId()));
-        this.flagImage.setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, countrySummaryDto.getIdCountry(), countrySummaryDto.getColonizerId()));
-        this.government.setText(localisation.get(countrySummaryDto.getGovernment()));
-        this.countryPopulation.setText(countrySummaryDto.getPopulation());
-        this.portrait.setDrawable(this.skinPortraits.getDrawable(countrySummaryDto.getPortrait()));
-        this.leaderFullName.setText(countrySummaryDto.getLeaderFullName());
-        List<String> allies = countrySummaryDto.getAllies();
+        this.countryName.setText(LocalisationUtils.getCountryNameLocalisation(localisation, countrySummaryDto.idCountry(), countrySummaryDto.colonizerId()));
+        this.flagImage.setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, countrySummaryDto.idCountry(), countrySummaryDto.colonizerId()));
+        this.government.setText(localisation.get(countrySummaryDto.government()));
+        this.countryPopulation.setText(countrySummaryDto.population());
+        this.portrait.setDrawable(this.skinPortraits.getDrawable(countrySummaryDto.portrait()));
+        this.leaderFullName.setText(countrySummaryDto.leaderFullName());
+        List<String> allies = countrySummaryDto.allies();
         for (int i = this.alliesFlagImages.size() - 1; i >= 0; i--) {
             if (i < allies.size()) {
                 this.alliesFlagImages.get(i).setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, allies.get(i), null));

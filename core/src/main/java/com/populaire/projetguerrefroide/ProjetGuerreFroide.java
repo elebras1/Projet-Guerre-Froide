@@ -3,6 +3,9 @@ package com.populaire.projetguerrefroide;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.github.elebras1.flecs.World;
+import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -12,17 +15,58 @@ public class ProjetGuerreFroide extends Game {
     public static final int WORLD_WIDTH = 5616;
     public static final int WORLD_HEIGHT = 2160;
     private final ConfigurationService configurationService;
+    private ScreenManager screenManager;
+    private GameContext gameContext;
+    private final World ecsWorld;
 
     public ProjetGuerreFroide() {
         this.configurationService = new ConfigurationService();
+        this.ecsWorld = new World();
     }
 
     @Override
     public void create() {
-        GameContext gameContext = this.configurationService.getGameContext();
-        ScreenManager screenManager = new ScreenManager(this, gameContext, configurationService);
-        this.loadAssets(gameContext.getAssetManager());
-        screenManager.showMainMenuScreen();
+        this.ecsWorld.setThreads(4);
+        this.registerComponents();
+        this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
+        this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService);
+        this.loadAssets(this.gameContext.getAssetManager());
+        this.screenManager.showMainMenuScreen();
+        this.ecsDebug(gameContext);
+    }
+
+    private void registerComponents() {
+        this.ecsWorld.component(Modifiers.class);
+        this.ecsWorld.component(Minister.class);
+        this.ecsWorld.component(Ideology.class);
+        this.ecsWorld.component(Terrain.class);
+        this.ecsWorld.component(ElectoralMechanism.class);
+        this.ecsWorld.component(Leader.class);
+        this.ecsWorld.component(EnactmentDuration.class);
+        this.ecsWorld.component(Color.class);
+        this.ecsWorld.component(Position.class);
+        this.ecsWorld.component(Border.class);
+        this.ecsWorld.component(DiplomaticRelation.class);
+        this.ecsWorld.component(Adjacencies.class);
+        this.ecsWorld.component(Country.class);
+        this.ecsWorld.component(Province.class);
+        this.ecsWorld.component(GeoHierarchy.class);
+        this.ecsWorld.component(Law.class);
+        this.ecsWorld.component(GovernmentPolicy.class);
+        this.ecsWorld.component(PopulationType.class);
+        this.ecsWorld.component(Good.class);
+        this.ecsWorld.component(ResourceProduction.class);
+        this.ecsWorld.component(EmployeeType.class);
+        this.ecsWorld.component(ProductionType.class);
+        this.ecsWorld.component(EconomyBuilding.class);
+        this.ecsWorld.component(SpecialBuilding.class);
+        this.ecsWorld.component(DevelopmentBuilding.class);
+        this.ecsWorld.component(Building.class);
+        this.ecsWorld.component(PopulationTemplate.class);
+        this.ecsWorld.component(CultureDistribution.class);
+        this.ecsWorld.component(PopulationDistribution.class);
+        this.ecsWorld.component(ReligionDistribution.class);
+        this.ecsWorld.component(ResourceGathering.class);
     }
 
     private void loadAssets(AssetManager assetManager) {
@@ -32,8 +76,19 @@ public class ProjetGuerreFroide extends Game {
         assetManager.finishLoading();
     }
 
+    private void ecsDebug(GameContext gameContext) {
+        Settings settings = gameContext.getSettings();
+        if(settings.isDebugMode()) {
+            this.ecsWorld.enableRest((short) 27750);
+        }
+    }
+
     @Override
     public void dispose() {
+        this.ecsWorld.disableRest();
+        this.ecsWorld.close();
+        this.screenManager.dispose();
+        this.gameContext.dispose();
         super.dispose();
     }
 }

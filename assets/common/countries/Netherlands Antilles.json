@@ -72,34 +72,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "205": {
-            "name": "Wilhelmina",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Wilhelmina",
-            "start_date": "1946-01-01",
-            "death_date": "1948-09-04",
-            "type": "autocrat_type"
-        },
-        "3671": {
-            "name": "Juliana",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Juliana",
-            "start_date": "1948-09-04",
-            "death_date": "1960-01-01",
-            "type": "courteous_figure"
-        },
-        "207": {
-            "name": "Beatrix",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Beatrix",
-            "start_date": "1980-04-30",
-            "death_date": "1999-12-31",
-            "type": "administrator_type"
-        },
-        "3672": {
+        "Piet_Kasteel_1": {
             "name": "Piet Kasteel",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -108,7 +81,16 @@
             "death_date": "1948-01-01",
             "type": "bureaucrat_type"
         },
-        "3673": {
+        "Wilhelmina_1": {
+            "name": "Wilhelmina",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Wilhelmina",
+            "start_date": "1946-01-01",
+            "death_date": "1948-09-04",
+            "type": "autocrat_type"
+        },
+        "Leonard_Antoon_Hubert_Peters_1": {
             "name": "Leonard Antoon Hubert Peters",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -117,88 +99,16 @@
             "death_date": "1951-01-01",
             "type": "democrat_type"
         },
-        "3674": {
-            "name": "Teun Struycken",
+        "Juliana_1": {
+            "name": "Juliana",
             "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "NAN_M_Struycken_Teun",
-            "start_date": "1951-01-01",
-            "death_date": "1956-01-01",
-            "type": "hardliner_type"
+            "loyalty": 1.0,
+            "picture": "HOL_M_Juliana",
+            "start_date": "1948-09-04",
+            "death_date": "1980-04-30",
+            "type": "courteous_figure"
         },
-        "3675": {
-            "name": "Frans E.J. van der Valk",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "NAN_M_Valk_Frans_E_J",
-            "start_date": "1956-01-01",
-            "death_date": "1957-01-01",
-            "type": "bureaucrat_type"
-        },
-        "3676": {
-            "name": "Antonius B. Speekenbrink",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "NAN_M_Speekenbrink_Antonius_B",
-            "start_date": "1957-01-01",
-            "death_date": "1961-01-01",
-            "type": "traditionalist_type"
-        },
-        "3677": {
-            "name": "Christiaan Winkel",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "NAN_M_Winkel_Christiaan",
-            "start_date": "1961-01-01",
-            "death_date": "1962-01-01",
-            "type": "loyal_type"
-        },
-        "3678": {
-            "name": "A.P.J. van Bruggen",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "NAN_M_Bruggen_A_P_J",
-            "start_date": "1962-01-01",
-            "death_date": "1962-01-01",
-            "type": "parental_type"
-        },
-        "3679": {
-            "name": "Nicolaas Debrot",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "NAN_M_Debrot_Nicolaas",
-            "start_date": "1962-01-01",
-            "death_date": "1970-01-01",
-            "type": "administrator_type"
-        },
-        "3680": {
-            "name": "Bernadito M. Leito",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "NAN_M_Leito_Bernadito_M",
-            "start_date": "1970-01-01",
-            "death_date": "1983-01-01",
-            "type": "moral_type"
-        },
-        "3681": {
-            "name": "René A. Römer",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "NAN_M_Romer_Rene_A",
-            "start_date": "1983-01-01",
-            "death_date": "1990-01-01",
-            "type": "democrat_type"
-        },
-        "3682": {
-            "name": "Jaime Saleh",
-            "ideology": "social_cons_idolg",
-            "loyalty": 0.9,
-            "picture": "NAN_M_Saleh_Jaime",
-            "start_date": "1990-01-01",
-            "death_date": "2002-01-01",
-            "type": "honest_type"
-        },
-        "3683": {
+        "Moises_F_C_Gomez_1": {
             "name": "Moises F. C. Gomez",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -207,7 +117,16 @@
             "death_date": "1954-12-15",
             "type": "democrat_type"
         },
-        "3684": {
+        "Teun_Struycken_1": {
+            "name": "Teun Struycken",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "NAN_M_Struycken_Teun",
+            "start_date": "1951-01-01",
+            "death_date": "1956-01-01",
+            "type": "hardliner_type"
+        },
+        "Efraïn_F_Jonckheer_1": {
             "name": "Efraïn F. Jonckheer",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -216,7 +135,52 @@
             "death_date": "1968-02-14",
             "type": "traditionalist_type"
         },
-        "3685": {
+        "Frans_EJ_van_der_Valk_1": {
+            "name": "Frans E.J. van der Valk",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "NAN_M_Valk_Frans_E_J",
+            "start_date": "1956-01-01",
+            "death_date": "1957-01-01",
+            "type": "bureaucrat_type"
+        },
+        "Antonius_B_Speekenbrink_1": {
+            "name": "Antonius B. Speekenbrink",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "NAN_M_Speekenbrink_Antonius_B",
+            "start_date": "1957-01-01",
+            "death_date": "1961-01-01",
+            "type": "traditionalist_type"
+        },
+        "Christiaan_Winkel_1": {
+            "name": "Christiaan Winkel",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "NAN_M_Winkel_Christiaan",
+            "start_date": "1961-01-01",
+            "death_date": "1962-01-01",
+            "type": "loyal_type"
+        },
+        "APJ_van_Bruggen_1": {
+            "name": "A.P.J. van Bruggen",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "NAN_M_Bruggen_A_P_J",
+            "start_date": "1962-01-01",
+            "death_date": "1962-01-01",
+            "type": "parental_type"
+        },
+        "Nicolaas_Debrot_1": {
+            "name": "Nicolaas Debrot",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "NAN_M_Debrot_Nicolaas",
+            "start_date": "1962-01-01",
+            "death_date": "1970-01-01",
+            "type": "administrator_type"
+        },
+        "Ciro_Domenico_Kroon_1": {
             "name": "Ciro Domenico Kroon",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -225,7 +189,7 @@
             "death_date": "1969-09-01",
             "type": "liberal_type"
         },
-        "3686": {
+        "Gerald_C_Sprockel_1": {
             "name": "Gerald C. Sprockel",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -234,7 +198,7 @@
             "death_date": "1969-12-01",
             "type": "administrator_type"
         },
-        "3687": {
+        "Ernesto_O_Petronia_1": {
             "name": "Ernesto O. Petronia",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -243,7 +207,16 @@
             "death_date": "1971-02-01",
             "type": "honest_type"
         },
-        "3688": {
+        "Bernadito_M_Leito_1": {
+            "name": "Bernadito M. Leito",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "NAN_M_Leito_Bernadito_M",
+            "start_date": "1970-01-01",
+            "death_date": "1983-01-01",
+            "type": "moral_type"
+        },
+        "Ramez_Jorge_Isa_1": {
             "name": "Ramez Jorge Isa",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.9,
@@ -252,7 +225,7 @@
             "death_date": "1973-12-01",
             "type": "bureaucrat_type"
         },
-        "3689": {
+        "Otto_RA_Beaujon_1": {
             "name": "Otto R.A. Beaujon",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -261,7 +234,7 @@
             "death_date": "1972-10-01",
             "type": "democrat_type"
         },
-        "3690": {
+        "Juancho_Evertsz_1": {
             "name": "Juancho Evertsz",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -270,7 +243,7 @@
             "death_date": "1977-09-30",
             "type": "hardliner_type"
         },
-        "3691": {
+        "Leo_AI_Chance_1": {
             "name": "Leo A.I. Chance",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -279,7 +252,7 @@
             "death_date": "1977-10-14",
             "type": "loyal_type"
         },
-        "3692": {
+        "Silvius_Gerard_Marie_Rozendal_1": {
             "name": "Silvius Gerard Marie Rozendal",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -288,7 +261,7 @@
             "death_date": "1979-07-06",
             "type": "liberal_type"
         },
-        "3693": {
+        "Miguel_A_Pourier_1": {
             "name": "Miguel A. Pourier",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -297,7 +270,7 @@
             "death_date": "1979-12-01",
             "type": "moral_type"
         },
-        "3694": {
+        "Dominico_Martina_1": {
             "name": "Dominico Martina",
             "ideology": "social_liberal_idolg",
             "loyalty": 0.9,
@@ -306,7 +279,25 @@
             "death_date": "1988-05-17",
             "type": "democrat_type"
         },
-        "3695": {
+        "Beatrix_1": {
+            "name": "Beatrix",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Beatrix",
+            "start_date": "1980-04-30",
+            "death_date": "1999-12-31",
+            "type": "administrator_type"
+        },
+        "René_A_Römer_1": {
+            "name": "René A. Römer",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "NAN_M_Romer_Rene_A",
+            "start_date": "1983-01-01",
+            "death_date": "1990-01-01",
+            "type": "democrat_type"
+        },
+        "Maria_Liberia_Peters_1": {
             "name": "Maria Liberia Peters",
             "ideology": "social_democrat_idolg",
             "loyalty": 1.0,
@@ -314,6 +305,15 @@
             "start_date": "1984-09-18",
             "death_date": "1993-11-25",
             "type": "ambitious_type"
+        },
+        "Jaime_Saleh_1": {
+            "name": "Jaime Saleh",
+            "ideology": "social_cons_idolg",
+            "loyalty": 0.9,
+            "picture": "NAN_M_Saleh_Jaime",
+            "start_date": "1990-01-01",
+            "death_date": "2002-01-01",
+            "type": "honest_type"
         }
     }
 }

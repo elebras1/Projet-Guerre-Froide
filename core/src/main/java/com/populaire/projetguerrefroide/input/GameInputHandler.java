@@ -18,11 +18,11 @@ public class GameInputHandler implements InputProcessor {
     private float delta;
     private final Vector2 posVelocity;
     private float zoomChange;
-    private Vector3 worldCoordinates;
-    private Vector2 inputDirection;
-    private Vector2 cameraVelocity;
-    private Vector3 preZoomCoordinates;
-    private Vector3 postZoomCoordinates;
+    private final Vector3 worldCoordinates;
+    private final Vector2 inputDirection;
+    private final Vector2 cameraVelocity;
+    private final Vector3 preZoomCoordinates;
+    private final Vector3 postZoomCoordinates;
     private static final float ZOOM_SPEED_DECAY = 6f;
     private static final float ZOOM_FACTOR = 3f;
     private static final float VELOCITY_DECAY = 8f;

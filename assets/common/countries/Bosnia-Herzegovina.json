@@ -72,7 +72,16 @@
     },
     "unit_names": "",
     "ministers": {
-        "657": {
+        "Danko_Grlic_1": {
+            "name": "Danko Grlic",
+            "ideology": "left_wing_radical_idolg",
+            "loyalty": 0.5,
+            "picture": "YUG_M_Grlic_Danko",
+            "start_date": "1931-01-01",
+            "death_date": "1984-03-01",
+            "type": "liberal_type"
+        },
+        "Vojislav_Kecmanovic_1": {
             "name": "Vojislav Kecmanovic",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -81,124 +90,7 @@
             "death_date": "1946-11-01",
             "type": "bureaucrat_type"
         },
-        "658": {
-            "name": "Ðuro Pucar",
-            "ideology": "communist_idolg",
-            "loyalty": 0.95,
-            "picture": "BOS_M_Pucar_Duro",
-            "start_date": "1946-11-01",
-            "death_date": "1963-06-01",
-            "type": "courageous_type"
-        },
-        "659": {
-            "name": "Vlado egrt",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "BOS_M_Segrt_Vlado",
-            "start_date": "1948-09-01",
-            "death_date": "1953-03-01",
-            "type": "bureaucrat_type"
-        },
-        "660": {
-            "name": "Ratomir Dugonjic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "BOS_M_Dugonjic_Ratomir",
-            "start_date": "1953-03-01",
-            "death_date": "1978-04-01",
-            "type": "loyal_type"
-        },
-        "661": {
-            "name": "Demal Bijedic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "BOS_M_Bijedic_Dzemal",
-            "start_date": "1967-01-01",
-            "death_date": "1971-01-01",
-            "type": "reformer_type"
-        },
-        "662": {
-            "name": "Hamdija Pozderac",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "BOS_M_Pozderac_Hamdija",
-            "start_date": "1971-01-01",
-            "death_date": "1974-05-01",
-            "type": "reformer_type"
-        },
-        "663": {
-            "name": "Raif Dizdarevic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "YUG_M_Dizdarevic_Raif",
-            "start_date": "1978-04-01",
-            "death_date": "1982-04-01",
-            "type": "courageous_type"
-        },
-        "664": {
-            "name": "Branko Mikulic",
-            "ideology": "communist_idolg",
-            "loyalty": 0.95,
-            "picture": "BOS_M_Mikulic_Branko",
-            "start_date": "1967-01-01",
-            "death_date": "1984-04-26",
-            "type": "ambitious_type"
-        },
-        "665": {
-            "name": "Milanko Renovica",
-            "ideology": "communist_idolg",
-            "loyalty": 0.9,
-            "picture": "BOS_M_Renovica_Milanko",
-            "start_date": "1974-04-01",
-            "death_date": "1985-04-26",
-            "type": "bureaucrat_type"
-        },
-        "666": {
-            "name": "Munir Mesihovic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "BOS_M_Mesihovic_Munir",
-            "start_date": "1985-04-26",
-            "death_date": "1987-04-01",
-            "type": "administrator_type"
-        },
-        "667": {
-            "name": "Mato Andric",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "BOS_M_Andric_Mato",
-            "start_date": "1987-04-01",
-            "death_date": "1988-04-01",
-            "type": "lethargic_type"
-        },
-        "668": {
-            "name": "Nikola Filipovic",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "BOS_M_Filipovic_Nikola",
-            "start_date": "1988-04-01",
-            "death_date": "1989-04-01",
-            "type": "administrator_type"
-        },
-        "669": {
-            "name": "Obrad Piljak",
-            "ideology": "communist_idolg",
-            "loyalty": 1.0,
-            "picture": "BOS_M_Piljak_Obrad",
-            "start_date": "1989-04-01",
-            "death_date": "2300-01-01",
-            "type": "liberal_type"
-        },
-        "670": {
-            "name": "Alija Izetbegovic",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "BOS_M_Izetbegovic_Alija",
-            "start_date": "1946-01-01",
-            "death_date": "2000-10-14",
-            "type": "controversial_figure"
-        },
-        "671": {
+        "Rodoljub_Colakovic_1": {
             "name": "Rodoljub Colakovic",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -207,7 +99,43 @@
             "death_date": "1948-09-01",
             "type": "extremist_type"
         },
-        "672": {
+        "Alija_Izetbegovic_1": {
+            "name": "Alija Izetbegovic",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Izetbegovic_Alija",
+            "start_date": "1946-01-01",
+            "death_date": "2000-10-14",
+            "type": "controversial_figure"
+        },
+        "Ðuro_Pucar_1": {
+            "name": "Ðuro Pucar",
+            "ideology": "communist_idolg",
+            "loyalty": 0.95,
+            "picture": "BOS_M_Pucar_Duro",
+            "start_date": "1946-11-01",
+            "death_date": "1963-06-01",
+            "type": "courageous_type"
+        },
+        "Vlado_egrt_1": {
+            "name": "Vlado egrt",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Segrt_Vlado",
+            "start_date": "1948-09-01",
+            "death_date": "1953-03-01",
+            "type": "bureaucrat_type"
+        },
+        "Ratomir_Dugonjic_1": {
+            "name": "Ratomir Dugonjic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Dugonjic_Ratomir",
+            "start_date": "1953-03-01",
+            "death_date": "1978-04-01",
+            "type": "loyal_type"
+        },
+        "Avdo_Humo_1": {
             "name": "Avdo Humo",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -216,7 +144,7 @@
             "death_date": "1956-01-01",
             "type": "reputable_type"
         },
-        "673": {
+        "Osman_Karabegovic_1": {
             "name": "Osman Karabegovic",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -225,7 +153,7 @@
             "death_date": "1963-01-01",
             "type": "reformer_type"
         },
-        "674": {
+        "Hasan_Brkic_1": {
             "name": "Hasan Brkic",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -234,7 +162,7 @@
             "death_date": "1965-01-01",
             "type": "administrator_type"
         },
-        "675": {
+        "Rudi_Kolak_1": {
             "name": "Rudi Kolak",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -243,7 +171,25 @@
             "death_date": "1967-01-01",
             "type": "bureaucrat_type"
         },
-        "676": {
+        "Demal_Bijedic_1": {
+            "name": "Demal Bijedic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Bijedic_Dzemal",
+            "start_date": "1967-01-01",
+            "death_date": "1971-01-01",
+            "type": "reformer_type"
+        },
+        "Branko_Mikulic_1": {
+            "name": "Branko Mikulic",
+            "ideology": "communist_idolg",
+            "loyalty": 0.95,
+            "picture": "BOS_M_Mikulic_Branko",
+            "start_date": "1967-01-01",
+            "death_date": "1984-04-26",
+            "type": "ambitious_type"
+        },
+        "Dragutin_Kosovac_1": {
             "name": "Dragutin Kosovac",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -252,7 +198,34 @@
             "death_date": "1974-04-01",
             "type": "traditionalist_type"
         },
-        "677": {
+        "Hamdija_Pozderac_1": {
+            "name": "Hamdija Pozderac",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Pozderac_Hamdija",
+            "start_date": "1971-01-01",
+            "death_date": "1974-05-01",
+            "type": "reformer_type"
+        },
+        "Milanko_Renovica_1": {
+            "name": "Milanko Renovica",
+            "ideology": "communist_idolg",
+            "loyalty": 0.9,
+            "picture": "BOS_M_Renovica_Milanko",
+            "start_date": "1974-04-01",
+            "death_date": "1985-04-26",
+            "type": "bureaucrat_type"
+        },
+        "Raif_Dizdarevic_1": {
+            "name": "Raif Dizdarevic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "YUG_M_Dizdarevic_Raif",
+            "start_date": "1978-04-01",
+            "death_date": "1989-05-15",
+            "type": "courageous_type"
+        },
+        "Seid_Maglajlija_1": {
             "name": "Seid Maglajlija",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -261,7 +234,7 @@
             "death_date": "1984-04-28",
             "type": "administrator_type"
         },
-        "678": {
+        "Gojko_Ubiparip_1": {
             "name": "Gojko Ubiparip",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -270,7 +243,16 @@
             "death_date": "1986-04-01",
             "type": "loyal_type"
         },
-        "679": {
+        "Munir_Mesihovic_1": {
+            "name": "Munir Mesihovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Mesihovic_Munir",
+            "start_date": "1985-04-26",
+            "death_date": "1987-04-01",
+            "type": "administrator_type"
+        },
+        "Josip_Lovrenovic_1": {
             "name": "Josip Lovrenovic",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -279,7 +261,25 @@
             "death_date": "1988-04-01",
             "type": "traditionalist_type"
         },
-        "680": {
+        "Mato_Andric_1": {
+            "name": "Mato Andric",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Andric_Mato",
+            "start_date": "1987-04-01",
+            "death_date": "1988-04-01",
+            "type": "lethargic_type"
+        },
+        "Nikola_Filipovic_1": {
+            "name": "Nikola Filipovic",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Filipovic_Nikola",
+            "start_date": "1988-04-01",
+            "death_date": "1989-04-01",
+            "type": "administrator_type"
+        },
+        "Marko_Ceranic_1": {
             "name": "Marko Ceranic",
             "ideology": "communist_idolg",
             "loyalty": 1.0,
@@ -288,7 +288,16 @@
             "death_date": "1990-12-20",
             "type": "administrator_type"
         },
-        "681": {
+        "Obrad_Piljak_1": {
+            "name": "Obrad Piljak",
+            "ideology": "communist_idolg",
+            "loyalty": 1.0,
+            "picture": "BOS_M_Piljak_Obrad",
+            "start_date": "1989-04-01",
+            "death_date": "2300-01-01",
+            "type": "liberal_type"
+        },
+        "Jure_Pelivan_1": {
             "name": "Jure Pelivan",
             "ideology": "social_liberal_idolg",
             "loyalty": 1.0,
@@ -296,15 +305,6 @@
             "start_date": "1990-12-20",
             "death_date": "1992-03-03",
             "type": "administrator_type"
-        },
-        "682": {
-            "name": "Danko Grlic",
-            "ideology": "left_wing_radical_idolg",
-            "loyalty": 0.5,
-            "picture": "YUG_M_Grlic_Danko",
-            "start_date": "1931-01-01",
-            "death_date": "1984-03-01",
-            "type": "liberal_type"
         }
     }
 }

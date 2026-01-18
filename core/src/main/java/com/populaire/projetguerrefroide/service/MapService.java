@@ -1,0 +1,1477 @@
+package com.populaire.projetguerrefroide.service;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.*;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.badlogic.gdx.math.Vector4;
+import com.badlogic.gdx.utils.Disposable;
+import com.github.elebras1.flecs.*;
+import com.github.tommyettinger.ds.*;
+import com.github.xpenatan.webgpu.*;
+import com.monstrous.gdx.webgpu.graphics.Binder;
+import com.monstrous.gdx.webgpu.graphics.WgMesh;
+import com.monstrous.gdx.webgpu.graphics.WgTexture;
+import com.monstrous.gdx.webgpu.graphics.WgTextureArray;
+import com.monstrous.gdx.webgpu.graphics.g2d.WgTextureAtlas;
+import com.monstrous.gdx.webgpu.wrappers.*;
+import com.populaire.projetguerrefroide.adapter.graphics.WgMeshMulti;
+import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
+import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.component.Color;
+import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
+import com.populaire.projetguerrefroide.pojo.Borders;
+import com.populaire.projetguerrefroide.pojo.MapMode;
+import com.populaire.projetguerrefroide.pojo.RawMeshMulti;
+import com.populaire.projetguerrefroide.repository.QueryRepository;
+import com.populaire.projetguerrefroide.screen.WorldContext;
+import com.populaire.projetguerrefroide.util.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
+
+import java.util.*;
+
+import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
+import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
+
+public class MapService implements WorldContext, Disposable {
+    private final QueryRepository queryRepository;
+    private final IntLongMap provinces;
+    private final Borders borders;
+    private final Pixmap provincesPixmap;
+    private final Pixmap mapModePixmap;
+    private final Pixmap provincesColorStripesPixmap;
+    private WgTexture mapModeTexture;
+    private final WgTexture provincesTexture;
+    private final WgTexture waterTexture;
+    private final WgTexture colorMapWaterTexture;
+    private final WgTexture provincesStripesTexture;
+    private final WgTexture terrainTexture;
+    private final WgTexture stripesTexture;
+    private final WgTexture colorMapTexture;
+    private final WgTexture overlayTileTexture;
+    private final WgTexture riverBodyTexture;
+    private final WgTextureArray terrainSheetArray;
+    private final WgTextureAtlas mapElementsTextureAtlas;
+    private final TextureRegion fontMapLabelRegion;
+    private final WgMesh meshProvinces;
+    private final WgMesh meshMapLabels;
+    private final WgMesh meshBuildings;
+    private final WgMesh meshResources;
+    private final WgMeshMulti meshRivers;
+    private final WebGPUUniformBuffer uniformBufferWorld;
+    private final Binder binderProvinces;
+    private final Binder binderMapLabels;
+    private final Binder binderBuildings;
+    private final Binder binderResources;
+    private final Binder binderRivers;
+    private final WebGPUPipeline pipelineProvinces;
+    private final WebGPUPipeline pipelineMapLabels;
+    private final WebGPUPipeline pipelineBuildings;
+    private final WebGPUPipeline pipelineResources;
+    private final WebGPUPipeline pipelineRivers;
+    private final int uniformBufferSizeWorld;
+    private long selectedProvinceId;
+    private final Vector4 selectedProvinceColor;
+    private long playerCountryId;
+    private MapMode mapMode;
+    private final GameContext gameContext;
+    private final MapDaoImpl mapDao;
+
+    public MapService(GameContext gameContext, QueryRepository queryRepository, IntLongMap provinces, Borders borders) {
+        this.mapDao = new MapDaoImpl();
+        this.queryRepository = queryRepository;
+        this.provinces = provinces;
+        this.borders = borders;
+        this.gameContext = gameContext;
+        this.mapModePixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
+        this.mapModePixmap.setColor(0, 0, 0, 0);
+        this.mapModePixmap.fill();
+        Pixmap tempProvincesPixmap = new Pixmap(Gdx.files.internal("map/provinces.bmp"));
+        this.provincesPixmap = new Pixmap(tempProvincesPixmap.getWidth(), tempProvincesPixmap.getHeight(), Pixmap.Format.RGBA8888);
+        this.provincesPixmap.setBlending(Pixmap.Blending.None);
+        this.provincesPixmap.drawPixmap(tempProvincesPixmap, 0, 0);
+        tempProvincesPixmap.dispose();
+        this.updatePixmapCountriesColor();
+        this.updateBordersProvincesPixmap();
+        this.provincesColorStripesPixmap = this.createProvincesColorStripesPixmap();
+        FileHandle[] terrainTextureFiles = this.createTerrainTextureFiles();
+        this.mapMode = MapMode.POLITICAL;
+        this.selectedProvinceColor = new Vector4();
+
+        PixmapTextureData mapModeTextureData = new PixmapTextureData(this.mapModePixmap, Pixmap.Format.RGBA8888, false, false);
+        this.mapModeTexture = new WgTexture(mapModeTextureData, "mapModeTexture", false);
+        this.mapModeTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        PixmapTextureData provincesColorStripesTextureData = new PixmapTextureData(provincesColorStripesPixmap, Pixmap.Format.RGBA8888, false, false);
+        this.provincesStripesTexture = new WgTexture(provincesColorStripesTextureData, "provincesStripesTexture", false);
+        this.provincesStripesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        PixmapTextureData provincesTextureData = new PixmapTextureData(this.provincesPixmap, Pixmap.Format.RGBA8888, false, false);
+        this.provincesTexture = new WgTexture(provincesTextureData, "provincesTexture", false);
+        this.provincesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        this.waterTexture = new WgTexture("map/terrain/sea_normal.png");
+        this.waterTexture.setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
+        this.waterTexture.setWrap(WgTexture.TextureWrap.Repeat, WgTexture.TextureWrap.Repeat);
+        Pixmap colorMapWaterPixmap = new Pixmap(Gdx.files.internal("map/terrain/colormap_water.png"));
+        this.colorMapWaterTexture = new WgTexture(colorMapWaterPixmap, "colorMapWaterTexture", false);
+        colorMapWaterPixmap.dispose();
+        this.colorMapWaterTexture.setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
+        this.colorMapTexture = new WgTexture("map/terrain/colormap.png");
+        this.colorMapTexture.setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
+        Pixmap terrainPixmap = new Pixmap(Gdx.files.internal("map/terrain.bmp"));
+        PixmapTextureData terrainTextureData = new PixmapTextureData(terrainPixmap, Pixmap.Format.RGBA8888, false, false);
+        this.terrainTexture = new WgTexture(terrainTextureData, "terrainTexture", false);
+        terrainPixmap.dispose();
+        this.stripesTexture = new WgTexture("map/terrain/stripes.png");
+        this.overlayTileTexture = new WgTexture("map/terrain/map_overlay_tile.png");
+        this.overlayTileTexture.setWrap(WgTexture.TextureWrap.Repeat, WgTexture.TextureWrap.Repeat);
+        this.riverBodyTexture = new WgTexture("map/terrain/river.png");
+        this.riverBodyTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
+        this.terrainSheetArray = new WgTextureArray(true, false, terrainTextureFiles);
+        this.mapElementsTextureAtlas = new WgTextureAtlas(Gdx.files.internal("map/elements/map_elements.atlas"));
+        this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
+        this.fontMapLabelRegion = gameContext.getLabelStylePool().getLabelStyle("kart_60").font.getRegion();
+        this.fontMapLabelRegion.getTexture().setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
+        this.uniformBufferSizeWorld = (16 + 4 + 4) * Float.BYTES;
+        this.uniformBufferWorld = new WebGPUUniformBuffer(this.uniformBufferSizeWorld, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
+        VertexAttributes vertexAttributesProvinces = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        this.meshProvinces = this.generateMeshProvinces(vertexAttributesProvinces);
+        this.binderProvinces = this.createBinderProvinces();
+        this.pipelineProvinces = this.createPipelineProvinces(vertexAttributesProvinces, WgslUtils.getShaderSource("map.wgsl"));
+        VertexAttributes vertexAttributesMapLabels = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        this.meshMapLabels = this.generateMeshMapLabels(vertexAttributesMapLabels, gameContext.getLocalisation(), gameContext.getLabelStylePool());
+        this.binderMapLabels = this.createBinderMapLabels();
+        this.pipelineMapLabels = this.createPipelineMapLabels(vertexAttributesMapLabels, WgslUtils.getShaderSource("font.wgsl"));
+        VertexAttributes vertexAttributesBuildings = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        this.meshBuildings = this.generateMeshBuildings(vertexAttributesBuildings);
+        this.binderBuildings = this.createBinderBuildings();
+        this.pipelineBuildings = this.createPipelineBuildings(vertexAttributesBuildings, WgslUtils.getShaderSource("element.wgsl"));
+        VertexAttributes vertexAttributesResources = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.Normal, 2, "center"));
+        this.meshResources = this.generateMeshResources(vertexAttributesResources);
+        this.binderResources = this.createBinderResources();
+        this.pipelineResources = this.createPipelineResources(vertexAttributesResources, WgslUtils.getShaderSource("element_scale.wgsl"));
+        VertexAttributes vertexAttributesRivers = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.Normal, 1, "width"));
+        this.meshRivers = this.generateMeshRivers(vertexAttributesRivers);
+        this.binderRivers = this.createBinderRivers();
+        this.pipelineRivers = this.createPipelineRivers(vertexAttributesRivers, WgslUtils.getShaderSource("river.wgsl"));
+        this.bindStaticTextures();
+
+    }
+
+    @Override
+    public long getPlayerCountryId() {
+        return this.playerCountryId;
+    }
+
+    public long getLandProvinceId(int x, int y) {
+        x = (x + WORLD_WIDTH) % WORLD_WIDTH;
+
+        int provinceColor = this.provincesPixmap.getPixel(x, y);
+        int provinceColorRGB = (provinceColor & 0xFFFFFF00) | 255;
+
+        return this.provinces.get(provinceColorRGB);
+    }
+
+    public boolean selectProvince(int x, int y) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        long selectedProvinceId = this.getLandProvinceId(x, y);
+        if(selectedProvinceId != 0) {
+            this.selectedProvinceId = selectedProvinceId;
+            Entity selectedProvinceEntity = ecsWorld.obtainEntity(this.selectedProvinceId);
+            int color = selectedProvinceEntity.get(Color.class).value();
+            float r = ((color >> 24) & 0xFF) / 255f;
+            float g = ((color >> 16) & 0xFF) / 255f;
+            float b = ((color >> 8) & 0xFF) / 255f;
+            float a = (color & 0xFF) / 255f;
+            this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(r, g, b, a));
+        } else {
+            this.selectedProvinceId = -1;
+            this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(0f, 0f, 0f, 0f));
+        }
+        this.uniformBufferWorld.flush();
+
+        return this.selectedProvinceId != -1;
+    }
+
+    public long getSelectedProvinceId() {
+        return this.selectedProvinceId;
+    }
+
+    public boolean setCountryPlayer() {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        if(this.selectedProvinceId != 0) {
+            Entity selectedProvinceEntity = ecsWorld.obtainEntity(this.selectedProvinceId);
+            Province selectedProvinceData = selectedProvinceEntity.get(Province.class);
+            this.playerCountryId = selectedProvinceData.ownerId();
+            return true;
+        }
+
+        return false;
+    }
+
+    public MapMode getMapMode() {
+        return this.mapMode;
+    }
+
+    public int getNumberOfProvinces() {
+        return this.provinces.size();
+    }
+
+    public int getPopulationAmountOfProvince(long provinceEntityId) {
+        Entity provinceEntity = this.gameContext.getEcsWorld().obtainEntity(provinceEntityId);
+        Province provinceData = provinceEntity.get(Province.class);
+        return provinceData.amountChildren() + provinceData.amountAdults() + provinceData.amountSeniors();
+    }
+
+    public int getPopulationAmountOfCountry(long countryEntityId) {
+        MutableInt population = new MutableInt(0);
+        Query query = this.queryRepository.getProvinces();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                if(provinceView.ownerId() == countryEntityId) {
+                    population.increment(provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors());
+                }
+            }
+        });
+
+        return population.getValue();
+    }
+
+
+    public String getColonizerId(long countryId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+        Entity country = ecsWorld.obtainEntity(countryId);
+        long countryColonizerId = country.target(ecsConstants.isColonyOf());
+        if(countryColonizerId != 0) {
+            Entity colony = ecsWorld.obtainEntity(countryColonizerId);
+            return colony.getName();
+        }
+
+        return null;
+    }
+
+    public String getResourceGoodName(long provinceEntityId) {
+        Entity provinceEntity = this.gameContext.getEcsWorld().obtainEntity(provinceEntityId);
+        ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
+        if(resourceGathering != null) {
+            return this.gameContext.getEcsWorld().obtainEntity(resourceGathering.goodId()).getName();
+        }
+        return null;
+    }
+
+    private FileHandle[] createTerrainTextureFiles() {
+        FileHandle[] terrainTexturePaths = new FileHandle[64];
+        String pathBase = "map/terrain/textures/";
+        for(int i = 0; i < 64; i++) {
+            terrainTexturePaths[i] = Gdx.files.internal(pathBase + "text_" + i + ".png");
+        }
+
+        return terrainTexturePaths;
+    }
+
+    private void updatePixmapCountriesColor() {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+        Query query = this.queryRepository.getProvincesWithColor();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<Color> colorField = iter.field(Color.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                ColorView colorView = colorField.getMutView(i);
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+
+                EntityView countryView = ecsWorld.obtainEntityView(provinceView.ownerId());
+                ColorView countryColor = countryView.getMutView(Color.class);
+
+                long countryColonizerId = countryView.target(ecsConstants.isColonyOf());
+                if(countryColonizerId != 0) {
+                    EntityView colonyView = ecsWorld.obtainEntityView(countryColonizerId);
+                    countryColor = colonyView.getMutView(Color.class);
+                }
+
+                this.mapModePixmap.drawPixel(red, green, countryColor.value());
+            }
+        });
+    }
+
+    private void updatePixmapIdeologiesColor(World ecsWorld) {
+        Query query = this.queryRepository.getProvincesWithColor();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<Color> colorField = iter.field(Color.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                ColorView colorView = colorField.getMutView(i);
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+
+                EntityView countryOwnerView = ecsWorld.obtainEntityView(provinceView.ownerId());
+                CountryView countryOwnerDataView = countryOwnerView.getMutView(Country.class);
+                EntityView ideologyView = ecsWorld.obtainEntityView(countryOwnerDataView.ideologyId());
+                IdeologyView ideologyDataView = ideologyView.getMutView(Ideology.class);
+                this.mapModePixmap.drawPixel(red, green, ideologyDataView.color());
+            }
+        });
+    }
+
+    private void updatePixmapCulturesColor(World ecsWorld) {
+        Query query = this.queryRepository.getProvincesWithColorAndCultureDistribution();
+        query.iter(iter -> {
+            Field<Color> colorField = iter.field(Color.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ColorView colorView = colorField.getMutView(i);
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+
+                long provinceId = iter.entity(i);
+                EntityView provinceView = ecsWorld.obtainEntityView(provinceId);
+                CultureDistributionView cultureDistributionView = provinceView.getMutView(CultureDistribution.class);
+
+                int biggestCultureIndex = -1;
+                int biggestCultureAmount = 0;
+                for(int j = 0; j < cultureDistributionView.populationIdsLength(); j++) {
+                    if(cultureDistributionView.populationIds(j) != 0 && cultureDistributionView.populationAmounts(j) > biggestCultureAmount) {
+                        biggestCultureAmount = cultureDistributionView.populationAmounts(j);
+                        biggestCultureIndex = j;
+                    }
+                }
+                if(biggestCultureIndex != -1) {
+                    long biggestCultureId = cultureDistributionView.populationIds(biggestCultureIndex);
+                    this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestCultureId).get(Color.class)).value());
+                }
+            }
+        });
+    }
+
+    private void updatePixmapReligionsColor(World ecsWorld) {
+        Query query = this.queryRepository.getProvincesWithColorAndReligionDistribution();
+        query.iter(iter -> {
+            Field<Color> colorField = iter.field(Color.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ColorView colorView = colorField.getMutView(i);
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+
+                long provinceId = iter.entity(i);
+                EntityView provinceView = ecsWorld.obtainEntityView(provinceId);
+                ReligionDistributionView religionDistributionView = provinceView.getMutView(ReligionDistribution.class);
+
+                int biggestReligionIndex = -1;
+                int biggestReligionAmount = 0;
+                for(int j = 0; j < religionDistributionView.populationIdsLength(); j++) {
+                    if(religionDistributionView.populationIds(j) != 0 && religionDistributionView.populationAmounts(j) > biggestReligionAmount) {
+                        biggestReligionAmount = religionDistributionView.populationAmounts(j);
+                        biggestReligionIndex = j;
+                    }
+                }
+                if(biggestReligionIndex != -1) {
+                    long biggestReligionId = religionDistributionView.populationIds(biggestReligionIndex);
+                    this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestReligionId).get(Color.class)).value());
+                }
+            }
+        });
+    }
+
+    private void updatePixmapResourcesColor() {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Query queryProvince = this.queryRepository.getProvincesWithColor();
+        queryProvince.iter(iter -> {
+            Field<Color> colorField = iter.field(Color.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ColorView colorView = colorField.getMutView(i);
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
+            }
+        });
+
+        Query queryRgo = this.queryRepository.getProvincesWithColorAndResourceGathering();
+        queryRgo.iter(iter -> {
+            Field<Color> colorField = iter.field(Color.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ColorView colorView = colorField.getMutView(i);
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+
+                long provinceId = iter.entity(i);
+                EntityView provinceView = ecsWorld.obtainEntityView(provinceId);
+                ResourceGatheringView resourceGatheringView = provinceView.getMutView(ResourceGathering.class);
+                long resourceGoodId = resourceGatheringView.goodId();
+                if(resourceGoodId != -1) {
+                    Color goodColor = ecsWorld.obtainEntity(resourceGoodId).get(Color.class);
+                    this.mapModePixmap.drawPixel(red, green, goodColor.value());
+                }
+            }
+        });
+    }
+
+    private void updatePixmapRegionColor() {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Query query = this.queryRepository.getProvincesWithColorAndGeoHierarchy();
+        query.iter(iter -> {
+            Field<Color> colorField = iter.field(Color.class, 1);
+            Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 2);
+            for(int i = 0; i < iter.count(); i++) {
+                ColorView colorView = colorField.getMutView(i);
+                GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+                EntityView regionView = ecsWorld.obtainEntityView(geoHierarchyView.regionId());
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getDeterministicRGBA(regionView.getName()));
+            }
+        });
+    }
+
+    private void updatePixmapTerrainColor() {
+        Query query = this.queryRepository.getProvincesWithColor();
+        query.iter(iter -> {
+            Field<Color> colorField = iter.field(Color.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ColorView colorView = colorField.getMutView(i);
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
+            }
+        });
+    }
+
+    private void updatePixmapTerrain2Color(World ecsWorld) {
+        Query query = this.queryRepository.getProvincesWithColor();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<Color> colorField = iter.field(Color.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                ColorView colorView = colorField.getMutView(i);
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+
+                EntityView terrainView = ecsWorld.obtainEntityView(provinceView.terrainId());
+                TerrainView terrainDataView = terrainView.getMutView(Terrain.class);
+                this.mapModePixmap.drawPixel(red, green, terrainDataView.color());
+            }
+        });
+    }
+
+    private void updatePixmapPopulationColor() {
+        MutableInt maxPopulation = new MutableInt(0);
+
+        Query query = this.queryRepository.getProvinces();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                int pop = provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors();
+                if(pop > maxPopulation.getValue()) {
+                    maxPopulation.setValue(pop);
+                }
+            }
+        });
+
+        Query queryProvincesColor = this.queryRepository.getProvincesWithColor();
+        queryProvincesColor.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<Color> colorField = iter.field(Color.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                ColorView colorView = colorField.getMutView(i);
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+
+                int pop = provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors();
+                float ratio = (maxPopulation.getValue() > 0) ? (float) pop / maxPopulation.getValue() : 0f;
+                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getMagmaColorRGBA(ratio));
+            }
+        });
+    }
+
+
+    private void updatePixmapRelationsColor() {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity playerCountryEntity = ecsWorld.obtainEntity(this.playerCountryId);
+
+        Query query = this.queryRepository.getProvincesWithColor();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<Color> colorField = iter.field(Color.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                ColorView colorView = colorField.getMutView(i);
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+
+                if(this.playerCountryId == provinceView.ownerId()) {
+                    this.mapModePixmap.drawPixel(red, green, ColorGenerator.getLightBlueRGBA());
+                } else if (provinceView.ownerId() != 0) {
+                    DiplomaticRelationView relationView = playerCountryEntity.getMutView(DiplomaticRelation.class, provinceView.ownerId());
+                    if (relationView != null) {
+                        this.mapModePixmap.drawPixel(red, green, ColorGenerator.getRedToGreenGradientRGBA(relationView.value(), 200));
+                    } else {
+                        this.mapModePixmap.drawPixel(red, green, ColorGenerator.getGreyRGBA());
+                    }
+                } else {
+                    this.mapModePixmap.drawPixel(red, green, ColorGenerator.getGreyRGBA());
+                }
+            }
+        });
+    }
+
+    private Pixmap createProvincesColorStripesPixmap() {
+        Pixmap pixmap = new Pixmap(256, 256, Pixmap.Format.RGBA8888);
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Query query = this.queryRepository.getProvincesWithColor();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<Color> colorField = iter.field(Color.class, 1);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                if(provinceView.ownerId() == provinceView.controllerId()) {
+                    continue;
+                }
+                ColorView colorView = colorField.getMutView(i);
+                EntityView countryView = ecsWorld.obtainEntityView(provinceView.controllerId());
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+                ColorView countryColorView = countryView.getMutView(Color.class);
+                pixmap.drawPixel(red, green, countryColorView.value());
+            }
+        });
+
+        return pixmap;
+    }
+
+    private void updateBordersProvincesPixmap() {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        int[] xyBorders = this.borders.getPixels();
+        Query provinceQuery = this.queryRepository.getProvincesWithBorderAndGeoHierarchy();
+        provinceQuery.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            Field<Border> borderField = iter.field(Border.class, 1);
+            Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 2);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                BorderView borderView = borderField.getMutView(i);
+                GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+                for(int j = borderView.startIndex(); j < borderView.endIndex(); j = j + 2) {
+                    int x = xyBorders[j];
+                    int y = xyBorders[j + 1];
+
+                    int color = this.provincesPixmap.getPixel(x, y);
+                    int red = (color >> 24) & 0xFF;
+                    int green = (color >> 16) & 0xFF;
+                    int blue = (color >> 8) & 0xFF;
+
+                    color = (red << 24) | (green << 16) | (blue << 8) | this.getBorderType(ecsWorld, x, y, provinceView.ownerId(), geoHierarchyView.regionId());
+                    this.provincesPixmap.drawPixel(x, y, color);
+                }
+            }
+        });
+    }
+
+    private int getBorderType(World ecsWorld, int x, int y, long countryId, long regionId) {
+        long provinceRightId = this.getLandProvinceId((x + 1), y);
+        if(provinceRightId == 0) {
+            return 0; // water, nothing or province border
+        }
+        Entity provinceRight = ecsWorld.obtainEntity(provinceRightId);
+        Province provinceRightData = provinceRight.get(Province.class);
+        long provinceLeftId = this.getLandProvinceId((x - 1), y);
+        if(provinceLeftId == 0) {
+            return 0; // water, nothing or province border
+        }
+        Entity provinceLeft = ecsWorld.obtainEntity(provinceLeftId);
+        Province provinceLeftData = provinceLeft.get(Province.class);
+        long provinceUpId = this.getLandProvinceId(x, (y + 1));
+        if(provinceUpId == 0) {
+            return 0; // water, nothing or province border
+        }
+        Entity provinceUp = ecsWorld.obtainEntity(provinceUpId);
+        Province provinceUpData = provinceUp.get(Province.class);
+        long provinceDownId = this.getLandProvinceId(x, (y - 1));
+        if(provinceDownId == 0) {
+            return 0; // water, nothing or province border
+        }
+        Entity provinceDown = ecsWorld.obtainEntity(provinceDownId);
+        Province provinceDownData = provinceDown.get(Province.class);
+
+        if (provinceRightData.ownerId() != countryId || provinceLeftData.ownerId() != countryId || provinceUpData.ownerId() != countryId || provinceDownData.ownerId() != countryId) {
+            return 153; // country border
+        } else if (provinceRight.get(GeoHierarchy.class).regionId() != regionId || provinceLeft.get(GeoHierarchy.class).regionId() != regionId || provinceUp.get(GeoHierarchy.class).regionId() != regionId || provinceDown.get(GeoHierarchy.class).regionId() != regionId) {
+            return 77; // region border
+        } else {
+            return 0; // water, nothing or province border
+        }
+    }
+
+    public void changeMapMode(String mapMode) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        switch(mapMode) {
+            case "mapmode_political":
+                this.updatePixmapCountriesColor();
+                this.mapMode = MapMode.POLITICAL;
+                break;
+            case "mapmode_strength":
+                this.updatePixmapIdeologiesColor(ecsWorld);
+                this.mapMode = MapMode.IDEOLOGICAL;
+                break;
+            case "mapmode_diplomatic":
+                this.updatePixmapCulturesColor(ecsWorld);
+                this.mapMode = MapMode.CULTURAL;
+                break;
+            case "mapmode_intel":
+                this.updatePixmapReligionsColor(ecsWorld);
+                this.mapMode = MapMode.RELIGIOUS;
+                break;
+            case "mapmode_terrain":
+                this.updatePixmapTerrainColor();
+                this.mapMode = MapMode.TERRAIN;
+                break;
+            case "mapmode_terrain_2":
+                this.updatePixmapTerrain2Color(ecsWorld);
+                this.mapMode = MapMode.TERRAIN_2;
+                break;
+            case "mapmode_resources":
+                this.updatePixmapResourcesColor();
+                this.mapMode = MapMode.RESOURCES;
+                break;
+            case "mapmode_region":
+                this.updatePixmapRegionColor();
+                this.mapMode = MapMode.REGION;
+                break;
+            case "mapmode_theatre":
+                this.updatePixmapRelationsColor();
+                this.mapMode = MapMode.RELATIONS;
+                break;
+            case "mapmode_weather":
+                this.updatePixmapPopulationColor();
+                this.mapMode = MapMode.POPULATION;
+                break;
+        }
+
+        this.mapModeTexture.dispose();
+        PixmapTextureData mapModeTextureData = new PixmapTextureData(this.mapModePixmap, Pixmap.Format.RGBA8888, false, false);
+        this.mapModeTexture = new WgTexture(mapModeTextureData, "mapModeTexture", false);
+        this.mapModeTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        this.binderProvinces.setTexture("textureMapMode", this.mapModeTexture.getTextureView());
+        this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
+        this.binderProvinces.setUniform("showTerrain", this.mapMode == MapMode.TERRAIN ? 1 : 0);
+        this.uniformBufferWorld.flush();
+    }
+
+    private WgMesh generateMeshProvinces(VertexAttributes vertexAttributes) {
+        float[] vertices = new float[] {
+            0, 0, 0, 0,
+            WORLD_WIDTH, 0, 1, 0,
+            WORLD_WIDTH, WORLD_HEIGHT, 1, 1,
+            0, WORLD_HEIGHT, 0, 1
+        };
+
+        short[] indices = new short[] {
+            0, 1, 2,
+            2, 3, 0
+        };
+
+        WgMesh mesh = new WgMesh(true, vertices.length / 4, indices.length, vertexAttributes);
+        mesh.setVertices(vertices);
+        mesh.setIndices(indices);
+
+        return mesh;
+    }
+
+    private WgMesh generateMeshMapLabels(VertexAttributes vertexAttributes, Map<String, String> localisation, LabelStylePool labelStylePool) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        MapLabelService mapLabelService = new MapLabelService(labelStylePool.getLabelStyle("kart_60").font);
+        FloatList vertices = new FloatList();
+        ShortList indices = new ShortList();
+        Query query = this.queryRepository.getCountries();
+        query.each(countryId -> {
+            Entity country = ecsWorld.obtainEntity(countryId);
+            String countryNameId = country.getName();
+            this.getLabelsData(
+                ecsWorld,
+                countryId,
+                LocalisationUtils.getCountryNameLocalisation(localisation, countryNameId, this.getColonizerId(country.id())),
+                mapLabelService,
+                vertices,
+                indices,
+                this.borders
+            );
+        });
+
+        WgMesh mesh = new WgMesh(false, vertices.size() / 4, indices.size(), vertexAttributes);
+        mesh.setVertices(vertices.toArray());
+        mesh.setIndices(indices.toArray());
+
+        return mesh;
+    }
+
+    private void getLabelsData(World ecsWorld, long countryId, String countryName, MapLabelService mapLabelService, FloatList vertices, ShortList indices, Borders borders) {
+        LongSet visitedProvinces = new LongSet();
+        com.github.elebras1.flecs.collection.LongList provinceIds = new com.github.elebras1.flecs.collection.LongList();
+
+        Query query = this.queryRepository.getProvinces();
+        query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
+            for(int i = 0; i < iter.count(); i++) {
+                ProvinceView provinceView = provinceField.getMutView(i);
+                if(provinceView.ownerId() == countryId) {
+                    long provinceEntityId = iter.entity(i);
+                    provinceIds.add(provinceEntityId);
+                }
+            }
+        });
+
+        for (int i = 0; i < provinceIds.size(); i++) {
+            long provinceId = provinceIds.get(i);
+            if (!visitedProvinces.contains(provinceId)) {
+                LongList connectedProvinces = new LongList();
+                this.getConnectedProvinces(ecsWorld, countryId, provinceId, visitedProvinces, connectedProvinces);
+                if(connectedProvinces.size() > 5 || (connectedProvinces.size() == provinceIds.size() && !connectedProvinces.isEmpty())) {
+                    IntList positionsProvinces = new IntList();
+                    IntList pixelsBorderProvinces = new IntList();
+                    for(int j = 0; j < connectedProvinces.size(); j++) {
+                        long connectedProvinceId = connectedProvinces.get(j);
+                        Entity connectedProvince = ecsWorld.obtainEntity(connectedProvinceId);
+                        Border border = connectedProvince.get(Border.class);
+                        long positionEntityId = ecsWorld.lookup("province_" + connectedProvince.getName() + "_pos_default");
+                        Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
+                        Position position = positionEntity.get(Position.class);
+                        positionsProvinces.add(position.x());
+                        positionsProvinces.add(position.y());
+                        pixelsBorderProvinces.addAll(Arrays.copyOfRange(borders.getPixels(), border.startIndex(), border.endIndex()));
+                    }
+                    mapLabelService.generateData(countryName, pixelsBorderProvinces, positionsProvinces, vertices, indices);
+                }
+            }
+        }
+    }
+
+    private void getConnectedProvinces(World ecsWorld, long countryId, long startProvinceId, LongSet visitedProvinceIds, LongList connectedProvinceIds) {
+        LongList toProcess = new LongList();
+        toProcess.add(startProvinceId);
+
+        visitedProvinceIds.add(startProvinceId);
+        connectedProvinceIds.add(startProvinceId);
+
+        while (!toProcess.isEmpty()) {
+            long currentId = toProcess.pop();
+            Entity currentEntity = ecsWorld.obtainEntity(currentId);
+            Adjacencies adjacencies = currentEntity.get(Adjacencies.class);
+
+            if (adjacencies == null || adjacencies.provinceIds() == null) {
+                continue;
+            }
+
+            for (int i = 0; i < adjacencies.provinceIds().length; i++) {
+                long neighborId = adjacencies.provinceIds()[i];
+                if (neighborId == 0 || visitedProvinceIds.contains(neighborId)) {
+                    continue;
+                }
+                Entity neighborEntity = ecsWorld.obtainEntity(neighborId);
+                if (!neighborEntity.has(Province.class)) {
+                    continue;
+                }
+                Province neighborProvinceData = neighborEntity.get(Province.class);
+                long ownerEntityId = neighborProvinceData.ownerId();
+                if (ownerEntityId != 0 && ownerEntityId == countryId) {
+                    visitedProvinceIds.add(neighborId);
+                    connectedProvinceIds.add(neighborId);
+                    toProcess.add(neighborId);
+                }
+            }
+        }
+    }
+
+    private WgMesh generateMeshBuildings(VertexAttributes vertexAttributes) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        EcsConstants ecsConstants = this.gameContext.getEcsConstants();
+
+        MutableInt numBuildings = new MutableInt(0);
+
+        Set<Long> countriesWithProvinces = new HashSet<>();
+        LongObjectMap<LongList> buildingsByProvince = new LongObjectMap<>();
+
+        Query provinceQuery = this.queryRepository.getProvinces();
+        provinceQuery.each(provinceEntityId -> {
+            EntityView provinceView = ecsWorld.obtainEntityView(provinceEntityId);
+            ProvinceView provinceDataView = provinceView.getMutView(Province.class);
+            countriesWithProvinces.add(provinceDataView.ownerId());
+            buildingsByProvince.put(provinceEntityId, new LongList());
+        });
+
+        Query buildingQuery = this.queryRepository.getBuildings();
+        buildingQuery.iter(iter -> {
+            Field<Building> buildingField = iter.field(Building.class, 0);
+            for (int i = 0; i < iter.count(); i++) {
+                BuildingView buildingView = buildingField.getMutView(i);
+                long buildingEntityId = iter.entity(i);
+                EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
+                if (buildingTypeView.has(ecsConstants.onMap())) {
+                    LongList buildings = buildingsByProvince.get(buildingView.parentId());
+                    if (buildings != null) {
+                        buildings.add(buildingEntityId);
+                        numBuildings.increment();
+                    }
+                }
+            }
+        });
+
+        Query countryQuery = this.queryRepository.getCountries();
+        countryQuery.each(countryEntityId -> {
+            EntityView countryView = ecsWorld.obtainEntityView(countryEntityId);
+            CountryView countryDataView = countryView.getMutView(Country.class);
+
+            if (countryDataView.capitalId() != 0 && countriesWithProvinces.contains(countryEntityId)) {
+                numBuildings.increment();
+            }
+        });
+
+        int nb = numBuildings.getValue();
+        float[] vertices = new float[nb * 4 * 4];
+        short[] indices = new short[nb * 6];
+
+        final MutableInt vertexIndex = new MutableInt(0);
+        final MutableInt indexIndex = new MutableInt(0);
+        final MutableInt vertexOffset = new MutableInt(0);
+
+        int width = 6;
+        int height = 6;
+
+        TextureRegion capitalRegion = this.mapElementsTextureAtlas.findRegion("building_capital");
+
+        Query provinceBuildingQuery = this.queryRepository.getProvinces();
+        provinceBuildingQuery.each(provinceEntityId -> {
+            Entity province = ecsWorld.obtainEntity(provinceEntityId);
+            String provinceNameId = province.getName();
+            LongList buildings = buildingsByProvince.get(provinceEntityId);
+            if (buildings == null) {
+                return;
+            }
+
+            for (int bi = 0; bi < buildings.size(); bi++) {
+                long buildingEntityId = buildings.get(bi);
+                Entity building = ecsWorld.obtainEntity(buildingEntityId);
+                Building buildingData = building.get(Building.class);
+                Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
+                String buildingName = buildingType.getName();
+
+                TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_" + buildingName + "_empty");
+
+                long buildingPositionEntityId = ecsWorld.lookup("province_" + provinceNameId + "_pos_" + buildingName);
+                Entity buildingPositionEntity = ecsWorld.obtainEntity(buildingPositionEntityId);
+                Position pos = buildingPositionEntity.get(Position.class);
+                int bx = pos.x();
+                int by = pos.y();
+
+                this.addVerticesIndicesBuilding(vertices, indices, vertexIndex.getValue(), indexIndex.getValue(), (short) vertexOffset.getValue(), bx, by, width, height, buildingRegion);
+
+                vertexIndex.increment(16);
+                indexIndex.increment(6);
+                vertexOffset.increment(4);
+            }
+        });
+
+        Query countryCapitalQuery = this.queryRepository.getCountries();
+        countryCapitalQuery.each(countryEntityId -> {
+            Entity countryEntity = ecsWorld.obtainEntity(countryEntityId);
+            Country countryData = countryEntity.get(Country.class);
+
+            if (countryData.capitalId() != 0 && countriesWithProvinces.contains(countryEntityId)) {
+                Entity capitalProvinceEntity = ecsWorld.obtainEntity(countryData.capitalId());
+                long positionEntityId = ecsWorld.lookup("province_" + capitalProvinceEntity.getName() + "_pos_default");
+                Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
+                Position position = positionEntity.get(Position.class);
+                int cx = position.x();
+                int cy = position.y();
+
+                this.addVerticesIndicesBuilding(vertices, indices, vertexIndex.getValue(), indexIndex.getValue(), (short) vertexOffset.getValue(), cx, cy, width, height, capitalRegion);
+
+                vertexIndex.increment(16);
+                indexIndex.increment(6);
+                vertexOffset.increment(4);
+            }
+        });
+
+        WgMesh mesh = new WgMesh(true, vertices.length / 4, indices.length, vertexAttributes);
+        mesh.setVertices(vertices);
+        mesh.setIndices(indices);
+
+        return mesh;
+    }
+
+    private void addVerticesIndicesBuilding(float[] vertices, short[] indices, int vertexIndex, int indexIndex, short vertexOffset, int x, int y, int width, int height, TextureRegion region) {
+        int x1 = x - (width / 2);
+        int y1 = y - (height / 2);
+        int x2 = x1 + width;
+        int y2 = y1 + height;
+
+        float u1 = region.getU();
+        float v1 = region.getV2();
+        float u2 = region.getU2();
+        float v2 = region.getV();
+
+        vertices[vertexIndex++] = x1;
+        vertices[vertexIndex++] = y1;
+        vertices[vertexIndex++] = u1;
+        vertices[vertexIndex++] = v1;
+
+        vertices[vertexIndex++] = x2;
+        vertices[vertexIndex++] = y1;
+        vertices[vertexIndex++] = u2;
+        vertices[vertexIndex++] = v1;
+
+        vertices[vertexIndex++] = x2;
+        vertices[vertexIndex++] = y2;
+        vertices[vertexIndex++] = u2;
+        vertices[vertexIndex++] = v2;
+
+        vertices[vertexIndex++] = x1;
+        vertices[vertexIndex++] = y2;
+        vertices[vertexIndex++] = u1;
+        vertices[vertexIndex] = v2;
+
+        indices[indexIndex++] = vertexOffset;
+        indices[indexIndex++] = (short) (vertexOffset + 1);
+        indices[indexIndex++] = (short) (vertexOffset + 2);
+        indices[indexIndex++] = (short) (vertexOffset + 2);
+        indices[indexIndex++] = (short) (vertexOffset + 3);
+        indices[indexIndex] = vertexOffset;
+    }
+
+    private WgMesh generateMeshResources(VertexAttributes vertexAttributes) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        MutableInt numProvinces = new MutableInt(0);
+        Query queryCount = this.queryRepository.getProvincesWithResourceGathering();
+        queryCount.iter(iter -> {
+            for(int i = 0; i < iter.count(); i++) {
+                long provinceEntityId = iter.entity(i);
+                Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+                ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
+                if(resourceGathering.goodId() != -1) {
+                    numProvinces.increment();
+                }
+            }
+        });
+
+        float[] vertices = new float[numProvinces.getValue() * 4 * 6];
+        short[] indices = new short[numProvinces.getValue() * 6];
+
+        final MutableInt vertexIndex = new MutableInt(0);
+        final MutableInt indexIndex = new MutableInt(0);
+        final MutableInt vertexOffset = new MutableInt(0);
+
+        int width = 13;
+        int height = 10;
+
+        Query query = this.queryRepository.getProvincesWithResourceGathering();
+        query.iter(iter -> {
+            for(int i = 0; i < iter.count(); i++) {
+                long provinceEntityId = iter.entity(i);
+                Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
+                ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
+                long provinceResourceGoodId = resourceGathering.goodId();
+                if(provinceResourceGoodId == -1) {
+                    continue;
+                }
+                TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + ecsWorld.obtainEntity(provinceResourceGoodId).getName());
+
+                long positionEntityId = ecsWorld.lookup("province_" + provinceEntity.getName() + "_pos_default");
+                Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
+                Position position = positionEntity.get(Position.class);
+                int cx = position.x();
+                int cy = position.y();
+
+                int x = cx - (width / 2);
+                int y = cy - (height / 2);
+
+                float u1 = resourceRegion.getU();
+                float v1 = resourceRegion.getV2();
+                float u2 = resourceRegion.getU2();
+                float v2 = resourceRegion.getV();
+
+                int vIdx = vertexIndex.getValue();
+                vertices[vIdx++] = x;
+                vertices[vIdx++] = y;
+                vertices[vIdx++] = u1;
+                vertices[vIdx++] = v1;
+                vertices[vIdx++] = cx;
+                vertices[vIdx++] = cy;
+
+                vertices[vIdx++] = x + width;
+                vertices[vIdx++] = y;
+                vertices[vIdx++] = u2;
+                vertices[vIdx++] = v1;
+                vertices[vIdx++] = cx;
+                vertices[vIdx++] = cy;
+
+                vertices[vIdx++] = x + width;
+                vertices[vIdx++] = y + height;
+                vertices[vIdx++] = u2;
+                vertices[vIdx++] = v2;
+                vertices[vIdx++] = cx;
+                vertices[vIdx++] = cy;
+
+                vertices[vIdx++] = x;
+                vertices[vIdx++] = y + height;
+                vertices[vIdx++] = u1;
+                vertices[vIdx++] = v2;
+                vertices[vIdx++] = cx;
+                vertices[vIdx++] = cy;
+                vertexIndex.setValue(vIdx);
+
+                int iIdx = indexIndex.getValue();
+                short vOff = (short) vertexOffset.getValue();
+                indices[iIdx++] = vOff;
+                indices[iIdx++] = (short) (vOff + 1);
+                indices[iIdx++] = (short) (vOff + 2);
+
+                indices[iIdx++] = (short) (vOff + 2);
+                indices[iIdx++] = (short) (vOff + 3);
+                indices[iIdx++] = vOff;
+                indexIndex.setValue(iIdx);
+
+                vertexOffset.increment(4);
+            }
+        });
+
+        WgMesh mesh = new WgMesh(true, vertices.length / 6, indices.length, false, vertexAttributes);
+
+        mesh.setVertices(vertices);
+        mesh.setIndices(indices);
+
+        return mesh;
+    }
+
+    private WgMeshMulti generateMeshRivers(VertexAttributes vertexAttributes) {
+        RawMeshMulti rawMesh = this.mapDao.readRiversMeshJson();
+
+        WgMeshMulti mesh = new WgMeshMulti(true, rawMesh.vertices().length / 5, 0, vertexAttributes);
+        mesh.setVertices(rawMesh.vertices());
+        mesh.setIndirectCommands(rawMesh.starts(), rawMesh.counts());
+
+        return mesh;
+    }
+
+    private Binder createBinderProvinces() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutProvinces());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("textureProvinces", 0, 1);
+        binder.defineBinding("textureProvincesSampler", 0, 2);
+        binder.defineBinding("textureMapMode", 0, 3);
+        binder.defineBinding("textureMapModeSampler", 0, 4);
+        binder.defineBinding("textureColorMapWater", 0, 5);
+        binder.defineBinding("textureColorMapWaterSampler", 0, 6);
+        binder.defineBinding("textureWaterNormal", 0, 7);
+        binder.defineBinding("textureWaterNormalSampler", 0, 8);
+        binder.defineBinding("textureTerrain", 0, 9);
+        binder.defineBinding("textureTerrainSampler", 0, 10);
+        binder.defineBinding("textureTerrainsheet", 0, 11);
+        binder.defineBinding("textureTerrainsheetSampler", 0, 12);
+        binder.defineBinding("textureColormap", 0, 13);
+        binder.defineBinding("textureColormapSampler", 0, 14);
+        binder.defineBinding("textureProvincesStripes", 0, 15);
+        binder.defineBinding("textureProvincesStripesSampler", 0, 16);
+        binder.defineBinding("textureStripes", 0, 17);
+        binder.defineBinding("textureStripesSampler", 0, 18);
+        binder.defineBinding("textureOverlayTile", 0, 19);
+        binder.defineBinding("textureOverlayTileSampler", 0, 20);
+
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
+
+        return binder;
+    }
+
+    private Binder createBinderMapLabels() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutMapLabels());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("texture", 0, 1);
+        binder.defineBinding("textureSampler", 0, 2);
+
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
+
+        return binder;
+    }
+
+    private Binder createBinderBuildings() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutBuildings());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("texture", 0, 1);
+        binder.defineBinding("textureSampler", 0, 2);
+
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
+
+        return binder;
+    }
+
+    private Binder createBinderResources() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutResources());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("texture", 0, 1);
+        binder.defineBinding("textureSampler", 0, 2);
+
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
+
+        return binder;
+    }
+
+    private Binder createBinderRivers() {
+        Binder binder = new Binder();
+        binder.defineGroup(0, this.createBindGroupLayoutRivers());
+
+        binder.defineBinding("uniforms", 0, 0);
+        binder.defineBinding("texture", 0, 1);
+        binder.defineBinding("textureSampler", 0, 2);
+        binder.defineBinding("textureColorMapWater", 0, 3);
+        binder.defineBinding("textureColorMapWaterSampler", 0, 4);
+
+        int offset = 0;
+        binder.defineUniform("projTrans", 0, 0, offset);
+        offset += 16 * Float.BYTES;
+        binder.defineUniform("worldWidth", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("zoom", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("time", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("showTerrain", 0, 0, offset);
+        offset += Float.BYTES;
+        binder.defineUniform("colorProvinceSelected", 0, 0, offset);
+
+        binder.setBuffer("uniforms", this.uniformBufferWorld, 0, this.uniformBufferSizeWorld);
+
+        return binder;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayoutProvinces() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout provinces");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(3, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(4, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(5, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(6, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(7, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(8, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(9, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(10, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(11, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2DArray, false);
+        layout.addSampler(12, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(13, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(14, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(15, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(16, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(17, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(18, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(19, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(20, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayoutMapLabels() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout map labels");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayoutBuildings() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout buildings");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayoutResources() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout resources");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUBindGroupLayout createBindGroupLayoutRivers() {
+        WebGPUBindGroupLayout layout = new WebGPUBindGroupLayout("bind group layout rivers");
+        layout.begin();
+        layout.addBuffer(0, WGPUShaderStage.Vertex.or(WGPUShaderStage.Fragment), WGPUBufferBindingType.Uniform, this.uniformBufferSizeWorld, false);
+        layout.addTexture(1, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(2, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.addTexture(3, WGPUShaderStage.Fragment, WGPUTextureSampleType.Float, WGPUTextureViewDimension._2D, false);
+        layout.addSampler(4, WGPUShaderStage.Fragment, WGPUSamplerBindingType.Filtering);
+        layout.end();
+        return layout;
+    }
+
+    private WebGPUPipeline createPipelineProvinces(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline";
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderProvinces.getPipelineLayout("pipeline layout provinces"), pipelineSpec);
+    }
+
+    private WebGPUPipeline createPipelineMapLabels(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline map labels";
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderMapLabels.getPipelineLayout("pipeline layout map labels"), pipelineSpec);
+    }
+
+    private WebGPUPipeline createPipelineBuildings(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline";
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderBuildings.getPipelineLayout("pipeline layout buildings"), pipelineSpec);
+    }
+
+    private WebGPUPipeline createPipelineResources(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline resources";
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderResources.getPipelineLayout("pipeline layout resources"), pipelineSpec);
+    }
+
+    private WebGPUPipeline createPipelineRivers(VertexAttributes vertexAttributes, String shaderSource) {
+        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        pipelineSpec.name = "pipeline rivers";
+        pipelineSpec.topology = WGPUPrimitiveTopology.TriangleStrip;
+        pipelineSpec.enableBlending();
+        return new WebGPUPipeline(this.binderRivers.getPipelineLayout("pipeline layout rivers"), pipelineSpec);
+    }
+
+    private void bindStaticTextures() {
+        this.binderProvinces.setTexture("textureProvinces", this.provincesTexture.getTextureView());
+        this.binderProvinces.setSampler("textureProvincesSampler", this.provincesTexture.getSampler());
+        this.binderProvinces.setTexture("textureMapMode", this.mapModeTexture.getTextureView());
+        this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
+        this.binderProvinces.setTexture("textureColorMapWater", this.colorMapWaterTexture.getTextureView());
+        this.binderProvinces.setSampler("textureColorMapWaterSampler", this.colorMapWaterTexture.getSampler());
+        this.binderProvinces.setTexture("textureWaterNormal", this.waterTexture.getTextureView());
+        this.binderProvinces.setSampler("textureWaterNormalSampler", this.waterTexture.getSampler());
+        this.binderProvinces.setTexture("textureTerrain", this.terrainTexture.getTextureView());
+        this.binderProvinces.setSampler("textureTerrainSampler", this.terrainTexture.getSampler());
+        this.binderProvinces.setTexture("textureTerrainsheet", this.terrainSheetArray.getTextureView());
+        this.binderProvinces.setSampler("textureTerrainsheetSampler", this.terrainSheetArray.getSampler());
+        this.binderProvinces.setTexture("textureColormap", this.colorMapTexture.getTextureView());
+        this.binderProvinces.setSampler("textureColormapSampler", this.colorMapTexture.getSampler());
+        this.binderProvinces.setTexture("textureProvincesStripes", this.provincesStripesTexture.getTextureView());
+        this.binderProvinces.setSampler("textureProvincesStripesSampler", this.provincesStripesTexture.getSampler());
+        this.binderProvinces.setTexture("textureStripes", this.stripesTexture.getTextureView());
+        this.binderProvinces.setSampler("textureStripesSampler", this.stripesTexture.getSampler());
+        this.binderProvinces.setTexture("textureOverlayTile", this.overlayTileTexture.getTextureView());
+        this.binderProvinces.setSampler("textureOverlayTileSampler", this.overlayTileTexture.getSampler());
+        this.binderProvinces.setUniform("worldWidth", (float) WORLD_WIDTH);
+        this.binderProvinces.setUniform("colorProvinceSelected", this.selectedProvinceColor.set(0f, 0f, 0f, 0f));
+
+        this.binderMapLabels.setTexture("texture", ((WgTexture) this.fontMapLabelRegion.getTexture()).getTextureView());
+        this.binderMapLabels.setSampler("textureSampler", ((WgTexture) this.fontMapLabelRegion.getTexture()).getSampler());
+        this.binderMapLabels.setUniform("worldWidth", (float) WORLD_WIDTH);
+
+        this.binderBuildings.setTexture("texture", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getTextureView());
+        this.binderBuildings.setSampler("textureSampler", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getSampler());
+        this.binderBuildings.setUniform("worldWidth", (float) WORLD_WIDTH);
+
+        this.binderResources.setTexture("texture", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getTextureView());
+        this.binderResources.setSampler("textureSampler", ((WgTexture) this.mapElementsTextureAtlas.getTextures().first()).getSampler());
+        this.binderResources.setUniform("worldWidth", (float) WORLD_WIDTH);
+
+        this.binderRivers.setTexture("texture", this.riverBodyTexture.getTextureView());
+        this.binderRivers.setSampler("textureSampler", this.riverBodyTexture.getSampler());
+        this.binderRivers.setTexture("textureColorMapWater", this.colorMapWaterTexture.getTextureView());
+        this.binderRivers.setSampler("textureColorMapWaterSampler", this.colorMapWaterTexture.getSampler());
+        this.binderRivers.setUniform("worldWidth", (float) WORLD_WIDTH);
+        this.uniformBufferWorld.flush();
+    }
+
+    public void render(WgProjection projection, OrthographicCamera cam, float time) {
+        this.binderProvinces.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderProvinces.setUniform("zoom", cam.zoom);
+        this.binderProvinces.setUniform("time", time);
+        this.binderMapLabels.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderMapLabels.setUniform("zoom", cam.zoom);
+        this.binderBuildings.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderResources.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderResources.setUniform("zoom", cam.zoom);
+        this.binderRivers.setUniform("projTrans", projection.getCombinedMatrix());
+        this.binderRivers.setUniform("zoom", cam.zoom);
+        this.binderRivers.setUniform("time", time);
+        this.uniformBufferWorld.flush();
+
+        this.renderMeshProvinces();
+        this.renderMeshRivers();
+        this.renderMeshMapLabels();
+        if(cam.zoom <= 0.8f) {
+            this.renderMeshBuildings();
+        }
+        if(this.mapMode == MapMode.RESOURCES && cam.zoom <= 0.8f) {
+            this.renderMeshResources();
+        }
+    }
+
+    private void renderMeshProvinces() {
+        WebGPURenderPass pass = RenderPassBuilder.create("Provinces pass");
+        pass.setPipeline(this.pipelineProvinces);
+        this.binderProvinces.bindGroup(pass, 0);
+
+        this.meshProvinces.render(pass, GL20.GL_TRIANGLES, 0, this.meshProvinces.getNumIndices(), 3, 0);
+
+        pass.end();
+    }
+
+    private void renderMeshMapLabels() {
+        WebGPURenderPass pass = RenderPassBuilder.create("Map labels pass");
+        pass.setPipeline(this.pipelineMapLabels);
+        this.binderMapLabels.bindGroup(pass, 0);
+
+        this.meshMapLabels.render(pass, GL20.GL_TRIANGLES, 0, this.meshMapLabels.getNumIndices(), 3, 0);
+
+        pass.end();
+    }
+
+    private void renderMeshBuildings() {
+        WebGPURenderPass pass = RenderPassBuilder.create("Buildings pass");
+        pass.setPipeline(this.pipelineBuildings);
+        this.binderBuildings.bindGroup(pass, 0);
+
+        this.meshBuildings.render(pass, GL20.GL_TRIANGLES, 0, this.meshBuildings.getNumIndices(), 3, 0);
+
+        pass.end();
+    }
+
+    private void renderMeshResources() {
+        WebGPURenderPass pass = RenderPassBuilder.create("Resources pass");
+        pass.setPipeline(this.pipelineResources);
+        this.binderResources.bindGroup(pass, 0);
+
+        this.meshResources.render(pass, GL20.GL_TRIANGLES, 0, this.meshResources.getNumIndices(), 3, 0);
+
+        pass.end();
+    }
+
+    private void renderMeshRivers() {
+        WebGPURenderPass pass = RenderPassBuilder.create("Rivers pass");
+        pass.setPipeline(this.pipelineRivers);
+        this.binderRivers.bindGroup(pass, 0);
+
+        this.meshRivers.render(pass, GL20.GL_TRIANGLE_STRIP, this.meshRivers.getNumIndices(), 0, 3, 0);
+
+        pass.end();
+    }
+
+    @Override
+    public void dispose() {
+        this.waterTexture.dispose();
+        this.colorMapWaterTexture.dispose();
+        this.provincesTexture.dispose();
+        this.mapModeTexture.dispose();
+        this.provincesStripesTexture.dispose();
+        this.terrainTexture.dispose();
+        this.stripesTexture.dispose();
+        this.overlayTileTexture.dispose();
+        this.colorMapTexture.dispose();
+        this.terrainSheetArray.dispose();
+        this.mapModePixmap.dispose();
+        this.provincesPixmap.dispose();
+        this.provincesColorStripesPixmap.dispose();
+        this.mapElementsTextureAtlas.dispose();
+        this.meshProvinces.dispose();
+        this.meshMapLabels.dispose();
+        this.meshBuildings.dispose();
+        this.meshResources.dispose();
+        this.binderProvinces.dispose();
+        this.binderMapLabels.dispose();
+        this.binderBuildings.dispose();
+        this.binderResources.dispose();
+        this.uniformBufferWorld.dispose();
+        this.pipelineProvinces.dispose();
+        this.pipelineMapLabels.dispose();
+        this.pipelineBuildings.dispose();
+        this.pipelineResources.dispose();
+    }
+}

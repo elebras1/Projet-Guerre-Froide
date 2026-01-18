@@ -72,7 +72,7 @@
     },
     "unit_names": "",
     "ministers": {
-        "205": {
+        "Wilhelmina_1": {
             "name": "Wilhelmina",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -81,7 +81,7 @@
             "death_date": "1948-09-04",
             "type": "autocrat_type"
         },
-        "206": {
+        "Juliana_1": {
             "name": "Juliana",
             "ideology": "social_cons_idolg",
             "loyalty": 1.0,
@@ -90,52 +90,7 @@
             "death_date": "1980-04-30",
             "type": "courteous_figure"
         },
-        "207": {
-            "name": "Beatrix",
-            "ideology": "social_cons_idolg",
-            "loyalty": 1.0,
-            "picture": "HOL_M_Beatrix",
-            "start_date": "1980-04-30",
-            "death_date": "1999-12-31",
-            "type": "administrator_type"
-        },
-        "5736": {
-            "name": "Benny Wenda",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "WPA_M_Wenda_Benny",
-            "start_date": "1983-01-01",
-            "death_date": "2300-01-01",
-            "type": "courageous_type"
-        },
-        "5737": {
-            "name": "John Ondawame",
-            "ideology": "social_democrat_idolg",
-            "loyalty": 1.0,
-            "picture": "WPA_M_",
-            "start_date": "1976-01-01",
-            "death_date": "2300-01-01",
-            "type": "reputable_type"
-        },
-        "5738": {
-            "name": "Filep Karma",
-            "ideology": "social_liberal_idolg",
-            "loyalty": 1.0,
-            "picture": "WPA_M_Karma_Filep",
-            "start_date": "1980-08-15",
-            "death_date": "2300-01-01",
-            "type": "courageous_type"
-        },
-        "5739": {
-            "name": "Kelly Kwalik",
-            "ideology": "paternal_auto_idolg",
-            "loyalty": 1.0,
-            "picture": "WPA_M_Kwalik_Kelly",
-            "start_date": "1990-01-01",
-            "death_date": "2009-12-16",
-            "type": "extremist_type"
-        },
-        "5740": {
+        "Nicolaas_Jouwe_1": {
             "name": "Nicolaas Jouwe",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -144,7 +99,7 @@
             "death_date": "2300-01-01",
             "type": "hardliner_type"
         },
-        "5741": {
+        "Jacob_Hendrik_Prai_1": {
             "name": "Jacob Hendrik Prai",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -153,7 +108,7 @@
             "death_date": "2300-01-01",
             "type": "ambitious_type"
         },
-        "5742": {
+        "Seth_Jafeth_Roemkorem_1": {
             "name": "Seth Jafeth Roemkorem",
             "ideology": "social_cons_idolg",
             "loyalty": 0.9,
@@ -161,6 +116,51 @@
             "start_date": "1971-07-01",
             "death_date": "2300-01-01",
             "type": "visionary_type"
+        },
+        "John_Ondawame_1": {
+            "name": "John Ondawame",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "WPA_M_",
+            "start_date": "1976-01-01",
+            "death_date": "2300-01-01",
+            "type": "reputable_type"
+        },
+        "Beatrix_1": {
+            "name": "Beatrix",
+            "ideology": "social_cons_idolg",
+            "loyalty": 1.0,
+            "picture": "HOL_M_Beatrix",
+            "start_date": "1980-04-30",
+            "death_date": "1999-12-31",
+            "type": "administrator_type"
+        },
+        "Filep_Karma_1": {
+            "name": "Filep Karma",
+            "ideology": "social_liberal_idolg",
+            "loyalty": 1.0,
+            "picture": "WPA_M_Karma_Filep",
+            "start_date": "1980-08-15",
+            "death_date": "2300-01-01",
+            "type": "courageous_type"
+        },
+        "Benny_Wenda_1": {
+            "name": "Benny Wenda",
+            "ideology": "social_democrat_idolg",
+            "loyalty": 1.0,
+            "picture": "WPA_M_Wenda_Benny",
+            "start_date": "1983-01-01",
+            "death_date": "2300-01-01",
+            "type": "courageous_type"
+        },
+        "Kelly_Kwalik_1": {
+            "name": "Kelly Kwalik",
+            "ideology": "paternal_auto_idolg",
+            "loyalty": 1.0,
+            "picture": "WPA_M_Kwalik_Kelly",
+            "start_date": "1990-01-01",
+            "death_date": "2009-12-16",
+            "type": "extremist_type"
         }
     }
 }

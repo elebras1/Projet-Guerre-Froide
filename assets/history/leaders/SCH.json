@@ -1,1787 +1,1787 @@
 {
-  "country": "SCH",
-  "leaders": {
-    "37547": {
-      "name": "Ekkehard Mettler",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37548": {
-      "name": "Jörg Küng",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37549": {
-      "name": "Wojciech Hofmann",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37550": {
-      "name": "Heiner Fischer",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37551": {
-      "name": "Botho Hafner",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37552": {
-      "name": "Winfried Schnyder",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37553": {
-      "name": "Joachim-Friedrich Wolf",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37554": {
-      "name": "Henry Ackermann",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37555": {
-      "name": "Gunther Meier",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37556": {
-      "name": "Alois Thommen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37557": {
-      "name": "Wilhelm Probst",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "37558": {
-      "name": "Nicolas Grob",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37559": {
-      "name": "Ferdinand Bolliger",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37560": {
-      "name": "Mario Kaiser",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37561": {
-      "name": "Friedrich Peter",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37562": {
-      "name": "Heino Kunz",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37563": {
-      "name": "Rudolph Koch",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37564": {
-      "name": "Johannes Bieri",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37565": {
-      "name": "Valter Hodel",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37566": {
-      "name": "Wernher Stalder",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37567": {
-      "name": "Tobias Mettler",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37568": {
-      "name": "Meinrad Schumacher",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37569": {
-      "name": "Paul Schaffner",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37570": {
-      "name": "Jupp Probst",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37571": {
-      "name": "Henry Ott",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37572": {
-      "name": "Kurt Bieri",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37573": {
-      "name": "Adolf Knecht",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37574": {
-      "name": "Erhard Lüscher",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37575": {
-      "name": "Heinrich Benz",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "panzer_leader"
-    },
-    "37576": {
-      "name": "Aurick Schaffner",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37577": {
-      "name": "Gunther Koch",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37578": {
-      "name": "Nicolas Hodel",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37579": {
-      "name": "Hans Kunz",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37580": {
-      "name": "Heinrich Ott",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37581": {
-      "name": "Heino Ziegler",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37582": {
-      "name": "Marius Vogel",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37583": {
-      "name": "Maximilian Meister",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "37584": {
-      "name": "Maximilian Baur",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "37585": {
-      "name": "Meinrad Stucki",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37586": {
-      "name": "Werner Fischer",
-      "skill": 6,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37587": {
-      "name": "Winfried Weiss",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37588": {
-      "name": "Alois Ackermann",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37589": {
-      "name": "Robin Jäggi",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37590": {
-      "name": "Rudolph Weber",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37591": {
-      "name": "Friedemann Michel",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37592": {
-      "name": "Medard Mayer",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37593": {
-      "name": "Sander Lang",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37594": {
-      "name": "Rudolph Schnyder",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37595": {
-      "name": "Meinrad Pfister",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37596": {
-      "name": "Werner Staub",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37597": {
-      "name": "Jürgen Steiner",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37598": {
-      "name": "Winfried Winkler",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37599": {
-      "name": "Alwin Hofmann",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37600": {
-      "name": "Gottschalk Probst",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37601": {
-      "name": "Gunther Baumgartner",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37602": {
-      "name": "Werner Gasser",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37603": {
-      "name": "Meinrad Furrer",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37604": {
-      "name": "Joachim-Friedrich Schneider",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37605": {
-      "name": "Horst Beck",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37606": {
-      "name": "Wernher Gerber",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37607": {
-      "name": "Jupp Kaufmann",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37608": {
-      "name": "Marius Lang",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37609": {
-      "name": "Wenzel Hartmann",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37610": {
-      "name": "Alwin Furrer",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37611": {
-      "name": "Klaus Winkler",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37612": {
-      "name": "Wilhelm Walter",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37613": {
-      "name": "Ansgar Weiss",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37614": {
-      "name": "Heinz Lüscher",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "37615": {
-      "name": "Johann Steiger",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37616": {
-      "name": "Matthias Walter",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37617": {
-      "name": "Ferdinand Meyer",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37618": {
-      "name": "Alwin Meister",
-      "skill": 7,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37619": {
-      "name": "Medard Rey",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37620": {
-      "name": "Robert Vogel",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37621": {
-      "name": "Friedrich Graf",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37622": {
-      "name": "Johann Zollinger",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "37623": {
-      "name": "Achim Suter",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37624": {
-      "name": "Heiner Stalder",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37625": {
-      "name": "Winfried Jäggi",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37626": {
-      "name": "Hans Sidler",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37627": {
-      "name": "Hans Kessler",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37628": {
-      "name": "Heiner Steinmann",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37629": {
-      "name": "Mario Albrecht",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37630": {
-      "name": "Georg Thommen",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37631": {
-      "name": "Anton Frick",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37632": {
-      "name": "Mario Egli",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37633": {
-      "name": "Malte Scherrer",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37634": {
-      "name": "Werner Jenni",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37635": {
-      "name": "Otto Leu",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37636": {
-      "name": "Wolfgan Schnyder",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37637": {
-      "name": "Wolfgan Egli",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "37638": {
-      "name": "Robin Wirth",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37639": {
-      "name": "Holger Staub",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37640": {
-      "name": "Nicolas Bühler",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37641": {
-      "name": "Alois Steinmann",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37642": {
-      "name": "Wenzel Stauffer",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37643": {
-      "name": "Moritz Kaiser",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37644": {
-      "name": "Heino Peter",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37645": {
-      "name": "Jupp Schaffner",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37646": {
-      "name": "Wilhelm Kessler",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37647": {
-      "name": "Heinrich Jäggi",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37648": {
-      "name": "Holger Hotz",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37649": {
-      "name": "Tobias Beck",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37650": {
-      "name": "Robin Lustenberger",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "37651": {
-      "name": "Alois Lehmann",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37652": {
-      "name": "William Bucher",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "37653": {
-      "name": "Nicolas Rüegg",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37654": {
-      "name": "Michel Fuchs",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37655": {
-      "name": "Ferdinand Felber",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37656": {
-      "name": "Lothar Gross",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37657": {
-      "name": "Fritz Probst",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37658": {
-      "name": "Lütold Baumgartner",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37659": {
-      "name": "Paul Ferrari",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37660": {
-      "name": "Wenzel Huber",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37661": {
-      "name": "Friedrich Wettstein",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37662": {
-      "name": "Ewald Probst",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37663": {
-      "name": "Bastian Stauffer",
-      "skill": 6,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37664": {
-      "name": "Ludwig Näf",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37665": {
-      "name": "Henry Wagner",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37666": {
-      "name": "Utto Amrein",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37667": {
-      "name": "Gottschalk Sigrist",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37668": {
-      "name": "Lütold Weber",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37669": {
-      "name": "Ansgar Hänggi",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37670": {
-      "name": "Sigismund Bianchi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37671": {
-      "name": "Gerhardt Albrecht",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37672": {
-      "name": "Helmut Lüscher",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37673": {
-      "name": "Klaus Ritter",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37674": {
-      "name": "Johann Jenni",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37675": {
-      "name": "Florian Schlatter",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37676": {
-      "name": "Friedrich Imhof",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37677": {
-      "name": "Tobias Kessler",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37678": {
-      "name": "Ferdinand Mäder",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37679": {
-      "name": "Botho Hofstetter",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37680": {
-      "name": "Heinrich Probst",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37681": {
-      "name": "Benedikt Frey",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37682": {
-      "name": "Friedrich Herzog",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37683": {
-      "name": "Erhard Walder",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "panzer_leader"
-    },
-    "37684": {
-      "name": "Vollrath Hauser",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37685": {
-      "name": "Wilhelm Lustenberger",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37686": {
-      "name": "Gunther Mayer",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37687": {
-      "name": "Ewald Christen",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37688": {
-      "name": "Achim Schlatter",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37689": {
-      "name": "Wernher Bachmann",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37690": {
-      "name": "Dustin Favre",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "37691": {
-      "name": "Heinz Steiger",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37692": {
-      "name": "Helmut Vogel",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37693": {
-      "name": "Florian Gerber",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37694": {
-      "name": "Philipp Hofstetter",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37695": {
-      "name": "Bernard Schaub",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37696": {
-      "name": "Jupp Frey",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37697": {
-      "name": "Ralph Zimmermann",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37698": {
-      "name": "Kurt Näf",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37699": {
-      "name": "Dustin Giger",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37700": {
-      "name": "Johann Hermann",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37701": {
-      "name": "Sigmund Kägi",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37702": {
-      "name": "Heino Schmidt",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37703": {
-      "name": "Alwin Brunner",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37704": {
-      "name": "Florian Stocker",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37705": {
-      "name": "Günther Schenk",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37706": {
-      "name": "Johann Senn",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37707": {
-      "name": "Günther Jäggi",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "panzer_leader"
-    },
-    "37708": {
-      "name": "Ekkehard Schenk",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37709": {
-      "name": "Otto Pfister",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37710": {
-      "name": "Dieter Felber",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "panzer_leader"
-    },
-    "37711": {
-      "name": "Henry Kessler",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37712": {
-      "name": "Anton Mäder",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "engineer"
-    },
-    "37713": {
-      "name": "Fritz Kuhn",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37714": {
-      "name": "Wilhelm Jenni",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37715": {
-      "name": "Wojciech Hofmann",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37716": {
-      "name": "Alois Steiner",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37717": {
-      "name": "Holger Keller",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37718": {
-      "name": "Mario Hafner",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37719": {
-      "name": "Winfried Furrer",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37720": {
-      "name": "Tobias Studer",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37721": {
-      "name": "Heino Küng",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37722": {
-      "name": "Axel Tanner",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37723": {
-      "name": "Aurick Walder",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "panzer_leader"
-    },
-    "37724": {
-      "name": "Gunther Hodel",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37725": {
-      "name": "Helmut Wehrli",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37726": {
-      "name": "Tobias Stucki",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37727": {
-      "name": "Arndt Walder",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37728": {
-      "name": "Wolfgan Schenk",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37729": {
-      "name": "Karsten Jenni",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37730": {
-      "name": "Paul Baumann",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37731": {
-      "name": "Jonas Stadelmann",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "offensive_doctrine"
-    },
-    "37732": {
-      "name": "Michel Egli",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "37733": {
-      "name": "Valter Bernasconi",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37734": {
-      "name": "Ansgar Gut",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37735": {
-      "name": "Bernd Kuhn",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37736": {
-      "name": "Jupp Näf",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37737": {
-      "name": "Ulf Kohler",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37738": {
-      "name": "Ekkehard Kuhn",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37739": {
-      "name": "Bernard Geiger",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37740": {
-      "name": "Heinz Studer",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37741": {
-      "name": "Alwin Roos",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37742": {
-      "name": "Gerhardt Scherrer",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37743": {
-      "name": "Dieter Hermann",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37744": {
-      "name": "Rudolph Hofmann",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37745": {
-      "name": "Wilhelm Huber",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37746": {
-      "name": "Werner Fuchs",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37747": {
-      "name": "Erhard Maier",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37748": {
-      "name": "Heiner Wehrli",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37749": {
-      "name": "Alois Wehrli",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37750": {
-      "name": "Johann Burri",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37751": {
-      "name": "Emmerich Lustenberger",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "37752": {
-      "name": "Ekkehard Pfister",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37753": {
-      "name": "Fritz Weiss",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37754": {
-      "name": "Heinz Stucki",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37755": {
-      "name": "Gottschalk Gloor",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37756": {
-      "name": "Gunther Graf",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "logistics_wizard"
-    },
-    "37757": {
-      "name": "Bernd Pfister",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37758": {
-      "name": "Robin Suter",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37759": {
-      "name": "Dustin Weibel",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "defensive_doctrine"
-    },
-    "37760": {
-      "name": "Gunther Gut",
-      "skill": 4,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37761": {
-      "name": "Heiner Felber",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37762": {
-      "name": "Johann Brun",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37763": {
-      "name": "Maximilian Probst",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37764": {
-      "name": "Jörg Meili",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37765": {
-      "name": "Heiner Sigrist",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37766": {
-      "name": "Ferdinand Stocker",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37767": {
-      "name": "Winfried Moser",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37768": {
-      "name": "Heiner Michel",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37769": {
-      "name": "Paul Baumgartner",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37770": {
-      "name": "Valter Bachmann",
-      "skill": 3,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37771": {
-      "name": "Heinz Ott",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37772": {
-      "name": "Tobias Isler",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37773": {
-      "name": "William Steinmann",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37774": {
-      "name": "Ekkehard Hirt",
-      "skill": 1,
-      "force_type": "land",
-      "trait": "commando"
-    },
-    "37775": {
-      "name": "Frederick Hess",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37776": {
-      "name": "Vollrath Hunziker",
-      "skill": 0,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37777": {
-      "name": "Tobias Schneider",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "trickster"
-    },
-    "37778": {
-      "name": "Sander Giger",
-      "skill": 2,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37779": {
-      "name": "Fritz Knecht",
-      "skill": 5,
-      "force_type": "land",
-      "trait": "common"
-    },
-    "37780": {
-      "name": "Arndt Hartmann",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37781": {
-      "name": "Friedemann Michel",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37782": {
-      "name": "Ludwig Hartmann",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37783": {
-      "name": "Mario Stadelmann",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37784": {
-      "name": "Germar Imhof",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37785": {
-      "name": "Horst Hänggi",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37786": {
-      "name": "Aurick Martin",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "37787": {
-      "name": "Alois Bühler",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "37788": {
-      "name": "Bastian Erni",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "37789": {
-      "name": "Medard Suter",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37790": {
-      "name": "Fritz Christen",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37791": {
-      "name": "Ludwig Fuchs",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37792": {
-      "name": "Robert Schaub",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37793": {
-      "name": "Bernard Sidler",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37794": {
-      "name": "Hans Frey",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37795": {
-      "name": "Wolfgan Isler",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "37796": {
-      "name": "Erhard Ritter",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "superior_tactician"
-    },
-    "37797": {
-      "name": "Bernd Lustenberger",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37798": {
-      "name": "Georg Schäfer",
-      "skill": 4,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37799": {
-      "name": "Reinhold Schwab",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37800": {
-      "name": "Wernher Forster",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37801": {
-      "name": "Ludwig Schaffner",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37802": {
-      "name": "Ekkehard Brun",
-      "skill": 2,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37803": {
-      "name": "Sander Schumacher",
-      "skill": 0,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37804": {
-      "name": "Hermann Hirt",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37805": {
-      "name": "Heinz Weber",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37806": {
-      "name": "Bernard Imhof",
-      "skill": 1,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37807": {
-      "name": "Matthias Herzog",
-      "skill": 3,
-      "force_type": "sea",
-      "trait": "common"
-    },
-    "37808": {
-      "name": "Bernard Arnold",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "37809": {
-      "name": "Nicolas Gloor",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37810": {
-      "name": "Friedrich Hunziker",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "37811": {
-      "name": "Jonas Mettler",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37812": {
-      "name": "Friedrich Tanner",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37813": {
-      "name": "Holger Forster",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "night_flyer"
-    },
-    "37814": {
-      "name": "Ekkehard Siegrist",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "37815": {
-      "name": "Ansgar Braun",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37816": {
-      "name": "Ulf Roos",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37817": {
-      "name": "Reinhold Roos",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37818": {
-      "name": "Jürgen Fischer",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "tank_buster"
-    },
-    "37819": {
-      "name": "Frederick Steinmann",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "fleet_destroyer"
-    },
-    "37820": {
-      "name": "Bastian Hofer",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "37821": {
-      "name": "Bernd Isler",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "37822": {
-      "name": "Ralph Walter",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "carpet_bomber"
-    },
-    "37823": {
-      "name": "Ansgar Hug",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37824": {
-      "name": "Mario Huber",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "37825": {
-      "name": "Tobias Suter",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "carpet_bomber"
-    },
-    "37826": {
-      "name": "Botho Peter",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37827": {
-      "name": "Bastian Suter",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "37828": {
-      "name": "Bernd Amrein",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "37829": {
-      "name": "Paul Rüegg",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37830": {
-      "name": "Adolf Peter",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37831": {
-      "name": "Medard Jäggi",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37832": {
-      "name": "Utto Geiger",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37833": {
-      "name": "Johannes Keller",
-      "skill": 4,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37834": {
-      "name": "Maximilian Schaub",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "37835": {
-      "name": "Werner Wirz",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37836": {
-      "name": "Friedemann Vögeli",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37837": {
-      "name": "Emmerich Wehrli",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37838": {
-      "name": "Wilhelm Imhof",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37839": {
-      "name": "Holger Frei",
-      "skill": 2,
-      "force_type": "air",
-      "trait": "carpet_bomber"
-    },
-    "37840": {
-      "name": "Sigismund Hofmann",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37841": {
-      "name": "Kurt Hürlimann",
-      "skill": 0,
-      "force_type": "air",
-      "trait": "common"
-    },
-    "37842": {
-      "name": "Lothar Lehmann",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    },
-    "37843": {
-      "name": "William Schaub",
-      "skill": 1,
-      "force_type": "air",
-      "trait": "superior_air_tactician"
-    }
-  }
+    "country": "SCH",
+    "leaders": [
+        {
+            "name": "Ekkehard Mettler",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jörg Küng",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Wojciech Hofmann",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heiner Fischer",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Botho Hafner",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Winfried Schnyder",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Joachim-Friedrich Wolf",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Henry Ackermann",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Gunther Meier",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Alois Thommen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wilhelm Probst",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Nicolas Grob",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Ferdinand Bolliger",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Mario Kaiser",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Friedrich Peter",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Heino Kunz",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Rudolph Koch",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Johannes Bieri",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Valter Hodel",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Wernher Stalder",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tobias Mettler",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Meinrad Schumacher",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Paul Schaffner",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jupp Probst",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Henry Ott",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kurt Bieri",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Adolf Knecht",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Erhard Lüscher",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heinrich Benz",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "panzer_leader"
+        },
+        {
+            "name": "Aurick Schaffner",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Gunther Koch",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Nicolas Hodel",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hans Kunz",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heinrich Ott",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Heino Ziegler",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Marius Vogel",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Maximilian Meister",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Maximilian Baur",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Meinrad Stucki",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Werner Fischer",
+            "skill": 6,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Winfried Weiss",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Alois Ackermann",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Robin Jäggi",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Rudolph Weber",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Friedemann Michel",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Medard Mayer",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Sander Lang",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Rudolph Schnyder",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Meinrad Pfister",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Werner Staub",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jürgen Steiner",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Winfried Winkler",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Alwin Hofmann",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Gottschalk Probst",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Gunther Baumgartner",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Werner Gasser",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Meinrad Furrer",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Joachim-Friedrich Schneider",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Horst Beck",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wernher Gerber",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jupp Kaufmann",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Marius Lang",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Wenzel Hartmann",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Alwin Furrer",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Klaus Winkler",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Wilhelm Walter",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Ansgar Weiss",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heinz Lüscher",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Johann Steiger",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Matthias Walter",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ferdinand Meyer",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Alwin Meister",
+            "skill": 7,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Medard Rey",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Robert Vogel",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Friedrich Graf",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Johann Zollinger",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Achim Suter",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heiner Stalder",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Winfried Jäggi",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hans Sidler",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Hans Kessler",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heiner Steinmann",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Mario Albrecht",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Georg Thommen",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Anton Frick",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Mario Egli",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Malte Scherrer",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Werner Jenni",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Otto Leu",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wolfgan Schnyder",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wolfgan Egli",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Robin Wirth",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Holger Staub",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Nicolas Bühler",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Alois Steinmann",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wenzel Stauffer",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Moritz Kaiser",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heino Peter",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jupp Schaffner",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wilhelm Kessler",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Heinrich Jäggi",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Holger Hotz",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Tobias Beck",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Robin Lustenberger",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Alois Lehmann",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "William Bucher",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Nicolas Rüegg",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Michel Fuchs",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ferdinand Felber",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Lothar Gross",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Fritz Probst",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Lütold Baumgartner",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Paul Ferrari",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Wenzel Huber",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Friedrich Wettstein",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Ewald Probst",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Bastian Stauffer",
+            "skill": 6,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ludwig Näf",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Henry Wagner",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Utto Amrein",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Gottschalk Sigrist",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Lütold Weber",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Ansgar Hänggi",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Sigismund Bianchi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Gerhardt Albrecht",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Helmut Lüscher",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Klaus Ritter",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Johann Jenni",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Florian Schlatter",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Friedrich Imhof",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tobias Kessler",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Ferdinand Mäder",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Botho Hofstetter",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heinrich Probst",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Benedikt Frey",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Friedrich Herzog",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Erhard Walder",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "panzer_leader"
+        },
+        {
+            "name": "Vollrath Hauser",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wilhelm Lustenberger",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Gunther Mayer",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ewald Christen",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Achim Schlatter",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wernher Bachmann",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Dustin Favre",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Heinz Steiger",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Helmut Vogel",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Florian Gerber",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Philipp Hofstetter",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Bernard Schaub",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Jupp Frey",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ralph Zimmermann",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Kurt Näf",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Dustin Giger",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Johann Hermann",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Sigmund Kägi",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Heino Schmidt",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Alwin Brunner",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Florian Stocker",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Günther Schenk",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Johann Senn",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Günther Jäggi",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "panzer_leader"
+        },
+        {
+            "name": "Ekkehard Schenk",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Otto Pfister",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Dieter Felber",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "panzer_leader"
+        },
+        {
+            "name": "Henry Kessler",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Anton Mäder",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "engineer"
+        },
+        {
+            "name": "Fritz Kuhn",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wilhelm Jenni",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wojciech Hofmann",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Alois Steiner",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Holger Keller",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Mario Hafner",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Winfried Furrer",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Tobias Studer",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Heino Küng",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Axel Tanner",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Aurick Walder",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "panzer_leader"
+        },
+        {
+            "name": "Gunther Hodel",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Helmut Wehrli",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tobias Stucki",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Arndt Walder",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wolfgan Schenk",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Karsten Jenni",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Paul Baumann",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Jonas Stadelmann",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "offensive_doctrine"
+        },
+        {
+            "name": "Michel Egli",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Valter Bernasconi",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ansgar Gut",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Bernd Kuhn",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Jupp Näf",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ulf Kohler",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ekkehard Kuhn",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Bernard Geiger",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heinz Studer",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Alwin Roos",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Gerhardt Scherrer",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Dieter Hermann",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Rudolph Hofmann",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Wilhelm Huber",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Werner Fuchs",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Erhard Maier",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Heiner Wehrli",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Alois Wehrli",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Johann Burri",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Emmerich Lustenberger",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Ekkehard Pfister",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Fritz Weiss",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heinz Stucki",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Gottschalk Gloor",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Gunther Graf",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "logistics_wizard"
+        },
+        {
+            "name": "Bernd Pfister",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Robin Suter",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Dustin Weibel",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "defensive_doctrine"
+        },
+        {
+            "name": "Gunther Gut",
+            "skill": 4,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heiner Felber",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Johann Brun",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Maximilian Probst",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Jörg Meili",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heiner Sigrist",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Ferdinand Stocker",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Winfried Moser",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Heiner Michel",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Paul Baumgartner",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Valter Bachmann",
+            "skill": 3,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Heinz Ott",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tobias Isler",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "William Steinmann",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Ekkehard Hirt",
+            "skill": 1,
+            "force_type": "land",
+            "trait": "commando"
+        },
+        {
+            "name": "Frederick Hess",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Vollrath Hunziker",
+            "skill": 0,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Tobias Schneider",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "trickster"
+        },
+        {
+            "name": "Sander Giger",
+            "skill": 2,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Fritz Knecht",
+            "skill": 5,
+            "force_type": "land",
+            "trait": "common"
+        },
+        {
+            "name": "Arndt Hartmann",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Friedemann Michel",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Ludwig Hartmann",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Mario Stadelmann",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Germar Imhof",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Horst Hänggi",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Aurick Martin",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Alois Bühler",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Bastian Erni",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Medard Suter",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Fritz Christen",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Ludwig Fuchs",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Robert Schaub",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Bernard Sidler",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Hans Frey",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Wolfgan Isler",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Erhard Ritter",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "superior_tactician"
+        },
+        {
+            "name": "Bernd Lustenberger",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Georg Schäfer",
+            "skill": 4,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Reinhold Schwab",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Wernher Forster",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Ludwig Schaffner",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Ekkehard Brun",
+            "skill": 2,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Sander Schumacher",
+            "skill": 0,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Hermann Hirt",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Heinz Weber",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Bernard Imhof",
+            "skill": 1,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Matthias Herzog",
+            "skill": 3,
+            "force_type": "sea",
+            "trait": "common"
+        },
+        {
+            "name": "Bernard Arnold",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Nicolas Gloor",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Friedrich Hunziker",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Jonas Mettler",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Friedrich Tanner",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Holger Forster",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "night_flyer"
+        },
+        {
+            "name": "Ekkehard Siegrist",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Ansgar Braun",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Ulf Roos",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Reinhold Roos",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Jürgen Fischer",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "tank_buster"
+        },
+        {
+            "name": "Frederick Steinmann",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "fleet_destroyer"
+        },
+        {
+            "name": "Bastian Hofer",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Bernd Isler",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Ralph Walter",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "carpet_bomber"
+        },
+        {
+            "name": "Ansgar Hug",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Mario Huber",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Tobias Suter",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "carpet_bomber"
+        },
+        {
+            "name": "Botho Peter",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Bastian Suter",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Bernd Amrein",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Paul Rüegg",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Adolf Peter",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Medard Jäggi",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Utto Geiger",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Johannes Keller",
+            "skill": 4,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Maximilian Schaub",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "Werner Wirz",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Friedemann Vögeli",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Emmerich Wehrli",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Wilhelm Imhof",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Holger Frei",
+            "skill": 2,
+            "force_type": "air",
+            "trait": "carpet_bomber"
+        },
+        {
+            "name": "Sigismund Hofmann",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Kurt Hürlimann",
+            "skill": 0,
+            "force_type": "air",
+            "trait": "common"
+        },
+        {
+            "name": "Lothar Lehmann",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        },
+        {
+            "name": "William Schaub",
+            "skill": 1,
+            "force_type": "air",
+            "trait": "superior_air_tactician"
+        }
+    ]
 }

@@ -6,7 +6,7 @@ import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonMapper;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
 import com.populaire.projetguerrefroide.dao.ConfigurationDao;
-import com.populaire.projetguerrefroide.entity.Bookmark;
+import com.populaire.projetguerrefroide.pojo.Bookmark;
 import com.populaire.projetguerrefroide.configuration.Settings;
 
 import java.io.IOException;
