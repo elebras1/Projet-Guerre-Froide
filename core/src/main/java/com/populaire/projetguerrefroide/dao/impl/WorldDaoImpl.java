@@ -11,9 +11,8 @@ import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.pojo.Borders;
-import com.populaire.projetguerrefroide.repository.QueryRepository;
+import com.populaire.projetguerrefroide.pojo.WorldData;
 import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.MapService;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.ForceType;
 
@@ -63,7 +62,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     @Override
-    public MapService createWorld(GameContext gameContext, QueryRepository queryRepository) {
+    public WorldData createWorld(GameContext gameContext) {
         World ecsWorld = gameContext.getEcsWorld();
         EcsConstants ecsConstants = gameContext.getEcsConstants();
         this.readIdeologiesJson(ecsWorld);
@@ -83,7 +82,7 @@ public class WorldDaoImpl implements WorldDao {
         Borders borders = new Borders();
         this.loadProvinces(ecsWorld, ecsConstants, provinces, borders);
 
-        return new MapService(gameContext, queryRepository, provinces, borders);
+        return new WorldData(provinces, borders);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -911,7 +910,7 @@ public class WorldDaoImpl implements WorldDao {
         this.readCountriesHistoryJson(ecsWorld, ecsConstants);
         this.readContinentJsonFile(ecsWorld);
         this.readAdjenciesJson(ecsWorld);
-        this.readPositionsJson(ecsWorld, ecsConstants);
+        this.readPositionsJson(ecsWorld);
     }
 
     private void readPopulationTemplatesJson(World ecsWorld) {
@@ -1316,7 +1315,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readPositionsJson(World ecsWorld, EcsConstants ecsConstants) {
+    private void readPositionsJson(World ecsWorld) {
         try {
             JsonValue positionsValues = this.parseJsonFile(this.positionsJsonFile);
             Iterator<Map.Entry<String, JsonValue>> positionsEntryIterator = positionsValues.objectIterator();
@@ -1324,7 +1323,6 @@ public class WorldDaoImpl implements WorldDao {
                 Map.Entry<String, JsonValue> entry = positionsEntryIterator.next();
                 int provinceId = Integer.parseInt(entry.getKey());
                 long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
-                Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
                 Iterator<Map.Entry<String, JsonValue>> positionIterator = entry.getValue().objectIterator();
                 while (positionIterator.hasNext()) {
                     Map.Entry<String, JsonValue> position = positionIterator.next();

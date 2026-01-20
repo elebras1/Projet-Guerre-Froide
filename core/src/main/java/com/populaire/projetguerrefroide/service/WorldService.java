@@ -6,9 +6,11 @@ import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.WorldDao;
+import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.*;
 import com.populaire.projetguerrefroide.pojo.MapMode;
+import com.populaire.projetguerrefroide.pojo.WorldData;
 import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.ui.view.SortType;
 import com.populaire.projetguerrefroide.util.*;
@@ -22,6 +24,7 @@ public class WorldService {
     private final WorldDao worldDao;
     private final QueryRepository queryRepository;
     private final EconomyService economyService;
+    private final CountryService countryService;
     private MapService mapService;
 
     public WorldService(GameContext gameContext) {
@@ -29,10 +32,12 @@ public class WorldService {
         this.worldDao = new WorldDaoImpl();
         this.queryRepository = new QueryRepository(this.gameContext.getEcsWorld(), this.gameContext.getEcsConstants());
         this.economyService = new EconomyService(this.gameContext, this.queryRepository);
+        this.countryService = new CountryService(this.gameContext);
     }
 
     public void createWorld() {
-        this.mapService = this.worldDao.createWorld(this.gameContext, this.queryRepository);
+        WorldData worldData = this.worldDao.createWorld(this.gameContext);
+        this.mapService = new MapService(this.gameContext, this.queryRepository, new MapDaoImpl(), this.countryService, worldData.provinces(), worldData.borders());
         this.gameContext.getEcsWorld().shrink();
     }
 
@@ -113,7 +118,7 @@ public class WorldService {
         List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry.id());
         String government = ecsWorld.obtainEntity(countryData.governmentId()).getName();
 
-        return new CountrySummaryDto(selectedCountry.getName(), population, government, portraitNameFile, headOfState.name(), this.mapService.getColonizerId(selectedCountry.id()), allies);
+        return new CountrySummaryDto(selectedCountry.getName(), population, government, portraitNameFile, headOfState.name(), this.getColonizerId(selectedCountry.id()), allies);
     }
 
     public CountryDto prepareCountryDto(Map<String, String> localisation) {
@@ -153,7 +158,7 @@ public class WorldService {
         int numberIndustryRegion = this.getNumberIndustry(region.id());
         Entity country = ecsWorld.obtainEntity(selectedProvinceData.ownerId());
         String countryNameId = country.getName();
-        String colonizerId = this.mapService.getColonizerId(country.id());
+        String colonizerId = this.getColonizerId(country.id());
         List<String> flagCountriesCore = this.getCountriesCoreOfSelectedProvince();
         float resourceProduced = this.economyService.getResourceGatheringProduction(provinceNameId);
         List<String> provinceIdsRegion = this.getProvinceIdsOrderByPopulation(region.id());
@@ -194,17 +199,17 @@ public class WorldService {
     public String getColonizerIdOfSelectedProvince() {
         Entity selectedProvince = this.gameContext.getEcsWorld().obtainEntity(this.mapService.getSelectedProvinceId());
         Province selectedProvinceData = selectedProvince.get(Province.class);
-        return this.mapService.getColonizerId(selectedProvinceData.ownerId());
+        return this.getColonizerId(selectedProvinceData.ownerId());
     }
 
     public String getColonizerIdOfCountryPlayer() {
-        return this.mapService.getColonizerId(this.mapService.getPlayerCountryId());
+        return this.getColonizerId(this.mapService.getPlayerCountryId());
     }
 
     public String getColonizerIdOfHoveredProvince(int x, int y) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(this.mapService.getLandProvinceId(x, y));
         Province provinceData = province.get(Province.class);
-        return this.mapService.getColonizerId(provinceData.ownerId());
+        return this.getColonizerId(provinceData.ownerId());
     }
 
     public float getResourceGoodsProduction() {
@@ -222,6 +227,10 @@ public class WorldService {
 
     public RegionsBuildingsDto prepareRegionsBuildingsDtoSorted(SortType sortType) {
         return this.economyService.prepareRegionsBuildingsDtoSorted(this.mapService.getPlayerCountryId(), sortType);
+    }
+
+    public String getColonizerId(long countryId) {
+        return this.countryService.getColonizerId(countryId);
     }
 
     private ObjectIntMap<String> calculatePercentageDistributionFromProvinceData(long[] provinceElementIds, int[] provinceElementValues, int amountAdults) {
