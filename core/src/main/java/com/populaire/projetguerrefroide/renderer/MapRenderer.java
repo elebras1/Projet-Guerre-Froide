@@ -48,7 +48,7 @@ public class MapRenderer implements Disposable {
     private final MapDao mapDao;
     private final QueryRepository queryRepository;
     private WgTexture mapModeTexture;
-    private final WgTexture provincesTexture;
+    private WgTexture provincesTexture;
     private final WgTexture waterTexture;
     private final WgTexture colorMapWaterTexture;
     private final WgTexture provincesStripesTexture;
@@ -840,6 +840,15 @@ public class MapRenderer implements Disposable {
         this.binderProvinces.setSampler("textureMapModeSampler", this.mapModeTexture.getSampler());
         this.binderProvinces.setUniform("showTerrain", mapMode == MapMode.TERRAIN ? 1 : 0);
         this.uniformBufferWorld.flush();
+    }
+
+    public void updateProvincesTexture(Pixmap provincesPixmap) {
+        this.provincesTexture.dispose();
+        PixmapTextureData provincesTextureData = new PixmapTextureData(provincesPixmap, Pixmap.Format.RGBA8888, false, false);
+        this.provincesTexture = new WgTexture(provincesTextureData, "provincesTexture", false);
+        this.provincesTexture.setFilter(WgTexture.TextureFilter.Nearest, WgTexture.TextureFilter.Nearest);
+        this.binderProvinces.setTexture("textureProvinces", this.provincesTexture.getTextureView());
+        this.binderProvinces.setSampler("textureProvincesSampler", this.provincesTexture.getSampler());
     }
 
     public void render(WgProjection projection, OrthographicCamera cam, float time, MapMode mapMode) {

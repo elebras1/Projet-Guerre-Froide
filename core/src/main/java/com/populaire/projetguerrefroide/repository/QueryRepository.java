@@ -14,7 +14,6 @@ public class QueryRepository implements Disposable {
     private final Query queryProvincesWithColorAndGeoHierarchy;
     private final Query queryProvincesWithColorAndCultureDistribution;
     private final Query queryProvincesWithColorAndReligionDistribution;
-    private final Query queryProvincesWithBorderAndGeoHierarchy;
     private final Query queryProvincesAll;
     private final Query queryBuildingsAll;
     private final Query queryCountries;
@@ -59,12 +58,6 @@ public class QueryRepository implements Disposable {
             .with(ReligionDistribution.class)
             .build();
 
-        this.queryProvincesWithBorderAndGeoHierarchy = ecsWorld.query()
-            .with(Province.class)
-            .with(Border.class)
-            .with(GeoHierarchy.class)
-            .build();
-
         this.queryProvincesAll = ecsWorld.query()
             .with(Province.class)
             .build();
@@ -106,10 +99,6 @@ public class QueryRepository implements Disposable {
         return this.queryProvincesWithColorAndReligionDistribution;
     }
 
-    public Query getProvincesWithBorderAndGeoHierarchy() {
-        return this.queryProvincesWithBorderAndGeoHierarchy;
-    }
-
     public Query getProvinces() {
         return this.queryProvincesAll;
     }
@@ -130,7 +119,6 @@ public class QueryRepository implements Disposable {
         this.queryProvincesWithColorAndGeoHierarchy.close();
         this.queryProvincesWithColorAndCultureDistribution.close();
         this.queryProvincesWithColorAndReligionDistribution.close();
-        this.queryProvincesWithBorderAndGeoHierarchy.close();
         this.queryProvincesAll.close();
         this.queryBuildingsAll.close();
         this.queryCountries.close();

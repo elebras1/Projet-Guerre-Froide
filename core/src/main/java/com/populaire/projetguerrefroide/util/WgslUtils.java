@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.util;
 
 import com.badlogic.gdx.Gdx;
+import com.monstrous.gdx.webgpu.graphics.WgShaderProgram;
 
 public class WgslUtils {
 
@@ -8,9 +9,7 @@ public class WgslUtils {
         return Gdx.files.internal("shaders/" + shaderFileName).readString();
     }
 
-    public static String getShaderSource(String vertexShaderFileName, String fragmentShaderFileName) {
-        String vertexShader = Gdx.files.internal("shaders/" + vertexShaderFileName).readString();
-        String fragmentShader = Gdx.files.internal("shaders/" + fragmentShaderFileName).readString();
-        return vertexShader + "\n" + fragmentShader;
+    public static WgShaderProgram getShader(String shaderFileName) {
+        return new WgShaderProgram(Gdx.files.internal("shaders/" + shaderFileName));
     }
 }

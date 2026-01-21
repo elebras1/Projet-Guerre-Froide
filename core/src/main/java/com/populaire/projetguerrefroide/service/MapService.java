@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
+import com.badlogic.gdx.utils.BufferUtils;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.*;
@@ -15,12 +16,15 @@ import com.populaire.projetguerrefroide.dao.MapDao;
 import com.populaire.projetguerrefroide.pojo.Borders;
 import com.populaire.projetguerrefroide.pojo.MapMode;
 import com.populaire.projetguerrefroide.pojo.MapTextures;
+import com.populaire.projetguerrefroide.renderer.BordersCompute;
 import com.populaire.projetguerrefroide.renderer.MapRenderer;
 import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.screen.WorldContext;
 import com.populaire.projetguerrefroide.util.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.*;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
@@ -39,6 +43,7 @@ public class MapService implements WorldContext, Disposable {
     private long playerCountryId;
     private MapMode mapMode;
     private final MapRenderer mapRenderer;
+    private final BordersCompute bordersCompute;
 
     public MapService(GameContext gameContext, QueryRepository queryRepository, MapDao mapDao, CountryService countryService, IntLongMap provinces, Borders borders) {
         this.gameContext = gameContext;
@@ -50,11 +55,12 @@ public class MapService implements WorldContext, Disposable {
         this.mapMode = MapMode.POLITICAL;
         this.mapModePixmap = this.createMapModePixmap();
         this.provincesPixmap = this.createProvincesPixmap();
-        this.updatePixmapCountriesColor();
-        this.updateBordersProvincesPixmap();
+        this.bordersCompute = new BordersCompute(this.provincesPixmap.getPixels());
         this.provincesColorStripesPixmap = this.createProvincesColorStripesPixmap();
+        this.updatePixmapCountriesColor();
         MapTextures mapTextures = this.createMapTextures();
         this.mapRenderer = new MapRenderer(this.countryService, this.gameContext, this.mapDao, this.queryRepository, mapTextures, this.borders);
+        this.updateBordersProvincesPixmap();
     }
 
     private Pixmap createMapModePixmap() {
@@ -500,66 +506,39 @@ public class MapService implements WorldContext, Disposable {
     }
 
     private void updateBordersProvincesPixmap() {
-        World ecsWorld = this.gameContext.getEcsWorld();
-        int[] xyBorders = this.borders.getPixels();
-        Query provinceQuery = this.queryRepository.getProvincesWithBorderAndGeoHierarchy();
+        ByteBuffer dataProvinces = BufferUtils.newByteBuffer(65536 * 8);
+        dataProvinces.order(ByteOrder.LITTLE_ENDIAN);
+
+        Query provinceQuery = this.queryRepository.getProvincesWithColorAndGeoHierarchy();
         provinceQuery.iter(iter -> {
             Field<Province> provinceField = iter.field(Province.class, 0);
-            Field<Border> borderField = iter.field(Border.class, 1);
+            Field<Color> colorField = iter.field(Color.class, 1);
             Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 2);
             for(int i = 0; i < iter.count(); i++) {
                 ProvinceView provinceView = provinceField.getMutView(i);
-                BorderView borderView = borderField.getMutView(i);
+                ColorView colorView = colorField.getMutView(i);
                 GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
-                for(int j = borderView.startIndex(); j < borderView.endIndex(); j = j + 2) {
-                    int x = xyBorders[j];
-                    int y = xyBorders[j + 1];
 
-                    int color = this.provincesPixmap.getPixel(x, y);
-                    int red = (color >> 24) & 0xFF;
-                    int green = (color >> 16) & 0xFF;
-                    int blue = (color >> 8) & 0xFF;
+                int color = colorView.value();
+                int red = (color >> 24) & 0xFF;
+                int green = (color >> 16) & 0xFF;
+                int provinceId = red + green * 256;
 
-                    color = (red << 24) | (green << 16) | (blue << 8) | this.getBorderType(ecsWorld, x, y, provinceView.ownerId(), geoHierarchyView.regionId());
-                    this.provincesPixmap.drawPixel(x, y, color);
-                }
+                dataProvinces.position(provinceId * 8);
+                dataProvinces.putInt((int) provinceView.ownerId());
+                dataProvinces.putInt((int) geoHierarchyView.regionId());
             }
         });
-    }
+        dataProvinces.position(0);
+        dataProvinces.limit(65536 * 8);
 
-    private int getBorderType(World ecsWorld, int x, int y, long countryId, long regionId) {
-        long provinceRightId = this.getLandProvinceId((x + 1), y);
-        if(provinceRightId == 0) {
-            return 0; // water, nothing or province border
-        }
-        Entity provinceRight = ecsWorld.obtainEntity(provinceRightId);
-        Province provinceRightData = provinceRight.get(Province.class);
-        long provinceLeftId = this.getLandProvinceId((x - 1), y);
-        if(provinceLeftId == 0) {
-            return 0; // water, nothing or province border
-        }
-        Entity provinceLeft = ecsWorld.obtainEntity(provinceLeftId);
-        Province provinceLeftData = provinceLeft.get(Province.class);
-        long provinceUpId = this.getLandProvinceId(x, (y + 1));
-        if(provinceUpId == 0) {
-            return 0; // water, nothing or province border
-        }
-        Entity provinceUp = ecsWorld.obtainEntity(provinceUpId);
-        Province provinceUpData = provinceUp.get(Province.class);
-        long provinceDownId = this.getLandProvinceId(x, (y - 1));
-        if(provinceDownId == 0) {
-            return 0; // water, nothing or province border
-        }
-        Entity provinceDown = ecsWorld.obtainEntity(provinceDownId);
-        Province provinceDownData = provinceDown.get(Province.class);
-
-        if (provinceRightData.ownerId() != countryId || provinceLeftData.ownerId() != countryId || provinceUpData.ownerId() != countryId || provinceDownData.ownerId() != countryId) {
-            return 153; // country border
-        } else if (provinceRight.get(GeoHierarchy.class).regionId() != regionId || provinceLeft.get(GeoHierarchy.class).regionId() != regionId || provinceUp.get(GeoHierarchy.class).regionId() != regionId || provinceDown.get(GeoHierarchy.class).regionId() != regionId) {
-            return 77; // region border
-        } else {
-            return 0; // water, nothing or province border
-        }
+        this.bordersCompute.updateAndRunAsync(dataProvinces, resultBuffer -> {
+            ByteBuffer provincesBuffer = this.provincesPixmap.getPixels();
+            provincesBuffer.clear();
+            provincesBuffer.put(resultBuffer);
+            provincesBuffer.flip();
+            this.mapRenderer.updateProvincesTexture(this.provincesPixmap);
+        });
     }
 
     public void changeMapMode(String mapMode) {
