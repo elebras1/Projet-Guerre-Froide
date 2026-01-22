@@ -47,8 +47,23 @@ fn vs_main(input: VertexInput) -> VertexOutput {
     return output;
 }
 
+fn median(r: f32, g: f32, b: f32) -> f32 {
+    return max(min(r, g), min(max(r, g), b));
+}
+
 @fragment
 fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
-    let color = textureSample(texture, textureSampler, input.texCoord);
-    return vec4(color.rgb, color.a * input.opacity);
+    let msdf = textureSample(texture, textureSampler, input.texCoord);
+    let rawDist = median(msdf.r, msdf.g, msdf.b);
+    let weight = 0.27;
+    let textColor = vec3<f32>(0.0, 0.0, 0.0);
+    let dist = rawDist - 0.5 + weight;
+    let alpha = clamp(dist / fwidth(dist) + 0.5, 0.0, 1.0);
+    if (alpha < 0.01) {
+        discard;
+    }
+
+    let opacityFactor = 0.9;
+
+    return vec4<f32>(textColor, alpha * opacityFactor * input.opacity);
 }
