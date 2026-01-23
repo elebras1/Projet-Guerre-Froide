@@ -45,9 +45,9 @@ public class MainMenuInGame extends Table implements PopupListener {
     private void setMenu() {
         this.widgetFactory.applyBackgroundToTable(skin, "menu_background", this);
 
-        LabelStyle labelStyleJockey20GlowBlue = this.labelStylePool.getLabelStyle("jockey_20_glow_blue");
-        LabelStyle labelStyleJockey16GlowRed = this.labelStylePool.getLabelStyle("jockey_16_glow_red");
-        LabelStyle labelStyleJockey24GlowRed = this.labelStylePool.getLabelStyle("jockey_24_glow_red");
+        LabelStyle labelStyleJockey20GlowBlue = this.labelStylePool.get("jockey_20_glow_blue");
+        LabelStyle labelStyleJockey16GlowRed = this.labelStylePool.get("jockey_16_glow_red");
+        LabelStyle labelStyleJockey24GlowRed = this.labelStylePool.get("jockey_24_glow_red");
 
         Button savegameButton = this.widgetFactory.createButton(this.skin, "menu_button", 56, 360, this);
         savegameButton.add(new Label(this.localisation.get("SAVE_GAME"), labelStyleJockey20GlowBlue)).padBottom(5);
@@ -105,9 +105,9 @@ public class MainMenuInGame extends Table implements PopupListener {
     private void settingsGame() {
         this.setupSettings("ingame_settings_game_naked");
 
-        LabelStyle labelStyleJockey14GlowBlue = this.labelStylePool.getLabelStyle("jockey_14_glow_blue");
-        LabelStyle labelStyleJockey18Yellow = this.labelStylePool.getLabelStyle("jockey_18", "yellow");
-        LabelStyle labelStyleJockey18Black = this.labelStylePool.getLabelStyle("jockey_18_black");
+        LabelStyle labelStyleJockey14GlowBlue = this.labelStylePool.get("jockey_14_glow_blue");
+        LabelStyle labelStyleJockey18Yellow = this.labelStylePool.get("jockey_18", "yellow");
+        LabelStyle labelStyleJockey18Black = this.labelStylePool.get("jockey_18_black");
 
         Label valueLabel = new Label(this.localisation.get(settings.getLanguage()), labelStyleJockey18Yellow);
 
@@ -145,9 +145,9 @@ public class MainMenuInGame extends Table implements PopupListener {
     private void setSettingsVideo() {
         this.setupSettings("ingame_settings_video_naked");
 
-        LabelStyle labelStyleJockey14GlowBlue = this.labelStylePool.getLabelStyle("jockey_14_glow_blue");
-        LabelStyle labelStyleJockey18Yellow = this.labelStylePool.getLabelStyle("jockey_18", "yellow");
-        LabelStyle labelStyleJockey18Black = this.labelStylePool.getLabelStyle("jockey_18_black");
+        LabelStyle labelStyleJockey14GlowBlue = this.labelStylePool.get("jockey_14_glow_blue");
+        LabelStyle labelStyleJockey18Yellow = this.labelStylePool.get("jockey_18", "yellow");
+        LabelStyle labelStyleJockey18Black = this.labelStylePool.get("jockey_18_black");
 
         Label valueLabel = new Label(String.valueOf(this.settings.getCapFrameRate()), labelStyleJockey18Yellow);
 
@@ -195,7 +195,7 @@ public class MainMenuInGame extends Table implements PopupListener {
     private void setSettingsAudio() {
         this.setupSettings("ingame_settings_audio_naked");
 
-        LabelStyle labelStyleJockey14GlowBlue = this.labelStylePool.getLabelStyle("jockey_14_glow_blue");
+        LabelStyle labelStyleJockey14GlowBlue = this.labelStylePool.get("jockey_14_glow_blue");
 
         ChangeListener masterVolumeListener = new ChangeListener() {
             @Override
@@ -242,7 +242,7 @@ public class MainMenuInGame extends Table implements PopupListener {
     }
 
     private void addTitle() {
-        LabelStyle labelStyleJockey24 = this.labelStylePool.getLabelStyle("jockey_24");
+        LabelStyle labelStyleJockey24 = this.labelStylePool.get("jockey_24");
         Label title = new Label(this.localisation.get("SETTINGS"), labelStyleJockey24);
 
         title.setPosition(this.getWidth() / 2 - title.getWidth() / 2, 536);
@@ -250,7 +250,7 @@ public class MainMenuInGame extends Table implements PopupListener {
     }
 
     private void addTopButtonSettings() {
-        LabelStyle labelStyleArial11BoldBlack = this.labelStylePool.getLabelStyle("arial_11_bold_black");
+        LabelStyle labelStyleArial11BoldBlack = this.labelStylePool.get("arial_11_bold_black");
         short yPosition = 504;
 
         Button gameButton = this.widgetFactory.createButton(this.skinUi, "settings_tab_btn_1", 47, yPosition, this);
@@ -291,8 +291,8 @@ public class MainMenuInGame extends Table implements PopupListener {
     }
 
     private void addBottomButtonSettings() {
-        LabelStyle labelStyleJockey16GlowRed = this.labelStylePool.getLabelStyle("jockey_16_glow_red");
-        LabelStyle labelStyleJockey16GlowBlue = this.labelStylePool.getLabelStyle("jockey_16_glow_blue");
+        LabelStyle labelStyleJockey16GlowRed = this.labelStylePool.get("jockey_16_glow_red");
+        LabelStyle labelStyleJockey16GlowBlue = this.labelStylePool.get("jockey_16_glow_blue");
 
         Button cancelButton = new Button(this.skin, "settings_cancel_btn");
         cancelButton.add(new Label(this.localisation.get("BACK"), labelStyleJockey16GlowRed)).padBottom(10);

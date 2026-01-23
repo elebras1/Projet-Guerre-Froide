@@ -181,7 +181,7 @@ public class Minimap extends Table {
         NinePatchDrawable ninePatchDrawable = new NinePatchDrawable(ninePatch);
         this.informationsMapMode.setBackground(ninePatchDrawable);
 
-        Label.LabelStyle labelStyleArial14Glow = labelStylePool.getLabelStyle("arial_14_glow");
+        Label.LabelStyle labelStyleArial14Glow = labelStylePool.get("arial_14_glow");
 
         for(IntObjectMap.Entry<String> entry : informations) {
             int color = entry.key;

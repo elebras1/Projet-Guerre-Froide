@@ -35,8 +35,8 @@ public class HoverTooltip extends Table {
         this.text = new StringBuilder();
         NinePatchDrawable ninePatchDrawable = new NinePatchDrawable(ninePatch);
 
-        Label.LabelStyle labelStyleArial14Glow = labelStylePool.getLabelStyle("arial_14_glow");
-        Label.LabelStyle labelStyleArial14GlowYellow = labelStylePool.getLabelStyle("arial_14_glow", "yellow");
+        Label.LabelStyle labelStyleArial14Glow = labelStylePool.get("arial_14_glow");
+        Label.LabelStyle labelStyleArial14GlowYellow = labelStylePool.get("arial_14_glow", "yellow");
 
         this.mainLabel = new Label("", labelStyleArial14Glow);
         this.subLabel = new Label("", labelStyleArial14GlowYellow);

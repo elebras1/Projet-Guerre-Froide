@@ -87,14 +87,14 @@ public class ProvincePanel extends Table {
         });
         this.addActor(closeButton);
 
-        Label.LabelStyle labelStyleJockey24 = labelStylePool.getLabelStyle("jockey_24");
+        Label.LabelStyle labelStyleJockey24 = labelStylePool.get("jockey_24");
         this.provinceName = new Label("", labelStyleJockey24);
         this.addActor(this.provinceName);
 
         this.flagImage = this.widgetFactory.createFlagImage(this.skinUi, "shield_big", "shield_big_overlay");
         this.addActor(this.flagImage);
 
-        Label.LabelStyle labelStyleJockey14 = labelStylePool.getLabelStyle("jockey_14");
+        Label.LabelStyle labelStyleJockey14 = labelStylePool.get("jockey_14");
         for(int i = 0; i < 8; i++) {
             Label label = new Label("", labelStyleJockey14);
             this.provinceNamesRegion.add(label);
@@ -111,10 +111,10 @@ public class ProvincePanel extends Table {
         dataOverview.setSize(background.getMinWidth(), background.getMinHeight());
         dataOverview.setPosition(12, 75);
 
-        Label.LabelStyle labelStyleJockey16Paper = labelStylePool.getLabelStyle("jockey_16_paper");
-        Label.LabelStyle labelStyleDanger14 = labelStylePool.getLabelStyle("danger_14");
-        Label.LabelStyle labelStyleDanger20Dark = labelStylePool.getLabelStyle("danger_20_dark");
-        Label.LabelStyle labelStyleJockey16Blue = labelStylePool.getLabelStyle("jockey_16", "blue");
+        Label.LabelStyle labelStyleJockey16Paper = labelStylePool.get("jockey_16_paper");
+        Label.LabelStyle labelStyleDanger14 = labelStylePool.get("danger_14");
+        Label.LabelStyle labelStyleDanger20Dark = labelStylePool.get("danger_20_dark");
+        Label.LabelStyle labelStyleJockey16Blue = labelStylePool.get("jockey_16", "blue");
 
         this.regionName = this.widgetFactory.createLabel(labelStyleJockey16Paper, dataOverview);
         this.resourceImage = this.widgetFactory.createImage(dataOverview);

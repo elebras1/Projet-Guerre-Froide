@@ -68,9 +68,9 @@ public class Popup extends Table {
 
         Actor button = configureButton(skin, labelStylePool, localisation, doubleButton, big, background);
 
-        Label titleLabel = createLabel(localisation.get(title), labelStylePool.getLabelStyle("jockey_20_glow_blue"),
+        Label titleLabel = createLabel(localisation.get(title), labelStylePool.get("jockey_20_glow_blue"),
             background.getMinWidth() / 2, background.getMinHeight() - 42);
-        Label descriptionLabel = createWrappedLabel(localisation.get(description), labelStylePool.getLabelStyle("arial_18"),
+        Label descriptionLabel = createWrappedLabel(localisation.get(description), labelStylePool.get("arial_18"),
             background.getMinWidth(), background.getMinHeight());
 
         this.addActor(titleLabel);
@@ -114,7 +114,7 @@ public class Popup extends Table {
 
 
     private Actor getSimpleButton(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation) {
-        LabelStyle labelStyleJockey16GlowBlue = labelStylePool.getLabelStyle("jockey_16_glow_blue");
+        LabelStyle labelStyleJockey16GlowBlue = labelStylePool.get("jockey_16_glow_blue");
 
         Button button = new Button(skin, "popup_btn");
         button.add(new Label(localisation.get("OK"), labelStyleJockey16GlowBlue)).padBottom(5);
@@ -129,8 +129,8 @@ public class Popup extends Table {
     }
 
     private Actor getDoubleButton(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation) {
-        LabelStyle labelStyleJockey16GlowRed = labelStylePool.getLabelStyle("jockey_16_glow_red");
-        LabelStyle labelStyleJockey16GlowBlue = labelStylePool.getLabelStyle("jockey_16_glow_blue");
+        LabelStyle labelStyleJockey16GlowRed = labelStylePool.get("jockey_16_glow_red");
+        LabelStyle labelStyleJockey16GlowBlue = labelStylePool.get("jockey_16_glow_blue");
 
         Button cancelButton = new Button(skin, "popup_btn_red");
         cancelButton.add(new Label(localisation.get("CANCEL"), labelStyleJockey16GlowRed)).padBottom(5);

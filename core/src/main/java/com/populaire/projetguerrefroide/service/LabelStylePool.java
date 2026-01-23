@@ -44,7 +44,7 @@ public class LabelStylePool {
         this.labelStyles.put(name + "_" + color, labelStyle);
     }
 
-    public LabelStyle getLabelStyle(String name) {
+    public LabelStyle get(String name) {
         if (!this.hasFont(name)) {
             throw new IllegalArgumentException("Font with name '" + name + "' not found in Skin.");
         }
@@ -56,7 +56,7 @@ public class LabelStylePool {
         return this.labelStyles.get(name);
     }
 
-    public LabelStyle getLabelStyle(String name, String color) {
+    public LabelStyle get(String name, String color) {
         if (!this.hasFont(name)) {
             throw new IllegalArgumentException("Font with name '" + name + "' not found in Skin.");
         }

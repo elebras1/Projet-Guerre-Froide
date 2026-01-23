@@ -50,7 +50,7 @@ public class TopBar extends Table {
     }
 
     private void setCountryData(LabelStylePool labelStylePool) {
-        Label.LabelStyle labelStyleJockey16GlowBlue = labelStylePool.getLabelStyle("jockey_16_glow_blue");
+        Label.LabelStyle labelStyleJockey16GlowBlue = labelStylePool.get("jockey_16_glow_blue");
         this.widgetFactory.createImage(this.skinUi, "icon_manpower_small_blue", 165, 114, this);
         this.population = this.widgetFactory.createLabel("", labelStyleJockey16GlowBlue, 210, 130, this);
         this.widgetFactory.createImage(this.skinUi, "icon_manpower_army_small_blue", 290, 114, this);
@@ -74,7 +74,7 @@ public class TopBar extends Table {
     }
 
     private void setDateSection(LabelStylePool labelStylePool, TopBarListener listener) {
-        Label.LabelStyle labelStyleJockey16Dark = labelStylePool.getLabelStyle("jockey_16_dark");
+        Label.LabelStyle labelStyleJockey16Dark = labelStylePool.get("jockey_16_dark");
         Button dateSection = this.widgetFactory.createButton(this.skin, "date_btn", 228, 40, this);
         dateSection.addListener(new ClickListener() {
             @Override
@@ -118,7 +118,7 @@ public class TopBar extends Table {
     }
 
     private Actor createPrestigeSection(LabelStylePool labelStylePool) {
-        Label.LabelStyle labelStyleJockey18Yellow = labelStylePool.getLabelStyle("jockey_18", "yellow");
+        Label.LabelStyle labelStyleJockey18Yellow = labelStylePool.get("jockey_18", "yellow");
         Table prestigeSection = new Table();
         Drawable background = this.skin.getDrawable("prestige");
         prestigeSection.setBackground(background);
@@ -131,7 +131,7 @@ public class TopBar extends Table {
     }
 
     private void setTabButtons(LabelStylePool labelStylePool, Map<String, String> localisation, TopBarListener listener) {
-        Label.LabelStyle labelStyleJockey16Dark = labelStylePool.getLabelStyle("jockey_16_dark");
+        Label.LabelStyle labelStyleJockey16Dark = labelStylePool.get("jockey_16_dark");
         Button economyButton = this.widgetFactory.createButton(this.skin, "tab_economy", 425, 30, this);
         economyButton.addListener(new ClickListener() {
             @Override

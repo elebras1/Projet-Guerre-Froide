@@ -19,9 +19,9 @@ public class MainMenu extends Table {
     }
 
     public void setMenu(WidgetFactory widgetFactory, Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, MainMenuListener listener) {
-        Label.LabelStyle labelStyleJockey24GlowBlue = labelStylePool.getLabelStyle("jockey_24_glow_blue");
-        Label.LabelStyle labelStyleJockey24GlowRed = labelStylePool.getLabelStyle("jockey_24_glow_red");
-        Label.LabelStyle labelStyleJockey20GlowBlue = labelStylePool.getLabelStyle("jockey_20_glow_blue");
+        Label.LabelStyle labelStyleJockey24GlowBlue = labelStylePool.get("jockey_24_glow_blue");
+        Label.LabelStyle labelStyleJockey24GlowRed = labelStylePool.get("jockey_24_glow_red");
+        Label.LabelStyle labelStyleJockey20GlowBlue = labelStylePool.get("jockey_20_glow_blue");
 
         widgetFactory.applyBackgroundToTable(skin, "frontend_mainmenu_bg", this);
 

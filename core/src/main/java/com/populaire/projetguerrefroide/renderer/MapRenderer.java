@@ -99,7 +99,7 @@ public class MapRenderer implements Disposable {
 
         this.mapElementsTextureAtlas = new WgTextureAtlas(Gdx.files.internal("map/elements/map_elements.atlas"));
         this.mapElementsTextureAtlas.getTextures().first().setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
-        this.fontMapLabelRegion = gameContext.getLabelStylePool().getLabelStyle("kart_60").font.getRegion();
+        this.fontMapLabelRegion = gameContext.getLabelStylePool().get("kart_60").font.getRegion();
         this.fontMapLabelRegion.getTexture().setFilter(WgTexture.TextureFilter.MipMapLinearLinear, WgTexture.TextureFilter.MipMapLinearLinear);
         this.selectedProvinceColor = new Vector4();
         this.uniformBufferSizeWorld = (16 + 4 + 4) * Float.BYTES;
@@ -149,7 +149,7 @@ public class MapRenderer implements Disposable {
 
     private WgMesh generateMeshMapLabels(VertexAttributes vertexAttributes, Map<String, String> localisation, LabelStylePool labelStylePool, Borders borders) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        MapLabelService mapLabelService = new MapLabelService(labelStylePool.getLabelStyle("kart_60").font);
+        MapLabelService mapLabelService = new MapLabelService(labelStylePool.get("kart_60").font);
         FloatList vertices = new FloatList();
         ShortList indices = new ShortList();
         Query query = this.queryRepository.getCountries();

@@ -22,7 +22,7 @@ public class LobbyBox extends Table {
     }
 
     private void addIntroductionSection(Skin skinScrollbars, LabelStylePool labelStylePool, Map<String, String> localisation) {
-        Label.LabelStyle labelStyleJockey16GlowBlue = labelStylePool.getLabelStyle("jockey_16_glow_blue");
+        Label.LabelStyle labelStyleJockey16GlowBlue = labelStylePool.get("jockey_16_glow_blue");
 
         Label introLabel = new Label(localisation.get("INTRODUCTION"), labelStyleJockey16GlowBlue);
         introLabel.setWrap(true);
@@ -34,8 +34,8 @@ public class LobbyBox extends Table {
     }
 
     private void addButtonsSection(Skin skin, LabelStylePool labelStylePool, Map<String, String> localisation, LobbyBoxListener listener) {
-        Label.LabelStyle labelStyleJockey24GlowBlue = labelStylePool.getLabelStyle("jockey_24_glow_blue");
-        Label.LabelStyle labelStyleArial172 = labelStylePool.getLabelStyle("arial_17_2");
+        Label.LabelStyle labelStyleJockey24GlowBlue = labelStylePool.get("jockey_24_glow_blue");
+        Label.LabelStyle labelStyleArial172 = labelStylePool.get("arial_17_2");
 
         Button playButton = new Button(skin, "play");
         playButton.add(new Label(localisation.get("PLAY"), labelStyleJockey24GlowBlue));

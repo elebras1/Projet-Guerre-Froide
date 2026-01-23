@@ -32,7 +32,7 @@ public class ScenarioSavegameSelector extends Table {
 
     private Table createButtonsTable(Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation) {
         Image tabBg = new Image(skinUi.getDrawable("tab_bg"));
-        LabelStyle labelStyleArial172 = labelStylePool.getLabelStyle("arial_17_2");
+        LabelStyle labelStyleArial172 = labelStylePool.get("arial_17_2");
 
         Label scenarioLabel = new Label(localisation.get("HISTORICAL_START"), labelStyleArial172);
         Label savegameLabel = new Label(localisation.get("SAVED_GAMES"), labelStyleArial172);
@@ -67,8 +67,8 @@ public class ScenarioSavegameSelector extends Table {
         Table scenarioTable = new Table();
         Drawable bookmarkImage = skinUi.getDrawable(bookmark.iconNameFile());
         scenarioTable.setBackground(bookmarkImage);
-        LabelStyle labelStyleImpactSmall = labelStylePool.getLabelStyle("impact_small");
-        LabelStyle labelStyleJockey14 = labelStylePool.getLabelStyle("jockey_14");
+        LabelStyle labelStyleImpactSmall = labelStylePool.get("impact_small");
+        LabelStyle labelStyleJockey14 = labelStylePool.get("jockey_14");
         Label nameLabel = new Label(localisation.get(bookmark.nameId()), labelStyleImpactSmall);
         Label descriptionLabel = new Label(localisation.get(bookmark.descriptionId()), labelStyleJockey14);
         nameLabel.setPosition(15, 35);

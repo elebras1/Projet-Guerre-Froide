@@ -13,11 +13,11 @@ public class TitleBar extends Table {
     public TitleBar(WidgetFactory widgetFactory, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation) {
         widgetFactory.applyBackgroundToTable(skinUi, "selected_scenario_bg", this);
 
-        Label.LabelStyle labelStyleJocker18Black = labelStylePool.getLabelStyle("jockey_18_black");
+        Label.LabelStyle labelStyleJocker18Black = labelStylePool.get("jockey_18_black");
         Label titleScenario = new Label(localisation.get("TITLE_SELECT_NATION"), labelStyleJocker18Black);
         this.add(titleScenario);
         this.row();
-        Label.LabelStyle labelStyleF25Executive17 = labelStylePool.getLabelStyle("f25_executive_17");
+        Label.LabelStyle labelStyleF25Executive17 = labelStylePool.get("f25_executive_17");
         Label order = new Label(localisation.get("NATION_TO_PLAY"), labelStyleF25Executive17);
         this.add(order);
     }

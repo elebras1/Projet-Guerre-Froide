@@ -35,11 +35,11 @@ public class CountrySummaryPanel extends Table {
         this.flagImage.setPosition(6, 85);
         this.addActor(this.flagImage);
 
-        Label.LabelStyle labelStyleJockey24 = labelStylePool.getLabelStyle("jockey_24");
-        Label.LabelStyle labelStyleJockey14Dark = labelStylePool.getLabelStyle("jockey_14_dark");
-        Label.LabelStyle labelStyleJockey14 = labelStylePool.getLabelStyle("jockey_14");
-        Label.LabelStyle labelStyleJockey14Yellow = labelStylePool.getLabelStyle("jockey_14", "yellow");
-        Label.LabelStyle labelStyleJockey14GlowBlue = labelStylePool.getLabelStyle("jockey_14_glow_blue");
+        Label.LabelStyle labelStyleJockey24 = labelStylePool.get("jockey_24");
+        Label.LabelStyle labelStyleJockey14Dark = labelStylePool.get("jockey_14_dark");
+        Label.LabelStyle labelStyleJockey14 = labelStylePool.get("jockey_14");
+        Label.LabelStyle labelStyleJockey14Yellow = labelStylePool.get("jockey_14", "yellow");
+        Label.LabelStyle labelStyleJockey14GlowBlue = labelStylePool.get("jockey_14_glow_blue");
 
         this.countryName = widgetFactory.createLabel("", labelStyleJockey24, 0, 168, background.getMinWidth(), 20, Align.center, this);
         this.government = widgetFactory.createLabel("", labelStyleJockey14Dark, 110, 137, 160, 30, Align.right, this);

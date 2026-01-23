@@ -95,8 +95,8 @@ public class EconomyPanel extends Table {
 
     @SuppressWarnings("unchecked")
     public void setData(RegionsBuildingsDto dto) {
-        Label.LabelStyle labelStyleJockey16GlowBlue = this.labelStylePool.getLabelStyle("jockey_16_glow_blue");
-        Label.LabelStyle labelJockey14Tight = this.labelStylePool.getLabelStyle("jockey_14_tight");
+        Label.LabelStyle labelStyleJockey16GlowBlue = this.labelStylePool.get("jockey_16_glow_blue");
+        Label.LabelStyle labelJockey14Tight = this.labelStylePool.get("jockey_14_tight");
         Drawable regionBackground = this.skin.getDrawable("economy_region_plate_small");
 
         SnapshotArray<Actor> actors = this.buildingRegionsTable.getChildren();
