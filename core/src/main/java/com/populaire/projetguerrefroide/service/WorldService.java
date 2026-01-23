@@ -10,6 +10,8 @@ import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
 import com.populaire.projetguerrefroide.dto.*;
 import com.populaire.projetguerrefroide.pojo.MapMode;
+import com.populaire.projetguerrefroide.pojo.MutableInt;
+import com.populaire.projetguerrefroide.pojo.Pair;
 import com.populaire.projetguerrefroide.pojo.WorldData;
 import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.ui.view.SortType;

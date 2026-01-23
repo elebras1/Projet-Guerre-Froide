@@ -16,6 +16,7 @@ import com.populaire.projetguerrefroide.dao.MapDao;
 import com.populaire.projetguerrefroide.pojo.Borders;
 import com.populaire.projetguerrefroide.pojo.MapMode;
 import com.populaire.projetguerrefroide.pojo.MapTextures;
+import com.populaire.projetguerrefroide.pojo.MutableInt;
 import com.populaire.projetguerrefroide.renderer.BordersCompute;
 import com.populaire.projetguerrefroide.renderer.MapRenderer;
 import com.populaire.projetguerrefroide.repository.QueryRepository;

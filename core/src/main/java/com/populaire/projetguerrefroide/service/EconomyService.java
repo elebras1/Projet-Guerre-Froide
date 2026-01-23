@@ -11,7 +11,7 @@ import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperatio
 import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationProduceSystem;
 import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationSizeSystem;
 import com.populaire.projetguerrefroide.ui.view.SortType;
-import com.populaire.projetguerrefroide.util.MutableInt;
+import com.populaire.projetguerrefroide.pojo.MutableInt;
 
 import java.util.Comparator;
 import java.util.List;

@@ -14,7 +14,7 @@ import com.populaire.projetguerrefroide.pojo.Borders;
 import com.populaire.projetguerrefroide.pojo.WorldData;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.EcsConstants;
-import com.populaire.projetguerrefroide.util.ForceType;
+import com.populaire.projetguerrefroide.util.ForceTypeUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -887,7 +887,7 @@ public class WorldDaoImpl implements WorldDao {
                 JsonValue leaderValue = leadersValueIterator.next();
                 String name = leaderValue.get("name").asString();
                 byte skill = (byte) leaderValue.get("skill").asLong();
-                byte forceType = ForceType.fromString(leaderValue.get("force_type").asString());
+                byte forceType = ForceTypeUtils.fromString(leaderValue.get("force_type").asString());
                 long traitId = ecsWorld.lookup(leaderValue.get("trait").asString());
                 long leaderEntityId = ecsWorld.entity();
                 Entity leaderEntity = ecsWorld.obtainEntity(leaderEntityId);

@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.util;
+package com.populaire.projetguerrefroide.pojo;
 
 public record Pair<A, B>(A first, B second) {
 }

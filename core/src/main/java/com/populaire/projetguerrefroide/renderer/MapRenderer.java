@@ -31,7 +31,7 @@ import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.service.MapLabelService;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.LocalisationUtils;
-import com.populaire.projetguerrefroide.util.MutableInt;
+import com.populaire.projetguerrefroide.pojo.MutableInt;
 import com.populaire.projetguerrefroide.util.WgslUtils;
 
 import java.util.Arrays;
