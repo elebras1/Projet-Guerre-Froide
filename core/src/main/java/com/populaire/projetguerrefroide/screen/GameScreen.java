@@ -324,7 +324,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, TopB
     }
 
     private void showProvincePanel() {
-        ProvinceDto provinceDto = this.worldService.prepareProvinceDto(this.gameContext.getLocalisation());
+        ProvinceDto provinceDto = this.worldService.prepareProvinceDto();
         this.provincePanel.setData(provinceDto);
         this.stage.addActor(this.provincePanel);
     }

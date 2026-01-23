@@ -141,7 +141,7 @@ public class WorldService {
         return new CountryDto(population, manpower, grossDomesticProduct, money, supplies, fuel, diplomaticInfluence, uranium, dissent, nationalUnity);
     }
 
-    public ProvinceDto prepareProvinceDto(Map<String, String> localisation) {
+    public ProvinceDto prepareProvinceDto() {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
         Province selectedProvinceData = selectedProvince.get(Province.class);
