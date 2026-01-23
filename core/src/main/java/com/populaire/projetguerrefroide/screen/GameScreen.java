@@ -111,7 +111,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, TopB
         Gdx.input.setInputProcessor(this.multiplexer);
 
         this.topBar.setPosition(0, Gdx.graphics.getHeight() - this.topBar.getHeight());
-        this.topBar.setCountryData(this.worldService.prepareCountryDto(this.gameContext.getLocalisation()));
+        this.topBar.setCountryData(this.worldService.prepareCountryDto());
         this.topBar.setRanking(this.worldService.getRankingOfSelectedCountry());
         this.stage.addActor(this.topBar);
 

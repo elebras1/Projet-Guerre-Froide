@@ -10,6 +10,7 @@ import com.populaire.projetguerrefroide.screen.TopBarListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
+import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.Map;
 
@@ -18,6 +19,7 @@ public class TopBar extends Table {
     private final Skin skin;
     private final Skin skinUi;
     private final Skin skinFlags;
+    private final Map<String, String> localisation;
     private Label population;
     private Label manpower;
     private Label grossDomesticProduct;
@@ -38,12 +40,13 @@ public class TopBar extends Table {
         this.skin = skin;
         this.skinUi = skinUi;
         this.skinFlags = skinFlags;
+        this.localisation = localisation;
         Drawable background = skin.getDrawable("naked_topbar");
         this.setBackground(background);
         this.setSize(background.getMinWidth(), background.getMinHeight());
 
         this.setCountryData(labelStylePool);
-        this.setTabButtons(labelStylePool, localisation, listener);
+        this.setTabButtons(labelStylePool, listener);
         this.setDateSection(labelStylePool, listener);
         this.addActor(this.createFlagSection(idCountry, idColonizer));
         this.addActor(this.createPrestigeSection(labelStylePool));
@@ -130,7 +133,7 @@ public class TopBar extends Table {
         return prestigeSection;
     }
 
-    private void setTabButtons(LabelStylePool labelStylePool, Map<String, String> localisation, TopBarListener listener) {
+    private void setTabButtons(LabelStylePool labelStylePool, TopBarListener listener) {
         Label.LabelStyle labelStyleJockey16Dark = labelStylePool.get("jockey_16_dark");
         Button economyButton = this.widgetFactory.createButton(this.skin, "tab_economy", 425, 30, this);
         economyButton.addListener(new ClickListener() {
@@ -139,30 +142,30 @@ public class TopBar extends Table {
                 listener.onEconomyClicked();
             }
         });
-        this.widgetFactory.createLabel(localisation.get("ECONOMY"), labelStyleJockey16Dark, 10, 20, economyButton);
+        this.widgetFactory.createLabel(this.localisation.get("ECONOMY"), labelStyleJockey16Dark, 10, 20, economyButton);
         Button militaryButton = this.widgetFactory.createButton(this.skin, "tab_military", 522, 30, this);
-        this.widgetFactory.createLabel(localisation.get("ARMAMENTS"), labelStyleJockey16Dark, 10, 20, militaryButton);
+        this.widgetFactory.createLabel(this.localisation.get("ARMAMENTS"), labelStyleJockey16Dark, 10, 20, militaryButton);
         Button techButton = this.widgetFactory.createButton(this.skin, "tab_tech", 619, 30, this);
-        this.widgetFactory.createLabel(localisation.get("TECH"), labelStyleJockey16Dark, 10, 20, techButton);
+        this.widgetFactory.createLabel(this.localisation.get("TECH"), labelStyleJockey16Dark, 10, 20, techButton);
         Button politicsButton = this.widgetFactory.createButton(this.skin, "tab_politics", 716, 30, this);
-        this.widgetFactory.createLabel(localisation.get("POLITICS"), labelStyleJockey16Dark, 10, 20, politicsButton);
+        this.widgetFactory.createLabel(this.localisation.get("POLITICS"), labelStyleJockey16Dark, 10, 20, politicsButton);
         Button diplomacyButton = this.widgetFactory.createButton(this.skin, "tab_diplomacy", 813, 30, this);
-        this.widgetFactory.createLabel(localisation.get("DIPLOMACY"), labelStyleJockey16Dark, 10, 20, diplomacyButton);
+        this.widgetFactory.createLabel(this.localisation.get("DIPLOMACY"), labelStyleJockey16Dark, 10, 20, diplomacyButton);
         Button intelButton = this.widgetFactory.createButton(this.skin, "tab_intel", 910, 30, this);
-        this.widgetFactory.createLabel(localisation.get("INTEL"), labelStyleJockey16Dark, 10, 20, intelButton);
+        this.widgetFactory.createLabel(this.localisation.get("INTEL"), labelStyleJockey16Dark, 10, 20, intelButton);
     }
 
     public void setCountryData(CountryDto countryDto) {
-        this.population.setText(countryDto.population());
+        this.population.setText(ValueFormatter.format(countryDto.population(), this.localisation));
         this.manpower.setText(String.valueOf(countryDto.manpower()));
-        this.grossDomesticProduct.setText(countryDto.grossDomesticProduct());
+        this.grossDomesticProduct.setText(ValueFormatter.format(countryDto.grossDomesticProduct(), this.localisation));
         this.money.setText(String.valueOf(countryDto.money()));
         this.supplies.setText(String.valueOf(countryDto.supplies()));
         this.fuel.setText(String.valueOf(countryDto.fuel()));
         this.diplomaticInfluence.setText(String.valueOf(countryDto.diplomaticInfluence()));
         this.uranium.setText(String.valueOf(countryDto.uranium()));
-        this.dissent.setText(countryDto.dissent());
-        this.nationalUnity.setText(countryDto.nationalUnity());
+        this.dissent.setText(ValueFormatter.format(countryDto.dissent(), this.localisation));
+        this.nationalUnity.setText(ValueFormatter.format(countryDto.nationalUnity(), this.localisation));
     }
 
     public void setRanking(int ranking) {

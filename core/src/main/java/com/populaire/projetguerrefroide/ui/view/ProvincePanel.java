@@ -181,8 +181,8 @@ public class ProvincePanel extends Table {
         this.setRegionName(provinceDto.regionId());
         this.setTerrainImage(provinceDto.terrainImage());
         this.setResourceImage(provinceDto.resourceImage());
-        this.setPopulationRegion(provinceDto.populationRegion());
-        this.setWorkersRegion(provinceDto.workersRegion());
+        this.setPopulationRegion(ValueFormatter.format(provinceDto.populationRegion(), this.localisation));
+        this.setWorkersRegion(ValueFormatter.format(provinceDto.workersRegion(), this.localisation));
         this.setDevelopmentIndexRegion(provinceDto.developmentIndexRegion());
         this.setIncomeRegion(provinceDto.incomeRegion());
         this.setIndustryRegion(provinceDto.industryRegion());
@@ -191,7 +191,7 @@ public class ProvincePanel extends Table {
         this.setResourceProduced(provinceDto.resourceProduced());
         this.setInfrastructureValue(provinceDto.infrastructureValue());
         this.setGuerillaValue(provinceDto.guerillaValue());
-        this.setPopulationProvince(provinceDto.populationProvince());
+        this.setPopulationProvince(ValueFormatter.format(provinceDto.populationProvince(), this.localisation));
         this.setIncomeProvince(provinceDto.incomeProvince());
         this.setRevoltRisk(provinceDto.revoltRisk());
         this.setProvinceNamesRegion(provinceDto.provinceIdsRegion());
@@ -208,7 +208,7 @@ public class ProvincePanel extends Table {
         if(resourceProduced == -1f) {
             this.resourceProduced.setText("-");
         } else {
-            this.resourceProduced.setText(ValueFormatter.formatValue(resourceProduced));
+            this.resourceProduced.setText(ValueFormatter.format(resourceProduced));
         }
         this.resourceProduced.setPosition(136 - this.resourceProduced.getMinWidth(), 178);
     }

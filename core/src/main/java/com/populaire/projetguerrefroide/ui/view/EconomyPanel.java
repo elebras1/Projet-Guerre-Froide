@@ -117,7 +117,7 @@ public class EconomyPanel extends Table {
                 maxButton.setVisible(false);
 
                 this.widgetFactory.createLabelCentered(region.developpementIndexValue() + "%", labelStyleJockey16GlowBlue, 477, 7, regionTable);
-                this.widgetFactory.createLabelCentered(ValueFormatter.formatValue(region.populationAmount(), this.localisation), labelStyleJockey16GlowBlue, 545, 7, regionTable);
+                this.widgetFactory.createLabelCentered(ValueFormatter.format(region.populationAmount(), this.localisation), labelStyleJockey16GlowBlue, 545, 7, regionTable);
                 this.widgetFactory.createLabelCentered(region.buildingWorkerAmount() + " (" + region.buildingWorkerRatio() + "%)", labelStyleJockey16GlowBlue, 638, 7, regionTable);
 
                 Table buildingsTable = new Table();
@@ -130,7 +130,7 @@ public class EconomyPanel extends Table {
 
                     this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingTable);
                     this.widgetFactory.createImage(this.skin, "building_" + building.buildingName(), 10, 55, buildingTable);
-                    this.widgetFactory.createLabelCentered(ValueFormatter.formatValue(building.productionValue()), labelStyleJockey16GlowBlue, buildingTable.getWidth() / 2, 21, buildingTable);
+                    this.widgetFactory.createLabelCentered(ValueFormatter.format(building.productionValue()), labelStyleJockey16GlowBlue, buildingTable.getWidth() / 2, 21, buildingTable);
                     this.widgetFactory.createLabelCentered(buildingLevel, labelJockey14Tight, buildingTable.getWidth() / 2, 2, buildingTable);
                     buildingsTable.add(buildingTable).padRight(-10);
                     economyCount++;

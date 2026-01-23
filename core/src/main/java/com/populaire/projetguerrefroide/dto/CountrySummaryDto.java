@@ -2,5 +2,5 @@ package com.populaire.projetguerrefroide.dto;
 
 import java.util.List;
 
-public record CountrySummaryDto(String idCountry, String population, String government, String portrait, String leaderFullName, String colonizerId, List<String> allies) {
+public record CountrySummaryDto(String idCountry, int population, String government, String portrait, String leaderFullName, String colonizerId, List<String> allies) {
 }

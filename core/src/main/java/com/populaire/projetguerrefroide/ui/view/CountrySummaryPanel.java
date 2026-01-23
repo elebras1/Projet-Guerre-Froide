@@ -9,6 +9,7 @@ import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.FlagImage;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 import com.populaire.projetguerrefroide.util.LocalisationUtils;
+import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.List;
 import java.util.Map;
@@ -72,7 +73,7 @@ public class CountrySummaryPanel extends Table {
         this.countryName.setText(LocalisationUtils.getCountryNameLocalisation(localisation, countrySummaryDto.idCountry(), countrySummaryDto.colonizerId()));
         this.flagImage.setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, countrySummaryDto.idCountry(), countrySummaryDto.colonizerId()));
         this.government.setText(localisation.get(countrySummaryDto.government()));
-        this.countryPopulation.setText(countrySummaryDto.population());
+        this.countryPopulation.setText(ValueFormatter.format(countrySummaryDto.population(), localisation));
         this.portrait.setDrawable(this.skinPortraits.getDrawable(countrySummaryDto.portrait()));
         this.leaderFullName.setText(countrySummaryDto.leaderFullName());
         List<String> allies = countrySummaryDto.allies();

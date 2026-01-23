@@ -229,7 +229,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     public void updateCountrySelected() {
         if(this.worldService.isProvinceSelected()) {
-            this.countrySummaryPanel.update(this.worldService.prepareCountrySummaryDto(this.gameContext.getLocalisation()), this.gameContext.getLocalisation());
+            this.countrySummaryPanel.update(this.worldService.prepareCountrySummaryDto(), this.gameContext.getLocalisation());
         } else {
             this.countrySummaryPanel.hide();
         }

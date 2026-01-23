@@ -103,7 +103,7 @@ public class WorldService {
         return 0;
     }
 
-    public CountrySummaryDto prepareCountrySummaryDto(Map<String, String> localisation) {
+    public CountrySummaryDto prepareCountrySummaryDto() {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
         Province selectedProvinceData = selectedProvince.get(Province.class);
@@ -114,27 +114,27 @@ public class WorldService {
         if(headOfState.imageFileName() != null) {
             portraitNameFile = headOfState.imageFileName();
         }
-        String population = ValueFormatter.formatValue(this.mapService.getPopulationAmountOfCountry(selectedCountry.id()), localisation);
+        int population = this.mapService.getPopulationAmountOfCountry(selectedCountry.id());
         List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry.id());
         String government = ecsWorld.obtainEntity(countryData.governmentId()).getName();
 
         return new CountrySummaryDto(selectedCountry.getName(), population, government, portraitNameFile, headOfState.name(), this.getColonizerId(selectedCountry.id()), allies);
     }
 
-    public CountryDto prepareCountryDto(Map<String, String> localisation) {
+    public CountryDto prepareCountryDto() {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
         Province selectedProvinceData = selectedProvince.get(Province.class);
-        String population = ValueFormatter.formatValue(this.mapService.getPopulationAmountOfCountry(selectedProvinceData.ownerId()), localisation);
+        int population = this.mapService.getPopulationAmountOfCountry(selectedProvinceData.ownerId());
         int manpower = 0;
-        String grossDomesticProduct = ValueFormatter.formatValue(0, localisation);
+        int grossDomesticProduct = 0;
         int money = 0;
         int supplies = 0;
         int fuel = 0;
         float diplomaticInfluence = 0;
         int uranium = 0;
-        String dissent = ValueFormatter.formatValue(0, localisation);
-        String nationalUnity = ValueFormatter.formatValue(0, localisation);
+        int dissent = 0;
+        int nationalUnity = 0;
 
         return new CountryDto(population, manpower, grossDomesticProduct, money, supplies, fuel, diplomaticInfluence, uranium, dissent, nationalUnity);
     }
@@ -150,9 +150,9 @@ public class WorldService {
         Entity terrain = ecsWorld.obtainEntity(selectedProvinceData.terrainId());
         String terrainImage = terrain.getName();
         String resourceImage = this.mapService.getResourceGoodName(selectedProvince.id());
-        String populationRegion = this.getPopulationRegionOfSelectedProvince(localisation);
-        String workersRegion = this.getWorkersRegionOfSelectedProvince(localisation);
-        String populationProvince = ValueFormatter.formatValue(this.mapService.getPopulationAmountOfProvince(selectedProvince.id()), localisation);
+        int populationRegion = this.getPopulationRegionOfSelectedProvince();
+        int workersRegion = this.getWorkersRegionOfSelectedProvince();
+        int populationProvince = this.mapService.getPopulationAmountOfProvince(selectedProvince.id());
         int developmentIndexRegion = 0;
         int incomeRegion = 0;
         int numberIndustryRegion = this.getNumberIndustry(region.id());
@@ -264,7 +264,7 @@ public class WorldService {
         return elementPercentages;
     }
 
-    private String getPopulationRegionOfSelectedProvince(Map<String, String> localisation) {
+    private int getPopulationRegionOfSelectedProvince() {
         World ecsWorld = this.gameContext.getEcsWorld();
 
         Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
@@ -284,10 +284,10 @@ public class WorldService {
             }
         });
 
-        return ValueFormatter.formatValue(population.getValue(), localisation);
+        return population.getValue();
     }
 
-    private String getWorkersRegionOfSelectedProvince(Map<String, String> localisation) {
+    private int getWorkersRegionOfSelectedProvince() {
         World ecsWorld = this.gameContext.getEcsWorld();
 
         Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
@@ -307,7 +307,7 @@ public class WorldService {
             }
         });
 
-        return ValueFormatter.formatValue(workers.getValue(), localisation);
+        return workers.getValue();
     }
 
     private List<String> getCountriesCoreOfSelectedProvince() {

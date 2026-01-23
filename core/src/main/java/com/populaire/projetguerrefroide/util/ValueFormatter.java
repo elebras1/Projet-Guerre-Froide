@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide.util;
 import java.util.Map;
 
 public class ValueFormatter {
-    public static String formatValue(long value, Map<String, String> localisation) {
+    public static String format(long value, Map<String, String> localisation) {
         if (value >= 1_000_000_000 || value <= -1_000_000_000) {
             return String.format("%.2f" + localisation.get("BILLION"), value / 1_000_000_000.0);
         } else if (value >= 1_000_000 || value <= -1_000_000) {
@@ -15,7 +15,7 @@ public class ValueFormatter {
         }
     }
 
-    public static String formatValue(float value) {
+    public static String format(float value) {
         return String.format("%.4f", value);
     }
 }
