@@ -71,7 +71,7 @@ public class ProjetGuerreFroide extends Game {
 
     private void loadAssets(AssetManager assetManager) {
         assetManager.load("ui/ui_skin.json", Skin.class);
-        assetManager.load("ui/fonts/fonts_skin.json", Skin.class);
+        assetManager.load("fonts/fonts_skin.json", Skin.class);
         assetManager.load("ui/scrollbars/scrollbars_skin.json", Skin.class);
         assetManager.finishLoading();
     }

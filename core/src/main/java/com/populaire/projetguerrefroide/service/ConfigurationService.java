@@ -27,14 +27,14 @@ public class ConfigurationService {
         this.loadInitialAssets(assetManager);
         CursorManager cursorManager = new CursorManager();
         Settings settings = this.configurationDao.loadSettings();
-        Skin skinFonts = assetManager.get("ui/fonts/fonts_skin.json");
+        Skin skinFonts = assetManager.get("fonts/fonts_skin.json");
         LabelStylePool labelStylePool = new LabelStylePool(skinFonts, settings.getLanguage());
         return new GameContext(ecsWorld, bookmark, assetManager, cursorManager, settings, labelStylePool);
     }
 
     public void loadInitialAssets(AssetManager assetManager) {
         assetManager.load("ui/ui_skin.json", Skin.class);
-        assetManager.load("ui/fonts/fonts_skin.json", Skin.class);
+        assetManager.load("fonts/fonts_skin.json", Skin.class);
         assetManager.load("ui/scrollbars/scrollbars_skin.json", Skin.class);
         assetManager.load("ui/mainmenu/mainmenu_skin.json", Skin.class);
         assetManager.finishLoading();
