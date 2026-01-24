@@ -22,8 +22,9 @@ import com.populaire.projetguerrefroide.component.Position;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dto.ProvinceDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
-import com.populaire.projetguerrefroide.input.GameInputHandler;
+import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
 import com.populaire.projetguerrefroide.pojo.MapMode;
+import com.populaire.projetguerrefroide.screen.listener.*;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.TimeService;
@@ -175,14 +176,14 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, TopB
     }
 
     @Override
-    public void onClick(short x, short y) {
+    public void onClick(int x, int y) {
         if(this.worldService.selectProvince(x, y)) {
             this.showProvincePanel();
         }
     }
 
     @Override
-    public void onHover(short x, short y) {
+    public void onHover(int x, int y) {
         if(this.worldService.hoverLandProvince(x, y) && this.isMouseOverUI()) {
             if(this.worldService.getMapMode().equals(MapMode.CULTURAL)) {
                 this.updateHoverTooltip(this.worldService.getProvinceNameId(x, y), this.worldService.getCountryNameIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y), this.worldService.getCulturesOfHoveredProvince(x, y));

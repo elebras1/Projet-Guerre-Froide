@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.screen;
+package com.populaire.projetguerrefroide.screen.listener;
 
 public interface MainMenuListener {
     void onSinglePlayerClicked();

@@ -1,4 +1,4 @@
-package com.populaire.projetguerrefroide.input;
+package com.populaire.projetguerrefroide.screen.input;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
-import com.populaire.projetguerrefroide.screen.GameInputListener;
+import com.populaire.projetguerrefroide.screen.listener.GameInputListener;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
@@ -49,8 +49,8 @@ public class GameInputHandler implements InputProcessor {
     private int getWorldPositions(int screenX, int screenY) {
         this.worldCoordinates.set(screenX, screenY, 0);
         this.cam.unproject(this.worldCoordinates);
-        short x = (short) Math.round(this.worldCoordinates.x);
-        short y = (short) Math.round(this.worldCoordinates.y);
+        int x = Math.round(this.worldCoordinates.x);
+        int y = Math.round(this.worldCoordinates.y);
         return (x << 16) | (y & 0xFFFF);
     }
 
@@ -108,7 +108,7 @@ public class GameInputHandler implements InputProcessor {
         }
 
         int position = this.getWorldPositions(screenX, screenY);
-        this.gameInputListener.onHover((short) (position >> 16), (short) (position & 0xFFFF));
+        this.gameInputListener.onHover(position >> 16, position & 0xFFFF);
     }
 
     public void updateCamera() {
@@ -174,7 +174,7 @@ public class GameInputHandler implements InputProcessor {
     public boolean touchUp (int screenX, int screenY, int pointer, int button) {
         if (button == Input.Buttons.LEFT) {
             int position = this.getWorldPositions(screenX, screenY);
-            this.gameInputListener.onClick((short) (position >> 16), (short) (position & 0xFFFF));
+            this.gameInputListener.onClick(position >> 16, position & 0xFFFF);
             return true;
         }
 
@@ -189,14 +189,14 @@ public class GameInputHandler implements InputProcessor {
     @Override
     public boolean touchDragged (int screenX, int screenY, int pointer) {
         int position = this.getWorldPositions(screenX, screenY);
-        this.gameInputListener.onHover((short) (position >> 16), (short) (position & 0xFFFF));
+        this.gameInputListener.onHover(position >> 16, position & 0xFFFF);
         return true;
     }
 
     @Override
     public boolean mouseMoved(int screenX, int screenY) {
         int position = this.getWorldPositions(screenX, screenY);
-        this.gameInputListener.onHover((short) (position >> 16), (short) (position & 0xFFFF));
+        this.gameInputListener.onHover(position >> 16, position & 0xFFFF);
         return true;
     }
 
@@ -207,7 +207,7 @@ public class GameInputHandler implements InputProcessor {
     }
 
 
-    public void moveCamera(short x, short y) {
+    public void moveCamera(int x, int y) {
         this.cam.position.x = x;
         this.cam.position.y = y;
     }

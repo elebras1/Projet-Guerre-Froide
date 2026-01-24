@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.github.tommyettinger.ds.ObjectList;
-import com.populaire.projetguerrefroide.screen.TimeListener;
+import com.populaire.projetguerrefroide.screen.listener.TimeListener;
 
 import java.time.LocalDate;
 import java.util.List;

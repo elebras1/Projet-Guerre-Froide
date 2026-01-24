@@ -10,7 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.configuration.Settings;
-import com.populaire.projetguerrefroide.screen.MainMenuInGameListener;
+import com.populaire.projetguerrefroide.screen.listener.MainMenuInGameListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 

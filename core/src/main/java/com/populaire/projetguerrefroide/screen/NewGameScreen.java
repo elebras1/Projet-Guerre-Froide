@@ -10,44 +10,40 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.Array;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
-import com.populaire.projetguerrefroide.configuration.Settings;
-import com.populaire.projetguerrefroide.input.GameInputHandler;
+import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
+import com.populaire.projetguerrefroide.screen.listener.GameInputListener;
+import com.populaire.projetguerrefroide.screen.presenter.HudPresenter;
+import com.populaire.projetguerrefroide.screen.presenter.MainMenuInGamePresenter;
+import com.populaire.projetguerrefroide.screen.presenter.TooltipPresenter;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
-import com.populaire.projetguerrefroide.ui.view.*;
+import com.populaire.projetguerrefroide.ui.view.Debug;
+import com.populaire.projetguerrefroide.ui.view.MainMenuInGame;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
 
-public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameListener, LobbyBoxListener {
+public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler {
     private final ScreenManager screenManager;
     private final GameContext gameContext;
     private final WorldService worldService;
     private final ConfigurationService configurationService;
     private final OrthographicCamera cam;
     private final WgProjection projection;
+    private final Stage stage;
     private final InputMultiplexer multiplexer;
     private final GameInputHandler inputHandler;
-    private final Skin skin;
-    private final Skin skinUi;
-    private final Skin skinFlags;
-    private final Skin skinPopup;
-    private final Skin skinPortraits;
-    private final Skin skinScrollbars;
-    private final Skin skinMainMenuInGame;
-    private Stage stage;
-    private Debug debug;
-    private HoverTooltip hoverTooltip;
-    private CountrySummaryPanel countrySummaryPanel;
-    private MainMenuInGame mainMenuInGame;
-    private WidgetFactory widgetFactory;
+    private final MainMenuInGamePresenter mainMenuInGamePresenter;
+    private final HudPresenter hudPresenter;
+    private final TooltipPresenter tooltipPresenter;
+    private final Debug debug;
     private float time;
     private boolean paused;
 
@@ -58,27 +54,22 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.configurationService = configurationService;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 1.4f, 0);
-        this.cam.update();
         this.projection = new WgProjection();
-        this.multiplexer = new InputMultiplexer();
-        this.inputHandler = new GameInputHandler(this.cam, this);
+
         AssetManager assetManager = gameContext.getAssetManager();
-        this.skin = assetManager.get("ui/newgame/newgame_skin.json");
-        this.skinUi = assetManager.get("ui/ui_skin.json");
-        this.skinFlags = assetManager.get("flags/flags_skin.json");
-        this.skinPopup = assetManager.get("ui/popup/popup_skin.json");
-        this.skinPortraits = assetManager.get("portraits/portraits_skin.json");
-        this.skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
-        this.skinMainMenuInGame = assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json");
         this.configurationService.loadNewGameLocalisation(this.gameContext);
-        this.widgetFactory = new WidgetFactory();
-        this.initializeUi();
-        this.paused = false;
-    }
-
-    private void initializeUi() {
-        this.stage = new WgCustomStage(new WgScreenViewport(), this.skinUi, this.skinFlags);
-
+        Skin skinUi = assetManager.get("ui/ui_skin.json");
+        Skin skinFlags = assetManager.get("flags/flags_skin.json");
+        this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
+        WidgetFactory widgetFactory = new WidgetFactory();
+        this.hudPresenter = new HudPresenter(gameContext, worldService, screenManager, widgetFactory, assetManager.get("ui/newgame/newgame_skin.json"), skinUi, skinFlags, assetManager.get("ui/scrollbars/scrollbars_skin.json"), assetManager.get("portraits/portraits_skin.json"));
+        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json"), skinUi, assetManager.get("ui/scrollbars/scrollbars_skin.json"), assetManager.get("ui/popup/popup_skin.json"), skinFlags);
+        this.tooltipPresenter = new TooltipPresenter(gameContext, widgetFactory, skinUi, skinFlags);
+        this.hudPresenter.initialize(this.stage);
+        this.tooltipPresenter.initialize(this.stage);
+        this.mainMenuInGamePresenter.initialize(this.stage);
+        this.inputHandler = new GameInputHandler(this.cam, this);
+        this.multiplexer = new InputMultiplexer();
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(this.multiplexer);
@@ -86,187 +77,71 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
         this.debug = new Debug(this.worldService.getNumberOfProvinces());
         this.debug.setPosition(100, 90);
         this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
-
-        this.hoverTooltip = new HoverTooltip(this.widgetFactory, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
-        this.mainMenuInGame = new MainMenuInGame(this.widgetFactory, this.skinMainMenuInGame, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
-        this.mainMenuInGame.setVisible(false);
-        Table centerTable = new Table();
-        centerTable.setFillParent(true);
-        centerTable.add(this.mainMenuInGame).center();
-
-        Table topTable = new Table();
-        topTable.setFillParent(true);
-        topTable.top();
-        ScenarioSavegameSelector scenarioSavegameSelector = new ScenarioSavegameSelector(this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getBookmark(), this.gameContext.getLocalisation());
-        TitleBar titleBar = new TitleBar(this.widgetFactory, this.skin, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
-        LobbyBox lobbyBox = new LobbyBox(this.widgetFactory, this.skin, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
-        this.countrySummaryPanel = new CountrySummaryPanel(this.widgetFactory, this.skin, this.skinUi, this.skinFlags, this.skinPortraits, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation());
-        topTable.add(scenarioSavegameSelector).align(Align.topLeft).expandX();
-        topTable.add(titleBar).align(Align.top);
-        topTable.add(this.countrySummaryPanel).align(Align.topRight).expandX();
-        topTable.pad(5);
-
-        Table bottomTable = new Table();
-        bottomTable.setFillParent(true);
-        bottomTable.bottom();
-        bottomTable.add(lobbyBox).align(Align.bottom);
-        bottomTable.pad(5);
-
-        this.stage.addActor(this.hoverTooltip);
-        this.stage.addActor(topTable);
-        this.stage.addActor(bottomTable);
-        this.stage.addActor(centerTable);
         this.stage.addActor(this.debug);
+
+        this.paused = false;
     }
 
     @Override
-    public void onClick(short x, short y) {
-        this.worldService.selectProvince(x, y);
-        this.updateCountrySelected();
+    public void pause() {
+        this.paused = true;
     }
 
     @Override
-    public void onHover(short x, short y) {
-        if(this.worldService.hoverLandProvince(x, y) && !this.isMouseOverUI()) {
-            this.updateHoverBox(this.worldService.getProvinceNameId(x, y), this.worldService.getCountryNameIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y));
+    public void resume() {
+        this.paused = false;
+    }
+
+    @Override
+    public void setInputEnabled(boolean enabled) {
+        if (enabled) {
+            this.multiplexer.addProcessor(this.inputHandler);
+            this.setAllStageTouchable(Touchable.enabled);
         } else {
-            this.hideHoverBox();
+            this.multiplexer.removeProcessor(this.inputHandler);
+            this.setAllStageTouchable(Touchable.disabled);
+        }
+    }
+
+    @Override
+    public void onClick(int x, int y) {
+        this.worldService.selectProvince(x, y);
+        this.hudPresenter.updateCountrySelection(this.worldService.isProvinceSelected(), this.worldService.buildCountrySummary());
+    }
+
+    @Override
+    public void onHover(int x, int y) {
+        boolean overUI = this.stage.hit(Gdx.input.getX(), Gdx.graphics.getHeight() - Gdx.input.getY(), true) != null;
+        if(this.worldService.hoverLandProvince(x, y) && !overUI) {
+            this.tooltipPresenter.onHover(
+                this.worldService.getProvinceNameId(x, y),
+                this.worldService.getCountryNameIdOfHoveredProvince(x, y),
+                this.worldService.getColonizerIdOfHoveredProvince(x, y)
+            );
+        } else {
+            this.tooltipPresenter.hide();
         }
     }
 
     @Override
     public void onEscape() {
-        this.paused = true;
-        this.mainMenuInGame.setVisible(true);
-        if(this.paused) {
-            this.multiplexer.removeProcessor(this.inputHandler);
-            this.setActorsTouchable(false);
-        }
-    }
-
-    @Override
-    public void onPlayClicked() {
-        if(this.worldService.setCountryPlayer()) {
-            this.screenManager.showGameScreen(this.worldService);
-        }
-    }
-
-    @Override
-    public void onBackClicked() {
-        this.screenManager.showMainMenuScreen();
-        this.worldService.dispose();
-    }
-
-    @Override
-    public Settings onShowSettingsClicked() {
-        return this.gameContext.getSettings().clone();
-    }
-
-    @Override
-    public void onApplySettingsClicked(Settings settings) {
-        this.gameContext.setSettings(settings);
-        this.configurationService.saveSettings(settings);
-    }
-
-    @Override
-    public void onCloseMainMenuInGameClicked() {
-        this.paused = false;
-        this.mainMenuInGame.setVisible(false);
-        this.multiplexer.addProcessor(this.inputHandler);
-        this.setActorsTouchable(true);
-    }
-
-    @Override
-    public void onQuitClicked(PopupListener listener) {
-        Popup popup = new Popup(this.widgetFactory, this.skinPopup, this.skinUi, this.skinFlags, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(),
-            "QUIT_TITLE", "QUIT_DESC", true, false, listener);
-        Table centerTable = new Table();
-        centerTable.setFillParent(true);
-        centerTable.add(popup).center();
-        this.stage.addActor(centerTable);
-        this.mainMenuInGame.setTouchable(Touchable.disabled);
-    }
-
-    @Override
-    public void onOkPopupClicked() {
-        Gdx.app.exit();
-    }
-
-    @Override
-    public void onCancelPopupClicked() {
-        this.stage.getActors().removeValue(this.stage.getActors().peek(), true);
-        this.mainMenuInGame.setTouchable(Touchable.enabled);
-    }
-
-    public void setActorsTouchable(boolean touchable) {
-        for (int i = 0; i < this.stage.getActors().size; i++) {
-            Actor actor = this.stage.getActors().get(i);
-
-            if (actor instanceof Table table) {
-                boolean containsMainMenu = false;
-
-                for (Actor child : table.getChildren()) {
-                    if (child instanceof MainMenuInGame) {
-                        containsMainMenu = true;
-                        break;
-                    }
-                }
-
-                if (!containsMainMenu) {
-                    actor.setTouchable(touchable ? Touchable.childrenOnly : Touchable.disabled);
-                }
-            } else {
-                actor.setTouchable(touchable ? Touchable.childrenOnly : Touchable.disabled);
-            }
-        }
-    }
-
-    private boolean isMouseOverUI() {
-        int mouseX = Gdx.input.getX();
-        int mouseY = Gdx.graphics.getHeight() - Gdx.input.getY();
-        return this.stage.hit(mouseX, mouseY, true) != null;
-    }
-
-    public void updateCountrySelected() {
-        if(this.worldService.isProvinceSelected()) {
-            this.countrySummaryPanel.update(this.worldService.buildCountrySummary(), this.gameContext.getLocalisation());
+        if (!paused) {
+            this.pause();
+            this.mainMenuInGamePresenter.show();
         } else {
-            this.countrySummaryPanel.hide();
+            this.mainMenuInGamePresenter.onCloseMainMenuInGameClicked();
         }
-    }
-
-    public void updateHoverBox(String provinceNameId, String countryNameId, String colonizerId) {
-        int x = Gdx.input.getX();
-        int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverTooltip.update(provinceNameId, countryNameId, colonizerId);
-        this.hoverTooltip.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
-            y - this.gameContext.getCursorManager().getHeight() * 1.5f);
-        this.hoverTooltip.setVisible(true);
-    }
-
-    public void hideHoverBox() {
-        this.hoverTooltip.setVisible(false);
-    }
-
-    @Override
-    public void show() {
-        this.gameContext.getCursorManager().defaultCursor();
     }
 
     @Override
     public void render(float delta) {
         this.time += delta;
-
-        float renderTimeMs = Gdx.graphics.getDeltaTime() * 1000;
-
         this.cam.update();
-        float camX = this.cam.position.x;
-        camX = (camX + WORLD_WIDTH) % WORLD_WIDTH;
+        float camX = (this.cam.position.x + WORLD_WIDTH) % WORLD_WIDTH;
         this.cam.position.x = camX;
         this.projection.setProjectionMatrix(this.cam.combined);
 
         WgScreenUtils.clear(1, 1, 1, 1);
-
         this.worldService.renderWorld(this.projection, this.cam, time);
 
         if(!this.paused) {
@@ -275,39 +150,48 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
             this.inputHandler.updateCamera();
         }
 
-        this.debug.update(renderTimeMs);
-
+        this.debug.update(Gdx.graphics.getDeltaTime() * 1000);
         this.stage.act();
         this.stage.draw();
     }
 
-    @Override
-    public void resize(int width, int height) {
+    private void setAllStageTouchable(Touchable touchable) {
+        Array<Actor> actors = this.stage.getActors();
+        for (int i = 0; i < actors.size; i++) {
+            Actor actor = actors.get(i);
+            if (actor instanceof Table && this.isMenuContainer((Table)actor)) {
+                continue;
+            }
+            actor.setTouchable(touchable);
+        }
+    }
+
+    private boolean isMenuContainer(Table t) {
+        for(Actor c : t.getChildren()) {
+            if(c instanceof MainMenuInGame) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override public void resize(int width, int height) {
         this.cam.viewportWidth = width / 2f;
         this.cam.viewportHeight = height / 2f;
         this.cam.update();
-
         this.stage.getViewport().update(width, height, true);
         ((WgCustomStage) this.stage).updateRendererProjection();
     }
 
-    @Override
-    public void pause() {
+    @Override public void show() {
+        gameContext.getCursorManager().defaultCursor();
+    }
+
+    @Override public void hide() {
 
     }
 
-    @Override
-    public void resume() {
-
-    }
-
-    @Override
-    public void hide() {
-
-    }
-
-    @Override
-    public void dispose() {
+    @Override public void dispose() {
         this.stage.dispose();
     }
 }

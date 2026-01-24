@@ -20,7 +20,7 @@ import com.populaire.projetguerrefroide.pojo.MutableInt;
 import com.populaire.projetguerrefroide.renderer.BordersCompute;
 import com.populaire.projetguerrefroide.renderer.MapRenderer;
 import com.populaire.projetguerrefroide.repository.QueryRepository;
-import com.populaire.projetguerrefroide.screen.WorldContext;
+import com.populaire.projetguerrefroide.screen.listener.WorldContext;
 import com.populaire.projetguerrefroide.util.*;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 

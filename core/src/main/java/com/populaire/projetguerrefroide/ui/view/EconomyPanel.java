@@ -9,7 +9,7 @@ import com.badlogic.gdx.utils.SnapshotArray;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
 import com.populaire.projetguerrefroide.dto.RegionDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
-import com.populaire.projetguerrefroide.screen.EconomyPanelListener;
+import com.populaire.projetguerrefroide.screen.listener.EconomyPanelListener;
 import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.ClickableTable;
 import com.populaire.projetguerrefroide.ui.widget.HoverScrollPane;

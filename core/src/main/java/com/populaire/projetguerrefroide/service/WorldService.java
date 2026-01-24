@@ -78,7 +78,11 @@ public class WorldService {
 
     public Position getCapitalPositionOfSelectedCountry() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
+        long selectedProvinceId = this.mapService.getSelectedProvinceId();
+        if(selectedProvinceId == -1) {
+            return null;
+        }
+        Entity selectedProvince = ecsWorld.obtainEntity(selectedProvinceId);
         Province selectedProvinceData = selectedProvince.get(Province.class);
         return this.countryService.getCapitalPosition(selectedProvinceData.ownerId());
     }
@@ -93,20 +97,31 @@ public class WorldService {
 
     public CountrySummaryDto buildCountrySummary() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
+        long selectedProvinceId = this.mapService.getSelectedProvinceId();
+        if(selectedProvinceId == -1) {
+            return null;
+        }
+        Entity selectedProvince = ecsWorld.obtainEntity(selectedProvinceId);
         Province selectedProvinceData = selectedProvince.get(Province.class);
         return this.countryService.buildSummary(selectedProvinceData.ownerId());
     }
 
     public CountryDto buildCountryDetails() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        Entity selectedProvince = ecsWorld.obtainEntity(this.mapService.getSelectedProvinceId());
+        long selectedProvinceId = this.mapService.getSelectedProvinceId();
+        if(selectedProvinceId == -1) {
+            return null;
+        }
+        Entity selectedProvince = ecsWorld.obtainEntity(selectedProvinceId);
         Province selectedProvinceData = selectedProvince.get(Province.class);
         return this.countryService.buildDetails(selectedProvinceData.ownerId());
     }
 
     public ProvinceDto buildProvinceDetails() {
         long selectedProvinceId = this.mapService.getSelectedProvinceId();
+        if(selectedProvinceId == -1) {
+            return null;
+        }
         return this.provinceService.buildDetails(selectedProvinceId);
     }
 
