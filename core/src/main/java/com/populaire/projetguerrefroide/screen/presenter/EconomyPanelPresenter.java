@@ -67,6 +67,11 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
     }
 
     @Override
+    public void update(float delta) {
+
+    }
+
+    @Override
     public void dispose() {
 
     }

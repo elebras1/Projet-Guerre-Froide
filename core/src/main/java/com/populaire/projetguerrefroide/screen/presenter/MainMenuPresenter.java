@@ -14,6 +14,7 @@ import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 public class MainMenuPresenter implements Presenter, MainMenuListener {
     private final ScreenManager screenManager;
     private final GameContext gameContext;
+    private MainMenu mainMenu;
 
     public MainMenuPresenter(ScreenManager screenManager, GameContext gameContext) {
         this.screenManager = screenManager;
@@ -28,13 +29,18 @@ public class MainMenuPresenter implements Presenter, MainMenuListener {
         rootTable.setFillParent(true);
         rootTable.setBackground(skin.getDrawable("frontend_main_bg"));
         WidgetFactory widgetFactory = new WidgetFactory();
-        MainMenu menu = new MainMenu(widgetFactory, skin, gameContext.getLabelStylePool(), gameContext.getLocalisation(), this);
-        rootTable.add(menu).center().padLeft(menu.getWidth() / 3);
+        this.mainMenu = new MainMenu(widgetFactory, skin, gameContext.getLabelStylePool(), gameContext.getLocalisation(), this);
+        rootTable.add(this.mainMenu).center().padLeft(this.mainMenu.getWidth() / 3);
         stage.addActor(rootTable);
     }
 
     @Override
     public void refresh() {
+
+    }
+
+    @Override
+    public void update(float delta) {
 
     }
 

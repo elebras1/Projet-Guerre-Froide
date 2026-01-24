@@ -16,6 +16,7 @@ public class MiniMapPresenter implements Presenter, MinimapListener {
     private final GameFlowHandler gameFlowHandler;
     private final Skin skinMinimap;
     private final Skin skinUi;
+    private Minimap minimap;
 
     public MiniMapPresenter(GameContext gameContext, WorldService worldService, GameFlowHandler gameFlowHandler, Skin skinMinimap, Skin skinUi) {
         this.gameContext = gameContext;
@@ -27,13 +28,18 @@ public class MiniMapPresenter implements Presenter, MinimapListener {
 
     @Override
     public void initialize(Stage stage) {
-        Minimap minimap = new Minimap(this.skinMinimap, this.skinUi, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
-        minimap.setPosition(Gdx.graphics.getWidth() - minimap.getWidth(), 0);
-        stage.addActor(minimap);
+        this.minimap = new Minimap(this.skinMinimap, this.skinUi, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
+        this.minimap.setPosition(Gdx.graphics.getWidth() - this.minimap.getWidth(), 0);
+        stage.addActor(this.minimap);
     }
 
     @Override
     public void refresh() {
+
+    }
+
+    @Override
+    public void update(float delta) {
 
     }
 

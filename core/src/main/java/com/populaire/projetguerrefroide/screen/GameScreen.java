@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Array;
+import com.github.tommyettinger.ds.ObjectList;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
@@ -27,6 +28,7 @@ import com.populaire.projetguerrefroide.ui.view.*;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
@@ -46,8 +48,8 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
     private final TooltipPresenter tooltipPresenter;
     private final EconomyPanelPresenter economyPanelPresenter;
     private final MiniMapPresenter minimapPresenter;
+    private final List<Presenter> presenters;
     private final Stage stage;
-    private final Debug debug;
     private float time;
     private boolean paused;
 
@@ -64,6 +66,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
         this.multiplexer = new InputMultiplexer();
         this.inputHandler = new GameInputHandler(this.cam, this);
         this.configurationService.loadGameLocalisation(this.gameContext);
+        this.presenters = new ObjectList<>();
 
         AssetManager assetManager = gameContext.getAssetManager();
         Skin skinUi = assetManager.get("ui/ui_skin.json");
@@ -74,7 +77,6 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
         Skin skinProvince = assetManager.get("ui/province/province_skin.json");
         Skin skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
         Skin skinEconomy = assetManager.get("ui/economy/economy_skin.json");
-
         this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
         WidgetFactory widgetFactory = new WidgetFactory();
 
@@ -84,7 +86,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
         this.tooltipPresenter = new TooltipPresenter(this.gameContext, this.worldService, widgetFactory, skinUi, skinFlags);
         this.economyPanelPresenter = new EconomyPanelPresenter(this.gameContext, this.worldService, this, widgetFactory, skinEconomy, skinUi, skinScrollbars);
         this.minimapPresenter = new MiniMapPresenter(this.gameContext, this.worldService, this, skinMinimap, skinUi);
-        this.debug = new Debug(this.worldService.getNumberOfProvinces());
+        this.initializeDebug();
 
         this.mainMenuInGamePresenter.initialize(this.stage);
         this.topBarPresenter.initialize(this.stage);
@@ -92,22 +94,22 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
         this.tooltipPresenter.initialize(this.stage);
         this.economyPanelPresenter.initialize(this.stage);
         this.minimapPresenter.initialize(this.stage);
-
         this.multiplexer.addProcessor(this.stage);
         this.multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(this.multiplexer);
-
-        this.debug.setPosition(100, 90);
-        this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
-        this.stage.addActor(this.debug);
-
         this.timeService.addListener(this);
         this.timeService.addListener(this.topBarPresenter);
         this.timeService.addListener(this.provincePanelPresenter);
-
         this.timeService.initialize();
-
         this.paused = false;
+    }
+
+    private void initializeDebug() {
+        if(this.gameContext.getSettings().isDebugMode()) {
+            DebugPresenter debugPresenter = new DebugPresenter(gameContext, worldService);
+            debugPresenter.initialize(this.stage);
+            this.presenters.add(debugPresenter);
+        }
     }
 
     @Override
@@ -180,8 +182,6 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
     public void render(float delta) {
         this.time += delta;
 
-        float renderTimeMs = Gdx.graphics.getDeltaTime() * 1000;
-
         this.cam.update();
         float camX = this.cam.position.x;
         camX = (camX + WORLD_WIDTH) % WORLD_WIDTH;
@@ -200,7 +200,9 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
             this.inputHandler.updateCamera();
         }
 
-        this.debug.update(renderTimeMs);
+        for(Presenter presenter : this.presenters) {
+            presenter.update(delta);
+        }
 
         this.stage.act();
         this.stage.draw();

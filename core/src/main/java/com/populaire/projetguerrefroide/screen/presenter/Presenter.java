@@ -6,4 +6,5 @@ import com.badlogic.gdx.utils.Disposable;
 public interface Presenter extends Disposable {
     void initialize(Stage stage);
     void refresh();
+    void update(float delta);
 }

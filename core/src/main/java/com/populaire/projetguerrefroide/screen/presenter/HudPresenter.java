@@ -78,6 +78,11 @@ public class HudPresenter implements Presenter, LobbyBoxListener {
     }
 
     @Override
+    public void update(float delta) {
+
+    }
+
+    @Override
     public void onPlayClicked() {
         if(this.worldService.setCountryPlayer()) {
             this.screenManager.showGameScreen(this.worldService);
@@ -90,5 +95,7 @@ public class HudPresenter implements Presenter, LobbyBoxListener {
         this.screenManager.showMainMenuScreen();
     }
 
-    @Override public void dispose() {}
+    @Override public void dispose() {
+
+    }
 }

@@ -37,6 +37,11 @@ public class TooltipPresenter implements Presenter {
     public void refresh() {
     }
 
+    @Override
+    public void update(float delta) {
+
+    }
+
     public void updateMapTooltip(int x, int y) {
         if (this.lockedByUi) {
             return;

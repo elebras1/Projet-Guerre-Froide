@@ -35,7 +35,11 @@ public class LoadingPresenter implements Presenter {
     }
 
     @Override
-    public void dispose() {
+    public void update(float delta) {
 
+    }
+
+    @Override
+    public void dispose() {
     }
 }

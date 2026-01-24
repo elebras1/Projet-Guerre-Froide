@@ -47,6 +47,11 @@ public class ProvincePanelPresenter implements Presenter, TimeListener {
     }
 
     @Override
+    public void update(float delta) {
+
+    }
+
+    @Override
     public void onNewDay(LocalDate date) {
         this.provincePanel.setResourceProduced(this.worldService.getResourceGoodsProduction());
     }

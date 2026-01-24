@@ -57,6 +57,11 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
 
     }
 
+    @Override
+    public void update(float delta) {
+
+    }
+
     public void show() {
         this.mainMenuInGame.setVisible(true);
         this.mainMenuInGame.toFront();

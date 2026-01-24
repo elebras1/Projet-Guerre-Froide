@@ -11,21 +11,21 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Array;
+import com.github.tommyettinger.ds.ObjectList;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
 import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
 import com.populaire.projetguerrefroide.screen.listener.GameInputListener;
-import com.populaire.projetguerrefroide.screen.presenter.HudPresenter;
-import com.populaire.projetguerrefroide.screen.presenter.MainMenuInGamePresenter;
-import com.populaire.projetguerrefroide.screen.presenter.TooltipPresenter;
+import com.populaire.projetguerrefroide.screen.presenter.*;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
-import com.populaire.projetguerrefroide.ui.view.Debug;
 import com.populaire.projetguerrefroide.ui.view.MainMenuInGame;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
+
+import java.util.List;
 
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_HEIGHT;
 import static com.populaire.projetguerrefroide.ProjetGuerreFroide.WORLD_WIDTH;
@@ -43,7 +43,7 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     private final MainMenuInGamePresenter mainMenuInGamePresenter;
     private final HudPresenter hudPresenter;
     private final TooltipPresenter tooltipPresenter;
-    private final Debug debug;
+    private final List<Presenter> presenters;
     private float time;
     private boolean paused;
 
@@ -55,6 +55,7 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.cam.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 1.4f, 0);
         this.projection = new WgProjection();
+        this.presenters = new ObjectList<>();
 
         AssetManager assetManager = gameContext.getAssetManager();
         this.configurationService.loadNewGameLocalisation(this.gameContext);
@@ -65,6 +66,8 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
         this.hudPresenter = new HudPresenter(gameContext, worldService, screenManager, widgetFactory, assetManager.get("ui/newgame/newgame_skin.json"), skinUi, skinFlags, assetManager.get("ui/scrollbars/scrollbars_skin.json"), assetManager.get("portraits/portraits_skin.json"));
         this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json"), skinUi, assetManager.get("ui/scrollbars/scrollbars_skin.json"), assetManager.get("ui/popup/popup_skin.json"), skinFlags);
         this.tooltipPresenter = new TooltipPresenter(gameContext, this.worldService, widgetFactory, skinUi, skinFlags);
+        this.initializeDebug();
+
         this.hudPresenter.initialize(this.stage);
         this.tooltipPresenter.initialize(this.stage);
         this.mainMenuInGamePresenter.initialize(this.stage);
@@ -74,12 +77,15 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
         this.multiplexer.addProcessor(this.inputHandler);
         Gdx.input.setInputProcessor(this.multiplexer);
 
-        this.debug = new Debug(this.worldService.getNumberOfProvinces());
-        this.debug.setPosition(100, 90);
-        this.debug.setVisible(this.gameContext.getSettings().isDebugMode());
-        this.stage.addActor(this.debug);
-
         this.paused = false;
+    }
+
+    private void initializeDebug() {
+        if(this.gameContext.getSettings().isDebugMode()) {
+            DebugPresenter debugPresenter = new DebugPresenter(gameContext, worldService);
+            debugPresenter.initialize(this.stage);
+            this.presenters.add(debugPresenter);
+        }
     }
 
     @Override
@@ -174,7 +180,10 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
             this.inputHandler.updateCamera();
         }
 
-        this.debug.update(Gdx.graphics.getDeltaTime() * 1000);
+        for(Presenter presenter : this.presenters) {
+            presenter.update(delta);
+        }
+
         this.stage.act();
         this.stage.draw();
     }
