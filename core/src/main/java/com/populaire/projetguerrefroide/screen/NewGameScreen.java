@@ -128,7 +128,7 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
     @Override
     public void onHover(short x, short y) {
         if(this.worldService.hoverLandProvince(x, y) && !this.isMouseOverUI()) {
-            this.updateHoverBox(this.worldService.getProvinceId(x, y), this.worldService.getCountryIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y));
+            this.updateHoverBox(this.worldService.getProvinceNameId(x, y), this.worldService.getCountryNameIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y));
         } else {
             this.hideHoverBox();
         }
@@ -229,16 +229,16 @@ public class NewGameScreen implements Screen, GameInputListener, MainMenuInGameL
 
     public void updateCountrySelected() {
         if(this.worldService.isProvinceSelected()) {
-            this.countrySummaryPanel.update(this.worldService.prepareCountrySummaryDto(), this.gameContext.getLocalisation());
+            this.countrySummaryPanel.update(this.worldService.buildCountrySummary(), this.gameContext.getLocalisation());
         } else {
             this.countrySummaryPanel.hide();
         }
     }
 
-    public void updateHoverBox(int provinceId, String countryId, String colonizerId) {
+    public void updateHoverBox(String provinceNameId, String countryNameId, String colonizerId) {
         int x = Gdx.input.getX();
         int y = Gdx.graphics.getHeight() - Gdx.input.getY();
-        this.hoverTooltip.update(provinceId, countryId, colonizerId);
+        this.hoverTooltip.update(provinceNameId, countryNameId, colonizerId);
         this.hoverTooltip.setPosition(x + (float) this.gameContext.getCursorManager().getWidth(),
             y - this.gameContext.getCursorManager().getHeight() * 1.5f);
         this.hoverTooltip.setVisible(true);

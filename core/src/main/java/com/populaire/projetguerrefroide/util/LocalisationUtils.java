@@ -4,19 +4,19 @@ import java.util.Map;
 
 public class LocalisationUtils {
 
-    public static String getCountryNameLocalisation(Map<String, String> localisation, String countryId, String colonizerId) {
-        if (localisation == null || countryId == null) {
-            throw new IllegalArgumentException("localisation and countryId can't be null");
+    public static String getCountryNameLocalisation(Map<String, String> localisation, String countryNameId, String colonizerNameId) {
+        if (localisation == null || countryNameId == null) {
+            throw new IllegalArgumentException("localisation and countryNameId can't be null");
         }
 
-        if (colonizerId != null) {
-            String countryName = localisation.get(countryId + "_COL");
+        if (colonizerNameId != null) {
+            String countryName = localisation.get(countryNameId + "_COL");
             if (countryName != null) {
                 return countryName;
             }
         }
 
-        return localisation.get(countryId);
+        return localisation.get(countryNameId);
     }
 
 }

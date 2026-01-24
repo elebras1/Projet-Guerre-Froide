@@ -190,37 +190,6 @@ public class MapService implements WorldContext, Disposable {
         return this.provinces.size();
     }
 
-    public int getPopulationAmountOfProvince(long provinceEntityId) {
-        Entity provinceEntity = this.gameContext.getEcsWorld().obtainEntity(provinceEntityId);
-        Province provinceData = provinceEntity.get(Province.class);
-        return provinceData.amountChildren() + provinceData.amountAdults() + provinceData.amountSeniors();
-    }
-
-    public int getPopulationAmountOfCountry(long countryEntityId) {
-        MutableInt population = new MutableInt(0);
-        Query query = this.queryRepository.getProvinces();
-        query.iter(iter -> {
-            Field<Province> provinceField = iter.field(Province.class, 0);
-            for(int i = 0; i < iter.count(); i++) {
-                ProvinceView provinceView = provinceField.getMutView(i);
-                if(provinceView.ownerId() == countryEntityId) {
-                    population.increment(provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors());
-                }
-            }
-        });
-
-        return population.getValue();
-    }
-
-    public String getResourceGoodName(long provinceEntityId) {
-        Entity provinceEntity = this.gameContext.getEcsWorld().obtainEntity(provinceEntityId);
-        ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
-        if(resourceGathering != null) {
-            return this.gameContext.getEcsWorld().obtainEntity(resourceGathering.goodId()).getName();
-        }
-        return null;
-    }
-
     private void updatePixmapCountriesColor() {
         World ecsWorld = this.gameContext.getEcsWorld();
         EcsConstants ecsConstants = this.gameContext.getEcsConstants();

@@ -907,7 +907,7 @@ public class WorldDaoImpl implements WorldDao {
         this.readRegionJson(ecsWorld, ecsConstants, regionBuildingsByProvince);
         this.readDefinitionCsv(ecsWorld, provinces);
         this.readProvinceBitmap(ecsWorld, provinces, borders);
-        this.readCountriesHistoryJson(ecsWorld, ecsConstants);
+        this.readCountriesHistoryJson(ecsWorld);
         this.readContinentJsonFile(ecsWorld);
         this.readAdjenciesJson(ecsWorld);
         this.readPositionsJson(ecsWorld);
@@ -1193,7 +1193,7 @@ public class WorldDaoImpl implements WorldDao {
         return y > 0 && pixmap.getPixel(x, y - 1) != color;
     }
 
-    private void readCountriesHistoryJson(World ecsWorld, EcsConstants ecsConstants) {
+    private void readCountriesHistoryJson(World ecsWorld) {
         ObjectObjectMap<String, String> countriesHistoryPaths = new ObjectObjectMap<>(262, 1f);
         try {
             JsonValue countriesJson = this.parseJsonFile(this.countriesHistoryJsonFiles);
@@ -1203,9 +1203,9 @@ public class WorldDaoImpl implements WorldDao {
                 countriesHistoryPaths.put(entry.getKey(), this.historyPath + entry.getValue().asString());
             }
             for (Map.Entry<String, String> entry : countriesHistoryPaths) {
-                String countryId = entry.getKey();
+                String countryNameId = entry.getKey();
                 String countryFileName = entry.getValue();
-                this.readCountryHistoryJson(ecsWorld, ecsConstants, countryFileName, countryId);
+                this.readCountryHistoryJson(ecsWorld, countryFileName, countryNameId);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -1214,12 +1214,12 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readCountryHistoryJson(World ecsWorld, EcsConstants ecsConstants, String countryFileName, String idCountry) {
+    private void readCountryHistoryJson(World ecsWorld, String countryFileName, String countryNameId) {
         try {
             if(countryFileName.equals("history/countries/REB - Rebels.json")) {
                 return;
             }
-            Entity country = ecsWorld.obtainEntity(ecsWorld.lookup(idCountry));
+            Entity country = ecsWorld.obtainEntity(ecsWorld.lookup(countryNameId));
 
             JsonValue countryValues = this.parseJsonFile(countryFileName);
             int capital = (int) countryValues.get("capital").asLong();

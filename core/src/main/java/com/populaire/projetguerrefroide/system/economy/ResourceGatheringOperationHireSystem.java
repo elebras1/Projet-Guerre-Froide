@@ -3,15 +3,16 @@ package com.populaire.projetguerrefroide.system.economy;
 import com.github.elebras1.flecs.*;
 import com.github.elebras1.flecs.util.FlecsConstants;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.service.BuildingService;
 import com.populaire.projetguerrefroide.service.EconomyService;
 
 public class ResourceGatheringOperationHireSystem {
     private final World ecsWorld;
-    private final EconomyService economyService;
+    private final BuildingService buildingService;
 
-    public ResourceGatheringOperationHireSystem(World ecsWorld, EconomyService economyService) {
+    public ResourceGatheringOperationHireSystem(World ecsWorld, BuildingService buildingService) {
         this.ecsWorld = ecsWorld;
-        this.economyService = economyService;
+        this.buildingService = buildingService;
         ecsWorld.system("RGOHireSystem").kind(FlecsConstants.EcsOnUpdate).with(Province.class).with(ResourceGathering.class).with(PopulationDistribution.class).multiThreaded().iter(this::hire);
     }
 
@@ -31,7 +32,7 @@ public class ResourceGatheringOperationHireSystem {
             }
 
             int size = resourceGatheringView.size();
-            int maxWorkers = this.economyService.getMaxWorkers(this.ecsWorld, resourceGoodId, size);
+            int maxWorkers = this.buildingService.getMaxWorkers(resourceGoodId, size);
 
             EntityView productionTypeView = this.ecsWorld.obtainEntityView(resourceProductionView.productionTypeId());
             ProductionTypeView productionTypeDataView = productionTypeView.getMutView(ProductionType.class);

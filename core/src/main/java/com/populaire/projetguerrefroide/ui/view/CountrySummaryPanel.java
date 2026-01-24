@@ -70,8 +70,8 @@ public class CountrySummaryPanel extends Table {
     }
 
     public void update(CountrySummaryDto countrySummaryDto, Map<String, String> localisation) {
-        this.countryName.setText(LocalisationUtils.getCountryNameLocalisation(localisation, countrySummaryDto.idCountry(), countrySummaryDto.colonizerId()));
-        this.flagImage.setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, countrySummaryDto.idCountry(), countrySummaryDto.colonizerId()));
+        this.countryName.setText(LocalisationUtils.getCountryNameLocalisation(localisation, countrySummaryDto.countryNameId(), countrySummaryDto.colonizerId()));
+        this.flagImage.setFlag(widgetFactory.getFlagTextureRegion(this.skinFlags, countrySummaryDto.countryNameId(), countrySummaryDto.colonizerId()));
         this.government.setText(localisation.get(countrySummaryDto.government()));
         this.countryPopulation.setText(ValueFormatter.format(countrySummaryDto.population(), localisation));
         this.portrait.setDrawable(this.skinPortraits.getDrawable(countrySummaryDto.portrait()));

@@ -159,7 +159,7 @@ public class MapRenderer implements Disposable {
             this.getLabelsData(
                 ecsWorld,
                 countryId,
-                LocalisationUtils.getCountryNameLocalisation(localisation, countryNameId, this.countryService.getColonizerId(country.id())),
+                LocalisationUtils.getCountryNameLocalisation(localisation, countryNameId, this.countryService.getColonizerNameId(country.id())),
                 mapLabelService,
                 vertices,
                 indices,

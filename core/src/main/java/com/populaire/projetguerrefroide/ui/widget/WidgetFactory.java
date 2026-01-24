@@ -127,27 +127,27 @@ public class WidgetFactory {
         return new FlagImage(overlayFlag, alphaFlag);
     }
 
-    public Drawable getFlagDrawable(Skin skin, String countryId, String colonizerId) {
-        if (colonizerId == null) {
-            return skin.getDrawable(countryId);
+    public Drawable getFlagDrawable(Skin skin, String countryNameId, String colonizerNameId) {
+        if (colonizerNameId == null) {
+            return skin.getDrawable(countryNameId);
         }
 
-        if (skin.has(countryId + "_COL_" + colonizerId, TextureRegion.class)) {
-            return skin.getDrawable(countryId + "_COL_" + colonizerId);
+        if (skin.has(countryNameId + "_COL_" + colonizerNameId, TextureRegion.class)) {
+            return skin.getDrawable(countryNameId + "_COL_" + colonizerNameId);
         }
 
-        return skin.getDrawable(colonizerId);
+        return skin.getDrawable(colonizerNameId);
     }
 
-    public TextureRegion getFlagTextureRegion(Skin skin, String countryId, String colonizerId) {
-        if (colonizerId == null) {
-            return skin.getRegion(countryId);
+    public TextureRegion getFlagTextureRegion(Skin skin, String countryNameId, String colonizerNameId) {
+        if (colonizerNameId == null) {
+            return skin.getRegion(countryNameId);
         }
 
-        if (skin.has(countryId + "_COL_" + colonizerId, TextureRegion.class)) {
-            return skin.getRegion(countryId + "_COL_" + colonizerId);
+        if (skin.has(countryNameId + "_COL_" + colonizerNameId, TextureRegion.class)) {
+            return skin.getRegion(countryNameId + "_COL_" + colonizerNameId);
         }
 
-        return skin.getRegion(colonizerId);
+        return skin.getRegion(colonizerNameId);
     }
 }

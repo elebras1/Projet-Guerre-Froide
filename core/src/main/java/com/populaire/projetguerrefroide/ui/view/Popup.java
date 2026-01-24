@@ -37,13 +37,13 @@ public class Popup extends Table {
         this.addDragListener();
     }
 
-    public Popup(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, String idCountry, String idColonizer, boolean doubleButton, boolean big, PopupListener listener) {
+    public Popup(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String title, String description, String countryNameId, String colonizerNameId, boolean doubleButton, boolean big, PopupListener listener) {
         this.listener = listener;
         this.widgetFactory = widgetFactory;
         this.setPopup(skin, labelStylePool, localisation, title, description, doubleButton, big, this.getIdButton(doubleButton, big));
-        this.flagLeftImage = createFlagImage(skinUi, skinFlags, idCountry, idColonizer);
+        this.flagLeftImage = createFlagImage(skinUi, skinFlags, countryNameId, colonizerNameId);
         this.flagLeftImage.setPosition(9, this.getHeight() - 75);
-        this.flagRightImage = createFlagImage(skinUi, skinFlags, idCountry, idColonizer);
+        this.flagRightImage = createFlagImage(skinUi, skinFlags, countryNameId, colonizerNameId);
         this.flagRightImage.setPosition(this.getWidth() - 72, this.getHeight() - 75);
         this.setTouchable(Touchable.enabled);
         this.addDragListener();
@@ -78,9 +78,9 @@ public class Popup extends Table {
         this.addActor(button);
     }
 
-    private FlagImage createFlagImage(Skin skinUi, Skin skinFlags, String idCountry, String IdColonizer) {
+    private FlagImage createFlagImage(Skin skinUi, Skin skinFlags, String countryNameId, String colonizerNameId) {
         FlagImage flagImage = this.widgetFactory.createFlagImage(skinUi, "shield_big", "shield_big_overlay");
-        flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(skinFlags, idCountry, IdColonizer));
+        flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(skinFlags, countryNameId, colonizerNameId));
         this.addActor(flagImage);
 
         return flagImage;

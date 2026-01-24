@@ -35,7 +35,7 @@ public class TopBar extends Table {
     private Image dateState;
     private Label date;
 
-    public TopBar(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String idCountry, String idColonizer, TopBarListener listener) {
+    public TopBar(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation, String countryNameId, String colonizerNameId, TopBarListener listener) {
         this.widgetFactory = widgetFactory;
         this.skin = skin;
         this.skinUi = skinUi;
@@ -48,7 +48,7 @@ public class TopBar extends Table {
         this.setCountryData(labelStylePool);
         this.setTabButtons(labelStylePool, listener);
         this.setDateSection(labelStylePool, listener);
-        this.addActor(this.createFlagSection(idCountry, idColonizer));
+        this.addActor(this.createFlagSection(countryNameId, colonizerNameId));
         this.addActor(this.createPrestigeSection(labelStylePool));
     }
 
@@ -108,12 +108,12 @@ public class TopBar extends Table {
         this.addActor(plusSpeed);
     }
 
-    private Actor createFlagSection(String idCountry, String idColonizer) {
+    private Actor createFlagSection(String countryNameId, String colonizeNameId) {
         Table flagSection = this.widgetFactory.createBackgroundTable(this.skin, "small_naked_bar", 37, 40);
         FlagImage flagImage = this.widgetFactory.createFlagImage(this.skinUi, "flag_alpha", "flag_overlay");
         flagImage.setPosition(-10, -21);
         flagSection.addActor(flagImage);
-        flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(this.skinFlags, idCountry, idColonizer));
+        flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(this.skinFlags, countryNameId, colonizeNameId));
         this.widgetFactory.createFlatButton(this.skin, "stats", 96, 13, flagSection);
         this.widgetFactory.createFlatButton(this.skin, "menu", 126, 13, flagSection);
         this.defcon = this.widgetFactory.createImage(this.skin, "defcon_buttons_0", 156, 4, flagSection);
@@ -166,12 +166,8 @@ public class TopBar extends Table {
         this.uranium.setText(String.valueOf(countryDto.uranium()));
         this.dissent.setText(ValueFormatter.format(countryDto.dissent(), this.localisation));
         this.nationalUnity.setText(ValueFormatter.format(countryDto.nationalUnity(), this.localisation));
-    }
-
-    public void setRanking(int ranking) {
-        this.ranking.setText(String.valueOf(ranking));
-        Table parent = (Table) this.ranking.getParent();
-        parent.pack();
+        this.ranking.setText(String.valueOf(countryDto.ranking()));
+        ((Table) this.ranking.getParent()).pack();
     }
 
     public void setDefcon(int defcon) {

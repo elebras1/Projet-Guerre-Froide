@@ -52,22 +52,22 @@ public class HoverTooltip extends Table {
         this.add(this.subLabel).expandX().top().left();
     }
 
-    public void update(int provinceId, String countryId, String colonizerId) {
-        String mainText = this.localisation.get(String.valueOf(provinceId)) + " (" + LocalisationUtils.getCountryNameLocalisation(localisation, countryId, colonizerId) + ")";
+    public void update(String provinceNameId, String countryNameId, String colonizerNameId) {
+        String mainText = this.localisation.get(provinceNameId) + " (" + LocalisationUtils.getCountryNameLocalisation(localisation, countryNameId, colonizerNameId) + ")";
         if(!mainText.equals(this.mainLabel.getText().toString())) {
             this.mainLabel.setText(mainText);
-            this.image.setDrawable(this.widgetFactory.getFlagDrawable(this.skinFlags, countryId, colonizerId));
+            this.image.setDrawable(this.widgetFactory.getFlagDrawable(this.skinFlags, countryNameId, colonizerNameId));
             this.subLabel.remove();
             this.resize();
         }
     }
 
-    public void update(int provinceId, String countryId, String colonizerId, ObjectIntMap<String> elements) {
+    public void update(String provinceNameId, String countryNameId, String colonizerNameId, ObjectIntMap<String> elements) {
         this.text.setLength(0);
-        this.text.append(this.localisation.get(String.valueOf(provinceId))).append(" (").append(LocalisationUtils.getCountryNameLocalisation(localisation, countryId, colonizerId)).append(")");
+        this.text.append(this.localisation.get(provinceNameId)).append(" (").append(LocalisationUtils.getCountryNameLocalisation(localisation, countryNameId, colonizerNameId)).append(")");
         if (!this.text.toString().equals(this.mainLabel.getText().toString())) {
             this.mainLabel.setText(this.text.toString());
-            this.image.setDrawable(this.widgetFactory.getFlagDrawable(this.skinFlags, countryId, colonizerId));
+            this.image.setDrawable(this.widgetFactory.getFlagDrawable(this.skinFlags, countryNameId, colonizerNameId));
 
             this.text.setLength(0);
             int i = 0, size = elements.size();
@@ -77,7 +77,6 @@ public class HoverTooltip extends Table {
                     this.text.append("\n");
                 }
             }
-
 
             this.subLabel.setText(this.text.toString());
 

@@ -3,15 +3,16 @@ package com.populaire.projetguerrefroide.system.economy;
 import com.github.elebras1.flecs.*;
 import com.github.elebras1.flecs.util.FlecsConstants;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.service.BuildingService;
 import com.populaire.projetguerrefroide.service.EconomyService;
 
 public class ResourceGatheringOperationProduceSystem {
     private final World ecsWorld;
-    private final EconomyService economyService;
+    private final BuildingService buildingService;
 
-    public ResourceGatheringOperationProduceSystem(World ecsWorld, EconomyService economyService) {
+    public ResourceGatheringOperationProduceSystem(World ecsWorld, BuildingService buildingService) {
         this.ecsWorld = ecsWorld;
-        this.economyService = economyService;
+        this.buildingService = buildingService;
         ecsWorld.system("RGOProduceSystem").kind(FlecsConstants.EcsOnUpdate).with(Province.class).with(ResourceGathering.class).multiThreaded().iter(this::process);
     }
 
@@ -34,7 +35,7 @@ public class ResourceGatheringOperationProduceSystem {
                 totalWorkers += hiredWorker;
             }
 
-            int maxWorkers = this.economyService.getMaxWorkers(this.ecsWorld, resourceGoodId, resourceGoodSize);
+            int maxWorkers = this.buildingService.getMaxWorkers(resourceGoodId, resourceGoodSize);
             float throughput = maxWorkers > 0 ? (float) totalWorkers / maxWorkers : 0f;
             float production = baseProduction * throughput;
 

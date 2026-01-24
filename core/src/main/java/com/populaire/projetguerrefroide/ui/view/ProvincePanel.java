@@ -177,8 +177,8 @@ public class ProvincePanel extends Table {
     }
 
     public void setData(ProvinceDto provinceDto) {
-        this.setProvinceName(provinceDto.provinceId());
-        this.setRegionName(provinceDto.regionId());
+        this.setProvinceName(provinceDto.provinceNameId());
+        this.setRegionName(provinceDto.regionNameId());
         this.setTerrainImage(provinceDto.terrainImage());
         this.setResourceImage(provinceDto.resourceImage());
         this.setPopulationRegion(ValueFormatter.format(provinceDto.populationRegion(), this.localisation));
@@ -186,7 +186,7 @@ public class ProvincePanel extends Table {
         this.setDevelopmentIndexRegion(provinceDto.developmentIndexRegion());
         this.setIncomeRegion(provinceDto.incomeRegion());
         this.setIndustryRegion(provinceDto.industryRegion());
-        this.setFlagImage(provinceDto.countryId(), provinceDto.colonizerId());
+        this.setFlagImage(provinceDto.countryNameId(), provinceDto.colonizerNameId());
         this.setFlagCountriesCore(provinceDto.flagCountriesCore());
         this.setResourceProduced(provinceDto.resourceProduced());
         this.setInfrastructureValue(provinceDto.infrastructureValue());
@@ -226,13 +226,13 @@ public class ProvincePanel extends Table {
         this.resourceImage.setPosition(22, 160);
     }
 
-    private void setProvinceName(String name) {
-        this.provinceName.setText(this.localisation.get(name));
+    private void setProvinceName(String nameId) {
+        this.provinceName.setText(this.localisation.get(nameId));
         this.provinceName.setPosition(this.getWidth() / 2 - this.provinceName.getMinWidth() / 2, 471);
     }
 
-    private void setRegionName(String name) {
-        this.regionName.setText(this.localisation.get(name));
+    private void setRegionName(String nameId) {
+        this.regionName.setText(this.localisation.get(nameId));
         this.regionName.setPosition(this.regionName.getParent().getWidth() / 2 - this.regionName.getMinWidth() / 2, 104);
     }
 
@@ -267,8 +267,8 @@ public class ProvincePanel extends Table {
         this.industryRegion.setPosition(360 - this.industryRegion.getMinWidth(), 75);
     }
 
-    private void setFlagImage(String idCountry, String idColonizer) {
-        this.flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(this.skinFlags, idCountry, idColonizer));
+    private void setFlagImage(String countryNameId, String colonizerNameId) {
+        this.flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(this.skinFlags, countryNameId, colonizerNameId));
         this.flagImage.setPosition(36, 430);
     }
 
