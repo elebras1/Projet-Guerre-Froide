@@ -129,7 +129,7 @@ public class Minimap extends Table {
 
             @Override
             public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
-                listener.hideHoverBox();
+                listener.hideUiTooltip();
             }
         });
         minimap.addActor(button);

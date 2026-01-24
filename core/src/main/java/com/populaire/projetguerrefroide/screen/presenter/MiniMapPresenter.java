@@ -68,7 +68,8 @@ public class MiniMapPresenter implements Presenter, MinimapListener {
     }
 
     @Override
-    public void hideHoverBox() {
+    public void hideUiTooltip() {
+        this.gameFlowHandler.hideTooltip();
     }
 
     @Override

@@ -6,7 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.populaire.projetguerrefroide.pojo.MapMode;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.service.WorldService;
-import com.populaire.projetguerrefroide.ui.view.HoverTooltip;
+import com.populaire.projetguerrefroide.ui.view.Tooltip;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
 public class TooltipPresenter implements Presenter {
@@ -14,7 +14,8 @@ public class TooltipPresenter implements Presenter {
     private final WorldService worldService;
     private final WidgetFactory widgetFactory;
     private final Skin skinUi, skinFlags;
-    private HoverTooltip hoverTooltip;
+    private Tooltip tooltip;
+    private boolean lockedByUi;
 
     public TooltipPresenter(GameContext context, WorldService worldService, WidgetFactory factory, Skin skinUi, Skin skinFlags) {
         this.gameContext = context;
@@ -22,47 +23,69 @@ public class TooltipPresenter implements Presenter {
         this.widgetFactory = factory;
         this.skinUi = skinUi;
         this.skinFlags = skinFlags;
+        this.lockedByUi = false;
     }
 
     @Override
     public void initialize(Stage stage) {
-        this.hoverTooltip = new HoverTooltip(widgetFactory, skinUi, skinFlags, gameContext.getLabelStylePool(), gameContext.getLocalisation());
-        this.hoverTooltip.setVisible(false);
-        stage.addActor(this.hoverTooltip);
+        this.tooltip = new Tooltip(widgetFactory, skinUi, skinFlags, gameContext.getLabelStylePool(), gameContext.getLocalisation());
+        this.tooltip.setVisible(false);
+        stage.addActor(this.tooltip);
     }
 
     @Override
     public void refresh() {
     }
 
-    public void update(int x, int y) {
+    public void updateMapTooltip(int x, int y) {
+        if (this.lockedByUi) {
+            return;
+        }
+
         int screenX = Gdx.input.getX();
         int screenY = Gdx.graphics.getHeight() - Gdx.input.getY();
 
         if(this.worldService.getMapMode().equals(MapMode.CULTURAL)) {
-            this.hoverTooltip.update(this.worldService.getProvinceNameId(x, y), this.worldService.getCountryNameIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y), this.worldService.getCulturesOfHoveredProvince(x, y));
+            this.tooltip.update(this.worldService.getProvinceNameId(x, y), this.worldService.getCountryNameIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y), this.worldService.getCulturesOfHoveredProvince(x, y));
         } else if(this.worldService.getMapMode().equals(MapMode.RELIGIOUS)) {
-            this.hoverTooltip.update(this.worldService.getProvinceNameId(x, y), this.worldService.getCountryNameIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y), this.worldService.getReligionsOfHoveredProvince(x, y));
+            this.tooltip.update(this.worldService.getProvinceNameId(x, y), this.worldService.getCountryNameIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y), this.worldService.getReligionsOfHoveredProvince(x, y));
         } else {
-            this.hoverTooltip.update(this.worldService.getProvinceNameId(x, y), this.worldService.getCountryNameIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y));
+            this.tooltip.update(this.worldService.getProvinceNameId(x, y), this.worldService.getCountryNameIdOfHoveredProvince(x, y), this.worldService.getColonizerIdOfHoveredProvince(x, y));
         }
-        this.hoverTooltip.setPosition(screenX + (float) this.gameContext.getCursorManager().getWidth(), screenY - this.gameContext.getCursorManager().getHeight() * 1.5f);
-        this.hoverTooltip.setVisible(true);
+
+        this.updatePosition(screenX, screenY);
+        this.tooltip.setVisible(true);
     }
 
-    public void update(String content) {
+    public void hideMapTooltip() {
+        if (this.lockedByUi) {
+            return;
+        }
+        this.tooltip.setVisible(false);
+    }
+
+    public void updateUiTooltip(String content) {
+        this.lockedByUi = true;
         int screenX = Gdx.input.getX();
         int screenY = Gdx.graphics.getHeight() - Gdx.input.getY();
 
-        this.hoverTooltip.update(content);
-        this.hoverTooltip.setPosition(screenX + (float) this.gameContext.getCursorManager().getWidth(), screenY - this.gameContext.getCursorManager().getHeight() * 1.5f);
-        this.hoverTooltip.setVisible(true);
+        this.tooltip.update(content);
+        this.updatePosition(screenX, screenY);
+        this.tooltip.setVisible(true);
+        this.tooltip.toFront();
     }
 
-    public void hide() {
-        this.hoverTooltip.setVisible(false);
+    public void hideUiTooltip() {
+        this.lockedByUi = false;
+        this.tooltip.setVisible(false);
+    }
+
+    private void updatePosition(float screenX, float screenY) {
+        this.tooltip.setPosition(screenX + (float) this.gameContext.getCursorManager().getWidth(), screenY - this.gameContext.getCursorManager().getHeight() * 1.5f);
     }
 
     @Override
-    public void dispose() {}
+    public void dispose() {
+
+    }
 }

@@ -114,6 +114,11 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     }
 
     @Override
+    public void hideTooltip() {
+
+    }
+
+    @Override
     public void moveCameraTo(int x, int y) {
 
     }
@@ -137,9 +142,9 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     @Override
     public void onHover(int x, int y) {
         if(this.worldService.hoverLandProvince(x, y) && !this.isMouseOverUI()) {
-            this.tooltipPresenter.update(x, y);
+            this.tooltipPresenter.updateMapTooltip(x, y);
         } else {
-            this.tooltipPresenter.hide();
+            this.tooltipPresenter.hideMapTooltip();
         }
     }
 

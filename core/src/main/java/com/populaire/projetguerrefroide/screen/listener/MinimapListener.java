@@ -9,5 +9,5 @@ public interface MinimapListener {
     void changeMapMode(String mapMode);
     IntObjectMap<String> getInformationsMapMode(String mapMode);
     void updateHoverTooltip(String content);
-    void hideHoverBox();
+    void hideUiTooltip();
 }

@@ -119,9 +119,9 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
     @Override
     public void onHover(int x, int y) {
         if(this.worldService.hoverLandProvince(x, y) && !this.isMouseOverUI()) {
-            this.tooltipPresenter.update(x, y);
+            this.tooltipPresenter.updateMapTooltip(x, y);
         } else {
-            this.tooltipPresenter.hide();
+            this.tooltipPresenter.hideMapTooltip();
         }
     }
 
@@ -148,7 +148,12 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
 
     @Override
     public void showTooltip(String content) {
-        this.tooltipPresenter.update(content);
+        this.tooltipPresenter.updateUiTooltip(content);
+    }
+
+    @Override
+    public void hideTooltip() {
+        this.tooltipPresenter.hideUiTooltip();
     }
 
     @Override

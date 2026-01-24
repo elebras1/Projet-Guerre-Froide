@@ -14,7 +14,7 @@ import com.populaire.projetguerrefroide.util.LocalisationUtils;
 
 import java.util.Map;
 
-public class HoverTooltip extends Table {
+public class Tooltip extends Table {
     private final WidgetFactory widgetFactory;
     private final Map<String, String> localisation;
     private final Skin skinFlags;
@@ -25,7 +25,7 @@ public class HoverTooltip extends Table {
     private final float heightWidth;
     private final StringBuilder text;
 
-    public HoverTooltip(WidgetFactory widgetFactory, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
+    public Tooltip(WidgetFactory widgetFactory, Skin skinUi, Skin skinFlags, LabelStylePool labelStylePool, Map<String, String> localisation) {
         this.widgetFactory = widgetFactory;
         this.localisation = localisation;
         this.skinFlags = skinFlags;
