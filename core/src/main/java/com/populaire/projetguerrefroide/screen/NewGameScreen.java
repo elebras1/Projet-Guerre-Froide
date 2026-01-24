@@ -104,6 +104,11 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     }
 
     @Override
+    public void toggleEconomyPanel() {
+
+    }
+
+    @Override
     public void onClick(int x, int y) {
         this.worldService.selectProvince(x, y);
         this.hudPresenter.updateCountrySelection(this.worldService.isProvinceSelected(), this.worldService.buildCountrySummary());
@@ -125,7 +130,7 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
 
     @Override
     public void onEscape() {
-        if (!paused) {
+        if (!this.paused) {
             this.pause();
             this.mainMenuInGamePresenter.show();
         } else {

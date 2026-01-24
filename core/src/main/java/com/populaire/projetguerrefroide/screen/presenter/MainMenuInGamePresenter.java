@@ -99,5 +99,7 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
         configurationService.saveSettings(s);
     }
 
-    @Override public void dispose() {}
+    @Override public void dispose() {
+
+    }
 }
