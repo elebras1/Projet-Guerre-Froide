@@ -65,7 +65,10 @@ public class HudPresenter implements Presenter, LobbyBoxListener {
         stage.addActor(bottomTable);
     }
 
-    public void updateCountrySelection(boolean isSelected, CountrySummaryDto summary) {
+    @Override
+    public void refresh() {
+        boolean isSelected = this.worldService.isProvinceSelected();
+        CountrySummaryDto summary = this.worldService.buildCountrySummary();
         if (isSelected && summary != null) {
             this.countrySummaryPanel.update(summary, gameContext.getLocalisation());
             this.countrySummaryPanel.setVisible(true);

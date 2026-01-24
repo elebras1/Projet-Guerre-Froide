@@ -64,7 +64,7 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
         WidgetFactory widgetFactory = new WidgetFactory();
         this.hudPresenter = new HudPresenter(gameContext, worldService, screenManager, widgetFactory, assetManager.get("ui/newgame/newgame_skin.json"), skinUi, skinFlags, assetManager.get("ui/scrollbars/scrollbars_skin.json"), assetManager.get("portraits/portraits_skin.json"));
         this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json"), skinUi, assetManager.get("ui/scrollbars/scrollbars_skin.json"), assetManager.get("ui/popup/popup_skin.json"), skinFlags);
-        this.tooltipPresenter = new TooltipPresenter(gameContext, widgetFactory, skinUi, skinFlags);
+        this.tooltipPresenter = new TooltipPresenter(gameContext, this.worldService, widgetFactory, skinUi, skinFlags);
         this.hudPresenter.initialize(this.stage);
         this.tooltipPresenter.initialize(this.stage);
         this.mainMenuInGamePresenter.initialize(this.stage);
@@ -109,20 +109,35 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     }
 
     @Override
+    public void showTooltip(String content) {
+
+    }
+
+    @Override
+    public void moveCameraTo(int x, int y) {
+
+    }
+
+    @Override
+    public void zoomIn() {
+
+    }
+
+    @Override
+    public void zoomOut() {
+
+    }
+
+    @Override
     public void onClick(int x, int y) {
         this.worldService.selectProvince(x, y);
-        this.hudPresenter.updateCountrySelection(this.worldService.isProvinceSelected(), this.worldService.buildCountrySummary());
+        this.hudPresenter.refresh();
     }
 
     @Override
     public void onHover(int x, int y) {
-        boolean overUI = this.stage.hit(Gdx.input.getX(), Gdx.graphics.getHeight() - Gdx.input.getY(), true) != null;
-        if(this.worldService.hoverLandProvince(x, y) && !overUI) {
-            this.tooltipPresenter.onHover(
-                this.worldService.getProvinceNameId(x, y),
-                this.worldService.getCountryNameIdOfHoveredProvince(x, y),
-                this.worldService.getColonizerIdOfHoveredProvince(x, y)
-            );
+        if(this.worldService.hoverLandProvince(x, y) && !this.isMouseOverUI()) {
+            this.tooltipPresenter.update(x, y);
         } else {
             this.tooltipPresenter.hide();
         }
@@ -142,8 +157,7 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     public void render(float delta) {
         this.time += delta;
         this.cam.update();
-        float camX = (this.cam.position.x + WORLD_WIDTH) % WORLD_WIDTH;
-        this.cam.position.x = camX;
+        this.cam.position.x = (this.cam.position.x + WORLD_WIDTH) % WORLD_WIDTH;
         this.projection.setProjectionMatrix(this.cam.combined);
 
         WgScreenUtils.clear(1, 1, 1, 1);
@@ -171,13 +185,19 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
         }
     }
 
-    private boolean isMenuContainer(Table t) {
-        for(Actor c : t.getChildren()) {
-            if(c instanceof MainMenuInGame) {
+    private boolean isMenuContainer(Table table) {
+        for(Actor actor : table.getChildren()) {
+            if(actor instanceof MainMenuInGame) {
                 return true;
             }
         }
         return false;
+    }
+
+    private boolean isMouseOverUI() {
+        int mouseX = Gdx.input.getX();
+        int mouseY = Gdx.graphics.getHeight() - Gdx.input.getY();
+        return this.stage.hit(mouseX, mouseY, true) != null;
     }
 
     @Override public void resize(int width, int height) {

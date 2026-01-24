@@ -46,6 +46,11 @@ public class TopBarPresenter implements Presenter, TopBarListener, TimeListener 
     }
 
     @Override
+    public void refresh() {
+
+    }
+
+    @Override
     public int onSpeedUp() {
         return this.timeService.upSpeed();
     }

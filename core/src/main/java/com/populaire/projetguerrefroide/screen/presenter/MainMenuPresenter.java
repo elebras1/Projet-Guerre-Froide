@@ -34,6 +34,11 @@ public class MainMenuPresenter implements Presenter, MainMenuListener {
     }
 
     @Override
+    public void refresh() {
+
+    }
+
+    @Override
     public void onSinglePlayerClicked() {
         this.screenManager.showLoadScreen();
     }

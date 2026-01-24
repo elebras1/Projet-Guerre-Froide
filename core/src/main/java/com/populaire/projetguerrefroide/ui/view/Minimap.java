@@ -47,8 +47,8 @@ public class Minimap extends Table {
         map.addListener(new ClickListener() {
             @Override
             public void clicked(com.badlogic.gdx.scenes.scene2d.InputEvent event, float x, float y) {
-                short worldX = (short) ((x / map.getWidth()) * WORLD_WIDTH);
-                short worldY = (short) ((y / map.getHeight()) * WORLD_HEIGHT);
+                int worldX = (int) ((x / map.getWidth()) * WORLD_WIDTH);
+                int worldY = (int) ((y / map.getHeight()) * WORLD_HEIGHT);
                 listener.moveCamera(worldX, worldY);
             }
         });

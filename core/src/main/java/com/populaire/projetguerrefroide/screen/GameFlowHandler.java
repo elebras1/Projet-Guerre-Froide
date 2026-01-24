@@ -5,4 +5,8 @@ public interface GameFlowHandler {
     void resume();
     void setInputEnabled(boolean enabled);
     void toggleEconomyPanel();
+    void showTooltip(String content);
+    void moveCameraTo(int x, int y);
+    void zoomIn();
+    void zoomOut();
 }

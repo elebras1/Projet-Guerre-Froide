@@ -18,7 +18,7 @@ import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListener {
     private final GameContext gameContext;
     private final ConfigurationService configurationService;
-    private final GameFlowHandler sessionController;
+    private final GameFlowHandler gameFlowHandler;
     private final WidgetFactory widgetFactory;
     private final Skin skinMenu;
     private final Skin skinUi;
@@ -28,10 +28,10 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
     private MainMenuInGame mainMenuInGame;
     private Stage stage;
 
-    public MainMenuInGamePresenter(GameContext gameContext, ConfigurationService configurationService, GameFlowHandler sessionController, WidgetFactory widgetFactory, Skin skinMenu, Skin skinUi, Skin skinScrollbars, Skin skinPopup, Skin skinFlags) {
+    public MainMenuInGamePresenter(GameContext gameContext, ConfigurationService configurationService, GameFlowHandler gameFlowHandler, WidgetFactory widgetFactory, Skin skinMenu, Skin skinUi, Skin skinScrollbars, Skin skinPopup, Skin skinFlags) {
         this.gameContext = gameContext;
         this.configurationService = configurationService;
-        this.sessionController = sessionController;
+        this.gameFlowHandler = gameFlowHandler;
         this.widgetFactory = widgetFactory;
         this.skinMenu = skinMenu;
         this.skinUi = skinUi;
@@ -52,21 +52,26 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
         stage.addActor(table);
     }
 
+    @Override
+    public void refresh() {
+
+    }
+
     public void show() {
         this.mainMenuInGame.setVisible(true);
         this.mainMenuInGame.toFront();
-        this.sessionController.setInputEnabled(false);
+        this.gameFlowHandler.setInputEnabled(false);
     }
 
     public void hide() {
         this.mainMenuInGame.setVisible(false);
-        this.sessionController.setInputEnabled(true);
+        this.gameFlowHandler.setInputEnabled(true);
     }
 
     @Override
     public void onCloseMainMenuInGameClicked() {
         this.hide();
-        this.sessionController.resume();
+        this.gameFlowHandler.resume();
     }
 
     @Override

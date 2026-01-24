@@ -172,7 +172,7 @@ public class MapService implements WorldContext, Disposable {
 
     public boolean setCountryPlayer() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        if(this.selectedProvinceId != 0) {
+        if(this.selectedProvinceId != -1) {
             Entity selectedProvinceEntity = ecsWorld.obtainEntity(this.selectedProvinceId);
             Province selectedProvinceData = selectedProvinceEntity.get(Province.class);
             this.playerCountryId = selectedProvinceData.ownerId();

@@ -30,6 +30,11 @@ public class LoadingPresenter implements Presenter {
     }
 
     @Override
+    public void refresh() {
+
+    }
+
+    @Override
     public void dispose() {
 
     }

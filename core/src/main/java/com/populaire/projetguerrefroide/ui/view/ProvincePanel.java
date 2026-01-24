@@ -82,7 +82,7 @@ public class ProvincePanel extends Table {
         closeButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                ProvincePanel.this.remove();
+                setVisible(false);
             }
         });
         this.addActor(closeButton);
