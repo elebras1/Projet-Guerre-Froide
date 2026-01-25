@@ -6,6 +6,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -102,10 +103,10 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
     public void setInputEnabled(boolean enabled) {
         if (enabled) {
             this.multiplexer.addProcessor(this.inputHandler);
-            this.setAllStageTouchable(Touchable.enabled);
+            this.setAllStageTouchable(true);
         } else {
             this.multiplexer.removeProcessor(this.inputHandler);
-            this.setAllStageTouchable(Touchable.disabled);
+            this.setAllStageTouchable(false);
         }
     }
 
@@ -188,23 +189,29 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
         this.stage.draw();
     }
 
-    private void setAllStageTouchable(Touchable touchable) {
-        Array<Actor> actors = this.stage.getActors();
-        for (int i = 0; i < actors.size; i++) {
-            Actor actor = actors.get(i);
-            if (actor instanceof Table && this.isMenuContainer((Table)actor)) {
-                continue;
+    private void setAllStageTouchable(boolean touchable) {
+        for (int i = 0; i < this.stage.getActors().size; i++) {
+            Actor actor = this.stage.getActors().get(i);
+            if (!this.isMenuContainer(actor)) {
+                actor.setTouchable(touchable ? Touchable.childrenOnly : Touchable.disabled);
             }
-            actor.setTouchable(touchable);
         }
     }
 
-    private boolean isMenuContainer(Table table) {
-        for(Actor actor : table.getChildren()) {
-            if(actor instanceof MainMenuInGame) {
-                return true;
+    private boolean isMenuContainer(Actor actor) {
+        if (actor instanceof MainMenuInGame) {
+            return true;
+        }
+
+        if (actor instanceof Group group) {
+            for (Actor child : group.getChildren()) {
+                if (this.isMenuContainer(child)) {
+                    return true;
+
+                }
             }
         }
+
         return false;
     }
 

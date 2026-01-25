@@ -1,9 +1,6 @@
 package com.populaire.projetguerrefroide.service;
 
-import com.github.elebras1.flecs.EntityView;
-import com.github.elebras1.flecs.Field;
-import com.github.elebras1.flecs.Query;
-import com.github.elebras1.flecs.World;
+import com.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.LongList;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.component.*;
@@ -216,7 +213,8 @@ public class RegionService {
         List<String> result = new ObjectList<>();
         for (int provinceIndex = 0; provinceIndex < provinceIds.size(); provinceIndex++) {
             long id = provinceIds.get(provinceIndex);
-            result.add(String.valueOf(id));
+            Entity province = ecsWorld.obtainEntity(id);
+            result.add(province.getName());
         }
 
         return result;

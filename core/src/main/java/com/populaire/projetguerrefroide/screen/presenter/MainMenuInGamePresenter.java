@@ -26,6 +26,8 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
     private final Skin skinPopup;
     private final Skin skinFlags;
     private MainMenuInGame mainMenuInGame;
+    private Table rootTable;
+    private Popup currentPopup;
     private Stage stage;
 
     public MainMenuInGamePresenter(GameContext gameContext, ConfigurationService configurationService, GameFlowHandler gameFlowHandler, WidgetFactory widgetFactory, Skin skinMenu, Skin skinUi, Skin skinScrollbars, Skin skinPopup, Skin skinFlags) {
@@ -46,10 +48,10 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
         this.mainMenuInGame = new MainMenuInGame(widgetFactory, skinMenu, skinUi, skinScrollbars, gameContext.getLabelStylePool(), gameContext.getLocalisation(), this);
         this.mainMenuInGame.setVisible(false);
 
-        Table table = new Table();
-        table.setFillParent(true);
-        table.add(this.mainMenuInGame).center();
-        stage.addActor(table);
+        this.rootTable = new Table();
+        this.rootTable.setFillParent(true);
+        this.rootTable.add(this.mainMenuInGame).center();
+        stage.addActor(this.rootTable);
     }
 
     @Override
@@ -64,7 +66,7 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
 
     public void show() {
         this.mainMenuInGame.setVisible(true);
-        this.mainMenuInGame.toFront();
+        this.rootTable.toFront();
         this.gameFlowHandler.setInputEnabled(false);
     }
 
@@ -81,10 +83,10 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
 
     @Override
     public void onQuitClicked(PopupListener listener) {
-        Popup popup = new Popup(widgetFactory, skinPopup, skinUi, skinFlags, gameContext.getLabelStylePool(), gameContext.getLocalisation(), "QUIT_TITLE", "QUIT_DESC", true, false, listener);
+        this.currentPopup = new Popup(widgetFactory, skinPopup, skinUi, skinFlags, gameContext.getLabelStylePool(), gameContext.getLocalisation(), "QUIT_TITLE", "QUIT_DESC", true, false, listener);
         Table table = new Table();
         table.setFillParent(true);
-        table.add(popup).center();
+        table.add(this.currentPopup).center();
         this.stage.addActor(table);
         this.mainMenuInGame.setTouchable(Touchable.disabled);
     }
@@ -96,7 +98,8 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
 
     @Override
     public void onCancelPopupClicked() {
-        this.stage.getActors().peek().remove();
+        this.currentPopup.remove();
+        this.currentPopup = null;
         this.mainMenuInGame.setTouchable(Touchable.enabled);
     }
 
@@ -104,9 +107,9 @@ public class MainMenuInGamePresenter implements Presenter, MainMenuInGameListene
         return gameContext.getSettings().clone();
     }
 
-    @Override public void onApplySettingsClicked(Settings s) {
-        gameContext.setSettings(s);
-        configurationService.saveSettings(s);
+    @Override public void onApplySettingsClicked(Settings settings) {
+        this.gameContext.setSettings(settings);
+        this.configurationService.saveSettings(settings);
     }
 
     @Override public void dispose() {

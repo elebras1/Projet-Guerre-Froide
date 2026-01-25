@@ -39,10 +39,8 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
         Table centerTable = new Table();
         centerTable.setFillParent(true);
         this.economyPanel = new EconomyPanel(this.widgetFactory, this.skinEconomy, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
-        Stack stack = new Stack();
-        stack.add(this.economyPanel);
         this.economyPanel.setVisible(false);
-        centerTable.add(stack).center();
+        centerTable.add(this.economyPanel).center();
         stage.addActor(centerTable);
     }
 
