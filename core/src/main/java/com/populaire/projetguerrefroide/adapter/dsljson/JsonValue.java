@@ -164,6 +164,20 @@ public class JsonValue {
         }
     }
 
+    public Iterable<JsonValue> array() {
+        if (!this.isArray()) {
+            throw new IllegalStateException("Not an array");
+        }
+        return () -> new ArrayIterator(this.tapeIdx);
+    }
+
+    public Iterable<Map.Entry<String, JsonValue>> object() {
+        if (!this.isObject()) {
+            throw new IllegalStateException("Not an object");
+        }
+        return () -> new ObjectIterator(this.tapeIdx);
+    }
+
     private class ArrayIterator implements Iterator<JsonValue> {
         private final int endIdx;
         private int idx;

@@ -38,7 +38,7 @@ public class WorldDaoImpl implements WorldDao {
     private final String definitionCsvFile = this.mapPath + "definition.csv";
     private final String continentJsonFile = this.mapPath + "continent.json";
     private final String positionsJsonFile = this.mapPath + "positions.json";
-    private final String adjenciesJsonFile = this.mapPath + "adjacencies.json";
+    private final String adjacenciesJsonFile = this.mapPath + "adjacencies.json";
     private final String terrainJsonFile = this.mapPath + "terrain.json";
     private final String governmentJsonFile = this.commonPath + "governments.json";
     private final String ideologiesJsonFile = this.commonPath + "ideologies.json";
@@ -99,9 +99,7 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue nationalIdeasValues = this.parseJsonFile(this.nationalIdeasJsonFile);
 
-            Iterator<Map.Entry<String, JsonValue>> culturesEntryIterator = nationalIdeasValues.get("cultures").objectIterator();
-            while (culturesEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> cultureEntry = culturesEntryIterator.next();
+            for(var cultureEntry : nationalIdeasValues.get("cultures").object()) {
                 String name = cultureEntry.getKey();
                 JsonValue cultureValue = cultureEntry.getValue();
                 int color = this.parseColor(cultureValue.get("color"));
@@ -110,9 +108,7 @@ public class WorldDaoImpl implements WorldDao {
                 cultureEntity.set(new Color(color));
             }
 
-            Iterator<Map.Entry<String, JsonValue>> religionsEntryIterator = nationalIdeasValues.get("religions").objectIterator();
-            while (religionsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> religionEntry = religionsEntryIterator.next();
+            for(var religionEntry : nationalIdeasValues.get("religions").object()) {
                 String name = religionEntry.getKey();
                 JsonValue religionValue = religionEntry.getValue();
                 int color = this.parseColor(religionValue.get("color"));
@@ -121,9 +117,7 @@ public class WorldDaoImpl implements WorldDao {
                 religionEntity.set(new Color(color));
             }
 
-            Iterator<Map.Entry<String, JsonValue>> identitiesEntryIterator = nationalIdeasValues.get("national_identity").objectIterator();
-            while (identitiesEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> identityEntry = identitiesEntryIterator.next();
+            for(var identityEntry : nationalIdeasValues.get("national_identity").object()) {
                 String name = identityEntry.getKey();
                 long identityEntityId = ecsWorld.entity(name);
                 Entity identityEntity = ecsWorld.obtainEntity(identityEntityId);
@@ -131,9 +125,7 @@ public class WorldDaoImpl implements WorldDao {
                 float[] modifierValues = new float[8];
                 long[] modifierTagIds = new long[8];
                 int i = 0;
-                Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = identityValue.objectIterator();
-                while (modifiersEntryIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
+                for(var modifierEntry : identityValue.object()) {
                     String modifierName = modifierEntry.getKey();
                     JsonValue modifierValue = modifierEntry.getValue();
                     modifierValues[i] = (float) modifierValue.asDouble();
@@ -143,9 +135,7 @@ public class WorldDaoImpl implements WorldDao {
                 identityEntity.set(new Modifiers(modifierValues, modifierTagIds));
             }
 
-            Iterator<Map.Entry<String, JsonValue>> attitudesEntryIterator = nationalIdeasValues.get("national_attitude").objectIterator();
-            while (attitudesEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> attitudeEntry = attitudesEntryIterator.next();
+            for(var attitudeEntry : nationalIdeasValues.get("national_attitude").object()) {
                 String attitudeName = attitudeEntry.getKey();
                 long attitudeEntityId = ecsWorld.entity(attitudeName);
                 Entity attitudeEntity = ecsWorld.obtainEntity(attitudeEntityId);
@@ -153,9 +143,7 @@ public class WorldDaoImpl implements WorldDao {
                 float[] modifierValues = new float[8];
                 long[] modifierTagIds = new long[8];
                 int i = 0;
-                Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = attitudeValue.objectIterator();
-                while (modifiersEntryIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
+                for(var modifierEntry : attitudeValue.object()) {
                     String modifierName = modifierEntry.getKey();
                     JsonValue modifierValue = modifierEntry.getValue();
                     modifierValues[i] = (float) modifierValue.asDouble();
@@ -175,9 +163,7 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue governmentsValues = this.parseJsonFile(this.governmentJsonFile);
 
-            Iterator<Map.Entry<String, JsonValue>> governmentsEntryIterator = governmentsValues.objectIterator();
-            while (governmentsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> governmentEntry = governmentsEntryIterator.next();
+            for(var governmentEntry : governmentsValues.object()) {
                 String governmentName = governmentEntry.getKey();
                 JsonValue governmentValue = governmentEntry.getValue();
 
@@ -186,9 +172,7 @@ public class WorldDaoImpl implements WorldDao {
 
                 long[] associatedIdeologies = new long[4];
                 int i = 0;
-                Iterator<JsonValue> associatedIdeologiesIterator = governmentValue.get("associated_ideologies").arrayIterator();
-                while (associatedIdeologiesIterator.hasNext()) {
-                    JsonValue associatedIdeologyValue = associatedIdeologiesIterator.next();
+                for(var associatedIdeologyValue : governmentValue.get("associated_ideologies").array()) {
                     String ideologyName = associatedIdeologyValue.asString();
                     long ideologyEntityId = ecsWorld.lookup(ideologyName);
                     associatedIdeologies[i] = ideologyEntityId;
@@ -205,14 +189,10 @@ public class WorldDaoImpl implements WorldDao {
 
                 long[] supportedLaws = new long[32];
                 int j = 0;
-                Iterator<Map.Entry<String, JsonValue>> governmentElementsIterator = governmentValue.objectIterator();
-                while (governmentElementsIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> governmentElementEntry = governmentElementsIterator.next();
+                for(var governmentElementEntry : governmentValue.object()) {
                     long lawGroupId = ecsWorld.lookup(governmentElementEntry.getKey());
                     if(lawGroupId != 0) {
-                        Iterator<JsonValue> supportedLawsIterator = governmentElementEntry.getValue().arrayIterator();
-                        while (supportedLawsIterator.hasNext()) {
-                            JsonValue supportedLawValue = supportedLawsIterator.next();
+                        for(var supportedLawValue : governmentElementEntry.getValue().array()) {
                             String lawNameId = supportedLawValue.asString();
                             long lawId = ecsWorld.lookup(lawNameId);
                             supportedLaws[j] = lawGroupId;
@@ -234,11 +214,9 @@ public class WorldDaoImpl implements WorldDao {
     private void readIdeologiesJson(World ecsWorld) {
         try {
             JsonValue ideologiesValues = this.parseJsonFile(this.ideologiesJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> ideologiesEntryIterator = ideologiesValues.objectIterator();
-            while (ideologiesEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = ideologiesEntryIterator.next();
-                String ideologyName = entry.getKey();
-                JsonValue ideologyValue = entry.getValue();
+            for(var ideologyEntry : ideologiesValues.object()) {
+                String ideologyName = ideologyEntry.getKey();
+                JsonValue ideologyValue = ideologyEntry.getValue();
                 int color = this.parseColor(ideologyValue.get("color"));
                 byte factionDriftingSpeed = (byte) ideologyValue.get("faction_drifting_speed").asLong();
 
@@ -257,11 +235,9 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue goodsValues = this.parseJsonFile(this.goodsJsonFile);
 
-            Iterator<Map.Entry<String, JsonValue>> resourceGoodsEntryIterator = goodsValues.get("resource_goods").objectIterator();
-            while (resourceGoodsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = resourceGoodsEntryIterator.next();
-                String goodName = entry.getKey();
-                JsonValue goodValue = entry.getValue();
+            for(var resourceGoodEntry : goodsValues.get("resource_goods").object()) {
+                String goodName = resourceGoodEntry.getKey();
+                JsonValue goodValue = resourceGoodEntry.getValue();
                 float cost = (float) goodValue.get("cost").asDouble();
                 float value = (float) goodValue.get("value").asDouble();
                 int color = this.parseColor(goodValue.get("color"));
@@ -273,11 +249,9 @@ public class WorldDaoImpl implements WorldDao {
                 good.set(new Good(cost, value));
             }
 
-            Iterator<Map.Entry<String, JsonValue>> goodsEntryIterator = goodsValues.get("advanced_goods").objectIterator();
-            while (goodsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = goodsEntryIterator.next();
-                String advancedGoodName = entry.getKey();
-                JsonValue advancedGoodValue = entry.getValue();
+            for(var advancedGoodEntry : goodsValues.get("advanced_goods").object()) {
+                String advancedGoodName = advancedGoodEntry.getKey();
+                JsonValue advancedGoodValue = advancedGoodEntry.getValue();
                 float cost = (float) advancedGoodValue.get("cost").asDouble();
                 int color = this.parseColor(advancedGoodValue.get("color"));
 
@@ -288,11 +262,9 @@ public class WorldDaoImpl implements WorldDao {
                 good.set(new Good(cost, -0));
             }
 
-            Iterator<Map.Entry<String, JsonValue>> militaryGoodsEntryIterator = goodsValues.get("military_goods").objectIterator();
-            while (militaryGoodsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = militaryGoodsEntryIterator.next();
-                String militaryGoodName = entry.getKey();
-                JsonValue militaryGoodNode = entry.getValue();
+            for(var militaryGood : goodsValues.get("military_goods").object()) {
+                String militaryGoodName = militaryGood.getKey();
+                JsonValue militaryGoodNode = militaryGood.getValue();
                 float cost = (float) militaryGoodNode.get("cost").asDouble();
                 int color = this.parseColor(militaryGoodNode.get("color"));
 
@@ -313,10 +285,8 @@ public class WorldDaoImpl implements WorldDao {
         Map<String, String> populationPaths = new ObjectObjectMap<>(12, 1f);
         try {
             JsonValue populationTypesValues = this.parseJsonFile(this.populationTypesJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> populationTypesEntryIterator = populationTypesValues.objectIterator();
-            while (populationTypesEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = populationTypesEntryIterator.next();
-                populationPaths.put(entry.getKey(), this.commonPath + entry.getValue().asString());
+            for(var populationTypeEntry : populationTypesValues.object()) {
+                populationPaths.put(populationTypeEntry.getKey(), this.commonPath + populationTypeEntry.getValue().asString());
             }
 
             for (Map.Entry<String, String> populationPath : populationPaths.entrySet()) {
@@ -340,11 +310,9 @@ public class WorldDaoImpl implements WorldDao {
             long[] standardDemandGoodIds = new long[16];
             float[] standardDemandGoodValues = new float[16];
             int standardDemandIndex = 0;
-            Iterator<Map.Entry<String, JsonValue>> standardDemandsEntryIterator = populationTypeValue.get("standard_demands").objectIterator();
-            while (standardDemandsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = standardDemandsEntryIterator.next();
-                long goodId = ecsWorld.lookup(entry.getKey());
-                float value = (float) entry.getValue().asDouble();
+            for(var standardDemandEntry : populationTypeValue.get("standard_demands").object()) {
+                long goodId = ecsWorld.lookup(standardDemandEntry.getKey());
+                float value = (float) standardDemandEntry.getValue().asDouble();
                 standardDemandGoodIds[standardDemandIndex] = goodId;
                 standardDemandGoodValues[standardDemandIndex] = value;
                 standardDemandIndex++;
@@ -353,11 +321,9 @@ public class WorldDaoImpl implements WorldDao {
             long[] luxuryDemandGoodIds = new long[8];
             float[] luxuryDemandGoodValues = new float[8];
             int luxuryDemandIndex = 0;
-            Iterator<Map.Entry<String, JsonValue>> luxuryDemandsEntryIterator = populationTypeValue.get("luxury_demands").objectIterator();
-            while (luxuryDemandsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = luxuryDemandsEntryIterator.next();
-                long goodId = ecsWorld.lookup(entry.getKey());
-                float value = (float) entry.getValue().asDouble();
+            for(var luxuryDemandEntry : populationTypeValue.get("luxury_demands").object()) {
+                long goodId = ecsWorld.lookup(luxuryDemandEntry.getKey());
+                float value = (float) luxuryDemandEntry.getValue().asDouble();
                 luxuryDemandGoodIds[luxuryDemandIndex] = goodId;
                 luxuryDemandGoodValues[luxuryDemandIndex] = value;
             }
@@ -372,11 +338,9 @@ public class WorldDaoImpl implements WorldDao {
     private void readProductionTypesJson(World ecsWorld) {
         try {
             JsonValue buildingTypesJson = this.parseJsonFile(this.productionTypesJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> typesEmployeesValues = buildingTypesJson.get("types_employees").objectIterator();
-            while (typesEmployeesValues.hasNext()) {
-                Map.Entry<String, JsonValue> entry = typesEmployeesValues.next();
-                String typeName = entry.getKey();
-                JsonValue typeEmployeeValue = entry.getValue();
+            for(var typeEmployeeEntry : buildingTypesJson.get("types_employees").object()) {
+                String typeName = typeEmployeeEntry.getKey();
+                JsonValue typeEmployeeValue = typeEmployeeEntry.getValue();
                 long populationTypeId = ecsWorld.lookup(typeEmployeeValue.get("poptype").asString());
                 float amount = (float) typeEmployeeValue.get("amount").asDouble();
                 float effectMultiplier = (float) typeEmployeeValue.get("effect_multiplier").asDouble();
@@ -384,21 +348,17 @@ public class WorldDaoImpl implements WorldDao {
                 employee.set(new EmployeeType(populationTypeId, amount, effectMultiplier));
             }
 
-            Iterator<Map.Entry<String, JsonValue>> typesBuildingsValues = buildingTypesJson.get("types_buildings").objectIterator();
-            while (typesBuildingsValues.hasNext()) {
-                Map.Entry<String, JsonValue> entry = typesBuildingsValues.next();
-                String typeName = entry.getKey();
+            for(var typeBuildingEntry : buildingTypesJson.get("types_buildings").object()) {
+                String typeName = typeBuildingEntry.getKey();
                 Entity buildingTypeEntity = ecsWorld.obtainEntity(ecsWorld.entity(typeName));
-                JsonValue typeBuildingsValue = entry.getValue();
-                int workforce = (int) typeBuildingsValue.get("workforce").asLong();
-                long ownerId = ecsWorld.lookup(typeBuildingsValue.get("owner").get("poptype").asString());
+                JsonValue typeBuildingValue = typeBuildingEntry.getValue();
+                int workforce = (int) typeBuildingValue.get("workforce").asLong();
+                long ownerId = ecsWorld.lookup(typeBuildingValue.get("owner").get("poptype").asString());
 
                 long[] employeeIds = new long[4];
-                Iterator<JsonValue> employeesIterator = typeBuildingsValue.get("employees").arrayIterator();
                 int i = 0;
-                while (employeesIterator.hasNext()) {
-                    JsonValue employee = employeesIterator.next();
-                    String employeeName = employee.asString();
+                for(var employeeValue : typeBuildingValue.get("employees").array()) {
+                    String employeeName = employeeValue.asString();
                     long employeeId = ecsWorld.lookup(employeeName);
                     employeeIds[i] = employeeId;
                     i++;
@@ -406,21 +366,17 @@ public class WorldDaoImpl implements WorldDao {
                 buildingTypeEntity.set(new ProductionType(workforce, ownerId, employeeIds));
             }
 
-            Iterator<Map.Entry<String, JsonValue>> typesRGOs = buildingTypesJson.get("types_rgo").objectIterator();
-            while (typesRGOs.hasNext()) {
-                Map.Entry<String, JsonValue> entry = typesRGOs.next();
-                String typeName = entry.getKey();
+            for(var typeRgoEntry: buildingTypesJson.get("types_rgo").object()) {
+                String typeName = typeRgoEntry.getKey();
                 Entity buildingTypeEntity = ecsWorld.obtainEntity(ecsWorld.entity(typeName));
-                JsonValue typeRGOValue = entry.getValue();
-                int workforce = (int) typeRGOValue.get("workforce").asLong();
-                long ownerId = ecsWorld.lookup(typeRGOValue.get("owner").get("poptype").asString());
+                JsonValue typeRgoValue = typeRgoEntry.getValue();
+                int workforce = (int) typeRgoValue.get("workforce").asLong();
+                long ownerId = ecsWorld.lookup(typeRgoValue.get("owner").get("poptype").asString());
 
                 long[] employeeIds = new long[4];
-                Iterator<JsonValue> employeesIterator = typeRGOValue.get("employees").arrayIterator();
                 int i = 0;
-                while (employeesIterator.hasNext()) {
-                    JsonValue employee = employeesIterator.next();
-                    String employeeName = employee.asString();
+                for(var employeeValue : typeRgoValue.get("employees").array()) {
+                    String employeeName = employeeValue.asString();
                     long employeeId = ecsWorld.lookup(employeeName);
                     employeeIds[i] = employeeId;
                     i++;
@@ -437,12 +393,10 @@ public class WorldDaoImpl implements WorldDao {
     private void readBuildingsJson(World ecsWorld, EcsConstants ecsConstants) {
         try {
             JsonValue buildingsValues = this.parseJsonFile(this.buildingsJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> economyBuildingEntryIterator = buildingsValues.get("economy_building").objectIterator();
-            while (economyBuildingEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = economyBuildingEntryIterator.next();
-                String buildingName = entry.getKey();
+            for(var economyBuilding : buildingsValues.get("economy_building").object()) {
+                String buildingName = economyBuilding.getKey();
                 Entity building = ecsWorld.obtainEntity(ecsWorld.entity(buildingName));
-                JsonValue buildingValue = entry.getValue();
+                JsonValue buildingValue = economyBuilding.getValue();
                 int time = (int) buildingValue.get("time").asLong();
                 long buildingTypeId = ecsWorld.lookup(buildingValue.get("base_type").asString());
                 long artisansTypeId = 0;
@@ -452,24 +406,20 @@ public class WorldDaoImpl implements WorldDao {
                 byte maxLevel = (byte) buildingValue.get("max_level").asLong();
                 long[] goodCostIds = new long[8];
                 float[] goodCostValues = new float[8];
-                Iterator<Map.Entry<String, JsonValue>> goodsCostEntryIterator = buildingValue.get("goods_cost").objectIterator();
                 int goodCostIndex = 0;
-                while (goodsCostEntryIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> goodCost = goodsCostEntryIterator.next();
-                    long goodId = ecsWorld.lookup(goodCost.getKey());
-                    float goodValue = (float) goodCost.getValue().asDouble();
+                for(var goodCostEntry : buildingValue.get("goods_cost").object()) {
+                    long goodId = ecsWorld.lookup(goodCostEntry.getKey());
+                    float goodValue = (float) goodCostEntry.getValue().asDouble();
                     goodCostIds[goodCostIndex] = goodId;
                     goodCostValues[goodCostIndex] = goodValue;
                     goodCostIndex++;
                 }
                 long[] inputGoodIds = new long[8];
                 float[] inputGoodValues = new float[8];
-                Iterator<Map.Entry<String, JsonValue>> inputGoodsEntryIterator = buildingValue.get("input_goods").objectIterator();
                 int inputGoodIndex = 0;
-                while (inputGoodsEntryIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> inputGood = inputGoodsEntryIterator.next();
-                    long goodId = ecsWorld.lookup(inputGood.getKey());
-                    float goodValue = (float) inputGood.getValue().asDouble();
+                for(var inputGoodEntry : buildingValue.get("input_goods").object()) {
+                    long goodId = ecsWorld.lookup(inputGoodEntry.getKey());
+                    float goodValue = (float) inputGoodEntry.getValue().asDouble();
                     inputGoodIds[inputGoodIndex] = goodId;
                     inputGoodValues[inputGoodIndex] = goodValue;
                     inputGoodIndex++;
@@ -487,22 +437,18 @@ public class WorldDaoImpl implements WorldDao {
                 building.set(new EconomyBuilding(time, buildingTypeId, artisansTypeId, maxLevel, goodCostIds, goodCostValues, inputGoodIds, inputGoodValues, outputGoodId, outputGoodValue));
             }
 
-            Iterator<Map.Entry<String, JsonValue>> specialBuildingEntryIterator = buildingsValues.get("special_building").objectIterator();
-            while (specialBuildingEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = specialBuildingEntryIterator.next();
-                String buildingName = entry.getKey();
+            for(var specialBuildingEntry : buildingsValues.get("special_building").object()) {
+                String buildingName = specialBuildingEntry.getKey();
                 Entity building = ecsWorld.obtainEntity(ecsWorld.entity(buildingName));
-                JsonValue buildingValue = entry.getValue();
+                JsonValue buildingValue = specialBuildingEntry.getValue();
                 int time = (int) buildingValue.get("time").asLong();
                 int cost = (int) buildingValue.get("cost").asLong();
                 long[] goodCostIds = new long[8];
                 float[] goodCostValues = new float[8];
-                Iterator<Map.Entry<String, JsonValue>> goodsCostEntryIterator = buildingValue.get("goods_cost").objectIterator();
                 int goodCostIndex = 0;
-                while (goodsCostEntryIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> goodCost = goodsCostEntryIterator.next();
-                    long goodId = ecsWorld.lookup(goodCost.getKey());
-                    float goodValue = (float) goodCost.getValue().asDouble();
+                for(var goodCostEntry : buildingValue.get("goods_cost").object()) {
+                    long goodId = ecsWorld.lookup(goodCostEntry.getKey());
+                    float goodValue = (float) goodCostEntry.getValue().asDouble();
                     goodCostIds[goodCostIndex] = goodId;
                     goodCostValues[goodCostIndex] = goodValue;
                     goodCostIndex++;
@@ -512,10 +458,8 @@ public class WorldDaoImpl implements WorldDao {
                 if (modifiersValues != null) {
                     long[] modifierIds = new long[8];
                     float[] modifierValues = new float[8];
-                    Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = modifiersValues.objectIterator();
                     int i = 0;
-                    while (modifiersEntryIterator.hasNext()) {
-                        Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
+                    for(var modifierEntry: modifiersValues.object()) {
                         String modifierName = modifierEntry.getKey();
                         JsonValue modifierValue = modifierEntry.getValue();
                         long modifierId = ecsWorld.entity(modifierName);
@@ -529,22 +473,18 @@ public class WorldDaoImpl implements WorldDao {
                 building.set(new SpecialBuilding(time, cost, goodCostIds, goodCostValues));
             }
 
-            Iterator<Map.Entry<String, JsonValue>> developmentBuildingEntryIterator = buildingsValues.get("development_building").objectIterator();
-            while (developmentBuildingEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = developmentBuildingEntryIterator.next();
-                String buildingName = entry.getKey();
+            for(var developmentBuildingEntry : buildingsValues.get("development_building").object()) {
+                String buildingName = developmentBuildingEntry.getKey();
                 Entity building = ecsWorld.obtainEntity(ecsWorld.entity(buildingName));
-                JsonValue buildingValue = entry.getValue();
+                JsonValue buildingValue = developmentBuildingEntry.getValue();
                 int time = (int) buildingValue.get("time").asLong();
                 int cost = (int) buildingValue.get("cost").asLong();
                 long[] goodCostIds = new long[8];
                 float[] goodCostValues = new float[8];
-                Iterator<Map.Entry<String, JsonValue>> goodsCostEntryIterator = buildingValue.get("goods_cost").objectIterator();
                 int goodCostIndex = 0;
-                while (goodsCostEntryIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> goodCost = goodsCostEntryIterator.next();
-                    long goodId = ecsWorld.lookup(goodCost.getKey());
-                    float goodValue = (float) goodCost.getValue().asDouble();
+                for(var goodCostEntry : buildingValue.get("goods_cost").object()) {
+                    long goodId = ecsWorld.lookup(goodCostEntry.getKey());
+                    float goodValue = (float) goodCostEntry.getValue().asDouble();
                     goodCostIds[goodCostIndex] = goodId;
                     goodCostValues[goodCostIndex] = goodValue;
                     goodCostIndex++;
@@ -558,10 +498,8 @@ public class WorldDaoImpl implements WorldDao {
                 if (modifiersValues != null) {
                     long[] modifierIds = new long[8];
                     float[] modifierValues = new float[8];
-                    Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = modifiersValues.objectIterator();
                     int i = 0;
-                    while (modifiersEntryIterator.hasNext()) {
-                        Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
+                    for(var modifierEntry : modifiersValues.object()) {
                         String modifierName = modifierEntry.getKey();
                         JsonValue modifierValue = modifierEntry.getValue();
                         long modifierId = ecsWorld.entity(modifierName);
@@ -584,12 +522,10 @@ public class WorldDaoImpl implements WorldDao {
     private void readResourceProductionsJson(World ecsWorld) {
         try {
             JsonValue resourceProductionsValues = this.parseJsonFile(this.resourceProductionsJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> resourceProductionsEntryIterator = resourceProductionsValues.objectIterator();
-            while (resourceProductionsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = resourceProductionsEntryIterator.next();
-                long goodId = ecsWorld.lookup(entry.getKey());
+            for(var resourceProductionEntry : resourceProductionsValues.object()) {
+                long goodId = ecsWorld.lookup(resourceProductionEntry.getKey());
                 Entity good = ecsWorld.obtainEntity(goodId);
-                JsonValue productionValue = entry.getValue();
+                JsonValue productionValue = resourceProductionEntry.getValue();
                 long productionTypeId = ecsWorld.lookup(productionValue.get("base_type").asString());
                 good.set(new ResourceProduction(productionTypeId));
             }
@@ -603,17 +539,13 @@ public class WorldDaoImpl implements WorldDao {
     private void readMinisterTypesJson(World ecsWorld) {
         try {
             JsonValue ministerTypesValues = this.parseJsonFile(this.ministerTypesJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> ministerTypesEntryIterator = ministerTypesValues.objectIterator();
-            while (ministerTypesEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = ministerTypesEntryIterator.next();
-                long ministerTypeEntityId = ecsWorld.entity(entry.getKey());
+            for(var ministerTypeEntry : ministerTypesValues.object()) {
+                long ministerTypeEntityId = ecsWorld.entity(ministerTypeEntry.getKey());
                 Entity ministerTypeEntity = ecsWorld.obtainEntity(ministerTypeEntityId);
                 float[] modifierValues = new float[8];
                 long[] modifierTagIds = new long[8];
                 int i = 0;
-                Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = entry.getValue().objectIterator();
-                while (modifiersEntryIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
+                for(var modifierEntry : ministerTypeEntry.getValue().object()) {
                     String modifierName = modifierEntry.getKey();
                     JsonValue modifierValue = modifierEntry.getValue();
                     modifierValues[i] = (float) modifierValue.asDouble();
@@ -632,11 +564,9 @@ public class WorldDaoImpl implements WorldDao {
     private void readTerrainsJson(World ecsWorld) {
         try {
             JsonValue terrainsValues = this.parseJsonFile(this.terrainJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> terrainsEntryIterator = terrainsValues.objectIterator();
-            while (terrainsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = terrainsEntryIterator.next();
-                String terrainName = entry.getKey();
-                JsonValue terrainValue = entry.getValue();
+            for(var terrainEntry : terrainsValues.object()) {
+                String terrainName = terrainEntry.getKey();
+                JsonValue terrainValue = terrainEntry.getValue();
                 byte movementCost = (byte) terrainValue.get("movement_cost").asLong();
                 byte humidity = (byte) terrainValue.get("humidity").asLong();
                 byte temperature = (byte) terrainValue.get("temperature").asLong();
@@ -658,9 +588,7 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue lawsValues = this.parseJsonFile(this.lawsJsonFile);
             int baseEnactmentDaysLaw = (int) lawsValues.get("base_enactment_days").asLong();
-            Iterator<Map.Entry<String, JsonValue>> lawGroupsEntryIterator = lawsValues.get("groups").objectIterator();
-            while (lawGroupsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> lawGroupEntry = lawGroupsEntryIterator.next();
+            for(var lawGroupEntry : lawsValues.get("groups").object()) {
                 String name = lawGroupEntry.getKey();
                 JsonValue lawGroupValue = lawGroupEntry.getValue();
                 int factorEnactmentDays = (int) lawGroupValue.get("factor_enactment_days").asLong();
@@ -669,23 +597,19 @@ public class WorldDaoImpl implements WorldDao {
                 Entity lawGroupEntity = ecsWorld.obtainEntity(lawGroupEntityId);
                 lawGroupEntity.add(ecsConstants.lawGroupTag());
                 lawGroupEntity.set(new EnactmentDuration(enactmentDuration));
-                Iterator<Map.Entry<String, JsonValue>> lawsEntryIterator = lawGroupValue.get("laws").objectIterator();
-                while (lawsEntryIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> lawEntry = lawsEntryIterator.next();
+                for(var lawEntry : lawGroupValue.get("laws").object()) {
                     String lawName = lawEntry.getKey();
                     long lawEntityId = ecsWorld.entity(lawName);
                     Entity lawEntity = ecsWorld.obtainEntity(lawEntityId);
                     JsonValue lawValue = lawEntry.getValue();
-                    Iterator<JsonValue> requirementsIterator = lawValue.get("requirements").arrayIterator();
-                    while (requirementsIterator.hasNext()) {
-                        // TODO associate requirements with law
-                    }
+                    // TODO associate requirements with law
+                    /*Iterator<JsonValue> requirementsIterator = lawValue.get("requirements").arrayIterator();
+                    for(var requirementValue : lawValue.get("requirements").array()) {
+                    }*/
                     float[] modifierValues = new float[8];
                     long[] modifierTagIds = new long[8];
                     int i = 0;
-                    Iterator<Map.Entry<String, JsonValue>> modifiersEntryIterator = lawValue.get("modifiers").objectIterator();
-                    while (modifiersEntryIterator.hasNext()) {
-                        Map.Entry<String, JsonValue> modifierEntry = modifiersEntryIterator.next();
+                    for(var modifierEntry : lawValue.get("modifiers").object()) {
                         String modifierName = modifierEntry.getKey();
                         JsonValue modifierValue = modifierEntry.getValue();
                         modifierValues[i] = (float) modifierValue.asDouble();
@@ -695,13 +619,11 @@ public class WorldDaoImpl implements WorldDao {
                     lawEntity.set(new Modifiers(modifierValues, modifierTagIds));
                     long[] supportIdeologies = new long[8];
                     long[] opponentIdeologies = new long[8];
-                    Iterator<Map.Entry<String, JsonValue>> interestIdeologiesEntryIterator = lawValue.get("interest_ideologies").objectIterator();
                     int indexSupporters = 0;
                     int indexOpponents = 0;
-                    while (interestIdeologiesEntryIterator.hasNext()) {
-                        Map.Entry<String, JsonValue> entry = interestIdeologiesEntryIterator.next();
-                        long ideologyId = ecsWorld.lookup(entry.getKey());
-                        int value = (int) entry.getValue().asLong();
+                    for(var interestIdeologyEntry : lawValue.get("interest_ideologies").object()) {
+                        long ideologyId = ecsWorld.lookup(interestIdeologyEntry.getKey());
+                        int value = (int) interestIdeologyEntry.getValue().asLong();
                         if(value > 0) {
                             supportIdeologies[indexSupporters] = ideologyId;
                             indexSupporters++;
@@ -723,11 +645,9 @@ public class WorldDaoImpl implements WorldDao {
     private void readTraitsJson(World ecsWorld) {
         try {
             JsonValue traitsValues = this.parseJsonFile(this.traitsJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> traitsEntryIterator = traitsValues.objectIterator();
-            while (traitsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = traitsEntryIterator.next();
-                String traitName = entry.getKey();
-                JsonValue traitValue = entry.getValue();
+            for(var traitEntry : traitsValues.object()) {
+                String traitName = traitEntry.getKey();
+                JsonValue traitValue = traitEntry.getValue();
                 Map.Entry<String, JsonValue> modifierEntry = traitValue.objectIterator().next();
                 String modifierName = modifierEntry.getKey();
                 float modifierValue = (float) modifierEntry.getValue().asDouble();
@@ -758,14 +678,12 @@ public class WorldDaoImpl implements WorldDao {
         Map<String, String> countriesPaths = new ObjectObjectMap<>(262, 1f);
         try {
             JsonValue countriesValues = this.parseJsonFile(this.countriesJsonFiles);
-            Iterator<Map.Entry<String, JsonValue>> countriesEntryIterator = countriesValues.objectIterator();
-            while (countriesEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = countriesEntryIterator.next();
-                countriesPaths.put(entry.getKey(), this.commonPath + entry.getValue().asString());
+            for(var countryEntry: countriesValues.object()) {
+                countriesPaths.put(countryEntry.getKey(), this.commonPath + countryEntry.getValue().asString());
             }
 
-            for (Map.Entry<String, String> entry : countriesPaths.entrySet()) {
-                this.readCountryJson(ecsWorld, ecsConstants, entry.getValue(), entry.getKey());
+            for (Map.Entry<String, String> countryEntry : countriesPaths.entrySet()) {
+                this.readCountryJson(ecsWorld, ecsConstants, countryEntry.getValue(), countryEntry.getKey());
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -786,9 +704,7 @@ public class WorldDaoImpl implements WorldDao {
 
             JsonValue ministersValues = countryValues.get("ministers");
             if (ministersValues != null && ministersValues.isObject()) {
-                Iterator<Map.Entry<String, JsonValue>> ministersEntryIterator = ministersValues.objectIterator();
-                while (ministersEntryIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> ministerEntry = ministersEntryIterator.next();
+                for(var ministerEntry : ministersValues.object()) {
                     String ministerNameId = ministerEntry.getKey();
                     JsonValue ministerNode = ministerEntry.getValue();
                     String name = ministerNode.get("name").asString();
@@ -818,16 +734,14 @@ public class WorldDaoImpl implements WorldDao {
     private void readRelationJson(World ecsWorld) {
         try {
             JsonValue relationsValues = this.parseJsonFile(this.relationJsonFile);
-            Iterator<JsonValue> relationsIterator = relationsValues.get("relation").arrayIterator();
-            while (relationsIterator.hasNext()) {
-                JsonValue relation = relationsIterator.next();
-                String countryNameId1 = relation.get("country1").asString();
+            for(var relationValue : relationsValues.get("relation").array()) {
+                String countryNameId1 = relationValue.get("country1").asString();
                 Entity country1 = ecsWorld.obtainEntity(ecsWorld.lookup(countryNameId1));
-                String countryNameId2 = relation.get("country2").asString();
+                String countryNameId2 = relationValue.get("country2").asString();
                 Entity country2 = ecsWorld.obtainEntity(ecsWorld.lookup(countryNameId2));
-                int relationValue = (int) relation.get("value").asLong();
-                country1.set(new DiplomaticRelation(relationValue), country2.id());
-                country2.set(new DiplomaticRelation(relationValue), country1.id());
+                int value = (int) relationValue.get("value").asLong();
+                country1.set(new DiplomaticRelation(value), country2.id());
+                country2.set(new DiplomaticRelation(value), country1.id());
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -839,14 +753,12 @@ public class WorldDaoImpl implements WorldDao {
     private void readAlliancesJson(World ecsWorld, EcsConstants ecsConstants) {
         try {
             JsonValue alliancesValues = this.parseJsonFile(this.alliancesJsonFile);
-            Iterator<JsonValue> alliancesIterator = alliancesValues.get("alliances").arrayIterator();
-            while (alliancesIterator.hasNext()) {
-                JsonValue alliance = alliancesIterator.next();
-                String countryNameId1 = alliance.get("country1").asString();
+            for(var allianceValue : alliancesValues.get("alliances").array()) {
+                String countryNameId1 = allianceValue.get("country1").asString();
                 Entity country1 = ecsWorld.obtainEntity(ecsWorld.entity(countryNameId1));
-                String countryNameId2 = alliance.get("country2").asString();
+                String countryNameId2 = allianceValue.get("country2").asString();
                 Entity country2 = ecsWorld.obtainEntity(ecsWorld.entity(countryNameId2));
-                String type = alliance.get("type").asString();
+                String type = allianceValue.get("type").asString();
                 country1.addRelation(ecsConstants.getAllianceRelation(type, true), country2.id());
                 country2.addRelation(ecsConstants.getAllianceRelation(type, false), country1.id());
             }
@@ -861,10 +773,8 @@ public class WorldDaoImpl implements WorldDao {
         Map<String, String> leadersPaths = new ObjectObjectMap<>();
         try {
             JsonValue leadersValues = this.parseJsonFile(this.leadersJsonFiles);
-            Iterator<Map.Entry<String, JsonValue>> leadersEntryIterator = leadersValues.objectIterator();
-            while (leadersEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = leadersEntryIterator.next();
-                leadersPaths.put(entry.getKey(), this.historyPath + entry.getValue().asString());
+            for(var leaderEntry : leadersValues.object()) {
+                leadersPaths.put(leaderEntry.getKey(), this.historyPath + leaderEntry.getValue().asString());
             }
 
             for (Map.Entry<String, String> entry : leadersPaths.entrySet()) {
@@ -881,10 +791,8 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue leaderValues = this.parseJsonFile(filename);
             String countryId = leaderValues.get("country").asString();
-            Iterator<JsonValue> leadersValueIterator = leaderValues.get("leaders").arrayIterator();
             long countryEntityId = ecsWorld.lookup(countryId);
-            while (leadersValueIterator.hasNext()) {
-                JsonValue leaderValue = leadersValueIterator.next();
+            for(var leaderValue : leaderValues.get("leaders").array()) {
                 String name = leaderValue.get("name").asString();
                 byte skill = (byte) leaderValue.get("skill").asLong();
                 byte forceType = ForceTypeUtils.fromString(leaderValue.get("force_type").asString());
@@ -909,19 +817,17 @@ public class WorldDaoImpl implements WorldDao {
         this.readProvinceBitmap(ecsWorld, provinces, borders);
         this.readCountriesHistoryJson(ecsWorld);
         this.readContinentJsonFile(ecsWorld);
-        this.readAdjenciesJson(ecsWorld);
+        this.readAdjacenciesJson(ecsWorld);
         this.readPositionsJson(ecsWorld);
     }
 
     private void readPopulationTemplatesJson(World ecsWorld) {
         try {
             JsonValue populationTemplatesValues = this.parseJsonFile(this.populationTemplatesJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> populationTemplatesIterator = populationTemplatesValues.objectIterator();
-            while (populationTemplatesIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = populationTemplatesIterator.next();
-                long populationTemplateId = ecsWorld.entity("population_template_" + entry.getKey());
+            for(var populationTemplateEntry : populationTemplatesValues.object()) {
+                long populationTemplateId = ecsWorld.entity("population_template_" + populationTemplateEntry.getKey());
                 Entity populationTemplate = ecsWorld.obtainEntity(populationTemplateId);
-                JsonValue templateValue = entry.getValue();
+                JsonValue templateValue = populationTemplateEntry.getValue();
                 Iterator<JsonValue> populationValuesIterator = templateValue.get("value").arrayIterator();
                 float childrenRatio = (float) populationValuesIterator.next().asDouble();
                 float adultsRatio = (float) populationValuesIterator.next().asDouble();
@@ -939,15 +845,13 @@ public class WorldDaoImpl implements WorldDao {
         IntObjectMap<String> provincesPaths = new IntObjectMap<>(15000, 1f);
         try {
             JsonValue provincesValues = this.parseJsonFile(this.provincesJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> provincesEntryIterator = provincesValues.objectIterator();
-            while (provincesEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = provincesEntryIterator.next();
-                provincesPaths.put(Integer.parseInt(entry.getKey()), this.historyPath + entry.getValue().asString());
+            for(var provinceEntry : provincesValues.object()) {
+                provincesPaths.put(Integer.parseInt(provinceEntry.getKey()), this.historyPath + provinceEntry.getValue().asString());
             }
 
-            for (IntObjectMap.Entry<String> entry : provincesPaths.entrySet()) {
-                int provinceId = entry.getKey();
-                String provincePath = entry.getValue();
+            for (IntObjectMap.Entry<String> provinceEntry : provincesPaths.entrySet()) {
+                int provinceId = provinceEntry.getKey();
+                String provincePath = provinceEntry.getValue();
                 this.readProvinceJson(ecsWorld, provincePath, provinceId, regionBuildingsByProvince);
             }
         } catch (IOException ioException) {
@@ -968,9 +872,7 @@ public class WorldDaoImpl implements WorldDao {
             JsonValue addCoreValue = provinceValues.get("add_core");
             if (addCoreValue.isArray()) {
                 int i = 0;
-                Iterator<JsonValue> addCoreIterator = addCoreValue.arrayIterator();
-                while (addCoreIterator.hasNext()) {
-                    JsonValue countryCore = addCoreIterator.next();
+                for(var countryCore : addCoreValue.array()) {
                     long countryCoreId = ecsWorld.lookup(countryCore.asString());
                     coreIds[i] = countryCoreId;
                     i++;
@@ -1004,11 +906,9 @@ public class WorldDaoImpl implements WorldDao {
             JsonValue buildingsValue = provinceValues.get("economy_buildings");
             if(buildingsValue != null) {
                 LongIntMap buildings = new LongIntMap();
-                Iterator<JsonValue> buildingsIterator = buildingsValue.arrayIterator();
-                while (buildingsIterator.hasNext()) {
-                    JsonValue building = buildingsIterator.next();
-                    String buildingName = building.get("name").asString();
-                    int size = (int) building.get("size").asLong();
+                for(var buildingValue : buildingsValue.array()) {
+                    String buildingName = buildingValue.get("name").asString();
+                    int size = (int) buildingValue.get("size").asLong();
                     buildings.put(ecsWorld.lookup(buildingName), size);
                 }
                 regionBuildingsByProvince.put(provinceNameId, buildings);
@@ -1022,9 +922,7 @@ public class WorldDaoImpl implements WorldDao {
 
             JsonValue buildingsProvinceValue = provinceValues.get("buildings");
             if(buildingsProvinceValue != null) {
-                Iterator<JsonValue> buildingsProvinceIterator = buildingsProvinceValue.arrayIterator();
-                while (buildingsProvinceIterator.hasNext()) {
-                    JsonValue buildingValue = buildingsProvinceIterator.next();
+                for(var buildingValue : buildingsProvinceValue.array()) {
                     String buildingName = buildingValue.get("name").asString();
                     int size = (int) buildingValue.get("size").asLong();
                     long buildingTypeId = ecsWorld.lookup(buildingName);
@@ -1048,10 +946,8 @@ public class WorldDaoImpl implements WorldDao {
 
         long[] ids = new long[length];
         int[] amounts = new int[length];
-        Iterator<Map.Entry<String, JsonValue>> distributionEntryIterator = distributionValue.objectIterator();
         int i = 0;
-        while (distributionEntryIterator.hasNext()) {
-            Map.Entry<String, JsonValue> distributionEntry = distributionEntryIterator.next();
+        for(var distributionEntry : distributionValue.object()) {
             String name = distributionEntry.getKey();
             float percentage = (float) distributionEntry.getValue().asDouble();
             int value = (int) (amountAdults * percentage);
@@ -1076,16 +972,13 @@ public class WorldDaoImpl implements WorldDao {
     private void readRegionJson(World ecsWorld, EcsConstants ecsConstants, IntObjectMap<LongIntMap> regionBuildingsByProvince) {
         try {
             JsonValue regionValue = this.parseJsonFile(this.regionJsonFiles);
-            Iterator<Map.Entry<String, JsonValue>> regionEntryIterator = regionValue.objectIterator();
-            while (regionEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = regionEntryIterator.next();
-                String regionId = entry.getKey();
+            for(var regionEntry : regionValue.object()) {
+                String regionId = regionEntry.getKey();
                 long regionEntityId = ecsWorld.entity(regionId);
                 Entity regionEntity = ecsWorld.obtainEntity(regionEntityId);
                 regionEntity.add(ecsConstants.regionTag());
-                Iterator<JsonValue> regionIterator = entry.getValue().arrayIterator();
-                while (regionIterator.hasNext()) {
-                    int provinceId = (int) regionIterator.next().asLong();
+                for(var provinceValue : regionEntry.getValue().array()) {
+                    int provinceId = (int) provinceValue.asLong();
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                     Entity provinceEntity = provinceEntityId != 0 ? ecsWorld.obtainEntity(provinceEntityId) : null;
                     if(provinceEntityId != 0 && provinceEntity.has(Province.class)) {
@@ -1197,14 +1090,12 @@ public class WorldDaoImpl implements WorldDao {
         ObjectObjectMap<String, String> countriesHistoryPaths = new ObjectObjectMap<>(262, 1f);
         try {
             JsonValue countriesJson = this.parseJsonFile(this.countriesHistoryJsonFiles);
-            Iterator<Map.Entry<String, JsonValue>> countriesEntryIterator = countriesJson.objectIterator();
-            while (countriesEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = countriesEntryIterator.next();
-                countriesHistoryPaths.put(entry.getKey(), this.historyPath + entry.getValue().asString());
+            for(var countryEntry : countriesJson.object()) {
+                countriesHistoryPaths.put(countryEntry.getKey(), this.historyPath + countryEntry.getValue().asString());
             }
-            for (Map.Entry<String, String> entry : countriesHistoryPaths) {
-                String countryNameId = entry.getKey();
-                String countryFileName = entry.getValue();
+            for (var countryHistory : countriesHistoryPaths) {
+                String countryNameId = countryHistory.getKey();
+                String countryFileName = countryHistory.getValue();
                 this.readCountryHistoryJson(ecsWorld, countryFileName, countryNameId);
             }
         } catch (IOException ioException) {
@@ -1243,11 +1134,9 @@ public class WorldDaoImpl implements WorldDao {
 
             long[] lawIds = new long[48];
             int i = 0;
-            Iterator<Map.Entry<String, JsonValue>> lawsIterator = countryValues.get("laws").objectIterator();
-            while(lawsIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = lawsIterator.next();
-                String lawGroupName = entry.getKey();
-                String lawName = entry.getValue().asString();
+            for(var lawEntry : countryValues.get("laws").object()) {
+                String lawGroupName = lawEntry.getKey();
+                String lawName = lawEntry.getValue().asString();
 
                 long lawGroupId = ecsWorld.lookup(lawGroupName);
                 long lawId = ecsWorld.lookup(lawName);
@@ -1267,14 +1156,11 @@ public class WorldDaoImpl implements WorldDao {
     private void readContinentJsonFile(World ecsWorld) {
         try {
             JsonValue continentValues = this.parseJsonFile(this.continentJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> continentEntryIterator = continentValues.objectIterator();
-            while (continentEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = continentEntryIterator.next();
-                String continentName = entry.getKey();
+            for(var continentEntry : continentValues.object()) {
+                String continentName = continentEntry.getKey();
                 long continentEntityId = ecsWorld.entity(continentName);
-                Iterator<JsonValue> provincesIterator = entry.getValue().arrayIterator();
-                while (provincesIterator.hasNext()) {
-                    int provinceId = (int) provincesIterator.next().asLong();
+                for(var provinceEntry : continentEntry.getValue().array()) {
+                    int provinceId = (int) provinceEntry.asLong();
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                     Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
                     GeoHierarchy geoHierarchy = provinceEntity.get(GeoHierarchy.class);
@@ -1288,20 +1174,17 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readAdjenciesJson(World ecsWorld) {
+    private void readAdjacenciesJson(World ecsWorld) {
         try {
-            JsonValue adjenciesValues = this.parseJsonFile(this.adjenciesJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> adjenciesEntryIterator = adjenciesValues.objectIterator();
-            while (adjenciesEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = adjenciesEntryIterator.next();
-                int provinceId = Integer.parseInt(entry.getKey());
+            JsonValue adjenciesValues = this.parseJsonFile(this.adjacenciesJsonFile);
+            for(var provinceEntry : adjenciesValues.object()) {
+                int provinceId = Integer.parseInt(provinceEntry.getKey());
                 long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                 Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
                 long[] adjacencyIds = new long[32];
-                Iterator<JsonValue> adjacenciesIterator = entry.getValue().arrayIterator();
                 int i = 0;
-                while (adjacenciesIterator.hasNext()) {
-                    int adjacencyId = (int) adjacenciesIterator.next().asLong();
+                for(var adjacencyValue : provinceEntry.getValue().array()) {
+                    int adjacencyId = (int) adjacencyValue.asLong();
                     long adjacencyEntityId = ecsWorld.lookup(String.valueOf(adjacencyId));
                     adjacencyIds[i] = adjacencyEntityId;
                     i++;
@@ -1318,16 +1201,12 @@ public class WorldDaoImpl implements WorldDao {
     private void readPositionsJson(World ecsWorld) {
         try {
             JsonValue positionsValues = this.parseJsonFile(this.positionsJsonFile);
-            Iterator<Map.Entry<String, JsonValue>> positionsEntryIterator = positionsValues.objectIterator();
-            while (positionsEntryIterator.hasNext()) {
-                Map.Entry<String, JsonValue> entry = positionsEntryIterator.next();
-                int provinceId = Integer.parseInt(entry.getKey());
+            for(var provinceEntry : positionsValues.object()) {
+                int provinceId = Integer.parseInt(provinceEntry.getKey());
                 long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
-                Iterator<Map.Entry<String, JsonValue>> positionIterator = entry.getValue().objectIterator();
-                while (positionIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> position = positionIterator.next();
-                    String name = position.getKey();
-                    JsonValue positionNode = position.getValue();
+                for(var positionEntry : provinceEntry.getValue().object()) {
+                    String name = positionEntry.getKey();
+                    JsonValue positionNode = positionEntry.getValue();
                     int x = (int) positionNode.get("x").asLong();
                     int y = (int) positionNode.get("y").asLong();
                     long positionEntityId = ecsWorld.entity("province_" + provinceId + "_pos_" + name);

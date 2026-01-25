@@ -11,7 +11,6 @@ import com.populaire.projetguerrefroide.configuration.Settings;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Iterator;
 import java.util.List;
 
 public class ConfigurationDaoImpl implements ConfigurationDao {
@@ -48,10 +47,8 @@ public class ConfigurationDaoImpl implements ConfigurationDao {
 
             List<String> countriesId = new ObjectList<>();
             JsonValue countriesNode = bookmarkValue.get("country");
-            if (countriesNode != null && countriesNode.isArray()) {
-                Iterator<JsonValue> iterator = countriesNode.arrayIterator();
-                while (iterator.hasNext()) {
-                    JsonValue countryId = iterator.next();
+            if (countriesNode != null) {
+                for(JsonValue countryId : countriesNode.array()) {
                     countriesId.add(countryId.asString());
                 }
             }
