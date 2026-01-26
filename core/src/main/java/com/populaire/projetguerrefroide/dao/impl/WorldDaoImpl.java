@@ -23,6 +23,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public class WorldDaoImpl implements WorldDao {
@@ -770,15 +771,15 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private void readLeadersJson(World ecsWorld) {
-        Map<String, String> leadersPaths = new ObjectObjectMap<>();
+        List<String> leadersPaths = new ObjectList<>();
         try {
             JsonValue leadersValues = this.parseJsonFile(this.leadersJsonFiles);
-            for(var leaderEntry : leadersValues.object()) {
-                leadersPaths.put(leaderEntry.getKey(), this.historyPath + leaderEntry.getValue().asString());
+            for(var leaderValue : leadersValues.array()) {
+                leadersPaths.add(this.historyPath + leaderValue.asString());
             }
 
-            for (Map.Entry<String, String> entry : leadersPaths.entrySet()) {
-                this.readLeaderJson(ecsWorld, entry.getValue());
+            for (var leaderPath : leadersPaths) {
+                this.readLeaderJson(ecsWorld, leaderPath);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
