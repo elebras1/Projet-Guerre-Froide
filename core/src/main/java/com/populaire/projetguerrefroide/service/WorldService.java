@@ -125,6 +125,10 @@ public class WorldService {
         return this.provinceService.buildDetails(selectedProvinceId);
     }
 
+    public BuildingDto buildBuildingDetails(long buildingId) {
+        return this.buildingService.buildDetails(buildingId);
+    }
+
     public void changeMapMode(String mapMode) {
         this.mapService.changeMapMode(mapMode);
     }

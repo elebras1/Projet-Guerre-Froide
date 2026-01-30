@@ -23,6 +23,7 @@ public class LocalisationDaoImpl implements LocalisationDao {
     private final String languageCsvFile = this.localisationPath + "language.csv";
     private final String interfaceFile = this.localisationPath + "interface.csv";
     private final String regionsCsvFile = this.localisationPath + "regions.csv";
+    private final String economyCsvFile = this.localisationPath + "economy.csv";
     private String language = "ENGLISH";
 
     @Override
@@ -83,6 +84,11 @@ public class LocalisationDaoImpl implements LocalisationDao {
     @Override
     public Map<String, String> readInterfaceCsv() {
         return this.readLocalisationCsv(this.language, this.interfaceFile);
+    }
+
+    @Override
+    public Map<String, String> readEconomyCsv() {
+        return this.readLocalisationCsv(this.language, this.economyCsvFile);
     }
 
     private Map<String, String> readLocalisationCsv(String language, String filename) {

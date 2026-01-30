@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.SnapshotArray;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
+import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
 import com.populaire.projetguerrefroide.dto.RegionDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.screen.listener.EconomyPanelListener;
@@ -82,6 +83,10 @@ public class EconomyPanel extends Table {
         HoverScrollPane scrollPane = new HoverScrollPane(this.buildingRegionsTable, skinScrollbars, "default");
         scrollPane.setSize(745, 450);
         scrollPane.setPosition(72, 230);
+
+        Table buildingInfoTable = this.createSelectedBuildingInfoBlock();
+        buildingInfoTable.setPosition(60, 52);
+        mainTable.addActor(buildingInfoTable);
         mainTable.addActor(scrollPane);
     }
 
@@ -92,6 +97,23 @@ public class EconomyPanel extends Table {
         rightTable.setSize(background.getMinWidth(), background.getMinHeight());
         rightTable.setPosition(821, 55);
         this.addActor(rightTable);
+    }
+
+    private Table createSelectedBuildingInfoBlock() {
+        Table infoBlock = new Table();
+        infoBlock.setName("selected_building_info_block");
+        Drawable background = this.skin.getDrawable("economy_paper");
+        infoBlock.setBackground(background);
+        infoBlock.setSize(background.getMinWidth(), background.getMinHeight());
+        infoBlock.setVisible(false);
+
+        Label.LabelStyle jockey16Paper = this.labelStylePool.get("jockey_16_paper");
+        this.widgetFactory.createLabelCentered(this.localisation.get("input"), jockey16Paper, 400, 143, infoBlock);
+        this.widgetFactory.createLabelCentered(this.localisation.get("output"), jockey16Paper, 400, 67, infoBlock);
+        Label provinceLabel = this.widgetFactory.createLabelCentered("tmp", jockey16Paper, 600, 143, infoBlock);
+        provinceLabel.setName("lbl_province");
+
+        return infoBlock;
     }
 
     public void setData(RegionsBuildingsDto dto) {
@@ -161,17 +183,17 @@ public class EconomyPanel extends Table {
         return headerTable;
     }
 
-    private Table createBuildingsGrid(List<BuildingDto> buildings) {
+    private Table createBuildingsGrid(List<BuildingSummaryDto> buildings) {
         Table buildingsTable = new Table();
         this.rebuildBuildingsGrid(buildingsTable, buildings);
         return buildingsTable;
     }
 
-    private void rebuildBuildingsGrid(Table buildingsTable, List<BuildingDto> buildings) {
+    private void rebuildBuildingsGrid(Table buildingsTable, List<BuildingSummaryDto> buildings) {
         buildingsTable.clearChildren();
 
         int count = 0;
-        for (BuildingDto building : buildings) {
+        for (BuildingSummaryDto building : buildings) {
             Table buildingCell = this.createBuildingItem(building);
             buildingsTable.add(buildingCell).padRight(-10);
 
@@ -184,15 +206,21 @@ public class EconomyPanel extends Table {
         this.fillEmptySlots(buildingsTable, count);
     }
 
-    private Table createBuildingItem(BuildingDto building) {
+    private Table createBuildingItem(BuildingSummaryDto building) {
         Table buildingTable = new ClickableTable();
         buildingTable.setUserObject(building.buildingId());
+        buildingTable.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                listener.onBuildingClicked(building.buildingId());
+            }
+        });
 
         Label.LabelStyle labelStyle = this.labelStylePool.get("jockey_16_glow_blue");
         Label.LabelStyle labelSmall = this.labelStylePool.get("jockey_14_tight");
 
         this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingTable);
-        this.widgetFactory.createImage(this.skin, "building_" + building.buildingName(), 10, 55, buildingTable);
+        this.widgetFactory.createImage(this.skin, "building_" + building.buildingNameId(), 10, 55, buildingTable);
 
         this.widgetFactory.createLabelCentered(ValueFormatter.format(building.productionValue()), labelStyle, buildingTable.getWidth() / 2, 21, buildingTable);
 
@@ -283,6 +311,14 @@ public class EconomyPanel extends Table {
             if(minButton != null) minButton.setVisible(true);
             maxButton.setVisible(false);
         }
+    }
+
+    public void updateSelectedBuildingInfoBlock(BuildingDto buildingDto) {
+        Table infoBlock = this.findActor("selected_building_info_block");
+        Label provinceLabel = infoBlock.findActor("lbl_province");
+        provinceLabel.setText(this.localisation.get(buildingDto.parentNameId()));
+
+        infoBlock.setVisible(true);
     }
 
     private void cleanupExcessActors(SnapshotArray<Actor> actors, int startIndex) {

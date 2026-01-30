@@ -3,8 +3,8 @@ package com.populaire.projetguerrefroide.screen.presenter;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Stack;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.populaire.projetguerrefroide.dto.BuildingDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
 import com.populaire.projetguerrefroide.screen.listener.EconomyPanelListener;
@@ -54,6 +54,12 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
     public void onSortRegions(SortType sortType) {
         RegionsBuildingsDto regionsBuildingsDto = this.worldService.prepareRegionsBuildingsDto(sortType);
         this.economyPanel.setData(regionsBuildingsDto);
+    }
+
+    @Override
+    public void onBuildingClicked(long buildingId) {
+        BuildingDto buildingDto = this.worldService.buildBuildingDetails(buildingId);
+        this.economyPanel.updateSelectedBuildingInfoBlock(buildingDto);
     }
 
     @Override

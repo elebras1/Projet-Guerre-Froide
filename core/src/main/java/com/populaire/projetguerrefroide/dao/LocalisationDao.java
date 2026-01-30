@@ -15,4 +15,5 @@ public interface LocalisationDao {
     Map<String, String> readProvincesCsv();
     Map<String, String> readRegionsCsv();
     Map<String, String> readInterfaceCsv();
+    Map<String , String> readEconomyCsv();
 }

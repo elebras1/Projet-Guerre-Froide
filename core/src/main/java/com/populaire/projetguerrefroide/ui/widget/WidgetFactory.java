@@ -56,8 +56,8 @@ public class WidgetFactory {
     }
 
     public Label createLabelCentered(String text, Label.LabelStyle labelStyle, float x, float y, Group parent) {
-        Label label = new Label(text, labelStyle);
-        label.setPosition(x - label.getWidth() / 2, y);
+        CenteredLabel label = new CenteredLabel(text, labelStyle);
+        label.setPosition(x, y);
         parent.addActor(label);
         return label;
     }

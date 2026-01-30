@@ -4,7 +4,7 @@ import com.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.LongList;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.dto.BuildingDto;
+import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
 import com.populaire.projetguerrefroide.dto.RegionDto;
 import com.populaire.projetguerrefroide.pojo.MutableInt;
 import com.populaire.projetguerrefroide.pojo.Pair;
@@ -28,7 +28,7 @@ public class RegionService {
         World ecsWorld = this.gameContext.getEcsWorld();
         MutableInt populationAmount = new MutableInt(0);
         MutableInt buildingWorkerAmount = new MutableInt(0);
-        List<BuildingDto> buildings = new ObjectList<>();
+        List<BuildingSummaryDto> buildings = new ObjectList<>();
 
         Query provinceQuery = this.queryRepository.getProvincesWithGeoHierarchy();
         provinceQuery.iter(iter -> {
@@ -55,7 +55,7 @@ public class RegionService {
 
                     if (buildingTypeView.has(EconomyBuilding.class)) {
                         EconomyBuildingView economyBuildingView = buildingTypeView.getMutView(EconomyBuilding.class);
-                        BuildingDto building = new BuildingDto(buildingId, buildingTypeView.getName(), buildingView.size(), economyBuildingView.maxLevel(), 0);
+                        BuildingSummaryDto building = new BuildingSummaryDto(buildingId, buildingTypeView.getName(), buildingView.size(), economyBuildingView.maxLevel(), 0);
                         int workers = this.buildingService.estimateWorkersForBuilding();
                         buildingWorkerAmount.increment(workers);
                         buildings.add(building);

@@ -79,6 +79,7 @@ public class ConfigurationService {
         gameContext.putAllLocalisation(this.localisationDao.readRegionsCsv());
         gameContext.putAllLocalisation(this.localisationDao.readLanguageCsv());
         gameContext.putAllLocalisation(this.localisationDao.readInterfaceCsv());
+        gameContext.putAllLocalisation(this.localisationDao.readEconomyCsv());
     }
 
     private void setLanguage(GameContext gameContext) {

@@ -19,21 +19,22 @@ package com.populaire.projetguerrefroide.adapter.graphics;
 
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.github.xpenatan.webgpu.WGPUTextureFormat;
+import com.monstrous.gdx.webgpu.graphics.g2d.WgSpriteBatch;
 import com.monstrous.gdx.webgpu.graphics.utils.WgFrameBuffer;
-import com.monstrous.gdx.webgpu.scene2d.WgStage;
 import com.populaire.projetguerrefroide.ui.renderer.FlagImageRenderer;
 
-public class WgCustomStage extends WgStage {
+public class WgCustomStage extends Stage {
 
     private final WgFrameBuffer frameBuffer;
     private final FlagImageRenderer flagImageRenderer;
     private boolean frameBufferIsDirty;
 
     public WgCustomStage(Viewport viewport, Skin skinUi, Skin skinFlags) {
-        super(viewport);
+        super(viewport, new WgSpriteBatch(2000, null, 300));
         this.frameBuffer = new WgFrameBuffer(WGPUTextureFormat.BGRA8UnormSrgb, viewport.getScreenWidth(), viewport.getScreenHeight(), true);
         this.flagImageRenderer = new FlagImageRenderer(skinUi.getAtlas().getTextures().first(), skinUi.getAtlas().getTextures().first(), skinFlags.getAtlas().getTextures().first(), viewport.getScreenWidth(), viewport.getScreenHeight());
         this.frameBufferIsDirty = true;
