@@ -2,12 +2,12 @@ package com.populaire.projetguerrefroide.ui.widget;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 public class ClickableTable extends Table {
-
     private final Color normalColor;
     private final Color clickColor;
 
@@ -20,13 +20,13 @@ public class ClickableTable extends Table {
 
         this.addListener(new ClickListener() {
             @Override
-            public boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent event, float x, float y, int pointer, int button) {
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 setColorRecursively(clickColor);
                 return true;
             }
 
             @Override
-            public void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent event, float x, float y, int pointer, int button) {
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 setColorRecursively(normalColor);
             }
         });

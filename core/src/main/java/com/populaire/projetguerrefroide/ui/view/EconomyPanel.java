@@ -15,6 +15,7 @@ import com.populaire.projetguerrefroide.service.LabelStylePool;
 import com.populaire.projetguerrefroide.ui.widget.ClickableTable;
 import com.populaire.projetguerrefroide.ui.widget.HoverScrollPane;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
+import com.populaire.projetguerrefroide.util.UiConstants;
 import com.populaire.projetguerrefroide.util.ValueFormatter;
 
 import java.util.List;
@@ -108,10 +109,23 @@ public class EconomyPanel extends Table {
         infoBlock.setVisible(false);
 
         Label.LabelStyle jockey16Paper = this.labelStylePool.get("jockey_16_paper");
-        this.widgetFactory.createLabelCentered(this.localisation.get("input"), jockey16Paper, 400, 143, infoBlock);
-        this.widgetFactory.createLabelCentered(this.localisation.get("output"), jockey16Paper, 400, 67, infoBlock);
-        Label provinceLabel = this.widgetFactory.createLabelCentered("tmp", jockey16Paper, 600, 143, infoBlock);
+        this.widgetFactory.createLabelCentered(this.localisation.get("INPUT"), jockey16Paper, 400, 142, infoBlock);
+        this.widgetFactory.createLabelCentered(this.localisation.get("OUTPUT"), jockey16Paper, 400, 66, infoBlock);
+        Label provinceLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 633, 142, infoBlock);
         provinceLabel.setName("lbl_province");
+        Label buildingTypeLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 633, 122, infoBlock);
+        buildingTypeLabel.setName("lbl_building_type");
+
+        Label.LabelStyle jockey16Dark = this.labelStylePool.get("jockey_16_dark");
+        Button expandButton = this.widgetFactory.createButton(this.skin, "eco_folder_btn_yellow", 636, 94, infoBlock);
+        expandButton.addListener(new ClickListener() {});
+        this.widgetFactory.createLabel(this.localisation.get("EXPAND"), jockey16Dark, 26, 0, expandButton);
+        Button suspendButton = this.widgetFactory.createButton(this.skin, "eco_folder_btn_yellow", 636, 70, infoBlock);
+        suspendButton.addListener(new ClickListener() {});
+        this.widgetFactory.createLabel(this.localisation.get("SUSPEND"), jockey16Dark, 23, 0, suspendButton);
+        Button demolishButton = this.widgetFactory.createButton(this.skin, "eco_folder_btn_red", 636, 22, infoBlock);
+        demolishButton.addListener(new ClickListener() {});
+        this.widgetFactory.createLabel(this.localisation.get("DEMOLISH"), jockey16Dark, 23, 0, demolishButton);
 
         return infoBlock;
     }
@@ -317,6 +331,9 @@ public class EconomyPanel extends Table {
         Table infoBlock = this.findActor("selected_building_info_block");
         Label provinceLabel = infoBlock.findActor("lbl_province");
         provinceLabel.setText(this.localisation.get(buildingDto.parentNameId()));
+
+        Label buildingTypeLabel = infoBlock.findActor("lbl_building_type");
+        buildingTypeLabel.setText(this.localisation.get(buildingDto.buildingTypeNameId()));
 
         infoBlock.setVisible(true);
     }
