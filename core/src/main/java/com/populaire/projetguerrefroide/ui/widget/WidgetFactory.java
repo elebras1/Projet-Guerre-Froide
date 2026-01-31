@@ -84,6 +84,13 @@ public class WidgetFactory {
         return image;
     }
 
+    public Image createImage(float x, float y, Group parent) {
+        Image image = new Image();
+        image.setPosition(x, y);
+        parent.addActor(image);
+        return image;
+    }
+
     public Image createImage(Skin skin, String drawableName, float x, float y) {
         Image image = new Image(skin.getDrawable(drawableName));
         image.setPosition(x, y);

@@ -111,9 +111,9 @@ public class EconomyPanel extends Table {
         Label.LabelStyle jockey16Paper = this.labelStylePool.get("jockey_16_paper");
         this.widgetFactory.createLabelCentered(this.localisation.get("INPUT"), jockey16Paper, 400, 142, infoBlock);
         this.widgetFactory.createLabelCentered(this.localisation.get("OUTPUT"), jockey16Paper, 400, 66, infoBlock);
-        Label provinceLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 633, 142, infoBlock);
+        Label provinceLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 631, 142, infoBlock);
         provinceLabel.setName("lbl_province");
-        Label buildingTypeLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 633, 122, infoBlock);
+        Label buildingTypeLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 631, 122, infoBlock);
         buildingTypeLabel.setName("lbl_building_type");
 
         Label.LabelStyle jockey16Dark = this.labelStylePool.get("jockey_16_dark");
@@ -126,6 +126,9 @@ public class EconomyPanel extends Table {
         Button demolishButton = this.widgetFactory.createButton(this.skin, "eco_folder_btn_red", 636, 22, infoBlock);
         demolishButton.addListener(new ClickListener() {});
         this.widgetFactory.createLabel(this.localisation.get("DEMOLISH"), jockey16Dark, 23, 0, demolishButton);
+
+        Image pinnedBuildingImage = this.widgetFactory.createImage(28, 23, infoBlock);
+        pinnedBuildingImage.setName("img_pinned_building");
 
         return infoBlock;
     }
@@ -334,6 +337,10 @@ public class EconomyPanel extends Table {
 
         Label buildingTypeLabel = infoBlock.findActor("lbl_building_type");
         buildingTypeLabel.setText(this.localisation.get(buildingDto.buildingTypeNameId()));
+
+        Image pinnedBuildingImage = infoBlock.findActor("img_pinned_building");
+        pinnedBuildingImage.setDrawable(this.skin.getDrawable("pinned_" + buildingDto.buildingTypeNameId()));
+        pinnedBuildingImage.pack();
 
         infoBlock.setVisible(true);
     }
