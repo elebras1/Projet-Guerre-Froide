@@ -16,6 +16,16 @@ public class HoverScrollPane extends WgScrollPane {
 
     @Override
     protected void addScrollListener() {
+        this.addCaptureListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                if (getStage() != null) {
+                    getStage().setScrollFocus(HoverScrollPane.this);
+                }
+                return false;
+            }
+        });
+
         this.addListener(new InputListener() {
             @Override
             public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
@@ -30,7 +40,9 @@ public class HoverScrollPane extends WgScrollPane {
 
             @Override
             public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
-                if (getStage() != null && getStage().getScrollFocus() == HoverScrollPane.this) {
+                boolean isExitingToChild = toActor != null && toActor.isDescendantOf(HoverScrollPane.this);
+
+                if (!isExitingToChild && getStage().getScrollFocus() == HoverScrollPane.this) {
                     getStage().setScrollFocus(null);
                 }
             }
