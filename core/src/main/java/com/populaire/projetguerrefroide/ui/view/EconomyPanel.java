@@ -24,6 +24,7 @@ import java.util.Map;
 public class EconomyPanel extends Table {
     private final WidgetFactory widgetFactory;
     private final Skin skin;
+    private final Skin skinUi;
     private final LabelStylePool labelStylePool;
     private final Map<String, String> localisation;
     private final EconomyPanelListener listener;
@@ -32,6 +33,7 @@ public class EconomyPanel extends Table {
     public EconomyPanel(WidgetFactory widgetFactory, Skin skin, Skin skinUi, Skin skinScrollbars, LabelStylePool labelStylePool, Map<String, String> localisation, EconomyPanelListener listener) {
         this.widgetFactory = widgetFactory;
         this.skin = skin;
+        this.skinUi = skinUi;
         this.labelStylePool = labelStylePool;
         this.localisation = localisation;
         this.listener = listener;
@@ -110,7 +112,19 @@ public class EconomyPanel extends Table {
 
         Label.LabelStyle jockey16Paper = this.labelStylePool.get("jockey_16_paper");
         this.widgetFactory.createLabelCentered(this.localisation.get("INPUT"), jockey16Paper, 400, 142, infoBlock);
+        int inputIconX = 290;
+        int inputIconY = 95;
+        for(int i = 0; i < 5; i++) {
+            Table inputBgIcon = this.widgetFactory.createBackgroundTable(this.skin, "eco_box_metal_grey", inputIconX, inputIconY, infoBlock);
+            inputBgIcon.setName("img_input_bg_icon_" + i);
+            this.widgetFactory.createImage(this.skinUi, "good_none_small", 8, 11, inputBgIcon);
+            inputIconX += 43;
+        }
         this.widgetFactory.createLabelCentered(this.localisation.get("OUTPUT"), jockey16Paper, 400, 66, infoBlock);
+        Table outputBgIcon = this.widgetFactory.createBackgroundTable(this.skin, "eco_box_metal_blue", 290, 20, infoBlock);
+        outputBgIcon.setName("img_output_bg_icon");
+        this.widgetFactory.createImage(this.skinUi, "good_none_small", 8, 11, outputBgIcon);
+
         Label provinceLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 631, 142, infoBlock);
         provinceLabel.setName("lbl_province");
         Label buildingTypeLabel = this.widgetFactory.createLabelCentered(UiConstants.TMP, jockey16Paper, 631, 122, infoBlock);
@@ -341,6 +355,27 @@ public class EconomyPanel extends Table {
         Image pinnedBuildingImage = infoBlock.findActor("img_pinned_building");
         pinnedBuildingImage.setDrawable(this.skin.getDrawable("pinned_" + buildingDto.buildingTypeNameId()));
         pinnedBuildingImage.pack();
+
+        for(int i = 0; i < 5; i++) {
+            Table inputIcon = infoBlock.findActor("img_input_bg_icon_" + i);
+            Image inputGoodImage = (Image) inputIcon.getChildren().first();
+            String inputGoodNameId = buildingDto.inputGoodNameIds()[i];
+            if(inputGoodNameId != null) {
+                inputIcon.setBackground(this.skin.getDrawable("eco_box_metal_green"));
+                inputGoodImage.setDrawable(this.skinUi.getDrawable("good_" + inputGoodNameId + "_small"));
+            } else {
+                inputIcon.setBackground(this.skin.getDrawable("eco_box_metal_grey"));
+                inputGoodImage.setDrawable(this.skinUi.getDrawable("good_none_small"));
+            }
+        }
+        Table outputIcon = infoBlock.findActor("img_output_bg_icon");
+        Image outputGoodImage = (Image) outputIcon.getChildren().first();
+        String outputGoodNameId = buildingDto.outputGoodNameId();
+        if(outputGoodNameId != null) {
+            outputGoodImage.setDrawable(this.skinUi.getDrawable("good_" + outputGoodNameId + "_small"));
+        } else {
+            outputGoodImage.setDrawable(this.skinUi.getDrawable("good_none_small"));
+        }
 
         infoBlock.setVisible(true);
     }

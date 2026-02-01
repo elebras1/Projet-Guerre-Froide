@@ -216,9 +216,9 @@ public class ProvincePanel extends Table {
     private void setResourceImage(String name) {
         Drawable resource;
         if(name != null) {
-            resource = this.skinUi.getDrawable("resource_" + name + "_small");
+            resource = this.skinUi.getDrawable("good_" + name + "_small");
         } else {
-            resource = this.skinUi.getDrawable("resource_none_small");
+            resource = this.skinUi.getDrawable("good_none_small");
         }
 
         this.resourceImage.setDrawable(resource);

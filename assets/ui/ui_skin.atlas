@@ -6,14 +6,14 @@ filter: Linear, Linear
 repeat: none
 checkbutton_off
   rotate: false
-  xy: 278, 350
+  xy: 98, 94
   size: 30, 31
   orig: 30, 31
   offset: 0, 0
   index: -1
 checkbutton_on
   rotate: false
-  xy: 310, 350
+  xy: 478, 373
   size: 30, 31
   orig: 30, 31
   offset: 0, 0
@@ -27,14 +27,14 @@ close_btn
   index: -1
 close_btn_down
   rotate: false
-  xy: 132, 70
+  xy: 130, 84
   size: 29, 29
   orig: 29, 29
   offset: 0, 0
   index: -1
 close_btn_over
   rotate: false
-  xy: 167, 243
+  xy: 105, 34
   size: 29, 29
   orig: 29, 29
   offset: 0, 0
@@ -60,457 +60,632 @@ flag_overlay
   orig: 109, 77
   offset: 0, 0
   index: -1
-icon_dissent_small_blue
-  rotate: false
-  xy: 342, 426
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_dissent_small_green
-  rotate: false
-  xy: 369, 426
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_dissent_small_red
-  rotate: false
-  xy: 338, 395
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_fuel_small_blue
-  rotate: false
-  xy: 365, 395
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_fuel_small_green
-  rotate: false
-  xy: 342, 364
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_fuel_small_red
-  rotate: false
-  xy: 369, 364
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_gdp_small_blue
-  rotate: false
-  xy: 229, 256
-  size: 28, 29
-  orig: 28, 29
-  offset: 0, 0
-  index: -1
-icon_gdp_small_green
-  rotate: false
-  xy: 229, 225
-  size: 28, 29
-  orig: 28, 29
-  offset: 0, 0
-  index: -1
-icon_gdp_small_red
-  rotate: false
-  xy: 229, 194
-  size: 28, 29
-  orig: 28, 29
-  offset: 0, 0
-  index: -1
-icon_leadership_small_blue
-  rotate: false
-  xy: 133, 240
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-icon_leadership_small_green
-  rotate: false
-  xy: 99, 186
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-icon_leadership_small_red
-  rotate: false
-  xy: 133, 206
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-icon_manpower_army_small_blue
-  rotate: false
-  xy: 446, 416
-  size: 24, 29
-  orig: 24, 29
-  offset: 0, 0
-  index: -1
-icon_manpower_army_small_green
-  rotate: false
-  xy: 472, 416
-  size: 24, 29
-  orig: 24, 29
-  offset: 0, 0
-  index: -1
-icon_manpower_army_small_red
-  rotate: false
-  xy: 423, 385
-  size: 24, 29
-  orig: 24, 29
-  offset: 0, 0
-  index: -1
-icon_manpower_small_blue
-  rotate: false
-  xy: 423, 354
-  size: 24, 29
-  orig: 24, 29
-  offset: 0, 0
-  index: -1
-icon_manpower_small_green
-  rotate: false
-  xy: 449, 385
-  size: 24, 29
-  orig: 24, 29
-  offset: 0, 0
-  index: -1
-icon_manpower_small_red
-  rotate: false
-  xy: 449, 354
-  size: 24, 29
-  orig: 24, 29
-  offset: 0, 0
-  index: -1
-icon_money_small_blue
-  rotate: false
-  xy: 475, 385
-  size: 24, 29
-  orig: 24, 29
-  offset: 0, 0
-  index: -1
-icon_money_small_green
-  rotate: false
-  xy: 475, 354
-  size: 24, 29
-  orig: 24, 29
-  offset: 0, 0
-  index: -1
-icon_money_small_red
-  rotate: false
-  xy: 423, 323
-  size: 24, 29
-  orig: 24, 29
-  offset: 0, 0
-  index: -1
-icon_nuke
-  rotate: false
-  xy: 246, 317
-  size: 27, 25
-  orig: 27, 25
-  offset: 0, 0
-  index: -1
-icon_oil
-  rotate: false
-  xy: 98, 152
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-icon_prestige_small_blue
-  rotate: false
-  xy: 342, 333
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_prestige_small_green
-  rotate: false
-  xy: 369, 333
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_prestige_small_red
-  rotate: false
-  xy: 392, 395
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_satellite_blue
-  rotate: false
-  xy: 71, 32
-  size: 19, 19
-  orig: 19, 19
-  offset: 0, 0
-  index: -1
-icon_satellite_green
-  rotate: false
-  xy: 92, 32
-  size: 19, 19
-  orig: 19, 19
-  offset: 0, 0
-  index: -1
-icon_satellite_red
-  rotate: false
-  xy: 396, 426
-  size: 19, 19
-  orig: 19, 19
-  offset: 0, 0
-  index: -1
-icon_spy_blue
-  rotate: false
-  xy: 248, 294
-  size: 21, 21
-  orig: 21, 21
-  offset: 0, 0
-  index: -1
-icon_spy_green
-  rotate: false
-  xy: 449, 313
-  size: 21, 21
-  orig: 21, 21
-  offset: 0, 0
-  index: -1
-icon_spy_red
-  rotate: false
-  xy: 472, 313
-  size: 21, 21
-  orig: 21, 21
-  offset: 0, 0
-  index: -1
-icon_supplies_small_blue
-  rotate: false
-  xy: 396, 364
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_supplies_small_green
-  rotate: false
-  xy: 396, 333
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_supplies_small_red
-  rotate: false
-  xy: 419, 416
-  size: 25, 29
-  orig: 25, 29
-  offset: 0, 0
-  index: -1
-icon_unity_small_blue
-  rotate: false
-  xy: 167, 212
-  size: 29, 29
-  orig: 29, 29
-  offset: 0, 0
-  index: -1
-icon_unity_small_green
-  rotate: false
-  xy: 167, 181
-  size: 29, 29
-  orig: 29, 29
-  offset: 0, 0
-  index: -1
-icon_unity_small_red
-  rotate: false
-  xy: 85, 53
-  size: 29, 29
-  orig: 29, 29
-  offset: 0, 0
-  index: -1
-icon_uranium
-  rotate: false
-  xy: 98, 118
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-icon_uranium_small_blue
-  rotate: false
-  xy: 198, 249
-  size: 29, 29
-  orig: 29, 29
-  offset: 0, 0
-  index: -1
-icon_uranium_small_green
-  rotate: false
-  xy: 198, 218
-  size: 29, 29
-  orig: 29, 29
-  offset: 0, 0
-  index: -1
-icon_uranium_small_red
-  rotate: false
-  xy: 198, 187
-  size: 29, 29
-  orig: 29, 29
-  offset: 0, 0
-  index: -1
-minimask
-  rotate: false
-  xy: 98, 84
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-minishield
-  rotate: false
-  xy: 180, 280
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-resource_coal_small
+good_aeroplanes_small
   rotate: false
   xy: 1, 5
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_fish_small
+good_aluminium_small
   rotate: false
-  xy: 478, 452
+  xy: 242, 373
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_fruits_small
+good_ammunition_small
   rotate: false
-  xy: 146, 274
+  xy: 276, 388
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_gas_small
-  rotate: false
-  xy: 214, 287
-  size: 32, 25
-  orig: 32, 25
-  offset: 0, 0
-  index: -1
-resource_grain_small
+good_armoured_vehicles_small
   rotate: false
   xy: 35, 5
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_iron_small
+good_automobiles_small
   rotate: false
-  xy: 178, 341
+  xy: 310, 422
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_meat_small
+good_cement_small
   rotate: false
-  xy: 178, 314
+  xy: 310, 395
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_none_small
+good_clothes_small
   rotate: false
-  xy: 133, 179
+  xy: 344, 430
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_oil_small
+good_coal_small
   rotate: false
-  xy: 212, 341
+  xy: 378, 430
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_precious_metals_small
+good_communication_small
   rotate: false
-  xy: 99, 220
+  xy: 344, 403
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_rare_metals_small
+good_computers_small
   rotate: false
-  xy: 212, 314
+  xy: 378, 403
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_renewable_energy_small
+good_electricity_small
   rotate: false
-  xy: 99, 247
+  xy: 412, 420
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_uranium_small
+good_electronic_components_small
   rotate: false
-  xy: 258, 422
+  xy: 246, 346
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_vegetables_small
+good_fabric_small
   rotate: false
-  xy: 292, 422
+  xy: 246, 319
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
-resource_wood_small
+good_fish_small
+  rotate: false
+  xy: 246, 292
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_fruits_small
+  rotate: false
+  xy: 412, 393
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_fuel_small
   rotate: false
   xy: 112, 274
   size: 32, 25
   orig: 32, 25
   offset: 0, 0
   index: -1
+good_gas_small
+  rotate: false
+  xy: 99, 247
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_grain_small
+  rotate: false
+  xy: 99, 220
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_inorganic_chemicals_small
+  rotate: false
+  xy: 99, 193
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_integrated_circuits_small
+  rotate: false
+  xy: 280, 361
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_iron_small
+  rotate: false
+  xy: 280, 334
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_machine_parts_small
+  rotate: false
+  xy: 280, 307
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_meat_small
+  rotate: false
+  xy: 314, 368
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_military_satellites_small
+  rotate: false
+  xy: 314, 341
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_none_small
+  rotate: false
+  xy: 314, 314
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_oil_small
+  rotate: false
+  xy: 348, 376
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_paper_small
+  rotate: false
+  xy: 348, 349
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_pharmaceuticals_small
+  rotate: false
+  xy: 348, 322
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_plastics_small
+  rotate: false
+  xy: 280, 280
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_precious_metals_small
+  rotate: false
+  xy: 314, 287
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_rare_metals_small
+  rotate: false
+  xy: 348, 295
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_refined_uranium_png
+  rotate: false
+  xy: 348, 268
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_renewable_energy_small
+  rotate: false
+  xy: 314, 260
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_ships_small
+  rotate: false
+  xy: 348, 241
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_steel_small
+  rotate: false
+  xy: 71, 33
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_transport_small
+  rotate: false
+  xy: 133, 247
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_uranium_small
+  rotate: false
+  xy: 133, 220
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_vegetables_small
+  rotate: false
+  xy: 133, 193
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_weaponry_small
+  rotate: false
+  xy: 85, 65
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+good_wood_small
+  rotate: false
+  xy: 99, 166
+  size: 32, 25
+  orig: 32, 25
+  offset: 0, 0
+  index: -1
+icon_dissent_small_blue
+  rotate: false
+  xy: 382, 310
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_dissent_small_green
+  rotate: false
+  xy: 382, 279
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_dissent_small_red
+  rotate: false
+  xy: 382, 248
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_fuel_small_blue
+  rotate: false
+  xy: 175, 269
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_fuel_small_green
+  rotate: false
+  xy: 202, 269
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_fuel_small_red
+  rotate: false
+  xy: 167, 238
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_gdp_small_blue
+  rotate: false
+  xy: 382, 372
+  size: 28, 29
+  orig: 28, 29
+  offset: 0, 0
+  index: -1
+icon_gdp_small_green
+  rotate: false
+  xy: 382, 341
+  size: 28, 29
+  orig: 28, 29
+  offset: 0, 0
+  index: -1
+icon_gdp_small_red
+  rotate: false
+  xy: 412, 362
+  size: 28, 29
+  orig: 28, 29
+  offset: 0, 0
+  index: -1
+icon_leadership_small_blue
+  rotate: false
+  xy: 178, 334
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon_leadership_small_green
+  rotate: false
+  xy: 178, 300
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon_leadership_small_red
+  rotate: false
+  xy: 478, 445
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon_manpower_army_small_blue
+  rotate: false
+  xy: 409, 238
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+icon_manpower_army_small_green
+  rotate: false
+  xy: 167, 176
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+icon_manpower_army_small_red
+  rotate: false
+  xy: 193, 176
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+icon_manpower_small_blue
+  rotate: false
+  xy: 165, 145
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+icon_manpower_small_green
+  rotate: false
+  xy: 191, 145
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+icon_manpower_small_red
+  rotate: false
+  xy: 221, 238
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+icon_money_small_blue
+  rotate: false
+  xy: 221, 207
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+icon_money_small_green
+  rotate: false
+  xy: 219, 176
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+icon_money_small_red
+  rotate: false
+  xy: 217, 145
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+icon_nuke
+  rotate: false
+  xy: 146, 274
+  size: 27, 25
+  orig: 27, 25
+  offset: 0, 0
+  index: -1
+icon_oil
+  rotate: false
+  xy: 212, 334
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon_prestige_small_blue
+  rotate: false
+  xy: 167, 207
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_prestige_small_green
+  rotate: false
+  xy: 194, 238
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_prestige_small_red
+  rotate: false
+  xy: 194, 207
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_satellite_blue
+  rotate: false
+  xy: 188, 1
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+icon_satellite_green
+  rotate: false
+  xy: 247, 225
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+icon_satellite_red
+  rotate: false
+  xy: 162, 124
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+icon_spy_blue
+  rotate: false
+  xy: 229, 269
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+icon_spy_green
+  rotate: false
+  xy: 252, 269
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+icon_spy_red
+  rotate: false
+  xy: 247, 246
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+icon_supplies_small_blue
+  rotate: false
+  xy: 412, 331
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_supplies_small_green
+  rotate: false
+  xy: 409, 300
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_supplies_small_red
+  rotate: false
+  xy: 409, 269
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+icon_unity_small_blue
+  rotate: false
+  xy: 136, 53
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+icon_unity_small_green
+  rotate: false
+  xy: 136, 22
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+icon_unity_small_red
+  rotate: false
+  xy: 105, 3
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+icon_uranium
+  rotate: false
+  xy: 212, 300
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+icon_uranium_small_blue
+  rotate: false
+  xy: 161, 84
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+icon_uranium_small_green
+  rotate: false
+  xy: 167, 53
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+icon_uranium_small_red
+  rotate: false
+  xy: 167, 22
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+minimask
+  rotate: false
+  xy: 242, 400
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+minishield
+  rotate: false
+  xy: 276, 415
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 settings_less
   rotate: false
-  xy: 132, 140
+  xy: 446, 408
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_less_down
   rotate: false
-  xy: 132, 101
+  xy: 98, 127
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_less_over
   rotate: false
-  xy: 242, 383
+  xy: 478, 406
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more
   rotate: false
-  xy: 274, 383
+  xy: 133, 154
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more_down
   rotate: false
-  xy: 306, 383
+  xy: 130, 115
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
   index: -1
 settings_more_over
   rotate: false
-  xy: 246, 344
+  xy: 446, 369
   size: 30, 37
   orig: 30, 37
   offset: 0, 0
@@ -573,14 +748,14 @@ shield_big_overlay
   index: -1
 small_flag_mask
   rotate: false
-  xy: 449, 336
+  xy: 136, 4
   size: 24, 16
   orig: 24, 16
   offset: 0, 0
   index: -1
 small_flag_overlay
   rotate: false
-  xy: 475, 336
+  xy: 162, 4
   size: 24, 16
   orig: 24, 16
   offset: 0, 0

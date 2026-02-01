@@ -21,6 +21,16 @@ public class WidgetFactory {
         return table;
     }
 
+    public Table createBackgroundTable(Skin skin, String backgroundName, float x, float y, Group parent) {
+        Drawable background = skin.getDrawable(backgroundName);
+        Table table = new Table();
+        table.setBackground(background);
+        table.setSize(background.getMinWidth(), background.getMinHeight());
+        table.setPosition(x, y);
+        parent.addActor(table);
+        return table;
+    }
+
     public Drawable applyBackgroundToTable(Skin skin, String backgroundName, Table table) {
         Drawable background = skin.getDrawable(backgroundName);
         table.setBackground(background);

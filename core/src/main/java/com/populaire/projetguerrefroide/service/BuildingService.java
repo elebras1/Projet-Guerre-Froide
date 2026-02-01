@@ -24,7 +24,25 @@ public class BuildingService {
         Entity parent = ecsWorld.obtainEntity(buildingData.parentId());
         Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
         EconomyBuilding buildingTypeData = buildingType.get(EconomyBuilding.class);
-        return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), buildingTypeData.goodCostIds(), buildingTypeData.goodCostValues(), buildingTypeData.inputGoodIds(), buildingTypeData.inputGoodValues(), buildingTypeData.outputGoodId(), buildingTypeData.outputGoodValue());
+        String[] goodCostNameIds = new String[buildingTypeData.goodCostIds().length];
+        for(int i = 0; i < buildingTypeData.goodCostIds().length; i++) {
+            long goodId = buildingTypeData.goodCostIds()[i];
+            if(goodId != 0) {
+                Entity goodEntity = ecsWorld.obtainEntity(goodId);
+                goodCostNameIds[i] = goodEntity.getName();
+            }
+        }
+        String[] inputGoodNameIds = new String[buildingTypeData.inputGoodIds().length];
+        for(int i = 0; i < buildingTypeData.inputGoodIds().length; i++) {
+            long goodId = buildingTypeData.inputGoodIds()[i];
+            if(goodId != 0) {
+                Entity goodEntity = ecsWorld.obtainEntity(goodId);
+                inputGoodNameIds[i] = goodEntity.getName();
+            }
+        }
+        Entity outputGoodEntity = ecsWorld.obtainEntity(buildingTypeData.outputGoodId());
+        String outputGoodNameId = outputGoodEntity.getName();
+        return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostValues(), inputGoodNameIds, buildingTypeData.inputGoodValues(), outputGoodNameId, buildingTypeData.outputGoodValue());
     }
 
     public int getMaxWorkers(long resourceGoodId, int resourceGoodSize) {
