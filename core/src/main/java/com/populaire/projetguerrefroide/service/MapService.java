@@ -309,7 +309,7 @@ public class MapService implements WorldContext, Disposable {
                 int color = colorView.value();
                 int red = (color >> 24) & 0xFF;
                 int green = (color >> 16) & 0xFF;
-                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
+                this.mapModePixmap.drawPixel(red, green, ColorUtils.getWhiteRGBA());
             }
         });
 
@@ -347,7 +347,7 @@ public class MapService implements WorldContext, Disposable {
                 int color = colorView.value();
                 int red = (color >> 24) & 0xFF;
                 int green = (color >> 16) & 0xFF;
-                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getDeterministicRGBA(regionView.getName()));
+                this.mapModePixmap.drawPixel(red, green, ColorUtils.getDeterministicRGBA(regionView.getName()));
             }
         });
     }
@@ -361,7 +361,7 @@ public class MapService implements WorldContext, Disposable {
                 int color = colorView.value();
                 int red = (color >> 24) & 0xFF;
                 int green = (color >> 16) & 0xFF;
-                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getWhiteRGBA());
+                this.mapModePixmap.drawPixel(red, green, ColorUtils.getWhiteRGBA());
             }
         });
     }
@@ -413,7 +413,7 @@ public class MapService implements WorldContext, Disposable {
 
                 int pop = provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors();
                 float ratio = (maxPopulation.getValue() > 0) ? (float) pop / maxPopulation.getValue() : 0f;
-                this.mapModePixmap.drawPixel(red, green, ColorGenerator.getMagmaColorRGBA(ratio));
+                this.mapModePixmap.drawPixel(red, green, ColorUtils.getMagmaColorRGBA(ratio));
             }
         });
     }
@@ -435,16 +435,16 @@ public class MapService implements WorldContext, Disposable {
                 int green = (color >> 16) & 0xFF;
 
                 if(this.playerCountryId == provinceView.ownerId()) {
-                    this.mapModePixmap.drawPixel(red, green, ColorGenerator.getLightBlueRGBA());
+                    this.mapModePixmap.drawPixel(red, green, ColorUtils.getLightBlueRGBA());
                 } else if (provinceView.ownerId() != 0) {
                     DiplomaticRelationView relationView = playerCountryEntity.getMutView(DiplomaticRelation.class, provinceView.ownerId());
                     if (relationView != null) {
-                        this.mapModePixmap.drawPixel(red, green, ColorGenerator.getRedToGreenGradientRGBA(relationView.value(), 200));
+                        this.mapModePixmap.drawPixel(red, green, ColorUtils.getRedToGreenGradientRGBA(relationView.value(), 200));
                     } else {
-                        this.mapModePixmap.drawPixel(red, green, ColorGenerator.getGreyRGBA());
+                        this.mapModePixmap.drawPixel(red, green, ColorUtils.getGreyRGBA());
                     }
                 } else {
-                    this.mapModePixmap.drawPixel(red, green, ColorGenerator.getGreyRGBA());
+                    this.mapModePixmap.drawPixel(red, green, ColorUtils.getGreyRGBA());
                 }
             }
         });

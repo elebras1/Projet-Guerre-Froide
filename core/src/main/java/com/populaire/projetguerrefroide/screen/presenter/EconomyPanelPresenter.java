@@ -38,7 +38,7 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
     public void initialize(Stage stage) {
         Table centerTable = new Table();
         centerTable.setFillParent(true);
-        this.economyPanel = new EconomyPanel(this.widgetFactory, this.skinEconomy, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getLocalisation(), this);
+        this.economyPanel = new EconomyPanel(this.widgetFactory, this.skinEconomy, this.skinUi, this.skinScrollbars, this.gameContext.getLabelStylePool(), this.gameContext.getColorTexturePool(), this.gameContext.getLocalisation(), this);
         this.economyPanel.setVisible(false);
         centerTable.add(this.economyPanel).center();
         stage.addActor(centerTable);
@@ -60,6 +60,24 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
     public void onBuildingClicked(long buildingId) {
         BuildingDto buildingDto = this.worldService.buildBuildingDetails(buildingId);
         this.economyPanel.updateSelectedBuildingInfoBlock(buildingDto);
+    }
+
+    @Override
+    public void onExpandBuildingClicked(long buildingId) {
+        System.out.println("Expand building clicked: " + buildingId);
+        // TODO
+    }
+
+    @Override
+    public void onSuspendBuildingClicked(long buildingId) {
+        System.out.println("Suspend building clicked: " + buildingId);
+        // TODO
+    }
+
+    @Override
+    public void onDemolishBuildingClicked(long buildingId) {
+        System.out.println("Demolish building clicked: " + buildingId);
+        // TODO
     }
 
     @Override

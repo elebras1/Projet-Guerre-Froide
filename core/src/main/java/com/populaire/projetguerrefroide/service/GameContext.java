@@ -6,7 +6,6 @@ import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.pojo.Bookmark;
-import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.ui.widget.CursorManager;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 
@@ -19,6 +18,7 @@ public class GameContext implements Disposable {
     private final AssetManager assetManager;
     private final CursorManager cursorManager;
     private final LabelStylePool labelStylePool;
+    private final ColorDrawablePool colorTexturePool;
     private final Map<String, String> localisation;
     private Settings settings;
 
@@ -29,6 +29,7 @@ public class GameContext implements Disposable {
         this.assetManager = assetManager;
         this.cursorManager = cursorManager;
         this.labelStylePool = labelStylePool;
+        this.colorTexturePool = new ColorDrawablePool();
         this.localisation = new ObjectObjectMap<>();
         this.settings = settings;
     }
@@ -55,6 +56,10 @@ public class GameContext implements Disposable {
 
     public LabelStylePool getLabelStylePool() {
         return this.labelStylePool;
+    }
+
+    public ColorDrawablePool getColorTexturePool() {
+        return this.colorTexturePool;
     }
 
     public Settings getSettings() {

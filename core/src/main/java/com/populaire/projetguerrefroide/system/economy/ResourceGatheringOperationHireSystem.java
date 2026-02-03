@@ -4,7 +4,6 @@ import com.github.elebras1.flecs.*;
 import com.github.elebras1.flecs.util.FlecsConstants;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.service.BuildingService;
-import com.populaire.projetguerrefroide.service.EconomyService;
 
 public class ResourceGatheringOperationHireSystem {
     private final World ecsWorld;

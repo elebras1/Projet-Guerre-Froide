@@ -1,6 +1,9 @@
 package com.populaire.projetguerrefroide.util;
 
-public class ColorGenerator {
+public class ColorUtils {
+    public static final int RED_RGBA = (255 << 24) | (65 << 16) | (65 << 8) | 0xFF;
+    public static final int GREEN_RGBA = (65 << 24) | (255 << 16) | (65 << 8) | 0xFF;
+
     // https://github.com/BIDS/colormap/blob/master/colormaps.py CC0 licensed
     private static final float[][] magma = {
         { 0.001462f, 0.000466f, 0.013866f },

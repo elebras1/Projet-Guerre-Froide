@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import java.util.List;
 
@@ -67,6 +68,13 @@ public class WidgetFactory {
 
     public Label createLabelCentered(String text, Label.LabelStyle labelStyle, float x, float y, Group parent) {
         CenteredLabel label = new CenteredLabel(text, labelStyle);
+        label.setPosition(x, y);
+        parent.addActor(label);
+        return label;
+    }
+
+    public Label createLabelAlignRight(String text, Label.LabelStyle labelStyle, float x, float y, Group parent) {
+        AlignRightLabel label = new AlignRightLabel(text, labelStyle);
         label.setPosition(x, y);
         parent.addActor(label);
         return label;
@@ -142,6 +150,27 @@ public class WidgetFactory {
         TextureRegion alphaFlag = skin.getRegion(alphaFlagName);
         TextureRegion overlayFlag = skin.getRegion(overlayFlagName);
         return new FlagImage(overlayFlag, alphaFlag);
+    }
+
+    public FillBar createFillBar(Drawable leftColor, Drawable rightColor, float x, float y, float width, float height, Group parent) {
+        ProgressBar.ProgressBarStyle style = new ProgressBar.ProgressBarStyle();
+        style.background = rightColor;
+        style.knobBefore = leftColor;
+
+        style.knobBefore.setMinHeight(height);
+        style.background.setMinHeight(height);
+
+        FillBar bar = new FillBar(0, 100, 1, false, style);
+
+        bar.setPosition(x, y);
+        bar.setSize(width, height);
+        bar.setAnimateDuration(0f);
+
+        if (parent != null) {
+            parent.addActor(bar);
+        }
+
+        return bar;
     }
 
     public Drawable getFlagDrawable(Skin skin, String countryNameId, String colonizerNameId) {
