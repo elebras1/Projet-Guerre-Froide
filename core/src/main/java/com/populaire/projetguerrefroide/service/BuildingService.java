@@ -57,14 +57,14 @@ public class BuildingService {
         return size * productionTypeDataView.workforce();
     }
 
-    public int getMaxWorkers(EconomyBuilding buildingTypeData, int size) {
+    private int getMaxWorkers(EconomyBuilding buildingTypeData, int size) {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity productionType = ecsWorld.obtainEntity(buildingTypeData.productionTypeId());
         ProductionType productionTypeDataView = productionType.get(ProductionType.class);
         return size * productionTypeDataView.workforce();
     }
 
-    public int getAmountWorkers(ProductionType productionTypeData) {
+    private  int getAmountWorkers(ProductionType productionTypeData) {
         int totalWorkers = 0;
         for (long employeeTypeId : productionTypeData.employeeTypes()) {
             if (employeeTypeId != 0) {

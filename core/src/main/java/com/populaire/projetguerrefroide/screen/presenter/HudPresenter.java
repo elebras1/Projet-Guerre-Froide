@@ -85,7 +85,7 @@ public class HudPresenter implements Presenter, LobbyBoxListener {
     @Override
     public void onPlayClicked() {
         if(this.worldService.setCountryPlayer()) {
-            this.screenManager.showGameScreen(this.worldService);
+            this.screenManager.showGameScreen();
         }
     }
 

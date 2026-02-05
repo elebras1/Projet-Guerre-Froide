@@ -17,6 +17,7 @@ import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
 import com.populaire.projetguerrefroide.adapter.graphics.WgCustomStage;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.adapter.graphics.WgScreenViewport;
+import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.component.Position;
 import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
 import com.populaire.projetguerrefroide.screen.listener.*;
@@ -38,6 +39,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
     private final GameContext gameContext;
     private final WorldService worldService;
     private final ConfigurationService configurationService;
+    private final CommandBus commandBus;
     private final TimeService timeService;
     private final OrthographicCamera cam;
     private final WgProjection projection;
@@ -54,11 +56,12 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
     private float time;
     private boolean paused;
 
-    public GameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService, ConfigurationService configurationService) {
+    public GameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService, TimeService timeService, ConfigurationService configurationService, CommandBus commandBus) {
         this.gameContext = gameContext;
         this.worldService = worldService;
         this.configurationService = configurationService;
-        this.timeService = new TimeService(this.gameContext.getBookmark().date());
+        this.timeService = timeService;
+        this.commandBus = commandBus;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.projection = new WgProjection();
         Position capitalPosition = this.worldService.getCapitalPositionOfSelectedCountry();
@@ -85,7 +88,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
         this.topBarPresenter = new TopBarPresenter(this.gameContext, this.worldService, this.timeService, this, widgetFactory, skinTopBar, skinUi, skinFlags);
         this.provincePanelPresenter = new ProvincePanelPresenter(this.gameContext, this.worldService, widgetFactory, skinProvince, skinUi, skinFlags);
         this.tooltipPresenter = new TooltipPresenter(this.gameContext, this.worldService, widgetFactory, skinUi, skinFlags);
-        this.economyPanelPresenter = new EconomyPanelPresenter(this.gameContext, this.worldService, this, widgetFactory, skinEconomy, skinUi, skinScrollbars);
+        this.economyPanelPresenter = new EconomyPanelPresenter(this.gameContext, this.worldService, commandBus, this, widgetFactory, skinEconomy, skinUi, skinScrollbars);
         this.minimapPresenter = new MiniMapPresenter(this.gameContext, this.worldService, this, skinMinimap, skinUi);
         this.initializeDebug();
 
@@ -130,6 +133,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
 
     @Override
     public void onNewDay(LocalDate date) {
+        this.commandBus.process();
         this.gameContext.getEcsWorld().progress(1f);
     }
 

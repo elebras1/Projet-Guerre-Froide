@@ -25,15 +25,15 @@ public class WorldService {
     private final ProvinceService provinceService;
     private MapService mapService;
 
-    public WorldService(GameContext gameContext) {
+    public WorldService(GameContext gameContext, QueryRepository queryRepository, BuildingService buildingService, EconomyService economyService, RegionService regionService, CountryService countryService, ProvinceService provinceService) {
         this.gameContext = gameContext;
         this.worldDao = new WorldDaoImpl();
-        this.queryRepository = new QueryRepository(this.gameContext.getEcsWorld(), this.gameContext.getEcsConstants());
-        this.buildingService = new BuildingService(this.gameContext);
-        this.economyService = new EconomyService(this.gameContext, this.queryRepository, this.buildingService);
-        this.regionService = new RegionService(this.gameContext, this.buildingService, this.queryRepository);
-        this.countryService = new CountryService(this.gameContext, this.queryRepository, this.regionService);
-        this.provinceService = new ProvinceService(this.gameContext, this.queryRepository, this.countryService, this.regionService);
+        this.queryRepository = queryRepository;
+        this.buildingService = buildingService;
+        this.economyService = economyService;
+        this.regionService = regionService;
+        this.countryService = countryService;
+        this.provinceService = provinceService;
     }
 
     public void createWorld() {

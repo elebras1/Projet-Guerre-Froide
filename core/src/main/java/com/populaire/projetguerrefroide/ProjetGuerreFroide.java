@@ -4,11 +4,21 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.github.elebras1.flecs.World;
+import com.populaire.projetguerrefroide.command.CommandBus;
+import com.populaire.projetguerrefroide.command.handler.DemolishBuildingHandler;
+import com.populaire.projetguerrefroide.command.handler.ExpandBuildingHandler;
+import com.populaire.projetguerrefroide.command.handler.SuspendBuildingHandler;
+import com.populaire.projetguerrefroide.command.request.DemolishBuildingCommand;
+import com.populaire.projetguerrefroide.command.request.ExpandBuildingCommand;
+import com.populaire.projetguerrefroide.command.request.SuspendBuildingCommand;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.configuration.Settings;
+import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
-import com.populaire.projetguerrefroide.service.ConfigurationService;
-import com.populaire.projetguerrefroide.service.GameContext;
+import com.populaire.projetguerrefroide.service.*;
+import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationHireSystem;
+import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationProduceSystem;
+import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationSizeSystem;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class ProjetGuerreFroide extends Game {
@@ -29,7 +39,20 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.setThreads(4);
         this.registerComponents();
         this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
-        this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService);
+        QueryRepository queryRepository = new QueryRepository(this.gameContext.getEcsWorld(), this.gameContext.getEcsConstants());
+        BuildingService buildingService = new BuildingService(this.gameContext);
+        ResourceGatheringOperationSizeSystem rgoSizeSystem = new ResourceGatheringOperationSizeSystem(this.gameContext.getEcsWorld());
+        ResourceGatheringOperationHireSystem rgoHireSystem = new ResourceGatheringOperationHireSystem(this.gameContext.getEcsWorld(), buildingService);
+        ResourceGatheringOperationProduceSystem rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld(), buildingService);
+        EconomyService economyService = new EconomyService(this.gameContext, rgoSizeSystem, rgoHireSystem, rgoProduceSystem);
+        RegionService regionService = new RegionService(this.gameContext, buildingService, queryRepository);
+        CountryService countryService = new CountryService(this.gameContext, queryRepository, regionService);
+        ProvinceService provinceService = new ProvinceService(this.gameContext, queryRepository, countryService, regionService);
+        WorldService worldService = new WorldService(this.gameContext, queryRepository, buildingService, economyService, regionService, countryService, provinceService);
+        TimeService timeService = new TimeService(this.gameContext.getBookmark().date());
+        CommandBus commandBus = new CommandBus();
+        this.registerCommands(commandBus, buildingService);
+        this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService, worldService, timeService, commandBus);
         this.loadAssets(this.gameContext.getAssetManager());
         this.screenManager.showMainMenuScreen();
         this.ecsDebug(gameContext);
@@ -67,6 +90,12 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(PopulationDistribution.class);
         this.ecsWorld.component(ReligionDistribution.class);
         this.ecsWorld.component(ResourceGathering.class);
+    }
+
+    public void registerCommands(CommandBus commandBus, BuildingService buildingService) {
+        commandBus.register(ExpandBuildingCommand.class, new ExpandBuildingHandler(buildingService));
+        commandBus.register(SuspendBuildingCommand.class, new SuspendBuildingHandler(buildingService));
+        commandBus.register(DemolishBuildingCommand.class, new DemolishBuildingHandler(buildingService));
     }
 
     private void loadAssets(AssetManager assetManager) {

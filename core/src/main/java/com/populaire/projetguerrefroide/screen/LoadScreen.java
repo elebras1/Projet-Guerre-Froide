@@ -22,11 +22,11 @@ public class LoadScreen implements Screen {
     private final LoadingPresenter loadingPresenter;
     private LoadingStep loadingStep;
 
-    public LoadScreen(ScreenManager screenManager, GameContext gameContext, ConfigurationService configurationService) {
+    public LoadScreen(ScreenManager screenManager, GameContext gameContext, ConfigurationService configurationService, WorldService worldService) {
         this.screenManager = screenManager;
         this.gameContext = gameContext;
-        this.worldService = new WorldService(gameContext);
         this.configurationService = configurationService;
+        this.worldService = worldService;
         this.loadingPresenter = new LoadingPresenter(this.gameContext);
         this.gameContext.getCursorManager().animatedCursor("busy");
 
@@ -65,7 +65,7 @@ public class LoadScreen implements Screen {
                 this.gameContext.getCursorManager().update(delta);
                 this.gameContext.getSettings().applyGraphicsSettings();
                 this.gameContext.getAssetManager().finishLoading();
-                this.screenManager.showNewGameScreen(this.worldService);
+                this.screenManager.showNewGameScreen();
             }
         }
     }
