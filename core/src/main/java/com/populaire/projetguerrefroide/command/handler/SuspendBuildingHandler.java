@@ -12,7 +12,6 @@ public class SuspendBuildingHandler implements CommandHandler<SuspendBuildingCom
 
     @Override
     public void handle(SuspendBuildingCommand command) {
-        // TODO
-        System.out.println("Suspending Building : " + command.buildingId());
+        this.buildingService.suspendBuilding(command.buildingId());
     }
 }

@@ -12,7 +12,6 @@ public class ExpandBuildingHandler implements CommandHandler<ExpandBuildingComma
 
     @Override
     public void handle(ExpandBuildingCommand command) {
-        // TODO
-        System.out.println("Expanding Building : " + command.buildingId());
+        this.buildingService.expandBuilding(command.buildingId());
     }
 }

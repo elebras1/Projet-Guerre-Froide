@@ -5,6 +5,7 @@ import com.github.elebras1.flecs.EntityView;
 import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class BuildingService {
     private final GameContext gameContext;
@@ -46,6 +47,25 @@ public class BuildingService {
         int amountWorkers = this.getAmountWorkers(productionType);
         int maxWorkers = this.getMaxWorkers(buildingTypeData, buildingData.size());
         return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostValues(), inputGoodNameIds, buildingTypeData.inputGoodValues(), outputGoodNameId, buildingTypeData.outputGoodValue(), amountWorkers, maxWorkers);
+    }
+
+    public void demolishBuilding(long buildingId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity building = ecsWorld.obtainEntity(buildingId);
+        building.destruct();
+    }
+
+    public void expandBuilding(long buildingId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity building = ecsWorld.obtainEntity(buildingId);
+        Building buildingData = building.get(Building.class);
+        building.set(new Building(buildingData.parentId(), buildingData.typeId(), buildingData.size() + 1));
+    }
+
+    public void suspendBuilding(long buildingId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity building = ecsWorld.obtainEntity(buildingId);
+        building.add(this.gameContext.getEcsConstants().suspended());
     }
 
     public int getMaxWorkers(long buildingId, int size) {

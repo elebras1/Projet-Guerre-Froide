@@ -12,7 +12,6 @@ public class DemolishBuildingHandler implements CommandHandler<DemolishBuildingC
 
     @Override
     public void handle(DemolishBuildingCommand command) {
-        // TODO
-        System.out.println("Demolish Building : " + command.buildingId());
+        this.buildingService.demolishBuilding(command.buildingId());
     }
 }
