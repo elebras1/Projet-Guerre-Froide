@@ -16,6 +16,7 @@ import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.*;
+import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
 import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationHireSystem;
 import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationProduceSystem;
 import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationSizeSystem;
@@ -39,8 +40,9 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.setThreads(4);
         this.registerComponents();
         this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
+        ExpandBuildingSystem expandBuildingSystem = new ExpandBuildingSystem(this.ecsWorld);
         QueryRepository queryRepository = new QueryRepository(this.gameContext.getEcsWorld(), this.gameContext.getEcsConstants());
-        BuildingService buildingService = new BuildingService(this.gameContext);
+        BuildingService buildingService = new BuildingService(this.gameContext, expandBuildingSystem);
         ResourceGatheringOperationSizeSystem rgoSizeSystem = new ResourceGatheringOperationSizeSystem(this.gameContext.getEcsWorld());
         ResourceGatheringOperationHireSystem rgoHireSystem = new ResourceGatheringOperationHireSystem(this.gameContext.getEcsWorld(), buildingService);
         ResourceGatheringOperationProduceSystem rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld(), buildingService);
@@ -90,6 +92,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(PopulationDistribution.class);
         this.ecsWorld.component(ReligionDistribution.class);
         this.ecsWorld.component(ResourceGathering.class);
+        this.ecsWorld.component(ExpansionBuilding.class);
     }
 
     public void registerCommands(CommandBus commandBus, BuildingService buildingService) {

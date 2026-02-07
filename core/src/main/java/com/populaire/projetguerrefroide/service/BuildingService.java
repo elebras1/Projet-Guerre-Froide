@@ -5,13 +5,16 @@ import com.github.elebras1.flecs.EntityView;
 import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
+import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class BuildingService {
     private final GameContext gameContext;
+    private final ExpandBuildingSystem expandBuildingSystem;
 
-    public BuildingService(GameContext gameContext) {
+    public BuildingService(GameContext gameContext, ExpandBuildingSystem expandBuildingSystem) {
         this.gameContext = gameContext;
+        this.expandBuildingSystem = expandBuildingSystem;
     }
 
     public int estimateWorkersForBuilding() {
@@ -59,13 +62,48 @@ public class BuildingService {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity building = ecsWorld.obtainEntity(buildingId);
         Building buildingData = building.get(Building.class);
-        building.set(new Building(buildingData.parentId(), buildingData.typeId(), buildingData.size() + 1));
+        Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
+
+        long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
+        Entity expansionBuilding = null;
+        int timeLeft = 0;
+        int levelsQueued = 0;
+
+        if(expansionBuildingId != 0) {
+            expansionBuilding = ecsWorld.obtainEntity(expansionBuildingId);
+            ExpansionBuilding expansionBuildingData = expansionBuilding.get(ExpansionBuilding.class);
+            levelsQueued = expansionBuildingData.levelsQueued();
+            timeLeft = expansionBuildingData.timeLeft();
+        } else {
+            expansionBuildingId = ecsWorld.entity("expand_" + buildingId);
+            expansionBuilding = ecsWorld.obtainEntity(expansionBuildingId);
+            if(buildingType.has(EconomyBuilding.class)) {
+                EconomyBuilding economyBuildingData = buildingType.get(EconomyBuilding.class);
+                timeLeft = economyBuildingData.time();
+            } else if(buildingType.has(DevelopmentBuilding.class)) {
+                DevelopmentBuilding developmentBuildingData = buildingType.get(DevelopmentBuilding.class);
+                timeLeft = developmentBuildingData.time();
+            } else if(buildingType.has(SpecialBuilding.class)) {
+                SpecialBuilding specialBuildingData = buildingType.get(SpecialBuilding.class);
+                timeLeft = specialBuildingData.time();
+            }
+        }
+
+        levelsQueued++;
+
+        expansionBuilding.set(new ExpansionBuilding(buildingId, timeLeft, levelsQueued));
     }
 
     public void suspendBuilding(long buildingId) {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity building = ecsWorld.obtainEntity(buildingId);
         building.add(this.gameContext.getEcsConstants().suspended());
+    }
+
+    public void resumeBuilding(long buildingId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity building = ecsWorld.obtainEntity(buildingId);
+        building.remove(this.gameContext.getEcsConstants().suspended());
     }
 
     public int getMaxWorkers(long buildingId, int size) {
