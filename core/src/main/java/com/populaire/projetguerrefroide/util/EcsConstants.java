@@ -22,163 +22,110 @@ public class EcsConstants {
     public static final String ON_MAP = "OnMap";
     public static final String SUSPENDED = "Suspended";
 
-    private long lawGroupTag = -1;
-    private long provinceTag = -1;
-    private long seaProvinceTag = -1;
-    private long regionTag = -1;
-    private long countryTag = -1;
-    private long alliedWith = -1;
-    private long guarantees = -1;
-    private long isGuaranteedBy = -1;
-    private long isPuppetMasterOf = -1;
-    private long isPuppetOf = -1;
-    private long colonizes = -1;
-    private long isColonyOf = -1;
-    private long ressourceGoodTag = -1;
-    private long advancedGoodTag = -1;
-    private long militaryGoodTag = -1;
-    private long onMap = -1;
-    private long suspended = -1;
-
-    private final World ecsWorld;
+    private final long lawGroupTag;
+    private final long provinceTag;
+    private final long seaProvinceTag;
+    private final long regionTag;
+    private final long countryTag;
+    private final long alliedWith;
+    private final long guarantees;
+    private final long isGuaranteedBy;
+    private final long isPuppetMasterOf;
+    private final long isPuppetOf;
+    private final long colonizes;
+    private final long isColonyOf;
+    private final long ressourceGoodTag;
+    private final long advancedGoodTag;
+    private final long militaryGoodTag;
+    private final long onMap;
+    private final long suspended;
 
     public EcsConstants(World ecsWorld) {
-        this.ecsWorld = ecsWorld;
+        this.lawGroupTag = ecsWorld.entity(LAW_GROUP_TAG);
+        this.provinceTag = ecsWorld.entity(PROVINCE_TAG);
+        this.seaProvinceTag = ecsWorld.entity(SEA_PROVINCE_TAG);
+        ecsWorld.obtainEntity(this.seaProvinceTag).isA(this.provinceTag);
+        this.regionTag = ecsWorld.entity(REGION_TAG);
+        this.countryTag = ecsWorld.entity(COUNTRY_TAG);
+        this.alliedWith = ecsWorld.entity(ALLIED_WITH);
+        this.guarantees = ecsWorld.entity(GUARANTEES);
+        this.isGuaranteedBy = ecsWorld.entity(IS_GUARANTEED_BY);
+        this.isPuppetMasterOf = ecsWorld.entity(IS_PUPPET_MASTER_OF);
+        this.isPuppetOf = ecsWorld.entity(IS_PUPPET_OF);
+        this.colonizes = ecsWorld.entity(COLONIZES);
+        this.isColonyOf = ecsWorld.entity(IS_COLONY_OF);
+        this.ressourceGoodTag = ecsWorld.entity(RESSOURCE_GOOD_TAG);
+        this.advancedGoodTag = ecsWorld.entity(ADVANCED_GOOD_TAG);
+        this.militaryGoodTag = ecsWorld.entity(MILITARY_GOOD_TAG);
+        this.onMap = ecsWorld.entity(ON_MAP);
+        this.suspended = ecsWorld.entity(SUSPENDED);
     }
 
     public long lawGroupTag() {
-        if(this.lawGroupTag == -1) {
-            this.lawGroupTag = this.ecsWorld.entity(LAW_GROUP_TAG);
-        }
-
         return this.lawGroupTag;
     }
 
     public long provinceTag() {
-        if(this.provinceTag == -1) {
-            this.provinceTag = this.ecsWorld.entity(PROVINCE_TAG);
-        }
-
         return this.provinceTag;
     }
 
     public long seaProvinceTag() {
-        if(this.seaProvinceTag == -1) {
-            this.seaProvinceTag = this.ecsWorld.entity(SEA_PROVINCE_TAG);
-            this.ecsWorld.obtainEntity(this.seaProvinceTag).isA(this.provinceTag());
-        }
-
         return this.seaProvinceTag;
     }
 
     public long regionTag() {
-        if(this.regionTag == -1) {
-            this.regionTag = this.ecsWorld.entity(REGION_TAG);
-        }
-
         return this.regionTag;
     }
 
     public long countryTag() {
-        if(this.countryTag == -1) {
-            this.countryTag = this.ecsWorld.entity(COUNTRY_TAG);
-        }
-
         return this.countryTag;
     }
 
     public long alliedWith() {
-        if(this.alliedWith == -1) {
-            this.alliedWith = this.ecsWorld.entity(ALLIED_WITH);
-        }
-
         return this.alliedWith;
     }
 
     public long guarantees() {
-        if(this.guarantees == -1) {
-            this.guarantees = this.ecsWorld.entity(GUARANTEES);
-        }
-
         return this.guarantees;
     }
 
     public long isGuaranteedBy() {
-        if(this.isGuaranteedBy == -1) {
-            this.isGuaranteedBy = this.ecsWorld.entity(IS_GUARANTEED_BY);
-        }
-
         return this.isGuaranteedBy;
     }
 
     public long isPuppetMasterOf() {
-        if(this.isPuppetMasterOf == -1) {
-            this.isPuppetMasterOf = this.ecsWorld.entity(IS_PUPPET_MASTER_OF);
-        }
-
         return this.isPuppetMasterOf;
     }
 
     public long isPuppetOf() {
-        if(this.isPuppetOf == -1) {
-            this.isPuppetOf = this.ecsWorld.entity(IS_PUPPET_OF);
-        }
-
         return this.isPuppetOf;
     }
 
     public long colonizes() {
-        if(this.colonizes == -1) {
-            this.colonizes = this.ecsWorld.entity(COLONIZES);
-        }
-
         return this.colonizes;
     }
 
     public long isColonyOf() {
-        if(this.isColonyOf == -1) {
-            this.isColonyOf = this.ecsWorld.entity(IS_COLONY_OF);
-        }
-
         return this.isColonyOf;
     }
 
     public long ressourceGoodTag() {
-        if(this.ressourceGoodTag == -1) {
-            this.ressourceGoodTag = this.ecsWorld.entity(RESSOURCE_GOOD_TAG);
-        }
-
         return this.ressourceGoodTag;
     }
 
     public long advancedGoodTag() {
-        if(this.advancedGoodTag == -1) {
-            this.advancedGoodTag = this.ecsWorld.entity(ADVANCED_GOOD_TAG);
-        }
-
         return this.advancedGoodTag;
     }
 
     public long militaryGoodTag() {
-        if(this.militaryGoodTag == -1) {
-            this.militaryGoodTag = this.ecsWorld.entity(MILITARY_GOOD_TAG);
-        }
-
         return this.militaryGoodTag;
     }
 
     public long onMap() {
-        if(this.onMap == -1) {
-            this.onMap = this.ecsWorld.entity(ON_MAP);
-        }
-
         return this.onMap;
     }
 
     public long suspended() {
-        if(this.suspended == -1) {
-            this.suspended = this.ecsWorld.entity(SUSPENDED);
-        }
 
         return this.suspended;
     }
