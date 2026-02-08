@@ -44,7 +44,7 @@ public class ProvinceService {
         int populationProvince = this.getPopulationAmount(province.id());
         int developmentIndexRegion = 0;
         int incomeRegion = 0;
-        int numberIndustryRegion = this.regionService.getNumberIndustry(region.id());
+        int numberIndustryRegion = this.regionService.getNumberIndustry(region.id(), provinceData.ownerId());
         Entity country = ecsWorld.obtainEntity(provinceData.ownerId());
         String countryNameId = country.getName();
         String colonizerId = this.countryService.getColonizerNameId(country.id());
@@ -52,8 +52,8 @@ public class ProvinceService {
         float resourceProduced = this.getResourceGatheringProduction(provinceNameId);
         List<String> provinceIdsRegion = this.regionService.getProvinceNameIdsOrderByPopulation(region.id());
         DevelopementBuildingLevelDto developmentBuildingLevel = this.getDevelopementBuildingLevel(province.id());
-        List<String> specialBuildings = this.regionService.getSpecialBuildingNames(region.id());
-        List<String> colorsBuilding = this.regionService.getColorBuildingsOrderByLevel(region.id());
+        List<String> specialBuildings = this.regionService.getSpecialBuildingNames(region.id(), provinceData.ownerId());
+        List<String> colorsBuilding = this.regionService.getColorBuildingsOrderByLevel(region.id(), provinceData.ownerId());
 
         return new ProvinceDto(provinceNameId, regionNameId, terrainImage, resourceImage, populationRegion, workersRegion, developmentIndexRegion, incomeRegion, numberIndustryRegion, countryNameId, colonizerId, flagCountriesCore, resourceProduced, 0, 0, populationProvince, 0f, 0f, provinceIdsRegion, developmentBuildingLevel, specialBuildings, colorsBuilding);
     }

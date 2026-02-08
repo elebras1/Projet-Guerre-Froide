@@ -983,6 +983,10 @@ public class WorldDaoImpl implements WorldDao {
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                     Entity provinceEntity = provinceEntityId != 0 ? ecsWorld.obtainEntity(provinceEntityId) : null;
                     if(provinceEntityId != 0 && provinceEntity.has(Province.class)) {
+                        Province provinceData = provinceEntity.get(Province.class);
+                        long localMarketId = ecsWorld.entity();
+                        Entity localMarket = ecsWorld.obtainEntity(localMarketId);
+                        localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId()));
                         provinceEntity.set(new GeoHierarchy(regionEntityId, -1));
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
@@ -990,7 +994,7 @@ public class WorldDaoImpl implements WorldDao {
                                 long buildingId = buildingEntry.key;
                                 int size = buildingEntry.value;
                                 Entity building = ecsWorld.obtainEntity(ecsWorld.entity());
-                                building.set(new Building(regionEntityId, buildingId, size));
+                                building.set(new Building(localMarketId, buildingId, size));
                             }
                         }
                     } else {
