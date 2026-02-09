@@ -1,8 +1,6 @@
 package com.populaire.projetguerrefroide.service;
 
-import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationHireSystem;
-import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationProduceSystem;
-import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationSizeSystem;
+import com.populaire.projetguerrefroide.system.economy.*;
 
 public class EconomyService {
     private final GameContext gameContext;
@@ -15,5 +13,6 @@ public class EconomyService {
         this.rgoSizeSystem = rgoSizeSystem;
         this.rgoHireSystem = rgoHireSystem;
         this.rgoProduceSystem = rgoProduceSystem;
+
     }
 }

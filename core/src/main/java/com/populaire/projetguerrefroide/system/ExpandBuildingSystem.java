@@ -25,15 +25,15 @@ public class ExpandBuildingSystem {
 
                 if(expansionBuildingDataView.levelsQueued() > 1) {
                     expansionBuildingDataView.levelsQueued(expansionBuildingDataView.levelsQueued() - 1);
-                    if(buildingTypeView.has(EconomyBuilding.class)) {
-                        EconomyBuildingView economyBuildingViewData = buildingTypeView.getMutView(EconomyBuilding.class);
-                        expansionBuildingDataView.timeLeft(economyBuildingViewData.time());
-                    } else if(buildingTypeView.has(DevelopmentBuilding.class)) {
-                        DevelopmentBuildingView developmentBuildingViewData = buildingTypeView.getMutView(DevelopmentBuilding.class);
-                        expansionBuildingDataView.timeLeft(developmentBuildingViewData.time());
-                    } else if(buildingTypeView.has(SpecialBuilding.class)) {
-                        SpecialBuildingView specialBuildingViewData = buildingTypeView.getMutView(SpecialBuilding.class);
-                        expansionBuildingDataView.timeLeft(specialBuildingViewData.time());
+                    if(buildingTypeView.has(EconomyBuildingType.class)) {
+                        EconomyBuildingTypeView economyBuildingTypeViewData = buildingTypeView.getMutView(EconomyBuildingType.class);
+                        expansionBuildingDataView.timeLeft(economyBuildingTypeViewData.time());
+                    } else if(buildingTypeView.has(DevelopmentBuildingType.class)) {
+                        DevelopmentBuildingTypeView developmentBuildingTypeViewData = buildingTypeView.getMutView(DevelopmentBuildingType.class);
+                        expansionBuildingDataView.timeLeft(developmentBuildingTypeViewData.time());
+                    } else if(buildingTypeView.has(SpecialBuildingType.class)) {
+                        SpecialBuildingTypeView specialBuildingTypeViewData = buildingTypeView.getMutView(SpecialBuildingType.class);
+                        expansionBuildingDataView.timeLeft(specialBuildingTypeViewData.time());
                     }
                 } else {
                     this.ecsWorld.obtainEntityView(iter.entity(i)).destruct();

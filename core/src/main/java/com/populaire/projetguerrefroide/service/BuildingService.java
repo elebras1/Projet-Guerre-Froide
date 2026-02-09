@@ -6,7 +6,6 @@ import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
 import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
-import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class BuildingService {
     private final GameContext gameContext;
@@ -27,7 +26,7 @@ public class BuildingService {
         Building buildingData = building.get(Building.class);
         Entity parent = ecsWorld.obtainEntity(buildingData.parentId());
         Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
-        EconomyBuilding buildingTypeData = buildingType.get(EconomyBuilding.class);
+        EconomyBuildingType buildingTypeData = buildingType.get(EconomyBuildingType.class);
         ProductionType productionType = ecsWorld.obtainEntity(buildingTypeData.productionTypeId()).get(ProductionType.class);
         String[] goodCostNameIds = new String[buildingTypeData.goodCostIds().length];
         for(int i = 0; i < buildingTypeData.goodCostIds().length; i++) {
@@ -77,15 +76,15 @@ public class BuildingService {
         } else {
             expansionBuildingId = ecsWorld.entity("expand_" + buildingId);
             expansionBuilding = ecsWorld.obtainEntity(expansionBuildingId);
-            if(buildingType.has(EconomyBuilding.class)) {
-                EconomyBuilding economyBuildingData = buildingType.get(EconomyBuilding.class);
-                timeLeft = economyBuildingData.time();
-            } else if(buildingType.has(DevelopmentBuilding.class)) {
-                DevelopmentBuilding developmentBuildingData = buildingType.get(DevelopmentBuilding.class);
-                timeLeft = developmentBuildingData.time();
-            } else if(buildingType.has(SpecialBuilding.class)) {
-                SpecialBuilding specialBuildingData = buildingType.get(SpecialBuilding.class);
-                timeLeft = specialBuildingData.time();
+            if(buildingType.has(EconomyBuildingType.class)) {
+                EconomyBuildingType economyBuildingTypeData = buildingType.get(EconomyBuildingType.class);
+                timeLeft = economyBuildingTypeData.time();
+            } else if(buildingType.has(DevelopmentBuildingType.class)) {
+                DevelopmentBuildingType developmentBuildinggTypeData = buildingType.get(DevelopmentBuildingType.class);
+                timeLeft = developmentBuildinggTypeData.time();
+            } else if(buildingType.has(SpecialBuildingType.class)) {
+                SpecialBuildingType specialBuildingTypeData = buildingType.get(SpecialBuildingType.class);
+                timeLeft = specialBuildingTypeData.time();
             }
         }
 
@@ -115,7 +114,7 @@ public class BuildingService {
         return size * productionTypeDataView.workforce();
     }
 
-    private int getMaxWorkers(EconomyBuilding buildingTypeData, int size) {
+    private int getMaxWorkers(EconomyBuildingType buildingTypeData, int size) {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity productionType = ecsWorld.obtainEntity(buildingTypeData.productionTypeId());
         ProductionType productionTypeDataView = productionType.get(ProductionType.class);

@@ -58,9 +58,9 @@ public class RegionService {
 
                     EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
 
-                    if (buildingTypeView.has(EconomyBuilding.class)) {
-                        EconomyBuildingView economyBuildingView = buildingTypeView.getMutView(EconomyBuilding.class);
-                        BuildingSummaryDto building = new BuildingSummaryDto(buildingId, buildingTypeView.getName(), buildingView.size(), economyBuildingView.maxLevel(), 0);
+                    if (buildingTypeView.has(EconomyBuildingType.class)) {
+                        EconomyBuildingTypeView economyBuildingTypeView = buildingTypeView.getMutView(EconomyBuildingType.class);
+                        BuildingSummaryDto building = new BuildingSummaryDto(buildingId, buildingTypeView.getName(), buildingView.size(), economyBuildingTypeView.maxLevel(), 0);
                         int workers = this.buildingService.estimateWorkersForBuilding();
                         buildingWorkerAmount.increment(workers);
                         buildings.add(building);
@@ -113,7 +113,7 @@ public class RegionService {
                 LocalMarketView localMarketDataView = parent.getMutView(LocalMarket.class);
                 if (localMarketDataView.regionId() == regionId && localMarketDataView.ownerId() == ownerId) {
                     EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
-                    if (buildingTypeView.has(EconomyBuilding.class)) {
+                    if (buildingTypeView.has(EconomyBuildingType.class)) {
                         String color = BuildingUtils.getColor(buildingTypeView.getName());
                         if (color != null) {
                             validBuildings.add(new Pair<>(buildingView.size(), color));
@@ -149,7 +149,7 @@ public class RegionService {
                 LocalMarketView localMarketDataView = parent.getMutView(LocalMarket.class);
                 if(localMarketDataView.regionId() == regionId && localMarketDataView.ownerId() == ownerId) {
                     EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
-                    if(buildingTypeView.has(EconomyBuilding.class)) {
+                    if(buildingTypeView.has(EconomyBuildingType.class)) {
                         industryCount.increment();
                     }
                 }
@@ -175,7 +175,7 @@ public class RegionService {
                 LocalMarketView localMarketDataView = parent.getMutView(LocalMarket.class);
                 if(localMarketDataView.regionId() == regionId && localMarketDataView.ownerId() == ownerId) {
                     EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
-                    if(buildingTypeView.has(SpecialBuilding.class)) {
+                    if(buildingTypeView.has(SpecialBuildingType.class)) {
                         specialBuildingNames.add(buildingTypeView.getName());
                     }
                 }

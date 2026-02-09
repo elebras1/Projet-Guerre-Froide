@@ -435,7 +435,7 @@ public class WorldDaoImpl implements WorldDao {
                     outputGoodId = goodId;
                     outputGoodValue = goodValue;
                 }
-                building.set(new EconomyBuilding(time, buildingTypeId, artisansTypeId, maxLevel, goodCostIds, goodCostValues, inputGoodIds, inputGoodValues, outputGoodId, outputGoodValue));
+                building.set(new EconomyBuildingType(time, buildingTypeId, artisansTypeId, maxLevel, goodCostIds, goodCostValues, inputGoodIds, inputGoodValues, outputGoodId, outputGoodValue));
             }
 
             for(var specialBuildingEntry : buildingsValues.get("special_building").object()) {
@@ -471,7 +471,7 @@ public class WorldDaoImpl implements WorldDao {
                     }
                     building.set(new Modifiers(modifierValues, modifierIds));
                 }
-                building.set(new SpecialBuilding(time, cost, goodCostIds, goodCostValues));
+                building.set(new SpecialBuildingType(time, cost, goodCostIds, goodCostValues));
             }
 
             for(var developmentBuildingEntry : buildingsValues.get("development_building").object()) {
@@ -511,7 +511,7 @@ public class WorldDaoImpl implements WorldDao {
                     }
                     building.set(new Modifiers(modifierValues, modifierIds));
                 }
-                building.set(new DevelopmentBuilding(time, cost, goodCostIds, goodCostValues, maxLevel));
+                building.set(new DevelopmentBuildingType(time, cost, goodCostIds, goodCostValues, maxLevel));
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -995,6 +995,7 @@ public class WorldDaoImpl implements WorldDao {
                                 int size = buildingEntry.value;
                                 Entity building = ecsWorld.obtainEntity(ecsWorld.entity());
                                 building.set(new Building(localMarketId, buildingId, size));
+                                building.set(new BuildingEconomy(0f, 0f, new int[12]));
                             }
                         }
                     } else {

@@ -83,10 +83,11 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(ResourceProduction.class);
         this.ecsWorld.component(EmployeeType.class);
         this.ecsWorld.component(ProductionType.class);
-        this.ecsWorld.component(EconomyBuilding.class);
-        this.ecsWorld.component(SpecialBuilding.class);
-        this.ecsWorld.component(DevelopmentBuilding.class);
+        this.ecsWorld.component(EconomyBuildingType.class);
+        this.ecsWorld.component(SpecialBuildingType.class);
+        this.ecsWorld.component(DevelopmentBuildingType.class);
         this.ecsWorld.component(Building.class);
+        this.ecsWorld.component(BuildingEconomy.class);
         this.ecsWorld.component(PopulationTemplate.class);
         this.ecsWorld.component(CultureDistribution.class);
         this.ecsWorld.component(PopulationDistribution.class);
