@@ -958,15 +958,9 @@ public class WorldDaoImpl implements WorldDao {
             i++;
         }
         switch (distributionType) {
-            case "population" -> {
-                province.set(new PopulationDistribution(ids, amounts));
-            }
-            case "culture" -> {
-                province.set(new CultureDistribution(ids, amounts));
-            }
-            case "religion" -> {
-                province.set(new ReligionDistribution(ids, amounts));
-            }
+            case "population" -> province.set(new PopulationDistribution(ids, amounts));
+            case "culture" -> province.set(new CultureDistribution(ids, amounts));
+            case "religion" -> province.set(new ReligionDistribution(ids, amounts));
         }
     }
 
@@ -986,8 +980,12 @@ public class WorldDaoImpl implements WorldDao {
                         Province provinceData = provinceEntity.get(Province.class);
                         long localMarketId = ecsWorld.entity();
                         Entity localMarket = ecsWorld.obtainEntity(localMarketId);
-                        localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId()));
-                        provinceEntity.set(new GeoHierarchy(regionEntityId, -1));
+                        if(!localMarket.has(LocalMarket.class)) {
+                            localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId()));
+                            localMarket.set(new MarketProduction(new long[36], new float[36]));
+                            localMarket.set(new MarketConsumption(new long[36], new float[36]));
+                        }
+                        provinceEntity.set(new GeoHierarchy(regionEntityId, -1, localMarketId));
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
                             for(LongIntMap.Entry buildingEntry : regionBuildingIds) {
@@ -1170,7 +1168,7 @@ public class WorldDaoImpl implements WorldDao {
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                     Entity provinceEntity = ecsWorld.obtainEntity(provinceEntityId);
                     GeoHierarchy geoHierarchy = provinceEntity.get(GeoHierarchy.class);
-                    provinceEntity.set(new GeoHierarchy(geoHierarchy.regionId(), continentEntityId));
+                    provinceEntity.set(new GeoHierarchy(geoHierarchy.regionId(), continentEntityId, geoHierarchy.localMarketId()));
                 }
             }
         } catch (IOException ioException) {

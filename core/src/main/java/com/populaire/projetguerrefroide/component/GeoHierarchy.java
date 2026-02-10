@@ -3,5 +3,5 @@ package com.populaire.projetguerrefroide.component;
 import com.github.elebras1.flecs.annotation.Component;
 
 @Component
-public record GeoHierarchy(long regionId, long continentId) {
+public record GeoHierarchy(long regionId, long continentId, long localMarketId) {
 }

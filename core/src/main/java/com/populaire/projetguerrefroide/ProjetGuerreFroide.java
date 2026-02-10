@@ -44,8 +44,8 @@ public class ProjetGuerreFroide extends Game {
         QueryRepository queryRepository = new QueryRepository(this.gameContext.getEcsWorld(), this.gameContext.getEcsConstants());
         BuildingService buildingService = new BuildingService(this.gameContext, expandBuildingSystem);
         ResourceGatheringOperationSizeSystem rgoSizeSystem = new ResourceGatheringOperationSizeSystem(this.gameContext.getEcsWorld());
-        ResourceGatheringOperationHireSystem rgoHireSystem = new ResourceGatheringOperationHireSystem(this.gameContext.getEcsWorld(), buildingService);
-        ResourceGatheringOperationProduceSystem rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld(), buildingService);
+        ResourceGatheringOperationHireSystem rgoHireSystem = new ResourceGatheringOperationHireSystem(this.gameContext.getEcsWorld());
+        ResourceGatheringOperationProduceSystem rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld());
         EconomyService economyService = new EconomyService(this.gameContext, rgoSizeSystem, rgoHireSystem, rgoProduceSystem);
         RegionService regionService = new RegionService(this.gameContext, buildingService, queryRepository);
         CountryService countryService = new CountryService(this.gameContext, queryRepository, regionService);
@@ -95,6 +95,8 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(ResourceGathering.class);
         this.ecsWorld.component(ExpansionBuilding.class);
         this.ecsWorld.component(LocalMarket.class);
+        this.ecsWorld.component(MarketProduction.class);
+        this.ecsWorld.component(MarketConsumption.class);
     }
 
     public void registerCommands(CommandBus commandBus, BuildingService buildingService) {

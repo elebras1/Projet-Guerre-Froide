@@ -3,25 +3,21 @@ package com.populaire.projetguerrefroide.system.economy;
 import com.github.elebras1.flecs.*;
 import com.github.elebras1.flecs.util.FlecsConstants;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.service.BuildingService;
 
 public class ResourceGatheringOperationHireSystem {
     private final World ecsWorld;
-    private final BuildingService buildingService;
 
-    public ResourceGatheringOperationHireSystem(World ecsWorld, BuildingService buildingService) {
+    public ResourceGatheringOperationHireSystem(World ecsWorld) {
         this.ecsWorld = ecsWorld;
-        this.buildingService = buildingService;
         ecsWorld.system("RGOHireSystem").kind(FlecsConstants.EcsOnUpdate).with(Province.class).with(ResourceGathering.class).with(PopulationDistribution.class).multiThreaded().iter(this::hire);
     }
 
     public void hire(Iter iter) {
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 1);
+        Field<PopulationDistribution> populationDistributionField = iter.field(PopulationDistribution.class, 2);
         for (int i = 0; i < iter.count(); i++) {
-            long provinceId = iter.entity(i);
-            EntityView provinceView = this.ecsWorld.obtainEntityView(provinceId);
             ResourceGatheringView resourceGatheringView = resourceGatheringField.getMutView(i);
-            PopulationDistributionView popDistribution = provinceView.getMutView(PopulationDistribution.class);
+            PopulationDistributionView popDistribution = populationDistributionField.getMutView(i);
             long resourceGoodId = resourceGatheringView.goodId();
 
             EntityView resourceGoodView = this.ecsWorld.obtainEntityView(resourceGoodId);
@@ -30,11 +26,11 @@ public class ResourceGatheringOperationHireSystem {
                 continue;
             }
 
-            int size = resourceGatheringView.size();
-            int maxWorkers = this.buildingService.getMaxWorkers(resourceGoodId, size);
-
             EntityView productionTypeView = this.ecsWorld.obtainEntityView(resourceProductionView.productionTypeId());
             ProductionTypeView productionTypeDataView = productionTypeView.getMutView(ProductionType.class);
+
+            int size = resourceGatheringView.size();
+            int maxWorkers = size * productionTypeDataView.workforce();
 
             for (int popIndex = 0; popIndex < popDistribution.populationIdsLength() && popDistribution.populationIds(popIndex) != 0; popIndex++) {
                 long popTypeId = popDistribution.populationIds(popIndex);
