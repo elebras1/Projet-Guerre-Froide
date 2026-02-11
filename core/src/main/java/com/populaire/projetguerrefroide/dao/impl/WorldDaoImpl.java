@@ -915,10 +915,40 @@ public class WorldDaoImpl implements WorldDao {
                 regionBuildingsByProvince.put(provinceNameId, buildings);
             }
 
-            JsonValue goodValue = provinceValues.get("good");
-            if(goodValue != null) {
-                long goodId = ecsWorld.lookup(goodValue.asString());
-                province.set(new ResourceGathering(goodId, 0, 0f, new int[12]));
+            JsonValue goodJsonValue = provinceValues.get("good");
+            if(goodJsonValue != null) {
+                long goodId = ecsWorld.lookup(goodJsonValue.asString());
+
+                int workforce = 0;
+                float goodValue = 0f;
+                long[] employeePopTypeIds = new long[4];
+                float[] employeeAmounts = new float[4];
+
+                Entity goodEntity = ecsWorld.obtainEntity(goodId);
+                Good good = goodEntity.get(Good.class);
+                if (good != null) {
+                    goodValue = good.value();
+                }
+
+                ResourceProduction resourceProduction = goodEntity.get(ResourceProduction.class);
+                if (resourceProduction != null) {
+                    Entity productionTypeEntity = ecsWorld.obtainEntity(resourceProduction.productionTypeId());
+                    ProductionType productionType = productionTypeEntity.get(ProductionType.class);
+                    if (productionType != null) {
+                        workforce = productionType.workforce();
+                        long[] employeeTypeIds = productionType.employeeTypes();
+                        for (int j = 0; j < employeeTypeIds.length && employeeTypeIds[j] != 0; j++) {
+                            Entity employeeTypeEntity = ecsWorld.obtainEntity(employeeTypeIds[j]);
+                            EmployeeType employeeType = employeeTypeEntity.get(EmployeeType.class);
+                            if (employeeType != null) {
+                                employeePopTypeIds[j] = employeeType.populationTypeId();
+                                employeeAmounts[j] = employeeType.amount();
+                            }
+                        }
+                    }
+                }
+
+                province.set(new ResourceGathering(goodId, 0, 0f, new int[12], workforce, goodValue, employeePopTypeIds, employeeAmounts));
             }
 
             JsonValue buildingsProvinceValue = provinceValues.get("buildings");

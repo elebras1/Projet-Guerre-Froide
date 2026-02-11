@@ -1,7 +1,6 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.github.elebras1.flecs.Entity;
-import com.github.elebras1.flecs.EntityView;
 import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
@@ -103,15 +102,6 @@ public class BuildingService {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity building = ecsWorld.obtainEntity(buildingId);
         building.remove(this.gameContext.getEcsConstants().suspended());
-    }
-
-    public int getMaxWorkers(long buildingId, int size) {
-        World ecsWorld = this.gameContext.getEcsWorld();
-        EntityView buildingView = ecsWorld.obtainEntityView(buildingId);
-        ResourceProductionView resourceProductionView = buildingView.getMutView(ResourceProduction.class);
-        EntityView productionTypeView = ecsWorld.obtainEntityView(resourceProductionView.productionTypeId());
-        ProductionTypeView productionTypeDataView = productionTypeView.getMutView(ProductionType.class);
-        return size * productionTypeDataView.workforce();
     }
 
     private int getMaxWorkers(EconomyBuildingType buildingTypeData, int size) {

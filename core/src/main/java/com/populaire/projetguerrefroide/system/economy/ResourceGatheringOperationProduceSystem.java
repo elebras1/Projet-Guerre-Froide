@@ -21,11 +21,9 @@ public class ResourceGatheringOperationProduceSystem {
 
             long resourceGoodId = resourceGatheringView.goodId();
             int resourceGoodSize = resourceGatheringView.size();
+            int workforce = resourceGatheringView.workforce();
 
-            EntityView resourceGoodView = this.ecsWorld.obtainEntityView(resourceGoodId);
-            GoodView good = resourceGoodView.getMutView(Good.class);
-
-            float baseProduction = resourceGoodSize * good.value();
+            float baseProduction = resourceGoodSize * resourceGatheringView.goodValue();
 
             int totalWorkers = 0;
             for (int j = 0; j < resourceGatheringView.hiredWorkersLength(); j++) {
@@ -33,12 +31,7 @@ public class ResourceGatheringOperationProduceSystem {
                 totalWorkers += hiredWorker;
             }
 
-            EntityView buildingView = this.ecsWorld.obtainEntityView(resourceGoodId);
-            ResourceProductionView resourceProductionView = buildingView.getMutView(ResourceProduction.class);
-            EntityView productionTypeView = this.ecsWorld.obtainEntityView(resourceProductionView.productionTypeId());
-            ProductionTypeView productionTypeDataView = productionTypeView.getMutView(ProductionType.class);
-
-            int maxWorkers = resourceGoodSize * productionTypeDataView.workforce();
+            int maxWorkers = resourceGoodSize * workforce;
             float throughput = maxWorkers > 0 ? (float) totalWorkers / maxWorkers : 0f;
             float production = baseProduction * throughput;
 
