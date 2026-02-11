@@ -81,8 +81,8 @@ public class ProvinceService {
         Province provinceData = province.get(Province.class);
         int amountAdults = provinceData.amountAdults();
         CultureDistribution cultureDistribution = province.get(CultureDistribution.class);
-        long[] provinceCultureIds = cultureDistribution.populationIds();
-        int[] provinceCultureValues = cultureDistribution.populationAmounts();
+        long[] provinceCultureIds = cultureDistribution.ids();
+        int[] provinceCultureValues = cultureDistribution.amounts();
         return this.calculatePercentageDistributionFromProvinceData(provinceCultureIds, provinceCultureValues, amountAdults);
     }
 
@@ -91,8 +91,8 @@ public class ProvinceService {
         Province provinceData = province.get(Province.class);
         int amountAdults = provinceData.amountAdults();
         ReligionDistribution religionDistribution = province.get(ReligionDistribution.class);
-        long[] provinceReligionIds = religionDistribution.populationIds();
-        int[] provinceReligionValues = religionDistribution.populationAmounts();
+        long[] provinceReligionIds = religionDistribution.ids();
+        int[] provinceReligionValues = religionDistribution.amounts();
 
         return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, amountAdults);
     }

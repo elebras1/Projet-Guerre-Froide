@@ -21,24 +21,15 @@ public class ResourceGatheringOperationHireSystem {
             int workforce = resourceGatheringView.workforce();
             int maxWorkers = size * workforce;
 
-            for (int popIndex = 0; popIndex < popDistribution.populationIdsLength() && popDistribution.populationIds(popIndex) != 0; popIndex++) {
-                long popTypeId = popDistribution.populationIds(popIndex);
-                int popTypeValue = popDistribution.populationAmounts(popIndex);
+            for (int employeeIndex = 0; employeeIndex < resourceGatheringView.employeePopTypeIndexesLength() && resourceGatheringView.employeePopTypeIndexes(employeeIndex) >= 0; employeeIndex++) {
+                int popTypeIndex = resourceGatheringView.employeePopTypeIndexes(employeeIndex);
+                int popTypeValue = popDistribution.amounts(popTypeIndex);
 
-                int hiredForThisPop = 0;
+                float ratio = resourceGatheringView.employeeAmounts(employeeIndex);
+                int neededForThisType = (int) (maxWorkers * ratio);
+                int hiredForThisPop = Math.min(popTypeValue, neededForThisType);
 
-                for (int employeeIndex = 0; employeeIndex < resourceGatheringView.employeePopTypeIdsLength() && resourceGatheringView.employeePopTypeIds(employeeIndex) != 0; employeeIndex++) {
-                    long requiredPopTypeId = resourceGatheringView.employeePopTypeIds(employeeIndex);
-
-                    if (requiredPopTypeId == popTypeId) {
-                        float ratio = resourceGatheringView.employeeAmounts(employeeIndex);
-                        int neededForThisType = (int) (maxWorkers * ratio);
-                        hiredForThisPop = Math.min(popTypeValue, neededForThisType);
-                        break;
-                    }
-                }
-
-                resourceGatheringView.hiredWorkers(popIndex, hiredForThisPop);
+                resourceGatheringView.hiredWorkers(popTypeIndex, hiredForThisPop);
             }
         }
     }

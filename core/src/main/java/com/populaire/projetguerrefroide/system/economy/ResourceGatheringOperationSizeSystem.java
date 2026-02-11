@@ -19,15 +19,9 @@ public class ResourceGatheringOperationSizeSystem {
 
             int workforce = resourceGatheringView.workforce();
 
-            long workerPopulationTypeId = resourceGatheringView.employeePopTypeIds(0);
+            int workerPopulationTypeIndex = resourceGatheringView.employeePopTypeIndexes(0);
 
-            int workerInProvince = 0;
-            for (int j = 0; j < populationDistributionView.populationIdsLength(); j++) {
-                if (populationDistributionView.populationIds(j) == workerPopulationTypeId) {
-                    workerInProvince = populationDistributionView.populationAmounts(j);
-                    break;
-                }
-            }
+            int workerInProvince = populationDistributionView.amounts(workerPopulationTypeIndex);
 
             int size = (workerInProvince + workforce - 1) / workforce;
             size = (int) (size * 1.5f);

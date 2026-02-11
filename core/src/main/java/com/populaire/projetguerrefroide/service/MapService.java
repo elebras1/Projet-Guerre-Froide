@@ -255,14 +255,14 @@ public class MapService implements WorldContext, Disposable {
 
                 int biggestCultureIndex = -1;
                 int biggestCultureAmount = 0;
-                for(int j = 0; j < cultureDistributionView.populationIdsLength(); j++) {
-                    if(cultureDistributionView.populationIds(j) != 0 && cultureDistributionView.populationAmounts(j) > biggestCultureAmount) {
-                        biggestCultureAmount = cultureDistributionView.populationAmounts(j);
+                for(int j = 0; j < cultureDistributionView.idsLength(); j++) {
+                    if(cultureDistributionView.ids(j) != 0 && cultureDistributionView.amounts(j) > biggestCultureAmount) {
+                        biggestCultureAmount = cultureDistributionView.amounts(j);
                         biggestCultureIndex = j;
                     }
                 }
                 if(biggestCultureIndex != -1) {
-                    long biggestCultureId = cultureDistributionView.populationIds(biggestCultureIndex);
+                    long biggestCultureId = cultureDistributionView.ids(biggestCultureIndex);
                     this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestCultureId).get(Color.class)).value());
                 }
             }
@@ -285,14 +285,14 @@ public class MapService implements WorldContext, Disposable {
 
                 int biggestReligionIndex = -1;
                 int biggestReligionAmount = 0;
-                for(int j = 0; j < religionDistributionView.populationIdsLength(); j++) {
-                    if(religionDistributionView.populationIds(j) != 0 && religionDistributionView.populationAmounts(j) > biggestReligionAmount) {
-                        biggestReligionAmount = religionDistributionView.populationAmounts(j);
+                for(int j = 0; j < religionDistributionView.idsLength(); j++) {
+                    if(religionDistributionView.ids(j) != 0 && religionDistributionView.amounts(j) > biggestReligionAmount) {
+                        biggestReligionAmount = religionDistributionView.amounts(j);
                         biggestReligionIndex = j;
                     }
                 }
                 if(biggestReligionIndex != -1) {
-                    long biggestReligionId = religionDistributionView.populationIds(biggestReligionIndex);
+                    long biggestReligionId = religionDistributionView.ids(biggestReligionIndex);
                     this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestReligionId).get(Color.class)).value());
                 }
             }

@@ -58,6 +58,7 @@ public class WorldDaoImpl implements WorldDao {
     private final String traitsJsonFile = this.commonPath + "traits.json";
     private final JsonMapper mapper = new JsonMapper();
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private final long[] populationTypeIds = new long[12];
 
     public WorldDaoImpl() {
 
@@ -291,14 +292,25 @@ public class WorldDaoImpl implements WorldDao {
                 populationPaths.put(populationTypeEntry.getKey(), this.commonPath + populationTypeEntry.getValue().asString());
             }
 
+            int index = 0;
             for (Map.Entry<String, String> populationPath : populationPaths.entrySet()) {
                 this.readPopulationType(ecsWorld, populationPath.getValue(), populationPath.getKey());
+                this.populationTypeIds[index++] = ecsWorld.lookup(populationPath.getKey());
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+    }
+
+    private int getPopulationTypeIndex(long popTypeId) {
+        for (int i = 0; i < this.populationTypeIds.length; i++) {
+            if (this.populationTypeIds[i] == popTypeId) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     private void readPopulationType(World ecsWorld, String populationTypePath, String name) {
@@ -923,6 +935,7 @@ public class WorldDaoImpl implements WorldDao {
                 int workforce = 0;
                 float goodValue = 0f;
                 long[] employeePopTypeIds = new long[4];
+                int[] employeePopTypeIndexes = new int[4];
                 float[] employeeAmounts = new float[4];
 
                 EntityView goodEntity = ecsWorld.obtainEntityView(goodId);
@@ -941,11 +954,12 @@ public class WorldDaoImpl implements WorldDao {
                     EmployeeType employeeType = employeeTypeEntity.get(EmployeeType.class);
                     if (employeeType != null) {
                         employeePopTypeIds[j] = employeeType.populationTypeId();
+                        employeePopTypeIndexes[j] = this.getPopulationTypeIndex(employeeType.populationTypeId());
                         employeeAmounts[j] = employeeType.amount();
                     }
                 }
 
-                province.set(new ResourceGathering(goodId, 0, 0f, new int[12], workforce, goodValue, employeePopTypeIds, employeeAmounts));
+                province.set(new ResourceGathering(goodId, 0, 0f, new int[12], workforce, goodValue, employeePopTypeIds, employeePopTypeIndexes, employeeAmounts));
             }
 
             JsonValue buildingsProvinceValue = provinceValues.get("buildings");
@@ -972,22 +986,36 @@ public class WorldDaoImpl implements WorldDao {
             return;
         }
 
-        long[] ids = new long[length];
-        int[] amounts = new int[length];
-        int i = 0;
-        for(var distributionEntry : distributionValue.object()) {
-            String name = distributionEntry.getKey();
-            float percentage = (float) distributionEntry.getValue().asDouble();
-            int value = (int) (amountAdults * percentage);
-            long id = ecsWorld.lookup(name);
-            ids[i] = id;
-            amounts[i] = value;
-            i++;
-        }
-        switch (distributionType) {
-            case "population" -> province.set(new PopulationDistribution(ids, amounts));
-            case "culture" -> province.set(new CultureDistribution(ids, amounts));
-            case "religion" -> province.set(new ReligionDistribution(ids, amounts));
+        if (distributionType.equals("population")) {
+            int[] amounts = new int[12];
+            for(var distributionEntry : distributionValue.object()) {
+                String name = distributionEntry.getKey();
+                float percentage = (float) distributionEntry.getValue().asDouble();
+                int value = (int) (amountAdults * percentage);
+                long id = ecsWorld.lookup(name);
+                int index = this.getPopulationTypeIndex(id);
+                if (index != -1) {
+                    amounts[index] = value;
+                }
+            }
+            province.set(new PopulationDistribution(amounts));
+        } else {
+            long[] ids = new long[12];
+            int[] amounts = new int[12];
+            int i = 0;
+            for(var distributionEntry : distributionValue.object()) {
+                String name = distributionEntry.getKey();
+                float percentage = (float) distributionEntry.getValue().asDouble();
+                int value = (int) (amountAdults * percentage);
+                long id = ecsWorld.lookup(name);
+                ids[i] = id;
+                amounts[i] = value;
+                i++;
+            }
+            switch (distributionType) {
+                case "culture" -> province.set(new CultureDistribution(ids, amounts));
+                case "religion" -> province.set(new ReligionDistribution(ids, amounts));
+            }
         }
     }
 
