@@ -20,7 +20,7 @@ public class MapDaoImpl implements MapDao {
     private final String riversMeshFile = "map/rivers_mesh.json";
 
     @Override
-    public RawMeshMulti readRiversMeshJson() {
+    public RawMeshMulti readRiversMesh() {
         FileHandle fh = Gdx.files.internal(this.riversMeshFile);
         try (InputStream is = fh.read()) {
             byte[] bytes = is.readAllBytes();

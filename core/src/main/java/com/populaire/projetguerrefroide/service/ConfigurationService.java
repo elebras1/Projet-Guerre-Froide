@@ -54,32 +54,32 @@ public class ConfigurationService {
 
     public void loadMainMenuLocalisation(GameContext gameContext) {
         this.setLanguage(gameContext);
-        gameContext.putAllLocalisation(this.localisationDao.readMainMenuCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readCountriesCsv());
+        gameContext.putAllLocalisation(this.localisationDao.readMainMenu());
+        gameContext.putAllLocalisation(this.localisationDao.readCountries());
 
     }
 
     public void loadNewGameLocalisation(GameContext gameContext) {
         this.setLanguage(gameContext);
-        gameContext.putAllLocalisation(this.localisationDao.readNewgameCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readBookmarkCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readPoliticsCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readMainMenuInGameCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readPopupCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readProvincesCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readLanguageCsv());
+        gameContext.putAllLocalisation(this.localisationDao.readNewgame());
+        gameContext.putAllLocalisation(this.localisationDao.readBookmark());
+        gameContext.putAllLocalisation(this.localisationDao.readPolitics());
+        gameContext.putAllLocalisation(this.localisationDao.readMainMenuInGame());
+        gameContext.putAllLocalisation(this.localisationDao.readPopup());
+        gameContext.putAllLocalisation(this.localisationDao.readProvinces());
+        gameContext.putAllLocalisation(this.localisationDao.readLanguage());
     }
 
     public void loadGameLocalisation(GameContext gameContext) {
         this.setLanguage(gameContext);
-        gameContext.putAllLocalisation(this.localisationDao.readPoliticsCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readMainMenuInGameCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readPopupCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readProvincesCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readRegionsCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readLanguageCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readInterfaceCsv());
-        gameContext.putAllLocalisation(this.localisationDao.readEconomyCsv());
+        gameContext.putAllLocalisation(this.localisationDao.readPolitics());
+        gameContext.putAllLocalisation(this.localisationDao.readMainMenuInGame());
+        gameContext.putAllLocalisation(this.localisationDao.readPopup());
+        gameContext.putAllLocalisation(this.localisationDao.readProvinces());
+        gameContext.putAllLocalisation(this.localisationDao.readRegions());
+        gameContext.putAllLocalisation(this.localisationDao.readLanguage());
+        gameContext.putAllLocalisation(this.localisationDao.readInterface());
+        gameContext.putAllLocalisation(this.localisationDao.readEconomy());
     }
 
     private void setLanguage(GameContext gameContext) {

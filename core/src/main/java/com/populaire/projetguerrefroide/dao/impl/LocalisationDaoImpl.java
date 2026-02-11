@@ -32,62 +32,62 @@ public class LocalisationDaoImpl implements LocalisationDao {
     }
 
     @Override
-    public Map<String, String> readMainMenuCsv() {
+    public Map<String, String> readMainMenu() {
         return this.readLocalisationCsv(this.language, this.mainmenuCsvFile);
     }
 
     @Override
-    public Map<String, String> readNewgameCsv() {
+    public Map<String, String> readNewgame() {
         return this.readLocalisationCsv(this.language, this.newgameCsvFile);
     }
 
     @Override
-    public Map<String, String> readBookmarkCsv() {
+    public Map<String, String> readBookmark() {
         return this.readLocalisationCsv(this.language, this.bookmarkCsvFile);
     }
 
     @Override
-    public Map<String, String> readPoliticsCsv() {
+    public Map<String, String> readPolitics() {
         return this.readLocalisationCsv(this.language, this.politicsCsvFile);
     }
 
     @Override
-    public Map<String, String> readMainMenuInGameCsv() {
+    public Map<String, String> readMainMenuInGame() {
         return this.readLocalisationCsv(this.language, this.mainemenuInGameCsvFile);
     }
 
     @Override
-    public Map<String, String> readPopupCsv() {
+    public Map<String, String> readPopup() {
         return this.readLocalisationCsv(this.language, this.popupCsvFile);
     }
 
     @Override
-    public Map<String, String> readLanguageCsv() {
+    public Map<String, String> readLanguage() {
         return this.readLocalisationCsv(this.language, this.languageCsvFile);
     }
 
     @Override
-    public Map<String, String> readCountriesCsv() {
+    public Map<String, String> readCountries() {
         return this.readLocalisationCsv(this.language, this.countriesCsvFile);
     }
 
     @Override
-    public Map<String, String> readProvincesCsv() {
+    public Map<String, String> readProvinces() {
         return this.readLocalisationCsv("ENGLISH", this.provincesCsvFile);
     }
 
     @Override
-    public Map<String, String> readRegionsCsv() {
+    public Map<String, String> readRegions() {
         return this.readLocalisationCsv(this.language, this.regionsCsvFile);
     }
 
     @Override
-    public Map<String, String> readInterfaceCsv() {
+    public Map<String, String> readInterface() {
         return this.readLocalisationCsv(this.language, this.interfaceFile);
     }
 
     @Override
-    public Map<String, String> readEconomyCsv() {
+    public Map<String, String> readEconomy() {
         return this.readLocalisationCsv(this.language, this.economyCsvFile);
     }
 

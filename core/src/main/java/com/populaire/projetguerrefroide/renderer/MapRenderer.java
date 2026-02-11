@@ -517,7 +517,7 @@ public class MapRenderer implements Disposable {
     }
 
     private WgMeshMulti generateMeshRivers(VertexAttributes vertexAttributes) {
-        RawMeshMulti rawMesh = this.mapDao.readRiversMeshJson();
+        RawMeshMulti rawMesh = this.mapDao.readRiversMesh();
 
         WgMeshMulti mesh = new WgMeshMulti(true, rawMesh.vertices().length / 5, 0, vertexAttributes);
         mesh.setVertices(rawMesh.vertices());
