@@ -59,6 +59,7 @@ public class WorldDaoImpl implements WorldDao {
     private final JsonMapper mapper = new JsonMapper();
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private final long[] populationTypeIds = new long[12];
+    private final long[] goodIds = new long[40];
 
     public WorldDaoImpl() {
 
@@ -237,6 +238,7 @@ public class WorldDaoImpl implements WorldDao {
     private void readGoods(World ecsWorld, EcsConstants ecsConstants) {
         try {
             JsonValue goodsValues = this.parseJsonFile(this.goodsJsonFile);
+            int goodIndex = 0;
 
             for(var resourceGoodEntry : goodsValues.get("resource_goods").object()) {
                 String goodName = resourceGoodEntry.getKey();
@@ -250,6 +252,8 @@ public class WorldDaoImpl implements WorldDao {
                 good.add(ecsConstants.ressourceGoodTag());
                 good.set(new Color(color));
                 good.set(new Good(cost, value));
+                this.goodIds[goodIndex] = goodId;
+                goodIndex++;
             }
 
             for(var advancedGoodEntry : goodsValues.get("advanced_goods").object()) {
@@ -263,6 +267,8 @@ public class WorldDaoImpl implements WorldDao {
                 good.add(ecsConstants.advancedGoodTag());
                 good.set(new Color(color));
                 good.set(new Good(cost, -0));
+                this.goodIds[goodIndex] = goodId;
+                goodIndex++;
             }
 
             for(var militaryGood : goodsValues.get("military_goods").object()) {
@@ -276,6 +282,8 @@ public class WorldDaoImpl implements WorldDao {
                 good.add(ecsConstants.militaryGoodTag());
                 good.set(new Color(color));
                 good.set(new Good(cost, 0));
+                this.goodIds[goodIndex] = goodId;
+                goodIndex++;
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -302,15 +310,6 @@ public class WorldDaoImpl implements WorldDao {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-    }
-
-    private int getPopulationTypeIndex(long popTypeId) {
-        for (int i = 0; i < this.populationTypeIds.length; i++) {
-            if (this.populationTypeIds[i] == popTypeId) {
-                return i;
-            }
-        }
-        return -1;
     }
 
     private void readPopulationType(World ecsWorld, String populationTypePath, String name) {
@@ -959,7 +958,7 @@ public class WorldDaoImpl implements WorldDao {
                     }
                 }
 
-                province.set(new ResourceGathering(goodId, 0, 0f, new int[12], workforce, goodValue, employeePopTypeIds, employeePopTypeIndexes, employeeAmounts));
+                province.set(new ResourceGathering(goodId, this.getGoodIndex(goodId), 0, 0f, new int[12], workforce, goodValue, employeePopTypeIds, employeePopTypeIndexes, employeeAmounts));
             }
 
             JsonValue buildingsProvinceValue = provinceValues.get("buildings");
@@ -1036,9 +1035,7 @@ public class WorldDaoImpl implements WorldDao {
                         long localMarketId = ecsWorld.entity();
                         EntityView localMarket = ecsWorld.obtainEntityView(localMarketId);
                         if(!localMarket.has(LocalMarket.class)) {
-                            localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId()));
-                            localMarket.set(new MarketProduction(new long[36], new float[36]));
-                            localMarket.set(new MarketConsumption(new long[36], new float[36]));
+                            localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[40], new float[40]));
                         }
                         provinceEntity.set(new GeoHierarchy(regionEntityId, -1, localMarketId));
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
@@ -1287,6 +1284,24 @@ public class WorldDaoImpl implements WorldDao {
         int blue = (int) colorValueIterator.next().asLong();
         int alpha = 255;
         return (red << 24) | (green << 16) | (blue << 8) | alpha;
+    }
+
+    private int getPopulationTypeIndex(long popTypeId) {
+        for (int i = 0; i < this.populationTypeIds.length; i++) {
+            if (this.populationTypeIds[i] == popTypeId) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private int getGoodIndex(long goodId) {
+        for (int i = 0; i < this.goodIds.length; i++) {
+            if (this.goodIds[i] == goodId) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
 

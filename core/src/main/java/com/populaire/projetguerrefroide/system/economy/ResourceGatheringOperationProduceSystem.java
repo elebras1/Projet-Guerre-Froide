@@ -19,7 +19,7 @@ public class ResourceGatheringOperationProduceSystem {
             ResourceGatheringView resourceGatheringView = resourceGatheringField.getMutView(i);
             GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
 
-            long resourceGoodId = resourceGatheringView.goodId();
+            int goodIndex = resourceGatheringView.goodIndex();
             int resourceGoodSize = resourceGatheringView.size();
             int workforce = resourceGatheringView.workforce();
 
@@ -38,14 +38,9 @@ public class ResourceGatheringOperationProduceSystem {
             resourceGatheringView.production(production);
 
             EntityView localMarketView = this.ecsWorld.obtainEntityView(geoHierarchyView.localMarketId());
-            MarketProductionView marketProductionView = localMarketView.getMutView(MarketProduction.class);
-            for(int j = 0; j < marketProductionView.goodIdsLength(); j++) {
-                if (marketProductionView.goodIds(j) == resourceGoodId || marketProductionView.goodIds(j) == 0) {
-                    marketProductionView.goodIds(j, resourceGoodId);
-                    marketProductionView.goodAmounts(j, marketProductionView.goodAmounts(j) + production);
-                    break;
-                }
-            }
+            LocalMarketView localMarketDataView = localMarketView.getMutView(LocalMarket.class);
+
+            localMarketDataView.goodProductions(goodIndex, localMarketDataView.goodProductions(goodIndex) + production);
         }
     }
 }
