@@ -40,11 +40,11 @@ public class FlagImageRenderer implements Disposable {
         this.uniformBufferSize = 16 * Float.BYTES;
         this.uniformBuffer = new WebGPUUniformBuffer(this.uniformBufferSize, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
         VertexAttributes vertexAttributes = new VertexAttributes(
-            new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE),
-            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE),
-            new VertexAttribute(VertexAttributes.Usage.Normal, 2, "uvOverlay"),
-            new VertexAttribute(VertexAttributes.Usage.Tangent, 2, "uvAlpha"),
-            new VertexAttribute(VertexAttributes.Usage.BiNormal, 2, "uvFlag")
+            new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"),
+            new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"),
+            new VertexAttribute(VertexAttributes.Usage.Generic, 2, "uvOverlay"),
+            new VertexAttribute(VertexAttributes.Usage.Generic, 2, "uvAlpha"),
+            new VertexAttribute(VertexAttributes.Usage.Generic, 2, "uvFlag")
         );
 
         this.vertices = new float[NUMBER_MAX_FLAGS * VERTICES_PER_FLAG * FLOATS_PER_VERTEX];
@@ -120,8 +120,13 @@ public class FlagImageRenderer implements Disposable {
     }
 
     private WebGPUPipeline createPipeline(VertexAttributes vertexAttributes, String shaderSource) {
-        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        PipelineSpecification pipelineSpec = new PipelineSpecification("pipeline specification flag", vertexAttributes, shaderSource);
         pipelineSpec.name = "pipeline";
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("position", 0);
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("texCoord", 1);
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("uvOverlay", 2);
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("uvAlpha", 3);
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("uvFlag", 4);
         pipelineSpec.enableBlending();
         return new WebGPUPipeline(this.binder.getPipelineLayout("pipeline layout flagImage"), pipelineSpec);
     }

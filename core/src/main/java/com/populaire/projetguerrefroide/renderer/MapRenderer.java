@@ -104,23 +104,23 @@ public class MapRenderer implements Disposable {
         this.selectedProvinceColor = new Vector4();
         this.uniformBufferSizeWorld = (16 + 4 + 4) * Float.BYTES;
         this.uniformBufferWorld = new WebGPUUniformBuffer(this.uniformBufferSizeWorld, WGPUBufferUsage.CopyDst.or(WGPUBufferUsage.Uniform));
-        VertexAttributes vertexAttributesProvinces = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        VertexAttributes vertexAttributesProvinces = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"));
         this.meshProvinces = this.generateMeshProvinces(vertexAttributesProvinces);
         this.binderProvinces = this.createBinderProvinces();
         this.pipelineProvinces = this.createPipelineProvinces(vertexAttributesProvinces, WgslUtils.getShaderSource("map.wgsl"));
-        VertexAttributes vertexAttributesMapLabels = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        VertexAttributes vertexAttributesMapLabels = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"));
         this.meshMapLabels = this.generateMeshMapLabels(vertexAttributesMapLabels, gameContext.getLocalisation(), gameContext.getLabelStylePool(), borders);
         this.binderMapLabels = this.createBinderMapLabels();
         this.pipelineMapLabels = this.createPipelineMapLabels(vertexAttributesMapLabels, WgslUtils.getShaderSource("font.wgsl"));
-        VertexAttributes vertexAttributesBuildings = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE));
+        VertexAttributes vertexAttributesBuildings = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"));
         this.meshBuildings = this.generateMeshBuildings(vertexAttributesBuildings);
         this.binderBuildings = this.createBinderBuildings();
         this.pipelineBuildings = this.createPipelineBuildings(vertexAttributesBuildings, WgslUtils.getShaderSource("element.wgsl"));
-        VertexAttributes vertexAttributesResources = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.Normal, 2, "center"));
+        VertexAttributes vertexAttributesResources = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"), new VertexAttribute(VertexAttributes.Usage.Generic, 2, "center"));
         this.meshResources = this.generateMeshResources(vertexAttributesResources);
         this.binderResources = this.createBinderResources();
         this.pipelineResources = this.createPipelineResources(vertexAttributesResources, WgslUtils.getShaderSource("element_scale.wgsl"));
-        VertexAttributes vertexAttributesRivers = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, ShaderProgram.POSITION_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE), new VertexAttribute(VertexAttributes.Usage.Normal, 1, "width"));
+        VertexAttributes vertexAttributesRivers = new VertexAttributes(new VertexAttribute(VertexAttributes.Usage.Position, 2, "position"), new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "texCoord"), new VertexAttribute(VertexAttributes.Usage.Generic, 1, "width"));
         this.meshRivers = this.generateMeshRivers(vertexAttributesRivers);
         this.binderRivers = this.createBinderRivers();
         this.pipelineRivers = this.createPipelineRivers(vertexAttributesRivers, WgslUtils.getShaderSource("river.wgsl"));
@@ -747,36 +747,48 @@ public class MapRenderer implements Disposable {
     }
 
     private WebGPUPipeline createPipelineProvinces(VertexAttributes vertexAttributes, String shaderSource) {
-        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        PipelineSpecification pipelineSpec = new PipelineSpecification("pipeline specification provinces", vertexAttributes, shaderSource);
         pipelineSpec.name = "pipeline";
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("position", 0);
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("texCoord", 1);
         pipelineSpec.enableBlending();
         return new WebGPUPipeline(this.binderProvinces.getPipelineLayout("pipeline layout provinces"), pipelineSpec);
     }
 
     private WebGPUPipeline createPipelineMapLabels(VertexAttributes vertexAttributes, String shaderSource) {
-        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        PipelineSpecification pipelineSpec = new PipelineSpecification("pipeline specification map labels", vertexAttributes, shaderSource);
         pipelineSpec.name = "pipeline map labels";
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("position", 0);
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("texCoord", 1);
         pipelineSpec.enableBlending();
         return new WebGPUPipeline(this.binderMapLabels.getPipelineLayout("pipeline layout map labels"), pipelineSpec);
     }
 
     private WebGPUPipeline createPipelineBuildings(VertexAttributes vertexAttributes, String shaderSource) {
-        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        PipelineSpecification pipelineSpec = new PipelineSpecification("pipeline specification buildings", vertexAttributes, shaderSource);
         pipelineSpec.name = "pipeline";
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("position", 0);
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("texCoord", 1);
         pipelineSpec.enableBlending();
         return new WebGPUPipeline(this.binderBuildings.getPipelineLayout("pipeline layout buildings"), pipelineSpec);
     }
 
     private WebGPUPipeline createPipelineResources(VertexAttributes vertexAttributes, String shaderSource) {
-        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        PipelineSpecification pipelineSpec = new PipelineSpecification("pipeline specification resources", vertexAttributes, shaderSource);
         pipelineSpec.name = "pipeline resources";
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("position", 0);
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("texCoord", 1);
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("center", 2);
         pipelineSpec.enableBlending();
         return new WebGPUPipeline(this.binderResources.getPipelineLayout("pipeline layout resources"), pipelineSpec);
     }
 
     private WebGPUPipeline createPipelineRivers(VertexAttributes vertexAttributes, String shaderSource) {
-        PipelineSpecification pipelineSpec = new PipelineSpecification(vertexAttributes, shaderSource);
+        PipelineSpecification pipelineSpec = new PipelineSpecification("pipeline specification rivers", vertexAttributes, shaderSource);
         pipelineSpec.name = "pipeline rivers";
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("position", 0);
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("texCoord", 1);
+        pipelineSpec.vertexLayout.setVertexAttributeLocation("width", 2);
         pipelineSpec.topology = WGPUPrimitiveTopology.TriangleStrip;
         pipelineSpec.enableBlending();
         return new WebGPUPipeline(this.binderRivers.getPipelineLayout("pipeline layout rivers"), pipelineSpec);
