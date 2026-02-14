@@ -287,7 +287,8 @@ public class EconomyPanel extends Table {
 
         this.widgetFactory.createLabelCentered(ValueFormatter.format(building.productionValue()), labelStyle, buildingTable.getWidth() / 2, 21, buildingTable);
 
-        String levelText = building.buildingValue() + "/" + building.maxLevel();
+        String levelsQueuedText = building.levelsQueued() > 0 ? " (" + building.levelsQueued() + ")" : "";
+        String levelText = building.buildingValue() + levelsQueuedText + "/" + building.maxLevel();
         this.widgetFactory.createLabelCentered(levelText, labelSmall, buildingTable.getWidth() / 2, 2, buildingTable);
 
         return buildingTable;

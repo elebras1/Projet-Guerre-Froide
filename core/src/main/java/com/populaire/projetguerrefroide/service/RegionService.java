@@ -58,9 +58,17 @@ public class RegionService {
 
                     EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
 
+                    int levelsQueued = 0;
+                    long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
+                    if(expansionBuildingId != 0) {
+                        EntityView expansionBuildingView = ecsWorld.obtainEntityView(expansionBuildingId);
+                        ExpansionBuildingView expansionBuildingDataView = expansionBuildingView.getMutView(ExpansionBuilding.class);
+                        levelsQueued = expansionBuildingDataView.levelsQueued();
+                    }
+
                     if (buildingTypeView.has(EconomyBuildingType.class)) {
                         EconomyBuildingTypeView economyBuildingTypeView = buildingTypeView.getMutView(EconomyBuildingType.class);
-                        BuildingSummaryDto building = new BuildingSummaryDto(buildingId, buildingTypeView.getName(), buildingView.size(), economyBuildingTypeView.maxLevel(), 0);
+                        BuildingSummaryDto building = new BuildingSummaryDto(buildingId, buildingTypeView.getName(), buildingView.size(), economyBuildingTypeView.maxLevel(), 0, levelsQueued);
                         int workers = this.buildingService.estimateWorkersForBuilding();
                         buildingWorkerAmount.increment(workers);
                         buildings.add(building);

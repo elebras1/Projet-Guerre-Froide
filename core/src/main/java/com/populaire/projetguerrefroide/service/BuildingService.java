@@ -62,34 +62,39 @@ public class BuildingService {
         Building buildingData = building.get(Building.class);
         Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
 
-        long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
-        Entity expansionBuilding = null;
-        int timeLeft = 0;
-        int levelsQueued = 0;
+        int maxLevel = 0;
+        int baseTime = 0;
 
-        if(expansionBuildingId != 0) {
+        if (buildingType.has(EconomyBuildingType.class)) {
+            EconomyBuildingType typeData = buildingType.get(EconomyBuildingType.class);
+            baseTime = typeData.time();
+            maxLevel = typeData.maxLevel();
+        } else if (buildingType.has(DevelopmentBuildingType.class)) {
+            DevelopmentBuildingType typeData = buildingType.get(DevelopmentBuildingType.class);
+            baseTime = typeData.time();
+            maxLevel = typeData.maxLevel();
+        }
+
+        long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
+        Entity expansionBuilding;
+        int levelsQueued = 0;
+        int currentTimeLeft;
+
+        if (expansionBuildingId != 0) {
             expansionBuilding = ecsWorld.obtainEntity(expansionBuildingId);
-            ExpansionBuilding expansionBuildingData = expansionBuilding.get(ExpansionBuilding.class);
-            levelsQueued = expansionBuildingData.levelsQueued();
-            timeLeft = expansionBuildingData.timeLeft();
+            ExpansionBuilding expansionData = expansionBuilding.get(ExpansionBuilding.class);
+            levelsQueued = expansionData.levelsQueued();
+            currentTimeLeft = expansionData.timeLeft();
         } else {
             expansionBuildingId = ecsWorld.entity("expand_" + buildingId);
             expansionBuilding = ecsWorld.obtainEntity(expansionBuildingId);
-            if(buildingType.has(EconomyBuildingType.class)) {
-                EconomyBuildingType economyBuildingTypeData = buildingType.get(EconomyBuildingType.class);
-                timeLeft = economyBuildingTypeData.time();
-            } else if(buildingType.has(DevelopmentBuildingType.class)) {
-                DevelopmentBuildingType developmentBuildinggTypeData = buildingType.get(DevelopmentBuildingType.class);
-                timeLeft = developmentBuildinggTypeData.time();
-            } else if(buildingType.has(SpecialBuildingType.class)) {
-                SpecialBuildingType specialBuildingTypeData = buildingType.get(SpecialBuildingType.class);
-                timeLeft = specialBuildingTypeData.time();
-            }
+            currentTimeLeft = baseTime;
         }
 
-        levelsQueued++;
-
-        expansionBuilding.set(new ExpansionBuilding(buildingId, timeLeft, levelsQueued));
+        if (buildingData.size() + levelsQueued < maxLevel) {
+            levelsQueued++;
+            expansionBuilding.set(new ExpansionBuilding(buildingId, currentTimeLeft, levelsQueued));
+        }
     }
 
     public void suspendBuilding(long buildingId) {
