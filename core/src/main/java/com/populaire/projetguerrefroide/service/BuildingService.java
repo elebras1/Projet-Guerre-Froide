@@ -47,7 +47,7 @@ public class BuildingService {
         String outputGoodNameId = outputGoodEntity.getName();
         int amountWorkers = this.getAmountWorkers(productionType);
         int maxWorkers = this.getMaxWorkers(buildingTypeData, buildingData.size());
-        return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostValues(), inputGoodNameIds, buildingTypeData.inputGoodValues(), outputGoodNameId, buildingTypeData.outputGoodValue(), amountWorkers, maxWorkers);
+        return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostValues(), inputGoodNameIds, buildingTypeData.inputGoodValues(), outputGoodNameId, buildingTypeData.outputGoodValue(), amountWorkers, maxWorkers, building.has(this.gameContext.getEcsConstants().suspended()));
     }
 
     public void demolishBuilding(long buildingId) {

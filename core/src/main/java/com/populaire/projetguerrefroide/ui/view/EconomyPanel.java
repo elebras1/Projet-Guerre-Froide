@@ -150,7 +150,19 @@ public class EconomyPanel extends Table {
             }
         });
         this.widgetFactory.createLabel(this.localisation.get("EXPAND"), jockey16Dark, 26, 0, expandButton);
+
+        Button resumeButton = this.widgetFactory.createButton(this.skin, "eco_folder_btn_yellow", 636, 70, this.buildingSelectedTable);
+        resumeButton.setName("btn_resume");
+        resumeButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                listener.onResumeBuildingClicked(selectedBuildingId);
+            }
+        });
+        this.widgetFactory.createLabel(this.localisation.get("RESUME"), jockey16Dark, 23, 0, resumeButton);
+
         Button suspendButton = this.widgetFactory.createButton(this.skin, "eco_folder_btn_yellow", 636, 70, this.buildingSelectedTable);
+        suspendButton.setName("btn_suspend");
         suspendButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -158,6 +170,7 @@ public class EconomyPanel extends Table {
             }
         });
         this.widgetFactory.createLabel(this.localisation.get("SUSPEND"), jockey16Dark, 23, 0, suspendButton);
+
         Button demolishButton = this.widgetFactory.createButton(this.skin, "eco_folder_btn_red", 636, 22, this.buildingSelectedTable);
         demolishButton.addListener(new ClickListener() {
             @Override
@@ -284,6 +297,12 @@ public class EconomyPanel extends Table {
 
         this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingTable);
         this.widgetFactory.createImage(this.skin, "building_" + building.buildingNameId(), 10, 55, buildingTable);
+        Image suspendedImage = this.widgetFactory.createImage(38, 61, buildingTable);
+        if(building.isSuspended()) {
+            Drawable suspendedDrawable = this.skin.getDrawable("econmy_suspended_icon1");
+            suspendedImage.setDrawable(suspendedDrawable);
+            suspendedImage.setSize(suspendedDrawable.getMinWidth(), suspendedDrawable.getMinHeight());
+        }
 
         this.widgetFactory.createLabelCentered(ValueFormatter.format(building.productionValue()), labelStyle, buildingTable.getWidth() / 2, 21, buildingTable);
 
@@ -379,6 +398,17 @@ public class EconomyPanel extends Table {
 
     public void updateSelectedBuildingInfoBlock(BuildingDto buildingDto) {
         this.selectedBuildingId = buildingDto.buildingId();
+
+        Button suspendButton = this.buildingSelectedTable.findActor("btn_suspend");
+        Button resumeButton = this.buildingSelectedTable.findActor("btn_resume");
+        if(buildingDto.isSuspended()) {
+            suspendButton.setVisible(false);
+            resumeButton.setVisible(true);
+        } else {
+            suspendButton.setVisible(true);
+            resumeButton.setVisible(false);
+        }
+
         Label provinceLabel = this.buildingSelectedTable.findActor("lbl_province");
         provinceLabel.setText(this.localisation.get(buildingDto.parentNameId()));
 

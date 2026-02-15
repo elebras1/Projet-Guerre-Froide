@@ -47,8 +47,9 @@ public class RegionService {
         buildingQuery.iter(iter -> {
             Field<Building> buildingField = iter.field(Building.class, 0);
             for (int i = 0; i < iter.count(); i++) {
-                BuildingView buildingView = buildingField.getMutView(i);
-                EntityView parent = ecsWorld.obtainEntityView(buildingView.parentId());
+                EntityView buildingView = ecsWorld.obtainEntityView(iter.entity(i));
+                BuildingView buildingDataView = buildingField.getMutView(i);
+                EntityView parent = ecsWorld.obtainEntityView(buildingDataView.parentId());
                 if(!parent.has(LocalMarket.class)) {
                     continue;
                 }
@@ -56,7 +57,7 @@ public class RegionService {
                 if (localMarketDataView.regionId() == regionId && localMarketDataView.ownerId() == countryId) {
                     long buildingId = iter.entity(i);
 
-                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
+                    EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingDataView.typeId());
 
                     int levelsQueued = 0;
                     long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
@@ -68,7 +69,8 @@ public class RegionService {
 
                     if (buildingTypeView.has(EconomyBuildingType.class)) {
                         EconomyBuildingTypeView economyBuildingTypeView = buildingTypeView.getMutView(EconomyBuildingType.class);
-                        BuildingSummaryDto building = new BuildingSummaryDto(buildingId, buildingTypeView.getName(), buildingView.size(), economyBuildingTypeView.maxLevel(), 0, levelsQueued);
+                        boolean isSuspended = buildingView.has(this.gameContext.getEcsConstants().suspended());
+                        BuildingSummaryDto building = new BuildingSummaryDto(buildingId, buildingTypeView.getName(), buildingDataView.size(), economyBuildingTypeView.maxLevel(), 0, levelsQueued, isSuspended);
                         int workers = this.buildingService.estimateWorkersForBuilding();
                         buildingWorkerAmount.increment(workers);
                         buildings.add(building);

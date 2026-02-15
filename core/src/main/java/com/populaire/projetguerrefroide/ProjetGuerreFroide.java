@@ -7,9 +7,11 @@ import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.command.handler.DemolishBuildingHandler;
 import com.populaire.projetguerrefroide.command.handler.ExpandBuildingHandler;
+import com.populaire.projetguerrefroide.command.handler.ResumeBuildingHandler;
 import com.populaire.projetguerrefroide.command.handler.SuspendBuildingHandler;
 import com.populaire.projetguerrefroide.command.request.DemolishBuildingCommand;
 import com.populaire.projetguerrefroide.command.request.ExpandBuildingCommand;
+import com.populaire.projetguerrefroide.command.request.ResumeBuildingCommand;
 import com.populaire.projetguerrefroide.command.request.SuspendBuildingCommand;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.configuration.Settings;
@@ -101,6 +103,7 @@ public class ProjetGuerreFroide extends Game {
         commandBus.register(ExpandBuildingCommand.class, new ExpandBuildingHandler(buildingService));
         commandBus.register(SuspendBuildingCommand.class, new SuspendBuildingHandler(buildingService));
         commandBus.register(DemolishBuildingCommand.class, new DemolishBuildingHandler(buildingService));
+        commandBus.register(ResumeBuildingCommand.class, new ResumeBuildingHandler(buildingService));
     }
 
     private void loadAssets(AssetManager assetManager) {

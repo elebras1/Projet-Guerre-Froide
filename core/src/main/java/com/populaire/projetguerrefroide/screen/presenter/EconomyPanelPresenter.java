@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.command.request.DemolishBuildingCommand;
 import com.populaire.projetguerrefroide.command.request.ExpandBuildingCommand;
+import com.populaire.projetguerrefroide.command.request.ResumeBuildingCommand;
 import com.populaire.projetguerrefroide.command.request.SuspendBuildingCommand;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
@@ -76,6 +77,11 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
     @Override
     public void onSuspendBuildingClicked(long buildingId) {
         this.commandBus.dispatch(new SuspendBuildingCommand(buildingId));
+    }
+
+    @Override
+    public void onResumeBuildingClicked(long buildingId) {
+        this.commandBus.dispatch(new ResumeBuildingCommand(buildingId));
     }
 
     @Override

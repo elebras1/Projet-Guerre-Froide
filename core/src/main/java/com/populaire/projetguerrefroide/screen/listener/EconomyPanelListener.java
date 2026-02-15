@@ -8,5 +8,6 @@ public interface EconomyPanelListener {
     void onBuildingClicked(long buildingId);
     void onExpandBuildingClicked(long buildingId);
     void onSuspendBuildingClicked(long buildingId);
+    void onResumeBuildingClicked(long buildingId);
     void onDemolishBuildingClicked(long buildingId);
 }
