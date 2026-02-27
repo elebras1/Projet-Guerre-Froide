@@ -230,14 +230,12 @@ public class RegionService {
             }
         });
 
-        this.gameContext.getEcsWorld().scope(() -> {
-            provinceIds.sort((a, b) -> {
-                EntityView provinceAView = ecsWorld.obtainEntityView(a);
-                ProvinceView provinceDataAView = provinceAView.getMutView(Province.class);
-                EntityView provinceBView = ecsWorld.obtainEntityView(b);
-                ProvinceView provinceDataBView = provinceBView.getMutView(Province.class);
-                return Integer.compare(provinceDataBView.amountAdults(), provinceDataAView.amountAdults());
-            });
+        provinceIds.sort((a, b) -> {
+            EntityView provinceAView = ecsWorld.obtainEntityView(a);
+            ProvinceView provinceDataAView = provinceAView.getMutView(Province.class);
+            EntityView provinceBView = ecsWorld.obtainEntityView(b);
+            ProvinceView provinceDataBView = provinceBView.getMutView(Province.class);
+            return Integer.compare(provinceDataBView.amountAdults(), provinceDataAView.amountAdults());
         });
 
         List<String> result = new ObjectList<>();

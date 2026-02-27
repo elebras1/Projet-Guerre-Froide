@@ -37,11 +37,9 @@ public class WorldService {
     }
 
     public void createWorld() {
-        this.gameContext.getEcsWorld().scope(() -> {
-            WorldData worldData = this.worldDao.createWorld(this.gameContext);
-            this.mapService = new MapService(this.gameContext, this.queryRepository, new MapDaoImpl(), this.countryService, worldData.provinces(), worldData.borders());
-            this.gameContext.getEcsWorld().shrink();
-        });
+        WorldData worldData = this.worldDao.createWorld(this.gameContext);
+        this.mapService = new MapService(this.gameContext, this.queryRepository, new MapDaoImpl(), this.countryService, worldData.provinces(), worldData.borders());
+        this.gameContext.getEcsWorld().shrink();
     }
 
     public void renderWorld(WgProjection projection, OrthographicCamera cam, float time) {
