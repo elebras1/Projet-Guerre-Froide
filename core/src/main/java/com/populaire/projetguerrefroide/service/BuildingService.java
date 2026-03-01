@@ -4,6 +4,7 @@ import com.github.elebras1.flecs.Entity;
 import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
+import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
 import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
 
 public class BuildingService {
@@ -17,6 +18,23 @@ public class BuildingService {
 
     public int estimateWorkersForBuilding() {
         return 0;
+    }
+
+    public BuildingSummaryDto buildSummary(long buildingId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity building = ecsWorld.obtainEntity(buildingId);
+        Building buildingData = building.get(Building.class);
+        Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
+        EconomyBuildingType buildingTypeData = buildingType.get(EconomyBuildingType.class);
+        int levelsQueued = 0;
+        long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
+        if (expansionBuildingId != 0) {
+            Entity expansionBuilding = ecsWorld.obtainEntity(expansionBuildingId);
+            ExpansionBuilding expansionData = expansionBuilding.get(ExpansionBuilding.class);
+            levelsQueued = expansionData.levelsQueued();
+        }
+        boolean isSuspended = building.has(this.gameContext.getEcsConstants().suspended());
+        return new BuildingSummaryDto(buildingId, buildingType.getName(), buildingData.size(), buildingTypeData.maxLevel(), 0, levelsQueued, isSuspended);
     }
 
     public BuildingDto buildDetails(long buildingId) {

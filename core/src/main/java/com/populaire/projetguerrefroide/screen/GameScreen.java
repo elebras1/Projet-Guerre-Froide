@@ -133,7 +133,6 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
 
     @Override
     public void onNewDay(LocalDate date) {
-        this.commandBus.process();
         this.gameContext.getEcsWorld().progress(1f);
     }
 
@@ -204,6 +203,8 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
             this.inputHandler.handleInput();
             this.inputHandler.updateCamera();
         }
+
+        this.commandBus.process();
 
         for(Presenter presenter : this.presenters) {
             presenter.update(delta);

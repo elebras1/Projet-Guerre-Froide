@@ -211,6 +211,7 @@ public class EconomyPanel extends Table {
 
     private Table createRegionBlock(RegionDto region) {
         Table regionBlock = new Table();
+        regionBlock.setName("region_" + region.regionId());
 
         Table headerTable = this.createRegionHeader(region);
         Button minButton = headerTable.findActor("btn_min");
@@ -285,6 +286,7 @@ public class EconomyPanel extends Table {
     private Table createBuildingItem(BuildingSummaryDto building) {
         Table buildingTable = new ClickableTable();
         buildingTable.setUserObject(building.buildingId());
+        buildingTable.setName("building_" + building.buildingId());
         buildingTable.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -441,6 +443,57 @@ public class EconomyPanel extends Table {
         this.workersBar.setValue(buildingDto.amountWorkers(), buildingDto.maxWorkers());
 
         this.buildingSelectedTable.setVisible(true);
+    }
+
+    public long getSelectedBuildingId() {
+        return this.selectedBuildingId;
+    }
+
+    public void clearSelectedBuildingInfoBlock() {
+        this.selectedBuildingId = 0;
+        this.buildingSelectedTable.setVisible(false);
+    }
+
+    public void updateBuilding(long buildingId, BuildingSummaryDto dto) {
+        for (Actor regionActor : this.buildingRegionsTable.getChildren()) {
+            if (!(regionActor instanceof Table regionBlock)) continue;
+            Object userObj = regionBlock.getUserObject();
+            if (!(userObj instanceof Table buildingsGrid)) continue;
+            for (Actor actor : buildingsGrid.getChildren()) {
+                if (!(actor instanceof Table buildingCell)) continue;
+                if (!(buildingCell.getUserObject() instanceof Long id) || id != buildingId) continue;
+                this.refreshBuildingCell(buildingCell, dto);
+                return;
+            }
+        }
+    }
+
+    private void refreshBuildingCell(Table buildingCell, BuildingSummaryDto buildingSummaryDto) {
+        buildingCell.clearChildren();
+        Label.LabelStyle labelStyle = this.labelStylePool.get("jockey_16_glow_blue");
+        Label.LabelStyle labelSmall = this.labelStylePool.get("jockey_14_tight");
+        this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingCell);
+        this.widgetFactory.createImage(this.skin, "building_" + buildingSummaryDto.buildingNameId(), 10, 55, buildingCell);
+        Image suspendedImage = this.widgetFactory.createImage(38, 61, buildingCell);
+        if (buildingSummaryDto.isSuspended()) {
+            Drawable suspendedDrawable = this.skin.getDrawable("econmy_suspended_icon1");
+            suspendedImage.setDrawable(suspendedDrawable);
+            suspendedImage.setSize(suspendedDrawable.getMinWidth(), suspendedDrawable.getMinHeight());
+        }
+        this.widgetFactory.createLabelCentered(ValueFormatter.format(buildingSummaryDto.productionValue()), labelStyle, buildingCell.getWidth() / 2, 21, buildingCell);
+        String levelsQueuedText = buildingSummaryDto.levelsQueued() > 0 ? " (" + buildingSummaryDto.levelsQueued() + ")" : "";
+        String levelText = buildingSummaryDto.buildingValue() + levelsQueuedText + "/" + buildingSummaryDto.maxLevel();
+        this.widgetFactory.createLabelCentered(levelText, labelSmall, buildingCell.getWidth() / 2, 2, buildingCell);
+    }
+
+    public void updateRegion(RegionDto regionDto) {
+        for(int i = 0; i < this.buildingRegionsTable.getChildren().size; i++) {
+            Actor regionBlock = this.buildingRegionsTable.getChildren().get(i);
+            if(regionBlock.getName().equals("region_" + regionDto.regionId())) {
+                this.updateRegionBlock((Table) this.buildingRegionsTable.getChildren().get(i), regionDto);
+                break;
+            }
+        }
     }
 
     private void cleanupExcessActors(SnapshotArray<Actor> actors, int startIndex) {

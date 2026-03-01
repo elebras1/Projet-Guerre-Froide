@@ -10,6 +10,8 @@ import com.populaire.projetguerrefroide.command.request.ExpandBuildingCommand;
 import com.populaire.projetguerrefroide.command.request.ResumeBuildingCommand;
 import com.populaire.projetguerrefroide.command.request.SuspendBuildingCommand;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
+import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
+import com.populaire.projetguerrefroide.dto.RegionDto;
 import com.populaire.projetguerrefroide.dto.RegionsBuildingsDto;
 import com.populaire.projetguerrefroide.screen.GameFlowHandler;
 import com.populaire.projetguerrefroide.screen.listener.EconomyPanelListener;
@@ -29,6 +31,7 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
     private final Skin skinUi;
     private final Skin skinScrollbars;
     private EconomyPanel economyPanel;
+    private long pendingDemolishedRegionId;
 
     public EconomyPanelPresenter(GameContext gameContext, WorldService worldService, CommandBus commandBus, GameFlowHandler gameFlowHandler, WidgetFactory widgetFactory, Skin skinEconomy, Skin skinUi, Skin skinScrollbars) {
         this.gameContext = gameContext;
@@ -49,6 +52,31 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
         this.economyPanel.setVisible(false);
         centerTable.add(this.economyPanel).center();
         stage.addActor(centerTable);
+
+        this.commandBus.registerPostHandler(SuspendBuildingCommand.class, this::refreshSelectedBuilding);
+        this.commandBus.registerPostHandler(ResumeBuildingCommand.class, this::refreshSelectedBuilding);
+        this.commandBus.registerPostHandler(ExpandBuildingCommand.class, this::refreshSelectedBuilding);
+        this.commandBus.registerPostHandler(DemolishBuildingCommand.class, this::onBuildingDemolished);
+    }
+
+    private void refreshSelectedBuilding() {
+        long selectedId = this.economyPanel.getSelectedBuildingId();
+        if (selectedId == 0) {
+            return;
+        }
+        BuildingDto buildingDto = this.worldService.buildBuildingDetails(selectedId);
+        this.economyPanel.updateSelectedBuildingInfoBlock(buildingDto);
+        BuildingSummaryDto summaryDto = this.worldService.buildBuildingSummary(selectedId);
+        this.economyPanel.updateBuilding(selectedId, summaryDto);
+    }
+
+    private void onBuildingDemolished() {
+        this.economyPanel.clearSelectedBuildingInfoBlock();
+        if (this.pendingDemolishedRegionId != 0) {
+            RegionDto regionDto = this.worldService.buildRegionDto(this.pendingDemolishedRegionId);
+            this.economyPanel.updateRegion(regionDto);
+            this.pendingDemolishedRegionId = 0;
+        }
     }
 
     @Override
@@ -59,7 +87,7 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
 
     @Override
     public void onSortRegions(SortType sortType) {
-        RegionsBuildingsDto regionsBuildingsDto = this.worldService.prepareRegionsBuildingsDto(sortType);
+        RegionsBuildingsDto regionsBuildingsDto = this.worldService.buildRegionsBuildingsDto(sortType);
         this.economyPanel.setData(regionsBuildingsDto);
     }
 
@@ -86,6 +114,7 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
 
     @Override
     public void onDemolishBuildingClicked(long buildingId) {
+        this.pendingDemolishedRegionId = this.worldService.getRegionIdByBuildingId(buildingId);
         this.commandBus.dispatch(new DemolishBuildingCommand(buildingId));
     }
 
@@ -93,7 +122,7 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
     public void refresh() {
         this.economyPanel.setTouchable(Touchable.enabled);
         this.economyPanel.setVisible(true);
-        RegionsBuildingsDto regionsBuildingsDto = this.worldService.prepareRegionsBuildingsDto(SortType.DEFAULT);
+        RegionsBuildingsDto regionsBuildingsDto = this.worldService.buildRegionsBuildingsDto(SortType.DEFAULT);
         this.economyPanel.setData(regionsBuildingsDto);
     }
 

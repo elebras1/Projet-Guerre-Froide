@@ -129,6 +129,10 @@ public class WorldService {
         return this.buildingService.buildDetails(buildingId);
     }
 
+    public BuildingSummaryDto buildBuildingSummary(long buildingId) {
+        return this.buildingService.buildSummary(buildingId);
+    }
+
     public void changeMapMode(String mapMode) {
         this.mapService.changeMapMode(mapMode);
     }
@@ -168,8 +172,23 @@ public class WorldService {
         return this.provinceService.getResourceGatheringProduction(selectedProvince.getName());
     }
 
-    public RegionsBuildingsDto prepareRegionsBuildingsDto(SortType sortType) {
+    public RegionsBuildingsDto buildRegionsBuildingsDto(SortType sortType) {
         return this.countryService.buildRegionsBuildings(this.mapService.getPlayerCountryId(), sortType);
+    }
+
+    public RegionDto buildRegionDto(long regionId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity region = ecsWorld.obtainEntity(regionId);
+        return this.regionService.buildDetails(this.mapService.getPlayerCountryId(), region.id(), region.getName());
+    }
+
+    public long getRegionIdByBuildingId(long buildingId) {
+        World ecsWorld = this.gameContext.getEcsWorld();
+        Entity building = ecsWorld.obtainEntity(buildingId);
+        Building buildingData = building.get(Building.class);
+        Entity localMarket = ecsWorld.obtainEntity(buildingData.parentId());
+        LocalMarket localMarketData = localMarket.get(LocalMarket.class);
+        return localMarketData.regionId();
     }
 
     public String getColonizerId(long countryId) {

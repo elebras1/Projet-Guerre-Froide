@@ -9,7 +9,7 @@ public class ExpandBuildingSystem {
 
     public ExpandBuildingSystem(World ecsWorld) {
         this.ecsWorld = ecsWorld;
-        ecsWorld.system("ExpandBuildingSystem").kind(FlecsConstants.EcsOnUpdate).with(ExpansionBuilding.class).multiThreaded().iter(this::expand);
+        ecsWorld.system("ExpandBuildingSystem").kind(FlecsConstants.EcsOnUpdate).with(ExpansionBuilding.class).iter(this::expand);
     }
 
     private void expand(Iter iter) {

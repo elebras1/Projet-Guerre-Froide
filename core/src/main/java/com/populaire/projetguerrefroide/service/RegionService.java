@@ -11,6 +11,7 @@ import com.populaire.projetguerrefroide.pojo.Pair;
 import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class RegionService {
@@ -78,6 +79,8 @@ public class RegionService {
                 }
             }
         });
+
+        buildings.sort(Comparator.comparingLong(BuildingSummaryDto::buildingId));
 
         byte developpementIndexValue = this.calculateDeveloppementIndex();
         int buildingWorkerRatio = 0;
