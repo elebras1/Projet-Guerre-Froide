@@ -5,7 +5,6 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.utils.SnapshotArray;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
 import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
 import com.populaire.projetguerrefroide.dto.RegionDto;
@@ -193,20 +192,12 @@ public class EconomyPanel extends Table {
     }
 
     public void setData(RegionsBuildingsDto dto) {
-        SnapshotArray<Actor> currentActors = this.buildingRegionsTable.getChildren();
-        int index = 0;
+        this.buildingRegionsTable.clearChildren();
 
         for (RegionDto region : dto.regions()) {
-            if (index >= currentActors.size) {
-                Table newRegionBlock = this.createRegionBlock(region);
-                this.buildingRegionsTable.add(newRegionBlock).row();
-            } else {
-                this.updateRegionBlock((Table) currentActors.get(index), region);
-            }
-            index++;
+            Table newRegionBlock = this.createRegionBlock(region);
+            this.buildingRegionsTable.add(newRegionBlock).row();
         }
-
-        this.cleanupExcessActors(currentActors, index);
     }
 
     private Table createRegionBlock(RegionDto region) {
@@ -262,12 +253,6 @@ public class EconomyPanel extends Table {
 
     private Table createBuildingsGrid(List<BuildingSummaryDto> buildings) {
         Table buildingsTable = new Table();
-        this.rebuildBuildingsGrid(buildingsTable, buildings);
-        return buildingsTable;
-    }
-
-    private void rebuildBuildingsGrid(Table buildingsTable, List<BuildingSummaryDto> buildings) {
-        buildingsTable.clearChildren();
 
         int count = 0;
         for (BuildingSummaryDto building : buildings) {
@@ -281,6 +266,7 @@ public class EconomyPanel extends Table {
         }
 
         this.fillEmptySlots(buildingsTable, count);
+        return buildingsTable;
     }
 
     private Table createBuildingItem(BuildingSummaryDto building) {
@@ -355,46 +341,16 @@ public class EconomyPanel extends Table {
     }
 
     @SuppressWarnings("unchecked")
-    private void updateRegionBlock(Table regionBlock, RegionDto region) {
-        if (regionBlock.getChildren().size < 1) {
-            return;
-        }
-
-        Table header = (Table) regionBlock.getChild(0);
-
-        Label nameLabel = header.findActor("lbl_name");
-        Label devIndexLabel = header.findActor("lbl_dev_index");
-        Label popLabel = header.findActor("lbl_pop");
-        Label workLabel = header.findActor("lbl_work");
-
-        if (nameLabel != null) {
-            nameLabel.setText(this.localisation.get(region.regionId()));
-        }
-
-        if (devIndexLabel != null) {
-            devIndexLabel.setText(region.developpementIndexValue() + "%");
-        }
-        if (popLabel != null) {
-            popLabel.setText(ValueFormatter.format(region.populationAmount(), this.localisation));
-        }
-        if (workLabel != null) {
-            workLabel.setText(region.buildingWorkerAmount() + " (" + region.buildingWorkerRatio() + "%)");
-        }
-
-        Button minButton = header.findActor("btn_min");
-        Button maxButton = header.findActor("btn_max");
-
-        Table buildingsTable = (Table) regionBlock.getUserObject();
-
-        if (buildingsTable != null) {
-            this.rebuildBuildingsGrid(buildingsTable, region.buildings());
-        }
-
-        if (maxButton != null && maxButton.isVisible() && buildingsTable != null) {
-            Cell<Table> cell = regionBlock.getCells().get(1);
-            cell.setActor(buildingsTable);
-            if(minButton != null) minButton.setVisible(true);
-            maxButton.setVisible(false);
+    public void updateRegion(RegionDto regionDto) {
+        for (Cell<Table> cell : this.buildingRegionsTable.getCells()) {
+            Actor actor = cell.getActor();
+            if (actor != null && actor.getName() != null && actor.getName().equals("region_" + regionDto.regionId())) {
+                Table newRegionBlock = this.createRegionBlock(regionDto);
+                actor.remove();
+                cell.setActor(newRegionBlock);
+                this.buildingRegionsTable.invalidateHierarchy();
+                break;
+            }
         }
     }
 
@@ -484,24 +440,5 @@ public class EconomyPanel extends Table {
         String levelsQueuedText = buildingSummaryDto.levelsQueued() > 0 ? " (" + buildingSummaryDto.levelsQueued() + ")" : "";
         String levelText = buildingSummaryDto.buildingValue() + levelsQueuedText + "/" + buildingSummaryDto.maxLevel();
         this.widgetFactory.createLabelCentered(levelText, labelSmall, buildingCell.getWidth() / 2, 2, buildingCell);
-    }
-
-    public void updateRegion(RegionDto regionDto) {
-        for(int i = 0; i < this.buildingRegionsTable.getChildren().size; i++) {
-            Actor regionBlock = this.buildingRegionsTable.getChildren().get(i);
-            if(regionBlock.getName().equals("region_" + regionDto.regionId())) {
-                this.updateRegionBlock((Table) this.buildingRegionsTable.getChildren().get(i), regionDto);
-                break;
-            }
-        }
-    }
-
-    private void cleanupExcessActors(SnapshotArray<Actor> actors, int startIndex) {
-        while (startIndex < actors.size) {
-            actors.get(startIndex).remove();
-        }
-        for (int i = actors.size - 1; i >= startIndex; i--) {
-            actors.get(i).remove();
-        }
     }
 }
