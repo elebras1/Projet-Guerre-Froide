@@ -5,6 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.populaire.projetguerrefroide.command.CommandBus;
+import com.populaire.projetguerrefroide.command.request.BuildingLevelUpCommand;
 import com.populaire.projetguerrefroide.command.request.DemolishBuildingCommand;
 import com.populaire.projetguerrefroide.command.request.ExpandBuildingCommand;
 import com.populaire.projetguerrefroide.command.request.ResumeBuildingCommand;
@@ -57,6 +58,7 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
         this.commandBus.registerPostHandler(ResumeBuildingCommand.class, this::refreshSelectedBuilding);
         this.commandBus.registerPostHandler(ExpandBuildingCommand.class, this::refreshSelectedBuilding);
         this.commandBus.registerPostHandler(DemolishBuildingCommand.class, this::onBuildingDemolished);
+        this.commandBus.registerPostHandler(BuildingLevelUpCommand.class, this::onBuildingLevelUp);
     }
 
     private void refreshSelectedBuilding() {
@@ -129,6 +131,19 @@ public class EconomyPanelPresenter implements Presenter, EconomyPanelListener {
     @Override
     public void update(float delta) {
 
+    }
+
+    private void onBuildingLevelUp(BuildingLevelUpCommand command) {
+        if (!this.economyPanel.isVisible()) {
+            return;
+        }
+        long buildingId = command.buildingId();
+        BuildingSummaryDto summaryDto = this.worldService.buildBuildingSummary(buildingId);
+        this.economyPanel.updateBuilding(buildingId, summaryDto);
+        if (this.economyPanel.getSelectedBuildingId() == buildingId) {
+            BuildingDto buildingDto = this.worldService.buildBuildingDetails(buildingId);
+            this.economyPanel.updateSelectedBuildingInfoBlock(buildingDto);
+        }
     }
 
     @Override

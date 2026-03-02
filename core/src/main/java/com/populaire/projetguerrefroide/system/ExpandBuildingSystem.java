@@ -2,13 +2,17 @@ package com.populaire.projetguerrefroide.system;
 
 import com.github.elebras1.flecs.*;
 import com.github.elebras1.flecs.util.FlecsConstants;
+import com.populaire.projetguerrefroide.command.CommandBus;
+import com.populaire.projetguerrefroide.command.request.BuildingLevelUpCommand;
 import com.populaire.projetguerrefroide.component.*;
 
 public class ExpandBuildingSystem {
     private final World ecsWorld;
+    private final CommandBus commandBus;
 
-    public ExpandBuildingSystem(World ecsWorld) {
+    public ExpandBuildingSystem(World ecsWorld, CommandBus commandBus) {
         this.ecsWorld = ecsWorld;
+        this.commandBus = commandBus;
         ecsWorld.system("ExpandBuildingSystem").kind(FlecsConstants.EcsOnUpdate).with(ExpansionBuilding.class).iter(this::expand);
     }
 
@@ -22,6 +26,7 @@ public class ExpandBuildingSystem {
                 EntityView buildingTypeView = this.ecsWorld.obtainEntityView(buildingViewData.typeId());
                 int newSize = buildingViewData.size() + 1;
                 buildingViewData.size(newSize);
+                this.commandBus.dispatch(new BuildingLevelUpCommand(expansionBuildingDataView.buildingId()));
 
                 if(expansionBuildingDataView.levelsQueued() > 1) {
                     expansionBuildingDataView.levelsQueued(expansionBuildingDataView.levelsQueued() - 1);

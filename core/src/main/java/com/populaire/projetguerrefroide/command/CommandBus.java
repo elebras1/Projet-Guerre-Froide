@@ -7,10 +7,11 @@ import com.populaire.projetguerrefroide.command.request.Command;
 
 import java.util.Map;
 import java.util.Queue;
+import java.util.function.Consumer;
 
 public class CommandBus {
     private final Map<Class<? extends Command>, CommandHandler<? extends Command>> handlers;
-    private final Map<Class<? extends Command>, Runnable> postHandlers;
+    private final Map<Class<? extends Command>, Consumer<Command>> postHandlers;
     private final Queue<Command> commandQueue;
 
     public CommandBus() {
@@ -24,7 +25,12 @@ public class CommandBus {
     }
 
     public void registerPostHandler(Class<? extends Command> commandType, Runnable callback) {
-        this.postHandlers.put(commandType, callback);
+        this.postHandlers.put(commandType, _ -> callback.run());
+    }
+
+    @SuppressWarnings("unchecked")
+    public <C extends Command> void registerPostHandler(Class<C> commandType, Consumer<C> callback) {
+        this.postHandlers.put(commandType, (Consumer<Command>) callback);
     }
 
     public void dispatch(Command command) {
@@ -36,17 +42,16 @@ public class CommandBus {
         while(!this.commandQueue.isEmpty()) {
             Command command = this.commandQueue.poll();
             CommandHandler<Command> commandHandler = (CommandHandler<Command>) this.handlers.get(command.getClass());
-            if(commandHandler == null) {
-                continue;
+            if(commandHandler != null) {
+                try {
+                    commandHandler.handle(command);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-            try {
-                commandHandler.handle(command);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            Runnable postHandler = this.postHandlers.get(command.getClass());
+            Consumer<Command> postHandler = this.postHandlers.get(command.getClass());
             if(postHandler != null) {
-                postHandler.run();
+                postHandler.accept(command);
             }
         }
     }

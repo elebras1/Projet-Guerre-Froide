@@ -42,7 +42,8 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.setThreads(4);
         this.registerComponents();
         this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
-        ExpandBuildingSystem expandBuildingSystem = new ExpandBuildingSystem(this.ecsWorld);
+        CommandBus commandBus = new CommandBus();
+        ExpandBuildingSystem expandBuildingSystem = new ExpandBuildingSystem(this.ecsWorld, commandBus);
         QueryRepository queryRepository = new QueryRepository(this.gameContext.getEcsWorld(), this.gameContext.getEcsConstants());
         BuildingService buildingService = new BuildingService(this.gameContext, expandBuildingSystem);
         ResourceGatheringOperationSizeSystem rgoSizeSystem = new ResourceGatheringOperationSizeSystem(this.gameContext.getEcsWorld());
@@ -54,7 +55,6 @@ public class ProjetGuerreFroide extends Game {
         ProvinceService provinceService = new ProvinceService(this.gameContext, queryRepository, countryService, regionService);
         WorldService worldService = new WorldService(this.gameContext, queryRepository, buildingService, economyService, regionService, countryService, provinceService);
         TimeService timeService = new TimeService(this.gameContext.getBookmark().date());
-        CommandBus commandBus = new CommandBus();
         this.registerCommands(commandBus, buildingService);
         this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService, worldService, timeService, commandBus);
         this.loadAssets(this.gameContext.getAssetManager());
