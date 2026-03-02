@@ -342,11 +342,11 @@ public class EconomyPanel extends Table {
 
     @SuppressWarnings("unchecked")
     public void updateRegion(RegionDto regionDto) {
-        for (Cell<Table> cell : this.buildingRegionsTable.getCells()) {
+        for (int i = 0; i < this.buildingRegionsTable.getChildren().size; i++) {
+            Cell<Table> cell = this.buildingRegionsTable.getCells().get(i);
             Actor actor = cell.getActor();
             if (actor != null && actor.getName() != null && actor.getName().equals("region_" + regionDto.regionId())) {
                 Table newRegionBlock = this.createRegionBlock(regionDto);
-                actor.remove();
                 cell.setActor(newRegionBlock);
                 this.buildingRegionsTable.invalidateHierarchy();
                 break;
