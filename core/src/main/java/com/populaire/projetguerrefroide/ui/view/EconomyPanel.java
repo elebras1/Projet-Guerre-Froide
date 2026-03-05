@@ -412,12 +412,20 @@ public class EconomyPanel extends Table {
 
     public void updateBuilding(long buildingId, BuildingSummaryDto dto) {
         for (Actor regionActor : this.buildingRegionsTable.getChildren()) {
-            if (!(regionActor instanceof Table regionBlock)) continue;
+            if (!(regionActor instanceof Table regionBlock)) {
+                continue;
+            }
             Object userObj = regionBlock.getUserObject();
-            if (!(userObj instanceof Table buildingsGrid)) continue;
+            if (!(userObj instanceof Table buildingsGrid)) {
+                continue;
+            }
             for (Actor actor : buildingsGrid.getChildren()) {
-                if (!(actor instanceof Table buildingCell)) continue;
-                if (!(buildingCell.getUserObject() instanceof Long id) || id != buildingId) continue;
+                if (!(actor instanceof Table buildingCell)) {
+                    continue;
+                }
+                if (!(buildingCell.getUserObject() instanceof Long id) || id != buildingId) {
+                    continue;
+                }
                 this.refreshBuildingCell(buildingCell, dto);
                 return;
             }

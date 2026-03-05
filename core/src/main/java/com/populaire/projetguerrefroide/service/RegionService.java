@@ -1,7 +1,10 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.github.elebras1.flecs.*;
+import com.github.tommyettinger.ds.LongIntMap;
 import com.github.tommyettinger.ds.LongList;
+import com.github.tommyettinger.ds.LongOrderedSet;
+import com.github.tommyettinger.ds.LongSet;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
@@ -12,7 +15,9 @@ import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.util.BuildingUtils;
 
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RegionService {
     private final GameContext gameContext;
@@ -91,23 +96,67 @@ public class RegionService {
         return new RegionDto(regionNameId, populationAmount.getValue(), buildingWorkerAmount.getValue(), buildingWorkerRatio, developpementIndexValue, buildings);
     }
 
-    public int getPopulationAmount(long regionId) {
-        MutableInt population = new MutableInt(0);
+    public List<RegionDto> buildRegionsDetails(long countryId, LongOrderedSet regionIds, LongIntMap populationByRegion, World ecsWorld) {
+        Map<Long, List<BuildingSummaryDto>> buildingsByRegion = new HashMap<>();
+        Map<Long, Integer> workersByRegion = new HashMap<>();
 
-        Query query = this.queryRepository.getProvincesWithGeoHierarchy();
-        query.iter(iter -> {
-            Field<Province> provinceField = iter.field(Province.class, 0);
-            Field<GeoHierarchy> geoField = iter.field(GeoHierarchy.class, 1);
-            for(int i = 0; i < iter.count(); i++) {
-                ProvinceView provinceView = provinceField.getMutView(i);
-                GeoHierarchyView geoView = geoField.getMutView(i);
-                if (geoView.regionId() == regionId) {
-                    population.increment(provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors());
+        Query buildingQuery = this.queryRepository.getBuildings();
+        buildingQuery.iter(iter -> {
+            Field<Building> buildingField = iter.field(Building.class, 0);
+            for (int i = 0; i < iter.count(); i++) {
+                BuildingView buildingDataView = buildingField.getMutView(i);
+                EntityView parent = ecsWorld.obtainEntityView(buildingDataView.parentId());
+                if (!parent.has(LocalMarket.class)) {
+                    continue;
                 }
+                LocalMarketView localMarketDataView = parent.getMutView(LocalMarket.class);
+                if (localMarketDataView.ownerId() != countryId) {
+                    continue;
+                }
+                long regionId = localMarketDataView.regionId();
+                if (!regionIds.contains(regionId)) {
+                    continue;
+                }
+                EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingDataView.typeId());
+                if (!buildingTypeView.has(EconomyBuildingType.class)) {
+                    continue;
+                }
+                long buildingId = iter.entity(i);
+                int levelsQueued = 0;
+                long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
+                if (expansionBuildingId != 0) {
+                    EntityView expansionBuildingView = ecsWorld.obtainEntityView(expansionBuildingId);
+                    ExpansionBuildingView expansionBuildingDataView = expansionBuildingView.getMutView(ExpansionBuilding.class);
+                    levelsQueued = expansionBuildingDataView.levelsQueued();
+                }
+                EconomyBuildingTypeView economyBuildingTypeView = buildingTypeView.getMutView(EconomyBuildingType.class);
+                boolean isSuspended = ecsWorld.obtainEntityView(buildingId).has(this.gameContext.getEcsConstants().suspended());
+                BuildingSummaryDto building = new BuildingSummaryDto(buildingId, buildingTypeView.getName(), buildingDataView.size(), economyBuildingTypeView.maxLevel(), 0, levelsQueued, isSuspended);
+                int workers = this.buildingService.estimateWorkersForBuilding();
+
+                buildingsByRegion.computeIfAbsent(regionId, _ -> new ObjectList<>()).add(building);
+                workersByRegion.merge(regionId, workers, Integer::sum);
             }
         });
 
-        return population.getValue();
+        List<RegionDto> regions = new ObjectList<>(regionIds.size());
+        LongSet.LongSetIterator iterator = regionIds.iterator();
+        while (iterator.hasNext()) {
+            long regionId = iterator.nextLong();
+            Entity region = ecsWorld.obtainEntity(regionId);
+
+            int population = populationByRegion.getOrDefault(regionId, 0);
+            int workerAmount = workersByRegion.getOrDefault(regionId, 0);
+            int workerRatio = population > 0 ? (int) ((workerAmount * 100.0f) / population) : 0;
+
+            List<BuildingSummaryDto> buildings = buildingsByRegion.getOrDefault(regionId, new ObjectList<>());
+            buildings.sort(Comparator.comparingLong(BuildingSummaryDto::buildingId));
+
+            byte developpementIndexValue = this.calculateDeveloppementIndex();
+            regions.add(new RegionDto(region.getName(), population, workerAmount, workerRatio, developpementIndexValue, buildings));
+        }
+
+        return regions;
     }
 
     public List<String> getColorBuildingsOrderByLevel(long regionId, long ownerId) {

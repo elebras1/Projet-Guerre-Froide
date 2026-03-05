@@ -4,8 +4,8 @@ import com.github.elebras1.flecs.Entity;
 import com.github.elebras1.flecs.Field;
 import com.github.elebras1.flecs.Query;
 import com.github.elebras1.flecs.World;
+import com.github.tommyettinger.ds.LongIntMap;
 import com.github.tommyettinger.ds.LongOrderedSet;
-import com.github.tommyettinger.ds.LongSet;
 import com.github.tommyettinger.ds.ObjectList;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.CountryDto;
@@ -69,26 +69,23 @@ public class CountryService {
         World ecsWorld = this.gameContext.getEcsWorld();
 
         LongOrderedSet regionIds = new LongOrderedSet();
+        LongIntMap populationByRegion = new LongIntMap();
         Query query = this.queryRepository.getProvincesWithGeoHierarchy();
         query.iter(iter -> {
             Field<Province> provinceField = iter.field(Province.class, 0);
             Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
-            for(int i = 0; i < iter.count(); i++) {
+            for (int i = 0; i < iter.count(); i++) {
                 ProvinceView provinceView = provinceField.getMutView(i);
-                if(countryId == provinceView.ownerId()) {
+                if (countryId == provinceView.ownerId()) {
                     GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
-                    regionIds.add(geoHierarchyView.regionId());
+                    long regionId = geoHierarchyView.regionId();
+                    regionIds.add(regionId);
+                    populationByRegion.getAndIncrement(regionId, 0, provinceView.amountAdults());
                 }
             }
         });
 
-        List<RegionDto> regions = new ObjectList<>();
-        LongSet.LongSetIterator iterator = regionIds.iterator();
-        while(iterator.hasNext()) {
-            Entity region = ecsWorld.obtainEntity(iterator.nextLong());
-            RegionDto regionData = this.regionService.buildDetails(countryId, region.id(), region.getName());
-            regions.add(regionData);
-        }
+        List<RegionDto> regions = this.regionService.buildRegionsDetails(countryId, regionIds, populationByRegion, ecsWorld);
 
         this.sortRegions(regions, sortType);
 
