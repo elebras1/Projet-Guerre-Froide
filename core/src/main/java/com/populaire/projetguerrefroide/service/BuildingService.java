@@ -34,7 +34,12 @@ public class BuildingService {
             levelsQueued = expansionData.levelsQueued();
         }
         boolean isSuspended = building.has(this.gameContext.getEcsConstants().suspended());
-        return new BuildingSummaryDto(buildingId, buildingType.getName(), buildingData.size(), buildingTypeData.maxLevel(), 0, levelsQueued, isSuspended);
+        float productionValue = 0f;
+        if (building.has(EconomyBuilding.class)) {
+            EconomyBuilding economy = building.get(EconomyBuilding.class);
+            productionValue = economy.production();
+        }
+        return new BuildingSummaryDto(buildingId, buildingType.getName(), buildingData.size(), buildingTypeData.maxLevel(), productionValue, levelsQueued, isSuspended);
     }
 
     public BuildingDto buildDetails(long buildingId) {

@@ -76,7 +76,7 @@ public class RegionService {
                     if (buildingTypeView.has(EconomyBuildingType.class)) {
                         EconomyBuildingTypeView economyBuildingTypeView = buildingTypeView.getMutView(EconomyBuildingType.class);
                         boolean isSuspended = buildingView.has(this.gameContext.getEcsConstants().suspended());
-                        BuildingSummaryDto building = new BuildingSummaryDto(buildingId, buildingTypeView.getName(), buildingDataView.size(), economyBuildingTypeView.maxLevel(), 0, levelsQueued, isSuspended);
+                        BuildingSummaryDto building = this.buildingService.buildSummary(buildingId);
                         int workers = this.buildingService.estimateWorkersForBuilding();
                         buildingWorkerAmount.increment(workers);
                         buildings.add(building);
@@ -131,7 +131,7 @@ public class RegionService {
                 }
                 EconomyBuildingTypeView economyBuildingTypeView = buildingTypeView.getMutView(EconomyBuildingType.class);
                 boolean isSuspended = ecsWorld.obtainEntityView(buildingId).has(this.gameContext.getEcsConstants().suspended());
-                BuildingSummaryDto building = new BuildingSummaryDto(buildingId, buildingTypeView.getName(), buildingDataView.size(), economyBuildingTypeView.maxLevel(), 0, levelsQueued, isSuspended);
+                BuildingSummaryDto building = this.buildingService.buildSummary(buildingId);
                 int workers = this.buildingService.estimateWorkersForBuilding();
 
                 buildingsByRegion.computeIfAbsent(regionId, _ -> new ObjectList<>()).add(building);

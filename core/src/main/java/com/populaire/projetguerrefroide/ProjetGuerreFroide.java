@@ -19,6 +19,9 @@ import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.*;
 import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
+import com.populaire.projetguerrefroide.system.economy.BuildingConsumeSystem;
+import com.populaire.projetguerrefroide.system.economy.LocalMarketBalanceSystem;
+import com.populaire.projetguerrefroide.system.economy.ResetLocalMarketSystem;
 import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationHireSystem;
 import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationProduceSystem;
 import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationSizeSystem;
@@ -49,7 +52,10 @@ public class ProjetGuerreFroide extends Game {
         ResourceGatheringOperationSizeSystem rgoSizeSystem = new ResourceGatheringOperationSizeSystem(this.gameContext.getEcsWorld());
         ResourceGatheringOperationHireSystem rgoHireSystem = new ResourceGatheringOperationHireSystem(this.gameContext.getEcsWorld());
         ResourceGatheringOperationProduceSystem rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld());
-        EconomyService economyService = new EconomyService(this.gameContext, rgoSizeSystem, rgoHireSystem, rgoProduceSystem);
+        ResetLocalMarketSystem resetLocalMarketSystem = new ResetLocalMarketSystem(this.gameContext.getEcsWorld());
+        BuildingConsumeSystem buildingConsumeSystem = new BuildingConsumeSystem(this.gameContext.getEcsWorld(), this.gameContext);
+        LocalMarketBalanceSystem localMarketBalanceSystem = new LocalMarketBalanceSystem(this.gameContext.getEcsWorld());
+        EconomyService economyService = new EconomyService(this.gameContext, rgoSizeSystem, rgoHireSystem, rgoProduceSystem, resetLocalMarketSystem, buildingConsumeSystem, localMarketBalanceSystem);
         RegionService regionService = new RegionService(this.gameContext, buildingService, queryRepository);
         CountryService countryService = new CountryService(this.gameContext, queryRepository, regionService);
         ProvinceService provinceService = new ProvinceService(this.gameContext, queryRepository, countryService, regionService);
@@ -89,7 +95,8 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(SpecialBuildingType.class);
         this.ecsWorld.component(DevelopmentBuildingType.class);
         this.ecsWorld.component(Building.class);
-        this.ecsWorld.component(BuildingEconomy.class);
+        this.ecsWorld.component(EconomyBuilding.class);
+        this.ecsWorld.component(SpecialBuilding.class);
         this.ecsWorld.component(PopulationTemplate.class);
         this.ecsWorld.component(CultureDistribution.class);
         this.ecsWorld.component(PopulationDistribution.class);
@@ -97,6 +104,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(ResourceGathering.class);
         this.ecsWorld.component(ExpansionBuilding.class);
         this.ecsWorld.component(LocalMarket.class);
+        this.ecsWorld.component(LocalMarketState.class);
     }
 
     public void registerCommands(CommandBus commandBus, BuildingService buildingService) {

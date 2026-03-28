@@ -86,7 +86,7 @@ public class WorldDaoImpl implements WorldDao {
         Borders borders = new Borders();
         this.loadProvinces(ecsWorld, ecsConstants, provinces, borders);
 
-        return new WorldData(provinces, borders);
+        return new WorldData(provinces, borders, this.goodIds);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -1036,16 +1036,23 @@ public class WorldDaoImpl implements WorldDao {
                         EntityView localMarket = ecsWorld.obtainEntityView(localMarketId);
                         if(!localMarket.has(LocalMarket.class)) {
                             localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[40], new float[40]));
+                            localMarket.set(new LocalMarketState(new float[40]));
                         }
                         provinceEntity.set(new GeoHierarchy(regionEntityId, -1, localMarketId));
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
                             for(var buildingEntry : regionBuildingIds) {
-                                long buildingId = buildingEntry.key;
+                                long buildingTypeId = buildingEntry.key;
                                 int size = buildingEntry.value;
                                 EntityView building = ecsWorld.obtainEntityView(ecsWorld.entity());
-                                building.set(new Building(localMarketId, buildingId, size));
-                                building.set(new BuildingEconomy(0f, 0f, new int[12]));
+                                EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
+                                building.set(new Building(localMarketId, buildingTypeId, size));
+                                if(buildingType.has(EconomyBuildingType.class)) {
+                                    building.set(new EconomyBuilding(0f, 0f, new int[12]));
+                                } else if (buildingType.has(SpecialBuildingType.class)) {
+                                    building.set(new SpecialBuilding());
+
+                                }
                             }
                         }
                     } else {

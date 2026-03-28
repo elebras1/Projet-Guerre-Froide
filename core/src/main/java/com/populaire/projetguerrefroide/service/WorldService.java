@@ -38,6 +38,7 @@ public class WorldService {
 
     public void createWorld() {
         WorldData worldData = this.worldDao.createWorld(this.gameContext);
+        this.gameContext.setGoodIds(worldData.goodIds());
         this.mapService = new MapService(this.gameContext, this.queryRepository, new MapDaoImpl(), this.countryService, worldData.provinces(), worldData.borders());
         this.gameContext.getEcsWorld().shrink();
     }
