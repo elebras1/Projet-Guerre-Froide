@@ -1024,21 +1024,21 @@ public class WorldDaoImpl implements WorldDao {
             for(var regionEntry : regionValue.object()) {
                 String regionId = regionEntry.getKey();
                 long regionEntityId = ecsWorld.entity(regionId);
-                EntityView regionEntity = ecsWorld.obtainEntityView(regionEntityId);
-                regionEntity.add(ecsConstants.regionTag());
+                EntityView region = ecsWorld.obtainEntityView(regionEntityId);
+                region.add(ecsConstants.regionTag());
                 for(var provinceValue : regionEntry.getValue().array()) {
                     int provinceId = (int) provinceValue.asLong();
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
-                    EntityView provinceEntity = provinceEntityId != 0 ? ecsWorld.obtainEntityView(provinceEntityId) : null;
-                    if(provinceEntityId != 0 && provinceEntity.has(Province.class)) {
-                        ProvinceView provinceData = provinceEntity.getMutView(Province.class);
-                        long localMarketId = ecsWorld.entity();
+                    EntityView province = provinceEntityId != 0 ? ecsWorld.obtainEntityView(provinceEntityId) : null;
+                    if(provinceEntityId != 0 && province.has(Province.class)) {
+                        ProvinceView provinceData = province.getMutView(Province.class);
+                        long localMarketId = ecsWorld.entity("local_market_" + region.id() + "_" + provinceData.ownerId());
                         EntityView localMarket = ecsWorld.obtainEntityView(localMarketId);
                         if(!localMarket.has(LocalMarket.class)) {
                             localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[40], new float[40]));
                             localMarket.set(new LocalMarketState(new float[40]));
                         }
-                        provinceEntity.set(new GeoHierarchy(regionEntityId, -1, localMarketId));
+                        province.set(new GeoHierarchy(regionEntityId, -1, localMarketId));
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
                             for(var buildingEntry : regionBuildingIds) {
@@ -1057,8 +1057,8 @@ public class WorldDaoImpl implements WorldDao {
                         }
                     } else {
                         provinceEntityId = ecsWorld.entity(String.valueOf(provinceId));
-                        provinceEntity = ecsWorld.obtainEntityView(provinceEntityId);
-                        provinceEntity.add(ecsConstants.seaProvinceTag());
+                        province = ecsWorld.obtainEntityView(provinceEntityId);
+                        province.add(ecsConstants.seaProvinceTag());
                     }
                 }
             }
