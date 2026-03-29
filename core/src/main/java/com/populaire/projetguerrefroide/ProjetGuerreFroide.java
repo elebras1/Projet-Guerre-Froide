@@ -25,6 +25,7 @@ import com.populaire.projetguerrefroide.system.economy.*;
 public class ProjetGuerreFroide extends Game {
     public static final int WORLD_WIDTH = 5616;
     public static final int WORLD_HEIGHT = 2160;
+    public static final int GOOD_COUNT = 40;
     private final ConfigurationService configurationService;
     private ScreenManager screenManager;
     private GameContext gameContext;
@@ -46,10 +47,10 @@ public class ProjetGuerreFroide extends Game {
         BuildingService buildingService = new BuildingService(this.gameContext, expandBuildingSystem);
         ResourceGatheringOperationSizeSystem rgoSizeSystem = new ResourceGatheringOperationSizeSystem(this.gameContext.getEcsWorld());
         ResourceGatheringOperationHireSystem rgoHireSystem = new ResourceGatheringOperationHireSystem(this.gameContext.getEcsWorld());
-        ResourceGatheringOperationProduceSystem rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld());
-        ResetLocalMarketSystem resetLocalMarketSystem = new ResetLocalMarketSystem(this.gameContext.getEcsWorld());
+        ResourceGatheringOperationProduceSystem rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld(), this.gameContext);
+        ResetLocalMarketSystem resetLocalMarketSystem = new ResetLocalMarketSystem(this.gameContext.getEcsWorld(), this.gameContext);
         BuildingConsumeSystem buildingConsumeSystem = new BuildingConsumeSystem(this.gameContext.getEcsWorld(), this.gameContext);
-        LocalMarketBalanceSystem localMarketBalanceSystem = new LocalMarketBalanceSystem(this.gameContext.getEcsWorld());
+        LocalMarketBalanceSystem localMarketBalanceSystem = new LocalMarketBalanceSystem(this.gameContext.getEcsWorld(), this.gameContext);
         EconomyService economyService = new EconomyService(this.gameContext, rgoSizeSystem, rgoHireSystem, rgoProduceSystem, resetLocalMarketSystem, buildingConsumeSystem, localMarketBalanceSystem);
         RegionService regionService = new RegionService(this.gameContext, buildingService, queryRepository);
         CountryService countryService = new CountryService(this.gameContext, queryRepository, regionService);
@@ -100,6 +101,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(ExpansionBuilding.class);
         this.ecsWorld.component(LocalMarket.class);
         this.ecsWorld.component(LocalMarketState.class);
+        this.ecsWorld.component(LocalMarketIndex.class);
     }
 
     public void registerCommands(CommandBus commandBus, BuildingService buildingService) {

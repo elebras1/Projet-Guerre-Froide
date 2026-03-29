@@ -12,7 +12,6 @@ public class ResourceGatheringOperationSizeSystem {
             .with(Province.class)
             .with(ResourceGathering.class)
             .with(PopulationDistribution.class)
-            .multiThreaded()
             .iter(this::size);
     }
 

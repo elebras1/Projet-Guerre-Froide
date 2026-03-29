@@ -13,6 +13,7 @@ import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.pojo.Borders;
 import com.populaire.projetguerrefroide.pojo.WorldData;
+import com.populaire.projetguerrefroide.service.EconomyRuntime;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.ForceTypeUtils;
@@ -69,6 +70,7 @@ public class WorldDaoImpl implements WorldDao {
     public WorldData createWorld(GameContext gameContext) {
         World ecsWorld = gameContext.getEcsWorld();
         EcsConstants ecsConstants = gameContext.getEcsConstants();
+        EconomyRuntime economyRuntime = gameContext.getEconomyRuntime();
         this.readIdeologies(ecsWorld);
         this.readLaws(ecsWorld, ecsConstants);
         this.readGovernments(ecsWorld);
@@ -83,7 +85,7 @@ public class WorldDaoImpl implements WorldDao {
         this.loadCountries(ecsWorld, ecsConstants);
         this.readTerrains(ecsWorld);
         IntLongMap provinces = new IntLongMap(15000, 1f);
-        Borders borders = this.loadProvinces(ecsWorld, ecsConstants, provinces);
+        Borders borders = this.loadProvinces(ecsWorld, ecsConstants, economyRuntime, provinces);
 
         return new WorldData(provinces, borders, this.goodIds);
     }
@@ -820,11 +822,11 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private Borders loadProvinces(World ecsWorld, EcsConstants ecsConstants, IntLongMap provinces) {
+    private Borders loadProvinces(World ecsWorld, EcsConstants ecsConstants, EconomyRuntime economyRuntime, IntLongMap provinces) {
         IntObjectMap<LongIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
         this.readPopulationTemplates(ecsWorld);
         this.readProvinces(ecsWorld, regionBuildingsByProvince);
-        this.readRegion(ecsWorld, ecsConstants, regionBuildingsByProvince);
+        this.readRegion(ecsWorld, ecsConstants, economyRuntime, regionBuildingsByProvince);
         this.readDefinition(ecsWorld, provinces);
         Borders border = this.readProvinceBitmap(ecsWorld, provinces);
         this.readCountriesHistory(ecsWorld);
@@ -1018,7 +1020,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readRegion(World ecsWorld, EcsConstants ecsConstants, IntObjectMap<LongIntMap> regionBuildingsByProvince) {
+    private void readRegion(World ecsWorld, EcsConstants ecsConstants, EconomyRuntime economyRuntime, IntObjectMap<LongIntMap> regionBuildingsByProvince) {
         try {
             JsonValue regionValue = this.parseJsonFile(this.regionJsonFiles);
             for(var regionEntry : regionValue.object()) {
@@ -1035,10 +1037,12 @@ public class WorldDaoImpl implements WorldDao {
                         long localMarketId = ecsWorld.entity("local_market_" + region.id() + "_" + provinceData.ownerId());
                         EntityView localMarket = ecsWorld.obtainEntityView(localMarketId);
                         if(!localMarket.has(LocalMarket.class)) {
-                            localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[40], new float[40]));
+                            int localMarketIndex = economyRuntime.registerLocalMarket();
+                            localMarket.set(new LocalMarket(localMarketIndex, regionEntityId, provinceData.ownerId(), new float[40], new float[40]));
                             localMarket.set(new LocalMarketState(new float[40]));
                         }
-                        province.set(new GeoHierarchy(regionEntityId, -1, localMarketId));
+                        LocalMarketView localMarketData = localMarket.getMutView(LocalMarket.class);
+                        province.set(new GeoHierarchy(regionEntityId, -1, localMarketData.index()));
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
                             for(var buildingEntry : regionBuildingIds) {
@@ -1047,6 +1051,7 @@ public class WorldDaoImpl implements WorldDao {
                                 EntityView building = ecsWorld.obtainEntityView(ecsWorld.entity());
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
                                 building.set(new Building(localMarketId, buildingTypeId, size));
+                                building.set(new LocalMarketIndex(localMarketData.index()));
                                 if(buildingType.has(EconomyBuildingType.class)) {
                                     EconomyBuildingTypeView buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
                                     int[] goodInputIndexes = new int[8];
@@ -1232,8 +1237,8 @@ public class WorldDaoImpl implements WorldDao {
                     int provinceId = (int) provinceEntry.asLong();
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                     EntityView provinceEntity = ecsWorld.obtainEntityView(provinceEntityId);
-                    GeoHierarchyView geoHierarchy = provinceEntity.getMutView(GeoHierarchy.class);
-                    provinceEntity.set(new GeoHierarchy(geoHierarchy.regionId(), continentEntityId, geoHierarchy.localMarketId()));
+                    provinceEntity.set(GeoHierarchy.class, (GeoHierarchyView geoHierarchyView) ->
+                        geoHierarchyView.continentId(continentEntityId));
                 }
             }
         } catch (IOException ioException) {

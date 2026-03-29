@@ -3,18 +3,19 @@ package com.populaire.projetguerrefroide.system.economy;
 import com.github.elebras1.flecs.*;
 import com.github.elebras1.flecs.util.FlecsConstants;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.service.EconomyRuntime;
+import com.populaire.projetguerrefroide.service.GameContext;
 
 public class ResourceGatheringOperationProduceSystem {
-    private final World ecsWorld;
+    private final EconomyRuntime economyRuntime;
 
-    public ResourceGatheringOperationProduceSystem(World ecsWorld) {
-        this.ecsWorld = ecsWorld;
+    public ResourceGatheringOperationProduceSystem(World ecsWorld, GameContext gameContext) {
+        this.economyRuntime = gameContext.getEconomyRuntime();
         ecsWorld.system("RGOProduceSystem")
             .kind(FlecsConstants.EcsOnUpdate)
             .with(Province.class)
             .with(ResourceGathering.class)
             .with(GeoHierarchy.class)
-            .multiThreaded()
             .iter(this::produce);
     }
 
@@ -42,11 +43,7 @@ public class ResourceGatheringOperationProduceSystem {
             float production = baseProduction * throughput;
 
             resourceGatheringView.production(production);
-
-            EntityView localMarketView = this.ecsWorld.obtainEntityView(geoHierarchyView.localMarketId());
-            LocalMarketView localMarketDataView = localMarketView.getMutView(LocalMarket.class);
-
-            localMarketDataView.goodProductions(goodIndex, localMarketDataView.goodProductions(goodIndex) + production);
+            this.economyRuntime.addMarketGoodProductions(geoHierarchyView.localMarketIndex(), goodIndex, production);
         }
     }
 }

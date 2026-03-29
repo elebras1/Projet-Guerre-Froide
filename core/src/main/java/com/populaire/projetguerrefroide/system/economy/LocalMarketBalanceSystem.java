@@ -3,10 +3,14 @@ package com.populaire.projetguerrefroide.system.economy;
 import com.github.elebras1.flecs.*;
 import com.github.elebras1.flecs.util.FlecsConstants;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.service.EconomyRuntime;
+import com.populaire.projetguerrefroide.service.GameContext;
 
 public class LocalMarketBalanceSystem {
+    private final EconomyRuntime economyRuntime;
 
-    public LocalMarketBalanceSystem(World ecsWorld) {
+    public LocalMarketBalanceSystem(World ecsWorld, GameContext gameContext) {
+        this.economyRuntime = gameContext.getEconomyRuntime();
         ecsWorld.system("LocalMarketBalanceSystem")
             .kind(FlecsConstants.EcsOnUpdate)
             .with(LocalMarket.class)
@@ -21,15 +25,18 @@ public class LocalMarketBalanceSystem {
             LocalMarketView localMarket = localMarketField.getMutView(i);
             LocalMarketStateView localMarketState = stateField.getMutView(i);
             for (int goodIndex = 0; goodIndex < localMarket.goodProductionsLength(); goodIndex++) {
-                float supply = localMarket.goodProductions(goodIndex);
-                float demand = localMarket.goodConsumptions(goodIndex);
+
+                float production = this.economyRuntime.getMarketGoodProduction(localMarket.index(), goodIndex);
+                float consumption = this.economyRuntime.getMarketGoodConsumption(localMarket.index(), goodIndex);
+                localMarket.goodProductions(goodIndex, production);
+                localMarket.goodConsumptions(goodIndex, consumption);
                 float multiplier;
-                if (demand <= 0f) {
+                if (consumption <= 0f) {
                     multiplier = 1f;
-                } else if (supply >= demand) {
+                } else if (production >= consumption) {
                     multiplier = 1f;
                 } else {
-                    multiplier = supply / demand;
+                    multiplier = production / consumption;
                 }
                 localMarketState.throughputMultipliers(goodIndex, multiplier);
             }
