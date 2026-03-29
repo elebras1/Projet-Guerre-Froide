@@ -9,10 +9,16 @@ public class ResourceGatheringOperationProduceSystem {
 
     public ResourceGatheringOperationProduceSystem(World ecsWorld) {
         this.ecsWorld = ecsWorld;
-        ecsWorld.system("RGOProduceSystem").kind(FlecsConstants.EcsOnUpdate).with(Province.class).with(ResourceGathering.class).with(GeoHierarchy.class).multiThreaded().iter(this::process);
+        ecsWorld.system("RGOProduceSystem")
+            .kind(FlecsConstants.EcsOnUpdate)
+            .with(Province.class)
+            .with(ResourceGathering.class)
+            .with(GeoHierarchy.class)
+            .multiThreaded()
+            .iter(this::produce);
     }
 
-    public void process(Iter iter) {
+    public void produce(Iter iter) {
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 1);
         Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 2);
         for (int i = 0; i < iter.count(); i++) {

@@ -7,7 +7,13 @@ import com.populaire.projetguerrefroide.component.*;
 public class ResourceGatheringOperationHireSystem {
 
     public ResourceGatheringOperationHireSystem(World ecsWorld) {
-        ecsWorld.system("RGOHireSystem").kind(FlecsConstants.EcsOnUpdate).with(Province.class).with(ResourceGathering.class).with(PopulationDistribution.class).multiThreaded().iter(this::hire);
+        ecsWorld.system("RGOHireSystem")
+            .kind(FlecsConstants.EcsOnUpdate)
+            .with(Province.class)
+            .with(ResourceGathering.class)
+            .with(PopulationDistribution.class)
+            .multiThreaded()
+            .iter(this::hire);
     }
 
     public void hire(Iter iter) {

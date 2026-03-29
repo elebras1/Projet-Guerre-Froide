@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
-import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Vector4;
 import com.badlogic.gdx.utils.Disposable;
 import com.github.elebras1.flecs.*;
@@ -195,7 +194,7 @@ public class MapRenderer implements Disposable {
                         Position position = positionEntity.get(Position.class);
                         positionsProvinces.add(position.x());
                         positionsProvinces.add(position.y());
-                        pixelsBorderProvinces.addAll(Arrays.copyOfRange(borders.getPixels(), border.startIndex(), border.endIndex()));
+                        pixelsBorderProvinces.addAll(Arrays.copyOfRange(borders.pixels(), border.startIndex(), border.endIndex()));
                     }
                     mapLabelService.generateData(countryName, pixelsBorderProvinces, positionsProvinces, vertices, indices);
                 }

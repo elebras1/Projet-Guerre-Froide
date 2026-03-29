@@ -2,13 +2,6 @@ package com.populaire.projetguerrefroide.service;
 
 import com.populaire.projetguerrefroide.system.economy.*;
 
-/**
- * Orchestre la pipeline économique complète :
- *   PreUpdate : ResetLocalMarketSystem
- *   OnUpdate  : RGOSizeSystem (EcsOnStart) → RGOHireSystem → RGOProduceSystem
- *             → BuildingConsumeSystem → LocalMarketBalanceSystem
- *             → GoodPriceSystem → BuildingRevenueSystem
- */
 public class EconomyService {
     private final GameContext gameContext;
     private final ResourceGatheringOperationSizeSystem rgoSizeSystem;

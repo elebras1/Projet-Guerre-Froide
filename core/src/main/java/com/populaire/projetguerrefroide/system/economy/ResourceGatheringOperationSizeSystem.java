@@ -7,10 +7,16 @@ import com.populaire.projetguerrefroide.component.*;
 public class ResourceGatheringOperationSizeSystem {
 
     public ResourceGatheringOperationSizeSystem(World ecsWorld) {
-        ecsWorld.system("RGOSizeSystem").kind(FlecsConstants.EcsOnStart).with(Province.class).with(ResourceGathering.class).with(PopulationDistribution.class).multiThreaded().iter(this::process);
+        ecsWorld.system("RGOSizeSystem")
+            .kind(FlecsConstants.EcsOnStart)
+            .with(Province.class)
+            .with(ResourceGathering.class)
+            .with(PopulationDistribution.class)
+            .multiThreaded()
+            .iter(this::size);
     }
 
-    private void process(Iter iter) {
+    private void size(Iter iter) {
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 1);
         Field<PopulationDistribution> populationDistributionField = iter.field(PopulationDistribution.class, 2);
         for (int i = 0; i < iter.count(); i++) {

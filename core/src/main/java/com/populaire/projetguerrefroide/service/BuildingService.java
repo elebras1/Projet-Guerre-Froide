@@ -58,19 +58,19 @@ public class BuildingService {
                 goodCostNameIds[i] = goodEntity.getName();
             }
         }
-        String[] inputGoodNameIds = new String[buildingTypeData.inputGoodIds().length];
-        for(int i = 0; i < buildingTypeData.inputGoodIds().length; i++) {
-            long goodId = buildingTypeData.inputGoodIds()[i];
+        String[] inputGoodNameIds = new String[buildingTypeData.goodInputIds().length];
+        for(int i = 0; i < buildingTypeData.goodInputIds().length; i++) {
+            long goodId = buildingTypeData.goodInputIds()[i];
             if(goodId != 0) {
                 Entity goodEntity = ecsWorld.obtainEntity(goodId);
                 inputGoodNameIds[i] = goodEntity.getName();
             }
         }
-        Entity outputGoodEntity = ecsWorld.obtainEntity(buildingTypeData.outputGoodId());
+        Entity outputGoodEntity = ecsWorld.obtainEntity(buildingTypeData.goodOutputId());
         String outputGoodNameId = outputGoodEntity.getName();
         int amountWorkers = this.getAmountWorkers(productionType);
         int maxWorkers = this.getMaxWorkers(buildingTypeData, buildingData.size());
-        return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostValues(), inputGoodNameIds, buildingTypeData.inputGoodValues(), outputGoodNameId, buildingTypeData.outputGoodValue(), amountWorkers, maxWorkers, building.has(this.gameContext.getEcsConstants().suspended()));
+        return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostValues(), inputGoodNameIds, buildingTypeData.goodInputValues(), outputGoodNameId, buildingTypeData.goodOutputValue(), amountWorkers, maxWorkers, building.has(this.gameContext.getEcsConstants().suspended()));
     }
 
     public void demolishBuilding(long buildingId) {

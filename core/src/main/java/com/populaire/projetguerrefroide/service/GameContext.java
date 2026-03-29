@@ -21,7 +21,6 @@ public class GameContext implements Disposable {
     private final ColorDrawablePool colorTexturePool;
     private final Map<String, String> localisation;
     private Settings settings;
-    private long[] goodIds;
 
     public GameContext(World ecsWorld, Bookmark bookmark, AssetManager assetManager, CursorManager cursorManager, Settings settings, LabelStylePool labelStylePool) {
         this.ecsWorld = ecsWorld;
@@ -77,26 +76,6 @@ public class GameContext implements Disposable {
 
     public void putAllLocalisation(Map<String, String> localisation) {
         this.localisation.putAll(localisation);
-    }
-
-    public long[] getGoodIds() {
-        return this.goodIds;
-    }
-
-    public void setGoodIds(long[] goodIds) {
-        this.goodIds = goodIds;
-    }
-
-    public int getGoodIndex(long goodId) {
-        if (this.goodIds == null) {
-            return -1;
-        }
-        for (int i = 0; i < this.goodIds.length; i++) {
-            if (this.goodIds[i] == goodId) {
-                return i;
-            }
-        }
-        return -1;
     }
 
     @Override

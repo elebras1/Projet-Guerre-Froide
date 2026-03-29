@@ -83,8 +83,7 @@ public class WorldDaoImpl implements WorldDao {
         this.loadCountries(ecsWorld, ecsConstants);
         this.readTerrains(ecsWorld);
         IntLongMap provinces = new IntLongMap(15000, 1f);
-        Borders borders = new Borders();
-        this.loadProvinces(ecsWorld, ecsConstants, provinces, borders);
+        Borders borders = this.loadProvinces(ecsWorld, ecsConstants, provinces);
 
         return new WorldData(provinces, borders, this.goodIds);
     }
@@ -411,7 +410,7 @@ public class WorldDaoImpl implements WorldDao {
                 EntityView building = ecsWorld.obtainEntityView(ecsWorld.entity(buildingName));
                 JsonValue buildingValue = economyBuilding.getValue();
                 int time = (int) buildingValue.get("time").asLong();
-                long buildingTypeId = ecsWorld.lookup(buildingValue.get("base_type").asString());
+                long productionTypeId = ecsWorld.lookup(buildingValue.get("base_type").asString());
                 long artisansTypeId = 0;
                 if(buildingValue.get("artisans_type") != null) {
                     artisansTypeId = ecsWorld.lookup(buildingValue.get("artisans_type").asString());
@@ -447,7 +446,7 @@ public class WorldDaoImpl implements WorldDao {
                     outputGoodId = goodId;
                     outputGoodValue = goodValue;
                 }
-                building.set(new EconomyBuildingType(time, buildingTypeId, artisansTypeId, maxLevel, goodCostIds, goodCostValues, inputGoodIds, inputGoodValues, outputGoodId, outputGoodValue));
+                building.set(new EconomyBuildingType(time, productionTypeId, artisansTypeId, maxLevel, goodCostIds, goodCostValues, inputGoodIds, inputGoodValues, outputGoodId, outputGoodValue));
             }
 
             for(var specialBuildingEntry : buildingsValues.get("special_building").object()) {
@@ -821,17 +820,18 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void loadProvinces(World ecsWorld, EcsConstants ecsConstants, IntLongMap provinces, Borders borders) {
+    private Borders loadProvinces(World ecsWorld, EcsConstants ecsConstants, IntLongMap provinces) {
         IntObjectMap<LongIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
         this.readPopulationTemplates(ecsWorld);
         this.readProvinces(ecsWorld, regionBuildingsByProvince);
         this.readRegion(ecsWorld, ecsConstants, regionBuildingsByProvince);
         this.readDefinition(ecsWorld, provinces);
-        this.readProvinceBitmap(ecsWorld, provinces, borders);
+        Borders border = this.readProvinceBitmap(ecsWorld, provinces);
         this.readCountriesHistory(ecsWorld);
         this.readContinent(ecsWorld);
         this.readAdjacencies(ecsWorld);
         this.readPositions(ecsWorld);
+        return border;
     }
 
     private void readPopulationTemplates(World ecsWorld) {
@@ -1048,7 +1048,14 @@ public class WorldDaoImpl implements WorldDao {
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
                                 building.set(new Building(localMarketId, buildingTypeId, size));
                                 if(buildingType.has(EconomyBuildingType.class)) {
-                                    building.set(new EconomyBuilding(0f, 0f, new int[12]));
+                                    EconomyBuildingTypeView buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
+                                    int[] goodInputIndexes = new int[8];
+                                    float[] goodInputValues = new float[8];
+                                    for(int i = 0; i < buildingTypeData.goodInputIdsLength(); i++) {
+                                        goodInputIndexes[i] = this.getGoodIndex(buildingTypeData.goodInputIds(i));
+                                        goodInputValues[i] = buildingTypeData.goodInputValues(i);
+                                    }
+                                    building.set(new EconomyBuilding(0f, 0f, new int[12], goodInputIndexes, goodInputValues, this.getGoodIndex(buildingTypeData.goodOutputId()), buildingTypeData.goodOutputValue()));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {
                                     building.set(new SpecialBuilding());
 
@@ -1097,7 +1104,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readProvinceBitmap(World ecsWorld, IntLongMap provinces, Borders borders) {
+    private Borders readProvinceBitmap(World ecsWorld, IntLongMap provinces) {
         Pixmap provincesPixmap = new Pixmap(Gdx.files.internal(this.mapPath + "provinces.bmp"));
 
         IntList xyValues = new IntList();
@@ -1131,9 +1138,8 @@ public class WorldDaoImpl implements WorldDao {
             EntityView provinceEntity = ecsWorld.obtainEntityView(entry.key);
             provinceEntity.set(new Border(startIndex, endIndex));
         }
-        borders.setPixels(xyValues.shrink());
-
         provincesPixmap.dispose();
+        return new Borders(xyValues.shrink());
     }
 
     private boolean isBorderPixel(Pixmap pixmap, int x, int y, int color, int w, int h) {

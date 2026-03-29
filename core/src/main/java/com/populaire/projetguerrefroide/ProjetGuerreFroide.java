@@ -19,12 +19,7 @@ import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.*;
 import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
-import com.populaire.projetguerrefroide.system.economy.BuildingConsumeSystem;
-import com.populaire.projetguerrefroide.system.economy.LocalMarketBalanceSystem;
-import com.populaire.projetguerrefroide.system.economy.ResetLocalMarketSystem;
-import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationHireSystem;
-import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationProduceSystem;
-import com.populaire.projetguerrefroide.system.economy.ResourceGatheringOperationSizeSystem;
+import com.populaire.projetguerrefroide.system.economy.*;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class ProjetGuerreFroide extends Game {
