@@ -1051,7 +1051,7 @@ public class WorldDaoImpl implements WorldDao {
                                 EntityView building = ecsWorld.obtainEntityView(ecsWorld.entity());
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
                                 building.set(new Building(localMarketId, buildingTypeId, size));
-                                building.set(new LocalMarketIndex(localMarketData.index()));
+                                building.set(new EconomyHierarchy(localMarketData.index()));
                                 if(buildingType.has(EconomyBuildingType.class)) {
                                     EconomyBuildingTypeView buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
                                     int[] goodInputIndexes = new int[8];

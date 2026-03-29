@@ -15,7 +15,7 @@ public class BuildingConsumeSystem {
             .kind(FlecsConstants.EcsOnUpdate)
             .with(Building.class)
             .with(EconomyBuilding.class)
-            .with(LocalMarketIndex.class)
+            .with(EconomyHierarchy.class)
             .with(gameContext.getEcsConstants().suspended())
             .not()
             .iter(this::consume);
@@ -24,18 +24,18 @@ public class BuildingConsumeSystem {
     private void consume(Iter iter) {
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
-        Field<LocalMarketIndex> localMarketIndexField = iter.field(LocalMarketIndex.class, 2);
+        Field<EconomyHierarchy> economyHierarchyField = iter.field(EconomyHierarchy.class, 2);
         for (int i = 0; i < iter.count(); i++) {
             BuildingView buildingView = buildingField.getMutView(i);
             EconomyBuildingView economyBuildingView = economyBuildingField.getMutView(i);
-            LocalMarketIndexView localMarketIndexView = localMarketIndexField.getMutView(i);
+            EconomyHierarchyView economyHierarchyView = economyHierarchyField.getMutView(i);
 
             int size = buildingView.size();
 
             for (int g = 0; g < economyBuildingView.goodInputIndexesLength(); g++) {
                 float consumption = economyBuildingView.goodInputValues(g) * size;
                 int goodIndex = economyBuildingView.goodInputIndexes(g);
-                this.economyRuntime.addMarketGoodConsumptions(localMarketIndexView.value(), goodIndex, consumption);
+                this.economyRuntime.addMarketGoodConsumptions(economyHierarchyView.localMarketIndex(), goodIndex, consumption);
             }
         }
     }
