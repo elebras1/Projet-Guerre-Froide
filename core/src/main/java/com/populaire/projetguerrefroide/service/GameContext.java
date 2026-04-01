@@ -20,7 +20,6 @@ public class GameContext implements Disposable {
     private final LabelStylePool labelStylePool;
     private final ColorDrawablePool colorTexturePool;
     private final Map<String, String> localisation;
-    private final EconomyRuntime economyRuntime;
     private Settings settings;
 
     public GameContext(World ecsWorld, Bookmark bookmark, AssetManager assetManager, CursorManager cursorManager, Settings settings, LabelStylePool labelStylePool) {
@@ -32,7 +31,6 @@ public class GameContext implements Disposable {
         this.labelStylePool = labelStylePool;
         this.colorTexturePool = new ColorDrawablePool();
         this.localisation = new ObjectObjectMap<>();
-        this.economyRuntime = new EconomyRuntime();
         this.settings = settings;
     }
 
@@ -78,10 +76,6 @@ public class GameContext implements Disposable {
 
     public void putAllLocalisation(Map<String, String> localisation) {
         this.localisation.putAll(localisation);
-    }
-
-    public EconomyRuntime getEconomyRuntime() {
-        return this.economyRuntime;
     }
 
     @Override

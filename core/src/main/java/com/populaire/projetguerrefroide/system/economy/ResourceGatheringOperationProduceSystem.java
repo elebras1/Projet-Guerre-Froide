@@ -3,14 +3,12 @@ package com.populaire.projetguerrefroide.system.economy;
 import com.github.elebras1.flecs.*;
 import com.github.elebras1.flecs.util.FlecsConstants;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.service.EconomyRuntime;
-import com.populaire.projetguerrefroide.service.GameContext;
 
 public class ResourceGatheringOperationProduceSystem {
-    private final EconomyRuntime economyRuntime;
+    private final World ecsWorld;
 
-    public ResourceGatheringOperationProduceSystem(World ecsWorld, GameContext gameContext) {
-        this.economyRuntime = gameContext.getEconomyRuntime();
+    public ResourceGatheringOperationProduceSystem(World ecsWorld) {
+        this.ecsWorld = ecsWorld;
         ecsWorld.system("RGOProduceSystem")
             .kind(FlecsConstants.EcsOnUpdate)
             .with(Province.class)
@@ -23,18 +21,18 @@ public class ResourceGatheringOperationProduceSystem {
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 1);
         Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 2);
         for (int i = 0; i < iter.count(); i++) {
-            ResourceGatheringView resourceGatheringView = resourceGatheringField.getMutView(i);
-            GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+            ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
+            GeoHierarchyView geoHierarchy = geoHierarchyField.getMutView(i);
 
-            int goodIndex = resourceGatheringView.goodIndex();
-            int resourceGoodSize = resourceGatheringView.size();
-            int workforce = resourceGatheringView.workforce();
+            int goodIndex = resourceGathering.goodIndex();
+            int resourceGoodSize = resourceGathering.size();
+            int workforce = resourceGathering.workforce();
 
-            float baseProduction = resourceGoodSize * resourceGatheringView.goodValue();
+            float baseProduction = resourceGoodSize * resourceGathering.goodValue();
 
             int totalWorkers = 0;
-            for (int j = 0; j < resourceGatheringView.hiredWorkersLength(); j++) {
-                int hiredWorker = resourceGatheringView.hiredWorkers(j);
+            for (int j = 0; j < resourceGathering.hiredWorkersLength(); j++) {
+                int hiredWorker = resourceGathering.hiredWorkers(j);
                 totalWorkers += hiredWorker;
             }
 
@@ -42,8 +40,11 @@ public class ResourceGatheringOperationProduceSystem {
             float throughput = maxWorkers > 0 ? (float) totalWorkers / maxWorkers : 0f;
             float production = baseProduction * throughput;
 
-            resourceGatheringView.production(production);
-            this.economyRuntime.addMarketGoodProductions(geoHierarchyView.localMarketIndex(), goodIndex, production);
+            resourceGathering.production(production);
+
+            EntityView localMarket = this.ecsWorld.obtainEntityView(geoHierarchy.localMarketId());
+            LocalMarketView localMarketData = localMarket.getMutView(LocalMarket.class);
+            localMarketData.goodProductions(goodIndex, localMarketData.goodProductions(goodIndex) + production);
         }
     }
 }

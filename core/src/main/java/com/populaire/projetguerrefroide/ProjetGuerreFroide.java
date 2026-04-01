@@ -47,11 +47,10 @@ public class ProjetGuerreFroide extends Game {
         BuildingService buildingService = new BuildingService(this.gameContext, expandBuildingSystem);
         ResourceGatheringOperationSizeSystem rgoSizeSystem = new ResourceGatheringOperationSizeSystem(this.gameContext.getEcsWorld());
         ResourceGatheringOperationHireSystem rgoHireSystem = new ResourceGatheringOperationHireSystem(this.gameContext.getEcsWorld());
-        ResourceGatheringOperationProduceSystem rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld(), this.gameContext);
-        ResetLocalMarketSystem resetLocalMarketSystem = new ResetLocalMarketSystem(this.gameContext.getEcsWorld(), this.gameContext);
+        ResourceGatheringOperationProduceSystem rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld());
         BuildingConsumeSystem buildingConsumeSystem = new BuildingConsumeSystem(this.gameContext.getEcsWorld(), this.gameContext);
         LocalMarketBalanceSystem localMarketBalanceSystem = new LocalMarketBalanceSystem(this.gameContext.getEcsWorld(), this.gameContext);
-        EconomyService economyService = new EconomyService(this.gameContext, rgoSizeSystem, rgoHireSystem, rgoProduceSystem, resetLocalMarketSystem, buildingConsumeSystem, localMarketBalanceSystem);
+        EconomyService economyService = new EconomyService(this.gameContext, rgoSizeSystem, rgoHireSystem, rgoProduceSystem, buildingConsumeSystem, localMarketBalanceSystem);
         RegionService regionService = new RegionService(this.gameContext, buildingService, queryRepository);
         CountryService countryService = new CountryService(this.gameContext, queryRepository, regionService);
         ProvinceService provinceService = new ProvinceService(this.gameContext, queryRepository, countryService, regionService);
