@@ -49,7 +49,6 @@ public class BuildingService {
         Entity parent = ecsWorld.obtainEntity(buildingData.parentId());
         Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
         EconomyBuildingType buildingTypeData = buildingType.get(EconomyBuildingType.class);
-        ProductionType productionType = ecsWorld.obtainEntity(buildingTypeData.productionTypeId()).get(ProductionType.class);
         String[] goodCostNameIds = new String[buildingTypeData.goodCostIds().length];
         for(int i = 0; i < buildingTypeData.goodCostIds().length; i++) {
             long goodId = buildingTypeData.goodCostIds()[i];
@@ -68,9 +67,9 @@ public class BuildingService {
         }
         Entity outputGoodEntity = ecsWorld.obtainEntity(buildingTypeData.goodOutputId());
         String outputGoodNameId = outputGoodEntity.getName();
-        int amountWorkers = this.getAmountWorkers(productionType);
-        int maxWorkers = this.getMaxWorkers(buildingTypeData, buildingData.size());
-        return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostValues(), inputGoodNameIds, buildingTypeData.goodInputValues(), outputGoodNameId, buildingTypeData.goodOutputValue(), amountWorkers, maxWorkers, building.has(this.gameContext.getEcsConstants().suspended()));
+        int amountWorkers = 0;
+        int maxWorkers = buildingData.size() * buildingTypeData.workforce();
+        return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostAmounts(), inputGoodNameIds, buildingTypeData.goodInputAmounts(), outputGoodNameId, buildingTypeData.goodOutputAmount(), amountWorkers, maxWorkers, building.has(this.gameContext.getEcsConstants().suspended()));
     }
 
     public void demolishBuilding(long buildingId) {
@@ -130,24 +129,5 @@ public class BuildingService {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity building = ecsWorld.obtainEntity(buildingId);
         building.remove(this.gameContext.getEcsConstants().suspended());
-    }
-
-    private int getMaxWorkers(EconomyBuildingType buildingTypeData, int size) {
-        World ecsWorld = this.gameContext.getEcsWorld();
-        Entity productionType = ecsWorld.obtainEntity(buildingTypeData.productionTypeId());
-        ProductionType productionTypeDataView = productionType.get(ProductionType.class);
-        return size * productionTypeDataView.workforce();
-    }
-
-    private  int getAmountWorkers(ProductionType productionTypeData) {
-        int totalWorkers = 0;
-        for (long employeeTypeId : productionTypeData.employeeTypes()) {
-            if (employeeTypeId != 0) {
-                Entity employeeType = this.gameContext.getEcsWorld().obtainEntity(employeeTypeId);
-                EmployeeType employeeTypeData = employeeType.get(EmployeeType.class);
-                totalWorkers += (int) employeeTypeData.amount();
-            }
-        }
-        return totalWorkers;
     }
 }

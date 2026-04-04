@@ -12,13 +12,11 @@ public class QueryRepository implements Disposable {
     private final Query queryProvincesWithResourceGathering;
     private final Query queryProvincesWithColorAndResourceGathering;
     private final Query queryProvincesWithColorAndGeoHierarchy;
-    private final Query queryProvincesWithColorAndCultureDistribution;
-    private final Query queryProvincesWithColorAndReligionDistribution;
     private final Query queryProvincesAll;
     private final Query queryBuildingsAll;
     private final Query queryCountries;
 
-    public QueryRepository(World ecsWorld, EcsConstants ecsConstants) {
+    public QueryRepository(World ecsWorld) {
         this.queryProvincesWithColor = ecsWorld.query()
             .with(Province.class)
             .with(Color.class)
@@ -44,18 +42,6 @@ public class QueryRepository implements Disposable {
             .with(Province.class)
             .with(Color.class)
             .with(GeoHierarchy.class)
-            .build();
-
-        this.queryProvincesWithColorAndCultureDistribution = ecsWorld.query()
-            .with(Province.class)
-            .with(Color.class)
-            .with(CultureDistribution.class)
-            .build();
-
-        this.queryProvincesWithColorAndReligionDistribution = ecsWorld.query()
-            .with(Province.class)
-            .with(Color.class)
-            .with(ReligionDistribution.class)
             .build();
 
         this.queryProvincesAll = ecsWorld.query()
@@ -91,14 +77,6 @@ public class QueryRepository implements Disposable {
         return this.queryProvincesWithColorAndGeoHierarchy;
     }
 
-    public Query getProvincesWithColorAndCultureDistribution() {
-        return this.queryProvincesWithColorAndCultureDistribution;
-    }
-
-    public Query getProvincesWithColorAndReligionDistribution() {
-        return this.queryProvincesWithColorAndReligionDistribution;
-    }
-
     public Query getProvinces() {
         return this.queryProvincesAll;
     }
@@ -117,8 +95,6 @@ public class QueryRepository implements Disposable {
         this.queryProvincesWithGeoHierarchy.close();
         this.queryProvincesWithResourceGathering.close();
         this.queryProvincesWithColorAndGeoHierarchy.close();
-        this.queryProvincesWithColorAndCultureDistribution.close();
-        this.queryProvincesWithColorAndReligionDistribution.close();
         this.queryProvincesAll.close();
         this.queryBuildingsAll.close();
         this.queryCountries.close();

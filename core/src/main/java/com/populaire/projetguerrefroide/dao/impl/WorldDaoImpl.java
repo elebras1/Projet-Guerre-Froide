@@ -12,6 +12,7 @@ import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.pojo.Borders;
+import com.populaire.projetguerrefroide.pojo.ProductionType;
 import com.populaire.projetguerrefroide.pojo.WorldData;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.EcsConstants;
@@ -76,9 +77,9 @@ public class WorldDaoImpl implements WorldDao {
         this.readMinisterTypes(ecsWorld);
         this.readGoods(ecsWorld, ecsConstants);
         this.readPopulationTypes(ecsWorld);
-        this.readProductionTypes(ecsWorld);
-        this.readBuildings(ecsWorld, ecsConstants);
-        this.readResourceProductions(ecsWorld);
+        Map<String, ProductionType> productionTypes = this.readProductionTypes(ecsWorld);
+        this.readBuildings(ecsWorld, ecsConstants, productionTypes);
+        this.readResourceProductions(ecsWorld, productionTypes);
         this.readTraits(ecsWorld);
         this.loadCountries(ecsWorld, ecsConstants);
         this.readTerrains(ecsWorld);
@@ -347,62 +348,77 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readProductionTypes(World ecsWorld) {
+    private Map<String, ProductionType> readProductionTypes(World ecsWorld) {
         try {
+            Map<String, ProductionType> productionTypes = new ObjectObjectMap<>(16, 1f);
+
             JsonValue buildingTypesJson = this.parseJsonFile(this.productionTypesJsonFile);
-            for(var typeEmployeeEntry : buildingTypesJson.get("types_employees").object()) {
-                String typeName = typeEmployeeEntry.getKey();
-                JsonValue typeEmployeeValue = typeEmployeeEntry.getValue();
-                long populationTypeId = ecsWorld.lookup(typeEmployeeValue.get("poptype").asString());
-                float amount = (float) typeEmployeeValue.get("amount").asDouble();
-                float effectMultiplier = (float) typeEmployeeValue.get("effect_multiplier").asDouble();
-                EntityView employee = ecsWorld.obtainEntityView(ecsWorld.entity(typeName));
-                employee.set(new EmployeeType(populationTypeId, amount, effectMultiplier));
+            ObjectLongMap<String> workerPopTypeIdsByType = new ObjectLongMap<>(16, 1f);
+            ObjectFloatMap<String> workerPopTypeRatiosByType = new ObjectFloatMap<>(16, 1f);
+            ObjectFloatMap<String> workerPopTypeEffectMultiplierByType = new ObjectFloatMap<>(16, 1f);
+            for(var typeWorkerEntry : buildingTypesJson.get("types_workers").object()) {
+                String workerTypeName = typeWorkerEntry.getKey();
+                JsonValue typeWorkerValue = typeWorkerEntry.getValue();
+                long popTypeId = ecsWorld.lookup(typeWorkerValue.get("poptype").asString());
+                float ratio = (float) typeWorkerValue.get("ratio").asDouble();
+                float effectMultiplier = (float) typeWorkerValue.get("effect_multiplier").asDouble();
+                workerPopTypeIdsByType.put(workerTypeName, popTypeId);
+                workerPopTypeRatiosByType.put(workerTypeName, ratio);
+                workerPopTypeEffectMultiplierByType.put(workerTypeName, effectMultiplier);
             }
 
             for(var typeBuildingEntry : buildingTypesJson.get("types_buildings").object()) {
                 String typeName = typeBuildingEntry.getKey();
-                EntityView buildingTypeEntity = ecsWorld.obtainEntityView(ecsWorld.entity(typeName));
                 JsonValue typeBuildingValue = typeBuildingEntry.getValue();
                 int workforce = (int) typeBuildingValue.get("workforce").asLong();
                 long ownerId = ecsWorld.lookup(typeBuildingValue.get("owner").get("poptype").asString());
 
-                long[] employeeIds = new long[4];
+                long[] workerPopTypeIds = new long[4];
+                float[] workerPopTypeRatios = new float[4];
+                float[] workerPopTypeEffectMultipliers = new float[4];
+
                 int i = 0;
-                for(var employeeValue : typeBuildingValue.get("employees").array()) {
-                    String employeeName = employeeValue.asString();
-                    long employeeId = ecsWorld.lookup(employeeName);
-                    employeeIds[i] = employeeId;
-                    i++;
+                for(var workerValue : typeBuildingValue.get("workers").array()) {
+                    String workerTypeName = workerValue.asString();
+                    workerPopTypeIds[i] = workerPopTypeIdsByType.get(workerTypeName);
+                    workerPopTypeRatios[i] = workerPopTypeRatiosByType.get(workerTypeName);
+                    workerPopTypeEffectMultipliers[i] = workerPopTypeEffectMultiplierByType.get(workerTypeName);
                 }
-                buildingTypeEntity.set(new ProductionType(workforce, ownerId, employeeIds));
+
+                productionTypes.put(typeName, new ProductionType(workforce, ownerId, workerPopTypeIds, workerPopTypeRatios, workerPopTypeEffectMultipliers));
             }
 
             for(var typeRgoEntry: buildingTypesJson.get("types_rgo").object()) {
                 String typeName = typeRgoEntry.getKey();
-                EntityView buildingTypeEntity = ecsWorld.obtainEntityView(ecsWorld.entity(typeName));
                 JsonValue typeRgoValue = typeRgoEntry.getValue();
                 int workforce = (int) typeRgoValue.get("workforce").asLong();
                 long ownerId = ecsWorld.lookup(typeRgoValue.get("owner").get("poptype").asString());
 
-                long[] employeeIds = new long[4];
+                long[] workerPopTypeIds = new long[4];
+                float[] workerPopTypeRatios = new float[4];
+                float[] workerPopTypeEffectMultipliers = new float[4];
+
                 int i = 0;
-                for(var employeeValue : typeRgoValue.get("employees").array()) {
-                    String employeeName = employeeValue.asString();
-                    long employeeId = ecsWorld.lookup(employeeName);
-                    employeeIds[i] = employeeId;
-                    i++;
+                for(var workerValue : typeRgoValue.get("workers").array()) {
+                    String workerTypeName = workerValue.asString();
+                    workerPopTypeIds[i] = workerPopTypeIdsByType.get(workerTypeName);
+                    workerPopTypeRatios[i] = workerPopTypeRatiosByType.get(workerTypeName);
+                    workerPopTypeEffectMultipliers[i] = workerPopTypeEffectMultiplierByType.get(workerTypeName);
                 }
-                buildingTypeEntity.set(new ProductionType(workforce, ownerId, employeeIds));
+
+                productionTypes.put(typeName, new ProductionType(workforce, ownerId, workerPopTypeIds, workerPopTypeRatios, workerPopTypeEffectMultipliers));
             }
+
+            return productionTypes;
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+        return Map.of();
     }
 
-    private void readBuildings(World ecsWorld, EcsConstants ecsConstants) {
+    private void readBuildings(World ecsWorld, EcsConstants ecsConstants, Map<String, ProductionType> productionTypes) {
         try {
             JsonValue buildingsValues = this.parseJsonFile(this.buildingsJsonFile);
             for(var economyBuilding : buildingsValues.get("economy_building").object()) {
@@ -410,43 +426,43 @@ public class WorldDaoImpl implements WorldDao {
                 EntityView building = ecsWorld.obtainEntityView(ecsWorld.entity(buildingName));
                 JsonValue buildingValue = economyBuilding.getValue();
                 int time = (int) buildingValue.get("time").asLong();
-                long productionTypeId = ecsWorld.lookup(buildingValue.get("base_type").asString());
-                long artisansTypeId = 0;
+                String productionTypeId = buildingValue.get("base_type").asString();
                 if(buildingValue.get("artisans_type") != null) {
-                    artisansTypeId = ecsWorld.lookup(buildingValue.get("artisans_type").asString());
+                    // TODO
                 }
                 byte maxLevel = (byte) buildingValue.get("max_level").asLong();
                 long[] goodCostIds = new long[8];
-                float[] goodCostValues = new float[8];
+                float[] goodCostAmounts = new float[8];
                 int goodCostIndex = 0;
                 for(var goodCostEntry : buildingValue.get("goods_cost").object()) {
                     long goodId = ecsWorld.lookup(goodCostEntry.getKey());
-                    float goodValue = (float) goodCostEntry.getValue().asDouble();
+                    float goodAmount = (float) goodCostEntry.getValue().asDouble();
                     goodCostIds[goodCostIndex] = goodId;
-                    goodCostValues[goodCostIndex] = goodValue;
+                    goodCostAmounts[goodCostIndex] = goodAmount;
                     goodCostIndex++;
                 }
                 long[] inputGoodIds = new long[8];
-                float[] inputGoodValues = new float[8];
+                float[] inputGoodAmounts = new float[8];
                 int inputGoodIndex = 0;
                 for(var inputGoodEntry : buildingValue.get("input_goods").object()) {
                     long goodId = ecsWorld.lookup(inputGoodEntry.getKey());
-                    float goodValue = (float) inputGoodEntry.getValue().asDouble();
+                    float goodAmount = (float) inputGoodEntry.getValue().asDouble();
                     inputGoodIds[inputGoodIndex] = goodId;
-                    inputGoodValues[inputGoodIndex] = goodValue;
+                    inputGoodAmounts[inputGoodIndex] = goodAmount;
                     inputGoodIndex++;
                 }
                 long outputGoodId = 0;
-                float outputGoodValue = 0;
+                float outputGoodAmount = 0;
                 Iterator<Map.Entry<String, JsonValue>> outputGoodsEntryIterator = buildingValue.get("output_goods").objectIterator();
                 if (outputGoodsEntryIterator.hasNext()) {
                     Map.Entry<String, JsonValue> outputGood = outputGoodsEntryIterator.next();
                     long goodId = ecsWorld.lookup(outputGood.getKey());
-                    float goodValue = (float) outputGood.getValue().asDouble();
+                    float goodAmount = (float) outputGood.getValue().asDouble();
                     outputGoodId = goodId;
-                    outputGoodValue = goodValue;
+                    outputGoodAmount = goodAmount;
                 }
-                building.set(new EconomyBuildingType(time, productionTypeId, artisansTypeId, maxLevel, goodCostIds, goodCostValues, inputGoodIds, inputGoodValues, outputGoodId, outputGoodValue));
+                ProductionType productionType = productionTypes.get(productionTypeId);
+                building.set(new EconomyBuildingType(time, maxLevel, goodCostIds, goodCostAmounts, inputGoodIds, inputGoodAmounts, outputGoodId, outputGoodAmount, productionType.workforce(), productionType.ownerId(), productionType.workerPopTypeIds(), productionType.workerPopTypeRatios(), productionType.workerPopTypeEffectMultipliers()));
             }
 
             for(var specialBuildingEntry : buildingsValues.get("special_building").object()) {
@@ -456,13 +472,13 @@ public class WorldDaoImpl implements WorldDao {
                 int time = (int) buildingValue.get("time").asLong();
                 int cost = (int) buildingValue.get("cost").asLong();
                 long[] goodCostIds = new long[8];
-                float[] goodCostValues = new float[8];
+                float[] goodCostAmounts = new float[8];
                 int goodCostIndex = 0;
                 for(var goodCostEntry : buildingValue.get("goods_cost").object()) {
                     long goodId = ecsWorld.lookup(goodCostEntry.getKey());
-                    float goodValue = (float) goodCostEntry.getValue().asDouble();
+                    float goodAmount = (float) goodCostEntry.getValue().asDouble();
                     goodCostIds[goodCostIndex] = goodId;
-                    goodCostValues[goodCostIndex] = goodValue;
+                    goodCostAmounts[goodCostIndex] = goodAmount;
                     goodCostIndex++;
                 }
 
@@ -482,7 +498,7 @@ public class WorldDaoImpl implements WorldDao {
                     }
                     building.set(new Modifiers(modifierValues, modifierIds));
                 }
-                building.set(new SpecialBuildingType(time, cost, goodCostIds, goodCostValues));
+                building.set(new SpecialBuildingType(time, cost, goodCostIds, goodCostAmounts));
             }
 
             for(var developmentBuildingEntry : buildingsValues.get("development_building").object()) {
@@ -492,13 +508,13 @@ public class WorldDaoImpl implements WorldDao {
                 int time = (int) buildingValue.get("time").asLong();
                 int cost = (int) buildingValue.get("cost").asLong();
                 long[] goodCostIds = new long[8];
-                float[] goodCostValues = new float[8];
+                float[] goodCostAmounts = new float[8];
                 int goodCostIndex = 0;
                 for(var goodCostEntry : buildingValue.get("goods_cost").object()) {
                     long goodId = ecsWorld.lookup(goodCostEntry.getKey());
-                    float goodValue = (float) goodCostEntry.getValue().asDouble();
+                    float goodAmount = (float) goodCostEntry.getValue().asDouble();
                     goodCostIds[goodCostIndex] = goodId;
-                    goodCostValues[goodCostIndex] = goodValue;
+                    goodCostAmounts[goodCostIndex] = goodAmount;
                     goodCostIndex++;
                 }
                 boolean onMap = buildingValue.get("onmap").asBoolean();
@@ -522,7 +538,7 @@ public class WorldDaoImpl implements WorldDao {
                     }
                     building.set(new Modifiers(modifierValues, modifierIds));
                 }
-                building.set(new DevelopmentBuildingType(time, cost, goodCostIds, goodCostValues, maxLevel));
+                building.set(new DevelopmentBuildingType(time, cost, goodCostIds, goodCostAmounts, maxLevel));
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -531,15 +547,16 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readResourceProductions(World ecsWorld) {
+    private void readResourceProductions(World ecsWorld, Map<String, ProductionType> productionTypes) {
         try {
             JsonValue resourceProductionsValues = this.parseJsonFile(this.resourceProductionsJsonFile);
             for(var resourceProductionEntry : resourceProductionsValues.object()) {
-                long goodId = ecsWorld.lookup(resourceProductionEntry.getKey());
-                EntityView good = ecsWorld.obtainEntityView(goodId);
-                JsonValue productionValue = resourceProductionEntry.getValue();
-                long productionTypeId = ecsWorld.lookup(productionValue.get("base_type").asString());
-                good.set(new ResourceProduction(productionTypeId));
+                String goodNameId = resourceProductionEntry.getKey();
+                String productionTypeId = resourceProductionEntry.getValue().get("base_type").asString();
+                ProductionType productionType = productionTypes.get(productionTypeId);
+                long rgoTypeId = ecsWorld.entity("rgo_" + goodNameId);
+                EntityView rgoType = ecsWorld.obtainEntityView(rgoTypeId);
+                rgoType.set(new ResourceGatheringType(productionType.workforce(), productionType.ownerId(), productionType.workerPopTypeIds(), productionType.workerPopTypeRatios(), productionType.workerPopTypeEffectMultipliers()));
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -929,36 +946,13 @@ public class WorldDaoImpl implements WorldDao {
 
             JsonValue goodJsonValue = provinceValues.get("good");
             if(goodJsonValue != null) {
-                long goodId = ecsWorld.lookup(goodJsonValue.asString());
-
-                int workforce = 0;
-                float goodValue = 0f;
-                long[] employeePopTypeIds = new long[4];
-                int[] employeePopTypeIndexes = new int[4];
-                float[] employeeAmounts = new float[4];
-
+                String goodNameId = goodJsonValue.asString();
+                long goodId = ecsWorld.lookup(goodNameId);
                 EntityView goodEntity = ecsWorld.obtainEntityView(goodId);
                 Good good = goodEntity.get(Good.class);
-                if (good != null) {
-                    goodValue = good.value();
-                }
-
-                ResourceProduction resourceProduction = goodEntity.get(ResourceProduction.class);
-                EntityView productionTypeEntity = ecsWorld.obtainEntityView(resourceProduction.productionTypeId());
-                ProductionType productionType = productionTypeEntity.get(ProductionType.class);
-                workforce = productionType.workforce();
-                long[] employeeTypeIds = productionType.employeeTypes();
-                for (int j = 0; j < employeeTypeIds.length && employeeTypeIds[j] != 0; j++) {
-                    EntityView employeeTypeEntity = ecsWorld.obtainEntityView(employeeTypeIds[j]);
-                    EmployeeType employeeType = employeeTypeEntity.get(EmployeeType.class);
-                    if (employeeType != null) {
-                        employeePopTypeIds[j] = employeeType.populationTypeId();
-                        employeePopTypeIndexes[j] = this.getPopulationTypeIndex(employeeType.populationTypeId());
-                        employeeAmounts[j] = employeeType.amount();
-                    }
-                }
-
-                province.set(new ResourceGathering(goodId, this.getGoodIndex(goodId), 0, 0f, new int[12], workforce, goodValue, employeePopTypeIds, employeePopTypeIndexes, employeeAmounts));
+                float goodAmount = good.value();
+                long rgoTypeId = ecsWorld.lookup("rgo_" + goodNameId);
+                province.set(new ResourceGathering(rgoTypeId, goodId, this.getGoodIndex(goodId), goodAmount, 0, 0f, new int[12]));
             }
 
             JsonValue buildingsProvinceValue = provinceValues.get("buildings");
@@ -1048,17 +1042,11 @@ public class WorldDaoImpl implements WorldDao {
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
                                 building.set(new Building(localMarketId, buildingTypeId, size));
                                 if(buildingType.has(EconomyBuildingType.class)) {
-                                    EconomyBuildingTypeView buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
-                                    int[] goodInputIndexes = new int[8];
-                                    float[] goodInputValues = new float[8];
-                                    for(int i = 0; i < buildingTypeData.goodInputIdsLength(); i++) {
-                                        goodInputIndexes[i] = this.getGoodIndex(buildingTypeData.goodInputIds(i));
-                                        goodInputValues[i] = buildingTypeData.goodInputValues(i);
-                                    }
-                                    building.set(new EconomyBuilding(0f, 0f, new int[12], goodInputIndexes, goodInputValues, this.getGoodIndex(buildingTypeData.goodOutputId()), buildingTypeData.goodOutputValue()));
+                                    building.set(new EconomyBuilding(0f, 0f, new int[12]));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {
                                     building.set(new SpecialBuilding());
-
+                                } else if (buildingType.has(DevelopmentBuildingType.class)) {
+                                    building.set(new DevelopmentBuilding());
                                 }
                             }
                         }

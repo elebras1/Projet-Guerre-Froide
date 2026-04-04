@@ -4,15 +4,7 @@ import com.github.elebras1.flecs.annotation.Component;
 import com.github.elebras1.flecs.annotation.FixedArray;
 
 @Component
-public record EconomyBuildingType(
-    int time,
-    int maxLevel,
-    @FixedArray(length = 8) long[] goodCostIds,
-    @FixedArray(length = 8) float[] goodCostAmounts,
-    @FixedArray(length = 8) long[] goodInputIds,
-    @FixedArray(length = 8) float[] goodInputAmounts,
-    long goodOutputId,
-    float goodOutputAmount,
+public record ResourceGatheringType(
     int workforce,
     long ownerId,
     @FixedArray(length = 4) long[] workerPopTypeIds,

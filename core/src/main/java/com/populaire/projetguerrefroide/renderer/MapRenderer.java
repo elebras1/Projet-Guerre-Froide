@@ -153,7 +153,7 @@ public class MapRenderer implements Disposable {
         ShortList indices = new ShortList();
         Query query = this.queryRepository.getCountries();
         query.each(countryId -> {
-            Entity country = ecsWorld.obtainEntity(countryId);
+            EntityView country = ecsWorld.obtainEntityView(countryId);
             String countryNameId = country.getName();
             this.getLabelsData(
                 ecsWorld,
@@ -188,10 +188,10 @@ public class MapRenderer implements Disposable {
                     for(int j = 0; j < connectedProvinces.size(); j++) {
                         long connectedProvinceId = connectedProvinces.get(j);
                         Entity connectedProvince = ecsWorld.obtainEntity(connectedProvinceId);
-                        Border border = connectedProvince.get(Border.class);
+                        BorderView border = connectedProvince.getMutView(Border.class);
                         long positionEntityId = ecsWorld.lookup("province_" + connectedProvince.getName() + "_pos_default");
                         Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
-                        Position position = positionEntity.get(Position.class);
+                        PositionView position = positionEntity.getMutView(Position.class);
                         positionsProvinces.add(position.x());
                         positionsProvinces.add(position.y());
                         pixelsBorderProvinces.addAll(Arrays.copyOfRange(borders.pixels(), border.startIndex(), border.endIndex()));
@@ -229,14 +229,14 @@ public class MapRenderer implements Disposable {
         while (!toProcess.isEmpty()) {
             long currentId = toProcess.pop();
             Entity currentEntity = ecsWorld.obtainEntity(currentId);
-            Adjacencies adjacencies = currentEntity.get(Adjacencies.class);
+            AdjacenciesView adjacencies = currentEntity.getMutView(Adjacencies.class);
 
-            if (adjacencies == null || adjacencies.provinceIds() == null) {
+            if (adjacencies == null || adjacencies.provinceIdsLength() == 0) {
                 continue;
             }
 
-            for (int i = 0; i < adjacencies.provinceIds().length; i++) {
-                long neighborId = adjacencies.provinceIds()[i];
+            for (int i = 0; i < adjacencies.provinceIdsLength(); i++) {
+                long neighborId = adjacencies.provinceIds(i);
                 if (neighborId == 0 || visitedProvinceIds.contains(neighborId)) {
                     continue;
                 }
@@ -244,7 +244,7 @@ public class MapRenderer implements Disposable {
                 if (!neighborEntity.has(Province.class)) {
                     continue;
                 }
-                Province neighborProvinceData = neighborEntity.get(Province.class);
+                ProvinceView neighborProvinceData = neighborEntity.getMutView(Province.class);
                 long ownerEntityId = neighborProvinceData.ownerId();
                 if (ownerEntityId != 0 && ownerEntityId == countryId) {
                     visitedProvinceIds.add(neighborId);

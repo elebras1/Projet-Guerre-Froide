@@ -19,7 +19,6 @@ import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.*;
 import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
-import com.populaire.projetguerrefroide.system.economy.*;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class ProjetGuerreFroide extends Game {
@@ -43,14 +42,9 @@ public class ProjetGuerreFroide extends Game {
         this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
         CommandBus commandBus = new CommandBus();
         ExpandBuildingSystem expandBuildingSystem = new ExpandBuildingSystem(this.ecsWorld, commandBus);
-        QueryRepository queryRepository = new QueryRepository(this.gameContext.getEcsWorld(), this.gameContext.getEcsConstants());
+        QueryRepository queryRepository = new QueryRepository(this.gameContext.getEcsWorld());
         BuildingService buildingService = new BuildingService(this.gameContext, expandBuildingSystem);
-        ResourceGatheringOperationSizeSystem rgoSizeSystem = new ResourceGatheringOperationSizeSystem(this.gameContext.getEcsWorld());
-        ResourceGatheringOperationHireSystem rgoHireSystem = new ResourceGatheringOperationHireSystem(this.gameContext.getEcsWorld());
-        ResourceGatheringOperationProduceSystem rgoProduceSystem = new ResourceGatheringOperationProduceSystem(this.gameContext.getEcsWorld());
-        BuildingConsumeSystem buildingConsumeSystem = new BuildingConsumeSystem(this.gameContext.getEcsWorld(), this.gameContext);
-        LocalMarketBalanceSystem localMarketBalanceSystem = new LocalMarketBalanceSystem(this.gameContext.getEcsWorld(), this.gameContext);
-        EconomyService economyService = new EconomyService(this.gameContext, rgoSizeSystem, rgoHireSystem, rgoProduceSystem, buildingConsumeSystem, localMarketBalanceSystem);
+        EconomyService economyService = new EconomyService(this.gameContext);
         RegionService regionService = new RegionService(this.gameContext, buildingService, queryRepository);
         CountryService countryService = new CountryService(this.gameContext, queryRepository, regionService);
         ProvinceService provinceService = new ProvinceService(this.gameContext, queryRepository, countryService, regionService);
@@ -60,7 +54,7 @@ public class ProjetGuerreFroide extends Game {
         this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService, worldService, timeService, commandBus);
         this.loadAssets(this.gameContext.getAssetManager());
         this.screenManager.showMainMenuScreen();
-        this.ecsDebug(gameContext);
+        this.ecsDebug(this.gameContext);
     }
 
     private void registerComponents() {
@@ -83,24 +77,21 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(GovernmentPolicy.class);
         this.ecsWorld.component(PopulationType.class);
         this.ecsWorld.component(Good.class);
-        this.ecsWorld.component(ResourceProduction.class);
-        this.ecsWorld.component(EmployeeType.class);
-        this.ecsWorld.component(ProductionType.class);
         this.ecsWorld.component(EconomyBuildingType.class);
         this.ecsWorld.component(SpecialBuildingType.class);
         this.ecsWorld.component(DevelopmentBuildingType.class);
         this.ecsWorld.component(Building.class);
         this.ecsWorld.component(EconomyBuilding.class);
         this.ecsWorld.component(SpecialBuilding.class);
-        this.ecsWorld.component(PopulationTemplate.class);
-        this.ecsWorld.component(CultureDistribution.class);
-        this.ecsWorld.component(PopulationDistribution.class);
-        this.ecsWorld.component(ReligionDistribution.class);
+        this.ecsWorld.component(DevelopmentBuilding.class);
         this.ecsWorld.component(ResourceGathering.class);
         this.ecsWorld.component(ExpansionBuilding.class);
         this.ecsWorld.component(LocalMarket.class);
         this.ecsWorld.component(LocalMarketState.class);
         this.ecsWorld.component(EconomyHierarchy.class);
+        this.ecsWorld.component(Population.class);
+        this.ecsWorld.component(PopulationLocation.class);
+        this.ecsWorld.component(ResourceGatheringType.class);
     }
 
     public void registerCommands(CommandBus commandBus, BuildingService buildingService) {
