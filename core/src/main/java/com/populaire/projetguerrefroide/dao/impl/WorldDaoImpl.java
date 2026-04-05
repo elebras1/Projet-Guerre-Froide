@@ -72,7 +72,7 @@ public class WorldDaoImpl implements WorldDao {
         this.readIdeologies(ecsWorld);
         this.readLaws(ecsWorld, ecsConstants);
         this.readGovernments(ecsWorld);
-        this.readNationalIdeas(ecsWorld);
+        this.readNationalIdeas(ecsWorld, ecsConstants);
         this.readMinisterTypes(ecsWorld);
         this.readGoods(ecsWorld, ecsConstants);
         this.readPopulationTypes(ecsWorld);
@@ -98,7 +98,7 @@ public class WorldDaoImpl implements WorldDao {
         return new BufferedReader(new StringReader(fileHandle.readString()));
     }
 
-    private void readNationalIdeas(World ecsWorld) {
+    private void readNationalIdeas(World ecsWorld, EcsConstants ecsConstants) {
         try {
             JsonValue nationalIdeasValues = this.parseJsonFile(this.nationalIdeasJsonFile);
 
@@ -109,6 +109,7 @@ public class WorldDaoImpl implements WorldDao {
                 long cultureEntityId = ecsWorld.entity(name);
                 EntityView cultureEntity = ecsWorld.obtainEntityView(cultureEntityId);
                 cultureEntity.set(new Color(color));
+                cultureEntity.add(ecsConstants.cultureTag());
             }
 
             for(var religionEntry : nationalIdeasValues.get("religions").object()) {
@@ -118,6 +119,7 @@ public class WorldDaoImpl implements WorldDao {
                 long religionEntityId = ecsWorld.entity(name);
                 EntityView religionEntity = ecsWorld.obtainEntityView(religionEntityId);
                 religionEntity.set(new Color(color));
+                religionEntity.add(ecsConstants.religionTag());
             }
 
             for(var identityEntry : nationalIdeasValues.get("national_identity").object()) {
@@ -136,6 +138,7 @@ public class WorldDaoImpl implements WorldDao {
                     i++;
                 }
                 identityEntity.set(new Modifiers(modifierValues, modifierTagIds));
+                identityEntity.add(ecsConstants.identityTag());
             }
 
             for(var attitudeEntry : nationalIdeasValues.get("national_attitude").object()) {
@@ -154,6 +157,7 @@ public class WorldDaoImpl implements WorldDao {
                     i++;
                 }
                 attitudeEntity.set(new Modifiers(modifierValues, modifierTagIds));
+                attitudeEntity.add(ecsConstants.attitudeTag());
             }
         } catch (Exception exception) {
             throw new RuntimeException(exception);

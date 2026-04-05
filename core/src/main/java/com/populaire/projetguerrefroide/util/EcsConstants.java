@@ -5,10 +5,13 @@ import com.github.elebras1.flecs.util.FlecsConstants;
 
 public class EcsConstants {
     private static final String LAW_GROUP_TAG = "LawGroupTag";
-    private static final String PROVINCE_TAG = "ProvinceTag";
     private static final String SEA_PROVINCE_TAG = "SeaProvinceTag";
     private static final String REGION_TAG = "RegionTag";
     private static final String COUNTRY_TAG = "CountryTag";
+    private static final String CULTURE_TAG = "CultureTag";
+    private static final String RELIGION_TAG = "ReligionTag";
+    private static final String IDENTITY_TAG = "IdentityTag";
+    private static final String ATTITUDE_TAG = "AttitudeTag";
     private static final String ALLIED_WITH = "AlliedWith";
     private static final String GUARANTEES = "Guarantees";
     private static final String IS_GUARANTEED_BY = "IsGuaranteedBy";
@@ -23,10 +26,13 @@ public class EcsConstants {
     public static final String SUSPENDED = "Suspended";
 
     private final long lawGroupTag;
-    private final long provinceTag;
     private final long seaProvinceTag;
     private final long regionTag;
     private final long countryTag;
+    private final long cultureTag;
+    private final long religionTag;
+    private final long identityTag;
+    private final long attitudeTag;
     private final long alliedWith;
     private final long guarantees;
     private final long isGuaranteedBy;
@@ -42,11 +48,13 @@ public class EcsConstants {
 
     public EcsConstants(World ecsWorld) {
         this.lawGroupTag = ecsWorld.entity(LAW_GROUP_TAG);
-        this.provinceTag = ecsWorld.entity(PROVINCE_TAG);
         this.seaProvinceTag = ecsWorld.entity(SEA_PROVINCE_TAG);
-        ecsWorld.obtainEntity(this.seaProvinceTag).isA(this.provinceTag);
         this.regionTag = ecsWorld.entity(REGION_TAG);
         this.countryTag = ecsWorld.entity(COUNTRY_TAG);
+        this.cultureTag = ecsWorld.entity(CULTURE_TAG);
+        this.religionTag = ecsWorld.entity(RELIGION_TAG);
+        this.identityTag = ecsWorld.entity(IDENTITY_TAG);
+        this.attitudeTag = ecsWorld.entity(ATTITUDE_TAG);
         this.alliedWith = ecsWorld.entity(ALLIED_WITH);
         this.guarantees = ecsWorld.entity(GUARANTEES);
         this.isGuaranteedBy = ecsWorld.entity(IS_GUARANTEED_BY);
@@ -65,10 +73,6 @@ public class EcsConstants {
         return this.lawGroupTag;
     }
 
-    public long provinceTag() {
-        return this.provinceTag;
-    }
-
     public long seaProvinceTag() {
         return this.seaProvinceTag;
     }
@@ -79,6 +83,22 @@ public class EcsConstants {
 
     public long countryTag() {
         return this.countryTag;
+    }
+
+    public long cultureTag() {
+        return this.cultureTag;
+    }
+
+    public long religionTag() {
+        return this.religionTag;
+    }
+
+    public long identityTag() {
+        return this.identityTag;
+    }
+
+    public long attitudeTag() {
+        return this.attitudeTag;
     }
 
     public long alliedWith() {
