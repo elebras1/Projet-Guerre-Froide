@@ -5,6 +5,23 @@ import com.github.elebras1.flecs.annotation.FixedArray;
 
 @Component
 public record Demographics(
-    @FixedArray(length = 32) float cultureRatios,
-    @FixedArray(length = 10) float religionRatios) {
+    long totalPopulation,
+    long totalEmployment,
+    float averageConsciousness,
+    float averageMilitancy,
+    float averageLiteracy,
+    float totalSavings,
+    @FixedArray(length = 12) long[] amountByPopType,
+    @FixedArray(length = 12) long[] employmentByPopType,
+    @FixedArray(length = 12) float[] consciousnessByPopType,
+    @FixedArray(length = 12) float[] militancyByPopType,
+    @FixedArray(length = 12) float[] literacyByPopType,
+    @FixedArray(length = 12) float[] savingsByPopType,
+    long totalChildren,
+    long totalAdults,
+    long totalSeniors,
+    @FixedArray(length = 20) long[] cultureIds,
+    @FixedArray(length = 20) long[] cultureTotals,
+    @FixedArray(length = 20) long[] religionIds,
+    @FixedArray(length = 20) long[] religionTotals) {
 }

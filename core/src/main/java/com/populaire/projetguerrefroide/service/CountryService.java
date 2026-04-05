@@ -80,7 +80,7 @@ public class CountryService {
                     GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
                     long regionId = geoHierarchyView.regionId();
                     regionIds.add(regionId);
-                    populationByRegion.getAndIncrement(regionId, 0, provinceView.amountAdults());
+                    populationByRegion.getAndIncrement(regionId, 0, provinceView.adultsAmount());
                 }
             }
         });
@@ -106,7 +106,7 @@ public class CountryService {
             for(int i = 0; i < iter.count(); i++) {
                 ProvinceView provinceView = provinceField.getMutView(i);
                 if(provinceView.ownerId() == countryId) {
-                    population.increment(provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors());
+                    population.increment(provinceView.childrenAmount() + provinceView.adultsAmount() + provinceView.seniorsAmount());
                 }
             }
         });

@@ -240,29 +240,27 @@ public class MapService implements WorldContext, Disposable {
     }
 
     private void updatePixmapCulturesColor(World ecsWorld) {
-        Query query = this.queryRepository.getProvincesWithColorAndCultureDistribution();
+        Query query = this.queryRepository.getProvincesWithColor();
         query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
             Field<Color> colorField = iter.field(Color.class, 1);
             for(int i = 0; i < iter.count(); i++) {
-                ColorView colorView = colorField.getMutView(i);
-                int color = colorView.value();
-                int red = (color >> 24) & 0xFF;
-                int green = (color >> 16) & 0xFF;
-
-                long provinceId = iter.entity(i);
-                EntityView provinceView = ecsWorld.obtainEntityView(provinceId);
-                CultureDistributionView cultureDistributionView = provinceView.getMutView(CultureDistribution.class);
+                ProvinceView province = provinceField.getMutView(i);
+                ColorView color = colorField.getMutView(i);
+                int colorValue = color.value();
+                int red = (colorValue >> 24) & 0xFF;
+                int green = (colorValue >> 16) & 0xFF;
 
                 int biggestCultureIndex = -1;
                 int biggestCultureAmount = 0;
-                for(int j = 0; j < cultureDistributionView.idsLength(); j++) {
-                    if(cultureDistributionView.ids(j) != 0 && cultureDistributionView.amounts(j) > biggestCultureAmount) {
-                        biggestCultureAmount = cultureDistributionView.amounts(j);
+                for(int j = 0; j < province.cultureIdsLength(); j++) {
+                    if(province.cultureIds(j) != 0 && province.cultureAmounts(j) > biggestCultureAmount) {
+                        biggestCultureAmount = province.cultureAmounts(j);
                         biggestCultureIndex = j;
                     }
                 }
                 if(biggestCultureIndex != -1) {
-                    long biggestCultureId = cultureDistributionView.ids(biggestCultureIndex);
+                    long biggestCultureId = province.cultureIds(biggestCultureIndex);
                     this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestCultureId).get(Color.class)).value());
                 }
             }
@@ -270,29 +268,27 @@ public class MapService implements WorldContext, Disposable {
     }
 
     private void updatePixmapReligionsColor(World ecsWorld) {
-        Query query = this.queryRepository.getProvincesWithColorAndReligionDistribution();
+        Query query = this.queryRepository.getProvincesWithColor();
         query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 0);
             Field<Color> colorField = iter.field(Color.class, 1);
             for(int i = 0; i < iter.count(); i++) {
-                ColorView colorView = colorField.getMutView(i);
-                int color = colorView.value();
-                int red = (color >> 24) & 0xFF;
-                int green = (color >> 16) & 0xFF;
-
-                long provinceId = iter.entity(i);
-                EntityView provinceView = ecsWorld.obtainEntityView(provinceId);
-                ReligionDistributionView religionDistributionView = provinceView.getMutView(ReligionDistribution.class);
+                ProvinceView province = provinceField.getMutView(i);
+                ColorView color = colorField.getMutView(i);
+                int colorValue = color.value();
+                int red = (colorValue >> 24) & 0xFF;
+                int green = (colorValue >> 16) & 0xFF;
 
                 int biggestReligionIndex = -1;
                 int biggestReligionAmount = 0;
-                for(int j = 0; j < religionDistributionView.idsLength(); j++) {
-                    if(religionDistributionView.ids(j) != 0 && religionDistributionView.amounts(j) > biggestReligionAmount) {
-                        biggestReligionAmount = religionDistributionView.amounts(j);
+                for(int j = 0; j < province.religionIdsLength(); j++) {
+                    if(province.religionIds(j) != 0 && province.religionAmounts(j) > biggestReligionAmount) {
+                        biggestReligionAmount = province.religionAmounts(j);
                         biggestReligionIndex = j;
                     }
                 }
                 if(biggestReligionIndex != -1) {
-                    long biggestReligionId = religionDistributionView.ids(biggestReligionIndex);
+                    long biggestReligionId = province.religionIds(biggestReligionIndex);
                     this.mapModePixmap.drawPixel(red, green, Objects.requireNonNull(ecsWorld.obtainEntity(biggestReligionId).get(Color.class)).value());
                 }
             }
@@ -393,7 +389,7 @@ public class MapService implements WorldContext, Disposable {
             Field<Province> provinceField = iter.field(Province.class, 0);
             for(int i = 0; i < iter.count(); i++) {
                 ProvinceView provinceView = provinceField.getMutView(i);
-                int pop = provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors();
+                int pop = provinceView.childrenAmount() + provinceView.adultsAmount() + provinceView.seniorsAmount();
                 if(pop > maxPopulation.getValue()) {
                     maxPopulation.setValue(pop);
                 }
@@ -411,7 +407,7 @@ public class MapService implements WorldContext, Disposable {
                 int red = (color >> 24) & 0xFF;
                 int green = (color >> 16) & 0xFF;
 
-                int pop = provinceView.amountChildren() + provinceView.amountAdults() + provinceView.amountSeniors();
+                int pop = provinceView.childrenAmount() + provinceView.adultsAmount() + provinceView.seniorsAmount();
                 float ratio = (maxPopulation.getValue() > 0) ? (float) pop / maxPopulation.getValue() : 0f;
                 this.mapModePixmap.drawPixel(red, green, ColorUtils.getMagmaColorRGBA(ratio));
             }

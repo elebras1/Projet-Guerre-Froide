@@ -73,28 +73,26 @@ public class ProvinceService {
     public int getPopulationAmount(long provinceId) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
-        return provinceData.amountChildren() + provinceData.amountAdults() + provinceData.amountSeniors();
+        return provinceData.childrenAmount() + provinceData.adultsAmount() + provinceData.seniorsAmount();
     }
 
     public ObjectIntMap<String> getCultures(long provinceId) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
-        int amountAdults = provinceData.amountAdults();
-        CultureDistribution cultureDistribution = province.get(CultureDistribution.class);
-        long[] provinceCultureIds = cultureDistribution.ids();
-        int[] provinceCultureValues = cultureDistribution.amounts();
-        return this.calculatePercentageDistributionFromProvinceData(provinceCultureIds, provinceCultureValues, amountAdults);
+        int amountAdults = provinceData.adultsAmount();
+        long[] cultureIds = provinceData.cultureIds();
+        int[] cultureAmounts = provinceData.cultureAmounts();
+        return this.calculatePercentageDistributionFromProvinceData(cultureIds, cultureAmounts, amountAdults);
     }
 
     public ObjectIntMap<String> getReligions(long provinceId) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
-        int amountAdults = provinceData.amountAdults();
-        ReligionDistribution religionDistribution = province.get(ReligionDistribution.class);
-        long[] provinceReligionIds = religionDistribution.ids();
-        int[] provinceReligionValues = religionDistribution.amounts();
+        int amountAdults = provinceData.adultsAmount();
+        long[] religionIds = provinceData.religionIds();
+        int[] religionAmounts = provinceData.religionAmounts();
 
-        return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, amountAdults);
+        return this.calculatePercentageDistributionFromProvinceData(religionIds, religionAmounts, amountAdults);
     }
 
     public DevelopementBuildingLevelDto getDevelopementBuildingLevel(long provinceId) {

@@ -44,7 +44,7 @@ public class RegionService {
                 ProvinceView provinceView = provinceField.getMutView(i);
                 GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
                 if (countryId == provinceView.ownerId() && geoHierarchyView.regionId() == regionId) {
-                    populationAmount.increment(provinceView.amountAdults());
+                    populationAmount.increment(provinceView.adultsAmount());
                 }
             }
         });
@@ -258,7 +258,7 @@ public class RegionService {
                 ProvinceView provinceView = provinceField.getMutView(i);
                 GeoHierarchyView geoView = geoField.getMutView(i);
                 if (geoView.regionId() == regionId) {
-                    workers.increment(provinceView.amountAdults());
+                    workers.increment(provinceView.adultsAmount());
                 }
             }
         });
@@ -287,7 +287,7 @@ public class RegionService {
             ProvinceView provinceDataAView = provinceAView.getMutView(Province.class);
             EntityView provinceBView = ecsWorld.obtainEntityView(b);
             ProvinceView provinceDataBView = provinceBView.getMutView(Province.class);
-            return Integer.compare(provinceDataBView.amountAdults(), provinceDataAView.amountAdults());
+            return Integer.compare(provinceDataBView.adultsAmount(), provinceDataAView.adultsAmount());
         });
 
         List<String> result = new ObjectList<>();
