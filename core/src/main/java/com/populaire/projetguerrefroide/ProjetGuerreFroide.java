@@ -24,7 +24,6 @@ import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
 public class ProjetGuerreFroide extends Game {
     public static final int WORLD_WIDTH = 5616;
     public static final int WORLD_HEIGHT = 2160;
-    public static final int GOOD_COUNT = 40;
     private final ConfigurationService configurationService;
     private ScreenManager screenManager;
     private GameContext gameContext;
@@ -87,11 +86,10 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(ResourceGathering.class);
         this.ecsWorld.component(ExpansionBuilding.class);
         this.ecsWorld.component(LocalMarket.class);
-        this.ecsWorld.component(LocalMarketState.class);
         this.ecsWorld.component(EconomyHierarchy.class);
         this.ecsWorld.component(Population.class);
-        this.ecsWorld.component(PopulationLocation.class);
         this.ecsWorld.component(ResourceGatheringType.class);
+        this.ecsWorld.component(Demographics.class);
     }
 
     public void registerCommands(CommandBus commandBus, BuildingService buildingService) {

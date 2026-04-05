@@ -7,6 +7,7 @@ import com.github.elebras1.flecs.Entity;
 import com.github.elebras1.flecs.EntityView;
 import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.*;
+import com.populaire.projetguerrefroide.Demographics;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonMapper;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
 import com.populaire.projetguerrefroide.component.*;
@@ -15,6 +16,7 @@ import com.populaire.projetguerrefroide.pojo.*;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.EcsConstants;
 import com.populaire.projetguerrefroide.util.ForceTypeUtils;
+import com.populaire.projetguerrefroide.util.StrataUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -91,7 +93,7 @@ public class WorldDaoImpl implements WorldDao {
         return this.mapper.parse(fileHandle.read(), (int) fileHandle.length());
     }
 
-    private BufferedReader parseCsvFile(String filePath) throws IOException {
+    private BufferedReader parseCsvFile(String filePath) {
         FileHandle fileHandle = Gdx.files.internal(filePath);
         return new BufferedReader(new StringReader(fileHandle.readString()));
     }
@@ -328,7 +330,8 @@ public class WorldDaoImpl implements WorldDao {
                 luxuryDemandGoodValues[luxuryDemandIndex] = value;
                 luxuryDemandIndex++;
             }
-            populationType.set(new PopulationType(standardDemandGoodIds, standardDemandGoodValues, luxuryDemandGoodIds, luxuryDemandGoodValues));
+            int strata = StrataUtils.getStrata(populationTypeValue.get("strata").asString());
+            populationType.set(new PopulationType(standardDemandGoodIds, standardDemandGoodValues, luxuryDemandGoodIds, luxuryDemandGoodValues, strata));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -784,8 +787,8 @@ public class WorldDaoImpl implements WorldDao {
             long countryEntityId = ecsWorld.lookup(countryId);
             for(var leaderValue : leaderValues.get("leaders").array()) {
                 String name = leaderValue.get("name").asString();
-                byte skill = (byte) leaderValue.get("skill").asLong();
-                byte forceType = ForceTypeUtils.fromString(leaderValue.get("force_type").asString());
+                int skill = (byte) leaderValue.get("skill").asLong();
+                int forceType = ForceTypeUtils.getForceType(leaderValue.get("force_type").asString());
                 long traitId = ecsWorld.lookup(leaderValue.get("trait").asString());
                 long leaderEntityId = ecsWorld.entity();
                 EntityView leaderEntity = ecsWorld.obtainEntityView(leaderEntityId);
@@ -923,6 +926,7 @@ public class WorldDaoImpl implements WorldDao {
             }
 
             province.set(new Province(coreIds, countryOwnerId, countryControllerId, terrainId, childrenAmount, adultsAmount, seniorsAmount, cultures.first(), cultures.second(), religions.first(), religions.second()));
+            province.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[12], new long[12], new float[12], new float[12], new float[12], new float[12], 0, 0, 0, new long[20], new long[20], new long[20], new long[20]));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -976,7 +980,8 @@ public class WorldDaoImpl implements WorldDao {
                         EntityView localMarket = ecsWorld.obtainEntityView(localMarketId);
                         if(!localMarket.has(LocalMarket.class)) {
                             localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[40], new float[40]));
-                            localMarket.set(new LocalMarketState(new float[40]));
+                            localMarket.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[12], new long[12], new float[12], new float[12], new float[12], new float[12], 0, 0, 0, new long[20], new long[20], new long[20], new long[20]));
+
                         }
                         province.set(new GeoHierarchy(regionEntityId, -1, localMarketId));
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
@@ -1141,6 +1146,7 @@ public class WorldDaoImpl implements WorldDao {
                 i += 2;
             }
             country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
+            country.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[12], new long[12], new float[12], new float[12], new float[12], new float[12], 0, 0, 0, new long[20], new long[20], new long[20], new long[20]));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
