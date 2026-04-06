@@ -7,7 +7,7 @@ import com.github.elebras1.flecs.Entity;
 import com.github.elebras1.flecs.EntityView;
 import com.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.*;
-import com.populaire.projetguerrefroide.Demographics;
+import com.populaire.projetguerrefroide.component.Demographics;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonMapper;
 import com.populaire.projetguerrefroide.adapter.dsljson.JsonValue;
 import com.populaire.projetguerrefroide.component.*;
@@ -26,6 +26,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import static com.populaire.projetguerrefroide.util.Constants.*;
 
 public class WorldDaoImpl implements WorldDao {
     private final String commonPath = "common/";
@@ -58,8 +60,8 @@ public class WorldDaoImpl implements WorldDao {
     private final String traitsJsonFile = this.commonPath + "traits.json";
     private final JsonMapper mapper = new JsonMapper();
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    private final long[] populationTypeIds = new long[12];
-    private final long[] goodIds = new long[40];
+    private final long[] populationTypeIds = new long[POP_TYPE_COUNT];
+    private final long[] goodIds = new long[GOOD_COUNT];
 
     public WorldDaoImpl() {
 
@@ -127,8 +129,8 @@ public class WorldDaoImpl implements WorldDao {
                 long identityEntityId = ecsWorld.entity(name);
                 EntityView identityEntity = ecsWorld.obtainEntityView(identityEntityId);
                 JsonValue identityValue = identityEntry.getValue();
-                float[] modifierValues = new float[8];
-                long[] modifierTagIds = new long[8];
+                float[] modifierValues = new float[MAX_MODIFIERS];
+                long[] modifierTagIds = new long[MAX_MODIFIERS];
                 int i = 0;
                 for(var modifierEntry : identityValue.object()) {
                     String modifierName = modifierEntry.getKey();
@@ -146,8 +148,8 @@ public class WorldDaoImpl implements WorldDao {
                 long attitudeEntityId = ecsWorld.entity(attitudeName);
                 EntityView attitudeEntity = ecsWorld.obtainEntityView(attitudeEntityId);
                 JsonValue attitudeValue = attitudeEntry.getValue();
-                float[] modifierValues = new float[8];
-                long[] modifierTagIds = new long[8];
+                float[] modifierValues = new float[MAX_MODIFIERS];
+                long[] modifierTagIds = new long[MAX_MODIFIERS];
                 int i = 0;
                 for(var modifierEntry : attitudeValue.object()) {
                     String modifierName = modifierEntry.getKey();
@@ -175,7 +177,7 @@ public class WorldDaoImpl implements WorldDao {
                 long governmentEntityId = ecsWorld.entity(governmentName);
                 EntityView governmentEntity = ecsWorld.obtainEntityView(governmentEntityId);
 
-                long[] associatedIdeologies = new long[4];
+                long[] associatedIdeologies = new long[MAX_GOVERNMENT_ASSOCIATED_IDEOLOGIES];
                 int i = 0;
                 for(var associatedIdeologyValue : governmentValue.get("associated_ideologies").array()) {
                     String ideologyName = associatedIdeologyValue.asString();
@@ -192,7 +194,8 @@ public class WorldDaoImpl implements WorldDao {
                     governmentEntity.set(new ElectoralMechanism(headOfState, headOfGovernment, duration));
                 }
 
-                long[] supportedLaws = new long[32];
+                // TODO split supportedLaws in two array
+                long[] supportedLaws = new long[LAW_COUNT];
                 int j = 0;
                 for(var governmentElementEntry : governmentValue.object()) {
                     long lawGroupId = ecsWorld.lookup(governmentElementEntry.getKey());
@@ -288,7 +291,7 @@ public class WorldDaoImpl implements WorldDao {
     }
 
     private void readPopulationTypes(World ecsWorld) {
-        Map<String, String> populationPaths = new ObjectObjectMap<>(12, 1f);
+        Map<String, String> populationPaths = new ObjectObjectMap<>(POP_TYPE_COUNT, 1f);
         try {
             JsonValue populationTypesValues = this.parseJsonFile(this.populationTypesJsonFile);
             for(var populationTypeEntry : populationTypesValues.object()) {
@@ -313,8 +316,8 @@ public class WorldDaoImpl implements WorldDao {
             EntityView populationType = ecsWorld.obtainEntityView(populationTypeId);
             populationType.set(new Color(color));
 
-            long[] standardDemandGoodIds = new long[16];
-            float[] standardDemandGoodValues = new float[16];
+            long[] standardDemandGoodIds = new long[MAX_STANDARD_DEMAND_GOODS];
+            float[] standardDemandGoodValues = new float[MAX_STANDARD_DEMAND_GOODS];
             int standardDemandIndex = 0;
             for(var standardDemandEntry : populationTypeValue.get("standard_demands").object()) {
                 long goodId = ecsWorld.lookup(standardDemandEntry.getKey());
@@ -324,8 +327,8 @@ public class WorldDaoImpl implements WorldDao {
                 standardDemandIndex++;
             }
 
-            long[] luxuryDemandGoodIds = new long[8];
-            float[] luxuryDemandGoodValues = new float[8];
+            long[] luxuryDemandGoodIds = new long[MAX_LUXURY_DEMAND_GOODS];
+            float[] luxuryDemandGoodValues = new float[MAX_LUXURY_DEMAND_GOODS];
             int luxuryDemandIndex = 0;
             for(var luxuryDemandEntry : populationTypeValue.get("luxury_demands").object()) {
                 long goodId = ecsWorld.lookup(luxuryDemandEntry.getKey());
@@ -366,9 +369,9 @@ public class WorldDaoImpl implements WorldDao {
                 int workforce = (int) typeBuildingValue.get("workforce").asLong();
                 long ownerId = ecsWorld.lookup(typeBuildingValue.get("owner").get("poptype").asString());
 
-                long[] workerPopTypeIds = new long[4];
-                float[] workerPopTypeRatios = new float[4];
-                float[] workerPopTypeEffectMultipliers = new float[4];
+                long[] workerPopTypeIds = new long[MAX_POPS];
+                float[] workerPopTypeRatios = new float[MAX_POPS];
+                float[] workerPopTypeEffectMultipliers = new float[MAX_POPS];
 
                 int i = 0;
                 for(var workerValue : typeBuildingValue.get("workers").array()) {
@@ -388,9 +391,9 @@ public class WorldDaoImpl implements WorldDao {
                 int workforce = (int) typeRgoValue.get("workforce").asLong();
                 long ownerId = ecsWorld.lookup(typeRgoValue.get("owner").get("poptype").asString());
 
-                long[] workerPopTypeIds = new long[4];
-                float[] workerPopTypeRatios = new float[4];
-                float[] workerPopTypeEffectMultipliers = new float[4];
+                long[] workerPopTypeIds = new long[MAX_POPS];
+                float[] workerPopTypeRatios = new float[MAX_POPS];
+                float[] workerPopTypeEffectMultipliers = new float[MAX_POPS];
 
                 int i = 0;
                 for(var workerValue : typeRgoValue.get("workers").array()) {
@@ -423,8 +426,8 @@ public class WorldDaoImpl implements WorldDao {
                     // TODO
                 }
                 byte maxLevel = (byte) buildingValue.get("max_level").asLong();
-                long[] goodCostIds = new long[8];
-                float[] goodCostAmounts = new float[8];
+                long[] goodCostIds = new long[MAX_GOODS];
+                float[] goodCostAmounts = new float[MAX_GOODS];
                 int goodCostIndex = 0;
                 for(var goodCostEntry : buildingValue.get("goods_cost").object()) {
                     long goodId = ecsWorld.lookup(goodCostEntry.getKey());
@@ -433,8 +436,8 @@ public class WorldDaoImpl implements WorldDao {
                     goodCostAmounts[goodCostIndex] = goodAmount;
                     goodCostIndex++;
                 }
-                long[] inputGoodIds = new long[8];
-                float[] inputGoodAmounts = new float[8];
+                long[] inputGoodIds = new long[MAX_GOODS];
+                float[] inputGoodAmounts = new float[MAX_GOODS];
                 int inputGoodIndex = 0;
                 for(var inputGoodEntry : buildingValue.get("input_goods").object()) {
                     long goodId = ecsWorld.lookup(inputGoodEntry.getKey());
@@ -463,8 +466,8 @@ public class WorldDaoImpl implements WorldDao {
                 JsonValue buildingValue = specialBuildingEntry.getValue();
                 int time = (int) buildingValue.get("time").asLong();
                 int cost = (int) buildingValue.get("cost").asLong();
-                long[] goodCostIds = new long[8];
-                float[] goodCostAmounts = new float[8];
+                long[] goodCostIds = new long[MAX_GOODS];
+                float[] goodCostAmounts = new float[MAX_GOODS];
                 int goodCostIndex = 0;
                 for(var goodCostEntry : buildingValue.get("goods_cost").object()) {
                     long goodId = ecsWorld.lookup(goodCostEntry.getKey());
@@ -476,8 +479,8 @@ public class WorldDaoImpl implements WorldDao {
 
                 JsonValue modifiersValues = buildingValue.get("modifier");
                 if (modifiersValues != null) {
-                    long[] modifierIds = new long[8];
-                    float[] modifierValues = new float[8];
+                    long[] modifierIds = new long[MAX_MODIFIERS];
+                    float[] modifierValues = new float[MAX_MODIFIERS];
                     int i = 0;
                     for(var modifierEntry: modifiersValues.object()) {
                         String modifierName = modifierEntry.getKey();
@@ -499,8 +502,8 @@ public class WorldDaoImpl implements WorldDao {
                 JsonValue buildingValue = developmentBuildingEntry.getValue();
                 int time = (int) buildingValue.get("time").asLong();
                 int cost = (int) buildingValue.get("cost").asLong();
-                long[] goodCostIds = new long[8];
-                float[] goodCostAmounts = new float[8];
+                long[] goodCostIds = new long[MAX_GOODS];
+                float[] goodCostAmounts = new float[MAX_GOODS];
                 int goodCostIndex = 0;
                 for(var goodCostEntry : buildingValue.get("goods_cost").object()) {
                     long goodId = ecsWorld.lookup(goodCostEntry.getKey());
@@ -516,8 +519,8 @@ public class WorldDaoImpl implements WorldDao {
                 int maxLevel = (int) buildingValue.get("max_level").asLong();
                 JsonValue modifiersValues = buildingValue.get("modifier");
                 if (modifiersValues != null) {
-                    long[] modifierIds = new long[8];
-                    float[] modifierValues = new float[8];
+                    long[] modifierIds = new long[MAX_MODIFIERS];
+                    float[] modifierValues = new float[MAX_MODIFIERS];
                     int i = 0;
                     for(var modifierEntry : modifiersValues.object()) {
                         String modifierName = modifierEntry.getKey();
@@ -559,8 +562,8 @@ public class WorldDaoImpl implements WorldDao {
             for(var ministerTypeEntry : ministerTypesValues.object()) {
                 long ministerTypeEntityId = ecsWorld.entity(ministerTypeEntry.getKey());
                 EntityView ministerTypeEntity = ecsWorld.obtainEntityView(ministerTypeEntityId);
-                float[] modifierValues = new float[8];
-                long[] modifierTagIds = new long[8];
+                float[] modifierValues = new float[MAX_MODIFIERS];
+                long[] modifierTagIds = new long[MAX_MODIFIERS];
                 int i = 0;
                 for(var modifierEntry : ministerTypeEntry.getValue().object()) {
                     String modifierName = modifierEntry.getKey();
@@ -619,8 +622,8 @@ public class WorldDaoImpl implements WorldDao {
                     /*Iterator<JsonValue> requirementsIterator = lawValue.get("requirements").arrayIterator();
                     for(var requirementValue : lawValue.get("requirements").array()) {
                     }*/
-                    float[] modifierValues = new float[8];
-                    long[] modifierTagIds = new long[8];
+                    float[] modifierValues = new float[MAX_MODIFIERS];
+                    long[] modifierTagIds = new long[MAX_MODIFIERS];
                     int i = 0;
                     for(var modifierEntry : lawValue.get("modifiers").object()) {
                         String modifierName = modifierEntry.getKey();
@@ -630,8 +633,8 @@ public class WorldDaoImpl implements WorldDao {
                         i++;
                     }
                     lawEntity.set(new Modifiers(modifierValues, modifierTagIds));
-                    long[] supportIdeologies = new long[8];
-                    long[] opponentIdeologies = new long[8];
+                    long[] supportIdeologies = new long[MAX_LAW_IDEOLOGIES];
+                    long[] opponentIdeologies = new long[MAX_LAW_IDEOLOGIES];
                     int indexSupporters = 0;
                     int indexOpponents = 0;
                     for(var interestIdeologyEntry : lawValue.get("interest_ideologies").object()) {
@@ -665,8 +668,8 @@ public class WorldDaoImpl implements WorldDao {
                 long modifierTagId = ecsWorld.entity(modifierName);
                 long traitEntityId = ecsWorld.entity(traitName);
                 EntityView traitEntity = ecsWorld.obtainEntityView(traitEntityId);
-                float[] modifierValues = new float[8];
-                long[] modifierTagIds = new long[8];
+                float[] modifierValues = new float[MAX_MODIFIERS];
+                long[] modifierTagIds = new long[MAX_MODIFIERS];
                 modifierValues[0] = modifierValue;
                 modifierTagIds[0] = modifierTagId;
                 traitEntity.set(new Modifiers(modifierValues, modifierTagIds));
@@ -861,7 +864,7 @@ public class WorldDaoImpl implements WorldDao {
             long provinceId = ecsWorld.entity(String.valueOf(provinceNameId));
             Entity province = ecsWorld.obtainEntity(provinceId);
 
-            long[] coreIds = new long[8];
+            long[] coreIds = new long[MAX_PROVINCE_CORES];
             JsonValue addCoreValue = provinceValues.get("add_core");
             if (addCoreValue.isArray()) {
                 int i = 0;
@@ -892,8 +895,8 @@ public class WorldDaoImpl implements WorldDao {
             int seniorsAmount = (int) (amount * populationTemplate.seniorsRatio());
 
             this.parsePopulation(ecsWorld, provinceId, populationValue.get("populations"), adultsAmount);
-            Pair<long[], int[]> cultures = this.parseDistribution(ecsWorld, populationValue.get("cultures"), adultsAmount);
-            Pair<long[], int[]> religions = this.parseDistribution(ecsWorld, populationValue.get("religions"), adultsAmount);
+            Pair<long[], int[]> cultures = this.parseDistribution(ecsWorld, populationValue.get("cultures"), adultsAmount, CULTURE_COUNT);
+            Pair<long[], int[]> religions = this.parseDistribution(ecsWorld, populationValue.get("religions"), adultsAmount, RELIGION_COUNT);
 
             JsonValue buildingsValue = provinceValues.get("economy_buildings");
             if(buildingsValue != null) {
@@ -914,7 +917,7 @@ public class WorldDaoImpl implements WorldDao {
                 Good good = goodEntity.get(Good.class);
                 float goodAmount = good.value();
                 long rgoTypeId = ecsWorld.lookup("rgo_" + goodNameId);
-                province.set(new ResourceGathering(rgoTypeId, goodId, this.getGoodIndex(goodId), goodAmount, 0, 0f, new int[12]));
+                province.set(new ResourceGathering(rgoTypeId, goodId, this.getGoodIndex(goodId), goodAmount, 0, 0f, new int[POP_TYPE_COUNT]));
             }
 
             JsonValue buildingsProvinceValue = provinceValues.get("buildings");
@@ -930,7 +933,7 @@ public class WorldDaoImpl implements WorldDao {
             }
 
             province.set(new Province(coreIds, countryOwnerId, countryControllerId, terrainId, childrenAmount, adultsAmount, seniorsAmount, cultures.first(), cultures.second(), religions.first(), religions.second()));
-            province.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[12], new long[12], new float[12], new float[12], new float[12], new float[12], 0, 0, 0, new long[20], new long[20], new long[20], new long[20]));
+            province.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new long[CULTURE_COUNT], new long[RELIGION_COUNT], new long[IDEOLOGY_COUNT]));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -949,9 +952,9 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private Pair<long[], int[]> parseDistribution(World ecsWorld, JsonValue distributionValue, int adultsAmount) {
-        long[] ids = new long[20];
-        int[] amounts = new int[20];
+    private Pair<long[], int[]> parseDistribution(World ecsWorld, JsonValue distributionValue, int adultsAmount, int length) {
+        long[] ids = new long[length];
+        int[] amounts = new int[length];
         int i = 0;
         for(var distributionEntry : distributionValue.object()) {
             String name = distributionEntry.getKey();
@@ -983,8 +986,8 @@ public class WorldDaoImpl implements WorldDao {
                         long localMarketId = ecsWorld.entity("local_market_" + region.id() + "_" + provinceData.ownerId());
                         EntityView localMarket = ecsWorld.obtainEntityView(localMarketId);
                         if(!localMarket.has(LocalMarket.class)) {
-                            localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[40], new float[40]));
-                            localMarket.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[12], new long[12], new float[12], new float[12], new float[12], new float[12], 0, 0, 0, new long[20], new long[20], new long[20], new long[20]));
+                            localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[GOOD_COUNT], new float[GOOD_COUNT]));
+                            localMarket.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new long[CULTURE_COUNT], new long[RELIGION_COUNT], new long[IDEOLOGY_COUNT]));
 
                         }
                         province.set(new GeoHierarchy(regionEntityId, -1, localMarketId));
@@ -997,7 +1000,7 @@ public class WorldDaoImpl implements WorldDao {
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
                                 building.set(new Building(localMarketId, buildingTypeId, size));
                                 if(buildingType.has(EconomyBuildingType.class)) {
-                                    building.set(new EconomyBuilding(0f, 0f, new int[12]));
+                                    building.set(new EconomyBuilding(0f, 0f, new int[POP_TYPE_COUNT]));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {
                                     building.set(new SpecialBuilding());
                                 }
@@ -1136,7 +1139,8 @@ public class WorldDaoImpl implements WorldDao {
                 ministerHeadOfGovernmentEntityId = ecsWorld.lookup(String.valueOf(ministerHeadOfGovernmentId));
             }
 
-            long[] lawIds = new long[48];
+            // TODO split laws into groups and laws or use lawGroup index
+            long[] lawIds = new long[LAW_COUNT];
             int i = 0;
             for(var lawEntry : countryValues.get("laws").object()) {
                 String lawGroupName = lawEntry.getKey();
@@ -1150,7 +1154,7 @@ public class WorldDaoImpl implements WorldDao {
                 i += 2;
             }
             country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
-            country.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[12], new long[12], new float[12], new float[12], new float[12], new float[12], 0, 0, 0, new long[20], new long[20], new long[20], new long[20]));
+            country.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new long[CULTURE_COUNT], new long[RELIGION_COUNT], new long[IDEOLOGY_COUNT]));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -1182,7 +1186,7 @@ public class WorldDaoImpl implements WorldDao {
                 int provinceId = Integer.parseInt(provinceEntry.getKey());
                 long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                 EntityView provinceEntity = ecsWorld.obtainEntityView(provinceEntityId);
-                long[] adjacencyIds = new long[32];
+                long[] adjacencyIds = new long[MAX_ADJACENCIES];
                 int i = 0;
                 for(var adjacencyValue : provinceEntry.getValue().array()) {
                     int adjacencyId = (int) adjacencyValue.asLong();

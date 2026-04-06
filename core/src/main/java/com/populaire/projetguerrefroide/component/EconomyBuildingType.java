@@ -3,19 +3,22 @@ package com.populaire.projetguerrefroide.component;
 import com.github.elebras1.flecs.annotation.Component;
 import com.github.elebras1.flecs.annotation.FixedArray;
 
+import static com.populaire.projetguerrefroide.util.Constants.MAX_GOODS;
+import static com.populaire.projetguerrefroide.util.Constants.MAX_POPS;
+
 @Component
 public record EconomyBuildingType(
     int time,
     int maxLevel,
-    @FixedArray(length = 8) long[] goodCostIds,
-    @FixedArray(length = 8) float[] goodCostAmounts,
-    @FixedArray(length = 8) long[] goodInputIds,
-    @FixedArray(length = 8) float[] goodInputAmounts,
+    @FixedArray(length = MAX_GOODS) long[] goodCostIds,
+    @FixedArray(length = MAX_GOODS) float[] goodCostAmounts,
+    @FixedArray(length = MAX_GOODS) long[] goodInputIds,
+    @FixedArray(length = MAX_GOODS) float[] goodInputAmounts,
     long goodOutputId,
     float goodOutputAmount,
     int workforce,
     long ownerId,
-    @FixedArray(length = 4) long[] workerPopTypeIds,
-    @FixedArray(length = 4) float[] workerPopTypeRatios,
-    @FixedArray(length = 4) float[] workerPopTypeEffectMultipliers) {
+    @FixedArray(length = MAX_POPS) long[] workerPopTypeIds,
+    @FixedArray(length = MAX_POPS) float[] workerPopTypeRatios,
+    @FixedArray(length = MAX_POPS) float[] workerPopTypeEffectMultipliers) {
 }
