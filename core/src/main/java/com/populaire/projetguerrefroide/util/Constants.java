@@ -6,7 +6,8 @@ public class Constants {
     public static final int RELIGION_COUNT = 13;
     public static final int IDEOLOGY_COUNT = 9;
     public static final int POP_TYPE_COUNT = 12;
-    public static final int LAW_COUNT = 48;
+    public static final int LAW_GROUP_COUNT = 21;
+    public static final int LAW_COUNT = 88;
     public static final int MAX_ADJACENCIES = 32;
     public static final int MAX_GOODS = 8;
     public static final int MAX_POPS = 4;

@@ -62,6 +62,7 @@ public class WorldDaoImpl implements WorldDao {
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private final long[] populationTypeIds = new long[POP_TYPE_COUNT];
     private final long[] goodIds = new long[GOOD_COUNT];
+    private final long[] lawGroupIds = new long[LAW_GROUP_COUNT];
 
     public WorldDaoImpl() {
 
@@ -87,7 +88,7 @@ public class WorldDaoImpl implements WorldDao {
         IntLongMap provinces = new IntLongMap(15000, 1f);
         Borders borders = this.loadProvinces(ecsWorld, ecsConstants, provinces);
 
-        return new WorldData(provinces, borders, this.goodIds);
+        return new WorldData(provinces, borders);
     }
 
     private JsonValue parseJsonFile(String filePath) throws IOException {
@@ -177,12 +178,12 @@ public class WorldDaoImpl implements WorldDao {
                 long governmentEntityId = ecsWorld.entity(governmentName);
                 EntityView governmentEntity = ecsWorld.obtainEntityView(governmentEntityId);
 
-                long[] associatedIdeologies = new long[MAX_GOVERNMENT_ASSOCIATED_IDEOLOGIES];
+                long[] associatedIdeologieIds = new long[MAX_GOVERNMENT_ASSOCIATED_IDEOLOGIES];
                 int i = 0;
                 for(var associatedIdeologyValue : governmentValue.get("associated_ideologies").array()) {
                     String ideologyName = associatedIdeologyValue.asString();
                     long ideologyEntityId = ecsWorld.lookup(ideologyName);
-                    associatedIdeologies[i] = ideologyEntityId;
+                    associatedIdeologieIds[i] = ideologyEntityId;
                     i++;
                 }
 
@@ -194,23 +195,23 @@ public class WorldDaoImpl implements WorldDao {
                     governmentEntity.set(new ElectoralMechanism(headOfState, headOfGovernment, duration));
                 }
 
-                // TODO split supportedLaws in two array
-                long[] supportedLaws = new long[LAW_COUNT];
-                int j = 0;
+                long[] supportedLawGroupIds = new long[LAW_COUNT];
+                long[] supportedLawIds = new long[LAW_COUNT];
+                int lawIndex = 0;
                 for(var governmentElementEntry : governmentValue.object()) {
                     long lawGroupId = ecsWorld.lookup(governmentElementEntry.getKey());
                     if(lawGroupId != 0) {
                         for(var supportedLawValue : governmentElementEntry.getValue().array()) {
                             String lawNameId = supportedLawValue.asString();
                             long lawId = ecsWorld.lookup(lawNameId);
-                            supportedLaws[j] = lawGroupId;
-                            supportedLaws[j + 1] = lawId;
-                            j += 2;
+                            supportedLawGroupIds[lawIndex] = lawGroupId;
+                            supportedLawIds[lawIndex] = lawId;
+                            lawIndex++;
                         }
                     }
                 }
 
-                governmentEntity.set(new GovernmentPolicy(associatedIdeologies, supportedLaws));
+                governmentEntity.set(new GovernmentPolicy(associatedIdeologieIds, supportedLawGroupIds, supportedLawIds));
             }
         } catch (Exception exception) {
             throw new RuntimeException(exception);
@@ -604,15 +605,17 @@ public class WorldDaoImpl implements WorldDao {
         try {
             JsonValue lawsValues = this.parseJsonFile(this.lawsJsonFile);
             int baseEnactmentDaysLaw = (int) lawsValues.get("base_enactment_days").asLong();
+            int lawGroupIndex = 0;
             for(var lawGroupEntry : lawsValues.get("groups").object()) {
                 String name = lawGroupEntry.getKey();
                 JsonValue lawGroupValue = lawGroupEntry.getValue();
                 int factorEnactmentDays = (int) lawGroupValue.get("factor_enactment_days").asLong();
                 int enactmentDuration = baseEnactmentDaysLaw * factorEnactmentDays;
-                long lawGroupEntityId = ecsWorld.entity(name);
-                EntityView lawGroupEntity = ecsWorld.obtainEntityView(lawGroupEntityId);
-                lawGroupEntity.add(ecsConstants.lawGroupTag());
-                lawGroupEntity.set(new EnactmentDuration(enactmentDuration));
+                long lawGroupId = ecsWorld.entity(name);
+                Entity lawGroup = ecsWorld.obtainEntity(lawGroupId);
+                lawGroup.set(new LawGroup(lawGroupIndex, enactmentDuration));
+                this.lawGroupIds[lawGroupIndex] = lawGroupId;
+
                 for(var lawEntry : lawGroupValue.get("laws").object()) {
                     String lawName = lawEntry.getKey();
                     long lawEntityId = ecsWorld.entity(lawName);
@@ -633,23 +636,24 @@ public class WorldDaoImpl implements WorldDao {
                         i++;
                     }
                     lawEntity.set(new Modifiers(modifierValues, modifierTagIds));
-                    long[] supportIdeologies = new long[MAX_LAW_IDEOLOGIES];
-                    long[] opponentIdeologies = new long[MAX_LAW_IDEOLOGIES];
+                    long[] supportIdeologieIds = new long[MAX_LAW_IDEOLOGIES];
+                    long[] opponentIdeologieIds = new long[MAX_LAW_IDEOLOGIES];
                     int indexSupporters = 0;
                     int indexOpponents = 0;
                     for(var interestIdeologyEntry : lawValue.get("interest_ideologies").object()) {
                         long ideologyId = ecsWorld.lookup(interestIdeologyEntry.getKey());
                         int value = (int) interestIdeologyEntry.getValue().asLong();
                         if(value > 0) {
-                            supportIdeologies[indexSupporters] = ideologyId;
+                            supportIdeologieIds[indexSupporters] = ideologyId;
                             indexSupporters++;
                         } else if (value < 0) {
-                            opponentIdeologies[indexOpponents] = ideologyId;
+                            opponentIdeologieIds[indexOpponents] = ideologyId;
                             indexOpponents++;
                         }
                     }
-                    lawEntity.set(new Law(lawGroupEntityId, supportIdeologies, opponentIdeologies));
+                    lawEntity.set(new Law(lawGroupId, supportIdeologieIds, opponentIdeologieIds));
                 }
+                lawGroupIndex++;
             }
         } catch (Exception exception) {
             throw new RuntimeException(exception);
@@ -1139,19 +1143,16 @@ public class WorldDaoImpl implements WorldDao {
                 ministerHeadOfGovernmentEntityId = ecsWorld.lookup(String.valueOf(ministerHeadOfGovernmentId));
             }
 
-            // TODO split laws into groups and laws or use lawGroup index
-            long[] lawIds = new long[LAW_COUNT];
-            int i = 0;
+            long[] lawIds = new long[LAW_GROUP_COUNT];
             for(var lawEntry : countryValues.get("laws").object()) {
                 String lawGroupName = lawEntry.getKey();
                 String lawName = lawEntry.getValue().asString();
 
                 long lawGroupId = ecsWorld.lookup(lawGroupName);
+                int lawGroupIndex = this.getLawGroupIndex(lawGroupId);
                 long lawId = ecsWorld.lookup(lawName);
 
-                lawIds[i] = lawGroupId;
-                lawIds[i + 1] = lawId;
-                i += 2;
+                lawIds[lawGroupIndex] = lawId;
             }
             country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
             country.set(new CountryDemographics(0, 0, 0, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new long[CULTURE_COUNT], new long[RELIGION_COUNT], new long[IDEOLOGY_COUNT]));
@@ -1243,6 +1244,15 @@ public class WorldDaoImpl implements WorldDao {
     private int getGoodIndex(long goodId) {
         for (int i = 0; i < this.goodIds.length; i++) {
             if (this.goodIds[i] == goodId) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private int getLawGroupIndex(long lawGroupId) {
+        for (int i = 0; i < this.lawGroupIds.length; i++) {
+            if (this.lawGroupIds[i] == lawGroupId) {
                 return i;
             }
         }

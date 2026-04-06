@@ -4,7 +4,6 @@ import com.github.elebras1.flecs.World;
 import com.github.elebras1.flecs.util.FlecsConstants;
 
 public class EcsConstants {
-    private static final String LAW_GROUP_TAG = "LawGroupTag";
     private static final String SEA_PROVINCE_TAG = "SeaProvinceTag";
     private static final String REGION_TAG = "RegionTag";
     private static final String COUNTRY_TAG = "CountryTag";
@@ -25,7 +24,6 @@ public class EcsConstants {
     public static final String ON_MAP = "OnMap";
     public static final String SUSPENDED = "Suspended";
 
-    private final long lawGroupTag;
     private final long seaProvinceTag;
     private final long regionTag;
     private final long countryTag;
@@ -47,7 +45,6 @@ public class EcsConstants {
     private final long suspended;
 
     public EcsConstants(World ecsWorld) {
-        this.lawGroupTag = ecsWorld.entity(LAW_GROUP_TAG);
         this.seaProvinceTag = ecsWorld.entity(SEA_PROVINCE_TAG);
         this.regionTag = ecsWorld.entity(REGION_TAG);
         this.countryTag = ecsWorld.entity(COUNTRY_TAG);
@@ -67,10 +64,6 @@ public class EcsConstants {
         this.militaryGoodTag = ecsWorld.entity(MILITARY_GOOD_TAG);
         this.onMap = ecsWorld.entity(ON_MAP);
         this.suspended = ecsWorld.entity(SUSPENDED);
-    }
-
-    public long lawGroupTag() {
-        return this.lawGroupTag;
     }
 
     public long seaProvinceTag() {

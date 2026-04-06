@@ -63,7 +63,6 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(Terrain.class);
         this.ecsWorld.component(ElectoralMechanism.class);
         this.ecsWorld.component(Leader.class);
-        this.ecsWorld.component(EnactmentDuration.class);
         this.ecsWorld.component(Color.class);
         this.ecsWorld.component(Position.class);
         this.ecsWorld.component(Border.class);
@@ -73,6 +72,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(Province.class);
         this.ecsWorld.component(GeoHierarchy.class);
         this.ecsWorld.component(Law.class);
+        this.ecsWorld.component(LawGroup.class);
         this.ecsWorld.component(GovernmentPolicy.class);
         this.ecsWorld.component(PopulationType.class);
         this.ecsWorld.component(Good.class);
