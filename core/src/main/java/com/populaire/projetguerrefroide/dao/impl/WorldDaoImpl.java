@@ -933,7 +933,7 @@ public class WorldDaoImpl implements WorldDao {
             }
 
             province.set(new Province(coreIds, countryOwnerId, countryControllerId, terrainId, childrenAmount, adultsAmount, seniorsAmount, cultures.first(), cultures.second(), religions.first(), religions.second()));
-            province.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new long[CULTURE_COUNT], new long[RELIGION_COUNT], new long[IDEOLOGY_COUNT]));
+            province.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new int[CULTURE_COUNT], new int[RELIGION_COUNT], new int[IDEOLOGY_COUNT]));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -987,7 +987,7 @@ public class WorldDaoImpl implements WorldDao {
                         EntityView localMarket = ecsWorld.obtainEntityView(localMarketId);
                         if(!localMarket.has(LocalMarket.class)) {
                             localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[GOOD_COUNT], new float[GOOD_COUNT]));
-                            localMarket.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new long[CULTURE_COUNT], new long[RELIGION_COUNT], new long[IDEOLOGY_COUNT]));
+                            localMarket.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new int[CULTURE_COUNT], new int[RELIGION_COUNT], new int[IDEOLOGY_COUNT]));
 
                         }
                         province.set(new GeoHierarchy(regionEntityId, -1, localMarketId));
@@ -1154,7 +1154,7 @@ public class WorldDaoImpl implements WorldDao {
                 i += 2;
             }
             country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
-            country.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new long[CULTURE_COUNT], new long[RELIGION_COUNT], new long[IDEOLOGY_COUNT]));
+            country.set(new CountryDemographics(0, 0, 0, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new long[CULTURE_COUNT], new long[RELIGION_COUNT], new long[IDEOLOGY_COUNT]));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
