@@ -18,7 +18,7 @@ import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.*;
-import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
+import com.populaire.projetguerrefroide.system.*;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class ProjetGuerreFroide extends Game {
@@ -50,10 +50,11 @@ public class ProjetGuerreFroide extends Game {
         WorldService worldService = new WorldService(this.gameContext, queryRepository, buildingService, economyService, regionService, countryService, provinceService);
         TimeService timeService = new TimeService(this.gameContext.getBookmark().date());
         this.registerCommands(commandBus, buildingService);
-        this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService, worldService, timeService, commandBus);
+        this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService, worldService, timeService, economyService, commandBus);
         this.loadAssets(this.gameContext.getAssetManager());
         this.screenManager.showMainMenuScreen();
         this.ecsDebug(this.gameContext);
+
     }
 
     private void registerComponents() {

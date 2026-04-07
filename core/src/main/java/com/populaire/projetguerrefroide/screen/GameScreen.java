@@ -22,10 +22,7 @@ import com.populaire.projetguerrefroide.component.Position;
 import com.populaire.projetguerrefroide.screen.input.GameInputHandler;
 import com.populaire.projetguerrefroide.screen.listener.*;
 import com.populaire.projetguerrefroide.screen.presenter.*;
-import com.populaire.projetguerrefroide.service.ConfigurationService;
-import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.TimeService;
-import com.populaire.projetguerrefroide.service.WorldService;
+import com.populaire.projetguerrefroide.service.*;
 import com.populaire.projetguerrefroide.ui.view.*;
 import com.populaire.projetguerrefroide.ui.widget.WidgetFactory;
 
@@ -39,6 +36,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
     private final GameContext gameContext;
     private final WorldService worldService;
     private final ConfigurationService configurationService;
+    private final EconomyService economyService;
     private final CommandBus commandBus;
     private final TimeService timeService;
     private final OrthographicCamera cam;
@@ -56,11 +54,12 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
     private float time;
     private boolean paused;
 
-    public GameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService, TimeService timeService, ConfigurationService configurationService, CommandBus commandBus) {
+    public GameScreen(ScreenManager screenManager, GameContext gameContext, WorldService worldService, TimeService timeService, ConfigurationService configurationService, EconomyService economyService, CommandBus commandBus) {
         this.gameContext = gameContext;
         this.worldService = worldService;
         this.configurationService = configurationService;
         this.timeService = timeService;
+        this.economyService = economyService;
         this.commandBus = commandBus;
         this.cam = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
         this.projection = new WgProjection();
@@ -104,6 +103,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
         this.timeService.addListener(this);
         this.timeService.addListener(this.topBarPresenter);
         this.timeService.addListener(this.provincePanelPresenter);
+        this.gameContext.getEcsWorld().runPipeline(this.economyService.getInitPipeline().id(), 1f);
         this.timeService.initialize();
         this.paused = false;
     }
@@ -133,6 +133,7 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
 
     @Override
     public void onNewDay(LocalDate date) {
+        this.gameContext.getEcsWorld().runPipeline(this.economyService.getMainPipeline().id(), 1f);
         this.gameContext.getEcsWorld().progress(1f);
     }
 

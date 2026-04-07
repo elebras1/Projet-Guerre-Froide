@@ -371,19 +371,22 @@ public class WorldDaoImpl implements WorldDao {
                 long ownerId = ecsWorld.lookup(typeBuildingValue.get("owner").get("poptype").asString());
 
                 long[] workerPopTypeIds = new long[MAX_POPS];
+                int[] workerPopTypeIndexes = new int[MAX_POPS];
                 float[] workerPopTypeRatios = new float[MAX_POPS];
                 float[] workerPopTypeEffectMultipliers = new float[MAX_POPS];
 
                 int i = 0;
                 for(var workerValue : typeBuildingValue.get("workers").array()) {
                     String workerTypeName = workerValue.asString();
-                    workerPopTypeIds[i] = workerPopTypeIdsByType.get(workerTypeName);
+                    long popTypeId = workerPopTypeIdsByType.get(workerTypeName);
+                    workerPopTypeIds[i] = popTypeId;
+                    workerPopTypeIndexes[i] = this.getPopulationTypeIndex(popTypeId);
                     workerPopTypeRatios[i] = workerPopTypeRatiosByType.get(workerTypeName);
                     workerPopTypeEffectMultipliers[i] = workerPopTypeEffectMultiplierByType.get(workerTypeName);
                     i++;
                 }
 
-                productionTypes.put(typeName, new ProductionType(workforce, ownerId, workerPopTypeIds, workerPopTypeRatios, workerPopTypeEffectMultipliers));
+                productionTypes.put(typeName, new ProductionType(workforce, ownerId, workerPopTypeIndexes, workerPopTypeIds, workerPopTypeRatios, workerPopTypeEffectMultipliers));
             }
 
             for(var typeRgoEntry: buildingTypesJson.get("types_rgo").object()) {
@@ -393,19 +396,22 @@ public class WorldDaoImpl implements WorldDao {
                 long ownerId = ecsWorld.lookup(typeRgoValue.get("owner").get("poptype").asString());
 
                 long[] workerPopTypeIds = new long[MAX_POPS];
+                int[] workerPopTypeIndexes = new int[MAX_POPS];
                 float[] workerPopTypeRatios = new float[MAX_POPS];
                 float[] workerPopTypeEffectMultipliers = new float[MAX_POPS];
 
                 int i = 0;
                 for(var workerValue : typeRgoValue.get("workers").array()) {
                     String workerTypeName = workerValue.asString();
-                    workerPopTypeIds[i] = workerPopTypeIdsByType.get(workerTypeName);
+                    long popTypeId = workerPopTypeIdsByType.get(workerTypeName);
+                    workerPopTypeIds[i] = popTypeId;
+                    workerPopTypeIndexes[i] = this.getPopulationTypeIndex(popTypeId);
                     workerPopTypeRatios[i] = workerPopTypeRatiosByType.get(workerTypeName);
                     workerPopTypeEffectMultipliers[i] = workerPopTypeEffectMultiplierByType.get(workerTypeName);
                     i++;
                 }
 
-                productionTypes.put(typeName, new ProductionType(workforce, ownerId, workerPopTypeIds, workerPopTypeRatios, workerPopTypeEffectMultipliers));
+                productionTypes.put(typeName, new ProductionType(workforce, ownerId, workerPopTypeIndexes, workerPopTypeIds, workerPopTypeRatios, workerPopTypeEffectMultipliers));
             }
 
             return productionTypes;
@@ -458,7 +464,7 @@ public class WorldDaoImpl implements WorldDao {
                     outputGoodAmount = goodAmount;
                 }
                 ProductionType productionType = productionTypes.get(productionTypeId);
-                building.set(new EconomyBuildingType(time, maxLevel, goodCostIds, goodCostAmounts, inputGoodIds, inputGoodAmounts, outputGoodId, outputGoodAmount, productionType.workforce(), productionType.ownerId(), productionType.workerPopTypeIds(), productionType.workerPopTypeRatios(), productionType.workerPopTypeEffectMultipliers()));
+                building.set(new EconomyBuildingType(time, maxLevel, goodCostIds, goodCostAmounts, inputGoodIds, inputGoodAmounts, outputGoodId, outputGoodAmount, productionType.workforce(), productionType.ownerId(), productionType.workerPopTypeIndexes(), productionType.workerPopTypeIds(), productionType.workerPopTypeRatios(), productionType.workerPopTypeEffectMultipliers()));
             }
 
             for(var specialBuildingEntry : buildingsValues.get("special_building").object()) {
@@ -550,7 +556,7 @@ public class WorldDaoImpl implements WorldDao {
                 ProductionType productionType = productionTypes.get(productionTypeId);
                 long rgoTypeId = ecsWorld.entity("rgo_" + goodNameId);
                 EntityView rgoType = ecsWorld.obtainEntityView(rgoTypeId);
-                rgoType.set(new ResourceGatheringType(productionType.workforce(), productionType.ownerId(), productionType.workerPopTypeIds(), productionType.workerPopTypeRatios(), productionType.workerPopTypeEffectMultipliers()));
+                rgoType.set(new ResourceGatheringType(productionType.workforce(), productionType.ownerId(), productionType.workerPopTypeIndexes(), productionType.workerPopTypeIds(), productionType.workerPopTypeRatios(), productionType.workerPopTypeEffectMultipliers()));
             }
         } catch (Exception exception) {
             throw new RuntimeException(exception);
@@ -921,7 +927,7 @@ public class WorldDaoImpl implements WorldDao {
                 Good good = goodEntity.get(Good.class);
                 float goodAmount = good.value();
                 long rgoTypeId = ecsWorld.lookup("rgo_" + goodNameId);
-                province.set(new ResourceGathering(rgoTypeId, goodId, this.getGoodIndex(goodId), goodAmount, 0, 0f, new int[POP_TYPE_COUNT]));
+                province.set(new ResourceGathering(rgoTypeId, goodId, this.getGoodIndex(goodId), goodAmount, 0, 0f, 0f));
             }
 
             JsonValue buildingsProvinceValue = provinceValues.get("buildings");
@@ -937,7 +943,7 @@ public class WorldDaoImpl implements WorldDao {
             }
 
             province.set(new Province(coreIds, countryOwnerId, countryControllerId, terrainId, childrenAmount, adultsAmount, seniorsAmount, cultures.first(), cultures.second(), religions.first(), religions.second()));
-            province.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new int[CULTURE_COUNT], new int[RELIGION_COUNT], new int[IDEOLOGY_COUNT]));
+            province.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -991,7 +997,7 @@ public class WorldDaoImpl implements WorldDao {
                         EntityView localMarket = ecsWorld.obtainEntityView(localMarketId);
                         if(!localMarket.has(LocalMarket.class)) {
                             localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[GOOD_COUNT], new float[GOOD_COUNT]));
-                            localMarket.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new int[CULTURE_COUNT], new int[RELIGION_COUNT], new int[IDEOLOGY_COUNT]));
+                            localMarket.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
 
                         }
                         province.set(new GeoHierarchy(regionEntityId, -1, localMarketId));
@@ -1004,7 +1010,7 @@ public class WorldDaoImpl implements WorldDao {
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
                                 building.set(new Building(localMarketId, buildingTypeId, size));
                                 if(buildingType.has(EconomyBuildingType.class)) {
-                                    building.set(new EconomyBuilding(0f, 0f, new int[POP_TYPE_COUNT]));
+                                    building.set(new EconomyBuilding(0f, 0f, 0f));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {
                                     building.set(new SpecialBuilding());
                                 }
@@ -1155,7 +1161,7 @@ public class WorldDaoImpl implements WorldDao {
                 lawIds[lawGroupIndex] = lawId;
             }
             country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
-            country.set(new CountryDemographics(0, 0, 0, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0, new long[CULTURE_COUNT], new long[RELIGION_COUNT], new long[IDEOLOGY_COUNT]));
+            country.set(new CountryDemographics(0, 0, 0, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }

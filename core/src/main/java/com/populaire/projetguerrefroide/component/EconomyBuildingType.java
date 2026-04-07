@@ -18,6 +18,7 @@ public record EconomyBuildingType(
     float goodOutputAmount,
     int workforce,
     long ownerId,
+    @FixedArray(length = MAX_POPS) int[] workerPopTypeIndexes,
     @FixedArray(length = MAX_POPS) long[] workerPopTypeIds,
     @FixedArray(length = MAX_POPS) float[] workerPopTypeRatios,
     @FixedArray(length = MAX_POPS) float[] workerPopTypeEffectMultipliers) {

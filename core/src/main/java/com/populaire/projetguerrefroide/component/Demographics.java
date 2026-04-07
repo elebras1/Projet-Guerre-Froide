@@ -21,8 +21,5 @@ public record Demographics(
     @FixedArray(length = POP_TYPE_COUNT) float[] savingsByPopType,
     int totalChildren,
     int totalAdults,
-    int totalSeniors,
-    @FixedArray(length = CULTURE_COUNT) int[] totalByCulture,
-    @FixedArray(length = RELIGION_COUNT) int[] totalByReligion,
-    @FixedArray(length = IDEOLOGY_COUNT) int[] totalByIdeology) {
+    int totalSeniors) {
 }

@@ -22,8 +22,5 @@ public record CountryDemographics(
     @FixedArray(length = POP_TYPE_COUNT) float[] savingsByPopType,
     long totalChildren,
     long totalAdults,
-    long totalSeniors,
-    @FixedArray(length = CULTURE_COUNT) long[] totalByCulture,
-    @FixedArray(length = RELIGION_COUNT) long[] totalByReligion,
-    @FixedArray(length = IDEOLOGY_COUNT) long[] totalByIdeology) {
+    long totalSeniors) {
 }
