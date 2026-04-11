@@ -14,6 +14,7 @@ public class DemographicsSpreadSystem {
         ecsWorld.system("DemographicsSpreadSystem")
             .kind(phaseId)
             .with(Population.class)
+            .orderBy(Population.class, (PopulationView popA, PopulationView popB) -> Long.compare(popA.provinceId(), popB.provinceId()))
             .iter(this::spread);
     }
 

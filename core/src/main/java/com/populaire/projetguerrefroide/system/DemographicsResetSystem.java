@@ -16,6 +16,6 @@ public class DemographicsResetSystem {
     }
 
     private void reset(Iter iter) {
-        iter.table().clearColumn(Demographics.class);
+        iter.table().resetColumn(Demographics.class);
     }
 }
