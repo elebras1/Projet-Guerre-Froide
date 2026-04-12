@@ -2,16 +2,15 @@ package com.populaire.projetguerrefroide.service;
 
 import com.github.elebras1.flecs.Pipeline;
 import com.github.elebras1.flecs.World;
-import com.populaire.projetguerrefroide.system.CountryDemographicsResetSystem;
-import com.populaire.projetguerrefroide.system.DemographicsResetSystem;
-import com.populaire.projetguerrefroide.system.DemographicsSpreadSystem;
-import com.populaire.projetguerrefroide.system.RGOSizeSystem;
+import com.populaire.projetguerrefroide.system.*;
 
 public class EconomyService {
     private final GameContext gameContext;
     private final DemographicsResetSystem demographicsResetSystem;
     private final CountryDemographicsResetSystem countryDemographicsResetSystem;
-    private final DemographicsSpreadSystem demographicsSpreadSystem;
+    private final DemographicsPopulationSpreadSystem demographicsPopulationSpreadSystem;
+    private final DemographicsProvinceSpreadSystem demographicsProvinceSpreadSystem;
+    private final DemographicsLocalMarketSpreadSystem demographicsLocalMarketSpreadSystem;
     private final RGOSizeSystem rgoSizeSystem;
     private Pipeline initPipeline;
     private Pipeline mainPipeline;
@@ -38,7 +37,9 @@ public class EconomyService {
 
         this.demographicsResetSystem = new DemographicsResetSystem(this.gameContext.getEcsWorld(), phaseReset);
         this.countryDemographicsResetSystem = new CountryDemographicsResetSystem(this.gameContext.getEcsWorld(), phaseReset);
-        this.demographicsSpreadSystem = new DemographicsSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
+        this.demographicsPopulationSpreadSystem = new DemographicsPopulationSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
+        this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
+        this.demographicsLocalMarketSpreadSystem = new DemographicsLocalMarketSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
         this.rgoSizeSystem = new RGOSizeSystem(this.gameContext.getEcsWorld(), phaseInitRGO);
     }
 
