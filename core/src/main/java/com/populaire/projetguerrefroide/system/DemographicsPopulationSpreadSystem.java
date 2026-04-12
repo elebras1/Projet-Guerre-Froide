@@ -17,7 +17,7 @@ public class DemographicsPopulationSpreadSystem {
             .iter(this::spread);
     }
 
-    public void spread(Iter iter) {
+    private void spread(Iter iter) {
         long provinceId = 0;
         ProvinceView province = null;
         DemographicsView provinceDemographics = null;

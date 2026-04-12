@@ -12,8 +12,11 @@ public class EconomyService {
     private final DemographicsProvinceSpreadSystem demographicsProvinceSpreadSystem;
     private final DemographicsLocalMarketSpreadSystem demographicsLocalMarketSpreadSystem;
     private final RGOSizeSystem rgoSizeSystem;
-    private Pipeline initPipeline;
-    private Pipeline mainPipeline;
+    private final RGOHireInitializationSystem rgoHireInitializationSystem;
+    private final EconomyBuildingHireInitializationSystem economyBuildingHireInitializationSystem;
+    private final RGOProduceSystem rgoProduceSystem;
+    private final Pipeline initPipeline;
+    private final Pipeline mainPipeline;
 
     public EconomyService(GameContext gameContext) {
         this.gameContext = gameContext;
@@ -22,17 +25,19 @@ public class EconomyService {
 
         long phaseReset = ecsWorld.entity("PhaseReset");
         long phaseSpread = ecsWorld.entity("PhaseSpread");
-        long phaseInitRGO = ecsWorld.entity("PhaseInitRGO");
+        long phaseInit = ecsWorld.entity("PhaseInit");
+        long phaseProduce = ecsWorld.entity("PhaseProduce");
 
         this.initPipeline = ecsWorld.pipeline("InitEconomyPipeline")
             .with(phaseReset)
             .with(phaseSpread)
-            .with(phaseInitRGO)
+            .with(phaseInit)
             .build();
 
         this.mainPipeline = ecsWorld.pipeline("MainEconomyPipeline")
             .with(phaseReset)
             .with(phaseSpread)
+            .with(phaseProduce)
             .build();
 
         this.demographicsResetSystem = new DemographicsResetSystem(this.gameContext.getEcsWorld(), phaseReset);
@@ -40,7 +45,10 @@ public class EconomyService {
         this.demographicsPopulationSpreadSystem = new DemographicsPopulationSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
         this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
         this.demographicsLocalMarketSpreadSystem = new DemographicsLocalMarketSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
-        this.rgoSizeSystem = new RGOSizeSystem(this.gameContext.getEcsWorld(), phaseInitRGO);
+        this.rgoSizeSystem = new RGOSizeSystem(this.gameContext.getEcsWorld(), phaseInit);
+        this.rgoHireInitializationSystem = new RGOHireInitializationSystem(this.gameContext.getEcsWorld(), phaseInit);
+        this.economyBuildingHireInitializationSystem = new EconomyBuildingHireInitializationSystem(this.gameContext.getEcsWorld(), phaseInit);
+        this.rgoProduceSystem = new RGOProduceSystem(this.gameContext.getEcsWorld(), phaseProduce);
     }
 
     public Pipeline getInitPipeline() {

@@ -464,7 +464,26 @@ public class WorldDaoImpl implements WorldDao {
                     outputGoodAmount = goodAmount;
                 }
                 ProductionType productionType = productionTypes.get(productionTypeId);
-                building.set(new EconomyBuildingType(time, maxLevel, goodCostIds, goodCostAmounts, inputGoodIds, inputGoodAmounts, outputGoodId, outputGoodAmount, productionType.workforce(), productionType.ownerId(), productionType.workerPopTypeIndexes(), productionType.workerPopTypeIds(), productionType.workerPopTypeRatios(), productionType.workerPopTypeEffectMultipliers()));
+                building.set(new EconomyBuildingType(
+                    time,
+                    maxLevel,
+                    goodCostIds,
+                    goodCostAmounts,
+                    inputGoodIds,
+                    inputGoodAmounts,
+                    outputGoodId,
+                    outputGoodAmount,
+                    productionType.workforce(),
+                    productionType.ownerId(),
+                    productionType.workerPopTypeIndexes()[0],
+                    productionType.workerPopTypeIds()[0],
+                    productionType.workerPopTypeRatios()[0],
+                    productionType.workerPopTypeEffectMultipliers()[0],
+                    productionType.workerPopTypeIndexes()[1],
+                    productionType.workerPopTypeIds()[1],
+                    productionType.workerPopTypeRatios()[1],
+                    productionType.workerPopTypeEffectMultipliers()[1]
+                ));
             }
 
             for(var specialBuildingEntry : buildingsValues.get("special_building").object()) {
@@ -556,7 +575,18 @@ public class WorldDaoImpl implements WorldDao {
                 ProductionType productionType = productionTypes.get(productionTypeId);
                 long rgoTypeId = ecsWorld.entity("rgo_" + goodNameId);
                 EntityView rgoType = ecsWorld.obtainEntityView(rgoTypeId);
-                rgoType.set(new ResourceGatheringType(productionType.workforce(), productionType.ownerId(), productionType.workerPopTypeIndexes(), productionType.workerPopTypeIds(), productionType.workerPopTypeRatios(), productionType.workerPopTypeEffectMultipliers()));
+                rgoType.set(new ResourceGatheringType(
+                    productionType.workforce(),
+                    productionType.ownerId(),
+                    productionType.workerPopTypeIndexes()[0],
+                    productionType.workerPopTypeIds()[0],
+                    productionType.workerPopTypeRatios()[0],
+                    productionType.workerPopTypeEffectMultipliers()[0],
+                    productionType.workerPopTypeIndexes()[1],
+                    productionType.workerPopTypeIds()[1],
+                    productionType.workerPopTypeRatios()[1],
+                    productionType.workerPopTypeEffectMultipliers()[1]
+                ));
             }
         } catch (Exception exception) {
             throw new RuntimeException(exception);
@@ -927,7 +957,7 @@ public class WorldDaoImpl implements WorldDao {
                 Good good = goodEntity.get(Good.class);
                 float goodAmount = good.value();
                 long rgoTypeId = ecsWorld.lookup("rgo_" + goodNameId);
-                province.set(new ResourceGathering(rgoTypeId, goodId, this.getGoodIndex(goodId), goodAmount, 0, 0f, 0f));
+                province.set(new ResourceGathering(rgoTypeId, goodId, this.getGoodIndex(goodId), goodAmount, 0, 0f, 0f, 0, 0));
             }
 
             JsonValue buildingsProvinceValue = provinceValues.get("buildings");
@@ -1010,7 +1040,7 @@ public class WorldDaoImpl implements WorldDao {
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
                                 building.set(new Building(localMarketId, buildingTypeId, size));
                                 if(buildingType.has(EconomyBuildingType.class)) {
-                                    building.set(new EconomyBuilding(0f, 0f, 0f));
+                                    building.set(new EconomyBuilding(0f, 0f, 0f, 0, 0));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {
                                     building.set(new SpecialBuilding());
                                 }

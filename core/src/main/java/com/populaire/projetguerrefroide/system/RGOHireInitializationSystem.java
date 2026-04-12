@@ -6,21 +6,22 @@ import com.github.elebras1.flecs.Iter;
 import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
-public class RGOSizeSystem {
+public class RGOHireInitializationSystem {
     private final World ecsWorld;
 
-    public RGOSizeSystem(World ecsWorld, long phaseId) {
+    public RGOHireInitializationSystem(World ecsWorld, long phaseId) {
         this.ecsWorld = ecsWorld;
-        ecsWorld.system("RGOSizeSystem")
+        ecsWorld.system("RGOHireInitializationSystem")
             .kind(phaseId)
             .with(ResourceGathering.class)
             .with(Demographics.class)
-            .iter(this::size);
+            .iter(this::hire);
     }
 
-    private void size(Iter iter) {
+    private void hire(Iter iter) {
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 0);
         Field<Demographics> demographicsField = iter.field(Demographics.class, 1);
+
         for(int i = 0; i < iter.count(); i++) {
             ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
             DemographicsView demographics = demographicsField.getMutView(i);
@@ -28,14 +29,22 @@ public class RGOSizeSystem {
             EntityView resourceGatheringType = this.ecsWorld.obtainEntityView(resourceGathering.rgoTypeId());
             ResourceGatheringTypeView resourceGatheringTypeData = resourceGatheringType.getMutView(ResourceGatheringType.class);
 
-            int workforce = resourceGatheringTypeData.workforce();
-            int workerPopTypeIndex = resourceGatheringTypeData.workerPopTypeIndex();
-            int workerAmount = demographics.totalByPopType(workerPopTypeIndex);
+            int maxCapacity = resourceGathering.size() * resourceGatheringTypeData.workforce();
 
-            int size = (workerAmount + workforce - 1) / workforce;
-            size = (int) (size * 1.5f);
+            int targetWorkers = (int) (maxCapacity * resourceGatheringTypeData.workerPopTypeRatio());
+            int targetSlaves = (int) (maxCapacity * resourceGatheringTypeData.slavePopTypeRatio());
 
-            resourceGathering.size(size);
+            int workerIndex = resourceGatheringTypeData.workerPopTypeIndex();
+            int slaveIndex = resourceGatheringTypeData.slavePopTypeIndex();
+
+            int workerAvailable = demographics.totalByPopType(workerIndex);
+            int slaveAvailable = demographics.totalByPopType(slaveIndex);
+
+            int workerAmount = Math.min(targetWorkers, workerAvailable);
+            int slaveAmount = Math.min(targetSlaves, slaveAvailable);
+
+            resourceGathering.workerAmount(workerAmount);
+            resourceGathering.slaveAmount(slaveAmount);
         }
     }
 }

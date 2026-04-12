@@ -17,7 +17,7 @@ public class DemographicsLocalMarketSpreadSystem {
             .iter(this::spread);
     }
 
-    public void spread(Iter iter) {
+    private void spread(Iter iter) {
         long ownerId = 0;
         CountryDemographicsView countryDemographics = null;
 
