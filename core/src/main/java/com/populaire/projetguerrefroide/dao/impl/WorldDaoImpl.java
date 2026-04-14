@@ -1026,7 +1026,7 @@ public class WorldDaoImpl implements WorldDao {
                         long localMarketId = ecsWorld.entity("local_market_" + region.id() + "_" + provinceData.ownerId());
                         EntityView localMarket = ecsWorld.obtainEntityView(localMarketId);
                         if(!localMarket.has(LocalMarket.class)) {
-                            localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[GOOD_COUNT], new float[GOOD_COUNT]));
+                            localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[GOOD_COUNT], new float[GOOD_COUNT], new float[POP_TYPE_COUNT]));
                             localMarket.set(new Demographics(0, 0, 0, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
 
                         }
