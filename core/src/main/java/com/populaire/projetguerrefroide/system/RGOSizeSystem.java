@@ -25,7 +25,7 @@ public class RGOSizeSystem {
             ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
             DemographicsView demographics = demographicsField.getMutView(i);
 
-            EntityView resourceGatheringType = this.ecsWorld.obtainEntityView(resourceGathering.rgoTypeId());
+            EntityView resourceGatheringType = this.ecsWorld.obtainEntityView(resourceGathering.typeId());
             ResourceGatheringTypeView resourceGatheringTypeData = resourceGatheringType.getMutView(ResourceGatheringType.class);
 
             int workforce = resourceGatheringTypeData.workforce();

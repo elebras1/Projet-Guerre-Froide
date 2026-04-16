@@ -26,7 +26,7 @@ public class RGOProduceSystem {
         for(int i = 0; i < iter.count(); i++) {
             ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
 
-            EntityView resourceGatheringType = this.ecsWorld.obtainEntityView(resourceGathering.rgoTypeId());
+            EntityView resourceGatheringType = this.ecsWorld.obtainEntityView(resourceGathering.typeId());
             ResourceGatheringTypeView resourceGatheringTypeData = resourceGatheringType.getMutView(ResourceGatheringType.class);
 
             int maxCapacity = resourceGathering.size() * resourceGatheringTypeData.workforce();

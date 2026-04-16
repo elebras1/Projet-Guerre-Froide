@@ -45,6 +45,7 @@ public class BuildingService {
     public BuildingDto buildDetails(long buildingId) {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity building = ecsWorld.obtainEntity(buildingId);
+        EconomyBuilding economyBuilding = building.get(EconomyBuilding.class);
         Building buildingData = building.get(Building.class);
         Entity parent = ecsWorld.obtainEntity(buildingData.parentId());
         Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
@@ -67,7 +68,7 @@ public class BuildingService {
         }
         Entity outputGoodEntity = ecsWorld.obtainEntity(buildingTypeData.goodOutputId());
         String outputGoodNameId = outputGoodEntity.getName();
-        int amountWorkers = 0;
+        int amountWorkers = economyBuilding.primaryWorkerAmount() + economyBuilding.secondaryWorkerAmount();
         int maxWorkers = buildingData.size() * buildingTypeData.workforce();
         return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostAmounts(), inputGoodNameIds, buildingTypeData.goodInputAmounts(), outputGoodNameId, buildingTypeData.goodOutputAmount(), amountWorkers, maxWorkers, building.has(this.gameContext.getEcsConstants().suspended()));
     }

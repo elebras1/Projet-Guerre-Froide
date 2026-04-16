@@ -26,7 +26,7 @@ public class RGOHireInitializationSystem {
             ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
             DemographicsView demographics = demographicsField.getMutView(i);
 
-            EntityView resourceGatheringType = this.ecsWorld.obtainEntityView(resourceGathering.rgoTypeId());
+            EntityView resourceGatheringType = this.ecsWorld.obtainEntityView(resourceGathering.typeId());
             ResourceGatheringTypeView resourceGatheringTypeData = resourceGatheringType.getMutView(ResourceGatheringType.class);
 
             int maxCapacity = resourceGathering.size() * resourceGatheringTypeData.workforce();

@@ -4,7 +4,7 @@ import com.github.elebras1.flecs.annotation.Component;
 
 @Component
 public record ResourceGathering(
-    long rgoTypeId,
+    long typeId,
     long goodId,
     int goodIndex,
     float goodAmount,
