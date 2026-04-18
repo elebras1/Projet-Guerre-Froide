@@ -7,26 +7,11 @@ import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
 public class PopulationEmploymentSynchronizationSystem {
-    private final World ecsWorld;
 
     public PopulationEmploymentSynchronizationSystem(World ecsWorld, long phaseId) {
-        this.ecsWorld = ecsWorld;
         ecsWorld.system("PopulationEmploymentSynchronizationSystem")
             .kind(phaseId)
             .with(Population.class)
-            .orderBy(Population.class, (PopulationView popA, PopulationView popB) -> {
-                int compareProvinceId = Long.compare(popA.provinceId(), popB.provinceId());
-                if(compareProvinceId != 0) {
-                    return compareProvinceId;
-                }
-
-                EntityView provinceA = this.ecsWorld.obtainEntityView(popA.provinceId());
-                EntityView provinceB = this.ecsWorld.obtainEntityView(popB.provinceId());
-                ProvinceView provinceDataA = provinceA.getMutView(Province.class);
-                ProvinceView provinceDataB = provinceB.getMutView(Province.class);
-
-                return Long.compare(provinceDataA.ownerId(), provinceDataB.ownerId());
-            })
             .iter(this::synchronize);
     }
 
@@ -41,21 +26,24 @@ public class PopulationEmploymentSynchronizationSystem {
         Field<Population> populationField = iter.field(Population.class, 0);
         for(int i = 0; i < iter.count(); i++) {
             PopulationView population = populationField.getMutView(i);
+            long currentProvinceId = population.provinceId();
 
-            if(population.provinceId() != provinceId) {
-                provinceId = population.provinceId();
-                EntityView province = this.ecsWorld.obtainEntityView(provinceId);
+            if(currentProvinceId != provinceId) {
+                provinceId = currentProvinceId;
+                EntityView province = iter.world().obtainEntityView(provinceId);
                 geoHierarchy = province.getMutView(GeoHierarchy.class);
                 resourceGathering = province.getMutView(ResourceGathering.class);
                 if(resourceGathering != null) {
-                    resourceGatheringType = this.ecsWorld.obtainEntityView(resourceGathering.typeId()).getMutView(ResourceGatheringType.class);
+                    resourceGatheringType = iter.world().obtainEntityView(resourceGathering.typeId()).getMutView(ResourceGatheringType.class);
                 } else {
                     resourceGatheringType = null;
                 }
             }
 
-            if(geoHierarchy.localMarketId() != localMarketId) {
-                EntityView localMarket = this.ecsWorld.obtainEntityView(geoHierarchy.localMarketId());
+            long currentLocalMarketId = geoHierarchy.localMarketId();
+            if(currentLocalMarketId != localMarketId) {
+                localMarketId = currentLocalMarketId;
+                EntityView localMarket = iter.world().obtainEntityView(currentLocalMarketId);
                 localMarketData = localMarket.getMutView(LocalMarket.class);
             }
 

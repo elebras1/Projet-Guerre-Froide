@@ -7,11 +7,9 @@ import com.populaire.projetguerrefroide.command.request.BuildingLevelUpCommand;
 import com.populaire.projetguerrefroide.component.*;
 
 public class ExpandBuildingSystem {
-    private final World ecsWorld;
     private final CommandBus commandBus;
 
     public ExpandBuildingSystem(World ecsWorld, CommandBus commandBus) {
-        this.ecsWorld = ecsWorld;
         this.commandBus = commandBus;
         ecsWorld.system("ExpandBuildingSystem").kind(FlecsConstants.EcsOnUpdate).with(ExpansionBuilding.class).iter(this::expand);
     }
@@ -21,9 +19,9 @@ public class ExpandBuildingSystem {
         for(int i = 0; i < iter.count(); i++) {
             ExpansionBuildingView expansionBuildingDataView = expansionBuildingField.getMutView(i);
             if(expansionBuildingDataView.timeLeft() <= 0) {
-                EntityView buildingView = this.ecsWorld.obtainEntityView(expansionBuildingDataView.buildingId());
+                EntityView buildingView = iter.world().obtainEntityView(expansionBuildingDataView.buildingId());
                 BuildingView buildingViewData = buildingView.getMutView(Building.class);
-                EntityView buildingTypeView = this.ecsWorld.obtainEntityView(buildingViewData.typeId());
+                EntityView buildingTypeView = iter.world().obtainEntityView(buildingViewData.typeId());
                 int newSize = buildingViewData.size() + 1;
                 buildingViewData.size(newSize);
                 this.commandBus.dispatch(new BuildingLevelUpCommand(expansionBuildingDataView.buildingId()));
@@ -41,7 +39,7 @@ public class ExpandBuildingSystem {
                         expansionBuildingDataView.timeLeft(specialBuildingTypeViewData.time());
                     }
                 } else {
-                    this.ecsWorld.obtainEntityView(iter.entity(i)).destruct();
+                    iter.world().obtainEntityView(iter.entity(i)).destruct();
                 }
             } else {
                 expansionBuildingDataView.timeLeft(expansionBuildingDataView.timeLeft() - 1);

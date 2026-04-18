@@ -10,10 +10,8 @@ import com.populaire.projetguerrefroide.component.ResourceGatheringTypeView;
 import com.populaire.projetguerrefroide.component.ResourceGatheringView;
 
 public class RGOProduceSystem {
-    private final World ecsWorld;
 
     public RGOProduceSystem(World ecsWorld, long phaseId) {
-        this.ecsWorld = ecsWorld;
         ecsWorld.system("RGOProduceSystem")
             .kind(phaseId)
             .with(ResourceGathering.class)
@@ -26,7 +24,7 @@ public class RGOProduceSystem {
         for(int i = 0; i < iter.count(); i++) {
             ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
 
-            EntityView resourceGatheringType = this.ecsWorld.obtainEntityView(resourceGathering.typeId());
+            EntityView resourceGatheringType = iter.world().obtainEntityView(resourceGathering.typeId());
             ResourceGatheringTypeView resourceGatheringTypeData = resourceGatheringType.getMutView(ResourceGatheringType.class);
 
             int maxCapacity = resourceGathering.size() * resourceGatheringTypeData.workforce();

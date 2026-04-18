@@ -6,10 +6,8 @@ import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
 public class DemographicsProvinceSpreadSystem {
-    private final World ecsWorld;
 
     public DemographicsProvinceSpreadSystem(World ecsWorld, long phaseId) {
-        this.ecsWorld = ecsWorld;
         ecsWorld.system("DemographicsProvinceSpreadSystem")
             .kind(phaseId)
             .with(Demographics.class)
@@ -29,7 +27,7 @@ public class DemographicsProvinceSpreadSystem {
 
             if(geoHierarchy.localMarketId() != ownerId) {
                 ownerId = geoHierarchy.localMarketId();
-                localMarketDemographics = this.ecsWorld.obtainEntityView(ownerId).getMutView(Demographics.class);
+                localMarketDemographics = iter.world().obtainEntityView(ownerId).getMutView(Demographics.class);
             }
 
             localMarketDemographics.totalPopulation(localMarketDemographics.totalPopulation() + demographics.totalPopulation());

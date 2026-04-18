@@ -7,10 +7,8 @@ import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
 public class RGOHireInitializationSystem {
-    private final World ecsWorld;
 
     public RGOHireInitializationSystem(World ecsWorld, long phaseId) {
-        this.ecsWorld = ecsWorld;
         ecsWorld.system("RGOHireInitializationSystem")
             .kind(phaseId)
             .with(ResourceGathering.class)
@@ -26,7 +24,7 @@ public class RGOHireInitializationSystem {
             ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
             DemographicsView demographics = demographicsField.getMutView(i);
 
-            EntityView resourceGatheringType = this.ecsWorld.obtainEntityView(resourceGathering.typeId());
+            EntityView resourceGatheringType = iter.world().obtainEntityView(resourceGathering.typeId());
             ResourceGatheringTypeView resourceGatheringTypeData = resourceGatheringType.getMutView(ResourceGatheringType.class);
 
             int maxCapacity = resourceGathering.size() * resourceGatheringTypeData.workforce();
