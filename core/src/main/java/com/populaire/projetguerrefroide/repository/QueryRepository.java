@@ -91,12 +91,12 @@ public class QueryRepository implements Disposable {
 
     @Override
     public void dispose() {
-        this.queryProvincesWithColor.close();
-        this.queryProvincesWithGeoHierarchy.close();
-        this.queryProvincesWithResourceGathering.close();
-        this.queryProvincesWithColorAndGeoHierarchy.close();
-        this.queryProvincesAll.close();
-        this.queryBuildingsAll.close();
-        this.queryCountries.close();
+        this.queryProvincesWithColor.destroy();
+        this.queryProvincesWithGeoHierarchy.destroy();
+        this.queryProvincesWithResourceGathering.destroy();
+        this.queryProvincesWithColorAndGeoHierarchy.destroy();
+        this.queryProvincesAll.destroy();
+        this.queryBuildingsAll.destroy();
+        this.queryCountries.destroy();
     }
 }

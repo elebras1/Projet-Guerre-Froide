@@ -80,8 +80,8 @@ subprojects {
     implementation 'com.github.tommyettinger:jdkgdxds:2.1.2'
     implementation 'com.dslplatform:dsl-json:2.0.2'
     annotationProcessor 'com.dslplatform:dsl-json:2.0.2'
-    implementation 'io.github.elebras1:flecs-java:0.8.2'
-    annotationProcessor 'io.github.elebras1:flecs-java:0.8.2'
+    implementation 'io.github.elebras1:flecs-java:0.9.0'
+    annotationProcessor 'io.github.elebras1:flecs-java:0.9.0'
   }
 }
 

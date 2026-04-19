@@ -118,7 +118,7 @@ public class ProjetGuerreFroide extends Game {
     @Override
     public void dispose() {
         this.ecsWorld.disableRest();
-        this.ecsWorld.close();
+        this.ecsWorld.destroy();
         this.screenManager.dispose();
         this.gameContext.dispose();
         super.dispose();

@@ -102,26 +102,24 @@ public class ProvinceService {
         MutableInt radarStationLevel = new MutableInt(0);
         MutableInt antiAircraftGunsLevel = new MutableInt(0);
 
-        try(Query query = ecsWorld.query().with(Building.class).build()) {
-            query.iter(iter -> {
-                Field<Building> buildingField = iter.field(Building.class, 0);
-                for(int i = 0; i < iter.count(); i++) {
-                    BuildingView buildingView = buildingField.getMutView(i);
-                    if(buildingView.parentId() != provinceId) {
-                        continue;
-                    }
-
-                    Entity buildingType = ecsWorld.obtainEntity(buildingView.typeId());
-
-                    switch (buildingType.getName()) {
-                        case "naval_base" -> navalBaseLevel.setValue(buildingView.size());
-                        case "air_base" -> airBaseLevel.setValue(buildingView.size());
-                        case "radar_station" -> radarStationLevel.setValue(buildingView.size());
-                        case "anti_air" -> antiAircraftGunsLevel.setValue(buildingView.size());
-                    }
+        this.queryRepository.getBuildings().iter(iter -> {
+            Field<Building> buildingField = iter.field(Building.class, 0);
+            for(int i = 0; i < iter.count(); i++) {
+                BuildingView buildingView = buildingField.getMutView(i);
+                if(buildingView.parentId() != provinceId) {
+                    continue;
                 }
-            });
-        }
+
+                Entity buildingType = ecsWorld.obtainEntity(buildingView.typeId());
+
+                switch (buildingType.getName()) {
+                    case "naval_base" -> navalBaseLevel.setValue(buildingView.size());
+                    case "air_base" -> airBaseLevel.setValue(buildingView.size());
+                    case "radar_station" -> radarStationLevel.setValue(buildingView.size());
+                    case "anti_air" -> antiAircraftGunsLevel.setValue(buildingView.size());
+                }
+            }
+        });
 
         return new DevelopementBuildingLevelDto((byte) navalBaseLevel.getValue(), (byte)  airBaseLevel.getValue(), (byte)  radarStationLevel.getValue(), (byte)  antiAircraftGunsLevel.getValue());
     }
