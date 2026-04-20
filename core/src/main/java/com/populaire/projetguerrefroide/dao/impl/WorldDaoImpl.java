@@ -317,29 +317,40 @@ public class WorldDaoImpl implements WorldDao {
             EntityView populationType = ecsWorld.obtainEntityView(populationTypeId);
             populationType.set(new Color(color));
 
-            long[] standardDemandGoodIds = new long[MAX_STANDARD_DEMAND_GOODS];
-            float[] standardDemandGoodValues = new float[MAX_STANDARD_DEMAND_GOODS];
-            int standardDemandIndex = 0;
-            for(var standardDemandEntry : populationTypeValue.get("standard_demands").object()) {
-                long goodId = ecsWorld.lookup(standardDemandEntry.getKey());
-                float value = (float) standardDemandEntry.getValue().asDouble();
-                standardDemandGoodIds[standardDemandIndex] = goodId;
-                standardDemandGoodValues[standardDemandIndex] = value;
-                standardDemandIndex++;
+            long[] lifeNeedsGoodIds = new long[MAX_LIFE_NEEDS_GOODS];
+            float[] lifeNeedsGoodAmounts = new float[MAX_LIFE_NEEDS_GOODS];
+            int lifeNeedsIndex = 0;
+            for(var lifeNeedsEntry : populationTypeValue.get("life_needs").object()) {
+                long goodId = ecsWorld.lookup(lifeNeedsEntry.getKey());
+                float amount = (float) lifeNeedsEntry.getValue().asDouble();
+                lifeNeedsGoodIds[lifeNeedsIndex] = goodId;
+                lifeNeedsGoodAmounts[lifeNeedsIndex] = amount;
+                lifeNeedsIndex++;
             }
 
-            long[] luxuryDemandGoodIds = new long[MAX_LUXURY_DEMAND_GOODS];
-            float[] luxuryDemandGoodValues = new float[MAX_LUXURY_DEMAND_GOODS];
-            int luxuryDemandIndex = 0;
-            for(var luxuryDemandEntry : populationTypeValue.get("luxury_demands").object()) {
+            long[] everydayNeedsGoodIds = new long[MAX_EVERYDAY_NEEDS_GOODS];
+            float[] everydayNeedsGoodAmounts = new float[MAX_EVERYDAY_NEEDS_GOODS];
+            int everydayNeedsIndex = 0;
+            for(var everydayNeedsEntry : populationTypeValue.get("everyday_needs").object()) {
+                long goodId = ecsWorld.lookup(everydayNeedsEntry.getKey());
+                float amount = (float) everydayNeedsEntry.getValue().asDouble();
+                everydayNeedsGoodIds[everydayNeedsIndex] = goodId;
+                everydayNeedsGoodAmounts[everydayNeedsIndex] = amount;
+                everydayNeedsIndex++;
+            }
+
+            long[] luxuryNeedsGoodIds = new long[MAX_LUXURY_DEMAND_GOODS];
+            float[] luxuryNeedsGoodAmounts = new float[MAX_LUXURY_DEMAND_GOODS];
+            int luxuryNeedsIndex = 0;
+            for(var luxuryDemandEntry : populationTypeValue.get("luxury_needs").object()) {
                 long goodId = ecsWorld.lookup(luxuryDemandEntry.getKey());
-                float value = (float) luxuryDemandEntry.getValue().asDouble();
-                luxuryDemandGoodIds[luxuryDemandIndex] = goodId;
-                luxuryDemandGoodValues[luxuryDemandIndex] = value;
-                luxuryDemandIndex++;
+                float amount = (float) luxuryDemandEntry.getValue().asDouble();
+                luxuryNeedsGoodIds[luxuryNeedsIndex] = goodId;
+                luxuryNeedsGoodAmounts[luxuryNeedsIndex] = amount;
+                luxuryNeedsIndex++;
             }
             int strata = StrataUtils.getStrata(populationTypeValue.get("strata").asString());
-            populationType.set(new PopulationType(standardDemandGoodIds, standardDemandGoodValues, luxuryDemandGoodIds, luxuryDemandGoodValues, strata));
+            populationType.set(new PopulationType(lifeNeedsGoodIds, lifeNeedsGoodAmounts, everydayNeedsGoodIds, everydayNeedsGoodAmounts, luxuryNeedsGoodIds, luxuryNeedsGoodAmounts, strata));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -988,7 +999,7 @@ public class WorldDaoImpl implements WorldDao {
             int index = this.getPopulationTypeIndex(typeId);
             long popId = ecsWorld.entity();
             EntityView pop = ecsWorld.obtainEntityView(popId);
-            pop.set(new Population(index, typeId, provinceId, amount, 0, 0f, 0f, 0f, 0f));
+            pop.set(new Population(index, typeId, provinceId, amount, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
         }
     }
 

@@ -8,6 +8,7 @@ public class EconomyService {
     private final GameContext gameContext;
     private final DemographicsResetSystem demographicsResetSystem;
     private final CountryDemographicsResetSystem countryDemographicsResetSystem;
+    private final PopulationInitializationSystem populationInitializationSystem;
     private final DemographicsPopulationSpreadSystem demographicsPopulationSpreadSystem;
     private final DemographicsProvinceSpreadSystem demographicsProvinceSpreadSystem;
     private final DemographicsLocalMarketSpreadSystem demographicsLocalMarketSpreadSystem;
@@ -25,6 +26,7 @@ public class EconomyService {
         World ecsWorld = gameContext.getEcsWorld();
 
         long phaseReset = ecsWorld.entity("PhaseReset");
+        long phasePopInit = ecsWorld.entity("PhasePopInit");
         long phaseSpread = ecsWorld.entity("PhaseSpread");
         long phaseInit = ecsWorld.entity("PhaseInit");
         long phaseSync = ecsWorld.entity("PhaseSync");
@@ -32,6 +34,7 @@ public class EconomyService {
 
         this.initPipeline = ecsWorld.pipeline("InitEconomyPipeline")
             .with(phaseReset)
+            .with(phasePopInit)
             .with(phaseSpread)
             .with(phaseInit)
             .with(phaseSync)
@@ -46,6 +49,7 @@ public class EconomyService {
 
         this.demographicsResetSystem = new DemographicsResetSystem(this.gameContext.getEcsWorld(), phaseReset);
         this.countryDemographicsResetSystem = new CountryDemographicsResetSystem(this.gameContext.getEcsWorld(), phaseReset);
+        this.populationInitializationSystem = new PopulationInitializationSystem(this.gameContext.getEcsWorld(), phasePopInit);
         this.demographicsPopulationSpreadSystem = new DemographicsPopulationSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
         this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
         this.demographicsLocalMarketSpreadSystem = new DemographicsLocalMarketSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);

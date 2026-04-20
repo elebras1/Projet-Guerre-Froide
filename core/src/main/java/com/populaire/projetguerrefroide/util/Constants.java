@@ -14,7 +14,8 @@ public class Constants {
     public static final int MAX_GOVERNMENT_ASSOCIATED_IDEOLOGIES = 4;
     public static final int MAX_LAW_IDEOLOGIES = 8;
     public static final int MAX_IMAGE_NAME_LENGTH = 64;
-    public static final int MAX_STANDARD_DEMAND_GOODS = 16;
+    public static final int MAX_LIFE_NEEDS_GOODS = 4;
+    public static final int MAX_EVERYDAY_NEEDS_GOODS = 16;
     public static final int MAX_LUXURY_DEMAND_GOODS = 8;
     public static final int MAX_MODIFIERS = 8;
     public static final int MAX_CULTURES = 32;

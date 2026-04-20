@@ -4,7 +4,10 @@
         17,
         17
     ],
-    "standard_demands": {},
-    "luxury_demands": {},
+    "life_needs": {},
+    "everyday_needs": {
+        "grain": 6
+    },
+    "luxury_needs": {},
     "strata": "poor"
 }

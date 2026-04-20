@@ -4,8 +4,10 @@
         187,
         157
     ],
-    "standard_demands": {
-        "grain": 1.5,
+    "life_needs": {
+        "grain": 1.5
+    },
+    "everyday_needs": {
         "fish": 0.5,
         "vegetables": 0.5,
         "meat": 0.55,
@@ -21,7 +23,7 @@
         "weaponry": 0.2,
         "gas": 0.1
     },
-    "luxury_demands": {
+    "luxury_needs": {
         "automobiles": 0.5,
         "computers": 0.25
     },
