@@ -4,6 +4,8 @@ import com.github.elebras1.flecs.EntityView;
 import com.github.elebras1.flecs.Field;
 import com.github.elebras1.flecs.Iter;
 import com.github.elebras1.flecs.World;
+import com.github.tommyettinger.ds.IntObjectMap;
+import com.github.tommyettinger.ds.LongObjectMap;
 import com.populaire.projetguerrefroide.component.*;
 
 import java.util.Arrays;
@@ -17,13 +19,6 @@ public class EconomyBuildingHireInitializationSystem {
             .kind(phaseId)
             .with(EconomyBuilding.class)
             .with(Building.class)
-            .orderBy(Building.class, (BuildingView buildingA, BuildingView buildingB) -> {
-                int compareLocalMarket = Long.compare(buildingA.parentId(), buildingB.parentId());
-                if(compareLocalMarket != 0) {
-                    return compareLocalMarket;
-                }
-                return Long.compare(buildingA.typeId(), buildingB.typeId());
-            })
             .iter(this::hire);
     }
 
@@ -41,7 +36,7 @@ public class EconomyBuildingHireInitializationSystem {
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 0);
         Field<Building> buildingField = iter.field(Building.class, 1);
 
-        int[] marketWorkerPopTypeHired = new int[POP_TYPE_COUNT];
+        LongObjectMap<int[]> workerPopTypeHiredByMarket = new LongObjectMap<>();
 
         for(int i = 0; i < iter.count(); i++) {
             EconomyBuildingView economyBuilding = economyBuildingField.getMutView(i);
@@ -59,8 +54,9 @@ public class EconomyBuildingHireInitializationSystem {
                 EntityView localMarket = iter.world().obtainEntityView(building.parentId());
                 localMarketData = localMarket.getMutView(LocalMarket.class);
                 demographics = localMarket.getMutView(Demographics.class);
-                Arrays.fill(marketWorkerPopTypeHired, 0);
             }
+
+            int[] marketWorkerPopTypeHired = workerPopTypeHiredByMarket.computeIfAbsent(building.parentId(), _ -> new int[POP_TYPE_COUNT]);
 
             int currentPrimaryEmployed = demographics.employmentByPopType(primaryWorkerPopTypeIndex) + marketWorkerPopTypeHired[primaryWorkerPopTypeIndex];
             int currentSecondaryEmployed = demographics.employmentByPopType(secondaryWorkerPopTypeIndex) + marketWorkerPopTypeHired[secondaryWorkerPopTypeIndex];

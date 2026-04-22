@@ -12,7 +12,6 @@ public class PopulationInitializationSystem {
         ecsWorld.system("PopulationInitializationSystem")
             .kind(phaseId)
             .with(Population.class)
-            .orderBy(Population.class, (PopulationView popA, PopulationView popB) -> Long.compare(popA.typeId(), popB.typeId()))
             .iter(this::initialize);
     }
 
