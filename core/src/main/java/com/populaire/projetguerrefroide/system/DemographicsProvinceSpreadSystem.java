@@ -32,18 +32,26 @@ public class DemographicsProvinceSpreadSystem {
 
             localMarketDemographics.totalPopulation(localMarketDemographics.totalPopulation() + demographics.totalPopulation());
             localMarketDemographics.totalEmployment(localMarketDemographics.totalEmployment() + demographics.totalEmployment());
-            localMarketDemographics.averageConsciousness(0f);
-            localMarketDemographics.averageMilitancy(0f);
-            localMarketDemographics.averageLiteracy(0f);
-            localMarketDemographics.totalSavings(localMarketDemographics.totalSavings() + demographics.totalSavings());
+            localMarketDemographics.consciousness(localMarketDemographics.consciousness() + demographics.consciousness());
+            localMarketDemographics.militancy(localMarketDemographics.militancy() + demographics.militancy());
+            localMarketDemographics.literacy(localMarketDemographics.literacy() + demographics.literacy());
+            localMarketDemographics.savings(localMarketDemographics.savings() + demographics.savings());
+            localMarketDemographics.lifeNeedsSatisfaction(localMarketDemographics.lifeNeedsSatisfaction() + demographics.lifeNeedsSatisfaction());
+            localMarketDemographics.everydayNeedsSatisfaction(localMarketDemographics.everydayNeedsSatisfaction() + demographics.everydayNeedsSatisfaction());
+            localMarketDemographics.luxuryNeedsSatisfaction(localMarketDemographics.luxuryNeedsSatisfaction() + demographics.luxuryNeedsSatisfaction());
+
             for(int popTypeIndex = 0; popTypeIndex < demographics.totalByPopTypeLength(); popTypeIndex++) {
                 localMarketDemographics.totalByPopType(popTypeIndex, localMarketDemographics.totalByPopType(popTypeIndex) + demographics.totalByPopType(popTypeIndex));
                 localMarketDemographics.employmentByPopType(popTypeIndex, localMarketDemographics.employmentByPopType(popTypeIndex) + demographics.employmentByPopType(popTypeIndex));
-                localMarketDemographics.consciousnessByPopType(popTypeIndex, 0f);
-                localMarketDemographics.militancyByPopType(popTypeIndex, 0f);
-                localMarketDemographics.literacyByPopType(popTypeIndex, 0f);
+                localMarketDemographics.consciousnessByPopType(popTypeIndex, localMarketDemographics.consciousnessByPopType(popTypeIndex) + demographics.consciousnessByPopType(popTypeIndex));
+                localMarketDemographics.militancyByPopType(popTypeIndex, localMarketDemographics.militancyByPopType(popTypeIndex) + demographics.militancyByPopType(popTypeIndex));
+                localMarketDemographics.literacyByPopType(popTypeIndex, localMarketDemographics.literacyByPopType(popTypeIndex) + demographics.literacyByPopType(popTypeIndex));
                 localMarketDemographics.savingsByPopType(popTypeIndex, localMarketDemographics.savingsByPopType(popTypeIndex) + demographics.savingsByPopType(popTypeIndex));
+                localMarketDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex, localMarketDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex) + demographics.lifeNeedsSatisfactionByPopType(popTypeIndex));
+                localMarketDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex, localMarketDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex) + demographics.everydayNeedsSatisfactionByPopType(popTypeIndex));
+                localMarketDemographics.luxuryNeedsSatisfactionByPopType(popTypeIndex, localMarketDemographics.luxuryNeedsSatisfactionByPopType(popTypeIndex) + demographics.luxuryNeedsSatisfactionByPopType(popTypeIndex));
             }
+
             localMarketDemographics.totalChildren(localMarketDemographics.totalChildren() + demographics.totalChildren());
             localMarketDemographics.totalAdults(localMarketDemographics.totalAdults() + demographics.totalAdults());
             localMarketDemographics.totalSeniors(localMarketDemographics.totalSeniors() + demographics.totalSeniors());

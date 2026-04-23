@@ -32,17 +32,24 @@ public class DemographicsLocalMarketSpreadSystem {
 
             countryDemographics.totalPopulation(countryDemographics.totalPopulation() + demographics.totalPopulation());
             countryDemographics.totalEmployment(countryDemographics.totalEmployment() + demographics.totalEmployment());
-            countryDemographics.averageConsciousness(0f);
-            countryDemographics.averageMilitancy(0f);
-            countryDemographics.averageLiteracy(0f);
-            countryDemographics.totalSavings(countryDemographics.totalSavings() + demographics.totalSavings());
+            countryDemographics.consciousness(countryDemographics.consciousness() + demographics.consciousness());
+            countryDemographics.militancy(countryDemographics.militancy() + demographics.militancy());
+            countryDemographics.literacy(countryDemographics.literacy() + demographics.literacy());
+            countryDemographics.savings(countryDemographics.savings() + demographics.savings());
+            countryDemographics.lifeNeedsSatisfaction(countryDemographics.lifeNeedsSatisfaction() + demographics.lifeNeedsSatisfaction());
+            countryDemographics.everydayNeedsSatisfaction(countryDemographics.everydayNeedsSatisfaction() + demographics.everydayNeedsSatisfaction());
+            countryDemographics.luxuryNeedsSatisfaction(countryDemographics.luxuryNeedsSatisfaction() + demographics.luxuryNeedsSatisfaction());
+
             for(int popTypeIndex = 0; popTypeIndex < demographics.totalByPopTypeLength(); popTypeIndex++) {
                 countryDemographics.totalByPopType(popTypeIndex, countryDemographics.totalByPopType(popTypeIndex) + demographics.totalByPopType(popTypeIndex));
                 countryDemographics.employmentByPopType(popTypeIndex, countryDemographics.employmentByPopType(popTypeIndex) + demographics.employmentByPopType(popTypeIndex));
-                countryDemographics.consciousnessByPopType(popTypeIndex, 0f);
-                countryDemographics.militancyByPopType(popTypeIndex, 0f);
-                countryDemographics.literacyByPopType(popTypeIndex, 0f);
+                countryDemographics.consciousnessByPopType(popTypeIndex, countryDemographics.consciousnessByPopType(popTypeIndex) + demographics.consciousnessByPopType(popTypeIndex));
+                countryDemographics.militancyByPopType(popTypeIndex, countryDemographics.militancyByPopType(popTypeIndex) + demographics.militancyByPopType(popTypeIndex));
+                countryDemographics.literacyByPopType(popTypeIndex, countryDemographics.literacyByPopType(popTypeIndex) + demographics.literacyByPopType(popTypeIndex));
                 countryDemographics.savingsByPopType(popTypeIndex, countryDemographics.savingsByPopType(popTypeIndex) + demographics.savingsByPopType(popTypeIndex));
+                countryDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex, countryDemographics.lifeNeedsSatisfactionByPopType(popTypeIndex) + demographics.lifeNeedsSatisfactionByPopType(popTypeIndex));
+                countryDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex, countryDemographics.everydayNeedsSatisfactionByPopType(popTypeIndex) + demographics.everydayNeedsSatisfactionByPopType(popTypeIndex));
+                countryDemographics.luxuryNeedsSatisfactionByPopType(popTypeIndex, countryDemographics.luxuryNeedsSatisfactionByPopType(popTypeIndex) + demographics.luxuryNeedsSatisfactionByPopType(popTypeIndex));
             }
             countryDemographics.totalChildren(countryDemographics.totalChildren() + demographics.totalChildren());
             countryDemographics.totalAdults(countryDemographics.totalAdults() + demographics.totalAdults());
