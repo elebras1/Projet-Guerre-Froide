@@ -71,7 +71,6 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(Adjacencies.class);
         this.ecsWorld.component(Country.class);
         this.ecsWorld.component(Province.class);
-        this.ecsWorld.component(GeoHierarchy.class);
         this.ecsWorld.component(Law.class);
         this.ecsWorld.component(LawGroup.class);
         this.ecsWorld.component(GovernmentPolicy.class);

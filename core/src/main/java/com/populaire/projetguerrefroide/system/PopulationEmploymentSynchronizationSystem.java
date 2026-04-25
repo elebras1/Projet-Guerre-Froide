@@ -17,7 +17,7 @@ public class PopulationEmploymentSynchronizationSystem {
 
     private void synchronize(Iter iter) {
         long provinceId = 0;
-        GeoHierarchyView geoHierarchy = null;
+        ProvinceView provinceData = null;
         ResourceGatheringView resourceGathering = null;
         ResourceGatheringTypeView resourceGatheringType = null;
         long regionInstanceId = 0;
@@ -31,7 +31,7 @@ public class PopulationEmploymentSynchronizationSystem {
             if(currentProvinceId != provinceId) {
                 provinceId = currentProvinceId;
                 EntityView province = iter.world().obtainEntityView(provinceId);
-                geoHierarchy = province.getMutView(GeoHierarchy.class);
+                provinceData = province.getMutView(Province.class);
                 resourceGathering = province.getMutView(ResourceGathering.class);
                 if(resourceGathering != null) {
                     resourceGatheringType = iter.world().obtainEntityView(resourceGathering.typeId()).getMutView(ResourceGatheringType.class);
@@ -40,7 +40,7 @@ public class PopulationEmploymentSynchronizationSystem {
                 }
             }
 
-            long currentRegionInstanceId = geoHierarchy.regionInstanceId();
+            long currentRegionInstanceId = provinceData.regionInstanceId();
             if(currentRegionInstanceId != regionInstanceId) {
                 regionInstanceId = currentRegionInstanceId;
                 EntityView regionInstance = iter.world().obtainEntityView(currentRegionInstanceId);

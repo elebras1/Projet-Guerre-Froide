@@ -4,27 +4,19 @@ import com.badlogic.gdx.utils.Disposable;
 import com.github.elebras1.flecs.Query;
 import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class QueryRepository implements Disposable {
     private final Query queryProvincesWithColor;
-    private final Query queryProvincesWithGeoHierarchy;
     private final Query queryProvincesWithResourceGathering;
     private final Query queryProvincesWithColorAndResourceGathering;
-    private final Query queryProvincesWithColorAndGeoHierarchy;
-    private final Query queryProvincesAll;
-    private final Query queryBuildingsAll;
+    private final Query queryProvinces;
+    private final Query queryBuildings;
     private final Query queryCountries;
 
     public QueryRepository(World ecsWorld) {
         this.queryProvincesWithColor = ecsWorld.query()
             .with(Province.class)
             .with(Color.class)
-            .build();
-
-        this.queryProvincesWithGeoHierarchy = ecsWorld.query()
-            .with(Province.class)
-            .with(GeoHierarchy.class)
             .build();
 
         this.queryProvincesWithResourceGathering = ecsWorld.query()
@@ -38,17 +30,11 @@ public class QueryRepository implements Disposable {
             .with(ResourceGathering.class)
             .build();
 
-        this.queryProvincesWithColorAndGeoHierarchy = ecsWorld.query()
-            .with(Province.class)
-            .with(Color.class)
-            .with(GeoHierarchy.class)
-            .build();
-
-        this.queryProvincesAll = ecsWorld.query()
+        this.queryProvinces = ecsWorld.query()
             .with(Province.class)
             .build();
 
-        this.queryBuildingsAll = ecsWorld.query()
+        this.queryBuildings = ecsWorld.query()
             .with(Building.class)
             .build();
 
@@ -61,10 +47,6 @@ public class QueryRepository implements Disposable {
         return this.queryProvincesWithColor;
     }
 
-    public Query getProvincesWithGeoHierarchy() {
-        return this.queryProvincesWithGeoHierarchy;
-    }
-
     public Query getProvincesWithResourceGathering() {
         return this.queryProvincesWithResourceGathering;
     }
@@ -73,16 +55,12 @@ public class QueryRepository implements Disposable {
         return this.queryProvincesWithColorAndResourceGathering;
     }
 
-    public Query getProvincesWithColorAndGeoHierarchy() {
-        return this.queryProvincesWithColorAndGeoHierarchy;
-    }
-
     public Query getProvinces() {
-        return this.queryProvincesAll;
+        return this.queryProvinces;
     }
 
     public Query getBuildings() {
-        return this.queryBuildingsAll;
+        return this.queryBuildings;
     }
 
     public Query getCountries() {
@@ -92,11 +70,10 @@ public class QueryRepository implements Disposable {
     @Override
     public void dispose() {
         this.queryProvincesWithColor.destroy();
-        this.queryProvincesWithGeoHierarchy.destroy();
         this.queryProvincesWithResourceGathering.destroy();
-        this.queryProvincesWithColorAndGeoHierarchy.destroy();
-        this.queryProvincesAll.destroy();
-        this.queryBuildingsAll.destroy();
+        this.queryProvincesWithColor.destroy();
+        this.queryProvinces.destroy();
+        this.queryBuildings.destroy();
         this.queryCountries.destroy();
     }
 }

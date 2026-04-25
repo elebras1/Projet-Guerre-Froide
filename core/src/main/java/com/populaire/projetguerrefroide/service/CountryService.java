@@ -70,15 +70,14 @@ public class CountryService {
 
         LongOrderedSet regionIds = new LongOrderedSet();
         LongIntMap populationByRegion = new LongIntMap();
-        Query query = this.queryRepository.getProvincesWithGeoHierarchy();
+        Query query = this.queryRepository.getProvinces();
         query.iter(iter -> {
             Field<Province> provinceField = iter.field(Province.class, 0);
-            Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
             for (int i = 0; i < iter.count(); i++) {
                 ProvinceView provinceView = provinceField.getMutView(i);
                 if (countryId == provinceView.ownerId()) {
-                    GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
-                    long regionId = geoHierarchyView.regionId();
+                    ProvinceView province = provinceField.getMutView(i);
+                    long regionId = province.regionId();
                     regionIds.add(regionId);
                     populationByRegion.getAndIncrement(regionId, 0, provinceView.adultsAmount());
                 }

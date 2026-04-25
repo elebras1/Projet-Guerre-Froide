@@ -32,15 +32,14 @@ public class ProvinceService {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity province = ecsWorld.obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
-        GeoHierarchy provinceGeoHierarchy = province.get(GeoHierarchy.class);
-        Entity region = ecsWorld.obtainEntity(provinceGeoHierarchy.regionId());
+        Entity region = ecsWorld.obtainEntity(provinceData.regionId());
         String provinceNameId = province.getName();
         String regionNameId = region.getName();
         Entity terrain = ecsWorld.obtainEntity(provinceData.terrainId());
         String terrainImage = terrain.getName();
         String resourceImage = this.getResourceGoodName(province.id());
         int populationRegion = this.getPopulationAmount(provinceId);
-        int workersRegion = this.regionService.getWorkerAmount(provinceGeoHierarchy.regionId());
+        int workersRegion = this.regionService.getWorkerAmount(provinceData.regionId());
         int populationProvince = this.getPopulationAmount(province.id());
         int developmentIndexRegion = 0;
         int incomeRegion = 0;

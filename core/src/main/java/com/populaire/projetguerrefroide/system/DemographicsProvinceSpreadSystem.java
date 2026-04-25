@@ -10,8 +10,8 @@ public class DemographicsProvinceSpreadSystem {
     public DemographicsProvinceSpreadSystem(World ecsWorld, long phaseId) {
         ecsWorld.system("DemographicsProvinceSpreadSystem")
             .kind(phaseId)
+            .with(Province.class)
             .with(Demographics.class)
-            .with(GeoHierarchy.class)
             .iter(this::spread);
     }
 
@@ -19,14 +19,14 @@ public class DemographicsProvinceSpreadSystem {
         long ownerId = 0;
         DemographicsView regionInstanceDemographics = null;
 
-        Field<Demographics> demographicsViewField = iter.field(Demographics.class, 0);
-        Field<GeoHierarchy> geoHierarchyViewField = iter.field(GeoHierarchy.class, 1);
+        Field<Province> provinceField = iter.field(Province.class, 0);
+        Field<Demographics> demographicsField = iter.field(Demographics.class, 1);
         for(int i = 0; i < iter.count(); i++) {
-            DemographicsView demographics = demographicsViewField.getMutView(i);
-            GeoHierarchyView geoHierarchy = geoHierarchyViewField.getMutView(i);
+            ProvinceView province = provinceField.getMutView(i);
+            DemographicsView demographics = demographicsField.getMutView(i);
 
-            if(geoHierarchy.regionInstanceId() != ownerId) {
-                ownerId = geoHierarchy.regionInstanceId();
+            if(province.regionInstanceId() != ownerId) {
+                ownerId = province.regionInstanceId();
                 regionInstanceDemographics = iter.world().obtainEntityView(ownerId).getMutView(Demographics.class);
             }
 

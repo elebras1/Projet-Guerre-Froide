@@ -36,15 +36,13 @@ public class RegionService {
         MutableInt buildingWorkerAmount = new MutableInt(0);
         List<BuildingSummaryDto> buildings = new ObjectList<>();
 
-        Query provinceQuery = this.queryRepository.getProvincesWithGeoHierarchy();
+        Query provinceQuery = this.queryRepository.getProvinces();
         provinceQuery.iter(iter -> {
             Field<Province> provinceField = iter.field(Province.class, 0);
-            Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 1);
             for (int i = 0; i < iter.count(); i++) {
-                ProvinceView provinceView = provinceField.getMutView(i);
-                GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
-                if (countryId == provinceView.ownerId() && geoHierarchyView.regionId() == regionId) {
-                    populationAmount.increment(provinceView.adultsAmount());
+                ProvinceView province = provinceField.getMutView(i);
+                if (countryId == province.ownerId() && province.regionId() == regionId) {
+                    populationAmount.increment(province.adultsAmount());
                 }
             }
         });
@@ -250,15 +248,13 @@ public class RegionService {
     public int getWorkerAmount(long regionId) {
         MutableInt workers = new MutableInt(0);
 
-        Query query = this.queryRepository.getProvincesWithGeoHierarchy();
+        Query query = this.queryRepository.getProvinces();
         query.iter(iter -> {
             Field<Province> provinceField = iter.field(Province.class, 0);
-            Field<GeoHierarchy> geoField = iter.field(GeoHierarchy.class, 1);
             for(int i = 0; i < iter.count(); i++) {
-                ProvinceView provinceView = provinceField.getMutView(i);
-                GeoHierarchyView geoView = geoField.getMutView(i);
-                if (geoView.regionId() == regionId) {
-                    workers.increment(provinceView.adultsAmount());
+                ProvinceView province = provinceField.getMutView(i);
+                if (province.regionId() == regionId) {
+                    workers.increment(province.adultsAmount());
                 }
             }
         });
@@ -270,24 +266,24 @@ public class RegionService {
         World ecsWorld = this.gameContext.getEcsWorld();
 
         LongList provinceIds = new LongList();
-        Query query = this.queryRepository.getProvincesWithGeoHierarchy();
+        Query query = this.queryRepository.getProvinces();
         query.iter(iter -> {
-            Field<GeoHierarchy> geoField = iter.field(GeoHierarchy.class, 1);
+            Field<Province> provinceField = iter.field(Province.class, 0);
             for(int i = 0; i < iter.count(); i++) {
                 long provinceId = iter.entity(i);
-                GeoHierarchyView geoView = geoField.getMutView(i);
-                if (geoView.regionId() == regionId) {
+                ProvinceView province = provinceField.getMutView(i);
+                if (province.regionId() == regionId) {
                     provinceIds.add(provinceId);
                 }
             }
         });
 
         provinceIds.sort((a, b) -> {
-            EntityView provinceAView = ecsWorld.obtainEntityView(a);
-            ProvinceView provinceDataAView = provinceAView.getMutView(Province.class);
-            EntityView provinceBView = ecsWorld.obtainEntityView(b);
-            ProvinceView provinceDataBView = provinceBView.getMutView(Province.class);
-            return Integer.compare(provinceDataBView.adultsAmount(), provinceDataAView.adultsAmount());
+            EntityView provinceA = ecsWorld.obtainEntityView(a);
+            ProvinceView provinceDataA = provinceA.getMutView(Province.class);
+            EntityView provinceB = ecsWorld.obtainEntityView(b);
+            ProvinceView provinceDataB = provinceB.getMutView(Province.class);
+            return Integer.compare(provinceDataB.adultsAmount(), provinceDataA.adultsAmount());
         });
 
         List<String> result = new ObjectList<>();

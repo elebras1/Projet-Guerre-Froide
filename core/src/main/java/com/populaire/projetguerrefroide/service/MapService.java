@@ -332,18 +332,18 @@ public class MapService implements WorldContext, Disposable {
 
     private void updatePixmapRegionColor() {
         World ecsWorld = this.gameContext.getEcsWorld();
-        Query query = this.queryRepository.getProvincesWithColorAndGeoHierarchy();
+        Query query = this.queryRepository.getProvincesWithColor();
         query.iter(iter -> {
+            Field<Province> provinceField = iter.field(Province.class, 1);
             Field<Color> colorField = iter.field(Color.class, 1);
-            Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 2);
             for(int i = 0; i < iter.count(); i++) {
-                ColorView colorView = colorField.getMutView(i);
-                GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
-                EntityView regionView = ecsWorld.obtainEntityView(geoHierarchyView.regionId());
-                int color = colorView.value();
+                ColorView colorData = colorField.getMutView(i);
+                ProvinceView province = provinceField.getMutView(i);
+                EntityView region = ecsWorld.obtainEntityView(province.regionId());
+                int color = colorData.value();
                 int red = (color >> 24) & 0xFF;
                 int green = (color >> 16) & 0xFF;
-                this.mapModePixmap.drawPixel(red, green, ColorUtils.getDeterministicRGBA(regionView.getName()));
+                this.mapModePixmap.drawPixel(red, green, ColorUtils.getDeterministicRGBA(region.getName()));
             }
         });
     }
@@ -475,24 +475,22 @@ public class MapService implements WorldContext, Disposable {
         ByteBuffer dataProvinces = BufferUtils.newByteBuffer(65536 * 8);
         dataProvinces.order(ByteOrder.LITTLE_ENDIAN);
 
-        Query provinceQuery = this.queryRepository.getProvincesWithColorAndGeoHierarchy();
+        Query provinceQuery = this.queryRepository.getProvincesWithColor();
         provinceQuery.iter(iter -> {
             Field<Province> provinceField = iter.field(Province.class, 0);
             Field<Color> colorField = iter.field(Color.class, 1);
-            Field<GeoHierarchy> geoHierarchyField = iter.field(GeoHierarchy.class, 2);
             for(int i = 0; i < iter.count(); i++) {
-                ProvinceView provinceView = provinceField.getMutView(i);
-                ColorView colorView = colorField.getMutView(i);
-                GeoHierarchyView geoHierarchyView = geoHierarchyField.getMutView(i);
+                ProvinceView province = provinceField.getMutView(i);
+                ColorView colorData = colorField.getMutView(i);
 
-                int color = colorView.value();
+                int color = colorData.value();
                 int red = (color >> 24) & 0xFF;
                 int green = (color >> 16) & 0xFF;
                 int provinceId = red + green * 256;
 
                 dataProvinces.position(provinceId * 8);
-                dataProvinces.putInt((int) provinceView.ownerId());
-                dataProvinces.putInt((int) geoHierarchyView.regionId());
+                dataProvinces.putInt((int) province.ownerId());
+                dataProvinces.putInt((int) province.regionId());
             }
         });
         dataProvinces.position(0);

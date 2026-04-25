@@ -983,7 +983,7 @@ public class WorldDaoImpl implements WorldDao {
                 }
             }
 
-            province.set(new Province(coreIds, countryOwnerId, countryControllerId, terrainId, childrenAmount, adultsAmount, seniorsAmount, cultures.first(), cultures.second(), religions.first(), religions.second()));
+            province.set(new Province(coreIds, countryOwnerId, countryControllerId, terrainId, 0, 0, 0, childrenAmount, adultsAmount, seniorsAmount, cultures.first(), cultures.second(), religions.first(), religions.second()));
             province.set(new Demographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
@@ -1041,7 +1041,7 @@ public class WorldDaoImpl implements WorldDao {
                             regionInstance.set(new Demographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
 
                         }
-                        province.set(new GeoHierarchy(regionEntityId, -1, regionInstanceId));
+                        provinceData.regionId(regionEntityId).regionInstanceId(regionInstanceId);
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
                             for(var buildingEntry : regionBuildingIds) {
@@ -1213,13 +1213,13 @@ public class WorldDaoImpl implements WorldDao {
             JsonValue continentValues = this.parseJsonFile(this.continentJsonFile);
             for(var continentEntry : continentValues.object()) {
                 String continentName = continentEntry.getKey();
-                long continentEntityId = ecsWorld.entity(continentName);
+                long continentId = ecsWorld.entity(continentName);
                 for(var provinceEntry : continentEntry.getValue().array()) {
                     int provinceId = (int) provinceEntry.asLong();
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
-                    EntityView provinceEntity = ecsWorld.obtainEntityView(provinceEntityId);
-                    provinceEntity.set(GeoHierarchy.class, (GeoHierarchyView geoHierarchyView) ->
-                        geoHierarchyView.continentId(continentEntityId));
+                    EntityView province = ecsWorld.obtainEntityView(provinceEntityId);
+                    ProvinceView provinceData = province.getMutView(Province.class);
+                    provinceData.continentId(continentId);
                 }
             }
         } catch (Exception exception) {
