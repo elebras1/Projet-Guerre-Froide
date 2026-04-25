@@ -5,12 +5,12 @@ import com.github.elebras1.flecs.Iter;
 import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
-public class DemographicsLocalMarketSpreadSystem {
+public class DemographicsRegionInstanceSpreadSystem {
 
-    public DemographicsLocalMarketSpreadSystem(World ecsWorld, long phaseId) {
-        ecsWorld.system("DemographicsLocalMarketSpreadSystem")
+    public DemographicsRegionInstanceSpreadSystem(World ecsWorld, long phaseId) {
+        ecsWorld.system("DemographicsRegionInstanceSpreadSystem")
             .kind(phaseId)
-            .with(LocalMarket.class)
+            .with(RegionInstance.class)
             .with(Demographics.class)
             .iter(this::spread);
     }
@@ -19,14 +19,14 @@ public class DemographicsLocalMarketSpreadSystem {
         long ownerId = 0;
         CountryDemographicsView countryDemographics = null;
 
-        Field<LocalMarket> localMarketField = iter.field(LocalMarket.class, 0);
+        Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 0);
         Field<Demographics> demographicsField = iter.field(Demographics.class, 1);
         for(int i = 0; i < iter.count(); i++) {
-            LocalMarketView localMarket = localMarketField.getMutView(i);
+            RegionInstanceView regionInstance = regionInstanceField.getMutView(i);
             DemographicsView demographics = demographicsField.getMutView(i);
 
-            if(localMarket.ownerId() != ownerId) {
-                ownerId = localMarket.ownerId();
+            if(regionInstance.ownerId() != ownerId) {
+                ownerId = regionInstance.ownerId();
                 countryDemographics = iter.world().obtainEntityView(ownerId).getMutView(CountryDemographics.class);
             }
 

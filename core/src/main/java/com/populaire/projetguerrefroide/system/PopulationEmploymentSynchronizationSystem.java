@@ -20,8 +20,8 @@ public class PopulationEmploymentSynchronizationSystem {
         GeoHierarchyView geoHierarchy = null;
         ResourceGatheringView resourceGathering = null;
         ResourceGatheringTypeView resourceGatheringType = null;
-        long localMarketId = 0;
-        LocalMarketView localMarketData = null;
+        long regionInstanceId = 0;
+        RegionInstanceView regionInstanceData = null;
 
         Field<Population> populationField = iter.field(Population.class, 0);
         for(int i = 0; i < iter.count(); i++) {
@@ -40,11 +40,11 @@ public class PopulationEmploymentSynchronizationSystem {
                 }
             }
 
-            long currentLocalMarketId = geoHierarchy.localMarketId();
-            if(currentLocalMarketId != localMarketId) {
-                localMarketId = currentLocalMarketId;
-                EntityView localMarket = iter.world().obtainEntityView(currentLocalMarketId);
-                localMarketData = localMarket.getMutView(LocalMarket.class);
+            long currentRegionInstanceId = geoHierarchy.regionInstanceId();
+            if(currentRegionInstanceId != regionInstanceId) {
+                regionInstanceId = currentRegionInstanceId;
+                EntityView regionInstance = iter.world().obtainEntityView(currentRegionInstanceId);
+                regionInstanceData = regionInstance.getMutView(RegionInstance.class);
             }
 
             if (resourceGatheringType != null && population.typeId() == resourceGatheringType.slavePopTypeId()) {
@@ -57,7 +57,7 @@ public class PopulationEmploymentSynchronizationSystem {
                 continue;
             }
 
-            population.employment((int) (population.amount() * localMarketData.workerPopTypeEmploymentRatios(population.index())));
+            population.employment((int) (population.amount() * regionInstanceData.workerPopTypeEmploymentRatios(population.index())));
         }
     }
 }

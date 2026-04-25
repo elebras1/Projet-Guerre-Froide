@@ -186,9 +186,9 @@ public class WorldService {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity building = ecsWorld.obtainEntity(buildingId);
         Building buildingData = building.get(Building.class);
-        Entity localMarket = ecsWorld.obtainEntity(buildingData.parentId());
-        LocalMarket localMarketData = localMarket.get(LocalMarket.class);
-        return localMarketData.regionId();
+        Entity regionInstance = ecsWorld.obtainEntity(buildingData.parentId());
+        RegionInstance regionInstanceData = regionInstance.get(RegionInstance.class);
+        return regionInstanceData.regionId();
     }
 
     public String getColonizerId(long countryId) {

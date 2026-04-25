@@ -1034,14 +1034,14 @@ public class WorldDaoImpl implements WorldDao {
                     EntityView province = provinceEntityId != 0 ? ecsWorld.obtainEntityView(provinceEntityId) : null;
                     if(provinceEntityId != 0 && province.has(Province.class)) {
                         ProvinceView provinceData = province.getMutView(Province.class);
-                        long localMarketId = ecsWorld.entity("local_market_" + region.id() + "_" + provinceData.ownerId());
-                        EntityView localMarket = ecsWorld.obtainEntityView(localMarketId);
-                        if(!localMarket.has(LocalMarket.class)) {
-                            localMarket.set(new LocalMarket(regionEntityId, provinceData.ownerId(), new float[GOOD_COUNT], new float[GOOD_COUNT], new float[POP_TYPE_COUNT]));
-                            localMarket.set(new Demographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
+                        long regionInstanceId = ecsWorld.entity();
+                        EntityView regionInstance = ecsWorld.obtainEntityView(regionInstanceId);
+                        if(!regionInstance.has(RegionInstance.class)) {
+                            regionInstance.set(new RegionInstance(regionEntityId, provinceData.ownerId(), new float[GOOD_COUNT], new float[GOOD_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT]));
+                            regionInstance.set(new Demographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
 
                         }
-                        province.set(new GeoHierarchy(regionEntityId, -1, localMarketId));
+                        province.set(new GeoHierarchy(regionEntityId, -1, regionInstanceId));
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
                             for(var buildingEntry : regionBuildingIds) {
@@ -1049,7 +1049,7 @@ public class WorldDaoImpl implements WorldDao {
                                 int size = buildingEntry.value;
                                 EntityView building = ecsWorld.obtainEntityView(ecsWorld.entity());
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
-                                building.set(new Building(localMarketId, buildingTypeId, size));
+                                building.set(new Building(regionInstanceId, buildingTypeId, size));
                                 if(buildingType.has(EconomyBuildingType.class)) {
                                     building.set(new EconomyBuilding(0f, 0f, 0f, 0, 0));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {

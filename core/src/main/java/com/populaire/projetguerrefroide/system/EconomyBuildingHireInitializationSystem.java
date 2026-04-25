@@ -4,11 +4,8 @@ import com.github.elebras1.flecs.EntityView;
 import com.github.elebras1.flecs.Field;
 import com.github.elebras1.flecs.Iter;
 import com.github.elebras1.flecs.World;
-import com.github.tommyettinger.ds.IntObjectMap;
 import com.github.tommyettinger.ds.LongObjectMap;
 import com.populaire.projetguerrefroide.component.*;
-
-import java.util.Arrays;
 
 import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 
@@ -26,8 +23,8 @@ public class EconomyBuildingHireInitializationSystem {
         long buildingTypeId = 0;
         EconomyBuildingTypeView economyBuildingType = null;
 
-        long localMarketId = 0;
-        LocalMarketView localMarketData = null;
+        long regionInstanceId = 0;
+        RegionInstanceView regionInstanceData = null;
         DemographicsView demographics = null;
 
         int primaryWorkerPopTypeIndex = -1;
@@ -49,11 +46,11 @@ public class EconomyBuildingHireInitializationSystem {
                 secondaryWorkerPopTypeIndex = economyBuildingType.secondaryWorkerPopTypeIndex();
             }
 
-            if(building.parentId() != localMarketId) {
-                localMarketId = building.parentId();
-                EntityView localMarket = iter.world().obtainEntityView(building.parentId());
-                localMarketData = localMarket.getMutView(LocalMarket.class);
-                demographics = localMarket.getMutView(Demographics.class);
+            if(building.parentId() != regionInstanceId) {
+                regionInstanceId = building.parentId();
+                EntityView regionInstance = iter.world().obtainEntityView(building.parentId());
+                regionInstanceData = regionInstance.getMutView(RegionInstance.class);
+                demographics = regionInstance.getMutView(Demographics.class);
             }
 
             int[] marketWorkerPopTypeHired = workerPopTypeHiredByMarket.computeIfAbsent(building.parentId(), _ -> new int[POP_TYPE_COUNT]);
@@ -79,8 +76,8 @@ public class EconomyBuildingHireInitializationSystem {
             float primaryWorkerPopTypeEmploymentRatio = (float) (currentPrimaryEmployed + primaryWorkerAmount) / Math.max(1f, demographics.totalByPopType(primaryWorkerPopTypeIndex));
             float secondaryWorkerPopTypeEmploymentRatio = (float) (currentSecondaryEmployed + secondaryWorkerAmount) / Math.max(1f, demographics.totalByPopType(secondaryWorkerPopTypeIndex));
 
-            localMarketData.workerPopTypeEmploymentRatios(primaryWorkerPopTypeIndex, primaryWorkerPopTypeEmploymentRatio);
-            localMarketData.workerPopTypeEmploymentRatios(secondaryWorkerPopTypeIndex, secondaryWorkerPopTypeEmploymentRatio);
+            regionInstanceData.workerPopTypeEmploymentRatios(primaryWorkerPopTypeIndex, primaryWorkerPopTypeEmploymentRatio);
+            regionInstanceData.workerPopTypeEmploymentRatios(secondaryWorkerPopTypeIndex, secondaryWorkerPopTypeEmploymentRatio);
         }
     }
 }

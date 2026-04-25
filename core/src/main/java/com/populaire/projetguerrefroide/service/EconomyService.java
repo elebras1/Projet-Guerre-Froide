@@ -11,7 +11,7 @@ public class EconomyService {
     private final PopulationInitializationSystem populationInitializationSystem;
     private final DemographicsPopulationSpreadSystem demographicsPopulationSpreadSystem;
     private final DemographicsProvinceSpreadSystem demographicsProvinceSpreadSystem;
-    private final DemographicsLocalMarketSpreadSystem demographicsLocalMarketSpreadSystem;
+    private final DemographicsRegionInstanceSpreadSystem demographicsRegionInstanceSpreadSystem;
     private final RGOSizeSystem rgoSizeSystem;
     private final RGOHireInitializationSystem rgoHireInitializationSystem;
     private final EconomyBuildingHireInitializationSystem economyBuildingHireInitializationSystem;
@@ -52,7 +52,7 @@ public class EconomyService {
         this.populationInitializationSystem = new PopulationInitializationSystem(this.gameContext.getEcsWorld(), phasePopInit);
         this.demographicsPopulationSpreadSystem = new DemographicsPopulationSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
         this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
-        this.demographicsLocalMarketSpreadSystem = new DemographicsLocalMarketSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
+        this.demographicsRegionInstanceSpreadSystem = new DemographicsRegionInstanceSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
         this.rgoSizeSystem = new RGOSizeSystem(this.gameContext.getEcsWorld(), phaseInit);
         this.rgoHireInitializationSystem = new RGOHireInitializationSystem(this.gameContext.getEcsWorld(), phaseInit);
         this.economyBuildingHireInitializationSystem = new EconomyBuildingHireInitializationSystem(this.gameContext.getEcsWorld(), phaseInit);
