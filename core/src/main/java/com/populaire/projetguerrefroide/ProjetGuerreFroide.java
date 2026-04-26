@@ -90,6 +90,10 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(ResourceGatheringType.class);
         this.ecsWorld.component(Demographics.class);
         this.ecsWorld.component(CountryDemographics.class);
+        this.ecsWorld.component(CountryMarket.class);
+        this.ecsWorld.component(GlobalPopulationType.class);
+        this.ecsWorld.component(GlobalGood.class);
+        this.ecsWorld.component(WorldMarket.class);
     }
 
     public void registerCommands(CommandBus commandBus, BuildingService buildingService) {

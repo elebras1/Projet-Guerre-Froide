@@ -11,7 +11,10 @@ public class ExpandBuildingSystem {
 
     public ExpandBuildingSystem(World ecsWorld, CommandBus commandBus) {
         this.commandBus = commandBus;
-        ecsWorld.system("ExpandBuildingSystem").kind(FlecsConstants.EcsOnUpdate).with(ExpansionBuilding.class).iter(this::expand);
+        ecsWorld.system("ExpandBuildingSystem")
+            .kind(FlecsConstants.EcsOnUpdate)
+            .with(ExpansionBuilding.class)
+            .iter(this::expand);
     }
 
     private void expand(Iter iter) {

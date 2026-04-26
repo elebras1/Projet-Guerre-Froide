@@ -6,6 +6,7 @@ import com.populaire.projetguerrefroide.system.*;
 
 public class EconomyService {
     private final GameContext gameContext;
+
     private final DemographicsResetSystem demographicsResetSystem;
     private final CountryDemographicsResetSystem countryDemographicsResetSystem;
     private final PopulationInitializationSystem populationInitializationSystem;
@@ -15,25 +16,39 @@ public class EconomyService {
     private final RGOSizeSystem rgoSizeSystem;
     private final RGOHireInitializationSystem rgoHireInitializationSystem;
     private final EconomyBuildingHireInitializationSystem economyBuildingHireInitializationSystem;
+    private final CountryMarketInitializeSystem countryMarketInitializeSystem;
     private final PopulationEmploymentSynchronizationSystem populationEmploymentSynchronizationSystem;
+
+    private final CountryMarketResetSystem countryMarketResetSystem;
+    private final NeedsCostsResetSystem needsCostsResetSystem;
+    private final NeedsCostsCalculationSystem needsCostsCalculationSystem;
+    private final PopulationConsumptionSystem populationConsumptionSystem;
+    private final EconomyBuildingConsumptionSystem economyBuildingConsumptionSystem;
     private final RGOProduceSystem rgoProduceSystem;
+    private final RGOSpreadProductionSystem rgoSpreadProductionSystem;
+    private final CountryMarketResolveSystem countryMarketResolveSystem;
+
     private final Pipeline initPipeline;
     private final Pipeline mainPipeline;
 
     public EconomyService(GameContext gameContext) {
         this.gameContext = gameContext;
-
         World ecsWorld = gameContext.getEcsWorld();
 
-        long phaseReset = ecsWorld.entity("PhaseReset");
+        long phaseDemographicsReset = ecsWorld.entity("PhaseDemographicsReset");
         long phasePopInit = ecsWorld.entity("PhasePopInit");
         long phaseSpread = ecsWorld.entity("PhaseSpread");
         long phaseInit = ecsWorld.entity("PhaseInit");
         long phaseSync = ecsWorld.entity("PhaseSync");
-        long phaseProduce = ecsWorld.entity("PhaseProduce");
+
+        long phaseMarketReset = ecsWorld.entity("PhaseMarketReset");
+        long phaseNeedsCosts = ecsWorld.entity("PhaseNeedsCosts");
+        long phaseConsumption = ecsWorld.entity("PhaseConsumption");
+        long phaseProduction = ecsWorld.entity("PhaseProduction");
+        long phaseToMarket = ecsWorld.entity("PhaseToMarket");
+        long phaseMarket = ecsWorld.entity("PhaseMarket");
 
         this.initPipeline = ecsWorld.pipeline("InitEconomyPipeline")
-            .with(phaseReset)
             .with(phasePopInit)
             .with(phaseSpread)
             .with(phaseInit)
@@ -41,30 +56,44 @@ public class EconomyService {
             .build();
 
         this.mainPipeline = ecsWorld.pipeline("MainEconomyPipeline")
-            .with(phaseReset)
+            .with(phaseDemographicsReset)
             .with(phaseSpread)
             .with(phaseSync)
-            .with(phaseProduce)
+            .with(phaseMarketReset)
+            .with(phaseNeedsCosts)
+            .with(phaseConsumption)
+            .with(phaseProduction)
+            .with(phaseToMarket)
+            .with(phaseMarket)
             .build();
 
-        this.demographicsResetSystem = new DemographicsResetSystem(this.gameContext.getEcsWorld(), phaseReset);
-        this.countryDemographicsResetSystem = new CountryDemographicsResetSystem(this.gameContext.getEcsWorld(), phaseReset);
-        this.populationInitializationSystem = new PopulationInitializationSystem(this.gameContext.getEcsWorld(), phasePopInit);
-        this.demographicsPopulationSpreadSystem = new DemographicsPopulationSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
-        this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
-        this.demographicsRegionInstanceSpreadSystem = new DemographicsRegionInstanceSpreadSystem(this.gameContext.getEcsWorld(), phaseSpread);
-        this.rgoSizeSystem = new RGOSizeSystem(this.gameContext.getEcsWorld(), phaseInit);
-        this.rgoHireInitializationSystem = new RGOHireInitializationSystem(this.gameContext.getEcsWorld(), phaseInit);
-        this.economyBuildingHireInitializationSystem = new EconomyBuildingHireInitializationSystem(this.gameContext.getEcsWorld(), phaseInit);
-        this.populationEmploymentSynchronizationSystem = new PopulationEmploymentSynchronizationSystem(this.gameContext.getEcsWorld(), phaseSync);
-        this.rgoProduceSystem = new RGOProduceSystem(this.gameContext.getEcsWorld(), phaseProduce);
+        this.demographicsResetSystem = new DemographicsResetSystem(ecsWorld, phaseDemographicsReset);
+        this.countryDemographicsResetSystem = new CountryDemographicsResetSystem(ecsWorld, phaseDemographicsReset);
+        this.populationInitializationSystem = new PopulationInitializationSystem(ecsWorld, phasePopInit);
+        this.demographicsPopulationSpreadSystem = new DemographicsPopulationSpreadSystem(ecsWorld, phaseSpread);
+        this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(ecsWorld, phaseSpread);
+        this.demographicsRegionInstanceSpreadSystem = new DemographicsRegionInstanceSpreadSystem(ecsWorld, phaseSpread);
+        this.rgoSizeSystem = new RGOSizeSystem(ecsWorld, phaseInit);
+        this.rgoHireInitializationSystem = new RGOHireInitializationSystem(ecsWorld, phaseInit);
+        this.economyBuildingHireInitializationSystem = new EconomyBuildingHireInitializationSystem(ecsWorld, phaseInit);
+        this.populationEmploymentSynchronizationSystem = new PopulationEmploymentSynchronizationSystem(ecsWorld, phaseSync);
+        this.countryMarketInitializeSystem = new CountryMarketInitializeSystem(ecsWorld, phaseInit);
+
+        this.countryMarketResetSystem = new CountryMarketResetSystem(ecsWorld, phaseMarketReset);
+        this.needsCostsResetSystem = new NeedsCostsResetSystem(ecsWorld, phaseNeedsCosts);
+        this.needsCostsCalculationSystem = new NeedsCostsCalculationSystem(ecsWorld, phaseNeedsCosts);
+        this.populationConsumptionSystem = new PopulationConsumptionSystem(ecsWorld, phaseConsumption);
+        this.economyBuildingConsumptionSystem = new EconomyBuildingConsumptionSystem(ecsWorld, phaseConsumption);
+        this.rgoProduceSystem = new RGOProduceSystem(ecsWorld, phaseProduction);
+        this.rgoSpreadProductionSystem = new RGOSpreadProductionSystem(ecsWorld, phaseToMarket);
+        this.countryMarketResolveSystem = new CountryMarketResolveSystem(ecsWorld, phaseMarket);
     }
 
     public Pipeline getInitPipeline() {
-        return this.initPipeline;
+        return initPipeline;
     }
 
     public Pipeline getMainPipeline() {
-        return this.mainPipeline;
+        return mainPipeline;
     }
 }

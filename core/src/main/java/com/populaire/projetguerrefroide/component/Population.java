@@ -6,6 +6,7 @@ import com.github.elebras1.flecs.annotation.Component;
 public record Population(
     int index,
     long typeId,
+    long countryId,
     long provinceId,
     int amount,
     int employment,

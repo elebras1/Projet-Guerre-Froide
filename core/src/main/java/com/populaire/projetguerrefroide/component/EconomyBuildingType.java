@@ -4,14 +4,15 @@ import com.github.elebras1.flecs.annotation.Component;
 import com.github.elebras1.flecs.annotation.FixedArray;
 
 import static com.populaire.projetguerrefroide.util.Constants.MAX_GOODS;
-import static com.populaire.projetguerrefroide.util.Constants.MAX_POPS;
 
 @Component
 public record EconomyBuildingType(
     int time,
     int maxLevel,
+    @FixedArray(length = MAX_GOODS) int[] goodCostIndexes,
     @FixedArray(length = MAX_GOODS) long[] goodCostIds,
     @FixedArray(length = MAX_GOODS) float[] goodCostAmounts,
+    @FixedArray(length = MAX_GOODS) int[] goodInputIndexes,
     @FixedArray(length = MAX_GOODS) long[] goodInputIds,
     @FixedArray(length = MAX_GOODS) float[] goodInputAmounts,
     long goodOutputId,
