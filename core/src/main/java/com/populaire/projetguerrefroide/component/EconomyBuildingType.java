@@ -15,6 +15,7 @@ public record EconomyBuildingType(
     @FixedArray(length = MAX_GOODS) int[] goodInputIndexes,
     @FixedArray(length = MAX_GOODS) long[] goodInputIds,
     @FixedArray(length = MAX_GOODS) float[] goodInputAmounts,
+    int goodOutputIndex,
     long goodOutputId,
     float goodOutputAmount,
     int workforce,

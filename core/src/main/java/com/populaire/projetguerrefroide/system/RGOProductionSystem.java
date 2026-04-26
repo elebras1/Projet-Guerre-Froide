@@ -9,10 +9,10 @@ import com.populaire.projetguerrefroide.component.ResourceGatheringType;
 import com.populaire.projetguerrefroide.component.ResourceGatheringTypeView;
 import com.populaire.projetguerrefroide.component.ResourceGatheringView;
 
-public class RGOProduceSystem {
+public class RGOProductionSystem {
 
-    public RGOProduceSystem(World ecsWorld, long phaseId) {
-        ecsWorld.system("RGOProduceSystem")
+    public RGOProductionSystem(World ecsWorld, long phaseId) {
+        ecsWorld.system("RGOProductionSystem")
             .kind(phaseId)
             .with(ResourceGathering.class)
             .iter(this::produce);

@@ -487,13 +487,15 @@ public class WorldDaoImpl implements WorldDao {
                     inputGoodAmounts[inputGoodIndex] = goodAmount;
                     inputGoodIndex++;
                 }
+                int outputGoodIndex = 0;
                 long outputGoodId = 0;
                 float outputGoodAmount = 0;
-                Iterator<Map.Entry<String, JsonValue>> outputGoodsEntryIterator = buildingValue.get("output_goods").objectIterator();
+                var outputGoodsEntryIterator = buildingValue.get("output_goods").objectIterator();
                 if (outputGoodsEntryIterator.hasNext()) {
-                    Map.Entry<String, JsonValue> outputGood = outputGoodsEntryIterator.next();
+                    var outputGood = outputGoodsEntryIterator.next();
                     long goodId = ecsWorld.lookup(outputGood.getKey());
                     float goodAmount = (float) outputGood.getValue().asDouble();
+                    outputGoodIndex = this.getGoodIndex(goodId);
                     outputGoodId = goodId;
                     outputGoodAmount = goodAmount;
                 }
@@ -507,6 +509,7 @@ public class WorldDaoImpl implements WorldDao {
                     inputGoodIndexes,
                     inputGoodIds,
                     inputGoodAmounts,
+                    outputGoodIndex,
                     outputGoodId,
                     outputGoodAmount,
                     productionType.workforce(),

@@ -24,8 +24,10 @@ public class EconomyService {
     private final NeedsCostsCalculationSystem needsCostsCalculationSystem;
     private final PopulationConsumptionSystem populationConsumptionSystem;
     private final EconomyBuildingConsumptionSystem economyBuildingConsumptionSystem;
-    private final RGOProduceSystem rgoProduceSystem;
+    private final RGOProductionSystem rgoProduceSystem;
     private final RGOSpreadProductionSystem rgoSpreadProductionSystem;
+    private final EconomyBuildingProductionSystem economyBuildingProductionSystem;
+    private final EconomyBuildingSpreadProductionSystem economyBuildingSpreadProductionSystem;
     private final CountryMarketResolveSystem countryMarketResolveSystem;
 
     private final Pipeline initPipeline;
@@ -84,8 +86,10 @@ public class EconomyService {
         this.needsCostsCalculationSystem = new NeedsCostsCalculationSystem(ecsWorld, phaseNeedsCosts);
         this.populationConsumptionSystem = new PopulationConsumptionSystem(ecsWorld, phaseConsumption);
         this.economyBuildingConsumptionSystem = new EconomyBuildingConsumptionSystem(ecsWorld, phaseConsumption);
-        this.rgoProduceSystem = new RGOProduceSystem(ecsWorld, phaseProduction);
+        this.rgoProduceSystem = new RGOProductionSystem(ecsWorld, phaseProduction);
+        this.economyBuildingProductionSystem = new EconomyBuildingProductionSystem(ecsWorld, phaseProduction);
         this.rgoSpreadProductionSystem = new RGOSpreadProductionSystem(ecsWorld, phaseToMarket);
+        this.economyBuildingSpreadProductionSystem = new EconomyBuildingSpreadProductionSystem(ecsWorld, phaseToMarket);
         this.countryMarketResolveSystem = new CountryMarketResolveSystem(ecsWorld, phaseMarket);
     }
 
