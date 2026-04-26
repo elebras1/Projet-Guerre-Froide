@@ -77,7 +77,6 @@ public class EconomyBuildingProductionSystem {
             float production = baseOutput * throughput * outputMultiplier * (0.75f + 0.25f * efficiencySatisfaction) * minInputSatisfaction * effectiveScale;
 
             economyBuilding.production(production);
-            System.out.println("Produced " + production + " workers primary : " + primaryWorkers + "/" + maxPrimary + " secondary : " + secondaryWorkers + "/" + maxSecondary + " minInputSatisfaction : " + minInputSatisfaction);
         }
     }
 }
