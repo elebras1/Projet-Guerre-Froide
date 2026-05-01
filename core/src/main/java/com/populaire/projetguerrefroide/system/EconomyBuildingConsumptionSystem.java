@@ -47,7 +47,7 @@ public class EconomyBuildingConsumptionSystem {
                 }
                 float amount = economyBuildingTypeData.goodInputAmounts(g);
                 float demand = inputMultiplier * throughput * scale * amount * building.size();
-                countryMarket.realDemand(goodIndex, countryMarket.realDemand(goodIndex) + demand);
+                countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
             }
         }
     }

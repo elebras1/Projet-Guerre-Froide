@@ -58,7 +58,7 @@ public class PopulationConsumptionSystem {
                 }
                 float base = popTypeData.lifeNeedsGoodAmounts(j);
                 float demand = base * lifeFraction * amount;
-                countryMarket.realDemand(goodIndex, countryMarket.realDemand(goodIndex) + demand);
+                countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
             }
 
             for (int j = 0; j < popTypeData.everydayNeedsGoodIndexesLength(); j++) {
@@ -68,7 +68,7 @@ public class PopulationConsumptionSystem {
                 }
                 float base = popTypeData.everydayNeedsGoodAmounts(j);
                 float demand = base * everydayFraction * amount;
-                countryMarket.realDemand(goodIndex, countryMarket.realDemand(goodIndex) + demand);
+                countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
             }
 
             for (int j = 0; j < popTypeData.luxuryNeedsGoodIndexesLength(); j++) {
@@ -78,7 +78,7 @@ public class PopulationConsumptionSystem {
                 }
                 float base = popTypeData.luxuryNeedsGoodAmounts(j);
                 float demand = base * luxuryFraction * amount;
-                countryMarket.realDemand(goodIndex, countryMarket.realDemand(goodIndex) + demand);
+                countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
             }
         }
     }

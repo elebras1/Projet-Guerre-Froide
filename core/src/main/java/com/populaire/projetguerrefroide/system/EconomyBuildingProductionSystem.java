@@ -68,7 +68,7 @@ public class EconomyBuildingProductionSystem {
                 if (goodIndex < 0) {
                     break;
                 }
-                float satisfaction = countryMarket.demandSatisfaction(goodIndex);
+                float satisfaction = countryMarket.goodDemandSatisfactionRatios(goodIndex);
                 minInputSatisfaction = Math.min(minInputSatisfaction, satisfaction);
             }
 

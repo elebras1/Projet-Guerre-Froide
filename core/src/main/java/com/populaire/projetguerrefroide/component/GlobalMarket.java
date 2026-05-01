@@ -6,7 +6,7 @@ import com.github.elebras1.flecs.annotation.FixedArray;
 import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
 
 @Component
-public record WorldMarket(
-    @FixedArray(length = GOOD_COUNT) float[] globalMarketPool,
-    @FixedArray(length = GOOD_COUNT) float[] globalMarketPrices) {
+public record GlobalMarket(
+    @FixedArray(length = GOOD_COUNT) float[] goodAmountsPool,
+    @FixedArray(length = GOOD_COUNT) float[] goodPrices) {
 }

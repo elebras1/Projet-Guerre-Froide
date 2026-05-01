@@ -20,9 +20,9 @@ public class CountryMarketResetSystem {
         for(int i = 0; i < iter.count(); i++) {
             CountryMarketView countryMarket = countryMarketField.getMutView(i);
 
-            for(int g = 0; g < countryMarket.realDemandLength(); g++) {
-                countryMarket.realDemand(g, 0f);
-                countryMarket.domesticMarketPool(g, 0f);
+            for(int g = 0; g < countryMarket.goodDemandAmountsLength(); g++) {
+                countryMarket.goodDemandAmounts(g, 0f);
+                countryMarket.goodAmountsPool(g, 0f);
             }
 
         }

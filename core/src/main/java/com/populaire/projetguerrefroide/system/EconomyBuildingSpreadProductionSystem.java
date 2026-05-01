@@ -41,7 +41,7 @@ public class EconomyBuildingSpreadProductionSystem {
                 economyBuildingTypeData = economyBuildingType.getMutView(EconomyBuildingType.class);
             }
 
-            countryMarket.domesticMarketPool(economyBuildingTypeData.goodOutputIndex(), countryMarket.domesticMarketPool(economyBuildingTypeData.goodOutputIndex()) + economyBuilding.production());
+            countryMarket.goodAmountsPool(economyBuildingTypeData.goodOutputIndex(), countryMarket.goodAmountsPool(economyBuildingTypeData.goodOutputIndex()) + economyBuilding.production());
         }
     }
 }

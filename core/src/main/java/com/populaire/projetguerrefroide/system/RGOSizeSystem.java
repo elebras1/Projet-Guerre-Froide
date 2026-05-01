@@ -30,7 +30,7 @@ public class RGOSizeSystem {
             int workerPopTypeIndex = resourceGatheringTypeData.workerPopTypeIndex();
             int workerAmount = demographics.totalByPopType(workerPopTypeIndex);
 
-            int size = (workerAmount + workforce - 1) / workforce;
+            int size = (workerAmount + workforce - 1) / Math.max(1, workforce);
             size = (int) (size * 1.5f);
 
             resourceGathering.size(size);

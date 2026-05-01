@@ -35,7 +35,7 @@ public class NeedsCostsCalculationSystem {
                         break;
                     }
                     float amount = popTypeData.lifeNeedsGoodAmounts(j);
-                    float price = countryMarket.effectiveGoodPrices(goodIndex);
+                    float price = countryMarket.goodPrices(goodIndex);
                     countryMarket.lifeCostsByPopType(ptIndex, countryMarket.lifeCostsByPopType(ptIndex) + amount * price);
                 }
 
@@ -45,7 +45,7 @@ public class NeedsCostsCalculationSystem {
                         break;
                     }
                     float amount = popTypeData.everydayNeedsGoodAmounts(j);
-                    float price = countryMarket.effectiveGoodPrices(goodIndex);
+                    float price = countryMarket.goodPrices(goodIndex);
                     countryMarket.everydayCostsByPopType(ptIndex, countryMarket.everydayCostsByPopType(ptIndex) + amount * price);
                 }
 
@@ -55,7 +55,7 @@ public class NeedsCostsCalculationSystem {
                         break;
                     }
                     float amount = popTypeData.luxuryNeedsGoodAmounts(j);
-                    float price = countryMarket.effectiveGoodPrices(goodIndex);
+                    float price = countryMarket.goodPrices(goodIndex);
                     countryMarket.luxuryCostsByPopType(ptIndex, countryMarket.luxuryCostsByPopType(ptIndex) + amount * price);
                 }
             }

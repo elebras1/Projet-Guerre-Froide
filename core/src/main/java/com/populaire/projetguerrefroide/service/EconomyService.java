@@ -16,7 +16,8 @@ public class EconomyService {
     private final RGOSizeSystem rgoSizeSystem;
     private final RGOHireInitializationSystem rgoHireInitializationSystem;
     private final EconomyBuildingHireInitializationSystem economyBuildingHireInitializationSystem;
-    private final CountryMarketInitializeSystem countryMarketInitializeSystem;
+    private final CountryMarketInitializationSystem countryMarketInitializationSystem;
+    private final GlobalMarketInitializationSystem globalMarketInitializationSystem;
     private final PopulationEmploymentSynchronizationSystem populationEmploymentSynchronizationSystem;
 
     private final CountryMarketResetSystem countryMarketResetSystem;
@@ -24,11 +25,13 @@ public class EconomyService {
     private final NeedsCostsCalculationSystem needsCostsCalculationSystem;
     private final PopulationConsumptionSystem populationConsumptionSystem;
     private final EconomyBuildingConsumptionSystem economyBuildingConsumptionSystem;
+    private final StockpileDemandSystem stockpileDemandSystem;
     private final RGOProductionSystem rgoProduceSystem;
     private final RGOSpreadProductionSystem rgoSpreadProductionSystem;
     private final EconomyBuildingProductionSystem economyBuildingProductionSystem;
     private final EconomyBuildingSpreadProductionSystem economyBuildingSpreadProductionSystem;
     private final CountryMarketResolveSystem countryMarketResolveSystem;
+    private final CountryMarketSpreadSystem countryMarketSpreadSystem;
 
     private final Pipeline initPipeline;
     private final Pipeline mainPipeline;
@@ -79,18 +82,21 @@ public class EconomyService {
         this.rgoHireInitializationSystem = new RGOHireInitializationSystem(ecsWorld, phaseInit);
         this.economyBuildingHireInitializationSystem = new EconomyBuildingHireInitializationSystem(ecsWorld, phaseInit);
         this.populationEmploymentSynchronizationSystem = new PopulationEmploymentSynchronizationSystem(ecsWorld, phaseSync);
-        this.countryMarketInitializeSystem = new CountryMarketInitializeSystem(ecsWorld, phaseInit);
+        this.countryMarketInitializationSystem = new CountryMarketInitializationSystem(ecsWorld, phaseInit);
+        this.globalMarketInitializationSystem = new GlobalMarketInitializationSystem(ecsWorld, phaseInit);
 
         this.countryMarketResetSystem = new CountryMarketResetSystem(ecsWorld, phaseMarketReset);
         this.needsCostsResetSystem = new NeedsCostsResetSystem(ecsWorld, phaseNeedsCosts);
         this.needsCostsCalculationSystem = new NeedsCostsCalculationSystem(ecsWorld, phaseNeedsCosts);
         this.populationConsumptionSystem = new PopulationConsumptionSystem(ecsWorld, phaseConsumption);
         this.economyBuildingConsumptionSystem = new EconomyBuildingConsumptionSystem(ecsWorld, phaseConsumption);
+        this.stockpileDemandSystem = new StockpileDemandSystem(ecsWorld, phaseConsumption);
         this.rgoProduceSystem = new RGOProductionSystem(ecsWorld, phaseProduction);
         this.economyBuildingProductionSystem = new EconomyBuildingProductionSystem(ecsWorld, phaseProduction);
         this.rgoSpreadProductionSystem = new RGOSpreadProductionSystem(ecsWorld, phaseToMarket);
         this.economyBuildingSpreadProductionSystem = new EconomyBuildingSpreadProductionSystem(ecsWorld, phaseToMarket);
         this.countryMarketResolveSystem = new CountryMarketResolveSystem(ecsWorld, phaseMarket);
+        this.countryMarketSpreadSystem = new CountryMarketSpreadSystem(ecsWorld, phaseMarket);
     }
 
     public Pipeline getInitPipeline() {

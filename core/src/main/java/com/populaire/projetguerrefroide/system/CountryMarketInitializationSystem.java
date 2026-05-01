@@ -6,10 +6,10 @@ import com.github.elebras1.flecs.Iter;
 import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
-public class CountryMarketInitializeSystem {
+public class CountryMarketInitializationSystem {
 
-    public CountryMarketInitializeSystem(World ecsWorld, long phaseId) {
-        ecsWorld.system("CountryMarketInitializeSystem")
+    public CountryMarketInitializationSystem(World ecsWorld, long phaseId) {
+        ecsWorld.system("countryMarketInitializationSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
             .iter(this::initialize);
@@ -27,8 +27,8 @@ public class CountryMarketInitializeSystem {
             for(int g = 0; g < globalGoodData.goodIdsLength(); g++) {
                 EntityView good = iter.world().obtainEntityView(globalGoodData.goodIds(g));
                 GoodView goodData = good.getMutView(Good.class);
-                countryMarket.effectiveGoodPrices(g, goodData.cost());
-                countryMarket.demandSatisfaction(g, 1f);
+                countryMarket.goodPrices(g, goodData.cost());
+                countryMarket.goodDemandSatisfactionRatios(g, 1f);
             }
             countryMarket.spendingRatio(1f);
         }

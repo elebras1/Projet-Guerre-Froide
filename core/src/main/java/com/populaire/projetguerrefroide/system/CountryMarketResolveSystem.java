@@ -4,10 +4,7 @@ import com.github.elebras1.flecs.EntityView;
 import com.github.elebras1.flecs.Field;
 import com.github.elebras1.flecs.Iter;
 import com.github.elebras1.flecs.World;
-import com.populaire.projetguerrefroide.component.CountryMarket;
-import com.populaire.projetguerrefroide.component.CountryMarketView;
-import com.populaire.projetguerrefroide.component.WorldMarket;
-import com.populaire.projetguerrefroide.component.WorldMarketView;
+import com.populaire.projetguerrefroide.component.*;
 
 public class CountryMarketResolveSystem {
 
@@ -19,20 +16,22 @@ public class CountryMarketResolveSystem {
     }
 
     private void resolve(Iter iter) {
-        EntityView worldMarket = iter.world().obtainEntityView(iter.world().lookup("world_market"));
-        WorldMarketView worldMarketData = worldMarket.getMutView(WorldMarket.class);
+        EntityView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market"));
+        GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketView countryMarket = countryMarketField.getMutView(i);
 
-            for (int g = 0; g < countryMarket.effectiveGoodPricesLength(); g++) {
-                float domesticSupply = countryMarket.domesticMarketPool(g);
-                float globalSupply = worldMarketData.globalMarketPool(g);
-                float stockSupply = countryMarket.stockpiles(g);
+            for (int g = 0; g < countryMarket.goodPricesLength(); g++) {
+                boolean drawingOnStockpile = countryMarket.goodDrawingOnStockpiles(g);
+
+                float domesticSupply = countryMarket.goodAmountsPool(g);
+                float globalSupply = globalMarketData.goodAmountsPool(g);
+                float stockSupply = drawingOnStockpile ? countryMarket.goodStockpiles(g) : 0f;
                 float totalSupply = domesticSupply + globalSupply + stockSupply;
 
-                float demand = countryMarket.realDemand(g);
+                float demand = countryMarket.goodDemandAmounts(g);
                 float satisfaction;
                 float priceAdjustment;
 
@@ -44,14 +43,34 @@ public class CountryMarketResolveSystem {
                     priceAdjustment = 1.0f;
                 }
 
-                countryMarket.demandSatisfaction(g, satisfaction);
+                countryMarket.goodDemandSatisfactionRatios(g, satisfaction);
+
+                float remaining = demand * satisfaction;
+                float consumedDomestic = Math.min(domesticSupply, remaining);
+                remaining -= consumedDomestic;
+                float consumedStock = Math.min(stockSupply, remaining);
+                remaining -= consumedStock;
+                float consumedGlobal = Math.min(globalSupply, remaining);
+
+                countryMarket.goodAmountsPool(g, domesticSupply - consumedDomestic);
+                countryMarket.goodStockpiles(g, stockSupply - consumedStock);
+                globalMarketData.goodAmountsPool(g, globalSupply - consumedGlobal);
+
+                float deficit = countryMarket.goodStockpileDailyDeficits(g);
+                if (deficit > 0 && !drawingOnStockpile) {
+                    float purchased = deficit * satisfaction * countryMarket.spendingRatio();
+                    float price = countryMarket.goodPrices(g);
+                    float cost = purchased * price;
+                    countryMarket.goodStockpiles(g, countryMarket.goodStockpiles(g) + purchased);
+                    countryMarket.treasury(countryMarket.treasury() - cost);
+                }
 
                 float inertia = 0.05f;
-                float oldPrice = countryMarket.effectiveGoodPrices(g);
+                float oldPrice = countryMarket.goodPrices(g);
                 float baseFactor = 1.0f + priceAdjustment;
                 float newPrice = oldPrice * (1.0f + inertia * (baseFactor - 1.0f));
 
-                countryMarket.effectiveGoodPrices(g, Math.max(0.001f, newPrice));
+                countryMarket.goodPrices(g, Math.max(0.001f, newPrice));
             }
         }
     }
