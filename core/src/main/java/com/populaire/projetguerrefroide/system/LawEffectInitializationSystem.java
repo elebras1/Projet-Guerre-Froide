@@ -27,7 +27,9 @@ public class LawEffectInitializationSystem {
 
             for (int l = 0; l < country.activeLawIdsLength(); l++) {
                 long lawId = country.activeLawIds(l);
-                if (lawId == 0) continue;
+                if (lawId == 0) {
+                    continue;
+                }
 
                 EntityView law = iter.world().obtainEntityView(lawId);
 
@@ -35,7 +37,9 @@ public class LawEffectInitializationSystem {
                 if (lawModifiers != null) {
                     for (int m = 0; m < lawModifiers.tagIdsLength(); m++) {
                         long modifierId = lawModifiers.tagIds(m);
-                        if (modifierId <= 0) break;
+                        if (modifierId <= 0) {
+                            break;
+                        }
 
                         float modifierValue = lawModifiers.values(m);
                         EntityView modifier = iter.world().obtainEntityView(modifierId);
@@ -81,7 +85,9 @@ public class LawEffectInitializationSystem {
                 if (lawOverrides != null) {
                     for (int m = 0; m < lawOverrides.tagIdsLength(); m++) {
                         long overrideId = lawOverrides.tagIds(m);
-                        if (overrideId <= 0) break;
+                        if (overrideId <= 0) {
+                            break;
+                        }
 
                         float overrideValue = lawOverrides.values(m);
                         EntityView override = iter.world().obtainEntityView(overrideId);

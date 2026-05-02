@@ -1014,6 +1014,18 @@
             "communist_idolg": -1
           }
         },
+        "mixed_education": {
+          "requirements": [],
+          "modifiers": {
+            "education_efficiency": 0.25,
+            "education_spending": 0.15,
+            "social_mobility": 0.1,
+            "class_rigidity": -0.05
+          },
+          "interest_ideologies": {
+            "social_democrat_idolg": 1
+          }
+        },
         "public_schools": {
           "requirements": [],
           "modifiers": {
@@ -1075,6 +1087,17 @@
             "left_wing_radical_idolg": -1,
             "maoist_idolg": -1,
             "communist_idolg": -1
+          }
+        },
+        "mixed_healthcare":{
+          "requirements": [],
+          "modifiers": {
+            "pop_growth_factor": 0.12,
+            "pop_spending": 0.07,
+            "social_mobility": 0.1
+          },
+          "interest_ideologies": {
+            "social_liberal_idolg": 1
           }
         },
         "public_healthcare": {
