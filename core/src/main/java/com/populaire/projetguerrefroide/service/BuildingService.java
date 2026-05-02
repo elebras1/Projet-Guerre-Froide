@@ -5,13 +5,13 @@ import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
 import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
-import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
+import com.populaire.projetguerrefroide.system.ExpansionBuildingSystem;
 
 public class BuildingService {
     private final GameContext gameContext;
-    private final ExpandBuildingSystem expandBuildingSystem;
+    private final ExpansionBuildingSystem expandBuildingSystem;
 
-    public BuildingService(GameContext gameContext, ExpandBuildingSystem expandBuildingSystem) {
+    public BuildingService(GameContext gameContext, ExpansionBuildingSystem expandBuildingSystem) {
         this.gameContext = gameContext;
         this.expandBuildingSystem = expandBuildingSystem;
     }
@@ -83,6 +83,8 @@ public class BuildingService {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity building = ecsWorld.obtainEntity(buildingId);
         Building buildingData = building.get(Building.class);
+        Entity country = ecsWorld.obtainEntity(buildingData.countryId());
+        CountryEffectPolicy countryEffectPolicy = country.get(CountryEffectPolicy.class);
         Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
 
         int maxLevel = 0;
@@ -90,11 +92,11 @@ public class BuildingService {
 
         if (buildingType.has(EconomyBuildingType.class)) {
             EconomyBuildingType typeData = buildingType.get(EconomyBuildingType.class);
-            baseTime = typeData.time();
+            baseTime = (int) (typeData.time() * (1f - countryEffectPolicy.constructionSpeed()));
             maxLevel = typeData.maxLevel();
         } else if (buildingType.has(DevelopmentBuildingType.class)) {
             DevelopmentBuildingType typeData = buildingType.get(DevelopmentBuildingType.class);
-            baseTime = typeData.time();
+            baseTime = (int) (typeData.time() * (1f - countryEffectPolicy.constructionSpeed()));
             maxLevel = typeData.maxLevel();
         }
 

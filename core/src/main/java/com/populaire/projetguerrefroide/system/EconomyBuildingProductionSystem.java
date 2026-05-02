@@ -16,6 +16,7 @@ public class EconomyBuildingProductionSystem {
     private void produce(Iter iter) {
         long countryId = 0;
         CountryMarketView countryMarket = null;
+        CountryEffectPolicyView countryEffectPolicy = null;
 
         long economyBuildingTypeId = 0;
         EconomyBuildingTypeView economyBuildingTypeData = null;
@@ -31,6 +32,7 @@ public class EconomyBuildingProductionSystem {
                 countryId = building.countryId();
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
+                countryEffectPolicy = country.getMutView(CountryEffectPolicy.class);
             }
 
             if(building.typeId() != economyBuildingTypeId) {
@@ -57,10 +59,10 @@ public class EconomyBuildingProductionSystem {
             float scale = economyBuilding.scale();
             float effectiveScale = Math.min(scale * level, maxProductionScale);
             float baseOutput = economyBuildingTypeData.goodOutputAmount();
-            float throughput = 1f;
+            float throughput = 1f; // TODO : calculer par rapport aux modifier d'agregations des technologies (niveau pays), infrastructures ou batiments specifique (niveau region)
 
             float secondaryEffectMultiplier = 1.5f;
-            float outputMultiplier = 1f + secondaryRatio * secondaryEffectMultiplier;
+            float outputMultiplier = 1f + countryEffectPolicy.factoryOutputModifier() + secondaryRatio * secondaryEffectMultiplier;
 
             float minInputSatisfaction = 1f;
             for (int g = 0; g < economyBuildingTypeData.goodInputIndexesLength(); g++) {

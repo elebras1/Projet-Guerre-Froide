@@ -6,12 +6,12 @@ import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.command.request.BuildingLevelUpCommand;
 import com.populaire.projetguerrefroide.component.*;
 
-public class ExpandBuildingSystem {
+public class ExpansionBuildingSystem {
     private final CommandBus commandBus;
 
-    public ExpandBuildingSystem(World ecsWorld, CommandBus commandBus) {
+    public ExpansionBuildingSystem(World ecsWorld, CommandBus commandBus) {
         this.commandBus = commandBus;
-        ecsWorld.system("ExpandBuildingSystem")
+        ecsWorld.system("ExpansionBuildingSystem")
             .kind(FlecsConstants.EcsOnUpdate)
             .with(ExpansionBuilding.class)
             .iter(this::expand);

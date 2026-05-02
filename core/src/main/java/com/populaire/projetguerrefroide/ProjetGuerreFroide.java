@@ -40,7 +40,7 @@ public class ProjetGuerreFroide extends Game {
         this.registerComponents();
         this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
         CommandBus commandBus = new CommandBus();
-        ExpandBuildingSystem expandBuildingSystem = new ExpandBuildingSystem(this.ecsWorld, commandBus);
+        ExpansionBuildingSystem expandBuildingSystem = new ExpansionBuildingSystem(this.ecsWorld, commandBus);
         QueryRepository queryRepository = new QueryRepository(this.gameContext.getEcsWorld());
         BuildingService buildingService = new BuildingService(this.gameContext, expandBuildingSystem);
         EconomyService economyService = new EconomyService(this.gameContext);
