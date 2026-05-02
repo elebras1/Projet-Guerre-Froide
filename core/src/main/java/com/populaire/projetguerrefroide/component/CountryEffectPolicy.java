@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide.component;
 import com.github.elebras1.flecs.annotation.Component;
 
 @Component
-public record CountryEconomicPolicy(
+public record CountryEffectPolicy(
     float poorTaxRate,
     float middleTaxRate,
     float richTaxRate,
@@ -23,5 +23,17 @@ public record CountryEconomicPolicy(
     float rgoOutputModifier,
     float constructionSpeed,
     float popGrowthFactor,
-    float migrationPull
+    float migrationPull,
+    float popSpending,
+    boolean slaveryAllowed,
+    float politicalConsciousness,
+    float politicalRadicalism,
+    float suppression,
+    float socialMobility,
+    float classRigidity,
+    float administrativeEfficiency,
+    float religiousConversionSpeed,
+    float secularism,
+    float assimilationRate,
+    float migrationPush
 ) {}

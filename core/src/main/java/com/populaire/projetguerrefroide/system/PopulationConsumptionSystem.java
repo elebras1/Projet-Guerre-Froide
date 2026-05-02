@@ -15,6 +15,7 @@ public class PopulationConsumptionSystem {
     private void consume(Iter iter) {
         long countryId = 0;
         CountryMarketView countryMarket = null;
+        CountryEffectPolicyView countryEffectPolicy = null;
 
         Field<Population> popField = iter.field(Population.class, 0);
         for (int i = 0; i < iter.count(); i++) {
@@ -24,6 +25,7 @@ public class PopulationConsumptionSystem {
                 countryId = pop.countryId();
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
+                countryEffectPolicy = country.getMutView(CountryEffectPolicy.class);
             }
 
             int popTypeIndex = (int) pop.typeId();
@@ -32,7 +34,7 @@ public class PopulationConsumptionSystem {
             float everydayCost = countryMarket.everydayCostsByPopType(popTypeIndex);
             float luxuryCost = countryMarket.luxuryCostsByPopType(popTypeIndex);
 
-            float budget = pop.savings();
+            float budget = pop.savings() * (1.0f - countryEffectPolicy.popSpending());
             float amount = pop.amount();
 
             float neededLife = lifeCost * amount;

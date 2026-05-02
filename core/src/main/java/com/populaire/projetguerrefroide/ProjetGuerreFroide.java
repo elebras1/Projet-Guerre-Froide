@@ -95,7 +95,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(GlobalPopulationType.class);
         this.ecsWorld.component(GlobalGood.class);
         this.ecsWorld.component(GlobalMarket.class);
-        this.ecsWorld.component(CountryEconomicPolicy.class);
+        this.ecsWorld.component(CountryEffectPolicy.class);
     }
 
     public void registerCommands(CommandBus commandBus, BuildingService buildingService) {

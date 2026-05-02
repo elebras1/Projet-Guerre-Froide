@@ -43,4 +43,16 @@ public class Constants {
     public static final String POP_GROWTH_FACTOR = "pop_growth_factor";
     public static final String EDUCATION_EFFICIENCY = "education_efficiency";
     public static final String MIGRATION_PULL = "migration_pull";
+    public static final String POP_SPENDING = "pop_spending";
+    public static final String SLAVERY_ALLOWED = "slavery_allowed";
+    public static final String POLITICAL_CONSCIOUSNESS = "political_consciousness";
+    public static final String POLITICAL_RADICALISM = "political_radicalism";
+    public static final String SUPPRESSION = "suppression";
+    public static final String SOCIAL_MOBILITY = "social_mobility";
+    public static final String CLASS_RIGIDITY = "class_rigidity";
+    public static final String ADMINISTRATIVE_EFFICIENCY = "administrative_efficiency";
+    public static final String RELIGIOUS_CONVERSION_SPEED = "religious_conversion_speed";
+    public static final String SECULARISM = "secularism";
+    public static final String ASSIMILATION_RATE = "assimilation_rate";
+    public static final String MIGRATION_PUSH = "migration_push";
 }

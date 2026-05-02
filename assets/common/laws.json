@@ -8,7 +8,9 @@
           "requirements": [],
           "modifiers": {
             "tax_rich": -0.1,
-            "aristocrat_profit_share": 0.1
+            "aristocrat_profit_share": 0.1,
+            "political_consciousness": -0.05,
+            "class_rigidity": 0.15
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -21,7 +23,8 @@
         "presidential_republic": {
           "requirements": [],
           "modifiers": {
-            "tax_middle": 0.05
+            "tax_middle": 0.05,
+            "political_consciousness": 0.05
           },
           "interest_ideologies": {
             "social_cons_idolg": 1,
@@ -33,7 +36,8 @@
         "parliamentary_republic": {
           "requirements": [],
           "modifiers": {
-            "social_spending": 0.1
+            "political_consciousness": 0.1,
+            "social_mobility": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -47,7 +51,10 @@
           "requirements": [],
           "modifiers": {
             "education_spending": 0.2,
-            "tax_poor": 0.05
+            "tax_poor": 0.05,
+            "religious_conversion_speed": 0.25,
+            "secularism": -0.15,
+            "political_consciousness": -0.1
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -62,7 +69,9 @@
           "requirements": [],
           "modifiers": {
             "worker_profit_share": 0.3,
-            "capitalist_profit_share": -0.3
+            "capitalist_profit_share": -0.3,
+            "political_consciousness": 0.15,
+            "social_mobility": 0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -78,7 +87,9 @@
           "requirements": [],
           "modifiers": {
             "capitalist_profit_share": 0.2,
-            "military_spending": 0.1
+            "military_spending": 0.1,
+            "suppression": 0.15,
+            "political_consciousness": -0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -97,7 +108,9 @@
           "requirements": [],
           "modifiers": {
             "tax_rich": -0.15,
-            "social_spending": -0.2
+            "suppression": 0.2,
+            "political_consciousness": -0.15,
+            "social_mobility": -0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -114,7 +127,9 @@
           "requirements": [],
           "modifiers": {
             "education_efficiency": 0.2,
-            "factory_output_modifier": 0.05
+            "factory_output_modifier": 0.05,
+            "administrative_efficiency": 0.1,
+            "political_consciousness": -0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -126,7 +141,9 @@
           "requirements": [],
           "modifiers": {
             "tax_rich": -0.1,
-            "aristocrat_profit_share": 0.15
+            "aristocrat_profit_share": 0.15,
+            "class_rigidity": 0.2,
+            "suppression": 0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -140,7 +157,9 @@
         "landed_voting": {
           "requirements": [],
           "modifiers": {
-            "aristocrat_profit_share": 0.1
+            "aristocrat_profit_share": 0.1,
+            "class_rigidity": 0.1,
+            "political_consciousness": 0.05
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -154,7 +173,9 @@
           "requirements": [],
           "modifiers": {
             "tax_middle": -0.05,
-            "capitalist_profit_share": 0.1
+            "capitalist_profit_share": 0.1,
+            "class_rigidity": 0.05,
+            "political_consciousness": 0.05
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -167,7 +188,8 @@
         "census_suffrage": {
           "requirements": [],
           "modifiers": {
-            "social_spending": 0.05
+            "political_consciousness": 0.1,
+            "social_mobility": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -182,8 +204,10 @@
         "universal_suffrage": {
           "requirements": [],
           "modifiers": {
-            "social_spending": 0.15,
-            "worker_profit_share": 0.05
+            "worker_profit_share": 0.05,
+            "political_consciousness": 0.15,
+            "social_mobility": 0.1,
+            "political_radicalism": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -199,7 +223,10 @@
           "requirements": [],
           "modifiers": {
             "military_spending": 0.2,
-            "construction_speed": 0.1
+            "construction_speed": 0.1,
+            "suppression": 0.25,
+            "political_consciousness": -0.1,
+            "political_radicalism": -0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -216,7 +243,10 @@
             "tax_poor": -0.5,
             "tax_middle": -0.5,
             "tax_rich": -0.5,
-            "military_spending": -0.5
+            "military_spending": -0.5,
+            "suppression": -0.3,
+            "political_consciousness": 0.3,
+            "political_radicalism": 0.2
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -236,7 +266,10 @@
         "ethnostate": {
           "requirements": [],
           "modifiers": {
-            "migration_pull": -0.3
+            "migration_pull": -0.3,
+            "assimilation_rate": 0.15,
+            "migration_push": 0.2,
+            "political_radicalism": 0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -251,7 +284,9 @@
         "national_supremacy": {
           "requirements": [],
           "modifiers": {
-            "migration_pull": -0.1
+            "migration_pull": -0.1,
+            "assimilation_rate": 0.1,
+            "migration_push": 0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -266,7 +301,9 @@
         "racial_segregation": {
           "requirements": [],
           "modifiers": {
-            "migration_pull": -0.05
+            "migration_pull": -0.05,
+            "assimilation_rate": -0.1,
+            "migration_push": 0.05
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -279,7 +316,9 @@
         },
         "cultural_exclusion": {
           "requirements": [],
-          "modifiers": {},
+          "modifiers": {
+            "assimilation_rate": -0.05
+          },
           "interest_ideologies": {
             "social_cons_idolg": 1,
             "social_democrat_idolg": -1,
@@ -289,7 +328,10 @@
         "multiculturalism": {
           "requirements": [],
           "modifiers": {
-            "migration_pull": 0.2
+            "migration_pull": 0.2,
+            "assimilation_rate": 0.15,
+            "migration_push": -0.1,
+            "political_consciousness": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -310,7 +352,9 @@
         "state_religion": {
           "requirements": [],
           "modifiers": {
-            "education_spending": 0.1
+            "education_spending": 0.1,
+            "religious_conversion_speed": 0.2,
+            "secularism": -0.15
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -326,7 +370,10 @@
         "religious_tolerance": {
           "requirements": [],
           "modifiers": {
-            "education_efficiency": 0.05
+            "education_efficiency": 0.05,
+            "religious_conversion_speed": -0.1,
+            "secularism": 0.05,
+            "migration_pull": 0.05
           },
           "interest_ideologies": {
             "paternal_auto_idolg": -1,
@@ -340,7 +387,8 @@
         "secularism": {
           "requirements": [],
           "modifiers": {
-            "education_efficiency": 0.1
+            "education_efficiency": 0.1,
+            "secularism": 0.15
           },
           "interest_ideologies": {
             "paternal_auto_idolg": -1,
@@ -352,7 +400,9 @@
           "requirements": [],
           "modifiers": {
             "education_efficiency": 0.15,
-            "social_spending": -0.1
+            "secularism": 0.25,
+            "religious_conversion_speed": -0.2,
+            "political_radicalism": 0.05
           },
           "interest_ideologies": {
             "paternal_auto_idolg": -1,
@@ -372,7 +422,9 @@
           "requirements": [],
           "modifiers": {
             "administration_spending": -0.2,
-            "tax_rich": -0.05
+            "tax_rich": -0.05,
+            "administrative_efficiency": -0.15,
+            "class_rigidity": 0.15
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -388,7 +440,8 @@
         "appointed_bureaucrats": {
           "requirements": [],
           "modifiers": {
-            "administration_spending": 0.1
+            "administration_spending": 0.1,
+            "administrative_efficiency": 0.05
           },
           "interest_ideologies": {
             "social_cons_idolg": 1,
@@ -400,7 +453,8 @@
           "requirements": [],
           "modifiers": {
             "administration_spending": 0.2,
-            "social_spending": 0.05
+            "administrative_efficiency": 0.1,
+            "political_consciousness": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -470,7 +524,9 @@
           "modifiers": {
             "factory_output_modifier": -0.2,
             "capitalist_profit_share": -0.2,
-            "aristocrat_profit_share": 0.2
+            "aristocrat_profit_share": 0.2,
+            "social_mobility": -0.15,
+            "class_rigidity": 0.15
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -484,7 +540,8 @@
           "requirements": [],
           "modifiers": {
             "factory_input_modifier": -0.1,
-            "construction_speed": 0.1
+            "construction_speed": 0.1,
+            "social_mobility": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -497,7 +554,9 @@
           "requirements": [],
           "modifiers": {
             "rgo_output_modifier": 0.2,
-            "factory_output_modifier": -0.1
+            "factory_output_modifier": -0.1,
+            "class_rigidity": -0.1,
+            "social_mobility": 0.05
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -509,7 +568,9 @@
         "industry_banned": {
           "requirements": [],
           "modifiers": {
-            "factory_output_modifier": -1.0
+            "factory_output_modifier": -1.0,
+            "social_mobility": -0.1,
+            "class_rigidity": 0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -524,7 +585,9 @@
           "modifiers": {
             "capitalist_profit_share": 0.3,
             "worker_profit_share": -0.1,
-            "factory_output_modifier": 0.1
+            "factory_output_modifier": 0.1,
+            "social_mobility": 0.1,
+            "class_rigidity": -0.15
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -540,7 +603,9 @@
           "modifiers": {
             "worker_profit_share": 0.4,
             "factory_output_modifier": 0.05,
-            "construction_speed": 0.1
+            "construction_speed": 0.1,
+            "social_mobility": 0.15,
+            "class_rigidity": -0.2
           },
           "overrides": {
             "capitalist_profit_share": 0.0,
@@ -562,7 +627,9 @@
           "requirements": [],
           "modifiers": {
             "worker_profit_share": 0.2,
-            "construction_speed": 0.2
+            "construction_speed": 0.2,
+            "social_mobility": 0.1,
+            "class_rigidity": -0.1
           },
           "overrides": {
             "capitalist_profit_share": 0.0,
@@ -603,7 +670,8 @@
         "free_trade": {
           "requirements": [],
           "modifiers": {
-            "tariff_rate": -0.25
+            "tariff_rate": -0.25,
+            "migration_pull": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -618,7 +686,8 @@
           "requirements": [],
           "modifiers": {
             "tariff_rate": 0.5,
-            "migration_pull": -0.2
+            "migration_pull": -0.2,
+            "migration_push": 0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -708,7 +777,10 @@
           "requirements": [],
           "modifiers": {
             "rgo_output_modifier": -0.2,
-            "aristocrat_profit_share": 0.2
+            "aristocrat_profit_share": 0.2,
+            "class_rigidity": 0.2,
+            "social_mobility": -0.2,
+            "political_consciousness": -0.1
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -724,7 +796,9 @@
           "requirements": [],
           "modifiers": {
             "rgo_output_modifier": -0.1,
-            "aristocrat_profit_share": 0.1
+            "aristocrat_profit_share": 0.1,
+            "class_rigidity": 0.1,
+            "social_mobility": -0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -738,7 +812,9 @@
           "requirements": [],
           "modifiers": {
             "rgo_output_modifier": 0.2,
-            "aristocrat_profit_share": -0.1
+            "aristocrat_profit_share": -0.1,
+            "social_mobility": 0.1,
+            "class_rigidity": -0.1
           },
           "interest_ideologies": {
             "market_liberal_idolg": 1,
@@ -752,7 +828,9 @@
           "requirements": [],
           "modifiers": {
             "rgo_output_modifier": 0.1,
-            "aristocrat_profit_share": -0.15
+            "aristocrat_profit_share": -0.15,
+            "social_mobility": 0.15,
+            "class_rigidity": -0.1
           },
           "interest_ideologies": {
             "paternal_auto_idolg": -1,
@@ -763,7 +841,9 @@
           "requirements": [],
           "modifiers": {
             "rgo_output_modifier": 0.3,
-            "aristocrat_profit_share": -0.3
+            "aristocrat_profit_share": -0.3,
+            "social_mobility": 0.2,
+            "class_rigidity": -0.2
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -797,7 +877,8 @@
           "requirements": [],
           "modifiers": {
             "migration_pull": 0.1,
-            "pop_growth_factor": 0.05
+            "pop_growth_factor": 0.05,
+            "social_mobility": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -813,7 +894,8 @@
           "modifiers": {
             "factory_output_modifier": 0.05,
             "rgo_output_modifier": 0.05,
-            "construction_speed": 0.05
+            "construction_speed": 0.05,
+            "migration_push": 0.05
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -831,7 +913,10 @@
       "laws": {
         "no_police": {
           "requirements": [],
-          "modifiers": {},
+          "modifiers": {
+            "suppression": -0.2,
+            "political_radicalism": 0.1
+          },
           "interest_ideologies": {
             "fascistic_idolg": -1,
             "paternal_auto_idolg": -1,
@@ -843,7 +928,8 @@
         "local_police_force": {
           "requirements": [],
           "modifiers": {
-            "administration_spending": 0.05
+            "administration_spending": 0.05,
+            "suppression": 0.05
           },
           "interest_ideologies": {
             "social_liberal_idolg": 1,
@@ -853,7 +939,8 @@
         "dedicated_police_force": {
           "requirements": [],
           "modifiers": {
-            "administration_spending": 0.1
+            "administration_spending": 0.1,
+            "suppression": 0.1
           },
           "interest_ideologies": {
             "left_wing_radical_idolg": -1
@@ -863,7 +950,9 @@
           "requirements": [],
           "modifiers": {
             "administration_spending": 0.2,
-            "military_spending": 0.05
+            "military_spending": 0.05,
+            "suppression": 0.2,
+            "political_radicalism": -0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -882,7 +971,8 @@
         "no_schools": {
           "requirements": [],
           "modifiers": {
-            "education_efficiency": -0.5
+            "education_efficiency": -0.5,
+            "social_mobility": -0.1
           },
           "interest_ideologies": {
             "social_liberal_idolg": -1,
@@ -896,7 +986,9 @@
           "requirements": [],
           "modifiers": {
             "education_efficiency": 0.1,
-            "education_spending": 0.1
+            "education_spending": 0.1,
+            "social_mobility": -0.05,
+            "religious_conversion_speed": 0.1
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -910,7 +1002,10 @@
           "requirements": [],
           "modifiers": {
             "education_efficiency": 0.2,
-            "tax_rich": -0.05
+            "tax_rich": -0.05,
+            "social_mobility": 0.05,
+            "class_rigidity": 0.05,
+            "pop_spending": 0.02
           },
           "interest_ideologies": {
             "market_liberal_idolg": 1,
@@ -923,7 +1018,9 @@
           "requirements": [],
           "modifiers": {
             "education_efficiency": 0.3,
-            "education_spending": 0.3
+            "education_spending": 0.3,
+            "social_mobility": 0.15,
+            "class_rigidity": -0.1
           },
           "interest_ideologies": {
             "market_liberal_idolg": -1,
@@ -941,7 +1038,8 @@
         "no_healthcare": {
           "requirements": [],
           "modifiers": {
-            "pop_growth_factor": -0.1
+            "pop_growth_factor": -0.1,
+            "migration_push": 0.05
           },
           "interest_ideologies": {
             "social_democrat_idolg": -1,
@@ -953,7 +1051,8 @@
         "charity_hospitals": {
           "requirements": [],
           "modifiers": {
-            "pop_growth_factor": 0.05
+            "pop_growth_factor": 0.05,
+            "religious_conversion_speed": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -966,7 +1065,9 @@
           "requirements": [],
           "modifiers": {
             "pop_growth_factor": 0.1,
-            "tax_rich": -0.05
+            "tax_rich": -0.05,
+            "pop_spending": 0.1,
+            "social_mobility": 0.05
           },
           "interest_ideologies": {
             "market_liberal_idolg": 1,
@@ -980,7 +1081,9 @@
           "requirements": [],
           "modifiers": {
             "pop_growth_factor": 0.15,
-            "social_spending": 0.2
+            "social_spending": 0.2,
+            "social_mobility": 0.1,
+            "migration_pull": 0.05
           },
           "interest_ideologies": {
             "market_liberal_idolg": -1,
@@ -997,7 +1100,11 @@
       "laws": {
         "outlawed_dissent": {
           "requirements": [],
-          "modifiers": {},
+          "modifiers": {
+            "suppression": 0.15,
+            "political_consciousness": -0.1,
+            "political_radicalism": 0.1
+          },
           "interest_ideologies": {
             "fascistic_idolg": 1,
             "paternal_auto_idolg": 1,
@@ -1009,7 +1116,10 @@
         },
         "censorship": {
           "requirements": [],
-          "modifiers": {},
+          "modifiers": {
+            "suppression": 0.1,
+            "political_consciousness": -0.05
+          },
           "interest_ideologies": {
             "fascistic_idolg": 1,
             "paternal_auto_idolg": 1,
@@ -1024,7 +1134,8 @@
         "right_of_assembly": {
           "requirements": [],
           "modifiers": {
-            "social_spending": 0.05
+            "political_consciousness": 0.1,
+            "social_mobility": 0.05
           },
           "interest_ideologies": {
             "social_liberal_idolg": 1,
@@ -1036,7 +1147,8 @@
           "requirements": [],
           "modifiers": {
             "education_efficiency": 0.05,
-            "social_spending": 0.05
+            "political_consciousness": 0.15,
+            "political_radicalism": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -1057,7 +1169,9 @@
           "requirements": [],
           "modifiers": {
             "min_wage_factor": -0.2,
-            "worker_profit_share": -0.1
+            "worker_profit_share": -0.1,
+            "class_rigidity": 0.1,
+            "political_radicalism": 0.1
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -1071,7 +1185,9 @@
         "regulatory_bodies": {
           "requirements": [],
           "modifiers": {
-            "min_wage_factor": 0.1
+            "min_wage_factor": 0.1,
+            "social_mobility": 0.05,
+            "political_radicalism": -0.05
           },
           "interest_ideologies": {
             "social_liberal_idolg": 1,
@@ -1082,7 +1198,10 @@
           "requirements": [],
           "modifiers": {
             "min_wage_factor": 0.3,
-            "worker_profit_share": 0.1
+            "worker_profit_share": 0.1,
+            "social_mobility": 0.1,
+            "class_rigidity": -0.1,
+            "political_radicalism": -0.1
           },
           "interest_ideologies": {
             "paternal_auto_idolg": -1,
@@ -1102,7 +1221,9 @@
           "requirements": [],
           "modifiers": {
             "pop_growth_factor": 0.05,
-            "min_wage_factor": -0.1
+            "min_wage_factor": -0.1,
+            "education_efficiency": -0.1,
+            "social_mobility": -0.1
           },
           "interest_ideologies": {
             "social_liberal_idolg": -1,
@@ -1116,7 +1237,8 @@
           "requirements": [],
           "modifiers": {
             "pop_growth_factor": -0.05,
-            "education_efficiency": 0.05
+            "education_efficiency": 0.05,
+            "social_mobility": 0.05
           },
           "interest_ideologies": {
             "social_liberal_idolg": 1,
@@ -1130,7 +1252,9 @@
           "requirements": [],
           "modifiers": {
             "pop_growth_factor": -0.1,
-            "education_efficiency": 0.1
+            "education_efficiency": 0.1,
+            "social_mobility": 0.1,
+            "political_consciousness": 0.05
           },
           "interest_ideologies": {
             "social_liberal_idolg": 1,
@@ -1147,7 +1271,9 @@
       "laws": {
         "legal_guardianship": {
           "requirements": [],
-          "modifiers": {},
+          "modifiers": {
+            "class_rigidity": 0.05
+          },
           "interest_ideologies": {
             "fascistic_idolg": -1,
             "paternal_auto_idolg": -1,
@@ -1163,7 +1289,9 @@
           "requirements": [],
           "modifiers": {
             "factory_output_modifier": 0.05,
-            "pop_growth_factor": -0.05
+            "pop_growth_factor": -0.05,
+            "social_mobility": 0.1,
+            "class_rigidity": -0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -1179,7 +1307,8 @@
         "women_civic_rights": {
           "requirements": [],
           "modifiers": {
-            "social_spending": 0.05
+            "political_consciousness": 0.1,
+            "social_mobility": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -1200,7 +1329,9 @@
         "no_social_security": {
           "requirements": [],
           "modifiers": {
-            "social_spending": -0.5
+            "social_spending": -0.5,
+            "political_radicalism": 0.15,
+            "class_rigidity": 0.05
           },
           "interest_ideologies": {
             "market_liberal_idolg": 1,
@@ -1213,7 +1344,9 @@
         "poor_laws": {
           "requirements": [],
           "modifiers": {
-            "social_spending": 0.1
+            "social_spending": 0.1,
+            "political_radicalism": -0.05,
+            "social_mobility": 0.05
           },
           "interest_ideologies": {
             "paternal_auto_idolg": 1,
@@ -1226,7 +1359,9 @@
           "requirements": [],
           "modifiers": {
             "social_spending": 0.2,
-            "min_wage_factor": 0.1
+            "min_wage_factor": 0.1,
+            "social_mobility": 0.1,
+            "political_radicalism": -0.1
           },
           "interest_ideologies": {
             "market_liberal_idolg": -1,
@@ -1238,7 +1373,10 @@
           "requirements": [],
           "modifiers": {
             "social_spending": 0.4,
-            "min_wage_factor": 0.2
+            "min_wage_factor": 0.2,
+            "social_mobility": 0.15,
+            "political_radicalism": -0.15,
+            "class_rigidity": -0.1
           },
           "interest_ideologies": {
             "paternal_auto_idolg": -1,
@@ -1257,7 +1395,8 @@
         "open_borders": {
           "requirements": [],
           "modifiers": {
-            "migration_pull": 0.3
+            "migration_pull": 0.3,
+            "social_mobility": 0.05
           },
           "interest_ideologies": {
             "fascistic_idolg": -1,
@@ -1278,7 +1417,8 @@
         "closed_borders": {
           "requirements": [],
           "modifiers": {
-            "migration_pull": -0.2
+            "migration_pull": -0.2,
+            "migration_push": 0.1
           },
           "interest_ideologies": {
             "fascistic_idolg": 1,
@@ -1297,6 +1437,9 @@
         "slavery_banned": {
           "requirements": [],
           "modifiers": {},
+          "overrides": {
+            "slavery_allowed": 0
+          },
           "interest_ideologies": {
             "social_liberal_idolg": 1,
             "social_democrat_idolg": 1,
@@ -1307,9 +1450,9 @@
         },
         "slavery_allowed": {
           "requirements": [],
-          "modifiers": {
-            "rgo_output_modifier": 0.1,
-            "min_wage_factor": -0.5
+          "modifiers": {},
+          "overrides": {
+            "slavery_allowed": 1
           },
           "interest_ideologies": {
             "market_liberal_idolg": -1,
