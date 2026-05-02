@@ -5,8 +5,6 @@ import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.system.*;
 
 public class EconomyService {
-    private final GameContext gameContext;
-
     private final DemographicsResetSystem demographicsResetSystem;
     private final CountryDemographicsResetSystem countryDemographicsResetSystem;
     private final PopulationInitializationSystem populationInitializationSystem;
@@ -14,6 +12,7 @@ public class EconomyService {
     private final DemographicsProvinceSpreadSystem demographicsProvinceSpreadSystem;
     private final DemographicsRegionInstanceSpreadSystem demographicsRegionInstanceSpreadSystem;
     private final RGOSizeSystem rgoSizeSystem;
+    private final LawEffectInitializationSystem lawEffectInitializationSystem;
     private final RGOHireInitializationSystem rgoHireInitializationSystem;
     private final EconomyBuildingHireInitializationSystem economyBuildingHireInitializationSystem;
     private final CountryMarketInitializationSystem countryMarketInitializationSystem;
@@ -37,7 +36,6 @@ public class EconomyService {
     private final Pipeline mainPipeline;
 
     public EconomyService(GameContext gameContext) {
-        this.gameContext = gameContext;
         World ecsWorld = gameContext.getEcsWorld();
 
         long phaseDemographicsReset = ecsWorld.entity("PhaseDemographicsReset");
@@ -78,12 +76,13 @@ public class EconomyService {
         this.demographicsPopulationSpreadSystem = new DemographicsPopulationSpreadSystem(ecsWorld, phaseSpread);
         this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(ecsWorld, phaseSpread);
         this.demographicsRegionInstanceSpreadSystem = new DemographicsRegionInstanceSpreadSystem(ecsWorld, phaseSpread);
+        this.lawEffectInitializationSystem = new LawEffectInitializationSystem(ecsWorld, phaseInit);
         this.rgoSizeSystem = new RGOSizeSystem(ecsWorld, phaseInit);
         this.rgoHireInitializationSystem = new RGOHireInitializationSystem(ecsWorld, phaseInit);
         this.economyBuildingHireInitializationSystem = new EconomyBuildingHireInitializationSystem(ecsWorld, phaseInit);
-        this.populationEmploymentSynchronizationSystem = new PopulationEmploymentSynchronizationSystem(ecsWorld, phaseSync);
         this.countryMarketInitializationSystem = new CountryMarketInitializationSystem(ecsWorld, phaseInit);
         this.globalMarketInitializationSystem = new GlobalMarketInitializationSystem(ecsWorld, phaseInit);
+        this.populationEmploymentSynchronizationSystem = new PopulationEmploymentSynchronizationSystem(ecsWorld, phaseSync);
 
         this.countryMarketResetSystem = new CountryMarketResetSystem(ecsWorld, phaseMarketReset);
         this.needsCostsResetSystem = new NeedsCostsResetSystem(ecsWorld, phaseNeedsCosts);

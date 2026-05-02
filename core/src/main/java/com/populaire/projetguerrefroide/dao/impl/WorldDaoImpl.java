@@ -76,7 +76,7 @@ public class WorldDaoImpl implements WorldDao {
         long globalMarketId = ecsWorld.entity("global_market");
         ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT]));
         this.readIdeologies(ecsWorld);
-        this.readLaws(ecsWorld, ecsConstants);
+        this.readLaws(ecsWorld);
         this.readGovernments(ecsWorld);
         this.readNationalIdeas(ecsWorld, ecsConstants);
         this.readMinisterTypes(ecsWorld);
@@ -135,6 +135,7 @@ public class WorldDaoImpl implements WorldDao {
                 JsonValue identityValue = identityEntry.getValue();
                 float[] modifierValues = new float[MAX_MODIFIERS];
                 long[] modifierTagIds = new long[MAX_MODIFIERS];
+                Arrays.fill(modifierTagIds, -1);
                 int i = 0;
                 for(var modifierEntry : identityValue.object()) {
                     String modifierName = modifierEntry.getKey();
@@ -154,6 +155,7 @@ public class WorldDaoImpl implements WorldDao {
                 JsonValue attitudeValue = attitudeEntry.getValue();
                 float[] modifierValues = new float[MAX_MODIFIERS];
                 long[] modifierTagIds = new long[MAX_MODIFIERS];
+                Arrays.fill(modifierTagIds, -1);
                 int i = 0;
                 for(var modifierEntry : attitudeValue.object()) {
                     String modifierName = modifierEntry.getKey();
@@ -640,6 +642,7 @@ public class WorldDaoImpl implements WorldDao {
                 EntityView ministerTypeEntity = ecsWorld.obtainEntityView(ministerTypeEntityId);
                 float[] modifierValues = new float[MAX_MODIFIERS];
                 long[] modifierTagIds = new long[MAX_MODIFIERS];
+                Arrays.fill(modifierTagIds, -1);
                 int i = 0;
                 for(var modifierEntry : ministerTypeEntry.getValue().object()) {
                     String modifierName = modifierEntry.getKey();
@@ -676,7 +679,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readLaws(World ecsWorld, EcsConstants ecsConstants) {
+    private void readLaws(World ecsWorld) {
         try {
             JsonValue lawsValues = this.parseJsonFile(this.lawsJsonFile);
             int baseEnactmentDaysLaw = (int) lawsValues.get("base_enactment_days").asLong();
@@ -700,17 +703,35 @@ public class WorldDaoImpl implements WorldDao {
                     /*Iterator<JsonValue> requirementsIterator = lawValue.get("requirements").arrayIterator();
                     for(var requirementValue : lawValue.get("requirements").array()) {
                     }*/
+
                     float[] modifierValues = new float[MAX_MODIFIERS];
                     long[] modifierTagIds = new long[MAX_MODIFIERS];
-                    int i = 0;
+                    Arrays.fill(modifierTagIds, -1);
+                    int modifierIndex = 0;
                     for(var modifierEntry : lawValue.get("modifiers").object()) {
                         String modifierName = modifierEntry.getKey();
                         JsonValue modifierValue = modifierEntry.getValue();
-                        modifierValues[i] = (float) modifierValue.asDouble();
-                        modifierTagIds[i] = ecsWorld.entity(modifierName);
-                        i++;
+                        modifierValues[modifierIndex] = (float) modifierValue.asDouble();
+                        modifierTagIds[modifierIndex] = ecsWorld.entity(modifierName);
+                        modifierIndex++;
                     }
                     lawEntity.set(new Modifiers(modifierValues, modifierTagIds));
+
+                    float[] overrideValues = new float[MAX_OVERRIDES];
+                    long[] overrideTagIds = new long[MAX_OVERRIDES];
+                    Arrays.fill(overrideTagIds, -1);
+                    int overrideIndex = 0;
+                    if(lawValue.get("overrides") != null) {
+                        for(var overrideEntry : lawValue.get("overrides").object()) {
+                            String overrideName = overrideEntry.getKey();
+                            JsonValue overrideValue = overrideEntry.getValue();
+                            overrideValues[overrideIndex] = (float) overrideValue.asDouble();
+                            overrideTagIds[overrideIndex] = ecsWorld.entity(overrideName);
+                            overrideIndex++;
+                        }
+                    }
+                    lawEntity.set(new Overrides(overrideValues, overrideTagIds));
+
                     long[] supportIdeologieIds = new long[MAX_LAW_IDEOLOGIES];
                     long[] opponentIdeologieIds = new long[MAX_LAW_IDEOLOGIES];
                     int indexSupporters = 0;
@@ -749,6 +770,7 @@ public class WorldDaoImpl implements WorldDao {
                 EntityView traitEntity = ecsWorld.obtainEntityView(traitEntityId);
                 float[] modifierValues = new float[MAX_MODIFIERS];
                 long[] modifierTagIds = new long[MAX_MODIFIERS];
+                Arrays.fill(modifierTagIds, -1);
                 modifierValues[0] = modifierValue;
                 modifierTagIds[0] = modifierTagId;
                 traitEntity.set(new Modifiers(modifierValues, modifierTagIds));
@@ -1231,7 +1253,8 @@ public class WorldDaoImpl implements WorldDao {
             }
             country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
             country.set(new CountryMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new boolean[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], 0f, 0f, 0f));
-            country.set(new CountryDemographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
+            country.set(new CountryDemographics(0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
+            country.set(new CountryEconomicPolicy(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f,0f ,0f ,0f ,0f));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
