@@ -51,7 +51,6 @@ public class RegionService {
         buildingQuery.iter(iter -> {
             Field<Building> buildingField = iter.field(Building.class, 0);
             for (int i = 0; i < iter.count(); i++) {
-                EntityView buildingView = ecsWorld.obtainEntityView(iter.entity(i));
                 BuildingView buildingDataView = buildingField.getMutView(i);
                 EntityView parent = ecsWorld.obtainEntityView(buildingDataView.parentId());
                 if(!parent.has(RegionInstance.class)) {
@@ -63,27 +62,16 @@ public class RegionService {
 
                     EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingDataView.typeId());
 
-                    int levelsQueued = 0;
-                    long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
-                    if(expansionBuildingId != 0) {
-                        EntityView expansionBuildingView = ecsWorld.obtainEntityView(expansionBuildingId);
-                        ExpansionBuildingView expansionBuildingDataView = expansionBuildingView.getMutView(ExpansionBuilding.class);
-                        levelsQueued = expansionBuildingDataView.levelsQueued();
-                    }
-
                     if (buildingTypeView.has(EconomyBuildingType.class)) {
-                        EconomyBuildingTypeView economyBuildingTypeView = buildingTypeView.getMutView(EconomyBuildingType.class);
-                        boolean isSuspended = buildingView.has(this.gameContext.getEcsConstants().suspended());
                         BuildingSummaryDto building = this.buildingService.buildSummary(buildingId);
-                        int workers = this.buildingService.estimateWorkersForBuilding();
-                        buildingWorkerAmount.increment(workers);
+                        buildingWorkerAmount.increment(building.amountWorkers());
                         buildings.add(building);
                     }
                 }
             }
         });
 
-        buildings.sort(Comparator.comparingLong(BuildingSummaryDto::buildingId));
+        buildings.sort(Comparator.comparingLong(BuildingSummaryDto::id));
 
         byte developpementIndexValue = this.calculateDeveloppementIndex();
         int buildingWorkerRatio = 0;
@@ -98,8 +86,7 @@ public class RegionService {
         Map<Long, List<BuildingSummaryDto>> buildingsByRegion = new HashMap<>();
         Map<Long, Integer> workersByRegion = new HashMap<>();
 
-        Query buildingQuery = this.queryRepository.getBuildings();
-        buildingQuery.iter(iter -> {
+        this.queryRepository.getBuildings().iter(iter -> {
             Field<Building> buildingField = iter.field(Building.class, 0);
             for (int i = 0; i < iter.count(); i++) {
                 BuildingView buildingDataView = buildingField.getMutView(i);
@@ -120,20 +107,10 @@ public class RegionService {
                     continue;
                 }
                 long buildingId = iter.entity(i);
-                int levelsQueued = 0;
-                long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
-                if (expansionBuildingId != 0) {
-                    EntityView expansionBuildingView = ecsWorld.obtainEntityView(expansionBuildingId);
-                    ExpansionBuildingView expansionBuildingDataView = expansionBuildingView.getMutView(ExpansionBuilding.class);
-                    levelsQueued = expansionBuildingDataView.levelsQueued();
-                }
-                EconomyBuildingTypeView economyBuildingTypeView = buildingTypeView.getMutView(EconomyBuildingType.class);
-                boolean isSuspended = ecsWorld.obtainEntityView(buildingId).has(this.gameContext.getEcsConstants().suspended());
                 BuildingSummaryDto building = this.buildingService.buildSummary(buildingId);
-                int workers = this.buildingService.estimateWorkersForBuilding();
 
                 buildingsByRegion.computeIfAbsent(regionId, _ -> new ObjectList<>()).add(building);
-                workersByRegion.merge(regionId, workers, Integer::sum);
+                workersByRegion.put(regionId, building.amountWorkers());
             }
         });
 
@@ -141,14 +118,14 @@ public class RegionService {
         LongSet.LongSetIterator iterator = regionIds.iterator();
         while (iterator.hasNext()) {
             long regionId = iterator.nextLong();
-            Entity region = ecsWorld.obtainEntity(regionId);
+            EntityView region = ecsWorld.obtainEntityView(regionId);
 
             int population = populationByRegion.getOrDefault(regionId, 0);
             int workerAmount = workersByRegion.getOrDefault(regionId, 0);
             int workerRatio = population > 0 ? (int) ((workerAmount * 100.0f) / population) : 0;
 
             List<BuildingSummaryDto> buildings = buildingsByRegion.getOrDefault(regionId, new ObjectList<>());
-            buildings.sort(Comparator.comparingLong(BuildingSummaryDto::buildingId));
+            buildings.sort(Comparator.comparingLong(BuildingSummaryDto::id));
 
             byte developpementIndexValue = this.calculateDeveloppementIndex();
             regions.add(new RegionDto(region.getName(), population, workerAmount, workerRatio, developpementIndexValue, buildings));
@@ -161,8 +138,7 @@ public class RegionService {
         World ecsWorld = this.gameContext.getEcsWorld();
         List<Pair<Integer, String>> validBuildings = new ObjectList<>();
 
-        Query query = this.queryRepository.getBuildings();
-        query.iter(iter -> {
+        this.queryRepository.getBuildings().iter(iter -> {
             Field<Building> buildingField = iter.field(Building.class, 0);
             for (int i = 0; i < iter.count(); i++) {
                 BuildingView buildingView = buildingField.getMutView(i);
@@ -197,8 +173,7 @@ public class RegionService {
         World ecsWorld = this.gameContext.getEcsWorld();
         MutableInt industryCount = new MutableInt(0);
 
-        Query query = this.queryRepository.getBuildings();
-        query.iter(iter -> {
+        this.queryRepository.getBuildings().iter(iter -> {
             Field<Building> buildingField = iter.field(Building.class, 0);
             for(int i = 0; i < iter.count(); i++) {
                 BuildingView buildingView = buildingField.getMutView(i);
@@ -223,8 +198,7 @@ public class RegionService {
         World ecsWorld = this.gameContext.getEcsWorld();
         List<String> specialBuildingNames = new ObjectList<>();
 
-        Query query = this.queryRepository.getBuildings();
-        query.iter(iter -> {
+        this.queryRepository.getBuildings().iter(iter -> {
             Field<Building> buildingField = iter.field(Building.class, 0);
             for(int i = 0; i < iter.count(); i++) {
                 BuildingView buildingView = buildingField.getMutView(i);
@@ -248,8 +222,7 @@ public class RegionService {
     public int getWorkerAmount(long regionId) {
         MutableInt workers = new MutableInt(0);
 
-        Query query = this.queryRepository.getProvinces();
-        query.iter(iter -> {
+        this.queryRepository.getProvinces().iter(iter -> {
             Field<Province> provinceField = iter.field(Province.class, 0);
             for(int i = 0; i < iter.count(); i++) {
                 ProvinceView province = provinceField.getMutView(i);
@@ -266,8 +239,7 @@ public class RegionService {
         World ecsWorld = this.gameContext.getEcsWorld();
 
         LongList provinceIds = new LongList();
-        Query query = this.queryRepository.getProvinces();
-        query.iter(iter -> {
+        this.queryRepository.getProvinces().iter(iter -> {
             Field<Province> provinceField = iter.field(Province.class, 0);
             for(int i = 0; i < iter.count(); i++) {
                 long provinceId = iter.entity(i);

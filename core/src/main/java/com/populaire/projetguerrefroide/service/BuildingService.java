@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.github.elebras1.flecs.Entity;
+import com.github.elebras1.flecs.EntityView;
 import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
@@ -22,24 +23,20 @@ public class BuildingService {
 
     public BuildingSummaryDto buildSummary(long buildingId) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        Entity building = ecsWorld.obtainEntity(buildingId);
-        Building buildingData = building.get(Building.class);
-        Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
-        EconomyBuildingType buildingTypeData = buildingType.get(EconomyBuildingType.class);
+        EntityView building = ecsWorld.obtainEntityView(buildingId);
+        BuildingView buildingData = building.getMutView(Building.class);
+        EntityView buildingType = ecsWorld.obtainEntityView(buildingData.typeId());
+        EconomyBuildingTypeView buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
         int levelsQueued = 0;
         long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
         if (expansionBuildingId != 0) {
-            Entity expansionBuilding = ecsWorld.obtainEntity(expansionBuildingId);
-            ExpansionBuilding expansionData = expansionBuilding.get(ExpansionBuilding.class);
+            EntityView expansionBuilding = ecsWorld.obtainEntityView(expansionBuildingId);
+            ExpansionBuildingView expansionData = expansionBuilding.getMutView(ExpansionBuilding.class);
             levelsQueued = expansionData.levelsQueued();
         }
         boolean isSuspended = building.has(this.gameContext.getEcsConstants().suspended());
-        float productionValue = 0f;
-        if (building.has(EconomyBuilding.class)) {
-            EconomyBuilding economy = building.get(EconomyBuilding.class);
-            productionValue = economy.production();
-        }
-        return new BuildingSummaryDto(buildingId, buildingType.getName(), buildingData.size(), buildingTypeData.maxLevel(), productionValue, levelsQueued, isSuspended);
+        EconomyBuildingView economyBuilding = building.getMutView(EconomyBuilding.class);
+        return new BuildingSummaryDto(buildingId, buildingType.getName(), buildingData.size(), buildingTypeData.maxLevel(), economyBuilding.primaryWorkerAmount() + economyBuilding.secondaryWorkerAmount(), economyBuilding.production(), levelsQueued, isSuspended);
     }
 
     public BuildingDto buildDetails(long buildingId) {
