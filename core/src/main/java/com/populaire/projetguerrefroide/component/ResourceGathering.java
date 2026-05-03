@@ -12,7 +12,9 @@ public record ResourceGathering(
     float production,
     float scale,
     int workerAmount,
-    int slaveAmount) {
+    int slaveAmount,
+    float profit,
+    float workerMinWage) {
 
 }
 

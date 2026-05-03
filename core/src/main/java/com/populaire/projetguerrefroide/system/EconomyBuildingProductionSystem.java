@@ -79,6 +79,38 @@ public class EconomyBuildingProductionSystem {
             float production = baseOutput * throughput * outputMultiplier * (0.75f + 0.25f * efficiencySatisfaction) * minInputSatisfaction * effectiveScale;
 
             economyBuilding.production(production);
+
+            float inputCost = 0f;
+            for(int g = 0; g < economyBuildingTypeData.goodInputIndexesLength(); g++) {
+                int goodIndex = economyBuildingTypeData.goodInputIndexes(g);
+                if(goodIndex <= 0) {
+                    continue;
+                }
+
+                float satisfiedDemand = economyBuilding.goodInputDemandAmounts(g) * countryMarket.goodDemandSatisfactionRatios(goodIndex);
+                inputCost += satisfiedDemand * countryMarket.goodPrices(goodIndex);
+            }
+
+            float primaryMinWageFactor = (countryMarket.lifeCostsByPopType(economyBuildingTypeData.primaryWorkerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(economyBuildingTypeData.primaryWorkerPopTypeIndex())) * (1f + countryEffectPolicy.minWageFactor());
+            float secondaryMinWageFactor = (countryMarket.lifeCostsByPopType(economyBuildingTypeData.secondaryWorkerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(economyBuildingTypeData.secondaryWorkerPopTypeIndex())) * (1f + countryEffectPolicy.minWageFactor());
+            float primaryWorkerMinWage = primaryMinWageFactor * primaryWorkers;
+            float secondaryWorkerMinWage =  secondaryMinWageFactor * secondaryWorkers;
+            float totalMinWages = primaryWorkerMinWage + secondaryWorkerMinWage;
+
+            float revenue = production * countryMarket.goodPrices(economyBuildingTypeData.goodOutputIndex());
+
+            float availableForWages = Math.max(0f, revenue - inputCost);
+            if(availableForWages < totalMinWages) {
+                float wageRatio = availableForWages / totalMinWages;
+                primaryWorkerMinWage = primaryWorkerMinWage * wageRatio;
+                secondaryWorkerMinWage = secondaryWorkerMinWage * wageRatio;
+                economyBuilding.profit(0f);
+            } else {
+                economyBuilding.profit(availableForWages - totalMinWages);
+            }
+
+            economyBuilding.primaryWorkerMinWage(primaryWorkerMinWage);
+            economyBuilding.secondaryWorkerMinWage(secondaryWorkerMinWage);
         }
     }
 }

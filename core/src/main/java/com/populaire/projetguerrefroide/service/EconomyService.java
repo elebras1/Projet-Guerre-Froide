@@ -31,6 +31,9 @@ public class EconomyService {
     private final EconomyBuildingSpreadProductionSystem economyBuildingSpreadProductionSystem;
     private final CountryMarketResolveSystem countryMarketResolveSystem;
     private final CountryMarketSpreadSystem countryMarketSpreadSystem;
+    private final RegionIncomeResetSystem regionIncomeResetSystem;
+    private final RGOProfitSharingSystem rgoProfitSharingSystem;
+    private final EconomyBuildingProfitSharingSystem economyBuildingProfitSharingSystem;
 
     private final Pipeline initPipeline;
     private final Pipeline mainPipeline;
@@ -50,6 +53,7 @@ public class EconomyService {
         long phaseProduction = ecsWorld.entity("PhaseProduction");
         long phaseToMarket = ecsWorld.entity("PhaseToMarket");
         long phaseMarket = ecsWorld.entity("PhaseMarket");
+        long phaseIncome = ecsWorld.entity("PhaseIncome");
 
         this.initPipeline = ecsWorld.pipeline("InitEconomyPipeline")
             .with(phasePopInit)
@@ -68,6 +72,7 @@ public class EconomyService {
             .with(phaseProduction)
             .with(phaseToMarket)
             .with(phaseMarket)
+            .with(phaseIncome)
             .build();
 
         this.demographicsResetSystem = new DemographicsResetSystem(ecsWorld, phaseDemographicsReset);
@@ -96,6 +101,9 @@ public class EconomyService {
         this.economyBuildingSpreadProductionSystem = new EconomyBuildingSpreadProductionSystem(ecsWorld, phaseToMarket);
         this.countryMarketResolveSystem = new CountryMarketResolveSystem(ecsWorld, phaseMarket);
         this.countryMarketSpreadSystem = new CountryMarketSpreadSystem(ecsWorld, phaseMarket);
+        this.regionIncomeResetSystem = new RegionIncomeResetSystem(ecsWorld, phaseIncome);
+        this.rgoProfitSharingSystem = new RGOProfitSharingSystem(ecsWorld, phaseIncome);
+        this.economyBuildingProfitSharingSystem = new EconomyBuildingProfitSharingSystem(ecsWorld, phaseIncome);
     }
 
     public Pipeline getInitPipeline() {

@@ -1018,7 +1018,7 @@ public class WorldDaoImpl implements WorldDao {
                 Good good = goodEntity.get(Good.class);
                 float goodAmount = good.value();
                 long rgoTypeId = ecsWorld.lookup("rgo_" + goodNameId);
-                province.set(new ResourceGathering(rgoTypeId, goodId, this.getGoodIndex(goodId), goodAmount, 0, 0f, 0f, 0, 0));
+                province.set(new ResourceGathering(rgoTypeId, goodId, this.getGoodIndex(goodId), goodAmount, 0, 0f, 0f, 0, 0, 0f, 0f));
             }
 
             JsonValue buildingsProvinceValue = provinceValues.get("buildings");
@@ -1088,8 +1088,8 @@ public class WorldDaoImpl implements WorldDao {
                         EntityView regionInstance = ecsWorld.obtainEntityView(regionInstanceId);
                         if(!regionInstance.has(RegionInstance.class)) {
                             regionInstance.set(new RegionInstance(regionEntityId, provinceData.ownerId(), new float[POP_TYPE_COUNT]));
+                            regionInstance.set(new RegionInstanceIncome(new float[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0f, 0f, 0f));
                             regionInstance.set(new Demographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
-
                         }
                         provinceData.regionId(regionEntityId).regionInstanceId(regionInstanceId);
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
@@ -1101,7 +1101,7 @@ public class WorldDaoImpl implements WorldDao {
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
                                 building.set(new Building(regionInstanceId, buildingTypeId, provinceData.ownerId(), size));
                                 if(buildingType.has(EconomyBuildingType.class)) {
-                                    building.set(new EconomyBuilding(0f, 0f, 0f, 0, 0));
+                                    building.set(new EconomyBuilding(0f, 0f, 0f, 0, 0, 0f, 0f, new float[MAX_GOODS]));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {
                                     building.set(new SpecialBuilding());
                                 }
@@ -1254,7 +1254,7 @@ public class WorldDaoImpl implements WorldDao {
             country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
             country.set(new CountryMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new boolean[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], 0f, 0f, 0f));
             country.set(new CountryDemographics(0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
-            country.set(new CountryEffectPolicy(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f,0f ,0f ,0f ,0f, 0f, false, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
+            country.set(new CountryEffectPolicy(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0.7f, 0.3f, 0.75f, 0.7f, 0f, 0f, 0f, 0f,0f ,0f ,0f ,0f, 0f, false, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
