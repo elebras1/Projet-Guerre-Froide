@@ -1,0 +1,1682 @@
+{
+  "reflection": [
+    {
+      "type": "com.badlogic.gdx.graphics.Color"
+    },
+    {
+      "type": "com.badlogic.gdx.graphics.g2d.BitmapFont"
+    },
+    {
+      "type": "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle",
+      "fields": [
+        {
+          "name": "checked"
+        },
+        {
+          "name": "down"
+        },
+        {
+          "name": "over"
+        },
+        {
+          "name": "up"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.badlogic.gdx.scenes.scene2d.ui.ProgressBar$ProgressBarStyle",
+      "fields": [
+        {
+          "name": "background"
+        },
+        {
+          "name": "knob"
+        }
+      ]
+    },
+    {
+      "type": "com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle",
+      "fields": [
+        {
+          "name": "vScrollKnob"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.badlogic.gdx.scenes.scene2d.ui.Slider$SliderStyle",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.github.elebras1.flecs.ecs_iter_action_t$Function",
+      "methods": [
+        {
+          "name": "apply",
+          "parameterTypes": [
+            "java.lang.foreign.MemorySegment"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.github.elebras1.flecs.ecs_os_api_free_t$Function",
+      "methods": [
+        {
+          "name": "apply",
+          "parameterTypes": [
+            "java.lang.foreign.MemorySegment"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.github.elebras1.flecs.ecs_os_api_malloc_t$Function",
+      "methods": [
+        {
+          "name": "apply",
+          "parameterTypes": [
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.github.xpenatan.webgpu.WGPUBufferMapCallback",
+      "jniAccessible": true,
+      "methods": [
+        {
+          "name": "internal_onCallback",
+          "parameterTypes": [
+            "int",
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.github.xpenatan.webgpu.WGPURequestAdapterCallback",
+      "jniAccessible": true,
+      "methods": [
+        {
+          "name": "internal_onCallback",
+          "parameterTypes": [
+            "int",
+            "long",
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.github.xpenatan.webgpu.WGPURequestDeviceCallback",
+      "jniAccessible": true,
+      "methods": [
+        {
+          "name": "internal_onCallback",
+          "parameterTypes": [
+            "int",
+            "long",
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.github.xpenatan.webgpu.WGPUUncapturedErrorCallback",
+      "jniAccessible": true,
+      "methods": [
+        {
+          "name": "internal_onCallback",
+          "parameterTypes": [
+            "int",
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.monstrous.gdx.webgpu.application.WebGPUApplication$1"
+    },
+    {
+      "type": "com.monstrous.gdx.webgpu.application.WebGPUApplication$2"
+    },
+    {
+      "type": "com.monstrous.gdx.webgpu.application.WebGPUApplication$3"
+    },
+    {
+      "type": "com.populaire.projetguerrefroide.configuration._Settings_DslJsonConverter",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.populaire.projetguerrefroide.renderer.BordersCompute$1"
+    },
+    {
+      "type": "dsl_json.json.ExternalSerialization"
+    },
+    {
+      "type": "dsl_json_Annotation_Processor_External_Serialization"
+    },
+    {
+      "type": "dsl_json_ExternalSerialization"
+    },
+    {
+      "type": "java.lang.Boolean",
+      "jniAccessible": true,
+      "methods": [
+        {
+          "name": "getBoolean",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.nio.Buffer",
+      "fields": [
+        {
+          "name": "address"
+        },
+        {
+          "name": "capacity"
+        },
+        {
+          "name": "limit"
+        },
+        {
+          "name": "mark"
+        },
+        {
+          "name": "position"
+        }
+      ]
+    },
+    {
+      "type": "java.nio.ByteBuffer",
+      "fields": [
+        {
+          "name": "offset"
+        }
+      ]
+    },
+    {
+      "type": "java.nio.DirectByteBuffer",
+      "unsafeAllocated": true,
+      "fields": [
+        {
+          "name": "att"
+        }
+      ]
+    },
+    {
+      "type": "java.nio.DirectCharBufferU",
+      "fields": [
+        {
+          "name": "att"
+        }
+      ]
+    },
+    {
+      "type": "java.nio.DirectDoubleBufferU",
+      "fields": [
+        {
+          "name": "att"
+        }
+      ]
+    },
+    {
+      "type": "java.nio.DirectFloatBufferU",
+      "fields": [
+        {
+          "name": "att"
+        }
+      ]
+    },
+    {
+      "type": "java.nio.DirectIntBufferU",
+      "unsafeAllocated": true,
+      "fields": [
+        {
+          "name": "att"
+        }
+      ]
+    },
+    {
+      "type": "java.nio.DirectLongBufferU",
+      "fields": [
+        {
+          "name": "att"
+        }
+      ]
+    },
+    {
+      "type": "java.nio.DirectShortBufferU",
+      "fields": [
+        {
+          "name": "att"
+        }
+      ]
+    },
+    {
+      "type": "java.nio.MappedByteBuffer"
+    },
+    {
+      "type": "org.lwjgl.glfw.GLFW",
+      "fields": [
+        {
+          "name": "GLFW_ACCUM_ALPHA_BITS"
+        },
+        {
+          "name": "GLFW_ACCUM_BLUE_BITS"
+        },
+        {
+          "name": "GLFW_ACCUM_GREEN_BITS"
+        },
+        {
+          "name": "GLFW_ACCUM_RED_BITS"
+        },
+        {
+          "name": "GLFW_ALPHA_BITS"
+        },
+        {
+          "name": "GLFW_ANGLE_PLATFORM_TYPE"
+        },
+        {
+          "name": "GLFW_ANGLE_PLATFORM_TYPE_D3D11"
+        },
+        {
+          "name": "GLFW_ANGLE_PLATFORM_TYPE_D3D9"
+        },
+        {
+          "name": "GLFW_ANGLE_PLATFORM_TYPE_METAL"
+        },
+        {
+          "name": "GLFW_ANGLE_PLATFORM_TYPE_NONE"
+        },
+        {
+          "name": "GLFW_ANGLE_PLATFORM_TYPE_OPENGL"
+        },
+        {
+          "name": "GLFW_ANGLE_PLATFORM_TYPE_OPENGLES"
+        },
+        {
+          "name": "GLFW_ANGLE_PLATFORM_TYPE_VULKAN"
+        },
+        {
+          "name": "GLFW_ANY_PLATFORM"
+        },
+        {
+          "name": "GLFW_ANY_POSITION"
+        },
+        {
+          "name": "GLFW_ANY_RELEASE_BEHAVIOR"
+        },
+        {
+          "name": "GLFW_API_UNAVAILABLE"
+        },
+        {
+          "name": "GLFW_ARROW_CURSOR"
+        },
+        {
+          "name": "GLFW_AUTO_ICONIFY"
+        },
+        {
+          "name": "GLFW_AUX_BUFFERS"
+        },
+        {
+          "name": "GLFW_BLUE_BITS"
+        },
+        {
+          "name": "GLFW_CENTER_CURSOR"
+        },
+        {
+          "name": "GLFW_CLIENT_API"
+        },
+        {
+          "name": "GLFW_COCOA_CHDIR_RESOURCES"
+        },
+        {
+          "name": "GLFW_COCOA_FRAME_NAME"
+        },
+        {
+          "name": "GLFW_COCOA_GRAPHICS_SWITCHING"
+        },
+        {
+          "name": "GLFW_COCOA_MENUBAR"
+        },
+        {
+          "name": "GLFW_COCOA_RETINA_FRAMEBUFFER"
+        },
+        {
+          "name": "GLFW_CONNECTED"
+        },
+        {
+          "name": "GLFW_CONTEXT_CREATION_API"
+        },
+        {
+          "name": "GLFW_CONTEXT_DEBUG"
+        },
+        {
+          "name": "GLFW_CONTEXT_NO_ERROR"
+        },
+        {
+          "name": "GLFW_CONTEXT_RELEASE_BEHAVIOR"
+        },
+        {
+          "name": "GLFW_CONTEXT_REVISION"
+        },
+        {
+          "name": "GLFW_CONTEXT_ROBUSTNESS"
+        },
+        {
+          "name": "GLFW_CONTEXT_VERSION_MAJOR"
+        },
+        {
+          "name": "GLFW_CONTEXT_VERSION_MINOR"
+        },
+        {
+          "name": "GLFW_CROSSHAIR_CURSOR"
+        },
+        {
+          "name": "GLFW_CURSOR"
+        },
+        {
+          "name": "GLFW_CURSOR_CAPTURED"
+        },
+        {
+          "name": "GLFW_CURSOR_DISABLED"
+        },
+        {
+          "name": "GLFW_CURSOR_HIDDEN"
+        },
+        {
+          "name": "GLFW_CURSOR_NORMAL"
+        },
+        {
+          "name": "GLFW_CURSOR_UNAVAILABLE"
+        },
+        {
+          "name": "GLFW_DECORATED"
+        },
+        {
+          "name": "GLFW_DEPTH_BITS"
+        },
+        {
+          "name": "GLFW_DISCONNECTED"
+        },
+        {
+          "name": "GLFW_DONT_CARE"
+        },
+        {
+          "name": "GLFW_DOUBLEBUFFER"
+        },
+        {
+          "name": "GLFW_EGL_CONTEXT_API"
+        },
+        {
+          "name": "GLFW_FALSE"
+        },
+        {
+          "name": "GLFW_FEATURE_UNAVAILABLE"
+        },
+        {
+          "name": "GLFW_FEATURE_UNIMPLEMENTED"
+        },
+        {
+          "name": "GLFW_FLOATING"
+        },
+        {
+          "name": "GLFW_FOCUSED"
+        },
+        {
+          "name": "GLFW_FOCUS_ON_SHOW"
+        },
+        {
+          "name": "GLFW_FORMAT_UNAVAILABLE"
+        },
+        {
+          "name": "GLFW_GAMEPAD_AXIS_LAST"
+        },
+        {
+          "name": "GLFW_GAMEPAD_AXIS_LEFT_TRIGGER"
+        },
+        {
+          "name": "GLFW_GAMEPAD_AXIS_LEFT_X"
+        },
+        {
+          "name": "GLFW_GAMEPAD_AXIS_LEFT_Y"
+        },
+        {
+          "name": "GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER"
+        },
+        {
+          "name": "GLFW_GAMEPAD_AXIS_RIGHT_X"
+        },
+        {
+          "name": "GLFW_GAMEPAD_AXIS_RIGHT_Y"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_A"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_B"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_BACK"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_CIRCLE"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_CROSS"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_DPAD_DOWN"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_DPAD_LEFT"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_DPAD_RIGHT"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_DPAD_UP"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_GUIDE"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_LAST"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_LEFT_BUMPER"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_LEFT_THUMB"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_RIGHT_BUMPER"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_RIGHT_THUMB"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_SQUARE"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_START"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_TRIANGLE"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_X"
+        },
+        {
+          "name": "GLFW_GAMEPAD_BUTTON_Y"
+        },
+        {
+          "name": "GLFW_GREEN_BITS"
+        },
+        {
+          "name": "GLFW_HAND_CURSOR"
+        },
+        {
+          "name": "GLFW_HAT_CENTERED"
+        },
+        {
+          "name": "GLFW_HAT_DOWN"
+        },
+        {
+          "name": "GLFW_HAT_LEFT"
+        },
+        {
+          "name": "GLFW_HAT_LEFT_DOWN"
+        },
+        {
+          "name": "GLFW_HAT_LEFT_UP"
+        },
+        {
+          "name": "GLFW_HAT_RIGHT"
+        },
+        {
+          "name": "GLFW_HAT_RIGHT_DOWN"
+        },
+        {
+          "name": "GLFW_HAT_RIGHT_UP"
+        },
+        {
+          "name": "GLFW_HAT_UP"
+        },
+        {
+          "name": "GLFW_HOVERED"
+        },
+        {
+          "name": "GLFW_HRESIZE_CURSOR"
+        },
+        {
+          "name": "GLFW_IBEAM_CURSOR"
+        },
+        {
+          "name": "GLFW_ICONIFIED"
+        },
+        {
+          "name": "GLFW_INVALID_ENUM"
+        },
+        {
+          "name": "GLFW_INVALID_VALUE"
+        },
+        {
+          "name": "GLFW_JOYSTICK_1"
+        },
+        {
+          "name": "GLFW_JOYSTICK_10"
+        },
+        {
+          "name": "GLFW_JOYSTICK_11"
+        },
+        {
+          "name": "GLFW_JOYSTICK_12"
+        },
+        {
+          "name": "GLFW_JOYSTICK_13"
+        },
+        {
+          "name": "GLFW_JOYSTICK_14"
+        },
+        {
+          "name": "GLFW_JOYSTICK_15"
+        },
+        {
+          "name": "GLFW_JOYSTICK_16"
+        },
+        {
+          "name": "GLFW_JOYSTICK_2"
+        },
+        {
+          "name": "GLFW_JOYSTICK_3"
+        },
+        {
+          "name": "GLFW_JOYSTICK_4"
+        },
+        {
+          "name": "GLFW_JOYSTICK_5"
+        },
+        {
+          "name": "GLFW_JOYSTICK_6"
+        },
+        {
+          "name": "GLFW_JOYSTICK_7"
+        },
+        {
+          "name": "GLFW_JOYSTICK_8"
+        },
+        {
+          "name": "GLFW_JOYSTICK_9"
+        },
+        {
+          "name": "GLFW_JOYSTICK_HAT_BUTTONS"
+        },
+        {
+          "name": "GLFW_JOYSTICK_LAST"
+        },
+        {
+          "name": "GLFW_KEY_0"
+        },
+        {
+          "name": "GLFW_KEY_1"
+        },
+        {
+          "name": "GLFW_KEY_2"
+        },
+        {
+          "name": "GLFW_KEY_3"
+        },
+        {
+          "name": "GLFW_KEY_4"
+        },
+        {
+          "name": "GLFW_KEY_5"
+        },
+        {
+          "name": "GLFW_KEY_6"
+        },
+        {
+          "name": "GLFW_KEY_7"
+        },
+        {
+          "name": "GLFW_KEY_8"
+        },
+        {
+          "name": "GLFW_KEY_9"
+        },
+        {
+          "name": "GLFW_KEY_A"
+        },
+        {
+          "name": "GLFW_KEY_APOSTROPHE"
+        },
+        {
+          "name": "GLFW_KEY_B"
+        },
+        {
+          "name": "GLFW_KEY_BACKSLASH"
+        },
+        {
+          "name": "GLFW_KEY_BACKSPACE"
+        },
+        {
+          "name": "GLFW_KEY_C"
+        },
+        {
+          "name": "GLFW_KEY_CAPS_LOCK"
+        },
+        {
+          "name": "GLFW_KEY_COMMA"
+        },
+        {
+          "name": "GLFW_KEY_D"
+        },
+        {
+          "name": "GLFW_KEY_DELETE"
+        },
+        {
+          "name": "GLFW_KEY_DOWN"
+        },
+        {
+          "name": "GLFW_KEY_E"
+        },
+        {
+          "name": "GLFW_KEY_END"
+        },
+        {
+          "name": "GLFW_KEY_ENTER"
+        },
+        {
+          "name": "GLFW_KEY_EQUAL"
+        },
+        {
+          "name": "GLFW_KEY_ESCAPE"
+        },
+        {
+          "name": "GLFW_KEY_F"
+        },
+        {
+          "name": "GLFW_KEY_F1"
+        },
+        {
+          "name": "GLFW_KEY_F10"
+        },
+        {
+          "name": "GLFW_KEY_F11"
+        },
+        {
+          "name": "GLFW_KEY_F12"
+        },
+        {
+          "name": "GLFW_KEY_F13"
+        },
+        {
+          "name": "GLFW_KEY_F14"
+        },
+        {
+          "name": "GLFW_KEY_F15"
+        },
+        {
+          "name": "GLFW_KEY_F16"
+        },
+        {
+          "name": "GLFW_KEY_F17"
+        },
+        {
+          "name": "GLFW_KEY_F18"
+        },
+        {
+          "name": "GLFW_KEY_F19"
+        },
+        {
+          "name": "GLFW_KEY_F2"
+        },
+        {
+          "name": "GLFW_KEY_F20"
+        },
+        {
+          "name": "GLFW_KEY_F21"
+        },
+        {
+          "name": "GLFW_KEY_F22"
+        },
+        {
+          "name": "GLFW_KEY_F23"
+        },
+        {
+          "name": "GLFW_KEY_F24"
+        },
+        {
+          "name": "GLFW_KEY_F25"
+        },
+        {
+          "name": "GLFW_KEY_F3"
+        },
+        {
+          "name": "GLFW_KEY_F4"
+        },
+        {
+          "name": "GLFW_KEY_F5"
+        },
+        {
+          "name": "GLFW_KEY_F6"
+        },
+        {
+          "name": "GLFW_KEY_F7"
+        },
+        {
+          "name": "GLFW_KEY_F8"
+        },
+        {
+          "name": "GLFW_KEY_F9"
+        },
+        {
+          "name": "GLFW_KEY_G"
+        },
+        {
+          "name": "GLFW_KEY_GRAVE_ACCENT"
+        },
+        {
+          "name": "GLFW_KEY_H"
+        },
+        {
+          "name": "GLFW_KEY_HOME"
+        },
+        {
+          "name": "GLFW_KEY_I"
+        },
+        {
+          "name": "GLFW_KEY_INSERT"
+        },
+        {
+          "name": "GLFW_KEY_J"
+        },
+        {
+          "name": "GLFW_KEY_K"
+        },
+        {
+          "name": "GLFW_KEY_KP_0"
+        },
+        {
+          "name": "GLFW_KEY_KP_1"
+        },
+        {
+          "name": "GLFW_KEY_KP_2"
+        },
+        {
+          "name": "GLFW_KEY_KP_3"
+        },
+        {
+          "name": "GLFW_KEY_KP_4"
+        },
+        {
+          "name": "GLFW_KEY_KP_5"
+        },
+        {
+          "name": "GLFW_KEY_KP_6"
+        },
+        {
+          "name": "GLFW_KEY_KP_7"
+        },
+        {
+          "name": "GLFW_KEY_KP_8"
+        },
+        {
+          "name": "GLFW_KEY_KP_9"
+        },
+        {
+          "name": "GLFW_KEY_KP_ADD"
+        },
+        {
+          "name": "GLFW_KEY_KP_DECIMAL"
+        },
+        {
+          "name": "GLFW_KEY_KP_DIVIDE"
+        },
+        {
+          "name": "GLFW_KEY_KP_ENTER"
+        },
+        {
+          "name": "GLFW_KEY_KP_EQUAL"
+        },
+        {
+          "name": "GLFW_KEY_KP_MULTIPLY"
+        },
+        {
+          "name": "GLFW_KEY_KP_SUBTRACT"
+        },
+        {
+          "name": "GLFW_KEY_L"
+        },
+        {
+          "name": "GLFW_KEY_LAST"
+        },
+        {
+          "name": "GLFW_KEY_LEFT"
+        },
+        {
+          "name": "GLFW_KEY_LEFT_ALT"
+        },
+        {
+          "name": "GLFW_KEY_LEFT_BRACKET"
+        },
+        {
+          "name": "GLFW_KEY_LEFT_CONTROL"
+        },
+        {
+          "name": "GLFW_KEY_LEFT_SHIFT"
+        },
+        {
+          "name": "GLFW_KEY_LEFT_SUPER"
+        },
+        {
+          "name": "GLFW_KEY_M"
+        },
+        {
+          "name": "GLFW_KEY_MENU"
+        },
+        {
+          "name": "GLFW_KEY_MINUS"
+        },
+        {
+          "name": "GLFW_KEY_N"
+        },
+        {
+          "name": "GLFW_KEY_NUM_LOCK"
+        },
+        {
+          "name": "GLFW_KEY_O"
+        },
+        {
+          "name": "GLFW_KEY_P"
+        },
+        {
+          "name": "GLFW_KEY_PAGE_DOWN"
+        },
+        {
+          "name": "GLFW_KEY_PAGE_UP"
+        },
+        {
+          "name": "GLFW_KEY_PAUSE"
+        },
+        {
+          "name": "GLFW_KEY_PERIOD"
+        },
+        {
+          "name": "GLFW_KEY_PRINT_SCREEN"
+        },
+        {
+          "name": "GLFW_KEY_Q"
+        },
+        {
+          "name": "GLFW_KEY_R"
+        },
+        {
+          "name": "GLFW_KEY_RIGHT"
+        },
+        {
+          "name": "GLFW_KEY_RIGHT_ALT"
+        },
+        {
+          "name": "GLFW_KEY_RIGHT_BRACKET"
+        },
+        {
+          "name": "GLFW_KEY_RIGHT_CONTROL"
+        },
+        {
+          "name": "GLFW_KEY_RIGHT_SHIFT"
+        },
+        {
+          "name": "GLFW_KEY_RIGHT_SUPER"
+        },
+        {
+          "name": "GLFW_KEY_S"
+        },
+        {
+          "name": "GLFW_KEY_SCROLL_LOCK"
+        },
+        {
+          "name": "GLFW_KEY_SEMICOLON"
+        },
+        {
+          "name": "GLFW_KEY_SLASH"
+        },
+        {
+          "name": "GLFW_KEY_SPACE"
+        },
+        {
+          "name": "GLFW_KEY_T"
+        },
+        {
+          "name": "GLFW_KEY_TAB"
+        },
+        {
+          "name": "GLFW_KEY_U"
+        },
+        {
+          "name": "GLFW_KEY_UNKNOWN"
+        },
+        {
+          "name": "GLFW_KEY_UP"
+        },
+        {
+          "name": "GLFW_KEY_V"
+        },
+        {
+          "name": "GLFW_KEY_W"
+        },
+        {
+          "name": "GLFW_KEY_WORLD_1"
+        },
+        {
+          "name": "GLFW_KEY_WORLD_2"
+        },
+        {
+          "name": "GLFW_KEY_X"
+        },
+        {
+          "name": "GLFW_KEY_Y"
+        },
+        {
+          "name": "GLFW_KEY_Z"
+        },
+        {
+          "name": "GLFW_LOCK_KEY_MODS"
+        },
+        {
+          "name": "GLFW_LOSE_CONTEXT_ON_RESET"
+        },
+        {
+          "name": "GLFW_MAXIMIZED"
+        },
+        {
+          "name": "GLFW_MOD_ALT"
+        },
+        {
+          "name": "GLFW_MOD_CAPS_LOCK"
+        },
+        {
+          "name": "GLFW_MOD_CONTROL"
+        },
+        {
+          "name": "GLFW_MOD_NUM_LOCK"
+        },
+        {
+          "name": "GLFW_MOD_SHIFT"
+        },
+        {
+          "name": "GLFW_MOD_SUPER"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_1"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_2"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_3"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_4"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_5"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_6"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_7"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_8"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_LAST"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_LEFT"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_MIDDLE"
+        },
+        {
+          "name": "GLFW_MOUSE_BUTTON_RIGHT"
+        },
+        {
+          "name": "GLFW_MOUSE_PASSTHROUGH"
+        },
+        {
+          "name": "GLFW_NATIVE_CONTEXT_API"
+        },
+        {
+          "name": "GLFW_NOT_ALLOWED_CURSOR"
+        },
+        {
+          "name": "GLFW_NOT_INITIALIZED"
+        },
+        {
+          "name": "GLFW_NO_API"
+        },
+        {
+          "name": "GLFW_NO_CURRENT_CONTEXT"
+        },
+        {
+          "name": "GLFW_NO_ERROR"
+        },
+        {
+          "name": "GLFW_NO_RESET_NOTIFICATION"
+        },
+        {
+          "name": "GLFW_NO_ROBUSTNESS"
+        },
+        {
+          "name": "GLFW_NO_WINDOW_CONTEXT"
+        },
+        {
+          "name": "GLFW_OPENGL_ANY_PROFILE"
+        },
+        {
+          "name": "GLFW_OPENGL_API"
+        },
+        {
+          "name": "GLFW_OPENGL_COMPAT_PROFILE"
+        },
+        {
+          "name": "GLFW_OPENGL_CORE_PROFILE"
+        },
+        {
+          "name": "GLFW_OPENGL_DEBUG_CONTEXT"
+        },
+        {
+          "name": "GLFW_OPENGL_ES_API"
+        },
+        {
+          "name": "GLFW_OPENGL_FORWARD_COMPAT"
+        },
+        {
+          "name": "GLFW_OPENGL_PROFILE"
+        },
+        {
+          "name": "GLFW_OSMESA_CONTEXT_API"
+        },
+        {
+          "name": "GLFW_OUT_OF_MEMORY"
+        },
+        {
+          "name": "GLFW_PLATFORM"
+        },
+        {
+          "name": "GLFW_PLATFORM_COCOA"
+        },
+        {
+          "name": "GLFW_PLATFORM_ERROR"
+        },
+        {
+          "name": "GLFW_PLATFORM_NULL"
+        },
+        {
+          "name": "GLFW_PLATFORM_UNAVAILABLE"
+        },
+        {
+          "name": "GLFW_PLATFORM_WAYLAND"
+        },
+        {
+          "name": "GLFW_PLATFORM_WIN32"
+        },
+        {
+          "name": "GLFW_PLATFORM_X11"
+        },
+        {
+          "name": "GLFW_POINTING_HAND_CURSOR"
+        },
+        {
+          "name": "GLFW_POSITION_X"
+        },
+        {
+          "name": "GLFW_POSITION_Y"
+        },
+        {
+          "name": "GLFW_PRESS"
+        },
+        {
+          "name": "GLFW_RAW_MOUSE_MOTION"
+        },
+        {
+          "name": "GLFW_RED_BITS"
+        },
+        {
+          "name": "GLFW_REFRESH_RATE"
+        },
+        {
+          "name": "GLFW_RELEASE"
+        },
+        {
+          "name": "GLFW_RELEASE_BEHAVIOR_FLUSH"
+        },
+        {
+          "name": "GLFW_RELEASE_BEHAVIOR_NONE"
+        },
+        {
+          "name": "GLFW_REPEAT"
+        },
+        {
+          "name": "GLFW_RESIZABLE"
+        },
+        {
+          "name": "GLFW_RESIZE_ALL_CURSOR"
+        },
+        {
+          "name": "GLFW_RESIZE_EW_CURSOR"
+        },
+        {
+          "name": "GLFW_RESIZE_NESW_CURSOR"
+        },
+        {
+          "name": "GLFW_RESIZE_NS_CURSOR"
+        },
+        {
+          "name": "GLFW_RESIZE_NWSE_CURSOR"
+        },
+        {
+          "name": "GLFW_SAMPLES"
+        },
+        {
+          "name": "GLFW_SCALE_TO_MONITOR"
+        },
+        {
+          "name": "GLFW_SRGB_CAPABLE"
+        },
+        {
+          "name": "GLFW_STENCIL_BITS"
+        },
+        {
+          "name": "GLFW_STEREO"
+        },
+        {
+          "name": "GLFW_STICKY_KEYS"
+        },
+        {
+          "name": "GLFW_STICKY_MOUSE_BUTTONS"
+        },
+        {
+          "name": "GLFW_TRANSPARENT_FRAMEBUFFER"
+        },
+        {
+          "name": "GLFW_TRUE"
+        },
+        {
+          "name": "GLFW_VERSION_MAJOR"
+        },
+        {
+          "name": "GLFW_VERSION_MINOR"
+        },
+        {
+          "name": "GLFW_VERSION_REVISION"
+        },
+        {
+          "name": "GLFW_VERSION_UNAVAILABLE"
+        },
+        {
+          "name": "GLFW_VISIBLE"
+        },
+        {
+          "name": "GLFW_VRESIZE_CURSOR"
+        },
+        {
+          "name": "GLFW_WAYLAND_APP_ID"
+        },
+        {
+          "name": "GLFW_WAYLAND_DISABLE_LIBDECOR"
+        },
+        {
+          "name": "GLFW_WAYLAND_LIBDECOR"
+        },
+        {
+          "name": "GLFW_WAYLAND_PREFER_LIBDECOR"
+        },
+        {
+          "name": "GLFW_WIN32_KEYBOARD_MENU"
+        },
+        {
+          "name": "GLFW_X11_CLASS_NAME"
+        },
+        {
+          "name": "GLFW_X11_INSTANCE_NAME"
+        },
+        {
+          "name": "GLFW_X11_XCB_VULKAN_SURFACE"
+        }
+      ]
+    },
+    {
+      "type": "org.lwjgl.system.CallbackI",
+      "jniAccessible": true,
+      "methods": [
+        {
+          "name": "callback",
+          "parameterTypes": [
+            "long",
+            "long"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.lwjgl.system.CustomBuffer",
+      "fields": [
+        {
+          "name": "capacity"
+        },
+        {
+          "name": "container"
+        },
+        {
+          "name": "limit"
+        },
+        {
+          "name": "mark"
+        },
+        {
+          "name": "position"
+        }
+      ]
+    },
+    {
+      "type": "org.lwjgl.system.Pointer$Default",
+      "fields": [
+        {
+          "name": "address"
+        }
+      ]
+    },
+    {
+      "type": "org.lwjgl.system.jemalloc.JEmallocAllocator",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.misc.Unsafe",
+      "fields": [
+        {
+          "name": "theUnsafe"
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.NativePRNG",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.security.SecureRandomParameters"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.text.resources.FormatData"
+    },
+    {
+      "type": "sun.text.resources.FormatData_en"
+    },
+    {
+      "type": "sun.text.resources.JavaTimeSupplementary"
+    },
+    {
+      "type": "sun.text.resources.cldr.FormatData"
+    },
+    {
+      "type": "sun.text.resources.cldr.FormatData_en"
+    }
+  ],
+  "resources": [
+    {
+      "glob": "META-INF/linux/x64/org/lwjgl/glfw/libglfw.so.sha1"
+    },
+    {
+      "glob": "META-INF/linux/x64/org/lwjgl/jemalloc/libjemalloc.so.sha1"
+    },
+    {
+      "glob": "META-INF/linux/x64/org/lwjgl/liblwjgl.so.sha1"
+    },
+    {
+      "glob": "META-INF/linux/x64/org/lwjgl/openal/libopenal.so.sha1"
+    },
+    {
+      "glob": "META-INF/services/com.dslplatform.json.Configuration"
+    },
+    {
+      "glob": "META-INF/services/java.time.zone.ZoneRulesProvider"
+    },
+    {
+      "glob": "com/badlogic/gdx/utils/lsans-15.fnt"
+    },
+    {
+      "glob": "com/badlogic/gdx/utils/lsans-15.png"
+    },
+    {
+      "glob": "fonts/chinese_17.png"
+    },
+    {
+      "glob": "fonts/chinese_18.png"
+    },
+    {
+      "glob": "fonts/chinese_20.png"
+    },
+    {
+      "glob": "fonts/chinese_24.png"
+    },
+    {
+      "glob": "fonts/chinese_30.png"
+    },
+    {
+      "glob": "fonts/chinese_60.png"
+    },
+    {
+      "glob": "libgdx64.so"
+    },
+    {
+      "glob": "libidl64.so"
+    },
+    {
+      "glob": "linux/x64/org/lwjgl/glfw/libglfw.so"
+    },
+    {
+      "glob": "linux/x64/org/lwjgl/jemalloc/libjemalloc.so"
+    },
+    {
+      "glob": "linux/x64/org/lwjgl/liblwjgl.so"
+    },
+    {
+      "glob": "linux/x64/org/lwjgl/openal/libopenal.so"
+    },
+    {
+      "glob": "logo32.png"
+    },
+    {
+      "glob": "native/wgpu/libjWebGPU64.so"
+    },
+    {
+      "glob": "natives/linux-x64/libflecs.so"
+    },
+    {
+      "glob": "shaders/spritebatch.wgsl"
+    }
+  ],
+  "foreign": {
+    "upcalls": [
+      {
+        "returnType": "void",
+        "parameterTypes": [
+          "void*"
+        ]
+      }
+    ],
+    "downcalls": [
+      {
+        "returnType": "jlong",
+        "parameterTypes": [
+          "void*",
+          "jlong",
+          "jlong",
+          "jint"
+        ]
+      },
+      {
+        "returnType": "jlong",
+        "parameterTypes": [
+          "void*"
+        ],
+        "options": {
+          "critical": {
+            "allowHeapAccess": false
+          }
+        }
+      },
+      {
+        "returnType": "void*",
+        "parameterTypes": []
+      },
+      {
+        "returnType": "void",
+        "parameterTypes": [
+          "void*",
+          "jint"
+        ]
+      },
+      {
+        "returnType": "void*",
+        "parameterTypes": [
+          "void*",
+          "void*"
+        ]
+      },
+      {
+        "returnType": "void",
+        "parameterTypes": [
+          "void*",
+          "jlong"
+        ]
+      },
+      {
+        "returnType": "jint",
+        "parameterTypes": [
+          "void*"
+        ],
+        "options": {
+          "critical": {
+            "allowHeapAccess": false
+          }
+        }
+      },
+      {
+        "returnType": "jlong",
+        "parameterTypes": [
+          "void*",
+          "void*",
+          "void*"
+        ]
+      },
+      {
+        "returnType": "jboolean",
+        "parameterTypes": [
+          "void*",
+          "jlong",
+          "jlong"
+        ]
+      },
+      {
+        "returnType": "jlong",
+        "parameterTypes": [
+          "void*",
+          "void*"
+        ]
+      },
+      {
+        "returnType": "jboolean",
+        "parameterTypes": [
+          "void*",
+          "jfloat"
+        ]
+      },
+      {
+        "returnType": "void*",
+        "parameterTypes": [
+          "void*",
+          "jint"
+        ]
+      },
+      {
+        "returnType": "void*",
+        "parameterTypes": [
+          "void*",
+          "jlong"
+        ]
+      },
+      {
+        "returnType": "jlong",
+        "parameterTypes": [
+          "jlong",
+          "jlong"
+        ],
+        "options": {
+          "critical": {
+            "allowHeapAccess": false
+          }
+        }
+      },
+      {
+        "returnType": "jboolean",
+        "parameterTypes": [
+          "void*"
+        ]
+      },
+      {
+        "returnType": "void",
+        "parameterTypes": [
+          "void*"
+        ]
+      },
+      {
+        "returnType": "struct(void*,void*,jint,jint,void*,void*,void*,void*,void*,void*,void*,void*,jlong,jint,jint,jint,jint,jlong,jlong,jlong,jint,jbyte,jbyte,padding(2),void*,void*,void*,void*,void*,void*,jfloat,jfloat,jint,jint,jlong,struct(union(struct(void*,void*,void*,void*,void*,void*,void*,void*,void*,jint,jint,void*,jshort,jboolean,padding(5)),struct(jint,jint,jint),struct(jint,jint),struct(struct(void*,void*,jboolean,jboolean,padding(6)),jlong,jlong,jint,jint,void*)),void*,void*),void*,void*,void*,void*)",
+        "parameterTypes": [
+          "void*",
+          "void*"
+        ]
+      },
+      {
+        "returnType": "void*",
+        "parameterTypes": [
+          "void*",
+          "jlong",
+          "jbyte"
+        ],
+        "options": {
+          "critical": {
+            "allowHeapAccess": false
+          }
+        }
+      },
+      {
+        "returnType": "void",
+        "parameterTypes": [
+          "void*",
+          "jlong",
+          "jlong"
+        ]
+      },
+      {
+        "returnType": "jint",
+        "parameterTypes": [
+          "void*",
+          "void*",
+          "jlong"
+        ]
+      },
+      {
+        "returnType": "void*",
+        "parameterTypes": [
+          "void*",
+          "jint",
+          "jint"
+        ]
+      },
+      {
+        "returnType": "void*",
+        "parameterTypes": [
+          "jint"
+        ]
+      },
+      {
+        "returnType": "jint",
+        "parameterTypes": [
+          "void*"
+        ]
+      },
+      {
+        "returnType": "jlong",
+        "parameterTypes": [
+          "void*",
+          "void*"
+        ],
+        "options": {
+          "critical": {
+            "allowHeapAccess": false
+          }
+        }
+      },
+      {
+        "returnType": "jlong",
+        "parameterTypes": [
+          "void*",
+          "jlong",
+          "jlong"
+        ],
+        "options": {
+          "critical": {
+            "allowHeapAccess": false
+          }
+        }
+      },
+      {
+        "returnType": "void",
+        "parameterTypes": [
+          "void*",
+          "jlong",
+          "jfloat"
+        ]
+      },
+      {
+        "returnType": "void",
+        "parameterTypes": [
+          "void*",
+          "jlong",
+          "jlong",
+          "jlong",
+          "void*"
+        ]
+      }
+    ]
+  }
+}

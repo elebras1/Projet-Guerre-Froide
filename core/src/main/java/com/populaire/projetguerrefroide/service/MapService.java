@@ -334,7 +334,7 @@ public class MapService implements WorldContext, Disposable {
         World ecsWorld = this.gameContext.getEcsWorld();
         Query query = this.queryRepository.getProvincesWithColor();
         query.iter(iter -> {
-            Field<Province> provinceField = iter.field(Province.class, 1);
+            Field<Province> provinceField = iter.field(Province.class, 0);
             Field<Color> colorField = iter.field(Color.class, 1);
             for(int i = 0; i < iter.count(); i++) {
                 ColorView colorData = colorField.getMutView(i);
