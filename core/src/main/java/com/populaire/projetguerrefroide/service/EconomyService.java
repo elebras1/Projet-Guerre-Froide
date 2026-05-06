@@ -34,6 +34,8 @@ public class EconomyService {
     private final RegionIncomeResetSystem regionIncomeResetSystem;
     private final RGOProfitSharingSystem rgoProfitSharingSystem;
     private final EconomyBuildingProfitSharingSystem economyBuildingProfitSharingSystem;
+    private final CountryIncomeDistributionSystem countryIncomeDistributionSystem;
+    private final PopulationIncomeDistributionSystem populationIncomeDistributionSystem;
 
     private final Pipeline initPipeline;
     private final Pipeline mainPipeline;
@@ -104,6 +106,8 @@ public class EconomyService {
         this.regionIncomeResetSystem = new RegionIncomeResetSystem(ecsWorld, phaseIncome);
         this.rgoProfitSharingSystem = new RGOProfitSharingSystem(ecsWorld, phaseIncome);
         this.economyBuildingProfitSharingSystem = new EconomyBuildingProfitSharingSystem(ecsWorld, phaseIncome);
+        this.countryIncomeDistributionSystem = new CountryIncomeDistributionSystem(ecsWorld, phaseIncome);
+        this.populationIncomeDistributionSystem = new PopulationIncomeDistributionSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
     }
 
     public Pipeline getInitPipeline() {

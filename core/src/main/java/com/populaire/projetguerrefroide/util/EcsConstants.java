@@ -23,6 +23,8 @@ public class EcsConstants {
     public static final String MILITARY_GOOD_TAG = "MilitaryGoodTag";
     public static final String ON_MAP = "OnMap";
     public static final String SUSPENDED = "Suspended";
+    public static final String CAPITALIST_TAG = "CapitalistTag";
+    public static final String ARISTOCRAT_TAG = "AristocratTag";
 
     private final long seaProvinceTag;
     private final long regionTag;
@@ -43,6 +45,8 @@ public class EcsConstants {
     private final long militaryGoodTag;
     private final long onMap;
     private final long suspended;
+    private final long capitalistTag;
+    private final long aristocratTag;
 
     public EcsConstants(World ecsWorld) {
         this.seaProvinceTag = ecsWorld.entity(SEA_PROVINCE_TAG);
@@ -64,6 +68,8 @@ public class EcsConstants {
         this.militaryGoodTag = ecsWorld.entity(MILITARY_GOOD_TAG);
         this.onMap = ecsWorld.entity(ON_MAP);
         this.suspended = ecsWorld.entity(SUSPENDED);
+        this.capitalistTag = ecsWorld.entity(CAPITALIST_TAG);
+        this.aristocratTag = ecsWorld.entity(ARISTOCRAT_TAG);
     }
 
     public long seaProvinceTag() {
@@ -139,8 +145,15 @@ public class EcsConstants {
     }
 
     public long suspended() {
-
         return this.suspended;
+    }
+
+    public long capitalistTag() {
+        return this.capitalistTag;
+    }
+
+    public long aristocratTag() {
+        return this.aristocratTag;
     }
 
     public long getAllianceRelation(String type, boolean isFirstCountry) {

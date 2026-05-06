@@ -81,7 +81,7 @@ public class WorldDaoImpl implements WorldDao {
         this.readNationalIdeas(ecsWorld, ecsConstants);
         this.readMinisterTypes(ecsWorld);
         this.readGoods(ecsWorld, ecsConstants);
-        this.readPopulationTypes(ecsWorld);
+        this.readPopulationTypes(ecsWorld, ecsConstants);
         Map<String, ProductionType> productionTypes = this.readProductionTypes(ecsWorld);
         this.readBuildings(ecsWorld, ecsConstants, productionTypes);
         this.readResourceProductions(ecsWorld, productionTypes);
@@ -299,7 +299,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readPopulationTypes(World ecsWorld) {
+    private void readPopulationTypes(World ecsWorld, EcsConstants ecsConstants) {
         Map<String, String> populationPaths = new ObjectObjectMap<>(POP_TYPE_COUNT, 1f);
         try {
             JsonValue populationTypesValues = this.parseJsonFile(this.populationTypesJsonFile);
@@ -309,7 +309,7 @@ public class WorldDaoImpl implements WorldDao {
 
             int index = 0;
             for (Map.Entry<String, String> populationPath : populationPaths.entrySet()) {
-                this.readPopulationType(ecsWorld, populationPath.getValue(), populationPath.getKey());
+                this.readPopulationType(ecsWorld, ecsConstants, populationPath.getValue(), populationPath.getKey());
                 this.populationTypeIds[index++] = ecsWorld.lookup(populationPath.getKey());
             }
             long globalPopType = ecsWorld.entity("global_population_type");
@@ -319,13 +319,17 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readPopulationType(World ecsWorld, String populationTypePath, String name) {
+    private void readPopulationType(World ecsWorld, EcsConstants ecsConstants, String populationTypePath, String name) {
         try {
             JsonValue populationTypeValue = this.parseJsonFile(populationTypePath);
             int color = this.parseColor(populationTypeValue.get("color"));
             long populationTypeId = ecsWorld.entity(name);
             EntityView populationType = ecsWorld.obtainEntityView(populationTypeId);
             populationType.set(new Color(color));
+            switch (name) {
+                case "aristocrats" -> populationType.add(ecsConstants.aristocratTag());
+                case "capitalists" -> populationType.add(ecsConstants.capitalistTag());
+            }
 
             int[] lifeNeedsGoodIndexes = new int[MAX_LIFE_NEEDS_GOODS];
             Arrays.fill(lifeNeedsGoodIndexes, -1);

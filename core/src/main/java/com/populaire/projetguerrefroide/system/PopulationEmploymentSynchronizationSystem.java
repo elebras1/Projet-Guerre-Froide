@@ -32,8 +32,8 @@ public class PopulationEmploymentSynchronizationSystem {
                 provinceId = currentProvinceId;
                 EntityView province = iter.world().obtainEntityView(provinceId);
                 provinceData = province.getMutView(Province.class);
-                resourceGathering = province.getMutView(ResourceGathering.class);
-                if(resourceGathering != null) {
+                if(province.has(ResourceGathering.class)) {
+                    resourceGathering = province.getMutView(ResourceGathering.class);
                     resourceGatheringType = iter.world().obtainEntityView(resourceGathering.typeId()).getMutView(ResourceGatheringType.class);
                 } else {
                     resourceGatheringType = null;
