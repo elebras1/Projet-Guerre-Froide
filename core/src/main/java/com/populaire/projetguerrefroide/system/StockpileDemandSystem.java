@@ -22,9 +22,8 @@ public class StockpileDemandSystem {
             for(int g = 0; g < countryMarket.goodStockpilesLength(); g++) {
                 if(!countryMarket.goodDrawingOnStockpiles(g)) {
                     float demandStock = Math.max(0f, countryMarket.goodStockpileTargets(g) - countryMarket.goodStockpiles(g));
-                    float deficit = countryMarket.goodDemandAmounts(g) + demandStock;
                     countryMarket.goodDemandAmounts(g, countryMarket.goodDemandAmounts(g) + demandStock);
-                    countryMarket.goodStockpileDailyDeficits(g, deficit);
+                    countryMarket.goodStockpileDailyDeficits(g, demandStock);
                 }
             }
         }
