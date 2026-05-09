@@ -5,7 +5,6 @@ import com.github.elebras1.flecs.annotation.Component;
 @Component
 public record ResourceGatheringType(
     int workforce,
-    long ownerId,
     int workerPopTypeIndex,
     long workerPopTypeId,
     float workerPopTypeRatio,

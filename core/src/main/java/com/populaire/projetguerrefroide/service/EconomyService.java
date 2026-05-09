@@ -13,6 +13,7 @@ public class EconomyService {
     private final DemographicsRegionInstanceSpreadSystem demographicsRegionInstanceSpreadSystem;
     private final RGOSizeSystem rgoSizeSystem;
     private final LawEffectInitializationSystem lawEffectInitializationSystem;
+    private final EconomyBuildingOwnerInitializationSystem economyBuildingOwnerInitializationSystem;
     private final RGOHireInitializationSystem rgoHireInitializationSystem;
     private final EconomyBuildingHireInitializationSystem economyBuildingHireInitializationSystem;
     private final CountryMarketInitializationSystem countryMarketInitializationSystem;
@@ -84,6 +85,7 @@ public class EconomyService {
         this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(ecsWorld, phaseSpread);
         this.demographicsRegionInstanceSpreadSystem = new DemographicsRegionInstanceSpreadSystem(ecsWorld, phaseSpread);
         this.lawEffectInitializationSystem = new LawEffectInitializationSystem(ecsWorld, phaseInit);
+        this.economyBuildingOwnerInitializationSystem = new EconomyBuildingOwnerInitializationSystem(ecsWorld, gameContext.getEcsConstants(), phaseInit);
         this.rgoSizeSystem = new RGOSizeSystem(ecsWorld, phaseInit);
         this.rgoHireInitializationSystem = new RGOHireInitializationSystem(ecsWorld, phaseInit);
         this.economyBuildingHireInitializationSystem = new EconomyBuildingHireInitializationSystem(ecsWorld, phaseInit);
@@ -105,7 +107,7 @@ public class EconomyService {
         this.countryMarketSpreadSystem = new CountryMarketSpreadSystem(ecsWorld, phaseMarket);
         this.regionIncomeResetSystem = new RegionIncomeResetSystem(ecsWorld, phaseIncome);
         this.rgoProfitSharingSystem = new RGOProfitSharingSystem(ecsWorld, phaseIncome);
-        this.economyBuildingProfitSharingSystem = new EconomyBuildingProfitSharingSystem(ecsWorld, phaseIncome);
+        this.economyBuildingProfitSharingSystem = new EconomyBuildingProfitSharingSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
         this.countryIncomeDistributionSystem = new CountryIncomeDistributionSystem(ecsWorld, phaseIncome);
         this.populationIncomeDistributionSystem = new PopulationIncomeDistributionSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
     }

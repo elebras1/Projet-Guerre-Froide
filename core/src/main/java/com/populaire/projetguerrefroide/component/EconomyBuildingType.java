@@ -19,7 +19,6 @@ public record EconomyBuildingType(
     long goodOutputId,
     float goodOutputAmount,
     int workforce,
-    long ownerId,
     int primaryWorkerPopTypeIndex,
     long primaryWorkerPopTypeId,
     float primaryWorkerPopTypeRatio,

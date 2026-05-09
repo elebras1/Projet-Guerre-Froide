@@ -7,6 +7,7 @@ import static com.populaire.projetguerrefroide.util.Constants.MAX_GOODS;
 
 @Component
 public record EconomyBuilding(
+    long ownerTagId,
     float production,
     float scale,
     float profit,

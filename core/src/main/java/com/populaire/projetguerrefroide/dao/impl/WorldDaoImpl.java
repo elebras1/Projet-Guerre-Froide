@@ -402,7 +402,6 @@ public class WorldDaoImpl implements WorldDao {
                 String typeName = typeBuildingEntry.getKey();
                 JsonValue typeBuildingValue = typeBuildingEntry.getValue();
                 int workforce = (int) typeBuildingValue.get("workforce").asLong();
-                long ownerId = ecsWorld.lookup(typeBuildingValue.get("owner").get("poptype").asString());
 
                 long[] workerPopTypeIds = new long[MAX_POPS];
                 int[] workerPopTypeIndexes = new int[MAX_POPS];
@@ -420,14 +419,13 @@ public class WorldDaoImpl implements WorldDao {
                     i++;
                 }
 
-                productionTypes.put(typeName, new ProductionType(workforce, ownerId, workerPopTypeIndexes, workerPopTypeIds, workerPopTypeRatios, workerPopTypeEffectMultipliers));
+                productionTypes.put(typeName, new ProductionType(workforce, workerPopTypeIndexes, workerPopTypeIds, workerPopTypeRatios, workerPopTypeEffectMultipliers));
             }
 
             for(var typeRgoEntry: buildingTypesJson.get("types_rgo").object()) {
                 String typeName = typeRgoEntry.getKey();
                 JsonValue typeRgoValue = typeRgoEntry.getValue();
                 int workforce = (int) typeRgoValue.get("workforce").asLong();
-                long ownerId = ecsWorld.lookup(typeRgoValue.get("owner").get("poptype").asString());
 
                 long[] workerPopTypeIds = new long[MAX_POPS];
                 int[] workerPopTypeIndexes = new int[MAX_POPS];
@@ -445,7 +443,7 @@ public class WorldDaoImpl implements WorldDao {
                     i++;
                 }
 
-                productionTypes.put(typeName, new ProductionType(workforce, ownerId, workerPopTypeIndexes, workerPopTypeIds, workerPopTypeRatios, workerPopTypeEffectMultipliers));
+                productionTypes.put(typeName, new ProductionType(workforce, workerPopTypeIndexes, workerPopTypeIds, workerPopTypeRatios, workerPopTypeEffectMultipliers));
             }
 
             return productionTypes;
@@ -519,7 +517,6 @@ public class WorldDaoImpl implements WorldDao {
                     outputGoodId,
                     outputGoodAmount,
                     productionType.workforce(),
-                    productionType.ownerId(),
                     productionType.workerPopTypeIndexes()[0],
                     productionType.workerPopTypeIds()[0],
                     productionType.workerPopTypeRatios()[0],
@@ -622,7 +619,6 @@ public class WorldDaoImpl implements WorldDao {
                 EntityView rgoType = ecsWorld.obtainEntityView(rgoTypeId);
                 rgoType.set(new ResourceGatheringType(
                     productionType.workforce(),
-                    productionType.ownerId(),
                     productionType.workerPopTypeIndexes()[0],
                     productionType.workerPopTypeIds()[0],
                     productionType.workerPopTypeRatios()[0],
@@ -1105,7 +1101,7 @@ public class WorldDaoImpl implements WorldDao {
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
                                 building.set(new Building(regionInstanceId, buildingTypeId, provinceData.ownerId(), size));
                                 if(buildingType.has(EconomyBuildingType.class)) {
-                                    building.set(new EconomyBuilding(0f, 0f, 0f, 0, 0, 0f, 0f, new float[MAX_GOODS]));
+                                    building.set(new EconomyBuilding(0, 0f, 0f, 0f, 0, 0, 0f, 0f, new float[MAX_GOODS]));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {
                                     building.set(new SpecialBuilding());
                                 }

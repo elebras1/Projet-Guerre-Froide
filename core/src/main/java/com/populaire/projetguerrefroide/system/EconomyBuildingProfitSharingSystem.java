@@ -5,10 +5,14 @@ import com.github.elebras1.flecs.Field;
 import com.github.elebras1.flecs.Iter;
 import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class EconomyBuildingProfitSharingSystem {
 
-    public EconomyBuildingProfitSharingSystem(World ecsWorld, long phaseId) {
+    private final EcsConstants ecsConstants;
+
+    public EconomyBuildingProfitSharingSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("EconomyBuildingProfitSharingSystem")
             .kind(phaseId)
             .with(Building.class)
@@ -57,11 +61,11 @@ public class EconomyBuildingProfitSharingSystem {
                 continue;
             }
 
-            float capitalistShareRatio = countryEffectPolicy.capitalistProfitShare();
-            float workerShareRatio = countryEffectPolicy.workerProfitShare();
-            float stateShareRatio = countryEffectPolicy.stateProfitShare();
+            float capitalistShareRatio = countryEffectPolicy.capitalistProfitShareRate();
+            float workerShareRatio = countryEffectPolicy.workerProfitShareRate();
+            float stateShareRatio = countryEffectPolicy.stateProfitShareRate();
 
-            if(capitalistShareRatio <= 0f) {
+            if(economyBuilding.ownerTagId() == this.ecsConstants.countryTag()) {
                 float totalShareStateRatio = stateShareRatio + workerShareRatio;
                 if (totalShareStateRatio > 1f) {
                     float scalingFactor = 1f / totalShareStateRatio;
