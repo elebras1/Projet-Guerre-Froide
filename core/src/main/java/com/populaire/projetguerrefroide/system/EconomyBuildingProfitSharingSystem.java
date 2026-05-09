@@ -90,8 +90,6 @@ public class EconomyBuildingProfitSharingSystem {
 
             regionIncome.profitShareByPopType(primaryWorkerPopTypeIndex, regionIncome.profitShareByPopType(primaryWorkerPopTypeIndex) + primaryWorkerShare);
             regionIncome.profitShareByPopType(secondaryWorkerPopTypeIndex, regionIncome.profitShareByPopType(secondaryWorkerPopTypeIndex) + secondaryWorkerShare);
-            regionIncome.workersByPopType(primaryWorkerPopTypeIndex, regionIncome.workersByPopType(primaryWorkerPopTypeIndex) + economyBuilding.primaryWorkerAmount());
-            regionIncome.workersByPopType(secondaryWorkerPopTypeIndex, regionIncome.workersByPopType(secondaryWorkerPopTypeIndex) + economyBuilding.secondaryWorkerAmount());
         }
 
     }

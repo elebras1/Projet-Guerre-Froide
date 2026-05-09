@@ -6,10 +6,10 @@ import com.github.elebras1.flecs.Iter;
 import com.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
-public class RGOHireInitializationSystem {
+public class RGOEmploymentSystem {
 
-    public RGOHireInitializationSystem(World ecsWorld, long phaseId) {
-        ecsWorld.system("RGOHireInitializationSystem")
+    public RGOEmploymentSystem(World ecsWorld, long phaseId) {
+        ecsWorld.system("RGOEmploymentSystem")
             .kind(phaseId)
             .with(ResourceGathering.class)
             .with(Demographics.class)
@@ -17,23 +17,28 @@ public class RGOHireInitializationSystem {
     }
 
     private void hire(Iter iter) {
+        long rgoTypeId = 0;
+        ResourceGatheringTypeView rgoTypeData = null;
+
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 0);
         Field<Demographics> demographicsField = iter.field(Demographics.class, 1);
-
         for(int i = 0; i < iter.count(); i++) {
             ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
             DemographicsView demographics = demographicsField.getMutView(i);
 
-            EntityView resourceGatheringType = iter.world().obtainEntityView(resourceGathering.typeId());
-            ResourceGatheringTypeView resourceGatheringTypeData = resourceGatheringType.getMutView(ResourceGatheringType.class);
+            if(resourceGathering.typeId() != rgoTypeId) {
+                rgoTypeId = resourceGathering.typeId();
+                EntityView rgoType = iter.world().obtainEntityView(rgoTypeId);
+                rgoTypeData = rgoType.getMutView(ResourceGatheringType.class);
+            }
 
-            int maxCapacity = resourceGathering.size() * resourceGatheringTypeData.workforce();
+            int maxCapacity = resourceGathering.size() * rgoTypeData.workforce();
 
-            int targetWorkers = (int) (maxCapacity * resourceGatheringTypeData.workerPopTypeRatio());
-            int targetSlaves = (int) (maxCapacity * resourceGatheringTypeData.slavePopTypeRatio());
+            int targetWorkers = (int) (maxCapacity * rgoTypeData.workerPopTypeRatio());
+            int targetSlaves = (int) (maxCapacity * rgoTypeData.slavePopTypeRatio());
 
-            int workerIndex = resourceGatheringTypeData.workerPopTypeIndex();
-            int slaveIndex = resourceGatheringTypeData.slavePopTypeIndex();
+            int workerIndex = rgoTypeData.workerPopTypeIndex();
+            int slaveIndex = rgoTypeData.slavePopTypeIndex();
 
             int workerAvailable = demographics.totalByPopType(workerIndex);
             int slaveAvailable = demographics.totalByPopType(slaveIndex);
