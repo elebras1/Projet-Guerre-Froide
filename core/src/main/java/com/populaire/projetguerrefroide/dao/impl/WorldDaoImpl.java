@@ -1101,7 +1101,7 @@ public class WorldDaoImpl implements WorldDao {
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
                                 building.set(new Building(regionInstanceId, buildingTypeId, provinceData.ownerId(), size));
                                 if(buildingType.has(EconomyBuildingType.class)) {
-                                    building.set(new EconomyBuilding(0, 0f, 0f, 0f, 0, 0, 0f, 0f, new float[MAX_GOODS]));
+                                    building.set(new EconomyBuilding(0, 0f, 1f, 0f, 0, 0, 0f, 0f, new float[MAX_GOODS]));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {
                                     building.set(new SpecialBuilding());
                                 }

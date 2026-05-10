@@ -31,6 +31,7 @@ public class EconomyService {
     private final RGOSpreadProductionSystem rgoSpreadProductionSystem;
     private final EconomyBuildingProductionSystem economyBuildingProductionSystem;
     private final EconomyBuildingSpreadProductionSystem economyBuildingSpreadProductionSystem;
+    private final EconomyBuildingScaleSystem economyBuildingScaleSystem;
     private final CountryProductionSpreadSystem countryProductionSpreadSystem;
     private final CountryMarketResolveSystem countryMarketResolveSystem;
     private final CountryMarketSpreadSystem countryMarketSpreadSystem;
@@ -109,6 +110,7 @@ public class EconomyService {
         this.stockpileDemandSystem = new StockpileDemandSystem(ecsWorld, phaseConsumption);
         this.rgoProduceSystem = new RGOProductionSystem(ecsWorld, phaseProduction);
         this.economyBuildingProductionSystem = new EconomyBuildingProductionSystem(ecsWorld, phaseProduction);
+        this.economyBuildingScaleSystem = new EconomyBuildingScaleSystem(ecsWorld, phaseProduction);
         this.rgoSpreadProductionSystem = new RGOSpreadProductionSystem(ecsWorld, phaseToMarket);
         this.economyBuildingSpreadProductionSystem = new EconomyBuildingSpreadProductionSystem(ecsWorld, phaseToMarket);
         this.countryProductionSpreadSystem = new CountryProductionSpreadSystem(ecsWorld, phaseToMarket);

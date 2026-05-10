@@ -16,7 +16,7 @@ public class EconomyBuildingEmploymentSystem {
             .kind(phaseId)
             .with(EconomyBuilding.class)
             .with(Building.class)
-            .orderBy(EconomyBuilding.class, (EconomyBuildingView buildingA, EconomyBuildingView buildingB) -> Float.compare(buildingA.profit(), buildingB.profit()))
+            .orderBy(EconomyBuilding.class, (EconomyBuildingView buildingA, EconomyBuildingView buildingB) -> -Float.compare(buildingA.profit(), buildingB.profit()))
             .iter(this::hire);
     }
 
@@ -57,8 +57,8 @@ public class EconomyBuildingEmploymentSystem {
             int currentPrimaryEmployed = regionInstanceIncome.workersByPopType(primaryWorkerPopTypeIndex);
             int currentSecondaryEmployed = regionInstanceIncome.workersByPopType(secondaryWorkerPopTypeIndex);
 
-            int primaryPopTypeWorkerTarget = (int) (economyBuildingType.workforce() * building.size() * economyBuildingType.primaryWorkerPopTypeRatio());
-            int secondaryPopTypeWorkerTarget = (int) (economyBuildingType.workforce() * building.size() * economyBuildingType.secondaryWorkerPopTypeRatio());
+            int primaryPopTypeWorkerTarget = (int) (economyBuildingType.workforce() * building.size() * economyBuildingType.primaryWorkerPopTypeRatio() * economyBuilding.scale());
+            int secondaryPopTypeWorkerTarget = (int) (economyBuildingType.workforce() * building.size() * economyBuildingType.secondaryWorkerPopTypeRatio() * economyBuilding.scale());
 
             int primaryAvailable = Math.max(0, demographics.totalByPopType(primaryWorkerPopTypeIndex) - currentPrimaryEmployed);
             int secondaryAvailable = Math.max(0, demographics.totalByPopType(secondaryWorkerPopTypeIndex) - currentSecondaryEmployed);
