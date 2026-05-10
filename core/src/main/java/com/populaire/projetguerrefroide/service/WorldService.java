@@ -19,18 +19,16 @@ public class WorldService {
     private final WorldDao worldDao;
     private final QueryRepository queryRepository;
     private final BuildingService buildingService;
-    private final EconomyService economyService;
     private final RegionService regionService;
     private final CountryService countryService;
     private final ProvinceService provinceService;
     private MapService mapService;
 
-    public WorldService(GameContext gameContext, QueryRepository queryRepository, BuildingService buildingService, EconomyService economyService, RegionService regionService, CountryService countryService, ProvinceService provinceService) {
+    public WorldService(GameContext gameContext, QueryRepository queryRepository, BuildingService buildingService, RegionService regionService, CountryService countryService, ProvinceService provinceService) {
         this.gameContext = gameContext;
         this.worldDao = new WorldDaoImpl();
         this.queryRepository = queryRepository;
         this.buildingService = buildingService;
-        this.economyService = economyService;
         this.regionService = regionService;
         this.countryService = countryService;
         this.provinceService = provinceService;

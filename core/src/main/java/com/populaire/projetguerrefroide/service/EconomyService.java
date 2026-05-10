@@ -20,6 +20,7 @@ public class EconomyService {
     private final EconomyBuildingEmploymentSystem economyBuildingEmploymentSystem;
     private final PopulationEmploymentSynchronizationSystem populationEmploymentSynchronizationSystem;
 
+    private final GlobalMarketResetSystem globalMarketResetSystem;
     private final CountryMarketResetSystem countryMarketResetSystem;
     private final NeedsCostsResetSystem needsCostsResetSystem;
     private final NeedsCostsCalculationSystem needsCostsCalculationSystem;
@@ -30,8 +31,10 @@ public class EconomyService {
     private final RGOSpreadProductionSystem rgoSpreadProductionSystem;
     private final EconomyBuildingProductionSystem economyBuildingProductionSystem;
     private final EconomyBuildingSpreadProductionSystem economyBuildingSpreadProductionSystem;
+    private final CountryProductionSpreadSystem countryProductionSpreadSystem;
     private final CountryMarketResolveSystem countryMarketResolveSystem;
     private final CountryMarketSpreadSystem countryMarketSpreadSystem;
+    private final GlobalMarketResolveSystem globalMarketResolveSystem;
     private final RegionIncomeResetSystem regionIncomeResetSystem;
     private final RGOProfitSharingSystem rgoProfitSharingSystem;
     private final EconomyBuildingProfitSharingSystem economyBuildingProfitSharingSystem;
@@ -96,6 +99,7 @@ public class EconomyService {
         this.economyBuildingEmploymentSystem = new EconomyBuildingEmploymentSystem(ecsWorld, phaseEmployment);
         this.populationEmploymentSynchronizationSystem = new PopulationEmploymentSynchronizationSystem(ecsWorld, phaseSync);
 
+        this.globalMarketResetSystem = new GlobalMarketResetSystem(ecsWorld, phaseReset);
         this.countryMarketResetSystem = new CountryMarketResetSystem(ecsWorld, phaseReset);
         this.needsCostsResetSystem = new NeedsCostsResetSystem(ecsWorld, phaseReset);
         this.regionIncomeResetSystem = new RegionIncomeResetSystem(ecsWorld, phaseReset);
@@ -107,8 +111,10 @@ public class EconomyService {
         this.economyBuildingProductionSystem = new EconomyBuildingProductionSystem(ecsWorld, phaseProduction);
         this.rgoSpreadProductionSystem = new RGOSpreadProductionSystem(ecsWorld, phaseToMarket);
         this.economyBuildingSpreadProductionSystem = new EconomyBuildingSpreadProductionSystem(ecsWorld, phaseToMarket);
+        this.countryProductionSpreadSystem = new CountryProductionSpreadSystem(ecsWorld, phaseToMarket);
         this.countryMarketResolveSystem = new CountryMarketResolveSystem(ecsWorld, phaseMarket);
         this.countryMarketSpreadSystem = new CountryMarketSpreadSystem(ecsWorld, phaseMarket);
+        this.globalMarketResolveSystem = new GlobalMarketResolveSystem(ecsWorld, phaseMarket);
         this.rgoProfitSharingSystem = new RGOProfitSharingSystem(ecsWorld, phaseIncome);
         this.economyBuildingProfitSharingSystem = new EconomyBuildingProfitSharingSystem(ecsWorld, gameContext.getEcsConstants(), phaseIncome);
         this.countryIncomeDistributionSystem = new CountryIncomeDistributionSystem(ecsWorld, phaseIncome);

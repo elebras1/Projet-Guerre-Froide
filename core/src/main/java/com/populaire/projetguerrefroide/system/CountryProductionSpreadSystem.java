@@ -9,10 +9,10 @@ import com.populaire.projetguerrefroide.component.CountryMarketView;
 import com.populaire.projetguerrefroide.component.GlobalMarket;
 import com.populaire.projetguerrefroide.component.GlobalMarketView;
 
-public class CountryMarketSpreadSystem {
+public class CountryProductionSpreadSystem {
 
-    public CountryMarketSpreadSystem(World ecsWorld, long phaseId) {
-        ecsWorld.system("CountryMarketSpreadSystem")
+    public CountryProductionSpreadSystem(World ecsWorld, long phaseId) {
+        ecsWorld.system("CountryProductionSpreadSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
             .iter(this::spread);
@@ -27,10 +27,8 @@ public class CountryMarketSpreadSystem {
             CountryMarketView countryMarket = countryMarketField.getMutView(i);
 
             for(int g = 0; g < countryMarket.goodAmountsPoolLength(); g++) {
-                globalMarketData.goodAmountsPool(g, globalMarketData.goodAmountsPool(g) + countryMarket.goodAmountsPool(g));
-                globalMarketData.goodDemandAmounts(g, globalMarketData.goodDemandAmounts(g) + countryMarket.goodDemandAmounts(g));
+                globalMarketData.goodProductionAmounts(g, globalMarketData.goodProductionAmounts(g) + countryMarket.goodAmountsPool(g));
             }
         }
     }
-
 }

@@ -47,7 +47,7 @@ public class ProjetGuerreFroide extends Game {
         RegionService regionService = new RegionService(this.gameContext, buildingService, queryRepository);
         CountryService countryService = new CountryService(this.gameContext, queryRepository, regionService);
         ProvinceService provinceService = new ProvinceService(this.gameContext, queryRepository, countryService, regionService);
-        WorldService worldService = new WorldService(this.gameContext, queryRepository, buildingService, economyService, regionService, countryService, provinceService);
+        WorldService worldService = new WorldService(this.gameContext, queryRepository, buildingService, regionService, countryService, provinceService);
         TimeService timeService = new TimeService(this.gameContext.getBookmark().date());
         this.registerCommands(commandBus, buildingService);
         this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService, worldService, timeService, economyService, commandBus);
