@@ -28,7 +28,7 @@ public class PopulationConsumptionSystem {
                 countryEffectPolicy = country.getMutView(CountryEffectPolicy.class);
             }
 
-            int popTypeIndex = (int) pop.typeId();
+            int popTypeIndex = pop.index();
 
             float lifeCost = countryMarket.lifeCostsByPopType(popTypeIndex);
             float everydayCost = countryMarket.everydayCostsByPopType(popTypeIndex);

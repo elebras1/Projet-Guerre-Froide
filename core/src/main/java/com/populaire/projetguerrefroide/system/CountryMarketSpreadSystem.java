@@ -27,7 +27,7 @@ public class CountryMarketSpreadSystem {
             CountryMarketView countryMarket = countryMarketField.getMutView(i);
 
             for(int g = 0; g < countryMarket.goodAmountsPoolLength(); g++) {
-                globalMarketData.goodAmountsPool(g, globalMarketData.goodAmountsPool(g) + countryMarket.goodAmountsPool(g));
+                globalMarketData.goodLeftoverAmounts(g, globalMarketData.goodLeftoverAmounts(g) + countryMarket.goodAmountsPool(g));
                 globalMarketData.goodDemandAmounts(g, globalMarketData.goodDemandAmounts(g) + countryMarket.goodDemandAmounts(g));
             }
         }

@@ -22,6 +22,7 @@ public class GlobalMarketResetSystem {
             for (int g = 0; g < globalMarket.goodProductionAmountsLength(); g++) {
                 globalMarket.goodProductionAmounts(g, 0f);
                 globalMarket.goodDemandAmounts(g, 0f);
+                globalMarket.goodLeftoverAmounts(g, 0f);
             }
         }
     }

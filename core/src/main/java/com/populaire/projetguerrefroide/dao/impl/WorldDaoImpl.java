@@ -74,7 +74,7 @@ public class WorldDaoImpl implements WorldDao {
         World ecsWorld = gameContext.getEcsWorld();
         EcsConstants ecsConstants = gameContext.getEcsConstants();
         long globalMarketId = ecsWorld.entity("global_market");
-        ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT]));
+        ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT]));
         this.readIdeologies(ecsWorld);
         this.readLaws(ecsWorld);
         this.readGovernments(ecsWorld);

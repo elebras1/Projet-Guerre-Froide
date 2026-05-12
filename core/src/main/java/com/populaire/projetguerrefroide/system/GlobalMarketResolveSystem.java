@@ -16,22 +16,35 @@ public class GlobalMarketResolveSystem {
     }
 
     public void resolve(Iter iter) {
-        Field<GlobalMarket> globalMarketField = iter.field(GlobalMarket.class, 0);
+        Field<GlobalMarket> marketField = iter.field(GlobalMarket.class, 0);
         for (int i = 0; i < iter.count(); i++) {
-            GlobalMarketView globalMarket = globalMarketField.getMutView(i);
-            for (int g = 0; g < globalMarket.goodAmountsPoolLength(); g++) {
-                float pool = globalMarket.goodAmountsPool(g);
-                float supply = globalMarket.goodProductionAmounts(g) + pool * 0.5f;
-                float demand = globalMarket.goodDemandAmounts(g);
-                float ratio = (demand + 0.001f) / (supply + 0.001f);
-                float priceAdjustment = ratio - 1.0f;
+            GlobalMarketView gm = marketField.getMutView(i);
 
-                float oldPrice = globalMarket.goodPrices(g);
-                float inertia = 0.05f;
-                float newPrice = oldPrice * (1.0f + inertia * priceAdjustment);
-                globalMarket.goodPrices(g, Math.max(0.001f, newPrice));
+            for (int g = 0; g < gm.goodAmountsPoolLength(); g++) {
+                float oldPool = gm.goodAmountsPool(g);
+                float decayedPool = oldPool * 0.5f;
 
-                globalMarket.goodAmountsPool(g, pool * 0.5f);
+                float leftover = gm.goodLeftoverAmounts(g);
+                float newPool = decayedPool + leftover;
+
+                float supply = gm.goodProductionAmounts(g) + newPool / 12.0f;
+                float demand = gm.goodDemandAmounts(g);
+
+                float oversupply = Math.clamp(((supply + 2.0f) / (demand + 2.0f) - 1.0f) * 10.0f, 0.0f, 10.0f);
+                float overdemand = Math.clamp(((demand + 2.0f) / (supply + 2.0f) - 1.0f) * 10.0f, 0.0f, 10.0f);
+
+                float speedModifier = overdemand - oversupply;
+                if (Math.abs(overdemand - oversupply) < 1.0f) {
+                    speedModifier = speedModifier * speedModifier * speedModifier;
+                }
+
+                float currentPrice = gm.goodPrices(g);
+                float priceSpeed = 0.00005f * Math.max(0.1f, currentPrice) * speedModifier;
+                float newPrice = currentPrice + priceSpeed;
+                newPrice = Math.max(0.001f, newPrice);
+
+                gm.goodPrices(g, newPrice);
+                gm.goodAmountsPool(g, newPool);
             }
         }
     }
