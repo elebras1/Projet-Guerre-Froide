@@ -35,5 +35,7 @@ public record CountryEffectPolicy(
     float religiousConversionSpeed,
     float secularism,
     float assimilationRate,
-    float migrationPush
-) {}
+    float migrationPush,
+    float maximumEconomyScaleFactor) {
+
+}

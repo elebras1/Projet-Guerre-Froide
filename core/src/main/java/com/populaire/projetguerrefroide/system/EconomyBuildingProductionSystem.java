@@ -59,7 +59,7 @@ public class EconomyBuildingProductionSystem {
             float scale = economyBuilding.scale();
             float effectiveScale = Math.min(scale * level, maxProductionScale);
             float baseOutput = economyBuildingTypeData.goodOutputAmount();
-            float throughput = 1f; // TODO : calculer par rapport aux modifier d'agregations des technologies (niveau pays), infrastructures ou batiments specifique (niveau region)
+            float throughput = 1f + Math.min(countryEffectPolicy.maximumEconomyScaleFactor(), level * 0.01f);
 
             float secondaryEffectMultiplier = 1.5f;
             float outputMultiplier = 1f + countryEffectPolicy.factoryOutputModifier() + secondaryRatio * secondaryEffectMultiplier;
