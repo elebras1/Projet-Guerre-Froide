@@ -1,0 +1,25 @@
+{
+  "build_cost": {
+    "ships": 30,
+    "weaponry": 10,
+    "machine_parts": 10
+  },
+  "attack": 12,
+  "defence": 14,
+  "priority": 12,
+  "default_organisation": 35,
+  "supply_consumption": 1,
+  "weighted_value": 8,
+  "build_time": 360,
+  "maximum_speed": 12,
+  "type": "naval",
+  "unit_type": "big_ship",
+  "max_strength": 100,
+  "supply_cost": {
+    "ammunition": 1,
+    "fuel": 4,
+    "clothes": 0.1,
+    "ships": 0.5,
+    "weaponry": 0.25
+  }
+}

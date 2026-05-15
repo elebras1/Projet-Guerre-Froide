@@ -1,0 +1,25 @@
+{
+  "build_cost": {
+    "aeroplanes": 50,
+    "weaponry": 30,
+    "fuel": 25,
+    "electronic_components": 40
+  },
+  "attack": 21,
+  "defence": 21,
+  "priority": 45,
+  "default_organisation": 20,
+  "supply_consumption": 1,
+  "weighted_value": 10,
+  "build_time": 150,
+  "maximum_speed": 7,
+  "type": "land",
+  "unit_type": "assault",
+  "max_strength": 3,
+  "supply_cost": {
+    "ammunition": 0.25,
+    "fuel": 0.4,
+    "machine_parts": 0.1,
+    "aeroplanes": 0.1
+  }
+}

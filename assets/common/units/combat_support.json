@@ -1,0 +1,26 @@
+{
+  "build_cost": {
+    "fuel": 15,
+    "weaponry": 20,
+    "electronic_components": 5
+  },
+  "attack": 2,
+  "defence": 6,
+  "priority": 15,
+  "default_organisation": 30,
+  "supply_consumption": 1,
+  "weighted_value": 3,
+  "build_time": 270,
+  "maximum_speed": 5,
+  "type": "land",
+  "unit_type": "special",
+  "max_strength": 3,
+  "supply_cost": {
+    "ammunition": 0.06,
+    "canned_food": 0.06,
+    "fuel": 0.05,
+    "clothes": 0.05,
+    "clothes_footwear": 0.05,
+    "automobiles": 0.05
+  }
+}

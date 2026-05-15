@@ -1,0 +1,24 @@
+{
+  "build_cost": {
+    "ships": 5,
+    "weaponry": 2.5,
+    "machine_parts": 2
+  },
+  "attack": 3,
+  "defence": 5,
+  "priority": 10,
+  "default_organisation": 20,
+  "supply_consumption": 1,
+  "weighted_value": 1,
+  "build_time": 180,
+  "maximum_speed": 15,
+  "type": "naval",
+  "unit_type": "light_ship",
+  "max_strength": 100,
+  "supply_cost": {
+    "ammunition": 0.4,
+    "fuel": 1.5,
+    "clothes": 0.05,
+    "ships": 0.2
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "build_cost": {
+    "fuel": 20,
+    "weaponry": 40,
+    "machine_parts": 5
+  },
+  "attack": 17,
+  "defence": 7,
+  "priority": 50,
+  "default_organisation": 25,
+  "supply_consumption": 1,
+  "weighted_value": 10,
+  "build_time": 120,
+  "maximum_speed": 5,
+  "type": "land",
+  "unit_type": "assault",
+  "max_strength": 3,
+  "supply_cost": {
+    "ammunition": 0.15,
+    "fuel": 0.4,
+    "machine_parts": 0.1,
+    "weaponry": 0.1
+  }
+}
