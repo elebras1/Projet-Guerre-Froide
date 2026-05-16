@@ -25,6 +25,9 @@ public class EcsConstants {
     public static final String SUSPENDED = "Suspended";
     public static final String CAPITALIST_TAG = "CapitalistTag";
     public static final String ARISTOCRAT_TAG = "AristocratTag";
+    public static final String SEA_FORCE_TAG = "SeaForceTypeTag";
+    public static final String LAND_FORCE_TAG = "LandForceTypeTag";
+    public static final String AIR_FORCE_TAG = "AirForceTypeTag";
 
     private final long seaProvinceTag;
     private final long regionTag;
@@ -47,6 +50,9 @@ public class EcsConstants {
     private final long suspended;
     private final long capitalistTag;
     private final long aristocratTag;
+    private final long seaForceTag;
+    private final long landForceTag;
+    private final long airForceTag;
 
     public EcsConstants(World ecsWorld) {
         this.seaProvinceTag = ecsWorld.entity(SEA_PROVINCE_TAG);
@@ -70,6 +76,9 @@ public class EcsConstants {
         this.suspended = ecsWorld.entity(SUSPENDED);
         this.capitalistTag = ecsWorld.entity(CAPITALIST_TAG);
         this.aristocratTag = ecsWorld.entity(ARISTOCRAT_TAG);
+        this.seaForceTag = ecsWorld.entity(SEA_FORCE_TAG);
+        this.landForceTag = ecsWorld.entity(LAND_FORCE_TAG);
+        this.airForceTag = ecsWorld.entity(AIR_FORCE_TAG);
     }
 
     public long seaProvinceTag() {
@@ -154,6 +163,18 @@ public class EcsConstants {
 
     public long aristocratTag() {
         return this.aristocratTag;
+    }
+
+    public long seaForceTag() {
+        return this.seaForceTag;
+    }
+
+    public long landForceTag() {
+        return this.landForceTag;
+    }
+
+    public long airForceTag() {
+        return this.airForceTag;
     }
 
     public long getAllianceRelation(String type, boolean isFirstCountry) {

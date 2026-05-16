@@ -15,7 +15,6 @@ import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.pojo.*;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.EcsConstants;
-import com.populaire.projetguerrefroide.util.ForceTypeUtils;
 import com.populaire.projetguerrefroide.util.StrataUtils;
 
 import java.io.BufferedReader;
@@ -59,6 +58,7 @@ public class WorldDaoImpl implements WorldDao {
     private final String relationJsonFile = this.diplomacyPath + "relation.json";
     private final String alliancesJsonFile = this.diplomacyPath + "alliances.json";
     private final String traitsJsonFile = this.commonPath + "traits.json";
+    private final String unitsJsonFile = this.commonPath + "units.json";
     private final JsonMapper mapper = new JsonMapper();
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private final long[] populationTypeIds = new long[POP_TYPE_COUNT];
@@ -86,6 +86,7 @@ public class WorldDaoImpl implements WorldDao {
         this.readBuildings(ecsWorld, ecsConstants, productionTypes);
         this.readResourceProductions(ecsWorld, productionTypes);
         this.readTraits(ecsWorld);
+        this.readUnits(ecsWorld);
         this.loadCountries(ecsWorld, ecsConstants);
         this.readTerrains(ecsWorld);
         IntLongMap provinces = new IntLongMap(15000, 1f);
@@ -780,11 +781,76 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
+    private void readUnits(World ecsWorld) {
+        Map<String, String> unitsPaths = new ObjectObjectMap<>(POP_TYPE_COUNT, 1f);
+        try {
+            JsonValue populationTypesValues = this.parseJsonFile(this.unitsJsonFile);
+            for(var populationTypeEntry : populationTypesValues.object()) {
+                unitsPaths.put(populationTypeEntry.getKey(), this.commonPath + populationTypeEntry.getValue().asString());
+            }
+
+            for (Map.Entry<String, String> unitPath : unitsPaths.entrySet()) {
+                this.readUnit(ecsWorld, unitPath.getKey(), unitPath.getValue());
+            }
+        } catch (Exception exception) {
+            throw new RuntimeException(exception);
+        }
+    }
+
+    private void readUnit(World ecsWorld, String unitName, String unitPath) {
+        try {
+            JsonValue unitValues = this.parseJsonFile(unitPath);
+            long unitId = ecsWorld.entity(unitName);
+            EntityView unit = ecsWorld.obtainEntityView(unitId);
+
+            long forceTypeId = ecsWorld.lookup(unitValues.get("type").asString());
+            long unitTypeId = ecsWorld.entity(unitValues.get("type").asLong());
+            int attack = (int) unitValues.get("attack").asLong();
+            int defence = (int) unitValues.get("defence").asLong();
+            int priority = (int) unitValues.get("priority").asLong();
+            int defaultOrganisation = (int) unitValues.get("default_organisation").asLong();
+            int supplyConsumption = (int) unitValues.get("supply_consumption").asLong();
+            int weightedValue = (int) unitValues.get("weighted_value").asLong();
+            int buildTime = (int) unitValues.get("build_time").asLong();
+            int maximum_speed = (int) unitValues.get("maximum_speed").asLong();
+            int maxStrength = (int) unitValues.get("max_strength").asLong();
+
+            long[] buildCostIds = new long[MAX_GOODS];
+            Arrays.fill(buildCostIds, -1);
+            float[] buildCostAmounts = new float[MAX_GOODS];
+            int buildCostIndex = 0;
+            for(var buildCostEntry : unitValues.get("build_cost").object()) {
+                long goodId = ecsWorld.lookup(buildCostEntry.getKey());
+                float amount = (float) buildCostEntry.getValue().asDouble();
+                buildCostIds[buildCostIndex] = goodId;
+                buildCostAmounts[buildCostIndex] = amount;
+                buildCostIndex++;
+            }
+            long[] supplyCostsIds = new long[MAX_GOODS];
+            Arrays.fill(supplyCostsIds, -1);
+            float[] supplyCostsAmounts = new float[MAX_GOODS];
+            int supplyCostIndex = 0;
+            for(var supplyCostEntry : unitValues.get("supply_cost").object()) {
+                long goodId = ecsWorld.lookup(supplyCostEntry.getKey());
+                float amount = (float) supplyCostEntry.getValue().asDouble();
+                supplyCostsIds[supplyCostIndex] = goodId;
+                supplyCostsAmounts[supplyCostIndex] = amount;
+                supplyCostIndex++;
+            }
+
+            unit.set(new Unit(forceTypeId, unitTypeId, attack, defence, priority, defaultOrganisation, supplyConsumption, weightedValue, buildTime, maximum_speed, maxStrength, buildCostIds, buildCostAmounts, supplyCostsIds, supplyCostsAmounts));
+
+        } catch (Exception exception) {
+            throw new RuntimeException(exception);
+        }
+
+    }
+
     private void loadCountries(World ecsWorld, EcsConstants ecsConstants) {
         this.readCountries(ecsWorld, ecsConstants);
         this.readRelation(ecsWorld);
         this.readAlliances(ecsWorld, ecsConstants);
-        this.readLeaders(ecsWorld);
+        this.readLeaders(ecsWorld, ecsConstants);
     }
 
     private void readCountries(World ecsWorld, EcsConstants ecsConstants) {
@@ -872,7 +938,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readLeaders(World ecsWorld) {
+    private void readLeaders(World ecsWorld, EcsConstants ecsConstants) {
         List<String> leadersPaths = new ObjectList<>();
         try {
             JsonValue leadersValues = this.parseJsonFile(this.leadersJsonFiles);
@@ -881,14 +947,14 @@ public class WorldDaoImpl implements WorldDao {
             }
 
             for (var leaderPath : leadersPaths) {
-                this.readLeader(ecsWorld, leaderPath);
+                this.readLeader(ecsWorld, ecsConstants, leaderPath);
             }
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
     }
 
-    private void readLeader(World ecsWorld, String filename) {
+    private void readLeader(World ecsWorld, EcsConstants ecsConstants, String filename) {
         try {
             JsonValue leaderValues = this.parseJsonFile(filename);
             String countryId = leaderValues.get("country").asString();
@@ -896,11 +962,11 @@ public class WorldDaoImpl implements WorldDao {
             for(var leaderValue : leaderValues.get("leaders").array()) {
                 String name = leaderValue.get("name").asString();
                 int skill = (byte) leaderValue.get("skill").asLong();
-                int forceType = ForceTypeUtils.getForceType(leaderValue.get("force_type").asString());
+                long forceTypeTagId = ecsWorld.lookup(leaderValue.get("force_type").asString());
                 long traitId = ecsWorld.lookup(leaderValue.get("trait").asString());
                 long leaderEntityId = ecsWorld.entity();
                 EntityView leaderEntity = ecsWorld.obtainEntityView(leaderEntityId);
-                leaderEntity.set(new Leader(name, skill, forceType, traitId, countryEntityId));
+                leaderEntity.set(new Leader(name, skill, forceTypeTagId, traitId, countryEntityId));
             }
         } catch (Exception exception) {
             throw new RuntimeException(exception);
