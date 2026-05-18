@@ -273,7 +273,7 @@ public class WorldDaoImpl implements WorldDao {
                 EntityView good = ecsWorld.obtainEntityView(goodId);
                 good.add(ecsConstants.advancedGoodTag());
                 good.set(new Color(color));
-                good.set(new Good(cost, -0));
+                good.set(new Good(cost, 1));
                 this.goodIds[goodIndex] = goodId;
                 goodIndex++;
             }
@@ -288,7 +288,7 @@ public class WorldDaoImpl implements WorldDao {
                 EntityView good = ecsWorld.obtainEntityView(goodId);
                 good.add(ecsConstants.militaryGoodTag());
                 good.set(new Color(color));
-                good.set(new Good(cost, 0));
+                good.set(new Good(cost, 1));
                 this.goodIds[goodIndex] = goodId;
                 goodIndex++;
             }

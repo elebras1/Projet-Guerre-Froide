@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.util;
 
 public class Constants {
-    public static final int GOOD_COUNT = 40;
+    public static final int GOOD_COUNT = 41;
     public static final int CULTURE_COUNT = 406;
     public static final int RELIGION_COUNT = 13;
     public static final int IDEOLOGY_COUNT = 9;
