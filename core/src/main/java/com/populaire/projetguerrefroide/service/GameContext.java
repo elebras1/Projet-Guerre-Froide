@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.utils.Disposable;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.ObjectObjectMap;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.pojo.Bookmark;

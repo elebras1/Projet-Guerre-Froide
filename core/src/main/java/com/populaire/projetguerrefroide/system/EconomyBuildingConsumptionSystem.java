@@ -1,6 +1,6 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.*;
+import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
 
 public class EconomyBuildingConsumptionSystem {

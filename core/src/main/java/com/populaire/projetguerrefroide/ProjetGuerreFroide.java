@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.command.handler.DemolishBuildingHandler;
 import com.populaire.projetguerrefroide.command.handler.ExpandBuildingHandler;

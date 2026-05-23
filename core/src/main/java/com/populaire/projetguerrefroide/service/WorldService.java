@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.github.elebras1.flecs.*;
+import io.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.component.*;

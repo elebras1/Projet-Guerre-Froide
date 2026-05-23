@@ -1,9 +1,9 @@
 package com.populaire.projetguerrefroide.service;
 
-import com.github.elebras1.flecs.Entity;
-import com.github.elebras1.flecs.Field;
-import com.github.elebras1.flecs.Query;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.Entity;
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Query;
+import io.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectIntOrderedMap;
 import com.github.tommyettinger.ds.ObjectList;

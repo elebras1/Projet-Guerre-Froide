@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.service;
 
-import com.github.elebras1.flecs.Pipeline;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.Pipeline;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.system.*;
 
 public class EconomyService {

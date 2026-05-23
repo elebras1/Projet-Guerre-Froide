@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.GL31;
 import com.badlogic.gdx.graphics.GL32;
 import com.badlogic.gdx.utils.GdxNativesLoader;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.service.ConfigurationService;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.adapter.graphics.WgMeshMulti;

@@ -1,7 +1,6 @@
 package com.populaire.projetguerrefroide.util;
 
-import com.github.elebras1.flecs.World;
-import com.github.elebras1.flecs.util.FlecsConstants;
+import io.github.elebras1.flecs.World;
 
 public class EcsConstants {
     private static final String SEA_PROVINCE_TAG = "SeaProvinceTag";
