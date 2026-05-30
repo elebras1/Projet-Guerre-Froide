@@ -1,0 +1,27 @@
+{
+  "build_cost": {
+    "aeroplanes": 6.5,
+    "weaponry": 15,
+    "fuel": 12.5,
+    "electronic_components": 10
+  },
+  "attack": 14,
+  "defence": 16,
+  "priority": 35,
+  "default_organisation": 20,
+  "supply_consumption": 1,
+  "weighted_value": 6,
+  "build_time": 150,
+  "maximum_speed": 6,
+  "type": "air",
+  "unit_type": "assault",
+  "max_strength": 3,
+  "supply_cost": {
+    "canned_food": 0.02,
+    "ammunition": 0.2,
+    "fuel": 0.5,
+    "clothes": 0.01,
+    "electronic_components": 0.1,
+    "aeroplanes": 0.1
+  }
+}

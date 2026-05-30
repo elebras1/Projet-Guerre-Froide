@@ -1,9 +1,9 @@
 package com.populaire.projetguerrefroide.service;
 
-import com.github.elebras1.flecs.Entity;
-import com.github.elebras1.flecs.Field;
-import com.github.elebras1.flecs.Query;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.Entity;
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Query;
+import io.github.elebras1.flecs.World;
 import com.github.tommyettinger.ds.ObjectIntMap;
 import com.github.tommyettinger.ds.ObjectIntOrderedMap;
 import com.github.tommyettinger.ds.ObjectList;
@@ -32,15 +32,14 @@ public class ProvinceService {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity province = ecsWorld.obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
-        GeoHierarchy provinceGeoHierarchy = province.get(GeoHierarchy.class);
-        Entity region = ecsWorld.obtainEntity(provinceGeoHierarchy.regionId());
+        Entity region = ecsWorld.obtainEntity(provinceData.regionId());
         String provinceNameId = province.getName();
         String regionNameId = region.getName();
         Entity terrain = ecsWorld.obtainEntity(provinceData.terrainId());
         String terrainImage = terrain.getName();
         String resourceImage = this.getResourceGoodName(province.id());
         int populationRegion = this.getPopulationAmount(provinceId);
-        int workersRegion = this.regionService.getWorkerAmount(provinceGeoHierarchy.regionId());
+        int workersRegion = this.regionService.getWorkerAmount(provinceData.regionId());
         int populationProvince = this.getPopulationAmount(province.id());
         int developmentIndexRegion = 0;
         int incomeRegion = 0;
@@ -73,28 +72,26 @@ public class ProvinceService {
     public int getPopulationAmount(long provinceId) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
-        return provinceData.amountChildren() + provinceData.amountAdults() + provinceData.amountSeniors();
+        return provinceData.childrenAmount() + provinceData.adultsAmount() + provinceData.seniorsAmount();
     }
 
     public ObjectIntMap<String> getCultures(long provinceId) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
-        int amountAdults = provinceData.amountAdults();
-        CultureDistribution cultureDistribution = province.get(CultureDistribution.class);
-        long[] provinceCultureIds = cultureDistribution.ids();
-        int[] provinceCultureValues = cultureDistribution.amounts();
-        return this.calculatePercentageDistributionFromProvinceData(provinceCultureIds, provinceCultureValues, amountAdults);
+        int amountAdults = provinceData.adultsAmount();
+        long[] cultureIds = provinceData.cultureIds();
+        int[] cultureAmounts = provinceData.cultureAmounts();
+        return this.calculatePercentageDistributionFromProvinceData(cultureIds, cultureAmounts, amountAdults);
     }
 
     public ObjectIntMap<String> getReligions(long provinceId) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
-        int amountAdults = provinceData.amountAdults();
-        ReligionDistribution religionDistribution = province.get(ReligionDistribution.class);
-        long[] provinceReligionIds = religionDistribution.ids();
-        int[] provinceReligionValues = religionDistribution.amounts();
+        int amountAdults = provinceData.adultsAmount();
+        long[] religionIds = provinceData.religionIds();
+        int[] religionAmounts = provinceData.religionAmounts();
 
-        return this.calculatePercentageDistributionFromProvinceData(provinceReligionIds, provinceReligionValues, amountAdults);
+        return this.calculatePercentageDistributionFromProvinceData(religionIds, religionAmounts, amountAdults);
     }
 
     public DevelopementBuildingLevelDto getDevelopementBuildingLevel(long provinceId) {
@@ -104,26 +101,24 @@ public class ProvinceService {
         MutableInt radarStationLevel = new MutableInt(0);
         MutableInt antiAircraftGunsLevel = new MutableInt(0);
 
-        try(Query query = ecsWorld.query().with(Building.class).build()) {
-            query.iter(iter -> {
-                Field<Building> buildingField = iter.field(Building.class, 0);
-                for(int i = 0; i < iter.count(); i++) {
-                    BuildingView buildingView = buildingField.getMutView(i);
-                    if(buildingView.parentId() != provinceId) {
-                        continue;
-                    }
-
-                    Entity buildingType = ecsWorld.obtainEntity(buildingView.typeId());
-
-                    switch (buildingType.getName()) {
-                        case "naval_base" -> navalBaseLevel.setValue(buildingView.size());
-                        case "air_base" -> airBaseLevel.setValue(buildingView.size());
-                        case "radar_station" -> radarStationLevel.setValue(buildingView.size());
-                        case "anti_air" -> antiAircraftGunsLevel.setValue(buildingView.size());
-                    }
+        this.queryRepository.getBuildings().iter(iter -> {
+            Field<Building> buildingField = iter.field(Building.class, 0);
+            for(int i = 0; i < iter.count(); i++) {
+                BuildingView buildingView = buildingField.getMutView(i);
+                if(buildingView.parentId() != provinceId) {
+                    continue;
                 }
-            });
-        }
+
+                Entity buildingType = ecsWorld.obtainEntity(buildingView.typeId());
+
+                switch (buildingType.getName()) {
+                    case "naval_base" -> navalBaseLevel.setValue(buildingView.size());
+                    case "air_base" -> airBaseLevel.setValue(buildingView.size());
+                    case "radar_station" -> radarStationLevel.setValue(buildingView.size());
+                    case "anti_air" -> antiAircraftGunsLevel.setValue(buildingView.size());
+                }
+            }
+        });
 
         return new DevelopementBuildingLevelDto((byte) navalBaseLevel.getValue(), (byte)  airBaseLevel.getValue(), (byte)  radarStationLevel.getValue(), (byte)  antiAircraftGunsLevel.getValue());
     }

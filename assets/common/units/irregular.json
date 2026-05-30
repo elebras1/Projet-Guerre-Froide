@@ -1,0 +1,19 @@
+{
+  "build_cost": {
+    "weaponry": 5
+  },
+  "attack": 1,
+  "defence": 2,
+  "priority": 5,
+  "default_organisation": 25,
+  "supply_consumption": 1,
+  "weighted_value": 1,
+  "build_time": 30,
+  "maximum_speed": 4,
+  "type": "land",
+  "unit_type": "infantry",
+  "max_strength": 3,
+  "supply_cost": {
+    "ammunition": 0.05
+  }
+}

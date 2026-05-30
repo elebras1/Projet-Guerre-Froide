@@ -1,8 +1,20 @@
 package com.populaire.projetguerrefroide.component;
 
-import com.github.elebras1.flecs.annotation.Component;
-import com.github.elebras1.flecs.annotation.FixedArray;
+import io.github.elebras1.flecs.annotation.Component;
+import io.github.elebras1.flecs.annotation.FixedArray;
+
+import static com.populaire.projetguerrefroide.util.Constants.MAX_GOODS;
 
 @Component
-public record EconomyBuilding(float production, float cashReserves, @FixedArray(length = 12) int[] workerEmployments) {
+public record EconomyBuilding(
+    long ownerTagId,
+    float production,
+    float scale,
+    float profit,
+    int primaryWorkerAmount,
+    int secondaryWorkerAmount,
+    float primaryWorkerMinWage,
+    float secondaryWorkerMinWage,
+    @FixedArray(length = MAX_GOODS) float[] goodInputDemandAmounts) {
+
 }

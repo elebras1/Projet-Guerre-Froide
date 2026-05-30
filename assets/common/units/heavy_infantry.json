@@ -1,0 +1,24 @@
+{
+  "build_cost": {
+    "weaponry": 4,
+    "automobiles": 3
+  },
+  "attack": 5,
+  "defence": 6,
+  "priority": 18,
+  "default_organisation": 40,
+  "supply_consumption": 1,
+  "weighted_value": 9,
+  "build_time": 120,
+  "maximum_speed": 4,
+  "type": "land",
+  "unit_type": "infantry",
+  "max_strength": 3,
+  "supply_cost": {
+    "canned_food": 0.07,
+    "ammunition": 0.1,
+    "fuel": 0.015,
+    "clothes": 0.05,
+    "automobiles": 0.075
+  }
+}

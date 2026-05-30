@@ -1,19 +1,20 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.*;
-import com.github.elebras1.flecs.util.FlecsConstants;
+import io.github.elebras1.flecs.*;
+import io.github.elebras1.flecs.util.FlecsConstants;
 import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.command.request.BuildingLevelUpCommand;
 import com.populaire.projetguerrefroide.component.*;
 
-public class ExpandBuildingSystem {
-    private final World ecsWorld;
+public class ExpansionBuildingSystem {
     private final CommandBus commandBus;
 
-    public ExpandBuildingSystem(World ecsWorld, CommandBus commandBus) {
-        this.ecsWorld = ecsWorld;
+    public ExpansionBuildingSystem(World ecsWorld, CommandBus commandBus) {
         this.commandBus = commandBus;
-        ecsWorld.system("ExpandBuildingSystem").kind(FlecsConstants.EcsOnUpdate).with(ExpansionBuilding.class).iter(this::expand);
+        ecsWorld.system("ExpansionBuildingSystem")
+            .kind(FlecsConstants.EcsOnUpdate)
+            .with(ExpansionBuilding.class)
+            .iter(this::expand);
     }
 
     private void expand(Iter iter) {
@@ -21,9 +22,9 @@ public class ExpandBuildingSystem {
         for(int i = 0; i < iter.count(); i++) {
             ExpansionBuildingView expansionBuildingDataView = expansionBuildingField.getMutView(i);
             if(expansionBuildingDataView.timeLeft() <= 0) {
-                EntityView buildingView = this.ecsWorld.obtainEntityView(expansionBuildingDataView.buildingId());
+                EntityView buildingView = iter.world().obtainEntityView(expansionBuildingDataView.buildingId());
                 BuildingView buildingViewData = buildingView.getMutView(Building.class);
-                EntityView buildingTypeView = this.ecsWorld.obtainEntityView(buildingViewData.typeId());
+                EntityView buildingTypeView = iter.world().obtainEntityView(buildingViewData.typeId());
                 int newSize = buildingViewData.size() + 1;
                 buildingViewData.size(newSize);
                 this.commandBus.dispatch(new BuildingLevelUpCommand(expansionBuildingDataView.buildingId()));
@@ -41,7 +42,7 @@ public class ExpandBuildingSystem {
                         expansionBuildingDataView.timeLeft(specialBuildingTypeViewData.time());
                     }
                 } else {
-                    this.ecsWorld.obtainEntityView(iter.entity(i)).destruct();
+                    iter.world().obtainEntityView(iter.entity(i)).destruct();
                 }
             } else {
                 expansionBuildingDataView.timeLeft(expansionBuildingDataView.timeLeft() - 1);

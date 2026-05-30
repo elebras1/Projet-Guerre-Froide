@@ -1,0 +1,26 @@
+{
+  "build_cost": {
+    "weaponry": 30,
+    "fuel": 5,
+    "aeroplanes": 2
+  },
+  "attack": 12,
+  "defence": 8,
+  "priority": 40,
+  "default_organisation": 35,
+  "supply_consumption": 1,
+  "weighted_value": 7,
+  "build_time": 200,
+  "maximum_speed": 6,
+  "type": "land",
+  "unit_type": "assault",
+  "max_strength": 3,
+  "supply_cost": {
+    "canned_food": 0.06,
+    "ammunition": 0.15,
+    "fuel": 0.1,
+    "clothes": 0.1,
+    "automobiles": 0.075,
+    "weaponry": 0.05
+  }
+}

@@ -124,6 +124,82 @@
       "max_level": 99,
       "time": 120
     },
+    "canned_fish_factory": {
+      "base_type": "type_economy",
+      "artisans_type": "type_economy_artisan",
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
+      "input_goods": {
+        "fish": 1,
+        "grain": 1,
+        "steel": 1
+      },
+      "output_goods": {
+        "canned_food": 7
+      },
+      "max_level": 99,
+      "time": 130
+    },
+    "canned_meat_factory": {
+      "base_type": "type_economy",
+      "artisans_type": "type_economy_artisan",
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
+      "input_goods": {
+        "meat": 1,
+        "grain": 1,
+        "steel": 1
+      },
+      "output_goods": {
+        "canned_food": 7
+      },
+      "max_level": 99,
+      "time": 130
+    },
+    "canned_fruits_factory": {
+      "base_type": "type_economy",
+      "artisans_type": "type_economy_artisan",
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
+      "input_goods": {
+        "fruit": 1,
+        "grain": 1,
+        "steel": 1
+      },
+      "output_goods": {
+        "canned_food": 7
+      },
+      "max_level": 99,
+      "time": 130
+    },
+    "canned_vegetables_factory": {
+      "base_type": "type_economy",
+      "artisans_type": "type_economy_artisan",
+      "goods_cost": {
+        "cement": 20,
+        "steel": 20,
+        "machine_parts": 7
+      },
+      "input_goods": {
+        "vegetables": 1,
+        "grain": 1,
+        "steel": 1
+      },
+      "output_goods": {
+        "canned_food": 7
+      },
+      "max_level": 99,
+      "time": 130
+    },
     "glass_factory": {
       "base_type": "type_economy",
       "artisans_type": "type_economy_artisan",

@@ -2,7 +2,7 @@ package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.World;
 import com.monstrous.gdx.webgpu.assets.WgAssetManager;
 import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.dao.ConfigurationDao;

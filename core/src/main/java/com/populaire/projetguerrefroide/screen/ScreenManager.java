@@ -4,10 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.utils.Disposable;
 import com.populaire.projetguerrefroide.command.CommandBus;
-import com.populaire.projetguerrefroide.service.ConfigurationService;
-import com.populaire.projetguerrefroide.service.GameContext;
-import com.populaire.projetguerrefroide.service.TimeService;
-import com.populaire.projetguerrefroide.service.WorldService;
+import com.populaire.projetguerrefroide.service.*;
 
 public class ScreenManager implements Disposable {
     private final Game game;
@@ -15,14 +12,16 @@ public class ScreenManager implements Disposable {
     private final ConfigurationService configurationService;
     private final WorldService worldService;
     private final TimeService timeService;
+    private final EconomyService economyService;
     private final CommandBus commandBus;
 
-    public ScreenManager(Game game, GameContext gameContext, ConfigurationService configurationService, WorldService worldService, TimeService timeService, CommandBus commandBus) {
+    public ScreenManager(Game game, GameContext gameContext, ConfigurationService configurationService, WorldService worldService, TimeService timeService, EconomyService economyService, CommandBus commandBus) {
         this.game = game;
         this.gameContext = gameContext;
         this.configurationService = configurationService;
         this.worldService = worldService;
         this.timeService = timeService;
+        this.economyService = economyService;
         this.commandBus = commandBus;
     }
 
@@ -39,7 +38,7 @@ public class ScreenManager implements Disposable {
     }
 
     public void showGameScreen() {
-        this.showScreen(new GameScreen(this, this.gameContext, this.worldService, this.timeService, this.configurationService, this.commandBus));
+        this.showScreen(new GameScreen(this, this.gameContext, this.worldService, this.timeService, this.configurationService, this.economyService, this.commandBus));
     }
 
     public void showScreen(Screen newScreen) {

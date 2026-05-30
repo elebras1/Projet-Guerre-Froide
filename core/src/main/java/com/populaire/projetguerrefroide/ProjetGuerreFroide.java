@@ -3,7 +3,7 @@ package com.populaire.projetguerrefroide;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.command.handler.DemolishBuildingHandler;
 import com.populaire.projetguerrefroide.command.handler.ExpandBuildingHandler;
@@ -18,13 +18,12 @@ import com.populaire.projetguerrefroide.configuration.Settings;
 import com.populaire.projetguerrefroide.repository.QueryRepository;
 import com.populaire.projetguerrefroide.screen.ScreenManager;
 import com.populaire.projetguerrefroide.service.*;
-import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
+import com.populaire.projetguerrefroide.system.*;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class ProjetGuerreFroide extends Game {
     public static final int WORLD_WIDTH = 5616;
     public static final int WORLD_HEIGHT = 2160;
-    public static final int GOOD_COUNT = 40;
     private final ConfigurationService configurationService;
     private ScreenManager screenManager;
     private GameContext gameContext;
@@ -41,30 +40,31 @@ public class ProjetGuerreFroide extends Game {
         this.registerComponents();
         this.gameContext = this.configurationService.getGameContext(this.ecsWorld);
         CommandBus commandBus = new CommandBus();
-        ExpandBuildingSystem expandBuildingSystem = new ExpandBuildingSystem(this.ecsWorld, commandBus);
+        ExpansionBuildingSystem expandBuildingSystem = new ExpansionBuildingSystem(this.ecsWorld, commandBus);
         QueryRepository queryRepository = new QueryRepository(this.gameContext.getEcsWorld());
         BuildingService buildingService = new BuildingService(this.gameContext, expandBuildingSystem);
         EconomyService economyService = new EconomyService(this.gameContext);
         RegionService regionService = new RegionService(this.gameContext, buildingService, queryRepository);
         CountryService countryService = new CountryService(this.gameContext, queryRepository, regionService);
         ProvinceService provinceService = new ProvinceService(this.gameContext, queryRepository, countryService, regionService);
-        WorldService worldService = new WorldService(this.gameContext, queryRepository, buildingService, economyService, regionService, countryService, provinceService);
+        WorldService worldService = new WorldService(this.gameContext, queryRepository, buildingService, regionService, countryService, provinceService);
         TimeService timeService = new TimeService(this.gameContext.getBookmark().date());
         this.registerCommands(commandBus, buildingService);
-        this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService, worldService, timeService, commandBus);
+        this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService, worldService, timeService, economyService, commandBus);
         this.loadAssets(this.gameContext.getAssetManager());
         this.screenManager.showMainMenuScreen();
         this.ecsDebug(this.gameContext);
+
     }
 
     private void registerComponents() {
         this.ecsWorld.component(Modifiers.class);
+        this.ecsWorld.component(Overrides.class);
         this.ecsWorld.component(Minister.class);
         this.ecsWorld.component(Ideology.class);
         this.ecsWorld.component(Terrain.class);
         this.ecsWorld.component(ElectoralMechanism.class);
         this.ecsWorld.component(Leader.class);
-        this.ecsWorld.component(EnactmentDuration.class);
         this.ecsWorld.component(Color.class);
         this.ecsWorld.component(Position.class);
         this.ecsWorld.component(Border.class);
@@ -72,8 +72,8 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(Adjacencies.class);
         this.ecsWorld.component(Country.class);
         this.ecsWorld.component(Province.class);
-        this.ecsWorld.component(GeoHierarchy.class);
         this.ecsWorld.component(Law.class);
+        this.ecsWorld.component(LawGroup.class);
         this.ecsWorld.component(GovernmentPolicy.class);
         this.ecsWorld.component(PopulationType.class);
         this.ecsWorld.component(Good.class);
@@ -86,12 +86,18 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(DevelopmentBuilding.class);
         this.ecsWorld.component(ResourceGathering.class);
         this.ecsWorld.component(ExpansionBuilding.class);
-        this.ecsWorld.component(LocalMarket.class);
-        this.ecsWorld.component(LocalMarketState.class);
-        this.ecsWorld.component(EconomyHierarchy.class);
+        this.ecsWorld.component(RegionInstance.class);
         this.ecsWorld.component(Population.class);
-        this.ecsWorld.component(PopulationLocation.class);
         this.ecsWorld.component(ResourceGatheringType.class);
+        this.ecsWorld.component(Demographics.class);
+        this.ecsWorld.component(CountryDemographics.class);
+        this.ecsWorld.component(CountryMarket.class);
+        this.ecsWorld.component(GlobalPopulationType.class);
+        this.ecsWorld.component(GlobalGood.class);
+        this.ecsWorld.component(GlobalMarket.class);
+        this.ecsWorld.component(CountryEffectPolicy.class);
+        this.ecsWorld.component(RegionInstanceIncome.class);
+        this.ecsWorld.component(Unit.class);
     }
 
     public void registerCommands(CommandBus commandBus, BuildingService buildingService) {
@@ -118,7 +124,7 @@ public class ProjetGuerreFroide extends Game {
     @Override
     public void dispose() {
         this.ecsWorld.disableRest();
-        this.ecsWorld.close();
+        this.ecsWorld.destroy();
         this.screenManager.dispose();
         this.gameContext.dispose();
         super.dispose();

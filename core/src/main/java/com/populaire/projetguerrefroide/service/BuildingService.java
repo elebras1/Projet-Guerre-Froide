@@ -1,17 +1,18 @@
 package com.populaire.projetguerrefroide.service;
 
-import com.github.elebras1.flecs.Entity;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.Entity;
+import io.github.elebras1.flecs.EntityView;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
 import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;
-import com.populaire.projetguerrefroide.system.ExpandBuildingSystem;
+import com.populaire.projetguerrefroide.system.ExpansionBuildingSystem;
 
 public class BuildingService {
     private final GameContext gameContext;
-    private final ExpandBuildingSystem expandBuildingSystem;
+    private final ExpansionBuildingSystem expandBuildingSystem;
 
-    public BuildingService(GameContext gameContext, ExpandBuildingSystem expandBuildingSystem) {
+    public BuildingService(GameContext gameContext, ExpansionBuildingSystem expandBuildingSystem) {
         this.gameContext = gameContext;
         this.expandBuildingSystem = expandBuildingSystem;
     }
@@ -22,29 +23,26 @@ public class BuildingService {
 
     public BuildingSummaryDto buildSummary(long buildingId) {
         World ecsWorld = this.gameContext.getEcsWorld();
-        Entity building = ecsWorld.obtainEntity(buildingId);
-        Building buildingData = building.get(Building.class);
-        Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
-        EconomyBuildingType buildingTypeData = buildingType.get(EconomyBuildingType.class);
+        EntityView building = ecsWorld.obtainEntityView(buildingId);
+        BuildingView buildingData = building.getMutView(Building.class);
+        EntityView buildingType = ecsWorld.obtainEntityView(buildingData.typeId());
+        EconomyBuildingTypeView buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
         int levelsQueued = 0;
         long expansionBuildingId = ecsWorld.lookup("expand_" + buildingId);
         if (expansionBuildingId != 0) {
-            Entity expansionBuilding = ecsWorld.obtainEntity(expansionBuildingId);
-            ExpansionBuilding expansionData = expansionBuilding.get(ExpansionBuilding.class);
+            EntityView expansionBuilding = ecsWorld.obtainEntityView(expansionBuildingId);
+            ExpansionBuildingView expansionData = expansionBuilding.getMutView(ExpansionBuilding.class);
             levelsQueued = expansionData.levelsQueued();
         }
         boolean isSuspended = building.has(this.gameContext.getEcsConstants().suspended());
-        float productionValue = 0f;
-        if (building.has(EconomyBuilding.class)) {
-            EconomyBuilding economy = building.get(EconomyBuilding.class);
-            productionValue = economy.production();
-        }
-        return new BuildingSummaryDto(buildingId, buildingType.getName(), buildingData.size(), buildingTypeData.maxLevel(), productionValue, levelsQueued, isSuspended);
+        EconomyBuildingView economyBuilding = building.getMutView(EconomyBuilding.class);
+        return new BuildingSummaryDto(buildingId, buildingType.getName(), buildingData.size(), buildingTypeData.maxLevel(), economyBuilding.primaryWorkerAmount() + economyBuilding.secondaryWorkerAmount(), economyBuilding.production(), levelsQueued, isSuspended);
     }
 
     public BuildingDto buildDetails(long buildingId) {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity building = ecsWorld.obtainEntity(buildingId);
+        EconomyBuilding economyBuilding = building.get(EconomyBuilding.class);
         Building buildingData = building.get(Building.class);
         Entity parent = ecsWorld.obtainEntity(buildingData.parentId());
         Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
@@ -67,7 +65,7 @@ public class BuildingService {
         }
         Entity outputGoodEntity = ecsWorld.obtainEntity(buildingTypeData.goodOutputId());
         String outputGoodNameId = outputGoodEntity.getName();
-        int amountWorkers = 0;
+        int amountWorkers = economyBuilding.primaryWorkerAmount() + economyBuilding.secondaryWorkerAmount();
         int maxWorkers = buildingData.size() * buildingTypeData.workforce();
         return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostAmounts(), inputGoodNameIds, buildingTypeData.goodInputAmounts(), outputGoodNameId, buildingTypeData.goodOutputAmount(), amountWorkers, maxWorkers, building.has(this.gameContext.getEcsConstants().suspended()));
     }
@@ -82,6 +80,8 @@ public class BuildingService {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity building = ecsWorld.obtainEntity(buildingId);
         Building buildingData = building.get(Building.class);
+        Entity country = ecsWorld.obtainEntity(buildingData.countryId());
+        CountryEffectPolicy countryEffectPolicy = country.get(CountryEffectPolicy.class);
         Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
 
         int maxLevel = 0;
@@ -89,11 +89,11 @@ public class BuildingService {
 
         if (buildingType.has(EconomyBuildingType.class)) {
             EconomyBuildingType typeData = buildingType.get(EconomyBuildingType.class);
-            baseTime = typeData.time();
+            baseTime = (int) (typeData.time() * (1f - countryEffectPolicy.constructionSpeed()));
             maxLevel = typeData.maxLevel();
         } else if (buildingType.has(DevelopmentBuildingType.class)) {
             DevelopmentBuildingType typeData = buildingType.get(DevelopmentBuildingType.class);
-            baseTime = typeData.time();
+            baseTime = (int) (typeData.time() * (1f - countryEffectPolicy.constructionSpeed()));
             maxLevel = typeData.maxLevel();
         }
 

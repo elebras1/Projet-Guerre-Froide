@@ -1,0 +1,26 @@
+{
+  "build_cost": {
+    "ships": 10,
+    "weaponry": 5,
+    "optics": 5
+  },
+  "attack": 8,
+  "defence": 10,
+  "priority": 13,
+  "default_organisation": 25,
+  "supply_consumption": 1,
+  "weighted_value": 2,
+  "build_time": 180,
+  "maximum_speed": 13,
+  "type": "sea",
+  "unit_type": "light_ship",
+  "max_strength": 100,
+  "supply_cost": {
+    "ammunition": 0.75,
+    "fuel": 2.5,
+    "canned_food": 0.4,
+    "clothes": 0.05,
+    "footwear": 0.05,
+    "ships": 0.35
+  }
+}

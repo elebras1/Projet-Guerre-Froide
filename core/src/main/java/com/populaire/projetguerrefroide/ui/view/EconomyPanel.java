@@ -271,12 +271,12 @@ public class EconomyPanel extends Table {
 
     private Table createBuildingItem(BuildingSummaryDto building) {
         Table buildingTable = new ClickableTable();
-        buildingTable.setUserObject(building.buildingId());
-        buildingTable.setName("building_" + building.buildingId());
+        buildingTable.setUserObject(building.id());
+        buildingTable.setName("building_" + building.id());
         buildingTable.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                listener.onBuildingClicked(building.buildingId());
+                listener.onBuildingClicked(building.id());
             }
         });
 
@@ -284,7 +284,7 @@ public class EconomyPanel extends Table {
         Label.LabelStyle labelSmall = this.labelStylePool.get("jockey_14_tight");
 
         this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingTable);
-        this.widgetFactory.createImage(this.skin, "building_" + building.buildingNameId(), 10, 55, buildingTable);
+        this.widgetFactory.createImage(this.skin, "building_" + building.nameId(), 10, 55, buildingTable);
         Image suspendedImage = this.widgetFactory.createImage(38, 61, buildingTable);
         if(building.isSuspended()) {
             Drawable suspendedDrawable = this.skin.getDrawable("econmy_suspended_icon1");
@@ -292,10 +292,10 @@ public class EconomyPanel extends Table {
             suspendedImage.setSize(suspendedDrawable.getMinWidth(), suspendedDrawable.getMinHeight());
         }
 
-        this.widgetFactory.createLabelCentered(ValueFormatter.format(building.productionValue()), labelStyle, buildingTable.getWidth() / 2, 21, buildingTable);
+        this.widgetFactory.createLabelCentered(ValueFormatter.format(building.productionAmount()), labelStyle, buildingTable.getWidth() / 2, 21, buildingTable);
 
         String levelsQueuedText = building.levelsQueued() > 0 ? " (" + building.levelsQueued() + ")" : "";
-        String levelText = building.buildingValue() + levelsQueuedText + "/" + building.maxLevel();
+        String levelText = building.size() + levelsQueuedText + "/" + building.maxLevel();
         this.widgetFactory.createLabelCentered(levelText, labelSmall, buildingTable.getWidth() / 2, 2, buildingTable);
 
         return buildingTable;
@@ -437,16 +437,16 @@ public class EconomyPanel extends Table {
         Label.LabelStyle labelStyle = this.labelStylePool.get("jockey_16_glow_blue");
         Label.LabelStyle labelSmall = this.labelStylePool.get("jockey_14_tight");
         this.widgetFactory.applyBackgroundToTable(this.skin, "building_box_template", buildingCell);
-        this.widgetFactory.createImage(this.skin, "building_" + buildingSummaryDto.buildingNameId(), 10, 55, buildingCell);
+        this.widgetFactory.createImage(this.skin, "building_" + buildingSummaryDto.nameId(), 10, 55, buildingCell);
         Image suspendedImage = this.widgetFactory.createImage(38, 61, buildingCell);
         if (buildingSummaryDto.isSuspended()) {
             Drawable suspendedDrawable = this.skin.getDrawable("econmy_suspended_icon1");
             suspendedImage.setDrawable(suspendedDrawable);
             suspendedImage.setSize(suspendedDrawable.getMinWidth(), suspendedDrawable.getMinHeight());
         }
-        this.widgetFactory.createLabelCentered(ValueFormatter.format(buildingSummaryDto.productionValue()), labelStyle, buildingCell.getWidth() / 2, 21, buildingCell);
+        this.widgetFactory.createLabelCentered(ValueFormatter.format(buildingSummaryDto.productionAmount()), labelStyle, buildingCell.getWidth() / 2, 21, buildingCell);
         String levelsQueuedText = buildingSummaryDto.levelsQueued() > 0 ? " (" + buildingSummaryDto.levelsQueued() + ")" : "";
-        String levelText = buildingSummaryDto.buildingValue() + levelsQueuedText + "/" + buildingSummaryDto.maxLevel();
+        String levelText = buildingSummaryDto.size() + levelsQueuedText + "/" + buildingSummaryDto.maxLevel();
         this.widgetFactory.createLabelCentered(levelText, labelSmall, buildingCell.getWidth() / 2, 2, buildingCell);
     }
 }

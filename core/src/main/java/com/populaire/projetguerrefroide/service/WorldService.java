@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.service;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.github.elebras1.flecs.*;
+import io.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.component.*;
@@ -19,18 +19,16 @@ public class WorldService {
     private final WorldDao worldDao;
     private final QueryRepository queryRepository;
     private final BuildingService buildingService;
-    private final EconomyService economyService;
     private final RegionService regionService;
     private final CountryService countryService;
     private final ProvinceService provinceService;
     private MapService mapService;
 
-    public WorldService(GameContext gameContext, QueryRepository queryRepository, BuildingService buildingService, EconomyService economyService, RegionService regionService, CountryService countryService, ProvinceService provinceService) {
+    public WorldService(GameContext gameContext, QueryRepository queryRepository, BuildingService buildingService, RegionService regionService, CountryService countryService, ProvinceService provinceService) {
         this.gameContext = gameContext;
         this.worldDao = new WorldDaoImpl();
         this.queryRepository = queryRepository;
         this.buildingService = buildingService;
-        this.economyService = economyService;
         this.regionService = regionService;
         this.countryService = countryService;
         this.provinceService = provinceService;
@@ -186,9 +184,9 @@ public class WorldService {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity building = ecsWorld.obtainEntity(buildingId);
         Building buildingData = building.get(Building.class);
-        Entity localMarket = ecsWorld.obtainEntity(buildingData.parentId());
-        LocalMarket localMarketData = localMarket.get(LocalMarket.class);
-        return localMarketData.regionId();
+        Entity regionInstance = ecsWorld.obtainEntity(buildingData.parentId());
+        RegionInstance regionInstanceData = regionInstance.get(RegionInstance.class);
+        return regionInstanceData.regionId();
     }
 
     public String getColonizerId(long countryId) {
