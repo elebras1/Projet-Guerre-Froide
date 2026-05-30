@@ -261,7 +261,7 @@ public class FlagImageRenderer implements Disposable {
         pass.setPipeline(this.pipeline);
         this.binder.bindGroup(pass, 0);
         int indicesToRender = this.numberFlags * INDICES_PER_FLAG;
-        this.mesh.render(pass, GL20.GL_TRIANGLES, 0, indicesToRender, 1, 0);
+        this.mesh.render(pass, 0, indicesToRender, 1, 0);
         pass.end();
     }
 

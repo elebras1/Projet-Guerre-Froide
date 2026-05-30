@@ -30,7 +30,7 @@ public class Settings implements Cloneable{
     }
 
     public void applyGraphicsSettings() {
-        //Gdx.graphics.setVSync(this.vsync);
+        Gdx.graphics.setVSync(this.vsync);
         Gdx.graphics.setForegroundFPS(this.capFrameRate);
         if(this.fullscreen) {
             Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());

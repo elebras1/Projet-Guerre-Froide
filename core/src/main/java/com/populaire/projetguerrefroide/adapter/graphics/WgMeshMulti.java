@@ -46,9 +46,9 @@ public class WgMeshMulti extends WgMesh {
     }
 
     @Override
-    public void render(WebGPURenderPass renderPass, int primitiveType, int offset, int size, int numInstances, int firstInstance) {
+    public void render(WebGPURenderPass renderPass, int offset, int size, int numInstances, int firstInstance) {
         if (this.commandCount == 0 || this.commands == null) {
-            super.render(renderPass, primitiveType, offset, size, numInstances, firstInstance);
+            super.render(renderPass, offset, size, numInstances, firstInstance);
             return;
         }
 
