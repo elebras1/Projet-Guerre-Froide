@@ -86,26 +86,26 @@ public class Minimap extends Table {
         ButtonGroup<Button> buttonGroup = new ButtonGroup<>();
         buttonGroup.setMaxCheckCount(1);
         buttonGroup.setMinCheckCount(1);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_political_tgl", 10, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_terrain_tgl", 32, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_terrain_2_tgl", 54, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_economical_tgl", 76, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_strength_tgl", 98, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_diplomatic_tgl", 120, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_intel_tgl", 142, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_region_tgl", 164, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_infra_tgl", 186, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_resources_tgl", 208, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_revolt_tgl", 230, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_supply_tgl", 252, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_weather_tgl", 274, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_theatre_tgl", 296, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_air_tgl", 318, y);
-        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_naval_tgl", 340, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_political", 10, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_terrain", 32, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_terrain_2", 54, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_economical", 76, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_strength", 98, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_diplomatic", 120, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_intel", 142, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_region", 164, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_infra", 186, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_resources", 208, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_revolt", 230, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_supply", 252, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_weather", 274, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_theatre", 296, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_air", 318, y);
+        this.setButtonMapMode(minimap, buttonGroup, skin, skinUi, labelStylePool, localisation, listener, "mapmode_naval", 340, y);
     }
 
     private void setButtonMapMode(Table minimap, ButtonGroup<Button> buttonGroup, Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation,  MinimapListener listener, String mapMode, int x, int y) {
-        Button button = new Button(skin, mapMode);
+        Button button = new Button(skin, mapMode + "_tgl");
         button.setPosition(x, y);
         button.setChecked(this.currentMapMode.equals(mapMode));
         buttonGroup.add(button);
@@ -123,7 +123,7 @@ public class Minimap extends Table {
         button.addListener(new InputListener() {
             @Override
             public boolean mouseMoved(InputEvent event, float x, float y) {
-                listener.updateHoverTooltip(localisation.get(mapMode.replace("_tgl", "").toUpperCase()));
+                listener.updateHoverTooltip(localisation.get(mapMode.toUpperCase()));
                 return true;
             }
 
