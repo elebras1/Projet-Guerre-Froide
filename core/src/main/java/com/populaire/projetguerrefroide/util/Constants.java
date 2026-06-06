@@ -55,4 +55,6 @@ public class Constants {
     public static final String SECULARISM = "secularism";
     public static final String ASSIMILATION_RATE = "assimilation_rate";
     public static final String MIGRATION_PUSH = "migration_push";
+
+    public static float NEEDS_SCALING_FACTOR = 100000f;
 }

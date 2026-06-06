@@ -7,6 +7,8 @@ import com.populaire.projetguerrefroide.component.*;
 
 public class EconomyBuildingScaleSystem {
 
+    private static final float PRODUCTION_SCALE_DELTA = 0.001f;
+
     public EconomyBuildingScaleSystem(World ecsWorld, long phaseId) {
         ecsWorld.system("EconomyBuildingScaleSystem")
             .kind(phaseId)
@@ -22,9 +24,9 @@ public class EconomyBuildingScaleSystem {
 
             float newScale;
             if (profit > 0) {
-                newScale = Math.min(1.0f, economyBuilding.scale() + 0.05f);
+                newScale = Math.min(1.0f, economyBuilding.scale() + PRODUCTION_SCALE_DELTA);
             } else {
-                newScale = Math.max(0.0f, economyBuilding.scale() - 0.05f);
+                newScale = Math.max(0.0f, economyBuilding.scale() - PRODUCTION_SCALE_DELTA);
             }
             economyBuilding.scale(newScale);
         }
