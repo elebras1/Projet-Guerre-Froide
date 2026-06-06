@@ -1,0 +1,102 @@
+{
+  "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+    "map_zoom_in_btn": {
+      "up": "map_zoom_in_btn",
+      "down": "map_zoom_in_btn_down",
+      "over": "map_zoom_in_btn_over"
+    },
+    "map_zoom_out_btn": {
+      "up": "map_zoom_out_btn",
+      "down": "map_zoom_out_btn_down",
+      "over": "map_zoom_out_btn_over"
+    },
+    "minimap_strategic_tgl": {
+      "up": "minimap_strategic_tgl_off",
+      "checked": "minimap_strategic_tgl_on"
+    },
+    "mapmode_supply_tgl": {
+      "up": "mapmode_supply_tgl_off",
+      "checked": "mapmode_supply_tgl_on"
+    },
+    "mapmode_intel_tgl": {
+      "up": "mapmode_intel_tgl_off",
+      "checked": "mapmode_intel_tgl_on"
+    },
+    "mapmode_region_tgl": {
+      "up": "mapmode_region_tgl_off",
+      "checked": "mapmode_region_tgl_on"
+    },
+    "mapmode_strength_tgl": {
+      "up": "mapmode_strength_tgl_off",
+      "checked": "mapmode_strength_tgl_on"
+    },
+    "mapmode_political_tgl": {
+      "up": "mapmode_political_tgl_off",
+      "checked": "mapmode_political_tgl_on"
+    },
+    "mapmode_terrain_tgl": {
+      "up": "mapmode_terrain_tgl_off",
+      "checked": "mapmode_terrain_tgl_on"
+    },
+    "minimap_victory_tgl": {
+      "up": "minimap_victory_tgl_off",
+      "checked": "minimap_victory_tgl_on"
+    },
+    "mapmode_resources_tgl": {
+      "up": "mapmode_resources_tgl_off",
+      "checked": "mapmode_resources_tgl_on"
+    },
+    "mapmode_diplomatic_tgl": {
+      "up": "mapmode_diplomatic_tgl_off",
+      "checked": "mapmode_diplomatic_tgl_on"
+    },
+    "minimap_find_prov_tgl": {
+      "up": "minimap_find_prov_tgl_off",
+      "checked": "minimap_find_prov_tgl_on"
+    },
+    "minimap_mission_tgl": {
+      "up": "minimap_mission_tgl_off",
+      "checked": "minimap_mission_tgl_on"
+    },
+    "mapmode_theatre_tgl": {
+      "up": "mapmode_theatre_tgl_off",
+      "checked": "mapmode_theatre_tgl_on"
+    },
+    "mapmode_economical_tgl": {
+      "up": "mapmode_economical_tgl_off",
+      "checked": "mapmode_economical_tgl_on"
+    },
+    "mapmode_air_tgl": {
+      "up": "mapmode_air_tgl_off",
+      "checked": "mapmode_air_tgl_on"
+    },
+    "minimap_nuke_tgl": {
+      "up": "minimap_nuke_tgl_off",
+      "checked": "minimap_nuke_tgl_on"
+    },
+    "mapmode_weather_tgl": {
+      "up": "mapmode_weather_tgl_off",
+      "checked": "mapmode_weather_tgl_on"
+    },
+    "mapmode_infra_tgl": {
+      "up": "mapmode_infra_tgl_off",
+      "checked": "mapmode_infra_tgl_on"
+    },
+    "mapmode_naval_tgl": {
+      "up": "mapmode_naval_tgl_off",
+      "checked": "mapmode_naval_tgl_on"
+    },
+    "mapmode_revolt_tgl": {
+      "up": "mapmode_revolt_tgl_off",
+      "checked": "mapmode_revolt_tgl_on"
+    },
+    "mapmode_terrain_2_tgl": {
+      "up": "mapmode_terrain_2_tgl_off",
+      "checked": "mapmode_terrain_2_tgl_on"
+    },
+    "minimap_spy_tgl": {
+      "up": "minimap_spy_tgl_off",
+      "checked": "minimap_spy_tgl_on"
+    }
+  }
+}

@@ -9,9 +9,15 @@ buildscript {
     maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
   }
   dependencies {
-
-
+    classpath 'io.github.elebras1:gdx-skin-weaver:0.2.3'
   }
+}
+
+apply plugin: 'io.github.elebras1.gdx-skin-weaver'
+
+skinWeaver {
+  outputDir.set(layout.projectDirectory.dir("assets/generated-skins"))
+  excludedDirs.set(['common', 'history', 'localisation', 'map', 'shaders', ''])
 }
 
 allprojects {

@@ -62,21 +62,21 @@ public class EconomyPanel extends Table {
         mainTable.setFillParent(true);
         this.add(mainTable);
 
-        Button developpementIndexButton = widgetFactory.createButton(this.skin, "icon_di", 530, 677, mainTable);
+        Button developpementIndexButton = widgetFactory.createButton(this.skin, "icon_di_btn", 530, 677, mainTable);
         developpementIndexButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 listener.onSortRegions(SortType.DEVELOPPEMENT_INDEX);
             }
         });
-        Button populationButton = widgetFactory.createButton(this.skin, "icon_pop", 605, 677, mainTable);
+        Button populationButton = widgetFactory.createButton(this.skin, "icon_pop_btn", 605, 677, mainTable);
         populationButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 listener.onSortRegions(SortType.POPULATION);
             }
         });
-        Button worforceButton = widgetFactory.createButton(this.skin, "icon_workforce", 685, 677, mainTable);
+        Button worforceButton = widgetFactory.createButton(this.skin, "icon_workforce_btn", 685, 677, mainTable);
         worforceButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -84,8 +84,8 @@ public class EconomyPanel extends Table {
             }
         });
 
-        Button aiButton = widgetFactory.createButton(skin, "eco_btn_ai", 83, 685.5f, mainTable);
-        Button regionalButton = widgetFactory.createButton(skin, "eco_btn_regional", 773, 685.5f, mainTable);
+        Button aiButton = widgetFactory.createButton(skin, "eco_ai_tgl", 83, 685.5f, mainTable);
+        Button regionalButton = widgetFactory.createButton(skin, "eco_regional_tgl", 773, 685.5f, mainTable);
         Button closeButton = widgetFactory.createButton(skinUi, "close_btn", 1057, 734, mainTable);
         closeButton.addListener(new ClickListener() {
             @Override
@@ -141,7 +141,7 @@ public class EconomyPanel extends Table {
         buildingTypeLabel.setName("lbl_building_type");
 
         Label.LabelStyle jockey16Dark = this.labelStylePool.get("jockey_16_dark");
-        Button expandButton = this.widgetFactory.createButton(this.skin, "eco_folder_btn_yellow", 636, 94, this.buildingSelectedTable);
+        Button expandButton = this.widgetFactory.createButton(this.skin, "eco_folder_yellow_btn", 636, 94, this.buildingSelectedTable);
         expandButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -150,7 +150,7 @@ public class EconomyPanel extends Table {
         });
         this.widgetFactory.createLabel(this.localisation.get("EXPAND"), jockey16Dark, 26, 0, expandButton);
 
-        Button resumeButton = this.widgetFactory.createButton(this.skin, "eco_folder_btn_yellow", 636, 70, this.buildingSelectedTable);
+        Button resumeButton = this.widgetFactory.createButton(this.skin, "eco_folder_yellow_btn", 636, 70, this.buildingSelectedTable);
         resumeButton.setName("btn_resume");
         resumeButton.addListener(new ClickListener() {
             @Override
@@ -160,7 +160,7 @@ public class EconomyPanel extends Table {
         });
         this.widgetFactory.createLabel(this.localisation.get("RESUME"), jockey16Dark, 23, 0, resumeButton);
 
-        Button suspendButton = this.widgetFactory.createButton(this.skin, "eco_folder_btn_yellow", 636, 70, this.buildingSelectedTable);
+        Button suspendButton = this.widgetFactory.createButton(this.skin, "eco_folder_yellow_btn", 636, 70, this.buildingSelectedTable);
         suspendButton.setName("btn_suspend");
         suspendButton.addListener(new ClickListener() {
             @Override
@@ -170,7 +170,7 @@ public class EconomyPanel extends Table {
         });
         this.widgetFactory.createLabel(this.localisation.get("SUSPEND"), jockey16Dark, 23, 0, suspendButton);
 
-        Button demolishButton = this.widgetFactory.createButton(this.skin, "eco_folder_btn_red", 636, 22, this.buildingSelectedTable);
+        Button demolishButton = this.widgetFactory.createButton(this.skin, "eco_folder_red_btn", 636, 22, this.buildingSelectedTable);
         demolishButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -232,8 +232,8 @@ public class EconomyPanel extends Table {
         Label nameLabel = this.widgetFactory.createLabel(regionName, style, 8, 7, headerTable);
         nameLabel.setName("lbl_name");
 
-        Button minButton = this.widgetFactory.createButton(this.skin, "eco_plate_min", 684, 9, headerTable);
-        Button maxButton = this.widgetFactory.createButton(this.skin, "eco_plate_max", 684, 9, headerTable);
+        Button minButton = this.widgetFactory.createButton(this.skin, "eco_plate_min_btn", 684, 9, headerTable);
+        Button maxButton = this.widgetFactory.createButton(this.skin, "eco_plate_max_btn", 684, 9, headerTable);
         minButton.setName("btn_min");
         maxButton.setName("btn_max");
         minButton.setVisible(true);

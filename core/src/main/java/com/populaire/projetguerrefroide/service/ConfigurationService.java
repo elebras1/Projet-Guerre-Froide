@@ -27,29 +27,29 @@ public class ConfigurationService {
         this.loadInitialAssets(assetManager);
         CursorManager cursorManager = new CursorManager();
         Settings settings = this.configurationDao.loadSettings();
-        Skin skinFonts = assetManager.get("fonts/fonts_skin.json");
+        Skin skinFonts = assetManager.get("generated-skins/fonts/fonts.json");
         LabelStylePool labelStylePool = new LabelStylePool(skinFonts, settings.getLanguage());
         return new GameContext(ecsWorld, bookmark, assetManager, cursorManager, settings, labelStylePool);
     }
 
     public void loadInitialAssets(AssetManager assetManager) {
-        assetManager.load("ui/ui_skin.json", Skin.class);
-        assetManager.load("fonts/fonts_skin.json", Skin.class);
-        assetManager.load("ui/scrollbars/scrollbars_skin.json", Skin.class);
-        assetManager.load("ui/mainmenu/mainmenu_skin.json", Skin.class);
+        assetManager.load("generated-skins/ui/ui.json", Skin.class);
+        assetManager.load("generated-skins/fonts/fonts.json", Skin.class);
+        assetManager.load("generated-skins/ui/scrollbars/scrollbars.json", Skin.class);
+        assetManager.load("generated-skins/ui/mainmenu/mainmenu.json", Skin.class);
         assetManager.finishLoading();
     }
 
     public void loadGameAssets(AssetManager assetManager) {
-        assetManager.load("ui/newgame/newgame_skin.json", Skin.class);
-        assetManager.load("flags/flags_skin.json", Skin.class);
-        assetManager.load("portraits/portraits_skin.json", Skin.class);
-        assetManager.load("ui/mainmenu_ig/mainmenu_ig_skin.json", Skin.class);
-        assetManager.load("ui/popup/popup_skin.json", Skin.class);
-        assetManager.load("ui/topbar/topbar_skin.json", Skin.class);
-        assetManager.load("ui/minimap/minimap_skin.json", Skin.class);
-        assetManager.load("ui/province/province_skin.json", Skin.class);
-        assetManager.load("ui/economy/economy_skin.json", Skin.class);
+        assetManager.load("generated-skins/ui/newgame/newgame.json", Skin.class);
+        assetManager.load("generated-skins/flags/flags.json", Skin.class);
+        assetManager.load("generated-skins/portraits/portraits.json", Skin.class);
+        assetManager.load("generated-skins/ui/mainmenu_ig/mainmenu_ig.json", Skin.class);
+        assetManager.load("generated-skins/ui/popup/popup.json", Skin.class);
+        assetManager.load("generated-skins/ui/topbar/topbar.json", Skin.class);
+        assetManager.load("generated-skins/ui/minimap/minimap.json", Skin.class);
+        assetManager.load("generated-skins/ui/province/province.json", Skin.class);
+        assetManager.load("generated-skins/ui/economy/economy.json", Skin.class);
     }
 
     public void loadMainMenuLocalisation(GameContext gameContext) {

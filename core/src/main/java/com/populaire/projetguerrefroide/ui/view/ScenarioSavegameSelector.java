@@ -37,7 +37,7 @@ public class ScenarioSavegameSelector extends Table {
         Label scenarioLabel = new Label(localisation.get("HISTORICAL_START"), labelStyleArial172);
         Label savegameLabel = new Label(localisation.get("SAVED_GAMES"), labelStyleArial172);
 
-        Button bookmarkButton = new Button(skinUi, "tab");
+        Button bookmarkButton = new Button(skinUi, "tab_btn");
         bookmarkButton.add(scenarioLabel).center();
         bookmarkButton.addListener(new ClickListener() {
             @Override
@@ -46,7 +46,7 @@ public class ScenarioSavegameSelector extends Table {
             }
         });
 
-        Button savegameButton = new Button(skinUi, "tab");
+        Button savegameButton = new Button(skinUi, "tab_btn");
         savegameButton.add(savegameLabel).center();
         savegameButton.addListener(new ClickListener() {
             @Override

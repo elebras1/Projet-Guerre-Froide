@@ -24,7 +24,7 @@ public class MainMenuPresenter implements Presenter, MainMenuListener {
     @Override
     public void initialize(Stage stage) {
         AssetManager assetManager = gameContext.getAssetManager();
-        Skin skin = assetManager.get("ui/mainmenu/mainmenu_skin.json");
+        Skin skin = assetManager.get("generated-skins/ui/mainmenu/mainmenu.json");
         Table rootTable = new Table();
         rootTable.setFillParent(true);
         rootTable.setBackground(skin.getDrawable("frontend_main_bg"));

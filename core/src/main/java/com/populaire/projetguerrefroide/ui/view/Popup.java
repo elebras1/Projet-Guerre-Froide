@@ -132,7 +132,7 @@ public class Popup extends Table {
         LabelStyle labelStyleJockey16GlowRed = labelStylePool.get("jockey_16_glow_red");
         LabelStyle labelStyleJockey16GlowBlue = labelStylePool.get("jockey_16_glow_blue");
 
-        Button cancelButton = new Button(skin, "popup_btn_red");
+        Button cancelButton = new Button(skin, "popup_red_btn");
         cancelButton.add(new Label(localisation.get("CANCEL"), labelStyleJockey16GlowRed)).padBottom(5);
         cancelButton.addListener(new ClickListener() {
             @Override

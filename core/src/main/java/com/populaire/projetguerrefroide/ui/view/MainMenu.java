@@ -25,7 +25,7 @@ public class MainMenu extends Table {
 
         widgetFactory.applyBackgroundToTable(skin, "frontend_mainmenu_bg", this);
 
-        Button playButton = widgetFactory.createButton(skin, "frontend_big", 52, 375, this);
+        Button playButton = widgetFactory.createButton(skin, "frontend_big_btn", 52, 375, this);
         playButton.add(new Label(localisation.get("SINGLEPLAYER"), labelStyleJockey24GlowBlue)).padBottom(5);
         playButton.addListener(new ClickListener() {
             @Override
@@ -34,7 +34,7 @@ public class MainMenu extends Table {
             }
         });
 
-        Button multiplayerButton = widgetFactory.createButton(skin, "frontend_big", 52, 295, this);
+        Button multiplayerButton = widgetFactory.createButton(skin, "frontend_big_btn", 52, 295, this);
         multiplayerButton.add(new Label(localisation.get("MULTIPLAYER"), labelStyleJockey24GlowBlue)).padBottom(5);
         multiplayerButton.addListener(new ClickListener() {
             @Override
@@ -43,7 +43,7 @@ public class MainMenu extends Table {
             }
         });
 
-        Button optionsButton = widgetFactory.createButton(skin, "frontend_small", 52, 252, this);
+        Button optionsButton = widgetFactory.createButton(skin, "frontend_small_btn", 52, 252, this);
         optionsButton.add(new Label(localisation.get("OPTIONS"), labelStyleJockey20GlowBlue)).padBottom(5);
         optionsButton.addListener(new ClickListener() {
             @Override
@@ -51,7 +51,7 @@ public class MainMenu extends Table {
             }
         });
 
-        Button tutorialButton = widgetFactory.createButton(skin, "frontend_small", 52, 210, this);
+        Button tutorialButton = widgetFactory.createButton(skin, "frontend_small_btn", 52, 210, this);
         tutorialButton.add(new Label(localisation.get("TUTORIAL"), labelStyleJockey20GlowBlue)).padBottom(5);
         tutorialButton.addListener(new ClickListener() {
             @Override
@@ -59,7 +59,7 @@ public class MainMenu extends Table {
             }
         });
 
-        Button creditsButton = widgetFactory.createButton(skin, "frontend_small", 52, 168, this);    ;
+        Button creditsButton = widgetFactory.createButton(skin, "frontend_small_btn", 52, 168, this);    ;
         creditsButton.add(new Label(localisation.get("CREDITS"), labelStyleJockey20GlowBlue)).padBottom(5);
         creditsButton.addListener(new ClickListener() {
             @Override
@@ -67,7 +67,7 @@ public class MainMenu extends Table {
             }
         });
 
-        Button exitButton = widgetFactory.createButton(skin, "frontend_big_exit", 52, 35, this);
+        Button exitButton = widgetFactory.createButton(skin, "frontend_exit_btn", 52, 35, this);
         exitButton.add(new Label(localisation.get("EXIT"), labelStyleJockey24GlowRed)).padBottom(5);
         exitButton.addListener(new ClickListener() {
             @Override

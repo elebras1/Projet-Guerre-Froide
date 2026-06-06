@@ -1,0 +1,63 @@
+{
+  "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+    "tab_intel_btn": {
+      "up": "tab_intel_btn",
+      "down": "tab_intel_btn_down",
+      "over": "tab_intel_btn_over"
+    },
+    "tab_politics_btn": {
+      "up": "tab_politics_btn",
+      "down": "tab_politics_btn_down",
+      "over": "tab_politics_btn_over"
+    },
+    "tab_tech_btn": {
+      "up": "tab_tech_btn",
+      "down": "tab_tech_btn_down",
+      "over": "tab_tech_btn_over"
+    },
+    "tab_economy_btn": {
+      "up": "tab_economy_btn",
+      "down": "tab_economy_btn_down",
+      "over": "tab_economy_btn_over"
+    },
+    "plus_speed_btn": {
+      "up": "plus_speed_btn",
+      "down": "plus_speed_btn_down",
+      "over": "plus_speed_btn_over"
+    },
+    "tab_diplomacy_btn": {
+      "up": "tab_diplomacy_btn",
+      "down": "tab_diplomacy_btn_down",
+      "over": "tab_diplomacy_btn_over"
+    },
+    "tab_military_btn": {
+      "up": "tab_military_btn",
+      "down": "tab_military_btn_down",
+      "over": "tab_military_btn_over"
+    },
+    "minus_speed_btn": {
+      "up": "minus_speed_btn",
+      "down": "minus_speed_btn_down",
+      "over": "minus_speed_btn_over"
+    },
+    "stats_btn": {
+      "up": "stats_btn",
+      "down": "stats_btn_down",
+      "over": "stats_btn_over"
+    },
+    "date_btn": {
+      "up": "date_btn",
+      "down": "date_btn_down",
+      "over": "date_btn_over"
+    },
+    "menu_btn": {
+      "up": "menu_btn",
+      "down": "menu_btn_down",
+      "over": "menu_btn_over"
+    },
+    "thick_tgl": {
+      "up": "thick_tgl_off",
+      "checked": "thick_tgl_on"
+    }
+  }
+}
