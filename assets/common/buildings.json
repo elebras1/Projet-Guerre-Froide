@@ -79,7 +79,7 @@
       },
       "input_goods": {
         "iron": 1,
-        "coal": 7
+        "coal": 5
       },
       "output_goods": {
         "cement": 10
@@ -96,11 +96,11 @@
         "machine_parts": 7
       },
       "input_goods": {
-        "iron": 25,
-        "coal": 9
+        "iron": 20,
+        "coal": 8
       },
       "output_goods": {
-        "steel": 15
+        "steel": 16
       },
       "max_level": 99,
       "time": 150
@@ -171,7 +171,7 @@
         "machine_parts": 7
       },
       "input_goods": {
-        "fruit": 1,
+        "fruits": 1,
         "grain": 1,
         "steel": 1
       },
@@ -209,7 +209,7 @@
         "machine_parts": 7
       },
       "input_goods": {
-        "coal": 10
+        "coal": 5
       },
       "output_goods": {
         "glass": 7
@@ -225,7 +225,7 @@
         "machine_parts": 7
       },
       "input_goods": {
-        "coal": 2,
+        "coal": 1.5,
         "oil": 2,
         "rare_metals": 1
       },
@@ -316,7 +316,7 @@
       "input_goods": {
         "integrated_circuits": 0.5,
         "rare_metals": 2,
-        "inorganic_chemicals": 3,
+        "inorganic_chemicals": 2.5,
         "plastics": 2
       },
       "output_goods": {
