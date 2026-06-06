@@ -1,0 +1,33 @@
+{
+  "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+    "settings_less_btn": {
+      "up": "settings_less_btn",
+      "down": "settings_less_btn_down",
+      "over": "settings_less_btn_over"
+    },
+    "settings_tab_2_btn": {
+      "up": "settings_tab_2_btn",
+      "down": "settings_tab_2_btn_down",
+      "over": "settings_tab_2_btn_over"
+    },
+    "settings_more_btn": {
+      "up": "settings_more_btn",
+      "down": "settings_more_btn_down",
+      "over": "settings_more_btn_over"
+    },
+    "settings_tab_1_btn": {
+      "up": "settings_tab_1_btn",
+      "down": "settings_tab_1_btn_down",
+      "over": "settings_tab_1_btn_over"
+    },
+    "close_btn": {
+      "up": "close_btn",
+      "down": "close_btn_down",
+      "over": "close_btn_over"
+    },
+    "checkbutton_tgl": {
+      "up": "checkbutton_tgl_off",
+      "checked": "checkbutton_tgl_on"
+    }
+  }
+}

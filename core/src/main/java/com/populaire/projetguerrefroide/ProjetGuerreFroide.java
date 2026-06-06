@@ -1,6 +1,7 @@
 package com.populaire.projetguerrefroide;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import io.github.elebras1.flecs.World;
@@ -108,9 +109,9 @@ public class ProjetGuerreFroide extends Game {
     }
 
     private void loadAssets(AssetManager assetManager) {
-        assetManager.load("ui/ui_skin.json", Skin.class);
-        assetManager.load("fonts/fonts_skin.json", Skin.class);
-        assetManager.load("ui/scrollbars/scrollbars_skin.json", Skin.class);
+        assetManager.load("generated-skins/ui/ui.json", Skin.class);
+        assetManager.load("generated-skins/fonts/fonts.json", Skin.class);
+        assetManager.load("generated-skins/ui/scrollbars/scrollbars.json", Skin.class);
         assetManager.finishLoading();
     }
 

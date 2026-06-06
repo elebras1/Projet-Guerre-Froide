@@ -28,10 +28,10 @@ public class LoadScreen implements Screen {
         this.configurationService = configurationService;
         this.worldService = worldService;
         this.loadingPresenter = new LoadingPresenter(this.gameContext);
-        this.gameContext.getCursorManager().animatedCursor("busy");
+        //this.gameContext.getCursorManager().animatedCursor("busy");
 
         AssetManager assetManager = this.gameContext.getAssetManager();
-        assetManager.load("loadingscreens/loadingscreens_skin.json", Skin.class);
+        assetManager.load("generated-skins/loadingscreens/loadingscreens.json", Skin.class);
         this.stage = new WgStage();
         Gdx.input.setInputProcessor(this.stage);
         this.loadingStep = LOADING_ASSETS;
@@ -93,8 +93,8 @@ public class LoadScreen implements Screen {
     @Override
     public void dispose() {
         this.stage.dispose();
-        if (this.gameContext.getAssetManager().isLoaded("loadingscreens/loadingscreens_skin.json")) {
-            this.gameContext.getAssetManager().unload("loadingscreens/loadingscreens_skin.json");
+        if (this.gameContext.getAssetManager().isLoaded("generated-skins/loadingscreens/loadingscreens.json")) {
+            this.gameContext.getAssetManager().unload("generated-skins/loadingscreens/loadingscreens.json");
         }
     }
 }

@@ -1,0 +1,27 @@
+{
+  "com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle": {
+    "default": {
+      "vScrollKnob": "slider_standard2"
+    },
+    "default-horizontal": {
+      "hScrollKnob": "slider_horizontal"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+    "slider_plus_btn": {
+      "up": "slider_plus_btn",
+      "down": "slider_plus_btn_down",
+      "over": "slider_plus_btn_over"
+    },
+    "scroller_vertical_btn": {
+      "up": "scroller_vertical_btn",
+      "down": "scroller_vertical_btn_down",
+      "over": "scroller_vertical_btn_over"
+    },
+    "slider_minus_btn": {
+      "up": "slider_minus_btn",
+      "down": "slider_minus_btn_down",
+      "over": "slider_minus_btn_over"
+    }
+  }
+}

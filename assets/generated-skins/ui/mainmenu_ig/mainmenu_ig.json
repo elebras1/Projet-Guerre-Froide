@@ -1,0 +1,29 @@
+{
+  "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+    "settings_ok_btn": {
+      "up": "settings_ok_btn",
+      "down": "settings_ok_btn_down",
+      "over": "settings_ok_btn_over"
+    },
+    "menu_quit_btn": {
+      "up": "menu_quit_btn",
+      "down": "menu_quit_btn_down",
+      "over": "menu_quit_btn_over"
+    },
+    "menu_cancel_btn": {
+      "up": "menu_cancel_btn",
+      "down": "menu_cancel_btn_down",
+      "over": "menu_cancel_btn_over"
+    },
+    "menu_btn": {
+      "up": "menu_btn",
+      "down": "menu_btn_down",
+      "over": "menu_btn_over"
+    },
+    "settings_cancel_btn": {
+      "up": "settings_cancel_btn",
+      "down": "settings_cancel_btn_down",
+      "over": "settings_cancel_btn_over"
+    }
+  }
+}

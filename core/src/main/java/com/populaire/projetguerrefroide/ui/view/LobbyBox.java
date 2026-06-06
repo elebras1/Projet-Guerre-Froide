@@ -37,7 +37,7 @@ public class LobbyBox extends Table {
         Label.LabelStyle labelStyleJockey24GlowBlue = labelStylePool.get("jockey_24_glow_blue");
         Label.LabelStyle labelStyleArial172 = labelStylePool.get("arial_17_2");
 
-        Button playButton = new Button(skin, "play");
+        Button playButton = new Button(skin, "play_btn");
         playButton.add(new Label(localisation.get("PLAY"), labelStyleJockey24GlowBlue));
         playButton.addListener(new ClickListener() {
             @Override
@@ -46,7 +46,7 @@ public class LobbyBox extends Table {
             }
         });
 
-        Button backButton = new Button(skin, "gen");
+        Button backButton = new Button(skin, "gen_btn");
         backButton.add(new Label(localisation.get("BACK"), labelStyleArial172));
         backButton.addListener(new ClickListener() {
             @Override
