@@ -2,9 +2,12 @@
   "com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle": {
     "default": {
       "vScrollKnob": "slider_standard2"
-    },
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Slider$SliderStyle": {
     "default-horizontal": {
-      "hScrollKnob": "slider_horizontal"
+      "background": "slider_bg",
+      "knob": "slider_horizontal"
     }
   },
   "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
