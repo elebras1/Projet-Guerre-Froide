@@ -2,18 +2,38 @@
 project(":lwjgl3") {
   apply plugin: "org.graalvm.buildtools.native"
 
+  def nativeImageConfigDir = file("${project.projectDir}/src/main/resources/META-INF/native-image/${appName}")
+  def graalvmHome = System.getenv("GRAALVM_HOME")
+
   graalvmNative {
     binaries {
       main {
         imageName = appName
-        mainClass = project.mainClassName
+        mainClass = application.mainClass.get()
         requiredVersion = '25'
         buildArgs.add("-march=compatibility")
+        buildArgs.add("--no-fallback")
+        buildArgs.add("-H:+ReportExceptionStackTraces")
+        buildArgs.add('-H:IncludeResources=.*\\.so$')
+        buildArgs.add("-J-Xmx8G")
         jvmArgs.addAll("-Dfile.encoding=UTF8")
         sharedLibrary = false
-        resources.autodetect()
+        configurationFileDirectories.from(nativeImageConfigDir)
       }
     }
+  }
+
+  tasks.register("runWithNativeImageAgent", JavaExec) {
+    group = "application"
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass.set(application.mainClass)
+    workingDir = rootProject.file('assets')
+    if (graalvmHome) {
+      executable = file("${graalvmHome}/bin/java").absolutePath
+    }
+    jvmArgs(
+      "-agentlib:native-image-agent=config-output-dir=${nativeImageConfigDir}",
+    )
   }
 
   run {
