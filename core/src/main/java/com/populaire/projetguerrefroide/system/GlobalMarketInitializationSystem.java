@@ -12,6 +12,7 @@ public class GlobalMarketInitializationSystem {
         ecsWorld.system("GlobalMarketInitializationSystem")
             .kind(phaseId)
             .with(GlobalMarket.class)
+            .multiThreaded()
             .iter(this::initialize);
     }
 

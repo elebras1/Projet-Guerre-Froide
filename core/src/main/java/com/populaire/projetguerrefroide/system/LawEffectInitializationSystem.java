@@ -15,6 +15,7 @@ public class LawEffectInitializationSystem {
             .kind(phaseId)
             .with(Country.class)
             .with(CountryEffectPolicy.class)
+            .multiThreaded()
             .iter(this::initialize);
     }
 

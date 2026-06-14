@@ -13,6 +13,7 @@ public class RGOEmploymentSystem {
             .kind(phaseId)
             .with(ResourceGathering.class)
             .with(Demographics.class)
+            .multiThreaded()
             .iter(this::hire);
     }
 

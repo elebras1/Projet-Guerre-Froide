@@ -12,6 +12,7 @@ public class PopulationInitializationSystem {
         ecsWorld.system("PopulationInitializationSystem")
             .kind(phaseId)
             .with(Population.class)
+            .multiThreaded()
             .iter(this::initialize);
     }
 

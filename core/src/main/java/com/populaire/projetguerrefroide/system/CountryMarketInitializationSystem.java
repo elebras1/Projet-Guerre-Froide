@@ -12,6 +12,7 @@ public class CountryMarketInitializationSystem {
         ecsWorld.system("countryMarketInitializationSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
+            .multiThreaded()
             .iter(this::initialize);
     }
 

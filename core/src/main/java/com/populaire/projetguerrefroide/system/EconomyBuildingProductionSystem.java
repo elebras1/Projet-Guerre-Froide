@@ -12,6 +12,7 @@ public class EconomyBuildingProductionSystem {
             .kind(phaseId)
             .with(EconomyBuilding.class)
             .with(Building.class)
+            .multiThreaded()
             .iter(this::produce);
     }
 

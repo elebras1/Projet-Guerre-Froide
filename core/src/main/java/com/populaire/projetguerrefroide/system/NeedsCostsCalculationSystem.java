@@ -12,6 +12,7 @@ public class NeedsCostsCalculationSystem {
         ecsWorld.system("NeedsCostsCalculationSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
+            .multiThreaded()
             .iter(this::calculate);
     }
 

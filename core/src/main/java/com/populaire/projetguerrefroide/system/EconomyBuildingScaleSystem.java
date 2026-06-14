@@ -13,6 +13,7 @@ public class EconomyBuildingScaleSystem {
         ecsWorld.system("EconomyBuildingScaleSystem")
             .kind(phaseId)
             .with(EconomyBuilding.class)
+            .multiThreaded()
             .iter(this::updateScale);
     }
 

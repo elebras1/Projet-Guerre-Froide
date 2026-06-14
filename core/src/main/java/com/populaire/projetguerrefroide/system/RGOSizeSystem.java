@@ -13,6 +13,7 @@ public class RGOSizeSystem {
             .kind(phaseId)
             .with(ResourceGathering.class)
             .with(Demographics.class)
+            .multiThreaded()
             .iter(this::size);
     }
 

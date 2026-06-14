@@ -12,6 +12,7 @@ public class GlobalMarketResolveSystem {
         ecsWorld.system("GlobalMarketResolveSystem")
             .kind(phaseId)
             .with(GlobalMarket.class)
+            .multiThreaded()
             .iter(this::resolve);
     }
 

@@ -12,6 +12,7 @@ public class StockpileDemandSystem {
         ecsWorld.system("StockpileDemandSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
+            .multiThreaded()
             .iter(this::calculate);
     }
 

@@ -12,6 +12,7 @@ public class PopulationEmploymentSynchronizationSystem {
         ecsWorld.system("PopulationEmploymentSynchronizationSystem")
             .kind(phaseId)
             .with(Population.class)
+            .multiThreaded()
             .iter(this::synchronize);
     }
 

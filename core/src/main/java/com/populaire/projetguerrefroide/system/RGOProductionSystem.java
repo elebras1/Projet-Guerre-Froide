@@ -15,6 +15,7 @@ public class RGOProductionSystem {
             .kind(phaseId)
             .with(Province.class)
             .with(ResourceGathering.class)
+            .multiThreaded()
             .iter(this::produce);
     }
 

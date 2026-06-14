@@ -12,6 +12,7 @@ public class CountryMarketResetSystem {
         ecsWorld.system("CountryMarketResetSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
+            .multiThreaded()
             .iter(this::reset);
     }
 
