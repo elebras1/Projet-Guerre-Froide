@@ -1,6 +1,6 @@
 package com.populaire.projetguerrefroide.service;
 
-import com.github.elebras1.flecs.*;
+import io.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.LongIntMap;
 import com.github.tommyettinger.ds.LongList;
 import com.github.tommyettinger.ds.LongOrderedSet;

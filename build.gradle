@@ -9,9 +9,15 @@ buildscript {
     maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
   }
   dependencies {
-
-
+    classpath 'io.github.elebras1:gdx-skin-weaver:0.2.3'
   }
+}
+
+apply plugin: 'io.github.elebras1.gdx-skin-weaver'
+
+skinWeaver {
+  outputDir.set(layout.projectDirectory.dir("assets/generated-skins"))
+  excludedDirs.set(['common', 'history', 'localisation', 'map', 'shaders', ''])
 }
 
 allprojects {
@@ -75,13 +81,13 @@ subprojects {
   }
 
   dependencies {
-    implementation 'io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:0.8'
-    implementation 'io.github.monstroussoftware.gdx-webgpu:backend-desktop:0.8'
+    implementation 'io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:-SNAPSHOT'
+    implementation 'io.github.monstroussoftware.gdx-webgpu:backend-desktop-ffm:-SNAPSHOT'
     implementation 'com.github.tommyettinger:jdkgdxds:2.1.2'
     implementation 'com.dslplatform:dsl-json:2.0.2'
     annotationProcessor 'com.dslplatform:dsl-json:2.0.2'
-    implementation 'io.github.elebras1:flecs-java:0.10.0'
-    annotationProcessor 'io.github.elebras1:flecs-java:0.10.0'
+    implementation 'io.github.elebras1:flecs-java:0.11.0'
+    annotationProcessor 'io.github.elebras1:flecs-java:0.11.0'
   }
 }
 

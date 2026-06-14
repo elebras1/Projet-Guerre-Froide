@@ -1,9 +1,9 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.EntityView;
-import com.github.elebras1.flecs.Field;
-import com.github.elebras1.flecs.Iter;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.EntityView;
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Iter;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
 import static com.populaire.projetguerrefroide.util.Constants.*;
@@ -15,6 +15,7 @@ public class LawEffectInitializationSystem {
             .kind(phaseId)
             .with(Country.class)
             .with(CountryEffectPolicy.class)
+            .multiThreaded()
             .iter(this::initialize);
     }
 
@@ -54,10 +55,10 @@ public class LawEffectInitializationSystem {
                             case EDUCATION_SPENDING -> effectPolicy.educationSpendingRate(effectPolicy.educationSpendingRate() + modifierValue);
                             case ADMINISTRATION_SPENDING -> effectPolicy.administrationSpendingRate(effectPolicy.administrationSpendingRate() + modifierValue);
                             case SOCIAL_SPENDING -> effectPolicy.socialSpendingRate(effectPolicy.socialSpendingRate() + modifierValue);
-                            case CAPITALIST_PROFIT_SHARE -> effectPolicy.capitalistProfitShare(effectPolicy.capitalistProfitShare() + modifierValue);
-                            case WORKER_PROFIT_SHARE -> effectPolicy.workerProfitShare(effectPolicy.workerProfitShare() + modifierValue);
-                            case ARISTOCRAT_PROFIT_SHARE -> effectPolicy.aristocratProfitShare(effectPolicy.aristocratProfitShare() + modifierValue);
-                            case STATE_PROFIT_SHARE -> effectPolicy.stateProfitShare(effectPolicy.stateProfitShare() + modifierValue);
+                            case CAPITALIST_PROFIT_SHARE -> effectPolicy.capitalistProfitShareRate(effectPolicy.capitalistProfitShareRate() + modifierValue);
+                            case WORKER_PROFIT_SHARE -> effectPolicy.workerProfitShareRate(effectPolicy.workerProfitShareRate() + modifierValue);
+                            case ARISTOCRAT_PROFIT_SHARE -> effectPolicy.aristocratProfitShareRate(effectPolicy.aristocratProfitShareRate() + modifierValue);
+                            case STATE_PROFIT_SHARE -> effectPolicy.stateProfitShareRate(effectPolicy.stateProfitShareRate() + modifierValue);
                             case MIN_WAGE_FACTOR -> effectPolicy.minWageFactor(effectPolicy.minWageFactor() + modifierValue);
                             case FACTORY_INPUT_MODIFIER -> effectPolicy.factoryInputModifier(effectPolicy.factoryInputModifier() + modifierValue);
                             case FACTORY_OUTPUT_MODIFIER -> effectPolicy.factoryOutputModifier(effectPolicy.factoryOutputModifier() + modifierValue);
@@ -102,10 +103,10 @@ public class LawEffectInitializationSystem {
                             case EDUCATION_SPENDING -> effectPolicy.educationSpendingRate(overrideValue);
                             case ADMINISTRATION_SPENDING -> effectPolicy.administrationSpendingRate(overrideValue);
                             case SOCIAL_SPENDING -> effectPolicy.socialSpendingRate(overrideValue);
-                            case CAPITALIST_PROFIT_SHARE -> effectPolicy.capitalistProfitShare(overrideValue);
-                            case WORKER_PROFIT_SHARE -> effectPolicy.workerProfitShare(overrideValue);
-                            case ARISTOCRAT_PROFIT_SHARE -> effectPolicy.aristocratProfitShare(overrideValue);
-                            case STATE_PROFIT_SHARE -> effectPolicy.stateProfitShare(overrideValue);
+                            case CAPITALIST_PROFIT_SHARE -> effectPolicy.capitalistProfitShareRate(overrideValue);
+                            case WORKER_PROFIT_SHARE -> effectPolicy.workerProfitShareRate(overrideValue);
+                            case ARISTOCRAT_PROFIT_SHARE -> effectPolicy.aristocratProfitShareRate(overrideValue);
+                            case STATE_PROFIT_SHARE -> effectPolicy.stateProfitShareRate(overrideValue);
                             case MIN_WAGE_FACTOR -> effectPolicy.minWageFactor(overrideValue);
                             case FACTORY_INPUT_MODIFIER -> effectPolicy.factoryInputModifier(overrideValue);
                             case FACTORY_OUTPUT_MODIFIER -> effectPolicy.factoryOutputModifier(overrideValue);

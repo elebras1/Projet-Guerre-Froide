@@ -1,7 +1,9 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.*;
+import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
+
+import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
 
 public class EconomyBuildingProductionSystem {
 
@@ -10,6 +12,7 @@ public class EconomyBuildingProductionSystem {
             .kind(phaseId)
             .with(EconomyBuilding.class)
             .with(Building.class)
+            .multiThreaded()
             .iter(this::produce);
     }
 
@@ -59,7 +62,7 @@ public class EconomyBuildingProductionSystem {
             float scale = economyBuilding.scale();
             float effectiveScale = Math.min(scale * level, maxProductionScale);
             float baseOutput = economyBuildingTypeData.goodOutputAmount();
-            float throughput = 1f; // TODO : calculer par rapport aux modifier d'agregations des technologies (niveau pays), infrastructures ou batiments specifique (niveau region)
+            float throughput = 1f + Math.min(countryEffectPolicy.maximumEconomyScaleFactor(), level * 0.01f);
 
             float secondaryEffectMultiplier = 1.5f;
             float outputMultiplier = 1f + countryEffectPolicy.factoryOutputModifier() + secondaryRatio * secondaryEffectMultiplier;
@@ -80,33 +83,40 @@ public class EconomyBuildingProductionSystem {
 
             economyBuilding.production(production);
 
+            float inputMultiplier = 1.0f + countryEffectPolicy.factoryInputModifier();
             float inputCost = 0f;
             for(int g = 0; g < economyBuildingTypeData.goodInputIndexesLength(); g++) {
                 int goodIndex = economyBuildingTypeData.goodInputIndexes(g);
                 if(goodIndex <= 0) {
                     continue;
                 }
-
-                float satisfiedDemand = economyBuilding.goodInputDemandAmounts(g) * countryMarket.goodDemandSatisfactionRatios(goodIndex);
+                float amount = economyBuildingTypeData.goodInputAmounts(g);
+                float inputDemand = inputMultiplier * throughput * amount * effectiveScale;
+                float satisfiedDemand = inputDemand * countryMarket.goodDemandSatisfactionRatios(goodIndex);
                 inputCost += satisfiedDemand * countryMarket.goodPrices(goodIndex);
             }
 
             float primaryMinWageFactor = (countryMarket.lifeCostsByPopType(economyBuildingTypeData.primaryWorkerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(economyBuildingTypeData.primaryWorkerPopTypeIndex())) * (1f + countryEffectPolicy.minWageFactor());
             float secondaryMinWageFactor = (countryMarket.lifeCostsByPopType(economyBuildingTypeData.secondaryWorkerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(economyBuildingTypeData.secondaryWorkerPopTypeIndex())) * (1f + countryEffectPolicy.minWageFactor());
-            float primaryWorkerMinWage = primaryMinWageFactor * primaryWorkers;
-            float secondaryWorkerMinWage =  secondaryMinWageFactor * secondaryWorkers;
-            float totalMinWages = primaryWorkerMinWage + secondaryWorkerMinWage;
+
+            float normalizedPrimaryWages = primaryMinWageFactor * primaryWorkers / NEEDS_SCALING_FACTOR;
+            float normalizedSecondaryWages = secondaryMinWageFactor * secondaryWorkers / NEEDS_SCALING_FACTOR;
+            float normalizedTotalWages = normalizedPrimaryWages + normalizedSecondaryWages;
 
             float revenue = production * countryMarket.goodPrices(economyBuildingTypeData.goodOutputIndex());
 
+            float primaryWorkerMinWage;
+            float secondaryWorkerMinWage;
             float availableForWages = Math.max(0f, revenue - inputCost);
-            if(availableForWages < totalMinWages) {
-                float wageRatio = availableForWages / totalMinWages;
-                primaryWorkerMinWage = primaryWorkerMinWage * wageRatio;
-                secondaryWorkerMinWage = secondaryWorkerMinWage * wageRatio;
+            if(availableForWages < normalizedTotalWages) {
+                float wageRatio = availableForWages / normalizedTotalWages;
+                primaryWorkerMinWage = primaryMinWageFactor * primaryWorkers * wageRatio;
+                secondaryWorkerMinWage = secondaryMinWageFactor * secondaryWorkers * wageRatio;
                 economyBuilding.profit(0f);
             } else {
-                economyBuilding.profit(availableForWages - totalMinWages);
+                primaryWorkerMinWage = primaryMinWageFactor * primaryWorkers;
+                secondaryWorkerMinWage = secondaryMinWageFactor * secondaryWorkers;
+                economyBuilding.profit(availableForWages - normalizedTotalWages);
             }
 
             economyBuilding.primaryWorkerMinWage(primaryWorkerMinWage);

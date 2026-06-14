@@ -1,0 +1,27 @@
+{
+  "build_cost": {
+    "ships": 80,
+    "weaponry": 40,
+    "aeroplanes": 360,
+    "iron": 60
+  },
+  "attack": 4,
+  "defence": 22,
+  "priority": 40,
+  "default_organisation": 45,
+  "supply_consumption": 1,
+  "weighted_value": 5,
+  "build_time": 730,
+  "maximum_speed": 10,
+  "type": "sea",
+  "unit_type": "big_ship",
+  "max_strength": 100,
+  "supply_cost": {
+    "canned_food": 4,
+    "aeroplanes": 1.6,
+    "ammunition": 4,
+    "fuel": 10,
+    "clothes": 1,
+    "ships": 1.5
+  }
+}

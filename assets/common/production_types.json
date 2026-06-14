@@ -49,40 +49,28 @@
     "types_buildings": {
         "type_economy": {
             "workforce": 20000,
-            "owner": {
-                "poptype": "capitalists"
-            },
             "workers": [
                 "type_craftsmen",
-                "type_clerks",
+                "type_clerks"
             ]
         },
         "type_economy_artisan": {
             "workforce": 5000,
-            "owner": {
-                "poptype": "artisans"
-            },
             "workers": [
                 "type_artisans"
             ]
         },
         "type_economy_advanced": {
             "workforce": 20000,
-            "owner": {
-                "poptype": "capitalists"
-            },
             "workers": [
                 "type_craftsmen_advanced",
-                "type_clerks_advanced",
+                "type_clerks_advanced"
             ]
         }
     },
     "types_rgo": {
         "type_rgo_farmers": {
             "workforce": 70000,
-            "owner": {
-                "poptype": "capitalists"
-            },
             "workers": [
                 "type_farmers",
                 "type_slaves"
@@ -90,9 +78,6 @@
         },
         "type_rgo_labourers": {
             "workforce": 60000,
-            "owner": {
-                "poptype": "capitalists"
-            },
             "workers": [
                 "type_labourers",
                 "type_slaves"

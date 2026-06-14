@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.*;
-import com.github.elebras1.flecs.util.FlecsConstants;
+import io.github.elebras1.flecs.*;
+import io.github.elebras1.flecs.util.FlecsConstants;
 import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.command.request.BuildingLevelUpCommand;
 import com.populaire.projetguerrefroide.component.*;
@@ -14,6 +14,7 @@ public class ExpansionBuildingSystem {
         ecsWorld.system("ExpansionBuildingSystem")
             .kind(FlecsConstants.EcsOnUpdate)
             .with(ExpansionBuilding.class)
+            .multiThreaded()
             .iter(this::expand);
     }
 

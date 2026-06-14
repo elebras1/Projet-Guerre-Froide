@@ -1,8 +1,8 @@
 package com.populaire.projetguerrefroide.service;
 
-import com.github.elebras1.flecs.Entity;
-import com.github.elebras1.flecs.EntityView;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.Entity;
+import io.github.elebras1.flecs.EntityView;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dto.BuildingDto;
 import com.populaire.projetguerrefroide.dto.BuildingSummaryDto;

@@ -1,8 +1,8 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.Field;
-import com.github.elebras1.flecs.Iter;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Iter;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.CountryMarket;
 import com.populaire.projetguerrefroide.component.CountryMarketView;
 
@@ -12,6 +12,7 @@ public class StockpileDemandSystem {
         ecsWorld.system("StockpileDemandSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
+            .multiThreaded()
             .iter(this::calculate);
     }
 
@@ -22,9 +23,8 @@ public class StockpileDemandSystem {
             for(int g = 0; g < countryMarket.goodStockpilesLength(); g++) {
                 if(!countryMarket.goodDrawingOnStockpiles(g)) {
                     float demandStock = Math.max(0f, countryMarket.goodStockpileTargets(g) - countryMarket.goodStockpiles(g));
-                    float deficit = countryMarket.goodDemandAmounts(g) + demandStock;
                     countryMarket.goodDemandAmounts(g, countryMarket.goodDemandAmounts(g) + demandStock);
-                    countryMarket.goodStockpileDailyDeficits(g, deficit);
+                    countryMarket.goodStockpileDailyDeficits(g, demandStock);
                 }
             }
         }

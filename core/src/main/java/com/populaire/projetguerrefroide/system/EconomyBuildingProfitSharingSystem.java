@@ -1,14 +1,18 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.EntityView;
-import com.github.elebras1.flecs.Field;
-import com.github.elebras1.flecs.Iter;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.EntityView;
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Iter;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 public class EconomyBuildingProfitSharingSystem {
 
-    public EconomyBuildingProfitSharingSystem(World ecsWorld, long phaseId) {
+    private final EcsConstants ecsConstants;
+
+    public EconomyBuildingProfitSharingSystem(World ecsWorld, EcsConstants ecsConstants, long phaseId) {
+        this.ecsConstants = ecsConstants;
         ecsWorld.system("EconomyBuildingProfitSharingSystem")
             .kind(phaseId)
             .with(Building.class)
@@ -57,11 +61,11 @@ public class EconomyBuildingProfitSharingSystem {
                 continue;
             }
 
-            float capitalistShareRatio = countryEffectPolicy.capitalistProfitShare();
-            float workerShareRatio = countryEffectPolicy.workerProfitShare();
-            float stateShareRatio = countryEffectPolicy.stateProfitShare();
+            float capitalistShareRatio = countryEffectPolicy.capitalistProfitShareRate();
+            float workerShareRatio = countryEffectPolicy.workerProfitShareRate();
+            float stateShareRatio = countryEffectPolicy.stateProfitShareRate();
 
-            if(capitalistShareRatio <= 0f) {
+            if(economyBuilding.ownerTagId() == this.ecsConstants.countryTag()) {
                 float totalShareStateRatio = stateShareRatio + workerShareRatio;
                 if (totalShareStateRatio > 1f) {
                     float scalingFactor = 1f / totalShareStateRatio;
@@ -86,8 +90,6 @@ public class EconomyBuildingProfitSharingSystem {
 
             regionIncome.profitShareByPopType(primaryWorkerPopTypeIndex, regionIncome.profitShareByPopType(primaryWorkerPopTypeIndex) + primaryWorkerShare);
             regionIncome.profitShareByPopType(secondaryWorkerPopTypeIndex, regionIncome.profitShareByPopType(secondaryWorkerPopTypeIndex) + secondaryWorkerShare);
-            regionIncome.workersByPopType(primaryWorkerPopTypeIndex, regionIncome.workersByPopType(primaryWorkerPopTypeIndex) + economyBuilding.primaryWorkerAmount());
-            regionIncome.workersByPopType(secondaryWorkerPopTypeIndex, regionIncome.workersByPopType(secondaryWorkerPopTypeIndex) + economyBuilding.secondaryWorkerAmount());
         }
 
     }

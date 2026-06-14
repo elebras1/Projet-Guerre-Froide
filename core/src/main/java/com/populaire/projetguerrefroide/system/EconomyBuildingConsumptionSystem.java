@@ -1,6 +1,6 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.*;
+import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
 
 public class EconomyBuildingConsumptionSystem {
@@ -35,10 +35,6 @@ public class EconomyBuildingConsumptionSystem {
             EntityView economyBuildingType = iter.world().obtainEntityView(building.typeId());
             EconomyBuildingTypeView economyBuildingTypeData = economyBuildingType.getMutView(EconomyBuildingType.class);
 
-            float maxWorkers = economyBuildingTypeData.workforce() * building.size();
-            float scale = (float) economyBuilding.primaryWorkerAmount() / Math.max(1f, maxWorkers);
-            economyBuilding.scale(scale);
-
             float throughput = 1.0f; // TODO : calculer par rapport aux modifier d'agregations des technologies (niveau pays), infrastructures ou batiments specifique (niveau region)
 
             float inputMultiplier = 1.0f + countryEffectPolicy.factoryInputModifier();
@@ -49,7 +45,7 @@ public class EconomyBuildingConsumptionSystem {
                     break;
                 }
                 float amount = economyBuildingTypeData.goodInputAmounts(g);
-                float demand = inputMultiplier * throughput * scale * amount * building.size();
+                float demand = inputMultiplier * throughput * amount * economyBuilding.scale() * building.size();
                 countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
                 economyBuilding.goodInputDemandAmounts(g, demand);
             }

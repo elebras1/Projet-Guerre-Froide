@@ -89,7 +89,7 @@ public class TopBar extends Table {
         this.date = this.widgetFactory.createLabel("", labelStyleJockey16Dark, 55, 28, dateSection);
         this.addActor(dateSection);
 
-        Button minusSpeed = this.widgetFactory.createButton(this.skin, "minus_speed", 228, 40, this);
+        Button minusSpeed = this.widgetFactory.createButton(this.skin, "minus_speed_btn", 228, 40, this);
         minusSpeed.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -98,7 +98,7 @@ public class TopBar extends Table {
         });
         this.addActor(minusSpeed);
 
-        Button plusSpeed = this.widgetFactory.createButton(this.skin, "plus_speed", 228, 64, this);
+        Button plusSpeed = this.widgetFactory.createButton(this.skin, "plus_speed_btn", 228, 64, this);
         plusSpeed.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -114,8 +114,8 @@ public class TopBar extends Table {
         flagImage.setPosition(-10, -21);
         flagSection.addActor(flagImage);
         flagImage.setFlag(this.widgetFactory.getFlagTextureRegion(this.skinFlags, countryNameId, colonizeNameId));
-        this.widgetFactory.createFlatButton(this.skin, "stats", 96, 13, flagSection);
-        this.widgetFactory.createFlatButton(this.skin, "menu", 126, 13, flagSection);
+        this.widgetFactory.createFlatButton(this.skin, "stats_btn", 96, 13, flagSection);
+        this.widgetFactory.createFlatButton(this.skin, "menu_btn", 126, 13, flagSection);
         this.defcon = this.widgetFactory.createImage(this.skin, "defcon_buttons_0", 156, 4, flagSection);
         return flagSection;
     }
@@ -135,7 +135,7 @@ public class TopBar extends Table {
 
     private void setTabButtons(LabelStylePool labelStylePool, TopBarListener listener) {
         Label.LabelStyle labelStyleJockey16Dark = labelStylePool.get("jockey_16_dark");
-        Button economyButton = this.widgetFactory.createButton(this.skin, "tab_economy", 425, 30, this);
+        Button economyButton = this.widgetFactory.createButton(this.skin, "tab_economy_btn", 425, 30, this);
         economyButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -143,15 +143,15 @@ public class TopBar extends Table {
             }
         });
         this.widgetFactory.createLabel(this.localisation.get("ECONOMY"), labelStyleJockey16Dark, 10, 20, economyButton);
-        Button militaryButton = this.widgetFactory.createButton(this.skin, "tab_military", 522, 30, this);
+        Button militaryButton = this.widgetFactory.createButton(this.skin, "tab_military_btn", 522, 30, this);
         this.widgetFactory.createLabel(this.localisation.get("ARMAMENTS"), labelStyleJockey16Dark, 10, 20, militaryButton);
-        Button techButton = this.widgetFactory.createButton(this.skin, "tab_tech", 619, 30, this);
+        Button techButton = this.widgetFactory.createButton(this.skin, "tab_tech_btn", 619, 30, this);
         this.widgetFactory.createLabel(this.localisation.get("TECH"), labelStyleJockey16Dark, 10, 20, techButton);
-        Button politicsButton = this.widgetFactory.createButton(this.skin, "tab_politics", 716, 30, this);
+        Button politicsButton = this.widgetFactory.createButton(this.skin, "tab_politics_btn", 716, 30, this);
         this.widgetFactory.createLabel(this.localisation.get("POLITICS"), labelStyleJockey16Dark, 10, 20, politicsButton);
-        Button diplomacyButton = this.widgetFactory.createButton(this.skin, "tab_diplomacy", 813, 30, this);
+        Button diplomacyButton = this.widgetFactory.createButton(this.skin, "tab_diplomacy_btn", 813, 30, this);
         this.widgetFactory.createLabel(this.localisation.get("DIPLOMACY"), labelStyleJockey16Dark, 10, 20, diplomacyButton);
-        Button intelButton = this.widgetFactory.createButton(this.skin, "tab_intel", 910, 30, this);
+        Button intelButton = this.widgetFactory.createButton(this.skin, "tab_intel_btn", 910, 30, this);
         this.widgetFactory.createLabel(this.localisation.get("INTEL"), labelStyleJockey16Dark, 10, 20, intelButton);
     }
 

@@ -1,9 +1,9 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.EntityView;
-import com.github.elebras1.flecs.Field;
-import com.github.elebras1.flecs.Iter;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.EntityView;
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Iter;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
 public class CountryMarketResolveSystem {
@@ -12,6 +12,7 @@ public class CountryMarketResolveSystem {
         ecsWorld.system("CountryMarketResolveSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
+            .with(CountryEffectPolicy.class)
             .iter(this::resolve);
     }
 
@@ -20,8 +21,12 @@ public class CountryMarketResolveSystem {
         GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
+        Field<CountryEffectPolicy> countryEffectPolicyField = iter.field(CountryEffectPolicy.class, 1);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketView countryMarket = countryMarketField.getMutView(i);
+            CountryEffectPolicyView countryEffectPolicy = countryEffectPolicyField.getMutView(i);
+
+            float tariffRate = countryEffectPolicy.tariffRate();
 
             for (int g = 0; g < countryMarket.goodPricesLength(); g++) {
                 boolean drawingOnStockpile = countryMarket.goodDrawingOnStockpiles(g);
@@ -32,25 +37,41 @@ public class CountryMarketResolveSystem {
                 float totalSupply = domesticSupply + globalSupply + stockSupply;
 
                 float demand = countryMarket.goodDemandAmounts(g);
-                float satisfaction;
-                float priceAdjustment;
+                float satisfaction = Math.min(1.0f, totalSupply / (demand + 0.001f));
+                float oldSatisfaction = countryMarket.goodDemandSatisfactionRatios(g);
+                float lissedSatisfaction = oldSatisfaction * 0.95f + satisfaction * 0.05f;
+                countryMarket.goodDemandSatisfactionRatios(g, lissedSatisfaction);
 
-                if (totalSupply > 0) {
-                    satisfaction = Math.min(1.0f, totalSupply / Math.max(0.001f, demand));
-                    priceAdjustment = (demand - totalSupply) /Math.max(0.001f, totalSupply);
+                float basePrice = globalMarketData.goodPrices(g);
+
+                float domesticAvailable = domesticSupply + stockSupply;
+                float domesticFraction = Math.min(1.0f, domesticAvailable / (demand + 0.001f));
+
+                float effectivePrice;
+                if (tariffRate < 0) {
+                    float globalFraction = Math.min(1.0f, globalSupply / (demand + 0.001f));
+                    effectivePrice = basePrice * (globalFraction + (1 - globalFraction) * (1 + tariffRate));
                 } else {
-                    satisfaction = 0.0f;
-                    priceAdjustment = 1.0f;
+                    effectivePrice = basePrice * (domesticFraction + (1 - domesticFraction) * (1 + tariffRate));
                 }
-
-                countryMarket.goodDemandSatisfactionRatios(g, satisfaction);
+                countryMarket.goodPrices(g, Math.max(0.001f, effectivePrice));
 
                 float remaining = demand * satisfaction;
-                float consumedDomestic = Math.min(domesticSupply, remaining);
-                remaining -= consumedDomestic;
-                float consumedStock = Math.min(stockSupply, remaining);
-                remaining -= consumedStock;
-                float consumedGlobal = Math.min(globalSupply, remaining);
+                float consumedDomestic, consumedGlobal, consumedStock;
+
+                if (tariffRate >= 0) {
+                    consumedDomestic = Math.min(domesticSupply, remaining);
+                    remaining -= consumedDomestic;
+                    consumedStock = Math.min(stockSupply, remaining);
+                    remaining -= consumedStock;
+                    consumedGlobal = Math.min(globalSupply, remaining);
+                } else {
+                    consumedGlobal = Math.min(globalSupply, remaining);
+                    remaining -= consumedGlobal;
+                    consumedDomestic = Math.min(domesticSupply, remaining);
+                    remaining -= consumedDomestic;
+                    consumedStock = Math.min(stockSupply, remaining);
+                }
 
                 countryMarket.goodAmountsPool(g, domesticSupply - consumedDomestic);
                 countryMarket.goodStockpiles(g, stockSupply - consumedStock);
@@ -59,18 +80,10 @@ public class CountryMarketResolveSystem {
                 float deficit = countryMarket.goodStockpileDailyDeficits(g);
                 if (deficit > 0 && !drawingOnStockpile) {
                     float purchased = deficit * satisfaction * countryMarket.spendingRatio();
-                    float price = countryMarket.goodPrices(g);
-                    float cost = purchased * price;
+                    float cost = purchased * countryMarket.goodPrices(g);
                     countryMarket.goodStockpiles(g, countryMarket.goodStockpiles(g) + purchased);
                     countryMarket.treasury(countryMarket.treasury() - cost);
                 }
-
-                float inertia = 0.05f;
-                float oldPrice = countryMarket.goodPrices(g);
-                float baseFactor = 1.0f + priceAdjustment;
-                float newPrice = oldPrice * (1.0f + inertia * (baseFactor - 1.0f));
-
-                countryMarket.goodPrices(g, Math.max(0.001f, newPrice));
             }
         }
     }

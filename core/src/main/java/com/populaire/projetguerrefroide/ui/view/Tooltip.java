@@ -89,7 +89,7 @@ public class Tooltip extends Table {
     }
 
     public void update(String text) {
-        if(!text.equals(this.mainLabel.getText().toString())) {
+        if(!this.mainLabel.getText().toString().equals(text)) {
             this.mainLabel.setText(text);
             this.image.setDrawable(null);
             this.subLabel.remove();

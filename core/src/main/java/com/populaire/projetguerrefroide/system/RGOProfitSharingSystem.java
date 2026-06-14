@@ -1,9 +1,9 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.EntityView;
-import com.github.elebras1.flecs.Field;
-import com.github.elebras1.flecs.Iter;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.EntityView;
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Iter;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
 public class RGOProfitSharingSystem {
@@ -13,6 +13,7 @@ public class RGOProfitSharingSystem {
             .kind(phaseId)
             .with(Province.class)
             .with(ResourceGathering.class)
+            .multiThreaded()
             .iter(this::process);
     }
 
@@ -55,27 +56,22 @@ public class RGOProfitSharingSystem {
                 continue;
             }
 
-            float aristocratShareRatio = countryEffectPolicy.aristocratProfitShare();
-            float workerShareRatio = countryEffectPolicy.workerProfitShare();
-            float stateShareRatio = countryEffectPolicy.stateProfitShare();
+            float stateShareRatio = countryEffectPolicy.stateProfitShareRate();
+            float capitalistShareRatio = countryEffectPolicy.capitalistProfitShareRate();
+            float aristocratShareRatio = countryEffectPolicy.aristocratProfitShareRate();
+            float workerShareRatio = countryEffectPolicy.workerProfitShareRate();
 
-            if(aristocratShareRatio <= 0f) {
-                float totalShareStateRatio = stateShareRatio + workerShareRatio;
-                if (totalShareStateRatio > 1f) {
-                    float scalingFactor = 1f / totalShareStateRatio;
-                    stateShareRatio *= scalingFactor;
-                    workerShareRatio *= scalingFactor;
-                }
-                regionIncome.countryProfitShare(regionIncome.countryProfitShare() + stateShareRatio * resourceGathering.profit());
-            } else {
-                float totalShareAristocrat = aristocratShareRatio + workerShareRatio;
-                if(totalShareAristocrat > 1f) {
-                    float scalingFactor = 1f / totalShareAristocrat;
-                    aristocratShareRatio *= scalingFactor;
-                    workerShareRatio *= scalingFactor;
-                }
-                regionIncome.aristocratProfitShare(regionIncome.aristocratProfitShare() + aristocratShareRatio  * resourceGathering.profit());
+            float totalShareRatio = stateShareRatio + capitalistShareRatio + aristocratShareRatio + workerShareRatio;
+            if (totalShareRatio > 1f) {
+                float scalingFactor = 1f / totalShareRatio;
+                stateShareRatio *= scalingFactor;
+                capitalistShareRatio *= scalingFactor;
+                aristocratShareRatio *= scalingFactor;
+                workerShareRatio *= scalingFactor;
             }
+            regionIncome.countryProfitShare(regionIncome.countryProfitShare() + stateShareRatio * resourceGathering.profit());
+            regionIncome.capitalistProfitShare(regionIncome.capitalistProfitShare() + capitalistShareRatio * resourceGathering.profit());
+            regionIncome.aristocratProfitShare(regionIncome.aristocratProfitShare() + aristocratShareRatio * resourceGathering.profit());
 
             float workerShare = workerShareRatio * resourceGathering.profit();
             regionIncome.profitShareByPopType(workerPopTypeIndex, regionIncome.profitShareByPopType(workerPopTypeIndex) + workerShare);

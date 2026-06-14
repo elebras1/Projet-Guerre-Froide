@@ -60,12 +60,12 @@ public class NewGameScreen implements Screen, GameInputListener, GameFlowHandler
 
         AssetManager assetManager = gameContext.getAssetManager();
         this.configurationService.loadNewGameLocalisation(this.gameContext);
-        Skin skinUi = assetManager.get("ui/ui_skin.json");
-        Skin skinFlags = assetManager.get("flags/flags_skin.json");
+        Skin skinUi = assetManager.get("generated-skins/ui/ui.json");
+        Skin skinFlags = assetManager.get("generated-skins/flags/flags.json");
         this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
         WidgetFactory widgetFactory = new WidgetFactory();
-        this.hudPresenter = new HudPresenter(gameContext, worldService, screenManager, widgetFactory, assetManager.get("ui/newgame/newgame_skin.json"), skinUi, skinFlags, assetManager.get("ui/scrollbars/scrollbars_skin.json"), assetManager.get("portraits/portraits_skin.json"));
-        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json"), skinUi, assetManager.get("ui/scrollbars/scrollbars_skin.json"), assetManager.get("ui/popup/popup_skin.json"), skinFlags);
+        this.hudPresenter = new HudPresenter(gameContext, worldService, screenManager, widgetFactory, assetManager.get("generated-skins/ui/newgame/newgame.json"), skinUi, skinFlags, assetManager.get("generated-skins/ui/scrollbars/scrollbars.json"), assetManager.get("generated-skins/portraits/portraits.json"));
+        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get("generated-skins/ui/mainmenu_ig/mainmenu_ig.json"), skinUi, assetManager.get("generated-skins/ui/scrollbars/scrollbars.json"), assetManager.get("generated-skins/ui/popup/popup.json"), skinFlags);
         this.tooltipPresenter = new TooltipPresenter(gameContext, this.worldService, widgetFactory, skinUi, skinFlags);
         this.initializeDebug();
 

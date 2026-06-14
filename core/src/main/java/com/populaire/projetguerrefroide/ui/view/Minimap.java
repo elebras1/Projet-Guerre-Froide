@@ -54,7 +54,7 @@ public class Minimap extends Table {
         });
         map.setPosition(11, 11);
 
-        Button zoomInButton = new Button(skin, "map_zoom_in");
+        Button zoomInButton = new Button(skin, "map_zoom_in_btn");
         zoomInButton.setPosition(332, 103);
         zoomInButton.addListener(new ClickListener() {
             @Override
@@ -63,7 +63,7 @@ public class Minimap extends Table {
             }
         });
 
-        Button zoomOutButton = new Button(skin, "map_zoom_out");
+        Button zoomOutButton = new Button(skin, "map_zoom_out_btn");
         zoomOutButton.setPosition(332, 10);
         zoomOutButton.addListener(new ClickListener() {
             @Override
@@ -105,7 +105,7 @@ public class Minimap extends Table {
     }
 
     private void setButtonMapMode(Table minimap, ButtonGroup<Button> buttonGroup, Skin skin, Skin skinUi, LabelStylePool labelStylePool, Map<String, String> localisation,  MinimapListener listener, String mapMode, int x, int y) {
-        Button button = new Button(skin, mapMode);
+        Button button = new Button(skin, mapMode + "_tgl");
         button.setPosition(x, y);
         button.setChecked(this.currentMapMode.equals(mapMode));
         buttonGroup.add(button);
@@ -143,12 +143,12 @@ public class Minimap extends Table {
         menuBarPanel.setSize(background.getMinWidth(), background.getMinHeight());
 
         int x = 20;
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_find_prov_btn", x, 12);
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_strategic_btn", x, 50);
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_victory_btn", x, 88);
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_spy_btn", x, 126);
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_nuke_btn", x, 164);
-        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_mission_btn", x, 202);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_find_prov_tgl", x, 12);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_strategic_tgl", x, 50);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_victory_tgl", x, 88);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_spy_tgl", x, 126);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_nuke_tgl", x, 164);
+        this.setButtonMenuBarPanel(menuBarPanel, skin, "minimap_mission_tgl", x, 202);
 
         return menuBarPanel;
     }

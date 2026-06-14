@@ -1,0 +1,24 @@
+{
+  "build_cost": {
+    "weaponry": 12,
+    "machine_parts": 5
+  },
+  "attack": 1.5,
+  "defence": 3,
+  "priority": 20,
+  "default_organisation": 30,
+  "supply_consumption": 1,
+  "weighted_value": 5,
+  "build_time": 120,
+  "maximum_speed": 4,
+  "type": "land",
+  "unit_type": "support",
+  "max_strength": 3,
+  "supply_cost": {
+    "canned_food": 0.03,
+    "ammunition": 0.2,
+    "fuel": 0.02,
+    "clothes": 0.02,
+    "automobiles": 0.1
+  }
+}

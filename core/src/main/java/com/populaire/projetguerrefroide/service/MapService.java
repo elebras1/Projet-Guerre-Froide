@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
 import com.badlogic.gdx.utils.BufferUtils;
 import com.badlogic.gdx.utils.Disposable;
-import com.github.elebras1.flecs.*;
+import io.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.*;
 import com.monstrous.gdx.webgpu.graphics.WgTexture;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;

@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
 import com.badlogic.gdx.math.Vector4;
 import com.badlogic.gdx.utils.Disposable;
-import com.github.elebras1.flecs.*;
+import io.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.*;
 import com.github.xpenatan.webgpu.*;
 import com.monstrous.gdx.webgpu.graphics.Binder;
@@ -892,7 +892,7 @@ public class MapRenderer implements Disposable {
         pass.setPipeline(this.pipelineProvinces);
         this.binderProvinces.bindGroup(pass, 0);
 
-        this.meshProvinces.render(pass, GL20.GL_TRIANGLES, 0, this.meshProvinces.getNumIndices(), 3, 0);
+        this.meshProvinces.render(pass, 0, this.meshProvinces.getNumIndices(), 3, 0);
 
         pass.end();
     }
@@ -902,7 +902,7 @@ public class MapRenderer implements Disposable {
         pass.setPipeline(this.pipelineMapLabels);
         this.binderMapLabels.bindGroup(pass, 0);
 
-        this.meshMapLabels.render(pass, GL20.GL_TRIANGLES, 0, this.meshMapLabels.getNumIndices(), 3, 0);
+        this.meshMapLabels.render(pass, 0, this.meshMapLabels.getNumIndices(), 3, 0);
 
         pass.end();
     }
@@ -912,7 +912,7 @@ public class MapRenderer implements Disposable {
         pass.setPipeline(this.pipelineBuildings);
         this.binderBuildings.bindGroup(pass, 0);
 
-        this.meshBuildings.render(pass, GL20.GL_TRIANGLES, 0, this.meshBuildings.getNumIndices(), 3, 0);
+        this.meshBuildings.render(pass, 0, this.meshBuildings.getNumIndices(), 3, 0);
 
         pass.end();
     }
@@ -922,7 +922,7 @@ public class MapRenderer implements Disposable {
         pass.setPipeline(this.pipelineResources);
         this.binderResources.bindGroup(pass, 0);
 
-        this.meshResources.render(pass, GL20.GL_TRIANGLES, 0, this.meshResources.getNumIndices(), 3, 0);
+        this.meshResources.render(pass, 0, this.meshResources.getNumIndices(), 3, 0);
 
         pass.end();
     }
@@ -932,7 +932,7 @@ public class MapRenderer implements Disposable {
         pass.setPipeline(this.pipelineRivers);
         this.binderRivers.bindGroup(pass, 0);
 
-        this.meshRivers.render(pass, GL20.GL_TRIANGLE_STRIP, this.meshRivers.getNumIndices(), 0, 3, 0);
+        this.meshRivers.render(pass, this.meshRivers.getNumIndices(), 0, 3, 0);
 
         pass.end();
     }

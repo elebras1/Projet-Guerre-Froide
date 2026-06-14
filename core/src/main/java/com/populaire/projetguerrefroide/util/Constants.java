@@ -1,7 +1,7 @@
 package com.populaire.projetguerrefroide.util;
 
 public class Constants {
-    public static final int GOOD_COUNT = 40;
+    public static final int GOOD_COUNT = 41;
     public static final int CULTURE_COUNT = 406;
     public static final int RELIGION_COUNT = 13;
     public static final int IDEOLOGY_COUNT = 9;
@@ -55,4 +55,6 @@ public class Constants {
     public static final String SECULARISM = "secularism";
     public static final String ASSIMILATION_RATE = "assimilation_rate";
     public static final String MIGRATION_PUSH = "migration_push";
+
+    public static float NEEDS_SCALING_FACTOR = 100000f;
 }

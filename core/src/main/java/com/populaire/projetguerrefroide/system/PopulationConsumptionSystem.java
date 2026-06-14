@@ -1,6 +1,6 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.*;
+import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
 
 public class PopulationConsumptionSystem {
@@ -28,7 +28,7 @@ public class PopulationConsumptionSystem {
                 countryEffectPolicy = country.getMutView(CountryEffectPolicy.class);
             }
 
-            int popTypeIndex = (int) pop.typeId();
+            int popTypeIndex = pop.index();
 
             float lifeCost = countryMarket.lifeCostsByPopType(popTypeIndex);
             float everydayCost = countryMarket.everydayCostsByPopType(popTypeIndex);

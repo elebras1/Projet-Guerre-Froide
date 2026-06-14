@@ -49,7 +49,7 @@ public class MainMenuInGame extends Table implements PopupListener {
         LabelStyle labelStyleJockey16GlowRed = this.labelStylePool.get("jockey_16_glow_red");
         LabelStyle labelStyleJockey24GlowRed = this.labelStylePool.get("jockey_24_glow_red");
 
-        Button savegameButton = this.widgetFactory.createButton(this.skin, "menu_button", 56, 360, this);
+        Button savegameButton = this.widgetFactory.createButton(this.skin, "menu_btn", 56, 360, this);
         savegameButton.add(new Label(this.localisation.get("SAVE_GAME"), labelStyleJockey20GlowBlue)).padBottom(5);
         savegameButton.addListener(new ClickListener() {
             @Override
@@ -57,7 +57,7 @@ public class MainMenuInGame extends Table implements PopupListener {
             }
         });
 
-        Button gameOptionsButton = this.widgetFactory.createButton(this.skin, "menu_button", 56, 318, this);
+        Button gameOptionsButton = this.widgetFactory.createButton(this.skin, "menu_btn", 56, 318, this);
         gameOptionsButton.add(new Label(this.localisation.get("GAME_OPTIONS"), labelStyleJockey20GlowBlue)).padBottom(5);
         gameOptionsButton.addListener(new ClickListener() {
             @Override
@@ -67,7 +67,7 @@ public class MainMenuInGame extends Table implements PopupListener {
             }
         });
 
-        Button resignButton = this.widgetFactory.createButton(this.skin, "menu_button", 56, 276, this);
+        Button resignButton = this.widgetFactory.createButton(this.skin, "menu_btn", 56, 276, this);
         resignButton.add(new Label(this.localisation.get("GAME_RESIGN"), labelStyleJockey20GlowBlue)).padBottom(5);
         resignButton.addListener(new ClickListener() {
             @Override
@@ -75,7 +75,7 @@ public class MainMenuInGame extends Table implements PopupListener {
             }
         });
 
-        Button messageSettingsButton = this.widgetFactory.createButton(this.skin, "menu_button", 56, 234, this);
+        Button messageSettingsButton = this.widgetFactory.createButton(this.skin, "menu_btn", 56, 234, this);
         messageSettingsButton.add(new Label(this.localisation.get("MESSAGE_SETTINGS"), labelStyleJockey20GlowBlue)).padBottom(5);
         messageSettingsButton.addListener(new ClickListener() {
             @Override
@@ -83,7 +83,7 @@ public class MainMenuInGame extends Table implements PopupListener {
             }
         });
 
-        Button quitButton = this.widgetFactory.createButton(this.skin, "menu_button_quit", 56, 103, this);
+        Button quitButton = this.widgetFactory.createButton(this.skin, "menu_quit_btn", 56, 103, this);
         quitButton.add(new Label(this.localisation.get("QUIT"), labelStyleJockey24GlowRed)).padBottom(5);
         quitButton.addListener(new ClickListener() {
             @Override
@@ -92,7 +92,7 @@ public class MainMenuInGame extends Table implements PopupListener {
             }
         });
 
-        Button cancelButton = this.widgetFactory.createButton(this.skin, "menu_button_cancel", 108, 39, this);
+        Button cancelButton = this.widgetFactory.createButton(this.skin, "menu_cancel_btn", 108, 39, this);
         cancelButton.add(new Label(this.localisation.get("CLOSE"), labelStyleJockey16GlowRed)).padBottom(10);
         cancelButton.addListener(new ClickListener() {
             @Override
@@ -253,7 +253,7 @@ public class MainMenuInGame extends Table implements PopupListener {
         LabelStyle labelStyleArial11BoldBlack = this.labelStylePool.get("arial_11_bold_black");
         short yPosition = 504;
 
-        Button gameButton = this.widgetFactory.createButton(this.skinUi, "settings_tab_btn_1", 47, yPosition, this);
+        Button gameButton = this.widgetFactory.createButton(this.skinUi, "settings_tab_1_btn", 47, yPosition, this);
         gameButton.add(new Label(this.localisation.get("GAME"), labelStyleArial11BoldBlack)).padBottom(3);
         gameButton.addListener(new ClickListener() {
             @Override
@@ -262,7 +262,7 @@ public class MainMenuInGame extends Table implements PopupListener {
             }
         });
 
-        Button videoButton = this.widgetFactory.createButton(this.skinUi, "settings_tab_btn_1", 125, yPosition, this);;
+        Button videoButton = this.widgetFactory.createButton(this.skinUi, "settings_tab_1_btn", 125, yPosition, this);;
         videoButton.add(new Label(this.localisation.get("VIDEO"), labelStyleArial11BoldBlack)).padBottom(3);
         videoButton.addListener(new ClickListener() {
             @Override
@@ -271,7 +271,7 @@ public class MainMenuInGame extends Table implements PopupListener {
             }
         });
 
-        Button audioButton = this.widgetFactory.createButton(this.skinUi, "settings_tab_btn_1", 203, yPosition, this);;
+        Button audioButton = this.widgetFactory.createButton(this.skinUi, "settings_tab_1_btn", 203, yPosition, this);;
         audioButton.add(new Label(this.localisation.get("AUDIO"), labelStyleArial11BoldBlack)).padBottom(3);
         audioButton.addListener(new ClickListener() {
             @Override
@@ -280,7 +280,7 @@ public class MainMenuInGame extends Table implements PopupListener {
             }
         });
 
-        Button controlsButton = this.widgetFactory.createButton(this.skinUi, "settings_tab_btn_1", 281, yPosition, this);;
+        Button controlsButton = this.widgetFactory.createButton(this.skinUi, "settings_tab_1_btn", 281, yPosition, this);;
         controlsButton.add(new Label(this.localisation.get("CONTROLS"), labelStyleArial11BoldBlack)).padBottom(3);
         controlsButton.addListener(new ClickListener() {
             @Override
@@ -324,7 +324,7 @@ public class MainMenuInGame extends Table implements PopupListener {
     public void addStepperSettings(Label valueLabel, LabelStyle labelStyle, ClickListener lessListener, ClickListener moreListener, String textLabel, int y) {
         this.widgetFactory.createLabel(textLabel, labelStyle, 82, y, this);
 
-        Button lessButton = this.widgetFactory.createButton(this.skinUi, "settings_less", 194, y - 7, this);
+        Button lessButton = this.widgetFactory.createButton(this.skinUi, "settings_less_btn", 194, y - 7, this);
         lessButton.addListener(lessListener);
 
         valueLabel.setPosition(225, y - 4);
@@ -332,14 +332,14 @@ public class MainMenuInGame extends Table implements PopupListener {
         valueLabel.setAlignment(Align.center);
         this.addActor(valueLabel);
 
-        Button moreButton = this.widgetFactory.createButton(this.skinUi, "settings_more", 304, y - 7, this);
+        Button moreButton = this.widgetFactory.createButton(this.skinUi, "settings_more_btn", 304, y - 7, this);
         moreButton.addListener(moreListener);
     }
 
     public void addCheckboxSettings(LabelStyle labelStyle, String textLabel, ClickListener listener , boolean isChecked, int y) {
         this.widgetFactory.createLabel(textLabel, labelStyle, 75, y, this);
 
-        Button checkButton = this.widgetFactory.createButton(this.skinUi, "checkbox", 302, y - 1, this);
+        Button checkButton = this.widgetFactory.createButton(this.skinUi, "checkbutton_tgl", 302, y - 1, this);
         checkButton.setChecked(isChecked);
         checkButton.addListener(listener);
     }

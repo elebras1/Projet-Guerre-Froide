@@ -1,10 +1,12 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.EntityView;
-import com.github.elebras1.flecs.Field;
-import com.github.elebras1.flecs.Iter;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.EntityView;
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Iter;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
+
+import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
 
 public class RGOProductionSystem {
 
@@ -13,6 +15,7 @@ public class RGOProductionSystem {
             .kind(phaseId)
             .with(Province.class)
             .with(ResourceGathering.class)
+            .multiThreaded()
             .iter(this::produce);
     }
 
@@ -62,16 +65,18 @@ public class RGOProductionSystem {
             resourceGathering.production(production);
 
             float workerMinWageFactor = (countryMarket.lifeCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex())) * (1f + countryEffectPolicy.minWageFactor());
-            float workerMinWage = workerMinWageFactor * resourceGathering.workerAmount();
+
+            float normalizedWages = workerMinWageFactor * resourceGathering.workerAmount() / NEEDS_SCALING_FACTOR;
+
             float revenue = production * countryMarket.goodPrices(resourceGathering.goodIndex());
-            if(revenue < workerMinWage) {
-                float scalingFactor = revenue / workerMinWage;
-                workerMinWage *= scalingFactor;
+            if(revenue < normalizedWages) {
+                float scalingFactor = revenue / normalizedWages;
                 resourceGathering.profit(0f);
+                resourceGathering.workerMinWage(workerMinWageFactor * resourceGathering.workerAmount() * scalingFactor);
             } else {
-                resourceGathering.profit(revenue - workerMinWage);
+                resourceGathering.profit(revenue - normalizedWages);
+                resourceGathering.workerMinWage(workerMinWageFactor * resourceGathering.workerAmount());
             }
-            resourceGathering.workerMinWage(workerMinWage);
         }
     }
 }

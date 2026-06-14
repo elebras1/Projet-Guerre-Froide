@@ -1,9 +1,9 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.EntityView;
-import com.github.elebras1.flecs.Field;
-import com.github.elebras1.flecs.Iter;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.EntityView;
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Iter;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
 public class PopulationEmploymentSynchronizationSystem {
@@ -12,6 +12,7 @@ public class PopulationEmploymentSynchronizationSystem {
         ecsWorld.system("PopulationEmploymentSynchronizationSystem")
             .kind(phaseId)
             .with(Population.class)
+            .multiThreaded()
             .iter(this::synchronize);
     }
 
@@ -32,8 +33,8 @@ public class PopulationEmploymentSynchronizationSystem {
                 provinceId = currentProvinceId;
                 EntityView province = iter.world().obtainEntityView(provinceId);
                 provinceData = province.getMutView(Province.class);
-                resourceGathering = province.getMutView(ResourceGathering.class);
-                if(resourceGathering != null) {
+                if(province.has(ResourceGathering.class)) {
+                    resourceGathering = province.getMutView(ResourceGathering.class);
                     resourceGatheringType = iter.world().obtainEntityView(resourceGathering.typeId()).getMutView(ResourceGatheringType.class);
                 } else {
                     resourceGatheringType = null;

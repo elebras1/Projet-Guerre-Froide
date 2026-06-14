@@ -1,5 +1,5 @@
-[![java](https://img.shields.io/badge/21.0.5-Java-orange.svg)](https://www.java.com)
-[![libgdx](https://img.shields.io/badge/1.13.0-libGDX-red.svg)](https://libgdx.com)
+[![java](https://img.shields.io/badge/25-Java-orange.svg)](https://www.java.com)
+[![libgdx](https://img.shields.io/badge/1.14.2-libGDX-red.svg)](https://libgdx.com)
 
 # ProjetGuerreFroide
 

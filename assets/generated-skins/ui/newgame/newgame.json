@@ -1,0 +1,29 @@
+{
+  "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+    "play_btn": {
+      "up": "play_btn",
+      "down": "play_btn_down",
+      "over": "play_btn_over"
+    },
+    "arrow_right_btn": {
+      "up": "arrow_right_btn",
+      "down": "arrow_right_btn_down",
+      "over": "arrow_right_btn_over"
+    },
+    "tab_btn": {
+      "up": "tab_btn",
+      "down": "tab_btn_down",
+      "over": "tab_btn_over"
+    },
+    "arrow_left_btn": {
+      "up": "arrow_left_btn",
+      "down": "arrow_left_btn_down",
+      "over": "arrow_left_btn_over"
+    },
+    "gen_btn": {
+      "up": "gen_btn",
+      "down": "gen_btn_down",
+      "over": "gen_btn_over"
+    }
+  }
+}

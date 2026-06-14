@@ -1,9 +1,10 @@
 package com.populaire.projetguerrefroide;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.command.handler.DemolishBuildingHandler;
 import com.populaire.projetguerrefroide.command.handler.ExpandBuildingHandler;
@@ -47,7 +48,7 @@ public class ProjetGuerreFroide extends Game {
         RegionService regionService = new RegionService(this.gameContext, buildingService, queryRepository);
         CountryService countryService = new CountryService(this.gameContext, queryRepository, regionService);
         ProvinceService provinceService = new ProvinceService(this.gameContext, queryRepository, countryService, regionService);
-        WorldService worldService = new WorldService(this.gameContext, queryRepository, buildingService, economyService, regionService, countryService, provinceService);
+        WorldService worldService = new WorldService(this.gameContext, queryRepository, buildingService, regionService, countryService, provinceService);
         TimeService timeService = new TimeService(this.gameContext.getBookmark().date());
         this.registerCommands(commandBus, buildingService);
         this.screenManager = new ScreenManager(this, this.gameContext, this.configurationService, worldService, timeService, economyService, commandBus);
@@ -97,6 +98,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(GlobalMarket.class);
         this.ecsWorld.component(CountryEffectPolicy.class);
         this.ecsWorld.component(RegionInstanceIncome.class);
+        this.ecsWorld.component(Unit.class);
     }
 
     public void registerCommands(CommandBus commandBus, BuildingService buildingService) {
@@ -107,9 +109,9 @@ public class ProjetGuerreFroide extends Game {
     }
 
     private void loadAssets(AssetManager assetManager) {
-        assetManager.load("ui/ui_skin.json", Skin.class);
-        assetManager.load("fonts/fonts_skin.json", Skin.class);
-        assetManager.load("ui/scrollbars/scrollbars_skin.json", Skin.class);
+        assetManager.load("generated-skins/ui/ui.json", Skin.class);
+        assetManager.load("generated-skins/fonts/fonts.json", Skin.class);
+        assetManager.load("generated-skins/ui/scrollbars/scrollbars.json", Skin.class);
         assetManager.finishLoading();
     }
 

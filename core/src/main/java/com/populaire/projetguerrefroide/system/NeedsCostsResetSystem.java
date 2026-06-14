@@ -1,8 +1,8 @@
 package com.populaire.projetguerrefroide.system;
 
-import com.github.elebras1.flecs.Field;
-import com.github.elebras1.flecs.Iter;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.Field;
+import io.github.elebras1.flecs.Iter;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.CountryMarket;
 import com.populaire.projetguerrefroide.component.CountryMarketView;
 
@@ -12,6 +12,7 @@ public class NeedsCostsResetSystem {
         ecsWorld.system("NeedsCostsResetSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
+            .multiThreaded()
             .iter(this::reset);
     }
 

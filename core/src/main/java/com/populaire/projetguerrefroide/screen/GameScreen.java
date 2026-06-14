@@ -72,18 +72,18 @@ public class GameScreen implements Screen, GameInputListener, TimeListener, Game
         this.presenters = new ObjectList<>();
 
         AssetManager assetManager = gameContext.getAssetManager();
-        Skin skinUi = assetManager.get("ui/ui_skin.json");
-        Skin skinFlags = assetManager.get("flags/flags_skin.json");
-        Skin skinPopup = assetManager.get("ui/popup/popup_skin.json");
-        Skin skinTopBar = assetManager.get("ui/topbar/topbar_skin.json");
-        Skin skinMinimap = assetManager.get("ui/minimap/minimap_skin.json");
-        Skin skinProvince = assetManager.get("ui/province/province_skin.json");
-        Skin skinScrollbars = assetManager.get("ui/scrollbars/scrollbars_skin.json");
-        Skin skinEconomy = assetManager.get("ui/economy/economy_skin.json");
+        Skin skinUi = assetManager.get("generated-skins/ui/ui.json");
+        Skin skinFlags = assetManager.get("generated-skins/flags/flags.json");
+        Skin skinPopup = assetManager.get("generated-skins/ui/popup/popup.json");
+        Skin skinTopBar = assetManager.get("generated-skins/ui/topbar/topbar.json");
+        Skin skinMinimap = assetManager.get("generated-skins/ui/minimap/minimap.json");
+        Skin skinProvince = assetManager.get("generated-skins/ui/province/province.json");
+        Skin skinScrollbars = assetManager.get("generated-skins/ui/scrollbars/scrollbars.json");
+        Skin skinEconomy = assetManager.get("generated-skins/ui/economy/economy.json");
         this.stage = new WgCustomStage(new WgScreenViewport(), skinUi, skinFlags);
         WidgetFactory widgetFactory = new WidgetFactory();
 
-        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get("ui/mainmenu_ig/mainmenu_ig_skin.json"), skinUi, skinScrollbars, skinPopup, skinFlags);
+        this.mainMenuInGamePresenter = new MainMenuInGamePresenter(gameContext, configurationService, this, widgetFactory, assetManager.get("generated-skins/ui/mainmenu_ig/mainmenu_ig.json"), skinUi, skinScrollbars, skinPopup, skinFlags);
         this.topBarPresenter = new TopBarPresenter(this.gameContext, this.worldService, this.timeService, this, widgetFactory, skinTopBar, skinUi, skinFlags);
         this.provincePanelPresenter = new ProvincePanelPresenter(this.gameContext, this.worldService, widgetFactory, skinProvince, skinUi, skinFlags);
         this.tooltipPresenter = new TooltipPresenter(this.gameContext, this.worldService, widgetFactory, skinUi, skinFlags);

@@ -1,8 +1,8 @@
 package com.populaire.projetguerrefroide.repository;
 
 import com.badlogic.gdx.utils.Disposable;
-import com.github.elebras1.flecs.Query;
-import com.github.elebras1.flecs.World;
+import io.github.elebras1.flecs.Query;
+import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
 public class QueryRepository implements Disposable {

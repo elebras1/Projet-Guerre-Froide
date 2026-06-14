@@ -20,7 +20,7 @@ public class LoadingPresenter implements Presenter {
     public void initialize(Stage stage) {
         AssetManager assetManager = gameContext.getAssetManager();
         assetManager.finishLoading();
-        Skin skin = assetManager.get("loadingscreens/loadingscreens_skin.json", Skin.class);
+        Skin skin = assetManager.get("generated-skins/loadingscreens/loadingscreens.json", Skin.class);
         Table rootTable = new Table();
         rootTable.setFillParent(true);
         Random random = new Random();
