@@ -83,7 +83,7 @@ subprojects {
   dependencies {
     implementation 'io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:-SNAPSHOT'
     implementation 'io.github.monstroussoftware.gdx-webgpu:backend-desktop-ffm:-SNAPSHOT'
-    implementation 'com.github.tommyettinger:jdkgdxds:2.1.2'
+    implementation 'com.github.tommyettinger:jdkgdxds:2.1.5'
     implementation 'com.dslplatform:dsl-json:2.0.2'
     annotationProcessor 'com.dslplatform:dsl-json:2.0.2'
     implementation 'io.github.elebras1:flecs-java:0.11.2'
