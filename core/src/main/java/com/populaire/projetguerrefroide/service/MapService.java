@@ -343,7 +343,7 @@ public class MapService implements WorldContext, Disposable {
                 int color = colorData.value();
                 int red = (color >> 24) & 0xFF;
                 int green = (color >> 16) & 0xFF;
-                this.mapModePixmap.drawPixel(red, green, ColorUtils.getDeterministicRGBA(region.getName()));
+                this.mapModePixmap.drawPixel(red, green, ColorUtils.getDeterministicRGBA(region.name()));
             }
         });
     }

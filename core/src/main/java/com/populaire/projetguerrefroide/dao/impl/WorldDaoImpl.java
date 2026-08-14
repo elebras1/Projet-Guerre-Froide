@@ -804,7 +804,7 @@ public class WorldDaoImpl implements WorldDao {
             EntityView unit = ecsWorld.obtainEntityView(unitId);
 
             long forceTypeId = ecsWorld.lookup(unitValues.get("type").asString());
-            long unitTypeId = ecsWorld.entity(unitValues.get("type").asLong());
+            long unitTypeId = ecsWorld.entity(unitValues.get("unit_type").asString());
             int attack = (int) unitValues.get("attack").asLong();
             int defence = (int) unitValues.get("defence").asLong();
             int priority = (int) unitValues.get("priority").asLong();
@@ -930,8 +930,8 @@ public class WorldDaoImpl implements WorldDao {
                 String countryNameId2 = allianceValue.get("country2").asString();
                 EntityView country2 = ecsWorld.obtainEntityView(ecsWorld.entity(countryNameId2));
                 String type = allianceValue.get("type").asString();
-                country1.addRelation(ecsConstants.getAllianceRelation(type, true), country2.id());
-                country2.addRelation(ecsConstants.getAllianceRelation(type, false), country1.id());
+                country1.add(ecsConstants.getAllianceRelation(type, true), country2.id());
+                country2.add(ecsConstants.getAllianceRelation(type, false), country1.id());
             }
         } catch (Exception exception) {
             throw new RuntimeException(exception);

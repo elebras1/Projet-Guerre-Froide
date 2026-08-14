@@ -33,10 +33,10 @@ public class ProvinceService {
         Entity province = ecsWorld.obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
         Entity region = ecsWorld.obtainEntity(provinceData.regionId());
-        String provinceNameId = province.getName();
-        String regionNameId = region.getName();
+        String provinceNameId = province.name();
+        String regionNameId = region.name();
         Entity terrain = ecsWorld.obtainEntity(provinceData.terrainId());
-        String terrainImage = terrain.getName();
+        String terrainImage = terrain.name();
         String resourceImage = this.getResourceGoodName(province.id());
         int populationRegion = this.getPopulationAmount(provinceId);
         int workersRegion = this.regionService.getWorkerAmount(provinceData.regionId());
@@ -45,7 +45,7 @@ public class ProvinceService {
         int incomeRegion = 0;
         int numberIndustryRegion = this.regionService.getNumberIndustry(region.id(), provinceData.ownerId());
         Entity country = ecsWorld.obtainEntity(provinceData.ownerId());
-        String countryNameId = country.getName();
+        String countryNameId = country.name();
         String colonizerId = this.countryService.getColonizerNameId(country.id());
         List<String> flagCountriesCore = this.getCountryCoreNameIds(provinceId);
         float resourceProduced = this.getResourceGatheringProduction(provinceNameId);
@@ -59,14 +59,14 @@ public class ProvinceService {
 
     public String getName(long provinceId) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
-        return province.getName();
+        return province.name();
     }
 
     public String getCountryNameId(long provinceId) {
         Entity province = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         Province provinceData = province.get(Province.class);
         Entity country = this.gameContext.getEcsWorld().obtainEntity(provinceData.ownerId());
-        return country.getName();
+        return country.name();
     }
 
     public int getPopulationAmount(long provinceId) {
@@ -111,7 +111,7 @@ public class ProvinceService {
 
                 Entity buildingType = ecsWorld.obtainEntity(buildingView.typeId());
 
-                switch (buildingType.getName()) {
+                switch (buildingType.name()) {
                     case "naval_base" -> navalBaseLevel.setValue(buildingView.size());
                     case "air_base" -> airBaseLevel.setValue(buildingView.size());
                     case "radar_station" -> radarStationLevel.setValue(buildingView.size());
@@ -134,7 +134,7 @@ public class ProvinceService {
                 continue;
             }
 
-            String countryNameId = ecsWorld.obtainEntity(coreCountryId).getName();
+            String countryNameId = ecsWorld.obtainEntity(coreCountryId).name();
             countriesCore.add(countryNameId);
         }
 
@@ -145,7 +145,7 @@ public class ProvinceService {
         Entity provinceEntity = this.gameContext.getEcsWorld().obtainEntity(provinceId);
         ResourceGathering resourceGathering = provinceEntity.get(ResourceGathering.class);
         if(resourceGathering != null) {
-            return this.gameContext.getEcsWorld().obtainEntity(resourceGathering.goodId()).getName();
+            return this.gameContext.getEcsWorld().obtainEntity(resourceGathering.goodId()).name();
         }
         return null;
     }
@@ -181,15 +181,15 @@ public class ProvinceService {
             if(amountAdults != 0) {
                 int percentage = (int) ((amount / (float) amountAdults) * 100);
                 total += percentage;
-                elementPercentages.put(ecsWorld.obtainEntity(elementId).getName(), percentage);
+                elementPercentages.put(ecsWorld.obtainEntity(elementId).name(), percentage);
             } else {
-                elementPercentages.put(ecsWorld.obtainEntity(elementId).getName(), 0);
+                elementPercentages.put(ecsWorld.obtainEntity(elementId).name(), 0);
             }
         }
 
         if(total != 100 && biggestElementIndex != -1) {
             int difference = 100 - total;
-            String biggestElementName = ecsWorld.obtainEntity(provinceElementIds[biggestElementIndex]).getName();
+            String biggestElementName = ecsWorld.obtainEntity(provinceElementIds[biggestElementIndex]).name();
             elementPercentages.put(biggestElementName, elementPercentages.get(biggestElementName) + difference);
         }
 

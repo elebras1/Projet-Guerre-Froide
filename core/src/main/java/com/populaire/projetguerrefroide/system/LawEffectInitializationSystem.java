@@ -44,7 +44,7 @@ public class LawEffectInitializationSystem {
 
                         float modifierValue = lawModifiers.values(m);
                         EntityView modifier = iter.world().obtainEntityView(modifierId);
-                        String modifierName = modifier.getName();
+                        String modifierName = modifier.name();
 
                         switch (modifierName) {
                             case TAX_POOR -> effectPolicy.poorTaxRate(effectPolicy.poorTaxRate() + modifierValue);
@@ -92,7 +92,7 @@ public class LawEffectInitializationSystem {
 
                         float overrideValue = lawOverrides.values(m);
                         EntityView override = iter.world().obtainEntityView(overrideId);
-                        String overrideName = override.getName();
+                        String overrideName = override.name();
 
                         switch (overrideName) {
                             case TAX_POOR -> effectPolicy.poorTaxRate(overrideValue);

@@ -36,7 +36,7 @@ public class BuildingService {
         }
         boolean isSuspended = building.has(this.gameContext.getEcsConstants().suspended());
         EconomyBuildingView economyBuilding = building.getMutView(EconomyBuilding.class);
-        return new BuildingSummaryDto(buildingId, buildingType.getName(), buildingData.size(), buildingTypeData.maxLevel(), economyBuilding.primaryWorkerAmount() + economyBuilding.secondaryWorkerAmount(), economyBuilding.production(), levelsQueued, isSuspended);
+        return new BuildingSummaryDto(buildingId, buildingType.name(), buildingData.size(), buildingTypeData.maxLevel(), economyBuilding.primaryWorkerAmount() + economyBuilding.secondaryWorkerAmount(), economyBuilding.production(), levelsQueued, isSuspended);
     }
 
     public BuildingDto buildDetails(long buildingId) {
@@ -52,7 +52,7 @@ public class BuildingService {
             long goodId = buildingTypeData.goodCostIds()[i];
             if(goodId != 0) {
                 Entity goodEntity = ecsWorld.obtainEntity(goodId);
-                goodCostNameIds[i] = goodEntity.getName();
+                goodCostNameIds[i] = goodEntity.name();
             }
         }
         String[] inputGoodNameIds = new String[buildingTypeData.goodInputIds().length];
@@ -60,14 +60,14 @@ public class BuildingService {
             long goodId = buildingTypeData.goodInputIds()[i];
             if(goodId != 0) {
                 Entity goodEntity = ecsWorld.obtainEntity(goodId);
-                inputGoodNameIds[i] = goodEntity.getName();
+                inputGoodNameIds[i] = goodEntity.name();
             }
         }
         Entity outputGoodEntity = ecsWorld.obtainEntity(buildingTypeData.goodOutputId());
-        String outputGoodNameId = outputGoodEntity.getName();
+        String outputGoodNameId = outputGoodEntity.name();
         int amountWorkers = economyBuilding.primaryWorkerAmount() + economyBuilding.secondaryWorkerAmount();
         int maxWorkers = buildingData.size() * buildingTypeData.workforce();
-        return new BuildingDto(buildingId, buildingType.getName(), parent.getName(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostAmounts(), inputGoodNameIds, buildingTypeData.goodInputAmounts(), outputGoodNameId, buildingTypeData.goodOutputAmount(), amountWorkers, maxWorkers, building.has(this.gameContext.getEcsConstants().suspended()));
+        return new BuildingDto(buildingId, buildingType.name(), parent.name(), buildingTypeData.maxLevel(), goodCostNameIds, buildingTypeData.goodCostAmounts(), inputGoodNameIds, buildingTypeData.goodInputAmounts(), outputGoodNameId, buildingTypeData.goodOutputAmount(), amountWorkers, maxWorkers, building.has(this.gameContext.getEcsConstants().suspended()));
     }
 
     public void demolishBuilding(long buildingId) {

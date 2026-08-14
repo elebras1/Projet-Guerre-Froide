@@ -1,10 +1,10 @@
 package com.populaire.projetguerrefroide.system;
 
 import io.github.elebras1.flecs.*;
-import io.github.elebras1.flecs.util.FlecsConstants;
 import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.command.request.BuildingLevelUpCommand;
 import com.populaire.projetguerrefroide.component.*;
+import io.github.elebras1.flecs.util.Flecs;
 
 public class ExpansionBuildingSystem {
     private final CommandBus commandBus;
@@ -12,7 +12,7 @@ public class ExpansionBuildingSystem {
     public ExpansionBuildingSystem(World ecsWorld, CommandBus commandBus) {
         this.commandBus = commandBus;
         ecsWorld.system("ExpansionBuildingSystem")
-            .kind(FlecsConstants.EcsOnUpdate)
+            .kind(Flecs.OnUpdate)
             .with(ExpansionBuilding.class)
             .multiThreaded()
             .iter(this::expand);

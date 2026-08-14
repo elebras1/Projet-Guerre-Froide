@@ -167,7 +167,7 @@ public class WorldService {
             return -1;
         }
         Entity selectedProvince = this.gameContext.getEcsWorld().obtainEntity(selectedProvinceId);
-        return this.provinceService.getResourceGatheringProduction(selectedProvince.getName());
+        return this.provinceService.getResourceGatheringProduction(selectedProvince.name());
     }
 
     public RegionsBuildingsDto buildRegionsBuildingsDto(SortType sortType) {
@@ -177,7 +177,7 @@ public class WorldService {
     public RegionDto buildRegionDto(long regionId) {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity region = ecsWorld.obtainEntity(regionId);
-        return this.regionService.buildDetails(this.mapService.getPlayerCountryId(), region.id(), region.getName());
+        return this.regionService.buildDetails(this.mapService.getPlayerCountryId(), region.id(), region.name());
     }
 
     public long getRegionIdByBuildingId(long buildingId) {

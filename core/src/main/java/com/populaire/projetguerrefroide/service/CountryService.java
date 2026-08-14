@@ -42,9 +42,9 @@ public class CountryService {
         }
         int population = this.getPopulationAmount(selectedCountry.id());
         List<String> allies = this.getAlliesOfSelectedCountry(selectedCountry.id());
-        String government = ecsWorld.obtainEntity(countryData.governmentId()).getName();
+        String government = ecsWorld.obtainEntity(countryData.governmentId()).name();
 
-        return new CountrySummaryDto(selectedCountry.getName(), population, government, portraitNameFile, headOfState.name(), this.getColonizerNameId(selectedCountry.id()), allies);
+        return new CountrySummaryDto(selectedCountry.name(), population, government, portraitNameFile, headOfState.name(), this.getColonizerNameId(selectedCountry.id()), allies);
     }
 
     public CountryDto buildDetails(long countryId) {
@@ -94,7 +94,7 @@ public class CountryService {
     public String getName(long countryId) {
         World ecsWorld = this.gameContext.getEcsWorld();
         Entity country = ecsWorld.obtainEntity(countryId);
-        return country.getName();
+        return country.name();
     }
 
     public int getPopulationAmount(long countryId) {
@@ -120,7 +120,7 @@ public class CountryService {
         long countryColonizerId = country.target(ecsConstants.isColonyOf());
         if(countryColonizerId != 0) {
             Entity colony = ecsWorld.obtainEntity(countryColonizerId);
-            return colony.getName();
+            return colony.name();
         }
 
         return null;
@@ -131,7 +131,7 @@ public class CountryService {
         Entity country = ecsWorld.obtainEntity(countryId);
         Country countryData = country.get(Country.class);
         Entity capitalProvince = ecsWorld.obtainEntity(countryData.capitalId());
-        long capitalPositionId = ecsWorld.lookup("province_" + capitalProvince.getName() + "_pos_default");
+        long capitalPositionId = ecsWorld.lookup("province_" + capitalProvince.name() + "_pos_default");
         Entity capitalPosition = ecsWorld.obtainEntity(capitalPositionId);
         return capitalPosition.get(Position.class);
     }
@@ -166,7 +166,7 @@ public class CountryService {
                 if (relation != ecsConstants.isColonyOf()) {
                     Entity alliedCountry = ecsWorld.obtainEntity(alliedCountryId);
                     if (alliedCountry != null) {
-                        String alliedCountryNameId = alliedCountry.getName();
+                        String alliedCountryNameId = alliedCountry.name();
                         if (!allies.contains(alliedCountryNameId)) {
                             allies.add(alliedCountryNameId);
                         }

@@ -154,7 +154,7 @@ public class MapRenderer implements Disposable {
         Query query = this.queryRepository.getCountries();
         query.each(countryId -> {
             EntityView country = ecsWorld.obtainEntityView(countryId);
-            String countryNameId = country.getName();
+            String countryNameId = country.name();
             this.getLabelsData(
                 ecsWorld,
                 countryId,
@@ -189,7 +189,7 @@ public class MapRenderer implements Disposable {
                         long connectedProvinceId = connectedProvinces.get(j);
                         Entity connectedProvince = ecsWorld.obtainEntity(connectedProvinceId);
                         BorderView border = connectedProvince.getMutView(Border.class);
-                        long positionEntityId = ecsWorld.lookup("province_" + connectedProvince.getName() + "_pos_default");
+                        long positionEntityId = ecsWorld.lookup("province_" + connectedProvince.name() + "_pos_default");
                         Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
                         PositionView position = positionEntity.getMutView(Position.class);
                         positionsProvinces.add(position.x());
@@ -315,7 +315,7 @@ public class MapRenderer implements Disposable {
         Query provinceBuildingQuery = this.queryRepository.getProvinces();
         provinceBuildingQuery.each(provinceEntityId -> {
             Entity province = ecsWorld.obtainEntity(provinceEntityId);
-            String provinceNameId = province.getName();
+            String provinceNameId = province.name();
             LongList buildings = buildingsByProvince.get(provinceEntityId);
             if (buildings == null) {
                 return;
@@ -326,7 +326,7 @@ public class MapRenderer implements Disposable {
                 Entity building = ecsWorld.obtainEntity(buildingEntityId);
                 Building buildingData = building.get(Building.class);
                 Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
-                String buildingName = buildingType.getName();
+                String buildingName = buildingType.name();
 
                 TextureRegion buildingRegion = this.mapElementsTextureAtlas.findRegion("building_" + buildingName + "_empty");
 
@@ -351,7 +351,7 @@ public class MapRenderer implements Disposable {
 
             if (countryData.capitalId() != 0 && countriesWithProvinces.contains(countryEntityId)) {
                 Entity capitalProvinceEntity = ecsWorld.obtainEntity(countryData.capitalId());
-                long positionEntityId = ecsWorld.lookup("province_" + capitalProvinceEntity.getName() + "_pos_default");
+                long positionEntityId = ecsWorld.lookup("province_" + capitalProvinceEntity.name() + "_pos_default");
                 Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
                 Position position = positionEntity.get(Position.class);
                 int cx = position.x();
@@ -446,9 +446,9 @@ public class MapRenderer implements Disposable {
                 if(provinceResourceGoodId == -1) {
                     continue;
                 }
-                TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + ecsWorld.obtainEntity(provinceResourceGoodId).getName());
+                TextureRegion resourceRegion = this.mapElementsTextureAtlas.findRegion("resource_" + ecsWorld.obtainEntity(provinceResourceGoodId).name());
 
-                long positionEntityId = ecsWorld.lookup("province_" + provinceEntity.getName() + "_pos_default");
+                long positionEntityId = ecsWorld.lookup("province_" + provinceEntity.name() + "_pos_default");
                 Entity positionEntity = ecsWorld.obtainEntity(positionEntityId);
                 Position position = positionEntity.get(Position.class);
                 int cx = position.x();

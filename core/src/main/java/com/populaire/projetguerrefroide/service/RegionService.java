@@ -128,7 +128,7 @@ public class RegionService {
             buildings.sort(Comparator.comparingLong(BuildingSummaryDto::id));
 
             byte developpementIndexValue = this.calculateDeveloppementIndex();
-            regions.add(new RegionDto(region.getName(), population, workerAmount, workerRatio, developpementIndexValue, buildings));
+            regions.add(new RegionDto(region.name(), population, workerAmount, workerRatio, developpementIndexValue, buildings));
         }
 
         return regions;
@@ -150,7 +150,7 @@ public class RegionService {
                 if (regionInstance.regionId() == regionId && regionInstance.ownerId() == ownerId) {
                     EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
                     if (buildingTypeView.has(EconomyBuildingType.class)) {
-                        String color = BuildingUtils.getColor(buildingTypeView.getName());
+                        String color = BuildingUtils.getColor(buildingTypeView.name());
                         if (color != null) {
                             validBuildings.add(new Pair<>(buildingView.size(), color));
                         }
@@ -210,7 +210,7 @@ public class RegionService {
                 if(regionInstance.regionId() == regionId && regionInstance.ownerId() == ownerId) {
                     EntityView buildingTypeView = ecsWorld.obtainEntityView(buildingView.typeId());
                     if(buildingTypeView.has(SpecialBuildingType.class)) {
-                        specialBuildingNames.add(buildingTypeView.getName());
+                        specialBuildingNames.add(buildingTypeView.name());
                     }
                 }
             }
@@ -262,7 +262,7 @@ public class RegionService {
         for (int provinceIndex = 0; provinceIndex < provinceIds.size(); provinceIndex++) {
             long id = provinceIds.get(provinceIndex);
             Entity province = ecsWorld.obtainEntity(id);
-            result.add(province.getName());
+            result.add(province.name());
         }
 
         return result;
