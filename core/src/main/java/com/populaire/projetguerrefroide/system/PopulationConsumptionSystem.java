@@ -3,6 +3,8 @@ package com.populaire.projetguerrefroide.system;
 import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.component.*;
 
+import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
+
 public class PopulationConsumptionSystem {
 
     public PopulationConsumptionSystem(World ecsWorld, long phaseId) {
@@ -35,20 +37,20 @@ public class PopulationConsumptionSystem {
             float luxuryCost = countryMarket.luxuryCostsByPopType(popTypeIndex);
 
             float budget = pop.savings() * (1.0f - countryEffectPolicy.popSpending());
-            float amount = pop.amount();
+            float scaledAmount = pop.amount() / NEEDS_SCALING_FACTOR;
 
-            float neededLife = lifeCost * amount;
-            float lifeFraction = Math.min(1f, budget / Math.max(0.001f, neededLife));
+            float neededLife = lifeCost * scaledAmount;
+            float lifeFraction = Math.min(1f, Math.max(0f, budget / Math.max(0.001f, neededLife)));
             budget -= neededLife * lifeFraction;
             budget = Math.max(0f, budget);
 
-            float neededEveryday = everydayCost * amount;
-            float everydayFraction = Math.min(1f, budget / Math.max(0.001f, neededEveryday));
+            float neededEveryday = everydayCost * scaledAmount;
+            float everydayFraction = Math.min(1f, Math.max(0f, budget / Math.max(0.001f, neededEveryday)));
             budget -= neededEveryday * everydayFraction;
             budget = Math.max(0f, budget);
 
-            float neededLuxury = luxuryCost * amount;
-            float luxuryFraction = Math.min(1f, budget / Math.max(0.001f, neededLuxury));
+            float neededLuxury = luxuryCost * scaledAmount;
+            float luxuryFraction = Math.min(1f, Math.max(0f, budget / Math.max(0.001f, neededLuxury)));
 
             EntityView popType = iter.world().obtainEntityView(pop.typeId());
             PopulationTypeView popTypeData = popType.getMutView(PopulationType.class);
@@ -59,7 +61,7 @@ public class PopulationConsumptionSystem {
                     break;
                 }
                 float base = popTypeData.lifeNeedsGoodAmounts(j);
-                float demand = base * lifeFraction * amount;
+                float demand = base * lifeFraction * scaledAmount;
                 countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
             }
 
@@ -69,7 +71,7 @@ public class PopulationConsumptionSystem {
                     break;
                 }
                 float base = popTypeData.everydayNeedsGoodAmounts(j);
-                float demand = base * everydayFraction * amount;
+                float demand = base * everydayFraction * scaledAmount;
                 countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
             }
 
@@ -79,7 +81,7 @@ public class PopulationConsumptionSystem {
                     break;
                 }
                 float base = popTypeData.luxuryNeedsGoodAmounts(j);
-                float demand = base * luxuryFraction * amount;
+                float demand = base * luxuryFraction * scaledAmount;
                 countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
             }
         }

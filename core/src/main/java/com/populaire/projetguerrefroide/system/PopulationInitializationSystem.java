@@ -6,6 +6,8 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
+import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
+
 public class PopulationInitializationSystem {
 
     public PopulationInitializationSystem(World ecsWorld, long phaseId) {
@@ -33,7 +35,7 @@ public class PopulationInitializationSystem {
                 strataMultiplier = (populationTypeData.strata() * 2) + 1;
             }
 
-            population.savings(baseSavings * strataMultiplier * population.amount());
+            population.savings(baseSavings * strataMultiplier * population.amount() / NEEDS_SCALING_FACTOR);
             population.lifeNeedsSatisfaction(1f);
             population.everydayNeedsSatisfaction(0.5f);
             population.luxuryNeedsSatisfaction(0f);

@@ -74,21 +74,27 @@ public class PopulationIncomeDistributionSystem {
 
             float totalMinWages = regionInstanceIncome.minWagesByPopType(typeIdx);
             int totalWorkers = regionInstanceIncome.workersByPopType(typeIdx);
-            grossIncome += totalMinWages * popAmount / Math.max(0.001f, totalWorkers);
+            if (totalWorkers > 0) {
+                grossIncome += totalMinWages * popAmount / totalWorkers;
 
-            float totalBonus = regionInstanceIncome.profitShareByPopType(typeIdx);
-            grossIncome += totalBonus * popAmount / Math.max(0.001f, totalWorkers);
+                float totalBonus = regionInstanceIncome.profitShareByPopType(typeIdx);
+                grossIncome += totalBonus * popAmount / totalWorkers;
+            }
 
             if (populationType.has(this.ecsConstants.capitalistTag())) {
                 float capitalistTotal = regionInstanceIncome.capitalistProfitShare();
                 int totalCapitalists = regionDemographics.totalByPopType(typeIdx);
-                grossIncome += capitalistTotal * popAmount / Math.max(0.001f, totalCapitalists);
+                if (totalCapitalists > 0) {
+                    grossIncome += capitalistTotal * popAmount / totalCapitalists;
+                }
             }
 
             if (populationType.has(this.ecsConstants.aristocratTag())) {
                 float aristocratTotal = regionInstanceIncome.aristocratProfitShare();
                 int totalAristocrats = regionDemographics.totalByPopType(typeIdx);
-                grossIncome += aristocratTotal * popAmount / Math.max(0.001f, totalAristocrats);
+                if (totalAristocrats > 0) {
+                    grossIncome += aristocratTotal * popAmount / totalAristocrats;
+                }
             }
 
             float taxRate = 0f;

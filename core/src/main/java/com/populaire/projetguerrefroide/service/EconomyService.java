@@ -19,6 +19,10 @@ public class EconomyService {
     private final RGOEmploymentSystem rgoEmploymentSystem;
     private final EconomyBuildingEmploymentSystem economyBuildingEmploymentSystem;
     private final PopulationEmploymentSynchronizationSystem populationEmploymentSynchronizationSystem;
+    private final PresimulateProductionSystem presimulateProductionSystem;
+    private final PresimulatePopDemandSystem presimulatePopDemandSystem;
+    private final PresimulateFactoryDemandSystem presimulateFactoryDemandSystem;
+    private final PresimulateRebalanceSystem presimulateRebalanceSystem;
 
     private final GlobalMarketResetSystem globalMarketResetSystem;
     private final CountryMarketResetSystem countryMarketResetSystem;
@@ -54,6 +58,10 @@ public class EconomyService {
         long phaseInit = ecsWorld.entity("PhaseInit");
         long phaseEmployment = ecsWorld.entity("PhaseEmployment");
         long phaseSync = ecsWorld.entity("PhaseSync");
+        long phasePresimulateProduction = ecsWorld.entity("PhasePresimulateProduction");
+        long phasePresimulatePopDemand = ecsWorld.entity("PhasePresimulatePopDemand");
+        long phasePresimulateFactoryDemand = ecsWorld.entity("PhasePresimulateFactoryDemand");
+        long phasePresimulateRebalance = ecsWorld.entity("PhasePresimulateRebalance");
 
         long phaseReset = ecsWorld.entity("PhaseReset");
         long phaseNeedsCosts = ecsWorld.entity("PhaseNeedsCosts");
@@ -69,6 +77,10 @@ public class EconomyService {
             .with(phaseInit)
             .with(phaseEmployment)
             .with(phaseSync)
+            .with(phasePresimulateProduction)
+            .with(phasePresimulatePopDemand)
+            .with(phasePresimulateFactoryDemand)
+            .with(phasePresimulateRebalance)
             .build();
 
         this.mainPipeline = ecsWorld.pipeline("MainEconomyPipeline")
@@ -99,6 +111,10 @@ public class EconomyService {
         this.rgoEmploymentSystem = new RGOEmploymentSystem(ecsWorld, phaseEmployment);
         this.economyBuildingEmploymentSystem = new EconomyBuildingEmploymentSystem(ecsWorld, phaseEmployment);
         this.populationEmploymentSynchronizationSystem = new PopulationEmploymentSynchronizationSystem(ecsWorld, phaseSync);
+        this.presimulateProductionSystem = new PresimulateProductionSystem(ecsWorld, phasePresimulateProduction);
+        this.presimulatePopDemandSystem = new PresimulatePopDemandSystem(ecsWorld, phasePresimulatePopDemand);
+        this.presimulateFactoryDemandSystem = new PresimulateFactoryDemandSystem(ecsWorld, phasePresimulateFactoryDemand);
+        this.presimulateRebalanceSystem = new PresimulateRebalanceSystem(ecsWorld, phasePresimulateRebalance);
 
         this.globalMarketResetSystem = new GlobalMarketResetSystem(ecsWorld, phaseReset);
         this.countryMarketResetSystem = new CountryMarketResetSystem(ecsWorld, phaseReset);
