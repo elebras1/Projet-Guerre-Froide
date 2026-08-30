@@ -14,17 +14,45 @@ public class LawEffectInitializationSystem {
         ecsWorld.system("LawEffectInitializationSystem")
             .kind(phaseId)
             .with(Country.class)
-            .with(CountryEffectPolicy.class)
+            .with(CountryTaxPolicy.class)
+            .with(CountryBudgetPolicy.class)
+            .with(CountryEducationPolicy.class)
+            .with(CountryTradePolicy.class)
+            .with(CountryProductionPolicy.class)
+            .with(CountryLaborPolicy.class)
+            .with(CountryPopulationPolicy.class)
+            .with(CountryPoliticalPolicy.class)
+            .with(CountryCulturePolicy.class)
+            .with(CountryProfitDistributionPolicy.class)
             .multiThreaded()
             .iter(this::initialize);
     }
 
     private void initialize(Iter iter) {
         Field<Country> countryField = iter.field(Country.class, 0);
-        Field<CountryEffectPolicy> effectPolicyField = iter.field(CountryEffectPolicy.class, 1);
+        Field<CountryTaxPolicy> taxPolicyField = iter.field(CountryTaxPolicy.class, 1);
+        Field<CountryBudgetPolicy> budgetPolicyField = iter.field(CountryBudgetPolicy.class, 2);
+        Field<CountryEducationPolicy> educationPolicyField = iter.field(CountryEducationPolicy.class, 3);
+        Field<CountryTradePolicy> tradePolicyField = iter.field(CountryTradePolicy.class, 4);
+        Field<CountryProductionPolicy> productionPolicyField = iter.field(CountryProductionPolicy.class, 5);
+        Field<CountryLaborPolicy> laborPolicyField = iter.field(CountryLaborPolicy.class, 6);
+        Field<CountryPopulationPolicy> populationPolicyField = iter.field(CountryPopulationPolicy.class, 7);
+        Field<CountryPoliticalPolicy> politicalPolicyField = iter.field(CountryPoliticalPolicy.class, 8);
+        Field<CountryCulturePolicy> culturePolicyField = iter.field(CountryCulturePolicy.class, 9);
+        Field<CountryProfitDistributionPolicy> profitDistributionPolicyField = iter.field(CountryProfitDistributionPolicy.class, 10);
+
         for (int i = 0; i < iter.count(); i++) {
             CountryView country = countryField.getMutView(i);
-            CountryEffectPolicyView effectPolicy = effectPolicyField.getMutView(i);
+            CountryTaxPolicyView taxPolicy = taxPolicyField.getMutView(i);
+            CountryBudgetPolicyView budgetPolicy = budgetPolicyField.getMutView(i);
+            CountryEducationPolicyView educationPolicy = educationPolicyField.getMutView(i);
+            CountryTradePolicyView tradePolicy = tradePolicyField.getMutView(i);
+            CountryProductionPolicyView productionPolicy = productionPolicyField.getMutView(i);
+            CountryLaborPolicyView laborPolicy = laborPolicyField.getMutView(i);
+            CountryPopulationPolicyView populationPolicy = populationPolicyField.getMutView(i);
+            CountryPoliticalPolicyView politicalPolicy = politicalPolicyField.getMutView(i);
+            CountryCulturePolicyView culturePolicy = culturePolicyField.getMutView(i);
+            CountryProfitDistributionPolicyView profitDistributionPolicy = profitDistributionPolicyField.getMutView(i);
 
             for (int l = 0; l < country.activeLawIdsLength(); l++) {
                 long lawId = country.activeLawIds(l);
@@ -47,37 +75,37 @@ public class LawEffectInitializationSystem {
                         String modifierName = modifier.name();
 
                         switch (modifierName) {
-                            case TAX_POOR -> effectPolicy.poorTaxRate(effectPolicy.poorTaxRate() + modifierValue);
-                            case TAX_MIDDLE -> effectPolicy.middleTaxRate(effectPolicy.middleTaxRate() + modifierValue);
-                            case TAX_RICH -> effectPolicy.richTaxRate(effectPolicy.richTaxRate() + modifierValue);
-                            case TARIFF_RATE -> effectPolicy.tariffRate(effectPolicy.tariffRate() + modifierValue);
-                            case MILITARY_SPENDING -> effectPolicy.militarySpendingRate(effectPolicy.militarySpendingRate() + modifierValue);
-                            case EDUCATION_SPENDING -> effectPolicy.educationSpendingRate(effectPolicy.educationSpendingRate() + modifierValue);
-                            case ADMINISTRATION_SPENDING -> effectPolicy.administrationSpendingRate(effectPolicy.administrationSpendingRate() + modifierValue);
-                            case SOCIAL_SPENDING -> effectPolicy.socialSpendingRate(effectPolicy.socialSpendingRate() + modifierValue);
-                            case CAPITALIST_PROFIT_SHARE -> effectPolicy.capitalistProfitShareRate(effectPolicy.capitalistProfitShareRate() + modifierValue);
-                            case WORKER_PROFIT_SHARE -> effectPolicy.workerProfitShareRate(effectPolicy.workerProfitShareRate() + modifierValue);
-                            case ARISTOCRAT_PROFIT_SHARE -> effectPolicy.aristocratProfitShareRate(effectPolicy.aristocratProfitShareRate() + modifierValue);
-                            case STATE_PROFIT_SHARE -> effectPolicy.stateProfitShareRate(effectPolicy.stateProfitShareRate() + modifierValue);
-                            case MIN_WAGE_FACTOR -> effectPolicy.minWageFactor(effectPolicy.minWageFactor() + modifierValue);
-                            case FACTORY_INPUT_MODIFIER -> effectPolicy.factoryInputModifier(effectPolicy.factoryInputModifier() + modifierValue);
-                            case FACTORY_OUTPUT_MODIFIER -> effectPolicy.factoryOutputModifier(effectPolicy.factoryOutputModifier() + modifierValue);
-                            case RGO_OUTPUT_MODIFIER -> effectPolicy.rgoOutputModifier(effectPolicy.rgoOutputModifier() + modifierValue);
-                            case CONSTRUCTION_SPEED -> effectPolicy.constructionSpeed(effectPolicy.constructionSpeed() + modifierValue);
-                            case POP_GROWTH_FACTOR -> effectPolicy.popGrowthFactor(effectPolicy.popGrowthFactor() + modifierValue);
-                            case EDUCATION_EFFICIENCY -> effectPolicy.educationEfficiency(effectPolicy.educationEfficiency() + modifierValue);
-                            case MIGRATION_PULL -> effectPolicy.migrationPull(effectPolicy.migrationPull() + modifierValue);
-                            case POP_SPENDING -> effectPolicy.popSpending(effectPolicy.popSpending() + modifierValue);
-                            case POLITICAL_CONSCIOUSNESS -> effectPolicy.politicalConsciousness(effectPolicy.politicalConsciousness() + modifierValue);
-                            case POLITICAL_RADICALISM -> effectPolicy.politicalRadicalism(effectPolicy.politicalRadicalism() + modifierValue);
-                            case SUPPRESSION -> effectPolicy.suppression(effectPolicy.suppression() + modifierValue);
-                            case SOCIAL_MOBILITY -> effectPolicy.socialMobility(effectPolicy.socialMobility() + modifierValue);
-                            case CLASS_RIGIDITY -> effectPolicy.classRigidity(effectPolicy.classRigidity() + modifierValue);
-                            case ADMINISTRATIVE_EFFICIENCY -> effectPolicy.administrativeEfficiency(effectPolicy.administrativeEfficiency() + modifierValue);
-                            case RELIGIOUS_CONVERSION_SPEED -> effectPolicy.religiousConversionSpeed(effectPolicy.religiousConversionSpeed() + modifierValue);
-                            case SECULARISM -> effectPolicy.secularism(effectPolicy.secularism() + modifierValue);
-                            case ASSIMILATION_RATE -> effectPolicy.assimilationRate(effectPolicy.assimilationRate() + modifierValue);
-                            case MIGRATION_PUSH -> effectPolicy.migrationPush(effectPolicy.migrationPush() + modifierValue);
+                            case TAX_POOR -> taxPolicy.poorTaxRate(taxPolicy.poorTaxRate() + modifierValue);
+                            case TAX_MIDDLE -> taxPolicy.middleTaxRate(taxPolicy.middleTaxRate() + modifierValue);
+                            case TAX_RICH -> taxPolicy.richTaxRate(taxPolicy.richTaxRate() + modifierValue);
+                            case TARIFF_RATE -> tradePolicy.tariffRate(tradePolicy.tariffRate() + modifierValue);
+                            case MILITARY_SPENDING -> budgetPolicy.militarySpendingRate(budgetPolicy.militarySpendingRate() + modifierValue);
+                            case EDUCATION_SPENDING -> educationPolicy.educationSpendingRate(educationPolicy.educationSpendingRate() + modifierValue);
+                            case ADMINISTRATION_SPENDING -> budgetPolicy.administrationSpendingRate(budgetPolicy.administrationSpendingRate() + modifierValue);
+                            case SOCIAL_SPENDING -> budgetPolicy.socialSpendingRate(budgetPolicy.socialSpendingRate() + modifierValue);
+                            case CAPITALIST_PROFIT_SHARE -> profitDistributionPolicy.capitalistProfitShareRate(profitDistributionPolicy.capitalistProfitShareRate() + modifierValue);
+                            case WORKER_PROFIT_SHARE -> profitDistributionPolicy.workerProfitShareRate(profitDistributionPolicy.workerProfitShareRate() + modifierValue);
+                            case ARISTOCRAT_PROFIT_SHARE -> profitDistributionPolicy.aristocratProfitShareRate(profitDistributionPolicy.aristocratProfitShareRate() + modifierValue);
+                            case STATE_PROFIT_SHARE -> profitDistributionPolicy.stateProfitShareRate(profitDistributionPolicy.stateProfitShareRate() + modifierValue);
+                            case MIN_WAGE_FACTOR -> laborPolicy.minWageFactor(laborPolicy.minWageFactor() + modifierValue);
+                            case FACTORY_INPUT_MODIFIER -> productionPolicy.factoryInputModifier(productionPolicy.factoryInputModifier() + modifierValue);
+                            case FACTORY_OUTPUT_MODIFIER -> productionPolicy.factoryOutputModifier(productionPolicy.factoryOutputModifier() + modifierValue);
+                            case RGO_OUTPUT_MODIFIER -> productionPolicy.rgoOutputModifier(productionPolicy.rgoOutputModifier() + modifierValue);
+                            case CONSTRUCTION_SPEED -> productionPolicy.constructionSpeed(productionPolicy.constructionSpeed() + modifierValue);
+                            case POP_GROWTH_FACTOR -> populationPolicy.popGrowthFactor(populationPolicy.popGrowthFactor() + modifierValue);
+                            case EDUCATION_EFFICIENCY -> educationPolicy.educationEfficiency(educationPolicy.educationEfficiency() + modifierValue);
+                            case MIGRATION_PULL -> populationPolicy.migrationPull(populationPolicy.migrationPull() + modifierValue);
+                            case POP_SPENDING -> budgetPolicy.popSpending(budgetPolicy.popSpending() + modifierValue);
+                            case POLITICAL_CONSCIOUSNESS -> politicalPolicy.politicalConsciousness(politicalPolicy.politicalConsciousness() + modifierValue);
+                            case POLITICAL_RADICALISM -> politicalPolicy.politicalRadicalism(politicalPolicy.politicalRadicalism() + modifierValue);
+                            case SUPPRESSION -> politicalPolicy.suppression(politicalPolicy.suppression() + modifierValue);
+                            case SOCIAL_MOBILITY -> politicalPolicy.socialMobility(politicalPolicy.socialMobility() + modifierValue);
+                            case CLASS_RIGIDITY -> politicalPolicy.classRigidity(politicalPolicy.classRigidity() + modifierValue);
+                            case ADMINISTRATIVE_EFFICIENCY -> politicalPolicy.administrativeEfficiency(politicalPolicy.administrativeEfficiency() + modifierValue);
+                            case RELIGIOUS_CONVERSION_SPEED -> culturePolicy.religiousConversionSpeed(culturePolicy.religiousConversionSpeed() + modifierValue);
+                            case SECULARISM -> culturePolicy.secularism(culturePolicy.secularism() + modifierValue);
+                            case ASSIMILATION_RATE -> culturePolicy.assimilationRate(culturePolicy.assimilationRate() + modifierValue);
+                            case MIGRATION_PUSH -> populationPolicy.migrationPush(populationPolicy.migrationPush() + modifierValue);
                         }
                     }
                 }
@@ -95,42 +123,47 @@ public class LawEffectInitializationSystem {
                         String overrideName = override.name();
 
                         switch (overrideName) {
-                            case TAX_POOR -> effectPolicy.poorTaxRate(overrideValue);
-                            case TAX_MIDDLE -> effectPolicy.middleTaxRate(overrideValue);
-                            case TAX_RICH -> effectPolicy.richTaxRate(overrideValue);
-                            case TARIFF_RATE -> effectPolicy.tariffRate(overrideValue);
-                            case MILITARY_SPENDING -> effectPolicy.militarySpendingRate(overrideValue);
-                            case EDUCATION_SPENDING -> effectPolicy.educationSpendingRate(overrideValue);
-                            case ADMINISTRATION_SPENDING -> effectPolicy.administrationSpendingRate(overrideValue);
-                            case SOCIAL_SPENDING -> effectPolicy.socialSpendingRate(overrideValue);
-                            case CAPITALIST_PROFIT_SHARE -> effectPolicy.capitalistProfitShareRate(overrideValue);
-                            case WORKER_PROFIT_SHARE -> effectPolicy.workerProfitShareRate(overrideValue);
-                            case ARISTOCRAT_PROFIT_SHARE -> effectPolicy.aristocratProfitShareRate(overrideValue);
-                            case STATE_PROFIT_SHARE -> effectPolicy.stateProfitShareRate(overrideValue);
-                            case MIN_WAGE_FACTOR -> effectPolicy.minWageFactor(overrideValue);
-                            case FACTORY_INPUT_MODIFIER -> effectPolicy.factoryInputModifier(overrideValue);
-                            case FACTORY_OUTPUT_MODIFIER -> effectPolicy.factoryOutputModifier(overrideValue);
-                            case RGO_OUTPUT_MODIFIER -> effectPolicy.rgoOutputModifier(overrideValue);
-                            case CONSTRUCTION_SPEED -> effectPolicy.constructionSpeed(overrideValue);
-                            case POP_GROWTH_FACTOR -> effectPolicy.popGrowthFactor(overrideValue);
-                            case EDUCATION_EFFICIENCY -> effectPolicy.educationEfficiency(overrideValue);
-                            case MIGRATION_PULL -> effectPolicy.migrationPull(overrideValue);
-                            case POP_SPENDING -> effectPolicy.popSpending(overrideValue);
-                            case SLAVERY_ALLOWED -> effectPolicy.slaveryAllowed(overrideValue > 0);
-                            case POLITICAL_CONSCIOUSNESS -> effectPolicy.politicalConsciousness(overrideValue);
-                            case POLITICAL_RADICALISM -> effectPolicy.politicalRadicalism(overrideValue);
-                            case SUPPRESSION -> effectPolicy.suppression(overrideValue);
-                            case SOCIAL_MOBILITY -> effectPolicy.socialMobility(overrideValue);
-                            case CLASS_RIGIDITY -> effectPolicy.classRigidity(overrideValue);
-                            case ADMINISTRATIVE_EFFICIENCY -> effectPolicy.administrativeEfficiency(overrideValue);
-                            case RELIGIOUS_CONVERSION_SPEED -> effectPolicy.religiousConversionSpeed(overrideValue);
-                            case SECULARISM -> effectPolicy.secularism(overrideValue);
-                            case ASSIMILATION_RATE -> effectPolicy.assimilationRate(overrideValue);
-                            case MIGRATION_PUSH -> effectPolicy.migrationPush(overrideValue);
+                            case TAX_POOR -> taxPolicy.poorTaxRate(overrideValue);
+                            case TAX_MIDDLE -> taxPolicy.middleTaxRate(overrideValue);
+                            case TAX_RICH -> taxPolicy.richTaxRate(overrideValue);
+                            case TARIFF_RATE -> tradePolicy.tariffRate(overrideValue);
+                            case MILITARY_SPENDING -> budgetPolicy.militarySpendingRate(overrideValue);
+                            case EDUCATION_SPENDING -> educationPolicy.educationSpendingRate(overrideValue);
+                            case ADMINISTRATION_SPENDING -> budgetPolicy.administrationSpendingRate(overrideValue);
+                            case SOCIAL_SPENDING -> budgetPolicy.socialSpendingRate(overrideValue);
+                            case CAPITALIST_PROFIT_SHARE -> profitDistributionPolicy.capitalistProfitShareRate(overrideValue);
+                            case WORKER_PROFIT_SHARE -> profitDistributionPolicy.workerProfitShareRate(overrideValue);
+                            case ARISTOCRAT_PROFIT_SHARE -> profitDistributionPolicy.aristocratProfitShareRate(overrideValue);
+                            case STATE_PROFIT_SHARE -> profitDistributionPolicy.stateProfitShareRate(overrideValue);
+                            case MIN_WAGE_FACTOR -> laborPolicy.minWageFactor(overrideValue);
+                            case FACTORY_INPUT_MODIFIER -> productionPolicy.factoryInputModifier(overrideValue);
+                            case FACTORY_OUTPUT_MODIFIER -> productionPolicy.factoryOutputModifier(overrideValue);
+                            case RGO_OUTPUT_MODIFIER -> productionPolicy.rgoOutputModifier(overrideValue);
+                            case CONSTRUCTION_SPEED -> productionPolicy.constructionSpeed(overrideValue);
+                            case POP_GROWTH_FACTOR -> populationPolicy.popGrowthFactor(overrideValue);
+                            case EDUCATION_EFFICIENCY -> educationPolicy.educationEfficiency(overrideValue);
+                            case MIGRATION_PULL -> populationPolicy.migrationPull(overrideValue);
+                            case POP_SPENDING -> budgetPolicy.popSpending(overrideValue);
+                            case SLAVERY_ALLOWED -> laborPolicy.slaveryAllowed(overrideValue > 0);
+                            case POLITICAL_CONSCIOUSNESS -> politicalPolicy.politicalConsciousness(overrideValue);
+                            case POLITICAL_RADICALISM -> politicalPolicy.politicalRadicalism(overrideValue);
+                            case SUPPRESSION -> politicalPolicy.suppression(overrideValue);
+                            case SOCIAL_MOBILITY -> politicalPolicy.socialMobility(overrideValue);
+                            case CLASS_RIGIDITY -> politicalPolicy.classRigidity(overrideValue);
+                            case ADMINISTRATIVE_EFFICIENCY -> politicalPolicy.administrativeEfficiency(overrideValue);
+                            case RELIGIOUS_CONVERSION_SPEED -> culturePolicy.religiousConversionSpeed(overrideValue);
+                            case SECULARISM -> culturePolicy.secularism(overrideValue);
+                            case ASSIMILATION_RATE -> culturePolicy.assimilationRate(overrideValue);
+                            case MIGRATION_PUSH -> populationPolicy.migrationPush(overrideValue);
                         }
                     }
                 }
             }
+
+            profitDistributionPolicy.capitalistProfitShareRate(Math.max(0f, profitDistributionPolicy.capitalistProfitShareRate()));
+            profitDistributionPolicy.workerProfitShareRate(Math.max(0f, profitDistributionPolicy.workerProfitShareRate()));
+            profitDistributionPolicy.aristocratProfitShareRate(Math.max(0f, profitDistributionPolicy.aristocratProfitShareRate()));
+            profitDistributionPolicy.stateProfitShareRate(Math.max(0f, profitDistributionPolicy.stateProfitShareRate()));
         }
     }
 }

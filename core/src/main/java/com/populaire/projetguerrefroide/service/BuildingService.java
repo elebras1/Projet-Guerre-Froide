@@ -81,7 +81,7 @@ public class BuildingService {
         Entity building = ecsWorld.obtainEntity(buildingId);
         Building buildingData = building.get(Building.class);
         Entity country = ecsWorld.obtainEntity(buildingData.countryId());
-        CountryEffectPolicy countryEffectPolicy = country.get(CountryEffectPolicy.class);
+        CountryProductionPolicy countryProductionPolicy = country.get(CountryProductionPolicy.class);
         Entity buildingType = ecsWorld.obtainEntity(buildingData.typeId());
 
         int maxLevel = 0;
@@ -89,11 +89,11 @@ public class BuildingService {
 
         if (buildingType.has(EconomyBuildingType.class)) {
             EconomyBuildingType typeData = buildingType.get(EconomyBuildingType.class);
-            baseTime = (int) (typeData.time() * (1f - countryEffectPolicy.constructionSpeed()));
+            baseTime = (int) (typeData.time() * (1f - countryProductionPolicy.constructionSpeed()));
             maxLevel = typeData.maxLevel();
         } else if (buildingType.has(DevelopmentBuildingType.class)) {
             DevelopmentBuildingType typeData = buildingType.get(DevelopmentBuildingType.class);
-            baseTime = (int) (typeData.time() * (1f - countryEffectPolicy.constructionSpeed()));
+            baseTime = (int) (typeData.time() * (1f - countryProductionPolicy.constructionSpeed()));
             maxLevel = typeData.maxLevel();
         }
 

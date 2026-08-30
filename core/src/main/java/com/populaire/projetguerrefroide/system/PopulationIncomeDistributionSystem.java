@@ -35,7 +35,7 @@ public class PopulationIncomeDistributionSystem {
 
         long countryId = 0;
         CountryMarketView countryMarket = null;
-        CountryEffectPolicyView countryEffectPolicy = null;
+        CountryTaxPolicyView countryTaxPolicy = null;
 
         Field<Population> populationField = iter.field(Population.class, 0);
         for (int i = 0; i < iter.count(); i++) {
@@ -64,21 +64,22 @@ public class PopulationIncomeDistributionSystem {
                 countryId = population.countryId();
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
-                countryEffectPolicy = country.getMutView(CountryEffectPolicy.class);
+                countryTaxPolicy = country.getMutView(CountryTaxPolicy.class);
             }
 
             float grossIncome = 0f;
             int typeIdx = population.index();
 
             float popAmount = population.amount();
+            float employedAmount = population.employment();
 
             float totalMinWages = regionInstanceIncome.minWagesByPopType(typeIdx);
             int totalWorkers = regionInstanceIncome.workersByPopType(typeIdx);
             if (totalWorkers > 0) {
-                grossIncome += totalMinWages * popAmount / totalWorkers;
+                grossIncome += totalMinWages * employedAmount / totalWorkers;
 
                 float totalBonus = regionInstanceIncome.profitShareByPopType(typeIdx);
-                grossIncome += totalBonus * popAmount / totalWorkers;
+                grossIncome += totalBonus * employedAmount / totalWorkers;
             }
 
             if (populationType.has(this.ecsConstants.capitalistTag())) {
@@ -99,14 +100,14 @@ public class PopulationIncomeDistributionSystem {
 
             float taxRate = 0f;
             switch (populationTypeData.strata()) {
-                case POOR_STRATA -> taxRate = countryEffectPolicy.poorTaxRate();
-                case MIDDLE_STRATA -> taxRate = countryEffectPolicy.middleTaxRate();
-                case RICH_STRATA -> taxRate = countryEffectPolicy.richTaxRate();
+                case POOR_STRATA -> taxRate = countryTaxPolicy.poorTaxRate();
+                case MIDDLE_STRATA -> taxRate = countryTaxPolicy.middleTaxRate();
+                case RICH_STRATA -> taxRate = countryTaxPolicy.richTaxRate();
             }
             float tax = grossIncome * taxRate;
             float netIncome = grossIncome - tax;
 
-            population.savings(population.savings() + netIncome);
+            population.savings(Math.max(0f, netIncome));
             countryMarket.treasury(countryMarket.treasury() + tax);
         }
     }

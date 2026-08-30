@@ -23,7 +23,7 @@ public class EconomyBuildingOwnerInitializationSystem {
 
     private void process(Iter iter) {
         long countryId = 0;
-        CountryEffectPolicyView countryEffectPolicy = null;
+        CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;
 
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
@@ -35,10 +35,10 @@ public class EconomyBuildingOwnerInitializationSystem {
             if (building.countryId() != countryId) {
                 countryId = building.countryId();
                 EntityView country = iter.world().obtainEntityView(countryId);
-                countryEffectPolicy = country.getMutView(CountryEffectPolicy.class);
+                countryProfitDistributionPolicy = country.getMutView(CountryProfitDistributionPolicy.class);
             }
 
-            if(countryEffectPolicy.capitalistProfitShareRate() <= 0f) {
+            if(countryProfitDistributionPolicy.capitalistProfitShareRate() <= 0f) {
                 economyBuilding.ownerTagId(this.ecsConstants.countryTag());
             } else {
                 economyBuilding.ownerTagId(this.ecsConstants.capitalistTag());

@@ -12,7 +12,7 @@ public class CountryMarketResolveSystem {
         ecsWorld.system("CountryMarketResolveSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
-            .with(CountryEffectPolicy.class)
+            .with(CountryTradePolicy.class)
             .iter(this::resolve);
     }
 
@@ -21,12 +21,12 @@ public class CountryMarketResolveSystem {
         GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
-        Field<CountryEffectPolicy> countryEffectPolicyField = iter.field(CountryEffectPolicy.class, 1);
+        Field<CountryTradePolicy> countryTradePolicyField = iter.field(CountryTradePolicy.class, 1);
         for (int i = 0; i < iter.count(); i++) {
             CountryMarketView countryMarket = countryMarketField.getMutView(i);
-            CountryEffectPolicyView countryEffectPolicy = countryEffectPolicyField.getMutView(i);
+            CountryTradePolicyView countryTradePolicy = countryTradePolicyField.getMutView(i);
 
-            float tariffRate = countryEffectPolicy.tariffRate();
+            float tariffRate = countryTradePolicy.tariffRate();
 
             for (int g = 0; g < countryMarket.goodPricesLength(); g++) {
                 boolean drawingOnStockpile = countryMarket.goodDrawingOnStockpiles(g);

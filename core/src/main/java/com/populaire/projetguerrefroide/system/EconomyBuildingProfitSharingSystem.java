@@ -24,7 +24,7 @@ public class EconomyBuildingProfitSharingSystem {
         long regionId = 0;
         RegionInstanceIncomeView regionIncome = null;
         long countryId = 0;
-        CountryEffectPolicyView countryEffectPolicy = null;
+        CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;
         long buildingTypeId = 0;
         EconomyBuildingTypeView buildingTypeData = null;
 
@@ -49,21 +49,23 @@ public class EconomyBuildingProfitSharingSystem {
             if(building.countryId() != countryId) {
                 countryId = building.countryId();
                 EntityView country = iter.world().obtainEntityView(countryId);
-                countryEffectPolicy = country.getMutView(CountryEffectPolicy.class);
+                countryProfitDistributionPolicy = country.getMutView(CountryProfitDistributionPolicy.class);
             }
 
             int primaryWorkerPopTypeIndex = buildingTypeData.primaryWorkerPopTypeIndex();
             int secondaryWorkerPopTypeIndex = buildingTypeData.secondaryWorkerPopTypeIndex();
             regionIncome.minWagesByPopType(primaryWorkerPopTypeIndex, regionIncome.minWagesByPopType(primaryWorkerPopTypeIndex) + economyBuilding.primaryWorkerMinWage());
             regionIncome.minWagesByPopType(secondaryWorkerPopTypeIndex, regionIncome.minWagesByPopType(secondaryWorkerPopTypeIndex) + economyBuilding.secondaryWorkerMinWage());
+            regionIncome.workersByPopType(primaryWorkerPopTypeIndex, regionIncome.workersByPopType(primaryWorkerPopTypeIndex) + economyBuilding.primaryWorkerAmount());
+            regionIncome.workersByPopType(secondaryWorkerPopTypeIndex, regionIncome.workersByPopType(secondaryWorkerPopTypeIndex) + economyBuilding.secondaryWorkerAmount());
 
             if(economyBuilding.profit() <= 0f) {
                 continue;
             }
 
-            float capitalistShareRatio = countryEffectPolicy.capitalistProfitShareRate();
-            float workerShareRatio = countryEffectPolicy.workerProfitShareRate();
-            float stateShareRatio = countryEffectPolicy.stateProfitShareRate();
+            float capitalistShareRatio = countryProfitDistributionPolicy.capitalistProfitShareRate();
+            float workerShareRatio = countryProfitDistributionPolicy.workerProfitShareRate();
+            float stateShareRatio = countryProfitDistributionPolicy.stateProfitShareRate();
 
             if(economyBuilding.ownerTagId() == this.ecsConstants.countryTag()) {
                 float totalShareStateRatio = stateShareRatio + workerShareRatio;

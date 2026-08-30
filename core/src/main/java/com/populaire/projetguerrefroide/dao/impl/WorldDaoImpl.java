@@ -1320,7 +1320,16 @@ public class WorldDaoImpl implements WorldDao {
             country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
             country.set(new CountryMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new boolean[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], 0f, 0f, 0f));
             country.set(new CountryDemographics(0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
-            country.set(new CountryEffectPolicy(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0.7f, 0.3f, 0.75f, 0.7f, 0f, 0f, 0f, 0f,0f ,0f ,0f ,0f, 0f, false, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0.2f));
+            country.set(new CountryTaxPolicy(0f, 0f, 0f));
+            country.set(new CountryBudgetPolicy(0f, 0f, 0f, 0f));
+            country.set(new CountryEducationPolicy(0f, 0f));
+            country.set(new CountryTradePolicy(0f));
+            country.set(new CountryProfitDistributionPolicy(0.7f, 0.3f, 0.75f, 0.7f));
+            country.set(new CountryLaborPolicy(0f, false));
+            country.set(new CountryProductionPolicy(0f, 0f, 0f, 0f, 0.2f));
+            country.set(new CountryPopulationPolicy(0f, 0f, 0f));
+            country.set(new CountryPoliticalPolicy(0f, 0f, 0f, 0f, 0f, 0f));
+            country.set(new CountryCulturePolicy(0f, 0f, 0f));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }

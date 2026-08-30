@@ -21,7 +21,7 @@ public class RGOProfitSharingSystem {
         long regionId = 0;
         RegionInstanceIncomeView regionIncome = null;
         long countryId = 0;
-        CountryEffectPolicyView countryEffectPolicy = null;
+        CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;
         long rgoTypeId = 0;
         ResourceGatheringTypeView rgoTypeData = null;
 
@@ -46,20 +46,21 @@ public class RGOProfitSharingSystem {
             if(province.ownerId() != countryId) {
                 countryId = province.ownerId();
                 EntityView country = iter.world().obtainEntityView(countryId);
-                countryEffectPolicy = country.getMutView(CountryEffectPolicy.class);
+                countryProfitDistributionPolicy = country.getMutView(CountryProfitDistributionPolicy.class);
             }
 
             int workerPopTypeIndex = rgoTypeData.workerPopTypeIndex();
             regionIncome.minWagesByPopType(workerPopTypeIndex, regionIncome.minWagesByPopType(workerPopTypeIndex) + resourceGathering.workerMinWage());
+            regionIncome.workersByPopType(workerPopTypeIndex, regionIncome.workersByPopType(workerPopTypeIndex) + resourceGathering.workerAmount());
 
             if(resourceGathering.profit() <= 0f) {
                 continue;
             }
 
-            float stateShareRatio = countryEffectPolicy.stateProfitShareRate();
-            float capitalistShareRatio = countryEffectPolicy.capitalistProfitShareRate();
-            float aristocratShareRatio = countryEffectPolicy.aristocratProfitShareRate();
-            float workerShareRatio = countryEffectPolicy.workerProfitShareRate();
+            float stateShareRatio = countryProfitDistributionPolicy.stateProfitShareRate();
+            float capitalistShareRatio = countryProfitDistributionPolicy.capitalistProfitShareRate();
+            float aristocratShareRatio = countryProfitDistributionPolicy.aristocratProfitShareRate();
+            float workerShareRatio = countryProfitDistributionPolicy.workerProfitShareRate();
 
             float totalShareRatio = stateShareRatio + capitalistShareRatio + aristocratShareRatio + workerShareRatio;
             if (totalShareRatio > 1f) {
@@ -75,7 +76,6 @@ public class RGOProfitSharingSystem {
 
             float workerShare = workerShareRatio * resourceGathering.profit();
             regionIncome.profitShareByPopType(workerPopTypeIndex, regionIncome.profitShareByPopType(workerPopTypeIndex) + workerShare);
-            regionIncome.workersByPopType(workerPopTypeIndex, regionIncome.workersByPopType(workerPopTypeIndex) + resourceGathering.workerAmount());
         }
     }
 }

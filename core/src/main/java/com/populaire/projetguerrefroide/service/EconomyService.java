@@ -41,6 +41,7 @@ public class EconomyService {
     private final CountryMarketSpreadSystem countryMarketSpreadSystem;
     private final GlobalMarketResolveSystem globalMarketResolveSystem;
     private final RegionIncomeResetSystem regionIncomeResetSystem;
+    private final RegionIncomeResetSystem regionIncomePreEmploymentResetSystem;
     private final RGOProfitSharingSystem rgoProfitSharingSystem;
     private final EconomyBuildingProfitSharingSystem economyBuildingProfitSharingSystem;
     private final CountryIncomeDistributionSystem countryIncomeDistributionSystem;
@@ -99,6 +100,7 @@ public class EconomyService {
 
         this.demographicsResetSystem = new DemographicsResetSystem(ecsWorld, phaseDemographicsReset);
         this.countryDemographicsResetSystem = new CountryDemographicsResetSystem(ecsWorld, phaseDemographicsReset);
+        this.regionIncomePreEmploymentResetSystem = new RegionIncomeResetSystem(ecsWorld, phaseDemographicsReset);
         this.populationInitializationSystem = new PopulationInitializationSystem(ecsWorld, phasePopInit);
         this.demographicsPopulationSpreadSystem = new DemographicsPopulationSpreadSystem(ecsWorld, phaseSpread);
         this.demographicsProvinceSpreadSystem = new DemographicsProvinceSpreadSystem(ecsWorld, phaseSpread);

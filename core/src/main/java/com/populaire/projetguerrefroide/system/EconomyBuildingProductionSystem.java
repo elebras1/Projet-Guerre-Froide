@@ -19,7 +19,8 @@ public class EconomyBuildingProductionSystem {
     private void produce(Iter iter) {
         long countryId = 0;
         CountryMarketView countryMarket = null;
-        CountryEffectPolicyView countryEffectPolicy = null;
+        CountryProductionPolicyView countryProductionPolicy = null;
+        CountryLaborPolicyView countryLaborPolicy = null;
 
         long economyBuildingTypeId = 0;
         EconomyBuildingTypeView economyBuildingTypeData = null;
@@ -35,7 +36,8 @@ public class EconomyBuildingProductionSystem {
                 countryId = building.countryId();
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
-                countryEffectPolicy = country.getMutView(CountryEffectPolicy.class);
+                countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
+                countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
             }
 
             if(building.typeId() != economyBuildingTypeId) {
@@ -62,10 +64,10 @@ public class EconomyBuildingProductionSystem {
             float scale = economyBuilding.scale();
             float effectiveScale = Math.min(scale * level, maxProductionScale);
             float baseOutput = economyBuildingTypeData.goodOutputAmount();
-            float throughput = 1f + Math.min(countryEffectPolicy.maximumEconomyScaleFactor(), level * 0.01f);
+            float throughput = 1f + Math.min(countryProductionPolicy.maximumEconomyScaleFactor(), level * 0.01f);
 
             float secondaryEffectMultiplier = 1.5f;
-            float outputMultiplier = 1f + countryEffectPolicy.factoryOutputModifier() + secondaryRatio * secondaryEffectMultiplier;
+            float outputMultiplier = 1f + countryProductionPolicy.factoryOutputModifier() + secondaryRatio * secondaryEffectMultiplier;
 
             float minInputSatisfaction = 1f;
             for (int g = 0; g < economyBuildingTypeData.goodInputIndexesLength(); g++) {
@@ -83,12 +85,12 @@ public class EconomyBuildingProductionSystem {
 
             economyBuilding.production(production);
 
-            float inputMultiplier = 1.0f + countryEffectPolicy.factoryInputModifier();
+            float inputMultiplier = 1.0f + countryProductionPolicy.factoryInputModifier();
             float inputCost = 0f;
             for(int g = 0; g < economyBuildingTypeData.goodInputIndexesLength(); g++) {
                 int goodIndex = economyBuildingTypeData.goodInputIndexes(g);
-                if(goodIndex <= 0) {
-                    continue;
+                if(goodIndex < 0) {
+                    break;
                 }
                 float amount = economyBuildingTypeData.goodInputAmounts(g);
                 float inputDemand = inputMultiplier * throughput * amount * effectiveScale;
@@ -96,8 +98,8 @@ public class EconomyBuildingProductionSystem {
                 inputCost += satisfiedDemand * countryMarket.goodPrices(goodIndex);
             }
 
-            float primaryMinWageFactor = (countryMarket.lifeCostsByPopType(economyBuildingTypeData.primaryWorkerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(economyBuildingTypeData.primaryWorkerPopTypeIndex())) * (1f + countryEffectPolicy.minWageFactor());
-            float secondaryMinWageFactor = (countryMarket.lifeCostsByPopType(economyBuildingTypeData.secondaryWorkerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(economyBuildingTypeData.secondaryWorkerPopTypeIndex())) * (1f + countryEffectPolicy.minWageFactor());
+            float primaryMinWageFactor = (countryMarket.lifeCostsByPopType(economyBuildingTypeData.primaryWorkerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(economyBuildingTypeData.primaryWorkerPopTypeIndex())) * (1f + countryLaborPolicy.minWageFactor());
+            float secondaryMinWageFactor = (countryMarket.lifeCostsByPopType(economyBuildingTypeData.secondaryWorkerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(economyBuildingTypeData.secondaryWorkerPopTypeIndex())) * (1f + countryLaborPolicy.minWageFactor());
 
             float normalizedPrimaryWages = primaryMinWageFactor * primaryWorkers / NEEDS_SCALING_FACTOR;
             float normalizedSecondaryWages = secondaryMinWageFactor * secondaryWorkers / NEEDS_SCALING_FACTOR;

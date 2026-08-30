@@ -22,7 +22,7 @@ public class RGOProductionSystem {
     private void produce(Iter iter) {
         long countryId = 0;
         CountryMarketView countryMarket = null;
-        CountryEffectPolicyView countryEffectPolicy = null;
+        CountryLaborPolicyView countryLaborPolicy = null;
 
         long resourceGatheringTypeId = 0;
         ResourceGatheringTypeView resourceGatheringTypeData = null;
@@ -44,7 +44,7 @@ public class RGOProductionSystem {
                 countryId = province.ownerId();
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
-                countryEffectPolicy = country.getMutView(CountryEffectPolicy.class);
+                countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
             }
 
             int maxCapacity = resourceGathering.size() * resourceGatheringTypeData.workforce();
@@ -64,7 +64,7 @@ public class RGOProductionSystem {
             float production = coreProduction * currentSlaveBonus;
             resourceGathering.production(production);
 
-            float workerMinWageFactor = (countryMarket.lifeCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex())) * (1f + countryEffectPolicy.minWageFactor());
+            float workerMinWageFactor = (countryMarket.lifeCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex())) * (1f + countryLaborPolicy.minWageFactor());
 
             float normalizedWages = workerMinWageFactor * resourceGathering.workerAmount() / NEEDS_SCALING_FACTOR;
 

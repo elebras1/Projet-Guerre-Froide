@@ -16,7 +16,7 @@ public class EconomyBuildingConsumptionSystem {
     private void consume(Iter iter) {
         long countryId = 0;
         CountryMarketView countryMarket = null;
-        CountryEffectPolicyView countryEffectPolicy = null;
+        CountryProductionPolicyView countryProductionPolicy = null;
 
         Field<Building> buildingField = iter.field(Building.class, 0);
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 1);
@@ -29,15 +29,25 @@ public class EconomyBuildingConsumptionSystem {
                 countryId = building.countryId();
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
-                countryEffectPolicy = country.getMutView(CountryEffectPolicy.class);
+                countryProductionPolicy = country.getMutView(CountryProductionPolicy.class);
             }
 
             EntityView economyBuildingType = iter.world().obtainEntityView(building.typeId());
             EconomyBuildingTypeView economyBuildingTypeData = economyBuildingType.getMutView(EconomyBuildingType.class);
 
-            float throughput = 1.0f; // TODO : calculer par rapport aux modifier d'agregations des technologies (niveau pays), infrastructures ou batiments specifique (niveau region)
+            float throughput = 1f + Math.min(countryProductionPolicy.maximumEconomyScaleFactor(), building.size() * 0.01f);
 
-            float inputMultiplier = 1.0f + countryEffectPolicy.factoryInputModifier();
+            float inputMultiplier = 1.0f + countryProductionPolicy.factoryInputModifier();
+
+            // Align input demand with the effective production scale used by
+            // EconomyBuildingProductionSystem (capped by available primary workers).
+            float level = building.size();
+            float workforce = economyBuildingTypeData.workforce();
+            float primaryRatioType = economyBuildingTypeData.primaryWorkerPopTypeRatio();
+            float maxPrimary = level * workforce * primaryRatioType;
+            float primaryRatio = economyBuilding.primaryWorkerAmount() / Math.max(1f, maxPrimary);
+            float maxProductionScale = primaryRatio * level;
+            float effectiveScale = Math.min(economyBuilding.scale() * level, maxProductionScale);
 
             for (int g = 0; g < economyBuildingTypeData.goodInputIdsLength(); g++) {
                 int goodIndex = economyBuildingTypeData.goodInputIndexes(g);
@@ -45,7 +55,7 @@ public class EconomyBuildingConsumptionSystem {
                     break;
                 }
                 float amount = economyBuildingTypeData.goodInputAmounts(g);
-                float demand = inputMultiplier * throughput * amount * economyBuilding.scale() * building.size();
+                float demand = inputMultiplier * throughput * amount * effectiveScale;
                 countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
                 economyBuilding.goodInputDemandAmounts(g, demand);
             }
