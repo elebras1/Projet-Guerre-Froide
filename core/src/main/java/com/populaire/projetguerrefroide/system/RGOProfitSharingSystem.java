@@ -18,8 +18,14 @@ public class RGOProfitSharingSystem {
     }
 
     private void process(Iter iter) {
+        EntityView globalPopType = iter.world().obtainEntityView(iter.world().lookup("global_population_type"));
+        GlobalPopulationTypeView globalPopTypeData = globalPopType.getMutView(GlobalPopulationType.class);
+        int capitalistPopTypeIndex = globalPopTypeData.capitalistPopTypeIndex();
+        int aristocratPopTypeIndex = globalPopTypeData.aristocratPopTypeIndex();
+
         long regionId = 0;
         RegionInstanceIncomeView regionIncome = null;
+        DemographicsView regionDemographics = null;
         long countryId = 0;
         CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;
         long rgoTypeId = 0;
@@ -35,6 +41,7 @@ public class RGOProfitSharingSystem {
                 regionId = province.regionInstanceId();
                 EntityView region = iter.world().obtainEntityView(regionId);
                 regionIncome = region.getMutView(RegionInstanceIncome.class);
+                regionDemographics = region.getMutView(Demographics.class);
             }
 
             if(resourceGathering.typeId() != rgoTypeId) {
@@ -63,19 +70,39 @@ public class RGOProfitSharingSystem {
             float workerShareRatio = countryProfitDistributionPolicy.workerProfitShareRate();
 
             float totalShareRatio = stateShareRatio + capitalistShareRatio + aristocratShareRatio + workerShareRatio;
-            if (totalShareRatio > 1f) {
-                float scalingFactor = 1f / totalShareRatio;
-                stateShareRatio *= scalingFactor;
-                capitalistShareRatio *= scalingFactor;
-                aristocratShareRatio *= scalingFactor;
-                workerShareRatio *= scalingFactor;
+            if (totalShareRatio <= 0f) {
+                regionIncome.countryProfitShare(regionIncome.countryProfitShare() + resourceGathering.profit());
+                continue;
             }
+
+            float scalingFactor = 1f / totalShareRatio;
+            stateShareRatio *= scalingFactor;
+            capitalistShareRatio *= scalingFactor;
+            aristocratShareRatio *= scalingFactor;
+            workerShareRatio *= scalingFactor;
+
             regionIncome.countryProfitShare(regionIncome.countryProfitShare() + stateShareRatio * resourceGathering.profit());
-            regionIncome.capitalistProfitShare(regionIncome.capitalistProfitShare() + capitalistShareRatio * resourceGathering.profit());
-            regionIncome.aristocratProfitShare(regionIncome.aristocratProfitShare() + aristocratShareRatio * resourceGathering.profit());
+
+            float capitalistProfitShare = capitalistShareRatio * resourceGathering.profit();
+            if(capitalistPopTypeIndex >= 0 && regionDemographics.totalByPopType(capitalistPopTypeIndex) > 0) {
+                regionIncome.capitalistProfitShare(regionIncome.capitalistProfitShare() + capitalistProfitShare);
+            } else {
+                regionIncome.countryProfitShare(regionIncome.countryProfitShare() + capitalistProfitShare);
+            }
+
+            float aristocratProfitShare = aristocratShareRatio * resourceGathering.profit();
+            if(aristocratPopTypeIndex >= 0 && regionDemographics.totalByPopType(aristocratPopTypeIndex) > 0) {
+                regionIncome.aristocratProfitShare(regionIncome.aristocratProfitShare() + aristocratProfitShare);
+            } else {
+                regionIncome.countryProfitShare(regionIncome.countryProfitShare() + aristocratProfitShare);
+            }
 
             float workerShare = workerShareRatio * resourceGathering.profit();
-            regionIncome.profitShareByPopType(workerPopTypeIndex, regionIncome.profitShareByPopType(workerPopTypeIndex) + workerShare);
+            if(regionDemographics.totalByPopType(workerPopTypeIndex) > 0) {
+                regionIncome.profitShareByPopType(workerPopTypeIndex, regionIncome.profitShareByPopType(workerPopTypeIndex) + workerShare);
+            } else {
+                regionIncome.countryProfitShare(regionIncome.countryProfitShare() + workerShare);
+            }
         }
     }
 }

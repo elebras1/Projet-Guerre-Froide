@@ -21,8 +21,13 @@ public class EconomyBuildingProfitSharingSystem {
     }
 
     private void process(Iter iter) {
+        EntityView globalPopType = iter.world().obtainEntityView(iter.world().lookup("global_population_type"));
+        GlobalPopulationTypeView globalPopTypeData = globalPopType.getMutView(GlobalPopulationType.class);
+        int capitalistPopTypeIndex = globalPopTypeData.capitalistPopTypeIndex();
+
         long regionId = 0;
         RegionInstanceIncomeView regionIncome = null;
+        DemographicsView regionDemographics = null;
         long countryId = 0;
         CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;
         long buildingTypeId = 0;
@@ -38,6 +43,7 @@ public class EconomyBuildingProfitSharingSystem {
                 regionId = building.parentId();
                 EntityView region = iter.world().obtainEntityView(regionId);
                 regionIncome = region.getMutView(RegionInstanceIncome.class);
+                regionDemographics = region.getMutView(Demographics.class);
             }
 
             if(building.typeId() != buildingTypeId) {
@@ -69,20 +75,29 @@ public class EconomyBuildingProfitSharingSystem {
 
             if(economyBuilding.ownerTagId() == this.ecsConstants.countryTag()) {
                 float totalShareStateRatio = stateShareRatio + workerShareRatio;
-                if (totalShareStateRatio > 1f) {
+                if (totalShareStateRatio > 0f) {
                     float scalingFactor = 1f / totalShareStateRatio;
                     stateShareRatio *= scalingFactor;
                     workerShareRatio *= scalingFactor;
+                } else {
+                    stateShareRatio = 1f;
                 }
                 regionIncome.countryProfitShare(regionIncome.countryProfitShare() + stateShareRatio * economyBuilding.profit());
             } else {
                 float totalShareCapitalist = capitalistShareRatio + workerShareRatio;
-                if(totalShareCapitalist > 1f) {
+                if(totalShareCapitalist > 0f) {
                     float scalingFactor = 1f / totalShareCapitalist;
                     capitalistShareRatio *= scalingFactor;
                     workerShareRatio *= scalingFactor;
+                } else {
+                    capitalistShareRatio = 1f;
                 }
-                regionIncome.capitalistProfitShare(regionIncome.capitalistProfitShare() + capitalistShareRatio  * economyBuilding.profit());
+                float capitalistProfitShare = capitalistShareRatio * economyBuilding.profit();
+                if(capitalistPopTypeIndex >= 0 && regionDemographics.totalByPopType(capitalistPopTypeIndex) > 0) {
+                    regionIncome.capitalistProfitShare(regionIncome.capitalistProfitShare() + capitalistProfitShare);
+                } else {
+                    regionIncome.countryProfitShare(regionIncome.countryProfitShare() + capitalistProfitShare);
+                }
             }
 
             float workerShare = workerShareRatio * economyBuilding.profit();
@@ -90,8 +105,17 @@ public class EconomyBuildingProfitSharingSystem {
             float primaryWorkerShare = workerShare / 3.0f;
             float secondaryWorkerShare = workerShare - primaryWorkerShare;
 
-            regionIncome.profitShareByPopType(primaryWorkerPopTypeIndex, regionIncome.profitShareByPopType(primaryWorkerPopTypeIndex) + primaryWorkerShare);
-            regionIncome.profitShareByPopType(secondaryWorkerPopTypeIndex, regionIncome.profitShareByPopType(secondaryWorkerPopTypeIndex) + secondaryWorkerShare);
+            if(regionDemographics.totalByPopType(primaryWorkerPopTypeIndex) > 0) {
+                regionIncome.profitShareByPopType(primaryWorkerPopTypeIndex, regionIncome.profitShareByPopType(primaryWorkerPopTypeIndex) + primaryWorkerShare);
+            } else {
+                regionIncome.countryProfitShare(regionIncome.countryProfitShare() + primaryWorkerShare);
+            }
+
+            if(regionDemographics.totalByPopType(secondaryWorkerPopTypeIndex) > 0) {
+                regionIncome.profitShareByPopType(secondaryWorkerPopTypeIndex, regionIncome.profitShareByPopType(secondaryWorkerPopTypeIndex) + secondaryWorkerShare);
+            } else {
+                regionIncome.countryProfitShare(regionIncome.countryProfitShare() + secondaryWorkerShare);
+            }
         }
 
     }

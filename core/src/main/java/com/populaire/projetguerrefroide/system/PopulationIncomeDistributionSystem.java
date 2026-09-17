@@ -71,22 +71,23 @@ public class PopulationIncomeDistributionSystem {
             int typeIdx = population.index();
 
             float popAmount = population.amount();
-            float employedAmount = population.employment();
 
             float totalMinWages = regionInstanceIncome.minWagesByPopType(typeIdx);
-            int totalWorkers = regionInstanceIncome.workersByPopType(typeIdx);
-            if (totalWorkers > 0) {
-                grossIncome += totalMinWages * employedAmount / totalWorkers;
-
-                float totalBonus = regionInstanceIncome.profitShareByPopType(typeIdx);
-                grossIncome += totalBonus * employedAmount / totalWorkers;
+            float totalBonus = regionInstanceIncome.profitShareByPopType(typeIdx);
+            int totalPopType = regionDemographics.totalByPopType(typeIdx);
+            if (totalPopType > 0) {
+                float distributedIncome = (totalMinWages + totalBonus) * popAmount / totalPopType;
+                grossIncome += distributedIncome;
+                regionInstanceIncome.claimedIncomeByPopType(typeIdx, regionInstanceIncome.claimedIncomeByPopType(typeIdx) + distributedIncome);
             }
 
             if (populationType.has(this.ecsConstants.capitalistTag())) {
                 float capitalistTotal = regionInstanceIncome.capitalistProfitShare();
                 int totalCapitalists = regionDemographics.totalByPopType(typeIdx);
                 if (totalCapitalists > 0) {
-                    grossIncome += capitalistTotal * popAmount / totalCapitalists;
+                    float distributedIncome = capitalistTotal * popAmount / totalCapitalists;
+                    grossIncome += distributedIncome;
+                    regionInstanceIncome.claimedCapitalistShare(regionInstanceIncome.claimedCapitalistShare() + distributedIncome);
                 }
             }
 
@@ -94,7 +95,9 @@ public class PopulationIncomeDistributionSystem {
                 float aristocratTotal = regionInstanceIncome.aristocratProfitShare();
                 int totalAristocrats = regionDemographics.totalByPopType(typeIdx);
                 if (totalAristocrats > 0) {
-                    grossIncome += aristocratTotal * popAmount / totalAristocrats;
+                    float distributedIncome = aristocratTotal * popAmount / totalAristocrats;
+                    grossIncome += distributedIncome;
+                    regionInstanceIncome.claimedAristocratShare(regionInstanceIncome.claimedAristocratShare() + distributedIncome);
                 }
             }
 
@@ -107,7 +110,7 @@ public class PopulationIncomeDistributionSystem {
             float tax = grossIncome * taxRate;
             float netIncome = grossIncome - tax;
 
-            population.savings(Math.max(0f, netIncome));
+            population.savings(population.savings() + netIncome);
             countryMarket.treasury(countryMarket.treasury() + tax);
         }
     }

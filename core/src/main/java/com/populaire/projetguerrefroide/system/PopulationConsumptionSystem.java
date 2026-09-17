@@ -59,6 +59,8 @@ public class PopulationConsumptionSystem {
             EntityView popType = iter.world().obtainEntityView(pop.typeId());
             PopulationTypeView popTypeData = popType.getMutView(PopulationType.class);
 
+            float payment = 0f;
+
             for (int j = 0; j < popTypeData.lifeNeedsGoodAmountsLength(); j++) {
                 int goodIndex = popTypeData.lifeNeedsGoodIndexes(j);
                 if (goodIndex < 0) {
@@ -67,6 +69,7 @@ public class PopulationConsumptionSystem {
                 float base = popTypeData.lifeNeedsGoodAmounts(j);
                 float demand = base * lifeFraction * scaledAmount;
                 countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
+                payment += demand * countryMarket.goodPrices(goodIndex) * countryMarket.goodDemandSatisfactionRatios(goodIndex);
             }
 
             for (int j = 0; j < popTypeData.everydayNeedsGoodIndexesLength(); j++) {
@@ -77,6 +80,7 @@ public class PopulationConsumptionSystem {
                 float base = popTypeData.everydayNeedsGoodAmounts(j);
                 float demand = base * everydayFraction * scaledAmount;
                 countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
+                payment += demand * countryMarket.goodPrices(goodIndex) * countryMarket.goodDemandSatisfactionRatios(goodIndex);
             }
 
             for (int j = 0; j < popTypeData.luxuryNeedsGoodIndexesLength(); j++) {
@@ -87,7 +91,11 @@ public class PopulationConsumptionSystem {
                 float base = popTypeData.luxuryNeedsGoodAmounts(j);
                 float demand = base * luxuryFraction * scaledAmount;
                 countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
+                payment += demand * countryMarket.goodPrices(goodIndex) * countryMarket.goodDemandSatisfactionRatios(goodIndex);
             }
+
+            pop.savings(pop.savings() - payment);
+            countryMarket.salesRevenue(countryMarket.salesRevenue() + payment);
         }
     }
 }

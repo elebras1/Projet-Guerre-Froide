@@ -6,17 +6,17 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
-public class CountryIncomeDistributionSystem {
+public class RegionIncomeResidualSystem {
 
-    public CountryIncomeDistributionSystem(World ecsWorld, long phaseId) {
-        ecsWorld.system("CountryIncomeDistributionSystem")
+    public RegionIncomeResidualSystem(World ecsWorld, long phaseId) {
+        ecsWorld.system("RegionIncomeResidualSystem")
             .kind(phaseId)
             .with(RegionInstance.class)
             .with(RegionInstanceIncome.class)
-            .iter(this::distribute);
+            .iter(this::collect);
     }
 
-    private void distribute(Iter iter) {
+    private void collect(Iter iter) {
         long countryId = 0;
         CountryMarketView countryMarket = null;
 
@@ -26,14 +26,23 @@ public class CountryIncomeDistributionSystem {
             RegionInstanceView regionInstance = regionInstanceField.getMutView(i);
             RegionInstanceIncomeView regionInstanceIncome = regionInstanceIncomeField.getMutView(i);
 
-            if(regionInstance.ownerId() != countryId) {
+            float residual = regionInstanceIncome.capitalistProfitShare() - regionInstanceIncome.claimedCapitalistShare()
+                + regionInstanceIncome.aristocratProfitShare() - regionInstanceIncome.claimedAristocratShare()
+                + regionInstanceIncome.countryProfitShare() - regionInstanceIncome.claimedCountryShare();
+            for (int p = 0; p < regionInstanceIncome.minWagesByPopTypeLength(); p++) {
+                residual += regionInstanceIncome.minWagesByPopType(p) + regionInstanceIncome.profitShareByPopType(p) - regionInstanceIncome.claimedIncomeByPopType(p);
+            }
+
+            if (residual <= 0f) {
+                continue;
+            }
+
+            if (regionInstance.ownerId() != countryId) {
                 countryId = regionInstance.ownerId();
                 EntityView country = iter.world().obtainEntityView(countryId);
                 countryMarket = country.getMutView(CountryMarket.class);
             }
-
-            countryMarket.treasury(countryMarket.treasury() + regionInstanceIncome.countryProfitShare());
-            regionInstanceIncome.claimedCountryShare(regionInstanceIncome.countryProfitShare());
+            countryMarket.treasury(countryMarket.treasury() + residual);
         }
     }
 }
