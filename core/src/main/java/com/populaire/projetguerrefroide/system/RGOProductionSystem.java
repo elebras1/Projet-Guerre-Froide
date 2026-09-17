@@ -6,45 +6,29 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.*;
 
-import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
-
 public class RGOProductionSystem {
 
     public RGOProductionSystem(World ecsWorld, long phaseId) {
         ecsWorld.system("RGOProductionSystem")
             .kind(phaseId)
-            .with(Province.class)
             .with(ResourceGathering.class)
             .multiThreaded()
             .iter(this::produce);
     }
 
     private void produce(Iter iter) {
-        long countryId = 0;
-        CountryMarketView countryMarket = null;
-        CountryLaborPolicyView countryLaborPolicy = null;
-
         long resourceGatheringTypeId = 0;
         ResourceGatheringTypeView resourceGatheringTypeData = null;
 
-        Field<Province> provinceField = iter.field(Province.class, 0);
-        Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 1);
+        Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 0);
 
         for(int i = 0; i < iter.count(); i++) {
-            ProvinceView province = provinceField.getMutView(i);
             ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
 
             if(resourceGathering.typeId() != resourceGatheringTypeId) {
                 resourceGatheringTypeId = resourceGathering.typeId();
                 EntityView resourceGatheringType = iter.world().obtainEntityView(resourceGatheringTypeId);
                 resourceGatheringTypeData = resourceGatheringType.getMutView(ResourceGatheringType.class);
-            }
-
-            if(province.ownerId() != countryId) {
-                countryId = province.ownerId();
-                EntityView country = iter.world().obtainEntityView(countryId);
-                countryMarket = country.getMutView(CountryMarket.class);
-                countryLaborPolicy = country.getMutView(CountryLaborPolicy.class);
             }
 
             int maxCapacity = resourceGathering.size() * resourceGatheringTypeData.workforce();
@@ -61,22 +45,7 @@ public class RGOProductionSystem {
             float maxBonus = resourceGatheringTypeData.slaveEffectMultiplier() - 1.0f;
             float currentSlaveBonus = 1.0f + (slaveFulfillment * maxBonus);
 
-            float production = coreProduction * currentSlaveBonus;
-            resourceGathering.production(production);
-
-            float workerMinWageFactor = (countryMarket.lifeCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex()) + 0.2f * countryMarket.everydayCostsByPopType(resourceGatheringTypeData.workerPopTypeIndex())) * (1f + countryLaborPolicy.minWageFactor());
-
-            float normalizedWages = workerMinWageFactor * resourceGathering.workerAmount() / NEEDS_SCALING_FACTOR;
-
-            float revenue = production * countryMarket.goodPrices(resourceGathering.goodIndex());
-            if(revenue < normalizedWages) {
-                float scalingFactor = revenue / normalizedWages;
-                resourceGathering.profit(0f);
-                resourceGathering.workerMinWage(workerMinWageFactor * resourceGathering.workerAmount() * scalingFactor);
-            } else {
-                resourceGathering.profit(revenue - normalizedWages);
-                resourceGathering.workerMinWage(workerMinWageFactor * resourceGathering.workerAmount());
-            }
+            resourceGathering.production(coreProduction * currentSlaveBonus);
         }
     }
 }
