@@ -39,8 +39,6 @@ public class EconomyBuildingConsumptionSystem {
 
             float inputMultiplier = 1.0f + countryProductionPolicy.factoryInputModifier();
 
-            // Align input demand with the effective production scale used by
-            // EconomyBuildingProductionSystem (capped by available primary workers).
             float level = building.size();
             float workforce = economyBuildingTypeData.workforce();
             float primaryRatioType = economyBuildingTypeData.primaryWorkerPopTypeRatio();
