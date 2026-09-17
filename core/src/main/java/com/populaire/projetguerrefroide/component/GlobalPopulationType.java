@@ -7,6 +7,8 @@ import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
 
 @Component
 public record GlobalPopulationType(
-    @FixedArray(length = POP_TYPE_COUNT) long[] popTypeIds
+    @FixedArray(length = POP_TYPE_COUNT) long[] popTypeIds,
+    int capitalistPopTypeIndex,
+    int aristocratPopTypeIndex
 ) {
 }

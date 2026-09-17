@@ -10,8 +10,12 @@ public record RegionInstanceIncome(
     @FixedArray(length = POP_TYPE_COUNT) float[] minWagesByPopType,
     @FixedArray(length = POP_TYPE_COUNT) int[] workersByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] profitShareByPopType,
+    @FixedArray(length = POP_TYPE_COUNT) float[] claimedIncomeByPopType,
     float capitalistProfitShare,
     float aristocratProfitShare,
-    float countryProfitShare
+    float countryProfitShare,
+    float claimedCapitalistShare,
+    float claimedAristocratShare,
+    float claimedCountryShare
 ) {
 }

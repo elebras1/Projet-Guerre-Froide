@@ -15,6 +15,7 @@ import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.pojo.*;
 import com.populaire.projetguerrefroide.service.GameContext;
 import com.populaire.projetguerrefroide.util.EcsConstants;
+import com.populaire.projetguerrefroide.util.IncomeTypeUtils;
 import com.populaire.projetguerrefroide.util.StrataUtils;
 
 import java.io.BufferedReader;
@@ -309,12 +310,23 @@ public class WorldDaoImpl implements WorldDao {
             }
 
             int index = 0;
+            int capitalistPopTypeIndex = -1;
+            int aristocratPopTypeIndex = -1;
             for (Map.Entry<String, String> populationPath : populationPaths.entrySet()) {
                 this.readPopulationType(ecsWorld, ecsConstants, populationPath.getValue(), populationPath.getKey());
-                this.populationTypeIds[index++] = ecsWorld.lookup(populationPath.getKey());
+                long populationTypeId = ecsWorld.lookup(populationPath.getKey());
+                this.populationTypeIds[index] = populationTypeId;
+
+                EntityView populationType = ecsWorld.obtainEntityView(populationTypeId);
+                if (populationType.has(ecsConstants.capitalistTag())) {
+                    capitalistPopTypeIndex = index;
+                } else if (populationType.has(ecsConstants.aristocratTag())) {
+                    aristocratPopTypeIndex = index;
+                }
+                index++;
             }
             long globalPopType = ecsWorld.entity("global_population_type");
-            ecsWorld.obtainEntity(globalPopType).set(new GlobalPopulationType(this.populationTypeIds));
+            ecsWorld.obtainEntity(globalPopType).set(new GlobalPopulationType(this.populationTypeIds, capitalistPopTypeIndex, aristocratPopTypeIndex));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -374,7 +386,8 @@ public class WorldDaoImpl implements WorldDao {
                 luxuryNeedsIndex++;
             }
             int strata = StrataUtils.getStrata(populationTypeValue.get("strata").asString());
-            populationType.set(new PopulationType(lifeNeedsGoodIndexes, lifeNeedsGoodIds, lifeNeedsGoodAmounts, everydayNeedsGoodIndexes, everydayNeedsGoodIds, everydayNeedsGoodAmounts, luxuryNeedsGoodIndexes, luxuryNeedsGoodIds, luxuryNeedsGoodAmounts, strata));
+            int incomeType = IncomeTypeUtils.getIncomeType(populationTypeValue.get("income_type").asString());
+            populationType.set(new PopulationType(lifeNeedsGoodIndexes, lifeNeedsGoodIds, lifeNeedsGoodAmounts, everydayNeedsGoodIndexes, everydayNeedsGoodIds, everydayNeedsGoodAmounts, luxuryNeedsGoodIndexes, luxuryNeedsGoodIds, luxuryNeedsGoodAmounts, strata, incomeType));
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
@@ -1154,7 +1167,7 @@ public class WorldDaoImpl implements WorldDao {
                         EntityView regionInstance = ecsWorld.obtainEntityView(regionInstanceId);
                         if(!regionInstance.has(RegionInstance.class)) {
                             regionInstance.set(new RegionInstance(regionEntityId, provinceData.ownerId(), new float[POP_TYPE_COUNT]));
-                            regionInstance.set(new RegionInstanceIncome(new float[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0f, 0f, 0f));
+                            regionInstance.set(new RegionInstanceIncome(new float[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0f, 0f, 0f, 0f, 0f, 0f));
                             regionInstance.set(new Demographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
                         }
                         provinceData.regionId(regionEntityId).regionInstanceId(regionInstanceId);
@@ -1318,7 +1331,7 @@ public class WorldDaoImpl implements WorldDao {
                 lawIds[lawGroupIndex] = lawId;
             }
             country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
-            country.set(new CountryMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new boolean[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], 0f, 0f, 0f));
+            country.set(new CountryMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new boolean[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], 0f, 0f, 0f, 0f, 0f, 0f));
             country.set(new CountryDemographics(0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
             country.set(new CountryTaxPolicy(0f, 0f, 0f));
             country.set(new CountryBudgetPolicy(0f, 0f, 0f, 0f));
