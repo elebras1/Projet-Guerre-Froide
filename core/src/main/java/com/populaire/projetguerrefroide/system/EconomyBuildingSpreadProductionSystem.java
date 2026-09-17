@@ -42,6 +42,7 @@ public class EconomyBuildingSpreadProductionSystem {
             }
 
             countryMarket.goodAmountsPool(economyBuildingTypeData.goodOutputIndex(), countryMarket.goodAmountsPool(economyBuildingTypeData.goodOutputIndex()) + economyBuilding.production());
+            countryMarket.goodProducedAmounts(economyBuildingTypeData.goodOutputIndex(), countryMarket.goodProducedAmounts(economyBuildingTypeData.goodOutputIndex()) + economyBuilding.production());
         }
     }
 }

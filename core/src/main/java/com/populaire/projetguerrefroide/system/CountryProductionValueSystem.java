@@ -6,27 +6,26 @@ import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.CountryMarket;
 import com.populaire.projetguerrefroide.component.CountryMarketView;
 
-public class CountryMarketResetSystem {
+public class CountryProductionValueSystem {
 
-    public CountryMarketResetSystem(World ecsWorld, long phaseId) {
-        ecsWorld.system("CountryMarketResetSystem")
+    public CountryProductionValueSystem(World ecsWorld, long phaseId) {
+        ecsWorld.system("CountryProductionValueSystem")
             .kind(phaseId)
             .with(CountryMarket.class)
             .multiThreaded()
-            .iter(this::reset);
+            .iter(this::compute);
     }
 
-    private void reset(Iter iter) {
+    private void compute(Iter iter) {
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for(int i = 0; i < iter.count(); i++) {
             CountryMarketView countryMarket = countryMarketField.getMutView(i);
 
-            for(int g = 0; g < countryMarket.goodDemandAmountsLength(); g++) {
-                countryMarket.goodDemandAmounts(g, 0f);
-                countryMarket.goodAmountsPool(g, 0f);
-                countryMarket.goodProducedAmounts(g, 0f);
+            float productionValue = 0f;
+            for(int g = 0; g < countryMarket.goodProducedAmountsLength(); g++) {
+                productionValue += countryMarket.goodProducedAmounts(g) * countryMarket.goodPrices(g);
             }
-
+            countryMarket.productionValue(productionValue);
         }
     }
 }
