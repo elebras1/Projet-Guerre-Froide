@@ -83,6 +83,7 @@ public class CountryMarketResolveSystem {
                     float cost = purchased * countryMarket.goodPrices(g);
                     countryMarket.goodStockpiles(g, countryMarket.goodStockpiles(g) + purchased);
                     countryMarket.treasury(countryMarket.treasury() - cost);
+                    countryMarket.salesRevenue(countryMarket.salesRevenue() + cost);
                 }
             }
         }
