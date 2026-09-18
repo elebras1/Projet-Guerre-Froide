@@ -39,11 +39,14 @@ dependencies {
   testImplementation "org.junit.jupiter:junit-jupiter-api:5.12.1"
   testImplementation "org.junit.jupiter:junit-jupiter-engine:5.12.1"
   testImplementation "org.junit.platform:junit-platform-launcher:1.12.1"
-  testImplementation "org.mockito:mockito-core:5.17.0"
+  testImplementation "org.mockito:mockito-core:5.23.0"
 }
 
 test {
   useJUnitPlatform()
+  workingDir = rootProject.file('assets').path
+  jvmArgs += "--enable-native-access=ALL-UNNAMED"
+  systemProperty "simulation.outputDir", file("build/simulation-analysis").absolutePath
 }
 
 def os = System.properties['os.name'].toLowerCase()
