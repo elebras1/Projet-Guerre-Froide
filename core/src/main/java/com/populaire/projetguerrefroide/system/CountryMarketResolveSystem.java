@@ -32,50 +32,35 @@ public class CountryMarketResolveSystem {
                 boolean drawingOnStockpile = countryMarket.goodDrawingOnStockpiles(g);
 
                 float domesticSupply = countryMarket.goodAmountsPool(g);
-                float globalSupply = globalMarketData.goodAmountsPool(g);
                 float stockSupply = drawingOnStockpile ? countryMarket.goodStockpiles(g) : 0f;
-                float totalSupply = domesticSupply + globalSupply + stockSupply;
+                float domesticAvailable = domesticSupply + stockSupply;
 
                 float demand = countryMarket.goodDemandAmounts(g);
-                float satisfaction = Math.min(1.0f, totalSupply / (demand + 0.001f));
+                float imported = countryMarket.goodImportNeeds(g) * globalMarketData.goodTradeRatios(g);
+
+                float remaining = demand;
+                float consumedDomestic = Math.min(domesticSupply, remaining);
+                remaining -= consumedDomestic;
+                float consumedStock = Math.min(stockSupply, remaining);
+                remaining -= consumedStock;
+                float consumedImport = Math.min(imported, remaining);
+
+                float satisfaction = Math.min(1.0f, (consumedDomestic + consumedStock + consumedImport) / (demand + 0.001f));
                 float oldSatisfaction = countryMarket.goodDemandSatisfactionRatios(g);
-                float lissedSatisfaction = oldSatisfaction * 0.95f + satisfaction * 0.05f;
-                countryMarket.goodDemandSatisfactionRatios(g, lissedSatisfaction);
+                countryMarket.goodDemandSatisfactionRatios(g, oldSatisfaction * 0.95f + satisfaction * 0.05f);
 
                 float basePrice = globalMarketData.goodPrices(g);
-
-                float domesticAvailable = domesticSupply + stockSupply;
-                float domesticFraction = Math.min(1.0f, domesticAvailable / (demand + 0.001f));
-
-                float effectivePrice;
-                if (tariffRate < 0) {
-                    float globalFraction = Math.min(1.0f, globalSupply / (demand + 0.001f));
-                    effectivePrice = basePrice * (globalFraction + (1 - globalFraction) * (1 + tariffRate));
-                } else {
-                    effectivePrice = basePrice * (domesticFraction + (1 - domesticFraction) * (1 + tariffRate));
-                }
-                countryMarket.goodPrices(g, Math.max(0.001f, effectivePrice));
-
-                float remaining = demand * satisfaction;
-                float consumedDomestic, consumedGlobal, consumedStock;
-
-                if (tariffRate >= 0) {
-                    consumedDomestic = Math.min(domesticSupply, remaining);
-                    remaining -= consumedDomestic;
-                    consumedStock = Math.min(stockSupply, remaining);
-                    remaining -= consumedStock;
-                    consumedGlobal = Math.min(globalSupply, remaining);
-                } else {
-                    consumedGlobal = Math.min(globalSupply, remaining);
-                    remaining -= consumedGlobal;
-                    consumedDomestic = Math.min(domesticSupply, remaining);
-                    remaining -= consumedDomestic;
-                    consumedStock = Math.min(stockSupply, remaining);
-                }
+                float importedFraction = Math.min(1.0f, consumedImport / (demand + 0.001f));
+                float referencePrice = basePrice * (1f + tariffRate * importedFraction);
+                float scarcity = Math.max(0f, (demand - consumedDomestic - consumedStock - consumedImport) / (demand + 0.001f));
+                float targetPrice = Math.max(0.001f, referencePrice * (1f + scarcity));
+                float localPrice = countryMarket.goodPrices(g) * 0.95f + targetPrice * 0.05f;
+                countryMarket.goodPrices(g, Math.max(0.001f, localPrice));
 
                 countryMarket.goodAmountsPool(g, domesticSupply - consumedDomestic);
                 countryMarket.goodStockpiles(g, stockSupply - consumedStock);
-                globalMarketData.goodAmountsPool(g, globalSupply - consumedGlobal);
+                countryMarket.goodImportedAmounts(g, consumedImport);
+                globalMarketData.goodAmountsPool(g, globalMarketData.goodAmountsPool(g) - consumedImport);
 
                 float deficit = countryMarket.goodStockpileDailyDeficits(g);
                 if (deficit > 0 && !drawingOnStockpile) {

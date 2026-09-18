@@ -33,8 +33,13 @@ public class EconomyService {
     private final EconomyBuildingSpreadProductionSystem economyBuildingSpreadProductionSystem;
     private final EconomyBuildingScaleSystem economyBuildingScaleSystem;
     private final CountryProductionSpreadSystem countryProductionSpreadSystem;
+    private final WorldMarketTotalsSystem worldMarketTotalsSystem;
+    private final GlobalTradeRatioSystem globalTradeRatioSystem;
     private final CountryMarketResolveSystem countryMarketResolveSystem;
     private final CountryMarketSpreadSystem countryMarketSpreadSystem;
+    private final CountryImportPaymentSystem countryImportPaymentSystem;
+    private final CountryExportPayoutSystem countryExportPayoutSystem;
+    private final WorldTradeMoneySettleSystem worldTradeMoneySettleSystem;
     private final GlobalMarketResolveSystem globalMarketResolveSystem;
     private final CountryProductionValueSystem countryProductionValueSystem;
     private final RGORevenueSystem rgoRevenueSystem;
@@ -125,8 +130,13 @@ public class EconomyService {
         this.rgoSpreadProductionSystem = new RGOSpreadProductionSystem(ecsWorld, phaseToMarket);
         this.economyBuildingSpreadProductionSystem = new EconomyBuildingSpreadProductionSystem(ecsWorld, phaseToMarket);
         this.countryProductionSpreadSystem = new CountryProductionSpreadSystem(ecsWorld, phaseToMarket);
+        this.worldMarketTotalsSystem = new WorldMarketTotalsSystem(ecsWorld, phaseMarket);
+        this.globalTradeRatioSystem = new GlobalTradeRatioSystem(ecsWorld, phaseMarket);
         this.countryMarketResolveSystem = new CountryMarketResolveSystem(ecsWorld, phaseMarket);
         this.countryMarketSpreadSystem = new CountryMarketSpreadSystem(ecsWorld, phaseMarket);
+        this.countryImportPaymentSystem = new CountryImportPaymentSystem(ecsWorld, phaseMarket);
+        this.countryExportPayoutSystem = new CountryExportPayoutSystem(ecsWorld, phaseMarket);
+        this.worldTradeMoneySettleSystem = new WorldTradeMoneySettleSystem(ecsWorld, phaseMarket);
         this.globalMarketResolveSystem = new GlobalMarketResolveSystem(ecsWorld, phaseMarket);
         this.countryProductionValueSystem = new CountryProductionValueSystem(ecsWorld, phaseRevenue);
         this.rgoRevenueSystem = new RGORevenueSystem(ecsWorld, phaseRevenue);
