@@ -25,7 +25,11 @@ public class CountryMarketResetSystem {
                 countryMarket.goodDemandAmounts(g, 0f);
                 countryMarket.goodAmountsPool(g, 0f);
                 countryMarket.goodProducedAmounts(g, 0f);
+                countryMarket.goodImportNeeds(g, 0f);
+                countryMarket.goodExportOffers(g, 0f);
+                countryMarket.goodImportedAmounts(g, 0f);
             }
+            countryMarket.tariffRevenue(0f);
 
         }
     }

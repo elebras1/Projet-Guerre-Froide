@@ -11,5 +11,9 @@ public record GlobalMarket(
     @FixedArray(length = GOOD_COUNT) float[] goodPrices,
     @FixedArray(length = GOOD_COUNT) float[] goodProductionAmounts,
     @FixedArray(length = GOOD_COUNT) float[] goodDemandAmounts,
-    @FixedArray(length = GOOD_COUNT) float[] goodLeftoverAmounts){
+    @FixedArray(length = GOOD_COUNT) float[] goodLeftoverAmounts,
+    @FixedArray(length = GOOD_COUNT) float[] goodOfferTotals,
+    @FixedArray(length = GOOD_COUNT) float[] goodNeedTotals,
+    @FixedArray(length = GOOD_COUNT) float[] goodTradeRatios,
+    @FixedArray(length = GOOD_COUNT) float[] goodTradeMoney){
 }

@@ -20,10 +20,14 @@ public record CountryMarket(
     @FixedArray(length = POP_TYPE_COUNT) float[] everydayCostsByPopType,
     @FixedArray(length = POP_TYPE_COUNT) float[] luxuryCostsByPopType,
     @FixedArray(length = GOOD_COUNT) float[] goodProducedAmounts,
+    @FixedArray(length = GOOD_COUNT) float[] goodImportNeeds,
+    @FixedArray(length = GOOD_COUNT) float[] goodExportOffers,
+    @FixedArray(length = GOOD_COUNT) float[] goodImportedAmounts,
     float treasury,
     float spendingRatio,
     float privateInvestmentAmount,
     float salesRevenue,
     float pendingRevenue,
-    float productionValue) {
+    float productionValue,
+    float tariffRevenue) {
 }

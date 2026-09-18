@@ -75,7 +75,7 @@ public class WorldDaoImpl implements WorldDao {
         World ecsWorld = gameContext.getEcsWorld();
         EcsConstants ecsConstants = gameContext.getEcsConstants();
         long globalMarketId = ecsWorld.entity("global_market");
-        ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT]));
+        ecsWorld.obtainEntity(globalMarketId).set(new GlobalMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT]));
         this.readIdeologies(ecsWorld);
         this.readLaws(ecsWorld);
         this.readGovernments(ecsWorld);
@@ -1331,7 +1331,7 @@ public class WorldDaoImpl implements WorldDao {
                 lawIds[lawGroupIndex] = lawId;
             }
             country.set(new Country(capitalId, governmentId, ideologyId, identityId, attitudeId, ministerHeadOfStateEntityId, ministerHeadOfGovernmentEntityId, lawIds));
-            country.set(new CountryMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new boolean[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], 0f, 0f, 0f, 0f, 0f, 0f));
+            country.set(new CountryMarket(new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new boolean[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], new float[GOOD_COUNT], 0f, 0f, 0f, 0f, 0f, 0f, 0f));
             country.set(new CountryDemographics(0, 0, 0f, 0f, 0f, 0f, 0f, 0f, 0f, new long[POP_TYPE_COUNT], new long[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
             country.set(new CountryTaxPolicy(0f, 0f, 0f));
             country.set(new CountryBudgetPolicy(0f, 0f, 0f, 0f));

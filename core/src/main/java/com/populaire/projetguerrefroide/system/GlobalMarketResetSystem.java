@@ -24,6 +24,9 @@ public class GlobalMarketResetSystem {
                 globalMarket.goodProductionAmounts(g, 0f);
                 globalMarket.goodDemandAmounts(g, 0f);
                 globalMarket.goodLeftoverAmounts(g, 0f);
+                globalMarket.goodOfferTotals(g, 0f);
+                globalMarket.goodNeedTotals(g, 0f);
+                globalMarket.goodTradeRatios(g, 0f);
             }
         }
     }
