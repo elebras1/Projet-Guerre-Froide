@@ -23,10 +23,8 @@ public class GlobalMarketResolveSystem {
 
             for (int g = 0; g < gm.goodAmountsPoolLength(); g++) {
                 float oldPool = gm.goodAmountsPool(g);
-                float decayedPool = oldPool * 0.5f;
-
                 float leftover = gm.goodLeftoverAmounts(g);
-                float newPool = decayedPool + leftover;
+                float newPool = Math.max(0f, oldPool + leftover);
 
                 float supply = gm.goodProductionAmounts(g) + newPool / 12.0f;
                 float demand = gm.goodDemandAmounts(g);
