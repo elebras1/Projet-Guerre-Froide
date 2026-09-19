@@ -27,7 +27,7 @@ public class EconomyBuildingProfitSharingSystem {
 
         long regionId = 0;
         RegionInstanceIncomeView regionIncome = null;
-        DemographicsView regionDemographics = null;
+        RegionDemographicsView regionDemographics = null;
         long countryId = 0;
         CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;
         long buildingTypeId = 0;
@@ -43,7 +43,7 @@ public class EconomyBuildingProfitSharingSystem {
                 regionId = building.parentId();
                 EntityView region = iter.world().obtainEntityView(regionId);
                 regionIncome = region.getMutView(RegionInstanceIncome.class);
-                regionDemographics = region.getMutView(Demographics.class);
+                regionDemographics = region.getMutView(RegionDemographics.class);
             }
 
             if(building.typeId() != buildingTypeId) {

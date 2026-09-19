@@ -91,6 +91,7 @@ public class ProjetGuerreFroide extends Game {
         this.ecsWorld.component(Population.class);
         this.ecsWorld.component(ResourceGatheringType.class);
         this.ecsWorld.component(Demographics.class);
+        this.ecsWorld.component(RegionDemographics.class);
         this.ecsWorld.component(CountryDemographics.class);
         this.ecsWorld.component(CountryMarket.class);
         this.ecsWorld.component(GlobalPopulationType.class);

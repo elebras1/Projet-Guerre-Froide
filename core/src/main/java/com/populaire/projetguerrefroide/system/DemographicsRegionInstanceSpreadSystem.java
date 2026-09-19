@@ -11,7 +11,7 @@ public class DemographicsRegionInstanceSpreadSystem {
         ecsWorld.system("DemographicsRegionInstanceSpreadSystem")
             .kind(phaseId)
             .with(RegionInstance.class)
-            .with(Demographics.class)
+            .with(RegionDemographics.class)
             .iter(this::spread);
     }
 
@@ -20,10 +20,10 @@ public class DemographicsRegionInstanceSpreadSystem {
         CountryDemographicsView countryDemographics = null;
 
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 0);
-        Field<Demographics> demographicsField = iter.field(Demographics.class, 1);
+        Field<RegionDemographics> demographicsField = iter.field(RegionDemographics.class, 1);
         for(int i = 0; i < iter.count(); i++) {
             RegionInstanceView regionInstance = regionInstanceField.getMutView(i);
-            DemographicsView demographics = demographicsField.getMutView(i);
+            RegionDemographicsView demographics = demographicsField.getMutView(i);
 
             if(regionInstance.ownerId() != ownerId) {
                 ownerId = regionInstance.ownerId();

@@ -31,7 +31,7 @@ public class PopulationIncomeDistributionSystem {
 
         long regionInstanceId = 0;
         RegionInstanceIncomeView regionInstanceIncome = null;
-        DemographicsView regionDemographics = null;
+        RegionDemographicsView regionDemographics = null;
 
         long countryId = 0;
         CountryMarketView countryMarket = null;
@@ -57,7 +57,7 @@ public class PopulationIncomeDistributionSystem {
                 regionInstanceId = provinceData.regionInstanceId();
                 EntityView regionEntity = iter.world().obtainEntityView(regionInstanceId);
                 regionInstanceIncome = regionEntity.getMutView(RegionInstanceIncome.class);
-                regionDemographics = regionEntity.getMutView(Demographics.class);
+                regionDemographics = regionEntity.getMutView(RegionDemographics.class);
             }
 
             if (population.countryId() != countryId) {

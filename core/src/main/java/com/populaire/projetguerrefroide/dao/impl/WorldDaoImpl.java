@@ -1168,7 +1168,7 @@ public class WorldDaoImpl implements WorldDao {
                         if(!regionInstance.has(RegionInstance.class)) {
                             regionInstance.set(new RegionInstance(regionEntityId, provinceData.ownerId(), new float[POP_TYPE_COUNT]));
                             regionInstance.set(new RegionInstanceIncome(new float[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0f, 0f, 0f, 0f, 0f, 0f));
-                            regionInstance.set(new Demographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
+                            regionInstance.set(new RegionDemographics(0, 0, 0, 0f, 0f, 0f, 0f, 0f, 0f, new int[POP_TYPE_COUNT], new int[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], new float[POP_TYPE_COUNT], 0, 0, 0));
                         }
                         provinceData.regionId(regionEntityId).regionInstanceId(regionInstanceId);
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);

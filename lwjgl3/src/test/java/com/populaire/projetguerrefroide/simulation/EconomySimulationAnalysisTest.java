@@ -153,6 +153,7 @@ public class EconomySimulationAnalysisTest {
         world.component(Population.class);
         world.component(ResourceGatheringType.class);
         world.component(Demographics.class);
+        world.component(RegionDemographics.class);
         world.component(CountryDemographics.class);
         world.component(CountryMarket.class);
         world.component(GlobalPopulationType.class);

@@ -25,7 +25,7 @@ public class RGOProfitSharingSystem {
 
         long regionId = 0;
         RegionInstanceIncomeView regionIncome = null;
-        DemographicsView regionDemographics = null;
+        RegionDemographicsView regionDemographics = null;
         long countryId = 0;
         CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;
         long rgoTypeId = 0;
@@ -41,7 +41,7 @@ public class RGOProfitSharingSystem {
                 regionId = province.regionInstanceId();
                 EntityView region = iter.world().obtainEntityView(regionId);
                 regionIncome = region.getMutView(RegionInstanceIncome.class);
-                regionDemographics = region.getMutView(Demographics.class);
+                regionDemographics = region.getMutView(RegionDemographics.class);
             }
 
             if(resourceGathering.typeId() != rgoTypeId) {

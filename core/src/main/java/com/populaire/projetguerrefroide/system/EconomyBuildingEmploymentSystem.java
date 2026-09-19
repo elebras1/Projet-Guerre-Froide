@@ -27,7 +27,7 @@ public class EconomyBuildingEmploymentSystem {
         long regionInstanceId = 0;
         RegionInstanceView regionInstanceData = null;
         RegionInstanceIncomeView regionInstanceIncome = null;
-        DemographicsView demographics = null;
+        RegionDemographicsView demographics = null;
 
         int primaryWorkerPopTypeIndex = -1;
         int secondaryWorkerPopTypeIndex = -1;
@@ -51,7 +51,7 @@ public class EconomyBuildingEmploymentSystem {
                 EntityView regionInstance = iter.world().obtainEntityView(building.parentId());
                 regionInstanceData = regionInstance.getMutView(RegionInstance.class);
                 regionInstanceIncome = regionInstance.getMutView(RegionInstanceIncome.class);
-                demographics = regionInstance.getMutView(Demographics.class);
+                demographics = regionInstance.getMutView(RegionDemographics.class);
             }
 
             int currentPrimaryEmployed = regionInstanceIncome.workersByPopType(primaryWorkerPopTypeIndex);

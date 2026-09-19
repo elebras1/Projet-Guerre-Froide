@@ -17,7 +17,7 @@ public class DemographicsProvinceSpreadSystem {
 
     private void spread(Iter iter) {
         long ownerId = 0;
-        DemographicsView regionInstanceDemographics = null;
+        RegionDemographicsView regionInstanceDemographics = null;
 
         Field<Province> provinceField = iter.field(Province.class, 0);
         Field<Demographics> demographicsField = iter.field(Demographics.class, 1);
@@ -27,7 +27,7 @@ public class DemographicsProvinceSpreadSystem {
 
             if(province.regionInstanceId() != ownerId) {
                 ownerId = province.regionInstanceId();
-                regionInstanceDemographics = iter.world().obtainEntityView(ownerId).getMutView(Demographics.class);
+                regionInstanceDemographics = iter.world().obtainEntityView(ownerId).getMutView(RegionDemographics.class);
             }
 
             regionInstanceDemographics.totalPopulation(regionInstanceDemographics.totalPopulation() + demographics.totalPopulation());
