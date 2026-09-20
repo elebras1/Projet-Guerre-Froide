@@ -44,7 +44,8 @@
         },
         {
             "name": "multimodal_transport",
-            "size": 8
+            "size": 8,
+            "input_mode": "advanced"
         },
         {
             "name": "communication_factory",
@@ -52,7 +53,8 @@
         },
         {
             "name": "glass_factory",
-            "size": 8
+            "size": 8,
+            "input_mode": "advanced"
         }
     ]
 }

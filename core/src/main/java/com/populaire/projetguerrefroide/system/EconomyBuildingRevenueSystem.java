@@ -52,7 +52,7 @@ public class EconomyBuildingRevenueSystem {
 
             float inputCost = 0f;
             for(int g = 0; g < buildingTypeData.goodInputIndexesLength(); g++) {
-                int goodIndex = buildingTypeData.goodInputIndexes(g);
+                int goodIndex = economyBuilding.activeInputGoodIndexes(g);
                 if(goodIndex < 0) {
                     break;
                 }

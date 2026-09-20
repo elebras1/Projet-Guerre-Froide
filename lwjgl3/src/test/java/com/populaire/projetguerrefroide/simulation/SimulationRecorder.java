@@ -31,6 +31,8 @@ import com.populaire.projetguerrefroide.component.CountryTaxPolicy;
 import com.populaire.projetguerrefroide.component.CountryTaxPolicyView;
 import com.populaire.projetguerrefroide.component.CountryTradePolicy;
 import com.populaire.projetguerrefroide.component.CountryTradePolicyView;
+import com.populaire.projetguerrefroide.component.Demographics;
+import com.populaire.projetguerrefroide.component.DemographicsView;
 import com.populaire.projetguerrefroide.component.EconomyBuilding;
 import com.populaire.projetguerrefroide.component.EconomyBuildingType;
 import com.populaire.projetguerrefroide.component.EconomyBuildingTypeView;
@@ -83,7 +85,6 @@ public class SimulationRecorder implements AutoCloseable {
     private final List<String> buildingTypeNames = new ArrayList<>();
     private final Map<Long, Integer> buildingTypeIndexByEntity = new HashMap<>();
     private final Map<Long, Integer> buildingTypeOutputGoodIndex = new HashMap<>();
-    private final Map<Long, int[]> buildingTypeInputGoodIndexes = new HashMap<>();
     private final Map<Long, int[]> buildingTypeWorkerPopTypeIndexes = new HashMap<>();
 
     private final Map<String, int[]> rgoWorkerPopTypeIndexes = new HashMap<>();
@@ -110,6 +111,9 @@ public class SimulationRecorder implements AutoCloseable {
     private final float[] countrySecondaryWorkers;
     private final float[] countryPopEmployment;
     private final float[] countryWorkers;
+    private final int[] countryPopEntities;
+    private final int[] countryPopTypeTotal;
+    private final int[] countryPopTypeEmployment;
 
     private final Map<Long, float[]> countryRgoByGood = new HashMap<>();
     private final Map<Long, float[]> countryBuildingByGood = new HashMap<>();
@@ -200,6 +204,9 @@ public class SimulationRecorder implements AutoCloseable {
         this.countrySecondaryWorkers = new float[this.countryNames.size()];
         this.countryPopEmployment = new float[this.countryNames.size()];
         this.countryWorkers = new float[this.countryNames.size()];
+        this.countryPopEntities = new int[this.countryNames.size()];
+        this.countryPopTypeTotal = new int[this.countryNames.size() * POP_TYPE_COUNT];
+        this.countryPopTypeEmployment = new int[this.countryNames.size() * POP_TYPE_COUNT];
 
         this.openWriters();
     }
@@ -222,7 +229,7 @@ public class SimulationRecorder implements AutoCloseable {
 
     private void readCountries() {
         List<Long> ids = new ArrayList<>();
-        this.countryQuery.each(ids::add);
+        this.countryQuery.each((long id) -> ids.add(id));
         ids.sort(Long::compareTo);
         for (long id : ids) {
             String name = this.ecsWorld.obtainEntity(id).name();
@@ -234,19 +241,13 @@ public class SimulationRecorder implements AutoCloseable {
     private void readBuildingTypes() {
         Query query = this.ecsWorld.query().with(EconomyBuildingType.class).build();
         List<Long> ids = new ArrayList<>();
-        query.each(ids::add);
+        query.each((long id) -> ids.add(id));
         ids.sort(Long::compareTo);
         for (long id : ids) {
             EconomyBuildingTypeView data = this.ecsWorld.obtainEntityView(id).getMutView(EconomyBuildingType.class);
             this.buildingTypeIndexByEntity.put(id, this.buildingTypeNames.size());
             this.buildingTypeNames.add(this.ecsWorld.obtainEntity(id).name());
             this.buildingTypeOutputGoodIndex.put(id, data.goodOutputIndex());
-
-            int[] inputIndexes = new int[data.goodInputIndexesLength()];
-            for (int g = 0; g < inputIndexes.length; g++) {
-                inputIndexes[g] = data.goodInputIndexes(g);
-            }
-            this.buildingTypeInputGoodIndexes.put(id, inputIndexes);
 
             int[] workerIndexes = new int[2];
             workerIndexes[0] = data.primaryWorkerPopTypeIndex();
@@ -259,7 +260,7 @@ public class SimulationRecorder implements AutoCloseable {
     private void readRgoTypes() {
         Query query = this.ecsWorld.query().with(ResourceGatheringType.class).build();
         List<Long> ids = new ArrayList<>();
-        query.each(ids::add);
+        query.each((long id) -> ids.add(id));
         for (long id : ids) {
             ResourceGatheringTypeView data = this.ecsWorld.obtainEntityView(id).getMutView(ResourceGatheringType.class);
             String name = this.ecsWorld.obtainEntity(id).name();
@@ -296,7 +297,7 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("country/treasury.csv").header("tick", "date", "country", "treasury", "spending_ratio", "private_investment", "sales_revenue", "pending_revenue", "production_value", "tariff_revenue");
         this.writer("country/employment_ratio.csv").header("tick", "date", "country", "employment", "workers", "ratio");
         this.writer("country/demographics.csv").header("tick", "date", "country", "pop_type", "total", "employment", "consciousness", "militancy", "literacy", "savings", "life_satisfaction", "everyday_satisfaction", "luxury_satisfaction");
-        this.writer("country/demographics_totals.csv").header("tick", "date", "country", "total_population", "total_employment", "consciousness", "militancy", "literacy", "savings", "life_satisfaction", "everyday_satisfaction", "luxury_satisfaction", "children", "adults", "seniors");
+        this.writer("country/demographics_totals.csv").header("tick", "date", "country", "total_population", "total_employment", "consciousness", "militancy", "literacy", "savings", "life_satisfaction", "everyday_satisfaction", "luxury_satisfaction", "children", "adults", "seniors", "pop_entities", "life_satisfaction_avg", "total_population_scratch");
         this.writer("country/needs_costs.csv").header("tick", "date", "country", "pop_type", "life_cost", "everyday_cost", "luxury_cost");
         this.writer("country/effect_policy.csv").header("tick", "date", "country",
             "poor_tax_rate", "middle_tax_rate", "rich_tax_rate", "social_spending_rate", "military_spending_rate",
@@ -368,12 +369,12 @@ public class SimulationRecorder implements AutoCloseable {
         String date = this.startDate.plusDays(tick).toString();
 
         this.resetScratch();
+        this.sumCountryEmployment();
         this.recordWorldMarket(tick, date);
         this.recordCountryMarkets(tick, date);
         this.recordRgo(tick, date);
         this.recordBuildings(tick, date);
         this.recordRegionIncome(tick, date);
-        this.sumCountryEmployment();
         this.recordEmploymentRatio(tick, date);
         this.commitCountryProduction(tick, date);
         this.commitBuildingTypes(tick, date);
@@ -413,6 +414,9 @@ public class SimulationRecorder implements AutoCloseable {
         Arrays.fill(this.countrySecondaryWorkers, 0f);
         Arrays.fill(this.countryPopEmployment, 0f);
         Arrays.fill(this.countryWorkers, 0f);
+        Arrays.fill(this.countryPopEntities, 0);
+        Arrays.fill(this.countryPopTypeTotal, 0);
+        Arrays.fill(this.countryPopTypeEmployment, 0);
         this.countryRgoByGood.clear();
         this.countryBuildingByGood.clear();
         this.buildingTypeInputDemand.clear();
@@ -475,7 +479,7 @@ public class SimulationRecorder implements AutoCloseable {
         CsvWriter needsCosts = this.writer("country/needs_costs.csv");
         CsvWriter effectPolicy = this.writer("country/effect_policy.csv");
 
-        this.countryQuery.each(countryId -> {
+        this.countryQuery.each((long countryId) -> {
             EntityView country = this.ecsWorld.obtainEntityView(countryId);
             CountryMarketView cm = country.getMutView(CountryMarket.class);
             CountryDemographicsView cd = country.getMutView(CountryDemographics.class);
@@ -492,14 +496,16 @@ public class SimulationRecorder implements AutoCloseable {
 
             String name = country.name();
 
+            Integer countryIndex = this.countryIndexByEntity.get(countryId);
+
             this.tickPopulationTotal += cd.totalPopulation();
             this.tickTreasuryTotal += cm.treasury();
             this.tickSalesRevenueTotal += cm.salesRevenue();
             this.tickPendingRevenueTotal += cm.pendingRevenue();
             this.tickTariffTotal += cm.tariffRevenue();
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
-                float popTypeTotal = cd.totalByPopType(p);
-                float popTypeEmployment = cd.employmentByPopType(p);
+                float popTypeTotal = countryIndex != null ? this.countryPopTypeTotal[countryIndex * POP_TYPE_COUNT + p] : cd.totalByPopType(p);
+                float popTypeEmployment = countryIndex != null ? this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + p] : cd.employmentByPopType(p);
                 if (popTypeEmployment > popTypeTotal) {
                     this.employmentExceedsPopulationRows++;
                 }
@@ -521,19 +527,28 @@ public class SimulationRecorder implements AutoCloseable {
             treasury.row(tick, date, name, cm.treasury(), cm.spendingRatio(), cm.privateInvestmentAmount(), cm.salesRevenue(), cm.pendingRevenue(), cm.productionValue(), cm.tariffRevenue());
 
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
+                float popTypeEmployment = countryIndex != null ? this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + p] : cd.employmentByPopType(p);
                 demographics.row(tick, date, name, this.popTypeNames[p],
-                    cd.totalByPopType(p), cd.employmentByPopType(p),
+                    cd.totalByPopType(p), popTypeEmployment,
                     cd.consciousnessByPopType(p), cd.militancyByPopType(p), cd.literacyByPopType(p), cd.savingsByPopType(p),
                     cd.lifeNeedsSatisfactionByPopType(p), cd.everydayNeedsSatisfactionByPopType(p), cd.luxuryNeedsSatisfactionByPopType(p));
                 needsCosts.row(tick, date, name, this.popTypeNames[p],
                     cm.lifeCostsByPopType(p), cm.everydayCostsByPopType(p), cm.luxuryCostsByPopType(p));
             }
 
+            int popEntities = countryIndex != null ? this.countryPopEntities[countryIndex] : 0;
+            long scratchTotal = 0L;
+            if (countryIndex != null) {
+                for (int p = 0; p < POP_TYPE_COUNT; p++) {
+                    scratchTotal += this.countryPopTypeTotal[countryIndex * POP_TYPE_COUNT + p];
+                }
+            }
             demographicsTotals.row(tick, date, name,
                 cd.totalPopulation(), cd.totalEmployment(),
                 cd.consciousness(), cd.militancy(), cd.literacy(), cd.savings(),
                 cd.lifeNeedsSatisfaction(), cd.everydayNeedsSatisfaction(), cd.luxuryNeedsSatisfaction(),
-                cd.totalChildren(), cd.totalAdults(), cd.totalSeniors());
+                cd.totalChildren(), cd.totalAdults(), cd.totalSeniors(), popEntities,
+                cd.lifeNeedsSatisfaction() / Math.max(1f, popEntities), scratchTotal);
 
             effectPolicy.row(tick, date, name,
                 taxPolicy.poorTaxRate(), taxPolicy.middleTaxRate(), taxPolicy.richTaxRate(),
@@ -621,18 +636,15 @@ public class SimulationRecorder implements AutoCloseable {
                     }
                 }
 
-                int[] inputIndexes = this.buildingTypeInputGoodIndexes.get(building.typeId());
-                if (inputIndexes != null) {
-                    for (int slot = 0; slot < inputIndexes.length; slot++) {
-                        int goodIndex = inputIndexes[slot];
-                        if (goodIndex < 0) {
-                            break;
-                        }
-                        float demand = economyBuilding.goodInputDemandAmounts(slot);
-                        if (demand > 0f) {
-                            long key = ((long) building.typeId() << 16) | goodIndex;
-                            this.buildingTypeInputDemand.merge(key, demand, Float::sum);
-                        }
+                for (int slot = 0; slot < economyBuilding.activeInputGoodIndexesLength(); slot++) {
+                    int goodIndex = economyBuilding.activeInputGoodIndexes(slot);
+                    if (goodIndex < 0) {
+                        break;
+                    }
+                    float demand = economyBuilding.goodInputDemandAmounts(slot);
+                    if (demand > 0f) {
+                        long key = ((long) building.typeId() << 16) | goodIndex;
+                        this.buildingTypeInputDemand.merge(key, demand, Float::sum);
                     }
                 }
             }
@@ -723,6 +735,9 @@ public class SimulationRecorder implements AutoCloseable {
                 Integer countryIndex = this.countryIndexByEntity.get(population.countryId());
                 if (countryIndex != null) {
                     this.countryPopEmployment[countryIndex] += population.employment();
+                    this.countryPopEntities[countryIndex]++;
+                    this.countryPopTypeTotal[countryIndex * POP_TYPE_COUNT + population.index()] += population.amount();
+                    this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + population.index()] += population.employment();
                 }
             }
         });

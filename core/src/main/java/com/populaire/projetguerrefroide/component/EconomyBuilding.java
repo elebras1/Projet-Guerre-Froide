@@ -15,6 +15,9 @@ public record EconomyBuilding(
     int secondaryWorkerAmount,
     float primaryWorkerMinWage,
     float secondaryWorkerMinWage,
-    @FixedArray(length = MAX_GOODS) float[] goodInputDemandAmounts) {
+    @FixedArray(length = MAX_GOODS) float[] goodInputDemandAmounts,
+    @FixedArray(length = MAX_GOODS) int[] activeInputGoodIndexes,
+    @FixedArray(length = MAX_GOODS) float[] activeInputAmounts,
+    boolean advancedRecipe) {
 
 }

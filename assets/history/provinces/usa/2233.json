@@ -39,19 +39,23 @@
     "economy_buildings": [
         {
             "name": "glass_factory",
-            "size": 9
+            "size": 9,
+            "input_mode": "advanced"
         },
         {
             "name": "cement_factory",
-            "size": 9
+            "size": 9,
+            "input_mode": "advanced"
         },
         {
             "name": "steel_factory",
-            "size": 9
+            "size": 9,
+            "input_mode": "advanced"
         },
         {
             "name": "multimodal_transport",
-            "size": 9
+            "size": 9,
+            "input_mode": "advanced"
         }
     ]
 }

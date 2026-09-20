@@ -48,11 +48,11 @@ public class EconomyBuildingConsumptionSystem {
             float effectiveScale = Math.min(economyBuilding.scale() * level, maxProductionScale);
 
             for (int g = 0; g < economyBuildingTypeData.goodInputIdsLength(); g++) {
-                int goodIndex = economyBuildingTypeData.goodInputIndexes(g);
+                int goodIndex = economyBuilding.activeInputGoodIndexes(g);
                 if (goodIndex < 0) {
                     break;
                 }
-                float amount = economyBuildingTypeData.goodInputAmounts(g);
+                float amount = economyBuilding.activeInputAmounts(g);
                 float demand = inputMultiplier * throughput * amount * effectiveScale;
                 countryMarket.goodDemandAmounts(goodIndex, countryMarket.goodDemandAmounts(goodIndex) + demand);
                 economyBuilding.goodInputDemandAmounts(g, demand);

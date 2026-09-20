@@ -39,7 +39,8 @@
     "economy_buildings": [
         {
             "name": "machine_parts_factory",
-            "size": 9
+            "size": 9,
+            "input_mode": "advanced"
         }
     ]
 }

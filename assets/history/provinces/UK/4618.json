@@ -50,11 +50,13 @@
         },
         {
             "name": "ammunition_factory",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         },
         {
             "name": "weaponry_factory",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         }
     ]
 }

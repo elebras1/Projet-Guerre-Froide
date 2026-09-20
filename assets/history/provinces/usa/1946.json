@@ -38,11 +38,13 @@
     "economy_buildings": [
         {
             "name": "glass_factory",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         },
         {
             "name": "multimodal_transport",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         }
     ]
 }

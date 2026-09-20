@@ -39,11 +39,13 @@
     "economy_buildings": [
         {
             "name": "machine_parts_factory",
-            "size": 7
+            "size": 7,
+            "input_mode": "advanced"
         },
         {
             "name": "fabric_factory",
-            "size": 7
+            "size": 7,
+            "input_mode": "advanced"
         },
         {
             "name": "plastics_factory",

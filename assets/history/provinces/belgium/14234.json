@@ -45,11 +45,13 @@
         },
         {
             "name": "machine_parts_factory",
-            "size": 3
+            "size": 3,
+            "input_mode": "advanced"
         },
         {
             "name": "fabric_factory",
-            "size": 3
+            "size": 3,
+            "input_mode": "advanced"
         }
     ]
 }

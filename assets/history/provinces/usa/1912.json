@@ -38,15 +38,18 @@
     "economy_buildings": [
         {
             "name": "paper_factory",
-            "size": 8
+            "size": 8,
+            "input_mode": "advanced"
         },
         {
             "name": "machine_parts_factory",
-            "size": 8
+            "size": 8,
+            "input_mode": "advanced"
         },
         {
             "name": "fabric_factory",
-            "size": 8
+            "size": 8,
+            "input_mode": "advanced"
         }
     ]
 }

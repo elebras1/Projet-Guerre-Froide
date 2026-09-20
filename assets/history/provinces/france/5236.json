@@ -38,11 +38,13 @@
     "economy_buildings": [
         {
             "name": "cement_factory",
-            "size": 8
+            "size": 8,
+            "input_mode": "advanced"
         },
         {
             "name": "automobiles_factory",
-            "size": 8
+            "size": 8,
+            "input_mode": "advanced"
         }
     ]
 }

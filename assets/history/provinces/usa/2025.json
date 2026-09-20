@@ -47,11 +47,13 @@
         },
         {
             "name": "aluminium_factory",
-            "size": 9
+            "size": 9,
+            "input_mode": "advanced"
         },
         {
             "name": "cement_factory",
-            "size": 9
+            "size": 9,
+            "input_mode": "advanced"
         }
     ]
 }

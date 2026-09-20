@@ -38,15 +38,18 @@
     "economy_buildings": [
         {
             "name": "steel_factory",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         },
         {
             "name": "multimodal_transport",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         },
         {
             "name": "aluminium_factory",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         }
     ]
 }

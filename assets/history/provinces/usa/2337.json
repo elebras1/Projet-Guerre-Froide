@@ -44,11 +44,13 @@
         },
         {
             "name": "paper_factory",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         },
         {
             "name": "fabric_factory",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         }
     ]
 }

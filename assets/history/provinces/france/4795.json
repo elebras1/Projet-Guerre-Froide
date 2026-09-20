@@ -42,11 +42,13 @@
     "economy_buildings": [
         {
             "name": "ammunition_factory",
-            "size": 3
+            "size": 3,
+            "input_mode": "advanced"
         },
         {
             "name": "weaponry_factory",
-            "size": 3
+            "size": 3,
+            "input_mode": "advanced"
         }
     ]
 }

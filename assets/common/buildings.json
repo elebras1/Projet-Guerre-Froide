@@ -26,8 +26,7 @@
         "machine_parts": 7
       },
       "input_goods": {
-        "coal": 15,
-        "renewable_energy": 4
+        "coal": 15
       },
       "output_goods": {
         "electricity": 12
@@ -81,6 +80,11 @@
         "iron": 1,
         "coal": 5
       },
+      "advanced_input_goods": {
+        "iron": 1,
+        "coal": 2,
+        "electricity": 3
+      },
       "output_goods": {
         "cement": 10
       },
@@ -99,6 +103,11 @@
         "iron": 20,
         "coal": 8
       },
+      "advanced_input_goods": {
+        "iron": 20,
+        "coal": 4,
+        "electricity": 4
+      },
       "output_goods": {
         "steel": 16
       },
@@ -115,6 +124,11 @@
       },
       "input_goods": {
         "coal": 3,
+        "rare_metals": 2,
+        "inorganic_chemicals": 1
+      },
+      "advanced_input_goods": {
+        "electricity": 3,
         "rare_metals": 2,
         "inorganic_chemicals": 1
       },
@@ -211,6 +225,9 @@
       "input_goods": {
         "coal": 5
       },
+      "advanced_input_goods": {
+        "electricity": 5
+      },
       "output_goods": {
         "glass": 7
       },
@@ -229,6 +246,11 @@
         "oil": 2,
         "rare_metals": 1
       },
+      "advanced_input_goods": {
+        "electricity": 1.5,
+        "oil": 2,
+        "rare_metals": 1
+      },
       "output_goods": {
         "inorganic_chemicals": 2.6
       },
@@ -244,7 +266,12 @@
         "machine_parts": 7
       },
       "input_goods": {
-        "vegetables": 5
+        "vegetables": 5,
+        "coal": 0.5
+      },
+      "advanced_input_goods": {
+        "vegetables": 5,
+        "electricity": 0.5
       },
       "output_goods": {
         "fabric": 5
@@ -278,7 +305,12 @@
         "machine_parts": 7
       },
       "input_goods": {
-        "wood": 4
+        "wood": 4,
+        "coal": 1
+      },
+      "advanced_input_goods": {
+        "wood": 4,
+        "electricity": 1
       },
       "output_goods": {
         "paper": 3.2
@@ -336,7 +368,13 @@
       },
       "input_goods": {
         "steel": 4,
-        "aluminium": 2
+        "aluminium": 2,
+        "coal": 1
+      },
+      "advanced_input_goods": {
+        "steel": 4,
+        "aluminium": 2,
+        "electricity": 1
       },
       "output_goods": {
         "machine_parts": 20
@@ -376,7 +414,14 @@
       "input_goods": {
         "plastics": 3,
         "steel": 4,
-        "machine_parts": 4
+        "machine_parts": 4,
+        "coal": 1
+      },
+      "advanced_input_goods": {
+        "plastics": 3,
+        "steel": 4,
+        "machine_parts": 4,
+        "electricity": 1
       },
       "output_goods": {
         "automobiles": 8
@@ -393,7 +438,12 @@
         "machine_parts": 7
       },
       "input_goods": {
-        "fabric": 5
+        "fabric": 5,
+        "coal": 0.5
+      },
+      "advanced_input_goods": {
+        "fabric": 5,
+        "electricity": 0.5
       },
       "output_goods": {
         "clothes": 4
@@ -449,7 +499,15 @@
         "automobiles": 1,
         "aeroplanes": 1,
         "fuel": 1,
-        "ships": 1
+        "ships": 1,
+        "coal": 1
+      },
+      "advanced_input_goods": {
+        "automobiles": 1,
+        "aeroplanes": 1,
+        "fuel": 1,
+        "ships": 1,
+        "electricity": 1
       },
       "output_goods": {
         "transport": 10
@@ -468,7 +526,14 @@
       "input_goods": {
         "steel": 5,
         "rare_metals": 2,
-        "inorganic_chemicals": 0.5
+        "inorganic_chemicals": 0.5,
+        "coal": 0.5
+      },
+      "advanced_input_goods": {
+        "steel": 5,
+        "rare_metals": 2,
+        "inorganic_chemicals": 0.5,
+        "electricity": 0.5
       },
       "output_goods": {
         "ammunition": 6
@@ -487,7 +552,14 @@
       "input_goods": {
         "steel": 4,
         "machine_parts": 4,
-        "inorganic_chemicals": 1
+        "inorganic_chemicals": 1,
+        "coal": 0.5
+      },
+      "advanced_input_goods": {
+        "steel": 4,
+        "machine_parts": 4,
+        "inorganic_chemicals": 1,
+        "electricity": 0.5
       },
       "output_goods": {
         "weaponry": 4.5

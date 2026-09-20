@@ -42,15 +42,18 @@
         },
         {
             "name": "automobiles_factory",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         },
         {
             "name": "steel_factory",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         },
         {
             "name": "cement_factory",
-            "size": 6
+            "size": 6,
+            "input_mode": "advanced"
         }
     ]
 }

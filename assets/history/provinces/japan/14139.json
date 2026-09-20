@@ -42,7 +42,8 @@
     "economy_buildings": [
         {
             "name": "cement_factory",
-            "size": 2
+            "size": 2,
+            "input_mode": "advanced"
         },
         {
             "name": "communication_factory",
@@ -50,11 +51,13 @@
         },
         {
             "name": "steel_factory",
-            "size": 2
+            "size": 2,
+            "input_mode": "advanced"
         },
         {
             "name": "automobiles_factory",
-            "size": 2
+            "size": 2,
+            "input_mode": "advanced"
         }
     ]
 }

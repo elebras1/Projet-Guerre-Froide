@@ -45,11 +45,13 @@
         },
         {
             "name": "steel_factory",
-            "size": 8
+            "size": 8,
+            "input_mode": "advanced"
         },
         {
             "name": "machine_parts_factory",
-            "size": 4
+            "size": 4,
+            "input_mode": "advanced"
         }
     ],
     "terrain": "plains"

@@ -505,6 +505,22 @@ public class WorldDaoImpl implements WorldDao {
                     inputGoodAmounts[inputGoodIndex] = goodAmount;
                     inputGoodIndex++;
                 }
+                int[] advancedGoodInputIndexes = new int[MAX_GOODS];
+                Arrays.fill(advancedGoodInputIndexes, -1);
+                long[] advancedGoodInputIds = new long[MAX_GOODS];
+                float[] advancedGoodInputAmounts = new float[MAX_GOODS];
+                JsonValue advancedInputGoodsValue = buildingValue.get("advanced_input_goods");
+                if(advancedInputGoodsValue != null) {
+                    int advancedGoodInputIndex = 0;
+                    for(var advancedInputGoodEntry : advancedInputGoodsValue.object()) {
+                        long goodId = ecsWorld.lookup(advancedInputGoodEntry.getKey());
+                        float goodAmount = (float) advancedInputGoodEntry.getValue().asDouble();
+                        advancedGoodInputIndexes[advancedGoodInputIndex] = this.getGoodIndex(goodId);
+                        advancedGoodInputIds[advancedGoodInputIndex] = goodId;
+                        advancedGoodInputAmounts[advancedGoodInputIndex] = goodAmount;
+                        advancedGoodInputIndex++;
+                    }
+                }
                 int outputGoodIndex = 0;
                 long outputGoodId = 0;
                 float outputGoodAmount = 0;
@@ -527,6 +543,9 @@ public class WorldDaoImpl implements WorldDao {
                     inputGoodIndexes,
                     inputGoodIds,
                     inputGoodAmounts,
+                    advancedGoodInputIndexes,
+                    advancedGoodInputIds,
+                    advancedGoodInputAmounts,
                     outputGoodIndex,
                     outputGoodId,
                     outputGoodAmount,
@@ -988,9 +1007,10 @@ public class WorldDaoImpl implements WorldDao {
 
     private Borders loadProvinces(World ecsWorld, EcsConstants ecsConstants, IntLongMap provinces) {
         IntObjectMap<LongIntMap> regionBuildingsByProvince = new IntObjectMap<>(396, 1f);
+        IntObjectMap<LongIntMap> regionBuildingModes = new IntObjectMap<>(396, 1f);
         Map<String, PopulationTemplate> populationTemplates = this.readPopulationTemplates();
-        this.readProvinces(ecsWorld, regionBuildingsByProvince, populationTemplates);
-        this.readRegion(ecsWorld, ecsConstants, regionBuildingsByProvince);
+        this.readProvinces(ecsWorld, regionBuildingsByProvince, regionBuildingModes, populationTemplates);
+        this.readRegion(ecsWorld, ecsConstants, regionBuildingsByProvince, regionBuildingModes);
         this.readDefinition(ecsWorld, provinces);
         Borders border = this.readProvinceBitmap(ecsWorld, provinces);
         this.readCountriesHistory(ecsWorld);
@@ -1019,7 +1039,7 @@ public class WorldDaoImpl implements WorldDao {
         }
     }
 
-    private void readProvinces(World ecsWorld, IntObjectMap<LongIntMap> regionBuildingsByProvince, Map<String, PopulationTemplate> populationTemplates) {
+    private void readProvinces(World ecsWorld, IntObjectMap<LongIntMap> regionBuildingsByProvince, IntObjectMap<LongIntMap> regionBuildingModes, Map<String, PopulationTemplate> populationTemplates) {
         IntObjectMap<String> provincesPaths = new IntObjectMap<>(15000, 1f);
         try {
             JsonValue provincesValues = this.parseJsonFile(this.provincesJsonFile);
@@ -1030,14 +1050,14 @@ public class WorldDaoImpl implements WorldDao {
             for (IntObjectMap.Entry<String> provinceEntry : provincesPaths.entrySet()) {
                 int provinceId = provinceEntry.getKey();
                 String provincePath = provinceEntry.getValue();
-                this.readProvince(ecsWorld, provincePath, provinceId, regionBuildingsByProvince, populationTemplates);
+                this.readProvince(ecsWorld, provincePath, provinceId, regionBuildingsByProvince, regionBuildingModes, populationTemplates);
             }
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
     }
 
-    private void readProvince(World ecsWorld, String provincePath, int provinceNameId, IntObjectMap<LongIntMap> regionBuildingsByProvince, Map<String, PopulationTemplate> populationTemplates) {
+    private void readProvince(World ecsWorld, String provincePath, int provinceNameId, IntObjectMap<LongIntMap> regionBuildingsByProvince, IntObjectMap<LongIntMap> regionBuildingModes, Map<String, PopulationTemplate> populationTemplates) {
         try {
             JsonValue provinceValues = this.parseJsonFile(provincePath);
 
@@ -1081,12 +1101,19 @@ public class WorldDaoImpl implements WorldDao {
             JsonValue buildingsValue = provinceValues.get("economy_buildings");
             if(buildingsValue != null) {
                 LongIntMap buildings = new LongIntMap();
+                LongIntMap buildingModes = new LongIntMap();
                 for(var buildingValue : buildingsValue.array()) {
                     String buildingName = buildingValue.get("name").asString();
                     int size = (int) buildingValue.get("size").asLong();
-                    buildings.put(ecsWorld.lookup(buildingName), size);
+                    long buildingTypeId = ecsWorld.lookup(buildingName);
+                    buildings.put(buildingTypeId, size);
+                    JsonValue inputModeValue = buildingValue.get("input_mode");
+                    if(inputModeValue != null && "advanced".equals(inputModeValue.asString())) {
+                        buildingModes.put(buildingTypeId, 1);
+                    }
                 }
                 regionBuildingsByProvince.put(provinceNameId, buildings);
+                regionBuildingModes.put(provinceNameId, buildingModes);
             }
 
             JsonValue goodJsonValue = provinceValues.get("good");
@@ -1149,7 +1176,7 @@ public class WorldDaoImpl implements WorldDao {
         return new Pair<>(ids, amounts);
     }
 
-    private void readRegion(World ecsWorld, EcsConstants ecsConstants, IntObjectMap<LongIntMap> regionBuildingsByProvince) {
+    private void readRegion(World ecsWorld, EcsConstants ecsConstants, IntObjectMap<LongIntMap> regionBuildingsByProvince, IntObjectMap<LongIntMap> regionBuildingModes) {
         try {
             JsonValue regionValue = this.parseJsonFile(this.regionJsonFiles);
             for(var regionEntry : regionValue.object()) {
@@ -1173,6 +1200,7 @@ public class WorldDaoImpl implements WorldDao {
                         provinceData.regionId(regionEntityId).regionInstanceId(regionInstanceId);
                         LongIntMap regionBuildingIds = regionBuildingsByProvince.get(provinceId);
                         if(regionBuildingIds != null) {
+                            LongIntMap regionBuildingModesById = regionBuildingModes.get(provinceId);
                             for(var buildingEntry : regionBuildingIds) {
                                 long buildingTypeId = buildingEntry.key;
                                 int size = buildingEntry.value;
@@ -1180,7 +1208,15 @@ public class WorldDaoImpl implements WorldDao {
                                 EntityView buildingType = ecsWorld.obtainEntityView(buildingTypeId);
                                 building.set(new Building(regionInstanceId, buildingTypeId, provinceData.ownerId(), size));
                                 if(buildingType.has(EconomyBuildingType.class)) {
-                                    building.set(new EconomyBuilding(0, 0f, 1f, 0f, 0, 0, 0f, 0f, new float[MAX_GOODS]));
+                                    EconomyBuildingTypeView buildingTypeData = buildingType.getMutView(EconomyBuildingType.class);
+                                    boolean advancedRecipe = regionBuildingModesById != null && regionBuildingModesById.get(buildingTypeId) == 1 && buildingTypeData.advancedGoodInputIndexes(0) >= 0;
+                                    int[] activeInputGoodIndexes = new int[MAX_GOODS];
+                                    float[] activeInputAmounts = new float[MAX_GOODS];
+                                    for(int g = 0; g < MAX_GOODS; g++) {
+                                        activeInputGoodIndexes[g] = advancedRecipe ? buildingTypeData.advancedGoodInputIndexes(g) : buildingTypeData.goodInputIndexes(g);
+                                        activeInputAmounts[g] = advancedRecipe ? buildingTypeData.advancedGoodInputAmounts(g) : buildingTypeData.goodInputAmounts(g);
+                                    }
+                                    building.set(new EconomyBuilding(0, 0f, 1f, 0f, 0, 0, 0f, 0f, new float[MAX_GOODS], activeInputGoodIndexes, activeInputAmounts, advancedRecipe));
                                 } else if (buildingType.has(SpecialBuildingType.class)) {
                                     building.set(new SpecialBuilding());
                                 }

@@ -38,7 +38,8 @@
     "economy_buildings": [
         {
             "name": "paper_factory",
-            "size": 8
+            "size": 8,
+            "input_mode": "advanced"
         }
     ]
 }

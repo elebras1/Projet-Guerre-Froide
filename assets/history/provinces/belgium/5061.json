@@ -45,11 +45,13 @@
     "economy_buildings": [
         {
             "name": "glass_factory",
-            "size": 8
+            "size": 8,
+            "input_mode": "advanced"
         },
         {
             "name": "cement_factory",
-            "size": 8
+            "size": 8,
+            "input_mode": "advanced"
         }
     ]
 }

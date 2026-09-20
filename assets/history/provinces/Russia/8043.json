@@ -41,7 +41,8 @@
     "economy_buildings": [
         {
             "name": "multimodal_transport",
-            "size": 5
+            "size": 5,
+            "input_mode": "advanced"
         },
         {
             "name": "communication_factory",
@@ -49,11 +50,13 @@
         },
         {
             "name": "steel_factory",
-            "size": 5
+            "size": 5,
+            "input_mode": "advanced"
         },
         {
             "name": "cement_factory",
-            "size": 5
+            "size": 5,
+            "input_mode": "advanced"
         }
     ]
 }

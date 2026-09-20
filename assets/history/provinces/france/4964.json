@@ -38,7 +38,8 @@
     "economy_buildings": [
         {
             "name": "multimodal_transport",
-            "size": 7
+            "size": 7,
+            "input_mode": "advanced"
         },
         {
             "name": "pharmaceuticals_factory",
@@ -50,7 +51,8 @@
         },
         {
             "name": "steel_factory",
-            "size": 7
+            "size": 7,
+            "input_mode": "advanced"
         }
     ]
 }

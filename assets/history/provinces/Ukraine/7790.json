@@ -42,7 +42,8 @@
     "economy_buildings": [
         {
             "name": "fabric_factory",
-            "size": 2
+            "size": 2,
+            "input_mode": "advanced"
         },
         {
             "name": "plastics_factory",

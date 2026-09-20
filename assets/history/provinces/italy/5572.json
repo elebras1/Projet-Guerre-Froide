@@ -40,11 +40,13 @@
     "economy_buildings": [
         {
             "name": "steel_factory",
-            "size": 4
+            "size": 4,
+            "input_mode": "advanced"
         },
         {
             "name": "aluminium_factory",
-            "size": 4
+            "size": 4,
+            "input_mode": "advanced"
         }
     ]
 }

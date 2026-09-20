@@ -37,7 +37,8 @@
     "economy_buildings": [
         {
             "name": "clothes_factory",
-            "size": 1
+            "size": 1,
+            "input_mode": "advanced"
         }
     ]
 }

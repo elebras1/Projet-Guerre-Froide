@@ -38,7 +38,8 @@
     "economy_buildings": [
         {
             "name": "fabric_factory",
-            "size": 9
+            "size": 9,
+            "input_mode": "advanced"
         }
     ]
 }

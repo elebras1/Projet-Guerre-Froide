@@ -67,7 +67,7 @@ public class EconomyBuildingProductionSystem {
 
             float minInputSatisfaction = 1f;
             for (int g = 0; g < economyBuildingTypeData.goodInputIndexesLength(); g++) {
-                int goodIndex = economyBuildingTypeData.goodInputIndexes(g);
+                int goodIndex = economyBuilding.activeInputGoodIndexes(g);
                 if (goodIndex < 0) {
                     break;
                 }
