@@ -35,5 +35,11 @@
             "size": 4
         }
     ],
-    "terrain": "mountains"
+    "terrain": "mountains",
+    "economy_buildings": [
+        {
+            "name": "canned_fruits_factory",
+            "size": 2
+        }
+    ]
 }

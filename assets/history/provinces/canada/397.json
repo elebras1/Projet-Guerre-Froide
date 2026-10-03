@@ -40,5 +40,11 @@
             "size": 6
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "canned_meat_factory",
+            "size": 3
+        }
+    ]
 }
