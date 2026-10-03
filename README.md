@@ -1,4 +1,4 @@
-[![java](https://img.shields.io/badge/25-Java-orange.svg)](https://www.java.com)
+[![java](https://img.shields.io/badge/27-Java-orange.svg)](https://www.java.com)
 [![libgdx](https://img.shields.io/badge/1.14.2-libGDX-red.svg)](https://libgdx.com)
 
 # ProjetGuerreFroide
@@ -12,8 +12,8 @@ a refactored political and law system, and simplified warfare mechanics.
 
 ## Stack
 - libGDX
-- WebGPU-native
-- flecs-ecs
+- gdx-webgpu
+- flecs-java
 
 ## License
 See `LICENSE` — https://github.com/elebras1/Projet-Guerre-Froide/blob/main/LICENSE
