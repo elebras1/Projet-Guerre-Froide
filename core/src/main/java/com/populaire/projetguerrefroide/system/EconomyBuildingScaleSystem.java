@@ -20,7 +20,7 @@ public class EconomyBuildingScaleSystem {
     private void updateScale(Iter iter) {
         Field<EconomyBuilding> economyBuildingField = iter.field(EconomyBuilding.class, 0);
         for (int i = 0; i < iter.count(); i++) {
-            EconomyBuildingView economyBuilding = economyBuildingField.getMutView(i);
+            EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
             float profit = economyBuilding.profit();
 
             float newScale;

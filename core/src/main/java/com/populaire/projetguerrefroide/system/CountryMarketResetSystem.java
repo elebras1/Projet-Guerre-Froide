@@ -4,7 +4,7 @@ import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.CountryMarket;
-import com.populaire.projetguerrefroide.component.CountryMarketView;
+import com.populaire.projetguerrefroide.component.CountryMarketMutView;
 
 public class CountryMarketResetSystem {
 
@@ -19,7 +19,7 @@ public class CountryMarketResetSystem {
     private void reset(Iter iter) {
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for(int i = 0; i < iter.count(); i++) {
-            CountryMarketView countryMarket = countryMarketField.getMutView(i);
+            CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
 
             for(int g = 0; g < countryMarket.goodDemandAmountsLength(); g++) {
                 countryMarket.goodDemandAmounts(g, 0f);

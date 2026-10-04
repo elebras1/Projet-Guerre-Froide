@@ -30,7 +30,7 @@ public class EconomyBuildingOwnerInitializationSystem {
 
         for (int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
-            EconomyBuildingView economyBuilding = economyBuildingField.getMutView(i);
+            EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
 
             if (building.countryId() != countryId) {
                 countryId = building.countryId();

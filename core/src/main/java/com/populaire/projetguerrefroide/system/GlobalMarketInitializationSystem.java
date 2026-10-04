@@ -22,7 +22,7 @@ public class GlobalMarketInitializationSystem {
 
         Field<GlobalMarket> globalMarketField = iter.field(GlobalMarket.class, 0);
         for(int i = 0; i < iter.count(); i++) {
-            GlobalMarketView globalMarket = globalMarketField.getMutView(i);
+            GlobalMarketMutView globalMarket = globalMarketField.getMutView(i);
 
             for(int g = 0; g < globalMarket.goodAmountsPoolLength(); g++) {
                 EntityView good = iter.world().obtainEntityView(globalGoodData.goodIds(g));

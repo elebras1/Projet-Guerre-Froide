@@ -1189,7 +1189,7 @@ public class WorldDaoImpl implements WorldDao {
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                     EntityView province = provinceEntityId != 0 ? ecsWorld.obtainEntityView(provinceEntityId) : null;
                     if(provinceEntityId != 0 && province.has(Province.class)) {
-                        ProvinceView provinceData = province.getMutView(Province.class);
+                        ProvinceMutView provinceData = province.getMutView(Province.class);
                         long regionInstanceId = ecsWorld.entity("region_instance_" + provinceId + "_" + provinceData.ownerId());
                         EntityView regionInstance = ecsWorld.obtainEntityView(regionInstanceId);
                         if(!regionInstance.has(RegionInstance.class)) {
@@ -1394,7 +1394,7 @@ public class WorldDaoImpl implements WorldDao {
                     int provinceId = (int) provinceEntry.asLong();
                     long provinceEntityId = ecsWorld.lookup(String.valueOf(provinceId));
                     EntityView province = ecsWorld.obtainEntityView(provinceEntityId);
-                    ProvinceView provinceData = province.getMutView(Province.class);
+                    ProvinceMutView provinceData = province.getMutView(Province.class);
                     provinceData.continentId(continentId);
                 }
             }

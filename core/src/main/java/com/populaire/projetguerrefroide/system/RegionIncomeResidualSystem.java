@@ -18,7 +18,7 @@ public class RegionIncomeResidualSystem {
 
     private void collect(Iter iter) {
         long countryId = 0;
-        CountryMarketView countryMarket = null;
+        CountryMarketMutView countryMarket = null;
 
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 0);
         Field<RegionInstanceIncome> regionInstanceIncomeField = iter.field(RegionInstanceIncome.class, 1);

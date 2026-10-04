@@ -43,16 +43,16 @@ public class LawEffectInitializationSystem {
 
         for (int i = 0; i < iter.count(); i++) {
             CountryView country = countryField.getMutView(i);
-            CountryTaxPolicyView taxPolicy = taxPolicyField.getMutView(i);
-            CountryBudgetPolicyView budgetPolicy = budgetPolicyField.getMutView(i);
-            CountryEducationPolicyView educationPolicy = educationPolicyField.getMutView(i);
-            CountryTradePolicyView tradePolicy = tradePolicyField.getMutView(i);
-            CountryProductionPolicyView productionPolicy = productionPolicyField.getMutView(i);
-            CountryLaborPolicyView laborPolicy = laborPolicyField.getMutView(i);
-            CountryPopulationPolicyView populationPolicy = populationPolicyField.getMutView(i);
-            CountryPoliticalPolicyView politicalPolicy = politicalPolicyField.getMutView(i);
-            CountryCulturePolicyView culturePolicy = culturePolicyField.getMutView(i);
-            CountryProfitDistributionPolicyView profitDistributionPolicy = profitDistributionPolicyField.getMutView(i);
+            CountryTaxPolicyMutView taxPolicy = taxPolicyField.getMutView(i);
+            CountryBudgetPolicyMutView budgetPolicy = budgetPolicyField.getMutView(i);
+            CountryEducationPolicyMutView educationPolicy = educationPolicyField.getMutView(i);
+            CountryTradePolicyMutView tradePolicy = tradePolicyField.getMutView(i);
+            CountryProductionPolicyMutView productionPolicy = productionPolicyField.getMutView(i);
+            CountryLaborPolicyMutView laborPolicy = laborPolicyField.getMutView(i);
+            CountryPopulationPolicyMutView populationPolicy = populationPolicyField.getMutView(i);
+            CountryPoliticalPolicyMutView politicalPolicy = politicalPolicyField.getMutView(i);
+            CountryCulturePolicyMutView culturePolicy = culturePolicyField.getMutView(i);
+            CountryProfitDistributionPolicyMutView profitDistributionPolicy = profitDistributionPolicyField.getMutView(i);
 
             for (int l = 0; l < country.activeLawIdsLength(); l++) {
                 long lawId = country.activeLawIds(l);

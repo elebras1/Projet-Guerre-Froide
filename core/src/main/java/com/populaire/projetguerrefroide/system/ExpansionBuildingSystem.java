@@ -4,7 +4,6 @@ import io.github.elebras1.flecs.*;
 import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.command.request.BuildingLevelUpCommand;
 import com.populaire.projetguerrefroide.component.*;
-import io.github.elebras1.flecs.util.Flecs;
 
 public class ExpansionBuildingSystem {
     private final CommandBus commandBus;
@@ -21,10 +20,10 @@ public class ExpansionBuildingSystem {
     private void expand(Iter iter) {
         Field<ExpansionBuilding> expansionBuildingField = iter.field(ExpansionBuilding.class, 0);
         for(int i = 0; i < iter.count(); i++) {
-            ExpansionBuildingView expansionBuildingDataView = expansionBuildingField.getMutView(i);
+            ExpansionBuildingMutView expansionBuildingDataView = expansionBuildingField.getMutView(i);
             if(expansionBuildingDataView.timeLeft() <= 0) {
                 EntityView buildingView = iter.world().obtainEntityView(expansionBuildingDataView.buildingId());
-                BuildingView buildingViewData = buildingView.getMutView(Building.class);
+                BuildingMutView buildingViewData = buildingView.getMutView(Building.class);
                 EntityView buildingTypeView = iter.world().obtainEntityView(buildingViewData.typeId());
                 int newSize = buildingViewData.size() + 1;
                 buildingViewData.size(newSize);

@@ -254,7 +254,6 @@ public class SimulationRecorder implements AutoCloseable {
             workerIndexes[1] = data.secondaryWorkerPopTypeIndex();
             this.buildingTypeWorkerPopTypeIndexes.put(id, workerIndexes);
         }
-        query.destroy();
     }
 
     private void readRgoTypes() {
@@ -267,7 +266,6 @@ public class SimulationRecorder implements AutoCloseable {
             String good = name.startsWith("rgo_") ? name.substring(4) : name;
             this.rgoWorkerPopTypeIndexes.put(good, new int[] { data.workerPopTypeIndex(), data.slavePopTypeIndex() });
         }
-        query.destroy();
     }
 
     private void clearOutputDirectory(File dir) {
@@ -963,11 +961,6 @@ public class SimulationRecorder implements AutoCloseable {
             writer.close();
         }
         this.writers.clear();
-        this.countryQuery.destroy();
-        this.rgoQuery.destroy();
-        this.buildingQuery.destroy();
-        this.regionIncomeQuery.destroy();
-        this.populationQuery.destroy();
     }
 
     private static final class CsvWriter {

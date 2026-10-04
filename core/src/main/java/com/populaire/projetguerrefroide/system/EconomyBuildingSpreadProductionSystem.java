@@ -18,7 +18,7 @@ public class EconomyBuildingSpreadProductionSystem {
 
     private void spread(Iter iter) {
         long countryId = 0;
-        CountryMarketView countryMarket = null;
+        CountryMarketMutView countryMarket = null;
 
         long economyBuildingTypeId = 0;
         EconomyBuildingTypeView economyBuildingTypeData = null;

@@ -15,7 +15,7 @@ public class EconomyBuildingConsumptionSystem {
 
     private void consume(Iter iter) {
         long countryId = 0;
-        CountryMarketView countryMarket = null;
+        CountryMarketMutView countryMarket = null;
         CountryProductionPolicyView countryProductionPolicy = null;
 
         Field<Building> buildingField = iter.field(Building.class, 0);
@@ -23,7 +23,7 @@ public class EconomyBuildingConsumptionSystem {
 
         for (int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
-            EconomyBuildingView economyBuilding = economyBuildingField.getMutView(i);
+            EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
 
             if (building.countryId() != countryId) {
                 countryId = building.countryId();

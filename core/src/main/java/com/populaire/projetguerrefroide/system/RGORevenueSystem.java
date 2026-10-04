@@ -31,7 +31,7 @@ public class RGORevenueSystem {
 
         for(int i = 0; i < iter.count(); i++) {
             ProvinceView province = provinceField.getMutView(i);
-            ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
+            ResourceGatheringMutView resourceGathering = resourceGatheringField.getMutView(i);
 
             if(province.ownerId() != countryId) {
                 countryId = province.ownerId();

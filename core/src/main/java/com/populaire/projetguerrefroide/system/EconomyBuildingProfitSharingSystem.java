@@ -26,7 +26,7 @@ public class EconomyBuildingProfitSharingSystem {
         int capitalistPopTypeIndex = globalPopTypeData.capitalistPopTypeIndex();
 
         long regionId = 0;
-        RegionInstanceIncomeView regionIncome = null;
+        RegionInstanceIncomeMutView regionIncome = null;
         RegionDemographicsView regionDemographics = null;
         long countryId = 0;
         CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;

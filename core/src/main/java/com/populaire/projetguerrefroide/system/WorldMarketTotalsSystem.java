@@ -18,11 +18,11 @@ public class WorldMarketTotalsSystem {
 
     private void accumulate(Iter iter) {
         EntityView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market"));
-        GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
+        GlobalMarketMutView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for (int i = 0; i < iter.count(); i++) {
-            CountryMarketView countryMarket = countryMarketField.getMutView(i);
+            CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
 
             for (int g = 0; g < countryMarket.goodImportNeedsLength(); g++) {
                 float demand = countryMarket.goodDemandAmounts(g);

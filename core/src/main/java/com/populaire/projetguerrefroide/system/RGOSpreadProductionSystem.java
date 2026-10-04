@@ -18,7 +18,7 @@ public class RGOSpreadProductionSystem {
 
     private void spread(Iter iter) {
         long countryId = 0;
-        CountryMarketView countryMarket = null;
+        CountryMarketMutView countryMarket = null;
 
         Field<Province> provinceField = iter.field(Province.class, 0);
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 1);
