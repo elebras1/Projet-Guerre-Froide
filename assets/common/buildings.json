@@ -346,7 +346,6 @@
         "aluminium": 10
       },
       "input_goods": {
-        "integrated_circuits": 0.5,
         "rare_metals": 2,
         "inorganic_chemicals": 2.5,
         "plastics": 2
@@ -478,9 +477,9 @@
         "electronic_components": 10
       },
       "input_goods": {
-        "electronic_components": 2,
-        "integrated_circuits": 3,
-        "computers": 1
+        "electronic_components": 3,
+        "plastics": 1,
+        "rare_metals": 1
       },
       "output_goods": {
         "communication": 8.5

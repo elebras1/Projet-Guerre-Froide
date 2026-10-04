@@ -37,5 +37,10 @@
         }
     ],
     "terrain": "plains",
-    "economy_buildings": []
+    "economy_buildings": [
+        {
+            "name": "inorganic_chemicals_factory",
+            "size": 3
+        }
+    ]
 }

@@ -41,5 +41,11 @@
             "size": 4
         }
     ],
-    "terrain": "plains"
+    "terrain": "plains",
+    "economy_buildings": [
+        {
+            "name": "electronic_components_factory",
+            "size": 3
+        }
+    ]
 }

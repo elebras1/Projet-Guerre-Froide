@@ -37,5 +37,11 @@
             "size": 4
         }
     ],
-    "terrain": "forest"
+    "terrain": "forest",
+    "economy_buildings": [
+        {
+            "name": "electronic_components_factory",
+            "size": 3
+        }
+    ]
 }
