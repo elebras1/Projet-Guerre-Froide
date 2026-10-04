@@ -18,7 +18,7 @@ public class DemographicsPopulationSpreadSystem {
     private void spread(Iter iter) {
         long provinceId = 0;
         ProvinceView province = null;
-        DemographicsView provinceDemographics = null;
+        DemographicsMutView provinceDemographics = null;
 
         Field<Population> populationField = iter.field(Population.class, 0);
         for (int i = 0; i < iter.count(); i++) {

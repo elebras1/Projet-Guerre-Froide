@@ -23,7 +23,7 @@ public class CountryMarketInitializationSystem {
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for(int i = 0; i < iter.count(); i++) {
-            CountryMarketView countryMarket = countryMarketField.getMutView(i);
+            CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
 
             for(int g = 0; g < globalGoodData.goodIdsLength(); g++) {
                 EntityView good = iter.world().obtainEntityView(globalGoodData.goodIds(g));

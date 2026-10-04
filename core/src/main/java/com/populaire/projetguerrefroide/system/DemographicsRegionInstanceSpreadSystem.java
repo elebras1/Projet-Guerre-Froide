@@ -17,7 +17,7 @@ public class DemographicsRegionInstanceSpreadSystem {
 
     private void spread(Iter iter) {
         long ownerId = 0;
-        CountryDemographicsView countryDemographics = null;
+        CountryDemographicsMutView countryDemographics = null;
 
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 0);
         Field<RegionDemographics> demographicsField = iter.field(RegionDemographics.class, 1);

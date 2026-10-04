@@ -30,16 +30,16 @@ public class PopulationIncomeDistributionSystem {
         ProvinceView provinceData = null;
 
         long regionInstanceId = 0;
-        RegionInstanceIncomeView regionInstanceIncome = null;
+        RegionInstanceIncomeMutView regionInstanceIncome = null;
         RegionDemographicsView regionDemographics = null;
 
         long countryId = 0;
-        CountryMarketView countryMarket = null;
+        CountryMarketMutView countryMarket = null;
         CountryTaxPolicyView countryTaxPolicy = null;
 
         Field<Population> populationField = iter.field(Population.class, 0);
         for (int i = 0; i < iter.count(); i++) {
-            PopulationView population = populationField.getMutView(i);
+            PopulationMutView population = populationField.getMutView(i);
 
             if (population.typeId() != populationTypeId) {
                 populationTypeId = population.typeId();

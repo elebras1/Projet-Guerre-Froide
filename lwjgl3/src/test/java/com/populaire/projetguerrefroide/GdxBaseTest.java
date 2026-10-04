@@ -60,7 +60,7 @@ public abstract class GdxBaseTest {
             this.assetManager = null;
         }
         this.mockedMeshMultiDrawIndirect.close();
-        this.gameContext.getEcsWorld().destroy();
+        this.gameContext.getEcsWorld().close();
         Gdx.app.exit();
     }
 }

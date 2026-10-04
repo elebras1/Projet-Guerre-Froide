@@ -26,7 +26,7 @@ public class PopulationInitializationSystem {
 
         Field<Population> populationField = iter.field(Population.class, 0);
         for(int i = 0; i < iter.count(); i++) {
-            PopulationView population = populationField.getMutView(i);
+            PopulationMutView population = populationField.getMutView(i);
 
             if(population.typeId() != populationTypeId) {
                 populationTypeId = population.typeId();

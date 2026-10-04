@@ -1,9 +1,10 @@
 package com.populaire.projetguerrefroide;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import io.github.elebras1.flecs.Flecs;
+import io.github.elebras1.flecs.Rest;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.command.CommandBus;
 import com.populaire.projetguerrefroide.command.handler.DemolishBuildingHandler;
@@ -128,14 +129,18 @@ public class ProjetGuerreFroide extends Game {
     private void ecsDebug(GameContext gameContext) {
         Settings settings = gameContext.getSettings();
         if(settings.isDebugMode()) {
-            this.ecsWorld.enableRest((short) 27750);
+            this.ecsWorld.set(new Rest().port(27750));
+            this.ecsWorld.importModule(Flecs.Doc);
+            this.ecsWorld.importModule(Flecs.Alerts);
+            this.ecsWorld.importModule(Flecs.Stats);
+            this.ecsWorld.importModule(Flecs.Metrics);
         }
     }
 
     @Override
     public void dispose() {
-        this.ecsWorld.disableRest();
-        this.ecsWorld.destroy();
+        this.ecsWorld.removeAll(Rest.class);
+        this.ecsWorld.close();
         this.screenManager.dispose();
         this.gameContext.dispose();
         super.dispose();

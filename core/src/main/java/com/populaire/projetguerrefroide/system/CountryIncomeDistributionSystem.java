@@ -18,13 +18,13 @@ public class CountryIncomeDistributionSystem {
 
     private void distribute(Iter iter) {
         long countryId = 0;
-        CountryMarketView countryMarket = null;
+        CountryMarketMutView countryMarket = null;
 
         Field<RegionInstance> regionInstanceField = iter.field(RegionInstance.class, 0);
         Field<RegionInstanceIncome> regionInstanceIncomeField = iter.field(RegionInstanceIncome.class, 1);
         for (int i = 0; i < iter.count(); i++) {
             RegionInstanceView regionInstance = regionInstanceField.getMutView(i);
-            RegionInstanceIncomeView regionInstanceIncome = regionInstanceIncomeField.getMutView(i);
+            RegionInstanceIncomeMutView regionInstanceIncome = regionInstanceIncomeField.getMutView(i);
 
             if(regionInstance.ownerId() != countryId) {
                 countryId = regionInstance.ownerId();

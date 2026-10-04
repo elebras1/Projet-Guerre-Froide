@@ -24,7 +24,7 @@ public class RGOEmploymentSystem {
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 0);
         Field<Demographics> demographicsField = iter.field(Demographics.class, 1);
         for(int i = 0; i < iter.count(); i++) {
-            ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
+            ResourceGatheringMutView resourceGathering = resourceGatheringField.getMutView(i);
             DemographicsView demographics = demographicsField.getMutView(i);
 
             if(resourceGathering.typeId() != rgoTypeId) {

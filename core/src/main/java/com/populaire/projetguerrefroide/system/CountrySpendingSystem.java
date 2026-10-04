@@ -23,7 +23,7 @@ public class CountrySpendingSystem {
         GlobalPopulationTypeView globalPopTypeData = globalPopType.getMutView(GlobalPopulationType.class);
 
         long countryId = 0;
-        CountryMarketView countryMarket = null;
+        CountryMarketMutView countryMarket = null;
         CountryDemographicsView countryDemographics;
         CountryBudgetPolicyView countryBudgetPolicy;
         CountryEducationPolicyView countryEducationPolicy;
@@ -42,7 +42,7 @@ public class CountrySpendingSystem {
 
         Field<Population> populationField = iter.field(Population.class, 0);
         for(int i = 0; i < iter.count(); i++) {
-            PopulationView population = populationField.getMutView(i);
+            PopulationMutView population = populationField.getMutView(i);
 
             if(population.countryId() != countryId) {
                 countryId = population.countryId();

@@ -20,7 +20,7 @@ public class EconomyBuildingRevenueSystem {
 
     private void distribute(Iter iter) {
         long countryId = 0;
-        CountryMarketView countryMarket = null;
+        CountryMarketMutView countryMarket = null;
         CountryLaborPolicyView countryLaborPolicy = null;
 
         long buildingTypeId = 0;
@@ -31,7 +31,7 @@ public class EconomyBuildingRevenueSystem {
 
         for(int i = 0; i < iter.count(); i++) {
             BuildingView building = buildingField.getMutView(i);
-            EconomyBuildingView economyBuilding = economyBuildingField.getMutView(i);
+            EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
 
             if(building.countryId() != countryId) {
                 countryId = building.countryId();

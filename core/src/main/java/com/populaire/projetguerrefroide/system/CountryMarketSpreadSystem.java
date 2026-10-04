@@ -6,8 +6,9 @@ import io.github.elebras1.flecs.Iter;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.component.CountryMarket;
 import com.populaire.projetguerrefroide.component.CountryMarketView;
+import com.populaire.projetguerrefroide.component.CountryMarketMutView;
 import com.populaire.projetguerrefroide.component.GlobalMarket;
-import com.populaire.projetguerrefroide.component.GlobalMarketView;
+import com.populaire.projetguerrefroide.component.GlobalMarketMutView;
 
 public class CountryMarketSpreadSystem {
 
@@ -20,7 +21,7 @@ public class CountryMarketSpreadSystem {
 
     private void spread(Iter iter) {
         EntityView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market"));
-        GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
+        GlobalMarketMutView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for(int i = 0; i < iter.count(); i++) {

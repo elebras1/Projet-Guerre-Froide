@@ -22,7 +22,7 @@ public class NeedsCostsCalculationSystem {
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for (int i = 0; i < iter.count(); i++) {
-            CountryMarketView countryMarket = countryMarketField.getMutView(i);
+            CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
 
             for (int ptIndex = 0; ptIndex < globalPopTypeData.popTypeIdsLength(); ptIndex++) {
                 long typeId = globalPopTypeData.popTypeIds(ptIndex);

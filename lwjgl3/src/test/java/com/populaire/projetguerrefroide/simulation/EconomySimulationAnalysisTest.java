@@ -181,7 +181,7 @@ public class EconomySimulationAnalysisTest {
     @AfterAll
     public void tearDown() {
         if (this.ecsWorld != null) {
-            this.ecsWorld.destroy();
+            this.ecsWorld.close();
             this.ecsWorld = null;
         }
     }

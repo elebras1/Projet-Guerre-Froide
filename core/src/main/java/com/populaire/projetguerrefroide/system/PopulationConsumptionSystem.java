@@ -16,12 +16,12 @@ public class PopulationConsumptionSystem {
 
     private void consume(Iter iter) {
         long countryId = 0;
-        CountryMarketView countryMarket = null;
+        CountryMarketMutView countryMarket = null;
         CountryBudgetPolicyView countryBudgetPolicy = null;
 
         Field<Population> popField = iter.field(Population.class, 0);
         for (int i = 0; i < iter.count(); i++) {
-            PopulationView pop = popField.getMutView(i);
+            PopulationMutView pop = popField.getMutView(i);
 
             if(countryId != pop.countryId()) {
                 countryId = pop.countryId();

@@ -22,7 +22,7 @@ public class CountryExportPayoutSystem {
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         for (int i = 0; i < iter.count(); i++) {
-            CountryMarketView countryMarket = countryMarketField.getMutView(i);
+            CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
 
             float payout = 0f;
             for (int g = 0; g < countryMarket.goodExportOffersLength(); g++) {

@@ -1,5 +1,6 @@
 package com.populaire.projetguerrefroide.service;
 
+import io.github.elebras1.flecs.Flecs;
 import io.github.elebras1.flecs.Pipeline;
 import io.github.elebras1.flecs.World;
 import com.populaire.projetguerrefroide.system.*;
@@ -78,26 +79,28 @@ public class EconomyService {
         long phaseState = ecsWorld.entity("PhaseState");
 
         this.initPipeline = ecsWorld.pipeline("InitEconomyPipeline")
-            .with(phasePopInit)
-            .with(phaseSpread)
-            .with(phaseInit)
-            .with(phaseEmployment)
+            .with(Flecs.System)
+            .with(phasePopInit).or()
+            .with(phaseSpread).or()
+            .with(phaseInit).or()
+            .with(phaseEmployment).or()
             .with(phaseSync)
             .build();
 
         this.mainPipeline = ecsWorld.pipeline("MainEconomyPipeline")
-            .with(phaseDemographicsReset)
-            .with(phaseSpread)
-            .with(phaseEmployment)
-            .with(phaseSync)
-            .with(phaseReset)
-            .with(phaseNeedsCosts)
-            .with(phaseConsumption)
-            .with(phaseProduction)
-            .with(phaseToMarket)
-            .with(phaseMarket)
-            .with(phaseRevenue)
-            .with(phaseIncome)
+            .with(Flecs.System)
+            .with(phaseDemographicsReset).or()
+            .with(phaseSpread).or()
+            .with(phaseEmployment).or()
+            .with(phaseSync).or()
+            .with(phaseReset).or()
+            .with(phaseNeedsCosts).or()
+            .with(phaseConsumption).or()
+            .with(phaseProduction).or()
+            .with(phaseToMarket).or()
+            .with(phaseMarket).or()
+            .with(phaseRevenue).or()
+            .with(phaseIncome).or()
             .with(phaseState)
             .build();
 

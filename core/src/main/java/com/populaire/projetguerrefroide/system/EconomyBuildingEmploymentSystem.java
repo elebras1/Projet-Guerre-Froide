@@ -25,8 +25,8 @@ public class EconomyBuildingEmploymentSystem {
         EconomyBuildingTypeView economyBuildingType = null;
 
         long regionInstanceId = 0;
-        RegionInstanceView regionInstanceData = null;
-        RegionInstanceIncomeView regionInstanceIncome = null;
+        RegionInstanceMutView regionInstanceData = null;
+        RegionInstanceIncomeMutView regionInstanceIncome = null;
         RegionDemographicsView demographics = null;
 
         int primaryWorkerPopTypeIndex = -1;
@@ -36,7 +36,7 @@ public class EconomyBuildingEmploymentSystem {
         Field<Building> buildingField = iter.field(Building.class, 1);
 
         for(int i = 0; i < iter.count(); i++) {
-            EconomyBuildingView economyBuilding = economyBuildingField.getMutView(i);
+            EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
             BuildingView building = buildingField.getMutView(i);
 
             if(building.typeId() != buildingTypeId) {

@@ -26,7 +26,7 @@ public class EconomyBuildingProductionSystem {
         Field<Building> buildingField = iter.field(Building.class, 1);
 
         for (int i = 0; i < iter.count(); i++) {
-            EconomyBuildingView economyBuilding = economyBuildingField.getMutView(i);
+            EconomyBuildingMutView economyBuilding = economyBuildingField.getMutView(i);
             BuildingView building = buildingField.getMutView(i);
 
             if (building.countryId() != countryId) {

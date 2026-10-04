@@ -18,12 +18,12 @@ public class CountryMarketResolveSystem {
 
     private void resolve(Iter iter) {
         EntityView globalMarket = iter.world().obtainEntityView(iter.world().lookup("global_market"));
-        GlobalMarketView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
+        GlobalMarketMutView globalMarketData = globalMarket.getMutView(GlobalMarket.class);
 
         Field<CountryMarket> countryMarketField = iter.field(CountryMarket.class, 0);
         Field<CountryTradePolicy> countryTradePolicyField = iter.field(CountryTradePolicy.class, 1);
         for (int i = 0; i < iter.count(); i++) {
-            CountryMarketView countryMarket = countryMarketField.getMutView(i);
+            CountryMarketMutView countryMarket = countryMarketField.getMutView(i);
             CountryTradePolicyView countryTradePolicy = countryTradePolicyField.getMutView(i);
 
             float tariffRate = countryTradePolicy.tariffRate();

@@ -24,7 +24,7 @@ public class RGOProfitSharingSystem {
         int aristocratPopTypeIndex = globalPopTypeData.aristocratPopTypeIndex();
 
         long regionId = 0;
-        RegionInstanceIncomeView regionIncome = null;
+        RegionInstanceIncomeMutView regionIncome = null;
         RegionDemographicsView regionDemographics = null;
         long countryId = 0;
         CountryProfitDistributionPolicyView countryProfitDistributionPolicy = null;

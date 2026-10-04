@@ -23,7 +23,7 @@ public class RGOProductionSystem {
         Field<ResourceGathering> resourceGatheringField = iter.field(ResourceGathering.class, 0);
 
         for(int i = 0; i < iter.count(); i++) {
-            ResourceGatheringView resourceGathering = resourceGatheringField.getMutView(i);
+            ResourceGatheringMutView resourceGathering = resourceGatheringField.getMutView(i);
 
             if(resourceGathering.typeId() != resourceGatheringTypeId) {
                 resourceGatheringTypeId = resourceGathering.typeId();
