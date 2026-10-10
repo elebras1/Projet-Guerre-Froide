@@ -47,6 +47,10 @@ test {
   workingDir = rootProject.file('assets').path
   jvmArgs += "--enable-native-access=ALL-UNNAMED"
   systemProperty "simulation.outputDir", file("build/simulation-analysis").absolutePath
+  systemProperty "simulation.years", project.findProperty("simulation.years") ?: "5"
+  systemProperty "simulation.detailEvery", project.findProperty("simulation.detailEvery") ?: ""
+  systemProperty "simulation.freeze", project.findProperty("simulation.freeze") ?: ""
+  systemProperty "simulation.laws", project.findProperty("simulation.laws") ?: ""
 }
 
 def os = System.properties['os.name'].toLowerCase()

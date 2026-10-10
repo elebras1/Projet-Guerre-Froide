@@ -43,7 +43,11 @@ import com.populaire.projetguerrefroide.component.GlobalMarket;
 import com.populaire.projetguerrefroide.component.GlobalMarketView;
 import com.populaire.projetguerrefroide.component.GlobalPopulationType;
 import com.populaire.projetguerrefroide.component.GlobalPopulationTypeView;
+import com.populaire.projetguerrefroide.component.Good;
+import com.populaire.projetguerrefroide.component.GoodView;
 import com.populaire.projetguerrefroide.component.Population;
+import com.populaire.projetguerrefroide.component.PopulationType;
+import com.populaire.projetguerrefroide.component.PopulationTypeView;
 import com.populaire.projetguerrefroide.component.PopulationView;
 import com.populaire.projetguerrefroide.component.Province;
 import com.populaire.projetguerrefroide.component.ProvinceView;
@@ -69,12 +73,73 @@ import java.util.List;
 import java.util.Map;
 
 import static com.populaire.projetguerrefroide.util.Constants.GOOD_COUNT;
+import static com.populaire.projetguerrefroide.util.Constants.NEEDS_SCALING_FACTOR;
 import static com.populaire.projetguerrefroide.util.Constants.POP_TYPE_COUNT;
+import static com.populaire.projetguerrefroide.util.StrataUtils.MIDDLE_STRATA;
+import static com.populaire.projetguerrefroide.util.StrataUtils.POOR_STRATA;
+import static com.populaire.projetguerrefroide.util.StrataUtils.RICH_STRATA;
 
 public class SimulationRecorder implements AutoCloseable {
 
+    private static final int DAYS_PER_YEAR = 365;
+    private static final int STRATA_COUNT = 3;
+    private static final float CPI_EVERYDAY_WEIGHT = 0.3f;
+    private static final float PRICE_BAND_LOW = 0.25f;
+    private static final float PRICE_BAND_HIGH = 3.0f;
+    private static final float LARGE_COUNTRY_ADULTS = 1_000_000f;
+
     private final World ecsWorld;
     private final LocalDate startDate;
+    private final int detailEvery;
+    private boolean detail;
+
+    private final float[] baseCosts = new float[GOOD_COUNT];
+    private final float[] cpiWeights = new float[GOOD_COUNT];
+    private final int[] popTypeStrata = new int[POP_TYPE_COUNT];
+
+    private final double[] strataAmount = new double[STRATA_COUNT];
+    private final double[] strataLife = new double[STRATA_COUNT];
+    private final double[] strataEveryday = new double[STRATA_COUNT];
+    private final double[] strataLuxury = new double[STRATA_COUNT];
+    private double tickMoney;
+    private double tickRealOutput;
+    private double tickCpi;
+
+    private double firstRealOutput = Double.NaN;
+    private double firstRealOutputPerAdult = Double.NaN;
+    private double lastRealOutputPerAdult;
+    private double minRealOutputRatio = Double.MAX_VALUE;
+    private double startMinRatio = Double.MAX_VALUE;
+    private double startMaxRatio = 0.0;
+    private double firstMoney = Double.NaN;
+    private double maxMoneyDrift = 0.0;
+    private double minCpi = Double.MAX_VALUE;
+    private double maxCpi = 0.0;
+    private float minBalance = Float.MAX_VALUE;
+    private String minBalanceSource = "";
+    private final int[] priceOutOfBandStreak = new int[GOOD_COUNT];
+    private final int[] priceOutOfBandMaxStreak = new int[GOOD_COUNT];
+
+    private final double[] countryAdults;
+    private final double[] countryPoorAmount;
+    private final double[] countryPoorLife;
+    private final double[] yearCountryPoorLife;
+    private final double[] yearCountryAdults;
+    private int yearTicks;
+    private double yearRealOutput;
+    private double yearCpi;
+    private final double[] yearStrataLife = new double[STRATA_COUNT];
+    private final double[] yearStrataEveryday = new double[STRATA_COUNT];
+    private final double[] yearStrataLuxury = new double[STRATA_COUNT];
+    private double minYearlyPoorLifeWorld = Double.MAX_VALUE;
+    private double minYearlyPoorLifeCountry = Double.MAX_VALUE;
+    private String worstPoorLifeCountry = "";
+
+    private double tickNanosSum;
+    private long tickNanosMax;
+    private int ticksTimed;
+    private double yearTickNanosSum;
+    private long yearTickNanosMax;
 
     private final String[] goodNames = new String[GOOD_COUNT];
     private final List<String> countryNames = new ArrayList<>();
@@ -140,33 +205,29 @@ public class SimulationRecorder implements AutoCloseable {
     private float tickTradeMoneyTotal;
     private float tickTariffTotal;
     private float tickSavingsTotal;
-    private float tickProductionTotal;
     private double tickPopulationTotal;
     private float tickEmploymentTotal;
     private float tickWorkersBookedTotal;
     private float minSurplusRatio = Float.MAX_VALUE;
     private float minInputsCost = Float.MAX_VALUE;
 
-    private float firstTickWorldProduction = Float.NaN;
-    private float lastTickWorldProduction;
     private double firstTickWorldPopulation = -1.0;
     private double lastTickWorldPopulation;
     private float firstTickWorldTreasury = Float.NaN;
     private float lastTickWorldTreasury;
-    private final float[] firstPrices = new float[GOOD_COUNT];
     private final float[] lastPrices = new float[GOOD_COUNT];
     private final float[] finalTotalByPopType = new float[POP_TYPE_COUNT];
     private final float[] finalEmploymentByPopType = new float[POP_TYPE_COUNT];
-    private final float[] finalLifeSatisfactionByPopType = new float[POP_TYPE_COUNT];
     private long employmentExceedsPopulationRows = 0;
 
     private final Map<String, CsvWriter> writers = new HashMap<>();
     private final File outputDir;
 
-    public SimulationRecorder(World ecsWorld, File outputDir, LocalDate startDate) {
+    public SimulationRecorder(World ecsWorld, File outputDir, LocalDate startDate, int detailEvery) {
         this.ecsWorld = ecsWorld;
         this.outputDir = outputDir;
         this.startDate = startDate;
+        this.detailEvery = Math.max(1, detailEvery);
 
         this.clearOutputDirectory(outputDir);
 
@@ -208,7 +269,72 @@ public class SimulationRecorder implements AutoCloseable {
         this.countryPopTypeTotal = new int[this.countryNames.size() * POP_TYPE_COUNT];
         this.countryPopTypeEmployment = new int[this.countryNames.size() * POP_TYPE_COUNT];
 
+        this.countryAdults = new double[this.countryNames.size()];
+        this.countryPoorAmount = new double[this.countryNames.size()];
+        this.countryPoorLife = new double[this.countryNames.size()];
+        this.yearCountryPoorLife = new double[this.countryNames.size()];
+        this.yearCountryAdults = new double[this.countryNames.size()];
+
+        this.readBaseCosts();
+        this.readCpiWeights();
+
         this.openWriters();
+    }
+
+    private void readBaseCosts() {
+        EntityView globalGood = this.ecsWorld.obtainEntityView(this.ecsWorld.lookup("global_good"));
+        GlobalGoodView data = globalGood.getMutView(GlobalGood.class);
+        for (int g = 0; g < GOOD_COUNT; g++) {
+            GoodView good = this.ecsWorld.obtainEntityView(data.goodIds(g)).getMutView(Good.class);
+            this.baseCosts[g] = good.cost();
+        }
+    }
+
+    private void readCpiWeights() {
+        EntityView globalPopType = this.ecsWorld.obtainEntityView(this.ecsWorld.lookup("global_population_type"));
+        GlobalPopulationTypeView data = globalPopType.getMutView(GlobalPopulationType.class);
+        float[][] baskets = new float[POP_TYPE_COUNT][GOOD_COUNT];
+        for (int p = 0; p < POP_TYPE_COUNT; p++) {
+            PopulationTypeView popType = this.ecsWorld.obtainEntityView(data.popTypeIds(p)).getMutView(PopulationType.class);
+            this.popTypeStrata[p] = popType.strata();
+            for (int j = 0; j < popType.lifeNeedsGoodIndexesLength(); j++) {
+                int goodIndex = popType.lifeNeedsGoodIndexes(j);
+                if (goodIndex < 0) {
+                    break;
+                }
+                baskets[p][goodIndex] += popType.lifeNeedsGoodAmounts(j);
+            }
+            for (int j = 0; j < popType.everydayNeedsGoodIndexesLength(); j++) {
+                int goodIndex = popType.everydayNeedsGoodIndexes(j);
+                if (goodIndex < 0) {
+                    break;
+                }
+                baskets[p][goodIndex] += CPI_EVERYDAY_WEIGHT * popType.everydayNeedsGoodAmounts(j);
+            }
+        }
+
+        double[] popTypeAmounts = new double[POP_TYPE_COUNT];
+        this.populationQuery.iter(iter -> {
+            Field<Population> populationField = iter.field(Population.class, 0);
+            for (int i = 0; i < iter.count(); i++) {
+                PopulationView population = populationField.getMutView(i);
+                popTypeAmounts[population.index()] += population.amount();
+            }
+        });
+
+        double total = 0.0;
+        double[] weights = new double[GOOD_COUNT];
+        for (int p = 0; p < POP_TYPE_COUNT; p++) {
+            for (int g = 0; g < GOOD_COUNT; g++) {
+                weights[g] += popTypeAmounts[p] / NEEDS_SCALING_FACTOR * baskets[p][g] * this.baseCosts[g];
+            }
+        }
+        for (double weight : weights) {
+            total += weight;
+        }
+        for (int g = 0; g < GOOD_COUNT; g++) {
+            this.cpiWeights[g] = total > 0.0 ? (float) (weights[g] / total) : 0f;
+        }
     }
 
     private void readGoodNames() {
@@ -317,6 +443,13 @@ public class SimulationRecorder implements AutoCloseable {
         this.writer("region_income/income.csv").header("tick", "date", "country", "pop_type", "min_wage", "workers", "profit_share");
         this.writer("region_income/shares.csv").header("tick", "date", "country", "capitalist_share", "aristocrat_share", "country_share");
 
+        this.writer("world/yearly.csv").header("year", "date",
+            "real_output", "real_output_ratio", "real_output_per_100k_adults", "adults", "cpi",
+            "life_poor", "life_middle", "life_rich", "everyday_poor", "everyday_middle", "everyday_rich",
+            "luxury_poor", "luxury_middle", "luxury_rich", "worst_country_life_poor", "worst_country",
+            "money", "money_drift", "min_balance", "min_balance_source", "goods_out_of_band",
+            "avg_tick_ms", "max_tick_ms");
+
         this.writer("money.csv").header("tick", "date",
             "wages_paid", "wages_buildings", "wages_rgo",
             "profit_rgo", "profit_buildings", "profit_workers", "profit_capitalists", "profit_aristocrats", "profit_state",
@@ -333,6 +466,10 @@ public class SimulationRecorder implements AutoCloseable {
             }
             return new CsvWriter(file);
         });
+    }
+
+    private CsvWriter detailWriter(String relativePath) {
+        return this.detail ? this.writer(relativePath) : CsvWriter.DISCARD;
     }
 
     private void writeMetaRows() {
@@ -363,8 +500,9 @@ public class SimulationRecorder implements AutoCloseable {
         }
     }
 
-    public void recordTick(int tick) {
+    public void recordTick(int tick, long tickNanos) {
         String date = this.startDate.plusDays(tick).toString();
+        this.detail = tick % this.detailEvery == 0;
 
         this.resetScratch();
         this.sumCountryEmployment();
@@ -376,13 +514,8 @@ public class SimulationRecorder implements AutoCloseable {
         this.recordEmploymentRatio(tick, date);
         this.commitCountryProduction(tick, date);
         this.commitBuildingTypes(tick, date);
-        this.tickSavingsTotal = this.sumPopulationSavings();
         this.recordMoney(tick, date);
 
-        this.lastTickWorldProduction = this.tickProductionTotal;
-        if (Float.isNaN(this.firstTickWorldProduction)) {
-            this.firstTickWorldProduction = this.tickProductionTotal;
-        }
         this.lastTickWorldPopulation = this.tickPopulationTotal;
         if (this.firstTickWorldPopulation < 0.0) {
             this.firstTickWorldPopulation = this.tickPopulationTotal;
@@ -395,6 +528,145 @@ public class SimulationRecorder implements AutoCloseable {
         }
 
         this.checkConsistency();
+        this.trackInvariants(tick, tickNanos);
+        if ((tick + 1) % DAYS_PER_YEAR == 0) {
+            this.recordYear(tick, date);
+        }
+    }
+
+    private void trackInvariants(int tick, long tickNanos) {
+        this.tickRealOutput = 0.0;
+        this.tickCpi = 0.0;
+        for (int g = 0; g < GOOD_COUNT; g++) {
+            if (this.baseCosts[g] <= 0f) {
+                continue;
+            }
+            this.tickRealOutput += (double) this.worldProductionByGood[g] * this.baseCosts[g];
+            float relativePrice = this.lastPrices[g] / this.baseCosts[g];
+            this.tickCpi += this.cpiWeights[g] * relativePrice;
+            boolean outOfBand = this.worldProductionByGood[g] + this.worldDemandByGood[g] > 0f
+                && (relativePrice < PRICE_BAND_LOW || relativePrice > PRICE_BAND_HIGH);
+            this.priceOutOfBandStreak[g] = outOfBand ? this.priceOutOfBandStreak[g] + 1 : 0;
+            this.priceOutOfBandMaxStreak[g] = Math.max(this.priceOutOfBandMaxStreak[g], this.priceOutOfBandStreak[g]);
+        }
+        this.tickMoney += (double) this.tickTreasuryTotal + this.tickSalesRevenueTotal + this.tickPendingRevenueTotal + this.tickTradeMoneyTotal;
+
+        double adults = 0.0;
+        for (double countryAdult : this.countryAdults) {
+            adults += countryAdult;
+        }
+        double realOutputPerAdult = adults > 0.0 ? this.tickRealOutput / adults : 0.0;
+
+        if (Double.isNaN(this.firstRealOutput)) {
+            this.firstRealOutput = this.tickRealOutput;
+            this.firstRealOutputPerAdult = realOutputPerAdult;
+            this.firstMoney = this.tickMoney;
+        }
+        this.lastRealOutputPerAdult = realOutputPerAdult;
+
+        double ratio = this.firstRealOutput > 0.0 ? this.tickRealOutput / this.firstRealOutput : 0.0;
+        this.minRealOutputRatio = Math.min(this.minRealOutputRatio, ratio);
+        if (tick < DAYS_PER_YEAR) {
+            this.startMinRatio = Math.min(this.startMinRatio, ratio);
+            this.startMaxRatio = Math.max(this.startMaxRatio, ratio);
+        }
+        if (this.firstMoney != 0.0) {
+            this.maxMoneyDrift = Math.max(this.maxMoneyDrift, Math.abs(this.tickMoney - this.firstMoney) / Math.abs(this.firstMoney));
+        }
+        this.minCpi = Math.min(this.minCpi, this.tickCpi);
+        this.maxCpi = Math.max(this.maxCpi, this.tickCpi);
+
+        this.tickNanosSum += tickNanos;
+        this.tickNanosMax = Math.max(this.tickNanosMax, tickNanos);
+        this.ticksTimed++;
+        this.yearTickNanosSum += tickNanos;
+        this.yearTickNanosMax = Math.max(this.yearTickNanosMax, tickNanos);
+
+        this.yearTicks++;
+        this.yearRealOutput += this.tickRealOutput;
+        this.yearCpi += this.tickCpi;
+        for (int s = 0; s < STRATA_COUNT; s++) {
+            if (this.strataAmount[s] > 0.0) {
+                this.yearStrataLife[s] += this.strataLife[s] / this.strataAmount[s];
+                this.yearStrataEveryday[s] += this.strataEveryday[s] / this.strataAmount[s];
+                this.yearStrataLuxury[s] += this.strataLuxury[s] / this.strataAmount[s];
+            }
+        }
+        for (int c = 0; c < this.countryNames.size(); c++) {
+            this.yearCountryAdults[c] += this.countryAdults[c];
+            if (this.countryPoorAmount[c] > 0.0) {
+                this.yearCountryPoorLife[c] += this.countryPoorLife[c] / this.countryPoorAmount[c];
+            } else {
+                this.yearCountryPoorLife[c] += 1.0;
+            }
+        }
+    }
+
+    private void recordYear(int tick, String date) {
+        int year = (tick + 1) / DAYS_PER_YEAR;
+        double ticks = Math.max(1, this.yearTicks);
+
+        double worstCountryLife = Double.MAX_VALUE;
+        String worstCountry = "";
+        double adults = 0.0;
+        for (int c = 0; c < this.countryNames.size(); c++) {
+            double countryAdult = this.yearCountryAdults[c] / ticks;
+            adults += countryAdult;
+            double poorLife = this.yearCountryPoorLife[c] / ticks;
+            if (countryAdult >= LARGE_COUNTRY_ADULTS && poorLife < worstCountryLife) {
+                worstCountryLife = poorLife;
+                worstCountry = this.countryNames.get(c);
+            }
+        }
+        double poorLifeWorld = this.yearStrataLife[POOR_STRATA] / ticks;
+        if (poorLifeWorld < this.minYearlyPoorLifeWorld) {
+            this.minYearlyPoorLifeWorld = poorLifeWorld;
+        }
+        if (worstCountryLife < this.minYearlyPoorLifeCountry) {
+            this.minYearlyPoorLifeCountry = worstCountryLife;
+            this.worstPoorLifeCountry = worstCountry + " (" + year + ")";
+        }
+
+        int goodsOutOfBand = 0;
+        for (int g = 0; g < GOOD_COUNT; g++) {
+            if (this.priceOutOfBandStreak[g] > 0) {
+                goodsOutOfBand++;
+            }
+        }
+
+        double realOutput = this.yearRealOutput / ticks;
+        this.writer("world/yearly.csv").row(year, date,
+            realOutput,
+            this.firstRealOutput > 0.0 ? realOutput / this.firstRealOutput : 0.0,
+            adults > 0.0 ? realOutput / adults * NEEDS_SCALING_FACTOR : 0.0,
+            adults,
+            this.yearCpi / ticks,
+            this.yearStrataLife[POOR_STRATA] / ticks, this.yearStrataLife[MIDDLE_STRATA] / ticks, this.yearStrataLife[RICH_STRATA] / ticks,
+            this.yearStrataEveryday[POOR_STRATA] / ticks, this.yearStrataEveryday[MIDDLE_STRATA] / ticks, this.yearStrataEveryday[RICH_STRATA] / ticks,
+            this.yearStrataLuxury[POOR_STRATA] / ticks, this.yearStrataLuxury[MIDDLE_STRATA] / ticks, this.yearStrataLuxury[RICH_STRATA] / ticks,
+            worstCountryLife, worstCountry,
+            this.tickMoney,
+            this.firstMoney != 0.0 ? (this.tickMoney - this.firstMoney) / this.firstMoney : 0.0,
+            this.minBalance, this.minBalanceSource, goodsOutOfBand,
+            this.yearTickNanosSum / ticks / 1_000_000.0, this.yearTickNanosMax / 1_000_000.0);
+
+        this.yearTicks = 0;
+        this.yearRealOutput = 0.0;
+        this.yearCpi = 0.0;
+        Arrays.fill(this.yearStrataLife, 0.0);
+        Arrays.fill(this.yearStrataEveryday, 0.0);
+        Arrays.fill(this.yearStrataLuxury, 0.0);
+        Arrays.fill(this.yearCountryPoorLife, 0.0);
+        Arrays.fill(this.yearCountryAdults, 0.0);
+        this.yearTickNanosSum = 0.0;
+        this.yearTickNanosMax = 0L;
+    }
+
+    private void trackBalance(float balance, String kind, String owner) {
+        if (balance < this.minBalance) {
+            this.minBalance = balance;
+            this.minBalanceSource = kind + " " + owner;
+        }
     }
 
     private void resetScratch() {
@@ -436,20 +708,27 @@ public class SimulationRecorder implements AutoCloseable {
         this.tickTradeMoneyTotal = 0f;
         this.tickTariffTotal = 0f;
         this.tickSavingsTotal = 0f;
-        this.tickProductionTotal = 0f;
         this.tickPopulationTotal = 0.0;
         this.tickEmploymentTotal = 0f;
         this.tickWorkersBookedTotal = 0f;
         Arrays.fill(this.finalTotalByPopType, 0f);
         Arrays.fill(this.finalEmploymentByPopType, 0f);
-        Arrays.fill(this.finalLifeSatisfactionByPopType, 0f);
+
+        Arrays.fill(this.strataAmount, 0.0);
+        Arrays.fill(this.strataLife, 0.0);
+        Arrays.fill(this.strataEveryday, 0.0);
+        Arrays.fill(this.strataLuxury, 0.0);
+        Arrays.fill(this.countryAdults, 0.0);
+        Arrays.fill(this.countryPoorAmount, 0.0);
+        Arrays.fill(this.countryPoorLife, 0.0);
+        this.tickMoney = 0.0;
     }
 
     private void recordWorldMarket(int tick, String date) {
         EntityView globalMarket = this.ecsWorld.obtainEntityView(this.ecsWorld.lookup("global_market"));
         GlobalMarketView data = globalMarket.getMutView(GlobalMarket.class);
 
-        CsvWriter writer = this.writer("world/market.csv");
+        CsvWriter writer = this.detailWriter("world/market.csv");
         for (int g = 0; g < GOOD_COUNT; g++) {
             float production = data.goodProductionAmounts(g);
             float demand = data.goodDemandAmounts(g);
@@ -457,12 +736,8 @@ public class SimulationRecorder implements AutoCloseable {
             this.worldProductionByGood[g] = production;
             this.worldDemandByGood[g] = demand;
             this.worldProductionTotal += production;
-            this.tickProductionTotal += production;
             this.tickRevenueTotal += production * price;
             this.lastPrices[g] = price;
-            if (this.firstPrices[g] == 0f) {
-                this.firstPrices[g] = price;
-            }
             writer.row(tick, date, this.goodNames[g], production, demand, price, data.goodAmountsPool(g), data.goodLeftoverAmounts(g),
                 data.goodOfferTotals(g), data.goodNeedTotals(g), data.goodTradeRatios(g));
             this.tickTradeMoneyTotal += data.goodTradeMoney(g);
@@ -470,12 +745,12 @@ public class SimulationRecorder implements AutoCloseable {
     }
 
     private void recordCountryMarkets(int tick, String date) {
-        CsvWriter market = this.writer("country/market.csv");
-        CsvWriter treasury = this.writer("country/treasury.csv");
-        CsvWriter demographics = this.writer("country/demographics.csv");
-        CsvWriter demographicsTotals = this.writer("country/demographics_totals.csv");
-        CsvWriter needsCosts = this.writer("country/needs_costs.csv");
-        CsvWriter effectPolicy = this.writer("country/effect_policy.csv");
+        CsvWriter market = this.detailWriter("country/market.csv");
+        CsvWriter treasury = this.detailWriter("country/treasury.csv");
+        CsvWriter demographics = this.detailWriter("country/demographics.csv");
+        CsvWriter demographicsTotals = this.detailWriter("country/demographics_totals.csv");
+        CsvWriter needsCosts = this.detailWriter("country/needs_costs.csv");
+        CsvWriter effectPolicy = this.detailWriter("country/effect_policy.csv");
 
         this.countryQuery.each((long countryId) -> {
             EntityView country = this.ecsWorld.obtainEntityView(countryId);
@@ -501,6 +776,9 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickSalesRevenueTotal += cm.salesRevenue();
             this.tickPendingRevenueTotal += cm.pendingRevenue();
             this.tickTariffTotal += cm.tariffRevenue();
+            this.trackBalance(cm.treasury(), "treasury", name);
+            this.trackBalance(cm.salesRevenue(), "sales_revenue", name);
+            this.trackBalance(cm.pendingRevenue(), "pending_revenue", name);
             for (int p = 0; p < POP_TYPE_COUNT; p++) {
                 float popTypeTotal = countryIndex != null ? this.countryPopTypeTotal[countryIndex * POP_TYPE_COUNT + p] : cd.totalByPopType(p);
                 float popTypeEmployment = countryIndex != null ? this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + p] : cd.employmentByPopType(p);
@@ -509,7 +787,6 @@ public class SimulationRecorder implements AutoCloseable {
                 }
                 this.finalTotalByPopType[p] += popTypeTotal;
                 this.finalEmploymentByPopType[p] += popTypeEmployment;
-                this.finalLifeSatisfactionByPopType[p] += cd.lifeNeedsSatisfactionByPopType(p) * popTypeTotal;
             }
 
             for (int g = 0; g < GOOD_COUNT; g++) {
@@ -589,7 +866,7 @@ public class SimulationRecorder implements AutoCloseable {
             }
         });
 
-        CsvWriter writer = this.writer("rgo/employment.csv");
+        CsvWriter writer = this.detailWriter("rgo/employment.csv");
         for (Map.Entry<Long, float[]> entry : this.countryRgoByGood.entrySet()) {
             int countryIndex = (int) (entry.getKey() >> 16);
             int goodIndex = (int) (entry.getKey() & 0xFFFF);
@@ -648,12 +925,12 @@ public class SimulationRecorder implements AutoCloseable {
             }
         });
 
-        CsvWriter employment = this.writer("country/building_employment.csv");
+        CsvWriter employment = this.detailWriter("country/building_employment.csv");
         for (int c = 0; c < this.countryNames.size(); c++) {
             employment.row(tick, date, this.countryNames.get(c), this.countryPrimaryWorkers[c], this.countrySecondaryWorkers[c]);
         }
 
-        CsvWriter inputDemand = this.writer("building_types/input_demand.csv");
+        CsvWriter inputDemand = this.detailWriter("building_types/input_demand.csv");
         for (Map.Entry<Long, Float> entry : this.buildingTypeInputDemand.entrySet()) {
             long typeId = entry.getKey() >> 16;
             int goodIndex = (int) (entry.getKey() & 0xFFFF);
@@ -699,8 +976,8 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickCountryShareTotal += agg[3 * POP_TYPE_COUNT + 2];
         }
 
-        CsvWriter incomeWriter = this.writer("region_income/income.csv");
-        CsvWriter sharesWriter = this.writer("region_income/shares.csv");
+        CsvWriter incomeWriter = this.detailWriter("region_income/income.csv");
+        CsvWriter sharesWriter = this.detailWriter("region_income/shares.csv");
         for (Map.Entry<Long, float[]> entry : this.countryRegionIncome.entrySet()) {
             int countryIndex = entry.getKey().intValue();
             float[] agg = entry.getValue();
@@ -714,7 +991,7 @@ public class SimulationRecorder implements AutoCloseable {
     }
 
     private void recordEmploymentRatio(int tick, String date) {
-        CsvWriter writer = this.writer("country/employment_ratio.csv");
+        CsvWriter writer = this.detailWriter("country/employment_ratio.csv");
         for (int c = 0; c < this.countryNames.size(); c++) {
             float employed = this.countryPopEmployment[c];
             float workers = this.countryWorkers[c];
@@ -726,19 +1003,35 @@ public class SimulationRecorder implements AutoCloseable {
     }
 
     private void sumCountryEmployment() {
+        double[] savings = new double[] { 0.0 };
         this.populationQuery.iter(iter -> {
             Field<Population> populationField = iter.field(Population.class, 0);
             for (int i = 0; i < iter.count(); i++) {
                 PopulationView population = populationField.getMutView(i);
+                float amount = population.amount();
+                int strata = this.popTypeStrata[population.index()];
+                savings[0] += population.savings();
+                this.strataAmount[strata] += amount;
+                this.strataLife[strata] += amount * population.lifeNeedsSatisfaction();
+                this.strataEveryday[strata] += amount * population.everydayNeedsSatisfaction();
+                this.strataLuxury[strata] += amount * population.luxuryNeedsSatisfaction();
                 Integer countryIndex = this.countryIndexByEntity.get(population.countryId());
                 if (countryIndex != null) {
+                    this.trackBalance(population.savings(), "savings", this.countryNames.get(countryIndex));
                     this.countryPopEmployment[countryIndex] += population.employment();
                     this.countryPopEntities[countryIndex]++;
                     this.countryPopTypeTotal[countryIndex * POP_TYPE_COUNT + population.index()] += population.amount();
                     this.countryPopTypeEmployment[countryIndex * POP_TYPE_COUNT + population.index()] += population.employment();
+                    this.countryAdults[countryIndex] += amount;
+                    if (strata == POOR_STRATA) {
+                        this.countryPoorAmount[countryIndex] += amount;
+                        this.countryPoorLife[countryIndex] += amount * population.lifeNeedsSatisfaction();
+                    }
                 }
             }
         });
+        this.tickSavingsTotal = (float) savings[0];
+        this.tickMoney += savings[0];
     }
 
     private void recordMoney(int tick, String date) {
@@ -749,7 +1042,7 @@ public class SimulationRecorder implements AutoCloseable {
             this.minSurplusRatio = Math.min(this.minSurplusRatio, inputsCost / this.tickRevenueTotal);
         }
 
-        CsvWriter writer = this.writer("money.csv");
+        CsvWriter writer = this.detailWriter("money.csv");
         writer.row(tick, date,
             this.tickWagesPaidTotal, this.tickBuildingWagesTotal, this.tickRgoWagesTotal,
             this.tickRgoProfitTotal, this.tickBuildingProfitTotal, this.tickWorkerProfitShareTotal,
@@ -759,20 +1052,8 @@ public class SimulationRecorder implements AutoCloseable {
             this.tickWorkersBookedTotal > 0f ? this.tickEmploymentTotal / this.tickWorkersBookedTotal : 0f);
     }
 
-    private float sumPopulationSavings() {
-        float[] total = new float[] { 0f };
-        this.populationQuery.iter(iter -> {
-            Field<Population> populationField = iter.field(Population.class, 0);
-            for (int i = 0; i < iter.count(); i++) {
-                PopulationView population = populationField.getMutView(i);
-                total[0] += population.savings();
-            }
-        });
-        return total[0];
-    }
-
     private void commitCountryProduction(int tick, String date) {
-        CsvWriter writer = this.writer("country/production.csv");
+        CsvWriter writer = this.detailWriter("country/production.csv");
         Map<Long, float[]> combined = new HashMap<>();
         for (Map.Entry<Long, float[]> entry : this.countryRgoByGood.entrySet()) {
             float[] agg = combined.computeIfAbsent(entry.getKey(), k -> new float[2]);
@@ -793,7 +1074,7 @@ public class SimulationRecorder implements AutoCloseable {
     }
 
     private void commitBuildingTypes(int tick, String date) {
-        CsvWriter writer = this.writer("building_types/production.csv");
+        CsvWriter writer = this.detailWriter("building_types/production.csv");
         for (int t = 0; t < this.buildingTypeNames.size(); t++) {
             this.buildingProductionTotal += this.buildingTypeProduction[t];
             writer.row(tick, date, this.buildingTypeNames.get(t),
@@ -848,14 +1129,6 @@ public class SimulationRecorder implements AutoCloseable {
         return this.mismatchCount;
     }
 
-    public float getFirstTickWorldProduction() {
-        return this.firstTickWorldProduction;
-    }
-
-    public float getLastTickWorldProduction() {
-        return this.lastTickWorldProduction;
-    }
-
     public double getFirstTickWorldPopulation() {
         return this.firstTickWorldPopulation;
     }
@@ -875,26 +1148,6 @@ public class SimulationRecorder implements AutoCloseable {
             value += this.worldProductionByGood[g] * this.lastPrices[g];
         }
         return value;
-    }
-
-    public float getPriceDriftMin() {
-        float min = Float.MAX_VALUE;
-        for (int g = 0; g < GOOD_COUNT; g++) {
-            if (this.firstPrices[g] > 0f) {
-                min = Math.min(min, this.lastPrices[g] / this.firstPrices[g]);
-            }
-        }
-        return min;
-    }
-
-    public float getPriceDriftMax() {
-        float max = 0f;
-        for (int g = 0; g < GOOD_COUNT; g++) {
-            if (this.firstPrices[g] > 0f) {
-                max = Math.max(max, this.lastPrices[g] / this.firstPrices[g]);
-            }
-        }
-        return max;
     }
 
     public long getEmploymentExceedsPopulationRows() {
@@ -917,17 +1170,6 @@ public class SimulationRecorder implements AutoCloseable {
         return total;
     }
 
-    public int getStarvingPopTypesCount() {
-        int starving = 0;
-        for (int p = 0; p < POP_TYPE_COUNT; p++) {
-            if (this.finalTotalByPopType[p] > 0f
-                && this.finalLifeSatisfactionByPopType[p] <= 0f) {
-                starving++;
-            }
-        }
-        return starving;
-    }
-
     public float getFinalWagesPaid() {
         return this.tickWagesPaidTotal;
     }
@@ -940,14 +1182,75 @@ public class SimulationRecorder implements AutoCloseable {
         return this.tickRgoWagesTotal;
     }
 
+    public double getMinRealOutputRatio() {
+        return this.minRealOutputRatio;
+    }
 
+    public double getStartMinRatio() {
+        return this.startMinRatio;
+    }
 
+    public double getStartMaxRatio() {
+        return this.startMaxRatio;
+    }
 
+    public double getRealOutputPerAdultGrowth() {
+        return this.firstRealOutputPerAdult > 0.0 ? this.lastRealOutputPerAdult / this.firstRealOutputPerAdult : 0.0;
+    }
 
+    public double getMaxMoneyDrift() {
+        return this.maxMoneyDrift;
+    }
 
+    public double getFirstMoney() {
+        return this.firstMoney;
+    }
 
+    public float getMinBalance() {
+        return this.minBalance;
+    }
 
+    public String getMinBalanceSource() {
+        return this.minBalanceSource;
+    }
 
+    public double getMinCpi() {
+        return this.minCpi;
+    }
+
+    public double getMaxCpi() {
+        return this.maxCpi;
+    }
+
+    public int getGoodsOutOfBandAtLeast(int days) {
+        int count = 0;
+        for (int g = 0; g < GOOD_COUNT; g++) {
+            if (this.priceOutOfBandMaxStreak[g] >= days) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public double getMinYearlyPoorLifeWorld() {
+        return this.minYearlyPoorLifeWorld;
+    }
+
+    public double getMinYearlyPoorLifeCountry() {
+        return this.minYearlyPoorLifeCountry;
+    }
+
+    public String getWorstPoorLifeCountry() {
+        return this.worstPoorLifeCountry;
+    }
+
+    public double getAverageTickMillis() {
+        return this.ticksTimed > 0 ? this.tickNanosSum / this.ticksTimed / 1_000_000.0 : 0.0;
+    }
+
+    public double getMaxTickMillis() {
+        return this.tickNanosMax / 1_000_000.0;
+    }
 
     public float getMinSurplusRatio() {
         return this.minSurplusRatio;
@@ -964,7 +1267,13 @@ public class SimulationRecorder implements AutoCloseable {
     }
 
     private static final class CsvWriter {
+        private static final CsvWriter DISCARD = new CsvWriter();
+
         private final BufferedWriter writer;
+
+        private CsvWriter() {
+            this.writer = null;
+        }
 
         CsvWriter(File file) {
             try {
@@ -979,6 +1288,9 @@ public class SimulationRecorder implements AutoCloseable {
         }
 
         void row(Object... values) {
+            if (this.writer == null) {
+                return;
+            }
             try {
                 StringBuilder sb = new StringBuilder();
                 for (int i = 0; i < values.length; i++) {
@@ -1007,7 +1319,9 @@ public class SimulationRecorder implements AutoCloseable {
         }
 
         void close() throws IOException {
-            this.writer.close();
+            if (this.writer != null) {
+                this.writer.close();
+            }
         }
     }
 }
