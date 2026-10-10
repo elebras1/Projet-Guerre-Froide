@@ -1190,7 +1190,7 @@ public class WorldDaoImpl implements WorldDao {
                     EntityView province = provinceEntityId != 0 ? ecsWorld.obtainEntityView(provinceEntityId) : null;
                     if(provinceEntityId != 0 && province.has(Province.class)) {
                         ProvinceMutView provinceData = province.getMutView(Province.class);
-                        long regionInstanceId = ecsWorld.entity("region_instance_" + provinceId + "_" + provinceData.ownerId());
+                        long regionInstanceId = ecsWorld.entity("region_instance_" + regionId + "_" + provinceData.ownerId());
                         EntityView regionInstance = ecsWorld.obtainEntityView(regionInstanceId);
                         if(!regionInstance.has(RegionInstance.class)) {
                             regionInstance.set(new RegionInstance(regionEntityId, provinceData.ownerId(), new float[POP_TYPE_COUNT]));

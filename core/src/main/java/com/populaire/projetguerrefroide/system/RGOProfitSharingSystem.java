@@ -13,7 +13,6 @@ public class RGOProfitSharingSystem {
             .kind(phaseId)
             .with(Province.class)
             .with(ResourceGathering.class)
-            .multiThreaded()
             .iter(this::process);
     }
 
