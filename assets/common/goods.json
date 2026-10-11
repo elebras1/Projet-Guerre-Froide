@@ -1,7 +1,7 @@
 {
   "resource_goods": {
     "fish": {
-      "value": 2,
+      "value": 17,
       "cost": 1.4,
       "color": [
         200,
@@ -10,7 +10,7 @@
       ]
     },
     "grain": {
-      "value": 2,
+      "value": 3.1,
       "cost": 1.2,
       "color": [
         255,
@@ -19,7 +19,7 @@
       ]
     },
     "vegetables": {
-      "value": 2,
+      "value": 4.4,
       "cost": 1.2,
       "color": [
         34,
@@ -28,7 +28,7 @@
       ]
     },
     "fruits": {
-      "value": 2,
+      "value": 3.6,
       "cost": 1.4,
       "color": [
         255,
@@ -37,7 +37,7 @@
       ]
     },
     "meat": {
-      "value": 3,
+      "value": 3.7,
       "cost": 1.8,
       "color": [
         255,
@@ -46,7 +46,7 @@
       ]
     },
     "oil": {
-      "value": 4,
+      "value": 2.5,
       "cost": 2,
       "color": [
         0,
@@ -55,7 +55,7 @@
       ]
     },
     "coal": {
-      "value": 2,
+      "value": 8,
       "cost": 1.7,
       "color": [
         70,
@@ -64,7 +64,7 @@
       ]
     },
     "gas": {
-      "value": 4.5,
+      "value": 7.5,
       "cost": 2.5,
       "color": [
         70,
@@ -73,7 +73,7 @@
       ]
     },
     "wood": {
-      "value": 2,
+      "value": 6,
       "cost": 1.2,
       "color": [
         139,
@@ -82,7 +82,7 @@
       ]
     },
     "renewable_energy": {
-      "value": 2.5,
+      "value": 3.5,
       "cost": 1.4,
       "color": [
         0,
@@ -91,7 +91,7 @@
       ]
     },
     "uranium": {
-      "value": 6,
+      "value": 2,
       "cost": 3,
       "color": [
         0,
@@ -100,7 +100,7 @@
       ]
     },
     "iron": {
-      "value": 5,
+      "value": 6.6,
       "cost": 1.5,
       "color": [
         139,
@@ -109,7 +109,7 @@
       ]
     },
     "precious_metals": {
-      "value": 8,
+      "value": 1.5,
       "cost": 8,
       "color": [
         255,
@@ -118,7 +118,7 @@
       ]
     },
     "rare_metals": {
-      "value": 5.5,
+      "value": 1.2,
       "cost": 4,
       "color": [
         75,
@@ -128,14 +128,6 @@
     }
   },
   "advanced_goods": {
-    "canned_food": {
-      "cost": 1.5,
-      "color": [
-        255,
-        39,
-        12
-      ]
-    },
     "fuel": {
       "cost": 2.5,
       "color": [
@@ -290,6 +282,14 @@
     }
   },
   "military_goods": {
+    "canned_food": {
+      "cost": 1.5,
+      "color": [
+        255,
+        39,
+        12
+      ]
+    },
     "ammunition": {
       "cost": 7,
       "color": [

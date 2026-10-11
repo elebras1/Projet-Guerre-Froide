@@ -59,6 +59,7 @@ import com.populaire.projetguerrefroide.component.ResourceGathering;
 import com.populaire.projetguerrefroide.component.ResourceGatheringType;
 import com.populaire.projetguerrefroide.component.ResourceGatheringTypeView;
 import com.populaire.projetguerrefroide.component.ResourceGatheringView;
+import com.populaire.projetguerrefroide.util.EcsConstants;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -94,6 +95,7 @@ public class SimulationRecorder implements AutoCloseable {
     private boolean detail;
 
     private final float[] baseCosts = new float[GOOD_COUNT];
+    private final boolean[] civilianGoods = new boolean[GOOD_COUNT];
     private final float[] cpiWeights = new float[GOOD_COUNT];
     private final int[] popTypeStrata = new int[POP_TYPE_COUNT];
 
@@ -284,9 +286,11 @@ public class SimulationRecorder implements AutoCloseable {
     private void readBaseCosts() {
         EntityView globalGood = this.ecsWorld.obtainEntityView(this.ecsWorld.lookup("global_good"));
         GlobalGoodView data = globalGood.getMutView(GlobalGood.class);
+        long militaryGoodTag = this.ecsWorld.lookup(EcsConstants.MILITARY_GOOD_TAG);
         for (int g = 0; g < GOOD_COUNT; g++) {
             GoodView good = this.ecsWorld.obtainEntityView(data.goodIds(g)).getMutView(Good.class);
             this.baseCosts[g] = good.cost();
+            this.civilianGoods[g] = !this.ecsWorld.obtainEntity(data.goodIds(g)).has(militaryGoodTag);
         }
     }
 
@@ -541,7 +545,9 @@ public class SimulationRecorder implements AutoCloseable {
             if (this.baseCosts[g] <= 0f) {
                 continue;
             }
-            this.tickRealOutput += (double) this.worldProductionByGood[g] * this.baseCosts[g];
+            if (this.civilianGoods[g]) {
+                this.tickRealOutput += (double) this.worldProductionByGood[g] * this.baseCosts[g];
+            }
             float relativePrice = this.lastPrices[g] / this.baseCosts[g];
             this.tickCpi += this.cpiWeights[g] * relativePrice;
             boolean outOfBand = this.worldProductionByGood[g] + this.worldDemandByGood[g] > 0f
