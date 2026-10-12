@@ -1,14 +1,12 @@
 package com.populaire.projetguerrefroide.simulation;
 
-import com.badlogic.gdx.Files;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.utils.GdxNativesLoader;
 import io.github.elebras1.flecs.Field;
 import io.github.elebras1.flecs.World;
+import com.populaire.projetguerrefroide.TestGdxFiles;
 import com.populaire.projetguerrefroide.component.*;
 import com.populaire.projetguerrefroide.dao.impl.ConfigurationDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
+import com.populaire.projetguerrefroide.loader.WorldLoader;
 import com.populaire.projetguerrefroide.pojo.Bookmark;
 import com.populaire.projetguerrefroide.service.EconomyService;
 import com.populaire.projetguerrefroide.service.GameContext;
@@ -70,7 +68,9 @@ public class EconomySimulationAnalysisTest {
 
         this.startDate = this.loadStartDate();
 
-        new WorldDaoImpl().createWorld(gameContext);
+        long loadStart = System.nanoTime();
+        new WorldLoader(new WorldDaoImpl()).createWorld(gameContext);
+        System.out.printf("World loaded in %.0f ms%n", (System.nanoTime() - loadStart) / 1_000_000.0);
         this.economyService = new EconomyService(gameContext);
 
         this.forcedLaws = this.listProperty("simulation.laws");
@@ -82,64 +82,7 @@ public class EconomySimulationAnalysisTest {
     }
 
     private void setupGdxFiles() {
-        GdxNativesLoader.load();
-
-        Gdx.files = new Files() {
-            @Override
-            public FileHandle getFileHandle(String path, FileType type) {
-                return new FileHandle(path);
-            }
-
-            @Override
-            public FileHandle classpath(String path) {
-                return new FileHandle(path);
-            }
-
-            @Override
-            public FileHandle internal(String path) {
-                return new FileHandle(path);
-            }
-
-            @Override
-            public FileHandle external(String path) {
-                return new FileHandle(path);
-            }
-
-            @Override
-            public FileHandle absolute(String path) {
-                return new FileHandle(path);
-            }
-
-            @Override
-            public FileHandle local(String path) {
-                return new FileHandle(path);
-            }
-
-            @Override
-            public String getExternalStoragePath() {
-                return System.getProperty("user.home") + File.separator;
-            }
-
-            @Override
-            public boolean isExternalStorageAvailable() {
-                return true;
-            }
-
-            @Override
-            public String getLocalStoragePath() {
-                return new File("").getAbsolutePath() + File.separator;
-            }
-
-            @Override
-            public boolean isLocalStorageAvailable() {
-                return true;
-            }
-        };
-
-        if (!Gdx.files.internal("common/bookmark.json").exists()) {
-            fail("Assets not found. Run the test through Gradle (`./gradlew :lwjgl3:test`) "
-                + "so the working directory points to the 'assets' folder.");
-        }
+        TestGdxFiles.install();
     }
 
     private void registerComponents(World world) {

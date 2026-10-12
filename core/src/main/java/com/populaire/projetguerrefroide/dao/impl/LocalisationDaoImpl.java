@@ -73,7 +73,7 @@ public class LocalisationDaoImpl implements LocalisationDao {
 
     @Override
     public Map<String, String> readProvinces() {
-        return this.readLocalisationCsv("ENGLISH", this.provincesCsvFile);
+        return this.readLocalisationCsv(this.language, this.provincesCsvFile, "ENGLISH");
     }
 
     @Override
@@ -92,27 +92,29 @@ public class LocalisationDaoImpl implements LocalisationDao {
     }
 
     private Map<String, String> readLocalisationCsv(String language, String filename) {
+        return this.readLocalisationCsv(language, filename, language);
+    }
+
+    private Map<String, String> readLocalisationCsv(String language, String filename, String fallbackLanguage) {
         Map<String, String> localisation = new ObjectObjectMap<>();
         try (BufferedReader br = new BufferedReader(
             new InputStreamReader(
                 Gdx.files.internal(filename).read(), StandardCharsets.UTF_8))) {
             String[] headers = br.readLine().split(";");
-            int localisationIndex = -1;
-            for (int i = 0; i < headers.length; i++) {
-                if (headers[i].equals(language)) {
-                    localisationIndex = i;
-                    break;
-                }
-            }
+            int localisationIndex = this.findColumnIndex(headers, language);
+            int fallbackIndex = this.findColumnIndex(headers, fallbackLanguage);
             if (localisationIndex == -1) {
                 throw new IllegalArgumentException("Localisation not found in CSV headers.");
             }
 
             String line;
             while ((line = br.readLine()) != null) {
-                String[] values = line.split(";");
+                String[] values = line.split(";", -1);
                 String code = values[0];
-                String translation = values[localisationIndex];
+                String translation = localisationIndex < values.length ? values[localisationIndex] : "";
+                if (translation.isEmpty() && fallbackIndex != -1 && fallbackIndex < values.length) {
+                    translation = values[fallbackIndex];
+                }
                 localisation.put(code, translation);
             }
         } catch (IOException e) {
@@ -120,5 +122,15 @@ public class LocalisationDaoImpl implements LocalisationDao {
         }
 
         return localisation;
+    }
+
+    private int findColumnIndex(String[] headers, String language) {
+        for (int i = 0; i < headers.length; i++) {
+            if (headers[i].equals(language)) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }

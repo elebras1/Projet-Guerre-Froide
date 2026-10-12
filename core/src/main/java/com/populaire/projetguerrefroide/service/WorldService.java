@@ -5,9 +5,9 @@ import io.github.elebras1.flecs.*;
 import com.github.tommyettinger.ds.*;
 import com.populaire.projetguerrefroide.adapter.graphics.WgProjection;
 import com.populaire.projetguerrefroide.component.*;
-import com.populaire.projetguerrefroide.dao.WorldDao;
 import com.populaire.projetguerrefroide.dao.impl.MapDaoImpl;
 import com.populaire.projetguerrefroide.dao.impl.WorldDaoImpl;
+import com.populaire.projetguerrefroide.loader.WorldLoader;
 import com.populaire.projetguerrefroide.dto.*;
 import com.populaire.projetguerrefroide.pojo.MapMode;
 import com.populaire.projetguerrefroide.pojo.WorldData;
@@ -16,7 +16,7 @@ import com.populaire.projetguerrefroide.ui.view.SortType;
 
 public class WorldService {
     private final GameContext gameContext;
-    private final WorldDao worldDao;
+    private final WorldLoader worldLoader;
     private final QueryRepository queryRepository;
     private final BuildingService buildingService;
     private final RegionService regionService;
@@ -26,7 +26,7 @@ public class WorldService {
 
     public WorldService(GameContext gameContext, QueryRepository queryRepository, BuildingService buildingService, RegionService regionService, CountryService countryService, ProvinceService provinceService) {
         this.gameContext = gameContext;
-        this.worldDao = new WorldDaoImpl();
+        this.worldLoader = new WorldLoader(new WorldDaoImpl());
         this.queryRepository = queryRepository;
         this.buildingService = buildingService;
         this.regionService = regionService;
@@ -35,7 +35,7 @@ public class WorldService {
     }
 
     public void createWorld() {
-        WorldData worldData = this.worldDao.createWorld(this.gameContext);
+        WorldData worldData = this.worldLoader.createWorld(this.gameContext);
         this.mapService = new MapService(this.gameContext, this.queryRepository, new MapDaoImpl(), this.countryService, worldData.provinces(), worldData.borders());
         this.gameContext.getEcsWorld().shrink();
     }
