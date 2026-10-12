@@ -1,7 +1,9 @@
 {
     "owner": "MON",
     "controller": "MON",
-    "add_core": "MON",
+    "add_core": [
+        "MON"
+    ],
     "population_total": {
         "amount": 1648,
         "template": 9,

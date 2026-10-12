@@ -1,7 +1,9 @@
 {
     "owner": "PAR",
     "controller": "PAR",
-    "add_core": "PAR",
+    "add_core": [
+        "PAR"
+    ],
     "population_total": {
         "amount": 388750,
         "template": 87,

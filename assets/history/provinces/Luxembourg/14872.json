@@ -1,7 +1,9 @@
 {
     "owner": "LUX",
     "controller": "LUX",
-    "add_core": "LUX",
+    "add_core": [
+        "LUX"
+    ],
     "population_total": {
         "amount": 292487,
         "template": 72,

@@ -1,7 +1,9 @@
 {
     "owner": "DOM",
     "controller": "DOM",
-    "add_core": "DOM",
+    "add_core": [
+        "DOM"
+    ],
     "population_total": {
         "amount": 420433,
         "template": 75,

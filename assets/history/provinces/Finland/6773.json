@@ -1,7 +1,9 @@
 {
     "owner": "FIN",
     "controller": "FIN",
-    "add_core": "FIN",
+    "add_core": [
+        "FIN"
+    ],
     "population_total": {
         "amount": 31488,
         "template": 53,

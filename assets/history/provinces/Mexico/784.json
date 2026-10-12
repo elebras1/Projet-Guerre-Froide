@@ -1,7 +1,9 @@
 {
     "owner": "MEX",
     "controller": "MEX",
-    "add_core": "MEX",
+    "add_core": [
+        "MEX"
+    ],
     "population_total": {
         "amount": 440,
         "template": 81,

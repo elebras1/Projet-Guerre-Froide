@@ -1,7 +1,9 @@
 {
     "owner": "ETH",
     "controller": "ETH",
-    "add_core": "ETH",
+    "add_core": [
+        "ETH"
+    ],
     "population_total": {
         "amount": 23719,
         "template": 1,

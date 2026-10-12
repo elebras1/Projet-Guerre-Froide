@@ -1,7 +1,9 @@
 {
     "owner": "FRA",
     "controller": "FRA",
-    "add_core": "FRA",
+    "add_core": [
+        "FRA"
+    ],
     "population_total": {
         "amount": 330924,
         "template": 70,

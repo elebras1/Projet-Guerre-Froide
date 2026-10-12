@@ -1,7 +1,9 @@
 {
     "owner": "ECU",
     "controller": "ECU",
-    "add_core": "ECU",
+    "add_core": [
+        "ECU"
+    ],
     "population_total": {
         "amount": 406788,
         "template": 84,

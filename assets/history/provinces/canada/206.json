@@ -1,7 +1,9 @@
 {
     "owner": "CAN",
     "controller": "CAN",
-    "add_core": "CAN",
+    "add_core": [
+        "CAN"
+    ],
     "population_total": {
         "amount": 3993,
         "template": 92,

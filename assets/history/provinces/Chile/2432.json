@@ -1,7 +1,9 @@
 {
     "owner": "CHL",
     "controller": "CHL",
-    "add_core": "CHL",
+    "add_core": [
+        "CHL"
+    ],
     "population_total": {
         "amount": 49906,
         "template": 82,

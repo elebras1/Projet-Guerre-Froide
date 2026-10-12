@@ -1,7 +1,9 @@
 {
     "owner": "CUB",
     "controller": "CUB",
-    "add_core": "CUB",
+    "add_core": [
+        "CUB"
+    ],
     "population_total": {
         "amount": 209655,
         "template": 75,

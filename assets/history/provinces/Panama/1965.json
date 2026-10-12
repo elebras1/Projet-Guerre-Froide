@@ -1,7 +1,9 @@
 {
     "owner": "PAN",
     "controller": "PAN",
-    "add_core": "PAN",
+    "add_core": [
+        "PAN"
+    ],
     "population_total": {
         "amount": 153229,
         "template": 76,

@@ -1,7 +1,9 @@
 {
     "owner": "SAL",
     "controller": "SAL",
-    "add_core": "SAL",
+    "add_core": [
+        "SAL"
+    ],
     "population_total": {
         "amount": 446418,
         "template": 76,

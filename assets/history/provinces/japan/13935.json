@@ -1,7 +1,9 @@
 {
     "owner": "JAP",
     "controller": "JAP",
-    "add_core": "JAP",
+    "add_core": [
+        "JAP"
+    ],
     "population_total": {
         "amount": 840709,
         "template": 8,

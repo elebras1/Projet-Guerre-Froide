@@ -1,7 +1,9 @@
 {
     "owner": "IRQ",
     "controller": "IRQ",
-    "add_core": "IRQ",
+    "add_core": [
+        "IRQ"
+    ],
     "population_total": {
         "amount": 32001,
         "template": 33,

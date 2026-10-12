@@ -1,7 +1,9 @@
 {
     "owner": "SYR",
     "controller": "SYR",
-    "add_core": "SYR",
+    "add_core": [
+        "SYR"
+    ],
     "population_total": {
         "amount": 36226,
         "template": 41,

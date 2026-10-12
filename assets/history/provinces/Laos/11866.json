@@ -1,7 +1,9 @@
 {
     "owner": "IDC",
     "controller": "IDC",
-    "add_core": "IDC",
+    "add_core": [
+        "IDC"
+    ],
     "population_total": {
         "amount": 63324,
         "template": 22,

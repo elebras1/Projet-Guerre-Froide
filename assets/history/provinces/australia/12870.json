@@ -1,7 +1,9 @@
 {
     "owner": "AST",
     "controller": "AST",
-    "add_core": "AST",
+    "add_core": [
+        "AST"
+    ],
     "population_total": {
         "amount": 374706,
         "template": 94,

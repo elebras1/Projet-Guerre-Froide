@@ -1,7 +1,9 @@
 {
     "owner": "TUR",
     "controller": "TUR",
-    "add_core": "TUR",
+    "add_core": [
+        "TUR"
+    ],
     "population_total": {
         "amount": 51310,
         "template": 42,

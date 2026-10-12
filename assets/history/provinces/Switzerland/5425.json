@@ -1,7 +1,9 @@
 {
     "owner": "SCH",
     "controller": "SCH",
-    "add_core": "SCH",
+    "add_core": [
+        "SCH"
+    ],
     "population_total": {
         "amount": 1487001,
         "template": 74,

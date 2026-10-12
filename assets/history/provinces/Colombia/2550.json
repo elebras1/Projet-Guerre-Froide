@@ -1,7 +1,9 @@
 {
     "owner": "COL",
     "controller": "COL",
-    "add_core": "COL",
+    "add_core": [
+        "COL"
+    ],
     "population_total": {
         "amount": 777,
         "template": 83,

@@ -1,7 +1,9 @@
 {
     "owner": "VEN",
     "controller": "VEN",
-    "add_core": "VEN",
+    "add_core": [
+        "VEN"
+    ],
     "population_total": {
         "amount": 12065,
         "template": 91,

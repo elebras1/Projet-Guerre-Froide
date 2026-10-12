@@ -1,7 +1,9 @@
 {
     "owner": "HOL",
     "controller": "HOL",
-    "add_core": "HOL",
+    "add_core": [
+        "HOL"
+    ],
     "population_total": {
         "amount": 785850,
         "template": 73,

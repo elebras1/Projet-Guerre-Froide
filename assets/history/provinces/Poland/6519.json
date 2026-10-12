@@ -1,7 +1,9 @@
 {
     "owner": "POL",
     "controller": "POL",
-    "add_core": "POL",
+    "add_core": [
+        "POL"
+    ],
     "population_total": {
         "amount": 91817,
         "template": 49,

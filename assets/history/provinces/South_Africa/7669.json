@@ -1,7 +1,9 @@
 {
     "owner": "SAF",
     "controller": "SAF",
-    "add_core": "SAF",
+    "add_core": [
+        "SAF"
+    ],
     "population_total": {
         "amount": 80334,
         "template": 4,

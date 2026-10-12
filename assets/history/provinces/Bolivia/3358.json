@@ -1,7 +1,9 @@
 {
     "owner": "BOL",
     "controller": "BOL",
-    "add_core": "BOL",
+    "add_core": [
+        "BOL"
+    ],
     "population_total": {
         "amount": 1339,
         "template": 80,

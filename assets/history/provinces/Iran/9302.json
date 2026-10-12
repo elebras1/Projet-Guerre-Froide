@@ -1,7 +1,9 @@
 {
     "owner": "SOV",
     "controller": "SOV",
-    "add_core": "PER",
+    "add_core": [
+        "PER"
+    ],
     "population_total": {
         "amount": 19303,
         "template": 16,

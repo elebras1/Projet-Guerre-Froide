@@ -1,7 +1,9 @@
 {
     "owner": "BRA",
     "controller": "BRA",
-    "add_core": "BRA",
+    "add_core": [
+        "BRA"
+    ],
     "population_total": {
         "amount": 224878,
         "template": 77,

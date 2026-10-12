@@ -1,7 +1,9 @@
 {
     "owner": "BUL",
     "controller": "BUL",
-    "add_core": "BUL",
+    "add_core": [
+        "BUL"
+    ],
     "population_total": {
         "amount": 483434,
         "template": 46,

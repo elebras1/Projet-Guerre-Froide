@@ -1,7 +1,9 @@
 {
     "owner": "BHU",
     "controller": "BHU",
-    "add_core": "BHU",
+    "add_core": [
+        "BHU"
+    ],
     "population_total": {
         "amount": 6046,
         "template": 14,

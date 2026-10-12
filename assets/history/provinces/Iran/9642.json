@@ -1,7 +1,9 @@
 {
     "owner": "PER",
     "controller": "PER",
-    "add_core": "PER",
+    "add_core": [
+        "PER"
+    ],
     "population_total": {
         "amount": 22726,
         "template": 16,

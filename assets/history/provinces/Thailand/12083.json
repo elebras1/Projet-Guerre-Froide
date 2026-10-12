@@ -1,7 +1,9 @@
 {
     "owner": "SIA",
     "controller": "SIA",
-    "add_core": "SIA",
+    "add_core": [
+        "SIA"
+    ],
     "population_total": {
         "amount": 467383,
         "template": 27,

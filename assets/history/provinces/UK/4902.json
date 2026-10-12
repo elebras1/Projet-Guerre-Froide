@@ -1,7 +1,9 @@
 {
     "owner": "ENG",
     "controller": "ENG",
-    "add_core": "ENG",
+    "add_core": [
+        "ENG"
+    ],
     "population_total": {
         "amount": 958796,
         "template": 60,

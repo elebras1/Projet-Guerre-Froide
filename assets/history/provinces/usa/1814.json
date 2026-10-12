@@ -1,7 +1,9 @@
 {
     "owner": "USA",
     "controller": "USA",
-    "add_core": "USA",
+    "add_core": [
+        "USA"
+    ],
     "population_total": {
         "amount": 231084,
         "template": 93,

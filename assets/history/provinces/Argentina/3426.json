@@ -1,7 +1,9 @@
 {
     "owner": "ARG",
     "controller": "ARG",
-    "add_core": "ARG",
+    "add_core": [
+        "ARG"
+    ],
     "population_total": {
         "amount": 22927,
         "template": 79,

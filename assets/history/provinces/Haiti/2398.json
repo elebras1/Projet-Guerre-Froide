@@ -1,7 +1,9 @@
 {
     "owner": "HAI",
     "controller": "HAI",
-    "add_core": "HAI",
+    "add_core": [
+        "HAI"
+    ],
     "population_total": {
         "amount": 436067,
         "template": 75,

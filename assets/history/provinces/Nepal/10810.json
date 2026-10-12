@@ -1,7 +1,9 @@
 {
     "owner": "NEP",
     "controller": "NEP",
-    "add_core": "NEP",
+    "add_core": [
+        "NEP"
+    ],
     "population_total": {
         "amount": 528592,
         "template": 17,

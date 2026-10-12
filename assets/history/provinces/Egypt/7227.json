@@ -1,7 +1,9 @@
 {
     "owner": "EGY",
     "controller": "EGY",
-    "add_core": "EGY",
+    "add_core": [
+        "EGY"
+    ],
     "population_total": {
         "amount": 902,
         "template": 3,

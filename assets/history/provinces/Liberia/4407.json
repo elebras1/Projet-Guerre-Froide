@@ -1,7 +1,9 @@
 {
     "owner": "LIB",
     "controller": "LIB",
-    "add_core": "LIB",
+    "add_core": [
+        "LIB"
+    ],
     "population_total": {
         "amount": 59040,
         "template": 5,

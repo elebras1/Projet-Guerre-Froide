@@ -1,7 +1,9 @@
 {
     "owner": "COS",
     "controller": "COS",
-    "add_core": "COS",
+    "add_core": [
+        "COS"
+    ],
     "population_total": {
         "amount": 187011,
         "template": 76,

@@ -1,7 +1,9 @@
 {
     "owner": "IRE",
     "controller": "IRE",
-    "add_core": "IRE",
+    "add_core": [
+        "IRE"
+    ],
     "population_total": {
         "amount": 96308,
         "template": 55,

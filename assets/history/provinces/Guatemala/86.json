@@ -1,7 +1,9 @@
 {
     "owner": "GUA",
     "controller": "GUA",
-    "add_core": "GUA",
+    "add_core": [
+        "GUA"
+    ],
     "population_total": {
         "amount": 41986,
         "template": 76,

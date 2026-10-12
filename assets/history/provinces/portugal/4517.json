@@ -1,7 +1,9 @@
 {
     "owner": "POR",
     "controller": "POR",
-    "add_core": "POR",
+    "add_core": [
+        "POR"
+    ],
     "population_total": {
         "amount": 104309,
         "template": 66,

@@ -1,7 +1,9 @@
 {
     "owner": "NIC",
     "controller": "NIC",
-    "add_core": "NIC",
+    "add_core": [
+        "NIC"
+    ],
     "population_total": {
         "amount": 39230,
         "template": 76,

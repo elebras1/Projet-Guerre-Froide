@@ -1,7 +1,9 @@
 {
     "owner": "SPA",
     "controller": "SPA",
-    "add_core": "SPA",
+    "add_core": [
+        "SPA"
+    ],
     "population_total": {
         "amount": 195805,
         "template": 67,

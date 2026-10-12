@@ -1,7 +1,9 @@
 {
     "owner": "OMN",
     "controller": "OMN",
-    "add_core": "OMN",
+    "add_core": [
+        "OMN"
+    ],
     "population_total": {
         "amount": 965,
         "template": 38,

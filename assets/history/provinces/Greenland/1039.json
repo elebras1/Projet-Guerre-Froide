@@ -1,7 +1,9 @@
 {
     "owner": "DEN",
     "controller": "DEN",
-    "add_core": "DEN",
+    "add_core": [
+        "DEN"
+    ],
     "population_total": {
         "amount": 2,
         "template": 51,

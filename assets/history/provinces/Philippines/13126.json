@@ -1,7 +1,9 @@
 {
     "owner": "PHI",
     "controller": "PHI",
-    "add_core": "PHI",
+    "add_core": [
+        "PHI"
+    ],
     "population_total": {
         "amount": 305568,
         "template": 25,

@@ -1,7 +1,9 @@
 {
     "owner": "SWE",
     "controller": "SWE",
-    "add_core": "SWE",
+    "add_core": [
+        "SWE"
+    ],
     "population_total": {
         "amount": 27577,
         "template": 59,

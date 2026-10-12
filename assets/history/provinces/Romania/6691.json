@@ -1,7 +1,9 @@
 {
     "owner": "ROM",
     "controller": "ROM",
-    "add_core": "ROM",
+    "add_core": [
+        "ROM"
+    ],
     "population_total": {
         "amount": 481602,
         "template": 50,

@@ -1,7 +1,9 @@
 {
     "owner": "NZL",
     "controller": "NZL",
-    "add_core": "NZL",
+    "add_core": [
+        "NZL"
+    ],
     "population_total": {
         "amount": 182173,
         "template": 95,

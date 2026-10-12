@@ -1,7 +1,9 @@
 {
     "owner": "ALB",
     "controller": "ALB",
-    "add_core": "ALB",
+    "add_core": [
+        "ALB"
+    ],
     "population_total": {
         "amount": 191458,
         "template": 61,
